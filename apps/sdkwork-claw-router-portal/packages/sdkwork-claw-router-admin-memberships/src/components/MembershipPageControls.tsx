@@ -9,7 +9,7 @@ interface MembershipTablePanelProps {
 
 export function MembershipTablePanel({ children, className }: MembershipTablePanelProps) {
   return (
-    <div className={['overflow-x-auto rounded-xl border border-slate-200 bg-white dark:border-white/10 dark:bg-white/5', className].filter(Boolean).join(' ')}>
+    <div className={['min-h-0 flex-1 overflow-auto rounded-xl border border-slate-200 bg-white dark:border-white/10 dark:bg-white/5', className].filter(Boolean).join(' ')}>
       {children}
     </div>
   );

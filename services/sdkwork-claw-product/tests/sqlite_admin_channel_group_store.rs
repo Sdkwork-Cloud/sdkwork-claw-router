@@ -317,12 +317,7 @@ async fn sqlite_admin_channel_group_store_creates_and_updates_direct_resource_ac
 
     assert_eq!(
         vec![
-            (
-                Some(995001),
-                Some("api.openai.chat".to_owned()),
-                None,
-                None
-            ),
+            (Some(995001), Some("api.openai.chat".to_owned()), None, None),
             (
                 None,
                 None,
@@ -368,9 +363,7 @@ async fn sqlite_admin_channel_group_store_creates_and_updates_direct_resource_ac
     );
 
     let listed = store
-        .list_channel_groups(sdkwork_claw_product::ports::ListAdminChannelGroupsQuery {
-            subject,
-        })
+        .list_channel_groups(sdkwork_claw_product::ports::ListAdminChannelGroupsQuery { subject })
         .await
         .unwrap();
     let listed_group = listed

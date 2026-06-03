@@ -17,9 +17,9 @@ use crate::api::response::PlusApiResult;
 use crate::application::EntityUuidGenerator;
 use crate::domain::{DomainError, ProviderCircuitBreakerPolicy, ProviderRetryPolicy};
 use crate::ports::{
-    AdminChannelItem, AdminChannelStore, AdminChannelSubject, CreateAdminChannelCommand,
-    DeleteAdminChannelCommand, ListAdminChannelsQuery, TestAdminChannelCommand,
-    UpdateAdminChannelCommand,
+    AdminChannelCredentialInput, AdminChannelCredentialItem, AdminChannelItem, AdminChannelStore,
+    AdminChannelSubject, CreateAdminChannelCommand, DeleteAdminChannelCommand,
+    ListAdminChannelsQuery, TestAdminChannelCommand, UpdateAdminChannelCommand,
 };
 
 const MAX_NAME_LEN: usize = 128;
@@ -35,10 +35,14 @@ const MAX_MODELS: usize = 200;
 const MAX_CAPABILITIES: usize = 16;
 const MAX_RESOURCE_CODE_LEN: usize = 192;
 const MAX_RESOURCE_CODES: usize = 256;
+const MAX_CREDENTIALS: usize = 64;
+const MAX_CREDENTIAL_NAME_LEN: usize = 128;
 const MIN_TIMEOUT_MS: i64 = 1;
 const MAX_TIMEOUT_MS: i64 = 600_000;
 const MIN_WEIGHT: i64 = 1;
 const MAX_WEIGHT: i64 = 10_000;
+const MIN_PRIORITY: i64 = 1;
+const MAX_PRIORITY: i64 = 1_000_000;
 
 #[derive(Clone)]
 struct AdminChannelState {
@@ -54,11 +58,8 @@ struct NormalizedCreateRequest {
     channel_type: String,
     protocol: String,
     access_type: String,
-    base_url: Option<String>,
-    secret_ref: String,
-    secret_hash: String,
-    masked_label: String,
-    credential_material: Option<String>,
+    credential_rotation: String,
+    credentials: Vec<NormalizedCredentialInput>,
     models: Vec<String>,
     capabilities: Vec<String>,
     resource_codes: Vec<String>,
@@ -80,11 +81,8 @@ struct NormalizedUpdateRequest {
     channel_type: Option<String>,
     protocol: Option<String>,
     access_type: Option<String>,
-    base_url: Option<Option<String>>,
-    secret_ref: Option<String>,
-    secret_hash: Option<String>,
-    masked_label: Option<String>,
-    credential_material: Option<String>,
+    credential_rotation: Option<String>,
+    credentials: Option<Vec<NormalizedCredentialInput>>,
     models: Option<Vec<String>>,
     capabilities: Option<Vec<String>>,
     resource_codes: Option<Vec<String>>,
@@ -139,12 +137,8 @@ struct AdminChannelItemResponse {
     channel_type: String,
     protocol: String,
     access_type: String,
-    #[serde(skip_serializing_if = "Option::is_none")]
-    base_url: Option<String>,
-    #[serde(skip_serializing_if = "Option::is_none")]
-    secret_ref: Option<String>,
-    #[serde(skip_serializing_if = "Option::is_none")]
-    api_key: Option<String>,
+    credential_rotation: String,
+    credentials: Vec<AdminChannelCredentialResponse>,
     created_at: String,
     #[serde(skip_serializing_if = "Option::is_none")]
     expires_at: Option<String>,
@@ -174,10 +168,8 @@ struct AdminChannelSafeItemResponse {
     channel_type: String,
     protocol: String,
     access_type: String,
-    #[serde(skip_serializing_if = "Option::is_none")]
-    base_url: Option<String>,
-    #[serde(skip_serializing_if = "Option::is_none")]
-    masked_label: Option<String>,
+    credential_rotation: String,
+    credentials: Vec<AdminChannelSafeCredentialResponse>,
     created_at: String,
     #[serde(skip_serializing_if = "Option::is_none")]
     expires_at: Option<String>,
@@ -209,6 +201,37 @@ struct AdminChannelRetryPolicyResponse {
 #[serde(rename_all = "camelCase")]
 struct AdminChannelCircuitBreakerPolicyResponse {
     failure_threshold: usize,
+}
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+struct AdminChannelCredentialResponse {
+    id: String,
+    credential_id: String,
+    name: String,
+    base_url: String,
+    secret_ref: String,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    api_key: Option<String>,
+    masked_label: String,
+    priority: i64,
+    weight: i64,
+    status: String,
+    errors: i64,
+}
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+struct AdminChannelSafeCredentialResponse {
+    id: String,
+    credential_id: String,
+    name: String,
+    base_url: String,
+    masked_label: String,
+    priority: i64,
+    weight: i64,
+    status: String,
+    errors: i64,
 }
 
 pub fn admin_channel_router_with_store(
@@ -451,10 +474,12 @@ fn normalize_create_request(
     )?
     .unwrap_or_else(|| "api-key".to_owned());
     let access_type = normalize_access_type(&access_type);
-    let base_url = optional_text(&request, "baseUrl", "channel baseUrl", MAX_BASE_URL_LEN)?
-        .map(validate_base_url)
-        .transpose()?;
-    let credential = normalize_create_credential(&request, &provider_code)?;
+    let credential_rotation =
+        optional_text(&request, "credentialRotation", "credentialRotation", 64)?
+            .map(|value| normalize_credential_rotation(&value))
+            .transpose()?
+            .unwrap_or_else(|| "default".to_owned());
+    let credentials = normalize_create_credentials(&request, &provider_code)?;
     let models = required_string_array(&request, "models", "models", MAX_MODELS, MAX_MODEL_LEN)?;
     let capabilities = optional_string_array(
         &request,
@@ -498,11 +523,8 @@ fn normalize_create_request(
         channel_type,
         protocol,
         access_type,
-        base_url,
-        secret_ref: credential.secret_ref,
-        secret_hash: credential.secret_hash,
-        masked_label: credential.masked_label,
-        credential_material: credential.credential_material,
+        credential_rotation,
+        credentials,
         models,
         capabilities,
         resource_codes,
@@ -543,11 +565,11 @@ fn normalize_update_request(
         MAX_ACCESS_TYPE_LEN,
     )?
     .map(|access_type| normalize_access_type(&access_type));
-    let base_url =
-        optional_nullable_text(&request, "baseUrl", "channel baseUrl", MAX_BASE_URL_LEN)?
-            .map(|value| value.map(validate_base_url).transpose())
+    let credential_rotation =
+        optional_text(&request, "credentialRotation", "credentialRotation", 64)?
+            .map(|value| normalize_credential_rotation(&value))
             .transpose()?;
-    let credential = normalize_update_credential(&request, provider_code.as_deref())?;
+    let credentials = normalize_update_credentials(&request, provider_code.as_deref())?;
     let models = optional_string_array(&request, "models", "models", MAX_MODELS, MAX_MODEL_LEN)?;
     let capabilities = optional_string_array(
         &request,
@@ -589,8 +611,8 @@ fn normalize_update_request(
         && channel_type.is_none()
         && protocol.is_none()
         && access_type.is_none()
-        && base_url.is_none()
-        && credential.secret_ref.is_none()
+        && credential_rotation.is_none()
+        && credentials.is_none()
         && models.is_none()
         && capabilities.is_none()
         && resource_codes.is_none()
@@ -612,11 +634,8 @@ fn normalize_update_request(
         channel_type,
         protocol,
         access_type,
-        base_url,
-        secret_ref: credential.secret_ref,
-        secret_hash: credential.secret_hash,
-        masked_label: credential.masked_label,
-        credential_material: credential.credential_material,
+        credential_rotation,
+        credentials,
         models,
         capabilities,
         resource_codes,
@@ -631,27 +650,75 @@ fn normalize_update_request(
 
 #[derive(Debug, Clone, PartialEq, Eq)]
 struct NormalizedCredentialInput {
+    name: String,
+    base_url: String,
     secret_ref: String,
     secret_hash: String,
     masked_label: String,
     credential_material: Option<String>,
+    priority: i64,
+    weight: i64,
+    status: String,
 }
 
-#[derive(Debug, Clone, PartialEq, Eq)]
-struct NormalizedCredentialUpdate {
-    secret_ref: Option<String>,
-    secret_hash: Option<String>,
-    masked_label: Option<String>,
-    credential_material: Option<String>,
-}
-
-fn normalize_create_credential(
+fn normalize_create_credentials(
     request: &Map<String, Value>,
     provider_code: &str,
+) -> Result<Vec<NormalizedCredentialInput>, String> {
+    let Some(value) = request.get("credentials") else {
+        return Err("credentials must include at least one upstream credential".to_owned());
+    };
+    normalize_credentials_value(value, provider_code, true)
+}
+
+fn normalize_update_credentials(
+    request: &Map<String, Value>,
+    provider_code: Option<&str>,
+) -> Result<Option<Vec<NormalizedCredentialInput>>, String> {
+    let Some(value) = request.get("credentials") else {
+        return Ok(None);
+    };
+    normalize_credentials_value(value, provider_code.unwrap_or("custom"), true).map(Some)
+}
+
+fn normalize_credentials_value(
+    value: &Value,
+    provider_code: &str,
+    require_non_empty: bool,
+) -> Result<Vec<NormalizedCredentialInput>, String> {
+    let Value::Array(items) = value else {
+        return Err("credentials must be an array".to_owned());
+    };
+    if items.is_empty() && require_non_empty {
+        return Err("credentials must include at least one upstream credential".to_owned());
+    }
+    if items.len() > MAX_CREDENTIALS {
+        return Err(format!(
+            "credentials must include at most {MAX_CREDENTIALS} upstream credentials"
+        ));
+    }
+    items
+        .iter()
+        .enumerate()
+        .map(|(index, value)| normalize_credential_item(index, value, provider_code))
+        .collect()
+}
+
+fn normalize_credential_item(
+    index: usize,
+    value: &Value,
+    provider_code: &str,
 ) -> Result<NormalizedCredentialInput, String> {
-    let api_key = optional_text(request, "apiKey", "apiKey", MAX_API_KEY_LEN)?;
-    let secret_ref = optional_text(request, "secretRef", "secretRef", MAX_SECRET_REF_LEN)?;
-    match (api_key, secret_ref) {
+    let Value::Object(object) = value else {
+        return Err(format!("credentials[{index}] must be an object"));
+    };
+    let name = optional_text(object, "name", "credential name", MAX_CREDENTIAL_NAME_LEN)?
+        .unwrap_or_else(|| format!("Credential {}", index + 1));
+    let base_url = required_text(object, "baseUrl", "credential baseUrl", MAX_BASE_URL_LEN)
+        .and_then(validate_base_url)?;
+    let api_key = optional_text(object, "apiKey", "apiKey", MAX_API_KEY_LEN)?;
+    let secret_ref = optional_text(object, "secretRef", "secretRef", MAX_SECRET_REF_LEN)?;
+    let mut credential = match (api_key, secret_ref) {
         (Some(_), Some(_)) => {
             Err("channel credential must provide either apiKey or secretRef, not both".to_owned())
         }
@@ -659,51 +726,36 @@ fn normalize_create_credential(
         (None, Some(secret_ref)) => {
             validate_secret_ref(&secret_ref)?;
             Ok(NormalizedCredentialInput {
+                name: String::new(),
+                base_url: String::new(),
                 secret_hash: digest_hex(&secret_ref),
                 masked_label: mask_secret_ref(&secret_ref),
                 secret_ref,
                 credential_material: None,
+                priority: 100,
+                weight: 100,
+                status: "active".to_owned(),
             })
         }
-        (None, None) => Err("apiKey is required for new channels".to_owned()),
-    }
-}
-
-fn normalize_update_credential(
-    request: &Map<String, Value>,
-    provider_code: Option<&str>,
-) -> Result<NormalizedCredentialUpdate, String> {
-    let api_key = optional_text(request, "apiKey", "apiKey", MAX_API_KEY_LEN)?;
-    let secret_ref = optional_text(request, "secretRef", "secretRef", MAX_SECRET_REF_LEN)?;
-    match (api_key, secret_ref) {
-        (Some(_), Some(_)) => {
-            Err("channel credential must provide either apiKey or secretRef, not both".to_owned())
-        }
-        (Some(api_key), None) => {
-            let credential = credential_from_api_key(provider_code.unwrap_or("custom"), &api_key)?;
-            Ok(NormalizedCredentialUpdate {
-                secret_ref: Some(credential.secret_ref),
-                secret_hash: Some(credential.secret_hash),
-                masked_label: Some(credential.masked_label),
-                credential_material: credential.credential_material,
-            })
-        }
-        (None, Some(secret_ref)) => {
-            validate_secret_ref(&secret_ref)?;
-            Ok(NormalizedCredentialUpdate {
-                secret_hash: Some(digest_hex(&secret_ref)),
-                masked_label: Some(mask_secret_ref(&secret_ref)),
-                secret_ref: Some(secret_ref),
-                credential_material: None,
-            })
-        }
-        (None, None) => Ok(NormalizedCredentialUpdate {
-            secret_ref: None,
-            secret_hash: None,
-            masked_label: None,
-            credential_material: None,
-        }),
-    }
+        (None, None) => Err(format!(
+            "credentials[{index}] must provide either apiKey or secretRef"
+        )),
+    }?;
+    credential.name = name;
+    credential.base_url = base_url;
+    credential.priority = optional_integer(object, "priority")?
+        .map(normalize_credential_priority)
+        .transpose()?
+        .unwrap_or_else(|| i64::try_from(index + 1).unwrap_or(i64::MAX));
+    credential.weight = optional_integer(object, "weight")?
+        .map(normalize_weight)
+        .transpose()?
+        .unwrap_or(100);
+    credential.status = optional_text(object, "status", "credential status", 32)?
+        .map(|status| normalize_credential_status(&status))
+        .transpose()?
+        .unwrap_or_else(|| "active".to_owned());
+    Ok(credential)
 }
 
 fn credential_from_api_key(
@@ -715,34 +767,54 @@ fn credential_from_api_key(
     let suffix = secret_hash.chars().take(16).collect::<String>();
     let provider_code = normalize_secret_provider_code(provider_code);
     Ok(NormalizedCredentialInput {
-        secret_ref: format!("secret://ai-channels/{provider_code}/{suffix}"),
+        name: String::new(),
+        base_url: String::new(),
+        secret_ref: format!("secret://ai-channel-credentials/{provider_code}/{suffix}"),
         secret_hash,
         masked_label: mask_api_key(api_key),
         credential_material: Some(api_key.to_owned()),
+        priority: 100,
+        weight: 100,
+        status: "active".to_owned(),
     })
 }
 
 fn reject_unsupported_plaintext_auth_key(request: &Map<String, Value>) -> Result<(), String> {
-    for (key, value) in request {
-        if key == "apiKey" {
-            continue;
+    reject_unsupported_plaintext_auth_key_value(&Value::Object(request.clone()))
+}
+
+fn reject_unsupported_plaintext_auth_key_value(value: &Value) -> Result<(), String> {
+    match value {
+        Value::Object(object) => {
+            for (key, value) in object {
+                if key == "apiKey" {
+                    continue;
+                }
+                if is_unsupported_plaintext_secret_key(key) {
+                    let has_plaintext = match value {
+                        Value::String(value) => !value.trim().is_empty(),
+                        Value::Null => false,
+                        _ => true,
+                    };
+                    if has_plaintext {
+                        return Err(
+                            "apiKey is the supported plaintext credential input for channel credentials"
+                                .to_owned(),
+                        );
+                    }
+                }
+                reject_unsupported_plaintext_auth_key_value(value)?;
+            }
+            Ok(())
         }
-        if !is_unsupported_plaintext_secret_key(key) {
-            continue;
+        Value::Array(items) => {
+            for item in items {
+                reject_unsupported_plaintext_auth_key_value(item)?;
+            }
+            Ok(())
         }
-        let has_plaintext = match value {
-            Value::String(value) => !value.trim().is_empty(),
-            Value::Null => false,
-            _ => true,
-        };
-        if has_plaintext {
-            return Err(
-                "apiKey is the supported plaintext credential input for channel credentials"
-                    .to_owned(),
-            );
-        }
+        _ => Ok(()),
     }
-    Ok(())
 }
 
 fn is_unsupported_plaintext_secret_key(key: &str) -> bool {
@@ -1222,6 +1294,36 @@ fn normalize_weight(weight: i64) -> Result<i64, String> {
     Ok(weight)
 }
 
+fn normalize_credential_priority(priority: i64) -> Result<i64, String> {
+    if !(MIN_PRIORITY..=MAX_PRIORITY).contains(&priority) {
+        return Err(format!(
+            "credential priority must be between {MIN_PRIORITY} and {MAX_PRIORITY}"
+        ));
+    }
+    Ok(priority)
+}
+
+fn normalize_credential_status(value: &str) -> Result<String, String> {
+    let value = value.trim().to_ascii_lowercase();
+    match value.as_str() {
+        "active" | "disabled" | "error" => Ok(value),
+        _ => Err("credential status must be one of active, disabled, error".to_owned()),
+    }
+}
+
+fn normalize_credential_rotation(value: &str) -> Result<String, String> {
+    let normalized = value.trim().to_ascii_lowercase().replace('-', "_");
+    match normalized.as_str() {
+        "default" | "priority" | "round_robin" | "weighted_round_robin" | "random" => {
+            Ok(normalized)
+        }
+        _ => Err(
+            "credentialRotation must be one of default, priority, round_robin, weighted_round_robin, random"
+                .to_owned(),
+        ),
+    }
+}
+
 fn normalize_timeout_ms(timeout_ms: i64) -> Result<i64, String> {
     if !(MIN_TIMEOUT_MS..=MAX_TIMEOUT_MS).contains(&timeout_ms) {
         return Err(format!(
@@ -1364,6 +1466,7 @@ fn build_create_command(
     request: NormalizedCreateRequest,
 ) -> Result<CreateAdminChannelCommand, ChannelCommandBuildError> {
     let model_uuids = generate_entity_uuids(&state, request.models.len())?;
+    let credentials = build_credential_inputs(&state, request.credentials)?;
     Ok(CreateAdminChannelCommand {
         subject,
         channel_uuid: generate_entity_uuid(&state)?,
@@ -1376,11 +1479,8 @@ fn build_create_command(
         channel_type: request.channel_type,
         protocol: request.protocol,
         access_type: request.access_type,
-        base_url: request.base_url,
-        secret_ref: request.secret_ref,
-        secret_hash: request.secret_hash,
-        masked_label: request.masked_label,
-        credential_material: request.credential_material,
+        credential_rotation: request.credential_rotation,
+        credentials,
         models: request.models,
         capabilities: request.capabilities,
         resource_codes: request.resource_codes,
@@ -1410,6 +1510,10 @@ fn build_update_command(
             .map(|models| models.len())
             .unwrap_or(0),
     )?;
+    let credentials = request
+        .credentials
+        .map(|credentials| build_credential_inputs(&state, credentials))
+        .transpose()?;
     Ok(UpdateAdminChannelCommand {
         subject,
         channel_id: request.channel_id,
@@ -1422,11 +1526,8 @@ fn build_update_command(
         channel_type: request.channel_type,
         protocol: request.protocol,
         access_type: request.access_type,
-        base_url: request.base_url,
-        secret_ref: request.secret_ref,
-        secret_hash: request.secret_hash,
-        masked_label: request.masked_label,
-        credential_material: request.credential_material,
+        credential_rotation: request.credential_rotation,
+        credentials,
         models: request.models,
         capabilities: request.capabilities,
         resource_codes: request.resource_codes,
@@ -1439,6 +1540,29 @@ fn build_update_command(
         request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
+}
+
+fn build_credential_inputs(
+    state: &AdminChannelState,
+    credentials: Vec<NormalizedCredentialInput>,
+) -> Result<Vec<AdminChannelCredentialInput>, ChannelCommandBuildError> {
+    credentials
+        .into_iter()
+        .map(|credential| {
+            Ok(AdminChannelCredentialInput {
+                credential_uuid: generate_entity_uuid(state)?,
+                name: credential.name,
+                base_url: credential.base_url,
+                secret_ref: credential.secret_ref,
+                secret_hash: credential.secret_hash,
+                masked_label: credential.masked_label,
+                credential_material: credential.credential_material,
+                priority: credential.priority,
+                weight: credential.weight,
+                status: credential.status,
+            })
+        })
+        .collect()
 }
 
 fn build_delete_command(
@@ -1505,9 +1629,12 @@ fn to_item_response(item: AdminChannelItem) -> AdminChannelItemResponse {
         channel_type: item.channel_type,
         protocol: item.protocol,
         access_type: item.access_type,
-        base_url: item.base_url,
-        secret_ref: item.secret_ref,
-        api_key: item.api_key,
+        credential_rotation: item.credential_rotation,
+        credentials: item
+            .credentials
+            .into_iter()
+            .map(to_credential_response)
+            .collect(),
         created_at: item.created_at,
         expires_at: item.expires_at,
         models: item.models,
@@ -1539,10 +1666,12 @@ fn to_safe_item_response(item: AdminChannelItem) -> AdminChannelSafeItemResponse
         channel_type: item.channel_type,
         protocol: item.protocol,
         access_type: item.access_type,
-        base_url: item.base_url,
-        masked_label: item
-            .api_key
-            .or_else(|| item.secret_ref.map(|_| "configured".to_owned())),
+        credential_rotation: item.credential_rotation,
+        credentials: item
+            .credentials
+            .into_iter()
+            .map(to_safe_credential_response)
+            .collect(),
         created_at: item.created_at,
         expires_at: item.expires_at,
         models: item.models,
@@ -1561,6 +1690,38 @@ fn to_safe_item_response(item: AdminChannelItem) -> AdminChannelSafeItemResponse
         weight: item.weight,
         status: item.status,
         balance: item.balance,
+        errors: item.errors,
+    }
+}
+
+fn to_credential_response(item: AdminChannelCredentialItem) -> AdminChannelCredentialResponse {
+    AdminChannelCredentialResponse {
+        id: item.id.to_string(),
+        credential_id: item.credential_id.to_string(),
+        name: item.name,
+        base_url: item.base_url,
+        secret_ref: item.secret_ref,
+        api_key: item.api_key,
+        masked_label: item.masked_label,
+        priority: item.priority,
+        weight: item.weight,
+        status: item.status,
+        errors: item.errors,
+    }
+}
+
+fn to_safe_credential_response(
+    item: AdminChannelCredentialItem,
+) -> AdminChannelSafeCredentialResponse {
+    AdminChannelSafeCredentialResponse {
+        id: item.id.to_string(),
+        credential_id: item.credential_id.to_string(),
+        name: item.name,
+        base_url: item.base_url,
+        masked_label: item.masked_label,
+        priority: item.priority,
+        weight: item.weight,
+        status: item.status,
         errors: item.errors,
     }
 }

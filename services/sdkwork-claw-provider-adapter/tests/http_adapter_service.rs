@@ -520,6 +520,7 @@ fn adapter_request() -> AdapterInvocationRequest {
         provider: AdapterProviderContext {
             provider_code: "tencent-cloud".to_owned(),
             channel_id: 3001,
+            region_code: "global".to_owned(),
             provider_model: "hunyuan-video".to_owned(),
             base_url: Some("https://hunyuan.tencentcloudapi.com".to_owned()),
             auth_profile: json!({"type": "cloud_signature"}),

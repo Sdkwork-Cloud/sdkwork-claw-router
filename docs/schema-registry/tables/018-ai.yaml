@@ -52,7 +52,7 @@ tables:
     primary_modality: enum_int32
     model_count: int64
     default_model_id: int64
-    default_model: string(128)
+    default_model: string(256)
     sort_order: int32
   indexes:
   - name: idx_ai_model_family_tenant_status_sort
@@ -116,7 +116,7 @@ tables:
     - catalog_key
   columns:
     catalog_key: string(256)
-    model: string(128)
+    model: string(256)
     display_name: string(128)
     vendor_id: int64
     vendor_code: string(64)
@@ -159,7 +159,7 @@ tables:
     routing_state: enum_int32
     deprecated_at: instant
     retired_at: instant
-    replacement_model: string(128)
+    replacement_model: string(256)
     description: text
   indexes:
   - name: idx_ai_model_tenant_status_updated
@@ -275,7 +275,7 @@ tables:
   columns:
     model_id: int64
     catalog_key: string(256)
-    model: string(128)
+    model: string(256)
     vendor_code: string(64)
     capability: enum_int32
     capability_code: string(64)
@@ -609,12 +609,12 @@ tables:
   columns:
     model_id: int64
     catalog_key: string(256)
-    model: string(128)
+    model: string(256)
     vendor_code: string(64)
     region_code: string(64)
     provider_code: string(64)
     channel_id: int64
-    provider_model: string(128)
+    provider_model: string(256)
     platform_code: string(64)
     service_tier: string(64)
     price_side: enum_int32
@@ -916,10 +916,10 @@ tables:
     vendor_code: string(64)
     family_code: string(64)
     model_id: int64
-    model: string(128)
+    model: string(256)
     provider_code: string(64)
     channel_id: int64
-    provider_model: string(128)
+    provider_model: string(256)
     capability_code: string(64)
     platform_code: string(64)
     service_tier: string(64)
@@ -1202,7 +1202,7 @@ tables:
     rank_scope: string(64)
     model_id: int64
     catalog_key: string(256)
-    model: string(128)
+    model: string(256)
     vendor_code: string(64)
     region_code: string(64)
     vendor_name_snapshot: string(128)
@@ -1391,7 +1391,7 @@ tables:
     rule_code: string(64)
     priority: int32
     match_expression: json
-    target_model: string(128)
+    target_model: string(256)
     candidate_channels: json
     fallback_chain: json
     constraints: json
@@ -1433,8 +1433,8 @@ tables:
     policy_id: int64
     profile_id: int64
     rule_id: int64
-    requested_model: string(128)
-    resolved_model: string(128)
+    requested_model: string(256)
+    resolved_model: string(256)
     capability: enum_int32
     selected_provider_id: int64
     selected_channel_id: int64
@@ -1501,10 +1501,11 @@ tables:
     provider_id: int64
     channel_id: int64
     channel_name_snapshot: string(128)
-    requested_model: string(128)
+    requested_model: string(256)
     requested_model_catalog_key: string(256)
-    provider_model: string(128)
+    provider_model: string(256)
     provider_native_model: string(256)
+    region_code: string(64)
     endpoint: string(256)
     request_path: string(256)
     http_method: string(16)
@@ -1614,8 +1615,9 @@ tables:
     owner_name_snapshot: string(128)
     catalog_key: string(256)
     requested_model_catalog_key: string(256)
-    model: string(128)
+    model: string(256)
     provider_native_model: string(256)
+    region_code: string(64)
     provider_id: int64
     channel_id: int64
     modality: enum_int32
@@ -1757,7 +1759,7 @@ tables:
     scope_type: enum_int32
     scope_id: int64
     channel_group_id: int64
-    model: string(128)
+    model: string(256)
     quota_period: enum_int32
     quota_unit: enum_int32
     quota_limit: decimal
@@ -2453,7 +2455,7 @@ tables:
     agent_session_id: string(128)
     memory_space_id: string(128)
     runtime: string(128)
-    model: string(128)
+    model: string(256)
     run_uuid: string(128)
     run_status:
       type: string(64)
@@ -2462,7 +2464,7 @@ tables:
     input_message: text
     output_message: text
     target_modality: enum_int32
-    planner_model: string(128)
+    planner_model: string(256)
     execution_mode: string(64)
     started_at: instant
     completed_at: instant
@@ -2570,7 +2572,7 @@ tables:
     skill_id: int64
     mcp_server_id: int64
     tool_name: string(128)
-    model: string(128)
+    model: string(256)
     runtime_invocation_id: string(128)
     input_snapshot: json
     output_snapshot: json
@@ -2727,7 +2729,7 @@ tables:
     visibility: string(32)
     source_surface: string(64)
     default_provider: string(128)
-    default_model: string(128)
+    default_model: string(256)
     default_endpoint: string(128)
     agent_id: string(128)
     agent_session_id: string(128)
@@ -2809,7 +2811,7 @@ tables:
     parent_turn_id: int64
     branch_id: string(128)
     provider: string(128)
-    model: string(128)
+    model: string(256)
     endpoint: string(128)
     streaming: bool
     agent_id: string(128)
@@ -2895,7 +2897,7 @@ tables:
     provider_call_id: string(128)
     provider_response_id: string(128)
     provider: string(128)
-    model: string(128)
+    model: string(256)
     runtime: string(128)
     runtime_invocation_id: string(128)
     content_text: text
@@ -2967,7 +2969,7 @@ tables:
     content_text: text
     content_json: json
     raw_provider_json: json
-    model: string(128)
+    model: string(256)
     provider: string(128)
     runtime: string(128)
     runtime_invocation_id: string(128)
@@ -3174,7 +3176,7 @@ tables:
     sandbox_policy: string(128)
     approval_policy: string(128)
     permission_mode: string(128)
-    default_model: string(128)
+    default_model: string(256)
     execution_mode: string(64)
     last_run_id: string(128)
     last_step_id: int64
@@ -3447,7 +3449,7 @@ tables:
       constraints: NOT NULL DEFAULT 'active'
     memory_id: int64
     embedding_provider: string(128)
-    embedding_model: string(128)
+    embedding_model: string(256)
     embedding_dimensions: int32
     content_hash: string(128)
     vector_json: json
@@ -3667,7 +3669,7 @@ tables:
     provider_session_id: string(128)
     provider_conversation_id: string(128)
     provider_step_id: string(128)
-    model: string(128)
+    model: string(256)
     provider: string(128)
     tool_name: string(128)
     tool_call_id: string(128)
@@ -3829,7 +3831,7 @@ tables:
     trace_id: string(128)
     usage_type: string(64)
     provider: string(128)
-    model: string(128)
+    model: string(256)
     input_tokens: int64
     output_tokens: int64
     cached_tokens: int64
@@ -4164,7 +4166,7 @@ tables:
     session_id: int64
     job_type: enum_int32
     modality: enum_int32
-    model: string(128)
+    model: string(256)
     provider_id: int64
     channel_id: int64
     prompt: text

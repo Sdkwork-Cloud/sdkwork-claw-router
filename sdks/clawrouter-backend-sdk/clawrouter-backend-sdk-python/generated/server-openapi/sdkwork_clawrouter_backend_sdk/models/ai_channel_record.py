@@ -51,6 +51,11 @@ class AiChannelRecord:
     retry_policy: Optional[Dict[str, str]] = None
     risk_level: Optional[str] = None
     rpm_limit: Optional[str] = None
+    site_channel_role: Optional[str] = None
+    site_code: Optional[str] = None
+    site_id: Optional[str] = None
+    site_service_code: Optional[str] = None
+    site_service_id: Optional[str] = None
     timeout_ms: Optional[int] = None
     updated_at: Optional[str] = None
     upstream_balance_amount: Optional[str] = None

@@ -1150,14 +1150,12 @@ fn vendor_region_counts(
 }
 
 fn json_file_refs(target_models_root: &Path, path: &Path) -> Vec<String> {
-    let mut refs: Vec<String> = fs::read_dir(path)
-        .unwrap()
-        .filter_map(Result::ok)
-        .filter(|entry| entry.path().extension().and_then(|value| value.to_str()) == Some("json"))
-        .map(|entry| {
-            entry
-                .path()
-                .strip_prefix(target_models_root)
+    let mut paths = Vec::new();
+    collect_json_file_paths(path, &mut paths);
+    let mut refs: Vec<String> = paths
+        .into_iter()
+        .map(|path| {
+            path.strip_prefix(target_models_root)
                 .unwrap()
                 .to_string_lossy()
                 .replace('\\', "/")
@@ -1165,6 +1163,18 @@ fn json_file_refs(target_models_root: &Path, path: &Path) -> Vec<String> {
         .collect();
     refs.sort();
     refs
+}
+
+fn collect_json_file_paths(path: &Path, paths: &mut Vec<PathBuf>) {
+    for entry in fs::read_dir(path).unwrap() {
+        let entry = entry.unwrap();
+        let entry_path = entry.path();
+        if entry.file_type().unwrap().is_dir() {
+            collect_json_file_paths(&entry_path, paths);
+        } else if entry_path.extension().and_then(|value| value.to_str()) == Some("json") {
+            paths.push(entry_path);
+        }
+    }
 }
 
 fn ranking_snapshot_count(path: &Path) -> usize {

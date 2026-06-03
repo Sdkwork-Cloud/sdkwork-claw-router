@@ -141,9 +141,10 @@ pub use admin_channel_group_store::{
     ReplaceAdminChannelGroupChannelBindingsCommand, UpdateAdminChannelGroupCommand,
 };
 pub use admin_channel_store::{
-    AdminChannelCommandFuture, AdminChannelItem, AdminChannelStore, AdminChannelSubject,
-    AdminChannelTestOutcome, CreateAdminChannelCommand, DeleteAdminChannelCommand,
-    ListAdminChannelsQuery, TestAdminChannelCommand, UpdateAdminChannelCommand,
+    AdminChannelCommandFuture, AdminChannelCredentialInput, AdminChannelCredentialItem,
+    AdminChannelItem, AdminChannelStore, AdminChannelSubject, AdminChannelTestOutcome,
+    CreateAdminChannelCommand, DeleteAdminChannelCommand, ListAdminChannelsQuery,
+    TestAdminChannelCommand, UpdateAdminChannelCommand,
 };
 pub use admin_dashboard_read_store::{
     AdminDashboardQuery, AdminDashboardReadFuture, AdminDashboardReadStore,
@@ -208,13 +209,14 @@ pub use admin_model_rate_limit_store::{
 };
 pub use admin_model_store::{
     AdminAiModelItem, AdminAiModelRegionPriceCommand, AdminModelCatalogSyncItem,
-    AdminModelCommandFuture, AdminModelMappingRuleDraft, AdminModelMappingRuleItem,
-    AdminModelMappingRulePatch, AdminModelStore, AdminModelSubject, AdminModelVendorItem,
-    CreateAdminAiModelCommand, CreateAdminModelMappingCommand, CreateAdminModelVendorCommand,
-    DeleteAdminAiModelCommand, DeleteAdminModelMappingCommand, ListAdminAiModelsQuery,
-    ListAdminModelMappingsQuery, ListAdminModelVendorsQuery, ResolveAdminModelMappingQuery,
-    ResolveAdminModelMappingResult, SyncAdminModelCatalogCommand, UpdateAdminAiModelCommand,
-    UpdateAdminModelMappingCommand,
+    AdminModelCommandFuture, AdminModelMappingRuleBindingDraft, AdminModelMappingRuleBindingItem,
+    AdminModelMappingRuleDraft, AdminModelMappingRuleItem, AdminModelMappingRuleItemDraft,
+    AdminModelMappingRuleMappingItem, AdminModelMappingRulePatch, AdminModelStore,
+    AdminModelSubject, AdminModelVendorItem, CreateAdminAiModelCommand,
+    CreateAdminModelMappingCommand, CreateAdminModelVendorCommand, DeleteAdminAiModelCommand,
+    DeleteAdminModelMappingCommand, ListAdminAiModelsQuery, ListAdminModelMappingsQuery,
+    ListAdminModelVendorsQuery, ResolveAdminModelMappingQuery, ResolveAdminModelMappingResult,
+    SyncAdminModelCatalogCommand, UpdateAdminAiModelCommand, UpdateAdminModelMappingCommand,
 };
 pub use admin_monitor_read_store::{
     AdminMonitorAlert, AdminMonitorNode, AdminMonitorPerformanceDatum, AdminMonitorQuery,

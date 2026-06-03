@@ -232,14 +232,13 @@ async fn import_vendors(
     conn: &mut SqliteConnection,
     catalog: &ModelCatalog,
 ) -> Result<BTreeMap<String, i64>, sqlx::Error> {
-    for vendor in &catalog.vendors {
-        let item = &vendor.vendor;
+    for item in catalog_vendor_records(catalog) {
         sqlx::query(
             r#"
             INSERT INTO ai_model_vendor
-                (uuid, tenant_id, organization_id, data_scope, status, metadata, vendor_code, display_name, legal_name, description, website_url, docs_url, country_region, vendor_type, model_families, capabilities, open_source, sort_order)
+                (uuid, tenant_id, organization_id, data_scope, status, metadata, vendor_code, display_name, legal_name, description, website_url, docs_url, country_region, vendor_type, model_families, capabilities, supported_protocols, client_api_compatibility, open_source, sort_order)
             VALUES
-                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             ON CONFLICT(tenant_id, organization_id, vendor_code) DO UPDATE SET
                 display_name = excluded.display_name,
                 legal_name = excluded.legal_name,
@@ -250,6 +249,8 @@ async fn import_vendors(
                 vendor_type = excluded.vendor_type,
                 model_families = excluded.model_families,
                 capabilities = excluded.capabilities,
+                supported_protocols = excluded.supported_protocols,
+                client_api_compatibility = excluded.client_api_compatibility,
                 open_source = excluded.open_source,
                 sort_order = excluded.sort_order,
                 metadata = excluded.metadata,
@@ -266,20 +267,22 @@ async fn import_vendors(
         .bind(metadata_json(
             catalog,
             "sdkwork_models_vendor",
-            serde_json::json!({ "sourceUrl": item.source.source_url }),
+            serde_json::json!({ "sourceUrl": item.source_url }),
         ))
-        .bind(&item.vendor_code)
-        .bind(&item.display_name)
-        .bind(&item.legal_name)
-        .bind(&item.description)
-        .bind(&item.website_url)
-        .bind(&item.docs_url)
-        .bind(&item.country_region)
+        .bind(item.vendor_code)
+        .bind(item.display_name)
+        .bind(item.legal_name)
+        .bind(item.description)
+        .bind(item.website_url)
+        .bind(item.docs_url)
+        .bind(item.country_region)
         .bind(vendor_type_code(&item.vendor_type))
         .bind(json_array(&item.model_families))
         .bind(json_array(&item.capabilities))
-        .bind(item.open_source.unwrap_or(false))
-        .bind(item.sort_order.unwrap_or(1000000))
+        .bind(json_array(&item.supported_protocols))
+        .bind(serde_json::to_string(&item.client_api_compatibility).unwrap_or_else(|_| "{}".to_owned()))
+        .bind(item.open_source)
+        .bind(item.sort_order)
         .execute(&mut *conn)
         .await?;
     }
@@ -443,7 +446,7 @@ async fn import_models(
         .bind(SYSTEM_TENANT_ID)
         .bind(SYSTEM_ORGANIZATION_ID)
         .bind(SYSTEM_DATA_SCOPE)
-        .bind(ACTIVE_STATUS)
+        .bind(catalog_model_status(model))
         .bind(metadata_json(
             catalog,
             "sdkwork_models_model",
@@ -509,7 +512,7 @@ async fn import_capabilities(
     catalog: &ModelCatalog,
     model_ids: &BTreeMap<String, i64>,
 ) -> Result<(), sqlx::Error> {
-    for (model_catalog_key, (_, model)) in catalog_identity_models(catalog) {
+    for (model_catalog_key, (_, model)) in public_catalog_identity_models(catalog) {
         let model_id = model_ids.get(&model_catalog_key).copied();
         let capabilities = if model.capabilities.is_empty() {
             vec![model.primary_capability.clone()]
@@ -1045,11 +1048,18 @@ async fn import_pricing(
     catalog: &ModelCatalog,
     model_ids: &BTreeMap<String, i64>,
 ) -> Result<(), sqlx::Error> {
+    let public_model_keys = public_catalog_identity_models(catalog)
+        .keys()
+        .cloned()
+        .collect::<std::collections::BTreeSet<_>>();
     for vendor in &catalog.vendors {
         for pricing in &vendor.pricing {
+            let model_catalog_key = model_catalog_key(&pricing.vendor_code, &pricing.model_id);
+            if !public_model_keys.contains(&model_catalog_key) {
+                continue;
+            }
             let pricing_catalog_key = pricing_catalog_key(&pricing.vendor_code, &pricing.model_id);
             for (index, price) in pricing.prices.iter().enumerate() {
-                let model_catalog_key = model_catalog_key(&pricing.vendor_code, &pricing.model_id);
                 let model_id = model_ids.get(&model_catalog_key).copied();
                 let meter_id: Option<i64> = sqlx::query_scalar(
                     "SELECT id FROM ai_billing_meter WHERE tenant_id = 0 AND organization_id = 0 AND meter_code = ?",
@@ -1146,7 +1156,7 @@ async fn import_rankings(
     catalog: &ModelCatalog,
     model_ids: &BTreeMap<String, i64>,
 ) -> Result<(), sqlx::Error> {
-    let model_map = catalog_identity_models(catalog);
+    let model_map = public_catalog_identity_models(catalog);
     for vendor in &catalog.vendors {
         for snapshot in &vendor.rankings {
             for item in &snapshot.items {

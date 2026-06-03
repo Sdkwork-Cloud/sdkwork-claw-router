@@ -1462,7 +1462,7 @@ test("playground generation sends image, responses, Claude, and Gemini models th
     {
       name: "OpenAI image generation",
       prompt: "Create a launch poster",
-      selectedModel: "openai/global/gpt-image-2",
+      selectedModel: "openai/gpt-image-2",
       targetType: "image" as const,
       expectedProvider: "openai",
       generationConfig: {
@@ -1491,40 +1491,40 @@ test("playground generation sends image, responses, Claude, and Gemini models th
             dataUrl: "data:image/png;base64,c2tldGNo",
           },
         ],
-        selectedModel: "openai/global/gpt-image-2",
+        selectedModel: "openai/gpt-image-2",
         targetType: "image",
       },
     },
     {
       name: "OpenAI responses generation",
       prompt: "Inspect the repository",
-      selectedModel: "openai/global/codex-mini-latest",
+      selectedModel: "openai/codex-mini-latest",
       targetType: undefined,
       expectedProvider: "openai",
       generationConfig: undefined,
       referenceImages: undefined,
       expectedRequestJson: {
         prompt: "Inspect the repository",
-        selectedModel: "openai/global/codex-mini-latest",
+        selectedModel: "openai/codex-mini-latest",
       },
     },
     {
       name: "Claude messages generation",
       prompt: "Write a patch plan",
-      selectedModel: "anthropic/global/claude-sonnet-4-5",
+      selectedModel: "anthropic/claude-sonnet-4-5",
       targetType: undefined,
       expectedProvider: "anthropic",
       generationConfig: undefined,
       referenceImages: undefined,
       expectedRequestJson: {
         prompt: "Write a patch plan",
-        selectedModel: "anthropic/global/claude-sonnet-4-5",
+        selectedModel: "anthropic/claude-sonnet-4-5",
       },
     },
     {
       name: "Google Gemini generation",
       prompt: "Summarize this request",
-      selectedModel: "google/global/gemini-2.5-flash",
+      selectedModel: "google/gemini-2.5-flash",
       targetType: undefined,
       expectedProvider: "google",
       generationConfig: { temperature: 0.2 },
@@ -1532,7 +1532,7 @@ test("playground generation sends image, responses, Claude, and Gemini models th
       expectedRequestJson: {
         generationConfig: { temperature: 0.2 },
         prompt: "Summarize this request",
-        selectedModel: "google/global/gemini-2.5-flash",
+        selectedModel: "google/gemini-2.5-flash",
       },
     },
   ];
@@ -3752,8 +3752,8 @@ test("playground chat sends responses, Claude messages, and Gemini models throug
       prompt: "Inspect the repository",
       selectedModel: {
         ...createChatTestModel(),
-        id: "openai/global/codex-mini-latest",
-        catalogKey: "openai/global/codex-mini-latest",
+        id: "openai/codex-mini-latest",
+        catalogKey: "openai/codex-mini-latest",
         model: "codex-mini-latest",
         name: "Codex Mini Latest",
         displayName: "Codex Mini Latest",
@@ -3768,8 +3768,8 @@ test("playground chat sends responses, Claude messages, and Gemini models throug
       prompt: "Write a patch",
       selectedModel: {
         ...createChatTestModel(),
-        id: "anthropic/global/claude-sonnet-4-5",
-        catalogKey: "anthropic/global/claude-sonnet-4-5",
+        id: "anthropic/claude-sonnet-4-5",
+        catalogKey: "anthropic/claude-sonnet-4-5",
         model: "claude-sonnet-4-5",
         name: "Claude Sonnet 4.5",
         displayName: "Claude Sonnet 4.5",
@@ -3784,8 +3784,8 @@ test("playground chat sends responses, Claude messages, and Gemini models throug
       prompt: "Summarize the issue",
       selectedModel: {
         ...createChatTestModel(),
-        id: "google/global/gemini-2.5-flash",
-        catalogKey: "google/global/gemini-2.5-flash",
+        id: "google/gemini-2.5-flash",
+        catalogKey: "google/gemini-2.5-flash",
         model: "gemini-2.5-flash",
         name: "Gemini 2.5 Flash",
         displayName: "Gemini 2.5 Flash",
@@ -4408,7 +4408,7 @@ test("playground chat SSE stream errors fail the runtime invocation", async () =
 
 test("playground chat SSE HTTP errors surface backend and upstream messages", async () => {
   const upstreamMessage = "用户额度不足, 剩余额度: ＄-0.170132";
-  const gatewayMessage = `app runtime event stream is unavailable: gateway runtime stream returned HTTP 403 for model=openai/global/gpt-5.5: ${JSON.stringify({
+  const gatewayMessage = `app runtime event stream is unavailable: gateway runtime stream returned HTTP 403 for model=openai/gpt-5.5: ${JSON.stringify({
     error: {
       code: "insufficient_user_quota",
       message: upstreamMessage,
@@ -4420,7 +4420,7 @@ test("playground chat SSE HTTP errors surface backend and upstream messages", as
     [
       createChatConversationResponse(),
       createChatTurnResponse(),
-      createChatRuntimeInvocationResponseFor("openai/global/gpt-5.5", "openai"),
+      createChatRuntimeInvocationResponseFor("openai/gpt-5.5", "openai"),
       sdkHttpResponse(403, {
         code: "5000",
         msg: gatewayMessage,
@@ -4435,7 +4435,7 @@ test("playground chat SSE HTTP errors surface backend and upstream messages", as
           prompt: "Say hello",
           selectedModel: {
             ...createChatTestModel(),
-            catalogKey: "openai/global/gpt-5.5",
+            catalogKey: "openai/gpt-5.5",
             model: "gpt-5.5",
             name: "GPT-5.5",
           },
@@ -4465,8 +4465,8 @@ test("playground chat SSE HTTP errors surface backend and upstream messages", as
 
 test("playground chat preserves the stream failure message when terminal failure recording fails", async () => {
   const upstreamMessage = "Quota exhausted for the selected provider account";
-  const expectedMessage = `${upstreamMessage} (insufficient_user_quota; HTTP 403; model=openai/global/gpt-5.5)`;
-  const gatewayMessage = `app runtime event stream is unavailable: gateway runtime stream returned HTTP 403 for model=openai/global/gpt-5.5: ${JSON.stringify({
+  const expectedMessage = `${upstreamMessage} (insufficient_user_quota; HTTP 403; model=openai/gpt-5.5)`;
+  const gatewayMessage = `app runtime event stream is unavailable: gateway runtime stream returned HTTP 403 for model=openai/gpt-5.5: ${JSON.stringify({
     error: {
       code: "insufficient_user_quota",
       message: upstreamMessage,
@@ -4478,7 +4478,7 @@ test("playground chat preserves the stream failure message when terminal failure
     [
       createChatConversationResponse(),
       createChatTurnResponse(),
-      createChatRuntimeInvocationResponseFor("openai/global/gpt-5.5", "openai"),
+      createChatRuntimeInvocationResponseFor("openai/gpt-5.5", "openai"),
       sdkHttpResponse(403, {
         code: "5000",
         msg: gatewayMessage,
@@ -4504,7 +4504,7 @@ test("playground chat preserves the stream failure message when terminal failure
           prompt: "Say hello",
           selectedModel: {
             ...createChatTestModel(),
-            catalogKey: "openai/global/gpt-5.5",
+            catalogKey: "openai/gpt-5.5",
             model: "gpt-5.5",
             name: "GPT-5.5",
           },
@@ -4531,8 +4531,8 @@ test("playground chat preserves the stream failure message when terminal failure
 
 test("playground chat exposes failed session metadata after a runtime stream error", async () => {
   const upstreamMessage = "Provider route unavailable for requested model";
-  const expectedMessage = `${upstreamMessage} (provider_route_not_available; HTTP 503; model=openai/global/gpt-5.5)`;
-  const gatewayMessage = `app runtime event stream is unavailable: gateway runtime stream returned HTTP 503 for model=openai/global/gpt-5.5: ${JSON.stringify({
+  const expectedMessage = `${upstreamMessage} (provider_route_not_available; HTTP 503; model=openai/gpt-5.5)`;
+  const gatewayMessage = `app runtime event stream is unavailable: gateway runtime stream returned HTTP 503 for model=openai/gpt-5.5: ${JSON.stringify({
     error: {
       code: "provider_route_not_available",
       message: upstreamMessage,
@@ -4544,7 +4544,7 @@ test("playground chat exposes failed session metadata after a runtime stream err
     [
       createChatConversationResponse(),
       createChatTurnResponse(),
-      createChatRuntimeInvocationResponseFor("openai/global/gpt-5.5", "openai"),
+      createChatRuntimeInvocationResponseFor("openai/gpt-5.5", "openai"),
       sdkHttpResponse(503, {
         code: "5000",
         msg: gatewayMessage,
@@ -4560,7 +4560,7 @@ test("playground chat exposes failed session metadata after a runtime stream err
           prompt: "Say hello",
           selectedModel: {
             ...createChatTestModel(),
-            catalogKey: "openai/global/gpt-5.5",
+            catalogKey: "openai/gpt-5.5",
             model: "gpt-5.5",
             name: "GPT-5.5",
           },
@@ -4866,7 +4866,7 @@ test("playground service derives vendor grouped models from the standard app mod
       data: {
         items: [
           {
-            catalogKey: "openai/global/gpt-4o-mini",
+            catalogKey: "openai/gpt-4o-mini",
             model: "gpt-4o-mini",
             displayName: "GPT-4o mini",
             description: "Fast public model.",
@@ -4899,7 +4899,7 @@ test("playground service derives vendor grouped models from the standard app mod
             priceAvailability: { status: "unavailable", reason: "Public reference price is not configured for this model." },
           },
           {
-            catalogKey: "openai/global/image-gen-pro",
+            catalogKey: "openai/image-gen-pro",
             model: "image-gen-pro",
             displayName: "Image Gen Pro",
             description: "High quality image generation.",
@@ -4932,7 +4932,7 @@ test("playground service derives vendor grouped models from the standard app mod
             priceAvailability: { status: "unavailable", reason: "Public reference price is not configured for this model." },
           },
           {
-            catalogKey: "kuaishou/cn/kling-v2",
+            catalogKey: "kuaishou/kling-v2",
             model: "kling-v2",
             displayName: "Kling v2",
             description: "Video generation model.",
@@ -4965,7 +4965,7 @@ test("playground service derives vendor grouped models from the standard app mod
             priceAvailability: { status: "unavailable", reason: "Public reference price is not configured for this model." },
           },
           {
-            catalogKey: "elevenlabs/global/voice-pro",
+            catalogKey: "elevenlabs/voice-pro",
             model: "voice-pro",
             displayName: "Voice Pro",
             description: "Speech generation model.",
@@ -5032,7 +5032,7 @@ test("playground chat keeps catalog models visible regardless of provider route 
       data: {
         items: [
           {
-            catalogKey: "openai/global/gpt-5.5",
+            catalogKey: "openai/gpt-5.5",
             model: "gpt-5.5",
             displayName: "GPT-5.5",
             description: "Catalog-only model without a callable route.",
@@ -5056,7 +5056,7 @@ test("playground chat keeps catalog models visible regardless of provider route 
             priceAvailability: { status: "reference", reason: "Public reference price only." },
           },
           {
-            catalogKey: "openai/global/gpt-4o-mini",
+            catalogKey: "openai/gpt-4o-mini",
             model: "gpt-4o-mini",
             displayName: "GPT-4o mini",
             description: "Callable routed chat model.",
@@ -5090,8 +5090,8 @@ test("playground chat keeps catalog models visible regardless of provider route 
         .flatMap((group) => group.llms.map((model) => model.catalogKey))
         .sort();
       assert.deepEqual(visibleCatalogKeys, [
-        "openai/global/gpt-4o-mini",
-        "openai/global/gpt-5.5",
+        "openai/gpt-4o-mini",
+        "openai/gpt-5.5",
       ]);
     },
   );
@@ -5121,7 +5121,7 @@ test("playground service fails closed when standard model catalog item omits req
       data: {
         items: [
           {
-            catalogKey: "openai/global/broken",
+            catalogKey: "openai/broken",
             model: "broken",
             vendorCode: "openai",
           },

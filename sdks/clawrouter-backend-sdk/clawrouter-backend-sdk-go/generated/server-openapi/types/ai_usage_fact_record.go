@@ -55,6 +55,7 @@ type AiUsageFactRecord struct {
 	RateMultiplier string `json:"rate_multiplier"`
 	ReasoningEffort string `json:"reasoning_effort"`
 	ReferenceMultiplier string `json:"reference_multiplier"`
+	RegionCode string `json:"region_code"`
 	RequestCount string `json:"request_count"`
 	RequestId string `json:"request_id"`
 	RequestedModelCatalogKey string `json:"requested_model_catalog_key"`

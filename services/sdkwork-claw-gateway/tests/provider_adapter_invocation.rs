@@ -110,6 +110,7 @@ fn adapter_request() -> AdapterInvocationRequest {
         provider: AdapterProviderContext {
             provider_code: "tencent-cloud".to_owned(),
             channel_id: 3001,
+            region_code: "global".to_owned(),
             provider_model: "vidu-q1".to_owned(),
             base_url: Some("https://api.vidu.example".to_owned()),
             auth_profile: json!({"type": "bearer"}),

@@ -269,7 +269,7 @@ export function AnalyticsAdmin() {
             {(activeSection === 'overview' || activeSection === 'users' || activeSection === 'models') ? (
               <section
                 data-admin-analytics-table
-                className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm dark:border-white/10 dark:bg-[#1a1a1a]"
+                className="flex min-h-[320px] max-h-[min(640px,calc(100dvh-260px))] flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm dark:border-white/10 dark:bg-[#1a1a1a]"
               >
                 <div className="flex flex-col gap-3 border-b border-slate-200 p-4 dark:border-white/10 lg:flex-row lg:items-center lg:justify-between">
                   <div className="flex flex-wrap items-center gap-2">
@@ -391,7 +391,7 @@ function UserRankingTable({
   locale: string;
 }) {
   return (
-    <div className="overflow-x-auto">
+    <div className="min-h-0 flex-1 overflow-auto">
       <table className="w-full text-left text-sm text-slate-600 dark:text-slate-400">
         <thead className="border-b border-slate-200 bg-slate-50 text-xs font-semibold uppercase text-slate-500 dark:border-white/10 dark:bg-white/[0.03] dark:text-slate-400">
           <tr>
@@ -454,7 +454,7 @@ function ModelRankingTable({
   locale: string;
 }) {
   return (
-    <div className="overflow-x-auto">
+    <div className="min-h-0 flex-1 overflow-auto">
       <table className="w-full text-left text-sm text-slate-600 dark:text-slate-400">
         <thead className="border-b border-slate-200 bg-slate-50 text-xs font-semibold uppercase text-slate-500 dark:border-white/10 dark:bg-white/[0.03] dark:text-slate-400">
           <tr>

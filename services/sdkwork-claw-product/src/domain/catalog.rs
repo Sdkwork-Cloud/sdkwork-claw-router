@@ -17,22 +17,120 @@ pub fn provider_native_model_id(model_key: &str) -> String {
     if value.is_empty() {
         return String::new();
     }
-    let parts = value
+    if let Some(identity) = parse_model_catalog_identity(value) {
+        if unambiguous_catalog_namespace_prefix(&identity.vendor_code)
+            || relay_provider_namespace_prefix(&identity.vendor_code)
+        {
+            return identity.model_id();
+        }
+    }
+    value.to_owned()
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct ModelCatalogIdentity {
+    pub vendor_code: String,
+    pub model_parts: Vec<String>,
+}
+
+impl ModelCatalogIdentity {
+    pub fn model_id(&self) -> String {
+        self.model_parts.join("/")
+    }
+}
+
+pub fn parse_model_catalog_identity(value: &str) -> Option<ModelCatalogIdentity> {
+    let trimmed = value.trim();
+    if trimmed.is_empty() {
+        return None;
+    }
+    let parts = trimmed.split('/').map(str::trim).collect::<Vec<_>>();
+    if parts.len() < 2 || parts.iter().any(|part| part.is_empty()) {
+        return None;
+    }
+    if is_model_region_segment(parts[1]) {
+        return None;
+    }
+    Some(ModelCatalogIdentity {
+        vendor_code: parts[0].to_owned(),
+        model_parts: parts[1..].iter().map(|part| (*part).to_owned()).collect(),
+    })
+}
+
+pub fn ensure_canonical_model_catalog_key(value: &str, field_name: &str) -> DomainResult<()> {
+    if parse_model_catalog_identity(value).is_some() {
+        return Ok(());
+    }
+    let parts = value.trim().split('/').map(str::trim).collect::<Vec<_>>();
+    if parts.len() >= 3
+        && parts
+            .get(1)
+            .is_some_and(|part| is_model_region_segment(part))
+    {
+        return Err(DomainError::new(format!(
+            "{field_name} must use vendorCode/modelId; region belongs to region_code: {value}"
+        )));
+    }
+    Err(DomainError::new(format!(
+        "{field_name} must use vendorCode/modelId: {value}"
+    )))
+}
+
+pub fn model_catalog_scope_matches_key(scope: &str, key: &str) -> bool {
+    let scope = normalize_model_catalog_scope_value(scope);
+    let key = normalize_model_catalog_scope_value(key);
+    if scope.is_empty() || key.is_empty() {
+        return false;
+    }
+    let is_valid_catalog_key = parse_model_catalog_identity(&key).is_some();
+    if !is_valid_catalog_key && key.contains('/') {
+        return false;
+    }
+    if scope == "*" || scope == "all" {
+        return true;
+    }
+    if scope == key {
+        return true;
+    }
+    let Some(identity) = parse_model_catalog_identity(&key) else {
+        return false;
+    };
+    if let Some(prefix) = scope.strip_suffix("/*") {
+        return !prefix.is_empty()
+            && (key == prefix
+                || key
+                    .strip_prefix(prefix)
+                    .is_some_and(|tail| tail.starts_with('/')));
+    }
+
+    let scope_parts = scope
         .split('/')
-        .map(str::trim)
         .filter(|part| !part.is_empty())
         .collect::<Vec<_>>();
-    match parts.as_slice() {
-        [vendor, model] if unambiguous_catalog_namespace_prefix(vendor) => (*model).to_owned(),
-        [provider, provider_native @ ..]
-            if relay_provider_namespace_prefix(provider)
-                && !provider_native.is_empty()
-                && !known_region_segment(provider_native[0]) =>
-        {
-            provider_native.join("/")
+    let native_model = identity.model_id();
+    match scope_parts.as_slice() {
+        [scope_value] => {
+            *scope_value == identity.vendor_code
+                || *scope_value == native_model.as_str()
+                || identity
+                    .model_parts
+                    .last()
+                    .is_some_and(|model| *scope_value == model.as_str())
         }
-        _ => value.to_owned(),
+        [scope_vendor, scope_model @ ..] => {
+            (*scope_vendor == identity.vendor_code
+                && scope_model
+                    .iter()
+                    .copied()
+                    .eq(identity.model_parts.iter().map(String::as_str)))
+                || scope == native_model
+        }
+        [] => false,
     }
+}
+
+fn normalize_model_catalog_scope_value(value: &str) -> String {
+    value.trim().to_ascii_lowercase()
 }
 
 fn unambiguous_catalog_namespace_prefix(prefix: &str) -> bool {
@@ -65,11 +163,20 @@ fn relay_provider_namespace_prefix(prefix: &str) -> bool {
     )
 }
 
-fn known_region_segment(value: &str) -> bool {
-    matches!(
-        value.trim().to_ascii_lowercase().as_str(),
+pub fn is_model_region_segment(value: &str) -> bool {
+    let value = value.trim().to_ascii_lowercase();
+    if value.is_empty() {
+        return false;
+    }
+    if matches!(
+        value.as_str(),
         "global"
             | "cn"
+            | "china"
+            | "mainland"
+            | "overseas"
+            | "international"
+            | "intl"
             | "us"
             | "eu"
             | "ap"
@@ -77,11 +184,84 @@ fn known_region_segment(value: &str) -> bool {
             | "jp"
             | "sg"
             | "hk"
-            | "aws"
-            | "azure"
-            | "gcp"
             | "local"
+    ) {
+        return true;
+    }
+    if is_hyphenated_cloud_region(&value) || is_china_region_alias(&value) {
+        return true;
+    }
+    matches!(
+        value.as_str(),
+        "eastus"
+            | "eastus2"
+            | "westus"
+            | "westus2"
+            | "westus3"
+            | "centralus"
+            | "northcentralus"
+            | "southcentralus"
+            | "westcentralus"
+            | "canadaeast"
+            | "canadacentral"
+            | "brazilsouth"
+            | "northeurope"
+            | "westeurope"
+            | "francecentral"
+            | "switzerlandnorth"
+            | "uksouth"
+            | "ukwest"
+            | "swedencentral"
+            | "norwayeast"
+            | "germanywestcentral"
+            | "italynorth"
+            | "polandcentral"
+            | "israelcentral"
+            | "qatarcentral"
+            | "uaenorth"
+            | "southafricanorth"
+            | "centralindia"
+            | "southindia"
+            | "westindia"
+            | "japaneast"
+            | "japanwest"
+            | "koreacentral"
+            | "koreasouth"
+            | "eastasia"
+            | "southeastasia"
+            | "australiaeast"
+            | "australiasoutheast"
+            | "australiacentral"
+            | "newzealandnorth"
+            | "malaysiawest"
+            | "indonesiacentral"
     )
+}
+
+fn is_hyphenated_cloud_region(value: &str) -> bool {
+    let Some(prefix) = value.split('-').next() else {
+        return false;
+    };
+    if !matches!(
+        prefix,
+        "af" | "ap" | "ca" | "cn" | "eu" | "il" | "me" | "sa" | "us"
+    ) {
+        return false;
+    }
+    value
+        .rsplit('-')
+        .next()
+        .and_then(|part| part.parse::<u16>().ok())
+        .is_some()
+}
+
+fn is_china_region_alias(value: &str) -> bool {
+    value.strip_prefix("cn-").is_some_and(|rest| {
+        !rest.is_empty()
+            && rest
+                .bytes()
+                .all(|byte| byte.is_ascii_alphanumeric() || byte == b'-')
+    })
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]
@@ -107,7 +287,6 @@ pub struct AiModel {
     pub model: String,
     pub display_name: String,
     pub vendor_code: String,
-    pub region_code: String,
     pub capabilities: Vec<String>,
     pub description: Option<String>,
     pub modalities: Vec<String>,
@@ -131,67 +310,79 @@ pub struct AiModel {
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord)]
-pub enum ModelMappingScope {
+pub enum ModelMappingBindingType {
+    ProviderAccount,
     Channel,
+    ChannelGroup,
     Vendor,
     Global,
+    Site,
+    SiteService,
 }
 
-impl ModelMappingScope {
+impl ModelMappingBindingType {
     pub fn from_str(value: &str) -> DomainResult<Self> {
         match value.trim().to_ascii_lowercase().as_str() {
+            "provider_account" => Ok(Self::ProviderAccount),
             "channel" => Ok(Self::Channel),
+            "channel_group" => Ok(Self::ChannelGroup),
             "vendor" => Ok(Self::Vendor),
             "global" => Ok(Self::Global),
+            "site" => Ok(Self::Site),
+            "site_service" => Ok(Self::SiteService),
             value => Err(DomainError::new(format!(
-                "ai_model_mapping_rule.scope_type contains unsupported value: {value}"
+                "ai_model_mapping_rule_binding.binding_type contains unsupported value: {value}"
             ))),
         }
     }
-}
 
-#[derive(Debug, Clone, PartialEq, Eq)]
-pub struct ModelMappingRule {
-    pub id: i64,
-    pub scope: ModelMappingScope,
-    pub vendor_code: Option<String>,
-    pub channel_id: Option<i64>,
-    pub channel_code: Option<String>,
-    pub source_model: String,
-    pub target_model: String,
-    pub target_catalog_key: Option<String>,
-    pub target_vendor_code: Option<String>,
-    pub target_provider_model: Option<String>,
-    pub target_provider_native_model: Option<String>,
-    pub priority: i32,
-}
-
-impl ModelMappingRule {
-    pub fn new(
-        id: i64,
-        scope: ModelMappingScope,
-        source_model: &str,
-        target_model: &str,
-        priority: i32,
-    ) -> Self {
-        Self {
-            id,
-            scope,
-            vendor_code: None,
-            channel_id: None,
-            channel_code: None,
-            source_model: source_model.to_owned(),
-            target_model: target_model.to_owned(),
-            target_catalog_key: None,
-            target_vendor_code: None,
-            target_provider_model: None,
-            target_provider_native_model: None,
-            priority,
+    pub fn priority_rank(self) -> i32 {
+        match self {
+            Self::ProviderAccount => 0,
+            Self::Channel => 1,
+            Self::ChannelGroup => 2,
+            Self::Vendor => 3,
+            Self::Global => 4,
+            Self::Site => 5,
+            Self::SiteService => 6,
         }
     }
 
-    pub fn with_vendor_code(mut self, vendor_code: &str) -> Self {
-        self.vendor_code = normalized_optional_text(vendor_code);
+    pub fn as_str(self) -> &'static str {
+        match self {
+            Self::ProviderAccount => "provider_account",
+            Self::Channel => "channel",
+            Self::ChannelGroup => "channel_group",
+            Self::Vendor => "vendor",
+            Self::Global => "global",
+            Self::Site => "site",
+            Self::SiteService => "site_service",
+        }
+    }
+}
+
+#[derive(Debug, Clone, Default, PartialEq, Eq)]
+pub struct ResolveModelMappingContext {
+    pub vendor_code: Option<String>,
+    pub channel_id: Option<i64>,
+    pub channel_code: Option<String>,
+    pub channel_group_id: Option<i64>,
+    pub channel_group_code: Option<String>,
+    pub provider_account_id: Option<i64>,
+    pub provider_account_code: Option<String>,
+    pub site_id: Option<i64>,
+    pub site_code: Option<String>,
+    pub site_service_id: Option<i64>,
+    pub site_service_code: Option<String>,
+}
+
+impl ResolveModelMappingContext {
+    pub fn new() -> Self {
+        Self::default()
+    }
+
+    pub fn with_vendor_code(mut self, vendor_code: impl Into<String>) -> Self {
+        self.vendor_code = normalized_optional_text(&vendor_code.into());
         self
     }
 
@@ -200,8 +391,102 @@ impl ModelMappingRule {
         self
     }
 
-    pub fn with_channel_code(mut self, channel_code: &str) -> Self {
-        self.channel_code = normalized_optional_text(channel_code);
+    pub fn with_channel_code(mut self, channel_code: impl Into<String>) -> Self {
+        self.channel_code = normalized_optional_text(&channel_code.into());
+        self
+    }
+
+    pub fn with_channel_group_id(mut self, channel_group_id: i64) -> Self {
+        self.channel_group_id = Some(channel_group_id);
+        self
+    }
+
+    pub fn with_channel_group_code(mut self, channel_group_code: impl Into<String>) -> Self {
+        self.channel_group_code = normalized_optional_text(&channel_group_code.into());
+        self
+    }
+
+    pub fn with_provider_account_id(mut self, provider_account_id: i64) -> Self {
+        self.provider_account_id = Some(provider_account_id);
+        self
+    }
+
+    pub fn with_provider_account_code(mut self, provider_account_code: impl Into<String>) -> Self {
+        self.provider_account_code = normalized_optional_text(&provider_account_code.into());
+        self
+    }
+
+    pub fn with_site(mut self, site_id: Option<i64>, site_code: Option<&str>) -> Self {
+        self.site_id = site_id;
+        self.site_code = site_code.and_then(normalized_optional_text);
+        self
+    }
+
+    pub fn with_site_service(
+        mut self,
+        site_service_id: Option<i64>,
+        site_service_code: Option<&str>,
+    ) -> Self {
+        self.site_service_id = site_service_id;
+        self.site_service_code = site_service_code.and_then(normalized_optional_text);
+        self
+    }
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct ModelMappingRule {
+    pub id: i64,
+    pub binding_type: ModelMappingBindingType,
+    pub binding_id: Option<i64>,
+    pub binding_code: Option<String>,
+    pub source_model: String,
+    pub source_catalog_key: Option<String>,
+    pub target_model: String,
+    pub target_catalog_key: Option<String>,
+    pub target_vendor_code: Option<String>,
+    pub target_provider_model: Option<String>,
+    pub target_provider_native_model: Option<String>,
+    pub binding_sort_order: i32,
+    pub item_sort_order: i32,
+}
+
+impl ModelMappingRule {
+    pub fn new(
+        id: i64,
+        binding_type: ModelMappingBindingType,
+        source_model: &str,
+        target_model: &str,
+        binding_sort_order: i32,
+    ) -> Self {
+        Self {
+            id,
+            binding_type,
+            binding_id: None,
+            binding_code: None,
+            source_model: source_model.to_owned(),
+            source_catalog_key: None,
+            target_model: target_model.to_owned(),
+            target_catalog_key: None,
+            target_vendor_code: None,
+            target_provider_model: None,
+            target_provider_native_model: None,
+            binding_sort_order,
+            item_sort_order: 100,
+        }
+    }
+
+    pub fn with_binding_id(mut self, binding_id: i64) -> Self {
+        self.binding_id = Some(binding_id);
+        self
+    }
+
+    pub fn with_binding_code(mut self, binding_code: &str) -> Self {
+        self.binding_code = normalized_optional_text(binding_code);
+        self
+    }
+
+    pub fn with_source_catalog_key(mut self, source_catalog_key: &str) -> Self {
+        self.source_catalog_key = normalized_optional_text(source_catalog_key);
         self
     }
 
@@ -265,7 +550,6 @@ impl AiModel {
             model: model.to_owned(),
             display_name: display_name.to_owned(),
             vendor_code: vendor_code.to_owned(),
-            region_code: "global".to_owned(),
             capabilities: capabilities.into_iter().map(str::to_owned).collect(),
             description: None,
             modalities: Vec::new(),
@@ -294,11 +578,6 @@ impl AiModel {
         self
     }
 
-    pub fn with_region_code(mut self, region_code: &str) -> Self {
-        self.region_code = region_code.to_owned();
-        self
-    }
-
     pub fn with_public_metadata(mut self, metadata: AiModelPublicMetadata) -> Self {
         self.description = metadata.description;
         self.modalities = metadata.modalities;
@@ -320,6 +599,12 @@ impl AiModel {
         self.routing_state = metadata.routing_state;
         self.replacement_model = metadata.replacement_model;
         self
+    }
+
+    pub fn is_publicly_active(&self) -> bool {
+        matches!(self.release_stage.unwrap_or(1), 1 | 2)
+            && self.shelf_state.unwrap_or(1) == 1
+            && self.routing_state.unwrap_or(1) == 1
     }
 }
 
@@ -872,6 +1157,10 @@ pub struct ModelProviderRoute {
     pub region_code: String,
     pub provider_code: String,
     pub channel_id: i64,
+    pub credential_id: Option<i64>,
+    pub credential_rotation: String,
+    pub credential_priority: i32,
+    pub credential_weight: i32,
     pub provider_model: String,
     pub base_url: Option<String>,
     pub secret_ref: Option<String>,
@@ -956,7 +1245,16 @@ impl ProviderChannelGroupBinding {
 pub struct ProviderChannelRoute {
     pub provider_code: String,
     pub channel_id: i64,
+    pub credential_id: Option<i64>,
+    pub credential_rotation: String,
+    pub credential_priority: i32,
+    pub credential_weight: i32,
+    pub channel_code: Option<String>,
     pub region_code: String,
+    pub site_id: Option<i64>,
+    pub site_code: Option<String>,
+    pub site_service_id: Option<i64>,
+    pub site_service_code: Option<String>,
     pub base_url: Option<String>,
     pub secret_ref: Option<String>,
     pub auth_profile: ProviderAuthProfile,
@@ -970,7 +1268,16 @@ impl ProviderChannelRoute {
         Self {
             provider_code: provider_code.to_owned(),
             channel_id,
+            credential_id: None,
+            credential_rotation: DEFAULT_CREDENTIAL_ROTATION.to_owned(),
+            credential_priority: 100,
+            credential_weight: 100,
+            channel_code: None,
             region_code: "global".to_owned(),
+            site_id: None,
+            site_code: None,
+            site_service_id: None,
+            site_service_code: None,
             base_url: None,
             secret_ref: None,
             auth_profile: ProviderAuthProfile::default(),
@@ -980,8 +1287,43 @@ impl ProviderChannelRoute {
         }
     }
 
+    pub fn with_channel_code(mut self, channel_code: &str) -> Self {
+        self.channel_code = normalized_optional_text(channel_code);
+        self
+    }
+
+    pub fn with_credential(
+        mut self,
+        credential_id: Option<i64>,
+        credential_rotation: impl Into<String>,
+        credential_priority: i32,
+        credential_weight: i32,
+    ) -> Self {
+        self.credential_id = credential_id.filter(|value| *value > 0);
+        self.credential_rotation = normalize_credential_rotation_or_default(credential_rotation);
+        self.credential_priority = credential_priority;
+        self.credential_weight = credential_weight.max(0);
+        self
+    }
+
     pub fn with_region_code(mut self, region_code: &str) -> Self {
         self.region_code = normalized_model_region_code(region_code);
+        self
+    }
+
+    pub fn with_site(mut self, site_id: Option<i64>, site_code: Option<&str>) -> Self {
+        self.site_id = site_id;
+        self.site_code = site_code.and_then(normalized_optional_text);
+        self
+    }
+
+    pub fn with_site_service(
+        mut self,
+        site_service_id: Option<i64>,
+        site_service_code: Option<&str>,
+    ) -> Self {
+        self.site_service_id = site_service_id;
+        self.site_service_code = site_service_code.and_then(normalized_optional_text);
         self
     }
 
@@ -1085,6 +1427,10 @@ impl ModelProviderRoute {
             region_code: "global".to_owned(),
             provider_code: provider_code.to_owned(),
             channel_id,
+            credential_id: None,
+            credential_rotation: DEFAULT_CREDENTIAL_ROTATION.to_owned(),
+            credential_priority: 100,
+            credential_weight: 100,
             provider_model: provider_model.to_owned(),
             base_url: None,
             secret_ref: None,
@@ -1108,6 +1454,10 @@ impl ModelProviderRoute {
             region_code: "global".to_owned(),
             provider_code: provider_code.to_owned(),
             channel_id,
+            credential_id: None,
+            credential_rotation: DEFAULT_CREDENTIAL_ROTATION.to_owned(),
+            credential_priority: 100,
+            credential_weight: 100,
             provider_model: provider_model.to_owned(),
             base_url: None,
             secret_ref: None,
@@ -1130,6 +1480,20 @@ impl ModelProviderRoute {
 
     pub fn with_region_code(mut self, region_code: &str) -> Self {
         self.region_code = normalized_model_region_code(region_code);
+        self
+    }
+
+    pub fn with_credential(
+        mut self,
+        credential_id: Option<i64>,
+        credential_rotation: impl Into<String>,
+        credential_priority: i32,
+        credential_weight: i32,
+    ) -> Self {
+        self.credential_id = credential_id.filter(|value| *value > 0);
+        self.credential_rotation = normalize_credential_rotation_or_default(credential_rotation);
+        self.credential_priority = credential_priority;
+        self.credential_weight = credential_weight.max(0);
         self
     }
 
@@ -1165,5 +1529,17 @@ fn normalized_model_region_code(value: &str) -> String {
         "global".to_owned()
     } else {
         value.to_owned()
+    }
+}
+
+const DEFAULT_CREDENTIAL_ROTATION: &str = "default";
+
+fn normalize_credential_rotation_or_default(value: impl Into<String>) -> String {
+    match value.into().trim().to_ascii_lowercase().as_str() {
+        "priority" => "priority".to_owned(),
+        "round_robin" => "round_robin".to_owned(),
+        "weighted_round_robin" => "weighted_round_robin".to_owned(),
+        "random" => "random".to_owned(),
+        _ => DEFAULT_CREDENTIAL_ROTATION.to_owned(),
     }
 }

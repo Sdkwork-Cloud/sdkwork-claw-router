@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import test from "node:test";
 
 import { clearStoredAppSessionToken } from "./packages/sdkwork-claw-router-commons/src/app-session-token.ts";
@@ -93,10 +94,9 @@ function catalogFilters(overrides: Partial<ModelCatalogFilters> = {}): ModelCata
 
 function catalogModel(overrides: Partial<Model>): Model {
   return {
-    id: "test/global/model",
+    id: "test/model",
     modelId: "model",
     vendorCode: "test",
-    regionCode: "global",
     name: "Test Model",
     provider: "OpenAI",
     modality: "Text",
@@ -119,11 +119,24 @@ function modelIds(models: Model[]): string[] {
 
 const TEST_ROUTE_MODELS: Model[] = [
   catalogModel({
-    id: "openai/global/gpt-4o-mini",
+    id: "openai/gpt-4o-mini",
     name: "GPT-4o mini",
     provider: "OpenAI",
   }),
 ];
+
+test("generated app model reference price contract includes regionCode", () => {
+  const appOpenApi = JSON.parse(readFileSync(new URL("../../generated/openapi/clawrouter-app-openapi.json", import.meta.url), "utf8"));
+  const referencePriceSchema = appOpenApi.components?.schemas?.AppModelCatalogReferencePrice;
+  const appSdkReferencePriceType = readFileSync(
+    new URL("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/types/app-model-catalog-reference-price.ts", import.meta.url),
+    "utf8",
+  );
+
+  assert.equal(referencePriceSchema?.properties?.regionCode?.type, "string");
+  assert.equal(referencePriceSchema?.required?.includes("regionCode"), true);
+  assert.match(appSdkReferencePriceType, /regionCode:\s*string;/);
+});
 
 test("model catalog filter state has isolated defaults and full reset semantics", () => {
   const firstDefaults = createDefaultModelCatalogFilters();
@@ -181,19 +194,19 @@ test("model catalog filter field registry matches defaults and reset output", ()
 test("model catalog filter options derive unique sorted provider modality and capability values", () => {
   const models = [
     catalogModel({
-      id: "openai/global/text",
+      id: "openai/text",
       provider: "OpenAI",
       modality: "Text",
       capabilities: ["Vision", "Function Calling"],
     }),
     catalogModel({
-      id: "anthropic/global/text",
+      id: "anthropic/text",
       provider: "Anthropic",
       modality: "Text",
       capabilities: ["Function Calling", "JSON Mode"],
     }),
     catalogModel({
-      id: "openai/global/image",
+      id: "openai/image",
       provider: "OpenAI",
       modality: "Image",
       capabilities: ["Vision"],
@@ -210,7 +223,7 @@ test("model catalog filter options derive unique sorted provider modality and ca
       { key: "default", label: "Default group" },
     ],
   });
-  assert.deepEqual(modelIds(models), ["openai/global/text", "anthropic/global/text", "openai/global/image"]);
+  assert.deepEqual(modelIds(models), ["openai/text", "anthropic/text", "openai/image"]);
   assert.deepEqual(models[0].capabilities, ["Vision", "Function Calling"]);
 });
 
@@ -228,7 +241,7 @@ test("model catalog i18n label keys are normalized outside page rendering", () =
 
 test("model catalog card view derives stable route copy and capability label keys", () => {
   const model = catalogModel({
-    id: "openai/global/gpt-4o-mini",
+    id: "openai/gpt-4o-mini",
     name: "GPT-4o mini",
     provider: "OpenAI",
     modality: "Text",
@@ -242,13 +255,13 @@ test("model catalog card view derives stable route copy and capability label key
   const view = deriveModelCatalogCardView(model);
 
   assert.deepEqual(view, {
-    id: "openai/global/gpt-4o-mini",
-    detailPath: "/models/openai%2Fglobal%2Fgpt-4o-mini",
+    id: "openai/gpt-4o-mini",
+    detailPath: "/models/openai%2Fgpt-4o-mini",
     provider: "OpenAI",
     name: "GPT-4o mini",
     modality: "Text",
     description: "Fast public model.",
-    descriptionLabelKey: "models.data.openai/global/gpt-4o-mini.desc",
+    descriptionLabelKey: "models.data.openai/gpt-4o-mini.desc",
     context: "128k",
     latency: "80ms",
     throughput: "200 t/s",
@@ -351,7 +364,7 @@ test("model catalog pricing view marks missing billing meters unavailable withou
 
 test("model catalog detail view derives copy route and sidebar rows", () => {
   const model = catalogModel({
-    id: "openai/global/gpt-4o-mini",
+    id: "openai/gpt-4o-mini",
     name: "GPT-4o mini",
     provider: "OpenAI",
     modality: "Text",
@@ -376,29 +389,29 @@ test("model catalog detail view derives copy route and sidebar rows", () => {
   const detail = deriveModelCatalogDetailView(model);
 
   assert.deepEqual(detail.hero, {
-    id: "openai/global/gpt-4o-mini",
+    id: "openai/gpt-4o-mini",
     provider: "OpenAI",
     providerDocsUrl: "https://platform.openai.com/docs",
     name: "GPT-4o mini",
     modality: "Text",
     description: "Fast public model.",
-    descriptionLabelKey: "models.data.openai/global/gpt-4o-mini.desc",
+    descriptionLabelKey: "models.data.openai/gpt-4o-mini.desc",
     intro: "Small model introduction.",
-    introLabelKey: "models.data.openai/global/gpt-4o-mini.intro",
+    introLabelKey: "models.data.openai/gpt-4o-mini.intro",
     modalityTone: "text",
   });
-  assert.match(detail.apiExample, /searchQuery: "openai\/global\/gpt-4o-mini"/);
+  assert.match(detail.apiExample, /searchQuery: "openai\/gpt-4o-mini"/);
   assert.match(detail.apiExample, /client\.ai\.models\.list\(params\)/);
   assert.match(detail.apiExample, /SdkworkAppClient/);
   assert.match(detail.apiExample, /@sdkwork\/clawrouter-app-sdk/);
   assert.doesNotMatch(detail.apiExample, /ClawRouterClient/);
   assert.doesNotMatch(detail.apiExample, /@sdkwork\/clawrouter-sdk/);
   assert.deepEqual(detail.useCases, [
-    { label: "Customer support", labelKey: "models.data.openai/global/gpt-4o-mini.useCases.0" },
-    { label: "Data extraction", labelKey: "models.data.openai/global/gpt-4o-mini.useCases.1" },
+    { label: "Customer support", labelKey: "models.data.openai/gpt-4o-mini.useCases.0" },
+    { label: "Data extraction", labelKey: "models.data.openai/gpt-4o-mini.useCases.1" },
   ]);
   assert.deepEqual(detail.limitations, [
-    { label: "Less capable at complex reasoning", labelKey: "models.data.openai/global/gpt-4o-mini.limitations.0" },
+    { label: "Less capable at complex reasoning", labelKey: "models.data.openai/gpt-4o-mini.limitations.0" },
   ]);
   assert.deepEqual(detail.supportedLanguages, ["English", "Chinese"]);
   assert.deepEqual(detail.parameters, [
@@ -450,7 +463,7 @@ test("model catalog detail API example serializes model ids as safe TypeScript s
 
 test("model catalog detail view fills optional empty sidebar sections and performance safely", () => {
   const model = catalogModel({
-    id: "image/global/provider-model",
+    id: "image/provider-model",
     provider: "Provider Name",
     modality: "Image",
     capabilityIntro: undefined,
@@ -592,10 +605,9 @@ test("runtime model catalog maps public reference prices without exposing privat
   const models = mergeRuntimeModelCatalog([
     {
       model: "gpt-4o-mini",
-      catalogKey: "openai/global/gpt-4o-mini",
+      catalogKey: "openai/gpt-4o-mini",
       displayName: "GPT-4o mini",
       vendorCode: "openai",
-      regionCode: "global",
       vendor: "openai",
       capabilities: ["chat", "tools"],
       description: "Runtime commercial model description.",
@@ -620,10 +632,8 @@ test("runtime model catalog maps public reference prices without exposing privat
       groups: ["default", "enterprise"],
       categories: ["Recommended", "Proprietary"],
       providerCodes: ["openrouter"],
-      officialReferenceUnitPrice: "0.150000",
-      officialReferenceCurrency: "USD",
       officialReferencePrices: [
-        { billingMeter: "llm_input_token", unitPrice: "0.150000", currency: "USD" },
+        { regionCode: "global", billingMeter: "llm_input_token", unitPrice: "0.150000", currency: "USD" },
       ],
       priceAvailability: {
         status: "reference",
@@ -633,10 +643,9 @@ test("runtime model catalog maps public reference prices without exposing privat
   ]);
 
   assert.equal(models.length, 1);
-  assert.equal(models[0].id, "openai/global/gpt-4o-mini");
+  assert.equal(models[0].id, "openai/gpt-4o-mini");
   assert.equal(models[0].modelId, "gpt-4o-mini");
   assert.equal(models[0].vendorCode, "openai");
-  assert.equal(models[0].regionCode, "global");
   assert.equal(models[0].description, "Runtime commercial model description.");
   assert.equal(models[0].context, "128k");
   assert.equal(models[0].maxOutput, "16,384");
@@ -665,41 +674,21 @@ test("runtime model catalog maps public reference prices without exposing privat
   assert.doesNotMatch(serialized, /groupCode/);
 });
 
-test("runtime model catalog uses catalog keys and native currency for regional vendors", () => {
+test("runtime model catalog keeps region in reference prices instead of model identity", () => {
   const models = mergeRuntimeModelCatalog([
     {
       model: "MiniMax-M2.7",
-      catalogKey: "minimax/cn/MiniMax-M2.7",
+      catalogKey: "minimax/MiniMax-M2.7",
       displayName: "MiniMax M2.7",
       vendorCode: "minimax",
-      regionCode: "cn",
       vendor: "minimax",
       capabilities: ["chat"],
       groups: ["default"],
       categories: ["Recommended", "Proprietary"],
-      providerCodes: ["minimax_direct_cn"],
-      officialReferenceUnitPrice: "2.100000",
-      officialReferenceCurrency: "CNY",
+      providerCodes: ["minimax_direct"],
       officialReferencePrices: [
-        { billingMeter: "llm_input_token", unitPrice: "2.100000", currency: "CNY" },
-      ],
-      priceAvailability: { status: "reference" },
-    },
-    {
-      model: "MiniMax-M2.7",
-      catalogKey: "minimax/global/MiniMax-M2.7",
-      displayName: "MiniMax M2.7",
-      vendorCode: "minimax",
-      regionCode: "global",
-      vendor: "minimax",
-      capabilities: ["chat"],
-      groups: ["default"],
-      categories: ["Recommended", "Proprietary"],
-      providerCodes: ["minimax_direct_global"],
-      officialReferenceUnitPrice: "0.300000",
-      officialReferenceCurrency: "USD",
-      officialReferencePrices: [
-        { billingMeter: "llm_input_token", unitPrice: "0.300000", currency: "USD" },
+        { regionCode: "cn", billingMeter: "llm_input_token", unitPrice: "2.100000", currency: "CNY" },
+        { regionCode: "global", billingMeter: "llm_input_token", unitPrice: "0.300000", currency: "USD" },
       ],
       priceAvailability: { status: "reference" },
     },
@@ -707,20 +696,19 @@ test("runtime model catalog uses catalog keys and native currency for regional v
 
   assert.deepEqual(
     models.map((model) => model.id),
-    ["minimax/cn/MiniMax-M2.7", "minimax/global/MiniMax-M2.7"],
+    ["minimax/MiniMax-M2.7"],
   );
-  assert.deepEqual(
-    models.map((model) => model.regionCode),
-    ["cn", "global"],
-  );
-  assert.equal(formatModelPrice(models[0].pricing, "input"), "\u00a52.10");
-  assert.equal(formatModelPrice(models[1].pricing, "input"), "$0.30");
+  assert.equal(formatModelPrice(models[0].pricing, "input"), "$0.30");
+  assert.deepEqual(models[0].pricing.referencePrices, [
+    { regionCode: "global", billingMeter: "llm_input_token", unitPrice: 0.3, currency: "USD" },
+    { regionCode: "cn", billingMeter: "llm_input_token", unitPrice: 2.1, currency: "CNY" },
+  ]);
 });
 
 test("model catalog category filters are explicit business rules instead of passthrough labels", () => {
   const models = [
     catalogModel({
-      id: "openai/global/recommended",
+      id: "openai/recommended",
       name: "Recommended OpenAI",
       provider: "OpenAI",
       groups: ["default"],
@@ -728,7 +716,7 @@ test("model catalog category filters are explicit business rules instead of pass
       pricing: { input: 0.2, output: 0.4, unit: "1M tokens", currency: "USD", status: "reference" },
     }),
     catalogModel({
-      id: "meta/global/open-source",
+      id: "meta/open-source",
       name: "Open Source",
       provider: "Meta",
       groups: ["enterprise"],
@@ -736,7 +724,7 @@ test("model catalog category filters are explicit business rules instead of pass
       pricing: { input: 0.3, output: 0.3, unit: "1M tokens", currency: "USD", status: "reference" },
     }),
     catalogModel({
-      id: "google/global/new-beta",
+      id: "google/new-beta",
       name: "New Beta",
       provider: "Google",
       groups: ["beta"],
@@ -744,7 +732,7 @@ test("model catalog category filters are explicit business rules instead of pass
       pricing: { input: 0.5, output: 0.5, unit: "1M tokens", currency: "USD", status: "reference" },
     }),
     catalogModel({
-      id: "local/global/free",
+      id: "local/free",
       name: "Free",
       provider: "Local",
       groups: ["default"],
@@ -752,7 +740,7 @@ test("model catalog category filters are explicit business rules instead of pass
       pricing: { input: 0, output: 0, unit: "1M tokens", currency: "USD", status: "reference" },
     }),
     catalogModel({
-      id: "local/global/unavailable-zero",
+      id: "local/unavailable-zero",
       name: "Unavailable Zero",
       provider: "Local",
       groups: ["default"],
@@ -764,15 +752,15 @@ test("model catalog category filters are explicit business rules instead of pass
   assert.deepEqual(MODEL_CATEGORIES, ["Recommended", "Open Source", "Proprietary", "Free", "New"]);
   assert.deepEqual(
     modelIds(filterModelsForCatalog(models, catalogFilters({ selectedCategories: ["Recommended"] }))),
-    ["openai/global/recommended"],
+    ["openai/recommended"],
   );
   assert.deepEqual(
     modelIds(filterModelsForCatalog(models, catalogFilters({ selectedCategories: ["New"] }))),
-    ["google/global/new-beta"],
+    ["google/new-beta"],
   );
   assert.deepEqual(
     modelIds(filterModelsForCatalog(models, catalogFilters({ selectedCategories: ["Free"] }))),
-    ["local/global/free"],
+    ["local/free"],
   );
   assert.deepEqual(
     modelIds(filterModelsForCatalog(models, catalogFilters({ selectedCategories: ["Unsupported"] }))),
@@ -784,37 +772,31 @@ test("runtime model catalog maps backend-owned model taxonomy instead of derivin
   const models = mergeRuntimeModelCatalog([
     {
       model: "gpt-4o-mini",
-      catalogKey: "openai/global/gpt-4o-mini",
+      catalogKey: "openai/gpt-4o-mini",
       displayName: "GPT-4o mini",
       vendorCode: "openai",
-      regionCode: "global",
       vendor: "openai",
       capabilities: ["chat", "tools"],
       groups: ["default", "enterprise", "vip"],
       categories: ["Recommended", "Proprietary"],
       providerCodes: ["openai"],
-      officialReferenceUnitPrice: "0.150000",
-      officialReferenceCurrency: "USD",
       officialReferencePrices: [
-        { billingMeter: "llm_input_token", unitPrice: "0.150000", currency: "USD" },
+        { regionCode: "global", billingMeter: "llm_input_token", unitPrice: "0.150000", currency: "USD" },
       ],
       priceAvailability: { status: "reference" },
     },
     {
       model: "llama-3",
-      catalogKey: "meta/global/llama-3",
+      catalogKey: "meta/llama-3",
       displayName: "Llama 3",
       vendorCode: "meta",
-      regionCode: "global",
       vendor: "meta",
       capabilities: ["chat"],
       groups: ["default"],
       categories: ["Open Source"],
       providerCodes: ["meta"],
-      officialReferenceUnitPrice: "0.000000",
-      officialReferenceCurrency: "USD",
       officialReferencePrices: [
-        { billingMeter: "llm_input_token", unitPrice: "0.000000", currency: "USD" },
+        { regionCode: "global", billingMeter: "llm_input_token", unitPrice: "0.000000", currency: "USD" },
       ],
       priceAvailability: { status: "reference" },
     },
@@ -824,7 +806,7 @@ test("runtime model catalog maps backend-owned model taxonomy instead of derivin
   assert.deepEqual(models.map((model) => model.categories), [["Recommended", "Proprietary"], ["Open Source"]]);
   assert.deepEqual(
     modelIds(filterModelsForCatalog(models, catalogFilters({ selectedCategories: ["Proprietary"] }))),
-    ["openai/global/gpt-4o-mini"],
+    ["openai/gpt-4o-mini"],
   );
   assert.deepEqual(
     modelIds(filterModelsForCatalog(models, catalogFilters({ selectedCategories: ["Free"] }))),
@@ -836,19 +818,16 @@ test("runtime model catalog preserves backend-configured custom model groups for
   const models = mergeRuntimeModelCatalog([
     {
       model: "gpt-4o-mini",
-      catalogKey: "openai/global/gpt-4o-mini",
+      catalogKey: "openai/gpt-4o-mini",
       displayName: "GPT-4o mini",
       vendorCode: "openai",
-      regionCode: "global",
       vendor: "openai",
       capabilities: ["chat", "tools"],
       groups: ["standard-group", "premium-lab", "enterprise"],
       categories: ["Recommended", "Proprietary"],
       providerCodes: ["openai"],
-      officialReferenceUnitPrice: "0.150000",
-      officialReferenceCurrency: "USD",
       officialReferencePrices: [
-        { billingMeter: "llm_input_token", unitPrice: "0.150000", currency: "USD" },
+        { regionCode: "global", billingMeter: "llm_input_token", unitPrice: "0.150000", currency: "USD" },
       ],
       priceAvailability: { status: "reference" },
     },
@@ -873,7 +852,7 @@ test("runtime model catalog preserves backend-configured custom model groups for
   ]);
   assert.deepEqual(
     modelIds(filterModelsForCatalog(models, catalogFilters({ selectedGroups: ["premium-lab"] }))),
-    ["openai/global/gpt-4o-mini"],
+    ["openai/gpt-4o-mini"],
   );
 });
 
@@ -881,16 +860,14 @@ test("runtime model catalog keeps unknown public prices unavailable instead of f
   const models = mergeRuntimeModelCatalog([
     {
       model: "new-runtime-only",
-      catalogKey: "newvendor/global/new-runtime-only",
+      catalogKey: "newvendor/new-runtime-only",
       displayName: "Runtime Only",
       vendorCode: "newvendor",
-      regionCode: "global",
       vendor: "newvendor",
       capabilities: ["chat"],
       groups: ["default"],
       categories: ["Recommended"],
       providerCodes: ["newprovider"],
-      officialReferenceUnitPrice: null,
       officialReferencePrices: [],
       priceAvailability: {
         status: "unavailable",
@@ -916,23 +893,20 @@ test("runtime model catalog returns an empty runtime catalog when the app SDK re
     {},
     {
       model: "missing-arrays",
-      catalogKey: "openai/global/missing-arrays",
+      catalogKey: "openai/missing-arrays",
       displayName: "Missing Arrays",
       vendorCode: "openai",
-      regionCode: "global",
       vendor: "OpenAI",
       priceAvailability: { status: "reference" },
     },
     {
       model: "   ",
-      catalogKey: "openai/global/blank",
+      catalogKey: "openai/blank",
       displayName: "Blank model",
       vendorCode: "openai",
-      regionCode: "global",
       vendor: "OpenAI",
       capabilities: ["chat"],
       providerCodes: ["openai"],
-      officialReferenceUnitPrice: "0.150000",
       priceAvailability: {
         status: "reference",
         reason: "Public reference price only. Customer-specific pricing requires an API key context.",
@@ -951,10 +925,9 @@ test("runtime model catalog skips malformed items while keeping usable runtime m
     null,
     {
       model: "bad-capability",
-      catalogKey: "newvendor/global/bad-capability",
+      catalogKey: "newvendor/bad-capability",
       displayName: "Bad Capability",
       vendorCode: "newvendor",
-      regionCode: "global",
       vendor: "New Vendor",
       capabilities: ["chat", 42],
       providerCodes: ["newprovider"],
@@ -962,16 +935,17 @@ test("runtime model catalog skips malformed items while keeping usable runtime m
     },
     {
       model: "runtime-good",
-      catalogKey: "newvendor/global/runtime-good",
+      catalogKey: "newvendor/runtime-good",
       displayName: "Runtime Good",
       vendorCode: "newvendor",
-      regionCode: "global",
       vendor: "New Vendor",
       capabilities: ["chat"],
       groups: ["default"],
       categories: ["Recommended"],
       providerCodes: ["newprovider"],
-      officialReferenceUnitPrice: "0.200000",
+      officialReferencePrices: [
+        { regionCode: "global", billingMeter: "llm_input_token", unitPrice: "0.200000", currency: "USD" },
+      ],
       priceAvailability: {
         status: "reference",
         reason: "Public reference price only. Customer-specific pricing requires an API key context.",
@@ -980,7 +954,7 @@ test("runtime model catalog skips malformed items while keeping usable runtime m
   ]);
 
   assert.equal(models.length, 1);
-  assert.equal(models[0].id, "newvendor/global/runtime-good");
+  assert.equal(models[0].id, "newvendor/runtime-good");
   assert.equal(models[0].name, "Runtime Good");
   assert.equal(models[0].pricing.status, "reference");
   assert.equal(models[0].pricing.input, 0.2);
@@ -995,7 +969,6 @@ test("runtime model catalog accepts canonical backend model catalog keys", () =>
       catalogKey: "openai/gpt-4o-mini",
       displayName: "GPT-4o mini",
       vendorCode: "openai",
-      regionCode: "global",
       vendor: "OpenAI",
       capabilities: ["chat", "tools"],
       groups: ["default", "enterprise"],
@@ -1006,11 +979,9 @@ test("runtime model catalog accepts canonical backend model catalog keys", () =>
       contextTokens: 128000,
       maxOutputTokens: 16384,
       providerCodes: ["openai"],
-      officialReferenceUnitPrice: "0.150000",
-      officialReferenceCurrency: "USD",
       officialReferencePrices: [
-        { billingMeter: "llm_input_token", unitPrice: "0.150000", currency: "USD" },
-        { billingMeter: "llm_output_token", unitPrice: "0.600000", currency: "USD" },
+        { regionCode: "global", billingMeter: "llm_input_token", unitPrice: "0.150000", currency: "USD" },
+        { regionCode: "global", billingMeter: "llm_output_token", unitPrice: "0.600000", currency: "USD" },
       ],
       priceAvailability: {
         status: "reference",
@@ -1022,83 +993,122 @@ test("runtime model catalog accepts canonical backend model catalog keys", () =>
   assert.equal(models.length, 1);
   assert.equal(models[0].id, "openai/gpt-4o-mini");
   assert.equal(models[0].modelId, "gpt-4o-mini");
-  assert.equal(models[0].regionCode, "global");
   assert.equal(models[0].pricing.input, 0.15);
   assert.equal(models[0].pricing.output, 0.6);
+});
+
+test("runtime model catalog rejects regional catalog keys instead of compatibility aliases", () => {
+  const models = resolveRuntimeModelCatalog([
+    {
+      model: "gpt-4o-mini",
+      catalogKey: "openai/global/gpt-4o-mini",
+      displayName: "GPT-4o mini",
+      vendorCode: "openai",
+      vendor: "OpenAI",
+      capabilities: ["chat", "tools"],
+      groups: ["default"],
+      categories: ["Recommended", "Proprietary"],
+      providerCodes: ["openai"],
+      officialReferencePrices: [
+        { regionCode: "global", billingMeter: "llm_input_token", unitPrice: "0.150000", currency: "USD" },
+      ],
+      priceAvailability: { status: "reference" },
+    },
+    {
+      model: "global/gpt-4o-mini",
+      catalogKey: "openai/global/gpt-4o-mini",
+      displayName: "GPT-4o mini legacy alias",
+      vendorCode: "openai",
+      vendor: "OpenAI",
+      capabilities: ["chat"],
+      groups: ["default"],
+      categories: ["Recommended"],
+      providerCodes: ["openai"],
+      officialReferencePrices: [
+        { regionCode: "global", billingMeter: "llm_input_token", unitPrice: "0.150000", currency: "USD" },
+      ],
+      priceAvailability: { status: "reference" },
+    },
+    {
+      model: "anthropic/claude-3-opus",
+      catalogKey: "openrouter/anthropic/claude-3-opus",
+      displayName: "Claude 3 Opus via OpenRouter",
+      vendorCode: "openrouter",
+      vendor: "OpenRouter",
+      capabilities: ["chat"],
+      groups: ["default"],
+      categories: ["Recommended", "Proprietary"],
+      providerCodes: ["openrouter"],
+      officialReferencePrices: [
+        { regionCode: "global", billingMeter: "llm_input_token", unitPrice: "1.000000", currency: "USD" },
+      ],
+      priceAvailability: { status: "reference" },
+    },
+  ]);
+
+  assert.deepEqual(modelIds(models), ["openrouter/anthropic/claude-3-opus"]);
 });
 
 test("runtime model catalog rejects mismatched catalog keys instead of synthesizing identities", () => {
   const models = resolveRuntimeModelCatalog([
     {
       model: "runtime-good",
-      catalogKey: "other/global/runtime-good",
+      catalogKey: "other/runtime-good",
       displayName: "Runtime Good",
       vendorCode: "newvendor",
-      regionCode: "global",
       vendor: "New Vendor",
       capabilities: ["chat"],
       groups: ["default"],
       categories: ["Recommended"],
       providerCodes: ["newprovider"],
-      officialReferenceUnitPrice: "0.200000",
-      officialReferenceCurrency: "USD",
       priceAvailability: { status: "reference" },
     },
     {
       model: "runtime-good",
-      catalogKey: "newvendor/global/runtime-good",
+      catalogKey: "newvendor/runtime-good",
       displayName: "Runtime Good",
       vendorCode: "newvendor",
-      regionCode: "global",
       vendor: "New Vendor",
       capabilities: ["chat"],
       groups: ["default"],
       categories: ["Recommended"],
       providerCodes: ["newprovider"],
-      officialReferenceUnitPrice: "0.200000",
-      officialReferenceCurrency: "USD",
       priceAvailability: { status: "reference" },
     },
   ]);
 
-  assert.deepEqual(modelIds(models), ["newvendor/global/runtime-good"]);
+  assert.deepEqual(modelIds(models), ["newvendor/runtime-good"]);
 });
 
 test("model detail route resolver requires exact catalog keys for ambiguous official ids", () => {
   const runtimeModels = resolveRuntimeModelCatalog([
     {
       model: "MiniMax-M2.7",
-      catalogKey: "minimax/cn/MiniMax-M2.7",
+      catalogKey: "minimax/MiniMax-M2.7",
       displayName: "MiniMax M2.7",
       vendorCode: "minimax",
-      regionCode: "cn",
       vendor: "minimax",
       capabilities: ["chat"],
       groups: ["default"],
       categories: ["Recommended", "Proprietary"],
-      providerCodes: ["minimax_direct_cn"],
-      officialReferenceUnitPrice: "2.100000",
-      officialReferenceCurrency: "CNY",
+      providerCodes: ["minimax_direct"],
       officialReferencePrices: [
-        { billingMeter: "llm_input_token", unitPrice: "2.100000", currency: "CNY" },
+        { regionCode: "cn", billingMeter: "llm_input_token", unitPrice: "2.100000", currency: "CNY" },
       ],
       priceAvailability: { status: "reference" },
     },
     {
       model: "MiniMax-M2.7",
-      catalogKey: "minimax/global/MiniMax-M2.7",
+      catalogKey: "minimax/MiniMax-M2.7",
       displayName: "MiniMax M2.7",
       vendorCode: "minimax",
-      regionCode: "global",
       vendor: "minimax",
       capabilities: ["chat"],
       groups: ["default"],
       categories: ["Recommended", "Proprietary"],
-      providerCodes: ["minimax_direct_global"],
-      officialReferenceUnitPrice: "0.300000",
-      officialReferenceCurrency: "USD",
+      providerCodes: ["minimax_direct"],
       officialReferencePrices: [
-        { billingMeter: "llm_input_token", unitPrice: "0.300000", currency: "USD" },
+        { regionCode: "global", billingMeter: "llm_input_token", unitPrice: "0.300000", currency: "USD" },
       ],
       priceAvailability: { status: "reference" },
     },
@@ -1106,8 +1116,8 @@ test("model detail route resolver requires exact catalog keys for ambiguous offi
 
   assert.equal(findModelByCatalogRouteId(runtimeModels, "MiniMax-M2.7"), null);
   assert.equal(
-    findModelByCatalogRouteId(runtimeModels, encodeURIComponent("minimax/cn/MiniMax-M2.7"))?.id,
-    "minimax/cn/MiniMax-M2.7",
+    findModelByCatalogRouteId(runtimeModels, encodeURIComponent("minimax/MiniMax-M2.7"))?.id,
+    "minimax/MiniMax-M2.7",
   );
 });
 
@@ -1115,18 +1125,16 @@ test("model detail route resolver accepts encoded catalog route ids without cras
   const runtimeModels = resolveRuntimeModelCatalog([
     {
       model: "runtime-good",
-      catalogKey: "newvendor/global/runtime-good",
+      catalogKey: "newvendor/runtime-good",
       displayName: "Runtime Good",
       vendorCode: "newvendor",
-      regionCode: "global",
       vendor: "New Vendor",
       capabilities: ["chat"],
       groups: ["default"],
       categories: ["Recommended"],
       providerCodes: ["newprovider"],
-      officialReferenceUnitPrice: "0.200000",
       officialReferencePrices: [
-        { billingMeter: "llm_input_token", unitPrice: "0.200000", currency: "USD" },
+        { regionCode: "global", billingMeter: "llm_input_token", unitPrice: "0.200000", currency: "USD" },
       ],
       priceAvailability: {
         status: "reference",
@@ -1135,12 +1143,12 @@ test("model detail route resolver accepts encoded catalog route ids without cras
     },
   ]);
 
-  const staticRouteModel = findModelByCatalogRouteId(TEST_ROUTE_MODELS, "openai%2Fglobal%2Fgpt-4o-mini");
-  const runtimeRouteModel = findModelByCatalogRouteId(runtimeModels, encodeURIComponent("newvendor/global/runtime-good"));
+  const staticRouteModel = findModelByCatalogRouteId(TEST_ROUTE_MODELS, "openai%2Fgpt-4o-mini");
+  const runtimeRouteModel = findModelByCatalogRouteId(runtimeModels, encodeURIComponent("newvendor/runtime-good"));
   const malformedRouteModel = findModelByCatalogRouteId(runtimeModels, "%E0%A4%A");
 
-  assert.equal(staticRouteModel?.id, "openai/global/gpt-4o-mini");
-  assert.equal(runtimeRouteModel?.id, "newvendor/global/runtime-good");
+  assert.equal(staticRouteModel?.id, "openai/gpt-4o-mini");
+  assert.equal(runtimeRouteModel?.id, "newvendor/runtime-good");
   assert.equal(malformedRouteModel, null);
 });
 
@@ -1150,28 +1158,24 @@ test("runtime model catalog rejects unsafe identifiers and caps public runtime t
   const models = resolveRuntimeModelCatalog([
     {
       model: "bad\nmodel",
-      catalogKey: "newvendor/global/bad-model",
+      catalogKey: "newvendor/bad-model",
       displayName: "Bad Model",
       vendorCode: "newvendor",
-      regionCode: "global",
       vendor: "New Vendor",
       capabilities: ["chat"],
       providerCodes: ["newprovider"],
-      officialReferenceUnitPrice: "0.100000",
       priceAvailability: { status: "reference" },
     },
     {
       model: "runtime-safe",
-      catalogKey: "newvendor/global/runtime-safe",
+      catalogKey: "newvendor/runtime-safe",
       displayName: longDisplayName,
       vendorCode: "  newvendor  ",
-      regionCode: "  global  ",
       vendor: "  New\tVendor  ",
       capabilities: ["tools", "json mode", "capability ".repeat(12)],
       groups: ["default", "enterprise"],
       categories: ["Recommended"],
       providerCodes: ["  newprovider  "],
-      officialReferenceUnitPrice: "0.200000",
       priceAvailability: {
         status: "reference",
         reason: longReason,
@@ -1180,7 +1184,7 @@ test("runtime model catalog rejects unsafe identifiers and caps public runtime t
   ]);
 
   assert.equal(models.length, 1);
-  assert.equal(models[0].id, "newvendor/global/runtime-safe");
+  assert.equal(models[0].id, "newvendor/runtime-safe");
   assert.equal(models[0].name.length <= 80, true);
   assert.equal(models[0].name.endsWith("..."), true);
   assert.equal(models[0].provider, "New Vendor");
@@ -1193,16 +1197,14 @@ test("runtime model catalog omits blank normalized price reasons", () => {
   const models = resolveRuntimeModelCatalog([
     {
       model: "blank-reason",
-      catalogKey: "newvendor/global/blank-reason",
+      catalogKey: "newvendor/blank-reason",
       displayName: "Blank Reason",
       vendorCode: "newvendor",
-      regionCode: "global",
       vendor: "New Vendor",
       capabilities: ["chat"],
       groups: ["default"],
       categories: ["Recommended"],
       providerCodes: ["newprovider"],
-      officialReferenceUnitPrice: null,
       priceAvailability: {
         status: "unavailable",
         reason: "   ",
@@ -1219,16 +1221,14 @@ test("runtime model catalog treats malformed price payloads as unavailable inste
   const models = resolveRuntimeModelCatalog([
     {
       model: "bad-price",
-      catalogKey: "newvendor/global/bad-price",
+      catalogKey: "newvendor/bad-price",
       displayName: "Bad Price",
       vendorCode: "newvendor",
-      regionCode: "global",
       vendor: "New Vendor",
       capabilities: ["chat"],
       groups: ["default"],
       categories: ["Recommended"],
       providerCodes: ["newprovider"],
-      officialReferenceUnitPrice: { amount: "0.2" },
       priceAvailability: {
         status: "reference",
         reason: 100,
@@ -1237,7 +1237,7 @@ test("runtime model catalog treats malformed price payloads as unavailable inste
   ]);
 
   assert.equal(models.length, 1);
-  assert.equal(models[0].id, "newvendor/global/bad-price");
+  assert.equal(models[0].id, "newvendor/bad-price");
   assert.equal(models[0].pricing.status, "unavailable");
   assert.equal(models[0].pricing.input, 0);
   assert.equal(models[0].pricing.reason, "Public reference price is not configured for this model.");
@@ -1245,11 +1245,10 @@ test("runtime model catalog treats malformed price payloads as unavailable inste
 
 test("runtime model catalog item contract does not accept public private pricing fields", () => {
   const allowedItem = {
-    catalogKey: "openai/global/gpt-4o-mini",
+    catalogKey: "openai/gpt-4o-mini",
     model: "gpt-4o-mini",
     displayName: "GPT-4o mini",
     vendorCode: "openai",
-    regionCode: "global",
     vendor: "openai",
     capabilities: ["chat"],
     description: "Fast model.",
@@ -1274,10 +1273,8 @@ test("runtime model catalog item contract does not accept public private pricing
     groups: ["default"],
     categories: ["Recommended", "Proprietary"],
     providerCodes: ["openrouter"],
-    officialReferenceUnitPrice: "0.150000",
-    officialReferenceCurrency: "USD",
     officialReferencePrices: [
-      { billingMeter: "llm_input_token", unitPrice: "0.150000", currency: "USD" },
+      { regionCode: "global", billingMeter: "llm_input_token", unitPrice: "0.150000", currency: "USD" },
     ],
     priceAvailability: { status: "reference" },
   } satisfies RuntimeModelCatalogItem;
@@ -1295,10 +1292,9 @@ test("model service loads the runtime catalog through the generated app SDK", as
         items: [
           {
             model: "runtime-sdk-model",
-            catalogKey: "openai/global/runtime-sdk-model",
+            catalogKey: "openai/runtime-sdk-model",
             displayName: "Runtime SDK Model",
             vendorCode: "openai",
-            regionCode: "global",
             vendor: "OpenAI",
             capabilities: ["chat", "tools"],
             groups: ["default", "enterprise", "vip"],
@@ -1309,12 +1305,10 @@ test("model service loads the runtime catalog through the generated app SDK", as
             contextTokens: 1050000,
             maxOutputTokens: 32768,
             providerCodes: ["openai"],
-            officialReferenceUnitPrice: "1.250000",
-            officialReferenceCurrency: "USD",
             officialReferencePrices: [
-              { billingMeter: "llm_input_token", unitPrice: "1.250000", currency: "USD" },
-              { billingMeter: "llm_output_token", unitPrice: "5.000000", currency: "USD" },
-              { billingMeter: "llm_cache_read_token", unitPrice: "0.125000", currency: "USD" },
+              { regionCode: "global", billingMeter: "llm_input_token", unitPrice: "1.250000", currency: "USD" },
+              { regionCode: "global", billingMeter: "llm_output_token", unitPrice: "5.000000", currency: "USD" },
+              { regionCode: "global", billingMeter: "llm_cache_read_token", unitPrice: "0.125000", currency: "USD" },
             ],
             priceAvailability: {
               status: "reference",
@@ -1328,7 +1322,7 @@ test("model service loads the runtime catalog through the generated app SDK", as
       const requestedUrls = captured.map((request) => request.url);
 
       assert.equal(models.length, 1);
-      assert.equal(models[0].id, "openai/global/runtime-sdk-model");
+      assert.equal(models[0].id, "openai/runtime-sdk-model");
       assert.equal(models[0].context, "1.05M");
       assert.equal(models[0].pricing.input, 1.25);
       assert.equal(models[0].pricing.output, 5);
@@ -1348,10 +1342,9 @@ test("model service preserves the backend admin group catalog for model library 
         items: [
           {
             model: "runtime-sdk-model",
-            catalogKey: "openai/global/runtime-sdk-model",
+            catalogKey: "openai/runtime-sdk-model",
             displayName: "Runtime SDK Model",
             vendorCode: "openai",
-            regionCode: "global",
             vendor: "OpenAI",
             capabilities: ["chat", "tools"],
             groups: ["premium-lab"],
@@ -1360,10 +1353,8 @@ test("model service preserves the backend admin group catalog for model library 
             inputModalities: ["text"],
             outputModalities: ["text"],
             providerCodes: ["openai"],
-            officialReferenceUnitPrice: "1.250000",
-            officialReferenceCurrency: "USD",
             officialReferencePrices: [
-              { billingMeter: "llm_input_token", unitPrice: "1.250000", currency: "USD" },
+              { regionCode: "global", billingMeter: "llm_input_token", unitPrice: "1.250000", currency: "USD" },
             ],
             priceAvailability: {
               status: "reference",

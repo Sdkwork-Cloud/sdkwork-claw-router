@@ -20,13 +20,13 @@ INSERT INTO ai_request_trace
      api_key_id, api_key_name_snapshot, channel_group_id, channel_group_snapshot,
      owner_type, owner_id, channel_id, channel_name_snapshot, requested_model,
      requested_model_catalog_key, provider_model, provider_native_model,
-     endpoint, request_path, http_method, http_status, started_at, ended_at, streaming,
+     region_code, endpoint, request_path, http_method, http_status, started_at, ended_at, streaming,
      prompt_tokens, cached_tokens, completion_tokens, total_tokens, latency_ms, ttft_ms,
      provider_error_code, error_type, error_message_masked, metadata, user_agent_hash)
 VALUES
     ($1, $2, $3, $4, $5, $6, 1, 1, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16,
-     $17, $18, $19, $20, $21, $22, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, $23, $24, $25, $26, $27,
-     $28, $29, $30, $31, $32, $33::jsonb, $34)
+     $17, $18, $19, $20, $21, $22, $23, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, $24, $25, $26, $27, $28,
+     $29, $30, $31, $32, $33, $34::jsonb, $35)
 ON CONFLICT (tenant_id, organization_id, request_id, attempt_no) DO UPDATE SET
     trace_id = excluded.trace_id,
     api_key_id = excluded.api_key_id,
@@ -41,6 +41,7 @@ ON CONFLICT (tenant_id, organization_id, request_id, attempt_no) DO UPDATE SET
     requested_model_catalog_key = excluded.requested_model_catalog_key,
     provider_model = excluded.provider_model,
     provider_native_model = excluded.provider_native_model,
+    region_code = excluded.region_code,
     endpoint = excluded.endpoint,
     request_path = excluded.request_path,
     http_method = excluded.http_method,
@@ -73,7 +74,7 @@ INSERT INTO ai_usage_fact
     (uuid, tenant_id, organization_id, user_id, request_id, trace_id, status,
      api_key_id, api_key_name_snapshot, channel_group_id, channel_group_snapshot,
      owner_type, owner_id, catalog_key, requested_model_catalog_key, model, provider_native_model,
-     channel_id, modality, usage_type, billing_meter_code,
+     region_code, channel_id, modality, usage_type, billing_meter_code,
      billable_quantity, prompt_tokens, cached_tokens, completion_tokens, total_tokens,
      request_count, result_count, item_count, character_count, image_count,
      audio_seconds, video_seconds, unit_price_snapshot, base_input_unit_price,
@@ -82,10 +83,10 @@ INSERT INTO ai_usage_fact
      currency, pricing_plan_code, pricing_snapshot, occurred_at, settlement_status)
 VALUES
     ($1, $2, $3, $4, $5, $6, 1, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16,
-     $17, $18, $19, $20, $21::numeric, $22, $23, $24, $25, $26, $27, $28, $29, $30,
-     $31::numeric, $32::numeric, $33::numeric, $34::numeric, $35::numeric, $36::numeric,
-     $37::numeric, $38::numeric, $39::numeric, $40::numeric, $41::numeric, $42::numeric,
-     $43, $44, $45::jsonb, CURRENT_TIMESTAMP, $46)
+     $17, $18, $19, $20, $21, $22::numeric, $23, $24, $25, $26, $27, $28, $29, $30, $31,
+     $32::numeric, $33::numeric, $34::numeric, $35::numeric, $36::numeric, $37::numeric,
+     $38::numeric, $39::numeric, $40::numeric, $41::numeric, $42::numeric, $43::numeric,
+     $44, $45, $46::jsonb, CURRENT_TIMESTAMP, $47)
 ON CONFLICT (tenant_id, organization_id, request_id, usage_type) DO UPDATE SET
     trace_id = excluded.trace_id,
     api_key_id = excluded.api_key_id,
@@ -98,6 +99,7 @@ ON CONFLICT (tenant_id, organization_id, request_id, usage_type) DO UPDATE SET
     requested_model_catalog_key = excluded.requested_model_catalog_key,
     model = excluded.model,
     provider_native_model = excluded.provider_native_model,
+    region_code = excluded.region_code,
     channel_id = excluded.channel_id,
     modality = excluded.modality,
     billing_meter_code = excluded.billing_meter_code,
@@ -190,6 +192,7 @@ async fn upsert_trace(
         .bind(&command.requested_model_catalog_key)
         .bind(&command.provider_native_model)
         .bind(&command.provider_native_model)
+        .bind(&command.region_code)
         .bind(&command.request_path)
         .bind(&command.request_path)
         .bind(&command.http_method)
@@ -233,6 +236,7 @@ async fn upsert_usage_fact(
         .bind(&command.requested_model_catalog_key)
         .bind(&command.requested_model)
         .bind(&command.provider_native_model)
+        .bind(&command.region_code)
         .bind(command.channel_id)
         .bind(command.modality)
         .bind(command.usage_type)

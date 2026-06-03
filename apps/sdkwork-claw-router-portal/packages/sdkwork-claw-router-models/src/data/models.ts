@@ -1,6 +1,7 @@
 export type ModelPricingStatus = 'customer' | 'reference' | 'unavailable';
 
 export type ModelReferencePrice = {
+  regionCode: string;
   billingMeter: string;
   unitPrice: number;
   currency: string;
@@ -25,7 +26,6 @@ export type Model = {
   id: string;
   modelId: string;
   vendorCode: string;
-  regionCode: string;
   name: string;
   provider: string;
   modality: 'Text' | 'Image' | 'Video' | 'Audio' | 'Music';

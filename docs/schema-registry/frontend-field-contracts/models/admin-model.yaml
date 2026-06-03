@@ -11,10 +11,12 @@ frontend_models:
   - displayName
   - name
   - type
-  - priceIn
-  - priceOut
-  - cacheReadPrice
-  - cacheWritePrice
+  - regionPrices
+  - regionPrices.regionCode
+  - regionPrices.priceIn
+  - regionPrices.priceOut
+  - regionPrices.cacheReadPrice
+  - regionPrices.cacheWritePrice
   - status
   - calls
   - description
@@ -78,10 +80,12 @@ frontend_models:
   - models.displayName
   - models.name
   - models.type
-  - models.priceIn
-  - models.priceOut
-  - models.cacheReadPrice
-  - models.cacheWritePrice
+  - models.regionPrices
+  - models.regionPrices.regionCode
+  - models.regionPrices.priceIn
+  - models.regionPrices.priceOut
+  - models.regionPrices.cacheReadPrice
+  - models.regionPrices.cacheWritePrice
   - models.status
   - models.calls
   - models.description
@@ -130,10 +134,12 @@ frontend_models:
   - models.displayName
   - models.name
   - models.type
-  - models.priceIn
-  - models.priceOut
-  - models.cacheReadPrice
-  - models.cacheWritePrice
+  - models.regionPrices
+  - models.regionPrices.regionCode
+  - models.regionPrices.priceIn
+  - models.regionPrices.priceOut
+  - models.regionPrices.cacheReadPrice
+  - models.regionPrices.cacheWritePrice
   - models.status
   - models.calls
   - models.description
@@ -194,10 +200,6 @@ frontend_models:
   - model
   - displayName
   - type
-  - priceIn
-  - priceOut
-  - cacheReadPrice
-  - cacheWritePrice
   - regionPrices
   - regionPrices.regionCode
   - regionPrices.priceIn
@@ -294,6 +296,24 @@ frontend_models:
   - ai_resource_group
   - ai_resource_group_item
   - ai_resource
+- route: /admin/model/resources
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  interface: ResourceGroupAssignableResourceItem
+  fields:
+  - id
+  - resourceCode
+  - resourceType
+  - displayName
+  - vendorCode
+  - modalityCode
+  - apiEndpointCode
+  - catalogKey
+  - model
+  - providerNativeModel
+  - status
+  data_sources:
+  - ai_resource
+  - ai_resource_group_item
 - route: /admin/model/resources
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
   interface: ResourceGroupMemberInput
@@ -533,82 +553,132 @@ frontend_models:
   interface: ModelMappingRule
   fields:
   - id
-  - scopeType
-  - vendorId
-  - vendorCode
-  - channelId
-  - channelCode
-  - sourceModel
-  - sourceCatalogKey
+  - bindingType
+  - sourceVendorId
   - sourceVendorCode
-  - targetModel
-  - targetCatalogKey
+  - targetVendorId
   - targetVendorCode
-  - targetProviderModel
-  - targetProviderNativeModel
   - mappingMode
   - matchType
-  - priority
   - enabled
-  - effectiveFrom
-  - effectiveTo
-  - description
+  - bindings
+  - bindings.id
+  - bindings.bindingType
+  - bindings.bindingId
+  - bindings.bindingCode
+  - bindings.bindingName
+  - bindings.sortOrder
+  - bindings.enabled
+  - bindings.createdAt
+  - bindings.updatedAt
+  - mappingItems
+  - mappingItems.id
+  - mappingItems.sourceModel
+  - mappingItems.sourceCatalogKey
+  - mappingItems.targetModel
+  - mappingItems.targetCatalogKey
+  - mappingItems.targetProviderModel
+  - mappingItems.targetProviderNativeModel
+  - mappingItems.sortOrder
+  - mappingItems.enabled
+  - mappingItems.createdAt
+  - mappingItems.updatedAt
   - createdAt
   - updatedAt
   data_sources:
   - ai_model_mapping_rule
+  - ai_model_mapping_rule_binding
+  - ai_model_mapping_rule_item
+- route: /admin/model/mappings
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  interface: ModelMappingRuleBinding
+  fields:
+  - id
+  - bindingType
+  - bindingId
+  - bindingCode
+  - bindingName
+  - sortOrder
+  - enabled
+  - createdAt
+  - updatedAt
+  data_sources:
+  - ai_model_mapping_rule
+  - ai_model_mapping_rule_binding
+- route: /admin/model/mappings
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  interface: ModelMappingRuleItem
+  fields:
+  - id
+  - sourceModel
+  - sourceCatalogKey
+  - targetModel
+  - targetCatalogKey
+  - targetProviderModel
+  - targetProviderNativeModel
+  - sortOrder
+  - enabled
+  - createdAt
+  - updatedAt
+  data_sources:
+  - ai_model_mapping_rule
+  - ai_model_mapping_rule_item
 - route: /admin/model/mappings
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
   interface: ModelMappingCreateInput
   fields:
-  - scopeType
-  - vendorId
-  - vendorCode
-  - channelId
-  - channelCode
-  - sourceModel
-  - sourceCatalogKey
+  - sourceVendorId
   - sourceVendorCode
-  - targetModel
-  - targetCatalogKey
+  - targetVendorId
   - targetVendorCode
-  - targetProviderModel
-  - targetProviderNativeModel
   - mappingMode
   - matchType
-  - priority
   - enabled
-  - effectiveFrom
-  - effectiveTo
-  - description
+  - bindings
+  - bindings.bindingType
+  - bindings.bindingId
+  - bindings.bindingCode
+  - bindings.bindingName
+  - mappingItems
+  - mappingItems.sourceModel
+  - mappingItems.sourceCatalogKey
+  - mappingItems.targetModel
+  - mappingItems.targetCatalogKey
+  - mappingItems.targetProviderModel
+  - mappingItems.targetProviderNativeModel
   data_sources:
   - ai_model_mapping_rule
+  - ai_model_mapping_rule_binding
+  - ai_model_mapping_rule_item
 - route: /admin/model/mappings
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
   interface: ModelMappingUpdateInput
   fields:
-  - scopeType
-  - vendorId
-  - vendorCode
-  - channelId
-  - channelCode
-  - sourceModel
-  - sourceCatalogKey
+  - sourceVendorId
   - sourceVendorCode
-  - targetModel
-  - targetCatalogKey
+  - targetVendorId
   - targetVendorCode
-  - targetProviderModel
-  - targetProviderNativeModel
   - mappingMode
   - matchType
-  - priority
   - enabled
-  - effectiveFrom
-  - effectiveTo
-  - description
+  - bindings
+  - bindings.id
+  - bindings.bindingType
+  - bindings.bindingId
+  - bindings.bindingCode
+  - bindings.bindingName
+  - mappingItems
+  - mappingItems.id
+  - mappingItems.sourceModel
+  - mappingItems.sourceCatalogKey
+  - mappingItems.targetModel
+  - mappingItems.targetCatalogKey
+  - mappingItems.targetProviderModel
+  - mappingItems.targetProviderNativeModel
   data_sources:
   - ai_model_mapping_rule
+  - ai_model_mapping_rule_binding
+  - ai_model_mapping_rule_item
 - route: /admin/model/mappings
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
   interface: ModelMappingResolveInput
@@ -619,6 +689,8 @@ frontend_models:
   - channelCode
   data_sources:
   - ai_model_mapping_rule
+  - ai_model_mapping_rule_binding
+  - ai_model_mapping_rule_item
 - route: /admin/model/mappings
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
   interface: ModelMappingResolveResult
@@ -630,7 +702,9 @@ frontend_models:
   - targetProviderModel
   - targetProviderNativeModel
   - matched
-  - matchedScopeType
+  - matchedBindingType
   - rule
   data_sources:
   - ai_model_mapping_rule
+  - ai_model_mapping_rule_binding
+  - ai_model_mapping_rule_item

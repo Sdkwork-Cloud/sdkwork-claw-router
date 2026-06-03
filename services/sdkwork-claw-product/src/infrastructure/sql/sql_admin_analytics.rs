@@ -1,3 +1,4 @@
+use crate::domain::parse_model_catalog_identity;
 use crate::infrastructure::sql::model_modality;
 use crate::ports::{
     AdminAnalyticsInsight, AdminAnalyticsModelRankItem, AdminAnalyticsModelRankings,
@@ -271,16 +272,15 @@ pub(crate) fn format_percent(value: f64) -> String {
 }
 
 pub(crate) fn vendor_from_catalog_key(catalog_key: &str, fallback_model: &str) -> String {
-    let vendor = catalog_key.split('/').next().unwrap_or_default().trim();
-    if vendor.is_empty() {
+    if let Some(identity) = parse_model_catalog_identity(catalog_key) {
+        identity.vendor_code
+    } else {
         let model = fallback_model.trim();
         if model.is_empty() {
             "unknown".to_owned()
         } else {
             model.to_owned()
         }
-    } else {
-        vendor.to_owned()
     }
 }
 

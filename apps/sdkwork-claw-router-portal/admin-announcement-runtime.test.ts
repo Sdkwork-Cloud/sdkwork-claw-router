@@ -195,6 +195,8 @@ test("admin announcement table fills the available admin viewport", () => {
     "data-admin-announcement-table-card",
     "data-admin-announcement-table-viewport",
     "flex h-full min-h-0 w-full flex-col",
+    "className=\"flex-1 min-h-0 rounded-xl dark:bg-[#1a1a1a]\"",
+    "viewportClassName=\"min-h-0 flex-1\"",
     "sticky top-0 z-10",
   ]) {
     assert.ok(pageSource.includes(expected), `missing adaptive admin announcement table marker: ${expected}`);

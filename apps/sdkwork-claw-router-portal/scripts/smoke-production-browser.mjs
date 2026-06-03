@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+﻿#!/usr/bin/env node
 
 import { spawn } from "node:child_process";
 import { access, mkdtemp, rm } from "node:fs/promises";
@@ -269,10 +269,9 @@ const PRIVATE_PRICING_TOKENS = [
 const BROWSER_SMOKE_MODEL_RECORDS = [
   {
     model: "gpt-5.5-pro",
-    catalogKey: "openai/global/gpt-5.5-pro",
+    catalogKey: "openai/gpt-5.5-pro",
     displayName: "GPT-5.5 Pro",
     vendorCode: "openai",
-    regionCode: "global",
     vendor: "OpenAI",
     capabilities: ["chat", "tools", "json schema", "vision"],
     groups: ["default", "enterprise"],
@@ -293,11 +292,9 @@ const BROWSER_SMOKE_MODEL_RECORDS = [
     supportsTools: true,
     supportsJsonSchema: true,
     providerCodes: ["openai"],
-    officialReferenceUnitPrice: "15.000000",
-    officialReferenceCurrency: "USD",
     officialReferencePrices: [
-      { billingMeter: "llm_input_token", unitPrice: "15.000000", currency: "USD" },
-      { billingMeter: "llm_output_token", unitPrice: "120.000000", currency: "USD" },
+      { regionCode: "global", billingMeter: "llm_input_token", unitPrice: "15.000000", currency: "USD" },
+      { regionCode: "global", billingMeter: "llm_output_token", unitPrice: "120.000000", currency: "USD" },
     ],
     priceAvailability: {
       status: "reference",
@@ -306,10 +303,9 @@ const BROWSER_SMOKE_MODEL_RECORDS = [
   },
   {
     model: "gpt-5.5",
-    catalogKey: "openai/global/gpt-5.5",
+    catalogKey: "openai/gpt-5.5",
     displayName: "GPT-5.5",
     vendorCode: "openai",
-    regionCode: "global",
     vendor: "OpenAI",
     capabilities: ["chat", "tools", "json schema", "vision"],
     groups: ["default"],
@@ -330,12 +326,10 @@ const BROWSER_SMOKE_MODEL_RECORDS = [
     supportsTools: true,
     supportsJsonSchema: true,
     providerCodes: ["openai"],
-    officialReferenceUnitPrice: "5.000000",
-    officialReferenceCurrency: "USD",
     officialReferencePrices: [
-      { billingMeter: "llm_input_token", unitPrice: "5.000000", currency: "USD" },
-      { billingMeter: "llm_output_token", unitPrice: "30.000000", currency: "USD" },
-      { billingMeter: "llm_cache_read_token", unitPrice: "0.500000", currency: "USD" },
+      { regionCode: "global", billingMeter: "llm_input_token", unitPrice: "5.000000", currency: "USD" },
+      { regionCode: "global", billingMeter: "llm_output_token", unitPrice: "30.000000", currency: "USD" },
+      { regionCode: "global", billingMeter: "llm_cache_read_token", unitPrice: "0.500000", currency: "USD" },
     ],
     priceAvailability: {
       status: "reference",
@@ -344,10 +338,9 @@ const BROWSER_SMOKE_MODEL_RECORDS = [
   },
   {
     model: "claude-opus-4-7",
-    catalogKey: "anthropic/global/claude-opus-4-7",
+    catalogKey: "anthropic/claude-opus-4-7",
     displayName: "Claude Opus 4.7",
     vendorCode: "anthropic",
-    regionCode: "global",
     vendor: "Anthropic",
     capabilities: ["chat", "tools", "json schema", "long context", "vision"],
     groups: ["default", "enterprise"],
@@ -368,12 +361,10 @@ const BROWSER_SMOKE_MODEL_RECORDS = [
     supportsTools: true,
     supportsJsonSchema: true,
     providerCodes: ["anthropic"],
-    officialReferenceUnitPrice: "5.000000",
-    officialReferenceCurrency: "USD",
     officialReferencePrices: [
-      { billingMeter: "llm_input_token", unitPrice: "5.000000", currency: "USD" },
-      { billingMeter: "llm_output_token", unitPrice: "25.000000", currency: "USD" },
-      { billingMeter: "llm_cache_read_token", unitPrice: "0.500000", currency: "USD" },
+      { regionCode: "global", billingMeter: "llm_input_token", unitPrice: "5.000000", currency: "USD" },
+      { regionCode: "global", billingMeter: "llm_output_token", unitPrice: "25.000000", currency: "USD" },
+      { regionCode: "global", billingMeter: "llm_cache_read_token", unitPrice: "0.500000", currency: "USD" },
     ],
     priceAvailability: {
       status: "reference",
@@ -382,10 +373,9 @@ const BROWSER_SMOKE_MODEL_RECORDS = [
   },
   {
     model: "runtime-good",
-    catalogKey: "newvendor/global/runtime-good",
+    catalogKey: "newvendor/runtime-good",
     displayName: "Runtime Good",
     vendorCode: "newvendor",
-    regionCode: "global",
     vendor: "New Vendor",
     capabilities: ["chat", "tools", "json mode"],
     groups: ["default"],
@@ -396,10 +386,8 @@ const BROWSER_SMOKE_MODEL_RECORDS = [
     contextTokens: 128000,
     maxOutputTokens: 8192,
     providerCodes: ["browser-smoke-provider"],
-    officialReferenceUnitPrice: "0.200000",
-    officialReferenceCurrency: "USD",
     officialReferencePrices: [
-      { billingMeter: "llm_input_token", unitPrice: "0.200000", currency: "USD" },
+      { regionCode: "global", billingMeter: "llm_input_token", unitPrice: "0.200000", currency: "USD" },
     ],
     priceAvailability: {
       status: "reference",
@@ -417,10 +405,9 @@ const BROWSER_SMOKE_MODEL_RECORDS = [
   },
   {
     model: "gpt-4o-mini",
-    catalogKey: "openai/global/gpt-4o-mini",
+    catalogKey: "openai/gpt-4o-mini",
     displayName: "Runtime Enterprise",
     vendorCode: "openai",
-    regionCode: "global",
     vendor: "OpenAI",
     capabilities: ["chat", "tools"],
     groups: ["default", "enterprise"],
@@ -431,10 +418,8 @@ const BROWSER_SMOKE_MODEL_RECORDS = [
     contextTokens: 128000,
     maxOutputTokens: 16384,
     providerCodes: ["browser-smoke-provider"],
-    officialReferenceUnitPrice: "0.150000",
-    officialReferenceCurrency: "USD",
     officialReferencePrices: [
-      { billingMeter: "llm_input_token", unitPrice: "0.150000", currency: "USD" },
+      { regionCode: "global", billingMeter: "llm_input_token", unitPrice: "0.150000", currency: "USD" },
     ],
     priceAvailability: {
       status: "reference",
@@ -443,10 +428,9 @@ const BROWSER_SMOKE_MODEL_RECORDS = [
   },
   {
     model: "runtime-unpriced",
-    catalogKey: "unpricedvendor/global/runtime-unpriced",
+    catalogKey: "unpricedvendor/runtime-unpriced",
     displayName: "Runtime Unpriced",
     vendorCode: "unpricedvendor",
-    regionCode: "global",
     vendor: "Unpriced Vendor",
     capabilities: ["chat"],
     groups: ["default"],
@@ -457,8 +441,6 @@ const BROWSER_SMOKE_MODEL_RECORDS = [
     contextTokens: 32000,
     maxOutputTokens: 4096,
     providerCodes: ["browser-smoke-provider"],
-    officialReferenceUnitPrice: null,
-    officialReferenceCurrency: null,
     officialReferencePrices: [],
     priceAvailability: {
       status: "unavailable",
@@ -1244,9 +1226,9 @@ const BROWSER_SMOKE_ROUTES = [
     requiredTextTokens: ["GPT-5.5 Pro", "GPT-5.5", "Claude Opus 4.7", "REFERENCE / 1M TOKENS"],
   },
   {
-    pathName: "/models/openai%2Fglobal%2Fgpt-5.5-pro",
+    pathName: "/models/openai%2Fgpt-5.5-pro",
     appSdkFixtureMode: APP_SDK_MODEL_FIXTURE_MODE,
-    requiredTextTokens: ["GPT-5.5 Pro", "openai/global/gpt-5.5-pro", "API Example", "Try in Playground"],
+    requiredTextTokens: ["GPT-5.5 Pro", "openai/gpt-5.5-pro", "API Example", "Try in Playground"],
   },
   {
     pathName: "/models?__browser-smoke-runtime=1",
@@ -1326,7 +1308,7 @@ const BROWSER_SMOKE_ROUTES = [
     ],
     requiredTextTokens: [
       "Runtime Good",
-      "newvendor/global/runtime-good",
+      "newvendor/runtime-good",
       "API Example",
       "Try in Playground",
       "CATALOG REFERENCE VALUES",
@@ -1335,11 +1317,11 @@ const BROWSER_SMOKE_ROUTES = [
     forbiddenTextTokens: PRIVATE_PRICING_TOKENS,
   },
   {
-    pathName: "/models/newvendor%2Fglobal%2Fruntime-good?__browser-smoke-detail=1",
+    pathName: "/models/newvendor%2Fruntime-good?__browser-smoke-detail=1",
     appSdkFixtureMode: APP_SDK_MODEL_FIXTURE_MODE,
     requiredTextTokens: [
       "Runtime Good",
-      "newvendor/global/runtime-good",
+      "newvendor/runtime-good",
       "API Example",
       "Try in Playground",
       "Provider Docs",
@@ -1352,11 +1334,11 @@ const BROWSER_SMOKE_ROUTES = [
     forbiddenTextTokens: PRIVATE_PRICING_TOKENS,
   },
   {
-    pathName: "/models/unpricedvendor%2Fglobal%2Fruntime-unpriced?__browser-smoke-unavailable-detail=1",
+    pathName: "/models/unpricedvendor%2Fruntime-unpriced?__browser-smoke-unavailable-detail=1",
     appSdkFixtureMode: APP_SDK_MODEL_FIXTURE_MODE,
     requiredTextTokens: [
       "Runtime Unpriced",
-      "unpricedvendor/global/runtime-unpriced",
+      "unpricedvendor/runtime-unpriced",
       "Public reference price is not configured for this model.",
       "Performance Metrics",
       "Unavailable",
@@ -1794,7 +1776,7 @@ const BROWSER_SMOKE_ROUTES = [
   },
   {
     pathName: "/api-reference",
-    requiredTextTokens: ["AI聚合API", "Create Chat Completion", "Request Parameters", "Response Properties"],
+    requiredTextTokens: ["AI鑱氬悎API", "Create Chat Completion", "Request Parameters", "Response Properties"],
   },
   {
     pathName: "/api-reference?__browser-smoke-tool-api-disabled=1",

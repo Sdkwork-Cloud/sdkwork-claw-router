@@ -144,7 +144,6 @@ frontend_operations:
           - model
           - displayName
           - vendorCode
-          - regionCode
           - vendor
           - capabilities
           - groups
@@ -185,10 +184,6 @@ frontend_operations:
               minLength: 1
               maxLength: 128
             vendorCode:
-              type: string
-              minLength: 1
-              maxLength: 64
-            regionCode:
               type: string
               minLength: 1
               maxLength: 64
@@ -318,29 +313,25 @@ frontend_operations:
                 type: string
                 minLength: 1
                 maxLength: 64
-            officialReferenceUnitPrice:
-              type: string
-              nullable: true
-              description: Public reference unit price for the requested billing meter when configured. The complete public reference price list is exposed through officialReferencePrices.
-            officialReferenceCurrency:
-              type: string
-              nullable: true
-              minLength: 3
-              maxLength: 3
-              description: Native reference currency for the requested billing meter when configured. The complete public reference price list is exposed through officialReferencePrices.
             officialReferencePrices:
               type: array
               maxItems: 64
-              description: Complete public official reference prices keyed by billing meter. Customer, upstream, provider, and channel prices are never exposed here.
+              description: Complete public official reference prices keyed by regionCode and billing meter. Customer, upstream, provider, and channel prices are never exposed here.
               items:
                 name: AppModelCatalogReferencePrice
                 type: object
                 additionalProperties: false
                 required:
+                - regionCode
                 - billingMeter
                 - unitPrice
                 - currency
                 properties:
+                  regionCode:
+                    type: string
+                    minLength: 1
+                    maxLength: 64
+                    description: Deployment or pricing region for this public reference price. Region is never encoded in catalogKey.
                   billingMeter:
                     type: string
                     minLength: 1
@@ -1097,6 +1088,7 @@ frontend_operations:
           - model
           - providerNativeModel
           - requestedModelCatalogKey
+          - regionCode
           - status
           - httpStatus
           - errorCode
@@ -1140,6 +1132,10 @@ frontend_operations:
             requestedModelCatalogKey:
               type: string
               description: Routed base catalog model identity in vendor/model form, for example openai/gpt-5.5. Region-specific pricing or ranking keys are stored separately from the routed model identity.
+            regionCode:
+              type: string
+              maxLength: 64
+              description: Deployment region used by the selected endpoint and pricing resolver. This is not part of the model catalog identity.
             status:
               type: string
             httpStatus:

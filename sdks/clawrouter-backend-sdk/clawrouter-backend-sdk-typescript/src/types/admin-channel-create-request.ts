@@ -1,3 +1,4 @@
+import type { AdminChannelCredentialInput } from './admin-channel-credential-input';
 import type { ProviderCircuitBreakerPolicy } from './provider-circuit-breaker-policy';
 import type { ProviderRetryPolicy } from './provider-retry-policy';
 
@@ -5,16 +6,16 @@ import type { ProviderRetryPolicy } from './provider-retry-policy';
 export interface AdminChannelCreateRequest {
   /** Access type field on admin channel create request. */
   accessType?: string;
-  /** Plaintext provider API key accepted only on create/update input. Backend encrypts it into ai_channel.auth_config and never returns it. */
-  apiKey: string;
-  /** Base url field on admin channel create request. */
-  baseUrl?: string;
   /** Capabilities field on admin channel create request. */
   capabilities?: ('llm' | 'image' | 'audio' | 'music' | 'sfx' | 'video')[];
   /** Channel type. official means a direct vendor account; relay means an upstream aggregator account that can expose multiple vendors. */
   channelType?: 'official' | 'relay';
   /** Circuit breaker policy field on admin channel create request. */
   circuitBreakerPolicy?: ProviderCircuitBreakerPolicy;
+  /** Credential selection strategy for the upstream credential list. */
+  credentialRotation?: 'default' | 'priority' | 'round_robin' | 'weighted_round_robin' | 'random';
+  /** Credentials field on admin channel create request. */
+  credentials: AdminChannelCredentialInput[];
   /** Expires at field on admin channel create request. */
   expiresAt?: string | null;
   /** Models field on admin channel create request. */
@@ -27,8 +28,6 @@ export interface AdminChannelCreateRequest {
   resourceCodes?: string[];
   /** Retry policy field on admin channel create request. */
   retryPolicy?: ProviderRetryPolicy;
-  /** Optional compatibility path for existing Vault/KMS secret references. New admin UI submits apiKey instead. */
-  secretRef?: string;
   /** Status field on admin channel create request. */
   status?: 'active' | 'disabled' | 'error';
   /** Per-channel upstream response timeout in milliseconds. */

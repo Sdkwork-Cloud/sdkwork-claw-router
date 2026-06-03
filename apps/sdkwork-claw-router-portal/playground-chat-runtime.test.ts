@@ -58,7 +58,7 @@ function readWorkspaceFile(relativePath: string): string {
 }
 
 function createSampleChatModel(overrides: Record<string, unknown> = {}) {
-  const id = String(overrides.id ?? "openai/global/gpt-4o-mini");
+  const id = String(overrides.id ?? "openai/gpt-4o-mini");
   const model = String(overrides.model ?? "gpt-4o-mini");
   const displayName = String(overrides.displayName ?? overrides.name ?? model);
   return {
@@ -514,11 +514,11 @@ test("simple chat input remembers the selected chat model across reloads", () =>
 
 test("simple chat input reflects clicked catalog models while only submitting routable models", () => {
   const callableModel = createSampleChatModel({
-    id: "openai/global/gpt-4o-mini",
+    id: "openai/gpt-4o-mini",
     displayName: "GPT-4o Mini",
   });
   const catalogOnlyModel = createSampleChatModel({
-    id: "openai/global/catalog-preview",
+    id: "openai/catalog-preview",
     displayName: "Catalog Preview",
     providerCodes: [],
     supportsStreaming: false,
@@ -566,17 +566,17 @@ test("chat playground never submits catalog-only models without runtime routes",
 
 test("simple chat input explains why the send button is disabled", () => {
   const callableModel = createSampleChatModel({
-    id: "openai/global/gpt-4o-mini",
+    id: "openai/gpt-4o-mini",
     displayName: "GPT-4o Mini",
   });
   const catalogOnlyModel = createSampleChatModel({
-    id: "openai/global/catalog-preview",
+    id: "openai/catalog-preview",
     displayName: "Catalog Preview",
     providerCodes: [],
     supportsStreaming: true,
   });
   const nonStreamingModel = createSampleChatModel({
-    id: "openai/global/sync-only",
+    id: "openai/sync-only",
     displayName: "Sync Only",
     providerCodes: ["openrouter"],
     supportsStreaming: false,

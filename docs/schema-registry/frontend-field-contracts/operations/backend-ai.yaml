@@ -851,6 +851,32 @@ frontend_operations:
           properties: *adminAiResourceItemProperties
 - route: /admin/model/resources
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  operation: fetchAssignableResources
+  operation_id: aiResources.list
+  openapi_exposed: false
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/ai/resources
+  read_sources:
+  - ai_resource
+  - ai_resource_group_item
+  query_parameters: []
+  response_schema:
+    name: AdminAiResourcesResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items:
+          name: AdminAiResourceItem
+          type: object
+          additionalProperties: false
+          required: *adminAiResourceItemRequired
+          properties: *adminAiResourceItemProperties
+- route: /admin/model/resources
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
   operation: fetchResourceGroups
   operation_id: aiResourceGroups.list
   kind: read
@@ -927,6 +953,33 @@ frontend_operations:
               minimum: 0
             dynamic:
               type: boolean
+- route: /admin/channel/resources
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  operation: fetchAiResourceGroups
+  operation_id: aiResourceGroups.list
+  openapi_exposed: false
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/ai/resource_groups
+  read_sources:
+  - ai_resource_group
+  - ai_resource_group_item
+  query_parameters: []
+  response_schema:
+    name: AdminAiResourceGroupsResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        maxItems: 2000
+        items:
+          name: AdminAiResourceGroupItem
+          type: object
+          additionalProperties: false
+          required: *adminAiResourceGroupItemRequired
+          properties: *adminAiResourceGroupItemProperties
 - route: /admin/model/resources
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
   operation: fetchResourceGroupResources
@@ -1973,14 +2026,19 @@ frontend_operations:
   api_path: /backend/v3/api/ai/model_mappings
   read_sources:
   - ai_model_mapping_rule
+  - ai_model_mapping_rule_binding
+  - ai_model_mapping_rule_item
   query_parameters:
-  - name: scope_type
+  - name: binding_type
     type: string
     required: false
   - name: vendor_code
     type: string
     required: false
   - name: channel_id
+    type: string
+    required: false
+  - name: channel_code
     type: string
     required: false
   - name: q
@@ -2000,76 +2058,47 @@ frontend_operations:
           additionalProperties: false
           required: &adminModelMappingRuleRequired
           - id
-          - scopeType
-          - sourceModel
-          - targetModel
+          - bindingType
+          - sourceVendorCode
+          - targetVendorCode
           - mappingMode
           - matchType
-          - priority
           - enabled
+          - bindings
+          - mappingItems
           properties: &adminModelMappingRuleProperties
             id:
               type: string
               minLength: 1
               maxLength: 128
-            scopeType:
+            bindingType:
               type: string
               enum:
               - global
               - vendor
+              - channel_group
               - channel
-            vendorId:
+              - provider_account
+              - site
+              - site_service
+            sourceVendorId:
               type: string
               nullable: true
               maxLength: 128
-            vendorCode:
-              type: string
-              nullable: true
-              maxLength: 64
-              pattern: ^[A-Za-z0-9._-]+$
-            channelId:
-              type: string
-              nullable: true
-              maxLength: 128
-            channelCode:
-              type: string
-              nullable: true
-              maxLength: 64
-              pattern: ^[A-Za-z0-9._-]+$
-            sourceModel:
-              type: string
-              minLength: 1
-              maxLength: 256
-            sourceCatalogKey:
-              type: string
-              nullable: true
-              maxLength: 256
             sourceVendorCode:
               type: string
-              nullable: true
+              minLength: 1
               maxLength: 64
               pattern: ^[A-Za-z0-9._-]+$
-            targetModel:
-              type: string
-              minLength: 1
-              maxLength: 256
-            targetCatalogKey:
+            targetVendorId:
               type: string
               nullable: true
-              maxLength: 256
+              maxLength: 128
             targetVendorCode:
               type: string
-              nullable: true
+              minLength: 1
               maxLength: 64
               pattern: ^[A-Za-z0-9._-]+$
-            targetProviderModel:
-              type: string
-              nullable: true
-              maxLength: 256
-            targetProviderNativeModel:
-              type: string
-              nullable: true
-              maxLength: 256
             mappingMode:
               type: string
               enum:
@@ -2078,25 +2107,122 @@ frontend_operations:
               type: string
               enum:
               - exact
-            priority:
-              type: integer
-              format: int64
-              minimum: 0
-              maximum: 1000000
             enabled:
               type: boolean
-            effectiveFrom:
-              type: string
-              nullable: true
-              maxLength: 64
-            effectiveTo:
-              type: string
-              nullable: true
-              maxLength: 64
-            description:
-              type: string
-              nullable: true
-              maxLength: 512
+            bindings:
+              type: array
+              minItems: 1
+              maxItems: 100
+              items: &adminModelMappingRuleBindingSchema
+                name: AdminModelMappingRuleBinding
+                type: object
+                additionalProperties: false
+                required:
+                - id
+                - bindingType
+                - sortOrder
+                - enabled
+                properties:
+                  id:
+                    type: string
+                    minLength: 1
+                    maxLength: 128
+                  bindingType:
+                    type: string
+                    enum: &adminModelMappingBindingTypes
+                    - global
+                    - vendor
+                    - channel_group
+                    - channel
+                    - provider_account
+                    - site
+                    - site_service
+                  bindingId:
+                    type: string
+                    nullable: true
+                    maxLength: 128
+                  bindingCode:
+                    type: string
+                    nullable: true
+                    maxLength: 128
+                    pattern: ^[A-Za-z0-9._:-]+$
+                  bindingName:
+                    type: string
+                    nullable: true
+                    maxLength: 256
+                  sortOrder:
+                    type: integer
+                    format: int64
+                    minimum: 0
+                    maximum: 1000000
+                  enabled:
+                    type: boolean
+                  createdAt:
+                    type: string
+                    nullable: true
+                    maxLength: 64
+                  updatedAt:
+                    type: string
+                    nullable: true
+                    maxLength: 64
+            mappingItems:
+              type: array
+              minItems: 1
+              maxItems: 100
+              items: &adminModelMappingRuleItemSchema
+                name: AdminModelMappingRuleItem
+                type: object
+                additionalProperties: false
+                required:
+                - id
+                - sourceModel
+                - targetModel
+                - sortOrder
+                - enabled
+                properties:
+                  id:
+                    type: string
+                    minLength: 1
+                    maxLength: 128
+                  sourceModel:
+                    type: string
+                    minLength: 1
+                    maxLength: 256
+                  sourceCatalogKey:
+                    type: string
+                    nullable: true
+                    maxLength: 256
+                  targetModel:
+                    type: string
+                    minLength: 1
+                    maxLength: 256
+                  targetCatalogKey:
+                    type: string
+                    nullable: true
+                    maxLength: 256
+                  targetProviderModel:
+                    type: string
+                    nullable: true
+                    maxLength: 256
+                  targetProviderNativeModel:
+                    type: string
+                    nullable: true
+                    maxLength: 256
+                  sortOrder:
+                    type: integer
+                    format: int64
+                    minimum: 0
+                    maximum: 1000000
+                  enabled:
+                    type: boolean
+                  createdAt:
+                    type: string
+                    nullable: true
+                    maxLength: 64
+                  updatedAt:
+                    type: string
+                    nullable: true
+                    maxLength: 64
             createdAt:
               type: string
               nullable: true
@@ -2116,74 +2242,39 @@ frontend_operations:
   api_path: /backend/v3/api/ai/model_mappings
   read_sources:
   - ai_model_mapping_rule
+  - ai_model_mapping_rule_binding
+  - ai_model_mapping_rule_item
   write_tables:
   - ai_model_mapping_rule
+  - ai_model_mapping_rule_binding
+  - ai_model_mapping_rule_item
   - ops_audit_log
   request_schema:
     name: AdminModelMappingCreateRequest
     required:
-    - scopeType
-    - sourceModel
-    - targetModel
+    - sourceVendorCode
+    - targetVendorCode
+    - bindings
+    - mappingItems
     properties: &adminModelMappingMutationRequestProperties
-      scopeType:
-        type: string
-        enum:
-        - global
-        - vendor
-        - channel
-      vendorId:
+      sourceVendorId:
         type: string
         nullable: true
         maxLength: 128
-      vendorCode:
-        type: string
-        nullable: true
-        maxLength: 64
-        pattern: ^[A-Za-z0-9._-]+$
-      channelId:
-        type: string
-        nullable: true
-        maxLength: 128
-      channelCode:
-        type: string
-        nullable: true
-        maxLength: 64
-        pattern: ^[A-Za-z0-9._-]+$
-      sourceModel:
-        type: string
-        minLength: 1
-        maxLength: 256
-      sourceCatalogKey:
-        type: string
-        nullable: true
-        maxLength: 256
       sourceVendorCode:
         type: string
-        nullable: true
+        minLength: 1
         maxLength: 64
         pattern: ^[A-Za-z0-9._-]+$
-      targetModel:
-        type: string
-        minLength: 1
-        maxLength: 256
-      targetCatalogKey:
+      targetVendorId:
         type: string
         nullable: true
-        maxLength: 256
+        maxLength: 128
       targetVendorCode:
         type: string
-        nullable: true
+        minLength: 1
         maxLength: 64
         pattern: ^[A-Za-z0-9._-]+$
-      targetProviderModel:
-        type: string
-        nullable: true
-        maxLength: 256
-      targetProviderNativeModel:
-        type: string
-        nullable: true
-        maxLength: 256
       mappingMode:
         type: string
         enum:
@@ -2192,133 +2283,94 @@ frontend_operations:
         type: string
         enum:
         - exact
-      priority:
-        type: integer
-        format: int64
-        minimum: 0
-        maximum: 1000000
       enabled:
         type: boolean
-      effectiveFrom:
-        type: string
-        nullable: true
-        maxLength: 64
-      effectiveTo:
-        type: string
-        nullable: true
-        maxLength: 64
-      description:
-        type: string
-        nullable: true
-        maxLength: 512
+      bindings:
+        type: array
+        minItems: 1
+        maxItems: 100
+        items: &adminModelMappingBindingInputSchema
+          name: AdminModelMappingRuleBindingInput
+          type: object
+          additionalProperties: false
+          required:
+          - bindingType
+          properties:
+            id:
+              type: string
+              nullable: true
+              maxLength: 128
+            bindingType:
+              type: string
+              enum: *adminModelMappingBindingTypes
+            bindingId:
+              type: string
+              nullable: true
+              maxLength: 128
+            bindingCode:
+              type: string
+              nullable: true
+              maxLength: 128
+              pattern: ^[A-Za-z0-9._:-]+$
+            bindingName:
+              type: string
+              nullable: true
+              maxLength: 256
+            enabled:
+              type: boolean
+      mappingItems:
+        type: array
+        minItems: 1
+        maxItems: 100
+        items: &adminModelMappingItemInputSchema
+          name: AdminModelMappingRuleItemInput
+          type: object
+          additionalProperties: false
+          required:
+          - sourceModel
+          - targetModel
+          properties:
+            id:
+              type: string
+              nullable: true
+              maxLength: 128
+            sourceModel:
+              type: string
+              minLength: 1
+              maxLength: 256
+            sourceCatalogKey:
+              type: string
+              nullable: true
+              maxLength: 256
+            targetModel:
+              type: string
+              minLength: 1
+              maxLength: 256
+            targetCatalogKey:
+              type: string
+              nullable: true
+              maxLength: 256
+            targetProviderModel:
+              type: string
+              nullable: true
+              maxLength: 256
+            targetProviderNativeModel:
+              type: string
+              nullable: true
+              maxLength: 256
+            enabled:
+              type: boolean
   response_schema: &adminModelMappingMutationResponse
     name: AdminModelMappingMutationResponse
     required:
     - item
     properties:
       item:
-        name: AdminModelMappingMutationItem
+        name: AdminModelMappingRule
         type: object
         additionalProperties: false
-        required:
-        - id
-        - scopeType
-        - sourceModel
-        - targetModel
-        - mappingMode
-        - matchType
-        - priority
-        - enabled
-        properties:
-          id:
-            type: string
-            minLength: 1
-            maxLength: 128
-          scopeType:
-            type: string
-            enum:
-            - global
-            - vendor
-            - channel
-          vendorCode:
-            type: string
-            nullable: true
-            maxLength: 64
-            pattern: ^[A-Za-z0-9._-]+$
-          channelCode:
-            type: string
-            nullable: true
-            maxLength: 64
-            pattern: ^[A-Za-z0-9._-]+$
-          sourceModel:
-            type: string
-            minLength: 1
-            maxLength: 256
-          sourceCatalogKey:
-            type: string
-            nullable: true
-            maxLength: 256
-          sourceVendorCode:
-            type: string
-            nullable: true
-            maxLength: 64
-            pattern: ^[A-Za-z0-9._-]+$
-          targetModel:
-            type: string
-            minLength: 1
-            maxLength: 256
-          targetCatalogKey:
-            type: string
-            nullable: true
-            maxLength: 256
-          targetVendorCode:
-            type: string
-            nullable: true
-            maxLength: 64
-            pattern: ^[A-Za-z0-9._-]+$
-          targetProviderModel:
-            type: string
-            nullable: true
-            maxLength: 256
-          targetProviderNativeModel:
-            type: string
-            nullable: true
-            maxLength: 256
-          mappingMode:
-            type: string
-            enum:
-            - alias
-          matchType:
-            type: string
-            enum:
-            - exact
-          priority:
-            type: integer
-            format: int64
-            minimum: 0
-            maximum: 1000000
-          enabled:
-            type: boolean
-          effectiveFrom:
-            type: string
-            nullable: true
-            maxLength: 64
-          effectiveTo:
-            type: string
-            nullable: true
-            maxLength: 64
-          description:
-            type: string
-            nullable: true
-            maxLength: 512
-          createdAt:
-            type: string
-            nullable: true
-            maxLength: 64
-          updatedAt:
-            type: string
-            nullable: true
-            maxLength: 64
+        required: *adminModelMappingRuleRequired
+        properties: *adminModelMappingRuleProperties
 - route: /admin/model/mappings
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
   operation: updateModelMapping
@@ -2332,8 +2384,12 @@ frontend_operations:
   - mappingId
   read_sources:
   - ai_model_mapping_rule
+  - ai_model_mapping_rule_binding
+  - ai_model_mapping_rule_item
   write_tables:
   - ai_model_mapping_rule
+  - ai_model_mapping_rule_binding
+  - ai_model_mapping_rule_item
   - ops_audit_log
   request_schema:
     name: AdminModelMappingUpdateRequest
@@ -2353,8 +2409,12 @@ frontend_operations:
   - mappingId
   read_sources:
   - ai_model_mapping_rule
+  - ai_model_mapping_rule_binding
+  - ai_model_mapping_rule_item
   write_tables:
   - ai_model_mapping_rule
+  - ai_model_mapping_rule_binding
+  - ai_model_mapping_rule_item
   - ops_audit_log
   response_schema:
     name: AdminModelMappingDeleteResponse
@@ -2376,6 +2436,8 @@ frontend_operations:
   api_path: /backend/v3/api/ai/model_mappings/resolve
   read_sources:
   - ai_model_mapping_rule
+  - ai_model_mapping_rule_binding
+  - ai_model_mapping_rule_item
   write_tables:
   - ops_audit_log
   request_schema:
@@ -2401,6 +2463,15 @@ frontend_operations:
         nullable: true
         maxLength: 64
         pattern: ^[A-Za-z0-9._-]+$
+      providerAccountId:
+        type: string
+        nullable: true
+        maxLength: 128
+      providerAccountCode:
+        type: string
+        nullable: true
+        maxLength: 128
+        pattern: ^[A-Za-z0-9._:-]+$
   response_schema:
     name: AdminModelMappingResolveResponse
     type: object
@@ -2436,13 +2507,17 @@ frontend_operations:
         maxLength: 256
       matched:
         type: boolean
-      matchedScopeType:
+      matchedBindingType:
         type: string
         nullable: true
         enum:
         - global
         - vendor
+        - channel_group
         - channel
+        - provider_account
+        - site
+        - site_service
       rule:
         name: AdminModelMappingRule
         type: object
@@ -2584,10 +2659,7 @@ frontend_operations:
           - displayName
           - name
           - type
-          - priceIn
-          - priceOut
-          - cacheReadPrice
-          - cacheWritePrice
+          - regionPrices
           - status
           - calls
           - description
@@ -2625,7 +2697,7 @@ frontend_operations:
             model:
               type: string
               minLength: 1
-              maxLength: 128
+              maxLength: 256
               pattern: ^[A-Za-z0-9._:/-]+$
               description: Runtime model identifier used for provider calls, routing, and pricing keys.
             displayName:
@@ -2648,20 +2720,42 @@ frontend_operations:
               - Music
               - SoundEffect
               - Video
-            priceIn:
-              type: string
-              minLength: 1
-              maxLength: 64
-            priceOut:
-              type: string
-              minLength: 1
-              maxLength: 64
-            cacheReadPrice:
-              type: string
-              maxLength: 64
-            cacheWritePrice:
-              type: string
-              maxLength: 64
+            regionPrices:
+              type: array
+              minItems: 1
+              maxItems: 32
+              items: &id005
+                name: AdminAiModelRegionPrice
+                type: object
+                additionalProperties: false
+                description: Regional official reference pricing returned by admin AI model payloads.
+                required:
+                - regionCode
+                - priceIn
+                - priceOut
+                properties:
+                  regionCode:
+                    type: string
+                    minLength: 1
+                    maxLength: 64
+                    pattern: ^[a-z][a-z0-9_-]{0,63}$
+                    description: Model catalog pricing region code.
+                  priceIn:
+                    type: string
+                    pattern: ^[0-9]+(\.[0-9]{1,12})?$
+                    description: Official reference input unit price in USD.
+                  priceOut:
+                    type: string
+                    pattern: ^[0-9]+(\.[0-9]{1,12})?$
+                    description: Official reference output unit price in USD.
+                  cacheReadPrice:
+                    type: string
+                    pattern: ^$|^[0-9]+(\.[0-9]{1,12})?$
+                    description: Optional official reference cache-read unit price in USD.
+                  cacheWritePrice:
+                    type: string
+                    pattern: ^$|^[0-9]+(\.[0-9]{1,12})?$
+                    description: Optional official reference cache-write unit price in USD.
             status:
               type: string
               enum:
@@ -3859,8 +3953,7 @@ frontend_operations:
     - vendorId
     - model
     - type
-    - priceIn
-    - priceOut
+    - regionPrices
     - contextTokens
     properties:
       vendorId:
@@ -3871,7 +3964,7 @@ frontend_operations:
       model:
         type: string
         minLength: 1
-        maxLength: 128
+        maxLength: 256
         pattern: ^[A-Za-z0-9._:/-]+$
         description: Runtime model identifier used for provider calls, routing, and pricing keys.
       displayName:
@@ -3890,58 +3983,11 @@ frontend_operations:
         - SoundEffect
         - Video
         description: Primary model modality shown in the admin console.
-      priceIn:
-        type: string
-        pattern: ^[0-9]+(\.[0-9]{1,12})?$
-        description: Official reference input unit price in USD.
-      priceOut:
-        type: string
-        pattern: ^[0-9]+(\.[0-9]{1,12})?$
-        description: Official reference output unit price in USD.
-      cacheReadPrice:
-        type: string
-        pattern: ^$|^[0-9]+(\.[0-9]{1,12})?$
-        description: Optional official reference cache-read unit price in USD.
-      cacheWritePrice:
-        type: string
-        pattern: ^$|^[0-9]+(\.[0-9]{1,12})?$
-        description: Optional official reference cache-write unit price in USD.
       regionPrices:
         type: array
         minItems: 1
         maxItems: 32
-        items: &id005
-          name: AdminAiModelRegionPrice
-          type: object
-          additionalProperties: false
-          description: Regional official reference pricing input for admin AI model commands.
-          required:
-          - regionCode
-          - priceIn
-          - priceOut
-          properties:
-            regionCode:
-              type: string
-              minLength: 1
-              maxLength: 64
-              pattern: ^[a-z][a-z0-9_-]{0,63}$
-              description: Model catalog pricing region code.
-            priceIn:
-              type: string
-              pattern: ^[0-9]+(\.[0-9]{1,12})?$
-              description: Official reference input unit price in USD.
-            priceOut:
-              type: string
-              pattern: ^[0-9]+(\.[0-9]{1,12})?$
-              description: Official reference output unit price in USD.
-            cacheReadPrice:
-              type: string
-              pattern: ^$|^[0-9]+(\.[0-9]{1,12})?$
-              description: Optional official reference cache-read unit price in USD.
-            cacheWritePrice:
-              type: string
-              pattern: ^$|^[0-9]+(\.[0-9]{1,12})?$
-              description: Optional official reference cache-write unit price in USD.
+        items: *id005
         description: Official reference prices by region.
       contextTokens:
         type: string
@@ -4074,7 +4120,7 @@ frontend_operations:
       model:
         type: string
         minLength: 1
-        maxLength: 128
+        maxLength: 256
         pattern: ^[A-Za-z0-9._:/-]+$
         description: Optional runtime model identifier update.
       displayName:
@@ -4093,22 +4139,6 @@ frontend_operations:
         - SoundEffect
         - Video
         description: Optional primary model modality update.
-      priceIn:
-        type: string
-        pattern: ^[0-9]+(\.[0-9]{1,12})?$
-        description: Optional official reference input unit price in USD.
-      priceOut:
-        type: string
-        pattern: ^[0-9]+(\.[0-9]{1,12})?$
-        description: Optional official reference output unit price in USD.
-      cacheReadPrice:
-        type: string
-        pattern: ^$|^[0-9]+(\.[0-9]{1,12})?$
-        description: Optional official reference cache-read unit price in USD. Empty string clears the cache-read price.
-      cacheWritePrice:
-        type: string
-        pattern: ^$|^[0-9]+(\.[0-9]{1,12})?$
-        description: Optional official reference cache-write unit price in USD. Empty string clears the cache-write price.
       regionPrices:
         type: array
         minItems: 1

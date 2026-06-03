@@ -28,5 +28,7 @@ pub mod prompts;
 pub use prompts::PromptsApi;
 pub mod service_providers;
 pub use service_providers::ServiceProvidersApi;
+pub mod sites;
+pub use sites::SitesApi;
 pub mod storage;
 pub use storage::StorageApi;

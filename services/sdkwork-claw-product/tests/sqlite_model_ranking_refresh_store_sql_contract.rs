@@ -24,6 +24,23 @@ fn sqlite_model_ranking_refresh_uses_indexable_usage_occurred_at_window_predicat
 }
 
 #[test]
+fn sqlite_model_ranking_refresh_uses_public_active_models_only() {
+    let sql = compact_sql(SQLITE_MODEL_RANKING_REFRESH_STORE);
+
+    for expected in [
+        "AND m.deleted_at IS NULL",
+        "AND COALESCE(m.release_stage, 1) IN (1, 2)",
+        "AND COALESCE(m.shelf_state, 1) = 1",
+        "AND COALESCE(m.routing_state, 1) = 1",
+    ] {
+        assert!(
+            sql.contains(expected),
+            "SQLite model ranking refresh must contain public-active model predicate `{expected}`"
+        );
+    }
+}
+
+#[test]
 fn sqlite_model_ranking_refresh_records_normalized_audit_trigger_type() {
     let sql = compact_sql(SQLITE_MODEL_RANKING_REFRESH_STORE);
 

@@ -5,6 +5,8 @@ import type { MediaResource } from './media-resource';
 export interface AiModelVendorRecord {
   /** Capabilities field on ai model vendor record. */
   capabilities?: Record<string, JsonValue>;
+  /** Client api compatibility field on ai model vendor record. */
+  client_api_compatibility?: Record<string, JsonValue>;
   /** Color token field on ai model vendor record. */
   color_token?: string;
   /** Country region field on ai model vendor record. */
@@ -43,6 +45,8 @@ export interface AiModelVendorRecord {
   sort_order?: number;
   /** Status field on ai model vendor record. */
   status: string;
+  /** Supported protocols field on ai model vendor record. */
+  supported_protocols?: Record<string, JsonValue>;
   /** Tenant id field on ai model vendor record. */
   tenant_id: string;
   /** Updated at field on ai model vendor record. */

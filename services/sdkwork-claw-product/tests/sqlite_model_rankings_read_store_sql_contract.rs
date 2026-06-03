@@ -47,6 +47,21 @@ fn sqlite_model_rankings_read_store_applies_normalized_filters_and_bound_limits(
 }
 
 #[test]
+fn sqlite_model_rankings_read_store_uses_public_active_model_catalog_filter() {
+    for expected in [
+        "public_model_catalog AS",
+        "FROM ai_model m",
+        "AND m.deleted_at IS NULL",
+        "AND COALESCE(m.release_stage, 1) IN (1, 2)",
+        "AND COALESCE(m.shelf_state, 1) = 1",
+        "AND COALESCE(m.routing_state, 1) = 1",
+        "JOIN public_model_catalog visible_model ON visible_model.catalog_key = NULLIF(r.catalog_key, '')",
+    ] {
+        assert_sql_contains(SQLITE_MODEL_RANKINGS_READ_STORE, expected);
+    }
+}
+
+#[test]
 fn sqlite_model_rankings_read_store_prefers_snapshot_scope_before_fallback_job_scope() {
     for expected in [
         "WITH selected_snapshot_scope AS",

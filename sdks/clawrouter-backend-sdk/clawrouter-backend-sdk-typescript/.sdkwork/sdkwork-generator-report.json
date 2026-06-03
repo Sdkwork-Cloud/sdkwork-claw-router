@@ -12,7 +12,7 @@
   "mode": "apply",
   "hasChanges": true,
   "hasDestructiveChanges": false,
-  "changeFingerprint": "8e7c56f1acab05c7316418fb6a13c28945e59da8078847082ae79924420130d7",
+  "changeFingerprint": "7a625446174f33029066b667baa69e749f0f23421418166120f958806c411ef1",
   "changeImpact": {
     "schemaVersion": 1,
     "areas": [
@@ -22,7 +22,15 @@
       {
         "area": "models",
         "paths": [
-          "src/types/commerce-payment-provider-account-mutation-request.ts"
+          "src/types/admin-channel-create-request.ts",
+          "src/types/admin-channel-credential-input.ts",
+          "src/types/admin-channel-credential-item.ts",
+          "src/types/admin-channel-item.ts",
+          "src/types/admin-channel-update-request.ts",
+          "src/types/ai-channel-credential-record.ts",
+          "src/types/ai-channel-record.ts",
+          "src/types/ai-model-vendor-record.ts",
+          "src/types/index.ts"
         ]
       }
     ],
@@ -138,10 +146,10 @@
     "localVersions": []
   },
   "stats": {
-    "totalFiles": 1183,
-    "models": 1144,
+    "totalFiles": 1191,
+    "models": 1152,
     "apis": 16,
-    "types": 1146
+    "types": 1154
   },
   "warnings": [
     {
@@ -315,16 +323,25 @@
   ],
   "syncSummary": {
     "dryRun": false,
-    "writtenFiles": 1,
+    "writtenFiles": 9,
     "skippedScaffoldFiles": 2,
     "skippedUnchangedGeneratedFiles": 1179,
     "deletedGeneratedFiles": 0,
     "changeSummaryPath": ".sdkwork/sdkwork-generator-changes.json",
-    "changeFingerprint": "8e7c56f1acab05c7316418fb6a13c28945e59da8078847082ae79924420130d7",
+    "changeFingerprint": "7a625446174f33029066b667baa69e749f0f23421418166120f958806c411ef1",
     "changes": {
-      "createdGeneratedFiles": [],
+      "createdGeneratedFiles": [
+        "src/types/admin-channel-credential-input.ts",
+        "src/types/admin-channel-credential-item.ts",
+        "src/types/ai-channel-credential-record.ts"
+      ],
       "updatedGeneratedFiles": [
-        "src/types/commerce-payment-provider-account-mutation-request.ts"
+        "src/types/admin-channel-create-request.ts",
+        "src/types/admin-channel-item.ts",
+        "src/types/admin-channel-update-request.ts",
+        "src/types/ai-channel-record.ts",
+        "src/types/ai-model-vendor-record.ts",
+        "src/types/index.ts"
       ],
       "unchangedGeneratedFiles": [
         "bin/publish-core.mjs",
@@ -453,7 +470,6 @@
         "src/types/admin-cache-overview-response.ts",
         "src/types/admin-cache-summary.ts",
         "src/types/admin-capacity-pair.ts",
-        "src/types/admin-channel-create-request.ts",
         "src/types/admin-channel-endpoint-create-request.ts",
         "src/types/admin-channel-endpoint-item.ts",
         "src/types/admin-channel-endpoint-mutation-response.ts",
@@ -468,10 +484,8 @@
         "src/types/admin-channel-group-mutation-response.ts",
         "src/types/admin-channel-group-update-request.ts",
         "src/types/admin-channel-groups-response.ts",
-        "src/types/admin-channel-item.ts",
         "src/types/admin-channel-mutation-response.ts",
         "src/types/admin-channel-test-response.ts",
-        "src/types/admin-channel-update-request.ts",
         "src/types/admin-channels-response.ts",
         "src/types/admin-count-pair.ts",
         "src/types/admin-course-application-collection-response.ts",
@@ -537,10 +551,13 @@
         "src/types/admin-model-limits-response.ts",
         "src/types/admin-model-mapping-create-request.ts",
         "src/types/admin-model-mapping-delete-response.ts",
-        "src/types/admin-model-mapping-mutation-item.ts",
         "src/types/admin-model-mapping-mutation-response.ts",
         "src/types/admin-model-mapping-resolve-request.ts",
         "src/types/admin-model-mapping-resolve-response.ts",
+        "src/types/admin-model-mapping-rule-binding-input.ts",
+        "src/types/admin-model-mapping-rule-binding.ts",
+        "src/types/admin-model-mapping-rule-item-input.ts",
+        "src/types/admin-model-mapping-rule-item.ts",
         "src/types/admin-model-mapping-rule.ts",
         "src/types/admin-model-mapping-update-request.ts",
         "src/types/admin-model-mappings-response.ts",
@@ -670,7 +687,6 @@
         "src/types/ai-channel-group-record.ts",
         "src/types/ai-channel-group-resource-record.ts",
         "src/types/ai-channel-model-record.ts",
-        "src/types/ai-channel-record.ts",
         "src/types/ai-channel-resource-record.ts",
         "src/types/ai-channel-vendor-record.ts",
         "src/types/ai-chat-context-snapshot-record.ts",
@@ -702,12 +718,13 @@
         "src/types/ai-model-catalog-source-record.ts",
         "src/types/ai-model-catalog-sync-run-record.ts",
         "src/types/ai-model-family-record.ts",
+        "src/types/ai-model-mapping-rule-binding-record.ts",
+        "src/types/ai-model-mapping-rule-item-record.ts",
         "src/types/ai-model-mapping-rule-record.ts",
         "src/types/ai-model-modality-record.ts",
         "src/types/ai-model-pricing-record.ts",
         "src/types/ai-model-rank-snapshot-record.ts",
         "src/types/ai-model-record.ts",
-        "src/types/ai-model-vendor-record.ts",
         "src/types/ai-pricing-import-snapshot-record.ts",
         "src/types/ai-pricing-plan-binding-record.ts",
         "src/types/ai-pricing-plan-record.ts",
@@ -900,6 +917,7 @@
         "src/types/commerce-payment-provider-account-delete-response.ts",
         "src/types/commerce-payment-provider-account-item.ts",
         "src/types/commerce-payment-provider-account-list-response.ts",
+        "src/types/commerce-payment-provider-account-mutation-request.ts",
         "src/types/commerce-payment-provider-account-mutation-response.ts",
         "src/types/commerce-payment-provider-account-record.ts",
         "src/types/commerce-payment-provider-account-status-update-request.ts",
@@ -1071,7 +1089,6 @@
         "src/types/iam-verification-attempt-record.ts",
         "src/types/iam-verification-challenge-record.ts",
         "src/types/iam-verification-scene-policy-record.ts",
-        "src/types/index.ts",
         "src/types/installation-status-response.ts",
         "src/types/installation-status-retrieve-result.ts",
         "src/types/integration-provider-account-record.ts",
@@ -1524,7 +1541,15 @@
         {
           "area": "models",
           "paths": [
-            "src/types/commerce-payment-provider-account-mutation-request.ts"
+            "src/types/admin-channel-create-request.ts",
+            "src/types/admin-channel-credential-input.ts",
+            "src/types/admin-channel-credential-item.ts",
+            "src/types/admin-channel-item.ts",
+            "src/types/admin-channel-update-request.ts",
+            "src/types/ai-channel-credential-record.ts",
+            "src/types/ai-channel-record.ts",
+            "src/types/ai-model-vendor-record.ts",
+            "src/types/index.ts"
           ]
         }
       ],

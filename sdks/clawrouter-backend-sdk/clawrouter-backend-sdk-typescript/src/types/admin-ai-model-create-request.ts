@@ -4,10 +4,6 @@ import type { AdminAiModelRegionPrice } from './admin-ai-model-region-price';
 export interface AdminAiModelCreateRequest {
   /** Api format field on admin ai model create request. */
   apiFormat?: string | null;
-  /** Optional official reference cache-read unit price in USD. */
-  cacheReadPrice?: string;
-  /** Optional official reference cache-write unit price in USD. */
-  cacheWritePrice?: string;
   /** Capability intro field on admin ai model create request. */
   capabilityIntro?: string | null;
   /** Positive token window, accepting plain integers or K/M suffixes. */
@@ -28,12 +24,8 @@ export interface AdminAiModelCreateRequest {
   model: string;
   /** Output modalities field on admin ai model create request. */
   outputModalities?: string[];
-  /** Official reference input unit price in USD. */
-  priceIn: string;
-  /** Official reference output unit price in USD. */
-  priceOut: string;
   /** Official reference prices by region. */
-  regionPrices?: AdminAiModelRegionPrice[];
+  regionPrices: AdminAiModelRegionPrice[];
   /** Release stage field on admin ai model create request. */
   releaseStage?: number | null;
   /** Replacement model field on admin ai model create request. */

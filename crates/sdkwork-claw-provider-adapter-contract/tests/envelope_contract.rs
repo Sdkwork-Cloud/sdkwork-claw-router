@@ -30,6 +30,7 @@ fn adapter_invocation_request_serializes_stable_gateway_envelope() {
         provider: AdapterProviderContext {
             provider_code: "vidu-official".to_owned(),
             channel_id: 3001,
+            region_code: "global".to_owned(),
             provider_model: "vidu-q1".to_owned(),
             base_url: Some("https://api.vidu.example".to_owned()),
             auth_profile: json!({"type": "bearer"}),
@@ -52,6 +53,7 @@ fn adapter_invocation_request_serializes_stable_gateway_envelope() {
     assert_eq!(serialized["invocation"]["shape"], "async_task_start");
     assert_eq!(serialized["subject"]["tenantId"], 10);
     assert_eq!(serialized["provider"]["providerCode"], "vidu-official");
+    assert_eq!(serialized["provider"]["regionCode"], "global");
     assert_eq!(serialized["secret"]["type"], "gateway_resolved");
 }
 
@@ -82,13 +84,13 @@ fn adapter_invocation_response_serializes_standard_usage_lines() {
         AdapterUsageLine::new("video_result", "1")
             .with_result_count(1)
             .with_provider_native_model("vidu-q1")
-            .with_requested_model_catalog_key("vidu/global/vidu-q1"),
+            .with_requested_model_catalog_key("vidu/vidu-q1"),
     )
     .with_usage_line(
         AdapterUsageLine::new("video_output_second", "8")
             .with_video_seconds("8")
             .with_provider_native_model("vidu-q1")
-            .with_requested_model_catalog_key("vidu/global/vidu-q1"),
+            .with_requested_model_catalog_key("vidu/vidu-q1"),
     );
 
     let serialized = serde_json::to_value(response).unwrap();
@@ -109,7 +111,7 @@ fn adapter_invocation_response_serializes_standard_usage_lines() {
     );
     assert_eq!(
         serialized["usage"]["usageLines"][0]["requestedModelCatalogKey"],
-        "vidu/global/vidu-q1"
+        "vidu/vidu-q1"
     );
     assert_eq!(
         serialized["usage"]["usageLines"][1]["meterCode"],

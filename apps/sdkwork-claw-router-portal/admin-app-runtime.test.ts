@@ -640,6 +640,8 @@ test("admin app management table fills the available admin viewport", () => {
     "data-admin-app-table-viewport",
     "data-admin-app-pagination",
     "flex h-full min-h-0 w-full min-w-0 flex-col gap-4 overflow-hidden",
+    "className=\"flex-1 min-h-0\"",
+    "viewportClassName=\"min-h-0 flex-1\"",
     "flex shrink-0 justify-end",
     "grid shrink-0 grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-4",
     "data-admin-app-layout className=\"grid min-h-0 flex-1 grid-rows-[minmax(0,240px)_minmax(0,1fr)] gap-4 overflow-hidden xl:grid-cols-[320px_minmax(0,1fr)] xl:grid-rows-[minmax(0,1fr)]\"",
@@ -657,26 +659,26 @@ test("admin app management table fills the available admin viewport", () => {
   );
 });
 
-test("admin layout lets document own vertical page scrolling", () => {
+test("admin layout keeps admin pages inside a fixed viewport shell", () => {
   const layoutSource = readPortalFile("./src/AdminLayout.tsx");
   const dashboardSource = readPortalFile("./packages/sdkwork-claw-router-admin-dashboard/src/index.tsx");
 
   for (const expected of [
-    "flex min-h-screen flex-col bg-slate-50 dark:bg-black font-sans text-slate-900 dark:text-white",
-    "flex flex-1 pt-16",
+    "flex h-[100dvh] min-h-0 flex-col overflow-hidden bg-slate-50 dark:bg-black font-sans text-slate-900 dark:text-white",
+    "flex min-h-0 flex-1 overflow-hidden pt-16",
     "w-64 min-h-0 bg-white dark:bg-[#121212] border-r border-slate-200 dark:border-white/10 flex flex-col overflow-hidden",
-    "flex-1 flex flex-col bg-slate-50 dark:bg-[#0a0a0a] min-w-0 relative",
-    "flex min-h-0 flex-1 flex-col p-[5px]",
+    "flex-1 flex min-h-0 flex-col overflow-hidden bg-slate-50 dark:bg-[#0a0a0a] min-w-0 relative",
+    "flex min-h-0 flex-1 flex-col overflow-hidden p-[5px]",
   ]) {
-    assert.ok(layoutSource.includes(expected), `missing document-scrolled admin layout marker: ${expected}`);
+    assert.ok(layoutSource.includes(expected), `missing fixed-viewport admin layout marker: ${expected}`);
   }
 
-  assert.doesNotMatch(layoutSource, /h-\[100dvh\]/);
-  assert.doesNotMatch(layoutSource, /flex-1 overflow-hidden pt-16/);
+  assert.doesNotMatch(layoutSource, /flex min-h-screen flex-col bg-slate-50 dark:bg-black font-sans text-slate-900 dark:text-white/);
+  assert.doesNotMatch(layoutSource, /<div className="flex flex-1 pt-16">/);
   assert.doesNotMatch(
     layoutSource,
     /flex-1 flex flex-col bg-slate-50 dark:bg\[#0a0a0a\] min-w-0 overflow-y-auto relative/,
-    "admin main content should not create its own vertical scrolling region",
+    "admin main content should not create page-level vertical scrolling",
   );
   assert.doesNotMatch(
     dashboardSource,

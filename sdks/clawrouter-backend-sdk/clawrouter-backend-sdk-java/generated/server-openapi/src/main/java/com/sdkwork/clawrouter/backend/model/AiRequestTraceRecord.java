@@ -39,6 +39,7 @@ public class AiRequestTraceRecord {
     private String providerModel;
     private String providerNativeModel;
     private String reasoningEffort;
+    private String regionCode;
     private String requestBytes;
     private String requestId;
     private String requestPath;
@@ -345,6 +346,14 @@ public class AiRequestTraceRecord {
 
     public void setReasoningEffort(String reasoningEffort) {
         this.reasoningEffort = reasoningEffort;
+    }
+
+    public String getRegionCode() {
+        return this.regionCode;
+    }
+
+    public void setRegionCode(String regionCode) {
+        this.regionCode = regionCode;
     }
 
     public String getRequestBytes() {

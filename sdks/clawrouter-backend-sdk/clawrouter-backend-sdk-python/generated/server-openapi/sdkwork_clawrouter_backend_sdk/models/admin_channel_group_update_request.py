@@ -13,4 +13,6 @@ class AdminChannelGroupUpdateRequest:
     official_price_multiplier: Optional[float] = None
     price_reference_mode: Optional[str] = None
     rate_multiplier: Optional[float] = None
+    resource_codes: Optional[List[str]] = None
+    resource_group_codes: Optional[List[str]] = None
     status: Optional[str] = None

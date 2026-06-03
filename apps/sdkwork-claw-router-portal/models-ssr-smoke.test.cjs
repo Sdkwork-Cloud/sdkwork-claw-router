@@ -239,13 +239,13 @@ test('models route SSR renders the SDK-backed shell without exposing private pri
 
 test('model detail route SSR renders no stale static catalog before app SDK hydration', () => {
   const html = renderWithRouter(
-    '/models/openai/global/gpt-5.5-pro',
+    '/models/openai%2Fgpt-5.5-pro',
     React.createElement(
       Routes,
       null,
       React.createElement(Route, {
         element: React.createElement(ModelDetails),
-        path: '/models/:provider/:region/:model',
+        path: '/models/:modelId',
       }),
     ),
   );
@@ -256,7 +256,7 @@ test('model detail route SSR renders no stale static catalog before app SDK hydr
 
 test('model detail encoded id route SSR matches the catalog card navigation path', () => {
   const html = renderWithRouter(
-    '/models/openai%2Fglobal%2Fgpt-5.5-pro',
+    '/models/openai%2Fgpt-5.5-pro',
     React.createElement(
       Routes,
       null,

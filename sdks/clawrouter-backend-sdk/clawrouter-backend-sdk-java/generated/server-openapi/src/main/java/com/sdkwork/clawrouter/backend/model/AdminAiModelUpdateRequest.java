@@ -4,8 +4,6 @@ import java.util.List;
 
 public class AdminAiModelUpdateRequest {
     private String apiFormat;
-    private String cacheReadPrice;
-    private String cacheWritePrice;
     private String capabilityIntro;
     private String contextTokens;
     private String description;
@@ -16,8 +14,6 @@ public class AdminAiModelUpdateRequest {
     private List<String> modalities;
     private String model;
     private List<String> outputModalities;
-    private String priceIn;
-    private String priceOut;
     private List<AdminAiModelRegionPrice> regionPrices;
     private Integer releaseStage;
     private String replacementModel;
@@ -39,22 +35,6 @@ public class AdminAiModelUpdateRequest {
 
     public void setApiFormat(String apiFormat) {
         this.apiFormat = apiFormat;
-    }
-
-    public String getCacheReadPrice() {
-        return this.cacheReadPrice;
-    }
-
-    public void setCacheReadPrice(String cacheReadPrice) {
-        this.cacheReadPrice = cacheReadPrice;
-    }
-
-    public String getCacheWritePrice() {
-        return this.cacheWritePrice;
-    }
-
-    public void setCacheWritePrice(String cacheWritePrice) {
-        this.cacheWritePrice = cacheWritePrice;
     }
 
     public String getCapabilityIntro() {
@@ -135,22 +115,6 @@ public class AdminAiModelUpdateRequest {
 
     public void setOutputModalities(List<String> outputModalities) {
         this.outputModalities = outputModalities;
-    }
-
-    public String getPriceIn() {
-        return this.priceIn;
-    }
-
-    public void setPriceIn(String priceIn) {
-        this.priceIn = priceIn;
-    }
-
-    public String getPriceOut() {
-        return this.priceOut;
-    }
-
-    public void setPriceOut(String priceOut) {
-        this.priceOut = priceOut;
     }
 
     public List<AdminAiModelRegionPrice> getRegionPrices() {

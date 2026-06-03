@@ -180,8 +180,6 @@ function normalizeModelOption(value: unknown): PlaygroundModelOption {
   const contextTokens = readOptionalNumber(item, 'contextTokens');
   const maxOutputTokens = readOptionalNumber(item, 'maxOutputTokens');
   const apiFormat = readNullableString(item, 'apiFormat') ?? undefined;
-  const officialReferenceUnitPrice = readNullableString(item, 'officialReferenceUnitPrice');
-  const officialReferenceCurrency = readNullableString(item, 'officialReferenceCurrency');
   const officialReferencePrices = readReferencePrices(item, 'officialReferencePrices');
   const versionLabel = deriveVersionLabel(displayName, model, apiFormat, item);
 
@@ -204,10 +202,8 @@ function normalizeModelOption(value: unknown): PlaygroundModelOption {
     apiFormat,
     contextTokens,
     maxOutputTokens,
-    officialReferenceUnitPrice,
-    officialReferenceCurrency,
     officialReferencePrices,
-    priceAvailability: readPriceAvailability(item, officialReferenceUnitPrice, officialReferencePrices),
+    priceAvailability: readPriceAvailability(item, officialReferencePrices),
     providerCodes: readProviderCodes(item),
     supportsStreaming: readBoolean(item, 'supportsStreaming', false),
     supportsTools: readBoolean(item, 'supportsTools', false),
@@ -231,13 +227,15 @@ function readReferencePrices(record: ApiRecord, key: string): PlaygroundModelRef
       if (!isRecord(item)) {
         return null;
       }
+      const regionCode = readNullableString(item, 'regionCode');
       const billingMeter = readNullableString(item, 'billingMeter');
       const unitPrice = readNullableString(item, 'unitPrice');
       const currency = readNullableString(item, 'currency');
-      if (!billingMeter || !unitPrice || !currency || readPositiveDecimal(unitPrice) === null) {
+      if (!regionCode || !billingMeter || !unitPrice || !currency || readPositiveDecimal(unitPrice) === null) {
         return null;
       }
       return {
+        regionCode,
         billingMeter,
         unitPrice,
         currency: currency.toUpperCase(),
@@ -248,10 +246,9 @@ function readReferencePrices(record: ApiRecord, key: string): PlaygroundModelRef
 
 function readPriceAvailability(
   record: ApiRecord,
-  officialReferenceUnitPrice: string | null | undefined,
   officialReferencePrices: readonly PlaygroundModelReferencePrice[],
 ): PlaygroundModelPriceAvailability {
-  const fallbackStatus = officialReferencePrices.length > 0 || readPositiveDecimal(officialReferenceUnitPrice) !== null
+  const fallbackStatus = officialReferencePrices.length > 0
     ? 'reference'
     : 'unavailable';
   const value = record.priceAvailability;

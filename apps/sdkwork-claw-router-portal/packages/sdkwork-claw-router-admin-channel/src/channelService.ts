@@ -14,13 +14,20 @@ import {
   readStringArray,
   type ApiRecord,
 } from 'sdkwork-claw-router-commons/runtime';
+import {
+  isCanonicalModelCatalogKey,
+  isRegionalModelCatalogKey,
+  parseModelCatalogIdentity,
+} from 'sdkwork-claw-router-commons/model-catalog-identity';
 import type {
   AdminAiResourceCreateRequest,
+  AdminAiResourceGroupItem,
   AdminAiResourceItem,
   AdminAiResourceMemberInput,
   AdminAiResourceMemberItem,
   AdminAiResourceUpdateRequest,
   AdminChannelCreateRequest,
+  AdminChannelCredentialInput,
   AdminChannelUpdateRequest,
   AdminChannelEndpointCreateRequest,
   AdminChannelEndpointItem,
@@ -33,6 +40,32 @@ import type {
 } from '@sdkwork/clawrouter-backend-sdk';
 
 type ChannelType = NonNullable<AdminChannelCreateRequest['channelType']>;
+export type CredentialRotationStrategy = NonNullable<AdminChannelCreateRequest['credentialRotation']>;
+export type ChannelCredentialStatus = NonNullable<AdminChannelCredentialInput['status']>;
+
+export type ChannelCredentialInput = {
+  name?: string;
+  baseUrl: string;
+  apiKey?: string;
+  secretRef?: string;
+  priority?: number;
+  weight?: number;
+  status?: ChannelCredentialStatus;
+};
+
+export interface ChannelCredentialItem {
+  id: string;
+  credentialId: string;
+  name: string;
+  baseUrl: string;
+  secretRef: string;
+  apiKey?: string;
+  maskedLabel: string;
+  priority: number;
+  weight: number;
+  status: 'active' | 'error' | 'disabled';
+  errors: number;
+}
 
 export interface ChannelItem {
   id: string;
@@ -42,9 +75,8 @@ export interface ChannelItem {
   channelType: ChannelType;
   protocol: string;
   accessType: string;
-  baseUrl?: string;
-  secretRef?: string;
-  apiKey?: string;
+  credentialRotation: CredentialRotationStrategy;
+  credentials: ChannelCredentialItem[];
   createdAt: string;
   expiresAt?: string;
   models: string[];
@@ -75,6 +107,8 @@ export interface ChannelModelCatalogItem {
 }
 
 export type AiResource = AdminAiResourceItem;
+
+export type AiResourceGroup = AdminAiResourceGroupItem;
 
 export type AiResourceMember = AdminAiResourceMemberItem;
 
@@ -118,9 +152,8 @@ export type ChannelCreateInput = {
   channelType?: ChannelType;
   protocol?: string;
   accessType?: string;
-  baseUrl?: string;
-  apiKey?: string;
-  secretRef?: string;
+  credentialRotation?: CredentialRotationStrategy;
+  credentials: ChannelCredentialInput[];
   expiresAt?: string;
   models: string[];
   capabilities?: NonNullable<AdminChannelCreateRequest['capabilities']>;
@@ -138,9 +171,8 @@ export type ChannelUpdateInput = {
   channelType?: ChannelType;
   protocol?: string;
   accessType?: string;
-  baseUrl?: string | null;
-  apiKey?: string;
-  secretRef?: string;
+  credentialRotation?: CredentialRotationStrategy;
+  credentials?: ChannelCredentialInput[];
   expiresAt?: string | null;
   models?: string[];
   capabilities?: NonNullable<AdminChannelUpdateRequest['capabilities']>;
@@ -289,6 +321,13 @@ export class ChannelAiResourceService {
       .map(normalizeAiResource);
   }
 
+  static async fetchAiResourceGroups(): Promise<AiResourceGroup[]> {
+    const result = await channelBackendClient().ai.aiResourceGroups.list();
+    ensureSdkworkApiSuccess(result, 'Failed to fetch AI resource groups');
+    return readRequiredApiItems(result, 'Failed to fetch AI resource groups')
+      .map(normalizeAiResourceGroup);
+  }
+
   static async createAiResource(input: AiResourceCreateInput): Promise<AiResource> {
     const result = await channelBackendClient().ai.aiResources.create(
       toCreateAiResourceRequest(input),
@@ -381,23 +420,14 @@ export class ProviderSecretService {
 }
 
 function toCreateChannelRequest(channel: ChannelCreateInput): AdminChannelCreateRequest {
-  const apiKey = optionalText(channel.apiKey);
-  const secretRef = optionalText(channel.secretRef);
-  if (!apiKey && !secretRef) {
-    throw new Error('apiKey is required');
-  }
-  if (apiKey && secretRef) {
-    throw new Error('channel credential must provide either apiKey or secretRef, not both');
-  }
-    const request = pruneUndefined({
+  return pruneUndefined({
     name: requiredText(channel.name, 'name'),
     vendor: requiredText(channel.vendor, 'vendor'),
     channelType: channel.channelType === undefined ? undefined : channelTypeValue(channel.channelType),
     protocol: optionalText(channel.protocol),
     accessType: optionalText(channel.accessType),
-    baseUrl: optionalText(channel.baseUrl),
-    apiKey,
-    secretRef,
+    credentialRotation: channel.credentialRotation === undefined ? undefined : credentialRotationValue(channel.credentialRotation),
+    credentials: toCredentialInputs(channel.credentials),
     expiresAt: optionalText(channel.expiresAt),
     models: requiredCatalogModelKeys(channel.models, channel.vendor),
     capabilities: channel.capabilities === undefined ? undefined : toChannelCapabilities(channel.capabilities),
@@ -412,9 +442,6 @@ function toCreateChannelRequest(channel: ChannelCreateInput): AdminChannelCreate
     weight: optionalInteger(channel.weight),
     status: channel.status,
   });
-  return apiKey
-    ? { ...request, apiKey }
-    : { ...request, apiKey: '', secretRef };
 }
 
 function toUpdateChannelRequest(id: string, updates: ChannelUpdateInput): AdminChannelUpdateRequest {
@@ -425,9 +452,8 @@ function toUpdateChannelRequest(id: string, updates: ChannelUpdateInput): AdminC
     channelType: updates.channelType === undefined ? undefined : channelTypeValue(updates.channelType),
     protocol: optionalText(updates.protocol),
     accessType: optionalText(updates.accessType),
-    baseUrl: updates.baseUrl === undefined ? undefined : updates.baseUrl === null ? null : updates.baseUrl.trim(),
-    apiKey: optionalText(updates.apiKey),
-    secretRef: optionalText(updates.secretRef),
+    credentialRotation: updates.credentialRotation === undefined ? undefined : credentialRotationValue(updates.credentialRotation),
+    credentials: updates.credentials === undefined ? undefined : toCredentialInputs(updates.credentials),
     expiresAt: updates.expiresAt === undefined ? undefined : updates.expiresAt === null ? null : updates.expiresAt.trim(),
     models: updates.models === undefined ? undefined : requiredCatalogModelKeys(updates.models, updates.vendor),
     capabilities: updates.capabilities === undefined ? undefined : toChannelCapabilities(updates.capabilities),
@@ -443,6 +469,37 @@ function toUpdateChannelRequest(id: string, updates: ChannelUpdateInput): AdminC
         : normalizeCircuitBreakerPolicy(updates.circuitBreakerPolicy),
     weight: optionalInteger(updates.weight),
     status: updates.status,
+  });
+}
+
+function toCredentialInputs(credentials: ChannelCredentialInput[]): AdminChannelCredentialInput[] {
+  if (!Array.isArray(credentials)) {
+    throw new Error('credentials must include at least one upstream credential');
+  }
+  const normalized = credentials.map((credential, index) => toCredentialInput(credential, index));
+  if (normalized.length === 0) {
+    throw new Error('credentials must include at least one upstream credential');
+  }
+  return normalized;
+}
+
+function toCredentialInput(credential: ChannelCredentialInput, index: number): AdminChannelCredentialInput {
+  const apiKey = optionalText(credential.apiKey);
+  const secretRef = optionalText(credential.secretRef);
+  if (!apiKey && !secretRef) {
+    throw new Error(`credentials[${index}].apiKey is required`);
+  }
+  if (apiKey && secretRef) {
+    throw new Error(`credentials[${index}] must provide either apiKey or secretRef, not both`);
+  }
+  return pruneUndefined({
+    name: optionalText(credential.name),
+    baseUrl: requiredProviderEndpointBaseUrl(credential.baseUrl),
+    apiKey,
+    secretRef,
+    priority: optionalBoundedPositiveInteger(credential.priority, `credentials[${index}].priority`, 1_000_000),
+    weight: optionalBoundedPositiveInteger(credential.weight, `credentials[${index}].weight`, 10_000),
+    status: credential.status === undefined ? undefined : credentialStatusValue(credential.status),
   });
 }
 
@@ -609,6 +666,27 @@ function channelTypeValue(value: string): ChannelType {
   throw new Error(`Unsupported channel type: ${value}`);
 }
 
+function credentialRotationValue(value: string): CredentialRotationStrategy {
+  const normalized = value.trim().toLowerCase().replace(/-/g, '_');
+  if (
+    normalized === 'default'
+    || normalized === 'priority'
+    || normalized === 'round_robin'
+    || normalized === 'weighted_round_robin'
+    || normalized === 'random'
+  ) {
+    return normalized;
+  }
+  throw new Error(`Unsupported credential rotation strategy: ${value}`);
+}
+
+function credentialStatusValue(value: string): ChannelCredentialStatus {
+  if (value === 'active' || value === 'disabled' || value === 'error') {
+    return value;
+  }
+  throw new Error(`Unsupported credential status: ${value}`);
+}
+
 function toResourceCodes(values: string[]): string[] | undefined {
   const normalized = Array.from(new Set(
     normalizedStringArray(values).map((value) => value.toLowerCase()),
@@ -759,10 +837,18 @@ function requiredCatalogModelKeys(values: string[], vendor: string | undefined):
 
 function toCatalogModelKey(model: string, vendor: string | undefined): string {
   const value = model.trim();
-  if (isCatalogModelKey(value)) {
+  if (isRegionalModelCatalogKey(value)) {
+    throw new Error('catalogKey must not include region; use vendor/model identity and configure region separately');
+  }
+  if (value.includes('/') && !isCatalogModelKey(value)) {
+    throw new Error('catalogKey must use vendor/model identity');
+  }
+  const vendorCode = providerCodeForVendor(vendor ?? 'custom');
+  const identity = parseModelCatalogIdentity(value);
+  if (identity && providerCodeForVendor(identity.vendorCode) === vendorCode) {
     return value;
   }
-  return `${providerCodeForVendor(vendor ?? 'custom')}/global/${value}`;
+  return `${vendorCode}/${value}`;
 }
 
 export function providerCodeForVendor(vendor: string): string {
@@ -781,8 +867,7 @@ export function providerCodeForVendor(vendor: string): string {
 }
 
 export function isCatalogModelKey(value: string): boolean {
-  const parts = value.trim().split('/');
-  return parts.length >= 3 && parts.every((part) => part.trim().length > 0);
+  return isCanonicalModelCatalogKey(value);
 }
 
 export function normalizeModelCatalogKey(model: string, vendor: string): string {
@@ -874,9 +959,8 @@ function normalizeChannel(value: unknown): ChannelItem {
     channelType: readChannelType(item),
     protocol: readRequiredString(item, 'protocol', 'Channel protocol is required'),
     accessType: readRequiredString(item, 'accessType', 'Channel access type is required'),
-    baseUrl: readOptionalString(item, 'baseUrl'),
-    secretRef: readOptionalString(item, 'secretRef'),
-    apiKey: readOptionalString(item, 'apiKey'),
+    credentialRotation: readCredentialRotation(item),
+    credentials: readCredentialItems(item),
     createdAt: readRequiredString(item, 'createdAt', 'Channel created time is required'),
     expiresAt: readOptionalString(item, 'expiresAt'),
     models: readOptionalStringArray(item, 'models'),
@@ -890,6 +974,34 @@ function normalizeChannel(value: unknown): ChannelItem {
     status: readChannelStatus(item),
     balance: readRequiredString(item, 'balance', 'Channel balance is required'),
     errors: readRequiredNonNegativeInteger(item, 'errors', 'Channel errors are required'),
+  };
+}
+
+function readCredentialItems(item: ApiRecord): ChannelCredentialItem[] {
+  const value = item.credentials;
+  if (value === undefined) {
+    throw new Error('Channel credentials are required');
+  }
+  if (!Array.isArray(value)) {
+    throw new Error('Channel credentials must be an array');
+  }
+  return value.map((credential, index) => normalizeChannelCredential(credential, index));
+}
+
+function normalizeChannelCredential(value: unknown, index: number): ChannelCredentialItem {
+  const item = readRequiredRecord(value, `Channel credential ${index + 1} is required`);
+  return {
+    id: readRequiredString(item, 'id', 'Channel credential id is required'),
+    credentialId: readPositiveIdText(item, 'credentialId', 'Channel credential scoped id is required'),
+    name: readRequiredString(item, 'name', 'Channel credential name is required'),
+    baseUrl: readProviderEndpointBaseUrl(item),
+    secretRef: readRequiredString(item, 'secretRef', 'Channel credential secret reference is required'),
+    apiKey: readOptionalString(item, 'apiKey'),
+    maskedLabel: readRequiredString(item, 'maskedLabel', 'Channel credential masked label is required'),
+    priority: readRequiredBoundedInteger(item, 'priority', 'Channel credential priority is required', 1, 1_000_000),
+    weight: readRequiredBoundedInteger(item, 'weight', 'Channel credential weight is required', 1, 10_000),
+    status: readCredentialStatus(item),
+    errors: readRequiredNonNegativeInteger(item, 'errors', 'Channel credential errors are required'),
   };
 }
 
@@ -908,11 +1020,12 @@ function normalizeModelCatalogItem(value: unknown): ChannelModelCatalogItem | nu
   const model = readRequiredString(item, 'model', 'Model catalog runtime model id is required');
   const runtimeCatalogKey = readOptionalString(item, 'catalogKey');
   const runtimeRegionCode = readOptionalString(item, 'regionCode');
-  const regionCode = runtimeRegionCode ?? catalogRegionFromKey(runtimeCatalogKey) ?? 'global';
+  const regionCode = runtimeRegionCode ?? 'global';
   const normalizedVendorCode = providerCodeForVendor(vendorCode);
-  const catalogKey = runtimeCatalogKey && isCatalogModelKey(runtimeCatalogKey)
-    ? runtimeCatalogKey
-    : `${normalizedVendorCode}/${regionCode}/${model}`;
+  if (runtimeCatalogKey && !isCatalogModelKey(runtimeCatalogKey)) {
+    throw new Error('Model catalog key must use vendor/model identity; region belongs to pricing and deployment attributes');
+  }
+  const catalogKey = runtimeCatalogKey ?? `${normalizedVendorCode}/${model}`;
   return {
     catalogKey,
     model,
@@ -939,6 +1052,22 @@ function normalizeAiResource(value: unknown): AiResource {
     status: readAiResourceStatus(item),
     sortOrder: readOptionalNonNegativeInteger(item, 'sortOrder', 'AI resource sort order must be a non-negative integer'),
     members: readAiResourceMembers(item),
+  };
+}
+
+function normalizeAiResourceGroup(value: unknown): AiResourceGroup {
+  const item = readRequiredRecord(value, 'AI resource group record is required');
+  return {
+    id: readRequiredString(item, 'id', 'AI resource group id is required'),
+    groupCode: readAiResourceCode(item, 'groupCode', 'AI resource group code is required'),
+    groupName: readRequiredString(item, 'groupName', 'AI resource group name is required'),
+    groupType: readAiResourceGroupType(item),
+    selectionMode: readAiResourceGroupSelectionMode(item),
+    status: readAiResourceGroupStatus(item),
+    dynamic: readRequiredBoolean(item, 'dynamic', 'AI resource group dynamic flag is required'),
+    resourceCount: readRequiredNonNegativeInteger(item, 'resourceCount', 'AI resource group resource count must be a non-negative integer'),
+    sortOrder: readOptionalNonNegativeInteger(item, 'sortOrder', 'AI resource group sort order must be a non-negative integer') ?? null,
+    description: readOptionalString(item, 'description') ?? null,
   };
 }
 
@@ -1002,6 +1131,30 @@ function readAiResourceStatus(item: ApiRecord): AiResource['status'] {
     return status;
   }
   throw new Error(`Unsupported AI resource status: ${status}`);
+}
+
+function readAiResourceGroupType(item: ApiRecord): AiResourceGroup['groupType'] {
+  const value = readRequiredString(item, 'groupType', 'AI resource group type is required');
+  if (value === 'api_group') {
+    return value;
+  }
+  throw new Error(`Unsupported AI resource group type: ${value}`);
+}
+
+function readAiResourceGroupSelectionMode(item: ApiRecord): AiResourceGroup['selectionMode'] {
+  const value = readRequiredString(item, 'selectionMode', 'AI resource group selection mode is required');
+  if (value === 'manual' || value === 'all' || value === 'any' || value === 'dynamic_all_api') {
+    return value;
+  }
+  throw new Error(`Unsupported AI resource group selection mode: ${value}`);
+}
+
+function readAiResourceGroupStatus(item: ApiRecord): AiResourceGroup['status'] {
+  const status = readRequiredString(item, 'status', 'AI resource group status is required');
+  if (status === 'active' || status === 'disabled' || status === 'inactive') {
+    return status;
+  }
+  throw new Error(`Unsupported AI resource group status: ${status}`);
 }
 
 function readAiResourceMemberRole(item: ApiRecord): AiResourceMember['memberRole'] {
@@ -1073,13 +1226,6 @@ function readChannelEndpointHealthStatus(item: ApiRecord): ChannelEndpoint['heal
 function readChannelEndpointStatus(item: ApiRecord): ChannelEndpoint['status'] {
   const status = readRequiredString(item, 'status', 'Channel endpoint status is required');
   return channelEndpointStatus(status);
-}
-
-function catalogRegionFromKey(catalogKey: string | undefined): string | undefined {
-  if (!catalogKey || !isCatalogModelKey(catalogKey)) {
-    return undefined;
-  }
-  return catalogKey.split('/')[1];
 }
 
 function readOptionalNullableString(item: ApiRecord, key: string): string | null | undefined {
@@ -1268,6 +1414,18 @@ function readChannelStatus(item: ApiRecord): 'active' | 'error' | 'disabled' {
     return status;
   }
   throw new Error(status ? `Unsupported channel status: ${status}` : 'Channel status is required');
+}
+
+function readCredentialRotation(item: ApiRecord): CredentialRotationStrategy {
+  return credentialRotationValue(readRequiredString(item, 'credentialRotation', 'Channel credential rotation is required'));
+}
+
+function readCredentialStatus(item: ApiRecord): ChannelCredentialItem['status'] {
+  const status = readString(item, 'status');
+  if (status === 'active' || status === 'error' || status === 'disabled') {
+    return status;
+  }
+  throw new Error(status ? `Unsupported channel credential status: ${status}` : 'Channel credential status is required');
 }
 
 function readChannelType(item: ApiRecord): ChannelType {

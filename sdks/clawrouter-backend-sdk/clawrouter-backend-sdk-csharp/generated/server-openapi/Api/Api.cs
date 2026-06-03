@@ -19,6 +19,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
         public static SystemApi? System { get; set; }
         public static PromptsApi? Prompts { get; set; }
         public static ServiceProvidersApi? ServiceProviders { get; set; }
+        public static SitesApi? Sites { get; set; }
         public static StorageApi? Storage { get; set; }
     }
 }

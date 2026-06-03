@@ -171,6 +171,7 @@ export interface PlaygroundModelVendor {
 }
 
 export interface PlaygroundModelReferencePrice {
+  regionCode: string;
   billingMeter: string;
   unitPrice: string;
   currency: string;
@@ -200,8 +201,6 @@ export interface PlaygroundModelOption {
   apiFormat?: string;
   contextTokens?: number;
   maxOutputTokens?: number;
-  officialReferenceUnitPrice?: string | null;
-  officialReferenceCurrency?: string | null;
   officialReferencePrices: PlaygroundModelReferencePrice[];
   priceAvailability: PlaygroundModelPriceAvailability;
   providerCodes: string[];

@@ -11,6 +11,8 @@ data class AdminChannelGroupItem(
     val priceReferenceMode: String? = null,
     val providerCode: String? = null,
     val rateMultiplier: Double? = null,
+    val resourceCodes: List<String>? = null,
+    val resourceGroupCodes: List<String>? = null,
     val status: String? = null,
     val usage: AdminUsagePair? = null
 )

@@ -2267,7 +2267,7 @@ async fn app_runtime_gateway_executor_routes_claude_code_to_anthropic_messages()
                 status: "streaming".to_owned(),
                 runtime: "claude_code".to_owned(),
                 endpoint: Some("messages.stream".to_owned()),
-                model: Some("anthropic/global/claude-sonnet-4-5".to_owned()),
+                model: Some("anthropic/claude-sonnet-4-5".to_owned()),
                 provider: Some("anthropic".to_owned()),
                 ..sample_invocation()
             },
@@ -2283,7 +2283,7 @@ async fn app_runtime_gateway_executor_routes_claude_code_to_anthropic_messages()
         store,
         Arc::new(SequentialUuidGenerator::new(vec!["runtime-event-uuid-1"])),
         Arc::new(TestRuntimeCatalog::with_model_format(
-            "anthropic/global/claude-sonnet-4-5",
+            "anthropic/claude-sonnet-4-5",
             Some("anthropic_messages"),
         )),
         Arc::new(RecordingGatewayRuntimeClient::new(Arc::clone(
@@ -2316,7 +2316,7 @@ async fn app_runtime_gateway_executor_routes_gemini_models_to_google_stream_gene
                 status: "streaming".to_owned(),
                 runtime: "gemini".to_owned(),
                 endpoint: Some("generateContent.stream".to_owned()),
-                model: Some("google/global/gemini-2.5-flash".to_owned()),
+                model: Some("google/gemini-2.5-flash".to_owned()),
                 provider: Some("google".to_owned()),
                 ..sample_invocation()
             },
@@ -2333,7 +2333,7 @@ async fn app_runtime_gateway_executor_routes_gemini_models_to_google_stream_gene
         store.clone(),
         Arc::new(SequentialUuidGenerator::new(vec!["runtime-event-uuid-1"])),
         Arc::new(TestRuntimeCatalog::with_model_format(
-            "google/global/gemini-2.5-flash",
+            "google/gemini-2.5-flash",
             Some("google_gemini"),
         )),
         Arc::new(RecordingGatewayRuntimeClient::with_gemini_response(
@@ -2370,7 +2370,7 @@ async fn app_runtime_gateway_executor_preserves_markdown_boundaries_from_structu
                 status: "streaming".to_owned(),
                 runtime: "gemini".to_owned(),
                 endpoint: Some("generateContent.stream".to_owned()),
-                model: Some("google/global/gemini-2.5-flash".to_owned()),
+                model: Some("google/gemini-2.5-flash".to_owned()),
                 provider: Some("google".to_owned()),
                 ..sample_invocation()
             },
@@ -2386,7 +2386,7 @@ async fn app_runtime_gateway_executor_preserves_markdown_boundaries_from_structu
         store.clone(),
         Arc::new(SequentialUuidGenerator::new(vec!["runtime-event-uuid-1"])),
         Arc::new(TestRuntimeCatalog::with_model_format(
-            "google/global/gemini-2.5-flash",
+            "google/gemini-2.5-flash",
             Some("google_gemini"),
         )),
         Arc::new(
@@ -2475,14 +2475,14 @@ async fn app_runtime_gateway_executor_routes_frontend_chat_claude_model_to_anthr
                 status: "streaming".to_owned(),
                 runtime: "openai_compatible".to_owned(),
                 endpoint: Some("chat.stream".to_owned()),
-                model: Some("anthropic/global/claude-sonnet-4-5".to_owned()),
+                model: Some("anthropic/claude-sonnet-4-5".to_owned()),
                 provider: Some("anthropic".to_owned()),
                 ..sample_invocation()
             },
             request_json: json!({
                 "messages": [{"role": "user", "content": "write patch"}],
                 "prompt": "write patch",
-                "selectedModel": "anthropic/global/claude-sonnet-4-5"
+                "selectedModel": "anthropic/claude-sonnet-4-5"
             }),
             metadata: json!({"surface": "playground"}),
         },
@@ -2493,7 +2493,7 @@ async fn app_runtime_gateway_executor_routes_frontend_chat_claude_model_to_anthr
         store,
         Arc::new(SequentialUuidGenerator::new(vec!["runtime-event-uuid-1"])),
         Arc::new(TestRuntimeCatalog::with_model_format(
-            "anthropic/global/claude-sonnet-4-5",
+            "anthropic/claude-sonnet-4-5",
             Some("anthropic_messages"),
         )),
         Arc::new(RecordingGatewayRuntimeClient::new(Arc::clone(
@@ -2525,14 +2525,14 @@ async fn app_runtime_gateway_executor_routes_frontend_chat_gemini_model_to_googl
                 status: "streaming".to_owned(),
                 runtime: "openai_compatible".to_owned(),
                 endpoint: Some("chat.stream".to_owned()),
-                model: Some("google/global/gemini-2.5-flash".to_owned()),
+                model: Some("google/gemini-2.5-flash".to_owned()),
                 provider: Some("google".to_owned()),
                 ..sample_invocation()
             },
             request_json: json!({
                 "messages": [{"role": "user", "content": "summarize"}],
                 "prompt": "summarize",
-                "selectedModel": "google/global/gemini-2.5-flash"
+                "selectedModel": "google/gemini-2.5-flash"
             }),
             metadata: json!({"surface": "playground"}),
         },
@@ -2543,7 +2543,7 @@ async fn app_runtime_gateway_executor_routes_frontend_chat_gemini_model_to_googl
         store,
         Arc::new(SequentialUuidGenerator::new(vec!["runtime-event-uuid-1"])),
         Arc::new(TestRuntimeCatalog::with_model_format(
-            "google/global/gemini-2.5-flash",
+            "google/gemini-2.5-flash",
             Some("google_gemini"),
         )),
         Arc::new(RecordingGatewayRuntimeClient::with_gemini_response(
@@ -2577,13 +2577,13 @@ async fn app_runtime_gateway_executor_routes_frontend_agent_gemini_image_shape_t
                 status: "streaming".to_owned(),
                 runtime: "openai_compatible".to_owned(),
                 endpoint: Some("agent.stream".to_owned()),
-                model: Some("google/global/gemini-2.5-flash-image".to_owned()),
+                model: Some("google/gemini-2.5-flash-image".to_owned()),
                 provider: Some("google".to_owned()),
                 ..sample_invocation()
             },
             request_json: json!({
                 "prompt": "brand launch poster",
-                "selectedModel": "google/global/gemini-2.5-flash-image",
+                "selectedModel": "google/gemini-2.5-flash-image",
                 "targetType": "image",
                 "generationConfig": {
                     "aspectRatio": "1:1",
@@ -2599,7 +2599,7 @@ async fn app_runtime_gateway_executor_routes_frontend_agent_gemini_image_shape_t
         store.clone(),
         Arc::new(SequentialUuidGenerator::new(vec!["runtime-event-uuid-1"])),
         Arc::new(TestRuntimeCatalog::with_model_format(
-            "google/global/gemini-2.5-flash-image",
+            "google/gemini-2.5-flash-image",
             Some("google_gemini"),
         )),
         Arc::new(RecordingGatewayRuntimeClient::with_gemini_image_response(
@@ -2791,13 +2791,13 @@ async fn app_runtime_gateway_executor_routes_gemini_image_generation_and_emits_i
                 status: "streaming".to_owned(),
                 runtime: "gemini".to_owned(),
                 endpoint: Some("agent.stream".to_owned()),
-                model: Some("google/global/gemini-2.5-flash-image".to_owned()),
+                model: Some("google/gemini-2.5-flash-image".to_owned()),
                 provider: Some("google".to_owned()),
                 ..sample_invocation()
             },
             request_json: json!({
                 "prompt": "brand launch poster",
-                "selectedModel": "google/global/gemini-2.5-flash-image",
+                "selectedModel": "google/gemini-2.5-flash-image",
                 "targetType": "image",
                 "generationConfig": {
                     "aspectRatio": "1:1",
@@ -2813,7 +2813,7 @@ async fn app_runtime_gateway_executor_routes_gemini_image_generation_and_emits_i
         store.clone(),
         Arc::new(SequentialUuidGenerator::new(vec!["runtime-event-uuid-1"])),
         Arc::new(TestRuntimeCatalog::with_model_format(
-            "google/global/gemini-2.5-flash-image",
+            "google/gemini-2.5-flash-image",
             Some("google_gemini"),
         )),
         Arc::new(RecordingGatewayRuntimeClient::with_gemini_image_response(
@@ -2871,13 +2871,13 @@ async fn app_runtime_gateway_executor_routes_suno_music_generation_to_provider_m
                 status: "streaming".to_owned(),
                 runtime: "openai_compatible".to_owned(),
                 endpoint: Some("agent.stream".to_owned()),
-                model: Some("suno/global/suno-v5".to_owned()),
+                model: Some("suno/suno-v5".to_owned()),
                 provider: Some("suno".to_owned()),
                 ..sample_invocation()
             },
             request_json: json!({
                 "prompt": "upbeat synthwave launch theme",
-                "selectedModel": "suno/global/suno-v5",
+                "selectedModel": "suno/suno-v5",
                 "targetType": "music",
                 "generationConfig": {
                     "durationSeconds": 30,
@@ -2893,7 +2893,7 @@ async fn app_runtime_gateway_executor_routes_suno_music_generation_to_provider_m
         store.clone(),
         Arc::new(SequentialUuidGenerator::new(vec!["runtime-event-uuid-1"])),
         Arc::new(TestRuntimeCatalog::with_model_format(
-            "suno/global/suno-v5",
+            "suno/suno-v5",
             Some("vendor_native"),
         )),
         Arc::new(RecordingGatewayRuntimeClient::new(Arc::clone(
@@ -3116,13 +3116,13 @@ async fn app_runtime_gateway_executor_routes_gemini_tts_generation_with_audio_co
                 status: "streaming".to_owned(),
                 runtime: "openai_compatible".to_owned(),
                 endpoint: Some("agent.stream".to_owned()),
-                model: Some("google/global/gemini-3.1-flash-tts-preview".to_owned()),
+                model: Some("google/gemini-3.1-flash-tts-preview".to_owned()),
                 provider: Some("google".to_owned()),
                 ..sample_invocation()
             },
             request_json: json!({
                 "prompt": "say hello from the Gemini speech synthesizer",
-                "selectedModel": "google/global/gemini-3.1-flash-tts-preview",
+                "selectedModel": "google/gemini-3.1-flash-tts-preview",
                 "targetType": "audio",
                 "generationConfig": {
                     "speechMode": {
@@ -3139,7 +3139,7 @@ async fn app_runtime_gateway_executor_routes_gemini_tts_generation_with_audio_co
         store.clone(),
         Arc::new(SequentialUuidGenerator::new(vec!["runtime-event-uuid-1"])),
         Arc::new(TestRuntimeCatalog::with_model_format(
-            "google/global/gemini-3.1-flash-tts-preview",
+            "google/gemini-3.1-flash-tts-preview",
             Some("gemini"),
         )),
         Arc::new(RecordingGatewayRuntimeClient::with_gemini_audio_response(
@@ -3198,13 +3198,13 @@ async fn app_runtime_gateway_executor_routes_elevenlabs_audio_generation_to_text
                 status: "streaming".to_owned(),
                 runtime: "openai_compatible".to_owned(),
                 endpoint: Some("agent.stream".to_owned()),
-                model: Some("elevenlabs/global/eleven_multilingual_v2".to_owned()),
+                model: Some("elevenlabs/eleven_multilingual_v2".to_owned()),
                 provider: Some("elevenlabs".to_owned()),
                 ..sample_invocation()
             },
             request_json: json!({
                 "prompt": "narrate this update with a studio voice",
-                "selectedModel": "elevenlabs/global/eleven_multilingual_v2",
+                "selectedModel": "elevenlabs/eleven_multilingual_v2",
                 "targetType": "audio",
                 "generationConfig": {
                     "speechMode": {
@@ -3223,7 +3223,7 @@ async fn app_runtime_gateway_executor_routes_elevenlabs_audio_generation_to_text
         store.clone(),
         Arc::new(SequentialUuidGenerator::new(vec!["runtime-event-uuid-1"])),
         Arc::new(TestRuntimeCatalog::with_model_format(
-            "elevenlabs/global/eleven_multilingual_v2",
+            "elevenlabs/eleven_multilingual_v2",
             Some("tts"),
         )),
         Arc::new(RecordingGatewayRuntimeClient::new(Arc::clone(
@@ -3281,13 +3281,13 @@ async fn app_runtime_gateway_executor_routes_elevenlabs_sfx_generation_and_keeps
                 status: "streaming".to_owned(),
                 runtime: "openai_compatible".to_owned(),
                 endpoint: Some("agent.stream".to_owned()),
-                model: Some("elevenlabs/global/eleven_text_to_sound_v2".to_owned()),
+                model: Some("elevenlabs/eleven_text_to_sound_v2".to_owned()),
                 provider: Some("elevenlabs".to_owned()),
                 ..sample_invocation()
             },
             request_json: json!({
                 "prompt": "cinematic whoosh transition",
-                "selectedModel": "elevenlabs/global/eleven_text_to_sound_v2",
+                "selectedModel": "elevenlabs/eleven_text_to_sound_v2",
                 "targetType": "sfx",
                 "generationConfig": {
                     "durationSeconds": 5,
@@ -3307,7 +3307,7 @@ async fn app_runtime_gateway_executor_routes_elevenlabs_sfx_generation_and_keeps
         store.clone(),
         Arc::new(SequentialUuidGenerator::new(vec!["runtime-event-uuid-1"])),
         Arc::new(TestRuntimeCatalog::with_model_format(
-            "elevenlabs/global/eleven_text_to_sound_v2",
+            "elevenlabs/eleven_text_to_sound_v2",
             Some("vendor_native"),
         )),
         Arc::new(RecordingGatewayRuntimeClient::new(Arc::clone(
@@ -3865,7 +3865,7 @@ impl TestRuntimeCatalog {
     fn with_model_format(catalog_key: &str, api_format: Option<&str>) -> Self {
         let mut parts = catalog_key.split('/');
         let vendor_code = parts.next().unwrap_or("openai").to_owned();
-        let model = sdkwork_claw_product::domain::provider_native_model_id(catalog_key);
+        let model = parts.collect::<Vec<_>>().join("/");
         Self {
             catalog_key: catalog_key.to_owned(),
             model,
@@ -4022,6 +4022,18 @@ impl sdkwork_claw_product::ports::PricingCatalog for TestRuntimeCatalog {
         .with_candidate_channels(vec![sdkwork_claw_product::domain::RouteCandidate::new(
             3001, 100,
         )])]
+    }
+
+    fn list_model_mappings(&self) -> Vec<sdkwork_claw_product::domain::ModelMappingRule> {
+        Vec::new()
+    }
+
+    fn resolve_model_mapping(
+        &self,
+        _source_model: &str,
+        _context: &sdkwork_claw_product::domain::ResolveModelMappingContext,
+    ) -> Option<sdkwork_claw_product::domain::ModelMappingRule> {
+        None
     }
 
     fn list_api_keys(&self) -> Vec<sdkwork_claw_product::domain::GatewayApiKey> {

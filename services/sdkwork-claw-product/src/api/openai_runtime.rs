@@ -10,7 +10,7 @@ use crate::application::{
 };
 use crate::domain::{
     AiModel, BillingMeter, ModelMappingRule, ProviderAuthProfile, ProviderRetryPolicy,
-    RoutingCapability,
+    ResolveModelMappingContext, RoutingCapability,
 };
 use crate::ports::PricingCatalog;
 
@@ -22,6 +22,7 @@ pub struct ResolvedOpenAiProviderRoute {
     pub policy_id: Option<i64>,
     pub rule_id: Option<i64>,
     pub provider_code: String,
+    pub region_code: String,
     pub channel_id: i64,
     pub provider_model: String,
     pub provider_base_url: Option<String>,
@@ -212,14 +213,17 @@ pub(crate) fn resolve_openai_provider_route_plan<C>(
 where
     C: PricingCatalog,
 {
-    let global_mapping = catalog.resolve_model_mapping(model, None, None);
+    let global_mapping = catalog.resolve_model_mapping(model, &ResolveModelMappingContext::new());
     let global_effective_model = global_mapping
         .as_ref()
         .map(ModelMappingRule::effective_catalog_key)
         .unwrap_or(model);
     let global_catalog_model = find_catalog_model(catalog, global_effective_model)?;
-    let vendor_mapping =
-        catalog.resolve_model_mapping(model, Some(global_catalog_model.vendor_code.as_str()), None);
+    let vendor_mapping = catalog.resolve_model_mapping(
+        model,
+        &ResolveModelMappingContext::new()
+            .with_vendor_code(global_catalog_model.vendor_code.as_str()),
+    );
     let effective_model = vendor_mapping
         .as_ref()
         .or(global_mapping.as_ref())
@@ -252,6 +256,7 @@ where
         .map(|selection| {
             resolve_model_route(
                 catalog,
+                context,
                 model,
                 catalog_model.vendor_code.as_str(),
                 routing_catalog_key.as_str(),
@@ -292,6 +297,7 @@ fn openai_api_code(capability_label: &str) -> &'static str {
 
 fn resolve_model_route(
     catalog: &(impl PricingCatalog + ?Sized),
+    context: &AuthenticatedApiKeyContext,
     requested_model: &str,
     vendor_code: &str,
     catalog_key: &str,
@@ -301,13 +307,16 @@ fn resolve_model_route(
     let model_route = selection.route;
     let channel_route = channel_routes
         .iter()
-        .find(|route| route.channel_id == model_route.channel_id)
+        .find(|route| {
+            route.channel_id == model_route.channel_id
+                && route.credential_id == model_route.credential_id
+        })
         .cloned()
         .ok_or_else(|| {
             provider_route_selection_error(ProviderRouteSelectionError::provider_route_unavailable(
                 format!(
-                    "provider route is not available for configured channel route: selected channel {} has no configured channel route for model {}",
-                    model_route.channel_id, catalog_key
+                    "provider route is not available for configured channel route: selected channel {} credential {:?} has no configured channel route for model {}",
+                    model_route.channel_id, model_route.credential_id, catalog_key
                 ),
             ))
         })?;
@@ -332,8 +341,17 @@ fn resolve_model_route(
 
     let channel_mapping = catalog.resolve_model_mapping(
         requested_model,
-        Some(vendor_code),
-        Some(model_route.channel_id),
+        &ResolveModelMappingContext::new()
+            .with_vendor_code(vendor_code)
+            .with_channel_id(model_route.channel_id)
+            .with_channel_code(channel_route.channel_code.as_deref().unwrap_or_default())
+            .with_channel_group_id(context.group_id)
+            .with_channel_group_code(context.group_code.as_str())
+            .with_site(channel_route.site_id, channel_route.site_code.as_deref())
+            .with_site_service(
+                channel_route.site_service_id,
+                channel_route.site_service_code.as_deref(),
+            ),
     );
     let model_route = match channel_mapping.as_ref() {
         Some(rule) if rule.effective_catalog_key() != model_route.catalog_key => catalog
@@ -370,12 +388,15 @@ fn resolve_model_route(
                 &model_route.provider_model,
             )
         });
+    let region_code =
+        resolved_deployment_region_code(&model_route.region_code, &channel_route.region_code);
 
     Ok(ResolvedOpenAiProviderRoute {
         catalog_key: model_route.catalog_key,
         policy_id: selection.policy_id,
         rule_id: selection.rule_id,
         provider_code: model_route.provider_code,
+        region_code,
         channel_id: model_route.channel_id,
         provider_model,
         provider_base_url: channel_route.base_url,
@@ -384,6 +405,19 @@ fn resolve_model_route(
         provider_timeout_ms: channel_route.timeout_ms,
         provider_retry_policy: channel_route.retry_policy,
     })
+}
+
+fn resolved_deployment_region_code(model_route_region: &str, channel_route_region: &str) -> String {
+    let model_route_region = model_route_region.trim();
+    if !model_route_region.is_empty() {
+        return model_route_region.to_owned();
+    }
+    let channel_route_region = channel_route_region.trim();
+    if channel_route_region.is_empty() {
+        "global".to_owned()
+    } else {
+        channel_route_region.to_owned()
+    }
 }
 
 fn normalized_resolved_provider_model(

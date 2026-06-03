@@ -44,6 +44,11 @@ type AiChannelRecord struct {
 	RetryPolicy map[string]JsonValue `json:"retry_policy"`
 	RiskLevel string `json:"risk_level"`
 	RpmLimit string `json:"rpm_limit"`
+	SiteChannelRole string `json:"site_channel_role"`
+	SiteCode string `json:"site_code"`
+	SiteId string `json:"site_id"`
+	SiteServiceCode string `json:"site_service_code"`
+	SiteServiceId string `json:"site_service_id"`
 	Status string `json:"status"`
 	TenantId string `json:"tenant_id"`
 	TimeoutMs int `json:"timeout_ms"`

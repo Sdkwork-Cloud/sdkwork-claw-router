@@ -46,10 +46,10 @@ use sdkwork_claw_product::infrastructure::sql::postgres::{
     PostgresAdminModelRateLimitStore, PostgresAdminModelStore, PostgresAdminMonitorReadStore,
     PostgresAdminOpenPlatformStore, PostgresAdminPromptStore, PostgresAdminProviderSecretStore,
     PostgresAdminRecordStore, PostgresAdminServiceNodeStore, PostgresAdminServiceProviderStore,
-    PostgresAdminSiteStore, PostgresAdminSkillStore, PostgresAdminStorageStore, PostgresAdminTransactionCenterStore,
-    PostgresAdminUserStore, PostgresAppAgentRegistryStore, PostgresCatalogLoadError,
-    PostgresModelRankingRefreshStore, PostgresModelRankingsReadStore, PostgresPricingCatalogLoader,
-    PostgresRuntimeRegionSettingsStore, PostgresSiteSettingsStore,
+    PostgresAdminSiteStore, PostgresAdminSkillStore, PostgresAdminStorageStore,
+    PostgresAdminTransactionCenterStore, PostgresAdminUserStore, PostgresAppAgentRegistryStore,
+    PostgresCatalogLoadError, PostgresModelRankingRefreshStore, PostgresModelRankingsReadStore,
+    PostgresPricingCatalogLoader, PostgresRuntimeRegionSettingsStore, PostgresSiteSettingsStore,
 };
 use sdkwork_claw_product::infrastructure::sql::sqlite::{
     SqlCatalogLoadError, SqliteAdminAiResourceStore, SqliteAdminAnalyticsReadStore,
@@ -61,10 +61,10 @@ use sdkwork_claw_product::infrastructure::sql::sqlite::{
     SqliteAdminMessagingStore, SqliteAdminModelRateLimitStore, SqliteAdminModelStore,
     SqliteAdminMonitorReadStore, SqliteAdminOpenPlatformStore, SqliteAdminPromptStore,
     SqliteAdminProviderSecretStore, SqliteAdminRecordStore, SqliteAdminServiceNodeStore,
-    SqliteAdminServiceProviderStore, SqliteAdminSiteStore, SqliteAdminSkillStore, SqliteAdminStorageStore,
-    SqliteAdminTransactionCenterStore, SqliteAdminUserStore, SqliteAppAgentRegistryStore,
-    SqliteModelRankingRefreshStore, SqliteModelRankingsReadStore, SqlitePricingCatalogLoader,
-    SqliteRuntimeRegionSettingsStore, SqliteSiteSettingsStore,
+    SqliteAdminServiceProviderStore, SqliteAdminSiteStore, SqliteAdminSkillStore,
+    SqliteAdminStorageStore, SqliteAdminTransactionCenterStore, SqliteAdminUserStore,
+    SqliteAppAgentRegistryStore, SqliteModelRankingRefreshStore, SqliteModelRankingsReadStore,
+    SqlitePricingCatalogLoader, SqliteRuntimeRegionSettingsStore, SqliteSiteSettingsStore,
 };
 use sdkwork_claw_product::infrastructure::OsApiKeySecretGenerator;
 use sdkwork_claw_product::ports::{
@@ -75,9 +75,10 @@ use sdkwork_claw_product::ports::{
     AdminMarketingStore, AdminMcpStore, AdminMessagingStore, AdminModelRateLimitStore,
     AdminModelStore, AdminMonitorReadStore, AdminOpenPlatformStore, AdminPromptStore,
     AdminProviderSecretStore, AdminRecordStore, AdminServiceNodeStore, AdminServiceProviderStore,
-    AdminSiteStore, AdminSkillStore, AdminStorageStore, AdminTransactionCenterStore, AdminUserStore,
-    ModelRankingRefreshStore, ModelRankingsReadModelStore, PricingCatalog, ProviderHealthProbe,
-    RuntimeRegionSettingsStore, SiteSettingsStore, UnconfiguredProviderHealthProbe,
+    AdminSiteStore, AdminSkillStore, AdminStorageStore, AdminTransactionCenterStore,
+    AdminUserStore, ModelRankingRefreshStore, ModelRankingsReadModelStore, PricingCatalog,
+    ProviderHealthProbe, RuntimeRegionSettingsStore, SiteSettingsStore,
+    UnconfiguredProviderHealthProbe,
 };
 use sdkwork_commerce_membership_sqlx::{
     AdminMembershipStore, PostgresCommerceMembershipStore, SqliteCommerceMembershipStore,
@@ -829,7 +830,9 @@ fn ai_routing_cache_invalidating_model_store(
     cache_manager: Option<RuntimeCacheManager>,
 ) -> AdminModelRuntimeStore {
     match cache_manager {
-        Some(manager) => Arc::new(AiRoutingCacheInvalidatingAdminModelStore::new(store, manager)),
+        Some(manager) => Arc::new(AiRoutingCacheInvalidatingAdminModelStore::new(
+            store, manager,
+        )),
         None => store,
     }
 }

@@ -574,6 +574,7 @@ async fn relay_embedding_route(
             model: requested_model.to_owned(),
             provider_code: route.provider_code.clone(),
             provider_channel_id: route.channel_id,
+            provider_region_code: route.region_code.clone(),
             provider_model: route.provider_model.clone(),
             provider_base_url: route.provider_base_url.clone(),
             provider_secret_ref: route.provider_secret_ref.clone(),

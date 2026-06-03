@@ -17,4 +17,5 @@ import com.sdkwork.clawrouter.backend.api.PlatformApi;
 import com.sdkwork.clawrouter.backend.api.SystemApi;
 import com.sdkwork.clawrouter.backend.api.PromptsApi;
 import com.sdkwork.clawrouter.backend.api.ServiceProvidersApi;
+import com.sdkwork.clawrouter.backend.api.SitesApi;
 import com.sdkwork.clawrouter.backend.api.StorageApi;

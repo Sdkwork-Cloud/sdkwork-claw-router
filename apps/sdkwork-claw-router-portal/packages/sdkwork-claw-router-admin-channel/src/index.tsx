@@ -23,7 +23,6 @@ import {
   Plus,
   Search,
   Server,
-  Sparkles,
   Trash2,
   Video,
   Volume2,
@@ -37,8 +36,10 @@ import {
   ProviderSecretService,
   ChannelModelCatalogService,
   type AiResource,
+  type AiResourceGroup,
   type AiResourceCreateInput,
   type AiResourceUpdateInput,
+  type ChannelCredentialItem,
   type ChannelEndpointChannelOption,
   type ChannelItem,
   type ChannelModelCatalogItem,
@@ -64,10 +65,12 @@ import {
   createChannelEndpointEditDraft,
   createChannelEndpointInputFromForm,
   createChannelEndpointUpdateInputFromForm,
+  defaultChannelCredentialFormValue,
   resolveAuthTypeFormValue,
   resolveAuthTypeSubmitValue,
   resolveChannelSelectFormValue,
   type AiResourceFormValues,
+  type ChannelCredentialFormValue,
   type ChannelFormValues,
   type ChannelEndpointFormValues,
 } from './channelForm';
@@ -75,7 +78,7 @@ import {
   deriveChannelTargetVendorCodes,
   reconcileChannelVendorSelection,
 } from './channelVendorSelection.ts';
-import { AdminTableShell, BusinessStateTableRow, ConfirmDialog } from 'sdkwork-claw-router-commons';
+import { AdminTableShell, AiResourceSelectorModal, BusinessStateTableRow, ConfirmDialog } from 'sdkwork-claw-router-commons';
 
 type ToastState = { message: string; type: 'success' | 'info' | 'error' } | null;
 type AccountDrawerMode = 'create' | 'copy' | 'edit';
@@ -86,6 +89,18 @@ type ChannelEndpointModalMode = 'create' | 'edit';
 type PendingChannelEndpointAction = 'status';
 type ChannelType = 'official' | 'relay';
 type AiResourceCategory = 'model' | 'image' | 'video' | 'audio' | 'music' | 'sfx' | 'api_resource';
+type AccountDrawerContentTab = 'models' | 'resources';
+type ResourceAssociationTab = 'groups' | 'resources';
+type ChannelModelMappingRow = {
+  id: string;
+  sourceModel: string;
+  targetModel: string;
+  custom: boolean;
+};
+type ChannelModelMappingsByVendor = Record<string, ChannelModelMappingRow[]>;
+type EditableChannelCredential = ChannelCredentialFormValue & {
+  localId: string;
+};
 type CredentialFieldConfig = {
   name: string;
   labelKey: string;
@@ -136,6 +151,14 @@ const channelTypeOptions: Array<{
     descKey: 'admin.channel.channelType.relayDesc',
   },
 ];
+
+const credentialRotationOptions = [
+  { id: 'default', labelKey: 'admin.channel.rotation.default', descKey: 'admin.channel.rotation.defaultDesc' },
+  { id: 'priority', labelKey: 'admin.channel.rotation.priority', descKey: 'admin.channel.rotation.priorityDesc' },
+  { id: 'round_robin', labelKey: 'admin.channel.rotation.roundRobin', descKey: 'admin.channel.rotation.roundRobinDesc' },
+  { id: 'weighted_round_robin', labelKey: 'admin.channel.rotation.weightedRoundRobin', descKey: 'admin.channel.rotation.weightedRoundRobinDesc' },
+  { id: 'random', labelKey: 'admin.channel.rotation.random', descKey: 'admin.channel.rotation.randomDesc' },
+] as const;
 
 const aiResourceTypeOptions: Array<AiResource['resourceType']> = [
   'vendor',
@@ -369,10 +392,119 @@ function findAiResourceByCode(resources: readonly AiResource[], resourceCode: st
   return resources.find((resource) => normalizeAiResourceCode(resource.resourceCode) === normalizedCode);
 }
 
+function findAiResourceGroupByCode(groups: readonly AiResourceGroup[], groupCode: string): AiResourceGroup | undefined {
+  const normalizedCode = normalizeAiResourceCode(groupCode);
+  return groups.find((group) => normalizeAiResourceCode(group.groupCode) === normalizedCode);
+}
+
+function splitResourceAssociationCodes(
+  resourceCodes: readonly string[],
+  groups: readonly AiResourceGroup[],
+): { resourceGroupCodes: string[]; resourceCodes: string[] } {
+  const groupCodeSet = new Set(groups.map((group) => normalizeAiResourceCode(group.groupCode)));
+  const resourceGroupCodes: string[] = [];
+  const concreteResourceCodes: string[] = [];
+  for (const code of resourceCodes) {
+    const normalizedCode = normalizeAiResourceCode(code);
+    if (!normalizedCode) {
+      continue;
+    }
+    if (groupCodeSet.has(normalizedCode)) {
+      resourceGroupCodes.push(normalizedCode);
+    } else {
+      concreteResourceCodes.push(normalizedCode);
+    }
+  }
+  return {
+    resourceGroupCodes: Array.from(new Set(resourceGroupCodes)),
+    resourceCodes: Array.from(new Set(concreteResourceCodes)),
+  };
+}
+
 function modelVendorIdForCode(vendorCode: string): string {
   const normalizedVendorCode = providerCodeForVendor(vendorCode);
   return knownModelVendors.find((vendor) => providerCodeForVendor(vendor.id) === normalizedVendorCode)?.id
     ?? normalizedVendorCode;
+}
+
+function catalogModelVendorCode(model: string, fallbackVendorCode: string): string {
+  const normalized = model.trim();
+  if (!isCatalogModelKey(normalized)) {
+    return fallbackVendorCode;
+  }
+  return providerCodeForVendor(normalized.split('/')[0] ?? fallbackVendorCode);
+}
+
+function catalogModelRuntimeId(model: string): string {
+  const normalized = model.trim();
+  if (!isCatalogModelKey(normalized)) {
+    return normalized;
+  }
+  const parts = normalized.split('/');
+  return parts.slice(1).join('/');
+}
+
+function stableModelMappingRowId(vendorCode: string, sourceModel: string, targetModel: string, custom: boolean): string {
+  return [
+    providerCodeForVendor(vendorCode),
+    sourceModel.trim().toLowerCase(),
+    targetModel.trim().toLowerCase(),
+    custom ? 'custom' : 'catalog',
+  ].join(':');
+}
+
+function createModelMappingRow(model: string, vendorCode: string, custom = false): ChannelModelMappingRow {
+  const normalizedModel = model.trim();
+  const targetModel = isCatalogModelKey(normalizedModel)
+    ? normalizedModel
+    : normalizeModelCatalogKey(normalizedModel, modelVendorIdForCode(vendorCode));
+  const sourceModel = catalogModelRuntimeId(targetModel);
+  return {
+    id: stableModelMappingRowId(vendorCode, sourceModel, targetModel, custom),
+    sourceModel,
+    targetModel,
+    custom,
+  };
+}
+
+function buildModelMappingsByVendor(
+  models: readonly string[],
+  vendorCodes: readonly string[],
+  accountVendorCode: string,
+): ChannelModelMappingsByVendor {
+  const next: ChannelModelMappingsByVendor = {};
+  for (const vendorCode of vendorCodes) {
+    next[vendorCode] = [];
+  }
+  for (const model of models) {
+    const normalizedModel = model.trim();
+    if (!normalizedModel) {
+      continue;
+    }
+    const vendorCode = catalogModelVendorCode(normalizedModel, accountVendorCode);
+    next[vendorCode] = [...(next[vendorCode] ?? []), createModelMappingRow(normalizedModel, vendorCode, true)];
+  }
+  return next;
+}
+
+function ensureModelMappingVendors(
+  current: ChannelModelMappingsByVendor,
+  vendorCodes: readonly string[],
+): ChannelModelMappingsByVendor {
+  const next: ChannelModelMappingsByVendor = {};
+  for (const vendorCode of vendorCodes) {
+    next[vendorCode] = current[vendorCode] ?? [];
+  }
+  return next;
+}
+
+function flattenModelMappings(mappings: ChannelModelMappingsByVendor): string[] {
+  return Array.from(new Set(
+    Object.values(mappings)
+      .flat()
+      .map((row) => row.targetModel.trim())
+      .filter(Boolean),
+  ));
 }
 
 function inferProtocolForVendor(vendor: string): string {
@@ -439,32 +571,29 @@ function credentialSecretPlaceholderKey(authType: string): string {
   }
 }
 
-function credentialSecretRequiredMessageKey(authType: string): string {
-  return isApiKeyAuthType(authType)
-    ? 'admin.channel.validation.apiKeyRequiredForCreate'
-    : 'admin.channel.validation.credentialMaterialRequiredForCreate';
-}
-
 function credentialFieldsForAuthType(authType: string): CredentialFieldConfig[] {
   return credentialFieldSets[authType] ?? [];
 }
 
-function buildCredentialMaterial(authType: string, formData: FormData): {
-  apiKey: string;
-  credentialFields?: Record<string, string>;
-} {
-  if (isApiKeyAuthType(authType)) {
-    return { apiKey: String(formData.get('apiKey') ?? '').trim() };
-  }
-  const credentialFields = Object.fromEntries(
-    credentialFieldsForAuthType(authType)
-      .map((field) => [field.name, String(formData.get(`credential:${field.name}`) ?? '').trim()] as const)
-      .filter((entry) => entry[1]),
-  );
+function createEditableCredential(
+  value: Partial<ChannelCredentialFormValue> | undefined,
+  index: number,
+): EditableChannelCredential {
   return {
-    apiKey: '',
-    credentialFields: Object.keys(credentialFields).length > 0 ? credentialFields : undefined,
+    ...defaultChannelCredentialFormValue(),
+    ...value,
+    name: value?.name ?? (index === 0 ? 'Primary' : `Credential ${index + 1}`),
+    localId: `credential-${Date.now()}-${index}-${Math.random().toString(36).slice(2, 8)}`,
   };
+}
+
+function initialEditableCredentials(values: ChannelFormValues | null | undefined): EditableChannelCredential[] {
+  const source = values?.credentials?.length ? values.credentials : [defaultChannelCredentialFormValue()];
+  return source.map((credential, index) => createEditableCredential(credential, index));
+}
+
+function nextEditableCredential(index: number): EditableChannelCredential {
+  return createEditableCredential({ name: `Credential ${index + 1}` }, index);
 }
 
 function areStringArraysEqual(left: readonly string[], right: readonly string[]): boolean {
@@ -476,10 +605,13 @@ function AddAccountDrawer({
   initialValues,
   availableModels,
   aiResources,
+  aiResourceGroups,
   modelCatalogLoading,
   modelCatalogError,
   aiResourcesLoading,
   aiResourcesError,
+  aiResourceGroupsLoading,
+  aiResourceGroupsError,
   isSaving,
   onClose,
   onSubmit,
@@ -488,22 +620,34 @@ function AddAccountDrawer({
   initialValues?: ChannelFormValues | null;
   availableModels: ChannelModelCatalogItem[];
   aiResources: AiResource[];
+  aiResourceGroups: AiResourceGroup[];
   modelCatalogLoading: boolean;
   modelCatalogError: string | null;
   aiResourcesLoading: boolean;
   aiResourcesError: string | null;
+  aiResourceGroupsLoading: boolean;
+  aiResourceGroupsError: string | null;
   isSaving: boolean;
   onClose: () => void;
   onSubmit: (channel: ChannelFormValues) => Promise<void>;
 }) {
   const { t } = useTranslation();
+  const initialResourceCodes = initialValues?.resourceCodes?.map(normalizeAiResourceCode).filter(Boolean) ?? [];
+  const initialResourceAssociationCodes = splitResourceAssociationCodes(initialResourceCodes, aiResourceGroups);
   const [channelType, setChannelType] = useState<ChannelType>(resolveChannelType(initialValues?.channelType));
   const [activeAuthType, setActiveAuthType] = useState(resolveAuthTypeFormValue(initialValues?.accessType, authTypesList));
   const [showMoreAuth, setShowMoreAuth] = useState(false);
   const [modelVendor, setModelVendor] = useState(resolveChannelSelectFormValue(initialValues?.vendor, knownModelVendors, 'OpenAI'));
-  const [whitelist, setWhitelist] = useState<string[]>(initialValues?.models?.length ? initialValues.models : []);
+  const [vendorPickerOpen, setVendorPickerOpen] = useState(false);
+  const [resourceGroupSelectorOpen, setResourceGroupSelectorOpen] = useState(false);
+  const [resourceSelectorOpen, setResourceSelectorOpen] = useState(false);
+  const [activeAccountDrawerTab, setActiveAccountDrawerTab] = useState<AccountDrawerContentTab>('models');
+  const [activeResourceAssociationTab, setActiveResourceAssociationTab] = useState<ResourceAssociationTab>('groups');
   const [selectedResourceCodes, setSelectedResourceCodes] = useState<string[]>(
-    initialValues?.resourceCodes?.map(normalizeAiResourceCode).filter(Boolean) ?? [],
+    initialResourceAssociationCodes.resourceCodes,
+  );
+  const [selectedResourceGroupCodes, setSelectedResourceGroupCodes] = useState<string[]>(
+    initialResourceAssociationCodes.resourceGroupCodes,
   );
   const [selectedVendorCodes, setSelectedVendorCodes] = useState<string[]>(() => deriveChannelTargetVendorCodes({
     channelType: initialValues?.channelType,
@@ -514,17 +658,36 @@ function AddAccountDrawer({
   const [capabilities, setCapabilities] = useState<string[]>(
     initialValues?.capabilities?.length ? initialValues.capabilities : ['llm'],
   );
-  const [customModel, setCustomModel] = useState('');
+  const [activeMappingVendorCode, setActiveMappingVendorCode] = useState('');
+  const [customMappingSourceModel, setCustomMappingSourceModel] = useState('');
+  const [customMappingTargetModel, setCustomMappingTargetModel] = useState('');
+  const [modelMappingsByVendor, setModelMappingsByVendor] = useState<ChannelModelMappingsByVendor>(() => buildModelMappingsByVendor(
+    initialValues?.models ?? [],
+    deriveChannelTargetVendorCodes({
+      channelType: initialValues?.channelType,
+      accountVendor: resolveChannelSelectFormValue(initialValues?.vendor, knownModelVendors, 'OpenAI'),
+      models: initialValues?.models ?? [],
+      resourceCodes: initialValues?.resourceCodes ?? [],
+    }),
+    providerCodeForVendor(resolveChannelSelectFormValue(initialValues?.vendor, knownModelVendors, 'OpenAI')),
+  ));
+  const [credentialRotation, setCredentialRotation] = useState(initialValues?.credentialRotation ?? 'default');
+  const [credentials, setCredentials] = useState<EditableChannelCredential[]>(() => initialEditableCredentials(initialValues));
   const [apiKeyVisible, setApiKeyVisible] = useState(false);
   const [localError, setLocalError] = useState<string | null>(null);
 
   const isEdit = mode === 'edit';
   const accountVendorCode = providerCodeForVendor(modelVendor);
   const availableResourceCodes = useMemo(
-    () => aiResources
+    () => [
+      ...aiResources
       .filter((resource) => resource.status === 'active')
       .map((resource) => normalizeAiResourceCode(resource.resourceCode)),
-    [aiResources],
+      ...aiResourceGroups
+        .filter((group) => group.status === 'active')
+        .map((group) => normalizeAiResourceCode(group.groupCode)),
+    ],
+    [aiResourceGroups, aiResources],
   );
   const visibleAiResources = useMemo(
     () => aiResources
@@ -538,53 +701,63 @@ function AddAccountDrawer({
       .sort((left, right) => compareAiResources(left, right, selectedVendorCodes)),
     [channelType, aiResources, selectedResourceCodes, selectedVendorCodes],
   );
-  const availableAiResources = useMemo(
-    () => visibleAiResources.filter((resource) => !selectedResourceCodes.includes(normalizeAiResourceCode(resource.resourceCode))),
-    [selectedResourceCodes, visibleAiResources],
+  const visibleAiResourceGroups = useMemo(
+    () => aiResourceGroups
+      .filter((group) => group.status === 'active')
+      .sort((left, right) => {
+        const leftOrder = left.sortOrder ?? Number.MAX_SAFE_INTEGER;
+        const rightOrder = right.sortOrder ?? Number.MAX_SAFE_INTEGER;
+        return leftOrder === rightOrder ? left.groupCode.localeCompare(right.groupCode) : leftOrder - rightOrder;
+      }),
+    [aiResourceGroups],
   );
-  const selectedVendorCatalogModels = useMemo(
-    () => selectedVendorCodes.flatMap((vendorCode) => availableModels.filter((model) => model.vendorCode === vendorCode)),
-    [availableModels, selectedVendorCodes],
+  const activeVendorCatalogModels = useMemo(
+    () => availableModels.filter((model) => model.vendorCode === activeMappingVendorCode).slice(0, 24),
+    [activeMappingVendorCode, availableModels],
   );
-  const catalogModelsByVendor = useMemo(
-    () => selectedVendorCodes.map((vendorCode) => ({
-      vendorCode,
-      vendorName: optionalTranslatedLabel(t, { name: modelVendorIdForCode(vendorCode) }),
-      models: availableModels.filter((model) => model.vendorCode === vendorCode).slice(0, 16),
-    })),
-    [availableModels, selectedVendorCodes, t],
-  );
-  const defaultModelKeys = useMemo(() => {
-    const catalogKeys = selectedVendorCatalogModels.map((model) => model.catalogKey);
-    if (catalogKeys.length > 0) {
-      return catalogKeys;
-    }
-    return selectedVendorCodes.flatMap((vendorCode) => fallbackCatalogModelKeys(modelVendorIdForCode(vendorCode)));
-  }, [selectedVendorCatalogModels, selectedVendorCodes]);
-  const customModelVendor = selectedVendorCodes[0] ? modelVendorIdForCode(selectedVendorCodes[0]) : modelVendor;
-  const customModelVendorCode = selectedVendorCodes[0] ?? accountVendorCode;
+  const activeVendorMappings = modelMappingsByVendor[activeMappingVendorCode] ?? [];
+  const submittedModelCount = flattenModelMappings(modelMappingsByVendor).length;
+  const selectedResourceAssociationCount = selectedResourceGroupCodes.length + selectedResourceCodes.length;
+  const resourceSelectorOptions = useMemo(() => visibleAiResources.map((resource) => ({
+    id: resource.id,
+    resourceCode: normalizeAiResourceCode(resource.resourceCode),
+    displayName: resource.displayName,
+    resourceType: displayAiResourceCategory(resource, t),
+    vendorCode: resource.vendorCode ?? null,
+    modalityCode: resource.modalityCode ?? null,
+    apiEndpointCode: resource.apiEndpointCode ?? null,
+    catalogKey: resource.catalogKey ?? null,
+    model: resource.model ?? null,
+    providerNativeModel: resource.providerNativeModel ?? null,
+    status: resource.status,
+  })), [t, visibleAiResources]);
 
   useEffect(() => {
-    if (!initialValues && selectedVendorCodes.length > 0) {
-      setWhitelist(defaultModelKeys.slice(0, 5));
+    setModelMappingsByVendor((current) => ensureModelMappingVendors(current, selectedVendorCodes));
+    if (!activeMappingVendorCode || !selectedVendorCodes.includes(activeMappingVendorCode)) {
+      setActiveMappingVendorCode(selectedVendorCodes[0] ?? '');
     }
-  }, [defaultModelKeys, initialValues, selectedVendorCodes]);
+  }, [activeMappingVendorCode, selectedVendorCodes]);
 
   useEffect(() => {
     const reconciled = reconcileChannelVendorSelection({
       channelType,
       accountVendor: modelVendor,
       selectedVendorCodes,
-      selectedResourceCodes,
+      selectedResourceCodes: [...selectedResourceGroupCodes, ...selectedResourceCodes],
       availableResourceCodes,
     });
     if (!areStringArraysEqual(selectedVendorCodes, reconciled.selectedVendorCodes)) {
       setSelectedVendorCodes(reconciled.selectedVendorCodes);
     }
-    if (!areStringArraysEqual(selectedResourceCodes, reconciled.selectedResourceCodes)) {
-      setSelectedResourceCodes(reconciled.selectedResourceCodes);
+    const nextAssociationCodes = splitResourceAssociationCodes(reconciled.selectedResourceCodes, aiResourceGroups);
+    if (!areStringArraysEqual(selectedResourceGroupCodes, nextAssociationCodes.resourceGroupCodes)) {
+      setSelectedResourceGroupCodes(nextAssociationCodes.resourceGroupCodes);
     }
-  }, [availableResourceCodes, channelType, modelVendor, selectedResourceCodes, selectedVendorCodes]);
+    if (!areStringArraysEqual(selectedResourceCodes, nextAssociationCodes.resourceCodes)) {
+      setSelectedResourceCodes(nextAssociationCodes.resourceCodes);
+    }
+  }, [aiResourceGroups, availableResourceCodes, channelType, modelVendor, selectedResourceCodes, selectedResourceGroupCodes, selectedVendorCodes]);
 
   const toggleCapability = (capability: string) => {
     setCapabilities((current) => {
@@ -624,17 +797,14 @@ function AddAccountDrawer({
     });
   };
 
-  const addAiResource = (resourceCode: string) => {
-    const normalizedCode = normalizeAiResourceCode(resourceCode);
-    if (!normalizedCode) {
-      return;
-    }
-    setSelectedResourceCodes((current) => current.includes(normalizedCode) ? current : [...current, normalizedCode]);
-  };
-
   const removeAiResource = (resourceCode: string) => {
     const normalizedCode = normalizeAiResourceCode(resourceCode);
     setSelectedResourceCodes((current) => current.filter((code) => code !== normalizedCode));
+  };
+
+  const removeAiResourceGroup = (groupCode: string) => {
+    const normalizedCode = normalizeAiResourceCode(groupCode);
+    setSelectedResourceGroupCodes((current) => current.filter((code) => code !== normalizedCode));
   };
 
   const clearAiResources = () => {
@@ -645,37 +815,125 @@ function AddAccountDrawer({
       selectedResourceCodes: selectedResourceCodes.filter((code) => code.startsWith('vendor.')),
       availableResourceCodes,
     });
-    setSelectedResourceCodes(reconciled.selectedResourceCodes);
+    setSelectedResourceGroupCodes([]);
+    setSelectedResourceCodes(splitResourceAssociationCodes(reconciled.selectedResourceCodes, aiResourceGroups).resourceCodes);
   };
 
-  const fillRelatedModels = () => {
-    setWhitelist(defaultModelKeys);
+  const updateCredential = (
+    localId: string,
+    patch: Partial<Omit<EditableChannelCredential, 'localId'>>,
+  ) => {
+    setCredentials((current) => current.map((credential) => (
+      credential.localId === localId ? { ...credential, ...patch } : credential
+    )));
   };
 
-  const addCustomModel = () => {
-    const rawValue = customModel.trim();
-    if (!rawValue) {
+  const updateCredentialField = (localId: string, field: string, value: string) => {
+    setCredentials((current) => current.map((credential) => (
+      credential.localId === localId
+        ? {
+          ...credential,
+          credentialFields: {
+            ...(credential.credentialFields ?? {}),
+            [field]: value,
+          },
+        }
+        : credential
+    )));
+  };
+
+  const addCredential = () => {
+    setCredentials((current) => [...current, nextEditableCredential(current.length)]);
+  };
+
+  const removeCredential = (localId: string) => {
+    setCredentials((current) => {
+      if (current.length <= 1) {
+        return current;
+      }
+      return current.filter((credential) => credential.localId !== localId);
+    });
+  };
+
+  const applyDefaultModelMappings = () => {
+    if (!activeMappingVendorCode) {
       return;
     }
-    let value: string;
+    const catalogKeys = activeVendorCatalogModels.length > 0
+      ? activeVendorCatalogModels.map((model) => model.catalogKey)
+      : fallbackCatalogModelKeys(modelVendorIdForCode(activeMappingVendorCode));
+    setModelMappingsByVendor((current) => ({
+      ...current,
+      [activeMappingVendorCode]: catalogKeys.map((model) => createModelMappingRow(model, activeMappingVendorCode)),
+    }));
+  };
+
+  const clearActiveModelMappings = () => {
+    if (!activeMappingVendorCode) {
+      return;
+    }
+    setModelMappingsByVendor((current) => ({
+      ...current,
+      [activeMappingVendorCode]: [],
+    }));
+  };
+
+  const addCustomModelMapping = () => {
+    const rawTargetModel = customMappingTargetModel.trim();
+    if (!activeMappingVendorCode || !rawTargetModel) {
+      return;
+    }
+    let targetModel: string;
     try {
-      value = isCatalogModelKey(rawValue) ? rawValue : normalizeModelCatalogKey(rawValue, customModelVendor);
+      targetModel = isCatalogModelKey(rawTargetModel)
+        ? rawTargetModel
+        : normalizeModelCatalogKey(rawTargetModel, modelVendorIdForCode(activeMappingVendorCode));
     } catch (err) {
       setLocalError(err instanceof Error ? err.message : t('admin.channel.validation.modelRequired'));
       return;
     }
-    if (!whitelist.includes(value)) {
-      setWhitelist((current) => [...current, value]);
-      setCustomModel('');
-    }
+    const sourceModel = customMappingSourceModel.trim() || catalogModelRuntimeId(targetModel);
+    setModelMappingsByVendor((current) => {
+      const rows = current[activeMappingVendorCode] ?? [];
+      if (rows.some((row) => row.targetModel === targetModel)) {
+        return current;
+      }
+      return {
+        ...current,
+        [activeMappingVendorCode]: [
+          ...rows,
+          {
+            id: stableModelMappingRowId(activeMappingVendorCode, sourceModel, targetModel, true),
+            sourceModel,
+            targetModel,
+            custom: true,
+          },
+        ],
+      };
+    });
+    setCustomMappingSourceModel('');
+    setCustomMappingTargetModel('');
   };
 
   const addCatalogModel = (model: ChannelModelCatalogItem) => {
-    setWhitelist((current) => current.includes(model.catalogKey) ? current : [...current, model.catalogKey]);
+    const vendorCode = providerCodeForVendor(model.vendorCode);
+    setModelMappingsByVendor((current) => {
+      const rows = current[vendorCode] ?? [];
+      if (rows.some((row) => row.targetModel === model.catalogKey)) {
+        return current;
+      }
+      return {
+        ...current,
+        [vendorCode]: [...rows, createModelMappingRow(model.catalogKey, vendorCode)],
+      };
+    });
   };
 
-  const removeModel = (model: string) => {
-    setWhitelist((current) => current.filter((item) => item !== model));
+  const removeModelMapping = (vendorCode: string, rowId: string) => {
+    setModelMappingsByVendor((current) => ({
+      ...current,
+      [vendorCode]: (current[vendorCode] ?? []).filter((row) => row.id !== rowId),
+    }));
   };
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -683,17 +941,11 @@ function AddAccountDrawer({
     setLocalError(null);
     const formData = new FormData(event.currentTarget);
     const name = String(formData.get('name') ?? '').trim();
-    const baseUrl = String(formData.get('baseUrl') ?? '').trim();
-    const credentialMaterial = buildCredentialMaterial(activeAuthType, formData);
     const expiresAt = String(formData.get('expiresAt') ?? '').trim();
-    const models = whitelist.map((item) => item.trim()).filter(Boolean);
+    const models = flattenModelMappings(modelMappingsByVendor);
 
     if (!name) {
       setLocalError(t('admin.channel.validation.channelNameRequired'));
-      return;
-    }
-    if (!isEdit && !credentialMaterial.apiKey && !credentialMaterial.credentialFields) {
-      setLocalError(t(credentialSecretRequiredMessageKey(activeAuthType)));
       return;
     }
     if (models.length === 0) {
@@ -713,12 +965,11 @@ function AddAccountDrawer({
         channelType,
         protocol: inferProtocolForVendor(modelVendor),
         accessType: resolveAuthTypeSubmitValue(activeAuthType, authTypesList),
-        baseUrl,
-        apiKey: credentialMaterial.apiKey,
-        credentialFields: credentialMaterial.credentialFields,
+        credentialRotation,
+        credentials,
         expiresAt,
         capabilities,
-        resourceCodes: selectedResourceCodes,
+        resourceCodes: [...selectedResourceGroupCodes, ...selectedResourceCodes],
         models,
         circuitBreakerEnabled,
         circuitBreakerFailureThreshold: String(formData.get('circuitBreakerFailureThreshold') ?? '').trim(),
@@ -730,8 +981,6 @@ function AddAccountDrawer({
     }
   };
 
-  const credentialSecretLabel = t(credentialSecretLabelKey(activeAuthType));
-  const credentialSecretPlaceholder = t(credentialSecretPlaceholderKey(activeAuthType));
   const credentialSecretHelp = isApiKeyAuthType(activeAuthType)
     ? t('admin.channel.help.apiKeyCredential')
     : t('admin.channel.help.credentialMaterial');
@@ -761,8 +1010,11 @@ function AddAccountDrawer({
         </div>
 
         <form onSubmit={handleSubmit} className="flex flex-col flex-1 overflow-hidden h-full">
+          {selectedResourceGroupCodes.map((code) => (
+            <input key={`resource-group-code-${code}`} type="hidden" name="resourceGroupCodes" value={code} />
+          ))}
           <div className="flex min-h-0 flex-1 overflow-hidden">
-            <div className="min-w-0 flex-1 p-5 space-y-5 border-r border-slate-200 dark:border-white/10 overflow-y-auto custom-scrollbar">
+            <div className="min-w-0 w-[40%] max-w-[40%] shrink-0 p-5 space-y-5 border-r border-slate-200 dark:border-white/10 overflow-y-auto custom-scrollbar">
               {localError && (
                 <div className="flex items-center gap-2 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-700 dark:border-red-500/20 dark:bg-red-500/10 dark:text-red-300">
                   <AlertCircle className="h-4 w-4" />
@@ -815,6 +1067,28 @@ function AddAccountDrawer({
                     );
                   })}
                 </div>
+                <button
+                  type="button"
+                  data-admin-channel-account-type-vendor-picker
+                  onClick={() => setVendorPickerOpen(true)}
+                  className="mt-3 flex w-full items-center justify-between gap-3 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-left shadow-sm transition-colors hover:border-emerald-300 hover:bg-emerald-100 dark:border-emerald-500/20 dark:bg-emerald-500/10 dark:hover:bg-emerald-500/20"
+                >
+                  <span className="min-w-0">
+                    <span className="flex items-center gap-2 text-sm font-semibold text-emerald-800 dark:text-emerald-200">
+                      <Server className="h-4 w-4" />
+                      {t('admin.channel.vendorPicker.currentVendor')}
+                    </span>
+                    <span data-admin-channel-account-type-vendor-summary className="mt-1 flex min-w-0 flex-wrap items-center gap-2 text-xs">
+                      <span className="truncate rounded-md bg-white px-2 py-1 font-semibold text-slate-800 ring-1 ring-emerald-100 dark:bg-black dark:text-white dark:ring-emerald-500/20">{modelVendor}</span>
+                      <span className="font-mono text-emerald-700/80 dark:text-emerald-300/80">{accountVendorCode}</span>
+                    </span>
+                    <span className="mt-1 block text-xs text-emerald-700/70 dark:text-emerald-300/70">{t('admin.channel.vendorPicker.accountTypeHint')}</span>
+                  </span>
+                  <span className="inline-flex shrink-0 items-center gap-1.5 rounded-lg bg-emerald-600 px-3 py-2 text-xs font-semibold text-white shadow-sm">
+                    <Plus className="h-3.5 w-3.5" />
+                    {t('admin.channel.vendorPicker.choose')}
+                  </span>
+                </button>
               </div>
 
               <div>
@@ -883,76 +1157,172 @@ function AddAccountDrawer({
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 gap-4">
-                <div>
-                  <label className="block text-sm text-slate-700 dark:text-slate-300 mb-2 font-medium">{t('admin.channel.fields.baseUrl')}</label>
-                  <input
-                    type="url"
-                    name="baseUrl"
-                    defaultValue={initialValues?.baseUrl ?? ''}
-                    placeholder="https://api.openai.com/v1"
-                    className="w-full bg-white dark:bg-black border border-slate-200 dark:border-white/10 focus:border-emerald-500 rounded-lg px-3 py-2 text-sm text-slate-900 dark:text-white focus:outline-none transition-colors"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm text-slate-700 dark:text-slate-300 mb-2 font-medium">{credentialSecretLabel}</label>
-                  {isApiKeyAuthType(activeAuthType) ? (
-                    <div className="relative">
-                      <input
-                        type={apiKeyVisible ? 'text' : 'password'}
-                        name="apiKey"
-                        autoComplete="off"
-                        placeholder={credentialSecretPlaceholder}
-                        className="w-full font-mono bg-white dark:bg-black border border-slate-200 dark:border-white/10 focus:border-emerald-500 rounded-lg px-3 py-2 pr-10 text-sm text-slate-900 dark:text-white focus:outline-none transition-colors"
-                      />
-                      <button
-                        type="button"
-                        onClick={() => setApiKeyVisible((current) => !current)}
-                        title={apiKeyVisible ? t('admin.channel.actions.hideApiKey') : t('admin.channel.actions.showApiKey')}
-                        aria-label={apiKeyVisible ? t('admin.channel.actions.hideApiKey') : t('admin.channel.actions.showApiKey')}
-                        className="absolute right-2 top-1/2 -translate-y-1/2 rounded-md p-1 text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-700 dark:hover:bg-white/10 dark:hover:text-slate-200"
-                      >
-                        {apiKeyVisible ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
-                      </button>
-                    </div>
-                  ) : (
-                    <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-                      {activeCredentialFields.map((field) => (
-                        <div key={field.name} className={field.textarea ? 'sm:col-span-2' : undefined}>
-                          <label className="mb-1 block text-xs font-medium text-slate-500 dark:text-slate-400">
-                            {t(field.labelKey)}
-                          </label>
-                          {field.textarea ? (
-                            <textarea
-                              name={`credential:${field.name}`}
-                              autoComplete="off"
-                              rows={4}
-                              placeholder={t(field.placeholderKey)}
-                              className="w-full resize-y rounded-lg border border-slate-200 bg-white px-3 py-2 font-mono text-xs text-slate-900 transition-colors focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
-                            />
-                          ) : (
-                            <input
-                              type={field.secret && !apiKeyVisible ? 'password' : 'text'}
-                              name={`credential:${field.name}`}
-                              autoComplete="off"
-                              placeholder={t(field.placeholderKey)}
-                              className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 transition-colors focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
-                            />
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                  <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">{credentialSecretHelp}</p>
-                  {!isApiKeyAuthType(activeAuthType) && activeCredentialFields.some((field) => field.secret) && (
+              <div className="rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-white/10 dark:bg-[#121212]" data-admin-channel-credentials-editor>
+                <div className="mb-4 flex items-start justify-between gap-3">
+                  <div className="min-w-0">
+                    <h4 className="text-sm font-semibold text-slate-900 dark:text-white">{t('admin.channel.credentials.editorTitle')}</h4>
+                    <p className="mt-1 text-xs leading-5 text-slate-500 dark:text-slate-400">{credentialSecretHelp}</p>
+                  </div>
+                  <div className="flex shrink-0 gap-2">
                     <button
                       type="button"
                       onClick={() => setApiKeyVisible((current) => !current)}
-                      className="mt-2 text-xs text-emerald-600 hover:underline dark:text-emerald-400"
+                      className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-semibold text-slate-600 transition-colors hover:border-emerald-300 hover:text-emerald-700 dark:border-white/10 dark:bg-black dark:text-slate-300 dark:hover:border-emerald-500/40 dark:hover:text-emerald-300"
                     >
+                      {apiKeyVisible ? <EyeOff className="h-3.5 w-3.5" /> : <Eye className="h-3.5 w-3.5" />}
                       {apiKeyVisible ? t('admin.channel.actions.hideApiKey') : t('admin.channel.actions.showApiKey')}
                     </button>
-                  )}
+                    <button
+                      type="button"
+                      onClick={addCredential}
+                      className="inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-3 py-2 text-xs font-semibold text-white shadow-sm transition-colors hover:bg-emerald-700"
+                    >
+                      <Plus className="h-3.5 w-3.5" />
+                      {t('admin.channel.credentials.addCredential')}
+                    </button>
+                  </div>
+                </div>
+
+                <label className="mb-2 block text-xs font-semibold text-slate-600 dark:text-slate-300">{t('admin.channel.fields.credentialRotation')}</label>
+                <div className="mb-4 grid grid-cols-1 gap-2" data-admin-channel-credential-rotation>
+                  {credentialRotationOptions.map((option) => {
+                    const isSelected = credentialRotation === option.id;
+                    return (
+                      <button
+                        key={option.id}
+                        type="button"
+                        onClick={() => setCredentialRotation(option.id)}
+                        className={`rounded-lg border px-3 py-2 text-left transition-colors ${
+                          isSelected
+                            ? 'border-emerald-500 bg-emerald-50 text-emerald-800 ring-1 ring-emerald-500/30 dark:bg-emerald-500/10 dark:text-emerald-300'
+                            : 'border-slate-200 bg-white text-slate-700 hover:border-slate-300 dark:border-white/10 dark:bg-black dark:text-slate-300 dark:hover:border-white/20'
+                        }`}
+                      >
+                        <span className="flex items-center gap-2 text-xs font-semibold">
+                          <span className={`flex h-4 w-4 items-center justify-center rounded border ${isSelected ? 'border-emerald-500 bg-emerald-500' : 'border-slate-300 dark:border-slate-500'}`}>
+                            {isSelected && <Check className="h-3 w-3 text-white" />}
+                          </span>
+                          {t(option.labelKey)}
+                        </span>
+                        <span className="mt-1 block pl-6 text-[11px] text-slate-500 dark:text-slate-400">{t(option.descKey)}</span>
+                      </button>
+                    );
+                  })}
+                </div>
+
+                <div className="space-y-3" data-admin-channel-credential-list>
+                  {credentials.map((credential, index) => {
+                    const activeSecretLabel = t(credentialSecretLabelKey(activeAuthType));
+                    const activeSecretPlaceholder = t(credentialSecretPlaceholderKey(activeAuthType));
+                    return (
+                      <div key={credential.localId} className="rounded-lg border border-slate-200 bg-white p-3 dark:border-white/10 dark:bg-black" data-admin-channel-credential-row>
+                        <div className="mb-3 flex items-center justify-between gap-3">
+                          <div className="min-w-0">
+                            <div className="flex items-center gap-2 text-sm font-semibold text-slate-900 dark:text-white">
+                              <Key className="h-4 w-4 text-emerald-500" />
+                              {t('admin.channel.credentials.rowTitle', { index: index + 1 })}
+                            </div>
+                            <div className="mt-0.5 font-mono text-[11px] text-slate-400">{credential.baseUrl || t('admin.channel.credentials.baseUrlPending')}</div>
+                          </div>
+                          <button
+                            type="button"
+                            onClick={() => removeCredential(credential.localId)}
+                            disabled={credentials.length <= 1}
+                            className="shrink-0 rounded-md p-1 text-slate-400 transition-colors hover:bg-red-50 hover:text-red-500 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:text-slate-400 dark:hover:bg-red-500/10"
+                            title={t('admin.channel.credentials.removeCredential')}
+                            aria-label={t('admin.channel.credentials.removeCredential')}
+                          >
+                            <Trash2 className="h-4 w-4" />
+                          </button>
+                        </div>
+
+                        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                          <div>
+                            <label className="mb-1 block text-xs font-medium text-slate-500 dark:text-slate-400">{t('admin.channel.fields.credentialName')}</label>
+                            <input
+                              type="text"
+                              value={credential.name ?? ''}
+                              onChange={(event) => updateCredential(credential.localId, { name: event.currentTarget.value })}
+                              placeholder={t('admin.channel.placeholders.credentialName')}
+                              className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 transition-colors focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-[#121212] dark:text-white"
+                            />
+                          </div>
+                          <div>
+                            <label className="mb-1 block text-xs font-medium text-slate-500 dark:text-slate-400">{t('admin.channel.fields.baseUrl')}</label>
+                            <input
+                              type="url"
+                              value={credential.baseUrl}
+                              onChange={(event) => updateCredential(credential.localId, { baseUrl: event.currentTarget.value })}
+                              placeholder="https://api.openai.com/v1"
+                              className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 font-mono text-xs text-slate-900 transition-colors focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-[#121212] dark:text-white"
+                            />
+                          </div>
+                          {isApiKeyAuthType(activeAuthType) ? (
+                            <div className="sm:col-span-2">
+                              <label className="mb-1 block text-xs font-medium text-slate-500 dark:text-slate-400">{activeSecretLabel}</label>
+                              <input
+                                type={apiKeyVisible ? 'text' : 'password'}
+                                value={credential.apiKey ?? ''}
+                                onChange={(event) => updateCredential(credential.localId, { apiKey: event.currentTarget.value, credentialFields: undefined })}
+                                autoComplete="off"
+                                placeholder={activeSecretPlaceholder}
+                                className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 font-mono text-xs text-slate-900 transition-colors focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-[#121212] dark:text-white"
+                              />
+                            </div>
+                          ) : (
+                            <div className="grid grid-cols-1 gap-3 sm:col-span-2 sm:grid-cols-2">
+                              {activeCredentialFields.map((field) => (
+                                <div key={field.name} className={field.textarea ? 'sm:col-span-2' : undefined}>
+                                  <label className="mb-1 block text-xs font-medium text-slate-500 dark:text-slate-400">{t(field.labelKey)}</label>
+                                  {field.textarea ? (
+                                    <textarea
+                                      value={credential.credentialFields?.[field.name] ?? ''}
+                                      onChange={(event) => updateCredentialField(credential.localId, field.name, event.currentTarget.value)}
+                                      autoComplete="off"
+                                      rows={4}
+                                      placeholder={t(field.placeholderKey)}
+                                      className="w-full resize-y rounded-lg border border-slate-200 bg-white px-3 py-2 font-mono text-xs text-slate-900 transition-colors focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-[#121212] dark:text-white"
+                                    />
+                                  ) : (
+                                    <input
+                                      type={field.secret && !apiKeyVisible ? 'password' : 'text'}
+                                      value={credential.credentialFields?.[field.name] ?? ''}
+                                      onChange={(event) => updateCredentialField(credential.localId, field.name, event.currentTarget.value)}
+                                      autoComplete="off"
+                                      placeholder={t(field.placeholderKey)}
+                                      className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 transition-colors focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-[#121212] dark:text-white"
+                                    />
+                                  )}
+                                </div>
+                              ))}
+                            </div>
+                          )}
+                          <div>
+                            <label className="mb-1 block text-xs font-medium text-slate-500 dark:text-slate-400">{t('admin.channel.credentials.priority')}</label>
+                            <input
+                              type="number"
+                              min="1"
+                              max="1000000"
+                              value={credential.priority ?? ''}
+                              onChange={(event) => updateCredential(credential.localId, { priority: event.currentTarget.value })}
+                              className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 transition-colors focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-[#121212] dark:text-white"
+                            />
+                          </div>
+                          <div>
+                            <label className="mb-1 block text-xs font-medium text-slate-500 dark:text-slate-400">{t('admin.channel.credentials.weight')}</label>
+                            <input
+                              type="number"
+                              min="1"
+                              max="10000"
+                              value={credential.weight ?? ''}
+                              onChange={(event) => updateCredential(credential.localId, { weight: event.currentTarget.value })}
+                              className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 transition-colors focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-[#121212] dark:text-white"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
 
@@ -1032,270 +1402,341 @@ function AddAccountDrawer({
               </div>
             </div>
 
-            <div className="min-w-0 flex-1 space-y-4 overflow-y-auto bg-slate-50 px-6 py-4 dark:bg-transparent custom-scrollbar">
-              <div className="rounded-xl border border-slate-200 bg-white p-4 dark:border-white/10 dark:bg-black">
-                <div className="mb-3 flex items-start justify-between gap-3">
-                  <div>
-                    <h4 className="text-sm font-semibold text-slate-900 dark:text-white">{t('admin.channel.vendorPicker.title')}</h4>
-                    <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
-                      {channelType === 'official'
-                        ? t('admin.channel.vendorPicker.officialHint')
-                        : t('admin.channel.vendorPicker.relayHint')}
-                    </p>
-                  </div>
-                  <span className="shrink-0 rounded-md bg-slate-100 px-2 py-1 text-xs text-slate-500 dark:bg-white/10 dark:text-slate-400">
-                    {t('admin.channel.vendorPicker.selectedCount', { count: selectedVendorCodes.length })}
-                  </span>
-                </div>
-
-                <div className="grid gap-3">
-                  <div>
-                    <label className="mb-1.5 block text-xs font-medium text-slate-500 dark:text-slate-400">
-                      {t('admin.channel.vendorPicker.accountVendor')}
-                    </label>
-                    <div className="relative">
-                      <select
-                        value={modelVendor}
-                        onChange={(event) => setAccountVendor(event.target.value)}
-                        className="w-full appearance-none rounded-lg border border-slate-200 bg-white py-2 pl-3 pr-10 text-sm font-medium text-slate-900 shadow-sm transition-colors focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
-                      >
-                        {knownModelVendors.map((vendor) => (
-                          <option key={vendor.id} value={vendor.id}>
-                            {optionalTranslatedLabel(t, vendor)}
-                          </option>
-                        ))}
-                        {!knownModelVendors.some((vendor) => vendor.id === modelVendor) && (
-                          <option value={modelVendor}>{modelVendor}</option>
-                        )}
-                      </select>
-                      <ChevronRight className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 rotate-90 text-slate-400" />
-                    </div>
-                  </div>
-
-                  <div>
-                    <div className="mb-2 flex items-center justify-between gap-3">
-                      <span className="text-xs font-medium text-slate-500 dark:text-slate-400">
-                        {t('admin.channel.vendorPicker.targetVendors')}
-                      </span>
-                      <span className="font-mono text-[10px] text-slate-400">{accountVendorCode}</span>
-                    </div>
-                    <div className="grid grid-cols-2 gap-2">
-                      {knownModelVendors.map((vendor) => {
-                        const vendorCode = providerCodeForVendor(vendor.id);
-                        const isSelected = selectedVendorCodes.includes(vendorCode);
-                        return (
-                          <button
-                            key={vendor.id}
-                            type="button"
-                            onClick={() => toggleTargetVendor(vendorCode)}
-                            className={`flex min-h-10 items-center gap-2 rounded-lg border px-2.5 py-2 text-left text-xs transition-colors ${
-                              isSelected
-                                ? 'border-emerald-400 bg-emerald-50 text-emerald-800 dark:border-emerald-500/40 dark:bg-emerald-500/10 dark:text-emerald-300'
-                                : 'border-slate-200 bg-slate-50 text-slate-600 hover:border-slate-300 dark:border-white/10 dark:bg-[#1e1e1e] dark:text-slate-400 dark:hover:border-white/20'
-                            }`}
-                          >
-                            <span
-                              className={`flex h-4 w-4 shrink-0 items-center justify-center rounded border ${
-                                isSelected ? 'border-emerald-500 bg-emerald-500' : 'border-slate-300 dark:border-slate-500'
-                              }`}
-                            >
-                              {isSelected && <Check className="h-3 w-3 text-white" />}
-                            </span>
-                            <span className="min-w-0">
-                              <span className="block truncate font-semibold">{optionalTranslatedLabel(t, vendor)}</span>
-                              <span className="block truncate font-mono text-[10px] opacity-70">{vendorCode}</span>
-                            </span>
-                          </button>
-                        );
-                      })}
-                    </div>
-                  </div>
-
-                </div>
+            <div className="min-w-0 flex flex-1 flex-col gap-4 overflow-hidden bg-slate-50 px-6 py-4 dark:bg-transparent" data-admin-channel-right-panel>
+              <div className="inline-flex shrink-0 rounded-lg border border-slate-200 bg-white p-1 text-xs font-semibold dark:border-white/10 dark:bg-black" data-admin-channel-right-tabs>
+                {([
+                  ['models', t('admin.channel.drawerTabs.models'), submittedModelCount],
+                  ['resources', t('admin.channel.drawerTabs.resources'), selectedResourceAssociationCount],
+                ] as Array<[AccountDrawerContentTab, string, number]>).map(([tab, label, count]) => {
+                  const isActive = activeAccountDrawerTab === tab;
+                  return (
+                    <button
+                      key={tab}
+                      type="button"
+                      onClick={() => setActiveAccountDrawerTab(tab)}
+                      className={`inline-flex items-center gap-2 rounded-md px-3 py-1.5 transition-colors ${
+                        isActive
+                          ? 'bg-emerald-50 text-emerald-700 shadow-sm dark:bg-emerald-500/10 dark:text-emerald-300'
+                          : 'text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200'
+                      }`}
+                    >
+                      {label}
+                      <span className={`rounded px-1.5 py-0.5 text-[10px] ${isActive ? 'bg-emerald-100 dark:bg-emerald-500/20' : 'bg-slate-100 dark:bg-white/10'}`}>{count}</span>
+                    </button>
+                  );
+                })}
               </div>
 
-              <div className="rounded-xl border border-slate-200 bg-white p-4 dark:border-white/10 dark:bg-black">
-                <div className="mb-4 flex items-start justify-between gap-3">
-                  <div>
-                    <h4 className="text-sm font-semibold text-slate-900 dark:text-white">{t('admin.channel.fields.modelAllowlist')}</h4>
-                    <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
-                      {t('admin.channel.help.modelAllowlist')}
-                    </p>
+              {activeAccountDrawerTab === 'models' && (
+                <section className="flex min-h-0 flex-1 flex-col overflow-hidden rounded-lg border border-slate-200 bg-white p-4 dark:border-white/10 dark:bg-black" data-admin-channel-model-mapping-card>
+                  <div className="mb-4 flex shrink-0 items-start justify-between gap-3">
+                    <div className="min-w-0">
+                      <h4 className="text-sm font-semibold text-slate-900 dark:text-white">{t('admin.channel.models.mappingTitle')}</h4>
+                      <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">{t('admin.channel.models.mappingDescription')}</p>
+                    </div>
+                    <span className="shrink-0 rounded-md bg-slate-100 px-2 py-1 text-xs text-slate-500 dark:bg-white/10 dark:text-slate-400">
+                      {t('admin.channel.modelCount', { count: submittedModelCount })}
+                    </span>
                   </div>
-                  <span className="shrink-0 rounded-md bg-slate-100 px-2 py-1 text-xs text-slate-500 dark:bg-white/10 dark:text-slate-400">
-                    {t('admin.channel.modelCount', { count: whitelist.length })}
-                  </span>
-                </div>
+                  <div className="flex min-h-0 flex-1 overflow-hidden rounded-lg border border-slate-200 dark:border-white/10" data-admin-channel-model-mapping-body>
+                    <aside className="flex min-h-0 w-52 shrink-0 flex-col border-r border-slate-200 bg-slate-50 p-2 dark:border-white/10 dark:bg-[#121212]" data-admin-channel-model-mapping-sidebar>
+                      <div className="min-h-0 flex-1 space-y-1 overflow-y-auto pr-1 custom-scrollbar">
+                        {selectedVendorCodes.map((vendorCode) => {
+                          const isActive = activeMappingVendorCode === vendorCode;
+                          const count = modelMappingsByVendor[vendorCode]?.length ?? 0;
+                          return (
+                            <button
+                              key={vendorCode}
+                              type="button"
+                              onClick={() => setActiveMappingVendorCode(vendorCode)}
+                              className={`flex w-full items-center justify-between gap-2 rounded-lg px-3 py-2 text-left text-xs transition-colors ${
+                                isActive
+                                  ? 'bg-white text-emerald-700 shadow-sm ring-1 ring-emerald-200 dark:bg-black dark:text-emerald-300 dark:ring-emerald-500/30'
+                                  : 'text-slate-600 hover:bg-white dark:text-slate-400 dark:hover:bg-black'
+                              }`}
+                            >
+                              <span className="min-w-0">
+                                <span className="block truncate font-semibold">{modelVendorIdForCode(vendorCode)}</span>
+                                <span className="block truncate font-mono text-[10px] opacity-70">{vendorCode}</span>
+                              </span>
+                              <span className="shrink-0 rounded bg-slate-100 px-1.5 py-0.5 text-[10px] dark:bg-white/10">{count}</span>
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </aside>
+                    <div className="flex min-h-0 min-w-0 flex-1 flex-col bg-white p-4 dark:bg-black">
+                      {activeMappingVendorCode ? (
+                        <div className="flex min-h-0 flex-1 flex-col gap-4">
+                          <div className="flex shrink-0 items-center justify-between gap-3">
+                            <div className="min-w-0">
+                              <div className="truncate text-sm font-semibold text-slate-900 dark:text-white">
+                                {modelVendorIdForCode(activeMappingVendorCode)}
+                              </div>
+                              <div className="font-mono text-[11px] text-slate-400">{activeMappingVendorCode}</div>
+                            </div>
+                            <div className="flex shrink-0 gap-2">
+                              <button
+                                type="button"
+                                onClick={applyDefaultModelMappings}
+                                disabled={activeVendorCatalogModels.length === 0 && fallbackCatalogModelKeys(modelVendorIdForCode(activeMappingVendorCode)).length === 0}
+                                className="rounded-lg border border-indigo-200 bg-indigo-50 px-3 py-2 text-xs font-semibold text-indigo-700 transition-colors hover:bg-indigo-100 disabled:cursor-not-allowed disabled:opacity-50 dark:border-indigo-500/20 dark:bg-indigo-500/10 dark:text-indigo-300 dark:hover:bg-indigo-500/20"
+                              >
+                                {t('common.actions.applyDefaults')}
+                              </button>
+                              <button
+                                type="button"
+                                onClick={clearActiveModelMappings}
+                                className="rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-xs font-semibold text-red-600 transition-colors hover:bg-red-100 dark:border-red-500/20 dark:bg-red-500/10 dark:text-red-300 dark:hover:bg-red-500/20"
+                              >
+                                {t('common.actions.clearAll')}
+                              </button>
+                            </div>
+                          </div>
 
-                <div className="mb-3 grid max-h-52 grid-cols-1 gap-2 overflow-y-auto pr-1 sm:grid-cols-2">
-                  {whitelist.map((model) => (
-                    <div
-                      key={model}
-                      className="group flex items-center justify-between rounded-lg border border-slate-100 bg-slate-50 px-3 py-2 text-sm text-slate-700 dark:border-white/5 dark:bg-[#1e1e1e] dark:text-slate-300"
-                    >
-                      <span className="flex min-w-0 items-center gap-2 pr-2">
-                        <Sparkles className="h-3.5 w-3.5 shrink-0 text-amber-500" />
-                        <span className="truncate">{model}</span>
-                      </span>
-                      <button type="button" onClick={() => removeModel(model)} className="shrink-0 text-slate-400 transition-colors hover:text-red-500">
-                        <X className="h-4 w-4" />
+                          <div className="grid max-h-36 shrink-0 gap-2 overflow-y-auto pr-1 custom-scrollbar" data-admin-channel-model-mappings-list>
+                            {activeVendorMappings.map((mapping) => (
+                              <div
+                                key={mapping.id}
+                                className="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)_auto] items-center gap-2 rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-xs dark:border-white/10 dark:bg-[#121212]"
+                              >
+                                <span className="min-w-0">
+                                  <span className="block truncate text-slate-500 dark:text-slate-400">{t('admin.channel.models.requestModel')}</span>
+                                  <span className="block truncate font-mono text-slate-900 dark:text-white">{mapping.sourceModel}</span>
+                                </span>
+                                <ChevronRight className="h-4 w-4 text-slate-400" />
+                                <span className="min-w-0">
+                                  <span className="block truncate text-slate-500 dark:text-slate-400">{t('admin.channel.models.providerModel')}</span>
+                                  <span className="block truncate font-mono text-slate-900 dark:text-white">{mapping.targetModel}</span>
+                                </span>
+                                <button
+                                  type="button"
+                                  onClick={() => removeModelMapping(activeMappingVendorCode, mapping.id)}
+                                  className="rounded-md p-1 text-slate-400 transition-colors hover:bg-white hover:text-red-500 dark:hover:bg-white/10"
+                                >
+                                  <X className="h-4 w-4" />
+                                </button>
+                              </div>
+                            ))}
+                            {activeVendorMappings.length === 0 && (
+                              <div className="rounded-lg border border-dashed border-slate-200 py-8 text-center text-xs text-slate-500 dark:border-white/10 dark:text-slate-400">
+                                {t('admin.channel.models.emptyMappings')}
+                              </div>
+                            )}
+                          </div>
+
+                          <div className="flex min-h-0 flex-1 flex-col overflow-hidden rounded-lg border border-slate-200 bg-slate-50 dark:border-white/10 dark:bg-[#121212]">
+                            <div className="flex shrink-0 items-center justify-between gap-3 border-b border-slate-200 px-3 py-2 dark:border-white/10">
+                              <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">{t('admin.channel.models.catalogForVendor')}</span>
+                              <span className="font-mono text-[10px] text-slate-400">{activeMappingVendorCode}</span>
+                            </div>
+                            {modelCatalogLoading ? (
+                              <div className="flex items-center gap-2 p-3 text-xs text-slate-500">
+                                <Loader2 className="h-3.5 w-3.5 animate-spin" />
+                                {t('admin.channel.models.loading')}
+                              </div>
+                            ) : modelCatalogError ? (
+                              <div className="p-3 text-xs text-amber-700 dark:text-amber-300">{modelCatalogError}</div>
+                            ) : activeVendorCatalogModels.length > 0 ? (
+                              <div className="min-h-0 flex-1 overflow-auto custom-scrollbar" data-admin-channel-model-catalog-scroll>
+                                <table className="w-full min-w-[560px] text-left text-xs text-slate-600 dark:text-slate-400" data-admin-channel-model-catalog-table>
+                                  <thead className="sticky top-0 bg-slate-100 text-[11px] font-semibold text-slate-500 dark:bg-[#181818] dark:text-slate-400">
+                                    <tr>
+                                      <th className="px-3 py-2">{t('admin.channel.models.catalogColumns.model')}</th>
+                                      <th className="w-20 px-3 py-2"></th>
+                                    </tr>
+                                  </thead>
+                                  <tbody className="divide-y divide-slate-200 dark:divide-white/5">
+                                    {activeVendorCatalogModels.map((model) => {
+                                      const alreadyAdded = activeVendorMappings.some((mapping) => mapping.targetModel === model.catalogKey);
+                                      return (
+                                        <tr key={model.catalogKey} className="hover:bg-white dark:hover:bg-black">
+                                          <td className="px-3 py-2">
+                                            <div className="truncate font-medium text-slate-800 dark:text-slate-200">{model.displayName || model.model}</div>
+                                            <div className="font-mono text-[10px] text-slate-400">{model.model}</div>
+                                          </td>
+                                          <td className="px-3 py-2 text-right">
+                                            <button
+                                              type="button"
+                                              onClick={() => addCatalogModel(model)}
+                                              disabled={alreadyAdded}
+                                              className="rounded-md border border-slate-200 bg-white px-2 py-1 text-[11px] font-semibold text-slate-600 transition-colors hover:border-emerald-300 hover:text-emerald-700 disabled:cursor-default disabled:border-emerald-200 disabled:bg-emerald-50 disabled:text-emerald-700 dark:border-white/10 dark:bg-black dark:text-slate-300 dark:hover:border-emerald-500/40 dark:hover:text-emerald-300 dark:disabled:border-emerald-500/30 dark:disabled:bg-emerald-500/10 dark:disabled:text-emerald-300"
+                                            >
+                                              {t('common.actions.add')}
+                                            </button>
+                                          </td>
+                                        </tr>
+                                      );
+                                    })}
+                                  </tbody>
+                                </table>
+                              </div>
+                            ) : (
+                              <div className="p-3 text-xs text-slate-500 dark:text-slate-400">{t('admin.channel.models.emptyForVendor')}</div>
+                            )}
+                          </div>
+
+                          <div className="shrink-0 rounded-lg border border-slate-200 bg-slate-50 p-3 dark:border-white/10 dark:bg-[#121212]">
+                            <label className="mb-2 block text-xs font-semibold text-slate-600 dark:text-slate-300">{t('admin.channel.models.customMapping')}</label>
+                            <div className="grid gap-2 sm:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_auto]">
+                              <input
+                                value={customMappingSourceModel}
+                                onChange={(event) => setCustomMappingSourceModel(event.target.value)}
+                                className="min-w-0 rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs text-slate-900 focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
+                                placeholder={t('admin.channel.models.requestModelPlaceholder')}
+                              />
+                              <input
+                                value={customMappingTargetModel}
+                                onChange={(event) => setCustomMappingTargetModel(event.target.value)}
+                                onKeyDown={(event) => {
+                                  if (event.key === 'Enter') {
+                                    event.preventDefault();
+                                    addCustomModelMapping();
+                                  }
+                                }}
+                                className="min-w-0 rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs text-slate-900 focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
+                                placeholder={`${activeMappingVendorCode}/model-id`}
+                              />
+                              <button
+                                type="button"
+                                onClick={addCustomModelMapping}
+                                className="inline-flex items-center justify-center gap-2 rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-2 text-xs font-semibold text-emerald-700 transition-colors hover:bg-emerald-100 dark:border-emerald-500/20 dark:bg-emerald-500/10 dark:text-emerald-300 dark:hover:bg-emerald-500/20"
+                              >
+                                <Plus className="h-3.5 w-3.5" />
+                                {t('common.actions.add')}
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="flex min-h-56 items-center justify-center text-center text-sm text-slate-500 dark:text-slate-400">
+                          {t('admin.channel.vendorPicker.emptySelection')}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </section>
+              )}
+
+              {activeAccountDrawerTab === 'resources' && (
+                <section className="flex min-h-0 flex-1 flex-col overflow-hidden rounded-lg border border-slate-200 bg-white p-4 dark:border-white/10 dark:bg-black" data-admin-channel-resource-association-card>
+                  <div className="mb-4 flex shrink-0 items-start justify-between gap-3">
+                    <div>
+                      <h4 className="text-sm font-semibold text-slate-900 dark:text-white">{t('admin.channel.resourceAssociations.title')}</h4>
+                      <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">{t('admin.channel.help.aiResources')}</p>
+                    </div>
+                    <div className="flex shrink-0 flex-wrap justify-end gap-2">
+                      <button
+                        type="button"
+                        onClick={() => setResourceGroupSelectorOpen(true)}
+                        className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-semibold text-slate-700 transition-colors hover:border-emerald-300 hover:bg-emerald-50 dark:border-white/10 dark:bg-[#121212] dark:text-slate-300 dark:hover:border-emerald-500/40 dark:hover:bg-emerald-500/10"
+                      >
+                        <Boxes className="h-3.5 w-3.5" />
+                        {t('admin.channel.aiResourceGroups.actions.add')}
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setResourceSelectorOpen(true)}
+                        className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-semibold text-slate-700 transition-colors hover:border-emerald-300 hover:bg-emerald-50 dark:border-white/10 dark:bg-[#121212] dark:text-slate-300 dark:hover:border-emerald-500/40 dark:hover:bg-emerald-500/10"
+                      >
+                        <Network className="h-3.5 w-3.5" />
+                        {t('admin.channel.aiResources.actions.addResource')}
+                      </button>
+                      <button
+                        type="button"
+                        onClick={clearAiResources}
+                        disabled={selectedResourceAssociationCount === 0}
+                        className="rounded-lg border border-slate-200 px-3 py-2 text-xs font-semibold text-slate-500 transition-colors hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-50 dark:border-white/10 dark:text-slate-400 dark:hover:bg-white/10"
+                      >
+                        {t('common.actions.clearAll')}
                       </button>
                     </div>
-                  ))}
-                  {whitelist.length === 0 && (
-                    <div className="col-span-2 py-8 text-center text-sm text-slate-500">{t('admin.channel.validation.modelRequired')}</div>
-                  )}
-                </div>
-
-                <div className="mb-4 flex flex-wrap gap-3">
-                  <button
-                    type="button"
-                    onClick={fillRelatedModels}
-                    disabled={defaultModelKeys.length === 0}
-                    className="rounded-lg border border-indigo-500 px-4 py-2 text-sm font-medium text-indigo-500 transition-colors hover:bg-indigo-50 disabled:cursor-not-allowed disabled:opacity-50 dark:border-indigo-500/50 dark:text-indigo-400 dark:hover:bg-indigo-500/10"
-                  >
-                    {t('common.actions.applyDefaults')}
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setWhitelist([])}
-                    className="rounded-lg border border-red-500 px-4 py-2 text-sm font-medium text-red-500 transition-colors hover:bg-red-50 dark:border-red-500/50 dark:text-red-400 dark:hover:bg-red-500/10"
-                  >
-                    {t('common.actions.clearAll')}
-                  </button>
-                </div>
-
-                <div className="space-y-3 rounded-xl border border-slate-200 bg-slate-50 p-3 dark:border-white/10 dark:bg-[#121212]">
-                  <div className="flex items-center justify-between gap-3">
-                    <span className="text-xs font-medium text-slate-500 dark:text-slate-400">
-                      {t('admin.channel.models.catalogForVendor')}
-                    </span>
-                    <span className="font-mono text-[10px] text-slate-400">{selectedVendorCodes.join(', ')}</span>
                   </div>
-                  {modelCatalogLoading ? (
-                    <div className="flex items-center gap-2 py-2 text-xs text-slate-500">
+                  {(aiResourcesLoading || aiResourceGroupsLoading) ? (
+                    <div className="flex items-center gap-2 py-3 text-xs text-slate-500">
                       <Loader2 className="h-3.5 w-3.5 animate-spin" />
-                      {t('admin.channel.models.loading')}
+                      {t('admin.channel.aiResources.loading')}
                     </div>
-                  ) : modelCatalogError ? (
-                    <div className="text-xs text-amber-700 dark:text-amber-300">{modelCatalogError}</div>
-                  ) : catalogModelsByVendor.some((group) => group.models.length > 0) ? (
-                    <div className="space-y-3">
-                      {catalogModelsByVendor.map((group) => (
-                        <div key={group.vendorCode}>
-                          <div className="mb-1 flex items-center justify-between text-[11px]">
-                            <span className="font-semibold text-slate-600 dark:text-slate-300">{group.vendorName}</span>
-                            <span className="font-mono text-slate-400">{group.vendorCode}</span>
-                          </div>
-                          {group.models.length > 0 ? (
-                            <div className="flex max-h-24 flex-wrap gap-2 overflow-y-auto">
-                              {group.models.map((model) => (
-                                <button
-                                  key={model.catalogKey}
-                                  type="button"
-                                  onClick={() => addCatalogModel(model)}
-                                  disabled={whitelist.includes(model.catalogKey)}
-                                  className="rounded-md border border-slate-200 bg-white px-2 py-1 text-left font-mono text-[11px] text-slate-600 transition-colors hover:border-emerald-300 hover:bg-emerald-50 disabled:cursor-default disabled:border-emerald-200 disabled:bg-emerald-50 disabled:text-emerald-700 dark:border-white/10 dark:bg-black dark:text-slate-300 dark:hover:border-emerald-500/40 dark:hover:bg-emerald-500/10 dark:disabled:border-emerald-500/30 dark:disabled:bg-emerald-500/10 dark:disabled:text-emerald-300"
-                                >
-                                  {model.catalogKey}
-                                </button>
-                              ))}
-                            </div>
-                          ) : (
-                            <div className="text-xs text-slate-500 dark:text-slate-400">
-                              {t('admin.channel.models.emptyForVendor')}
+                  ) : (aiResourcesError || aiResourceGroupsError) ? (
+                    <div className="rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-xs text-amber-700 dark:border-amber-500/20 dark:bg-amber-500/10 dark:text-amber-300">
+                      {aiResourceGroupsError ?? aiResourcesError}
+                    </div>
+                  ) : (
+                    <div className="flex min-h-0 flex-1 flex-col gap-4" data-admin-channel-resource-association-body>
+                      <div className="inline-flex shrink-0 rounded-lg border border-slate-200 bg-slate-50 p-1 text-xs font-semibold dark:border-white/10 dark:bg-[#121212]" data-admin-channel-resource-tabs>
+                        <button
+                          type="button"
+                          data-admin-channel-resource-group-list-tab
+                          onClick={() => setActiveResourceAssociationTab('groups')}
+                          className={`rounded-md px-3 py-1.5 transition-colors ${
+                            activeResourceAssociationTab === 'groups'
+                              ? 'bg-white text-emerald-700 shadow-sm dark:bg-black dark:text-emerald-300'
+                              : 'text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200'
+                          }`}
+                        >
+                          {t('admin.channel.resourceAssociations.tabs.groups', { count: selectedResourceGroupCodes.length })}
+                        </button>
+                        <button
+                          type="button"
+                          data-admin-channel-resource-list-tab
+                          onClick={() => setActiveResourceAssociationTab('resources')}
+                          className={`rounded-md px-3 py-1.5 transition-colors ${
+                            activeResourceAssociationTab === 'resources'
+                              ? 'bg-white text-emerald-700 shadow-sm dark:bg-black dark:text-emerald-300'
+                              : 'text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200'
+                          }`}
+                        >
+                          {t('admin.channel.resourceAssociations.tabs.resources', { count: selectedResourceCodes.length })}
+                        </button>
+                      </div>
+
+                      {activeResourceAssociationTab === 'groups' && (
+                        <div className="grid min-h-0 flex-1 content-start gap-2 overflow-y-auto pr-1 custom-scrollbar" data-admin-channel-selected-resource-groups-list>
+                          {selectedResourceGroupCodes.map((groupCode) => {
+                            const group = findAiResourceGroupByCode(aiResourceGroups, groupCode);
+                            return (
+                              <div key={groupCode} className="rounded-lg border border-blue-200 bg-blue-50 p-3 dark:border-blue-500/20 dark:bg-blue-500/10">
+                                <div className="flex items-start justify-between gap-3">
+                                  <span className="min-w-0">
+                                    <span className="block truncate text-sm font-semibold text-slate-800 dark:text-slate-200">{group?.groupName ?? groupCode}</span>
+                                    <span className="mt-1 block truncate font-mono text-[11px] text-slate-500 dark:text-slate-400">{group?.groupCode ?? groupCode}</span>
+                                  </span>
+                                  <button
+                                    type="button"
+                                    onClick={() => removeAiResourceGroup(groupCode)}
+                                    className="shrink-0 rounded-md p-1 text-slate-400 transition-colors hover:bg-white hover:text-red-500 dark:hover:bg-white/10"
+                                  >
+                                    <X className="h-4 w-4" />
+                                  </button>
+                                </div>
+                                {group && (
+                                  <div className="mt-2 flex flex-wrap gap-1.5">
+                                    <span className="rounded bg-white/80 px-1.5 py-0.5 text-[10px] font-medium text-slate-500 dark:bg-white/10 dark:text-slate-400">{t('admin.channel.aiResourceGroups.title')}</span>
+                                    <span className="rounded bg-white/80 px-1.5 py-0.5 text-[10px] font-medium text-slate-500 dark:bg-white/10 dark:text-slate-400">{t('admin.channel.aiResourceGroups.resourceCount', { count: group.resourceCount })}</span>
+                                    <span className="rounded bg-white/80 px-1.5 py-0.5 font-mono text-[10px] text-slate-500 dark:bg-white/10 dark:text-slate-400">{group.selectionMode}</span>
+                                  </div>
+                                )}
+                              </div>
+                            );
+                          })}
+                          {selectedResourceGroupCodes.length === 0 && (
+                            <div className="rounded-lg border border-dashed border-slate-200 py-8 text-center text-xs text-slate-500 dark:border-white/10 dark:text-slate-400">
+                              {t('admin.channel.aiResources.noneSelected')}
                             </div>
                           )}
                         </div>
-                      ))}
-                    </div>
-                  ) : (
-                    <div className="text-xs text-slate-500 dark:text-slate-400">
-                      {t('admin.channel.models.emptyForVendor')}
-                    </div>
-                  )}
-                </div>
+                      )}
 
-                <div className="mt-4 border-t border-slate-200 pt-4 dark:border-white/10">
-                  <label className="mb-2 block text-sm text-slate-700 dark:text-slate-300">{t('admin.channel.fields.addModel')}</label>
-                  <div className="flex gap-2">
-                    <input
-                      value={customModel}
-                      onChange={(event) => setCustomModel(event.target.value)}
-                      onKeyDown={(event) => {
-                        if (event.key === 'Enter') {
-                          event.preventDefault();
-                          addCustomModel();
-                        }
-                      }}
-                      className="min-w-0 flex-1 rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm text-slate-900 focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
-                      placeholder={`${customModelVendorCode}/global/model-id`}
-                    />
-                    <button
-                      type="button"
-                      onClick={addCustomModel}
-                      className="rounded-lg border border-emerald-200 bg-emerald-50 px-5 py-2 text-sm font-medium text-emerald-600 transition-colors hover:bg-emerald-100 dark:border-emerald-500/20 dark:bg-emerald-500/10 dark:text-emerald-500 dark:hover:bg-emerald-500/20"
-                    >
-                      {t('common.actions.add')}
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <div className="rounded-xl border border-slate-200 bg-white p-4 dark:border-white/10 dark:bg-black">
-                <div className="mb-3 flex items-start justify-between gap-3">
-                  <div>
-                    <h4 className="text-sm font-semibold text-slate-900 dark:text-white">{t('admin.channel.fields.aiResources')}</h4>
-                    <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
-                      {t('admin.channel.help.aiResources')}
-                    </p>
-                  </div>
-                  <span className="shrink-0 rounded-md bg-slate-100 px-2 py-1 text-xs text-slate-500 dark:bg-white/10 dark:text-slate-400">
-                    {t('admin.channel.aiResources.selectedCount', { count: selectedResourceCodes.length })}
-                  </span>
-                </div>
-                {aiResourcesLoading ? (
-                  <div className="flex items-center gap-2 py-3 text-xs text-slate-500">
-                    <Loader2 className="h-3.5 w-3.5 animate-spin" />
-                    {t('admin.channel.aiResources.loading')}
-                  </div>
-                ) : aiResourcesError ? (
-                  <div className="rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-xs text-amber-700 dark:border-amber-500/20 dark:bg-amber-500/10 dark:text-amber-300">
-                    {aiResourcesError}
-                  </div>
-                ) : (
-                  <div className="space-y-4">
-                    <div>
-                      <div className="mb-2 flex items-center justify-between gap-3">
-                        <span className="text-xs font-medium text-slate-500 dark:text-slate-400">
-                          {t('admin.channel.aiResources.selectedTitle')}
-                        </span>
-                        <button
-                          type="button"
-                          onClick={clearAiResources}
-                          disabled={selectedResourceCodes.length === 0}
-                          className="rounded-md border border-slate-200 px-2 py-1 text-xs text-slate-500 transition-colors hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-50 dark:border-white/10 dark:text-slate-400 dark:hover:bg-white/10"
-                        >
-                          {t('common.actions.clearAll')}
-                        </button>
-                      </div>
-                      {selectedResourceCodes.length > 0 ? (
-                        <div className="grid max-h-44 grid-cols-1 gap-2 overflow-y-auto pr-1">
+                      {activeResourceAssociationTab === 'resources' && (
+                        <div className="grid min-h-0 flex-1 content-start gap-2 overflow-y-auto pr-1 custom-scrollbar" data-admin-channel-selected-resources-list>
                           {selectedResourceCodes.map((resourceCode) => {
                             const resource = findAiResourceByCode(aiResources, resourceCode);
                             return (
-                              <div
-                                key={resourceCode}
-                                className="rounded-lg border border-emerald-300 bg-emerald-50 p-3 dark:border-emerald-500/30 dark:bg-emerald-500/10"
-                              >
+                              <div key={resourceCode} className="rounded-lg border border-emerald-300 bg-emerald-50 p-3 dark:border-emerald-500/30 dark:bg-emerald-500/10">
                                 <div className="flex items-start justify-between gap-3">
                                   <span className="min-w-0">
-                                    <span className="block truncate text-sm font-semibold text-slate-800 dark:text-slate-200">
-                                      {resource?.displayName ?? resourceCode}
-                                    </span>
-                                    <span className="mt-1 block truncate font-mono text-[11px] text-slate-500 dark:text-slate-400">
-                                      {resource?.resourceCode ?? resourceCode}
-                                    </span>
+                                    <span className="block truncate text-sm font-semibold text-slate-800 dark:text-slate-200">{resource?.displayName ?? resourceCode}</span>
+                                    <span className="mt-1 block truncate font-mono text-[11px] text-slate-500 dark:text-slate-400">{resource?.resourceCode ?? resourceCode}</span>
                                   </span>
                                   <button
                                     type="button"
@@ -1307,91 +1748,27 @@ function AddAccountDrawer({
                                 </div>
                                 {resource && (
                                   <div className="mt-2 flex flex-wrap gap-1.5">
-                                    <span className="rounded bg-white/80 px-1.5 py-0.5 text-[10px] font-medium text-slate-500 dark:bg-white/10 dark:text-slate-400">
-                                      {displayAiResourceCategory(resource ?? undefined, t)}
-                                    </span>
-                                    {resource.vendorCode && (
-                                      <span className="rounded bg-blue-50 px-1.5 py-0.5 font-mono text-[10px] text-blue-700 dark:bg-blue-500/10 dark:text-blue-300">
-                                        {resource.vendorCode}
-                                      </span>
-                                    )}
-                                    {resource.modalityCode && (
-                                      <span className="rounded bg-indigo-50 px-1.5 py-0.5 font-mono text-[10px] text-indigo-700 dark:bg-indigo-500/10 dark:text-indigo-300">
-                                        {resource.modalityCode}
-                                      </span>
-                                    )}
+                                    <span className="rounded bg-white/80 px-1.5 py-0.5 text-[10px] font-medium text-slate-500 dark:bg-white/10 dark:text-slate-400">{displayAiResourceCategory(resource, t)}</span>
+                                    {resource.vendorCode && <span className="rounded bg-blue-50 px-1.5 py-0.5 font-mono text-[10px] text-blue-700 dark:bg-blue-500/10 dark:text-blue-300">{resource.vendorCode}</span>}
+                                    {resource.modalityCode && <span className="rounded bg-indigo-50 px-1.5 py-0.5 font-mono text-[10px] text-indigo-700 dark:bg-indigo-500/10 dark:text-indigo-300">{resource.modalityCode}</span>}
                                   </div>
                                 )}
                               </div>
                             );
                           })}
-                        </div>
-                      ) : (
-                        <div className="rounded-lg border border-dashed border-slate-200 py-5 text-center text-xs text-slate-500 dark:border-white/10 dark:text-slate-400">
-                          {t('admin.channel.aiResources.noneSelected')}
-                        </div>
-                      )}
-                    </div>
-
-                    <div>
-                      <span className="mb-2 block text-xs font-medium text-slate-500 dark:text-slate-400">
-                        {t('admin.channel.aiResources.availableTitle')}
-                      </span>
-                      {availableAiResources.length > 0 ? (
-                        <div className="grid max-h-52 grid-cols-1 gap-2 overflow-y-auto pr-1">
-                          {availableAiResources.map((resource) => (
-                            <button
-                              key={resource.resourceCode}
-                              type="button"
-                              onClick={() => addAiResource(resource.resourceCode)}
-                              className="rounded-lg border border-slate-200 bg-slate-50 p-3 text-left transition-colors hover:border-emerald-300 hover:bg-emerald-50 dark:border-white/10 dark:bg-[#1e1e1e] dark:hover:border-emerald-500/40 dark:hover:bg-emerald-500/10"
-                            >
-                              <span className="flex items-start justify-between gap-3">
-                                <span className="min-w-0">
-                                  <span className="block truncate text-sm font-semibold text-slate-800 dark:text-slate-200">
-                                    {resource.displayName}
-                                  </span>
-                                  <span className="mt-1 block truncate font-mono text-[11px] text-slate-500 dark:text-slate-400">
-                                    {resource.resourceCode}
-                                  </span>
-                                </span>
-                                <span className="flex shrink-0 items-center gap-1 rounded bg-slate-100 px-1.5 py-0.5 text-[10px] font-medium text-slate-500 dark:bg-white/10 dark:text-slate-400">
-                                  <Plus className="h-3 w-3" />
-                                  {displayAiResourceCategory(resource, t)}
-                                </span>
-                              </span>
-                              <span className="mt-2 flex flex-wrap gap-1.5">
-                                {resource.vendorCode && (
-                                  <span className="rounded bg-blue-50 px-1.5 py-0.5 font-mono text-[10px] text-blue-700 dark:bg-blue-500/10 dark:text-blue-300">
-                                    {resource.vendorCode}
-                                  </span>
-                                )}
-                                {resource.modalityCode && (
-                                  <span className="rounded bg-indigo-50 px-1.5 py-0.5 font-mono text-[10px] text-indigo-700 dark:bg-indigo-500/10 dark:text-indigo-300">
-                                    {resource.modalityCode}
-                                  </span>
-                                )}
-                                {resource.apiEndpointCode && (
-                                  <span className="rounded bg-cyan-50 px-1.5 py-0.5 font-mono text-[10px] text-cyan-700 dark:bg-cyan-500/10 dark:text-cyan-300">
-                                    {resource.apiEndpointCode}
-                                  </span>
-                                )}
-                              </span>
-                            </button>
-                          ))}
-                        </div>
-                      ) : (
-                        <div className="py-4 text-center text-xs text-slate-500 dark:text-slate-400">
-                          {t('admin.channel.aiResources.empty')}
+                          {selectedResourceCodes.length === 0 && (
+                            <div className="rounded-lg border border-dashed border-slate-200 py-8 text-center text-xs text-slate-500 dark:border-white/10 dark:text-slate-400">
+                              {t('admin.channel.aiResources.noneSelected')}
+                            </div>
+                          )}
                         </div>
                       )}
                     </div>
-                  </div>
-                )}
-              </div>
+                  )}
+                </section>
+              )}
             </div>
           </div>
-
           <div className="shrink-0 border-t border-slate-200 p-4 dark:border-white/10 bg-slate-50 dark:bg-[#121212] flex justify-end gap-3">
             <button
               type="button"
@@ -1411,19 +1788,287 @@ function AddAccountDrawer({
             </button>
           </div>
         </form>
+        {vendorPickerOpen && (
+          <ChannelVendorPickerModal
+            channelType={channelType}
+            modelVendor={modelVendor}
+            selectedVendorCodes={selectedVendorCodes}
+            onAccountVendorChange={setAccountVendor}
+            onTargetVendorToggle={toggleTargetVendor}
+            onClose={() => setVendorPickerOpen(false)}
+          />
+        )}
+        {resourceGroupSelectorOpen && (
+          <AiResourceGroupSelectorModal
+            groups={visibleAiResourceGroups}
+            selectedCodes={selectedResourceGroupCodes}
+            loading={aiResourceGroupsLoading}
+            onChange={setSelectedResourceGroupCodes}
+            onClose={() => setResourceGroupSelectorOpen(false)}
+          />
+        )}
+        {resourceSelectorOpen && (
+          <div data-admin-channel-resource-selector-modal>
+            <AiResourceSelectorModal
+              loading={aiResourcesLoading}
+              onChange={setSelectedResourceCodes}
+              onClose={() => setResourceSelectorOpen(false)}
+              options={resourceSelectorOptions}
+              selectedCodes={selectedResourceCodes}
+              selectionMode="multiple"
+              searchDataAttribute="data-admin-channel-resource-selector-search"
+              labels={{
+                title: t('admin.channel.aiResources.actions.addResource'),
+                searchPlaceholder: t('admin.channel.aiResources.searchPlaceholder'),
+                loading: t('admin.channel.aiResources.loading'),
+                empty: t('admin.channel.aiResources.empty'),
+                emptySearch: t('admin.channel.aiResources.emptySearchDescription'),
+                selectedCount: count => t('admin.channel.aiResources.selectedCount', { count }),
+                done: t('common.actions.done'),
+                columns: {
+                  resource: t('admin.channel.aiResources.table.resource'),
+                  kind: t('admin.channel.aiResources.table.kind'),
+                  vendor: t('admin.channel.aiResources.table.vendor'),
+                  status: t('admin.channel.aiResources.table.status'),
+                },
+              }}
+            />
+          </div>
+        )}
       </div>
     </div>
   );
 }
 
-function findCredentialForChannel(channel: ChannelItem, providerSecrets: ProviderSecretItem[]): ProviderSecretItem | null {
-  const secretRef = channel.secretRef?.trim();
+function ChannelVendorPickerModal({
+  channelType,
+  modelVendor,
+  selectedVendorCodes,
+  onAccountVendorChange,
+  onTargetVendorToggle,
+  onClose,
+}: {
+  channelType: ChannelType;
+  modelVendor: string;
+  selectedVendorCodes: string[];
+  onAccountVendorChange: (vendor: string) => void;
+  onTargetVendorToggle: (vendorCode: string) => void;
+  onClose: () => void;
+}) {
+  const { t } = useTranslation();
+  const [vendorSearchQuery, setVendorSearchQuery] = useState('');
+  const filteredVendors = knownModelVendors.filter((vendor) => {
+    const keyword = vendorSearchQuery.trim().toLowerCase();
+    if (!keyword) {
+      return true;
+    }
+    const vendorCode = providerCodeForVendor(vendor.id);
+    return [vendor.id, vendor.name, vendorCode].filter(Boolean).join(' ').toLowerCase().includes(keyword);
+  });
+
+  return (
+    <div className="fixed inset-0 z-[70] flex items-center justify-center bg-slate-950/55 p-4 backdrop-blur-sm" data-admin-channel-vendor-picker-modal>
+      <div className="flex h-[72vh] max-h-[72vh] w-[82vw] max-w-4xl flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-2xl dark:border-white/10 dark:bg-[#1a1a1a]">
+        <div className="flex shrink-0 items-center justify-between gap-4 border-b border-slate-200 p-5 dark:border-white/10">
+          <div>
+            <h3 className="text-lg font-bold text-slate-900 dark:text-white">{t('admin.channel.vendorPicker.title')}</h3>
+            <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+              {channelType === 'official'
+                ? t('admin.channel.vendorPicker.officialHint')
+                : t('admin.channel.vendorPicker.relayHint')}
+            </p>
+          </div>
+          <button type="button" onClick={onClose} className="inline-flex h-9 w-9 items-center justify-center rounded-lg text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-600 dark:hover:bg-white/10 dark:hover:text-slate-200">
+            <X className="h-5 w-5" />
+          </button>
+        </div>
+        <div className="shrink-0 border-b border-slate-200 px-5 py-4 dark:border-white/10">
+          <div className="relative">
+            <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+            <input
+              type="search"
+              value={vendorSearchQuery}
+              onChange={(event) => setVendorSearchQuery(event.currentTarget.value)}
+              placeholder={t('admin.channel.vendorPicker.searchPlaceholder')}
+              className="h-10 w-full rounded-lg border border-slate-200 bg-slate-50 pl-10 pr-3 text-sm text-slate-900 outline-none transition-colors placeholder:text-slate-400 focus:border-emerald-500 focus:bg-white dark:border-white/10 dark:bg-[#121212] dark:text-white dark:focus:border-emerald-500"
+            />
+          </div>
+        </div>
+        <div className="min-h-0 flex-1 overflow-auto p-5">
+          <div className="grid gap-2 sm:grid-cols-2">
+            {filteredVendors.map((vendor) => {
+              const vendorCode = providerCodeForVendor(vendor.id);
+              const isAccountVendor = vendor.id === modelVendor;
+              const isSelected = selectedVendorCodes.includes(vendorCode);
+              return (
+                <div key={vendor.id} className="rounded-lg border border-slate-200 bg-slate-50 p-3 dark:border-white/10 dark:bg-[#121212]">
+                  <div className="flex items-start justify-between gap-3">
+                    <span className="min-w-0">
+                      <span className="block truncate text-sm font-semibold text-slate-900 dark:text-white">{optionalTranslatedLabel(t, vendor)}</span>
+                      <span className="block truncate font-mono text-[11px] text-slate-400">{vendorCode}</span>
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => onAccountVendorChange(vendor.id)}
+                      className={`rounded-md px-2 py-1 text-[11px] font-semibold transition-colors ${
+                        isAccountVendor
+                          ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-500/20 dark:text-emerald-300'
+                          : 'bg-white text-slate-500 hover:text-emerald-700 dark:bg-black dark:text-slate-400 dark:hover:text-emerald-300'
+                      }`}
+                    >
+                      {t('admin.channel.vendorPicker.accountVendor')}
+                    </button>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => onTargetVendorToggle(vendorCode)}
+                    className={`mt-3 flex w-full items-center gap-2 rounded-lg border px-3 py-2 text-left text-xs transition-colors ${
+                      isSelected
+                        ? 'border-emerald-400 bg-emerald-50 text-emerald-800 dark:border-emerald-500/40 dark:bg-emerald-500/10 dark:text-emerald-300'
+                        : 'border-slate-200 bg-white text-slate-600 hover:border-slate-300 dark:border-white/10 dark:bg-black dark:text-slate-400 dark:hover:border-white/20'
+                    }`}
+                  >
+                    <span className={`flex h-4 w-4 shrink-0 items-center justify-center rounded border ${isSelected ? 'border-emerald-500 bg-emerald-500' : 'border-slate-300 dark:border-slate-500'}`}>
+                      {isSelected && <Check className="h-3 w-3 text-white" />}
+                    </span>
+                    {t('admin.channel.vendorPicker.targetVendors')}
+                  </button>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+        <div className="flex shrink-0 items-center justify-between gap-3 border-t border-slate-200 p-5 dark:border-white/10">
+          <span className="text-sm text-slate-500 dark:text-slate-400">
+            {t('admin.channel.vendorPicker.selectedCount', { count: selectedVendorCodes.length })}
+          </span>
+          <button type="button" onClick={onClose} className="rounded-lg border border-slate-200 bg-slate-50 px-5 py-2.5 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-100 dark:border-white/10 dark:bg-[#1a1a1a] dark:text-slate-300 dark:hover:bg-white/5">
+            {t('common.actions.done')}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function AiResourceGroupSelectorModal({
+  groups,
+  selectedCodes,
+  loading,
+  onChange,
+  onClose,
+}: {
+  groups: AiResourceGroup[];
+  selectedCodes: string[];
+  loading: boolean;
+  onChange: (codes: string[]) => void;
+  onClose: () => void;
+}) {
+  const { t } = useTranslation();
+  const [resourceGroupSearchQuery, setResourceGroupSearchQuery] = useState('');
+  const selected = new Set(selectedCodes);
+  const filteredGroups = groups.filter((group) => {
+    const keyword = resourceGroupSearchQuery.trim().toLowerCase();
+    if (!keyword) {
+      return true;
+    }
+    return [group.groupName, group.groupCode, group.groupType, group.selectionMode, group.status]
+      .join(' ')
+      .toLowerCase()
+      .includes(keyword);
+  });
+  const toggleGroupCode = (groupCode: string) => {
+    const normalizedCode = normalizeAiResourceCode(groupCode);
+    onChange(selected.has(normalizedCode)
+      ? selectedCodes.filter((code) => code !== normalizedCode)
+      : [...selectedCodes, normalizedCode]);
+  };
+
+  return (
+    <div className="fixed inset-0 z-[70] flex items-center justify-center bg-slate-950/55 p-4 backdrop-blur-sm" data-admin-channel-resource-group-selector-modal>
+      <div className="flex h-[76vh] max-h-[76vh] w-[88vw] max-w-5xl flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-2xl dark:border-white/10 dark:bg-[#1a1a1a]">
+        <div className="flex shrink-0 items-center justify-between gap-4 border-b border-slate-200 p-5 dark:border-white/10">
+          <h3 className="text-lg font-bold text-slate-900 dark:text-white">{t('admin.channel.aiResourceGroups.title')}</h3>
+          <button type="button" onClick={onClose} className="inline-flex h-9 w-9 items-center justify-center rounded-lg text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-600 dark:hover:bg-white/10 dark:hover:text-slate-200">
+            <X className="h-5 w-5" />
+          </button>
+        </div>
+        <div className="shrink-0 border-b border-slate-200 px-5 py-4 dark:border-white/10">
+          <div className="relative">
+            <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+            <input
+              type="search"
+              value={resourceGroupSearchQuery}
+              onChange={(event) => setResourceGroupSearchQuery(event.currentTarget.value)}
+              placeholder={t('admin.channel.aiResourceGroups.searchPlaceholder')}
+              className="h-10 w-full rounded-lg border border-slate-200 bg-slate-50 pl-10 pr-3 text-sm text-slate-900 outline-none transition-colors placeholder:text-slate-400 focus:border-emerald-500 focus:bg-white dark:border-white/10 dark:bg-[#121212] dark:text-white dark:focus:border-emerald-500"
+            />
+          </div>
+        </div>
+        <div className="min-h-0 flex-1 overflow-auto">
+          {loading ? (
+            <div className="flex min-h-[240px] items-center justify-center px-6 text-center text-sm text-slate-500 dark:text-slate-400">{t('admin.channel.aiResourceGroups.loading')}</div>
+          ) : groups.length === 0 ? (
+            <div className="flex min-h-[240px] items-center justify-center px-6 text-center text-sm text-slate-500 dark:text-slate-400">{t('admin.channel.aiResourceGroups.empty')}</div>
+          ) : filteredGroups.length === 0 ? (
+            <div className="flex min-h-[240px] items-center justify-center px-6 text-center text-sm text-slate-500 dark:text-slate-400">{t('admin.channel.aiResourceGroups.emptySearchDescription')}</div>
+          ) : (
+            <table className="w-full min-w-[760px] text-left text-sm text-slate-600 dark:text-slate-400">
+              <thead className="sticky top-0 z-10 border-b border-slate-200 bg-slate-50 text-xs font-semibold text-slate-500 dark:border-white/10 dark:bg-[#121212] dark:text-slate-400">
+                <tr>
+                  <th className="w-12 px-5 py-3"></th>
+                  <th className="px-5 py-3">{t('admin.channel.aiResourceGroups.table.group')}</th>
+                  <th className="px-5 py-3">{t('admin.channel.aiResourceGroups.table.selectionMode')}</th>
+                  <th className="px-5 py-3">{t('admin.channel.aiResourceGroups.table.resources')}</th>
+                  <th className="px-5 py-3">{t('admin.channel.aiResourceGroups.table.status')}</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-200 dark:divide-white/5">
+                {filteredGroups.map((group) => {
+                  const groupCode = normalizeAiResourceCode(group.groupCode);
+                  return (
+                    <tr key={group.groupCode} className="hover:bg-slate-50 dark:hover:bg-white/5">
+                      <td className="px-5 py-3">
+                        <input
+                          type="checkbox"
+                          checked={selected.has(groupCode)}
+                          onChange={() => toggleGroupCode(group.groupCode)}
+                          className="h-4 w-4 rounded border-slate-300 text-emerald-600 focus:ring-emerald-500"
+                        />
+                      </td>
+                      <td className="px-5 py-3">
+                        <div className="font-medium text-slate-900 dark:text-white">{group.groupName}</div>
+                        <div className="font-mono text-xs text-slate-500">{group.groupCode}</div>
+                      </td>
+                      <td className="px-5 py-3">{group.selectionMode}</td>
+                      <td className="px-5 py-3">{group.resourceCount}</td>
+                      <td className="px-5 py-3">{group.status}</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          )}
+        </div>
+        <div className="flex shrink-0 items-center justify-between gap-3 border-t border-slate-200 p-5 dark:border-white/10">
+          <div className="min-w-0 text-sm text-slate-500 dark:text-slate-400">
+            {t('admin.channel.aiResourceGroups.selectedCount', { count: selectedCodes.length })}
+          </div>
+          <button type="button" onClick={onClose} className="rounded-lg border border-slate-200 bg-slate-50 px-5 py-2.5 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-100 dark:border-white/10 dark:bg-[#1a1a1a] dark:text-slate-300 dark:hover:bg-white/5">
+            {t('common.actions.done')}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function findProviderSecretForCredential(credential: ChannelCredentialItem, providerSecrets: ProviderSecretItem[]): ProviderSecretItem | null {
+  const secretRef = credential.secretRef?.trim();
   if (!secretRef) {
     return null;
   }
-  const providerCode = providerCodeForVendor(channel.vendor);
   return (
-    providerSecrets.find((secret) => secret.secretRef === secretRef && secret.providerCode === providerCode) ??
     providerSecrets.find((secret) => secret.secretRef === secretRef) ??
     null
   );
@@ -1431,34 +2076,28 @@ function findCredentialForChannel(channel: ChannelItem, providerSecrets: Provide
 
 function CredentialDetailsModal({
   channel,
-  credential,
+  providerSecrets,
   isLoading,
   loadError,
   onRetry,
-  onCopyApiKey,
+  onCopyCredentialApiKey,
   onClose,
 }: {
   channel: ChannelItem;
-  credential: ProviderSecretItem | null;
+  providerSecrets: ProviderSecretItem[];
   isLoading: boolean;
   loadError: string | null;
   onRetry: () => void;
-  onCopyApiKey: (channel: ChannelItem) => void;
+  onCopyCredentialApiKey: (credential: ChannelCredentialItem) => void;
   onClose: () => void;
 }) {
   const { t } = useTranslation();
   const [apiKeyVisible, setApiKeyVisible] = useState(false);
-  const secretRef = channel.secretRef?.trim() ?? '';
-  const hasSecretRef = secretRef.length > 0;
-  const hasApiKey = Boolean(channel.apiKey?.trim());
-  const apiKeyDisplayValue = apiKeyVisible
-    ? resolveVisibleApiKey(channel)
-    : maskApiKeyForDisplay(channel.apiKey);
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 p-4 backdrop-blur-sm">
       <div className="absolute inset-0" onClick={onClose} />
-      <div className="relative z-10 w-full max-w-2xl overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl dark:border-white/10 dark:bg-[#1a1a1a]">
+      <div className="relative z-10 flex max-h-[86vh] w-full max-w-4xl flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl dark:border-white/10 dark:bg-[#1a1a1a]">
         <div className="flex items-center justify-between border-b border-slate-200 bg-slate-50 p-5 dark:border-white/10 dark:bg-[#121212]">
           <h3 className="flex items-center gap-2 text-lg font-bold text-slate-900 dark:text-white">
             <Key className="h-5 w-5 text-emerald-500" />
@@ -1474,7 +2113,7 @@ function CredentialDetailsModal({
           </button>
         </div>
 
-        <div className="space-y-5 p-5">
+        <div className="min-h-0 flex-1 space-y-5 overflow-y-auto p-5 custom-scrollbar">
           <section className="rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-white/10 dark:bg-[#121212]">
             <h4 className="mb-3 flex items-center gap-2 text-sm font-bold text-slate-900 dark:text-white">
               <Network className="h-4 w-4 text-slate-400" />
@@ -1491,17 +2130,13 @@ function CredentialDetailsModal({
                 value={displayChannelTime(channel.expiresAt, t('admin.channel.expiration.never'))}
               />
               <CredentialDetailField
-                label={t('admin.channel.fields.apiKey')}
-                value={apiKeyDisplayValue}
-                emptyValue={t('admin.channel.credentials.apiKeyUnavailable')}
-                monospace={hasApiKey}
+                label={t('admin.channel.fields.credentialRotation')}
+                value={t(`admin.channel.rotation.${credentialRotationLabelKey(channel.credentialRotation)}`)}
+              />
+              <CredentialDetailField
+                label={t('admin.channel.fields.credentials')}
+                value={t('admin.channel.credentials.count', { count: channel.credentials.length })}
                 wide
-                onToggleVisibility={() => setApiKeyVisible((current) => !current)}
-                visibilityLabel={apiKeyVisible ? t('admin.channel.actions.hideApiKey') : t('admin.channel.actions.showApiKey')}
-                isSecretVisible={apiKeyVisible}
-                onCopy={() => onCopyApiKey(channel)}
-                copyLabel={t('common.actions.copyApiKey')}
-                copyDisabled={!hasApiKey}
               />
             </div>
           </section>
@@ -1528,36 +2163,72 @@ function CredentialDetailsModal({
                 {t('common.actions.retry')}
               </button>
             </div>
-          ) : credential ? (
-            <section className="rounded-xl border border-emerald-200 bg-emerald-50/60 p-4 dark:border-emerald-500/20 dark:bg-emerald-500/10">
-              <h4 className="mb-3 flex items-center gap-2 text-sm font-bold text-emerald-800 dark:text-emerald-300">
-                <CheckCircle className="h-4 w-4" />
-                {t('admin.channel.credentials.linkedTitle')}
-              </h4>
-              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-                <CredentialDetailField label={t('admin.channel.fields.credentialName')} value={credential.name} />
-                <CredentialDetailField label={t('admin.channel.fields.providerCode')} value={credential.providerCode} monospace />
-                <CredentialDetailField label={t('admin.channel.fields.accountCode')} value={credential.accountCode} monospace />
-                <CredentialDetailField label={t('admin.channel.fields.authType')} value={credential.authType} />
-                <CredentialDetailField label={t('admin.channel.fields.maskedLabel')} value={credential.maskedLabel} monospace />
-                <div>
-                  <div className="mb-1 text-xs font-medium text-slate-500 dark:text-slate-400">{t('admin.channel.fields.status')}</div>
-                  <ProviderSecretStatusBadge status={credential.status} />
-                </div>
-              </div>
+          ) : channel.credentials.length > 0 ? (
+            <section className="space-y-3">
+              {channel.credentials.map((credential, index) => {
+                const linkedSecret = findProviderSecretForCredential(credential, providerSecrets);
+                const hasApiKey = Boolean(credential.apiKey?.trim());
+                const apiKeyDisplayValue = apiKeyVisible
+                  ? credential.apiKey ?? ''
+                  : maskApiKeyForDisplay(credential.apiKey);
+                return (
+                  <div key={credential.id} className="rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-white/10 dark:bg-[#121212]">
+                    <div className="mb-3 flex items-start justify-between gap-3">
+                      <div className="min-w-0">
+                        <h4 className="flex items-center gap-2 text-sm font-bold text-slate-900 dark:text-white">
+                          <Key className="h-4 w-4 text-emerald-500" />
+                          {t('admin.channel.credentials.rowTitle', { index: index + 1 })}
+                        </h4>
+                        <p className="mt-1 truncate font-mono text-[11px] text-slate-500 dark:text-slate-400">{credential.baseUrl}</p>
+                      </div>
+                      <CredentialStatusBadge status={credential.status} />
+                    </div>
+                    <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                      <CredentialDetailField label={t('admin.channel.fields.credentialName')} value={credential.name} />
+                      <CredentialDetailField label={t('admin.channel.fields.baseUrl')} value={credential.baseUrl} monospace />
+                      <CredentialDetailField label={t('admin.channel.fields.secretReference')} value={credential.secretRef} monospace wide />
+                      <CredentialDetailField label={t('admin.channel.fields.maskedLabel')} value={credential.maskedLabel} monospace />
+                      <CredentialDetailField label={t('admin.channel.credentials.priority')} value={String(credential.priority)} />
+                      <CredentialDetailField label={t('admin.channel.credentials.weight')} value={String(credential.weight)} />
+                      <CredentialDetailField
+                        label={t('admin.channel.fields.apiKey')}
+                        value={apiKeyDisplayValue}
+                        emptyValue={t('admin.channel.credentials.apiKeyUnavailable')}
+                        monospace={hasApiKey}
+                        wide
+                        onToggleVisibility={() => setApiKeyVisible((current) => !current)}
+                        visibilityLabel={apiKeyVisible ? t('admin.channel.actions.hideApiKey') : t('admin.channel.actions.showApiKey')}
+                        isSecretVisible={apiKeyVisible}
+                        onCopy={() => onCopyCredentialApiKey(credential)}
+                        copyLabel={t('common.actions.copyApiKey')}
+                        copyDisabled={!hasApiKey}
+                      />
+                    </div>
+                    {linkedSecret && (
+                      <div className="mt-3 rounded-lg border border-emerald-200 bg-emerald-50/70 p-3 text-xs dark:border-emerald-500/20 dark:bg-emerald-500/10">
+                        <div className="mb-2 flex items-center gap-2 font-semibold text-emerald-800 dark:text-emerald-300">
+                          <CheckCircle className="h-3.5 w-3.5" />
+                          {t('admin.channel.credentials.linkedTitle')}
+                        </div>
+                        <div className="grid gap-2 sm:grid-cols-3">
+                          <CredentialDetailField label={t('admin.channel.fields.providerCode')} value={linkedSecret.providerCode} monospace />
+                          <CredentialDetailField label={t('admin.channel.fields.accountCode')} value={linkedSecret.accountCode} monospace />
+                          <CredentialDetailField label={t('admin.channel.fields.authType')} value={linkedSecret.authType} />
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
             </section>
           ) : (
             <section className="rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-800 dark:border-amber-500/20 dark:bg-amber-500/10 dark:text-amber-200">
               <h4 className="flex items-center gap-2 font-bold">
                 <AlertCircle className="h-4 w-4" />
-                {hasSecretRef
-                  ? t('admin.channel.credentials.unmatchedTitle')
-                  : t('admin.channel.credentials.noReferenceTitle')}
+                {t('admin.channel.credentials.noReferenceTitle')}
               </h4>
               <p className="mt-2 leading-6">
-                {hasSecretRef
-                  ? t('admin.channel.credentials.unmatchedDescription')
-                  : t('admin.channel.credentials.noReferenceDescription')}
+                {t('admin.channel.credentials.noReferenceDescription')}
               </p>
             </section>
           )}
@@ -1588,8 +2259,19 @@ function maskApiKeyForDisplay(value: string | undefined): string {
   return `${normalized.slice(0, 6)}****${normalized.slice(-4)}`;
 }
 
-function resolveVisibleApiKey(channel: ChannelItem): string {
-  return channel.apiKey ?? '';
+function credentialRotationLabelKey(value: ChannelItem['credentialRotation']): string {
+  switch (value) {
+    case 'priority':
+      return 'priority';
+    case 'round_robin':
+      return 'roundRobin';
+    case 'weighted_round_robin':
+      return 'weightedRoundRobin';
+    case 'random':
+      return 'random';
+    default:
+      return 'default';
+  }
 }
 
 function CredentialDetailField({
@@ -2429,7 +3111,10 @@ export function AiResourceAdmin() {
       </div>
 
       <AdminTableShell
-        className="rounded-xl dark:bg-[#1a1a1a]"
+        data-admin-channel-ai-resource-table-card
+        className="flex-1 min-h-0 rounded-xl dark:bg-[#1a1a1a]"
+        viewportClassName="min-h-0 flex-1"
+        viewportProps={{ 'data-admin-channel-ai-resource-table-viewport': true }}
         footer={(
           <div className="flex items-center justify-between border-t border-slate-200 bg-slate-50 p-4 text-sm text-slate-500 dark:border-white/10 dark:bg-[#121212] dark:text-slate-400">
             {t('admin.channel.aiResources.total', { count: filteredResources.length })}
@@ -2742,7 +3427,10 @@ export function ChannelEndpointAdmin() {
       </div>
 
       <AdminTableShell
-        className="rounded-xl dark:bg-[#1a1a1a]"
+        data-admin-channel-endpoint-table-card
+        className="flex-1 min-h-0 rounded-xl dark:bg-[#1a1a1a]"
+        viewportClassName="min-h-0 flex-1"
+        viewportProps={{ 'data-admin-channel-endpoint-table-viewport': true }}
         footer={(
           <div className="flex items-center justify-between border-t border-slate-200 bg-slate-50 p-4 text-sm text-slate-500 dark:border-white/10 dark:bg-[#121212] dark:text-slate-400">
             {t('admin.channel.channelEndpoints.total', { count: filteredEndpoints.length })}
@@ -2894,10 +3582,13 @@ export function ChannelAdmin() {
   const [providerSecrets, setProviderSecrets] = useState<ProviderSecretItem[]>([]);
   const [modelCatalog, setModelCatalog] = useState<ChannelModelCatalogItem[]>([]);
   const [aiResources, setAiResources] = useState<AiResource[]>([]);
+  const [aiResourceGroups, setAiResourceGroups] = useState<AiResourceGroup[]>([]);
   const [modelCatalogLoading, setModelCatalogLoading] = useState(true);
   const [modelCatalogError, setModelCatalogError] = useState<string | null>(null);
   const [aiResourcesLoading, setAiResourcesLoading] = useState(true);
   const [aiResourcesError, setAiResourcesError] = useState<string | null>(null);
+  const [aiResourceGroupsLoading, setAiResourceGroupsLoading] = useState(true);
+  const [aiResourceGroupsError, setAiResourceGroupsError] = useState<string | null>(null);
   const pageSize = 8;
 
   const showToast = useCallback((message: string, type: 'success' | 'info' | 'error' = 'success') => {
@@ -2905,8 +3596,8 @@ export function ChannelAdmin() {
     window.setTimeout(() => setToast(null), 3000);
   }, []);
 
-  const handleCopyApiKey = useCallback((channel: ChannelItem) => {
-    const apiKey = channel.apiKey?.trim();
+  const handleCopyCredentialApiKey = useCallback((credential: ChannelCredentialItem) => {
+    const apiKey = credential.apiKey?.trim();
     if (!apiKey) {
       showToast(t('admin.channel.credentials.apiKeyUnavailable'), 'error');
       return;
@@ -2996,14 +3687,34 @@ export function ChannelAdmin() {
     }
   }, [t]);
 
+  const loadAiResourceGroups = useCallback(async (isActive: () => boolean = () => true) => {
+    setAiResourceGroupsLoading(true);
+    setAiResourceGroupsError(null);
+    try {
+      const groups = await ChannelAiResourceService.fetchAiResourceGroups();
+      if (isActive()) {
+        setAiResourceGroups(groups);
+      }
+    } catch (err) {
+      if (isActive()) {
+        setAiResourceGroupsError(getLoadErrorMessage(err, t('admin.channel.aiResourceGroups.loadError')));
+      }
+    } finally {
+      if (isActive()) {
+        setAiResourceGroupsLoading(false);
+      }
+    }
+  }, [t]);
+
   const loadData = useCallback(async (isActive: () => boolean = () => true) => {
     await Promise.all([
       loadChannels(isActive),
       loadProviderSecrets(isActive),
       loadModelCatalog(isActive),
       loadAiResources(isActive),
+      loadAiResourceGroups(isActive),
     ]);
-  }, [loadAiResources, loadChannels, loadModelCatalog, loadProviderSecrets]);
+  }, [loadAiResourceGroups, loadAiResources, loadChannels, loadModelCatalog, loadProviderSecrets]);
 
   useEffect(() => {
     let active = true;
@@ -3029,10 +3740,6 @@ export function ChannelAdmin() {
   const totalItems = filteredChannels.length;
   const totalPages = Math.max(1, Math.ceil(totalItems / pageSize));
   const paginatedChannels = filteredChannels.slice((currentPage - 1) * pageSize, currentPage * pageSize);
-  const viewingCredential = viewingCredentialChannel
-    ? findCredentialForChannel(viewingCredentialChannel, providerSecrets)
-    : null;
-
   const openCreateModal = () => {
     setEditingChannel(null);
     setChannelFormDraft(null);
@@ -3227,7 +3934,8 @@ export function ChannelAdmin() {
 
       <AdminTableShell
         data-admin-channel-table-card
-        className="rounded-xl dark:bg-[#1a1a1a]"
+        className="flex-1 min-h-0 rounded-xl dark:bg-[#1a1a1a]"
+        viewportClassName="min-h-0 flex-1"
         viewportProps={{ 'data-admin-channel-table-viewport': true }}
         footer={(
           <div className="p-4 border-t border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-[#121212] flex items-center justify-between">
@@ -3266,7 +3974,7 @@ export function ChannelAdmin() {
               <tr>
                 <th className="px-6 py-4">{t('admin.channel.table.channel')}</th>
                 <th className="px-6 py-4">{t('admin.channel.table.provider')}</th>
-                <th className="px-6 py-4">{t('admin.channel.table.apiKey')}</th>
+                <th className="px-6 py-4">{t('admin.channel.table.credentials')}</th>
                 <th className="px-6 py-4 w-48">{t('admin.channel.table.models')}</th>
                 <th className="px-6 py-4">{t('admin.channel.table.weight')}</th>
                 <th className="px-6 py-4">{t('admin.channel.table.status')}</th>
@@ -3355,7 +4063,7 @@ export function ChannelAdmin() {
                       </div>
                     </td>
                     <td className="px-6 py-4 align-top">
-                      <ApiKeyCell channel={channel} onCopyApiKey={handleCopyApiKey} />
+                      <CredentialSummaryCell channel={channel} />
                     </td>
                     <td className="px-6 py-4 align-top">
                       <ChannelModelsCell models={channel.models} />
@@ -3453,10 +4161,13 @@ export function ChannelAdmin() {
           initialValues={channelFormDraft}
           availableModels={modelCatalog}
           aiResources={aiResources}
+          aiResourceGroups={aiResourceGroups}
           modelCatalogLoading={modelCatalogLoading}
           modelCatalogError={modelCatalogError}
           aiResourcesLoading={aiResourcesLoading}
           aiResourcesError={aiResourcesError}
+          aiResourceGroupsLoading={aiResourceGroupsLoading}
+          aiResourceGroupsError={aiResourceGroupsError}
           isSaving={saving}
           onClose={closeModal}
           onSubmit={handleSubmitChannel}
@@ -3465,11 +4176,11 @@ export function ChannelAdmin() {
       {viewingCredentialChannel && (
         <CredentialDetailsModal
           channel={viewingCredentialChannel}
-          credential={viewingCredential}
+          providerSecrets={providerSecrets}
           isLoading={providerSecretLoading}
           loadError={providerSecretLoadError}
           onRetry={() => void loadProviderSecrets()}
-          onCopyApiKey={handleCopyApiKey}
+          onCopyCredentialApiKey={handleCopyCredentialApiKey}
           onClose={() => setViewingCredentialChannel(null)}
         />
       )}
@@ -3558,35 +4269,58 @@ function ChannelModelsCell({ models }: { models: string[] }) {
   );
 }
 
-function ApiKeyCell({
-  channel,
-  onCopyApiKey,
-}: {
-  channel: ChannelItem;
-  onCopyApiKey: (channel: ChannelItem) => void;
-}) {
+function CredentialSummaryCell({ channel }: { channel: ChannelItem }) {
   const { t } = useTranslation();
-  const apiKey = channel.apiKey?.trim();
-  const displayValue = maskApiKeyForDisplay(apiKey);
-  const unavailableLabel = t('admin.channel.credentials.apiKeyUnavailable');
-  const copyLabel = apiKey ? t('common.actions.copyApiKey') : unavailableLabel;
+  const primaryCredential = channel.credentials[0];
 
   return (
-    <div className="flex min-w-[9rem] items-center gap-2">
-      <span className={`min-w-0 truncate font-mono text-xs ${apiKey ? 'text-slate-700 dark:text-slate-300' : 'text-slate-400 dark:text-slate-500'}`}>
-        {displayValue || unavailableLabel}
-      </span>
-      <button
-        type="button"
-        onClick={() => onCopyApiKey(channel)}
-        disabled={!apiKey}
-        title={copyLabel}
-        aria-label={copyLabel}
-        className="shrink-0 rounded-md p-1 text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-700 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-transparent dark:hover:bg-white/10 dark:hover:text-slate-200"
-      >
-        <Copy className="h-3.5 w-3.5" />
-      </button>
+    <div className="min-w-[12rem] max-w-[16rem]">
+      <div className="flex items-center gap-2 text-xs font-semibold text-slate-800 dark:text-slate-200">
+        <Key className="h-3.5 w-3.5 shrink-0 text-emerald-500" />
+        <span>{t('admin.channel.credentials.count', { count: channel.credentials.length })}</span>
+        <span className="rounded bg-slate-100 px-1.5 py-0.5 text-[10px] font-medium text-slate-500 dark:bg-white/10 dark:text-slate-400">
+          {t(`admin.channel.rotation.${credentialRotationLabelKey(channel.credentialRotation)}`)}
+        </span>
+      </div>
+      {primaryCredential ? (
+        <div className="mt-1 min-w-0 space-y-0.5">
+          <div className="truncate font-mono text-[11px] text-slate-600 dark:text-slate-300" title={primaryCredential.baseUrl}>
+            {primaryCredential.baseUrl}
+          </div>
+          <div className="truncate font-mono text-[11px] text-slate-400" title={primaryCredential.maskedLabel}>
+            {primaryCredential.maskedLabel}
+          </div>
+        </div>
+      ) : (
+        <div className="mt-1 text-xs text-slate-400 dark:text-slate-500">{t('admin.channel.credentials.emptyTitle')}</div>
+      )}
     </div>
+  );
+}
+
+function CredentialStatusBadge({ status }: { status: ChannelCredentialItem['status'] }) {
+  const { t } = useTranslation();
+  if (status === 'active') {
+    return (
+      <span className="inline-flex items-center gap-1.5 text-xs font-medium text-emerald-600 dark:text-emerald-400">
+        <CheckCircle className="h-3.5 w-3.5" />
+        {t('admin.channel.status.active')}
+      </span>
+    );
+  }
+  if (status === 'disabled') {
+    return (
+      <span className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-500 dark:text-slate-400">
+        <Ban className="h-3.5 w-3.5" />
+        {t('admin.channel.status.disabled')}
+      </span>
+    );
+  }
+  return (
+    <span className="inline-flex items-center gap-1.5 text-xs font-medium text-red-600 dark:text-red-400">
+      <AlertCircle className="h-3.5 w-3.5" />
+      {t('admin.channel.status.errors', { count: 1 })}
+    </span>
   );
 }
 
@@ -3612,24 +4346,6 @@ function StatusBadge({ channel }: { channel: ChannelItem }) {
     <span className="inline-flex items-center gap-1.5 text-red-600 dark:text-red-400 text-xs font-medium">
       <AlertCircle className="w-3.5 h-3.5" />
       {t('admin.channel.status.errors', { count: channel.errors })}
-    </span>
-  );
-}
-
-function ProviderSecretStatusBadge({ status }: { status: ProviderSecretItem['status'] }) {
-  const { t } = useTranslation();
-  if (status === 'active') {
-    return (
-      <span className="inline-flex items-center gap-1.5 text-xs font-medium text-emerald-600 dark:text-emerald-400">
-        <CheckCircle className="h-3.5 w-3.5" />
-        {t('admin.channel.status.active')}
-      </span>
-    );
-  }
-  return (
-    <span className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-500 dark:text-slate-400">
-      <Ban className="h-3.5 w-3.5" />
-      {t('admin.channel.status.disabled')}
     </span>
   );
 }

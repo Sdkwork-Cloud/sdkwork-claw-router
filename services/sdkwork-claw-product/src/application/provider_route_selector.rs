@@ -2,11 +2,13 @@ use crate::application::{AuthenticatedApiKeyContext, PricingResolver, ResolveMod
 use std::cmp::Reverse;
 use std::collections::BTreeMap;
 use std::fmt::{Display, Formatter};
+use std::sync::atomic::{AtomicU64, Ordering};
 
 use crate::domain::{
-    provider_native_model_id, BillingMeter, DomainError, DomainResult, ModelProviderRoute,
-    ProviderChannelGroupBinding, ProviderChannelRoute, RouteCandidate, RoutingCapability,
-    RoutingPolicy, RoutingPolicyScope, RoutingRule,
+    model_catalog_scope_matches_key, parse_model_catalog_identity, provider_native_model_id,
+    BillingMeter, DomainError, DomainResult, ModelProviderRoute, ProviderChannelGroupBinding,
+    ProviderChannelRoute, RouteCandidate, RoutingCapability, RoutingPolicy, RoutingPolicyScope,
+    RoutingRule,
 };
 use crate::ports::PricingCatalog;
 
@@ -556,21 +558,20 @@ impl<'a, C: PricingCatalog> ProviderRouteSelector<'a, C> {
         let mut pricing_error = None;
         let mut selected_routes = Vec::new();
         for candidate in candidates {
-            let Some(route) = self.resolve_candidate_model_route(
-                query,
-                routes,
-                channel_routes,
-                candidate.channel_id,
-            ) else {
-                continue;
-            };
-            if !self.route_is_callable(&route) {
+            let candidate_routes =
+                self.resolve_candidate_model_routes(query, routes, channel_routes, &candidate);
+            if candidate_routes.is_empty() {
                 continue;
             }
-            match self.ensure_route_is_priced(query, &route) {
-                Ok(()) => selected_routes.push(route),
-                Err(error) => {
-                    pricing_error.get_or_insert(error);
+            for route in candidate_routes {
+                if !self.route_is_callable(&route) {
+                    continue;
+                }
+                match self.ensure_route_is_priced(query, &route) {
+                    Ok(()) => selected_routes.push(route),
+                    Err(error) => {
+                        pricing_error.get_or_insert(error);
+                    }
                 }
             }
         }
@@ -622,29 +623,42 @@ impl<'a, C: PricingCatalog> ProviderRouteSelector<'a, C> {
         }
     }
 
-    fn resolve_candidate_model_route(
+    fn resolve_candidate_model_routes(
         &self,
         query: &SelectProviderRouteQuery,
         routes: &[ModelProviderRoute],
         channel_routes: &[ProviderChannelRoute],
-        channel_id: i64,
-    ) -> Option<ModelProviderRoute> {
-        if let Some(route) = routes
+        candidate: &RouteCandidate,
+    ) -> Vec<ModelProviderRoute> {
+        let model_routes = routes
             .iter()
-            .find(|route| {
-                route.channel_id == channel_id
+            .filter(|route| {
+                route.channel_id == candidate.channel_id
+                    && candidate_region_matches(
+                        &route.region_code,
+                        candidate.region_code.as_deref(),
+                    )
                     && model_route_matches_request_api(route, &query.api_code)
             })
             .cloned()
-        {
-            return Some(route);
+            .collect::<Vec<_>>();
+        if !model_routes.is_empty() {
+            return order_model_credential_routes(model_routes);
         }
 
         channel_routes
             .iter()
-            .find(|route| route.channel_id == channel_id)
+            .filter(|route| {
+                route.channel_id == candidate.channel_id
+                    && candidate_region_matches(
+                        &route.region_code,
+                        candidate.region_code.as_deref(),
+                    )
+            })
             .filter(|route| self.channel_route_is_callable(route))
             .map(|route| synthetic_model_route_from_channel_route(query, route))
+            .collect::<Vec<_>>()
+            .pipe(order_model_credential_routes)
     }
 
     fn route_is_callable(&self, route: &ModelProviderRoute) -> bool {
@@ -657,16 +671,24 @@ impl<'a, C: PricingCatalog> ProviderRouteSelector<'a, C> {
         candidates: Vec<RouteCandidate>,
     ) -> CandidateChannelRouteEvaluation {
         for candidate in candidates {
-            let Some(route) = routes
+            let route = routes
                 .iter()
-                .find(|route| route.channel_id == candidate.channel_id)
+                .filter(|route| {
+                    route.channel_id == candidate.channel_id
+                        && candidate_region_matches(
+                            &route.region_code,
+                            candidate.region_code.as_deref(),
+                        )
+                })
                 .cloned()
-            else {
+                .collect::<Vec<_>>()
+                .pipe(order_channel_credential_routes)
+                .into_iter()
+                .find(|route| self.channel_route_is_callable(route));
+            let Some(route) = route else {
                 continue;
             };
-            if self.channel_route_is_callable(&route) {
-                return CandidateChannelRouteEvaluation::Selected(route);
-            }
+            return CandidateChannelRouteEvaluation::Selected(route);
         }
         CandidateChannelRouteEvaluation::NoCallableCandidate
     }
@@ -747,6 +769,7 @@ impl<'a, C: PricingCatalog> ProviderRouteSelector<'a, C> {
                 billing_meter: query.billing_meter.clone(),
                 provider_code: Some(route.provider_code.clone()),
                 channel_id: Some(route.channel_id),
+                region_code: Some(route.region_code.clone()),
             })
             .map(|_| ())
     }
@@ -829,7 +852,8 @@ fn group_bound_channel_route_candidates(
                 binding.priority,
                 Reverse(binding.weight),
                 route.channel_id,
-                RouteCandidate::new(route.channel_id, i64::from(binding.weight)),
+                RouteCandidate::new(route.channel_id, i64::from(binding.weight))
+                    .with_region_code(&route.region_code),
             ))
         })
         .collect::<Vec<_>>();
@@ -847,8 +871,17 @@ fn candidate_chain_uses_rule_fallback(rule: &RoutingRule, candidates: &[RouteCan
         !rule
             .candidate_channels
             .iter()
-            .any(|primary| primary.channel_id == candidate.channel_id)
+            .any(|primary| same_candidate_route(primary, candidate))
     })
+}
+
+fn same_candidate_route(left: &RouteCandidate, right: &RouteCandidate) -> bool {
+    left.channel_id == right.channel_id
+        && match (left.region_code.as_deref(), right.region_code.as_deref()) {
+            (Some(left), Some(right)) => same_region(left, right),
+            (None, None) => true,
+            _ => false,
+        }
 }
 
 fn policy_rank(scope: RoutingPolicyScope) -> i32 {
@@ -889,6 +922,25 @@ fn same_tenant(policy: &RoutingPolicy, context: &AuthenticatedApiKeyContext) -> 
 
 fn has_text(value: Option<&str>) -> bool {
     value.map(str::trim).is_some_and(|value| !value.is_empty())
+}
+
+fn candidate_region_matches(route_region_code: &str, candidate_region_code: Option<&str>) -> bool {
+    candidate_region_code
+        .map(|candidate_region_code| same_region(route_region_code, candidate_region_code))
+        .unwrap_or(true)
+}
+
+fn same_region(left: &str, right: &str) -> bool {
+    normalize_region_code(left).eq_ignore_ascii_case(&normalize_region_code(right))
+}
+
+fn normalize_region_code(value: &str) -> String {
+    let value = value.trim();
+    if value.is_empty() {
+        "global".to_owned()
+    } else {
+        value.to_owned()
+    }
 }
 
 fn unavailable_model_route_message(
@@ -1006,86 +1058,8 @@ fn binding_matches_model_scope(
     binding.model_scope.iter().any(|scope| {
         model_scope_keys
             .iter()
-            .any(|key| model_scope_value_matches_key(scope, key))
+            .any(|key| model_catalog_scope_matches_key(scope, key))
     })
-}
-
-fn model_scope_value_matches_key(scope: &str, key: &str) -> bool {
-    let scope = normalize_model_scope_value(scope);
-    let key = normalize_model_scope_value(key);
-    if scope.is_empty() || key.is_empty() {
-        return false;
-    }
-    if scope == "*" || scope == "all" {
-        return true;
-    }
-    if scope == key {
-        return true;
-    }
-    if let Some(prefix) = scope.strip_suffix("/*") {
-        return !prefix.is_empty()
-            && (key == prefix
-                || key
-                    .strip_prefix(prefix)
-                    .is_some_and(|tail| tail.starts_with('/')));
-    }
-
-    let scope_parts = scope
-        .split('/')
-        .filter(|part| !part.is_empty())
-        .collect::<Vec<_>>();
-    let Some((vendor, native_model_parts)) = model_scope_key_parts(&key) else {
-        return false;
-    };
-    let native_model = native_model_parts.join("/");
-    match scope_parts.as_slice() {
-        [scope_value] => {
-            *scope_value == vendor
-                || *scope_value == native_model.as_str()
-                || native_model_parts
-                    .last()
-                    .is_some_and(|model| *scope_value == *model)
-        }
-        [scope_vendor, scope_model @ ..] => {
-            (*scope_vendor == vendor && scope_model == native_model_parts) || scope == native_model
-        }
-        [] => false,
-    }
-}
-
-fn model_scope_key_parts(value: &str) -> Option<(&str, Vec<&str>)> {
-    let parts = value
-        .split('/')
-        .filter(|part| !part.is_empty())
-        .collect::<Vec<_>>();
-    match parts.as_slice() {
-        [_vendor, region, _model @ ..] if known_region_segment(region) => None,
-        [vendor, model @ ..] if !model.is_empty() => Some((*vendor, model.to_vec())),
-        _ => None,
-    }
-}
-
-fn known_region_segment(value: &str) -> bool {
-    matches!(
-        value.trim().to_ascii_lowercase().as_str(),
-        "global"
-            | "cn"
-            | "us"
-            | "eu"
-            | "ap"
-            | "apac"
-            | "jp"
-            | "sg"
-            | "hk"
-            | "aws"
-            | "azure"
-            | "gcp"
-            | "local"
-    )
-}
-
-fn normalize_model_scope_value(value: &str) -> String {
-    value.trim().trim_matches('/').to_ascii_lowercase()
 }
 
 fn binding_matches_api_scope(
@@ -1169,11 +1143,193 @@ fn synthetic_model_route_from_channel_route(
     )
     .with_region_code(&route.region_code)
     .with_api_code(&query.api_code)
+    .with_credential(
+        route.credential_id,
+        route.credential_rotation.clone(),
+        route.credential_priority,
+        route.credential_weight,
+    )
     .with_provider_endpoint(route.base_url.clone(), route.secret_ref.clone())
     .with_auth_profile(route.auth_profile.clone());
     model_route.timeout_ms = route.timeout_ms;
     model_route.retry_policy = route.retry_policy.clone();
     model_route
+}
+
+static CREDENTIAL_ROTATION_COUNTER: AtomicU64 = AtomicU64::new(0);
+
+trait Pipe: Sized {
+    fn pipe<T>(self, f: impl FnOnce(Self) -> T) -> T {
+        f(self)
+    }
+}
+
+impl<T> Pipe for T {}
+
+fn order_model_credential_routes(mut routes: Vec<ModelProviderRoute>) -> Vec<ModelProviderRoute> {
+    routes.sort_by_key(|route| {
+        (
+            route.credential_priority,
+            Reverse(route.credential_weight),
+            route.credential_id.unwrap_or(i64::MAX),
+            route.region_code.clone(),
+            route.provider_code.clone(),
+        )
+    });
+    if routes.len() <= 1 {
+        return routes;
+    }
+    let strategy = normalized_route_rotation(
+        routes
+            .iter()
+            .map(|route| route.credential_rotation.as_str())
+            .find(|value| !value.trim().is_empty()),
+    );
+    match strategy {
+        "weighted_round_robin" => weighted_rotate_model_routes(routes),
+        "round_robin" | "random" => rotate_model_routes(routes, strategy),
+        _ => routes,
+    }
+}
+
+fn order_channel_credential_routes(
+    mut routes: Vec<ProviderChannelRoute>,
+) -> Vec<ProviderChannelRoute> {
+    routes.sort_by_key(|route| {
+        (
+            route.credential_priority,
+            Reverse(route.credential_weight),
+            route.credential_id.unwrap_or(i64::MAX),
+            route.region_code.clone(),
+            route.provider_code.clone(),
+        )
+    });
+    if routes.len() <= 1 {
+        return routes;
+    }
+    let strategy = normalized_route_rotation(
+        routes
+            .iter()
+            .map(|route| route.credential_rotation.as_str())
+            .find(|value| !value.trim().is_empty()),
+    );
+    match strategy {
+        "weighted_round_robin" => weighted_rotate_channel_routes(routes),
+        "round_robin" | "random" => rotate_channel_routes(routes, strategy),
+        _ => routes,
+    }
+}
+
+fn rotate_model_routes(
+    mut routes: Vec<ModelProviderRoute>,
+    strategy: &str,
+) -> Vec<ModelProviderRoute> {
+    let offset = credential_rotation_offset(strategy, routes.len());
+    routes.rotate_left(offset);
+    routes
+}
+
+fn weighted_rotate_model_routes(routes: Vec<ModelProviderRoute>) -> Vec<ModelProviderRoute> {
+    let offset = weighted_credential_rotation_offset(
+        routes
+            .iter()
+            .map(|route| route.credential_weight.max(0) as usize),
+    );
+    let selected_index = weighted_index(
+        routes
+            .iter()
+            .map(|route| route.credential_weight.max(0) as usize),
+        offset,
+    );
+    rotate_with_selected_index(routes, selected_index)
+}
+
+fn weighted_rotate_channel_routes(routes: Vec<ProviderChannelRoute>) -> Vec<ProviderChannelRoute> {
+    let offset = weighted_credential_rotation_offset(
+        routes
+            .iter()
+            .map(|route| route.credential_weight.max(0) as usize),
+    );
+    let selected_index = weighted_index(
+        routes
+            .iter()
+            .map(|route| route.credential_weight.max(0) as usize),
+        offset,
+    );
+    rotate_with_selected_index(routes, selected_index)
+}
+
+fn rotate_channel_routes(
+    mut routes: Vec<ProviderChannelRoute>,
+    strategy: &str,
+) -> Vec<ProviderChannelRoute> {
+    let offset = credential_rotation_offset(strategy, routes.len());
+    routes.rotate_left(offset);
+    routes
+}
+
+fn credential_rotation_offset(strategy: &str, route_count: usize) -> usize {
+    if route_count <= 1 {
+        return 0;
+    }
+    match strategy {
+        "random" => random_offset(route_count),
+        "round_robin" => {
+            CREDENTIAL_ROTATION_COUNTER.fetch_add(1, Ordering::Relaxed) as usize % route_count
+        }
+        _ => 0,
+    }
+}
+
+fn weighted_credential_rotation_offset(weights: impl IntoIterator<Item = usize>) -> usize {
+    let total_weight = weights
+        .into_iter()
+        .map(|weight| weight.max(1))
+        .sum::<usize>()
+        .max(1);
+    CREDENTIAL_ROTATION_COUNTER.fetch_add(1, Ordering::Relaxed) as usize % total_weight
+}
+
+fn weighted_index(weights: impl IntoIterator<Item = usize>, offset: usize) -> usize {
+    let mut cursor = 0;
+    for (index, weight) in weights.into_iter().enumerate() {
+        cursor += weight.max(1);
+        if offset < cursor {
+            return index;
+        }
+    }
+    0
+}
+
+fn rotate_with_selected_index<T>(mut routes: Vec<T>, selected_index: usize) -> Vec<T> {
+    if routes.len() <= 1 {
+        return routes;
+    }
+    let route_count = routes.len();
+    routes.rotate_left(selected_index % route_count);
+    routes
+}
+
+fn random_offset(route_count: usize) -> usize {
+    let mut bytes = [0_u8; 8];
+    if getrandom::fill(&mut bytes).is_ok() {
+        return u64::from_le_bytes(bytes) as usize % route_count;
+    }
+    CREDENTIAL_ROTATION_COUNTER.fetch_add(1, Ordering::Relaxed) as usize % route_count
+}
+
+fn normalized_route_rotation(value: Option<&str>) -> &'static str {
+    match value
+        .unwrap_or_default()
+        .trim()
+        .to_ascii_lowercase()
+        .as_str()
+    {
+        "round_robin" => "round_robin",
+        "weighted_round_robin" => "weighted_round_robin",
+        "random" => "random",
+        _ => "priority",
+    }
 }
 
 fn model_route_matches_request_api(route: &ModelProviderRoute, requested_api_code: &str) -> bool {
@@ -1192,15 +1348,5 @@ fn provider_native_model_from_query(query: &SelectProviderRouteQuery) -> String 
 }
 
 fn native_model_from_base_catalog_key(value: &str) -> Option<String> {
-    let parts = value
-        .trim()
-        .trim_matches('/')
-        .split('/')
-        .filter(|part| !part.is_empty())
-        .collect::<Vec<_>>();
-    match parts.as_slice() {
-        [_vendor, region, _model @ ..] if known_region_segment(region) => None,
-        [_vendor, model @ ..] if !model.is_empty() => Some(model.join("/")),
-        _ => None,
-    }
+    parse_model_catalog_identity(value).map(|identity| identity.model_id())
 }

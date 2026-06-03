@@ -79,27 +79,40 @@ LIMIT 60
 
 const LOAD_TOP_MODELS: &str = r#"
 SELECT
-    COALESCE(rank_no, 0) AS rank_no,
-    COALESCE(previous_rank_no, 0) AS previous_rank_no,
-    COALESCE(model, 'unknown') AS model,
-    COALESCE(NULLIF(vendor_name_snapshot, ''), COALESCE(vendor_code, '-')) AS supplier,
-    modality,
-    CAST(COALESCE(request_count, 0) AS TEXT) AS request_count,
-    CAST(COALESCE(cost_amount, 0) AS TEXT) AS cost_amount
-FROM ai_model_rank_snapshot
-WHERE status = 1
-  AND (tenant_id = $1 OR tenant_id = 0 OR tenant_id IS NULL)
-  AND (organization_id = $2 OR organization_id = 0 OR organization_id IS NULL)
+    COALESCE(r.rank_no, 0) AS rank_no,
+    COALESCE(r.previous_rank_no, 0) AS previous_rank_no,
+    COALESCE(r.model, 'unknown') AS model,
+    COALESCE(NULLIF(r.vendor_name_snapshot, ''), COALESCE(r.vendor_code, '-')) AS supplier,
+    r.modality,
+    CAST(COALESCE(r.request_count, 0) AS TEXT) AS request_count,
+    CAST(COALESCE(r.cost_amount, 0) AS TEXT) AS cost_amount
+FROM ai_model_rank_snapshot r
+JOIN ai_model m
+  ON m.catalog_key = r.catalog_key
+ AND m.deleted_at IS NULL
+ AND m.status = 1
+ AND COALESCE(m.release_stage, 1) IN (1, 2)
+ AND COALESCE(m.shelf_state, 1) = 1
+ AND COALESCE(m.routing_state, 1) = 1
+ AND (
+     ($1 > 0 AND m.tenant_id = $1 AND m.organization_id = $2)
+     OR ($1 > 0 AND $2 > 0 AND m.tenant_id = $1 AND m.organization_id = 0)
+     OR (m.tenant_id = 0 AND m.organization_id = 0)
+ )
+WHERE r.status = 1
+  AND (r.tenant_id = $1 OR r.tenant_id = 0 OR r.tenant_id IS NULL)
+  AND (r.organization_id = $2 OR r.organization_id = 0 OR r.organization_id IS NULL)
+  AND NULLIF(r.catalog_key, '') IS NOT NULL
 ORDER BY
     CASE
-        WHEN organization_id = $2 THEN 0
-        WHEN tenant_id = $1 THEN 1
+        WHEN r.organization_id = $2 THEN 0
+        WHEN r.tenant_id = $1 THEN 1
         ELSE 2
     END ASC,
-    snapshot_date DESC NULLS LAST,
-    snapshot_period DESC NULLS LAST,
-    rank_no ASC NULLS LAST,
-    id DESC
+    r.snapshot_date DESC NULLS LAST,
+    r.snapshot_period DESC NULLS LAST,
+    r.rank_no ASC NULLS LAST,
+    r.id DESC
 LIMIT 5
 "#;
 

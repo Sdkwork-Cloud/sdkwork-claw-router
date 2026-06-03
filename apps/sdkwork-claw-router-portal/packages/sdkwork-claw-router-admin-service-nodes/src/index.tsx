@@ -123,7 +123,7 @@ export function ServiceNodesAdmin() {
 
       <AdminTableShell
         data-admin-service-nodes-table-card
-        className="rounded-xl dark:bg-[#1a1a1a]"
+        className="flex-1 min-h-0 rounded-xl dark:bg-[#1a1a1a]"
         header={(
           <div className="flex flex-col gap-3 border-b border-slate-200 p-3 dark:border-white/10 lg:flex-row lg:items-center lg:justify-between">
             <div className="flex min-w-0 flex-1 flex-col gap-2 md:flex-row md:items-center">
@@ -184,7 +184,7 @@ export function ServiceNodesAdmin() {
             </button>
           </div>
         )}
-        viewportClassName="relative"
+        viewportClassName="min-h-0 flex-1 relative"
         viewportProps={{ 'data-admin-service-nodes-table-viewport': true }}
       >
         <table className="min-w-[980px] w-full whitespace-nowrap text-left text-sm">

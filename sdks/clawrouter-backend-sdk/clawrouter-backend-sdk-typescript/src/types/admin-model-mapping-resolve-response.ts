@@ -5,8 +5,8 @@ import type { JsonNull } from './json-null';
 export interface AdminModelMappingResolveResponse {
   /** Matched field on admin model mapping resolve response. */
   matched: boolean;
-  /** Matched scope type field on admin model mapping resolve response. */
-  matchedScopeType?: 'global' | 'vendor' | 'channel' | null;
+  /** Matched binding type field on admin model mapping resolve response. */
+  matchedBindingType?: 'global' | 'vendor' | 'channel_group' | 'channel' | 'provider_account' | 'site' | 'site_service' | null;
   /** Rule field on admin model mapping resolve response. */
   rule?: AdminModelMappingRule | JsonNull;
   /** Source model field on admin model mapping resolve response. */

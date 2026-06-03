@@ -84,6 +84,45 @@ public class CommerceApi {
         return client.convertValue(raw, new TypeReference<CatalogCategoriesUpdateResult>() {});
     }
 
+    /** List category attribute bindings */
+    public CatalogCategoryAttributesListResult catalogCategoryAttributesList(String categoryId, String attributeId, String status, Integer page, Integer pageSize) throws Exception {
+        String query = buildQueryString(List.of(
+            new QueryParameterSpec("category_id", categoryId, "form", true, false, null),
+            new QueryParameterSpec("attribute_id", attributeId, "form", true, false, null),
+            new QueryParameterSpec("status", status, "form", true, false, null),
+            new QueryParameterSpec("page", page, "form", true, false, null),
+            new QueryParameterSpec("page_size", pageSize, "form", true, false, null)
+        ));
+        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/catalog/category_attributes"), query));
+        return client.convertValue(raw, new TypeReference<CatalogCategoryAttributesListResult>() {});
+    }
+
+    /** Create category attribute binding */
+    public CatalogCategoryAttributesCreateResult catalogCategoryAttributesCreate(CommerceProductCategoryAttributeMutationRequest body, String idempotencyKey) throws Exception {
+        Map<String, String> requestHeaders = buildRequestHeaders(
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
+                Map.of()
+        );
+        Object raw = client.post(ApiPaths.backendPath("/catalog/category_attributes"), body, null, requestHeaders, "application/json");
+        return client.convertValue(raw, new TypeReference<CatalogCategoryAttributesCreateResult>() {});
+    }
+
+    /** Delete category attribute binding */
+    public CatalogCategoryAttributesDeleteResult catalogCategoryAttributesDelete(String bindingId) throws Exception {
+        Object raw = client.delete(ApiPaths.backendPath("/catalog/category_attributes/" + serializePathParameter(bindingId, new PathParameterSpec("bindingId", "simple", false)) + ""));
+        return client.convertValue(raw, new TypeReference<CatalogCategoryAttributesDeleteResult>() {});
+    }
+
+    /** Update category attribute binding */
+    public CatalogCategoryAttributesUpdateResult catalogCategoryAttributesUpdate(String bindingId, CommerceProductCategoryAttributeMutationRequest body, String idempotencyKey) throws Exception {
+        Map<String, String> requestHeaders = buildRequestHeaders(
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
+                Map.of()
+        );
+        Object raw = client.patch(ApiPaths.backendPath("/catalog/category_attributes/" + serializePathParameter(bindingId, new PathParameterSpec("bindingId", "simple", false)) + ""), body, null, requestHeaders, "application/json");
+        return client.convertValue(raw, new TypeReference<CatalogCategoryAttributesUpdateResult>() {});
+    }
+
     /** Initialize admin category seed datasets */
     public CatalogCategorySeedsCreateResult catalogCategorySeedsCreate(CommerceCategorySeedInitializeRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(

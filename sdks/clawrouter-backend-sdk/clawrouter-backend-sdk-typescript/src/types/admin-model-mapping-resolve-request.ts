@@ -4,6 +4,10 @@ export interface AdminModelMappingResolveRequest {
   channelCode?: string | null;
   /** Channel id field on admin model mapping resolve request. */
   channelId?: string | null;
+  /** Provider account code field on admin model mapping resolve request. */
+  providerAccountCode?: string | null;
+  /** Provider account id field on admin model mapping resolve request. */
+  providerAccountId?: string | null;
   /** Source model field on admin model mapping resolve request. */
   sourceModel: string;
   /** Vendor code field on admin model mapping resolve request. */

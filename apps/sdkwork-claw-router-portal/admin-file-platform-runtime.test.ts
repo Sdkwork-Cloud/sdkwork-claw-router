@@ -125,7 +125,10 @@ test("admin file platform is composed from storage and drive module blocks", () 
   assert.doesNotMatch(storageFormSource, /hard_limit/);
   assert.doesNotMatch(storageFormSource, /warn_only/);
   assert.match(storageShellSource, /StoragePageShell/);
+  assert.match(storageShellSource, /flex min-h-0 flex-1 flex-col gap-4 overflow-hidden/);
   assert.match(storagePageSource, /AdminTableShell/);
+  assert.match(storagePageSource, /className="flex-1 min-h-0"/);
+  assert.match(storagePageSource, /viewportClassName="min-h-0 flex-1"/);
   assert.match(storagePageSource, /StorageDrawer/);
   assert.match(storageDefinitionsSource, /Provider Registry/);
   assert.match(storageDefinitionsSource, /Bucket Topology/);

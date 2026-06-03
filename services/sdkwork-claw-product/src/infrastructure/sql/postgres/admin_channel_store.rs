@@ -5,15 +5,16 @@ use sha2::{Digest, Sha256};
 use sqlx::{PgPool, Postgres, Row, Transaction};
 
 use crate::application::ApiKeySecretCodec;
-use crate::domain::{DomainError, DomainResult};
+use crate::domain::{parse_model_catalog_identity, DomainError, DomainResult};
 use crate::infrastructure::sql::routing_config_change::{
     record_postgres_ai_routing_config_change, AiRoutingConfigChange,
 };
 use crate::ports::{
-    AdminChannelCommandFuture, AdminChannelItem, AdminChannelStore, AdminChannelTestOutcome,
-    CreateAdminChannelCommand, DeleteAdminChannelCommand, ListAdminChannelsQuery,
-    ProviderHealthProbe, ProviderHealthProbeOutcome, ProviderHealthProbeRequest,
-    TestAdminChannelCommand, UnconfiguredProviderHealthProbe, UpdateAdminChannelCommand,
+    AdminChannelCommandFuture, AdminChannelCredentialInput, AdminChannelCredentialItem,
+    AdminChannelItem, AdminChannelStore, AdminChannelTestOutcome, CreateAdminChannelCommand,
+    DeleteAdminChannelCommand, ListAdminChannelsQuery, ProviderHealthProbe,
+    ProviderHealthProbeOutcome, ProviderHealthProbeRequest, TestAdminChannelCommand,
+    UnconfiguredProviderHealthProbe, UpdateAdminChannelCommand,
 };
 
 const CHANNEL_TARGET_TYPE: i32 = 10;
@@ -100,6 +101,21 @@ impl AdminChannelStore for PostgresAdminChannelStore {
                 .map_err(|error| store_error("failed to begin channel transaction", error))?;
             let channel_id =
                 insert_channel(&mut tx, &command, self.api_key_secret_codec.as_deref()).await?;
+            replace_channel_credentials(
+                &mut tx,
+                ReplaceChannelCredentialsScope {
+                    channel_id,
+                    tenant_id: command.subject.tenant_id,
+                    organization_id: command.subject.organization_id,
+                    operator_id: command.subject.operator_id,
+                    provider_code: command.provider_code.clone(),
+                    channel_code: entity_code("chn", &command.channel_uuid),
+                    requested_at: command.requested_at.clone(),
+                },
+                &command.credentials,
+                self.api_key_secret_codec.as_deref(),
+            )
+            .await?;
             replace_channel_models(
                 &mut tx,
                 channel_id,
@@ -163,7 +179,9 @@ impl AdminChannelStore for PostgresAdminChannelStore {
                     "models": &command.models,
                     "capabilities": &command.capabilities,
                     "resourceCodes": &resource_codes,
-                    "secretStoredAsRef": true
+                    "credentialCount": command.credentials.len(),
+                    "credentialsStoredAsRefs": true,
+                    "credentialRotation": &command.credential_rotation
                 }),
             )
             .await?;
@@ -182,7 +200,9 @@ impl AdminChannelStore for PostgresAdminChannelStore {
                         "providerCode": &command.provider_code,
                         "channelType": &command.channel_type,
                         "modelsChanged": true,
-                        "resourcesChanged": true
+                        "resourcesChanged": true,
+                        "credentialsChanged": true,
+                        "credentialRotationChanged": true
                     }),
                 ),
             )
@@ -220,8 +240,39 @@ impl AdminChannelStore for PostgresAdminChannelStore {
                     .map_err(|error| store_error("failed to commit channel transaction", error))?;
                 return Ok(None);
             }
-            update_channel_credential(&mut tx, &command, self.api_key_secret_codec.as_deref())
+            if let Some(credentials) = command.credentials.as_ref() {
+                let Some(binding_context) = load_resource_binding_context(
+                    &mut tx,
+                    command.channel_id,
+                    command.subject.tenant_id,
+                    command.subject.organization_id,
+                )
+                .await?
+                else {
+                    tx.commit().await.map_err(|error| {
+                        store_error("failed to commit channel transaction", error)
+                    })?;
+                    return Ok(None);
+                };
+                replace_channel_credentials(
+                    &mut tx,
+                    ReplaceChannelCredentialsScope {
+                        channel_id: command.channel_id,
+                        tenant_id: command.subject.tenant_id,
+                        organization_id: command.subject.organization_id,
+                        operator_id: command.subject.operator_id,
+                        provider_code: command
+                            .provider_code
+                            .clone()
+                            .unwrap_or(binding_context.provider_code),
+                        channel_code: binding_context.channel_code,
+                        requested_at: command.requested_at.clone(),
+                    },
+                    credentials,
+                    self.api_key_secret_codec.as_deref(),
+                )
                 .await?;
+            }
             if command.resource_codes.is_some() || command.capabilities.is_some() {
                 let Some(binding_context) = load_resource_binding_context(
                     &mut tx,
@@ -325,6 +376,8 @@ impl AdminChannelStore for PostgresAdminChannelStore {
                     "timeoutChanged": command.timeout_ms.is_some(),
                     "retryPolicyChanged": command.retry_policy_json.is_some(),
                     "circuitBreakerPolicyChanged": command.circuit_breaker_policy_json.is_some(),
+                    "credentialRotationChanged": command.credential_rotation.is_some(),
+                    "credentialsChanged": command.credentials.is_some(),
                     "status": command.status,
                     "weight": command.weight
                 }),
@@ -355,7 +408,8 @@ impl AdminChannelStore for PostgresAdminChannelStore {
                     "timeoutChanged": command.timeout_ms.is_some(),
                     "retryPolicyChanged": command.retry_policy_json.is_some(),
                     "circuitBreakerPolicyChanged": command.circuit_breaker_policy_json.is_some(),
-                    "secretRefChanged": command.secret_ref.is_some(),
+                    "credentialRotationChanged": command.credential_rotation.is_some(),
+                    "credentialsChanged": command.credentials.is_some(),
                     "status": command.status,
                     "weight": command.weight
                 }),
@@ -381,6 +435,8 @@ impl AdminChannelStore for PostgresAdminChannelStore {
                         "timeoutChanged": command.timeout_ms.is_some(),
                         "retryPolicyChanged": command.retry_policy_json.is_some(),
                         "circuitBreakerPolicyChanged": command.circuit_breaker_policy_json.is_some(),
+                        "credentialRotationChanged": command.credential_rotation.is_some(),
+                        "credentialsChanged": command.credentials.is_some(),
                         "statusChanged": command.status.is_some(),
                         "weightChanged": command.weight.is_some()
                     }),
@@ -626,7 +682,7 @@ async fn list_channels(
                 ELSE 9
             END AS protocol,
             COALESCE(c.auth_type, 1) AS access_type,
-            COALESCE(NULLIF(c.base_url, ''), p.base_url) AS base_url,
+            COALESCE(NULLIF(c.credential_rotation_strategy, ''), 'default') AS credential_rotation,
             c.timeout_ms,
             c.retry_policy::text AS retry_policy_json,
             c.circuit_breaker_policy::text AS circuit_breaker_policy_json,
@@ -660,11 +716,8 @@ async fn list_channels(
             c.health_status,
             COALESCE(c.consecutive_error_count, 0) AS channel_errors,
             COALESCE(NULLIF(c.channel_type, ''), 'official') AS channel_type,
-            c.credential_ref AS secret_ref,
-            c.auth_config::text AS channel_auth_config,
             c.upstream_balance_amount::text AS balance_amount,
             c.upstream_balance_currency,
-            0 AS credential_errors,
             h.health_status AS snapshot_health_status,
             c.deleted_at::text AS deleted_at
         FROM ai_channel c
@@ -700,29 +753,30 @@ async fn list_channels(
     let ai_resources =
         load_resources_for_channels(pool, query.subject.tenant_id, query.subject.organization_id)
             .await?;
+    let credentials = load_credentials_for_channels(
+        pool,
+        query.subject.tenant_id,
+        query.subject.organization_id,
+        api_key_secret_codec,
+    )
+    .await?;
     rows.into_iter()
-        .map(|row| item_from_postgres_row(row, &models, &ai_resources, api_key_secret_codec))
+        .map(|row| item_from_postgres_row(row, &models, &ai_resources, &credentials))
         .collect()
 }
 
 async fn insert_channel(
     tx: &mut Transaction<'_, Postgres>,
     command: &CreateAdminChannelCommand,
-    api_key_secret_codec: Option<&(dyn ApiKeySecretCodec + Send + Sync)>,
+    _api_key_secret_codec: Option<&(dyn ApiKeySecretCodec + Send + Sync)>,
 ) -> DomainResult<i64> {
-    let auth_config = channel_auth_config(
-        command,
-        command.credential_material.as_deref(),
-        api_key_secret_codec,
-    )?
-    .to_string();
     let metadata_json = channel_metadata_json(command.expires_at.as_deref())?;
     sqlx::query_scalar(
         r#"
         INSERT INTO ai_channel
-            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, provider_code, channel_code, channel_name, channel_type, protocol_code, auth_type, auth_config, credential_ref, credential_hash, masked_label, base_url, timeout_ms, retry_policy, circuit_breaker_policy, environment, priority, weight, health_status, consecutive_error_count)
+            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, provider_code, channel_code, channel_name, channel_type, protocol_code, auth_type, credential_rotation_strategy, timeout_ms, retry_policy, circuit_breaker_policy, environment, priority, weight, health_status, consecutive_error_count)
         VALUES
-            ($1, $2, $3, 1, $4, $5::timestamptz, $6::timestamptz, 0, $7::jsonb, $8, $9, $10, $11, $12, $13, $14::jsonb, $15, $16, $17, $18, $19, $20::jsonb, $21::jsonb, 1, 100, $22, $23, 0)
+            ($1, $2, $3, 1, $4, $5::timestamptz, $6::timestamptz, 0, $7::jsonb, $8, $9, $10, $11, $12, $13, $14, $15, $16::jsonb, $17::jsonb, 1, 100, $18, $19, 0)
         RETURNING id
         "#,
     )
@@ -739,11 +793,7 @@ async fn insert_channel(
     .bind(&command.channel_type)
     .bind(protocol_storage_code(&command.protocol))
     .bind(access_type_code(&command.access_type))
-    .bind(auth_config)
-    .bind(&command.secret_ref)
-    .bind(&command.secret_hash)
-    .bind(&command.masked_label)
-    .bind(command.base_url.as_deref())
+    .bind(&command.credential_rotation)
     .bind(command.timeout_ms)
     .bind(command.retry_policy_json.as_deref())
     .bind(command.circuit_breaker_policy_json.as_deref())
@@ -758,8 +808,6 @@ async fn update_channel(
     tx: &mut Transaction<'_, Postgres>,
     command: &UpdateAdminChannelCommand,
 ) -> DomainResult<bool> {
-    let base_url_touched = command.base_url.is_some();
-    let base_url = command.base_url.as_ref().and_then(|value| value.as_deref());
     let timeout_touched = command.timeout_ms.is_some();
     let timeout_ms = command.timeout_ms.flatten();
     let retry_policy_touched = command.retry_policy_json.is_some();
@@ -782,9 +830,10 @@ async fn update_channel(
         UPDATE ai_channel
         SET channel_name = COALESCE($1, channel_name),
             provider_code = COALESCE($2, provider_code),
-            protocol_code = COALESCE($3, protocol_code),
-            auth_type = COALESCE($4, auth_type),
-            base_url = CASE WHEN $5 THEN $6 ELSE base_url END,
+            channel_type = COALESCE($3, channel_type),
+            protocol_code = COALESCE($4, protocol_code),
+            auth_type = COALESCE($5, auth_type),
+            credential_rotation_strategy = COALESCE($6, credential_rotation_strategy),
             timeout_ms = CASE WHEN $7 THEN $8 ELSE timeout_ms END,
             retry_policy = CASE WHEN $9 THEN $10::jsonb ELSE retry_policy END,
             circuit_breaker_policy = CASE WHEN $11 THEN $12::jsonb ELSE circuit_breaker_policy END,
@@ -806,6 +855,7 @@ async fn update_channel(
     )
     .bind(command.name.as_deref())
     .bind(command.provider_code.as_deref())
+    .bind(command.channel_type.as_deref())
     .bind(command.protocol.as_ref().map(|value| protocol_storage_code(value)))
     .bind(
         command
@@ -813,8 +863,7 @@ async fn update_channel(
             .as_ref()
             .map(|value| access_type_code(value)),
     )
-    .bind(base_url_touched)
-    .bind(base_url)
+    .bind(command.credential_rotation.as_deref())
     .bind(timeout_touched)
     .bind(timeout_ms)
     .bind(retry_policy_touched)
@@ -839,86 +888,6 @@ async fn update_channel(
     .await
     .map_err(|error| store_error("failed to update channel", error))?;
     Ok(result.rows_affected() > 0)
-}
-
-async fn update_channel_credential(
-    tx: &mut Transaction<'_, Postgres>,
-    command: &UpdateAdminChannelCommand,
-    api_key_secret_codec: Option<&(dyn ApiKeySecretCodec + Send + Sync)>,
-) -> DomainResult<()> {
-    if command.secret_ref.is_none()
-        && command.provider_code.is_none()
-        && command.name.is_none()
-        && command.channel_type.is_none()
-        && command.masked_label.is_none()
-        && command.secret_hash.is_none()
-    {
-        return Ok(());
-    }
-    let auth_config = command
-        .secret_ref
-        .as_ref()
-        .map(|_| {
-            channel_credential_auth_config(
-                command.credential_material.as_deref(),
-                api_key_secret_codec,
-            )
-            .map(|value| value.to_string())
-        })
-        .transpose()?;
-    sqlx::query(
-        r#"
-        UPDATE ai_channel
-        SET provider_code = COALESCE($1, provider_code),
-            channel_name = COALESCE($2, channel_name),
-            channel_type = COALESCE($3, channel_type),
-            auth_config = COALESCE($4::jsonb, auth_config),
-            credential_ref = COALESCE($5, credential_ref),
-            credential_hash = COALESCE($6, credential_hash),
-            masked_label = COALESCE($7, masked_label),
-            updated_at = $8::timestamptz,
-            version = COALESCE(version, 0) + 1
-        WHERE id = $9
-          AND tenant_id = $10
-          AND organization_id = $11
-          AND deleted_at IS NULL
-        "#,
-    )
-    .bind(command.provider_code.as_deref())
-    .bind(command.name.as_deref())
-    .bind(command.channel_type.as_deref())
-    .bind(auth_config)
-    .bind(command.secret_ref.as_deref())
-    .bind(command.secret_hash.as_deref())
-    .bind(command.masked_label.as_deref())
-    .bind(&command.requested_at)
-    .bind(command.channel_id)
-    .bind(command.subject.tenant_id)
-    .bind(command.subject.organization_id)
-    .execute(&mut **tx)
-    .await
-    .map_err(|error| store_error("failed to update channel credential", error))?;
-    Ok(())
-}
-
-fn channel_auth_config(
-    command: &CreateAdminChannelCommand,
-    credential_material: Option<&str>,
-    api_key_secret_codec: Option<&(dyn ApiKeySecretCodec + Send + Sync)>,
-) -> DomainResult<serde_json::Value> {
-    let mut auth_config =
-        channel_credential_auth_config(credential_material, api_key_secret_codec)?;
-    if let Some(object) = auth_config.as_object_mut() {
-        object.insert(
-            "accessType".to_owned(),
-            serde_json::Value::String(command.access_type.clone()),
-        );
-        object.insert(
-            "protocol".to_owned(),
-            serde_json::Value::String(command.protocol.clone()),
-        );
-    }
-    Ok(auth_config)
 }
 
 fn channel_credential_auth_config(
@@ -984,6 +953,115 @@ fn channel_secret_ciphertext(auth_config_json: Option<&str>) -> DomainResult<Opt
         .map(str::trim)
         .filter(|value| !value.is_empty())
         .map(str::to_owned))
+}
+
+#[derive(Debug, Clone)]
+struct ReplaceChannelCredentialsScope {
+    channel_id: i64,
+    tenant_id: i64,
+    organization_id: i64,
+    operator_id: i64,
+    provider_code: String,
+    channel_code: String,
+    requested_at: String,
+}
+
+async fn replace_channel_credentials(
+    tx: &mut Transaction<'_, Postgres>,
+    scope: ReplaceChannelCredentialsScope,
+    credentials: &[AdminChannelCredentialInput],
+    api_key_secret_codec: Option<&(dyn ApiKeySecretCodec + Send + Sync)>,
+) -> DomainResult<()> {
+    soft_delete_channel_credentials(
+        tx,
+        scope.channel_id,
+        scope.tenant_id,
+        scope.organization_id,
+        scope.operator_id,
+        &scope.requested_at,
+    )
+    .await?;
+    for credential in credentials {
+        insert_channel_credential(tx, &scope, credential, api_key_secret_codec).await?;
+    }
+    Ok(())
+}
+
+async fn soft_delete_channel_credentials(
+    tx: &mut Transaction<'_, Postgres>,
+    channel_id: i64,
+    tenant_id: i64,
+    organization_id: i64,
+    operator_id: i64,
+    requested_at: &str,
+) -> DomainResult<()> {
+    sqlx::query(
+        r#"
+        UPDATE ai_channel_credential
+        SET status = -1,
+            deleted_at = $1::timestamptz,
+            deleted_by = $2,
+            updated_at = $3::timestamptz,
+            version = COALESCE(version, 0) + 1
+        WHERE channel_id = $4
+          AND tenant_id = $5
+          AND organization_id = $6
+          AND deleted_at IS NULL
+        "#,
+    )
+    .bind(requested_at)
+    .bind(operator_id)
+    .bind(requested_at)
+    .bind(channel_id)
+    .bind(tenant_id)
+    .bind(organization_id)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to delete channel credentials", error))?;
+    Ok(())
+}
+
+async fn insert_channel_credential(
+    tx: &mut Transaction<'_, Postgres>,
+    scope: &ReplaceChannelCredentialsScope,
+    credential: &AdminChannelCredentialInput,
+    api_key_secret_codec: Option<&(dyn ApiKeySecretCodec + Send + Sync)>,
+) -> DomainResult<()> {
+    let auth_config = channel_credential_auth_config(
+        credential.credential_material.as_deref(),
+        api_key_secret_codec,
+    )?
+    .to_string();
+    sqlx::query(
+        r#"
+        INSERT INTO ai_channel_credential
+            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, channel_id, provider_code, channel_code, credential_name, base_url, auth_config, credential_ref, credential_hash, masked_label, priority, weight, health_status, consecutive_error_count)
+        VALUES
+            ($1, $2, $3, 1, $4, $5::timestamptz, $6::timestamptz, 0, '{}'::jsonb, $7, $8, $9, $10, $11, $12::jsonb, $13, $14, $15, $16, $17, $18, 0)
+        "#,
+    )
+    .bind(&credential.credential_uuid)
+    .bind(scope.tenant_id)
+    .bind(scope.organization_id)
+    .bind(status_code(&credential.status))
+    .bind(&scope.requested_at)
+    .bind(&scope.requested_at)
+    .bind(scope.channel_id)
+    .bind(&scope.provider_code)
+    .bind(&scope.channel_code)
+    .bind(&credential.name)
+    .bind(&credential.base_url)
+    .bind(auth_config)
+    .bind(&credential.secret_ref)
+    .bind(&credential.secret_hash)
+    .bind(&credential.masked_label)
+    .bind(credential.priority)
+    .bind(credential.weight)
+    .bind(health_status_code(&credential.status))
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to create channel credential", error))?;
+    Ok(())
 }
 
 async fn replace_channel_models(
@@ -1591,6 +1669,10 @@ async fn soft_delete_channel_relationships(
     command: &DeleteAdminChannelCommand,
 ) -> DomainResult<()> {
     for (table_name, context) in [
+        (
+            "ai_channel_credential",
+            "failed to delete channel credentials",
+        ),
         ("ai_channel_resource", "failed to delete channel resources"),
         ("ai_channel_vendor", "failed to delete channel vendors"),
         ("ai_channel_endpoint", "failed to delete channel endpoints"),
@@ -1675,13 +1757,19 @@ async fn load_channel_probe_target(
         SELECT
             c.id AS channel_id,
             p.id AS provider_id,
-            c.id AS provider_account_id,
-            COALESCE(NULLIF(c.base_url, ''), NULLIF(p.base_url, ''), '') AS provider_base_url,
-            COALESCE(NULLIF(c.credential_ref, ''), '') AS provider_secret_ref,
-            c.auth_config::text AS channel_auth_config,
+            cc.id AS provider_account_id,
+            COALESCE(NULLIF(cc.base_url, ''), NULLIF(p.base_url, ''), '') AS provider_base_url,
+            COALESCE(NULLIF(cc.credential_ref, ''), '') AS provider_secret_ref,
+            cc.auth_config::text AS channel_auth_config,
             COALESCE(NULLIF(cm.provider_model, ''), '') AS provider_model,
             c.timeout_ms
         FROM ai_channel c
+        JOIN ai_channel_credential cc
+          ON cc.channel_id = c.id
+         AND cc.tenant_id = c.tenant_id
+         AND cc.organization_id = c.organization_id
+         AND cc.status = 1
+         AND cc.deleted_at IS NULL
         LEFT JOIN ai_provider p
           ON p.provider_code = c.provider_code
          AND p.deleted_at IS NULL
@@ -1700,7 +1788,7 @@ async fn load_channel_probe_target(
           AND c.tenant_id = $2
           AND c.organization_id = $3
           AND c.deleted_at IS NULL
-        ORDER BY cm.id ASC
+        ORDER BY cc.priority ASC NULLS LAST, cc.weight DESC NULLS LAST, cc.id ASC, cm.id ASC
         LIMIT 1
         "#,
     )
@@ -1778,8 +1866,50 @@ async fn record_channel_health_test(
     if result.rows_affected() == 0 {
         return Ok(false);
     }
+    update_channel_credential_health(tx, command, target, outcome, health_status).await?;
     insert_provider_health_snapshot(tx, command, target, outcome, health_status).await?;
     Ok(true)
+}
+
+async fn update_channel_credential_health(
+    tx: &mut Transaction<'_, Postgres>,
+    command: &TestAdminChannelCommand,
+    target: &ChannelHealthProbeTarget,
+    outcome: &ProviderHealthProbeOutcome,
+    health_status: i32,
+) -> DomainResult<()> {
+    sqlx::query(
+        r#"
+        UPDATE ai_channel_credential
+        SET updated_at = $1::timestamptz,
+            health_status = $2,
+            last_latency_ms = $3,
+            last_verified_at = $4::timestamptz,
+            consecutive_error_count = CASE
+                WHEN $5 = 1 THEN 0
+                ELSE COALESCE(consecutive_error_count, 0) + 1
+            END,
+            version = COALESCE(version, 0) + 1
+        WHERE id = $6
+          AND channel_id = $7
+          AND tenant_id = $8
+          AND organization_id = $9
+          AND deleted_at IS NULL
+        "#,
+    )
+    .bind(&command.requested_at)
+    .bind(health_status)
+    .bind(outcome.latency_ms)
+    .bind(&command.requested_at)
+    .bind(health_status)
+    .bind(target.provider_account_id)
+    .bind(command.channel_id)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to update channel credential health", error))?;
+    Ok(())
 }
 
 async fn insert_provider_health_snapshot(
@@ -1853,7 +1983,7 @@ async fn load_channel_by_id(
                 ELSE 9
             END AS protocol,
             COALESCE(c.auth_type, 1) AS access_type,
-            COALESCE(NULLIF(c.base_url, ''), p.base_url) AS base_url,
+            COALESCE(NULLIF(c.credential_rotation_strategy, ''), 'default') AS credential_rotation,
             c.timeout_ms,
             c.retry_policy::text AS retry_policy_json,
             c.circuit_breaker_policy::text AS circuit_breaker_policy_json,
@@ -1887,11 +2017,8 @@ async fn load_channel_by_id(
             c.health_status,
             COALESCE(c.consecutive_error_count, 0) AS channel_errors,
             COALESCE(NULLIF(c.channel_type, ''), 'official') AS channel_type,
-            c.credential_ref AS secret_ref,
-            c.auth_config::text AS channel_auth_config,
             c.upstream_balance_amount::text AS balance_amount,
             c.upstream_balance_currency,
-            0 AS credential_errors,
             h.health_status AS snapshot_health_status,
             c.deleted_at::text AS deleted_at
         FROM ai_channel c
@@ -1927,7 +2054,10 @@ async fn load_channel_by_id(
     };
     let models = load_models_for_channels_tx(tx, tenant_id, organization_id).await?;
     let ai_resources = load_resources_for_channels_tx(tx, tenant_id, organization_id).await?;
-    item_from_postgres_row(row, &models, &ai_resources, api_key_secret_codec).map(Some)
+    let credentials =
+        load_credentials_for_channels_tx(tx, tenant_id, organization_id, api_key_secret_codec)
+            .await?;
+    item_from_postgres_row(row, &models, &ai_resources, &credentials).map(Some)
 }
 
 async fn load_channel_provider_code(
@@ -2061,6 +2191,121 @@ async fn load_resources_for_channels_tx(
     resources_from_rows(rows)
 }
 
+async fn load_credentials_for_channels(
+    pool: &PgPool,
+    tenant_id: i64,
+    organization_id: i64,
+    api_key_secret_codec: Option<&(dyn ApiKeySecretCodec + Send + Sync)>,
+) -> DomainResult<HashMap<i64, Vec<AdminChannelCredentialItem>>> {
+    let rows = sqlx::query(
+        r#"
+        SELECT
+            id,
+            id AS credential_id,
+            uuid,
+            channel_id,
+            COALESCE(NULLIF(credential_name, ''), 'Credential') AS name,
+            base_url,
+            credential_ref AS secret_ref,
+            auth_config::text AS auth_config_json,
+            COALESCE(masked_label, '') AS masked_label,
+            COALESCE(priority, 100) AS priority,
+            COALESCE(weight, 100) AS weight,
+            status,
+            health_status,
+            COALESCE(consecutive_error_count, 0) AS credential_errors
+        FROM ai_channel_credential
+        WHERE tenant_id = $1
+          AND organization_id = $2
+          AND deleted_at IS NULL
+        ORDER BY channel_id ASC, priority ASC, weight DESC, id ASC
+        "#,
+    )
+    .bind(tenant_id)
+    .bind(organization_id)
+    .fetch_all(pool)
+    .await
+    .map_err(|error| store_error("failed to load channel credentials", error))?;
+    credentials_from_rows(rows, api_key_secret_codec)
+}
+
+async fn load_credentials_for_channels_tx(
+    tx: &mut Transaction<'_, Postgres>,
+    tenant_id: i64,
+    organization_id: i64,
+    api_key_secret_codec: Option<&(dyn ApiKeySecretCodec + Send + Sync)>,
+) -> DomainResult<HashMap<i64, Vec<AdminChannelCredentialItem>>> {
+    let rows = sqlx::query(
+        r#"
+        SELECT
+            id,
+            id AS credential_id,
+            uuid,
+            channel_id,
+            COALESCE(NULLIF(credential_name, ''), 'Credential') AS name,
+            base_url,
+            credential_ref AS secret_ref,
+            auth_config::text AS auth_config_json,
+            COALESCE(masked_label, '') AS masked_label,
+            COALESCE(priority, 100) AS priority,
+            COALESCE(weight, 100) AS weight,
+            status,
+            health_status,
+            COALESCE(consecutive_error_count, 0) AS credential_errors
+        FROM ai_channel_credential
+        WHERE tenant_id = $1
+          AND organization_id = $2
+          AND deleted_at IS NULL
+        ORDER BY channel_id ASC, priority ASC, weight DESC, id ASC
+        "#,
+    )
+    .bind(tenant_id)
+    .bind(organization_id)
+    .fetch_all(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to load channel credentials", error))?;
+    credentials_from_rows(rows, api_key_secret_codec)
+}
+
+fn credentials_from_rows(
+    rows: Vec<sqlx::postgres::PgRow>,
+    api_key_secret_codec: Option<&(dyn ApiKeySecretCodec + Send + Sync)>,
+) -> DomainResult<HashMap<i64, Vec<AdminChannelCredentialItem>>> {
+    let mut credentials: HashMap<i64, Vec<AdminChannelCredentialItem>> = HashMap::new();
+    for row in rows {
+        let channel_id: i64 = row.try_get("channel_id").map_err(row_error)?;
+        credentials
+            .entry(channel_id)
+            .or_default()
+            .push(credential_from_postgres_row(row, api_key_secret_codec)?);
+    }
+    Ok(credentials)
+}
+
+fn credential_from_postgres_row(
+    row: sqlx::postgres::PgRow,
+    api_key_secret_codec: Option<&(dyn ApiKeySecretCodec + Send + Sync)>,
+) -> DomainResult<AdminChannelCredentialItem> {
+    let errors = optional_integer_cell(&row, "credential_errors").unwrap_or(0);
+    let status = required_integer_cell(&row, "status", "credential status")?;
+    let health_status = required_integer_cell(&row, "health_status", "credential health_status")?;
+    let auth_config_json = optional_string_cell(&row, "auth_config_json");
+    Ok(AdminChannelCredentialItem {
+        id: row.try_get("id").map_err(row_error)?,
+        credential_id: row.try_get("credential_id").map_err(row_error)?,
+        uuid: row.try_get("uuid").map_err(row_error)?,
+        name: row.try_get("name").map_err(row_error)?,
+        base_url: row.try_get("base_url").map_err(row_error)?,
+        secret_ref: row.try_get("secret_ref").map_err(row_error)?,
+        api_key: decode_channel_secret_value(auth_config_json.as_deref(), api_key_secret_codec)?,
+        masked_label: row.try_get("masked_label").map_err(row_error)?,
+        priority: row.try_get("priority").map_err(row_error)?,
+        weight: row.try_get("weight").map_err(row_error)?,
+        status: status_label(status, health_status, None, errors)?,
+        errors,
+    })
+}
+
 fn resources_from_rows(
     rows: Vec<sqlx::postgres::PgRow>,
 ) -> DomainResult<HashMap<i64, Vec<String>>> {
@@ -2089,33 +2334,13 @@ fn models_from_rows(rows: Vec<sqlx::postgres::PgRow>) -> DomainResult<HashMap<i6
 
 fn split_catalog_model_key(catalog_key: &str) -> DomainResult<(String, String, String)> {
     let value = catalog_key.trim();
-    let parts = value.split('/').map(str::trim).collect::<Vec<_>>();
-    if parts.len() < 2 || parts.iter().any(|part| part.is_empty()) || known_region_segment(parts[1])
-    {
-        return Err(DomainError::new(format!(
+    let identity = parse_model_catalog_identity(value).ok_or_else(|| {
+        DomainError::new(format!(
             "channel model must be a catalog key in vendorCode/modelId format: {value}"
-        )));
-    }
-    Ok((value.to_owned(), parts[0].to_owned(), parts[1..].join("/")))
-}
-
-fn known_region_segment(value: &str) -> bool {
-    matches!(
-        value.trim().to_ascii_lowercase().as_str(),
-        "global"
-            | "cn"
-            | "us"
-            | "eu"
-            | "ap"
-            | "apac"
-            | "jp"
-            | "sg"
-            | "hk"
-            | "aws"
-            | "azure"
-            | "gcp"
-            | "local"
-    )
+        ))
+    })?;
+    let official_model = identity.model_id();
+    Ok((value.to_owned(), identity.vendor_code, official_model))
 }
 
 fn api_endpoint_code(capability: i32) -> &'static str {
@@ -2211,9 +2436,10 @@ fn item_from_postgres_row(
     row: sqlx::postgres::PgRow,
     models: &HashMap<i64, Vec<String>>,
     ai_resources: &HashMap<i64, Vec<String>>,
-    api_key_secret_codec: Option<&(dyn ApiKeySecretCodec + Send + Sync)>,
+    credentials: &HashMap<i64, Vec<AdminChannelCredentialItem>>,
 ) -> DomainResult<AdminChannelItem> {
     let id: i64 = row.try_get("id").map_err(row_error)?;
+    let item_credentials = credentials.get(&id).cloned().unwrap_or_default();
     let capabilities = channel_capabilities_from_resources(
         row.try_get::<String, _>("capabilities_json")
             .map_err(row_error)?
@@ -2221,7 +2447,10 @@ fn item_from_postgres_row(
         ai_resources.get(&id).map(Vec::as_slice).unwrap_or(&[]),
     )?;
     let errors = optional_integer_cell(&row, "channel_errors").unwrap_or(0)
-        + optional_integer_cell(&row, "credential_errors").unwrap_or(0);
+        + item_credentials
+            .iter()
+            .map(|credential| credential.errors)
+            .sum::<i64>();
     let status = required_integer_cell(&row, "status", "status")?;
     let health_status = required_integer_cell(&row, "health_status", "health_status")?;
     let snapshot_health_status = optional_valid_health_status_cell(&row, "snapshot_health_status")?;
@@ -2233,12 +2462,6 @@ fn item_from_postgres_row(
             .ok()
             .flatten(),
     );
-    let channel_auth_config = row
-        .try_get::<Option<String>, _>("channel_auth_config")
-        .ok()
-        .flatten();
-    let api_key =
-        decode_channel_secret_value(channel_auth_config.as_deref(), api_key_secret_codec)?;
     Ok(AdminChannelItem {
         id,
         channel_id: row.try_get("channel_id").map_err(row_error)?,
@@ -2257,9 +2480,10 @@ fn item_from_postgres_row(
         channel_type: row.try_get("channel_type").map_err(row_error)?,
         protocol: protocol_label(required_integer_cell(&row, "protocol", "protocol")?)?,
         access_type: access_type_label(required_integer_cell(&row, "access_type", "access_type")?)?,
-        base_url: row.try_get("base_url").ok().flatten(),
-        secret_ref: row.try_get("secret_ref").ok().flatten(),
-        api_key,
+        credential_rotation: row
+            .try_get::<String, _>("credential_rotation")
+            .unwrap_or_else(|_| "default".to_owned()),
+        credentials: item_credentials,
         models: models.get(&id).cloned().unwrap_or_default(),
         resource_codes: ai_resources.get(&id).cloned().unwrap_or_default(),
         is_multimodal: capabilities.iter().any(|capability| capability != "llm"),

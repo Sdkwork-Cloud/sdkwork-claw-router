@@ -10,6 +10,7 @@ frontend_operations:
   read_sources:
   - ai_provider
   - ai_channel
+  - ai_channel_credential
   - ai_channel_model
   - ai_channel
   - ai_channel_resource
@@ -34,6 +35,8 @@ frontend_operations:
           - channelType
           - protocol
           - accessType
+          - credentialRotation
+          - credentials
           - models
           - capabilities
           - resourceCodes
@@ -75,17 +78,85 @@ frontend_operations:
               type: string
               minLength: 1
               maxLength: 64
-            baseUrl:
+            credentialRotation:
               type: string
-              maxLength: 512
-            secretRef:
-              type: string
-              maxLength: 256
-              pattern: ^(vault|secret)://[^\\s]+$
-            apiKey:
-              type: string
-              maxLength: 4096
-              description: Full plaintext provider API key returned by authenticated admin management responses for channel credential relay operations.
+              enum:
+              - default
+              - priority
+              - round_robin
+              - weighted_round_robin
+              - random
+            credentials:
+              type: array
+              minItems: 0
+              maxItems: 64
+              items:
+                name: AdminChannelCredentialItem
+                type: object
+                additionalProperties: false
+                required:
+                - id
+                - credentialId
+                - name
+                - baseUrl
+                - secretRef
+                - maskedLabel
+                - priority
+                - weight
+                - status
+                - errors
+                properties:
+                  id:
+                    type: string
+                    minLength: 1
+                    maxLength: 128
+                  credentialId:
+                    type: string
+                    minLength: 1
+                    maxLength: 128
+                    pattern: ^[1-9][0-9]*$
+                  name:
+                    type: string
+                    minLength: 1
+                    maxLength: 128
+                  baseUrl:
+                    type: string
+                    minLength: 1
+                    maxLength: 512
+                    pattern: ^https?://[^\\s]+$
+                  secretRef:
+                    type: string
+                    minLength: 1
+                    maxLength: 256
+                    pattern: ^(vault|secret)://[^\\s]+$
+                  apiKey:
+                    type: string
+                    maxLength: 4096
+                    description: Plaintext provider API key returned only to authenticated admin management responses when available for channel credential relay operations.
+                  maskedLabel:
+                    type: string
+                    minLength: 1
+                    maxLength: 128
+                  priority:
+                    type: integer
+                    format: int64
+                    minimum: 1
+                    maximum: 1000000
+                  weight:
+                    type: integer
+                    format: int64
+                    minimum: 1
+                    maximum: 10000
+                  status:
+                    type: string
+                    enum:
+                    - active
+                    - disabled
+                    - error
+                  errors:
+                    type: integer
+                    format: int64
+                    minimum: 0
             createdAt:
               type: string
               minLength: 1
@@ -272,6 +343,7 @@ frontend_operations:
   read_sources:
   - ai_provider
   - ai_channel
+  - ai_channel_credential
   - ai_channel_model
   - ai_channel
   - ai_channel_vendor
@@ -279,6 +351,7 @@ frontend_operations:
   - ai_channel_resource
   write_tables:
   - ai_channel
+  - ai_channel_credential
   - ai_channel_model
   - ai_channel
   - ai_channel_vendor
@@ -291,7 +364,7 @@ frontend_operations:
     required:
     - name
     - vendor
-    - apiKey
+    - credentials
     - models
     properties:
       name:
@@ -317,20 +390,61 @@ frontend_operations:
         type: string
         minLength: 1
         maxLength: 64
-      baseUrl:
+      credentialRotation:
         type: string
-        maxLength: 512
-      apiKey:
-        type: string
-        minLength: 1
-        maxLength: 4096
-        description: Plaintext provider API key accepted only on create/update input. Backend encrypts it into ai_channel.auth_config and never returns it.
-      secretRef:
-        type: string
-        minLength: 1
-        maxLength: 256
-        pattern: ^(vault|secret)://[^\\s]+$
-        description: Optional compatibility path for existing Vault/KMS secret references. New admin UI submits apiKey instead.
+        enum:
+        - default
+        - priority
+        - round_robin
+        - weighted_round_robin
+        - random
+        description: Credential selection strategy for the upstream credential list.
+      credentials:
+        type: array
+        minItems: 1
+        maxItems: 64
+        uniqueItems: false
+        items:
+          name: AdminChannelCredentialInput
+          type: object
+          additionalProperties: false
+          required:
+          - baseUrl
+          properties:
+            name:
+              type: string
+              maxLength: 128
+            baseUrl:
+              type: string
+              minLength: 1
+              maxLength: 512
+              pattern: ^https?://[^\\s]+$
+            apiKey:
+              type: string
+              minLength: 1
+              maxLength: 4096
+              description: Plaintext upstream API key accepted only on create/update input. Backend stores a derived secret reference and does not return it through non-admin-safe responses.
+            secretRef:
+              type: string
+              minLength: 1
+              maxLength: 256
+              pattern: ^(vault|secret)://[^\\s]+$
+            priority:
+              type: integer
+              format: int64
+              minimum: 1
+              maximum: 1000000
+            weight:
+              type: integer
+              format: int64
+              minimum: 1
+              maximum: 10000
+            status:
+              type: string
+              enum:
+              - active
+              - disabled
+              - error
       expiresAt:
         type: string
         nullable: true
@@ -441,6 +555,7 @@ frontend_operations:
   read_sources:
   - ai_provider
   - ai_channel
+  - ai_channel_credential
   - ai_channel_model
   - ai_channel
   - ai_channel_vendor
@@ -448,6 +563,7 @@ frontend_operations:
   - ai_channel_resource
   write_tables:
   - ai_channel
+  - ai_channel_credential
   - ai_channel_model
   - ai_channel
   - ai_channel_vendor
@@ -486,21 +602,60 @@ frontend_operations:
         type: string
         minLength: 1
         maxLength: 64
-      baseUrl:
+      credentialRotation:
         type: string
-        maxLength: 512
-        nullable: true
-      apiKey:
-        type: string
-        minLength: 1
-        maxLength: 4096
-        description: Plaintext provider API key accepted only on create/update input. Backend encrypts it into ai_channel.auth_config and never returns it.
-      secretRef:
-        type: string
-        minLength: 1
-        maxLength: 256
-        pattern: ^(vault|secret)://[^\\s]+$
-        description: Optional compatibility path for existing Vault/KMS secret references. New admin UI submits apiKey instead.
+        enum:
+        - default
+        - priority
+        - round_robin
+        - weighted_round_robin
+        - random
+      credentials:
+        type: array
+        minItems: 1
+        maxItems: 64
+        uniqueItems: false
+        description: Replaces the complete upstream credential list when provided.
+        items:
+          name: AdminChannelCredentialInput
+          type: object
+          additionalProperties: false
+          required:
+          - baseUrl
+          properties:
+            name:
+              type: string
+              maxLength: 128
+            baseUrl:
+              type: string
+              minLength: 1
+              maxLength: 512
+              pattern: ^https?://[^\\s]+$
+            apiKey:
+              type: string
+              minLength: 1
+              maxLength: 4096
+            secretRef:
+              type: string
+              minLength: 1
+              maxLength: 256
+              pattern: ^(vault|secret)://[^\\s]+$
+            priority:
+              type: integer
+              format: int64
+              minimum: 1
+              maximum: 1000000
+            weight:
+              type: integer
+              format: int64
+              minimum: 1
+              maximum: 10000
+            status:
+              type: string
+              enum:
+              - active
+              - disabled
+              - error
       expiresAt:
         type: string
         nullable: true

@@ -16,6 +16,7 @@ import com.sdkwork.clawrouter.backend.api.PlatformApi;
 import com.sdkwork.clawrouter.backend.api.SystemApi;
 import com.sdkwork.clawrouter.backend.api.PromptsApi;
 import com.sdkwork.clawrouter.backend.api.ServiceProvidersApi;
+import com.sdkwork.clawrouter.backend.api.SitesApi;
 import com.sdkwork.clawrouter.backend.api.StorageApi;
 
 public class SdkworkBackendClient {
@@ -34,6 +35,7 @@ public class SdkworkBackendClient {
     private SystemApi system;
     private PromptsApi prompts;
     private ServiceProvidersApi serviceProviders;
+    private SitesApi sites;
     private StorageApi storage;
 
     public SdkworkBackendClient(String baseUrl) {
@@ -52,6 +54,7 @@ public class SdkworkBackendClient {
         this.system = new SystemApi(httpClient);
         this.prompts = new PromptsApi(httpClient);
         this.serviceProviders = new ServiceProvidersApi(httpClient);
+        this.sites = new SitesApi(httpClient);
         this.storage = new StorageApi(httpClient);
     }
 
@@ -71,6 +74,7 @@ public class SdkworkBackendClient {
         this.system = new SystemApi(httpClient);
         this.prompts = new PromptsApi(httpClient);
         this.serviceProviders = new ServiceProvidersApi(httpClient);
+        this.sites = new SitesApi(httpClient);
         this.storage = new StorageApi(httpClient);
     }
 
@@ -128,6 +132,10 @@ public class SdkworkBackendClient {
 
     public ServiceProvidersApi getServiceProviders() {
         return this.serviceProviders;
+    }
+
+    public SitesApi getSites() {
+        return this.sites;
     }
 
     public StorageApi getStorage() {

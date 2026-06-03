@@ -48,6 +48,11 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public Dictionary<string, string>? RetryPolicy { get; set; }
         public string? RiskLevel { get; set; }
         public string? RpmLimit { get; set; }
+        public string? SiteChannelRole { get; set; }
+        public string? SiteCode { get; set; }
+        public string? SiteId { get; set; }
+        public string? SiteServiceCode { get; set; }
+        public string? SiteServiceId { get; set; }
         public string? Status { get; set; }
         public string? TenantId { get; set; }
         public int? TimeoutMs { get; set; }

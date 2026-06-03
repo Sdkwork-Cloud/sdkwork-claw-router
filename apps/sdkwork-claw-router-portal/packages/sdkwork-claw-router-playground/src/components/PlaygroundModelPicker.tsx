@@ -183,8 +183,6 @@ export function createFallbackModel(name: string, desc: string, versionLabel: st
     inputModalities: [],
     outputModalities: [outputModality],
     capabilities: [],
-    officialReferenceUnitPrice: null,
-    officialReferenceCurrency: null,
     officialReferencePrices: [],
     priceAvailability: { status: 'unavailable' },
     providerCodes: [],

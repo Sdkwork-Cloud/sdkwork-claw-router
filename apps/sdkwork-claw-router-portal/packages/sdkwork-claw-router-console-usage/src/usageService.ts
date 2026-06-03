@@ -34,6 +34,7 @@ export interface UsageLog {
   model: SdkUsageLogsResponse['logs'][number]['model'];
   providerNativeModel: SdkUsageLogsResponse['logs'][number]['providerNativeModel'];
   requestedModelCatalogKey: SdkUsageLogsResponse['logs'][number]['requestedModelCatalogKey'];
+  regionCode: SdkUsageLogsResponse['logs'][number]['regionCode'];
   status: UsageLogResultStatus;
   httpStatus: number;
   errorCode: string;
@@ -136,6 +137,7 @@ function normalizeUsageLog(value: unknown): UsageLog {
     model,
     providerNativeModel,
     requestedModelCatalogKey: readOptionalString(item, 'requestedModelCatalogKey'),
+    regionCode: readOptionalString(item, 'regionCode'),
     status,
     httpStatus,
     errorCode,

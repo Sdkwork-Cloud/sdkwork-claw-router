@@ -147,6 +147,10 @@ pub struct AiRequestTraceRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub reasoning_effort: Option<String>,
 
+    /// Region code field on ai request trace record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub region_code: Option<String>,
+
     /// Request bytes field on ai request trace record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub request_bytes: Option<String>,

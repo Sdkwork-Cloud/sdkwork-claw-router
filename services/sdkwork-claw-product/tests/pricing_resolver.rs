@@ -78,6 +78,7 @@ fn resolves_customer_price_from_channel_group_plan_and_official_reference() {
             billing_meter: BillingMeter::LlmInputToken,
             provider_code: Some("openrouter".to_owned()),
             channel_id: None,
+            region_code: None,
         })
         .unwrap();
 
@@ -150,6 +151,7 @@ fn resolves_upstream_cost_for_the_selected_provider_channel() {
             billing_meter: BillingMeter::LlmInputToken,
             provider_code: Some("openrouter".to_owned()),
             channel_id: Some(3002),
+            region_code: None,
         })
         .unwrap();
 
@@ -160,6 +162,65 @@ fn resolves_upstream_cost_for_the_selected_provider_channel() {
             .unwrap()
             .unit_price
             .to_fixed_string(6)
+    );
+}
+
+#[test]
+fn model_catalog_identity_does_not_supply_pricing_region_without_route_context() {
+    let mut catalog = InMemoryPricingCatalog::default();
+    catalog.add_vendor(ModelVendorDefinition::new(
+        "openai",
+        ModelVendor::OpenAi,
+        "OpenAI",
+    ));
+    catalog.add_model(AiModel::new(
+        "gpt-4o-mini",
+        "GPT-4o mini",
+        "openai",
+        vec!["chat", "tools"],
+    ));
+    catalog.add_plan(PricingPlan::new(
+        "standard",
+        PriceSide::OfficialReference,
+        DecimalValue::parse("1.200000").unwrap(),
+        Money::usd("0.000000").unwrap(),
+    ));
+    catalog.add_channel_group(ChannelGroup::new(
+        10,
+        "standard-group",
+        "standard",
+        DecimalValue::parse("1.000000").unwrap(),
+        DecimalValue::parse("1.100000").unwrap(),
+    ));
+    catalog.add_api_key(GatewayApiKey::new(100, 10, "sk-test", "hash:sk-test"));
+    catalog.add_price(
+        ModelPrice::new(
+            "gpt-4o-mini",
+            PriceSide::OfficialReference,
+            BillingMeter::VideoOutputSecond,
+            Money::new("CNY", "1.200000").unwrap(),
+        )
+        .with_catalog_key("openai/gpt-4o-mini")
+        .with_region_code("cn"),
+    );
+    let resolver = PricingResolver::new(&catalog);
+
+    let error = resolver
+        .resolve(ResolveModelPriceQuery {
+            api_key_id: 100,
+            model: "openai/gpt-4o-mini".to_owned(),
+            billing_meter: BillingMeter::VideoOutputSecond,
+            provider_code: None,
+            channel_id: None,
+            region_code: None,
+        })
+        .unwrap_err();
+
+    assert!(
+        error
+            .to_string()
+            .contains("meter video_output_second and region global"),
+        "{error}"
     );
 }
 
@@ -259,6 +320,7 @@ fn base_catalog_key_resolves_selected_channel_region_price_stack() {
             billing_meter: BillingMeter::LlmInputToken,
             provider_code: Some("minimax_cn_direct".to_owned()),
             channel_id: Some(3001),
+            region_code: None,
         })
         .unwrap();
 
@@ -283,6 +345,7 @@ fn base_catalog_key_resolves_selected_channel_region_price_stack() {
             billing_meter: BillingMeter::LlmInputToken,
             provider_code: Some("minimax_global_direct".to_owned()),
             channel_id: Some(3002),
+            region_code: None,
         })
         .unwrap();
 
@@ -298,6 +361,97 @@ fn base_catalog_key_resolves_selected_channel_region_price_stack() {
             .unwrap()
             .unit_price
             .to_fixed_string(6)
+    );
+}
+
+#[test]
+fn selected_route_region_disambiguates_same_provider_channel_deployments() {
+    let mut catalog = InMemoryPricingCatalog::default();
+    catalog.add_vendor(ModelVendorDefinition::new(
+        "deepseek",
+        ModelVendor::Unknown,
+        "DeepSeek",
+    ));
+    catalog.add_model(
+        AiModel::new(
+            "deepseek-v4-pro",
+            "DeepSeek V4 Pro",
+            "deepseek",
+            vec!["chat"],
+        )
+        .with_catalog_key("deepseek/deepseek-v4-pro"),
+    );
+    catalog.add_plan(PricingPlan::new(
+        "standard",
+        PriceSide::OfficialReference,
+        DecimalValue::parse("1.000000").unwrap(),
+        Money::usd("0.000000").unwrap(),
+    ));
+    catalog.add_channel_group(ChannelGroup::new(
+        10,
+        "standard-group",
+        "standard",
+        DecimalValue::parse("1.000000").unwrap(),
+        DecimalValue::parse("1.000000").unwrap(),
+    ));
+    catalog.add_api_key(GatewayApiKey::new(100, 10, "sk-test", "hash:sk-test"));
+    catalog.add_provider_route(
+        ModelProviderRoute::new_for_catalog_key(
+            "deepseek/deepseek-v4-pro",
+            "deepseek-v4-pro",
+            "deepseek_official",
+            3001,
+            "deepseek-v4-pro",
+        )
+        .with_region_code("global"),
+    );
+    catalog.add_provider_route(
+        ModelProviderRoute::new_for_catalog_key(
+            "deepseek/deepseek-v4-pro",
+            "deepseek-v4-pro",
+            "deepseek_official",
+            3001,
+            "deepseek-v4-pro",
+        )
+        .with_region_code("cn"),
+    );
+    catalog.add_price(
+        ModelPrice::new_for_catalog_key(
+            "deepseek/deepseek-v4-pro",
+            "deepseek-v4-pro",
+            PriceSide::OfficialReference,
+            BillingMeter::LlmInputToken,
+            Money::usd("0.030000").unwrap(),
+        )
+        .with_region_code("global"),
+    );
+    catalog.add_price(
+        ModelPrice::new_for_catalog_key(
+            "deepseek/deepseek-v4-pro",
+            "deepseek-v4-pro",
+            PriceSide::OfficialReference,
+            BillingMeter::LlmInputToken,
+            Money::new("CNY", "0.210000").unwrap(),
+        )
+        .with_region_code("cn"),
+    );
+
+    let resolved = PricingResolver::new(&catalog)
+        .resolve(ResolveModelPriceQuery {
+            api_key_id: 100,
+            model: "deepseek/deepseek-v4-pro".to_owned(),
+            billing_meter: BillingMeter::LlmInputToken,
+            provider_code: Some("deepseek_official".to_owned()),
+            channel_id: Some(3001),
+            region_code: Some("cn".to_owned()),
+        })
+        .unwrap();
+
+    assert_eq!("cn", resolved.official_reference.region_code);
+    assert_eq!("CNY", resolved.official_reference.unit_price.currency);
+    assert_eq!(
+        "0.210000",
+        resolved.official_reference.unit_price.to_fixed_string(6)
     );
 }
 
@@ -324,6 +478,7 @@ fn rejects_selected_channel_that_is_not_a_provider_route_for_the_model() {
             billing_meter: BillingMeter::LlmInputToken,
             provider_code: Some("openrouter".to_owned()),
             channel_id: Some(9999),
+            region_code: None,
         })
         .unwrap_err();
 
@@ -398,6 +553,7 @@ fn channel_route_resolves_price_stack_with_its_explicit_region() {
             billing_meter: BillingMeter::LlmInputToken,
             provider_code: Some("minimax_upstream".to_owned()),
             channel_id: Some(4001),
+            region_code: None,
         })
         .unwrap();
 
@@ -441,6 +597,7 @@ fn explicit_plan_customer_price_overrides_official_reference_and_keeps_group_mul
             billing_meter: BillingMeter::LlmInputToken,
             provider_code: Some("openrouter".to_owned()),
             channel_id: None,
+            region_code: None,
         })
         .unwrap();
 
@@ -485,6 +642,7 @@ fn supports_non_token_meter_without_new_pricing_table_shape() {
             billing_meter: BillingMeter::ApiResult,
             provider_code: None,
             channel_id: None,
+            region_code: None,
         })
         .unwrap();
 
@@ -507,6 +665,7 @@ fn missing_price_returns_a_domain_error_instead_of_fake_success() {
             billing_meter: BillingMeter::VideoOutputSecond,
             provider_code: None,
             channel_id: None,
+            region_code: None,
         })
         .unwrap_err();
 
@@ -547,6 +706,7 @@ fn pricing_resolver_returns_domain_error_when_decimal_math_overflows() {
             billing_meter: BillingMeter::ApiResult,
             provider_code: None,
             channel_id: None,
+            region_code: None,
         })
         .unwrap_err();
 

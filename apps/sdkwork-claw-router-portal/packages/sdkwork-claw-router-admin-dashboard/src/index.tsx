@@ -383,14 +383,14 @@ export function DashboardAdmin() {
       </div>
 
       {/* Bottom Table */}
-      <div className="bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-xl p-5 shadow-sm shrink-0 flex-1 mt-2">
+      <div className="bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-xl p-5 shadow-sm shrink-0 flex min-h-[320px] flex-1 flex-col overflow-hidden mt-2">
           <div className="flex justify-between items-center mb-4">
             <h3 className="text-base font-bold text-slate-900 dark:text-white">{t("admin.dashboard.index.text.13upnw7", "平台实时调用流水 (Live Traces)")}</h3>
           <Link to="/admin/record" className="text-xs text-blue-500 hover:text-blue-600 font-medium flex items-center px-2 py-1 rounded hover:bg-blue-50 dark:hover:bg-blue-500/10 transition-colors gap-1">
             {t("admin.dashboard.index.text.19174dl", "查看完整日志")}<ExternalLink className="w-3 h-3" />
           </Link>
         </div>
-        <div className="overflow-x-auto">
+        <div className="min-h-0 flex-1 overflow-auto">
           <table className="w-full text-left text-sm text-slate-600 dark:text-slate-400 whitespace-nowrap">
             <thead className="bg-slate-50 dark:bg-white/[0.02] border-y border-slate-200 dark:border-white/5 text-xs font-semibold text-slate-500 dark:text-slate-400">
               <tr>

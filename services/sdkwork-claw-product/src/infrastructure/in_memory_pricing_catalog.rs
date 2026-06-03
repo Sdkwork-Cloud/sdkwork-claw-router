@@ -1,8 +1,8 @@
 use crate::domain::{
     AiModel, BillingMeter, ChannelGroup, ChannelGroupMetricSnapshot, GatewayAccessPolicy,
-    GatewayApiKey, ModelMappingRule, ModelMappingScope, ModelPrice, ModelProviderRoute,
+    GatewayApiKey, ModelMappingBindingType, ModelMappingRule, ModelPrice, ModelProviderRoute,
     ModelVendorDefinition, PriceSide, PricingPlan, ProviderChannelRoute, QuotaPolicy,
-    RoutingPolicy, RoutingRule,
+    ResolveModelMappingContext, RoutingPolicy, RoutingRule,
 };
 use crate::ports::PricingCatalog;
 
@@ -38,8 +38,6 @@ impl InMemoryPricingCatalog {
     }
 
     pub fn add_provider_channel_route(&mut self, route: ProviderChannelRoute) {
-        self.provider_channel_routes
-            .retain(|item| item.channel_id != route.channel_id);
         self.provider_channel_routes.push(route);
     }
 
@@ -104,9 +102,10 @@ impl PricingCatalog for InMemoryPricingCatalog {
         self.models
             .iter()
             .filter(|model| {
-                vendor_code
-                    .map(|vendor_code| model.vendor_code == vendor_code)
-                    .unwrap_or(true)
+                model.is_publicly_active()
+                    && vendor_code
+                        .map(|vendor_code| model.vendor_code == vendor_code)
+                        .unwrap_or(true)
             })
             .cloned()
             .collect()
@@ -232,7 +231,7 @@ impl PricingCatalog for InMemoryPricingCatalog {
         let model = model.trim();
         self.models
             .iter()
-            .find(|candidate| candidate.catalog_key == model)
+            .find(|candidate| candidate.catalog_key == model && candidate.is_publicly_active())
             .cloned()
     }
 
@@ -246,15 +245,9 @@ impl PricingCatalog for InMemoryPricingCatalog {
     fn resolve_model_mapping(
         &self,
         source_model: &str,
-        vendor_code: Option<&str>,
-        channel_id: Option<i64>,
+        context: &ResolveModelMappingContext,
     ) -> Option<ModelMappingRule> {
-        resolve_model_mapping_from_rules(
-            &self.model_mappings,
-            source_model,
-            vendor_code,
-            channel_id,
-        )
+        resolve_model_mapping_from_rules(&self.model_mappings, source_model, context)
     }
 
     fn find_provider_route(&self, model: &str, provider_code: &str) -> Option<ModelProviderRoute> {
@@ -291,47 +284,112 @@ impl PricingCatalog for InMemoryPricingCatalog {
 pub(crate) fn resolve_model_mapping_from_rules(
     rules: &[ModelMappingRule],
     source_model: &str,
-    vendor_code: Option<&str>,
-    channel_id: Option<i64>,
+    context: &ResolveModelMappingContext,
 ) -> Option<ModelMappingRule> {
     [
-        ModelMappingScope::Channel,
-        ModelMappingScope::Vendor,
-        ModelMappingScope::Global,
+        ModelMappingBindingType::ProviderAccount,
+        ModelMappingBindingType::Channel,
+        ModelMappingBindingType::ChannelGroup,
+        ModelMappingBindingType::Vendor,
+        ModelMappingBindingType::Global,
+        ModelMappingBindingType::Site,
+        ModelMappingBindingType::SiteService,
     ]
     .into_iter()
-    .find_map(|scope| {
+    .find_map(|binding_type| {
         rules
             .iter()
-            .filter(|rule| {
-                model_mapping_rule_matches(rule, scope, source_model, vendor_code, channel_id)
+            .filter(|rule| model_mapping_rule_matches(rule, binding_type, source_model, context))
+            .min_by_key(|rule| {
+                (
+                    rule.binding_sort_order,
+                    rule.item_sort_order,
+                    std::cmp::Reverse(rule.id),
+                )
             })
-            .min_by_key(|rule| (rule.priority, std::cmp::Reverse(rule.id)))
             .cloned()
     })
 }
 
 fn model_mapping_rule_matches(
     rule: &ModelMappingRule,
-    scope: ModelMappingScope,
+    binding_type: ModelMappingBindingType,
     source_model: &str,
-    vendor_code: Option<&str>,
-    channel_id: Option<i64>,
+    context: &ResolveModelMappingContext,
 ) -> bool {
-    if rule.scope != scope || rule.source_model.trim() != source_model.trim() {
+    if rule.binding_type != binding_type || !model_mapping_source_matches(rule, source_model) {
         return false;
     }
-    match scope {
-        ModelMappingScope::Channel => channel_id
-            .zip(rule.channel_id)
-            .map(|(actual, expected)| actual == expected)
-            .unwrap_or(false),
-        ModelMappingScope::Vendor => vendor_code
-            .zip(rule.vendor_code.as_deref())
-            .map(|(actual, expected)| actual.trim() == expected.trim())
-            .unwrap_or(false),
-        ModelMappingScope::Global => true,
+    match binding_type {
+        ModelMappingBindingType::ProviderAccount => binding_id_or_code_matches(
+            context.provider_account_id,
+            context.provider_account_code.as_deref(),
+            rule.binding_id,
+            rule.binding_code.as_deref(),
+        ),
+        ModelMappingBindingType::Channel => binding_id_or_code_matches(
+            context.channel_id,
+            context.channel_code.as_deref(),
+            rule.binding_id,
+            rule.binding_code.as_deref(),
+        ),
+        ModelMappingBindingType::ChannelGroup => binding_id_or_code_matches(
+            context.channel_group_id,
+            context.channel_group_code.as_deref(),
+            rule.binding_id,
+            rule.binding_code.as_deref(),
+        ),
+        ModelMappingBindingType::Vendor => {
+            binding_code_matches(context.vendor_code.as_deref(), rule.binding_code.as_deref())
+        }
+        ModelMappingBindingType::Global => true,
+        ModelMappingBindingType::Site => binding_id_or_code_matches(
+            context.site_id,
+            context.site_code.as_deref(),
+            rule.binding_id,
+            rule.binding_code.as_deref(),
+        ),
+        ModelMappingBindingType::SiteService => binding_id_or_code_matches(
+            context.site_service_id,
+            context.site_service_code.as_deref(),
+            rule.binding_id,
+            rule.binding_code.as_deref(),
+        ),
     }
+}
+
+fn model_mapping_source_matches(rule: &ModelMappingRule, source_model: &str) -> bool {
+    let source_model = source_model.trim();
+    if source_model.is_empty() {
+        return false;
+    }
+    rule.source_catalog_key
+        .as_deref()
+        .map(str::trim)
+        .filter(|value| !value.is_empty())
+        .map(|catalog_key| catalog_key == source_model)
+        .unwrap_or_else(|| rule.source_model.trim() == source_model)
+        || rule.source_model.trim() == source_model
+}
+
+fn binding_id_or_code_matches(
+    actual_id: Option<i64>,
+    actual_code: Option<&str>,
+    expected_id: Option<i64>,
+    expected_code: Option<&str>,
+) -> bool {
+    actual_id
+        .zip(expected_id)
+        .map(|(actual, expected)| actual == expected)
+        .unwrap_or(false)
+        || binding_code_matches(actual_code, expected_code)
+}
+
+fn binding_code_matches(actual_code: Option<&str>, expected_code: Option<&str>) -> bool {
+    actual_code
+        .zip(expected_code)
+        .map(|(actual, expected)| actual.trim() == expected.trim())
+        .unwrap_or(false)
 }
 
 fn option_matches(actual: Option<&str>, expected: Option<&str>) -> bool {

@@ -86,6 +86,8 @@ export type { AiModelCapabilityRecord } from './ai-model-capability-record';
 export type { AiModelCatalogSourceRecord } from './ai-model-catalog-source-record';
 export type { AiModelCatalogSyncRunRecord } from './ai-model-catalog-sync-run-record';
 export type { AiModelFamilyRecord } from './ai-model-family-record';
+export type { AiModelMappingRuleBindingRecord } from './ai-model-mapping-rule-binding-record';
+export type { AiModelMappingRuleItemRecord } from './ai-model-mapping-rule-item-record';
 export type { AiModelMappingRuleRecord } from './ai-model-mapping-rule-record';
 export type { AiModelModalityRecord } from './ai-model-modality-record';
 export type { AiModelPricingRecord } from './ai-model-pricing-record';

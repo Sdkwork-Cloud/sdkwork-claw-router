@@ -540,7 +540,7 @@ function AccountsSection({
           </button>
         </div>
       </div>
-      <AdminTableShell className="m-5 mt-4 rounded-xl" viewportProps={{ 'data-admin-open-platform-wechat-official-accounts-table': true }}>
+      <AdminTableShell className="m-5 mt-4 min-h-0 flex-1 rounded-xl" viewportClassName="min-h-0 flex-1" viewportProps={{ 'data-admin-open-platform-wechat-official-accounts-table': true }}>
         <table className="w-full min-w-[1080px] text-left text-sm text-slate-600 dark:text-slate-400">
           <thead className="sticky top-0 z-10 border-b border-slate-200 bg-slate-50 text-xs uppercase text-slate-500 dark:border-white/10 dark:bg-[#121212] dark:text-slate-400">
             <tr>
@@ -680,7 +680,7 @@ function MenusSection({
           title={t('admin.openPlatform.wechatOfficial.states.menusError', 'WeChat official account menu entries could not be loaded')}
         />
       ) : (
-        <AdminTableShell className="m-5 mt-4 rounded-xl" viewportProps={{ 'data-admin-open-platform-wechat-official-menus-table': true }}>
+        <AdminTableShell className="m-5 mt-4 min-h-0 flex-1 rounded-xl" viewportClassName="min-h-0 flex-1" viewportProps={{ 'data-admin-open-platform-wechat-official-menus-table': true }}>
           <table className="w-full min-w-[920px] text-left text-sm text-slate-600 dark:text-slate-400">
             <thead className="sticky top-0 z-10 border-b border-slate-200 bg-slate-50 text-xs uppercase text-slate-500 dark:border-white/10 dark:bg-[#121212] dark:text-slate-400">
               <tr>

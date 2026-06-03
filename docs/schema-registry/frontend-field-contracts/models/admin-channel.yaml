@@ -11,9 +11,19 @@ frontend_models:
   - channelType
   - protocol
   - accessType
-  - baseUrl
-  - secretRef
-  - apiKey
+  - credentialRotation
+  - credentials
+  - credentials.id
+  - credentials.credentialId
+  - credentials.name
+  - credentials.baseUrl
+  - credentials.secretRef
+  - credentials.apiKey
+  - credentials.maskedLabel
+  - credentials.priority
+  - credentials.weight
+  - credentials.status
+  - credentials.errors
   - createdAt
   - expiresAt
   - models
@@ -29,6 +39,7 @@ frontend_models:
   - errors
   data_sources:
   - ai_channel
+  - ai_channel_credential
   - ai_channel_model
   - ai_provider
   - ai_channel
@@ -55,9 +66,15 @@ frontend_models:
   - channelType
   - protocol
   - accessType
-  - baseUrl
-  - apiKey
-  - secretRef
+  - credentialRotation
+  - credentials
+  - credentials.name
+  - credentials.baseUrl
+  - credentials.apiKey
+  - credentials.secretRef
+  - credentials.priority
+  - credentials.weight
+  - credentials.status
   - expiresAt
   - models
   - capabilities
@@ -69,6 +86,7 @@ frontend_models:
   - status
   data_sources:
   - ai_channel
+  - ai_channel_credential
   - ai_channel_model
   - ai_provider
   - ai_channel
@@ -83,9 +101,15 @@ frontend_models:
   - channelType
   - protocol
   - accessType
-  - baseUrl
-  - apiKey
-  - secretRef
+  - credentialRotation
+  - credentials
+  - credentials.name
+  - credentials.baseUrl
+  - credentials.apiKey
+  - credentials.secretRef
+  - credentials.priority
+  - credentials.weight
+  - credentials.status
   - expiresAt
   - models
   - capabilities
@@ -97,6 +121,7 @@ frontend_models:
   - status
   data_sources:
   - ai_channel
+  - ai_channel_credential
   - ai_channel_model
   - ai_provider
   - ai_channel
@@ -118,9 +143,19 @@ frontend_models:
   - item.channelType
   - item.protocol
   - item.accessType
-  - item.baseUrl
-  - item.secretRef
-  - item.apiKey
+  - item.credentialRotation
+  - item.credentials
+  - item.credentials.id
+  - item.credentials.credentialId
+  - item.credentials.name
+  - item.credentials.baseUrl
+  - item.credentials.secretRef
+  - item.credentials.apiKey
+  - item.credentials.maskedLabel
+  - item.credentials.priority
+  - item.credentials.weight
+  - item.credentials.status
+  - item.credentials.errors
   - item.createdAt
   - item.expiresAt
   - item.models
@@ -136,6 +171,7 @@ frontend_models:
   - item.errors
   data_sources:
   - ai_channel
+  - ai_channel_credential
   - ai_channel_resource
   - ai_channel
   - integration_provider_health_snapshot

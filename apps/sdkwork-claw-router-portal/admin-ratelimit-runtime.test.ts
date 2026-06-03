@@ -825,6 +825,8 @@ test("admin ratelimit tables use adaptive admin table shells", () => {
     "data-admin-ratelimit-table-card",
     "data-admin-ratelimit-table-viewport",
     "flex h-full min-h-0 w-full flex-col",
+    "className=\"flex-1 min-h-0 rounded-lg shadow-none\"",
+    "viewportClassName=\"min-h-0 flex-1 relative\"",
     "sticky top-0 z-10",
   ]) {
     assert.ok(source.includes(expected), `missing adaptive admin ratelimit table marker: ${expected}`);

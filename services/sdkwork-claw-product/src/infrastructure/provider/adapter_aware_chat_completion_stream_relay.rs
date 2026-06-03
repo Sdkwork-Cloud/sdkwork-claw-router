@@ -112,6 +112,7 @@ fn chat_completion_stream_adapter_invocation(
             pricing_plan_code: request.pricing_plan_code,
             provider_code: request.provider_code,
             provider_channel_id: request.provider_channel_id,
+            provider_region_code: request.provider_region_code,
             provider_model: request.provider_model,
             provider_base_url: request.provider_base_url,
             provider_secret_ref: request.provider_secret_ref,

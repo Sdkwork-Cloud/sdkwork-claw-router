@@ -232,15 +232,33 @@ tenant policies, and access controls remain outside the portable model catalog.
 
 ### 4.4 Operating Entity And Regional Billing
 
-`ModelVendor` represents the entity that owns the official model endpoint, contract surface, legal jurisdiction, and billing currency for the catalog row. It is not merely the public brand name. When the same brand has separate domestic and international operations, the catalog must split them into separate vendor directories before adding or importing models.
+`ModelVendor` represents the stable model publisher or upstream model owner. It is
+not merely the public brand name, and it is also not a deployment region,
+gateway, cloud marketplace, reseller, or route provider. A model such as
+`gpt-5.2`, `deepseek-chat`, or an OpenRouter exposed
+`anthropic/claude-3-opus` keeps the same `catalogKey = vendorCode/modelId`
+even when it has different mainland China, overseas, cloud, or aggregator
+deployments.
 
-Required split triggers:
+Regional deployment differences belong to the vendor-region and endpoint
+contracts, not to model identity. A vendor region may define different base
+URLs, API hosts, billing currencies, billing jurisdictions, price sheets,
+discount rules, cache billing rules, availability windows, rate limits,
+compliance attributes, and route ranking metadata.
 
+Split `vendorCode` only when the upstream model owner or contract identity is
+actually different. Do not create region-coded or product-coded vendors just
+because deployment, pricing, or API host differs.
+
+Region/deployment triggers:
+
+- different base URLs or official platform domains, for example mainland China
+  and international API hosts
 - different billing currencies, for example CNY and USD
-- different official platform domains, for example a mainland China platform and an international platform
 - different legal or billing jurisdictions
 - separate public price sheets, discount rules, or cache billing rules
-- cloud vendors where domestic and international cloud operations publish separate AI model pricing
+- cloud vendors, proxy providers, and aggregators where model access is exposed
+  through a different endpoint or supply market
 
 Naming rules:
 
@@ -250,7 +268,14 @@ Naming rules:
 - International regions use `regionCode: "global"` unless a more specific jurisdiction such as `us`, `eu`, or `apac` is required.
 - Product aliases such as Qwen, Kling, Hunyuan, or BigModel must be model families, capabilities, or product metadata, not vendor codes.
 
-Every vendor region must declare `marketScope`, `billingCurrency`, `billingJurisdiction`, and `operatingRegions`. Every pricing file and price row must use the same currency as the region `billingCurrency`. The same upstream `modelId` may appear in multiple regions under the same vendor; consumers must treat `(vendorCode, regionCode, modelId)` as the stable catalog identity.
+Every vendor region must declare `marketScope`, `billingCurrency`,
+`billingJurisdiction`, `operatingRegions`, and the base deployment attributes
+needed to resolve an endpoint. Every pricing file and price row must use the
+same currency as the region `billingCurrency`. Consumers must treat
+`catalogKey = vendorCode/modelId` as the stable model identity. When the same
+upstream `modelId` is deployed in multiple regions under the same vendor,
+`regionCode` remains the explicit supply, deployment endpoint, pricing, and
+ranking context rather than becoming part of the model identity.
 
 ## 5. Naming Rules
 
@@ -261,7 +286,7 @@ All stable identifiers must be ASCII.
 | `vendorCode` | lower slug, letters, numbers, hyphen, underscore | `openai` |
 | `regionCode` | lower slug for operating/billing region | `global`, `cn` |
 | `familyCode` | vendor-local slug | `gpt-5` |
-| `modelId` | vendor model id, unique within one `vendorCode` + `regionCode`; catalog identity is `vendorCode/regionCode/modelId` | `gpt-5.2` |
+| `modelId` | vendor-native model id; catalog identity is `vendorCode/modelId`; the same model may have multiple regional deployment and pricing rows | `gpt-5.2` |
 | `meterCode` | lower slug with domain prefix | `llm_input_token` |
 | `priceCode` | globally unique stable slug | `gpt-5.2-input-reference-usd` |
 | `snapshotCode` | globally unique stable slug | `openai-commercial-2026-05-08` |
@@ -1089,8 +1114,8 @@ Public API:
 from sdkwork_models import load_catalog, find_model, get_model_prices
 
 catalog = load_catalog("./models")
-model = find_model(catalog, "gpt-5.2")
-prices = get_model_prices(catalog, "gpt-5.2")
+model = find_model(catalog, "openai/gpt-5.2")
+prices = get_model_prices(catalog, "openai/gpt-5.2")
 ```
 
 Rules:
@@ -1119,8 +1144,8 @@ Public API:
 
 ```java
 ModelCatalog catalog = SdkworkModels.loadCatalog(Path.of("./models"));
-ModelInfo model = catalog.findModel("openai/global/gpt-5.2").orElseThrow();
-List<ModelPrice> prices = catalog.getModelPrices("openai/global/gpt-5.2");
+ModelInfo model = catalog.findModel("openai/gpt-5.2").orElseThrow();
+List<ModelPrice> prices = catalog.getModelPrices("openai/gpt-5.2");
 ```
 
 Rules:
@@ -1153,8 +1178,8 @@ Public API:
 use sdkwork_models::{load_catalog, CatalogQuery};
 
 let catalog = load_catalog("./models")?;
-let model = catalog.find_model("openai/global/gpt-5.2")?;
-let prices = catalog.model_prices("openai/global/gpt-5.2");
+let model = catalog.find_model("openai/gpt-5.2")?;
+let prices = catalog.model_prices("openai/gpt-5.2");
 ```
 
 Rules:
@@ -1186,8 +1211,8 @@ Public API:
 
 ```dart
 final catalog = await SdkworkModels.loadCatalog('assets/models');
-final model = catalog.findModel('openai/global/gpt-5.2');
-final prices = catalog.getModelPrices('openai/global/gpt-5.2');
+final model = catalog.findModel('openai/gpt-5.2');
+final prices = catalog.getModelPrices('openai/gpt-5.2');
 ```
 
 Rules:

@@ -82,6 +82,7 @@ client.SetHeader("X-Custom-Header", "value");
 - `client.System` - system API
 - `client.Prompts` - prompts API
 - `client.ServiceProviders` - service_providers API
+- `client.Sites` - sites API
 - `client.Storage` - storage API
 
 ## Usage Examples
@@ -247,6 +248,18 @@ var query = new Dictionary<string, object>
     ["edge_id"] = "1",
 };
 var result = await client.ServiceProviders.AdjustmentsListAsync(query);
+Console.WriteLine(result);
+```
+
+### sites
+
+```csharp
+// List sites
+var query = new Dictionary<string, object>
+{
+    ["q"] = "q",
+};
+var result = await client.Sites.SiteCatalogListAsync(query);
 Console.WriteLine(result);
 ```
 

@@ -74,6 +74,7 @@ client.setHeader('X-Custom-Header', 'value');
 - `client.system` - system API
 - `client.prompts` - prompts API
 - `client.serviceProviders` - service_providers API
+- `client.sites` - sites API
 - `client.storage` - storage API
 
 ## Usage Examples
@@ -219,6 +220,16 @@ final params = <String, dynamic>{
   'edge_id': '1',
 };
 final result = await client.serviceProviders.adjustmentsList(params);
+print(result);
+```
+
+### sites
+```dart
+// List sites
+final params = <String, dynamic>{
+  'q': 'q',
+};
+final result = await client.sites.siteCatalogList(params);
 print(result);
 ```
 

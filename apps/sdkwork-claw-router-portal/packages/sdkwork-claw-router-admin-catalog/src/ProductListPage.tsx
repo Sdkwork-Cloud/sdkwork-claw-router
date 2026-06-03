@@ -383,6 +383,7 @@ function ProductListTable({
       className="mt-5 flex min-h-[420px] flex-1 flex-col overflow-hidden border-b border-slate-200 dark:border-white/10"
       data-admin-product-list-table
     >
+      <div className="min-h-0 flex-1 overflow-auto" data-admin-product-list-table-viewport>
       <table className="w-full table-fixed border-collapse text-left">
         <thead>
           <tr className="h-14 bg-slate-50 text-[15px] font-medium text-slate-500 transition-colors dark:bg-white/[0.03] dark:text-slate-300">
@@ -444,6 +445,7 @@ function ProductListTable({
           )}
         </tbody>
       </table>
+      </div>
       <ProductTablePagination
         disabled={state.loading}
         meta={state.meta}

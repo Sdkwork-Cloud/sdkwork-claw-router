@@ -48,6 +48,8 @@ test("admin course center is an independent admin module with header and routes"
 test("admin course package uses generated backend SDK and owns only course management", () => {
   const packageJson = readPortalFile("./packages/sdkwork-claw-router-admin-courses/package.json");
   const pageSource = readPortalFile("./packages/sdkwork-claw-router-admin-courses/src/index.tsx");
+  const shellSource = readPortalFile("./packages/sdkwork-claw-router-admin-courses/src/components/CoursePageShell.tsx");
+  const tableControlsSource = readPortalFile("./packages/sdkwork-claw-router-admin-courses/src/components/CourseTableControls.tsx");
   const splitPageSource = [
     "./packages/sdkwork-claw-router-admin-courses/src/pages/CourseApplicationsPage.tsx",
     "./packages/sdkwork-claw-router-admin-courses/src/pages/CourseCatalogPage.tsx",
@@ -69,7 +71,9 @@ test("admin course package uses generated backend SDK and owns only course manag
   assert.match(packageSource, /CourseAdminService\.fetchCourses/);
   assert.match(packageSource, /CourseAdminService\.fetchApplications/);
   assert.match(packageSource, /CourseAdminService\.fetchComments/);
-  assert.match(pageSource, /className="flex flex-col gap-4"/);
+  assert.match(pageSource, /className="flex h-full min-h-0 flex-col gap-4 overflow-hidden"/);
+  assert.match(shellSource, /className="flex min-h-0 flex-1 flex-col gap-4 overflow-hidden"/);
+  assert.match(tableControlsSource, /className=\{\['min-h-0 flex-1 overflow-auto rounded-xl/);
 
   assert.match(serviceSource, /getClawRouterBackendSdkClient\(\)\.content\.courses\.dashboard\.retrieve\(/);
   assert.match(serviceSource, /getClawRouterBackendSdkClient\(\)\.content\.courses\.list\(/);

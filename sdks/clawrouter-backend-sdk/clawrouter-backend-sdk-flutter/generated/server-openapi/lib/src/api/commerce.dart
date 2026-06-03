@@ -112,6 +112,63 @@ class CommerceApi {
     })();
   }
 
+  /// List category attribute bindings
+  Future<CatalogCategoryAttributesListResult?> catalogCategoryAttributesList([String? categoryId, String? attributeId, String? status, int? page, int? pageSize]) async {
+    final query = buildQueryString([
+      QueryParameterSpec('category_id', categoryId, 'form', true, false, null),
+      QueryParameterSpec('attribute_id', attributeId, 'form', true, false, null),
+      QueryParameterSpec('status', status, 'form', true, false, null),
+      QueryParameterSpec('page', page, 'form', true, false, null),
+      QueryParameterSpec('page_size', pageSize, 'form', true, false, null)
+    ]);
+    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.backendPath('/catalog/category_attributes'), query));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : CatalogCategoryAttributesListResult.fromJson(map);
+    })();
+  }
+
+  /// Create category attribute binding
+  Future<CatalogCategoryAttributesCreateResult?> catalogCategoryAttributesCreate(CommerceProductCategoryAttributeMutationRequest body, String idempotencyKey) async {
+    final requestHeaders = buildRequestHeaders(
+      <String, HeaderParameterSpec>{
+        'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
+      },
+      <String, HeaderParameterSpec>{},
+    );
+    final payload = body.toJson();
+    final response = await _client.post(ApiPaths.backendPath('/catalog/category_attributes'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : CatalogCategoryAttributesCreateResult.fromJson(map);
+    })();
+  }
+
+  /// Delete category attribute binding
+  Future<CatalogCategoryAttributesDeleteResult?> catalogCategoryAttributesDelete(String bindingId) async {
+    final response = await _client.delete(ApiPaths.backendPath('/catalog/category_attributes/${serializePathParameter(bindingId, const PathParameterSpec('bindingId', 'simple', false))}'));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : CatalogCategoryAttributesDeleteResult.fromJson(map);
+    })();
+  }
+
+  /// Update category attribute binding
+  Future<CatalogCategoryAttributesUpdateResult?> catalogCategoryAttributesUpdate(String bindingId, CommerceProductCategoryAttributeMutationRequest body, String idempotencyKey) async {
+    final requestHeaders = buildRequestHeaders(
+      <String, HeaderParameterSpec>{
+        'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
+      },
+      <String, HeaderParameterSpec>{},
+    );
+    final payload = body.toJson();
+    final response = await _client.patch(ApiPaths.backendPath('/catalog/category_attributes/${serializePathParameter(bindingId, const PathParameterSpec('bindingId', 'simple', false))}'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : CatalogCategoryAttributesUpdateResult.fromJson(map);
+    })();
+  }
+
   /// Initialize admin category seed datasets
   Future<CatalogCategorySeedsCreateResult?> catalogCategorySeedsCreate(CommerceCategorySeedInitializeRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(

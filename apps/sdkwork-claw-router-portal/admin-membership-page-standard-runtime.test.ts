@@ -9,6 +9,7 @@ function readPortalFile(relativePath: string): string {
 test("admin membership pages share standardized table and action controls", () => {
   const controlsSource = readPortalFile("./packages/sdkwork-claw-router-admin-memberships/src/components/MembershipPageControls.tsx");
   const shellSource = readPortalFile("./packages/sdkwork-claw-router-admin-memberships/src/components/MembershipAdminPageShell.tsx");
+  const entrySource = readPortalFile("./packages/sdkwork-claw-router-admin-memberships/src/index.tsx");
   const tablePages = [
     "./packages/sdkwork-claw-router-admin-memberships/src/pages/MembershipPackagesPage.tsx",
     "./packages/sdkwork-claw-router-admin-memberships/src/pages/MembershipVipPackagesPage.tsx",
@@ -46,6 +47,9 @@ test("admin membership pages share standardized table and action controls", () =
   assert.match(controlsSource, /aria-label=\{label\}/);
   assert.match(controlsSource, /title=\{label\}/);
   assert.match(controlsSource, /window\.confirm\(message\)/);
+  assert.match(entrySource, /className="flex h-full min-h-0 flex-col gap-4 overflow-hidden"/);
+  assert.match(controlsSource, /className=\{\['min-h-0 flex-1 overflow-auto rounded-xl/);
+  assert.match(shellSource, /className="flex min-h-0 flex-1 flex-col gap-4 overflow-hidden"/);
   assert.match(shellSource, /className="[^"]*justify-end[^"]*"/, "membership shell must keep only a compact right-aligned action toolbar");
   assert.doesNotMatch(shellSource, /\n\s+(?:title|description): string/, "membership shell must not expose duplicate page header props");
   assert.doesNotMatch(shellSource, /<h3[^>]*>\{title\}<\/h3>/, "membership shell must not render a duplicate page title");

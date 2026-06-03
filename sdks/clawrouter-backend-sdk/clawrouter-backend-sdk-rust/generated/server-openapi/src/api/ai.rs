@@ -3,7 +3,7 @@ use std::sync::Arc;
 use crate::api::paths::backend_path;
 use crate::api::paths::append_query_string;
 use crate::http::{SdkworkError, SdkworkHttpClient};
-use crate::models::{AdminAiModelCreateRequest, AdminAiModelUpdateRequest, AdminAiResourceCreateRequest, AdminAiResourceUpdateRequest, AdminChannelGroupChannelBindingsReplaceRequest, AdminChannelGroupCreateRequest, AdminChannelGroupUpdateRequest, AdminModelCatalogSyncRequest, AdminModelVendorCreateRequest, AiResourcesCreateResult, AiResourcesListResult, AiResourcesUpdateResult, ChannelGroupsChannelBindingsListResult, ChannelGroupsChannelBindingsUpdateResult, ChannelGroupsCreateResult, ChannelGroupsDeleteResult, ChannelGroupsListResult, ChannelGroupsUpdateResult, ModelRankingRefreshTriggerRequest, ModelRankingsJobsListResult, ModelRankingsListResult, ModelRankingsRefreshResult, ModelRankingsStatusRetrieveResult, ModelVendorsCreateResult, ModelVendorsListResult, ModelsCreateResult, ModelsDeleteResult, ModelsListResult, ModelsRefreshResult, ModelsUpdateResult};
+use crate::models::{AdminAiModelCreateRequest, AdminAiModelUpdateRequest, AdminAiResourceCreateRequest, AdminAiResourceGroupCreateRequest, AdminAiResourceGroupUpdateRequest, AdminAiResourceUpdateRequest, AdminChannelGroupChannelBindingsReplaceRequest, AdminChannelGroupCreateRequest, AdminChannelGroupUpdateRequest, AdminModelCatalogSyncRequest, AdminModelMappingCreateRequest, AdminModelMappingResolveRequest, AdminModelMappingUpdateRequest, AdminModelVendorCreateRequest, AiResourceGroupsCreateResult, AiResourceGroupsDeleteResult, AiResourceGroupsListResult, AiResourceGroupsResourcesListResult, AiResourceGroupsUpdateResult, AiResourcesCreateResult, AiResourcesListResult, AiResourcesUpdateResult, ChannelGroupsChannelBindingsListResult, ChannelGroupsChannelBindingsUpdateResult, ChannelGroupsCreateResult, ChannelGroupsDeleteResult, ChannelGroupsListResult, ChannelGroupsUpdateResult, ModelMappingsCreateResult, ModelMappingsDeleteResult, ModelMappingsListResult, ModelMappingsResolveCreateResult, ModelMappingsUpdateResult, ModelRankingRefreshTriggerRequest, ModelRankingsJobsListResult, ModelRankingsListResult, ModelRankingsRefreshResult, ModelRankingsStatusRetrieveResult, ModelVendorsCreateResult, ModelVendorsListResult, ModelsCreateResult, ModelsDeleteResult, ModelsListResult, ModelsRefreshResult, ModelsUpdateResult};
 
 #[derive(Clone)]
 pub struct AiApi {
@@ -49,6 +49,43 @@ impl AiApi {
     pub async fn channel_groups_bindings_update(&self, channel_group_id: &str, body: &AdminChannelGroupChannelBindingsReplaceRequest) -> Result<ChannelGroupsChannelBindingsUpdateResult, SdkworkError> {
         let path = backend_path(&format!("/ai/channel_groups/{}/channel_bindings", serialize_path_parameter(channel_group_id, PathParameterSpec::new("channelGroupId", "simple", false))));
         self.client.put(&path, Some(body), None, None, Some("application/json")).await
+    }
+
+    /// List model mappings
+    pub async fn model_mappings_list(&self, binding_type: Option<&str>, vendor_code: Option<&str>, channel_id: Option<&str>, channel_code: Option<&str>, q: Option<&str>) -> Result<ModelMappingsListResult, SdkworkError> {
+        let query = build_query_string(&[
+            QueryParameterSpec::new("binding_type", binding_type, "form", true, false, None),
+            QueryParameterSpec::new("vendor_code", vendor_code, "form", true, false, None),
+            QueryParameterSpec::new("channel_id", channel_id, "form", true, false, None),
+            QueryParameterSpec::new("channel_code", channel_code, "form", true, false, None),
+            QueryParameterSpec::new("q", q, "form", true, false, None),
+        ]);
+        let path = append_query_string(backend_path(&"/ai/model_mappings".to_string()), &query);
+        self.client.get(&path, None, None).await
+    }
+
+    /// Create model mapping
+    pub async fn model_mappings_create(&self, body: &AdminModelMappingCreateRequest) -> Result<ModelMappingsCreateResult, SdkworkError> {
+        let path = backend_path(&"/ai/model_mappings".to_string());
+        self.client.post(&path, Some(body), None, None, Some("application/json")).await
+    }
+
+    /// Resolve model mapping
+    pub async fn model_mappings_resolve_create(&self, body: &AdminModelMappingResolveRequest) -> Result<ModelMappingsResolveCreateResult, SdkworkError> {
+        let path = backend_path(&"/ai/model_mappings/resolve".to_string());
+        self.client.post(&path, Some(body), None, None, Some("application/json")).await
+    }
+
+    /// Delete model mapping
+    pub async fn model_mappings_delete(&self, mapping_id: &str) -> Result<ModelMappingsDeleteResult, SdkworkError> {
+        let path = backend_path(&format!("/ai/model_mappings/{}", serialize_path_parameter(mapping_id, PathParameterSpec::new("mappingId", "simple", false))));
+        self.client.delete(&path, None, None).await
+    }
+
+    /// Update model mapping
+    pub async fn model_mappings_update(&self, mapping_id: &str, body: &AdminModelMappingUpdateRequest) -> Result<ModelMappingsUpdateResult, SdkworkError> {
+        let path = backend_path(&format!("/ai/model_mappings/{}", serialize_path_parameter(mapping_id, PathParameterSpec::new("mappingId", "simple", false))));
+        self.client.patch(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// List model rankings
@@ -128,6 +165,36 @@ impl AiApi {
     /// Update model
     pub async fn models_update(&self, model_id: &str, body: &AdminAiModelUpdateRequest) -> Result<ModelsUpdateResult, SdkworkError> {
         let path = backend_path(&format!("/ai/models/{}", serialize_path_parameter(model_id, PathParameterSpec::new("modelId", "simple", false))));
+        self.client.patch(&path, Some(body), None, None, Some("application/json")).await
+    }
+
+    /// List resource groups
+    pub async fn get_resource_groups_list(&self) -> Result<AiResourceGroupsListResult, SdkworkError> {
+        let path = backend_path(&"/ai/resource_groups".to_string());
+        self.client.get(&path, None, None).await
+    }
+
+    /// Create resource group
+    pub async fn resource_groups_create(&self, body: &AdminAiResourceGroupCreateRequest) -> Result<AiResourceGroupsCreateResult, SdkworkError> {
+        let path = backend_path(&"/ai/resource_groups".to_string());
+        self.client.post(&path, Some(body), None, None, Some("application/json")).await
+    }
+
+    /// List resource group resources
+    pub async fn get_resource_groups_list_resource_groups(&self, group_id_or_code: &str) -> Result<AiResourceGroupsResourcesListResult, SdkworkError> {
+        let path = backend_path(&format!("/ai/resource_groups/{}/resources", serialize_path_parameter(group_id_or_code, PathParameterSpec::new("groupIdOrCode", "simple", false))));
+        self.client.get(&path, None, None).await
+    }
+
+    /// Delete resource group
+    pub async fn resource_groups_delete(&self, group_id: &str) -> Result<AiResourceGroupsDeleteResult, SdkworkError> {
+        let path = backend_path(&format!("/ai/resource_groups/{}", serialize_path_parameter(group_id, PathParameterSpec::new("groupId", "simple", false))));
+        self.client.delete(&path, None, None).await
+    }
+
+    /// Update resource group
+    pub async fn resource_groups_update(&self, group_id: &str, body: &AdminAiResourceGroupUpdateRequest) -> Result<AiResourceGroupsUpdateResult, SdkworkError> {
+        let path = backend_path(&format!("/ai/resource_groups/{}", serialize_path_parameter(group_id, PathParameterSpec::new("groupId", "simple", false))));
         self.client.patch(&path, Some(body), None, None, Some("application/json")).await
     }
 

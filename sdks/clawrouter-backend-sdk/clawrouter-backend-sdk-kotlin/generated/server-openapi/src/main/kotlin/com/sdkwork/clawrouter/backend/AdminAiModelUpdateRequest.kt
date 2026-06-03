@@ -2,8 +2,6 @@ package com.sdkwork.clawrouter.backend
 
 data class AdminAiModelUpdateRequest(
     val apiFormat: String? = null,
-    val cacheReadPrice: String? = null,
-    val cacheWritePrice: String? = null,
     val capabilityIntro: String? = null,
     val contextTokens: String? = null,
     val description: String? = null,
@@ -14,8 +12,6 @@ data class AdminAiModelUpdateRequest(
     val modalities: List<String>? = null,
     val model: String? = null,
     val outputModalities: List<String>? = null,
-    val priceIn: String? = null,
-    val priceOut: String? = null,
     val regionPrices: List<AdminAiModelRegionPrice>? = null,
     val releaseStage: Int? = null,
     val replacementModel: String? = null,

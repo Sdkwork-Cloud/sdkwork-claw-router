@@ -1,5 +1,6 @@
 package com.sdkwork.clawrouter.backend.model;
 
+import java.util.List;
 
 public class AdminChannelGroupItem {
     private AdminCountPair accountCount;
@@ -12,6 +13,8 @@ public class AdminChannelGroupItem {
     private String priceReferenceMode;
     private String providerCode;
     private Double rateMultiplier;
+    private List<String> resourceCodes;
+    private List<String> resourceGroupCodes;
     private String status;
     private AdminUsagePair usage;
 
@@ -93,6 +96,22 @@ public class AdminChannelGroupItem {
 
     public void setRateMultiplier(Double rateMultiplier) {
         this.rateMultiplier = rateMultiplier;
+    }
+
+    public List<String> getResourceCodes() {
+        return this.resourceCodes;
+    }
+
+    public void setResourceCodes(List<String> resourceCodes) {
+        this.resourceCodes = resourceCodes;
+    }
+
+    public List<String> getResourceGroupCodes() {
+        return this.resourceGroupCodes;
+    }
+
+    public void setResourceGroupCodes(List<String> resourceGroupCodes) {
+        this.resourceGroupCodes = resourceGroupCodes;
     }
 
     public String getStatus() {

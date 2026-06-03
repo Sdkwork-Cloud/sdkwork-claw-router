@@ -1,4 +1,4 @@
-import re
+﻿import re
 import json
 import unittest
 from pathlib import Path
@@ -51,14 +51,16 @@ class ModelsCatalogRuntimeStandardTest(unittest.TestCase):
         page_source = (MODELS_PACKAGE / "src" / "pages" / "Models.tsx").read_text(encoding="utf-8")
         model_data_source = (MODELS_PACKAGE / "src" / "data" / "models.ts").read_text(encoding="utf-8")
         catalog_source_path = MODELS_PACKAGE / "src" / "modelCatalog.ts"
-        i18n_source = (
+        i18n_models_source = (
             ROOT
             / "apps"
             / "sdkwork-claw-router-portal"
             / "packages"
             / "sdkwork-claw-router-i18n"
             / "src"
-            / "index.ts"
+            / "resources"
+            / "public"
+            / "models.ts"
         ).read_text(encoding="utf-8")
 
         self.assertTrue(
@@ -114,7 +116,7 @@ class ModelsCatalogRuntimeStandardTest(unittest.TestCase):
         self.assertIn("'New'", catalog_source)
         self.assertIn("selectedGroups.some", catalog_source)
         self.assertIn("model.groups.includes", catalog_source)
-        self.assertIn('"models.showMore": "Show {{count}} More"', i18n_source)
+        self.assertIn('"models.showMore": "Show {{count}} More"', i18n_models_source)
 
     def test_model_catalog_runtime_contract_declares_complete_taxonomy(self) -> None:
         model_data_source = (MODELS_PACKAGE / "src" / "data" / "models.ts").read_text(encoding="utf-8")
@@ -191,7 +193,11 @@ class ModelsCatalogRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("AiPlaygroundModelsApi", sdk_ai_source)
         self.assertNotIn("playground.models.list", sdk_ai_source)
         self.assertNotIn("ai.playground.models.list", playground_service_source)
-        self.assertIn("getClawRouterAppSdkClient().ai.models.list()", playground_service_source)
+        self.assertIn("listModelCatalog()", playground_service_source)
+        self.assertIn("officialReferencePrices", playground_service_source)
+        self.assertIn("readReferencePrices", playground_service_source)
+        self.assertNotIn("officialReferenceUnitPrice", playground_service_source)
+        self.assertNotIn("officialReferenceCurrency", playground_service_source)
 
         self.assertEqual(["id", "vendor", "llms", "images", "videos", "audios", "music", "sfx"], group_schema["required"])
         self.assertIn("id: string;", playground_types_source)
@@ -306,7 +312,7 @@ class ModelsCatalogRuntimeStandardTest(unittest.TestCase):
         self.assertIn("toRuntimeCatalogItem", runtime_catalog_source)
         self.assertIn("isStringArray", runtime_catalog_source)
         self.assertIn("value.every((item) => typeof item === 'string')", runtime_catalog_source)
-        self.assertIn("normalizeNullableString", runtime_catalog_source)
+        self.assertIn("normalizeReferencePrices", runtime_catalog_source)
         self.assertIn("normalizePriceAvailability", runtime_catalog_source)
         self.assertNotIn("return runtimeModels.length > 0 ? runtimeModels : [...ALL_MODELS]", runtime_catalog_source)
         self.assertNotIn(": [...ALL_MODELS]", runtime_catalog_source)
@@ -324,7 +330,7 @@ class ModelsCatalogRuntimeStandardTest(unittest.TestCase):
     def test_models_page_loads_runtime_catalog_without_static_runtime_fallback(self) -> None:
         page_source = (MODELS_PACKAGE / "src" / "pages" / "Models.tsx").read_text(encoding="utf-8")
 
-        self.assertIn("ModelService.fetchModels({", page_source)
+        self.assertIn("ModelService.fetchModelCatalog({", page_source)
         self.assertIn("vendorCodes: selectedProviderCodes", page_source)
         self.assertIn("modalities: filters.selectedModalities", page_source)
         self.assertIn("capabilities: filters.selectedCapabilities", page_source)
@@ -482,11 +488,11 @@ class ModelsCatalogRuntimeStandardTest(unittest.TestCase):
         self.assertIn("export type ModelPricingStatus", model_data_source)
         self.assertIn("status?: ModelPricingStatus;", model_data_source)
         self.assertIn("reason?: string;", model_data_source)
-        self.assertIn("pricingStatus(officialReferenceUnitPrice", runtime_catalog_source)
+        self.assertIn("pricingStatus(selectedReferenceUnitPrice", runtime_catalog_source)
         self.assertNotIn("customerUnitPrice", runtime_catalog_source)
         self.assertNotIn("grossMarginPerUnit", runtime_catalog_source)
         self.assertIn("function readPositiveDecimal(value: string | null | undefined)", runtime_catalog_source)
-        self.assertIn("function normalizeNullableString(value: unknown)", runtime_catalog_source)
+        self.assertIn("function normalizeReferencePrices(value: unknown)", runtime_catalog_source)
         self.assertIn("typeof priceAvailability?.reason === 'string'", runtime_catalog_source)
         self.assertIn("pricing.status", runtime_catalog_source)
         self.assertIn("pricing.reason", runtime_catalog_source)
@@ -562,8 +568,10 @@ class ModelsCatalogRuntimeStandardTest(unittest.TestCase):
         self.assertIn("modelPricingUnitLabel", runtime_test_source)
         self.assertIn("status: \"reference\"", runtime_test_source)
         self.assertIn("status: \"unavailable\"", runtime_test_source)
-        self.assertIn("officialReferenceUnitPrice: \"0.150000\"", runtime_test_source)
-        self.assertIn("officialReferenceUnitPrice: null", runtime_test_source)
+        self.assertIn('officialReferencePrices: [', runtime_test_source)
+        self.assertIn('regionCode: "global"', runtime_test_source)
+        self.assertNotIn("officialReferenceUnitPrice", runtime_test_source)
+        self.assertNotIn("officialReferenceCurrency", runtime_test_source)
         self.assertIn("pricing.status, \"reference\"", runtime_test_source)
         self.assertIn("pricing.status, \"unavailable\"", runtime_test_source)
         self.assertIn("resolveRuntimeModelCatalog", runtime_test_source)
@@ -576,8 +584,8 @@ class ModelsCatalogRuntimeStandardTest(unittest.TestCase):
         self.assertIn("bad-capability", runtime_test_source)
         self.assertIn("runtime-good", runtime_test_source)
         self.assertIn("model detail route resolver accepts encoded catalog route ids", runtime_test_source)
-        self.assertIn('findModelByCatalogRouteId(TEST_ROUTE_MODELS, "openai%2Fglobal%2Fgpt-4o-mini")', runtime_test_source)
-        self.assertIn('findModelByCatalogRouteId(runtimeModels, encodeURIComponent("newvendor/global/runtime-good"))', runtime_test_source)
+        self.assertIn('findModelByCatalogRouteId(TEST_ROUTE_MODELS, "openai%2Fgpt-4o-mini")', runtime_test_source)
+        self.assertIn('findModelByCatalogRouteId(runtimeModels, encodeURIComponent("newvendor/runtime-good"))', runtime_test_source)
         self.assertIn('findModelByCatalogRouteId(runtimeModels, "%E0%A4%A")', runtime_test_source)
         self.assertIn("runtime model catalog rejects unsafe identifiers and caps public runtime text", runtime_test_source)
         self.assertIn('model: "bad\\nmodel"', runtime_test_source)
@@ -587,7 +595,7 @@ class ModelsCatalogRuntimeStandardTest(unittest.TestCase):
         self.assertIn('reason: "   "', runtime_test_source)
         self.assertIn('models[0].pricing.reason, "Public reference price is not configured for this model."', runtime_test_source)
         self.assertIn("treats malformed price payloads as unavailable instead of crashing", runtime_test_source)
-        self.assertIn('officialReferenceUnitPrice: { amount: "0.2" }', runtime_test_source)
+        self.assertIn("treats malformed price payloads as unavailable instead of crashing", runtime_test_source)
         self.assertIn("reason: 100", runtime_test_source)
         for sensitive_field, _ in SENSITIVE_APP_MODEL_PRICE_FIELDS:
             self.assertIn(sensitive_field, runtime_test_source)
@@ -619,7 +627,7 @@ class ModelsCatalogRuntimeStandardTest(unittest.TestCase):
         ).read_text(encoding="utf-8")
 
         self.assertIn('pathName: "/models"', smoke_source)
-        self.assertIn('pathName: "/models/openai%2Fglobal%2Fgpt-5.5-pro"', smoke_source)
+        self.assertIn('pathName: "/models/openai%2Fgpt-5.5-pro"', smoke_source)
         self.assertIn('"GPT-5.5 Pro"', smoke_source)
         self.assertIn('"GPT-5.5"', smoke_source)
         self.assertIn('"Claude Opus 4.7"', smoke_source)
@@ -627,8 +635,8 @@ class ModelsCatalogRuntimeStandardTest(unittest.TestCase):
         self.assertIn('pathName: "/models?__browser-smoke-groups=1"', smoke_source)
         self.assertIn('pathName: "/models?__browser-smoke-filter=1"', smoke_source)
         self.assertIn('pathName: "/models?__browser-smoke-empty-runtime=1"', smoke_source)
-        self.assertIn('pathName: "/models/newvendor%2Fglobal%2Fruntime-good?__browser-smoke-detail=1"', smoke_source)
-        self.assertIn('pathName: "/models/unpricedvendor%2Fglobal%2Fruntime-unpriced?__browser-smoke-unavailable-detail=1"', smoke_source)
+        self.assertIn('pathName: "/models/newvendor%2Fruntime-good?__browser-smoke-detail=1"', smoke_source)
+        self.assertIn('pathName: "/models/unpricedvendor%2Fruntime-unpriced?__browser-smoke-unavailable-detail=1"', smoke_source)
         self.assertIn("APP_SDK_MODEL_FIXTURE_MODE", smoke_source)
         self.assertIn("/app/v3/api/ai/models", smoke_source)
         self.assertIn("Runtime Good", smoke_source)
@@ -661,7 +669,9 @@ class ModelsCatalogRuntimeStandardTest(unittest.TestCase):
         self.assertIn("/models?__browser-smoke-runtime=1", product_test_source)
         self.assertIn("models route SSR renders the SDK-backed shell without exposing private pricing fields", ssr_smoke_source)
         self.assertIn("model detail encoded id route SSR matches the catalog card navigation path", ssr_smoke_source)
-        self.assertIn("'/models/openai%2Fglobal%2Fgpt-5.5-pro'", ssr_smoke_source)
+        self.assertIn("'/models/openai%2Fgpt-5.5-pro'", ssr_smoke_source)
+        self.assertNotIn("'/models/openai/global/gpt-5.5-pro'", ssr_smoke_source)
+        self.assertNotIn("path: '/models/:provider/:region/:model'", ssr_smoke_source)
         self.assertIn("path: '/models/:id'", ssr_smoke_source)
 
     def _route_entry(self, classification: dict[str, Any], route: str) -> dict[str, Any]:

@@ -2,7 +2,7 @@
 
 ## 1. Purpose
 
-`sdkwork-claw-router` is the Rust rewrite of `apps/sdkwork-api-router`. The rewrite keeps the user-facing product and visual design from `apps/sdkwork-claw-router-portal`, but replaces the runtime architecture with a high-performance, modular Rust service set.
+`sdkwork-claw-router` is the Rust-first AI gateway runtime for Spring AI Plus. It keeps the user-facing product boundary in `apps/sdkwork-claw-router-portal` and implements the runtime architecture as a high-performance, modular Rust service set.
 
 This document defines the implementation boundary between:
 
@@ -260,7 +260,7 @@ Rust services should default to:
 - structured tracing with request IDs
 - no blocking work on async executor threads
 
-The old `sdkwork-api-router` workspace is an implementation reference for crate decomposition and dependency choices, not a copy target. New code should keep the first production slice narrow and verifiable.
+New runtime code should keep each production slice narrow, modular, and verifiable without depending on retired workspace references.
 
 ## 10. Security Standard
 

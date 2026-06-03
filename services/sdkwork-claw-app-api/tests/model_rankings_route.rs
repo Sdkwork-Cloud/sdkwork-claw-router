@@ -295,9 +295,7 @@ async fn database_config_app_models_route_reads_global_commercial_catalog() {
         assert_eq!(vendor_code, item["vendorCode"]);
         if item["model"] == "gpt-5.5-pro" || item["model"] == "gpt-5.5" {
             assert_eq!("reference", item["priceAvailability"]["status"]);
-            assert!(item["officialReferenceUnitPrice"]
-                .as_str()
-                .is_some_and(|price| !price.is_empty()));
+            assert_model_catalog_has_reference_price(item, "global", "llm_input_token");
         }
     }
 }
@@ -368,11 +366,52 @@ async fn assert_catalog_meter_contains(
             .unwrap_or_else(|| {
                 panic!("expected installed model {expected_model} for meter {billing_meter}")
             });
-        assert!(item["officialReferenceUnitPrice"]
-            .as_str()
-            .is_some_and(|price| !price.is_empty()));
+        assert_model_catalog_has_reference_price(item, "global", billing_meter);
         assert_eq!("reference", item["priceAvailability"]["status"]);
     }
+}
+
+fn assert_model_catalog_has_reference_price(
+    item: &serde_json::Value,
+    region_code: &str,
+    billing_meter: &str,
+) {
+    let item_object = item.as_object().unwrap();
+    assert!(
+        !item_object.contains_key("regionCode"),
+        "model catalog item identity must not be region-scoped"
+    );
+    assert!(
+        !item_object.contains_key("officialReferenceUnitPrice"),
+        "reference prices must be exposed through officialReferencePrices[]"
+    );
+    assert!(
+        !item_object.contains_key("officialReferenceCurrency"),
+        "reference currencies must be exposed through officialReferencePrices[]"
+    );
+    let prices = item["officialReferencePrices"]
+        .as_array()
+        .unwrap_or_else(|| {
+            panic!(
+                "expected officialReferencePrices[] for {}",
+                item["catalogKey"]
+            )
+        });
+    let price = prices
+        .iter()
+        .find(|price| price["regionCode"] == region_code && price["billingMeter"] == billing_meter)
+        .unwrap_or_else(|| {
+            panic!(
+                "missing official reference price for {}/{billing_meter} on {}",
+                region_code, item["catalogKey"]
+            )
+        });
+    assert!(price["unitPrice"]
+        .as_str()
+        .is_some_and(|value| !value.is_empty()));
+    assert!(price["currency"]
+        .as_str()
+        .is_some_and(|value| !value.is_empty()));
 }
 
 async fn request_json(router: axum::Router, path: &str) -> serde_json::Value {
@@ -486,25 +525,7 @@ fn is_regional_catalog_key(catalog_key: &str) -> bool {
         .collect::<Vec<_>>();
     matches!(
         parts.as_slice(),
-        [_vendor, region, _model @ ..] if known_region_segment(region)
-    )
-}
-
-fn known_region_segment(value: &str) -> bool {
-    matches!(
-        value.trim().to_ascii_lowercase().as_str(),
-        "global"
-            | "cn"
-            | "us"
-            | "eu"
-            | "ap"
-            | "apac"
-            | "jp"
-            | "sg"
-            | "hk"
-            | "aws"
-            | "azure"
-            | "gcp"
-            | "local"
+        [_vendor, region, _model @ ..]
+            if sdkwork_claw_product::domain::is_model_region_segment(region)
     )
 }

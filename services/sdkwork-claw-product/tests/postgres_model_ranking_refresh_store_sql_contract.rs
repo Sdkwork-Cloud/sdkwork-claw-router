@@ -59,6 +59,18 @@ fn postgres_model_ranking_refresh_selects_model_scope_by_exact_tenant_then_tenan
 }
 
 #[test]
+fn postgres_model_ranking_refresh_uses_public_active_models_only() {
+    for expected in [
+        "AND m.deleted_at IS NULL",
+        "AND COALESCE(m.release_stage, 1) IN (1, 2)",
+        "AND COALESCE(m.shelf_state, 1) = 1",
+        "AND COALESCE(m.routing_state, 1) = 1",
+    ] {
+        assert_sql_contains(POSTGRES_MODEL_RANKING_REFRESH_STORE, expected);
+    }
+}
+
+#[test]
 fn postgres_model_ranking_refresh_reads_previous_rank_from_same_scope_period_and_earlier_snapshot()
 {
     for expected in [

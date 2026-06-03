@@ -23,7 +23,7 @@ test("admin messaging center follows the usage page adaptive viewport pattern", 
   for (const expected of [
     "custom-scrollbar",
     "className=\"flex min-h-0 flex-1 flex-col gap-1 overflow-y-auto px-3 py-4 custom-scrollbar\"",
-    "viewportClassName=\"custom-scrollbar\"",
+    "viewportClassName=\"min-h-0 flex-1 custom-scrollbar\"",
   ]) {
     assert.ok(adminResourceCenterSource.includes(expected), `missing reusable resource viewport marker: ${expected}`);
   }

@@ -12,6 +12,7 @@ from .platform import PlatformApi
 from .system import SystemApi
 from .prompts import PromptsApi
 from .service_providers import ServiceProvidersApi
+from .sites import SitesApi
 from .storage import StorageApi
 
-__all__ = ['AgentsApi', 'AiApi', 'CommerceApi', 'ContentApi', 'EcosystemApi', 'IamApi', 'IntegrationApi', 'McpApi', 'MessagingApi', 'OpenPlatformApi', 'PlatformApi', 'SystemApi', 'PromptsApi', 'ServiceProvidersApi', 'StorageApi']
+__all__ = ['AgentsApi', 'AiApi', 'CommerceApi', 'ContentApi', 'EcosystemApi', 'IamApi', 'IntegrationApi', 'McpApi', 'MessagingApi', 'OpenPlatformApi', 'PlatformApi', 'SystemApi', 'PromptsApi', 'ServiceProvidersApi', 'SitesApi', 'StorageApi']

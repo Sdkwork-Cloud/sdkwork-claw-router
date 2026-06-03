@@ -9,6 +9,14 @@ function readPortalFile(relativePath: string): string {
   return readFileSync(resolve(PORTAL_ROOT, relativePath), "utf8");
 }
 
+function sourceBetween(source: string, startToken: string, endToken: string): string {
+  const start = source.indexOf(startToken);
+  const end = source.indexOf(endToken, start + startToken.length);
+  assert.notEqual(start, -1, `missing source start token: ${startToken}`);
+  assert.notEqual(end, -1, `missing source end token: ${endToken}`);
+  return source.slice(start, end);
+}
+
 test("admin model site service is SDK-backed and uses confirmed route surface", () => {
   const modelService = readPortalFile("packages/sdkwork-claw-router-admin-model/src/modelService.ts");
 
@@ -109,7 +117,6 @@ test("admin model page exposes site management route and navigation markers", ()
   }
 
   for (const forbidden of [
-    "header={(",
     "admin.model.site.title",
     "admin.model.site.subtitle",
     "xl:grid-cols-[minmax(0,1fr)_420px]",
@@ -131,9 +138,31 @@ test("admin model site page uses compact admin content padding", () => {
   const adminLayoutSource = readPortalFile("src/AdminLayout.tsx");
 
   assert.ok(
-    adminLayoutSource.includes('className="flex min-h-0 flex-1 flex-col p-[5px]"'),
+    adminLayoutSource.includes('className="flex min-h-0 flex-1 flex-col overflow-hidden p-[5px]"'),
     "admin right content wrapper should use 5px padding on all sides",
   );
+});
+
+test("admin model site table fills the available admin viewport", () => {
+  const modelAdminSource = readPortalFile("packages/sdkwork-claw-router-admin-model/src/index.tsx");
+  const sitePageSource = sourceBetween(modelAdminSource, "export function SiteAdmin", "function ModelMappingAdmin");
+
+  for (const expected of [
+    "AdminTableShell",
+    "data-admin-site-table-card",
+    "data-admin-site-table-viewport",
+    'className="flex-1 min-h-0"',
+    'viewportClassName="min-h-0 flex-1"',
+    "sticky top-0 z-10",
+  ]) {
+    assert.ok(sitePageSource.includes(expected), `missing adaptive admin site table marker: ${expected}`);
+  }
+
+  assert.ok(
+    sitePageSource.includes('className="flex h-full min-h-0 w-full flex-col overflow-hidden bg-slate-50 text-slate-900 dark:bg-[#0f0f10] dark:text-slate-100"'),
+    "site page should fill the admin viewport without creating document scroll",
+  );
+  assert.equal(sitePageSource.includes("min-h-screen"), false, "site page must not use min-h-screen inside AdminLayout");
 });
 
 test("admin model site form supports upstream provider profile fields", () => {
@@ -146,7 +175,7 @@ test("admin model site form supports upstream provider profile fields", () => {
   const siteFormStart = modelAdminSource.indexOf("function SiteFormModal");
   const siteFormEnd = modelAdminSource.indexOf("function ModelMappingFormModal");
   const siteInputStart = modelAdminSource.indexOf("function siteInputFromForm");
-  const siteInputEnd = modelAdminSource.indexOf("function modelMappingInputsFromForm");
+  const siteInputEnd = modelAdminSource.indexOf("function modelMappingInputFromForm");
   assert.notEqual(siteFormStart, -1, "missing SiteFormModal source start");
   assert.notEqual(siteFormEnd, -1, "missing SiteFormModal source end");
   assert.notEqual(siteInputStart, -1, "missing siteInputFromForm source start");
@@ -202,6 +231,30 @@ test("admin model site form supports upstream provider profile fields", () => {
   );
 });
 
+test("admin model site form uses a larger single-click logo uploader", () => {
+  const modelAdminSource = readPortalFile("packages/sdkwork-claw-router-admin-model/src/index.tsx");
+  const siteFormStart = modelAdminSource.indexOf("function SiteFormModal");
+  const siteFormEnd = modelAdminSource.indexOf("function ModelMappingFormModal");
+  assert.notEqual(siteFormStart, -1, "missing SiteFormModal source start");
+  assert.notEqual(siteFormEnd, -1, "missing SiteFormModal source end");
+  const siteFormSource = modelAdminSource.slice(siteFormStart, siteFormEnd);
+
+  for (const token of [
+    "data-admin-site-logo-upload-panel",
+    "data-admin-site-logo-upload-placeholder",
+    "data-admin-site-logo-upload-control",
+    "h-28 w-28",
+    "cursor-pointer",
+    "sr-only",
+    'accept="image/*"',
+  ]) {
+    assert.ok(siteFormSource.includes(token), `missing logo uploader marker: ${token}`);
+  }
+
+  assert.doesNotMatch(siteFormSource, /inline-flex cursor-pointer items-center gap-2[\s\S]*admin\.model\.site\.form\.uploadLogo/);
+  assert.match(siteFormSource, /data-admin-site-logo-upload-panel[\s\S]*<input[\s\S]*type="file"/);
+});
+
 test("admin model site form uses right-side vendor table with picker and row removal", () => {
   const modelAdminSource = readPortalFile("packages/sdkwork-claw-router-admin-model/src/index.tsx");
   const modelI18nSource = readPortalFile("packages/sdkwork-claw-router-i18n/src/resources/admin/model.ts");
@@ -238,4 +291,118 @@ test("admin model site form uses right-side vendor table with picker and row rem
   assert.match(siteFormSource, /onClick=\{\(\) => removeSelectedVendorCode\(vendorCode\)\}/);
   assert.doesNotMatch(siteFormSource, /vendorSummary/);
   assert.doesNotMatch(siteFormSource, /setIsVendorPickerOpen\(\(value\) => !value\)/);
+});
+
+test("admin model site form opens as a left-side drawer instead of a centered modal", () => {
+  const modelAdminSource = readPortalFile("packages/sdkwork-claw-router-admin-model/src/index.tsx");
+  const siteFormStart = modelAdminSource.indexOf("function SiteFormModal");
+  const siteFormEnd = modelAdminSource.indexOf("function ModelMappingFormModal");
+  assert.notEqual(siteFormStart, -1, "missing SiteFormModal source start");
+  assert.notEqual(siteFormEnd, -1, "missing SiteFormModal source end");
+  const siteFormSource = modelAdminSource.slice(siteFormStart, siteFormEnd);
+
+  for (const token of [
+    "data-admin-site-form-drawer",
+    "data-admin-site-form-drawer-panel",
+    "justify-start",
+    "rounded-r-2xl",
+    'aria-label={t(\'common.actions.closeDrawer\')}',
+  ]) {
+    assert.ok(siteFormSource.includes(token), `missing left drawer marker: ${token}`);
+  }
+
+  assert.match(siteFormSource, /<aside data-admin-site-form-drawer-panel/);
+  assert.match(siteFormSource, /className="flex h-full w-\[min\(94vw,1120px\)\]/);
+  assert.doesNotMatch(siteFormSource, /items-center justify-center bg-slate-950\/50 p-4/);
+  assert.doesNotMatch(siteFormSource, /w-full max-w-6xl overflow-hidden rounded-2xl/);
+});
+
+test("admin model site vendor picker supports multi-select while mapping pickers stay single-select", () => {
+  const modelAdminSource = readPortalFile("packages/sdkwork-claw-router-admin-model/src/index.tsx");
+  const siteFormStart = modelAdminSource.indexOf("function SiteFormModal");
+  const siteFormEnd = modelAdminSource.indexOf("function ModelMappingFormModal");
+  const mappingFormStart = modelAdminSource.indexOf("function ModelMappingFormModal");
+  const mappingFormEnd = modelAdminSource.indexOf("function ModelMappingRowsTable");
+  const pickerStart = modelAdminSource.indexOf("function VendorPickerModal");
+  const pickerEnd = modelAdminSource.indexOf("function FormInput");
+  assert.notEqual(siteFormStart, -1, "missing SiteFormModal source start");
+  assert.notEqual(siteFormEnd, -1, "missing SiteFormModal source end");
+  assert.notEqual(mappingFormStart, -1, "missing ModelMappingFormModal source start");
+  assert.notEqual(mappingFormEnd, -1, "missing ModelMappingFormModal source end");
+  assert.notEqual(pickerStart, -1, "missing VendorPickerModal source start");
+  assert.notEqual(pickerEnd, -1, "missing VendorPickerModal source end");
+  const siteFormSource = modelAdminSource.slice(siteFormStart, siteFormEnd);
+  const mappingFormSource = modelAdminSource.slice(mappingFormStart, mappingFormEnd);
+  const pickerSource = modelAdminSource.slice(pickerStart, pickerEnd);
+
+  for (const token of [
+    "type VendorPickerSelectionMode = 'single' | 'multiple'",
+    "selectionMode = 'single'",
+    "selectedVendorCodes = []",
+    "onSelectionChange",
+    "toggleVendorSelection",
+    "type={selectionMode === 'multiple' ? 'checkbox' : 'radio'}",
+    "admin.model.site.form.vendorPickerDone",
+  ]) {
+    assert.ok(pickerSource.includes(token) || modelAdminSource.includes(token), `missing multi-select picker marker: ${token}`);
+  }
+
+  assert.ok(siteFormSource.includes('selectionMode="multiple"'), "site form should open vendor picker in multi-select mode");
+  assert.ok(siteFormSource.includes("selectedVendorCodes={selectedVendorCodes}"), "site form should pass selected vendor codes");
+  assert.ok(siteFormSource.includes("onSelectionChange={setSelectedVendorCodes}"), "site form should update selected vendors without closing per click");
+  assert.doesNotMatch(siteFormSource, /onSelect=\{\(vendor\) => \{\s*selectVendorCode\(vendor\.vendorCode\);\s*setIsVendorPickerOpen\(false\);/);
+  assert.doesNotMatch(mappingFormSource, /selectionMode="multiple"/, "model mapping vendor pickers should remain single-select");
+});
+
+test("admin model site vendor picker puts the selection control before vendor content", () => {
+  const modelAdminSource = readPortalFile("packages/sdkwork-claw-router-admin-model/src/index.tsx");
+  const pickerStart = modelAdminSource.indexOf("function VendorPickerModal");
+  const pickerEnd = modelAdminSource.indexOf("function FormInput");
+  assert.notEqual(pickerStart, -1, "missing VendorPickerModal source start");
+  assert.notEqual(pickerEnd, -1, "missing VendorPickerModal source end");
+  const pickerSource = modelAdminSource.slice(pickerStart, pickerEnd);
+  const controlIndex = pickerSource.indexOf("data-admin-vendor-picker-choice-control");
+  const infoIndex = pickerSource.indexOf("data-admin-vendor-picker-vendor-info");
+  const statusIndex = pickerSource.indexOf("data-admin-vendor-picker-vendor-status");
+
+  assert.notEqual(controlIndex, -1, "vendor picker selection control marker must exist");
+  assert.notEqual(infoIndex, -1, "vendor picker info marker must exist");
+  assert.notEqual(statusIndex, -1, "vendor picker status marker must exist");
+  assert.ok(controlIndex < infoIndex, "selection control should be placed before vendor name and code");
+  assert.ok(infoIndex < statusIndex, "vendor status should stay after vendor name and code");
+  assert.match(pickerSource, /className=\{`flex w-full items-center gap-3/);
+  assert.doesNotMatch(pickerSource, /justify-between gap-3[\s\S]*data-admin-vendor-picker-choice-control/);
+});
+
+test("admin model site form edits domains with a dynamic input list", () => {
+  const modelAdminSource = readPortalFile("packages/sdkwork-claw-router-admin-model/src/index.tsx");
+  const modelI18nSource = readPortalFile("packages/sdkwork-claw-router-i18n/src/resources/admin/model.ts");
+  const siteFormStart = modelAdminSource.indexOf("function SiteFormModal");
+  const siteFormEnd = modelAdminSource.indexOf("function ModelMappingFormModal");
+  assert.notEqual(siteFormStart, -1, "missing SiteFormModal source start");
+  assert.notEqual(siteFormEnd, -1, "missing SiteFormModal source end");
+  const siteFormSource = modelAdminSource.slice(siteFormStart, siteFormEnd);
+
+  for (const token of [
+    "domainInputs",
+    "setDomainInputs",
+    "addDomainInput",
+    "removeDomainInput",
+    "updateDomainInput",
+    "data-admin-site-domain-input-list",
+    "data-admin-site-domain-input-row",
+    "data-admin-site-domain-input",
+    "data-admin-site-domain-add",
+    "data-admin-site-domain-remove",
+    "name=\"domains\" type=\"hidden\"",
+    "admin.model.site.form.addDomain",
+    "admin.model.site.form.removeDomain",
+    "admin.model.site.form.domainPlaceholder",
+  ]) {
+    assert.ok(siteFormSource.includes(token) || modelI18nSource.includes(`"${token}"`), `missing dynamic domain marker: ${token}`);
+  }
+
+  assert.match(siteFormSource, /value=\{domainInputs\.join\('\\n'\)\}/);
+  assert.match(siteFormSource, /domainInputs\.map\(\(domain, index\) =>/);
+  assert.doesNotMatch(siteFormSource, /<textarea[\s\S]*name="domains"/);
 });

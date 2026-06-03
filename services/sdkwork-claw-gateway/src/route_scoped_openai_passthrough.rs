@@ -863,6 +863,7 @@ where
         billing_meter: context.billing_meter.clone(),
         provider_code: Some(route.provider_code.clone()),
         channel_id: Some(route.channel_id),
+        region_code: Some(route.region_code.clone()),
     })?;
     let official_reference_amount = route_scoped_meter_amount(
         price.official_reference.unit_price.unit_price,
@@ -911,6 +912,7 @@ where
         channel_id: route.channel_id,
         provider_model: provider_native_model.clone(),
         provider_native_model,
+        region_code: route.region_code.clone(),
         request_path: context.request_path.clone(),
         http_method: context.http_method.clone(),
         user_agent: context.user_agent.clone(),
@@ -969,6 +971,7 @@ where
         billing_meter: billing_meter.clone(),
         provider_code: Some(route.provider_code.clone()),
         channel_id: Some(route.channel_id),
+        region_code: Some(route.region_code.clone()),
     })?;
     let official_reference_amount = route_scoped_meter_amount(
         price.official_reference.unit_price.unit_price,
@@ -1015,6 +1018,7 @@ where
         channel_id: route.channel_id,
         provider_model: provider_native_model.clone(),
         provider_native_model,
+        region_code: route.region_code.clone(),
         request_path: context.request_path.clone(),
         http_method: context.http_method.clone(),
         user_agent: context.user_agent.clone(),
@@ -1524,7 +1528,8 @@ fn route_scoped_metered_pricing_snapshot(
         },
         "provider": {
             "code": route.provider_code.as_str(),
-            "channelId": route.channel_id
+            "channelId": route.channel_id,
+            "regionCode": route.region_code.as_str()
         },
         "pricingPlan": {
             "code": price.pricing_plan_code.as_str()
@@ -1566,7 +1571,8 @@ fn route_scoped_api_request_pricing_snapshot(
         },
         "provider": {
             "code": route.provider_code.as_str(),
-            "channelId": route.channel_id
+            "channelId": route.channel_id,
+            "regionCode": route.region_code.as_str()
         },
         "pricingPlan": {
             "code": price.pricing_plan_code.as_str()
@@ -1880,7 +1886,10 @@ where
     let channel_route = catalog
         .list_provider_channel_routes()
         .into_iter()
-        .find(|route| route.channel_id == binding.channel_id)
+        .find(|route| {
+            route.channel_id == binding.channel_id
+                && binding_region_matches(&route.region_code, binding.region_code.as_deref())
+        })
         .ok_or_else(|| {
             RouteScopedOpenAiPassthroughError::provider_route_unavailable(format!(
                 "provider route is not available for sticky object {} {}: channel {} is not configured",
@@ -1896,7 +1905,10 @@ where
         let route = catalog
             .list_provider_routes(&catalog_model.catalog_key)
             .into_iter()
-            .find(|route| route.channel_id == binding.channel_id)
+            .find(|route| {
+                route.channel_id == binding.channel_id
+                    && binding_region_matches(&route.region_code, binding.region_code.as_deref())
+            })
             .ok_or_else(|| {
                 RouteScopedOpenAiPassthroughError::provider_route_unavailable(format!(
                     "provider route is not available for sticky object {} {}: channel {} does not serve model {}",
@@ -1910,6 +1922,7 @@ where
                 billing_meter: intent.billing_meter.clone(),
                 provider_code: Some(route.provider_code.clone()),
                 channel_id: Some(route.channel_id),
+                region_code: Some(route.region_code.clone()),
             })
             .map_err(|error| {
                 RouteScopedOpenAiPassthroughError::pricing_unavailable(error.to_string())
@@ -1924,6 +1937,25 @@ where
     Ok(channel_route_to_passthrough_target(channel_route))
 }
 
+fn binding_region_matches(route_region_code: &str, binding_region_code: Option<&str>) -> bool {
+    binding_region_code
+        .map(|binding_region_code| same_region_code(route_region_code, binding_region_code))
+        .unwrap_or(true)
+}
+
+fn same_region_code(left: &str, right: &str) -> bool {
+    normalize_region_code(left).eq_ignore_ascii_case(&normalize_region_code(right))
+}
+
+fn normalize_region_code(value: &str) -> String {
+    let value = value.trim();
+    if value.is_empty() {
+        "global".to_owned()
+    } else {
+        value.to_owned()
+    }
+}
+
 fn model_route_to_passthrough_target(
     selection: SelectedProviderRoute,
 ) -> RouteScopedOpenAiPassthroughTarget {
@@ -1935,6 +1967,7 @@ fn model_route_to_passthrough_target(
         route.provider_code.clone(),
         route.channel_id,
         route.provider_model.clone(),
+        route.region_code.clone(),
         route.base_url.clone(),
         route.secret_ref.clone(),
         route.auth_profile.clone(),
@@ -1961,6 +1994,7 @@ fn openai_provider_usage_route_from_model_route(
     provider_code: String,
     channel_id: i64,
     provider_model: String,
+    region_code: String,
     provider_base_url: Option<String>,
     provider_secret_ref: Option<String>,
     provider_auth_profile: ProviderAuthProfile,
@@ -1974,6 +2008,7 @@ fn openai_provider_usage_route_from_model_route(
         provider_code,
         channel_id,
         provider_model,
+        region_code,
         provider_base_url,
         provider_secret_ref,
         provider_auth_profile,
@@ -1992,6 +2027,7 @@ fn openai_provider_usage_route_from_channel_route(
         provider_code: route.provider_code.clone(),
         channel_id: route.channel_id,
         provider_model: provider_native_model_id(default_route_scoped_api_request_catalog_key()),
+        region_code: route.region_code.clone(),
         provider_base_url: route.base_url.clone(),
         provider_secret_ref: route.secret_ref.clone(),
         provider_auth_profile: route.auth_profile.clone(),
@@ -2236,17 +2272,189 @@ mod tests {
                 "openrouter",
                 vec!["chat"],
             )
-            .with_catalog_key("openrouter/global/anthropic/claude-3-opus"),
+            .with_catalog_key("openrouter/anthropic/claude-3-opus"),
         );
 
         let model = find_catalog_model_for_passthrough(&catalog, "anthropic/claude-3-opus")
             .expect("native slash model should resolve through AiModel.model");
 
-        assert_eq!(
-            "openrouter/global/anthropic/claude-3-opus",
-            model.catalog_key
-        );
+        assert_eq!("openrouter/anthropic/claude-3-opus", model.catalog_key);
         assert_eq!("anthropic/claude-3-opus", model.model);
+    }
+
+    #[test]
+    fn model_route_passthrough_target_preserves_selected_region_context() {
+        let route = ModelProviderRoute::new_for_catalog_key(
+            "openai/gpt-4o-mini",
+            "gpt-4o-mini",
+            "openrouter",
+            3001,
+            "openrouter/gpt-4o-mini",
+        )
+        .with_region_code("cn")
+        .with_provider_endpoint(
+            Some("https://cn.openrouter.example/v1".to_owned()),
+            Some("vault://providers/openrouter/cn".to_owned()),
+        );
+
+        let target = model_route_to_passthrough_target(SelectedProviderRoute {
+            route,
+            policy_id: Some(9001),
+            rule_id: Some(9102),
+        });
+
+        let usage_route = target.usage_route.as_ref().unwrap();
+        assert_eq!("cn", usage_route.region_code);
+        assert_eq!("cn", target.channel_usage_route.region_code);
+    }
+
+    #[test]
+    fn sticky_binding_lookup_preserves_bound_region_for_same_channel_deployments() {
+        let mut catalog = route_scoped_test_catalog();
+        catalog.add_provider_channel_route(
+            ProviderChannelRoute::new("openrouter", 3001)
+                .with_region_code("global")
+                .with_provider_endpoint(
+                    Some("https://global.openrouter.example/v1".to_owned()),
+                    Some("vault://providers/openrouter/global".to_owned()),
+                ),
+        );
+        catalog.add_provider_channel_route(
+            ProviderChannelRoute::new("openrouter", 3001)
+                .with_region_code("cn")
+                .with_provider_endpoint(
+                    Some("https://cn.openrouter.example/v1".to_owned()),
+                    Some("vault://providers/openrouter/cn".to_owned()),
+                ),
+        );
+        let binding = StickyObjectRouteBinding {
+            object_type: "file".to_owned(),
+            object_id: "file_123".to_owned(),
+            parent_object_type: None,
+            parent_object_id: None,
+            provider_code: "openrouter".to_owned(),
+            channel_id: 3001,
+            vendor_code: None,
+            api_code: Some("openai.files".to_owned()),
+            catalog_key: None,
+            provider_model: None,
+            region_code: Some("cn".to_owned()),
+            sticky_scope: Some("object".to_owned()),
+        };
+        let intent = RouteScopedOpenAiPassthroughIntent {
+            requested_model: None,
+            requested_model_source: None,
+            request_path: "/v1/files/file_123/content".to_owned(),
+            route_key: "openai/management/files".to_owned(),
+            api_code: "openai.files".to_owned(),
+            capability: RoutingCapability::Network,
+            billing_meter: BillingMeter::ApiRequest,
+            route_strategy: AiRouteStrategy::LookupSticky,
+            failure_strategy: AiRouteFailureStrategy::FailClosed,
+            model_requirement: AiRouteModelRequirement::Ignored,
+            sticky_object_type: Some("file"),
+            sticky_scope: Some("object"),
+            routes_model_when_present: false,
+        };
+
+        let target = sticky_binding_to_passthrough_target(
+            &catalog,
+            &route_scoped_test_context(),
+            &intent,
+            &binding,
+        )
+        .unwrap();
+
+        assert_eq!("cn", target.channel_usage_route.region_code);
+        assert_eq!(
+            Some("https://cn.openrouter.example/v1".to_owned()),
+            target.base_url
+        );
+    }
+
+    #[test]
+    fn route_scoped_pricing_snapshots_include_selected_region_context() {
+        let mut catalog = route_scoped_test_catalog();
+        catalog.add_provider_route(
+            ModelProviderRoute::new_for_catalog_key(
+                "openai/gpt-4o-mini",
+                "gpt-4o-mini",
+                "openrouter",
+                3001,
+                "openrouter/gpt-4o-mini",
+            )
+            .with_region_code("cn")
+            .with_provider_endpoint(
+                Some("https://cn.openrouter.example/v1".to_owned()),
+                Some("vault://providers/openrouter/cn".to_owned()),
+            ),
+        );
+        catalog.add_price(
+            ModelPrice::new_for_catalog_key(
+                "openai/gpt-4o-mini",
+                "gpt-4o-mini",
+                PriceSide::OfficialReference,
+                BillingMeter::ImageResult,
+                Money::cny("0.020000").unwrap(),
+            )
+            .with_region_code("cn"),
+        );
+        catalog.add_price(
+            ModelPrice::new_for_catalog_key(
+                "openai/gpt-4o-mini",
+                "gpt-4o-mini",
+                PriceSide::UpstreamCost,
+                BillingMeter::ImageResult,
+                Money::cny("0.010000").unwrap(),
+            )
+            .for_provider("openrouter", 3001)
+            .with_region_code("cn"),
+        );
+        let context = RouteScopedMeteredUsageContext {
+            api_key_context: route_scoped_test_context(),
+            request_id: Some("req-1".to_owned()),
+            trace_id: Some("trace-1".to_owned()),
+            requested_model: "gpt-4o-mini".to_owned(),
+            request_body: json!({}),
+            request_path: "/v1/images/generations".to_owned(),
+            http_method: "POST".to_owned(),
+            user_agent: None,
+            billing_meter: BillingMeter::ImageResult,
+        };
+        let route = OpenAiProviderRoute {
+            catalog_key: "openai/gpt-4o-mini".to_owned(),
+            policy_id: Some(9001),
+            rule_id: Some(9102),
+            provider_code: "openrouter".to_owned(),
+            channel_id: 3001,
+            provider_model: "openrouter/gpt-4o-mini".to_owned(),
+            region_code: "cn".to_owned(),
+            provider_base_url: Some("https://cn.openrouter.example/v1".to_owned()),
+            provider_secret_ref: Some("vault://providers/openrouter/cn".to_owned()),
+            provider_auth_profile: ProviderAuthProfile::default(),
+            provider_timeout_ms: None,
+            provider_retry_policy: None,
+        };
+        let price = PricingResolver::new(&catalog)
+            .resolve(ResolveModelPriceQuery {
+                api_key_id: context.api_key_context.api_key_id,
+                model: route.catalog_key.clone(),
+                billing_meter: context.billing_meter.clone(),
+                provider_code: Some(route.provider_code.clone()),
+                channel_id: Some(route.channel_id),
+                region_code: Some(route.region_code.clone()),
+            })
+            .unwrap();
+
+        let snapshot = route_scoped_metered_pricing_snapshot(
+            &context,
+            &route,
+            "openrouter/gpt-4o-mini",
+            &price,
+            "1",
+        );
+
+        assert!(snapshot.contains(r#""regionCode":"cn""#), "{snapshot}");
     }
 
     #[test]

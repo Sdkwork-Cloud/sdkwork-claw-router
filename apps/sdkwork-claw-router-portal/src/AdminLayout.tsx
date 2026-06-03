@@ -131,7 +131,7 @@ export function AdminLayout({ isDark, toggleTheme }: { isDark: boolean; toggleTh
   return (
     <div
       data-admin-business-route={businessRouteActive ? 'active' : undefined}
-      className="flex min-h-screen flex-col bg-slate-50 dark:bg-black font-sans text-slate-900 dark:text-white"
+      className="flex h-[100dvh] min-h-0 flex-col overflow-hidden bg-slate-50 dark:bg-black font-sans text-slate-900 dark:text-white"
     >
       <AdminHeader
         isDark={isDark}
@@ -140,7 +140,7 @@ export function AdminLayout({ isDark, toggleTheme }: { isDark: boolean; toggleTh
         onModuleChange={() => {}}
       />
 
-      <div className="flex flex-1 pt-16">
+      <div className="flex min-h-0 flex-1 overflow-hidden pt-16">
         <div className="w-64 min-h-0 bg-white dark:bg-[#121212] border-r border-slate-200 dark:border-white/10 flex flex-col overflow-hidden">
           <div className="min-h-0 flex-1 overflow-y-auto py-4 px-3 flex flex-col gap-2">
             {currentModuleMenu.items?.map((item) => (
@@ -169,8 +169,8 @@ export function AdminLayout({ isDark, toggleTheme }: { isDark: boolean; toggleTh
           </div>
         </div>
 
-        <div className="flex-1 flex flex-col bg-slate-50 dark:bg-[#0a0a0a] min-w-0 relative">
-          <div className="flex min-h-0 flex-1 flex-col p-[5px]">
+        <div className="flex-1 flex min-h-0 flex-col overflow-hidden bg-slate-50 dark:bg-[#0a0a0a] min-w-0 relative">
+          <div className="flex min-h-0 flex-1 flex-col overflow-hidden p-[5px]">
             <Outlet />
           </div>
         </div>

@@ -510,6 +510,7 @@ declare module '@sdkwork/generation-pc-react/react' {
   }
 
   export interface SdkworkGenerationReferencePrice {
+    regionCode: string;
     billingMeter: string;
     currency: string;
     unitPrice: string;
@@ -521,9 +522,7 @@ declare module '@sdkwork/generation-pc-react/react' {
   }
 
   export interface SdkworkGenerationPricedModel {
-    officialReferenceCurrency?: string | null;
     officialReferencePrices: readonly SdkworkGenerationReferencePrice[];
-    officialReferenceUnitPrice?: string | null;
     priceAvailability: SdkworkGenerationPriceAvailability;
   }
 

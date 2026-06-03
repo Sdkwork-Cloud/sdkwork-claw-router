@@ -4,7 +4,7 @@ use crate::domain::{
     AiModel, BillingMeter, ChannelGroup, ChannelGroupMetricSnapshot, DecimalValue, DomainResult,
     GatewayAccessPolicy, GatewayApiKey, ModelMappingRule, ModelPrice, ModelProviderRoute,
     ModelVendorDefinition, Money, PriceSide, PricingPlan, ProviderChannelRoute, QuotaPolicy,
-    RoutingPolicy, RoutingRule,
+    ResolveModelMappingContext, RoutingPolicy, RoutingRule,
 };
 use crate::infrastructure::in_memory_pricing_catalog::resolve_model_mapping_from_rules;
 use crate::infrastructure::sql::rows::{
@@ -280,11 +280,10 @@ impl PricingCatalog for RefreshableSqlPricingCatalog {
     fn resolve_model_mapping(
         &self,
         source_model: &str,
-        vendor_code: Option<&str>,
-        channel_id: Option<i64>,
+        context: &ResolveModelMappingContext,
     ) -> Option<ModelMappingRule> {
         self.current_snapshot()
-            .resolve_model_mapping(source_model, vendor_code, channel_id)
+            .resolve_model_mapping(source_model, context)
     }
 
     fn find_provider_route(&self, model: &str, provider_code: &str) -> Option<ModelProviderRoute> {
@@ -457,15 +456,9 @@ impl PricingCatalog for SqlPricingCatalogSnapshot {
     fn resolve_model_mapping(
         &self,
         source_model: &str,
-        vendor_code: Option<&str>,
-        channel_id: Option<i64>,
+        context: &ResolveModelMappingContext,
     ) -> Option<ModelMappingRule> {
-        resolve_model_mapping_from_rules(
-            &self.model_mappings,
-            source_model,
-            vendor_code,
-            channel_id,
-        )
+        resolve_model_mapping_from_rules(&self.model_mappings, source_model, context)
     }
 
     fn find_provider_route(&self, model: &str, provider_code: &str) -> Option<ModelProviderRoute> {

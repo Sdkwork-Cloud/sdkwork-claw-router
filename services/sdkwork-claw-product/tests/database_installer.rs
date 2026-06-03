@@ -128,6 +128,12 @@ async fn sqlite_installer_installs_schema_and_sdkwork_models_catalog_once() {
     assert_sqlite_columns_absent(&pool, "ai_model", &["region_code"]).await;
     assert_sqlite_columns_absent(&pool, "ai_model_capability", &["region_code"]).await;
     assert_sqlite_columns_absent(&pool, "ai_model_vendor", &["region_code"]).await;
+    assert_sqlite_columns_exist(
+        &pool,
+        "ai_model_vendor",
+        &["supported_protocols", "client_api_compatibility"],
+    )
+    .await;
     assert_sqlite_columns_absent(&pool, "ai_model_family", &["region_code"]).await;
     assert_table_exists(&pool, "ai_modality").await;
     assert_table_exists(&pool, "ai_api_endpoint").await;
@@ -451,6 +457,12 @@ async fn sqlite_installer_installs_schema_and_sdkwork_models_catalog_once() {
     assert!(
         migration_count >= 2,
         "installer must record schema and catalog migrations"
+    );
+
+    assert_eq!(
+        InstallationStatus::Installed,
+        installer.status().await.unwrap(),
+        "fresh install must be status-clean before a second ensure pass"
     );
 
     let installed_again = installer.ensure_installed().await.unwrap();
@@ -1409,7 +1421,7 @@ async fn sqlite_installer_repairs_missing_sdkwork_models_catalog_rows_on_startup
     let pool = repair_sqlite_pool().await;
     let installer = installer(pool.clone());
     let catalog = bundled_catalog();
-    let deleted_catalog_keys = catalog_model_keys(&catalog)
+    let deleted_catalog_keys = catalog_public_model_keys(&catalog)
         .into_iter()
         .take(2)
         .collect::<Vec<_>>();
@@ -1455,6 +1467,71 @@ async fn sqlite_installer_repairs_missing_sdkwork_models_catalog_rows_on_startup
     }
 
     assert_catalog_rows(&pool, &catalog).await;
+}
+
+#[tokio::test]
+async fn sqlite_installer_reimports_sdkwork_models_catalog_when_same_version_payload_changes() {
+    let catalog_root = single_vendor_catalog_root("openai");
+    let pool = sqlite_pool().await;
+    let options = DatabaseInstallOptions::new("test", "commercial")
+        .unwrap()
+        .with_models_catalog_root(Some(catalog_root.to_string_lossy().to_string()))
+        .unwrap();
+    let installer = DatabaseInstaller::for_sqlite(pool.clone())
+        .with_options(options)
+        .unwrap();
+
+    let installed = installer.ensure_installed().await.unwrap();
+    assert_eq!(InstallationStatus::Installed, installed.status);
+
+    let original_display_name: String = sqlx::query_scalar(
+        r#"
+        SELECT display_name
+        FROM ai_model
+        WHERE tenant_id = 0
+          AND organization_id = 0
+          AND catalog_key = 'openai/gpt-5.5'
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    let original_catalog_checksum = catalog_migration_checksum(&pool).await;
+
+    let updated_display_name = "GPT-5.5 Payload Refresh Test";
+    rename_model_in_catalog_root(&catalog_root, "openai", "gpt-5.5", updated_display_name);
+
+    assert_eq!(
+        InstallationStatus::UpgradeRequired,
+        installer.status().await.unwrap(),
+        "installer status must treat a same-version sdkwork-models payload checksum change as an upgrade-required catalog refresh"
+    );
+
+    let repaired = installer.ensure_installed().await.unwrap();
+    assert_eq!(InstallationStatus::Installed, repaired.status);
+    assert!(repaired.changed);
+
+    let repaired_display_name: String = sqlx::query_scalar(
+        r#"
+        SELECT display_name
+        FROM ai_model
+        WHERE tenant_id = 0
+          AND organization_id = 0
+          AND catalog_key = 'openai/gpt-5.5'
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_ne!(original_display_name, repaired_display_name);
+    assert_eq!(updated_display_name, repaired_display_name);
+    assert_ne!(
+        original_catalog_checksum,
+        catalog_migration_checksum(&pool).await,
+        "catalog migration checksum must be updated after a same-version sdkwork-models payload refresh"
+    );
+
+    remove_catalog_root(catalog_root);
 }
 
 #[tokio::test]
@@ -3622,6 +3699,51 @@ async fn sqlite_installer_refresh_deactivates_models_removed_from_vendor_catalog
 }
 
 #[tokio::test]
+async fn sqlite_installer_refresh_imports_deprecated_catalog_models_as_inactive() {
+    let catalog_root = single_vendor_catalog_root("openai");
+    mark_model_deprecated_in_catalog_root(&catalog_root, "openai", "gpt-5.2", "gpt-5.5");
+    let pool = sqlite_pool().await;
+    let installer = installer(pool.clone());
+
+    installer
+        .refresh_catalog(CatalogRefreshOptions {
+            catalog_root: Some(catalog_root.to_string_lossy().to_string()),
+            mode: "vendor_refresh".to_owned(),
+            vendor_codes: vec!["openai".to_owned()],
+            force: true,
+            ..CatalogRefreshOptions::default()
+        })
+        .await
+        .unwrap();
+
+    let row = sqlx::query(
+        r#"
+        SELECT status, release_stage, shelf_state, routing_state, replacement_model
+        FROM ai_model
+        WHERE tenant_id = 0
+          AND organization_id = 0
+          AND catalog_key = 'openai/gpt-5.2'
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(0, row.get::<i64, _>("status"));
+    assert_eq!(3, row.get::<i64, _>("release_stage"));
+    assert_eq!(2, row.get::<i64, _>("shelf_state"));
+    assert_eq!(0, row.get::<i64, _>("routing_state"));
+    assert_eq!(
+        "gpt-5.5",
+        row.get::<String, _>("replacement_model"),
+        "deprecated sdkwork-models rows must retain their replacement pointer while becoming inactive"
+    );
+    assert_active_model_graph(&pool, "gpt-5.2", 0).await;
+    assert_active_model_graph(&pool, "gpt-5.5", 1).await;
+
+    remove_catalog_root(catalog_root);
+}
+
+#[tokio::test]
 async fn sqlite_installer_refresh_reactivates_soft_deleted_catalog_rows() {
     let catalog_root = single_vendor_catalog_root("openai");
     let catalog = sdkwork_models::load_catalog(&catalog_root).unwrap();
@@ -3955,9 +4077,9 @@ fn assert_pbkdf2_sha256_hash_format(hash: &str, label: &str) {
 }
 
 async fn assert_catalog_rows(pool: &SqlitePool, catalog: &sdkwork_models::ModelCatalog) {
-    let expected_model_keys = catalog_model_keys(catalog);
-    let expected_price_keys = catalog_price_keys(catalog);
-    let expected_ranking_keys = catalog_ranking_keys(catalog);
+    let expected_model_keys = catalog_public_model_keys(catalog);
+    let expected_price_keys = catalog_public_price_keys(catalog);
+    let expected_ranking_keys = catalog_public_ranking_keys(catalog);
 
     let vendor_count: i64 = sqlx::query_scalar(
         r#"
@@ -4014,6 +4136,60 @@ async fn assert_catalog_rows(pool: &SqlitePool, catalog: &sdkwork_models::ModelC
     );
     assert_eq!(expected_ranking_keys.len() as i64, ranking_count);
 
+    let actual_vendor_capabilities = sqlx::query(
+        r#"
+        SELECT vendor_code, supported_protocols, client_api_compatibility
+        FROM ai_model_vendor
+        WHERE status = 1
+        "#,
+    )
+    .fetch_all(pool)
+    .await
+    .unwrap()
+    .into_iter()
+    .map(|row| {
+        (
+            row.get::<String, _>("vendor_code"),
+            (
+                row.get::<Option<String>, _>("supported_protocols")
+                    .unwrap_or_default(),
+                row.get::<Option<String>, _>("client_api_compatibility")
+                    .unwrap_or_default(),
+            ),
+        )
+    })
+    .collect::<BTreeMap<_, _>>();
+
+    for vendor in &catalog.vendors {
+        let (supported_protocols, client_api_compatibility) = actual_vendor_capabilities
+            .get(&vendor.vendor.vendor_code)
+            .unwrap_or_else(|| {
+                panic!(
+                    "{} vendor metadata must be imported",
+                    vendor.vendor.vendor_code
+                )
+            });
+        let supported_protocols: Vec<String> = serde_json::from_str(supported_protocols)
+            .expect("ai_model_vendor.supported_protocols must be a JSON string array");
+        for expected in &vendor.vendor.supported_protocols {
+            assert!(
+                supported_protocols.contains(expected),
+                "{} supported_protocols must include {expected}",
+                vendor.vendor.vendor_code
+            );
+        }
+        let client_api_compatibility: serde_json::Value =
+            serde_json::from_str(client_api_compatibility)
+                .expect("ai_model_vendor.client_api_compatibility must be JSON");
+        for client_api_code in ["codex", "claude_code", "gemini_cli"] {
+            assert!(
+                client_api_compatibility.get(client_api_code).is_some(),
+                "{} client_api_compatibility must include {client_api_code}",
+                vendor.vendor.vendor_code
+            );
+        }
+    }
+
     let actual_model_capabilities = sqlx::query(
         r#"
         SELECT catalog_key, capabilities
@@ -4036,6 +4212,9 @@ async fn assert_catalog_rows(pool: &SqlitePool, catalog: &sdkwork_models::ModelC
 
     for vendor in &catalog.vendors {
         for model in &vendor.models {
+            if !catalog_model_is_publicly_active(model) {
+                continue;
+            }
             let catalog_key = catalog_model_key(&vendor.vendor.vendor_code, &model.model_id);
             let capabilities = actual_model_capabilities
                 .get(&catalog_key)
@@ -4129,7 +4308,7 @@ async fn assert_catalog_capability_projection_rows(
 ) {
     let expected_modalities = catalog_modality_codes(catalog);
     let expected_api_endpoints = catalog_api_endpoint_codes(catalog);
-    let expected_model_keys = catalog_model_keys(catalog);
+    let expected_model_keys = catalog_public_model_keys(catalog);
     let expected_model_resource_codes = catalog_model_resource_codes(catalog);
     let expected_modality_resource_codes = catalog_modality_resource_codes(catalog);
     let expected_vendor_resource_codes = catalog_vendor_codes(catalog)
@@ -5195,6 +5374,33 @@ fn catalog_model_keys(catalog: &sdkwork_models::ModelCatalog) -> Vec<String> {
     catalog_keys
 }
 
+fn catalog_public_model_keys(catalog: &sdkwork_models::ModelCatalog) -> Vec<String> {
+    let mut catalog_keys = catalog
+        .vendors
+        .iter()
+        .flat_map(|vendor| {
+            vendor
+                .models
+                .iter()
+                .filter(|model| catalog_model_is_publicly_active(model))
+                .map(|model| catalog_model_key(&vendor.vendor.vendor_code, &model.model_id))
+        })
+        .collect::<Vec<_>>();
+    catalog_keys.sort();
+    catalog_keys.dedup();
+    catalog_keys
+}
+
+fn catalog_model_is_publicly_active(model: &sdkwork_models::ModelInfo) -> bool {
+    matches!(model.release_stage.as_str(), "active" | "preview")
+        && model.shelf_state == "listed"
+        && model.routing_state == "enabled"
+        && !matches!(
+            model.lifecycle.as_str(),
+            "deprecated" | "catalog_only" | "retired"
+        )
+}
+
 fn catalog_model_key(vendor_code: &str, model_id: &str) -> String {
     format!("{vendor_code}/{model_id}")
 }
@@ -5221,20 +5427,7 @@ fn catalog_vendor_codes(catalog: &sdkwork_models::ModelCatalog) -> BTreeSet<Stri
 }
 
 fn catalog_routable_keys(catalog: &sdkwork_models::ModelCatalog) -> Vec<String> {
-    let mut catalog_keys = catalog
-        .vendors
-        .iter()
-        .flat_map(|vendor| {
-            vendor
-                .models
-                .iter()
-                .filter(|model| model.routing_state == "enabled" && model.shelf_state != "archived")
-                .map(|model| catalog_model_key(&vendor.vendor.vendor_code, &model.model_id))
-        })
-        .collect::<Vec<_>>();
-    catalog_keys.sort();
-    catalog_keys.dedup();
-    catalog_keys
+    catalog_public_model_keys(catalog)
 }
 
 #[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord)]
@@ -5246,16 +5439,21 @@ struct CatalogPriceKey {
 }
 
 fn catalog_price_keys(catalog: &sdkwork_models::ModelCatalog) -> BTreeSet<CatalogPriceKey> {
+    let public_model_keys = catalog_public_model_keys(catalog)
+        .into_iter()
+        .collect::<BTreeSet<_>>();
     catalog
         .vendors
         .iter()
         .flat_map(|vendor| vendor.pricing.iter().map(move |pricing| (vendor, pricing)))
-        .flat_map(|(vendor, pricing)| {
-            let catalog_key = sdkwork_models::catalog_key(
+        .filter(|(vendor, pricing)| {
+            public_model_keys.contains(&catalog_model_key(
                 &vendor.vendor.vendor_code,
-                &vendor.vendor.region_code,
                 &pricing.model_id,
-            );
+            ))
+        })
+        .flat_map(|(vendor, pricing)| {
+            let catalog_key = catalog_model_key(&vendor.vendor.vendor_code, &pricing.model_id);
             pricing.prices.iter().map(move |price| CatalogPriceKey {
                 catalog_key: catalog_key.clone(),
                 meter_code: price.meter_code.clone(),
@@ -5266,11 +5464,16 @@ fn catalog_price_keys(catalog: &sdkwork_models::ModelCatalog) -> BTreeSet<Catalo
         .collect()
 }
 
+fn catalog_public_price_keys(catalog: &sdkwork_models::ModelCatalog) -> BTreeSet<CatalogPriceKey> {
+    catalog_price_keys(catalog)
+}
+
 fn catalog_modality_codes(catalog: &sdkwork_models::ModelCatalog) -> BTreeSet<String> {
     catalog
         .vendors
         .iter()
         .flat_map(|vendor| vendor.models.iter())
+        .filter(|model| catalog_model_is_publicly_active(model))
         .flat_map(|model| {
             model
                 .input_modalities
@@ -5303,6 +5506,7 @@ fn catalog_api_endpoint_codes(catalog: &sdkwork_models::ModelCatalog) -> BTreeSe
         .vendors
         .iter()
         .flat_map(|vendor| vendor.models.iter())
+        .filter(|model| catalog_model_is_publicly_active(model))
         .map(catalog_model_endpoint_code)
         .collect()
 }
@@ -5312,6 +5516,7 @@ fn catalog_model_resource_codes(catalog: &sdkwork_models::ModelCatalog) -> BTree
         .vendors
         .iter()
         .flat_map(|vendor| vendor.models.iter())
+        .filter(|model| catalog_model_is_publicly_active(model))
         .map(|model| {
             format!(
                 "model.{}.{}.{}",
@@ -5371,7 +5576,7 @@ struct CatalogRankingKey {
 }
 
 fn catalog_ranking_keys(catalog: &sdkwork_models::ModelCatalog) -> BTreeSet<CatalogRankingKey> {
-    let model_catalog_keys = catalog_model_keys(catalog)
+    let model_catalog_keys = catalog_public_model_keys(catalog)
         .into_iter()
         .collect::<BTreeSet<_>>();
     catalog
@@ -5386,11 +5591,7 @@ fn catalog_ranking_keys(catalog: &sdkwork_models::ModelCatalog) -> BTreeSet<Cata
         .flat_map(|(vendor, snapshot)| {
             let model_catalog_keys = model_catalog_keys.clone();
             snapshot.items.iter().filter_map(move |item| {
-                let catalog_key = sdkwork_models::catalog_key(
-                    &vendor.vendor.vendor_code,
-                    &vendor.vendor.region_code,
-                    &item.model_id,
-                );
+                let catalog_key = catalog_model_key(&vendor.vendor.vendor_code, &item.model_id);
                 let model_catalog_key =
                     catalog_model_key(&vendor.vendor.vendor_code, &item.model_id);
                 if model_catalog_keys.contains(&model_catalog_key) {
@@ -5407,6 +5608,12 @@ fn catalog_ranking_keys(catalog: &sdkwork_models::ModelCatalog) -> BTreeSet<Cata
             })
         })
         .collect()
+}
+
+fn catalog_public_ranking_keys(
+    catalog: &sdkwork_models::ModelCatalog,
+) -> BTreeSet<CatalogRankingKey> {
+    catalog_ranking_keys(catalog)
 }
 
 fn single_vendor_catalog_root(vendor_code: &str) -> PathBuf {
@@ -5481,6 +5688,76 @@ fn remove_model_from_catalog_root(catalog_root: &Path, vendor_code: &str, model:
         fs::write(
             rankings_path,
             serde_json::to_string_pretty(&rankings).unwrap(),
+        )
+        .unwrap();
+    }
+    write_single_vendor_index_files(catalog_root, vendor_code);
+}
+
+fn mark_model_deprecated_in_catalog_root(
+    catalog_root: &Path,
+    vendor_code: &str,
+    model: &str,
+    replacement_model: &str,
+) {
+    let vendor_root = catalog_root.join("models").join(vendor_code);
+    for region_entry in fs::read_dir(&vendor_root).unwrap() {
+        let region_entry = region_entry.unwrap();
+        if !region_entry.file_type().unwrap().is_dir() {
+            continue;
+        }
+        let region_root = region_entry.path();
+        if !region_root.join("vendor.json").is_file() {
+            continue;
+        }
+        let model_path = region_root.join("models").join(format!("{model}.json"));
+        if !model_path.is_file() {
+            continue;
+        }
+        let mut model_payload: serde_json::Value =
+            serde_json::from_str(&fs::read_to_string(&model_path).unwrap()).unwrap();
+        model_payload["lifecycle"] = serde_json::json!("deprecated");
+        model_payload["releaseStage"] = serde_json::json!("deprecated");
+        model_payload["shelfState"] = serde_json::json!("hidden");
+        model_payload["routingState"] = serde_json::json!("catalog_only");
+        model_payload["replacementModel"] = serde_json::json!(replacement_model);
+        model_payload["source"]["observedAt"] = serde_json::json!("2026-06-03T00:00:00Z");
+        fs::write(
+            model_path,
+            serde_json::to_string_pretty(&model_payload).unwrap(),
+        )
+        .unwrap();
+    }
+    write_single_vendor_index_files(catalog_root, vendor_code);
+}
+
+fn rename_model_in_catalog_root(
+    catalog_root: &Path,
+    vendor_code: &str,
+    model: &str,
+    display_name: &str,
+) {
+    let vendor_root = catalog_root.join("models").join(vendor_code);
+    for region_entry in fs::read_dir(&vendor_root).unwrap() {
+        let region_entry = region_entry.unwrap();
+        if !region_entry.file_type().unwrap().is_dir() {
+            continue;
+        }
+        let region_root = region_entry.path();
+        if !region_root.join("vendor.json").is_file() {
+            continue;
+        }
+        let model_path = region_root.join("models").join(format!("{model}.json"));
+        if !model_path.is_file() {
+            continue;
+        }
+        let mut model_payload: serde_json::Value =
+            serde_json::from_str(&fs::read_to_string(&model_path).unwrap()).unwrap();
+        model_payload["displayName"] = serde_json::json!(display_name);
+        model_payload["source"]["observedAt"] = serde_json::json!("2026-06-03T00:00:00Z");
+        fs::write(
+            model_path,
+            serde_json::to_string_pretty(&model_payload).unwrap(),
         )
         .unwrap();
     }
@@ -5629,14 +5906,12 @@ fn vendor_region_counts(
 }
 
 fn json_file_refs(target_models_root: &Path, path: &Path) -> Vec<String> {
-    let mut refs: Vec<String> = fs::read_dir(path)
-        .unwrap()
-        .filter_map(Result::ok)
-        .filter(|entry| entry.path().extension().and_then(|value| value.to_str()) == Some("json"))
-        .map(|entry| {
-            entry
-                .path()
-                .strip_prefix(target_models_root)
+    let mut paths = Vec::new();
+    collect_json_file_paths(path, &mut paths);
+    let mut refs: Vec<String> = paths
+        .into_iter()
+        .map(|path| {
+            path.strip_prefix(target_models_root)
                 .unwrap()
                 .to_string_lossy()
                 .replace('\\', "/")
@@ -5646,10 +5921,36 @@ fn json_file_refs(target_models_root: &Path, path: &Path) -> Vec<String> {
     refs
 }
 
+fn collect_json_file_paths(path: &Path, paths: &mut Vec<PathBuf>) {
+    for entry in fs::read_dir(path).unwrap() {
+        let entry = entry.unwrap();
+        let entry_path = entry.path();
+        if entry.file_type().unwrap().is_dir() {
+            collect_json_file_paths(&entry_path, paths);
+        } else if entry_path.extension().and_then(|value| value.to_str()) == Some("json") {
+            paths.push(entry_path);
+        }
+    }
+}
+
 fn ranking_snapshot_count(path: &Path) -> usize {
     let rankings: serde_json::Value =
         serde_json::from_str(&fs::read_to_string(path).unwrap()).unwrap();
     rankings["snapshots"].as_array().unwrap().len()
+}
+
+async fn catalog_migration_checksum(pool: &SqlitePool) -> String {
+    sqlx::query_scalar(
+        r#"
+        SELECT checksum
+        FROM system_schema_migration
+        WHERE migration_key = ?
+        "#,
+    )
+    .bind(format!("catalog:{CATALOG_VERSION}"))
+    .fetch_one(pool)
+    .await
+    .unwrap()
 }
 
 async fn assert_table_exists(pool: &SqlitePool, table: &str) {

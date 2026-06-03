@@ -30,6 +30,7 @@ pub(crate) struct OpenAiAdapterInvocationParts {
     pub pricing_plan_code: String,
     pub provider_code: String,
     pub provider_channel_id: i64,
+    pub provider_region_code: String,
     pub provider_model: String,
     pub provider_base_url: Option<String>,
     pub provider_secret_ref: Option<String>,
@@ -95,6 +96,7 @@ pub(crate) fn build_openai_adapter_invocation_with_shape(
         provider: AdapterProviderContext {
             provider_code: parts.provider_code,
             channel_id: parts.provider_channel_id,
+            region_code: normalized_adapter_provider_region_code(&parts.provider_region_code),
             provider_model: parts.provider_model,
             base_url: parts.provider_base_url,
             auth_profile,
@@ -103,6 +105,15 @@ pub(crate) fn build_openai_adapter_invocation_with_shape(
         secret,
         body: parts.request_body,
     })
+}
+
+fn normalized_adapter_provider_region_code(region_code: &str) -> String {
+    let region_code = region_code.trim();
+    if region_code.is_empty() {
+        "global".to_owned()
+    } else {
+        region_code.to_owned()
+    }
 }
 
 pub(crate) fn adapter_http_error(error: ProviderAdapterHttpError) -> DomainError {

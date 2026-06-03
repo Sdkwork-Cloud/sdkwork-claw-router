@@ -41,7 +41,7 @@ class AdminModelRuntimeStandardTest(unittest.TestCase):
 
         self.assertEqual("AdminAiModelCreateRequest", add_model["request_schema"]["name"])
         self.assertEqual(
-            ["vendorId", "model", "type", "priceIn", "priceOut", "contextTokens"],
+            ["vendorId", "model", "type", "regionPrices", "contextTokens"],
             add_model["request_schema"]["schema"]["required"],
         )
         self.assertEqual("AdminAiModelMutationResponse", add_model["response_schema"]["name"])
@@ -72,8 +72,20 @@ class AdminModelRuntimeStandardTest(unittest.TestCase):
         type_exports = (
             ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "types" / "index.ts"
         ).read_text(encoding="utf-8")
+        ai_model_item_type = (
+            ROOT
+            / "sdks"
+            / "clawrouter-backend-sdk"
+            / "clawrouter-backend-sdk-typescript"
+            / "src"
+            / "types"
+            / "admin-ai-model-item.ts"
+        ).read_text(encoding="utf-8")
         backend_openapi = json.loads((ROOT / "generated" / "openapi" / "clawrouter-backend-openapi.json").read_text(encoding="utf-8"))
         openapi_sync_request = backend_openapi["components"]["schemas"]["AdminModelCatalogSyncRequest"]
+        openapi_model_item = backend_openapi["components"]["schemas"]["AdminAiModelItem"]
+        openapi_create_request = backend_openapi["components"]["schemas"]["AdminAiModelCreateRequest"]
+        openapi_update_request = backend_openapi["components"]["schemas"]["AdminAiModelUpdateRequest"]
 
         for token in [
             "AdminModelCatalogSyncRequest",
@@ -183,12 +195,40 @@ class AdminModelRuntimeStandardTest(unittest.TestCase):
         )
         self.assertNotIn("async add(body?: OperationRequest): Promise<PlusApiResult>", ai_api)
 
+        self.assertIn("regionPrices", openapi_model_item["required"])
+        self.assertEqual(
+            "AdminAiModelRegionPrice",
+            openapi_model_item["properties"]["regionPrices"]["items"]["$ref"].split("/")[-1],
+        )
+        self.assertIn("regionPrices", openapi_create_request["required"])
+        self.assertEqual(
+            ["vendorId", "model", "type", "regionPrices", "contextTokens"],
+            openapi_create_request["required"],
+        )
+        for schema_name, schema in [
+            ("AdminAiModelItem", openapi_model_item),
+            ("AdminAiModelCreateRequest", openapi_create_request),
+            ("AdminAiModelUpdateRequest", openapi_update_request),
+        ]:
+            with self.subTest(schema=schema_name):
+                self.assertNotIn("priceIn", schema["properties"])
+                self.assertNotIn("priceOut", schema["properties"])
+                self.assertNotIn("cacheReadPrice", schema["properties"])
+                self.assertNotIn("cacheWritePrice", schema["properties"])
+        self.assertIn("import type { AdminAiModelRegionPrice }", ai_model_item_type)
+        self.assertIn("regionPrices: AdminAiModelRegionPrice[];", ai_model_item_type)
+        self.assertNotIn("priceIn:", ai_model_item_type)
+        self.assertNotIn("priceOut:", ai_model_item_type)
+        self.assertNotIn("cacheReadPrice:", ai_model_item_type)
+        self.assertNotIn("cacheWritePrice:", ai_model_item_type)
+
         for token in [
             "AdminModelCatalogSyncRequest",
             "AdminModelCatalogSyncResponse",
             "AdminModelVendorCreateRequest",
             "AdminModelVendorMutationResponse",
             "AdminAiModelCreateRequest",
+            "AdminAiModelRegionPrice",
             "AdminAiModelMutationResponse",
             "ModelsRefreshResult",
             "ModelVendorsCreateResult",

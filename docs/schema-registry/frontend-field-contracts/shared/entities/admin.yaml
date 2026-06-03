@@ -188,12 +188,17 @@ x_response_entities:
     additionalProperties: false
     required:
     - id
+    - channelId
     - name
     - vendor
+    - channelType
     - protocol
     - accessType
+    - credentialRotation
+    - credentials
     - models
     - capabilities
+    - resourceCodes
     - isMultimodal
     - weight
     - status
@@ -205,6 +210,11 @@ x_response_entities:
         type: string
         minLength: 1
         maxLength: 128
+      channelId:
+        type: string
+        minLength: 1
+        maxLength: 128
+        pattern: ^[1-9][0-9]*$
       name:
         type: string
         minLength: 1
@@ -213,6 +223,11 @@ x_response_entities:
         type: string
         minLength: 1
         maxLength: 64
+      channelType:
+        type: string
+        enum:
+        - official
+        - relay
       protocol:
         type: string
         minLength: 1
@@ -221,17 +236,85 @@ x_response_entities:
         type: string
         minLength: 1
         maxLength: 64
-      baseUrl:
+      credentialRotation:
         type: string
-        maxLength: 512
-      secretRef:
-        type: string
-        maxLength: 256
-        pattern: ^(vault|secret)://[^\\s]+$
-      apiKey:
-        type: string
-        maxLength: 4096
-        description: Full plaintext provider API key returned by authenticated admin management responses for channel account relay operations.
+        enum:
+        - default
+        - priority
+        - round_robin
+        - weighted_round_robin
+        - random
+      credentials:
+        type: array
+        minItems: 0
+        maxItems: 64
+        items:
+          name: AdminChannelCredentialItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - credentialId
+          - name
+          - baseUrl
+          - secretRef
+          - maskedLabel
+          - priority
+          - weight
+          - status
+          - errors
+          properties:
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            credentialId:
+              type: string
+              minLength: 1
+              maxLength: 128
+              pattern: ^[1-9][0-9]*$
+            name:
+              type: string
+              minLength: 1
+              maxLength: 128
+            baseUrl:
+              type: string
+              minLength: 1
+              maxLength: 512
+              pattern: ^https?://[^\\s]+$
+            secretRef:
+              type: string
+              minLength: 1
+              maxLength: 256
+              pattern: ^(vault|secret)://[^\\s]+$
+            apiKey:
+              type: string
+              maxLength: 4096
+              description: Plaintext provider API key returned only to authenticated admin management responses when available.
+            maskedLabel:
+              type: string
+              minLength: 1
+              maxLength: 128
+            priority:
+              type: integer
+              format: int64
+              minimum: 1
+              maximum: 1000000
+            weight:
+              type: integer
+              format: int64
+              minimum: 1
+              maximum: 10000
+            status:
+              type: string
+              enum:
+              - active
+              - disabled
+              - error
+            errors:
+              type: integer
+              format: int64
+              minimum: 0
       createdAt:
         type: string
         minLength: 1
@@ -260,6 +343,15 @@ x_response_entities:
           - music
           - sfx
           - video
+      resourceCodes:
+        type: array
+        maxItems: 256
+        uniqueItems: true
+        items:
+          type: string
+          minLength: 1
+          maxLength: 192
+          pattern: ^[A-Za-z0-9._-]+$
       isMultimodal:
         type: boolean
       timeoutMs:
@@ -910,10 +1002,7 @@ x_response_entities:
     - displayName
     - name
     - type
-    - priceIn
-    - priceOut
-    - cacheReadPrice
-    - cacheWritePrice
+    - regionPrices
     - status
     - calls
     - description
@@ -951,7 +1040,7 @@ x_response_entities:
       model:
         type: string
         minLength: 1
-        maxLength: 128
+        maxLength: 256
         pattern: ^[A-Za-z0-9._:/-]+$
         description: Runtime model identifier used for provider calls, routing, and pricing keys.
       displayName:
@@ -974,20 +1063,42 @@ x_response_entities:
         - Music
         - SoundEffect
         - Video
-      priceIn:
-        type: string
-        minLength: 1
-        maxLength: 64
-      priceOut:
-        type: string
-        minLength: 1
-        maxLength: 64
-      cacheReadPrice:
-        type: string
-        maxLength: 64
-      cacheWritePrice:
-        type: string
-        maxLength: 64
+      regionPrices:
+        type: array
+        minItems: 1
+        maxItems: 32
+        items:
+          name: AdminAiModelRegionPrice
+          type: object
+          additionalProperties: false
+          description: Regional official reference pricing returned by admin AI model payloads.
+          required:
+          - regionCode
+          - priceIn
+          - priceOut
+          properties:
+            regionCode:
+              type: string
+              minLength: 1
+              maxLength: 64
+              pattern: ^[a-z][a-z0-9_-]{0,63}$
+              description: Model catalog pricing region code.
+            priceIn:
+              type: string
+              pattern: ^[0-9]+(\.[0-9]{1,12})?$
+              description: Official reference input unit price in USD.
+            priceOut:
+              type: string
+              pattern: ^[0-9]+(\.[0-9]{1,12})?$
+              description: Official reference output unit price in USD.
+            cacheReadPrice:
+              type: string
+              pattern: ^$|^[0-9]+(\.[0-9]{1,12})?$
+              description: Optional official reference cache-read unit price in USD.
+            cacheWritePrice:
+              type: string
+              pattern: ^$|^[0-9]+(\.[0-9]{1,12})?$
+              description: Optional official reference cache-write unit price in USD.
       status:
         type: string
         enum:

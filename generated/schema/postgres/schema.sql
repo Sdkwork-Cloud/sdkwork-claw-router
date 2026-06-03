@@ -1273,6 +1273,7 @@ CREATE TABLE IF NOT EXISTS ai_channel (
     credential_hash VARCHAR(128),
     credential_version BIGINT,
     credential_rotation_policy JSONB,
+    credential_rotation_strategy VARCHAR(64) NOT NULL DEFAULT 'default',
     masked_label VARCHAR(128),
     environment INTEGER,
     region_code VARCHAR(64),
@@ -1306,6 +1307,41 @@ CREATE INDEX IF NOT EXISTS idx_ai_channel_health_status ON ai_channel (tenant_id
 CREATE INDEX IF NOT EXISTS idx_ai_channel_site_status ON ai_channel (tenant_id, organization_id, site_id, status, health_status, id);
 CREATE INDEX IF NOT EXISTS idx_ai_channel_site_service_status ON ai_channel (tenant_id, organization_id, site_service_id, status, health_status, id);
 CREATE INDEX IF NOT EXISTS idx_ai_channel_site_code ON ai_channel (tenant_id, organization_id, site_code, site_service_code, status, id);
+
+CREATE TABLE IF NOT EXISTS ai_channel_credential (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    channel_id BIGINT NOT NULL,
+    provider_code VARCHAR(64),
+    channel_code VARCHAR(64),
+    credential_name VARCHAR(128) NOT NULL,
+    base_url VARCHAR(512) NOT NULL,
+    auth_config JSONB NOT NULL DEFAULT '{}'::jsonb,
+    credential_ref VARCHAR(256) NOT NULL,
+    credential_hash VARCHAR(128) NOT NULL,
+    masked_label VARCHAR(128),
+    priority INTEGER NOT NULL DEFAULT 100,
+    weight INTEGER NOT NULL DEFAULT 100,
+    health_status INTEGER NOT NULL DEFAULT 1,
+    last_latency_ms INTEGER,
+    consecutive_error_count BIGINT NOT NULL DEFAULT 0,
+    last_verified_at TIMESTAMPTZ,
+    last_used_at TIMESTAMPTZ
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_channel_credential_uuid ON ai_channel_credential (uuid);
+CREATE INDEX IF NOT EXISTS idx_ai_channel_credential_channel ON ai_channel_credential (tenant_id, organization_id, channel_id, status, priority, weight, id);
+CREATE INDEX IF NOT EXISTS idx_ai_channel_credential_ref ON ai_channel_credential (tenant_id, organization_id, credential_ref);
 
 CREATE TABLE IF NOT EXISTS messaging_provider (
     id BIGSERIAL PRIMARY KEY,
@@ -1910,9 +1946,9 @@ CREATE TABLE IF NOT EXISTS ai_channel_model (
     channel_id BIGINT,
     model_id BIGINT,
     catalog_key VARCHAR(256),
-    model VARCHAR(128),
+    model VARCHAR(256),
     vendor_code VARCHAR(64),
-    provider_model VARCHAR(128),
+    provider_model VARCHAR(256),
     provider_native_model VARCHAR(256),
     api_code VARCHAR(128),
     capability INTEGER,
@@ -1951,10 +1987,10 @@ CREATE TABLE IF NOT EXISTS ai_site_model (
     service_type VARCHAR(64) NOT NULL DEFAULT 'ai_model_relay',
     model_id BIGINT,
     catalog_key VARCHAR(256),
-    model_code VARCHAR(128) NOT NULL,
+    model_code VARCHAR(256) NOT NULL,
     model_name VARCHAR(128) NOT NULL,
     display_name VARCHAR(128),
-    provider_model VARCHAR(128),
+    provider_model VARCHAR(256),
     provider_native_model VARCHAR(256),
     vendor_code VARCHAR(64),
     modality VARCHAR(64),
@@ -2101,6 +2137,8 @@ CREATE TABLE IF NOT EXISTS ai_model_vendor (
     vendor_type INTEGER,
     model_families JSONB,
     capabilities JSONB,
+    supported_protocols JSONB,
+    client_api_compatibility JSONB,
     open_source BOOLEAN,
     sort_order INTEGER
 );
@@ -2254,7 +2292,7 @@ CREATE TABLE IF NOT EXISTS ai_model_modality (
     metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
     model_id BIGINT,
     catalog_key VARCHAR(256) NOT NULL,
-    model VARCHAR(128),
+    model VARCHAR(256),
     vendor_code VARCHAR(64),
     modality_id BIGINT,
     modality_code VARCHAR(64) NOT NULL,
@@ -2282,7 +2320,7 @@ CREATE TABLE IF NOT EXISTS ai_model_api_endpoint (
     metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
     model_id BIGINT,
     catalog_key VARCHAR(256) NOT NULL,
-    model VARCHAR(128),
+    model VARCHAR(256),
     vendor_code VARCHAR(64),
     api_endpoint_id BIGINT,
     endpoint_code VARCHAR(128) NOT NULL,
@@ -2320,9 +2358,9 @@ CREATE TABLE IF NOT EXISTS ai_resource (
     api_endpoint_id BIGINT,
     api_code VARCHAR(128),
     model_id BIGINT,
-    model_code VARCHAR(128),
+    model_code VARCHAR(256),
     catalog_key VARCHAR(256),
-    model VARCHAR(128),
+    model VARCHAR(256),
     provider_native_model VARCHAR(256),
     resource_schema JSONB,
     metadata_schema JSONB,
@@ -2507,7 +2545,7 @@ CREATE TABLE IF NOT EXISTS ai_route_candidate (
     channel_type VARCHAR(32),
     vendor_code VARCHAR(64),
     api_code VARCHAR(128),
-    model_code VARCHAR(128),
+    model_code VARCHAR(256),
     catalog_key VARCHAR(256),
     region_code VARCHAR(64),
     priority INTEGER,
@@ -2518,9 +2556,9 @@ CREATE TABLE IF NOT EXISTS ai_route_candidate (
 );
 
 CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_route_candidate_uuid ON ai_route_candidate (uuid);
-CREATE INDEX IF NOT EXISTS idx_ai_route_candidate_status ON ai_route_candidate (tenant_id, organization_id, status, channel_group_id, api_code, catalog_key, id);
-CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_route_candidate_scope ON ai_route_candidate (tenant_id, organization_id, channel_group_id, channel_id, endpoint_id, api_code, catalog_key);
-CREATE INDEX IF NOT EXISTS idx_ai_route_candidate_model ON ai_route_candidate (tenant_id, organization_id, channel_group_id, api_code, catalog_key, status, health_status, priority, weight, id);
+CREATE INDEX IF NOT EXISTS idx_ai_route_candidate_status ON ai_route_candidate (tenant_id, organization_id, status, channel_group_id, api_code, catalog_key, region_code, id);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_route_candidate_scope ON ai_route_candidate (tenant_id, organization_id, channel_group_id, channel_id, endpoint_id, api_code, catalog_key, region_code);
+CREATE INDEX IF NOT EXISTS idx_ai_route_candidate_model ON ai_route_candidate (tenant_id, organization_id, channel_group_id, api_code, catalog_key, region_code, status, health_status, priority, weight, id);
 CREATE INDEX IF NOT EXISTS idx_ai_route_candidate_api ON ai_route_candidate (tenant_id, organization_id, channel_group_id, api_code, status, health_status, priority, weight, id);
 
 CREATE TABLE IF NOT EXISTS ai_resource_route_profile (
@@ -2715,7 +2753,7 @@ CREATE TABLE IF NOT EXISTS ai_model_family (
     primary_modality INTEGER,
     model_count BIGINT,
     default_model_id BIGINT,
-    default_model VARCHAR(128),
+    default_model VARCHAR(256),
     sort_order INTEGER
 );
 
@@ -2738,7 +2776,7 @@ CREATE TABLE IF NOT EXISTS ai_model (
     deleted_by BIGINT,
     metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
     catalog_key VARCHAR(256) NOT NULL,
-    model VARCHAR(128),
+    model VARCHAR(256),
     display_name VARCHAR(128),
     vendor_id BIGINT,
     vendor_code VARCHAR(64) NOT NULL,
@@ -2781,7 +2819,7 @@ CREATE TABLE IF NOT EXISTS ai_model (
     routing_state INTEGER,
     deprecated_at TIMESTAMPTZ,
     retired_at TIMESTAMPTZ,
-    replacement_model VARCHAR(128),
+    replacement_model VARCHAR(256),
     description TEXT
 );
 
@@ -2811,7 +2849,7 @@ CREATE TABLE IF NOT EXISTS ai_model_capability (
     metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
     model_id BIGINT,
     catalog_key VARCHAR(256) NOT NULL,
-    model VARCHAR(128),
+    model VARCHAR(256),
     vendor_code VARCHAR(64),
     capability INTEGER,
     capability_code VARCHAR(64),
@@ -2968,12 +3006,12 @@ CREATE TABLE IF NOT EXISTS ai_model_pricing (
     metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
     model_id BIGINT,
     catalog_key VARCHAR(256) NOT NULL,
-    model VARCHAR(128),
+    model VARCHAR(256),
     vendor_code VARCHAR(64),
     region_code VARCHAR(64) NOT NULL,
     provider_code VARCHAR(64),
     channel_id BIGINT,
-    provider_model VARCHAR(128),
+    provider_model VARCHAR(256),
     platform_code VARCHAR(64),
     service_tier VARCHAR(64),
     price_side INTEGER,
@@ -3118,10 +3156,10 @@ CREATE TABLE IF NOT EXISTS ai_pricing_rule (
     vendor_code VARCHAR(64),
     family_code VARCHAR(64),
     model_id BIGINT,
-    model VARCHAR(128),
+    model VARCHAR(256),
     provider_code VARCHAR(64),
     channel_id BIGINT,
-    provider_model VARCHAR(128),
+    provider_model VARCHAR(256),
     capability_code VARCHAR(64),
     platform_code VARCHAR(64),
     service_tier VARCHAR(64),
@@ -3266,7 +3304,7 @@ CREATE TABLE IF NOT EXISTS ai_model_rank_snapshot (
     rank_scope VARCHAR(64),
     model_id BIGINT,
     catalog_key VARCHAR(256) NOT NULL,
-    model VARCHAR(128),
+    model VARCHAR(256),
     vendor_code VARCHAR(64),
     region_code VARCHAR(64) NOT NULL,
     vendor_name_snapshot VARCHAR(128),
@@ -3372,7 +3410,7 @@ CREATE TABLE IF NOT EXISTS ai_routing_rule (
     rule_code VARCHAR(64),
     priority INTEGER,
     match_expression JSONB,
-    target_model VARCHAR(128),
+    target_model VARCHAR(256),
     candidate_channels JSONB,
     fallback_chain JSONB,
     constraints JSONB,
@@ -3403,8 +3441,8 @@ CREATE TABLE IF NOT EXISTS ai_routing_decision_log (
     policy_id BIGINT,
     profile_id BIGINT,
     rule_id BIGINT,
-    requested_model VARCHAR(128),
-    resolved_model VARCHAR(128),
+    requested_model VARCHAR(256),
+    resolved_model VARCHAR(256),
     capability INTEGER,
     selected_provider_id BIGINT,
     selected_channel_id BIGINT,
@@ -3446,10 +3484,11 @@ CREATE TABLE IF NOT EXISTS ai_request_trace (
     provider_id BIGINT,
     channel_id BIGINT,
     channel_name_snapshot VARCHAR(128),
-    requested_model VARCHAR(128),
+    requested_model VARCHAR(256),
     requested_model_catalog_key VARCHAR(256),
-    provider_model VARCHAR(128),
+    provider_model VARCHAR(256),
     provider_native_model VARCHAR(256),
+    region_code VARCHAR(64),
     endpoint VARCHAR(256),
     request_path VARCHAR(256),
     http_method VARCHAR(16),
@@ -3508,8 +3547,9 @@ CREATE TABLE IF NOT EXISTS ai_usage_fact (
     owner_name_snapshot VARCHAR(128),
     catalog_key VARCHAR(256) NOT NULL,
     requested_model_catalog_key VARCHAR(256),
-    model VARCHAR(128),
+    model VARCHAR(256),
     provider_native_model VARCHAR(256),
+    region_code VARCHAR(64),
     provider_id BIGINT,
     channel_id BIGINT,
     modality INTEGER,
@@ -3587,7 +3627,7 @@ CREATE TABLE IF NOT EXISTS ai_quota_policy (
     scope_type INTEGER,
     scope_id BIGINT,
     channel_group_id BIGINT,
-    model VARCHAR(128),
+    model VARCHAR(256),
     quota_period INTEGER,
     quota_unit INTEGER,
     quota_limit NUMERIC(38, 12),
@@ -3915,14 +3955,14 @@ CREATE TABLE IF NOT EXISTS ai_agent_run (
     agent_session_id VARCHAR(128),
     memory_space_id VARCHAR(128),
     runtime VARCHAR(128),
-    model VARCHAR(128),
+    model VARCHAR(256),
     run_uuid VARCHAR(128) NOT NULL,
     run_status VARCHAR(64) NOT NULL DEFAULT 'running',
     source_surface VARCHAR(64),
     input_message TEXT,
     output_message TEXT,
     target_modality INTEGER,
-    planner_model VARCHAR(128),
+    planner_model VARCHAR(256),
     execution_mode VARCHAR(64),
     started_at TIMESTAMPTZ,
     completed_at TIMESTAMPTZ,
@@ -3974,7 +4014,7 @@ CREATE TABLE IF NOT EXISTS ai_agent_run_step (
     skill_id BIGINT,
     mcp_server_id BIGINT,
     tool_name VARCHAR(128),
-    model VARCHAR(128),
+    model VARCHAR(256),
     runtime_invocation_id VARCHAR(128),
     input_snapshot JSONB,
     output_snapshot JSONB,
@@ -4053,7 +4093,7 @@ CREATE TABLE IF NOT EXISTS ai_chat_conversation (
     visibility VARCHAR(32),
     source_surface VARCHAR(64) NOT NULL,
     default_provider VARCHAR(128),
-    default_model VARCHAR(128),
+    default_model VARCHAR(256),
     default_endpoint VARCHAR(128),
     agent_id VARCHAR(128),
     agent_session_id VARCHAR(128),
@@ -4097,7 +4137,7 @@ CREATE TABLE IF NOT EXISTS ai_chat_turn (
     parent_turn_id BIGINT,
     branch_id VARCHAR(128),
     provider VARCHAR(128),
-    model VARCHAR(128),
+    model VARCHAR(256),
     endpoint VARCHAR(128),
     streaming BOOLEAN,
     agent_id VARCHAR(128),
@@ -4148,7 +4188,7 @@ CREATE TABLE IF NOT EXISTS ai_chat_item (
     provider_call_id VARCHAR(128),
     provider_response_id VARCHAR(128),
     provider VARCHAR(128),
-    model VARCHAR(128),
+    model VARCHAR(256),
     runtime VARCHAR(128),
     runtime_invocation_id VARCHAR(128),
     content_text TEXT,
@@ -4185,7 +4225,7 @@ CREATE TABLE IF NOT EXISTS ai_chat_message (
     content_text TEXT,
     content_json JSONB,
     raw_provider_json JSONB,
-    model VARCHAR(128),
+    model VARCHAR(256),
     provider VARCHAR(128),
     runtime VARCHAR(128),
     runtime_invocation_id VARCHAR(128),
@@ -4309,7 +4349,7 @@ CREATE TABLE IF NOT EXISTS ai_agent_session (
     sandbox_policy VARCHAR(128),
     approval_policy VARCHAR(128),
     permission_mode VARCHAR(128),
-    default_model VARCHAR(128),
+    default_model VARCHAR(256),
     execution_mode VARCHAR(64),
     last_run_id VARCHAR(128),
     last_step_id BIGINT,
@@ -4441,7 +4481,7 @@ CREATE TABLE IF NOT EXISTS ai_memory_embedding (
     metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
     memory_id BIGINT NOT NULL,
     embedding_provider VARCHAR(128),
-    embedding_model VARCHAR(128),
+    embedding_model VARCHAR(256),
     embedding_dimensions INTEGER,
     content_hash VARCHAR(128),
     vector_json JSONB,
@@ -4559,7 +4599,7 @@ CREATE TABLE IF NOT EXISTS ai_runtime_invocation (
     provider_session_id VARCHAR(128),
     provider_conversation_id VARCHAR(128),
     provider_step_id VARCHAR(128),
-    model VARCHAR(128),
+    model VARCHAR(256),
     provider VARCHAR(128),
     tool_name VARCHAR(128),
     tool_call_id VARCHAR(128),
@@ -4635,7 +4675,7 @@ CREATE TABLE IF NOT EXISTS ai_runtime_usage_link (
     usage_fact_id BIGINT,
     usage_type VARCHAR(64) NOT NULL,
     provider VARCHAR(128),
-    model VARCHAR(128),
+    model VARCHAR(256),
     input_tokens BIGINT,
     output_tokens BIGINT,
     cached_tokens BIGINT,
@@ -4827,7 +4867,7 @@ CREATE TABLE IF NOT EXISTS ai_generation_job (
     session_id BIGINT,
     job_type INTEGER,
     modality INTEGER,
-    model VARCHAR(128),
+    model VARCHAR(256),
     provider_id BIGINT,
     channel_id BIGINT,
     prompt TEXT,
@@ -6275,7 +6315,7 @@ CREATE TABLE IF NOT EXISTS integration_service_provider_price_rule (
     edge_id BIGINT NOT NULL,
     price_plan_id BIGINT NOT NULL,
     catalog_key VARCHAR(256),
-    model VARCHAR(128),
+    model VARCHAR(256),
     provider_code VARCHAR(64),
     channel_id BIGINT,
     billing_meter_code VARCHAR(64),
@@ -6886,33 +6926,80 @@ CREATE TABLE IF NOT EXISTS ai_model_mapping_rule (
     deleted_at TIMESTAMPTZ,
     deleted_by BIGINT,
     metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
-    scope_type VARCHAR(32) NOT NULL DEFAULT 'global',
-    vendor_id BIGINT,
-    vendor_code VARCHAR(64),
-    channel_id BIGINT,
-    channel_code VARCHAR(64),
-    source_model VARCHAR(256) NOT NULL DEFAULT '',
-    source_catalog_key VARCHAR(256),
-    source_vendor_code VARCHAR(64),
-    target_model VARCHAR(256) NOT NULL DEFAULT '',
-    target_catalog_key VARCHAR(256),
-    target_vendor_code VARCHAR(64),
-    target_provider_model VARCHAR(256),
-    target_provider_native_model VARCHAR(256),
+    source_vendor_id BIGINT,
+    source_vendor_code VARCHAR(64) NOT NULL DEFAULT '',
+    target_vendor_id BIGINT,
+    target_vendor_code VARCHAR(64) NOT NULL DEFAULT '',
     mapping_mode VARCHAR(32) NOT NULL DEFAULT 'alias',
     match_type VARCHAR(32) NOT NULL DEFAULT 'exact',
-    priority INTEGER NOT NULL DEFAULT 100,
-    enabled BOOLEAN NOT NULL DEFAULT TRUE,
-    effective_from TIMESTAMPTZ,
-    effective_to TIMESTAMPTZ,
-    description VARCHAR(512)
+    enabled BOOLEAN NOT NULL DEFAULT TRUE
 );
 
 CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_model_mapping_rule_uuid ON ai_model_mapping_rule (uuid);
-CREATE INDEX IF NOT EXISTS idx_ai_model_mapping_rule_channel_lookup ON ai_model_mapping_rule (tenant_id, organization_id, status, enabled, channel_id, source_model, priority, id);
-CREATE INDEX IF NOT EXISTS idx_ai_model_mapping_rule_vendor_lookup ON ai_model_mapping_rule (tenant_id, organization_id, status, enabled, vendor_code, source_model, priority, id);
-CREATE INDEX IF NOT EXISTS idx_ai_model_mapping_rule_global_lookup ON ai_model_mapping_rule (tenant_id, organization_id, status, enabled, scope_type, source_model, priority, id);
-CREATE INDEX IF NOT EXISTS idx_ai_model_mapping_rule_target_model ON ai_model_mapping_rule (tenant_id, organization_id, target_catalog_key, target_vendor_code, status, id);
+CREATE INDEX IF NOT EXISTS idx_ai_model_mapping_rule_source_vendor ON ai_model_mapping_rule (tenant_id, organization_id, status, enabled, source_vendor_code, id);
+CREATE INDEX IF NOT EXISTS idx_ai_model_mapping_rule_target_vendor ON ai_model_mapping_rule (tenant_id, organization_id, status, enabled, target_vendor_code, id);
+CREATE INDEX IF NOT EXISTS idx_ai_model_mapping_rule_enabled ON ai_model_mapping_rule (tenant_id, organization_id, status, enabled, id);
+
+CREATE TABLE IF NOT EXISTS ai_model_mapping_rule_item (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    rule_id BIGINT NOT NULL DEFAULT 0,
+    rule_uuid VARCHAR(128),
+    source_model VARCHAR(256) NOT NULL DEFAULT '',
+    source_catalog_key VARCHAR(256),
+    target_model VARCHAR(256) NOT NULL DEFAULT '',
+    target_catalog_key VARCHAR(256),
+    target_provider_model VARCHAR(256),
+    target_provider_native_model VARCHAR(256),
+    sort_order INTEGER NOT NULL DEFAULT 100,
+    enabled BOOLEAN NOT NULL DEFAULT TRUE
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_model_mapping_rule_item_uuid ON ai_model_mapping_rule_item (uuid);
+CREATE INDEX IF NOT EXISTS idx_ai_model_mapping_rule_item_rule_lookup ON ai_model_mapping_rule_item (tenant_id, organization_id, rule_id, status, enabled, sort_order, id);
+CREATE INDEX IF NOT EXISTS idx_ai_model_mapping_rule_item_source_lookup ON ai_model_mapping_rule_item (tenant_id, organization_id, source_model, status, enabled, id);
+CREATE INDEX IF NOT EXISTS idx_ai_model_mapping_rule_item_target_lookup ON ai_model_mapping_rule_item (tenant_id, organization_id, target_catalog_key, target_model, status, id);
+
+CREATE TABLE IF NOT EXISTS ai_model_mapping_rule_binding (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    rule_id BIGINT NOT NULL DEFAULT 0,
+    rule_uuid VARCHAR(128),
+    binding_type VARCHAR(32) NOT NULL DEFAULT 'global',
+    binding_id BIGINT,
+    binding_code VARCHAR(128),
+    binding_name_snapshot VARCHAR(256),
+    sort_order INTEGER NOT NULL DEFAULT 100,
+    enabled BOOLEAN NOT NULL DEFAULT TRUE
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_model_mapping_rule_binding_uuid ON ai_model_mapping_rule_binding (uuid);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_model_mapping_rule_binding_target ON ai_model_mapping_rule_binding (tenant_id, organization_id, rule_id, binding_type, binding_id, binding_code);
+CREATE INDEX IF NOT EXISTS idx_ai_model_mapping_rule_binding_rule_lookup ON ai_model_mapping_rule_binding (tenant_id, organization_id, rule_id, status, enabled, sort_order, id);
+CREATE INDEX IF NOT EXISTS idx_ai_model_mapping_rule_binding_target_lookup ON ai_model_mapping_rule_binding (tenant_id, organization_id, binding_type, binding_id, binding_code, status, enabled, id);
+CREATE INDEX IF NOT EXISTS idx_ai_model_mapping_rule_binding_channel_group_lookup ON ai_model_mapping_rule_binding (tenant_id, organization_id, binding_type, binding_code, status, enabled, id);
+CREATE INDEX IF NOT EXISTS idx_ai_model_mapping_rule_binding_vendor_lookup ON ai_model_mapping_rule_binding (tenant_id, organization_id, binding_type, binding_code, status, enabled, id);
+CREATE INDEX IF NOT EXISTS idx_ai_model_mapping_rule_binding_global_lookup ON ai_model_mapping_rule_binding (tenant_id, organization_id, binding_type, status, enabled, id);
 
 CREATE TABLE IF NOT EXISTS ai_usage_service_provider_chain (
     id BIGSERIAL PRIMARY KEY,

@@ -122,6 +122,8 @@ export function UsagePage() {
       )}
     >
         <AdminTableShell
+          className="flex-1 min-h-0"
+          viewportClassName="min-h-0 flex-1"
           header={(
           <div className="flex flex-wrap items-center gap-3 border-b border-slate-200 px-4 py-3 dark:border-white/10">
             <div className="relative flex-1 max-w-sm">

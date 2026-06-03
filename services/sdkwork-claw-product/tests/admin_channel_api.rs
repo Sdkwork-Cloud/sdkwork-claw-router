@@ -13,9 +13,9 @@ use sdkwork_claw_product::application::{
 };
 use sdkwork_claw_product::domain::DomainResult;
 use sdkwork_claw_product::ports::{
-    AdminChannelCommandFuture, AdminChannelItem, AdminChannelStore, CreateAdminChannelCommand,
-    DeleteAdminChannelCommand, ListAdminChannelsQuery, TestAdminChannelCommand,
-    UpdateAdminChannelCommand,
+    AdminChannelCommandFuture, AdminChannelCredentialItem, AdminChannelItem, AdminChannelStore,
+    CreateAdminChannelCommand, DeleteAdminChannelCommand, ListAdminChannelsQuery,
+    TestAdminChannelCommand, UpdateAdminChannelCommand,
 };
 use serde_json::Value;
 use tower::ServiceExt;
@@ -37,7 +37,7 @@ async fn admin_channel_route_creates_lists_updates_and_soft_deletes_items() {
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"name":"OpenAI primary","vendor":"OpenAI","channelType":"official","protocol":"OpenAI","accessType":"api-key","baseUrl":"https://api.openai.com/v1","secretRef":"vault://providers/openai/account/main","models":["openai/gpt-4o-mini"],"capabilities":["llm"],"resourceCodes":["vendor.openai","model.openai.gpt-4o-mini.chat"],"timeoutMs":60000,"retryPolicy":{"maxAttempts":3,"retryableStatusCodes":[429,503],"backoffMs":25},"circuitBreakerPolicy":{"failureThreshold":2},"expiresAt":"2026-06-30T08:00:00Z","weight":80,"status":"active"}"#,
+                    r#"{"name":"OpenAI primary","vendor":"OpenAI","channelType":"official","protocol":"OpenAI","accessType":"api-key","credentials":[{"name":"primary","baseUrl":"https://api.openai.com/v1","secretRef":"vault://providers/openai/account/main"}],"models":["openai/gpt-4o-mini"],"capabilities":["llm"],"resourceCodes":["vendor.openai","model.openai.gpt-4o-mini.chat"],"timeoutMs":60000,"retryPolicy":{"maxAttempts":3,"retryableStatusCodes":[429,503],"backoffMs":25},"circuitBreakerPolicy":{"failureThreshold":2},"expiresAt":"2026-06-30T08:00:00Z","weight":80,"status":"active"}"#,
                 ))
                 .unwrap(),
         )
@@ -292,7 +292,7 @@ async fn admin_channel_route_invalidates_routing_cache_after_successful_mutation
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"name":"OpenAI primary","vendor":"OpenAI","channelType":"official","protocol":"OpenAI","accessType":"api-key","baseUrl":"https://api.openai.com/v1","secretRef":"vault://providers/openai/account/main","models":["openai/gpt-4o-mini"],"capabilities":["llm"],"resourceCodes":["vendor.openai"],"weight":80,"status":"active"}"#,
+                    r#"{"name":"OpenAI primary","vendor":"OpenAI","channelType":"official","protocol":"OpenAI","accessType":"api-key","credentials":[{"name":"primary","baseUrl":"https://api.openai.com/v1","secretRef":"vault://providers/openai/account/main"}],"models":["openai/gpt-4o-mini"],"capabilities":["llm"],"resourceCodes":["vendor.openai"],"weight":80,"status":"active"}"#,
                 ))
                 .unwrap(),
         )
@@ -344,7 +344,7 @@ async fn admin_channel_route_returns_manageable_plaintext_api_key_for_channels()
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"name":"OpenAI primary","vendor":"OpenAI","protocol":"OpenAI","accessType":"api-key","baseUrl":"https://api.openai.com/v1","apiKey":"sk-live-secret","models":["openai/gpt-4o-mini"],"capabilities":["llm"],"weight":80,"status":"active"}"#,
+                    r#"{"name":"OpenAI primary","vendor":"OpenAI","protocol":"OpenAI","accessType":"api-key","credentials":[{"name":"primary","baseUrl":"https://api.openai.com/v1","apiKey":"sk-live-secret"}],"models":["openai/gpt-4o-mini"],"capabilities":["llm"],"weight":80,"status":"active"}"#,
                 ))
                 .unwrap(),
         )
@@ -355,16 +355,17 @@ async fn admin_channel_route_returns_manageable_plaintext_api_key_for_channels()
     let payload = json_payload(response).await;
     assert_eq!("2000", payload["code"]);
     assert_eq!("OpenAI primary", payload["data"]["item"]["name"]);
-    assert_eq!("sk-live-secret", payload["data"]["item"]["apiKey"]);
+    assert_eq!(
+        "sk-live-secret",
+        payload["data"]["item"]["credentials"][0]["apiKey"]
+    );
     assert!(payload["data"]["item"].get("authKey").is_none());
+    assert!(payload["data"]["item"].get("apiKey").is_none());
 
     let items = store.items.lock().unwrap();
     let created = items.first().expect("created channel should be stored");
-    let secret_ref = created
-        .secret_ref
-        .as_deref()
-        .expect("apiKey input should be converted into an internal secret reference");
-    assert!(secret_ref.starts_with("secret://ai-channels/openai/"));
+    let secret_ref = &created.credentials[0].secret_ref;
+    assert!(secret_ref.starts_with("secret://ai-channel-credentials/openai/"));
     assert!(!secret_ref.contains("sk-live-secret"));
 }
 
@@ -411,7 +412,7 @@ async fn admin_channel_route_rejects_invalid_payload_without_calling_store() {
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"name":"","vendor":"OpenAI","secretRef":"vault://providers/openai/account/main","models":["openai/gpt-4o-mini"],"capabilities":["llm"]}"#,
+                    r#"{"name":"","vendor":"OpenAI","credentials":[{"name":"primary","baseUrl":"https://api.openai.com/v1","secretRef":"vault://providers/openai/account/main"}],"models":["openai/gpt-4o-mini"],"capabilities":["llm"]}"#,
                 ))
                 .unwrap(),
         )
@@ -425,6 +426,98 @@ async fn admin_channel_route_rejects_invalid_payload_without_calling_store() {
         .as_str()
         .unwrap()
         .contains("channel name is required"));
+    assert!(store.commands.lock().unwrap().is_empty());
+}
+
+#[tokio::test]
+async fn admin_channel_route_creates_channel_with_multiple_upstream_credentials_and_rotation() {
+    let store = Arc::new(TestChannelStore::default());
+    let router = sdkwork_claw_product::api::admin_channel_router_with_store(
+        store.clone(),
+        Arc::new(TestUuidGenerator),
+    );
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/backend/v3/api/integration/channels")
+                .header("content-type", "application/json")
+                .internal_trusted_subject(10, 20, 30)
+                .body(Body::from(
+                    r#"{"name":"OpenAI pooled","vendor":"OpenAI","protocol":"OpenAI","accessType":"api-key","credentialRotation":"weighted_round_robin","credentials":[{"name":"primary","baseUrl":"https://api1.openai.example/v1","apiKey":"sk-primary","priority":10,"weight":80,"status":"active"},{"name":"backup","baseUrl":"https://api2.openai.example/v1","apiKey":"sk-backup","priority":20,"weight":20,"status":"active"}],"models":["openai/gpt-4o-mini"],"capabilities":["llm"],"weight":80,"status":"active"}"#,
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    let payload = json_payload(response).await;
+    assert_eq!("2000", payload["code"]);
+    assert_eq!(
+        "weighted_round_robin",
+        payload["data"]["item"]["credentialRotation"]
+    );
+    assert!(payload["data"]["item"].get("baseUrl").is_none());
+    assert!(payload["data"]["item"].get("secretRef").is_none());
+    assert!(payload["data"]["item"].get("apiKey").is_none());
+    let credentials = payload["data"]["item"]["credentials"]
+        .as_array()
+        .expect("credentials should be returned as an array");
+    assert_eq!(2, credentials.len());
+    assert_eq!("primary", credentials[0]["name"]);
+    assert_eq!("https://api1.openai.example/v1", credentials[0]["baseUrl"]);
+    assert_eq!("sk-primary", credentials[0]["apiKey"]);
+    assert_eq!(80, credentials[0]["weight"]);
+    assert_eq!("backup", credentials[1]["name"]);
+    assert_eq!("https://api2.openai.example/v1", credentials[1]["baseUrl"]);
+    assert_eq!("sk-backup", credentials[1]["apiKey"]);
+
+    let items = store.items.lock().unwrap();
+    let created = items.first().expect("created channel should be stored");
+    assert_eq!("weighted_round_robin", created.credential_rotation);
+    assert_eq!(2, created.credentials.len());
+    assert!(created.credentials[0]
+        .secret_ref
+        .starts_with("secret://ai-channel-credentials/openai/"));
+    assert!(!created.credentials[0].secret_ref.contains("sk-primary"));
+    assert_eq!(
+        Some("sk-primary"),
+        created.credentials[0].api_key.as_deref()
+    );
+}
+
+#[tokio::test]
+async fn admin_channel_route_rejects_create_without_upstream_credentials() {
+    let store = Arc::new(TestChannelStore::default());
+    let router = sdkwork_claw_product::api::admin_channel_router_with_store(
+        store.clone(),
+        Arc::new(TestUuidGenerator),
+    );
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/backend/v3/api/integration/channels")
+                .header("content-type", "application/json")
+                .internal_trusted_subject(10, 20, 30)
+                .body(Body::from(
+                    r#"{"name":"OpenAI primary","vendor":"OpenAI","baseUrl":"https://api.openai.com/v1","apiKey":"sk-live-secret","models":["openai/gpt-4o-mini"],"capabilities":["llm"]}"#,
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::BAD_REQUEST, response.status());
+    let payload = json_payload(response).await;
+    assert_eq!("4001", payload["code"]);
+    assert!(payload["msg"]
+        .as_str()
+        .unwrap()
+        .contains("credentials must include at least one upstream credential"));
     assert!(store.commands.lock().unwrap().is_empty());
 }
 
@@ -444,7 +537,7 @@ async fn admin_channel_route_rejects_invalid_channel_type_without_calling_store(
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"name":"OpenAI primary","vendor":"OpenAI","channelType":"proxy","secretRef":"vault://providers/openai/account/main","models":["openai/gpt-4o-mini"],"capabilities":["llm"]}"#,
+                    r#"{"name":"OpenAI primary","vendor":"OpenAI","channelType":"proxy","credentials":[{"name":"primary","baseUrl":"https://api.openai.com/v1","secretRef":"vault://providers/openai/account/main"}],"models":["openai/gpt-4o-mini"],"capabilities":["llm"]}"#,
                 ))
                 .unwrap(),
         )
@@ -510,7 +603,7 @@ async fn admin_channel_route_rejects_invalid_base_url_without_calling_store() {
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"name":"OpenAI primary","vendor":"OpenAI","baseUrl":"javascript:alert(1)","secretRef":"vault://providers/openai/account/main","models":["openai/gpt-4o-mini"],"capabilities":["llm"]}"#,
+                    r#"{"name":"OpenAI primary","vendor":"OpenAI","credentials":[{"name":"primary","baseUrl":"javascript:alert(1)","secretRef":"vault://providers/openai/account/main"}],"models":["openai/gpt-4o-mini"],"capabilities":["llm"]}"#,
                 ))
                 .unwrap(),
         )
@@ -520,10 +613,16 @@ async fn admin_channel_route_rejects_invalid_base_url_without_calling_store() {
     assert_eq!(StatusCode::BAD_REQUEST, response.status());
     let payload = json_payload(response).await;
     assert_eq!("4001", payload["code"]);
-    assert!(payload["msg"]
-        .as_str()
-        .unwrap()
-        .contains("channel baseUrl must be an absolute http or https URL"));
+    assert!(
+        payload["msg"]
+            .as_str()
+            .unwrap()
+            .contains("channel baseUrl must be an absolute http or https URL")
+            || payload["msg"]
+                .as_str()
+                .unwrap()
+                .contains("credential baseUrl must be an absolute http or https URL")
+    );
     assert!(store.commands.lock().unwrap().is_empty());
 }
 
@@ -544,7 +643,7 @@ async fn admin_channel_route_rejects_unsafe_secret_ref_without_calling_store() {
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"name":"OpenAI primary","vendor":"OpenAI","secretRef":"vault://","models":["openai/gpt-4o-mini"],"capabilities":["llm"]}"#,
+                    r#"{"name":"OpenAI primary","vendor":"OpenAI","credentials":[{"name":"primary","baseUrl":"https://api.openai.com/v1","secretRef":"vault://"}],"models":["openai/gpt-4o-mini"],"capabilities":["llm"]}"#,
                 ))
                 .unwrap(),
         )
@@ -567,7 +666,7 @@ async fn admin_channel_route_rejects_unsafe_secret_ref_without_calling_store() {
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"name":"OpenAI primary","vendor":"OpenAI","secretRef":"vault://providers/openai/account/main","api_key":"sk-live-secret","models":["openai/gpt-4o-mini"],"capabilities":["llm"]}"#,
+                    r#"{"name":"OpenAI primary","vendor":"OpenAI","credentials":[{"name":"primary","baseUrl":"https://api.openai.com/v1","secretRef":"vault://providers/openai/account/main","api_key":"sk-live-secret"}],"models":["openai/gpt-4o-mini"],"capabilities":["llm"]}"#,
                 ))
                 .unwrap(),
         )
@@ -600,7 +699,7 @@ async fn admin_channel_route_rejects_invalid_retry_policy_without_calling_store(
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"name":"OpenAI primary","vendor":"OpenAI","secretRef":"vault://providers/openai/account/main","models":["openai/gpt-4o-mini"],"retryPolicy":{"maxAttempts":6,"retryableStatusCodes":[503]}}"#,
+                    r#"{"name":"OpenAI primary","vendor":"OpenAI","credentials":[{"name":"primary","baseUrl":"https://api.openai.com/v1","secretRef":"vault://providers/openai/account/main"}],"models":["openai/gpt-4o-mini"],"retryPolicy":{"maxAttempts":6,"retryableStatusCodes":[503]}}"#,
                 ))
                 .unwrap(),
         )
@@ -633,7 +732,7 @@ async fn admin_channel_route_rejects_invalid_circuit_breaker_policy_without_call
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"name":"OpenAI primary","vendor":"OpenAI","secretRef":"vault://providers/openai/account/main","models":["openai/gpt-4o-mini"],"circuitBreakerPolicy":{"failureThreshold":0}}"#,
+                    r#"{"name":"OpenAI primary","vendor":"OpenAI","credentials":[{"name":"primary","baseUrl":"https://api.openai.com/v1","secretRef":"vault://providers/openai/account/main"}],"models":["openai/gpt-4o-mini"],"circuitBreakerPolicy":{"failureThreshold":0}}"#,
                 ))
                 .unwrap(),
         )
@@ -667,7 +766,7 @@ async fn admin_channel_route_rejects_null_create_runtime_policy_fields_without_c
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"name":"OpenAI primary","vendor":"OpenAI","secretRef":"vault://providers/openai/account/main","models":["openai/gpt-4o-mini"],"timeoutMs":null}"#,
+                    r#"{"name":"OpenAI primary","vendor":"OpenAI","credentials":[{"name":"primary","baseUrl":"https://api.openai.com/v1","secretRef":"vault://providers/openai/account/main"}],"models":["openai/gpt-4o-mini"],"timeoutMs":null}"#,
                 ))
                 .unwrap(),
         )
@@ -691,7 +790,7 @@ async fn admin_channel_route_rejects_null_create_runtime_policy_fields_without_c
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"name":"OpenAI primary","vendor":"OpenAI","secretRef":"vault://providers/openai/account/main","models":["openai/gpt-4o-mini"],"retryPolicy":null}"#,
+                    r#"{"name":"OpenAI primary","vendor":"OpenAI","credentials":[{"name":"primary","baseUrl":"https://api.openai.com/v1","secretRef":"vault://providers/openai/account/main"}],"models":["openai/gpt-4o-mini"],"retryPolicy":null}"#,
                 ))
                 .unwrap(),
         )
@@ -714,7 +813,7 @@ async fn admin_channel_route_rejects_null_create_runtime_policy_fields_without_c
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"name":"OpenAI primary","vendor":"OpenAI","secretRef":"vault://providers/openai/account/main","models":["openai/gpt-4o-mini"],"circuitBreakerPolicy":null}"#,
+                    r#"{"name":"OpenAI primary","vendor":"OpenAI","credentials":[{"name":"primary","baseUrl":"https://api.openai.com/v1","secretRef":"vault://providers/openai/account/main"}],"models":["openai/gpt-4o-mini"],"circuitBreakerPolicy":null}"#,
                 ))
                 .unwrap(),
         )
@@ -787,9 +886,26 @@ impl AdminChannelStore for TestChannelStore {
                 channel_type: command.channel_type,
                 protocol: command.protocol,
                 access_type: command.access_type,
-                base_url: command.base_url,
-                secret_ref: Some(command.secret_ref),
-                api_key: command.credential_material,
+                credential_rotation: command.credential_rotation,
+                credentials: command
+                    .credentials
+                    .into_iter()
+                    .enumerate()
+                    .map(|(index, credential)| AdminChannelCredentialItem {
+                        id: i64::try_from(index + 1).unwrap(),
+                        credential_id: i64::try_from(index + 1).unwrap(),
+                        uuid: credential.credential_uuid,
+                        name: credential.name,
+                        base_url: credential.base_url,
+                        secret_ref: credential.secret_ref,
+                        api_key: credential.credential_material,
+                        masked_label: credential.masked_label,
+                        priority: credential.priority,
+                        weight: credential.weight,
+                        status: credential.status,
+                        errors: 0,
+                    })
+                    .collect(),
                 models: command.models,
                 capabilities: command.capabilities,
                 resource_codes: command.resource_codes,
@@ -843,14 +959,28 @@ impl AdminChannelStore for TestChannelStore {
             if let Some(access_type) = command.access_type {
                 item.access_type = access_type;
             }
-            if let Some(base_url) = command.base_url {
-                item.base_url = base_url;
+            if let Some(credential_rotation) = command.credential_rotation {
+                item.credential_rotation = credential_rotation;
             }
-            if let Some(secret_ref) = command.secret_ref {
-                item.secret_ref = Some(secret_ref);
-            }
-            if let Some(credential_material) = command.credential_material {
-                item.api_key = Some(credential_material);
+            if let Some(credentials) = command.credentials {
+                item.credentials = credentials
+                    .into_iter()
+                    .enumerate()
+                    .map(|(index, credential)| AdminChannelCredentialItem {
+                        id: i64::try_from(index + 1).unwrap(),
+                        credential_id: i64::try_from(index + 1).unwrap(),
+                        uuid: credential.credential_uuid,
+                        name: credential.name,
+                        base_url: credential.base_url,
+                        secret_ref: credential.secret_ref,
+                        api_key: credential.credential_material,
+                        masked_label: credential.masked_label,
+                        priority: credential.priority,
+                        weight: credential.weight,
+                        status: credential.status,
+                        errors: 0,
+                    })
+                    .collect();
             }
             if let Some(models) = command.models {
                 item.models = models;

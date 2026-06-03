@@ -37,6 +37,38 @@ public class AiApi {
         return try await client.put(ApiPaths.backendPath("/ai/channel_groups/\(serializePathParameter(channelGroupId, PathParameterSpec(name: "channelGroupId", style: "simple", explode: false)))/channel_bindings"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: ChannelGroupsChannelBindingsUpdateResult.self)
     }
 
+    /// List model mappings
+    public func modelMappingsList(bindingType: String? = nil, vendorCode: String? = nil, channelId: String? = nil, channelCode: String? = nil, q: String? = nil) async throws -> ModelMappingsListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "binding_type", value: bindingType, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "vendor_code", value: vendorCode, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "channel_id", value: channelId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "channel_code", value: channelCode, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "q", value: q, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/ai/model_mappings"), query), responseType: ModelMappingsListResult.self)
+    }
+
+    /// Create model mapping
+    public func modelMappingsCreate(body: AdminModelMappingCreateRequest) async throws -> ModelMappingsCreateResult? {
+        return try await client.post(ApiPaths.backendPath("/ai/model_mappings"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: ModelMappingsCreateResult.self)
+    }
+
+    /// Resolve model mapping
+    public func modelMappingsResolveCreate(body: AdminModelMappingResolveRequest) async throws -> ModelMappingsResolveCreateResult? {
+        return try await client.post(ApiPaths.backendPath("/ai/model_mappings/resolve"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: ModelMappingsResolveCreateResult.self)
+    }
+
+    /// Delete model mapping
+    public func modelMappingsDelete(mappingId: String) async throws -> ModelMappingsDeleteResult? {
+        return try await client.delete(ApiPaths.backendPath("/ai/model_mappings/\(serializePathParameter(mappingId, PathParameterSpec(name: "mappingId", style: "simple", explode: false)))"), responseType: ModelMappingsDeleteResult.self)
+    }
+
+    /// Update model mapping
+    public func modelMappingsUpdate(mappingId: String, body: AdminModelMappingUpdateRequest) async throws -> ModelMappingsUpdateResult? {
+        return try await client.patch(ApiPaths.backendPath("/ai/model_mappings/\(serializePathParameter(mappingId, PathParameterSpec(name: "mappingId", style: "simple", explode: false)))"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: ModelMappingsUpdateResult.self)
+    }
+
     /// List model rankings
     public func modelRankingsList(rankScope: String? = nil, vendorCode: String? = nil, modality: String? = nil, q: String? = nil, limit: Int? = nil) async throws -> ModelRankingsListResult? {
         let query = buildQueryString([
@@ -104,6 +136,31 @@ public class AiApi {
     /// Update model
     public func modelsUpdate(modelId: String, body: AdminAiModelUpdateRequest) async throws -> ModelsUpdateResult? {
         return try await client.patch(ApiPaths.backendPath("/ai/models/\(serializePathParameter(modelId, PathParameterSpec(name: "modelId", style: "simple", explode: false)))"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: ModelsUpdateResult.self)
+    }
+
+    /// List resource groups
+    public func getResourceGroupsList() async throws -> AiResourceGroupsListResult? {
+        return try await client.get(ApiPaths.backendPath("/ai/resource_groups"), responseType: AiResourceGroupsListResult.self)
+    }
+
+    /// Create resource group
+    public func resourceGroupsCreate(body: AdminAiResourceGroupCreateRequest) async throws -> AiResourceGroupsCreateResult? {
+        return try await client.post(ApiPaths.backendPath("/ai/resource_groups"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: AiResourceGroupsCreateResult.self)
+    }
+
+    /// List resource group resources
+    public func getResourceGroupsListResourceGroups(groupIdOrCode: String) async throws -> AiResourceGroupsResourcesListResult? {
+        return try await client.get(ApiPaths.backendPath("/ai/resource_groups/\(serializePathParameter(groupIdOrCode, PathParameterSpec(name: "groupIdOrCode", style: "simple", explode: false)))/resources"), responseType: AiResourceGroupsResourcesListResult.self)
+    }
+
+    /// Delete resource group
+    public func resourceGroupsDelete(groupId: String) async throws -> AiResourceGroupsDeleteResult? {
+        return try await client.delete(ApiPaths.backendPath("/ai/resource_groups/\(serializePathParameter(groupId, PathParameterSpec(name: "groupId", style: "simple", explode: false)))"), responseType: AiResourceGroupsDeleteResult.self)
+    }
+
+    /// Update resource group
+    public func resourceGroupsUpdate(groupId: String, body: AdminAiResourceGroupUpdateRequest) async throws -> AiResourceGroupsUpdateResult? {
+        return try await client.patch(ApiPaths.backendPath("/ai/resource_groups/\(serializePathParameter(groupId, PathParameterSpec(name: "groupId", style: "simple", explode: false)))"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: AiResourceGroupsUpdateResult.self)
     }
 
     /// List ai resources

@@ -69,6 +69,7 @@ async fn start_end2video_adapter_returns_standard_video_usage_lines() {
         provider: AdapterProviderContext {
             provider_code: "tencent-cloud".to_owned(),
             channel_id: 9301,
+            region_code: "global".to_owned(),
             provider_model: "vidu2.0".to_owned(),
             base_url: Some("https://vidu.example.test".to_owned()),
             auth_profile: json!({"type": "bearer"}),

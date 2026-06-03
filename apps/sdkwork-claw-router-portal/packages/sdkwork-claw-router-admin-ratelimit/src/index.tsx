@@ -25,8 +25,8 @@ function RateLimitTableShell({ children }: { children: React.ReactNode }) {
     <div className="min-h-0 flex-1 p-5">
       <AdminTableShell
         data-admin-ratelimit-table-card
-        className="rounded-lg shadow-none"
-        viewportClassName="relative"
+        className="flex-1 min-h-0 rounded-lg shadow-none"
+        viewportClassName="min-h-0 flex-1 relative"
         viewportProps={{ 'data-admin-ratelimit-table-viewport': true }}
       >
         {children}

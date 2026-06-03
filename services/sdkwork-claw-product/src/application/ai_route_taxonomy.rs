@@ -2,8 +2,8 @@ use std::cmp::Reverse;
 use std::collections::BTreeMap;
 
 use crate::domain::{
-    AiRouteFailureStrategy, AiRouteModelRequirement, AiRouteStrategy, BillingMeter,
-    ProviderChannelRoute, RoutingCapability,
+    model_catalog_scope_matches_key, AiRouteFailureStrategy, AiRouteModelRequirement,
+    AiRouteStrategy, BillingMeter, ProviderChannelRoute, RoutingCapability,
 };
 use crate::ports::PricingCatalog;
 
@@ -713,86 +713,8 @@ fn binding_matches_model_scope(model_scope: &[String], model_scope_keys: &[&str]
     model_scope.iter().any(|scope| {
         model_scope_keys
             .iter()
-            .any(|key| model_scope_value_matches_key(scope, key))
+            .any(|key| model_catalog_scope_matches_key(scope, key))
     })
-}
-
-fn model_scope_value_matches_key(scope: &str, key: &str) -> bool {
-    let scope = normalize_model_scope_value(scope);
-    let key = normalize_model_scope_value(key);
-    if scope.is_empty() || key.is_empty() {
-        return false;
-    }
-    if scope == "*" || scope == "all" {
-        return true;
-    }
-    if scope == key {
-        return true;
-    }
-    if let Some(prefix) = scope.strip_suffix("/*") {
-        return !prefix.is_empty()
-            && (key == prefix
-                || key
-                    .strip_prefix(prefix)
-                    .is_some_and(|tail| tail.starts_with('/')));
-    }
-
-    let scope_parts = scope
-        .split('/')
-        .filter(|part| !part.is_empty())
-        .collect::<Vec<_>>();
-    let Some((vendor, native_model_parts)) = model_scope_key_parts(&key) else {
-        return false;
-    };
-    let native_model = native_model_parts.join("/");
-    match scope_parts.as_slice() {
-        [scope_value] => {
-            *scope_value == vendor
-                || *scope_value == native_model.as_str()
-                || native_model_parts
-                    .last()
-                    .is_some_and(|model| *scope_value == *model)
-        }
-        [scope_vendor, scope_model @ ..] => {
-            (*scope_vendor == vendor && scope_model == native_model_parts) || scope == native_model
-        }
-        [] => false,
-    }
-}
-
-fn model_scope_key_parts(value: &str) -> Option<(&str, Vec<&str>)> {
-    let parts = value
-        .split('/')
-        .filter(|part| !part.is_empty())
-        .collect::<Vec<_>>();
-    match parts.as_slice() {
-        [_vendor, region, _model @ ..] if known_region_segment(region) => None,
-        [vendor, model @ ..] if !model.is_empty() => Some((*vendor, model.to_vec())),
-        _ => None,
-    }
-}
-
-fn known_region_segment(value: &str) -> bool {
-    matches!(
-        value.trim().to_ascii_lowercase().as_str(),
-        "global"
-            | "cn"
-            | "us"
-            | "eu"
-            | "ap"
-            | "apac"
-            | "jp"
-            | "sg"
-            | "hk"
-            | "aws"
-            | "azure"
-            | "gcp"
-            | "local"
-    )
-}
-
-fn normalize_model_scope_value(value: &str) -> String {
-    value.trim().trim_matches('/').to_ascii_lowercase()
 }
 
 fn binding_matches_api_scope(api_scope: &[String], api_scope_keys: &[&str]) -> bool {

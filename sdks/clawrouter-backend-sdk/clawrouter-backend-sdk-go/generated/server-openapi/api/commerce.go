@@ -116,6 +116,61 @@ func (a *CommerceApi) CatalogCategoriesUpdate(categoryId string, body sdktypes.C
     return decodeResult[sdktypes.CatalogCategoriesUpdateResult](raw)
 }
 
+// List category attribute bindings
+func (a *CommerceApi) CatalogCategoryAttributesList(categoryId *string, attributeId *string, status *string, page *int, pageSize *int) (sdktypes.CatalogCategoryAttributesListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "category_id", Value: func() interface{} { if categoryId == nil { return nil }; return *categoryId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "attribute_id", Value: func() interface{} { if attributeId == nil { return nil }; return *attributeId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/catalog/category_attributes"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.CatalogCategoryAttributesListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.CatalogCategoryAttributesListResult](raw)
+}
+
+// Create category attribute binding
+func (a *CommerceApi) CatalogCategoryAttributesCreate(body sdktypes.CommerceProductCategoryAttributeMutationRequest, idempotencyKey string) (sdktypes.CatalogCategoryAttributesCreateResult, error) {
+    headers := BuildRequestHeaders(
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
+        map[string]ParameterSpec{},
+    )
+    raw, err := a.client.Post(BackendApiPath("/catalog/category_attributes"), body, nil, headers, "application/json")
+    if err != nil {
+        var zero sdktypes.CatalogCategoryAttributesCreateResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.CatalogCategoryAttributesCreateResult](raw)
+}
+
+// Delete category attribute binding
+func (a *CommerceApi) CatalogCategoryAttributesDelete(bindingId string) (sdktypes.CatalogCategoryAttributesDeleteResult, error) {
+    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/catalog/category_attributes/%s", SerializePathParameter(bindingId, PathParameterSpec{Name: "bindingId", Style: "simple", Explode: false}))), nil, nil)
+    if err != nil {
+        var zero sdktypes.CatalogCategoryAttributesDeleteResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.CatalogCategoryAttributesDeleteResult](raw)
+}
+
+// Update category attribute binding
+func (a *CommerceApi) CatalogCategoryAttributesUpdate(bindingId string, body sdktypes.CommerceProductCategoryAttributeMutationRequest, idempotencyKey string) (sdktypes.CatalogCategoryAttributesUpdateResult, error) {
+    headers := BuildRequestHeaders(
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
+        map[string]ParameterSpec{},
+    )
+    raw, err := a.client.Patch(BackendApiPath(fmt.Sprintf("/catalog/category_attributes/%s", SerializePathParameter(bindingId, PathParameterSpec{Name: "bindingId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+    if err != nil {
+        var zero sdktypes.CatalogCategoryAttributesUpdateResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.CatalogCategoryAttributesUpdateResult](raw)
+}
+
 // Initialize admin category seed datasets
 func (a *CommerceApi) CatalogCategorySeedsCreate(body sdktypes.CommerceCategorySeedInitializeRequest, idempotencyKey string) (sdktypes.CatalogCategorySeedsCreateResult, error) {
     headers := BuildRequestHeaders(

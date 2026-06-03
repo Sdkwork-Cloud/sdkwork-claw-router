@@ -7,8 +7,6 @@ namespace Sdkwork.ClawRouter.Backend.Models
     public class AdminAiModelUpdateRequest
     {
         public string? ApiFormat { get; set; }
-        public string? CacheReadPrice { get; set; }
-        public string? CacheWritePrice { get; set; }
         public string? CapabilityIntro { get; set; }
         public string? ContextTokens { get; set; }
         public string? Description { get; set; }
@@ -19,8 +17,6 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public List<string>? Modalities { get; set; }
         public string? Model { get; set; }
         public List<string>? OutputModalities { get; set; }
-        public string? PriceIn { get; set; }
-        public string? PriceOut { get; set; }
         public List<AdminAiModelRegionPrice>? RegionPrices { get; set; }
         public int? ReleaseStage { get; set; }
         public string? ReplacementModel { get; set; }

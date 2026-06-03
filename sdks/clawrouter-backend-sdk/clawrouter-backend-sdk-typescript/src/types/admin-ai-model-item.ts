@@ -1,11 +1,9 @@
+import type { AdminAiModelRegionPrice } from './admin-ai-model-region-price';
+
 /** Persisted ai model snapshot returned by the backend. */
 export interface AdminAiModelItem {
   /** Api format field on admin ai model item. */
   apiFormat: string | null;
-  /** Cache read price field on admin ai model item. */
-  cacheReadPrice: string;
-  /** Cache write price field on admin ai model item. */
-  cacheWritePrice: string;
   /** Calls field on admin ai model item. */
   calls: string;
   /** Capability intro field on admin ai model item. */
@@ -32,10 +30,8 @@ export interface AdminAiModelItem {
   name: string;
   /** Output modalities field on admin ai model item. */
   outputModalities: string[];
-  /** Price in field on admin ai model item. */
-  priceIn: string;
-  /** Price out field on admin ai model item. */
-  priceOut: string;
+  /** Region prices field on admin ai model item. */
+  regionPrices: AdminAiModelRegionPrice[];
   /** Release stage field on admin ai model item. */
   releaseStage: number | null;
   /** Replacement model field on admin ai model item. */

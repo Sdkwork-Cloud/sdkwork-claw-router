@@ -214,6 +214,10 @@ pub struct AiUsageFactRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub reference_multiplier: Option<String>,
 
+    /// Region code field on ai usage fact record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub region_code: Option<String>,
+
     /// Request count field on ai usage fact record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub request_count: Option<String>,

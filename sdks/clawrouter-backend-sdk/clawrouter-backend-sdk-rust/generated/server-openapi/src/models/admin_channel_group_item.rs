@@ -43,6 +43,14 @@ pub struct AdminChannelGroupItem {
     #[serde(rename = "rateMultiplier")]
     pub rate_multiplier: f64,
 
+    /// Individual AI resource codes directly granted to this channel group.
+    #[serde(rename = "resourceCodes")]
+    pub resource_codes: Vec<String>,
+
+    /// AI resource group codes directly granted to this channel group.
+    #[serde(rename = "resourceGroupCodes")]
+    pub resource_group_codes: Vec<String>,
+
     /// Status field on admin channel group item.
     pub status: String,
 

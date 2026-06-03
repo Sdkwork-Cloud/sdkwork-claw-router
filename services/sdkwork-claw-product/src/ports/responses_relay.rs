@@ -24,6 +24,7 @@ pub struct ResponsesRelayRequest {
     pub model: String,
     pub provider_code: String,
     pub provider_channel_id: i64,
+    pub provider_region_code: String,
     pub provider_model: String,
     pub provider_base_url: Option<String>,
     pub provider_secret_ref: Option<String>,

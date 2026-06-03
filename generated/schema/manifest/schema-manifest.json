@@ -28,6 +28,7 @@
     "ai_api_endpoint",
     "ai_billing_meter",
     "ai_channel",
+    "ai_channel_credential",
     "ai_channel_endpoint",
     "ai_channel_group",
     "ai_channel_group_member",
@@ -67,6 +68,8 @@
     "ai_model_catalog_sync_run",
     "ai_model_family",
     "ai_model_mapping_rule",
+    "ai_model_mapping_rule_binding",
+    "ai_model_mapping_rule_item",
     "ai_model_modality",
     "ai_model_pricing",
     "ai_model_rank_snapshot",
@@ -539,6 +542,7 @@
       "tables": [
         "ai_api_endpoint",
         "ai_channel",
+        "ai_channel_credential",
         "ai_channel_endpoint",
         "ai_channel_group_member",
         "ai_channel_group_resource",
@@ -2040,6 +2044,8 @@
       "route_scope": "admin",
       "tables": [
         "ai_model_mapping_rule",
+        "ai_model_mapping_rule_binding",
+        "ai_model_mapping_rule_item",
         "ops_audit_log"
       ]
     },
@@ -4216,16 +4222,16 @@
   "summary": {
     "api_surface_counts": {
       "app": 209,
-      "backend": 323,
-      "openai_v1": 10,
+      "backend": 326,
+      "openai_v1": 11,
       "system": 3,
-      "worker": 256
+      "worker": 259
     },
     "external_legacy_table_count": 15,
     "frontend_route_count": 189,
-    "generated_table_count": 226,
+    "generated_table_count": 229,
     "legacy_table_count": 24,
-    "table_count": 334
+    "table_count": 337
   },
   "tables": [
     {
@@ -5202,7 +5208,7 @@
         {
           "name": "model",
           "source": "explicit",
-          "type": "string(128)"
+          "type": "string(256)"
         },
         {
           "name": "run_uuid",
@@ -5237,7 +5243,7 @@
         {
           "name": "planner_model",
           "source": "explicit",
-          "type": "string(128)"
+          "type": "string(256)"
         },
         {
           "name": "execution_mode",
@@ -5650,7 +5656,7 @@
         {
           "name": "model",
           "source": "explicit",
-          "type": "string(128)"
+          "type": "string(256)"
         },
         {
           "name": "runtime_invocation_id",
@@ -6132,7 +6138,7 @@
         {
           "name": "default_model",
           "source": "explicit",
-          "type": "string(128)"
+          "type": "string(256)"
         },
         {
           "name": "execution_mode",
@@ -7678,6 +7684,11 @@
           "type": "json"
         },
         {
+          "name": "credential_rotation_strategy",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
           "name": "masked_label",
           "source": "explicit",
           "type": "string(128)"
@@ -8008,6 +8019,320 @@
             "channel_code"
           ],
           "name": "uk_ai_channel_tenant_code"
+        }
+      ],
+      "write_owner": "ai-routing-service"
+    },
+    {
+      "api_surfaces": [
+        "backend",
+        "worker",
+        "openai_v1"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "group": "tenant_entity",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "data_scope",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "updated_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "version",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_by",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "name": "channel_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "provider_code",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "channel_code",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "credential_name",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "base_url",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "auth_config",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "credential_ref",
+          "source": "explicit",
+          "type": "string(256)"
+        },
+        {
+          "name": "credential_hash",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "masked_label",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "priority",
+          "source": "explicit",
+          "type": "int32"
+        },
+        {
+          "name": "weight",
+          "source": "explicit",
+          "type": "int32"
+        },
+        {
+          "name": "health_status",
+          "source": "explicit",
+          "type": "enum_int32"
+        },
+        {
+          "name": "last_latency_ms",
+          "source": "explicit",
+          "type": "int32"
+        },
+        {
+          "name": "consecutive_error_count",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "last_verified_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "last_used_at",
+          "source": "explicit",
+          "type": "instant"
+        }
+      ],
+      "common_columns": [
+        {
+          "group": "tenant_entity",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "data_scope",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "updated_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "version",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_by",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        }
+      ],
+      "compliance_level": "L3",
+      "domain": "ai",
+      "foreign_keys": [
+        {
+          "columns": [
+            "channel_id"
+          ],
+          "name": "fk_ai_channel_credential_channel",
+          "references_columns": [
+            "id"
+          ],
+          "references_table": "ai_channel"
+        }
+      ],
+      "frontend_routes": [
+        "/admin/channel"
+      ],
+      "generated_by_this_project": true,
+      "indexes": [
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "channel_id",
+            "status",
+            "priority",
+            "weight",
+            "id"
+          ],
+          "name": "idx_ai_channel_credential_channel",
+          "unique": false
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "credential_ref"
+          ],
+          "name": "idx_ai_channel_credential_ref",
+          "unique": false
+        }
+      ],
+      "lifecycle": null,
+      "not_null_columns": [
+        "uuid",
+        "tenant_id",
+        "organization_id",
+        "status",
+        "channel_id",
+        "credential_name",
+        "base_url",
+        "auth_config",
+        "credential_ref",
+        "credential_hash"
+      ],
+      "physical_columns": null,
+      "profile": "credential_ref",
+      "projection_policy": null,
+      "security": {
+        "audit_required": true,
+        "sensitivity": "PROVIDER_CREDENTIAL",
+        "stores_secret_plaintext": false
+      },
+      "source_refs": [],
+      "source_tables": [
+        "ai_channel"
+      ],
+      "system_of_record": true,
+      "table": "ai_channel_credential",
+      "unique_constraints": [
+        {
+          "columns": [
+            "uuid"
+          ],
+          "source": "column_unique"
         }
       ],
       "write_owner": "ai-routing-service"
@@ -9647,7 +9972,7 @@
         {
           "name": "model",
           "source": "explicit",
-          "type": "string(128)"
+          "type": "string(256)"
         },
         {
           "name": "vendor_code",
@@ -9657,7 +9982,7 @@
         {
           "name": "provider_model",
           "source": "explicit",
-          "type": "string(128)"
+          "type": "string(256)"
         },
         {
           "name": "provider_native_model",
@@ -10858,7 +11183,7 @@
         {
           "name": "default_model",
           "source": "explicit",
-          "type": "string(128)"
+          "type": "string(256)"
         },
         {
           "name": "default_endpoint",
@@ -11251,7 +11576,7 @@
         {
           "name": "model",
           "source": "explicit",
-          "type": "string(128)"
+          "type": "string(256)"
         },
         {
           "name": "runtime",
@@ -11566,7 +11891,7 @@
         {
           "name": "model",
           "source": "explicit",
-          "type": "string(128)"
+          "type": "string(256)"
         },
         {
           "name": "provider",
@@ -12152,7 +12477,7 @@
         {
           "name": "model",
           "source": "explicit",
-          "type": "string(128)"
+          "type": "string(256)"
         },
         {
           "name": "endpoint",
@@ -13675,7 +14000,7 @@
         {
           "name": "model",
           "source": "explicit",
-          "type": "string(128)"
+          "type": "string(256)"
         },
         {
           "name": "provider_id",
@@ -15384,7 +15709,7 @@
         {
           "name": "embedding_model",
           "source": "explicit",
-          "type": "string(128)"
+          "type": "string(256)"
         },
         {
           "name": "embedding_dimensions",
@@ -17668,7 +17993,7 @@
         {
           "name": "model",
           "source": "explicit",
-          "type": "string(128)"
+          "type": "string(256)"
         },
         {
           "name": "display_name",
@@ -17883,7 +18208,7 @@
         {
           "name": "replacement_model",
           "source": "explicit",
-          "type": "string(128)"
+          "type": "string(256)"
         },
         {
           "name": "description",
@@ -18215,7 +18540,7 @@
         {
           "name": "model",
           "source": "explicit",
-          "type": "string(128)"
+          "type": "string(256)"
         },
         {
           "name": "vendor_code",
@@ -18486,7 +18811,7 @@
         {
           "name": "model",
           "source": "explicit",
-          "type": "string(128)"
+          "type": "string(256)"
         },
         {
           "name": "vendor_code",
@@ -19570,7 +19895,7 @@
         {
           "name": "default_model",
           "source": "explicit",
-          "type": "string(128)"
+          "type": "string(256)"
         },
         {
           "name": "sort_order",
@@ -19805,39 +20130,9 @@
           "type": "common"
         },
         {
-          "name": "scope_type",
-          "source": "explicit",
-          "type": "string(32)"
-        },
-        {
-          "name": "vendor_id",
+          "name": "source_vendor_id",
           "source": "explicit",
           "type": "int64"
-        },
-        {
-          "name": "vendor_code",
-          "source": "explicit",
-          "type": "string(64)"
-        },
-        {
-          "name": "channel_id",
-          "source": "explicit",
-          "type": "int64"
-        },
-        {
-          "name": "channel_code",
-          "source": "explicit",
-          "type": "string(64)"
-        },
-        {
-          "name": "source_model",
-          "source": "explicit",
-          "type": "string(256)"
-        },
-        {
-          "name": "source_catalog_key",
-          "source": "explicit",
-          "type": "string(256)"
         },
         {
           "name": "source_vendor_code",
@@ -19845,29 +20140,14 @@
           "type": "string(64)"
         },
         {
-          "name": "target_model",
+          "name": "target_vendor_id",
           "source": "explicit",
-          "type": "string(256)"
-        },
-        {
-          "name": "target_catalog_key",
-          "source": "explicit",
-          "type": "string(256)"
+          "type": "int64"
         },
         {
           "name": "target_vendor_code",
           "source": "explicit",
           "type": "string(64)"
-        },
-        {
-          "name": "target_provider_model",
-          "source": "explicit",
-          "type": "string(256)"
-        },
-        {
-          "name": "target_provider_native_model",
-          "source": "explicit",
-          "type": "string(256)"
         },
         {
           "name": "mapping_mode",
@@ -19880,29 +20160,9 @@
           "type": "string(32)"
         },
         {
-          "name": "priority",
-          "source": "explicit",
-          "type": "int32"
-        },
-        {
           "name": "enabled",
           "source": "explicit",
           "type": "bool"
-        },
-        {
-          "name": "effective_from",
-          "source": "explicit",
-          "type": "instant"
-        },
-        {
-          "name": "effective_to",
-          "source": "explicit",
-          "type": "instant"
-        },
-        {
-          "name": "description",
-          "source": "explicit",
-          "type": "string(512)"
         },
         {
           "name": "metadata",
@@ -19998,12 +20258,10 @@
             "organization_id",
             "status",
             "enabled",
-            "channel_id",
-            "source_model",
-            "priority",
+            "source_vendor_code",
             "id"
           ],
-          "name": "idx_ai_model_mapping_rule_channel_lookup",
+          "name": "idx_ai_model_mapping_rule_source_vendor",
           "unique": false
         },
         {
@@ -20012,38 +20270,21 @@
             "organization_id",
             "status",
             "enabled",
-            "vendor_code",
-            "source_model",
-            "priority",
-            "id"
-          ],
-          "name": "idx_ai_model_mapping_rule_vendor_lookup",
-          "unique": false
-        },
-        {
-          "columns": [
-            "tenant_id",
-            "organization_id",
-            "status",
-            "enabled",
-            "scope_type",
-            "source_model",
-            "priority",
-            "id"
-          ],
-          "name": "idx_ai_model_mapping_rule_global_lookup",
-          "unique": false
-        },
-        {
-          "columns": [
-            "tenant_id",
-            "organization_id",
-            "target_catalog_key",
             "target_vendor_code",
-            "status",
             "id"
           ],
-          "name": "idx_ai_model_mapping_rule_target_model",
+          "name": "idx_ai_model_mapping_rule_target_vendor",
+          "unique": false
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "status",
+            "enabled",
+            "id"
+          ],
+          "name": "idx_ai_model_mapping_rule_enabled",
           "unique": false
         }
       ],
@@ -20053,12 +20294,10 @@
         "tenant_id",
         "organization_id",
         "status",
-        "scope_type",
-        "source_model",
-        "target_model",
+        "source_vendor_code",
+        "target_vendor_code",
         "mapping_mode",
         "match_type",
-        "priority",
         "enabled"
       ],
       "physical_columns": null,
@@ -20067,12 +20306,641 @@
       "security": null,
       "source_refs": [],
       "source_tables": [
-        "ai_model_vendor",
-        "ai_model",
-        "ai_channel"
+        "ai_model_vendor"
       ],
       "system_of_record": true,
       "table": "ai_model_mapping_rule",
+      "unique_constraints": [
+        {
+          "columns": [
+            "uuid"
+          ],
+          "source": "column_unique"
+        }
+      ],
+      "write_owner": "ai-routing-service"
+    },
+    {
+      "api_surfaces": [
+        "backend",
+        "worker"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "group": "tenant_entity",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "data_scope",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "updated_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "version",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_by",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "name": "rule_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "rule_uuid",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "binding_type",
+          "source": "explicit",
+          "type": "string(32)"
+        },
+        {
+          "name": "binding_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "binding_code",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "binding_name_snapshot",
+          "source": "explicit",
+          "type": "string(256)"
+        },
+        {
+          "name": "sort_order",
+          "source": "explicit",
+          "type": "int32"
+        },
+        {
+          "name": "enabled",
+          "source": "explicit",
+          "type": "bool"
+        },
+        {
+          "name": "metadata",
+          "source": "explicit",
+          "type": "json"
+        }
+      ],
+      "common_columns": [
+        {
+          "group": "tenant_entity",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "data_scope",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "updated_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "version",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_by",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        }
+      ],
+      "compliance_level": "L2",
+      "domain": "ai",
+      "foreign_keys": [
+        {
+          "columns": [
+            "rule_id"
+          ],
+          "name": "fk_ai_model_mapping_rule_binding_rule",
+          "references_columns": [
+            "id"
+          ],
+          "references_table": "ai_model_mapping_rule"
+        }
+      ],
+      "frontend_routes": [
+        "/admin/model/mappings"
+      ],
+      "generated_by_this_project": true,
+      "indexes": [
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "rule_id",
+            "status",
+            "enabled",
+            "sort_order",
+            "id"
+          ],
+          "name": "idx_ai_model_mapping_rule_binding_rule_lookup",
+          "unique": false
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "binding_type",
+            "binding_id",
+            "binding_code",
+            "status",
+            "enabled",
+            "id"
+          ],
+          "name": "idx_ai_model_mapping_rule_binding_target_lookup",
+          "unique": false
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "binding_type",
+            "binding_code",
+            "status",
+            "enabled",
+            "id"
+          ],
+          "name": "idx_ai_model_mapping_rule_binding_channel_group_lookup",
+          "unique": false
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "binding_type",
+            "binding_code",
+            "status",
+            "enabled",
+            "id"
+          ],
+          "name": "idx_ai_model_mapping_rule_binding_vendor_lookup",
+          "unique": false
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "binding_type",
+            "status",
+            "enabled",
+            "id"
+          ],
+          "name": "idx_ai_model_mapping_rule_binding_global_lookup",
+          "unique": false
+        }
+      ],
+      "lifecycle": null,
+      "not_null_columns": [
+        "uuid",
+        "tenant_id",
+        "organization_id",
+        "status",
+        "rule_id",
+        "binding_type",
+        "sort_order",
+        "enabled"
+      ],
+      "physical_columns": null,
+      "profile": "relation_entity",
+      "projection_policy": null,
+      "security": null,
+      "source_refs": [],
+      "source_tables": [
+        "ai_model_mapping_rule",
+        "ai_model_vendor",
+        "ai_channel_group",
+        "ai_channel",
+        "integration_provider_account",
+        "ai_site",
+        "ai_site_service"
+      ],
+      "system_of_record": true,
+      "table": "ai_model_mapping_rule_binding",
+      "unique_constraints": [
+        {
+          "columns": [
+            "uuid"
+          ],
+          "source": "column_unique"
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "rule_id",
+            "binding_type",
+            "binding_id",
+            "binding_code"
+          ],
+          "name": "uk_ai_model_mapping_rule_binding_target"
+        }
+      ],
+      "write_owner": "ai-routing-service"
+    },
+    {
+      "api_surfaces": [
+        "backend",
+        "worker"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "group": "tenant_entity",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "data_scope",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "updated_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "version",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_by",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "name": "rule_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "rule_uuid",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "source_model",
+          "source": "explicit",
+          "type": "string(256)"
+        },
+        {
+          "name": "source_catalog_key",
+          "source": "explicit",
+          "type": "string(256)"
+        },
+        {
+          "name": "target_model",
+          "source": "explicit",
+          "type": "string(256)"
+        },
+        {
+          "name": "target_catalog_key",
+          "source": "explicit",
+          "type": "string(256)"
+        },
+        {
+          "name": "target_provider_model",
+          "source": "explicit",
+          "type": "string(256)"
+        },
+        {
+          "name": "target_provider_native_model",
+          "source": "explicit",
+          "type": "string(256)"
+        },
+        {
+          "name": "sort_order",
+          "source": "explicit",
+          "type": "int32"
+        },
+        {
+          "name": "enabled",
+          "source": "explicit",
+          "type": "bool"
+        },
+        {
+          "name": "metadata",
+          "source": "explicit",
+          "type": "json"
+        }
+      ],
+      "common_columns": [
+        {
+          "group": "tenant_entity",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "data_scope",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "updated_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "version",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "deleted_by",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "tenant_entity",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        }
+      ],
+      "compliance_level": "L2",
+      "domain": "ai",
+      "foreign_keys": [
+        {
+          "columns": [
+            "rule_id"
+          ],
+          "name": "fk_ai_model_mapping_rule_item_rule",
+          "references_columns": [
+            "id"
+          ],
+          "references_table": "ai_model_mapping_rule"
+        }
+      ],
+      "frontend_routes": [
+        "/admin/model/mappings"
+      ],
+      "generated_by_this_project": true,
+      "indexes": [
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "rule_id",
+            "status",
+            "enabled",
+            "sort_order",
+            "id"
+          ],
+          "name": "idx_ai_model_mapping_rule_item_rule_lookup",
+          "unique": false
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "source_model",
+            "status",
+            "enabled",
+            "id"
+          ],
+          "name": "idx_ai_model_mapping_rule_item_source_lookup",
+          "unique": false
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "target_catalog_key",
+            "target_model",
+            "status",
+            "id"
+          ],
+          "name": "idx_ai_model_mapping_rule_item_target_lookup",
+          "unique": false
+        }
+      ],
+      "lifecycle": null,
+      "not_null_columns": [
+        "uuid",
+        "tenant_id",
+        "organization_id",
+        "status",
+        "rule_id",
+        "source_model",
+        "target_model",
+        "sort_order",
+        "enabled"
+      ],
+      "physical_columns": null,
+      "profile": "relation_entity",
+      "projection_policy": null,
+      "security": null,
+      "source_refs": [],
+      "source_tables": [
+        "ai_model_mapping_rule",
+        "ai_model"
+      ],
+      "system_of_record": true,
+      "table": "ai_model_mapping_rule_item",
       "unique_constraints": [
         {
           "columns": [
@@ -20176,7 +21044,7 @@
         {
           "name": "model",
           "source": "explicit",
-          "type": "string(128)"
+          "type": "string(256)"
         },
         {
           "name": "vendor_code",
@@ -20439,7 +21307,7 @@
         {
           "name": "model",
           "source": "explicit",
-          "type": "string(128)"
+          "type": "string(256)"
         },
         {
           "name": "vendor_code",
@@ -20464,7 +21332,7 @@
         {
           "name": "provider_model",
           "source": "explicit",
-          "type": "string(128)"
+          "type": "string(256)"
         },
         {
           "name": "platform_code",
@@ -20994,7 +21862,7 @@
         {
           "name": "model",
           "source": "explicit",
-          "type": "string(128)"
+          "type": "string(256)"
         },
         {
           "name": "vendor_code",
@@ -21526,6 +22394,16 @@
         },
         {
           "name": "capabilities",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "supported_protocols",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "client_api_compatibility",
           "source": "explicit",
           "type": "json"
         },
@@ -22744,7 +23622,7 @@
         {
           "name": "model",
           "source": "explicit",
-          "type": "string(128)"
+          "type": "string(256)"
         },
         {
           "name": "provider_code",
@@ -22759,7 +23637,7 @@
         {
           "name": "provider_model",
           "source": "explicit",
-          "type": "string(128)"
+          "type": "string(256)"
         },
         {
           "name": "capability_code",
@@ -25073,7 +25951,7 @@
         {
           "name": "model",
           "source": "explicit",
-          "type": "string(128)"
+          "type": "string(256)"
         },
         {
           "name": "quota_period",
@@ -25685,7 +26563,7 @@
         {
           "name": "requested_model",
           "source": "explicit",
-          "type": "string(128)"
+          "type": "string(256)"
         },
         {
           "name": "requested_model_catalog_key",
@@ -25695,12 +26573,17 @@
         {
           "name": "provider_model",
           "source": "explicit",
-          "type": "string(128)"
+          "type": "string(256)"
         },
         {
           "name": "provider_native_model",
           "source": "explicit",
           "type": "string(256)"
+        },
+        {
+          "name": "region_code",
+          "source": "explicit",
+          "type": "string(64)"
         },
         {
           "name": "endpoint",
@@ -26130,7 +27013,7 @@
         {
           "name": "model_code",
           "source": "explicit",
-          "type": "string(128)"
+          "type": "string(256)"
         },
         {
           "name": "catalog_key",
@@ -26140,7 +27023,7 @@
         {
           "name": "model",
           "source": "explicit",
-          "type": "string(128)"
+          "type": "string(256)"
         },
         {
           "name": "provider_native_model",
@@ -27291,7 +28174,7 @@
         {
           "name": "model_code",
           "source": "explicit",
-          "type": "string(128)"
+          "type": "string(256)"
         },
         {
           "name": "catalog_key",
@@ -27422,6 +28305,7 @@
             "channel_group_id",
             "api_code",
             "catalog_key",
+            "region_code",
             "id"
           ],
           "name": "idx_ai_route_candidate_status",
@@ -27435,7 +28319,8 @@
             "channel_id",
             "endpoint_id",
             "api_code",
-            "catalog_key"
+            "catalog_key",
+            "region_code"
           ],
           "name": "uk_ai_route_candidate_scope",
           "unique": true
@@ -27447,6 +28332,7 @@
             "channel_group_id",
             "api_code",
             "catalog_key",
+            "region_code",
             "status",
             "health_status",
             "priority",
@@ -27910,12 +28796,12 @@
         {
           "name": "requested_model",
           "source": "explicit",
-          "type": "string(128)"
+          "type": "string(256)"
         },
         {
           "name": "resolved_model",
           "source": "explicit",
-          "type": "string(128)"
+          "type": "string(256)"
         },
         {
           "name": "capability",
@@ -28671,7 +29557,7 @@
         {
           "name": "target_model",
           "source": "explicit",
-          "type": "string(128)"
+          "type": "string(256)"
         },
         {
           "name": "candidate_channels",
@@ -29374,7 +30260,7 @@
         {
           "name": "model",
           "source": "explicit",
-          "type": "string(128)"
+          "type": "string(256)"
         },
         {
           "name": "provider",
@@ -30054,7 +30940,7 @@
         {
           "name": "model",
           "source": "explicit",
-          "type": "string(128)"
+          "type": "string(256)"
         },
         {
           "name": "input_tokens",
@@ -30696,7 +31582,7 @@
         {
           "name": "model_code",
           "source": "explicit",
-          "type": "string(128)"
+          "type": "string(256)"
         },
         {
           "name": "model_name",
@@ -30711,7 +31597,7 @@
         {
           "name": "provider_model",
           "source": "explicit",
-          "type": "string(128)"
+          "type": "string(256)"
         },
         {
           "name": "provider_native_model",
@@ -31515,12 +32401,17 @@
         {
           "name": "model",
           "source": "explicit",
-          "type": "string(128)"
+          "type": "string(256)"
         },
         {
           "name": "provider_native_model",
           "source": "explicit",
           "type": "string(256)"
+        },
+        {
+          "name": "region_code",
+          "source": "explicit",
+          "type": "string(64)"
         },
         {
           "name": "provider_id",
@@ -58642,7 +59533,7 @@
         {
           "name": "model",
           "source": "explicit",
-          "type": "string(128)"
+          "type": "string(256)"
         },
         {
           "name": "provider_code",

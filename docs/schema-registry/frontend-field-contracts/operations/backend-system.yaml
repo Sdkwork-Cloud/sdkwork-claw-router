@@ -2044,6 +2044,7 @@ frontend_operations:
           - model
           - providerNativeModel
           - requestedModelCatalogKey
+          - regionCode
           - status
           - httpStatus
           - httpMethod
@@ -2104,6 +2105,10 @@ frontend_operations:
             requestedModelCatalogKey:
               type: string
               maxLength: 256
+            regionCode:
+              type: string
+              maxLength: 64
+              description: Deployment region used by the selected endpoint and pricing resolver. This is not part of the model catalog identity.
             status:
               type: string
               enum:

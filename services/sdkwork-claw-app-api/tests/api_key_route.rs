@@ -87,7 +87,7 @@ fn catalog() -> InMemoryPricingCatalog {
             "gpt-4o-mini",
             "openrouter",
             3001,
-            "openai/global/gpt-4o-mini",
+            "openai/gpt-4o-mini",
         )
         .with_region_code("global"),
     );

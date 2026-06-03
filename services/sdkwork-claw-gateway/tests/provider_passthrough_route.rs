@@ -1069,7 +1069,7 @@ async fn gateway_database_provider_native_adapter_records_standard_usage_lines()
         request_row.get::<String, _>("catalog_key")
     );
     assert_eq!(
-        "tencent-cloud/global/vidu2.0",
+        "tencent-cloud/vidu2.0",
         request_row.get::<String, _>("requested_model_catalog_key")
     );
     assert_eq!("vidu2.0", request_row.get::<String, _>("model"));
@@ -1134,7 +1134,7 @@ async fn gateway_database_provider_native_adapter_records_standard_usage_lines()
         pricing_snapshot["model"]["catalogKey"]
     );
     assert_eq!(
-        "tencent-cloud/global/vidu2.0",
+        "tencent-cloud/vidu2.0",
         pricing_snapshot["model"]["requestedCatalogKey"]
     );
     assert_eq!("vidu2.0", pricing_snapshot["model"]["providerNativeModel"]);
@@ -2052,7 +2052,7 @@ async fn gateway_database_provider_native_direct_passthrough_records_api_request
         usage.get::<String, _>("catalog_key")
     );
     assert_eq!(
-        "google/global/gemini-2.5-flash",
+        "google/gemini-2.5-flash",
         usage.get::<String, _>("requested_model_catalog_key")
     );
     assert_eq!("gemini-2.5-flash", usage.get::<String, _>("model"));
@@ -5892,13 +5892,13 @@ async fn capture_provider_native_adapter_request_with_video_usage(
                 AdapterUsageLine::new("api_request", "1")
                     .with_request_count(1)
                     .with_provider_native_model("vidu2.0")
-                    .with_requested_model_catalog_key("tencent-cloud/global/vidu2.0"),
+                    .with_requested_model_catalog_key("tencent-cloud/vidu2.0"),
             )
             .with_usage_line(
                 AdapterUsageLine::new("video_output_second", "8")
                     .with_video_seconds("8")
                     .with_provider_native_model("vidu2.0")
-                    .with_requested_model_catalog_key("tencent-cloud/global/vidu2.0"),
+                    .with_requested_model_catalog_key("tencent-cloud/vidu2.0"),
             ),
         ),
     )

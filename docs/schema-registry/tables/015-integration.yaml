@@ -325,9 +325,9 @@ tables:
     channel_id: int64
     model_id: int64
     catalog_key: string(256)
-    model: string(128)
+    model: string(256)
     vendor_code: string(64)
-    provider_model: string(128)
+    provider_model: string(256)
     provider_native_model: string(256)
     api_code: string(128)
     capability: enum_int32
@@ -435,10 +435,10 @@ tables:
       constraints: NOT NULL DEFAULT 'ai_model_relay'
     model_id: int64
     catalog_key: string(256)
-    model_code: string(128)
+    model_code: string(256)
     model_name: string(128)
     display_name: string(128)
-    provider_model: string(128)
+    provider_model: string(256)
     provider_native_model: string(256)
     vendor_code: string(64)
     modality: string(64)

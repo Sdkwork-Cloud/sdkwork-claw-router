@@ -80,6 +80,7 @@ client.set_header('X-Custom-Header', 'value')
 - `client.system` - system API
 - `client.prompts` - prompts API
 - `client.service_providers` - service_providers API
+- `client.sites` - sites API
 - `client.storage` - storage API
 
 ## Usage Examples
@@ -239,6 +240,17 @@ params = {
     'edge_id': 'edge_id',
 }
 result = client.service_providers.adjustments.list(params)
+print(result)
+```
+
+### sites
+
+```python
+# List sites
+params = {
+    'q': 'q',
+}
+result = client.sites.site_catalog.list(params)
 print(result)
 ```
 

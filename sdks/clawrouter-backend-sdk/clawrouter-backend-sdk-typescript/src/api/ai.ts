@@ -223,9 +223,10 @@ export class AiModelMappingsResolveApi {
 }
 
 export interface AiModelMappingsListParams {
-  scopeType?: string;
+  bindingType?: string;
   vendorCode?: string;
   channelId?: string;
+  channelCode?: string;
   q?: string;
 }
 
@@ -242,9 +243,10 @@ export class AiModelMappingsApi {
 /** List model mappings */
   async list(params?: AiModelMappingsListParams): Promise<ModelMappingsListResult> {
     const query = buildQueryString([
-      { name: 'scope_type', value: params?.scopeType, style: 'form', explode: true, allowReserved: false },
+      { name: 'binding_type', value: params?.bindingType, style: 'form', explode: true, allowReserved: false },
       { name: 'vendor_code', value: params?.vendorCode, style: 'form', explode: true, allowReserved: false },
       { name: 'channel_id', value: params?.channelId, style: 'form', explode: true, allowReserved: false },
+      { name: 'channel_code', value: params?.channelCode, style: 'form', explode: true, allowReserved: false },
       { name: 'q', value: params?.q, style: 'form', explode: true, allowReserved: false },
     ]);
     return this.client.get<ModelMappingsListResult>(appendQueryString(backendApiPath(`/ai/model_mappings`), query));

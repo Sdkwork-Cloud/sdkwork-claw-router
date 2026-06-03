@@ -162,8 +162,8 @@ test("ranking service loads model vendors through the generated app SDK vendor e
 });
 
 test("ranking service uses generated app SDK snapshot history instead of local synthetic history", async () => {
-  const openAiKey = rankingHistoryKey({ id: "openai/global/gpt-4o-mini" });
-  const anthropicKey = rankingHistoryKey({ id: "anthropic/global/claude-3-7-sonnet" });
+  const openAiKey = rankingHistoryKey({ id: "openai/gpt-4o-mini" });
+  const anthropicKey = rankingHistoryKey({ id: "anthropic/claude-3-7-sonnet" });
 
   await withAppSdkFetch(
     (url) => {
@@ -188,7 +188,7 @@ test("ranking service uses generated app SDK snapshot history instead of local s
         },
         items: [
           {
-            id: "openai/global/gpt-4o-mini",
+            id: "openai/gpt-4o-mini",
             rank: 1,
             prevRank: 2,
             name: "gpt-4o-mini",
@@ -209,7 +209,7 @@ test("ranking service uses generated app SDK snapshot history instead of local s
             license: "Proprietary",
           },
           {
-            id: "anthropic/global/claude-3-7-sonnet",
+            id: "anthropic/claude-3-7-sonnet",
             rank: 2,
             prevRank: 1,
             name: "claude-3-7-sonnet",
@@ -235,16 +235,16 @@ test("ranking service uses generated app SDK snapshot history instead of local s
             date: "2026-05-07",
             index: 0,
             entries: [
-              { catalogKey: "openai/global/gpt-4o-mini", model: "gpt-4o-mini", rank: 2, volume: 1000, color: "#10b981" },
-              { catalogKey: "anthropic/global/claude-3-7-sonnet", model: "claude-3-7-sonnet", rank: 1, volume: 1100, color: "#f97316" },
+              { catalogKey: "openai/gpt-4o-mini", model: "gpt-4o-mini", rank: 2, volume: 1000, color: "#10b981" },
+              { catalogKey: "anthropic/claude-3-7-sonnet", model: "claude-3-7-sonnet", rank: 1, volume: 1100, color: "#f97316" },
             ],
           },
           {
             date: "2026-05-08",
             index: 1,
             entries: [
-              { catalogKey: "openai/global/gpt-4o-mini", model: "gpt-4o-mini", rank: 1, volume: 1200, color: "#10b981" },
-              { catalogKey: "anthropic/global/claude-3-7-sonnet", model: "claude-3-7-sonnet", rank: 2, volume: 900, color: "#f97316" },
+              { catalogKey: "openai/gpt-4o-mini", model: "gpt-4o-mini", rank: 1, volume: 1200, color: "#10b981" },
+              { catalogKey: "anthropic/claude-3-7-sonnet", model: "claude-3-7-sonnet", rank: 2, volume: 900, color: "#f97316" },
             ],
           },
         ],
@@ -266,7 +266,7 @@ test("ranking service uses generated app SDK snapshot history instead of local s
         trendScore: model.trendScore,
       })), [
         {
-          id: "openai/global/gpt-4o-mini",
+          id: "openai/gpt-4o-mini",
           requests: 1200,
           tokens: 456000,
           cost: 12.34,
@@ -274,7 +274,7 @@ test("ranking service uses generated app SDK snapshot history instead of local s
           trendScore: 0.77,
         },
         {
-          id: "anthropic/global/claude-3-7-sonnet",
+          id: "anthropic/claude-3-7-sonnet",
           requests: 900,
           tokens: 321000,
           cost: 9.87,
@@ -351,8 +351,8 @@ test("ranking service treats an empty published snapshot as a valid first-run st
 });
 
 test("ranking service maps backend history identities to stable series keys and display names", async () => {
-  const openAiKey = rankingHistoryKey({ id: "openai/global/gpt-4o-mini" });
-  const anthropicKey = rankingHistoryKey({ id: "anthropic/global/claude-3-7-sonnet" });
+  const openAiKey = rankingHistoryKey({ id: "openai/gpt-4o-mini" });
+  const anthropicKey = rankingHistoryKey({ id: "anthropic/claude-3-7-sonnet" });
 
   await withAppSdkFetch(
     (url) => {
@@ -376,7 +376,7 @@ test("ranking service maps backend history identities to stable series keys and 
         },
         items: [
           {
-            id: "openai/global/gpt-4o-mini",
+            id: "openai/gpt-4o-mini",
             rank: 1,
             prevRank: 1,
             name: "GPT-4o Mini",
@@ -394,7 +394,7 @@ test("ranking service maps backend history identities to stable series keys and 
             license: "Proprietary",
           },
           {
-            id: "anthropic/global/claude-3-7-sonnet",
+            id: "anthropic/claude-3-7-sonnet",
             rank: 2,
             prevRank: 2,
             name: "Claude 3.7 Sonnet",
@@ -417,8 +417,8 @@ test("ranking service maps backend history identities to stable series keys and 
             date: "2026-05-08",
             index: 0,
             entries: [
-              { catalogKey: "openai/global/gpt-4o-mini", model: "gpt-4o-mini", rank: 1, volume: 1200, color: "#10b981" },
-              { catalogKey: "anthropic/global/claude-3-7-sonnet", model: "claude-3-7-sonnet", rank: 2, volume: 900, color: "#f97316" },
+              { catalogKey: "openai/gpt-4o-mini", model: "gpt-4o-mini", rank: 1, volume: 1200, color: "#10b981" },
+              { catalogKey: "anthropic/claude-3-7-sonnet", model: "claude-3-7-sonnet", rank: 2, volume: 900, color: "#f97316" },
             ],
           },
         ],
@@ -480,7 +480,7 @@ test("ranking service rejects snapshot-scoped ranking ids to keep backend and hi
         },
         items: [
           {
-            id: "2026-05-08:openai/global/gpt-4o-mini",
+            id: "2026-05-08:openai/gpt-4o-mini",
             rank: 1,
             prevRank: 1,
             name: "GPT-4o Mini",
@@ -503,7 +503,7 @@ test("ranking service rejects snapshot-scoped ranking ids to keep backend and hi
             date: "2026-05-08",
             index: 0,
             entries: [
-              { catalogKey: "openai/global/gpt-4o-mini", model: "gpt-4o-mini", rank: 1, volume: 1200, color: "#10b981" },
+              { catalogKey: "openai/gpt-4o-mini", model: "gpt-4o-mini", rank: 1, volume: 1200, color: "#10b981" },
             ],
           },
         ],
@@ -541,7 +541,7 @@ test("ranking service rejects fractional ranking count metrics", async () => {
         },
         items: [
           {
-            id: "openai/global/gpt-4o-mini",
+            id: "openai/gpt-4o-mini",
             rank: 1,
             prevRank: 1,
             name: "GPT-4o Mini",
@@ -594,7 +594,7 @@ test("ranking service rejects fractional ranking order metrics", async () => {
         },
         items: [
           {
-            id: "openai/global/gpt-4o-mini",
+            id: "openai/gpt-4o-mini",
             rank: 1.5,
             prevRank: 1,
             name: "GPT-4o Mini",
@@ -647,7 +647,7 @@ test("ranking service rejects fractional ranking history volume metrics", async 
         },
         items: [
           {
-            id: "openai/global/gpt-4o-mini",
+            id: "openai/gpt-4o-mini",
             rank: 1,
             prevRank: 1,
             name: "GPT-4o Mini",
@@ -670,7 +670,7 @@ test("ranking service rejects fractional ranking history volume metrics", async 
             date: "2026-05-08",
             index: 0,
             entries: [
-              { catalogKey: "openai/global/gpt-4o-mini", model: "gpt-4o-mini", rank: 1, volume: 1200.5, color: "#10b981" },
+              { catalogKey: "openai/gpt-4o-mini", model: "gpt-4o-mini", rank: 1, volume: 1200.5, color: "#10b981" },
             ],
           },
         ],
@@ -708,7 +708,7 @@ test("ranking service rejects fractional ranking history point indexes", async (
         },
         items: [
           {
-            id: "openai/global/gpt-4o-mini",
+            id: "openai/gpt-4o-mini",
             rank: 1,
             prevRank: 1,
             name: "GPT-4o Mini",
@@ -731,7 +731,7 @@ test("ranking service rejects fractional ranking history point indexes", async (
             date: "2026-05-08",
             index: 0.5,
             entries: [
-              { catalogKey: "openai/global/gpt-4o-mini", model: "gpt-4o-mini", rank: 1, volume: 1200, color: "#10b981" },
+              { catalogKey: "openai/gpt-4o-mini", model: "gpt-4o-mini", rank: 1, volume: 1200, color: "#10b981" },
             ],
           },
         ],
@@ -782,7 +782,7 @@ test("ranking service rejects fractional ranking source refresh intervals", asyn
 
 test("ranking view model keeps same-name models isolated by stable identity", () => {
   const openAiModel = rankingModel({
-    id: "openai/global/shared-model",
+    id: "openai/shared-model",
     name: "Shared Model",
     vendor: "OpenAI",
     vendorCode: "openai",
@@ -815,7 +815,7 @@ test("ranking view model keeps same-name models isolated by stable identity", ()
 
   assert.deepEqual(view.chartKeys, ["Others", azureKey, openAiKey]);
   assert.deepEqual(view.displayRankings.map((model) => [model.id, model.currentVolume]), [
-    ["openai/global/shared-model", 1200],
+    ["openai/shared-model", 1200],
     ["azure/eastus/shared-model", 400],
   ]);
   assert.deepEqual(view.panelStats.models.map((model) => [model.name, model.value, model.color]), [
@@ -828,7 +828,7 @@ test("ranking view model keeps same-name models isolated by stable identity", ()
 
 test("ranking view model keeps server-backed vendor filters independent from filtered ranking snapshots", () => {
   const openAiModel = rankingModel({
-    id: "openai/global/gpt-4o-mini",
+    id: "openai/gpt-4o-mini",
     name: "GPT-4o Mini",
     vendor: "OpenAI",
     vendorCode: "openai",
@@ -869,7 +869,7 @@ test("ranking view model keeps server-backed vendor filters independent from fil
 
 test("ranking vendor filtering uses stable server vendor code before display label", () => {
   const openAiModel = rankingModel({
-    id: "openai/global/gpt-4o-mini",
+    id: "openai/gpt-4o-mini",
     name: "GPT-4o Mini",
     vendor: "OpenAI Global",
     vendorCode: "openai",
@@ -894,7 +894,7 @@ test("ranking vendor filtering uses stable server vendor code before display lab
     ],
   });
 
-  assert.deepEqual(view.displayRankings.map((model) => model.id), ["openai/global/gpt-4o-mini"]);
+  assert.deepEqual(view.displayRankings.map((model) => model.id), ["openai/gpt-4o-mini"]);
 });
 
 test("ranking service sends page filters through the generated app SDK query contract", async () => {
@@ -927,7 +927,7 @@ test("ranking service sends page filters through the generated app SDK query con
         },
         items: [
           {
-            id: "openai/global/gpt-4o-mini",
+            id: "openai/gpt-4o-mini",
             rank: 1,
             prevRank: 1,
             name: "gpt-4o-mini",

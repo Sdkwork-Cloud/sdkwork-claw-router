@@ -2,11 +2,12 @@ import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { AdminTableShell, BottomPagination, BusinessStateTableRow, ConfirmDialog, readMediaResourceUrl } from 'sdkwork-claw-router-commons';
 import { Search, Plus, Cpu, X, Layers, Image as ImageIcon, MessageSquare, Headphones, ChevronRight, ChevronDown, Activity, Trash2, Edit, Music, Loader2, RefreshCw, Video, Volume2, Power, PowerOff, Globe2, ArrowRightLeft, Upload, Check } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { ModelService, SiteService, ModelMappingService, Vendor, Model, SiteItem, ModelMappingRule, ModelMappingCreateInput, KNOWN_VENDORS, selectPreferredModelVendorId } from './modelService';
+import { ModelService, SiteService, ModelMappingService, Vendor, Model, SiteItem, ModelMappingRule, ModelMappingCreateInput, ModelMappingUpdateInput, ModelMappingBindingInput, ModelMappingRuleItemInput, KNOWN_VENDORS, selectPreferredModelVendorId } from './modelService';
 import { MODEL_PRICING_REGIONS, createModelInputFromForm, createVendorInputFromForm, updateModelInputFromForm } from './modelForm';
 export { ResourceAdmin } from './resourceAdmin';
 
 type ModelModalityFilter = Model['type'];
+type VendorPickerSelectionMode = 'single' | 'multiple';
 
 export function ModelAdmin() {
   const { t } = useTranslation();
@@ -30,6 +31,8 @@ export function ModelAdmin() {
   const [deletingModelId, setDeletingModelId] = useState<string | null>(null);
   const [statusUpdatingModelId, setStatusUpdatingModelId] = useState<string | null>(null);
   const [selectedModality, setSelectedModality] = useState<Model['type']>('Chat');
+  const [openPricePopoverModelId, setOpenPricePopoverModelId] = useState<string | null>(null);
+  const [priceRegionByModelId, setPriceRegionByModelId] = useState<Record<string, string>>({});
 
   const [vendorSelection, setVendorSelection] = useState<string>('v_deepseek');
   const [vendorDesc, setVendorDesc] = useState<string>(KNOWN_VENDORS.find(v => v.id === 'v_deepseek')?.desc ?? '');
@@ -121,8 +124,9 @@ export function ModelAdmin() {
     ? selectedModalityFilterLabels.join(', ')
     : t('admin.model.filters.allModalities');
   const modelPriceColumnClassName = "px-6 py-4 min-w-[168px] font-semibold text-slate-700 dark:text-slate-300 whitespace-nowrap";
-  const modelPriceCellClassName = "px-6 py-4 min-w-[168px] whitespace-nowrap";
-  const modelPricePillClassName = "flex min-w-[136px] justify-between items-center gap-3 bg-slate-50 dark:bg-white/5 px-2 py-0.5 rounded whitespace-nowrap";
+  const modelPriceCellClassName = "relative px-6 py-4 min-w-[220px] whitespace-nowrap";
+  const modelPriceSummaryButtonClassName = "inline-flex min-w-[176px] items-center justify-between gap-3 rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-left text-xs text-slate-600 shadow-sm transition hover:border-indigo-200 hover:bg-indigo-50/70 dark:border-white/10 dark:bg-white/5 dark:text-slate-300 dark:hover:border-indigo-500/30 dark:hover:bg-indigo-500/10 whitespace-nowrap";
+  const modelPricePopoverClassName = "absolute right-6 top-[calc(100%-0.5rem)] z-[45] w-[340px] overflow-hidden rounded-lg border border-slate-200 bg-white shadow-xl dark:border-white/10 dark:bg-[#1a1a1a]";
 
   const toggleModalityFilter = (value: ModelModalityFilter) => {
     setPage(1);
@@ -262,6 +266,24 @@ export function ModelAdmin() {
 
   const getTypeLabel = (type: Model['type']) => t(modelTypeI18nKey(type));
 
+  const getPriceRegionLabel = (regionCode: string): string => {
+    const region = MODEL_PRICING_REGIONS.find(option => option.code === regionCode);
+    return region ? t(region.labelKey) : regionCode;
+  };
+
+  const getModelRegionPrices = (model: Model) => {
+    return model.regionPrices;
+  };
+
+  const getModelPriceSummary = (model: Model): string => {
+    const regionPrices = getModelRegionPrices(model);
+    const defaultPrice = regionPrices.find(price => price.regionCode === 'global') ?? regionPrices[0];
+    if (!defaultPrice) {
+      return `${t('admin.model.pricing.input')} ${formatPrice('')} / ${t('admin.model.pricing.output')} ${formatPrice('')}`;
+    }
+    return `${t('admin.model.pricing.input')} ${formatPrice(defaultPrice.priceIn)} / ${t('admin.model.pricing.output')} ${formatPrice(defaultPrice.priceOut)}`;
+  };
+
   const formatContextTokens = (tokens: number | null) => {
     if (!Number.isFinite(tokens) || tokens <= 0) {
       return '-';
@@ -338,6 +360,7 @@ export function ModelAdmin() {
   const renderPricingPanel = () => {
     const priceInputClassName = "w-full bg-white dark:bg-[#1a1a1a] border border-slate-300 dark:border-white/10 rounded-lg pl-8 pr-3 py-2 text-sm focus:outline-none focus:border-indigo-500 dark:focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-slate-900 dark:text-white shadow-sm transition-all";
     const priceLabelClassName = "block text-xs font-medium text-slate-600 dark:text-slate-400 mb-1.5";
+    const regionPriceForForm = (regionCode: string) => editingModel?.regionPrices.find(price => price.regionCode === regionCode);
 
     return (
       <aside className="rounded-xl border border-indigo-100 bg-indigo-50/50 p-4 dark:border-indigo-500/10 dark:bg-indigo-500/5">
@@ -347,7 +370,9 @@ export function ModelAdmin() {
           <p className="mt-1 text-xs leading-5 text-slate-500 dark:text-slate-400">{t('admin.model.modelModal.regionPricingHint')}</p>
         </div>
         <div className="space-y-4">
-          {MODEL_PRICING_REGIONS.map((region) => (
+          {MODEL_PRICING_REGIONS.map((region) => {
+            const regionPrice = regionPriceForForm(region.code);
+            return (
             <section key={region.code} className="rounded-lg border border-slate-200 bg-white p-3 shadow-sm dark:border-white/10 dark:bg-[#121212]">
               <div className="mb-3 flex items-center justify-between">
                 <div className="text-sm font-semibold text-slate-800 dark:text-slate-200">{t(region.labelKey)}</div>
@@ -360,33 +385,34 @@ export function ModelAdmin() {
                   <label className={priceLabelClassName}>{t('admin.model.modelModal.inputUnitPrice')}</label>
                   <div className="relative">
                     <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-mono">$</span>
-                    <input required={region.code === 'global'} name={`priceIn.${region.code}`} type="number" step="0.000001" defaultValue={region.code === 'global' ? editingModel?.priceIn ?? '' : ''} placeholder="0.01" className={priceInputClassName} />
+                    <input required={region.code === 'global'} name={`priceIn.${region.code}`} type="number" step="0.000001" defaultValue={regionPrice?.priceIn ?? ''} placeholder="0.01" className={priceInputClassName} />
                   </div>
                 </div>
                 <div>
                   <label className={priceLabelClassName}>{t('admin.model.modelModal.outputUnitPrice')}</label>
                   <div className="relative">
                     <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-mono">$</span>
-                    <input required={region.code === 'global'} name={`priceOut.${region.code}`} type="number" step="0.000001" defaultValue={region.code === 'global' ? editingModel?.priceOut ?? '' : ''} placeholder="0.03" className={priceInputClassName} />
+                    <input required={region.code === 'global'} name={`priceOut.${region.code}`} type="number" step="0.000001" defaultValue={regionPrice?.priceOut ?? ''} placeholder="0.03" className={priceInputClassName} />
                   </div>
                 </div>
                 <div>
                   <label className={priceLabelClassName}>{t('admin.model.modelModal.cacheReadUnitPrice')}</label>
                   <div className="relative">
                     <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-mono">$</span>
-                    <input name={`cacheReadPrice.${region.code}`} type="number" step="0.000001" defaultValue={region.code === 'global' ? editingModel?.cacheReadPrice ?? '' : ''} placeholder="0.00" className={priceInputClassName} />
+                    <input name={`cacheReadPrice.${region.code}`} type="number" step="0.000001" defaultValue={regionPrice?.cacheReadPrice ?? ''} placeholder="0.00" className={priceInputClassName} />
                   </div>
                 </div>
                 <div>
                   <label className={priceLabelClassName}>{t('admin.model.modelModal.cacheWriteUnitPrice')}</label>
                   <div className="relative">
                     <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-mono">$</span>
-                    <input name={`cacheWritePrice.${region.code}`} type="number" step="0.000001" defaultValue={region.code === 'global' ? editingModel?.cacheWritePrice ?? '' : ''} placeholder="0.00" className={priceInputClassName} />
+                    <input name={`cacheWritePrice.${region.code}`} type="number" step="0.000001" defaultValue={regionPrice?.cacheWritePrice ?? ''} placeholder="0.00" className={priceInputClassName} />
                   </div>
                 </div>
               </div>
             </section>
-          ))}
+          );
+          })}
         </div>
       </aside>
     );
@@ -454,7 +480,8 @@ export function ModelAdmin() {
           {selectedVendor ? (
             <AdminTableShell
               data-admin-model-table-card
-              className="dark:bg-[#1a1a1a]"
+              className="flex-1 min-h-0 dark:bg-[#1a1a1a]"
+              viewportClassName="min-h-0 flex-1"
               viewportProps={{ 'data-admin-model-table-viewport': true }}
               header={(
                 <div className="border-b border-slate-200 p-3 dark:border-white/10">
@@ -611,24 +638,92 @@ export function ModelAdmin() {
                                 </span>
                               </td>
                               <td className={modelPriceCellClassName}>
-                                <div className="flex flex-col gap-1 text-[11px] text-slate-500">
-                                  <div className={modelPricePillClassName}>
-                                     <span>{t('admin.model.pricing.input')}</span>
-                                     <span className="font-mono text-slate-800 dark:text-slate-200">{formatPrice(m.priceIn)}</span>
-                                  </div>
-                                  <div className={modelPricePillClassName}>
-                                     <span>{t('admin.model.pricing.output')}</span>
-                                     <span className="font-mono text-slate-800 dark:text-slate-200">{formatPrice(m.priceOut)}</span>
-                                  </div>
-                                  <div className={modelPricePillClassName}>
-                                     <span>{t('admin.model.pricing.cacheRead')}</span>
-                                     <span className="font-mono text-slate-800 dark:text-slate-200">{formatPrice(m.cacheReadPrice)}</span>
-                                  </div>
-                                  <div className={modelPricePillClassName}>
-                                     <span>{t('admin.model.pricing.cacheWrite')}</span>
-                                     <span className="font-mono text-slate-800 dark:text-slate-200">{formatPrice(m.cacheWritePrice)}</span>
-                                  </div>
-                                </div>
+                                {(() => {
+                                  const regionPrices = getModelRegionPrices(m);
+                                  const defaultPriceRegionCode = regionPrices.find(price => price.regionCode === 'global')?.regionCode ?? regionPrices[0]?.regionCode ?? 'global';
+                                  const selectedPriceRegionCode = priceRegionByModelId[m.id] ?? defaultPriceRegionCode;
+                                  const selectedPriceRegion = regionPrices.find(price => price.regionCode === selectedPriceRegionCode) ?? regionPrices[0];
+                                  const priceRows = [
+                                    { label: t('admin.model.pricing.input'), value: selectedPriceRegion?.priceIn },
+                                    { label: t('admin.model.pricing.output'), value: selectedPriceRegion?.priceOut },
+                                    { label: t('admin.model.pricing.cacheRead'), value: selectedPriceRegion?.cacheReadPrice },
+                                    { label: t('admin.model.pricing.cacheWrite'), value: selectedPriceRegion?.cacheWritePrice },
+                                  ];
+
+                                  return (
+                                    <div className="relative inline-flex">
+                                      <button
+                                        type="button"
+                                        className={modelPriceSummaryButtonClassName}
+                                        aria-haspopup="dialog"
+                                        aria-expanded={openPricePopoverModelId === m.id}
+                                        onClick={() => setOpenPricePopoverModelId(openPricePopoverModelId === m.id ? null : m.id)}
+                                      >
+                                        <span className="min-w-0">
+                                          <span className="block max-w-[190px] truncate font-mono text-[11px] text-slate-900 dark:text-slate-100">
+                                            {getModelPriceSummary(m)}
+                                          </span>
+                                          <span className="mt-0.5 block text-[11px] text-slate-500 dark:text-slate-400">
+                                            {regionPrices.length > 1
+                                              ? t('admin.model.pricing.regionCount', { count: regionPrices.length })
+                                              : selectedPriceRegion ? getPriceRegionLabel(selectedPriceRegion.regionCode) : '-'}
+                                          </span>
+                                        </span>
+                                        <ChevronDown className={`h-3.5 w-3.5 shrink-0 transition-transform ${openPricePopoverModelId === m.id ? 'rotate-180' : ''}`} />
+                                      </button>
+
+                                      {openPricePopoverModelId === m.id ? (
+                                        <div className={modelPricePopoverClassName} role="dialog" aria-label={t('admin.model.pricing.details')}>
+                                          <div className="border-b border-slate-200 px-3 py-2 dark:border-white/10">
+                                            <div className="flex items-center justify-between gap-3">
+                                              <div className="text-xs font-semibold text-slate-800 dark:text-slate-100">{t('admin.model.pricing.details')}</div>
+                                              <div className="max-w-[170px] truncate font-mono text-[11px] text-slate-400">{m.model}</div>
+                                            </div>
+                                            {regionPrices.length > 1 ? (
+                                              <div className="mt-2 flex gap-1 overflow-x-auto" role="tablist" aria-label={t('admin.model.pricing.details')}>
+                                                {regionPrices.map(regionPrice => {
+                                                  const isSelected = regionPrice.regionCode === selectedPriceRegion?.regionCode;
+                                                  return (
+                                                    <button
+                                                      key={regionPrice.regionCode}
+                                                      type="button"
+                                                      role="tab"
+                                                      aria-selected={isSelected}
+                                                      className={`shrink-0 rounded-md px-2.5 py-1 text-xs font-medium transition ${
+                                                        isSelected
+                                                          ? 'bg-indigo-600 text-white shadow-sm'
+                                                          : 'bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-white/10 dark:text-slate-300 dark:hover:bg-white/15'
+                                                      }`}
+                                                      onClick={() => setPriceRegionByModelId(current => ({ ...current, [m.id]: regionPrice.regionCode }))}
+                                                    >
+                                                      {getPriceRegionLabel(regionPrice.regionCode)}
+                                                    </button>
+                                                  );
+                                                })}
+                                              </div>
+                                            ) : null}
+                                          </div>
+                                          <div className="p-3">
+                                            <div className="mb-2 flex items-center justify-between gap-3">
+                                              <span className="text-xs font-medium text-slate-600 dark:text-slate-300">{selectedPriceRegion ? getPriceRegionLabel(selectedPriceRegion.regionCode) : '-'}</span>
+                                              <span className="rounded bg-slate-100 px-2 py-0.5 font-mono text-[11px] text-slate-500 dark:bg-white/10 dark:text-slate-400">
+                                                {selectedPriceRegion?.regionCode ?? '-'}
+                                              </span>
+                                            </div>
+                                            <div className="grid gap-1.5">
+                                              {priceRows.map(row => (
+                                                <div key={row.label} className="flex items-center justify-between gap-3 rounded-md bg-slate-50 px-2.5 py-1.5 text-xs dark:bg-white/5">
+                                                  <span className="text-slate-500 dark:text-slate-400">{row.label}</span>
+                                                  <span className="font-mono text-slate-900 dark:text-slate-100">{formatPrice(row.value ?? '')}</span>
+                                                </div>
+                                              ))}
+                                            </div>
+                                          </div>
+                                        </div>
+                                      ) : null}
+                                    </div>
+                                  );
+                                })()}
                               </td>
                               <td className="px-6 py-4">
                                 <div className="inline-flex px-2 py-1 text-xs font-mono bg-slate-50 border border-slate-200 text-slate-600 dark:bg-[#1a1a1a] dark:text-slate-400 dark:border-white/10 rounded-md">
@@ -943,9 +1038,14 @@ export function SiteAdmin() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-[#0f0f10] text-slate-900 dark:text-slate-100">
-      <AdminTableShell>
-        <div className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+    <div className="flex h-full min-h-0 w-full flex-col overflow-hidden bg-slate-50 text-slate-900 dark:bg-[#0f0f10] dark:text-slate-100">
+      <AdminTableShell
+        data-admin-site-table-card
+        className="flex-1 min-h-0"
+        viewportClassName="min-h-0 flex-1"
+        viewportProps={{ 'data-admin-site-table-viewport': true }}
+        header={(
+          <div className="flex flex-col gap-3 border-b border-slate-200 px-5 py-4 dark:border-white/10 sm:flex-row sm:items-center sm:justify-between">
           <div className="relative w-full sm:max-w-md">
             <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
             <input
@@ -979,6 +1079,8 @@ export function SiteAdmin() {
             </button>
           </div>
         </div>
+        )}
+      >
 
         {loadError && (
           <div className="mb-4 rounded-xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-700 dark:border-rose-500/30 dark:bg-rose-500/10 dark:text-rose-200">
@@ -988,7 +1090,7 @@ export function SiteAdmin() {
 
         <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-white/10 dark:bg-[#171719]">
           <table className="w-full min-w-[1040px] text-left text-sm">
-            <thead className="bg-slate-50 text-xs uppercase tracking-wide text-slate-500 dark:bg-white/5 dark:text-slate-400">
+            <thead className="sticky top-0 z-10 bg-slate-50 text-xs uppercase tracking-wide text-slate-500 dark:bg-[#121212] dark:text-slate-400">
               <tr>
                 <th className="px-5 py-3">{t('admin.model.site.table.name')}</th>
                 <th className="px-5 py-3">{t('admin.model.site.table.baseUrl')}</th>
@@ -1061,15 +1163,27 @@ export function SiteAdmin() {
   );
 }
 
-type ModelMappingScopeFilter = ModelMappingRule['scopeType'] | 'all';
+type ModelMappingBindingFilter = ModelMappingRule['bindingType'] | 'all';
 
 type ModelMappingRowDraft = {
   id: string;
+  persistedId: string | null;
   sourceModel: string;
   targetModel: string;
+  enabled: boolean;
 };
 
-type ModelMappingFieldErrorKey = 'sourceVendorCode' | 'targetVendorCode' | 'channelCode' | 'mappingRows';
+type ModelMappingBindingDraft = {
+  id: string;
+  persistedId: string | null;
+  bindingType: ModelMappingRule['bindingType'];
+  bindingId: string | null;
+  bindingCode: string;
+  bindingName: string;
+  enabled: boolean;
+};
+
+type ModelMappingFieldErrorKey = 'sourceVendorCode' | 'targetVendorCode' | 'channelCode' | 'mappingRows' | 'mappingBindings';
 type ModelMappingRowFieldKey = 'sourceModel' | 'targetModel';
 type ModelMappingRowErrors = Partial<Record<ModelMappingRowFieldKey, string>>;
 type ModelMappingFormErrors = {
@@ -1078,9 +1192,11 @@ type ModelMappingFormErrors = {
   rowErrors: Record<string, ModelMappingRowErrors>;
   firstErrorKey: string | null;
 };
+type SiteFormFieldErrorKey = 'siteName' | 'displayName' | 'baseUrl' | 'websiteUrl' | 'docsUrl' | 'domains' | 'vendorCodes';
 
 const MODEL_MAPPING_MAX_ROWS = 100;
 const MODEL_MAPPING_MODEL_VALUE_MAX_LENGTH = 512;
+let nextModelMappingDraftSequence = 0;
 
 function SiteLogo({ site }: { site: SiteItem }) {
   const logoUrl = readMediaResourceUrl(site.logo);
@@ -1146,7 +1262,7 @@ export function ModelMappingAdmin() {
   const [mappings, setMappings] = useState<ModelMappingRule[]>([]);
   const [vendors, setVendors] = useState<Vendor[]>([]);
   const [models, setModels] = useState<Model[]>([]);
-  const [scopeFilter, setScopeFilter] = useState<ModelMappingScopeFilter>('global');
+  const [bindingFilter, setBindingFilter] = useState<ModelMappingBindingFilter>('global');
   const [search, setSearch] = useState('');
   const [loading, setLoading] = useState(true);
   const [catalogLoading, setCatalogLoading] = useState(true);
@@ -1155,27 +1271,39 @@ export function ModelMappingAdmin() {
   const [catalogError, setCatalogError] = useState<string | null>(null);
   const [editorError, setEditorError] = useState<ModelMappingFormErrors | null>(null);
   const [editingMapping, setEditingMapping] = useState<ModelMappingRule | null>(null);
+  const [editingRelationMapping, setEditingRelationMapping] = useState<ModelMappingRule | null>(null);
   const [isEditorOpen, setIsEditorOpen] = useState(false);
+  const mappingsLoadSeqRef = useRef(0);
 
-  const loadMappings = async () => {
+  const loadMappings = async (nextBindingFilter: ModelMappingBindingFilter = bindingFilter) => {
+    const requestSeq = mappingsLoadSeqRef.current + 1;
+    mappingsLoadSeqRef.current = requestSeq;
     setLoading(true);
     setLoadError(null);
     try {
       const items = await ModelMappingService.fetchMappings({
-        scopeType: scopeFilter,
-        sourceModel: search.trim() || null,
+        bindingType: nextBindingFilter,
+        q: search.trim() || null,
       });
+      if (mappingsLoadSeqRef.current !== requestSeq) {
+        return;
+      }
       setMappings(items);
     } catch (error) {
+      if (mappingsLoadSeqRef.current !== requestSeq) {
+        return;
+      }
       setLoadError(error instanceof Error ? error.message : 'Failed to load model mappings');
     } finally {
-      setLoading(false);
+      if (mappingsLoadSeqRef.current === requestSeq) {
+        setLoading(false);
+      }
     }
   };
 
   useEffect(() => {
-    void loadMappings();
-  }, [scopeFilter]);
+    void loadMappings('global');
+  }, []);
 
   const loadCatalog = async () => {
     setCatalogLoading(true);
@@ -1201,11 +1329,10 @@ export function ModelMappingAdmin() {
       return true;
     }
     return [
-      mapping.sourceModel,
-      mapping.targetModel,
-      mapping.vendorCode,
-      mapping.channelCode,
+      mapping.sourceVendorCode,
       mapping.targetVendorCode,
+      ...mapping.bindings.flatMap((binding) => [binding.bindingType, binding.bindingCode, binding.bindingName]),
+      ...mapping.mappingItems.flatMap((item) => [item.sourceModel, item.targetModel]),
     ].some((value) => (value ?? '').toLowerCase().includes(query));
   });
 
@@ -1216,8 +1343,8 @@ export function ModelMappingAdmin() {
     setIsEditorOpen(true);
   };
 
-  const openCreateMappingWithScope = (scopeType: ModelMappingRule['scopeType']) => {
-    setScopeFilter(scopeType);
+  const openCreateMappingWithBinding = (bindingType: ModelMappingRule['bindingType']) => {
+    setBindingFilter(bindingType);
     openCreateMapping();
   };
 
@@ -1225,6 +1352,16 @@ export function ModelMappingAdmin() {
     setEditingMapping(mapping);
     setEditorError(null);
     setIsEditorOpen(true);
+  };
+
+  const openRelationEditor = (mapping: ModelMappingRule) => {
+    setEditorError(null);
+    setEditingRelationMapping(mapping);
+  };
+
+  const handleBindingFilterChange = (nextBindingFilter: ModelMappingBindingFilter) => {
+    setBindingFilter(nextBindingFilter);
+    void loadMappings(nextBindingFilter);
   };
 
   const closeEditor = () => {
@@ -1251,14 +1388,13 @@ export function ModelMappingAdmin() {
     setEditorError(null);
     const formData = new FormData(event.currentTarget);
     try {
-      const inputs = modelMappingInputsFromForm(formData);
+      const input = modelMappingInputFromForm(formData);
       if (editingMapping) {
-        const [firstInput] = inputs;
-        const updated = await ModelMappingService.updateMapping(editingMapping.id, firstInput);
+        const updated = await ModelMappingService.updateMapping(editingMapping.id, input);
         setMappings((current) => current.map((item) => item.id === updated.id ? updated : item));
       } else {
-        const created = await Promise.all(inputs.map((input) => ModelMappingService.createMapping(input)));
-        setMappings((current) => [...created, ...current]);
+        const created = await ModelMappingService.createMapping(input);
+        setMappings((current) => [created, ...current]);
       }
       setIsEditorOpen(false);
       setEditingMapping(null);
@@ -1282,9 +1418,18 @@ export function ModelMappingAdmin() {
     }
   };
 
+  const handleRelationMappingUpdated = (updated: ModelMappingRule) => {
+    setMappings((current) => current.map((item) => item.id === updated.id ? updated : item));
+    setEditingRelationMapping(null);
+  };
+
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 dark:bg-[#0f0f10] dark:text-white">
+    <div className="flex h-full min-h-0 w-full flex-col overflow-hidden bg-slate-50 text-slate-900 dark:bg-[#0f0f10] dark:text-white">
       <AdminTableShell
+        data-admin-model-mapping-table-card
+        className="flex-1 min-h-0"
+        viewportClassName="min-h-0 flex-1"
+        viewportProps={{ 'data-admin-model-mapping-table-viewport': true }}
         header={(
           <div className="border-b border-slate-200 px-5 py-4 dark:border-white/10">
             <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
@@ -1294,13 +1439,13 @@ export function ModelMappingAdmin() {
                   { value: 'vendor', label: t('admin.model.mapping.scope.vendor') },
                   { value: 'channel', label: t('admin.model.mapping.scope.channel') },
                   { value: 'all', label: t('admin.model.mapping.scope.all') },
-                ] as Array<{ value: ModelMappingScopeFilter; label: string }>).map((tab) => (
+                ] as Array<{ value: ModelMappingBindingFilter; label: string }>).map((tab) => (
                   <button
                     key={tab.value}
                     type="button"
-                    onClick={() => setScopeFilter(tab.value)}
+                    onClick={() => handleBindingFilterChange(tab.value)}
                     className={`rounded-full px-4 py-2 text-sm font-semibold transition ${
-                      scopeFilter === tab.value
+                      bindingFilter === tab.value
                         ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-950'
                         : 'bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-white/5 dark:text-slate-300 dark:hover:bg-white/10'
                     }`}
@@ -1324,7 +1469,7 @@ export function ModelMappingAdmin() {
                     className="w-full rounded-xl border border-slate-200 bg-white py-2.5 pl-10 pr-4 text-sm text-slate-900 shadow-sm outline-none transition focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 dark:border-white/10 dark:bg-white/5 dark:text-white"
                   />
                 </div>
-                <button type="button" onClick={() => openCreateMappingWithScope(scopeFilter === 'all' ? 'global' : scopeFilter)} className="inline-flex items-center justify-center gap-2 rounded-xl bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-700">
+                <button type="button" onClick={() => openCreateMappingWithBinding(bindingFilter === 'all' ? 'global' : bindingFilter)} className="inline-flex items-center justify-center gap-2 rounded-xl bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-700">
                   <Plus className="h-4 w-4" />
                   {t('admin.model.mapping.actions.add')}
                 </button>
@@ -1340,12 +1485,12 @@ export function ModelMappingAdmin() {
         )}
 
         <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-white/10 dark:bg-[#171719]">
-          <table className="w-full min-w-[820px] text-left text-sm">
+          <table className="w-full min-w-[920px] text-left text-sm">
             <thead className="bg-slate-50 text-xs uppercase tracking-wide text-slate-500 dark:bg-white/5 dark:text-slate-400">
               <tr>
                 <th className="px-5 py-3">{t('admin.model.mapping.table.scope')}</th>
-                <th className="px-5 py-3">{t('admin.model.mapping.table.source')}</th>
-                <th className="px-5 py-3">{t('admin.model.mapping.table.target')}</th>
+                <th className="px-5 py-3">{t('admin.model.mapping.table.binding')}</th>
+                <th className="px-5 py-3">{t('admin.model.mapping.table.relations')}</th>
                 <th className="px-5 py-3">{t('admin.model.mapping.table.status')}</th>
                 <th className="px-5 py-3 text-right">{t('admin.model.table.actions')}</th>
               </tr>
@@ -1358,16 +1503,14 @@ export function ModelMappingAdmin() {
               ) : filteredMappings.map((mapping) => (
                 <tr key={mapping.id} className="transition hover:bg-slate-50 dark:hover:bg-white/5">
                   <td className="px-5 py-4">
-                    <div className="font-semibold text-slate-900 dark:text-white">{t(`admin.model.mapping.scope.${mapping.scopeType}`)}</div>
-                    <div className="mt-1 text-xs text-slate-500">{mappingScopeIdentity(mapping)}</div>
+                    <div className="font-semibold text-slate-900 dark:text-white">{t(`admin.model.mapping.scope.${mapping.bindingType}`)}</div>
+                    <div className="mt-1 text-xs text-slate-500">{mappingBindingIdentity(mapping)}</div>
                   </td>
                   <td className="px-5 py-4">
-                    <div className="font-mono text-sm font-semibold text-slate-900 dark:text-white">{mapping.sourceModel}</div>
-                    <div className="mt-1 text-xs text-slate-500">{mapping.sourceVendorCode ?? '-'}</div>
+                    <ModelMappingBindingsCell mapping={mapping} />
                   </td>
                   <td className="px-5 py-4">
-                    <div className="font-mono text-sm font-semibold text-slate-900 dark:text-white">{mapping.targetModel}</div>
-                    <div className="mt-1 text-xs text-slate-500">{mapping.targetVendorCode ?? '-'}</div>
+                    <ModelMappingRelationsCell mapping={mapping} onOpenEditor={openRelationEditor} />
                   </td>
                   <td className="px-5 py-4"><StatusPill value={mapping.enabled ? 'active' : 'disabled'} /></td>
                   <td className="px-5 py-4">
@@ -1395,11 +1538,31 @@ export function ModelMappingAdmin() {
           catalogLoading={catalogLoading}
           saving={saving}
           error={editorError}
-          defaultScopeType={scopeFilter === 'all' ? 'global' : scopeFilter}
+          defaultBindingType={bindingFilter === 'all' ? 'global' : bindingFilter}
           onClearFieldError={clearEditorFieldError}
           onClearRowError={clearEditorRowError}
           onSubmit={handleSaveMapping}
           onClose={closeEditor}
+        />
+      )}
+      {editingRelationMapping && (
+        <ModelMappingRelationEditorModal
+          mapping={editingRelationMapping}
+          models={models}
+          catalogLoading={catalogLoading}
+          saving={saving}
+          error={editorError}
+          onClearRowError={clearEditorRowError}
+          onUpdated={handleRelationMappingUpdated}
+          onError={setEditorError}
+          onSavingChange={setSaving}
+          onClose={() => {
+            if (saving) {
+              return;
+            }
+            setEditingRelationMapping(null);
+            setEditorError(null);
+          }}
         />
       )}
     </div>
@@ -1411,8 +1574,24 @@ function SiteFormModal({ site, vendors, onSubmit, onClose }: { site: SiteItem | 
   const [logo, setLogo] = useState(() => site?.logo ?? null);
   const [isVendorPickerOpen, setIsVendorPickerOpen] = useState(false);
   const [selectedVendorCodes, setSelectedVendorCodes] = useState<string[]>(() => site?.vendorCodes ?? []);
+  const [domainInputs, setDomainInputs] = useState<string[]>(() => {
+    const domains = siteDomains(site);
+    return domains.length > 0 ? domains : [''];
+  });
+  const [siteFormErrors, setSiteFormErrors] = useState<Partial<Record<SiteFormFieldErrorKey, string>>>({});
   const logoPreviewUrl = readMediaResourceUrl(logo);
   const vendorByCode = useMemo(() => new Map(vendors.map((vendor) => [vendor.vendorCode, vendor])), [vendors]);
+
+  const clearSiteFormError = (field: SiteFormFieldErrorKey) => {
+    setSiteFormErrors((current) => {
+      if (!current[field]) {
+        return current;
+      }
+      const next = { ...current };
+      delete next[field];
+      return next;
+    });
+  };
 
   const handleLogoChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.currentTarget.files?.[0];
@@ -1438,32 +1617,74 @@ function SiteFormModal({ site, vendors, onSubmit, onClose }: { site: SiteItem | 
   };
 
   const selectVendorCode = (vendorCode: string) => {
+    clearSiteFormError('vendorCodes');
     setSelectedVendorCodes((current) => current.includes(vendorCode) ? current : [...current, vendorCode]);
   };
 
   const removeSelectedVendorCode = (vendorCode: string) => {
+    clearSiteFormError('vendorCodes');
     setSelectedVendorCodes((current) => current.filter((item) => item !== vendorCode));
   };
 
+  const updateDomainInput = (index: number, value: string) => {
+    clearSiteFormError('domains');
+    setDomainInputs((current) => current.map((item, itemIndex) => (itemIndex === index ? value : item)));
+  };
+
+  const addDomainInput = () => {
+    clearSiteFormError('domains');
+    setDomainInputs((current) => [...current, '']);
+  };
+
+  const removeDomainInput = (index: number) => {
+    clearSiteFormError('domains');
+    setDomainInputs((current) => {
+      if (current.length <= 1) {
+        return [''];
+      }
+      const next = current.filter((_, itemIndex) => itemIndex !== index);
+      return next.length > 0 ? next : [''];
+    });
+  };
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    const formData = new FormData(event.currentTarget);
+    const errors = validateSiteFormDraft(formData, domainInputs, selectedVendorCodes, t);
+    if (Object.keys(errors).length > 0) {
+      event.preventDefault();
+      setSiteFormErrors(errors);
+      return;
+    }
+    setSiteFormErrors({});
+    onSubmit(event);
+  };
+
+  useEffect(() => {
+    if (selectedVendorCodes.length > 0) {
+      clearSiteFormError('vendorCodes');
+    }
+  }, [selectedVendorCodes]);
+
   return (
-    <div className="fixed inset-0 z-[60] flex items-center justify-center bg-slate-950/50 p-4 backdrop-blur-sm">
-      <div className="w-full max-w-6xl overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl dark:border-white/10 dark:bg-[#171719]">
+    <div data-admin-site-form-drawer className="fixed inset-0 z-[60] flex justify-start bg-slate-950/50 backdrop-blur-sm">
+      <aside data-admin-site-form-drawer-panel className="flex h-full w-[min(94vw,1120px)] flex-col overflow-hidden rounded-r-2xl border-r border-slate-200 bg-white shadow-2xl dark:border-white/10 dark:bg-[#171719]">
         <div className="flex items-center justify-between border-b border-slate-200 p-5 dark:border-white/10">
           <h3 className="font-semibold text-slate-900 dark:text-white">{site ? t('admin.model.site.form.editTitle') : t('admin.model.site.form.createTitle')}</h3>
-          <button type="button" onClick={onClose} className="text-slate-400 hover:text-slate-600"><X className="h-5 w-5" /></button>
+          <button type="button" onClick={onClose} className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"><X className="h-5 w-5" /></button>
         </div>
-        <form onSubmit={onSubmit} className="flex max-h-[82vh] flex-col">
+        <form onSubmit={handleSubmit} className="flex min-h-0 flex-1 flex-col">
           <input name="logo" type="hidden" value={logo ? JSON.stringify(logo) : ''} />
           <input name="vendorCodes" type="hidden" value={JSON.stringify(selectedVendorCodes)} />
+          <input name="domains" type="hidden" value={domainInputs.join('\n')} />
           <div data-admin-site-form-layout className="grid min-h-0 flex-1 gap-0 overflow-hidden lg:grid-cols-[minmax(0,1fr)_minmax(320px,380px)]">
             <div className="min-h-0 overflow-y-auto p-5">
               <div className="space-y-4">
                 <div className="grid gap-4 sm:grid-cols-2">
-                  <FormInput name="siteName" label={t('admin.model.site.form.siteName')} defaultValue={site?.siteName} required />
-                  <FormInput name="displayName" label={t('admin.model.site.form.displayName')} defaultValue={site?.displayName} required />
-                  <FormInput name="baseUrl" label={t('admin.model.site.form.baseUrl')} defaultValue={site?.baseUrl} required />
-                  <FormInput name="websiteUrl" label={t('admin.model.site.form.websiteUrl')} defaultValue={site?.websiteUrl ?? ''} />
-                  <FormInput name="docsUrl" label={t('admin.model.site.form.docsUrl')} defaultValue={site?.docsUrl ?? ''} />
+                  <FormInput name="siteName" label={t('admin.model.site.form.siteName')} defaultValue={site?.siteName} required error={siteFormErrors.siteName} onChange={() => clearSiteFormError('siteName')} />
+                  <FormInput name="displayName" label={t('admin.model.site.form.displayName')} defaultValue={site?.displayName} required error={siteFormErrors.displayName} onChange={() => clearSiteFormError('displayName')} />
+                  <FormInput name="baseUrl" label={t('admin.model.site.form.baseUrl')} defaultValue={site?.baseUrl} required error={siteFormErrors.baseUrl} onChange={() => clearSiteFormError('baseUrl')} />
+                  <FormInput name="websiteUrl" label={t('admin.model.site.form.websiteUrl')} defaultValue={site?.websiteUrl ?? ''} error={siteFormErrors.websiteUrl} onChange={() => clearSiteFormError('websiteUrl')} />
+                  <FormInput name="docsUrl" label={t('admin.model.site.form.docsUrl')} defaultValue={site?.docsUrl ?? ''} error={siteFormErrors.docsUrl} onChange={() => clearSiteFormError('docsUrl')} />
                   <FormInput name="regionCode" label={t('admin.model.site.form.regionCode')} defaultValue={site?.regionCode ?? ''} />
                   <FormInput name="maskedLabel" label={t('admin.model.site.form.maskedLabel')} defaultValue="" />
                 </div>
@@ -1471,30 +1692,62 @@ function SiteFormModal({ site, vendors, onSubmit, onClose }: { site: SiteItem | 
                 <div className="grid gap-4 sm:grid-cols-[220px_minmax(0,1fr)]">
                   <label className="block">
                     <span className="mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-300">{t('admin.model.site.form.logo')}</span>
-                    <div className="flex items-center gap-3">
-                      <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-slate-50 dark:border-white/10 dark:bg-white/5">
+                    <span
+                      data-admin-site-logo-upload-panel
+                      className="relative flex h-28 w-28 cursor-pointer items-center justify-center overflow-hidden rounded-2xl border border-dashed border-slate-300 bg-slate-50 text-slate-400 transition hover:border-indigo-300 hover:bg-indigo-50 hover:text-indigo-600 dark:border-white/10 dark:bg-white/5 dark:hover:border-indigo-500/40 dark:hover:bg-indigo-500/10 dark:hover:text-indigo-300"
+                    >
+                      <span data-admin-site-logo-upload-placeholder className="flex h-full w-full items-center justify-center">
                         {logoPreviewUrl ? (
-                          <img src={logoPreviewUrl} alt="" className="h-full w-full rounded-xl object-contain p-1" />
+                          <img src={logoPreviewUrl} alt="" className="h-full w-full object-contain p-3" />
                         ) : (
-                          <ImageIcon className="h-5 w-5 text-slate-400" />
+                          <ImageIcon className="h-9 w-9" />
                         )}
-                      </div>
-                      <span className="inline-flex cursor-pointer items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-100 dark:border-white/10 dark:bg-white/5 dark:text-slate-200 dark:hover:bg-white/10">
-                        <Upload className="h-4 w-4" />
-                        {t('admin.model.site.form.uploadLogo')}
-                        <input type="file" accept="image/*" onChange={handleLogoChange} className="sr-only" />
                       </span>
+                      <span className="absolute bottom-2 right-2 inline-flex h-8 w-8 items-center justify-center rounded-full bg-white text-slate-500 shadow-sm ring-1 ring-slate-200 dark:bg-[#171719] dark:text-slate-300 dark:ring-white/10">
+                        <Upload className="h-4 w-4" />
+                      </span>
+                      <input data-admin-site-logo-upload-control type="file" accept="image/*" onChange={handleLogoChange} className="sr-only" />
+                    </span>
+                  </label>
+                  <div>
+                    <div className="mb-1.5 flex items-center justify-between gap-3">
+                      <span className="block text-sm font-medium text-slate-700 dark:text-slate-300">{t('admin.model.site.form.domains')}</span>
+                      <button
+                        type="button"
+                        data-admin-site-domain-add
+                        onClick={addDomainInput}
+                        className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-indigo-300 hover:bg-indigo-50 hover:text-indigo-700 dark:border-white/10 dark:bg-white/5 dark:text-slate-300 dark:hover:border-indigo-500/40 dark:hover:bg-indigo-500/10 dark:hover:text-indigo-200"
+                      >
+                        <Plus className="h-3.5 w-3.5" />
+                        {t('admin.model.site.form.addDomain')}
+                      </button>
                     </div>
-                  </label>
-                  <label className="block">
-                    <span className="mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-300">{t('admin.model.site.form.domains')}</span>
-                    <textarea
-                      name="domains"
-                      defaultValue={siteDomains(site).join('\n')}
-                      rows={4}
-                      className="w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 dark:border-white/10 dark:bg-white/5 dark:text-white"
-                    />
-                  </label>
+                    <div data-admin-site-domain-input-list className={`space-y-2 rounded-xl border p-2 ${siteFormErrors.domains ? 'border-rose-300 bg-rose-50/40 dark:border-rose-500/50 dark:bg-rose-500/10' : 'border-slate-200 bg-slate-50/70 dark:border-white/10 dark:bg-white/5'}`}>
+                      {domainInputs.map((domain, index) => (
+                        <div key={index} data-admin-site-domain-input-row className="flex items-center gap-2">
+                          <input
+                            data-admin-site-domain-input
+                            value={domain}
+                            onChange={(event) => updateDomainInput(index, event.currentTarget.value)}
+                            placeholder={t('admin.model.site.form.domainPlaceholder')}
+                            aria-invalid={Boolean(siteFormErrors.domains)}
+                            className="min-w-0 flex-1 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 outline-none transition focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 dark:border-white/10 dark:bg-[#171719] dark:text-white"
+                          />
+                          <button
+                            type="button"
+                            data-admin-site-domain-remove
+                            onClick={() => removeDomainInput(index)}
+                            disabled={domainInputs.length <= 1}
+                            className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-slate-400 transition hover:bg-rose-50 hover:text-rose-500 disabled:cursor-not-allowed disabled:opacity-40 dark:hover:bg-rose-500/10 dark:hover:text-rose-300"
+                            title={t('admin.model.site.form.removeDomain')}
+                          >
+                            <Trash2 className="h-4 w-4" />
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                    {siteFormErrors.domains && <span className="mt-1.5 block text-xs font-medium text-rose-600 dark:text-rose-300">{siteFormErrors.domains}</span>}
+                  </div>
                 </div>
                 <div>
                   <label className="mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-300">{t('admin.model.site.form.description')}</label>
@@ -1517,6 +1770,7 @@ function SiteFormModal({ site, vendors, onSubmit, onClose }: { site: SiteItem | 
                   {t('admin.model.site.form.selectVendors')}
                 </button>
               </div>
+              {siteFormErrors.vendorCodes && <div className="mt-3 rounded-lg border border-rose-200 bg-rose-50 px-3 py-2 text-xs font-medium text-rose-700 dark:border-rose-500/30 dark:bg-rose-500/10 dark:text-rose-200">{siteFormErrors.vendorCodes}</div>}
               <div data-admin-site-supported-vendor-table className="mt-4 min-h-0 flex-1 overflow-auto rounded-xl border border-slate-200 bg-white dark:border-white/10 dark:bg-[#171719]">
                 {selectedVendorCodes.length === 0 ? (
                   <div className="px-4 py-10 text-center text-sm text-slate-500 dark:text-slate-400">{t('admin.model.site.form.noVendors')}</div>
@@ -1562,20 +1816,26 @@ function SiteFormModal({ site, vendors, onSubmit, onClose }: { site: SiteItem | 
               </div>
             </aside>
           </div>
-          <div className="flex justify-end gap-3 border-t border-slate-200 p-5 dark:border-white/10">
-            <button type="button" onClick={onClose} className="rounded-xl border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 dark:border-white/10 dark:text-slate-200">Cancel</button>
-            <button type="submit" className="rounded-xl bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700">Save</button>
+          <div className="flex items-center justify-between gap-3 border-t border-slate-200 p-5 dark:border-white/10">
+            <div className="text-xs text-slate-500 dark:text-slate-400">{t('admin.model.site.form.saveHint')}</div>
+            <div className="flex items-center gap-3">
+              <button type="button" onClick={onClose} className="rounded-xl border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-50 dark:border-white/10 dark:text-slate-200 dark:hover:bg-white/10">{t('common.actions.cancel')}</button>
+              <button type="submit" className="rounded-xl bg-indigo-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-indigo-700">{t('common.actions.save')}</button>
+            </div>
           </div>
         </form>
-      </div>
+      </aside>
+      <button type="button" aria-label={t('common.actions.closeDrawer')} className="flex-1" onClick={onClose} />
       {isVendorPickerOpen && (
         <VendorPickerModal
+          selectionMode="multiple"
           vendors={vendors}
           title={t('admin.model.site.form.supportedVendors')}
           searchPlaceholder={t('admin.model.mapping.form.vendorPicker.searchPlaceholder')}
+          selectedVendorCodes={selectedVendorCodes}
+          onSelectionChange={setSelectedVendorCodes}
           onSelect={(vendor) => {
             selectVendorCode(vendor.vendorCode);
-            setIsVendorPickerOpen(false);
           }}
           onClose={() => setIsVendorPickerOpen(false)}
         />
@@ -1591,7 +1851,7 @@ function ModelMappingFormModal({
   catalogLoading,
   saving,
   error,
-  defaultScopeType,
+  defaultBindingType,
   onClearFieldError,
   onClearRowError,
   onSubmit,
@@ -1603,19 +1863,19 @@ function ModelMappingFormModal({
   catalogLoading: boolean;
   saving: boolean;
   error: ModelMappingFormErrors | null;
-  defaultScopeType: ModelMappingRule['scopeType'];
+  defaultBindingType: ModelMappingRule['bindingType'];
   onClearFieldError: (field: ModelMappingFieldErrorKey) => void;
   onClearRowError: (rowId: string, field: ModelMappingRowFieldKey) => void;
   onSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
   onClose: () => void;
 }) {
   const { t } = useTranslation();
-  const [scopeType, setScopeType] = useState<ModelMappingRule['scopeType']>(mapping?.scopeType ?? defaultScopeType);
+  const [bindingType, setBindingType] = useState<ModelMappingRule['bindingType']>(mapping?.bindingType ?? defaultBindingType);
   const [activeVendorPicker, setActiveVendorPicker] = useState<'source' | 'target' | null>(null);
   const [sourceVendorCode, setSourceVendorCode] = useState<string>(mapping?.sourceVendorCode ?? '');
   const [targetVendorCode, setTargetVendorCode] = useState<string>(mapping?.targetVendorCode ?? '');
-  const [scopeChannelCode, setScopeChannelCode] = useState<string>(mapping?.channelCode ?? '');
-  const [mappingRows, setMappingRows] = useState<ModelMappingRowDraft[]>(() => [createMappingRowDraft(mapping)]);
+  const [mappingBindings, setMappingBindings] = useState<ModelMappingBindingDraft[]>(() => createMappingBindingDrafts(mapping, defaultBindingType));
+  const [mappingRows, setMappingRows] = useState<ModelMappingRowDraft[]>(() => createMappingRowDrafts(mapping));
   const sourceVendor = vendors.find((vendor) => vendor.vendorCode === sourceVendorCode) ?? null;
   const targetVendor = vendors.find((vendor) => vendor.vendorCode === targetVendorCode) ?? null;
   const fieldErrors = error?.fieldErrors ?? {};
@@ -1624,11 +1884,17 @@ function ModelMappingFormModal({
   const sourceModels = useMemo(() => models.filter((model) => !sourceVendorCode || model.vendorCode === sourceVendorCode), [models, sourceVendorCode]);
   const targetModels = useMemo(() => models.filter((model) => !targetVendorCode || model.vendorCode === targetVendorCode), [models, targetVendorCode]);
 
-  const syncScopeFields = (nextScope: ModelMappingRule['scopeType']) => {
-    setScopeType(nextScope);
-    if (nextScope === 'global') {
-      setScopeChannelCode('');
-    }
+  const syncBindingFields = (nextBinding: ModelMappingRule['bindingType']) => {
+    setBindingType(nextBinding);
+    clearFieldError('mappingBindings');
+    setMappingBindings((current) => {
+      const [first, ...rest] = current;
+      const nextFirst = normalizeBindingDraftForType({
+        ...(first ?? createMappingBindingDraft(null, nextBinding)),
+        bindingType: nextBinding,
+      }, sourceVendorCode);
+      return [nextFirst, ...rest];
+    });
   };
 
   const clearFieldError = (field: ModelMappingFieldErrorKey) => {
@@ -1656,6 +1922,11 @@ function ModelMappingFormModal({
       setSourceVendorCode(vendor.vendorCode);
       clearFieldError('sourceVendorCode');
       setMappingRows((current) => syncRowsForVendor(current, 'sourceModel', vendor.vendorCode, models));
+      setMappingBindings((current) => current.map((binding) => (
+        binding.bindingType === 'vendor' && !binding.bindingCode.trim()
+          ? { ...binding, bindingCode: vendor.vendorCode, bindingName: vendor.name }
+          : binding
+      )));
       return;
     }
     setTargetVendorCode(vendor.vendorCode);
@@ -1679,66 +1950,51 @@ function ModelMappingFormModal({
           onSubmit={(event) => {
             event.preventDefault();
             const form = event.currentTarget;
-            writeHiddenFormValue(form, 'scopeType', scopeType);
+            writeHiddenFormValue(form, 'bindingType', bindingType);
             writeHiddenFormValue(form, 'sourceVendorCode', sourceVendorCode);
             writeHiddenFormValue(form, 'targetVendorCode', targetVendorCode);
-            writeHiddenFormValue(form, 'channelCode', scopeType === 'channel' ? scopeChannelCode : '');
-            writeHiddenFormValue(form, 'vendorCode', scopeType === 'vendor' ? sourceVendorCode : '');
             writeHiddenFormValue(form, 'rowsJson', JSON.stringify(mappingRows));
+            writeHiddenFormValue(form, 'bindingsJson', JSON.stringify(mappingBindings));
             onSubmit(event);
           }}
-          className="flex min-h-0 flex-1 flex-col space-y-5 overflow-y-auto p-5"
+          className="flex min-h-0 flex-1 flex-col"
         >
-          <input name="scopeType" type="hidden" value={scopeType} />
-          <input name="channelCode" type="hidden" value={scopeType === 'channel' ? scopeChannelCode : ''} />
-          <input name="sourceVendorCode" type="hidden" value={sourceVendorCode} />
-          <input name="targetVendorCode" type="hidden" value={targetVendorCode} />
-          <input name="rowsJson" type="hidden" value={JSON.stringify(mappingRows)} />
-          <input name="vendorCode" type="hidden" value={scopeType === 'vendor' ? sourceVendorCode : ''} />
-          {error?.message && (
-            <div className="rounded-xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm font-medium text-rose-700 dark:border-rose-500/30 dark:bg-rose-500/10 dark:text-rose-200">
-              {error.message}
-            </div>
-          )}
-          <div className="grid min-h-0 flex-1 gap-5 lg:grid-cols-[320px_minmax(0,1fr)]">
+          <div data-model-mapping-form-scroll className="min-h-0 flex-1 overflow-y-auto p-5">
+            <input name="bindingType" type="hidden" value={bindingType} />
+            <input name="sourceVendorCode" type="hidden" value={sourceVendorCode} />
+            <input name="targetVendorCode" type="hidden" value={targetVendorCode} />
+            <input name="rowsJson" type="hidden" value={JSON.stringify(mappingRows)} />
+            <input name="bindingsJson" type="hidden" value={JSON.stringify(mappingBindings)} />
+            {error?.message && (
+              <div className="mb-5 rounded-xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm font-medium text-rose-700 dark:border-rose-500/30 dark:bg-rose-500/10 dark:text-rose-200">
+                {error.message}
+              </div>
+            )}
+            <div className="grid min-h-0 flex-1 gap-5 lg:grid-cols-[320px_minmax(0,1fr)]">
             <section className="rounded-2xl border border-slate-200 bg-slate-50 p-4 dark:border-white/10 dark:bg-white/5">
               <div className="mb-4 flex items-center justify-between">
                 <div>
                   <h4 className="text-sm font-semibold text-slate-900 dark:text-white">{t('admin.model.mapping.form.scopeTitle')}</h4>
                   <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">{t('admin.model.mapping.form.scopeHint')}</p>
                 </div>
-                <span className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-600 ring-1 ring-slate-200 dark:bg-[#171719] dark:text-slate-300 dark:ring-white/10">{t(`admin.model.mapping.scope.${scopeType}`)}</span>
+                <span className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-600 ring-1 ring-slate-200 dark:bg-[#171719] dark:text-slate-300 dark:ring-white/10">{t(`admin.model.mapping.scope.${bindingType}`)}</span>
               </div>
               <label className="block">
                 <span className="mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-300">{t('admin.model.mapping.form.scope')}</span>
                 <select
-                  value={scopeType}
-                  onChange={(event) => syncScopeFields(event.target.value as ModelMappingRule['scopeType'])}
+                  value={bindingType}
+                  onChange={(event) => syncBindingFields(event.target.value as ModelMappingRule['bindingType'])}
                   className="w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 dark:border-white/10 dark:bg-[#171719] dark:text-white"
                 >
                   <option value="global">{t('admin.model.mapping.scope.global')}</option>
                   <option value="vendor">{t('admin.model.mapping.scope.vendor')}</option>
+                  <option value="channel_group">{t('admin.model.mapping.scope.channelGroup')}</option>
                   <option value="channel">{t('admin.model.mapping.scope.channel')}</option>
+                  <option value="provider_account">{t('admin.model.mapping.scope.providerAccount')}</option>
+                  <option value="site">{t('admin.model.mapping.scope.site')}</option>
+                  <option value="site_service">{t('admin.model.mapping.scope.siteService')}</option>
                 </select>
               </label>
-              {scopeType === 'channel' && (
-                <label className="mt-3 block">
-                  <span className="mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-300">{t('admin.model.mapping.form.channelCode')}</span>
-                  <input
-                    value={scopeChannelCode}
-                    onChange={(event) => {
-                      setScopeChannelCode(event.target.value);
-                      clearFieldError('channelCode');
-                    }}
-                    required
-                    placeholder={t('admin.model.mapping.form.channelCode')}
-                    aria-invalid={Boolean(fieldErrors.channelCode)}
-                    data-model-mapping-error-key="channelCode"
-                    className={`w-full rounded-xl border bg-white px-3 py-2 text-sm outline-none focus:ring-1 dark:bg-[#171719] dark:text-white ${fieldErrors.channelCode ? 'border-rose-300 focus:border-rose-500 focus:ring-rose-500 dark:border-rose-500/50' : 'border-slate-200 focus:border-indigo-500 focus:ring-indigo-500 dark:border-white/10'}`}
-                  />
-                  {fieldErrors.channelCode && <span className="mt-1.5 block text-xs font-medium text-rose-600 dark:text-rose-300">{fieldErrors.channelCode}</span>}
-                </label>
-              )}
               <div className="mt-4 grid gap-3">
                 <button
                   type="button"
@@ -1765,22 +2021,95 @@ function ModelMappingFormModal({
                 </button>
                 {fieldErrors.targetVendorCode && <span className="-mt-2 block text-xs font-medium text-rose-600 dark:text-rose-300">{fieldErrors.targetVendorCode}</span>}
               </div>
+              <div className="mt-5 border-t border-slate-200 pt-4 dark:border-white/10">
+                <div className="mb-3 flex items-center justify-between gap-3">
+                  <h4 className="text-sm font-semibold text-slate-900 dark:text-white">{t('admin.model.mapping.form.bindingTitle')}</h4>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      clearFieldError('mappingBindings');
+                      setMappingBindings((current) => [...current, createMappingBindingDraft(null, bindingType)]);
+                    }}
+                    className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-xs font-medium text-slate-600 transition hover:bg-slate-50 dark:border-white/10 dark:bg-[#171719] dark:text-slate-300 dark:hover:bg-white/10"
+                  >
+                    <Plus className="h-3.5 w-3.5" />
+                    {t('admin.model.mapping.form.addBinding')}
+                  </button>
+                </div>
+                {fieldErrors.mappingBindings && (
+                  <div
+                    tabIndex={-1}
+                    data-model-mapping-error-key="mappingBindings"
+                    className="mb-3 rounded-lg border border-rose-200 bg-rose-50 px-3 py-2 text-xs font-medium text-rose-700 outline-none dark:border-rose-500/30 dark:bg-rose-500/10 dark:text-rose-200"
+                  >
+                    {fieldErrors.mappingBindings}
+                  </div>
+                )}
+                <div className="space-y-3">
+                  {mappingBindings.map((binding) => (
+                    <div key={binding.id} className="rounded-xl border border-slate-200 bg-white p-3 dark:border-white/10 dark:bg-[#171719]">
+                      <div className="flex items-center gap-2">
+                        <select
+                          value={binding.bindingType}
+                          onChange={(event) => {
+                            clearFieldError('mappingBindings');
+                            const nextType = event.target.value as ModelMappingRule['bindingType'];
+                            setMappingBindings((current) => current.map((item) => item.id === binding.id
+                              ? normalizeBindingDraftForType({ ...item, bindingType: nextType }, sourceVendorCode)
+                              : item));
+                          }}
+                          className="min-w-0 flex-1 rounded-lg border border-slate-200 bg-white px-2 py-2 text-xs outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 dark:border-white/10 dark:bg-[#121214] dark:text-white"
+                        >
+                          <option value="global">{t('admin.model.mapping.scope.global')}</option>
+                          <option value="vendor">{t('admin.model.mapping.scope.vendor')}</option>
+                          <option value="channel_group">{t('admin.model.mapping.scope.channelGroup')}</option>
+                          <option value="channel">{t('admin.model.mapping.scope.channel')}</option>
+                          <option value="provider_account">{t('admin.model.mapping.scope.providerAccount')}</option>
+                          <option value="site">{t('admin.model.mapping.scope.site')}</option>
+                          <option value="site_service">{t('admin.model.mapping.scope.siteService')}</option>
+                        </select>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            clearFieldError('mappingBindings');
+                            setMappingBindings((current) => current.length > 1 ? current.filter((item) => item.id !== binding.id) : current);
+                          }}
+                          className="inline-flex h-9 w-9 items-center justify-center rounded-lg text-rose-500 transition hover:bg-rose-50 dark:hover:bg-rose-500/10"
+                          title={t('admin.model.mapping.form.removeBinding')}
+                        >
+                          <Trash2 className="h-4 w-4" />
+                        </button>
+                      </div>
+                      {binding.bindingType !== 'global' && (
+                        <input
+                          value={binding.bindingCode}
+                          onChange={(event) => {
+                            clearFieldError('mappingBindings');
+                            setMappingBindings((current) => current.map((item) => item.id === binding.id ? { ...item, bindingCode: event.target.value, bindingName: event.target.value } : item));
+                          }}
+                          placeholder={t('admin.model.mapping.form.bindingCode')}
+                          aria-invalid={Boolean(fieldErrors.mappingBindings)}
+                          className={`mt-2 w-full rounded-lg border bg-white px-2 py-2 text-xs font-mono outline-none focus:ring-1 dark:bg-[#121214] dark:text-white ${fieldErrors.mappingBindings ? 'border-rose-300 focus:border-rose-500 focus:ring-rose-500 dark:border-rose-500/50' : 'border-slate-200 focus:border-indigo-500 focus:ring-indigo-500 dark:border-white/10'}`}
+                        />
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
             </section>
             <section className="rounded-2xl border border-slate-200 bg-white p-4 dark:border-white/10 dark:bg-[#121214]">
               <div className="mb-4 flex items-center justify-between gap-3">
                 <div>
                   <h4 className="text-sm font-semibold text-slate-900 dark:text-white">{t('admin.model.mapping.form.mappingRowsTitle')}</h4>
                 </div>
-                {!mapping && (
-                  <button
-                    type="button"
-                    onClick={() => setMappingRows((current) => [...current, createMappingRowDraft(null)])}
-                    className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-600 transition hover:bg-slate-50 dark:border-white/10 dark:bg-[#171719] dark:text-slate-300 dark:hover:bg-white/10"
-                  >
-                    <Plus className="h-3.5 w-3.5" />
-                    {t('admin.model.mapping.form.addRow')}
-                  </button>
-                )}
+                <button
+                  type="button"
+                  onClick={() => setMappingRows((current) => [...current, createMappingRowDraft(null)])}
+                  className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-600 transition hover:bg-slate-50 dark:border-white/10 dark:bg-[#171719] dark:text-slate-300 dark:hover:bg-white/10"
+                >
+                  <Plus className="h-3.5 w-3.5" />
+                  {t('admin.model.mapping.form.addRow')}
+                </button>
               </div>
               <ModelMappingRowsTable
                 rows={mappingRows}
@@ -1795,17 +2124,20 @@ function ModelMappingFormModal({
                 onChange={setMappingRows}
               />
             </section>
+            </div>
           </div>
-          <div className="flex items-center justify-between gap-3 border-t border-slate-200 pt-4 dark:border-white/10">
-            <div className="text-xs text-slate-500 dark:text-slate-400">{t('admin.model.mapping.form.saveHint')}</div>
-            <div className="flex items-center gap-3">
-              <button type="button" onClick={onClose} disabled={saving} className="rounded-xl border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 disabled:opacity-50 dark:border-white/10 dark:text-slate-200">
-                {t('common.actions.cancel')}
-              </button>
-              <button type="submit" disabled={saving} className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700 disabled:opacity-60">
-                {saving && <Loader2 className="h-4 w-4 animate-spin" />}
-                {t('common.actions.save')}
-              </button>
+          <div data-model-mapping-form-footer className="shrink-0 border-t border-slate-200 px-5 py-4 dark:border-white/10">
+            <div className="flex items-center justify-between gap-3">
+              <div className="text-xs text-slate-500 dark:text-slate-400">{t('admin.model.mapping.form.saveHint')}</div>
+              <div className="flex items-center gap-3">
+                <button type="button" onClick={onClose} disabled={saving} className="rounded-xl border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 disabled:opacity-50 dark:border-white/10 dark:text-slate-200">
+                  {t('common.actions.cancel')}
+                </button>
+                <button type="submit" disabled={saving} className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700 disabled:opacity-60">
+                  {saving && <Loader2 className="h-4 w-4 animate-spin" />}
+                  {t('common.actions.save')}
+                </button>
+              </div>
             </div>
           </div>
         </form>
@@ -2035,17 +2367,24 @@ function VendorPickerModal({
   vendors,
   title,
   searchPlaceholder,
+  selectionMode = 'single',
+  selectedVendorCodes = [],
+  onSelectionChange,
   onSelect,
   onClose,
 }: {
   vendors: readonly Vendor[];
   title: string;
   searchPlaceholder: string;
-  onSelect: (vendor: Vendor) => void;
+  selectionMode?: VendorPickerSelectionMode;
+  selectedVendorCodes?: string[];
+  onSelectionChange?: (vendorCodes: string[]) => void;
+  onSelect?: (vendor: Vendor) => void;
   onClose: () => void;
 }) {
   const { t } = useTranslation();
   const [search, setSearch] = useState('');
+  const selectedVendorCodeSet = useMemo(() => new Set(selectedVendorCodes), [selectedVendorCodes]);
   const filteredVendors = useMemo(() => {
     const query = search.trim().toLowerCase();
     if (!query) {
@@ -2058,9 +2397,20 @@ function VendorPickerModal({
     ].some((value) => value.toLowerCase().includes(query)));
   }, [search, vendors]);
 
+  const toggleVendorSelection = (vendor: Vendor) => {
+    if (selectionMode === 'multiple') {
+      const next = selectedVendorCodeSet.has(vendor.vendorCode)
+        ? selectedVendorCodes.filter((vendorCode) => vendorCode !== vendor.vendorCode)
+        : [...selectedVendorCodes, vendor.vendorCode];
+      onSelectionChange?.(next);
+      return;
+    }
+    onSelect?.(vendor);
+  };
+
   return (
-        <div className="fixed inset-0 z-[70] flex items-center justify-center bg-slate-950/55 p-4 backdrop-blur-sm">
-      <div className="w-full max-w-2xl rounded-3xl border border-slate-200 bg-white shadow-2xl dark:border-white/10 dark:bg-[#171719]">
+    <div className="fixed inset-0 z-[70] flex items-center justify-center bg-slate-950/55 p-4 backdrop-blur-sm">
+      <div className="flex max-h-[88vh] w-full max-w-2xl flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-2xl dark:border-white/10 dark:bg-[#171719]">
         <div className="flex items-center justify-between border-b border-slate-200 px-5 py-4 dark:border-white/10">
           <div>
             <h4 className="text-lg font-semibold text-slate-900 dark:text-white">{title}</h4>
@@ -2085,34 +2435,264 @@ function VendorPickerModal({
               <div className="rounded-xl border border-dashed border-slate-300 px-4 py-10 text-center text-sm text-slate-500 dark:border-white/10 dark:text-slate-400">
                 {t('admin.model.mapping.form.noVendors')}
               </div>
-            ) : filteredVendors.map((vendor) => (
-              <button
-                key={vendor.id}
-                type="button"
-                onClick={() => onSelect(vendor)}
-                className="flex w-full items-center justify-between gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-left transition hover:border-indigo-300 hover:bg-indigo-50 dark:border-white/10 dark:bg-white/5 dark:hover:border-indigo-500/40 dark:hover:bg-indigo-500/10"
-              >
-                <span className="min-w-0">
-                  <span className="block truncate font-semibold text-slate-900 dark:text-white">{vendor.name}</span>
-                  <span className="block truncate text-xs text-slate-500">{vendor.vendorCode}</span>
-                </span>
-                <span className="shrink-0 rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-500 ring-1 ring-slate-200 dark:bg-[#171719] dark:text-slate-300 dark:ring-white/10">
-                  {vendor.status}
-                </span>
-              </button>
-            ))}
+            ) : filteredVendors.map((vendor) => {
+              const checked = selectedVendorCodeSet.has(vendor.vendorCode);
+              return (
+                <button
+                  key={vendor.id}
+                  type="button"
+                  onClick={() => toggleVendorSelection(vendor)}
+                  className={`flex w-full items-center gap-3 rounded-2xl border px-4 py-3 text-left transition ${checked ? 'border-indigo-300 bg-indigo-50/80 shadow-sm ring-1 ring-indigo-100 dark:border-indigo-500/40 dark:bg-indigo-500/10 dark:ring-indigo-500/10' : 'border-slate-200 bg-slate-50 hover:border-indigo-300 hover:bg-indigo-50 dark:border-white/10 dark:bg-white/5 dark:hover:border-indigo-500/40 dark:hover:bg-indigo-500/10'}`}
+                >
+                  <span data-admin-vendor-picker-choice-control className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-white ring-1 ring-slate-200 dark:bg-[#171719] dark:ring-white/10">
+                    <input
+                      type={selectionMode === 'multiple' ? 'checkbox' : 'radio'}
+                      checked={checked}
+                      readOnly
+                      tabIndex={-1}
+                      className="h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"
+                    />
+                  </span>
+                  <span data-admin-vendor-picker-vendor-info className="min-w-0 flex-1">
+                    <span className="block truncate font-semibold text-slate-900 dark:text-white">{vendor.name}</span>
+                    <span className="block truncate text-xs text-slate-500">{vendor.vendorCode}</span>
+                  </span>
+                  <span data-admin-vendor-picker-vendor-status className="shrink-0 rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-500 ring-1 ring-slate-200 dark:bg-[#171719] dark:text-slate-300 dark:ring-white/10">
+                    {vendor.status}
+                  </span>
+                </button>
+              );
+            })}
           </div>
         </div>
+        {selectionMode === 'multiple' && (
+          <div className="flex items-center justify-between gap-3 border-t border-slate-200 px-5 py-4 dark:border-white/10">
+            <div className="text-sm font-medium text-slate-600 dark:text-slate-300">
+              {t('admin.model.site.form.vendorPickerSelectedCount', { count: selectedVendorCodes.length })}
+            </div>
+            <button
+              type="button"
+              onClick={onClose}
+              className="rounded-xl bg-indigo-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-indigo-700"
+            >
+              {t('admin.model.site.form.vendorPickerDone')}
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
 }
 
-function FormInput({ name, label, defaultValue, required = false }: { name: string; label: string; defaultValue?: string; required?: boolean }) {
+function ModelMappingRelationsCell({
+  mapping,
+  onOpenEditor,
+}: {
+  mapping: ModelMappingRule;
+  onOpenEditor: (mapping: ModelMappingRule) => void;
+}) {
+  const visibleItems = mapping.mappingItems.slice(0, 3);
+  return (
+    <button
+      type="button"
+      onClick={() => onOpenEditor(mapping)}
+      className="block w-full rounded-xl border border-transparent px-3 py-2 text-left transition hover:border-indigo-200 hover:bg-indigo-50 dark:hover:border-indigo-500/30 dark:hover:bg-indigo-500/10"
+    >
+      <div className="space-y-1.5">
+        {visibleItems.length === 0 ? (
+          <span className="text-xs text-slate-400">-</span>
+        ) : visibleItems.map((item) => (
+          <div key={item.id} className="flex min-w-0 items-center gap-2 text-xs">
+            <span className="truncate font-mono font-semibold text-slate-800 dark:text-slate-100">{item.sourceModel}</span>
+            <ArrowRightLeft className="h-3.5 w-3.5 shrink-0 text-slate-400" />
+            <span className="truncate font-mono text-slate-600 dark:text-slate-300">{item.targetModel}</span>
+          </div>
+        ))}
+      </div>
+      {mapping.mappingItems.length > visibleItems.length && (
+        <div className="mt-1.5 text-xs font-medium text-indigo-600 dark:text-indigo-300">+{mapping.mappingItems.length - visibleItems.length}</div>
+      )}
+    </button>
+  );
+}
+
+function ModelMappingRelationEditorModal({
+  mapping,
+  models,
+  catalogLoading,
+  saving,
+  error,
+  onClearRowError,
+  onUpdated,
+  onError,
+  onSavingChange,
+  onClose,
+}: {
+  mapping: ModelMappingRule;
+  models: readonly Model[];
+  catalogLoading: boolean;
+  saving: boolean;
+  error: ModelMappingFormErrors | null;
+  onClearRowError: (rowId: string, field: ModelMappingRowFieldKey) => void;
+  onUpdated: (mapping: ModelMappingRule) => void;
+  onError: (error: ModelMappingFormErrors | null) => void;
+  onSavingChange: (saving: boolean) => void;
+  onClose: () => void;
+}) {
+  const { t } = useTranslation();
+  const [mappingRows, setMappingRows] = useState<ModelMappingRowDraft[]>(() => createMappingRowDrafts(mapping));
+  const fieldErrors = error?.fieldErrors ?? {};
+  const rowErrors = error?.rowErrors ?? {};
+  const firstErrorKey = error?.firstErrorKey ?? null;
+
+  useEffect(() => {
+    if (!firstErrorKey) {
+      return;
+    }
+    const escapedKey = typeof CSS !== 'undefined' && typeof CSS.escape === 'function'
+      ? CSS.escape(firstErrorKey)
+      : firstErrorKey.replace(/["\\]/gu, '\\$&');
+    const target = document.querySelector<HTMLElement>(`[data-model-mapping-error-key="${escapedKey}"]`);
+    target?.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    target?.focus?.();
+  }, [firstErrorKey]);
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    onSavingChange(true);
+    onError(null);
+    const form = event.currentTarget;
+    writeHiddenFormValue(form, 'rowsJson', JSON.stringify(mappingRows));
+    const formData = new FormData(form);
+    try {
+      const errors = createEmptyModelMappingFormErrors();
+      const rows = readMappingRowsFromForm(formData, errors);
+      validateUniqueModelMappingRows(rows, errors);
+      throwModelMappingValidationErrorIfNeeded(errors);
+      const input: ModelMappingUpdateInput = {
+        mappingItems: rows.map((row): ModelMappingRuleItemInput => ({
+          id: persistedChildId(row.persistedId),
+          sourceModel: row.sourceModel,
+          targetModel: row.targetModel,
+          enabled: row.enabled,
+        })),
+      };
+      const updated = await ModelMappingService.updateMapping(mapping.id, input);
+      onUpdated(updated);
+    } catch (caught) {
+      onError(modelMappingFormErrorsFromError(caught));
+    } finally {
+      onSavingChange(false);
+    }
+  };
+
+  return (
+    <div className="fixed inset-0 z-[60] flex items-center justify-center bg-slate-950/50 p-4 backdrop-blur-sm">
+      <div className="flex h-[90vh] w-full max-w-5xl flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-2xl dark:border-white/10 dark:bg-[#171719]">
+        <div className="shrink-0 flex items-center justify-between border-b border-slate-200 px-5 py-4 dark:border-white/10">
+          <div>
+            <h3 className="text-lg font-semibold text-slate-900 dark:text-white">{t('admin.model.mapping.relations.editTitle')}</h3>
+          </div>
+          <button type="button" onClick={onClose} disabled={saving} className="text-slate-400 hover:text-slate-600 disabled:opacity-50">
+            <X className="h-5 w-5" />
+          </button>
+        </div>
+        <form onSubmit={handleSubmit} className="flex min-h-0 flex-1 flex-col">
+          <div data-model-mapping-relation-form-scroll className="min-h-0 flex-1 overflow-y-auto p-5">
+            <input name="rowsJson" type="hidden" value={JSON.stringify(mappingRows)} />
+            {error?.message && (
+              <div className="mb-4 rounded-xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm font-medium text-rose-700 dark:border-rose-500/30 dark:bg-rose-500/10 dark:text-rose-200">
+                {error.message}
+              </div>
+            )}
+            <div className="mb-4 flex items-center justify-end">
+              <button
+                type="button"
+                onClick={() => setMappingRows((current) => [...current, createMappingRowDraft(null)])}
+                className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-600 transition hover:bg-slate-50 dark:border-white/10 dark:bg-[#171719] dark:text-slate-300 dark:hover:bg-white/10"
+              >
+                <Plus className="h-3.5 w-3.5" />
+                {t('admin.model.mapping.form.addRow')}
+              </button>
+            </div>
+            <ModelMappingRowsTable
+              rows={mappingRows}
+              sourceModels={modelsForMappingSide(models, mapping, 'source')}
+              targetModels={modelsForMappingSide(models, mapping, 'target')}
+              loading={catalogLoading}
+              searchPlaceholder={t('admin.model.mapping.form.modelPicker.searchPlaceholder')}
+              inputPlaceholder={t('admin.model.mapping.form.modelInputPlaceholder')}
+              fieldErrors={fieldErrors}
+              rowErrors={rowErrors}
+              onClearRowError={onClearRowError}
+              onChange={setMappingRows}
+            />
+          </div>
+          <div data-model-mapping-relation-form-footer className="shrink-0 border-t border-slate-200 px-5 py-4 dark:border-white/10">
+            <div className="flex items-center justify-end gap-3">
+              <button type="button" onClick={onClose} disabled={saving} className="rounded-xl border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 disabled:opacity-50 dark:border-white/10 dark:text-slate-200">
+                {t('common.actions.cancel')}
+              </button>
+              <button type="submit" disabled={saving} className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700 disabled:opacity-60">
+                {saving && <Loader2 className="h-4 w-4 animate-spin" />}
+                {t('common.actions.save')}
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+}
+
+function ModelMappingBindingsCell({ mapping }: { mapping: ModelMappingRule }) {
+  const { t } = useTranslation();
+  if (mapping.bindings.length === 0) {
+    return <span className="text-xs text-slate-400">-</span>;
+  }
+  return (
+    <div className="flex max-w-[320px] flex-wrap gap-1.5">
+      {mapping.bindings.slice(0, 3).map((binding) => (
+        <span key={binding.id} className="max-w-[220px] truncate rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600 dark:bg-white/10 dark:text-slate-300">
+          {t(`admin.model.mapping.scope.${binding.bindingType}`)}: {binding.bindingType === 'global' ? 'all' : (binding.bindingName || binding.bindingCode || binding.bindingId || '-')}
+        </span>
+      ))}
+      {mapping.bindings.length > 3 && (
+        <span className="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-500 dark:bg-white/10 dark:text-slate-400">
+          +{mapping.bindings.length - 3}
+        </span>
+      )}
+    </div>
+  );
+}
+
+function FormInput({
+  name,
+  label,
+  defaultValue,
+  required = false,
+  error,
+  onChange,
+}: {
+  name: string;
+  label: string;
+  defaultValue?: string;
+  required?: boolean;
+  error?: string;
+  onChange?: () => void;
+}) {
   return (
     <label className="block">
       <span className="mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-300">{label}</span>
-      <input name={name} defaultValue={defaultValue ?? ''} required={required} className="w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 dark:border-white/10 dark:bg-white/5 dark:text-white" />
+      <input
+        name={name}
+        defaultValue={defaultValue ?? ''}
+        required={required}
+        onChange={onChange}
+        aria-invalid={Boolean(error)}
+        className={`w-full rounded-xl border bg-white px-3 py-2 text-sm text-slate-900 outline-none transition focus:ring-1 dark:bg-white/5 dark:text-white ${error ? 'border-rose-300 focus:border-rose-500 focus:ring-rose-500 dark:border-rose-500/50' : 'border-slate-200 focus:border-indigo-500 focus:ring-indigo-500 dark:border-white/10'}`}
+      />
+      {error && <span className="mt-1.5 block text-xs font-medium text-rose-600 dark:text-rose-300">{error}</span>}
     </label>
   );
 }
@@ -2130,20 +2710,91 @@ function StatusPill({ value }: { value: string }) {
   );
 }
 
+function validateSiteFormDraft(
+  formData: FormData,
+  domainInputs: readonly string[],
+  selectedVendorCodes: readonly string[],
+  t: (key: string, options?: Record<string, unknown>) => string,
+): Partial<Record<SiteFormFieldErrorKey, string>> {
+  const errors: Partial<Record<SiteFormFieldErrorKey, string>> = {};
+  if (!readFormString(formData, 'siteName')) {
+    errors.siteName = t('admin.model.site.form.validation.siteNameRequired');
+  }
+  if (!readFormString(formData, 'displayName')) {
+    errors.displayName = t('admin.model.site.form.validation.displayNameRequired');
+  }
+  const baseUrl = readFormString(formData, 'baseUrl');
+  if (!baseUrl) {
+    errors.baseUrl = t('admin.model.site.form.validation.baseUrlRequired');
+  } else if (!isValidHttpUrl(baseUrl)) {
+    errors.baseUrl = t('admin.model.site.form.validation.urlInvalid');
+  }
+  for (const field of ['websiteUrl', 'docsUrl'] as const) {
+    const value = readFormString(formData, field);
+    if (value && !isValidHttpUrl(value)) {
+      errors[field] = t('admin.model.site.form.validation.urlInvalid');
+    }
+  }
+  const normalizedDomains = domainInputs.map((domain) => domain.trim()).filter(Boolean);
+  const seenDomains = new Set<string>();
+  for (const domain of normalizedDomains) {
+    const normalizedDomain = domain.toLowerCase();
+    if (!isValidSiteDomain(domain)) {
+      errors.domains = t('admin.model.site.form.validation.domainInvalid', { domain });
+      break;
+    }
+    if (seenDomains.has(normalizedDomain)) {
+      errors.domains = t('admin.model.site.form.validation.domainDuplicate', { domain });
+      break;
+    }
+    seenDomains.add(normalizedDomain);
+  }
+  if (selectedVendorCodes.length === 0) {
+    errors.vendorCodes = t('admin.model.site.form.validation.vendorRequired');
+  }
+  return errors;
+}
+
+function isValidHttpUrl(value: string): boolean {
+  try {
+    const url = new URL(value);
+    return url.protocol === 'http:' || url.protocol === 'https:';
+  } catch {
+    return false;
+  }
+}
+
+function isValidSiteDomain(value: string): boolean {
+  const domain = value.trim();
+  if (!domain || domain.length > 253 || /\s/u.test(domain) || /[/?#]/u.test(domain) || /^https?:\/\//iu.test(domain)) {
+    return false;
+  }
+  const withoutPort = domain.startsWith('[')
+    ? domain
+    : domain.replace(/:\d{1,5}$/u, '');
+  if (withoutPort === 'localhost') {
+    return true;
+  }
+  return /^(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])$/iu.test(withoutPort);
+}
+
 function siteInputFromForm(formData: FormData) {
   const siteName = readFormString(formData, 'siteName');
   const displayName = readFormString(formData, 'displayName') || siteName;
+  const baseUrl = readFormString(formData, 'baseUrl');
+  const domains = parseMultilineFormList(formData, 'domains');
+  const vendorCodes = parseJsonStringArrayFormValue(formData, 'vendorCodes');
   return {
-    siteCode: generateSiteCode(displayName || siteName),
+    siteCode: generateSiteCode(displayName, siteName, baseUrl, ...domains, ...vendorCodes),
     siteName,
     displayName,
-    baseUrl: readFormString(formData, 'baseUrl'),
+    baseUrl,
     description: readOptionalFormString(formData, 'description'),
     websiteUrl: readOptionalFormString(formData, 'websiteUrl'),
     docsUrl: readOptionalFormString(formData, 'docsUrl'),
     logo: readSiteLogoFromForm(formData),
-    domains: parseMultilineFormList(formData, 'domains'),
-    vendorCodes: parseJsonStringArrayFormValue(formData, 'vendorCodes'),
+    domains,
+    vendorCodes,
     regionCode: readOptionalFormString(formData, 'regionCode'),
     maskedLabel: readOptionalFormString(formData, 'maskedLabel'),
     siteType: 'relay' as const,
@@ -2166,16 +2817,27 @@ function vendorLabel(vendorCode: string, vendors: readonly Vendor[]): string {
   return vendors.find((vendor) => vendor.vendorCode === vendorCode)?.name ?? vendorCode;
 }
 
-function generateSiteCode(value: string): string {
-  const normalized = value
+function generateSiteCode(...values: string[]): string {
+  for (const value of values) {
+    const normalized = normalizeSiteCodeCandidate(value);
+    if (normalized) {
+      return normalized;
+    }
+  }
+  throw new Error('Site code requires a stable ASCII site name, base URL, domain, or vendor code');
+}
+
+function normalizeSiteCodeCandidate(value: string): string {
+  const withoutProtocol = value
     .trim()
     .toLowerCase()
-    .replace(/https?:\/\//u, '')
+    .replace(/https?:\/\//u, '');
+  const host = withoutProtocol.split(/[/?#]/u, 1)[0] ?? '';
+  return host
     .replace(/[^a-z0-9._-]+/gu, '_')
     .replace(/_+/gu, '_')
     .replace(/^[_\-.]+|[_\-.]+$/gu, '')
     .slice(0, 64);
-  return normalized || `site_${Date.now().toString(36)}`;
 }
 
 function readSiteLogoFromForm(formData: FormData) {
@@ -2220,29 +2882,88 @@ function parseJsonStringArrayFormValue(formData: FormData, name: string): string
   return [];
 }
 
-function modelMappingInputsFromForm(formData: FormData): ModelMappingCreateInput[] {
-  const scopeType = readMappingScopeType(formData);
+function modelMappingInputFromForm(formData: FormData): ModelMappingCreateInput {
   const errors = createEmptyModelMappingFormErrors();
   const sourceVendorCode = readRequiredFormString(formData, 'sourceVendorCode', 'Source vendor is required', errors);
   const targetVendorCode = readRequiredFormString(formData, 'targetVendorCode', 'Target vendor is required', errors);
-  const channelCode = scopeType === 'channel'
-    ? readRequiredFormString(formData, 'channelCode', 'Account pool code is required', errors)
-    : null;
+  const bindings = readMappingBindingsFromForm(formData, errors);
   const rows = readMappingRowsFromForm(formData, errors);
   validateUniqueModelMappingRows(rows, errors);
   throwModelMappingValidationErrorIfNeeded(errors);
-  return rows.map((row) => ({
-    scopeType,
-    vendorCode: scopeType === 'vendor' ? sourceVendorCode : null,
-    channelCode,
-    sourceModel: row.sourceModel,
+  return {
     sourceVendorCode,
-    targetModel: row.targetModel,
     targetVendorCode,
     mappingMode: 'alias',
     matchType: 'exact',
     enabled: true,
-  }));
+    bindings: bindings.map((binding): ModelMappingBindingInput => ({
+      id: persistedChildId(binding.persistedId),
+      bindingType: binding.bindingType,
+      bindingId: binding.bindingId,
+      bindingCode: binding.bindingType === 'global' ? null : binding.bindingCode,
+      bindingName: binding.bindingName || null,
+      enabled: binding.enabled,
+    })),
+    mappingItems: rows.map((row): ModelMappingRuleItemInput => ({
+      id: persistedChildId(row.persistedId),
+      sourceModel: row.sourceModel,
+      targetModel: row.targetModel,
+      enabled: row.enabled,
+    })),
+  };
+}
+
+function readMappingBindingsFromForm(formData: FormData, errors: ModelMappingFormErrors): ModelMappingBindingDraft[] {
+  const value = readFormString(formData, 'bindingsJson');
+  if (!value) {
+    addModelMappingFieldError(errors, 'mappingBindings', 'Binding content is required');
+    return [];
+  }
+  let parsed: unknown;
+  try {
+    parsed = JSON.parse(value);
+  } catch {
+    addModelMappingFieldError(errors, 'mappingBindings', 'Model mapping bindings are invalid');
+    return [];
+  }
+  if (!Array.isArray(parsed)) {
+    addModelMappingFieldError(errors, 'mappingBindings', 'Model mapping bindings are invalid');
+    return [];
+  }
+  if (parsed.length === 0) {
+    addModelMappingFieldError(errors, 'mappingBindings', 'Binding content is required');
+  }
+  if (parsed.length > MODEL_MAPPING_MAX_ROWS) {
+    addModelMappingFieldError(errors, 'mappingBindings', `Model mapping bindings cannot exceed ${MODEL_MAPPING_MAX_ROWS}`);
+  }
+  const bindings = parsed.map((item, index): ModelMappingBindingDraft => {
+    const fallbackId = `binding_${index}`;
+    if (!item || typeof item !== 'object') {
+      addModelMappingFieldError(errors, 'mappingBindings', 'Model mapping bindings are invalid');
+      return createMappingBindingDraft(null, 'global', fallbackId);
+    }
+    const record = item as Record<string, unknown>;
+    const rowId = typeof record.id === 'string' && record.id ? record.id : fallbackId;
+    const bindingType = readMappingBindingTypeValue(record.bindingType);
+    const bindingCode = typeof record.bindingCode === 'string' ? record.bindingCode.trim() : '';
+    const bindingId = typeof record.bindingId === 'string' && record.bindingId.trim() ? record.bindingId.trim() : null;
+    const bindingName = typeof record.bindingName === 'string' ? record.bindingName.trim() : '';
+    const persistedId = typeof record.persistedId === 'string' && record.persistedId.trim() ? record.persistedId.trim() : persistedChildId(rowId);
+    if (bindingType !== 'global' && !bindingCode && !bindingId) {
+      addModelMappingFieldError(errors, 'mappingBindings', 'Binding content is required');
+    }
+    return {
+      id: rowId,
+      persistedId,
+      bindingType,
+      bindingId,
+      bindingCode,
+      bindingName,
+      enabled: typeof record.enabled === 'boolean' ? record.enabled : true,
+    };
+  });
+  validateUniqueModelMappingBindings(bindings, errors);
+  return bindings;
 }
 
 function readMappingRowsFromForm(formData: FormData, errors: ModelMappingFormErrors): ModelMappingRowDraft[] {
@@ -2271,10 +2992,11 @@ function readMappingRowsFromForm(formData: FormData, errors: ModelMappingFormErr
       if (!item || typeof item !== 'object') {
         addModelMappingRowError(errors, fallbackId, 'sourceModel', `Model mapping row ${index + 1} is invalid`);
         addModelMappingRowError(errors, fallbackId, 'targetModel', `Model mapping row ${index + 1} is invalid`);
-        return { id: fallbackId, sourceModel: '', targetModel: '' };
+        return { id: fallbackId, persistedId: null, sourceModel: '', targetModel: '', enabled: true };
       }
       const record = item as Record<string, unknown>;
       const rowId = typeof record.id === 'string' && record.id ? record.id : fallbackId;
+      const persistedId = typeof record.persistedId === 'string' && record.persistedId.trim() ? record.persistedId.trim() : persistedChildId(rowId);
       const sourceModel = typeof record.sourceModel === 'string' ? record.sourceModel.trim() : '';
       const targetModel = typeof record.targetModel === 'string' ? record.targetModel.trim() : '';
       if (!sourceModel) {
@@ -2287,8 +3009,10 @@ function readMappingRowsFromForm(formData: FormData, errors: ModelMappingFormErr
       validateModelMappingModelValue(targetModel, 'Target model', errors, rowId, 'targetModel');
       return {
         id: rowId,
+        persistedId,
         sourceModel,
         targetModel,
+        enabled: typeof record.enabled === 'boolean' ? record.enabled : true,
       };
     });
   if (rows.length === 0) {
@@ -2321,6 +3045,18 @@ function validateUniqueModelMappingRows(rows: readonly ModelMappingRowDraft[], e
       continue;
     }
     seen.add(sourceModel);
+  }
+}
+
+function validateUniqueModelMappingBindings(bindings: readonly ModelMappingBindingDraft[], errors: ModelMappingFormErrors): void {
+  const seen = new Set<string>();
+  for (const binding of bindings) {
+    const identity = `${binding.bindingType}:${binding.bindingType === 'global' ? 'global' : (binding.bindingId || binding.bindingCode).toLowerCase()}`;
+    if (seen.has(identity)) {
+      addModelMappingFieldError(errors, 'mappingBindings', 'Duplicate binding content is not allowed');
+      continue;
+    }
+    seen.add(identity);
   }
 }
 
@@ -2431,16 +3167,74 @@ function normalizeModelMappingFormErrors(errors: ModelMappingFormErrors): ModelM
   };
 }
 
-function createMappingRowDraft(mapping: ModelMappingRule | null): ModelMappingRowDraft {
+function createMappingRowDraft(item: ModelMappingRule['mappingItems'][number] | null): ModelMappingRowDraft {
   return {
-    id: mapping?.id ?? createMappingRowId(),
-    sourceModel: mapping?.sourceModel ?? '',
-    targetModel: mapping?.targetModel ?? '',
+    id: item?.id ?? createMappingRowId(),
+    persistedId: item?.id ?? null,
+    sourceModel: item?.sourceModel ?? '',
+    targetModel: item?.targetModel ?? '',
+    enabled: item?.enabled ?? true,
   };
 }
 
+function createMappingRowDrafts(mapping: ModelMappingRule | null): ModelMappingRowDraft[] {
+  if (!mapping || mapping.mappingItems.length === 0) {
+    return [createMappingRowDraft(null)];
+  }
+  return mapping.mappingItems.map((item) => createMappingRowDraft(item));
+}
+
 function createMappingRowId(): string {
-  return `row_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 8)}`;
+  return `row_${nextModelMappingDraftId()}`;
+}
+
+function createMappingBindingDraft(
+  binding: ModelMappingRule['bindings'][number] | null,
+  fallbackType: ModelMappingRule['bindingType'],
+  fallbackId?: string,
+): ModelMappingBindingDraft {
+  return {
+    id: binding?.id ?? fallbackId ?? createMappingBindingId(),
+    persistedId: binding?.id ?? null,
+    bindingType: binding?.bindingType ?? fallbackType,
+    bindingId: binding?.bindingId ?? null,
+    bindingCode: binding?.bindingCode ?? '',
+    bindingName: binding?.bindingName ?? '',
+    enabled: binding?.enabled ?? true,
+  };
+}
+
+function createMappingBindingDrafts(mapping: ModelMappingRule | null, fallbackType: ModelMappingRule['bindingType']): ModelMappingBindingDraft[] {
+  if (!mapping || mapping.bindings.length === 0) {
+    return [createMappingBindingDraft(null, fallbackType)];
+  }
+  return mapping.bindings.map((binding) => createMappingBindingDraft(binding, mapping.bindingType));
+}
+
+function createMappingBindingId(): string {
+  return `binding_${nextModelMappingDraftId()}`;
+}
+
+function nextModelMappingDraftId(): string {
+  nextModelMappingDraftSequence += 1;
+  return nextModelMappingDraftSequence.toString(36);
+}
+
+function normalizeBindingDraftForType(binding: ModelMappingBindingDraft, sourceCode: string): ModelMappingBindingDraft {
+  if (binding.bindingType === 'global') {
+    return { ...binding, bindingId: null, bindingCode: '', bindingName: '' };
+  }
+  if (binding.bindingType === 'vendor' && !binding.bindingCode.trim() && sourceCode.trim()) {
+    return { ...binding, bindingCode: sourceCode.trim(), bindingName: sourceCode.trim() };
+  }
+  return binding;
+}
+
+function persistedChildId(value: string | null | undefined): string | null {
+  if (!value || /^row_/u.test(value) || /^binding_/u.test(value)) {
+    return null;
+  }
+  return value;
 }
 
 function syncRowsForVendor(
@@ -2465,6 +3259,15 @@ function syncRowsForVendor(
   });
 }
 
+function modelsForMappingSide(
+  models: readonly Model[],
+  mapping: ModelMappingRule,
+  side: 'source' | 'target',
+): Model[] {
+  const code = side === 'source' ? mapping.sourceVendorCode : mapping.targetVendorCode;
+  return code ? models.filter((model) => model.vendorCode === code) : [...models];
+}
+
 function writeHiddenFormValue(form: HTMLFormElement, name: string, value: string): void {
   const input = form.querySelector<HTMLInputElement>(`input[name="${name}"]`);
   if (input) {
@@ -2472,22 +3275,32 @@ function writeHiddenFormValue(form: HTMLFormElement, name: string, value: string
   }
 }
 
-function readMappingScopeType(formData: FormData): ModelMappingRule['scopeType'] {
-  const value = readFormString(formData, 'scopeType');
-  if (value === 'vendor' || value === 'channel') {
+function readMappingPrimaryBindingType(formData: FormData): ModelMappingRule['bindingType'] {
+  const value = readFormString(formData, 'bindingType');
+  return readMappingBindingTypeValue(value);
+}
+
+function readMappingBindingTypeValue(value: unknown): ModelMappingRule['bindingType'] {
+  if (
+    value === 'global'
+    || value === 'vendor'
+    || value === 'channel_group'
+    || value === 'channel'
+    || value === 'provider_account'
+    || value === 'site'
+    || value === 'site_service'
+  ) {
     return value;
   }
   return 'global';
 }
 
-function mappingScopeIdentity(mapping: ModelMappingRule): string {
-  if (mapping.scopeType === 'channel') {
-    return mapping.channelCode ?? mapping.channelId ?? '-';
+function mappingBindingIdentity(mapping: ModelMappingRule): string {
+  const binding = mapping.bindings[0];
+  if (!binding || binding.bindingType === 'global') {
+    return 'all requests';
   }
-  if (mapping.scopeType === 'vendor') {
-    return mapping.vendorCode ?? mapping.vendorId ?? '-';
-  }
-  return 'all requests';
+  return binding.bindingName || binding.bindingCode || binding.bindingId || '-';
 }
 
 function readFormString(formData: FormData, name: string): string {

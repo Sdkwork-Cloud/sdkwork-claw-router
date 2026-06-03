@@ -108,6 +108,8 @@ export interface AiUsageFactRecord {
   reasoning_effort?: string;
   /** Reference multiplier field on ai usage fact record. */
   reference_multiplier?: string;
+  /** Region code field on ai usage fact record. */
+  region_code?: string;
   /** Request count field on ai usage fact record. */
   request_count?: string;
   /** Request id field on ai usage fact record. */

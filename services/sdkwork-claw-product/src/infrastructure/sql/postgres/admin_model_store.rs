@@ -1,3 +1,5 @@
+use std::collections::BTreeMap;
+
 use sqlx::{PgPool, Postgres, Row, Transaction};
 
 use crate::domain::{DomainError, DomainResult};
@@ -10,13 +12,14 @@ use crate::infrastructure::sql::model_catalog_import::{
 };
 use crate::infrastructure::sql::model_modality;
 use crate::ports::{
-    AdminAiModelItem, AdminModelCatalogSyncItem, AdminModelCommandFuture,
-    AdminModelMappingRuleItem, AdminModelMappingRulePatch, AdminModelStore, AdminModelSubject,
-    AdminModelVendorItem, CreateAdminAiModelCommand, CreateAdminModelMappingCommand,
-    CreateAdminModelVendorCommand, DeleteAdminAiModelCommand, DeleteAdminModelMappingCommand,
-    ListAdminAiModelsQuery, ListAdminModelMappingsQuery, ListAdminModelVendorsQuery,
-    ResolveAdminModelMappingQuery, ResolveAdminModelMappingResult, SyncAdminModelCatalogCommand,
-    UpdateAdminAiModelCommand, UpdateAdminModelMappingCommand,
+    AdminAiModelItem, AdminAiModelRegionPriceCommand, AdminModelCatalogSyncItem,
+    AdminModelCommandFuture, AdminModelMappingRuleBindingDraft, AdminModelMappingRuleBindingItem,
+    AdminModelMappingRuleItem, AdminModelMappingRuleItemDraft, AdminModelMappingRuleMappingItem,
+    AdminModelStore, AdminModelSubject, AdminModelVendorItem, CreateAdminAiModelCommand,
+    CreateAdminModelMappingCommand, CreateAdminModelVendorCommand, DeleteAdminAiModelCommand,
+    DeleteAdminModelMappingCommand, ListAdminAiModelsQuery, ListAdminModelMappingsQuery,
+    ListAdminModelVendorsQuery, ResolveAdminModelMappingQuery, ResolveAdminModelMappingResult,
+    SyncAdminModelCatalogCommand, UpdateAdminAiModelCommand, UpdateAdminModelMappingCommand,
 };
 
 const MODEL_VENDOR_TARGET_TYPE: i32 = 41;
@@ -47,11 +50,6 @@ struct EffectiveModelUpdate {
     model: String,
     display_name: String,
     model_type: String,
-    region_code: String,
-    price_in: String,
-    price_out: String,
-    cache_read_price: String,
-    cache_write_price: String,
     status: String,
     description: Option<String>,
     modalities: Vec<String>,
@@ -75,27 +73,10 @@ struct EffectiveModelUpdate {
 }
 
 #[derive(Debug, Clone)]
-struct EffectiveModelMappingRule {
-    scope_type: String,
-    vendor_id: Option<i64>,
-    vendor_code: Option<String>,
-    channel_id: Option<i64>,
-    channel_code: Option<String>,
-    source_model: String,
-    source_catalog_key: Option<String>,
-    source_vendor_code: Option<String>,
-    target_model: String,
-    target_catalog_key: Option<String>,
-    target_vendor_code: Option<String>,
-    target_provider_model: Option<String>,
-    target_provider_native_model: Option<String>,
-    mapping_mode: String,
-    match_type: String,
-    priority: i32,
-    enabled: bool,
-    effective_from: Option<String>,
-    effective_to: Option<String>,
-    description: Option<String>,
+struct ResolvedModelMappingMatch {
+    rule: AdminModelMappingRuleItem,
+    item: AdminModelMappingRuleMappingItem,
+    binding_type: String,
 }
 
 impl PostgresAdminModelStore {
@@ -214,10 +195,8 @@ impl AdminModelStore for PostgresAdminModelStore {
                     "vendorId": vendor.id,
                     "vendorCode": &vendor.code,
                     "type": &command.model_type,
-                    "priceIn": &command.price_in,
-                    "priceOut": &command.price_out,
-                    "cacheReadPrice": &command.cache_read_price,
-                    "cacheWritePrice": &command.cache_write_price,
+                    "regionPriceCount": command.region_prices.len(),
+                    "regionCodes": command.region_prices.iter().map(|price| price.region_code.as_str()).collect::<Vec<_>>(),
                     "contextTokens": command.context_tokens
                 }),
             )
@@ -261,10 +240,10 @@ impl AdminModelStore for PostgresAdminModelStore {
                 serde_json::json!({
                     "action": "create_model_mapping",
                     "mappingId": mapping_id,
-                    "scopeType": &command.draft.scope_type,
-                    "sourceModel": &command.draft.source_model,
-                    "targetModel": &command.draft.target_model,
-                    "priority": command.draft.priority
+                    "sourceVendorCode": &command.draft.source_vendor_code,
+                    "targetVendorCode": &command.draft.target_vendor_code,
+                    "bindingCount": command.draft.bindings.len(),
+                    "mappingItemCount": command.draft.mapping_items.len()
                 }),
             )
             .await?;
@@ -341,14 +320,6 @@ impl AdminModelStore for PostgresAdminModelStore {
                 }
             };
             let update = effective_model_update(&current, &command);
-            let cache_read_price_update = command
-                .cache_read_price
-                .as_ref()
-                .map(|_| update.cache_read_price.as_str());
-            let cache_write_price_update = command
-                .cache_write_price
-                .as_ref()
-                .map(|_| update.cache_write_price.as_str());
             update_model_core(&mut tx, current.id, &command, &vendor, &update).await?;
             upsert_model_capability(&mut tx, current.id, &command, &vendor, &update).await?;
             if let Some(region_prices) = command.region_prices.as_ref() {
@@ -359,36 +330,6 @@ impl AdminModelStore for PostgresAdminModelStore {
                     &vendor,
                     &update,
                     region_prices,
-                )
-                .await?;
-            } else {
-                upsert_model_pricing(&mut tx, current.id, &command, &vendor, &update, true).await?;
-                upsert_model_pricing(&mut tx, current.id, &command, &vendor, &update, false)
-                    .await?;
-                upsert_optional_model_pricing(
-                    &mut tx,
-                    current.id,
-                    &command,
-                    &vendor,
-                    &update,
-                    &command.cache_read_pricing_uuid,
-                    "llm_cache_read_token",
-                    CACHE_READ_BILLING_METER_FILTER_SQL,
-                    cache_read_price_update,
-                    3,
-                )
-                .await?;
-                upsert_optional_model_pricing(
-                    &mut tx,
-                    current.id,
-                    &command,
-                    &vendor,
-                    &update,
-                    &command.cache_write_pricing_uuid,
-                    "llm_cache_write_token",
-                    CACHE_WRITE_BILLING_METER_FILTER_SQL,
-                    cache_write_price_update,
-                    4,
                 )
                 .await?;
             }
@@ -411,10 +352,9 @@ impl AdminModelStore for PostgresAdminModelStore {
                     "vendorId": vendor.id,
                     "vendorCode": &vendor.code,
                     "type": &update.model_type,
-                    "priceIn": &update.price_in,
-                    "priceOut": &update.price_out,
-                    "cacheReadPrice": &update.cache_read_price,
-                    "cacheWritePrice": &update.cache_write_price,
+                    "regionPricesChanged": command.region_prices.is_some(),
+                    "regionPriceCount": command.region_prices.as_ref().map(|prices| prices.len()).unwrap_or(0),
+                    "regionCodes": command.region_prices.as_ref().map(|prices| prices.iter().map(|price| price.region_code.as_str()).collect::<Vec<_>>()),
                     "contextTokens": update.context_tokens
                 }),
             )
@@ -443,8 +383,13 @@ impl AdminModelStore for PostgresAdminModelStore {
                 store_error("failed to begin model mapping update transaction", error)
             })?;
             let current = find_model_mapping_for_update(&mut tx, &command).await?;
-            let effective = effective_model_mapping_patch(&current, &command.patch);
-            update_model_mapping_row(&mut tx, current.id, &command, &effective).await?;
+            update_model_mapping_row(&mut tx, &current, &command).await?;
+            if let Some(bindings) = command.patch.bindings.as_ref() {
+                reconcile_model_mapping_bindings(&mut tx, &current, &command, bindings).await?;
+            }
+            if let Some(items) = command.patch.mapping_items.as_ref() {
+                reconcile_model_mapping_items(&mut tx, &current, &command, items).await?;
+            }
             insert_audit_log(
                 &mut tx,
                 &command.audit_log_uuid,
@@ -459,10 +404,11 @@ impl AdminModelStore for PostgresAdminModelStore {
                 serde_json::json!({
                     "action": "update_model_mapping",
                     "mappingId": current.id,
-                    "scopeType": &effective.scope_type,
-                    "sourceModel": &effective.source_model,
-                    "targetModel": &effective.target_model,
-                    "enabled": effective.enabled
+                    "sourceVendorCode": command.patch.source_vendor_code.as_deref().unwrap_or_else(|| current.source_vendor_code.as_deref().unwrap_or("")),
+                    "targetVendorCode": command.patch.target_vendor_code.as_deref().unwrap_or_else(|| current.target_vendor_code.as_deref().unwrap_or("")),
+                    "bindingsChanged": command.patch.bindings.is_some(),
+                    "mappingItemsChanged": command.patch.mapping_items.is_some(),
+                    "enabled": command.patch.enabled.unwrap_or(current.enabled)
                 }),
             )
             .await?;
@@ -654,9 +600,10 @@ impl AdminModelStore for PostgresAdminModelStore {
                 serde_json::json!({
                     "action": "delete_model_mapping",
                     "mappingId": mapping.id,
-                    "scopeType": mapping.scope_type,
-                    "sourceModel": mapping.source_model,
-                    "targetModel": mapping.target_model
+                    "bindingType": mapping.binding_type,
+                    "sourceVendorCode": mapping.source_vendor_code,
+                    "targetVendorCode": mapping.target_vendor_code,
+                    "mappingItemCount": mapping.mapping_items.len()
                 }),
             )
             .await?;
@@ -681,11 +628,6 @@ fn is_status_only_model_update(command: &UpdateAdminAiModelCommand) -> bool {
         && command.model.is_none()
         && command.display_name.is_none()
         && command.model_type.is_none()
-        && command.price_in.is_none()
-        && command.price_out.is_none()
-        && command.cache_read_price.is_none()
-        && command.cache_write_price.is_none()
-        && command.region_code.is_none()
         && command.region_prices.is_none()
         && command.description.is_none()
         && command.modalities.is_none()
@@ -811,7 +753,12 @@ async fn list_models(
     .fetch_all(pool)
     .await
     .map_err(|error| store_error("failed to list ai models", error))?;
-    rows.into_iter().map(model_from_row).collect()
+    let mut models = rows
+        .into_iter()
+        .map(model_from_row)
+        .collect::<DomainResult<Vec<_>>>()?;
+    attach_model_region_prices(pool, &mut models).await?;
+    Ok(models)
 }
 
 async fn list_model_mappings(
@@ -819,7 +766,8 @@ async fn list_model_mappings(
     query: ListAdminModelMappingsQuery,
 ) -> DomainResult<Vec<AdminModelMappingRuleItem>> {
     let channel_id = query.channel_id;
-    let scope_type = query.scope_type.as_deref();
+    let channel_code = query.channel_code.as_deref();
+    let binding_type = query.binding_type.as_deref();
     let vendor_code = query.vendor_code.as_deref();
     let q = query.q.as_deref();
     let rows = sqlx::query(&mapping_select_sql(
@@ -827,32 +775,134 @@ async fn list_model_mappings(
         WHERE r.tenant_id = $1
           AND r.organization_id = $2
           AND r.deleted_at IS NULL
-          AND ($3::text IS NULL OR r.scope_type = $3)
-          AND ($4::text IS NULL OR r.vendor_code = $4)
-          AND ($5::bigint IS NULL OR r.channel_id = $5)
+          AND r.status = 1
+          AND (
+              $3::text IS NULL
+              OR EXISTS (
+                  SELECT 1 FROM ai_model_mapping_rule_binding b
+                  WHERE b.rule_id = r.id
+                    AND b.tenant_id = r.tenant_id
+                    AND b.organization_id = r.organization_id
+                    AND b.deleted_at IS NULL
+                    AND b.status = 1
+                    AND b.binding_type = $3
+              )
+          )
+          AND (
+              $4::text IS NULL
+              OR r.source_vendor_code = $4
+              OR r.target_vendor_code = $4
+              OR EXISTS (
+                  SELECT 1 FROM ai_model_mapping_rule_binding b
+                  WHERE b.rule_id = r.id
+                    AND b.tenant_id = r.tenant_id
+                    AND b.organization_id = r.organization_id
+                    AND b.deleted_at IS NULL
+                    AND b.status = 1
+                    AND b.binding_type = 'vendor'
+                    AND b.binding_code = $4
+              )
+          )
+          AND (
+              $5::bigint IS NULL
+              OR EXISTS (
+                  SELECT 1 FROM ai_model_mapping_rule_binding b
+                  WHERE b.rule_id = r.id
+                    AND b.tenant_id = r.tenant_id
+                    AND b.organization_id = r.organization_id
+                    AND b.deleted_at IS NULL
+                    AND b.status = 1
+                    AND b.binding_type = 'channel'
+                    AND b.binding_id = $5
+              )
+          )
           AND (
               $6::text IS NULL
-              OR r.source_model ILIKE '%' || $6 || '%'
-              OR r.target_model ILIKE '%' || $6 || '%'
-              OR COALESCE(r.description, '') ILIKE '%' || $6 || '%'
+              OR EXISTS (
+                  SELECT 1 FROM ai_model_mapping_rule_binding b
+                  WHERE b.rule_id = r.id
+                    AND b.tenant_id = r.tenant_id
+                    AND b.organization_id = r.organization_id
+                    AND b.deleted_at IS NULL
+                    AND b.status = 1
+                    AND b.binding_type = 'channel'
+                    AND b.binding_code = $6
+              )
+          )
+          AND (
+              $7::text IS NULL
+              OR r.source_vendor_code ILIKE '%' || $7 || '%'
+              OR r.target_vendor_code ILIKE '%' || $7 || '%'
+              OR EXISTS (
+                  SELECT 1 FROM ai_model_mapping_rule_item i
+                  WHERE i.rule_id = r.id
+                    AND i.tenant_id = r.tenant_id
+                    AND i.organization_id = r.organization_id
+                    AND i.deleted_at IS NULL
+                    AND i.status = 1
+                    AND (i.source_model ILIKE '%' || $7 || '%' OR i.target_model ILIKE '%' || $7 || '%')
+              )
+              OR EXISTS (
+                  SELECT 1 FROM ai_model_mapping_rule_binding b
+                  WHERE b.rule_id = r.id
+                    AND b.tenant_id = r.tenant_id
+                    AND b.organization_id = r.organization_id
+                    AND b.deleted_at IS NULL
+                    AND b.status = 1
+                    AND (COALESCE(b.binding_code, '') ILIKE '%' || $7 || '%' OR COALESCE(b.binding_name_snapshot, '') ILIKE '%' || $7 || '%')
+              )
           )
         ORDER BY
-          CASE r.scope_type WHEN 'channel' THEN 0 WHEN 'vendor' THEN 1 ELSE 2 END,
-          r.priority ASC,
+          CASE COALESCE((
+              SELECT b.binding_type
+              FROM ai_model_mapping_rule_binding b
+              WHERE b.rule_id = r.id
+                AND b.tenant_id = r.tenant_id
+                AND b.organization_id = r.organization_id
+                AND b.deleted_at IS NULL
+                AND b.status = 1
+                AND b.enabled = TRUE
+              ORDER BY CASE b.binding_type
+                  WHEN 'provider_account' THEN 0
+                  WHEN 'channel' THEN 1
+                  WHEN 'channel_group' THEN 2
+                  WHEN 'vendor' THEN 3
+                  WHEN 'global' THEN 4
+                  WHEN 'site_service' THEN 5
+                  WHEN 'site' THEN 6
+                  ELSE 7
+              END, b.sort_order ASC, b.id ASC
+              LIMIT 1
+          ), 'global')
+              WHEN 'provider_account' THEN 0
+              WHEN 'channel' THEN 1
+              WHEN 'channel_group' THEN 2
+              WHEN 'vendor' THEN 3
+              WHEN 'global' THEN 4
+              WHEN 'site_service' THEN 5
+              WHEN 'site' THEN 6
+              ELSE 7
+          END,
           r.updated_at DESC,
           r.id DESC
         "#,
     ))
     .bind(query.subject.tenant_id)
     .bind(query.subject.organization_id)
-    .bind(scope_type)
+    .bind(binding_type)
     .bind(vendor_code)
     .bind(channel_id)
+    .bind(channel_code)
     .bind(q)
     .fetch_all(pool)
     .await
     .map_err(|error| store_error("failed to list model mappings", error))?;
-    rows.into_iter().map(mapping_from_row).collect()
+    let mut items = rows
+        .into_iter()
+        .map(mapping_from_row)
+        .collect::<DomainResult<Vec<_>>>()?;
+    attach_model_mapping_children(pool, &mut items).await?;
+    Ok(items)
 }
 
 async fn list_vendors_tx(
@@ -925,7 +975,12 @@ async fn list_models_tx(
     .fetch_all(&mut **tx)
     .await
     .map_err(|error| store_error("failed to list ai models", error))?;
-    rows.into_iter().map(model_from_row).collect()
+    let mut models = rows
+        .into_iter()
+        .map(model_from_row)
+        .collect::<DomainResult<Vec<_>>>()?;
+    attach_model_region_prices_tx(tx, &mut models).await?;
+    Ok(models)
 }
 
 async fn insert_vendor(
@@ -960,20 +1015,16 @@ async fn insert_model_mapping(
     tx: &mut Transaction<'_, Postgres>,
     command: &CreateAdminModelMappingCommand,
 ) -> DomainResult<i64> {
-    sqlx::query_scalar(
+    let mapping_id = sqlx::query_scalar(
         r#"
         INSERT INTO ai_model_mapping_rule
             (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata,
-             scope_type, vendor_id, vendor_code, channel_id, channel_code,
-             source_model, source_catalog_key, source_vendor_code,
-             target_model, target_catalog_key, target_vendor_code, target_provider_model, target_provider_native_model,
-             mapping_mode, match_type, priority, enabled, effective_from, effective_to, description)
+             source_vendor_id, source_vendor_code, target_vendor_id, target_vendor_code,
+             mapping_mode, match_type, enabled)
         VALUES
             ($1, $2, $3, 0, 1, $4, $4, 0, '{}'::jsonb,
-             $5, $6, $7, $8, $9,
-             $10, $11, $12,
-             $13, $14, $15, $16, $17,
-             $18, $19, $20, $21, $22, $23, $24)
+             $5, $6, $7, $8,
+             $9, $10, $11)
         RETURNING id
         "#,
     )
@@ -981,29 +1032,425 @@ async fn insert_model_mapping(
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
     .bind(&command.requested_at)
-    .bind(&command.draft.scope_type)
-    .bind(command.draft.vendor_id)
-    .bind(command.draft.vendor_code.as_deref())
-    .bind(command.draft.channel_id)
-    .bind(command.draft.channel_code.as_deref())
-    .bind(&command.draft.source_model)
-    .bind(command.draft.source_catalog_key.as_deref())
-    .bind(command.draft.source_vendor_code.as_deref())
-    .bind(&command.draft.target_model)
-    .bind(command.draft.target_catalog_key.as_deref())
-    .bind(command.draft.target_vendor_code.as_deref())
-    .bind(command.draft.target_provider_model.as_deref())
-    .bind(command.draft.target_provider_native_model.as_deref())
+    .bind(command.draft.source_vendor_id)
+    .bind(&command.draft.source_vendor_code)
+    .bind(command.draft.target_vendor_id)
+    .bind(&command.draft.target_vendor_code)
     .bind(&command.draft.mapping_mode)
     .bind(&command.draft.match_type)
-    .bind(command.draft.priority)
     .bind(command.draft.enabled)
-    .bind(command.draft.effective_from.as_deref())
-    .bind(command.draft.effective_to.as_deref())
-    .bind(command.draft.description.as_deref())
     .fetch_one(&mut **tx)
     .await
-    .map_err(|error| store_error("failed to create model mapping", error))
+    .map_err(|error| store_error("failed to create model mapping", error))?;
+    insert_model_mapping_bindings(
+        tx,
+        command.subject,
+        mapping_id,
+        &command.mapping_uuid,
+        &command.binding_uuids,
+        &command.draft.bindings,
+        &command.requested_at,
+    )
+    .await?;
+    insert_model_mapping_items(
+        tx,
+        command.subject,
+        mapping_id,
+        &command.mapping_uuid,
+        &command.item_uuids,
+        &command.draft.mapping_items,
+        &command.requested_at,
+    )
+    .await?;
+    Ok(mapping_id)
+}
+
+async fn insert_model_mapping_bindings(
+    tx: &mut Transaction<'_, Postgres>,
+    subject: AdminModelSubject,
+    rule_id: i64,
+    rule_uuid: &str,
+    binding_uuids: &[String],
+    bindings: &[AdminModelMappingRuleBindingDraft],
+    requested_at: &str,
+) -> DomainResult<()> {
+    for (index, binding) in bindings.iter().enumerate() {
+        let uuid = binding_uuids
+            .get(index)
+            .ok_or_else(|| DomainError::new("missing generated model mapping binding uuid"))?;
+        insert_model_mapping_binding_row(
+            tx,
+            subject,
+            rule_id,
+            rule_uuid,
+            uuid,
+            binding,
+            child_sort_order(index),
+            requested_at,
+        )
+        .await?;
+    }
+    Ok(())
+}
+
+async fn insert_model_mapping_binding_row(
+    tx: &mut Transaction<'_, Postgres>,
+    subject: AdminModelSubject,
+    rule_id: i64,
+    rule_uuid: &str,
+    binding_uuid: &str,
+    binding: &AdminModelMappingRuleBindingDraft,
+    sort_order: i32,
+    requested_at: &str,
+) -> DomainResult<()> {
+    sqlx::query(
+        r#"
+        INSERT INTO ai_model_mapping_rule_binding
+            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata,
+             rule_id, rule_uuid, binding_type, binding_id, binding_code, binding_name_snapshot, sort_order, enabled)
+        VALUES
+            ($1, $2, $3, 0, 1, $4::timestamptz, $4::timestamptz, 0, '{}'::jsonb,
+             $5, $6, $7, $8, $9, $10, $11, $12)
+        "#,
+    )
+    .bind(binding_uuid)
+    .bind(subject.tenant_id)
+    .bind(subject.organization_id)
+    .bind(requested_at)
+    .bind(rule_id)
+    .bind(rule_uuid)
+    .bind(&binding.binding_type)
+    .bind(binding.binding_id)
+    .bind(binding.binding_code.as_deref())
+    .bind(binding.binding_name.as_deref())
+    .bind(sort_order)
+    .bind(binding.enabled)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to create model mapping binding", error))?;
+    Ok(())
+}
+
+async fn insert_model_mapping_items(
+    tx: &mut Transaction<'_, Postgres>,
+    subject: AdminModelSubject,
+    rule_id: i64,
+    rule_uuid: &str,
+    item_uuids: &[String],
+    items: &[AdminModelMappingRuleItemDraft],
+    requested_at: &str,
+) -> DomainResult<()> {
+    for (index, item) in items.iter().enumerate() {
+        let uuid = item_uuids
+            .get(index)
+            .ok_or_else(|| DomainError::new("missing generated model mapping item uuid"))?;
+        insert_model_mapping_item_row(
+            tx,
+            subject,
+            rule_id,
+            rule_uuid,
+            uuid,
+            item,
+            child_sort_order(index),
+            requested_at,
+        )
+        .await?;
+    }
+    Ok(())
+}
+
+async fn insert_model_mapping_item_row(
+    tx: &mut Transaction<'_, Postgres>,
+    subject: AdminModelSubject,
+    rule_id: i64,
+    rule_uuid: &str,
+    item_uuid: &str,
+    item: &AdminModelMappingRuleItemDraft,
+    sort_order: i32,
+    requested_at: &str,
+) -> DomainResult<()> {
+    sqlx::query(
+        r#"
+        INSERT INTO ai_model_mapping_rule_item
+            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata,
+             rule_id, rule_uuid, source_model, source_catalog_key, target_model, target_catalog_key,
+             target_provider_model, target_provider_native_model, sort_order, enabled)
+        VALUES
+            ($1, $2, $3, 0, 1, $4::timestamptz, $4::timestamptz, 0, '{}'::jsonb,
+             $5, $6, $7, $8, $9, $10, $11, $12, $13, $14)
+        "#,
+    )
+    .bind(item_uuid)
+    .bind(subject.tenant_id)
+    .bind(subject.organization_id)
+    .bind(requested_at)
+    .bind(rule_id)
+    .bind(rule_uuid)
+    .bind(&item.source_model)
+    .bind(item.source_catalog_key.as_deref())
+    .bind(&item.target_model)
+    .bind(item.target_catalog_key.as_deref())
+    .bind(item.target_provider_model.as_deref())
+    .bind(item.target_provider_native_model.as_deref())
+    .bind(sort_order)
+    .bind(item.enabled.unwrap_or(true))
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to create model mapping item", error))?;
+    Ok(())
+}
+
+async fn reconcile_model_mapping_bindings(
+    tx: &mut Transaction<'_, Postgres>,
+    current: &AdminModelMappingRuleItem,
+    command: &UpdateAdminModelMappingCommand,
+    bindings: &[AdminModelMappingRuleBindingDraft],
+) -> DomainResult<()> {
+    let mut retained_ids = Vec::new();
+    let mut new_uuid_index = 0usize;
+    for (index, binding) in bindings.iter().enumerate() {
+        let sort_order = child_sort_order(index);
+        if let Some(binding_id) = binding.id {
+            update_model_mapping_binding_row(tx, current, command, binding_id, binding, sort_order)
+                .await?;
+            retained_ids.push(binding_id);
+        } else {
+            let uuid = command
+                .binding_uuids
+                .get(new_uuid_index)
+                .ok_or_else(|| DomainError::new("missing generated model mapping binding uuid"))?;
+            new_uuid_index += 1;
+            insert_model_mapping_binding_row(
+                tx,
+                command.subject,
+                current.id,
+                &current.uuid,
+                uuid,
+                binding,
+                sort_order,
+                &command.requested_at,
+            )
+            .await?;
+        }
+    }
+    soft_delete_omitted_model_mapping_bindings(tx, current, command, &retained_ids).await
+}
+
+async fn update_model_mapping_binding_row(
+    tx: &mut Transaction<'_, Postgres>,
+    current: &AdminModelMappingRuleItem,
+    command: &UpdateAdminModelMappingCommand,
+    binding_id: i64,
+    binding: &AdminModelMappingRuleBindingDraft,
+    sort_order: i32,
+) -> DomainResult<()> {
+    let result = sqlx::query(
+        r#"
+        UPDATE ai_model_mapping_rule_binding
+        SET binding_type = $1,
+            binding_id = $2,
+            binding_code = $3,
+            binding_name_snapshot = $4,
+            sort_order = $5,
+            enabled = $6,
+            status = 1,
+            deleted_at = NULL,
+            deleted_by = NULL,
+            updated_at = $7::timestamptz,
+            version = COALESCE(version, 0) + 1
+        WHERE id = $8
+          AND rule_id = $9
+          AND tenant_id = $10
+          AND organization_id = $11
+        "#,
+    )
+    .bind(&binding.binding_type)
+    .bind(binding.binding_id)
+    .bind(binding.binding_code.as_deref())
+    .bind(binding.binding_name.as_deref())
+    .bind(sort_order)
+    .bind(binding.enabled)
+    .bind(&command.requested_at)
+    .bind(binding_id)
+    .bind(current.id)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to update model mapping binding", error))?;
+    if result.rows_affected() == 0 {
+        return Err(DomainError::not_found(
+            "model mapping binding was not found",
+        ));
+    }
+    Ok(())
+}
+
+async fn soft_delete_omitted_model_mapping_bindings(
+    tx: &mut Transaction<'_, Postgres>,
+    current: &AdminModelMappingRuleItem,
+    command: &UpdateAdminModelMappingCommand,
+    retained_ids: &[i64],
+) -> DomainResult<()> {
+    for binding in &current.bindings {
+        if retained_ids.contains(&binding.id) {
+            continue;
+        }
+        sqlx::query(
+            r#"
+            UPDATE ai_model_mapping_rule_binding
+            SET status = 0,
+                deleted_at = $1::timestamptz,
+                deleted_by = $2,
+                updated_at = $1::timestamptz,
+                version = COALESCE(version, 0) + 1
+            WHERE id = $3
+              AND rule_id = $4
+              AND tenant_id = $5
+              AND organization_id = $6
+              AND deleted_at IS NULL
+            "#,
+        )
+        .bind(&command.requested_at)
+        .bind(command.subject.operator_id)
+        .bind(binding.id)
+        .bind(current.id)
+        .bind(command.subject.tenant_id)
+        .bind(command.subject.organization_id)
+        .execute(&mut **tx)
+        .await
+        .map_err(|error| store_error("failed to delete model mapping binding", error))?;
+    }
+    Ok(())
+}
+
+async fn reconcile_model_mapping_items(
+    tx: &mut Transaction<'_, Postgres>,
+    current: &AdminModelMappingRuleItem,
+    command: &UpdateAdminModelMappingCommand,
+    items: &[AdminModelMappingRuleItemDraft],
+) -> DomainResult<()> {
+    let mut retained_ids = Vec::new();
+    let mut new_uuid_index = 0usize;
+    for (index, item) in items.iter().enumerate() {
+        let sort_order = child_sort_order(index);
+        if let Some(item_id) = item.id {
+            update_model_mapping_item_row(tx, current, command, item_id, item, sort_order).await?;
+            retained_ids.push(item_id);
+        } else {
+            let uuid = command
+                .item_uuids
+                .get(new_uuid_index)
+                .ok_or_else(|| DomainError::new("missing generated model mapping item uuid"))?;
+            new_uuid_index += 1;
+            insert_model_mapping_item_row(
+                tx,
+                command.subject,
+                current.id,
+                &current.uuid,
+                uuid,
+                item,
+                sort_order,
+                &command.requested_at,
+            )
+            .await?;
+        }
+    }
+    soft_delete_omitted_model_mapping_items(tx, current, command, &retained_ids).await
+}
+
+async fn update_model_mapping_item_row(
+    tx: &mut Transaction<'_, Postgres>,
+    current: &AdminModelMappingRuleItem,
+    command: &UpdateAdminModelMappingCommand,
+    item_id: i64,
+    item: &AdminModelMappingRuleItemDraft,
+    sort_order: i32,
+) -> DomainResult<()> {
+    let result = sqlx::query(
+        r#"
+        UPDATE ai_model_mapping_rule_item
+        SET source_model = $1,
+            source_catalog_key = $2,
+            target_model = $3,
+            target_catalog_key = $4,
+            target_provider_model = $5,
+            target_provider_native_model = $6,
+            sort_order = $7,
+            enabled = $8,
+            status = 1,
+            deleted_at = NULL,
+            deleted_by = NULL,
+            updated_at = $9::timestamptz,
+            version = COALESCE(version, 0) + 1
+        WHERE id = $10
+          AND rule_id = $11
+          AND tenant_id = $12
+          AND organization_id = $13
+        "#,
+    )
+    .bind(&item.source_model)
+    .bind(item.source_catalog_key.as_deref())
+    .bind(&item.target_model)
+    .bind(item.target_catalog_key.as_deref())
+    .bind(item.target_provider_model.as_deref())
+    .bind(item.target_provider_native_model.as_deref())
+    .bind(sort_order)
+    .bind(item.enabled.unwrap_or(true))
+    .bind(&command.requested_at)
+    .bind(item_id)
+    .bind(current.id)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to update model mapping item", error))?;
+    if result.rows_affected() == 0 {
+        return Err(DomainError::not_found("model mapping item was not found"));
+    }
+    Ok(())
+}
+
+async fn soft_delete_omitted_model_mapping_items(
+    tx: &mut Transaction<'_, Postgres>,
+    current: &AdminModelMappingRuleItem,
+    command: &UpdateAdminModelMappingCommand,
+    retained_ids: &[i64],
+) -> DomainResult<()> {
+    for item in &current.mapping_items {
+        if retained_ids.contains(&item.id) {
+            continue;
+        }
+        sqlx::query(
+            r#"
+            UPDATE ai_model_mapping_rule_item
+            SET status = 0,
+                deleted_at = $1::timestamptz,
+                deleted_by = $2,
+                updated_at = $1::timestamptz,
+                version = COALESCE(version, 0) + 1
+            WHERE id = $3
+              AND rule_id = $4
+              AND tenant_id = $5
+              AND organization_id = $6
+              AND deleted_at IS NULL
+            "#,
+        )
+        .bind(&command.requested_at)
+        .bind(command.subject.operator_id)
+        .bind(item.id)
+        .bind(current.id)
+        .bind(command.subject.tenant_id)
+        .bind(command.subject.organization_id)
+        .execute(&mut **tx)
+        .await
+        .map_err(|error| store_error("failed to delete model mapping item", error))?;
+    }
+    Ok(())
+}
+
+fn child_sort_order(index: usize) -> i32 {
+    ((index as i32) + 1) * 100
 }
 
 async fn find_vendor(
@@ -1378,7 +1825,11 @@ async fn upsert_model_catalog_sync_run(
     let source_code = normalize_catalog_source_code(&command.source);
     let source_name = format!("{} model catalog", command.source);
     let source_url = format!("manual://{}", source_code);
-    let source_uuid = format!("catalog-source-{}", source_code);
+    let source_uuid = catalog_source_uuid(
+        command.subject.tenant_id,
+        command.subject.organization_id,
+        &source_code,
+    );
     let sync_run_uuid = format!("catalog-sync-{}", command.snapshot_uuid);
     let last_success_at = if dry_run {
         None
@@ -1585,7 +2036,148 @@ async fn load_model_by_id(
     .fetch_optional(&mut **tx)
     .await
     .map_err(|error| store_error("failed to load ai model", error))?;
-    row.map(model_from_row).transpose()
+    let Some(row) = row else {
+        return Ok(None);
+    };
+    let mut model = model_from_row(row)?;
+    attach_single_model_region_prices_tx(tx, &mut model).await?;
+    Ok(Some(model))
+}
+
+async fn attach_model_region_prices(
+    pool: &PgPool,
+    models: &mut [AdminAiModelItem],
+) -> DomainResult<()> {
+    for model in models {
+        let region_prices = load_model_region_prices(pool, model.id).await?;
+        if !region_prices.is_empty() {
+            model.region_prices = region_prices;
+        }
+    }
+    Ok(())
+}
+
+async fn attach_model_region_prices_tx(
+    tx: &mut Transaction<'_, Postgres>,
+    models: &mut [AdminAiModelItem],
+) -> DomainResult<()> {
+    for model in models {
+        attach_single_model_region_prices_tx(tx, model).await?;
+    }
+    Ok(())
+}
+
+async fn attach_single_model_region_prices_tx(
+    tx: &mut Transaction<'_, Postgres>,
+    model: &mut AdminAiModelItem,
+) -> DomainResult<()> {
+    let region_prices = load_model_region_prices_tx(tx, model.id).await?;
+    if !region_prices.is_empty() {
+        model.region_prices = region_prices;
+    }
+    Ok(())
+}
+
+async fn load_model_region_prices(
+    pool: &PgPool,
+    model_id: i64,
+) -> DomainResult<Vec<AdminAiModelRegionPriceCommand>> {
+    let rows = sqlx::query(region_pricing_select_sql().as_str())
+        .bind(model_id)
+        .fetch_all(pool)
+        .await
+        .map_err(|error| store_error("failed to load model regional pricing", error))?;
+    region_prices_from_rows(rows)
+}
+
+async fn load_model_region_prices_tx(
+    tx: &mut Transaction<'_, Postgres>,
+    model_id: i64,
+) -> DomainResult<Vec<AdminAiModelRegionPriceCommand>> {
+    let rows = sqlx::query(region_pricing_select_sql().as_str())
+        .bind(model_id)
+        .fetch_all(&mut **tx)
+        .await
+        .map_err(|error| store_error("failed to load model regional pricing", error))?;
+    region_prices_from_rows(rows)
+}
+
+fn region_pricing_select_sql() -> String {
+    format!(
+        r#"
+        SELECT
+            COALESCE(NULLIF(region_code, ''), 'global') AS region_code,
+            billing_meter_code,
+            unit_price::text AS unit_price
+        FROM ai_model_pricing
+        WHERE model_id = $1
+          AND price_side = {OFFICIAL_REFERENCE_PRICE_SIDE}
+          AND status = 1
+          AND deleted_at IS NULL
+          AND (
+              billing_meter_code IN {INPUT_BILLING_METER_FILTER_SQL}
+              OR billing_meter_code IN {OUTPUT_BILLING_METER_FILTER_SQL}
+              OR billing_meter_code IN {CACHE_READ_BILLING_METER_FILTER_SQL}
+              OR billing_meter_code IN {CACHE_WRITE_BILLING_METER_FILTER_SQL}
+          )
+        ORDER BY
+          CASE COALESCE(NULLIF(region_code, ''), 'global')
+            WHEN 'cn' THEN 0
+            WHEN 'global' THEN 1
+            ELSE 2
+          END,
+          COALESCE(NULLIF(region_code, ''), 'global') ASC,
+          priority ASC,
+          id ASC
+        "#
+    )
+}
+
+fn region_prices_from_rows(
+    rows: Vec<sqlx::postgres::PgRow>,
+) -> DomainResult<Vec<AdminAiModelRegionPriceCommand>> {
+    let mut grouped: BTreeMap<String, AdminAiModelRegionPriceCommand> = BTreeMap::new();
+    let mut region_order = Vec::<String>::new();
+    for row in rows {
+        let region_code = row
+            .try_get::<String, _>("region_code")
+            .map_err(row_error)?
+            .trim()
+            .to_owned();
+        let region_code = if region_code.is_empty() {
+            "global".to_owned()
+        } else {
+            region_code
+        };
+        let meter = row
+            .try_get::<String, _>("billing_meter_code")
+            .map_err(row_error)?;
+        let unit_price = row.try_get::<String, _>("unit_price").map_err(row_error)?;
+        let entry = grouped.entry(region_code.clone()).or_insert_with(|| {
+            region_order.push(region_code.clone());
+            AdminAiModelRegionPriceCommand {
+                region_code,
+                price_in: String::new(),
+                price_out: String::new(),
+                cache_read_price: None,
+                cache_write_price: None,
+            }
+        });
+        if is_input_billing_meter(&meter) && entry.price_in.is_empty() {
+            entry.price_in = unit_price;
+        } else if is_output_billing_meter(&meter) && entry.price_out.is_empty() {
+            entry.price_out = unit_price;
+        } else if is_cache_read_billing_meter(&meter) && entry.cache_read_price.is_none() {
+            entry.cache_read_price = Some(unit_price);
+        } else if is_cache_write_billing_meter(&meter) && entry.cache_write_price.is_none() {
+            entry.cache_write_price = Some(unit_price);
+        }
+    }
+    Ok(region_order
+        .into_iter()
+        .filter_map(|region_code| grouped.remove(&region_code))
+        .filter(|price| !price.price_in.is_empty() || !price.price_out.is_empty())
+        .collect())
 }
 
 async fn find_model_for_delete(
@@ -1686,7 +2278,12 @@ async fn load_model_mapping_by_id(
     .fetch_optional(&mut **tx)
     .await
     .map_err(|error| store_error("failed to load model mapping", error))?;
-    row.map(mapping_from_row).transpose()
+    let Some(row) = row else {
+        return Ok(None);
+    };
+    let mut item = mapping_from_row(row)?;
+    attach_model_mapping_children_to_rule(tx, &mut item).await?;
+    Ok(Some(item))
 }
 
 async fn find_model_mapping_for_update(
@@ -1713,9 +2310,12 @@ async fn find_model_mapping_for_update(
     .fetch_optional(&mut **tx)
     .await
     .map_err(|error| store_error("failed to find model mapping for update", error))?;
-    row.map(mapping_from_row)
-        .transpose()?
-        .ok_or_else(|| DomainError::not_found("model mapping was not found"))
+    let Some(row) = row else {
+        return Err(DomainError::not_found("model mapping was not found"));
+    };
+    let mut item = mapping_from_row(row)?;
+    attach_model_mapping_children_to_rule(tx, &mut item).await?;
+    Ok(item)
 }
 
 async fn find_model_mapping_for_delete(
@@ -1742,146 +2342,75 @@ async fn find_model_mapping_for_delete(
     .fetch_optional(&mut **tx)
     .await
     .map_err(|error| store_error("failed to find model mapping for delete", error))?;
-    row.map(mapping_from_row)
-        .transpose()?
-        .ok_or_else(|| DomainError::not_found("model mapping was not found"))
-}
-
-fn effective_model_mapping_patch(
-    current: &AdminModelMappingRuleItem,
-    patch: &AdminModelMappingRulePatch,
-) -> EffectiveModelMappingRule {
-    EffectiveModelMappingRule {
-        scope_type: patch
-            .scope_type
-            .clone()
-            .unwrap_or_else(|| current.scope_type.clone()),
-        vendor_id: patch.vendor_id.unwrap_or(current.vendor_id),
-        vendor_code: patch
-            .vendor_code
-            .clone()
-            .unwrap_or_else(|| current.vendor_code.clone()),
-        channel_id: patch.channel_id.unwrap_or(current.channel_id),
-        channel_code: patch
-            .channel_code
-            .clone()
-            .unwrap_or_else(|| current.channel_code.clone()),
-        source_model: patch
-            .source_model
-            .clone()
-            .unwrap_or_else(|| current.source_model.clone()),
-        source_catalog_key: patch
-            .source_catalog_key
-            .clone()
-            .unwrap_or_else(|| current.source_catalog_key.clone()),
-        source_vendor_code: patch
-            .source_vendor_code
-            .clone()
-            .unwrap_or_else(|| current.source_vendor_code.clone()),
-        target_model: patch
-            .target_model
-            .clone()
-            .unwrap_or_else(|| current.target_model.clone()),
-        target_catalog_key: patch
-            .target_catalog_key
-            .clone()
-            .unwrap_or_else(|| current.target_catalog_key.clone()),
-        target_vendor_code: patch
-            .target_vendor_code
-            .clone()
-            .unwrap_or_else(|| current.target_vendor_code.clone()),
-        target_provider_model: patch
-            .target_provider_model
-            .clone()
-            .unwrap_or_else(|| current.target_provider_model.clone()),
-        target_provider_native_model: patch
-            .target_provider_native_model
-            .clone()
-            .unwrap_or_else(|| current.target_provider_native_model.clone()),
-        mapping_mode: patch
-            .mapping_mode
-            .clone()
-            .unwrap_or_else(|| current.mapping_mode.clone()),
-        match_type: patch
-            .match_type
-            .clone()
-            .unwrap_or_else(|| current.match_type.clone()),
-        priority: patch.priority.unwrap_or(current.priority),
-        enabled: patch.enabled.unwrap_or(current.enabled),
-        effective_from: patch
-            .effective_from
-            .clone()
-            .unwrap_or_else(|| current.effective_from.clone()),
-        effective_to: patch
-            .effective_to
-            .clone()
-            .unwrap_or_else(|| current.effective_to.clone()),
-        description: patch
-            .description
-            .clone()
-            .unwrap_or_else(|| current.description.clone()),
-    }
+    let Some(row) = row else {
+        return Err(DomainError::not_found("model mapping was not found"));
+    };
+    let mut item = mapping_from_row(row)?;
+    attach_model_mapping_children_to_rule(tx, &mut item).await?;
+    Ok(item)
 }
 
 async fn update_model_mapping_row(
     tx: &mut Transaction<'_, Postgres>,
-    mapping_id: i64,
+    current: &AdminModelMappingRuleItem,
     command: &UpdateAdminModelMappingCommand,
-    rule: &EffectiveModelMappingRule,
 ) -> DomainResult<()> {
+    let source_vendor_id = command
+        .patch
+        .source_vendor_id
+        .unwrap_or(current.source_vendor_id);
+    let source_vendor_code = command
+        .patch
+        .source_vendor_code
+        .clone()
+        .unwrap_or_else(|| current.source_vendor_code.clone().unwrap_or_default());
+    let target_vendor_id = command
+        .patch
+        .target_vendor_id
+        .unwrap_or(current.target_vendor_id);
+    let target_vendor_code = command
+        .patch
+        .target_vendor_code
+        .clone()
+        .unwrap_or_else(|| current.target_vendor_code.clone().unwrap_or_default());
+    let mapping_mode = command
+        .patch
+        .mapping_mode
+        .clone()
+        .unwrap_or_else(|| current.mapping_mode.clone());
+    let match_type = command
+        .patch
+        .match_type
+        .clone()
+        .unwrap_or_else(|| current.match_type.clone());
+    let enabled = command.patch.enabled.unwrap_or(current.enabled);
     sqlx::query(
         r#"
         UPDATE ai_model_mapping_rule
-        SET scope_type = $1,
-            vendor_id = $2,
-            vendor_code = $3,
-            channel_id = $4,
-            channel_code = $5,
-            source_model = $6,
-            source_catalog_key = $7,
-            source_vendor_code = $8,
-            target_model = $9,
-            target_catalog_key = $10,
-            target_vendor_code = $11,
-            target_provider_model = $12,
-            target_provider_native_model = $13,
-            mapping_mode = $14,
-            match_type = $15,
-            priority = $16,
-            enabled = $17,
-            effective_from = $18,
-            effective_to = $19,
-            description = $20,
-            updated_at = $21,
+        SET source_vendor_id = $1,
+            source_vendor_code = $2,
+            target_vendor_id = $3,
+            target_vendor_code = $4,
+            mapping_mode = $5,
+            match_type = $6,
+            enabled = $7,
+            updated_at = $8::timestamptz,
             version = COALESCE(version, 0) + 1
-        WHERE id = $22
-          AND tenant_id = $23
-          AND organization_id = $24
+        WHERE id = $9
+          AND tenant_id = $10
+          AND organization_id = $11
           AND deleted_at IS NULL
         "#,
     )
-    .bind(&rule.scope_type)
-    .bind(rule.vendor_id)
-    .bind(rule.vendor_code.as_deref())
-    .bind(rule.channel_id)
-    .bind(rule.channel_code.as_deref())
-    .bind(&rule.source_model)
-    .bind(rule.source_catalog_key.as_deref())
-    .bind(rule.source_vendor_code.as_deref())
-    .bind(&rule.target_model)
-    .bind(rule.target_catalog_key.as_deref())
-    .bind(rule.target_vendor_code.as_deref())
-    .bind(rule.target_provider_model.as_deref())
-    .bind(rule.target_provider_native_model.as_deref())
-    .bind(&rule.mapping_mode)
-    .bind(&rule.match_type)
-    .bind(rule.priority)
-    .bind(rule.enabled)
-    .bind(rule.effective_from.as_deref())
-    .bind(rule.effective_to.as_deref())
-    .bind(rule.description.as_deref())
+    .bind(source_vendor_id)
+    .bind(&source_vendor_code)
+    .bind(target_vendor_id)
+    .bind(&target_vendor_code)
+    .bind(&mapping_mode)
+    .bind(&match_type)
+    .bind(enabled)
     .bind(&command.requested_at)
-    .bind(mapping_id)
+    .bind(current.id)
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
     .execute(&mut **tx)
@@ -1914,28 +2443,6 @@ fn effective_model_update(
         model: next_model,
         display_name,
         model_type,
-        region_code: command
-            .region_code
-            .clone()
-            .unwrap_or_else(|| current.region_code.clone()),
-        price_in: command
-            .price_in
-            .clone()
-            .unwrap_or_else(|| current.price_in.clone()),
-        price_out: command
-            .price_out
-            .clone()
-            .unwrap_or_else(|| current.price_out.clone()),
-        cache_read_price: command
-            .cache_read_price
-            .clone()
-            .unwrap_or_else(|| Some(current.cache_read_price.clone()))
-            .unwrap_or_default(),
-        cache_write_price: command
-            .cache_write_price
-            .clone()
-            .unwrap_or_else(|| Some(current.cache_write_price.clone()))
-            .unwrap_or_default(),
         status: command
             .status
             .clone()
@@ -2175,230 +2682,6 @@ async fn upsert_model_capability(
     Ok(())
 }
 
-async fn upsert_model_pricing(
-    tx: &mut Transaction<'_, Postgres>,
-    model_id: i64,
-    command: &UpdateAdminAiModelCommand,
-    vendor: &VendorIdentity,
-    update: &EffectiveModelUpdate,
-    input: bool,
-) -> DomainResult<()> {
-    let (uuid, meter, unit_price, priority) = if input {
-        (
-            &command.input_pricing_uuid,
-            input_billing_meter(&update.model_type),
-            &update.price_in,
-            1_i32,
-        )
-    } else {
-        (
-            &command.output_pricing_uuid,
-            output_billing_meter(&update.model_type),
-            &update.price_out,
-            2_i32,
-        )
-    };
-    let meter_filter_sql = if input {
-        INPUT_BILLING_METER_FILTER_SQL
-    } else {
-        OUTPUT_BILLING_METER_FILTER_SQL
-    };
-    let result = sqlx::query(
-        format!(
-            r#"
-        UPDATE ai_model_pricing
-        SET status = 1,
-            deleted_at = NULL,
-            updated_at = $1::timestamptz,
-            model = $2,
-            vendor_code = $3,
-            catalog_key = $4,
-            region_code = $5,
-            billing_meter_code = $6,
-            unit_price = $7::numeric,
-            currency = 'USD',
-            priority = $8,
-            effective_from = COALESCE(effective_from, $9::timestamptz)
-        WHERE id = (
-            SELECT id
-            FROM ai_model_pricing
-            WHERE model_id = $10
-              AND price_side = $11
-            AND COALESCE(region_code, $12) = $13
-              AND billing_meter_code IN {meter_filter_sql}
-            ORDER BY id ASC
-            LIMIT 1
-        )
-        "#,
-        )
-        .as_str(),
-    )
-    .bind(&command.requested_at)
-    .bind(&update.model)
-    .bind(&vendor.code)
-    .bind(model_pricing_catalog_key(&vendor.code, &update.model))
-    .bind(&update.region_code)
-    .bind(meter)
-    .bind(unit_price)
-    .bind(priority)
-    .bind(&command.requested_at)
-    .bind(model_id)
-    .bind(OFFICIAL_REFERENCE_PRICE_SIDE)
-    .bind(&update.region_code)
-    .bind(&update.region_code)
-    .execute(&mut **tx)
-    .await
-    .map_err(|error| store_error("failed to update model pricing", error))?;
-    if result.rows_affected() > 0 {
-        return Ok(());
-    }
-    sqlx::query(
-        r#"
-        INSERT INTO ai_model_pricing
-            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, model_id, catalog_key, model, vendor_code, region_code, price_side, pricing_scope, billing_type, billing_mode, billing_meter_code, price_item_type, unit, unit_size, metering_mode, quantity_source, minimum_quantity, quantity_step, included_quantity, unit_price, currency, rounding_mode, min_charge_amount, pricing_formula_mode, price_origin, priority, effective_from)
-        VALUES
-            ($1, $2, $3, 1, 1, $4::timestamptz, $5::timestamptz, 0, '{}'::jsonb, $6, $7, $8, $9, $10, $11, 1, 1, 1, $12, 1, 1, 1, 1, 1, 0, 1, 0, $13::numeric, 'USD', 1, 0, 1, 1, $14, $15::timestamptz)
-        "#,
-    )
-    .bind(uuid)
-    .bind(command.subject.tenant_id)
-    .bind(command.subject.organization_id)
-    .bind(&command.requested_at)
-    .bind(&command.requested_at)
-    .bind(model_id)
-    .bind(model_pricing_catalog_key(&vendor.code, &update.model))
-    .bind(&update.model)
-    .bind(&vendor.code)
-    .bind(&update.region_code)
-    .bind(OFFICIAL_REFERENCE_PRICE_SIDE)
-    .bind(meter)
-    .bind(unit_price)
-    .bind(priority)
-    .bind(&command.requested_at)
-    .execute(&mut **tx)
-    .await
-    .map_err(|error| store_error("failed to create model pricing during update", error))?;
-    Ok(())
-}
-
-async fn upsert_optional_model_pricing(
-    tx: &mut Transaction<'_, Postgres>,
-    model_id: i64,
-    command: &UpdateAdminAiModelCommand,
-    vendor: &VendorIdentity,
-    update: &EffectiveModelUpdate,
-    uuid: &str,
-    meter: &str,
-    meter_filter_sql: &str,
-    unit_price: Option<&str>,
-    priority: i32,
-) -> DomainResult<()> {
-    let Some(unit_price) = unit_price else {
-        return Ok(());
-    };
-    if unit_price.trim().is_empty() {
-        sqlx::query(
-            format!(
-                r#"
-        UPDATE ai_model_pricing
-        SET status = 0,
-            deleted_at = $1::timestamptz,
-            updated_at = $2::timestamptz
-        WHERE model_id = $3
-          AND price_side = $4
-          AND billing_meter_code IN {meter_filter_sql}
-          AND deleted_at IS NULL
-        "#,
-            )
-            .as_str(),
-        )
-        .bind(&command.requested_at)
-        .bind(&command.requested_at)
-        .bind(model_id)
-        .bind(OFFICIAL_REFERENCE_PRICE_SIDE)
-        .execute(&mut **tx)
-        .await
-        .map_err(|error| store_error("failed to clear optional model pricing", error))?;
-        return Ok(());
-    }
-    let result = sqlx::query(
-        format!(
-            r#"
-        UPDATE ai_model_pricing
-        SET status = 1,
-            deleted_at = NULL,
-            updated_at = $1::timestamptz,
-            model = $2,
-            vendor_code = $3,
-            catalog_key = $4,
-            region_code = $5,
-            billing_meter_code = $6,
-            unit_price = $7::numeric,
-            currency = 'USD',
-            priority = $8,
-            effective_from = COALESCE(effective_from, $9::timestamptz)
-        WHERE id = (
-            SELECT id
-            FROM ai_model_pricing
-            WHERE model_id = $10
-              AND price_side = $11
-              AND COALESCE(region_code, $12) = $13
-              AND billing_meter_code IN {meter_filter_sql}
-            ORDER BY id ASC
-            LIMIT 1
-        )
-        "#,
-        )
-        .as_str(),
-    )
-    .bind(&command.requested_at)
-    .bind(&update.model)
-    .bind(&vendor.code)
-    .bind(model_pricing_catalog_key(&vendor.code, &update.model))
-    .bind(&update.region_code)
-    .bind(meter)
-    .bind(unit_price)
-    .bind(priority)
-    .bind(&command.requested_at)
-    .bind(model_id)
-    .bind(OFFICIAL_REFERENCE_PRICE_SIDE)
-    .bind(&update.region_code)
-    .bind(&update.region_code)
-    .execute(&mut **tx)
-    .await
-    .map_err(|error| store_error("failed to update optional model pricing", error))?;
-    if result.rows_affected() > 0 {
-        return Ok(());
-    }
-    sqlx::query(
-        r#"
-        INSERT INTO ai_model_pricing
-            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, model_id, catalog_key, model, vendor_code, region_code, price_side, pricing_scope, billing_type, billing_mode, billing_meter_code, price_item_type, unit, unit_size, metering_mode, quantity_source, minimum_quantity, quantity_step, included_quantity, unit_price, currency, rounding_mode, min_charge_amount, pricing_formula_mode, price_origin, priority, effective_from)
-        VALUES
-            ($1, $2, $3, 1, 1, $4::timestamptz, $5::timestamptz, 0, '{}'::jsonb, $6, $7, $8, $9, $10, $11, 1, 1, 1, $12, 1, 1, 1, 1, 1, 0, 1, 0, $13::numeric, 'USD', 1, 0, 1, 1, $14, $15::timestamptz)
-        "#,
-    )
-    .bind(uuid)
-    .bind(command.subject.tenant_id)
-    .bind(command.subject.organization_id)
-    .bind(&command.requested_at)
-    .bind(&command.requested_at)
-    .bind(model_id)
-    .bind(model_pricing_catalog_key(&vendor.code, &update.model))
-    .bind(&update.model)
-    .bind(&vendor.code)
-    .bind(&update.region_code)
-    .bind(OFFICIAL_REFERENCE_PRICE_SIDE)
-    .bind(meter)
-    .bind(unit_price)
-    .bind(priority)
-    .bind(&command.requested_at)
-    .execute(&mut **tx)
-    .await
-    .map_err(|error| store_error("failed to create optional model pricing during update", error))?;
-    Ok(())
-}
-
 async fn replace_model_region_pricing(
     tx: &mut Transaction<'_, Postgres>,
     model_id: i64,
@@ -2510,7 +2793,14 @@ async fn insert_update_region_model_pricing(
     let catalog_key = model_pricing_catalog_key(&vendor.code, &update.model);
     let uuid = stable_uuid(
         "admin-price",
-        &[&command.model_id, region_code, meter, price_kind],
+        &[
+            &command.model_id,
+            &command.audit_log_uuid,
+            &command.requested_at,
+            region_code,
+            meter,
+            price_kind,
+        ],
     );
     sqlx::query(
         r#"
@@ -2613,6 +2903,50 @@ async fn soft_delete_model_mapping(
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to delete model mapping", error))?;
+    sqlx::query(
+        r#"
+        UPDATE ai_model_mapping_rule_item
+        SET status = 0,
+            deleted_at = $1::timestamptz,
+            updated_at = $1::timestamptz,
+            deleted_by = $2,
+            version = COALESCE(version, 0) + 1
+        WHERE rule_id = $3
+          AND tenant_id = $4
+          AND organization_id = $5
+          AND deleted_at IS NULL
+        "#,
+    )
+    .bind(&command.requested_at)
+    .bind(command.subject.operator_id)
+    .bind(mapping_id)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to delete model mapping items", error))?;
+    sqlx::query(
+        r#"
+        UPDATE ai_model_mapping_rule_binding
+        SET status = 0,
+            deleted_at = $1::timestamptz,
+            updated_at = $1::timestamptz,
+            deleted_by = $2,
+            version = COALESCE(version, 0) + 1
+        WHERE rule_id = $3
+          AND tenant_id = $4
+          AND organization_id = $5
+          AND deleted_at IS NULL
+        "#,
+    )
+    .bind(&command.requested_at)
+    .bind(command.subject.operator_id)
+    .bind(mapping_id)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to delete model mapping bindings", error))?;
     Ok(())
 }
 
@@ -2620,8 +2954,8 @@ async fn resolve_model_mapping(
     pool: &PgPool,
     query: ResolveAdminModelMappingQuery,
 ) -> DomainResult<ResolveAdminModelMappingResult> {
-    let rule = find_matching_model_mapping(pool, &query).await?;
-    let Some(rule) = rule else {
+    let matched = find_matching_model_mapping(pool, &query).await?;
+    let Some(matched) = matched else {
         return Ok(ResolveAdminModelMappingResult {
             source_model: query.source_model.clone(),
             target_model: query.source_model,
@@ -2630,95 +2964,111 @@ async fn resolve_model_mapping(
             target_provider_model: None,
             target_provider_native_model: None,
             matched: false,
-            matched_scope_type: None,
+            matched_binding_type: None,
             rule: None,
         });
     };
     Ok(ResolveAdminModelMappingResult {
         source_model: query.source_model,
-        target_model: rule.target_model.clone(),
-        target_catalog_key: rule.target_catalog_key.clone(),
-        target_vendor_code: rule.target_vendor_code.clone(),
-        target_provider_model: rule.target_provider_model.clone(),
-        target_provider_native_model: rule.target_provider_native_model.clone(),
+        target_model: matched.item.target_model.clone(),
+        target_catalog_key: matched.item.target_catalog_key.clone(),
+        target_vendor_code: matched.rule.target_vendor_code.clone(),
+        target_provider_model: matched.item.target_provider_model.clone(),
+        target_provider_native_model: matched.item.target_provider_native_model.clone(),
         matched: true,
-        matched_scope_type: Some(rule.scope_type.clone()),
-        rule: Some(rule),
+        matched_binding_type: Some(matched.binding_type),
+        rule: Some(matched.rule),
     })
 }
 
 async fn find_matching_model_mapping(
     pool: &PgPool,
     query: &ResolveAdminModelMappingQuery,
-) -> DomainResult<Option<AdminModelMappingRuleItem>> {
-    if let Some(rule) = find_mapping_for_scope(
-        pool,
-        query,
-        "channel",
-        query.channel_id,
-        query.channel_code.as_deref(),
-        None,
-    )
-    .await?
-    {
-        return Ok(Some(rule));
-    }
-    if let Some(rule) = find_mapping_for_scope(
-        pool,
-        query,
-        "vendor",
-        None,
-        None,
-        query.vendor_code.as_deref(),
-    )
-    .await?
-    {
-        return Ok(Some(rule));
-    }
-    find_mapping_for_scope(pool, query, "global", None, None, None).await
-}
-
-async fn find_mapping_for_scope(
-    pool: &PgPool,
-    query: &ResolveAdminModelMappingQuery,
-    scope_type: &str,
-    channel_id: Option<i64>,
-    channel_code: Option<&str>,
-    vendor_code: Option<&str>,
-) -> DomainResult<Option<AdminModelMappingRuleItem>> {
-    let row = sqlx::query(&mapping_select_sql(
+) -> DomainResult<Option<ResolvedModelMappingMatch>> {
+    let row = sqlx::query(&mapping_match_select_sql(
         r#"
-        WHERE r.tenant_id = $1
-          AND r.organization_id = $2
+        JOIN ai_model_mapping_rule_item i
+          ON i.rule_id = r.id
+         AND i.tenant_id = r.tenant_id
+         AND i.organization_id = r.organization_id
+         AND i.deleted_at IS NULL
+         AND i.status = 1
+         AND i.enabled = TRUE
+         AND i.source_model = $1
+        JOIN ai_model_mapping_rule_binding b
+          ON b.rule_id = r.id
+         AND b.tenant_id = r.tenant_id
+         AND b.organization_id = r.organization_id
+         AND b.deleted_at IS NULL
+         AND b.status = 1
+         AND b.enabled = TRUE
+        WHERE r.tenant_id = $2
+          AND r.organization_id = $3
           AND r.deleted_at IS NULL
           AND r.status = 1
           AND r.enabled = TRUE
-          AND r.scope_type = $3
           AND r.match_type = 'exact'
-          AND r.source_model = $4
-          AND ($5::text IS NULL OR r.effective_from IS NULL OR r.effective_from <= CURRENT_TIMESTAMP)
-          AND ($5::text IS NULL OR r.effective_to IS NULL OR r.effective_to >= CURRENT_TIMESTAMP)
           AND (
-              r.scope_type = 'global'
-              OR ($3 = 'vendor' AND r.vendor_code = $6)
-              OR ($3 = 'channel' AND ($7::bigint IS NOT NULL AND r.channel_id = $7 OR $8::text IS NOT NULL AND r.channel_code = $8))
+              (b.binding_type = 'provider_account' AND (($4::bigint IS NOT NULL AND b.binding_id = $4) OR ($5::text IS NOT NULL AND b.binding_code = $5)))
+              OR (b.binding_type = 'channel' AND (($6::bigint IS NOT NULL AND b.binding_id = $6) OR ($7::text IS NOT NULL AND b.binding_code = $7)))
+              OR (b.binding_type = 'channel_group' AND EXISTS (
+                  SELECT 1
+                  FROM ai_channel_group_member gm
+                  LEFT JOIN ai_channel_group g
+                    ON g.id = gm.channel_group_id
+                   AND g.tenant_id = gm.tenant_id
+                   AND g.organization_id = gm.organization_id
+                   AND g.deleted_at IS NULL
+                   AND g.status = 1
+                  WHERE gm.tenant_id = r.tenant_id
+                    AND gm.organization_id = r.organization_id
+                    AND gm.deleted_at IS NULL
+                    AND gm.status = 1
+                    AND $6::bigint IS NOT NULL
+                    AND gm.channel_id = $6
+                    AND (b.binding_id = gm.channel_group_id OR b.binding_code = g.group_code)
+              ))
+              OR (b.binding_type = 'vendor' AND $8::text IS NOT NULL AND b.binding_code = $8)
+              OR b.binding_type = 'global'
           )
-        ORDER BY r.priority ASC, r.updated_at DESC, r.id DESC
+        ORDER BY CASE b.binding_type
+              WHEN 'provider_account' THEN 0
+              WHEN 'channel' THEN 1
+              WHEN 'channel_group' THEN 2
+              WHEN 'vendor' THEN 3
+              WHEN 'global' THEN 4
+              ELSE 7
+          END,
+          b.sort_order ASC,
+          i.sort_order ASC,
+          r.updated_at DESC,
+          r.id DESC
         LIMIT 1
         "#,
     ))
+    .bind(&query.source_model)
     .bind(query.subject.tenant_id)
     .bind(query.subject.organization_id)
-    .bind(scope_type)
-    .bind(&query.source_model)
-    .bind(Some("now"))
-    .bind(vendor_code)
-    .bind(channel_id)
-    .bind(channel_code)
+    .bind(query.provider_account_id)
+    .bind(query.provider_account_code.as_deref())
+    .bind(query.channel_id)
+    .bind(query.channel_code.as_deref())
+    .bind(query.vendor_code.as_deref())
     .fetch_optional(pool)
     .await
     .map_err(|error| store_error("failed to resolve model mapping", error))?;
-    row.map(mapping_from_row).transpose()
+    let Some(row) = row else {
+        return Ok(None);
+    };
+    let item = mapping_rule_item_from_joined_row(&row)?;
+    let binding_type = row.try_get("matched_binding_type").map_err(row_error)?;
+    let mut rule = mapping_from_row(row)?;
+    attach_model_mapping_children(pool, std::slice::from_mut(&mut rule)).await?;
+    Ok(Some(ResolvedModelMappingMatch {
+        rule,
+        item,
+        binding_type,
+    }))
 }
 
 async fn insert_audit_log(
@@ -2770,6 +3120,8 @@ fn vendor_select_sql(predicate: &str) -> String {
             COALESCE(display_name, vendor_code, '') AS name,
             COALESCE(description, '') AS description,
             COALESCE(color_token, 'bg-slate-700') AS color,
+            COALESCE(supported_protocols, '[]'::jsonb)::text AS supported_protocols,
+            COALESCE(client_api_compatibility, '{{}}'::jsonb)::text AS client_api_compatibility,
             status,
             deleted_at::text AS deleted_at
         FROM ai_model_vendor
@@ -2838,18 +3190,6 @@ fn model_select_sql(
             COALESCE(m.organization_id, 0) AS organization_id,
             COALESCE(m.vendor_id, 0)::text AS vendor_id,
             COALESCE(m.vendor_code, '') AS vendor_code,
-            COALESCE(
-                NULLIF((
-                    SELECT p.region_code
-                    FROM ai_model_pricing p
-                    WHERE p.model_id = m.id
-                      AND p.status = 1
-                      AND p.deleted_at IS NULL
-                    ORDER BY p.priority ASC NULLS LAST, p.id ASC
-                    LIMIT 1
-                ), ''),
-                'global'
-            ) AS region_code,
             COALESCE(m.catalog_key, COALESCE(m.vendor_code, '') || '/' || COALESCE(m.model, '')) AS catalog_key,
             COALESCE(m.model, '') AS model,
             COALESCE(NULLIF(m.display_name, ''), m.model, '') AS display_name,
@@ -2865,50 +3205,6 @@ fn model_select_sql(
             COALESCE(m.supported_languages::text, '[]') AS supported_languages_json,
             COALESCE(m.use_cases::text, '[]') AS use_cases_json,
             NULLIF(COALESCE(m.training_data_cutoff, ''), '') AS training_data_cutoff,
-            COALESCE((
-                SELECT p.unit_price::text
-                FROM ai_model_pricing p
-                WHERE p.model_id = m.id
-                  AND p.price_side = 1
-                  AND p.billing_meter_code IN ('llm_input_token', 'embedding_input_token', 'image_input_token', 'audio_input_second', 'audio_input_minute', 'tts_input_character', 'api_request')
-                  AND p.status = 1
-                  AND p.deleted_at IS NULL
-                ORDER BY p.priority ASC NULLS LAST, p.id ASC
-                LIMIT 1
-            ), '') AS price_in,
-            COALESCE((
-                SELECT p.unit_price::text
-                FROM ai_model_pricing p
-                WHERE p.model_id = m.id
-                  AND p.price_side = 1
-                  AND p.billing_meter_code IN ('llm_output_token', 'image_output_token', 'image_result', 'audio_output_second', 'music_output_second', 'sfx_result', 'video_output_second', 'api_result')
-                  AND p.status = 1
-                  AND p.deleted_at IS NULL
-                ORDER BY p.priority ASC NULLS LAST, p.id ASC
-                LIMIT 1
-            ), '') AS price_out,
-            COALESCE((
-                SELECT p.unit_price::text
-                FROM ai_model_pricing p
-                WHERE p.model_id = m.id
-                  AND p.price_side = 1
-                  AND p.billing_meter_code IN ('llm_cache_read_token')
-                  AND p.status = 1
-                  AND p.deleted_at IS NULL
-                ORDER BY p.priority ASC NULLS LAST, p.id ASC
-                LIMIT 1
-            ), '') AS cache_read_price,
-            COALESCE((
-                SELECT p.unit_price::text
-                FROM ai_model_pricing p
-                WHERE p.model_id = m.id
-                  AND p.price_side = 1
-                  AND p.billing_meter_code IN ('llm_cache_write_token')
-                  AND p.status = 1
-                  AND p.deleted_at IS NULL
-                ORDER BY p.priority ASC NULLS LAST, p.id ASC
-                LIMIT 1
-            ), '') AS cache_write_price,
             COALESCE(rc.calls, '0') AS calls,
             m.status,
             m.context_tokens AS context_tokens,
@@ -2936,26 +3232,34 @@ fn mapping_select_sql(predicate: &str) -> String {
             COALESCE(r.uuid, '') AS uuid,
             COALESCE(r.tenant_id, 0) AS tenant_id,
             COALESCE(r.organization_id, 0) AS organization_id,
-            COALESCE(r.scope_type, 'global') AS scope_type,
-            r.vendor_id AS vendor_id,
-            NULLIF(COALESCE(r.vendor_code, ''), '') AS vendor_code,
-            r.channel_id AS channel_id,
-            NULLIF(COALESCE(r.channel_code, ''), '') AS channel_code,
-            COALESCE(r.source_model, '') AS source_model,
-            NULLIF(COALESCE(r.source_catalog_key, ''), '') AS source_catalog_key,
+            COALESCE((
+                SELECT b.binding_type
+                FROM ai_model_mapping_rule_binding b
+                WHERE b.rule_id = r.id
+                  AND b.tenant_id = r.tenant_id
+                  AND b.organization_id = r.organization_id
+                  AND b.deleted_at IS NULL
+                  AND b.status = 1
+                  AND b.enabled = TRUE
+                ORDER BY CASE b.binding_type
+                    WHEN 'provider_account' THEN 0
+                    WHEN 'channel' THEN 1
+                    WHEN 'channel_group' THEN 2
+                    WHEN 'vendor' THEN 3
+                    WHEN 'global' THEN 4
+                    WHEN 'site_service' THEN 5
+                    WHEN 'site' THEN 6
+                    ELSE 7
+                END, b.sort_order ASC, b.id ASC
+                LIMIT 1
+            ), 'global') AS binding_type,
+            r.source_vendor_id AS source_vendor_id,
             NULLIF(COALESCE(r.source_vendor_code, ''), '') AS source_vendor_code,
-            COALESCE(r.target_model, '') AS target_model,
-            NULLIF(COALESCE(r.target_catalog_key, ''), '') AS target_catalog_key,
+            r.target_vendor_id AS target_vendor_id,
             NULLIF(COALESCE(r.target_vendor_code, ''), '') AS target_vendor_code,
-            NULLIF(COALESCE(r.target_provider_model, ''), '') AS target_provider_model,
-            NULLIF(COALESCE(r.target_provider_native_model, ''), '') AS target_provider_native_model,
             COALESCE(r.mapping_mode, 'alias') AS mapping_mode,
             COALESCE(r.match_type, 'exact') AS match_type,
-            COALESCE(r.priority, 100) AS priority,
             COALESCE(r.enabled, FALSE) AS enabled,
-            CAST(r.effective_from AS TEXT) AS effective_from,
-            CAST(r.effective_to AS TEXT) AS effective_to,
-            NULLIF(COALESCE(r.description, ''), '') AS description,
             CAST(r.created_at AS TEXT) AS created_at,
             CAST(r.updated_at AS TEXT) AS updated_at,
             CAST(r.deleted_at AS TEXT) AS deleted_at
@@ -2963,6 +3267,188 @@ fn mapping_select_sql(predicate: &str) -> String {
         {predicate}
         "#
     )
+}
+
+fn mapping_match_select_sql(predicate: &str) -> String {
+    format!(
+        r#"
+        SELECT
+            r.id,
+            COALESCE(r.uuid, '') AS uuid,
+            COALESCE(r.tenant_id, 0) AS tenant_id,
+            COALESCE(r.organization_id, 0) AS organization_id,
+            b.binding_type AS binding_type,
+            b.binding_type AS matched_binding_type,
+            r.source_vendor_id AS source_vendor_id,
+            NULLIF(COALESCE(r.source_vendor_code, ''), '') AS source_vendor_code,
+            r.target_vendor_id AS target_vendor_id,
+            NULLIF(COALESCE(r.target_vendor_code, ''), '') AS target_vendor_code,
+            COALESCE(r.mapping_mode, 'alias') AS mapping_mode,
+            COALESCE(r.match_type, 'exact') AS match_type,
+            COALESCE(r.enabled, FALSE) AS enabled,
+            CAST(r.created_at AS TEXT) AS created_at,
+            CAST(r.updated_at AS TEXT) AS updated_at,
+            CAST(r.deleted_at AS TEXT) AS deleted_at,
+            i.id AS item_id,
+            COALESCE(i.uuid, '') AS item_uuid,
+            COALESCE(i.source_model, '') AS item_source_model,
+            NULLIF(COALESCE(i.source_catalog_key, ''), '') AS item_source_catalog_key,
+            COALESCE(i.target_model, '') AS item_target_model,
+            NULLIF(COALESCE(i.target_catalog_key, ''), '') AS item_target_catalog_key,
+            NULLIF(COALESCE(i.target_provider_model, ''), '') AS item_target_provider_model,
+            NULLIF(COALESCE(i.target_provider_native_model, ''), '') AS item_target_provider_native_model,
+            COALESCE(i.sort_order, 100) AS item_sort_order,
+            COALESCE(i.enabled, FALSE) AS item_enabled,
+            CAST(i.created_at AS TEXT) AS item_created_at,
+            CAST(i.updated_at AS TEXT) AS item_updated_at,
+            CAST(i.deleted_at AS TEXT) AS item_deleted_at
+        FROM ai_model_mapping_rule r
+        {predicate}
+        "#
+    )
+}
+
+async fn attach_model_mapping_children(
+    pool: &PgPool,
+    rules: &mut [AdminModelMappingRuleItem],
+) -> DomainResult<()> {
+    for rule in rules {
+        rule.bindings =
+            load_model_mapping_bindings(pool, rule.tenant_id, rule.organization_id, rule.id)
+                .await?;
+        rule.mapping_items =
+            load_model_mapping_items(pool, rule.tenant_id, rule.organization_id, rule.id).await?;
+    }
+    Ok(())
+}
+
+async fn attach_model_mapping_children_to_rule(
+    tx: &mut Transaction<'_, Postgres>,
+    rule: &mut AdminModelMappingRuleItem,
+) -> DomainResult<()> {
+    rule.bindings =
+        load_model_mapping_bindings_tx(tx, rule.tenant_id, rule.organization_id, rule.id).await?;
+    rule.mapping_items =
+        load_model_mapping_items_tx(tx, rule.tenant_id, rule.organization_id, rule.id).await?;
+    Ok(())
+}
+
+async fn load_model_mapping_bindings(
+    pool: &PgPool,
+    tenant_id: i64,
+    organization_id: i64,
+    rule_id: i64,
+) -> DomainResult<Vec<AdminModelMappingRuleBindingItem>> {
+    let rows = sqlx::query(mapping_binding_select_sql())
+        .bind(tenant_id)
+        .bind(organization_id)
+        .bind(rule_id)
+        .fetch_all(pool)
+        .await
+        .map_err(|error| store_error("failed to load model mapping bindings", error))?;
+    rows.into_iter()
+        .map(mapping_rule_binding_from_row)
+        .collect()
+}
+
+async fn load_model_mapping_bindings_tx(
+    tx: &mut Transaction<'_, Postgres>,
+    tenant_id: i64,
+    organization_id: i64,
+    rule_id: i64,
+) -> DomainResult<Vec<AdminModelMappingRuleBindingItem>> {
+    let rows = sqlx::query(mapping_binding_select_sql())
+        .bind(tenant_id)
+        .bind(organization_id)
+        .bind(rule_id)
+        .fetch_all(&mut **tx)
+        .await
+        .map_err(|error| store_error("failed to load model mapping bindings", error))?;
+    rows.into_iter()
+        .map(mapping_rule_binding_from_row)
+        .collect()
+}
+
+async fn load_model_mapping_items(
+    pool: &PgPool,
+    tenant_id: i64,
+    organization_id: i64,
+    rule_id: i64,
+) -> DomainResult<Vec<AdminModelMappingRuleMappingItem>> {
+    let rows = sqlx::query(mapping_item_select_sql())
+        .bind(tenant_id)
+        .bind(organization_id)
+        .bind(rule_id)
+        .fetch_all(pool)
+        .await
+        .map_err(|error| store_error("failed to load model mapping items", error))?;
+    rows.into_iter().map(mapping_rule_item_from_row).collect()
+}
+
+async fn load_model_mapping_items_tx(
+    tx: &mut Transaction<'_, Postgres>,
+    tenant_id: i64,
+    organization_id: i64,
+    rule_id: i64,
+) -> DomainResult<Vec<AdminModelMappingRuleMappingItem>> {
+    let rows = sqlx::query(mapping_item_select_sql())
+        .bind(tenant_id)
+        .bind(organization_id)
+        .bind(rule_id)
+        .fetch_all(&mut **tx)
+        .await
+        .map_err(|error| store_error("failed to load model mapping items", error))?;
+    rows.into_iter().map(mapping_rule_item_from_row).collect()
+}
+
+fn mapping_binding_select_sql() -> &'static str {
+    r#"
+    SELECT
+        id,
+        COALESCE(uuid, '') AS uuid,
+        COALESCE(binding_type, 'global') AS binding_type,
+        binding_id AS binding_id,
+        NULLIF(COALESCE(binding_code, ''), '') AS binding_code,
+        NULLIF(COALESCE(binding_name_snapshot, ''), '') AS binding_name,
+        COALESCE(sort_order, 100) AS sort_order,
+        COALESCE(enabled, FALSE) AS enabled,
+        CAST(created_at AS TEXT) AS created_at,
+        CAST(updated_at AS TEXT) AS updated_at,
+        CAST(deleted_at AS TEXT) AS deleted_at
+    FROM ai_model_mapping_rule_binding
+    WHERE tenant_id = $1
+      AND organization_id = $2
+      AND rule_id = $3
+      AND deleted_at IS NULL
+      AND status = 1
+    ORDER BY sort_order ASC, id ASC
+    "#
+}
+
+fn mapping_item_select_sql() -> &'static str {
+    r#"
+    SELECT
+        id,
+        COALESCE(uuid, '') AS uuid,
+        COALESCE(source_model, '') AS source_model,
+        NULLIF(COALESCE(source_catalog_key, ''), '') AS source_catalog_key,
+        COALESCE(target_model, '') AS target_model,
+        NULLIF(COALESCE(target_catalog_key, ''), '') AS target_catalog_key,
+        NULLIF(COALESCE(target_provider_model, ''), '') AS target_provider_model,
+        NULLIF(COALESCE(target_provider_native_model, ''), '') AS target_provider_native_model,
+        COALESCE(sort_order, 100) AS sort_order,
+        COALESCE(enabled, FALSE) AS enabled,
+        CAST(created_at AS TEXT) AS created_at,
+        CAST(updated_at AS TEXT) AS updated_at,
+        CAST(deleted_at AS TEXT) AS deleted_at
+    FROM ai_model_mapping_rule_item
+    WHERE tenant_id = $1
+      AND organization_id = $2
+      AND rule_id = $3
+      AND deleted_at IS NULL
+      AND status = 1
+    ORDER BY sort_order ASC, id ASC
+    "#
 }
 
 fn vendor_from_row(row: sqlx::postgres::PgRow) -> DomainResult<AdminModelVendorItem> {
@@ -2976,6 +3462,12 @@ fn vendor_from_row(row: sqlx::postgres::PgRow) -> DomainResult<AdminModelVendorI
         status: status_label(required_integer_cell(&row, "status", "vendor status")?)?,
         color: row.try_get("color").map_err(row_error)?,
         description: row.try_get("description").map_err(row_error)?,
+        supported_protocols: row
+            .try_get("supported_protocols")
+            .unwrap_or_else(|_| "[]".to_owned()),
+        client_api_compatibility: row
+            .try_get("client_api_compatibility")
+            .unwrap_or_else(|_| "{}".to_owned()),
         deleted_at: row.try_get("deleted_at").ok().flatten(),
     })
 }
@@ -2986,29 +3478,80 @@ fn mapping_from_row(row: sqlx::postgres::PgRow) -> DomainResult<AdminModelMappin
         uuid: row.try_get("uuid").map_err(row_error)?,
         tenant_id: optional_integer_cell(&row, "tenant_id").unwrap_or(0),
         organization_id: optional_integer_cell(&row, "organization_id").unwrap_or(0),
-        scope_type: row.try_get("scope_type").map_err(row_error)?,
-        vendor_id: optional_integer_cell(&row, "vendor_id"),
-        vendor_code: row.try_get("vendor_code").ok().flatten(),
-        channel_id: optional_integer_cell(&row, "channel_id"),
-        channel_code: row.try_get("channel_code").ok().flatten(),
-        source_model: row.try_get("source_model").map_err(row_error)?,
-        source_catalog_key: row.try_get("source_catalog_key").ok().flatten(),
+        binding_type: row.try_get("binding_type").map_err(row_error)?,
+        source_vendor_id: optional_integer_cell(&row, "source_vendor_id"),
         source_vendor_code: row.try_get("source_vendor_code").ok().flatten(),
-        target_model: row.try_get("target_model").map_err(row_error)?,
-        target_catalog_key: row.try_get("target_catalog_key").ok().flatten(),
+        target_vendor_id: optional_integer_cell(&row, "target_vendor_id"),
         target_vendor_code: row.try_get("target_vendor_code").ok().flatten(),
-        target_provider_model: row.try_get("target_provider_model").ok().flatten(),
-        target_provider_native_model: row.try_get("target_provider_native_model").ok().flatten(),
         mapping_mode: row.try_get("mapping_mode").map_err(row_error)?,
         match_type: row.try_get("match_type").map_err(row_error)?,
-        priority: optional_i32_cell(&row, "priority").unwrap_or(100),
         enabled: bool_cell(&row, "enabled"),
-        effective_from: row.try_get("effective_from").ok().flatten(),
-        effective_to: row.try_get("effective_to").ok().flatten(),
-        description: row.try_get("description").ok().flatten(),
+        bindings: Vec::new(),
+        mapping_items: Vec::new(),
         created_at: row.try_get("created_at").ok().flatten(),
         updated_at: row.try_get("updated_at").ok().flatten(),
         deleted_at: row.try_get("deleted_at").ok().flatten(),
+    })
+}
+
+fn mapping_rule_binding_from_row(
+    row: sqlx::postgres::PgRow,
+) -> DomainResult<AdminModelMappingRuleBindingItem> {
+    Ok(AdminModelMappingRuleBindingItem {
+        id: row.try_get("id").map_err(row_error)?,
+        uuid: row.try_get("uuid").map_err(row_error)?,
+        binding_type: row.try_get("binding_type").map_err(row_error)?,
+        binding_id: optional_integer_cell(&row, "binding_id"),
+        binding_code: row.try_get("binding_code").ok().flatten(),
+        binding_name: row.try_get("binding_name").ok().flatten(),
+        sort_order: optional_i32_cell(&row, "sort_order").unwrap_or(100),
+        enabled: bool_cell(&row, "enabled"),
+        created_at: row.try_get("created_at").ok().flatten(),
+        updated_at: row.try_get("updated_at").ok().flatten(),
+        deleted_at: row.try_get("deleted_at").ok().flatten(),
+    })
+}
+
+fn mapping_rule_item_from_row(
+    row: sqlx::postgres::PgRow,
+) -> DomainResult<AdminModelMappingRuleMappingItem> {
+    Ok(AdminModelMappingRuleMappingItem {
+        id: row.try_get("id").map_err(row_error)?,
+        uuid: row.try_get("uuid").map_err(row_error)?,
+        source_model: row.try_get("source_model").map_err(row_error)?,
+        source_catalog_key: row.try_get("source_catalog_key").ok().flatten(),
+        target_model: row.try_get("target_model").map_err(row_error)?,
+        target_catalog_key: row.try_get("target_catalog_key").ok().flatten(),
+        target_provider_model: row.try_get("target_provider_model").ok().flatten(),
+        target_provider_native_model: row.try_get("target_provider_native_model").ok().flatten(),
+        sort_order: optional_i32_cell(&row, "sort_order").unwrap_or(100),
+        enabled: bool_cell(&row, "enabled"),
+        created_at: row.try_get("created_at").ok().flatten(),
+        updated_at: row.try_get("updated_at").ok().flatten(),
+        deleted_at: row.try_get("deleted_at").ok().flatten(),
+    })
+}
+
+fn mapping_rule_item_from_joined_row(
+    row: &sqlx::postgres::PgRow,
+) -> DomainResult<AdminModelMappingRuleMappingItem> {
+    Ok(AdminModelMappingRuleMappingItem {
+        id: row.try_get("item_id").map_err(row_error)?,
+        uuid: row.try_get("item_uuid").map_err(row_error)?,
+        source_model: row.try_get("item_source_model").map_err(row_error)?,
+        source_catalog_key: row.try_get("item_source_catalog_key").ok().flatten(),
+        target_model: row.try_get("item_target_model").map_err(row_error)?,
+        target_catalog_key: row.try_get("item_target_catalog_key").ok().flatten(),
+        target_provider_model: row.try_get("item_target_provider_model").ok().flatten(),
+        target_provider_native_model: row
+            .try_get("item_target_provider_native_model")
+            .ok()
+            .flatten(),
+        sort_order: optional_i32_cell(row, "item_sort_order").unwrap_or(100),
+        enabled: bool_cell(row, "item_enabled"),
+        created_at: row.try_get("item_created_at").ok().flatten(),
+        updated_at: row.try_get("item_updated_at").ok().flatten(),
+        deleted_at: row.try_get("item_deleted_at").ok().flatten(),
     })
 }
 
@@ -3025,18 +3568,12 @@ fn model_from_row(row: sqlx::postgres::PgRow) -> DomainResult<AdminAiModelItem> 
         organization_id: optional_integer_cell(&row, "organization_id").unwrap_or(0),
         vendor_id: row.try_get("vendor_id").map_err(row_error)?,
         vendor_code: row.try_get("vendor_code").map_err(row_error)?,
-        region_code: row
-            .try_get("region_code")
-            .unwrap_or_else(|_| "global".to_owned()),
         catalog_key: row.try_get("catalog_key").unwrap_or_default(),
         model: row.try_get("model").map_err(row_error)?,
         display_name: row.try_get("display_name").map_err(row_error)?,
         name: row.try_get("name").map_err(row_error)?,
         model_type: model_type_label(capability, &modalities)?,
-        price_in: row.try_get("price_in").unwrap_or_default(),
-        price_out: row.try_get("price_out").unwrap_or_default(),
-        cache_read_price: row.try_get("cache_read_price").unwrap_or_default(),
-        cache_write_price: row.try_get("cache_write_price").unwrap_or_default(),
+        region_prices: Vec::new(),
         status: status_label(required_integer_cell(&row, "status", "model status")?)?,
         calls: row.try_get("calls").unwrap_or_else(|_| "0".to_owned()),
         description: row.try_get("description").ok().flatten(),
@@ -3206,6 +3743,41 @@ fn output_billing_meter(model_type: &str) -> &'static str {
     }
 }
 
+fn is_input_billing_meter(value: &str) -> bool {
+    matches!(
+        value,
+        "llm_input_token"
+            | "embedding_input_token"
+            | "image_input_token"
+            | "audio_input_second"
+            | "audio_input_minute"
+            | "tts_input_character"
+            | "api_request"
+    )
+}
+
+fn is_output_billing_meter(value: &str) -> bool {
+    matches!(
+        value,
+        "llm_output_token"
+            | "image_output_token"
+            | "image_result"
+            | "audio_output_second"
+            | "music_output_second"
+            | "sfx_result"
+            | "video_output_second"
+            | "api_result"
+    )
+}
+
+fn is_cache_read_billing_meter(value: &str) -> bool {
+    value == "llm_cache_read_token"
+}
+
+fn is_cache_write_billing_meter(value: &str) -> bool {
+    value == "llm_cache_write_token"
+}
+
 fn normalize_catalog_source_code(value: &str) -> String {
     let mut normalized = String::with_capacity(value.len());
     let mut last_was_separator = false;
@@ -3229,6 +3801,17 @@ fn normalize_catalog_source_code(value: &str) -> String {
     } else {
         normalized.chars().take(96).collect()
     }
+}
+
+fn catalog_source_uuid(tenant_id: i64, organization_id: i64, source_code: &str) -> String {
+    crate::infrastructure::sql::model_catalog_import::stable_uuid(
+        "catalog-source",
+        &[
+            &tenant_id.to_string(),
+            &organization_id.to_string(),
+            source_code,
+        ],
+    )
 }
 
 fn pricing_import_snapshot_hash(

@@ -1,3 +1,4 @@
+import type { AdminChannelCredentialItem } from './admin-channel-credential-item';
 import type { ProviderCircuitBreakerPolicy } from './provider-circuit-breaker-policy';
 import type { ProviderRetryPolicy } from './provider-retry-policy';
 
@@ -5,12 +6,8 @@ import type { ProviderRetryPolicy } from './provider-retry-policy';
 export interface AdminChannelItem {
   /** Access type field on admin channel item. */
   accessType: string;
-  /** Full plaintext provider API key returned by authenticated admin management responses for channel credential relay operations. */
-  apiKey?: string;
   /** Balance field on admin channel item. */
   balance: string;
-  /** Base url field on admin channel item. */
-  baseUrl?: string;
   /** Capabilities field on admin channel item. */
   capabilities: ('llm' | 'image' | 'audio' | 'music' | 'sfx' | 'video')[];
   /** Scoped ai_channel id used by channel endpoint configuration. */
@@ -21,6 +18,10 @@ export interface AdminChannelItem {
   circuitBreakerPolicy?: ProviderCircuitBreakerPolicy;
   /** Created at field on admin channel item. */
   createdAt: string;
+  /** Credential rotation field on admin channel item. */
+  credentialRotation: 'default' | 'priority' | 'round_robin' | 'weighted_round_robin' | 'random';
+  /** Credentials field on admin channel item. */
+  credentials: AdminChannelCredentialItem[];
   /** Errors field on admin channel item. */
   errors: number;
   /** Expires at field on admin channel item. */
@@ -39,8 +40,6 @@ export interface AdminChannelItem {
   resourceCodes: string[];
   /** Retry policy field on admin channel item. */
   retryPolicy?: ProviderRetryPolicy;
-  /** Secret ref field on admin channel item. */
-  secretRef?: string;
   /** Status field on admin channel item. */
   status: 'active' | 'disabled' | 'error';
   /** Timeout ms field on admin channel item. */

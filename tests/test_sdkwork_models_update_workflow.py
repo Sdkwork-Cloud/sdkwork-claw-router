@@ -13,6 +13,12 @@ def load_json(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def model_id_from_catalog_file(path: Path) -> str:
+    payload = load_json(path)
+    model_id = payload.get("modelId")
+    return model_id if isinstance(model_id, str) and model_id else path.stem
+
+
 def stable_json(value: object) -> str:
     return json.dumps(value, indent=2, ensure_ascii=False, sort_keys=True)
 
@@ -736,8 +742,8 @@ class SdkworkModelsUpdateWorkflowTest(unittest.TestCase):
                 vendor_code, region_code = vendor_key, "global"
             model_dir = SDKWORK_MODELS / "models" / vendor_code / region_code / "models"
             pricing_dir = SDKWORK_MODELS / "models" / vendor_code / region_code / "pricing"
-            actual_model_ids = {path.stem for path in model_dir.glob("*.json")}
-            actual_pricing_ids = {path.stem for path in pricing_dir.glob("*.json")}
+            actual_model_ids = {model_id_from_catalog_file(path) for path in model_dir.glob("**/*.json")}
+            actual_pricing_ids = {model_id_from_catalog_file(path) for path in pricing_dir.glob("**/*.json")}
             with self.subTest(vendor=vendor_code, region=region_code, check="models"):
                 self.assertTrue(model_ids.issubset(actual_model_ids), model_ids - actual_model_ids)
             with self.subTest(vendor=vendor_code, region=region_code, check="pricing"):
@@ -805,8 +811,8 @@ class SdkworkModelsUpdateWorkflowTest(unittest.TestCase):
         self.assertNotIn("audio_output_second", realtime_meters)
 
         google_model_ids = {
-            path.stem
-            for path in (SDKWORK_MODELS / "models" / "google" / "global" / "models").glob("*.json")
+            model_id_from_catalog_file(path)
+            for path in (SDKWORK_MODELS / "models" / "google" / "global" / "models").glob("**/*.json")
         }
         self.assertIn("veo-3.1-generate-preview", google_model_ids)
         self.assertIn("veo-3.1-fast-generate-preview", google_model_ids)
@@ -835,7 +841,7 @@ class SdkworkModelsUpdateWorkflowTest(unittest.TestCase):
                 self.assertTrue(vendor.get("operatingRegions"))
                 self.assertTrue(vendor.get("billingJurisdiction"))
 
-            for pricing_path in sorted((vendor_path.parent / "pricing").glob("*.json")):
+            for pricing_path in sorted((vendor_path.parent / "pricing").glob("**/*.json")):
                 pricing = load_json(pricing_path)
                 price_currencies = {
                     price.get("currency", pricing.get("currency"))

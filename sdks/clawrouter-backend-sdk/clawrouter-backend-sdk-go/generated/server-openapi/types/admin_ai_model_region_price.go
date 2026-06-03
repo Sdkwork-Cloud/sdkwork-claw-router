@@ -1,6 +1,6 @@
 package types
 
-// Regional official reference pricing input for admin AI model commands.
+// Regional official reference pricing returned by admin AI model payloads.
 type AdminAiModelRegionPrice struct {
 	CacheReadPrice string `json:"cacheReadPrice"`
 	CacheWritePrice string `json:"cacheWritePrice"`

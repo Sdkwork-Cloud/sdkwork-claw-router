@@ -8,5 +8,7 @@ data class AdminChannelGroupUpdateRequest(
     val officialPriceMultiplier: Double? = null,
     val priceReferenceMode: String? = null,
     val rateMultiplier: Double? = null,
+    val resourceCodes: List<String>? = null,
+    val resourceGroupCodes: List<String>? = null,
     val status: String? = null
 )

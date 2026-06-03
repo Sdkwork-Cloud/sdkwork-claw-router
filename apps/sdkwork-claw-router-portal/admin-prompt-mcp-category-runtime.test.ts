@@ -33,6 +33,56 @@ test("admin prompt and mcp pages use left category management instead of section
   }
 });
 
+test("admin prompt and mcp resource tables scroll inside the shared resource center", () => {
+  const promptSource = readPortalFile("packages/sdkwork-claw-router-admin-prompts/src/index.tsx");
+  const mcpSource = readPortalFile("packages/sdkwork-claw-router-admin-mcp/src/index.tsx");
+  const resourceCenterSource = readPortalFile("packages/sdkwork-claw-router-commons/src/components/AdminResourceCenter.tsx");
+
+  for (const [name, source, tableMarker] of [
+    ["prompts", promptSource, 'tableViewportDataAttribute="admin-prompts-table"'],
+    ["mcp", mcpSource, 'tableViewportDataAttribute="admin-mcp-table"'],
+  ] as const) {
+    assert.ok(source.includes("AdminResourceCenter"), `${name} page must use shared resource center`);
+    assert.ok(source.includes(tableMarker), `${name} page must expose table viewport data marker`);
+  }
+
+  for (const [name, source, rootMarker, layoutMarker, contentMarker] of [
+    [
+      "prompts",
+      promptSource,
+      'className="flex h-full min-h-0 w-full min-w-0 flex-col gap-2 overflow-hidden" data-admin-prompts="prompt-management"',
+      'className="grid min-h-0 min-w-0 flex-1 gap-3 overflow-hidden lg:grid-cols-[280px_minmax(0,1fr)]"',
+      "data-admin-prompts-content",
+    ],
+    [
+      "mcp",
+      mcpSource,
+      'className="flex h-full min-h-0 w-full min-w-0 flex-col gap-2 overflow-hidden" data-admin-mcp="mcp-management"',
+      'className="grid min-h-0 min-w-0 flex-1 gap-3 overflow-hidden lg:grid-cols-[280px_minmax(0,1fr)]"',
+      "data-admin-mcp-content",
+    ],
+  ] as const) {
+    assert.ok(source.includes(rootMarker), `${name} page root must hide page overflow`);
+    assert.ok(source.includes(layoutMarker), `${name} page content grid must not create document scroll`);
+    assert.ok(source.includes(contentMarker), `${name} page must mark the bounded content region`);
+  }
+
+  assert.ok(
+    mcpSource.includes('className="min-h-0 flex-1 overflow-hidden" data-admin-mcp-resource-center-frame'),
+    "mcp resource center must be wrapped in a flex child that absorbs remaining viewport height below tabs and selectors",
+  );
+
+  for (const expected of [
+    'className="flex h-full min-h-0 w-full overflow-hidden rounded-xl',
+    '<main className="flex min-w-0 flex-1 flex-col bg-white',
+    'className="m-5 mt-4 min-h-0 flex-1 rounded-xl"',
+    'viewportClassName="min-h-0 flex-1 custom-scrollbar"',
+    'viewportProps={viewportProps}',
+  ]) {
+    assert.ok(resourceCenterSource.includes(expected), `missing shared resource center table layout marker: ${expected}`);
+  }
+});
+
 test("admin prompt page keeps versions and bindings inside prompt detail", () => {
   const promptSource = readPortalFile("packages/sdkwork-claw-router-admin-prompts/src/index.tsx");
 

@@ -75,6 +75,7 @@ async fn secret_ref_relay_resolves_endpoint_and_secret_from_request_context() {
             model: "gpt-4o-mini".to_owned(),
             provider_code: "openrouter".to_owned(),
             provider_channel_id: 3001,
+            provider_region_code: "global".to_owned(),
             provider_model: "gpt-4o-mini".to_owned(),
             provider_base_url: Some(format!("http://{addr}")),
             provider_secret_ref: Some(secret_ref.to_owned()),
@@ -92,7 +93,7 @@ async fn secret_ref_relay_resolves_endpoint_and_secret_from_request_context() {
             json!({
                 "id": "chatcmpl-secret-ref",
                 "object": "chat.completion",
-                "model": "openai/global/gpt-4o-mini",
+                "model": "gpt-4o-mini",
                 "choices": [
                     {
                         "index": 0,
@@ -166,6 +167,7 @@ async fn secret_ref_relay_rejects_missing_endpoint_or_secret_ref_without_leaking
             model: "gpt-4o-mini".to_owned(),
             provider_code: "openrouter".to_owned(),
             provider_channel_id: 3001,
+            provider_region_code: "global".to_owned(),
             provider_model: "gpt-4o-mini".to_owned(),
             provider_base_url: None,
             provider_secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
@@ -190,6 +192,7 @@ async fn secret_ref_relay_rejects_missing_endpoint_or_secret_ref_without_leaking
             model: "gpt-4o-mini".to_owned(),
             provider_code: "openrouter".to_owned(),
             provider_channel_id: 3001,
+            provider_region_code: "global".to_owned(),
             provider_model: "gpt-4o-mini".to_owned(),
             provider_base_url: Some("http://127.0.0.1:8080".to_owned()),
             provider_secret_ref: None,
@@ -222,7 +225,7 @@ async fn capture_chat_completion(
         Json(json!({
             "id": "chatcmpl-secret-ref",
             "object": "chat.completion",
-            "model": "openai/global/gpt-4o-mini",
+            "model": "gpt-4o-mini",
             "choices": [
                 {
                     "index": 0,

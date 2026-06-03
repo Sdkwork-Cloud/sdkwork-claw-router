@@ -889,13 +889,13 @@ fake-png\r\n\
             &"/v1/fine_tuning/alpha/graders/run".parse().unwrap(),
             &headers,
             Bytes::copy_from_slice(body),
-            "openai/global/gpt-4o-mini",
+            "gpt-4o-mini",
         )
         .unwrap();
         let rewritten: Value = serde_json::from_slice(&rewritten).unwrap();
 
         assert_eq!("gpt-4o-mini", model);
-        assert_eq!("openai/global/gpt-4o-mini", rewritten["grader"]["model"]);
+        assert_eq!("gpt-4o-mini", rewritten["grader"]["model"]);
         assert!(rewritten.get("model").is_none());
     }
 
@@ -924,16 +924,13 @@ fake-png\r\n\
             &"/v1/evals/eval_123/runs".parse().unwrap(),
             &headers,
             Bytes::copy_from_slice(body),
-            "openai/global/gpt-4o-mini",
+            "gpt-4o-mini",
         )
         .unwrap();
         let rewritten: Value = serde_json::from_slice(&rewritten).unwrap();
 
         assert_eq!("gpt-4o-mini", model);
-        assert_eq!(
-            "openai/global/gpt-4o-mini",
-            rewritten["data_source"]["model"]
-        );
+        assert_eq!("gpt-4o-mini", rewritten["data_source"]["model"]);
         assert!(rewritten.get("model").is_none());
     }
 
@@ -963,12 +960,12 @@ fake-png\r\n\
             &"/v1/threads/runs".parse().unwrap(),
             &headers,
             Bytes::copy_from_slice(body),
-            "openai/global/gpt-4o-mini",
+            "gpt-4o-mini",
         )
         .unwrap();
         let rewritten: Value = serde_json::from_slice(&rewritten).unwrap();
 
         assert_eq!("gpt-4o-mini", model);
-        assert_eq!("openai/global/gpt-4o-mini", rewritten["model"]);
+        assert_eq!("gpt-4o-mini", rewritten["model"]);
     }
 }

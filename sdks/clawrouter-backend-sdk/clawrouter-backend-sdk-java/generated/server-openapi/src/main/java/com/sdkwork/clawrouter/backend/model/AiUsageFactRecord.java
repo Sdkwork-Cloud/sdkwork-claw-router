@@ -56,6 +56,7 @@ public class AiUsageFactRecord {
     private String rateMultiplier;
     private String reasoningEffort;
     private String referenceMultiplier;
+    private String regionCode;
     private String requestCount;
     private String requestId;
     private String requestedModelCatalogKey;
@@ -497,6 +498,14 @@ public class AiUsageFactRecord {
 
     public void setReferenceMultiplier(String referenceMultiplier) {
         this.referenceMultiplier = referenceMultiplier;
+    }
+
+    public String getRegionCode() {
+        return this.regionCode;
+    }
+
+    public void setRegionCode(String regionCode) {
+        this.regionCode = regionCode;
     }
 
     public String getRequestCount() {

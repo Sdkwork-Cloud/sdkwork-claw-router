@@ -72,6 +72,7 @@ async fn secret_ref_embeddings_relay_resolves_endpoint_and_secret_from_request_c
             model: "text-embedding-3-small".to_owned(),
             provider_code: "openrouter".to_owned(),
             provider_channel_id: 3001,
+            provider_region_code: "global".to_owned(),
             provider_model: "text-embedding-3-small".to_owned(),
             provider_base_url: Some(format!("http://{addr}")),
             provider_secret_ref: Some(secret_ref.to_owned()),
@@ -88,7 +89,7 @@ async fn secret_ref_embeddings_relay_resolves_endpoint_and_secret_from_request_c
             200,
             json!({
                 "object": "list",
-                "model": "openai/global/text-embedding-3-small",
+                "model": "text-embedding-3-small",
                 "data": [
                     {"object": "embedding", "index": 0, "embedding": [0.1, 0.2, 0.3]}
                 ],
@@ -128,6 +129,7 @@ async fn secret_ref_embeddings_relay_rejects_missing_endpoint_or_secret_ref_with
             model: "text-embedding-3-small".to_owned(),
             provider_code: "openrouter".to_owned(),
             provider_channel_id: 3001,
+            provider_region_code: "global".to_owned(),
             provider_model: "text-embedding-3-small".to_owned(),
             provider_base_url: None,
             provider_secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
@@ -152,6 +154,7 @@ async fn secret_ref_embeddings_relay_rejects_missing_endpoint_or_secret_ref_with
             model: "text-embedding-3-small".to_owned(),
             provider_code: "openrouter".to_owned(),
             provider_channel_id: 3001,
+            provider_region_code: "global".to_owned(),
             provider_model: "text-embedding-3-small".to_owned(),
             provider_base_url: Some("http://127.0.0.1:8080".to_owned()),
             provider_secret_ref: None,
@@ -183,7 +186,7 @@ async fn capture_embedding(
         StatusCode::OK,
         Json(json!({
             "object": "list",
-            "model": "openai/global/text-embedding-3-small",
+            "model": "text-embedding-3-small",
             "data": [
                 {"object": "embedding", "index": 0, "embedding": [0.1, 0.2, 0.3]}
             ],

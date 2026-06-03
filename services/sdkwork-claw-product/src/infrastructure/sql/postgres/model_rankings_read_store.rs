@@ -47,6 +47,21 @@ WITH selected_snapshot AS (
         snapshot_date DESC NULLS LAST,
         snapshot_period DESC NULLS LAST
     LIMIT 1
+),
+public_model_catalog AS (
+    SELECT DISTINCT m.catalog_key
+    FROM ai_model m
+    WHERE m.deleted_at IS NULL
+      AND m.status = 1
+      AND COALESCE(m.release_stage, 1) IN (1, 2)
+      AND COALESCE(m.shelf_state, 1) = 1
+      AND COALESCE(m.routing_state, 1) = 1
+      AND COALESCE(NULLIF(m.catalog_key, ''), '') <> ''
+      AND (
+          ($1 > 0 AND m.tenant_id = $1 AND m.organization_id = $2)
+          OR ($1 > 0 AND $2 > 0 AND m.tenant_id = $1 AND m.organization_id = 0)
+          OR (m.tenant_id = 0 AND m.organization_id = 0)
+      )
 )
 SELECT
     CAST(COALESCE(r.snapshot_date, CURRENT_DATE) AS TEXT) AS snapshot_date,
@@ -85,6 +100,8 @@ JOIN selected_snapshot s
  AND r.snapshot_date = s.snapshot_date
  AND r.snapshot_period = s.snapshot_period
  AND COALESCE(r.rank_scope, 'commercial-default') = s.rank_scope
+JOIN public_model_catalog visible_model
+  ON visible_model.catalog_key = NULLIF(r.catalog_key, '')
 WHERE r.status = 1
   AND ($4::text IS NULL OR lower(COALESCE(r.vendor_code, '')) = $4)
   AND ($5::int8 IS NULL OR r.modality = $5)
@@ -120,6 +137,21 @@ WITH selected_snapshot AS (
         snapshot_date DESC NULLS LAST,
         snapshot_period DESC NULLS LAST
     LIMIT 1
+),
+public_model_catalog AS (
+    SELECT DISTINCT m.catalog_key
+    FROM ai_model m
+    WHERE m.deleted_at IS NULL
+      AND m.status = 1
+      AND COALESCE(m.release_stage, 1) IN (1, 2)
+      AND COALESCE(m.shelf_state, 1) = 1
+      AND COALESCE(m.routing_state, 1) = 1
+      AND COALESCE(NULLIF(m.catalog_key, ''), '') <> ''
+      AND (
+          ($1 > 0 AND m.tenant_id = $1 AND m.organization_id = $2)
+          OR ($1 > 0 AND $2 > 0 AND m.tenant_id = $1 AND m.organization_id = 0)
+          OR (m.tenant_id = 0 AND m.organization_id = 0)
+      )
 )
 SELECT
     CAST(COALESCE(r.snapshot_date, CURRENT_DATE) AS TEXT) AS snapshot_date,
@@ -133,6 +165,8 @@ JOIN selected_snapshot s
  AND r.snapshot_date = s.snapshot_date
  AND r.snapshot_period = s.snapshot_period
  AND COALESCE(r.rank_scope, 'commercial-default') = s.rank_scope
+JOIN public_model_catalog visible_model
+  ON visible_model.catalog_key = NULLIF(r.catalog_key, '')
 WHERE r.status = 1
 ORDER BY r.rank_no ASC NULLS LAST, r.id ASC
 LIMIT 1
@@ -181,9 +215,24 @@ latest_snapshot AS (
     ORDER BY r.snapshot_date DESC NULLS LAST, r.snapshot_period DESC NULLS LAST
     LIMIT 1
 ),
+public_model_catalog AS (
+    SELECT DISTINCT m.catalog_key
+    FROM ai_model m
+    WHERE m.deleted_at IS NULL
+      AND m.status = 1
+      AND COALESCE(m.release_stage, 1) IN (1, 2)
+      AND COALESCE(m.shelf_state, 1) = 1
+      AND COALESCE(m.routing_state, 1) = 1
+      AND COALESCE(NULLIF(m.catalog_key, ''), '') <> ''
+      AND (
+          ($1 > 0 AND m.tenant_id = $1 AND m.organization_id = $2)
+          OR ($1 > 0 AND $2 > 0 AND m.tenant_id = $1 AND m.organization_id = 0)
+          OR (m.tenant_id = 0 AND m.organization_id = 0)
+      )
+),
 selected_catalog_keys AS (
     SELECT
-        COALESCE(NULLIF(r.catalog_key, ''), COALESCE(r.model, 'unknown')) AS catalog_key
+        NULLIF(r.catalog_key, '') AS catalog_key
     FROM ai_model_rank_snapshot r
     JOIN latest_snapshot s
       ON r.tenant_id = s.tenant_id
@@ -191,11 +240,13 @@ selected_catalog_keys AS (
      AND r.snapshot_date = s.snapshot_date
      AND r.snapshot_period = s.snapshot_period
      AND COALESCE(r.rank_scope, 'commercial-default') = s.rank_scope
+    JOIN public_model_catalog visible_model
+      ON visible_model.catalog_key = NULLIF(r.catalog_key, '')
     WHERE r.status = 1
       AND ($4::text IS NULL OR lower(COALESCE(r.vendor_code, '')) = $4)
       AND ($5::int8 IS NULL OR r.modality = $5)
       AND ($6::text IS NULL OR lower(COALESCE(r.model, '') || ' ' || COALESCE(r.vendor_name_snapshot, '') || ' ' || COALESCE(r.vendor_code, '')) LIKE $6)
-    GROUP BY COALESCE(NULLIF(r.catalog_key, ''), COALESCE(r.model, 'unknown'))
+    GROUP BY NULLIF(r.catalog_key, '')
     ORDER BY MIN(COALESCE(r.rank_no, 2147483647)) ASC, MAX(r.id) DESC
     LIMIT $7
 ),
@@ -244,7 +295,7 @@ ranked AS (
      AND r.snapshot_period = s.snapshot_period
      AND COALESCE(r.rank_scope, 'commercial-default') = s.rank_scope
      AND r.status = 1
-     AND COALESCE(NULLIF(r.catalog_key, ''), COALESCE(r.model, 'unknown')) = k.catalog_key
+     AND NULLIF(r.catalog_key, '') = k.catalog_key
 )
 SELECT
     snapshot_date,
@@ -285,6 +336,21 @@ WITH selected_snapshot AS (
         snapshot_date DESC NULLS LAST,
         snapshot_period DESC NULLS LAST
     LIMIT 1
+),
+public_model_catalog AS (
+    SELECT DISTINCT m.catalog_key
+    FROM ai_model m
+    WHERE m.deleted_at IS NULL
+      AND m.status = 1
+      AND COALESCE(m.release_stage, 1) IN (1, 2)
+      AND COALESCE(m.shelf_state, 1) = 1
+      AND COALESCE(m.routing_state, 1) = 1
+      AND COALESCE(NULLIF(m.catalog_key, ''), '') <> ''
+      AND (
+          ($1 > 0 AND m.tenant_id = $1 AND m.organization_id = $2)
+          OR ($1 > 0 AND $2 > 0 AND m.tenant_id = $1 AND m.organization_id = 0)
+          OR (m.tenant_id = 0 AND m.organization_id = 0)
+      )
 )
 SELECT
     CAST(r.tenant_id AS TEXT) AS tenant_id,
@@ -301,6 +367,8 @@ JOIN selected_snapshot s
  AND r.snapshot_date = s.snapshot_date
  AND r.snapshot_period = s.snapshot_period
  AND COALESCE(r.rank_scope, 'commercial-default') = s.rank_scope
+JOIN public_model_catalog visible_model
+  ON visible_model.catalog_key = NULLIF(r.catalog_key, '')
 WHERE r.status = 1
 ORDER BY r.rank_no ASC NULLS LAST, r.id ASC
 "#;

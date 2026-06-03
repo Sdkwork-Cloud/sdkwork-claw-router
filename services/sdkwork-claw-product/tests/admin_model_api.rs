@@ -113,6 +113,75 @@ async fn admin_model_catalog_route_returns_plus_result_with_catalog_price_view()
 }
 
 #[tokio::test]
+async fn admin_model_catalog_route_excludes_deprecated_hidden_and_unroutable_models() {
+    let mut catalog = catalog();
+    catalog.add_model(
+        AiModel::new("gpt-old", "GPT Old", "openai", vec!["chat"]).with_public_metadata(
+            sdkwork_claw_product::domain::AiModelPublicMetadata {
+                release_stage: Some(3),
+                shelf_state: Some(1),
+                routing_state: Some(1),
+                replacement_model: Some("openai/gpt-4o-mini".to_owned()),
+                ..Default::default()
+            },
+        ),
+    );
+    catalog.add_model(
+        AiModel::new("gpt-hidden", "GPT Hidden", "openai", vec!["chat"]).with_public_metadata(
+            sdkwork_claw_product::domain::AiModelPublicMetadata {
+                release_stage: Some(1),
+                shelf_state: Some(2),
+                routing_state: Some(1),
+                ..Default::default()
+            },
+        ),
+    );
+    catalog.add_model(
+        AiModel::new(
+            "gpt-catalog-only",
+            "GPT Catalog Only",
+            "openai",
+            vec!["chat"],
+        )
+        .with_public_metadata(sdkwork_claw_product::domain::AiModelPublicMetadata {
+            release_stage: Some(1),
+            shelf_state: Some(1),
+            routing_state: Some(0),
+            ..Default::default()
+        }),
+    );
+
+    let router = sdkwork_claw_product::api::admin_model_catalog_router(Arc::new(catalog));
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("GET")
+                .uri("/backend/v3/api/ai/models?api_key_id=100&billing_meter=llm_input_token&vendor_code=openai")
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    let body = axum::body::to_bytes(response.into_body(), usize::MAX)
+        .await
+        .unwrap();
+    let payload: serde_json::Value = serde_json::from_slice(&body).unwrap();
+    let models = payload["data"]["items"]
+        .as_array()
+        .unwrap()
+        .iter()
+        .map(|item| item["model"].as_str().unwrap())
+        .collect::<Vec<_>>();
+
+    assert!(models.contains(&"gpt-4o-mini"));
+    assert!(!models.contains(&"gpt-old"));
+    assert!(!models.contains(&"gpt-hidden"));
+    assert!(!models.contains(&"gpt-catalog-only"));
+}
+
+#[tokio::test]
 async fn admin_model_catalog_route_accepts_api_key_context_from_header() {
     let router = sdkwork_claw_product::api::admin_model_catalog_router(Arc::new(catalog()));
     let response = router

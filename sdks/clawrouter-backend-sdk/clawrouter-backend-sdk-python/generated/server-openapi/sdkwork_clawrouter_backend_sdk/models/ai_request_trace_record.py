@@ -42,6 +42,7 @@ class AiRequestTraceRecord:
     provider_model: Optional[str] = None
     provider_native_model: Optional[str] = None
     reasoning_effort: Optional[str] = None
+    region_code: Optional[str] = None
     request_bytes: Optional[str] = None
     request_id: Optional[str] = None
     request_path: Optional[str] = None

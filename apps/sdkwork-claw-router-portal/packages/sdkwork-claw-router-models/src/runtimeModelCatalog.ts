@@ -1,18 +1,25 @@
 import type {
   AppModelCatalogItem,
   AppModelCatalogPriceAvailability,
-  AppModelCatalogReferencePrice,
 } from '@sdkwork/clawrouter-app-sdk';
+import { parseModelCatalogIdentity } from 'sdkwork-claw-router-commons/model-catalog-identity';
 import { type Model, type ModelCategoryKey, type ModelGroupKey, type ModelPricingStatus } from './data/models.ts';
 
 type ModelModality = Model['modality'];
+type RuntimeReferencePrice = NonNullable<Model['pricing']['referencePrices']>[number];
+
+interface RuntimeModelCatalogReferencePrice {
+  regionCode: string;
+  billingMeter: string;
+  unitPrice: string;
+  currency: string;
+}
 
 export interface RuntimeModelCatalogItem {
   catalogKey: string;
   model: string;
   displayName: string;
   vendorCode: string;
-  regionCode: string;
   vendor: string;
   capabilities: string[];
   groups: ModelGroupKey[];
@@ -37,9 +44,7 @@ export interface RuntimeModelCatalogItem {
   routingState?: number | null;
   replacementModel?: string | null;
   providerCodes: string[];
-  officialReferenceUnitPrice?: string | null;
-  officialReferenceCurrency?: string | null;
-  officialReferencePrices: AppModelCatalogReferencePrice[];
+  officialReferencePrices: RuntimeModelCatalogReferencePrice[];
   priceAvailability: AppModelCatalogItem['priceAvailability'];
 }
 
@@ -117,7 +122,6 @@ function toModel(item: RuntimeModelCatalogItem): Model | null {
     id,
     modelId: modelName,
     vendorCode: item.vendorCode,
-    regionCode: item.regionCode,
     name: item.displayName.trim() || modelName,
     provider,
     modality,
@@ -144,7 +148,6 @@ function toRuntimeCatalogItem(item: unknown): RuntimeModelCatalogItem | null {
     typeof item.catalogKey !== 'string' ||
     typeof item.displayName !== 'string' ||
     typeof item.vendorCode !== 'string' ||
-    typeof item.regionCode !== 'string' ||
     typeof item.vendor !== 'string' ||
     !isStringArray(item.capabilities) ||
     !isStringArray(item.groups) ||
@@ -157,22 +160,19 @@ function toRuntimeCatalogItem(item: unknown): RuntimeModelCatalogItem | null {
   const model = normalizeRuntimeIdentifier(item.model);
   const catalogKey = normalizeCatalogKey(item.catalogKey);
   const vendorCode = normalizeRuntimeIdentifier(item.vendorCode);
-  const regionCode = normalizeRuntimeIdentifier(item.regionCode);
-  if (model === null || catalogKey === null || vendorCode === null || regionCode === null) {
+  if (model === null || catalogKey === null || vendorCode === null) {
     return null;
   }
-  if (!matchesRuntimeCatalogIdentity(catalogKey, vendorCode, regionCode, model)) {
+  if (!matchesRuntimeCatalogIdentity(catalogKey, vendorCode, model)) {
     return null;
   }
 
-  const officialReferenceUnitPrice = normalizeNullableString(item.officialReferenceUnitPrice);
-  const officialReferenceCurrency = normalizeNullableCurrency(item.officialReferenceCurrency);
+  const officialReferencePrices = normalizeReferencePrices(item.officialReferencePrices);
   return {
     catalogKey,
     model,
     displayName: sanitizePublicCatalogText(item.displayName, MAX_PUBLIC_MODEL_NAME_LENGTH),
     vendorCode,
-    regionCode,
     vendor: sanitizePublicCatalogText(item.vendor, MAX_PUBLIC_MODEL_NAME_LENGTH),
     capabilities: item.capabilities
       .map((capability) => sanitizePublicCatalogText(capability, MAX_PUBLIC_CAPABILITY_LENGTH))
@@ -201,10 +201,8 @@ function toRuntimeCatalogItem(item: unknown): RuntimeModelCatalogItem | null {
     providerCodes: item.providerCodes
       .map(normalizeRuntimeIdentifier)
       .filter((providerCode): providerCode is string => providerCode !== null),
-    officialReferenceUnitPrice,
-    officialReferenceCurrency,
-    officialReferencePrices: normalizeReferencePrices(item.officialReferencePrices),
-    priceAvailability: normalizePriceAvailability(item.priceAvailability, officialReferenceUnitPrice, item.officialReferencePrices),
+    officialReferencePrices,
+    priceAvailability: normalizePriceAvailability(item.priceAvailability, officialReferencePrices),
   };
 }
 
@@ -327,11 +325,9 @@ function normalizeNullablePositiveInteger(value: unknown): number | null | undef
 
 function normalizePriceAvailability(
   value: unknown,
-  officialReferenceUnitPrice: string | null | undefined,
-  officialReferencePrices: unknown,
+  officialReferencePrices: readonly AppModelCatalogReferencePrice[],
 ): AppModelCatalogPriceAvailability {
-  const hasReferencePrice = typeof officialReferenceUnitPrice === 'string' && officialReferenceUnitPrice.trim() !== ''
-    || normalizeReferencePrices(officialReferencePrices).length > 0;
+  const hasReferencePrice = officialReferencePrices.length > 0;
   const fallbackStatus = hasReferencePrice
     ? 'reference'
     : 'unavailable';
@@ -345,30 +341,40 @@ function normalizePriceAvailability(
   return reason === undefined || reason === '' ? { status } : { status, reason };
 }
 
-function normalizeReferencePrices(value: unknown): AppModelCatalogReferencePrice[] {
+function normalizeReferencePrices(value: unknown): RuntimeModelCatalogReferencePrice[] {
   if (!Array.isArray(value)) {
     return [];
   }
-  const byMeter = new Map<string, AppModelCatalogReferencePrice>();
+  const byRegionAndMeter = new Map<string, RuntimeModelCatalogReferencePrice>();
   for (const item of value) {
-    if (!isRecord(item) || typeof item.billingMeter !== 'string' || typeof item.unitPrice !== 'string') {
+    if (
+      !isRecord(item) ||
+      typeof item.regionCode !== 'string' ||
+      typeof item.billingMeter !== 'string' ||
+      typeof item.unitPrice !== 'string'
+    ) {
       continue;
     }
+    const regionCode = normalizeRuntimeIdentifier(item.regionCode);
     const billingMeter = normalizeRuntimeIdentifier(item.billingMeter);
     const currency = normalizeNullableCurrency(item.currency) ?? null;
-    if (billingMeter === null || currency === null || readPositiveDecimal(item.unitPrice) === null) {
+    if (regionCode === null || billingMeter === null || currency === null || readPositiveDecimal(item.unitPrice) === null) {
       continue;
     }
-    if (!byMeter.has(billingMeter)) {
-      byMeter.set(billingMeter, {
+    const priceKey = `${normalizeKey(regionCode)}/${normalizeKey(billingMeter)}`;
+    if (!byRegionAndMeter.has(priceKey)) {
+      byRegionAndMeter.set(priceKey, {
+        regionCode,
         billingMeter,
         unitPrice: item.unitPrice.trim(),
         currency,
       });
     }
   }
-  return Array.from(byMeter.values()).sort((left, right) => (
-    billingMeterSortKey(left.billingMeter) - billingMeterSortKey(right.billingMeter)
+  return Array.from(byRegionAndMeter.values()).sort((left, right) => (
+    modelRegionSortKey(left.regionCode) - modelRegionSortKey(right.regionCode)
+    || left.regionCode.localeCompare(right.regionCode)
+    || billingMeterSortKey(left.billingMeter) - billingMeterSortKey(right.billingMeter)
     || left.billingMeter.localeCompare(right.billingMeter)
   ));
 }
@@ -542,38 +548,44 @@ function runtimePricing(item: RuntimeModelCatalogItem): Model['pricing'] {
   const priceAvailability = item.priceAvailability;
   const referencePrices = item.officialReferencePrices
     .map((price) => ({
+      regionCode: price.regionCode,
       billingMeter: price.billingMeter,
       unitPrice: readPositiveDecimal(price.unitPrice),
       currency: price.currency,
     }))
-    .filter((price): price is { billingMeter: string; unitPrice: number; currency: string } => price.unitPrice !== null);
-  const selectedReferencePrice = referencePrices.find((price) => price.billingMeter === 'llm_input_token')
+    .filter((price): price is RuntimeReferencePrice => price.unitPrice !== null)
+    .sort((left, right) => (
+      modelRegionSortKey(left.regionCode) - modelRegionSortKey(right.regionCode)
+      || left.regionCode.localeCompare(right.regionCode)
+      || billingMeterSortKey(left.billingMeter) - billingMeterSortKey(right.billingMeter)
+      || left.billingMeter.localeCompare(right.billingMeter)
+    ));
+  const regionalReferencePrices = pricesForDefaultReferenceRegion(referencePrices);
+  const selectedReferencePrice = regionalReferencePrices.find((price) => price.billingMeter === 'llm_input_token')
+    ?? regionalReferencePrices[0]
     ?? referencePrices[0];
-  const officialReferenceUnitPrice = selectedReferencePrice?.unitPrice
-    ?? readPositiveDecimal(item.officialReferenceUnitPrice);
-  const referenceCurrency = selectedReferencePrice?.currency
-    ?? runtimePricingCurrency(item);
-  const fallbackInputPrice = referencePrices.length === 0 ? officialReferenceUnitPrice : null;
+  const selectedReferenceUnitPrice = selectedReferencePrice?.unitPrice ?? null;
+  const referenceCurrency = selectedReferencePrice?.currency ?? 'USD';
   const pricing: Model['pricing'] = {
-    input: referencePriceForModel(item, referencePrices, 'input') ?? fallbackInputPrice ?? 0,
-    output: referencePriceForModel(item, referencePrices, 'output') ?? 0,
-    cachedInput: referencePriceForModel(item, referencePrices, 'cachedInput') ?? undefined,
+    input: referencePriceForModel(item, regionalReferencePrices, 'input') ?? 0,
+    output: referencePriceForModel(item, regionalReferencePrices, 'output') ?? 0,
+    cachedInput: referencePriceForModel(item, regionalReferencePrices, 'cachedInput') ?? undefined,
     referencePrices,
-    unavailableFields: unavailablePricingFields(item, referencePrices, officialReferenceUnitPrice),
-    unit: runtimePricingUnit(item, referencePrices),
+    unavailableFields: unavailablePricingFields(item, regionalReferencePrices, selectedReferenceUnitPrice),
+    unit: runtimePricingUnit(item, regionalReferencePrices),
     currency: referenceCurrency,
   };
-  pricing.status = pricingStatus(officialReferenceUnitPrice);
-  pricing.reason = pricingReason(priceAvailability, officialReferenceUnitPrice);
+  pricing.status = pricingStatus(selectedReferenceUnitPrice);
+  pricing.reason = pricingReason(priceAvailability, selectedReferenceUnitPrice);
   return pricing;
 }
 
 function unavailablePricingFields(
   item: RuntimeModelCatalogItem,
-  prices: Array<{ billingMeter: string; unitPrice: number; currency: string }>,
-  officialReferenceUnitPrice: number | null,
+  prices: RuntimeReferencePrice[],
+  selectedReferenceUnitPrice: number | null,
 ): Array<'input' | 'output' | 'cachedInput'> {
-  if (officialReferenceUnitPrice === null) {
+  if (selectedReferenceUnitPrice === null) {
     return ['input', 'output', 'cachedInput'];
   }
   const fields: Array<'input' | 'output' | 'cachedInput'> = [];
@@ -585,13 +597,8 @@ function unavailablePricingFields(
   return fields;
 }
 
-function runtimePricingCurrency(item: RuntimeModelCatalogItem): string {
-  const normalized = item.officialReferenceCurrency?.trim().toUpperCase();
-  return normalized && /^[A-Z]{3}$/.test(normalized) ? normalized : 'USD';
-}
-
-function pricingStatus(officialReferenceUnitPrice: number | null): ModelPricingStatus {
-  if (officialReferenceUnitPrice !== null) {
+function pricingStatus(selectedReferenceUnitPrice: number | null): ModelPricingStatus {
+  if (selectedReferenceUnitPrice !== null) {
     return 'reference';
   }
   return 'unavailable';
@@ -599,12 +606,12 @@ function pricingStatus(officialReferenceUnitPrice: number | null): ModelPricingS
 
 function pricingReason(
   priceAvailability: AppModelCatalogPriceAvailability | undefined,
-  officialReferenceUnitPrice: number | null,
+  selectedReferenceUnitPrice: number | null,
 ): string | undefined {
   if (typeof priceAvailability?.reason === 'string' && priceAvailability.reason.trim() !== '') {
     return priceAvailability.reason;
   }
-  if (officialReferenceUnitPrice !== null) {
+  if (selectedReferenceUnitPrice !== null) {
     return 'Public reference price only. Customer-specific pricing requires an API key context.';
   }
   return 'Public reference price is not configured for this model.';
@@ -623,7 +630,7 @@ function readPositiveDecimal(value: string | null | undefined): number | null {
 
 function referencePriceForModel(
   item: RuntimeModelCatalogItem,
-  prices: Array<{ billingMeter: string; unitPrice: number; currency: string }>,
+  prices: RuntimeReferencePrice[],
   field: 'input' | 'output' | 'cachedInput',
 ): number | undefined {
   const modality = runtimeModalityFromItem(item) ?? runtimeModality(item.capabilities);
@@ -669,7 +676,7 @@ function metersForPricingField(
 
 function runtimePricingUnit(
   item: RuntimeModelCatalogItem,
-  prices: Array<{ billingMeter: string; unitPrice: number; currency: string }>,
+  prices: RuntimeReferencePrice[],
 ): string {
   const firstMeter = prices[0]?.billingMeter;
   const explicitUnit = firstMeter === undefined ? undefined : unitForBillingMeter(firstMeter);
@@ -783,6 +790,28 @@ function billingMeterSortKey(billingMeter: string): number {
   }
 }
 
+function pricesForDefaultReferenceRegion(prices: RuntimeReferencePrice[]): RuntimeReferencePrice[] {
+  const firstRegion = prices[0]?.regionCode;
+  if (firstRegion === undefined) {
+    return [];
+  }
+  const regionalPrices = prices.filter((price) => normalizeKey(price.regionCode) === normalizeKey(firstRegion));
+  return regionalPrices.length > 0 ? regionalPrices : prices;
+}
+
+function modelRegionSortKey(regionCode: string): number {
+  switch (normalizeKey(regionCode)) {
+    case 'global':
+      return 0;
+    case 'cn':
+    case 'china':
+    case 'mainland':
+      return 10;
+    default:
+      return 20;
+  }
+}
+
 function createRuntimeModel(
   id: string,
   modelName: string,
@@ -794,14 +823,13 @@ function createRuntimeModel(
     id,
     modelId: modelName,
     vendorCode: item.vendorCode,
-    regionCode: item.regionCode,
     name: modelName,
     provider,
     modality,
     context: '-',
     groups: [...item.groups],
     categories: [...item.categories],
-    pricing: { input: 0, output: 0, unit: 'unit', currency: runtimePricingCurrency(item) },
+    pricing: { input: 0, output: 0, unit: 'unit', currency: 'USD' },
     description: `${provider} runtime model ${modelName}.`,
     capabilities: [],
     latency: 'N/A',
@@ -827,8 +855,7 @@ function normalizeCatalogKey(value: string): string | null {
   if (normalized === null) {
     return null;
   }
-  const parts = normalized.split('/');
-  if (parts.length < 2 || parts.some((part) => part.length === 0)) {
+  if (parseModelCatalogIdentity(normalized) === null) {
     return null;
   }
   return normalized;
@@ -837,11 +864,9 @@ function normalizeCatalogKey(value: string): string | null {
 function matchesRuntimeCatalogIdentity(
   catalogKey: string,
   vendorCode: string,
-  regionCode: string,
   model: string,
 ): boolean {
-  return catalogKey === `${vendorCode}/${model}`
-    || catalogKey === `${vendorCode}/${regionCode}/${model}`;
+  return catalogKey === `${vendorCode}/${model}`;
 }
 
 function normalizeRuntimeIdentifierOrNullable(value: unknown): string | null | undefined {

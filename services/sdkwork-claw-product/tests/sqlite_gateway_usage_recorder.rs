@@ -25,7 +25,7 @@ async fn sqlite_gateway_usage_recorder_upserts_trace_and_usage_fact_without_dupl
     recorder.record_gateway_usage(command).await.unwrap();
 
     let trace = sqlx::query(
-        "SELECT request_id, trace_id, tenant_id, organization_id, user_id, api_key_id, channel_group_snapshot, requested_model, requested_model_catalog_key, provider_model, provider_native_model, http_status, streaming, prompt_tokens, completion_tokens, total_tokens, metadata, user_agent_hash FROM ai_request_trace",
+        "SELECT request_id, trace_id, tenant_id, organization_id, user_id, api_key_id, channel_group_snapshot, requested_model, requested_model_catalog_key, provider_model, provider_native_model, region_code, http_status, streaming, prompt_tokens, completion_tokens, total_tokens, metadata, user_agent_hash FROM ai_request_trace",
     )
     .fetch_one(&pool)
     .await
@@ -48,7 +48,7 @@ async fn sqlite_gateway_usage_recorder_upserts_trace_and_usage_fact_without_dupl
     );
     assert_eq!("gpt-4o-mini", trace.get::<String, _>("requested_model"));
     assert_eq!(
-        "openai/global/gpt-4o-mini",
+        "openai/gpt-4o-mini",
         trace.get::<String, _>("requested_model_catalog_key")
     );
     assert_eq!("gpt-4o-mini", trace.get::<String, _>("provider_model"));
@@ -56,6 +56,7 @@ async fn sqlite_gateway_usage_recorder_upserts_trace_and_usage_fact_without_dupl
         "gpt-4o-mini",
         trace.get::<String, _>("provider_native_model")
     );
+    assert_eq!("global", trace.get::<String, _>("region_code"));
     assert_eq!(200_i64, trace.get::<i64, _>("http_status"));
     assert_eq!(0_i64, trace.get::<i64, _>("streaming"));
     assert_eq!(11_i64, trace.get::<i64, _>("prompt_tokens"));
@@ -72,7 +73,7 @@ async fn sqlite_gateway_usage_recorder_upserts_trace_and_usage_fact_without_dupl
     assert!(user_agent_hash.chars().all(|ch| ch.is_ascii_hexdigit()));
 
     let usage = sqlx::query(
-        "SELECT request_id, api_key_id, catalog_key, requested_model_catalog_key, model, provider_native_model, channel_id, usage_type, billing_meter_code, billable_quantity, prompt_tokens, completion_tokens, cached_tokens, total_tokens, base_input_unit_price, base_output_unit_price, cache_read_unit_price, rate_multiplier, reference_multiplier, official_reference_amount, upstream_cost_amount, customer_charge_amount, cost_amount, currency, pricing_plan_code, pricing_snapshot, occurred_at, settlement_status FROM ai_usage_fact",
+        "SELECT request_id, api_key_id, catalog_key, requested_model_catalog_key, model, provider_native_model, region_code, channel_id, usage_type, billing_meter_code, billable_quantity, prompt_tokens, completion_tokens, cached_tokens, total_tokens, base_input_unit_price, base_output_unit_price, cache_read_unit_price, rate_multiplier, reference_multiplier, official_reference_amount, upstream_cost_amount, customer_charge_amount, cost_amount, currency, pricing_plan_code, pricing_snapshot, occurred_at, settlement_status FROM ai_usage_fact",
     )
     .fetch_one(&pool)
     .await
@@ -82,12 +83,9 @@ async fn sqlite_gateway_usage_recorder_upserts_trace_and_usage_fact_without_dupl
         usage.get::<String, _>("request_id")
     );
     assert_eq!(101_i64, usage.get::<i64, _>("api_key_id"));
+    assert_eq!("openai/gpt-4o-mini", usage.get::<String, _>("catalog_key"));
     assert_eq!(
-        "openai/global/gpt-4o-mini",
-        usage.get::<String, _>("catalog_key")
-    );
-    assert_eq!(
-        "openai/global/gpt-4o-mini",
+        "openai/gpt-4o-mini",
         usage.get::<String, _>("requested_model_catalog_key")
     );
     assert_eq!("gpt-4o-mini", usage.get::<String, _>("model"));
@@ -95,6 +93,7 @@ async fn sqlite_gateway_usage_recorder_upserts_trace_and_usage_fact_without_dupl
         "gpt-4o-mini",
         usage.get::<String, _>("provider_native_model")
     );
+    assert_eq!("global", usage.get::<String, _>("region_code"));
     assert_eq!(3001_i64, usage.get::<i64, _>("channel_id"));
     assert_eq!(1_i64, usage.get::<i64, _>("usage_type"));
     assert_eq!(
@@ -124,7 +123,7 @@ async fn sqlite_gateway_usage_recorder_upserts_trace_and_usage_fact_without_dupl
         serde_json::from_str(&usage.get::<String, _>("pricing_snapshot")).unwrap();
     assert_eq!("openai", pricing_snapshot["vendor"]["code"]);
     assert_eq!(
-        "openai/global/gpt-4o-mini",
+        "openai/gpt-4o-mini",
         pricing_snapshot["model"]["catalogKey"]
     );
     assert_eq!("openrouter", pricing_snapshot["provider"]["code"]);
@@ -213,7 +212,7 @@ async fn sqlite_gateway_usage_recorder_records_failed_trace_without_usage_fact()
     );
     assert_eq!("gpt-4o-mini", trace.get::<String, _>("requested_model"));
     assert_eq!(
-        "openai/global/gpt-4o-mini",
+        "openai/gpt-4o-mini",
         trace.get::<String, _>("requested_model_catalog_key")
     );
     assert_eq!("gpt-4o-mini", trace.get::<String, _>("provider_model"));
@@ -258,9 +257,9 @@ async fn sqlite_gateway_usage_recorder_uses_command_modality_and_meter() {
     create_usage_tables(&pool).await;
     let recorder = SqliteGatewayUsageRecorder::new(pool.clone());
     let mut command = usage_command("req-embedding-usage-sqlite", 200);
-    command.catalog_key = "openai/global/text-embedding-3-small".to_owned();
+    command.catalog_key = "openai/text-embedding-3-small".to_owned();
     command.requested_model = "text-embedding-3-small".to_owned();
-    command.requested_model_catalog_key = "openai/global/text-embedding-3-small".to_owned();
+    command.requested_model_catalog_key = "openai/text-embedding-3-small".to_owned();
     command.provider_model = "text-embedding-3-small".to_owned();
     command.provider_native_model = "text-embedding-3-small".to_owned();
     command.request_path = "/v1/embeddings".to_owned();
@@ -542,9 +541,9 @@ async fn sqlite_gateway_usage_recorder_records_request_and_video_duration_as_ind
 
     let mut request_charge = usage_command("req-video-generation-billing", 200);
     request_charge.trace_id = Some("trace-video-generation-billing".to_owned());
-    request_charge.catalog_key = "openai/global/sora-video".to_owned();
+    request_charge.catalog_key = "openai/sora-video".to_owned();
     request_charge.requested_model = "sora-video".to_owned();
-    request_charge.requested_model_catalog_key = "openai/global/sora-video".to_owned();
+    request_charge.requested_model_catalog_key = "openai/sora-video".to_owned();
     request_charge.provider_model = "sora-video".to_owned();
     request_charge.provider_native_model = "sora-video".to_owned();
     request_charge.request_path = "/app/v3/api/runtime/generations/video".to_owned();
@@ -682,13 +681,14 @@ fn usage_command(request_id: &str, http_status: u16) -> GatewayUsageRecordComman
         api_key_name_snapshot: "Owner Usage Key".to_owned(),
         channel_group_id: 10,
         channel_group_snapshot: "standard-group".to_owned(),
-        catalog_key: "openai/global/gpt-4o-mini".to_owned(),
+        catalog_key: "openai/gpt-4o-mini".to_owned(),
         requested_model: "gpt-4o-mini".to_owned(),
-        requested_model_catalog_key: "openai/global/gpt-4o-mini".to_owned(),
+        requested_model_catalog_key: "openai/gpt-4o-mini".to_owned(),
         provider_code: "openrouter".to_owned(),
         channel_id: 3001,
         provider_model: "gpt-4o-mini".to_owned(),
         provider_native_model: "gpt-4o-mini".to_owned(),
+        region_code: "global".to_owned(),
         request_path: "/v1/chat/completions".to_owned(),
         http_method: "POST".to_owned(),
         user_agent: Some(
@@ -726,7 +726,7 @@ fn usage_command(request_id: &str, http_status: u16) -> GatewayUsageRecordComman
         upstream_cost_amount: "4.290000".to_owned(),
         currency: "USD".to_owned(),
         pricing_plan_code: "standard".to_owned(),
-        pricing_snapshot: r#"{"vendor":{"code":"openai"},"model":{"catalogKey":"openai/global/gpt-4o-mini"},"provider":{"code":"openrouter"},"pricingPlan":{"code":"standard"},"multipliers":{"rate":"1.000000","reference":"1.320000"},"meters":{"input":{"customerUnitPrice":"0.198000"},"output":{"customerUnitPrice":"0.792000"},"cacheRead":{"customerUnitPrice":"0.099000"}}}"#.to_owned(),
+        pricing_snapshot: r#"{"vendor":{"code":"openai"},"model":{"catalogKey":"openai/gpt-4o-mini"},"provider":{"code":"openrouter"},"pricingPlan":{"code":"standard"},"multipliers":{"rate":"1.000000","reference":"1.320000"},"meters":{"input":{"customerUnitPrice":"0.198000"},"output":{"customerUnitPrice":"0.792000"},"cacheRead":{"customerUnitPrice":"0.099000"}}}"#.to_owned(),
     }
 }
 
@@ -741,13 +741,14 @@ fn failed_trace_command(request_id: &str) -> GatewayRequestTraceCommand {
         api_key_name_snapshot: "Owner Usage Key".to_owned(),
         channel_group_id: 10,
         channel_group_snapshot: "standard-group".to_owned(),
-        catalog_key: "openai/global/gpt-4o-mini".to_owned(),
+        catalog_key: "openai/gpt-4o-mini".to_owned(),
         requested_model: "gpt-4o-mini".to_owned(),
-        requested_model_catalog_key: "openai/global/gpt-4o-mini".to_owned(),
+        requested_model_catalog_key: "openai/gpt-4o-mini".to_owned(),
         provider_code: "openrouter".to_owned(),
         channel_id: 3001,
         provider_model: "gpt-4o-mini".to_owned(),
         provider_native_model: "gpt-4o-mini".to_owned(),
+        region_code: "global".to_owned(),
         request_path: "/v1/chat/completions".to_owned(),
         http_method: "POST".to_owned(),
         user_agent: Some("Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/126.0.0.0".to_owned()),
@@ -790,6 +791,7 @@ async fn create_usage_tables(pool: &sqlx::SqlitePool) {
             requested_model_catalog_key TEXT,
             provider_model TEXT,
             provider_native_model TEXT,
+            region_code TEXT,
             endpoint TEXT,
             request_path TEXT,
             http_method TEXT,
@@ -831,6 +833,7 @@ async fn create_usage_tables(pool: &sqlx::SqlitePool) {
             requested_model_catalog_key TEXT,
             model TEXT,
             provider_native_model TEXT,
+            region_code TEXT,
             channel_id INTEGER,
             modality INTEGER,
             usage_type INTEGER,

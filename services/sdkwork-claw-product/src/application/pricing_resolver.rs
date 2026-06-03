@@ -4,6 +4,8 @@ use crate::domain::{
 };
 use crate::ports::PricingCatalog;
 
+const DEFAULT_PRICE_REGION_CODE: &str = "global";
+
 pub struct PricingResolver<'a, C: PricingCatalog> {
     catalog: &'a C,
 }
@@ -15,6 +17,7 @@ pub struct ResolveModelPriceQuery {
     pub billing_meter: BillingMeter,
     pub provider_code: Option<String>,
     pub channel_id: Option<i64>,
+    pub region_code: Option<String>,
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
@@ -52,16 +55,26 @@ impl<'a, C: PricingCatalog> PricingResolver<'a, C> {
         let plan = self.find_plan(&group.pricing_plan_code)?;
         let model = self.find_model(&query.model)?;
         let vendor = self.find_vendor(&model.vendor_code)?;
+        let explicit_region_code = query
+            .region_code
+            .as_deref()
+            .and_then(normalized_optional_region_code);
         let route = match query.provider_code.as_deref() {
-            Some(provider_code) => {
-                Some(self.find_provider_route(&query.model, provider_code, query.channel_id)?)
-            }
+            Some(provider_code) => Some(self.find_provider_route(
+                &query.model,
+                provider_code,
+                query.channel_id,
+                explicit_region_code.as_deref(),
+            )?),
             None => None,
         };
-        let region_code = route
-            .as_ref()
-            .map(|route| normalize_region_code(&route.region_code))
-            .unwrap_or_else(|| normalize_region_code(&model.region_code));
+        let region_code = explicit_region_code
+            .or_else(|| {
+                route
+                    .as_ref()
+                    .map(|route| normalize_region_code(&route.region_code))
+            })
+            .unwrap_or_else(|| DEFAULT_PRICE_REGION_CODE.to_owned());
         let upstream = self.find_upstream_cost(&query, &region_code);
         let price_scope = upstream
             .as_ref()
@@ -218,6 +231,7 @@ impl<'a, C: PricingCatalog> PricingResolver<'a, C> {
         model: &str,
         provider_code: &str,
         channel_id: Option<i64>,
+        region_code: Option<&str>,
     ) -> DomainResult<crate::domain::ModelProviderRoute> {
         if let Some(route) = self
             .catalog
@@ -227,6 +241,9 @@ impl<'a, C: PricingCatalog> PricingResolver<'a, C> {
                 route.provider_code == provider_code
                     && channel_id
                         .map(|channel_id| route.channel_id == channel_id)
+                        .unwrap_or(true)
+                    && region_code
+                        .map(|region_code| same_region(&route.region_code, region_code))
                         .unwrap_or(true)
             })
         {
@@ -241,6 +258,9 @@ impl<'a, C: PricingCatalog> PricingResolver<'a, C> {
                 route.provider_code == provider_code
                     && channel_id
                         .map(|channel_id| route.channel_id == channel_id)
+                        .unwrap_or(true)
+                    && region_code
+                        .map(|region_code| same_region(&route.region_code, region_code))
                         .unwrap_or(true)
             })
         {
@@ -274,6 +294,15 @@ fn normalize_region_code(value: &str) -> String {
         "global".to_owned()
     } else {
         value.to_owned()
+    }
+}
+
+fn normalized_optional_region_code(value: &str) -> Option<String> {
+    let value = value.trim();
+    if value.is_empty() {
+        None
+    } else {
+        Some(normalize_region_code(value))
     }
 }
 

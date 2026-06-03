@@ -4,8 +4,8 @@ use sdkwork_claw_product::application::ApiKeySecretCodec;
 use sdkwork_claw_product::infrastructure::crypto::RingAeadApiKeySecretCodec;
 use sdkwork_claw_product::infrastructure::sql::sqlite::SqliteAdminChannelStore;
 use sdkwork_claw_product::ports::{
-    AdminChannelStore, AdminChannelSubject, CreateAdminChannelCommand, DeleteAdminChannelCommand,
-    ListAdminChannelsQuery, UpdateAdminChannelCommand,
+    AdminChannelCredentialInput, AdminChannelStore, AdminChannelSubject, CreateAdminChannelCommand,
+    DeleteAdminChannelCommand, ListAdminChannelsQuery, UpdateAdminChannelCommand,
 };
 use sdkwork_claw_product_test_support::schema_sqlite_pool;
 use serde_json::Value;
@@ -35,11 +35,19 @@ async fn sqlite_admin_channel_store_encrypts_channel_api_key_material() {
             channel_type: "official".to_owned(),
             protocol: "OpenAI".to_owned(),
             access_type: "Standard API Key".to_owned(),
-            base_url: Some("https://api.openai.com/v1".to_owned()),
-            secret_ref: "secret://ai-channels/openai/testhash".to_owned(),
-            secret_hash: "test-secret-hash".to_owned(),
-            masked_label: "sk-l***cret".to_owned(),
-            credential_material: Some("sk-live-provider-secret".to_owned()),
+            credential_rotation: "weighted_round_robin".to_owned(),
+            credentials: vec![AdminChannelCredentialInput {
+                credential_uuid: "channel-credential-api-key-credential".to_owned(),
+                name: "primary".to_owned(),
+                base_url: "https://api.openai.com/v1".to_owned(),
+                secret_ref: "secret://ai-channel-credentials/openai/testhash".to_owned(),
+                secret_hash: "test-secret-hash".to_owned(),
+                masked_label: "sk-l***cret".to_owned(),
+                credential_material: Some("sk-live-provider-secret".to_owned()),
+                priority: 10,
+                weight: 100,
+                status: "active".to_owned(),
+            }],
             models: vec!["openai/gpt-4o-mini".to_owned()],
             capabilities: vec!["llm".to_owned()],
             resource_codes: vec![
@@ -59,9 +67,11 @@ async fn sqlite_admin_channel_store_encrypts_channel_api_key_material() {
         .await
         .unwrap();
 
+    assert_eq!("weighted_round_robin", item.credential_rotation);
+    assert_eq!(1, item.credentials.len());
     assert_eq!(
-        Some("secret://ai-channels/openai/testhash"),
-        item.secret_ref.as_deref()
+        "secret://ai-channel-credentials/openai/testhash",
+        item.credentials[0].secret_ref
     );
     assert_eq!("2026-05-18 12:00:00", item.created_at);
     assert_eq!(Some("2026-06-30T08:00:00Z"), item.expires_at.as_deref());
@@ -77,9 +87,9 @@ async fn sqlite_admin_channel_store_encrypts_channel_api_key_material() {
         channel_metadata.get("expiresAt").and_then(Value::as_str)
     );
     let auth_config_json: String = sqlx::query_scalar(
-        "SELECT CAST(auth_config AS TEXT) FROM ai_channel WHERE credential_ref = ?",
+        "SELECT CAST(auth_config AS TEXT) FROM ai_channel_credential WHERE credential_ref = ?",
     )
-    .bind("secret://ai-channels/openai/testhash")
+    .bind("secret://ai-channel-credentials/openai/testhash")
     .fetch_one(&pool)
     .await
     .unwrap();
@@ -118,7 +128,10 @@ async fn sqlite_admin_channel_store_encrypts_channel_api_key_material() {
         .unwrap();
     assert_eq!(
         Some("sk-live-provider-secret"),
-        listed.first().and_then(|item| item.api_key.as_deref())
+        listed
+            .first()
+            .and_then(|item| item.credentials.first())
+            .and_then(|credential| credential.api_key.as_deref())
     );
     assert_eq!(
         Some("2026-06-30T08:00:00Z"),
@@ -147,8 +160,10 @@ async fn sqlite_admin_channel_store_encrypts_channel_api_key_material() {
             .unwrap_or_default()
     );
     let channel_type: String =
-        sqlx::query_scalar("SELECT channel_type FROM ai_channel WHERE credential_ref = ?")
-            .bind("secret://ai-channels/openai/testhash")
+        sqlx::query_scalar(
+            "SELECT c.channel_type FROM ai_channel c JOIN ai_channel_credential cc ON cc.channel_id = c.id WHERE cc.credential_ref = ?",
+        )
+            .bind("secret://ai-channel-credentials/openai/testhash")
             .fetch_one(&pool)
             .await
             .unwrap();
@@ -263,11 +278,19 @@ async fn sqlite_admin_channel_store_updates_modality_resources_without_clearing_
             channel_type: "official".to_owned(),
             protocol: "OpenAI".to_owned(),
             access_type: "Standard API Key".to_owned(),
-            base_url: Some("https://api.openai.com/v1".to_owned()),
-            secret_ref: "secret://ai-channels/openai/modality-resource".to_owned(),
-            secret_hash: "modality-resource-secret-hash".to_owned(),
-            masked_label: "sk-m***ource".to_owned(),
-            credential_material: Some("sk-live-modality-resource".to_owned()),
+            credential_rotation: "priority".to_owned(),
+            credentials: vec![AdminChannelCredentialInput {
+                credential_uuid: "channel-credential-modality-resource".to_owned(),
+                name: "primary".to_owned(),
+                base_url: "https://api.openai.com/v1".to_owned(),
+                secret_ref: "secret://ai-channel-credentials/openai/modality-resource".to_owned(),
+                secret_hash: "modality-resource-secret-hash".to_owned(),
+                masked_label: "sk-m***ource".to_owned(),
+                credential_material: Some("sk-live-modality-resource".to_owned()),
+                priority: 10,
+                weight: 100,
+                status: "active".to_owned(),
+            }],
             models: vec!["openai/gpt-4o-mini".to_owned()],
             capabilities: vec!["llm".to_owned()],
             resource_codes: vec![
@@ -305,11 +328,8 @@ async fn sqlite_admin_channel_store_updates_modality_resources_without_clearing_
             channel_type: None,
             protocol: None,
             access_type: None,
-            base_url: None,
-            secret_ref: None,
-            secret_hash: None,
-            masked_label: None,
-            credential_material: None,
+            credential_rotation: None,
+            credentials: None,
             models: None,
             capabilities: Some(vec!["llm".to_owned(), "image".to_owned()]),
             resource_codes: None,
@@ -370,10 +390,9 @@ async fn sqlite_admin_channel_store_allows_duplicate_secret_hash_for_distinct_ch
     let channel_count: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
-        FROM ai_channel
+        FROM ai_channel_credential
         WHERE tenant_id = 10
           AND organization_id = 20
-          AND provider_code = 'openai'
           AND credential_hash = 'duplicate-secret-hash'
           AND deleted_at IS NULL
         "#,
@@ -432,6 +451,13 @@ async fn sqlite_admin_channel_store_soft_delete_cascades_channel_relationships()
               AND deleted_at IS NULL
         ) + (
             SELECT COUNT(1)
+            FROM ai_channel_credential
+            WHERE tenant_id = 10
+              AND organization_id = 20
+              AND channel_id = ?
+              AND deleted_at IS NULL
+        ) + (
+            SELECT COUNT(1)
             FROM ai_channel_resource
             WHERE tenant_id = 10
               AND organization_id = 20
@@ -454,6 +480,7 @@ async fn sqlite_admin_channel_store_soft_delete_cascades_channel_relationships()
         )
         "#,
     )
+    .bind(created.id)
     .bind(created.id)
     .bind(created.id)
     .bind(created.id)
@@ -485,11 +512,19 @@ fn duplicate_secret_channel_command(suffix: &str, requested_at: &str) -> CreateA
         channel_type: "official".to_owned(),
         protocol: "OpenAI".to_owned(),
         access_type: "Standard API Key".to_owned(),
-        base_url: Some("https://api.openai.com/v1".to_owned()),
-        secret_ref: format!("secret://ai-channels/openai/duplicate/{suffix}"),
-        secret_hash: "duplicate-secret-hash".to_owned(),
-        masked_label: "sk-l***same".to_owned(),
-        credential_material: Some("sk-live-duplicate-provider-secret".to_owned()),
+        credential_rotation: "default".to_owned(),
+        credentials: vec![AdminChannelCredentialInput {
+            credential_uuid: format!("channel-credential-duplicate-secret-{suffix}"),
+            name: "primary".to_owned(),
+            base_url: "https://api.openai.com/v1".to_owned(),
+            secret_ref: format!("secret://ai-channel-credentials/openai/duplicate/{suffix}"),
+            secret_hash: "duplicate-secret-hash".to_owned(),
+            masked_label: "sk-l***same".to_owned(),
+            credential_material: Some("sk-live-duplicate-provider-secret".to_owned()),
+            priority: 100,
+            weight: 100,
+            status: "active".to_owned(),
+        }],
         models: vec!["openai/gpt-4o-mini".to_owned()],
         capabilities: vec!["llm".to_owned()],
         resource_codes: Vec::new(),

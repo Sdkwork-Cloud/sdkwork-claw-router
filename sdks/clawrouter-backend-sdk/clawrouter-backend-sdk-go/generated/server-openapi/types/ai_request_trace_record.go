@@ -38,6 +38,7 @@ type AiRequestTraceRecord struct {
 	ProviderModel string `json:"provider_model"`
 	ProviderNativeModel string `json:"provider_native_model"`
 	ReasoningEffort string `json:"reasoning_effort"`
+	RegionCode string `json:"region_code"`
 	RequestBytes string `json:"request_bytes"`
 	RequestId string `json:"request_id"`
 	RequestPath string `json:"request_path"`

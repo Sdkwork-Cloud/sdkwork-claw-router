@@ -141,8 +141,8 @@ export function RecordAdmin() {
       {/* Main Data Table */}
       <AdminTableShell
         data-admin-record-table-card
-        className="rounded-xl dark:bg-[#1a1a1a]"
-        viewportClassName="relative"
+        className="flex-1 min-h-0 rounded-xl dark:bg-[#1a1a1a]"
+        viewportClassName="min-h-0 flex-1 relative"
         viewportProps={{ 'data-admin-record-table-viewport': true }}
         footer={(
           <div className="p-4 border-t border-slate-200 dark:border-white/10 flex items-center justify-between text-xs mt-auto bg-slate-50 dark:bg-[#121212]">

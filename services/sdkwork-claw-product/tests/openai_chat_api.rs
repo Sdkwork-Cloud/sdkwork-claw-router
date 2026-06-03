@@ -10,8 +10,8 @@ use sdkwork_claw_product::api::{
 };
 use sdkwork_claw_product::application::ApiKeySecretHasher;
 use sdkwork_claw_product::domain::{
-    AiModel, BillingMeter, ChannelGroup, DecimalValue, GatewayApiKey, ModelMappingRule,
-    ModelMappingScope, ModelPrice, ModelProviderRoute, ModelVendor, ModelVendorDefinition, Money,
+    AiModel, BillingMeter, ChannelGroup, DecimalValue, GatewayApiKey, ModelMappingBindingType,
+    ModelMappingRule, ModelPrice, ModelProviderRoute, ModelVendor, ModelVendorDefinition, Money,
     PriceSide, PricingPlan, ProviderAuthProfile, ProviderChannelRoute, ProviderRetryPolicy,
     RouteCandidate, RoutingCapability, RoutingPolicy, RoutingPolicyScope, RoutingRule,
 };
@@ -834,7 +834,7 @@ async fn openai_chat_completions_applies_model_mapping_before_provider_relay() {
     catalog.add_model_mapping(
         ModelMappingRule::new(
             1,
-            ModelMappingScope::Global,
+            ModelMappingBindingType::Global,
             "openai-fast",
             "openai/gpt-4o-mini",
             100,
@@ -844,12 +844,12 @@ async fn openai_chat_completions_applies_model_mapping_before_provider_relay() {
     catalog.add_model_mapping(
         ModelMappingRule::new(
             2,
-            ModelMappingScope::Channel,
+            ModelMappingBindingType::Channel,
             "openai-fast",
             "openai/gpt-4o-mini",
             10,
         )
-        .with_channel_id(3001)
+        .with_binding_id(3001)
         .with_target_provider_model("openrouter/gpt-4o-mini-account"),
     );
     let captured = Arc::new(Mutex::new(Vec::new()));
@@ -926,12 +926,12 @@ async fn openai_chat_completions_channel_model_mapping_switches_target_route_on_
     catalog.add_model_mapping(
         ModelMappingRule::new(
             3,
-            ModelMappingScope::Channel,
+            ModelMappingBindingType::Channel,
             "gpt-4o-mini",
             "openai/gpt-4o",
             10,
         )
-        .with_channel_id(3001),
+        .with_binding_id(3001),
     );
     let captured = Arc::new(Mutex::new(Vec::new()));
     let relay = Arc::new(RecordingRelay::new(Arc::clone(&captured)));

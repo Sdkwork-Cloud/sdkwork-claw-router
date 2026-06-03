@@ -648,16 +648,6 @@
             "nullable": true,
             "type": "string"
           },
-          "cacheReadPrice": {
-            "description": "Optional official reference cache-read unit price in USD.",
-            "pattern": "^$|^[0-9]+(\\.[0-9]{1,12})?$",
-            "type": "string"
-          },
-          "cacheWritePrice": {
-            "description": "Optional official reference cache-write unit price in USD.",
-            "pattern": "^$|^[0-9]+(\\.[0-9]{1,12})?$",
-            "type": "string"
-          },
           "capabilityIntro": {
             "description": "Capability intro field on admin ai model create request.",
             "maxLength": 4096,
@@ -724,7 +714,7 @@
           },
           "model": {
             "description": "Runtime model identifier used for provider calls, routing, and pricing keys.",
-            "maxLength": 128,
+            "maxLength": 256,
             "minLength": 1,
             "pattern": "^[A-Za-z0-9._:/-]+$",
             "type": "string"
@@ -739,16 +729,6 @@
             },
             "maxItems": 16,
             "type": "array"
-          },
-          "priceIn": {
-            "description": "Official reference input unit price in USD.",
-            "pattern": "^[0-9]+(\\.[0-9]{1,12})?$",
-            "type": "string"
-          },
-          "priceOut": {
-            "description": "Official reference output unit price in USD.",
-            "pattern": "^[0-9]+(\\.[0-9]{1,12})?$",
-            "type": "string"
           },
           "regionPrices": {
             "description": "Official reference prices by region.",
@@ -847,8 +827,7 @@
           "vendorId",
           "model",
           "type",
-          "priceIn",
-          "priceOut",
+          "regionPrices",
           "contextTokens"
         ],
         "type": "object"
@@ -861,16 +840,6 @@
             "description": "Api format field on admin ai model item.",
             "maxLength": 128,
             "nullable": true,
-            "type": "string"
-          },
-          "cacheReadPrice": {
-            "description": "Cache read price field on admin ai model item.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "cacheWritePrice": {
-            "description": "Cache write price field on admin ai model item.",
-            "maxLength": 64,
             "type": "string"
           },
           "calls": {
@@ -951,7 +920,7 @@
           },
           "model": {
             "description": "Runtime model identifier used for provider calls, routing, and pricing keys.",
-            "maxLength": 128,
+            "maxLength": 256,
             "minLength": 1,
             "pattern": "^[A-Za-z0-9._:/-]+$",
             "type": "string"
@@ -973,17 +942,14 @@
             "maxItems": 16,
             "type": "array"
           },
-          "priceIn": {
-            "description": "Price in field on admin ai model item.",
-            "maxLength": 64,
-            "minLength": 1,
-            "type": "string"
-          },
-          "priceOut": {
-            "description": "Price out field on admin ai model item.",
-            "maxLength": 64,
-            "minLength": 1,
-            "type": "string"
+          "regionPrices": {
+            "description": "Region prices field on admin ai model item.",
+            "items": {
+              "$ref": "#/components/schemas/AdminAiModelRegionPrice"
+            },
+            "maxItems": 32,
+            "minItems": 1,
+            "type": "array"
           },
           "releaseStage": {
             "description": "Release stage field on admin ai model item.",
@@ -1091,10 +1057,7 @@
           "displayName",
           "name",
           "type",
-          "priceIn",
-          "priceOut",
-          "cacheReadPrice",
-          "cacheWritePrice",
+          "regionPrices",
           "status",
           "calls",
           "description",
@@ -1140,7 +1103,7 @@
       },
       "AdminAiModelRegionPrice": {
         "additionalProperties": false,
-        "description": "Regional official reference pricing input for admin AI model commands.",
+        "description": "Regional official reference pricing returned by admin AI model payloads.",
         "properties": {
           "cacheReadPrice": {
             "description": "Optional official reference cache-read unit price in USD.",
@@ -1186,16 +1149,6 @@
             "description": "Api format field on admin ai model update request.",
             "maxLength": 128,
             "nullable": true,
-            "type": "string"
-          },
-          "cacheReadPrice": {
-            "description": "Optional official reference cache-read unit price in USD. Empty string clears the cache-read price.",
-            "pattern": "^$|^[0-9]+(\\.[0-9]{1,12})?$",
-            "type": "string"
-          },
-          "cacheWritePrice": {
-            "description": "Optional official reference cache-write unit price in USD. Empty string clears the cache-write price.",
-            "pattern": "^$|^[0-9]+(\\.[0-9]{1,12})?$",
             "type": "string"
           },
           "capabilityIntro": {
@@ -1264,7 +1217,7 @@
           },
           "model": {
             "description": "Optional runtime model identifier update.",
-            "maxLength": 128,
+            "maxLength": 256,
             "minLength": 1,
             "pattern": "^[A-Za-z0-9._:/-]+$",
             "type": "string"
@@ -1279,16 +1232,6 @@
             },
             "maxItems": 16,
             "type": "array"
-          },
-          "priceIn": {
-            "description": "Optional official reference input unit price in USD.",
-            "pattern": "^[0-9]+(\\.[0-9]{1,12})?$",
-            "type": "string"
-          },
-          "priceOut": {
-            "description": "Optional official reference output unit price in USD.",
-            "pattern": "^[0-9]+(\\.[0-9]{1,12})?$",
-            "type": "string"
           },
           "regionPrices": {
             "description": "Optional official reference prices by region.",
@@ -5910,17 +5853,6 @@
             "minLength": 1,
             "type": "string"
           },
-          "apiKey": {
-            "description": "Plaintext provider API key accepted only on create/update input. Backend encrypts it into ai_channel.auth_config and never returns it.",
-            "maxLength": 4096,
-            "minLength": 1,
-            "type": "string"
-          },
-          "baseUrl": {
-            "description": "Base url field on admin channel create request.",
-            "maxLength": 512,
-            "type": "string"
-          },
           "capabilities": {
             "description": "Capabilities field on admin channel create request.",
             "items": {
@@ -5954,6 +5886,27 @@
               }
             ],
             "description": "Circuit breaker policy field on admin channel create request."
+          },
+          "credentialRotation": {
+            "description": "Credential selection strategy for the upstream credential list.",
+            "enum": [
+              "default",
+              "priority",
+              "round_robin",
+              "weighted_round_robin",
+              "random"
+            ],
+            "type": "string"
+          },
+          "credentials": {
+            "description": "Credentials field on admin channel create request.",
+            "items": {
+              "$ref": "#/components/schemas/AdminChannelCredentialInput"
+            },
+            "maxItems": 64,
+            "minItems": 1,
+            "type": "array",
+            "uniqueItems": false
           },
           "expiresAt": {
             "description": "Expires at field on admin channel create request.",
@@ -6008,13 +5961,6 @@
             ],
             "description": "Retry policy field on admin channel create request."
           },
-          "secretRef": {
-            "description": "Optional compatibility path for existing Vault/KMS secret references. New admin UI submits apiKey instead.",
-            "maxLength": 256,
-            "minLength": 1,
-            "pattern": "^(vault|secret)://[^\\\\s]+$",
-            "type": "string"
-          },
           "status": {
             "description": "Status field on admin channel create request.",
             "enum": [
@@ -6049,8 +5995,158 @@
         "required": [
           "name",
           "vendor",
-          "apiKey",
+          "credentials",
           "models"
+        ],
+        "type": "object"
+      },
+      "AdminChannelCredentialInput": {
+        "additionalProperties": false,
+        "description": "Admin channel credential input schema exposed by Claw Router.",
+        "properties": {
+          "apiKey": {
+            "description": "Api key field on admin channel credential input.",
+            "maxLength": 4096,
+            "minLength": 1,
+            "type": "string"
+          },
+          "baseUrl": {
+            "description": "Base url field on admin channel credential input.",
+            "maxLength": 512,
+            "minLength": 1,
+            "pattern": "^https?://[^\\\\s]+$",
+            "type": "string"
+          },
+          "name": {
+            "description": "Name field on admin channel credential input.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "priority": {
+            "description": "Priority field on admin channel credential input.",
+            "format": "int64",
+            "maximum": 1000000,
+            "minimum": 1,
+            "type": "integer"
+          },
+          "secretRef": {
+            "description": "Secret ref field on admin channel credential input.",
+            "maxLength": 256,
+            "minLength": 1,
+            "pattern": "^(vault|secret)://[^\\\\s]+$",
+            "type": "string"
+          },
+          "status": {
+            "description": "Status field on admin channel credential input.",
+            "enum": [
+              "active",
+              "disabled",
+              "error"
+            ],
+            "type": "string"
+          },
+          "weight": {
+            "description": "Weight field on admin channel credential input.",
+            "format": "int64",
+            "maximum": 10000,
+            "minimum": 1,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "baseUrl"
+        ],
+        "type": "object"
+      },
+      "AdminChannelCredentialItem": {
+        "additionalProperties": false,
+        "description": "Admin channel credential item schema exposed by Claw Router.",
+        "properties": {
+          "apiKey": {
+            "description": "Plaintext provider API key returned only to authenticated admin management responses when available for channel credential relay operations.",
+            "maxLength": 4096,
+            "type": "string"
+          },
+          "baseUrl": {
+            "description": "Base url field on admin channel credential item.",
+            "maxLength": 512,
+            "minLength": 1,
+            "pattern": "^https?://[^\\\\s]+$",
+            "type": "string"
+          },
+          "credentialId": {
+            "description": "Credential id field on admin channel credential item.",
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[1-9][0-9]*$",
+            "type": "string"
+          },
+          "errors": {
+            "description": "Errors field on admin channel credential item.",
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "id": {
+            "description": "Id field on admin channel credential item.",
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maskedLabel": {
+            "description": "Masked label field on admin channel credential item.",
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "name": {
+            "description": "Name field on admin channel credential item.",
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "priority": {
+            "description": "Priority field on admin channel credential item.",
+            "format": "int64",
+            "maximum": 1000000,
+            "minimum": 1,
+            "type": "integer"
+          },
+          "secretRef": {
+            "description": "Secret ref field on admin channel credential item.",
+            "maxLength": 256,
+            "minLength": 1,
+            "pattern": "^(vault|secret)://[^\\\\s]+$",
+            "type": "string"
+          },
+          "status": {
+            "description": "Status field on admin channel credential item.",
+            "enum": [
+              "active",
+              "disabled",
+              "error"
+            ],
+            "type": "string"
+          },
+          "weight": {
+            "description": "Weight field on admin channel credential item.",
+            "format": "int64",
+            "maximum": 10000,
+            "minimum": 1,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id",
+          "credentialId",
+          "name",
+          "baseUrl",
+          "secretRef",
+          "maskedLabel",
+          "priority",
+          "weight",
+          "status",
+          "errors"
         ],
         "type": "object"
       },
@@ -6972,19 +7068,9 @@
             "minLength": 1,
             "type": "string"
           },
-          "apiKey": {
-            "description": "Full plaintext provider API key returned by authenticated admin management responses for channel credential relay operations.",
-            "maxLength": 4096,
-            "type": "string"
-          },
           "balance": {
             "description": "Balance field on admin channel item.",
             "maxLength": 64,
-            "type": "string"
-          },
-          "baseUrl": {
-            "description": "Base url field on admin channel item.",
-            "maxLength": 512,
             "type": "string"
           },
           "capabilities": {
@@ -7032,6 +7118,26 @@
             "maxLength": 64,
             "minLength": 1,
             "type": "string"
+          },
+          "credentialRotation": {
+            "description": "Credential rotation field on admin channel item.",
+            "enum": [
+              "default",
+              "priority",
+              "round_robin",
+              "weighted_round_robin",
+              "random"
+            ],
+            "type": "string"
+          },
+          "credentials": {
+            "description": "Credentials field on admin channel item.",
+            "items": {
+              "$ref": "#/components/schemas/AdminChannelCredentialItem"
+            },
+            "maxItems": 64,
+            "minItems": 0,
+            "type": "array"
           },
           "errors": {
             "description": "Errors field on admin channel item.",
@@ -7099,12 +7205,6 @@
             ],
             "description": "Retry policy field on admin channel item."
           },
-          "secretRef": {
-            "description": "Secret ref field on admin channel item.",
-            "maxLength": 256,
-            "pattern": "^(vault|secret)://[^\\\\s]+$",
-            "type": "string"
-          },
           "status": {
             "description": "Status field on admin channel item.",
             "enum": [
@@ -7143,6 +7243,8 @@
           "channelType",
           "protocol",
           "accessType",
+          "credentialRotation",
+          "credentials",
           "models",
           "capabilities",
           "resourceCodes",
@@ -7229,18 +7331,6 @@
             "minLength": 1,
             "type": "string"
           },
-          "apiKey": {
-            "description": "Plaintext provider API key accepted only on create/update input. Backend encrypts it into ai_channel.auth_config and never returns it.",
-            "maxLength": 4096,
-            "minLength": 1,
-            "type": "string"
-          },
-          "baseUrl": {
-            "description": "Base url field on admin channel update request.",
-            "maxLength": 512,
-            "nullable": true,
-            "type": "string"
-          },
           "capabilities": {
             "description": "Capabilities field on admin channel update request.",
             "items": {
@@ -7287,6 +7377,27 @@
                 "description": "Null variant accepted by circuit breaker policy."
               }
             ]
+          },
+          "credentialRotation": {
+            "description": "Credential rotation field on admin channel update request.",
+            "enum": [
+              "default",
+              "priority",
+              "round_robin",
+              "weighted_round_robin",
+              "random"
+            ],
+            "type": "string"
+          },
+          "credentials": {
+            "description": "Replaces the complete upstream credential list when provided.",
+            "items": {
+              "$ref": "#/components/schemas/AdminChannelCredentialInput"
+            },
+            "maxItems": 64,
+            "minItems": 1,
+            "type": "array",
+            "uniqueItems": false
           },
           "expiresAt": {
             "description": "Expires at field on admin channel update request.",
@@ -7358,13 +7469,6 @@
                 "description": "Null variant accepted by retry policy."
               }
             ]
-          },
-          "secretRef": {
-            "description": "Optional compatibility path for existing Vault/KMS secret references. New admin UI submits apiKey instead.",
-            "maxLength": 256,
-            "minLength": 1,
-            "pattern": "^(vault|secret)://[^\\\\s]+$",
-            "type": "string"
           },
           "status": {
             "description": "Status field on admin channel update request.",
@@ -10256,40 +10360,27 @@
         "description": "Admin model mapping create request schema exposed by Claw Router.",
         "name": "AdminModelMappingCreateRequest",
         "properties": {
-          "channelCode": {
-            "description": "Channel code field on admin model mapping create request.",
-            "maxLength": 64,
-            "nullable": true,
-            "pattern": "^[A-Za-z0-9._-]+$",
-            "type": "string"
-          },
-          "channelId": {
-            "description": "Channel id field on admin model mapping create request.",
-            "maxLength": 128,
-            "nullable": true,
-            "type": "string"
-          },
-          "description": {
-            "description": "Description field on admin model mapping create request.",
-            "maxLength": 512,
-            "nullable": true,
-            "type": "string"
-          },
-          "effectiveFrom": {
-            "description": "Effective from field on admin model mapping create request.",
-            "maxLength": 64,
-            "nullable": true,
-            "type": "string"
-          },
-          "effectiveTo": {
-            "description": "Effective to field on admin model mapping create request.",
-            "maxLength": 64,
-            "nullable": true,
-            "type": "string"
+          "bindings": {
+            "description": "Bindings field on admin model mapping create request.",
+            "items": {
+              "$ref": "#/components/schemas/AdminModelMappingRuleBindingInput"
+            },
+            "maxItems": 100,
+            "minItems": 1,
+            "type": "array"
           },
           "enabled": {
             "description": "Enabled field on admin model mapping create request.",
             "type": "boolean"
+          },
+          "mappingItems": {
+            "description": "Mapping items field on admin model mapping create request.",
+            "items": {
+              "$ref": "#/components/schemas/AdminModelMappingRuleItemInput"
+            },
+            "maxItems": 100,
+            "minItems": 1,
+            "type": "array"
           },
           "mappingMode": {
             "description": "Mapping mode field on admin model mapping create request.",
@@ -10305,90 +10396,38 @@
             ],
             "type": "string"
           },
-          "priority": {
-            "description": "Priority field on admin model mapping create request.",
-            "format": "int64",
-            "maximum": 1000000,
-            "minimum": 0,
-            "type": "integer"
-          },
-          "scopeType": {
-            "description": "Scope type field on admin model mapping create request.",
-            "enum": [
-              "global",
-              "vendor",
-              "channel"
-            ],
-            "type": "string"
-          },
-          "sourceCatalogKey": {
-            "description": "Source catalog key field on admin model mapping create request.",
-            "maxLength": 256,
-            "nullable": true,
-            "type": "string"
-          },
-          "sourceModel": {
-            "description": "Source model field on admin model mapping create request.",
-            "maxLength": 256,
-            "minLength": 1,
-            "type": "string"
-          },
           "sourceVendorCode": {
             "description": "Source vendor code field on admin model mapping create request.",
             "maxLength": 64,
-            "nullable": true,
+            "minLength": 1,
             "pattern": "^[A-Za-z0-9._-]+$",
             "type": "string"
           },
-          "targetCatalogKey": {
-            "description": "Target catalog key field on admin model mapping create request.",
-            "maxLength": 256,
-            "nullable": true,
-            "type": "string"
-          },
-          "targetModel": {
-            "description": "Target model field on admin model mapping create request.",
-            "maxLength": 256,
-            "minLength": 1,
-            "type": "string"
-          },
-          "targetProviderModel": {
-            "description": "Target provider model field on admin model mapping create request.",
-            "maxLength": 256,
-            "nullable": true,
-            "type": "string"
-          },
-          "targetProviderNativeModel": {
-            "description": "Target provider native model field on admin model mapping create request.",
-            "maxLength": 256,
+          "sourceVendorId": {
+            "description": "Source vendor id field on admin model mapping create request.",
+            "maxLength": 128,
             "nullable": true,
             "type": "string"
           },
           "targetVendorCode": {
             "description": "Target vendor code field on admin model mapping create request.",
             "maxLength": 64,
-            "nullable": true,
+            "minLength": 1,
             "pattern": "^[A-Za-z0-9._-]+$",
             "type": "string"
           },
-          "vendorCode": {
-            "description": "Vendor code field on admin model mapping create request.",
-            "maxLength": 64,
-            "nullable": true,
-            "pattern": "^[A-Za-z0-9._-]+$",
-            "type": "string"
-          },
-          "vendorId": {
-            "description": "Vendor id field on admin model mapping create request.",
+          "targetVendorId": {
+            "description": "Target vendor id field on admin model mapping create request.",
             "maxLength": 128,
             "nullable": true,
             "type": "string"
           }
         },
         "required": [
-          "scopeType",
-          "sourceModel",
-          "targetModel"
+          "sourceVendorCode",
+          "targetVendorCode",
+          "bindings",
+          "mappingItems"
         ],
         "type": "object"
       },
@@ -10407,157 +10446,6 @@
         ],
         "type": "object"
       },
-      "AdminModelMappingMutationItem": {
-        "additionalProperties": false,
-        "description": "Admin model mapping mutation item schema exposed by Claw Router.",
-        "properties": {
-          "channelCode": {
-            "description": "Channel code field on admin model mapping mutation item.",
-            "maxLength": 64,
-            "nullable": true,
-            "pattern": "^[A-Za-z0-9._-]+$",
-            "type": "string"
-          },
-          "createdAt": {
-            "description": "Created at field on admin model mapping mutation item.",
-            "maxLength": 64,
-            "nullable": true,
-            "type": "string"
-          },
-          "description": {
-            "description": "Description field on admin model mapping mutation item.",
-            "maxLength": 512,
-            "nullable": true,
-            "type": "string"
-          },
-          "effectiveFrom": {
-            "description": "Effective from field on admin model mapping mutation item.",
-            "maxLength": 64,
-            "nullable": true,
-            "type": "string"
-          },
-          "effectiveTo": {
-            "description": "Effective to field on admin model mapping mutation item.",
-            "maxLength": 64,
-            "nullable": true,
-            "type": "string"
-          },
-          "enabled": {
-            "description": "Enabled field on admin model mapping mutation item.",
-            "type": "boolean"
-          },
-          "id": {
-            "description": "Id field on admin model mapping mutation item.",
-            "maxLength": 128,
-            "minLength": 1,
-            "type": "string"
-          },
-          "mappingMode": {
-            "description": "Mapping mode field on admin model mapping mutation item.",
-            "enum": [
-              "alias"
-            ],
-            "type": "string"
-          },
-          "matchType": {
-            "description": "Match type field on admin model mapping mutation item.",
-            "enum": [
-              "exact"
-            ],
-            "type": "string"
-          },
-          "priority": {
-            "description": "Priority field on admin model mapping mutation item.",
-            "format": "int64",
-            "maximum": 1000000,
-            "minimum": 0,
-            "type": "integer"
-          },
-          "scopeType": {
-            "description": "Scope type field on admin model mapping mutation item.",
-            "enum": [
-              "global",
-              "vendor",
-              "channel"
-            ],
-            "type": "string"
-          },
-          "sourceCatalogKey": {
-            "description": "Source catalog key field on admin model mapping mutation item.",
-            "maxLength": 256,
-            "nullable": true,
-            "type": "string"
-          },
-          "sourceModel": {
-            "description": "Source model field on admin model mapping mutation item.",
-            "maxLength": 256,
-            "minLength": 1,
-            "type": "string"
-          },
-          "sourceVendorCode": {
-            "description": "Source vendor code field on admin model mapping mutation item.",
-            "maxLength": 64,
-            "nullable": true,
-            "pattern": "^[A-Za-z0-9._-]+$",
-            "type": "string"
-          },
-          "targetCatalogKey": {
-            "description": "Target catalog key field on admin model mapping mutation item.",
-            "maxLength": 256,
-            "nullable": true,
-            "type": "string"
-          },
-          "targetModel": {
-            "description": "Target model field on admin model mapping mutation item.",
-            "maxLength": 256,
-            "minLength": 1,
-            "type": "string"
-          },
-          "targetProviderModel": {
-            "description": "Target provider model field on admin model mapping mutation item.",
-            "maxLength": 256,
-            "nullable": true,
-            "type": "string"
-          },
-          "targetProviderNativeModel": {
-            "description": "Target provider native model field on admin model mapping mutation item.",
-            "maxLength": 256,
-            "nullable": true,
-            "type": "string"
-          },
-          "targetVendorCode": {
-            "description": "Target vendor code field on admin model mapping mutation item.",
-            "maxLength": 64,
-            "nullable": true,
-            "pattern": "^[A-Za-z0-9._-]+$",
-            "type": "string"
-          },
-          "updatedAt": {
-            "description": "Updated at field on admin model mapping mutation item.",
-            "maxLength": 64,
-            "nullable": true,
-            "type": "string"
-          },
-          "vendorCode": {
-            "description": "Vendor code field on admin model mapping mutation item.",
-            "maxLength": 64,
-            "nullable": true,
-            "pattern": "^[A-Za-z0-9._-]+$",
-            "type": "string"
-          }
-        },
-        "required": [
-          "id",
-          "scopeType",
-          "sourceModel",
-          "targetModel",
-          "mappingMode",
-          "matchType",
-          "priority",
-          "enabled"
-        ],
-        "type": "object"
-      },
       "AdminModelMappingMutationResponse": {
         "additionalProperties": false,
         "description": "Admin model mapping mutation response schema exposed by Claw Router.",
@@ -10566,7 +10454,7 @@
           "item": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/AdminModelMappingMutationItem"
+                "$ref": "#/components/schemas/AdminModelMappingRule"
               }
             ],
             "description": "Item field on admin model mapping mutation response."
@@ -10591,6 +10479,19 @@
           },
           "channelId": {
             "description": "Channel id field on admin model mapping resolve request.",
+            "maxLength": 128,
+            "nullable": true,
+            "type": "string"
+          },
+          "providerAccountCode": {
+            "description": "Provider account code field on admin model mapping resolve request.",
+            "maxLength": 128,
+            "nullable": true,
+            "pattern": "^[A-Za-z0-9._:-]+$",
+            "type": "string"
+          },
+          "providerAccountId": {
+            "description": "Provider account id field on admin model mapping resolve request.",
             "maxLength": 128,
             "nullable": true,
             "type": "string"
@@ -10623,12 +10524,16 @@
             "description": "Matched field on admin model mapping resolve response.",
             "type": "boolean"
           },
-          "matchedScopeType": {
-            "description": "Matched scope type field on admin model mapping resolve response.",
+          "matchedBindingType": {
+            "description": "Matched binding type field on admin model mapping resolve response.",
             "enum": [
               "global",
               "vendor",
-              "channel"
+              "channel_group",
+              "channel",
+              "provider_account",
+              "site",
+              "site_service"
             ],
             "nullable": true,
             "type": "string"
@@ -10701,41 +10606,31 @@
       "AdminModelMappingRule": {
         "additionalProperties": false,
         "description": "Admin model mapping rule schema exposed by Claw Router.",
-        "nullable": true,
         "properties": {
-          "channelCode": {
-            "description": "Channel code field on admin model mapping rule.",
-            "maxLength": 64,
-            "nullable": true,
-            "pattern": "^[A-Za-z0-9._-]+$",
+          "bindingType": {
+            "description": "Binding type field on admin model mapping rule.",
+            "enum": [
+              "global",
+              "vendor",
+              "channel_group",
+              "channel",
+              "provider_account",
+              "site",
+              "site_service"
+            ],
             "type": "string"
           },
-          "channelId": {
-            "description": "Channel id field on admin model mapping rule.",
-            "maxLength": 128,
-            "nullable": true,
-            "type": "string"
+          "bindings": {
+            "description": "Bindings field on admin model mapping rule.",
+            "items": {
+              "$ref": "#/components/schemas/AdminModelMappingRuleBinding"
+            },
+            "maxItems": 100,
+            "minItems": 1,
+            "type": "array"
           },
           "createdAt": {
             "description": "Created at field on admin model mapping rule.",
-            "maxLength": 64,
-            "nullable": true,
-            "type": "string"
-          },
-          "description": {
-            "description": "Description field on admin model mapping rule.",
-            "maxLength": 512,
-            "nullable": true,
-            "type": "string"
-          },
-          "effectiveFrom": {
-            "description": "Effective from field on admin model mapping rule.",
-            "maxLength": 64,
-            "nullable": true,
-            "type": "string"
-          },
-          "effectiveTo": {
-            "description": "Effective to field on admin model mapping rule.",
             "maxLength": 64,
             "nullable": true,
             "type": "string"
@@ -10749,6 +10644,15 @@
             "maxLength": 128,
             "minLength": 1,
             "type": "string"
+          },
+          "mappingItems": {
+            "description": "Mapping items field on admin model mapping rule.",
+            "items": {
+              "$ref": "#/components/schemas/AdminModelMappingRuleItem"
+            },
+            "maxItems": 100,
+            "minItems": 1,
+            "type": "array"
           },
           "mappingMode": {
             "description": "Mapping mode field on admin model mapping rule.",
@@ -10764,70 +10668,30 @@
             ],
             "type": "string"
           },
-          "priority": {
-            "description": "Priority field on admin model mapping rule.",
-            "format": "int64",
-            "maximum": 1000000,
-            "minimum": 0,
-            "type": "integer"
-          },
-          "scopeType": {
-            "description": "Scope type field on admin model mapping rule.",
-            "enum": [
-              "global",
-              "vendor",
-              "channel"
-            ],
-            "type": "string"
-          },
-          "sourceCatalogKey": {
-            "description": "Source catalog key field on admin model mapping rule.",
-            "maxLength": 256,
-            "nullable": true,
-            "type": "string"
-          },
-          "sourceModel": {
-            "description": "Source model field on admin model mapping rule.",
-            "maxLength": 256,
-            "minLength": 1,
-            "type": "string"
-          },
           "sourceVendorCode": {
             "description": "Source vendor code field on admin model mapping rule.",
             "maxLength": 64,
-            "nullable": true,
+            "minLength": 1,
             "pattern": "^[A-Za-z0-9._-]+$",
             "type": "string"
           },
-          "targetCatalogKey": {
-            "description": "Target catalog key field on admin model mapping rule.",
-            "maxLength": 256,
-            "nullable": true,
-            "type": "string"
-          },
-          "targetModel": {
-            "description": "Target model field on admin model mapping rule.",
-            "maxLength": 256,
-            "minLength": 1,
-            "type": "string"
-          },
-          "targetProviderModel": {
-            "description": "Target provider model field on admin model mapping rule.",
-            "maxLength": 256,
-            "nullable": true,
-            "type": "string"
-          },
-          "targetProviderNativeModel": {
-            "description": "Target provider native model field on admin model mapping rule.",
-            "maxLength": 256,
+          "sourceVendorId": {
+            "description": "Source vendor id field on admin model mapping rule.",
+            "maxLength": 128,
             "nullable": true,
             "type": "string"
           },
           "targetVendorCode": {
             "description": "Target vendor code field on admin model mapping rule.",
             "maxLength": 64,
-            "nullable": true,
+            "minLength": 1,
             "pattern": "^[A-Za-z0-9._-]+$",
+            "type": "string"
+          },
+          "targetVendorId": {
+            "description": "Target vendor id field on admin model mapping rule.",
+            "maxLength": 128,
+            "nullable": true,
             "type": "string"
           },
           "updatedAt": {
@@ -10835,30 +10699,280 @@
             "maxLength": 64,
             "nullable": true,
             "type": "string"
-          },
-          "vendorCode": {
-            "description": "Vendor code field on admin model mapping rule.",
-            "maxLength": 64,
+          }
+        },
+        "required": [
+          "id",
+          "bindingType",
+          "sourceVendorCode",
+          "targetVendorCode",
+          "mappingMode",
+          "matchType",
+          "enabled",
+          "bindings",
+          "mappingItems"
+        ],
+        "type": "object"
+      },
+      "AdminModelMappingRuleBinding": {
+        "additionalProperties": false,
+        "description": "Admin model mapping rule binding schema exposed by Claw Router.",
+        "properties": {
+          "bindingCode": {
+            "description": "Binding code field on admin model mapping rule binding.",
+            "maxLength": 128,
             "nullable": true,
-            "pattern": "^[A-Za-z0-9._-]+$",
+            "pattern": "^[A-Za-z0-9._:-]+$",
             "type": "string"
           },
-          "vendorId": {
-            "description": "Vendor id field on admin model mapping rule.",
+          "bindingId": {
+            "description": "Binding id field on admin model mapping rule binding.",
             "maxLength": 128,
+            "nullable": true,
+            "type": "string"
+          },
+          "bindingName": {
+            "description": "Binding name field on admin model mapping rule binding.",
+            "maxLength": 256,
+            "nullable": true,
+            "type": "string"
+          },
+          "bindingType": {
+            "description": "Binding type field on admin model mapping rule binding.",
+            "enum": [
+              "global",
+              "vendor",
+              "channel_group",
+              "channel",
+              "provider_account",
+              "site",
+              "site_service"
+            ],
+            "type": "string"
+          },
+          "createdAt": {
+            "description": "Created at field on admin model mapping rule binding.",
+            "maxLength": 64,
+            "nullable": true,
+            "type": "string"
+          },
+          "enabled": {
+            "description": "Enabled field on admin model mapping rule binding.",
+            "type": "boolean"
+          },
+          "id": {
+            "description": "Id field on admin model mapping rule binding.",
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "sortOrder": {
+            "description": "Sort order field on admin model mapping rule binding.",
+            "format": "int64",
+            "maximum": 1000000,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "updatedAt": {
+            "description": "Updated at field on admin model mapping rule binding.",
+            "maxLength": 64,
             "nullable": true,
             "type": "string"
           }
         },
         "required": [
           "id",
-          "scopeType",
+          "bindingType",
+          "sortOrder",
+          "enabled"
+        ],
+        "type": "object"
+      },
+      "AdminModelMappingRuleBindingInput": {
+        "additionalProperties": false,
+        "description": "Admin model mapping rule binding input schema exposed by Claw Router.",
+        "properties": {
+          "bindingCode": {
+            "description": "Binding code field on admin model mapping rule binding input.",
+            "maxLength": 128,
+            "nullable": true,
+            "pattern": "^[A-Za-z0-9._:-]+$",
+            "type": "string"
+          },
+          "bindingId": {
+            "description": "Binding id field on admin model mapping rule binding input.",
+            "maxLength": 128,
+            "nullable": true,
+            "type": "string"
+          },
+          "bindingName": {
+            "description": "Binding name field on admin model mapping rule binding input.",
+            "maxLength": 256,
+            "nullable": true,
+            "type": "string"
+          },
+          "bindingType": {
+            "description": "Binding type field on admin model mapping rule binding input.",
+            "enum": [
+              "global",
+              "vendor",
+              "channel_group",
+              "channel",
+              "provider_account",
+              "site",
+              "site_service"
+            ],
+            "type": "string"
+          },
+          "enabled": {
+            "description": "Enabled field on admin model mapping rule binding input.",
+            "type": "boolean"
+          },
+          "id": {
+            "description": "Id field on admin model mapping rule binding input.",
+            "maxLength": 128,
+            "nullable": true,
+            "type": "string"
+          }
+        },
+        "required": [
+          "bindingType"
+        ],
+        "type": "object"
+      },
+      "AdminModelMappingRuleItem": {
+        "additionalProperties": false,
+        "description": "Admin model mapping rule item schema exposed by Claw Router.",
+        "properties": {
+          "createdAt": {
+            "description": "Created at field on admin model mapping rule item.",
+            "maxLength": 64,
+            "nullable": true,
+            "type": "string"
+          },
+          "enabled": {
+            "description": "Enabled field on admin model mapping rule item.",
+            "type": "boolean"
+          },
+          "id": {
+            "description": "Id field on admin model mapping rule item.",
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "sortOrder": {
+            "description": "Sort order field on admin model mapping rule item.",
+            "format": "int64",
+            "maximum": 1000000,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "sourceCatalogKey": {
+            "description": "Source catalog key field on admin model mapping rule item.",
+            "maxLength": 256,
+            "nullable": true,
+            "type": "string"
+          },
+          "sourceModel": {
+            "description": "Source model field on admin model mapping rule item.",
+            "maxLength": 256,
+            "minLength": 1,
+            "type": "string"
+          },
+          "targetCatalogKey": {
+            "description": "Target catalog key field on admin model mapping rule item.",
+            "maxLength": 256,
+            "nullable": true,
+            "type": "string"
+          },
+          "targetModel": {
+            "description": "Target model field on admin model mapping rule item.",
+            "maxLength": 256,
+            "minLength": 1,
+            "type": "string"
+          },
+          "targetProviderModel": {
+            "description": "Target provider model field on admin model mapping rule item.",
+            "maxLength": 256,
+            "nullable": true,
+            "type": "string"
+          },
+          "targetProviderNativeModel": {
+            "description": "Target provider native model field on admin model mapping rule item.",
+            "maxLength": 256,
+            "nullable": true,
+            "type": "string"
+          },
+          "updatedAt": {
+            "description": "Updated at field on admin model mapping rule item.",
+            "maxLength": 64,
+            "nullable": true,
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
           "sourceModel",
           "targetModel",
-          "mappingMode",
-          "matchType",
-          "priority",
+          "sortOrder",
           "enabled"
+        ],
+        "type": "object"
+      },
+      "AdminModelMappingRuleItemInput": {
+        "additionalProperties": false,
+        "description": "Admin model mapping rule item input schema exposed by Claw Router.",
+        "properties": {
+          "enabled": {
+            "description": "Enabled field on admin model mapping rule item input.",
+            "type": "boolean"
+          },
+          "id": {
+            "description": "Id field on admin model mapping rule item input.",
+            "maxLength": 128,
+            "nullable": true,
+            "type": "string"
+          },
+          "sourceCatalogKey": {
+            "description": "Source catalog key field on admin model mapping rule item input.",
+            "maxLength": 256,
+            "nullable": true,
+            "type": "string"
+          },
+          "sourceModel": {
+            "description": "Source model field on admin model mapping rule item input.",
+            "maxLength": 256,
+            "minLength": 1,
+            "type": "string"
+          },
+          "targetCatalogKey": {
+            "description": "Target catalog key field on admin model mapping rule item input.",
+            "maxLength": 256,
+            "nullable": true,
+            "type": "string"
+          },
+          "targetModel": {
+            "description": "Target model field on admin model mapping rule item input.",
+            "maxLength": 256,
+            "minLength": 1,
+            "type": "string"
+          },
+          "targetProviderModel": {
+            "description": "Target provider model field on admin model mapping rule item input.",
+            "maxLength": 256,
+            "nullable": true,
+            "type": "string"
+          },
+          "targetProviderNativeModel": {
+            "description": "Target provider native model field on admin model mapping rule item input.",
+            "maxLength": 256,
+            "nullable": true,
+            "type": "string"
+          }
+        },
+        "required": [
+          "sourceModel",
+          "targetModel"
         ],
         "type": "object"
       },
@@ -10867,40 +10981,27 @@
         "description": "Admin model mapping update request schema exposed by Claw Router.",
         "name": "AdminModelMappingUpdateRequest",
         "properties": {
-          "channelCode": {
-            "description": "Channel code field on admin model mapping update request.",
-            "maxLength": 64,
-            "nullable": true,
-            "pattern": "^[A-Za-z0-9._-]+$",
-            "type": "string"
-          },
-          "channelId": {
-            "description": "Channel id field on admin model mapping update request.",
-            "maxLength": 128,
-            "nullable": true,
-            "type": "string"
-          },
-          "description": {
-            "description": "Description field on admin model mapping update request.",
-            "maxLength": 512,
-            "nullable": true,
-            "type": "string"
-          },
-          "effectiveFrom": {
-            "description": "Effective from field on admin model mapping update request.",
-            "maxLength": 64,
-            "nullable": true,
-            "type": "string"
-          },
-          "effectiveTo": {
-            "description": "Effective to field on admin model mapping update request.",
-            "maxLength": 64,
-            "nullable": true,
-            "type": "string"
+          "bindings": {
+            "description": "Bindings field on admin model mapping update request.",
+            "items": {
+              "$ref": "#/components/schemas/AdminModelMappingRuleBindingInput"
+            },
+            "maxItems": 100,
+            "minItems": 1,
+            "type": "array"
           },
           "enabled": {
             "description": "Enabled field on admin model mapping update request.",
             "type": "boolean"
+          },
+          "mappingItems": {
+            "description": "Mapping items field on admin model mapping update request.",
+            "items": {
+              "$ref": "#/components/schemas/AdminModelMappingRuleItemInput"
+            },
+            "maxItems": 100,
+            "minItems": 1,
+            "type": "array"
           },
           "mappingMode": {
             "description": "Mapping mode field on admin model mapping update request.",
@@ -10916,81 +11017,28 @@
             ],
             "type": "string"
           },
-          "priority": {
-            "description": "Priority field on admin model mapping update request.",
-            "format": "int64",
-            "maximum": 1000000,
-            "minimum": 0,
-            "type": "integer"
-          },
-          "scopeType": {
-            "description": "Scope type field on admin model mapping update request.",
-            "enum": [
-              "global",
-              "vendor",
-              "channel"
-            ],
-            "type": "string"
-          },
-          "sourceCatalogKey": {
-            "description": "Source catalog key field on admin model mapping update request.",
-            "maxLength": 256,
-            "nullable": true,
-            "type": "string"
-          },
-          "sourceModel": {
-            "description": "Source model field on admin model mapping update request.",
-            "maxLength": 256,
-            "minLength": 1,
-            "type": "string"
-          },
           "sourceVendorCode": {
             "description": "Source vendor code field on admin model mapping update request.",
             "maxLength": 64,
-            "nullable": true,
+            "minLength": 1,
             "pattern": "^[A-Za-z0-9._-]+$",
             "type": "string"
           },
-          "targetCatalogKey": {
-            "description": "Target catalog key field on admin model mapping update request.",
-            "maxLength": 256,
-            "nullable": true,
-            "type": "string"
-          },
-          "targetModel": {
-            "description": "Target model field on admin model mapping update request.",
-            "maxLength": 256,
-            "minLength": 1,
-            "type": "string"
-          },
-          "targetProviderModel": {
-            "description": "Target provider model field on admin model mapping update request.",
-            "maxLength": 256,
-            "nullable": true,
-            "type": "string"
-          },
-          "targetProviderNativeModel": {
-            "description": "Target provider native model field on admin model mapping update request.",
-            "maxLength": 256,
+          "sourceVendorId": {
+            "description": "Source vendor id field on admin model mapping update request.",
+            "maxLength": 128,
             "nullable": true,
             "type": "string"
           },
           "targetVendorCode": {
             "description": "Target vendor code field on admin model mapping update request.",
             "maxLength": 64,
-            "nullable": true,
+            "minLength": 1,
             "pattern": "^[A-Za-z0-9._-]+$",
             "type": "string"
           },
-          "vendorCode": {
-            "description": "Vendor code field on admin model mapping update request.",
-            "maxLength": 64,
-            "nullable": true,
-            "pattern": "^[A-Za-z0-9._-]+$",
-            "type": "string"
-          },
-          "vendorId": {
-            "description": "Vendor id field on admin model mapping update request.",
+          "targetVendorId": {
+            "description": "Target vendor id field on admin model mapping update request.",
             "maxLength": 128,
             "nullable": true,
             "type": "string"
@@ -12868,6 +12916,11 @@
             "maxLength": 64,
             "type": "string"
           },
+          "regionCode": {
+            "description": "Deployment region used by the selected endpoint and pricing resolver. This is not part of the model catalog identity.",
+            "maxLength": 64,
+            "type": "string"
+          },
           "requestId": {
             "description": "Request id field on admin record log item.",
             "maxLength": 128,
@@ -12940,6 +12993,7 @@
           "model",
           "providerNativeModel",
           "requestedModelCatalogKey",
+          "regionCode",
           "status",
           "httpStatus",
           "httpMethod",
@@ -17878,7 +17932,7 @@
           },
           "model": {
             "description": "Model field on ai agent run record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "organization_id": {
@@ -17897,7 +17951,7 @@
           },
           "planner_model": {
             "description": "Planner model field on ai agent run record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "prompt_tokens": {
@@ -18102,7 +18156,7 @@
           },
           "model": {
             "description": "Model field on ai agent run step record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "organization_id": {
@@ -18290,7 +18344,7 @@
           },
           "default_model": {
             "description": "Default model field on ai agent session record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "deleted_at": {
@@ -19161,6 +19215,182 @@
         "x-generated-by-this-project": true,
         "x-table": "ai_billing_meter"
       },
+      "AiChannelCredentialRecord": {
+        "additionalProperties": false,
+        "description": "Ai channel credential record schema exposed by Claw Router.",
+        "properties": {
+          "auth_config": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Auth config field on ai channel credential record."
+            },
+            "description": "Auth config field on ai channel credential record.",
+            "type": "object"
+          },
+          "base_url": {
+            "description": "Base url field on ai channel credential record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "channel_code": {
+            "description": "Channel code field on ai channel credential record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "channel_id": {
+            "description": "Channel id field on ai channel credential record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "consecutive_error_count": {
+            "description": "Consecutive error count field on ai channel credential record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "created_at": {
+            "description": "Created at field on ai channel credential record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "credential_hash": {
+            "description": "Credential hash field on ai channel credential record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "credential_name": {
+            "description": "Credential name field on ai channel credential record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "credential_ref": {
+            "description": "Credential ref field on ai channel credential record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "data_scope": {
+            "description": "Data scope field on ai channel credential record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "deleted_at": {
+            "description": "Deleted at field on ai channel credential record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "deleted_by": {
+            "description": "Deleted by field on ai channel credential record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "health_status": {
+            "description": "Health status field on ai channel credential record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "id": {
+            "description": "Id field on ai channel credential record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "last_latency_ms": {
+            "description": "Last latency ms field on ai channel credential record.",
+            "format": "int32",
+            "type": "integer"
+          },
+          "last_used_at": {
+            "description": "Last used at field on ai channel credential record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "last_verified_at": {
+            "description": "Last verified at field on ai channel credential record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "masked_label": {
+            "description": "Masked label field on ai channel credential record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Metadata field on ai channel credential record."
+            },
+            "description": "Metadata field on ai channel credential record.",
+            "type": "object"
+          },
+          "organization_id": {
+            "description": "Organization id field on ai channel credential record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "priority": {
+            "description": "Priority field on ai channel credential record.",
+            "format": "int32",
+            "type": "integer"
+          },
+          "provider_code": {
+            "description": "Provider code field on ai channel credential record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "status": {
+            "description": "Status field on ai channel credential record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on ai channel credential record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "Updated at field on ai channel credential record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "uuid": {
+            "description": "Uuid field on ai channel credential record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "version": {
+            "description": "Version field on ai channel credential record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "weight": {
+            "description": "Weight field on ai channel credential record.",
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "uuid",
+          "tenant_id",
+          "organization_id",
+          "status",
+          "channel_id",
+          "credential_name",
+          "base_url",
+          "auth_config",
+          "credential_ref",
+          "credential_hash"
+        ],
+        "type": "object",
+        "x-domain": "ai",
+        "x-generated-by-this-project": true,
+        "x-table": "ai_channel_credential"
+      },
       "AiChannelEndpointRecord": {
         "additionalProperties": false,
         "description": "Ai channel endpoint record schema exposed by Claw Router.",
@@ -20027,7 +20257,7 @@
           },
           "model": {
             "description": "Model field on ai channel model record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "model_aliases": {
@@ -20054,7 +20284,7 @@
           },
           "provider_model": {
             "description": "Provider model field on ai channel model record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "provider_native_model": {
@@ -20195,6 +20425,11 @@
             },
             "description": "Credential rotation policy field on ai channel record.",
             "type": "object"
+          },
+          "credential_rotation_strategy": {
+            "description": "Credential rotation strategy field on ai channel record.",
+            "maxLength": 64,
+            "type": "string"
           },
           "credential_version": {
             "description": "Credential version field on ai channel record.",
@@ -20963,7 +21198,7 @@
           },
           "default_model": {
             "description": "Default model field on ai chat conversation record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "default_provider": {
@@ -21185,7 +21420,7 @@
           },
           "model": {
             "description": "Model field on ai chat item record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "organization_id": {
@@ -21548,7 +21783,7 @@
           },
           "model": {
             "description": "Model field on ai chat message record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "organization_id": {
@@ -21751,7 +21986,7 @@
           },
           "model": {
             "description": "Model field on ai chat turn record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "organization_id": {
@@ -22561,7 +22796,7 @@
           },
           "model": {
             "description": "Model field on ai generation job record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "negative_prompt": {
@@ -23505,7 +23740,7 @@
           },
           "embedding_model": {
             "description": "Embedding model field on ai memory embedding record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "embedding_provider": {
@@ -24683,7 +24918,7 @@
           },
           "model": {
             "description": "Model field on ai model api endpoint record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "model_id": {
@@ -24860,7 +25095,7 @@
           },
           "model": {
             "description": "Model field on ai model capability record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "model_id": {
@@ -25370,7 +25605,7 @@
           },
           "default_model": {
             "description": "Default model field on ai model family record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "default_model_id": {
@@ -25508,20 +25743,273 @@
         "x-generated-by-this-project": true,
         "x-table": "ai_model_family"
       },
+      "AiModelMappingRuleBindingRecord": {
+        "additionalProperties": false,
+        "description": "Ai model mapping rule binding record schema exposed by Claw Router.",
+        "properties": {
+          "binding_code": {
+            "description": "Binding code field on ai model mapping rule binding record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "binding_id": {
+            "description": "Binding id field on ai model mapping rule binding record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "binding_name_snapshot": {
+            "description": "Binding name snapshot field on ai model mapping rule binding record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "binding_type": {
+            "description": "Binding type field on ai model mapping rule binding record.",
+            "maxLength": 32,
+            "type": "string"
+          },
+          "created_at": {
+            "description": "Created at field on ai model mapping rule binding record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "data_scope": {
+            "description": "Data scope field on ai model mapping rule binding record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "deleted_at": {
+            "description": "Deleted at field on ai model mapping rule binding record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "deleted_by": {
+            "description": "Deleted by field on ai model mapping rule binding record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "enabled": {
+            "description": "Enabled field on ai model mapping rule binding record.",
+            "type": "boolean"
+          },
+          "id": {
+            "description": "Id field on ai model mapping rule binding record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Metadata field on ai model mapping rule binding record."
+            },
+            "description": "Metadata field on ai model mapping rule binding record.",
+            "type": "object"
+          },
+          "organization_id": {
+            "description": "Organization id field on ai model mapping rule binding record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "rule_id": {
+            "description": "Rule id field on ai model mapping rule binding record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "rule_uuid": {
+            "description": "Rule uuid field on ai model mapping rule binding record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "sort_order": {
+            "description": "Sort order field on ai model mapping rule binding record.",
+            "format": "int32",
+            "type": "integer"
+          },
+          "status": {
+            "description": "Status field on ai model mapping rule binding record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on ai model mapping rule binding record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "Updated at field on ai model mapping rule binding record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "uuid": {
+            "description": "Uuid field on ai model mapping rule binding record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "version": {
+            "description": "Version field on ai model mapping rule binding record.",
+            "format": "int64",
+            "type": "string"
+          }
+        },
+        "required": [
+          "uuid",
+          "tenant_id",
+          "organization_id",
+          "status",
+          "rule_id",
+          "binding_type",
+          "sort_order",
+          "enabled"
+        ],
+        "type": "object",
+        "x-domain": "ai",
+        "x-generated-by-this-project": true,
+        "x-table": "ai_model_mapping_rule_binding"
+      },
+      "AiModelMappingRuleItemRecord": {
+        "additionalProperties": false,
+        "description": "Ai model mapping rule item record schema exposed by Claw Router.",
+        "properties": {
+          "created_at": {
+            "description": "Created at field on ai model mapping rule item record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "data_scope": {
+            "description": "Data scope field on ai model mapping rule item record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "deleted_at": {
+            "description": "Deleted at field on ai model mapping rule item record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "deleted_by": {
+            "description": "Deleted by field on ai model mapping rule item record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "enabled": {
+            "description": "Enabled field on ai model mapping rule item record.",
+            "type": "boolean"
+          },
+          "id": {
+            "description": "Id field on ai model mapping rule item record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Metadata field on ai model mapping rule item record."
+            },
+            "description": "Metadata field on ai model mapping rule item record.",
+            "type": "object"
+          },
+          "organization_id": {
+            "description": "Organization id field on ai model mapping rule item record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "rule_id": {
+            "description": "Rule id field on ai model mapping rule item record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "rule_uuid": {
+            "description": "Rule uuid field on ai model mapping rule item record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "sort_order": {
+            "description": "Sort order field on ai model mapping rule item record.",
+            "format": "int32",
+            "type": "integer"
+          },
+          "source_catalog_key": {
+            "description": "Source catalog key field on ai model mapping rule item record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "source_model": {
+            "description": "Source model field on ai model mapping rule item record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "status": {
+            "description": "Status field on ai model mapping rule item record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "target_catalog_key": {
+            "description": "Target catalog key field on ai model mapping rule item record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "target_model": {
+            "description": "Target model field on ai model mapping rule item record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "target_provider_model": {
+            "description": "Target provider model field on ai model mapping rule item record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "target_provider_native_model": {
+            "description": "Target provider native model field on ai model mapping rule item record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on ai model mapping rule item record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "Updated at field on ai model mapping rule item record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "uuid": {
+            "description": "Uuid field on ai model mapping rule item record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "version": {
+            "description": "Version field on ai model mapping rule item record.",
+            "format": "int64",
+            "type": "string"
+          }
+        },
+        "required": [
+          "uuid",
+          "tenant_id",
+          "organization_id",
+          "status",
+          "rule_id",
+          "source_model",
+          "target_model",
+          "sort_order",
+          "enabled"
+        ],
+        "type": "object",
+        "x-domain": "ai",
+        "x-generated-by-this-project": true,
+        "x-table": "ai_model_mapping_rule_item"
+      },
       "AiModelMappingRuleRecord": {
         "additionalProperties": false,
         "description": "Ai model mapping rule record schema exposed by Claw Router.",
         "properties": {
-          "channel_code": {
-            "description": "Channel code field on ai model mapping rule record.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "channel_id": {
-            "description": "Channel id field on ai model mapping rule record.",
-            "format": "int64",
-            "type": "string"
-          },
           "created_at": {
             "description": "Created at field on ai model mapping rule record.",
             "format": "date-time",
@@ -25540,21 +26028,6 @@
           "deleted_by": {
             "description": "Deleted by field on ai model mapping rule record.",
             "format": "int64",
-            "type": "string"
-          },
-          "description": {
-            "description": "Description field on ai model mapping rule record.",
-            "maxLength": 512,
-            "type": "string"
-          },
-          "effective_from": {
-            "description": "Effective from field on ai model mapping rule record.",
-            "format": "date-time",
-            "type": "string"
-          },
-          "effective_to": {
-            "description": "Effective to field on ai model mapping rule record.",
-            "format": "date-time",
             "type": "string"
           },
           "enabled": {
@@ -25593,29 +26066,14 @@
             "format": "int64",
             "type": "string"
           },
-          "priority": {
-            "description": "Priority field on ai model mapping rule record.",
-            "format": "int32",
-            "type": "integer"
-          },
-          "scope_type": {
-            "description": "Scope type field on ai model mapping rule record.",
-            "maxLength": 32,
-            "type": "string"
-          },
-          "source_catalog_key": {
-            "description": "Source catalog key field on ai model mapping rule record.",
-            "maxLength": 256,
-            "type": "string"
-          },
-          "source_model": {
-            "description": "Source model field on ai model mapping rule record.",
-            "maxLength": 256,
-            "type": "string"
-          },
           "source_vendor_code": {
             "description": "Source vendor code field on ai model mapping rule record.",
             "maxLength": 64,
+            "type": "string"
+          },
+          "source_vendor_id": {
+            "description": "Source vendor id field on ai model mapping rule record.",
+            "format": "int64",
             "type": "string"
           },
           "status": {
@@ -25623,29 +26081,14 @@
             "type": "string",
             "x-db-type": "enum_int32"
           },
-          "target_catalog_key": {
-            "description": "Target catalog key field on ai model mapping rule record.",
-            "maxLength": 256,
-            "type": "string"
-          },
-          "target_model": {
-            "description": "Target model field on ai model mapping rule record.",
-            "maxLength": 256,
-            "type": "string"
-          },
-          "target_provider_model": {
-            "description": "Target provider model field on ai model mapping rule record.",
-            "maxLength": 256,
-            "type": "string"
-          },
-          "target_provider_native_model": {
-            "description": "Target provider native model field on ai model mapping rule record.",
-            "maxLength": 256,
-            "type": "string"
-          },
           "target_vendor_code": {
             "description": "Target vendor code field on ai model mapping rule record.",
             "maxLength": 64,
+            "type": "string"
+          },
+          "target_vendor_id": {
+            "description": "Target vendor id field on ai model mapping rule record.",
+            "format": "int64",
             "type": "string"
           },
           "tenant_id": {
@@ -25663,16 +26106,6 @@
             "maxLength": 64,
             "type": "string"
           },
-          "vendor_code": {
-            "description": "Vendor code field on ai model mapping rule record.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "vendor_id": {
-            "description": "Vendor id field on ai model mapping rule record.",
-            "format": "int64",
-            "type": "string"
-          },
           "version": {
             "description": "Version field on ai model mapping rule record.",
             "format": "int64",
@@ -25684,12 +26117,10 @@
           "tenant_id",
           "organization_id",
           "status",
-          "scope_type",
-          "source_model",
-          "target_model",
+          "source_vendor_code",
+          "target_vendor_code",
           "mapping_mode",
           "match_type",
-          "priority",
           "enabled"
         ],
         "type": "object",
@@ -25760,7 +26191,7 @@
           },
           "model": {
             "description": "Model field on ai model modality record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "model_id": {
@@ -25944,7 +26375,7 @@
           },
           "model": {
             "description": "Model field on ai model pricing record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "model_id": {
@@ -26024,7 +26455,7 @@
           },
           "provider_model": {
             "description": "Provider model field on ai model pricing record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "published_at": {
@@ -26251,7 +26682,7 @@
           },
           "model": {
             "description": "Model field on ai model rank snapshot record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "model_id": {
@@ -26605,7 +27036,7 @@
           },
           "model": {
             "description": "Model field on ai model record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "model_aliases": {
@@ -26676,7 +27107,7 @@
           },
           "replacement_model": {
             "description": "Replacement model field on ai model record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "retired_at": {
@@ -26810,6 +27241,18 @@
             "description": "Capabilities field on ai model vendor record.",
             "type": "object"
           },
+          "client_api_compatibility": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Client api compatibility field on ai model vendor record."
+            },
+            "description": "Client api compatibility field on ai model vendor record.",
+            "type": "object"
+          },
           "color_token": {
             "description": "Color token field on ai model vendor record.",
             "maxLength": 64,
@@ -26923,6 +27366,18 @@
             "description": "Status field on ai model vendor record.",
             "type": "string",
             "x-db-type": "enum_int32"
+          },
+          "supported_protocols": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Supported protocols field on ai model vendor record."
+            },
+            "description": "Supported protocols field on ai model vendor record.",
+            "type": "object"
           },
           "tenant_id": {
             "description": "Tenant id field on ai model vendor record.",
@@ -27612,7 +28067,7 @@
           },
           "model": {
             "description": "Model field on ai pricing rule record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "model_id": {
@@ -27667,7 +28122,7 @@
           },
           "provider_model": {
             "description": "Provider model field on ai pricing rule record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "quantity_formula": {
@@ -28902,7 +29357,7 @@
           },
           "model": {
             "description": "Model field on ai quota policy record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "name": {
@@ -29330,7 +29785,7 @@
           },
           "provider_model": {
             "description": "Provider model field on ai request trace record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "provider_native_model": {
@@ -29340,6 +29795,11 @@
           },
           "reasoning_effort": {
             "description": "Reasoning effort field on ai request trace record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "region_code": {
+            "description": "Region code field on ai request trace record.",
             "maxLength": 64,
             "type": "string"
           },
@@ -29365,7 +29825,7 @@
           },
           "requested_model": {
             "description": "Requested model field on ai request trace record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "requested_model_catalog_key": {
@@ -29913,12 +30373,12 @@
           },
           "model": {
             "description": "Model field on ai resource record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "model_code": {
             "description": "Model code field on ai resource record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "model_id": {
@@ -30371,7 +30831,7 @@
           },
           "model_code": {
             "description": "Model code field on ai route candidate record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "organization_id": {
@@ -30720,12 +31180,12 @@
           },
           "requested_model": {
             "description": "Requested model field on ai routing decision log record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "resolved_model": {
             "description": "Resolved model field on ai routing decision log record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "retention_until": {
@@ -31169,7 +31629,7 @@
           },
           "target_model": {
             "description": "Target model field on ai routing rule record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "tenant_id": {
@@ -31650,7 +32110,7 @@
           },
           "model": {
             "description": "Model field on ai runtime invocation record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "organization_id": {
@@ -31896,7 +32356,7 @@
           },
           "model": {
             "description": "Model field on ai runtime usage link record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "occurred_at": {
@@ -32134,7 +32594,7 @@
           },
           "model_code": {
             "description": "Model code field on ai site model record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "model_id": {
@@ -32166,7 +32626,7 @@
           },
           "provider_model": {
             "description": "Provider model field on ai site model record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "provider_native_model": {
@@ -32825,7 +33285,7 @@
           },
           "model": {
             "description": "Model field on ai usage fact record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "occurred_at": {
@@ -32928,6 +33388,11 @@
           "reference_multiplier": {
             "description": "Reference multiplier field on ai usage fact record.",
             "format": "decimal",
+            "type": "string"
+          },
+          "region_code": {
+            "description": "Region code field on ai usage fact record.",
+            "maxLength": 64,
             "type": "string"
           },
           "request_count": {
@@ -56760,7 +57225,7 @@
           },
           "model": {
             "description": "Model field on integration service provider price rule record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "organization_id": {
@@ -82049,13 +82514,13 @@
     },
     "/backend/v3/api/ai/model_mappings": {
       "get": {
-        "description": "List model mappings. Reads ai_model_mapping_rule. Writes none. File targets none.",
+        "description": "List model mappings. Reads ai_model_mapping_rule, ai_model_mapping_rule_binding, ai_model_mapping_rule_item. Writes none. File targets none.",
         "operationId": "modelMappings.list",
         "parameters": [
           {
-            "description": "Scope type query parameter.",
+            "description": "Binding type query parameter.",
             "in": "query",
-            "name": "scope_type",
+            "name": "binding_type",
             "required": false,
             "schema": {
               "type": "string"
@@ -82074,6 +82539,15 @@
             "description": "Channel id query parameter.",
             "in": "query",
             "name": "channel_id",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Channel code query parameter.",
+            "in": "query",
+            "name": "channel_code",
             "required": false,
             "schema": {
               "type": "string"
@@ -82154,7 +82628,9 @@
         "x-contract-kind": "read",
         "x-file-targets": [],
         "x-read-sources": [
-          "ai_model_mapping_rule"
+          "ai_model_mapping_rule",
+          "ai_model_mapping_rule_binding",
+          "ai_model_mapping_rule_item"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "intelligence",
@@ -82164,7 +82640,7 @@
         "x-write-tables": []
       },
       "post": {
-        "description": "Create model mapping. Reads ai_model_mapping_rule. Writes ai_model_mapping_rule, ops_audit_log. File targets none.",
+        "description": "Create model mapping. Reads ai_model_mapping_rule, ai_model_mapping_rule_binding, ai_model_mapping_rule_item. Writes ai_model_mapping_rule, ai_model_mapping_rule_binding, ai_model_mapping_rule_item, ops_audit_log. File targets none.",
         "operationId": "modelMappings.create",
         "parameters": [],
         "requestBody": {
@@ -82243,7 +82719,9 @@
         "x-contract-kind": "create",
         "x-file-targets": [],
         "x-read-sources": [
-          "ai_model_mapping_rule"
+          "ai_model_mapping_rule",
+          "ai_model_mapping_rule_binding",
+          "ai_model_mapping_rule_item"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "intelligence",
@@ -82252,13 +82730,15 @@
         "x-source-file": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts",
         "x-write-tables": [
           "ai_model_mapping_rule",
+          "ai_model_mapping_rule_binding",
+          "ai_model_mapping_rule_item",
           "ops_audit_log"
         ]
       }
     },
     "/backend/v3/api/ai/model_mappings/resolve": {
       "post": {
-        "description": "Resolve model mapping. Reads ai_model_mapping_rule. Writes ops_audit_log. File targets none.",
+        "description": "Resolve model mapping. Reads ai_model_mapping_rule, ai_model_mapping_rule_binding, ai_model_mapping_rule_item. Writes ops_audit_log. File targets none.",
         "operationId": "modelMappings.resolve.create",
         "parameters": [],
         "requestBody": {
@@ -82337,7 +82817,9 @@
         "x-contract-kind": "action",
         "x-file-targets": [],
         "x-read-sources": [
-          "ai_model_mapping_rule"
+          "ai_model_mapping_rule",
+          "ai_model_mapping_rule_binding",
+          "ai_model_mapping_rule_item"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "intelligence",
@@ -82351,7 +82833,7 @@
     },
     "/backend/v3/api/ai/model_mappings/{mappingId}": {
       "delete": {
-        "description": "Delete model mapping. Reads ai_model_mapping_rule. Writes ai_model_mapping_rule, ops_audit_log. File targets none.",
+        "description": "Delete model mapping. Reads ai_model_mapping_rule, ai_model_mapping_rule_binding, ai_model_mapping_rule_item. Writes ai_model_mapping_rule, ai_model_mapping_rule_binding, ai_model_mapping_rule_item, ops_audit_log. File targets none.",
         "operationId": "modelMappings.delete",
         "parameters": [
           {
@@ -82429,7 +82911,9 @@
         "x-contract-kind": "delete",
         "x-file-targets": [],
         "x-read-sources": [
-          "ai_model_mapping_rule"
+          "ai_model_mapping_rule",
+          "ai_model_mapping_rule_binding",
+          "ai_model_mapping_rule_item"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "intelligence",
@@ -82438,11 +82922,13 @@
         "x-source-file": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts",
         "x-write-tables": [
           "ai_model_mapping_rule",
+          "ai_model_mapping_rule_binding",
+          "ai_model_mapping_rule_item",
           "ops_audit_log"
         ]
       },
       "patch": {
-        "description": "Update model mapping. Reads ai_model_mapping_rule. Writes ai_model_mapping_rule, ops_audit_log. File targets none.",
+        "description": "Update model mapping. Reads ai_model_mapping_rule, ai_model_mapping_rule_binding, ai_model_mapping_rule_item. Writes ai_model_mapping_rule, ai_model_mapping_rule_binding, ai_model_mapping_rule_item, ops_audit_log. File targets none.",
         "operationId": "modelMappings.update",
         "parameters": [
           {
@@ -82531,7 +83017,9 @@
         "x-contract-kind": "update",
         "x-file-targets": [],
         "x-read-sources": [
-          "ai_model_mapping_rule"
+          "ai_model_mapping_rule",
+          "ai_model_mapping_rule_binding",
+          "ai_model_mapping_rule_item"
         ],
         "x-route-scope": "admin",
         "x-sdk-domain": "intelligence",
@@ -82540,6 +83028,8 @@
         "x-source-file": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts",
         "x-write-tables": [
           "ai_model_mapping_rule",
+          "ai_model_mapping_rule_binding",
+          "ai_model_mapping_rule_item",
           "ops_audit_log"
         ]
       }
@@ -93938,7 +94428,7 @@
     },
     "/backend/v3/api/integration/channels": {
       "get": {
-        "description": "List channels. Reads ai_provider, ai_channel, ai_channel_model, ai_channel, ai_channel_resource, integration_provider_health_snapshot. Writes none. File targets none.",
+        "description": "List channels. Reads ai_provider, ai_channel, ai_channel_credential, ai_channel_model, ai_channel, ai_channel_resource, integration_provider_health_snapshot. Writes none. File targets none.",
         "operationId": "channels.list",
         "parameters": [],
         "responses": {
@@ -94008,6 +94498,7 @@
         "x-read-sources": [
           "ai_provider",
           "ai_channel",
+          "ai_channel_credential",
           "ai_channel_model",
           "ai_channel",
           "ai_channel_resource",
@@ -94021,7 +94512,7 @@
         "x-write-tables": []
       },
       "post": {
-        "description": "Create channel. Reads ai_provider, ai_channel, ai_channel_model, ai_channel, ai_channel_vendor, ai_channel_resource, ai_channel_resource. Writes ai_channel, ai_channel_model, ai_channel, ai_channel_vendor, ai_channel_resource, ai_channel_resource, ops_config_snapshot, ops_audit_log. File targets none.",
+        "description": "Create channel. Reads ai_provider, ai_channel, ai_channel_credential, ai_channel_model, ai_channel, ai_channel_vendor, ai_channel_resource, ai_channel_resource. Writes ai_channel, ai_channel_credential, ai_channel_model, ai_channel, ai_channel_vendor, ai_channel_resource, ai_channel_resource, ops_config_snapshot, ops_audit_log. File targets none.",
         "operationId": "channels.create",
         "parameters": [],
         "requestBody": {
@@ -94102,6 +94593,7 @@
         "x-read-sources": [
           "ai_provider",
           "ai_channel",
+          "ai_channel_credential",
           "ai_channel_model",
           "ai_channel",
           "ai_channel_vendor",
@@ -94115,6 +94607,7 @@
         "x-source-file": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts",
         "x-write-tables": [
           "ai_channel",
+          "ai_channel_credential",
           "ai_channel_model",
           "ai_channel",
           "ai_channel_vendor",
@@ -94125,7 +94618,7 @@
         ]
       },
       "put": {
-        "description": "Update channel. Reads ai_provider, ai_channel, ai_channel_model, ai_channel, ai_channel_vendor, ai_channel_resource, ai_channel_resource. Writes ai_channel, ai_channel_model, ai_channel, ai_channel_vendor, ai_channel_resource, ai_channel_resource, ops_config_snapshot, ops_audit_log. File targets none.",
+        "description": "Update channel. Reads ai_provider, ai_channel, ai_channel_credential, ai_channel_model, ai_channel, ai_channel_vendor, ai_channel_resource, ai_channel_resource. Writes ai_channel, ai_channel_credential, ai_channel_model, ai_channel, ai_channel_vendor, ai_channel_resource, ai_channel_resource, ops_config_snapshot, ops_audit_log. File targets none.",
         "operationId": "channels.update",
         "parameters": [],
         "requestBody": {
@@ -94206,6 +94699,7 @@
         "x-read-sources": [
           "ai_provider",
           "ai_channel",
+          "ai_channel_credential",
           "ai_channel_model",
           "ai_channel",
           "ai_channel_vendor",
@@ -94219,6 +94713,7 @@
         "x-source-file": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts",
         "x-write-tables": [
           "ai_channel",
+          "ai_channel_credential",
           "ai_channel_model",
           "ai_channel",
           "ai_channel_vendor",

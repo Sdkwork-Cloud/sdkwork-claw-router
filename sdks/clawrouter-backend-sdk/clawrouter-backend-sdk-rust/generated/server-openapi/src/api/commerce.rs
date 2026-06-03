@@ -4,7 +4,7 @@ use crate::api::base::{RequestHeaders};
 use crate::api::paths::backend_path;
 use crate::api::paths::append_query_string;
 use crate::http::{SdkworkError, SdkworkHttpClient};
-use crate::models::{AuditCommerceEventsListResult, CatalogAttributesCreateResult, CatalogAttributesListResult, CatalogCategoriesCreateResult, CatalogCategoriesDeleteResult, CatalogCategoriesListResult, CatalogCategoriesUpdateResult, CatalogCategorySeedsCreateResult, CatalogPriceListsCreateResult, CatalogPriceListsListResult, CatalogProductsCreateResult, CatalogProductsDeleteResult, CatalogProductsListResult, CatalogProductsUpdateResult, CatalogSkusCreateResult, CatalogSkusDeleteResult, CatalogSkusListResult, CatalogSkusUpdateResult, CommerceCategorySeedInitializeRequest, CommerceInventoryStockUpdateRequest, CommerceMembershipMemberStatusRequest, CommerceMembershipPackageGroupMutationRequest, CommerceMembershipPackageMutationRequest, CommerceMembershipPlanMutationRequest, CommercePaymentProviderAccountMutationRequest, CommercePaymentProviderAccountStatusUpdateRequest, CommercePriceListMutationRequest, CommerceProductAttributeMutationRequest, CommerceProductCategoryMutationRequest, CommerceProductSkuMutationRequest, CommerceProductSpuMutationRequest, CommerceRechargePackageMutationRequest, CommerceRechargeSettingsUpdateRequest, CommerceReportsOrderRevenueListResult, CommerceReportsPaymentReconciliationRetrieveResult, CommerceReportsRefundsListResult, CommerceStandardCommandRequest, FulfillmentsListResult, InventoryLedgerEntriesListResult, InventoryReservationsListResult, InventoryStocksListResult, InventoryStocksUpdateResult, InvoicesListResult, InvoicesRetrieveResult, InvoicesTitlesListResult, MembershipsEntitlementsListResult, MembershipsMembersListResult, MembershipsMembersStatusUpdateResult, MembershipsPackageGroupsCreateResult, MembershipsPackageGroupsDeleteResult, MembershipsPackageGroupsListResult, MembershipsPackageGroupsUpdateResult, MembershipsPackagesCreateResult, MembershipsPackagesDeleteResult, MembershipsPackagesListResult, MembershipsPackagesUpdateResult, MembershipsPlansCreateResult, MembershipsPlansDeleteResult, MembershipsPlansListResult, MembershipsPlansUpdateResult, OrdersEventsListResult, OrdersListResult, OrdersRetrieveResult, PaymentsAttemptsListResult, PaymentsChannelsListResult, PaymentsIntentsListResult, PaymentsMethodsListResult, PaymentsProviderAccountsCreateResult, PaymentsProviderAccountsDeleteResult, PaymentsProviderAccountsListResult, PaymentsProviderAccountsStatusUpdateResult, PaymentsProviderAccountsUpdateResult, PaymentsProvidersListResult, PaymentsReconciliationRunsListResult, PaymentsRouteRulesListResult, PaymentsRuntimeSnapshotRetrieveResult, PaymentsWebhookEventsListResult, RechargesOrdersListResult, RechargesPackagesCreateResult, RechargesPackagesDeleteResult, RechargesPackagesListResult, RechargesPackagesUpdateResult, RechargesSettingsRetrieveResult, RechargesSettingsUpdateResult, RefundsListResult, RefundsRetrieveResult, ShipmentsListResult, ShipmentsTrackingEventsListResult, WalletAccountsListResult, WalletAdjustmentsCreateResult, WalletExchangeRulesListResult, WalletLedgerEntriesListResult};
+use crate::models::{AuditCommerceEventsListResult, CatalogAttributesCreateResult, CatalogAttributesListResult, CatalogCategoriesCreateResult, CatalogCategoriesDeleteResult, CatalogCategoriesListResult, CatalogCategoriesUpdateResult, CatalogCategoryAttributesCreateResult, CatalogCategoryAttributesDeleteResult, CatalogCategoryAttributesListResult, CatalogCategoryAttributesUpdateResult, CatalogCategorySeedsCreateResult, CatalogPriceListsCreateResult, CatalogPriceListsListResult, CatalogProductsCreateResult, CatalogProductsDeleteResult, CatalogProductsListResult, CatalogProductsUpdateResult, CatalogSkusCreateResult, CatalogSkusDeleteResult, CatalogSkusListResult, CatalogSkusUpdateResult, CommerceCategorySeedInitializeRequest, CommerceInventoryStockUpdateRequest, CommerceMembershipMemberStatusRequest, CommerceMembershipPackageGroupMutationRequest, CommerceMembershipPackageMutationRequest, CommerceMembershipPlanMutationRequest, CommercePaymentProviderAccountMutationRequest, CommercePaymentProviderAccountStatusUpdateRequest, CommercePriceListMutationRequest, CommerceProductAttributeMutationRequest, CommerceProductCategoryAttributeMutationRequest, CommerceProductCategoryMutationRequest, CommerceProductSkuMutationRequest, CommerceProductSpuMutationRequest, CommerceRechargePackageMutationRequest, CommerceRechargeSettingsUpdateRequest, CommerceReportsOrderRevenueListResult, CommerceReportsPaymentReconciliationRetrieveResult, CommerceReportsRefundsListResult, CommerceStandardCommandRequest, FulfillmentsListResult, InventoryLedgerEntriesListResult, InventoryReservationsListResult, InventoryStocksListResult, InventoryStocksUpdateResult, InvoicesListResult, InvoicesRetrieveResult, InvoicesTitlesListResult, MembershipsEntitlementsListResult, MembershipsMembersListResult, MembershipsMembersStatusUpdateResult, MembershipsPackageGroupsCreateResult, MembershipsPackageGroupsDeleteResult, MembershipsPackageGroupsListResult, MembershipsPackageGroupsUpdateResult, MembershipsPackagesCreateResult, MembershipsPackagesDeleteResult, MembershipsPackagesListResult, MembershipsPackagesUpdateResult, MembershipsPlansCreateResult, MembershipsPlansDeleteResult, MembershipsPlansListResult, MembershipsPlansUpdateResult, OrdersEventsListResult, OrdersListResult, OrdersRetrieveResult, PaymentsAttemptsListResult, PaymentsChannelsListResult, PaymentsIntentsListResult, PaymentsMethodsListResult, PaymentsProviderAccountsCreateResult, PaymentsProviderAccountsDeleteResult, PaymentsProviderAccountsListResult, PaymentsProviderAccountsStatusUpdateResult, PaymentsProviderAccountsUpdateResult, PaymentsProvidersListResult, PaymentsReconciliationRunsListResult, PaymentsRouteRulesListResult, PaymentsRuntimeSnapshotRetrieveResult, PaymentsWebhookEventsListResult, RechargesOrdersListResult, RechargesPackagesCreateResult, RechargesPackagesDeleteResult, RechargesPackagesListResult, RechargesPackagesUpdateResult, RechargesSettingsRetrieveResult, RechargesSettingsUpdateResult, RefundsListResult, RefundsRetrieveResult, ShipmentsListResult, ShipmentsTrackingEventsListResult, WalletAccountsListResult, WalletAdjustmentsCreateResult, WalletExchangeRulesListResult, WalletLedgerEntriesListResult};
 
 #[derive(Clone)]
 pub struct CommerceApi {
@@ -84,6 +84,49 @@ impl CommerceApi {
     /// Update product category
     pub async fn catalog_categories_update(&self, category_id: &str, body: &CommerceProductCategoryMutationRequest, idempotency_key: &str) -> Result<CatalogCategoriesUpdateResult, SdkworkError> {
         let path = backend_path(&format!("/catalog/categories/{}", serialize_path_parameter(category_id, PathParameterSpec::new("categoryId", "simple", false))));
+        let headers = build_request_headers(
+            &[
+                ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
+            ],
+            &[],
+        );
+        self.client.patch(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+    }
+
+    /// List category attribute bindings
+    pub async fn catalog_category_attributes_list(&self, category_id: Option<&str>, attribute_id: Option<&str>, status: Option<&str>, page: Option<i64>, page_size: Option<i64>) -> Result<CatalogCategoryAttributesListResult, SdkworkError> {
+        let query = build_query_string(&[
+            QueryParameterSpec::new("category_id", category_id, "form", true, false, None),
+            QueryParameterSpec::new("attribute_id", attribute_id, "form", true, false, None),
+            QueryParameterSpec::new("status", status, "form", true, false, None),
+            QueryParameterSpec::new("page", page, "form", true, false, None),
+            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
+        ]);
+        let path = append_query_string(backend_path(&"/catalog/category_attributes".to_string()), &query);
+        self.client.get(&path, None, None).await
+    }
+
+    /// Create category attribute binding
+    pub async fn catalog_category_attributes_create(&self, body: &CommerceProductCategoryAttributeMutationRequest, idempotency_key: &str) -> Result<CatalogCategoryAttributesCreateResult, SdkworkError> {
+        let path = backend_path(&"/catalog/category_attributes".to_string());
+        let headers = build_request_headers(
+            &[
+                ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
+            ],
+            &[],
+        );
+        self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+    }
+
+    /// Delete category attribute binding
+    pub async fn catalog_category_attributes_delete(&self, binding_id: &str) -> Result<CatalogCategoryAttributesDeleteResult, SdkworkError> {
+        let path = backend_path(&format!("/catalog/category_attributes/{}", serialize_path_parameter(binding_id, PathParameterSpec::new("bindingId", "simple", false))));
+        self.client.delete(&path, None, None).await
+    }
+
+    /// Update category attribute binding
+    pub async fn catalog_category_attributes_update(&self, binding_id: &str, body: &CommerceProductCategoryAttributeMutationRequest, idempotency_key: &str) -> Result<CatalogCategoryAttributesUpdateResult, SdkworkError> {
+        let path = backend_path(&format!("/catalog/category_attributes/{}", serialize_path_parameter(binding_id, PathParameterSpec::new("bindingId", "simple", false))));
         let headers = build_request_headers(
             &[
                 ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),

@@ -37,6 +37,7 @@ usage_by_request AS (
         MAX(requested_model_catalog_key) AS requested_model_catalog_key,
         MAX(model) AS model,
         MAX(provider_native_model) AS provider_native_model,
+        MAX(region_code) AS region_code,
         MAX(modality) AS modality,
         CAST(COALESCE(SUM(COALESCE(prompt_tokens, 0)), 0) AS TEXT) AS prompt_tokens,
         CAST(COALESCE(SUM(COALESCE(cached_tokens, 0)), 0) AS TEXT) AS cached_tokens,
@@ -72,6 +73,7 @@ SELECT
     COALESCE(NULLIF(u.provider_native_model, ''), NULLIF(t.provider_native_model, ''), NULLIF(u.model, ''), NULLIF(t.provider_model, ''), '-') AS model,
     COALESCE(NULLIF(u.provider_native_model, ''), NULLIF(t.provider_native_model, ''), NULLIF(u.model, ''), NULLIF(t.provider_model, ''), '') AS provider_native_model,
     COALESCE(NULLIF(u.requested_model_catalog_key, ''), NULLIF(t.requested_model_catalog_key, ''), NULLIF(u.catalog_key, ''), NULLIF(d.resolved_model, ''), NULLIF(t.requested_model, ''), '') AS requested_model_catalog_key,
+    COALESCE(NULLIF(u.region_code, ''), NULLIF(t.region_code, ''), '') AS region_code,
     CASE
         WHEN (
             (t.http_status IS NOT NULL AND t.http_status >= 400)
@@ -306,6 +308,7 @@ fn row_to_log(row: sqlx::sqlite::SqliteRow) -> Result<AdminRecordLogItem, Domain
         model: string_cell(&row, "model"),
         provider_native_model: string_cell(&row, "provider_native_model"),
         requested_model_catalog_key: string_cell(&row, "requested_model_catalog_key"),
+        region_code: string_cell(&row, "region_code"),
         status: string_cell(&row, "log_status"),
         http_status: integer_cell(&row, "http_status"),
         http_method: http_method_label(&string_cell(&row, "http_method")),

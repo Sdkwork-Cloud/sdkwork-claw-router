@@ -43,7 +43,7 @@ export function StoragePageShell({
   }
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex min-h-0 flex-1 flex-col gap-4 overflow-hidden">
       <div className="flex items-center justify-end rounded-xl border border-slate-200 bg-white px-3 py-2 dark:border-white/10 dark:bg-white/5">
         <div className="flex items-center gap-2">
           <button

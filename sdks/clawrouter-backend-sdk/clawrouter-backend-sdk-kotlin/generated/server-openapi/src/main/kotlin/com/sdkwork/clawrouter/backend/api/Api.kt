@@ -20,5 +20,6 @@ class Api(private val client: HttpClient) {
     val system: SystemApi = SystemApi(client)
     val prompts: PromptsApi = PromptsApi(client)
     val serviceProviders: ServiceProvidersApi = ServiceProvidersApi(client)
+    val sites: SitesApi = SitesApi(client)
     val storage: StorageApi = StorageApi(client)
 }

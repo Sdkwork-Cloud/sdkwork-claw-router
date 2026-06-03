@@ -2,7 +2,7 @@
 
 ## 1. 产品定位
 
-`sdkwork-claw-router` 是 Spring AI Plus 体系下的新一代 AI API Router 产品。它是对 `sdkwork-api-router` 的重构，不是简单复制旧系统，也不是只做 OpenAI 兼容转发。它要同时满足：
+`sdkwork-claw-router` 是 Spring AI Plus 体系下的新一代 AI API Router 产品。它围绕 Rust-first 网关、Java-compatible API 和统一 Portal 产品边界建立，不是只做 OpenAI 兼容转发。它要同时满足：
 
 - 面向开发者的统一 AI API 网关。
 - 面向企业用户的 API Key、用量、账务、模型、路由、供应商配置自助控制台。
@@ -12,7 +12,7 @@
 
 核心差异：
 
-1. 旧版 `sdkwork-api-router` 在 `apps/` 下存在多个前端应用；新版统一到 `apps/sdkwork-claw-router-portal` 一个应用，内部拆分 public、console、admin 模块。
+1. 前端产品统一到 `apps/sdkwork-claw-router-portal` 一个应用，内部拆分 public、console、admin 模块。
 2. 新版数据库必须遵守 `DATABASE_SPEC.md` 的合同优先、业务前缀、L1/L2/L3 合规标准。
 3. 新版必须对齐 Spring AI Plus 既有业务实体表。用户、VIP、账户、优惠券、积分充值、订单支付等表结构保持与 `spring-ai-plus-business-entity` 完全一致。
 4. 新版 API 管理面和用户面必须使用已存在的 backend/app API 标准，不能重新发明一套控制面协议。

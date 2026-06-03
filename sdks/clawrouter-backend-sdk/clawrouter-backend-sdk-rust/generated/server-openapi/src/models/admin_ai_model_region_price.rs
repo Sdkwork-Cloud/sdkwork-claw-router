@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-/// Regional official reference pricing input for admin AI model commands.
+/// Regional official reference pricing returned by admin AI model payloads.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct AdminAiModelRegionPrice {
     /// Optional official reference cache-read unit price in USD.

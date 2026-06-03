@@ -46,7 +46,7 @@ async fn admin_record_route_lists_logs_and_normalizes_filters() {
         payload["data"]["logs"][0]["providerNativeModel"]
     );
     assert_eq!(
-        "openai/global/gpt-4o-mini",
+        "openai/gpt-4o-mini",
         payload["data"]["logs"][0]["requestedModelCatalogKey"]
     );
     assert_eq!("success", payload["data"]["logs"][0]["status"]);
@@ -177,7 +177,8 @@ impl AdminRecordStore for TestAdminRecordStore {
                     log_type: "text".to_owned(),
                     model: "gpt-4o-mini".to_owned(),
                     provider_native_model: "gpt-4o-mini-2026-05-13".to_owned(),
-                    requested_model_catalog_key: "openai/global/gpt-4o-mini".to_owned(),
+                    requested_model_catalog_key: "openai/gpt-4o-mini".to_owned(),
+                    region_code: "global".to_owned(),
                     status: "success".to_owned(),
                     http_status: 200,
                     http_method: "POST".to_owned(),

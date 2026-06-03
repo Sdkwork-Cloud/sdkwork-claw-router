@@ -17,6 +17,7 @@ public class SdkworkBackendClient {
     public let system: SystemApi
     public let prompts: PromptsApi
     public let serviceProviders: ServiceProvidersApi
+    public let sites: SitesApi
     public let storage: StorageApi
 
     public init(baseURL: String) {
@@ -35,6 +36,7 @@ public class SdkworkBackendClient {
         self.system = SystemApi(client: httpClient)
         self.prompts = PromptsApi(client: httpClient)
         self.serviceProviders = ServiceProvidersApi(client: httpClient)
+        self.sites = SitesApi(client: httpClient)
         self.storage = StorageApi(client: httpClient)
     }
 
@@ -54,6 +56,7 @@ public class SdkworkBackendClient {
         self.system = SystemApi(client: httpClient)
         self.prompts = PromptsApi(client: httpClient)
         self.serviceProviders = ServiceProvidersApi(client: httpClient)
+        self.sites = SitesApi(client: httpClient)
         self.storage = StorageApi(client: httpClient)
     }
 

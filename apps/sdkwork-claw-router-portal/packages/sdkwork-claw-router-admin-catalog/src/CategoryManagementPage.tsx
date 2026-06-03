@@ -280,7 +280,7 @@ export function CategoryManagementPage() {
 
   return (
     <section
-      className="relative flex h-[calc(100vh-96px)] max-h-[calc(100vh-96px)] min-h-0 w-full flex-col overflow-hidden bg-slate-50 px-5 pb-6 pt-4 text-slate-900 transition-colors duration-300 dark:bg-[#0a0a0a] dark:text-slate-100"
+      className="relative flex h-full min-h-0 w-full flex-col overflow-hidden bg-slate-50 px-5 pb-6 pt-4 text-slate-900 transition-colors duration-300 dark:bg-[#0a0a0a] dark:text-slate-100"
       data-admin-category-management-page
     >
       <div

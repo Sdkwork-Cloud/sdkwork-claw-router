@@ -25,6 +25,8 @@ pub struct AdminModelVendorItem {
     pub status: String,
     pub color: String,
     pub description: String,
+    pub supported_protocols: String,
+    pub client_api_compatibility: String,
     pub deleted_at: Option<String>,
 }
 
@@ -36,16 +38,12 @@ pub struct AdminAiModelItem {
     pub organization_id: i64,
     pub vendor_id: String,
     pub vendor_code: String,
-    pub region_code: String,
     pub catalog_key: String,
     pub model: String,
     pub display_name: String,
     pub name: String,
     pub model_type: String,
-    pub price_in: String,
-    pub price_out: String,
-    pub cache_read_price: String,
-    pub cache_write_price: String,
+    pub region_prices: Vec<AdminAiModelRegionPriceCommand>,
     pub status: String,
     pub calls: String,
     pub description: Option<String>,
@@ -96,82 +94,104 @@ pub struct AdminModelCatalogSyncItem {
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]
-pub struct AdminModelMappingRuleItem {
+pub struct AdminModelMappingRuleBindingItem {
     pub id: i64,
     pub uuid: String,
-    pub tenant_id: i64,
-    pub organization_id: i64,
-    pub scope_type: String,
-    pub vendor_id: Option<i64>,
-    pub vendor_code: Option<String>,
-    pub channel_id: Option<i64>,
-    pub channel_code: Option<String>,
-    pub source_model: String,
-    pub source_catalog_key: Option<String>,
-    pub source_vendor_code: Option<String>,
-    pub target_model: String,
-    pub target_catalog_key: Option<String>,
-    pub target_vendor_code: Option<String>,
-    pub target_provider_model: Option<String>,
-    pub target_provider_native_model: Option<String>,
-    pub mapping_mode: String,
-    pub match_type: String,
-    pub priority: i32,
+    pub binding_type: String,
+    pub binding_id: Option<i64>,
+    pub binding_code: Option<String>,
+    pub binding_name: Option<String>,
+    pub sort_order: i32,
     pub enabled: bool,
-    pub effective_from: Option<String>,
-    pub effective_to: Option<String>,
-    pub description: Option<String>,
     pub created_at: Option<String>,
     pub updated_at: Option<String>,
     pub deleted_at: Option<String>,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]
-pub struct AdminModelMappingRuleDraft {
-    pub scope_type: String,
-    pub vendor_id: Option<i64>,
-    pub vendor_code: Option<String>,
-    pub channel_id: Option<i64>,
-    pub channel_code: Option<String>,
+pub struct AdminModelMappingRuleMappingItem {
+    pub id: i64,
+    pub uuid: String,
     pub source_model: String,
     pub source_catalog_key: Option<String>,
-    pub source_vendor_code: Option<String>,
     pub target_model: String,
     pub target_catalog_key: Option<String>,
-    pub target_vendor_code: Option<String>,
     pub target_provider_model: Option<String>,
     pub target_provider_native_model: Option<String>,
+    pub sort_order: i32,
+    pub enabled: bool,
+    pub created_at: Option<String>,
+    pub updated_at: Option<String>,
+    pub deleted_at: Option<String>,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct AdminModelMappingRuleItem {
+    pub id: i64,
+    pub uuid: String,
+    pub tenant_id: i64,
+    pub organization_id: i64,
+    pub binding_type: String,
+    pub source_vendor_id: Option<i64>,
+    pub source_vendor_code: Option<String>,
+    pub target_vendor_id: Option<i64>,
+    pub target_vendor_code: Option<String>,
     pub mapping_mode: String,
     pub match_type: String,
-    pub priority: i32,
     pub enabled: bool,
-    pub effective_from: Option<String>,
-    pub effective_to: Option<String>,
-    pub description: Option<String>,
+    pub bindings: Vec<AdminModelMappingRuleBindingItem>,
+    pub mapping_items: Vec<AdminModelMappingRuleMappingItem>,
+    pub created_at: Option<String>,
+    pub updated_at: Option<String>,
+    pub deleted_at: Option<String>,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq, Default)]
+pub struct AdminModelMappingRuleBindingDraft {
+    pub id: Option<i64>,
+    pub binding_type: String,
+    pub binding_id: Option<i64>,
+    pub binding_code: Option<String>,
+    pub binding_name: Option<String>,
+    pub enabled: bool,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq, Default)]
+pub struct AdminModelMappingRuleItemDraft {
+    pub id: Option<i64>,
+    pub source_model: String,
+    pub source_catalog_key: Option<String>,
+    pub target_model: String,
+    pub target_catalog_key: Option<String>,
+    pub target_provider_model: Option<String>,
+    pub target_provider_native_model: Option<String>,
+    pub enabled: Option<bool>,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct AdminModelMappingRuleDraft {
+    pub source_vendor_id: Option<i64>,
+    pub source_vendor_code: String,
+    pub target_vendor_id: Option<i64>,
+    pub target_vendor_code: String,
+    pub mapping_mode: String,
+    pub match_type: String,
+    pub enabled: bool,
+    pub bindings: Vec<AdminModelMappingRuleBindingDraft>,
+    pub mapping_items: Vec<AdminModelMappingRuleItemDraft>,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq, Default)]
 pub struct AdminModelMappingRulePatch {
-    pub scope_type: Option<String>,
-    pub vendor_id: Option<Option<i64>>,
-    pub vendor_code: Option<Option<String>>,
-    pub channel_id: Option<Option<i64>>,
-    pub channel_code: Option<Option<String>>,
-    pub source_model: Option<String>,
-    pub source_catalog_key: Option<Option<String>>,
-    pub source_vendor_code: Option<Option<String>>,
-    pub target_model: Option<String>,
-    pub target_catalog_key: Option<Option<String>>,
-    pub target_vendor_code: Option<Option<String>>,
-    pub target_provider_model: Option<Option<String>>,
-    pub target_provider_native_model: Option<Option<String>>,
+    pub source_vendor_id: Option<Option<i64>>,
+    pub source_vendor_code: Option<String>,
+    pub target_vendor_id: Option<Option<i64>>,
+    pub target_vendor_code: Option<String>,
     pub mapping_mode: Option<String>,
     pub match_type: Option<String>,
-    pub priority: Option<i32>,
     pub enabled: Option<bool>,
-    pub effective_from: Option<Option<String>>,
-    pub effective_to: Option<Option<String>>,
-    pub description: Option<Option<String>>,
+    pub bindings: Option<Vec<AdminModelMappingRuleBindingDraft>>,
+    pub mapping_items: Option<Vec<AdminModelMappingRuleItemDraft>>,
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
@@ -187,9 +207,10 @@ pub struct ListAdminAiModelsQuery {
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct ListAdminModelMappingsQuery {
     pub subject: AdminModelSubject,
-    pub scope_type: Option<String>,
+    pub binding_type: Option<String>,
     pub vendor_code: Option<String>,
     pub channel_id: Option<i64>,
+    pub channel_code: Option<String>,
     pub q: Option<String>,
 }
 
@@ -220,21 +241,12 @@ pub struct AdminAiModelRegionPriceCommand {
 pub struct CreateAdminAiModelCommand {
     pub subject: AdminModelSubject,
     pub model_uuid: String,
-    pub input_pricing_uuid: String,
-    pub output_pricing_uuid: String,
-    pub cache_read_pricing_uuid: String,
-    pub cache_write_pricing_uuid: String,
     pub capability_uuid: String,
     pub audit_log_uuid: String,
     pub vendor_id: String,
     pub model: String,
     pub display_name: String,
     pub model_type: String,
-    pub price_in: String,
-    pub price_out: String,
-    pub cache_read_price: Option<String>,
-    pub cache_write_price: Option<String>,
-    pub region_code: String,
     pub region_prices: Vec<AdminAiModelRegionPriceCommand>,
     pub description: Option<String>,
     pub modalities: Vec<String>,
@@ -263,21 +275,12 @@ pub struct CreateAdminAiModelCommand {
 pub struct UpdateAdminAiModelCommand {
     pub subject: AdminModelSubject,
     pub capability_uuid: String,
-    pub input_pricing_uuid: String,
-    pub output_pricing_uuid: String,
-    pub cache_read_pricing_uuid: String,
-    pub cache_write_pricing_uuid: String,
     pub audit_log_uuid: String,
     pub model_id: String,
     pub vendor_id: Option<String>,
     pub model: Option<String>,
     pub display_name: Option<Option<String>>,
     pub model_type: Option<String>,
-    pub price_in: Option<String>,
-    pub price_out: Option<String>,
-    pub cache_read_price: Option<Option<String>>,
-    pub cache_write_price: Option<Option<String>>,
-    pub region_code: Option<String>,
     pub region_prices: Option<Vec<AdminAiModelRegionPriceCommand>>,
     pub status: Option<String>,
     pub description: Option<Option<String>>,
@@ -331,6 +334,8 @@ pub struct DeleteAdminAiModelCommand {
 pub struct CreateAdminModelMappingCommand {
     pub subject: AdminModelSubject,
     pub mapping_uuid: String,
+    pub binding_uuids: Vec<String>,
+    pub item_uuids: Vec<String>,
     pub audit_log_uuid: String,
     pub draft: AdminModelMappingRuleDraft,
     pub request_id: String,
@@ -342,6 +347,8 @@ pub struct UpdateAdminModelMappingCommand {
     pub subject: AdminModelSubject,
     pub audit_log_uuid: String,
     pub mapping_id: String,
+    pub binding_uuids: Vec<String>,
+    pub item_uuids: Vec<String>,
     pub patch: AdminModelMappingRulePatch,
     pub request_id: String,
     pub requested_at: String,
@@ -363,6 +370,8 @@ pub struct ResolveAdminModelMappingQuery {
     pub vendor_code: Option<String>,
     pub channel_id: Option<i64>,
     pub channel_code: Option<String>,
+    pub provider_account_id: Option<i64>,
+    pub provider_account_code: Option<String>,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]
@@ -374,7 +383,7 @@ pub struct ResolveAdminModelMappingResult {
     pub target_provider_model: Option<String>,
     pub target_provider_native_model: Option<String>,
     pub matched: bool,
-    pub matched_scope_type: Option<String>,
+    pub matched_binding_type: Option<String>,
     pub rule: Option<AdminModelMappingRuleItem>,
 }
 

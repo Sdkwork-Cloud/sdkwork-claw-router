@@ -27,6 +27,10 @@ import type {
   AdminModelCatalogSyncResponse,
   AdminModelMappingCreateRequest,
   AdminModelMappingResolveRequest,
+  AdminModelMappingRuleBinding,
+  AdminModelMappingRuleBindingInput,
+  AdminModelMappingRuleItem,
+  AdminModelMappingRuleItemInput,
   AdminModelMappingUpdateRequest,
   AdminModelVendorCreateRequest,
   ModelRankingItem,
@@ -55,10 +59,7 @@ export interface Model {
   displayName: string;
   name: string;
   type: 'Chat' | 'Image' | 'Audio' | 'Embedding' | 'Music' | 'SoundEffect' | 'Video';
-  priceIn: string;
-  priceOut: string;
-  cacheReadPrice: string;
-  cacheWritePrice: string;
+  regionPrices: ModelRegionPriceInput[];
   status: 'active' | 'inactive';
   calls: string;
   description: string | null;
@@ -155,10 +156,6 @@ export type ModelCreateInput = {
   model?: string;
   displayName?: string | null;
   type: Model['type'];
-  priceIn: string;
-  priceOut: string;
-  cacheReadPrice: string;
-  cacheWritePrice: string;
   regionPrices: ModelRegionPriceInput[];
   contextTokens: string;
   maxOutputTokens?: number | null;
@@ -330,30 +327,57 @@ export interface SiteConnectionCheckResult {
 
 export interface ModelMappingRule {
   id: string;
-  scopeType: 'global' | 'vendor' | 'channel';
-  vendorId: string | null;
-  vendorCode: string | null;
-  channelId: string | null;
-  channelCode: string | null;
-  sourceModel: string;
-  sourceCatalogKey: string | null;
-  sourceVendorCode: string | null;
-  targetModel: string;
-  targetCatalogKey: string | null;
-  targetVendorCode: string | null;
-  targetProviderModel: string | null;
-  targetProviderNativeModel: string | null;
+  bindingType: ModelMappingBindingType;
+  sourceVendorId: string | null;
+  sourceVendorCode: string;
+  targetVendorId: string | null;
+  targetVendorCode: string;
   mappingMode: 'alias';
   matchType: 'exact';
-  priority: number;
   enabled: boolean;
-  effectiveFrom: string | null;
-  effectiveTo: string | null;
-  description: string | null;
+  bindings: ModelMappingRuleBinding[];
+  mappingItems: ModelMappingRuleItem[];
   createdAt: string | null;
   updatedAt: string | null;
 }
 
+export type ModelMappingBindingType =
+  | 'global'
+  | 'vendor'
+  | 'channel_group'
+  | 'channel'
+  | 'provider_account'
+  | 'site'
+  | 'site_service';
+
+export interface ModelMappingRuleBinding {
+  id: string;
+  bindingType: ModelMappingBindingType;
+  bindingId?: string | null;
+  bindingCode?: string | null;
+  bindingName?: string | null;
+  sortOrder: number;
+  enabled: boolean;
+  createdAt?: string | null;
+  updatedAt?: string | null;
+}
+
+export interface ModelMappingRuleItem {
+  id: string;
+  sourceModel: string;
+  sourceCatalogKey?: string | null;
+  targetModel: string;
+  targetCatalogKey?: string | null;
+  targetProviderModel?: string | null;
+  targetProviderNativeModel?: string | null;
+  sortOrder: number;
+  enabled: boolean;
+  createdAt?: string | null;
+  updatedAt?: string | null;
+}
+
+export type ModelMappingBindingInput = AdminModelMappingRuleBindingInput;
+export type ModelMappingRuleItemInput = AdminModelMappingRuleItemInput;
 export type ModelMappingCreateInput = AdminModelMappingCreateRequest;
 export type ModelMappingUpdateInput = AdminModelMappingUpdateRequest;
 export type ModelMappingResolveInput = AdminModelMappingResolveRequest;
@@ -387,6 +411,20 @@ export interface ResourceGroupResourceItem {
   memberRole: 'included' | 'optional' | 'fallback';
 }
 
+export interface ResourceGroupAssignableResourceItem {
+  id: string;
+  resourceCode: string;
+  resourceType: string;
+  displayName: string;
+  vendorCode: string | null;
+  modalityCode: string | null;
+  apiEndpointCode: string | null;
+  catalogKey: string | null;
+  model: string | null;
+  providerNativeModel: string | null;
+  status: 'active' | 'disabled' | 'inactive';
+}
+
 export interface ResourceGroupMemberInput {
   resourceCode: string;
   itemRole?: ResourceGroupResourceItem['memberRole'];
@@ -417,7 +455,7 @@ export interface ResourceGroupUpdateInput {
 
 export interface ModelMappingResolveResult {
   matched: boolean;
-  matchedScopeType: ModelMappingRule['scopeType'] | null;
+  matchedBindingType: ModelMappingRule['bindingType'] | null;
   sourceModel: string;
   targetModel: string;
   targetCatalogKey: string | null;
@@ -716,6 +754,13 @@ export class ResourceGroupService {
     return ResourceGroupService.fetchResourceGroupResources(groupIdOrCode);
   }
 
+  static async fetchAssignableResources(): Promise<ResourceGroupAssignableResourceItem[]> {
+    const result = await getClawRouterBackendSdkClient().ai.aiResources.list();
+    ensureSdkworkApiSuccess(result, 'Failed to fetch AI resources');
+    return readRequiredApiItems(result, 'Failed to fetch AI resources')
+      .map(normalizeResourceGroupAssignableResourceItem);
+  }
+
   static async createResourceGroup(input: ResourceGroupCreateInput): Promise<ResourceGroupItem> {
     const result = await getClawRouterBackendSdkClient().ai.aiResourceGroups.create(
       toResourceGroupCreateRequest(input),
@@ -756,16 +801,16 @@ export class ResourceGroupService {
 
 export class ModelMappingService {
   static async fetchModelMappings(params?: {
-    scopeType?: ModelMappingRule['scopeType'] | 'all';
+    bindingType?: ModelMappingRule['bindingType'] | 'all';
     vendorCode?: string | null;
     channelCode?: string | null;
-    sourceModel?: string | null;
+    q?: string | null;
   }): Promise<ModelMappingRule[]> {
     const query = {
-      scopeType: params?.scopeType && params.scopeType !== 'all' ? params.scopeType : undefined,
+      bindingType: params?.bindingType && params.bindingType !== 'all' ? params.bindingType : undefined,
       vendorCode: params?.vendorCode || undefined,
       channelCode: params?.channelCode || undefined,
-      sourceModel: params?.sourceModel || undefined,
+      q: params?.q || undefined,
     };
     const result = await getClawRouterBackendSdkClient().ai.modelMappings.list(query);
     ensureSdkworkApiSuccess(result, 'Failed to fetch model mappings');
@@ -958,10 +1003,6 @@ function toCreateModelRequest(model: ModelCreateInput): AdminAiModelCreateReques
     model: modelName(runtimeModel),
     displayName: optionalNullableText(model.displayName, 'displayName', 128) ?? undefined,
     type: modelType(model.type),
-    priceIn: decimalAmount(model.priceIn, 'priceIn'),
-    priceOut: decimalAmount(model.priceOut, 'priceOut'),
-    cacheReadPrice: optionalDecimalAmount(model.cacheReadPrice, 'cacheReadPrice'),
-    cacheWritePrice: optionalDecimalAmount(model.cacheWritePrice, 'cacheWritePrice'),
     regionPrices: regionPrices.map((regionPrice) => ({
       regionCode: regionCode(regionPrice.regionCode, 'regionPrices.regionCode'),
       priceIn: decimalAmount(regionPrice.priceIn, `regionPrices.${regionPrice.regionCode}.priceIn`),
@@ -989,19 +1030,7 @@ function toUpdateModelRequest(model: ModelPatchInput): AdminAiModelUpdateRequest
   if (model.displayName !== undefined) {
     request.displayName = optionalNullableText(model.displayName, 'displayName', 128) ?? undefined;
   }
-  if (model.priceIn !== undefined) {
-    request.priceIn = decimalAmount(model.priceIn, 'priceIn');
-  }
-  if (model.priceOut !== undefined) {
-    request.priceOut = decimalAmount(model.priceOut, 'priceOut');
-  }
-  if (model.cacheReadPrice !== undefined) {
-    request.cacheReadPrice = optionalDecimalAmount(model.cacheReadPrice, 'cacheReadPrice');
-  }
-  if (model.cacheWritePrice !== undefined) {
-    request.cacheWritePrice = optionalDecimalAmount(model.cacheWritePrice, 'cacheWritePrice');
-  }
-  if (model.regionPrices !== undefined || model.priceIn !== undefined || model.priceOut !== undefined) {
+  if (model.regionPrices !== undefined) {
     request.regionPrices = normalizedRegionPrices(model).map((regionPrice) => ({
       regionCode: regionCode(regionPrice.regionCode, 'regionPrices.regionCode'),
       priceIn: decimalAmount(regionPrice.priceIn, `regionPrices.${regionPrice.regionCode}.priceIn`),
@@ -1026,19 +1055,13 @@ function toUpdateModelRequest(model: ModelPatchInput): AdminAiModelUpdateRequest
   return request;
 }
 
-function normalizedRegionPrices(model: Partial<Pick<ModelCreateInput, 'priceIn' | 'priceOut' | 'cacheReadPrice' | 'cacheWritePrice'>> & {
+function normalizedRegionPrices(model: {
   regionPrices?: ModelRegionPriceInput[];
 }): ModelRegionPriceInput[] {
   if (Array.isArray(model.regionPrices) && model.regionPrices.length > 0) {
     return model.regionPrices;
   }
-  return [{
-    regionCode: 'global',
-    priceIn: requiredText(model.priceIn ?? '', 'priceIn'),
-    priceOut: requiredText(model.priceOut ?? '', 'priceOut'),
-    cacheReadPrice: model.cacheReadPrice,
-    cacheWritePrice: model.cacheWritePrice,
-  }];
+  throw new Error('regionPrices is required');
 }
 
 function requiredText(value: string, fieldName: string): string {
@@ -1336,6 +1359,23 @@ function normalizeResourceGroupResourceItem(value: unknown): ResourceGroupResour
   };
 }
 
+function normalizeResourceGroupAssignableResourceItem(value: unknown): ResourceGroupAssignableResourceItem {
+  const item = readRequiredRecord(value, 'AI resource record is required');
+  return {
+    id: readRequiredString(item, 'id', 'AI resource id is required'),
+    resourceCode: readRequiredString(item, 'resourceCode', 'AI resource code is required'),
+    resourceType: readRequiredString(item, 'resourceType', 'AI resource type is required'),
+    displayName: readRequiredString(item, 'displayName', 'AI resource display name is required'),
+    vendorCode: readNullableString(item, 'vendorCode'),
+    modalityCode: readNullableString(item, 'modalityCode'),
+    apiEndpointCode: readNullableString(item, 'apiEndpointCode'),
+    catalogKey: readNullableString(item, 'catalogKey'),
+    model: readNullableString(item, 'model'),
+    providerNativeModel: readNullableString(item, 'providerNativeModel'),
+    status: readResourceStatus(item, 'AI resource status'),
+  };
+}
+
 function normalizeVendor(value: unknown): Vendor {
   const item = readRequiredRecord(value, 'Vendor record is required');
   return {
@@ -1360,10 +1400,7 @@ function normalizeModel(value: unknown): Model {
     displayName,
     name: displayName,
     type: readModelType(item),
-    priceIn: readRequiredStringField(item, 'priceIn', 'Model input price is required'),
-    priceOut: readRequiredStringField(item, 'priceOut', 'Model output price is required'),
-    cacheReadPrice: readRequiredStringField(item, 'cacheReadPrice', 'Model cache read price is required'),
-    cacheWritePrice: readRequiredStringField(item, 'cacheWritePrice', 'Model cache write price is required'),
+    regionPrices: readModelRegionPrices(item),
     status: readModelStatus(item),
     calls: readRequiredString(item, 'calls', 'Model calls are required'),
     description: readRequiredNullableString(item, 'description', 'Model description field is required'),
@@ -1386,6 +1423,28 @@ function normalizeModel(value: unknown): Model {
     routingState: readRequiredNullableNumber(item, 'routingState', 'Model routing state field is required', 'Model routing state'),
     replacementModel: readRequiredNullableString(item, 'replacementModel', 'Model replacement model field is required'),
   };
+}
+
+function readModelRegionPrices(item: ApiRecord): ModelRegionPriceInput[] {
+  if (!('regionPrices' in item) || item.regionPrices === null || item.regionPrices === undefined) {
+    throw new Error('Model region prices are required');
+  }
+  if (!Array.isArray(item.regionPrices)) {
+    throw new Error('Model region prices must be an array');
+  }
+  if (item.regionPrices.length === 0) {
+    throw new Error('Model region prices are required');
+  }
+  return item.regionPrices.map((value) => {
+    const regionPrice = readRequiredRecord(value, 'Model region price record is required');
+    return {
+      regionCode: readRequiredString(regionPrice, 'regionCode', 'Model region price region code is required'),
+      priceIn: readRequiredStringField(regionPrice, 'priceIn', 'Model region input price is required'),
+      priceOut: readRequiredStringField(regionPrice, 'priceOut', 'Model region output price is required'),
+      cacheReadPrice: readString(regionPrice, 'cacheReadPrice').trim(),
+      cacheWritePrice: readString(regionPrice, 'cacheWritePrice').trim(),
+    };
+  });
 }
 
 function readModelIdentifier(item: ApiRecord): string {
@@ -1645,26 +1704,50 @@ function normalizeModelMappingRule(value: unknown): ModelMappingRule {
   const item = readRequiredRecord(value, 'Model mapping rule must be an object');
   return {
     id: readRequiredString(item, 'id', 'Model mapping id is required'),
-    scopeType: readModelMappingScopeType(item, 'scopeType'),
-    vendorId: readNullableString(item, 'vendorId'),
-    vendorCode: readNullableString(item, 'vendorCode'),
-    channelId: readNullableString(item, 'channelId'),
-    channelCode: readNullableString(item, 'channelCode'),
-    sourceModel: readRequiredString(item, 'sourceModel', 'Model mapping source model is required'),
-    sourceCatalogKey: readNullableString(item, 'sourceCatalogKey'),
-    sourceVendorCode: readNullableString(item, 'sourceVendorCode'),
-    targetModel: readRequiredString(item, 'targetModel', 'Model mapping target model is required'),
-    targetCatalogKey: readNullableString(item, 'targetCatalogKey'),
-    targetVendorCode: readNullableString(item, 'targetVendorCode'),
-    targetProviderModel: readNullableString(item, 'targetProviderModel'),
-    targetProviderNativeModel: readNullableString(item, 'targetProviderNativeModel'),
+    bindingType: readModelMappingBindingType(item, 'bindingType'),
+    sourceVendorId: readNullableString(item, 'sourceVendorId'),
+    sourceVendorCode: readRequiredString(item, 'sourceVendorCode', 'Model mapping source vendor is required'),
+    targetVendorId: readNullableString(item, 'targetVendorId'),
+    targetVendorCode: readRequiredString(item, 'targetVendorCode', 'Model mapping target vendor is required'),
     mappingMode: readModelMappingMode(item),
     matchType: readModelMappingMatchType(item),
-    priority: readNonNegativeInteger(item, 'priority', 100),
     enabled: readBoolean(item, 'enabled', true),
-    effectiveFrom: readNullableString(item, 'effectiveFrom'),
-    effectiveTo: readNullableString(item, 'effectiveTo'),
-    description: readNullableString(item, 'description'),
+    bindings: readRequiredApiItems(item, 'Model mapping bindings are required', ['bindings'])
+      .map(normalizeModelMappingBinding),
+    mappingItems: readRequiredApiItems(item, 'Model mapping items are required', ['mappingItems'])
+      .map(normalizeModelMappingItem),
+    createdAt: readNullableString(item, 'createdAt'),
+    updatedAt: readNullableString(item, 'updatedAt'),
+  };
+}
+
+function normalizeModelMappingBinding(value: unknown): ModelMappingRuleBinding {
+  const item = readRequiredRecord(value, 'Model mapping binding must be an object');
+  return {
+    id: readRequiredString(item, 'id', 'Model mapping binding id is required'),
+    bindingType: readModelMappingBindingType(item, 'bindingType'),
+    bindingId: readNullableString(item, 'bindingId'),
+    bindingCode: readNullableString(item, 'bindingCode'),
+    bindingName: readNullableString(item, 'bindingName'),
+    sortOrder: readNonNegativeInteger(item, 'sortOrder', 100),
+    enabled: readBoolean(item, 'enabled', true),
+    createdAt: readNullableString(item, 'createdAt'),
+    updatedAt: readNullableString(item, 'updatedAt'),
+  };
+}
+
+function normalizeModelMappingItem(value: unknown): ModelMappingRuleItem {
+  const item = readRequiredRecord(value, 'Model mapping item must be an object');
+  return {
+    id: readRequiredString(item, 'id', 'Model mapping item id is required'),
+    sourceModel: readRequiredString(item, 'sourceModel', 'Model mapping source model is required'),
+    sourceCatalogKey: readNullableString(item, 'sourceCatalogKey'),
+    targetModel: readRequiredString(item, 'targetModel', 'Model mapping target model is required'),
+    targetCatalogKey: readNullableString(item, 'targetCatalogKey'),
+    targetProviderModel: readNullableString(item, 'targetProviderModel'),
+    targetProviderNativeModel: readNullableString(item, 'targetProviderNativeModel'),
+    sortOrder: readNonNegativeInteger(item, 'sortOrder', 100),
+    enabled: readBoolean(item, 'enabled', true),
     createdAt: readNullableString(item, 'createdAt'),
     updatedAt: readNullableString(item, 'updatedAt'),
   };
@@ -1672,10 +1755,10 @@ function normalizeModelMappingRule(value: unknown): ModelMappingRule {
 
 function normalizeModelMappingResolveResult(value: unknown): ModelMappingResolveResult {
   const item = readRequiredRecord(value, 'Model mapping resolve response must be an object');
-  const matchedScopeType = readNullableString(item, 'matchedScopeType');
+  const matchedBindingType = readNullableString(item, 'matchedBindingType');
   return {
     matched: readBoolean(item, 'matched', false),
-    matchedScopeType: matchedScopeType ? readModelMappingScopeType({ matchedScopeType }, 'matchedScopeType') : null,
+    matchedBindingType: matchedBindingType ? readModelMappingBindingType({ matchedBindingType }, 'matchedBindingType') : null,
     sourceModel: readRequiredString(item, 'sourceModel', 'Model mapping resolve source model is required'),
     targetModel: readRequiredString(item, 'targetModel', 'Model mapping resolve target model is required'),
     targetCatalogKey: readNullableString(item, 'targetCatalogKey'),
@@ -1815,12 +1898,20 @@ function readResourceStatus(item: ApiRecord, message: string): ResourceGroupItem
   throw new Error(`Unsupported AI resource status: ${value}`);
 }
 
-function readModelMappingScopeType(item: ApiRecord, key: string): ModelMappingRule['scopeType'] {
-  const value = readRequiredString(item, key, 'Model mapping scope type is required');
-  if (value === 'global' || value === 'vendor' || value === 'channel') {
+function readModelMappingBindingType(item: ApiRecord, key: string): ModelMappingBindingType {
+  const value = readRequiredString(item, key, 'Model mapping binding type is required');
+  if (
+    value === 'global'
+    || value === 'vendor'
+    || value === 'channel_group'
+    || value === 'channel'
+    || value === 'provider_account'
+    || value === 'site'
+    || value === 'site_service'
+  ) {
     return value;
   }
-  throw new Error(`Unsupported model mapping scope type: ${value}`);
+  throw new Error(`Unsupported model mapping binding type: ${value}`);
 }
 
 function readModelMappingMode(item: ApiRecord): ModelMappingRule['mappingMode'] {

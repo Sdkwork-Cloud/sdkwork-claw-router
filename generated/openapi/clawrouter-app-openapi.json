@@ -2436,7 +2436,7 @@
           },
           "model": {
             "description": "Model field on ai agent run record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "organization_id": {
@@ -2455,7 +2455,7 @@
           },
           "planner_model": {
             "description": "Planner model field on ai agent run record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "prompt_tokens": {
@@ -2660,7 +2660,7 @@
           },
           "model": {
             "description": "Model field on ai agent run step record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "organization_id": {
@@ -2848,7 +2848,7 @@
           },
           "default_model": {
             "description": "Default model field on ai agent session record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "deleted_at": {
@@ -3719,6 +3719,182 @@
         "x-generated-by-this-project": true,
         "x-table": "ai_billing_meter"
       },
+      "AiChannelCredentialRecord": {
+        "additionalProperties": false,
+        "description": "Ai channel credential record schema exposed by Claw Router.",
+        "properties": {
+          "auth_config": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Auth config field on ai channel credential record."
+            },
+            "description": "Auth config field on ai channel credential record.",
+            "type": "object"
+          },
+          "base_url": {
+            "description": "Base url field on ai channel credential record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "channel_code": {
+            "description": "Channel code field on ai channel credential record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "channel_id": {
+            "description": "Channel id field on ai channel credential record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "consecutive_error_count": {
+            "description": "Consecutive error count field on ai channel credential record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "created_at": {
+            "description": "Created at field on ai channel credential record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "credential_hash": {
+            "description": "Credential hash field on ai channel credential record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "credential_name": {
+            "description": "Credential name field on ai channel credential record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "credential_ref": {
+            "description": "Credential ref field on ai channel credential record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "data_scope": {
+            "description": "Data scope field on ai channel credential record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "deleted_at": {
+            "description": "Deleted at field on ai channel credential record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "deleted_by": {
+            "description": "Deleted by field on ai channel credential record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "health_status": {
+            "description": "Health status field on ai channel credential record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "id": {
+            "description": "Id field on ai channel credential record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "last_latency_ms": {
+            "description": "Last latency ms field on ai channel credential record.",
+            "format": "int32",
+            "type": "integer"
+          },
+          "last_used_at": {
+            "description": "Last used at field on ai channel credential record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "last_verified_at": {
+            "description": "Last verified at field on ai channel credential record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "masked_label": {
+            "description": "Masked label field on ai channel credential record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Metadata field on ai channel credential record."
+            },
+            "description": "Metadata field on ai channel credential record.",
+            "type": "object"
+          },
+          "organization_id": {
+            "description": "Organization id field on ai channel credential record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "priority": {
+            "description": "Priority field on ai channel credential record.",
+            "format": "int32",
+            "type": "integer"
+          },
+          "provider_code": {
+            "description": "Provider code field on ai channel credential record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "status": {
+            "description": "Status field on ai channel credential record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on ai channel credential record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "Updated at field on ai channel credential record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "uuid": {
+            "description": "Uuid field on ai channel credential record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "version": {
+            "description": "Version field on ai channel credential record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "weight": {
+            "description": "Weight field on ai channel credential record.",
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "uuid",
+          "tenant_id",
+          "organization_id",
+          "status",
+          "channel_id",
+          "credential_name",
+          "base_url",
+          "auth_config",
+          "credential_ref",
+          "credential_hash"
+        ],
+        "type": "object",
+        "x-domain": "ai",
+        "x-generated-by-this-project": true,
+        "x-table": "ai_channel_credential"
+      },
       "AiChannelEndpointRecord": {
         "additionalProperties": false,
         "description": "Ai channel endpoint record schema exposed by Claw Router.",
@@ -4585,7 +4761,7 @@
           },
           "model": {
             "description": "Model field on ai channel model record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "model_aliases": {
@@ -4612,7 +4788,7 @@
           },
           "provider_model": {
             "description": "Provider model field on ai channel model record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "provider_native_model": {
@@ -4753,6 +4929,11 @@
             },
             "description": "Credential rotation policy field on ai channel record.",
             "type": "object"
+          },
+          "credential_rotation_strategy": {
+            "description": "Credential rotation strategy field on ai channel record.",
+            "maxLength": 64,
+            "type": "string"
           },
           "credential_version": {
             "description": "Credential version field on ai channel record.",
@@ -5521,7 +5702,7 @@
           },
           "default_model": {
             "description": "Default model field on ai chat conversation record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "default_provider": {
@@ -5743,7 +5924,7 @@
           },
           "model": {
             "description": "Model field on ai chat item record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "organization_id": {
@@ -6106,7 +6287,7 @@
           },
           "model": {
             "description": "Model field on ai chat message record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "organization_id": {
@@ -6309,7 +6490,7 @@
           },
           "model": {
             "description": "Model field on ai chat turn record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "organization_id": {
@@ -7119,7 +7300,7 @@
           },
           "model": {
             "description": "Model field on ai generation job record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "negative_prompt": {
@@ -8063,7 +8244,7 @@
           },
           "embedding_model": {
             "description": "Embedding model field on ai memory embedding record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "embedding_provider": {
@@ -9241,7 +9422,7 @@
           },
           "model": {
             "description": "Model field on ai model api endpoint record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "model_id": {
@@ -9418,7 +9599,7 @@
           },
           "model": {
             "description": "Model field on ai model capability record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "model_id": {
@@ -9928,7 +10109,7 @@
           },
           "default_model": {
             "description": "Default model field on ai model family record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "default_model_id": {
@@ -10066,20 +10247,273 @@
         "x-generated-by-this-project": true,
         "x-table": "ai_model_family"
       },
+      "AiModelMappingRuleBindingRecord": {
+        "additionalProperties": false,
+        "description": "Ai model mapping rule binding record schema exposed by Claw Router.",
+        "properties": {
+          "binding_code": {
+            "description": "Binding code field on ai model mapping rule binding record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "binding_id": {
+            "description": "Binding id field on ai model mapping rule binding record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "binding_name_snapshot": {
+            "description": "Binding name snapshot field on ai model mapping rule binding record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "binding_type": {
+            "description": "Binding type field on ai model mapping rule binding record.",
+            "maxLength": 32,
+            "type": "string"
+          },
+          "created_at": {
+            "description": "Created at field on ai model mapping rule binding record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "data_scope": {
+            "description": "Data scope field on ai model mapping rule binding record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "deleted_at": {
+            "description": "Deleted at field on ai model mapping rule binding record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "deleted_by": {
+            "description": "Deleted by field on ai model mapping rule binding record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "enabled": {
+            "description": "Enabled field on ai model mapping rule binding record.",
+            "type": "boolean"
+          },
+          "id": {
+            "description": "Id field on ai model mapping rule binding record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Metadata field on ai model mapping rule binding record."
+            },
+            "description": "Metadata field on ai model mapping rule binding record.",
+            "type": "object"
+          },
+          "organization_id": {
+            "description": "Organization id field on ai model mapping rule binding record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "rule_id": {
+            "description": "Rule id field on ai model mapping rule binding record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "rule_uuid": {
+            "description": "Rule uuid field on ai model mapping rule binding record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "sort_order": {
+            "description": "Sort order field on ai model mapping rule binding record.",
+            "format": "int32",
+            "type": "integer"
+          },
+          "status": {
+            "description": "Status field on ai model mapping rule binding record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on ai model mapping rule binding record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "Updated at field on ai model mapping rule binding record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "uuid": {
+            "description": "Uuid field on ai model mapping rule binding record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "version": {
+            "description": "Version field on ai model mapping rule binding record.",
+            "format": "int64",
+            "type": "string"
+          }
+        },
+        "required": [
+          "uuid",
+          "tenant_id",
+          "organization_id",
+          "status",
+          "rule_id",
+          "binding_type",
+          "sort_order",
+          "enabled"
+        ],
+        "type": "object",
+        "x-domain": "ai",
+        "x-generated-by-this-project": true,
+        "x-table": "ai_model_mapping_rule_binding"
+      },
+      "AiModelMappingRuleItemRecord": {
+        "additionalProperties": false,
+        "description": "Ai model mapping rule item record schema exposed by Claw Router.",
+        "properties": {
+          "created_at": {
+            "description": "Created at field on ai model mapping rule item record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "data_scope": {
+            "description": "Data scope field on ai model mapping rule item record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "deleted_at": {
+            "description": "Deleted at field on ai model mapping rule item record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "deleted_by": {
+            "description": "Deleted by field on ai model mapping rule item record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "enabled": {
+            "description": "Enabled field on ai model mapping rule item record.",
+            "type": "boolean"
+          },
+          "id": {
+            "description": "Id field on ai model mapping rule item record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Metadata field on ai model mapping rule item record."
+            },
+            "description": "Metadata field on ai model mapping rule item record.",
+            "type": "object"
+          },
+          "organization_id": {
+            "description": "Organization id field on ai model mapping rule item record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "rule_id": {
+            "description": "Rule id field on ai model mapping rule item record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "rule_uuid": {
+            "description": "Rule uuid field on ai model mapping rule item record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "sort_order": {
+            "description": "Sort order field on ai model mapping rule item record.",
+            "format": "int32",
+            "type": "integer"
+          },
+          "source_catalog_key": {
+            "description": "Source catalog key field on ai model mapping rule item record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "source_model": {
+            "description": "Source model field on ai model mapping rule item record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "status": {
+            "description": "Status field on ai model mapping rule item record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "target_catalog_key": {
+            "description": "Target catalog key field on ai model mapping rule item record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "target_model": {
+            "description": "Target model field on ai model mapping rule item record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "target_provider_model": {
+            "description": "Target provider model field on ai model mapping rule item record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "target_provider_native_model": {
+            "description": "Target provider native model field on ai model mapping rule item record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on ai model mapping rule item record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "Updated at field on ai model mapping rule item record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "uuid": {
+            "description": "Uuid field on ai model mapping rule item record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "version": {
+            "description": "Version field on ai model mapping rule item record.",
+            "format": "int64",
+            "type": "string"
+          }
+        },
+        "required": [
+          "uuid",
+          "tenant_id",
+          "organization_id",
+          "status",
+          "rule_id",
+          "source_model",
+          "target_model",
+          "sort_order",
+          "enabled"
+        ],
+        "type": "object",
+        "x-domain": "ai",
+        "x-generated-by-this-project": true,
+        "x-table": "ai_model_mapping_rule_item"
+      },
       "AiModelMappingRuleRecord": {
         "additionalProperties": false,
         "description": "Ai model mapping rule record schema exposed by Claw Router.",
         "properties": {
-          "channel_code": {
-            "description": "Channel code field on ai model mapping rule record.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "channel_id": {
-            "description": "Channel id field on ai model mapping rule record.",
-            "format": "int64",
-            "type": "string"
-          },
           "created_at": {
             "description": "Created at field on ai model mapping rule record.",
             "format": "date-time",
@@ -10098,21 +10532,6 @@
           "deleted_by": {
             "description": "Deleted by field on ai model mapping rule record.",
             "format": "int64",
-            "type": "string"
-          },
-          "description": {
-            "description": "Description field on ai model mapping rule record.",
-            "maxLength": 512,
-            "type": "string"
-          },
-          "effective_from": {
-            "description": "Effective from field on ai model mapping rule record.",
-            "format": "date-time",
-            "type": "string"
-          },
-          "effective_to": {
-            "description": "Effective to field on ai model mapping rule record.",
-            "format": "date-time",
             "type": "string"
           },
           "enabled": {
@@ -10151,29 +10570,14 @@
             "format": "int64",
             "type": "string"
           },
-          "priority": {
-            "description": "Priority field on ai model mapping rule record.",
-            "format": "int32",
-            "type": "integer"
-          },
-          "scope_type": {
-            "description": "Scope type field on ai model mapping rule record.",
-            "maxLength": 32,
-            "type": "string"
-          },
-          "source_catalog_key": {
-            "description": "Source catalog key field on ai model mapping rule record.",
-            "maxLength": 256,
-            "type": "string"
-          },
-          "source_model": {
-            "description": "Source model field on ai model mapping rule record.",
-            "maxLength": 256,
-            "type": "string"
-          },
           "source_vendor_code": {
             "description": "Source vendor code field on ai model mapping rule record.",
             "maxLength": 64,
+            "type": "string"
+          },
+          "source_vendor_id": {
+            "description": "Source vendor id field on ai model mapping rule record.",
+            "format": "int64",
             "type": "string"
           },
           "status": {
@@ -10181,29 +10585,14 @@
             "type": "string",
             "x-db-type": "enum_int32"
           },
-          "target_catalog_key": {
-            "description": "Target catalog key field on ai model mapping rule record.",
-            "maxLength": 256,
-            "type": "string"
-          },
-          "target_model": {
-            "description": "Target model field on ai model mapping rule record.",
-            "maxLength": 256,
-            "type": "string"
-          },
-          "target_provider_model": {
-            "description": "Target provider model field on ai model mapping rule record.",
-            "maxLength": 256,
-            "type": "string"
-          },
-          "target_provider_native_model": {
-            "description": "Target provider native model field on ai model mapping rule record.",
-            "maxLength": 256,
-            "type": "string"
-          },
           "target_vendor_code": {
             "description": "Target vendor code field on ai model mapping rule record.",
             "maxLength": 64,
+            "type": "string"
+          },
+          "target_vendor_id": {
+            "description": "Target vendor id field on ai model mapping rule record.",
+            "format": "int64",
             "type": "string"
           },
           "tenant_id": {
@@ -10221,16 +10610,6 @@
             "maxLength": 64,
             "type": "string"
           },
-          "vendor_code": {
-            "description": "Vendor code field on ai model mapping rule record.",
-            "maxLength": 64,
-            "type": "string"
-          },
-          "vendor_id": {
-            "description": "Vendor id field on ai model mapping rule record.",
-            "format": "int64",
-            "type": "string"
-          },
           "version": {
             "description": "Version field on ai model mapping rule record.",
             "format": "int64",
@@ -10242,12 +10621,10 @@
           "tenant_id",
           "organization_id",
           "status",
-          "scope_type",
-          "source_model",
-          "target_model",
+          "source_vendor_code",
+          "target_vendor_code",
           "mapping_mode",
           "match_type",
-          "priority",
           "enabled"
         ],
         "type": "object",
@@ -10318,7 +10695,7 @@
           },
           "model": {
             "description": "Model field on ai model modality record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "model_id": {
@@ -10502,7 +10879,7 @@
           },
           "model": {
             "description": "Model field on ai model pricing record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "model_id": {
@@ -10582,7 +10959,7 @@
           },
           "provider_model": {
             "description": "Provider model field on ai model pricing record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "published_at": {
@@ -10809,7 +11186,7 @@
           },
           "model": {
             "description": "Model field on ai model rank snapshot record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "model_id": {
@@ -11163,7 +11540,7 @@
           },
           "model": {
             "description": "Model field on ai model record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "model_aliases": {
@@ -11234,7 +11611,7 @@
           },
           "replacement_model": {
             "description": "Replacement model field on ai model record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "retired_at": {
@@ -11368,6 +11745,18 @@
             "description": "Capabilities field on ai model vendor record.",
             "type": "object"
           },
+          "client_api_compatibility": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Client api compatibility field on ai model vendor record."
+            },
+            "description": "Client api compatibility field on ai model vendor record.",
+            "type": "object"
+          },
           "color_token": {
             "description": "Color token field on ai model vendor record.",
             "maxLength": 64,
@@ -11481,6 +11870,18 @@
             "description": "Status field on ai model vendor record.",
             "type": "string",
             "x-db-type": "enum_int32"
+          },
+          "supported_protocols": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Supported protocols field on ai model vendor record."
+            },
+            "description": "Supported protocols field on ai model vendor record.",
+            "type": "object"
           },
           "tenant_id": {
             "description": "Tenant id field on ai model vendor record.",
@@ -12170,7 +12571,7 @@
           },
           "model": {
             "description": "Model field on ai pricing rule record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "model_id": {
@@ -12225,7 +12626,7 @@
           },
           "provider_model": {
             "description": "Provider model field on ai pricing rule record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "quantity_formula": {
@@ -13460,7 +13861,7 @@
           },
           "model": {
             "description": "Model field on ai quota policy record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "name": {
@@ -13888,7 +14289,7 @@
           },
           "provider_model": {
             "description": "Provider model field on ai request trace record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "provider_native_model": {
@@ -13898,6 +14299,11 @@
           },
           "reasoning_effort": {
             "description": "Reasoning effort field on ai request trace record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "region_code": {
+            "description": "Region code field on ai request trace record.",
             "maxLength": 64,
             "type": "string"
           },
@@ -13923,7 +14329,7 @@
           },
           "requested_model": {
             "description": "Requested model field on ai request trace record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "requested_model_catalog_key": {
@@ -14336,12 +14742,12 @@
           },
           "model": {
             "description": "Model field on ai resource record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "model_code": {
             "description": "Model code field on ai resource record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "model_id": {
@@ -14713,7 +15119,7 @@
           },
           "model_code": {
             "description": "Model code field on ai route candidate record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "organization_id": {
@@ -15062,12 +15468,12 @@
           },
           "requested_model": {
             "description": "Requested model field on ai routing decision log record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "resolved_model": {
             "description": "Resolved model field on ai routing decision log record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "retention_until": {
@@ -15511,7 +15917,7 @@
           },
           "target_model": {
             "description": "Target model field on ai routing rule record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "tenant_id": {
@@ -15992,7 +16398,7 @@
           },
           "model": {
             "description": "Model field on ai runtime invocation record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "organization_id": {
@@ -16238,7 +16644,7 @@
           },
           "model": {
             "description": "Model field on ai runtime usage link record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "occurred_at": {
@@ -16476,7 +16882,7 @@
           },
           "model_code": {
             "description": "Model code field on ai site model record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "model_id": {
@@ -16508,7 +16914,7 @@
           },
           "provider_model": {
             "description": "Provider model field on ai site model record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "provider_native_model": {
@@ -17167,7 +17573,7 @@
           },
           "model": {
             "description": "Model field on ai usage fact record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "occurred_at": {
@@ -17270,6 +17676,11 @@
           "reference_multiplier": {
             "description": "Reference multiplier field on ai usage fact record.",
             "format": "decimal",
+            "type": "string"
+          },
+          "region_code": {
+            "description": "Region code field on ai usage fact record.",
+            "maxLength": 64,
             "type": "string"
           },
           "request_count": {
@@ -19059,25 +19470,13 @@
             "minLength": 1,
             "type": "string"
           },
-          "officialReferenceCurrency": {
-            "description": "Official reference currency field on app model catalog item.",
-            "maxLength": 3,
-            "minLength": 3,
-            "nullable": true,
-            "type": "string"
-          },
           "officialReferencePrices": {
-            "description": "Complete public official reference prices keyed by billing meter. Customer, upstream, provider, and channel prices are never exposed here.",
+            "description": "Complete public official reference prices keyed by regionCode and billing meter. Customer, upstream, provider, and channel prices are never exposed here.",
             "items": {
               "$ref": "#/components/schemas/AppModelCatalogReferencePrice"
             },
             "maxItems": 64,
             "type": "array"
-          },
-          "officialReferenceUnitPrice": {
-            "description": "Official reference unit price field on app model catalog item.",
-            "nullable": true,
-            "type": "string"
           },
           "outputModalities": {
             "description": "Output modalities field on app model catalog item.",
@@ -19108,12 +19507,6 @@
             },
             "maxItems": 256,
             "type": "array"
-          },
-          "regionCode": {
-            "description": "Region code field on app model catalog item.",
-            "maxLength": 64,
-            "minLength": 1,
-            "type": "string"
           },
           "releaseStage": {
             "description": "Release stage field on app model catalog item.",
@@ -19197,7 +19590,6 @@
           "model",
           "displayName",
           "vendorCode",
-          "regionCode",
           "vendor",
           "capabilities",
           "groups",
@@ -19266,6 +19658,12 @@
             "minLength": 3,
             "type": "string"
           },
+          "regionCode": {
+            "description": "Deployment or pricing region for this public reference price. Region is never encoded in catalogKey.",
+            "maxLength": 64,
+            "minLength": 1,
+            "type": "string"
+          },
           "unitPrice": {
             "description": "Decimal unit price in the native official reference currency.",
             "maxLength": 64,
@@ -19274,6 +19672,7 @@
           }
         },
         "required": [
+          "regionCode",
           "billingMeter",
           "unitPrice",
           "currency"
@@ -42300,7 +42699,7 @@
           },
           "model": {
             "description": "Model field on integration service provider price rule record.",
-            "maxLength": 128,
+            "maxLength": 256,
             "type": "string"
           },
           "organization_id": {
@@ -61894,6 +62293,11 @@
             "description": "Reasoning effort field on usage log item.",
             "type": "string"
           },
+          "regionCode": {
+            "description": "Deployment region used by the selected endpoint and pricing resolver. This is not part of the model catalog identity.",
+            "maxLength": 64,
+            "type": "string"
+          },
           "requestId": {
             "description": "Request id field on usage log item.",
             "type": "string"
@@ -61942,6 +62346,7 @@
           "model",
           "providerNativeModel",
           "requestedModelCatalogKey",
+          "regionCode",
           "status",
           "httpStatus",
           "errorCode",

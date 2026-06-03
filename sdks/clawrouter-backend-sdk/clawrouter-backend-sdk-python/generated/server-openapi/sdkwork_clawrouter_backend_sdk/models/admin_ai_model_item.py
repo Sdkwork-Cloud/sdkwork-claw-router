@@ -2,13 +2,14 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Optional, List, Dict, Any
 
+if TYPE_CHECKING:
+    from .admin_ai_model_region_price import AdminAiModelRegionPrice
+
 
 @dataclass
 class AdminAiModelItem:
     """Persisted ai model snapshot returned by the backend."""
     api_format: Optional[str]
-    cache_read_price: str
-    cache_write_price: str
     calls: str
     capability_intro: Optional[str]
     context_tokens: Optional[int]
@@ -22,8 +23,7 @@ class AdminAiModelItem:
     model: str
     name: str
     output_modalities: List[str]
-    price_in: str
-    price_out: str
+    region_prices: List[AdminAiModelRegionPrice]
     release_stage: Optional[int]
     replacement_model: Optional[str]
     routing_state: Optional[int]

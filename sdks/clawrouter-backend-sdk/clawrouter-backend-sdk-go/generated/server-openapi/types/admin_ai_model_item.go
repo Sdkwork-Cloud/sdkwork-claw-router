@@ -3,8 +3,6 @@ package types
 // Persisted ai model snapshot returned by the backend.
 type AdminAiModelItem struct {
 	ApiFormat string `json:"apiFormat"`
-	CacheReadPrice string `json:"cacheReadPrice"`
-	CacheWritePrice string `json:"cacheWritePrice"`
 	Calls string `json:"calls"`
 	CapabilityIntro string `json:"capabilityIntro"`
 	ContextTokens int `json:"contextTokens"`
@@ -18,8 +16,7 @@ type AdminAiModelItem struct {
 	Model string `json:"model"`
 	Name string `json:"name"`
 	OutputModalities []string `json:"outputModalities"`
-	PriceIn string `json:"priceIn"`
-	PriceOut string `json:"priceOut"`
+	RegionPrices []AdminAiModelRegionPrice `json:"regionPrices"`
 	ReleaseStage int `json:"releaseStage"`
 	ReplacementModel string `json:"replacementModel"`
 	RoutingState int `json:"routingState"`

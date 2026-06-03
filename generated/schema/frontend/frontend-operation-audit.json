@@ -800,6 +800,22 @@
     },
     {
       "api_method": "GET",
+      "api_path": "/backend/v3/api/ai/resource_groups",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "fetchAiResourceGroups",
+      "operation_scope": null,
+      "read_sources": [
+        "ai_resource_group",
+        "ai_resource_group_item"
+      ],
+      "route": "/admin/channel/resources",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
       "api_path": "/backend/v3/api/ai/resources",
       "api_surface": "backend",
       "file_targets": [],
@@ -1859,6 +1875,7 @@
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts",
       "write_tables": [
         "ai_channel_group",
+        "ai_channel_group_resource",
         "ai_pricing_plan_binding",
         "ops_audit_log"
       ]
@@ -1895,6 +1912,38 @@
         "ai_channel",
         "ai_channel_model",
         "ai_channel"
+      ],
+      "route": "/admin/group",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/ai/resource_groups",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "fetchAssignableResourceGroups",
+      "operation_scope": null,
+      "read_sources": [
+        "ai_resource_group",
+        "ai_resource_group_item"
+      ],
+      "route": "/admin/group",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/ai/resources",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "fetchAssignableResources",
+      "operation_scope": null,
+      "read_sources": [
+        "ai_resource",
+        "ai_resource_group_item"
       ],
       "route": "/admin/group",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts",
@@ -1975,6 +2024,7 @@
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts",
       "write_tables": [
         "ai_channel_group",
+        "ai_channel_group_resource",
         "ai_pricing_plan_binding",
         "ops_audit_log"
       ]
@@ -3803,12 +3853,16 @@
       "operation": "createModelMapping",
       "operation_scope": null,
       "read_sources": [
-        "ai_model_mapping_rule"
+        "ai_model_mapping_rule",
+        "ai_model_mapping_rule_binding",
+        "ai_model_mapping_rule_item"
       ],
       "route": "/admin/model/mappings",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts",
       "write_tables": [
         "ai_model_mapping_rule",
+        "ai_model_mapping_rule_binding",
+        "ai_model_mapping_rule_item",
         "ops_audit_log"
       ]
     },
@@ -3903,12 +3957,16 @@
       "operation": "deleteModelMapping",
       "operation_scope": null,
       "read_sources": [
-        "ai_model_mapping_rule"
+        "ai_model_mapping_rule",
+        "ai_model_mapping_rule_binding",
+        "ai_model_mapping_rule_item"
       ],
       "route": "/admin/model/mappings",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts",
       "write_tables": [
         "ai_model_mapping_rule",
+        "ai_model_mapping_rule_binding",
+        "ai_model_mapping_rule_item",
         "ops_audit_log"
       ]
     },
@@ -3973,6 +4031,22 @@
       ]
     },
     {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/ai/resources",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "fetchAssignableResources",
+      "operation_scope": null,
+      "read_sources": [
+        "ai_resource",
+        "ai_resource_group_item"
+      ],
+      "route": "/admin/model/resources",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts",
+      "write_tables": []
+    },
+    {
       "api_method": "POST",
       "api_path": "/backend/v3/api/ai/models/refresh",
       "api_surface": "backend",
@@ -4008,7 +4082,9 @@
       "operation": "fetchModelMappings",
       "operation_scope": null,
       "read_sources": [
-        "ai_model_mapping_rule"
+        "ai_model_mapping_rule",
+        "ai_model_mapping_rule_binding",
+        "ai_model_mapping_rule_item"
       ],
       "route": "/admin/model/mappings",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts",
@@ -4225,7 +4301,9 @@
       "operation": "resolveModelMapping",
       "operation_scope": null,
       "read_sources": [
-        "ai_model_mapping_rule"
+        "ai_model_mapping_rule",
+        "ai_model_mapping_rule_binding",
+        "ai_model_mapping_rule_item"
       ],
       "route": "/admin/model/mappings",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts",
@@ -4329,12 +4407,16 @@
       "operation": "updateModelMapping",
       "operation_scope": null,
       "read_sources": [
-        "ai_model_mapping_rule"
+        "ai_model_mapping_rule",
+        "ai_model_mapping_rule_binding",
+        "ai_model_mapping_rule_item"
       ],
       "route": "/admin/model/mappings",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts",
       "write_tables": [
         "ai_model_mapping_rule",
+        "ai_model_mapping_rule_binding",
+        "ai_model_mapping_rule_item",
         "ops_audit_log"
       ]
     },
@@ -11954,7 +12036,7 @@
     }
   ],
   "summary": {
-    "operation_count": 627,
+    "operation_count": 631,
     "source_file_count": 63,
     "write_operation_count": 319
   }

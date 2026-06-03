@@ -4,7 +4,7 @@ use std::sync::Arc;
 use sha2::{Digest, Sha256};
 use sqlx::{PgPool, Postgres, Row, Transaction};
 
-use crate::domain::{DomainError, DomainResult};
+use crate::domain::{parse_model_catalog_identity, DomainError, DomainResult};
 use crate::ports::{
     AppRoutingChannelCommandFuture, AppRoutingChannelCommandStore, AppRoutingChannelDeleteOutcome,
     AppRoutingChannelItem, AppRoutingChannelMutationOutcome, AppRoutingChannelTestOutcome,
@@ -1219,33 +1219,13 @@ async fn load_models_for_channels_tx(
 
 fn split_catalog_model_key(catalog_key: &str) -> DomainResult<(String, String, String)> {
     let value = catalog_key.trim();
-    let parts = value.split('/').map(str::trim).collect::<Vec<_>>();
-    if parts.len() < 2 || parts.iter().any(|part| part.is_empty()) || known_region_segment(parts[1])
-    {
-        return Err(DomainError::new(format!(
+    let identity = parse_model_catalog_identity(value).ok_or_else(|| {
+        DomainError::new(format!(
             "routing channel model must be a catalog key in vendorCode/modelId format: {value}"
-        )));
-    }
-    Ok((value.to_owned(), parts[0].to_owned(), parts[1..].join("/")))
-}
-
-fn known_region_segment(value: &str) -> bool {
-    matches!(
-        value.trim().to_ascii_lowercase().as_str(),
-        "global"
-            | "cn"
-            | "us"
-            | "eu"
-            | "ap"
-            | "apac"
-            | "jp"
-            | "sg"
-            | "hk"
-            | "aws"
-            | "azure"
-            | "gcp"
-            | "local"
-    )
+        ))
+    })?;
+    let official_model = identity.model_id();
+    Ok((value.to_owned(), identity.vendor_code, official_model))
 }
 
 fn api_endpoint_code(capability: i32) -> &'static str {

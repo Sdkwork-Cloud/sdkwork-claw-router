@@ -72,6 +72,7 @@ async fn secret_ref_responses_relay_resolves_endpoint_and_secret_from_request_co
             model: "gpt-4.1-mini".to_owned(),
             provider_code: "openrouter".to_owned(),
             provider_channel_id: 3001,
+            provider_region_code: "global".to_owned(),
             provider_model: "gpt-4.1-mini".to_owned(),
             provider_base_url: Some(format!("http://{addr}")),
             provider_secret_ref: Some(secret_ref.to_owned()),
@@ -89,7 +90,7 @@ async fn secret_ref_responses_relay_resolves_endpoint_and_secret_from_request_co
             json!({
                 "id": "resp-secret-ref",
                 "object": "response",
-                "model": "openai/global/gpt-4.1-mini",
+                "model": "gpt-4.1-mini",
                 "output": [
                     {
                         "type": "message",
@@ -132,6 +133,7 @@ async fn secret_ref_responses_relay_rejects_missing_endpoint_or_secret_ref_witho
             model: "gpt-4.1-mini".to_owned(),
             provider_code: "openrouter".to_owned(),
             provider_channel_id: 3001,
+            provider_region_code: "global".to_owned(),
             provider_model: "gpt-4.1-mini".to_owned(),
             provider_base_url: None,
             provider_secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
@@ -156,6 +158,7 @@ async fn secret_ref_responses_relay_rejects_missing_endpoint_or_secret_ref_witho
             model: "gpt-4.1-mini".to_owned(),
             provider_code: "openrouter".to_owned(),
             provider_channel_id: 3001,
+            provider_region_code: "global".to_owned(),
             provider_model: "gpt-4.1-mini".to_owned(),
             provider_base_url: Some("http://127.0.0.1:8080".to_owned()),
             provider_secret_ref: None,
@@ -188,7 +191,7 @@ async fn capture_response(
         Json(json!({
             "id": "resp-secret-ref",
             "object": "response",
-            "model": "openai/global/gpt-4.1-mini",
+            "model": "gpt-4.1-mini",
             "output": [
                 {
                     "type": "message",

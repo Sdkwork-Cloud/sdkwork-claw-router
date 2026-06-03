@@ -37,7 +37,7 @@ export function MembershipAdminPageShell({
   }
 
   return (
-    <div className="flex min-h-0 flex-col gap-4">
+    <div className="flex min-h-0 flex-1 flex-col gap-4 overflow-hidden">
       <div className="flex shrink-0 flex-wrap items-center justify-end gap-3">
         <div className="flex shrink-0 items-center justify-end gap-2">
           <button

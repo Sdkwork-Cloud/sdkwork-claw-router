@@ -10,16 +10,6 @@ pub struct AdminAiModelCreateRequest {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub api_format: Option<String>,
 
-    /// Optional official reference cache-read unit price in USD.
-    #[serde(rename = "cacheReadPrice")]
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub cache_read_price: Option<String>,
-
-    /// Optional official reference cache-write unit price in USD.
-    #[serde(rename = "cacheWritePrice")]
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub cache_write_price: Option<String>,
-
     /// Capability intro field on admin ai model create request.
     #[serde(rename = "capabilityIntro")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -64,18 +54,9 @@ pub struct AdminAiModelCreateRequest {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub output_modalities: Option<Vec<String>>,
 
-    /// Official reference input unit price in USD.
-    #[serde(rename = "priceIn")]
-    pub price_in: String,
-
-    /// Official reference output unit price in USD.
-    #[serde(rename = "priceOut")]
-    pub price_out: String,
-
     /// Official reference prices by region.
     #[serde(rename = "regionPrices")]
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub region_prices: Option<Vec<AdminAiModelRegionPrice>>,
+    pub region_prices: Vec<AdminAiModelRegionPrice>,
 
     /// Release stage field on admin ai model create request.
     #[serde(rename = "releaseStage")]

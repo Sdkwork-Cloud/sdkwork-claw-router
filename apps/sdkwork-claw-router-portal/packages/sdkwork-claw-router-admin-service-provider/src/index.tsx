@@ -221,7 +221,7 @@ export function ServiceProviderAdmin({ sectionId }: ServiceProviderAdminProps) {
 
   return (
     <>
-      <div className="flex h-full min-h-0 w-full flex-col gap-3" data-admin-service-provider="commercial-center">
+      <div className="flex h-full min-h-0 w-full flex-col gap-3 overflow-hidden" data-admin-service-provider="commercial-center">
         <form
           className="shrink-0 border border-slate-200 bg-white p-3 shadow-sm dark:border-white/10 dark:bg-[#1a1a1a]"
           data-admin-service-provider-chain-filters
@@ -267,7 +267,7 @@ export function ServiceProviderAdmin({ sectionId }: ServiceProviderAdminProps) {
             </div>
           </div>
         </form>
-        <div className="min-h-0 flex-1">
+        <div className="min-h-0 flex-1 overflow-hidden">
           <AdminResourceCenter<ServiceProviderAdminSectionId, ServiceProviderAdminGroup>
             activeSectionId={activeSectionId}
             emptyDescription={t('admin.serviceProvider.empty.desc', 'Create provider hierarchy records or adjust the current filters.')}

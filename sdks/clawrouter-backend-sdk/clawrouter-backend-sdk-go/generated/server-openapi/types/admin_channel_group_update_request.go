@@ -9,5 +9,7 @@ type AdminChannelGroupUpdateRequest struct {
 	OfficialPriceMultiplier float64 `json:"officialPriceMultiplier"`
 	PriceReferenceMode string `json:"priceReferenceMode"`
 	RateMultiplier float64 `json:"rateMultiplier"`
+	ResourceCodes []string `json:"resourceCodes"`
+	ResourceGroupCodes []string `json:"resourceGroupCodes"`
 	Status string `json:"status"`
 }

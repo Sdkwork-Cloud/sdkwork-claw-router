@@ -12,6 +12,8 @@ type AdminChannelGroupItem struct {
 	PriceReferenceMode string `json:"priceReferenceMode"`
 	ProviderCode string `json:"providerCode"`
 	RateMultiplier float64 `json:"rateMultiplier"`
+	ResourceCodes []string `json:"resourceCodes"`
+	ResourceGroupCodes []string `json:"resourceGroupCodes"`
 	Status string `json:"status"`
 	Usage AdminUsagePair `json:"usage"`
 }

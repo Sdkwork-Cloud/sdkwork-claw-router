@@ -1,11 +1,11 @@
 use crate::domain::{
-    provider_native_model_id, AiModel, AiModelPublicMetadata, BillingMeter, ChannelGroup,
-    ChannelGroupMetricSnapshot, DecimalValue, DomainError, DomainResult, GatewayAccessPolicy,
-    GatewayApiKey, ModelMappingRule, ModelMappingScope, ModelPrice, ModelProviderRoute,
-    ModelVendor, ModelVendorDefinition, Money, PriceSide, PricingPlan, ProviderAuthProfile,
-    ProviderChannelGroupBinding, ProviderChannelRoute, ProviderRetryPolicy, QuotaPolicy,
-    RouteCandidate, RoutingCapability, RoutingFallbackMode, RoutingPolicy, RoutingPolicyScope,
-    RoutingRule,
+    ensure_canonical_model_catalog_key, provider_native_model_id, AiModel, AiModelPublicMetadata,
+    BillingMeter, ChannelGroup, ChannelGroupMetricSnapshot, DecimalValue, DomainError,
+    DomainResult, GatewayAccessPolicy, GatewayApiKey, ModelMappingBindingType, ModelMappingRule,
+    ModelPrice, ModelProviderRoute, ModelVendor, ModelVendorDefinition, Money, PriceSide,
+    PricingPlan, ProviderAuthProfile, ProviderChannelGroupBinding, ProviderChannelRoute,
+    ProviderRetryPolicy, QuotaPolicy, RouteCandidate, RoutingCapability, RoutingFallbackMode,
+    RoutingPolicy, RoutingPolicyScope, RoutingRule,
 };
 
 pub struct ModelVendorRow {
@@ -28,7 +28,6 @@ pub struct AiModelRow {
     pub model: String,
     pub display_name: String,
     pub vendor_code: String,
-    pub region_code: String,
     pub capabilities_json: String,
     pub description: Option<String>,
     pub modalities_json: String,
@@ -62,7 +61,6 @@ impl AiModelRow {
             model: self.model,
             display_name: self.display_name,
             vendor_code: self.vendor_code,
-            region_code: self.region_code,
             capabilities: parse_string_array(&self.capabilities_json, "capabilities")?,
             description: None,
             modalities: Vec::new(),
@@ -121,6 +119,10 @@ pub struct ModelProviderRouteRow {
     pub region_code: String,
     pub provider_code: String,
     pub channel_id: i64,
+    pub credential_id: Option<i64>,
+    pub credential_rotation: String,
+    pub credential_priority: i32,
+    pub credential_weight: i32,
     pub provider_model: String,
     pub base_url: Option<String>,
     pub secret_ref: Option<String>,
@@ -133,7 +135,16 @@ pub struct ModelProviderRouteRow {
 pub struct ProviderChannelRouteRow {
     pub provider_code: String,
     pub channel_id: i64,
+    pub credential_id: Option<i64>,
+    pub credential_rotation: String,
+    pub credential_priority: i32,
+    pub credential_weight: i32,
+    pub channel_code: Option<String>,
     pub region_code: String,
+    pub site_id: Option<i64>,
+    pub site_code: Option<String>,
+    pub site_service_id: Option<i64>,
+    pub site_service_code: Option<String>,
     pub base_url: Option<String>,
     pub secret_ref: Option<String>,
     pub auth_type: Option<String>,
@@ -145,31 +156,46 @@ pub struct ProviderChannelRouteRow {
 
 pub struct ModelMappingRuleRow {
     pub id: i64,
-    pub scope_type: String,
-    pub vendor_code: Option<String>,
-    pub channel_id: Option<i64>,
-    pub channel_code: Option<String>,
+    pub binding_type: String,
+    pub binding_id: Option<i64>,
+    pub binding_code: Option<String>,
     pub source_model: String,
+    pub source_catalog_key: Option<String>,
     pub target_model: String,
     pub target_catalog_key: Option<String>,
     pub target_vendor_code: Option<String>,
     pub target_provider_model: Option<String>,
     pub target_provider_native_model: Option<String>,
-    pub priority: i32,
+    pub binding_sort_order: i32,
+    pub item_sort_order: i32,
 }
 
 impl ModelMappingRuleRow {
     pub fn try_into_domain(self) -> DomainResult<ModelMappingRule> {
+        if let Some(source_catalog_key) = self.source_catalog_key.as_deref() {
+            ensure_base_catalog_key(
+                source_catalog_key,
+                "ai_model_mapping_rule_item.source_catalog_key must use vendor/model identity",
+            )?;
+        }
+        if let Some(target_catalog_key) = self.target_catalog_key.as_deref() {
+            ensure_base_catalog_key(
+                target_catalog_key,
+                "ai_model_mapping_rule_item.target_catalog_key must use vendor/model identity",
+            )?;
+        }
         let mut rule = ModelMappingRule::new(
             self.id,
-            ModelMappingScope::from_str(&self.scope_type)?,
+            ModelMappingBindingType::from_str(&self.binding_type)?,
             &self.source_model,
             &self.target_model,
-            self.priority,
+            self.binding_sort_order,
         );
-        rule.vendor_code = self.vendor_code.filter(|value| !value.trim().is_empty());
-        rule.channel_id = self.channel_id;
-        rule.channel_code = self.channel_code.filter(|value| !value.trim().is_empty());
+        rule.binding_id = self.binding_id;
+        rule.binding_code = self.binding_code.filter(|value| !value.trim().is_empty());
+        rule.source_catalog_key = self
+            .source_catalog_key
+            .filter(|value| !value.trim().is_empty());
         rule.target_catalog_key = self
             .target_catalog_key
             .filter(|value| !value.trim().is_empty());
@@ -182,6 +208,7 @@ impl ModelMappingRuleRow {
         rule.target_provider_native_model = self
             .target_provider_native_model
             .filter(|value| !value.trim().is_empty());
+        rule.item_sort_order = self.item_sort_order;
         Ok(rule)
     }
 }
@@ -199,7 +226,18 @@ impl ProviderChannelRouteRow {
         Ok(ProviderChannelRoute {
             provider_code: self.provider_code,
             channel_id: self.channel_id,
+            credential_id: self.credential_id.filter(|value| *value > 0),
+            credential_rotation: normalized_credential_rotation(self.credential_rotation),
+            credential_priority: self.credential_priority,
+            credential_weight: self.credential_weight.max(0),
+            channel_code: self.channel_code.filter(|value| !value.trim().is_empty()),
             region_code: normalized_region_code(self.region_code),
+            site_id: self.site_id,
+            site_code: self.site_code.filter(|value| !value.trim().is_empty()),
+            site_service_id: self.site_service_id,
+            site_service_code: self
+                .site_service_code
+                .filter(|value| !value.trim().is_empty()),
             base_url: self.base_url,
             secret_ref: self.secret_ref,
             auth_profile,
@@ -233,6 +271,10 @@ impl ModelProviderRouteRow {
             region_code: normalized_region_code(self.region_code),
             provider_code: self.provider_code,
             channel_id: self.channel_id,
+            credential_id: self.credential_id.filter(|value| *value > 0),
+            credential_rotation: normalized_credential_rotation(self.credential_rotation),
+            credential_priority: self.credential_priority,
+            credential_weight: self.credential_weight.max(0),
             provider_model,
             base_url: self.base_url,
             secret_ref: self.secret_ref,
@@ -250,34 +292,8 @@ fn normalized_optional_api_code(value: Option<String>) -> Option<String> {
 }
 
 fn ensure_base_catalog_key(catalog_key: &str, message: &str) -> DomainResult<()> {
-    let parts = catalog_key
-        .trim()
-        .split('/')
-        .filter(|part| !part.is_empty())
-        .collect::<Vec<_>>();
-    if parts.len() >= 2 && !known_region_segment(parts[1]) {
-        return Ok(());
-    }
-    Err(DomainError::new(format!("{message}: {catalog_key}")))
-}
-
-fn known_region_segment(value: &str) -> bool {
-    matches!(
-        value.trim().to_ascii_lowercase().as_str(),
-        "global"
-            | "cn"
-            | "us"
-            | "eu"
-            | "ap"
-            | "apac"
-            | "jp"
-            | "sg"
-            | "hk"
-            | "aws"
-            | "azure"
-            | "gcp"
-            | "local"
-    )
+    ensure_canonical_model_catalog_key(catalog_key, message)
+        .map_err(|_| DomainError::new(format!("{message}: {catalog_key}")))
 }
 
 fn normalized_provider_model(catalog_key: &str, model: &str, provider_model: &str) -> String {
@@ -301,6 +317,16 @@ fn is_catalog_model_alias(provider_model: &str, catalog_key: &str, model: &str) 
     }
     let native_model = provider_native_model_id(provider_model);
     !native_model.is_empty() && native_model == model.trim() && native_model != provider_model
+}
+
+fn normalized_credential_rotation(value: String) -> String {
+    match value.trim().to_ascii_lowercase().as_str() {
+        "priority" => "priority".to_owned(),
+        "round_robin" => "round_robin".to_owned(),
+        "weighted_round_robin" => "weighted_round_robin".to_owned(),
+        "random" => "random".to_owned(),
+        _ => "default".to_owned(),
+    }
 }
 
 fn parse_timeout_ms(timeout_ms: Option<i64>) -> DomainResult<Option<u64>> {
@@ -770,7 +796,19 @@ fn parse_route_candidate(
         )));
     }
 
-    Ok(RouteCandidate::new(channel_id, weight))
+    let region_code = object
+        .get("region_code")
+        .or_else(|| object.get("regionCode"))
+        .and_then(serde_json::Value::as_str)
+        .map(str::trim)
+        .filter(|value| !value.is_empty())
+        .map(str::to_owned);
+
+    Ok(RouteCandidate {
+        channel_id,
+        weight,
+        region_code,
+    })
 }
 
 fn parse_price_side(value: &str) -> DomainResult<PriceSide> {

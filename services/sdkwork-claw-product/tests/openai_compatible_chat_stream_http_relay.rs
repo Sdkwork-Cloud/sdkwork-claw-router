@@ -36,7 +36,7 @@ async fn openai_compatible_chat_stream_relay_uses_provider_model_and_passes_thro
             .unwrap();
     let relay = OpenAiCompatibleChatCompletionStreamRelay::new(endpoint);
     let request_body = json!({
-        "model": "openai/global/gpt-4o-mini",
+        "model": "gpt-4o-mini",
         "messages": [{"role": "user", "content": "ping"}],
         "temperature": 0.2,
         "stream": true,
@@ -57,6 +57,7 @@ async fn openai_compatible_chat_stream_relay_uses_provider_model_and_passes_thro
             model: "gpt-4o-mini".to_owned(),
             provider_code: "openrouter".to_owned(),
             provider_channel_id: 3001,
+            provider_region_code: "global".to_owned(),
             provider_model: "gpt-4o-mini".to_owned(),
             provider_base_url: Some(format!("http://{addr}")),
             provider_secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
@@ -119,6 +120,7 @@ async fn openai_compatible_chat_stream_relay_does_not_retry_retryable_upstream_s
             model: "gpt-4o-mini".to_owned(),
             provider_code: "openrouter".to_owned(),
             provider_channel_id: 3001,
+            provider_region_code: "global".to_owned(),
             provider_model: "gpt-4o-mini".to_owned(),
             provider_base_url: Some(format!("http://{addr}")),
             provider_secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),

@@ -2,9 +2,10 @@ use sdkwork_claw_product::application::{
     ListModelCatalogQuery, ModelCatalogQueryService, PriceAvailability,
 };
 use sdkwork_claw_product::domain::{
-    provider_native_model_id, BillingMeter, DecimalValue, ModelVendor, PriceSide, ProviderAuthType,
-    ProviderRetryPolicy, RouteCandidate, RoutingCapability, RoutingFallbackMode,
-    RoutingPolicyScope,
+    ensure_canonical_model_catalog_key, parse_model_catalog_identity, provider_native_model_id,
+    BillingMeter, DecimalValue, ModelMappingBindingType, ModelVendor, PriceSide, ProviderAuthType,
+    ProviderRetryPolicy, ResolveModelMappingContext, RouteCandidate, RoutingCapability,
+    RoutingFallbackMode, RoutingPolicyScope,
 };
 use sdkwork_claw_product::infrastructure::sql::catalog::{
     PricingCatalogRows, RefreshableSqlPricingCatalog, SqlPricingCatalogSnapshot,
@@ -28,7 +29,6 @@ fn ai_model_row(
         model: model.to_owned(),
         display_name: display_name.to_owned(),
         vendor_code: vendor_code.to_owned(),
-        region_code: "global".to_owned(),
         capabilities_json: capabilities_json.to_owned(),
         description: Some("Fast commercial model.".to_owned()),
         modalities_json: r#"["text","image"]"#.to_owned(),
@@ -99,14 +99,34 @@ fn sql_queries_use_schema_registry_tables_and_never_forbidden_synonyms() {
 fn provider_native_model_id_strips_only_catalog_vendor_scope() {
     assert_eq!("gpt-5.5", provider_native_model_id("openai/gpt-5.5"));
     assert_eq!(
+        "openai//gpt-5.5",
+        provider_native_model_id("openai//gpt-5.5"),
+        "empty catalog identity segments must not be normalized before provider-native routing"
+    );
+    assert_eq!(
+        "openai/gpt-5.5/",
+        provider_native_model_id("openai/gpt-5.5/"),
+        "slash-padded catalog identities must not be normalized before provider-native routing"
+    );
+    assert_eq!(
         "openai/global/gpt-5.5",
         provider_native_model_id("openai/global/gpt-5.5"),
         "legacy vendor/region/model identities must not be normalized into provider-native ids"
     );
     assert_eq!(
+        "openai/cn-north-1/gpt-5.5",
+        provider_native_model_id("openai/cn-north-1/gpt-5.5"),
+        "cloud region segments must remain invalid catalog identities instead of being treated as provider-native namespaces"
+    );
+    assert_eq!(
         "openrouter/global/anthropic/claude-3-opus",
         provider_native_model_id("openrouter/global/anthropic/claude-3-opus"),
         "relay catalog keys must not accept a region segment in the model identity"
+    );
+    assert_eq!(
+        "openrouter/cn-north-1/anthropic/claude-3-opus",
+        provider_native_model_id("openrouter/cn-north-1/anthropic/claude-3-opus"),
+        "relay catalog keys must not accept cloud region segments in the model identity"
     );
     assert_eq!(
         "anthropic/claude-3-opus",
@@ -116,6 +136,144 @@ fn provider_native_model_id_strips_only_catalog_vendor_scope() {
         "anthropic/claude-3-opus",
         provider_native_model_id("anthropic/claude-3-opus"),
         "provider-native slash model ids must not be stripped as catalog keys"
+    );
+}
+
+#[test]
+fn shared_model_catalog_identity_standard_rejects_region_segments_and_empty_parts() {
+    let identity = parse_model_catalog_identity("openrouter/anthropic/claude-3-opus")
+        .expect("OpenRouter nested provider-native ids are canonical vendor/model identities");
+
+    assert_eq!("openrouter", identity.vendor_code);
+    assert_eq!(vec!["anthropic", "claude-3-opus"], identity.model_parts);
+    assert_eq!("anthropic/claude-3-opus", identity.model_id());
+
+    assert!(
+        parse_model_catalog_identity("openrouter/global/anthropic/claude-3-opus").is_none(),
+        "region segments must not be accepted as part of catalog identity"
+    );
+    assert!(
+        parse_model_catalog_identity("openai/cn-north-1/gpt-5.5").is_none(),
+        "cloud deployment regions belong to region_code, not catalog_key"
+    );
+    assert!(
+        parse_model_catalog_identity("openai//gpt-4o-mini").is_none(),
+        "empty catalog key segments must be rejected instead of normalized away"
+    );
+    assert!(
+        parse_model_catalog_identity("/openai/gpt-4o-mini").is_none(),
+        "leading slash catalog keys must be rejected instead of normalized away"
+    );
+    assert!(
+        parse_model_catalog_identity("openai/gpt-4o-mini/").is_none(),
+        "trailing slash catalog keys must be rejected instead of normalized away"
+    );
+    assert!(
+        !sdkwork_claw_product::domain::model_catalog_scope_matches_key("*", "openai/gpt-4o-mini/"),
+        "wildcard scopes must not match invalid slash-padded catalog keys"
+    );
+
+    let error = ensure_canonical_model_catalog_key(
+        "tencent-cloud/global/vidu2.0",
+        "requestedModelCatalogKey",
+    )
+    .expect_err("regional catalog keys must fail loudly");
+    assert!(
+        error
+            .to_string()
+            .contains("requestedModelCatalogKey must use vendorCode/modelId"),
+        "{error}"
+    );
+}
+
+#[test]
+fn row_mappers_reject_empty_catalog_key_segments_with_shared_identity_standard() {
+    let mut model_row = ai_model_row("gpt-4o-mini", "GPT-4o mini", "openai", r#"["chat"]"#);
+    model_row.catalog_key = "openai//gpt-4o-mini".to_owned();
+    let error = model_row
+        .try_into_domain()
+        .expect_err("ai_model.catalog_key must reject empty path segments");
+    assert!(
+        error
+            .to_string()
+            .contains("ai_model.catalog_key must use vendor/model identity"),
+        "{error}"
+    );
+
+    let route_error = ModelProviderRouteRow {
+        catalog_key: "openai//gpt-4o-mini".to_owned(),
+        model: "gpt-4o-mini".to_owned(),
+        api_code: Some("openai.chat_completions".to_owned()),
+        region_code: "global".to_owned(),
+        provider_code: "openai".to_owned(),
+        channel_id: 3001,
+        credential_id: Some(300101),
+        credential_rotation: "priority".to_owned(),
+        credential_priority: 10,
+        credential_weight: 100,
+        provider_model: "gpt-4o-mini".to_owned(),
+        base_url: Some("https://api.openai.com/v1".to_owned()),
+        secret_ref: Some("vault://providers/openai/account/main".to_owned()),
+        auth_type: Some("bearer".to_owned()),
+        auth_config_json: Some("{}".to_owned()),
+        timeout_ms: None,
+        retry_policy_json: None,
+    }
+    .try_into_domain()
+    .expect_err("ai_channel_model.catalog_key must reject empty path segments");
+    assert!(
+        route_error
+            .to_string()
+            .contains("ai_channel_model.catalog_key must use vendor/model identity"),
+        "{route_error}"
+    );
+
+    let mapping_source_error = ModelMappingRuleRow {
+        id: 5004,
+        binding_type: "global".to_owned(),
+        binding_id: None,
+        binding_code: None,
+        source_model: "gpt-4o-mini".to_owned(),
+        source_catalog_key: Some("openai//gpt-4o-mini".to_owned()),
+        target_model: "gpt-4o-mini".to_owned(),
+        target_catalog_key: Some("openai/gpt-4o-mini".to_owned()),
+        target_vendor_code: Some("openai".to_owned()),
+        target_provider_model: None,
+        target_provider_native_model: None,
+        binding_sort_order: 100,
+        item_sort_order: 100,
+    }
+    .try_into_domain()
+    .expect_err("mapping source catalog key must reject empty path segments");
+    assert!(
+        mapping_source_error.to_string().contains(
+            "ai_model_mapping_rule_item.source_catalog_key must use vendor/model identity"
+        ),
+        "{mapping_source_error}"
+    );
+
+    let mapping_target_error = ModelMappingRuleRow {
+        id: 5005,
+        binding_type: "global".to_owned(),
+        binding_id: None,
+        binding_code: None,
+        source_model: "legacy-fast".to_owned(),
+        source_catalog_key: Some("openai/legacy-fast".to_owned()),
+        target_model: "gpt-4o-mini".to_owned(),
+        target_catalog_key: Some("openai//gpt-4o-mini".to_owned()),
+        target_vendor_code: Some("openai".to_owned()),
+        target_provider_model: None,
+        target_provider_native_model: None,
+        binding_sort_order: 100,
+        item_sort_order: 100,
+    }
+    .try_into_domain()
+    .expect_err("mapping target catalog key must reject empty path segments");
+    assert!(
+        mapping_target_error.to_string().contains(
+            "ai_model_mapping_rule_item.target_catalog_key must use vendor/model identity"
+        ),
+        "{mapping_target_error}"
     );
 }
 
@@ -140,9 +298,15 @@ fn provider_route_queries_use_explicit_region_context_not_catalog_key_segments()
     assert!(postgres_sql.contains(
         "COALESCE(NULLIF(e.region_code, ''), NULLIF(c.region_code, ''), 'global') AS region_code"
     ));
-    assert!(PricingCatalogSql::load_provider_channel_routes().contains(
-        "endpoint.region_code IN (COALESCE(NULLIF(c.region_code, ''), 'global'), 'global')"
-    ));
+    assert!(
+        !PricingCatalogSql::load_provider_channel_routes()
+            .contains("endpoint.region_code IN"),
+        "channel route SQL must not filter endpoint deployments by channel region; endpoint region is the deployment dimension"
+    );
+    assert!(
+        !PricingCatalogSql::load_provider_channel_routes().contains("LIMIT 1"),
+        "channel route SQL must not collapse region deployments to one endpoint; each endpoint region is a deployment row"
+    );
     for forbidden in [
         "strpos(m.catalog_key",
         "substr(m.catalog_key",
@@ -154,18 +318,101 @@ fn provider_route_queries_use_explicit_region_context_not_catalog_key_segments()
         );
     }
 
-    let sqlite_sql = include_str!("../src/infrastructure/sql/sqlite/queries.rs");
+    let sqlite_source = include_str!("../src/infrastructure/sql/sqlite/queries.rs");
+    let sqlite_sql = sqlite_source
+        .split("pub const LOAD_PROVIDER_CHANNEL_ROUTES: &str = r#\"")
+        .nth(1)
+        .and_then(|value| value.split("\"#;").next())
+        .expect("sqlite load provider channel routes query must be present");
     assert!(sqlite_sql.contains("AS region_code"));
     assert!(sqlite_sql.contains(
         "COALESCE(NULLIF(e.region_code, ''), NULLIF(c.region_code, ''), 'global') AS region_code"
     ));
-    assert!(sqlite_sql.contains(
-        "endpoint.region_code IN (COALESCE(NULLIF(c.region_code, ''), 'global'), 'global')"
-    ));
+    assert!(
+        !sqlite_sql.contains("endpoint.region_code IN"),
+        "sqlite channel route SQL must not filter endpoint deployments by channel region; endpoint region is the deployment dimension"
+    );
+    assert!(
+        !sqlite_sql.contains("LIMIT 1"),
+        "sqlite channel route SQL must not collapse region deployments to one endpoint; each endpoint region is a deployment row"
+    );
     for forbidden in ["instr(m.catalog_key", "substr(m.catalog_key"] {
         assert!(
             !sqlite_sql.contains(forbidden),
             "sqlite provider route SQL must not derive region from catalog_key with {forbidden}"
+        );
+    }
+}
+
+#[test]
+fn model_mapping_snapshot_queries_use_normalized_rule_binding_item_tables() {
+    let postgres_sql = PricingCatalogSql::load_model_mappings();
+    assert!(
+        postgres_sql.contains("JOIN ai_model_mapping_rule_binding b"),
+        "runtime model mapping snapshot must load rule bindings instead of legacy rule scope columns"
+    );
+    assert!(
+        postgres_sql.contains("JOIN ai_model_mapping_rule_item i"),
+        "runtime model mapping snapshot must load mapping items instead of legacy rule model columns"
+    );
+    assert!(
+        postgres_sql.contains("b.binding_type AS binding_type"),
+        "runtime mapping rows must project the matched binding type"
+    );
+    assert!(
+        postgres_sql.contains("i.source_model AS source_model")
+            && postgres_sql.contains("NULLIF(i.source_catalog_key, '') AS source_catalog_key")
+            && postgres_sql.contains("i.target_model AS target_model"),
+        "runtime mapping rows must project model relationships from ai_model_mapping_rule_item"
+    );
+    for forbidden in [
+        "scope_type",
+        "NULLIF(vendor_code, '')",
+        "\n    channel_id,",
+        "NULLIF(channel_code, '')",
+        "\n    source_model,",
+        "\n    target_model,",
+        "\n    priority",
+    ] {
+        assert!(
+            !postgres_sql.contains(forbidden),
+            "runtime mapping SQL must not read legacy ai_model_mapping_rule.{forbidden}"
+        );
+    }
+    assert!(
+        postgres_sql.contains("WHEN 'provider_account' THEN 0")
+            && postgres_sql.contains("WHEN 'channel' THEN 1")
+            && postgres_sql.contains("WHEN 'channel_group' THEN 2")
+            && postgres_sql.contains("WHEN 'vendor' THEN 3")
+            && postgres_sql.contains("WHEN 'global' THEN 4"),
+        "runtime mapping SQL must preserve the standard binding priority order"
+    );
+
+    let sqlite_source = include_str!("../src/infrastructure/sql/sqlite/queries.rs");
+    let sqlite_start = sqlite_source
+        .find("pub const LOAD_MODEL_MAPPINGS")
+        .expect("sqlite load model mappings query must be present");
+    let sqlite_end = sqlite_source[sqlite_start..]
+        .find("pub const LOAD_PRICING_PLANS")
+        .map(|offset| sqlite_start + offset)
+        .expect("sqlite load pricing plans query must follow load model mappings");
+    let sqlite_sql = &sqlite_source[sqlite_start..sqlite_end];
+    assert!(sqlite_sql.contains("JOIN ai_model_mapping_rule_binding b"));
+    assert!(sqlite_sql.contains("JOIN ai_model_mapping_rule_item i"));
+    assert!(sqlite_sql.contains("b.binding_type AS binding_type"));
+    assert!(sqlite_sql.contains("NULLIF(i.source_catalog_key, '') AS source_catalog_key"));
+    for forbidden in [
+        "scope_type",
+        "NULLIF(vendor_code, '')",
+        "\n    channel_id,",
+        "NULLIF(channel_code, '')",
+        "\n    source_model,",
+        "\n    target_model,",
+        "\n    priority",
+    ] {
+        assert!(
+            !sqlite_sql.contains(forbidden),
+            "sqlite runtime mapping SQL must not read legacy ai_model_mapping_rule.{forbidden}"
         );
     }
 }
@@ -255,8 +502,19 @@ fn snapshot_load_queries_are_parameterless_and_cover_every_catalog_row_set() {
     );
     assert!(
         PricingCatalogSql::load_provider_routes()
-            .contains("COALESCE(NULLIF(e.base_url, ''), NULLIF(c.base_url, ''), p.base_url)"),
-        "provider route snapshot query must prefer endpoint base_url before channel/provider fallback"
+            .contains("COALESCE(NULLIF(e.base_url, ''), NULLIF(cc.base_url, ''), p.base_url)"),
+        "provider route snapshot query must prefer endpoint base_url before credential/provider fallback"
+    );
+    assert!(
+        PricingCatalogSql::load_provider_routes().contains("JOIN ai_channel_credential cc"),
+        "provider route snapshot query must expand one callable route per active channel credential"
+    );
+    assert!(
+        PricingCatalogSql::load_provider_routes().contains("cc.id AS credential_id")
+            && PricingCatalogSql::load_provider_routes().contains(
+                "COALESCE(NULLIF(c.credential_rotation_strategy, ''), 'default') AS credential_rotation"
+            ),
+        "provider route snapshot query must project credential identity and channel rotation strategy"
     );
     assert!(
         PricingCatalogSql::load_provider_routes().contains("e.region_code")
@@ -277,7 +535,7 @@ fn snapshot_load_queries_are_parameterless_and_cover_every_catalog_row_set() {
     );
     assert!(
         PricingCatalogSql::load_provider_routes().contains("secret_ref"),
-        "provider route snapshot query must project channel credential_ref as secret_ref"
+        "provider route snapshot query must project credential credential_ref as secret_ref"
     );
     assert!(
         PricingCatalogSql::load_provider_routes().contains("auth_type"),
@@ -285,11 +543,11 @@ fn snapshot_load_queries_are_parameterless_and_cover_every_catalog_row_set() {
     );
     assert!(
         PricingCatalogSql::load_provider_routes().contains("auth_config"),
-        "provider route snapshot query must project channel auth_config"
+        "provider route snapshot query must project credential auth_config"
     );
     assert!(
-        PricingCatalogSql::load_provider_routes().contains("NULLIF(c.credential_ref, '')"),
-        "provider route snapshot query must filter routes without channel credential_ref"
+        PricingCatalogSql::load_provider_routes().contains("NULLIF(cc.credential_ref, '')"),
+        "provider route snapshot query must filter routes without credential credential_ref"
     );
     assert!(
         PricingCatalogSql::load_provider_routes().contains("p.id IS NULL OR p.status = 1"),
@@ -297,7 +555,7 @@ fn snapshot_load_queries_are_parameterless_and_cover_every_catalog_row_set() {
     );
     assert!(
         PricingCatalogSql::load_provider_routes().contains(
-            "NULLIF(COALESCE(NULLIF(e.base_url, ''), NULLIF(c.base_url, ''), p.base_url), '')"
+            "NULLIF(COALESCE(NULLIF(e.base_url, ''), NULLIF(cc.base_url, ''), p.base_url), '')"
         ),
         "provider route snapshot query must filter routes without resolved base_url"
     );
@@ -325,8 +583,19 @@ fn snapshot_load_queries_are_parameterless_and_cover_every_catalog_row_set() {
     );
     assert!(
         PricingCatalogSql::load_provider_channel_routes()
-            .contains("COALESCE(NULLIF(e.base_url, ''), NULLIF(c.base_url, ''), p.base_url)"),
-        "channel group snapshot query must prefer endpoint base_url before channel/provider fallback"
+            .contains("COALESCE(NULLIF(e.base_url, ''), NULLIF(cc.base_url, ''), p.base_url)"),
+        "channel group snapshot query must prefer endpoint base_url before credential/provider fallback"
+    );
+    assert!(
+        PricingCatalogSql::load_provider_channel_routes().contains("JOIN ai_channel_credential cc"),
+        "channel group snapshot query must expand one callable route per active channel credential"
+    );
+    assert!(
+        PricingCatalogSql::load_provider_channel_routes().contains("cc.id AS credential_id")
+            && PricingCatalogSql::load_provider_channel_routes().contains(
+                "COALESCE(NULLIF(c.credential_rotation_strategy, ''), 'default') AS credential_rotation"
+            ),
+        "channel group snapshot query must project credential identity and channel rotation strategy"
     );
     assert!(
         PricingCatalogSql::load_provider_channel_routes()
@@ -399,9 +668,11 @@ fn snapshot_load_queries_are_parameterless_and_cover_every_catalog_row_set() {
         "channel group snapshot query must exclude disabled group-channel bindings"
     );
     assert!(
-        PricingCatalogSql::load_provider_channel_routes().contains("endpoint.timeout_ms")
-            && PricingCatalogSql::load_provider_channel_routes().contains("endpoint.retry_policy"),
-        "channel group snapshot query must project endpoint timeout and retry policy through the lateral endpoint selection"
+        PricingCatalogSql::load_provider_channel_routes()
+            .contains("COALESCE(e.timeout_ms, c.timeout_ms) AS timeout_ms")
+            && PricingCatalogSql::load_provider_channel_routes()
+                .contains("COALESCE(e.retry_policy, c.retry_policy)::text AS retry_policy_json"),
+        "channel group snapshot query must project endpoint timeout and retry policy for each endpoint deployment row"
     );
     assert!(
         !PricingCatalogSql::load_provider_channel_routes().contains("FROM ai_route_candidate b"),
@@ -409,7 +680,7 @@ fn snapshot_load_queries_are_parameterless_and_cover_every_catalog_row_set() {
     );
     assert!(
         PricingCatalogSql::load_provider_channel_routes().contains("secret_ref"),
-        "channel group snapshot query must project channel credential_ref as secret_ref"
+        "channel group snapshot query must project credential credential_ref as secret_ref"
     );
     assert!(
         PricingCatalogSql::load_provider_channel_routes().contains("auth_type"),
@@ -417,11 +688,11 @@ fn snapshot_load_queries_are_parameterless_and_cover_every_catalog_row_set() {
     );
     assert!(
         PricingCatalogSql::load_provider_channel_routes().contains("auth_config"),
-        "channel group snapshot query must project channel auth_config"
+        "channel group snapshot query must project credential auth_config"
     );
     assert!(
-        PricingCatalogSql::load_provider_channel_routes().contains("NULLIF(c.credential_ref, '')"),
-        "channel group snapshot query must filter channels without channel credential_ref"
+        PricingCatalogSql::load_provider_channel_routes().contains("NULLIF(cc.credential_ref, '')"),
+        "channel group snapshot query must filter channels without credential credential_ref"
     );
     assert!(
         PricingCatalogSql::load_provider_channel_routes().contains("p.id IS NULL OR p.status = 1"),
@@ -429,7 +700,7 @@ fn snapshot_load_queries_are_parameterless_and_cover_every_catalog_row_set() {
     );
     assert!(
         PricingCatalogSql::load_provider_channel_routes().contains(
-            "NULLIF(COALESCE(NULLIF(e.base_url, ''), NULLIF(c.base_url, ''), p.base_url), '')"
+            "NULLIF(COALESCE(NULLIF(e.base_url, ''), NULLIF(cc.base_url, ''), p.base_url), '')"
         ),
         "channel route snapshot query must filter channels without resolved base_url"
     );
@@ -516,6 +787,10 @@ fn row_mappers_convert_sql_rows_into_domain_objects() {
         region_code: "global".to_owned(),
         provider_code: "openrouter".to_owned(),
         channel_id: 3001,
+        credential_id: Some(300101),
+        credential_rotation: "priority".to_owned(),
+        credential_priority: 10,
+        credential_weight: 100,
         provider_model: "gpt-4o-mini".to_owned(),
         base_url: Some("http://provider-proxy.internal/openrouter".to_owned()),
         secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
@@ -549,7 +824,16 @@ fn row_mappers_convert_sql_rows_into_domain_objects() {
     let channel_route = ProviderChannelRouteRow {
         provider_code: "openrouter".to_owned(),
         channel_id: 3001,
+        credential_id: Some(300101),
+        credential_rotation: "priority".to_owned(),
+        credential_priority: 10,
+        credential_weight: 100,
+        channel_code: Some("openrouter-main".to_owned()),
         region_code: "cn".to_owned(),
+        site_id: Some(4001),
+        site_code: Some("cn-site".to_owned()),
+        site_service_id: Some(4101),
+        site_service_code: Some("cn-chat".to_owned()),
         base_url: Some("http://provider-proxy.internal/openrouter".to_owned()),
         secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
         auth_type: Some("header".to_owned()),
@@ -565,7 +849,15 @@ fn row_mappers_convert_sql_rows_into_domain_objects() {
     .unwrap();
     assert_eq!("openrouter", channel_route.provider_code);
     assert_eq!(3001, channel_route.channel_id);
+    assert_eq!(
+        Some("openrouter-main"),
+        channel_route.channel_code.as_deref()
+    );
     assert_eq!("cn", channel_route.region_code);
+    assert_eq!(Some(4001), channel_route.site_id);
+    assert_eq!(Some("cn-site"), channel_route.site_code.as_deref());
+    assert_eq!(Some(4101), channel_route.site_service_id);
+    assert_eq!(Some("cn-chat"), channel_route.site_service_code.as_deref());
     assert_eq!(
         Some("http://provider-proxy.internal/openrouter"),
         channel_route.base_url.as_deref()
@@ -798,6 +1090,10 @@ fn row_mappers_reject_invalid_decimal_and_unknown_price_side() {
         region_code: "global".to_owned(),
         provider_code: "openrouter".to_owned(),
         channel_id: 3001,
+        credential_id: Some(300101),
+        credential_rotation: "priority".to_owned(),
+        credential_priority: 10,
+        credential_weight: 100,
         provider_model: "gpt-4o-mini".to_owned(),
         base_url: Some("http://provider-proxy.internal/openrouter".to_owned()),
         secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
@@ -816,6 +1112,10 @@ fn row_mappers_reject_invalid_decimal_and_unknown_price_side() {
         region_code: "global".to_owned(),
         provider_code: "openrouter".to_owned(),
         channel_id: 3001,
+        credential_id: Some(300101),
+        credential_rotation: "priority".to_owned(),
+        credential_priority: 10,
+        credential_weight: 100,
         provider_model: "gpt-4o-mini".to_owned(),
         base_url: Some("http://provider-proxy.internal/openrouter".to_owned()),
         secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
@@ -837,6 +1137,10 @@ fn model_provider_route_row_normalizes_catalog_key_provider_model_to_native_mode
         region_code: "global".to_owned(),
         provider_code: "openai".to_owned(),
         channel_id: 3001,
+        credential_id: Some(300101),
+        credential_rotation: "priority".to_owned(),
+        credential_priority: 10,
+        credential_weight: 100,
         provider_model: "openai/gpt-5.5".to_owned(),
         base_url: Some("http://provider-proxy.internal/openai".to_owned()),
         secret_ref: Some("vault://providers/openai/account/main".to_owned()),
@@ -863,6 +1167,10 @@ fn model_provider_route_row_normalizes_slash_catalog_provider_model_to_native_mo
         region_code: "global".to_owned(),
         provider_code: "openrouter".to_owned(),
         channel_id: 3001,
+        credential_id: Some(300101),
+        credential_rotation: "priority".to_owned(),
+        credential_priority: 10,
+        credential_weight: 100,
         provider_model: "openrouter/anthropic/claude-3-opus".to_owned(),
         base_url: Some("http://provider-proxy.internal/openrouter".to_owned()),
         secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
@@ -954,6 +1262,10 @@ fn sql_catalog_snapshot_rejects_legacy_regional_route_identity() {
         region_code: "global".to_owned(),
         provider_code: "legacy-region-route".to_owned(),
         channel_id: 4001,
+        credential_id: Some(400101),
+        credential_rotation: "priority".to_owned(),
+        credential_priority: 10,
+        credential_weight: 100,
         provider_model: "gpt-4o-mini".to_owned(),
         base_url: Some("http://provider-proxy.internal/legacy-region-route".to_owned()),
         secret_ref: Some("vault://providers/legacy-region-route/account/main".to_owned()),
@@ -965,6 +1277,41 @@ fn sql_catalog_snapshot_rejects_legacy_regional_route_identity() {
 
     let error = match SqlPricingCatalogSnapshot::from_rows(rows) {
         Ok(_) => panic!("catalog snapshot must reject legacy regional route identity"),
+        Err(error) => error,
+    };
+    assert!(
+        error
+            .to_string()
+            .contains("ai_channel_model.catalog_key must use vendor/model identity"),
+        "{error}"
+    );
+}
+
+#[test]
+fn sql_catalog_snapshot_rejects_cloud_region_route_identity() {
+    let mut rows = priced_catalog_rows();
+    rows.provider_routes.push(ModelProviderRouteRow {
+        catalog_key: "openai/cn-north-1/gpt-4o-mini".to_owned(),
+        model: "gpt-4o-mini".to_owned(),
+        api_code: Some("openai.chat_completions".to_owned()),
+        region_code: "cn-north-1".to_owned(),
+        provider_code: "cn-region-route".to_owned(),
+        channel_id: 4002,
+        credential_id: Some(400201),
+        credential_rotation: "priority".to_owned(),
+        credential_priority: 10,
+        credential_weight: 100,
+        provider_model: "gpt-4o-mini".to_owned(),
+        base_url: Some("http://provider-proxy.internal/cn-region-route".to_owned()),
+        secret_ref: Some("vault://providers/cn-region-route/account/main".to_owned()),
+        auth_type: Some("bearer".to_owned()),
+        auth_config_json: Some("{}".to_owned()),
+        timeout_ms: None,
+        retry_policy_json: None,
+    });
+
+    let error = match SqlPricingCatalogSnapshot::from_rows(rows) {
+        Ok(_) => panic!("catalog snapshot must reject cloud regional route identity"),
         Err(error) => error,
     };
     assert!(
@@ -1008,6 +1355,92 @@ fn sql_catalog_snapshot_uses_base_model_identity_and_region_scoped_prices() {
             )
             .is_none(),
         "legacy vendor/region/model price identities must not be accepted"
+    );
+}
+
+#[test]
+fn sql_catalog_snapshot_resolves_normalized_model_mapping_bindings() {
+    let mut rows = priced_catalog_rows();
+    rows.model_mappings = vec![
+        ModelMappingRuleRow {
+            id: 5001,
+            binding_type: "global".to_owned(),
+            binding_id: None,
+            binding_code: None,
+            source_model: "fast-chat".to_owned(),
+            source_catalog_key: None,
+            target_model: "openai/gpt-4o-mini".to_owned(),
+            target_catalog_key: Some("openai/gpt-4o-mini".to_owned()),
+            target_vendor_code: Some("openai".to_owned()),
+            target_provider_model: Some("openrouter/global-fallback".to_owned()),
+            target_provider_native_model: None,
+            binding_sort_order: 100,
+            item_sort_order: 100,
+        },
+        ModelMappingRuleRow {
+            id: 5002,
+            binding_type: "channel_group".to_owned(),
+            binding_id: Some(10),
+            binding_code: Some("standard-group".to_owned()),
+            source_model: "fast-chat".to_owned(),
+            source_catalog_key: Some("openai/fast-chat".to_owned()),
+            target_model: "openai/gpt-4o-mini".to_owned(),
+            target_catalog_key: Some("openai/gpt-4o-mini".to_owned()),
+            target_vendor_code: Some("openai".to_owned()),
+            target_provider_model: Some("openrouter/group-fast".to_owned()),
+            target_provider_native_model: None,
+            binding_sort_order: 10,
+            item_sort_order: 20,
+        },
+    ];
+    let snapshot = SqlPricingCatalogSnapshot::from_rows(rows).unwrap();
+
+    let resolved = snapshot
+        .resolve_model_mapping(
+            "openai/fast-chat",
+            &ResolveModelMappingContext::new()
+                .with_vendor_code("openai")
+                .with_channel_group_id(10)
+                .with_channel_group_code("standard-group"),
+        )
+        .expect("channel-group mapping must resolve from normalized binding rows");
+
+    assert_eq!(ModelMappingBindingType::ChannelGroup, resolved.binding_type);
+    assert_eq!("openai/gpt-4o-mini", resolved.effective_catalog_key());
+    assert_eq!(
+        Some("openrouter/group-fast"),
+        resolved.effective_provider_model()
+    );
+}
+
+#[test]
+fn sql_catalog_snapshot_rejects_regional_model_mapping_catalog_keys() {
+    let mut rows = priced_catalog_rows();
+    rows.model_mappings.push(ModelMappingRuleRow {
+        id: 5003,
+        binding_type: "global".to_owned(),
+        binding_id: None,
+        binding_code: None,
+        source_model: "legacy-fast".to_owned(),
+        source_catalog_key: Some("openai/global/legacy-fast".to_owned()),
+        target_model: "openai/gpt-4o-mini".to_owned(),
+        target_catalog_key: Some("openai/gpt-4o-mini".to_owned()),
+        target_vendor_code: Some("openai".to_owned()),
+        target_provider_model: None,
+        target_provider_native_model: None,
+        binding_sort_order: 100,
+        item_sort_order: 100,
+    });
+
+    let error = match SqlPricingCatalogSnapshot::from_rows(rows) {
+        Ok(_) => panic!("regional source catalog keys must be rejected"),
+        Err(error) => error,
+    };
+    assert!(
+        error.to_string().contains(
+            "ai_model_mapping_rule_item.source_catalog_key must use vendor/model identity"
+        ),
+        "{error}"
     );
 }
 
@@ -1153,6 +1586,10 @@ fn priced_catalog_rows() -> PricingCatalogRows {
                 region_code: "global".to_owned(),
                 provider_code: "openrouter".to_owned(),
                 channel_id: 3001,
+                credential_id: Some(300101),
+                credential_rotation: "priority".to_owned(),
+                credential_priority: 10,
+                credential_weight: 100,
                 provider_model: "gpt-4o-mini".to_owned(),
                 base_url: Some("http://provider-proxy.internal/openrouter".to_owned()),
                 secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
@@ -1171,6 +1608,10 @@ fn priced_catalog_rows() -> PricingCatalogRows {
                 region_code: "global".to_owned(),
                 provider_code: "azure_openai".to_owned(),
                 channel_id: 2001,
+                credential_id: Some(200101),
+                credential_rotation: "priority".to_owned(),
+                credential_priority: 10,
+                credential_weight: 100,
                 provider_model: "gpt-4o-mini".to_owned(),
                 base_url: Some("http://provider-proxy.internal/azure".to_owned()),
                 secret_ref: Some("vault://providers/azure/account/main".to_owned()),
@@ -1184,7 +1625,16 @@ fn priced_catalog_rows() -> PricingCatalogRows {
             ProviderChannelRouteRow {
                 provider_code: "openrouter".to_owned(),
                 channel_id: 3001,
+                credential_id: Some(300101),
+                credential_rotation: "priority".to_owned(),
+                credential_priority: 10,
+                credential_weight: 100,
+                channel_code: Some("openrouter-main".to_owned()),
                 region_code: "global".to_owned(),
+                site_id: None,
+                site_code: None,
+                site_service_id: None,
+                site_service_code: None,
                 base_url: Some("http://provider-proxy.internal/openrouter".to_owned()),
                 secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
                 auth_type: Some("bearer".to_owned()),
@@ -1199,7 +1649,16 @@ fn priced_catalog_rows() -> PricingCatalogRows {
             ProviderChannelRouteRow {
                 provider_code: "azure_openai".to_owned(),
                 channel_id: 2001,
+                credential_id: Some(200101),
+                credential_rotation: "priority".to_owned(),
+                credential_priority: 10,
+                credential_weight: 100,
+                channel_code: Some("azure-main".to_owned()),
                 region_code: "global".to_owned(),
+                site_id: None,
+                site_code: None,
+                site_service_id: None,
+                site_service_code: None,
                 base_url: Some("http://provider-proxy.internal/azure".to_owned()),
                 secret_ref: Some("vault://providers/azure/account/main".to_owned()),
                 auth_type: Some("azure_openai".to_owned()),

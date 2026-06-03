@@ -46,16 +46,11 @@ export function createVendorInputFromForm(
 
 export function createModelInputFromForm(formData: FormData, vendorId: string): ModelCreateInput {
   const regionPrices = readRegionPrices(formData);
-  const globalPrice = regionPrices.find((price) => price.regionCode === 'global') ?? regionPrices[0];
   return {
     vendorId: vendorId.trim(),
     model: readFormText(formData, 'model'),
     displayName: readOptionalFormText(formData, 'displayName'),
     type: readModelType(formData.get('type')),
-    priceIn: globalPrice?.priceIn ?? '',
-    priceOut: globalPrice?.priceOut ?? '',
-    cacheReadPrice: globalPrice?.cacheReadPrice ?? '',
-    cacheWritePrice: globalPrice?.cacheWritePrice ?? '',
     regionPrices,
     contextTokens: readRequiredFormText(formData, 'contextTokens'),
     maxOutputTokens: readOptionalNonNegativeInteger(formData, 'maxOutputTokens'),
@@ -119,22 +114,9 @@ function readOptionalDecimalText(value: FormDataEntryValue | null): string {
 }
 
 function readRegionPrices(formData: FormData): ModelCreateInput['regionPrices'] {
-  const prices = MODEL_PRICING_REGIONS
+  return MODEL_PRICING_REGIONS
     .map((region) => readRegionPrice(formData, region.code))
     .filter((price): price is NonNullable<ModelCreateInput['regionPrices']>[number] => price !== null);
-
-  if (prices.length > 0) {
-    return prices;
-  }
-
-  const legacyGlobalPrice = {
-    regionCode: 'global',
-    priceIn: readDecimalText(formData.get('priceIn')),
-    priceOut: readDecimalText(formData.get('priceOut')),
-    cacheReadPrice: readOptionalDecimalText(formData.get('cacheReadPrice')),
-    cacheWritePrice: readOptionalDecimalText(formData.get('cacheWritePrice')),
-  };
-  return hasRequiredRegionPrice(legacyGlobalPrice) ? [legacyGlobalPrice] : [];
 }
 
 function readRegionPrice(formData: FormData, regionCode: ModelPricingRegionCode): ModelCreateInput['regionPrices'][number] | null {

@@ -53,6 +53,7 @@ async fn openai_compatible_embeddings_relay_uses_provider_model_and_upstream_sec
             model: "text-embedding-3-small".to_owned(),
             provider_code: "openrouter".to_owned(),
             provider_channel_id: 3001,
+            provider_region_code: "global".to_owned(),
             provider_model: "text-embedding-3-small".to_owned(),
             provider_base_url: Some(format!("http://{addr}")),
             provider_secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
@@ -69,7 +70,7 @@ async fn openai_compatible_embeddings_relay_uses_provider_model_and_upstream_sec
             200,
             json!({
                 "object": "list",
-                "model": "openai/global/text-embedding-3-small",
+                "model": "text-embedding-3-small",
                 "data": [
                     {"object": "embedding", "index": 0, "embedding": [0.1, 0.2, 0.3]}
                 ],
@@ -106,7 +107,7 @@ async fn capture_embedding(
         StatusCode::OK,
         Json(json!({
             "object": "list",
-            "model": "openai/global/text-embedding-3-small",
+            "model": "text-embedding-3-small",
             "data": [
                 {"object": "embedding", "index": 0, "embedding": [0.1, 0.2, 0.3]}
             ],

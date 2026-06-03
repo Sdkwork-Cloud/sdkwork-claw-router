@@ -6958,6 +6958,7 @@
       "read_sources": [
         "ai_provider",
         "ai_channel",
+        "ai_channel_credential",
         "ai_channel_model",
         "ai_channel",
         "ai_channel_vendor",
@@ -6975,16 +6976,6 @@
             "accessType": {
               "maxLength": 64,
               "minLength": 1,
-              "type": "string"
-            },
-            "apiKey": {
-              "description": "Plaintext provider API key accepted only on create/update input. Backend encrypts it into ai_channel.auth_config and never returns it.",
-              "maxLength": 4096,
-              "minLength": 1,
-              "type": "string"
-            },
-            "baseUrl": {
-              "maxLength": 512,
               "type": "string"
             },
             "capabilities": {
@@ -7025,6 +7016,75 @@
                 "failureThreshold"
               ],
               "type": "object"
+            },
+            "credentialRotation": {
+              "description": "Credential selection strategy for the upstream credential list.",
+              "enum": [
+                "default",
+                "priority",
+                "round_robin",
+                "weighted_round_robin",
+                "random"
+              ],
+              "type": "string"
+            },
+            "credentials": {
+              "items": {
+                "additionalProperties": false,
+                "name": "AdminChannelCredentialInput",
+                "properties": {
+                  "apiKey": {
+                    "description": "Plaintext upstream API key accepted only on create/update input. Backend stores a derived secret reference and does not return it through non-admin-safe responses.",
+                    "maxLength": 4096,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "baseUrl": {
+                    "maxLength": 512,
+                    "minLength": 1,
+                    "pattern": "^https?://[^\\\\s]+$",
+                    "type": "string"
+                  },
+                  "name": {
+                    "maxLength": 128,
+                    "type": "string"
+                  },
+                  "priority": {
+                    "format": "int64",
+                    "maximum": 1000000,
+                    "minimum": 1,
+                    "type": "integer"
+                  },
+                  "secretRef": {
+                    "maxLength": 256,
+                    "minLength": 1,
+                    "pattern": "^(vault|secret)://[^\\\\s]+$",
+                    "type": "string"
+                  },
+                  "status": {
+                    "enum": [
+                      "active",
+                      "disabled",
+                      "error"
+                    ],
+                    "type": "string"
+                  },
+                  "weight": {
+                    "format": "int64",
+                    "maximum": 10000,
+                    "minimum": 1,
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "baseUrl"
+                ],
+                "type": "object"
+              },
+              "maxItems": 64,
+              "minItems": 1,
+              "type": "array",
+              "uniqueItems": false
             },
             "expiresAt": {
               "description": "Optional channel credential expiration timestamp. Omit or null to keep the channel credential permanently valid.",
@@ -7106,13 +7166,6 @@
               ],
               "type": "object"
             },
-            "secretRef": {
-              "description": "Optional compatibility path for existing Vault/KMS secret references. New admin UI submits apiKey instead.",
-              "maxLength": 256,
-              "minLength": 1,
-              "pattern": "^(vault|secret)://[^\\\\s]+$",
-              "type": "string"
-            },
             "status": {
               "enum": [
                 "active",
@@ -7144,7 +7197,7 @@
           "required": [
             "name",
             "vendor",
-            "apiKey",
+            "credentials",
             "models"
           ],
           "type": "object"
@@ -7166,17 +7219,8 @@
                   "minLength": 1,
                   "type": "string"
                 },
-                "apiKey": {
-                  "description": "Full plaintext provider API key returned by authenticated admin management responses for channel credential relay operations.",
-                  "maxLength": 4096,
-                  "type": "string"
-                },
                 "balance": {
                   "maxLength": 64,
-                  "type": "string"
-                },
-                "baseUrl": {
-                  "maxLength": 512,
                   "type": "string"
                 },
                 "capabilities": {
@@ -7227,6 +7271,103 @@
                   "maxLength": 64,
                   "minLength": 1,
                   "type": "string"
+                },
+                "credentialRotation": {
+                  "enum": [
+                    "default",
+                    "priority",
+                    "round_robin",
+                    "weighted_round_robin",
+                    "random"
+                  ],
+                  "type": "string"
+                },
+                "credentials": {
+                  "items": {
+                    "additionalProperties": false,
+                    "name": "AdminChannelCredentialItem",
+                    "properties": {
+                      "apiKey": {
+                        "description": "Plaintext provider API key returned only to authenticated admin management responses when available for channel credential relay operations.",
+                        "maxLength": 4096,
+                        "type": "string"
+                      },
+                      "baseUrl": {
+                        "maxLength": 512,
+                        "minLength": 1,
+                        "pattern": "^https?://[^\\\\s]+$",
+                        "type": "string"
+                      },
+                      "credentialId": {
+                        "maxLength": 128,
+                        "minLength": 1,
+                        "pattern": "^[1-9][0-9]*$",
+                        "type": "string"
+                      },
+                      "errors": {
+                        "format": "int64",
+                        "minimum": 0,
+                        "type": "integer"
+                      },
+                      "id": {
+                        "maxLength": 128,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "maskedLabel": {
+                        "maxLength": 128,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "name": {
+                        "maxLength": 128,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "priority": {
+                        "format": "int64",
+                        "maximum": 1000000,
+                        "minimum": 1,
+                        "type": "integer"
+                      },
+                      "secretRef": {
+                        "maxLength": 256,
+                        "minLength": 1,
+                        "pattern": "^(vault|secret)://[^\\\\s]+$",
+                        "type": "string"
+                      },
+                      "status": {
+                        "enum": [
+                          "active",
+                          "disabled",
+                          "error"
+                        ],
+                        "type": "string"
+                      },
+                      "weight": {
+                        "format": "int64",
+                        "maximum": 10000,
+                        "minimum": 1,
+                        "type": "integer"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "credentialId",
+                      "name",
+                      "baseUrl",
+                      "secretRef",
+                      "maskedLabel",
+                      "priority",
+                      "weight",
+                      "status",
+                      "errors"
+                    ],
+                    "type": "object"
+                  },
+                  "maxItems": 64,
+                  "minItems": 0,
+                  "type": "array"
                 },
                 "errors": {
                   "format": "int64",
@@ -7316,11 +7457,6 @@
                   ],
                   "type": "object"
                 },
-                "secretRef": {
-                  "maxLength": 256,
-                  "pattern": "^(vault|secret)://[^\\\\s]+$",
-                  "type": "string"
-                },
                 "status": {
                   "enum": [
                     "active",
@@ -7355,6 +7491,8 @@
                 "channelType",
                 "protocol",
                 "accessType",
+                "credentialRotation",
+                "credentials",
                 "models",
                 "capabilities",
                 "resourceCodes",
@@ -7384,6 +7522,7 @@
       "tag": "integration",
       "write_tables": [
         "ai_channel",
+        "ai_channel_credential",
         "ai_channel_model",
         "ai_channel",
         "ai_channel_vendor",
@@ -8211,6 +8350,128 @@
     },
     {
       "api_method": "GET",
+      "api_path": "/backend/v3/api/ai/resource_groups",
+      "api_surface": "backend",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts#fetchAiResourceGroups",
+      "kind": "read",
+      "module": "admin-channel",
+      "openapi_exposed": false,
+      "operation": "fetchAiResourceGroups",
+      "operation_id": "aiResourceGroups.list",
+      "path_params": [],
+      "query_parameters": [],
+      "query_parameters_declared": true,
+      "read_sources": [
+        "ai_resource_group",
+        "ai_resource_group_item"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "response_schema": {
+        "name": "AdminAiResourceGroupsResponse",
+        "schema": {
+          "additionalProperties": false,
+          "name": "AdminAiResourceGroupsResponse",
+          "properties": {
+            "items": {
+              "items": {
+                "additionalProperties": false,
+                "name": "AdminAiResourceGroupItem",
+                "properties": {
+                  "description": {
+                    "maxLength": 512,
+                    "nullable": true,
+                    "type": "string"
+                  },
+                  "dynamic": {
+                    "type": "boolean"
+                  },
+                  "groupCode": {
+                    "maxLength": 128,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "groupName": {
+                    "maxLength": 128,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "groupType": {
+                    "enum": [
+                      "api_group"
+                    ],
+                    "type": "string"
+                  },
+                  "id": {
+                    "maxLength": 128,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "resourceCount": {
+                    "format": "int64",
+                    "minimum": 0,
+                    "type": "integer"
+                  },
+                  "selectionMode": {
+                    "enum": [
+                      "manual",
+                      "all",
+                      "any",
+                      "dynamic_all_api"
+                    ],
+                    "type": "string"
+                  },
+                  "sortOrder": {
+                    "format": "int64",
+                    "minimum": 0,
+                    "nullable": true,
+                    "type": "integer"
+                  },
+                  "status": {
+                    "enum": [
+                      "active",
+                      "disabled",
+                      "inactive"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "groupCode",
+                  "groupName",
+                  "groupType",
+                  "selectionMode",
+                  "status",
+                  "resourceCount",
+                  "dynamic"
+                ],
+                "type": "object"
+              },
+              "maxItems": 2000,
+              "type": "array"
+            }
+          },
+          "required": [
+            "items"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/admin/channel/resources",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "intelligence",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts",
+      "tag": "ai",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
       "api_path": "/backend/v3/api/ai/resources",
       "api_surface": "backend",
       "file_targets": [],
@@ -8640,6 +8901,7 @@
       "read_sources": [
         "ai_provider",
         "ai_channel",
+        "ai_channel_credential",
         "ai_channel_model",
         "ai_channel",
         "ai_channel_resource",
@@ -8663,17 +8925,8 @@
                     "minLength": 1,
                     "type": "string"
                   },
-                  "apiKey": {
-                    "description": "Full plaintext provider API key returned by authenticated admin management responses for channel credential relay operations.",
-                    "maxLength": 4096,
-                    "type": "string"
-                  },
                   "balance": {
                     "maxLength": 64,
-                    "type": "string"
-                  },
-                  "baseUrl": {
-                    "maxLength": 512,
                     "type": "string"
                   },
                   "capabilities": {
@@ -8724,6 +8977,103 @@
                     "maxLength": 64,
                     "minLength": 1,
                     "type": "string"
+                  },
+                  "credentialRotation": {
+                    "enum": [
+                      "default",
+                      "priority",
+                      "round_robin",
+                      "weighted_round_robin",
+                      "random"
+                    ],
+                    "type": "string"
+                  },
+                  "credentials": {
+                    "items": {
+                      "additionalProperties": false,
+                      "name": "AdminChannelCredentialItem",
+                      "properties": {
+                        "apiKey": {
+                          "description": "Plaintext provider API key returned only to authenticated admin management responses when available for channel credential relay operations.",
+                          "maxLength": 4096,
+                          "type": "string"
+                        },
+                        "baseUrl": {
+                          "maxLength": 512,
+                          "minLength": 1,
+                          "pattern": "^https?://[^\\\\s]+$",
+                          "type": "string"
+                        },
+                        "credentialId": {
+                          "maxLength": 128,
+                          "minLength": 1,
+                          "pattern": "^[1-9][0-9]*$",
+                          "type": "string"
+                        },
+                        "errors": {
+                          "format": "int64",
+                          "minimum": 0,
+                          "type": "integer"
+                        },
+                        "id": {
+                          "maxLength": 128,
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "maskedLabel": {
+                          "maxLength": 128,
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "name": {
+                          "maxLength": 128,
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "priority": {
+                          "format": "int64",
+                          "maximum": 1000000,
+                          "minimum": 1,
+                          "type": "integer"
+                        },
+                        "secretRef": {
+                          "maxLength": 256,
+                          "minLength": 1,
+                          "pattern": "^(vault|secret)://[^\\\\s]+$",
+                          "type": "string"
+                        },
+                        "status": {
+                          "enum": [
+                            "active",
+                            "disabled",
+                            "error"
+                          ],
+                          "type": "string"
+                        },
+                        "weight": {
+                          "format": "int64",
+                          "maximum": 10000,
+                          "minimum": 1,
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "credentialId",
+                        "name",
+                        "baseUrl",
+                        "secretRef",
+                        "maskedLabel",
+                        "priority",
+                        "weight",
+                        "status",
+                        "errors"
+                      ],
+                      "type": "object"
+                    },
+                    "maxItems": 64,
+                    "minItems": 0,
+                    "type": "array"
                   },
                   "errors": {
                     "format": "int64",
@@ -8813,11 +9163,6 @@
                     ],
                     "type": "object"
                   },
-                  "secretRef": {
-                    "maxLength": 256,
-                    "pattern": "^(vault|secret)://[^\\\\s]+$",
-                    "type": "string"
-                  },
                   "status": {
                     "enum": [
                       "active",
@@ -8852,6 +9197,8 @@
                   "channelType",
                   "protocol",
                   "accessType",
+                  "credentialRotation",
+                  "credentials",
                   "models",
                   "capabilities",
                   "resourceCodes",
@@ -9151,17 +9498,8 @@
                   "minLength": 1,
                   "type": "string"
                 },
-                "apiKey": {
-                  "description": "Full plaintext provider API key returned by authenticated admin management responses for channel credential relay operations.",
-                  "maxLength": 4096,
-                  "type": "string"
-                },
                 "balance": {
                   "maxLength": 64,
-                  "type": "string"
-                },
-                "baseUrl": {
-                  "maxLength": 512,
                   "type": "string"
                 },
                 "capabilities": {
@@ -9212,6 +9550,103 @@
                   "maxLength": 64,
                   "minLength": 1,
                   "type": "string"
+                },
+                "credentialRotation": {
+                  "enum": [
+                    "default",
+                    "priority",
+                    "round_robin",
+                    "weighted_round_robin",
+                    "random"
+                  ],
+                  "type": "string"
+                },
+                "credentials": {
+                  "items": {
+                    "additionalProperties": false,
+                    "name": "AdminChannelCredentialItem",
+                    "properties": {
+                      "apiKey": {
+                        "description": "Plaintext provider API key returned only to authenticated admin management responses when available for channel credential relay operations.",
+                        "maxLength": 4096,
+                        "type": "string"
+                      },
+                      "baseUrl": {
+                        "maxLength": 512,
+                        "minLength": 1,
+                        "pattern": "^https?://[^\\\\s]+$",
+                        "type": "string"
+                      },
+                      "credentialId": {
+                        "maxLength": 128,
+                        "minLength": 1,
+                        "pattern": "^[1-9][0-9]*$",
+                        "type": "string"
+                      },
+                      "errors": {
+                        "format": "int64",
+                        "minimum": 0,
+                        "type": "integer"
+                      },
+                      "id": {
+                        "maxLength": 128,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "maskedLabel": {
+                        "maxLength": 128,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "name": {
+                        "maxLength": 128,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "priority": {
+                        "format": "int64",
+                        "maximum": 1000000,
+                        "minimum": 1,
+                        "type": "integer"
+                      },
+                      "secretRef": {
+                        "maxLength": 256,
+                        "minLength": 1,
+                        "pattern": "^(vault|secret)://[^\\\\s]+$",
+                        "type": "string"
+                      },
+                      "status": {
+                        "enum": [
+                          "active",
+                          "disabled",
+                          "error"
+                        ],
+                        "type": "string"
+                      },
+                      "weight": {
+                        "format": "int64",
+                        "maximum": 10000,
+                        "minimum": 1,
+                        "type": "integer"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "credentialId",
+                      "name",
+                      "baseUrl",
+                      "secretRef",
+                      "maskedLabel",
+                      "priority",
+                      "weight",
+                      "status",
+                      "errors"
+                    ],
+                    "type": "object"
+                  },
+                  "maxItems": 64,
+                  "minItems": 0,
+                  "type": "array"
                 },
                 "errors": {
                   "format": "int64",
@@ -9301,11 +9736,6 @@
                   ],
                   "type": "object"
                 },
-                "secretRef": {
-                  "maxLength": 256,
-                  "pattern": "^(vault|secret)://[^\\\\s]+$",
-                  "type": "string"
-                },
                 "status": {
                   "enum": [
                     "active",
@@ -9340,6 +9770,8 @@
                 "channelType",
                 "protocol",
                 "accessType",
+                "credentialRotation",
+                "credentials",
                 "models",
                 "capabilities",
                 "resourceCodes",
@@ -9713,6 +10145,7 @@
       "read_sources": [
         "ai_provider",
         "ai_channel",
+        "ai_channel_credential",
         "ai_channel_model",
         "ai_channel",
         "ai_channel_vendor",
@@ -9730,17 +10163,6 @@
             "accessType": {
               "maxLength": 64,
               "minLength": 1,
-              "type": "string"
-            },
-            "apiKey": {
-              "description": "Plaintext provider API key accepted only on create/update input. Backend encrypts it into ai_channel.auth_config and never returns it.",
-              "maxLength": 4096,
-              "minLength": 1,
-              "type": "string"
-            },
-            "baseUrl": {
-              "maxLength": 512,
-              "nullable": true,
               "type": "string"
             },
             "capabilities": {
@@ -9781,6 +10203,74 @@
                 "failureThreshold"
               ],
               "type": "object"
+            },
+            "credentialRotation": {
+              "enum": [
+                "default",
+                "priority",
+                "round_robin",
+                "weighted_round_robin",
+                "random"
+              ],
+              "type": "string"
+            },
+            "credentials": {
+              "description": "Replaces the complete upstream credential list when provided.",
+              "items": {
+                "additionalProperties": false,
+                "name": "AdminChannelCredentialInput",
+                "properties": {
+                  "apiKey": {
+                    "maxLength": 4096,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "baseUrl": {
+                    "maxLength": 512,
+                    "minLength": 1,
+                    "pattern": "^https?://[^\\\\s]+$",
+                    "type": "string"
+                  },
+                  "name": {
+                    "maxLength": 128,
+                    "type": "string"
+                  },
+                  "priority": {
+                    "format": "int64",
+                    "maximum": 1000000,
+                    "minimum": 1,
+                    "type": "integer"
+                  },
+                  "secretRef": {
+                    "maxLength": 256,
+                    "minLength": 1,
+                    "pattern": "^(vault|secret)://[^\\\\s]+$",
+                    "type": "string"
+                  },
+                  "status": {
+                    "enum": [
+                      "active",
+                      "disabled",
+                      "error"
+                    ],
+                    "type": "string"
+                  },
+                  "weight": {
+                    "format": "int64",
+                    "maximum": 10000,
+                    "minimum": 1,
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "baseUrl"
+                ],
+                "type": "object"
+              },
+              "maxItems": 64,
+              "minItems": 1,
+              "type": "array",
+              "uniqueItems": false
             },
             "expiresAt": {
               "description": "Optional channel credential expiration timestamp. Null clears the expiration and makes the channel credential permanently valid.",
@@ -9866,13 +10356,6 @@
               ],
               "type": "object"
             },
-            "secretRef": {
-              "description": "Optional compatibility path for existing Vault/KMS secret references. New admin UI submits apiKey instead.",
-              "maxLength": 256,
-              "minLength": 1,
-              "pattern": "^(vault|secret)://[^\\\\s]+$",
-              "type": "string"
-            },
             "status": {
               "enum": [
                 "active",
@@ -9924,17 +10407,8 @@
                   "minLength": 1,
                   "type": "string"
                 },
-                "apiKey": {
-                  "description": "Full plaintext provider API key returned by authenticated admin management responses for channel credential relay operations.",
-                  "maxLength": 4096,
-                  "type": "string"
-                },
                 "balance": {
                   "maxLength": 64,
-                  "type": "string"
-                },
-                "baseUrl": {
-                  "maxLength": 512,
                   "type": "string"
                 },
                 "capabilities": {
@@ -9985,6 +10459,103 @@
                   "maxLength": 64,
                   "minLength": 1,
                   "type": "string"
+                },
+                "credentialRotation": {
+                  "enum": [
+                    "default",
+                    "priority",
+                    "round_robin",
+                    "weighted_round_robin",
+                    "random"
+                  ],
+                  "type": "string"
+                },
+                "credentials": {
+                  "items": {
+                    "additionalProperties": false,
+                    "name": "AdminChannelCredentialItem",
+                    "properties": {
+                      "apiKey": {
+                        "description": "Plaintext provider API key returned only to authenticated admin management responses when available for channel credential relay operations.",
+                        "maxLength": 4096,
+                        "type": "string"
+                      },
+                      "baseUrl": {
+                        "maxLength": 512,
+                        "minLength": 1,
+                        "pattern": "^https?://[^\\\\s]+$",
+                        "type": "string"
+                      },
+                      "credentialId": {
+                        "maxLength": 128,
+                        "minLength": 1,
+                        "pattern": "^[1-9][0-9]*$",
+                        "type": "string"
+                      },
+                      "errors": {
+                        "format": "int64",
+                        "minimum": 0,
+                        "type": "integer"
+                      },
+                      "id": {
+                        "maxLength": 128,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "maskedLabel": {
+                        "maxLength": 128,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "name": {
+                        "maxLength": 128,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "priority": {
+                        "format": "int64",
+                        "maximum": 1000000,
+                        "minimum": 1,
+                        "type": "integer"
+                      },
+                      "secretRef": {
+                        "maxLength": 256,
+                        "minLength": 1,
+                        "pattern": "^(vault|secret)://[^\\\\s]+$",
+                        "type": "string"
+                      },
+                      "status": {
+                        "enum": [
+                          "active",
+                          "disabled",
+                          "error"
+                        ],
+                        "type": "string"
+                      },
+                      "weight": {
+                        "format": "int64",
+                        "maximum": 10000,
+                        "minimum": 1,
+                        "type": "integer"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "credentialId",
+                      "name",
+                      "baseUrl",
+                      "secretRef",
+                      "maskedLabel",
+                      "priority",
+                      "weight",
+                      "status",
+                      "errors"
+                    ],
+                    "type": "object"
+                  },
+                  "maxItems": 64,
+                  "minItems": 0,
+                  "type": "array"
                 },
                 "errors": {
                   "format": "int64",
@@ -10074,11 +10645,6 @@
                   ],
                   "type": "object"
                 },
-                "secretRef": {
-                  "maxLength": 256,
-                  "pattern": "^(vault|secret)://[^\\\\s]+$",
-                  "type": "string"
-                },
                 "status": {
                   "enum": [
                     "active",
@@ -10113,6 +10679,8 @@
                 "channelType",
                 "protocol",
                 "accessType",
+                "credentialRotation",
+                "credentials",
                 "models",
                 "capabilities",
                 "resourceCodes",
@@ -10142,6 +10710,7 @@
       "tag": "integration",
       "write_tables": [
         "ai_channel",
+        "ai_channel_credential",
         "ai_channel_model",
         "ai_channel",
         "ai_channel_vendor",
@@ -31276,16 +31845,6 @@
               "nullable": true,
               "type": "string"
             },
-            "cacheReadPrice": {
-              "description": "Optional official reference cache-read unit price in USD.",
-              "pattern": "^$|^[0-9]+(\\.[0-9]{1,12})?$",
-              "type": "string"
-            },
-            "cacheWritePrice": {
-              "description": "Optional official reference cache-write unit price in USD.",
-              "pattern": "^$|^[0-9]+(\\.[0-9]{1,12})?$",
-              "type": "string"
-            },
             "capabilityIntro": {
               "maxLength": 4096,
               "nullable": true,
@@ -31344,7 +31903,7 @@
             },
             "model": {
               "description": "Runtime model identifier used for provider calls, routing, and pricing keys.",
-              "maxLength": 128,
+              "maxLength": 256,
               "minLength": 1,
               "pattern": "^[A-Za-z0-9._:/-]+$",
               "type": "string"
@@ -31358,21 +31917,11 @@
               "maxItems": 16,
               "type": "array"
             },
-            "priceIn": {
-              "description": "Official reference input unit price in USD.",
-              "pattern": "^[0-9]+(\\.[0-9]{1,12})?$",
-              "type": "string"
-            },
-            "priceOut": {
-              "description": "Official reference output unit price in USD.",
-              "pattern": "^[0-9]+(\\.[0-9]{1,12})?$",
-              "type": "string"
-            },
             "regionPrices": {
               "description": "Official reference prices by region.",
               "items": {
                 "additionalProperties": false,
-                "description": "Regional official reference pricing input for admin AI model commands.",
+                "description": "Regional official reference pricing returned by admin AI model payloads.",
                 "name": "AdminAiModelRegionPrice",
                 "properties": {
                   "cacheReadPrice": {
@@ -31490,8 +32039,7 @@
             "vendorId",
             "model",
             "type",
-            "priceIn",
-            "priceOut",
+            "regionPrices",
             "contextTokens"
           ],
           "type": "object"
@@ -31511,14 +32059,6 @@
                 "apiFormat": {
                   "maxLength": 128,
                   "nullable": true,
-                  "type": "string"
-                },
-                "cacheReadPrice": {
-                  "maxLength": 64,
-                  "type": "string"
-                },
-                "cacheWritePrice": {
-                  "maxLength": 64,
                   "type": "string"
                 },
                 "calls": {
@@ -31587,7 +32127,7 @@
                 },
                 "model": {
                   "description": "Runtime model identifier used for provider calls, routing, and pricing keys.",
-                  "maxLength": 128,
+                  "maxLength": 256,
                   "minLength": 1,
                   "pattern": "^[A-Za-z0-9._:/-]+$",
                   "type": "string"
@@ -31607,15 +32147,50 @@
                   "maxItems": 16,
                   "type": "array"
                 },
-                "priceIn": {
-                  "maxLength": 64,
-                  "minLength": 1,
-                  "type": "string"
-                },
-                "priceOut": {
-                  "maxLength": 64,
-                  "minLength": 1,
-                  "type": "string"
+                "regionPrices": {
+                  "items": {
+                    "additionalProperties": false,
+                    "description": "Regional official reference pricing returned by admin AI model payloads.",
+                    "name": "AdminAiModelRegionPrice",
+                    "properties": {
+                      "cacheReadPrice": {
+                        "description": "Optional official reference cache-read unit price in USD.",
+                        "pattern": "^$|^[0-9]+(\\.[0-9]{1,12})?$",
+                        "type": "string"
+                      },
+                      "cacheWritePrice": {
+                        "description": "Optional official reference cache-write unit price in USD.",
+                        "pattern": "^$|^[0-9]+(\\.[0-9]{1,12})?$",
+                        "type": "string"
+                      },
+                      "priceIn": {
+                        "description": "Official reference input unit price in USD.",
+                        "pattern": "^[0-9]+(\\.[0-9]{1,12})?$",
+                        "type": "string"
+                      },
+                      "priceOut": {
+                        "description": "Official reference output unit price in USD.",
+                        "pattern": "^[0-9]+(\\.[0-9]{1,12})?$",
+                        "type": "string"
+                      },
+                      "regionCode": {
+                        "description": "Model catalog pricing region code.",
+                        "maxLength": 64,
+                        "minLength": 1,
+                        "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "regionCode",
+                      "priceIn",
+                      "priceOut"
+                    ],
+                    "type": "object"
+                  },
+                  "maxItems": 32,
+                  "minItems": 1,
+                  "type": "array"
                 },
                 "releaseStage": {
                   "format": "int64",
@@ -31707,10 +32282,7 @@
                 "displayName",
                 "name",
                 "type",
-                "priceIn",
-                "priceOut",
-                "cacheReadPrice",
-                "cacheWritePrice",
+                "regionPrices",
                 "status",
                 "calls",
                 "description",
@@ -31910,7 +32482,9 @@
       "query_parameters": [],
       "query_parameters_declared": false,
       "read_sources": [
-        "ai_model_mapping_rule"
+        "ai_model_mapping_rule",
+        "ai_model_mapping_rule_binding",
+        "ai_model_mapping_rule_item"
       ],
       "request_body_required": null,
       "request_id_header": false,
@@ -31920,34 +32494,113 @@
           "additionalProperties": false,
           "name": "AdminModelMappingCreateRequest",
           "properties": {
-            "channelCode": {
-              "maxLength": 64,
-              "nullable": true,
-              "pattern": "^[A-Za-z0-9._-]+$",
-              "type": "string"
-            },
-            "channelId": {
-              "maxLength": 128,
-              "nullable": true,
-              "type": "string"
-            },
-            "description": {
-              "maxLength": 512,
-              "nullable": true,
-              "type": "string"
-            },
-            "effectiveFrom": {
-              "maxLength": 64,
-              "nullable": true,
-              "type": "string"
-            },
-            "effectiveTo": {
-              "maxLength": 64,
-              "nullable": true,
-              "type": "string"
+            "bindings": {
+              "items": {
+                "additionalProperties": false,
+                "name": "AdminModelMappingRuleBindingInput",
+                "properties": {
+                  "bindingCode": {
+                    "maxLength": 128,
+                    "nullable": true,
+                    "pattern": "^[A-Za-z0-9._:-]+$",
+                    "type": "string"
+                  },
+                  "bindingId": {
+                    "maxLength": 128,
+                    "nullable": true,
+                    "type": "string"
+                  },
+                  "bindingName": {
+                    "maxLength": 256,
+                    "nullable": true,
+                    "type": "string"
+                  },
+                  "bindingType": {
+                    "enum": [
+                      "global",
+                      "vendor",
+                      "channel_group",
+                      "channel",
+                      "provider_account",
+                      "site",
+                      "site_service"
+                    ],
+                    "type": "string"
+                  },
+                  "enabled": {
+                    "type": "boolean"
+                  },
+                  "id": {
+                    "maxLength": 128,
+                    "nullable": true,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "bindingType"
+                ],
+                "type": "object"
+              },
+              "maxItems": 100,
+              "minItems": 1,
+              "type": "array"
             },
             "enabled": {
               "type": "boolean"
+            },
+            "mappingItems": {
+              "items": {
+                "additionalProperties": false,
+                "name": "AdminModelMappingRuleItemInput",
+                "properties": {
+                  "enabled": {
+                    "type": "boolean"
+                  },
+                  "id": {
+                    "maxLength": 128,
+                    "nullable": true,
+                    "type": "string"
+                  },
+                  "sourceCatalogKey": {
+                    "maxLength": 256,
+                    "nullable": true,
+                    "type": "string"
+                  },
+                  "sourceModel": {
+                    "maxLength": 256,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "targetCatalogKey": {
+                    "maxLength": 256,
+                    "nullable": true,
+                    "type": "string"
+                  },
+                  "targetModel": {
+                    "maxLength": 256,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "targetProviderModel": {
+                    "maxLength": 256,
+                    "nullable": true,
+                    "type": "string"
+                  },
+                  "targetProviderNativeModel": {
+                    "maxLength": 256,
+                    "nullable": true,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "sourceModel",
+                  "targetModel"
+                ],
+                "type": "object"
+              },
+              "maxItems": 100,
+              "minItems": 1,
+              "type": "array"
             },
             "mappingMode": {
               "enum": [
@@ -31961,78 +32614,34 @@
               ],
               "type": "string"
             },
-            "priority": {
-              "format": "int64",
-              "maximum": 1000000,
-              "minimum": 0,
-              "type": "integer"
-            },
-            "scopeType": {
-              "enum": [
-                "global",
-                "vendor",
-                "channel"
-              ],
-              "type": "string"
-            },
-            "sourceCatalogKey": {
-              "maxLength": 256,
-              "nullable": true,
-              "type": "string"
-            },
-            "sourceModel": {
-              "maxLength": 256,
-              "minLength": 1,
-              "type": "string"
-            },
             "sourceVendorCode": {
               "maxLength": 64,
-              "nullable": true,
+              "minLength": 1,
               "pattern": "^[A-Za-z0-9._-]+$",
               "type": "string"
             },
-            "targetCatalogKey": {
-              "maxLength": 256,
-              "nullable": true,
-              "type": "string"
-            },
-            "targetModel": {
-              "maxLength": 256,
-              "minLength": 1,
-              "type": "string"
-            },
-            "targetProviderModel": {
-              "maxLength": 256,
-              "nullable": true,
-              "type": "string"
-            },
-            "targetProviderNativeModel": {
-              "maxLength": 256,
+            "sourceVendorId": {
+              "maxLength": 128,
               "nullable": true,
               "type": "string"
             },
             "targetVendorCode": {
               "maxLength": 64,
-              "nullable": true,
+              "minLength": 1,
               "pattern": "^[A-Za-z0-9._-]+$",
               "type": "string"
             },
-            "vendorCode": {
-              "maxLength": 64,
-              "nullable": true,
-              "pattern": "^[A-Za-z0-9._-]+$",
-              "type": "string"
-            },
-            "vendorId": {
+            "targetVendorId": {
               "maxLength": 128,
               "nullable": true,
               "type": "string"
             }
           },
           "required": [
-            "scopeType",
-            "sourceModel",
-            "targetModel"
+            "sourceVendorCode",
+            "targetVendorCode",
+            "bindings",
+            "mappingItems"
           ],
           "type": "object"
         }
@@ -32045,30 +32654,91 @@
           "properties": {
             "item": {
               "additionalProperties": false,
-              "name": "AdminModelMappingMutationItem",
+              "name": "AdminModelMappingRule",
               "properties": {
-                "channelCode": {
-                  "maxLength": 64,
-                  "nullable": true,
-                  "pattern": "^[A-Za-z0-9._-]+$",
+                "bindingType": {
+                  "enum": [
+                    "global",
+                    "vendor",
+                    "channel_group",
+                    "channel",
+                    "provider_account",
+                    "site",
+                    "site_service"
+                  ],
                   "type": "string"
+                },
+                "bindings": {
+                  "items": {
+                    "additionalProperties": false,
+                    "name": "AdminModelMappingRuleBinding",
+                    "properties": {
+                      "bindingCode": {
+                        "maxLength": 128,
+                        "nullable": true,
+                        "pattern": "^[A-Za-z0-9._:-]+$",
+                        "type": "string"
+                      },
+                      "bindingId": {
+                        "maxLength": 128,
+                        "nullable": true,
+                        "type": "string"
+                      },
+                      "bindingName": {
+                        "maxLength": 256,
+                        "nullable": true,
+                        "type": "string"
+                      },
+                      "bindingType": {
+                        "enum": [
+                          "global",
+                          "vendor",
+                          "channel_group",
+                          "channel",
+                          "provider_account",
+                          "site",
+                          "site_service"
+                        ],
+                        "type": "string"
+                      },
+                      "createdAt": {
+                        "maxLength": 64,
+                        "nullable": true,
+                        "type": "string"
+                      },
+                      "enabled": {
+                        "type": "boolean"
+                      },
+                      "id": {
+                        "maxLength": 128,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "sortOrder": {
+                        "format": "int64",
+                        "maximum": 1000000,
+                        "minimum": 0,
+                        "type": "integer"
+                      },
+                      "updatedAt": {
+                        "maxLength": 64,
+                        "nullable": true,
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "bindingType",
+                      "sortOrder",
+                      "enabled"
+                    ],
+                    "type": "object"
+                  },
+                  "maxItems": 100,
+                  "minItems": 1,
+                  "type": "array"
                 },
                 "createdAt": {
-                  "maxLength": 64,
-                  "nullable": true,
-                  "type": "string"
-                },
-                "description": {
-                  "maxLength": 512,
-                  "nullable": true,
-                  "type": "string"
-                },
-                "effectiveFrom": {
-                  "maxLength": 64,
-                  "nullable": true,
-                  "type": "string"
-                },
-                "effectiveTo": {
                   "maxLength": 64,
                   "nullable": true,
                   "type": "string"
@@ -32080,6 +32750,79 @@
                   "maxLength": 128,
                   "minLength": 1,
                   "type": "string"
+                },
+                "mappingItems": {
+                  "items": {
+                    "additionalProperties": false,
+                    "name": "AdminModelMappingRuleItem",
+                    "properties": {
+                      "createdAt": {
+                        "maxLength": 64,
+                        "nullable": true,
+                        "type": "string"
+                      },
+                      "enabled": {
+                        "type": "boolean"
+                      },
+                      "id": {
+                        "maxLength": 128,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "sortOrder": {
+                        "format": "int64",
+                        "maximum": 1000000,
+                        "minimum": 0,
+                        "type": "integer"
+                      },
+                      "sourceCatalogKey": {
+                        "maxLength": 256,
+                        "nullable": true,
+                        "type": "string"
+                      },
+                      "sourceModel": {
+                        "maxLength": 256,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "targetCatalogKey": {
+                        "maxLength": 256,
+                        "nullable": true,
+                        "type": "string"
+                      },
+                      "targetModel": {
+                        "maxLength": 256,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "targetProviderModel": {
+                        "maxLength": 256,
+                        "nullable": true,
+                        "type": "string"
+                      },
+                      "targetProviderNativeModel": {
+                        "maxLength": 256,
+                        "nullable": true,
+                        "type": "string"
+                      },
+                      "updatedAt": {
+                        "maxLength": 64,
+                        "nullable": true,
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "sourceModel",
+                      "targetModel",
+                      "sortOrder",
+                      "enabled"
+                    ],
+                    "type": "object"
+                  },
+                  "maxItems": 100,
+                  "minItems": 1,
+                  "type": "array"
                 },
                 "mappingMode": {
                   "enum": [
@@ -32093,83 +32836,44 @@
                   ],
                   "type": "string"
                 },
-                "priority": {
-                  "format": "int64",
-                  "maximum": 1000000,
-                  "minimum": 0,
-                  "type": "integer"
-                },
-                "scopeType": {
-                  "enum": [
-                    "global",
-                    "vendor",
-                    "channel"
-                  ],
-                  "type": "string"
-                },
-                "sourceCatalogKey": {
-                  "maxLength": 256,
-                  "nullable": true,
-                  "type": "string"
-                },
-                "sourceModel": {
-                  "maxLength": 256,
-                  "minLength": 1,
-                  "type": "string"
-                },
                 "sourceVendorCode": {
                   "maxLength": 64,
-                  "nullable": true,
+                  "minLength": 1,
                   "pattern": "^[A-Za-z0-9._-]+$",
                   "type": "string"
                 },
-                "targetCatalogKey": {
-                  "maxLength": 256,
-                  "nullable": true,
-                  "type": "string"
-                },
-                "targetModel": {
-                  "maxLength": 256,
-                  "minLength": 1,
-                  "type": "string"
-                },
-                "targetProviderModel": {
-                  "maxLength": 256,
-                  "nullable": true,
-                  "type": "string"
-                },
-                "targetProviderNativeModel": {
-                  "maxLength": 256,
+                "sourceVendorId": {
+                  "maxLength": 128,
                   "nullable": true,
                   "type": "string"
                 },
                 "targetVendorCode": {
                   "maxLength": 64,
-                  "nullable": true,
+                  "minLength": 1,
                   "pattern": "^[A-Za-z0-9._-]+$",
+                  "type": "string"
+                },
+                "targetVendorId": {
+                  "maxLength": 128,
+                  "nullable": true,
                   "type": "string"
                 },
                 "updatedAt": {
                   "maxLength": 64,
                   "nullable": true,
                   "type": "string"
-                },
-                "vendorCode": {
-                  "maxLength": 64,
-                  "nullable": true,
-                  "pattern": "^[A-Za-z0-9._-]+$",
-                  "type": "string"
                 }
               },
               "required": [
                 "id",
-                "scopeType",
-                "sourceModel",
-                "targetModel",
+                "bindingType",
+                "sourceVendorCode",
+                "targetVendorCode",
                 "mappingMode",
                 "matchType",
-                "priority",
-                "enabled"
+                "enabled",
+                "bindings",
+                "mappingItems"
               ],
               "type": "object"
             }
@@ -32190,6 +32894,8 @@
       "tag": "ai",
       "write_tables": [
         "ai_model_mapping_rule",
+        "ai_model_mapping_rule_binding",
+        "ai_model_mapping_rule_item",
         "ops_audit_log"
       ]
     },
@@ -33079,7 +33785,9 @@
       "query_parameters": [],
       "query_parameters_declared": false,
       "read_sources": [
-        "ai_model_mapping_rule"
+        "ai_model_mapping_rule",
+        "ai_model_mapping_rule_binding",
+        "ai_model_mapping_rule_item"
       ],
       "request_body_required": null,
       "request_id_header": false,
@@ -33109,6 +33817,8 @@
       "tag": "ai",
       "write_tables": [
         "ai_model_mapping_rule",
+        "ai_model_mapping_rule_binding",
+        "ai_model_mapping_rule_item",
         "ops_audit_log"
       ]
     },
@@ -33273,6 +33983,181 @@
       ]
     },
     {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/ai/resources",
+      "api_surface": "backend",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts#fetchAssignableResources",
+      "kind": "read",
+      "module": "admin-model",
+      "openapi_exposed": false,
+      "operation": "fetchAssignableResources",
+      "operation_id": "aiResources.list",
+      "path_params": [],
+      "query_parameters": [],
+      "query_parameters_declared": true,
+      "read_sources": [
+        "ai_resource",
+        "ai_resource_group_item"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "response_schema": {
+        "name": "AdminAiResourcesResponse",
+        "schema": {
+          "additionalProperties": false,
+          "name": "AdminAiResourcesResponse",
+          "properties": {
+            "items": {
+              "items": {
+                "additionalProperties": false,
+                "name": "AdminAiResourceItem",
+                "properties": {
+                  "apiEndpointCode": {
+                    "maxLength": 128,
+                    "type": "string"
+                  },
+                  "catalogKey": {
+                    "maxLength": 256,
+                    "type": "string"
+                  },
+                  "compositionMode": {
+                    "enum": [
+                      "single",
+                      "any",
+                      "all"
+                    ],
+                    "type": "string"
+                  },
+                  "displayName": {
+                    "maxLength": 128,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "id": {
+                    "maxLength": 128,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "members": {
+                    "items": {
+                      "additionalProperties": false,
+                      "name": "AdminAiResourceMemberItem",
+                      "properties": {
+                        "memberResourceCode": {
+                          "maxLength": 192,
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "memberRole": {
+                          "enum": [
+                            "included",
+                            "optional",
+                            "fallback"
+                          ],
+                          "type": "string"
+                        },
+                        "parentResourceCode": {
+                          "maxLength": 192,
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "required": {
+                          "type": "boolean"
+                        },
+                        "sortOrder": {
+                          "format": "int64",
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "parentResourceCode",
+                        "memberResourceCode",
+                        "memberRole",
+                        "required"
+                      ],
+                      "type": "object"
+                    },
+                    "maxItems": 512,
+                    "type": "array"
+                  },
+                  "modalityCode": {
+                    "maxLength": 64,
+                    "type": "string"
+                  },
+                  "model": {
+                    "maxLength": 128,
+                    "type": "string"
+                  },
+                  "providerNativeModel": {
+                    "maxLength": 256,
+                    "type": "string"
+                  },
+                  "resourceCode": {
+                    "maxLength": 192,
+                    "minLength": 1,
+                    "pattern": "^[A-Za-z0-9._-]+$",
+                    "type": "string"
+                  },
+                  "resourceType": {
+                    "enum": [
+                      "vendor",
+                      "modality",
+                      "api_endpoint",
+                      "model_api",
+                      "bundle"
+                    ],
+                    "type": "string"
+                  },
+                  "sortOrder": {
+                    "format": "int64",
+                    "type": "integer"
+                  },
+                  "status": {
+                    "enum": [
+                      "active",
+                      "disabled",
+                      "inactive"
+                    ],
+                    "type": "string"
+                  },
+                  "vendorCode": {
+                    "maxLength": 64,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "resourceCode",
+                  "resourceType",
+                  "displayName",
+                  "compositionMode",
+                  "status",
+                  "members"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "items"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/admin/model/resources",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "intelligence",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts",
+      "tag": "ai",
+      "write_tables": []
+    },
+    {
       "api_method": "POST",
       "api_path": "/backend/v3/api/ai/models/list",
       "api_surface": "backend",
@@ -33347,14 +34232,6 @@
                     "nullable": true,
                     "type": "string"
                   },
-                  "cacheReadPrice": {
-                    "maxLength": 64,
-                    "type": "string"
-                  },
-                  "cacheWritePrice": {
-                    "maxLength": 64,
-                    "type": "string"
-                  },
                   "calls": {
                     "maxLength": 64,
                     "type": "string"
@@ -33421,7 +34298,7 @@
                   },
                   "model": {
                     "description": "Runtime model identifier used for provider calls, routing, and pricing keys.",
-                    "maxLength": 128,
+                    "maxLength": 256,
                     "minLength": 1,
                     "pattern": "^[A-Za-z0-9._:/-]+$",
                     "type": "string"
@@ -33441,15 +34318,50 @@
                     "maxItems": 16,
                     "type": "array"
                   },
-                  "priceIn": {
-                    "maxLength": 64,
-                    "minLength": 1,
-                    "type": "string"
-                  },
-                  "priceOut": {
-                    "maxLength": 64,
-                    "minLength": 1,
-                    "type": "string"
+                  "regionPrices": {
+                    "items": {
+                      "additionalProperties": false,
+                      "description": "Regional official reference pricing returned by admin AI model payloads.",
+                      "name": "AdminAiModelRegionPrice",
+                      "properties": {
+                        "cacheReadPrice": {
+                          "description": "Optional official reference cache-read unit price in USD.",
+                          "pattern": "^$|^[0-9]+(\\.[0-9]{1,12})?$",
+                          "type": "string"
+                        },
+                        "cacheWritePrice": {
+                          "description": "Optional official reference cache-write unit price in USD.",
+                          "pattern": "^$|^[0-9]+(\\.[0-9]{1,12})?$",
+                          "type": "string"
+                        },
+                        "priceIn": {
+                          "description": "Official reference input unit price in USD.",
+                          "pattern": "^[0-9]+(\\.[0-9]{1,12})?$",
+                          "type": "string"
+                        },
+                        "priceOut": {
+                          "description": "Official reference output unit price in USD.",
+                          "pattern": "^[0-9]+(\\.[0-9]{1,12})?$",
+                          "type": "string"
+                        },
+                        "regionCode": {
+                          "description": "Model catalog pricing region code.",
+                          "maxLength": 64,
+                          "minLength": 1,
+                          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "regionCode",
+                        "priceIn",
+                        "priceOut"
+                      ],
+                      "type": "object"
+                    },
+                    "maxItems": 32,
+                    "minItems": 1,
+                    "type": "array"
                   },
                   "releaseStage": {
                     "format": "int64",
@@ -33541,10 +34453,7 @@
                   "displayName",
                   "name",
                   "type",
-                  "priceIn",
-                  "priceOut",
-                  "cacheReadPrice",
-                  "cacheWritePrice",
+                  "regionPrices",
                   "status",
                   "calls",
                   "description",
@@ -33663,7 +34572,7 @@
       "query_parameters": [
         {
           "in": "query",
-          "name": "scope_type",
+          "name": "binding_type",
           "required": false,
           "schema": {
             "type": "string"
@@ -33687,6 +34596,14 @@
         },
         {
           "in": "query",
+          "name": "channel_code",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "in": "query",
           "name": "q",
           "required": false,
           "schema": {
@@ -33696,7 +34613,9 @@
       ],
       "query_parameters_declared": true,
       "read_sources": [
-        "ai_model_mapping_rule"
+        "ai_model_mapping_rule",
+        "ai_model_mapping_rule_binding",
+        "ai_model_mapping_rule_item"
       ],
       "request_body_required": null,
       "request_id_header": false,
@@ -33711,33 +34630,89 @@
                 "additionalProperties": false,
                 "name": "AdminModelMappingRule",
                 "properties": {
-                  "channelCode": {
-                    "maxLength": 64,
-                    "nullable": true,
-                    "pattern": "^[A-Za-z0-9._-]+$",
+                  "bindingType": {
+                    "enum": [
+                      "global",
+                      "vendor",
+                      "channel_group",
+                      "channel",
+                      "provider_account",
+                      "site",
+                      "site_service"
+                    ],
                     "type": "string"
                   },
-                  "channelId": {
-                    "maxLength": 128,
-                    "nullable": true,
-                    "type": "string"
+                  "bindings": {
+                    "items": {
+                      "additionalProperties": false,
+                      "name": "AdminModelMappingRuleBinding",
+                      "properties": {
+                        "bindingCode": {
+                          "maxLength": 128,
+                          "nullable": true,
+                          "pattern": "^[A-Za-z0-9._:-]+$",
+                          "type": "string"
+                        },
+                        "bindingId": {
+                          "maxLength": 128,
+                          "nullable": true,
+                          "type": "string"
+                        },
+                        "bindingName": {
+                          "maxLength": 256,
+                          "nullable": true,
+                          "type": "string"
+                        },
+                        "bindingType": {
+                          "enum": [
+                            "global",
+                            "vendor",
+                            "channel_group",
+                            "channel",
+                            "provider_account",
+                            "site",
+                            "site_service"
+                          ],
+                          "type": "string"
+                        },
+                        "createdAt": {
+                          "maxLength": 64,
+                          "nullable": true,
+                          "type": "string"
+                        },
+                        "enabled": {
+                          "type": "boolean"
+                        },
+                        "id": {
+                          "maxLength": 128,
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "sortOrder": {
+                          "format": "int64",
+                          "maximum": 1000000,
+                          "minimum": 0,
+                          "type": "integer"
+                        },
+                        "updatedAt": {
+                          "maxLength": 64,
+                          "nullable": true,
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "bindingType",
+                        "sortOrder",
+                        "enabled"
+                      ],
+                      "type": "object"
+                    },
+                    "maxItems": 100,
+                    "minItems": 1,
+                    "type": "array"
                   },
                   "createdAt": {
-                    "maxLength": 64,
-                    "nullable": true,
-                    "type": "string"
-                  },
-                  "description": {
-                    "maxLength": 512,
-                    "nullable": true,
-                    "type": "string"
-                  },
-                  "effectiveFrom": {
-                    "maxLength": 64,
-                    "nullable": true,
-                    "type": "string"
-                  },
-                  "effectiveTo": {
                     "maxLength": 64,
                     "nullable": true,
                     "type": "string"
@@ -33749,6 +34724,79 @@
                     "maxLength": 128,
                     "minLength": 1,
                     "type": "string"
+                  },
+                  "mappingItems": {
+                    "items": {
+                      "additionalProperties": false,
+                      "name": "AdminModelMappingRuleItem",
+                      "properties": {
+                        "createdAt": {
+                          "maxLength": 64,
+                          "nullable": true,
+                          "type": "string"
+                        },
+                        "enabled": {
+                          "type": "boolean"
+                        },
+                        "id": {
+                          "maxLength": 128,
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "sortOrder": {
+                          "format": "int64",
+                          "maximum": 1000000,
+                          "minimum": 0,
+                          "type": "integer"
+                        },
+                        "sourceCatalogKey": {
+                          "maxLength": 256,
+                          "nullable": true,
+                          "type": "string"
+                        },
+                        "sourceModel": {
+                          "maxLength": 256,
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "targetCatalogKey": {
+                          "maxLength": 256,
+                          "nullable": true,
+                          "type": "string"
+                        },
+                        "targetModel": {
+                          "maxLength": 256,
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "targetProviderModel": {
+                          "maxLength": 256,
+                          "nullable": true,
+                          "type": "string"
+                        },
+                        "targetProviderNativeModel": {
+                          "maxLength": 256,
+                          "nullable": true,
+                          "type": "string"
+                        },
+                        "updatedAt": {
+                          "maxLength": 64,
+                          "nullable": true,
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "sourceModel",
+                        "targetModel",
+                        "sortOrder",
+                        "enabled"
+                      ],
+                      "type": "object"
+                    },
+                    "maxItems": 100,
+                    "minItems": 1,
+                    "type": "array"
                   },
                   "mappingMode": {
                     "enum": [
@@ -33762,88 +34810,44 @@
                     ],
                     "type": "string"
                   },
-                  "priority": {
-                    "format": "int64",
-                    "maximum": 1000000,
-                    "minimum": 0,
-                    "type": "integer"
-                  },
-                  "scopeType": {
-                    "enum": [
-                      "global",
-                      "vendor",
-                      "channel"
-                    ],
-                    "type": "string"
-                  },
-                  "sourceCatalogKey": {
-                    "maxLength": 256,
-                    "nullable": true,
-                    "type": "string"
-                  },
-                  "sourceModel": {
-                    "maxLength": 256,
-                    "minLength": 1,
-                    "type": "string"
-                  },
                   "sourceVendorCode": {
                     "maxLength": 64,
-                    "nullable": true,
+                    "minLength": 1,
                     "pattern": "^[A-Za-z0-9._-]+$",
                     "type": "string"
                   },
-                  "targetCatalogKey": {
-                    "maxLength": 256,
-                    "nullable": true,
-                    "type": "string"
-                  },
-                  "targetModel": {
-                    "maxLength": 256,
-                    "minLength": 1,
-                    "type": "string"
-                  },
-                  "targetProviderModel": {
-                    "maxLength": 256,
-                    "nullable": true,
-                    "type": "string"
-                  },
-                  "targetProviderNativeModel": {
-                    "maxLength": 256,
+                  "sourceVendorId": {
+                    "maxLength": 128,
                     "nullable": true,
                     "type": "string"
                   },
                   "targetVendorCode": {
                     "maxLength": 64,
-                    "nullable": true,
+                    "minLength": 1,
                     "pattern": "^[A-Za-z0-9._-]+$",
+                    "type": "string"
+                  },
+                  "targetVendorId": {
+                    "maxLength": 128,
+                    "nullable": true,
                     "type": "string"
                   },
                   "updatedAt": {
                     "maxLength": 64,
                     "nullable": true,
                     "type": "string"
-                  },
-                  "vendorCode": {
-                    "maxLength": 64,
-                    "nullable": true,
-                    "pattern": "^[A-Za-z0-9._-]+$",
-                    "type": "string"
-                  },
-                  "vendorId": {
-                    "maxLength": 128,
-                    "nullable": true,
-                    "type": "string"
                   }
                 },
                 "required": [
                   "id",
-                  "scopeType",
-                  "sourceModel",
-                  "targetModel",
+                  "bindingType",
+                  "sourceVendorCode",
+                  "targetVendorCode",
                   "mappingMode",
                   "matchType",
-                  "priority",
-                  "enabled"
+                  "enabled",
+                  "bindings",
+                  "mappingItems"
                 ],
                 "type": "object"
               },
@@ -34786,14 +35790,6 @@
                     "nullable": true,
                     "type": "string"
                   },
-                  "cacheReadPrice": {
-                    "maxLength": 64,
-                    "type": "string"
-                  },
-                  "cacheWritePrice": {
-                    "maxLength": 64,
-                    "type": "string"
-                  },
                   "calls": {
                     "maxLength": 64,
                     "type": "string"
@@ -34860,7 +35856,7 @@
                   },
                   "model": {
                     "description": "Runtime model identifier used for provider calls, routing, and pricing keys.",
-                    "maxLength": 128,
+                    "maxLength": 256,
                     "minLength": 1,
                     "pattern": "^[A-Za-z0-9._:/-]+$",
                     "type": "string"
@@ -34880,15 +35876,50 @@
                     "maxItems": 16,
                     "type": "array"
                   },
-                  "priceIn": {
-                    "maxLength": 64,
-                    "minLength": 1,
-                    "type": "string"
-                  },
-                  "priceOut": {
-                    "maxLength": 64,
-                    "minLength": 1,
-                    "type": "string"
+                  "regionPrices": {
+                    "items": {
+                      "additionalProperties": false,
+                      "description": "Regional official reference pricing returned by admin AI model payloads.",
+                      "name": "AdminAiModelRegionPrice",
+                      "properties": {
+                        "cacheReadPrice": {
+                          "description": "Optional official reference cache-read unit price in USD.",
+                          "pattern": "^$|^[0-9]+(\\.[0-9]{1,12})?$",
+                          "type": "string"
+                        },
+                        "cacheWritePrice": {
+                          "description": "Optional official reference cache-write unit price in USD.",
+                          "pattern": "^$|^[0-9]+(\\.[0-9]{1,12})?$",
+                          "type": "string"
+                        },
+                        "priceIn": {
+                          "description": "Official reference input unit price in USD.",
+                          "pattern": "^[0-9]+(\\.[0-9]{1,12})?$",
+                          "type": "string"
+                        },
+                        "priceOut": {
+                          "description": "Official reference output unit price in USD.",
+                          "pattern": "^[0-9]+(\\.[0-9]{1,12})?$",
+                          "type": "string"
+                        },
+                        "regionCode": {
+                          "description": "Model catalog pricing region code.",
+                          "maxLength": 64,
+                          "minLength": 1,
+                          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "regionCode",
+                        "priceIn",
+                        "priceOut"
+                      ],
+                      "type": "object"
+                    },
+                    "maxItems": 32,
+                    "minItems": 1,
+                    "type": "array"
                   },
                   "releaseStage": {
                     "format": "int64",
@@ -34980,10 +36011,7 @@
                   "displayName",
                   "name",
                   "type",
-                  "priceIn",
-                  "priceOut",
-                  "cacheReadPrice",
-                  "cacheWritePrice",
+                  "regionPrices",
                   "status",
                   "calls",
                   "description",
@@ -36325,7 +37353,9 @@
       "query_parameters": [],
       "query_parameters_declared": false,
       "read_sources": [
-        "ai_model_mapping_rule"
+        "ai_model_mapping_rule",
+        "ai_model_mapping_rule_binding",
+        "ai_model_mapping_rule_item"
       ],
       "request_body_required": null,
       "request_id_header": false,
@@ -36342,6 +37372,17 @@
               "type": "string"
             },
             "channelId": {
+              "maxLength": 128,
+              "nullable": true,
+              "type": "string"
+            },
+            "providerAccountCode": {
+              "maxLength": 128,
+              "nullable": true,
+              "pattern": "^[A-Za-z0-9._:-]+$",
+              "type": "string"
+            },
+            "providerAccountId": {
               "maxLength": 128,
               "nullable": true,
               "type": "string"
@@ -36373,11 +37414,15 @@
             "matched": {
               "type": "boolean"
             },
-            "matchedScopeType": {
+            "matchedBindingType": {
               "enum": [
                 "global",
                 "vendor",
-                "channel"
+                "channel_group",
+                "channel",
+                "provider_account",
+                "site",
+                "site_service"
               ],
               "nullable": true,
               "type": "string"
@@ -36387,33 +37432,89 @@
               "name": "AdminModelMappingRule",
               "nullable": true,
               "properties": {
-                "channelCode": {
-                  "maxLength": 64,
-                  "nullable": true,
-                  "pattern": "^[A-Za-z0-9._-]+$",
+                "bindingType": {
+                  "enum": [
+                    "global",
+                    "vendor",
+                    "channel_group",
+                    "channel",
+                    "provider_account",
+                    "site",
+                    "site_service"
+                  ],
                   "type": "string"
                 },
-                "channelId": {
-                  "maxLength": 128,
-                  "nullable": true,
-                  "type": "string"
+                "bindings": {
+                  "items": {
+                    "additionalProperties": false,
+                    "name": "AdminModelMappingRuleBinding",
+                    "properties": {
+                      "bindingCode": {
+                        "maxLength": 128,
+                        "nullable": true,
+                        "pattern": "^[A-Za-z0-9._:-]+$",
+                        "type": "string"
+                      },
+                      "bindingId": {
+                        "maxLength": 128,
+                        "nullable": true,
+                        "type": "string"
+                      },
+                      "bindingName": {
+                        "maxLength": 256,
+                        "nullable": true,
+                        "type": "string"
+                      },
+                      "bindingType": {
+                        "enum": [
+                          "global",
+                          "vendor",
+                          "channel_group",
+                          "channel",
+                          "provider_account",
+                          "site",
+                          "site_service"
+                        ],
+                        "type": "string"
+                      },
+                      "createdAt": {
+                        "maxLength": 64,
+                        "nullable": true,
+                        "type": "string"
+                      },
+                      "enabled": {
+                        "type": "boolean"
+                      },
+                      "id": {
+                        "maxLength": 128,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "sortOrder": {
+                        "format": "int64",
+                        "maximum": 1000000,
+                        "minimum": 0,
+                        "type": "integer"
+                      },
+                      "updatedAt": {
+                        "maxLength": 64,
+                        "nullable": true,
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "bindingType",
+                      "sortOrder",
+                      "enabled"
+                    ],
+                    "type": "object"
+                  },
+                  "maxItems": 100,
+                  "minItems": 1,
+                  "type": "array"
                 },
                 "createdAt": {
-                  "maxLength": 64,
-                  "nullable": true,
-                  "type": "string"
-                },
-                "description": {
-                  "maxLength": 512,
-                  "nullable": true,
-                  "type": "string"
-                },
-                "effectiveFrom": {
-                  "maxLength": 64,
-                  "nullable": true,
-                  "type": "string"
-                },
-                "effectiveTo": {
                   "maxLength": 64,
                   "nullable": true,
                   "type": "string"
@@ -36425,6 +37526,79 @@
                   "maxLength": 128,
                   "minLength": 1,
                   "type": "string"
+                },
+                "mappingItems": {
+                  "items": {
+                    "additionalProperties": false,
+                    "name": "AdminModelMappingRuleItem",
+                    "properties": {
+                      "createdAt": {
+                        "maxLength": 64,
+                        "nullable": true,
+                        "type": "string"
+                      },
+                      "enabled": {
+                        "type": "boolean"
+                      },
+                      "id": {
+                        "maxLength": 128,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "sortOrder": {
+                        "format": "int64",
+                        "maximum": 1000000,
+                        "minimum": 0,
+                        "type": "integer"
+                      },
+                      "sourceCatalogKey": {
+                        "maxLength": 256,
+                        "nullable": true,
+                        "type": "string"
+                      },
+                      "sourceModel": {
+                        "maxLength": 256,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "targetCatalogKey": {
+                        "maxLength": 256,
+                        "nullable": true,
+                        "type": "string"
+                      },
+                      "targetModel": {
+                        "maxLength": 256,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "targetProviderModel": {
+                        "maxLength": 256,
+                        "nullable": true,
+                        "type": "string"
+                      },
+                      "targetProviderNativeModel": {
+                        "maxLength": 256,
+                        "nullable": true,
+                        "type": "string"
+                      },
+                      "updatedAt": {
+                        "maxLength": 64,
+                        "nullable": true,
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "sourceModel",
+                      "targetModel",
+                      "sortOrder",
+                      "enabled"
+                    ],
+                    "type": "object"
+                  },
+                  "maxItems": 100,
+                  "minItems": 1,
+                  "type": "array"
                 },
                 "mappingMode": {
                   "enum": [
@@ -36438,88 +37612,44 @@
                   ],
                   "type": "string"
                 },
-                "priority": {
-                  "format": "int64",
-                  "maximum": 1000000,
-                  "minimum": 0,
-                  "type": "integer"
-                },
-                "scopeType": {
-                  "enum": [
-                    "global",
-                    "vendor",
-                    "channel"
-                  ],
-                  "type": "string"
-                },
-                "sourceCatalogKey": {
-                  "maxLength": 256,
-                  "nullable": true,
-                  "type": "string"
-                },
-                "sourceModel": {
-                  "maxLength": 256,
-                  "minLength": 1,
-                  "type": "string"
-                },
                 "sourceVendorCode": {
                   "maxLength": 64,
-                  "nullable": true,
+                  "minLength": 1,
                   "pattern": "^[A-Za-z0-9._-]+$",
                   "type": "string"
                 },
-                "targetCatalogKey": {
-                  "maxLength": 256,
-                  "nullable": true,
-                  "type": "string"
-                },
-                "targetModel": {
-                  "maxLength": 256,
-                  "minLength": 1,
-                  "type": "string"
-                },
-                "targetProviderModel": {
-                  "maxLength": 256,
-                  "nullable": true,
-                  "type": "string"
-                },
-                "targetProviderNativeModel": {
-                  "maxLength": 256,
+                "sourceVendorId": {
+                  "maxLength": 128,
                   "nullable": true,
                   "type": "string"
                 },
                 "targetVendorCode": {
                   "maxLength": 64,
-                  "nullable": true,
+                  "minLength": 1,
                   "pattern": "^[A-Za-z0-9._-]+$",
+                  "type": "string"
+                },
+                "targetVendorId": {
+                  "maxLength": 128,
+                  "nullable": true,
                   "type": "string"
                 },
                 "updatedAt": {
                   "maxLength": 64,
                   "nullable": true,
                   "type": "string"
-                },
-                "vendorCode": {
-                  "maxLength": 64,
-                  "nullable": true,
-                  "pattern": "^[A-Za-z0-9._-]+$",
-                  "type": "string"
-                },
-                "vendorId": {
-                  "maxLength": 128,
-                  "nullable": true,
-                  "type": "string"
                 }
               },
               "required": [
                 "id",
-                "scopeType",
-                "sourceModel",
-                "targetModel",
+                "bindingType",
+                "sourceVendorCode",
+                "targetVendorCode",
                 "mappingMode",
                 "matchType",
-                "priority",
-                "enabled"
+                "enabled",
+                "bindings",
+                "mappingItems"
               ],
               "type": "object"
             },
@@ -36727,14 +37857,6 @@
                     "nullable": true,
                     "type": "string"
                   },
-                  "cacheReadPrice": {
-                    "maxLength": 64,
-                    "type": "string"
-                  },
-                  "cacheWritePrice": {
-                    "maxLength": 64,
-                    "type": "string"
-                  },
                   "calls": {
                     "maxLength": 64,
                     "type": "string"
@@ -36801,7 +37923,7 @@
                   },
                   "model": {
                     "description": "Runtime model identifier used for provider calls, routing, and pricing keys.",
-                    "maxLength": 128,
+                    "maxLength": 256,
                     "minLength": 1,
                     "pattern": "^[A-Za-z0-9._:/-]+$",
                     "type": "string"
@@ -36821,15 +37943,50 @@
                     "maxItems": 16,
                     "type": "array"
                   },
-                  "priceIn": {
-                    "maxLength": 64,
-                    "minLength": 1,
-                    "type": "string"
-                  },
-                  "priceOut": {
-                    "maxLength": 64,
-                    "minLength": 1,
-                    "type": "string"
+                  "regionPrices": {
+                    "items": {
+                      "additionalProperties": false,
+                      "description": "Regional official reference pricing returned by admin AI model payloads.",
+                      "name": "AdminAiModelRegionPrice",
+                      "properties": {
+                        "cacheReadPrice": {
+                          "description": "Optional official reference cache-read unit price in USD.",
+                          "pattern": "^$|^[0-9]+(\\.[0-9]{1,12})?$",
+                          "type": "string"
+                        },
+                        "cacheWritePrice": {
+                          "description": "Optional official reference cache-write unit price in USD.",
+                          "pattern": "^$|^[0-9]+(\\.[0-9]{1,12})?$",
+                          "type": "string"
+                        },
+                        "priceIn": {
+                          "description": "Official reference input unit price in USD.",
+                          "pattern": "^[0-9]+(\\.[0-9]{1,12})?$",
+                          "type": "string"
+                        },
+                        "priceOut": {
+                          "description": "Official reference output unit price in USD.",
+                          "pattern": "^[0-9]+(\\.[0-9]{1,12})?$",
+                          "type": "string"
+                        },
+                        "regionCode": {
+                          "description": "Model catalog pricing region code.",
+                          "maxLength": 64,
+                          "minLength": 1,
+                          "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "regionCode",
+                        "priceIn",
+                        "priceOut"
+                      ],
+                      "type": "object"
+                    },
+                    "maxItems": 32,
+                    "minItems": 1,
+                    "type": "array"
                   },
                   "releaseStage": {
                     "format": "int64",
@@ -36921,10 +38078,7 @@
                   "displayName",
                   "name",
                   "type",
-                  "priceIn",
-                  "priceOut",
-                  "cacheReadPrice",
-                  "cacheWritePrice",
+                  "regionPrices",
                   "status",
                   "calls",
                   "description",
@@ -37422,16 +38576,6 @@
               "nullable": true,
               "type": "string"
             },
-            "cacheReadPrice": {
-              "description": "Optional official reference cache-read unit price in USD. Empty string clears the cache-read price.",
-              "pattern": "^$|^[0-9]+(\\.[0-9]{1,12})?$",
-              "type": "string"
-            },
-            "cacheWritePrice": {
-              "description": "Optional official reference cache-write unit price in USD. Empty string clears the cache-write price.",
-              "pattern": "^$|^[0-9]+(\\.[0-9]{1,12})?$",
-              "type": "string"
-            },
             "capabilityIntro": {
               "maxLength": 4096,
               "nullable": true,
@@ -37490,7 +38634,7 @@
             },
             "model": {
               "description": "Optional runtime model identifier update.",
-              "maxLength": 128,
+              "maxLength": 256,
               "minLength": 1,
               "pattern": "^[A-Za-z0-9._:/-]+$",
               "type": "string"
@@ -37504,21 +38648,11 @@
               "maxItems": 16,
               "type": "array"
             },
-            "priceIn": {
-              "description": "Optional official reference input unit price in USD.",
-              "pattern": "^[0-9]+(\\.[0-9]{1,12})?$",
-              "type": "string"
-            },
-            "priceOut": {
-              "description": "Optional official reference output unit price in USD.",
-              "pattern": "^[0-9]+(\\.[0-9]{1,12})?$",
-              "type": "string"
-            },
             "regionPrices": {
               "description": "Optional official reference prices by region.",
               "items": {
                 "additionalProperties": false,
-                "description": "Regional official reference pricing input for admin AI model commands.",
+                "description": "Regional official reference pricing returned by admin AI model payloads.",
                 "name": "AdminAiModelRegionPrice",
                 "properties": {
                   "cacheReadPrice": {
@@ -37659,14 +38793,6 @@
                   "nullable": true,
                   "type": "string"
                 },
-                "cacheReadPrice": {
-                  "maxLength": 64,
-                  "type": "string"
-                },
-                "cacheWritePrice": {
-                  "maxLength": 64,
-                  "type": "string"
-                },
                 "calls": {
                   "maxLength": 64,
                   "type": "string"
@@ -37733,7 +38859,7 @@
                 },
                 "model": {
                   "description": "Runtime model identifier used for provider calls, routing, and pricing keys.",
-                  "maxLength": 128,
+                  "maxLength": 256,
                   "minLength": 1,
                   "pattern": "^[A-Za-z0-9._:/-]+$",
                   "type": "string"
@@ -37753,15 +38879,50 @@
                   "maxItems": 16,
                   "type": "array"
                 },
-                "priceIn": {
-                  "maxLength": 64,
-                  "minLength": 1,
-                  "type": "string"
-                },
-                "priceOut": {
-                  "maxLength": 64,
-                  "minLength": 1,
-                  "type": "string"
+                "regionPrices": {
+                  "items": {
+                    "additionalProperties": false,
+                    "description": "Regional official reference pricing returned by admin AI model payloads.",
+                    "name": "AdminAiModelRegionPrice",
+                    "properties": {
+                      "cacheReadPrice": {
+                        "description": "Optional official reference cache-read unit price in USD.",
+                        "pattern": "^$|^[0-9]+(\\.[0-9]{1,12})?$",
+                        "type": "string"
+                      },
+                      "cacheWritePrice": {
+                        "description": "Optional official reference cache-write unit price in USD.",
+                        "pattern": "^$|^[0-9]+(\\.[0-9]{1,12})?$",
+                        "type": "string"
+                      },
+                      "priceIn": {
+                        "description": "Official reference input unit price in USD.",
+                        "pattern": "^[0-9]+(\\.[0-9]{1,12})?$",
+                        "type": "string"
+                      },
+                      "priceOut": {
+                        "description": "Official reference output unit price in USD.",
+                        "pattern": "^[0-9]+(\\.[0-9]{1,12})?$",
+                        "type": "string"
+                      },
+                      "regionCode": {
+                        "description": "Model catalog pricing region code.",
+                        "maxLength": 64,
+                        "minLength": 1,
+                        "pattern": "^[a-z][a-z0-9_-]{0,63}$",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "regionCode",
+                      "priceIn",
+                      "priceOut"
+                    ],
+                    "type": "object"
+                  },
+                  "maxItems": 32,
+                  "minItems": 1,
+                  "type": "array"
                 },
                 "releaseStage": {
                   "format": "int64",
@@ -37853,10 +39014,7 @@
                 "displayName",
                 "name",
                 "type",
-                "priceIn",
-                "priceOut",
-                "cacheReadPrice",
-                "cacheWritePrice",
+                "regionPrices",
                 "status",
                 "calls",
                 "description",
@@ -37921,7 +39079,9 @@
       "query_parameters": [],
       "query_parameters_declared": false,
       "read_sources": [
-        "ai_model_mapping_rule"
+        "ai_model_mapping_rule",
+        "ai_model_mapping_rule_binding",
+        "ai_model_mapping_rule_item"
       ],
       "request_body_required": null,
       "request_id_header": false,
@@ -37931,34 +39091,113 @@
           "additionalProperties": false,
           "name": "AdminModelMappingUpdateRequest",
           "properties": {
-            "channelCode": {
-              "maxLength": 64,
-              "nullable": true,
-              "pattern": "^[A-Za-z0-9._-]+$",
-              "type": "string"
-            },
-            "channelId": {
-              "maxLength": 128,
-              "nullable": true,
-              "type": "string"
-            },
-            "description": {
-              "maxLength": 512,
-              "nullable": true,
-              "type": "string"
-            },
-            "effectiveFrom": {
-              "maxLength": 64,
-              "nullable": true,
-              "type": "string"
-            },
-            "effectiveTo": {
-              "maxLength": 64,
-              "nullable": true,
-              "type": "string"
+            "bindings": {
+              "items": {
+                "additionalProperties": false,
+                "name": "AdminModelMappingRuleBindingInput",
+                "properties": {
+                  "bindingCode": {
+                    "maxLength": 128,
+                    "nullable": true,
+                    "pattern": "^[A-Za-z0-9._:-]+$",
+                    "type": "string"
+                  },
+                  "bindingId": {
+                    "maxLength": 128,
+                    "nullable": true,
+                    "type": "string"
+                  },
+                  "bindingName": {
+                    "maxLength": 256,
+                    "nullable": true,
+                    "type": "string"
+                  },
+                  "bindingType": {
+                    "enum": [
+                      "global",
+                      "vendor",
+                      "channel_group",
+                      "channel",
+                      "provider_account",
+                      "site",
+                      "site_service"
+                    ],
+                    "type": "string"
+                  },
+                  "enabled": {
+                    "type": "boolean"
+                  },
+                  "id": {
+                    "maxLength": 128,
+                    "nullable": true,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "bindingType"
+                ],
+                "type": "object"
+              },
+              "maxItems": 100,
+              "minItems": 1,
+              "type": "array"
             },
             "enabled": {
               "type": "boolean"
+            },
+            "mappingItems": {
+              "items": {
+                "additionalProperties": false,
+                "name": "AdminModelMappingRuleItemInput",
+                "properties": {
+                  "enabled": {
+                    "type": "boolean"
+                  },
+                  "id": {
+                    "maxLength": 128,
+                    "nullable": true,
+                    "type": "string"
+                  },
+                  "sourceCatalogKey": {
+                    "maxLength": 256,
+                    "nullable": true,
+                    "type": "string"
+                  },
+                  "sourceModel": {
+                    "maxLength": 256,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "targetCatalogKey": {
+                    "maxLength": 256,
+                    "nullable": true,
+                    "type": "string"
+                  },
+                  "targetModel": {
+                    "maxLength": 256,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "targetProviderModel": {
+                    "maxLength": 256,
+                    "nullable": true,
+                    "type": "string"
+                  },
+                  "targetProviderNativeModel": {
+                    "maxLength": 256,
+                    "nullable": true,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "sourceModel",
+                  "targetModel"
+                ],
+                "type": "object"
+              },
+              "maxItems": 100,
+              "minItems": 1,
+              "type": "array"
             },
             "mappingMode": {
               "enum": [
@@ -37972,69 +39211,24 @@
               ],
               "type": "string"
             },
-            "priority": {
-              "format": "int64",
-              "maximum": 1000000,
-              "minimum": 0,
-              "type": "integer"
-            },
-            "scopeType": {
-              "enum": [
-                "global",
-                "vendor",
-                "channel"
-              ],
-              "type": "string"
-            },
-            "sourceCatalogKey": {
-              "maxLength": 256,
-              "nullable": true,
-              "type": "string"
-            },
-            "sourceModel": {
-              "maxLength": 256,
-              "minLength": 1,
-              "type": "string"
-            },
             "sourceVendorCode": {
               "maxLength": 64,
-              "nullable": true,
+              "minLength": 1,
               "pattern": "^[A-Za-z0-9._-]+$",
               "type": "string"
             },
-            "targetCatalogKey": {
-              "maxLength": 256,
-              "nullable": true,
-              "type": "string"
-            },
-            "targetModel": {
-              "maxLength": 256,
-              "minLength": 1,
-              "type": "string"
-            },
-            "targetProviderModel": {
-              "maxLength": 256,
-              "nullable": true,
-              "type": "string"
-            },
-            "targetProviderNativeModel": {
-              "maxLength": 256,
+            "sourceVendorId": {
+              "maxLength": 128,
               "nullable": true,
               "type": "string"
             },
             "targetVendorCode": {
               "maxLength": 64,
-              "nullable": true,
+              "minLength": 1,
               "pattern": "^[A-Za-z0-9._-]+$",
               "type": "string"
             },
-            "vendorCode": {
-              "maxLength": 64,
-              "nullable": true,
-              "pattern": "^[A-Za-z0-9._-]+$",
-              "type": "string"
-            },
-            "vendorId": {
+            "targetVendorId": {
               "maxLength": 128,
               "nullable": true,
               "type": "string"
@@ -38052,30 +39246,91 @@
           "properties": {
             "item": {
               "additionalProperties": false,
-              "name": "AdminModelMappingMutationItem",
+              "name": "AdminModelMappingRule",
               "properties": {
-                "channelCode": {
-                  "maxLength": 64,
-                  "nullable": true,
-                  "pattern": "^[A-Za-z0-9._-]+$",
+                "bindingType": {
+                  "enum": [
+                    "global",
+                    "vendor",
+                    "channel_group",
+                    "channel",
+                    "provider_account",
+                    "site",
+                    "site_service"
+                  ],
                   "type": "string"
+                },
+                "bindings": {
+                  "items": {
+                    "additionalProperties": false,
+                    "name": "AdminModelMappingRuleBinding",
+                    "properties": {
+                      "bindingCode": {
+                        "maxLength": 128,
+                        "nullable": true,
+                        "pattern": "^[A-Za-z0-9._:-]+$",
+                        "type": "string"
+                      },
+                      "bindingId": {
+                        "maxLength": 128,
+                        "nullable": true,
+                        "type": "string"
+                      },
+                      "bindingName": {
+                        "maxLength": 256,
+                        "nullable": true,
+                        "type": "string"
+                      },
+                      "bindingType": {
+                        "enum": [
+                          "global",
+                          "vendor",
+                          "channel_group",
+                          "channel",
+                          "provider_account",
+                          "site",
+                          "site_service"
+                        ],
+                        "type": "string"
+                      },
+                      "createdAt": {
+                        "maxLength": 64,
+                        "nullable": true,
+                        "type": "string"
+                      },
+                      "enabled": {
+                        "type": "boolean"
+                      },
+                      "id": {
+                        "maxLength": 128,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "sortOrder": {
+                        "format": "int64",
+                        "maximum": 1000000,
+                        "minimum": 0,
+                        "type": "integer"
+                      },
+                      "updatedAt": {
+                        "maxLength": 64,
+                        "nullable": true,
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "bindingType",
+                      "sortOrder",
+                      "enabled"
+                    ],
+                    "type": "object"
+                  },
+                  "maxItems": 100,
+                  "minItems": 1,
+                  "type": "array"
                 },
                 "createdAt": {
-                  "maxLength": 64,
-                  "nullable": true,
-                  "type": "string"
-                },
-                "description": {
-                  "maxLength": 512,
-                  "nullable": true,
-                  "type": "string"
-                },
-                "effectiveFrom": {
-                  "maxLength": 64,
-                  "nullable": true,
-                  "type": "string"
-                },
-                "effectiveTo": {
                   "maxLength": 64,
                   "nullable": true,
                   "type": "string"
@@ -38087,6 +39342,79 @@
                   "maxLength": 128,
                   "minLength": 1,
                   "type": "string"
+                },
+                "mappingItems": {
+                  "items": {
+                    "additionalProperties": false,
+                    "name": "AdminModelMappingRuleItem",
+                    "properties": {
+                      "createdAt": {
+                        "maxLength": 64,
+                        "nullable": true,
+                        "type": "string"
+                      },
+                      "enabled": {
+                        "type": "boolean"
+                      },
+                      "id": {
+                        "maxLength": 128,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "sortOrder": {
+                        "format": "int64",
+                        "maximum": 1000000,
+                        "minimum": 0,
+                        "type": "integer"
+                      },
+                      "sourceCatalogKey": {
+                        "maxLength": 256,
+                        "nullable": true,
+                        "type": "string"
+                      },
+                      "sourceModel": {
+                        "maxLength": 256,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "targetCatalogKey": {
+                        "maxLength": 256,
+                        "nullable": true,
+                        "type": "string"
+                      },
+                      "targetModel": {
+                        "maxLength": 256,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "targetProviderModel": {
+                        "maxLength": 256,
+                        "nullable": true,
+                        "type": "string"
+                      },
+                      "targetProviderNativeModel": {
+                        "maxLength": 256,
+                        "nullable": true,
+                        "type": "string"
+                      },
+                      "updatedAt": {
+                        "maxLength": 64,
+                        "nullable": true,
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "sourceModel",
+                      "targetModel",
+                      "sortOrder",
+                      "enabled"
+                    ],
+                    "type": "object"
+                  },
+                  "maxItems": 100,
+                  "minItems": 1,
+                  "type": "array"
                 },
                 "mappingMode": {
                   "enum": [
@@ -38100,83 +39428,44 @@
                   ],
                   "type": "string"
                 },
-                "priority": {
-                  "format": "int64",
-                  "maximum": 1000000,
-                  "minimum": 0,
-                  "type": "integer"
-                },
-                "scopeType": {
-                  "enum": [
-                    "global",
-                    "vendor",
-                    "channel"
-                  ],
-                  "type": "string"
-                },
-                "sourceCatalogKey": {
-                  "maxLength": 256,
-                  "nullable": true,
-                  "type": "string"
-                },
-                "sourceModel": {
-                  "maxLength": 256,
-                  "minLength": 1,
-                  "type": "string"
-                },
                 "sourceVendorCode": {
                   "maxLength": 64,
-                  "nullable": true,
+                  "minLength": 1,
                   "pattern": "^[A-Za-z0-9._-]+$",
                   "type": "string"
                 },
-                "targetCatalogKey": {
-                  "maxLength": 256,
-                  "nullable": true,
-                  "type": "string"
-                },
-                "targetModel": {
-                  "maxLength": 256,
-                  "minLength": 1,
-                  "type": "string"
-                },
-                "targetProviderModel": {
-                  "maxLength": 256,
-                  "nullable": true,
-                  "type": "string"
-                },
-                "targetProviderNativeModel": {
-                  "maxLength": 256,
+                "sourceVendorId": {
+                  "maxLength": 128,
                   "nullable": true,
                   "type": "string"
                 },
                 "targetVendorCode": {
                   "maxLength": 64,
-                  "nullable": true,
+                  "minLength": 1,
                   "pattern": "^[A-Za-z0-9._-]+$",
+                  "type": "string"
+                },
+                "targetVendorId": {
+                  "maxLength": 128,
+                  "nullable": true,
                   "type": "string"
                 },
                 "updatedAt": {
                   "maxLength": 64,
                   "nullable": true,
                   "type": "string"
-                },
-                "vendorCode": {
-                  "maxLength": 64,
-                  "nullable": true,
-                  "pattern": "^[A-Za-z0-9._-]+$",
-                  "type": "string"
                 }
               },
               "required": [
                 "id",
-                "scopeType",
-                "sourceModel",
-                "targetModel",
+                "bindingType",
+                "sourceVendorCode",
+                "targetVendorCode",
                 "mappingMode",
                 "matchType",
-                "priority",
-                "enabled"
+                "enabled",
+                "bindings",
+                "mappingItems"
               ],
               "type": "object"
             }
@@ -38197,6 +39486,8 @@
       "tag": "ai",
       "write_tables": [
         "ai_model_mapping_rule",
+        "ai_model_mapping_rule_binding",
+        "ai_model_mapping_rule_item",
         "ops_audit_log"
       ]
     },
@@ -48017,6 +49308,11 @@
                     "maxLength": 64,
                     "type": "string"
                   },
+                  "regionCode": {
+                    "description": "Deployment region used by the selected endpoint and pricing resolver. This is not part of the model catalog identity.",
+                    "maxLength": 64,
+                    "type": "string"
+                  },
                   "requestId": {
                     "maxLength": 128,
                     "minLength": 1,
@@ -48080,6 +49376,7 @@
                   "model",
                   "providerNativeModel",
                   "requestedModelCatalogKey",
+                  "regionCode",
                   "status",
                   "httpStatus",
                   "httpMethod",
@@ -77399,6 +78696,11 @@
                   "reasoningEffort": {
                     "type": "string"
                   },
+                  "regionCode": {
+                    "description": "Deployment region used by the selected endpoint and pricing resolver. This is not part of the model catalog identity.",
+                    "maxLength": 64,
+                    "type": "string"
+                  },
                   "requestId": {
                     "type": "string"
                   },
@@ -77440,6 +78742,7 @@
                   "model",
                   "providerNativeModel",
                   "requestedModelCatalogKey",
+                  "regionCode",
                   "status",
                   "httpStatus",
                   "errorCode",
@@ -86042,15 +87345,8 @@
                     "minLength": 1,
                     "type": "string"
                   },
-                  "officialReferenceCurrency": {
-                    "description": "Native reference currency for the requested billing meter when configured. The complete public reference price list is exposed through officialReferencePrices.",
-                    "maxLength": 3,
-                    "minLength": 3,
-                    "nullable": true,
-                    "type": "string"
-                  },
                   "officialReferencePrices": {
-                    "description": "Complete public official reference prices keyed by billing meter. Customer, upstream, provider, and channel prices are never exposed here.",
+                    "description": "Complete public official reference prices keyed by regionCode and billing meter. Customer, upstream, provider, and channel prices are never exposed here.",
                     "items": {
                       "additionalProperties": false,
                       "name": "AppModelCatalogReferencePrice",
@@ -86065,6 +87361,12 @@
                           "minLength": 3,
                           "type": "string"
                         },
+                        "regionCode": {
+                          "description": "Deployment or pricing region for this public reference price. Region is never encoded in catalogKey.",
+                          "maxLength": 64,
+                          "minLength": 1,
+                          "type": "string"
+                        },
                         "unitPrice": {
                           "description": "Decimal unit price in the native official reference currency.",
                           "maxLength": 64,
@@ -86073,6 +87375,7 @@
                         }
                       },
                       "required": [
+                        "regionCode",
                         "billingMeter",
                         "unitPrice",
                         "currency"
@@ -86081,11 +87384,6 @@
                     },
                     "maxItems": 64,
                     "type": "array"
-                  },
-                  "officialReferenceUnitPrice": {
-                    "description": "Public reference unit price for the requested billing meter when configured. The complete public reference price list is exposed through officialReferencePrices.",
-                    "nullable": true,
-                    "type": "string"
                   },
                   "outputModalities": {
                     "items": {
@@ -86125,11 +87423,6 @@
                     },
                     "maxItems": 256,
                     "type": "array"
-                  },
-                  "regionCode": {
-                    "maxLength": 64,
-                    "minLength": 1,
-                    "type": "string"
                   },
                   "releaseStage": {
                     "format": "int64",
@@ -86199,7 +87492,6 @@
                   "model",
                   "displayName",
                   "vendorCode",
-                  "regionCode",
                   "vendor",
                   "capabilities",
                   "groups",
@@ -101677,24 +102969,24 @@
   "summary": {
     "api_method_counts": {
       "DELETE": 55,
-      "GET": 310,
+      "GET": 312,
       "PATCH": 40,
       "POST": 191,
       "PUT": 33
     },
     "api_surface_counts": {
       "app": 230,
-      "backend": 399
+      "backend": 401
     },
-    "operation_count": 629,
+    "operation_count": 631,
     "route_scope_counts": {
-      "admin": 399,
+      "admin": 401,
       "console": 107,
       "public": 123
     },
     "sdk_client_counts": {
       "SdkworkAppClient": 230,
-      "SdkworkBackendClient": 399
+      "SdkworkBackendClient": 401
     }
   }
 }

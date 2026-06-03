@@ -85,6 +85,7 @@ val client = SdkworkBackendClient(config)
 - `client.system` - system API
 - `client.prompts` - prompts API
 - `client.serviceProviders` - service_providers API
+- `client.sites` - sites API
 - `client.storage` - storage API
 
 ## Usage Examples
@@ -244,6 +245,17 @@ val params = linkedMapOf<String, Any>(
     "edge_id" to "1"
 )
 val result = client.serviceProviders.adjustmentsList(params)
+println(result)
+```
+
+### sites
+
+```kotlin
+// List sites
+val params = linkedMapOf<String, Any>(
+    "q" to "q"
+)
+val result = client.sites.siteCatalogList(params)
 println(result)
 ```
 

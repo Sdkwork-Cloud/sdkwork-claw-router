@@ -40,6 +40,8 @@ export interface UsageLogItem {
   providerNativeModel: string;
   /** Reasoning effort field on usage log item. */
   reasoningEffort: string;
+  /** Deployment region used by the selected endpoint and pricing resolver. This is not part of the model catalog identity. */
+  regionCode: string;
   /** Request id field on usage log item. */
   requestId: string;
   /** Routed base catalog model identity in vendor/model form, for example openai/gpt-5.5. Region-specific pricing or ranking keys are stored separately from the routed model identity. */

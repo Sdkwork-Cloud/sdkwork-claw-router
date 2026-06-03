@@ -38,6 +38,7 @@ pub struct AdapterSubject {
 pub struct AdapterProviderContext {
     pub provider_code: String,
     pub channel_id: i64,
+    pub region_code: String,
     pub provider_model: String,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub base_url: Option<String>,

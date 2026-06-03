@@ -253,7 +253,7 @@ test("admin agent management removes redundant top refresh toolbar and metric ca
 
   assert.match(
     source,
-    /<div className="flex h-full w-full min-w-0 flex-col gap-4 overflow-hidden">\s*<div data-admin-agent-layout/,
+    /<div className="flex h-full min-h-0 w-full min-w-0 flex-col gap-4 overflow-hidden">\s*<div data-admin-agent-layout/,
     "agent page should start directly with the category/table layout",
   );
 });
@@ -298,8 +298,10 @@ test("admin agent management table fills the available admin viewport", async ()
     "data-admin-agent-table-card",
     "data-admin-agent-table-viewport",
     "data-admin-agent-pagination",
-    "flex h-full w-full min-w-0 flex-col",
-    "data-admin-agent-layout className=\"grid min-h-0 flex-1",
+    "flex h-full min-h-0 w-full min-w-0 flex-col",
+    "data-admin-agent-layout className=\"grid min-h-0 min-w-0 flex-1 gap-4 overflow-hidden",
+    "className=\"min-h-0 min-w-0 flex-1\"",
+    "viewportClassName=\"min-h-0 flex-1\"",
     "footer={",
     "sticky top-0 z-10",
   ]) {

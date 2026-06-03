@@ -78,7 +78,6 @@ struct AppModelCatalogItemResponse {
     model: String,
     display_name: String,
     vendor_code: String,
-    region_code: String,
     vendor: String,
     capabilities: Vec<String>,
     groups: Vec<String>,
@@ -103,8 +102,6 @@ struct AppModelCatalogItemResponse {
     routing_state: Option<i32>,
     replacement_model: Option<String>,
     provider_codes: Vec<String>,
-    official_reference_unit_price: Option<String>,
-    official_reference_currency: Option<String>,
     official_reference_prices: Vec<AppModelCatalogReferencePriceResponse>,
     price_availability: AppModelCatalogPriceAvailabilityResponse,
 }
@@ -112,6 +109,7 @@ struct AppModelCatalogItemResponse {
 #[derive(Debug, Serialize)]
 #[serde(rename_all = "camelCase")]
 struct AppModelCatalogReferencePriceResponse {
+    region_code: String,
     billing_meter: String,
     unit_price: String,
     currency: String,
@@ -236,18 +234,14 @@ fn to_vendor_response(
 }
 
 fn to_item_response(item: ModelCatalogItem) -> AppModelCatalogItemResponse {
-    let price_availability = to_price_availability_response(
-        item.official_reference_unit_price.as_deref(),
-        &item.official_reference_prices,
-        item.price_availability,
-    );
+    let price_availability =
+        to_price_availability_response(&item.official_reference_prices, item.price_availability);
 
     AppModelCatalogItemResponse {
         catalog_key: item.catalog_key,
         model: item.model,
         display_name: item.display_name,
         vendor_code: item.vendor_code,
-        region_code: item.region_code,
         vendor: item.vendor.code().to_owned(),
         capabilities: item.capabilities,
         groups: item.groups,
@@ -272,12 +266,11 @@ fn to_item_response(item: ModelCatalogItem) -> AppModelCatalogItemResponse {
         routing_state: item.routing_state,
         replacement_model: item.replacement_model,
         provider_codes: item.provider_codes,
-        official_reference_unit_price: item.official_reference_unit_price,
-        official_reference_currency: item.official_reference_currency,
         official_reference_prices: item
             .official_reference_prices
             .into_iter()
             .map(|price| AppModelCatalogReferencePriceResponse {
+                region_code: price.region_code,
                 billing_meter: price.billing_meter,
                 unit_price: price.unit_price,
                 currency: price.currency,
@@ -298,14 +291,10 @@ fn comma_separated_query_values(value: Option<&str>) -> Vec<String> {
 }
 
 fn to_price_availability_response(
-    official_reference_unit_price: Option<&str>,
     official_reference_prices: &[crate::application::ModelCatalogReferencePriceView],
     availability: PriceAvailability,
 ) -> AppModelCatalogPriceAvailabilityResponse {
-    if public_reference_price_is_configured(
-        official_reference_unit_price,
-        official_reference_prices,
-    ) {
+    if public_reference_price_is_configured(official_reference_prices) {
         return AppModelCatalogPriceAvailabilityResponse {
             status: "reference",
             reason: Some(PUBLIC_REFERENCE_PRICE_REASON.to_owned()),
@@ -323,13 +312,9 @@ fn to_price_availability_response(
 }
 
 fn public_reference_price_is_configured(
-    official_reference_unit_price: Option<&str>,
     official_reference_prices: &[crate::application::ModelCatalogReferencePriceView],
 ) -> bool {
-    official_reference_unit_price
-        .map(str::trim)
-        .is_some_and(|price| !price.is_empty())
-        || official_reference_prices
-            .iter()
-            .any(|price| !price.unit_price.trim().is_empty() && !price.currency.trim().is_empty())
+    official_reference_prices
+        .iter()
+        .any(|price| !price.unit_price.trim().is_empty() && !price.currency.trim().is_empty())
 }

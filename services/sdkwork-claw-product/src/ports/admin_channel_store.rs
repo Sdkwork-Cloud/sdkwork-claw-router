@@ -15,6 +15,36 @@ pub struct AdminChannelSubject {
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]
+pub struct AdminChannelCredentialItem {
+    pub id: i64,
+    pub credential_id: i64,
+    pub uuid: String,
+    pub name: String,
+    pub base_url: String,
+    pub secret_ref: String,
+    pub api_key: Option<String>,
+    pub masked_label: String,
+    pub priority: i64,
+    pub weight: i64,
+    pub status: String,
+    pub errors: i64,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct AdminChannelCredentialInput {
+    pub credential_uuid: String,
+    pub name: String,
+    pub base_url: String,
+    pub secret_ref: String,
+    pub secret_hash: String,
+    pub masked_label: String,
+    pub credential_material: Option<String>,
+    pub priority: i64,
+    pub weight: i64,
+    pub status: String,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
 pub struct AdminChannelItem {
     pub id: i64,
     pub channel_id: i64,
@@ -27,9 +57,8 @@ pub struct AdminChannelItem {
     pub channel_type: String,
     pub protocol: String,
     pub access_type: String,
-    pub base_url: Option<String>,
-    pub secret_ref: Option<String>,
-    pub api_key: Option<String>,
+    pub credential_rotation: String,
+    pub credentials: Vec<AdminChannelCredentialItem>,
     pub models: Vec<String>,
     pub capabilities: Vec<String>,
     pub resource_codes: Vec<String>,
@@ -64,11 +93,8 @@ pub struct CreateAdminChannelCommand {
     pub channel_type: String,
     pub protocol: String,
     pub access_type: String,
-    pub base_url: Option<String>,
-    pub secret_ref: String,
-    pub secret_hash: String,
-    pub masked_label: String,
-    pub credential_material: Option<String>,
+    pub credential_rotation: String,
+    pub credentials: Vec<AdminChannelCredentialInput>,
     pub models: Vec<String>,
     pub capabilities: Vec<String>,
     pub resource_codes: Vec<String>,
@@ -96,11 +122,8 @@ pub struct UpdateAdminChannelCommand {
     pub channel_type: Option<String>,
     pub protocol: Option<String>,
     pub access_type: Option<String>,
-    pub base_url: Option<Option<String>>,
-    pub secret_ref: Option<String>,
-    pub secret_hash: Option<String>,
-    pub masked_label: Option<String>,
-    pub credential_material: Option<String>,
+    pub credential_rotation: Option<String>,
+    pub credentials: Option<Vec<AdminChannelCredentialInput>>,
     pub models: Option<Vec<String>>,
     pub capabilities: Option<Vec<String>>,
     pub resource_codes: Option<Vec<String>>,

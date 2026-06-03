@@ -160,6 +160,7 @@ pub(crate) struct GatewayUsageRecordCommandBuilder {
     channel_id: i64,
     provider_model: String,
     provider_native_model: String,
+    region_code: String,
     request_path: String,
     http_method: String,
     user_agent: Option<String>,
@@ -246,6 +247,7 @@ impl GatewayUsageRecordCommandBuilder {
             channel_id: self.channel_id,
             provider_model: self.provider_model.clone(),
             provider_native_model: self.provider_native_model.clone(),
+            region_code: self.region_code.clone(),
             request_path: self.request_path.clone(),
             http_method: self.http_method.clone(),
             user_agent: self.user_agent.clone(),
@@ -309,6 +311,7 @@ impl GatewayUsageRecordCommandBuilder {
             channel_id: self.channel_id,
             provider_model: self.provider_model.clone(),
             provider_native_model: self.provider_native_model.clone(),
+            region_code: self.region_code.clone(),
             request_path: self.request_path.clone(),
             http_method: self.http_method.clone(),
             user_agent: self.user_agent.clone(),
@@ -523,6 +526,9 @@ pub(crate) fn build_request_trace_command(
         channel_id: route.map(|route| route.channel_id).unwrap_or_default(),
         provider_model: provider_native_model.clone(),
         provider_native_model,
+        region_code: route
+            .map(|route| route.region_code.clone())
+            .unwrap_or_else(|| "global".to_owned()),
         request_path: invocation_context.request_path.clone(),
         http_method: invocation_context.http_method.clone(),
         user_agent: invocation_context.user_agent.clone(),
@@ -605,6 +611,7 @@ where
         billing_meter: billing_profile.input_meter.clone(),
         provider_code: Some(route.provider_code.clone()),
         channel_id: Some(route.channel_id),
+        region_code: Some(route.region_code.clone()),
     })?;
     let output_price = match billing_profile.output_meter.clone() {
         Some(output_meter) => Some(PricingResolver::new(catalog).resolve(
@@ -614,6 +621,7 @@ where
                 billing_meter: output_meter,
                 provider_code: Some(route.provider_code.clone()),
                 channel_id: Some(route.channel_id),
+                region_code: Some(route.region_code.clone()),
             },
         )?),
         None => None,
@@ -667,6 +675,7 @@ where
         channel_id: route.channel_id,
         provider_model: provider_native_model.clone(),
         provider_native_model,
+        region_code: route.region_code.clone(),
         request_path: invocation_context.request_path.clone(),
         http_method: invocation_context.http_method.clone(),
         user_agent: invocation_context.user_agent.clone(),
@@ -731,6 +740,7 @@ where
         billing_meter: meter,
         provider_code: Some(route.provider_code.clone()),
         channel_id: Some(route.channel_id),
+        region_code: Some(route.region_code.clone()),
     }) {
         Ok(price) => Ok(Some(price)),
         Err(error)

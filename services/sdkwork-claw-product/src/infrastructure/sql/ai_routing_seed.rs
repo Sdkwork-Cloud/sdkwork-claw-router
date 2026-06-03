@@ -243,6 +243,30 @@ impl DefaultAdminChannelSeed {
     fn endpoint_base_url(&self) -> &'static str {
         self.base_url
     }
+
+    fn credential_name(&self) -> String {
+        format!("{} default credential", self.channel_name)
+    }
+
+    fn credential_ref(&self) -> String {
+        format!(
+            "secret://ai-channel-credentials/{}/default",
+            self.provider_code
+        )
+    }
+
+    fn credential_hash(&self) -> String {
+        stable_hash(&[
+            self.channel_code,
+            self.provider_code,
+            self.base_url,
+            self.credential_ref().as_str(),
+        ])
+    }
+
+    fn credential_masked_label(&self) -> String {
+        format!("{} default credential", self.provider_code)
+    }
 }
 
 impl AiRoutingSeedCatalog {
@@ -299,6 +323,7 @@ pub(crate) async fn import_sqlite_ai_routing_seed(pool: &SqlitePool) -> Result<(
     disable_removed_sqlite_resource_groups(&mut tx, &catalog).await?;
     import_sqlite_resource_group_items(&mut tx, &catalog).await?;
     import_sqlite_default_admin_channels(&mut tx, &catalog).await?;
+    import_sqlite_default_admin_channel_credentials(&mut tx, &catalog).await?;
     import_sqlite_default_admin_channel_endpoints(&mut tx, &catalog).await?;
     tx.commit().await?;
     Ok(())
@@ -313,6 +338,7 @@ pub(crate) async fn import_postgres_ai_routing_seed(pool: &PgPool) -> Result<(),
     disable_removed_postgres_resource_groups(&mut tx, &catalog).await?;
     import_postgres_resource_group_items(&mut tx, &catalog).await?;
     import_postgres_default_admin_channels(&mut tx, &catalog).await?;
+    import_postgres_default_admin_channel_credentials(&mut tx, &catalog).await?;
     import_postgres_default_admin_channel_endpoints(&mut tx, &catalog).await?;
     tx.commit().await?;
     Ok(())
@@ -338,12 +364,15 @@ pub(crate) async fn sqlite_ai_routing_seed_complete(
     )
     .await?;
     let default_channel_codes = sqlite_default_admin_channel_codes(pool).await?;
+    let default_channel_credential_codes =
+        sqlite_default_admin_channel_credential_codes(pool).await?;
     let default_channel_endpoint_codes = sqlite_default_admin_channel_endpoint_codes(pool).await?;
 
     Ok(expected_resource_codes(&catalog).is_subset(&resource_codes)
         && expected_group_codes(&catalog).is_subset(&group_codes)
         && expected_endpoint_codes(&catalog).is_subset(&endpoint_codes)
         && expected_default_admin_channel_codes().is_subset(&default_channel_codes)
+        && expected_default_admin_channel_codes().is_subset(&default_channel_credential_codes)
         && expected_default_admin_channel_endpoint_codes(&catalog)
             .is_subset(&default_channel_endpoint_codes)
         && sqlite_resource_group_item_count(pool, &catalog).await?
@@ -368,6 +397,8 @@ pub(crate) async fn postgres_ai_routing_seed_complete(pool: &PgPool) -> Result<b
     )
     .await?;
     let default_channel_codes = postgres_default_admin_channel_codes(pool).await?;
+    let default_channel_credential_codes =
+        postgres_default_admin_channel_credential_codes(pool).await?;
     let default_channel_endpoint_codes =
         postgres_default_admin_channel_endpoint_codes(pool).await?;
 
@@ -375,6 +406,7 @@ pub(crate) async fn postgres_ai_routing_seed_complete(pool: &PgPool) -> Result<b
         && expected_group_codes(&catalog).is_subset(&group_codes)
         && expected_endpoint_codes(&catalog).is_subset(&endpoint_codes)
         && expected_default_admin_channel_codes().is_subset(&default_channel_codes)
+        && expected_default_admin_channel_codes().is_subset(&default_channel_credential_codes)
         && expected_default_admin_channel_endpoint_codes(&catalog)
             .is_subset(&default_channel_endpoint_codes)
         && postgres_resource_group_item_count(pool, &catalog).await?
@@ -921,14 +953,15 @@ async fn import_sqlite_default_admin_channels(
             INSERT INTO ai_channel
                 (uuid, tenant_id, organization_id, data_scope, status, metadata,
                  provider_code, channel_code, channel_name, channel_type, protocol_code,
-                 auth_type, base_url, environment, priority, weight, health_status,
+                 auth_type, base_url, credential_rotation_strategy, environment, priority, weight, health_status,
                  consecutive_error_count)
             VALUES
-                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?, 1, ?, ?, ?, 0)
+                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?, 'default', 1, ?, ?, ?, 0)
             ON CONFLICT(tenant_id, organization_id, channel_code) DO UPDATE SET
                 provider_code = excluded.provider_code,
                 channel_type = excluded.channel_type,
                 protocol_code = excluded.protocol_code,
+                credential_rotation_strategy = excluded.credential_rotation_strategy,
                 metadata = excluded.metadata,
                 deleted_at = NULL,
                 deleted_by = NULL
@@ -972,14 +1005,15 @@ async fn import_postgres_default_admin_channels(
             INSERT INTO ai_channel
                 (uuid, tenant_id, organization_id, data_scope, status, metadata,
                  provider_code, channel_code, channel_name, channel_type, protocol_code,
-                 auth_type, base_url, environment, priority, weight, health_status,
+                 auth_type, base_url, credential_rotation_strategy, environment, priority, weight, health_status,
                  consecutive_error_count)
             VALUES
-                ($1, $2, $3, $4, $5, $6::jsonb, $7, $8, $9, $10, $11, 1, $12, 1, $13, $14, $15, 0)
+                ($1, $2, $3, $4, $5, $6::jsonb, $7, $8, $9, $10, $11, 1, $12, 'default', 1, $13, $14, $15, 0)
             ON CONFLICT(tenant_id, organization_id, channel_code) DO UPDATE SET
                 provider_code = excluded.provider_code,
                 channel_type = excluded.channel_type,
                 protocol_code = excluded.protocol_code,
+                credential_rotation_strategy = excluded.credential_rotation_strategy,
                 metadata = excluded.metadata,
                 deleted_at = NULL,
                 deleted_by = NULL
@@ -1009,6 +1043,144 @@ async fn import_postgres_default_admin_channels(
         .bind(HEALTHY_STATUS)
         .execute(&mut **tx)
         .await?;
+    }
+    Ok(())
+}
+
+async fn import_sqlite_default_admin_channel_credentials(
+    tx: &mut sqlx::Transaction<'_, sqlx::Sqlite>,
+    catalog: &AiRoutingSeedCatalog,
+) -> Result<(), sqlx::Error> {
+    for channel in default_admin_channels() {
+        let result = sqlx::query(
+            r#"
+            INSERT INTO ai_channel_credential
+                (uuid, tenant_id, organization_id, data_scope, status, metadata,
+                 channel_id, provider_code, channel_code, credential_name, base_url,
+                 auth_config, credential_ref, credential_hash, masked_label, priority, weight,
+                 health_status, consecutive_error_count)
+            SELECT
+                ?, c.tenant_id, c.organization_id, ?, ?, ?,
+                c.id, c.provider_code, c.channel_code, ?, ?,
+                '{}', ?, ?, ?, ?, ?, ?, 0
+            FROM ai_channel c
+            WHERE c.tenant_id = ?
+              AND c.organization_id = ?
+              AND c.channel_code = ?
+              AND c.deleted_at IS NULL
+            ON CONFLICT(uuid) DO UPDATE SET
+                channel_id = excluded.channel_id,
+                provider_code = excluded.provider_code,
+                channel_code = excluded.channel_code,
+                credential_name = excluded.credential_name,
+                base_url = excluded.base_url,
+                auth_config = excluded.auth_config,
+                credential_hash = excluded.credential_hash,
+                masked_label = excluded.masked_label,
+                priority = excluded.priority,
+                weight = excluded.weight,
+                metadata = excluded.metadata,
+                deleted_at = NULL,
+                deleted_by = NULL
+            "#,
+        )
+        .bind(stable_seed_uuid(
+            "sdk-ai-channel-credential",
+            &[
+                &DEFAULT_IAM_TENANT_ID.to_string(),
+                &DEFAULT_IAM_ORGANIZATION_ID.to_string(),
+                channel.channel_code,
+                channel.provider_code,
+            ],
+        ))
+        .bind(DEFAULT_ADMIN_DATA_SCOPE)
+        .bind(ACTIVE_STATUS)
+        .bind(default_admin_channel_credential_metadata(catalog, *channel))
+        .bind(channel.credential_name())
+        .bind(channel.base_url)
+        .bind(channel.credential_ref())
+        .bind(channel.credential_hash())
+        .bind(channel.credential_masked_label())
+        .bind(channel.priority)
+        .bind(channel.weight)
+        .bind(HEALTHY_STATUS)
+        .bind(DEFAULT_IAM_TENANT_ID)
+        .bind(DEFAULT_IAM_ORGANIZATION_ID)
+        .bind(channel.channel_code)
+        .execute(&mut **tx)
+        .await?;
+        if result.rows_affected() == 0 {
+            return Err(sqlx::Error::RowNotFound);
+        }
+    }
+    Ok(())
+}
+
+async fn import_postgres_default_admin_channel_credentials(
+    tx: &mut sqlx::Transaction<'_, sqlx::Postgres>,
+    catalog: &AiRoutingSeedCatalog,
+) -> Result<(), sqlx::Error> {
+    for channel in default_admin_channels() {
+        let result = sqlx::query(
+            r#"
+            INSERT INTO ai_channel_credential
+                (uuid, tenant_id, organization_id, data_scope, status, metadata,
+                 channel_id, provider_code, channel_code, credential_name, base_url,
+                 auth_config, credential_ref, credential_hash, masked_label, priority, weight,
+                 health_status, consecutive_error_count)
+            SELECT
+                $1, c.tenant_id, c.organization_id, $2, $3, $4::jsonb,
+                c.id, c.provider_code, c.channel_code, $5, $6,
+                '{}'::jsonb, $7, $8, $9, $10, $11, $12, 0
+            FROM ai_channel c
+            WHERE c.tenant_id = $13
+              AND c.organization_id = $14
+              AND c.channel_code = $15
+              AND c.deleted_at IS NULL
+            ON CONFLICT(uuid) DO UPDATE SET
+                channel_id = excluded.channel_id,
+                provider_code = excluded.provider_code,
+                channel_code = excluded.channel_code,
+                credential_name = excluded.credential_name,
+                base_url = excluded.base_url,
+                auth_config = excluded.auth_config,
+                credential_hash = excluded.credential_hash,
+                masked_label = excluded.masked_label,
+                priority = excluded.priority,
+                weight = excluded.weight,
+                metadata = excluded.metadata,
+                deleted_at = NULL,
+                deleted_by = NULL
+            "#,
+        )
+        .bind(stable_seed_uuid(
+            "sdk-ai-channel-credential",
+            &[
+                &DEFAULT_IAM_TENANT_ID.to_string(),
+                &DEFAULT_IAM_ORGANIZATION_ID.to_string(),
+                channel.channel_code,
+                channel.provider_code,
+            ],
+        ))
+        .bind(DEFAULT_ADMIN_DATA_SCOPE)
+        .bind(ACTIVE_STATUS)
+        .bind(default_admin_channel_credential_metadata(catalog, *channel))
+        .bind(channel.credential_name())
+        .bind(channel.base_url)
+        .bind(channel.credential_ref())
+        .bind(channel.credential_hash())
+        .bind(channel.credential_masked_label())
+        .bind(channel.priority)
+        .bind(channel.weight)
+        .bind(HEALTHY_STATUS)
+        .bind(DEFAULT_IAM_TENANT_ID)
+        .bind(DEFAULT_IAM_ORGANIZATION_ID)
+        .bind(channel.channel_code)
+        .execute(&mut **tx)
+        .await?;
+        if result.rows_affected() == 0 {
+            return Err(sqlx::Error::RowNotFound);
+        }
     }
     Ok(())
 }
@@ -1817,6 +1989,36 @@ async fn sqlite_default_admin_channel_endpoint_codes(
         .collect())
 }
 
+async fn sqlite_default_admin_channel_credential_codes(
+    pool: &SqlitePool,
+) -> Result<BTreeSet<String>, sqlx::Error> {
+    let rows = sqlx::query(
+        r#"
+        SELECT c.channel_code
+        FROM ai_channel c
+        JOIN ai_channel_credential cc
+          ON cc.channel_id = c.id
+         AND cc.tenant_id = c.tenant_id
+         AND cc.organization_id = c.organization_id
+        WHERE c.tenant_id = ?
+          AND c.organization_id = ?
+          AND c.deleted_at IS NULL
+          AND cc.status = 1
+          AND cc.deleted_at IS NULL
+          AND NULLIF(cc.base_url, '') IS NOT NULL
+          AND NULLIF(cc.credential_ref, '') IS NOT NULL
+        "#,
+    )
+    .bind(DEFAULT_IAM_TENANT_ID)
+    .bind(DEFAULT_IAM_ORGANIZATION_ID)
+    .fetch_all(pool)
+    .await?;
+    Ok(rows
+        .into_iter()
+        .filter_map(|row| row.try_get::<String, _>(0).ok())
+        .collect())
+}
+
 async fn postgres_default_admin_channel_codes(
     pool: &PgPool,
 ) -> Result<BTreeSet<String>, sqlx::Error> {
@@ -1865,6 +2067,36 @@ async fn postgres_default_admin_channel_endpoint_codes(
     .bind(channel.provider_code)
     .bind(DEFAULT_ADMIN_REGION_CODE)
     .bind(channel.channel_code)
+    .fetch_all(pool)
+    .await?;
+    Ok(rows
+        .into_iter()
+        .filter_map(|row| row.try_get::<String, _>(0).ok())
+        .collect())
+}
+
+async fn postgres_default_admin_channel_credential_codes(
+    pool: &PgPool,
+) -> Result<BTreeSet<String>, sqlx::Error> {
+    let rows = sqlx::query(
+        r#"
+        SELECT c.channel_code
+        FROM ai_channel c
+        JOIN ai_channel_credential cc
+          ON cc.channel_id = c.id
+         AND cc.tenant_id = c.tenant_id
+         AND cc.organization_id = c.organization_id
+        WHERE c.tenant_id = $1
+          AND c.organization_id = $2
+          AND c.deleted_at IS NULL
+          AND cc.status = 1
+          AND cc.deleted_at IS NULL
+          AND NULLIF(cc.base_url, '') IS NOT NULL
+          AND NULLIF(cc.credential_ref, '') IS NOT NULL
+        "#,
+    )
+    .bind(DEFAULT_IAM_TENANT_ID)
+    .bind(DEFAULT_IAM_ORGANIZATION_ID)
     .fetch_all(pool)
     .await?;
     Ok(rows
@@ -1993,6 +2225,26 @@ fn default_admin_channel_metadata(
     )
 }
 
+fn default_admin_channel_credential_metadata(
+    catalog: &AiRoutingSeedCatalog,
+    channel: DefaultAdminChannelSeed,
+) -> String {
+    seed_metadata(
+        catalog,
+        "default_admin_channel_credential",
+        channel.channel_code,
+        serde_json::json!({
+            "tenantId": DEFAULT_IAM_TENANT_ID,
+            "organizationId": DEFAULT_IAM_ORGANIZATION_ID,
+            "channelCode": channel.channel_code,
+            "providerCode": channel.provider_code,
+            "baseUrl": channel.base_url,
+            "secretRef": channel.credential_ref(),
+            "initialStatus": "active",
+        }),
+    )
+}
+
 fn default_admin_channel_endpoint_metadata(
     catalog: &AiRoutingSeedCatalog,
     channel: DefaultAdminChannelSeed,
@@ -2076,6 +2328,15 @@ fn stable_seed_uuid(prefix: &str, parts: &[&str]) -> String {
     }
     let digest = hasher.finalize();
     format!("{prefix}-{}", hex::encode(&digest[..20]))
+}
+
+fn stable_hash(parts: &[&str]) -> String {
+    let mut hasher = Sha256::new();
+    for part in parts {
+        hasher.update([0]);
+        hasher.update(part.as_bytes());
+    }
+    hex::encode(hasher.finalize())
 }
 
 fn source_hash() -> String {

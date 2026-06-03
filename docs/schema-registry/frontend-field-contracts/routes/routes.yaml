@@ -1858,18 +1858,36 @@ routes:
 - route: /admin/model/mappings
   required_tables:
   - ai_model_mapping_rule
+  - ai_model_mapping_rule_binding
+  - ai_model_mapping_rule_item
   - ops_audit_log
   required_columns:
     ai_model_mapping_rule:
     - id
-    - scope_type
-    - vendor_id
-    - vendor_code
-    - channel_id
-    - channel_code
+    - source_vendor_code
+    - target_vendor_code
+    - mapping_mode
+    - match_type
+    - enabled
+    ai_model_mapping_rule_binding:
+    - id
+    - rule_id
+    - binding_type
+    - binding_id
+    - binding_code
+    - binding_name_snapshot
+    - sort_order
+    - enabled
+    ai_model_mapping_rule_item:
+    - id
+    - rule_id
     - source_model
+    - source_catalog_key
     - target_model
-    - priority
+    - target_catalog_key
+    - target_provider_model
+    - target_provider_native_model
+    - sort_order
     - enabled
 - route: /admin/channel/endpoints
   required_tables:

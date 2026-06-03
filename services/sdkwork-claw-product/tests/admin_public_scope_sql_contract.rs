@@ -151,15 +151,29 @@ fn monitor_read_models_use_public_zero_scope_for_system_events() {
 #[test]
 fn dashboard_overview_shared_read_models_use_public_zero_scope() {
     for expected in [
-        "(tenant_id = ?1 OR tenant_id = 0 OR tenant_id IS NULL)",
-        "(organization_id = ?2 OR organization_id = 0 OR organization_id IS NULL)",
+        "FROM ai_model_rank_snapshot r",
+        "JOIN ai_model m",
+        "AND m.deleted_at IS NULL",
+        "AND m.status = 1",
+        "AND COALESCE(m.release_stage, 1) IN (1, 2)",
+        "AND COALESCE(m.shelf_state, 1) = 1",
+        "AND COALESCE(m.routing_state, 1) = 1",
+        "(r.tenant_id = ?1 OR r.tenant_id = 0 OR r.tenant_id IS NULL)",
+        "(r.organization_id = ?2 OR r.organization_id = 0 OR r.organization_id IS NULL)",
     ] {
         assert_sql_contains(SQLITE_DASHBOARD_OVERVIEW_READ_STORE, expected);
     }
 
     for expected in [
-        "(tenant_id = $1 OR tenant_id = 0 OR tenant_id IS NULL)",
-        "(organization_id = $2 OR organization_id = 0 OR organization_id IS NULL)",
+        "FROM ai_model_rank_snapshot r",
+        "JOIN ai_model m",
+        "AND m.deleted_at IS NULL",
+        "AND m.status = 1",
+        "AND COALESCE(m.release_stage, 1) IN (1, 2)",
+        "AND COALESCE(m.shelf_state, 1) = 1",
+        "AND COALESCE(m.routing_state, 1) = 1",
+        "(r.tenant_id = $1 OR r.tenant_id = 0 OR r.tenant_id IS NULL)",
+        "(r.organization_id = $2 OR r.organization_id = 0 OR r.organization_id IS NULL)",
     ] {
         assert_sql_contains(POSTGRES_DASHBOARD_OVERVIEW_READ_STORE, expected);
     }

@@ -638,6 +638,8 @@ test("admin catalog product list keeps the screenshot-matched operational layout
   assert.match(productListSource, /已选 \{selectedCount\} 件/);
   assert.match(productListSource, /function productRecordKey\(record: ProductRecord, index: number\): string/);
   assert.match(productListSource, /readProductString\(record, \['id', 'spuNo'\]\) \|\| String\(index\)/);
+  assert.match(productListSource, /data-admin-product-list-table-viewport/);
+  assert.match(productListSource, /className="min-h-0 flex-1 overflow-auto"/);
   assert.match(productListSource, /data-admin-product-list-pagination/);
   assert.match(productListSource, /renderProductPageWindow\(page, totalPages\)\.map/);
   assert.doesNotMatch(productListSource, /发布商品|ProductCreate|CreateProduct/);
@@ -745,4 +747,21 @@ test("admin catalog non-product sections keep the shared resource center", () =>
   assert.match(indexSource, /<AdminResourceCenter/);
   assert.match(indexSource, /tableViewportDataAttribute="admin-catalog-table-viewport"/);
   assert.match(indexSource, /showSectionNavigation=\{false\}/);
+});
+
+test("admin catalog table-heavy custom pages stay inside the admin viewport", () => {
+  const productListSource = readPortalFile("./packages/sdkwork-claw-router-admin-catalog/src/ProductListPage.tsx");
+  const skuSource = readPortalFile("./packages/sdkwork-claw-router-admin-catalog/src/SkuManagementPage.tsx");
+  const categorySource = readPortalFile("./packages/sdkwork-claw-router-admin-catalog/src/CategoryManagementPage.tsx");
+  const attributeSource = readPortalFile("./packages/sdkwork-claw-router-admin-catalog/src/AttributeManagementPage.tsx");
+
+  assert.match(productListSource, /data-admin-product-list-table-viewport/);
+  assert.match(productListSource, /className="min-h-0 flex-1 overflow-auto"/);
+  assert.match(productListSource, /data-admin-product-list-table[\s\S]*data-admin-product-list-pagination/);
+  assert.match(skuSource, /relative flex h-full min-h-0 w-full flex-col overflow-hidden/);
+  assert.match(skuSource, /className="h-full overflow-auto"/);
+  assert.match(categorySource, /relative flex h-full min-h-0 w-full flex-col overflow-hidden/);
+  assert.doesNotMatch(categorySource, /h-\[calc\(100vh-96px\)\]/);
+  assert.match(attributeSource, /className="flex h-full min-h-0 flex-col gap-3 overflow-hidden/);
+  assert.doesNotMatch(attributeSource, /h-\[calc\(100vh-96px\)\]/);
 });

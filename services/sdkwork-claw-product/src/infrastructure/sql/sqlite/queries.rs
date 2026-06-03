@@ -15,7 +15,8 @@ WITH model_base AS (
     FROM ai_model m
     WHERE m.deleted_at IS NULL
       AND m.status = 1
-      AND COALESCE(m.shelf_state, 1) <> 3
+      AND COALESCE(m.release_stage, 1) IN (1, 2)
+      AND COALESCE(m.shelf_state, 1) = 1
       AND COALESCE(m.routing_state, 1) = 1
 )
 SELECT
@@ -23,7 +24,6 @@ SELECT
     model,
     display_name,
     vendor_code,
-    region_code,
     description,
     COALESCE(modalities, '[]') AS modalities_json,
     COALESCE(input_modalities, '[]') AS input_modalities_json,
@@ -54,7 +54,6 @@ FROM (
         m.catalog_key,
         m.display_name,
         m.vendor_code,
-        'global' AS region_code,
         m.description,
         m.modalities,
         m.input_modalities,
@@ -92,27 +91,27 @@ FROM (
         END AS capability_code
     FROM model_base m
     UNION ALL
-    SELECT m.id, m.model, m.catalog_key, m.display_name, m.vendor_code, 'global' AS region_code, m.description, m.modalities, m.input_modalities, m.output_modalities, m.api_format, m.capability_intro, m.limitations, m.supported_languages, m.use_cases, m.training_data_cutoff, m.context_tokens, m.max_output_tokens, m.supports_streaming, m.supports_tools, m.supports_json_schema, m.release_stage, m.shelf_state, m.routing_state, m.replacement_model, m.rank_score, 'responses'
+    SELECT m.id, m.model, m.catalog_key, m.display_name, m.vendor_code, m.description, m.modalities, m.input_modalities, m.output_modalities, m.api_format, m.capability_intro, m.limitations, m.supported_languages, m.use_cases, m.training_data_cutoff, m.context_tokens, m.max_output_tokens, m.supports_streaming, m.supports_tools, m.supports_json_schema, m.release_stage, m.shelf_state, m.routing_state, m.replacement_model, m.rank_score, 'responses'
     FROM model_base m
     WHERE COALESCE(m.api_format, '') = 'openai_responses'
       AND COALESCE(m.capability, 1) = 1
     UNION ALL
-    SELECT m.id, m.model, m.catalog_key, m.display_name, m.vendor_code, 'global' AS region_code, m.description, m.modalities, m.input_modalities, m.output_modalities, m.api_format, m.capability_intro, m.limitations, m.supported_languages, m.use_cases, m.training_data_cutoff, m.context_tokens, m.max_output_tokens, m.supports_streaming, m.supports_tools, m.supports_json_schema, m.release_stage, m.shelf_state, m.routing_state, m.replacement_model, m.rank_score, 'tools'
+    SELECT m.id, m.model, m.catalog_key, m.display_name, m.vendor_code, m.description, m.modalities, m.input_modalities, m.output_modalities, m.api_format, m.capability_intro, m.limitations, m.supported_languages, m.use_cases, m.training_data_cutoff, m.context_tokens, m.max_output_tokens, m.supports_streaming, m.supports_tools, m.supports_json_schema, m.release_stage, m.shelf_state, m.routing_state, m.replacement_model, m.rank_score, 'tools'
     FROM model_base m
     WHERE COALESCE(m.supports_tools, 0) = 1
     UNION ALL
-    SELECT m.id, m.model, m.catalog_key, m.display_name, m.vendor_code, 'global' AS region_code, m.description, m.modalities, m.input_modalities, m.output_modalities, m.api_format, m.capability_intro, m.limitations, m.supported_languages, m.use_cases, m.training_data_cutoff, m.context_tokens, m.max_output_tokens, m.supports_streaming, m.supports_tools, m.supports_json_schema, m.release_stage, m.shelf_state, m.routing_state, m.replacement_model, m.rank_score, 'json_schema'
+    SELECT m.id, m.model, m.catalog_key, m.display_name, m.vendor_code, m.description, m.modalities, m.input_modalities, m.output_modalities, m.api_format, m.capability_intro, m.limitations, m.supported_languages, m.use_cases, m.training_data_cutoff, m.context_tokens, m.max_output_tokens, m.supports_streaming, m.supports_tools, m.supports_json_schema, m.release_stage, m.shelf_state, m.routing_state, m.replacement_model, m.rank_score, 'json_schema'
     FROM model_base m
     WHERE COALESCE(m.supports_json_schema, 0) = 1
     UNION ALL
-    SELECT m.id, m.model, m.catalog_key, m.display_name, m.vendor_code, 'global' AS region_code, m.description, m.modalities, m.input_modalities, m.output_modalities, m.api_format, m.capability_intro, m.limitations, m.supported_languages, m.use_cases, m.training_data_cutoff, m.context_tokens, m.max_output_tokens, m.supports_streaming, m.supports_tools, m.supports_json_schema, m.release_stage, m.shelf_state, m.routing_state, m.replacement_model, m.rank_score, c.capability_code
+    SELECT m.id, m.model, m.catalog_key, m.display_name, m.vendor_code, m.description, m.modalities, m.input_modalities, m.output_modalities, m.api_format, m.capability_intro, m.limitations, m.supported_languages, m.use_cases, m.training_data_cutoff, m.context_tokens, m.max_output_tokens, m.supports_streaming, m.supports_tools, m.supports_json_schema, m.release_stage, m.shelf_state, m.routing_state, m.replacement_model, m.rank_score, c.capability_code
     FROM model_base m
     JOIN ai_model_capability c ON c.model_id = m.id
     WHERE c.deleted_at IS NULL
       AND c.status = 1
       AND c.capability_code IS NOT NULL
 ) m
-GROUP BY id, catalog_key, model, display_name, vendor_code, region_code, description, modalities, input_modalities, output_modalities, api_format, capability_intro, limitations, supported_languages, use_cases, training_data_cutoff, context_tokens, max_output_tokens, supports_streaming, supports_tools, supports_json_schema, release_stage, shelf_state, routing_state, replacement_model, rank_score
+GROUP BY id, catalog_key, model, display_name, vendor_code, description, modalities, input_modalities, output_modalities, api_format, capability_intro, limitations, supported_languages, use_cases, training_data_cutoff, context_tokens, max_output_tokens, supports_streaming, supports_tools, supports_json_schema, release_stage, shelf_state, routing_state, replacement_model, rank_score
 ORDER BY CAST(COALESCE(rank_score, '0') AS REAL) DESC, display_name ASC, id ASC
 "#;
 
@@ -124,11 +123,15 @@ SELECT
     COALESCE(NULLIF(e.region_code, ''), NULLIF(c.region_code, ''), 'global') AS region_code,
     c.provider_code AS provider_code,
     c.id AS channel_id,
+    cc.id AS credential_id,
+    COALESCE(NULLIF(c.credential_rotation_strategy, ''), 'default') AS credential_rotation,
+    COALESCE(cc.priority, 100) AS credential_priority,
+    COALESCE(cc.weight, 100) AS credential_weight,
     COALESCE(NULLIF(cm.provider_model, ''), NULLIF(cm.provider_native_model, ''), NULLIF(cm.model, ''), cm.catalog_key) AS provider_model,
-    COALESCE(NULLIF(e.base_url, ''), NULLIF(c.base_url, ''), p.base_url) AS base_url,
-    c.credential_ref AS secret_ref,
+    COALESCE(NULLIF(e.base_url, ''), NULLIF(cc.base_url, ''), p.base_url) AS base_url,
+    cc.credential_ref AS secret_ref,
     CAST(c.auth_type AS TEXT) AS auth_type,
-    CAST(c.auth_config AS TEXT) AS auth_config_json,
+    CAST(cc.auth_config AS TEXT) AS auth_config_json,
     COALESCE(e.timeout_ms, c.timeout_ms) AS timeout_ms,
     COALESCE(e.retry_policy, c.retry_policy) AS retry_policy_json
 FROM ai_channel_model cm
@@ -136,6 +139,12 @@ JOIN ai_channel c
   ON c.id = cm.channel_id
  AND c.tenant_id = cm.tenant_id
  AND c.organization_id = cm.organization_id
+JOIN ai_channel_credential cc
+  ON cc.channel_id = c.id
+ AND cc.tenant_id = c.tenant_id
+ AND cc.organization_id = c.organization_id
+ AND cc.deleted_at IS NULL
+ AND cc.status = 1
 LEFT JOIN ai_provider p
   ON p.provider_code = c.provider_code
  AND p.tenant_id = c.tenant_id
@@ -174,13 +183,26 @@ WHERE NULLIF(cm.catalog_key, '') IS NOT NULL
           '+' || CAST(? AS TEXT) || ' seconds'
       ) <= CURRENT_TIMESTAMP
   )
+  AND (
+      COALESCE(cc.health_status, 1) = 1
+      OR datetime(
+          COALESCE(cc.updated_at, CURRENT_TIMESTAMP),
+          '+' || CAST(? AS TEXT) || ' seconds'
+      ) <= CURRENT_TIMESTAMP
+  )
   AND (p.id IS NULL OR p.status = 1)
-  AND COALESCE(NULLIF(e.base_url, ''), NULLIF(c.base_url, ''), p.base_url) IS NOT NULL
-  AND NULLIF(COALESCE(NULLIF(e.base_url, ''), NULLIF(c.base_url, ''), p.base_url), '') IS NOT NULL
-  AND NULLIF(c.credential_ref, '') IS NOT NULL
+  AND COALESCE(NULLIF(e.base_url, ''), NULLIF(cc.base_url, ''), p.base_url) IS NOT NULL
+  AND NULLIF(COALESCE(NULLIF(e.base_url, ''), NULLIF(cc.base_url, ''), p.base_url), '') IS NOT NULL
+  AND NULLIF(cc.credential_ref, '') IS NOT NULL
   AND (cm.effective_from IS NULL OR datetime(cm.effective_from) <= CURRENT_TIMESTAMP)
   AND (cm.effective_to IS NULL OR datetime(cm.effective_to) > CURRENT_TIMESTAMP)
-ORDER BY COALESCE(e.priority, c.priority, 100) ASC, COALESCE(e.weight, c.weight, 100) DESC, cm.id ASC, e.id ASC
+ORDER BY COALESCE(e.priority, c.priority, 100) ASC,
+         COALESCE(e.weight, c.weight, 100) DESC,
+         COALESCE(cc.priority, 100) ASC,
+         COALESCE(cc.weight, 100) DESC,
+         cm.id ASC,
+         e.id ASC,
+         cc.id ASC
 "#;
 
 pub const LOAD_PROVIDER_CHANNEL_ROUTES: &str = r#"
@@ -360,11 +382,20 @@ matched_resource_scope AS (
 SELECT
     c.provider_code,
     c.id AS channel_id,
+    cc.id AS credential_id,
+    COALESCE(NULLIF(c.credential_rotation_strategy, ''), 'default') AS credential_rotation,
+    COALESCE(cc.priority, 100) AS credential_priority,
+    COALESCE(cc.weight, 100) AS credential_weight,
+    NULLIF(c.channel_code, '') AS channel_code,
     COALESCE(NULLIF(e.region_code, ''), NULLIF(c.region_code, ''), 'global') AS region_code,
-    COALESCE(NULLIF(e.base_url, ''), NULLIF(c.base_url, ''), p.base_url) AS base_url,
-    c.credential_ref AS secret_ref,
+    c.site_id AS site_id,
+    NULLIF(c.site_code, '') AS site_code,
+    c.site_service_id AS site_service_id,
+    NULLIF(c.site_service_code, '') AS site_service_code,
+    COALESCE(NULLIF(e.base_url, ''), NULLIF(cc.base_url, ''), p.base_url) AS base_url,
+    cc.credential_ref AS secret_ref,
     CAST(c.auth_type AS TEXT) AS auth_type,
-    CAST(c.auth_config AS TEXT) AS auth_config_json,
+    CAST(cc.auth_config AS TEXT) AS auth_config_json,
     COALESCE(e.timeout_ms, c.timeout_ms) AS timeout_ms,
     COALESCE(e.retry_policy, c.retry_policy) AS retry_policy_json,
     COALESCE((
@@ -485,21 +516,24 @@ SELECT
         ) binding
     ), '[]') AS group_bindings_json
 FROM ai_channel c
+JOIN ai_channel_credential cc
+  ON cc.channel_id = c.id
+ AND cc.tenant_id = c.tenant_id
+ AND cc.organization_id = c.organization_id
+ AND cc.deleted_at IS NULL
+ AND cc.status = 1
 LEFT JOIN ai_provider p
   ON p.provider_code = c.provider_code
  AND p.tenant_id = c.tenant_id
  AND p.organization_id = c.organization_id
 LEFT JOIN ai_channel_endpoint e
-  ON e.id = (
-      SELECT endpoint.id
-      FROM ai_channel_endpoint endpoint
-      WHERE endpoint.deleted_at IS NULL
-        AND endpoint.status = 1
-        AND endpoint.tenant_id = c.tenant_id
-        AND endpoint.organization_id = c.organization_id
-        AND endpoint.channel_id = c.id
-        AND endpoint.vendor_code = COALESCE(NULLIF(p.default_vendor_code, ''), c.provider_code)
-        AND endpoint.api_code IN (
+  ON e.deleted_at IS NULL
+ AND e.status = 1
+ AND e.tenant_id = c.tenant_id
+ AND e.organization_id = c.organization_id
+ AND e.channel_id = c.id
+ AND e.vendor_code = COALESCE(NULLIF(p.default_vendor_code, ''), c.provider_code)
+ AND e.api_code IN (
             '*',
             'chat_completions', 'openai.chat_completions',
             'completions', 'openai.completions',
@@ -521,25 +555,17 @@ LEFT JOIN ai_channel_endpoint e
             'volcengine.image_generation', 'volcengine.video_generation', 'volcengine.task_query',
             'minimax.music_generation',
             'vidu.reference_to_image', 'vidu.start_end_to_video'
-        )
-        AND endpoint.region_code IN (COALESCE(NULLIF(c.region_code, ''), 'global'), 'global')
-        AND NULLIF(endpoint.base_url, '') IS NOT NULL
-        AND (endpoint.effective_from IS NULL OR datetime(endpoint.effective_from) <= CURRENT_TIMESTAMP)
-        AND (endpoint.effective_to IS NULL OR datetime(endpoint.effective_to) > CURRENT_TIMESTAMP)
-        AND (
-            COALESCE(endpoint.health_status, 1) = 1
-            OR datetime(
-                COALESCE(endpoint.updated_at, CURRENT_TIMESTAMP),
-                '+' || CAST(? AS TEXT) || ' seconds'
-            ) <= CURRENT_TIMESTAMP
-        )
-      ORDER BY
-        CASE WHEN endpoint.region_code = 'global' THEN 1 ELSE 0 END ASC,
-        endpoint.priority ASC,
-        endpoint.weight DESC,
-        endpoint.id ASC
-      LIMIT 1
-  )
+ )
+ AND NULLIF(e.base_url, '') IS NOT NULL
+ AND (e.effective_from IS NULL OR datetime(e.effective_from) <= CURRENT_TIMESTAMP)
+ AND (e.effective_to IS NULL OR datetime(e.effective_to) > CURRENT_TIMESTAMP)
+ AND (
+     COALESCE(e.health_status, 1) = 1
+     OR datetime(
+         COALESCE(e.updated_at, CURRENT_TIMESTAMP),
+         '+' || CAST(? AS TEXT) || ' seconds'
+     ) <= CURRENT_TIMESTAMP
+ )
 WHERE c.deleted_at IS NULL
   AND (p.id IS NULL OR p.deleted_at IS NULL)
   AND c.status = 1
@@ -547,6 +573,13 @@ WHERE c.deleted_at IS NULL
       COALESCE(c.health_status, 1) = 1
       OR datetime(
           COALESCE(c.updated_at, CURRENT_TIMESTAMP),
+          '+' || CAST(? AS TEXT) || ' seconds'
+      ) <= CURRENT_TIMESTAMP
+  )
+  AND (
+      COALESCE(cc.health_status, 1) = 1
+      OR datetime(
+          COALESCE(cc.updated_at, CURRENT_TIMESTAMP),
           '+' || CAST(? AS TEXT) || ' seconds'
       ) <= CURRENT_TIMESTAMP
   )
@@ -563,10 +596,16 @@ WHERE c.deleted_at IS NULL
         AND (member.effective_from IS NULL OR datetime(member.effective_from) <= CURRENT_TIMESTAMP)
         AND (member.effective_to IS NULL OR datetime(member.effective_to) > CURRENT_TIMESTAMP)
   )
-  AND COALESCE(NULLIF(e.base_url, ''), NULLIF(c.base_url, ''), p.base_url) IS NOT NULL
-  AND NULLIF(COALESCE(NULLIF(e.base_url, ''), NULLIF(c.base_url, ''), p.base_url), '') IS NOT NULL
-  AND NULLIF(c.credential_ref, '') IS NOT NULL
-ORDER BY c.priority ASC, c.weight DESC, c.id ASC
+  AND COALESCE(NULLIF(e.base_url, ''), NULLIF(cc.base_url, ''), p.base_url) IS NOT NULL
+  AND NULLIF(COALESCE(NULLIF(e.base_url, ''), NULLIF(cc.base_url, ''), p.base_url), '') IS NOT NULL
+  AND NULLIF(cc.credential_ref, '') IS NOT NULL
+ORDER BY COALESCE(e.priority, c.priority, 100) ASC,
+         COALESCE(e.weight, c.weight, 100) DESC,
+         COALESCE(cc.priority, 100) ASC,
+         COALESCE(cc.weight, 100) DESC,
+         c.id ASC,
+         e.id ASC,
+         cc.id ASC
 "#;
 
 pub const LOAD_ROUTING_POLICIES: &str = r#"
@@ -615,31 +654,54 @@ ORDER BY r.profile_id ASC, r.priority ASC, r.id ASC
 
 pub const LOAD_MODEL_MAPPINGS: &str = r#"
 SELECT
-    id,
-    scope_type,
-    NULLIF(vendor_code, '') AS vendor_code,
-    channel_id,
-    NULLIF(channel_code, '') AS channel_code,
-    source_model,
-    target_model,
-    NULLIF(target_catalog_key, '') AS target_catalog_key,
+    r.id AS id,
+    b.binding_type AS binding_type,
+    b.binding_id AS binding_id,
+    NULLIF(b.binding_code, '') AS binding_code,
+    i.source_model AS source_model,
+    NULLIF(i.source_catalog_key, '') AS source_catalog_key,
+    i.target_model AS target_model,
+    NULLIF(i.target_catalog_key, '') AS target_catalog_key,
     NULLIF(target_vendor_code, '') AS target_vendor_code,
-    NULLIF(target_provider_model, '') AS target_provider_model,
-    NULLIF(target_provider_native_model, '') AS target_provider_native_model,
-    priority
-FROM ai_model_mapping_rule
-WHERE deleted_at IS NULL
-  AND status = 1
-  AND enabled = 1
-  AND match_type = 'exact'
-  AND mapping_mode = 'alias'
-  AND (effective_from IS NULL OR datetime(effective_from) <= CURRENT_TIMESTAMP)
-  AND (effective_to IS NULL OR datetime(effective_to) > CURRENT_TIMESTAMP)
+    NULLIF(i.target_provider_model, '') AS target_provider_model,
+    NULLIF(i.target_provider_native_model, '') AS target_provider_native_model,
+    COALESCE(b.sort_order, 100) AS binding_sort_order,
+    COALESCE(i.sort_order, 100) AS item_sort_order
+FROM ai_model_mapping_rule r
+JOIN ai_model_mapping_rule_binding b
+  ON b.rule_id = r.id
+ AND b.tenant_id = r.tenant_id
+ AND b.organization_id = r.organization_id
+ AND b.deleted_at IS NULL
+ AND b.status = 1
+ AND b.enabled = 1
+JOIN ai_model_mapping_rule_item i
+  ON i.rule_id = r.id
+ AND i.tenant_id = r.tenant_id
+ AND i.organization_id = r.organization_id
+ AND i.deleted_at IS NULL
+ AND i.status = 1
+ AND i.enabled = 1
+WHERE r.deleted_at IS NULL
+  AND r.status = 1
+  AND r.enabled = 1
+  AND r.match_type = 'exact'
+  AND r.mapping_mode = 'alias'
 ORDER BY
-  CASE scope_type WHEN 'channel' THEN 1 WHEN 'vendor' THEN 2 ELSE 3 END,
-  priority ASC,
-  updated_at DESC,
-  id DESC
+  CASE b.binding_type
+      WHEN 'provider_account' THEN 0
+      WHEN 'channel' THEN 1
+      WHEN 'channel_group' THEN 2
+      WHEN 'vendor' THEN 3
+      WHEN 'global' THEN 4
+      WHEN 'site' THEN 5
+      WHEN 'site_service' THEN 6
+      ELSE 7
+  END,
+  b.sort_order ASC,
+  i.sort_order ASC,
+  r.updated_at DESC,
+  r.id DESC
 "#;
 
 pub const LOAD_PRICING_PLANS: &str = r#"

@@ -16,6 +16,8 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? PriceReferenceMode { get; set; }
         public string? ProviderCode { get; set; }
         public double? RateMultiplier { get; set; }
+        public List<string>? ResourceCodes { get; set; }
+        public List<string>? ResourceGroupCodes { get; set; }
         public string? Status { get; set; }
         public AdminUsagePair? Usage { get; set; }
     }

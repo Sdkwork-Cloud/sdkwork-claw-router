@@ -59,6 +59,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? RateMultiplier { get; set; }
         public string? ReasoningEffort { get; set; }
         public string? ReferenceMultiplier { get; set; }
+        public string? RegionCode { get; set; }
         public string? RequestCount { get; set; }
         public string? RequestId { get; set; }
         public string? RequestedModelCatalogKey { get; set; }

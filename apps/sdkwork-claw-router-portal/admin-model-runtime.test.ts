@@ -69,10 +69,15 @@ function adminModel(overrides: Record<string, unknown> = {}): Record<string, unk
     displayName,
     name: displayName,
     type: "Chat",
-    priceIn: "0.1500",
-    priceOut: "0.6000",
-    cacheReadPrice: "0.0750",
-    cacheWritePrice: "0.1500",
+    regionPrices: [
+      {
+        regionCode: "global",
+        priceIn: "0.1500",
+        priceOut: "0.6000",
+        cacheReadPrice: "0.0750",
+        cacheWritePrice: "0.1500",
+      },
+    ],
     status: "active",
     calls: "42",
     description: null,
@@ -102,6 +107,19 @@ function adminModel(overrides: Record<string, unknown> = {}): Record<string, unk
     }
   }
   return model;
+}
+
+function modelRegionPrice(
+  priceIn: string,
+  priceOut: string,
+  overrides: Record<string, unknown> = {},
+): Record<string, unknown> {
+  return {
+    regionCode: "global",
+    priceIn,
+    priceOut,
+    ...overrides,
+  };
 }
 
 function escapeRegExp(value: string): string {
@@ -344,16 +362,32 @@ test("admin model page visible copy uses the admin model i18n namespace", () => 
   }
 });
 
-test("admin model list keeps the price column label and price rows on one line", () => {
+test("admin model list summarizes prices and opens regional pricing popovers", () => {
   const source = readFileSync(
     resolve(PORTAL_ROOT, "packages/sdkwork-claw-router-admin-model/src/index.tsx"),
+    "utf8",
+  );
+  const i18nSource = readFileSync(
+    resolve(PORTAL_ROOT, "packages/sdkwork-claw-router-i18n/src/resources/admin/model.ts"),
     "utf8",
   );
 
   assert.match(source, /const modelPriceColumnClassName = ['"][^'"]*min-w-\[[^\]]+\][^'"]*whitespace-nowrap[^'"]*['"]/);
   assert.match(source, /<th className=\{modelPriceColumnClassName\}>\{t\('admin\.model\.table\.price'\)\}<\/th>/);
-  assert.match(source, /const modelPricePillClassName = ['"][^'"]*min-w-\[[^\]]+\][^'"]*whitespace-nowrap[^'"]*['"]/);
-  assert.match(source, /<div className=\{modelPricePillClassName\}>/);
+  assert.match(source, /openPricePopoverModelId/);
+  assert.match(source, /priceRegionByModelId/);
+  assert.match(source, /const modelPriceSummaryButtonClassName = ['"][^'"]*whitespace-nowrap[^'"]*['"]/);
+  assert.match(source, /const modelPricePopoverClassName = ['"][^'"]*absolute[^'"]*z-\[/);
+  assert.match(source, /getModelRegionPrices\(m\)/);
+  assert.match(source, /selectedPriceRegionCode/);
+  assert.match(source, /setOpenPricePopoverModelId\(openPricePopoverModelId === m\.id \? null : m\.id\)/);
+  assert.match(source, /t\('admin\.model\.pricing\.regionCount'/);
+  assert.match(source, /t\('admin\.model\.pricing\.details'\)/);
+  assert.match(source, /MODEL_PRICING_REGIONS\.find/);
+  assert.doesNotMatch(source, /const modelPricePillClassName = /);
+  assert.doesNotMatch(source, /<div className=\{modelPricePillClassName\}>/);
+  assert.match(i18nSource, /"admin\.model\.pricing\.regionCount"/);
+  assert.match(i18nSource, /"admin\.model\.pricing\.details"/);
 });
 
 test("admin ai model create input does not reuse returned model view model", () => {
@@ -378,10 +412,6 @@ test("admin ai model create input does not reuse returned model view model", () 
     model: "gpt-4o-mini",
     displayName: "GPT-4o mini",
     type: "Chat",
-    priceIn: "0.1500",
-    priceOut: "0.6000",
-    cacheReadPrice: "0.0750",
-    cacheWritePrice: "0.1500",
     regionPrices: [
       {
         regionCode: "cn",
@@ -437,10 +467,6 @@ test("admin ai model update input preserves current type marker for partial upda
     displayName: "GPT-4o mini",
     name: "GPT-4o mini",
     type: "Chat",
-    priceIn: "0.1500",
-    priceOut: "0.6000",
-    cacheReadPrice: "0.0750",
-    cacheWritePrice: "0.1500",
     status: "inactive",
     calls: "42",
     description: null,
@@ -469,10 +495,6 @@ test("admin ai model update input preserves current type marker for partial upda
     model: "gpt-4o-mini",
     displayName: null,
     type: "Chat",
-    priceIn: "0.2000",
-    priceOut: "0.8000",
-    cacheReadPrice: "0.1000",
-    cacheWritePrice: "0.2000",
     regionPrices: [
       {
         regionCode: "cn",
@@ -515,8 +537,6 @@ test("admin ai model form keeps cache prices optional", () => {
 
   const input = createModelInputFromForm(form, "v_openai");
 
-  assert.equal(input.cacheReadPrice, "");
-  assert.equal(input.cacheWritePrice, "");
   assert.deepEqual(input.regionPrices, [
     {
       regionCode: "global",
@@ -594,12 +614,31 @@ test("admin model editor creates default mainland China and global pricing regio
   ]) {
     assert.ok(formSource.includes(expected), `missing region pricing form marker: ${expected}`);
   }
+  for (const legacy of [
+    "legacyGlobalPrice",
+    "formData.get('priceIn')",
+    "formData.get('priceOut')",
+    "formData.get('cacheReadPrice')",
+    "formData.get('cacheWritePrice')",
+  ]) {
+    assert.equal(formSource.includes(legacy), false, `model pricing form must not keep flat legacy price fallback: ${legacy}`);
+  }
 
   for (const expected of [
     "regionPrices: ModelRegionPriceInput[]",
     "regionPrices: regionPrices.map",
   ]) {
     assert.ok(serviceSource.includes(expected), `missing region pricing service marker: ${expected}`);
+  }
+  for (const legacy of [
+    "model.priceIn !== undefined || model.priceOut !== undefined",
+    "requiredText(model.priceIn ?? '', 'priceIn')",
+    "cacheReadPrice: model.cacheReadPrice",
+    "cacheWritePrice: model.cacheWritePrice",
+    "readModelRegionPrices(item, { priceIn, priceOut, cacheReadPrice, cacheWritePrice })",
+    "{ regionCode: 'global', ...fallback }",
+  ]) {
+    assert.equal(serviceSource.includes(legacy), false, `model service must not rebuild region pricing from flat price fields: ${legacy}`);
   }
 
   for (const expected of [
@@ -707,8 +746,7 @@ test("admin model service calls generated backend SDK paths and normalizes model
               vendorCode: "anthropic",
               model: "claude-3-5-sonnet",
               displayName: "Claude 3.5 Sonnet",
-              priceIn: "3",
-              priceOut: "15",
+              regionPrices: [modelRegionPrice("3", "15")],
               calls: "7",
               contextTokens: 200000,
               inputModalities: ["text", "image"],
@@ -735,8 +773,7 @@ test("admin model service calls generated backend SDK paths and normalizes model
             model: "custom/model-v1",
             displayName: "Custom model v1",
             type: "Embedding",
-            priceIn: "0.01",
-            priceOut: "0.02",
+            regionPrices: [modelRegionPrice("0.01", "0.02")],
             calls: "0",
             contextTokens: 32000,
             modalities: ["embedding"],
@@ -757,8 +794,7 @@ test("admin model service calls generated backend SDK paths and normalizes model
             vendorCode: "custom-ai",
             model: "custom/model-v2",
             type: "Embedding",
-            priceIn: "0.03",
-            priceOut: "0.04",
+            regionPrices: [modelRegionPrice("0.03", "0.04")],
             calls: "0",
             contextTokens: 64000,
             modalities: ["embedding"],
@@ -791,8 +827,7 @@ test("admin model service calls generated backend SDK paths and normalizes model
         model: "custom/model-v1",
         displayName: "Custom model v1",
         type: "Embedding",
-        priceIn: "0.01",
-        priceOut: "0.02",
+        regionPrices: [modelRegionPrice("0.01", "0.02")],
         contextTokens: "32k",
       });
       const updated = await ModelService.updateModel("model-3", {
@@ -800,8 +835,7 @@ test("admin model service calls generated backend SDK paths and normalizes model
         model: "custom/model-v2",
         type: "Embedding",
         currentType: "Embedding",
-        priceIn: "0.03",
-        priceOut: "0.04",
+        regionPrices: [modelRegionPrice("0.03", "0.04")],
         contextTokens: "64k",
       });
       const deleted = await ModelService.deleteModel("model-3");
@@ -869,8 +903,6 @@ test("admin model service calls generated backend SDK paths and normalizes model
         model: "custom/model-v1",
         displayName: "Custom model v1",
         type: "Embedding",
-        priceIn: "0.01",
-        priceOut: "0.02",
         regionPrices: [
           {
             regionCode: "global",
@@ -893,8 +925,6 @@ test("admin model service calls generated backend SDK paths and normalizes model
       assert.deepEqual(JSON.parse(captured[6].body), {
         vendorId: "vendor-3",
         model: "custom/model-v2",
-        priceIn: "0.03",
-        priceOut: "0.04",
         regionPrices: [
           {
             regionCode: "global",
@@ -1326,7 +1356,7 @@ test("admin model ranking summary rejects fractional request counters", async ()
         return {
           items: [
             {
-              id: "openai/global/gpt-4o-mini",
+              id: "openai/gpt-4o-mini",
               rank: 1,
               prevRank: 1,
               name: "gpt-4o-mini",
@@ -1375,7 +1405,7 @@ test("admin model list keeps backend calls when ranking summary is malformed", a
         return {
           items: [
             {
-              id: "openai/global/gpt-4o-mini",
+              id: "openai/gpt-4o-mini",
               rank: 1,
               prevRank: 1,
               name: "gpt-4o-mini",
@@ -1406,6 +1436,89 @@ test("admin model list keeps backend calls when ranking summary is malformed", a
   );
 });
 
+test("admin model list preserves regional prices and rejects missing region price arrays", async () => {
+  await withBackendSdkFetch(
+    (url, init) => {
+      const method = init?.method ?? "GET";
+      if (url === "/backend/v3/api/ai/models" && method === "GET") {
+        return {
+          items: [
+            adminModel({
+              id: "model-regional",
+              regionPrices: [
+                {
+                  regionCode: "cn",
+                  priceIn: "0.2000",
+                  priceOut: "0.8000",
+                  cacheReadPrice: "0.1000",
+                  cacheWritePrice: "0.2000",
+                },
+                {
+                  regionCode: "global",
+                  priceIn: "0.1500",
+                  priceOut: "0.6000",
+                  cacheReadPrice: "0.0750",
+                  cacheWritePrice: "0.1500",
+                },
+              ],
+            }),
+          ],
+        };
+      }
+      if (url === "/backend/v3/api/ai/model_rankings?limit=200" && method === "GET") {
+        return { items: [] };
+      }
+      throw new Error(`Unexpected SDK request ${method} ${url}`);
+    },
+    async () => {
+      const models = await ModelService.fetchModels();
+
+      assert.deepEqual(models[0].regionPrices, [
+        {
+          regionCode: "cn",
+          priceIn: "0.2000",
+          priceOut: "0.8000",
+          cacheReadPrice: "0.1000",
+          cacheWritePrice: "0.2000",
+        },
+        {
+          regionCode: "global",
+          priceIn: "0.1500",
+          priceOut: "0.6000",
+          cacheReadPrice: "0.0750",
+          cacheWritePrice: "0.1500",
+        },
+      ]);
+    },
+  );
+
+  await withBackendSdkFetch(
+    (url, init) => {
+      const method = init?.method ?? "GET";
+      if (url === "/backend/v3/api/ai/models" && method === "GET") {
+        return {
+          items: [
+            adminModel({
+              id: "model-flat",
+              regionPrices: undefined,
+            }),
+          ],
+        };
+      }
+      if (url === "/backend/v3/api/ai/model_rankings?limit=200" && method === "GET") {
+        return { items: [] };
+      }
+      throw new Error(`Unexpected SDK request ${method} ${url}`);
+    },
+    async () => {
+      await assert.rejects(
+        () => ModelService.fetchModels(),
+        /Model region prices are required/,
+      );
+    },
+  );
+});
+
 test("admin model list keeps catalog rows when one pricing side is not available", async () => {
   await withBackendSdkFetch(
     (url, init) => {
@@ -1419,7 +1532,7 @@ test("admin model list keeps catalog rows when one pricing side is not available
               modalities: ["embedding"],
               inputModalities: ["text"],
               outputModalities: ["embedding"],
-              priceOut: "",
+              regionPrices: [modelRegionPrice("0.1500", "")],
               supportsStreaming: false,
               supportsTools: false,
               supportsJsonSchema: false,
@@ -1437,8 +1550,15 @@ test("admin model list keeps catalog rows when one pricing side is not available
 
       assert.equal(models.length, 1);
       assert.equal(models[0].name, "text-embedding-3-small");
-      assert.equal(models[0].priceIn, "0.1500");
-      assert.equal(models[0].priceOut, "");
+      assert.deepEqual(models[0].regionPrices, [
+        {
+          regionCode: "global",
+          priceIn: "0.1500",
+          priceOut: "",
+          cacheReadPrice: "",
+          cacheWritePrice: "",
+        },
+      ]);
     },
   );
 });
@@ -1465,8 +1585,7 @@ test("admin model service rejects invalid commands before calling generated back
             vendorId: "vendor-1",
             model: "gpt 4",
             type: "Chat",
-            priceIn: "0.1",
-            priceOut: "0.2",
+            regionPrices: [modelRegionPrice("0.1", "0.2")],
             contextTokens: "8k",
           }),
         /model must use ASCII/,
@@ -1477,8 +1596,7 @@ test("admin model service rejects invalid commands before calling generated back
             vendorId: "vendor-1",
             model: "gpt-4o-mini",
             type: "Chat",
-            priceIn: "0",
-            priceOut: "0.2",
+            regionPrices: [modelRegionPrice("0", "0.2")],
             contextTokens: "8k",
           }),
         /priceIn must be greater than zero/,
@@ -1489,8 +1607,7 @@ test("admin model service rejects invalid commands before calling generated back
             vendorId: "vendor-1",
             model: "gpt-4o-mini",
             type: "Vision" as never,
-            priceIn: "0.1",
-            priceOut: "0.2",
+            regionPrices: [modelRegionPrice("0.1", "0.2")],
             contextTokens: "8k",
           }),
         /Unsupported model type: Vision/,
@@ -1501,8 +1618,7 @@ test("admin model service rejects invalid commands before calling generated back
             vendorId: "vendor-1",
             model: "gpt-4o-mini",
             type: "Chat",
-            priceIn: "0.1",
-            priceOut: "0.2",
+            regionPrices: [modelRegionPrice("0.1", "0.2")],
             contextTokens: "",
           }),
         /contextTokens is required/,
@@ -1529,8 +1645,7 @@ test("admin model service rejects unsafe SDK path ids before calling generated b
             name: "gpt-4o-mini",
             type: "Chat",
             currentType: "Chat",
-            priceIn: "0.1",
-            priceOut: "0.2",
+            regionPrices: [modelRegionPrice("0.1", "0.2")],
             contextTokens: "8k",
           }),
         /modelId must be a safe path segment/,
@@ -1734,8 +1849,6 @@ test("admin model list fails closed when backend omits required model fields", a
   const cases: Array<[string, RegExp]> = [
     ["vendorCode", /Model vendor code is required/],
     ["model", /Model model is required/],
-    ["priceIn", /Model input price is required/],
-    ["priceOut", /Model output price is required/],
     ["status", /Model status is required/],
     ["calls", /Model calls are required/],
     ["description", /Model description field is required/],
@@ -1978,6 +2091,8 @@ test("admin model table fills the available admin viewport", () => {
     "data-admin-model-table-card",
     "data-admin-model-table-viewport",
     "flex min-h-0 flex-1 flex-col",
+    "className=\"flex-1 min-h-0 dark:bg-[#1a1a1a]\"",
+    "viewportClassName=\"min-h-0 flex-1\"",
     "sticky top-0 z-10",
   ]) {
     assert.ok(source.includes(expected), `missing adaptive admin model table marker: ${expected}`);
@@ -2051,19 +2166,13 @@ test("admin model editor supports cache read and write prices", () => {
   );
 
   for (const expected of [
-    "cacheReadPrice: string",
-    "cacheWritePrice: string",
-    "cacheReadPrice: optionalDecimalAmount(model.cacheReadPrice, 'cacheReadPrice')",
-    "cacheWritePrice: optionalDecimalAmount(model.cacheWritePrice, 'cacheWritePrice')",
-    "readRequiredStringField(item, 'cacheReadPrice'",
-    "readRequiredStringField(item, 'cacheWritePrice'",
   ]) {
     assert.ok(serviceSource.includes(expected), `missing service cache price marker: ${expected}`);
   }
 
   for (const expected of [
-    "cacheReadPrice: readOptionalDecimalText(formData.get('cacheReadPrice'))",
-    "cacheWritePrice: readOptionalDecimalText(formData.get('cacheWritePrice'))",
+    "cacheReadPrice: readOptionalDecimalText(formData.get(`cacheReadPrice.${regionCode}`))",
+    "cacheWritePrice: readOptionalDecimalText(formData.get(`cacheWritePrice.${regionCode}`))",
   ]) {
     assert.ok(formSource.includes(expected), `missing form cache price marker: ${expected}`);
   }
@@ -2075,10 +2184,12 @@ test("admin model editor supports cache read and write prices", () => {
     "admin.model.modelModal.cacheWriteUnitPrice",
     "name={`cacheReadPrice.${region.code}`}",
     "name={`cacheWritePrice.${region.code}`}",
-    "defaultValue={region.code === 'global' ? editingModel?.cacheReadPrice ?? '' : ''}",
-    "defaultValue={region.code === 'global' ? editingModel?.cacheWritePrice ?? '' : ''}",
-    "formatPrice(m.cacheReadPrice)",
-    "formatPrice(m.cacheWritePrice)",
+    "defaultValue={regionPrice?.cacheReadPrice ?? ''}",
+    "defaultValue={regionPrice?.cacheWritePrice ?? ''}",
+    "const priceRows = [",
+    "value: selectedPriceRegion?.cacheReadPrice",
+    "value: selectedPriceRegion?.cacheWritePrice",
+    "formatPrice(row.value ?? '')",
   ]) {
     assert.ok(source.includes(expected), `missing editor cache price marker: ${expected}`);
   }
@@ -2182,6 +2293,7 @@ test("admin model resource page exposes group CRUD and static all-api safeguards
     "data-admin-model-resource-page",
     "ResourceGroupService.fetchGroups()",
     "ResourceGroupService.fetchResources(selectedGroup.groupCode)",
+    "ResourceGroupService.fetchResources('api.all')",
     "ResourceGroupService.createGroup(input as ResourceGroupCreateInput)",
     "ResourceGroupService.updateGroup(form.id, input)",
     "ResourceGroupService.deleteGroup(deleteTarget.id)",
@@ -2190,7 +2302,26 @@ test("admin model resource page exposes group CRUD and static all-api safeguards
     "selectionMode: form.groupCode === 'api.all' ? 'all' : 'manual'",
     "data-admin-model-resource-sidebar",
     "data-admin-model-resource-sidebar-header",
+    "data-admin-model-resource-sidebar-list",
     "data-admin-model-resource-main",
+    "data-admin-model-resource-main-panel",
+    "data-admin-model-resource-table-scroll",
+    "data-admin-model-resource-pagination",
+    "data-admin-model-resource-group-drawer",
+    "data-admin-model-resource-group-drawer-basic",
+    "data-admin-model-resource-group-drawer-resources",
+    "data-admin-model-resource-group-form-resource-table",
+    "BottomPagination",
+    "resourcePage",
+    "resourcePageSize",
+    "paginatedResources",
+    "setResourcePage(1)",
+    "AiResourceSelectorModal",
+    "selectionMode=\"multiple\"",
+    "selectedCodes={form.memberCodes}",
+    "setResourceSelectorOpen(true)",
+    "setForm({ ...form, memberCodes: codes })",
+    "w-[80vw] max-w-[80vw]",
     "flex min-h-0 h-full w-full flex-col bg-slate-50 dark:bg-[#121212] rounded-xl overflow-hidden shadow-sm border border-slate-200 dark:border-white/5",
     "setSelectedGroupCode(nextGroups.find(group => group.groupCode === 'api.all')?.groupCode",
   ]) {
@@ -2199,6 +2330,23 @@ test("admin model resource page exposes group CRUD and static all-api safeguards
 
   assert.doesNotMatch(source, /<header className=/);
   assert.doesNotMatch(source, /t\('admin\.model\.resources\.subtitle'\)/);
+  assert.doesNotMatch(source, /items-center justify-center bg-slate-950\/50 p-4/);
+  assert.doesNotMatch(source, /value=\{form\.members\}/);
+  assert.doesNotMatch(source, /rows=\{8\}/);
+  assert.match(source, /className="flex min-h-0 h-full w-full flex-col[\s\S]*overflow-hidden/);
+  assert.match(source, /data-admin-model-resource-sidebar-list[\s\S]*className="min-h-0 flex-1 overflow-y-auto/);
+  assert.match(source, /data-admin-model-resource-main-panel[\s\S]*className="flex min-h-0 flex-1 flex-col overflow-hidden/);
+  assert.match(source, /data-admin-model-resource-table-scroll[\s\S]*className="min-h-0 flex-1 overflow-auto/);
+  assert.match(source, /data-admin-model-resource-pagination[\s\S]*<BottomPagination/);
+  assert.match(source, /itemCount=\{paginatedResources\.length\}/);
+  assert.match(source, /hasNextPage=\{resourcePage \* resourcePageSize < filteredResources\.length\}/);
+  assert.match(source, /onPreviousPage=\{\(\) => setResourcePage\(\(current\) => Math\.max\(1, current - 1\)\)\}/);
+  assert.match(source, /onNextPage=\{\(\) => setResourcePage\(\(current\) => current \+ 1\)\}/);
+  assert.match(source, /onPageSizeChange=\{\(nextPageSize\) => \{/);
+  assert.match(source, /setResourcePageSize\(nextPageSize\)/);
+  assert.match(source, /filteredResources\.length === 0/);
+  assert.match(source, /paginatedResources\.map\(resource =>/);
+  assert.doesNotMatch(source, /filteredResources\.map\(resource =>/);
   const sidebarHeaderStart = source.indexOf("data-admin-model-resource-sidebar-header");
   const mainStart = source.indexOf("data-admin-model-resource-main");
   assert.notEqual(sidebarHeaderStart, -1, "resource group sidebar header marker must exist");
@@ -2207,7 +2355,8 @@ test("admin model resource page exposes group CRUD and static all-api safeguards
   const sidebarHeader = source.slice(sidebarHeaderStart, mainStart);
   assert.match(sidebarHeader, /t\('admin\.model\.resources\.sidebarTitle'\)/);
   assert.match(sidebarHeader, /onClick=\{startCreate\}/);
-  assert.match(sidebarHeader, /onClick=\{\(\) => void loadGroups\(\)\}/);
+  assert.match(sidebarHeader, /void loadGroups\(\);/);
+  assert.match(sidebarHeader, /void loadAllResources\(\);/);
   assert.match(sidebarHeader, /<Plus className="[^"]*\bw-4\b[^"]*\bh-4\b[^"]*"/);
   assert.match(sidebarHeader, /<RefreshCw className="[^"]*\bw-4\b[^"]*\bh-4\b[^"]*"/);
 
@@ -2222,7 +2371,11 @@ test("admin model resource page exposes group CRUD and static all-api safeguards
     "admin.model.resources.actions.edit",
     "admin.model.resources.actions.delete",
     "admin.model.resources.form.groupCode",
-    "admin.model.resources.form.members",
+    "admin.model.resources.form.selectedResources",
+    "admin.model.resources.form.selectResources",
+    "admin.model.resources.form.emptySelectedResources",
+    "admin.model.resources.form.removeResource",
+    "admin.model.resources.form.resourceSelectorTitle",
     "admin.model.resources.dynamic",
     "admin.model.resources.deleteDialog.title",
     "admin.model.resources.deleteDialog.description",
@@ -2231,6 +2384,47 @@ test("admin model resource page exposes group CRUD and static all-api safeguards
     const occurrences = i18nSource.match(new RegExp(`"${escapeRegExp(key)}"`, "g"))?.length ?? 0;
     assert.equal(occurrences, 2, `expected ${key} in English and Chinese resources`);
   }
+});
+
+test("admin model resource group detail panel manages members with multi-select resource picker", () => {
+  const source = readFileSync(
+    resolve(PORTAL_ROOT, "packages/sdkwork-claw-router-admin-model/src/resourceAdmin.tsx"),
+    "utf8",
+  );
+
+  for (const expected of [
+    "data-admin-model-resource-main-resource-actions",
+    "data-admin-model-resource-add-resource",
+    "data-admin-model-resource-table",
+    "data-admin-model-resource-row-action",
+    "resourceAssignmentSelectorOpen",
+    "resourceAssignmentDraftCodes",
+    "allResourceOptions",
+    "resourceOptionsByCode",
+    "setResourceAssignmentDraftCodes(resources.map(resource => resource.resourceCode))",
+    "selectedCodes={resourceAssignmentDraftCodes}",
+    "onClose={() => void saveResourceAssignmentDraft()}",
+    "ResourceGroupService.updateGroup(selectedGroup.id, {",
+    "members: memberCodes.map((resourceCode, index) => ({",
+    "disabled={!canManageSelectedGroupResources || loadingResources || saving}",
+    "selectionMode=\"multiple\"",
+    "t('admin.model.resources.actions.addResource')",
+    "t('admin.model.resources.form.resourceSelectorTitle')",
+  ]) {
+    assert.ok(source.includes(expected), `missing resource group member management marker: ${expected}`);
+  }
+  assert.doesNotMatch(source, /options=\{assignableResources\}/);
+  assert.doesNotMatch(source, /options=\{assignableResourceOptions\}/);
+  assert.match(source, /options=\{allResourceOptions\}/);
+
+  const mainTableStart = source.indexOf("data-admin-model-resource-table");
+  const drawerTableStart = source.indexOf("data-admin-model-resource-group-form-resource-table");
+  assert.notEqual(mainTableStart, -1, "resource detail table marker must exist");
+  assert.notEqual(drawerTableStart, -1, "resource group form table marker must exist");
+  const mainTableSource = source.slice(mainTableStart, drawerTableStart);
+  assert.match(mainTableSource, /t\('admin\.model\.resources\.columns\.actions'\)/);
+  assert.match(mainTableSource, /t\('admin\.model\.resources\.actions\.removeResource'\)/);
+  assert.match(mainTableSource, /onClick=\{\(\) => void removeSelectedGroupResource\(resource\.resourceCode\)\}/);
 });
 
 test("admin model resource group service calls generated backend SDK resource group paths", async () => {
@@ -2272,6 +2466,25 @@ test("admin model resource group service calls generated backend SDK resource gr
               status: "active",
               sortOrder: 10,
               memberRole: "included",
+            },
+          ],
+        };
+      }
+      if (url === "/backend/v3/api/ai/resources" && method === "GET") {
+        return {
+          items: [
+            {
+              id: "resource-assignable-chat",
+              resourceCode: "api.openai.responses",
+              resourceType: "api_endpoint",
+              displayName: "OpenAI Responses API",
+              vendorCode: "openai",
+              modalityCode: "llm",
+              apiEndpointCode: "openai.responses",
+              catalogKey: "openai.responses",
+              model: "gpt-5",
+              providerNativeModel: "gpt-5",
+              status: "active",
             },
           ],
         };
@@ -2336,6 +2549,7 @@ test("admin model resource group service calls generated backend SDK resource gr
     async (captured) => {
       const groups = await ResourceGroupService.fetchGroups();
       const resources = await ResourceGroupService.fetchResources("api.all");
+      const assignableResources = await ResourceGroupService.fetchAssignableResources();
       const created = await ResourceGroupService.createGroup({
         groupCode: "API.Custom.Chat",
         groupName: " Custom Chat ",
@@ -2365,6 +2579,19 @@ test("admin model resource group service calls generated backend SDK resource gr
       assert.equal(groups[0].resourceCount, 2);
       assert.equal(resources[0].resourceCode, "api.openai.chat_completions");
       assert.equal(resources[0].memberRole, "included");
+      assert.deepEqual(assignableResources[0], {
+        id: "resource-assignable-chat",
+        resourceCode: "api.openai.responses",
+        resourceType: "api_endpoint",
+        displayName: "OpenAI Responses API",
+        vendorCode: "openai",
+        modalityCode: "llm",
+        apiEndpointCode: "openai.responses",
+        catalogKey: "openai.responses",
+        model: "gpt-5",
+        providerNativeModel: "gpt-5",
+        status: "active",
+      });
       assert.equal(created.groupCode, "api.custom.chat");
       assert.equal(created.dynamic, false);
       assert.equal(updated.groupName, "Custom Chat Updated");
@@ -2374,6 +2601,7 @@ test("admin model resource group service calls generated backend SDK resource gr
         [
           "GET /backend/v3/api/ai/resource_groups",
           "GET /backend/v3/api/ai/resource_groups/api.all/resources",
+          "GET /backend/v3/api/ai/resources",
           "POST /backend/v3/api/ai/resource_groups",
           "PATCH /backend/v3/api/ai/resource_groups/group-custom-chat",
           "DELETE /backend/v3/api/ai/resource_groups/group-custom-chat",

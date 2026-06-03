@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { AdminTableShell, BusinessStateTableRow, ConfirmDialog } from 'sdkwork-claw-router-commons';
+import { AdminTableShell, AiResourceSelectorModal, BottomPagination, BusinessStateTableRow, ConfirmDialog } from 'sdkwork-claw-router-commons';
 import { Plus, Search, Trash2, Edit, ChevronDown, ChevronLeft, ChevronRight, RefreshCw, ArrowUpDown, LayoutGrid, X, Link2, Save, Coins, Info } from 'lucide-react';
 import { GroupService, type GroupAiResourceOption, type GroupChannelBindingData, type GroupChannelBindingInput, type GroupChannelOption, type GroupData, type GroupResourceGroupOption } from './groupService';
 import { createGroupInputFromForm, createGroupUpdateInputFromForm } from './groupForm';
@@ -39,6 +39,8 @@ export function GroupAdmin() {
   const [statusFilter, setStatusFilter] = useState('');
   const [typeFilter, setTypeFilter] = useState('');
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('asc');
+  const [page, setPage] = useState(1);
+  const [pageSize, setPageSize] = useState(20);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [loadError, setLoadError] = useState<string | null>(null);
@@ -98,6 +100,19 @@ export function GroupAdmin() {
       const result = left.groupName.localeCompare(right.groupName);
       return sortDirection === 'asc' ? result : -result;
     });
+  const paginatedGroups = filteredGroups.slice(
+    (page - 1) * pageSize,
+    page * pageSize,
+  );
+
+  useEffect(() => {
+    setPage(1);
+  }, [searchQuery, platformFilter, statusFilter, typeFilter, sortDirection]);
+
+  useEffect(() => {
+    const totalPages = Math.max(1, Math.ceil(filteredGroups.length / pageSize));
+    setPage(current => Math.min(Math.max(current, 1), totalPages));
+  }, [filteredGroups.length, pageSize]);
 
   const openCreateModal = () => {
     setEditingGroup(null);
@@ -484,13 +499,37 @@ export function GroupAdmin() {
 
       <AdminTableShell
         data-admin-group-table-card
-        className="rounded-xl dark:bg-[#1a1a1a]"
+        className="flex-1 min-h-0 rounded-xl dark:bg-[#1a1a1a]"
         header={loadError && groups.length > 0 ? (
           <div className="border-b border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800 dark:border-amber-500/20 dark:bg-amber-500/10 dark:text-amber-200">
             <div className="font-semibold">{t('admin.group.state.loadErrorTitle')}</div>
             <div className="mt-1 text-xs">{t('admin.group.state.staleDataDescription')}</div>
           </div>
         ) : null}
+        footer={(
+          <div data-admin-group-pagination>
+            <BottomPagination
+              page={page}
+              pageSize={pageSize}
+              itemCount={paginatedGroups.length}
+              hasNextPage={page * pageSize < filteredGroups.length}
+              disabled={loading}
+              showingLabel={t('admin.group.pagination.showing')}
+              pageLabel={t('admin.group.pagination.page', { page })}
+              pageSizeLabel={t('admin.group.pagination.pageSize')}
+              previousLabel={t('common.actions.previousPage')}
+              nextLabel={t('common.actions.nextPage')}
+              pageSizeOptions={[10, 20, 50, 100]}
+              onPreviousPage={() => setPage(current => Math.max(1, current - 1))}
+              onNextPage={() => setPage(current => current + 1)}
+              onPageSizeChange={(nextPageSize) => {
+                setPageSize(nextPageSize);
+                setPage(1);
+              }}
+            />
+          </div>
+        )}
+        viewportClassName="min-h-0 flex-1"
         viewportProps={{ 'data-admin-group-table-viewport': true }}
       >
         <table className="w-full text-left text-sm text-slate-600 dark:text-slate-400 whitespace-nowrap">
@@ -526,7 +565,7 @@ export function GroupAdmin() {
                 title={t('admin.group.state.emptyTitle')}
                 description={t('admin.group.state.emptyDescription')}
               />
-            ) : filteredGroups.map(group => (
+            ) : paginatedGroups.map(group => (
               <tr key={group.id} className="hover:bg-slate-50 dark:hover:bg-white/5 transition-colors group">
                 <td className="px-6 py-4 font-medium text-slate-900 dark:text-white">
                   <div className="flex flex-col gap-1">
@@ -760,7 +799,22 @@ export function GroupAdmin() {
           selectedCodes={selectedResourceCodes}
           onChange={setSelectedResourceCodes}
           onClose={() => setResourceSelectorOpen(false)}
-          t={t}
+          labels={{
+            title: t('admin.group.resourceAccess.resourceSelectorTitle'),
+            searchPlaceholder: t('admin.group.resourceAccess.search.resourcesPlaceholder'),
+            loading: t('admin.group.resourceAccess.loading'),
+            empty: t('admin.group.resourceAccess.emptyResources'),
+            emptySearch: t('admin.group.resourceAccess.emptyResourcesSearch'),
+            selectedCount: count => t('admin.group.resourceAccess.selectedCount', { count }),
+            done: t('common.actions.done'),
+            columns: {
+              resource: t('admin.group.resourceAccess.columns.resource'),
+              kind: t('admin.group.resourceAccess.columns.kind'),
+              vendor: t('admin.group.resourceAccess.columns.vendor'),
+              status: t('admin.group.resourceAccess.columns.status'),
+            },
+          }}
+          searchDataAttribute="data-admin-group-resource-selector-search"
         />
       )}
 
@@ -1540,110 +1594,6 @@ function ResourceGroupSelectorModal({
                       <div className="font-mono text-xs text-slate-500">{option.groupCode}</div>
                     </td>
                     <td className="px-5 py-3 font-mono text-xs">{option.resourceCount}</td>
-                    <td className="px-5 py-3">{option.status}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          )}
-        </div>
-        <SelectorFooter count={selectedCodes.length} onClose={onClose} t={t} />
-      </div>
-    </div>
-  );
-}
-
-function AiResourceSelectorModal({
-  loading,
-  onChange,
-  onClose,
-  options,
-  selectedCodes,
-  selectionMode = 'single',
-  t,
-}: {
-  loading: boolean;
-  onChange: (codes: string[]) => void;
-  onClose: () => void;
-  options: GroupAiResourceOption[];
-  selectedCodes: string[];
-  selectionMode?: ResourceSelectorSelectionMode;
-  t: TranslationFunction;
-}) {
-  const selected = new Set(selectedCodes);
-  const [resourceSearchQuery, setResourceSearchQuery] = useState('');
-  const filteredResourceOptions = options.filter(option => matchesResourceSelectorSearch(resourceSearchQuery, [
-    option.displayName,
-    option.resourceCode,
-    option.resourceType,
-    option.vendorCode,
-    option.modalityCode,
-    option.apiEndpointCode,
-    option.catalogKey,
-    option.model,
-    option.providerNativeModel,
-    option.status,
-  ]));
-  const toggleCode = (code: string) => {
-    onChange(toggleSelectionCode(selectedCodes, code, selectionMode));
-  };
-
-  return (
-    <div className="fixed inset-0 z-[70] flex items-center justify-center bg-slate-950/55 p-4 backdrop-blur-sm">
-      <div className="flex h-[76vh] max-h-[76vh] w-[88vw] max-w-6xl flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl dark:border-white/10 dark:bg-[#1a1a1a]">
-        <SelectorHeader
-          title={t('admin.group.resourceAccess.resourceSelectorTitle')}
-          onClose={onClose}
-        />
-        <div className="shrink-0 border-b border-slate-200 px-5 py-4 dark:border-white/10">
-          <div className="relative">
-            <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
-            <input
-              data-admin-group-resource-selector-search="true"
-              type="search"
-              value={resourceSearchQuery}
-              onChange={event => setResourceSearchQuery(event.currentTarget.value)}
-              aria-label={t('admin.group.resourceAccess.search.resourcesPlaceholder')}
-              placeholder={t('admin.group.resourceAccess.search.resourcesPlaceholder')}
-              className="h-10 w-full rounded-lg border border-slate-200 bg-slate-50 pl-10 pr-3 text-sm text-slate-900 outline-none transition-colors placeholder:text-slate-400 focus:border-emerald-500 focus:bg-white dark:border-white/10 dark:bg-[#121212] dark:text-white dark:focus:border-emerald-500"
-            />
-          </div>
-        </div>
-        <div className="min-h-0 flex-1 overflow-auto">
-          {loading ? (
-            <SelectorState text={t('admin.group.resourceAccess.loading')} />
-          ) : options.length === 0 ? (
-            <SelectorState text={t('admin.group.resourceAccess.emptyResources')} />
-          ) : filteredResourceOptions.length === 0 ? (
-            <SelectorState text={t('admin.group.resourceAccess.emptyResourcesSearch')} />
-          ) : (
-            <table className="w-full min-w-[860px] text-left text-sm text-slate-600 dark:text-slate-400">
-              <thead className="sticky top-0 z-10 border-b border-slate-200 bg-slate-50 text-xs font-semibold text-slate-500 dark:border-white/10 dark:bg-[#121212] dark:text-slate-400">
-                <tr>
-                  <th className="w-12 px-5 py-3"></th>
-                  <th className="px-5 py-3">{t('admin.group.resourceAccess.columns.resource')}</th>
-                  <th className="px-5 py-3">{t('admin.group.resourceAccess.columns.kind')}</th>
-                  <th className="px-5 py-3">{t('admin.group.resourceAccess.columns.vendor')}</th>
-                  <th className="px-5 py-3">{t('admin.group.resourceAccess.columns.status')}</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-200 dark:divide-white/5">
-                {filteredResourceOptions.map(option => (
-                  <tr key={option.resourceCode} className="hover:bg-slate-50 dark:hover:bg-white/5">
-                    <td className="px-5 py-3">
-                      <input
-                        type={selectionMode === 'multiple' ? 'checkbox' : 'radio'}
-                        checked={selected.has(option.resourceCode)}
-                        onChange={() => toggleCode(option.resourceCode)}
-                        className="h-4 w-4 rounded border-slate-300 text-emerald-600 focus:ring-emerald-500"
-                      />
-                    </td>
-                    <td className="px-5 py-3">
-                      <div className="font-medium text-slate-900 dark:text-white">{option.displayName}</div>
-                      <div className="font-mono text-xs text-slate-500">{option.resourceCode}</div>
-                    </td>
-                    <td className="px-5 py-3">{option.resourceType}</td>
-                    <td className="px-5 py-3">{option.vendorCode ?? '-'}</td>
                     <td className="px-5 py-3">{option.status}</td>
                   </tr>
                 ))}

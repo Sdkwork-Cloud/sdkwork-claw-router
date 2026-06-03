@@ -8,7 +8,6 @@ SELECT
     model,
     display_name,
     vendor_code,
-    'global' AS region_code,
     COALESCE((
         SELECT jsonb_agg(DISTINCT capability_code ORDER BY capability_code)::text
         FROM (
@@ -66,7 +65,8 @@ SELECT
 FROM ai_model m
 WHERE deleted_at IS NULL
   AND status = 1
-  AND COALESCE(shelf_state, 1) <> 3
+  AND COALESCE(release_stage, 1) IN (1, 2)
+  AND COALESCE(shelf_state, 1) = 1
   AND COALESCE(routing_state, 1) = 1
   AND ($1 IS NULL OR vendor_code = $1)
 ORDER BY rank_score DESC, display_name ASC, id ASC
@@ -211,7 +211,6 @@ SELECT
     model,
     display_name,
     vendor_code,
-    'global' AS region_code,
     COALESCE((
         SELECT jsonb_agg(DISTINCT capability_code ORDER BY capability_code)::text
         FROM (
@@ -269,7 +268,8 @@ SELECT
 FROM ai_model m
 WHERE deleted_at IS NULL
   AND status = 1
-  AND COALESCE(shelf_state, 1) <> 3
+  AND COALESCE(release_stage, 1) IN (1, 2)
+  AND COALESCE(shelf_state, 1) = 1
   AND COALESCE(routing_state, 1) = 1
   AND m.catalog_key = $1
 LIMIT 1

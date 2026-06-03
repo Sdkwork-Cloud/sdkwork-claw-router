@@ -16,6 +16,7 @@ import com.sdkwork.clawrouter.backend.api.PlatformApi
 import com.sdkwork.clawrouter.backend.api.SystemApi
 import com.sdkwork.clawrouter.backend.api.PromptsApi
 import com.sdkwork.clawrouter.backend.api.ServiceProvidersApi
+import com.sdkwork.clawrouter.backend.api.SitesApi
 import com.sdkwork.clawrouter.backend.api.StorageApi
 
 class SdkworkBackendClient {
@@ -35,6 +36,7 @@ class SdkworkBackendClient {
     lateinit var system: SystemApi
     lateinit var prompts: PromptsApi
     lateinit var serviceProviders: ServiceProvidersApi
+    lateinit var sites: SitesApi
     lateinit var storage: StorageApi
 
     constructor(baseUrl: String) {
@@ -53,6 +55,7 @@ class SdkworkBackendClient {
         system = SystemApi(httpClient)
         prompts = PromptsApi(httpClient)
         serviceProviders = ServiceProvidersApi(httpClient)
+        sites = SitesApi(httpClient)
         storage = StorageApi(httpClient)
     }
 
@@ -72,6 +75,7 @@ class SdkworkBackendClient {
         system = SystemApi(httpClient)
         prompts = PromptsApi(httpClient)
         serviceProviders = ServiceProvidersApi(httpClient)
+        sites = SitesApi(httpClient)
         storage = StorageApi(httpClient)
     }
 

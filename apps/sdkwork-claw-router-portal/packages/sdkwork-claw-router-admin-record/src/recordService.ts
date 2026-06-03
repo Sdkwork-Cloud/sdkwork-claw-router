@@ -31,6 +31,7 @@ export interface LogRecord {
   model: string;
   providerNativeModel: string;
   requestedModelCatalogKey: string;
+  regionCode: string;
   status: LogRecordStatus;
   httpStatus: number;
   httpMethod: LogHttpMethod;
@@ -122,6 +123,7 @@ function normalizeLogRecord(value: unknown): LogRecord {
     model,
     providerNativeModel: readOptionalString(item, 'providerNativeModel') || model,
     requestedModelCatalogKey: readOptionalString(item, 'requestedModelCatalogKey'),
+    regionCode: readOptionalString(item, 'regionCode'),
     status: readOptionalLogRecordStatus(item, 'status')
       ?? ((httpStatus >= 400 || errorCode || errorType || errorMessage) ? 'error' : 'success'),
     httpStatus,

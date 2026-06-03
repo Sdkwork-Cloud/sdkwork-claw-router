@@ -45,6 +45,11 @@ public class AiChannelRecord {
     private Map<String, String> retryPolicy;
     private String riskLevel;
     private String rpmLimit;
+    private String siteChannelRole;
+    private String siteCode;
+    private String siteId;
+    private String siteServiceCode;
+    private String siteServiceId;
     private String status;
     private String tenantId;
     private Integer timeoutMs;
@@ -389,6 +394,46 @@ public class AiChannelRecord {
 
     public void setRpmLimit(String rpmLimit) {
         this.rpmLimit = rpmLimit;
+    }
+
+    public String getSiteChannelRole() {
+        return this.siteChannelRole;
+    }
+
+    public void setSiteChannelRole(String siteChannelRole) {
+        this.siteChannelRole = siteChannelRole;
+    }
+
+    public String getSiteCode() {
+        return this.siteCode;
+    }
+
+    public void setSiteCode(String siteCode) {
+        this.siteCode = siteCode;
+    }
+
+    public String getSiteId() {
+        return this.siteId;
+    }
+
+    public void setSiteId(String siteId) {
+        this.siteId = siteId;
+    }
+
+    public String getSiteServiceCode() {
+        return this.siteServiceCode;
+    }
+
+    public void setSiteServiceCode(String siteServiceCode) {
+        this.siteServiceCode = siteServiceCode;
+    }
+
+    public String getSiteServiceId() {
+        return this.siteServiceId;
+    }
+
+    public void setSiteServiceId(String siteServiceId) {
+        this.siteServiceId = siteServiceId;
     }
 
     public String getStatus() {

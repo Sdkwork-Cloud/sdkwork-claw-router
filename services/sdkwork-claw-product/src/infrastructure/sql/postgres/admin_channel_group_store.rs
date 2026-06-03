@@ -809,8 +809,7 @@ async fn replace_group_resource_access(
     let normalized_resource_group_codes = ordered_unique_codes(resource_group_codes);
     let normalized_resource_codes = ordered_unique_codes(resource_codes);
 
-    for (index, requested_resource_group_code) in
-        normalized_resource_group_codes.iter().enumerate()
+    for (index, requested_resource_group_code) in normalized_resource_group_codes.iter().enumerate()
     {
         let resource_group_id = resolve_resource_group_id(
             tx,
@@ -876,7 +875,9 @@ async fn replace_group_resource_access(
         )
         .await?
         .ok_or_else(|| {
-            DomainError::not_found(format!("AI resource was not found: {requested_resource_code}"))
+            DomainError::not_found(format!(
+                "AI resource was not found: {requested_resource_code}"
+            ))
         })?;
         upsert_group_resource_access(
             tx,
@@ -943,7 +944,9 @@ async fn resolve_resource_group_id(
     .fetch_optional(&mut **tx)
     .await
     .map_err(|error| store_error("failed to resolve channel group resource group", error))?;
-    Ok(row.as_ref().and_then(|row| optional_integer_cell(row, "id")))
+    Ok(row
+        .as_ref()
+        .and_then(|row| optional_integer_cell(row, "id")))
 }
 
 async fn resolve_resource_id(
@@ -977,7 +980,9 @@ async fn resolve_resource_id(
     .fetch_optional(&mut **tx)
     .await
     .map_err(|error| store_error("failed to resolve channel group resource", error))?;
-    Ok(row.as_ref().and_then(|row| optional_integer_cell(row, "id")))
+    Ok(row
+        .as_ref()
+        .and_then(|row| optional_integer_cell(row, "id")))
 }
 
 #[allow(clippy::too_many_arguments)]
@@ -1349,10 +1354,7 @@ fn relationship_metadata_for_group(
         serde_json::Value::String(source.to_owned()),
     );
     if group_status == 0 && requested_status == 1 {
-        metadata.insert(
-            "disabledByParent".to_owned(),
-            serde_json::Value::Bool(true),
-        );
+        metadata.insert("disabledByParent".to_owned(), serde_json::Value::Bool(true));
     }
     serde_json::Value::Object(metadata).to_string()
 }

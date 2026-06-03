@@ -1,19 +1,13 @@
 use serde::{Deserialize, Serialize};
 
+use crate::models::{AdminAiModelRegionPrice};
+
 /// Persisted ai model snapshot returned by the backend.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct AdminAiModelItem {
     /// Api format field on admin ai model item.
     #[serde(rename = "apiFormat")]
     pub api_format: String,
-
-    /// Cache read price field on admin ai model item.
-    #[serde(rename = "cacheReadPrice")]
-    pub cache_read_price: String,
-
-    /// Cache write price field on admin ai model item.
-    #[serde(rename = "cacheWritePrice")]
-    pub cache_write_price: String,
 
     /// Calls field on admin ai model item.
     pub calls: String,
@@ -60,13 +54,9 @@ pub struct AdminAiModelItem {
     #[serde(rename = "outputModalities")]
     pub output_modalities: Vec<String>,
 
-    /// Price in field on admin ai model item.
-    #[serde(rename = "priceIn")]
-    pub price_in: String,
-
-    /// Price out field on admin ai model item.
-    #[serde(rename = "priceOut")]
-    pub price_out: String,
+    /// Region prices field on admin ai model item.
+    #[serde(rename = "regionPrices")]
+    pub region_prices: Vec<AdminAiModelRegionPrice>,
 
     /// Release stage field on admin ai model item.
     #[serde(rename = "releaseStage")]

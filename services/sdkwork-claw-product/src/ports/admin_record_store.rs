@@ -50,6 +50,7 @@ pub struct AdminRecordLogItem {
     pub model: String,
     pub provider_native_model: String,
     pub requested_model_catalog_key: String,
+    pub region_code: String,
     pub status: String,
     pub http_status: i64,
     pub http_method: String,

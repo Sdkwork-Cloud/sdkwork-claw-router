@@ -23,6 +23,7 @@ namespace Sdkwork.ClawRouter.Backend
         public SystemApi System { get; }
         public PromptsApi Prompts { get; }
         public ServiceProvidersApi ServiceProviders { get; }
+        public SitesApi Sites { get; }
         public StorageApi Storage { get; }
 
         public SdkworkBackendClient(string baseUrl)
@@ -42,6 +43,7 @@ namespace Sdkwork.ClawRouter.Backend
             System = new SystemApi(_httpClient);
             Prompts = new PromptsApi(_httpClient);
             ServiceProviders = new ServiceProvidersApi(_httpClient);
+            Sites = new SitesApi(_httpClient);
             Storage = new StorageApi(_httpClient);
         }
 
@@ -62,6 +64,7 @@ namespace Sdkwork.ClawRouter.Backend
             System = new SystemApi(_httpClient);
             Prompts = new PromptsApi(_httpClient);
             ServiceProviders = new ServiceProvidersApi(_httpClient);
+            Sites = new SitesApi(_httpClient);
             Storage = new StorageApi(_httpClient);
         }
 

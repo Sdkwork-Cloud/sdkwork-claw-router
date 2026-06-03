@@ -73,6 +73,7 @@ client.set_header("X-Custom-Header", "value");
 - `client.system()` - system API
 - `client.prompts()` - prompts API
 - `client.service_providers()` - service_providers API
+- `client.sites()` - sites API
 - `client.storage()` - storage API
 
 ## Usage Examples
@@ -232,6 +233,17 @@ query.insert("seller_provider_id".to_string(), serde_json::json!("1"));
 query.insert("buyer_provider_id".to_string(), serde_json::json!("1"));
 query.insert("edge_id".to_string(), serde_json::json!("1"));
 let result = client.service_providers().adjustments_list(Some(&query)).await?;
+println!("{result:?}");
+```
+
+### sites
+
+```rust
+use std::collections::HashMap;
+// List sites
+let mut query = HashMap::new();
+query.insert("q".to_string(), serde_json::json!("q"));
+let result = client.sites().site_catalog_list(Some(&query)).await?;
 println!("{result:?}");
 ```
 

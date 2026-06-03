@@ -21,6 +21,7 @@ type SdkworkBackendClient struct {
     System *api.SystemApi
     Prompts *api.PromptsApi
     ServiceProviders *api.ServiceProvidersApi
+    Sites *api.SitesApi
     Storage *api.StorageApi
 }
 
@@ -47,6 +48,7 @@ func NewSdkworkBackendClientWithConfig(config sdkhttp.Config) *SdkworkBackendCli
         System: api.NewSystemApi(client),
         Prompts: api.NewPromptsApi(client),
         ServiceProviders: api.NewServiceProvidersApi(client),
+        Sites: api.NewSitesApi(client),
         Storage: api.NewStorageApi(client),
     }
 }

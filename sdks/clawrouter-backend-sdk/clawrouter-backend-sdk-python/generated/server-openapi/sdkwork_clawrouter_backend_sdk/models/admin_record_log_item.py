@@ -27,6 +27,7 @@ class AdminRecordLogItem:
     path: str
     provider_native_model: str
     reasoning_effort: str
+    region_code: str
     request_id: str
     requested_model_catalog_key: str
     status: str

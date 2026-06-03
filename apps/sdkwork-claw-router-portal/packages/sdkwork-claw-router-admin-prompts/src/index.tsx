@@ -263,7 +263,7 @@ export function PromptsAdmin() {
   return (
     <div className="flex h-full min-h-0 w-full min-w-0 flex-col gap-2 overflow-hidden" data-admin-prompts="prompt-management">
       <StatusMessages messages={[promptLoadError, categoryLoadError, versionLoadError, bindingLoadError]} />
-      <div className="grid min-h-0 flex-1 gap-3 lg:grid-cols-[280px_minmax(0,1fr)]">
+      <div className="grid min-h-0 min-w-0 flex-1 gap-3 overflow-hidden lg:grid-cols-[280px_minmax(0,1fr)]">
         <AdminCategoryManagementSidebar
           categories={categoryOptions}
           dataAttribute="admin-prompts-category-management"
@@ -277,7 +277,10 @@ export function PromptsAdmin() {
           selectedCategoryId={selectedCategoryId}
           usageCountByCategoryId={categoryUsage}
         />
-        <div className={`grid min-h-0 min-w-0 gap-2 ${scopedPromptId ? 'xl:grid-cols-[minmax(0,1fr)_420px]' : ''}`}>
+        <div
+          className={`grid min-h-0 min-w-0 gap-2 overflow-hidden ${scopedPromptId ? 'xl:grid-cols-[minmax(0,1fr)_420px]' : ''}`}
+          data-admin-prompts-content
+        >
           <AdminResourceCenter<PromptAdminSectionId, PromptAdminGroup>
             emptyDescription={t('admin.prompts.empty.desc', 'No prompt records match the current filters.')}
             emptyTitle={t('admin.prompts.empty.title', 'No prompt records')}

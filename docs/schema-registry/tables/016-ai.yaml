@@ -57,6 +57,8 @@ tables:
     vendor_type: enum_int32
     model_families: json
     capabilities: json
+    supported_protocols: json
+    client_api_compatibility: json
     open_source: bool
     sort_order: int32
   indexes:
@@ -352,7 +354,7 @@ tables:
   columns:
     model_id: int64
     catalog_key: string(256)
-    model: string(128)
+    model: string(256)
     vendor_code: string(64)
     modality_id: int64
     modality_code: string(64)
@@ -407,7 +409,7 @@ tables:
   columns:
     model_id: int64
     catalog_key: string(256)
-    model: string(128)
+    model: string(256)
     vendor_code: string(64)
     api_endpoint_id: int64
     endpoint_code: string(128)
@@ -481,9 +483,9 @@ tables:
     api_endpoint_id: int64
     api_code: string(128)
     model_id: int64
-    model_code: string(128)
+    model_code: string(256)
     catalog_key: string(256)
-    model: string(128)
+    model: string(256)
     provider_native_model: string(256)
     resource_schema: json
     metadata_schema: json

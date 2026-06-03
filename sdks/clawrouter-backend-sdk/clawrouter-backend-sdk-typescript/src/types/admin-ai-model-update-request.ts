@@ -4,10 +4,6 @@ import type { AdminAiModelRegionPrice } from './admin-ai-model-region-price';
 export interface AdminAiModelUpdateRequest {
   /** Api format field on admin ai model update request. */
   apiFormat?: string | null;
-  /** Optional official reference cache-read unit price in USD. Empty string clears the cache-read price. */
-  cacheReadPrice?: string;
-  /** Optional official reference cache-write unit price in USD. Empty string clears the cache-write price. */
-  cacheWritePrice?: string;
   /** Capability intro field on admin ai model update request. */
   capabilityIntro?: string | null;
   /** Optional positive token window, accepting plain integers or K/M suffixes. */
@@ -28,10 +24,6 @@ export interface AdminAiModelUpdateRequest {
   model?: string;
   /** Output modalities field on admin ai model update request. */
   outputModalities?: string[];
-  /** Optional official reference input unit price in USD. */
-  priceIn?: string;
-  /** Optional official reference output unit price in USD. */
-  priceOut?: string;
   /** Optional official reference prices by region. */
   regionPrices?: AdminAiModelRegionPrice[];
   /** Release stage field on admin ai model update request. */

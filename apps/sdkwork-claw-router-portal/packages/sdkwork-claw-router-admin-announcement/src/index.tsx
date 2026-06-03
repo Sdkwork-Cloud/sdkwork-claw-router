@@ -221,7 +221,8 @@ export function AnnouncementAdmin() {
 
       <AdminTableShell
         data-admin-announcement-table-card
-        className="rounded-xl dark:bg-[#1a1a1a]"
+        className="flex-1 min-h-0 rounded-xl dark:bg-[#1a1a1a]"
+        viewportClassName="min-h-0 flex-1"
         viewportProps={{ 'data-admin-announcement-table-viewport': true }}
       >
           <table className="w-full text-left text-sm text-slate-600 dark:text-slate-400">

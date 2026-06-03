@@ -148,7 +148,8 @@ function NodesTab() {
       {/* Node List */}
       <AdminTableShell
         data-admin-monitor-table-card
-        className="rounded-xl dark:bg-[#1a1a1a]"
+        className="flex-1 min-h-0 rounded-xl dark:bg-[#1a1a1a]"
+        viewportClassName="min-h-0 flex-1"
         header={(
           <div className="p-4 border-b border-slate-200 dark:border-white/10 flex items-center justify-between">
           <h3 className="font-medium text-slate-900 dark:text-white">Active Nodes</h3>
@@ -331,7 +332,8 @@ function AlertsTab() {
       {/* Alert List */}
       <AdminTableShell
         data-admin-monitor-alert-table-card
-        className="rounded-xl dark:bg-[#1a1a1a]"
+        className="flex-1 min-h-0 rounded-xl dark:bg-[#1a1a1a]"
+        viewportClassName="min-h-0 flex-1"
         header={(
           <div className="p-4 border-b border-slate-200 dark:border-white/10 flex flex-wrap items-center justify-between gap-4">
           <h3 className="font-medium text-slate-900 dark:text-white">Recent Alerts</h3>

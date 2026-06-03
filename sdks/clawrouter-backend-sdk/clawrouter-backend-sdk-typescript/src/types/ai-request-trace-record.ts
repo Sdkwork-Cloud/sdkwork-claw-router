@@ -74,6 +74,8 @@ export interface AiRequestTraceRecord {
   provider_native_model?: string;
   /** Reasoning effort field on ai request trace record. */
   reasoning_effort?: string;
+  /** Region code field on ai request trace record. */
+  region_code?: string;
   /** Request bytes field on ai request trace record. */
   request_bytes?: string;
   /** Request id field on ai request trace record. */

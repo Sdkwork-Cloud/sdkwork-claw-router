@@ -85,6 +85,49 @@ class CommerceApi(private val client: HttpClient) {
         return client.convertValue(raw, object : TypeReference<CatalogCategoriesUpdateResult>() {})
     }
 
+    /** List category attribute bindings */
+    suspend fun catalogCategoryAttributesList(categoryId: String? = null, attributeId: String? = null, status: String? = null, page: Int? = null, pageSize: Int? = null): CatalogCategoryAttributesListResult? {
+        val query = buildQueryString(listOf(
+            QueryParameterSpec("category_id", categoryId, "form", true, false, null),
+            QueryParameterSpec("attribute_id", attributeId, "form", true, false, null),
+            QueryParameterSpec("status", status, "form", true, false, null),
+            QueryParameterSpec("page", page, "form", true, false, null),
+            QueryParameterSpec("page_size", pageSize, "form", true, false, null)
+        ))
+        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/catalog/category_attributes"), query))
+        return client.convertValue(raw, object : TypeReference<CatalogCategoryAttributesListResult>() {})
+    }
+
+    /** Create category attribute binding */
+    suspend fun catalogCategoryAttributesCreate(body: CommerceProductCategoryAttributeMutationRequest, idempotencyKey: String): CatalogCategoryAttributesCreateResult? {
+        val requestHeaders = buildRequestHeaders(
+            mapOf(
+                "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
+            ),
+            emptyMap()
+        )
+        val raw = client.post(ApiPaths.backendPath("/catalog/category_attributes"), body, null, requestHeaders, "application/json")
+        return client.convertValue(raw, object : TypeReference<CatalogCategoryAttributesCreateResult>() {})
+    }
+
+    /** Delete category attribute binding */
+    suspend fun catalogCategoryAttributesDelete(bindingId: String): CatalogCategoryAttributesDeleteResult? {
+        val raw = client.delete(ApiPaths.backendPath("/catalog/category_attributes/${serializePathParameter(bindingId, PathParameterSpec("bindingId", "simple", false))}"))
+        return client.convertValue(raw, object : TypeReference<CatalogCategoryAttributesDeleteResult>() {})
+    }
+
+    /** Update category attribute binding */
+    suspend fun catalogCategoryAttributesUpdate(bindingId: String, body: CommerceProductCategoryAttributeMutationRequest, idempotencyKey: String): CatalogCategoryAttributesUpdateResult? {
+        val requestHeaders = buildRequestHeaders(
+            mapOf(
+                "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
+            ),
+            emptyMap()
+        )
+        val raw = client.patch(ApiPaths.backendPath("/catalog/category_attributes/${serializePathParameter(bindingId, PathParameterSpec("bindingId", "simple", false))}"), body, null, requestHeaders, "application/json")
+        return client.convertValue(raw, object : TypeReference<CatalogCategoryAttributesUpdateResult>() {})
+    }
+
     /** Initialize admin category seed datasets */
     suspend fun catalogCategorySeedsCreate(body: CommerceCategorySeedInitializeRequest, idempotencyKey: String): CatalogCategorySeedsCreateResult? {
         val requestHeaders = buildRequestHeaders(

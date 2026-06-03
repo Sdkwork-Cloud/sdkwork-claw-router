@@ -32,7 +32,6 @@ AI_CHANNEL_ROUTE_CONTRACT_PATHS = (
     ROOT / "docs" / "schema-registry" / "frontend-field-contracts" / "operations" / "app-iam.yaml",
     ROOT / "docs" / "schema-registry" / "frontend-field-contracts" / "operations" / "backend-ai.yaml",
     ROOT / "docs" / "schema-registry" / "frontend-field-contracts" / "operations" / "backend-integration.yaml",
-    ROOT / "docs" / "schema-registry" / "frontend-field-contracts" / "operations" / "backend-router.yaml",
     ROOT / "docs" / "schema-registry" / "frontend-route-classification.yaml",
     ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "queries" / "snapshot.rs",
     ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "queries" / "lookup.rs",
@@ -69,6 +68,24 @@ RUNTIME_MODEL_IDENTITY_FIXTURE_PATHS = (
     ROOT / "services" / "sdkwork-claw-product" / "tests" / "openai_responses_adapter_api.rs",
     ROOT / "services" / "sdkwork-claw-product" / "tests" / "sqlite_admin_channel_group_store.rs",
     ROOT / "services" / "sdkwork-claw-product" / "tests" / "sqlite_openai_invocation_telemetry.rs",
+    ROOT / "services" / "sdkwork-claw-gateway" / "src" / "runtime.rs",
+    ROOT / "services" / "sdkwork-claw-gateway" / "src" / "route_scoped_openai_passthrough.rs",
+)
+PORTAL_RUNTIME_MODEL_IDENTITY_FIXTURE_PATHS = (
+    ROOT / "apps" / "sdkwork-claw-router-portal" / "admin-channel-runtime.test.ts",
+    ROOT / "apps" / "sdkwork-claw-router-portal" / "admin-group-runtime.test.ts",
+    ROOT / "apps" / "sdkwork-claw-router-portal" / "admin-operations-runtime.test.ts",
+    ROOT / "apps" / "sdkwork-claw-router-portal" / "models-runtime.test.ts",
+    ROOT / "apps" / "sdkwork-claw-router-portal" / "playground-chat-runtime.test.ts",
+    ROOT / "apps" / "sdkwork-claw-router-portal" / "rankings-runtime.test.ts",
+    ROOT / "apps" / "sdkwork-claw-router-portal" / "admin-model-runtime.test.ts",
+    ROOT / "apps" / "sdkwork-claw-router-portal" / "console-app-runtime.test.ts",
+)
+API_GATEWAY_MODEL_IDENTITY_FIXTURE_PATHS = (
+    ROOT / "services" / "sdkwork-claw-admin-api" / "tests" / "database_config_router.rs",
+    ROOT / "services" / "sdkwork-claw-app-api" / "tests" / "api_key_route.rs",
+    ROOT / "services" / "sdkwork-claw-gateway" / "tests" / "provider_passthrough_route.rs",
+    ROOT / "services" / "sdkwork-claw-gateway" / "tests" / "edge_server_sqlite_smoke.rs",
 )
 AI_CHANNEL_ROUTE_RUNTIME_ROOTS = (
     ROOT / "services" / "sdkwork-claw-product" / "src",
@@ -752,6 +769,28 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
             for legacy in ("ai_gateway_model", "gateway_model", "GatewayModel", "plus_ai_model"):
                 self.assertNotIn(legacy, text, f"{legacy} leaked into {path}")
 
+    def test_project_docs_do_not_show_regional_catalog_key_query_examples(self) -> None:
+        query_api_pattern = re.compile(
+            r"\b(?:findModel|getModelPrices|getBestReferencePrice|find_model|get_model_prices|model_prices)"
+            r"\([^;\n]*[\"'](?:[a-z0-9_-]+)/(?:global|cn|cn-north-1|us-east-1|eastus)/",
+        )
+        offenders = []
+        for path in (ROOT / "docs").rglob("*.md"):
+            if not path.is_file():
+                continue
+            text = read_text(path)
+            for match in query_api_pattern.finditer(text):
+                line_no = text.count("\n", 0, match.start()) + 1
+                line = text.splitlines()[line_no - 1].strip()
+                offenders.append(f"{path.relative_to(ROOT)}:{line_no}: {line}")
+
+        self.assertEqual(
+            [],
+            offenders,
+            "SDK query examples must use vendor/model catalog keys. "
+            "Region belongs to deployment endpoint, pricing, and ranking filters.",
+        )
+
     def test_billing_meter_domain_types_cover_multimodal_industry_pricing(self) -> None:
         sources = {
             "java": read_text(JAVA_BILLING_METER_PATH),
@@ -972,6 +1011,31 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
             "config_version",
         ):
             self.assertIn(column, route_candidate.get("columns", {}))
+        route_candidate_indexes = {
+            item["name"]: item.get("columns", [])
+            for item in route_candidate.get("indexes", [])
+            if isinstance(item, dict)
+        }
+        self.assertEqual(
+            [
+                "tenant_id",
+                "organization_id",
+                "channel_group_id",
+                "channel_id",
+                "endpoint_id",
+                "api_code",
+                "catalog_key",
+                "region_code",
+            ],
+            route_candidate_indexes["uk_ai_route_candidate_scope"],
+            "Route candidates must allow the same channel/model/API to publish independent regional deployments.",
+        )
+        for index_name in ("idx_ai_route_candidate_status", "idx_ai_route_candidate_model"):
+            self.assertIn(
+                "region_code",
+                route_candidate_indexes[index_name],
+                f"{index_name} must keep region_code indexable as deployment/routing context.",
+            )
 
         sdkwork_models_root = ROOT / "data" / "sdkwork-models" / "models"
         self.assertTrue((sdkwork_models_root / "minimax" / "cn" / "vendor.json").is_file())
@@ -1044,14 +1108,425 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
             importer_source,
             "Catalog import must not encode region into ai_model_pricing or ai_model_rank_snapshot catalog_key.",
         )
+        self.assertNotIn(
+            "{vendor_code}_direct_{region_code}",
+            importer_source,
+            "Provider identity must not encode region; ai_model_pricing.region_code is the regional price dimension.",
+        )
+        self.assertNotRegex(
+            importer_source,
+            r"_direct_(?:cn|global|us|eu|apac)",
+            "Imported provider_code values must use stable vendor/provider identity; region belongs to region_code.",
+        )
+
+    def test_model_identity_columns_support_nested_provider_model_ids(self) -> None:
+        registry = load_registry()
+        tables = {item["table"]: item for item in registry.get("tables", []) if isinstance(item, dict)}
+        expected_model_identity_columns = {
+            "ai_model": ("model", "replacement_model"),
+            "ai_model_capability": ("model",),
+            "ai_model_modality": ("model",),
+            "ai_model_api_endpoint": ("model", "provider_native_model"),
+            "ai_channel_model": ("model", "provider_model", "provider_native_model"),
+            "ai_site_model": ("model_code", "provider_model", "provider_native_model"),
+            "ai_model_pricing": ("model", "provider_model"),
+            "ai_pricing_rule": ("model", "provider_model"),
+            "ai_model_rank_snapshot": ("model",),
+            "ai_routing_decision_log": ("requested_model", "resolved_model"),
+            "ai_request_trace": ("requested_model", "provider_model", "provider_native_model"),
+            "ai_usage_fact": ("model", "provider_native_model"),
+            "ai_resource": ("model", "provider_native_model"),
+            "ai_route_candidate": ("model_code",),
+        }
+        for table_name, column_names in expected_model_identity_columns.items():
+            table = tables[table_name]
+            columns = table.get("columns", {})
+            for column_name in column_names:
+                with self.subTest(table=table_name, column=column_name):
+                    self.assertEqual(
+                        "string(256)",
+                        columns.get(column_name),
+                        "Model identity fields must allow OpenRouter-style nested provider model ids "
+                        "and long provider-native names; display labels remain separately bounded.",
+                    )
+
+    def test_gateway_usage_does_not_recreate_regional_requested_catalog_key_compatibility(self) -> None:
+        source = read_text(ROOT / "services" / "sdkwork-claw-gateway" / "src" / "passthrough.rs")
+        domain_source = read_text(ROOT / "services" / "sdkwork-claw-product" / "src" / "domain" / "catalog.rs")
+        self.assertNotIn(
+            "canonical_adapter_usage_catalog_key",
+            source,
+            "Gateway usage must reject regional requested catalog keys instead of normalizing vendor/region/model.",
+        )
+        self.assertNotIn(
+            "known_region_segment",
+            source,
+            "Gateway usage must use the shared model region standard, not a private compatibility list.",
+        )
+        self.assertNotIn(
+            "\"{}/global/{}\"",
+            source,
+            "Gateway usage must not synthesize vendor/global/model requested catalog keys.",
+        )
+        self.assertIn(
+            "ensure_canonical_model_catalog_key",
+            source,
+            "Gateway usage must delegate canonical catalog identity validation to the shared domain standard.",
+        )
+        self.assertIn(
+            '"{field_name} must use vendorCode/modelId; region belongs to region_code: {value}"',
+            domain_source,
+            "Gateway usage must fail loudly when adapter usage reports a regional catalog key.",
+        )
+        self.assertIn(
+            'ensure_canonical_model_catalog_key(catalog_key, "requestedModelCatalogKey")',
+            source,
+            "Gateway usage must pass the adapter field name into the shared domain validator.",
+        )
+        self.assertIn(
+            "let requested_model_catalog_key = catalog_key.clone();",
+            source,
+            "Provider-native direct usage must keep requested catalog identity canonical and store region separately.",
+        )
+
+    def test_regional_catalog_key_guards_use_shared_domain_region_standard(self) -> None:
+        direct_region_guard_sources = [
+            ROOT / "services" / "sdkwork-claw-app-api" / "tests" / "model_rankings_route.rs",
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "domain" / "catalog.rs",
+        ]
+        for path in direct_region_guard_sources:
+            source = read_text(path)
+            with self.subTest(path=path.relative_to(ROOT).as_posix()):
+                self.assertNotIn(
+                    "known_region_segment",
+                    source,
+                    "Regional catalog-key guards must use the shared domain region standard, "
+                    "not a private compatibility list.",
+                )
+                self.assertIn(
+                    "is_model_region_segment",
+                    source,
+                    "Regional catalog-key guards must reject region segments through the shared domain standard.",
+                )
+        passthrough_source = read_text(ROOT / "services" / "sdkwork-claw-gateway" / "src" / "passthrough.rs")
+        self.assertIn(
+            "ensure_canonical_model_catalog_key",
+            passthrough_source,
+            "Gateway guards must reuse the shared canonical catalog key standard instead of duplicating region parsing.",
+        )
+
+    def test_persistence_catalog_key_parsers_reuse_shared_identity_standard(self) -> None:
+        parser_sources = [
+            ROOT
+            / "services"
+            / "sdkwork-claw-product"
+            / "src"
+            / "infrastructure"
+            / "sql"
+            / "sqlite"
+            / "admin_channel_store.rs",
+            ROOT
+            / "services"
+            / "sdkwork-claw-product"
+            / "src"
+            / "infrastructure"
+            / "sql"
+            / "postgres"
+            / "admin_channel_store.rs",
+            ROOT
+            / "services"
+            / "sdkwork-claw-product"
+            / "src"
+            / "infrastructure"
+            / "sql"
+            / "sqlite"
+            / "app_routing_channel_command_store.rs",
+            ROOT
+            / "services"
+            / "sdkwork-claw-product"
+            / "src"
+            / "infrastructure"
+            / "sql"
+            / "postgres"
+            / "app_routing_channel_command_store.rs",
+            ROOT
+            / "services"
+            / "sdkwork-claw-product"
+            / "src"
+            / "infrastructure"
+            / "sql"
+            / "rows.rs",
+            ROOT
+            / "services"
+            / "sdkwork-claw-product"
+            / "src"
+            / "infrastructure"
+            / "sql"
+            / "sql_admin_analytics.rs",
+        ]
+        for path in parser_sources:
+            source = read_text(path)
+            with self.subTest(path=path.relative_to(ROOT).as_posix()):
+                self.assertNotIn(
+                    "known_region_segment",
+                    source,
+                    "Persistence and analytics code must not carry private region compatibility lists.",
+                )
+                self.assertNotIn(
+                    "is_model_region_segment",
+                    source,
+                    "Persistence and analytics code must validate catalog identity through the shared parser.",
+                )
+                self.assertRegex(
+                    source,
+                    r"parse_model_catalog_identity|ensure_canonical_model_catalog_key",
+                    "Persistence and analytics catalog-key handling must reuse the shared domain identity standard.",
+                )
+
+    def test_portal_catalog_key_parsers_reuse_shared_identity_standard(self) -> None:
+        parser_sources = [
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-admin-channel"
+            / "src"
+            / "channelService.ts",
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-models"
+            / "src"
+            / "runtimeModelCatalog.ts",
+        ]
+        for path in parser_sources:
+            source = read_text(path)
+            with self.subTest(path=path.relative_to(ROOT).as_posix()):
+                self.assertNotIn(
+                    "function isKnownRegionSegment",
+                    source,
+                    "Portal feature packages must not carry private catalog-region lists.",
+                )
+                self.assertNotIn(
+                    "catalogKeyParts",
+                    source,
+                    "Portal feature packages must reuse the shared catalog identity parser instead of local split helpers.",
+                )
+                self.assertRegex(
+                    source,
+                    r"parseModelCatalogIdentity|isCanonicalModelCatalogKey|isRegionalModelCatalogKey",
+                    "Portal catalog-key handling must reuse sdkwork-claw-router-commons model catalog identity helpers.",
+                )
+
+        commons_source = read_text(
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-commons"
+            / "src"
+            / "model-catalog-identity.ts"
+        )
+        self.assertIn("export function parseModelCatalogIdentity", commons_source)
+        self.assertIn("export function isModelRegionSegment", commons_source)
+
+    def test_admin_model_commands_accept_nested_provider_model_ids(self) -> None:
+        source = read_text(
+            ROOT
+            / "services"
+            / "sdkwork-claw-product"
+            / "src"
+            / "api"
+            / "admin_model_command.rs"
+        )
+        runtime_test = read_text(
+            ROOT
+            / "services"
+            / "sdkwork-claw-product"
+            / "tests"
+            / "admin_model_command_api.rs"
+        )
+
+        self.assertIn("const MAX_MODEL_ID_LEN: usize = 256;", source)
+        self.assertIn("fn is_model_identity_byte(byte: u8) -> bool", source)
+        for token in ("b'/'", "b'.'", "b':'", "b'-'", "b'_'"):
+            self.assertIn(token, source)
+        self.assertNotIn(
+            "modelId must use ASCII letters, numbers, hyphen, or underscore",
+            source,
+            "Admin model route ids must support nested provider-native model ids such as anthropic/claude.",
+        )
+        self.assertIn("/backend/v3/api/ai/models/anthropic%2Fclaude-3-opus", runtime_test)
+        self.assertIn("update_model:anthropic/claude-3-opus:", runtime_test)
+
+    def test_app_model_reference_prices_are_region_scoped(self) -> None:
+        contract_source = read_text(
+            ROOT
+            / "docs"
+            / "schema-registry"
+            / "frontend-field-contracts"
+            / "operations"
+            / "app-ai.yaml"
+        )
+        runtime_catalog_source = read_text(
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-models"
+            / "src"
+            / "runtimeModelCatalog.ts"
+        )
+        app_model_api_source = read_text(
+            ROOT
+            / "services"
+            / "sdkwork-claw-product"
+            / "src"
+            / "api"
+            / "app_models.rs"
+        )
+
+        contract = yaml.safe_load(contract_source)
+        app_models_operation = next(
+            operation
+            for operation in contract["frontend_operations"]
+            if operation.get("source") == "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-models/src/modelService.ts"
+            and operation.get("operation") == "fetchModels"
+        )
+        item_schema = app_models_operation["response_schema"]["properties"]["items"]["items"]
+        item_properties = item_schema["properties"]
+        reference_price_schema = item_properties["officialReferencePrices"]["items"]
+
+        self.assertNotIn("regionCode", item_schema["required"])
+        self.assertNotIn("regionCode", item_properties)
+        self.assertNotIn("officialReferenceUnitPrice", item_properties)
+        self.assertNotIn("officialReferenceCurrency", item_properties)
+        self.assertIn("regionCode", reference_price_schema["required"])
+        self.assertIn("regionCode", reference_price_schema["properties"])
+        app_model_item_section = app_model_api_source.split(
+            "struct AppModelCatalogItemResponse", 1
+        )[1].split("struct AppModelCatalogReferencePriceResponse", 1)[0]
+        self.assertNotIn("region_code: String", app_model_item_section)
+        self.assertIn("region_code: price.region_code", app_model_api_source)
+        self.assertIn("byRegionAndMeter", runtime_catalog_source)
+        self.assertIn("pricesForDefaultReferenceRegion", runtime_catalog_source)
+        self.assertNotIn("regionCode: item.regionCode", runtime_catalog_source)
+
+    def test_gateway_usage_records_deployment_region_explicitly(self) -> None:
+        registry = load_schema_registry(REGISTRY_PATH)
+        tables = {table["table"]: table for table in registry["tables"]}
+        generated_schema = read_text(GENERATED_SCHEMA_PATH)
+        sqlite_recorder_source = read_text(
+            ROOT
+            / "services"
+            / "sdkwork-claw-product"
+            / "src"
+            / "infrastructure"
+            / "sql"
+            / "sqlite"
+            / "gateway_usage_recorder.rs"
+        )
+        postgres_recorder_source = read_text(
+            ROOT
+            / "services"
+            / "sdkwork-claw-product"
+            / "src"
+            / "infrastructure"
+            / "sql"
+            / "postgres"
+            / "gateway_usage_recorder.rs"
+        )
+        port_source = read_text(
+            ROOT
+            / "services"
+            / "sdkwork-claw-product"
+            / "src"
+            / "ports"
+            / "gateway_usage_recorder.rs"
+        )
+
+        for table_name in ("ai_request_trace", "ai_usage_fact"):
+            with self.subTest(table=table_name):
+                table = tables[table_name]
+                self.assertIn("region_code", table.get("columns", {}))
+                table_sql = create_table_block(generated_schema, table_name)
+                self.assertIn("region_code VARCHAR(64)", table_sql)
+        self.assertIn("pub region_code: String", port_source)
+        for source in (sqlite_recorder_source, postgres_recorder_source):
+            self.assertIn("region_code", source)
+            self.assertIn(".bind(&command.region_code)", source)
+
+    def test_usage_log_read_models_expose_deployment_region(self) -> None:
+        admin_record_contract = yaml.safe_load(
+            read_text(ROOT / "docs" / "schema-registry" / "frontend-field-contracts" / "models" / "admin-record.yaml")
+        )
+        console_usage_contract = yaml.safe_load(
+            read_text(ROOT / "docs" / "schema-registry" / "frontend-field-contracts" / "models" / "console-usage.yaml")
+        )
+        backend_system_contract = yaml.safe_load(
+            read_text(ROOT / "docs" / "schema-registry" / "frontend-field-contracts" / "operations" / "backend-system.yaml")
+        )
+        app_ai_contract = yaml.safe_load(
+            read_text(ROOT / "docs" / "schema-registry" / "frontend-field-contracts" / "operations" / "app-ai.yaml")
+        )
+        backend_openapi = load_generated_openapi(BACKEND_OPENAPI_PATH)
+        app_openapi = load_generated_openapi(APP_OPENAPI_PATH)
+        sources = {
+            "admin_port": read_text(ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "admin_record_store.rs"),
+            "usage_port": read_text(ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "usage_logs_read_store.rs"),
+            "sqlite_admin": read_text(ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "sqlite" / "admin_record_store.rs"),
+            "postgres_admin": read_text(ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "postgres" / "admin_record_store.rs"),
+            "sqlite_usage": read_text(ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "sqlite" / "usage_logs_read_store.rs"),
+            "postgres_usage": read_text(ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "postgres" / "usage_logs_read_store.rs"),
+            "admin_service": read_text(ROOT / "apps" / "sdkwork-claw-router-portal" / "packages" / "sdkwork-claw-router-admin-record" / "src" / "recordService.ts"),
+            "usage_service": read_text(ROOT / "apps" / "sdkwork-claw-router-portal" / "packages" / "sdkwork-claw-router-console-usage" / "src" / "usageService.ts"),
+        }
+
+        for contract in (admin_record_contract, console_usage_contract):
+            model_fields = contract["frontend_models"][0]["fields"]
+            self.assertIn("regionCode", model_fields)
+
+        for operation_contract, schema_name in (
+            (backend_system_contract, "AdminRecordLogItem"),
+            (app_ai_contract, "UsageLogItem"),
+        ):
+            response_items = next(
+                operation["response_schema"]["properties"]["logs"]["items"]
+                for operation in operation_contract["frontend_operations"]
+                if operation["response_schema"]["properties"].get("logs")
+            )
+            self.assertEqual(schema_name, response_items["name"])
+            self.assertIn("regionCode", response_items["required"])
+            self.assertIn("regionCode", response_items["properties"])
+
+        for spec, schema_name in (
+            (backend_openapi, "AdminRecordLogItem"),
+            (app_openapi, "UsageLogItem"),
+        ):
+            schema = spec["components"]["schemas"][schema_name]
+            self.assertIn("regionCode", schema["required"])
+            self.assertIn("regionCode", schema["properties"])
+
+        for name, source in sources.items():
+            with self.subTest(source=name):
+                if name.endswith("_port"):
+                    self.assertIn("pub region_code: String", source)
+                elif name in ("admin_service", "usage_service"):
+                    self.assertIn("regionCode", source)
+                    self.assertIn("readOptionalString(item, 'regionCode')", source)
+                else:
+                    self.assertIn("AS region_code", source)
+                    self.assertIn('string_cell(&row, "region_code")', source)
 
     def test_runtime_model_identity_fixtures_do_not_use_regional_catalog_keys(self) -> None:
-        regional_catalog_key = r"openai/global/(?:gpt-4o-mini|text-embedding-3-small|gpt-4\.1-mini|gpt-5\.5)"
+        regional_catalog_key = r"(?:openai/global/(?:gpt-4o-mini|text-embedding-3-small|gpt-4\.1-mini|gpt-5\.5)|openrouter/global/anthropic/claude-3-opus)"
         runtime_field_patterns = (
             re.compile(rf"catalog_key:\s*\"{regional_catalog_key}\""),
             re.compile(rf"provider_model:\s*\"{regional_catalog_key}\""),
             re.compile(rf"model_scope:\s*vec!\[\s*\"{regional_catalog_key}\""),
             re.compile(rf"catalogKey\\\":\\\"{regional_catalog_key}"),
+            re.compile(rf"\.with_catalog_key\(\s*\"{regional_catalog_key}\""),
             re.compile(rf"ModelProviderRoute::new_for_catalog_key\(\s*\"{regional_catalog_key}", re.DOTALL),
             re.compile(rf"OpenAiProviderRoute\s*\{{[^}}]*catalog_key:\s*\"{regional_catalog_key}", re.DOTALL),
         )
@@ -1067,6 +1542,176 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
             [],
             offenders,
             "Runtime routing, access-group, and telemetry fixtures must use vendor/model catalog keys; region belongs only to pricing/ranking/supply data.",
+        )
+
+    def test_gateway_source_fixtures_do_not_use_regional_model_identity_strings(self) -> None:
+        regional_catalog_key = re.compile(
+            r"(?:openai/global/(?:gpt-4o-mini|text-embedding-3-small|gpt-4\.1-mini|gpt-5\.5)|openrouter/global/anthropic/claude-3-opus)"
+        )
+        allowed_negative_test_ranges = (
+            r"provider_native_model_id_strips_only_catalog_vendor_scope[\s\S]*?\n\}",
+        )
+        offenders = []
+        for path in (
+            ROOT / "services" / "sdkwork-claw-gateway" / "src" / "runtime.rs",
+            ROOT / "services" / "sdkwork-claw-gateway" / "src" / "route_scoped_openai_passthrough.rs",
+            ROOT / "services" / "sdkwork-claw-gateway" / "src" / "openai_passthrough_payload.rs",
+        ):
+            text = read_text(path)
+            negative_ranges = [
+                (match.start(), match.end())
+                for pattern in allowed_negative_test_ranges
+                for match in re.finditer(pattern, text)
+            ]
+            for match in regional_catalog_key.finditer(text):
+                if any(start <= match.start() < end for start, end in negative_ranges):
+                    continue
+                line_no = text.count("\n", 0, match.start()) + 1
+                line = text.splitlines()[line_no - 1].strip()
+                offenders.append(f"{path.relative_to(ROOT)}:{line_no}: {line}")
+        self.assertEqual(
+            [],
+            offenders,
+            "Gateway passthrough/runtime fixtures must use provider-native model ids or vendor/model catalog keys; "
+            "region is deployment, pricing, and routing context, not model identity.",
+        )
+
+    def test_product_ranking_fixtures_do_not_use_regional_catalog_keys(self) -> None:
+        regional_catalog_key = re.compile(
+            r"(?:openai|anthropic|xai)/global/[A-Za-z0-9._/-]+"
+        )
+        offenders = []
+        for path in (
+            ROOT / "services" / "sdkwork-claw-product" / "tests" / "model_rankings_read_store.rs",
+        ):
+            text = read_text(path)
+            for match in regional_catalog_key.finditer(text):
+                line_no = text.count("\n", 0, match.start()) + 1
+                line = text.splitlines()[line_no - 1].strip()
+                offenders.append(f"{path.relative_to(ROOT)}:{line_no}: {line}")
+        self.assertEqual(
+            [],
+            offenders,
+            "Ranking read-store fixtures must use vendor/model catalog keys; "
+            "region_code is the ranking and supply dimension.",
+        )
+
+    def test_product_relay_fixtures_do_not_use_regional_model_identity_strings(self) -> None:
+        regional_catalog_key = re.compile(
+            r"(?:openai|openrouter)/global/[A-Za-z0-9._/-]+"
+        )
+        offenders = []
+        for path in (
+            ROOT / "services" / "sdkwork-claw-product" / "tests" / "openai_compatible_http_relay.rs",
+            ROOT / "services" / "sdkwork-claw-product" / "tests" / "openai_compatible_chat_stream_http_relay.rs",
+            ROOT / "services" / "sdkwork-claw-product" / "tests" / "openai_compatible_embeddings_http_relay.rs",
+            ROOT / "services" / "sdkwork-claw-product" / "tests" / "openai_compatible_responses_http_relay.rs",
+            ROOT / "services" / "sdkwork-claw-product" / "tests" / "secret_ref_openai_compatible_http_relay.rs",
+            ROOT / "services" / "sdkwork-claw-product" / "tests" / "secret_ref_openai_compatible_embeddings_http_relay.rs",
+            ROOT / "services" / "sdkwork-claw-product" / "tests" / "secret_ref_openai_compatible_responses_http_relay.rs",
+        ):
+            text = read_text(path)
+            for match in regional_catalog_key.finditer(text):
+                line_no = text.count("\n", 0, match.start()) + 1
+                line = text.splitlines()[line_no - 1].strip()
+                offenders.append(f"{path.relative_to(ROOT)}:{line_no}: {line}")
+        self.assertEqual(
+            [],
+            offenders,
+            "OpenAI-compatible relay fixtures must use provider-native request/response model ids "
+            "or vendor/model catalog keys; region belongs to endpoint selection and pricing.",
+        )
+
+    def test_product_usage_and_analytics_fixtures_do_not_use_regional_catalog_keys(self) -> None:
+        regional_catalog_key = re.compile(
+            r"(?:openai|anthropic)/global/[A-Za-z0-9._/-]+"
+        )
+        offenders = []
+        for path in (
+            ROOT / "services" / "sdkwork-claw-product" / "tests" / "sqlite_gateway_usage_recorder.rs",
+            ROOT / "services" / "sdkwork-claw-product" / "tests" / "postgres_transaction_integration.rs",
+            ROOT / "services" / "sdkwork-claw-product" / "tests" / "sqlite_admin_analytics_read_store.rs",
+            ROOT / "services" / "sdkwork-claw-product" / "tests" / "admin_record_api.rs",
+        ):
+            text = read_text(path)
+            for match in regional_catalog_key.finditer(text):
+                line_no = text.count("\n", 0, match.start()) + 1
+                line = text.splitlines()[line_no - 1].strip()
+                offenders.append(f"{path.relative_to(ROOT)}:{line_no}: {line}")
+        self.assertEqual(
+            [],
+            offenders,
+            "Usage, analytics, and admin-record fixtures must use vendor/model catalog keys; "
+            "deployment region is recorded in region_code and pricing/routing snapshots.",
+        )
+
+    def test_portal_runtime_model_identity_fixtures_do_not_use_regional_catalog_keys(self) -> None:
+        regional_catalog_key = re.compile(
+            r"\b[A-Za-z0-9][A-Za-z0-9_-]*/(?:global|cn|us|eu|ap|jp|sg|hk|kr|in|au|uk|de|fr|ca|br|me|af|sa)(?:-[A-Za-z0-9_-]+)?/[A-Za-z0-9._/-]+"
+        )
+        offenders = []
+        for path in PORTAL_RUNTIME_MODEL_IDENTITY_FIXTURE_PATHS:
+            text = read_text(path)
+            negative_test_ranges = [
+                (match.start(), match.end())
+                for match in re.finditer(
+                    r'test\("runtime model catalog rejects regional catalog keys[\s\S]*?\n\}\);',
+                    text,
+                )
+            ]
+            negative_test_ranges.extend(
+                (match.start(), match.end())
+                for match in re.finditer(
+                    r'test\("admin channel model identity rejects regional catalog key debt[\s\S]*?\n\}\);',
+                    text,
+                )
+            )
+            negative_test_ranges.extend(
+                (match.start(), match.end())
+                for match in re.finditer(
+                    r'test\("admin channel model identity rejects cloud region segments[\s\S]*?\n\}\);',
+                    text,
+                )
+            )
+            for match in regional_catalog_key.finditer(text):
+                if any(start <= match.start() < end for start, end in negative_test_ranges):
+                    continue
+                line_no = text.count("\n", 0, match.start()) + 1
+                line = text.splitlines()[line_no - 1].strip()
+                offenders.append(f"{path.relative_to(ROOT)}:{line_no}: {line}")
+        self.assertEqual(
+            [],
+            offenders,
+            "Portal runtime catalog and ranking fixtures must use vendor/model identities; "
+            "region remains explicit pricing, routing, and deployment context.",
+        )
+
+    def test_api_gateway_fixtures_do_not_use_regional_catalog_keys(self) -> None:
+        regional_catalog_key = re.compile(
+            r"\b[A-Za-z0-9][A-Za-z0-9_-]*/(?:global|cn|us|eu|ap|jp|sg|hk|kr|in|au|uk|de|fr|ca|br|me|af|sa)(?:-[A-Za-z0-9_-]+)?/[A-Za-z0-9._/-]+"
+        )
+        allowed_negative_test_ranges = (
+            r"provider_native_model_id_strips_only_catalog_vendor_scope[\s\S]*?\n\}",
+            r"gateway_database_route_scoped_openai_passthrough_routes_optional_model_calls_by_presence[\s\S]*?\n\}",
+        )
+        offenders = []
+        for path in API_GATEWAY_MODEL_IDENTITY_FIXTURE_PATHS:
+            text = read_text(path)
+            negative_ranges = [
+                (match.start(), match.end())
+                for pattern in allowed_negative_test_ranges
+                for match in re.finditer(pattern, text)
+            ]
+            for match in regional_catalog_key.finditer(text):
+                if any(start <= match.start() < end for start, end in negative_ranges):
+                    continue
+                line_no = text.count("\n", 0, match.start()) + 1
+                line = text.splitlines()[line_no - 1].strip()
+                offenders.append(f"{path.relative_to(ROOT)}:{line_no}: {line}")
+        self.assertEqual(
+            [],
+            offenders,
+            "API and gateway fixtures must use vendor/model catalog keys; deployment region is a route, endpoint, pricing, and usage dimension.",
         )
 
     def test_rust_test_support_uses_canonical_model_catalog_schema(self) -> None:

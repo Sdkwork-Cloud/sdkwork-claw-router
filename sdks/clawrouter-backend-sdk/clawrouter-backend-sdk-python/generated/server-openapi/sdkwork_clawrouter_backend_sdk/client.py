@@ -13,6 +13,7 @@ from .api.platform import PlatformApi
 from .api.system import SystemApi
 from .api.prompts import PromptsApi
 from .api.service_providers import ServiceProvidersApi
+from .api.sites import SitesApi
 from .api.storage import StorageApi
 
 
@@ -35,6 +36,7 @@ class SdkworkBackendClient:
         self.system: SystemApi
         self.prompts: PromptsApi
         self.service_providers: ServiceProvidersApi
+        self.sites: SitesApi
         self.storage: StorageApi
 
         # Initialize API modules
@@ -52,6 +54,7 @@ class SdkworkBackendClient:
         self.system = SystemApi(self._client)
         self.prompts = PromptsApi(self._client)
         self.service_providers = ServiceProvidersApi(self._client)
+        self.sites = SitesApi(self._client)
         self.storage = StorageApi(self._client)
 
     def set_api_key(self, api_key: str) -> 'SdkworkBackendClient':

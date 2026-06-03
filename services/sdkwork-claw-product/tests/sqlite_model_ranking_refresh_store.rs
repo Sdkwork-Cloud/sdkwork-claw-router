@@ -164,6 +164,79 @@ async fn sqlite_model_ranking_refresh_store_rejects_regional_catalog_key_compati
 }
 
 #[tokio::test]
+async fn sqlite_model_ranking_refresh_store_excludes_deprecated_hidden_and_catalog_only_models() {
+    let pool = SqlitePoolOptions::new()
+        .max_connections(1)
+        .connect("sqlite::memory:")
+        .await
+        .unwrap();
+    create_tables(&pool).await;
+
+    sqlx::query(
+        r#"
+        INSERT INTO ai_model
+            (id, tenant_id, organization_id, status, catalog_key, model, display_name, vendor_code, region_code, vendor_name_snapshot, capability, color_token, license_type, context_tokens, rank_score, release_stage, shelf_state, routing_state)
+        VALUES
+            (1, 0, 0, 1, 'openai/alpha', 'alpha', 'Alpha', 'openai', 'global', 'OpenAI', 1, '#111111', 2, 128000, '100', 1, 1, 1),
+            (2, 0, 0, 0, 'openai/deprecated-alpha', 'deprecated-alpha', 'Deprecated Alpha', 'openai', 'global', 'OpenAI', 1, '#333333', 2, 128000, '99', 3, 2, 0),
+            (3, 0, 0, 1, 'openai/hidden-alpha', 'hidden-alpha', 'Hidden Alpha', 'openai', 'global', 'OpenAI', 1, '#444444', 2, 128000, '98', 1, 2, 1),
+            (4, 0, 0, 1, 'openai/catalog-only-alpha', 'catalog-only-alpha', 'Catalog Only Alpha', 'openai', 'global', 'OpenAI', 1, '#555555', 2, 128000, '97', 1, 1, 0)
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO ai_usage_fact
+            (id, tenant_id, organization_id, status, catalog_key, model, modality, request_count, total_tokens, cost_amount, currency, occurred_at)
+        VALUES
+            (1, 0, 0, 1, 'openai/deprecated-alpha', 'deprecated-alpha', 1, 50, 50000, '50.000000', 'USD', '2026-05-07T10:00:00Z'),
+            (2, 0, 0, 1, 'openai/hidden-alpha', 'hidden-alpha', 1, 40, 40000, '40.000000', 'USD', '2026-05-07T10:00:00Z'),
+            (3, 0, 0, 1, 'openai/catalog-only-alpha', 'catalog-only-alpha', 1, 30, 30000, '30.000000', 'USD', '2026-05-07T10:00:00Z'),
+            (4, 0, 0, 1, 'openai/alpha', 'alpha', 1, 5, 5000, '5.000000', 'USD', '2026-05-07T10:00:00Z')
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+
+    let outcome = SqliteModelRankingRefreshStore::new(pool.clone())
+        .refresh_model_rankings(ModelRankingRefreshCommand {
+            tenant_id: 0,
+            organization_id: 0,
+            rank_scope: "commercial-default".to_owned(),
+            snapshot_date: "2026-05-08".to_owned(),
+            snapshot_period: "daily".to_owned(),
+            window_start: "2026-05-07T00:00:00Z".to_owned(),
+            window_end: "2026-05-08T00:00:00Z".to_owned(),
+            requested_at: "2026-05-08 00:05:00".to_owned(),
+            limit: 200,
+            refresh_interval_seconds: 3600,
+            cache_max_age_seconds: 60,
+            trigger_type: 1,
+        })
+        .await
+        .unwrap();
+
+    assert_eq!(1, outcome.generated_count);
+    assert_eq!(1, outcome.source_count);
+    let rows = sqlx::query(
+        r#"
+        SELECT catalog_key
+        FROM ai_model_rank_snapshot
+        WHERE snapshot_date = '2026-05-08'
+        ORDER BY rank_no ASC
+        "#,
+    )
+    .fetch_all(&pool)
+    .await
+    .unwrap();
+    assert_eq!(1, rows.len());
+    assert_eq!("openai/alpha", rows[0].get::<String, _>("catalog_key"));
+}
+
+#[tokio::test]
 async fn sqlite_model_ranking_refresh_store_keeps_existing_snapshot_when_window_has_no_usage() {
     let pool = SqlitePoolOptions::new()
         .max_connections(1)
@@ -388,7 +461,11 @@ async fn create_tables(pool: &SqlitePool) {
             color_token TEXT,
             license_type INTEGER,
             context_tokens INTEGER,
-            rank_score TEXT
+            rank_score TEXT,
+            release_stage INTEGER NOT NULL DEFAULT 1,
+            shelf_state INTEGER NOT NULL DEFAULT 1,
+            routing_state INTEGER NOT NULL DEFAULT 1,
+            deleted_at TEXT
         )
         "#,
     )

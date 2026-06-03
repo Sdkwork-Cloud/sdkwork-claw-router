@@ -21,5 +21,7 @@ class AdminChannelGroupItem:
     price_reference_mode: str
     provider_code: str
     rate_multiplier: float
+    resource_codes: List[str]
+    resource_group_codes: List[str]
     status: str
     usage: AdminUsagePair

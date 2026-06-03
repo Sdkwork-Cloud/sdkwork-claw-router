@@ -37,6 +37,7 @@ data class AiRequestTraceRecord(
     val providerModel: String? = null,
     val providerNativeModel: String? = null,
     val reasoningEffort: String? = null,
+    val regionCode: String? = null,
     val requestBytes: String? = null,
     val requestId: String? = null,
     val requestPath: String? = null,

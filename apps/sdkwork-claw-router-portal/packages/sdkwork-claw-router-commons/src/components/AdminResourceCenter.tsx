@@ -354,7 +354,7 @@ export function AdminResourceCenter<TSectionId extends string = string, TGroup e
           <AdminTableShell
             className="m-5 mt-4 min-h-0 flex-1 rounded-xl"
             footer={paginationFooter}
-            viewportClassName="custom-scrollbar"
+            viewportClassName="min-h-0 flex-1 custom-scrollbar"
             viewportProps={viewportProps}
           >
             <table className="w-full min-w-[760px] text-left text-sm text-slate-600 dark:text-slate-400">

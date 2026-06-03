@@ -1,4 +1,4 @@
-/** Regional official reference pricing input for admin AI model commands. */
+/** Regional official reference pricing returned by admin AI model payloads. */
 export interface AdminAiModelRegionPrice {
   /** Optional official reference cache-read unit price in USD. */
   cacheReadPrice?: string;

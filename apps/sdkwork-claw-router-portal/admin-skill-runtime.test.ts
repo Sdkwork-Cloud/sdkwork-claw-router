@@ -590,11 +590,14 @@ test("admin skill management tables fill the available admin viewport", async ()
 
   for (const expected of [
     "AdminTableShell",
+    'data-admin-skill="skill-management"',
     "data-admin-skill-table-card",
     "data-admin-skill-table-viewport",
     "data-admin-skill-pagination",
-    "flex h-full min-h-0 w-full flex-col",
-    "data-admin-skill-layout className=\"grid min-h-0 flex-1",
+    "flex h-full min-h-0 w-full min-w-0 flex-col overflow-hidden",
+    "data-admin-skill-layout className=\"grid min-h-0 min-w-0 flex-1 gap-4 overflow-hidden",
+    "className=\"min-h-0 min-w-0 flex-1\"",
+    "viewportClassName=\"min-h-0 flex-1\"",
     "footer={",
     "sticky top-0 z-10",
   ]) {
@@ -605,6 +608,27 @@ test("admin skill management tables fill the available admin viewport", async ()
     source.indexOf("data-admin-skill-table-viewport") < source.indexOf("data-admin-skill-pagination"),
     "admin skill pagination should render outside the scrollable table viewport",
   );
+});
+
+test("admin skill resource modal keeps resource tables in bounded internal viewports", async () => {
+  const fs = await import("node:fs/promises");
+  const source = await fs.readFile(
+    new URL("./packages/sdkwork-claw-router-admin-skill/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+
+  for (const expected of [
+    "data-admin-skill-resources-modal",
+    "flex max-h-[92vh] min-h-0 w-full max-w-6xl flex-col overflow-hidden",
+    "data-admin-skill-resources-modal-body",
+    "custom-scrollbar min-h-0 flex-1 overflow-y-auto p-5",
+    "data-admin-skill-resources-grid",
+    "data-admin-skill-assets-table-viewport",
+    "data-admin-skill-artifacts-table-viewport",
+    "max-h-[min(420px,calc(92vh-220px))] overflow-auto",
+  ]) {
+    assert.ok(source.includes(expected), `missing bounded admin skill resource modal marker: ${expected}`);
+  }
 });
 
 test("admin skill page uses a left category tree with CRUD and right-side tabs", async () => {

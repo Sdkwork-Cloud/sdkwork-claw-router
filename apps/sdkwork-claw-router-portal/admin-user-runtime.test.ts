@@ -294,6 +294,8 @@ test("admin user table fills the available admin viewport", () => {
     "data-admin-user-table-card",
     "data-admin-user-table-viewport",
     "flex h-full min-h-0 w-full flex-col",
+    "className=\"flex-1 min-h-0 rounded-xl dark:bg-[#1a1a1a]\"",
+    "viewportClassName=\"min-h-0 flex-1\"",
     "sticky top-0 z-10",
   ]) {
     assert.match(source, new RegExp(escapeRegExp(expected)), `missing adaptive admin user table marker: ${expected}`);

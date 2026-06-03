@@ -162,7 +162,7 @@ export function AttributeManagementPage() {
   }
 
   return (
-    <section className="flex h-[calc(100vh-96px)] min-h-0 flex-col gap-3 overflow-hidden bg-slate-50 p-5 text-slate-900 dark:bg-[#0a0a0a] dark:text-slate-100" data-admin-catalog-attribute-management-page>
+    <section className="flex h-full min-h-0 flex-col gap-3 overflow-hidden bg-slate-50 p-5 text-slate-900 dark:bg-[#0a0a0a] dark:text-slate-100" data-admin-catalog-attribute-management-page>
       <div className="flex shrink-0 flex-wrap items-center justify-between gap-3 rounded-lg border border-slate-200 bg-white p-4 shadow-sm dark:border-white/10 dark:bg-[#171717]">
         <div className="flex items-center gap-3">
           <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-lobster-50 text-lobster-600 dark:bg-lobster-500/10 dark:text-lobster-300">

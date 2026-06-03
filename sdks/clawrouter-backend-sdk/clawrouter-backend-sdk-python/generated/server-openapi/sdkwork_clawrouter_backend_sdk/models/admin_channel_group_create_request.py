@@ -14,3 +14,5 @@ class AdminChannelGroupCreateRequest:
     capacity: Optional[Dict[str, Any]] = None
     official_price_multiplier: Optional[float] = None
     rate_multiplier: Optional[float] = None
+    resource_codes: Optional[List[str]] = None
+    resource_group_codes: Optional[List[str]] = None

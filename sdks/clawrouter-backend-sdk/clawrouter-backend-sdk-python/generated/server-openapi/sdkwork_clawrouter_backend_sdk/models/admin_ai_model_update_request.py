@@ -10,8 +10,6 @@ if TYPE_CHECKING:
 class AdminAiModelUpdateRequest:
     """Admin ai model update request schema exposed by Claw Router."""
     api_format: Optional[str] = None
-    cache_read_price: Optional[str] = None
-    cache_write_price: Optional[str] = None
     capability_intro: Optional[str] = None
     context_tokens: Optional[str] = None
     description: Optional[str] = None
@@ -22,8 +20,6 @@ class AdminAiModelUpdateRequest:
     modalities: Optional[List[str]] = None
     model: Optional[str] = None
     output_modalities: Optional[List[str]] = None
-    price_in: Optional[str] = None
-    price_out: Optional[str] = None
     region_prices: Optional[List[AdminAiModelRegionPrice]] = None
     release_stage: Optional[int] = None
     replacement_model: Optional[str] = None

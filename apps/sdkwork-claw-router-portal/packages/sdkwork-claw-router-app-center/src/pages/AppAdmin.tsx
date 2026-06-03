@@ -723,6 +723,8 @@ export function AppAdmin() {
 
         <AdminTableShell
           data-admin-app-table-card
+          className="flex-1 min-h-0"
+          viewportClassName="min-h-0 flex-1"
           viewportProps={{ 'data-admin-app-table-viewport': true }}
           header={(
             <>

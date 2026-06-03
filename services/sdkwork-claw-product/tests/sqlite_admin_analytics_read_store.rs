@@ -219,6 +219,41 @@ async fn sqlite_admin_analytics_includes_default_organization_usage_for_admin_sc
         .any(|item| item.name == "text" && item.value == 2.0));
 }
 
+#[tokio::test]
+async fn sqlite_admin_analytics_does_not_extract_vendor_from_regional_catalog_key() {
+    let pool = sqlite_pool().await;
+    create_analytics_tables(&pool).await;
+    seed_regional_catalog_key_usage(&pool).await;
+
+    let store = SqliteAdminAnalyticsReadStore::new(pool);
+    let snapshot = store
+        .load_admin_analytics(AdminAnalyticsQuery {
+            subject: AdminAnalyticsSubject {
+                tenant_id: 10,
+                organization_id: 20,
+                operator_id: 30,
+                operator_type: 1,
+            },
+            time_range: AdminAnalyticsTimeRange::Daily,
+            start_time: Some("2026-05-01 00:00:00".to_owned()),
+            end_time: Some("2026-05-31 23:59:59".to_owned()),
+            limit: 5,
+        })
+        .await
+        .unwrap();
+
+    let regional_item = snapshot
+        .model_rankings
+        .points
+        .iter()
+        .find(|item| item.catalog_key == legacy_regional_catalog_key_for_negative_test())
+        .expect("regional legacy catalog key usage row should remain visible for audit");
+    assert_eq!(
+        "gpt-4o", regional_item.vendor,
+        "analytics must not treat vendor/region/model keys as canonical vendor identity"
+    );
+}
+
 async fn sqlite_pool() -> SqlitePool {
     SqlitePoolOptions::new()
         .max_connections(1)
@@ -278,6 +313,29 @@ async fn create_analytics_tables(pool: &SqlitePool) {
     .unwrap();
 }
 
+async fn seed_regional_catalog_key_usage(pool: &SqlitePool) {
+    let regional_catalog_key = legacy_regional_catalog_key_for_negative_test();
+    sqlx::query(
+        r#"
+        INSERT INTO ai_usage_fact (
+            id, tenant_id, organization_id, user_id, owner_type, owner_id, request_id, status,
+            owner_name_snapshot, catalog_key, model, modality, request_count,
+            total_tokens, customer_charge_amount, upstream_cost_amount, occurred_at
+        )
+        VALUES
+            (1, 10, 20, 101, 1, 101, 'req-regional-catalog-key', 1, 'Alice', ?1, 'gpt-4o', 1, 1, 100, '10.0', '5.0', '2026-05-10 10:00:00')
+        "#,
+    )
+    .bind(regional_catalog_key)
+    .execute(pool)
+    .await
+    .unwrap();
+}
+
+fn legacy_regional_catalog_key_for_negative_test() -> String {
+    ["openai", "global", "gpt-4o"].join("/")
+}
+
 async fn seed_usage(pool: &SqlitePool) {
     let rows = [
         (
@@ -289,7 +347,7 @@ async fn seed_usage(pool: &SqlitePool) {
             101,
             "req-1",
             "Alice",
-            "openai/global/gpt-4o",
+            "openai/gpt-4o",
             "gpt-4o",
             1,
             3,
@@ -307,7 +365,7 @@ async fn seed_usage(pool: &SqlitePool) {
             101,
             "req-2",
             "Alice",
-            "openai/global/gpt-image-1",
+            "openai/gpt-image-1",
             "gpt-image-1",
             2,
             2,
@@ -325,7 +383,7 @@ async fn seed_usage(pool: &SqlitePool) {
             102,
             "req-3",
             "Bob",
-            "anthropic/global/claude-3-5-sonnet",
+            "anthropic/claude-3-5-sonnet",
             "claude-3-5-sonnet",
             1,
             5,
@@ -343,7 +401,7 @@ async fn seed_usage(pool: &SqlitePool) {
             999,
             "req-ignored",
             "Other",
-            "openai/global/gpt-4o",
+            "openai/gpt-4o",
             "gpt-4o",
             1,
             100,
@@ -412,9 +470,9 @@ async fn seed_untimed_usage_with_null_users(pool: &SqlitePool) {
             total_tokens, customer_charge_amount, upstream_cost_amount, occurred_at
         )
         VALUES
-            (1, 10, 20, NULL, 1, NULL, 'req-service-key', 1, 'Service Key', 'openai/global/gpt-4o', 'gpt-4o', 1, 2, 200, '8.0', '4.0', NULL),
-            (2, 10, 20, 0, 1, 0, 'req-unknown', 1, '', 'anthropic/global/claude-3-5-sonnet', 'claude-3-5-sonnet', NULL, 1, 100, '3.0', '1.5', NULL),
-            (3, 99, 20, NULL, 1, NULL, 'req-ignored', 1, 'Other Tenant', 'openai/global/gpt-4o', 'gpt-4o', 1, 100, 10000, '999.0', '999.0', NULL)
+            (1, 10, 20, NULL, 1, NULL, 'req-service-key', 1, 'Service Key', 'openai/gpt-4o', 'gpt-4o', 1, 2, 200, '8.0', '4.0', NULL),
+            (2, 10, 20, 0, 1, 0, 'req-unknown', 1, '', 'anthropic/claude-3-5-sonnet', 'claude-3-5-sonnet', NULL, 1, 100, '3.0', '1.5', NULL),
+            (3, 99, 20, NULL, 1, NULL, 'req-ignored', 1, 'Other Tenant', 'openai/gpt-4o', 'gpt-4o', 1, 100, 10000, '999.0', '999.0', NULL)
         "#,
     )
     .execute(pool)
@@ -446,7 +504,7 @@ async fn seed_default_scope_usage(pool: &SqlitePool) {
             customer_charge_amount, upstream_cost_amount, cost_amount, occurred_at
         )
         VALUES
-            (1, 10, 0, 0, 1, 0, 'req-default-1', 1, 'Default Org User', 'openai/global/gpt-4o', 'gpt-4o', 1, 2, 1, 0, 0, 2, '1.0', '0.5', '1.0', '2026-05-02 09:00:00')
+            (1, 10, 0, 0, 1, 0, 'req-default-1', 1, 'Default Org User', 'openai/gpt-4o', 'gpt-4o', 1, 2, 1, 0, 0, 2, '1.0', '0.5', '1.0', '2026-05-02 09:00:00')
         "#,
     )
     .execute(pool)
@@ -476,8 +534,8 @@ async fn seed_duplicate_display_name_usage(pool: &SqlitePool) {
             total_tokens, customer_charge_amount, upstream_cost_amount, occurred_at
         )
         VALUES
-            (1, 10, 20, 101, 1, 101, 'req-shared-1', 1, 'Shared Display', 'openai/global/gpt-4o', 'gpt-4o', 1, 1, 100, '10.0', '5.0', '2026-05-10 10:00:00'),
-            (2, 10, 20, 102, 1, 102, 'req-shared-2', 1, 'Shared Display', 'openai/global/gpt-4o', 'gpt-4o', 1, 1, 120, '12.0', '6.0', '2026-05-10 11:00:00')
+            (1, 10, 20, 101, 1, 101, 'req-shared-1', 1, 'Shared Display', 'openai/gpt-4o', 'gpt-4o', 1, 1, 100, '10.0', '5.0', '2026-05-10 10:00:00'),
+            (2, 10, 20, 102, 1, 102, 'req-shared-2', 1, 'Shared Display', 'openai/gpt-4o', 'gpt-4o', 1, 1, 120, '12.0', '6.0', '2026-05-10 11:00:00')
         "#,
     )
     .execute(pool)

@@ -44,6 +44,43 @@ class AiApi(private val client: HttpClient) {
         return client.convertValue(raw, object : TypeReference<ChannelGroupsChannelBindingsUpdateResult>() {})
     }
 
+    /** List model mappings */
+    suspend fun modelMappingsList(bindingType: String? = null, vendorCode: String? = null, channelId: String? = null, channelCode: String? = null, q: String? = null): ModelMappingsListResult? {
+        val query = buildQueryString(listOf(
+            QueryParameterSpec("binding_type", bindingType, "form", true, false, null),
+            QueryParameterSpec("vendor_code", vendorCode, "form", true, false, null),
+            QueryParameterSpec("channel_id", channelId, "form", true, false, null),
+            QueryParameterSpec("channel_code", channelCode, "form", true, false, null),
+            QueryParameterSpec("q", q, "form", true, false, null)
+        ))
+        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/ai/model_mappings"), query))
+        return client.convertValue(raw, object : TypeReference<ModelMappingsListResult>() {})
+    }
+
+    /** Create model mapping */
+    suspend fun modelMappingsCreate(body: AdminModelMappingCreateRequest): ModelMappingsCreateResult? {
+        val raw = client.post(ApiPaths.backendPath("/ai/model_mappings"), body, null, null, "application/json")
+        return client.convertValue(raw, object : TypeReference<ModelMappingsCreateResult>() {})
+    }
+
+    /** Resolve model mapping */
+    suspend fun modelMappingsResolveCreate(body: AdminModelMappingResolveRequest): ModelMappingsResolveCreateResult? {
+        val raw = client.post(ApiPaths.backendPath("/ai/model_mappings/resolve"), body, null, null, "application/json")
+        return client.convertValue(raw, object : TypeReference<ModelMappingsResolveCreateResult>() {})
+    }
+
+    /** Delete model mapping */
+    suspend fun modelMappingsDelete(mappingId: String): ModelMappingsDeleteResult? {
+        val raw = client.delete(ApiPaths.backendPath("/ai/model_mappings/${serializePathParameter(mappingId, PathParameterSpec("mappingId", "simple", false))}"))
+        return client.convertValue(raw, object : TypeReference<ModelMappingsDeleteResult>() {})
+    }
+
+    /** Update model mapping */
+    suspend fun modelMappingsUpdate(mappingId: String, body: AdminModelMappingUpdateRequest): ModelMappingsUpdateResult? {
+        val raw = client.patch(ApiPaths.backendPath("/ai/model_mappings/${serializePathParameter(mappingId, PathParameterSpec("mappingId", "simple", false))}"), body, null, null, "application/json")
+        return client.convertValue(raw, object : TypeReference<ModelMappingsUpdateResult>() {})
+    }
+
     /** List model rankings */
     suspend fun modelRankingsList(rankScope: String? = null, vendorCode: String? = null, modality: String? = null, q: String? = null, limit: Int? = null): ModelRankingsListResult? {
         val query = buildQueryString(listOf(
@@ -122,6 +159,36 @@ class AiApi(private val client: HttpClient) {
     suspend fun modelsUpdate(modelId: String, body: AdminAiModelUpdateRequest): ModelsUpdateResult? {
         val raw = client.patch(ApiPaths.backendPath("/ai/models/${serializePathParameter(modelId, PathParameterSpec("modelId", "simple", false))}"), body, null, null, "application/json")
         return client.convertValue(raw, object : TypeReference<ModelsUpdateResult>() {})
+    }
+
+    /** List resource groups */
+    suspend fun getResourceGroupsList(): AiResourceGroupsListResult? {
+        val raw = client.get(ApiPaths.backendPath("/ai/resource_groups"))
+        return client.convertValue(raw, object : TypeReference<AiResourceGroupsListResult>() {})
+    }
+
+    /** Create resource group */
+    suspend fun resourceGroupsCreate(body: AdminAiResourceGroupCreateRequest): AiResourceGroupsCreateResult? {
+        val raw = client.post(ApiPaths.backendPath("/ai/resource_groups"), body, null, null, "application/json")
+        return client.convertValue(raw, object : TypeReference<AiResourceGroupsCreateResult>() {})
+    }
+
+    /** List resource group resources */
+    suspend fun getResourceGroupsListResourceGroups(groupIdOrCode: String): AiResourceGroupsResourcesListResult? {
+        val raw = client.get(ApiPaths.backendPath("/ai/resource_groups/${serializePathParameter(groupIdOrCode, PathParameterSpec("groupIdOrCode", "simple", false))}/resources"))
+        return client.convertValue(raw, object : TypeReference<AiResourceGroupsResourcesListResult>() {})
+    }
+
+    /** Delete resource group */
+    suspend fun resourceGroupsDelete(groupId: String): AiResourceGroupsDeleteResult? {
+        val raw = client.delete(ApiPaths.backendPath("/ai/resource_groups/${serializePathParameter(groupId, PathParameterSpec("groupId", "simple", false))}"))
+        return client.convertValue(raw, object : TypeReference<AiResourceGroupsDeleteResult>() {})
+    }
+
+    /** Update resource group */
+    suspend fun resourceGroupsUpdate(groupId: String, body: AdminAiResourceGroupUpdateRequest): AiResourceGroupsUpdateResult? {
+        val raw = client.patch(ApiPaths.backendPath("/ai/resource_groups/${serializePathParameter(groupId, PathParameterSpec("groupId", "simple", false))}"), body, null, null, "application/json")
+        return client.convertValue(raw, object : TypeReference<AiResourceGroupsUpdateResult>() {})
     }
 
     /** List ai resources */

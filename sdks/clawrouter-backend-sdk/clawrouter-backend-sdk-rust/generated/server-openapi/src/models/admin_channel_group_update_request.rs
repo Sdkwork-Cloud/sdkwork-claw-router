@@ -37,6 +37,16 @@ pub struct AdminChannelGroupUpdateRequest {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub rate_multiplier: Option<f64>,
 
+    /// Individual AI resource codes directly granted to this channel group.
+    #[serde(rename = "resourceCodes")]
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub resource_codes: Option<Vec<String>>,
+
+    /// AI resource group codes directly granted to this channel group.
+    #[serde(rename = "resourceGroupCodes")]
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub resource_group_codes: Option<Vec<String>>,
+
     /// Status field on admin channel group update request.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub status: Option<String>,

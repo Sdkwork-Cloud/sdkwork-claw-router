@@ -497,6 +497,7 @@ fn provider_route() -> OpenAiProviderRoute {
         rule_id: Some(9102),
         provider_code: "openrouter".to_owned(),
         channel_id: 3001,
+        region_code: "global".to_owned(),
         provider_model: "gpt-4o-mini".to_owned(),
         provider_base_url: Some("http://provider-proxy.internal/openrouter".to_owned()),
         provider_secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),

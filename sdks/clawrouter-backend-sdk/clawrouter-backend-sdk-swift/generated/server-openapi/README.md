@@ -80,6 +80,7 @@ client.setHeader("X-Custom-Header", value: "value")
 - `client.system` - system API
 - `client.prompts` - prompts API
 - `client.serviceProviders` - service_providers API
+- `client.sites` - sites API
 - `client.storage` - storage API
 
 ## Usage Examples
@@ -239,6 +240,17 @@ let params: [String: Any] = [
     "edge_id": "1"
 ]
 let result = try await client.serviceProviders.adjustmentsList(params: params)
+print(result)
+```
+
+### sites
+
+```swift
+// List sites
+let params: [String: Any] = [
+    "q": "q"
+]
+let result = try await client.sites.siteCatalogList(params: params)
 print(result)
 ```
 

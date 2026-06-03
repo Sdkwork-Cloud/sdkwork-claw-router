@@ -698,8 +698,8 @@ export function SkillAdmin() {
   };
 
   return (
-    <div className="flex h-full min-h-0 w-full flex-col overflow-hidden">
-      <div data-admin-skill-layout className="grid min-h-0 flex-1 gap-4 xl:grid-cols-[320px_minmax(0,1fr)]">
+    <div className="flex h-full min-h-0 w-full min-w-0 flex-col overflow-hidden" data-admin-skill="skill-management">
+      <div data-admin-skill-layout className="grid min-h-0 min-w-0 flex-1 gap-4 overflow-hidden xl:grid-cols-[320px_minmax(0,1fr)]">
         <SkillCategoryTree
           categories={categories}
           tree={categoryTree}
@@ -720,6 +720,8 @@ export function SkillAdmin() {
         />
         <AdminTableShell
           data-admin-skill-table-card
+          className="min-h-0 min-w-0 flex-1"
+          viewportClassName="min-h-0 flex-1"
           viewportProps={{ 'data-admin-skill-table-viewport': true }}
           header={(
             <>
@@ -1586,8 +1588,11 @@ function SkillResourcesModal({ skill, onClose }: { skill: AdminSkill; onClose: (
 
   return (
     <div className="fixed inset-0 z-[80] flex items-center justify-center bg-slate-950/50 px-4 py-6 backdrop-blur-sm">
-      <div className="max-h-[92vh] w-full max-w-6xl overflow-hidden rounded-xl border border-slate-200 bg-white shadow-2xl dark:border-white/10 dark:bg-[#171717]">
-        <div className="flex items-start justify-between gap-4 border-b border-slate-200 px-5 py-4 dark:border-white/10">
+      <div
+        className="flex max-h-[92vh] min-h-0 w-full max-w-6xl flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-2xl dark:border-white/10 dark:bg-[#171717]"
+        data-admin-skill-resources-modal
+      >
+        <div className="flex shrink-0 items-start justify-between gap-4 border-b border-slate-200 px-5 py-4 dark:border-white/10">
           <div className="min-w-0">
             <h3 className="text-base font-bold text-slate-900 dark:text-white">{t('admin.skill.resources.title')}</h3>
             <p className="mt-1 truncate text-xs text-slate-500">{skill.name} / {skill.skillKey}</p>
@@ -1596,7 +1601,7 @@ function SkillResourcesModal({ skill, onClose }: { skill: AdminSkill; onClose: (
             <X className="h-4 w-4" />
           </button>
         </div>
-        <div className="max-h-[calc(92vh-73px)] overflow-y-auto p-5">
+        <div className="custom-scrollbar min-h-0 flex-1 overflow-y-auto p-5" data-admin-skill-resources-modal-body>
           {loadError ? (
             <div className="mb-4 flex items-center justify-between gap-3 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700 dark:bg-red-500/10 dark:text-red-300">
               <span>{loadError}</span>
@@ -1604,8 +1609,8 @@ function SkillResourcesModal({ skill, onClose }: { skill: AdminSkill; onClose: (
             </div>
           ) : null}
           {actionError ? <div className="mb-4 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700 dark:bg-red-500/10 dark:text-red-300">{actionError}</div> : null}
-          <div className="grid gap-5 lg:grid-cols-2">
-            <section className="rounded-xl border border-slate-200 bg-slate-50/60 dark:border-white/10 dark:bg-white/[0.03]">
+          <div className="grid min-h-0 gap-5 lg:grid-cols-2" data-admin-skill-resources-grid>
+            <section className="flex min-h-0 flex-col overflow-hidden rounded-xl border border-slate-200 bg-slate-50/60 dark:border-white/10 dark:bg-white/[0.03]">
               <div className="flex items-center justify-between gap-3 border-b border-slate-200 px-4 py-3 dark:border-white/10">
                 <div>
                   <h4 className="text-sm font-bold text-slate-900 dark:text-white">{t('admin.skill.resources.assetsTitle')}</h4>
@@ -1616,7 +1621,7 @@ function SkillResourcesModal({ skill, onClose }: { skill: AdminSkill; onClose: (
                   {t('common.actions.asset')}
                 </button>
               </div>
-              <div className="overflow-x-auto">
+              <div className="max-h-[min(420px,calc(92vh-220px))] overflow-auto" data-admin-skill-assets-table-viewport>
                 <table className="w-full min-w-[620px] text-left text-sm">
                   <thead className="text-xs uppercase tracking-wide text-slate-500">
                     <tr>
@@ -1661,7 +1666,7 @@ function SkillResourcesModal({ skill, onClose }: { skill: AdminSkill; onClose: (
               </div>
             </section>
 
-            <section className="rounded-xl border border-slate-200 bg-slate-50/60 dark:border-white/10 dark:bg-white/[0.03]">
+            <section className="flex min-h-0 flex-col overflow-hidden rounded-xl border border-slate-200 bg-slate-50/60 dark:border-white/10 dark:bg-white/[0.03]">
               <div className="flex items-center justify-between gap-3 border-b border-slate-200 px-4 py-3 dark:border-white/10">
                 <div>
                   <h4 className="text-sm font-bold text-slate-900 dark:text-white">{t('admin.skill.resources.artifactsTitle')}</h4>
@@ -1672,7 +1677,7 @@ function SkillResourcesModal({ skill, onClose }: { skill: AdminSkill; onClose: (
                   {t('common.actions.artifact')}
                 </button>
               </div>
-              <div className="overflow-x-auto">
+              <div className="max-h-[min(420px,calc(92vh-220px))] overflow-auto" data-admin-skill-artifacts-table-viewport>
                 <table className="w-full min-w-[620px] text-left text-sm">
                   <thead className="text-xs uppercase tracking-wide text-slate-500">
                     <tr>

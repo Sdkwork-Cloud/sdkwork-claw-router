@@ -3120,39 +3120,7 @@ fn provider_native_model_id(requested_model_key: &str, catalog_model: Option<&Ai
 }
 
 fn runtime_provider_native_model_id(model_key: &str) -> String {
-    let value = model_key.trim();
-    let parts = value
-        .split('/')
-        .map(str::trim)
-        .filter(|part| !part.is_empty())
-        .collect::<Vec<_>>();
-    match parts.as_slice() {
-        [_vendor, region, native_model @ ..]
-            if runtime_known_region_segment(region) && !native_model.is_empty() =>
-        {
-            native_model.join("/")
-        }
-        _ => crate::domain::provider_native_model_id(value),
-    }
-}
-
-fn runtime_known_region_segment(value: &str) -> bool {
-    matches!(
-        value.trim().to_ascii_lowercase().as_str(),
-        "global"
-            | "cn"
-            | "us"
-            | "eu"
-            | "ap"
-            | "apac"
-            | "jp"
-            | "sg"
-            | "hk"
-            | "aws"
-            | "azure"
-            | "gcp"
-            | "local"
-    )
+    crate::domain::provider_native_model_id(model_key.trim())
 }
 
 fn remove_runtime_only_fields(object: &mut Map<String, Value>) {
@@ -3514,6 +3482,7 @@ where
             model: model.to_owned(),
             provider_code: route.provider_code.clone(),
             provider_channel_id: route.channel_id,
+            provider_region_code: route.region_code.clone(),
             provider_model: route.provider_model.clone(),
             provider_base_url: route.provider_base_url.clone(),
             provider_secret_ref: route.provider_secret_ref.clone(),

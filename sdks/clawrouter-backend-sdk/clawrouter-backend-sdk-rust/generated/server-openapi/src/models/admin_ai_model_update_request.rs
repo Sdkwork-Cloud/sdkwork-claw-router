@@ -10,16 +10,6 @@ pub struct AdminAiModelUpdateRequest {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub api_format: Option<String>,
 
-    /// Optional official reference cache-read unit price in USD. Empty string clears the cache-read price.
-    #[serde(rename = "cacheReadPrice")]
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub cache_read_price: Option<String>,
-
-    /// Optional official reference cache-write unit price in USD. Empty string clears the cache-write price.
-    #[serde(rename = "cacheWritePrice")]
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub cache_write_price: Option<String>,
-
     /// Capability intro field on admin ai model update request.
     #[serde(rename = "capabilityIntro")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -65,16 +55,6 @@ pub struct AdminAiModelUpdateRequest {
     #[serde(rename = "outputModalities")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub output_modalities: Option<Vec<String>>,
-
-    /// Optional official reference input unit price in USD.
-    #[serde(rename = "priceIn")]
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub price_in: Option<String>,
-
-    /// Optional official reference output unit price in USD.
-    #[serde(rename = "priceOut")]
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub price_out: Option<String>,
 
     /// Optional official reference prices by region.
     #[serde(rename = "regionPrices")]

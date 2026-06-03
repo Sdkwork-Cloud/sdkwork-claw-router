@@ -49,7 +49,7 @@ async fn openai_compatible_relay_uses_provider_model_and_upstream_secret() {
             .unwrap();
     let relay = OpenAiCompatibleChatCompletionRelay::new(endpoint);
     let request_body = json!({
-        "model": "openai/global/gpt-4o-mini",
+        "model": "gpt-4o-mini",
         "messages": [{"role": "user", "content": "ping"}],
         "temperature": 0.2,
         "top_p": 0.9,
@@ -69,6 +69,7 @@ async fn openai_compatible_relay_uses_provider_model_and_upstream_secret() {
             model: "gpt-4o-mini".to_owned(),
             provider_code: "openrouter".to_owned(),
             provider_channel_id: 3001,
+            provider_region_code: "global".to_owned(),
             provider_model: "gpt-4o-mini".to_owned(),
             provider_base_url: Some(format!("http://{addr}")),
             provider_secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
@@ -86,7 +87,7 @@ async fn openai_compatible_relay_uses_provider_model_and_upstream_secret() {
             json!({
                 "id": "chatcmpl-upstream",
                 "object": "chat.completion",
-                "model": "openai/global/gpt-4o-mini",
+                "model": "gpt-4o-mini",
                 "choices": [
                     {
                         "index": 0,
@@ -144,6 +145,7 @@ async fn openai_compatible_relay_uses_provider_account_header_auth_profile() {
             model: "gpt-4o-mini".to_owned(),
             provider_code: "azure_openai".to_owned(),
             provider_channel_id: 3002,
+            provider_region_code: "global".to_owned(),
             provider_model: "gpt-4o-mini".to_owned(),
             provider_base_url: Some(format!("http://{addr}")),
             provider_secret_ref: Some("vault://providers/azure/account/premium".to_owned()),
@@ -201,6 +203,7 @@ async fn openai_compatible_relay_does_not_duplicate_openai_v1_base_path() {
             model: "gpt-4o-mini".to_owned(),
             provider_code: "openrouter".to_owned(),
             provider_channel_id: 3001,
+            provider_region_code: "global".to_owned(),
             provider_model: "gpt-4o-mini".to_owned(),
             provider_base_url: Some(format!("http://{addr}/openai/v1")),
             provider_secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
@@ -256,6 +259,7 @@ async fn openai_compatible_relay_times_out_slow_upstream_responses_without_leaki
             model: "gpt-4o-mini".to_owned(),
             provider_code: "openrouter".to_owned(),
             provider_channel_id: 3001,
+            provider_region_code: "global".to_owned(),
             provider_model: "gpt-4o-mini".to_owned(),
             provider_base_url: Some(format!("http://{addr}")),
             provider_secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
@@ -305,6 +309,7 @@ async fn openai_compatible_relay_retries_retryable_upstream_status_once_without_
             model: "gpt-4o-mini".to_owned(),
             provider_code: "openrouter".to_owned(),
             provider_channel_id: 3001,
+            provider_region_code: "global".to_owned(),
             provider_model: "gpt-4o-mini".to_owned(),
             provider_base_url: Some(format!("http://{addr}")),
             provider_secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
@@ -371,6 +376,7 @@ async fn openai_compatible_relay_uses_request_retry_policy_for_non_stream_json_a
             model: "gpt-4o-mini".to_owned(),
             provider_code: "openrouter".to_owned(),
             provider_channel_id: 3001,
+            provider_region_code: "global".to_owned(),
             provider_model: "gpt-4o-mini".to_owned(),
             provider_base_url: Some(format!("http://{addr}")),
             provider_secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
@@ -424,6 +430,7 @@ async fn openai_compatible_relay_uses_configured_retryable_statuses_without_defa
             model: "gpt-4o-mini".to_owned(),
             provider_code: "openrouter".to_owned(),
             provider_channel_id: 3001,
+            provider_region_code: "global".to_owned(),
             provider_model: "gpt-4o-mini".to_owned(),
             provider_base_url: Some(format!("http://{addr}")),
             provider_secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
@@ -477,6 +484,7 @@ async fn openai_compatible_relay_does_not_retry_non_retryable_upstream_status() 
             model: "gpt-4o-mini".to_owned(),
             provider_code: "openrouter".to_owned(),
             provider_channel_id: 3001,
+            provider_region_code: "global".to_owned(),
             provider_model: "gpt-4o-mini".to_owned(),
             provider_base_url: Some(format!("http://{addr}")),
             provider_secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
@@ -533,6 +541,7 @@ async fn openai_compatible_relay_uses_request_provider_timeout_over_runtime_defa
             model: "gpt-4o-mini".to_owned(),
             provider_code: "openrouter".to_owned(),
             provider_channel_id: 3001,
+            provider_region_code: "global".to_owned(),
             provider_model: "gpt-4o-mini".to_owned(),
             provider_base_url: Some(format!("http://{addr}")),
             provider_secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
@@ -597,6 +606,7 @@ async fn openai_compatible_relay_times_out_slow_upstream_bodies_without_leaking_
             model: "gpt-4o-mini".to_owned(),
             provider_code: "openrouter".to_owned(),
             provider_channel_id: 3001,
+            provider_region_code: "global".to_owned(),
             provider_model: "gpt-4o-mini".to_owned(),
             provider_base_url: Some(format!("http://{addr}")),
             provider_secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
@@ -683,7 +693,7 @@ async fn capture_chat_completion(
         Json(json!({
             "id": "chatcmpl-upstream",
             "object": "chat.completion",
-            "model": "openai/global/gpt-4o-mini",
+            "model": "gpt-4o-mini",
             "choices": [
                 {
                     "index": 0,
@@ -733,7 +743,7 @@ async fn capture_flaky_chat_completion(
         Json(json!({
             "id": "chatcmpl-upstream-retry",
             "object": "chat.completion",
-            "model": "openai/global/gpt-4o-mini",
+            "model": "gpt-4o-mini",
             "choices": [
                 {
                     "index": 0,
@@ -783,7 +793,7 @@ async fn capture_twice_flaky_chat_completion(
         Json(json!({
             "id": "chatcmpl-upstream-retry",
             "object": "chat.completion",
-            "model": "openai/global/gpt-4o-mini",
+            "model": "gpt-4o-mini",
             "choices": [
                 {
                     "index": 0,

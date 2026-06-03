@@ -8,9 +8,12 @@ use sdkwork_claw_product::application::EntityUuidGenerator;
 use sdkwork_claw_product::domain::DomainResult;
 use sdkwork_claw_product::ports::{
     AdminAiModelItem, AdminAiModelRegionPriceCommand, AdminModelCatalogSyncItem,
-    AdminModelCommandFuture, AdminModelStore, AdminModelVendorItem, CreateAdminAiModelCommand,
-    CreateAdminModelVendorCommand, DeleteAdminAiModelCommand, ListAdminAiModelsQuery,
-    ListAdminModelVendorsQuery, SyncAdminModelCatalogCommand, UpdateAdminAiModelCommand,
+    AdminModelCommandFuture, AdminModelMappingRuleItem, AdminModelStore, AdminModelVendorItem,
+    CreateAdminAiModelCommand, CreateAdminModelMappingCommand, CreateAdminModelVendorCommand,
+    DeleteAdminAiModelCommand, DeleteAdminModelMappingCommand, ListAdminAiModelsQuery,
+    ListAdminModelMappingsQuery, ListAdminModelVendorsQuery, ResolveAdminModelMappingQuery,
+    ResolveAdminModelMappingResult, SyncAdminModelCatalogCommand, UpdateAdminAiModelCommand,
+    UpdateAdminModelMappingCommand,
 };
 use serde_json::Value;
 use tower::ServiceExt;
@@ -43,16 +46,23 @@ async fn admin_model_command_route_creates_lists_and_syncs_catalog_models() {
         signed_request(
             "POST",
             "/backend/v3/api/ai/models",
-            r#"{"vendorId":"1","model":"acme-chat-large","type":"Chat","priceIn":"0.120000","priceOut":"0.450000","cacheReadPrice":"0.030000","cacheWritePrice":"0.060000","contextTokens":"128000","description":"Acme commercial chat model","modalities":["text"],"inputModalities":["text"],"outputModalities":["text"],"apiFormat":"openai_responses","supportsStreaming":true,"supportsTools":true,"supportsJsonSchema":true}"#,
+            r#"{"vendorId":"1","model":"acme-chat-large","type":"Chat","regionPrices":[{"regionCode":"global","priceIn":"0.120000","priceOut":"0.450000","cacheReadPrice":"0.030000","cacheWritePrice":"0.060000"}],"contextTokens":"128000","description":"Acme commercial chat model","modalities":["text"],"inputModalities":["text"],"outputModalities":["text"],"apiFormat":"openai_responses","supportsStreaming":true,"supportsTools":true,"supportsJsonSchema":true}"#,
         ),
     )
     .await;
     assert_eq!("acme-chat-large", create_model["data"]["item"]["name"]);
     assert_eq!("Chat", create_model["data"]["item"]["type"]);
-    assert_eq!("0.120000", create_model["data"]["item"]["priceIn"]);
-    assert_eq!("0.450000", create_model["data"]["item"]["priceOut"]);
-    assert_eq!("0.030000", create_model["data"]["item"]["cacheReadPrice"]);
-    assert_eq!("0.060000", create_model["data"]["item"]["cacheWritePrice"]);
+    assert_no_flat_model_prices(&create_model["data"]["item"]);
+    assert_eq!(
+        serde_json::json!([{
+            "regionCode": "global",
+            "priceIn": "0.120000",
+            "priceOut": "0.450000",
+            "cacheReadPrice": "0.030000",
+            "cacheWritePrice": "0.060000"
+        }]),
+        create_model["data"]["item"]["regionPrices"]
+    );
     assert_eq!(128000, create_model["data"]["item"]["contextTokens"]);
     assert_eq!(
         "Acme commercial chat model",
@@ -74,17 +84,51 @@ async fn admin_model_command_route_creates_lists_and_syncs_catalog_models() {
         store.created_region_prices.lock().unwrap().last().cloned()
     );
 
+    let openrouter_style_model = request_json(
+        router.clone(),
+        signed_request(
+            "POST",
+            "/backend/v3/api/ai/models",
+            r#"{"vendorId":"1","model":"anthropic/claude-3-opus","type":"Chat","regionPrices":[{"regionCode":"global","priceIn":"15.000000","priceOut":"75.000000"}],"contextTokens":"200000"}"#,
+        ),
+    )
+    .await;
+    assert_eq!("2000", openrouter_style_model["code"]);
+    assert_eq!(
+        "anthropic/claude-3-opus",
+        openrouter_style_model["data"]["item"]["name"]
+    );
+
     let regional_model = request_json(
         router.clone(),
         signed_request(
             "POST",
             "/backend/v3/api/ai/models",
-            r#"{"vendorId":"1","model":"acme-chat-regional","type":"Chat","priceIn":"0.120000","priceOut":"0.450000","regionPrices":[{"regionCode":"cn","priceIn":"0.180000","priceOut":"0.560000","cacheReadPrice":"0.040000","cacheWritePrice":"0.080000"},{"regionCode":"global","priceIn":"0.120000","priceOut":"0.450000"}],"contextTokens":"128000"}"#,
+            r#"{"vendorId":"1","model":"acme-chat-regional","type":"Chat","regionPrices":[{"regionCode":"cn","priceIn":"0.180000","priceOut":"0.560000","cacheReadPrice":"0.040000","cacheWritePrice":"0.080000"},{"regionCode":"global","priceIn":"0.120000","priceOut":"0.450000"}],"contextTokens":"128000"}"#,
         ),
     )
     .await;
     assert_eq!("acme-chat-regional", regional_model["data"]["item"]["name"]);
-    assert_eq!("0.120000", regional_model["data"]["item"]["priceIn"]);
+    assert_no_flat_model_prices(&regional_model["data"]["item"]);
+    assert_eq!(
+        serde_json::json!([
+            {
+                "regionCode": "cn",
+                "priceIn": "0.180000",
+                "priceOut": "0.560000",
+                "cacheReadPrice": "0.040000",
+                "cacheWritePrice": "0.080000"
+            },
+            {
+                "regionCode": "global",
+                "priceIn": "0.120000",
+                "priceOut": "0.450000",
+                "cacheReadPrice": "",
+                "cacheWritePrice": ""
+            }
+        ]),
+        regional_model["data"]["item"]["regionPrices"]
+    );
     assert_eq!(
         Some(vec![
             AdminAiModelRegionPriceCommand {
@@ -110,30 +154,56 @@ async fn admin_model_command_route_creates_lists_and_syncs_catalog_models() {
         signed_request(
             "POST",
             "/backend/v3/api/ai/models",
-            r#"{"vendorId":"1","model":"acme-sfx-pro","type":"sfx","priceIn":"0.010000","priceOut":"0.080000","contextTokens":"8"}"#,
+            r#"{"vendorId":"1","model":"acme-sfx-pro","type":"sfx","regionPrices":[{"regionCode":"global","priceIn":"0.010000","priceOut":"0.080000"}],"contextTokens":"8"}"#,
         ),
     )
     .await;
     assert_eq!("acme-sfx-pro", create_sfx_model["data"]["item"]["name"]);
     assert_eq!("SoundEffect", create_sfx_model["data"]["item"]["type"]);
-    assert_eq!("0.080000", create_sfx_model["data"]["item"]["priceOut"]);
+    assert_no_flat_model_prices(&create_sfx_model["data"]["item"]);
 
     let update_model = request_json(
         router.clone(),
         signed_request(
             "PATCH",
             "/backend/v3/api/ai/models/1",
-            r#"{"model":"acme-chat-large-v2","type":"Chat","priceIn":"0.180000","priceOut":"0.520000","cacheReadPrice":"0.040000","cacheWritePrice":"0.080000","contextTokens":"256k","status":"inactive","description":"Updated Acme commercial chat model","supportsStreaming":true,"supportsTools":true,"supportsJsonSchema":true}"#,
+            r#"{"model":"acme-chat-large-v2","type":"Chat","regionPrices":[{"regionCode":"global","priceIn":"0.180000","priceOut":"0.520000","cacheReadPrice":"0.040000","cacheWritePrice":"0.080000"}],"contextTokens":"256k","status":"inactive","description":"Updated Acme commercial chat model","supportsStreaming":true,"supportsTools":true,"supportsJsonSchema":true}"#,
         ),
     )
     .await;
     assert_eq!("acme-chat-large-v2", update_model["data"]["item"]["name"]);
     assert_eq!("inactive", update_model["data"]["item"]["status"]);
-    assert_eq!("0.180000", update_model["data"]["item"]["priceIn"]);
-    assert_eq!("0.520000", update_model["data"]["item"]["priceOut"]);
-    assert_eq!("0.040000", update_model["data"]["item"]["cacheReadPrice"]);
-    assert_eq!("0.080000", update_model["data"]["item"]["cacheWritePrice"]);
+    assert_no_flat_model_prices(&update_model["data"]["item"]);
+    assert_eq!(
+        serde_json::json!([{
+            "regionCode": "global",
+            "priceIn": "0.180000",
+            "priceOut": "0.520000",
+            "cacheReadPrice": "0.040000",
+            "cacheWritePrice": "0.080000"
+        }]),
+        update_model["data"]["item"]["regionPrices"]
+    );
     assert_eq!(256000, update_model["data"]["item"]["contextTokens"]);
+
+    let update_openrouter_style_model = request_json(
+        router.clone(),
+        signed_request(
+            "PATCH",
+            "/backend/v3/api/ai/models/anthropic%2Fclaude-3-opus",
+            r#"{"displayName":"Claude 3 Opus via OpenRouter","type":"Chat","contextTokens":"200000"}"#,
+        ),
+    )
+    .await;
+    assert_eq!("2000", update_openrouter_style_model["code"]);
+    assert_eq!(
+        "anthropic/claude-3-opus",
+        update_openrouter_style_model["data"]["item"]["model"]
+    );
+    assert_eq!(
+        "Claude 3 Opus via OpenRouter",
+        update_openrouter_style_model["data"]["item"]["displayName"]
+    );
 
     let vendors = request_json(
         router.clone(),
@@ -182,11 +252,34 @@ async fn admin_model_command_route_creates_lists_and_syncs_catalog_models() {
         signed_request("GET", "/backend/v3/api/ai/models", ""),
     )
     .await;
-    assert_eq!(3, models["data"]["items"].as_array().unwrap().len());
+    assert_eq!(4, models["data"]["items"].as_array().unwrap().len());
     assert_eq!("acme-chat-large-v2", models["data"]["items"][0]["name"]);
-    assert_eq!("acme-chat-regional", models["data"]["items"][1]["name"]);
-    assert_eq!("acme-sfx-pro", models["data"]["items"][2]["name"]);
-    assert_eq!("SoundEffect", models["data"]["items"][2]["type"]);
+    assert_eq!(
+        "Claude 3 Opus via OpenRouter",
+        models["data"]["items"][1]["name"]
+    );
+    assert_eq!("acme-chat-regional", models["data"]["items"][2]["name"]);
+    assert_eq!("acme-sfx-pro", models["data"]["items"][3]["name"]);
+    assert_eq!("SoundEffect", models["data"]["items"][3]["type"]);
+    assert_eq!(
+        serde_json::json!([
+            {
+                "regionCode": "cn",
+                "priceIn": "0.180000",
+                "priceOut": "0.560000",
+                "cacheReadPrice": "0.040000",
+                "cacheWritePrice": "0.080000"
+            },
+            {
+                "regionCode": "global",
+                "priceIn": "0.120000",
+                "priceOut": "0.450000",
+                "cacheReadPrice": "",
+                "cacheWritePrice": ""
+            }
+        ]),
+        models["data"]["items"][2]["regionPrices"]
+    );
 
     let delete_model = request_json(
         router.clone(),
@@ -200,17 +293,23 @@ async fn admin_model_command_route_creates_lists_and_syncs_catalog_models() {
         signed_request("GET", "/backend/v3/api/ai/models", ""),
     )
     .await;
-    assert_eq!(2, models["data"]["items"].as_array().unwrap().len());
-    assert_eq!("acme-chat-regional", models["data"]["items"][0]["name"]);
-    assert_eq!("acme-sfx-pro", models["data"]["items"][1]["name"]);
+    assert_eq!(3, models["data"]["items"].as_array().unwrap().len());
+    assert_eq!(
+        "Claude 3 Opus via OpenRouter",
+        models["data"]["items"][0]["name"]
+    );
+    assert_eq!("acme-chat-regional", models["data"]["items"][1]["name"]);
+    assert_eq!("acme-sfx-pro", models["data"]["items"][2]["name"]);
 
     assert_eq!(
         vec![
             "create_vendor:acme_ai",
             "create_model:acme-chat-large",
+            "create_model:anthropic/claude-3-opus",
             "create_model:acme-chat-regional",
             "create_model:acme-sfx-pro",
             "update_model:1:acme-chat-large-v2",
+            "update_model:anthropic/claude-3-opus:",
             "sync:sdkwork_models:catalog_version_refresh:openai,google:true:D:/catalogs/sdkwork-models:2026.05.08.1",
             "delete_model:1"
         ],
@@ -253,7 +352,7 @@ async fn admin_model_command_route_rejects_invalid_price_without_calling_store()
         .oneshot(signed_request(
             "POST",
             "/backend/v3/api/ai/models",
-            r#"{"vendorId":"1","model":"acme-chat-large","type":"Chat","priceIn":"-1","priceOut":"0.450000","contextTokens":"128000"}"#,
+            r#"{"vendorId":"1","model":"acme-chat-large","type":"Chat","regionPrices":[{"regionCode":"global","priceIn":"-1","priceOut":"0.450000"}],"contextTokens":"128000"}"#,
         ))
         .await
         .unwrap();
@@ -261,8 +360,18 @@ async fn admin_model_command_route_rejects_invalid_price_without_calling_store()
     assert_eq!(StatusCode::BAD_REQUEST, response.status());
     let payload = json_payload(response).await;
     assert_eq!("4001", payload["code"]);
-    assert!(payload["msg"].as_str().unwrap().contains("priceIn"));
+    assert!(payload["msg"]
+        .as_str()
+        .unwrap()
+        .contains("regionPrices[0].priceIn"));
     assert!(store.commands.lock().unwrap().is_empty());
+}
+
+fn assert_no_flat_model_prices(item: &Value) {
+    assert!(item.get("priceIn").is_none());
+    assert!(item.get("priceOut").is_none());
+    assert!(item.get("cacheReadPrice").is_none());
+    assert!(item.get("cacheWritePrice").is_none());
 }
 
 #[tokio::test]
@@ -372,6 +481,8 @@ impl AdminModelStore for TestAdminModelStore {
                 status: command.status,
                 color: command.color,
                 description: command.description,
+                supported_protocols: "[]".to_owned(),
+                client_api_compatibility: "{}".to_owned(),
                 deleted_at: None,
             };
             self.vendors.lock().unwrap().push(item.clone());
@@ -399,6 +510,13 @@ impl AdminModelStore for TestAdminModelStore {
         })
     }
 
+    fn list_model_mappings<'a>(
+        &'a self,
+        _query: ListAdminModelMappingsQuery,
+    ) -> AdminModelCommandFuture<'a, Vec<AdminModelMappingRuleItem>> {
+        Box::pin(async move { Ok(Vec::new()) })
+    }
+
     fn create_model<'a>(
         &'a self,
         command: CreateAdminAiModelCommand,
@@ -412,7 +530,7 @@ impl AdminModelStore for TestAdminModelStore {
                 .lock()
                 .unwrap()
                 .push(command.region_prices.clone());
-            let region_code = command.region_code;
+            let region_prices = command.region_prices.clone();
             let model = command.model;
             let display_name = command.display_name;
             let item = AdminAiModelItem {
@@ -422,16 +540,12 @@ impl AdminModelStore for TestAdminModelStore {
                 organization_id: command.subject.organization_id,
                 vendor_id: command.vendor_id,
                 vendor_code: "acme_ai".to_owned(),
-                region_code: region_code.clone(),
-                catalog_key: format!("acme_ai/{}/{}", region_code, model),
+                catalog_key: format!("acme_ai/{}", model),
                 model,
                 display_name: display_name.clone(),
                 name: display_name,
                 model_type: command.model_type,
-                price_in: command.price_in,
-                price_out: command.price_out,
-                cache_read_price: command.cache_read_price.unwrap_or_default(),
-                cache_write_price: command.cache_write_price.unwrap_or_default(),
+                region_prices,
                 status: "active".to_owned(),
                 calls: "0".to_owned(),
                 description: command.description,
@@ -457,6 +571,17 @@ impl AdminModelStore for TestAdminModelStore {
             };
             self.models.lock().unwrap().push(item.clone());
             Ok(item)
+        })
+    }
+
+    fn create_model_mapping<'a>(
+        &'a self,
+        _command: CreateAdminModelMappingCommand,
+    ) -> AdminModelCommandFuture<'a, AdminModelMappingRuleItem> {
+        Box::pin(async move {
+            Err(sdkwork_claw_product::domain::DomainError::not_found(
+                "model mapping is not supported by test store",
+            ))
         })
     }
 
@@ -515,10 +640,10 @@ impl AdminModelStore for TestAdminModelStore {
                 command.model.as_deref().unwrap_or("")
             ));
             let mut models = self.models.lock().unwrap();
-            let Some(model) = models
-                .iter_mut()
-                .find(|item| item.id.to_string() == command.model_id && item.deleted_at.is_none())
-            else {
+            let Some(model) = models.iter_mut().find(|item| {
+                (item.id.to_string() == command.model_id || item.model == command.model_id)
+                    && item.deleted_at.is_none()
+            }) else {
                 return Err(sdkwork_claw_product::domain::DomainError::not_found(
                     "ai model was not found",
                 ));
@@ -540,17 +665,8 @@ impl AdminModelStore for TestAdminModelStore {
             if let Some(model_type) = command.model_type {
                 model.model_type = model_type;
             }
-            if let Some(price_in) = command.price_in {
-                model.price_in = price_in;
-            }
-            if let Some(price_out) = command.price_out {
-                model.price_out = price_out;
-            }
-            if let Some(cache_read_price) = command.cache_read_price {
-                model.cache_read_price = cache_read_price.unwrap_or_default();
-            }
-            if let Some(cache_write_price) = command.cache_write_price {
-                model.cache_write_price = cache_write_price.unwrap_or_default();
+            if let Some(region_prices) = command.region_prices {
+                model.region_prices = region_prices;
             }
             if let Some(status) = command.status {
                 model.status = status;
@@ -616,6 +732,17 @@ impl AdminModelStore for TestAdminModelStore {
         })
     }
 
+    fn update_model_mapping<'a>(
+        &'a self,
+        _command: UpdateAdminModelMappingCommand,
+    ) -> AdminModelCommandFuture<'a, AdminModelMappingRuleItem> {
+        Box::pin(async move {
+            Err(sdkwork_claw_product::domain::DomainError::not_found(
+                "model mapping is not supported by test store",
+            ))
+        })
+    }
+
     fn delete_model<'a>(
         &'a self,
         command: DeleteAdminAiModelCommand,
@@ -636,6 +763,36 @@ impl AdminModelStore for TestAdminModelStore {
             };
             model.deleted_at = Some(command.requested_at);
             Ok(())
+        })
+    }
+
+    fn delete_model_mapping<'a>(
+        &'a self,
+        _command: DeleteAdminModelMappingCommand,
+    ) -> AdminModelCommandFuture<'a, ()> {
+        Box::pin(async move {
+            Err(sdkwork_claw_product::domain::DomainError::not_found(
+                "model mapping is not supported by test store",
+            ))
+        })
+    }
+
+    fn resolve_model_mapping<'a>(
+        &'a self,
+        query: ResolveAdminModelMappingQuery,
+    ) -> AdminModelCommandFuture<'a, ResolveAdminModelMappingResult> {
+        Box::pin(async move {
+            Ok(ResolveAdminModelMappingResult {
+                source_model: query.source_model.clone(),
+                target_model: query.source_model,
+                target_catalog_key: None,
+                target_vendor_code: query.vendor_code,
+                target_provider_model: None,
+                target_provider_native_model: None,
+                matched: false,
+                matched_binding_type: None,
+                rule: None,
+            })
         })
     }
 }

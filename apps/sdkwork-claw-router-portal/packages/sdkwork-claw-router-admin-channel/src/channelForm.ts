@@ -4,8 +4,10 @@ import type {
   AiResourceMemberInput,
   AiResourceUpdateInput,
   ChannelItem,
+  ChannelCredentialInput,
   ChannelCreateInput,
   ChannelUpdateInput,
+  CredentialRotationStrategy,
   ProviderSecretInput,
   ChannelEndpoint,
   ChannelEndpointCreateInput,
@@ -19,8 +21,8 @@ export type ChannelFormValues = {
   channelType?: string;
   protocol: string;
   accessType: string;
-  baseUrl: string;
-  apiKey?: string;
+  credentialRotation?: string;
+  credentials: ChannelCredentialFormValue[];
   credentialFields?: Record<string, string | undefined>;
   secretRef?: string;
   expiresAt?: string;
@@ -31,6 +33,17 @@ export type ChannelFormValues = {
   circuitBreakerFailureThreshold?: number | string | null;
   weight: number;
   status: string;
+};
+
+export type ChannelCredentialFormValue = {
+  name?: string;
+  baseUrl: string;
+  apiKey?: string;
+  credentialFields?: Record<string, string | undefined>;
+  secretRef?: string;
+  priority?: number | string | null;
+  weight?: number | string | null;
+  status?: string;
 };
 
 export type ProviderSecretFormValues = {
@@ -77,8 +90,18 @@ export function createChannelEditDraft(channel: ChannelItem): ChannelFormValues 
     channelType: channel.channelType,
     protocol: channel.protocol,
     accessType: channel.accessType,
-    baseUrl: channel.baseUrl ?? '',
-    apiKey: '',
+    credentialRotation: channel.credentialRotation,
+    credentials: channel.credentials.length > 0
+      ? channel.credentials.map((credential) => ({
+        name: credential.name,
+        baseUrl: credential.baseUrl,
+        apiKey: '',
+        secretRef: credential.secretRef,
+        priority: credential.priority,
+        weight: credential.weight,
+        status: credential.status,
+      }))
+      : [defaultChannelCredentialFormValue()],
     expiresAt: channel.expiresAt ?? '',
     capabilities: [...channel.capabilities],
     resourceCodes: [...channel.resourceCodes],
@@ -94,6 +117,15 @@ export function createChannelCopyDraft(channel: ChannelItem): ChannelFormValues 
   const draft = createChannelEditDraft(channel);
   return {
     ...draft,
+    credentials: draft.credentials.map((credential) => {
+      const nextCredential = {
+        ...credential,
+        apiKey: '',
+        secretRef: '',
+      };
+      delete nextCredential.credentialFields;
+      return nextCredential;
+    }),
     status: channel.status === 'active' ? 'active' : 'disabled',
   };
 }
@@ -165,9 +197,8 @@ export function createChannelInputFromForm(values: ChannelFormValues): ChannelCr
     channelType: optionalChannelType(values.channelType),
     protocol: optionalText(values.protocol),
     accessType: optionalText(values.accessType),
-    baseUrl: optionalText(values.baseUrl),
-    apiKey: credentialSecretMaterial(values),
-    secretRef: optionalText(values.secretRef),
+    credentialRotation: optionalCredentialRotation(values.credentialRotation),
+    credentials: normalizeCredentialFormValues(values.credentials, true),
     expiresAt: optionalText(values.expiresAt),
     capabilities: normalizedCapabilities(values.capabilities),
     resourceCodes: normalizedResourceCodes(values.resourceCodes),
@@ -180,15 +211,15 @@ export function createChannelInputFromForm(values: ChannelFormValues): ChannelCr
 
 export function createChannelUpdateInputFromForm(values: ChannelFormValues): ChannelUpdateInput {
   const weight = positiveInteger(values.weight, 'weight');
+  const credentials = normalizeCredentialFormValues(values.credentials, false);
   return omitUndefined({
     name: optionalText(values.name),
     vendor: optionalText(values.vendor),
     channelType: optionalChannelType(values.channelType),
     protocol: optionalText(values.protocol),
     accessType: optionalText(values.accessType),
-    baseUrl: optionalText(values.baseUrl),
-    apiKey: credentialSecretMaterial(values),
-    secretRef: optionalText(values.secretRef),
+    credentialRotation: optionalCredentialRotation(values.credentialRotation),
+    credentials: credentials.length > 0 ? credentials : undefined,
     expiresAt: values.expiresAt === undefined ? undefined : optionalText(values.expiresAt) ?? null,
     capabilities: normalizedCapabilities(values.capabilities),
     resourceCodes: normalizedResourceCodesForUpdate(values.resourceCodes),
@@ -203,6 +234,17 @@ export function createChannelUpdateInputFromForm(values: ChannelFormValues): Cha
 
 export function createChannelStatusUpdateInput(status: string): ChannelUpdateInput {
   return { status: channelStatus(status) };
+}
+
+export function defaultChannelCredentialFormValue(): ChannelCredentialFormValue {
+  return {
+    name: 'Primary',
+    baseUrl: '',
+    apiKey: '',
+    priority: 1,
+    weight: 100,
+    status: 'active',
+  };
 }
 
 export function createProviderSecretInputFromForm(values: ProviderSecretFormValues): ProviderSecretInput {
@@ -377,6 +419,93 @@ function optionalChannelType(value: string | undefined): ChannelCreateInput['cha
   throw new Error(`Unsupported channel type: ${normalized}`);
 }
 
+function optionalCredentialRotation(value: string | undefined): CredentialRotationStrategy | undefined {
+  const normalized = optionalText(value)?.toLowerCase().replace(/-/g, '_');
+  if (!normalized) {
+    return undefined;
+  }
+  if (
+    normalized === 'default'
+    || normalized === 'priority'
+    || normalized === 'round_robin'
+    || normalized === 'weighted_round_robin'
+    || normalized === 'random'
+  ) {
+    return normalized;
+  }
+  throw new Error(`Unsupported credential rotation strategy: ${normalized}`);
+}
+
+function normalizeCredentialFormValues(
+  credentials: ChannelCredentialFormValue[],
+  requireSecretMaterial: boolean,
+): ChannelCredentialInput[] {
+  if (!Array.isArray(credentials)) {
+    throw new Error('credentials must include at least one upstream credential');
+  }
+  const normalized = credentials
+    .map((credential, index) => normalizeCredentialFormValue(credential, index, requireSecretMaterial))
+    .filter((credential): credential is ChannelCredentialInput => credential !== null);
+  if (normalized.length === 0) {
+    if (!requireSecretMaterial) {
+      return [];
+    }
+    throw new Error('credentials must include at least one upstream credential');
+  }
+  return normalized;
+}
+
+function normalizeCredentialFormValue(
+  values: ChannelCredentialFormValue,
+  index: number,
+  requireSecretMaterial: boolean,
+): ChannelCredentialInput | null {
+  const baseUrl = optionalText(values.baseUrl);
+  const apiKey = credentialSecretMaterial(values);
+  const secretRef = optionalText(values.secretRef);
+  const hasAnyValue = Boolean(
+    baseUrl
+      || apiKey
+      || secretRef
+      || optionalText(values.name)
+      || values.priority
+      || values.weight
+      || optionalText(values.status),
+  );
+  if (!hasAnyValue) {
+    return null;
+  }
+  if (!baseUrl) {
+    throw new Error(`credentials[${index}].baseUrl is required`);
+  }
+  if (!apiKey && !secretRef && requireSecretMaterial) {
+    throw new Error(`credentials[${index}].apiKey is required`);
+  }
+  if (apiKey && secretRef) {
+    throw new Error(`credentials[${index}] must provide either apiKey or secretRef, not both`);
+  }
+  return omitUndefined({
+    name: optionalText(values.name),
+    baseUrl: providerEndpointBaseUrl(baseUrl),
+    apiKey,
+    secretRef,
+    priority: optionalPositiveInteger(values.priority, `credentials[${index}].priority`),
+    weight: optionalBoundedInteger(values.weight, `credentials[${index}].weight`, 1, 10000),
+    status: optionalCredentialStatus(values.status),
+  });
+}
+
+function optionalCredentialStatus(value: string | undefined): ChannelCredentialInput['status'] | undefined {
+  const normalized = optionalText(value)?.toLowerCase();
+  if (!normalized) {
+    return undefined;
+  }
+  if (normalized === 'active' || normalized === 'disabled' || normalized === 'error') {
+    return normalized;
+  }
+  throw new Error(`Unsupported credential status: ${normalized}`);
+}
+
 function normalizedResourceCodes(values: string[] | undefined): string[] | undefined {
   const normalized = Array.from(new Set(
     normalizedTextArray(values ?? []).map((value) => value.toLowerCase()),
@@ -409,7 +538,7 @@ function optionalText(value: string | undefined): string | undefined {
   return normalized ? normalized : undefined;
 }
 
-function credentialSecretMaterial(values: ChannelFormValues): string | undefined {
+function credentialSecretMaterial(values: Pick<ChannelCredentialFormValue, 'apiKey' | 'credentialFields'>): string | undefined {
   return optionalText(values.apiKey) ?? serializeCredentialFields(values.credentialFields);
 }
 

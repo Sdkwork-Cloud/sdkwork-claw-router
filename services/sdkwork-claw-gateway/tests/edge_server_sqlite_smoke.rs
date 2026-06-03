@@ -1093,7 +1093,7 @@ fn app_smoke_model_catalog() -> InMemoryPricingCatalog {
         vec!["chat", "tools"],
     ));
     catalog.add_price(ModelPrice::new_for_catalog_key(
-        "openai/global/gpt-4o-mini",
+        "openai/gpt-4o-mini",
         "gpt-4o-mini",
         PriceSide::OfficialReference,
         BillingMeter::LlmInputToken,

@@ -113,6 +113,60 @@ namespace Sdkwork.ClawRouter.Backend.Api
         }
 
         /// <summary>
+        /// List category attribute bindings
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.CatalogCategoryAttributesListResult?> CatalogCategoryAttributesListAsync(string? categoryId = null, string? attributeId = null, string? status = null, int? page = null, int? pageSize = null)
+        {
+            var queryString = BuildQueryString(new[]
+            {
+                new QueryParameterSpec("category_id", categoryId, "form", true, false, null),
+                new QueryParameterSpec("attribute_id", attributeId, "form", true, false, null),
+                new QueryParameterSpec("status", status, "form", true, false, null),
+                new QueryParameterSpec("page", page, "form", true, false, null),
+                new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+            });
+            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.CatalogCategoryAttributesListResult>(ApiPaths.AppendQueryString(ApiPaths.BackendPath("/catalog/category_attributes"), queryString));
+        }
+
+        /// <summary>
+        /// Create category attribute binding
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.CatalogCategoryAttributesCreateResult?> CatalogCategoryAttributesCreateAsync(Sdkwork.ClawRouter.Backend.Models.CommerceProductCategoryAttributeMutationRequest body, string idempotencyKey)
+        {
+            var requestHeaders = BuildRequestHeaders(
+                new Dictionary<string, HeaderParameterSpec>
+                {
+                    ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
+                },
+                new Dictionary<string, HeaderParameterSpec>()
+            );
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.CatalogCategoryAttributesCreateResult>(ApiPaths.BackendPath("/catalog/category_attributes"), body, null, requestHeaders, "application/json");
+        }
+
+        /// <summary>
+        /// Delete category attribute binding
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.CatalogCategoryAttributesDeleteResult?> CatalogCategoryAttributesDeleteAsync(string bindingId)
+        {
+            return await _client.DeleteAsync<Sdkwork.ClawRouter.Backend.Models.CatalogCategoryAttributesDeleteResult>(ApiPaths.BackendPath($"/catalog/category_attributes/{SerializePathParameter(bindingId, new PathParameterSpec("bindingId", "simple", false))}"));
+        }
+
+        /// <summary>
+        /// Update category attribute binding
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.CatalogCategoryAttributesUpdateResult?> CatalogCategoryAttributesUpdateAsync(string bindingId, Sdkwork.ClawRouter.Backend.Models.CommerceProductCategoryAttributeMutationRequest body, string idempotencyKey)
+        {
+            var requestHeaders = BuildRequestHeaders(
+                new Dictionary<string, HeaderParameterSpec>
+                {
+                    ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
+                },
+                new Dictionary<string, HeaderParameterSpec>()
+            );
+            return await _client.PatchAsync<Sdkwork.ClawRouter.Backend.Models.CatalogCategoryAttributesUpdateResult>(ApiPaths.BackendPath($"/catalog/category_attributes/{SerializePathParameter(bindingId, new PathParameterSpec("bindingId", "simple", false))}"), body, null, requestHeaders, "application/json");
+        }
+
+        /// <summary>
         /// Initialize admin category seed datasets
         /// </summary>
         public async Task<Sdkwork.ClawRouter.Backend.Models.CatalogCategorySeedsCreateResult?> CatalogCategorySeedsCreateAsync(Sdkwork.ClawRouter.Backend.Models.CommerceCategorySeedInitializeRequest body, string idempotencyKey)

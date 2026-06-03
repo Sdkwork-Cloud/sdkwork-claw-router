@@ -48,8 +48,9 @@ use crate::infrastructure::sql::model_catalog_import::{
     catalog_modality_api_endpoint_projections, catalog_modality_projections,
     catalog_model_api_endpoint_projections, catalog_model_modality_projections,
     catalog_scope_counts, catalog_scope_vendor_codes, catalog_vendor_api_endpoint_projections,
-    catalog_vendor_modality_projections, catalog_with_selected_vendors, load_catalog_root_with_pin,
-    model_catalog_key, pricing_catalog_key, DEFAULT_CATALOG_REFRESH_SOURCE,
+    catalog_vendor_modality_projections, catalog_vendor_records, catalog_with_selected_vendors,
+    load_catalog_root_with_pin, model_catalog_key, pricing_catalog_key,
+    DEFAULT_CATALOG_REFRESH_SOURCE,
 };
 use crate::infrastructure::sql::skills_seed::{
     bundled_skills_seed_payload, import_postgres_skills_seed, import_sqlite_skills_seed,
@@ -676,6 +677,7 @@ impl DatabaseInstaller {
             }
         };
         let bootstrap_admin = if item.synced && full_catalog_refresh {
+            self.record_catalog_migration_completed(&catalog).await?;
             self.import_installation_support_seeds().await?;
             let bootstrap_admin = self.bootstrap_admin_user_if_needed().await?;
             self.mark_installed_with_options(&install_options, catalog_version.as_str())
@@ -810,6 +812,49 @@ impl DatabaseInstaller {
             }
             InstallerBackend::Postgres(pool) => {
                 mark_postgres_installed_with_catalog_version(pool, options, catalog_version).await?
+            }
+        }
+        Ok(())
+    }
+
+    async fn record_catalog_migration_completed(
+        &self,
+        catalog: &ModelCatalog,
+    ) -> Result<(), DatabaseInstallError> {
+        let catalog_payload =
+            crate::infrastructure::sql::model_catalog_import::catalog_payload(catalog);
+        match &self.backend {
+            InstallerBackend::Sqlite(pool) => {
+                record_sqlite_migration_started(
+                    pool,
+                    "catalog",
+                    catalog.manifest.catalog_version.as_str(),
+                    catalog_payload.as_str(),
+                )
+                .await?;
+                record_sqlite_migration_completed(
+                    pool,
+                    "catalog",
+                    catalog.manifest.catalog_version.as_str(),
+                    catalog_payload.as_str(),
+                )
+                .await?;
+            }
+            InstallerBackend::Postgres(pool) => {
+                record_postgres_migration_started(
+                    pool,
+                    "catalog",
+                    catalog.manifest.catalog_version.as_str(),
+                    catalog_payload.as_str(),
+                )
+                .await?;
+                record_postgres_migration_completed(
+                    pool,
+                    "catalog",
+                    catalog.manifest.catalog_version.as_str(),
+                    catalog_payload.as_str(),
+                )
+                .await?;
             }
         }
         Ok(())
@@ -1426,6 +1471,7 @@ fn load_external_catalog_manifest_fast(
 #[derive(Debug, Clone, PartialEq, Eq)]
 struct CatalogCompletenessSpec {
     vendor_codes: BTreeSet<String>,
+    vendor_metadata_keys: BTreeSet<VendorMetadataCompletenessKey>,
     family_keys: BTreeSet<ModelFamilyCompletenessKey>,
     catalog_keys: BTreeSet<String>,
     capability_keys: BTreeSet<ModelCapabilityCompletenessKey>,
@@ -1440,6 +1486,13 @@ struct CatalogCompletenessSpec {
     model_modality_keys: BTreeSet<ModelModalityCompletenessKey>,
     model_api_endpoint_keys: BTreeSet<ModelApiEndpointCompletenessKey>,
     ai_resource_codes: BTreeSet<String>,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord)]
+struct VendorMetadataCompletenessKey {
+    vendor_code: String,
+    supported_protocols: String,
+    client_api_compatibility: String,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord)]
@@ -1512,6 +1565,21 @@ fn catalog_completeness_spec(catalog: &ModelCatalog) -> CatalogCompletenessSpec 
         .iter()
         .map(|vendor| vendor.vendor.vendor_code.clone())
         .collect::<BTreeSet<_>>();
+    let vendor_metadata_keys = catalog_vendor_records(catalog)
+        .into_iter()
+        .map(|vendor| VendorMetadataCompletenessKey {
+            vendor_code: vendor.vendor_code.clone(),
+            supported_protocols: canonical_json_text(
+                &crate::infrastructure::sql::model_catalog_import::json_array(
+                    &vendor.supported_protocols,
+                ),
+            ),
+            client_api_compatibility: canonical_json_text(
+                &serde_json::to_string(&vendor.client_api_compatibility)
+                    .unwrap_or_else(|_| "{}".to_owned()),
+            ),
+        })
+        .collect::<BTreeSet<_>>();
     let family_keys = catalog
         .vendors
         .iter()
@@ -1525,28 +1593,12 @@ fn catalog_completeness_spec(catalog: &ModelCatalog) -> CatalogCompletenessSpec 
                 })
         })
         .collect::<BTreeSet<_>>();
-    let catalog_keys = catalog
-        .vendors
-        .iter()
-        .flat_map(|vendor| {
-            vendor
-                .models
-                .iter()
-                .map(|model| model_catalog_key(&vendor.vendor.vendor_code, &model.model_id))
-        })
-        .collect::<BTreeSet<_>>();
-    let capability_keys = catalog
-        .vendors
-        .iter()
-        .flat_map(|vendor| {
-            vendor.models.iter().map(|model| {
-                (
-                    model_catalog_key(&vendor.vendor.vendor_code, &model.model_id),
-                    model,
-                )
-            })
-        })
-        .flat_map(|(model_catalog_key, model)| {
+    let public_models =
+        crate::infrastructure::sql::model_catalog_import::public_catalog_identity_models(catalog);
+    let catalog_keys = public_models.keys().cloned().collect::<BTreeSet<_>>();
+    let capability_keys = public_models
+        .into_iter()
+        .flat_map(|(model_catalog_key, (_, model))| {
             let modality =
                 crate::infrastructure::sql::model_catalog_import::primary_modality(model);
             let capabilities = if model.capabilities.is_empty() {
@@ -1566,6 +1618,7 @@ fn catalog_completeness_spec(catalog: &ModelCatalog) -> CatalogCompletenessSpec 
                 })
         })
         .collect::<BTreeSet<_>>();
+    let public_catalog_keys = catalog_keys.clone();
     let meter_codes = catalog
         .meters
         .iter()
@@ -1575,6 +1628,10 @@ fn catalog_completeness_spec(catalog: &ModelCatalog) -> CatalogCompletenessSpec 
         .vendors
         .iter()
         .flat_map(|vendor| vendor.pricing.iter())
+        .filter(|pricing| {
+            public_catalog_keys
+                .contains(&model_catalog_key(&pricing.vendor_code, &pricing.model_id))
+        })
         .flat_map(|pricing| {
             let pricing_catalog_key = pricing_catalog_key(&pricing.vendor_code, &pricing.model_id);
             pricing
@@ -1684,6 +1741,7 @@ fn catalog_completeness_spec(catalog: &ModelCatalog) -> CatalogCompletenessSpec 
 
     CatalogCompletenessSpec {
         vendor_codes,
+        vendor_metadata_keys,
         family_keys,
         catalog_keys,
         capability_keys,
@@ -1777,6 +1835,9 @@ async fn sqlite_status(
     };
     let spec = catalog_completeness_spec(&catalog);
     if !sqlite_sdkwork_models_catalog_complete(pool, &spec).await? {
+        return Ok(InstallationStatus::UpgradeRequired);
+    }
+    if !sqlite_catalog_migration_payload_current(pool, &catalog).await? {
         return Ok(InstallationStatus::UpgradeRequired);
     }
     if !sqlite_ai_routing_seed_complete(pool).await? {
@@ -1986,6 +2047,9 @@ async fn postgres_status(
     };
     let spec = catalog_completeness_spec(&catalog);
     if !postgres_sdkwork_models_catalog_complete(pool, &spec).await? {
+        return Ok(InstallationStatus::UpgradeRequired);
+    }
+    if !postgres_catalog_migration_payload_current(pool, &catalog).await? {
         return Ok(InstallationStatus::UpgradeRequired);
     }
     if !postgres_ai_routing_seed_complete(pool).await? {
@@ -2279,9 +2343,11 @@ async fn repair_sqlite_installation(
 
     let catalog = load_install_model_catalog(options)?;
     let spec = catalog_completeness_spec(&catalog);
-    if !sqlite_sdkwork_models_catalog_complete(pool, &spec).await? {
-        let catalog_payload =
-            crate::infrastructure::sql::model_catalog_import::catalog_payload(&catalog);
+    let catalog_payload =
+        crate::infrastructure::sql::model_catalog_import::catalog_payload(&catalog);
+    if !sqlite_sdkwork_models_catalog_complete(pool, &spec).await?
+        || !sqlite_catalog_migration_payload_current(pool, &catalog).await?
+    {
         record_sqlite_migration_started(
             pool,
             "catalog",
@@ -2513,9 +2579,11 @@ async fn repair_postgres_installation(
 
     let catalog = load_install_model_catalog(options)?;
     let spec = catalog_completeness_spec(&catalog);
-    if !postgres_sdkwork_models_catalog_complete(pool, &spec).await? {
-        let catalog_payload =
-            crate::infrastructure::sql::model_catalog_import::catalog_payload(&catalog);
+    let catalog_payload =
+        crate::infrastructure::sql::model_catalog_import::catalog_payload(&catalog);
+    if !postgres_sdkwork_models_catalog_complete(pool, &spec).await?
+        || !postgres_catalog_migration_payload_current(pool, &catalog).await?
+    {
         record_postgres_migration_started(
             pool,
             "catalog",
@@ -4839,6 +4907,7 @@ async fn sqlite_sdkwork_models_catalog_complete(
         "#,
     )
     .await?;
+    let vendor_metadata_keys = sqlite_vendor_metadata_keys(pool).await?;
     let family_keys = sqlite_model_family_keys(pool).await?;
     let catalog_keys = sqlite_string_set(
         pool,
@@ -4900,6 +4969,7 @@ async fn sqlite_sdkwork_models_catalog_complete(
     .await?;
 
     Ok(spec.vendor_codes.is_subset(&vendor_codes)
+        && spec.vendor_metadata_keys.is_subset(&vendor_metadata_keys)
         && spec.family_keys.is_subset(&family_keys)
         && spec.catalog_keys.is_subset(&catalog_keys)
         && spec.capability_keys.is_subset(&capability_keys)
@@ -4936,6 +5006,7 @@ async fn postgres_sdkwork_models_catalog_complete(
         "#,
     )
     .await?;
+    let vendor_metadata_keys = postgres_vendor_metadata_keys(pool).await?;
     let family_keys = postgres_model_family_keys(pool).await?;
     let catalog_keys = postgres_string_set(
         pool,
@@ -4997,6 +5068,7 @@ async fn postgres_sdkwork_models_catalog_complete(
     .await?;
 
     Ok(spec.vendor_codes.is_subset(&vendor_codes)
+        && spec.vendor_metadata_keys.is_subset(&vendor_metadata_keys)
         && spec.family_keys.is_subset(&family_keys)
         && spec.catalog_keys.is_subset(&catalog_keys)
         && spec.capability_keys.is_subset(&capability_keys)
@@ -5019,6 +5091,34 @@ async fn postgres_sdkwork_models_catalog_complete(
         && spec.ai_resource_codes.is_subset(&ai_resource_codes))
 }
 
+async fn sqlite_catalog_migration_payload_current(
+    pool: &SqlitePool,
+    catalog: &ModelCatalog,
+) -> Result<bool, sqlx::Error> {
+    let payload = crate::infrastructure::sql::model_catalog_import::catalog_payload(catalog);
+    sqlite_seed_migration_payload_current(
+        pool,
+        "catalog",
+        catalog.manifest.catalog_version.as_str(),
+        payload.as_str(),
+    )
+    .await
+}
+
+async fn postgres_catalog_migration_payload_current(
+    pool: &PgPool,
+    catalog: &ModelCatalog,
+) -> Result<bool, sqlx::Error> {
+    let payload = crate::infrastructure::sql::model_catalog_import::catalog_payload(catalog);
+    postgres_seed_migration_payload_current(
+        pool,
+        "catalog",
+        catalog.manifest.catalog_version.as_str(),
+        payload.as_str(),
+    )
+    .await
+}
+
 async fn sqlite_string_set(
     pool: &SqlitePool,
     query: &str,
@@ -5038,8 +5138,75 @@ async fn postgres_string_set(pool: &PgPool, query: &str) -> Result<BTreeSet<Stri
         .collect())
 }
 
+fn canonical_json_text(payload: &str) -> String {
+    serde_json::from_str::<serde_json::Value>(payload)
+        .map(|value| value.to_string())
+        .unwrap_or_else(|_| payload.to_owned())
+}
+
 fn string_set(values: Vec<&'static str>) -> BTreeSet<String> {
     values.into_iter().map(str::to_owned).collect()
+}
+
+async fn sqlite_vendor_metadata_keys(
+    pool: &SqlitePool,
+) -> Result<BTreeSet<VendorMetadataCompletenessKey>, sqlx::Error> {
+    let rows = sqlx::query(
+        r#"
+        SELECT vendor_code, supported_protocols, client_api_compatibility
+        FROM ai_model_vendor
+        WHERE status = 1
+          AND deleted_at IS NULL
+        "#,
+    )
+    .fetch_all(pool)
+    .await?;
+    Ok(rows
+        .into_iter()
+        .map(|row| VendorMetadataCompletenessKey {
+            vendor_code: row.try_get::<String, _>("vendor_code").unwrap_or_default(),
+            supported_protocols: canonical_json_text(
+                &row.try_get::<String, _>("supported_protocols")
+                    .unwrap_or_default(),
+            ),
+            client_api_compatibility: canonical_json_text(
+                &row.try_get::<String, _>("client_api_compatibility")
+                    .unwrap_or_default(),
+            ),
+        })
+        .collect())
+}
+
+async fn postgres_vendor_metadata_keys(
+    pool: &PgPool,
+) -> Result<BTreeSet<VendorMetadataCompletenessKey>, sqlx::Error> {
+    let rows = sqlx::query(
+        r#"
+        SELECT
+            vendor_code,
+            supported_protocols::text AS supported_protocols,
+            client_api_compatibility::text AS client_api_compatibility
+        FROM ai_model_vendor
+        WHERE status = 1
+          AND deleted_at IS NULL
+        "#,
+    )
+    .fetch_all(pool)
+    .await?;
+    Ok(rows
+        .into_iter()
+        .map(|row| VendorMetadataCompletenessKey {
+            vendor_code: row.try_get::<String, _>("vendor_code").unwrap_or_default(),
+            supported_protocols: canonical_json_text(
+                &row.try_get::<String, _>("supported_protocols")
+                    .unwrap_or_default(),
+            ),
+            client_api_compatibility: canonical_json_text(
+                &row.try_get::<String, _>("client_api_compatibility")
+                    .unwrap_or_default(),
+            ),
+        })
+        .collect())
 }
 
 async fn sqlite_model_family_keys(

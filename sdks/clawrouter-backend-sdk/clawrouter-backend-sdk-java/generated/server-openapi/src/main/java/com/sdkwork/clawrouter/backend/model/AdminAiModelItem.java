@@ -4,8 +4,6 @@ import java.util.List;
 
 public class AdminAiModelItem {
     private String apiFormat;
-    private String cacheReadPrice;
-    private String cacheWritePrice;
     private String calls;
     private String capabilityIntro;
     private Integer contextTokens;
@@ -19,8 +17,7 @@ public class AdminAiModelItem {
     private String model;
     private String name;
     private List<String> outputModalities;
-    private String priceIn;
-    private String priceOut;
+    private List<AdminAiModelRegionPrice> regionPrices;
     private Integer releaseStage;
     private String replacementModel;
     private Integer routingState;
@@ -42,22 +39,6 @@ public class AdminAiModelItem {
 
     public void setApiFormat(String apiFormat) {
         this.apiFormat = apiFormat;
-    }
-
-    public String getCacheReadPrice() {
-        return this.cacheReadPrice;
-    }
-
-    public void setCacheReadPrice(String cacheReadPrice) {
-        this.cacheReadPrice = cacheReadPrice;
-    }
-
-    public String getCacheWritePrice() {
-        return this.cacheWritePrice;
-    }
-
-    public void setCacheWritePrice(String cacheWritePrice) {
-        this.cacheWritePrice = cacheWritePrice;
     }
 
     public String getCalls() {
@@ -164,20 +145,12 @@ public class AdminAiModelItem {
         this.outputModalities = outputModalities;
     }
 
-    public String getPriceIn() {
-        return this.priceIn;
+    public List<AdminAiModelRegionPrice> getRegionPrices() {
+        return this.regionPrices;
     }
 
-    public void setPriceIn(String priceIn) {
-        this.priceIn = priceIn;
-    }
-
-    public String getPriceOut() {
-        return this.priceOut;
-    }
-
-    public void setPriceOut(String priceOut) {
-        this.priceOut = priceOut;
+    public void setRegionPrices(List<AdminAiModelRegionPrice> regionPrices) {
+        this.regionPrices = regionPrices;
     }
 
     public Integer getReleaseStage() {

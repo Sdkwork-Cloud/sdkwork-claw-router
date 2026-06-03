@@ -93,6 +93,7 @@ client.getHttpClient().setHeader("X-Custom-Header", "value");
 - `client.getSystem()` - system API
 - `client.getPrompts()` - prompts API
 - `client.getServiceProviders()` - service_providers API
+- `client.getSites()` - sites API
 - `client.getStorage()` - storage API
 
 ## Usage Examples
@@ -246,6 +247,16 @@ params.put("seller_provider_id", "1");
 params.put("buyer_provider_id", "1");
 params.put("edge_id", "1");
 AdjustmentsListResult result = client.getServiceProviders().adjustmentsList(params);
+System.out.println(result);
+```
+
+### sites
+
+```java
+// List sites
+Map<String, Object> params = new LinkedHashMap<>();
+params.put("q", "q");
+SiteCatalogListResult result = client.getSites().siteCatalogList(params);
 System.out.println(result);
 ```
 

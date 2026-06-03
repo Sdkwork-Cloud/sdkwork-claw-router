@@ -905,8 +905,9 @@ export function PaymentsAdmin({ sectionId }: PaymentsAdminProps = {}) {
   };
 
   return (
-    <>
-      <AdminResourceCenter
+    <div className="flex h-full min-h-0 w-full flex-col gap-3 overflow-hidden" data-admin-payments-layout>
+      <div className="min-h-0 flex-1 overflow-hidden">
+        <AdminResourceCenter
         activeSectionId={activeSectionId}
         emptyTitle={t('admin.commerce.payments.empty', 'No payment records')}
         errorTitle={t('admin.commerce.payments.error', 'Payment data could not be loaded')}
@@ -919,8 +920,9 @@ export function PaymentsAdmin({ sectionId }: PaymentsAdminProps = {}) {
         showSectionNavigation={false}
         tableViewportDataAttribute="admin-payments-table-viewport"
       />
+      </div>
       {!providerAccountFormOpen && (providerAccountError || providerAccountSuccess) && (
-        <div className="mt-3" data-admin-payment-provider-account-feedback>
+        <div className="shrink-0" data-admin-payment-provider-account-feedback>
           <div className={`rounded-lg border px-3 py-2 text-sm ${
             providerAccountError
               ? 'border-red-200 bg-red-50 text-red-700 dark:border-red-500/20 dark:bg-red-500/10 dark:text-red-300'
@@ -1089,7 +1091,7 @@ export function PaymentsAdmin({ sectionId }: PaymentsAdminProps = {}) {
           onCancel={() => setProviderAccountDeleteConfirmation(null)}
         />
       )}
-    </>
+    </div>
   );
 }
 

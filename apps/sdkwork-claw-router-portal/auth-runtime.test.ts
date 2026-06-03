@@ -2271,6 +2271,10 @@ test("admin app center splits WeChat official account and mini program into inde
   assert.match(officialSource, /accounts/);
   assert.match(officialSource, /menus/);
   assert.match(officialSource, /messages/);
+  assert.match(officialSource, /data-admin-open-platform-wechat-official-accounts-table/);
+  assert.match(officialSource, /data-admin-open-platform-wechat-official-menus-table/);
+  assert.match(officialSource, /className="m-5 mt-4 min-h-0 flex-1 rounded-xl"/);
+  assert.match(officialSource, /viewportClassName="min-h-0 flex-1"/);
   assert.match(officialSource, /公众号/);
   assert.doesNotMatch(officialSource, /from 'react-router-dom'/);
   assert.doesNotMatch(officialSource, /OFFICIAL_SECTION_ROUTES/);
@@ -2326,6 +2330,10 @@ test("admin app center splits WeChat official account and mini program into inde
   assert.match(miniSource, /resolveMiniProgramSectionId/);
   assert.match(miniSource, /data-admin-open-platform-wechat-mini-accounts/);
   assert.match(miniSource, /data-admin-open-platform-wechat-mini-urls/);
+  assert.match(miniSource, /data-admin-open-platform-wechat-mini-accounts-table/);
+  assert.match(miniSource, /data-admin-open-platform-wechat-mini-urls-table/);
+  assert.match(miniSource, /className="m-5 mt-4 min-h-0 flex-1 rounded-xl"/);
+  assert.match(miniSource, /viewportClassName="min-h-0 flex-1"/);
   assert.match(miniSource, /小程序/);
   assert.match(miniSource, /const OPEN_PLATFORM_KEY_PATTERN = \/\^\[a-z0-9\]\[a-z0-9\._:-\]\*\$\/;/);
   assert.match(miniSource, /function isValidOpenPlatformKey\(value: string\): boolean/);

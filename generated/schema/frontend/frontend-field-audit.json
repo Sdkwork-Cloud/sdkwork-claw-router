@@ -1769,10 +1769,12 @@
         "models.displayName",
         "models.name",
         "models.type",
-        "models.priceIn",
-        "models.priceOut",
-        "models.cacheReadPrice",
-        "models.cacheWritePrice",
+        "models.regionPrices",
+        "models.regionPrices.regionCode",
+        "models.regionPrices.priceIn",
+        "models.regionPrices.priceOut",
+        "models.regionPrices.cacheReadPrice",
+        "models.regionPrices.cacheWritePrice",
         "models.status",
         "models.calls",
         "models.description",
@@ -1814,10 +1816,12 @@
         "displayName",
         "name",
         "type",
-        "priceIn",
-        "priceOut",
-        "cacheReadPrice",
-        "cacheWritePrice",
+        "regionPrices",
+        "regionPrices.regionCode",
+        "regionPrices.priceIn",
+        "regionPrices.priceOut",
+        "regionPrices.cacheReadPrice",
+        "regionPrices.cacheWritePrice",
         "status",
         "calls",
         "description",
@@ -1889,10 +1893,12 @@
         "models.displayName",
         "models.name",
         "models.type",
-        "models.priceIn",
-        "models.priceOut",
-        "models.cacheReadPrice",
-        "models.cacheWritePrice",
+        "models.regionPrices",
+        "models.regionPrices.regionCode",
+        "models.regionPrices.priceIn",
+        "models.regionPrices.priceOut",
+        "models.regionPrices.cacheReadPrice",
+        "models.regionPrices.cacheWritePrice",
         "models.status",
         "models.calls",
         "models.description",
@@ -1932,10 +1938,6 @@
         "model",
         "displayName",
         "type",
-        "priceIn",
-        "priceOut",
-        "cacheReadPrice",
-        "cacheWritePrice",
         "regionPrices",
         "regionPrices.regionCode",
         "regionPrices.priceIn",
@@ -1960,29 +1962,30 @@
     },
     {
       "data_sources": [
-        "ai_model_mapping_rule"
+        "ai_model_mapping_rule",
+        "ai_model_mapping_rule_binding",
+        "ai_model_mapping_rule_item"
       ],
       "fields": [
-        "scopeType",
-        "vendorId",
-        "vendorCode",
-        "channelId",
-        "channelCode",
-        "sourceModel",
-        "sourceCatalogKey",
+        "sourceVendorId",
         "sourceVendorCode",
-        "targetModel",
-        "targetCatalogKey",
+        "targetVendorId",
         "targetVendorCode",
-        "targetProviderModel",
-        "targetProviderNativeModel",
         "mappingMode",
         "matchType",
-        "priority",
         "enabled",
-        "effectiveFrom",
-        "effectiveTo",
-        "description"
+        "bindings",
+        "bindings.bindingType",
+        "bindings.bindingId",
+        "bindings.bindingCode",
+        "bindings.bindingName",
+        "mappingItems",
+        "mappingItems.sourceModel",
+        "mappingItems.sourceCatalogKey",
+        "mappingItems.targetModel",
+        "mappingItems.targetCatalogKey",
+        "mappingItems.targetProviderModel",
+        "mappingItems.targetProviderNativeModel"
       ],
       "file_targets": [],
       "interface": "ModelMappingCreateInput",
@@ -1991,7 +1994,9 @@
     },
     {
       "data_sources": [
-        "ai_model_mapping_rule"
+        "ai_model_mapping_rule",
+        "ai_model_mapping_rule_binding",
+        "ai_model_mapping_rule_item"
       ],
       "fields": [
         "sourceModel",
@@ -2006,11 +2011,13 @@
     },
     {
       "data_sources": [
-        "ai_model_mapping_rule"
+        "ai_model_mapping_rule",
+        "ai_model_mapping_rule_binding",
+        "ai_model_mapping_rule_item"
       ],
       "fields": [
         "matched",
-        "matchedScopeType",
+        "matchedBindingType",
         "sourceModel",
         "targetModel",
         "targetCatalogKey",
@@ -2026,30 +2033,42 @@
     },
     {
       "data_sources": [
-        "ai_model_mapping_rule"
+        "ai_model_mapping_rule",
+        "ai_model_mapping_rule_binding",
+        "ai_model_mapping_rule_item"
       ],
       "fields": [
         "id",
-        "scopeType",
-        "vendorId",
-        "vendorCode",
-        "channelId",
-        "channelCode",
-        "sourceModel",
-        "sourceCatalogKey",
+        "bindingType",
+        "sourceVendorId",
         "sourceVendorCode",
-        "targetModel",
-        "targetCatalogKey",
+        "targetVendorId",
         "targetVendorCode",
-        "targetProviderModel",
-        "targetProviderNativeModel",
         "mappingMode",
         "matchType",
-        "priority",
         "enabled",
-        "effectiveFrom",
-        "effectiveTo",
-        "description",
+        "bindings",
+        "bindings.id",
+        "bindings.bindingType",
+        "bindings.bindingId",
+        "bindings.bindingCode",
+        "bindings.bindingName",
+        "bindings.sortOrder",
+        "bindings.enabled",
+        "bindings.createdAt",
+        "bindings.updatedAt",
+        "mappingItems",
+        "mappingItems.id",
+        "mappingItems.sourceModel",
+        "mappingItems.sourceCatalogKey",
+        "mappingItems.targetModel",
+        "mappingItems.targetCatalogKey",
+        "mappingItems.targetProviderModel",
+        "mappingItems.targetProviderNativeModel",
+        "mappingItems.sortOrder",
+        "mappingItems.enabled",
+        "mappingItems.createdAt",
+        "mappingItems.updatedAt",
         "createdAt",
         "updatedAt"
       ],
@@ -2060,29 +2079,76 @@
     },
     {
       "data_sources": [
-        "ai_model_mapping_rule"
+        "ai_model_mapping_rule",
+        "ai_model_mapping_rule_binding"
       ],
       "fields": [
-        "scopeType",
-        "vendorId",
-        "vendorCode",
-        "channelId",
-        "channelCode",
+        "id",
+        "bindingType",
+        "bindingId",
+        "bindingCode",
+        "bindingName",
+        "sortOrder",
+        "enabled",
+        "createdAt",
+        "updatedAt"
+      ],
+      "file_targets": [],
+      "interface": "ModelMappingRuleBinding",
+      "route": "/admin/model/mappings",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_model_mapping_rule",
+        "ai_model_mapping_rule_item"
+      ],
+      "fields": [
+        "id",
         "sourceModel",
         "sourceCatalogKey",
-        "sourceVendorCode",
         "targetModel",
         "targetCatalogKey",
-        "targetVendorCode",
         "targetProviderModel",
         "targetProviderNativeModel",
+        "sortOrder",
+        "enabled",
+        "createdAt",
+        "updatedAt"
+      ],
+      "file_targets": [],
+      "interface": "ModelMappingRuleItem",
+      "route": "/admin/model/mappings",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_model_mapping_rule",
+        "ai_model_mapping_rule_binding",
+        "ai_model_mapping_rule_item"
+      ],
+      "fields": [
+        "sourceVendorId",
+        "sourceVendorCode",
+        "targetVendorId",
+        "targetVendorCode",
         "mappingMode",
         "matchType",
-        "priority",
         "enabled",
-        "effectiveFrom",
-        "effectiveTo",
-        "description"
+        "bindings",
+        "bindings.id",
+        "bindings.bindingType",
+        "bindings.bindingId",
+        "bindings.bindingCode",
+        "bindings.bindingName",
+        "mappingItems",
+        "mappingItems.id",
+        "mappingItems.sourceModel",
+        "mappingItems.sourceCatalogKey",
+        "mappingItems.targetModel",
+        "mappingItems.targetCatalogKey",
+        "mappingItems.targetProviderModel",
+        "mappingItems.targetProviderNativeModel"
       ],
       "file_targets": [],
       "interface": "ModelMappingUpdateInput",
@@ -2134,6 +2200,29 @@
       "file_targets": [],
       "interface": "ModelRegionPriceInput",
       "route": "/admin/model",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_resource",
+        "ai_resource_group_item"
+      ],
+      "fields": [
+        "id",
+        "resourceCode",
+        "resourceType",
+        "displayName",
+        "vendorCode",
+        "modalityCode",
+        "apiEndpointCode",
+        "catalogKey",
+        "model",
+        "providerNativeModel",
+        "status"
+      ],
+      "file_targets": [],
+      "interface": "ResourceGroupAssignableResourceItem",
+      "route": "/admin/model/resources",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts"
     },
     {
@@ -2804,6 +2893,7 @@
         "model",
         "providerNativeModel",
         "requestedModelCatalogKey",
+        "regionCode",
         "status",
         "httpStatus",
         "httpMethod",
@@ -5103,6 +5193,7 @@
         "model",
         "providerNativeModel",
         "requestedModelCatalogKey",
+        "regionCode",
         "status",
         "httpStatus",
         "errorCode",
@@ -5617,7 +5708,6 @@
         "id",
         "modelId",
         "vendorCode",
-        "regionCode",
         "name",
         "provider",
         "modality",
@@ -5630,6 +5720,7 @@
         "pricing.cachedInput",
         "pricing.unavailableFields",
         "pricing.referencePrices",
+        "pricing.referencePrices.regionCode",
         "pricing.referencePrices.billingMeter",
         "pricing.referencePrices.unitPrice",
         "pricing.referencePrices.currency",
@@ -5666,6 +5757,7 @@
         "cachedInput",
         "unavailableFields",
         "referencePrices",
+        "referencePrices.regionCode",
         "referencePrices.billingMeter",
         "referencePrices.unitPrice",
         "referencePrices.currency",
@@ -5684,6 +5776,7 @@
         "ai_model_pricing"
       ],
       "fields": [
+        "regionCode",
         "billingMeter",
         "unitPrice",
         "currency"
@@ -5762,7 +5855,6 @@
         "model",
         "displayName",
         "vendorCode",
-        "regionCode",
         "vendor",
         "capabilities",
         "groups",
@@ -5787,9 +5879,11 @@
         "routingState",
         "replacementModel",
         "providerCodes",
-        "officialReferenceUnitPrice",
-        "officialReferenceCurrency",
         "officialReferencePrices",
+        "officialReferencePrices.regionCode",
+        "officialReferencePrices.billingMeter",
+        "officialReferencePrices.unitPrice",
+        "officialReferencePrices.currency",
         "priceAvailability"
       ],
       "file_targets": [],
@@ -6170,7 +6264,7 @@
     }
   ],
   "summary": {
-    "interface_count": 255,
+    "interface_count": 258,
     "source_file_count": 50
   }
 }

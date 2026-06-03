@@ -290,12 +290,27 @@ impl RoutingPolicy {
 pub struct RouteCandidate {
     pub channel_id: i64,
     pub weight: i64,
+    pub region_code: Option<String>,
 }
 
 impl RouteCandidate {
     pub fn new(channel_id: i64, weight: i64) -> Self {
-        Self { channel_id, weight }
+        Self {
+            channel_id,
+            weight,
+            region_code: None,
+        }
     }
+
+    pub fn with_region_code(mut self, region_code: &str) -> Self {
+        self.region_code = normalized_optional_route_region_code(region_code);
+        self
+    }
+}
+
+fn normalized_optional_route_region_code(value: &str) -> Option<String> {
+    let value = value.trim();
+    (!value.is_empty()).then(|| value.to_owned())
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]

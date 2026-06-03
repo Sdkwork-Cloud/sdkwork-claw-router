@@ -3,6 +3,8 @@ import subprocess
 import unittest
 from pathlib import Path
 
+import yaml
+
 
 ROOT = Path(__file__).resolve().parents[1]
 SDKWORK_MODELS = ROOT / "data" / "sdkwork-models"
@@ -23,6 +25,71 @@ def read_text(path: Path) -> str:
 
 def load_json(path: Path) -> dict:
     return json.loads(read_text(path))
+
+
+def load_json_from_yaml(path: Path) -> dict:
+    return yaml.safe_load(read_text(path))
+
+
+def model_id_from_catalog_file(root: Path, file_path: Path) -> str:
+    payload = load_json(file_path)
+    model_id = payload.get("modelId")
+    if isinstance(model_id, str) and model_id:
+        return model_id
+    rel = file_path.relative_to(root).with_suffix("")
+    return rel.as_posix()
+
+
+def pricing_path_for_model_path(model_path: Path) -> Path:
+    rel = model_path.relative_to(SDKWORK_MODELS / "models")
+    vendor_code, region_code = rel.parts[0], rel.parts[1]
+    model_root = SDKWORK_MODELS / "models" / vendor_code / region_code / "models"
+    model_id = model_id_from_catalog_file(model_root, model_path)
+    return SDKWORK_MODELS / "models" / vendor_code / region_code / "pricing" / f"{model_id}.json"
+
+
+def unsupported_client_api_compatibility() -> dict:
+    return {
+        "codex": {
+            "clientApiCode": "codex",
+            "displayName": "Codex",
+            "supportStatus": "unsupported",
+            "protocolCodes": [],
+            "apiCodes": [],
+            "resourceCodes": [],
+            "notes": "Test fixture vendor does not expose the Codex client API surface directly.",
+            "source": {
+                "sourceUrl": "https://sdkwork.cloud/standards/sdkwork-models/client-api-compatibility",
+                "observedAt": "2026-06-03T00:00:00Z",
+            },
+        },
+        "claude_code": {
+            "clientApiCode": "claude_code",
+            "displayName": "Claude Code",
+            "supportStatus": "unsupported",
+            "protocolCodes": [],
+            "apiCodes": [],
+            "resourceCodes": [],
+            "notes": "Test fixture vendor does not expose the Claude Code client API surface directly.",
+            "source": {
+                "sourceUrl": "https://sdkwork.cloud/standards/sdkwork-models/client-api-compatibility",
+                "observedAt": "2026-06-03T00:00:00Z",
+            },
+        },
+        "gemini_cli": {
+            "clientApiCode": "gemini_cli",
+            "displayName": "Gemini CLI",
+            "supportStatus": "unsupported",
+            "protocolCodes": [],
+            "apiCodes": [],
+            "resourceCodes": [],
+            "notes": "Test fixture vendor does not expose the Gemini CLI client API surface directly.",
+            "source": {
+                "sourceUrl": "https://sdkwork.cloud/standards/sdkwork-models/client-api-compatibility",
+                "observedAt": "2026-06-03T00:00:00Z",
+            },
+        },
+    }
 
 
 class SdkworkModelsStandardTest(unittest.TestCase):
@@ -97,7 +164,7 @@ class SdkworkModelsStandardTest(unittest.TestCase):
                 with self.subTest(path=f"{package}/{rel}"):
                     self.assertTrue(path.exists(), str(path))
 
-    def test_language_sdk_docs_use_vendor_region_catalog_key_contract(self) -> None:
+    def test_language_sdk_docs_use_standard_catalog_key_contract(self) -> None:
         readmes = [
             SDKWORK_MODELS / "README.md",
             SDKWORK_MODELS / "sdkwork-models-typescript" / "README.md",
@@ -116,7 +183,7 @@ class SdkworkModelsStandardTest(unittest.TestCase):
             "listModelsByVendor",
             "models/openai/models",
             "models/<vendorCode>/models",
-            "vendorCode/modelId",
+            "vendorCode/regionCode/modelId",
             "minimax_cn",
             "deepseek_cn",
             "moonshot_cn",
@@ -125,7 +192,7 @@ class SdkworkModelsStandardTest(unittest.TestCase):
         ]
         required = [
             "regionCode",
-            "vendorCode/regionCode/modelId",
+            "vendorCode/modelId",
         ]
         for readme in readmes:
             source = read_text(readme)
@@ -175,6 +242,104 @@ class SdkworkModelsStandardTest(unittest.TestCase):
             with self.subTest(path=rel):
                 for token in common_tokens + language_tokens[rel]:
                     self.assertIn(token, source)
+
+    def test_language_sdk_query_api_uses_regionless_catalog_key(self) -> None:
+        source_paths = [
+            SDKWORK_MODELS / "tools" / "catalog-lib.mjs",
+            SDKWORK_MODELS / "sdkwork-models-typescript" / "src" / "query.ts",
+            SDKWORK_MODELS / "sdkwork-models-python" / "sdkwork_models" / "query.py",
+            SDKWORK_MODELS
+            / "sdkwork-models-java"
+            / "src"
+            / "main"
+            / "java"
+            / "com"
+            / "sdkwork"
+            / "models"
+            / "ModelCatalogQuery.java",
+            SDKWORK_MODELS / "sdkwork-models-rust" / "src" / "query.rs",
+            SDKWORK_MODELS / "sdkwork-models-flutter" / "lib" / "src" / "query.dart",
+        ]
+
+        forbidden_signatures = [
+            "catalogKey(vendorCode, regionCode, modelId)",
+            "catalog_key(vendor_code, region_code, model_id)",
+            "catalogKey(String vendorCode, String regionCode, String modelId)",
+            "catalog_key(vendor_code: &str, _region_code: &str, model_id: &str)",
+            "catalogKey(String vendorCode, String regionCode, String modelId)",
+            "catalogKey(vendorCode, _regionCode, modelId)",
+        ]
+        required_signatures = [
+            "catalogKey(vendorCode, modelId)",
+            "catalogKey(vendorCode: string, modelId: string)",
+            "catalog_key(vendor_code, model_id)",
+            "catalog_key(vendor_code: str, model_id: str)",
+            "catalogKey(String vendorCode, String modelId)",
+            "catalog_key(vendor_code: &str, model_id: &str)",
+            "catalogKey(String vendorCode, String modelId)",
+        ]
+
+        for path in source_paths:
+            source = read_text(path)
+            with self.subTest(path=path.relative_to(SDKWORK_MODELS).as_posix()):
+                for token in forbidden_signatures:
+                    self.assertNotIn(token, source)
+                self.assertTrue(
+                    any(token in source for token in required_signatures),
+                    "language SDK query API must expose catalogKey(vendorCode, modelId); "
+                    "regionCode is a filter/deployment/pricing dimension.",
+                )
+
+    def test_language_sdk_catalog_key_parser_splits_on_first_slash(self) -> None:
+        source_forbidden_tokens = {
+            "sdkwork-models-typescript/src/query.ts": [
+                "parts.length !== 2",
+            ],
+            "sdkwork-models-python/sdkwork_models/query.py": [
+                "len(parts) != 2",
+                "catalog_key_value.split(\"/\")",
+            ],
+            "sdkwork-models-java/src/main/java/com/sdkwork/models/ModelCatalogQuery.java": [
+                "parts.length != 2",
+                "catalogKey.split(\"/\", -1)",
+            ],
+            "sdkwork-models-rust/src/query.rs": [
+                "parts.next().is_some()",
+                "catalog_key.split('/')",
+            ],
+            "sdkwork-models-flutter/lib/src/query.dart": [
+                "parts.length != 2",
+                "catalogKeyValue.split('/')",
+            ],
+        }
+
+        for rel, forbidden_tokens in source_forbidden_tokens.items():
+            source = read_text(SDKWORK_MODELS / rel)
+            with self.subTest(path=rel):
+                for token in forbidden_tokens:
+                    self.assertNotIn(
+                        token,
+                        source,
+                        "catalog key parsing must split on the first slash only so "
+                        "OpenRouter-style model ids such as anthropic/claude-3-opus remain intact.",
+                    )
+
+    def test_catalog_audit_uses_canonical_model_id_path_helper(self) -> None:
+        source = read_text(SDKWORK_MODELS / "tools" / "catalog-audit.mjs")
+        self.assertIn("modelFileName", source)
+        self.assertIn('from "./catalog-lib.mjs"', source)
+        for token in [
+            "${modelId}.json",
+            "${model.modelId}.json",
+            "${pricing.modelId}.json",
+        ]:
+            with self.subTest(token=token):
+                self.assertNotIn(
+                    token,
+                    source,
+                    "catalog audit diagnostics must use the same slash-delimited "
+                    "modelId path normalization as index generation and validation.",
+                )
 
     def test_docs_publish_official_verification_policy_release_gate_contract(self) -> None:
         docs = [
@@ -242,13 +407,174 @@ class SdkworkModelsStandardTest(unittest.TestCase):
             with self.subTest(field=field):
                 self.assertIn(field, vendor_required)
         self.assertEqual(
-            "^[a-z0-9_]+/[a-z0-9_]+/models/[^/]+\\.json$",
+            "^[a-z0-9_]+/$",
+            vendor_schema["properties"]["catalogKeyPrefix"]["pattern"],
+        )
+        self.assertEqual(
+            "^[a-z0-9_]+/[a-z0-9_]+/models/[^\\\\]+\\.json$",
             vendor_schema["properties"]["modelFiles"]["items"]["pattern"],
         )
         self.assertEqual(
-            "^[a-z0-9_]+/[a-z0-9_]+/pricing/[^/]+\\.json$",
+            "^[a-z0-9_]+/[a-z0-9_]+/pricing/[^\\\\]+\\.json$",
             vendor_schema["properties"]["pricingFiles"]["items"]["pattern"],
         )
+
+    def test_catalog_tools_accept_slash_delimited_model_ids_as_safe_nested_paths(self) -> None:
+        import shutil
+        import tempfile
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            temp_root = Path(temp_dir) / "sdkwork-models"
+            shutil.copytree(
+                SDKWORK_MODELS,
+                temp_root,
+                ignore=shutil.ignore_patterns(
+                    "sdkwork-models-typescript/dist",
+                    "sdkwork-models-rust/target",
+                    "sdkwork-models-java/target",
+                    "target-codex",
+                    "__pycache__",
+                ),
+            )
+            vendor_root = temp_root / "models" / "openrouter" / "global"
+            model_dir = vendor_root / "models" / "anthropic"
+            pricing_dir = vendor_root / "pricing" / "anthropic"
+            model_dir.mkdir(parents=True)
+            pricing_dir.mkdir(parents=True)
+            (vendor_root / "vendor.json").write_text(
+                json.dumps(
+                    {
+                        "schemaVersion": "1.1.0",
+                        "vendorCode": "openrouter",
+                        "regionCode": "global",
+                        "displayName": "OpenRouter",
+                        "vendorType": "commercial",
+                        "marketScope": "global",
+                        "billingCurrency": "USD",
+                        "billingJurisdiction": "US",
+                        "operatingRegions": ["GLOBAL"],
+                        "capabilities": ["chat"],
+                        "supportedProtocols": ["openai_compatible"],
+                        "clientApiCompatibility": unsupported_client_api_compatibility(),
+                        "source": {"sourceUrl": "https://openrouter.ai", "observedAt": "2026-06-02"},
+                    },
+                    indent=2,
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+            (vendor_root / "families.json").write_text(
+                json.dumps(
+                    {
+                        "schemaVersion": "1.1.0",
+                        "vendorCode": "openrouter",
+                        "regionCode": "global",
+                        "families": [
+                            {
+                                "familyCode": "anthropic",
+                                "displayName": "Anthropic via OpenRouter",
+                                "familyType": "llm",
+                                "primaryModality": "text",
+                                "defaultModel": "anthropic/claude-3-opus",
+                            }
+                        ],
+                    },
+                    indent=2,
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+            model_payload = {
+                "schemaVersion": "1.1.0",
+                "catalogKey": "openrouter/anthropic/claude-3-opus",
+                "modelId": "anthropic/claude-3-opus",
+                "displayName": "Claude 3 Opus through OpenRouter",
+                "vendorCode": "openrouter",
+                "regionCode": "global",
+                "familyCode": "anthropic",
+                "primaryCapability": "chat",
+                "capabilities": ["chat"],
+                "inputModalities": ["text"],
+                "outputModalities": ["text"],
+                "apiFormat": "openai_compatible",
+                "lifecycle": "active",
+                "releaseStage": "active",
+                "shelfState": "listed",
+                "routingState": "enabled",
+                "source": {"sourceUrl": "https://openrouter.ai", "observedAt": "2026-06-02"},
+            }
+            (model_dir / "claude-3-opus.json").write_text(
+                json.dumps(model_payload, indent=2) + "\n",
+                encoding="utf-8",
+            )
+            (pricing_dir / "claude-3-opus.json").write_text(
+                json.dumps(
+                    {
+                        "schemaVersion": "1.1.0",
+                        "catalogKey": "openrouter/anthropic/claude-3-opus",
+                        "vendorCode": "openrouter",
+                        "regionCode": "global",
+                        "modelId": "anthropic/claude-3-opus",
+                        "currency": "USD",
+                        "prices": [
+                            {
+                                "priceId": "openrouter-claude-opus-input",
+                                "priceSide": "reference",
+                                "pricingScope": "model",
+                                "meterCode": "llm_input_token",
+                                "unitSize": "1000000",
+                                "unitPrice": "15.000000",
+                                "minimumQuantity": "0",
+                                "currency": "USD",
+                                "effectiveFrom": "2026-06-02",
+                                "source": {"sourceUrl": "https://openrouter.ai", "observedAt": "2026-06-02"},
+                            }
+                        ],
+                    },
+                    indent=2,
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+            (vendor_root / "rankings.json").write_text(
+                json.dumps(
+                    {
+                        "schemaVersion": "1.1.0",
+                        "vendorCode": "openrouter",
+                        "regionCode": "global",
+                        "snapshots": [],
+                    },
+                    indent=2,
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+
+            build_result = subprocess.run(
+                ["node", "tools/build-index.mjs"],
+                cwd=temp_root,
+                text=True,
+                capture_output=True,
+            )
+            validate_result = subprocess.run(
+                ["node", "tools/validate-catalog.mjs"],
+                cwd=temp_root,
+                text=True,
+                capture_output=True,
+            )
+
+            index = load_json(temp_root / "models" / "index.json")
+            openrouter = next(
+                vendor
+                for vendor in index["vendors"]
+                if vendor["vendorCode"] == "openrouter" and vendor["regionCode"] == "global"
+            )
+
+        self.assertEqual(0, build_result.returncode, build_result.stdout + build_result.stderr)
+        self.assertEqual(0, validate_result.returncode, validate_result.stdout + validate_result.stderr)
+        self.assertIn("openrouter/global/models/anthropic/claude-3-opus.json", openrouter["modelFiles"])
+        self.assertIn("openrouter/global/pricing/anthropic/claude-3-opus.json", openrouter["pricingFiles"])
+        self.assertEqual("openrouter/", openrouter["catalogKeyPrefix"])
 
     def test_official_snapshot_schema_defines_source_evidence_contract(self) -> None:
         schema = load_json(SDKWORK_MODELS / "schemas" / "official-model-snapshot.schema.json")
@@ -425,8 +751,111 @@ class SdkworkModelsStandardTest(unittest.TestCase):
                 self.assertNotIn("bigmodel", vendor["vendorCode"])
                 self.assertNotRegex(vendor["vendorCode"], r"_(cn|global)$")
 
+    def test_vendor_client_api_compatibility_is_structured_and_readable(self) -> None:
+        required_client_apis = {
+            "codex": {
+                "displayName": "Codex",
+                "defaultApiCode": "openai.codex.responses",
+                "defaultResourceCode": "api.openai.codex.responses",
+            },
+            "claude_code": {
+                "displayName": "Claude Code",
+                "defaultApiCode": "anthropic.claude_code",
+                "defaultResourceCode": "api.anthropic.claude_code",
+            },
+            "gemini_cli": {
+                "displayName": "Gemini CLI",
+                "defaultApiCode": "gemini.generate_content",
+                "defaultResourceCode": "api.gemini.generate_content",
+            },
+        }
+        schema = load_json(SDKWORK_MODELS / "schemas" / "vendor.schema.json")
+        self.assertIn("clientApiCompatibility", schema.get("required", []))
+        compatibility_schema = schema["properties"]["clientApiCompatibility"]
+        self.assertEqual("object", compatibility_schema["type"])
+        for client_code in required_client_apis:
+            self.assertIn(client_code, compatibility_schema.get("required", []))
+
+        vendors_index = load_json(SDKWORK_MODELS / "models" / "vendors.json")
+        self.assertIn("clientApiCompatibility", vendors_index["vendors"][0])
+        self.assertIn("clientApiCompatibility", vendors_index["vendors"][0]["regions"][0])
+
+        resource_payloads = [
+            load_json(SDKWORK_MODELS.parent / "ai-routing" / "resources" / "openai-resources.json"),
+            load_json(SDKWORK_MODELS.parent / "ai-routing" / "resources" / "vendor-native-resources.json"),
+        ]
+        resource_codes = {
+            item["resourceCode"]
+            for payload in resource_payloads
+            for item in payload.get("items", [])
+        }
+        api_codes = {
+            item["apiCode"]
+            for payload in resource_payloads
+            for item in payload.get("items", [])
+        }
+
+        for vendor_path in sorted((SDKWORK_MODELS / "models").glob("*/*/vendor.json")):
+            vendor = load_json(vendor_path)
+            compatibility = vendor.get("clientApiCompatibility")
+            with self.subTest(vendor=vendor_path.relative_to(SDKWORK_MODELS).as_posix()):
+                self.assertIsInstance(compatibility, dict)
+                for client_code, client_standard in required_client_apis.items():
+                    item = compatibility.get(client_code)
+                    self.assertIsInstance(item, dict)
+                    self.assertEqual(client_code, item.get("clientApiCode"))
+                    self.assertEqual(client_standard["displayName"], item.get("displayName"))
+                    self.assertIn(item.get("supportStatus"), ["supported", "unsupported", "partial"])
+                    self.assertIsInstance(item.get("notes"), str)
+                    self.assertTrue(item.get("source", {}).get("sourceUrl"))
+                    self.assertTrue(item.get("source", {}).get("observedAt"))
+                    if item.get("supportStatus") in {"supported", "partial"}:
+                        self.assertIn(
+                            client_standard["defaultApiCode"],
+                            item.get("apiCodes", []),
+                        )
+                        self.assertIn(
+                            client_standard["defaultResourceCode"],
+                            item.get("resourceCodes", []),
+                        )
+                    for api_code in item.get("apiCodes", []):
+                        self.assertIn(api_code, api_codes)
+                    for resource_code in item.get("resourceCodes", []):
+                        self.assertIn(resource_code, resource_codes)
+
+        ts_types = read_text(SDKWORK_MODELS / "sdkwork-models-typescript" / "src" / "types.ts")
+        ts_query = read_text(SDKWORK_MODELS / "sdkwork-models-typescript" / "src" / "query.ts")
+        py_query = read_text(SDKWORK_MODELS / "sdkwork-models-python" / "sdkwork_models" / "query.py")
+        rust_types = read_text(SDKWORK_MODELS / "sdkwork-models-rust" / "src" / "types.rs")
+        rust_query = read_text(SDKWORK_MODELS / "sdkwork-models-rust" / "src" / "query.rs")
+        for source, token in [
+            (ts_types, "clientApiCompatibility"),
+            (ts_query, "listClientApiCompatibilityByVendor"),
+            (py_query, "list_client_api_compatibility_by_vendor"),
+            (rust_types, "client_api_compatibility"),
+            (rust_query, "list_client_api_compatibility_by_vendor"),
+        ]:
+            self.assertIn(token, source)
+
+        registry = load_json_from_yaml(ROOT / "docs" / "schema-registry" / "tables" / "016-ai.yaml")
+        ai_model_vendor = next(
+            table for table in registry["tables"] if table.get("table") == "ai_model_vendor"
+        )
+        self.assertIn("supported_protocols", ai_model_vendor["columns"])
+        self.assertIn("client_api_compatibility", ai_model_vendor["columns"])
+        generated_schema = read_text(ROOT / "generated" / "schema" / "postgres" / "schema.sql")
+        self.assertIn("supported_protocols JSONB", generated_schema)
+        self.assertIn("client_api_compatibility JSONB", generated_schema)
+        for importer in [
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "sqlite" / "model_catalog_import.rs",
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "postgres" / "model_catalog_import.rs",
+        ]:
+            source = read_text(importer)
+            self.assertIn("supported_protocols", source)
+            self.assertIn("client_api_compatibility", source)
+
     def test_prices_are_decimal_strings(self) -> None:
-        for pricing_path in sorted((SDKWORK_MODELS / "models").glob("*/*/pricing/*.json")):
+        for pricing_path in sorted((SDKWORK_MODELS / "models").glob("*/*/pricing/**/*.json")):
             payload = load_json(pricing_path)
             for index, price in enumerate(payload.get("prices", [])):
                 for field in ("unitSize", "unitPrice", "minimumQuantity"):
@@ -438,7 +867,7 @@ class SdkworkModelsStandardTest(unittest.TestCase):
                 self.assertTrue(price.get("effectiveFrom"))
 
     def test_enabled_or_listed_models_have_billable_pricing(self) -> None:
-        for model_path in sorted((SDKWORK_MODELS / "models").glob("*/*/models/*.json")):
+        for model_path in sorted((SDKWORK_MODELS / "models").glob("*/*/models/**/*.json")):
             model = load_json(model_path)
             must_have_pricing = (
                 model.get("routingState") == "enabled"
@@ -448,7 +877,7 @@ class SdkworkModelsStandardTest(unittest.TestCase):
             if not must_have_pricing:
                 continue
 
-            pricing_path = model_path.parent.parent / "pricing" / model_path.name
+            pricing_path = pricing_path_for_model_path(model_path)
             with self.subTest(model=model.get("catalogKey")):
                 self.assertTrue(pricing_path.exists(), str(pricing_path))
                 pricing = load_json(pricing_path)
@@ -460,8 +889,8 @@ class SdkworkModelsStandardTest(unittest.TestCase):
             model_dir = families_path.parent / "models"
             pricing_dir = families_path.parent / "pricing"
             models = {
-                path.stem: load_json(path)
-                for path in sorted(model_dir.glob("*.json"))
+                model_id_from_catalog_file(model_dir, path): load_json(path)
+                for path in sorted(model_dir.glob("**/*.json"))
             }
             for family in families.get("families", []):
                 default_model = family.get("defaultModel")

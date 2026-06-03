@@ -43,7 +43,12 @@ async fn sqlite_loader_builds_pricing_catalog_snapshot_from_schema_tables() {
     let item = &page.items[0];
     assert_eq!("gpt-4o-mini", item.model);
     assert_eq!("openai/gpt-4o-mini", item.catalog_key);
-    assert_eq!("global", item.region_code);
+    assert!(
+        item.official_reference_prices
+            .iter()
+            .any(|price| price.region_code == "global"),
+        "model catalog identity must stay region-free; region belongs to reference prices"
+    );
     assert_eq!(vec!["azure_openai", "openrouter"], item.provider_codes);
     assert_eq!(
         "0.110000",
@@ -124,6 +129,62 @@ async fn sqlite_loader_builds_pricing_catalog_snapshot_from_schema_tables() {
         "37.500000",
         metric.usage_amount_total.unwrap().to_fixed_string(6)
     );
+}
+
+#[tokio::test]
+async fn sqlite_loader_preserves_each_channel_endpoint_region_deployment() {
+    let pool = SqlitePoolOptions::new()
+        .max_connections(1)
+        .connect("sqlite::memory:")
+        .await
+        .unwrap();
+    create_schema(&pool).await;
+    seed_catalog(&pool).await;
+
+    sqlx::query(
+        r#"
+        INSERT INTO ai_channel_endpoint
+            (id, tenant_id, organization_id, channel_id, provider_code, channel_code, channel_type,
+             vendor_code, region_code, api_code, base_url,
+             timeout_ms, retry_policy, status, priority, weight, health_status)
+        VALUES
+            (7001, 10, 20, 3001, 'openrouter', 'openrouter-main', 'relay',
+             'openai', 'global', 'openai.chat_completions',
+             'http://provider-proxy.internal/openrouter-global', 30000,
+             '{"max_attempts":3,"retryable_status_codes":[429,503],"backoff_ms":0}',
+             1, 1, 100, 1),
+            (7002, 10, 20, 3001, 'openrouter', 'openrouter-main', 'relay',
+             'openai', 'cn', 'openai.chat_completions',
+             'http://provider-proxy.internal/openrouter-cn', 45000,
+             '{"max_attempts":2,"retryable_status_codes":[429,503],"backoff_ms":10}',
+             1, 2, 100, 1)
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+
+    let snapshot = SqlitePricingCatalogLoader::new(pool)
+        .load_snapshot()
+        .await
+        .unwrap();
+    let routes = snapshot
+        .list_provider_channel_routes()
+        .into_iter()
+        .filter(|route| route.provider_code == "openrouter" && route.channel_id == 3001)
+        .collect::<Vec<_>>();
+
+    assert_eq!(2, routes.len());
+    assert!(routes.iter().any(|route| {
+        route.region_code == "global"
+            && route.base_url.as_deref() == Some("http://provider-proxy.internal/openrouter-global")
+            && route.timeout_ms == Some(30_000)
+    }));
+    assert!(routes.iter().any(|route| {
+        route.region_code == "cn"
+            && route.base_url.as_deref() == Some("http://provider-proxy.internal/openrouter-cn")
+            && route.timeout_ms == Some(45_000)
+    }));
 }
 
 #[tokio::test]
@@ -490,6 +551,7 @@ async fn sqlite_loader_supplies_standard_pricing_plan_when_runtime_plan_table_is
             billing_meter: BillingMeter::LlmInputToken,
             provider_code: Some("openrouter".to_owned()),
             channel_id: Some(3001),
+            region_code: None,
         })
         .expect("default standard plan must allow route pricing to resolve");
 
@@ -887,6 +949,10 @@ async fn create_schema(pool: &SqlitePool) {
             channel_type TEXT NOT NULL,
             base_url TEXT,
             region_code TEXT,
+            site_id INTEGER,
+            site_code TEXT,
+            site_service_id INTEGER,
+            site_service_code TEXT,
             timeout_ms INTEGER,
             retry_policy TEXT,
             health_status INTEGER,
@@ -998,6 +1064,47 @@ async fn create_schema(pool: &SqlitePool) {
             deleted_at TEXT,
             effective_from TEXT,
             effective_to TEXT
+        )"#,
+        r#"CREATE TABLE ai_model_mapping_rule (
+            id INTEGER PRIMARY KEY,
+            tenant_id INTEGER NOT NULL DEFAULT 10,
+            organization_id INTEGER NOT NULL DEFAULT 20,
+            target_vendor_code TEXT,
+            mapping_mode TEXT NOT NULL DEFAULT 'alias',
+            match_type TEXT NOT NULL DEFAULT 'exact',
+            enabled INTEGER NOT NULL DEFAULT 1,
+            status INTEGER NOT NULL,
+            deleted_at TEXT,
+            updated_at TEXT
+        )"#,
+        r#"CREATE TABLE ai_model_mapping_rule_binding (
+            id INTEGER PRIMARY KEY,
+            tenant_id INTEGER NOT NULL DEFAULT 10,
+            organization_id INTEGER NOT NULL DEFAULT 20,
+            rule_id INTEGER NOT NULL,
+            binding_type TEXT NOT NULL DEFAULT 'global',
+            binding_id INTEGER,
+            binding_code TEXT,
+            sort_order INTEGER NOT NULL DEFAULT 100,
+            enabled INTEGER NOT NULL DEFAULT 1,
+            status INTEGER NOT NULL,
+            deleted_at TEXT
+        )"#,
+        r#"CREATE TABLE ai_model_mapping_rule_item (
+            id INTEGER PRIMARY KEY,
+            tenant_id INTEGER NOT NULL DEFAULT 10,
+            organization_id INTEGER NOT NULL DEFAULT 20,
+            rule_id INTEGER NOT NULL,
+            source_model TEXT NOT NULL,
+            source_catalog_key TEXT,
+            target_model TEXT NOT NULL,
+            target_catalog_key TEXT,
+            target_provider_model TEXT,
+            target_provider_native_model TEXT,
+            sort_order INTEGER NOT NULL DEFAULT 100,
+            enabled INTEGER NOT NULL DEFAULT 1,
+            status INTEGER NOT NULL,
+            deleted_at TEXT
         )"#,
         r#"CREATE TABLE ai_pricing_plan (
             id INTEGER PRIMARY KEY,

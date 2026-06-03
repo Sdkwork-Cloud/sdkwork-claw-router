@@ -87,6 +87,7 @@ client.SetHeader("X-Custom-Header", "value")
 - `client.System` - system API
 - `client.Prompts` - prompts API
 - `client.ServiceProviders` - service_providers API
+- `client.Sites` - sites API
 - `client.Storage` - storage API
 
 ## Usage Examples
@@ -285,6 +286,20 @@ params := map[string]interface{}{
     "edge_id": "edge_id",
 }
 result, err := client.ServiceProviders.AdjustmentsList(params)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
+
+### sites
+
+```go
+// List sites
+params := map[string]interface{}{
+    "q": "q",
+}
+result, err := client.Sites.SiteCatalogList(params)
 if err != nil {
     panic(err)
 }

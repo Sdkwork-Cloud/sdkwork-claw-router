@@ -64,6 +64,54 @@ namespace Sdkwork.ClawRouter.Backend.Api
         }
 
         /// <summary>
+        /// List model mappings
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.ModelMappingsListResult?> ModelMappingsListAsync(string? bindingType = null, string? vendorCode = null, string? channelId = null, string? channelCode = null, string? q = null)
+        {
+            var queryString = BuildQueryString(new[]
+            {
+                new QueryParameterSpec("binding_type", bindingType, "form", true, false, null),
+                new QueryParameterSpec("vendor_code", vendorCode, "form", true, false, null),
+                new QueryParameterSpec("channel_id", channelId, "form", true, false, null),
+                new QueryParameterSpec("channel_code", channelCode, "form", true, false, null),
+                new QueryParameterSpec("q", q, "form", true, false, null),
+            });
+            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.ModelMappingsListResult>(ApiPaths.AppendQueryString(ApiPaths.BackendPath("/ai/model_mappings"), queryString));
+        }
+
+        /// <summary>
+        /// Create model mapping
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.ModelMappingsCreateResult?> ModelMappingsCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminModelMappingCreateRequest body)
+        {
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.ModelMappingsCreateResult>(ApiPaths.BackendPath("/ai/model_mappings"), body, null, null, "application/json");
+        }
+
+        /// <summary>
+        /// Resolve model mapping
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.ModelMappingsResolveCreateResult?> ModelMappingsResolveCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminModelMappingResolveRequest body)
+        {
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.ModelMappingsResolveCreateResult>(ApiPaths.BackendPath("/ai/model_mappings/resolve"), body, null, null, "application/json");
+        }
+
+        /// <summary>
+        /// Delete model mapping
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.ModelMappingsDeleteResult?> ModelMappingsDeleteAsync(string mappingId)
+        {
+            return await _client.DeleteAsync<Sdkwork.ClawRouter.Backend.Models.ModelMappingsDeleteResult>(ApiPaths.BackendPath($"/ai/model_mappings/{SerializePathParameter(mappingId, new PathParameterSpec("mappingId", "simple", false))}"));
+        }
+
+        /// <summary>
+        /// Update model mapping
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.ModelMappingsUpdateResult?> ModelMappingsUpdateAsync(string mappingId, Sdkwork.ClawRouter.Backend.Models.AdminModelMappingUpdateRequest body)
+        {
+            return await _client.PatchAsync<Sdkwork.ClawRouter.Backend.Models.ModelMappingsUpdateResult>(ApiPaths.BackendPath($"/ai/model_mappings/{SerializePathParameter(mappingId, new PathParameterSpec("mappingId", "simple", false))}"), body, null, null, "application/json");
+        }
+
+        /// <summary>
         /// List model rankings
         /// </summary>
         public async Task<Sdkwork.ClawRouter.Backend.Models.ModelRankingsListResult?> ModelRankingsListAsync(string? rankScope = null, string? vendorCode = null, string? modality = null, string? q = null, int? limit = null)
@@ -166,6 +214,46 @@ namespace Sdkwork.ClawRouter.Backend.Api
         public async Task<Sdkwork.ClawRouter.Backend.Models.ModelsUpdateResult?> ModelsUpdateAsync(string modelId, Sdkwork.ClawRouter.Backend.Models.AdminAiModelUpdateRequest body)
         {
             return await _client.PatchAsync<Sdkwork.ClawRouter.Backend.Models.ModelsUpdateResult>(ApiPaths.BackendPath($"/ai/models/{SerializePathParameter(modelId, new PathParameterSpec("modelId", "simple", false))}"), body, null, null, "application/json");
+        }
+
+        /// <summary>
+        /// List resource groups
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AiResourceGroupsListResult?> GetResourceGroupsListAsync()
+        {
+            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.AiResourceGroupsListResult>(ApiPaths.BackendPath("/ai/resource_groups"));
+        }
+
+        /// <summary>
+        /// Create resource group
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AiResourceGroupsCreateResult?> ResourceGroupsCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminAiResourceGroupCreateRequest body)
+        {
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.AiResourceGroupsCreateResult>(ApiPaths.BackendPath("/ai/resource_groups"), body, null, null, "application/json");
+        }
+
+        /// <summary>
+        /// List resource group resources
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AiResourceGroupsResourcesListResult?> GetResourceGroupsListResourceGroupsAsync(string groupIdOrCode)
+        {
+            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.AiResourceGroupsResourcesListResult>(ApiPaths.BackendPath($"/ai/resource_groups/{SerializePathParameter(groupIdOrCode, new PathParameterSpec("groupIdOrCode", "simple", false))}/resources"));
+        }
+
+        /// <summary>
+        /// Delete resource group
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AiResourceGroupsDeleteResult?> ResourceGroupsDeleteAsync(string groupId)
+        {
+            return await _client.DeleteAsync<Sdkwork.ClawRouter.Backend.Models.AiResourceGroupsDeleteResult>(ApiPaths.BackendPath($"/ai/resource_groups/{SerializePathParameter(groupId, new PathParameterSpec("groupId", "simple", false))}"));
+        }
+
+        /// <summary>
+        /// Update resource group
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AiResourceGroupsUpdateResult?> ResourceGroupsUpdateAsync(string groupId, Sdkwork.ClawRouter.Backend.Models.AdminAiResourceGroupUpdateRequest body)
+        {
+            return await _client.PatchAsync<Sdkwork.ClawRouter.Backend.Models.AiResourceGroupsUpdateResult>(ApiPaths.BackendPath($"/ai/resource_groups/{SerializePathParameter(groupId, new PathParameterSpec("groupId", "simple", false))}"), body, null, null, "application/json");
         }
 
         /// <summary>

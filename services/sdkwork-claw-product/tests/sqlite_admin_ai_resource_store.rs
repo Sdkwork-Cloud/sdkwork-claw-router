@@ -48,6 +48,44 @@ async fn sqlite_admin_ai_resource_store_lists_resources_with_composition_members
 }
 
 #[tokio::test]
+async fn sqlite_admin_ai_resource_store_lists_system_seeded_resources_for_admin_subject() {
+    let pool = schema_sqlite_pool().await;
+    for statement in [
+        "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, vendor_code, modality_code, api_code, resource_schema, status, sort_order) VALUES (9701, 'test-system-resource-chat', 0, 0, 'api.test.system.chat', 'api_endpoint', 'System Chat API', 'openai', 'llm', 'openai.chat_completions', '{}', 1, 1)",
+        "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, vendor_code, modality_code, api_code, resource_schema, status, sort_order) VALUES (9702, 'test-system-resource-override', 0, 0, 'api.test.override', 'api_endpoint', 'System Override API', 'openai', 'llm', 'openai.responses', '{}', 1, 2)",
+        "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, vendor_code, modality_code, api_code, resource_schema, status, sort_order) VALUES (9703, 'test-tenant-resource-override', 10, 20, 'api.test.override', 'api_endpoint', 'Tenant Override API', 'openai', 'llm', 'openai.responses', '{}', 1, 9)",
+    ] {
+        sqlx::query(statement).execute(&pool).await.unwrap();
+    }
+    let store = SqliteAdminAiResourceStore::new(pool);
+
+    let items = store
+        .list_ai_resources(ListAdminAiResourcesQuery { subject: subject() })
+        .await
+        .unwrap();
+    let codes = items
+        .iter()
+        .map(|item| item.resource_code.as_str())
+        .collect::<Vec<_>>();
+    assert!(
+        codes.contains(&"api.test.system.chat"),
+        "admin resource list must include system-seeded API resources"
+    );
+
+    let override_rows = items
+        .iter()
+        .filter(|item| item.resource_code == "api.test.override")
+        .collect::<Vec<_>>();
+    assert_eq!(
+        1,
+        override_rows.len(),
+        "tenant resources must override system-seeded resources with the same resource code"
+    );
+    assert_eq!("Tenant Override API", override_rows[0].display_name);
+    assert_eq!(Some(9), override_rows[0].sort_order);
+}
+
+#[tokio::test]
 async fn sqlite_admin_ai_resource_store_creates_updates_and_audits_resource_graph() {
     let pool = schema_sqlite_pool().await;
     seed_ai_resources(&pool).await;

@@ -289,7 +289,7 @@ export function McpAdmin() {
   return (
     <div className="flex h-full min-h-0 w-full min-w-0 flex-col gap-2 overflow-hidden" data-admin-mcp="mcp-management">
       <StatusMessages messages={[serverLoadError, categoryLoadError, revisionLoadError, toolLoadError, bindingLoadError]} />
-      <div className="grid min-h-0 flex-1 gap-3 lg:grid-cols-[280px_minmax(0,1fr)]">
+      <div className="grid min-h-0 min-w-0 flex-1 gap-3 overflow-hidden lg:grid-cols-[280px_minmax(0,1fr)]">
         <AdminCategoryManagementSidebar
           categories={categoryOptions}
           dataAttribute="admin-mcp-category-management"
@@ -303,7 +303,7 @@ export function McpAdmin() {
           selectedCategoryId={selectedCategoryId}
           usageCountByCategoryId={categoryUsage}
         />
-        <div className="flex min-h-0 min-w-0 flex-col gap-2">
+        <div className="flex min-h-0 min-w-0 flex-col gap-2 overflow-hidden" data-admin-mcp-content>
           <SectionTabs activeSectionId={activeSectionId} onChange={setActiveSectionId} sections={sections} />
           {activeSectionId !== 'servers' ? (
             <div className="flex shrink-0 rounded-lg border border-slate-200 bg-white p-3 shadow-sm dark:border-white/10 dark:bg-[#1a1a1a]">
@@ -316,20 +316,22 @@ export function McpAdmin() {
               />
             </div>
           ) : null}
-          <AdminResourceCenter<McpAdminSectionId, McpAdminGroup>
-            activeSectionId={activeSectionId}
-            emptyDescription={t('admin.mcp.empty.desc', 'No MCP records match the current filters.')}
-            emptyTitle={t('admin.mcp.empty.title', 'No MCP records')}
-            errorTitle={t('admin.mcp.error.title', 'MCP data could not be loaded')}
-            initialSectionId={DEFAULT_SECTION_ID}
-            loadingTitle={t('admin.mcp.loading', 'Loading MCP records...')}
-            refreshKey={`${refreshKey}:${scopedServerId}:${scopedCategoryId}`}
-            reloadLabel={t('common.actions.reload')}
-            searchPlaceholder={t('admin.mcp.search.placeholder')}
-            sections={sections}
-            showSectionNavigation={false}
-            tableViewportDataAttribute="admin-mcp-table"
-          />
+          <div className="min-h-0 flex-1 overflow-hidden" data-admin-mcp-resource-center-frame>
+            <AdminResourceCenter<McpAdminSectionId, McpAdminGroup>
+              activeSectionId={activeSectionId}
+              emptyDescription={t('admin.mcp.empty.desc', 'No MCP records match the current filters.')}
+              emptyTitle={t('admin.mcp.empty.title', 'No MCP records')}
+              errorTitle={t('admin.mcp.error.title', 'MCP data could not be loaded')}
+              initialSectionId={DEFAULT_SECTION_ID}
+              loadingTitle={t('admin.mcp.loading', 'Loading MCP records...')}
+              refreshKey={`${refreshKey}:${scopedServerId}:${scopedCategoryId}`}
+              reloadLabel={t('common.actions.reload')}
+              searchPlaceholder={t('admin.mcp.search.placeholder')}
+              sections={sections}
+              showSectionNavigation={false}
+              tableViewportDataAttribute="admin-mcp-table"
+            />
+          </div>
         </div>
       </div>
 

@@ -294,9 +294,24 @@ async fn list_ai_resources(
             status,
             sort_order
         FROM ai_resource
-        WHERE tenant_id = $1
-          AND organization_id = $2
+        WHERE (
+                (tenant_id = $1 AND organization_id = $2)
+                OR (tenant_id = 0 AND organization_id = 0)
+              )
           AND deleted_at IS NULL
+          AND NOT (
+              tenant_id = 0
+              AND organization_id = 0
+              AND ($1 <> 0 OR $2 <> 0)
+              AND EXISTS (
+                  SELECT 1
+                  FROM ai_resource tenant_resource
+                  WHERE tenant_resource.tenant_id = $1
+                    AND tenant_resource.organization_id = $2
+                    AND tenant_resource.resource_code = ai_resource.resource_code
+                    AND tenant_resource.deleted_at IS NULL
+              )
+          )
         ORDER BY COALESCE(sort_order, 100000) ASC, id ASC
         LIMIT 1000
         "#,

@@ -28,6 +28,8 @@ export interface AiChannelRecord {
   credential_ref?: string;
   /** Credential rotation policy field on ai channel record. */
   credential_rotation_policy?: Record<string, JsonValue>;
+  /** Credential rotation strategy field on ai channel record. */
+  credential_rotation_strategy?: string;
   /** Credential version field on ai channel record. */
   credential_version?: string;
   /** Data scope field on ai channel record. */

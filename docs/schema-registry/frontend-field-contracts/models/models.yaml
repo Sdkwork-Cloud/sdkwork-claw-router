@@ -7,7 +7,6 @@ frontend_models:
   - id
   - modelId
   - vendorCode
-  - regionCode
   - name
   - provider
   - modality
@@ -20,6 +19,7 @@ frontend_models:
   - pricing.cachedInput
   - pricing.unavailableFields
   - pricing.referencePrices
+  - pricing.referencePrices.regionCode
   - pricing.referencePrices.billingMeter
   - pricing.referencePrices.unitPrice
   - pricing.referencePrices.currency
@@ -54,6 +54,7 @@ frontend_models:
   - cachedInput
   - unavailableFields
   - referencePrices
+  - referencePrices.regionCode
   - referencePrices.billingMeter
   - referencePrices.unitPrice
   - referencePrices.currency
@@ -67,6 +68,7 @@ frontend_models:
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-models/src/data/models.ts
   interface: ModelReferencePrice
   fields:
+  - regionCode
   - billingMeter
   - unitPrice
   - currency
@@ -122,7 +124,6 @@ frontend_models:
   - model
   - displayName
   - vendorCode
-  - regionCode
   - vendor
   - capabilities
   - groups
@@ -147,9 +148,11 @@ frontend_models:
   - routingState
   - replacementModel
   - providerCodes
-  - officialReferenceUnitPrice
-  - officialReferenceCurrency
   - officialReferencePrices
+  - officialReferencePrices.regionCode
+  - officialReferencePrices.billingMeter
+  - officialReferencePrices.unitPrice
+  - officialReferencePrices.currency
   - priceAvailability
   data_sources:
   - ai_model_vendor

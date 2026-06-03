@@ -23,6 +23,7 @@ type AdminRecordLogItem struct {
 	Path string `json:"path"`
 	ProviderNativeModel string `json:"providerNativeModel"`
 	ReasoningEffort string `json:"reasoningEffort"`
+	RegionCode string `json:"regionCode"`
 	RequestId string `json:"requestId"`
 	RequestedModelCatalogKey string `json:"requestedModelCatalogKey"`
 	Status string `json:"status"`

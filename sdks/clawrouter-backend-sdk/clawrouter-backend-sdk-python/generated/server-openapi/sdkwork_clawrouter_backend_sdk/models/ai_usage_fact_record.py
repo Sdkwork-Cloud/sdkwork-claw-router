@@ -60,6 +60,7 @@ class AiUsageFactRecord:
     rate_multiplier: Optional[str] = None
     reasoning_effort: Optional[str] = None
     reference_multiplier: Optional[str] = None
+    region_code: Optional[str] = None
     request_count: Optional[str] = None
     request_id: Optional[str] = None
     requested_model_catalog_key: Optional[str] = None

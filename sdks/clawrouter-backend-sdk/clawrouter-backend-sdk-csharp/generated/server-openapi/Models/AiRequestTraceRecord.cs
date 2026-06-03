@@ -42,6 +42,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? ProviderModel { get; set; }
         public string? ProviderNativeModel { get; set; }
         public string? ReasoningEffort { get; set; }
+        public string? RegionCode { get; set; }
         public string? RequestBytes { get; set; }
         public string? RequestId { get; set; }
         public string? RequestPath { get; set; }

@@ -364,7 +364,10 @@ async fn database_config_router_serves_admin_site_management() {
         "Acme Relay Plus",
         update_site_payload["data"]["item"]["displayName"]
     );
-    assert_eq!("sandbox", update_site_payload["data"]["item"]["environment"]);
+    assert_eq!(
+        "sandbox",
+        update_site_payload["data"]["item"]["environment"]
+    );
 
     let create_model_payload = request_json(
         router.clone(),
@@ -405,7 +408,9 @@ async fn database_config_router_serves_admin_site_management() {
         app_session_request(
             "PATCH",
             &format!("/backend/v3/api/sites/{site_id}/models/{site_model_id}"),
-            Body::from(r#"{"displayName":"GPT-4o mini relay","supportsTools":false,"status":"active"}"#),
+            Body::from(
+                r#"{"displayName":"GPT-4o mini relay","supportsTools":false,"status":"active"}"#,
+            ),
         ),
     )
     .await;
@@ -430,7 +435,10 @@ async fn database_config_router_serves_admin_site_management() {
     assert_eq!("2000", replace_models_payload["code"]);
     assert_eq!(
         2,
-        replace_models_payload["data"]["items"].as_array().unwrap().len()
+        replace_models_payload["data"]["items"]
+            .as_array()
+            .unwrap()
+            .len()
     );
 
     let channels_payload = request_json(
@@ -443,7 +451,10 @@ async fn database_config_router_serves_admin_site_management() {
     )
     .await;
     assert_eq!("2000", channels_payload["code"]);
-    assert_eq!(0, channels_payload["data"]["items"].as_array().unwrap().len());
+    assert_eq!(
+        0,
+        channels_payload["data"]["items"].as_array().unwrap().len()
+    );
 
     let test_payload = request_json(
         router.clone(),
@@ -4357,6 +4368,7 @@ async fn create_schema(pool: &SqlitePool) {
             owner_name_snapshot TEXT,
             requested_model_catalog_key TEXT,
             provider_native_model TEXT,
+            region_code TEXT,
             metadata TEXT,
             request_payload_hash TEXT,
             response_payload_hash TEXT,
@@ -4400,6 +4412,7 @@ async fn create_schema(pool: &SqlitePool) {
             requested_model_catalog_key TEXT,
             model TEXT,
             provider_native_model TEXT,
+            region_code TEXT,
             channel_id INTEGER,
             modality INTEGER,
             usage_type INTEGER,
@@ -5993,11 +6006,11 @@ async fn seed_admin_record(pool: &SqlitePool) {
             (id, uuid, tenant_id, organization_id, user_id, request_id, status, created_at, requested_model, resolved_model)
             VALUES (100, 'decision-100', 10, 20, 30, 'req-admin-record-1', 1, '2026-04-29 09:30:00', 'gpt-4o-mini', 'gpt-4o-mini')"#,
         r#"INSERT INTO ai_request_trace
-            (id, uuid, tenant_id, organization_id, user_id, request_id, trace_id, status, created_at, api_key_name_snapshot, channel_group_snapshot, owner_name_snapshot, requested_model, provider_model, endpoint, request_path, http_status, provider_error_code, error_type, started_at, latency_ms, ttft_ms, streaming, prompt_tokens, completion_tokens, cached_tokens, reasoning_effort, client_ip_masked)
-            VALUES (100, 'trace-100', 10, 20, 30, 'req-admin-record-1', 'trace-admin-record-1', 1, '2026-04-29 09:29:59', 'Production', 'standard-group', 'owner@example.com', 'gpt-4o-mini', 'openai/global/gpt-4o-mini', '/v1/chat/completions', '/v1/chat/completions', 200, NULL, NULL, '2026-04-29 09:30:00', 842, 120, 1, 1000, 240, 100, 'medium', '203.0.113.***')"#,
+            (id, uuid, tenant_id, organization_id, user_id, request_id, trace_id, status, created_at, api_key_name_snapshot, channel_group_snapshot, owner_name_snapshot, requested_model_catalog_key, requested_model, provider_model, provider_native_model, region_code, endpoint, request_path, http_status, provider_error_code, error_type, started_at, latency_ms, ttft_ms, streaming, prompt_tokens, completion_tokens, cached_tokens, reasoning_effort, client_ip_masked)
+            VALUES (100, 'trace-100', 10, 20, 30, 'req-admin-record-1', 'trace-admin-record-1', 1, '2026-04-29 09:29:59', 'Production', 'standard-group', 'owner@example.com', 'openai/gpt-4o-mini', 'gpt-4o-mini', 'gpt-4o-mini', 'gpt-4o-mini-2026-05-13', 'global', '/v1/chat/completions', '/v1/chat/completions', 200, NULL, NULL, '2026-04-29 09:30:00', 842, 120, 1, 1000, 240, 100, 'medium', '203.0.113.***')"#,
         r#"INSERT INTO ai_usage_fact
-            (id, uuid, tenant_id, organization_id, user_id, request_id, status, created_at, owner_name_snapshot, api_key_name_snapshot, channel_group_snapshot, model, modality, request_count, prompt_tokens, completion_tokens, cached_tokens, total_tokens, customer_charge_amount, cost_amount, rate_multiplier, base_input_unit_price, base_output_unit_price, cache_read_unit_price, occurred_at)
-            VALUES (200, 'usage-200', 10, 20, 30, 'req-admin-record-1', 1, '2026-04-29 09:30:01', 'owner@example.com', 'Production', 'standard-group', 'gpt-4o-mini', 1, 1, 1200, 300, 128, 1628, '0.012300', '0.010000', '1.200000', '0.150000', '0.600000', '0.030000', '2026-04-29 09:30:01')"#,
+            (id, uuid, tenant_id, organization_id, user_id, request_id, status, created_at, owner_name_snapshot, api_key_name_snapshot, channel_group_snapshot, catalog_key, requested_model_catalog_key, model, provider_native_model, region_code, modality, request_count, prompt_tokens, completion_tokens, cached_tokens, total_tokens, customer_charge_amount, cost_amount, rate_multiplier, base_input_unit_price, base_output_unit_price, cache_read_unit_price, occurred_at)
+            VALUES (200, 'usage-200', 10, 20, 30, 'req-admin-record-1', 1, '2026-04-29 09:30:01', 'owner@example.com', 'Production', 'standard-group', 'openai/gpt-4o-mini', 'openai/gpt-4o-mini', 'gpt-4o-mini', 'gpt-4o-mini-2026-05-13', 'global', 1, 1, 1200, 300, 128, 1628, '0.012300', '0.010000', '1.200000', '0.150000', '0.600000', '0.030000', '2026-04-29 09:30:01')"#,
     ] {
         sqlx::query(statement).execute(pool).await.unwrap();
     }
@@ -6009,8 +6022,8 @@ async fn seed_admin_record_missing_latency(pool: &SqlitePool) {
             (id, uuid, tenant_id, organization_id, user_id, request_id, status, created_at, requested_model, resolved_model)
             VALUES (101, 'decision-101', 10, 20, 30, 'req-admin-record-missing-latency', 1, '2026-04-29 09:31:00', 'gpt-4o-mini', 'gpt-4o-mini')"#,
         r#"INSERT INTO ai_request_trace
-            (id, uuid, tenant_id, organization_id, user_id, request_id, trace_id, status, created_at, api_key_name_snapshot, channel_group_snapshot, owner_name_snapshot, requested_model, provider_model, endpoint, request_path, http_status, provider_error_code, error_type, started_at, latency_ms, ttft_ms, streaming, prompt_tokens, completion_tokens, cached_tokens, reasoning_effort, client_ip_masked)
-            VALUES (101, 'trace-101', 10, 20, 30, 'req-admin-record-missing-latency', 'trace-admin-record-missing-latency', 1, '2026-04-29 09:30:59', 'Production', 'standard-group', 'owner@example.com', 'gpt-4o-mini', 'openai/global/gpt-4o-mini', '/v1/chat/completions', '/v1/chat/completions', 503, 'upstream_http_503', NULL, '2026-04-29 09:31:00', NULL, NULL, 0, 0, 0, 0, '-', '203.0.113.***')"#,
+            (id, uuid, tenant_id, organization_id, user_id, request_id, trace_id, status, created_at, api_key_name_snapshot, channel_group_snapshot, owner_name_snapshot, requested_model_catalog_key, requested_model, provider_model, provider_native_model, region_code, endpoint, request_path, http_status, provider_error_code, error_type, started_at, latency_ms, ttft_ms, streaming, prompt_tokens, completion_tokens, cached_tokens, reasoning_effort, client_ip_masked)
+            VALUES (101, 'trace-101', 10, 20, 30, 'req-admin-record-missing-latency', 'trace-admin-record-missing-latency', 1, '2026-04-29 09:30:59', 'Production', 'standard-group', 'owner@example.com', 'openai/gpt-4o-mini', 'gpt-4o-mini', 'gpt-4o-mini', 'gpt-4o-mini-2026-05-13', 'global', '/v1/chat/completions', '/v1/chat/completions', 503, 'upstream_http_503', NULL, '2026-04-29 09:31:00', NULL, NULL, 0, 0, 0, 0, '-', '203.0.113.***')"#,
     ] {
         sqlx::query(statement).execute(pool).await.unwrap();
     }

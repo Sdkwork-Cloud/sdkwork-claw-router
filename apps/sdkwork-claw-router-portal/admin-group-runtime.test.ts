@@ -214,12 +214,17 @@ test("admin group resource selectors support configurable single or multiple sel
     new URL("./packages/sdkwork-claw-router-admin-group/src/index.tsx", import.meta.url),
     "utf8",
   );
+  const sharedSource = readFileSync(
+    new URL("./packages/sdkwork-claw-router-commons/src/components/AiResourceSelectorModal.tsx", import.meta.url),
+    "utf8",
+  );
 
   assert.ok(source.includes("type ResourceSelectorSelectionMode = 'single' | 'multiple'"));
-  assert.match(source, /selectionMode = 'single'/);
-  assert.match(source, /selectionMode\?: ResourceSelectorSelectionMode/);
-  assert.match(source, /type=\{selectionMode === 'multiple' \? 'checkbox' : 'radio'\}/);
+  assert.match(sharedSource, /selectionMode = 'single'/);
+  assert.match(sharedSource, /selectionMode\?: AiResourceSelectorSelectionMode/);
+  assert.match(sharedSource, /type=\{selectionMode === 'multiple' \? 'checkbox' : 'radio'\}/);
   assert.match(source, /toggleSelectionCode\(selectedCodes, code, selectionMode\)/);
+  assert.match(sharedSource, /toggleAiResourceSelectionCode\(selectedCodes, code, selectionMode\)/);
   assert.match(source, /selectionMode="multiple"/);
 });
 
@@ -228,14 +233,16 @@ test("admin group resource selectors provide searchable modal lists with selecte
     new URL("./packages/sdkwork-claw-router-admin-group/src/index.tsx", import.meta.url),
     "utf8",
   );
+  const sharedSource = readFileSync(
+    new URL("./packages/sdkwork-claw-router-commons/src/components/AiResourceSelectorModal.tsx", import.meta.url),
+    "utf8",
+  );
 
   for (const expected of [
     "data-admin-group-resource-group-selector-search",
     "data-admin-group-resource-selector-search",
     "resourceGroupSearchQuery",
-    "resourceSearchQuery",
     "filteredResourceGroupOptions",
-    "filteredResourceOptions",
     "admin.group.resourceAccess.search.resourceGroupsPlaceholder",
     "admin.group.resourceAccess.search.resourcesPlaceholder",
     "admin.group.resourceAccess.emptyResourceGroupsSearch",
@@ -244,9 +251,20 @@ test("admin group resource selectors provide searchable modal lists with selecte
     assert.ok(source.includes(expected), `missing resource selector search marker: ${expected}`);
   }
 
+  for (const expected of [
+    "resourceSearchQuery",
+    "filteredResourceOptions",
+    "matchesAiResourceSelectorSearch",
+  ]) {
+    assert.ok(sharedSource.includes(expected), `missing shared resource selector marker: ${expected}`);
+  }
+
   assert.match(source, /<SelectorFooter[\s\S]*count=\{selectedCodes\.length\}[\s\S]*onClose=\{onClose\}/);
+  assert.match(sharedSource, /labels\.selectedCount\(selectedCodes\.length\)/);
+  assert.match(sharedSource, /searchDataAttribute = 'data-admin-ai-resource-selector-search'/);
   assert.match(source, /function SelectorFooter\(\{\s*count,\s*onClose,\s*t,\s*\}/);
-  assert.match(source, /justify-between[\s\S]*admin\.group\.resourceAccess\.selectedCount[\s\S]*common\.actions\.done/);
+  assert.match(source, /selectedCount: count => t\('admin\.group\.resourceAccess\.selectedCount', \{ count \}\)/);
+  assert.match(source, /done: t\('common\.actions\.done'\)/);
   const headerSource = source.slice(source.indexOf("function SelectorHeader"), source.indexOf("function SelectorState"));
   assert.doesNotMatch(headerSource, /selectedCount/);
 });
@@ -794,9 +812,9 @@ test("admin group service manages channel bindings through generated backend SDK
               providerCode: "openai",
               providerName: "OpenAI",
               channelCode: "openai-primary",
-              models: ["openai/global/gpt-4o-mini"],
+              models: ["openai/gpt-4o-mini"],
               capabilities: ["llm"],
-              modelScope: ["openai/global/gpt-4o-mini"],
+              modelScope: ["openai/gpt-4o-mini"],
               priority: "5",
               weight: "80",
               status: "active",
@@ -817,7 +835,7 @@ test("admin group service manages channel bindings through generated backend SDK
               providerCode: "openai",
               providerName: "OpenAI",
               channelCode: "openai-primary",
-              models: ["openai/global/gpt-4o-mini"],
+              models: ["openai/gpt-4o-mini"],
               capabilities: ["llm"],
               modelScope: [],
               priority: 10,
@@ -1156,11 +1174,42 @@ test("admin group table fills the available admin viewport", () => {
     "AdminTableShell",
     "data-admin-group-table-card",
     "data-admin-group-table-viewport",
-    "flex h-full min-h-0 w-full flex-col",
+    "flex h-full min-h-0 w-full flex-col gap-4 overflow-hidden",
+    "flex-1 min-h-0",
+    "viewportClassName=\"min-h-0 flex-1\"",
     "sticky top-0 z-10",
   ]) {
     assert.ok(source.includes(expected), `missing adaptive admin group table marker: ${expected}`);
   }
+
+  assert.doesNotMatch(source, /h-\[calc\(100dvh-74px\)\]/);
+});
+
+test("admin group table paginates filtered rows inside the adaptive shell", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-group/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+
+  for (const expected of [
+    "BottomPagination",
+    "data-admin-group-pagination",
+    "const [page, setPage] = useState(1)",
+    "const [pageSize, setPageSize] = useState(20)",
+    "const paginatedGroups = filteredGroups.slice(",
+    "paginatedGroups.map(group =>",
+    "pageSizeOptions={[10, 20, 50, 100]}",
+    "admin.group.pagination.showing",
+    "admin.group.pagination.page",
+    "admin.group.pagination.pageSize",
+    "onPageSizeChange={(nextPageSize) => {",
+  ]) {
+    assert.ok(source.includes(expected), `missing admin group pagination marker: ${expected}`);
+  }
+
+  assert.match(source, /hasNextPage=\{page \* pageSize < filteredGroups\.length\}/);
+  assert.match(source, /useEffect\(\(\) => \{\s*setPage\(1\);\s*\}, \[searchQuery, platformFilter, statusFilter, typeFilter, sortDirection\]\);/);
+  assert.doesNotMatch(source, /filteredGroups\.map\(group =>/);
 });
 
 test("admin group list fails closed when backend returns unsupported group enums", async () => {

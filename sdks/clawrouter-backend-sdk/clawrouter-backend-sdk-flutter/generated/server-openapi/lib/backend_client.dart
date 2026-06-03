@@ -14,6 +14,7 @@ import 'src/api/platform.dart';
 import 'src/api/system.dart';
 import 'src/api/prompts.dart';
 import 'src/api/service_providers.dart';
+import 'src/api/sites.dart';
 import 'src/api/storage.dart';
 
 class SdkworkBackendClient {
@@ -33,6 +34,7 @@ class SdkworkBackendClient {
   late final SystemApi system;
   late final PromptsApi prompts;
   late final ServiceProvidersApi serviceProviders;
+  late final SitesApi sites;
   late final StorageApi storage;
 
   SdkworkBackendClient({
@@ -52,6 +54,7 @@ class SdkworkBackendClient {
     system = SystemApi(_httpClient);
     prompts = PromptsApi(_httpClient);
     serviceProviders = ServiceProvidersApi(_httpClient);
+    sites = SitesApi(_httpClient);
     storage = StorageApi(_httpClient);
   }
 

@@ -2,8 +2,8 @@ use std::collections::{BTreeMap, BTreeSet};
 
 use crate::application::{PricingResolver, ResolveModelPriceQuery};
 use crate::domain::{
-    AiModel, BillingMeter, ChannelGroup, DomainResult, ModelPrice, ModelVendor, PriceSide,
-    ProviderChannelGroupBinding,
+    model_catalog_scope_matches_key, AiModel, BillingMeter, ChannelGroup, DomainResult, ModelPrice,
+    ModelVendor, PriceSide, ProviderChannelGroupBinding,
 };
 use crate::ports::PricingCatalog;
 
@@ -68,7 +68,6 @@ pub struct ModelCatalogItem {
     pub model: String,
     pub display_name: String,
     pub vendor_code: String,
-    pub region_code: String,
     pub vendor: ModelVendor,
     pub capabilities: Vec<String>,
     pub groups: Vec<String>,
@@ -93,8 +92,6 @@ pub struct ModelCatalogItem {
     pub routing_state: Option<i32>,
     pub replacement_model: Option<String>,
     pub provider_codes: Vec<String>,
-    pub official_reference_unit_price: Option<String>,
-    pub official_reference_currency: Option<String>,
     pub official_reference_prices: Vec<ModelCatalogReferencePriceView>,
     pub lowest_upstream_cost_unit_price: Option<String>,
     pub lowest_upstream_cost_currency: Option<String>,
@@ -103,6 +100,7 @@ pub struct ModelCatalogItem {
 
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct ModelCatalogReferencePriceView {
+    pub region_code: String,
     pub billing_meter: String,
     pub unit_price: String,
     pub currency: String,
@@ -143,6 +141,7 @@ impl<'a, C: PricingCatalog> ModelCatalogQueryService<'a, C> {
             .catalog
             .list_models(None)
             .into_iter()
+            .filter(|model| model.is_publicly_active())
             .map(|model| {
                 let vendor = self
                     .catalog
@@ -151,8 +150,6 @@ impl<'a, C: PricingCatalog> ModelCatalogQueryService<'a, C> {
                     .unwrap_or(ModelVendor::Unknown);
                 let model_lookup_key = model.catalog_key.as_str();
                 let provider_codes = self.provider_codes(model_lookup_key);
-                let official_reference =
-                    self.official_reference(model_lookup_key, query.billing_meter.clone());
                 let official_reference_prices = self.official_reference_prices(model_lookup_key);
                 let lowest_upstream_cost =
                     self.lowest_upstream_cost(model_lookup_key, query.billing_meter.clone());
@@ -169,6 +166,9 @@ impl<'a, C: PricingCatalog> ModelCatalogQueryService<'a, C> {
                             billing_meter: query.billing_meter.clone(),
                             provider_code: provider_for_resolve,
                             channel_id: None,
+                            region_code: lowest_upstream_cost
+                                .as_ref()
+                                .map(|price| price.region_code.clone()),
                         })
                     })
                     .map(to_price_availability)
@@ -185,7 +185,6 @@ impl<'a, C: PricingCatalog> ModelCatalogQueryService<'a, C> {
                     model: model.model,
                     display_name: model.display_name,
                     vendor_code: model.vendor_code,
-                    region_code: model.region_code,
                     vendor,
                     capabilities: model.capabilities,
                     groups,
@@ -210,12 +209,6 @@ impl<'a, C: PricingCatalog> ModelCatalogQueryService<'a, C> {
                     routing_state: model.routing_state,
                     replacement_model: model.replacement_model,
                     provider_codes,
-                    official_reference_unit_price: official_reference
-                        .as_ref()
-                        .map(|price| price.unit_price.to_fixed_string(6)),
-                    official_reference_currency: official_reference
-                        .as_ref()
-                        .map(|price| price.unit_price.currency.clone()),
                     official_reference_prices,
                     lowest_upstream_cost_unit_price: lowest_upstream_cost
                         .as_ref()
@@ -262,16 +255,6 @@ impl<'a, C: PricingCatalog> ModelCatalogQueryService<'a, C> {
         provider_codes
     }
 
-    fn official_reference(&self, model: &str, billing_meter: BillingMeter) -> Option<ModelPrice> {
-        self.catalog.find_model_price(
-            model,
-            PriceSide::OfficialReference,
-            billing_meter,
-            None,
-            None,
-        )
-    }
-
     fn official_reference_prices(&self, model: &str) -> Vec<ModelCatalogReferencePriceView> {
         let mut prices: Vec<ModelCatalogReferencePriceView> = self
             .catalog
@@ -283,17 +266,25 @@ impl<'a, C: PricingCatalog> ModelCatalogQueryService<'a, C> {
                     && price.pricing_plan_code.is_none()
             })
             .map(|price| ModelCatalogReferencePriceView {
+                region_code: price.region_code,
                 billing_meter: price.billing_meter.code().to_owned(),
                 unit_price: price.unit_price.to_fixed_string(6),
                 currency: price.unit_price.currency,
             })
             .collect();
         prices.sort_by(|left, right| {
-            billing_meter_sort_key(&left.billing_meter)
-                .cmp(&billing_meter_sort_key(&right.billing_meter))
+            model_region_sort_key(&left.region_code)
+                .cmp(&model_region_sort_key(&right.region_code))
+                .then_with(|| left.region_code.cmp(&right.region_code))
+                .then_with(|| {
+                    billing_meter_sort_key(&left.billing_meter)
+                        .cmp(&billing_meter_sort_key(&right.billing_meter))
+                })
                 .then_with(|| left.billing_meter.cmp(&right.billing_meter))
         });
-        prices.dedup_by(|left, right| left.billing_meter == right.billing_meter);
+        prices.dedup_by(|left, right| {
+            left.region_code == right.region_code && left.billing_meter == right.billing_meter
+        });
         prices
     }
 
@@ -428,86 +419,8 @@ fn binding_matches_model_scope(
     binding.model_scope.iter().any(|scope| {
         model_scope_keys
             .iter()
-            .any(|key| model_scope_value_matches_key(scope, key))
+            .any(|key| model_catalog_scope_matches_key(scope, key))
     })
-}
-
-fn model_scope_value_matches_key(scope: &str, key: &str) -> bool {
-    let scope = normalize_model_scope_value(scope);
-    let key = normalize_model_scope_value(key);
-    if scope.is_empty() || key.is_empty() {
-        return false;
-    }
-    if scope == "*" || scope == "all" {
-        return true;
-    }
-    if scope == key {
-        return true;
-    }
-    if let Some(prefix) = scope.strip_suffix("/*") {
-        return !prefix.is_empty()
-            && (key == prefix
-                || key
-                    .strip_prefix(prefix)
-                    .is_some_and(|tail| tail.starts_with('/')));
-    }
-
-    let scope_parts = scope
-        .split('/')
-        .filter(|part| !part.is_empty())
-        .collect::<Vec<_>>();
-    let Some((vendor, native_model_parts)) = model_scope_key_parts(&key) else {
-        return false;
-    };
-    let native_model = native_model_parts.join("/");
-    match scope_parts.as_slice() {
-        [scope_value] => {
-            *scope_value == vendor
-                || *scope_value == native_model.as_str()
-                || native_model_parts
-                    .last()
-                    .is_some_and(|model| *scope_value == *model)
-        }
-        [scope_vendor, scope_model @ ..] => {
-            (*scope_vendor == vendor && scope_model == native_model_parts) || scope == native_model
-        }
-        [] => false,
-    }
-}
-
-fn model_scope_key_parts(value: &str) -> Option<(&str, Vec<&str>)> {
-    let parts = value
-        .split('/')
-        .filter(|part| !part.is_empty())
-        .collect::<Vec<_>>();
-    match parts.as_slice() {
-        [_vendor, region, _model @ ..] if known_region_segment(region) => None,
-        [vendor, model @ ..] if !model.is_empty() => Some((*vendor, model.to_vec())),
-        _ => None,
-    }
-}
-
-fn known_region_segment(value: &str) -> bool {
-    matches!(
-        value.trim().to_ascii_lowercase().as_str(),
-        "global"
-            | "cn"
-            | "us"
-            | "eu"
-            | "ap"
-            | "apac"
-            | "jp"
-            | "sg"
-            | "hk"
-            | "aws"
-            | "azure"
-            | "gcp"
-            | "local"
-    )
-}
-
-fn normalize_model_scope_value(value: &str) -> String {
-    value.trim().trim_matches('/').to_ascii_lowercase()
 }
 
 fn binding_matches_model_capability(
@@ -869,6 +782,14 @@ fn billing_meter_sort_key(billing_meter: &str) -> usize {
         "music_output_second" => 500,
         "sfx_result" => 510,
         _ => usize::MAX,
+    }
+}
+
+fn model_region_sort_key(region_code: &str) -> usize {
+    match region_code.trim().to_ascii_lowercase().as_str() {
+        "global" => 0,
+        "cn" | "china" | "mainland" => 10,
+        _ => 20,
     }
 }
 

@@ -42,6 +42,8 @@ export interface AdminRecordLogItem {
   providerNativeModel: string;
   /** Reasoning effort field on admin record log item. */
   reasoningEffort: string;
+  /** Deployment region used by the selected endpoint and pricing resolver. This is not part of the model catalog identity. */
+  regionCode: string;
   /** Request id field on admin record log item. */
   requestId: string;
   /** Requested model catalog key field on admin record log item. */

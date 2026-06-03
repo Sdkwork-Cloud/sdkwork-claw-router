@@ -1,7 +1,8 @@
 use crate::domain::{
     AiModel, BillingMeter, ChannelGroup, ChannelGroupMetricSnapshot, GatewayAccessPolicy,
     GatewayApiKey, ModelMappingRule, ModelPrice, ModelProviderRoute, ModelVendorDefinition,
-    PriceSide, PricingPlan, ProviderChannelRoute, QuotaPolicy, RoutingPolicy, RoutingRule,
+    PriceSide, PricingPlan, ProviderChannelRoute, QuotaPolicy, ResolveModelMappingContext,
+    RoutingPolicy, RoutingRule,
 };
 
 pub trait PricingCatalog {
@@ -35,8 +36,7 @@ pub trait PricingCatalog {
     fn resolve_model_mapping(
         &self,
         source_model: &str,
-        vendor_code: Option<&str>,
-        channel_id: Option<i64>,
+        context: &ResolveModelMappingContext,
     ) -> Option<ModelMappingRule>;
     fn find_provider_route(&self, model: &str, provider_code: &str) -> Option<ModelProviderRoute>;
     fn find_model_price(

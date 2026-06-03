@@ -875,8 +875,6 @@ class AdminAgentVersionItem {
 
 class AdminAiModelCreateRequest {
   final String? apiFormat;
-  final String? cacheReadPrice;
-  final String? cacheWritePrice;
   final String? capabilityIntro;
   final String contextTokens;
   final String? description;
@@ -887,9 +885,7 @@ class AdminAiModelCreateRequest {
   final List<String>? modalities;
   final String model;
   final List<String>? outputModalities;
-  final String priceIn;
-  final String priceOut;
-  final List<AdminAiModelRegionPrice>? regionPrices;
+  final List<AdminAiModelRegionPrice> regionPrices;
   final int? releaseStage;
   final String? replacementModel;
   final int? routingState;
@@ -905,8 +901,6 @@ class AdminAiModelCreateRequest {
 
   AdminAiModelCreateRequest({
     this.apiFormat,
-    this.cacheReadPrice,
-    this.cacheWritePrice,
     this.capabilityIntro,
     required this.contextTokens,
     this.description,
@@ -917,9 +911,7 @@ class AdminAiModelCreateRequest {
     this.modalities,
     required this.model,
     this.outputModalities,
-    required this.priceIn,
-    required this.priceOut,
-    this.regionPrices,
+    required this.regionPrices,
     this.releaseStage,
     this.replacementModel,
     this.routingState,
@@ -937,8 +929,6 @@ class AdminAiModelCreateRequest {
   factory AdminAiModelCreateRequest.fromJson(Map<String, dynamic> json) {
     return AdminAiModelCreateRequest(
       apiFormat: json['apiFormat']?.toString(),
-      cacheReadPrice: json['cacheReadPrice']?.toString(),
-      cacheWritePrice: json['cacheWritePrice']?.toString(),
       capabilityIntro: json['capabilityIntro']?.toString(),
       contextTokens: (() {
         final value = json['contextTokens']?.toString();
@@ -997,24 +987,10 @@ class AdminAiModelCreateRequest {
             .whereType<String>()
             .toList();
       })(),
-      priceIn: (() {
-        final value = json['priceIn']?.toString();
-        if (value == null) {
-          throw FormatException('AdminAiModelCreateRequest.priceIn is required');
-        }
-        return value;
-      })(),
-      priceOut: (() {
-        final value = json['priceOut']?.toString();
-        if (value == null) {
-          throw FormatException('AdminAiModelCreateRequest.priceOut is required');
-        }
-        return value;
-      })(),
       regionPrices: (() {
         final list = _sdkworkAsList(json['regionPrices']);
         if (list == null) {
-          return null;
+          throw FormatException('AdminAiModelCreateRequest.regionPrices is required');
         }
         return list
             .map((item) => (() {
@@ -1072,8 +1048,6 @@ class AdminAiModelCreateRequest {
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'apiFormat': apiFormat,
-      'cacheReadPrice': cacheReadPrice,
-      'cacheWritePrice': cacheWritePrice,
       'capabilityIntro': capabilityIntro,
       'contextTokens': contextTokens,
       'description': description,
@@ -1084,9 +1058,7 @@ class AdminAiModelCreateRequest {
       'modalities': modalities?.map((item) => item).toList(),
       'model': model,
       'outputModalities': outputModalities?.map((item) => item).toList(),
-      'priceIn': priceIn,
-      'priceOut': priceOut,
-      'regionPrices': regionPrices?.map((item) => item.toJson()).toList(),
+      'regionPrices': regionPrices.map((item) => item.toJson()).toList(),
       'releaseStage': releaseStage,
       'replacementModel': replacementModel,
       'routingState': routingState,
@@ -1105,8 +1077,6 @@ class AdminAiModelCreateRequest {
 
 class AdminAiModelItem {
   final String apiFormat;
-  final String cacheReadPrice;
-  final String cacheWritePrice;
   final String calls;
   final String capabilityIntro;
   final int contextTokens;
@@ -1120,8 +1090,7 @@ class AdminAiModelItem {
   final String model;
   final String name;
   final List<String> outputModalities;
-  final String priceIn;
-  final String priceOut;
+  final List<AdminAiModelRegionPrice> regionPrices;
   final int releaseStage;
   final String replacementModel;
   final int routingState;
@@ -1139,8 +1108,6 @@ class AdminAiModelItem {
 
   AdminAiModelItem({
     required this.apiFormat,
-    required this.cacheReadPrice,
-    required this.cacheWritePrice,
     required this.calls,
     required this.capabilityIntro,
     required this.contextTokens,
@@ -1154,8 +1121,7 @@ class AdminAiModelItem {
     required this.model,
     required this.name,
     required this.outputModalities,
-    required this.priceIn,
-    required this.priceOut,
+    required this.regionPrices,
     required this.releaseStage,
     required this.replacementModel,
     required this.routingState,
@@ -1178,20 +1144,6 @@ class AdminAiModelItem {
         final value = json['apiFormat']?.toString();
         if (value == null) {
           throw FormatException('AdminAiModelItem.apiFormat is required');
-        }
-        return value;
-      })(),
-      cacheReadPrice: (() {
-        final value = json['cacheReadPrice']?.toString();
-        if (value == null) {
-          throw FormatException('AdminAiModelItem.cacheReadPrice is required');
-        }
-        return value;
-      })(),
-      cacheWritePrice: (() {
-        final value = json['cacheWritePrice']?.toString();
-        if (value == null) {
-          throw FormatException('AdminAiModelItem.cacheWritePrice is required');
         }
         return value;
       })(),
@@ -1298,19 +1250,18 @@ class AdminAiModelItem {
             .whereType<String>()
             .toList();
       })(),
-      priceIn: (() {
-        final value = json['priceIn']?.toString();
-        if (value == null) {
-          throw FormatException('AdminAiModelItem.priceIn is required');
+      regionPrices: (() {
+        final list = _sdkworkAsList(json['regionPrices']);
+        if (list == null) {
+          throw FormatException('AdminAiModelItem.regionPrices is required');
         }
-        return value;
-      })(),
-      priceOut: (() {
-        final value = json['priceOut']?.toString();
-        if (value == null) {
-          throw FormatException('AdminAiModelItem.priceOut is required');
-        }
-        return value;
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminAiModelRegionPrice.fromJson(map);
+      })())
+            .whereType<AdminAiModelRegionPrice>()
+            .toList();
       })(),
       releaseStage: (() {
         final value = json['releaseStage'];
@@ -1422,8 +1373,6 @@ class AdminAiModelItem {
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'apiFormat': apiFormat,
-      'cacheReadPrice': cacheReadPrice,
-      'cacheWritePrice': cacheWritePrice,
       'calls': calls,
       'capabilityIntro': capabilityIntro,
       'contextTokens': contextTokens,
@@ -1437,8 +1386,7 @@ class AdminAiModelItem {
       'model': model,
       'name': name,
       'outputModalities': outputModalities.map((item) => item).toList(),
-      'priceIn': priceIn,
-      'priceOut': priceOut,
+      'regionPrices': regionPrices.map((item) => item.toJson()).toList(),
       'releaseStage': releaseStage,
       'replacementModel': replacementModel,
       'routingState': routingState,
@@ -1539,8 +1487,6 @@ class AdminAiModelRegionPrice {
 
 class AdminAiModelUpdateRequest {
   final String? apiFormat;
-  final String? cacheReadPrice;
-  final String? cacheWritePrice;
   final String? capabilityIntro;
   final String? contextTokens;
   final String? description;
@@ -1551,8 +1497,6 @@ class AdminAiModelUpdateRequest {
   final List<String>? modalities;
   final String? model;
   final List<String>? outputModalities;
-  final String? priceIn;
-  final String? priceOut;
   final List<AdminAiModelRegionPrice>? regionPrices;
   final int? releaseStage;
   final String? replacementModel;
@@ -1570,8 +1514,6 @@ class AdminAiModelUpdateRequest {
 
   AdminAiModelUpdateRequest({
     this.apiFormat,
-    this.cacheReadPrice,
-    this.cacheWritePrice,
     this.capabilityIntro,
     this.contextTokens,
     this.description,
@@ -1582,8 +1524,6 @@ class AdminAiModelUpdateRequest {
     this.modalities,
     this.model,
     this.outputModalities,
-    this.priceIn,
-    this.priceOut,
     this.regionPrices,
     this.releaseStage,
     this.replacementModel,
@@ -1603,8 +1543,6 @@ class AdminAiModelUpdateRequest {
   factory AdminAiModelUpdateRequest.fromJson(Map<String, dynamic> json) {
     return AdminAiModelUpdateRequest(
       apiFormat: json['apiFormat']?.toString(),
-      cacheReadPrice: json['cacheReadPrice']?.toString(),
-      cacheWritePrice: json['cacheWritePrice']?.toString(),
       capabilityIntro: json['capabilityIntro']?.toString(),
       contextTokens: json['contextTokens']?.toString(),
       description: json['description']?.toString(),
@@ -1651,8 +1589,6 @@ class AdminAiModelUpdateRequest {
             .whereType<String>()
             .toList();
       })(),
-      priceIn: json['priceIn']?.toString(),
-      priceOut: json['priceOut']?.toString(),
       regionPrices: (() {
         final list = _sdkworkAsList(json['regionPrices']);
         if (list == null) {
@@ -1703,8 +1639,6 @@ class AdminAiModelUpdateRequest {
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'apiFormat': apiFormat,
-      'cacheReadPrice': cacheReadPrice,
-      'cacheWritePrice': cacheWritePrice,
       'capabilityIntro': capabilityIntro,
       'contextTokens': contextTokens,
       'description': description,
@@ -1715,8 +1649,6 @@ class AdminAiModelUpdateRequest {
       'modalities': modalities?.map((item) => item).toList(),
       'model': model,
       'outputModalities': outputModalities?.map((item) => item).toList(),
-      'priceIn': priceIn,
-      'priceOut': priceOut,
       'regionPrices': regionPrices?.map((item) => item.toJson()).toList(),
       'releaseStage': releaseStage,
       'replacementModel': replacementModel,
@@ -1861,6 +1793,496 @@ class AdminAiResourceCreateRequest {
       'sortOrder': sortOrder,
       'status': status,
       'vendorCode': vendorCode,
+    };
+  }
+}
+
+class AdminAiResourceGroupCreateRequest {
+  final String? description;
+  final String groupCode;
+  final String groupName;
+  final String? groupType;
+  final List<AdminAiResourceGroupMemberInput>? members;
+  final String? selectionMode;
+  final int? sortOrder;
+  final String? status;
+
+  AdminAiResourceGroupCreateRequest({
+    this.description,
+    required this.groupCode,
+    required this.groupName,
+    this.groupType,
+    this.members,
+    this.selectionMode,
+    this.sortOrder,
+    this.status
+  });
+
+  factory AdminAiResourceGroupCreateRequest.fromJson(Map<String, dynamic> json) {
+    return AdminAiResourceGroupCreateRequest(
+      description: json['description']?.toString(),
+      groupCode: (() {
+        final value = json['groupCode']?.toString();
+        if (value == null) {
+          throw FormatException('AdminAiResourceGroupCreateRequest.groupCode is required');
+        }
+        return value;
+      })(),
+      groupName: (() {
+        final value = json['groupName']?.toString();
+        if (value == null) {
+          throw FormatException('AdminAiResourceGroupCreateRequest.groupName is required');
+        }
+        return value;
+      })(),
+      groupType: json['groupType']?.toString(),
+      members: (() {
+        final list = _sdkworkAsList(json['members']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminAiResourceGroupMemberInput.fromJson(map);
+      })())
+            .whereType<AdminAiResourceGroupMemberInput>()
+            .toList();
+      })(),
+      selectionMode: json['selectionMode']?.toString(),
+      sortOrder: json['sortOrder'] is int ? json['sortOrder'] : null,
+      status: json['status']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'description': description,
+      'groupCode': groupCode,
+      'groupName': groupName,
+      'groupType': groupType,
+      'members': members?.map((item) => item.toJson()).toList(),
+      'selectionMode': selectionMode,
+      'sortOrder': sortOrder,
+      'status': status,
+    };
+  }
+}
+
+class AdminAiResourceGroupDeleteResponse {
+  final bool deleted;
+
+  AdminAiResourceGroupDeleteResponse({
+    required this.deleted
+  });
+
+  factory AdminAiResourceGroupDeleteResponse.fromJson(Map<String, dynamic> json) {
+    return AdminAiResourceGroupDeleteResponse(
+      deleted: (() {
+        final value = json['deleted'];
+        if (value is! bool) {
+          throw FormatException('AdminAiResourceGroupDeleteResponse.deleted is required');
+        }
+        return value;
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'deleted': deleted,
+    };
+  }
+}
+
+class AdminAiResourceGroupItem {
+  final String? description;
+  final bool dynamic_;
+  final String groupCode;
+  final String groupName;
+  final String groupType;
+  final String id;
+  final int resourceCount;
+  final String selectionMode;
+  final int? sortOrder;
+  final String status;
+
+  AdminAiResourceGroupItem({
+    this.description,
+    required this.dynamic_,
+    required this.groupCode,
+    required this.groupName,
+    required this.groupType,
+    required this.id,
+    required this.resourceCount,
+    required this.selectionMode,
+    this.sortOrder,
+    required this.status
+  });
+
+  factory AdminAiResourceGroupItem.fromJson(Map<String, dynamic> json) {
+    return AdminAiResourceGroupItem(
+      description: json['description']?.toString(),
+      dynamic_: (() {
+        final value = json['dynamic'];
+        if (value is! bool) {
+          throw FormatException('AdminAiResourceGroupItem.dynamic is required');
+        }
+        return value;
+      })(),
+      groupCode: (() {
+        final value = json['groupCode']?.toString();
+        if (value == null) {
+          throw FormatException('AdminAiResourceGroupItem.groupCode is required');
+        }
+        return value;
+      })(),
+      groupName: (() {
+        final value = json['groupName']?.toString();
+        if (value == null) {
+          throw FormatException('AdminAiResourceGroupItem.groupName is required');
+        }
+        return value;
+      })(),
+      groupType: (() {
+        final value = json['groupType']?.toString();
+        if (value == null) {
+          throw FormatException('AdminAiResourceGroupItem.groupType is required');
+        }
+        return value;
+      })(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('AdminAiResourceGroupItem.id is required');
+        }
+        return value;
+      })(),
+      resourceCount: (() {
+        final value = json['resourceCount'];
+        if (value is! int) {
+          throw FormatException('AdminAiResourceGroupItem.resourceCount is required');
+        }
+        return value;
+      })(),
+      selectionMode: (() {
+        final value = json['selectionMode']?.toString();
+        if (value == null) {
+          throw FormatException('AdminAiResourceGroupItem.selectionMode is required');
+        }
+        return value;
+      })(),
+      sortOrder: json['sortOrder'] is int ? json['sortOrder'] : null,
+      status: (() {
+        final value = json['status']?.toString();
+        if (value == null) {
+          throw FormatException('AdminAiResourceGroupItem.status is required');
+        }
+        return value;
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'description': description,
+      'dynamic': dynamic_,
+      'groupCode': groupCode,
+      'groupName': groupName,
+      'groupType': groupType,
+      'id': id,
+      'resourceCount': resourceCount,
+      'selectionMode': selectionMode,
+      'sortOrder': sortOrder,
+      'status': status,
+    };
+  }
+}
+
+class AdminAiResourceGroupMemberInput {
+  final String? itemRole;
+  final String resourceCode;
+  final int? sortOrder;
+
+  AdminAiResourceGroupMemberInput({
+    this.itemRole,
+    required this.resourceCode,
+    this.sortOrder
+  });
+
+  factory AdminAiResourceGroupMemberInput.fromJson(Map<String, dynamic> json) {
+    return AdminAiResourceGroupMemberInput(
+      itemRole: json['itemRole']?.toString(),
+      resourceCode: (() {
+        final value = json['resourceCode']?.toString();
+        if (value == null) {
+          throw FormatException('AdminAiResourceGroupMemberInput.resourceCode is required');
+        }
+        return value;
+      })(),
+      sortOrder: json['sortOrder'] is int ? json['sortOrder'] : null
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'itemRole': itemRole,
+      'resourceCode': resourceCode,
+      'sortOrder': sortOrder,
+    };
+  }
+}
+
+class AdminAiResourceGroupMutationResponse {
+  final AdminAiResourceGroupItem item;
+
+  AdminAiResourceGroupMutationResponse({
+    required this.item
+  });
+
+  factory AdminAiResourceGroupMutationResponse.fromJson(Map<String, dynamic> json) {
+    return AdminAiResourceGroupMutationResponse(
+      item: (() {
+        final map = _sdkworkAsMap(json['item']);
+        if (map == null) {
+          throw FormatException('AdminAiResourceGroupMutationResponse.item is required');
+        }
+        return AdminAiResourceGroupItem.fromJson(map);
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'item': item.toJson(),
+    };
+  }
+}
+
+class AdminAiResourceGroupResourceItem {
+  final String? apiEndpointCode;
+  final String? catalogKey;
+  final String displayName;
+  final String id;
+  final String memberRole;
+  final String? modalityCode;
+  final String? model;
+  final String? providerNativeModel;
+  final String resourceCode;
+  final String resourceType;
+  final int? sortOrder;
+  final String status;
+  final String? vendorCode;
+
+  AdminAiResourceGroupResourceItem({
+    this.apiEndpointCode,
+    this.catalogKey,
+    required this.displayName,
+    required this.id,
+    required this.memberRole,
+    this.modalityCode,
+    this.model,
+    this.providerNativeModel,
+    required this.resourceCode,
+    required this.resourceType,
+    this.sortOrder,
+    required this.status,
+    this.vendorCode
+  });
+
+  factory AdminAiResourceGroupResourceItem.fromJson(Map<String, dynamic> json) {
+    return AdminAiResourceGroupResourceItem(
+      apiEndpointCode: json['apiEndpointCode']?.toString(),
+      catalogKey: json['catalogKey']?.toString(),
+      displayName: (() {
+        final value = json['displayName']?.toString();
+        if (value == null) {
+          throw FormatException('AdminAiResourceGroupResourceItem.displayName is required');
+        }
+        return value;
+      })(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('AdminAiResourceGroupResourceItem.id is required');
+        }
+        return value;
+      })(),
+      memberRole: (() {
+        final value = json['memberRole']?.toString();
+        if (value == null) {
+          throw FormatException('AdminAiResourceGroupResourceItem.memberRole is required');
+        }
+        return value;
+      })(),
+      modalityCode: json['modalityCode']?.toString(),
+      model: json['model']?.toString(),
+      providerNativeModel: json['providerNativeModel']?.toString(),
+      resourceCode: (() {
+        final value = json['resourceCode']?.toString();
+        if (value == null) {
+          throw FormatException('AdminAiResourceGroupResourceItem.resourceCode is required');
+        }
+        return value;
+      })(),
+      resourceType: (() {
+        final value = json['resourceType']?.toString();
+        if (value == null) {
+          throw FormatException('AdminAiResourceGroupResourceItem.resourceType is required');
+        }
+        return value;
+      })(),
+      sortOrder: json['sortOrder'] is int ? json['sortOrder'] : null,
+      status: (() {
+        final value = json['status']?.toString();
+        if (value == null) {
+          throw FormatException('AdminAiResourceGroupResourceItem.status is required');
+        }
+        return value;
+      })(),
+      vendorCode: json['vendorCode']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'apiEndpointCode': apiEndpointCode,
+      'catalogKey': catalogKey,
+      'displayName': displayName,
+      'id': id,
+      'memberRole': memberRole,
+      'modalityCode': modalityCode,
+      'model': model,
+      'providerNativeModel': providerNativeModel,
+      'resourceCode': resourceCode,
+      'resourceType': resourceType,
+      'sortOrder': sortOrder,
+      'status': status,
+      'vendorCode': vendorCode,
+    };
+  }
+}
+
+class AdminAiResourceGroupResourcesResponse {
+  final List<AdminAiResourceGroupResourceItem> items;
+
+  AdminAiResourceGroupResourcesResponse({
+    required this.items
+  });
+
+  factory AdminAiResourceGroupResourcesResponse.fromJson(Map<String, dynamic> json) {
+    return AdminAiResourceGroupResourcesResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          throw FormatException('AdminAiResourceGroupResourcesResponse.items is required');
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminAiResourceGroupResourceItem.fromJson(map);
+      })())
+            .whereType<AdminAiResourceGroupResourceItem>()
+            .toList();
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items.map((item) => item.toJson()).toList(),
+    };
+  }
+}
+
+class AdminAiResourceGroupUpdateRequest {
+  final String? description;
+  final String? groupCode;
+  final String? groupName;
+  final String? groupType;
+  final List<AdminAiResourceGroupMemberInput>? members;
+  final String? selectionMode;
+  final int? sortOrder;
+  final String? status;
+
+  AdminAiResourceGroupUpdateRequest({
+    this.description,
+    this.groupCode,
+    this.groupName,
+    this.groupType,
+    this.members,
+    this.selectionMode,
+    this.sortOrder,
+    this.status
+  });
+
+  factory AdminAiResourceGroupUpdateRequest.fromJson(Map<String, dynamic> json) {
+    return AdminAiResourceGroupUpdateRequest(
+      description: json['description']?.toString(),
+      groupCode: json['groupCode']?.toString(),
+      groupName: json['groupName']?.toString(),
+      groupType: json['groupType']?.toString(),
+      members: (() {
+        final list = _sdkworkAsList(json['members']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminAiResourceGroupMemberInput.fromJson(map);
+      })())
+            .whereType<AdminAiResourceGroupMemberInput>()
+            .toList();
+      })(),
+      selectionMode: json['selectionMode']?.toString(),
+      sortOrder: json['sortOrder'] is int ? json['sortOrder'] : null,
+      status: json['status']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'description': description,
+      'groupCode': groupCode,
+      'groupName': groupName,
+      'groupType': groupType,
+      'members': members?.map((item) => item.toJson()).toList(),
+      'selectionMode': selectionMode,
+      'sortOrder': sortOrder,
+      'status': status,
+    };
+  }
+}
+
+class AdminAiResourceGroupsResponse {
+  final List<AdminAiResourceGroupItem> items;
+
+  AdminAiResourceGroupsResponse({
+    required this.items
+  });
+
+  factory AdminAiResourceGroupsResponse.fromJson(Map<String, dynamic> json) {
+    return AdminAiResourceGroupsResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          throw FormatException('AdminAiResourceGroupsResponse.items is required');
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminAiResourceGroupItem.fromJson(map);
+      })())
+            .whereType<AdminAiResourceGroupItem>()
+            .toList();
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items.map((item) => item.toJson()).toList(),
     };
   }
 }
@@ -7550,6 +7972,8 @@ class AdminChannelGroupCreateRequest {
   final double? officialPriceMultiplier;
   final String priceReferenceMode;
   final double? rateMultiplier;
+  final List<String>? resourceCodes;
+  final List<String>? resourceGroupCodes;
   final String status;
 
   AdminChannelGroupCreateRequest({
@@ -7560,6 +7984,8 @@ class AdminChannelGroupCreateRequest {
     this.officialPriceMultiplier,
     required this.priceReferenceMode,
     this.rateMultiplier,
+    this.resourceCodes,
+    this.resourceGroupCodes,
     required this.status
   });
 
@@ -7596,6 +8022,26 @@ class AdminChannelGroupCreateRequest {
         return value;
       })(),
       rateMultiplier: json['rateMultiplier'] is num ? json['rateMultiplier'].toDouble() : null,
+      resourceCodes: (() {
+        final list = _sdkworkAsList(json['resourceCodes']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
+      resourceGroupCodes: (() {
+        final list = _sdkworkAsList(json['resourceGroupCodes']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
       status: (() {
         final value = json['status']?.toString();
         if (value == null) {
@@ -7615,6 +8061,8 @@ class AdminChannelGroupCreateRequest {
       'officialPriceMultiplier': officialPriceMultiplier,
       'priceReferenceMode': priceReferenceMode,
       'rateMultiplier': rateMultiplier,
+      'resourceCodes': resourceCodes?.map((item) => item).toList(),
+      'resourceGroupCodes': resourceGroupCodes?.map((item) => item).toList(),
       'status': status,
     };
   }
@@ -7631,6 +8079,8 @@ class AdminChannelGroupItem {
   final String priceReferenceMode;
   final String providerCode;
   final double rateMultiplier;
+  final List<String> resourceCodes;
+  final List<String> resourceGroupCodes;
   final String status;
   final AdminUsagePair usage;
 
@@ -7645,6 +8095,8 @@ class AdminChannelGroupItem {
     required this.priceReferenceMode,
     required this.providerCode,
     required this.rateMultiplier,
+    required this.resourceCodes,
+    required this.resourceGroupCodes,
     required this.status,
     required this.usage
   });
@@ -7721,6 +8173,26 @@ class AdminChannelGroupItem {
         }
         return value.toDouble();
       })(),
+      resourceCodes: (() {
+        final list = _sdkworkAsList(json['resourceCodes']);
+        if (list == null) {
+          throw FormatException('AdminChannelGroupItem.resourceCodes is required');
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
+      resourceGroupCodes: (() {
+        final list = _sdkworkAsList(json['resourceGroupCodes']);
+        if (list == null) {
+          throw FormatException('AdminChannelGroupItem.resourceGroupCodes is required');
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
       status: (() {
         final value = json['status']?.toString();
         if (value == null) {
@@ -7750,6 +8222,8 @@ class AdminChannelGroupItem {
       'priceReferenceMode': priceReferenceMode,
       'providerCode': providerCode,
       'rateMultiplier': rateMultiplier,
+      'resourceCodes': resourceCodes.map((item) => item).toList(),
+      'resourceGroupCodes': resourceGroupCodes.map((item) => item).toList(),
       'status': status,
       'usage': usage.toJson(),
     };
@@ -7790,6 +8264,8 @@ class AdminChannelGroupUpdateRequest {
   final double? officialPriceMultiplier;
   final String? priceReferenceMode;
   final double? rateMultiplier;
+  final List<String>? resourceCodes;
+  final List<String>? resourceGroupCodes;
   final String? status;
 
   AdminChannelGroupUpdateRequest({
@@ -7800,6 +8276,8 @@ class AdminChannelGroupUpdateRequest {
     this.officialPriceMultiplier,
     this.priceReferenceMode,
     this.rateMultiplier,
+    this.resourceCodes,
+    this.resourceGroupCodes,
     this.status
   });
 
@@ -7812,6 +8290,26 @@ class AdminChannelGroupUpdateRequest {
       officialPriceMultiplier: json['officialPriceMultiplier'] is num ? json['officialPriceMultiplier'].toDouble() : null,
       priceReferenceMode: json['priceReferenceMode']?.toString(),
       rateMultiplier: json['rateMultiplier'] is num ? json['rateMultiplier'].toDouble() : null,
+      resourceCodes: (() {
+        final list = _sdkworkAsList(json['resourceCodes']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
+      resourceGroupCodes: (() {
+        final list = _sdkworkAsList(json['resourceGroupCodes']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
       status: json['status']?.toString()
     );
   }
@@ -7825,6 +8323,8 @@ class AdminChannelGroupUpdateRequest {
       'officialPriceMultiplier': officialPriceMultiplier,
       'priceReferenceMode': priceReferenceMode,
       'rateMultiplier': rateMultiplier,
+      'resourceCodes': resourceCodes?.map((item) => item).toList(),
+      'resourceGroupCodes': resourceGroupCodes?.map((item) => item).toList(),
       'status': status,
     };
   }
@@ -12082,6 +12582,779 @@ class AdminModelLimitsResponse {
   }
 }
 
+class AdminModelMappingCreateRequest {
+  final List<AdminModelMappingRuleBindingInput> bindings;
+  final bool? enabled;
+  final List<AdminModelMappingRuleItemInput> mappingItems;
+  final String? mappingMode;
+  final String? matchType;
+  final String sourceVendorCode;
+  final String? sourceVendorId;
+  final String targetVendorCode;
+  final String? targetVendorId;
+
+  AdminModelMappingCreateRequest({
+    required this.bindings,
+    this.enabled,
+    required this.mappingItems,
+    this.mappingMode,
+    this.matchType,
+    required this.sourceVendorCode,
+    this.sourceVendorId,
+    required this.targetVendorCode,
+    this.targetVendorId
+  });
+
+  factory AdminModelMappingCreateRequest.fromJson(Map<String, dynamic> json) {
+    return AdminModelMappingCreateRequest(
+      bindings: (() {
+        final list = _sdkworkAsList(json['bindings']);
+        if (list == null) {
+          throw FormatException('AdminModelMappingCreateRequest.bindings is required');
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminModelMappingRuleBindingInput.fromJson(map);
+      })())
+            .whereType<AdminModelMappingRuleBindingInput>()
+            .toList();
+      })(),
+      enabled: json['enabled'] is bool ? json['enabled'] : null,
+      mappingItems: (() {
+        final list = _sdkworkAsList(json['mappingItems']);
+        if (list == null) {
+          throw FormatException('AdminModelMappingCreateRequest.mappingItems is required');
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminModelMappingRuleItemInput.fromJson(map);
+      })())
+            .whereType<AdminModelMappingRuleItemInput>()
+            .toList();
+      })(),
+      mappingMode: json['mappingMode']?.toString(),
+      matchType: json['matchType']?.toString(),
+      sourceVendorCode: (() {
+        final value = json['sourceVendorCode']?.toString();
+        if (value == null) {
+          throw FormatException('AdminModelMappingCreateRequest.sourceVendorCode is required');
+        }
+        return value;
+      })(),
+      sourceVendorId: json['sourceVendorId']?.toString(),
+      targetVendorCode: (() {
+        final value = json['targetVendorCode']?.toString();
+        if (value == null) {
+          throw FormatException('AdminModelMappingCreateRequest.targetVendorCode is required');
+        }
+        return value;
+      })(),
+      targetVendorId: json['targetVendorId']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'bindings': bindings.map((item) => item.toJson()).toList(),
+      'enabled': enabled,
+      'mappingItems': mappingItems.map((item) => item.toJson()).toList(),
+      'mappingMode': mappingMode,
+      'matchType': matchType,
+      'sourceVendorCode': sourceVendorCode,
+      'sourceVendorId': sourceVendorId,
+      'targetVendorCode': targetVendorCode,
+      'targetVendorId': targetVendorId,
+    };
+  }
+}
+
+class AdminModelMappingDeleteResponse {
+  final bool deleted;
+
+  AdminModelMappingDeleteResponse({
+    required this.deleted
+  });
+
+  factory AdminModelMappingDeleteResponse.fromJson(Map<String, dynamic> json) {
+    return AdminModelMappingDeleteResponse(
+      deleted: (() {
+        final value = json['deleted'];
+        if (value is! bool) {
+          throw FormatException('AdminModelMappingDeleteResponse.deleted is required');
+        }
+        return value;
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'deleted': deleted,
+    };
+  }
+}
+
+class AdminModelMappingMutationResponse {
+  final AdminModelMappingRule item;
+
+  AdminModelMappingMutationResponse({
+    required this.item
+  });
+
+  factory AdminModelMappingMutationResponse.fromJson(Map<String, dynamic> json) {
+    return AdminModelMappingMutationResponse(
+      item: (() {
+        final map = _sdkworkAsMap(json['item']);
+        if (map == null) {
+          throw FormatException('AdminModelMappingMutationResponse.item is required');
+        }
+        return AdminModelMappingRule.fromJson(map);
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'item': item.toJson(),
+    };
+  }
+}
+
+class AdminModelMappingResolveRequest {
+  final String? channelCode;
+  final String? channelId;
+  final String? providerAccountCode;
+  final String? providerAccountId;
+  final String sourceModel;
+  final String? vendorCode;
+
+  AdminModelMappingResolveRequest({
+    this.channelCode,
+    this.channelId,
+    this.providerAccountCode,
+    this.providerAccountId,
+    required this.sourceModel,
+    this.vendorCode
+  });
+
+  factory AdminModelMappingResolveRequest.fromJson(Map<String, dynamic> json) {
+    return AdminModelMappingResolveRequest(
+      channelCode: json['channelCode']?.toString(),
+      channelId: json['channelId']?.toString(),
+      providerAccountCode: json['providerAccountCode']?.toString(),
+      providerAccountId: json['providerAccountId']?.toString(),
+      sourceModel: (() {
+        final value = json['sourceModel']?.toString();
+        if (value == null) {
+          throw FormatException('AdminModelMappingResolveRequest.sourceModel is required');
+        }
+        return value;
+      })(),
+      vendorCode: json['vendorCode']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'channelCode': channelCode,
+      'channelId': channelId,
+      'providerAccountCode': providerAccountCode,
+      'providerAccountId': providerAccountId,
+      'sourceModel': sourceModel,
+      'vendorCode': vendorCode,
+    };
+  }
+}
+
+class AdminModelMappingResolveResponse {
+  final bool matched;
+  final String? matchedBindingType;
+  final AdminModelMappingRule? rule;
+  final String sourceModel;
+  final String? targetCatalogKey;
+  final String targetModel;
+  final String? targetProviderModel;
+  final String? targetProviderNativeModel;
+  final String? targetVendorCode;
+
+  AdminModelMappingResolveResponse({
+    required this.matched,
+    this.matchedBindingType,
+    this.rule,
+    required this.sourceModel,
+    this.targetCatalogKey,
+    required this.targetModel,
+    this.targetProviderModel,
+    this.targetProviderNativeModel,
+    this.targetVendorCode
+  });
+
+  factory AdminModelMappingResolveResponse.fromJson(Map<String, dynamic> json) {
+    return AdminModelMappingResolveResponse(
+      matched: (() {
+        final value = json['matched'];
+        if (value is! bool) {
+          throw FormatException('AdminModelMappingResolveResponse.matched is required');
+        }
+        return value;
+      })(),
+      matchedBindingType: json['matchedBindingType']?.toString(),
+      rule: (() {
+        final map = _sdkworkAsMap(json['rule']);
+        return map == null ? null : AdminModelMappingRule.fromJson(map);
+      })(),
+      sourceModel: (() {
+        final value = json['sourceModel']?.toString();
+        if (value == null) {
+          throw FormatException('AdminModelMappingResolveResponse.sourceModel is required');
+        }
+        return value;
+      })(),
+      targetCatalogKey: json['targetCatalogKey']?.toString(),
+      targetModel: (() {
+        final value = json['targetModel']?.toString();
+        if (value == null) {
+          throw FormatException('AdminModelMappingResolveResponse.targetModel is required');
+        }
+        return value;
+      })(),
+      targetProviderModel: json['targetProviderModel']?.toString(),
+      targetProviderNativeModel: json['targetProviderNativeModel']?.toString(),
+      targetVendorCode: json['targetVendorCode']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'matched': matched,
+      'matchedBindingType': matchedBindingType,
+      'rule': rule?.toJson(),
+      'sourceModel': sourceModel,
+      'targetCatalogKey': targetCatalogKey,
+      'targetModel': targetModel,
+      'targetProviderModel': targetProviderModel,
+      'targetProviderNativeModel': targetProviderNativeModel,
+      'targetVendorCode': targetVendorCode,
+    };
+  }
+}
+
+class AdminModelMappingRule {
+  final String bindingType;
+  final List<AdminModelMappingRuleBinding> bindings;
+  final String? createdAt;
+  final bool enabled;
+  final String id;
+  final List<AdminModelMappingRuleItem> mappingItems;
+  final String mappingMode;
+  final String matchType;
+  final String sourceVendorCode;
+  final String? sourceVendorId;
+  final String targetVendorCode;
+  final String? targetVendorId;
+  final String? updatedAt;
+
+  AdminModelMappingRule({
+    required this.bindingType,
+    required this.bindings,
+    this.createdAt,
+    required this.enabled,
+    required this.id,
+    required this.mappingItems,
+    required this.mappingMode,
+    required this.matchType,
+    required this.sourceVendorCode,
+    this.sourceVendorId,
+    required this.targetVendorCode,
+    this.targetVendorId,
+    this.updatedAt
+  });
+
+  factory AdminModelMappingRule.fromJson(Map<String, dynamic> json) {
+    return AdminModelMappingRule(
+      bindingType: (() {
+        final value = json['bindingType']?.toString();
+        if (value == null) {
+          throw FormatException('AdminModelMappingRule.bindingType is required');
+        }
+        return value;
+      })(),
+      bindings: (() {
+        final list = _sdkworkAsList(json['bindings']);
+        if (list == null) {
+          throw FormatException('AdminModelMappingRule.bindings is required');
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminModelMappingRuleBinding.fromJson(map);
+      })())
+            .whereType<AdminModelMappingRuleBinding>()
+            .toList();
+      })(),
+      createdAt: json['createdAt']?.toString(),
+      enabled: (() {
+        final value = json['enabled'];
+        if (value is! bool) {
+          throw FormatException('AdminModelMappingRule.enabled is required');
+        }
+        return value;
+      })(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('AdminModelMappingRule.id is required');
+        }
+        return value;
+      })(),
+      mappingItems: (() {
+        final list = _sdkworkAsList(json['mappingItems']);
+        if (list == null) {
+          throw FormatException('AdminModelMappingRule.mappingItems is required');
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminModelMappingRuleItem.fromJson(map);
+      })())
+            .whereType<AdminModelMappingRuleItem>()
+            .toList();
+      })(),
+      mappingMode: (() {
+        final value = json['mappingMode']?.toString();
+        if (value == null) {
+          throw FormatException('AdminModelMappingRule.mappingMode is required');
+        }
+        return value;
+      })(),
+      matchType: (() {
+        final value = json['matchType']?.toString();
+        if (value == null) {
+          throw FormatException('AdminModelMappingRule.matchType is required');
+        }
+        return value;
+      })(),
+      sourceVendorCode: (() {
+        final value = json['sourceVendorCode']?.toString();
+        if (value == null) {
+          throw FormatException('AdminModelMappingRule.sourceVendorCode is required');
+        }
+        return value;
+      })(),
+      sourceVendorId: json['sourceVendorId']?.toString(),
+      targetVendorCode: (() {
+        final value = json['targetVendorCode']?.toString();
+        if (value == null) {
+          throw FormatException('AdminModelMappingRule.targetVendorCode is required');
+        }
+        return value;
+      })(),
+      targetVendorId: json['targetVendorId']?.toString(),
+      updatedAt: json['updatedAt']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'bindingType': bindingType,
+      'bindings': bindings.map((item) => item.toJson()).toList(),
+      'createdAt': createdAt,
+      'enabled': enabled,
+      'id': id,
+      'mappingItems': mappingItems.map((item) => item.toJson()).toList(),
+      'mappingMode': mappingMode,
+      'matchType': matchType,
+      'sourceVendorCode': sourceVendorCode,
+      'sourceVendorId': sourceVendorId,
+      'targetVendorCode': targetVendorCode,
+      'targetVendorId': targetVendorId,
+      'updatedAt': updatedAt,
+    };
+  }
+}
+
+class AdminModelMappingRuleBinding {
+  final String? bindingCode;
+  final String? bindingId;
+  final String? bindingName;
+  final String bindingType;
+  final String? createdAt;
+  final bool enabled;
+  final String id;
+  final int sortOrder;
+  final String? updatedAt;
+
+  AdminModelMappingRuleBinding({
+    this.bindingCode,
+    this.bindingId,
+    this.bindingName,
+    required this.bindingType,
+    this.createdAt,
+    required this.enabled,
+    required this.id,
+    required this.sortOrder,
+    this.updatedAt
+  });
+
+  factory AdminModelMappingRuleBinding.fromJson(Map<String, dynamic> json) {
+    return AdminModelMappingRuleBinding(
+      bindingCode: json['bindingCode']?.toString(),
+      bindingId: json['bindingId']?.toString(),
+      bindingName: json['bindingName']?.toString(),
+      bindingType: (() {
+        final value = json['bindingType']?.toString();
+        if (value == null) {
+          throw FormatException('AdminModelMappingRuleBinding.bindingType is required');
+        }
+        return value;
+      })(),
+      createdAt: json['createdAt']?.toString(),
+      enabled: (() {
+        final value = json['enabled'];
+        if (value is! bool) {
+          throw FormatException('AdminModelMappingRuleBinding.enabled is required');
+        }
+        return value;
+      })(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('AdminModelMappingRuleBinding.id is required');
+        }
+        return value;
+      })(),
+      sortOrder: (() {
+        final value = json['sortOrder'];
+        if (value is! int) {
+          throw FormatException('AdminModelMappingRuleBinding.sortOrder is required');
+        }
+        return value;
+      })(),
+      updatedAt: json['updatedAt']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'bindingCode': bindingCode,
+      'bindingId': bindingId,
+      'bindingName': bindingName,
+      'bindingType': bindingType,
+      'createdAt': createdAt,
+      'enabled': enabled,
+      'id': id,
+      'sortOrder': sortOrder,
+      'updatedAt': updatedAt,
+    };
+  }
+}
+
+class AdminModelMappingRuleBindingInput {
+  final String? bindingCode;
+  final String? bindingId;
+  final String? bindingName;
+  final String bindingType;
+  final bool? enabled;
+  final String? id;
+
+  AdminModelMappingRuleBindingInput({
+    this.bindingCode,
+    this.bindingId,
+    this.bindingName,
+    required this.bindingType,
+    this.enabled,
+    this.id
+  });
+
+  factory AdminModelMappingRuleBindingInput.fromJson(Map<String, dynamic> json) {
+    return AdminModelMappingRuleBindingInput(
+      bindingCode: json['bindingCode']?.toString(),
+      bindingId: json['bindingId']?.toString(),
+      bindingName: json['bindingName']?.toString(),
+      bindingType: (() {
+        final value = json['bindingType']?.toString();
+        if (value == null) {
+          throw FormatException('AdminModelMappingRuleBindingInput.bindingType is required');
+        }
+        return value;
+      })(),
+      enabled: json['enabled'] is bool ? json['enabled'] : null,
+      id: json['id']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'bindingCode': bindingCode,
+      'bindingId': bindingId,
+      'bindingName': bindingName,
+      'bindingType': bindingType,
+      'enabled': enabled,
+      'id': id,
+    };
+  }
+}
+
+class AdminModelMappingRuleItem {
+  final String? createdAt;
+  final bool enabled;
+  final String id;
+  final int sortOrder;
+  final String? sourceCatalogKey;
+  final String sourceModel;
+  final String? targetCatalogKey;
+  final String targetModel;
+  final String? targetProviderModel;
+  final String? targetProviderNativeModel;
+  final String? updatedAt;
+
+  AdminModelMappingRuleItem({
+    this.createdAt,
+    required this.enabled,
+    required this.id,
+    required this.sortOrder,
+    this.sourceCatalogKey,
+    required this.sourceModel,
+    this.targetCatalogKey,
+    required this.targetModel,
+    this.targetProviderModel,
+    this.targetProviderNativeModel,
+    this.updatedAt
+  });
+
+  factory AdminModelMappingRuleItem.fromJson(Map<String, dynamic> json) {
+    return AdminModelMappingRuleItem(
+      createdAt: json['createdAt']?.toString(),
+      enabled: (() {
+        final value = json['enabled'];
+        if (value is! bool) {
+          throw FormatException('AdminModelMappingRuleItem.enabled is required');
+        }
+        return value;
+      })(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('AdminModelMappingRuleItem.id is required');
+        }
+        return value;
+      })(),
+      sortOrder: (() {
+        final value = json['sortOrder'];
+        if (value is! int) {
+          throw FormatException('AdminModelMappingRuleItem.sortOrder is required');
+        }
+        return value;
+      })(),
+      sourceCatalogKey: json['sourceCatalogKey']?.toString(),
+      sourceModel: (() {
+        final value = json['sourceModel']?.toString();
+        if (value == null) {
+          throw FormatException('AdminModelMappingRuleItem.sourceModel is required');
+        }
+        return value;
+      })(),
+      targetCatalogKey: json['targetCatalogKey']?.toString(),
+      targetModel: (() {
+        final value = json['targetModel']?.toString();
+        if (value == null) {
+          throw FormatException('AdminModelMappingRuleItem.targetModel is required');
+        }
+        return value;
+      })(),
+      targetProviderModel: json['targetProviderModel']?.toString(),
+      targetProviderNativeModel: json['targetProviderNativeModel']?.toString(),
+      updatedAt: json['updatedAt']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'createdAt': createdAt,
+      'enabled': enabled,
+      'id': id,
+      'sortOrder': sortOrder,
+      'sourceCatalogKey': sourceCatalogKey,
+      'sourceModel': sourceModel,
+      'targetCatalogKey': targetCatalogKey,
+      'targetModel': targetModel,
+      'targetProviderModel': targetProviderModel,
+      'targetProviderNativeModel': targetProviderNativeModel,
+      'updatedAt': updatedAt,
+    };
+  }
+}
+
+class AdminModelMappingRuleItemInput {
+  final bool? enabled;
+  final String? id;
+  final String? sourceCatalogKey;
+  final String sourceModel;
+  final String? targetCatalogKey;
+  final String targetModel;
+  final String? targetProviderModel;
+  final String? targetProviderNativeModel;
+
+  AdminModelMappingRuleItemInput({
+    this.enabled,
+    this.id,
+    this.sourceCatalogKey,
+    required this.sourceModel,
+    this.targetCatalogKey,
+    required this.targetModel,
+    this.targetProviderModel,
+    this.targetProviderNativeModel
+  });
+
+  factory AdminModelMappingRuleItemInput.fromJson(Map<String, dynamic> json) {
+    return AdminModelMappingRuleItemInput(
+      enabled: json['enabled'] is bool ? json['enabled'] : null,
+      id: json['id']?.toString(),
+      sourceCatalogKey: json['sourceCatalogKey']?.toString(),
+      sourceModel: (() {
+        final value = json['sourceModel']?.toString();
+        if (value == null) {
+          throw FormatException('AdminModelMappingRuleItemInput.sourceModel is required');
+        }
+        return value;
+      })(),
+      targetCatalogKey: json['targetCatalogKey']?.toString(),
+      targetModel: (() {
+        final value = json['targetModel']?.toString();
+        if (value == null) {
+          throw FormatException('AdminModelMappingRuleItemInput.targetModel is required');
+        }
+        return value;
+      })(),
+      targetProviderModel: json['targetProviderModel']?.toString(),
+      targetProviderNativeModel: json['targetProviderNativeModel']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'enabled': enabled,
+      'id': id,
+      'sourceCatalogKey': sourceCatalogKey,
+      'sourceModel': sourceModel,
+      'targetCatalogKey': targetCatalogKey,
+      'targetModel': targetModel,
+      'targetProviderModel': targetProviderModel,
+      'targetProviderNativeModel': targetProviderNativeModel,
+    };
+  }
+}
+
+class AdminModelMappingUpdateRequest {
+  final List<AdminModelMappingRuleBindingInput>? bindings;
+  final bool? enabled;
+  final List<AdminModelMappingRuleItemInput>? mappingItems;
+  final String? mappingMode;
+  final String? matchType;
+  final String? sourceVendorCode;
+  final String? sourceVendorId;
+  final String? targetVendorCode;
+  final String? targetVendorId;
+
+  AdminModelMappingUpdateRequest({
+    this.bindings,
+    this.enabled,
+    this.mappingItems,
+    this.mappingMode,
+    this.matchType,
+    this.sourceVendorCode,
+    this.sourceVendorId,
+    this.targetVendorCode,
+    this.targetVendorId
+  });
+
+  factory AdminModelMappingUpdateRequest.fromJson(Map<String, dynamic> json) {
+    return AdminModelMappingUpdateRequest(
+      bindings: (() {
+        final list = _sdkworkAsList(json['bindings']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminModelMappingRuleBindingInput.fromJson(map);
+      })())
+            .whereType<AdminModelMappingRuleBindingInput>()
+            .toList();
+      })(),
+      enabled: json['enabled'] is bool ? json['enabled'] : null,
+      mappingItems: (() {
+        final list = _sdkworkAsList(json['mappingItems']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminModelMappingRuleItemInput.fromJson(map);
+      })())
+            .whereType<AdminModelMappingRuleItemInput>()
+            .toList();
+      })(),
+      mappingMode: json['mappingMode']?.toString(),
+      matchType: json['matchType']?.toString(),
+      sourceVendorCode: json['sourceVendorCode']?.toString(),
+      sourceVendorId: json['sourceVendorId']?.toString(),
+      targetVendorCode: json['targetVendorCode']?.toString(),
+      targetVendorId: json['targetVendorId']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'bindings': bindings?.map((item) => item.toJson()).toList(),
+      'enabled': enabled,
+      'mappingItems': mappingItems?.map((item) => item.toJson()).toList(),
+      'mappingMode': mappingMode,
+      'matchType': matchType,
+      'sourceVendorCode': sourceVendorCode,
+      'sourceVendorId': sourceVendorId,
+      'targetVendorCode': targetVendorCode,
+      'targetVendorId': targetVendorId,
+    };
+  }
+}
+
+class AdminModelMappingsResponse {
+  final List<AdminModelMappingRule> items;
+
+  AdminModelMappingsResponse({
+    required this.items
+  });
+
+  factory AdminModelMappingsResponse.fromJson(Map<String, dynamic> json) {
+    return AdminModelMappingsResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          throw FormatException('AdminModelMappingsResponse.items is required');
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminModelMappingRule.fromJson(map);
+      })())
+            .whereType<AdminModelMappingRule>()
+            .toList();
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items.map((item) => item.toJson()).toList(),
+    };
+  }
+}
+
 class AdminModelVendorCreateRequest {
   final String? color;
   final String? description;
@@ -14442,6 +15715,7 @@ class AdminRecordLogItem {
   final String path;
   final String providerNativeModel;
   final String reasoningEffort;
+  final String regionCode;
   final String requestId;
   final String requestedModelCatalogKey;
   final String status;
@@ -14475,6 +15749,7 @@ class AdminRecordLogItem {
     required this.path,
     required this.providerNativeModel,
     required this.reasoningEffort,
+    required this.regionCode,
     required this.requestId,
     required this.requestedModelCatalogKey,
     required this.status,
@@ -14636,6 +15911,13 @@ class AdminRecordLogItem {
         }
         return value;
       })(),
+      regionCode: (() {
+        final value = json['regionCode']?.toString();
+        if (value == null) {
+          throw FormatException('AdminRecordLogItem.regionCode is required');
+        }
+        return value;
+      })(),
       requestId: (() {
         final value = json['requestId']?.toString();
         if (value == null) {
@@ -14732,6 +16014,7 @@ class AdminRecordLogItem {
       'path': path,
       'providerNativeModel': providerNativeModel,
       'reasoningEffort': reasoningEffort,
+      'regionCode': regionCode,
       'requestId': requestId,
       'requestedModelCatalogKey': requestedModelCatalogKey,
       'status': status,
@@ -15282,6 +16565,1041 @@ class AdminServiceNodesResponse {
   }
 }
 
+class AdminSiteActionRequest {
+
+
+  AdminSiteActionRequest();
+
+  factory AdminSiteActionRequest.fromJson(Map<String, dynamic> json) {
+    return AdminSiteActionRequest();
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{};
+  }
+}
+
+class AdminSiteChannelItem {
+  final String channelCode;
+  final String channelName;
+  final String healthStatus;
+  final String id;
+  final String? providerCode;
+  final String? siteChannelRole;
+  final String? siteCode;
+  final String? siteServiceCode;
+  final String status;
+
+  AdminSiteChannelItem({
+    required this.channelCode,
+    required this.channelName,
+    required this.healthStatus,
+    required this.id,
+    this.providerCode,
+    this.siteChannelRole,
+    this.siteCode,
+    this.siteServiceCode,
+    required this.status
+  });
+
+  factory AdminSiteChannelItem.fromJson(Map<String, dynamic> json) {
+    return AdminSiteChannelItem(
+      channelCode: (() {
+        final value = json['channelCode']?.toString();
+        if (value == null) {
+          throw FormatException('AdminSiteChannelItem.channelCode is required');
+        }
+        return value;
+      })(),
+      channelName: (() {
+        final value = json['channelName']?.toString();
+        if (value == null) {
+          throw FormatException('AdminSiteChannelItem.channelName is required');
+        }
+        return value;
+      })(),
+      healthStatus: (() {
+        final value = json['healthStatus']?.toString();
+        if (value == null) {
+          throw FormatException('AdminSiteChannelItem.healthStatus is required');
+        }
+        return value;
+      })(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('AdminSiteChannelItem.id is required');
+        }
+        return value;
+      })(),
+      providerCode: json['providerCode']?.toString(),
+      siteChannelRole: json['siteChannelRole']?.toString(),
+      siteCode: json['siteCode']?.toString(),
+      siteServiceCode: json['siteServiceCode']?.toString(),
+      status: (() {
+        final value = json['status']?.toString();
+        if (value == null) {
+          throw FormatException('AdminSiteChannelItem.status is required');
+        }
+        return value;
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'channelCode': channelCode,
+      'channelName': channelName,
+      'healthStatus': healthStatus,
+      'id': id,
+      'providerCode': providerCode,
+      'siteChannelRole': siteChannelRole,
+      'siteCode': siteCode,
+      'siteServiceCode': siteServiceCode,
+      'status': status,
+    };
+  }
+}
+
+class AdminSiteChannelsResponse {
+  final List<AdminSiteChannelItem> items;
+
+  AdminSiteChannelsResponse({
+    required this.items
+  });
+
+  factory AdminSiteChannelsResponse.fromJson(Map<String, dynamic> json) {
+    return AdminSiteChannelsResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          throw FormatException('AdminSiteChannelsResponse.items is required');
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminSiteChannelItem.fromJson(map);
+      })())
+            .whereType<AdminSiteChannelItem>()
+            .toList();
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items.map((item) => item.toJson()).toList(),
+    };
+  }
+}
+
+class AdminSiteConnectionCheckResponse {
+  final String checkedAt;
+  final String healthStatus;
+  final int? latencyMs;
+  final String? message;
+  final String siteId;
+  final String status;
+
+  AdminSiteConnectionCheckResponse({
+    required this.checkedAt,
+    required this.healthStatus,
+    this.latencyMs,
+    this.message,
+    required this.siteId,
+    required this.status
+  });
+
+  factory AdminSiteConnectionCheckResponse.fromJson(Map<String, dynamic> json) {
+    return AdminSiteConnectionCheckResponse(
+      checkedAt: (() {
+        final value = json['checkedAt']?.toString();
+        if (value == null) {
+          throw FormatException('AdminSiteConnectionCheckResponse.checkedAt is required');
+        }
+        return value;
+      })(),
+      healthStatus: (() {
+        final value = json['healthStatus']?.toString();
+        if (value == null) {
+          throw FormatException('AdminSiteConnectionCheckResponse.healthStatus is required');
+        }
+        return value;
+      })(),
+      latencyMs: json['latencyMs'] is int ? json['latencyMs'] : null,
+      message: json['message']?.toString(),
+      siteId: (() {
+        final value = json['siteId']?.toString();
+        if (value == null) {
+          throw FormatException('AdminSiteConnectionCheckResponse.siteId is required');
+        }
+        return value;
+      })(),
+      status: (() {
+        final value = json['status']?.toString();
+        if (value == null) {
+          throw FormatException('AdminSiteConnectionCheckResponse.status is required');
+        }
+        return value;
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'checkedAt': checkedAt,
+      'healthStatus': healthStatus,
+      'latencyMs': latencyMs,
+      'message': message,
+      'siteId': siteId,
+      'status': status,
+    };
+  }
+}
+
+class AdminSiteCreateRequest {
+  final String baseUrl;
+  final String? credentialRef;
+  final String? description;
+  final String displayName;
+  final String? docsUrl;
+  final List<String>? domains;
+  final String? environment;
+  final MediaResource? logo;
+  final String? maskedLabel;
+  final String? ownerKind;
+  final String? regionCode;
+  final String siteCode;
+  final String siteName;
+  final String? siteType;
+  final String? status;
+  final List<String>? vendorCodes;
+  final String? websiteUrl;
+
+  AdminSiteCreateRequest({
+    required this.baseUrl,
+    this.credentialRef,
+    this.description,
+    required this.displayName,
+    this.docsUrl,
+    this.domains,
+    this.environment,
+    this.logo,
+    this.maskedLabel,
+    this.ownerKind,
+    this.regionCode,
+    required this.siteCode,
+    required this.siteName,
+    this.siteType,
+    this.status,
+    this.vendorCodes,
+    this.websiteUrl
+  });
+
+  factory AdminSiteCreateRequest.fromJson(Map<String, dynamic> json) {
+    return AdminSiteCreateRequest(
+      baseUrl: (() {
+        final value = json['baseUrl']?.toString();
+        if (value == null) {
+          throw FormatException('AdminSiteCreateRequest.baseUrl is required');
+        }
+        return value;
+      })(),
+      credentialRef: json['credentialRef']?.toString(),
+      description: json['description']?.toString(),
+      displayName: (() {
+        final value = json['displayName']?.toString();
+        if (value == null) {
+          throw FormatException('AdminSiteCreateRequest.displayName is required');
+        }
+        return value;
+      })(),
+      docsUrl: json['docsUrl']?.toString(),
+      domains: (() {
+        final list = _sdkworkAsList(json['domains']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
+      environment: json['environment']?.toString(),
+      logo: (() {
+        final map = _sdkworkAsMap(json['logo']);
+        return map == null ? null : MediaResource.fromJson(map);
+      })(),
+      maskedLabel: json['maskedLabel']?.toString(),
+      ownerKind: json['ownerKind']?.toString(),
+      regionCode: json['regionCode']?.toString(),
+      siteCode: (() {
+        final value = json['siteCode']?.toString();
+        if (value == null) {
+          throw FormatException('AdminSiteCreateRequest.siteCode is required');
+        }
+        return value;
+      })(),
+      siteName: (() {
+        final value = json['siteName']?.toString();
+        if (value == null) {
+          throw FormatException('AdminSiteCreateRequest.siteName is required');
+        }
+        return value;
+      })(),
+      siteType: json['siteType']?.toString(),
+      status: json['status']?.toString(),
+      vendorCodes: (() {
+        final list = _sdkworkAsList(json['vendorCodes']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
+      websiteUrl: json['websiteUrl']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'baseUrl': baseUrl,
+      'credentialRef': credentialRef,
+      'description': description,
+      'displayName': displayName,
+      'docsUrl': docsUrl,
+      'domains': domains?.map((item) => item).toList(),
+      'environment': environment,
+      'logo': logo?.toJson(),
+      'maskedLabel': maskedLabel,
+      'ownerKind': ownerKind,
+      'regionCode': regionCode,
+      'siteCode': siteCode,
+      'siteName': siteName,
+      'siteType': siteType,
+      'status': status,
+      'vendorCodes': vendorCodes?.map((item) => item).toList(),
+      'websiteUrl': websiteUrl,
+    };
+  }
+}
+
+class AdminSiteDeleteResponse {
+  final bool deleted;
+
+  AdminSiteDeleteResponse({
+    required this.deleted
+  });
+
+  factory AdminSiteDeleteResponse.fromJson(Map<String, dynamic> json) {
+    return AdminSiteDeleteResponse(
+      deleted: (() {
+        final value = json['deleted'];
+        if (value is! bool) {
+          throw FormatException('AdminSiteDeleteResponse.deleted is required');
+        }
+        return value;
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'deleted': deleted,
+    };
+  }
+}
+
+class AdminSiteItem {
+  final String baseUrl;
+  final int? consecutiveErrorCount;
+  final String? description;
+  final String displayName;
+  final String? docsUrl;
+  final List<String>? domains;
+  final String environment;
+  final String healthStatus;
+  final String id;
+  final String? lastCheckedAt;
+  final int? lastLatencyMs;
+  final String? lastSyncAt;
+  final MediaResource? logo;
+  final String? ownerKind;
+  final String? regionCode;
+  final String siteCode;
+  final String siteName;
+  final String siteType;
+  final int? sortOrder;
+  final String status;
+  final List<String>? vendorCodes;
+  final String? websiteUrl;
+
+  AdminSiteItem({
+    required this.baseUrl,
+    this.consecutiveErrorCount,
+    this.description,
+    required this.displayName,
+    this.docsUrl,
+    this.domains,
+    required this.environment,
+    required this.healthStatus,
+    required this.id,
+    this.lastCheckedAt,
+    this.lastLatencyMs,
+    this.lastSyncAt,
+    this.logo,
+    this.ownerKind,
+    this.regionCode,
+    required this.siteCode,
+    required this.siteName,
+    required this.siteType,
+    this.sortOrder,
+    required this.status,
+    this.vendorCodes,
+    this.websiteUrl
+  });
+
+  factory AdminSiteItem.fromJson(Map<String, dynamic> json) {
+    return AdminSiteItem(
+      baseUrl: (() {
+        final value = json['baseUrl']?.toString();
+        if (value == null) {
+          throw FormatException('AdminSiteItem.baseUrl is required');
+        }
+        return value;
+      })(),
+      consecutiveErrorCount: json['consecutiveErrorCount'] is int ? json['consecutiveErrorCount'] : null,
+      description: json['description']?.toString(),
+      displayName: (() {
+        final value = json['displayName']?.toString();
+        if (value == null) {
+          throw FormatException('AdminSiteItem.displayName is required');
+        }
+        return value;
+      })(),
+      docsUrl: json['docsUrl']?.toString(),
+      domains: (() {
+        final list = _sdkworkAsList(json['domains']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
+      environment: (() {
+        final value = json['environment']?.toString();
+        if (value == null) {
+          throw FormatException('AdminSiteItem.environment is required');
+        }
+        return value;
+      })(),
+      healthStatus: (() {
+        final value = json['healthStatus']?.toString();
+        if (value == null) {
+          throw FormatException('AdminSiteItem.healthStatus is required');
+        }
+        return value;
+      })(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('AdminSiteItem.id is required');
+        }
+        return value;
+      })(),
+      lastCheckedAt: json['lastCheckedAt']?.toString(),
+      lastLatencyMs: json['lastLatencyMs'] is int ? json['lastLatencyMs'] : null,
+      lastSyncAt: json['lastSyncAt']?.toString(),
+      logo: (() {
+        final map = _sdkworkAsMap(json['logo']);
+        return map == null ? null : MediaResource.fromJson(map);
+      })(),
+      ownerKind: json['ownerKind']?.toString(),
+      regionCode: json['regionCode']?.toString(),
+      siteCode: (() {
+        final value = json['siteCode']?.toString();
+        if (value == null) {
+          throw FormatException('AdminSiteItem.siteCode is required');
+        }
+        return value;
+      })(),
+      siteName: (() {
+        final value = json['siteName']?.toString();
+        if (value == null) {
+          throw FormatException('AdminSiteItem.siteName is required');
+        }
+        return value;
+      })(),
+      siteType: (() {
+        final value = json['siteType']?.toString();
+        if (value == null) {
+          throw FormatException('AdminSiteItem.siteType is required');
+        }
+        return value;
+      })(),
+      sortOrder: json['sortOrder'] is int ? json['sortOrder'] : null,
+      status: (() {
+        final value = json['status']?.toString();
+        if (value == null) {
+          throw FormatException('AdminSiteItem.status is required');
+        }
+        return value;
+      })(),
+      vendorCodes: (() {
+        final list = _sdkworkAsList(json['vendorCodes']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
+      websiteUrl: json['websiteUrl']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'baseUrl': baseUrl,
+      'consecutiveErrorCount': consecutiveErrorCount,
+      'description': description,
+      'displayName': displayName,
+      'docsUrl': docsUrl,
+      'domains': domains?.map((item) => item).toList(),
+      'environment': environment,
+      'healthStatus': healthStatus,
+      'id': id,
+      'lastCheckedAt': lastCheckedAt,
+      'lastLatencyMs': lastLatencyMs,
+      'lastSyncAt': lastSyncAt,
+      'logo': logo?.toJson(),
+      'ownerKind': ownerKind,
+      'regionCode': regionCode,
+      'siteCode': siteCode,
+      'siteName': siteName,
+      'siteType': siteType,
+      'sortOrder': sortOrder,
+      'status': status,
+      'vendorCodes': vendorCodes?.map((item) => item).toList(),
+      'websiteUrl': websiteUrl,
+    };
+  }
+}
+
+class AdminSiteModelCreateRequest {
+  final List<String>? capabilities;
+  final int? contextTokens;
+  final String? displayName;
+  final int? maxInputTokens;
+  final int? maxOutputTokens;
+  final String? modality;
+  final String modelCode;
+  final String modelName;
+  final String? providerModel;
+  final String? providerNativeModel;
+  final String? status;
+  final bool? supportsJsonSchema;
+  final bool? supportsStreaming;
+  final bool? supportsTools;
+  final String? vendorCode;
+
+  AdminSiteModelCreateRequest({
+    this.capabilities,
+    this.contextTokens,
+    this.displayName,
+    this.maxInputTokens,
+    this.maxOutputTokens,
+    this.modality,
+    required this.modelCode,
+    required this.modelName,
+    this.providerModel,
+    this.providerNativeModel,
+    this.status,
+    this.supportsJsonSchema,
+    this.supportsStreaming,
+    this.supportsTools,
+    this.vendorCode
+  });
+
+  factory AdminSiteModelCreateRequest.fromJson(Map<String, dynamic> json) {
+    return AdminSiteModelCreateRequest(
+      capabilities: (() {
+        final list = _sdkworkAsList(json['capabilities']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
+      contextTokens: json['contextTokens'] is int ? json['contextTokens'] : null,
+      displayName: json['displayName']?.toString(),
+      maxInputTokens: json['maxInputTokens'] is int ? json['maxInputTokens'] : null,
+      maxOutputTokens: json['maxOutputTokens'] is int ? json['maxOutputTokens'] : null,
+      modality: json['modality']?.toString(),
+      modelCode: (() {
+        final value = json['modelCode']?.toString();
+        if (value == null) {
+          throw FormatException('AdminSiteModelCreateRequest.modelCode is required');
+        }
+        return value;
+      })(),
+      modelName: (() {
+        final value = json['modelName']?.toString();
+        if (value == null) {
+          throw FormatException('AdminSiteModelCreateRequest.modelName is required');
+        }
+        return value;
+      })(),
+      providerModel: json['providerModel']?.toString(),
+      providerNativeModel: json['providerNativeModel']?.toString(),
+      status: json['status']?.toString(),
+      supportsJsonSchema: json['supportsJsonSchema'] is bool ? json['supportsJsonSchema'] : null,
+      supportsStreaming: json['supportsStreaming'] is bool ? json['supportsStreaming'] : null,
+      supportsTools: json['supportsTools'] is bool ? json['supportsTools'] : null,
+      vendorCode: json['vendorCode']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'capabilities': capabilities?.map((item) => item).toList(),
+      'contextTokens': contextTokens,
+      'displayName': displayName,
+      'maxInputTokens': maxInputTokens,
+      'maxOutputTokens': maxOutputTokens,
+      'modality': modality,
+      'modelCode': modelCode,
+      'modelName': modelName,
+      'providerModel': providerModel,
+      'providerNativeModel': providerNativeModel,
+      'status': status,
+      'supportsJsonSchema': supportsJsonSchema,
+      'supportsStreaming': supportsStreaming,
+      'supportsTools': supportsTools,
+      'vendorCode': vendorCode,
+    };
+  }
+}
+
+class AdminSiteModelItem {
+  final List<String>? capabilities;
+  final int? consecutiveErrorCount;
+  final int? contextTokens;
+  final String? displayName;
+  final String healthStatus;
+  final String id;
+  final int? lastLatencyMs;
+  final String? lastSyncAt;
+  final int? maxInputTokens;
+  final int? maxOutputTokens;
+  final String? modality;
+  final String modelCode;
+  final String modelName;
+  final String? providerModel;
+  final String? providerNativeModel;
+  final String serviceType;
+  final String siteCode;
+  final String siteId;
+  final String? siteServiceCode;
+  final String siteServiceId;
+  final String status;
+  final bool? supportsJsonSchema;
+  final bool? supportsStreaming;
+  final bool? supportsTools;
+  final String? vendorCode;
+
+  AdminSiteModelItem({
+    this.capabilities,
+    this.consecutiveErrorCount,
+    this.contextTokens,
+    this.displayName,
+    required this.healthStatus,
+    required this.id,
+    this.lastLatencyMs,
+    this.lastSyncAt,
+    this.maxInputTokens,
+    this.maxOutputTokens,
+    this.modality,
+    required this.modelCode,
+    required this.modelName,
+    this.providerModel,
+    this.providerNativeModel,
+    required this.serviceType,
+    required this.siteCode,
+    required this.siteId,
+    this.siteServiceCode,
+    required this.siteServiceId,
+    required this.status,
+    this.supportsJsonSchema,
+    this.supportsStreaming,
+    this.supportsTools,
+    this.vendorCode
+  });
+
+  factory AdminSiteModelItem.fromJson(Map<String, dynamic> json) {
+    return AdminSiteModelItem(
+      capabilities: (() {
+        final list = _sdkworkAsList(json['capabilities']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
+      consecutiveErrorCount: json['consecutiveErrorCount'] is int ? json['consecutiveErrorCount'] : null,
+      contextTokens: json['contextTokens'] is int ? json['contextTokens'] : null,
+      displayName: json['displayName']?.toString(),
+      healthStatus: (() {
+        final value = json['healthStatus']?.toString();
+        if (value == null) {
+          throw FormatException('AdminSiteModelItem.healthStatus is required');
+        }
+        return value;
+      })(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('AdminSiteModelItem.id is required');
+        }
+        return value;
+      })(),
+      lastLatencyMs: json['lastLatencyMs'] is int ? json['lastLatencyMs'] : null,
+      lastSyncAt: json['lastSyncAt']?.toString(),
+      maxInputTokens: json['maxInputTokens'] is int ? json['maxInputTokens'] : null,
+      maxOutputTokens: json['maxOutputTokens'] is int ? json['maxOutputTokens'] : null,
+      modality: json['modality']?.toString(),
+      modelCode: (() {
+        final value = json['modelCode']?.toString();
+        if (value == null) {
+          throw FormatException('AdminSiteModelItem.modelCode is required');
+        }
+        return value;
+      })(),
+      modelName: (() {
+        final value = json['modelName']?.toString();
+        if (value == null) {
+          throw FormatException('AdminSiteModelItem.modelName is required');
+        }
+        return value;
+      })(),
+      providerModel: json['providerModel']?.toString(),
+      providerNativeModel: json['providerNativeModel']?.toString(),
+      serviceType: (() {
+        final value = json['serviceType']?.toString();
+        if (value == null) {
+          throw FormatException('AdminSiteModelItem.serviceType is required');
+        }
+        return value;
+      })(),
+      siteCode: (() {
+        final value = json['siteCode']?.toString();
+        if (value == null) {
+          throw FormatException('AdminSiteModelItem.siteCode is required');
+        }
+        return value;
+      })(),
+      siteId: (() {
+        final value = json['siteId']?.toString();
+        if (value == null) {
+          throw FormatException('AdminSiteModelItem.siteId is required');
+        }
+        return value;
+      })(),
+      siteServiceCode: json['siteServiceCode']?.toString(),
+      siteServiceId: (() {
+        final value = json['siteServiceId']?.toString();
+        if (value == null) {
+          throw FormatException('AdminSiteModelItem.siteServiceId is required');
+        }
+        return value;
+      })(),
+      status: (() {
+        final value = json['status']?.toString();
+        if (value == null) {
+          throw FormatException('AdminSiteModelItem.status is required');
+        }
+        return value;
+      })(),
+      supportsJsonSchema: json['supportsJsonSchema'] is bool ? json['supportsJsonSchema'] : null,
+      supportsStreaming: json['supportsStreaming'] is bool ? json['supportsStreaming'] : null,
+      supportsTools: json['supportsTools'] is bool ? json['supportsTools'] : null,
+      vendorCode: json['vendorCode']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'capabilities': capabilities?.map((item) => item).toList(),
+      'consecutiveErrorCount': consecutiveErrorCount,
+      'contextTokens': contextTokens,
+      'displayName': displayName,
+      'healthStatus': healthStatus,
+      'id': id,
+      'lastLatencyMs': lastLatencyMs,
+      'lastSyncAt': lastSyncAt,
+      'maxInputTokens': maxInputTokens,
+      'maxOutputTokens': maxOutputTokens,
+      'modality': modality,
+      'modelCode': modelCode,
+      'modelName': modelName,
+      'providerModel': providerModel,
+      'providerNativeModel': providerNativeModel,
+      'serviceType': serviceType,
+      'siteCode': siteCode,
+      'siteId': siteId,
+      'siteServiceCode': siteServiceCode,
+      'siteServiceId': siteServiceId,
+      'status': status,
+      'supportsJsonSchema': supportsJsonSchema,
+      'supportsStreaming': supportsStreaming,
+      'supportsTools': supportsTools,
+      'vendorCode': vendorCode,
+    };
+  }
+}
+
+class AdminSiteModelMutationResponse {
+  final AdminSiteModelItem item;
+
+  AdminSiteModelMutationResponse({
+    required this.item
+  });
+
+  factory AdminSiteModelMutationResponse.fromJson(Map<String, dynamic> json) {
+    return AdminSiteModelMutationResponse(
+      item: (() {
+        final map = _sdkworkAsMap(json['item']);
+        if (map == null) {
+          throw FormatException('AdminSiteModelMutationResponse.item is required');
+        }
+        return AdminSiteModelItem.fromJson(map);
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'item': item.toJson(),
+    };
+  }
+}
+
+class AdminSiteModelUpdateRequest {
+  final List<String>? capabilities;
+  final int? contextTokens;
+  final String? displayName;
+  final int? maxInputTokens;
+  final int? maxOutputTokens;
+  final String? modality;
+  final String? modelCode;
+  final String? modelName;
+  final String? providerModel;
+  final String? providerNativeModel;
+  final String? status;
+  final bool? supportsJsonSchema;
+  final bool? supportsStreaming;
+  final bool? supportsTools;
+  final String? vendorCode;
+
+  AdminSiteModelUpdateRequest({
+    this.capabilities,
+    this.contextTokens,
+    this.displayName,
+    this.maxInputTokens,
+    this.maxOutputTokens,
+    this.modality,
+    this.modelCode,
+    this.modelName,
+    this.providerModel,
+    this.providerNativeModel,
+    this.status,
+    this.supportsJsonSchema,
+    this.supportsStreaming,
+    this.supportsTools,
+    this.vendorCode
+  });
+
+  factory AdminSiteModelUpdateRequest.fromJson(Map<String, dynamic> json) {
+    return AdminSiteModelUpdateRequest(
+      capabilities: (() {
+        final list = _sdkworkAsList(json['capabilities']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
+      contextTokens: json['contextTokens'] is int ? json['contextTokens'] : null,
+      displayName: json['displayName']?.toString(),
+      maxInputTokens: json['maxInputTokens'] is int ? json['maxInputTokens'] : null,
+      maxOutputTokens: json['maxOutputTokens'] is int ? json['maxOutputTokens'] : null,
+      modality: json['modality']?.toString(),
+      modelCode: json['modelCode']?.toString(),
+      modelName: json['modelName']?.toString(),
+      providerModel: json['providerModel']?.toString(),
+      providerNativeModel: json['providerNativeModel']?.toString(),
+      status: json['status']?.toString(),
+      supportsJsonSchema: json['supportsJsonSchema'] is bool ? json['supportsJsonSchema'] : null,
+      supportsStreaming: json['supportsStreaming'] is bool ? json['supportsStreaming'] : null,
+      supportsTools: json['supportsTools'] is bool ? json['supportsTools'] : null,
+      vendorCode: json['vendorCode']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'capabilities': capabilities?.map((item) => item).toList(),
+      'contextTokens': contextTokens,
+      'displayName': displayName,
+      'maxInputTokens': maxInputTokens,
+      'maxOutputTokens': maxOutputTokens,
+      'modality': modality,
+      'modelCode': modelCode,
+      'modelName': modelName,
+      'providerModel': providerModel,
+      'providerNativeModel': providerNativeModel,
+      'status': status,
+      'supportsJsonSchema': supportsJsonSchema,
+      'supportsStreaming': supportsStreaming,
+      'supportsTools': supportsTools,
+      'vendorCode': vendorCode,
+    };
+  }
+}
+
+class AdminSiteModelsReplaceRequest {
+  final List<AdminSiteModelCreateRequest> items;
+
+  AdminSiteModelsReplaceRequest({
+    required this.items
+  });
+
+  factory AdminSiteModelsReplaceRequest.fromJson(Map<String, dynamic> json) {
+    return AdminSiteModelsReplaceRequest(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          throw FormatException('AdminSiteModelsReplaceRequest.items is required');
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminSiteModelCreateRequest.fromJson(map);
+      })())
+            .whereType<AdminSiteModelCreateRequest>()
+            .toList();
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items.map((item) => item.toJson()).toList(),
+    };
+  }
+}
+
+class AdminSiteModelsReplaceResponse {
+  final List<AdminSiteModelItem> items;
+
+  AdminSiteModelsReplaceResponse({
+    required this.items
+  });
+
+  factory AdminSiteModelsReplaceResponse.fromJson(Map<String, dynamic> json) {
+    return AdminSiteModelsReplaceResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          throw FormatException('AdminSiteModelsReplaceResponse.items is required');
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminSiteModelItem.fromJson(map);
+      })())
+            .whereType<AdminSiteModelItem>()
+            .toList();
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items.map((item) => item.toJson()).toList(),
+    };
+  }
+}
+
+class AdminSiteModelsResponse {
+  final List<AdminSiteModelItem> items;
+
+  AdminSiteModelsResponse({
+    required this.items
+  });
+
+  factory AdminSiteModelsResponse.fromJson(Map<String, dynamic> json) {
+    return AdminSiteModelsResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          throw FormatException('AdminSiteModelsResponse.items is required');
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminSiteModelItem.fromJson(map);
+      })())
+            .whereType<AdminSiteModelItem>()
+            .toList();
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items.map((item) => item.toJson()).toList(),
+    };
+  }
+}
+
+class AdminSiteMutationResponse {
+  final AdminSiteItem item;
+
+  AdminSiteMutationResponse({
+    required this.item
+  });
+
+  factory AdminSiteMutationResponse.fromJson(Map<String, dynamic> json) {
+    return AdminSiteMutationResponse(
+      item: (() {
+        final map = _sdkworkAsMap(json['item']);
+        if (map == null) {
+          throw FormatException('AdminSiteMutationResponse.item is required');
+        }
+        return AdminSiteItem.fromJson(map);
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'item': item.toJson(),
+    };
+  }
+}
+
 class AdminSiteSettingsResponse {
   final String accentColor;
   final String brandColor;
@@ -15599,6 +17917,143 @@ class AdminSiteSettingsUpdateRequest {
       'siteName': siteName,
       'supportUrl': supportUrl,
       'termsUrl': termsUrl,
+    };
+  }
+}
+
+class AdminSiteUpdateRequest {
+  final String? baseUrl;
+  final String? credentialRef;
+  final String? description;
+  final String? displayName;
+  final String? docsUrl;
+  final List<String>? domains;
+  final String? environment;
+  final MediaResource? logo;
+  final String? maskedLabel;
+  final String? ownerKind;
+  final String? regionCode;
+  final String? siteCode;
+  final String? siteName;
+  final String? siteType;
+  final String? status;
+  final List<String>? vendorCodes;
+  final String? websiteUrl;
+
+  AdminSiteUpdateRequest({
+    this.baseUrl,
+    this.credentialRef,
+    this.description,
+    this.displayName,
+    this.docsUrl,
+    this.domains,
+    this.environment,
+    this.logo,
+    this.maskedLabel,
+    this.ownerKind,
+    this.regionCode,
+    this.siteCode,
+    this.siteName,
+    this.siteType,
+    this.status,
+    this.vendorCodes,
+    this.websiteUrl
+  });
+
+  factory AdminSiteUpdateRequest.fromJson(Map<String, dynamic> json) {
+    return AdminSiteUpdateRequest(
+      baseUrl: json['baseUrl']?.toString(),
+      credentialRef: json['credentialRef']?.toString(),
+      description: json['description']?.toString(),
+      displayName: json['displayName']?.toString(),
+      docsUrl: json['docsUrl']?.toString(),
+      domains: (() {
+        final list = _sdkworkAsList(json['domains']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
+      environment: json['environment']?.toString(),
+      logo: (() {
+        final map = _sdkworkAsMap(json['logo']);
+        return map == null ? null : MediaResource.fromJson(map);
+      })(),
+      maskedLabel: json['maskedLabel']?.toString(),
+      ownerKind: json['ownerKind']?.toString(),
+      regionCode: json['regionCode']?.toString(),
+      siteCode: json['siteCode']?.toString(),
+      siteName: json['siteName']?.toString(),
+      siteType: json['siteType']?.toString(),
+      status: json['status']?.toString(),
+      vendorCodes: (() {
+        final list = _sdkworkAsList(json['vendorCodes']);
+        if (list == null) {
+          return null;
+        }
+        return list
+            .map((item) => item?.toString())
+            .whereType<String>()
+            .toList();
+      })(),
+      websiteUrl: json['websiteUrl']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'baseUrl': baseUrl,
+      'credentialRef': credentialRef,
+      'description': description,
+      'displayName': displayName,
+      'docsUrl': docsUrl,
+      'domains': domains?.map((item) => item).toList(),
+      'environment': environment,
+      'logo': logo?.toJson(),
+      'maskedLabel': maskedLabel,
+      'ownerKind': ownerKind,
+      'regionCode': regionCode,
+      'siteCode': siteCode,
+      'siteName': siteName,
+      'siteType': siteType,
+      'status': status,
+      'vendorCodes': vendorCodes?.map((item) => item).toList(),
+      'websiteUrl': websiteUrl,
+    };
+  }
+}
+
+class AdminSitesResponse {
+  final List<AdminSiteItem> items;
+
+  AdminSitesResponse({
+    required this.items
+  });
+
+  factory AdminSitesResponse.fromJson(Map<String, dynamic> json) {
+    return AdminSitesResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          throw FormatException('AdminSitesResponse.items is required');
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : AdminSiteItem.fromJson(map);
+      })())
+            .whereType<AdminSiteItem>()
+            .toList();
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items.map((item) => item.toJson()).toList(),
     };
   }
 }
@@ -21409,6 +23864,11 @@ class AiChannelRecord {
   final Map<String, dynamic>? retryPolicy;
   final String? riskLevel;
   final String? rpmLimit;
+  final String? siteChannelRole;
+  final String? siteCode;
+  final String? siteId;
+  final String? siteServiceCode;
+  final String? siteServiceId;
   final String status;
   final String tenantId;
   final int? timeoutMs;
@@ -21462,6 +23922,11 @@ class AiChannelRecord {
     this.retryPolicy,
     this.riskLevel,
     this.rpmLimit,
+    this.siteChannelRole,
+    this.siteCode,
+    this.siteId,
+    this.siteServiceCode,
+    this.siteServiceId,
     required this.status,
     required this.tenantId,
     this.timeoutMs,
@@ -21606,6 +24071,11 @@ class AiChannelRecord {
       })(),
       riskLevel: json['risk_level']?.toString(),
       rpmLimit: json['rpm_limit']?.toString(),
+      siteChannelRole: json['site_channel_role']?.toString(),
+      siteCode: json['site_code']?.toString(),
+      siteId: json['site_id']?.toString(),
+      siteServiceCode: json['site_service_code']?.toString(),
+      siteServiceId: json['site_service_id']?.toString(),
       status: (() {
         final value = json['status']?.toString();
         if (value == null) {
@@ -21680,6 +24150,11 @@ class AiChannelRecord {
       'retry_policy': retryPolicy?.map((key, item) => MapEntry(key, item)),
       'risk_level': riskLevel,
       'rpm_limit': rpmLimit,
+      'site_channel_role': siteChannelRole,
+      'site_code': siteCode,
+      'site_id': siteId,
+      'site_service_code': siteServiceCode,
+      'site_service_id': siteServiceId,
       'status': status,
       'tenant_id': tenantId,
       'timeout_ms': timeoutMs,
@@ -26974,6 +29449,493 @@ class AiModelFamilyRecord {
   }
 }
 
+class AiModelMappingRuleBindingRecord {
+  final String? bindingCode;
+  final String? bindingId;
+  final String? bindingNameSnapshot;
+  final String bindingType;
+  final String? createdAt;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final bool enabled;
+  final String? id;
+  final Map<String, dynamic>? metadata;
+  final String organizationId;
+  final String ruleId;
+  final String? ruleUuid;
+  final int sortOrder;
+  final String status;
+  final String tenantId;
+  final String? updatedAt;
+  final String uuid;
+  final String? version;
+
+  AiModelMappingRuleBindingRecord({
+    this.bindingCode,
+    this.bindingId,
+    this.bindingNameSnapshot,
+    required this.bindingType,
+    this.createdAt,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    required this.enabled,
+    this.id,
+    this.metadata,
+    required this.organizationId,
+    required this.ruleId,
+    this.ruleUuid,
+    required this.sortOrder,
+    required this.status,
+    required this.tenantId,
+    this.updatedAt,
+    required this.uuid,
+    this.version
+  });
+
+  factory AiModelMappingRuleBindingRecord.fromJson(Map<String, dynamic> json) {
+    return AiModelMappingRuleBindingRecord(
+      bindingCode: json['binding_code']?.toString(),
+      bindingId: json['binding_id']?.toString(),
+      bindingNameSnapshot: json['binding_name_snapshot']?.toString(),
+      bindingType: (() {
+        final value = json['binding_type']?.toString();
+        if (value == null) {
+          throw FormatException('AiModelMappingRuleBindingRecord.binding_type is required');
+        }
+        return value;
+      })(),
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      enabled: (() {
+        final value = json['enabled'];
+        if (value is! bool) {
+          throw FormatException('AiModelMappingRuleBindingRecord.enabled is required');
+        }
+        return value;
+      })(),
+      id: json['id']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: (() {
+        final value = json['organization_id']?.toString();
+        if (value == null) {
+          throw FormatException('AiModelMappingRuleBindingRecord.organization_id is required');
+        }
+        return value;
+      })(),
+      ruleId: (() {
+        final value = json['rule_id']?.toString();
+        if (value == null) {
+          throw FormatException('AiModelMappingRuleBindingRecord.rule_id is required');
+        }
+        return value;
+      })(),
+      ruleUuid: json['rule_uuid']?.toString(),
+      sortOrder: (() {
+        final value = json['sort_order'];
+        if (value is! int) {
+          throw FormatException('AiModelMappingRuleBindingRecord.sort_order is required');
+        }
+        return value;
+      })(),
+      status: (() {
+        final value = json['status']?.toString();
+        if (value == null) {
+          throw FormatException('AiModelMappingRuleBindingRecord.status is required');
+        }
+        return value;
+      })(),
+      tenantId: (() {
+        final value = json['tenant_id']?.toString();
+        if (value == null) {
+          throw FormatException('AiModelMappingRuleBindingRecord.tenant_id is required');
+        }
+        return value;
+      })(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: (() {
+        final value = json['uuid']?.toString();
+        if (value == null) {
+          throw FormatException('AiModelMappingRuleBindingRecord.uuid is required');
+        }
+        return value;
+      })(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'binding_code': bindingCode,
+      'binding_id': bindingId,
+      'binding_name_snapshot': bindingNameSnapshot,
+      'binding_type': bindingType,
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'enabled': enabled,
+      'id': id,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'rule_id': ruleId,
+      'rule_uuid': ruleUuid,
+      'sort_order': sortOrder,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'version': version,
+    };
+  }
+}
+
+class AiModelMappingRuleItemRecord {
+  final String? createdAt;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final bool enabled;
+  final String? id;
+  final Map<String, dynamic>? metadata;
+  final String organizationId;
+  final String ruleId;
+  final String? ruleUuid;
+  final int sortOrder;
+  final String? sourceCatalogKey;
+  final String sourceModel;
+  final String status;
+  final String? targetCatalogKey;
+  final String targetModel;
+  final String? targetProviderModel;
+  final String? targetProviderNativeModel;
+  final String tenantId;
+  final String? updatedAt;
+  final String uuid;
+  final String? version;
+
+  AiModelMappingRuleItemRecord({
+    this.createdAt,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    required this.enabled,
+    this.id,
+    this.metadata,
+    required this.organizationId,
+    required this.ruleId,
+    this.ruleUuid,
+    required this.sortOrder,
+    this.sourceCatalogKey,
+    required this.sourceModel,
+    required this.status,
+    this.targetCatalogKey,
+    required this.targetModel,
+    this.targetProviderModel,
+    this.targetProviderNativeModel,
+    required this.tenantId,
+    this.updatedAt,
+    required this.uuid,
+    this.version
+  });
+
+  factory AiModelMappingRuleItemRecord.fromJson(Map<String, dynamic> json) {
+    return AiModelMappingRuleItemRecord(
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      enabled: (() {
+        final value = json['enabled'];
+        if (value is! bool) {
+          throw FormatException('AiModelMappingRuleItemRecord.enabled is required');
+        }
+        return value;
+      })(),
+      id: json['id']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: (() {
+        final value = json['organization_id']?.toString();
+        if (value == null) {
+          throw FormatException('AiModelMappingRuleItemRecord.organization_id is required');
+        }
+        return value;
+      })(),
+      ruleId: (() {
+        final value = json['rule_id']?.toString();
+        if (value == null) {
+          throw FormatException('AiModelMappingRuleItemRecord.rule_id is required');
+        }
+        return value;
+      })(),
+      ruleUuid: json['rule_uuid']?.toString(),
+      sortOrder: (() {
+        final value = json['sort_order'];
+        if (value is! int) {
+          throw FormatException('AiModelMappingRuleItemRecord.sort_order is required');
+        }
+        return value;
+      })(),
+      sourceCatalogKey: json['source_catalog_key']?.toString(),
+      sourceModel: (() {
+        final value = json['source_model']?.toString();
+        if (value == null) {
+          throw FormatException('AiModelMappingRuleItemRecord.source_model is required');
+        }
+        return value;
+      })(),
+      status: (() {
+        final value = json['status']?.toString();
+        if (value == null) {
+          throw FormatException('AiModelMappingRuleItemRecord.status is required');
+        }
+        return value;
+      })(),
+      targetCatalogKey: json['target_catalog_key']?.toString(),
+      targetModel: (() {
+        final value = json['target_model']?.toString();
+        if (value == null) {
+          throw FormatException('AiModelMappingRuleItemRecord.target_model is required');
+        }
+        return value;
+      })(),
+      targetProviderModel: json['target_provider_model']?.toString(),
+      targetProviderNativeModel: json['target_provider_native_model']?.toString(),
+      tenantId: (() {
+        final value = json['tenant_id']?.toString();
+        if (value == null) {
+          throw FormatException('AiModelMappingRuleItemRecord.tenant_id is required');
+        }
+        return value;
+      })(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: (() {
+        final value = json['uuid']?.toString();
+        if (value == null) {
+          throw FormatException('AiModelMappingRuleItemRecord.uuid is required');
+        }
+        return value;
+      })(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'enabled': enabled,
+      'id': id,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'rule_id': ruleId,
+      'rule_uuid': ruleUuid,
+      'sort_order': sortOrder,
+      'source_catalog_key': sourceCatalogKey,
+      'source_model': sourceModel,
+      'status': status,
+      'target_catalog_key': targetCatalogKey,
+      'target_model': targetModel,
+      'target_provider_model': targetProviderModel,
+      'target_provider_native_model': targetProviderNativeModel,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'version': version,
+    };
+  }
+}
+
+class AiModelMappingRuleRecord {
+  final String? createdAt;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final bool enabled;
+  final String? id;
+  final String mappingMode;
+  final String matchType;
+  final Map<String, dynamic>? metadata;
+  final String organizationId;
+  final String sourceVendorCode;
+  final String? sourceVendorId;
+  final String status;
+  final String targetVendorCode;
+  final String? targetVendorId;
+  final String tenantId;
+  final String? updatedAt;
+  final String uuid;
+  final String? version;
+
+  AiModelMappingRuleRecord({
+    this.createdAt,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    required this.enabled,
+    this.id,
+    required this.mappingMode,
+    required this.matchType,
+    this.metadata,
+    required this.organizationId,
+    required this.sourceVendorCode,
+    this.sourceVendorId,
+    required this.status,
+    required this.targetVendorCode,
+    this.targetVendorId,
+    required this.tenantId,
+    this.updatedAt,
+    required this.uuid,
+    this.version
+  });
+
+  factory AiModelMappingRuleRecord.fromJson(Map<String, dynamic> json) {
+    return AiModelMappingRuleRecord(
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      enabled: (() {
+        final value = json['enabled'];
+        if (value is! bool) {
+          throw FormatException('AiModelMappingRuleRecord.enabled is required');
+        }
+        return value;
+      })(),
+      id: json['id']?.toString(),
+      mappingMode: (() {
+        final value = json['mapping_mode']?.toString();
+        if (value == null) {
+          throw FormatException('AiModelMappingRuleRecord.mapping_mode is required');
+        }
+        return value;
+      })(),
+      matchType: (() {
+        final value = json['match_type']?.toString();
+        if (value == null) {
+          throw FormatException('AiModelMappingRuleRecord.match_type is required');
+        }
+        return value;
+      })(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: (() {
+        final value = json['organization_id']?.toString();
+        if (value == null) {
+          throw FormatException('AiModelMappingRuleRecord.organization_id is required');
+        }
+        return value;
+      })(),
+      sourceVendorCode: (() {
+        final value = json['source_vendor_code']?.toString();
+        if (value == null) {
+          throw FormatException('AiModelMappingRuleRecord.source_vendor_code is required');
+        }
+        return value;
+      })(),
+      sourceVendorId: json['source_vendor_id']?.toString(),
+      status: (() {
+        final value = json['status']?.toString();
+        if (value == null) {
+          throw FormatException('AiModelMappingRuleRecord.status is required');
+        }
+        return value;
+      })(),
+      targetVendorCode: (() {
+        final value = json['target_vendor_code']?.toString();
+        if (value == null) {
+          throw FormatException('AiModelMappingRuleRecord.target_vendor_code is required');
+        }
+        return value;
+      })(),
+      targetVendorId: json['target_vendor_id']?.toString(),
+      tenantId: (() {
+        final value = json['tenant_id']?.toString();
+        if (value == null) {
+          throw FormatException('AiModelMappingRuleRecord.tenant_id is required');
+        }
+        return value;
+      })(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: (() {
+        final value = json['uuid']?.toString();
+        if (value == null) {
+          throw FormatException('AiModelMappingRuleRecord.uuid is required');
+        }
+        return value;
+      })(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'enabled': enabled,
+      'id': id,
+      'mapping_mode': mappingMode,
+      'match_type': matchType,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'source_vendor_code': sourceVendorCode,
+      'source_vendor_id': sourceVendorId,
+      'status': status,
+      'target_vendor_code': targetVendorCode,
+      'target_vendor_id': targetVendorId,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'version': version,
+    };
+  }
+}
+
 class AiModelModalityRecord {
   final String catalogKey;
   final String? createdAt;
@@ -30758,6 +33720,7 @@ class AiRequestTraceRecord {
   final String? providerModel;
   final String? providerNativeModel;
   final String? reasoningEffort;
+  final String? regionCode;
   final String? requestBytes;
   final String? requestId;
   final String? requestPath;
@@ -30815,6 +33778,7 @@ class AiRequestTraceRecord {
     this.providerModel,
     this.providerNativeModel,
     this.reasoningEffort,
+    this.regionCode,
     this.requestBytes,
     this.requestId,
     this.requestPath,
@@ -30887,6 +33851,7 @@ class AiRequestTraceRecord {
       providerModel: json['provider_model']?.toString(),
       providerNativeModel: json['provider_native_model']?.toString(),
       reasoningEffort: json['reasoning_effort']?.toString(),
+      regionCode: json['region_code']?.toString(),
       requestBytes: json['request_bytes']?.toString(),
       requestId: json['request_id']?.toString(),
       requestPath: json['request_path']?.toString(),
@@ -30947,6 +33912,7 @@ class AiRequestTraceRecord {
       'provider_model': providerModel,
       'provider_native_model': providerNativeModel,
       'reasoning_effort': reasoningEffort,
+      'region_code': regionCode,
       'request_bytes': requestBytes,
       'request_id': requestId,
       'request_path': requestPath,
@@ -31252,6 +34218,191 @@ class AiResourceGroupRecord {
       'updated_at': updatedAt,
       'uuid': uuid,
       'version': version,
+    };
+  }
+}
+
+class AiResourceGroupsCreateResult {
+  final String code;
+  final AdminAiResourceGroupMutationResponse? data;
+  final String? msg;
+
+  AiResourceGroupsCreateResult({
+    required this.code,
+    this.data,
+    this.msg
+  });
+
+  factory AiResourceGroupsCreateResult.fromJson(Map<String, dynamic> json) {
+    return AiResourceGroupsCreateResult(
+      code: (() {
+        final value = json['code']?.toString();
+        if (value == null) {
+          throw FormatException('AiResourceGroupsCreateResult.code is required');
+        }
+        return value;
+      })(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminAiResourceGroupMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class AiResourceGroupsDeleteResult {
+  final String code;
+  final AdminAiResourceGroupDeleteResponse? data;
+  final String? msg;
+
+  AiResourceGroupsDeleteResult({
+    required this.code,
+    this.data,
+    this.msg
+  });
+
+  factory AiResourceGroupsDeleteResult.fromJson(Map<String, dynamic> json) {
+    return AiResourceGroupsDeleteResult(
+      code: (() {
+        final value = json['code']?.toString();
+        if (value == null) {
+          throw FormatException('AiResourceGroupsDeleteResult.code is required');
+        }
+        return value;
+      })(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminAiResourceGroupDeleteResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class AiResourceGroupsListResult {
+  final String code;
+  final AdminAiResourceGroupsResponse? data;
+  final String? msg;
+
+  AiResourceGroupsListResult({
+    required this.code,
+    this.data,
+    this.msg
+  });
+
+  factory AiResourceGroupsListResult.fromJson(Map<String, dynamic> json) {
+    return AiResourceGroupsListResult(
+      code: (() {
+        final value = json['code']?.toString();
+        if (value == null) {
+          throw FormatException('AiResourceGroupsListResult.code is required');
+        }
+        return value;
+      })(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminAiResourceGroupsResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class AiResourceGroupsResourcesListResult {
+  final String code;
+  final AdminAiResourceGroupResourcesResponse? data;
+  final String? msg;
+
+  AiResourceGroupsResourcesListResult({
+    required this.code,
+    this.data,
+    this.msg
+  });
+
+  factory AiResourceGroupsResourcesListResult.fromJson(Map<String, dynamic> json) {
+    return AiResourceGroupsResourcesListResult(
+      code: (() {
+        final value = json['code']?.toString();
+        if (value == null) {
+          throw FormatException('AiResourceGroupsResourcesListResult.code is required');
+        }
+        return value;
+      })(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminAiResourceGroupResourcesResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class AiResourceGroupsUpdateResult {
+  final String code;
+  final AdminAiResourceGroupMutationResponse? data;
+  final String? msg;
+
+  AiResourceGroupsUpdateResult({
+    required this.code,
+    this.data,
+    this.msg
+  });
+
+  factory AiResourceGroupsUpdateResult.fromJson(Map<String, dynamic> json) {
+    return AiResourceGroupsUpdateResult(
+      code: (() {
+        final value = json['code']?.toString();
+        if (value == null) {
+          throw FormatException('AiResourceGroupsUpdateResult.code is required');
+        }
+        return value;
+      })(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminAiResourceGroupMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
     };
   }
 }
@@ -33495,6 +36646,749 @@ class AiRuntimeUsageLinkRecord {
   }
 }
 
+class AiSiteModelRecord {
+  final Map<String, dynamic>? capabilities;
+  final String? capability;
+  final String? catalogKey;
+  final String? consecutiveErrorCount;
+  final String? contextTokens;
+  final String? createdAt;
+  final String? dataScope;
+  final Map<String, dynamic>? defaultParameters;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? displayName;
+  final String? effectiveFrom;
+  final String? effectiveTo;
+  final String? healthStatus;
+  final String? id;
+  final int? lastLatencyMs;
+  final String? lastSyncAt;
+  final String? maxInputTokens;
+  final String? maxOutputTokens;
+  final Map<String, dynamic>? metadata;
+  final String? modality;
+  final Map<String, dynamic>? modelAliases;
+  final String modelCode;
+  final String? modelId;
+  final String modelName;
+  final String organizationId;
+  final Map<String, dynamic>? pricingSnapshot;
+  final String? providerModel;
+  final String? providerNativeModel;
+  final String serviceType;
+  final String siteCode;
+  final String siteId;
+  final String? siteServiceCode;
+  final String siteServiceId;
+  final String status;
+  final bool? supportsJsonSchema;
+  final bool? supportsStreaming;
+  final bool? supportsTools;
+  final String tenantId;
+  final String? updatedAt;
+  final String uuid;
+  final String? vendorCode;
+  final String? version;
+
+  AiSiteModelRecord({
+    this.capabilities,
+    this.capability,
+    this.catalogKey,
+    this.consecutiveErrorCount,
+    this.contextTokens,
+    this.createdAt,
+    this.dataScope,
+    this.defaultParameters,
+    this.deletedAt,
+    this.deletedBy,
+    this.displayName,
+    this.effectiveFrom,
+    this.effectiveTo,
+    this.healthStatus,
+    this.id,
+    this.lastLatencyMs,
+    this.lastSyncAt,
+    this.maxInputTokens,
+    this.maxOutputTokens,
+    this.metadata,
+    this.modality,
+    this.modelAliases,
+    required this.modelCode,
+    this.modelId,
+    required this.modelName,
+    required this.organizationId,
+    this.pricingSnapshot,
+    this.providerModel,
+    this.providerNativeModel,
+    required this.serviceType,
+    required this.siteCode,
+    required this.siteId,
+    this.siteServiceCode,
+    required this.siteServiceId,
+    required this.status,
+    this.supportsJsonSchema,
+    this.supportsStreaming,
+    this.supportsTools,
+    required this.tenantId,
+    this.updatedAt,
+    required this.uuid,
+    this.vendorCode,
+    this.version
+  });
+
+  factory AiSiteModelRecord.fromJson(Map<String, dynamic> json) {
+    return AiSiteModelRecord(
+      capabilities: (() {
+        final map = _sdkworkAsMap(json['capabilities']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      capability: json['capability']?.toString(),
+      catalogKey: json['catalog_key']?.toString(),
+      consecutiveErrorCount: json['consecutive_error_count']?.toString(),
+      contextTokens: json['context_tokens']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      defaultParameters: (() {
+        final map = _sdkworkAsMap(json['default_parameters']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      displayName: json['display_name']?.toString(),
+      effectiveFrom: json['effective_from']?.toString(),
+      effectiveTo: json['effective_to']?.toString(),
+      healthStatus: json['health_status']?.toString(),
+      id: json['id']?.toString(),
+      lastLatencyMs: json['last_latency_ms'] is int ? json['last_latency_ms'] : null,
+      lastSyncAt: json['last_sync_at']?.toString(),
+      maxInputTokens: json['max_input_tokens']?.toString(),
+      maxOutputTokens: json['max_output_tokens']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      modality: json['modality']?.toString(),
+      modelAliases: (() {
+        final map = _sdkworkAsMap(json['model_aliases']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      modelCode: (() {
+        final value = json['model_code']?.toString();
+        if (value == null) {
+          throw FormatException('AiSiteModelRecord.model_code is required');
+        }
+        return value;
+      })(),
+      modelId: json['model_id']?.toString(),
+      modelName: (() {
+        final value = json['model_name']?.toString();
+        if (value == null) {
+          throw FormatException('AiSiteModelRecord.model_name is required');
+        }
+        return value;
+      })(),
+      organizationId: (() {
+        final value = json['organization_id']?.toString();
+        if (value == null) {
+          throw FormatException('AiSiteModelRecord.organization_id is required');
+        }
+        return value;
+      })(),
+      pricingSnapshot: (() {
+        final map = _sdkworkAsMap(json['pricing_snapshot']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      providerModel: json['provider_model']?.toString(),
+      providerNativeModel: json['provider_native_model']?.toString(),
+      serviceType: (() {
+        final value = json['service_type']?.toString();
+        if (value == null) {
+          throw FormatException('AiSiteModelRecord.service_type is required');
+        }
+        return value;
+      })(),
+      siteCode: (() {
+        final value = json['site_code']?.toString();
+        if (value == null) {
+          throw FormatException('AiSiteModelRecord.site_code is required');
+        }
+        return value;
+      })(),
+      siteId: (() {
+        final value = json['site_id']?.toString();
+        if (value == null) {
+          throw FormatException('AiSiteModelRecord.site_id is required');
+        }
+        return value;
+      })(),
+      siteServiceCode: json['site_service_code']?.toString(),
+      siteServiceId: (() {
+        final value = json['site_service_id']?.toString();
+        if (value == null) {
+          throw FormatException('AiSiteModelRecord.site_service_id is required');
+        }
+        return value;
+      })(),
+      status: (() {
+        final value = json['status']?.toString();
+        if (value == null) {
+          throw FormatException('AiSiteModelRecord.status is required');
+        }
+        return value;
+      })(),
+      supportsJsonSchema: json['supports_json_schema'] is bool ? json['supports_json_schema'] : null,
+      supportsStreaming: json['supports_streaming'] is bool ? json['supports_streaming'] : null,
+      supportsTools: json['supports_tools'] is bool ? json['supports_tools'] : null,
+      tenantId: (() {
+        final value = json['tenant_id']?.toString();
+        if (value == null) {
+          throw FormatException('AiSiteModelRecord.tenant_id is required');
+        }
+        return value;
+      })(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: (() {
+        final value = json['uuid']?.toString();
+        if (value == null) {
+          throw FormatException('AiSiteModelRecord.uuid is required');
+        }
+        return value;
+      })(),
+      vendorCode: json['vendor_code']?.toString(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'capabilities': capabilities?.map((key, item) => MapEntry(key, item)),
+      'capability': capability,
+      'catalog_key': catalogKey,
+      'consecutive_error_count': consecutiveErrorCount,
+      'context_tokens': contextTokens,
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'default_parameters': defaultParameters?.map((key, item) => MapEntry(key, item)),
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'display_name': displayName,
+      'effective_from': effectiveFrom,
+      'effective_to': effectiveTo,
+      'health_status': healthStatus,
+      'id': id,
+      'last_latency_ms': lastLatencyMs,
+      'last_sync_at': lastSyncAt,
+      'max_input_tokens': maxInputTokens,
+      'max_output_tokens': maxOutputTokens,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'modality': modality,
+      'model_aliases': modelAliases?.map((key, item) => MapEntry(key, item)),
+      'model_code': modelCode,
+      'model_id': modelId,
+      'model_name': modelName,
+      'organization_id': organizationId,
+      'pricing_snapshot': pricingSnapshot?.map((key, item) => MapEntry(key, item)),
+      'provider_model': providerModel,
+      'provider_native_model': providerNativeModel,
+      'service_type': serviceType,
+      'site_code': siteCode,
+      'site_id': siteId,
+      'site_service_code': siteServiceCode,
+      'site_service_id': siteServiceId,
+      'status': status,
+      'supports_json_schema': supportsJsonSchema,
+      'supports_streaming': supportsStreaming,
+      'supports_tools': supportsTools,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'vendor_code': vendorCode,
+      'version': version,
+    };
+  }
+}
+
+class AiSiteRecord {
+  final String? baseUrl;
+  final String? colorToken;
+  final String? consecutiveErrorCount;
+  final String? createdAt;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? description;
+  final String displayName;
+  final String? docsUrl;
+  final String? environment;
+  final String? healthStatus;
+  final String? id;
+  final String? lastCheckedAt;
+  final int? lastLatencyMs;
+  final String? lastSyncAt;
+  final MediaResource? logo;
+  final Map<String, dynamic>? metadata;
+  final String organizationId;
+  final String? ownerKind;
+  final String? regionCode;
+  final String siteCode;
+  final String siteName;
+  final String? siteType;
+  final int? sortOrder;
+  final String status;
+  final String tenantId;
+  final String? updatedAt;
+  final String uuid;
+  final String? version;
+  final String? websiteUrl;
+
+  AiSiteRecord({
+    this.baseUrl,
+    this.colorToken,
+    this.consecutiveErrorCount,
+    this.createdAt,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.description,
+    required this.displayName,
+    this.docsUrl,
+    this.environment,
+    this.healthStatus,
+    this.id,
+    this.lastCheckedAt,
+    this.lastLatencyMs,
+    this.lastSyncAt,
+    this.logo,
+    this.metadata,
+    required this.organizationId,
+    this.ownerKind,
+    this.regionCode,
+    required this.siteCode,
+    required this.siteName,
+    this.siteType,
+    this.sortOrder,
+    required this.status,
+    required this.tenantId,
+    this.updatedAt,
+    required this.uuid,
+    this.version,
+    this.websiteUrl
+  });
+
+  factory AiSiteRecord.fromJson(Map<String, dynamic> json) {
+    return AiSiteRecord(
+      baseUrl: json['base_url']?.toString(),
+      colorToken: json['color_token']?.toString(),
+      consecutiveErrorCount: json['consecutive_error_count']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      description: json['description']?.toString(),
+      displayName: (() {
+        final value = json['display_name']?.toString();
+        if (value == null) {
+          throw FormatException('AiSiteRecord.display_name is required');
+        }
+        return value;
+      })(),
+      docsUrl: json['docs_url']?.toString(),
+      environment: json['environment']?.toString(),
+      healthStatus: json['health_status']?.toString(),
+      id: json['id']?.toString(),
+      lastCheckedAt: json['last_checked_at']?.toString(),
+      lastLatencyMs: json['last_latency_ms'] is int ? json['last_latency_ms'] : null,
+      lastSyncAt: json['last_sync_at']?.toString(),
+      logo: (() {
+        final map = _sdkworkAsMap(json['logo']);
+        return map == null ? null : MediaResource.fromJson(map);
+      })(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: (() {
+        final value = json['organization_id']?.toString();
+        if (value == null) {
+          throw FormatException('AiSiteRecord.organization_id is required');
+        }
+        return value;
+      })(),
+      ownerKind: json['owner_kind']?.toString(),
+      regionCode: json['region_code']?.toString(),
+      siteCode: (() {
+        final value = json['site_code']?.toString();
+        if (value == null) {
+          throw FormatException('AiSiteRecord.site_code is required');
+        }
+        return value;
+      })(),
+      siteName: (() {
+        final value = json['site_name']?.toString();
+        if (value == null) {
+          throw FormatException('AiSiteRecord.site_name is required');
+        }
+        return value;
+      })(),
+      siteType: json['site_type']?.toString(),
+      sortOrder: json['sort_order'] is int ? json['sort_order'] : null,
+      status: (() {
+        final value = json['status']?.toString();
+        if (value == null) {
+          throw FormatException('AiSiteRecord.status is required');
+        }
+        return value;
+      })(),
+      tenantId: (() {
+        final value = json['tenant_id']?.toString();
+        if (value == null) {
+          throw FormatException('AiSiteRecord.tenant_id is required');
+        }
+        return value;
+      })(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: (() {
+        final value = json['uuid']?.toString();
+        if (value == null) {
+          throw FormatException('AiSiteRecord.uuid is required');
+        }
+        return value;
+      })(),
+      version: json['version']?.toString(),
+      websiteUrl: json['website_url']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'base_url': baseUrl,
+      'color_token': colorToken,
+      'consecutive_error_count': consecutiveErrorCount,
+      'created_at': createdAt,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'description': description,
+      'display_name': displayName,
+      'docs_url': docsUrl,
+      'environment': environment,
+      'health_status': healthStatus,
+      'id': id,
+      'last_checked_at': lastCheckedAt,
+      'last_latency_ms': lastLatencyMs,
+      'last_sync_at': lastSyncAt,
+      'logo': logo?.toJson(),
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'owner_kind': ownerKind,
+      'region_code': regionCode,
+      'site_code': siteCode,
+      'site_name': siteName,
+      'site_type': siteType,
+      'sort_order': sortOrder,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'version': version,
+      'website_url': websiteUrl,
+    };
+  }
+}
+
+class AiSiteServiceRecord {
+  final Map<String, dynamic>? authConfig;
+  final String? authType;
+  final String? baseUrl;
+  final String? consecutiveErrorCount;
+  final String? createdAt;
+  final String? credentialHash;
+  final String? credentialProfile;
+  final String? credentialRef;
+  final String? credentialVersion;
+  final String? dataScope;
+  final String? deletedAt;
+  final String? deletedBy;
+  final String? environment;
+  final String? healthStatus;
+  final String? id;
+  final int? lastLatencyMs;
+  final String? lastSyncAt;
+  final String? lastVerifiedAt;
+  final String? maskedLabel;
+  final Map<String, dynamic>? metadata;
+  final String organizationId;
+  final String? protocolCode;
+  final String? regionCode;
+  final String serviceCode;
+  final String serviceName;
+  final String serviceType;
+  final String siteCode;
+  final String siteId;
+  final int? sortOrder;
+  final String status;
+  final String tenantId;
+  final String? updatedAt;
+  final String uuid;
+  final String? version;
+
+  AiSiteServiceRecord({
+    this.authConfig,
+    this.authType,
+    this.baseUrl,
+    this.consecutiveErrorCount,
+    this.createdAt,
+    this.credentialHash,
+    this.credentialProfile,
+    this.credentialRef,
+    this.credentialVersion,
+    this.dataScope,
+    this.deletedAt,
+    this.deletedBy,
+    this.environment,
+    this.healthStatus,
+    this.id,
+    this.lastLatencyMs,
+    this.lastSyncAt,
+    this.lastVerifiedAt,
+    this.maskedLabel,
+    this.metadata,
+    required this.organizationId,
+    this.protocolCode,
+    this.regionCode,
+    required this.serviceCode,
+    required this.serviceName,
+    required this.serviceType,
+    required this.siteCode,
+    required this.siteId,
+    this.sortOrder,
+    required this.status,
+    required this.tenantId,
+    this.updatedAt,
+    required this.uuid,
+    this.version
+  });
+
+  factory AiSiteServiceRecord.fromJson(Map<String, dynamic> json) {
+    return AiSiteServiceRecord(
+      authConfig: (() {
+        final map = _sdkworkAsMap(json['auth_config']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      authType: json['auth_type']?.toString(),
+      baseUrl: json['base_url']?.toString(),
+      consecutiveErrorCount: json['consecutive_error_count']?.toString(),
+      createdAt: json['created_at']?.toString(),
+      credentialHash: json['credential_hash']?.toString(),
+      credentialProfile: json['credential_profile']?.toString(),
+      credentialRef: json['credential_ref']?.toString(),
+      credentialVersion: json['credential_version']?.toString(),
+      dataScope: json['data_scope']?.toString(),
+      deletedAt: json['deleted_at']?.toString(),
+      deletedBy: json['deleted_by']?.toString(),
+      environment: json['environment']?.toString(),
+      healthStatus: json['health_status']?.toString(),
+      id: json['id']?.toString(),
+      lastLatencyMs: json['last_latency_ms'] is int ? json['last_latency_ms'] : null,
+      lastSyncAt: json['last_sync_at']?.toString(),
+      lastVerifiedAt: json['last_verified_at']?.toString(),
+      maskedLabel: json['masked_label']?.toString(),
+      metadata: (() {
+        final map = _sdkworkAsMap(json['metadata']);
+        if (map == null) {
+          return null;
+        }
+        final result = <String, String>{};
+        map.forEach((key, item) {
+          final deserialized = item?.toString();
+          if (deserialized is String) {
+            result[key] = deserialized;
+          }
+        });
+        return result;
+      })(),
+      organizationId: (() {
+        final value = json['organization_id']?.toString();
+        if (value == null) {
+          throw FormatException('AiSiteServiceRecord.organization_id is required');
+        }
+        return value;
+      })(),
+      protocolCode: json['protocol_code']?.toString(),
+      regionCode: json['region_code']?.toString(),
+      serviceCode: (() {
+        final value = json['service_code']?.toString();
+        if (value == null) {
+          throw FormatException('AiSiteServiceRecord.service_code is required');
+        }
+        return value;
+      })(),
+      serviceName: (() {
+        final value = json['service_name']?.toString();
+        if (value == null) {
+          throw FormatException('AiSiteServiceRecord.service_name is required');
+        }
+        return value;
+      })(),
+      serviceType: (() {
+        final value = json['service_type']?.toString();
+        if (value == null) {
+          throw FormatException('AiSiteServiceRecord.service_type is required');
+        }
+        return value;
+      })(),
+      siteCode: (() {
+        final value = json['site_code']?.toString();
+        if (value == null) {
+          throw FormatException('AiSiteServiceRecord.site_code is required');
+        }
+        return value;
+      })(),
+      siteId: (() {
+        final value = json['site_id']?.toString();
+        if (value == null) {
+          throw FormatException('AiSiteServiceRecord.site_id is required');
+        }
+        return value;
+      })(),
+      sortOrder: json['sort_order'] is int ? json['sort_order'] : null,
+      status: (() {
+        final value = json['status']?.toString();
+        if (value == null) {
+          throw FormatException('AiSiteServiceRecord.status is required');
+        }
+        return value;
+      })(),
+      tenantId: (() {
+        final value = json['tenant_id']?.toString();
+        if (value == null) {
+          throw FormatException('AiSiteServiceRecord.tenant_id is required');
+        }
+        return value;
+      })(),
+      updatedAt: json['updated_at']?.toString(),
+      uuid: (() {
+        final value = json['uuid']?.toString();
+        if (value == null) {
+          throw FormatException('AiSiteServiceRecord.uuid is required');
+        }
+        return value;
+      })(),
+      version: json['version']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'auth_config': authConfig?.map((key, item) => MapEntry(key, item)),
+      'auth_type': authType,
+      'base_url': baseUrl,
+      'consecutive_error_count': consecutiveErrorCount,
+      'created_at': createdAt,
+      'credential_hash': credentialHash,
+      'credential_profile': credentialProfile,
+      'credential_ref': credentialRef,
+      'credential_version': credentialVersion,
+      'data_scope': dataScope,
+      'deleted_at': deletedAt,
+      'deleted_by': deletedBy,
+      'environment': environment,
+      'health_status': healthStatus,
+      'id': id,
+      'last_latency_ms': lastLatencyMs,
+      'last_sync_at': lastSyncAt,
+      'last_verified_at': lastVerifiedAt,
+      'masked_label': maskedLabel,
+      'metadata': metadata?.map((key, item) => MapEntry(key, item)),
+      'organization_id': organizationId,
+      'protocol_code': protocolCode,
+      'region_code': regionCode,
+      'service_code': serviceCode,
+      'service_name': serviceName,
+      'service_type': serviceType,
+      'site_code': siteCode,
+      'site_id': siteId,
+      'sort_order': sortOrder,
+      'status': status,
+      'tenant_id': tenantId,
+      'updated_at': updatedAt,
+      'uuid': uuid,
+      'version': version,
+    };
+  }
+}
+
 class AiUsageFactRecord {
   final String? apiKeyId;
   final String? apiKeyNameSnapshot;
@@ -33549,6 +37443,7 @@ class AiUsageFactRecord {
   final String? rateMultiplier;
   final String? reasoningEffort;
   final String? referenceMultiplier;
+  final String? regionCode;
   final String? requestCount;
   final String? requestId;
   final String? requestedModelCatalogKey;
@@ -33622,6 +37517,7 @@ class AiUsageFactRecord {
     this.rateMultiplier,
     this.reasoningEffort,
     this.referenceMultiplier,
+    this.regionCode,
     this.requestCount,
     this.requestId,
     this.requestedModelCatalogKey,
@@ -33729,6 +37625,7 @@ class AiUsageFactRecord {
       rateMultiplier: json['rate_multiplier']?.toString(),
       reasoningEffort: json['reasoning_effort']?.toString(),
       referenceMultiplier: json['reference_multiplier']?.toString(),
+      regionCode: json['region_code']?.toString(),
       requestCount: json['request_count']?.toString(),
       requestId: json['request_id']?.toString(),
       requestedModelCatalogKey: json['requested_model_catalog_key']?.toString(),
@@ -33811,6 +37708,7 @@ class AiUsageFactRecord {
       'rate_multiplier': rateMultiplier,
       'reasoning_effort': reasoningEffort,
       'reference_multiplier': referenceMultiplier,
+      'region_code': regionCode,
       'request_count': requestCount,
       'request_id': requestId,
       'requested_model_catalog_key': requestedModelCatalogKey,
@@ -36436,6 +40334,154 @@ class CatalogCategoriesUpdateResult {
       data: (() {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : CommerceProductCategoryMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class CatalogCategoryAttributesCreateResult {
+  final String code;
+  final CommerceProductCategoryAttributeMutationResponse? data;
+  final String? msg;
+
+  CatalogCategoryAttributesCreateResult({
+    required this.code,
+    this.data,
+    this.msg
+  });
+
+  factory CatalogCategoryAttributesCreateResult.fromJson(Map<String, dynamic> json) {
+    return CatalogCategoryAttributesCreateResult(
+      code: (() {
+        final value = json['code']?.toString();
+        if (value == null) {
+          throw FormatException('CatalogCategoryAttributesCreateResult.code is required');
+        }
+        return value;
+      })(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommerceProductCategoryAttributeMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class CatalogCategoryAttributesDeleteResult {
+  final String code;
+  final AdminDeleteResponse? data;
+  final String? msg;
+
+  CatalogCategoryAttributesDeleteResult({
+    required this.code,
+    this.data,
+    this.msg
+  });
+
+  factory CatalogCategoryAttributesDeleteResult.fromJson(Map<String, dynamic> json) {
+    return CatalogCategoryAttributesDeleteResult(
+      code: (() {
+        final value = json['code']?.toString();
+        if (value == null) {
+          throw FormatException('CatalogCategoryAttributesDeleteResult.code is required');
+        }
+        return value;
+      })(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminDeleteResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class CatalogCategoryAttributesListResult {
+  final String code;
+  final CommerceProductCategoryAttributeListResponse? data;
+  final String? msg;
+
+  CatalogCategoryAttributesListResult({
+    required this.code,
+    this.data,
+    this.msg
+  });
+
+  factory CatalogCategoryAttributesListResult.fromJson(Map<String, dynamic> json) {
+    return CatalogCategoryAttributesListResult(
+      code: (() {
+        final value = json['code']?.toString();
+        if (value == null) {
+          throw FormatException('CatalogCategoryAttributesListResult.code is required');
+        }
+        return value;
+      })(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommerceProductCategoryAttributeListResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class CatalogCategoryAttributesUpdateResult {
+  final String code;
+  final CommerceProductCategoryAttributeMutationResponse? data;
+  final String? msg;
+
+  CatalogCategoryAttributesUpdateResult({
+    required this.code,
+    this.data,
+    this.msg
+  });
+
+  factory CatalogCategoryAttributesUpdateResult.fromJson(Map<String, dynamic> json) {
+    return CatalogCategoryAttributesUpdateResult(
+      code: (() {
+        final value = json['code']?.toString();
+        if (value == null) {
+          throw FormatException('CatalogCategoryAttributesUpdateResult.code is required');
+        }
+        return value;
+      })(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : CommerceProductCategoryAttributeMutationResponse.fromJson(map);
       })(),
       msg: json['msg']?.toString()
     );
@@ -48960,6 +53006,350 @@ class CommerceProductAttributeValueRecord {
   }
 }
 
+class CommerceProductCategoryAttributeItem {
+  final String attributeId;
+  final String attributeName;
+  final String attributeNo;
+  final String categoryId;
+  final String categoryName;
+  final String categoryPath;
+  final String createdAt;
+  final bool filterable;
+  final String id;
+  final bool required_;
+  final String scope;
+  final bool searchable;
+  final int sortOrder;
+  final String status;
+  final String updatedAt;
+  final String valueType;
+
+  CommerceProductCategoryAttributeItem({
+    required this.attributeId,
+    required this.attributeName,
+    required this.attributeNo,
+    required this.categoryId,
+    required this.categoryName,
+    required this.categoryPath,
+    required this.createdAt,
+    required this.filterable,
+    required this.id,
+    required this.required_,
+    required this.scope,
+    required this.searchable,
+    required this.sortOrder,
+    required this.status,
+    required this.updatedAt,
+    required this.valueType
+  });
+
+  factory CommerceProductCategoryAttributeItem.fromJson(Map<String, dynamic> json) {
+    return CommerceProductCategoryAttributeItem(
+      attributeId: (() {
+        final value = json['attributeId']?.toString();
+        if (value == null) {
+          throw FormatException('CommerceProductCategoryAttributeItem.attributeId is required');
+        }
+        return value;
+      })(),
+      attributeName: (() {
+        final value = json['attributeName']?.toString();
+        if (value == null) {
+          throw FormatException('CommerceProductCategoryAttributeItem.attributeName is required');
+        }
+        return value;
+      })(),
+      attributeNo: (() {
+        final value = json['attributeNo']?.toString();
+        if (value == null) {
+          throw FormatException('CommerceProductCategoryAttributeItem.attributeNo is required');
+        }
+        return value;
+      })(),
+      categoryId: (() {
+        final value = json['categoryId']?.toString();
+        if (value == null) {
+          throw FormatException('CommerceProductCategoryAttributeItem.categoryId is required');
+        }
+        return value;
+      })(),
+      categoryName: (() {
+        final value = json['categoryName']?.toString();
+        if (value == null) {
+          throw FormatException('CommerceProductCategoryAttributeItem.categoryName is required');
+        }
+        return value;
+      })(),
+      categoryPath: (() {
+        final value = json['categoryPath']?.toString();
+        if (value == null) {
+          throw FormatException('CommerceProductCategoryAttributeItem.categoryPath is required');
+        }
+        return value;
+      })(),
+      createdAt: (() {
+        final value = json['createdAt']?.toString();
+        if (value == null) {
+          throw FormatException('CommerceProductCategoryAttributeItem.createdAt is required');
+        }
+        return value;
+      })(),
+      filterable: (() {
+        final value = json['filterable'];
+        if (value is! bool) {
+          throw FormatException('CommerceProductCategoryAttributeItem.filterable is required');
+        }
+        return value;
+      })(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('CommerceProductCategoryAttributeItem.id is required');
+        }
+        return value;
+      })(),
+      required_: (() {
+        final value = json['required'];
+        if (value is! bool) {
+          throw FormatException('CommerceProductCategoryAttributeItem.required is required');
+        }
+        return value;
+      })(),
+      scope: (() {
+        final value = json['scope']?.toString();
+        if (value == null) {
+          throw FormatException('CommerceProductCategoryAttributeItem.scope is required');
+        }
+        return value;
+      })(),
+      searchable: (() {
+        final value = json['searchable'];
+        if (value is! bool) {
+          throw FormatException('CommerceProductCategoryAttributeItem.searchable is required');
+        }
+        return value;
+      })(),
+      sortOrder: (() {
+        final value = json['sortOrder'];
+        if (value is! int) {
+          throw FormatException('CommerceProductCategoryAttributeItem.sortOrder is required');
+        }
+        return value;
+      })(),
+      status: (() {
+        final value = json['status']?.toString();
+        if (value == null) {
+          throw FormatException('CommerceProductCategoryAttributeItem.status is required');
+        }
+        return value;
+      })(),
+      updatedAt: (() {
+        final value = json['updatedAt']?.toString();
+        if (value == null) {
+          throw FormatException('CommerceProductCategoryAttributeItem.updatedAt is required');
+        }
+        return value;
+      })(),
+      valueType: (() {
+        final value = json['valueType']?.toString();
+        if (value == null) {
+          throw FormatException('CommerceProductCategoryAttributeItem.valueType is required');
+        }
+        return value;
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'attributeId': attributeId,
+      'attributeName': attributeName,
+      'attributeNo': attributeNo,
+      'categoryId': categoryId,
+      'categoryName': categoryName,
+      'categoryPath': categoryPath,
+      'createdAt': createdAt,
+      'filterable': filterable,
+      'id': id,
+      'required': required_,
+      'scope': scope,
+      'searchable': searchable,
+      'sortOrder': sortOrder,
+      'status': status,
+      'updatedAt': updatedAt,
+      'valueType': valueType,
+    };
+  }
+}
+
+class CommerceProductCategoryAttributeListResponse {
+  final List<CommerceProductCategoryAttributeItem> items;
+  final int page;
+  final int pageSize;
+  final int total;
+
+  CommerceProductCategoryAttributeListResponse({
+    required this.items,
+    required this.page,
+    required this.pageSize,
+    required this.total
+  });
+
+  factory CommerceProductCategoryAttributeListResponse.fromJson(Map<String, dynamic> json) {
+    return CommerceProductCategoryAttributeListResponse(
+      items: (() {
+        final list = _sdkworkAsList(json['items']);
+        if (list == null) {
+          throw FormatException('CommerceProductCategoryAttributeListResponse.items is required');
+        }
+        return list
+            .map((item) => (() {
+        final map = _sdkworkAsMap(item);
+        return map == null ? null : CommerceProductCategoryAttributeItem.fromJson(map);
+      })())
+            .whereType<CommerceProductCategoryAttributeItem>()
+            .toList();
+      })(),
+      page: (() {
+        final value = json['page'];
+        if (value is! int) {
+          throw FormatException('CommerceProductCategoryAttributeListResponse.page is required');
+        }
+        return value;
+      })(),
+      pageSize: (() {
+        final value = json['pageSize'];
+        if (value is! int) {
+          throw FormatException('CommerceProductCategoryAttributeListResponse.pageSize is required');
+        }
+        return value;
+      })(),
+      total: (() {
+        final value = json['total'];
+        if (value is! int) {
+          throw FormatException('CommerceProductCategoryAttributeListResponse.total is required');
+        }
+        return value;
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'items': items.map((item) => item.toJson()).toList(),
+      'page': page,
+      'pageSize': pageSize,
+      'total': total,
+    };
+  }
+}
+
+class CommerceProductCategoryAttributeMutationRequest {
+  final String attributeId;
+  final String categoryId;
+  final bool filterable;
+  final bool required_;
+  final bool searchable;
+  final int? sortOrder;
+  final String status;
+
+  CommerceProductCategoryAttributeMutationRequest({
+    required this.attributeId,
+    required this.categoryId,
+    required this.filterable,
+    required this.required_,
+    required this.searchable,
+    this.sortOrder,
+    required this.status
+  });
+
+  factory CommerceProductCategoryAttributeMutationRequest.fromJson(Map<String, dynamic> json) {
+    return CommerceProductCategoryAttributeMutationRequest(
+      attributeId: (() {
+        final value = json['attributeId']?.toString();
+        if (value == null) {
+          throw FormatException('CommerceProductCategoryAttributeMutationRequest.attributeId is required');
+        }
+        return value;
+      })(),
+      categoryId: (() {
+        final value = json['categoryId']?.toString();
+        if (value == null) {
+          throw FormatException('CommerceProductCategoryAttributeMutationRequest.categoryId is required');
+        }
+        return value;
+      })(),
+      filterable: (() {
+        final value = json['filterable'];
+        if (value is! bool) {
+          throw FormatException('CommerceProductCategoryAttributeMutationRequest.filterable is required');
+        }
+        return value;
+      })(),
+      required_: (() {
+        final value = json['required'];
+        if (value is! bool) {
+          throw FormatException('CommerceProductCategoryAttributeMutationRequest.required is required');
+        }
+        return value;
+      })(),
+      searchable: (() {
+        final value = json['searchable'];
+        if (value is! bool) {
+          throw FormatException('CommerceProductCategoryAttributeMutationRequest.searchable is required');
+        }
+        return value;
+      })(),
+      sortOrder: json['sortOrder'] is int ? json['sortOrder'] : null,
+      status: (() {
+        final value = json['status']?.toString();
+        if (value == null) {
+          throw FormatException('CommerceProductCategoryAttributeMutationRequest.status is required');
+        }
+        return value;
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'attributeId': attributeId,
+      'categoryId': categoryId,
+      'filterable': filterable,
+      'required': required_,
+      'searchable': searchable,
+      'sortOrder': sortOrder,
+      'status': status,
+    };
+  }
+}
+
+class CommerceProductCategoryAttributeMutationResponse {
+  final CommerceProductCategoryAttributeItem item;
+
+  CommerceProductCategoryAttributeMutationResponse({
+    required this.item
+  });
+
+  factory CommerceProductCategoryAttributeMutationResponse.fromJson(Map<String, dynamic> json) {
+    return CommerceProductCategoryAttributeMutationResponse(
+      item: (() {
+        final map = _sdkworkAsMap(json['item']);
+        if (map == null) {
+          throw FormatException('CommerceProductCategoryAttributeMutationResponse.item is required');
+        }
+        return CommerceProductCategoryAttributeItem.fromJson(map);
+      })()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'item': item.toJson(),
+    };
+  }
+}
+
 class CommerceProductCategoryAttributeRecord {
   final String attributeId;
   final String categoryId;
@@ -57242,6 +61632,43 @@ class FulfillmentsListResult {
       data: (() {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : CommerceStandardCollectionResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class HealthCheckCreateResult {
+  final String code;
+  final AdminSiteConnectionCheckResponse? data;
+  final String? msg;
+
+  HealthCheckCreateResult({
+    required this.code,
+    this.data,
+    this.msg
+  });
+
+  factory HealthCheckCreateResult.fromJson(Map<String, dynamic> json) {
+    return HealthCheckCreateResult(
+      code: (() {
+        final value = json['code']?.toString();
+        if (value == null) {
+          throw FormatException('HealthCheckCreateResult.code is required');
+        }
+        return value;
+      })(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminSiteConnectionCheckResponse.fromJson(map);
       })(),
       msg: json['msg']?.toString()
     );
@@ -66737,6 +71164,191 @@ class MessagingTestSendResponse {
       'deliveryStatus': deliveryStatus,
       'providerCode': providerCode,
       'requestId': requestId,
+    };
+  }
+}
+
+class ModelMappingsCreateResult {
+  final String code;
+  final AdminModelMappingMutationResponse? data;
+  final String? msg;
+
+  ModelMappingsCreateResult({
+    required this.code,
+    this.data,
+    this.msg
+  });
+
+  factory ModelMappingsCreateResult.fromJson(Map<String, dynamic> json) {
+    return ModelMappingsCreateResult(
+      code: (() {
+        final value = json['code']?.toString();
+        if (value == null) {
+          throw FormatException('ModelMappingsCreateResult.code is required');
+        }
+        return value;
+      })(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminModelMappingMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class ModelMappingsDeleteResult {
+  final String code;
+  final AdminModelMappingDeleteResponse? data;
+  final String? msg;
+
+  ModelMappingsDeleteResult({
+    required this.code,
+    this.data,
+    this.msg
+  });
+
+  factory ModelMappingsDeleteResult.fromJson(Map<String, dynamic> json) {
+    return ModelMappingsDeleteResult(
+      code: (() {
+        final value = json['code']?.toString();
+        if (value == null) {
+          throw FormatException('ModelMappingsDeleteResult.code is required');
+        }
+        return value;
+      })(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminModelMappingDeleteResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class ModelMappingsListResult {
+  final String code;
+  final AdminModelMappingsResponse? data;
+  final String? msg;
+
+  ModelMappingsListResult({
+    required this.code,
+    this.data,
+    this.msg
+  });
+
+  factory ModelMappingsListResult.fromJson(Map<String, dynamic> json) {
+    return ModelMappingsListResult(
+      code: (() {
+        final value = json['code']?.toString();
+        if (value == null) {
+          throw FormatException('ModelMappingsListResult.code is required');
+        }
+        return value;
+      })(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminModelMappingsResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class ModelMappingsResolveCreateResult {
+  final String code;
+  final AdminModelMappingResolveResponse? data;
+  final String? msg;
+
+  ModelMappingsResolveCreateResult({
+    required this.code,
+    this.data,
+    this.msg
+  });
+
+  factory ModelMappingsResolveCreateResult.fromJson(Map<String, dynamic> json) {
+    return ModelMappingsResolveCreateResult(
+      code: (() {
+        final value = json['code']?.toString();
+        if (value == null) {
+          throw FormatException('ModelMappingsResolveCreateResult.code is required');
+        }
+        return value;
+      })(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminModelMappingResolveResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class ModelMappingsUpdateResult {
+  final String code;
+  final AdminModelMappingMutationResponse? data;
+  final String? msg;
+
+  ModelMappingsUpdateResult({
+    required this.code,
+    this.data,
+    this.msg
+  });
+
+  factory ModelMappingsUpdateResult.fromJson(Map<String, dynamic> json) {
+    return ModelMappingsUpdateResult(
+      code: (() {
+        final value = json['code']?.toString();
+        if (value == null) {
+          throw FormatException('ModelMappingsUpdateResult.code is required');
+        }
+        return value;
+      })(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminModelMappingMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
     };
   }
 }
@@ -82242,6 +86854,339 @@ class ShipmentsTrackingEventsListResult {
   }
 }
 
+class SiteCatalogListResult {
+  final String code;
+  final AdminSitesResponse? data;
+  final String? msg;
+
+  SiteCatalogListResult({
+    required this.code,
+    this.data,
+    this.msg
+  });
+
+  factory SiteCatalogListResult.fromJson(Map<String, dynamic> json) {
+    return SiteCatalogListResult(
+      code: (() {
+        final value = json['code']?.toString();
+        if (value == null) {
+          throw FormatException('SiteCatalogListResult.code is required');
+        }
+        return value;
+      })(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminSitesResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class SiteChannelsListResult {
+  final String code;
+  final AdminSiteChannelsResponse? data;
+  final String? msg;
+
+  SiteChannelsListResult({
+    required this.code,
+    this.data,
+    this.msg
+  });
+
+  factory SiteChannelsListResult.fromJson(Map<String, dynamic> json) {
+    return SiteChannelsListResult(
+      code: (() {
+        final value = json['code']?.toString();
+        if (value == null) {
+          throw FormatException('SiteChannelsListResult.code is required');
+        }
+        return value;
+      })(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminSiteChannelsResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class SiteCreateResult {
+  final String code;
+  final AdminSiteMutationResponse? data;
+  final String? msg;
+
+  SiteCreateResult({
+    required this.code,
+    this.data,
+    this.msg
+  });
+
+  factory SiteCreateResult.fromJson(Map<String, dynamic> json) {
+    return SiteCreateResult(
+      code: (() {
+        final value = json['code']?.toString();
+        if (value == null) {
+          throw FormatException('SiteCreateResult.code is required');
+        }
+        return value;
+      })(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminSiteMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class SiteDeleteResult {
+  final String code;
+  final AdminSiteDeleteResponse? data;
+  final String? msg;
+
+  SiteDeleteResult({
+    required this.code,
+    this.data,
+    this.msg
+  });
+
+  factory SiteDeleteResult.fromJson(Map<String, dynamic> json) {
+    return SiteDeleteResult(
+      code: (() {
+        final value = json['code']?.toString();
+        if (value == null) {
+          throw FormatException('SiteDeleteResult.code is required');
+        }
+        return value;
+      })(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminSiteDeleteResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class SiteModelsCreateResult {
+  final String code;
+  final AdminSiteModelMutationResponse? data;
+  final String? msg;
+
+  SiteModelsCreateResult({
+    required this.code,
+    this.data,
+    this.msg
+  });
+
+  factory SiteModelsCreateResult.fromJson(Map<String, dynamic> json) {
+    return SiteModelsCreateResult(
+      code: (() {
+        final value = json['code']?.toString();
+        if (value == null) {
+          throw FormatException('SiteModelsCreateResult.code is required');
+        }
+        return value;
+      })(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminSiteModelMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class SiteModelsDeleteResult {
+  final String code;
+  final AdminSiteDeleteResponse? data;
+  final String? msg;
+
+  SiteModelsDeleteResult({
+    required this.code,
+    this.data,
+    this.msg
+  });
+
+  factory SiteModelsDeleteResult.fromJson(Map<String, dynamic> json) {
+    return SiteModelsDeleteResult(
+      code: (() {
+        final value = json['code']?.toString();
+        if (value == null) {
+          throw FormatException('SiteModelsDeleteResult.code is required');
+        }
+        return value;
+      })(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminSiteDeleteResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class SiteModelsListResult {
+  final String code;
+  final AdminSiteModelsResponse? data;
+  final String? msg;
+
+  SiteModelsListResult({
+    required this.code,
+    this.data,
+    this.msg
+  });
+
+  factory SiteModelsListResult.fromJson(Map<String, dynamic> json) {
+    return SiteModelsListResult(
+      code: (() {
+        final value = json['code']?.toString();
+        if (value == null) {
+          throw FormatException('SiteModelsListResult.code is required');
+        }
+        return value;
+      })(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminSiteModelsResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class SiteModelsReplaceResult {
+  final String code;
+  final AdminSiteModelsReplaceResponse? data;
+  final String? msg;
+
+  SiteModelsReplaceResult({
+    required this.code,
+    this.data,
+    this.msg
+  });
+
+  factory SiteModelsReplaceResult.fromJson(Map<String, dynamic> json) {
+    return SiteModelsReplaceResult(
+      code: (() {
+        final value = json['code']?.toString();
+        if (value == null) {
+          throw FormatException('SiteModelsReplaceResult.code is required');
+        }
+        return value;
+      })(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminSiteModelsReplaceResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class SiteModelsUpdateResult {
+  final String code;
+  final AdminSiteModelMutationResponse? data;
+  final String? msg;
+
+  SiteModelsUpdateResult({
+    required this.code,
+    this.data,
+    this.msg
+  });
+
+  factory SiteModelsUpdateResult.fromJson(Map<String, dynamic> json) {
+    return SiteModelsUpdateResult(
+      code: (() {
+        final value = json['code']?.toString();
+        if (value == null) {
+          throw FormatException('SiteModelsUpdateResult.code is required');
+        }
+        return value;
+      })(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminSiteModelMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
 class SiteSettingsRetrieveResult {
   final String code;
   final AdminSiteSettingsResponse? data;
@@ -82302,6 +87247,43 @@ class SiteSettingsUpdateResult {
       data: (() {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : AdminSiteSettingsResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class SiteUpdateResult {
+  final String code;
+  final AdminSiteMutationResponse? data;
+  final String? msg;
+
+  SiteUpdateResult({
+    required this.code,
+    this.data,
+    this.msg
+  });
+
+  factory SiteUpdateResult.fromJson(Map<String, dynamic> json) {
+    return SiteUpdateResult(
+      code: (() {
+        final value = json['code']?.toString();
+        if (value == null) {
+          throw FormatException('SiteUpdateResult.code is required');
+        }
+        return value;
+      })(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminSiteMutationResponse.fromJson(map);
       })(),
       msg: json['msg']?.toString()
     );
@@ -87588,6 +92570,43 @@ class TemplatesVersionsPublishResult {
       data: (() {
         final map = _sdkworkAsMap(json['data']);
         return map == null ? null : MessagingMutationResponse.fromJson(map);
+      })(),
+      msg: json['msg']?.toString()
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'code': code,
+      'data': data?.toJson(),
+      'msg': msg,
+    };
+  }
+}
+
+class TestConnectionCreateResult {
+  final String code;
+  final AdminSiteConnectionCheckResponse? data;
+  final String? msg;
+
+  TestConnectionCreateResult({
+    required this.code,
+    this.data,
+    this.msg
+  });
+
+  factory TestConnectionCreateResult.fromJson(Map<String, dynamic> json) {
+    return TestConnectionCreateResult(
+      code: (() {
+        final value = json['code']?.toString();
+        if (value == null) {
+          throw FormatException('TestConnectionCreateResult.code is required');
+        }
+        return value;
+      })(),
+      data: (() {
+        final map = _sdkworkAsMap(json['data']);
+        return map == null ? null : AdminSiteConnectionCheckResponse.fromJson(map);
       })(),
       msg: json['msg']?.toString()
     );

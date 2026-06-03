@@ -149,6 +149,27 @@ function readAdminServiceProviderSource(): string {
   );
 }
 
+function readAdminCacheSource(): string {
+  return readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-cache/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+}
+
+function readAdminSiteSettingsSource(): string {
+  return readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-site/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+}
+
+function readAdminRuntimeRegionSource(): string {
+  return readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-runtime-region/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+}
+
 function readAdminServiceNodesSource(): string {
   return readFileSync(
     new URL("./packages/sdkwork-claw-router-admin-service-nodes/src/index.tsx", import.meta.url),
@@ -876,6 +897,8 @@ test("admin analytics package is routed as a compact statistics workspace", () =
   assert.match(source, /AdminAnalyticsService\.fetchOverview/);
   assert.match(source, /data-admin-analytics-sidebar/);
   assert.match(source, /data-admin-analytics-table/);
+  assert.match(source, /className="flex min-h-\[320px\] max-h-\[min\(640px,calc\(100dvh-260px\)\)\] flex-col overflow-hidden/);
+  assert.match(source, /className="min-h-0 flex-1 overflow-auto"/);
   assert.match(source, /data-admin-analytics-metric-card/);
   assert.match(source, /admin\.analytics\.states\.loadingShort/);
   assert.doesNotMatch(source, /Math\.random|generateFake|mockAnalytics/i);
@@ -1260,6 +1283,15 @@ test("admin model service sends capability fields through the generated backend 
           priceOut: "0.450000",
           cacheReadPrice: "",
           cacheWritePrice: "",
+          regionPrices: [
+            {
+              regionCode: "global",
+              priceIn: "0.120000",
+              priceOut: "0.450000",
+              cacheReadPrice: "",
+              cacheWritePrice: "",
+            },
+          ],
           status: "active",
           calls: "0",
           description: "Commercial chat model for production traffic.",
@@ -1292,6 +1324,13 @@ test("admin model service sends capability fields through the generated backend 
         type: "Chat",
         priceIn: "0.120000",
         priceOut: "0.450000",
+        regionPrices: [
+          {
+            regionCode: "global",
+            priceIn: "0.120000",
+            priceOut: "0.450000",
+          },
+        ],
         contextTokens: "128k",
         description: "Commercial chat model for production traffic.",
         capabilityIntro: "Low latency chat, structured output, and tool calling.",
@@ -1353,6 +1392,8 @@ test("admin dashboard live traces link to full records and render backend status
   assert.match(source, /import \{ Link \} from 'react-router-dom'/);
   assert.match(source, /<Link\s+to="\/admin\/record"/);
   assert.doesNotMatch(source, /<button className="text-xs text-blue-500/);
+  assert.match(source, /className="min-h-0 flex-1 overflow-auto"/);
+  assert.match(source, /className="bg-white dark:bg-\[#1a1a1a\] border border-slate-200 dark:border-white\/10 rounded-xl p-5 shadow-sm shrink-0 flex min-h-\[320px\] flex-1 flex-col overflow-hidden mt-2"/);
   assert.match(source, /item\.status\.trim\(\)\.toLowerCase\(\) === 'success'/);
   assert.match(source, /item\.status\.trim\(\) \|\| 'unknown'/);
   assert.doesNotMatch(source, /<div className="w-1\.5 h-1\.5 rounded-full bg-emerald-500" \/> 成功/);
@@ -1449,7 +1490,10 @@ test("admin service node management is independently routed under operations and
     /table: ops_gateway_instance[\s\S]*?frontend_routes:\r?\n(?:\s+- [^\r\n]+\r?\n)*\s+- \/admin\/service-nodes/,
   );
   assert.match(serviceNodesSource, /AdminTableShell/);
+  assert.match(serviceNodesSource, /data-admin-service-nodes-table-card/);
   assert.match(serviceNodesSource, /data-admin-service-nodes-table-viewport/);
+  assert.match(serviceNodesSource, /className="flex-1 min-h-0 rounded-xl dark:bg-\[#1a1a1a\]"/);
+  assert.match(serviceNodesSource, /viewportClassName="min-h-0 flex-1 relative"/);
   assert.match(serviceNodesSource, /ServiceNodeService\.fetchNodes/);
   assert.match(serviceNodesSource, /ServiceNodeService\.createNode/);
   assert.match(serviceNodesSource, /ServiceNodeService\.updateNodeStatus/);
@@ -1706,7 +1750,7 @@ test("admin record service reads backend logs and total from generated backend S
             type: "chat",
             model: "gpt-4o-mini",
             providerNativeModel: "gpt-4o-mini-2026-05-13",
-            requestedModelCatalogKey: "openai/global/gpt-4o-mini",
+            requestedModelCatalogKey: "openai/gpt-4o-mini",
             status: "success",
             httpStatus: 200,
             httpMethod: "POST",
@@ -1742,7 +1786,7 @@ test("admin record service reads backend logs and total from generated backend S
       assert.equal(result.logs[0].isStream, true);
       assert.equal(result.logs[0].cost, "0.012345");
       assert.equal(result.logs[0].providerNativeModel, "gpt-4o-mini-2026-05-13");
-      assert.equal(result.logs[0].requestedModelCatalogKey, "openai/global/gpt-4o-mini");
+      assert.equal(result.logs[0].requestedModelCatalogKey, "openai/gpt-4o-mini");
       assert.equal(result.logs[0].status, "success");
       assert.equal(result.logs[0].httpStatus, 200);
       assert.equal(result.logs[0].httpMethod, "POST");
@@ -1772,7 +1816,7 @@ test("admin record service exposes console-aligned request and error audit field
               type: "chat",
               model: "gpt-4o-mini",
               providerNativeModel: "gpt-4o-mini-2026-05-13",
-              requestedModelCatalogKey: "openai/global/gpt-4o-mini",
+              requestedModelCatalogKey: "openai/gpt-4o-mini",
               status: "error",
               httpStatus: 429,
               httpMethod: "POST",
@@ -1811,7 +1855,7 @@ test("admin record service exposes console-aligned request and error audit field
       assert.equal(log.errorType, "provider_error");
       assert.equal(log.errorMessage, "Provider quota exceeded");
       assert.equal(log.providerNativeModel, "gpt-4o-mini-2026-05-13");
-      assert.equal(log.requestedModelCatalogKey, "openai/global/gpt-4o-mini");
+      assert.equal(log.requestedModelCatalogKey, "openai/gpt-4o-mini");
       assert.equal(log.path, "/v1/chat/completions");
       assert.equal(log.userAgent, "curl/8.7.1");
     },
@@ -2513,6 +2557,52 @@ test("admin finance tables fill the available admin viewport", () => {
   }
 });
 
+test("admin adjacent operation pages keep content inside the admin viewport", () => {
+  const cacheSource = readAdminCacheSource();
+  const paymentsSource = readAdminPaymentsSource();
+  const serviceProviderSource = readAdminServiceProviderSource();
+  const siteSettingsSource = readAdminSiteSettingsSource();
+  const runtimeRegionSource = readAdminRuntimeRegionSource();
+
+  for (const expected of [
+    "flex h-full min-h-0 w-full flex-col gap-4 overflow-hidden",
+    "grid min-h-0 flex-1 grid-cols-1 gap-4",
+    "flex min-h-0 flex-col overflow-hidden",
+    "min-h-0 flex-1 overflow-auto",
+    "flex min-h-0 flex-col gap-4 overflow-y-auto",
+  ]) {
+    assert.ok(cacheSource.includes(expected), `missing adaptive admin cache layout marker: ${expected}`);
+  }
+
+  for (const expected of [
+    "data-admin-payments-layout",
+    "flex h-full min-h-0 w-full flex-col gap-3 overflow-hidden",
+    "className=\"min-h-0 flex-1 overflow-hidden\"",
+    "tableViewportDataAttribute=\"admin-payments-table-viewport\"",
+  ]) {
+    assert.ok(paymentsSource.includes(expected), `missing adaptive admin payments layout marker: ${expected}`);
+  }
+
+  for (const expected of [
+    "data-admin-service-provider=\"commercial-center\"",
+    "flex h-full min-h-0 w-full flex-col gap-3 overflow-hidden",
+    "className=\"min-h-0 flex-1 overflow-hidden\"",
+    "tableViewportDataAttribute=\"admin-service-provider-table\"",
+  ]) {
+    assert.ok(serviceProviderSource.includes(expected), `missing adaptive admin service provider layout marker: ${expected}`);
+  }
+
+  for (const [label, source, gridMarker] of [
+    ["site settings", siteSettingsSource, "data-admin-site-settings-scroll"],
+    ["runtime region", runtimeRegionSource, "data-admin-runtime-region-scroll"],
+  ] as const) {
+    assert.ok(source.includes("flex h-full min-h-0 w-full min-w-0 flex-col gap-3 overflow-hidden"), `${label} root must fill the admin viewport`);
+    assert.ok(source.includes("shrink-0"), `${label} top controls and feedback must not scroll with the form body`);
+    assert.ok(source.includes(`className=\"min-h-0 flex-1 overflow-y-auto pr-1\" ${gridMarker}`), `${label} form body must scroll inside the page viewport`);
+    assert.match(source, /<div className="min-h-0 flex-1 overflow-y-auto pr-1" data-admin-(?:site-settings|runtime-region)-scroll>\s*<div className="grid min-h-0 grid-cols-1 gap-5/, `${label} form grid must be nested inside the dedicated scroll container`);
+  }
+});
+
 test("admin record table fills the available admin viewport", () => {
   const source = readAdminRecordSource();
 
@@ -2521,6 +2611,8 @@ test("admin record table fills the available admin viewport", () => {
     "data-admin-record-table-card",
     "data-admin-record-table-viewport",
     "flex h-full min-h-0 w-full flex-col",
+    "className=\"flex-1 min-h-0 rounded-xl dark:bg-[#1a1a1a]\"",
+    "viewportClassName=\"min-h-0 flex-1 relative\"",
     "sticky top-0 z-10",
     "footer={",
   ]) {
@@ -2558,6 +2650,8 @@ test("admin monitor table fills the available admin viewport", () => {
     "data-admin-monitor-table-card",
     "data-admin-monitor-table-viewport",
     "flex h-full min-h-0 w-full flex-col",
+    "className=\"flex-1 min-h-0 rounded-xl dark:bg-[#1a1a1a]\"",
+    "viewportClassName=\"min-h-0 flex-1\"",
     "sticky top-0 z-10",
   ]) {
     assert.ok(source.includes(expected), `missing adaptive admin monitor table marker: ${expected}`);

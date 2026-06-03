@@ -149,7 +149,7 @@ where
     let service = ModelCatalogQueryService::new(state.catalog.as_ref());
     match service.list_models(ListModelCatalogQuery {
         api_key_id,
-        billing_meter,
+        billing_meter: billing_meter.clone(),
         vendor_code: request.vendor_code,
         vendor_codes: Vec::new(),
         modalities: Vec::new(),
@@ -159,7 +159,7 @@ where
         search_query: None,
         limit: None,
     }) {
-        Ok(page) => Json(PlusApiResult::success(to_response(page))).into_response(),
+        Ok(page) => Json(PlusApiResult::success(to_response(page, &billing_meter))).into_response(),
         Err(error) => (
             StatusCode::BAD_REQUEST,
             Json(PlusApiResult::error("4001", error.to_string())),
@@ -233,13 +233,22 @@ where
     ))
 }
 
-fn to_response(page: ModelCatalogPage) -> AdminModelListResponse {
+fn to_response(page: ModelCatalogPage, billing_meter: &BillingMeter) -> AdminModelListResponse {
     AdminModelListResponse {
-        items: page.items.into_iter().map(to_item_response).collect(),
+        items: page
+            .items
+            .into_iter()
+            .map(|item| to_item_response(item, billing_meter))
+            .collect(),
     }
 }
 
-fn to_item_response(item: ModelCatalogItem) -> AdminModelItemResponse {
+fn to_item_response(
+    item: ModelCatalogItem,
+    billing_meter: &BillingMeter,
+) -> AdminModelItemResponse {
+    let official_reference_unit_price =
+        selected_reference_price(&item, billing_meter).map(|price| price.unit_price.clone());
     AdminModelItemResponse {
         model: item.model,
         display_name: item.display_name,
@@ -247,9 +256,28 @@ fn to_item_response(item: ModelCatalogItem) -> AdminModelItemResponse {
         vendor: item.vendor.code().to_owned(),
         capabilities: item.capabilities,
         provider_codes: item.provider_codes,
-        official_reference_unit_price: item.official_reference_unit_price,
+        official_reference_unit_price,
         lowest_upstream_cost_unit_price: item.lowest_upstream_cost_unit_price,
         price_availability: to_price_availability_response(item.price_availability),
+    }
+}
+
+fn selected_reference_price<'a>(
+    item: &'a ModelCatalogItem,
+    billing_meter: &BillingMeter,
+) -> Option<&'a crate::application::ModelCatalogReferencePriceView> {
+    let meter_code = billing_meter.code();
+    item.official_reference_prices
+        .iter()
+        .filter(|price| price.billing_meter == meter_code)
+        .min_by_key(|price| reference_region_sort_key(&price.region_code))
+}
+
+fn reference_region_sort_key(region_code: &str) -> usize {
+    match region_code.trim().to_ascii_lowercase().as_str() {
+        "global" => 0,
+        "cn" | "china" | "mainland" => 10,
+        _ => 20,
     }
 }
 

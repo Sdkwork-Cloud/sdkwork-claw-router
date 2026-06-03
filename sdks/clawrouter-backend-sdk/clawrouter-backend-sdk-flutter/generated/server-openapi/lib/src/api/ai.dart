@@ -68,6 +68,61 @@ class AiApi {
     })();
   }
 
+  /// List model mappings
+  Future<ModelMappingsListResult?> modelMappingsList([String? bindingType, String? vendorCode, String? channelId, String? channelCode, String? q]) async {
+    final query = buildQueryString([
+      QueryParameterSpec('binding_type', bindingType, 'form', true, false, null),
+      QueryParameterSpec('vendor_code', vendorCode, 'form', true, false, null),
+      QueryParameterSpec('channel_id', channelId, 'form', true, false, null),
+      QueryParameterSpec('channel_code', channelCode, 'form', true, false, null),
+      QueryParameterSpec('q', q, 'form', true, false, null)
+    ]);
+    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.backendPath('/ai/model_mappings'), query));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : ModelMappingsListResult.fromJson(map);
+    })();
+  }
+
+  /// Create model mapping
+  Future<ModelMappingsCreateResult?> modelMappingsCreate(AdminModelMappingCreateRequest body) async {
+    final payload = body.toJson();
+    final response = await _client.post(ApiPaths.backendPath('/ai/model_mappings'), body: payload, contentType: 'application/json');
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : ModelMappingsCreateResult.fromJson(map);
+    })();
+  }
+
+  /// Resolve model mapping
+  Future<ModelMappingsResolveCreateResult?> modelMappingsResolveCreate(AdminModelMappingResolveRequest body) async {
+    final payload = body.toJson();
+    final response = await _client.post(ApiPaths.backendPath('/ai/model_mappings/resolve'), body: payload, contentType: 'application/json');
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : ModelMappingsResolveCreateResult.fromJson(map);
+    })();
+  }
+
+  /// Delete model mapping
+  Future<ModelMappingsDeleteResult?> modelMappingsDelete(String mappingId) async {
+    final response = await _client.delete(ApiPaths.backendPath('/ai/model_mappings/${serializePathParameter(mappingId, const PathParameterSpec('mappingId', 'simple', false))}'));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : ModelMappingsDeleteResult.fromJson(map);
+    })();
+  }
+
+  /// Update model mapping
+  Future<ModelMappingsUpdateResult?> modelMappingsUpdate(String mappingId, AdminModelMappingUpdateRequest body) async {
+    final payload = body.toJson();
+    final response = await _client.patch(ApiPaths.backendPath('/ai/model_mappings/${serializePathParameter(mappingId, const PathParameterSpec('mappingId', 'simple', false))}'), body: payload, contentType: 'application/json');
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : ModelMappingsUpdateResult.fromJson(map);
+    })();
+  }
+
   /// List model rankings
   Future<ModelRankingsListResult?> modelRankingsList([String? rankScope, String? vendorCode, String? modality, String? q, int? limit]) async {
     final query = buildQueryString([
@@ -183,6 +238,53 @@ class AiApi {
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : ModelsUpdateResult.fromJson(map);
+    })();
+  }
+
+  /// List resource groups
+  Future<AiResourceGroupsListResult?> getResourceGroupsList() async {
+    final response = await _client.get(ApiPaths.backendPath('/ai/resource_groups'));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : AiResourceGroupsListResult.fromJson(map);
+    })();
+  }
+
+  /// Create resource group
+  Future<AiResourceGroupsCreateResult?> resourceGroupsCreate(AdminAiResourceGroupCreateRequest body) async {
+    final payload = body.toJson();
+    final response = await _client.post(ApiPaths.backendPath('/ai/resource_groups'), body: payload, contentType: 'application/json');
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : AiResourceGroupsCreateResult.fromJson(map);
+    })();
+  }
+
+  /// List resource group resources
+  Future<AiResourceGroupsResourcesListResult?> getResourceGroupsListResourceGroups(String groupIdOrCode) async {
+    final response = await _client.get(ApiPaths.backendPath('/ai/resource_groups/${serializePathParameter(groupIdOrCode, const PathParameterSpec('groupIdOrCode', 'simple', false))}/resources'));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : AiResourceGroupsResourcesListResult.fromJson(map);
+    })();
+  }
+
+  /// Delete resource group
+  Future<AiResourceGroupsDeleteResult?> resourceGroupsDelete(String groupId) async {
+    final response = await _client.delete(ApiPaths.backendPath('/ai/resource_groups/${serializePathParameter(groupId, const PathParameterSpec('groupId', 'simple', false))}'));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : AiResourceGroupsDeleteResult.fromJson(map);
+    })();
+  }
+
+  /// Update resource group
+  Future<AiResourceGroupsUpdateResult?> resourceGroupsUpdate(String groupId, AdminAiResourceGroupUpdateRequest body) async {
+    final payload = body.toJson();
+    final response = await _client.patch(ApiPaths.backendPath('/ai/resource_groups/${serializePathParameter(groupId, const PathParameterSpec('groupId', 'simple', false))}'), body: payload, contentType: 'application/json');
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : AiResourceGroupsUpdateResult.fromJson(map);
     })();
   }
 

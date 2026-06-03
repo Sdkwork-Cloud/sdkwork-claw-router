@@ -51,6 +51,7 @@ async fn openai_compatible_responses_relay_uses_provider_model_and_upstream_secr
             model: "gpt-4.1-mini".to_owned(),
             provider_code: "openrouter".to_owned(),
             provider_channel_id: 3001,
+            provider_region_code: "global".to_owned(),
             provider_model: "gpt-4.1-mini".to_owned(),
             provider_base_url: Some(format!("http://{addr}")),
             provider_secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
@@ -68,7 +69,7 @@ async fn openai_compatible_responses_relay_uses_provider_model_and_upstream_secr
             json!({
                 "id": "resp-upstream",
                 "object": "response",
-                "model": "openai/global/gpt-4.1-mini",
+                "model": "gpt-4.1-mini",
                 "output": [
                     {
                         "type": "message",
@@ -109,7 +110,7 @@ async fn capture_response(
         Json(json!({
             "id": "resp-upstream",
             "object": "response",
-            "model": "openai/global/gpt-4.1-mini",
+            "model": "gpt-4.1-mini",
             "output": [
                 {
                     "type": "message",

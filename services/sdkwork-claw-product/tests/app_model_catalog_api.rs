@@ -64,7 +64,7 @@ fn catalog() -> InMemoryPricingCatalog {
     ));
     catalog.add_model(
         AiModel::new("kling-v2", "Kling v2", "kuaishou", vec!["video"])
-            .with_catalog_key("kuaishou/cn/kling-v2")
+            .with_catalog_key("kuaishou/kling-v2")
             .with_public_metadata(sdkwork_claw_product::domain::AiModelPublicMetadata {
                 description: Some("Video generation model.".to_owned()),
                 modalities: vec!["video".to_owned()],
@@ -136,6 +136,16 @@ fn catalog() -> InMemoryPricingCatalog {
         ModelPrice::new(
             "gpt-4o-mini",
             PriceSide::OfficialReference,
+            BillingMeter::LlmInputToken,
+            Money::cny("1.200000").unwrap(),
+        )
+        .with_catalog_key("openai/gpt-4o-mini")
+        .with_region_code("cn"),
+    );
+    catalog.add_price(
+        ModelPrice::new(
+            "gpt-4o-mini",
+            PriceSide::OfficialReference,
             BillingMeter::LlmOutputToken,
             Money::usd("0.600000").unwrap(),
         )
@@ -176,7 +186,7 @@ fn catalog() -> InMemoryPricingCatalog {
             BillingMeter::VideoResult,
             Money::cny("1.200000").unwrap(),
         )
-        .with_catalog_key("kuaishou/cn/kling-v2"),
+        .with_catalog_key("kuaishou/kling-v2"),
     );
     catalog
 }
@@ -186,7 +196,7 @@ async fn app_model_catalog_route_returns_standard_items_for_playground_grouping(
     let mut catalog = catalog();
     catalog.add_model(
         AiModel::new("image-gen-pro", "Image Gen Pro", "openai", vec!["image"])
-            .with_catalog_key("openai/global/image-gen-pro")
+            .with_catalog_key("openai/image-gen-pro")
             .with_public_metadata(sdkwork_claw_product::domain::AiModelPublicMetadata {
                 description: Some("High quality image generation model.".to_owned()),
                 modalities: vec!["image".to_owned()],
@@ -228,11 +238,11 @@ async fn app_model_catalog_route_returns_standard_items_for_playground_grouping(
         .unwrap();
     let image = items
         .iter()
-        .find(|item| item["catalogKey"] == "openai/global/image-gen-pro")
+        .find(|item| item["catalogKey"] == "openai/image-gen-pro")
         .unwrap();
     let video = items
         .iter()
-        .find(|item| item["catalogKey"] == "kuaishou/cn/kling-v2")
+        .find(|item| item["catalogKey"] == "kuaishou/kling-v2")
         .unwrap();
 
     assert_eq!("GPT-4o mini", gpt["displayName"]);
@@ -248,6 +258,75 @@ async fn app_model_catalog_route_returns_standard_items_for_playground_grouping(
     assert!(!body_text.contains("lowestUpstreamCostUnitPrice"));
     assert!(!body_text.contains("customerUnitPrice"));
     assert!(!body_text.contains("hash:sk-live-secret"));
+}
+
+#[tokio::test]
+async fn app_model_catalog_route_excludes_deprecated_hidden_and_unroutable_models() {
+    let mut catalog = catalog();
+    catalog.add_model(
+        AiModel::new("gpt-old", "GPT Old", "openai", vec!["chat"]).with_public_metadata(
+            sdkwork_claw_product::domain::AiModelPublicMetadata {
+                release_stage: Some(3),
+                shelf_state: Some(1),
+                routing_state: Some(1),
+                replacement_model: Some("openai/gpt-4o-mini".to_owned()),
+                ..Default::default()
+            },
+        ),
+    );
+    catalog.add_model(
+        AiModel::new("gpt-hidden", "GPT Hidden", "openai", vec!["chat"]).with_public_metadata(
+            sdkwork_claw_product::domain::AiModelPublicMetadata {
+                release_stage: Some(1),
+                shelf_state: Some(2),
+                routing_state: Some(1),
+                ..Default::default()
+            },
+        ),
+    );
+    catalog.add_model(
+        AiModel::new(
+            "gpt-catalog-only",
+            "GPT Catalog Only",
+            "openai",
+            vec!["chat"],
+        )
+        .with_public_metadata(sdkwork_claw_product::domain::AiModelPublicMetadata {
+            release_stage: Some(1),
+            shelf_state: Some(1),
+            routing_state: Some(0),
+            ..Default::default()
+        }),
+    );
+
+    let router = sdkwork_claw_product::api::app_model_catalog_router(Arc::new(catalog));
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("GET")
+                .uri("/app/v3/api/ai/models")
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    let body = axum::body::to_bytes(response.into_body(), usize::MAX)
+        .await
+        .unwrap();
+    let payload: serde_json::Value = serde_json::from_slice(&body).unwrap();
+    let catalog_keys = payload["data"]["items"]
+        .as_array()
+        .unwrap()
+        .iter()
+        .map(|item| item["catalogKey"].as_str().unwrap())
+        .collect::<Vec<_>>();
+
+    assert!(catalog_keys.contains(&"openai/gpt-4o-mini"));
+    assert!(!catalog_keys.contains(&"openai/gpt-old"));
+    assert!(!catalog_keys.contains(&"openai/gpt-hidden"));
+    assert!(!catalog_keys.contains(&"openai/gpt-catalog-only"));
 }
 
 #[tokio::test]
@@ -313,7 +392,10 @@ async fn app_model_catalog_route_returns_public_plus_result_without_secret_mater
     );
     assert_eq!("GPT-4o mini", payload["data"]["items"][0]["displayName"]);
     assert_eq!("openai", payload["data"]["items"][0]["vendorCode"]);
-    assert_eq!("global", payload["data"]["items"][0]["regionCode"]);
+    assert!(!payload["data"]["items"][0]
+        .as_object()
+        .unwrap()
+        .contains_key("regionCode"));
     assert_eq!("openai", payload["data"]["items"][0]["vendor"]);
     assert_eq!("chat", payload["data"]["items"][0]["capabilities"][0]);
     assert_eq!("tools", payload["data"]["items"][0]["capabilities"][1]);
@@ -347,20 +429,20 @@ async fn app_model_catalog_route_returns_public_plus_result_without_secret_mater
         "openrouter",
         payload["data"]["items"][0]["providerCodes"][0]
     );
-    assert_eq!(
-        "0.150000",
-        payload["data"]["items"][0]["officialReferenceUnitPrice"]
-    );
-    assert_eq!(
-        "USD",
-        payload["data"]["items"][0]["officialReferenceCurrency"]
-    );
+    assert!(!payload["data"]["items"][0]
+        .as_object()
+        .unwrap()
+        .contains_key("officialReferenceUnitPrice"));
+    assert!(!payload["data"]["items"][0]
+        .as_object()
+        .unwrap()
+        .contains_key("officialReferenceCurrency"));
     assert_eq!(
         "reference",
         payload["data"]["items"][0]["priceAvailability"]["status"]
     );
     assert_eq!(
-        3,
+        4,
         payload["data"]["items"][0]["officialReferencePrices"]
             .as_array()
             .unwrap()
@@ -368,18 +450,28 @@ async fn app_model_catalog_route_returns_public_plus_result_without_secret_mater
     );
     assert_model_catalog_price(
         &payload["data"]["items"][0],
+        "global",
         "llm_input_token",
         "0.150000",
         "USD",
     );
     assert_model_catalog_price(
         &payload["data"]["items"][0],
+        "cn",
+        "llm_input_token",
+        "1.200000",
+        "CNY",
+    );
+    assert_model_catalog_price(
+        &payload["data"]["items"][0],
+        "global",
         "llm_output_token",
         "0.600000",
         "USD",
     );
     assert_model_catalog_price(
         &payload["data"]["items"][0],
+        "global",
         "llm_cache_read_token",
         "0.075000",
         "USD",
@@ -433,10 +525,11 @@ async fn app_model_catalog_route_returns_complete_public_reference_prices_in_one
     let item = &payload["data"]["items"][0];
 
     assert_eq!("openai/gpt-4o-mini", item["catalogKey"]);
-    assert_eq!(3, item["officialReferencePrices"].as_array().unwrap().len());
-    assert_model_catalog_price(item, "llm_input_token", "0.150000", "USD");
-    assert_model_catalog_price(item, "llm_output_token", "0.600000", "USD");
-    assert_model_catalog_price(item, "llm_cache_read_token", "0.075000", "USD");
+    assert_eq!(4, item["officialReferencePrices"].as_array().unwrap().len());
+    assert_model_catalog_price(item, "global", "llm_input_token", "0.150000", "USD");
+    assert_model_catalog_price(item, "cn", "llm_input_token", "1.200000", "CNY");
+    assert_model_catalog_price(item, "global", "llm_output_token", "0.600000", "USD");
+    assert_model_catalog_price(item, "global", "llm_cache_read_token", "0.075000", "USD");
     assert_no_model_catalog_price(item, "llm_reasoning_token");
     assert_eq!("reference", item["priceAvailability"]["status"]);
     assert!(!body_text.contains("0.110000"));
@@ -466,9 +559,12 @@ async fn app_model_catalog_route_marks_non_default_meter_reference_prices_availa
     let payload: serde_json::Value = serde_json::from_slice(&body).unwrap();
     let item = &payload["data"]["items"][0];
 
-    assert_eq!("kuaishou/cn/kling-v2", item["catalogKey"]);
-    assert!(item["officialReferenceUnitPrice"].is_null());
-    assert_model_catalog_price(item, "video_result", "1.200000", "CNY");
+    assert_eq!("kuaishou/kling-v2", item["catalogKey"]);
+    assert!(!item
+        .as_object()
+        .unwrap()
+        .contains_key("officialReferenceUnitPrice"));
+    assert_model_catalog_price(item, "global", "video_result", "1.200000", "CNY");
     assert_eq!("reference", item["priceAvailability"]["status"]);
     assert_eq!(
         "Public reference price only. Customer-specific pricing requires an API key context.",
@@ -506,7 +602,10 @@ async fn app_model_catalog_route_keeps_unpriced_models_explicitly_unavailable() 
         "Public reference price is not configured for this model.",
         claude["priceAvailability"]["reason"]
     );
-    assert!(claude["officialReferenceUnitPrice"].is_null());
+    assert!(!claude
+        .as_object()
+        .unwrap()
+        .contains_key("officialReferenceUnitPrice"));
     assert!(!claude
         .as_object()
         .unwrap()
@@ -641,6 +740,7 @@ async fn app_model_catalog_route_rejects_non_standard_query_parameters() {
 
 fn assert_model_catalog_price(
     item: &serde_json::Value,
+    region_code: &str,
     billing_meter: &str,
     unit_price: &str,
     currency: &str,
@@ -648,9 +748,12 @@ fn assert_model_catalog_price(
     let prices = item["officialReferencePrices"].as_array().unwrap();
     let price = prices
         .iter()
-        .find(|price| price["billingMeter"] == billing_meter)
-        .unwrap_or_else(|| panic!("missing official reference price for {billing_meter}"));
+        .find(|price| price["regionCode"] == region_code && price["billingMeter"] == billing_meter)
+        .unwrap_or_else(|| {
+            panic!("missing official reference price for {region_code}/{billing_meter}")
+        });
 
+    assert_eq!(region_code, price["regionCode"]);
     assert_eq!(unit_price, price["unitPrice"]);
     assert_eq!(currency, price["currency"]);
 }

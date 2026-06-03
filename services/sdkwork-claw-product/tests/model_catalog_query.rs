@@ -156,15 +156,9 @@ fn lists_models_with_customer_price_provider_count_and_vendor_filter() {
     assert_eq!("openai/gpt-4o-mini", item.catalog_key);
     assert_eq!("GPT-4o mini", item.display_name);
     assert_eq!("openai", item.vendor_code);
-    assert_eq!("global", item.region_code);
     assert_eq!(ModelVendor::OpenAi, item.vendor);
     assert_eq!(vec!["chat", "tools", "json_schema"], item.capabilities);
     assert_eq!(vec!["azure_openai", "openrouter"], item.provider_codes);
-    assert_eq!(
-        "0.150000",
-        item.official_reference_unit_price.as_deref().unwrap()
-    );
-    assert_eq!("USD", item.official_reference_currency.as_deref().unwrap());
     assert_eq!(
         "0.110000",
         item.lowest_upstream_cost_unit_price.as_deref().unwrap()
@@ -201,6 +195,7 @@ fn assert_reference_price(
 
     assert_eq!(unit_price, price.unit_price);
     assert_eq!(currency, price.currency);
+    assert_eq!("global", price.region_code);
 }
 
 #[test]

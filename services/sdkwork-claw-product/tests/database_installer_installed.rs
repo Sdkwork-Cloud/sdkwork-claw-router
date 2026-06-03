@@ -335,6 +335,32 @@ async fn sqlite_installer_imports_bundled_ai_routing_seed_catalog() {
         "OpenAI Codex API group must include every bundled Codex API resource"
     );
 
+    let default_channel_credential_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM ai_channel c
+        JOIN ai_channel_credential cc
+          ON cc.channel_id = c.id
+         AND cc.tenant_id = c.tenant_id
+         AND cc.organization_id = c.organization_id
+         AND cc.status = 1
+         AND cc.deleted_at IS NULL
+        WHERE c.tenant_id = 10
+          AND c.organization_id = 20
+          AND c.channel_code = 'openai-default'
+          AND c.deleted_at IS NULL
+          AND NULLIF(cc.base_url, '') IS NOT NULL
+          AND NULLIF(cc.credential_ref, '') IS NOT NULL
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(
+        1, default_channel_credential_count,
+        "default admin OpenAI channel seed must install an active credential row for runtime routing"
+    );
+
     let all_api_group = sqlx::query(
         r#"
         SELECT id, selection_mode
@@ -652,7 +678,7 @@ fn installer(pool: SqlitePool) -> DatabaseInstaller {
 }
 
 async fn assert_catalog_rows(pool: &SqlitePool, catalog: &sdkwork_models::ModelCatalog) {
-    let expected_model_keys = catalog_model_keys(catalog);
+    let expected_active_model_keys = catalog_public_model_keys(catalog);
     let expected_price_keys = catalog_price_keys(catalog);
     let expected_ranking_keys = catalog_ranking_keys(catalog);
 
@@ -703,13 +729,67 @@ async fn assert_catalog_rows(pool: &SqlitePool, catalog: &sdkwork_models::ModelC
 
     assert_eq!(catalog_vendor_codes(catalog).len() as i64, vendor_count);
     assert_eq!(catalog_family_keys(catalog).len() as i64, family_count);
-    assert_eq!(expected_model_keys.len() as i64, model_count);
+    assert_eq!(expected_active_model_keys.len() as i64, model_count);
     assert_eq!(catalog.meters.len() as i64, meter_count);
     assert!(
         pricing_count >= expected_price_keys.len() as i64,
         "ai_model_pricing may expand catalog price entries into runtime-specific rows, but it must contain every catalog price key"
     );
     assert_eq!(expected_ranking_keys.len() as i64, ranking_count);
+
+    let actual_vendor_capabilities = sqlx::query(
+        r#"
+        SELECT vendor_code, supported_protocols, client_api_compatibility
+        FROM ai_model_vendor
+        WHERE status = 1
+        "#,
+    )
+    .fetch_all(pool)
+    .await
+    .unwrap()
+    .into_iter()
+    .map(|row| {
+        (
+            row.get::<String, _>("vendor_code"),
+            (
+                row.get::<Option<String>, _>("supported_protocols")
+                    .unwrap_or_default(),
+                row.get::<Option<String>, _>("client_api_compatibility")
+                    .unwrap_or_default(),
+            ),
+        )
+    })
+    .collect::<BTreeMap<_, _>>();
+
+    for vendor in &catalog.vendors {
+        let (supported_protocols, client_api_compatibility) = actual_vendor_capabilities
+            .get(&vendor.vendor.vendor_code)
+            .unwrap_or_else(|| {
+                panic!(
+                    "{} vendor metadata must be imported",
+                    vendor.vendor.vendor_code
+                )
+            });
+        let supported_protocols: Vec<String> = serde_json::from_str(supported_protocols)
+            .expect("ai_model_vendor.supported_protocols must be a JSON string array");
+        for expected in &vendor.vendor.supported_protocols {
+            assert!(
+                supported_protocols.contains(expected),
+                "{} supported_protocols must include {expected}",
+                vendor.vendor.vendor_code
+            );
+        }
+        let client_api_compatibility: serde_json::Value =
+            serde_json::from_str(client_api_compatibility)
+                .expect("ai_model_vendor.client_api_compatibility must be JSON");
+        for client_api_code in ["codex", "claude_code", "gemini_cli"] {
+            assert!(
+                client_api_compatibility.get(client_api_code).is_some(),
+                "{} client_api_compatibility must include {client_api_code}",
+                vendor.vendor.vendor_code
+            );
+        }
+    }
 
     let actual_model_capabilities = sqlx::query(
         r#"
@@ -733,6 +813,9 @@ async fn assert_catalog_rows(pool: &SqlitePool, catalog: &sdkwork_models::ModelC
 
     for vendor in &catalog.vendors {
         for model in &vendor.models {
+            if !catalog_model_is_publicly_active(model) {
+                continue;
+            }
             let catalog_key = catalog_model_key(&vendor.vendor.vendor_code, &model.model_id);
             let capabilities = actual_model_capabilities
                 .get(&catalog_key)
@@ -824,7 +907,7 @@ fn bundled_catalog() -> sdkwork_models::ModelCatalog {
     sdkwork_models::load_bundled_catalog().unwrap()
 }
 
-fn catalog_model_keys(catalog: &sdkwork_models::ModelCatalog) -> Vec<String> {
+fn catalog_public_model_keys(catalog: &sdkwork_models::ModelCatalog) -> Vec<String> {
     let mut catalog_keys = catalog
         .vendors
         .iter()
@@ -832,6 +915,7 @@ fn catalog_model_keys(catalog: &sdkwork_models::ModelCatalog) -> Vec<String> {
             vendor
                 .models
                 .iter()
+                .filter(|model| catalog_model_is_publicly_active(model))
                 .map(|model| catalog_model_key(&vendor.vendor.vendor_code, &model.model_id))
         })
         .collect::<Vec<_>>();
@@ -842,6 +926,16 @@ fn catalog_model_keys(catalog: &sdkwork_models::ModelCatalog) -> Vec<String> {
 
 fn catalog_model_key(vendor_code: &str, model_id: &str) -> String {
     format!("{vendor_code}/{model_id}")
+}
+
+fn catalog_model_is_publicly_active(model: &sdkwork_models::ModelInfo) -> bool {
+    matches!(model.release_stage.as_str(), "active" | "preview")
+        && model.shelf_state == "listed"
+        && model.routing_state == "enabled"
+        && !matches!(
+            model.lifecycle.as_str(),
+            "deprecated" | "catalog_only" | "retired"
+        )
 }
 
 fn catalog_family_keys(catalog: &sdkwork_models::ModelCatalog) -> BTreeSet<String> {
@@ -874,23 +968,29 @@ struct CatalogPriceKey {
 }
 
 fn catalog_price_keys(catalog: &sdkwork_models::ModelCatalog) -> BTreeSet<CatalogPriceKey> {
+    let public_model_keys = catalog_public_model_keys(catalog)
+        .into_iter()
+        .collect::<BTreeSet<_>>();
     catalog
         .vendors
         .iter()
         .flat_map(|vendor| vendor.pricing.iter().map(move |pricing| (vendor, pricing)))
-        .flat_map(|(vendor, pricing)| {
-            let catalog_key = sdkwork_models::catalog_key(
-                &vendor.vendor.vendor_code,
-                &vendor.vendor.region_code,
-                &pricing.model_id,
-            );
-            pricing.prices.iter().map(move |price| CatalogPriceKey {
+        .filter_map(|(vendor, pricing)| {
+            let catalog_key =
+                sdkwork_models::catalog_key(&vendor.vendor.vendor_code, &pricing.model_id);
+            let model_catalog_key =
+                catalog_model_key(&vendor.vendor.vendor_code, &pricing.model_id);
+            if !public_model_keys.contains(&model_catalog_key) {
+                return None;
+            }
+            Some(pricing.prices.iter().map(move |price| CatalogPriceKey {
                 catalog_key: catalog_key.clone(),
                 meter_code: price.meter_code.clone(),
                 price_side: catalog_price_side_code(&price.price_side),
                 pricing_scope: catalog_pricing_scope_code(price.pricing_scope.as_deref()),
-            })
+            }))
         })
+        .flatten()
         .collect()
 }
 
@@ -921,7 +1021,7 @@ struct CatalogRankingKey {
 }
 
 fn catalog_ranking_keys(catalog: &sdkwork_models::ModelCatalog) -> BTreeSet<CatalogRankingKey> {
-    let model_catalog_keys = catalog_model_keys(catalog)
+    let model_catalog_keys = catalog_public_model_keys(catalog)
         .into_iter()
         .collect::<BTreeSet<_>>();
     catalog
@@ -936,11 +1036,8 @@ fn catalog_ranking_keys(catalog: &sdkwork_models::ModelCatalog) -> BTreeSet<Cata
         .flat_map(|(vendor, snapshot)| {
             let model_catalog_keys = model_catalog_keys.clone();
             snapshot.items.iter().filter_map(move |item| {
-                let catalog_key = sdkwork_models::catalog_key(
-                    &vendor.vendor.vendor_code,
-                    &vendor.vendor.region_code,
-                    &item.model_id,
-                );
+                let catalog_key =
+                    sdkwork_models::catalog_key(&vendor.vendor.vendor_code, &item.model_id);
                 let model_catalog_key =
                     catalog_model_key(&vendor.vendor.vendor_code, &item.model_id);
                 if model_catalog_keys.contains(&model_catalog_key) {

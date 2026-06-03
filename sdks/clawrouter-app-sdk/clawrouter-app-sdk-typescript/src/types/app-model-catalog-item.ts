@@ -31,20 +31,14 @@ export interface AppModelCatalogItem {
   modalities: string[];
   /** Model field on app model catalog item. */
   model: string;
-  /** Official reference currency field on app model catalog item. */
-  officialReferenceCurrency?: string | null;
-  /** Complete public official reference prices keyed by billing meter. Customer, upstream, provider, and channel prices are never exposed here. */
+  /** Complete public official reference prices keyed by regionCode and billing meter. Customer, upstream, provider, and channel prices are never exposed here. */
   officialReferencePrices: AppModelCatalogReferencePrice[];
-  /** Official reference unit price field on app model catalog item. */
-  officialReferenceUnitPrice?: string | null;
   /** Output modalities field on app model catalog item. */
   outputModalities: string[];
   /** Price availability field on app model catalog item. */
   priceAvailability: AppModelCatalogPriceAvailability;
   /** Provider codes field on app model catalog item. */
   providerCodes: string[];
-  /** Region code field on app model catalog item. */
-  regionCode: string;
   /** Release stage field on app model catalog item. */
   releaseStage: number | null;
   /** Replacement model field on app model catalog item. */

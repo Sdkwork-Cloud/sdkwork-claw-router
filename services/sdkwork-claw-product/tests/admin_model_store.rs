@@ -3,8 +3,11 @@ use sdkwork_claw_product::infrastructure::sql::installer::{
 };
 use sdkwork_claw_product::infrastructure::sql::sqlite::SqliteAdminModelStore;
 use sdkwork_claw_product::ports::{
-    AdminAiModelRegionPriceCommand, AdminModelStore, AdminModelSubject, CreateAdminAiModelCommand,
-    ListAdminAiModelsQuery, SyncAdminModelCatalogCommand, UpdateAdminAiModelCommand,
+    AdminAiModelRegionPriceCommand, AdminModelMappingRuleBindingDraft, AdminModelMappingRuleDraft,
+    AdminModelMappingRuleItemDraft, AdminModelMappingRulePatch, AdminModelStore, AdminModelSubject,
+    CreateAdminAiModelCommand, CreateAdminModelMappingCommand, ListAdminAiModelsQuery,
+    ListAdminModelMappingsQuery, ListAdminModelVendorsQuery, ResolveAdminModelMappingQuery,
+    SyncAdminModelCatalogCommand, UpdateAdminAiModelCommand, UpdateAdminModelMappingCommand,
 };
 use sqlx::sqlite::SqlitePoolOptions;
 use sqlx::Row;
@@ -36,21 +39,12 @@ async fn sqlite_admin_model_store_creates_region_pricing_catalog_rows() {
         .create_model(CreateAdminAiModelCommand {
             subject,
             model_uuid: "model-region-price-test".to_owned(),
-            input_pricing_uuid: "pricing-region-input-test".to_owned(),
-            output_pricing_uuid: "pricing-region-output-test".to_owned(),
-            cache_read_pricing_uuid: "pricing-region-cache-read-test".to_owned(),
-            cache_write_pricing_uuid: "pricing-region-cache-write-test".to_owned(),
             capability_uuid: "capability-region-price-test".to_owned(),
             audit_log_uuid: "audit-region-price-test".to_owned(),
             vendor_id: vendor_id.to_string(),
             model: "admin-region-model".to_owned(),
             display_name: "admin-region-model".to_owned(),
             model_type: "Chat".to_owned(),
-            price_in: "0.120000".to_owned(),
-            price_out: "0.450000".to_owned(),
-            cache_read_price: None,
-            cache_write_price: None,
-            region_code: "global".to_owned(),
             region_prices: vec![
                 AdminAiModelRegionPriceCommand {
                     region_code: "cn".to_owned(),
@@ -93,8 +87,7 @@ async fn sqlite_admin_model_store_creates_region_pricing_catalog_rows() {
         .unwrap();
 
     assert_eq!("admin-region-model", item.name);
-    assert_eq!(0.18, decimal_value(&item.price_in));
-    assert_eq!(0.56, decimal_value(&item.price_out));
+    assert_admin_region_model_prices(&item.region_prices);
 
     let model_row = sqlx::query(
         r#"
@@ -169,6 +162,50 @@ async fn sqlite_admin_model_store_creates_region_pricing_catalog_rows() {
     assert!(pricing.iter().any(|(_, region, meter, price)| {
         region == "cn" && meter == "llm_cache_read_token" && *price == 0.04
     }));
+
+    let models = store
+        .list_models(ListAdminAiModelsQuery { subject })
+        .await
+        .unwrap();
+    let listed = models
+        .iter()
+        .find(|model| model.model == "admin-region-model")
+        .expect("created regional model should be listed");
+    assert_admin_region_model_prices(&listed.region_prices);
+}
+
+#[tokio::test]
+async fn sqlite_admin_model_store_lists_catalog_region_prices_for_dual_region_vendors() {
+    let pool = SqlitePoolOptions::new()
+        .max_connections(1)
+        .connect("sqlite::memory:")
+        .await
+        .unwrap();
+    install_admin_model_catalog(&pool, &["deepseek", "minimax", "moonshot"]).await;
+
+    let models = SqliteAdminModelStore::new(pool.clone())
+        .list_models(ListAdminAiModelsQuery {
+            subject: AdminModelSubject {
+                tenant_id: 0,
+                organization_id: 0,
+                operator_id: 99,
+                operator_type: 1,
+            },
+        })
+        .await
+        .unwrap();
+
+    for (vendor_code, model_name) in [
+        ("deepseek", "deepseek-v4-pro"),
+        ("minimax", "MiniMax-M2.7"),
+        ("moonshot", "kimi-k2.6"),
+    ] {
+        let model = models
+            .iter()
+            .find(|item| item.vendor_code == vendor_code && item.model == model_name)
+            .unwrap_or_else(|| panic!("{vendor_code}/{model_name} should be listed"));
+        assert_model_region_codes(&model.region_prices, &["cn", "global"]);
+    }
 }
 
 #[tokio::test]
@@ -184,6 +221,8 @@ async fn sqlite_admin_model_store_updates_installed_model_graph() {
         .await
         .unwrap();
 
+    let pricing_before = active_model_pricing_snapshot(&pool, model_id).await;
+
     let item = SqliteAdminModelStore::new(pool.clone())
         .update_model(UpdateAdminAiModelCommand {
             subject: AdminModelSubject {
@@ -193,21 +232,12 @@ async fn sqlite_admin_model_store_updates_installed_model_graph() {
                 operator_type: 1,
             },
             capability_uuid: "capability-update-test".to_owned(),
-            input_pricing_uuid: "pricing-update-input-test".to_owned(),
-            output_pricing_uuid: "pricing-update-output-test".to_owned(),
-            cache_read_pricing_uuid: "pricing-update-cache-read-test".to_owned(),
-            cache_write_pricing_uuid: "pricing-update-cache-write-test".to_owned(),
             audit_log_uuid: "audit-update-model-test".to_owned(),
             model_id: model_id.to_string(),
             vendor_id: None,
             model: Some("gpt-image-commercial-edit".to_owned()),
             display_name: None,
             model_type: Some("Image".to_owned()),
-            price_in: Some("0.111000".to_owned()),
-            price_out: Some("0.222000".to_owned()),
-            cache_read_price: None,
-            cache_write_price: None,
-            region_code: None,
             region_prices: None,
             status: Some("inactive".to_owned()),
             description: Some(Some("Updated commercial image model".to_owned())),
@@ -324,14 +354,14 @@ async fn sqlite_admin_model_store_updates_installed_model_graph() {
 
     let pricing_rows = sqlx::query(
         r#"
-        SELECT billing_meter_code, CAST(unit_price AS TEXT) AS unit_price
+        SELECT region_code, billing_meter_code, CAST(unit_price AS TEXT) AS unit_price
         FROM ai_model_pricing
         WHERE model_id = ?
           AND price_side = 1
           AND pricing_scope = 1
           AND status = 1
           AND deleted_at IS NULL
-        ORDER BY priority ASC, id ASC
+        ORDER BY region_code ASC, priority ASC, id ASC
         "#,
     )
     .bind(model_id)
@@ -342,33 +372,15 @@ async fn sqlite_admin_model_store_updates_installed_model_graph() {
         .iter()
         .map(|row| {
             (
+                row.get::<String, _>("region_code"),
                 row.get::<String, _>("billing_meter_code"),
-                row.get::<String, _>("unit_price").parse::<f64>().unwrap(),
+                row.get::<String, _>("unit_price"),
             )
         })
         .collect::<Vec<_>>();
     assert_eq!(
-        3,
-        pricing_pairs.len(),
-        "model update must preserve additional official multimodal price rows"
-    );
-    assert!(
-        pricing_pairs
-            .iter()
-            .any(|(meter, price)| meter == "image_input_token" && *price == 0.111),
-        "representative input price must be updated"
-    );
-    assert!(
-        pricing_pairs
-            .iter()
-            .any(|(meter, price)| meter == "image_input_token" && *price == 7.0),
-        "secondary image input price must remain available"
-    );
-    assert!(
-        pricing_pairs
-            .iter()
-            .any(|(meter, price)| meter == "image_output_token" && *price == 0.222),
-        "representative output price must be updated"
+        pricing_before, pricing_pairs,
+        "model metadata updates without regionPrices must not mutate regional pricing"
     );
 
     let audit_count: i64 = sqlx::query_scalar(
@@ -389,7 +401,7 @@ async fn sqlite_admin_model_store_updates_installed_model_graph() {
 }
 
 #[tokio::test]
-async fn sqlite_admin_model_store_updates_preserves_and_clears_cache_prices() {
+async fn sqlite_admin_model_store_replaces_region_prices_when_explicit() {
     let pool = SqlitePoolOptions::new()
         .max_connections(1)
         .connect("sqlite::memory:")
@@ -409,64 +421,23 @@ async fn sqlite_admin_model_store_updates_preserves_and_clears_cache_prices() {
         operator_type: 1,
     };
 
-    let cache_price_rows = sqlx::query(
-        r#"
-        SELECT billing_meter_code, CAST(unit_price AS TEXT) AS unit_price
-        FROM ai_model_pricing
-        WHERE model_id = ?
-          AND price_side = 1
-          AND billing_meter_code IN ('llm_cache_read_token', 'llm_cache_write_token')
-          AND status = 1
-          AND deleted_at IS NULL
-        ORDER BY billing_meter_code ASC
-        "#,
-    )
-    .bind(model_id)
-    .fetch_all(&pool)
-    .await
-    .unwrap();
-    let cache_price_pairs = cache_price_rows
-        .iter()
-        .map(|row| {
-            (
-                row.get::<String, _>("billing_meter_code"),
-                row.get::<String, _>("unit_price"),
-            )
-        })
-        .collect::<Vec<_>>();
-    let initial_cache_read_price = cache_price_pairs
-        .iter()
-        .find_map(|(meter, price)| (meter == "llm_cache_read_token").then(|| decimal_value(price)))
-        .unwrap_or_else(|| {
-            panic!("installed cache read pricing row must exist: {cache_price_pairs:?}")
-        });
-    let initial_cache_write_price = cache_price_pairs
-        .iter()
-        .find_map(|(meter, price)| (meter == "llm_cache_write_token").then(|| decimal_value(price)))
-        .unwrap_or_else(|| {
-            panic!("installed cache write pricing row must exist: {cache_price_pairs:?}")
-        });
-
     let updated = store
         .update_model(UpdateAdminAiModelCommand {
             subject,
             capability_uuid: "capability-cache-preserve-test".to_owned(),
-            input_pricing_uuid: "pricing-cache-preserve-input-test".to_owned(),
-            output_pricing_uuid: "pricing-cache-preserve-output-test".to_owned(),
-            cache_read_pricing_uuid: "pricing-cache-preserve-read-test".to_owned(),
-            cache_write_pricing_uuid: "pricing-cache-preserve-write-test".to_owned(),
             audit_log_uuid: "audit-cache-preserve-model-test".to_owned(),
             model_id: model_id.to_string(),
             vendor_id: None,
             model: Some("MiniMax-M2.7-commercial".to_owned()),
             display_name: None,
             model_type: Some("Chat".to_owned()),
-            price_in: Some("0.333333".to_owned()),
-            price_out: Some("1.444444".to_owned()),
-            cache_read_price: None,
-            cache_write_price: None,
-            region_code: None,
-            region_prices: None,
+            region_prices: Some(vec![AdminAiModelRegionPriceCommand {
+                region_code: "global".to_owned(),
+                price_in: "0.333333".to_owned(),
+                price_out: "1.444444".to_owned(),
+                cache_read_price: Some("0.111111".to_owned()),
+                cache_write_price: Some("0.222222".to_owned()),
+            }]),
             status: Some("active".to_owned()),
             description: None,
             modalities: Some(vec!["text".to_owned()]),
@@ -494,34 +465,42 @@ async fn sqlite_admin_model_store_updates_preserves_and_clears_cache_prices() {
         .unwrap();
 
     assert_eq!(
-        initial_cache_read_price,
-        decimal_value(&updated.cache_read_price)
-    );
-    assert_eq!(
-        initial_cache_write_price,
-        decimal_value(&updated.cache_write_price)
+        vec![AdminAiModelRegionPriceCommand {
+            region_code: "global".to_owned(),
+            price_in: "0.333333".to_owned(),
+            price_out: "1.444444".to_owned(),
+            cache_read_price: Some("0.111111".to_owned()),
+            cache_write_price: Some("0.222222".to_owned()),
+        }],
+        updated.region_prices
     );
 
-    let cleared = store
+    let replaced = store
         .update_model(UpdateAdminAiModelCommand {
             subject,
             capability_uuid: "capability-cache-clear-test".to_owned(),
-            input_pricing_uuid: "pricing-cache-clear-input-test".to_owned(),
-            output_pricing_uuid: "pricing-cache-clear-output-test".to_owned(),
-            cache_read_pricing_uuid: "pricing-cache-clear-read-test".to_owned(),
-            cache_write_pricing_uuid: "pricing-cache-clear-write-test".to_owned(),
             audit_log_uuid: "audit-cache-clear-model-test".to_owned(),
             model_id: model_id.to_string(),
             vendor_id: None,
             model: None,
             display_name: None,
             model_type: None,
-            price_in: None,
-            price_out: None,
-            cache_read_price: Some(None),
-            cache_write_price: Some(Some("".to_owned())),
-            region_code: None,
-            region_prices: None,
+            region_prices: Some(vec![
+                AdminAiModelRegionPriceCommand {
+                    region_code: "cn".to_owned(),
+                    price_in: "0.444444".to_owned(),
+                    price_out: "1.555555".to_owned(),
+                    cache_read_price: None,
+                    cache_write_price: None,
+                },
+                AdminAiModelRegionPriceCommand {
+                    region_code: "global".to_owned(),
+                    price_in: "0.555555".to_owned(),
+                    price_out: "1.666666".to_owned(),
+                    cache_read_price: None,
+                    cache_write_price: None,
+                },
+            ]),
             status: None,
             description: None,
             modalities: None,
@@ -548,8 +527,25 @@ async fn sqlite_admin_model_store_updates_preserves_and_clears_cache_prices() {
         .await
         .unwrap();
 
-    assert_eq!("", cleared.cache_read_price);
-    assert_eq!("", cleared.cache_write_price);
+    assert_eq!(
+        vec![
+            AdminAiModelRegionPriceCommand {
+                region_code: "cn".to_owned(),
+                price_in: "0.444444".to_owned(),
+                price_out: "1.555555".to_owned(),
+                cache_read_price: None,
+                cache_write_price: None,
+            },
+            AdminAiModelRegionPriceCommand {
+                region_code: "global".to_owned(),
+                price_in: "0.555555".to_owned(),
+                price_out: "1.666666".to_owned(),
+                cache_read_price: None,
+                cache_write_price: None,
+            },
+        ],
+        replaced.region_prices
+    );
 
     let active_cache_pricing_count: i64 = sqlx::query_scalar(
         r#"
@@ -567,6 +563,33 @@ async fn sqlite_admin_model_store_updates_preserves_and_clears_cache_prices() {
     .await
     .unwrap();
     assert_eq!(0, active_cache_pricing_count);
+
+    let active_pricing = active_model_pricing_snapshot(&pool, model_id).await;
+    assert_eq!(
+        vec![
+            (
+                "cn".to_owned(),
+                "llm_input_token".to_owned(),
+                "0.444444".to_owned()
+            ),
+            (
+                "cn".to_owned(),
+                "llm_output_token".to_owned(),
+                "1.555555".to_owned()
+            ),
+            (
+                "global".to_owned(),
+                "llm_input_token".to_owned(),
+                "0.555555".to_owned()
+            ),
+            (
+                "global".to_owned(),
+                "llm_output_token".to_owned(),
+                "1.666666".to_owned()
+            ),
+        ],
+        active_pricing
+    );
 }
 
 #[tokio::test]
@@ -746,6 +769,37 @@ async fn sqlite_admin_model_store_sync_catalog_reapplies_sdkwork_models_catalog(
         .models
         .iter()
         .any(|model| model.model == "qwen3.6-max-preview"));
+    let store = SqliteAdminModelStore::new(pool.clone());
+    let admin_subject = AdminModelSubject {
+        tenant_id: 0,
+        organization_id: 0,
+        operator_id: 99,
+        operator_type: 1,
+    };
+    let visible_vendors = store
+        .list_vendors(ListAdminModelVendorsQuery {
+            subject: admin_subject,
+        })
+        .await
+        .unwrap();
+    let visible_models = store
+        .list_models(ListAdminAiModelsQuery {
+            subject: admin_subject,
+        })
+        .await
+        .unwrap();
+    assert!(
+        visible_vendors
+            .iter()
+            .any(|vendor| vendor.vendor_code == "alibaba"),
+        "admin vendor list must include the synced sdkwork-models vendor"
+    );
+    assert!(
+        visible_models
+            .iter()
+            .any(|model| model.model == "qwen3.6-max-preview"),
+        "admin model list must include the synced sdkwork-models model"
+    );
     assert_eq!("official_refresh", synced.mode);
     assert!(!synced.dry_run);
     assert_eq!("2026.05.08.1", synced.catalog_version);
@@ -801,21 +855,38 @@ async fn sqlite_admin_model_store_sync_catalog_reapplies_sdkwork_models_catalog(
     .unwrap();
     let bundled_catalog = sdkwork_models::load_bundled_catalog().unwrap();
     let expected_meter_count = bundled_catalog.meters.len() as i64;
-    let vendor_catalog = bundled_catalog
+    let vendor_catalogs = bundled_catalog
         .vendors
         .into_iter()
-        .find(|vendor| vendor.vendor.vendor_code == "alibaba")
-        .expect("alibaba catalog exists");
-    let model_ids = vendor_catalog
-        .models
+        .filter(|vendor| vendor.vendor.vendor_code == "alibaba")
+        .collect::<Vec<_>>();
+    assert!(!vendor_catalogs.is_empty(), "alibaba catalog exists");
+    let model_ids = vendor_catalogs
         .iter()
+        .flat_map(|vendor| vendor.models.iter())
         .map(|model| model.model_id.clone())
         .collect::<BTreeSet<_>>();
-    let expected_family_count = vendor_catalog.families.len() as i64;
-    let expected_model_count = vendor_catalog.models.len() as i64;
-    let expected_capability_count = vendor_catalog
-        .models
+    let public_model_ids = vendor_catalogs
         .iter()
+        .flat_map(|vendor| vendor.models.iter())
+        .filter(|model| catalog_model_is_publicly_active(model))
+        .map(|model| model.model_id.clone())
+        .collect::<BTreeSet<_>>();
+    let expected_family_count = vendor_catalogs
+        .iter()
+        .flat_map(|vendor| {
+            vendor
+                .families
+                .iter()
+                .map(|family| family.family_code.clone())
+        })
+        .collect::<BTreeSet<_>>()
+        .len() as i64;
+    let expected_model_count = model_ids.len() as i64;
+    let expected_capability_count = vendor_catalogs
+        .iter()
+        .flat_map(|vendor| vendor.models.iter())
+        .filter(|model| catalog_model_is_publicly_active(model))
         .map(|model| {
             if model.capabilities.is_empty() {
                 1_i64
@@ -824,16 +895,17 @@ async fn sqlite_admin_model_store_sync_catalog_reapplies_sdkwork_models_catalog(
             }
         })
         .sum::<i64>();
-    let expected_price_count = vendor_catalog
-        .pricing
+    let expected_price_count = vendor_catalogs
         .iter()
+        .flat_map(|vendor| vendor.pricing.iter())
+        .filter(|pricing| public_model_ids.contains(&pricing.model_id))
         .map(|pricing| pricing.prices.len() as i64)
         .sum::<i64>();
-    let expected_ranking_count = vendor_catalog
-        .rankings
+    let expected_ranking_count = vendor_catalogs
         .iter()
+        .flat_map(|vendor| vendor.rankings.iter())
         .flat_map(|snapshot| snapshot.items.iter())
-        .filter(|item| model_ids.contains(&item.model_id))
+        .filter(|item| public_model_ids.contains(&item.model_id))
         .count() as i64;
     assert_eq!(1_i64, sync_run.get::<i64, _>("observed_vendor_count"));
     assert_eq!(
@@ -975,6 +1047,64 @@ async fn sqlite_admin_model_store_sync_catalog_reactivates_soft_deleted_catalog_
     assert_eq!(
         1, restored_count,
         "catalog source upsert must restore soft-deleted source observability rows"
+    );
+}
+
+#[tokio::test]
+async fn sqlite_admin_model_store_sync_catalog_source_uuid_is_tenant_scoped() {
+    let pool = SqlitePoolOptions::new()
+        .max_connections(1)
+        .connect("sqlite::memory:")
+        .await
+        .unwrap();
+    prepare_admin_model_schema(&pool).await;
+    let store = SqliteAdminModelStore::new(pool.clone());
+
+    for (tenant_id, organization_id, suffix) in [(0, 0, "system"), (10, 20, "tenant")] {
+        let synced = store
+            .sync_catalog(SyncAdminModelCatalogCommand {
+                subject: AdminModelSubject {
+                    tenant_id,
+                    organization_id,
+                    operator_id: 99,
+                    operator_type: 1,
+                },
+                snapshot_uuid: format!("sync-source-{suffix}"),
+                audit_log_uuid: format!("audit-sync-source-{suffix}"),
+                source: "sdkwork_models".to_owned(),
+                mode: "official_refresh".to_owned(),
+                vendor_codes: vec!["alibaba".to_owned()],
+                force: true,
+                catalog_root: None,
+                catalog_version: Some("2026.05.08.1".to_owned()),
+                request_id: format!("req-sync-source-{suffix}"),
+                requested_at: "2026-06-03T12:00:00Z".to_owned(),
+            })
+            .await
+            .unwrap();
+        assert!(synced.synced);
+    }
+
+    let source_rows = sqlx::query(
+        r#"
+        SELECT tenant_id, organization_id, uuid
+        FROM ai_model_catalog_source
+        WHERE source_code = 'sdkwork_models'
+        ORDER BY tenant_id, organization_id
+        "#,
+    )
+    .fetch_all(&pool)
+    .await
+    .unwrap();
+    assert_eq!(2, source_rows.len());
+    let uuids = source_rows
+        .iter()
+        .map(|row| row.get::<String, _>("uuid"))
+        .collect::<BTreeSet<_>>();
+    assert_eq!(
+        2,
+        uuids.len(),
+        "catalog source uuid must include tenant/org identity so admin sync is idempotent across scopes"
     );
 }
 
@@ -1336,6 +1466,187 @@ async fn sqlite_admin_model_store_sync_catalog_source_hash_is_content_stable() {
     );
 }
 
+#[tokio::test]
+async fn sqlite_admin_model_store_persists_mapping_rule_children_and_resolves_item() {
+    let pool = SqlitePoolOptions::new()
+        .max_connections(1)
+        .connect("sqlite::memory:")
+        .await
+        .unwrap();
+    prepare_admin_model_schema(&pool).await;
+    let store = SqliteAdminModelStore::new(pool.clone());
+    let subject = AdminModelSubject {
+        tenant_id: 0,
+        organization_id: 0,
+        operator_id: 99,
+        operator_type: 1,
+    };
+
+    let created = store
+        .create_model_mapping(CreateAdminModelMappingCommand {
+            subject,
+            mapping_uuid: "mapping-rule-aggregate".to_owned(),
+            binding_uuids: vec!["mapping-binding-global".to_owned()],
+            item_uuids: vec![
+                "mapping-item-gpt-4o".to_owned(),
+                "mapping-item-sonnet".to_owned(),
+            ],
+            audit_log_uuid: "audit-create-mapping-rule-aggregate".to_owned(),
+            draft: AdminModelMappingRuleDraft {
+                source_vendor_id: None,
+                source_vendor_code: "openai".to_owned(),
+                target_vendor_id: None,
+                target_vendor_code: "anthropic".to_owned(),
+                mapping_mode: "alias".to_owned(),
+                match_type: "exact".to_owned(),
+                enabled: true,
+                bindings: vec![AdminModelMappingRuleBindingDraft {
+                    id: None,
+                    binding_type: "global".to_owned(),
+                    binding_id: None,
+                    binding_code: None,
+                    binding_name: Some("All requests".to_owned()),
+                    enabled: true,
+                }],
+                mapping_items: vec![
+                    AdminModelMappingRuleItemDraft {
+                        id: None,
+                        source_model: "gpt-4o-mini".to_owned(),
+                        source_catalog_key: None,
+                        target_model: "claude-haiku".to_owned(),
+                        target_catalog_key: Some("anthropic/claude-haiku".to_owned()),
+                        target_provider_model: Some("claude-3-haiku".to_owned()),
+                        target_provider_native_model: Some("claude-3-haiku-native".to_owned()),
+                        enabled: Some(true),
+                    },
+                    AdminModelMappingRuleItemDraft {
+                        id: None,
+                        source_model: "sonnet-latest".to_owned(),
+                        source_catalog_key: None,
+                        target_model: "claude-sonnet".to_owned(),
+                        target_catalog_key: Some("anthropic/claude-sonnet".to_owned()),
+                        target_provider_model: None,
+                        target_provider_native_model: None,
+                        enabled: Some(true),
+                    },
+                ],
+            },
+            request_id: "req-create-mapping-rule-aggregate".to_owned(),
+            requested_at: "2026-06-02T10:00:00Z".to_owned(),
+        })
+        .await
+        .unwrap();
+
+    assert_eq!(1, created.bindings.len());
+    assert_eq!(2, created.mapping_items.len());
+    assert_eq!("global", created.binding_type);
+
+    let retained_item_id = created.mapping_items[0].id;
+    let updated = store
+        .update_model_mapping(UpdateAdminModelMappingCommand {
+            subject,
+            audit_log_uuid: "audit-update-mapping-rule-items".to_owned(),
+            mapping_id: created.id.to_string(),
+            binding_uuids: Vec::new(),
+            item_uuids: vec!["mapping-item-gpt-5".to_owned()],
+            patch: AdminModelMappingRulePatch {
+                mapping_items: Some(vec![
+                    AdminModelMappingRuleItemDraft {
+                        id: Some(retained_item_id),
+                        source_model: "gpt-4o-mini".to_owned(),
+                        source_catalog_key: None,
+                        target_model: "claude-haiku-v2".to_owned(),
+                        target_catalog_key: Some("anthropic/claude-haiku-v2".to_owned()),
+                        target_provider_model: Some("claude-3-5-haiku".to_owned()),
+                        target_provider_native_model: Some("claude-3-5-haiku-native".to_owned()),
+                        enabled: Some(true),
+                    },
+                    AdminModelMappingRuleItemDraft {
+                        id: None,
+                        source_model: "gpt-5-mini".to_owned(),
+                        source_catalog_key: None,
+                        target_model: "claude-sonnet-v2".to_owned(),
+                        target_catalog_key: Some("anthropic/claude-sonnet-v2".to_owned()),
+                        target_provider_model: None,
+                        target_provider_native_model: None,
+                        enabled: Some(true),
+                    },
+                ]),
+                ..AdminModelMappingRulePatch::default()
+            },
+            request_id: "req-update-mapping-rule-items".to_owned(),
+            requested_at: "2026-06-02T10:05:00Z".to_owned(),
+        })
+        .await
+        .unwrap();
+
+    assert_eq!(
+        1,
+        updated.bindings.len(),
+        "relation-only update must preserve existing associated content bindings"
+    );
+    assert_eq!(2, updated.mapping_items.len());
+    assert!(updated
+        .mapping_items
+        .iter()
+        .any(|item| item.source_model == "gpt-5-mini" && item.target_model == "claude-sonnet-v2"));
+    assert!(!updated
+        .mapping_items
+        .iter()
+        .any(|item| item.source_model == "sonnet-latest"));
+
+    let soft_deleted_old_item_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM ai_model_mapping_rule_item
+        WHERE rule_id = ?
+          AND source_model = 'sonnet-latest'
+          AND status = 0
+          AND deleted_at IS NOT NULL
+        "#,
+    )
+    .bind(created.id)
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(1, soft_deleted_old_item_count);
+
+    let listed = store
+        .list_model_mappings(ListAdminModelMappingsQuery {
+            subject,
+            binding_type: None,
+            vendor_code: None,
+            channel_id: None,
+            channel_code: None,
+            q: Some("gpt-5".to_owned()),
+        })
+        .await
+        .unwrap();
+    assert_eq!(1, listed.len());
+    assert_eq!(created.id, listed[0].id);
+
+    let resolved = store
+        .resolve_model_mapping(ResolveAdminModelMappingQuery {
+            subject,
+            source_model: "gpt-5-mini".to_owned(),
+            vendor_code: Some("openai".to_owned()),
+            channel_id: None,
+            channel_code: None,
+            provider_account_id: None,
+            provider_account_code: None,
+        })
+        .await
+        .unwrap();
+
+    assert!(resolved.matched);
+    assert_eq!("global", resolved.matched_binding_type.as_deref().unwrap());
+    assert_eq!("claude-sonnet-v2", resolved.target_model);
+    assert_eq!(
+        Some("anthropic/claude-sonnet-v2".to_owned()),
+        resolved.target_catalog_key
+    );
+}
+
 async fn create_admin_model_tables(pool: &sqlx::SqlitePool) {
     sqlx::query(
         r#"
@@ -1461,4 +1772,89 @@ fn decimal_value(value: &str) -> f64 {
     value
         .parse::<f64>()
         .unwrap_or_else(|error| panic!("invalid decimal value {value}: {error}"))
+}
+
+fn catalog_model_is_publicly_active(model: &sdkwork_models::ModelInfo) -> bool {
+    matches!(model.release_stage.as_str(), "active" | "preview")
+        && model.shelf_state == "listed"
+        && model.routing_state == "enabled"
+        && !matches!(
+            model.lifecycle.as_str(),
+            "deprecated" | "catalog_only" | "retired"
+        )
+}
+
+async fn active_model_pricing_snapshot(
+    pool: &sqlx::SqlitePool,
+    model_id: i64,
+) -> Vec<(String, String, String)> {
+    sqlx::query(
+        r#"
+        SELECT region_code, billing_meter_code, CAST(unit_price AS TEXT) AS unit_price
+        FROM ai_model_pricing
+        WHERE model_id = ?
+          AND price_side = 1
+          AND pricing_scope = 1
+          AND status = 1
+          AND deleted_at IS NULL
+        ORDER BY region_code ASC, priority ASC, id ASC
+        "#,
+    )
+    .bind(model_id)
+    .fetch_all(pool)
+    .await
+    .unwrap()
+    .into_iter()
+    .map(|row| {
+        (
+            row.get::<String, _>("region_code"),
+            row.get::<String, _>("billing_meter_code"),
+            row.get::<String, _>("unit_price"),
+        )
+    })
+    .collect()
+}
+
+fn assert_admin_region_model_prices(region_prices: &[AdminAiModelRegionPriceCommand]) {
+    assert_eq!(2, region_prices.len());
+    assert_eq!("cn", region_prices[0].region_code);
+    assert_eq!(0.18, decimal_value(&region_prices[0].price_in));
+    assert_eq!(0.56, decimal_value(&region_prices[0].price_out));
+    assert_eq!(
+        Some(0.04),
+        region_prices[0]
+            .cache_read_price
+            .as_deref()
+            .map(decimal_value)
+    );
+    assert_eq!(
+        Some(0.08),
+        region_prices[0]
+            .cache_write_price
+            .as_deref()
+            .map(decimal_value)
+    );
+    assert_eq!("global", region_prices[1].region_code);
+    assert_eq!(0.12, decimal_value(&region_prices[1].price_in));
+    assert_eq!(0.45, decimal_value(&region_prices[1].price_out));
+    assert_eq!(None, region_prices[1].cache_read_price);
+    assert_eq!(None, region_prices[1].cache_write_price);
+}
+
+fn assert_model_region_codes(
+    region_prices: &[AdminAiModelRegionPriceCommand],
+    expected_region_codes: &[&str],
+) {
+    let actual = region_prices
+        .iter()
+        .map(|price| price.region_code.as_str())
+        .collect::<Vec<_>>();
+    assert_eq!(expected_region_codes, actual.as_slice());
+    for region_price in region_prices {
+        assert!(
+            !region_price.price_in.is_empty() || !region_price.price_out.is_empty(),
+            "{} region price must include input or output price",
+            region_price.region_code
+        );
+    }
 }

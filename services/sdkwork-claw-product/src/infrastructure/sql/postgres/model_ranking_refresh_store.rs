@@ -269,6 +269,10 @@ async fn load_ranking_aggregates(
                 ) AS model_row_no
             FROM ai_model m
             WHERE m.status = 1
+              AND m.deleted_at IS NULL
+              AND COALESCE(m.release_stage, 1) IN (1, 2)
+              AND COALESCE(m.shelf_state, 1) = 1
+              AND COALESCE(m.routing_state, 1) = 1
               AND (
                   ($1 > 0 AND m.tenant_id = $1 AND m.organization_id = $2)
                   OR ($1 > 0 AND $2 > 0 AND m.tenant_id = $1 AND m.organization_id = 0)

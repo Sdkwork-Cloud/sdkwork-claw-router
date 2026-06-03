@@ -99,8 +99,8 @@ export function ClawRouterSiteSettingsPage() {
   }
 
   return (
-    <div className="flex min-h-0 w-full min-w-0 flex-col gap-3">
-      <div className="flex justify-end gap-3 border-b border-slate-200 pb-3 dark:border-white/10">
+    <div className="flex h-full min-h-0 w-full min-w-0 flex-col gap-3 overflow-hidden">
+      <div className="flex shrink-0 justify-end gap-3 border-b border-slate-200 pb-3 dark:border-white/10">
           <button
             className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition-colors hover:bg-slate-50 dark:border-white/10 dark:bg-white/5 dark:text-slate-200 dark:hover:bg-white/10"
             onClick={() => void loadSettings()}
@@ -121,16 +121,17 @@ export function ClawRouterSiteSettingsPage() {
       </div>
 
       {saveError ? (
-        <div className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700 dark:border-red-500/20 dark:bg-red-500/10 dark:text-red-300" role="alert">
+        <div className="shrink-0 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700 dark:border-red-500/20 dark:bg-red-500/10 dark:text-red-300" role="alert">
           {saveError}
         </div>
       ) : null}
       {saveSuccess ? (
-        <div className="rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-700 dark:border-emerald-500/20 dark:bg-emerald-500/10 dark:text-emerald-300" role="status">
+        <div className="shrink-0 rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-700 dark:border-emerald-500/20 dark:bg-emerald-500/10 dark:text-emerald-300" role="status">
           {saveSuccess}
         </div>
       ) : null}
 
+      <div className="min-h-0 flex-1 overflow-y-auto pr-1" data-admin-site-settings-scroll>
       <div className="grid min-h-0 grid-cols-1 gap-5 xl:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
         <section className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm dark:border-white/10 dark:bg-[#1a1a1a]">
           <SectionHeader icon={<Settings2 className="h-5 w-5 text-blue-500" />} title={t('admin.siteSettings.sections.identity')} />
@@ -187,6 +188,7 @@ export function ClawRouterSiteSettingsPage() {
             <TextField label={t('admin.siteSettings.fields.policeRecordUrl')} onChange={(value) => updateField('policeRecordUrl', value)} value={form.policeRecordUrl} />
           </div>
         </section>
+      </div>
       </div>
     </div>
   );

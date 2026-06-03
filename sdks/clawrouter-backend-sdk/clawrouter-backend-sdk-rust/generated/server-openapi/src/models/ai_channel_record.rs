@@ -167,6 +167,26 @@ pub struct AiChannelRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub rpm_limit: Option<String>,
 
+    /// Site channel role field on ai channel record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub site_channel_role: Option<String>,
+
+    /// Site code field on ai channel record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub site_code: Option<String>,
+
+    /// Site id field on ai channel record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub site_id: Option<String>,
+
+    /// Site service code field on ai channel record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub site_service_code: Option<String>,
+
+    /// Site service id field on ai channel record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub site_service_id: Option<String>,
+
     /// Status field on ai channel record.
     pub status: String,
 

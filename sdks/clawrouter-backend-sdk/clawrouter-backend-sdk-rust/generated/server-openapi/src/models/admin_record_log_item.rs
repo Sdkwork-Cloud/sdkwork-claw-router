@@ -80,6 +80,10 @@ pub struct AdminRecordLogItem {
     #[serde(rename = "reasoningEffort")]
     pub reasoning_effort: String,
 
+    /// Deployment region used by the selected endpoint and pricing resolver. This is not part of the model catalog identity.
+    #[serde(rename = "regionCode")]
+    pub region_code: String,
+
     /// Request id field on admin record log item.
     #[serde(rename = "requestId")]
     pub request_id: String,

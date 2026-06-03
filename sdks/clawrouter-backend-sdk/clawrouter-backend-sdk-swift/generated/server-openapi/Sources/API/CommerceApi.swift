@@ -77,6 +77,45 @@ public class CommerceApi {
         return try await client.patch(ApiPaths.backendPath("/catalog/categories/\(serializePathParameter(categoryId, PathParameterSpec(name: "categoryId", style: "simple", explode: false)))"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: CatalogCategoriesUpdateResult.self)
     }
 
+    /// List category attribute bindings
+    public func catalogCategoryAttributesList(categoryId: String? = nil, attributeId: String? = nil, status: String? = nil, page: Int? = nil, pageSize: Int? = nil) async throws -> CatalogCategoryAttributesListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "category_id", value: categoryId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "attribute_id", value: attributeId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/catalog/category_attributes"), query), responseType: CatalogCategoryAttributesListResult.self)
+    }
+
+    /// Create category attribute binding
+    public func catalogCategoryAttributesCreate(body: CommerceProductCategoryAttributeMutationRequest, idempotencyKey: String) async throws -> CatalogCategoryAttributesCreateResult? {
+        let requestHeaders = buildRequestHeaders(
+            [
+                "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
+            ],
+            [:]
+        )
+        return try await client.post(ApiPaths.backendPath("/catalog/category_attributes"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: CatalogCategoryAttributesCreateResult.self)
+    }
+
+    /// Delete category attribute binding
+    public func catalogCategoryAttributesDelete(bindingId: String) async throws -> CatalogCategoryAttributesDeleteResult? {
+        return try await client.delete(ApiPaths.backendPath("/catalog/category_attributes/\(serializePathParameter(bindingId, PathParameterSpec(name: "bindingId", style: "simple", explode: false)))"), responseType: CatalogCategoryAttributesDeleteResult.self)
+    }
+
+    /// Update category attribute binding
+    public func catalogCategoryAttributesUpdate(bindingId: String, body: CommerceProductCategoryAttributeMutationRequest, idempotencyKey: String) async throws -> CatalogCategoryAttributesUpdateResult? {
+        let requestHeaders = buildRequestHeaders(
+            [
+                "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
+            ],
+            [:]
+        )
+        return try await client.patch(ApiPaths.backendPath("/catalog/category_attributes/\(serializePathParameter(bindingId, PathParameterSpec(name: "bindingId", style: "simple", explode: false)))"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: CatalogCategoryAttributesUpdateResult.self)
+    }
+
     /// Initialize admin category seed datasets
     public func catalogCategorySeedsCreate(body: CommerceCategorySeedInitializeRequest, idempotencyKey: String) async throws -> CatalogCategorySeedsCreateResult? {
         let requestHeaders = buildRequestHeaders(
