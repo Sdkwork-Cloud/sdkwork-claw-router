@@ -1194,19 +1194,20 @@ test('installation documentation covers release, source, initialization, usage, 
   assert.ok(postgresqlDevelopment.includes('pnpm dev:postgres'));
   assert.ok(postgresqlDevelopment.includes('pnpm server:dev:postgres'));
   assert.ok(postgresqlDevelopment.includes('Default local PostgreSQL dev database'));
-  assert.ok(postgresqlDevelopment.includes('Workspace desktop commands (`pnpm desktop:dev` and `pnpm tauri:dev`) use the PostgreSQL integration profile.'));
+  assert.ok(postgresqlDevelopment.includes('Workspace desktop commands (`pnpm desktop:dev` and `pnpm tauri:dev`) start a desktop shell plus the product backend service.'));
+  assert.ok(postgresqlDevelopment.includes('That backend service uses the PostgreSQL integration profile.'));
   assert.ok(postgresqlDevelopment.includes('Desktop packages and desktop user data still use SQLite by default.'));
   assert.ok(postgresqlDevelopment.includes('~/.sdkwork/router/data/clawrouter.sqlite'));
   assert.ok(postgresqlIndex.includes('Desktop/runtime local user data remains SQLite by default.'));
-  assert.ok(postgresqlIndex.includes('Workspace desktop development commands use PostgreSQL for integration testing; packaged desktop runtime and user data remain SQLite.'));
-  assert.ok(postgresqlIndex.includes('desktop profile stores SQLite under `~/.sdkwork/router/data/clawrouter.sqlite`'));
+  assert.ok(postgresqlIndex.includes('Workspace desktop development commands use PostgreSQL for the backend service runtime; packaged desktop runtime and desktop-local user data remain SQLite.'));
+  assert.ok(postgresqlIndex.includes('desktop local data profile stores SQLite under `~/.sdkwork/router/data/clawrouter.sqlite`'));
   assert.ok(postgresqlProduction.includes('/etc/sdkwork/router/clawrouter.toml'));
   assert.ok(postgresqlProduction.includes('/etc/sdkwork/router/database.secret'));
   assert.ok(postgresqlProduction.includes('password_file = "/etc/sdkwork/router/database.secret"'));
   assert.ok(postgresqlProduction.includes('SDKWORK_CLAW_DATABASE_URL'));
   assert.ok(postgresqlProduction.includes('Desktop local runtime'));
   assert.ok(postgresqlProduction.includes('~/.sdkwork/router/data/clawrouter.sqlite'));
-  assert.ok(enRelease.includes('This desktop SQLite policy is independent from the workspace PostgreSQL development profile used by `pnpm dev`.'));
+  assert.ok(enRelease.includes('This desktop SQLite policy is independent from the workspace PostgreSQL development profile used by `pnpm dev`, `pnpm desktop:dev`, and `pnpm tauri:dev` for the backend service runtime.'));
 
   for (const relativePath of ['README.md', ...requiredDocs]) {
     assertMarkdownLocalLinksExist(relativePath);
@@ -1540,7 +1541,7 @@ test('claw router product launcher help distinguishes workspace PostgreSQL from 
   ], { cwd: workspaceRoot });
 
   assert.ok(stdout.includes('Database profiles:'));
-  assert.ok(stdout.includes('pnpm desktop:dev / pnpm tauri:dev use the PostgreSQL workspace integration profile.'));
+  assert.ok(stdout.includes('pnpm desktop:dev / pnpm tauri:dev use PostgreSQL for the backend service runtime.'));
   assert.ok(stdout.includes('Desktop packages and first-run local user data use SQLite under ~/.sdkwork/router/data.'));
   assert.ok(stdout.includes('Use pnpm desktop:dev:sqlite or pnpm tauri:dev:sqlite to validate desktop local data behavior.'));
 });
@@ -6821,9 +6822,23 @@ test('environment and deployment specs document Claw Router runtime config stand
   assert.ok(environmentSpec.includes('password_file = "/etc/sdkwork/router/redis.secret"'));
   assert.ok(environmentSpec.includes('Desktop deployments default to SQLite.'));
   assert.ok(environmentSpec.includes('Desktop/runtime local user data remains SQLite by default'));
-  assert.ok(environmentSpec.includes('`pnpm dev` may use PostgreSQL for integrated development, but desktop packages must not use PostgreSQL unless explicitly configured by the user.'));
+  assert.ok(environmentSpec.includes('Desktop/Tauri development commands that start backend services use the server PostgreSQL development profile by default'));
+  assert.ok(environmentSpec.includes('`pnpm dev`, `pnpm desktop:dev`, and `pnpm tauri:dev` may use PostgreSQL for'));
+  assert.ok(environmentSpec.includes('service runtime and must not be treated as the desktop-local data store.'));
+  assert.ok(environmentSpec.includes('Explicit SQLite development commands, such as `pnpm dev:sqlite` or'));
   assert.ok(deploymentSpec.includes('Redis is enabled and required by default for server and container deployments.'));
   assert.ok(deploymentSpec.includes('Desktop packages must keep local user data on SQLite by default.'));
+  assert.ok(deploymentSpec.includes('belongs to the launched backend'));
+  const desktopArchitectureSpec = readFileSync(path.join(specsRoot, 'DESKTOP_APP_ARCHITECTURE_SPEC.md'), 'utf8');
+  assert.ok(desktopArchitectureSpec.includes('Desktop local user data | SQLite'));
+  assert.ok(desktopArchitectureSpec.includes('Service/backend runtime started by desktop development commands | PostgreSQL'));
+  assert.ok(desktopArchitectureSpec.includes('Desktop/Tauri development commands that start the product service runtime'));
+  assert.ok(desktopArchitectureSpec.includes('MUST` use the server'));
+  const observabilitySpec = readFileSync(path.join(specsRoot, 'OBSERVABILITY_SPEC.md'), 'utf8');
+  assert.ok(observabilitySpec.includes('Metric naming:'));
+  assert.ok(observabilitySpec.includes('Labels `MUST` be low-cardinality and bounded.'));
+  assert.ok(observabilitySpec.includes('Desktop-started backend service metrics must use the backend service runtime'));
+  assert.ok(observabilitySpec.includes('Dashboard metric snapshots are rebuildable projections'));
   assert.ok(deploymentSpec.includes('clawrouterctl ensure'));
   assert.ok(deploymentSpec.includes('clawrouterctl refresh-catalog --force'));
 });

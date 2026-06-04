@@ -1,8 +1,8 @@
 # Development PostgreSQL Configuration
 
-This guide documents the local SDKWork Claw Router PostgreSQL development profile. `pnpm dev`, `pnpm server:dev`, and `pnpm tauri:dev` use PostgreSQL by default to exercise the server/runtime integration path. Desktop packages and desktop user data still use SQLite by default. The checked-in defaults match the SDKWork app stack local profile; `.env.postgres` remains available when a developer needs to override those fields without exporting environment variables.
+This guide documents the local SDKWork Claw Router PostgreSQL development profile. `pnpm dev`, `pnpm server:dev`, and `pnpm tauri:dev` use PostgreSQL by default for the backend service runtime. Desktop packages and desktop user data still use SQLite by default. The checked-in defaults match the SDKWork app stack local profile; `.env.postgres` remains available when a developer needs to override those fields without exporting environment variables.
 
-Workspace desktop commands (`pnpm desktop:dev` and `pnpm tauri:dev`) use the PostgreSQL integration profile. They are workspace development commands, not the packaged desktop local-data policy.
+Workspace desktop commands (`pnpm desktop:dev` and `pnpm tauri:dev`) start a desktop shell plus the product backend service. That backend service uses the PostgreSQL integration profile. This is not the packaged desktop local-data policy.
 
 Desktop SQLite defaults are unchanged by this profile:
 
@@ -68,7 +68,7 @@ Equivalent explicit server entrypoint:
 pnpm server:dev
 ```
 
-Tauri development uses the same workspace PostgreSQL profile by default:
+Tauri development starts the desktop shell and the backend service. The backend service uses the same workspace PostgreSQL profile by default:
 
 ```powershell
 pnpm tauri:dev

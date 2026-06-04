@@ -381,7 +381,7 @@ Linux: ~/.sdkwork/router/data/clawrouter.sqlite
 macOS: ~/.sdkwork/router/data/clawrouter.sqlite
 ```
 
-Desktop SQLite policy is independent from the workspace PostgreSQL development profile used by `pnpm dev`.
+Desktop SQLite 策略独立于 `pnpm dev`、`pnpm desktop:dev` 和 `pnpm tauri:dev` 为后端服务运行时使用的 workspace PostgreSQL 开发配置。
 
 `archive`、`service`、`container` 包默认使用 PostgreSQL。请在 TOML 中配置 `host`、`port`、`database`、`username`，并使用 `password_file` 或受保护的 `password`。生产环境优先使用 `password_file`。
 

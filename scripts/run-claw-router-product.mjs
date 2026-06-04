@@ -308,7 +308,7 @@ Options:
 
 Database profiles:
   pnpm dev / pnpm server:dev use the PostgreSQL workspace integration profile.
-  pnpm desktop:dev / pnpm tauri:dev use the PostgreSQL workspace integration profile.
+  pnpm desktop:dev / pnpm tauri:dev use PostgreSQL for the backend service runtime.
   Desktop packages and first-run local user data use SQLite under ~/.sdkwork/router/data.
   Use pnpm desktop:dev:sqlite or pnpm tauri:dev:sqlite to validate desktop local data behavior.
 
