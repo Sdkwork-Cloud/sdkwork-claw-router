@@ -182,6 +182,15 @@ const SDKWORK_IAM_APP_OPEN_PLATFORM_QR_METHODS = [
 
 export function assertIamAppSdkClient(client: unknown): asserts client is IamAppSdkClient {
   const surface = getIamSdkSurface(client);
+  const retiredQrMethods = surface.filter((method) =>
+    method.startsWith("auth.loginQrCodes.") || method.startsWith("auth.loginQrCodeCallbacks.")
+  );
+  if (retiredQrMethods.length > 0) {
+    throw new Error(
+      `Generated app SDK client exposes retired IAM QR login resources: ${retiredQrMethods.join(", ")}. Use openPlatform.qrAuth.sessions methods.`,
+    );
+  }
+
   const missingMethods = findMissingMethods(surface, SDKWORK_IAM_APP_SDK_REQUIRED_METHODS);
 
   if (missingMethods.length > 0) {
@@ -190,15 +199,6 @@ export function assertIamAppSdkClient(client: unknown): asserts client is IamApp
 
   if (surface.includes("auth.createSession")) {
     throw new Error("Legacy app SDK method auth.createSession is forbidden; use auth.sessions.create");
-  }
-
-  const retiredQrMethods = surface.filter((method) =>
-    method.startsWith("auth.loginQrCodes.") || method.startsWith("auth.loginQrCodeCallbacks.")
-  );
-  if (retiredQrMethods.length > 0) {
-    throw new Error(
-      `Generated app SDK client exposes retired IAM QR login resources: ${retiredQrMethods.join(", ")}. Use openPlatform.qrAuth.sessions methods.`,
-    );
   }
 
   const openPlatformQrMethods = surface.filter((method) => method.startsWith("openPlatform.qrAuth.sessions."));

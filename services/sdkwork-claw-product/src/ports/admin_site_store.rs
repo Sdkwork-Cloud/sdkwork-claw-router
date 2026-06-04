@@ -41,35 +41,6 @@ pub struct AdminSiteItem {
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]
-pub struct AdminSiteModelItem {
-    pub id: i64,
-    pub site_id: i64,
-    pub site_code: String,
-    pub site_service_id: i64,
-    pub site_service_code: Option<String>,
-    pub service_type: String,
-    pub model_code: String,
-    pub model_name: String,
-    pub display_name: Option<String>,
-    pub provider_model: Option<String>,
-    pub provider_native_model: Option<String>,
-    pub vendor_code: Option<String>,
-    pub modality: Option<String>,
-    pub capabilities: Vec<String>,
-    pub context_tokens: Option<i64>,
-    pub max_input_tokens: Option<i64>,
-    pub max_output_tokens: Option<i64>,
-    pub supports_streaming: bool,
-    pub supports_tools: bool,
-    pub supports_json_schema: bool,
-    pub health_status: String,
-    pub last_latency_ms: Option<i64>,
-    pub consecutive_error_count: i64,
-    pub last_sync_at: Option<String>,
-    pub status: String,
-}
-
-#[derive(Debug, Clone, PartialEq, Eq)]
 pub struct AdminSiteChannelItem {
     pub id: i64,
     pub channel_code: String,
@@ -161,93 +132,6 @@ pub struct DeleteAdminSiteCommand {
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]
-pub struct ListAdminSiteModelsQuery {
-    pub subject: AdminSiteSubject,
-    pub site_id: i64,
-}
-
-#[derive(Debug, Clone, PartialEq, Eq)]
-pub struct AdminSiteModelCommand {
-    pub model_code: String,
-    pub model_name: String,
-    pub display_name: Option<String>,
-    pub provider_model: Option<String>,
-    pub provider_native_model: Option<String>,
-    pub vendor_code: Option<String>,
-    pub modality: Option<String>,
-    pub capabilities: Vec<String>,
-    pub context_tokens: Option<i64>,
-    pub max_input_tokens: Option<i64>,
-    pub max_output_tokens: Option<i64>,
-    pub supports_streaming: bool,
-    pub supports_tools: bool,
-    pub supports_json_schema: bool,
-    pub status: String,
-}
-
-#[derive(Debug, Clone, PartialEq, Eq)]
-pub struct CreateAdminSiteModelCommand {
-    pub subject: AdminSiteSubject,
-    pub site_id: i64,
-    pub site_model_uuid: String,
-    pub audit_log_uuid: String,
-    pub input: AdminSiteModelCommand,
-    pub request_id: String,
-    pub requested_at: String,
-}
-
-#[derive(Debug, Clone, PartialEq, Eq)]
-pub struct ReplaceAdminSiteModelsCommand {
-    pub subject: AdminSiteSubject,
-    pub site_id: i64,
-    pub site_model_uuids: Vec<String>,
-    pub audit_log_uuid: String,
-    pub items: Vec<AdminSiteModelCommand>,
-    pub request_id: String,
-    pub requested_at: String,
-}
-
-#[derive(Debug, Clone, PartialEq, Eq)]
-pub struct UpdateAdminSiteModelCommand {
-    pub subject: AdminSiteSubject,
-    pub site_id: i64,
-    pub site_model_id: i64,
-    pub audit_log_uuid: String,
-    pub input: AdminSiteModelPatch,
-    pub request_id: String,
-    pub requested_at: String,
-}
-
-#[derive(Debug, Clone, PartialEq, Eq, Default)]
-pub struct AdminSiteModelPatch {
-    pub model_code: Option<String>,
-    pub model_name: Option<String>,
-    pub display_name: Option<Option<String>>,
-    pub provider_model: Option<Option<String>>,
-    pub provider_native_model: Option<Option<String>>,
-    pub vendor_code: Option<Option<String>>,
-    pub modality: Option<Option<String>>,
-    pub capabilities: Option<Vec<String>>,
-    pub context_tokens: Option<Option<i64>>,
-    pub max_input_tokens: Option<Option<i64>>,
-    pub max_output_tokens: Option<Option<i64>>,
-    pub supports_streaming: Option<bool>,
-    pub supports_tools: Option<bool>,
-    pub supports_json_schema: Option<bool>,
-    pub status: Option<String>,
-}
-
-#[derive(Debug, Clone, PartialEq, Eq)]
-pub struct DeleteAdminSiteModelCommand {
-    pub subject: AdminSiteSubject,
-    pub site_id: i64,
-    pub site_model_id: i64,
-    pub audit_log_uuid: String,
-    pub request_id: String,
-    pub requested_at: String,
-}
-
-#[derive(Debug, Clone, PartialEq, Eq)]
 pub struct ListAdminSiteChannelsQuery {
     pub subject: AdminSiteSubject,
     pub site_id: i64,
@@ -280,31 +164,6 @@ pub trait AdminSiteStore {
     ) -> AdminSiteFuture<'a, Option<AdminSiteItem>>;
 
     fn delete_site<'a>(&'a self, command: DeleteAdminSiteCommand) -> AdminSiteFuture<'a, bool>;
-
-    fn list_site_models<'a>(
-        &'a self,
-        query: ListAdminSiteModelsQuery,
-    ) -> AdminSiteFuture<'a, Vec<AdminSiteModelItem>>;
-
-    fn create_site_model<'a>(
-        &'a self,
-        command: CreateAdminSiteModelCommand,
-    ) -> AdminSiteFuture<'a, AdminSiteModelItem>;
-
-    fn replace_site_models<'a>(
-        &'a self,
-        command: ReplaceAdminSiteModelsCommand,
-    ) -> AdminSiteFuture<'a, Vec<AdminSiteModelItem>>;
-
-    fn update_site_model<'a>(
-        &'a self,
-        command: UpdateAdminSiteModelCommand,
-    ) -> AdminSiteFuture<'a, Option<AdminSiteModelItem>>;
-
-    fn delete_site_model<'a>(
-        &'a self,
-        command: DeleteAdminSiteModelCommand,
-    ) -> AdminSiteFuture<'a, bool>;
 
     fn list_site_channels<'a>(
         &'a self,

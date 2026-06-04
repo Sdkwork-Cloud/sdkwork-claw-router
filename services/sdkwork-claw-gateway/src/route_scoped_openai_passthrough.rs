@@ -32,8 +32,9 @@ use sdkwork_claw_product::application::{
 };
 use sdkwork_claw_product::domain::{
     provider_native_model_id, AiModel, AiRouteFailureStrategy, AiRouteModelRequirement,
-    AiRouteStrategy, BillingMeter, DecimalValue, DomainError, DomainResult, ProviderAuthProfile,
-    ProviderChannelRoute, ProviderRetryPolicy, RoutingCapability,
+    AiRouteStrategy, BillingMeter, DecimalValue, DomainError, DomainResult, ModelMappingRule,
+    ModelProviderRoute, ProviderAuthProfile, ProviderChannelRoute, ProviderRetryPolicy,
+    ResolveModelMappingContext, RoutingCapability,
 };
 use sdkwork_claw_product::ports::{
     GatewayUsageQuantity, GatewayUsageRecordCommand, GatewayUsageRecorder, PricingCatalog,
@@ -1804,20 +1805,31 @@ where
         intent.requested_model.as_deref(),
     ) {
         (true, Some(requested_model)) => {
-            let catalog_model = find_catalog_model_for_passthrough(catalog, requested_model)?;
+            let resolved_request =
+                resolve_route_scoped_request_model(catalog, &context, intent, requested_model)?;
             let plan =
                 ProviderRouteSelector::new(catalog).select_plan(SelectProviderRouteQuery {
-                    context,
-                    catalog_key: catalog_model.catalog_key.clone(),
+                    context: context.clone(),
+                    catalog_key: resolved_request.routing_catalog_key.clone(),
                     requested_model: requested_model.to_owned(),
                     api_code: intent.api_code.clone(),
                     capability: intent.capability,
                     billing_meter: intent.billing_meter.clone(),
                 })?;
-            plan.routes
-                .into_iter()
-                .map(model_route_to_passthrough_target)
-                .collect::<Vec<_>>()
+            let mut resolved_targets = Vec::new();
+            for selection in plan.routes {
+                if let Some(target) = resolve_route_scoped_model_route_target(
+                    catalog,
+                    &context,
+                    requested_model,
+                    resolved_request.vendor_code.as_str(),
+                    &resolved_request.mapping_scope,
+                    selection,
+                )? {
+                    resolved_targets.push(target);
+                }
+            }
+            resolved_targets
         }
         _ => {
             let selection = ProviderRouteSelector::new(catalog).select_channel_route(
@@ -1901,7 +1913,18 @@ where
         intent.routes_model_when_present,
         intent.requested_model.as_deref(),
     ) {
-        let catalog_model = find_catalog_model_for_passthrough(catalog, requested_model)?;
+        let channel_mapping = resolve_route_scoped_channel_mapping(
+            catalog,
+            context,
+            requested_model,
+            "",
+            &channel_route,
+        );
+        let requested_catalog_key = channel_mapping
+            .as_ref()
+            .map(|rule| rule.effective_catalog_key())
+            .unwrap_or(requested_model);
+        let catalog_model = find_catalog_model_for_passthrough(catalog, requested_catalog_key)?;
         let route = catalog
             .list_provider_routes(&catalog_model.catalog_key)
             .into_iter()
@@ -1927,11 +1950,21 @@ where
             .map_err(|error| {
                 RouteScopedOpenAiPassthroughError::pricing_unavailable(error.to_string())
             })?;
-        return Ok(model_route_to_passthrough_target(SelectedProviderRoute {
-            route,
-            policy_id: None,
-            rule_id: None,
-        }));
+        let provider_model = channel_mapping
+            .as_ref()
+            .and_then(|rule| rule.effective_provider_model().map(str::to_owned))
+            .unwrap_or_else(|| route.provider_model.clone());
+        return Ok(model_route_to_passthrough_target_with_provider_model(
+            SelectedProviderRoute {
+                route,
+                group_id: context.group_id,
+                group_code: context.group_code.clone(),
+                pricing_plan_code: context.pricing_plan_code.clone(),
+                policy_id: None,
+                rule_id: None,
+            },
+            provider_model,
+        ));
     }
 
     Ok(channel_route_to_passthrough_target(channel_route))
@@ -1941,6 +1974,357 @@ fn binding_region_matches(route_region_code: &str, binding_region_code: Option<&
     binding_region_code
         .map(|binding_region_code| same_region_code(route_region_code, binding_region_code))
         .unwrap_or(true)
+}
+
+#[derive(Debug, Clone)]
+struct RouteScopedResolvedModelRequest {
+    routing_catalog_key: String,
+    vendor_code: String,
+    mapping_scope: RouteScopedModelMappingScope,
+}
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+enum RouteScopedModelMappingScope {
+    Catalog,
+    ScopedBinding,
+}
+
+fn resolve_route_scoped_request_model<C>(
+    catalog: &C,
+    context: &AuthenticatedApiKeyContext,
+    intent: &RouteScopedOpenAiPassthroughIntent,
+    requested_model: &str,
+) -> Result<RouteScopedResolvedModelRequest, RouteScopedOpenAiPassthroughError>
+where
+    C: PricingCatalog + Send + Sync + 'static,
+{
+    if let Some(resolved) = resolve_route_scoped_catalog_request_model(catalog, requested_model)? {
+        return Ok(resolved);
+    }
+    if let Some(resolved) =
+        resolve_route_scoped_binding_request_model(catalog, context, intent, requested_model)?
+    {
+        return Ok(resolved);
+    }
+    Err(RouteScopedOpenAiPassthroughError::model_not_found(
+        requested_model,
+    ))
+}
+
+fn resolve_route_scoped_catalog_request_model<C>(
+    catalog: &C,
+    requested_model: &str,
+) -> Result<Option<RouteScopedResolvedModelRequest>, RouteScopedOpenAiPassthroughError>
+where
+    C: PricingCatalog + Send + Sync + 'static,
+{
+    let global_mapping =
+        catalog.resolve_model_mapping(requested_model, &ResolveModelMappingContext::new());
+    let global_effective_model = global_mapping
+        .as_ref()
+        .map(|rule| rule.effective_catalog_key())
+        .unwrap_or(requested_model);
+    let Some(global_catalog_model) =
+        find_optional_catalog_model_for_passthrough(catalog, global_effective_model)?
+    else {
+        return Ok(None);
+    };
+    let vendor_mapping = catalog.resolve_model_mapping(
+        requested_model,
+        &ResolveModelMappingContext::new()
+            .with_vendor_code(global_catalog_model.vendor_code.as_str()),
+    );
+    let effective_model = vendor_mapping
+        .as_ref()
+        .or(global_mapping.as_ref())
+        .map(|rule| rule.effective_catalog_key())
+        .unwrap_or(global_effective_model);
+    let catalog_model = if effective_model == global_catalog_model.catalog_key
+        || effective_model == global_catalog_model.model
+    {
+        global_catalog_model
+    } else {
+        find_catalog_model_for_passthrough(catalog, effective_model)?
+    };
+    Ok(Some(RouteScopedResolvedModelRequest {
+        routing_catalog_key: route_scoped_route_scope_catalog_key(
+            effective_model,
+            &catalog_model.catalog_key,
+        ),
+        vendor_code: catalog_model.vendor_code,
+        mapping_scope: RouteScopedModelMappingScope::Catalog,
+    }))
+}
+
+fn resolve_route_scoped_binding_request_model<C>(
+    catalog: &C,
+    context: &AuthenticatedApiKeyContext,
+    intent: &RouteScopedOpenAiPassthroughIntent,
+    requested_model: &str,
+) -> Result<Option<RouteScopedResolvedModelRequest>, RouteScopedOpenAiPassthroughError>
+where
+    C: PricingCatalog + Send + Sync + 'static,
+{
+    let mut channel_routes = route_scoped_candidate_channel_routes(catalog, context, intent);
+    channel_routes.sort_by_key(|route| {
+        (
+            route.channel_id,
+            route.credential_id.unwrap_or(i64::MAX),
+            route.region_code.clone(),
+        )
+    });
+    channel_routes.dedup_by(|left, right| {
+        left.channel_id == right.channel_id
+            && left.credential_id == right.credential_id
+            && left.region_code == right.region_code
+    });
+
+    for channel_route in channel_routes {
+        let Some(mapping) = resolve_route_scoped_channel_mapping(
+            catalog,
+            context,
+            requested_model,
+            "",
+            &channel_route,
+        ) else {
+            continue;
+        };
+        let catalog_model =
+            find_catalog_model_for_passthrough(catalog, mapping.effective_catalog_key())?;
+        return Ok(Some(RouteScopedResolvedModelRequest {
+            routing_catalog_key: route_scoped_route_scope_catalog_key(
+                mapping.effective_catalog_key(),
+                &catalog_model.catalog_key,
+            ),
+            vendor_code: catalog_model.vendor_code,
+            mapping_scope: RouteScopedModelMappingScope::ScopedBinding,
+        }));
+    }
+    Ok(None)
+}
+
+fn route_scoped_candidate_channel_routes<C>(
+    catalog: &C,
+    context: &AuthenticatedApiKeyContext,
+    intent: &RouteScopedOpenAiPassthroughIntent,
+) -> Vec<ProviderChannelRoute>
+where
+    C: PricingCatalog + Send + Sync + 'static,
+{
+    let routes = catalog.list_provider_channel_routes();
+    let has_any_group_binding = routes.iter().any(|route| !route.group_bindings.is_empty());
+    routes
+        .into_iter()
+        .filter(|route| {
+            !has_any_group_binding
+                || route.group_bindings.iter().any(|binding| {
+                    binding.group_id == context.group_id
+                        && route_scoped_binding_matches_api_scope(
+                            binding.api_scope.as_slice(),
+                            &intent.api_code,
+                        )
+                        && route_scoped_binding_matches_capability(
+                            binding.capabilities.as_slice(),
+                            intent.capability,
+                        )
+                })
+        })
+        .collect()
+}
+
+fn route_scoped_binding_matches_api_scope(api_scope: &[String], api_code: &str) -> bool {
+    if api_scope.is_empty() {
+        return true;
+    }
+    api_scope
+        .iter()
+        .any(|scope| route_scoped_scope_value_matches(scope, api_code))
+}
+
+fn route_scoped_binding_matches_capability(
+    capabilities: &[String],
+    capability: RoutingCapability,
+) -> bool {
+    if capabilities.is_empty() {
+        return true;
+    }
+    let expected = route_scoped_capability_binding_codes(capability);
+    capabilities.iter().any(|value| {
+        expected
+            .iter()
+            .any(|expected| value.trim().eq_ignore_ascii_case(expected))
+    })
+}
+
+fn route_scoped_capability_binding_codes(capability: RoutingCapability) -> &'static [&'static str] {
+    match capability {
+        RoutingCapability::Chat => &["llm", "chat", "text"],
+        RoutingCapability::Image => &["image"],
+        RoutingCapability::Audio => &["audio", "sfx", "speech"],
+        RoutingCapability::Music => &["music"],
+        RoutingCapability::Video => &["video"],
+        RoutingCapability::Embedding => &["llm", "embedding", "embeddings"],
+        RoutingCapability::Rerank => &["llm", "rerank", "ranking"],
+        RoutingCapability::Network => &["network", "http"],
+    }
+}
+
+fn route_scoped_scope_value_matches(scope: &str, key: &str) -> bool {
+    let scope = route_scoped_normalize_scope_value(scope);
+    let key = route_scoped_normalize_scope_value(key);
+    !scope.is_empty() && !key.is_empty() && (scope == "*" || scope == "all" || scope == key)
+}
+
+fn route_scoped_normalize_scope_value(value: &str) -> String {
+    let normalized = value
+        .trim()
+        .trim_matches('/')
+        .to_ascii_lowercase()
+        .replace(['/', ':', '-'], ".");
+    normalized
+        .strip_prefix("api.")
+        .unwrap_or(&normalized)
+        .trim_matches('.')
+        .to_owned()
+}
+
+fn resolve_route_scoped_model_route_target<C>(
+    catalog: &C,
+    context: &AuthenticatedApiKeyContext,
+    requested_model: &str,
+    vendor_code: &str,
+    mapping_scope: &RouteScopedModelMappingScope,
+    selection: SelectedProviderRoute,
+) -> Result<Option<RouteScopedOpenAiPassthroughTarget>, RouteScopedOpenAiPassthroughError>
+where
+    C: PricingCatalog + Send + Sync + 'static,
+{
+    let mut model_route = selection.route;
+    let channel_route = catalog
+        .list_provider_channel_routes()
+        .into_iter()
+        .find(|route| {
+            route.channel_id == model_route.channel_id
+                && route.credential_id == model_route.credential_id
+        })
+        .ok_or_else(|| {
+            RouteScopedOpenAiPassthroughError::provider_route_unavailable(format!(
+                "provider route is not available for configured channel route: selected channel {} credential {:?} has no configured channel route for model {}",
+                model_route.channel_id, model_route.credential_id, model_route.catalog_key
+            ))
+        })?;
+    if !has_explicit_route_scoped_model_route(catalog, &model_route, &channel_route) {
+        return Ok(None);
+    }
+    let channel_mapping = resolve_route_scoped_channel_mapping(
+        catalog,
+        context,
+        requested_model,
+        vendor_code,
+        &channel_route,
+    );
+    if matches!(mapping_scope, RouteScopedModelMappingScope::ScopedBinding)
+        && channel_mapping.is_none()
+    {
+        return Ok(None);
+    }
+    if let Some(rule) = channel_mapping.as_ref() {
+        if rule.effective_catalog_key() != model_route.catalog_key {
+            model_route = catalog
+                .list_provider_routes(rule.effective_catalog_key())
+                .into_iter()
+                .find(|candidate| {
+                    candidate.channel_id == model_route.channel_id
+                        && candidate.credential_id == model_route.credential_id
+                })
+                .ok_or_else(|| {
+                    RouteScopedOpenAiPassthroughError::provider_route_unavailable(format!(
+                        "provider route is not available for configured channel route: channel {} has no mapped route for model {}",
+                        model_route.channel_id,
+                        rule.effective_catalog_key()
+                    ))
+                })?;
+        }
+    }
+    if channel_route.provider_code != model_route.provider_code {
+        return Err(RouteScopedOpenAiPassthroughError::provider_route_unavailable(
+            format!(
+                "provider route is not available for configured channel route: selected channel {} provider mismatch for model {}",
+                model_route.channel_id, model_route.catalog_key
+            ),
+        ));
+    }
+    let provider_model = channel_mapping
+        .as_ref()
+        .and_then(|rule| rule.effective_provider_model().map(str::to_owned))
+        .unwrap_or_else(|| model_route.provider_model.clone());
+    Ok(Some(model_route_to_passthrough_target_with_provider_model(
+        SelectedProviderRoute {
+            route: model_route,
+            group_id: context.group_id,
+            group_code: context.group_code.clone(),
+            pricing_plan_code: context.pricing_plan_code.clone(),
+            policy_id: selection.policy_id,
+            rule_id: selection.rule_id,
+        },
+        provider_model,
+    )))
+}
+
+fn has_explicit_route_scoped_model_route<C>(
+    catalog: &C,
+    model_route: &ModelProviderRoute,
+    channel_route: &ProviderChannelRoute,
+) -> bool
+where
+    C: PricingCatalog + Send + Sync + 'static,
+{
+    catalog
+        .list_provider_routes(&model_route.catalog_key)
+        .into_iter()
+        .any(|route| {
+            route.channel_id == model_route.channel_id
+                && route.provider_code == model_route.provider_code
+                && route.credential_id == model_route.credential_id
+                && binding_region_matches(
+                    &route.region_code,
+                    Some(channel_route.region_code.as_str()),
+                )
+        })
+}
+
+fn resolve_route_scoped_channel_mapping<C>(
+    catalog: &C,
+    context: &AuthenticatedApiKeyContext,
+    requested_model: &str,
+    vendor_code: &str,
+    channel_route: &ProviderChannelRoute,
+) -> Option<ModelMappingRule>
+where
+    C: PricingCatalog + Send + Sync + 'static,
+{
+    catalog.resolve_model_mapping(
+        requested_model,
+        &ResolveModelMappingContext::new()
+            .with_channel_id(channel_route.channel_id)
+            .with_channel_code(channel_route.channel_code.as_deref().unwrap_or_default())
+            .with_channel_group_id(context.group_id)
+            .with_channel_group_code(context.group_code.as_str())
+            .with_vendor_code(vendor_code)
+            .with_site(channel_route.site_id, channel_route.site_code.as_deref())
+            .with_site_service(
+                channel_route.site_service_id,
+                channel_route.site_service_code.as_deref(),
+            ),
+    )
+}
+
+fn route_scoped_route_scope_catalog_key(requested_model: &str, model_catalog_key: &str) -> String {
+    if requested_model.trim() == model_catalog_key.trim() {
+        requested_model.trim().to_owned()
+    } else {
+        model_catalog_key.to_owned()
+    }
 }
 
 fn same_region_code(left: &str, right: &str) -> bool {
@@ -1956,8 +2340,9 @@ fn normalize_region_code(value: &str) -> String {
     }
 }
 
-fn model_route_to_passthrough_target(
+fn model_route_to_passthrough_target_with_provider_model(
     selection: SelectedProviderRoute,
+    provider_model: String,
 ) -> RouteScopedOpenAiPassthroughTarget {
     let route = selection.route;
     let usage_route = openai_provider_usage_route_from_model_route(
@@ -1966,7 +2351,7 @@ fn model_route_to_passthrough_target(
         selection.rule_id,
         route.provider_code.clone(),
         route.channel_id,
-        route.provider_model.clone(),
+        provider_model.clone(),
         route.region_code.clone(),
         route.base_url.clone(),
         route.secret_ref.clone(),
@@ -1977,7 +2362,7 @@ fn model_route_to_passthrough_target(
     RouteScopedOpenAiPassthroughTarget {
         provider_code: route.provider_code,
         channel_id: route.channel_id,
-        provider_model: Some(route.provider_model),
+        provider_model: Some(provider_model),
         base_url: route.base_url,
         secret_ref: route.secret_ref,
         auth_profile: route.auth_profile,
@@ -2064,9 +2449,20 @@ fn find_catalog_model_for_passthrough<C>(
 where
     C: PricingCatalog + Send + Sync + 'static,
 {
+    find_optional_catalog_model_for_passthrough(catalog, model)?
+        .ok_or_else(|| RouteScopedOpenAiPassthroughError::model_not_found(model.trim()))
+}
+
+fn find_optional_catalog_model_for_passthrough<C>(
+    catalog: &C,
+    model: &str,
+) -> Result<Option<AiModel>, RouteScopedOpenAiPassthroughError>
+where
+    C: PricingCatalog + Send + Sync + 'static,
+{
     let model = model.trim();
     if let Some(catalog_model) = catalog.find_model(model) {
-        return Ok(catalog_model);
+        return Ok(Some(catalog_model));
     }
 
     let matches = catalog
@@ -2075,8 +2471,8 @@ where
         .filter(|candidate| candidate.model == model)
         .collect::<Vec<_>>();
     match matches.as_slice() {
-        [] => Err(RouteScopedOpenAiPassthroughError::model_not_found(model)),
-        [model] => Ok(model.clone()),
+        [] => Ok(None),
+        [model] => Ok(Some(model.clone())),
         _ => Err(RouteScopedOpenAiPassthroughError::ambiguous_model(
             model, &matches,
         )),
@@ -2087,9 +2483,9 @@ where
 mod tests {
     use super::*;
     use sdkwork_claw_product::domain::{
-        ChannelGroup, DecimalValue, GatewayApiKey, ModelPrice, ModelProviderRoute, ModelVendor,
-        ModelVendorDefinition, Money, PriceSide, PricingPlan, RouteCandidate, RoutingPolicy,
-        RoutingPolicyScope, RoutingRule,
+        ChannelGroup, DecimalValue, GatewayApiKey, ModelMappingRule, ModelPrice,
+        ModelProviderRoute, ModelVendor, ModelVendorDefinition, Money, PriceSide, PricingPlan,
+        RouteCandidate, RoutingPolicy, RoutingPolicyScope, RoutingRule,
     };
     use sdkwork_claw_product::infrastructure::InMemoryPricingCatalog;
 
@@ -2164,6 +2560,154 @@ mod tests {
             AiRouteFailureStrategy::FailClosed,
             sticky_plan.failure_strategy
         );
+    }
+
+    #[test]
+    fn route_scoped_target_plan_resolves_channel_scoped_model_mapping_before_catalog_lookup() {
+        let mut catalog = route_scoped_test_catalog();
+        add_route_scoped_test_route(&mut catalog, 3001, "openrouter", "gpt-4o-mini");
+        add_route_scoped_test_policy(&mut catalog);
+        catalog.add_model_mapping(
+            ModelMappingRule::new(
+                91001,
+                sdkwork_claw_product::domain::ModelMappingBindingType::Channel,
+                "gpt-5.5",
+                "gpt-4o-mini",
+                1,
+            )
+            .with_binding_id(3001)
+            .with_target_vendor_code("openai")
+            .with_target_catalog_key("openai/gpt-4o-mini")
+            .with_target_provider_model("gpt-4o-mini"),
+        );
+
+        let (parts, _body) = Request::builder()
+            .method(Method::POST)
+            .uri("/v1/chat/completions")
+            .body(Body::empty())
+            .unwrap()
+            .into_parts();
+        let intent =
+            route_scoped_openai_passthrough_intent(&parts, br#"{"model":"gpt-5.5","messages":[]}"#)
+                .unwrap();
+
+        let plan = select_route_scoped_openai_passthrough_target_plan(
+            &catalog,
+            route_scoped_test_context(),
+            &intent,
+        )
+        .unwrap();
+
+        assert_eq!(1, plan.targets.len());
+        assert_eq!(3001, plan.targets[0].channel_id);
+        assert_eq!(
+            Some("gpt-4o-mini"),
+            plan.targets[0].provider_model.as_deref()
+        );
+        assert_eq!(
+            "openai/gpt-4o-mini",
+            plan.targets[0].channel_usage_route.catalog_key
+        );
+    }
+
+    #[test]
+    fn route_scoped_target_plan_limits_scoped_alias_to_channels_with_matching_mapping() {
+        let mut catalog = route_scoped_test_catalog();
+        add_route_scoped_test_route(&mut catalog, 3001, "openrouter-main", "gpt-4o-mini-main");
+        add_route_scoped_test_route(
+            &mut catalog,
+            3002,
+            "openrouter-fallback",
+            "gpt-4o-mini-fallback",
+        );
+        add_route_scoped_test_policy(&mut catalog);
+        catalog.add_model_mapping(
+            ModelMappingRule::new(
+                91001,
+                sdkwork_claw_product::domain::ModelMappingBindingType::Channel,
+                "gpt-5.5",
+                "gpt-4o-mini",
+                1,
+            )
+            .with_binding_id(3001)
+            .with_target_vendor_code("openai")
+            .with_target_catalog_key("openai/gpt-4o-mini")
+            .with_target_provider_model("gpt-4o-mini-main"),
+        );
+
+        let (parts, _body) = Request::builder()
+            .method(Method::POST)
+            .uri("/v1/chat/completions")
+            .body(Body::empty())
+            .unwrap()
+            .into_parts();
+        let intent =
+            route_scoped_openai_passthrough_intent(&parts, br#"{"model":"gpt-5.5","messages":[]}"#)
+                .unwrap();
+
+        let plan = select_route_scoped_openai_passthrough_target_plan(
+            &catalog,
+            route_scoped_test_context(),
+            &intent,
+        )
+        .unwrap();
+
+        assert_eq!(
+            vec![3001],
+            plan.targets
+                .iter()
+                .map(|target| target.channel_id)
+                .collect::<Vec<_>>()
+        );
+        assert_eq!(
+            Some("gpt-4o-mini-main"),
+            plan.targets[0].provider_model.as_deref()
+        );
+    }
+
+    #[test]
+    fn route_scoped_target_plan_rejects_scoped_alias_without_explicit_target_model_route() {
+        let mut catalog = route_scoped_test_catalog();
+        catalog.add_provider_channel_route(
+            ProviderChannelRoute::new("openrouter", 3001).with_provider_endpoint(
+                Some("http://provider.example/openrouter".to_owned()),
+                Some("vault://providers/openrouter/account/main".to_owned()),
+            ),
+        );
+        add_route_scoped_test_policy(&mut catalog);
+        catalog.add_model_mapping(
+            ModelMappingRule::new(
+                91001,
+                sdkwork_claw_product::domain::ModelMappingBindingType::Channel,
+                "gpt-5.5",
+                "gpt-4o-mini",
+                1,
+            )
+            .with_binding_id(3001)
+            .with_target_vendor_code("openai")
+            .with_target_catalog_key("openai/gpt-4o-mini")
+            .with_target_provider_model("gpt-4o-mini-main"),
+        );
+
+        let (parts, _body) = Request::builder()
+            .method(Method::POST)
+            .uri("/v1/chat/completions")
+            .body(Body::empty())
+            .unwrap()
+            .into_parts();
+        let intent =
+            route_scoped_openai_passthrough_intent(&parts, br#"{"model":"gpt-5.5","messages":[]}"#)
+                .unwrap();
+
+        let error = select_route_scoped_openai_passthrough_target_plan(
+            &catalog,
+            route_scoped_test_context(),
+            &intent,
+        )
+        .unwrap_err();
+
+        assert_eq!("provider_route_not_available", error.code);
+        assert!(error.message.contains("selected route plan is empty"));
     }
 
     #[test]
@@ -2297,11 +2841,17 @@ mod tests {
             Some("vault://providers/openrouter/cn".to_owned()),
         );
 
-        let target = model_route_to_passthrough_target(SelectedProviderRoute {
-            route,
-            policy_id: Some(9001),
-            rule_id: Some(9102),
-        });
+        let target = model_route_to_passthrough_target_with_provider_model(
+            SelectedProviderRoute {
+                route,
+                group_id: 10,
+                group_code: "standard-group".to_owned(),
+                pricing_plan_code: "standard".to_owned(),
+                policy_id: Some(9001),
+                rule_id: Some(9102),
+            },
+            "openrouter/gpt-4o-mini".to_owned(),
+        );
 
         let usage_route = target.usage_route.as_ref().unwrap();
         assert_eq!("cn", usage_route.region_code);
@@ -2370,6 +2920,66 @@ mod tests {
             Some("https://cn.openrouter.example/v1".to_owned()),
             target.base_url
         );
+    }
+
+    #[test]
+    fn sticky_binding_lookup_resolves_channel_scoped_model_mapping_before_catalog_lookup() {
+        let mut catalog = route_scoped_test_catalog();
+        add_route_scoped_test_route(&mut catalog, 3001, "openrouter", "gpt-4o-mini-main");
+        catalog.add_model_mapping(
+            ModelMappingRule::new(
+                91001,
+                sdkwork_claw_product::domain::ModelMappingBindingType::Channel,
+                "gpt-5.5",
+                "gpt-4o-mini",
+                1,
+            )
+            .with_binding_id(3001)
+            .with_target_vendor_code("openai")
+            .with_target_catalog_key("openai/gpt-4o-mini")
+            .with_target_provider_model("gpt-4o-mini-main"),
+        );
+        let binding = StickyObjectRouteBinding {
+            object_type: "response".to_owned(),
+            object_id: "resp_123".to_owned(),
+            parent_object_type: None,
+            parent_object_id: None,
+            provider_code: "openrouter".to_owned(),
+            channel_id: 3001,
+            vendor_code: None,
+            api_code: Some("openai.responses".to_owned()),
+            catalog_key: Some("openai/gpt-4o-mini".to_owned()),
+            provider_model: Some("gpt-4o-mini-main".to_owned()),
+            region_code: Some("global".to_owned()),
+            sticky_scope: Some("object".to_owned()),
+        };
+        let intent = RouteScopedOpenAiPassthroughIntent {
+            requested_model: Some("gpt-5.5".to_owned()),
+            requested_model_source: None,
+            request_path: "/v1/responses/resp_123".to_owned(),
+            route_key: "openai/responses".to_owned(),
+            api_code: "openai.responses".to_owned(),
+            capability: RoutingCapability::Chat,
+            billing_meter: BillingMeter::LlmInputToken,
+            route_strategy: AiRouteStrategy::LookupSticky,
+            failure_strategy: AiRouteFailureStrategy::FailClosed,
+            model_requirement: AiRouteModelRequirement::Required,
+            sticky_object_type: Some("response"),
+            sticky_scope: Some("object"),
+            routes_model_when_present: true,
+        };
+
+        let target = sticky_binding_to_passthrough_target(
+            &catalog,
+            &route_scoped_test_context(),
+            &intent,
+            &binding,
+        )
+        .unwrap();
+
+        assert_eq!(3001, target.channel_id);
+        assert_eq!(Some("gpt-4o-mini-main"), target.provider_model.as_deref());
+        assert_eq!("openai/gpt-4o-mini", target.channel_usage_route.catalog_key);
     }
 
     #[test]
@@ -2578,6 +3188,12 @@ mod tests {
         provider_code: &str,
         provider_model: &str,
     ) {
+        catalog.add_provider_channel_route(
+            ProviderChannelRoute::new(provider_code, channel_id).with_provider_endpoint(
+                Some(format!("http://provider.example/{provider_code}")),
+                Some(format!("vault://providers/{provider_code}/account/main")),
+            ),
+        );
         catalog.add_provider_route(
             ModelProviderRoute::new_for_catalog_key(
                 "openai/gpt-4o-mini",

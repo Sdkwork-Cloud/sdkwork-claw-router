@@ -19,8 +19,8 @@ use sdkwork_claw_product::infrastructure::provider::ProviderSecretMapResolver;
 use sdkwork_claw_product::infrastructure::InMemoryPricingCatalog;
 use sdkwork_claw_product::ports::{EmbeddingsRelay, EmbeddingsRelayRequest};
 use sdkwork_claw_provider_adapter_contract::{
-    AdapterInvocationRequest, AdapterInvocationResponse, AdapterInvocationShape, AdapterKind,
-    AdapterRouteStatus, AdapterSecret,
+    AdapterEndpointRuntimeState, AdapterInvocationRequest, AdapterInvocationResponse,
+    AdapterInvocationShape, AdapterKind, AdapterRouteStatus, AdapterSecret,
 };
 use sdkwork_claw_provider_adapter_registry::{ProviderAdapterRegistry, ProviderAdapterRouteConfig};
 use serde_json::json;
@@ -196,6 +196,12 @@ fn adapter_route(base_url: &str) -> ProviderAdapterRouteConfig {
         adapter_base_url: base_url.to_owned(),
         capability: Some("embeddings".to_owned()),
         endpoint_key: Some("openai.embeddings".to_owned()),
+        service_group: None,
+        openapi_operation_id: None,
+        s3_operation: None,
+        iaas_operation: None,
+        endpoint_styles: Vec::new(),
+        runtime_state: AdapterEndpointRuntimeState::RuntimeAvailable,
         method: "POST".to_owned(),
         invocation_shape: AdapterInvocationShape::SyncJson,
         standard_path_pattern: "/v1/embeddings".to_owned(),

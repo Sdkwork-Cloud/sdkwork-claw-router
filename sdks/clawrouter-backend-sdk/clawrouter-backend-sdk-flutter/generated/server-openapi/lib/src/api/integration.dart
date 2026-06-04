@@ -11,35 +11,6 @@ class IntegrationApi {
 
   IntegrationApi(this._client);
 
-  /// List channel endpoints
-  Future<ChannelEndpointsListResult?> channelEndpointsList() async {
-    final response = await _client.get(ApiPaths.backendPath('/integration/channel_endpoints'));
-    return (() {
-      final map = sdkworkResponseAsMap(response);
-      return map == null ? null : ChannelEndpointsListResult.fromJson(map);
-    })();
-  }
-
-  /// Create channel endpoint
-  Future<ChannelEndpointsCreateResult?> channelEndpointsCreate(AdminChannelEndpointCreateRequest body) async {
-    final payload = body.toJson();
-    final response = await _client.post(ApiPaths.backendPath('/integration/channel_endpoints'), body: payload, contentType: 'application/json');
-    return (() {
-      final map = sdkworkResponseAsMap(response);
-      return map == null ? null : ChannelEndpointsCreateResult.fromJson(map);
-    })();
-  }
-
-  /// Update channel endpoint
-  Future<ChannelEndpointsUpdateResult?> channelEndpointsUpdate(String endpointId, AdminChannelEndpointUpdateRequest body) async {
-    final payload = body.toJson();
-    final response = await _client.put(ApiPaths.backendPath('/integration/channel_endpoints/${serializePathParameter(endpointId, const PathParameterSpec('endpointId', 'simple', false))}'), body: payload, contentType: 'application/json');
-    return (() {
-      final map = sdkworkResponseAsMap(response);
-      return map == null ? null : ChannelEndpointsUpdateResult.fromJson(map);
-    })();
-  }
-
   /// List channels
   Future<ChannelsListResult?> channelsList() async {
     final response = await _client.get(ApiPaths.backendPath('/integration/channels'));

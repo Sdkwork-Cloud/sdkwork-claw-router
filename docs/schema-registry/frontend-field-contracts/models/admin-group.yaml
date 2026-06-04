@@ -65,9 +65,9 @@ frontend_models:
   - providerCode
   - providerName
   - channelCode
-  - models
+  - resourceCodes
+  - apiScope
   - capabilities
-  - modelScope
   - priority
   - weight
   - status
@@ -76,7 +76,7 @@ frontend_models:
   - ai_channel_group_member
   - ai_provider
   - ai_channel
-  - ai_channel_model
+  - ai_channel_group_resource
 - route: /admin/group
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
   interface: GroupChannelBindingInput
@@ -85,7 +85,8 @@ frontend_models:
   - priority
   - weight
   - status
-  - modelScope
+  - resourceCodes
+  - apiScope
   - capabilities
   data_sources:
   - ai_channel_group_member
@@ -99,14 +100,15 @@ frontend_models:
   - providerCode
   - providerName
   - channelCode
-  - models
+  - resourceCodes
+  - apiScope
   - capabilities
   - status
   - healthStatus
   data_sources:
   - ai_provider
   - ai_channel
-  - ai_channel_model
+  - ai_channel_group_resource
 - route: /admin/group
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
   interface: GroupResourceGroupOption

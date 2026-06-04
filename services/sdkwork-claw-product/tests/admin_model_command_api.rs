@@ -56,6 +56,7 @@ async fn admin_model_command_route_creates_lists_and_syncs_catalog_models() {
     assert_eq!(
         serde_json::json!([{
             "regionCode": "global",
+            "currency": "USD",
             "priceIn": "0.120000",
             "priceOut": "0.450000",
             "cacheReadPrice": "0.030000",
@@ -76,6 +77,7 @@ async fn admin_model_command_route_creates_lists_and_syncs_catalog_models() {
     assert_eq!(
         Some(vec![AdminAiModelRegionPriceCommand {
             region_code: "global".to_owned(),
+            currency: "USD".to_owned(),
             price_in: "0.120000".to_owned(),
             price_out: "0.450000".to_owned(),
             cache_read_price: Some("0.030000".to_owned()),
@@ -114,6 +116,7 @@ async fn admin_model_command_route_creates_lists_and_syncs_catalog_models() {
         serde_json::json!([
             {
                 "regionCode": "cn",
+                "currency": "CNY",
                 "priceIn": "0.180000",
                 "priceOut": "0.560000",
                 "cacheReadPrice": "0.040000",
@@ -121,6 +124,7 @@ async fn admin_model_command_route_creates_lists_and_syncs_catalog_models() {
             },
             {
                 "regionCode": "global",
+                "currency": "USD",
                 "priceIn": "0.120000",
                 "priceOut": "0.450000",
                 "cacheReadPrice": "",
@@ -133,6 +137,7 @@ async fn admin_model_command_route_creates_lists_and_syncs_catalog_models() {
         Some(vec![
             AdminAiModelRegionPriceCommand {
                 region_code: "cn".to_owned(),
+                currency: "CNY".to_owned(),
                 price_in: "0.180000".to_owned(),
                 price_out: "0.560000".to_owned(),
                 cache_read_price: Some("0.040000".to_owned()),
@@ -140,6 +145,7 @@ async fn admin_model_command_route_creates_lists_and_syncs_catalog_models() {
             },
             AdminAiModelRegionPriceCommand {
                 region_code: "global".to_owned(),
+                currency: "USD".to_owned(),
                 price_in: "0.120000".to_owned(),
                 price_out: "0.450000".to_owned(),
                 cache_read_price: None,
@@ -177,6 +183,7 @@ async fn admin_model_command_route_creates_lists_and_syncs_catalog_models() {
     assert_eq!(
         serde_json::json!([{
             "regionCode": "global",
+            "currency": "USD",
             "priceIn": "0.180000",
             "priceOut": "0.520000",
             "cacheReadPrice": "0.040000",
@@ -265,6 +272,7 @@ async fn admin_model_command_route_creates_lists_and_syncs_catalog_models() {
         serde_json::json!([
             {
                 "regionCode": "cn",
+                "currency": "CNY",
                 "priceIn": "0.180000",
                 "priceOut": "0.560000",
                 "cacheReadPrice": "0.040000",
@@ -272,6 +280,7 @@ async fn admin_model_command_route_creates_lists_and_syncs_catalog_models() {
             },
             {
                 "regionCode": "global",
+                "currency": "USD",
                 "priceIn": "0.120000",
                 "priceOut": "0.450000",
                 "cacheReadPrice": "",

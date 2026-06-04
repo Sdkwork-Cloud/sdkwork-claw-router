@@ -278,6 +278,8 @@ async fn list_ai_resources(
             catalog_key,
             model,
             provider_native_model,
+            NULLIF(json_extract(COALESCE(resource_schema, '{}'), '$.capability'), '') AS capability,
+            COALESCE(json_extract(COALESCE(resource_schema, '{}'), '$.capabilities'), '[]') AS capabilities_json,
             COALESCE(
                 NULLIF(json_extract(COALESCE(resource_schema, '{}'), '$.compositionMode'), ''),
                 (
@@ -437,7 +439,18 @@ async fn list_ai_resource_groups(
     .fetch_all(pool)
     .await
     .map_err(|error| store_error("failed to list AI resource groups", error))?;
-    rows.into_iter().map(group_item_from_row).collect()
+    let mut groups = rows
+        .into_iter()
+        .map(group_item_from_row)
+        .collect::<DomainResult<Vec<_>>>()?;
+    hydrate_group_summaries(
+        pool,
+        query.subject.tenant_id,
+        query.subject.organization_id,
+        &mut groups,
+    )
+    .await?;
+    Ok(groups)
 }
 
 async fn list_ai_resource_group_resources(
@@ -1472,6 +1485,8 @@ async fn load_resource_by_id(
             catalog_key,
             model,
             provider_native_model,
+            NULLIF(json_extract(COALESCE(resource_schema, '{}'), '$.capability'), '') AS capability,
+            COALESCE(json_extract(COALESCE(resource_schema, '{}'), '$.capabilities'), '[]') AS capabilities_json,
             COALESCE(
                 NULLIF(json_extract(COALESCE(resource_schema, '{}'), '$.compositionMode'), ''),
                 (
@@ -1606,6 +1621,8 @@ fn item_from_row(
         catalog_key: optional_string_cell(&row, "catalog_key"),
         model: optional_string_cell(&row, "model"),
         provider_native_model: optional_string_cell(&row, "provider_native_model"),
+        capability: optional_string_cell(&row, "capability"),
+        capabilities: string_array_cell(&row, "capabilities_json")?,
         composition_mode: row.try_get("composition_mode").map_err(row_error)?,
         status: status_label(status),
         sort_order: row.try_get("sort_order").ok().flatten(),
@@ -1626,11 +1643,130 @@ fn group_item_from_row(row: sqlx::sqlite::SqliteRow) -> DomainResult<AdminAiReso
         group_type: row.try_get("group_type").map_err(row_error)?,
         selection_mode: row.try_get("selection_mode").map_err(row_error)?,
         description: optional_string_cell(&row, "description"),
+        vendor_codes: string_array_cell_or_empty(&row, "vendor_codes_json")?,
+        capability: optional_string_cell(&row, "capability"),
+        capabilities: string_array_cell_or_empty(&row, "capabilities_json")?,
         sort_order: row.try_get("sort_order").ok().flatten(),
         status: status_label(status),
         resource_count: row.try_get("resource_count").unwrap_or(0),
         dynamic,
     })
+}
+
+#[derive(Default)]
+struct AiResourceGroupSummary {
+    vendor_codes: Vec<String>,
+    capabilities: Vec<String>,
+}
+
+async fn hydrate_group_summaries(
+    pool: &SqlitePool,
+    tenant_id: i64,
+    organization_id: i64,
+    groups: &mut [AdminAiResourceGroupItem],
+) -> DomainResult<()> {
+    if groups.is_empty() {
+        return Ok(());
+    }
+    let rows = sqlx::query(
+        r#"
+        SELECT
+            g.id AS group_id,
+            r.vendor_code,
+            COALESCE(
+                NULLIF(json_extract(COALESCE(r.resource_schema, '{}'), '$.capability'), ''),
+                NULLIF(r.modality_code, '')
+            ) AS capability
+        FROM ai_resource_group g
+        JOIN ai_resource r
+          ON (
+                g.selection_mode = 'dynamic_all_api'
+                AND r.resource_type = 'api_endpoint'
+             )
+             OR (
+                COALESCE(NULLIF(g.selection_mode, ''), 'manual') <> 'dynamic_all_api'
+                AND EXISTS (
+                    SELECT 1
+                    FROM ai_resource_group_item item
+                    WHERE item.tenant_id = g.tenant_id
+                      AND item.organization_id = g.organization_id
+                      AND item.resource_group_id = g.id
+                      AND item.item_type = 'resource'
+                      AND item.resource_code = r.resource_code
+                      AND item.deleted_at IS NULL
+                      AND item.status = 1
+                )
+             )
+        WHERE (
+                (g.tenant_id = ? AND g.organization_id = ?)
+                OR (g.tenant_id = 0 AND g.organization_id = 0)
+              )
+          AND g.deleted_at IS NULL
+          AND COALESCE(NULLIF(g.group_type, ''), 'api_group') = 'api_group'
+          AND NOT (
+              g.tenant_id = 0
+              AND g.organization_id = 0
+              AND EXISTS (
+                  SELECT 1
+                  FROM ai_resource_group tenant_group
+                  WHERE tenant_group.tenant_id = ?
+                    AND tenant_group.organization_id = ?
+                    AND tenant_group.group_code = g.group_code
+                    AND tenant_group.deleted_at IS NULL
+                    AND COALESCE(NULLIF(tenant_group.group_type, ''), 'api_group') = 'api_group'
+              )
+          )
+          AND (
+                (r.tenant_id = g.tenant_id AND r.organization_id = g.organization_id)
+                OR (r.tenant_id = 0 AND r.organization_id = 0)
+              )
+          AND r.deleted_at IS NULL
+          AND NOT (
+              r.tenant_id = 0
+              AND r.organization_id = 0
+              AND (g.tenant_id <> 0 OR g.organization_id <> 0)
+              AND EXISTS (
+                  SELECT 1
+                  FROM ai_resource tenant_resource
+                  WHERE tenant_resource.tenant_id = g.tenant_id
+                    AND tenant_resource.organization_id = g.organization_id
+                    AND tenant_resource.resource_code = r.resource_code
+                    AND tenant_resource.deleted_at IS NULL
+              )
+          )
+        "#,
+    )
+    .bind(tenant_id)
+    .bind(organization_id)
+    .bind(tenant_id)
+    .bind(organization_id)
+    .fetch_all(pool)
+    .await
+    .map_err(|error| store_error("failed to summarize AI resource groups", error))?;
+
+    let mut summaries = HashMap::<i64, AiResourceGroupSummary>::new();
+    for row in rows {
+        let group_id: i64 = row.try_get("group_id").map_err(row_error)?;
+        let summary = summaries.entry(group_id).or_default();
+        if let Some(vendor_code) = optional_string_cell(&row, "vendor_code") {
+            push_unique_lowercase(&mut summary.vendor_codes, vendor_code);
+        }
+        if let Some(capability) = optional_string_cell(&row, "capability") {
+            push_unique_lowercase(&mut summary.capabilities, capability);
+        }
+    }
+    for group in groups {
+        if let Some(summary) = summaries.remove(&group.id) {
+            group.vendor_codes = summary.vendor_codes;
+            group.capability = if summary.capabilities.len() == 1 {
+                summary.capabilities.first().cloned()
+            } else {
+                None
+            };
+            group.capabilities = summary.capabilities;
+        }
+    }
+    Ok(())
 }
 
 fn group_resource_from_row(
@@ -1990,6 +2126,52 @@ fn optional_string_cell(row: &sqlx::sqlite::SqliteRow, name: &str) -> Option<Str
         .flatten()
         .map(|value| value.trim().to_owned())
         .filter(|value| !value.is_empty())
+}
+
+fn string_array_cell(row: &sqlx::sqlite::SqliteRow, name: &str) -> DomainResult<Vec<String>> {
+    let raw = row
+        .try_get::<Option<String>, _>(name)
+        .map_err(row_error)?
+        .unwrap_or_else(|| "[]".to_owned());
+    parse_string_array_json(&raw, name)
+}
+
+fn string_array_cell_or_empty(
+    row: &sqlx::sqlite::SqliteRow,
+    name: &str,
+) -> DomainResult<Vec<String>> {
+    let raw = row
+        .try_get::<Option<String>, _>(name)
+        .ok()
+        .flatten()
+        .unwrap_or_else(|| "[]".to_owned());
+    parse_string_array_json(&raw, name)
+}
+
+fn parse_string_array_json(raw: &str, name: &str) -> DomainResult<Vec<String>> {
+    let value = raw.trim();
+    if value.is_empty() {
+        return Ok(Vec::new());
+    }
+    let parsed: serde_json::Value = serde_json::from_str(value)
+        .map_err(|error| DomainError::new(format!("invalid AI resource {name} json: {error}")))?;
+    let Some(items) = parsed.as_array() else {
+        return Ok(Vec::new());
+    };
+    Ok(items
+        .iter()
+        .filter_map(|item| item.as_str())
+        .map(|item| item.trim().to_ascii_lowercase())
+        .filter(|item| !item.is_empty())
+        .collect())
+}
+
+fn push_unique_lowercase(values: &mut Vec<String>, value: String) {
+    let normalized = value.trim().to_ascii_lowercase();
+    if normalized.is_empty() || values.iter().any(|current| current == &normalized) {
+        return;
+    }
+    values.push(normalized);
 }
 
 fn status_label(status: i64) -> String {

@@ -8,13 +8,6 @@ import {
 
 import { createSdkworkIamService } from "../src/index";
 
-const SDKWORK_IAM_APP_OPEN_PLATFORM_QR_FACADE_METHODS = [
-  "openPlatform.qrAuth.sessions.create",
-  "openPlatform.qrAuth.sessions.passwords.create",
-  "openPlatform.qrAuth.sessions.retrieve",
-  "openPlatform.qrAuth.sessions.scans.create",
-] as const;
-
 describe("SDKWork IAM service", () => {
   it("exposes the same resource facade surface as the canonical app and backend SDK ports", () => {
     const service = createSdkworkIamService({
@@ -25,7 +18,6 @@ describe("SDKWork IAM service", () => {
     expect(getIamSdkSurface(service)).toEqual(
       [
         ...SDKWORK_IAM_APP_SDK_REQUIRED_METHODS,
-        ...SDKWORK_IAM_APP_OPEN_PLATFORM_QR_FACADE_METHODS,
         ...SDKWORK_IAM_BACKEND_SDK_REQUIRED_METHODS,
       ].sort(),
     );

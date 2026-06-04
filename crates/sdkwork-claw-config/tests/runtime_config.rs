@@ -98,7 +98,7 @@ gateway_base_url = "http://gateway.internal:18080"
 backend_api_base_url = "http://admin.internal:18081"
 app_api_base_url = "http://app.internal:18082"
 portal_base_url = "http://portal.internal:3901"
-portal_static_dist = "/opt/clawrouter/portal/dist"
+portal_static_dist = "/opt/sdkwork/router/portal/dist"
 csp_connect_src = "https://api.example.com"
 cors_allowed_origins = ["https://portal.example.com", "https://admin.example.com"]
 upstream_request_timeout_millis = 45000
@@ -126,13 +126,13 @@ csp_frame_src = ["https://player.example.com", "https://video.example.com"]
 rate_limit_requests = 120
 rate_limit_window_seconds = 60
 max_body_bytes = 2097152
-sdk_archive_root = "/opt/clawrouter/portal/dist/sdk-archives"
+sdk_archive_root = "/opt/sdkwork/router/portal/dist/sdk-archives"
 sdk_generator_base_url = "https://sdk-generator.internal"
-sdk_generator_api_key_file = "/etc/clawrouter/sdk-generator.secret"
+sdk_generator_api_key_file = "/etc/sdkwork/router/sdk-generator.secret"
 
 [paths]
-data_directory = "/var/lib/clawrouter"
-course_upload_root = "/var/lib/clawrouter/uploads/courses"
+data_directory = "/var/lib/sdkwork/router"
+course_upload_root = "/var/lib/sdkwork/router/uploads/courses"
 
 [courses]
 video_upload_max_bytes = 1073741824
@@ -159,7 +159,7 @@ host = "redis.internal"
 port = 6380
 database = 3
 username = "clawrouter"
-password_file = "/etc/clawrouter/redis.secret"
+password_file = "/etc/sdkwork/router/redis.secret"
 key_prefix = "clawrouter-prod"
 tls = true
 max_connections = 32
@@ -168,18 +168,18 @@ command_timeout_millis = 1500
 pool_idle_timeout_seconds = 120
 
 [security]
-api_key_pepper_file = "/etc/clawrouter/api-key-pepper.secret"
-trusted_subject_secret_file = "/etc/clawrouter/trusted-subject.secret"
+api_key_pepper_file = "/etc/sdkwork/router/api-key-pepper.secret"
+trusted_subject_secret_file = "/etc/sdkwork/router/trusted-subject.secret"
 trusted_subject_max_clock_skew_seconds = 120
-app_session_secret_file = "/etc/clawrouter/app-session.secret"
+app_session_secret_file = "/etc/sdkwork/router/app-session.secret"
 app_session_ttl_seconds = 86400
 app_session_max_clock_skew_seconds = 120
-payment_webhook_secret_file = "/etc/clawrouter/payment-webhook.secret"
+payment_webhook_secret_file = "/etc/sdkwork/router/payment-webhook.secret"
 payment_webhook_max_clock_skew_seconds = 600
 
 [provider_relay.openai]
 base_url = "https://provider-relay.internal/v1"
-bearer_token_file = "/etc/clawrouter/openai-relay.secret"
+bearer_token_file = "/etc/sdkwork/router/openai-relay.secret"
 
 [provider_relay.runtime]
 response_timeout_millis = 120000
@@ -197,18 +197,18 @@ backoff_millis = 250
 base_url = "https://generativelanguage.googleapis.com"
 auth_type = "header"
 auth_name = "x-goog-api-key"
-auth_value_file = "/etc/clawrouter/google-provider.secret"
+auth_value_file = "/etc/sdkwork/router/google-provider.secret"
 
 [provider_relay.passthrough.google.default_headers]
 x-goog-api-client = "clawrouter"
 
 [provider_adapter]
 adapter_base_url = "http://provider-adapter.internal:39110"
-manifest_file = "/etc/clawrouter/provider-adapter-manifest.json"
-gateway_token_file = "/etc/clawrouter/provider-adapter-token.secret"
+manifest_file = "/etc/sdkwork/router/provider-adapter-manifest.json"
+gateway_token_file = "/etc/sdkwork/router/provider-adapter-token.secret"
 
 [provider_secret_map]
-json_file = "/etc/clawrouter/provider-secrets.json"
+json_file = "/etc/sdkwork/router/provider-secrets.json"
 
 [usage_settlement]
 enabled = true
@@ -234,12 +234,12 @@ run_on_startup = true
 alert_after_consecutive_failures = 3
 
 [forum]
-community_links_json_file = "/etc/clawrouter/forum-community-links.json"
+community_links_json_file = "/etc/sdkwork/router/forum-community-links.json"
 
 [install]
 environment = "production"
 seed_profile = "commercial"
-models_catalog_root = "/opt/clawrouter/catalog"
+models_catalog_root = "/opt/sdkwork/router/catalog"
 startup_mode = "ensure"
 
 [bootstrap_admin]
@@ -247,7 +247,7 @@ enabled = true
 username = "admin"
 display_name = "Administrator"
 email = "admin@sdkwork.com"
-password_file = "/etc/clawrouter/bootstrap-admin.secret"
+password_file = "/etc/sdkwork/router/bootstrap-admin.secret"
 "#,
     )
     .unwrap();
@@ -290,7 +290,7 @@ password_file = "/etc/clawrouter/bootstrap-admin.secret"
         config.edge.portal_base_url.as_deref()
     );
     assert_eq!(
-        Some("/opt/clawrouter/portal/dist"),
+        Some("/opt/sdkwork/router/portal/dist"),
         config.edge.portal_static_dist.as_deref()
     );
     assert_eq!(
@@ -332,7 +332,7 @@ password_file = "/etc/clawrouter/bootstrap-admin.secret"
     assert_eq!(Some(60), config.portal.tools.rate_limit_window_seconds);
     assert_eq!(Some(2097152), config.portal.tools.max_body_bytes);
     assert_eq!(
-        Some("/opt/clawrouter/portal/dist/sdk-archives"),
+        Some("/opt/sdkwork/router/portal/dist/sdk-archives"),
         config.portal.tools.sdk_archive_root.as_deref()
     );
     assert_eq!(
@@ -340,15 +340,15 @@ password_file = "/etc/clawrouter/bootstrap-admin.secret"
         config.portal.tools.sdk_generator_base_url.as_deref()
     );
     assert_eq!(
-        Some("/etc/clawrouter/sdk-generator.secret"),
+        Some("/etc/sdkwork/router/sdk-generator.secret"),
         config.portal.tools.sdk_generator_api_key_file.as_deref()
     );
     assert_eq!(
-        Some("/var/lib/clawrouter"),
+        Some("/var/lib/sdkwork/router"),
         config.paths.data_directory.as_deref()
     );
     assert_eq!(
-        Some("/var/lib/clawrouter/uploads/courses"),
+        Some("/var/lib/sdkwork/router/uploads/courses"),
         config.paths.course_upload_root.as_deref()
     );
     assert_eq!(Some(1073741824), config.courses.video_upload_max_bytes);
@@ -391,7 +391,7 @@ password_file = "/etc/clawrouter/bootstrap-admin.secret"
     assert_eq!(Some(3), config.redis.database);
     assert_eq!(Some("clawrouter"), config.redis.username.as_deref());
     assert_eq!(
-        Some("/etc/clawrouter/redis.secret"),
+        Some("/etc/sdkwork/router/redis.secret"),
         config.redis.password_file.as_deref()
     );
     assert_eq!(Some("clawrouter-prod"), config.redis.key_prefix.as_deref());
@@ -401,11 +401,11 @@ password_file = "/etc/clawrouter/bootstrap-admin.secret"
     assert_eq!(Some(1500), config.redis.command_timeout_millis);
     assert_eq!(Some(120), config.redis.pool_idle_timeout_seconds);
     assert_eq!(
-        Some("/etc/clawrouter/api-key-pepper.secret"),
+        Some("/etc/sdkwork/router/api-key-pepper.secret"),
         config.security.api_key_pepper_file.as_deref()
     );
     assert_eq!(
-        Some("/etc/clawrouter/trusted-subject.secret"),
+        Some("/etc/sdkwork/router/trusted-subject.secret"),
         config.security.trusted_subject_secret_file.as_deref()
     );
     assert_eq!(
@@ -413,7 +413,7 @@ password_file = "/etc/clawrouter/bootstrap-admin.secret"
         config.security.trusted_subject_max_clock_skew_seconds
     );
     assert_eq!(
-        Some("/etc/clawrouter/app-session.secret"),
+        Some("/etc/sdkwork/router/app-session.secret"),
         config.security.app_session_secret_file.as_deref()
     );
     assert_eq!(Some(86400), config.security.app_session_ttl_seconds);
@@ -422,7 +422,7 @@ password_file = "/etc/clawrouter/bootstrap-admin.secret"
         config.security.app_session_max_clock_skew_seconds
     );
     assert_eq!(
-        Some("/etc/clawrouter/payment-webhook.secret"),
+        Some("/etc/sdkwork/router/payment-webhook.secret"),
         config.security.payment_webhook_secret_file.as_deref()
     );
     assert_eq!(
@@ -434,7 +434,7 @@ password_file = "/etc/clawrouter/bootstrap-admin.secret"
         config.provider_relay.openai.base_url.as_deref()
     );
     assert_eq!(
-        Some("/etc/clawrouter/openai-relay.secret"),
+        Some("/etc/sdkwork/router/openai-relay.secret"),
         config.provider_relay.openai.bearer_token_file.as_deref()
     );
     assert_eq!(
@@ -481,7 +481,7 @@ password_file = "/etc/clawrouter/bootstrap-admin.secret"
     assert_eq!(Some("header"), google.auth_type.as_deref());
     assert_eq!(Some("x-goog-api-key"), google.auth_name.as_deref());
     assert_eq!(
-        Some("/etc/clawrouter/google-provider.secret"),
+        Some("/etc/sdkwork/router/google-provider.secret"),
         google.auth_value_file.as_deref()
     );
     assert_eq!(
@@ -496,15 +496,15 @@ password_file = "/etc/clawrouter/bootstrap-admin.secret"
         config.provider_adapter.adapter_base_url.as_deref()
     );
     assert_eq!(
-        Some("/etc/clawrouter/provider-adapter-manifest.json"),
+        Some("/etc/sdkwork/router/provider-adapter-manifest.json"),
         config.provider_adapter.manifest_file.as_deref()
     );
     assert_eq!(
-        Some("/etc/clawrouter/provider-adapter-token.secret"),
+        Some("/etc/sdkwork/router/provider-adapter-token.secret"),
         config.provider_adapter.gateway_token_file.as_deref()
     );
     assert_eq!(
-        Some("/etc/clawrouter/provider-secrets.json"),
+        Some("/etc/sdkwork/router/provider-secrets.json"),
         config.provider_secret_map.json_file.as_deref()
     );
     assert_eq!(Some(true), config.usage_settlement.enabled);
@@ -531,13 +531,13 @@ password_file = "/etc/clawrouter/bootstrap-admin.secret"
         config.model_ranking.alert_after_consecutive_failures
     );
     assert_eq!(
-        Some("/etc/clawrouter/forum-community-links.json"),
+        Some("/etc/sdkwork/router/forum-community-links.json"),
         config.forum.community_links_json_file.as_deref()
     );
     assert_eq!(Some("production"), config.install.environment.as_deref());
     assert_eq!(Some("commercial"), config.install.seed_profile.as_deref());
     assert_eq!(
-        Some("/opt/clawrouter/catalog"),
+        Some("/opt/sdkwork/router/catalog"),
         config.install.models_catalog_root.as_deref()
     );
     assert_eq!(Some("ensure"), config.install.startup_mode.as_deref());
@@ -548,7 +548,7 @@ password_file = "/etc/clawrouter/bootstrap-admin.secret"
         config.bootstrap_admin.email.as_deref()
     );
     assert_eq!(
-        Some("/etc/clawrouter/bootstrap-admin.secret"),
+        Some("/etc/sdkwork/router/bootstrap-admin.secret"),
         config.bootstrap_admin.password_file.as_deref()
     );
 }

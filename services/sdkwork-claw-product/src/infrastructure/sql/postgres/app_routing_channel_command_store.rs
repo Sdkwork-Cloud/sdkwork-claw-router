@@ -1,10 +1,9 @@
-use std::collections::HashMap;
 use std::sync::Arc;
 
 use sha2::{Digest, Sha256};
 use sqlx::{PgPool, Postgres, Row, Transaction};
 
-use crate::domain::{parse_model_catalog_identity, DomainError, DomainResult};
+use crate::domain::{DomainError, DomainResult};
 use crate::ports::{
     AppRoutingChannelCommandFuture, AppRoutingChannelCommandStore, AppRoutingChannelDeleteOutcome,
     AppRoutingChannelItem, AppRoutingChannelMutationOutcome, AppRoutingChannelTestOutcome,
@@ -61,14 +60,14 @@ impl AppRoutingChannelCommandStore for PostgresAppRoutingChannelCommandStore {
             })?;
             let provider_id = insert_or_load_provider(&mut tx, &command).await?;
             let channel_id = insert_channel(&mut tx, &command, provider_id).await?;
-            replace_channel_models(
+            replace_channel_credential(&mut tx, channel_id, &command).await?;
+            replace_channel_resource_bindings(
                 &mut tx,
                 channel_id,
-                &command.model_uuids,
                 command.subject.tenant_id,
                 command.subject.organization_id,
+                command.subject.user_id,
                 &command.provider_code,
-                &command.models,
                 &command.capabilities,
                 &command.requested_at,
             )
@@ -100,7 +99,6 @@ impl AppRoutingChannelCommandStore for PostgresAppRoutingChannelCommandStore {
                     "channelId": channel_id,
                     "name": &command.name,
                     "providerCode": &command.provider_code,
-                    "models": &command.models,
                     "capabilities": &command.capabilities,
                     "timeoutMs": command.timeout_ms,
                     "retryPolicyConfigured": command.retry_policy_json.is_some(),
@@ -156,7 +154,10 @@ impl AppRoutingChannelCommandStore for PostgresAppRoutingChannelCommandStore {
                 return Ok(None);
             }
             update_provider_account(&mut tx, &command, provider_id).await?;
-            if let Some(models) = command.models.as_deref() {
+            if command.capabilities.is_some()
+                || command.provider_code.is_some()
+                || command.vendor.is_some()
+            {
                 let provider_code = if let Some(provider_code) = command.provider_code.clone() {
                     provider_code
                 } else {
@@ -173,16 +174,13 @@ impl AppRoutingChannelCommandStore for PostgresAppRoutingChannelCommandStore {
                     .as_deref()
                     .map(Vec::from)
                     .unwrap_or_else(|| vec!["llm".to_owned()]);
-                let scope = DeleteAppRoutingChannelModelScope::from(&command);
-                soft_delete_channel_models(&mut tx, &scope).await?;
-                replace_channel_models(
+                replace_channel_resource_bindings(
                     &mut tx,
                     command.channel_id,
-                    &command.model_uuids,
                     command.subject.tenant_id,
                     command.subject.organization_id,
+                    command.subject.user_id,
                     &provider_code,
-                    models,
                     &capabilities,
                     &command.requested_at,
                 )
@@ -201,7 +199,6 @@ impl AppRoutingChannelCommandStore for PostgresAppRoutingChannelCommandStore {
                     "channelId": command.channel_id,
                     "name": command.name,
                     "providerCode": command.provider_code,
-                    "modelsChanged": command.models.is_some(),
                     "timeoutChanged": command.timeout_ms.is_some(),
                     "retryPolicyChanged": command.retry_policy_json.is_some(),
                     "circuitBreakerPolicyChanged": command.circuit_breaker_policy_json.is_some(),
@@ -222,7 +219,6 @@ impl AppRoutingChannelCommandStore for PostgresAppRoutingChannelCommandStore {
                 serde_json::json!({
                     "action": "update_channel",
                     "channelId": command.channel_id,
-                    "modelsChanged": command.models.is_some(),
                     "timeoutChanged": command.timeout_ms.is_some(),
                     "retryPolicyChanged": command.retry_policy_json.is_some(),
                     "circuitBreakerPolicyChanged": command.circuit_breaker_policy_json.is_some(),
@@ -318,8 +314,6 @@ impl AppRoutingChannelCommandStore for PostgresAppRoutingChannelCommandStore {
             })?;
             let deleted = soft_delete_channel(&mut tx, &command).await?;
             if deleted {
-                let scope = DeleteAppRoutingChannelModelScope::from(command.clone());
-                soft_delete_channel_models(&mut tx, &scope).await?;
                 soft_delete_channel_relationships(&mut tx, &command).await?;
                 insert_config_snapshot(
                     &mut tx,
@@ -676,6 +670,8 @@ async fn update_provider_account(
     if command.secret_ref.is_none()
         && command.provider_code.is_none()
         && command.name.is_none()
+        && command.base_url.is_none()
+        && command.status.is_none()
         && provider_id.is_none()
     {
         return Ok(());
@@ -718,6 +714,61 @@ async fn update_provider_account(
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to update routing channel provider account", error))?;
+    update_primary_channel_credential(tx, command).await?;
+    Ok(())
+}
+
+async fn update_primary_channel_credential(
+    tx: &mut Transaction<'_, Postgres>,
+    command: &UpdateAppRoutingChannelCommand,
+) -> DomainResult<()> {
+    let base_url_touched = command.base_url.is_some();
+    let base_url = command.base_url.as_ref().and_then(|value| value.as_deref());
+    let secret_hash = command
+        .secret_ref
+        .as_ref()
+        .map(|secret_ref| digest_hex(secret_ref));
+    let masked_label = command
+        .secret_ref
+        .as_ref()
+        .map(|secret_ref| mask_secret_ref(secret_ref));
+    sqlx::query(
+        r#"
+        UPDATE ai_channel_credential
+        SET provider_code = COALESCE($1, provider_code),
+            base_url = CASE WHEN $2 THEN COALESCE($3, '') ELSE base_url END,
+            credential_ref = COALESCE($4, credential_ref),
+            credential_hash = COALESCE($5, credential_hash),
+            masked_label = COALESCE($6, masked_label),
+            health_status = COALESCE($7, health_status),
+            updated_at = $8::timestamptz,
+            version = COALESCE(version, 0) + 1
+        WHERE channel_id = $9
+          AND tenant_id = $10
+          AND organization_id = $11
+          AND credential_name = 'primary'
+          AND deleted_at IS NULL
+        "#,
+    )
+    .bind(command.provider_code.as_deref())
+    .bind(base_url_touched)
+    .bind(base_url)
+    .bind(command.secret_ref.as_deref())
+    .bind(secret_hash)
+    .bind(masked_label)
+    .bind(
+        command
+            .status
+            .as_ref()
+            .map(|value| health_status_code(value)),
+    )
+    .bind(&command.requested_at)
+    .bind(command.channel_id)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to update routing channel credential", error))?;
     Ok(())
 }
 
@@ -752,89 +803,227 @@ async fn update_channel_status(
     Ok(result.rows_affected() > 0)
 }
 
-async fn replace_channel_models(
+async fn replace_channel_credential(
     tx: &mut Transaction<'_, Postgres>,
     channel_id: i64,
-    model_uuids: &[String],
+    command: &CreateAppRoutingChannelCommand,
+) -> DomainResult<()> {
+    let auth_config = serde_json::json!({
+        "accessType": &command.access_type,
+        "protocol": &command.protocol,
+        "credentialSource": "externalSecretRef"
+    })
+    .to_string();
+    sqlx::query(
+        r#"
+        INSERT INTO ai_channel_credential
+            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, channel_id, provider_code, channel_code, credential_name, base_url, auth_config, credential_ref, credential_hash, masked_label, priority, weight, health_status, consecutive_error_count)
+        VALUES
+            ($1, $2, $3, 1, $4, $5::timestamptz, $6::timestamptz, 0, '{}'::jsonb, $7, $8, (
+                SELECT COALESCE(NULLIF(channel_code, ''), '')
+                FROM ai_channel
+                WHERE id = $9
+            ), 'primary', $10, $11::jsonb, $12, $13, $14, 1, 100, $15, 0)
+        "#,
+    )
+    .bind(&command.account_uuid)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .bind(status_code(&command.status))
+    .bind(&command.requested_at)
+    .bind(&command.requested_at)
+    .bind(channel_id)
+    .bind(&command.provider_code)
+    .bind(channel_id)
+    .bind(command.base_url.as_deref().unwrap_or_default())
+    .bind(auth_config)
+    .bind(&command.secret_ref)
+    .bind(digest_hex(&command.secret_ref))
+    .bind(mask_secret_ref(&command.secret_ref))
+    .bind(health_status_code(&command.status))
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to create routing channel credential", error))?;
+    Ok(())
+}
+
+async fn replace_channel_resource_bindings(
+    tx: &mut Transaction<'_, Postgres>,
+    channel_id: i64,
     tenant_id: i64,
     organization_id: i64,
-    _provider_code: &str,
-    models: &[String],
+    user_id: i64,
+    provider_code: &str,
     capabilities: &[String],
     requested_at: &str,
 ) -> DomainResult<()> {
-    let capability = capabilities
-        .first()
-        .map(|value| capability_code(value))
-        .unwrap_or(1);
-    for (index, model) in models.iter().enumerate() {
-        let (catalog_key, vendor_code, official_model) = split_catalog_model_key(model)?;
-        let uuid = model_uuids
-            .get(index)
-            .cloned()
-            .unwrap_or_else(|| digest_hex(&format!("{channel_id}:{model}:{index}")));
+    let channel_code = load_channel_code(tx, channel_id, tenant_id, organization_id).await?;
+    let mut resource_codes = Vec::<String>::new();
+    push_unique(&mut resource_codes, &format!("vendor.{provider_code}"));
+    for capability in capabilities {
+        if let Some(resource_code) = capability_resource_code(capability) {
+            push_unique(&mut resource_codes, &resource_code);
+        }
+    }
+    soft_delete_removed_channel_resources(
+        tx,
+        channel_id,
+        tenant_id,
+        organization_id,
+        user_id,
+        &resource_codes,
+        requested_at,
+    )
+    .await?;
+    for (index, resource_code) in resource_codes.iter().enumerate() {
+        let resource = resolve_resource(tx, tenant_id, organization_id, resource_code).await?;
+        let uuid_suffix = digest_hex(&format!("{channel_id}:{resource_code}"))
+            .chars()
+            .take(32)
+            .collect::<String>();
+        let priority = i64::try_from(index + 1).unwrap_or(i64::MAX);
         sqlx::query(
             r#"
-            INSERT INTO ai_channel_model
-                (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, channel_id, catalog_key, model, vendor_code, provider_model, provider_native_model, api_code, capability, supports_streaming, supports_tools)
+            INSERT INTO ai_channel_resource
+                (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, channel_id, provider_code, channel_code, resource_id, resource_code, resource_group_id, resource_group_code, grant_type, priority, weight)
             VALUES
-                ($1, $2, $3, 1, 1, $4::timestamptz, $5::timestamptz, 0, $6, $7, $8, $9, $10, $11, $12, $13, true, true)
+                ($1, $2, $3, 1, 1, $4::timestamptz, $5::timestamptz, 0, $6, $7, $8, $9, $10, NULL, '', 'allow', $11, 100)
+            ON CONFLICT(tenant_id, organization_id, channel_id, resource_code, resource_group_code) DO UPDATE SET
+                status = 1,
+                deleted_at = NULL,
+                deleted_by = NULL,
+                updated_at = excluded.updated_at,
+                provider_code = excluded.provider_code,
+                channel_code = excluded.channel_code,
+                resource_id = excluded.resource_id,
+                grant_type = excluded.grant_type,
+                priority = excluded.priority,
+                weight = excluded.weight,
+                version = COALESCE(ai_channel_resource.version, 0) + 1
             "#,
         )
-        .bind(uuid)
+        .bind(format!("app-chn-resource-{uuid_suffix}"))
         .bind(tenant_id)
         .bind(organization_id)
         .bind(requested_at)
         .bind(requested_at)
         .bind(channel_id)
-        .bind(&catalog_key)
-        .bind(&official_model)
-        .bind(&vendor_code)
-        .bind(&official_model)
-        .bind(&official_model)
-        .bind(api_endpoint_code(capability))
-        .bind(capability)
+        .bind(provider_code)
+        .bind(&channel_code)
+        .bind(resource.id)
+        .bind(resource.resource_code)
+        .bind(priority)
         .execute(&mut **tx)
         .await
-        .map_err(|error| store_error("failed to replace routing channel models", error))?;
+        .map_err(|error| store_error("failed to upsert routing channel resources", error))?;
     }
     Ok(())
 }
 
-async fn soft_delete_channel_models(
-    tx: &mut Transaction<'_, Postgres>,
-    command: &DeleteAppRoutingChannelModelScope,
-) -> DomainResult<()> {
-    sqlx::query(
-        r#"
-        UPDATE ai_channel_model
-        SET status = -1,
-            deleted_at = $1::timestamptz,
-            deleted_by = $2,
-            updated_at = $3::timestamptz,
-            version = COALESCE(version, 0) + 1
-        WHERE channel_id = $4
-          AND tenant_id = $5
-          AND organization_id = $6
-          AND deleted_at IS NULL
-        "#,
-    )
-    .bind(&command.requested_at)
-    .bind(command.user_id)
-    .bind(&command.requested_at)
-    .bind(command.channel_id)
-    .bind(command.tenant_id)
-    .bind(command.organization_id)
-    .execute(&mut **tx)
-    .await
-    .map_err(|error| store_error("failed to delete routing channel models", error))?;
-    Ok(())
+fn push_unique(values: &mut Vec<String>, value: &str) {
+    let value = value.trim();
+    if !value.is_empty()
+        && !values
+            .iter()
+            .any(|existing| existing.eq_ignore_ascii_case(value))
+    {
+        values.push(value.to_owned());
+    }
 }
 
-async fn soft_delete_channel_relationships(
+fn capability_resource_code(value: &str) -> Option<String> {
+    match value.trim().to_ascii_lowercase().as_str() {
+        "llm" | "chat" | "completion" | "completions" | "response" | "responses" => {
+            Some("modality.llm".to_owned())
+        }
+        "image" | "images" => Some("modality.image".to_owned()),
+        "audio" => Some("modality.audio".to_owned()),
+        "music" => Some("modality.music".to_owned()),
+        "sfx" | "sound_effect" | "sound_effects" => Some("modality.sfx".to_owned()),
+        "video" | "videos" => Some("modality.video".to_owned()),
+        "embedding" | "embeddings" => Some("modality.embedding".to_owned()),
+        _ => None,
+    }
+}
+
+#[derive(Debug, Clone)]
+struct ResolvedAiResource {
+    id: i64,
+    resource_code: String,
+}
+
+async fn load_channel_code(
     tx: &mut Transaction<'_, Postgres>,
-    command: &DeleteAppRoutingChannelCommand,
+    channel_id: i64,
+    tenant_id: i64,
+    organization_id: i64,
+) -> DomainResult<String> {
+    sqlx::query_scalar(
+        r#"
+        SELECT COALESCE(NULLIF(channel_code, ''), '')
+        FROM ai_channel
+        WHERE id = $1
+          AND tenant_id = $2
+          AND organization_id = $3
+          AND deleted_at IS NULL
+        LIMIT 1
+        "#,
+    )
+    .bind(channel_id)
+    .bind(tenant_id)
+    .bind(organization_id)
+    .fetch_one(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to load routing channel code", error))
+}
+
+async fn resolve_resource(
+    tx: &mut Transaction<'_, Postgres>,
+    tenant_id: i64,
+    organization_id: i64,
+    resource_code: &str,
+) -> DomainResult<ResolvedAiResource> {
+    let row = sqlx::query(
+        r#"
+        SELECT id, resource_code
+        FROM ai_resource
+        WHERE tenant_id = $1
+          AND organization_id = $2
+          AND resource_code = $3
+          AND deleted_at IS NULL
+          AND status = 1
+        LIMIT 1
+        "#,
+    )
+    .bind(tenant_id)
+    .bind(organization_id)
+    .bind(resource_code)
+    .fetch_optional(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to resolve routing channel resource", error))?;
+    let Some(row) = row else {
+        return Err(DomainError::not_found(format!(
+            "AI resource was not found: {resource_code}"
+        )));
+    };
+    Ok(ResolvedAiResource {
+        id: integer_cell(&row, "id"),
+        resource_code: string_cell(&row, "resource_code"),
+    })
+}
+
+async fn soft_delete_removed_channel_resources(
+    tx: &mut Transaction<'_, Postgres>,
+    channel_id: i64,
+    tenant_id: i64,
+    organization_id: i64,
+    user_id: i64,
+    resource_codes: &[String],
+    requested_at: &str,
 ) -> DomainResult<()> {
+    if resource_codes.is_empty() {
+        return Ok(());
+    }
     sqlx::query(
         r#"
         UPDATE ai_channel_resource
@@ -843,70 +1032,65 @@ async fn soft_delete_channel_relationships(
             deleted_by = $2,
             updated_at = $3::timestamptz,
             version = COALESCE(version, 0) + 1
-        WHERE channel_id = $4
-          AND tenant_id = $5
-          AND organization_id = $6
+        WHERE tenant_id = $4
+          AND organization_id = $5
+          AND channel_id = $6
           AND deleted_at IS NULL
+          AND COALESCE(NULLIF(resource_code, ''), resource_group_code) <> ALL($7)
         "#,
     )
-    .bind(&command.requested_at)
-    .bind(command.subject.user_id)
-    .bind(&command.requested_at)
-    .bind(command.channel_id)
-    .bind(command.subject.tenant_id)
-    .bind(command.subject.organization_id)
+    .bind(requested_at)
+    .bind(user_id)
+    .bind(requested_at)
+    .bind(tenant_id)
+    .bind(organization_id)
+    .bind(channel_id)
+    .bind(resource_codes)
     .execute(&mut **tx)
     .await
-    .map_err(|error| store_error("failed to delete routing channel resources", error))?;
+    .map_err(|error| store_error("failed to replace routing channel resources", error))?;
+    Ok(())
+}
 
-    sqlx::query(
-        r#"
-        UPDATE ai_channel_vendor
-        SET status = -1,
-            deleted_at = $1::timestamptz,
-            deleted_by = $2,
-            updated_at = $3::timestamptz,
-            version = COALESCE(version, 0) + 1
-        WHERE channel_id = $4
-          AND tenant_id = $5
-          AND organization_id = $6
-          AND deleted_at IS NULL
-        "#,
-    )
-    .bind(&command.requested_at)
-    .bind(command.subject.user_id)
-    .bind(&command.requested_at)
-    .bind(command.channel_id)
-    .bind(command.subject.tenant_id)
-    .bind(command.subject.organization_id)
-    .execute(&mut **tx)
-    .await
-    .map_err(|error| store_error("failed to delete routing channel vendors", error))?;
-
-    sqlx::query(
-        r#"
-        UPDATE ai_channel_endpoint
-        SET status = -1,
-            deleted_at = $1::timestamptz,
-            deleted_by = $2,
-            updated_at = $3::timestamptz,
-            version = COALESCE(version, 0) + 1
-        WHERE channel_id = $4
-          AND tenant_id = $5
-          AND organization_id = $6
-          AND deleted_at IS NULL
-        "#,
-    )
-    .bind(&command.requested_at)
-    .bind(command.subject.user_id)
-    .bind(&command.requested_at)
-    .bind(command.channel_id)
-    .bind(command.subject.tenant_id)
-    .bind(command.subject.organization_id)
-    .execute(&mut **tx)
-    .await
-    .map_err(|error| store_error("failed to delete routing channel endpoints", error))?;
-
+async fn soft_delete_channel_relationships(
+    tx: &mut Transaction<'_, Postgres>,
+    command: &DeleteAppRoutingChannelCommand,
+) -> DomainResult<()> {
+    for (table_name, context) in [
+        (
+            "ai_channel_credential",
+            "failed to delete routing channel credentials",
+        ),
+        (
+            "ai_channel_resource",
+            "failed to delete routing channel resources",
+        ),
+    ] {
+        let sql = format!(
+            r#"
+            UPDATE {table_name}
+            SET status = -1,
+                deleted_at = $1::timestamptz,
+                deleted_by = $2,
+                updated_at = $3::timestamptz,
+                version = COALESCE(version, 0) + 1
+            WHERE channel_id = $4
+              AND tenant_id = $5
+              AND organization_id = $6
+              AND deleted_at IS NULL
+            "#,
+        );
+        sqlx::query(&sql)
+            .bind(&command.requested_at)
+            .bind(command.subject.user_id)
+            .bind(&command.requested_at)
+            .bind(command.channel_id)
+            .bind(command.subject.tenant_id)
+            .bind(command.subject.organization_id)
+            .execute(&mut **tx)
+            .await
+            .map_err(|error| store_error(context, error))?;
+    }
     Ok(())
 }
 
@@ -960,31 +1144,55 @@ async fn load_channel_probe_target(
         SELECT
             c.id AS channel_id,
             c.provider_id,
-            c.id AS provider_account_id,
-            COALESCE(NULLIF(c.base_url, ''), NULLIF(p.base_url, ''), '') AS provider_base_url,
-            COALESCE(NULLIF(c.credential_ref, ''), '') AS provider_secret_ref,
-            COALESCE(NULLIF(cm.provider_model, ''), '') AS provider_model,
+            COALESCE(cc.id, c.id) AS provider_account_id,
+            COALESCE(NULLIF(cc.base_url, ''), NULLIF(c.base_url, ''), NULLIF(p.base_url, ''), '') AS provider_base_url,
+            COALESCE(NULLIF(cc.credential_ref, ''), NULLIF(c.credential_ref, ''), '') AS provider_secret_ref,
+            COALESCE(NULLIF(r.provider_native_model, ''), NULLIF(r.model, ''), 'gpt-4o-mini') AS provider_model,
             c.timeout_ms
         FROM ai_channel c
+        LEFT JOIN ai_channel_credential cc
+          ON cc.channel_id = c.id
+         AND cc.tenant_id = c.tenant_id
+         AND cc.organization_id = c.organization_id
+         AND cc.status = 1
+         AND cc.deleted_at IS NULL
         LEFT JOIN ai_provider p
-          ON p.id = c.provider_id
+          ON (
+              p.id = c.provider_id
+              OR (
+                  p.provider_code = c.provider_code
+                  AND (c.provider_id IS NULL OR c.provider_id = 0)
+              )
+          )
          AND p.deleted_at IS NULL
          AND (
              (p.tenant_id = c.tenant_id AND p.organization_id = c.organization_id)
              OR (p.tenant_id = 0 AND p.organization_id = 0)
              OR (p.tenant_id IS NULL AND p.organization_id IS NULL)
          )
-        LEFT JOIN ai_channel_model cm
-          ON cm.channel_id = c.id
-         AND cm.tenant_id = c.tenant_id
-         AND cm.organization_id = c.organization_id
-         AND cm.status = 1
-         AND cm.deleted_at IS NULL
+        LEFT JOIN ai_channel_resource cr
+          ON cr.channel_id = c.id
+         AND cr.tenant_id = c.tenant_id
+         AND cr.organization_id = c.organization_id
+         AND cr.status = 1
+         AND cr.deleted_at IS NULL
+         AND cr.grant_type = 'allow'
+        LEFT JOIN ai_resource r
+          ON r.resource_code = cr.resource_code
+         AND r.tenant_id = cr.tenant_id
+         AND r.organization_id = cr.organization_id
+         AND r.deleted_at IS NULL
+         AND r.status = 1
+         AND COALESCE(r.resource_type, '') IN ('model', 'model_api')
         WHERE c.id = $1
           AND c.tenant_id = $2
           AND c.organization_id = $3
           AND c.deleted_at IS NULL
-        ORDER BY cm.id ASC
+        ORDER BY COALESCE(cc.priority, 100) ASC,
+                 COALESCE(cc.weight, 100) DESC,
+                 cc.id ASC,
+                 cr.priority ASC,
+                 cr.id ASC
         LIMIT 1
         "#,
     )
@@ -1131,20 +1339,38 @@ async fn load_channel_by_id(
             COALESCE((
                 SELECT jsonb_agg(selected.capability ORDER BY selected.capability)::text
                 FROM (
-                    SELECT DISTINCT CASE cm2.capability
-                        WHEN 2 THEN 'image'
-                        WHEN 3 THEN 'audio'
-                        WHEN 4 THEN 'music'
-                        WHEN 5 THEN 'sfx'
-                        WHEN 6 THEN 'video'
+                    SELECT DISTINCT CASE COALESCE(r.modality_code, r.resource_code)
+                        WHEN 'image' THEN 'image'
+                        WHEN 'audio' THEN 'audio'
+                        WHEN 'music' THEN 'music'
+                        WHEN 'sfx' THEN 'sfx'
+                        WHEN 'video' THEN 'video'
+                        WHEN 'embedding' THEN 'embedding'
+                        WHEN 'modality.image' THEN 'image'
+                        WHEN 'modality.audio' THEN 'audio'
+                        WHEN 'modality.music' THEN 'music'
+                        WHEN 'modality.sfx' THEN 'sfx'
+                        WHEN 'modality.video' THEN 'video'
+                        WHEN 'modality.embedding' THEN 'embedding'
                         ELSE 'llm'
                     END AS capability
-                    FROM ai_channel_model cm2
-                    WHERE cm2.channel_id = c.id
-                      AND cm2.tenant_id = c.tenant_id
-                      AND cm2.organization_id = c.organization_id
-                      AND cm2.status = 1
-                      AND cm2.deleted_at IS NULL
+                    FROM ai_channel_resource cr
+                    LEFT JOIN ai_resource r
+                      ON r.resource_code = cr.resource_code
+                     AND r.tenant_id = cr.tenant_id
+                     AND r.organization_id = cr.organization_id
+                     AND r.status = 1
+                     AND r.deleted_at IS NULL
+                    WHERE cr.channel_id = c.id
+                      AND cr.tenant_id = c.tenant_id
+                      AND cr.organization_id = c.organization_id
+                      AND cr.status = 1
+                      AND cr.deleted_at IS NULL
+                      AND cr.grant_type = 'allow'
+                      AND (
+                          COALESCE(r.resource_type, '') IN ('modality', 'model', 'model_api')
+                          OR cr.resource_code LIKE 'modality.%'
+                      )
                 ) selected
             ), '["llm"]') AS capabilities_json,
             c.timeout_ms,
@@ -1177,73 +1403,10 @@ async fn load_channel_by_id(
     let Some(row) = row else {
         return Ok(None);
     };
-    let models = load_models_for_channels_tx(tx, tenant_id, organization_id).await?;
-    row_to_channel(row, &models).map(Some)
+    row_to_channel(row).map(Some)
 }
 
-async fn load_models_for_channels_tx(
-    tx: &mut Transaction<'_, Postgres>,
-    tenant_id: i64,
-    organization_id: i64,
-) -> DomainResult<HashMap<String, Vec<String>>> {
-    let rows = sqlx::query(
-        r#"
-        SELECT
-            CAST(channel_id AS TEXT) AS channel_id,
-            COALESCE(NULLIF(catalog_key, ''), '') AS model
-        FROM ai_channel_model
-        WHERE tenant_id = $1
-          AND organization_id = $2
-          AND deleted_at IS NULL
-          AND status = 1
-          AND (effective_from IS NULL OR effective_from <= CURRENT_TIMESTAMP)
-          AND (effective_to IS NULL OR effective_to > CURRENT_TIMESTAMP)
-        ORDER BY id ASC
-        "#,
-    )
-    .bind(tenant_id)
-    .bind(organization_id)
-    .fetch_all(&mut **tx)
-    .await
-    .map_err(|error| store_error("failed to load routing channel models", error))?;
-    let mut models: HashMap<String, Vec<String>> = HashMap::new();
-    for row in rows {
-        let channel_id = string_cell(&row, "channel_id");
-        let model = string_cell(&row, "model");
-        if !model.trim().is_empty() {
-            models.entry(channel_id).or_default().push(model);
-        }
-    }
-    Ok(models)
-}
-
-fn split_catalog_model_key(catalog_key: &str) -> DomainResult<(String, String, String)> {
-    let value = catalog_key.trim();
-    let identity = parse_model_catalog_identity(value).ok_or_else(|| {
-        DomainError::new(format!(
-            "routing channel model must be a catalog key in vendorCode/modelId format: {value}"
-        ))
-    })?;
-    let official_model = identity.model_id();
-    Ok((value.to_owned(), identity.vendor_code, official_model))
-}
-
-fn api_endpoint_code(capability: i32) -> &'static str {
-    match capability {
-        2 => "openai.images",
-        3 => "openai.audio",
-        4 => "suno.music",
-        5 => "openai.video",
-        6 => "openai.embeddings",
-        7 => "rerank",
-        _ => "openai.chat_completions",
-    }
-}
-
-fn row_to_channel(
-    row: sqlx::postgres::PgRow,
-    models: &HashMap<String, Vec<String>>,
-) -> DomainResult<AppRoutingChannelItem> {
+fn row_to_channel(row: sqlx::postgres::PgRow) -> DomainResult<AppRoutingChannelItem> {
     let id = string_cell(&row, "id");
     let capabilities = parse_string_array(&string_cell(&row, "capabilities_json"))?;
     let errors = integer_cell(&row, "channel_errors") + integer_cell(&row, "account_errors");
@@ -1261,7 +1424,7 @@ fn row_to_channel(
         access_type: access_type_label(required_integer_cell(&row, "access_type")?)?,
         base_url: string_cell(&row, "base_url"),
         api_key: string_cell(&row, "api_key"),
-        models: models.get(&id).cloned().unwrap_or_default(),
+        models: Vec::new(),
         is_multimodal: capabilities.iter().any(|capability| capability != "llm"),
         capabilities,
         timeout_ms: row.try_get("timeout_ms").ok().flatten(),
@@ -1392,39 +1555,6 @@ async fn insert_audit_log(
     Ok(())
 }
 
-#[derive(Debug, Clone)]
-struct DeleteAppRoutingChannelModelScope {
-    channel_id: i64,
-    tenant_id: i64,
-    organization_id: i64,
-    user_id: i64,
-    requested_at: String,
-}
-
-impl From<DeleteAppRoutingChannelCommand> for DeleteAppRoutingChannelModelScope {
-    fn from(value: DeleteAppRoutingChannelCommand) -> Self {
-        Self {
-            channel_id: value.channel_id,
-            tenant_id: value.subject.tenant_id,
-            organization_id: value.subject.organization_id,
-            user_id: value.subject.user_id,
-            requested_at: value.requested_at,
-        }
-    }
-}
-
-impl From<&UpdateAppRoutingChannelCommand> for DeleteAppRoutingChannelModelScope {
-    fn from(value: &UpdateAppRoutingChannelCommand) -> Self {
-        Self {
-            channel_id: value.channel_id,
-            tenant_id: value.subject.tenant_id,
-            organization_id: value.subject.organization_id,
-            user_id: value.subject.user_id,
-            requested_at: value.requested_at.clone(),
-        }
-    }
-}
-
 fn channel_snapshot_payload(channel_id: i64, name: &str, provider_code: &str) -> serde_json::Value {
     serde_json::json!({
         "channelId": channel_id,
@@ -1512,19 +1642,6 @@ fn access_type_label(value: i64) -> DomainResult<String> {
         ))),
     }
     .map(str::to_owned)
-}
-
-fn capability_code(value: &str) -> i32 {
-    match value {
-        "image" => 2,
-        "audio" => 3,
-        "music" => 4,
-        "sfx" => 4,
-        "video" => 5,
-        "embedding" | "embeddings" => 6,
-        "rerank" | "ranking" => 7,
-        _ => 1,
-    }
 }
 
 fn status_code(value: &str) -> i32 {

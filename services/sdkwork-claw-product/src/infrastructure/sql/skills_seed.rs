@@ -1136,7 +1136,7 @@ async fn import_postgres_packages(
             INSERT INTO plus_agent_skill_package
                 (id, uuid, tenant_id, organization_id, data_scope, user_id, package_key, name, summary, description, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot, cover_media_resource_id, cover_object_blob_id, cover_resource_snapshot, category_id, enabled, featured, sort_weight, tags, latest_published_at)
             VALUES
-                ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13::jsonb, $14, $15, $16::jsonb, $17, $18, $19, $20, $21::jsonb, $22)
+                ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13::jsonb, $14, $15, $16::jsonb, $17, $18, $19, $20, $21::jsonb, $22::timestamptz)
             ON CONFLICT(id) DO UPDATE SET
                 uuid = excluded.uuid,
                 tenant_id = excluded.tenant_id,
@@ -1207,7 +1207,7 @@ async fn import_postgres_skills(
             INSERT INTO plus_agent_skill
                 (id, uuid, tenant_id, organization_id, data_scope, user_id, skill_key, name, summary, description, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot, cover_media_resource_id, cover_object_blob_id, cover_resource_snapshot, category_id, package_id, provider, version, version_name, runtime, entrypoint, manifest_url, repository_url, homepage_url, documentation_url, license_name, source_type, market_status, visibility, review_status, review_comment, reviewed_by, reviewed_at, builtin, is_builtin, enabled, featured, recommend_weight, price, currency, install_count, rating_avg, rating_count, tags, capabilities, config_schema, default_config, latest_published_at)
             VALUES
-                ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13::jsonb, $14, $15, $16::jsonb, $17, $18, $19, $20, $21, $22, $23, $24, $25, $26, $27, $28, $29, $30, $31, $32, $33, $34, $35, $36, $37, $38, $39, $40, $41, $42, $43, $44, $45, $46::jsonb, $47::jsonb, $48::jsonb, $49::jsonb, $50)
+                ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13::jsonb, $14, $15, $16::jsonb, $17, $18, $19, $20, $21, $22, $23, $24, $25, $26, $27, $28, $29, $30, $31, $32, $33, $34, $35::timestamptz, $36, $37, $38, $39, $40, CAST($41 AS NUMERIC), $42, $43, CAST($44 AS NUMERIC), $45, $46::jsonb, $47::jsonb, $48::jsonb, $49::jsonb, $50::timestamptz)
             ON CONFLICT(tenant_id, organization_id, skill_key) DO UPDATE SET
                 uuid = excluded.uuid,
                 user_id = excluded.user_id,
@@ -1346,10 +1346,10 @@ async fn import_postgres_assets(
                 mime_type = $13,
                 width = $14,
                 height = $15,
-                duration_seconds = $16,
+                duration_seconds = CAST($16 AS NUMERIC),
                 file_size = $17,
                 sort_order = $18,
-                published_at = $19,
+                published_at = $19::timestamptz,
                 metadata = $20::jsonb,
                 status = $21,
                 deleted_at = NULL,
@@ -1394,7 +1394,7 @@ async fn import_postgres_assets(
             INSERT INTO studio_catalog_asset
                 (uuid, tenant_id, organization_id, data_scope, status, metadata, target_type, target_id, artifact_id, asset_type, asset_media_resource_id, asset_object_blob_id, asset_resource_snapshot, thumbnail_media_resource_id, thumbnail_object_blob_id, thumbnail_resource_snapshot, title, alt_text, mime_type, width, height, duration_seconds, file_size, sort_order, published_at)
             VALUES
-                ($1, $2, $3, $4, $5, $6::jsonb, $7, $8, $9, $10, $11, $12, $13::jsonb, $14, $15, $16::jsonb, $17, $18, $19, $20, $21, $22, $23, $24, $25)
+                ($1, $2, $3, $4, $5, $6::jsonb, $7, $8, $9, $10, $11, $12, $13::jsonb, $14, $15, $16::jsonb, $17, $18, $19, $20, $21, CAST($22 AS NUMERIC), $23, $24, $25::timestamptz)
             "#,
         )
         .bind(&item.uuid)
@@ -1450,7 +1450,7 @@ async fn import_postgres_artifacts(
             INSERT INTO studio_catalog_artifact
                 (uuid, tenant_id, organization_id, data_scope, status, metadata, target_type, target_id, artifact_type, version, platform_type, os_name, artifact_ref, artifact_media_resource_id, artifact_object_blob_id, artifact_resource_snapshot, artifact_size_bytes, runtime, frameworks, license_name, checksum_hash, release_notes, published_at, deprecated_at)
             VALUES
-                ($1, $2, $3, $4, $5, $6::jsonb, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16::jsonb, $17, $18, $19::jsonb, $20, $21, $22, $23, $24)
+                ($1, $2, $3, $4, $5, $6::jsonb, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16::jsonb, $17, $18, $19::jsonb, $20, $21, $22, $23::timestamptz, $24::timestamptz)
             ON CONFLICT(tenant_id, organization_id, target_type, target_id, artifact_type, version, platform_type, os_name) DO UPDATE SET
                 uuid = excluded.uuid,
                 artifact_ref = excluded.artifact_ref,

@@ -3,6 +3,14 @@ use serde::{Deserialize, Serialize};
 /// Admin ai resource group item schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct AdminAiResourceGroupItem {
+    /// Capabilities field on admin ai resource group item.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub capabilities: Option<Vec<String>>,
+
+    /// Capability field on admin ai resource group item.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub capability: Option<String>,
+
     /// Description field on admin ai resource group item.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub description: Option<String>,
@@ -40,4 +48,9 @@ pub struct AdminAiResourceGroupItem {
 
     /// Status field on admin ai resource group item.
     pub status: String,
+
+    /// Vendor codes field on admin ai resource group item.
+    #[serde(rename = "vendorCodes")]
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub vendor_codes: Option<Vec<String>>,
 }

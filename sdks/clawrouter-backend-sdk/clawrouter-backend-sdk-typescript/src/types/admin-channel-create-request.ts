@@ -18,8 +18,6 @@ export interface AdminChannelCreateRequest {
   credentials: AdminChannelCredentialInput[];
   /** Expires at field on admin channel create request. */
   expiresAt?: string | null;
-  /** Models field on admin channel create request. */
-  models: string[];
   /** Name field on admin channel create request. */
   name: string;
   /** Protocol field on admin channel create request. */

@@ -98,6 +98,38 @@ namespace Sdkwork.ClawRouter.App.Api
         }
 
         /// <summary>
+        /// List routing API keys
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.App.Models.RoutingApiKeysListResult?> RoutingApiKeysListAsync()
+        {
+            return await _client.GetAsync<Sdkwork.ClawRouter.App.Models.RoutingApiKeysListResult>(ApiPaths.AppPath("/ai/routing/api_keys"));
+        }
+
+        /// <summary>
+        /// List routing channels
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.App.Models.RoutingChannelsListResult?> RoutingChannelsListAsync()
+        {
+            return await _client.GetAsync<Sdkwork.ClawRouter.App.Models.RoutingChannelsListResult>(ApiPaths.AppPath("/ai/routing/channels"));
+        }
+
+        /// <summary>
+        /// List routing request traces
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.App.Models.RoutingRequestTracesListResult?> RoutingRequestTracesListAsync()
+        {
+            return await _client.GetAsync<Sdkwork.ClawRouter.App.Models.RoutingRequestTracesListResult>(ApiPaths.AppPath("/ai/routing/request_traces"));
+        }
+
+        /// <summary>
+        /// List routing usage
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.App.Models.RoutingUsageListResult?> RoutingUsageListAsync()
+        {
+            return await _client.GetAsync<Sdkwork.ClawRouter.App.Models.RoutingUsageListResult>(ApiPaths.AppPath("/ai/routing/usage"));
+        }
+
+        /// <summary>
         /// List logs
         /// </summary>
         public async Task<Sdkwork.ClawRouter.App.Models.UsageLogsListResult?> UsageLogsListAsync(int? page = null, int? pageSize = null, string? q = null, string? status = null, string? startTime = null, string? endTime = null)

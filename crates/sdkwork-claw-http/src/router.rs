@@ -6,9 +6,10 @@ use sdkwork_claw_contract::{ApiSurface, ContractManifest};
 use sdkwork_claw_core::DatabaseHealth;
 
 use crate::contract_routes::{
-    contract_fallback, gateway_openapi_document, openapi_document, openapi_schema_tabs,
-    payment_aggregate_openapi_document, APP_OPENAPI_PATH, BACKEND_OPENAPI_PATH,
-    GATEWAY_OPENAPI_PATH, OPENAPI_SCHEMA_TABS_PATH, PAYMENT_AGGREGATE_OPENAPI_PATH,
+    cloud_services_openapi_document, contract_fallback, gateway_openapi_document, openapi_document,
+    openapi_schema_tabs, paas_openapi_document, payment_aggregate_openapi_document,
+    APP_OPENAPI_PATH, BACKEND_OPENAPI_PATH, CLOUD_SERVICES_OPENAPI_PATH, GATEWAY_OPENAPI_PATH,
+    OPENAPI_SCHEMA_TABS_PATH, PAAS_OPENAPI_PATH, PAYMENT_AGGREGATE_OPENAPI_PATH,
 };
 use crate::health::{healthz, readyz};
 
@@ -62,6 +63,11 @@ fn base_router() -> Router<ServiceState> {
         .route(
             PAYMENT_AGGREGATE_OPENAPI_PATH,
             get(payment_aggregate_openapi_document),
+        )
+        .route(PAAS_OPENAPI_PATH, get(paas_openapi_document))
+        .route(
+            CLOUD_SERVICES_OPENAPI_PATH,
+            get(cloud_services_openapi_document),
         )
         .route(OPENAPI_SCHEMA_TABS_PATH, get(openapi_schema_tabs))
         .route(APP_OPENAPI_PATH, get(openapi_document))

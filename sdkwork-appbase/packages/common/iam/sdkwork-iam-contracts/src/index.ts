@@ -41,7 +41,7 @@ export interface IamOperationContract {
   path: string;
   queryParameters?: readonly string[];
   security: "dualToken" | "public" | "refreshToken";
-  tag: "auth" | "iam" | "system";
+  tag: "auth" | "iam" | "openPlatform" | "system";
 }
 
 export interface IamDomainModelContract {
@@ -58,7 +58,7 @@ export interface IamCapabilityContract {
   models: readonly IamDomainModelName[];
   name: IamCapabilityName;
   operations: readonly string[];
-  sdkNamespaces: readonly ("auth" | "iam" | "system")[];
+  sdkNamespaces: readonly ("auth" | "iam" | "openPlatform" | "system")[];
 }
 
 export const SDKWORK_IAM_STANDARD = {
@@ -69,7 +69,7 @@ export const SDKWORK_IAM_STANDARD = {
   },
   databasePrefix: "iam",
   domain: "iam",
-  sdkNamespaces: ["auth", "iam", "system"],
+  sdkNamespaces: ["auth", "iam", "openPlatform", "system"],
 } as const;
 
 export const SDKWORK_IAM_HEADERS = {
@@ -331,6 +331,44 @@ export const SDKWORK_IAM_API_ROUTES = {
       verify: operation("POST", `${app}/auth/verification_codes/verify`, "auth", "verificationCodes.verify", "public"),
     },
   },
+  openPlatform: {
+    qrAuth: {
+      sessions: {
+        create: operation(
+          "POST",
+          `${app}/open_platform/qr_auth/sessions`,
+          "openPlatform",
+          "qrAuth.sessions.create",
+          "public",
+        ),
+        retrieve: operation(
+          "GET",
+          `${app}/open_platform/qr_auth/sessions/{sessionKey}`,
+          "openPlatform",
+          "qrAuth.sessions.retrieve",
+          "public",
+        ),
+        scans: {
+          create: operation(
+            "POST",
+            `${app}/open_platform/qr_auth/sessions/{sessionKey}/scans`,
+            "openPlatform",
+            "qrAuth.sessions.scans.create",
+            "public",
+          ),
+        },
+        passwords: {
+          create: operation(
+            "POST",
+            `${app}/open_platform/qr_auth/sessions/{sessionKey}/passwords`,
+            "openPlatform",
+            "qrAuth.sessions.passwords.create",
+            "public",
+          ),
+        },
+      },
+    },
+  },
   system: {
     iam: {
       runtime: {
@@ -484,11 +522,15 @@ export const SDKWORK_IAM_CAPABILITIES = [
   ),
   capability(
     "sessionSecurity",
-    ["auth"],
+    ["auth", "openPlatform"],
     ["session", "credential", "mfaFactor", "device"],
     [
       "oauthAuthorizationUrls.retrieve",
       "oauthSessions.create",
+      "qrAuth.sessions.create",
+      "qrAuth.sessions.passwords.create",
+      "qrAuth.sessions.retrieve",
+      "qrAuth.sessions.scans.create",
       "sessions.create",
       "sessions.current.delete",
       "sessions.current.retrieve",
@@ -601,7 +643,7 @@ function model(
 
 function capability(
   name: IamCapabilityName,
-  sdkNamespaces: readonly ("auth" | "iam" | "system")[],
+  sdkNamespaces: readonly ("auth" | "iam" | "openPlatform" | "system")[],
   models: readonly IamDomainModelName[],
   operations: readonly string[],
 ): IamCapabilityContract {

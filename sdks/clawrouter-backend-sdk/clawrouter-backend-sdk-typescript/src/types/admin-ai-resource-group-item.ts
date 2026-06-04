@@ -1,5 +1,9 @@
 /** Admin ai resource group item schema exposed by Claw Router. */
 export interface AdminAiResourceGroupItem {
+  /** Capabilities field on admin ai resource group item. */
+  capabilities?: string[];
+  /** Capability field on admin ai resource group item. */
+  capability?: string | null;
   /** Description field on admin ai resource group item. */
   description?: string | null;
   /** Dynamic field on admin ai resource group item. */
@@ -20,4 +24,6 @@ export interface AdminAiResourceGroupItem {
   sortOrder?: number | null;
   /** Status field on admin ai resource group item. */
   status: 'active' | 'disabled' | 'inactive';
+  /** Vendor codes field on admin ai resource group item. */
+  vendorCodes?: string[];
 }

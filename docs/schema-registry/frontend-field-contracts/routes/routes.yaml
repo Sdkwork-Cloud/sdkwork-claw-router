@@ -880,7 +880,6 @@ routes:
     - cached_tokens
     - total_tokens
     - customer_charge_amount
-    - cost_amount
     - rate_multiplier
     - base_input_unit_price
     - base_output_unit_price
@@ -1394,7 +1393,6 @@ routes:
   - ai_resource
   - ai_provider
   - ai_channel
-  - ai_channel_model
   - ops_audit_log
   - ops_config_snapshot
 - route: /admin/model
@@ -1761,10 +1759,8 @@ routes:
   required_tables:
   - ai_provider
   - ai_channel
-  - ai_channel_model
-  - ai_channel_vendor
   - ai_channel_resource
-  - ai_channel_endpoint
+  - ai_channel_credential
   - integration_provider_health_snapshot
   - ai_model_vendor
   - ai_model
@@ -1772,23 +1768,14 @@ routes:
   - ai_routing_policy
   - ai_routing_profile
   - ai_routing_rule
-  - ops_config_snapshot
-  - ops_audit_log
-- route: /admin/channel/resources
-  required_tables:
+  - ai_model_mapping_rule
+  - ai_model_mapping_rule_binding
+  - ai_model_mapping_rule_item
   - ai_resource
   - ai_resource_group
   - ai_resource_group_item
+  - ops_config_snapshot
   - ops_audit_log
-  required_columns:
-    ops_audit_log:
-    - tenant_id
-    - organization_id
-    - operator_id
-    - action
-    - target_type
-    - target_id
-    - request_id
 - route: /admin/model/resources
   required_tables:
   - ai_resource
@@ -1821,7 +1808,6 @@ routes:
   required_tables:
   - ai_site
   - ai_site_service
-  - ai_site_model
   - ai_channel
   - ops_audit_log
   required_columns:
@@ -1840,16 +1826,6 @@ routes:
     - service_name
     - service_type
     - status
-    ai_site_model:
-    - id
-    - site_id
-    - site_service_id
-    - model_code
-    - model_name
-    - provider_model
-    - provider_native_model
-    - health_status
-    - status
     ai_channel:
     - id
     - channel_code
@@ -1857,6 +1833,8 @@ routes:
     - status
 - route: /admin/model/mappings
   required_tables:
+  - ai_model
+  - ai_model_vendor
   - ai_model_mapping_rule
   - ai_model_mapping_rule_binding
   - ai_model_mapping_rule_item
@@ -1889,37 +1867,6 @@ routes:
     - target_provider_native_model
     - sort_order
     - enabled
-- route: /admin/channel/endpoints
-  required_tables:
-  - ai_provider
-  - ai_channel
-  - ai_channel_model
-  - ai_channel_resource
-  - ai_channel_endpoint
-  - integration_provider_health_snapshot
-  - ai_model_vendor
-  - ai_api_endpoint
-  - ops_audit_log
-  required_columns:
-    ai_channel_endpoint:
-    - channel_id
-    - channel_code
-    - vendor_code
-    - region_code
-    - api_code
-    - base_url
-    - priority
-    - weight
-    - health_status
-    - status
-    ops_audit_log:
-    - tenant_id
-    - organization_id
-    - operator_id
-    - action
-    - target_type
-    - target_id
-    - request_id
 - route: /admin/announcement
   required_tables:
   - content_announcement
@@ -1999,7 +1946,6 @@ routes:
   - iam_gateway_api_key
   - ai_channel_group
   - ai_quota_policy
-  - ai_rate_limit_bucket
   - iam_gateway_risk_rule
   - ops_audit_log
   required_columns:
@@ -2831,7 +2777,6 @@ routes:
   required_tables:
   - integration_service_provider_edge
   - integration_service_provider_contract
-  - integration_service_provider_contract_version
   - integration_service_provider_finance_profile
   - ops_audit_log
 - route: /admin/service-providers/pricing
@@ -2839,27 +2784,21 @@ routes:
   - integration_service_provider_edge
   - integration_service_provider_price_plan
   - integration_service_provider_price_rule
-  - integration_service_provider_price_change_request
   - ai_model_pricing
   - ops_audit_log
 - route: /admin/service-providers/usage
   required_tables:
   - ai_usage_fact
-  - ai_usage_service_provider_chain
   - ai_usage_service_provider_edge
   - ops_audit_log
 - route: /admin/service-providers/wallet
   required_tables:
-  - integration_service_provider_account_binding
-  - commerce_account
   - commerce_account_ledger_entry
   - commerce_service_provider_exposure_snapshot
   - ops_audit_log
 - route: /admin/service-providers/statements
   required_tables:
-  - commerce_usage_service_provider_settlement
   - commerce_usage_service_provider_statement
-  - commerce_usage_service_provider_statement_item
   - ops_audit_log
 - route: /admin/service-providers/reconciliation
   required_tables:

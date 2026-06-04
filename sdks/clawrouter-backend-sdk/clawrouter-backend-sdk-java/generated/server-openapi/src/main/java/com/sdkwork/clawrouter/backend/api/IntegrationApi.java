@@ -13,24 +13,6 @@ public class IntegrationApi {
         this.client = client;
     }
 
-    /** List channel endpoints */
-    public ChannelEndpointsListResult channelEndpointsList() throws Exception {
-        Object raw = client.get(ApiPaths.backendPath("/integration/channel_endpoints"));
-        return client.convertValue(raw, new TypeReference<ChannelEndpointsListResult>() {});
-    }
-
-    /** Create channel endpoint */
-    public ChannelEndpointsCreateResult channelEndpointsCreate(AdminChannelEndpointCreateRequest body) throws Exception {
-        Object raw = client.post(ApiPaths.backendPath("/integration/channel_endpoints"), body, null, null, "application/json");
-        return client.convertValue(raw, new TypeReference<ChannelEndpointsCreateResult>() {});
-    }
-
-    /** Update channel endpoint */
-    public ChannelEndpointsUpdateResult channelEndpointsUpdate(String endpointId, AdminChannelEndpointUpdateRequest body) throws Exception {
-        Object raw = client.put(ApiPaths.backendPath("/integration/channel_endpoints/" + serializePathParameter(endpointId, new PathParameterSpec("endpointId", "simple", false)) + ""), body, null, null, "application/json");
-        return client.convertValue(raw, new TypeReference<ChannelEndpointsUpdateResult>() {});
-    }
-
     /** List channels */
     public ChannelsListResult channelsList() throws Exception {
         Object raw = client.get(ApiPaths.backendPath("/integration/channels"));

@@ -43,17 +43,17 @@ frontend_operations:
     schema:
       type: string
       maxLength: 128
-    description: Upstream seller service-provider id for chain-scoped retrieval.
+    description: Upstream seller service-provider id for provider-edge scoped retrieval.
   - name: buyer_provider_id
     schema:
       type: string
       maxLength: 128
-    description: Downstream buyer service-provider id for chain-scoped retrieval.
+    description: Downstream buyer service-provider id for provider-edge scoped retrieval.
   - name: edge_id
     schema:
       type: string
       maxLength: 128
-    description: Direct service-provider edge id for chain-scoped retrieval.
+    description: Direct service-provider edge id for provider-edge scoped retrieval.
   response_schema:
     name: ServiceProviderDashboardResponse
     type: object
@@ -354,10 +354,9 @@ frontend_operations:
   api_path: /backend/v3/api/service_providers/contracts
   sdk_domain: integration
   summary: Service Provider Contracts List
-  description: Bilateral contracts, contract versions, and finance profiles for service-provider edges.
+  description: Bilateral contracts and finance profiles for service-provider edges.
   read_sources:
   - integration_service_provider_contract
-  - integration_service_provider_contract_version
   - integration_service_provider_finance_profile
   query_parameters: *serviceProviderPageQuery
   response_schema: *serviceProviderCollectionResponse
@@ -660,10 +659,9 @@ frontend_operations:
   api_path: /backend/v3/api/service_providers/usage
   sdk_domain: integration
   summary: Service Provider Usage List
-  description: Request-level commercial usage chain and edge economics.
+  description: Request-level commercial usage and provider-edge economics.
   read_sources:
   - ai_usage_fact
-  - ai_usage_service_provider_chain
   - ai_usage_service_provider_edge
   query_parameters: *serviceProviderPageQuery
   response_schema: *serviceProviderCollectionResponse
@@ -677,10 +675,8 @@ frontend_operations:
   api_path: /backend/v3/api/service_providers/wallet/accounts
   sdk_domain: integration
   summary: Service Provider Wallet Accounts List
-  description: Service-provider balance, credit, exposure, and account bindings.
+  description: Service-provider balance, credit, and exposure snapshots.
   read_sources:
-  - integration_service_provider_account_binding
-  - commerce_account
   - commerce_service_provider_exposure_snapshot
   query_parameters: *serviceProviderPageQuery
   response_schema: *serviceProviderCollectionResponse
@@ -694,10 +690,9 @@ frontend_operations:
   api_path: /backend/v3/api/service_providers/statements
   sdk_domain: integration
   summary: Service Provider Statements List
-  description: Bilateral seller-buyer statements and statement items.
+  description: Bilateral seller-buyer statement summaries.
   read_sources:
   - commerce_usage_service_provider_statement
-  - commerce_usage_service_provider_statement_item
   query_parameters: *serviceProviderPageQuery
   response_schema: *serviceProviderCollectionResponse
 - route: /admin/service-providers/reconciliation

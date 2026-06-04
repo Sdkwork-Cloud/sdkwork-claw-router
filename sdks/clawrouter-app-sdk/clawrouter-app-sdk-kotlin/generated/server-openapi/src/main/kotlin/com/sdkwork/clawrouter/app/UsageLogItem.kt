@@ -21,6 +21,7 @@ data class UsageLogItem(
     val path: String? = null,
     val providerNativeModel: String? = null,
     val reasoningEffort: String? = null,
+    val regionCode: String? = null,
     val requestId: String? = null,
     val requestedModelCatalogKey: String? = null,
     val status: String? = null,

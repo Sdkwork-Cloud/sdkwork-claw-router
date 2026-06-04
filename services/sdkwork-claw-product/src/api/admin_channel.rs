@@ -30,8 +30,6 @@ const MAX_BASE_URL_LEN: usize = 512;
 const MAX_SECRET_REF_LEN: usize = 256;
 const MAX_API_KEY_LEN: usize = 4096;
 const MAX_EXPIRES_AT_LEN: usize = 64;
-const MAX_MODEL_LEN: usize = 128;
-const MAX_MODELS: usize = 200;
 const MAX_CAPABILITIES: usize = 16;
 const MAX_RESOURCE_CODE_LEN: usize = 192;
 const MAX_RESOURCE_CODES: usize = 256;
@@ -60,7 +58,6 @@ struct NormalizedCreateRequest {
     access_type: String,
     credential_rotation: String,
     credentials: Vec<NormalizedCredentialInput>,
-    models: Vec<String>,
     capabilities: Vec<String>,
     resource_codes: Vec<String>,
     is_multimodal: bool,
@@ -83,7 +80,6 @@ struct NormalizedUpdateRequest {
     access_type: Option<String>,
     credential_rotation: Option<String>,
     credentials: Option<Vec<NormalizedCredentialInput>>,
-    models: Option<Vec<String>>,
     capabilities: Option<Vec<String>>,
     resource_codes: Option<Vec<String>>,
     timeout_ms: Option<Option<i64>>,
@@ -142,7 +138,6 @@ struct AdminChannelItemResponse {
     created_at: String,
     #[serde(skip_serializing_if = "Option::is_none")]
     expires_at: Option<String>,
-    models: Vec<String>,
     capabilities: Vec<String>,
     resource_codes: Vec<String>,
     is_multimodal: bool,
@@ -173,7 +168,6 @@ struct AdminChannelSafeItemResponse {
     created_at: String,
     #[serde(skip_serializing_if = "Option::is_none")]
     expires_at: Option<String>,
-    models: Vec<String>,
     capabilities: Vec<String>,
     resource_codes: Vec<String>,
     is_multimodal: bool,
@@ -480,7 +474,6 @@ fn normalize_create_request(
             .transpose()?
             .unwrap_or_else(|| "default".to_owned());
     let credentials = normalize_create_credentials(&request, &provider_code)?;
-    let models = required_string_array(&request, "models", "models", MAX_MODELS, MAX_MODEL_LEN)?;
     let capabilities = optional_string_array(
         &request,
         "capabilities",
@@ -525,7 +518,6 @@ fn normalize_create_request(
         access_type,
         credential_rotation,
         credentials,
-        models,
         capabilities,
         resource_codes,
         is_multimodal,
@@ -570,7 +562,6 @@ fn normalize_update_request(
             .map(|value| normalize_credential_rotation(&value))
             .transpose()?;
     let credentials = normalize_update_credentials(&request, provider_code.as_deref())?;
-    let models = optional_string_array(&request, "models", "models", MAX_MODELS, MAX_MODEL_LEN)?;
     let capabilities = optional_string_array(
         &request,
         "capabilities",
@@ -613,7 +604,6 @@ fn normalize_update_request(
         && access_type.is_none()
         && credential_rotation.is_none()
         && credentials.is_none()
-        && models.is_none()
         && capabilities.is_none()
         && resource_codes.is_none()
         && timeout_ms.is_none()
@@ -636,7 +626,6 @@ fn normalize_update_request(
         access_type,
         credential_rotation,
         credentials,
-        models,
         capabilities,
         resource_codes,
         timeout_ms,
@@ -904,21 +893,6 @@ fn optional_nullable_text(
         Value::Null => Ok(Some(None)),
         _ => Err(format!("{field_name} must be a string")),
     }
-}
-
-fn required_string_array(
-    request: &Map<String, Value>,
-    key: &str,
-    field_name: &str,
-    max_items: usize,
-    max_item_len: usize,
-) -> Result<Vec<String>, String> {
-    let values = optional_string_array(request, key, field_name, max_items, max_item_len)?
-        .ok_or_else(|| format!("{field_name} is required"))?;
-    if values.is_empty() {
-        return Err(format!("{field_name} must include at least one item"));
-    }
-    Ok(values)
 }
 
 fn optional_string_array(
@@ -1465,12 +1439,10 @@ fn build_create_command(
     subject: AdminChannelSubject,
     request: NormalizedCreateRequest,
 ) -> Result<CreateAdminChannelCommand, ChannelCommandBuildError> {
-    let model_uuids = generate_entity_uuids(&state, request.models.len())?;
     let credentials = build_credential_inputs(&state, request.credentials)?;
     Ok(CreateAdminChannelCommand {
         subject,
         channel_uuid: generate_entity_uuid(&state)?,
-        model_uuids,
         audit_log_uuid: generate_entity_uuid(&state)?,
         config_snapshot_uuid: generate_entity_uuid(&state)?,
         name: request.name,
@@ -1481,7 +1453,6 @@ fn build_create_command(
         access_type: request.access_type,
         credential_rotation: request.credential_rotation,
         credentials,
-        models: request.models,
         capabilities: request.capabilities,
         resource_codes: request.resource_codes,
         is_multimodal: request.is_multimodal,
@@ -1502,14 +1473,6 @@ fn build_update_command(
     subject: AdminChannelSubject,
     request: NormalizedUpdateRequest,
 ) -> Result<UpdateAdminChannelCommand, ChannelCommandBuildError> {
-    let model_uuids = generate_entity_uuids(
-        &state,
-        request
-            .models
-            .as_ref()
-            .map(|models| models.len())
-            .unwrap_or(0),
-    )?;
     let credentials = request
         .credentials
         .map(|credentials| build_credential_inputs(&state, credentials))
@@ -1517,7 +1480,6 @@ fn build_update_command(
     Ok(UpdateAdminChannelCommand {
         subject,
         channel_id: request.channel_id,
-        model_uuids,
         audit_log_uuid: generate_entity_uuid(&state)?,
         config_snapshot_uuid: generate_entity_uuid(&state)?,
         name: request.name,
@@ -1528,7 +1490,6 @@ fn build_update_command(
         access_type: request.access_type,
         credential_rotation: request.credential_rotation,
         credentials,
-        models: request.models,
         capabilities: request.capabilities,
         resource_codes: request.resource_codes,
         timeout_ms: request.timeout_ms,
@@ -1604,13 +1565,6 @@ fn generate_entity_uuid(state: &AdminChannelState) -> Result<String, ChannelComm
         .map_err(ChannelCommandBuildError::System)
 }
 
-fn generate_entity_uuids(
-    state: &AdminChannelState,
-    count: usize,
-) -> Result<Vec<String>, ChannelCommandBuildError> {
-    (0..count).map(|_| generate_entity_uuid(state)).collect()
-}
-
 fn request_id_error(error: RequestIdError) -> ChannelCommandBuildError {
     match error {
         RequestIdError::Invalid(message) => ChannelCommandBuildError::BadRequest(message),
@@ -1637,7 +1591,6 @@ fn to_item_response(item: AdminChannelItem) -> AdminChannelItemResponse {
             .collect(),
         created_at: item.created_at,
         expires_at: item.expires_at,
-        models: item.models,
         capabilities: item.capabilities,
         resource_codes: item.resource_codes,
         is_multimodal: item.is_multimodal,
@@ -1674,7 +1627,6 @@ fn to_safe_item_response(item: AdminChannelItem) -> AdminChannelSafeItemResponse
             .collect(),
         created_at: item.created_at,
         expires_at: item.expires_at,
-        models: item.models,
         capabilities: item.capabilities,
         resource_codes: item.resource_codes,
         is_multimodal: item.is_multimodal,

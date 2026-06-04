@@ -3,10 +3,11 @@ use sdkwork_claw_product::application::{
     SelectProviderChannelRouteQuery, SelectProviderRouteQuery,
 };
 use sdkwork_claw_product::domain::{
-    AiModel, BillingMeter, ChannelGroup, DecimalValue, GatewayApiKey, ModelMappingBindingType,
-    ModelMappingRule, ModelPrice, ModelProviderRoute, ModelVendor, ModelVendorDefinition, Money,
-    PriceSide, PricingPlan, ProviderChannelRoute, ResolveModelMappingContext, RouteCandidate,
-    RoutingCapability, RoutingFallbackMode, RoutingPolicy, RoutingPolicyScope, RoutingRule,
+    AiModel, BillingMeter, ChannelGroup, DecimalValue, GatewayApiKey,
+    GatewayApiKeyGroupBinding, ModelMappingBindingType, ModelMappingRule, ModelPrice,
+    ModelProviderRoute, ModelVendor, ModelVendorDefinition, Money, PriceSide, PricingPlan,
+    ProviderChannelRoute, ResolveModelMappingContext, RouteCandidate, RoutingCapability,
+    RoutingFallbackMode, RoutingPolicy, RoutingPolicyScope, RoutingRule,
 };
 use sdkwork_claw_product::infrastructure::InMemoryPricingCatalog;
 use sdkwork_claw_product::ports::PricingCatalog;
@@ -257,6 +258,42 @@ fn add_group_policy_rule(
     );
 }
 
+fn add_group_policy_rule_for_group(
+    catalog: &mut InMemoryPricingCatalog,
+    group_id: i64,
+    policy_id: i64,
+    profile_id: i64,
+    rule_id: i64,
+    rule_match: &str,
+    target_model: &str,
+    candidate_channels: Vec<RouteCandidate>,
+    fallback_chain: Vec<RouteCandidate>,
+) {
+    catalog.add_routing_policy(RoutingPolicy::new(
+        policy_id,
+        10,
+        20,
+        &format!("group-policy-{policy_id}"),
+        RoutingPolicyScope::ChannelGroup,
+        Some(group_id),
+        Some(profile_id),
+    ));
+    catalog.add_routing_rule(
+        RoutingRule::new(
+            rule_id,
+            10,
+            20,
+            profile_id,
+            &format!("rule-{rule_id}"),
+            1,
+            rule_match,
+            target_model,
+        )
+        .with_candidate_channels(candidate_channels)
+        .with_fallback_chain(fallback_chain),
+    );
+}
+
 fn authenticated_context() -> AuthenticatedApiKeyContext {
     AuthenticatedApiKeyContext {
         api_key_id: 100,
@@ -267,6 +304,7 @@ fn authenticated_context() -> AuthenticatedApiKeyContext {
         group_id: 10,
         group_code: "standard-group".to_owned(),
         pricing_plan_code: "standard".to_owned(),
+        group_bindings: Vec::new(),
     }
 }
 
@@ -658,6 +696,60 @@ fn selector_plan_includes_primary_and_enabled_fallback_candidates() {
     assert_eq!(vec![3001, 3002], channel_ids);
     assert_eq!(Some(2), plan.policy_id);
     assert_eq!(Some(202), plan.rule_id);
+}
+
+#[test]
+fn selector_plan_deduplicates_same_channel_credential_resource_expansions() {
+    let mut catalog = base_catalog();
+    add_callable_route(
+        &mut catalog,
+        3001,
+        "openrouter-main",
+        "gpt-4o-mini-main",
+        "0.110000",
+    );
+    add_callable_route(
+        &mut catalog,
+        3002,
+        "openrouter-fallback",
+        "gpt-4o-mini-fallback",
+        "0.130000",
+    );
+    catalog.add_provider_route(
+        ModelProviderRoute::new_for_catalog_key(
+            "openai/gpt-4o-mini",
+            "gpt-4o-mini",
+            "openrouter-fallback",
+            3002,
+            "gpt-4o-mini-fallback",
+        )
+        .with_api_code("openai.chat_completions")
+        .with_provider_endpoint(
+            Some("http://provider-proxy.internal/openrouter-fallback"),
+            Some("vault://providers/openrouter-fallback/account/main"),
+        ),
+    );
+    add_group_policy_rule(
+        &mut catalog,
+        2,
+        201,
+        202,
+        r#"{"catalogKey":"openai/gpt-4o-mini"}"#,
+        "openai/gpt-4o-mini",
+        vec![RouteCandidate::new(3001, 100)],
+        vec![RouteCandidate::new(3002, 50)],
+    );
+
+    let plan = ProviderRouteSelector::new(&catalog)
+        .select_plan(select_query())
+        .unwrap();
+
+    let channel_ids = plan
+        .routes
+        .iter()
+        .map(|selection| selection.route.channel_id)
+        .collect::<Vec<_>>();
+    assert_eq!(vec![3001, 3002], channel_ids);
 }
 
 #[test]
@@ -1278,7 +1370,7 @@ fn selector_routes_group_bound_channel_route_by_route_key_without_explicit_polic
                 Some("http://provider-proxy.internal/openrouter-group-bound"),
                 Some("vault://providers/openrouter-group-bound/account/main"),
             )
-            .with_scoped_group_binding(10, 1, 100, Vec::<String>::new(), vec!["llm"]),
+            .with_resource_scoped_group_binding(10, 1, 100, Vec::<String>::new(), vec!["llm"]),
     );
 
     let selection = ProviderRouteSelector::new(&catalog)
@@ -1454,7 +1546,7 @@ fn selector_routes_catalog_model_through_group_bound_channel_route_without_model
                 Some("http://provider-proxy.internal/openrouter-group-bound"),
                 Some("vault://providers/openrouter-group-bound/account/main"),
             )
-            .with_scoped_group_binding(10, 1, 100, vec!["openai/gpt-5.5"], vec!["llm"]),
+            .with_resource_scoped_group_binding(10, 1, 100, Vec::<String>::new(), vec!["llm"]),
     );
     add_group_policy_rule(
         &mut catalog,
@@ -1489,7 +1581,7 @@ fn selector_routes_catalog_model_through_group_bound_channel_route_without_model
 }
 
 #[test]
-fn selector_routes_slash_native_catalog_model_through_native_model_scope_channel_route() {
+fn selector_routes_slash_native_catalog_model_through_resource_scoped_channel_route() {
     let mut catalog = base_catalog();
     catalog.add_vendor(ModelVendorDefinition::new(
         "openrouter",
@@ -1528,7 +1620,7 @@ fn selector_routes_slash_native_catalog_model_through_native_model_scope_channel
                 Some("http://provider-proxy.internal/openrouter"),
                 Some("vault://providers/openrouter/account/main"),
             )
-            .with_scoped_group_binding(10, 1, 100, vec!["anthropic/claude-3-opus"], vec!["llm"]),
+            .with_resource_scoped_group_binding(10, 1, 100, Vec::<String>::new(), vec!["llm"]),
     );
     add_group_policy_rule(
         &mut catalog,
@@ -1600,7 +1692,7 @@ fn selector_routes_regional_catalog_model_through_group_bound_channel_route_regi
                 Some("http://provider-proxy.internal/dashscope"),
                 Some("vault://providers/dashscope/account/main"),
             )
-            .with_scoped_group_binding(10, 1, 100, vec!["alibaba"], vec!["llm"]),
+            .with_resource_scoped_group_binding(10, 1, 100, Vec::<String>::new(), vec!["llm"]),
     );
     add_group_policy_rule(
         &mut catalog,
@@ -1674,7 +1766,7 @@ fn selector_routes_group_bound_channel_route_without_explicit_policy_rule() {
                 Some("http://provider-proxy.internal/dashscope"),
                 Some("vault://providers/dashscope/account/main"),
             )
-            .with_scoped_group_binding(10, 1, 100, vec!["alibaba"], vec!["llm"]),
+            .with_resource_scoped_group_binding(10, 1, 100, Vec::<String>::new(), vec!["llm"]),
     );
 
     let selection = ProviderRouteSelector::new(&catalog)
@@ -1707,7 +1799,7 @@ fn selector_explains_when_channel_route_exists_but_channel_group_has_no_matching
                 Some("http://provider-proxy.internal/openrouter"),
                 Some("vault://providers/openrouter/account/main"),
             )
-            .with_scoped_group_binding(99, 1, 100, vec!["openai/gpt-4o-mini"], vec!["llm"]),
+            .with_resource_scoped_group_binding(99, 1, 100, Vec::<String>::new(), vec!["llm"]),
     );
 
     let error = ProviderRouteSelector::new(&catalog)
@@ -1741,7 +1833,7 @@ fn selector_explains_when_channel_route_exists_but_channel_group_has_no_matching
 }
 
 #[test]
-fn selector_restricts_model_route_group_bindings_by_model_scope() {
+fn selector_restricts_model_route_group_bindings_by_api_scope() {
     let mut catalog = base_catalog();
     add_callable_route(
         &mut catalog,
@@ -1763,7 +1855,13 @@ fn selector_restricts_model_route_group_bindings_by_model_scope() {
                 Some("http://provider-proxy.internal/openrouter-other-model"),
                 Some("vault://providers/openrouter-other-model/account/main"),
             )
-            .with_scoped_group_binding(10, 1, 100, vec!["openai/other-model"], vec!["llm"]),
+            .with_resource_scoped_group_binding(
+                10,
+                1,
+                100,
+                vec!["api.openai.responses"],
+                vec!["llm"],
+            ),
     );
     catalog.add_provider_channel_route(
         ProviderChannelRoute::new("openrouter-bound-model", 3002)
@@ -1771,7 +1869,13 @@ fn selector_restricts_model_route_group_bindings_by_model_scope() {
                 Some("http://provider-proxy.internal/openrouter-bound-model"),
                 Some("vault://providers/openrouter-bound-model/account/main"),
             )
-            .with_scoped_group_binding(10, 50, 1, vec!["openai/gpt-4o-mini"], vec!["llm"]),
+            .with_resource_scoped_group_binding(
+                10,
+                50,
+                1,
+                vec!["api.openai.chat_completions"],
+                vec!["llm"],
+            ),
     );
     add_group_policy_rule(
         &mut catalog,
@@ -1801,7 +1905,7 @@ fn selector_restricts_channel_group_bindings_by_capability_scope() {
                 Some("http://provider-proxy.internal/openrouter-image-only"),
                 Some("vault://providers/openrouter-image-only/account/main"),
             )
-            .with_scoped_group_binding(10, 1, 100, Vec::<String>::new(), vec!["image"]),
+            .with_resource_scoped_group_binding(10, 1, 100, Vec::<String>::new(), vec!["image"]),
     );
     catalog.add_provider_channel_route(
         ProviderChannelRoute::new("openrouter-llm", 3002)
@@ -1809,7 +1913,7 @@ fn selector_restricts_channel_group_bindings_by_capability_scope() {
                 Some("http://provider-proxy.internal/openrouter-llm"),
                 Some("vault://providers/openrouter-llm/account/main"),
             )
-            .with_scoped_group_binding(10, 50, 1, Vec::<String>::new(), vec!["llm"]),
+            .with_resource_scoped_group_binding(10, 50, 1, Vec::<String>::new(), vec!["llm"]),
     );
     add_group_policy_rule(
         &mut catalog,
@@ -1843,7 +1947,6 @@ fn selector_restricts_channel_group_bindings_by_api_scope() {
                 10,
                 1,
                 100,
-                Vec::<String>::new(),
                 vec!["api.openai.responses"],
                 vec!["llm"],
             ),
@@ -1858,7 +1961,6 @@ fn selector_restricts_channel_group_bindings_by_api_scope() {
                 10,
                 50,
                 1,
-                Vec::<String>::new(),
                 vec!["api.openai.files"],
                 vec!["llm"],
             ),
@@ -1895,7 +1997,6 @@ fn selector_rejects_route_key_alias_when_standard_api_code_scope_does_not_match(
                 10,
                 1,
                 100,
-                Vec::<String>::new(),
                 vec!["openai.management.files"],
                 vec!["network"],
             ),
@@ -1937,7 +2038,6 @@ fn selector_routes_provider_native_channel_by_exact_standard_api_code_only() {
                 10,
                 1,
                 100,
-                Vec::<String>::new(),
                 vec!["kling.image_generation"],
                 vec!["image"],
             ),
@@ -1952,7 +2052,6 @@ fn selector_routes_provider_native_channel_by_exact_standard_api_code_only() {
                 10,
                 50,
                 1,
-                Vec::<String>::new(),
                 vec!["api.kling.text_to_video"],
                 vec!["video"],
             ),
@@ -1982,7 +2081,7 @@ fn selector_routes_provider_native_channel_by_exact_standard_api_code_only() {
 }
 
 #[test]
-fn selector_ignores_model_scope_for_modeless_channel_route_when_api_scope_matches() {
+fn selector_matches_modeless_channel_route_when_api_scope_matches() {
     let mut catalog = base_catalog();
     catalog.add_provider_channel_route(
         ProviderChannelRoute::new("openrouter-files-api", 3001)
@@ -1994,7 +2093,6 @@ fn selector_ignores_model_scope_for_modeless_channel_route_when_api_scope_matche
                 10,
                 1,
                 100,
-                vec!["openai/gpt-4o-mini"],
                 vec!["openai.files"],
                 vec!["network"],
             ),
@@ -2022,19 +2120,18 @@ fn selector_ignores_model_scope_for_modeless_channel_route_when_api_scope_matche
 }
 
 #[test]
-fn selector_rejects_model_only_binding_for_modeless_channel_route() {
+fn selector_allows_capability_scoped_channel_route_when_api_scope_is_unrestricted() {
     let mut catalog = base_catalog();
     catalog.add_provider_channel_route(
-        ProviderChannelRoute::new("openrouter-model-only", 3001)
+        ProviderChannelRoute::new("openrouter-network", 3001)
             .with_provider_endpoint(
-                Some("http://provider-proxy.internal/openrouter-model-only"),
-                Some("vault://providers/openrouter-model-only/account/main"),
+                Some("http://provider-proxy.internal/openrouter-network"),
+                Some("vault://providers/openrouter-network/account/main"),
             )
             .with_resource_scoped_group_binding(
                 10,
                 1,
                 100,
-                vec!["openai/gpt-4o-mini"],
                 Vec::<String>::new(),
                 vec!["network"],
             ),
@@ -2050,17 +2147,15 @@ fn selector_rejects_model_only_binding_for_modeless_channel_route() {
         vec![],
     );
 
-    let error = ProviderRouteSelector::new(&catalog)
+    let selection = ProviderRouteSelector::new(&catalog)
         .select_channel_route(SelectProviderChannelRouteQuery {
             capability: RoutingCapability::Network,
             ..select_channel_route_query("openai/management/files")
         })
-        .unwrap_err();
+        .unwrap();
 
-    assert_eq!(
-        ProviderRouteSelectionErrorKind::ProviderRouteUnavailable,
-        error.kind()
-    );
+    assert_eq!(3001, selection.route.channel_id);
+    assert_eq!("openrouter-network", selection.route.provider_code);
 }
 
 #[test]
@@ -2076,7 +2171,6 @@ fn selector_matches_channel_group_bindings_by_standard_api_code() {
                 10,
                 1,
                 100,
-                Vec::<String>::new(),
                 vec!["openai.responses"],
                 vec!["llm"],
             ),
@@ -2091,7 +2185,6 @@ fn selector_matches_channel_group_bindings_by_standard_api_code() {
                 10,
                 50,
                 1,
-                Vec::<String>::new(),
                 vec!["openai.files"],
                 vec!["llm"],
             ),
@@ -2143,7 +2236,6 @@ fn selector_restricts_model_group_bindings_by_api_scope() {
                 10,
                 1,
                 100,
-                vec!["openai/gpt-4o-mini"],
                 vec!["api.openai.responses"],
                 vec!["llm"],
             ),
@@ -2158,7 +2250,6 @@ fn selector_restricts_model_group_bindings_by_api_scope() {
                 10,
                 50,
                 1,
-                vec!["openai/gpt-4o-mini"],
                 vec!["api.openai.chat_completions"],
                 vec!["llm"],
             ),
@@ -2211,7 +2302,6 @@ fn selector_prefers_channel_model_route_matching_request_api_on_same_channel() {
                 10,
                 1,
                 100,
-                vec!["openai/gpt-4o-mini"],
                 vec!["api.openai.chat_completions"],
                 vec!["llm"],
             ),
@@ -2388,6 +2478,70 @@ fn selector_rejects_model_route_when_group_bindings_exist_but_not_for_channel_gr
     assert!(error
         .to_string()
         .contains("provider route is not available"));
+}
+
+#[test]
+fn selector_chooses_route_from_explicit_api_key_group_bindings() {
+    let mut catalog = base_catalog();
+    catalog.add_channel_group(ChannelGroup::new(
+        20,
+        "premium-group",
+        "standard",
+        DecimalValue::parse("1.000000").unwrap(),
+        DecimalValue::parse("1.000000").unwrap(),
+    ));
+    catalog.add_api_key(
+        GatewayApiKey::new(100, 10, "sk-test", "hash:sk-test")
+            .with_owner(10, 20, 30)
+            .with_group_bindings(vec![
+                GatewayApiKeyGroupBinding::new(10, "standard-group", "standard", 100, 100),
+                GatewayApiKeyGroupBinding::new(20, "premium-group", "standard", 1, 100),
+            ]),
+    );
+    add_callable_route(
+        &mut catalog,
+        3002,
+        "openrouter-premium",
+        "gpt-4o-mini-premium",
+        "0.120000",
+    );
+    catalog.add_provider_channel_route(
+        ProviderChannelRoute::new("openrouter-premium", 3002)
+            .with_provider_endpoint(
+                Some("http://provider-proxy.internal/openrouter-premium"),
+                Some("vault://providers/openrouter-premium/account/main"),
+            )
+            .with_resource_scoped_group_binding(
+                20,
+                1,
+                100,
+                vec!["api.openai.chat_completions"],
+                vec!["llm"],
+            ),
+    );
+    add_group_policy_rule_for_group(
+        &mut catalog,
+        20,
+        20,
+        2020,
+        2021,
+        r#"{"catalogKey":"openai/gpt-4o-mini"}"#,
+        "openai/gpt-4o-mini",
+        vec![RouteCandidate::new(3002, 100)],
+        vec![],
+    );
+
+    let selection = ProviderRouteSelector::new(&catalog)
+        .select(select_query())
+        .unwrap();
+
+    assert_eq!(20, selection.group_id);
+    assert_eq!("premium-group", selection.group_code);
+    assert_eq!("standard", selection.pricing_plan_code);
+    assert_eq!(3002, selection.route.channel_id);
+    assert_eq!("openrouter-premium", selection.route.provider_code);
+    assert_eq!(Some(20), selection.policy_id);
+    assert_eq!(Some(2021), selection.rule_id);
 }
 
 #[test]

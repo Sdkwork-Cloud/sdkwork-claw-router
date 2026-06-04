@@ -262,7 +262,7 @@ async fn upsert_usage_fact(
         .bind(&command.official_reference_amount)
         .bind(&command.upstream_cost_amount)
         .bind(&command.customer_charge_amount)
-        .bind(&command.upstream_cost_amount)
+        .bind(&command.customer_charge_amount)
         .bind(&command.currency)
         .bind(&command.pricing_plan_code)
         .bind(&command.pricing_snapshot)

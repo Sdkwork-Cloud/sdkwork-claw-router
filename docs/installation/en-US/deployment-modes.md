@@ -38,9 +38,9 @@ Start on Linux native `.deb`:
 Start on macOS native `.pkg`:
 
 ```bash
-/opt/clawrouter/bin/clawrouterctl ensure
-/opt/clawrouter/bin/clawrouterctl refresh-catalog --force
-/opt/clawrouter/bin/clawrouter
+/opt/sdkwork/router/bin/clawrouterctl ensure
+/opt/sdkwork/router/bin/clawrouterctl refresh-catalog --force
+/opt/sdkwork/router/bin/clawrouter
 ```
 
 From a portable archive package root, use:
@@ -77,10 +77,10 @@ Characteristics:
 - macOS `.pkg` service packages install the launchd plist.
 - macOS service packages start through a launchd runner that executes `ensure` and `refresh-catalog --force` before the gateway.
 - Windows `.msi` packages install runtime files and service metadata for host-specific service registration.
-- Uses PostgreSQL by default and stores protected service overrides in `/etc/clawrouter/clawrouter.env` on Linux.
-- Stores PostgreSQL password material in `/etc/clawrouter/database.secret` by default, or directly in protected TOML when the TOML file is managed as a secret-bearing file.
-- Provides `/etc/clawrouter/redis.secret` for Redis password material when Redis authentication is used.
-- Linux service packages keep `/etc/clawrouter` read-only to the running process and allow writes only to data and log directories.
+- Uses PostgreSQL by default and stores protected service overrides in `/etc/sdkwork/router/clawrouter.env` on Linux.
+- Stores PostgreSQL password material in `/etc/sdkwork/router/database.secret` by default, or directly in protected TOML when the TOML file is managed as a secret-bearing file.
+- Provides `/etc/sdkwork/router/redis.secret` for Redis password material when Redis authentication is used.
+- Linux service packages keep `/etc/sdkwork/router` read-only to the running process and allow writes only to data and log directories.
 - Native installer manifests include `nativeInstall` with final paths, service metadata, permissions, and operator commands.
 
 Native service assets:
@@ -95,7 +95,7 @@ Typical Linux systemd check after installing the `.deb`:
 
 ```bash
 sudo apt install ./clawrouter-linux-x64-server-0.3.0.deb
-sudo editor /etc/clawrouter/clawrouter.toml
+sudo editor /etc/sdkwork/router/clawrouter.toml
 sudo systemctl start clawrouter
 sudo systemctl status clawrouter --no-pager
 ```
@@ -113,9 +113,9 @@ Example:
 ```bash
 docker build -f container/Containerfile -t clawrouter:0.3.0 .
 docker run --rm -p 3900:3900 \
-  -v "$PWD/config/clawrouter.toml.example:/etc/clawrouter/clawrouter.toml:ro" \
-  -v "$PWD/secrets/postgres-password:/run/secrets/clawrouter-postgres-password:ro" \
-  -v "$PWD/secrets/redis-password:/run/secrets/clawrouter-redis-password:ro" \
+  -v "$PWD/config/clawrouter.toml.example:/etc/sdkwork/router/clawrouter.toml:ro" \
+  -v "$PWD/secrets/postgres-password:/run/secrets/sdkwork/router/postgres-password:ro" \
+  -v "$PWD/secrets/redis-password:/run/secrets/sdkwork/router/redis-password:ro" \
   clawrouter:0.3.0
 ```
 

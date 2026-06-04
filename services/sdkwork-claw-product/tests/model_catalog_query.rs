@@ -240,8 +240,8 @@ fn list_models_reads_backend_group_bindings_and_applies_catalog_filters() {
     let mut catalog = catalog_for_model_list();
     catalog.add_provider_channel_route(
         ProviderChannelRoute::new("openrouter", 3001)
-            .with_scoped_group_binding(10, 10, 100, vec!["openai/gpt-4o-mini"], vec!["llm"])
-            .with_scoped_group_binding(11, 20, 100, Vec::<String>::new(), vec!["tools"]),
+            .with_resource_scoped_group_binding(10, 10, 100, Vec::<String>::new(), vec!["llm"])
+            .with_resource_scoped_group_binding(11, 20, 100, Vec::<String>::new(), vec!["tools"]),
     );
     let service = ModelCatalogQueryService::new(&catalog);
 
@@ -268,14 +268,14 @@ fn list_models_reads_backend_group_bindings_and_applies_catalog_filters() {
 }
 
 #[test]
-fn list_models_matches_vendor_scoped_group_binding_against_base_catalog_keys() {
+fn list_models_matches_resource_scoped_group_binding_against_capabilities() {
     let mut catalog = catalog_for_model_list();
     catalog.add_provider_channel_route(
-        ProviderChannelRoute::new("openrouter", 3001).with_scoped_group_binding(
+        ProviderChannelRoute::new("openrouter", 3001).with_resource_scoped_group_binding(
             10,
             10,
             100,
-            vec!["openai"],
+            Vec::<String>::new(),
             vec!["llm"],
         ),
     );
@@ -316,8 +316,8 @@ fn list_models_returns_complete_admin_group_catalog_independent_of_item_filters(
     );
     catalog.add_provider_channel_route(
         ProviderChannelRoute::new("openrouter", 3001)
-            .with_scoped_group_binding(10, 10, 100, vec!["openai/gpt-4o-mini"], vec!["llm"])
-            .with_scoped_group_binding(11, 20, 100, Vec::<String>::new(), vec!["tools"]),
+            .with_resource_scoped_group_binding(10, 10, 100, Vec::<String>::new(), vec!["llm"])
+            .with_resource_scoped_group_binding(11, 20, 100, Vec::<String>::new(), vec!["tools"]),
     );
     let service = ModelCatalogQueryService::new(&catalog);
 
@@ -344,7 +344,7 @@ fn list_models_returns_complete_admin_group_catalog_independent_of_item_filters(
     assert_eq!(1, page.groups[0].model_count);
     assert_eq!("standard-group", page.groups[1].key);
     assert_eq!("standard-group", page.groups[1].label);
-    assert_eq!(1, page.groups[1].model_count);
+    assert_eq!(2, page.groups[1].model_count);
     assert_eq!("empty-admin-group", page.groups[2].key);
     assert_eq!("Empty Admin Group", page.groups[2].label);
     assert_eq!(0, page.groups[2].model_count);

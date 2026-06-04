@@ -174,7 +174,7 @@ fn builtin_route_taxonomy_classifies_standard_ai_api_routes() {
 }
 
 #[test]
-fn routing_index_filters_group_api_capability_and_model_without_full_selector_policy() {
+fn routing_index_filters_group_api_and_capability_without_full_selector_policy() {
     let mut catalog = InMemoryPricingCatalog::default();
     catalog.add_provider_channel_route(
         ProviderChannelRoute::new("openrouter-chat", 3001)
@@ -186,7 +186,6 @@ fn routing_index_filters_group_api_capability_and_model_without_full_selector_po
                 10,
                 10,
                 100,
-                vec!["openai/gpt-4o-mini"],
                 vec!["openai.chat_completions"],
                 vec!["llm"],
             ),
@@ -201,7 +200,6 @@ fn routing_index_filters_group_api_capability_and_model_without_full_selector_po
                 10,
                 20,
                 100,
-                vec!["openai/gpt-image-1"],
                 vec!["openai.images.generations"],
                 vec!["image"],
             ),
@@ -213,7 +211,6 @@ fn routing_index_filters_group_api_capability_and_model_without_full_selector_po
                 99,
                 1,
                 100,
-                vec!["openai/gpt-4o-mini"],
                 vec!["openai.chat_completions"],
                 vec!["llm"],
             ),
@@ -239,14 +236,14 @@ fn routing_index_filters_group_api_capability_and_model_without_full_selector_po
     );
     assert_eq!(vec![3002], channel_ids(&image_candidates));
 
-    let wrong_model = index.matching_channels(
+    let other_model_same_api = index.matching_channels(
         10,
         "openai.chat_completions",
         RoutingCapability::Chat,
         Some("openai/gpt-5"),
         Some("gpt-5"),
     );
-    assert!(wrong_model.is_empty());
+    assert_eq!(vec![3001], channel_ids(&other_model_same_api));
 
     let wrong_group = index.matching_channels(
         11,

@@ -6,7 +6,6 @@ mod admin_api_key_rate_limit_store;
 mod admin_app_store;
 mod admin_auth_settings_store;
 mod admin_catalog_store;
-mod admin_channel_endpoint_store;
 mod admin_channel_group_store;
 mod admin_channel_store;
 mod admin_dashboard_read_store;
@@ -127,11 +126,6 @@ pub use admin_catalog_store::{
     AdminProductMutationCommand, AdminSkuAttributeInput, AdminSkuMutationCommand,
     DeleteAdminCategoryAttributeCommand, DeleteAdminCategoryCommand, DeleteAdminProductCommand,
     DeleteAdminSkuCommand, ListAdminCatalogRecordsQuery,
-};
-pub use admin_channel_endpoint_store::{
-    AdminChannelEndpointFuture, AdminChannelEndpointItem, AdminChannelEndpointStore,
-    AdminChannelEndpointSubject, CreateAdminChannelEndpointCommand, ListAdminChannelEndpointsQuery,
-    UpdateAdminChannelEndpointCommand,
 };
 pub use admin_channel_group_store::{
     AdminChannelGroupChannelBindingInput, AdminChannelGroupChannelBindingItem,
@@ -268,11 +262,9 @@ pub use admin_service_provider_store::{
 };
 pub use admin_site_store::{
     AdminSiteChannelItem, AdminSiteConnectionCheckItem, AdminSiteFuture, AdminSiteItem,
-    AdminSiteModelCommand, AdminSiteModelItem, AdminSiteModelPatch, AdminSiteStore,
-    AdminSiteSubject, CreateAdminSiteCommand, CreateAdminSiteModelCommand, DeleteAdminSiteCommand,
-    DeleteAdminSiteModelCommand, ListAdminSiteChannelsQuery, ListAdminSiteModelsQuery,
-    ListAdminSitesQuery, ReplaceAdminSiteModelsCommand, TestAdminSiteConnectionCommand,
-    UpdateAdminSiteCommand, UpdateAdminSiteModelCommand,
+    AdminSiteStore, AdminSiteSubject, CreateAdminSiteCommand, DeleteAdminSiteCommand,
+    ListAdminSiteChannelsQuery, ListAdminSitesQuery, TestAdminSiteConnectionCommand,
+    UpdateAdminSiteCommand,
 };
 pub use admin_skill_store::{
     AdminSkillArtifactItem, AdminSkillAssetItem, AdminSkillCategoryItem, AdminSkillCommandFuture,

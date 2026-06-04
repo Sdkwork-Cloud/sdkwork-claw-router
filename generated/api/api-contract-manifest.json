@@ -6959,10 +6959,6 @@
         "ai_provider",
         "ai_channel",
         "ai_channel_credential",
-        "ai_channel_model",
-        "ai_channel",
-        "ai_channel_vendor",
-        "ai_channel_resource",
         "ai_channel_resource"
       ],
       "request_body_required": null,
@@ -7092,18 +7088,6 @@
               "nullable": true,
               "type": "string"
             },
-            "models": {
-              "items": {
-                "maxLength": 128,
-                "minLength": 1,
-                "pattern": "^[A-Za-z0-9._:/-]+$",
-                "type": "string"
-              },
-              "maxItems": 200,
-              "minItems": 1,
-              "type": "array",
-              "uniqueItems": true
-            },
             "name": {
               "maxLength": 128,
               "minLength": 1,
@@ -7197,8 +7181,7 @@
           "required": [
             "name",
             "vendor",
-            "credentials",
-            "models"
+            "credentials"
           ],
           "type": "object"
         }
@@ -7239,7 +7222,7 @@
                   "type": "array"
                 },
                 "channelId": {
-                  "description": "Scoped ai_channel id used by channel endpoint configuration.",
+                  "description": "Scoped ai_channel id used by account route and credential configuration.",
                   "maxLength": 128,
                   "minLength": 1,
                   "pattern": "^[1-9][0-9]*$",
@@ -7388,15 +7371,6 @@
                 "isMultimodal": {
                   "type": "boolean"
                 },
-                "models": {
-                  "items": {
-                    "maxLength": 128,
-                    "minLength": 1,
-                    "type": "string"
-                  },
-                  "maxItems": 200,
-                  "type": "array"
-                },
                 "name": {
                   "maxLength": 128,
                   "minLength": 1,
@@ -7493,7 +7467,6 @@
                 "accessType",
                 "credentialRotation",
                 "credentials",
-                "models",
                 "capabilities",
                 "resourceCodes",
                 "isMultimodal",
@@ -7523,10 +7496,6 @@
       "write_tables": [
         "ai_channel",
         "ai_channel_credential",
-        "ai_channel_model",
-        "ai_channel",
-        "ai_channel_vendor",
-        "ai_channel_resource",
         "ai_channel_resource",
         "ops_config_snapshot",
         "ops_audit_log"
@@ -7859,6 +7828,20 @@
                   "maxLength": 128,
                   "type": "string"
                 },
+                "capabilities": {
+                  "items": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "maxItems": 64,
+                  "type": "array"
+                },
+                "capability": {
+                  "maxLength": 64,
+                  "nullable": true,
+                  "type": "string"
+                },
                 "catalogKey": {
                   "maxLength": 256,
                   "type": "string"
@@ -7986,7 +7969,7 @@
           "type": "object"
         }
       },
-      "route": "/admin/channel/resources",
+      "route": "/admin/model/resources",
       "route_scope": "admin",
       "sdk_api_prefix": "/backend/v3/api",
       "sdk_client": "SdkworkBackendClient",
@@ -7997,247 +7980,6 @@
       "write_tables": [
         "ai_resource",
         "ai_resource_group_item",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/integration/channel_endpoints",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts#createChannelEndpoint",
-      "kind": "create",
-      "module": "admin-channel",
-      "openapi_exposed": true,
-      "operation": "createChannelEndpoint",
-      "operation_id": "channelEndpoints.create",
-      "path_params": [],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "ai_channel",
-        "ai_model_vendor",
-        "ai_api_endpoint"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "request_schema": {
-        "name": "AdminChannelEndpointCreateRequest",
-        "schema": {
-          "additionalProperties": false,
-          "name": "AdminChannelEndpointCreateRequest",
-          "properties": {
-            "apiEndpointCode": {
-              "maxLength": 128,
-              "minLength": 1,
-              "pattern": "^[A-Za-z0-9._*-]+$",
-              "type": "string"
-            },
-            "baseUrl": {
-              "maxLength": 512,
-              "minLength": 1,
-              "pattern": "^https?://[^\\\\s]+$",
-              "type": "string"
-            },
-            "channelId": {
-              "description": "Scoped ai_channel id. Provider and channel identity are derived by the backend and are never trusted from request input.",
-              "maxLength": 128,
-              "minLength": 1,
-              "pattern": "^[1-9][0-9]*$",
-              "type": "string"
-            },
-            "effectiveFrom": {
-              "maxLength": 64,
-              "nullable": true,
-              "type": "string"
-            },
-            "effectiveTo": {
-              "maxLength": 64,
-              "nullable": true,
-              "type": "string"
-            },
-            "priority": {
-              "format": "int64",
-              "maximum": 1000000,
-              "minimum": 1,
-              "type": "integer"
-            },
-            "regionCode": {
-              "maxLength": 64,
-              "minLength": 1,
-              "pattern": "^[A-Za-z0-9._*-]+$",
-              "type": "string"
-            },
-            "status": {
-              "enum": [
-                "active",
-                "disabled",
-                "inactive"
-              ],
-              "type": "string"
-            },
-            "vendorCode": {
-              "maxLength": 128,
-              "minLength": 1,
-              "pattern": "^[A-Za-z0-9._*-]+$",
-              "type": "string"
-            },
-            "weight": {
-              "format": "int64",
-              "maximum": 1000000,
-              "minimum": 1,
-              "type": "integer"
-            }
-          },
-          "required": [
-            "channelId",
-            "vendorCode",
-            "regionCode",
-            "apiEndpointCode",
-            "baseUrl"
-          ],
-          "type": "object"
-        }
-      },
-      "response_schema": {
-        "name": "AdminChannelEndpointMutationResponse",
-        "schema": {
-          "additionalProperties": false,
-          "name": "AdminChannelEndpointMutationResponse",
-          "properties": {
-            "item": {
-              "additionalProperties": false,
-              "description": "Persisted channel regional endpoint snapshot returned by the backend.",
-              "name": "AdminChannelEndpointItem",
-              "properties": {
-                "apiEndpointCode": {
-                  "maxLength": 128,
-                  "minLength": 1,
-                  "pattern": "^[a-z0-9._*-]+$",
-                  "type": "string"
-                },
-                "baseUrl": {
-                  "maxLength": 512,
-                  "minLength": 1,
-                  "pattern": "^https?://[^\\\\s]+$",
-                  "type": "string"
-                },
-                "channelCode": {
-                  "maxLength": 128,
-                  "minLength": 1,
-                  "type": "string"
-                },
-                "channelId": {
-                  "maxLength": 128,
-                  "minLength": 1,
-                  "pattern": "^[1-9][0-9]*$",
-                  "type": "string"
-                },
-                "channelType": {
-                  "enum": [
-                    "official",
-                    "relay"
-                  ],
-                  "type": "string"
-                },
-                "effectiveFrom": {
-                  "maxLength": 64,
-                  "nullable": true,
-                  "type": "string"
-                },
-                "effectiveTo": {
-                  "maxLength": 64,
-                  "nullable": true,
-                  "type": "string"
-                },
-                "healthStatus": {
-                  "enum": [
-                    "healthy",
-                    "unhealthy",
-                    "unknown"
-                  ],
-                  "type": "string"
-                },
-                "id": {
-                  "maxLength": 128,
-                  "minLength": 1,
-                  "pattern": "^[1-9][0-9]*$",
-                  "type": "string"
-                },
-                "priority": {
-                  "format": "int64",
-                  "maximum": 1000000,
-                  "minimum": 1,
-                  "type": "integer"
-                },
-                "providerCode": {
-                  "maxLength": 64,
-                  "minLength": 1,
-                  "pattern": "^[a-z0-9_-]+$",
-                  "type": "string"
-                },
-                "regionCode": {
-                  "maxLength": 64,
-                  "minLength": 1,
-                  "pattern": "^[a-z0-9._*-]+$",
-                  "type": "string"
-                },
-                "status": {
-                  "enum": [
-                    "active",
-                    "disabled",
-                    "inactive"
-                  ],
-                  "type": "string"
-                },
-                "vendorCode": {
-                  "maxLength": 128,
-                  "minLength": 1,
-                  "pattern": "^[a-z0-9._*-]+$",
-                  "type": "string"
-                },
-                "weight": {
-                  "format": "int64",
-                  "maximum": 1000000,
-                  "minimum": 1,
-                  "type": "integer"
-                }
-              },
-              "required": [
-                "id",
-                "channelId",
-                "providerCode",
-                "channelCode",
-                "channelType",
-                "vendorCode",
-                "regionCode",
-                "apiEndpointCode",
-                "baseUrl",
-                "priority",
-                "weight",
-                "healthStatus",
-                "status"
-              ],
-              "type": "object"
-            }
-          },
-          "required": [
-            "item"
-          ],
-          "type": "object"
-        }
-      },
-      "route": "/admin/channel/endpoints",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "integration",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts",
-      "tag": "integration",
-      "write_tables": [
-        "ai_channel_endpoint",
         "ops_audit_log"
       ]
     },
@@ -8260,7 +8002,7 @@
       "query_parameters_declared": false,
       "read_sources": [
         "ai_channel",
-        "ai_channel_model",
+        "ai_channel_resource",
         "ai_channel_resource"
       ],
       "request_body_required": null,
@@ -8291,7 +8033,7 @@
       "tag": "integration",
       "write_tables": [
         "ai_channel",
-        "ai_channel_model",
+        "ai_channel_resource",
         "ops_config_snapshot",
         "ops_audit_log"
       ]
@@ -8350,6 +8092,297 @@
     },
     {
       "api_method": "GET",
+      "api_path": "/backend/v3/api/ai/model_mappings",
+      "api_surface": "backend",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts#fetchAccountMappings",
+      "kind": "read",
+      "module": "admin-channel",
+      "openapi_exposed": false,
+      "operation": "fetchAccountMappings",
+      "operation_id": "modelMappings.list",
+      "path_params": [],
+      "query_parameters": [
+        {
+          "in": "query",
+          "name": "binding_type",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "in": "query",
+          "name": "channel_id",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "query_parameters_declared": true,
+      "read_sources": [
+        "ai_model_mapping_rule",
+        "ai_model_mapping_rule_binding",
+        "ai_model_mapping_rule_item"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "response_schema": {
+        "name": "AdminModelMappingsResponse",
+        "schema": {
+          "additionalProperties": false,
+          "name": "AdminModelMappingsResponse",
+          "properties": {
+            "items": {
+              "items": {
+                "additionalProperties": false,
+                "name": "AdminModelMappingRule",
+                "properties": {
+                  "bindingType": {
+                    "enum": [
+                      "global",
+                      "vendor",
+                      "channel_group",
+                      "channel",
+                      "provider_account",
+                      "site",
+                      "site_service"
+                    ],
+                    "type": "string"
+                  },
+                  "bindings": {
+                    "items": {
+                      "additionalProperties": false,
+                      "name": "AdminModelMappingRuleBinding",
+                      "properties": {
+                        "bindingCode": {
+                          "maxLength": 128,
+                          "nullable": true,
+                          "pattern": "^[A-Za-z0-9._:-]+$",
+                          "type": "string"
+                        },
+                        "bindingId": {
+                          "maxLength": 128,
+                          "nullable": true,
+                          "type": "string"
+                        },
+                        "bindingName": {
+                          "maxLength": 256,
+                          "nullable": true,
+                          "type": "string"
+                        },
+                        "bindingType": {
+                          "enum": [
+                            "global",
+                            "vendor",
+                            "channel_group",
+                            "channel",
+                            "provider_account",
+                            "site",
+                            "site_service"
+                          ],
+                          "type": "string"
+                        },
+                        "createdAt": {
+                          "maxLength": 64,
+                          "nullable": true,
+                          "type": "string"
+                        },
+                        "enabled": {
+                          "type": "boolean"
+                        },
+                        "id": {
+                          "maxLength": 128,
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "sortOrder": {
+                          "format": "int64",
+                          "maximum": 1000000,
+                          "minimum": 0,
+                          "type": "integer"
+                        },
+                        "updatedAt": {
+                          "maxLength": 64,
+                          "nullable": true,
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "bindingType",
+                        "sortOrder",
+                        "enabled"
+                      ],
+                      "type": "object"
+                    },
+                    "maxItems": 100,
+                    "minItems": 1,
+                    "type": "array"
+                  },
+                  "createdAt": {
+                    "maxLength": 64,
+                    "nullable": true,
+                    "type": "string"
+                  },
+                  "enabled": {
+                    "type": "boolean"
+                  },
+                  "id": {
+                    "maxLength": 128,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "mappingItems": {
+                    "items": {
+                      "additionalProperties": false,
+                      "name": "AdminModelMappingRuleItem",
+                      "properties": {
+                        "createdAt": {
+                          "maxLength": 64,
+                          "nullable": true,
+                          "type": "string"
+                        },
+                        "enabled": {
+                          "type": "boolean"
+                        },
+                        "id": {
+                          "maxLength": 128,
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "sortOrder": {
+                          "format": "int64",
+                          "maximum": 1000000,
+                          "minimum": 0,
+                          "type": "integer"
+                        },
+                        "sourceCatalogKey": {
+                          "maxLength": 256,
+                          "nullable": true,
+                          "type": "string"
+                        },
+                        "sourceModel": {
+                          "maxLength": 256,
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "targetCatalogKey": {
+                          "maxLength": 256,
+                          "nullable": true,
+                          "type": "string"
+                        },
+                        "targetModel": {
+                          "maxLength": 256,
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "targetProviderModel": {
+                          "maxLength": 256,
+                          "nullable": true,
+                          "type": "string"
+                        },
+                        "targetProviderNativeModel": {
+                          "maxLength": 256,
+                          "nullable": true,
+                          "type": "string"
+                        },
+                        "updatedAt": {
+                          "maxLength": 64,
+                          "nullable": true,
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "sourceModel",
+                        "targetModel",
+                        "sortOrder",
+                        "enabled"
+                      ],
+                      "type": "object"
+                    },
+                    "maxItems": 100,
+                    "minItems": 1,
+                    "type": "array"
+                  },
+                  "mappingMode": {
+                    "enum": [
+                      "alias"
+                    ],
+                    "type": "string"
+                  },
+                  "matchType": {
+                    "enum": [
+                      "exact"
+                    ],
+                    "type": "string"
+                  },
+                  "sourceVendorCode": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[A-Za-z0-9._-]+$",
+                    "type": "string"
+                  },
+                  "sourceVendorId": {
+                    "maxLength": 128,
+                    "nullable": true,
+                    "type": "string"
+                  },
+                  "targetVendorCode": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[A-Za-z0-9._-]+$",
+                    "type": "string"
+                  },
+                  "targetVendorId": {
+                    "maxLength": 128,
+                    "nullable": true,
+                    "type": "string"
+                  },
+                  "updatedAt": {
+                    "maxLength": 64,
+                    "nullable": true,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "bindingType",
+                  "sourceVendorCode",
+                  "targetVendorCode",
+                  "mappingMode",
+                  "matchType",
+                  "enabled",
+                  "bindings",
+                  "mappingItems"
+                ],
+                "type": "object"
+              },
+              "maxItems": 1000,
+              "type": "array"
+            }
+          },
+          "required": [
+            "items"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/admin/channel",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "intelligence",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts",
+      "tag": "ai",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
       "api_path": "/backend/v3/api/ai/resource_groups",
       "api_surface": "backend",
       "file_targets": [],
@@ -8380,6 +8413,20 @@
                 "additionalProperties": false,
                 "name": "AdminAiResourceGroupItem",
                 "properties": {
+                  "capabilities": {
+                    "items": {
+                      "maxLength": 64,
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "maxItems": 64,
+                    "type": "array"
+                  },
+                  "capability": {
+                    "maxLength": 64,
+                    "nullable": true,
+                    "type": "string"
+                  },
                   "description": {
                     "maxLength": 512,
                     "nullable": true,
@@ -8436,6 +8483,15 @@
                       "inactive"
                     ],
                     "type": "string"
+                  },
+                  "vendorCodes": {
+                    "items": {
+                      "maxLength": 64,
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "maxItems": 64,
+                    "type": "array"
                   }
                 },
                 "required": [
@@ -8460,7 +8516,7 @@
           "type": "object"
         }
       },
-      "route": "/admin/channel/resources",
+      "route": "/admin/channel",
       "route_scope": "admin",
       "sdk_api_prefix": "/backend/v3/api",
       "sdk_client": "SdkworkBackendClient",
@@ -8504,6 +8560,20 @@
                 "properties": {
                   "apiEndpointCode": {
                     "maxLength": 128,
+                    "type": "string"
+                  },
+                  "capabilities": {
+                    "items": {
+                      "maxLength": 64,
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "maxItems": 64,
+                    "type": "array"
+                  },
+                  "capability": {
+                    "maxLength": 64,
+                    "nullable": true,
                     "type": "string"
                   },
                   "catalogKey": {
@@ -8635,7 +8705,7 @@
           "type": "object"
         }
       },
-      "route": "/admin/channel/resources",
+      "route": "/admin/channel",
       "route_scope": "admin",
       "sdk_api_prefix": "/backend/v3/api",
       "sdk_client": "SdkworkBackendClient",
@@ -8643,244 +8713,6 @@
       "sdk_family": "clawrouter-backend-sdk",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts",
       "tag": "ai",
-      "write_tables": []
-    },
-    {
-      "api_method": "GET",
-      "api_path": "/backend/v3/api/integration/channels",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts#fetchChannelEndpointOptions",
-      "kind": "read",
-      "module": "admin-channel",
-      "openapi_exposed": false,
-      "operation": "fetchChannelEndpointOptions",
-      "operation_id": "channels.list",
-      "path_params": [],
-      "query_parameters": [],
-      "query_parameters_declared": true,
-      "read_sources": [
-        "ai_channel"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "response_schema": {
-        "name": "AdminChannelEndpointChannelOptionsResponse",
-        "schema": {
-          "additionalProperties": false,
-          "name": "AdminChannelEndpointChannelOptionsResponse",
-          "properties": {
-            "items": {
-              "items": {
-                "additionalProperties": false,
-                "name": "AdminChannelEndpointChannelOption",
-                "properties": {
-                  "channelId": {
-                    "description": "Scoped ai_channel id used by channel endpoint configuration.",
-                    "maxLength": 128,
-                    "minLength": 1,
-                    "pattern": "^[1-9][0-9]*$",
-                    "type": "string"
-                  },
-                  "name": {
-                    "maxLength": 128,
-                    "minLength": 1,
-                    "type": "string"
-                  },
-                  "vendor": {
-                    "maxLength": 64,
-                    "minLength": 1,
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "channelId",
-                  "name",
-                  "vendor"
-                ],
-                "type": "object"
-              },
-              "type": "array"
-            }
-          },
-          "required": [
-            "items"
-          ],
-          "type": "object"
-        }
-      },
-      "route": "/admin/channel/endpoints",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "integration",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts",
-      "tag": "integration",
-      "write_tables": []
-    },
-    {
-      "api_method": "GET",
-      "api_path": "/backend/v3/api/integration/channel_endpoints",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts#fetchChannelEndpoints",
-      "kind": "read",
-      "module": "admin-channel",
-      "openapi_exposed": true,
-      "operation": "fetchChannelEndpoints",
-      "operation_id": "channelEndpoints.list",
-      "path_params": [],
-      "query_parameters": [],
-      "query_parameters_declared": true,
-      "read_sources": [
-        "ai_channel",
-        "ai_channel_endpoint",
-        "ai_model_vendor",
-        "ai_api_endpoint"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "response_schema": {
-        "name": "AdminChannelEndpointsResponse",
-        "schema": {
-          "additionalProperties": false,
-          "name": "AdminChannelEndpointsResponse",
-          "properties": {
-            "items": {
-              "items": {
-                "additionalProperties": false,
-                "name": "AdminChannelEndpointItem",
-                "properties": {
-                  "apiEndpointCode": {
-                    "maxLength": 128,
-                    "minLength": 1,
-                    "pattern": "^[a-z0-9._*-]+$",
-                    "type": "string"
-                  },
-                  "baseUrl": {
-                    "maxLength": 512,
-                    "minLength": 1,
-                    "pattern": "^https?://[^\\\\s]+$",
-                    "type": "string"
-                  },
-                  "channelCode": {
-                    "maxLength": 128,
-                    "minLength": 1,
-                    "type": "string"
-                  },
-                  "channelId": {
-                    "maxLength": 128,
-                    "minLength": 1,
-                    "pattern": "^[1-9][0-9]*$",
-                    "type": "string"
-                  },
-                  "channelType": {
-                    "enum": [
-                      "official",
-                      "relay"
-                    ],
-                    "type": "string"
-                  },
-                  "effectiveFrom": {
-                    "maxLength": 64,
-                    "nullable": true,
-                    "type": "string"
-                  },
-                  "effectiveTo": {
-                    "maxLength": 64,
-                    "nullable": true,
-                    "type": "string"
-                  },
-                  "healthStatus": {
-                    "enum": [
-                      "healthy",
-                      "unhealthy",
-                      "unknown"
-                    ],
-                    "type": "string"
-                  },
-                  "id": {
-                    "maxLength": 128,
-                    "minLength": 1,
-                    "pattern": "^[1-9][0-9]*$",
-                    "type": "string"
-                  },
-                  "priority": {
-                    "format": "int64",
-                    "maximum": 1000000,
-                    "minimum": 1,
-                    "type": "integer"
-                  },
-                  "providerCode": {
-                    "maxLength": 64,
-                    "minLength": 1,
-                    "pattern": "^[a-z0-9_-]+$",
-                    "type": "string"
-                  },
-                  "regionCode": {
-                    "maxLength": 64,
-                    "minLength": 1,
-                    "pattern": "^[a-z0-9._*-]+$",
-                    "type": "string"
-                  },
-                  "status": {
-                    "enum": [
-                      "active",
-                      "disabled",
-                      "inactive"
-                    ],
-                    "type": "string"
-                  },
-                  "vendorCode": {
-                    "maxLength": 128,
-                    "minLength": 1,
-                    "pattern": "^[a-z0-9._*-]+$",
-                    "type": "string"
-                  },
-                  "weight": {
-                    "format": "int64",
-                    "maximum": 1000000,
-                    "minimum": 1,
-                    "type": "integer"
-                  }
-                },
-                "required": [
-                  "id",
-                  "channelId",
-                  "providerCode",
-                  "channelCode",
-                  "channelType",
-                  "vendorCode",
-                  "regionCode",
-                  "apiEndpointCode",
-                  "baseUrl",
-                  "priority",
-                  "weight",
-                  "healthStatus",
-                  "status"
-                ],
-                "type": "object"
-              },
-              "type": "array"
-            }
-          },
-          "required": [
-            "items"
-          ],
-          "type": "object"
-        }
-      },
-      "route": "/admin/channel/endpoints",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "integration",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts",
-      "tag": "integration",
       "write_tables": []
     },
     {
@@ -8902,8 +8734,6 @@
         "ai_provider",
         "ai_channel",
         "ai_channel_credential",
-        "ai_channel_model",
-        "ai_channel",
         "ai_channel_resource",
         "integration_provider_health_snapshot"
       ],
@@ -8945,7 +8775,7 @@
                     "type": "array"
                   },
                   "channelId": {
-                    "description": "Scoped ai_channel id used by channel endpoint configuration.",
+                    "description": "Scoped ai_channel id used by account route and credential configuration.",
                     "maxLength": 128,
                     "minLength": 1,
                     "pattern": "^[1-9][0-9]*$",
@@ -9094,15 +8924,6 @@
                   "isMultimodal": {
                     "type": "boolean"
                   },
-                  "models": {
-                    "items": {
-                      "maxLength": 128,
-                      "minLength": 1,
-                      "type": "string"
-                    },
-                    "maxItems": 200,
-                    "type": "array"
-                  },
                   "name": {
                     "maxLength": 128,
                     "minLength": 1,
@@ -9199,7 +9020,6 @@
                   "accessType",
                   "credentialRotation",
                   "credentials",
-                  "models",
                   "capabilities",
                   "resourceCodes",
                   "isMultimodal",
@@ -9455,6 +9275,122 @@
       "write_tables": []
     },
     {
+      "api_method": "PUT",
+      "api_path": "/backend/v3/api/ai/model_mappings",
+      "api_surface": "backend",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts#replaceAccountMappings",
+      "kind": "update",
+      "module": "admin-channel",
+      "openapi_exposed": false,
+      "operation": "replaceAccountMappings",
+      "operation_id": "modelMappings.replace",
+      "path_params": [],
+      "query_parameters": [],
+      "query_parameters_declared": false,
+      "read_sources": [
+        "ai_channel",
+        "ai_model_mapping_rule",
+        "ai_model_mapping_rule_binding",
+        "ai_model_mapping_rule_item"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "request_schema": {
+        "name": "AdminAccountModelMappingsReplaceRequest",
+        "schema": {
+          "additionalProperties": false,
+          "name": "AdminAccountModelMappingsReplaceRequest",
+          "properties": {
+            "accountVendorCode": {
+              "maxLength": 64,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9._-]+$",
+              "type": "string"
+            },
+            "channelId": {
+              "maxLength": 128,
+              "minLength": 1,
+              "type": "string"
+            },
+            "channelName": {
+              "maxLength": 128,
+              "nullable": true,
+              "type": "string"
+            },
+            "mappings": {
+              "items": {
+                "additionalProperties": false,
+                "name": "AdminAccountModelMappingInput",
+                "properties": {
+                  "sourceModel": {
+                    "maxLength": 256,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "targetModel": {
+                    "maxLength": 256,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "targetVendorCode": {
+                    "maxLength": 64,
+                    "nullable": true,
+                    "pattern": "^[A-Za-z0-9._-]+$",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "sourceModel",
+                  "targetModel"
+                ],
+                "type": "object"
+              },
+              "maxItems": 1000,
+              "type": "array"
+            }
+          },
+          "required": [
+            "channelId",
+            "accountVendorCode",
+            "mappings"
+          ],
+          "type": "object"
+        }
+      },
+      "response_schema": {
+        "name": "AdminAccountModelMappingsReplaceResponse",
+        "schema": {
+          "additionalProperties": false,
+          "name": "AdminAccountModelMappingsReplaceResponse",
+          "properties": {
+            "ok": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "ok"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/admin/channel",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "intelligence",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts",
+      "tag": "ai",
+      "write_tables": [
+        "ai_model_mapping_rule",
+        "ai_model_mapping_rule_binding",
+        "ai_model_mapping_rule_item",
+        "ops_audit_log"
+      ]
+    },
+    {
       "api_method": "POST",
       "api_path": "/backend/v3/api/integration/channels/{channelId}/verify",
       "api_surface": "backend",
@@ -9473,7 +9409,7 @@
       "query_parameters_declared": false,
       "read_sources": [
         "ai_channel",
-        "ai_channel_model",
+        "ai_channel_resource",
         "ai_channel",
         "ai_channel_resource"
       ],
@@ -9518,7 +9454,7 @@
                   "type": "array"
                 },
                 "channelId": {
-                  "description": "Scoped ai_channel id used by channel endpoint configuration.",
+                  "description": "Scoped ai_channel id used by account route and credential configuration.",
                   "maxLength": 128,
                   "minLength": 1,
                   "pattern": "^[1-9][0-9]*$",
@@ -9667,15 +9603,6 @@
                 "isMultimodal": {
                   "type": "boolean"
                 },
-                "models": {
-                  "items": {
-                    "maxLength": 128,
-                    "minLength": 1,
-                    "type": "string"
-                  },
-                  "maxItems": 200,
-                  "type": "array"
-                },
                 "name": {
                   "maxLength": 128,
                   "minLength": 1,
@@ -9772,7 +9699,6 @@
                 "accessType",
                 "credentialRotation",
                 "credentials",
-                "models",
                 "capabilities",
                 "resourceCodes",
                 "isMultimodal",
@@ -9986,6 +9912,20 @@
                   "maxLength": 128,
                   "type": "string"
                 },
+                "capabilities": {
+                  "items": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "maxItems": 64,
+                  "type": "array"
+                },
+                "capability": {
+                  "maxLength": 64,
+                  "nullable": true,
+                  "type": "string"
+                },
                 "catalogKey": {
                   "maxLength": 256,
                   "type": "string"
@@ -10113,7 +10053,7 @@
           "type": "object"
         }
       },
-      "route": "/admin/channel/resources",
+      "route": "/admin/model/resources",
       "route_scope": "admin",
       "sdk_api_prefix": "/backend/v3/api",
       "sdk_client": "SdkworkBackendClient",
@@ -10146,10 +10086,6 @@
         "ai_provider",
         "ai_channel",
         "ai_channel_credential",
-        "ai_channel_model",
-        "ai_channel",
-        "ai_channel_vendor",
-        "ai_channel_resource",
         "ai_channel_resource"
       ],
       "request_body_required": null,
@@ -10282,17 +10218,6 @@
               "maxLength": 64,
               "minLength": 1,
               "type": "string"
-            },
-            "models": {
-              "items": {
-                "maxLength": 128,
-                "minLength": 1,
-                "pattern": "^[A-Za-z0-9._:/-]+$",
-                "type": "string"
-              },
-              "maxItems": 200,
-              "type": "array",
-              "uniqueItems": true
             },
             "name": {
               "maxLength": 128,
@@ -10427,7 +10352,7 @@
                   "type": "array"
                 },
                 "channelId": {
-                  "description": "Scoped ai_channel id used by channel endpoint configuration.",
+                  "description": "Scoped ai_channel id used by account route and credential configuration.",
                   "maxLength": 128,
                   "minLength": 1,
                   "pattern": "^[1-9][0-9]*$",
@@ -10576,15 +10501,6 @@
                 "isMultimodal": {
                   "type": "boolean"
                 },
-                "models": {
-                  "items": {
-                    "maxLength": 128,
-                    "minLength": 1,
-                    "type": "string"
-                  },
-                  "maxItems": 200,
-                  "type": "array"
-                },
                 "name": {
                   "maxLength": 128,
                   "minLength": 1,
@@ -10681,7 +10597,6 @@
                 "accessType",
                 "credentialRotation",
                 "credentials",
-                "models",
                 "capabilities",
                 "resourceCodes",
                 "isMultimodal",
@@ -10711,243 +10626,8 @@
       "write_tables": [
         "ai_channel",
         "ai_channel_credential",
-        "ai_channel_model",
-        "ai_channel",
-        "ai_channel_vendor",
-        "ai_channel_resource",
         "ai_channel_resource",
         "ops_config_snapshot",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "PUT",
-      "api_path": "/backend/v3/api/integration/channel_endpoints/{endpointId}",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts#updateChannelEndpoint",
-      "kind": "update",
-      "module": "admin-channel",
-      "openapi_exposed": true,
-      "operation": "updateChannelEndpoint",
-      "operation_id": "channelEndpoints.update",
-      "path_params": [
-        "endpointId"
-      ],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "ai_channel_endpoint",
-        "ai_model_vendor",
-        "ai_api_endpoint"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "request_schema": {
-        "name": "AdminChannelEndpointUpdateRequest",
-        "schema": {
-          "additionalProperties": false,
-          "name": "AdminChannelEndpointUpdateRequest",
-          "properties": {
-            "apiEndpointCode": {
-              "maxLength": 128,
-              "minLength": 1,
-              "pattern": "^[A-Za-z0-9._*-]+$",
-              "type": "string"
-            },
-            "baseUrl": {
-              "maxLength": 512,
-              "minLength": 1,
-              "pattern": "^https?://[^\\\\s]+$",
-              "type": "string"
-            },
-            "effectiveFrom": {
-              "description": "Null clears the endpoint effective start time; omitted leaves it unchanged.",
-              "maxLength": 64,
-              "nullable": true,
-              "type": "string"
-            },
-            "effectiveTo": {
-              "description": "Null clears the endpoint effective end time; omitted leaves it unchanged.",
-              "maxLength": 64,
-              "nullable": true,
-              "type": "string"
-            },
-            "priority": {
-              "format": "int64",
-              "maximum": 1000000,
-              "minimum": 1,
-              "type": "integer"
-            },
-            "regionCode": {
-              "maxLength": 64,
-              "minLength": 1,
-              "pattern": "^[A-Za-z0-9._*-]+$",
-              "type": "string"
-            },
-            "status": {
-              "enum": [
-                "active",
-                "disabled",
-                "inactive"
-              ],
-              "type": "string"
-            },
-            "vendorCode": {
-              "maxLength": 128,
-              "minLength": 1,
-              "pattern": "^[A-Za-z0-9._*-]+$",
-              "type": "string"
-            },
-            "weight": {
-              "format": "int64",
-              "maximum": 1000000,
-              "minimum": 1,
-              "type": "integer"
-            }
-          },
-          "type": "object"
-        }
-      },
-      "response_schema": {
-        "name": "AdminChannelEndpointMutationResponse",
-        "schema": {
-          "additionalProperties": false,
-          "name": "AdminChannelEndpointMutationResponse",
-          "properties": {
-            "item": {
-              "additionalProperties": false,
-              "description": "Persisted channel regional endpoint snapshot returned by the backend.",
-              "name": "AdminChannelEndpointItem",
-              "properties": {
-                "apiEndpointCode": {
-                  "maxLength": 128,
-                  "minLength": 1,
-                  "pattern": "^[a-z0-9._*-]+$",
-                  "type": "string"
-                },
-                "baseUrl": {
-                  "maxLength": 512,
-                  "minLength": 1,
-                  "pattern": "^https?://[^\\\\s]+$",
-                  "type": "string"
-                },
-                "channelCode": {
-                  "maxLength": 128,
-                  "minLength": 1,
-                  "type": "string"
-                },
-                "channelId": {
-                  "maxLength": 128,
-                  "minLength": 1,
-                  "pattern": "^[1-9][0-9]*$",
-                  "type": "string"
-                },
-                "channelType": {
-                  "enum": [
-                    "official",
-                    "relay"
-                  ],
-                  "type": "string"
-                },
-                "effectiveFrom": {
-                  "maxLength": 64,
-                  "nullable": true,
-                  "type": "string"
-                },
-                "effectiveTo": {
-                  "maxLength": 64,
-                  "nullable": true,
-                  "type": "string"
-                },
-                "healthStatus": {
-                  "enum": [
-                    "healthy",
-                    "unhealthy",
-                    "unknown"
-                  ],
-                  "type": "string"
-                },
-                "id": {
-                  "maxLength": 128,
-                  "minLength": 1,
-                  "pattern": "^[1-9][0-9]*$",
-                  "type": "string"
-                },
-                "priority": {
-                  "format": "int64",
-                  "maximum": 1000000,
-                  "minimum": 1,
-                  "type": "integer"
-                },
-                "providerCode": {
-                  "maxLength": 64,
-                  "minLength": 1,
-                  "pattern": "^[a-z0-9_-]+$",
-                  "type": "string"
-                },
-                "regionCode": {
-                  "maxLength": 64,
-                  "minLength": 1,
-                  "pattern": "^[a-z0-9._*-]+$",
-                  "type": "string"
-                },
-                "status": {
-                  "enum": [
-                    "active",
-                    "disabled",
-                    "inactive"
-                  ],
-                  "type": "string"
-                },
-                "vendorCode": {
-                  "maxLength": 128,
-                  "minLength": 1,
-                  "pattern": "^[a-z0-9._*-]+$",
-                  "type": "string"
-                },
-                "weight": {
-                  "format": "int64",
-                  "maximum": 1000000,
-                  "minimum": 1,
-                  "type": "integer"
-                }
-              },
-              "required": [
-                "id",
-                "channelId",
-                "providerCode",
-                "channelCode",
-                "channelType",
-                "vendorCode",
-                "regionCode",
-                "apiEndpointCode",
-                "baseUrl",
-                "priority",
-                "weight",
-                "healthStatus",
-                "status"
-              ],
-              "type": "object"
-            }
-          },
-          "required": [
-            "item"
-          ],
-          "type": "object"
-        }
-      },
-      "route": "/admin/channel/endpoints",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "integration",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts",
-      "tag": "integration",
-      "write_tables": [
-        "ai_channel_endpoint",
         "ops_audit_log"
       ]
     },
@@ -18106,7 +17786,6 @@
       "read_sources": [
         "ai_provider",
         "ai_channel",
-        "ai_channel_model",
         "ai_channel"
       ],
       "request_body_required": null,
@@ -18174,6 +17853,20 @@
                 "additionalProperties": false,
                 "name": "AdminAiResourceGroupItem",
                 "properties": {
+                  "capabilities": {
+                    "items": {
+                      "maxLength": 64,
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "maxItems": 64,
+                    "type": "array"
+                  },
+                  "capability": {
+                    "maxLength": 64,
+                    "nullable": true,
+                    "type": "string"
+                  },
                   "description": {
                     "maxLength": 512,
                     "nullable": true,
@@ -18230,6 +17923,15 @@
                       "inactive"
                     ],
                     "type": "string"
+                  },
+                  "vendorCodes": {
+                    "items": {
+                      "maxLength": 64,
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "maxItems": 64,
+                    "type": "array"
                   }
                 },
                 "required": [
@@ -18298,6 +18000,20 @@
                 "properties": {
                   "apiEndpointCode": {
                     "maxLength": 128,
+                    "type": "string"
+                  },
+                  "capabilities": {
+                    "items": {
+                      "maxLength": 64,
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "maxItems": 64,
+                    "type": "array"
+                  },
+                  "capability": {
+                    "maxLength": 64,
+                    "nullable": true,
                     "type": "string"
                   },
                   "catalogKey": {
@@ -18460,7 +18176,7 @@
         "ai_channel_group",
         "ai_channel_group_member",
         "ai_channel",
-        "ai_channel_model",
+        "ai_channel_group_resource",
         "ai_provider"
       ],
       "request_body_required": null,
@@ -18476,6 +18192,15 @@
                 "additionalProperties": false,
                 "name": "AdminChannelGroupChannelBindingItem",
                 "properties": {
+                  "apiScope": {
+                    "items": {
+                      "maxLength": 128,
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "maxItems": 200,
+                    "type": "array"
+                  },
                   "capabilities": {
                     "items": {
                       "maxLength": 64,
@@ -18517,24 +18242,6 @@
                     "minLength": 1,
                     "type": "string"
                   },
-                  "modelScope": {
-                    "items": {
-                      "maxLength": 128,
-                      "minLength": 1,
-                      "type": "string"
-                    },
-                    "maxItems": 200,
-                    "type": "array"
-                  },
-                  "models": {
-                    "items": {
-                      "maxLength": 128,
-                      "minLength": 1,
-                      "type": "string"
-                    },
-                    "maxItems": 200,
-                    "type": "array"
-                  },
                   "priority": {
                     "maximum": 1000000,
                     "minimum": 0,
@@ -18549,6 +18256,15 @@
                     "maxLength": 128,
                     "minLength": 1,
                     "type": "string"
+                  },
+                  "resourceCodes": {
+                    "items": {
+                      "maxLength": 128,
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "maxItems": 200,
+                    "type": "array"
                   },
                   "status": {
                     "enum": [
@@ -18571,9 +18287,9 @@
                   "providerCode",
                   "providerName",
                   "channelCode",
-                  "models",
+                  "resourceCodes",
+                  "apiScope",
                   "capabilities",
-                  "modelScope",
                   "priority",
                   "weight",
                   "status",
@@ -18823,7 +18539,7 @@
         "ai_channel_group",
         "ai_channel_group_member",
         "ai_channel",
-        "ai_channel_model",
+        "ai_channel_group_resource",
         "ai_provider"
       ],
       "request_body_required": null,
@@ -18839,6 +18555,15 @@
                 "additionalProperties": false,
                 "name": "AdminChannelGroupChannelBindingInput",
                 "properties": {
+                  "apiScope": {
+                    "items": {
+                      "maxLength": 128,
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "maxItems": 200,
+                    "type": "array"
+                  },
                   "capabilities": {
                     "items": {
                       "maxLength": 64,
@@ -18853,7 +18578,12 @@
                     "minLength": 1,
                     "type": "string"
                   },
-                  "modelScope": {
+                  "priority": {
+                    "maximum": 1000000,
+                    "minimum": 0,
+                    "type": "integer"
+                  },
+                  "resourceCodes": {
                     "items": {
                       "maxLength": 128,
                       "minLength": 1,
@@ -18861,11 +18591,6 @@
                     },
                     "maxItems": 200,
                     "type": "array"
-                  },
-                  "priority": {
-                    "maximum": 1000000,
-                    "minimum": 0,
-                    "type": "integer"
                   },
                   "status": {
                     "enum": [
@@ -18906,6 +18631,15 @@
                 "additionalProperties": false,
                 "name": "AdminChannelGroupChannelBindingItem",
                 "properties": {
+                  "apiScope": {
+                    "items": {
+                      "maxLength": 128,
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "maxItems": 200,
+                    "type": "array"
+                  },
                   "capabilities": {
                     "items": {
                       "maxLength": 64,
@@ -18947,24 +18681,6 @@
                     "minLength": 1,
                     "type": "string"
                   },
-                  "modelScope": {
-                    "items": {
-                      "maxLength": 128,
-                      "minLength": 1,
-                      "type": "string"
-                    },
-                    "maxItems": 200,
-                    "type": "array"
-                  },
-                  "models": {
-                    "items": {
-                      "maxLength": 128,
-                      "minLength": 1,
-                      "type": "string"
-                    },
-                    "maxItems": 200,
-                    "type": "array"
-                  },
                   "priority": {
                     "maximum": 1000000,
                     "minimum": 0,
@@ -18979,6 +18695,15 @@
                     "maxLength": 128,
                     "minLength": 1,
                     "type": "string"
+                  },
+                  "resourceCodes": {
+                    "items": {
+                      "maxLength": 128,
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "maxItems": 200,
+                    "type": "array"
                   },
                   "status": {
                     "enum": [
@@ -19001,9 +18726,9 @@
                   "providerCode",
                   "providerName",
                   "channelCode",
-                  "models",
+                  "resourceCodes",
+                  "apiScope",
                   "capabilities",
-                  "modelScope",
                   "priority",
                   "weight",
                   "status",
@@ -31925,22 +31650,29 @@
                 "name": "AdminAiModelRegionPrice",
                 "properties": {
                   "cacheReadPrice": {
-                    "description": "Optional official reference cache-read unit price in USD.",
+                    "description": "Optional official reference cache-read unit price in native official reference currency.",
                     "pattern": "^$|^[0-9]+(\\.[0-9]{1,12})?$",
                     "type": "string"
                   },
                   "cacheWritePrice": {
-                    "description": "Optional official reference cache-write unit price in USD.",
+                    "description": "Optional official reference cache-write unit price in native official reference currency.",
                     "pattern": "^$|^[0-9]+(\\.[0-9]{1,12})?$",
                     "type": "string"
                   },
+                  "currency": {
+                    "description": "Official reference price currency code for this region.",
+                    "maxLength": 3,
+                    "minLength": 3,
+                    "pattern": "^[A-Z]{3}$",
+                    "type": "string"
+                  },
                   "priceIn": {
-                    "description": "Official reference input unit price in USD.",
+                    "description": "Official reference input unit price in native official reference currency.",
                     "pattern": "^[0-9]+(\\.[0-9]{1,12})?$",
                     "type": "string"
                   },
                   "priceOut": {
-                    "description": "Official reference output unit price in USD.",
+                    "description": "Official reference output unit price in native official reference currency.",
                     "pattern": "^[0-9]+(\\.[0-9]{1,12})?$",
                     "type": "string"
                   },
@@ -31954,6 +31686,7 @@
                 },
                 "required": [
                   "regionCode",
+                  "currency",
                   "priceIn",
                   "priceOut"
                 ],
@@ -32154,22 +31887,29 @@
                     "name": "AdminAiModelRegionPrice",
                     "properties": {
                       "cacheReadPrice": {
-                        "description": "Optional official reference cache-read unit price in USD.",
+                        "description": "Optional official reference cache-read unit price in native official reference currency.",
                         "pattern": "^$|^[0-9]+(\\.[0-9]{1,12})?$",
                         "type": "string"
                       },
                       "cacheWritePrice": {
-                        "description": "Optional official reference cache-write unit price in USD.",
+                        "description": "Optional official reference cache-write unit price in native official reference currency.",
                         "pattern": "^$|^[0-9]+(\\.[0-9]{1,12})?$",
                         "type": "string"
                       },
+                      "currency": {
+                        "description": "Official reference price currency code for this region.",
+                        "maxLength": 3,
+                        "minLength": 3,
+                        "pattern": "^[A-Z]{3}$",
+                        "type": "string"
+                      },
                       "priceIn": {
-                        "description": "Official reference input unit price in USD.",
+                        "description": "Official reference input unit price in native official reference currency.",
                         "pattern": "^[0-9]+(\\.[0-9]{1,12})?$",
                         "type": "string"
                       },
                       "priceOut": {
-                        "description": "Official reference output unit price in USD.",
+                        "description": "Official reference output unit price in native official reference currency.",
                         "pattern": "^[0-9]+(\\.[0-9]{1,12})?$",
                         "type": "string"
                       },
@@ -32183,6 +31923,7 @@
                     },
                     "required": [
                       "regionCode",
+                      "currency",
                       "priceIn",
                       "priceOut"
                     ],
@@ -33021,6 +32762,20 @@
               "additionalProperties": false,
               "name": "AdminAiResourceGroupItem",
               "properties": {
+                "capabilities": {
+                  "items": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "maxItems": 64,
+                  "type": "array"
+                },
+                "capability": {
+                  "maxLength": 64,
+                  "nullable": true,
+                  "type": "string"
+                },
                 "description": {
                   "maxLength": 512,
                   "nullable": true,
@@ -33077,6 +32832,15 @@
                     "inactive"
                   ],
                   "type": "string"
+                },
+                "vendorCodes": {
+                  "items": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "maxItems": 64,
+                  "type": "array"
                 }
               },
               "required": [
@@ -33239,7 +33003,6 @@
             }
           },
           "required": [
-            "siteCode",
             "siteName",
             "displayName",
             "baseUrl"
@@ -33414,301 +33177,6 @@
       "write_tables": [
         "ai_site",
         "ai_site_service",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/sites/{siteId}/models",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts#createSiteModel",
-      "kind": "create",
-      "module": "admin-model",
-      "openapi_exposed": true,
-      "operation": "createSiteModel",
-      "operation_id": "siteModels.create",
-      "path_params": [
-        "siteId"
-      ],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "ai_site_model",
-        "ai_site",
-        "ai_site_service"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "request_schema": {
-        "name": "AdminSiteModelCreateRequest",
-        "schema": {
-          "additionalProperties": false,
-          "name": "AdminSiteModelCreateRequest",
-          "properties": {
-            "capabilities": {
-              "items": {
-                "maxLength": 64,
-                "minLength": 1,
-                "type": "string"
-              },
-              "maxItems": 64,
-              "type": "array"
-            },
-            "contextTokens": {
-              "format": "int64",
-              "minimum": 0,
-              "nullable": true,
-              "type": "integer"
-            },
-            "displayName": {
-              "maxLength": 128,
-              "nullable": true,
-              "type": "string"
-            },
-            "maxInputTokens": {
-              "format": "int64",
-              "minimum": 0,
-              "nullable": true,
-              "type": "integer"
-            },
-            "maxOutputTokens": {
-              "format": "int64",
-              "minimum": 0,
-              "nullable": true,
-              "type": "integer"
-            },
-            "modality": {
-              "maxLength": 64,
-              "nullable": true,
-              "type": "string"
-            },
-            "modelCode": {
-              "maxLength": 128,
-              "minLength": 1,
-              "pattern": "^[A-Za-z0-9._:/-]+$",
-              "type": "string"
-            },
-            "modelName": {
-              "maxLength": 128,
-              "minLength": 1,
-              "type": "string"
-            },
-            "providerModel": {
-              "maxLength": 128,
-              "nullable": true,
-              "type": "string"
-            },
-            "providerNativeModel": {
-              "maxLength": 256,
-              "nullable": true,
-              "type": "string"
-            },
-            "status": {
-              "enum": [
-                "active",
-                "disabled"
-              ],
-              "type": "string"
-            },
-            "supportsJsonSchema": {
-              "type": "boolean"
-            },
-            "supportsStreaming": {
-              "type": "boolean"
-            },
-            "supportsTools": {
-              "type": "boolean"
-            },
-            "vendorCode": {
-              "maxLength": 64,
-              "nullable": true,
-              "type": "string"
-            }
-          },
-          "required": [
-            "modelCode",
-            "modelName"
-          ],
-          "type": "object"
-        }
-      },
-      "response_schema": {
-        "name": "AdminSiteModelMutationResponse",
-        "schema": {
-          "additionalProperties": false,
-          "name": "AdminSiteModelMutationResponse",
-          "properties": {
-            "item": {
-              "additionalProperties": false,
-              "name": "AdminSiteModelItem",
-              "properties": {
-                "capabilities": {
-                  "items": {
-                    "maxLength": 64,
-                    "minLength": 1,
-                    "type": "string"
-                  },
-                  "maxItems": 64,
-                  "type": "array"
-                },
-                "consecutiveErrorCount": {
-                  "format": "int64",
-                  "minimum": 0,
-                  "type": "integer"
-                },
-                "contextTokens": {
-                  "format": "int64",
-                  "minimum": 0,
-                  "nullable": true,
-                  "type": "integer"
-                },
-                "displayName": {
-                  "maxLength": 128,
-                  "nullable": true,
-                  "type": "string"
-                },
-                "healthStatus": {
-                  "enum": [
-                    "unknown",
-                    "healthy",
-                    "degraded",
-                    "unhealthy"
-                  ],
-                  "type": "string"
-                },
-                "id": {
-                  "maxLength": 128,
-                  "minLength": 1,
-                  "type": "string"
-                },
-                "lastLatencyMs": {
-                  "format": "int64",
-                  "minimum": 0,
-                  "nullable": true,
-                  "type": "integer"
-                },
-                "lastSyncAt": {
-                  "nullable": true,
-                  "type": "string"
-                },
-                "maxInputTokens": {
-                  "format": "int64",
-                  "minimum": 0,
-                  "nullable": true,
-                  "type": "integer"
-                },
-                "maxOutputTokens": {
-                  "format": "int64",
-                  "minimum": 0,
-                  "nullable": true,
-                  "type": "integer"
-                },
-                "modality": {
-                  "maxLength": 64,
-                  "nullable": true,
-                  "type": "string"
-                },
-                "modelCode": {
-                  "maxLength": 128,
-                  "minLength": 1,
-                  "pattern": "^[A-Za-z0-9._:/-]+$",
-                  "type": "string"
-                },
-                "modelName": {
-                  "maxLength": 128,
-                  "minLength": 1,
-                  "type": "string"
-                },
-                "providerModel": {
-                  "maxLength": 128,
-                  "nullable": true,
-                  "type": "string"
-                },
-                "providerNativeModel": {
-                  "maxLength": 256,
-                  "nullable": true,
-                  "type": "string"
-                },
-                "serviceType": {
-                  "enum": [
-                    "ai_model_relay"
-                  ],
-                  "type": "string"
-                },
-                "siteCode": {
-                  "maxLength": 64,
-                  "minLength": 1,
-                  "type": "string"
-                },
-                "siteId": {
-                  "maxLength": 128,
-                  "minLength": 1,
-                  "type": "string"
-                },
-                "siteServiceCode": {
-                  "maxLength": 64,
-                  "nullable": true,
-                  "type": "string"
-                },
-                "siteServiceId": {
-                  "maxLength": 128,
-                  "minLength": 1,
-                  "type": "string"
-                },
-                "status": {
-                  "enum": [
-                    "active",
-                    "disabled"
-                  ],
-                  "type": "string"
-                },
-                "supportsJsonSchema": {
-                  "type": "boolean"
-                },
-                "supportsStreaming": {
-                  "type": "boolean"
-                },
-                "supportsTools": {
-                  "type": "boolean"
-                },
-                "vendorCode": {
-                  "maxLength": 64,
-                  "nullable": true,
-                  "type": "string"
-                }
-              },
-              "required": [
-                "id",
-                "siteId",
-                "siteCode",
-                "siteServiceId",
-                "serviceType",
-                "modelCode",
-                "modelName",
-                "healthStatus",
-                "status"
-              ],
-              "type": "object"
-            }
-          },
-          "required": [
-            "item"
-          ],
-          "type": "object"
-        }
-      },
-      "route": "/admin/model/sites",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "sites",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts",
-      "tag": "sites",
-      "write_tables": [
-        "ai_site_model",
         "ops_audit_log"
       ]
     },
@@ -33924,61 +33392,6 @@
       "write_tables": [
         "ai_site",
         "ai_site_service",
-        "ai_site_model",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "DELETE",
-      "api_path": "/backend/v3/api/sites/{siteId}/models/{siteModelId}",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts#deleteSiteModel",
-      "kind": "delete",
-      "module": "admin-model",
-      "openapi_exposed": true,
-      "operation": "deleteSiteModel",
-      "operation_id": "siteModels.delete",
-      "path_params": [
-        "siteId",
-        "siteModelId"
-      ],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "ai_site_model",
-        "ai_site",
-        "ai_site_service"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "response_schema": {
-        "name": "AdminSiteDeleteResponse",
-        "schema": {
-          "additionalProperties": false,
-          "name": "AdminSiteDeleteResponse",
-          "properties": {
-            "deleted": {
-              "type": "boolean"
-            }
-          },
-          "required": [
-            "deleted"
-          ],
-          "type": "object"
-        }
-      },
-      "route": "/admin/model/sites",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "sites",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts",
-      "tag": "sites",
-      "write_tables": [
-        "ai_site_model",
         "ops_audit_log"
       ]
     },
@@ -34016,6 +33429,20 @@
                 "properties": {
                   "apiEndpointCode": {
                     "maxLength": 128,
+                    "type": "string"
+                  },
+                  "capabilities": {
+                    "items": {
+                      "maxLength": 64,
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "maxItems": 64,
+                    "type": "array"
+                  },
+                  "capability": {
+                    "maxLength": 64,
+                    "nullable": true,
                     "type": "string"
                   },
                   "catalogKey": {
@@ -34325,22 +33752,29 @@
                       "name": "AdminAiModelRegionPrice",
                       "properties": {
                         "cacheReadPrice": {
-                          "description": "Optional official reference cache-read unit price in USD.",
+                          "description": "Optional official reference cache-read unit price in native official reference currency.",
                           "pattern": "^$|^[0-9]+(\\.[0-9]{1,12})?$",
                           "type": "string"
                         },
                         "cacheWritePrice": {
-                          "description": "Optional official reference cache-write unit price in USD.",
+                          "description": "Optional official reference cache-write unit price in native official reference currency.",
                           "pattern": "^$|^[0-9]+(\\.[0-9]{1,12})?$",
                           "type": "string"
                         },
+                        "currency": {
+                          "description": "Official reference price currency code for this region.",
+                          "maxLength": 3,
+                          "minLength": 3,
+                          "pattern": "^[A-Z]{3}$",
+                          "type": "string"
+                        },
                         "priceIn": {
-                          "description": "Official reference input unit price in USD.",
+                          "description": "Official reference input unit price in native official reference currency.",
                           "pattern": "^[0-9]+(\\.[0-9]{1,12})?$",
                           "type": "string"
                         },
                         "priceOut": {
-                          "description": "Official reference output unit price in USD.",
+                          "description": "Official reference output unit price in native official reference currency.",
                           "pattern": "^[0-9]+(\\.[0-9]{1,12})?$",
                           "type": "string"
                         },
@@ -34354,6 +33788,7 @@
                       },
                       "required": [
                         "regionCode",
+                        "currency",
                         "priceIn",
                         "priceOut"
                       ],
@@ -34857,6 +34292,174 @@
           },
           "required": [
             "items"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/admin/model/mappings",
+      "route_scope": "admin",
+      "sdk_api_prefix": "/backend/v3/api",
+      "sdk_client": "SdkworkBackendClient",
+      "sdk_domain": "intelligence",
+      "sdk_family": "clawrouter-backend-sdk",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts",
+      "tag": "ai",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/ai/model_mapping_options",
+      "api_surface": "backend",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts#fetchModelOptionsCatalog",
+      "kind": "read",
+      "module": "admin-model",
+      "openapi_exposed": false,
+      "operation": "fetchModelOptionsCatalog",
+      "operation_id": "modelMappingOptions.list",
+      "path_params": [],
+      "query_parameters": [],
+      "query_parameters_declared": true,
+      "read_sources": [
+        "ai_model",
+        "ai_model_vendor"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "response_schema": {
+        "name": "AdminModelMappingOptionsCatalogResponse",
+        "schema": {
+          "additionalProperties": false,
+          "name": "AdminModelMappingOptionsCatalogResponse",
+          "properties": {
+            "models": {
+              "items": {
+                "additionalProperties": false,
+                "name": "AdminModelMappingModelOption",
+                "properties": {
+                  "displayName": {
+                    "maxLength": 256,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "id": {
+                    "maxLength": 128,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "model": {
+                    "maxLength": 256,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "name": {
+                    "maxLength": 256,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "status": {
+                    "enum": [
+                      "active",
+                      "inactive",
+                      "deprecated"
+                    ],
+                    "type": "string"
+                  },
+                  "type": {
+                    "enum": [
+                      "llm",
+                      "image",
+                      "video",
+                      "audio",
+                      "music",
+                      "sfx",
+                      "multimodal",
+                      "embedding",
+                      "rerank"
+                    ],
+                    "type": "string"
+                  },
+                  "vendorCode": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "vendorId": {
+                    "maxLength": 128,
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "vendorId",
+                  "vendorCode",
+                  "model",
+                  "displayName",
+                  "name",
+                  "type",
+                  "status"
+                ],
+                "type": "object"
+              },
+              "maxItems": 10000,
+              "type": "array"
+            },
+            "vendors": {
+              "items": {
+                "additionalProperties": false,
+                "name": "AdminModelVendorItem",
+                "properties": {
+                  "color": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "description": {
+                    "maxLength": 512,
+                    "type": "string"
+                  },
+                  "id": {
+                    "maxLength": 128,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "name": {
+                    "maxLength": 128,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "status": {
+                    "enum": [
+                      "active",
+                      "inactive"
+                    ],
+                    "type": "string"
+                  },
+                  "vendorCode": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "vendorCode",
+                  "name",
+                  "status",
+                  "color",
+                  "description"
+                ],
+                "type": "object"
+              },
+              "maxItems": 1000,
+              "type": "array"
+            }
+          },
+          "required": [
+            "vendors",
+            "models"
           ],
           "type": "object"
         }
@@ -35883,22 +35486,29 @@
                       "name": "AdminAiModelRegionPrice",
                       "properties": {
                         "cacheReadPrice": {
-                          "description": "Optional official reference cache-read unit price in USD.",
+                          "description": "Optional official reference cache-read unit price in native official reference currency.",
                           "pattern": "^$|^[0-9]+(\\.[0-9]{1,12})?$",
                           "type": "string"
                         },
                         "cacheWritePrice": {
-                          "description": "Optional official reference cache-write unit price in USD.",
+                          "description": "Optional official reference cache-write unit price in native official reference currency.",
                           "pattern": "^$|^[0-9]+(\\.[0-9]{1,12})?$",
                           "type": "string"
                         },
+                        "currency": {
+                          "description": "Official reference price currency code for this region.",
+                          "maxLength": 3,
+                          "minLength": 3,
+                          "pattern": "^[A-Z]{3}$",
+                          "type": "string"
+                        },
                         "priceIn": {
-                          "description": "Official reference input unit price in USD.",
+                          "description": "Official reference input unit price in native official reference currency.",
                           "pattern": "^[0-9]+(\\.[0-9]{1,12})?$",
                           "type": "string"
                         },
                         "priceOut": {
-                          "description": "Official reference output unit price in USD.",
+                          "description": "Official reference output unit price in native official reference currency.",
                           "pattern": "^[0-9]+(\\.[0-9]{1,12})?$",
                           "type": "string"
                         },
@@ -35912,6 +35522,7 @@
                       },
                       "required": [
                         "regionCode",
+                        "currency",
                         "priceIn",
                         "priceOut"
                       ],
@@ -36227,6 +35838,20 @@
                 "additionalProperties": false,
                 "name": "AdminAiResourceGroupItem",
                 "properties": {
+                  "capabilities": {
+                    "items": {
+                      "maxLength": 64,
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "maxItems": 64,
+                    "type": "array"
+                  },
+                  "capability": {
+                    "maxLength": 64,
+                    "nullable": true,
+                    "type": "string"
+                  },
                   "description": {
                     "maxLength": 512,
                     "nullable": true,
@@ -36283,6 +35908,15 @@
                       "inactive"
                     ],
                     "type": "string"
+                  },
+                  "vendorCodes": {
+                    "items": {
+                      "maxLength": 64,
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "maxItems": 64,
+                    "type": "array"
                   }
                 },
                 "required": [
@@ -36408,208 +36042,6 @@
                   "id",
                   "channelCode",
                   "channelName",
-                  "healthStatus",
-                  "status"
-                ],
-                "type": "object"
-              },
-              "type": "array"
-            }
-          },
-          "required": [
-            "items"
-          ],
-          "type": "object"
-        }
-      },
-      "route": "/admin/model/sites",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "sites",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts",
-      "tag": "sites",
-      "write_tables": []
-    },
-    {
-      "api_method": "GET",
-      "api_path": "/backend/v3/api/sites/{siteId}/models",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts#fetchSiteModels",
-      "kind": "read",
-      "module": "admin-model",
-      "openapi_exposed": true,
-      "operation": "fetchSiteModels",
-      "operation_id": "siteModels.list",
-      "path_params": [
-        "siteId"
-      ],
-      "query_parameters": [],
-      "query_parameters_declared": true,
-      "read_sources": [
-        "ai_site_model",
-        "ai_site",
-        "ai_site_service"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "response_schema": {
-        "name": "AdminSiteModelsResponse",
-        "schema": {
-          "additionalProperties": false,
-          "name": "AdminSiteModelsResponse",
-          "properties": {
-            "items": {
-              "items": {
-                "additionalProperties": false,
-                "name": "AdminSiteModelItem",
-                "properties": {
-                  "capabilities": {
-                    "items": {
-                      "maxLength": 64,
-                      "minLength": 1,
-                      "type": "string"
-                    },
-                    "maxItems": 64,
-                    "type": "array"
-                  },
-                  "consecutiveErrorCount": {
-                    "format": "int64",
-                    "minimum": 0,
-                    "type": "integer"
-                  },
-                  "contextTokens": {
-                    "format": "int64",
-                    "minimum": 0,
-                    "nullable": true,
-                    "type": "integer"
-                  },
-                  "displayName": {
-                    "maxLength": 128,
-                    "nullable": true,
-                    "type": "string"
-                  },
-                  "healthStatus": {
-                    "enum": [
-                      "unknown",
-                      "healthy",
-                      "degraded",
-                      "unhealthy"
-                    ],
-                    "type": "string"
-                  },
-                  "id": {
-                    "maxLength": 128,
-                    "minLength": 1,
-                    "type": "string"
-                  },
-                  "lastLatencyMs": {
-                    "format": "int64",
-                    "minimum": 0,
-                    "nullable": true,
-                    "type": "integer"
-                  },
-                  "lastSyncAt": {
-                    "nullable": true,
-                    "type": "string"
-                  },
-                  "maxInputTokens": {
-                    "format": "int64",
-                    "minimum": 0,
-                    "nullable": true,
-                    "type": "integer"
-                  },
-                  "maxOutputTokens": {
-                    "format": "int64",
-                    "minimum": 0,
-                    "nullable": true,
-                    "type": "integer"
-                  },
-                  "modality": {
-                    "maxLength": 64,
-                    "nullable": true,
-                    "type": "string"
-                  },
-                  "modelCode": {
-                    "maxLength": 128,
-                    "minLength": 1,
-                    "pattern": "^[A-Za-z0-9._:/-]+$",
-                    "type": "string"
-                  },
-                  "modelName": {
-                    "maxLength": 128,
-                    "minLength": 1,
-                    "type": "string"
-                  },
-                  "providerModel": {
-                    "maxLength": 128,
-                    "nullable": true,
-                    "type": "string"
-                  },
-                  "providerNativeModel": {
-                    "maxLength": 256,
-                    "nullable": true,
-                    "type": "string"
-                  },
-                  "serviceType": {
-                    "enum": [
-                      "ai_model_relay"
-                    ],
-                    "type": "string"
-                  },
-                  "siteCode": {
-                    "maxLength": 64,
-                    "minLength": 1,
-                    "type": "string"
-                  },
-                  "siteId": {
-                    "maxLength": 128,
-                    "minLength": 1,
-                    "type": "string"
-                  },
-                  "siteServiceCode": {
-                    "maxLength": 64,
-                    "nullable": true,
-                    "type": "string"
-                  },
-                  "siteServiceId": {
-                    "maxLength": 128,
-                    "minLength": 1,
-                    "type": "string"
-                  },
-                  "status": {
-                    "enum": [
-                      "active",
-                      "disabled"
-                    ],
-                    "type": "string"
-                  },
-                  "supportsJsonSchema": {
-                    "type": "boolean"
-                  },
-                  "supportsStreaming": {
-                    "type": "boolean"
-                  },
-                  "supportsTools": {
-                    "type": "boolean"
-                  },
-                  "vendorCode": {
-                    "maxLength": 64,
-                    "nullable": true,
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "id",
-                  "siteId",
-                  "siteCode",
-                  "siteServiceId",
-                  "serviceType",
-                  "modelCode",
-                  "modelName",
                   "healthStatus",
                   "status"
                 ],
@@ -37022,318 +36454,6 @@
       "write_tables": [
         "ai_site",
         "ai_site_service",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "PUT",
-      "api_path": "/backend/v3/api/sites/{siteId}/models",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts#replaceSiteModels",
-      "kind": "update",
-      "module": "admin-model",
-      "openapi_exposed": true,
-      "operation": "replaceSiteModels",
-      "operation_id": "siteModels.replace",
-      "path_params": [
-        "siteId"
-      ],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "ai_site_model",
-        "ai_site",
-        "ai_site_service"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "request_schema": {
-        "name": "AdminSiteModelsReplaceRequest",
-        "schema": {
-          "additionalProperties": false,
-          "name": "AdminSiteModelsReplaceRequest",
-          "properties": {
-            "items": {
-              "items": {
-                "additionalProperties": false,
-                "name": "AdminSiteModelCreateRequest",
-                "properties": {
-                  "capabilities": {
-                    "items": {
-                      "maxLength": 64,
-                      "minLength": 1,
-                      "type": "string"
-                    },
-                    "maxItems": 64,
-                    "type": "array"
-                  },
-                  "contextTokens": {
-                    "format": "int64",
-                    "minimum": 0,
-                    "nullable": true,
-                    "type": "integer"
-                  },
-                  "displayName": {
-                    "maxLength": 128,
-                    "nullable": true,
-                    "type": "string"
-                  },
-                  "maxInputTokens": {
-                    "format": "int64",
-                    "minimum": 0,
-                    "nullable": true,
-                    "type": "integer"
-                  },
-                  "maxOutputTokens": {
-                    "format": "int64",
-                    "minimum": 0,
-                    "nullable": true,
-                    "type": "integer"
-                  },
-                  "modality": {
-                    "maxLength": 64,
-                    "nullable": true,
-                    "type": "string"
-                  },
-                  "modelCode": {
-                    "maxLength": 128,
-                    "minLength": 1,
-                    "pattern": "^[A-Za-z0-9._:/-]+$",
-                    "type": "string"
-                  },
-                  "modelName": {
-                    "maxLength": 128,
-                    "minLength": 1,
-                    "type": "string"
-                  },
-                  "providerModel": {
-                    "maxLength": 128,
-                    "nullable": true,
-                    "type": "string"
-                  },
-                  "providerNativeModel": {
-                    "maxLength": 256,
-                    "nullable": true,
-                    "type": "string"
-                  },
-                  "status": {
-                    "enum": [
-                      "active",
-                      "disabled"
-                    ],
-                    "type": "string"
-                  },
-                  "supportsJsonSchema": {
-                    "type": "boolean"
-                  },
-                  "supportsStreaming": {
-                    "type": "boolean"
-                  },
-                  "supportsTools": {
-                    "type": "boolean"
-                  },
-                  "vendorCode": {
-                    "maxLength": 64,
-                    "nullable": true,
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "modelCode",
-                  "modelName"
-                ],
-                "type": "object"
-              },
-              "maxItems": 512,
-              "type": "array"
-            }
-          },
-          "required": [
-            "items"
-          ],
-          "type": "object"
-        }
-      },
-      "response_schema": {
-        "name": "AdminSiteModelsReplaceResponse",
-        "schema": {
-          "additionalProperties": false,
-          "name": "AdminSiteModelsReplaceResponse",
-          "properties": {
-            "items": {
-              "items": {
-                "additionalProperties": false,
-                "name": "AdminSiteModelItem",
-                "properties": {
-                  "capabilities": {
-                    "items": {
-                      "maxLength": 64,
-                      "minLength": 1,
-                      "type": "string"
-                    },
-                    "maxItems": 64,
-                    "type": "array"
-                  },
-                  "consecutiveErrorCount": {
-                    "format": "int64",
-                    "minimum": 0,
-                    "type": "integer"
-                  },
-                  "contextTokens": {
-                    "format": "int64",
-                    "minimum": 0,
-                    "nullable": true,
-                    "type": "integer"
-                  },
-                  "displayName": {
-                    "maxLength": 128,
-                    "nullable": true,
-                    "type": "string"
-                  },
-                  "healthStatus": {
-                    "enum": [
-                      "unknown",
-                      "healthy",
-                      "degraded",
-                      "unhealthy"
-                    ],
-                    "type": "string"
-                  },
-                  "id": {
-                    "maxLength": 128,
-                    "minLength": 1,
-                    "type": "string"
-                  },
-                  "lastLatencyMs": {
-                    "format": "int64",
-                    "minimum": 0,
-                    "nullable": true,
-                    "type": "integer"
-                  },
-                  "lastSyncAt": {
-                    "nullable": true,
-                    "type": "string"
-                  },
-                  "maxInputTokens": {
-                    "format": "int64",
-                    "minimum": 0,
-                    "nullable": true,
-                    "type": "integer"
-                  },
-                  "maxOutputTokens": {
-                    "format": "int64",
-                    "minimum": 0,
-                    "nullable": true,
-                    "type": "integer"
-                  },
-                  "modality": {
-                    "maxLength": 64,
-                    "nullable": true,
-                    "type": "string"
-                  },
-                  "modelCode": {
-                    "maxLength": 128,
-                    "minLength": 1,
-                    "pattern": "^[A-Za-z0-9._:/-]+$",
-                    "type": "string"
-                  },
-                  "modelName": {
-                    "maxLength": 128,
-                    "minLength": 1,
-                    "type": "string"
-                  },
-                  "providerModel": {
-                    "maxLength": 128,
-                    "nullable": true,
-                    "type": "string"
-                  },
-                  "providerNativeModel": {
-                    "maxLength": 256,
-                    "nullable": true,
-                    "type": "string"
-                  },
-                  "serviceType": {
-                    "enum": [
-                      "ai_model_relay"
-                    ],
-                    "type": "string"
-                  },
-                  "siteCode": {
-                    "maxLength": 64,
-                    "minLength": 1,
-                    "type": "string"
-                  },
-                  "siteId": {
-                    "maxLength": 128,
-                    "minLength": 1,
-                    "type": "string"
-                  },
-                  "siteServiceCode": {
-                    "maxLength": 64,
-                    "nullable": true,
-                    "type": "string"
-                  },
-                  "siteServiceId": {
-                    "maxLength": 128,
-                    "minLength": 1,
-                    "type": "string"
-                  },
-                  "status": {
-                    "enum": [
-                      "active",
-                      "disabled"
-                    ],
-                    "type": "string"
-                  },
-                  "supportsJsonSchema": {
-                    "type": "boolean"
-                  },
-                  "supportsStreaming": {
-                    "type": "boolean"
-                  },
-                  "supportsTools": {
-                    "type": "boolean"
-                  },
-                  "vendorCode": {
-                    "maxLength": 64,
-                    "nullable": true,
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "id",
-                  "siteId",
-                  "siteCode",
-                  "siteServiceId",
-                  "serviceType",
-                  "modelCode",
-                  "modelName",
-                  "healthStatus",
-                  "status"
-                ],
-                "type": "object"
-              },
-              "type": "array"
-            }
-          },
-          "required": [
-            "items"
-          ],
-          "type": "object"
-        }
-      },
-      "route": "/admin/model/sites",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "sites",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts",
-      "tag": "sites",
-      "write_tables": [
-        "ai_site_model",
         "ops_audit_log"
       ]
     },
@@ -37950,22 +37070,29 @@
                       "name": "AdminAiModelRegionPrice",
                       "properties": {
                         "cacheReadPrice": {
-                          "description": "Optional official reference cache-read unit price in USD.",
+                          "description": "Optional official reference cache-read unit price in native official reference currency.",
                           "pattern": "^$|^[0-9]+(\\.[0-9]{1,12})?$",
                           "type": "string"
                         },
                         "cacheWritePrice": {
-                          "description": "Optional official reference cache-write unit price in USD.",
+                          "description": "Optional official reference cache-write unit price in native official reference currency.",
                           "pattern": "^$|^[0-9]+(\\.[0-9]{1,12})?$",
                           "type": "string"
                         },
+                        "currency": {
+                          "description": "Official reference price currency code for this region.",
+                          "maxLength": 3,
+                          "minLength": 3,
+                          "pattern": "^[A-Z]{3}$",
+                          "type": "string"
+                        },
                         "priceIn": {
-                          "description": "Official reference input unit price in USD.",
+                          "description": "Official reference input unit price in native official reference currency.",
                           "pattern": "^[0-9]+(\\.[0-9]{1,12})?$",
                           "type": "string"
                         },
                         "priceOut": {
-                          "description": "Official reference output unit price in USD.",
+                          "description": "Official reference output unit price in native official reference currency.",
                           "pattern": "^[0-9]+(\\.[0-9]{1,12})?$",
                           "type": "string"
                         },
@@ -37979,6 +37106,7 @@
                       },
                       "required": [
                         "regionCode",
+                        "currency",
                         "priceIn",
                         "priceOut"
                       ],
@@ -38656,22 +37784,29 @@
                 "name": "AdminAiModelRegionPrice",
                 "properties": {
                   "cacheReadPrice": {
-                    "description": "Optional official reference cache-read unit price in USD.",
+                    "description": "Optional official reference cache-read unit price in native official reference currency.",
                     "pattern": "^$|^[0-9]+(\\.[0-9]{1,12})?$",
                     "type": "string"
                   },
                   "cacheWritePrice": {
-                    "description": "Optional official reference cache-write unit price in USD.",
+                    "description": "Optional official reference cache-write unit price in native official reference currency.",
                     "pattern": "^$|^[0-9]+(\\.[0-9]{1,12})?$",
                     "type": "string"
                   },
+                  "currency": {
+                    "description": "Official reference price currency code for this region.",
+                    "maxLength": 3,
+                    "minLength": 3,
+                    "pattern": "^[A-Z]{3}$",
+                    "type": "string"
+                  },
                   "priceIn": {
-                    "description": "Official reference input unit price in USD.",
+                    "description": "Official reference input unit price in native official reference currency.",
                     "pattern": "^[0-9]+(\\.[0-9]{1,12})?$",
                     "type": "string"
                   },
                   "priceOut": {
-                    "description": "Official reference output unit price in USD.",
+                    "description": "Official reference output unit price in native official reference currency.",
                     "pattern": "^[0-9]+(\\.[0-9]{1,12})?$",
                     "type": "string"
                   },
@@ -38685,6 +37820,7 @@
                 },
                 "required": [
                   "regionCode",
+                  "currency",
                   "priceIn",
                   "priceOut"
                 ],
@@ -38886,22 +38022,29 @@
                     "name": "AdminAiModelRegionPrice",
                     "properties": {
                       "cacheReadPrice": {
-                        "description": "Optional official reference cache-read unit price in USD.",
+                        "description": "Optional official reference cache-read unit price in native official reference currency.",
                         "pattern": "^$|^[0-9]+(\\.[0-9]{1,12})?$",
                         "type": "string"
                       },
                       "cacheWritePrice": {
-                        "description": "Optional official reference cache-write unit price in USD.",
+                        "description": "Optional official reference cache-write unit price in native official reference currency.",
                         "pattern": "^$|^[0-9]+(\\.[0-9]{1,12})?$",
                         "type": "string"
                       },
+                      "currency": {
+                        "description": "Official reference price currency code for this region.",
+                        "maxLength": 3,
+                        "minLength": 3,
+                        "pattern": "^[A-Z]{3}$",
+                        "type": "string"
+                      },
                       "priceIn": {
-                        "description": "Official reference input unit price in USD.",
+                        "description": "Official reference input unit price in native official reference currency.",
                         "pattern": "^[0-9]+(\\.[0-9]{1,12})?$",
                         "type": "string"
                       },
                       "priceOut": {
-                        "description": "Official reference output unit price in USD.",
+                        "description": "Official reference output unit price in native official reference currency.",
                         "pattern": "^[0-9]+(\\.[0-9]{1,12})?$",
                         "type": "string"
                       },
@@ -38915,6 +38058,7 @@
                     },
                     "required": [
                       "regionCode",
+                      "currency",
                       "priceIn",
                       "priceOut"
                     ],
@@ -39611,6 +38755,20 @@
               "additionalProperties": false,
               "name": "AdminAiResourceGroupItem",
               "properties": {
+                "capabilities": {
+                  "items": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "maxItems": 64,
+                  "type": "array"
+                },
+                "capability": {
+                  "maxLength": 64,
+                  "nullable": true,
+                  "type": "string"
+                },
                 "description": {
                   "maxLength": 512,
                   "nullable": true,
@@ -39667,6 +38825,15 @@
                     "inactive"
                   ],
                   "type": "string"
+                },
+                "vendorCodes": {
+                  "items": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "maxItems": 64,
+                  "type": "array"
                 }
               },
               "required": [
@@ -40000,298 +39167,6 @@
       "write_tables": [
         "ai_site",
         "ai_site_service",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "PATCH",
-      "api_path": "/backend/v3/api/sites/{siteId}/models/{siteModelId}",
-      "api_surface": "backend",
-      "file_targets": [],
-      "idempotency_required": false,
-      "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts#updateSiteModel",
-      "kind": "update",
-      "module": "admin-model",
-      "openapi_exposed": true,
-      "operation": "updateSiteModel",
-      "operation_id": "siteModels.update",
-      "path_params": [
-        "siteId",
-        "siteModelId"
-      ],
-      "query_parameters": [],
-      "query_parameters_declared": false,
-      "read_sources": [
-        "ai_site_model",
-        "ai_site",
-        "ai_site_service"
-      ],
-      "request_body_required": null,
-      "request_id_header": false,
-      "request_schema": {
-        "name": "AdminSiteModelUpdateRequest",
-        "schema": {
-          "additionalProperties": false,
-          "name": "AdminSiteModelUpdateRequest",
-          "properties": {
-            "capabilities": {
-              "items": {
-                "maxLength": 64,
-                "minLength": 1,
-                "type": "string"
-              },
-              "maxItems": 64,
-              "type": "array"
-            },
-            "contextTokens": {
-              "format": "int64",
-              "minimum": 0,
-              "nullable": true,
-              "type": "integer"
-            },
-            "displayName": {
-              "maxLength": 128,
-              "nullable": true,
-              "type": "string"
-            },
-            "maxInputTokens": {
-              "format": "int64",
-              "minimum": 0,
-              "nullable": true,
-              "type": "integer"
-            },
-            "maxOutputTokens": {
-              "format": "int64",
-              "minimum": 0,
-              "nullable": true,
-              "type": "integer"
-            },
-            "modality": {
-              "maxLength": 64,
-              "nullable": true,
-              "type": "string"
-            },
-            "modelCode": {
-              "maxLength": 128,
-              "minLength": 1,
-              "pattern": "^[A-Za-z0-9._:/-]+$",
-              "type": "string"
-            },
-            "modelName": {
-              "maxLength": 128,
-              "minLength": 1,
-              "type": "string"
-            },
-            "providerModel": {
-              "maxLength": 128,
-              "nullable": true,
-              "type": "string"
-            },
-            "providerNativeModel": {
-              "maxLength": 256,
-              "nullable": true,
-              "type": "string"
-            },
-            "status": {
-              "enum": [
-                "active",
-                "disabled"
-              ],
-              "type": "string"
-            },
-            "supportsJsonSchema": {
-              "type": "boolean"
-            },
-            "supportsStreaming": {
-              "type": "boolean"
-            },
-            "supportsTools": {
-              "type": "boolean"
-            },
-            "vendorCode": {
-              "maxLength": 64,
-              "nullable": true,
-              "type": "string"
-            }
-          },
-          "type": "object"
-        }
-      },
-      "response_schema": {
-        "name": "AdminSiteModelMutationResponse",
-        "schema": {
-          "additionalProperties": false,
-          "name": "AdminSiteModelMutationResponse",
-          "properties": {
-            "item": {
-              "additionalProperties": false,
-              "name": "AdminSiteModelItem",
-              "properties": {
-                "capabilities": {
-                  "items": {
-                    "maxLength": 64,
-                    "minLength": 1,
-                    "type": "string"
-                  },
-                  "maxItems": 64,
-                  "type": "array"
-                },
-                "consecutiveErrorCount": {
-                  "format": "int64",
-                  "minimum": 0,
-                  "type": "integer"
-                },
-                "contextTokens": {
-                  "format": "int64",
-                  "minimum": 0,
-                  "nullable": true,
-                  "type": "integer"
-                },
-                "displayName": {
-                  "maxLength": 128,
-                  "nullable": true,
-                  "type": "string"
-                },
-                "healthStatus": {
-                  "enum": [
-                    "unknown",
-                    "healthy",
-                    "degraded",
-                    "unhealthy"
-                  ],
-                  "type": "string"
-                },
-                "id": {
-                  "maxLength": 128,
-                  "minLength": 1,
-                  "type": "string"
-                },
-                "lastLatencyMs": {
-                  "format": "int64",
-                  "minimum": 0,
-                  "nullable": true,
-                  "type": "integer"
-                },
-                "lastSyncAt": {
-                  "nullable": true,
-                  "type": "string"
-                },
-                "maxInputTokens": {
-                  "format": "int64",
-                  "minimum": 0,
-                  "nullable": true,
-                  "type": "integer"
-                },
-                "maxOutputTokens": {
-                  "format": "int64",
-                  "minimum": 0,
-                  "nullable": true,
-                  "type": "integer"
-                },
-                "modality": {
-                  "maxLength": 64,
-                  "nullable": true,
-                  "type": "string"
-                },
-                "modelCode": {
-                  "maxLength": 128,
-                  "minLength": 1,
-                  "pattern": "^[A-Za-z0-9._:/-]+$",
-                  "type": "string"
-                },
-                "modelName": {
-                  "maxLength": 128,
-                  "minLength": 1,
-                  "type": "string"
-                },
-                "providerModel": {
-                  "maxLength": 128,
-                  "nullable": true,
-                  "type": "string"
-                },
-                "providerNativeModel": {
-                  "maxLength": 256,
-                  "nullable": true,
-                  "type": "string"
-                },
-                "serviceType": {
-                  "enum": [
-                    "ai_model_relay"
-                  ],
-                  "type": "string"
-                },
-                "siteCode": {
-                  "maxLength": 64,
-                  "minLength": 1,
-                  "type": "string"
-                },
-                "siteId": {
-                  "maxLength": 128,
-                  "minLength": 1,
-                  "type": "string"
-                },
-                "siteServiceCode": {
-                  "maxLength": 64,
-                  "nullable": true,
-                  "type": "string"
-                },
-                "siteServiceId": {
-                  "maxLength": 128,
-                  "minLength": 1,
-                  "type": "string"
-                },
-                "status": {
-                  "enum": [
-                    "active",
-                    "disabled"
-                  ],
-                  "type": "string"
-                },
-                "supportsJsonSchema": {
-                  "type": "boolean"
-                },
-                "supportsStreaming": {
-                  "type": "boolean"
-                },
-                "supportsTools": {
-                  "type": "boolean"
-                },
-                "vendorCode": {
-                  "maxLength": 64,
-                  "nullable": true,
-                  "type": "string"
-                }
-              },
-              "required": [
-                "id",
-                "siteId",
-                "siteCode",
-                "siteServiceId",
-                "serviceType",
-                "modelCode",
-                "modelName",
-                "healthStatus",
-                "status"
-              ],
-              "type": "object"
-            }
-          },
-          "required": [
-            "item"
-          ],
-          "type": "object"
-        }
-      },
-      "route": "/admin/model/sites",
-      "route_scope": "admin",
-      "sdk_api_prefix": "/backend/v3/api",
-      "sdk_client": "SdkworkBackendClient",
-      "sdk_domain": "sites",
-      "sdk_family": "clawrouter-backend-sdk",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts",
-      "tag": "sites",
-      "write_tables": [
-        "ai_site_model",
         "ops_audit_log"
       ]
     },
@@ -50253,7 +49128,7 @@
           }
         },
         {
-          "description": "Upstream seller service-provider id for chain-scoped retrieval.",
+          "description": "Upstream seller service-provider id for provider-edge scoped retrieval.",
           "in": "query",
           "name": "seller_provider_id",
           "required": false,
@@ -50263,7 +49138,7 @@
           }
         },
         {
-          "description": "Downstream buyer service-provider id for chain-scoped retrieval.",
+          "description": "Downstream buyer service-provider id for provider-edge scoped retrieval.",
           "in": "query",
           "name": "buyer_provider_id",
           "required": false,
@@ -50273,7 +49148,7 @@
           }
         },
         {
-          "description": "Direct service-provider edge id for chain-scoped retrieval.",
+          "description": "Direct service-provider edge id for provider-edge scoped retrieval.",
           "in": "query",
           "name": "edge_id",
           "required": false,
@@ -50420,7 +49295,7 @@
           }
         },
         {
-          "description": "Upstream seller service-provider id for chain-scoped retrieval.",
+          "description": "Upstream seller service-provider id for provider-edge scoped retrieval.",
           "in": "query",
           "name": "seller_provider_id",
           "required": false,
@@ -50430,7 +49305,7 @@
           }
         },
         {
-          "description": "Downstream buyer service-provider id for chain-scoped retrieval.",
+          "description": "Downstream buyer service-provider id for provider-edge scoped retrieval.",
           "in": "query",
           "name": "buyer_provider_id",
           "required": false,
@@ -50440,7 +49315,7 @@
           }
         },
         {
-          "description": "Direct service-provider edge id for chain-scoped retrieval.",
+          "description": "Direct service-provider edge id for provider-edge scoped retrieval.",
           "in": "query",
           "name": "edge_id",
           "required": false,
@@ -50587,7 +49462,7 @@
           }
         },
         {
-          "description": "Upstream seller service-provider id for chain-scoped retrieval.",
+          "description": "Upstream seller service-provider id for provider-edge scoped retrieval.",
           "in": "query",
           "name": "seller_provider_id",
           "required": false,
@@ -50597,7 +49472,7 @@
           }
         },
         {
-          "description": "Downstream buyer service-provider id for chain-scoped retrieval.",
+          "description": "Downstream buyer service-provider id for provider-edge scoped retrieval.",
           "in": "query",
           "name": "buyer_provider_id",
           "required": false,
@@ -50607,7 +49482,7 @@
           }
         },
         {
-          "description": "Direct service-provider edge id for chain-scoped retrieval.",
+          "description": "Direct service-provider edge id for provider-edge scoped retrieval.",
           "in": "query",
           "name": "edge_id",
           "required": false,
@@ -50704,7 +49579,7 @@
       "api_method": "GET",
       "api_path": "/backend/v3/api/service_providers/contracts",
       "api_surface": "backend",
-      "description": "Bilateral contracts, contract versions, and finance profiles for service-provider edges.",
+      "description": "Bilateral contracts and finance profiles for service-provider edges.",
       "file_targets": [],
       "idempotency_required": false,
       "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts#backendServiceProviderContractsList",
@@ -50756,7 +49631,7 @@
           }
         },
         {
-          "description": "Upstream seller service-provider id for chain-scoped retrieval.",
+          "description": "Upstream seller service-provider id for provider-edge scoped retrieval.",
           "in": "query",
           "name": "seller_provider_id",
           "required": false,
@@ -50766,7 +49641,7 @@
           }
         },
         {
-          "description": "Downstream buyer service-provider id for chain-scoped retrieval.",
+          "description": "Downstream buyer service-provider id for provider-edge scoped retrieval.",
           "in": "query",
           "name": "buyer_provider_id",
           "required": false,
@@ -50776,7 +49651,7 @@
           }
         },
         {
-          "description": "Direct service-provider edge id for chain-scoped retrieval.",
+          "description": "Direct service-provider edge id for provider-edge scoped retrieval.",
           "in": "query",
           "name": "edge_id",
           "required": false,
@@ -50789,7 +49664,6 @@
       "query_parameters_declared": true,
       "read_sources": [
         "integration_service_provider_contract",
-        "integration_service_provider_contract_version",
         "integration_service_provider_finance_profile"
       ],
       "request_body_required": null,
@@ -50925,7 +49799,7 @@
           }
         },
         {
-          "description": "Upstream seller service-provider id for chain-scoped retrieval.",
+          "description": "Upstream seller service-provider id for provider-edge scoped retrieval.",
           "in": "query",
           "name": "seller_provider_id",
           "required": false,
@@ -50935,7 +49809,7 @@
           }
         },
         {
-          "description": "Downstream buyer service-provider id for chain-scoped retrieval.",
+          "description": "Downstream buyer service-provider id for provider-edge scoped retrieval.",
           "in": "query",
           "name": "buyer_provider_id",
           "required": false,
@@ -50945,7 +49819,7 @@
           }
         },
         {
-          "description": "Direct service-provider edge id for chain-scoped retrieval.",
+          "description": "Direct service-provider edge id for provider-edge scoped retrieval.",
           "in": "query",
           "name": "edge_id",
           "required": false,
@@ -51264,7 +50138,7 @@
           }
         },
         {
-          "description": "Upstream seller service-provider id for chain-scoped retrieval.",
+          "description": "Upstream seller service-provider id for provider-edge scoped retrieval.",
           "in": "query",
           "name": "seller_provider_id",
           "required": false,
@@ -51274,7 +50148,7 @@
           }
         },
         {
-          "description": "Downstream buyer service-provider id for chain-scoped retrieval.",
+          "description": "Downstream buyer service-provider id for provider-edge scoped retrieval.",
           "in": "query",
           "name": "buyer_provider_id",
           "required": false,
@@ -51284,7 +50158,7 @@
           }
         },
         {
-          "description": "Direct service-provider edge id for chain-scoped retrieval.",
+          "description": "Direct service-provider edge id for provider-edge scoped retrieval.",
           "in": "query",
           "name": "edge_id",
           "required": false,
@@ -51434,7 +50308,7 @@
           }
         },
         {
-          "description": "Upstream seller service-provider id for chain-scoped retrieval.",
+          "description": "Upstream seller service-provider id for provider-edge scoped retrieval.",
           "in": "query",
           "name": "seller_provider_id",
           "required": false,
@@ -51444,7 +50318,7 @@
           }
         },
         {
-          "description": "Downstream buyer service-provider id for chain-scoped retrieval.",
+          "description": "Downstream buyer service-provider id for provider-edge scoped retrieval.",
           "in": "query",
           "name": "buyer_provider_id",
           "required": false,
@@ -51454,7 +50328,7 @@
           }
         },
         {
-          "description": "Direct service-provider edge id for chain-scoped retrieval.",
+          "description": "Direct service-provider edge id for provider-edge scoped retrieval.",
           "in": "query",
           "name": "edge_id",
           "required": false,
@@ -52113,7 +50987,7 @@
           }
         },
         {
-          "description": "Upstream seller service-provider id for chain-scoped retrieval.",
+          "description": "Upstream seller service-provider id for provider-edge scoped retrieval.",
           "in": "query",
           "name": "seller_provider_id",
           "required": false,
@@ -52123,7 +50997,7 @@
           }
         },
         {
-          "description": "Downstream buyer service-provider id for chain-scoped retrieval.",
+          "description": "Downstream buyer service-provider id for provider-edge scoped retrieval.",
           "in": "query",
           "name": "buyer_provider_id",
           "required": false,
@@ -52133,7 +51007,7 @@
           }
         },
         {
-          "description": "Direct service-provider edge id for chain-scoped retrieval.",
+          "description": "Direct service-provider edge id for provider-edge scoped retrieval.",
           "in": "query",
           "name": "edge_id",
           "required": false,
@@ -52281,7 +51155,7 @@
           }
         },
         {
-          "description": "Upstream seller service-provider id for chain-scoped retrieval.",
+          "description": "Upstream seller service-provider id for provider-edge scoped retrieval.",
           "in": "query",
           "name": "seller_provider_id",
           "required": false,
@@ -52291,7 +51165,7 @@
           }
         },
         {
-          "description": "Downstream buyer service-provider id for chain-scoped retrieval.",
+          "description": "Downstream buyer service-provider id for provider-edge scoped retrieval.",
           "in": "query",
           "name": "buyer_provider_id",
           "required": false,
@@ -52301,7 +51175,7 @@
           }
         },
         {
-          "description": "Direct service-provider edge id for chain-scoped retrieval.",
+          "description": "Direct service-provider edge id for provider-edge scoped retrieval.",
           "in": "query",
           "name": "edge_id",
           "required": false,
@@ -52451,7 +51325,7 @@
           }
         },
         {
-          "description": "Upstream seller service-provider id for chain-scoped retrieval.",
+          "description": "Upstream seller service-provider id for provider-edge scoped retrieval.",
           "in": "query",
           "name": "seller_provider_id",
           "required": false,
@@ -52461,7 +51335,7 @@
           }
         },
         {
-          "description": "Downstream buyer service-provider id for chain-scoped retrieval.",
+          "description": "Downstream buyer service-provider id for provider-edge scoped retrieval.",
           "in": "query",
           "name": "buyer_provider_id",
           "required": false,
@@ -52471,7 +51345,7 @@
           }
         },
         {
-          "description": "Direct service-provider edge id for chain-scoped retrieval.",
+          "description": "Direct service-provider edge id for provider-edge scoped retrieval.",
           "in": "query",
           "name": "edge_id",
           "required": false,
@@ -52619,7 +51493,7 @@
           }
         },
         {
-          "description": "Upstream seller service-provider id for chain-scoped retrieval.",
+          "description": "Upstream seller service-provider id for provider-edge scoped retrieval.",
           "in": "query",
           "name": "seller_provider_id",
           "required": false,
@@ -52629,7 +51503,7 @@
           }
         },
         {
-          "description": "Downstream buyer service-provider id for chain-scoped retrieval.",
+          "description": "Downstream buyer service-provider id for provider-edge scoped retrieval.",
           "in": "query",
           "name": "buyer_provider_id",
           "required": false,
@@ -52639,7 +51513,7 @@
           }
         },
         {
-          "description": "Direct service-provider edge id for chain-scoped retrieval.",
+          "description": "Direct service-provider edge id for provider-edge scoped retrieval.",
           "in": "query",
           "name": "edge_id",
           "required": false,
@@ -52735,7 +51609,7 @@
       "api_method": "GET",
       "api_path": "/backend/v3/api/service_providers/statements",
       "api_surface": "backend",
-      "description": "Bilateral seller-buyer statements and statement items.",
+      "description": "Bilateral seller-buyer statement summaries.",
       "file_targets": [],
       "idempotency_required": false,
       "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts#backendServiceProviderStatementsList",
@@ -52787,7 +51661,7 @@
           }
         },
         {
-          "description": "Upstream seller service-provider id for chain-scoped retrieval.",
+          "description": "Upstream seller service-provider id for provider-edge scoped retrieval.",
           "in": "query",
           "name": "seller_provider_id",
           "required": false,
@@ -52797,7 +51671,7 @@
           }
         },
         {
-          "description": "Downstream buyer service-provider id for chain-scoped retrieval.",
+          "description": "Downstream buyer service-provider id for provider-edge scoped retrieval.",
           "in": "query",
           "name": "buyer_provider_id",
           "required": false,
@@ -52807,7 +51681,7 @@
           }
         },
         {
-          "description": "Direct service-provider edge id for chain-scoped retrieval.",
+          "description": "Direct service-provider edge id for provider-edge scoped retrieval.",
           "in": "query",
           "name": "edge_id",
           "required": false,
@@ -52819,8 +51693,7 @@
       ],
       "query_parameters_declared": true,
       "read_sources": [
-        "commerce_usage_service_provider_statement",
-        "commerce_usage_service_provider_statement_item"
+        "commerce_usage_service_provider_statement"
       ],
       "request_body_required": null,
       "request_id_header": false,
@@ -52903,7 +51776,7 @@
       "api_method": "GET",
       "api_path": "/backend/v3/api/service_providers/usage",
       "api_surface": "backend",
-      "description": "Request-level commercial usage chain and edge economics.",
+      "description": "Request-level commercial usage and provider-edge economics.",
       "file_targets": [],
       "idempotency_required": false,
       "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts#backendServiceProviderUsageList",
@@ -52955,7 +51828,7 @@
           }
         },
         {
-          "description": "Upstream seller service-provider id for chain-scoped retrieval.",
+          "description": "Upstream seller service-provider id for provider-edge scoped retrieval.",
           "in": "query",
           "name": "seller_provider_id",
           "required": false,
@@ -52965,7 +51838,7 @@
           }
         },
         {
-          "description": "Downstream buyer service-provider id for chain-scoped retrieval.",
+          "description": "Downstream buyer service-provider id for provider-edge scoped retrieval.",
           "in": "query",
           "name": "buyer_provider_id",
           "required": false,
@@ -52975,7 +51848,7 @@
           }
         },
         {
-          "description": "Direct service-provider edge id for chain-scoped retrieval.",
+          "description": "Direct service-provider edge id for provider-edge scoped retrieval.",
           "in": "query",
           "name": "edge_id",
           "required": false,
@@ -52988,7 +51861,6 @@
       "query_parameters_declared": true,
       "read_sources": [
         "ai_usage_fact",
-        "ai_usage_service_provider_chain",
         "ai_usage_service_provider_edge"
       ],
       "request_body_required": null,
@@ -53072,7 +51944,7 @@
       "api_method": "GET",
       "api_path": "/backend/v3/api/service_providers/wallet/accounts",
       "api_surface": "backend",
-      "description": "Service-provider balance, credit, exposure, and account bindings.",
+      "description": "Service-provider balance, credit, and exposure snapshots.",
       "file_targets": [],
       "idempotency_required": false,
       "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts#backendServiceProviderWalletAccountsList",
@@ -53124,7 +51996,7 @@
           }
         },
         {
-          "description": "Upstream seller service-provider id for chain-scoped retrieval.",
+          "description": "Upstream seller service-provider id for provider-edge scoped retrieval.",
           "in": "query",
           "name": "seller_provider_id",
           "required": false,
@@ -53134,7 +52006,7 @@
           }
         },
         {
-          "description": "Downstream buyer service-provider id for chain-scoped retrieval.",
+          "description": "Downstream buyer service-provider id for provider-edge scoped retrieval.",
           "in": "query",
           "name": "buyer_provider_id",
           "required": false,
@@ -53144,7 +52016,7 @@
           }
         },
         {
-          "description": "Direct service-provider edge id for chain-scoped retrieval.",
+          "description": "Direct service-provider edge id for provider-edge scoped retrieval.",
           "in": "query",
           "name": "edge_id",
           "required": false,
@@ -53156,8 +52028,6 @@
       ],
       "query_parameters_declared": true,
       "read_sources": [
-        "integration_service_provider_account_binding",
-        "commerce_account",
         "commerce_service_provider_exposure_snapshot"
       ],
       "request_body_required": null,
@@ -53293,7 +52163,7 @@
           }
         },
         {
-          "description": "Upstream seller service-provider id for chain-scoped retrieval.",
+          "description": "Upstream seller service-provider id for provider-edge scoped retrieval.",
           "in": "query",
           "name": "seller_provider_id",
           "required": false,
@@ -53303,7 +52173,7 @@
           }
         },
         {
-          "description": "Downstream buyer service-provider id for chain-scoped retrieval.",
+          "description": "Downstream buyer service-provider id for provider-edge scoped retrieval.",
           "in": "query",
           "name": "buyer_provider_id",
           "required": false,
@@ -53313,7 +52183,7 @@
           }
         },
         {
-          "description": "Direct service-provider edge id for chain-scoped retrieval.",
+          "description": "Direct service-provider edge id for provider-edge scoped retrieval.",
           "in": "query",
           "name": "edge_id",
           "required": false,
@@ -68217,6 +67087,529 @@
       ]
     },
     {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/ai/routing/api_keys",
+      "api_surface": "app",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/routingApiOperations.ts#fetchRoutingApiKeys",
+      "kind": "read",
+      "module": "commons",
+      "openapi_exposed": true,
+      "operation": "fetchRoutingApiKeys",
+      "operation_id": "routing.apiKeys.list",
+      "path_params": [],
+      "query_parameters": [],
+      "query_parameters_declared": true,
+      "read_sources": [
+        "iam_gateway_api_key",
+        "ai_usage_fact"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "response_schema": {
+        "name": "RoutingApiKeysResponse",
+        "schema": {
+          "additionalProperties": false,
+          "name": "RoutingApiKeysResponse",
+          "properties": {
+            "items": {
+              "items": {
+                "additionalProperties": false,
+                "name": "RoutingApiKeyItem",
+                "properties": {
+                  "copyableKey": {
+                    "description": "Returned only when the app API key secret codec is configured for the trusted console subject.",
+                    "nullable": true,
+                    "type": "string"
+                  },
+                  "createdAt": {
+                    "type": "string"
+                  },
+                  "displayKey": {
+                    "type": "string"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "status": {
+                    "type": "string"
+                  },
+                  "totalUsage": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "name",
+                  "displayKey",
+                  "status",
+                  "totalUsage",
+                  "createdAt"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "items"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/console/api-keys",
+      "route_scope": "console",
+      "sdk_api_prefix": "/app/v3/api",
+      "sdk_client": "SdkworkAppClient",
+      "sdk_domain": "intelligence",
+      "sdk_family": "clawrouter-app-sdk",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/routingApiOperations.ts",
+      "tag": "ai",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/ai/routing/channels",
+      "api_surface": "app",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/routingApiOperations.ts#fetchRoutingChannels",
+      "kind": "read",
+      "module": "commons",
+      "openapi_exposed": true,
+      "operation": "fetchRoutingChannels",
+      "operation_id": "routing.channels.list",
+      "path_params": [],
+      "query_parameters": [],
+      "query_parameters_declared": true,
+      "read_sources": [
+        "ai_channel",
+        "ai_channel_credential",
+        "ai_channel_resource",
+        "ai_resource",
+        "ai_resource_group"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "response_schema": {
+        "name": "RoutingChannelsResponse",
+        "schema": {
+          "additionalProperties": false,
+          "name": "RoutingChannelsResponse",
+          "properties": {
+            "items": {
+              "items": {
+                "additionalProperties": false,
+                "name": "RoutingChannelItem",
+                "properties": {
+                  "accessType": {
+                    "type": "string"
+                  },
+                  "apiKey": {
+                    "description": "Masked credential label from the selected upstream credential. Raw secret material is never returned.",
+                    "type": "string"
+                  },
+                  "balance": {
+                    "type": "string"
+                  },
+                  "baseUrl": {
+                    "type": "string"
+                  },
+                  "capabilities": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "circuitBreakerPolicy": {
+                    "additionalProperties": false,
+                    "name": "RoutingCircuitBreakerPolicy",
+                    "nullable": true,
+                    "properties": {
+                      "failureThreshold": {
+                        "format": "int64",
+                        "type": "integer"
+                      }
+                    },
+                    "required": [
+                      "failureThreshold"
+                    ],
+                    "type": "object"
+                  },
+                  "errors": {
+                    "format": "int64",
+                    "type": "integer"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "isMultimodal": {
+                    "type": "boolean"
+                  },
+                  "latency": {
+                    "type": "string"
+                  },
+                  "models": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "protocol": {
+                    "type": "string"
+                  },
+                  "provider": {
+                    "type": "string"
+                  },
+                  "providerCode": {
+                    "type": "string"
+                  },
+                  "retryPolicy": {
+                    "additionalProperties": false,
+                    "name": "RoutingRetryPolicy",
+                    "nullable": true,
+                    "properties": {
+                      "backoffMs": {
+                        "format": "int64",
+                        "type": "integer"
+                      },
+                      "maxAttempts": {
+                        "format": "int64",
+                        "type": "integer"
+                      },
+                      "retryableStatusCodes": {
+                        "items": {
+                          "format": "int64",
+                          "type": "integer"
+                        },
+                        "type": "array"
+                      }
+                    },
+                    "required": [
+                      "maxAttempts",
+                      "retryableStatusCodes",
+                      "backoffMs"
+                    ],
+                    "type": "object"
+                  },
+                  "rpm": {
+                    "format": "int64",
+                    "type": "integer"
+                  },
+                  "status": {
+                    "type": "string"
+                  },
+                  "timeoutMs": {
+                    "format": "int64",
+                    "nullable": true,
+                    "type": "integer"
+                  },
+                  "vendor": {
+                    "type": "string"
+                  },
+                  "weight": {
+                    "format": "int64",
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "id",
+                  "name",
+                  "vendor",
+                  "provider",
+                  "providerCode",
+                  "protocol",
+                  "accessType",
+                  "baseUrl",
+                  "apiKey",
+                  "models",
+                  "capabilities",
+                  "isMultimodal",
+                  "weight",
+                  "status",
+                  "latency",
+                  "rpm",
+                  "balance",
+                  "errors"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "items"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/console/api-keys",
+      "route_scope": "console",
+      "sdk_api_prefix": "/app/v3/api",
+      "sdk_client": "SdkworkAppClient",
+      "sdk_domain": "intelligence",
+      "sdk_family": "clawrouter-app-sdk",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/routingApiOperations.ts",
+      "tag": "ai",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/ai/routing/request_traces",
+      "api_surface": "app",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/routingApiOperations.ts#fetchRoutingRequestTraces",
+      "kind": "read",
+      "module": "commons",
+      "openapi_exposed": true,
+      "operation": "fetchRoutingRequestTraces",
+      "operation_id": "routing.requestTraces.list",
+      "path_params": [],
+      "query_parameters": [],
+      "query_parameters_declared": true,
+      "read_sources": [
+        "ai_request_trace",
+        "ai_routing_decision_log",
+        "ai_usage_fact"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "response_schema": {
+        "name": "RoutingRequestTracesResponse",
+        "schema": {
+          "additionalProperties": false,
+          "name": "RoutingRequestTracesResponse",
+          "properties": {
+            "items": {
+              "items": {
+                "additionalProperties": false,
+                "name": "RoutingRequestTraceItem",
+                "properties": {
+                  "channel": {
+                    "type": "string"
+                  },
+                  "duration": {
+                    "type": "string"
+                  },
+                  "endedAt": {
+                    "type": "string"
+                  },
+                  "errorMessageMasked": {
+                    "type": "string"
+                  },
+                  "errorType": {
+                    "type": "string"
+                  },
+                  "httpMethod": {
+                    "type": "string"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "model": {
+                    "type": "string"
+                  },
+                  "providerErrorCode": {
+                    "type": "string"
+                  },
+                  "requestBytes": {
+                    "format": "int64",
+                    "type": "integer"
+                  },
+                  "requestId": {
+                    "type": "string"
+                  },
+                  "requestPath": {
+                    "type": "string"
+                  },
+                  "requestPayloadHash": {
+                    "type": "string"
+                  },
+                  "responseBytes": {
+                    "format": "int64",
+                    "type": "integer"
+                  },
+                  "responsePayloadHash": {
+                    "type": "string"
+                  },
+                  "startedAt": {
+                    "type": "string"
+                  },
+                  "status": {
+                    "format": "int64",
+                    "type": "integer"
+                  },
+                  "streaming": {
+                    "type": "boolean"
+                  },
+                  "time": {
+                    "type": "string"
+                  },
+                  "tokens": {
+                    "format": "int64",
+                    "type": "integer"
+                  },
+                  "traceId": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "time",
+                  "model",
+                  "channel",
+                  "status",
+                  "duration",
+                  "tokens",
+                  "traceId",
+                  "requestId",
+                  "requestPath",
+                  "httpMethod",
+                  "requestPayloadHash",
+                  "responsePayloadHash",
+                  "requestBytes",
+                  "responseBytes",
+                  "providerErrorCode",
+                  "errorType",
+                  "errorMessageMasked",
+                  "startedAt",
+                  "endedAt",
+                  "streaming"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "items"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/console/gateway",
+      "route_scope": "console",
+      "sdk_api_prefix": "/app/v3/api",
+      "sdk_client": "SdkworkAppClient",
+      "sdk_domain": "intelligence",
+      "sdk_family": "clawrouter-app-sdk",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/routingApiOperations.ts",
+      "tag": "ai",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/ai/routing/usage",
+      "api_surface": "app",
+      "file_targets": [],
+      "idempotency_required": false,
+      "key": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/routingApiOperations.ts#fetchRoutingUsage",
+      "kind": "read",
+      "module": "commons",
+      "openapi_exposed": true,
+      "operation": "fetchRoutingUsage",
+      "operation_id": "routing.usage.list",
+      "path_params": [],
+      "query_parameters": [],
+      "query_parameters_declared": true,
+      "read_sources": [
+        "ai_request_trace",
+        "ai_usage_fact",
+        "ai_routing_decision_log"
+      ],
+      "request_body_required": null,
+      "request_id_header": false,
+      "response_schema": {
+        "name": "RoutingUsageSnapshot",
+        "schema": {
+          "additionalProperties": false,
+          "name": "RoutingUsageSnapshot",
+          "properties": {
+            "chartData": {
+              "items": {
+                "additionalProperties": false,
+                "name": "RoutingUsageData",
+                "properties": {
+                  "latency": {
+                    "format": "int64",
+                    "type": "integer"
+                  },
+                  "requests": {
+                    "format": "int64",
+                    "type": "integer"
+                  },
+                  "time": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "time",
+                  "requests",
+                  "latency"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "modelStats": {
+              "items": {
+                "additionalProperties": false,
+                "name": "RoutingModelStats",
+                "properties": {
+                  "lat": {
+                    "type": "string"
+                  },
+                  "m": {
+                    "type": "string"
+                  },
+                  "req": {
+                    "type": "string"
+                  },
+                  "sr": {
+                    "type": "string"
+                  },
+                  "tok": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "m",
+                  "req",
+                  "sr",
+                  "tok",
+                  "lat"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "chartData",
+            "modelStats"
+          ],
+          "type": "object"
+        }
+      },
+      "route": "/console/usage",
+      "route_scope": "console",
+      "sdk_api_prefix": "/app/v3/api",
+      "sdk_client": "SdkworkAppClient",
+      "sdk_domain": "intelligence",
+      "sdk_family": "clawrouter-app-sdk",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/routingApiOperations.ts",
+      "tag": "ai",
+      "write_tables": []
+    },
+    {
       "api_method": "POST",
       "api_path": "/app/v3/api/auth/sessions",
       "api_surface": "app",
@@ -78640,7 +78033,7 @@
                     "type": "integer"
                   },
                   "cost": {
-                    "description": "Customer-facing spend amount for the request, normalized to 9 decimal places for console display. Uses customer_charge_amount from the usage ledger and falls back to cost_amount only for legacy rows.",
+                    "description": "Customer-facing spend amount for the request, normalized to 9 decimal places for console display. Uses customer_charge_amount from the usage ledger and never exposes upstream cost fields.",
                     "format": "decimal",
                     "type": "string"
                   },
@@ -88096,10 +87489,12 @@
                   "type": "integer"
                 },
                 "cost": {
+                  "description": "Customer-facing runtime usage amount supplied by the runtime callback. Upstream, provider, channel, and access-cost fields are not part of the app API contract.",
                   "maxLength": 64,
                   "type": "string"
                 },
                 "costAmount": {
+                  "description": "Customer-facing runtime usage amount supplied by the runtime callback. Upstream, provider, channel, and access-cost fields are not part of the app API contract.",
                   "maxLength": 64,
                   "type": "string"
                 },
@@ -88234,6 +87629,7 @@
                         "type": "integer"
                       },
                       "costAmount": {
+                        "description": "Customer-facing runtime usage amount for this chat message. This value is not an upstream, provider, channel, or access-cost field.",
                         "maxLength": 64,
                         "nullable": true,
                         "type": "string"
@@ -90177,6 +89573,7 @@
                         "type": "integer"
                       },
                       "costAmount": {
+                        "description": "Customer-facing runtime usage amount for this chat message. This value is not an upstream, provider, channel, or access-cost field.",
                         "maxLength": 64,
                         "nullable": true,
                         "type": "string"
@@ -92661,6 +92058,7 @@
                         "type": "integer"
                       },
                       "costAmount": {
+                        "description": "Customer-facing runtime usage amount for this chat message. This value is not an upstream, provider, channel, or access-cost field.",
                         "maxLength": 64,
                         "nullable": true,
                         "type": "string"
@@ -102968,25 +102366,25 @@
   },
   "summary": {
     "api_method_counts": {
-      "DELETE": 55,
-      "GET": 312,
-      "PATCH": 40,
-      "POST": 191,
-      "PUT": 33
+      "DELETE": 54,
+      "GET": 315,
+      "PATCH": 39,
+      "POST": 189,
+      "PUT": 32
     },
     "api_surface_counts": {
-      "app": 230,
-      "backend": 401
+      "app": 234,
+      "backend": 395
     },
-    "operation_count": 631,
+    "operation_count": 629,
     "route_scope_counts": {
-      "admin": 401,
-      "console": 107,
+      "admin": 395,
+      "console": 111,
       "public": 123
     },
     "sdk_client_counts": {
-      "SdkworkAppClient": 230,
-      "SdkworkBackendClient": 401
+      "SdkworkAppClient": 234,
+      "SdkworkBackendClient": 395
     }
   }
 }

@@ -30,8 +30,6 @@ const MAX_PROTOCOL_LEN: usize = 64;
 const MAX_ACCESS_TYPE_LEN: usize = 64;
 const MAX_BASE_URL_LEN: usize = 512;
 const MAX_SECRET_REF_LEN: usize = 256;
-const MAX_MODEL_LEN: usize = 128;
-const MAX_MODELS: usize = 200;
 const MAX_CAPABILITIES: usize = 16;
 const MIN_TIMEOUT_MS: i64 = 1;
 const MAX_TIMEOUT_MS: i64 = 600_000;
@@ -54,7 +52,6 @@ struct NormalizedCreateRoutingChannelRequest {
     access_type: String,
     base_url: Option<String>,
     secret_ref: String,
-    models: Vec<String>,
     capabilities: Vec<String>,
     is_multimodal: bool,
     timeout_ms: Option<i64>,
@@ -74,7 +71,6 @@ struct NormalizedUpdateRoutingChannelRequest {
     access_type: Option<String>,
     base_url: Option<Option<String>>,
     secret_ref: Option<String>,
-    models: Option<Vec<String>>,
     capabilities: Option<Vec<String>>,
     timeout_ms: Option<Option<i64>>,
     retry_policy_json: Option<Option<String>>,
@@ -434,7 +430,6 @@ fn normalize_create_request(
         .transpose()?;
     let secret_ref = required_text(&request, "secretRef", "secretRef", MAX_SECRET_REF_LEN)?;
     validate_secret_ref(&secret_ref)?;
-    let models = required_string_array(&request, "models", "models", MAX_MODELS, MAX_MODEL_LEN)?;
     let capabilities = optional_string_array(
         &request,
         "capabilities",
@@ -465,7 +460,6 @@ fn normalize_create_request(
         access_type,
         base_url,
         secret_ref,
-        models,
         capabilities,
         is_multimodal,
         timeout_ms,
@@ -505,7 +499,6 @@ fn normalize_update_request(
     if let Some(secret_ref) = secret_ref.as_deref() {
         validate_secret_ref(secret_ref)?;
     }
-    let models = optional_string_array(&request, "models", "models", MAX_MODELS, MAX_MODEL_LEN)?;
     let capabilities = optional_string_array(
         &request,
         "capabilities",
@@ -534,7 +527,6 @@ fn normalize_update_request(
         && access_type.is_none()
         && base_url.is_none()
         && secret_ref.is_none()
-        && models.is_none()
         && capabilities.is_none()
         && timeout_ms.is_none()
         && retry_policy_json.is_none()
@@ -554,7 +546,6 @@ fn normalize_update_request(
         access_type,
         base_url,
         secret_ref,
-        models,
         capabilities,
         timeout_ms,
         retry_policy_json,
@@ -661,21 +652,6 @@ fn optional_nullable_text(
         Value::Null => Ok(Some(None)),
         _ => Err(format!("{field_name} must be a string")),
     }
-}
-
-fn required_string_array(
-    request: &Map<String, Value>,
-    key: &str,
-    field_name: &str,
-    max_items: usize,
-    max_item_len: usize,
-) -> Result<Vec<String>, String> {
-    let values = optional_string_array(request, key, field_name, max_items, max_item_len)?
-        .ok_or_else(|| format!("{field_name} is required"))?;
-    if values.is_empty() {
-        return Err(format!("{field_name} must include at least one item"));
-    }
-    Ok(values)
 }
 
 fn optional_string_array(
@@ -1116,13 +1092,11 @@ fn build_create_command(
     subject: AppRoutingSubject,
     request: NormalizedCreateRoutingChannelRequest,
 ) -> Result<CreateAppRoutingChannelCommand, RoutingChannelCommandBuildError> {
-    let model_uuids = generate_entity_uuids(&state, request.models.len())?;
     Ok(CreateAppRoutingChannelCommand {
         subject,
         channel_uuid: generate_entity_uuid(&state)?,
         account_uuid: generate_entity_uuid(&state)?,
         provider_uuid: generate_entity_uuid(&state)?,
-        model_uuids,
         audit_log_uuid: generate_entity_uuid(&state)?,
         config_snapshot_uuid: generate_entity_uuid(&state)?,
         name: request.name,
@@ -1132,7 +1106,6 @@ fn build_create_command(
         access_type: request.access_type,
         base_url: request.base_url,
         secret_ref: request.secret_ref,
-        models: request.models,
         capabilities: request.capabilities,
         is_multimodal: request.is_multimodal,
         timeout_ms: request.timeout_ms,
@@ -1151,15 +1124,10 @@ fn build_update_command(
     subject: AppRoutingSubject,
     request: NormalizedUpdateRoutingChannelRequest,
 ) -> Result<UpdateAppRoutingChannelCommand, RoutingChannelCommandBuildError> {
-    let model_uuids = generate_entity_uuids(
-        &state,
-        request.models.as_ref().map(Vec::len).unwrap_or_default(),
-    )?;
     Ok(UpdateAppRoutingChannelCommand {
         subject,
         channel_id: request.channel_id,
         provider_uuid: generate_entity_uuid(&state)?,
-        model_uuids,
         audit_log_uuid: generate_entity_uuid(&state)?,
         config_snapshot_uuid: generate_entity_uuid(&state)?,
         name: request.name,
@@ -1169,7 +1137,6 @@ fn build_update_command(
         access_type: request.access_type,
         base_url: request.base_url,
         secret_ref: request.secret_ref,
-        models: request.models,
         capabilities: request.capabilities,
         timeout_ms: request.timeout_ms,
         retry_policy_json: request.retry_policy_json,
@@ -1238,13 +1205,6 @@ fn generate_entity_uuid(
         .entity_uuid_generator
         .generate_entity_uuid()
         .map_err(RoutingChannelCommandBuildError::System)
-}
-
-fn generate_entity_uuids(
-    state: &AppRoutingChannelCommandState,
-    count: usize,
-) -> Result<Vec<String>, RoutingChannelCommandBuildError> {
-    (0..count).map(|_| generate_entity_uuid(state)).collect()
 }
 
 fn request_id_error(error: RequestIdError) -> RoutingChannelCommandBuildError {
@@ -1344,7 +1304,6 @@ mod tests {
             "accessType": "api-key",
             "baseUrl": "https://api.openai.test/v1",
             "secretRef": "vault://providers/openai/account/main",
-            "models": ["openai/gpt-4o-mini"],
             "capabilities": ["llm"],
             "timeoutMs": 60000,
             "retryPolicy": {

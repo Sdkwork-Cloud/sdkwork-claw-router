@@ -10,6 +10,14 @@ pub struct AdminAiResourceItem {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub api_endpoint_code: Option<String>,
 
+    /// Capabilities field on admin ai resource item.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub capabilities: Option<Vec<String>>,
+
+    /// Capability field on admin ai resource item.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub capability: Option<String>,
+
     /// Catalog key field on admin ai resource item.
     #[serde(rename = "catalogKey")]
     #[serde(default, skip_serializing_if = "Option::is_none")]

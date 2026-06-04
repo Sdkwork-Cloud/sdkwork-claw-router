@@ -4,6 +4,8 @@ import java.util.List;
 
 public class AdminAiResourceItem {
     private String apiEndpointCode;
+    private List<String> capabilities;
+    private String capability;
     private String catalogKey;
     private String compositionMode;
     private String displayName;
@@ -24,6 +26,22 @@ public class AdminAiResourceItem {
 
     public void setApiEndpointCode(String apiEndpointCode) {
         this.apiEndpointCode = apiEndpointCode;
+    }
+
+    public List<String> getCapabilities() {
+        return this.capabilities;
+    }
+
+    public void setCapabilities(List<String> capabilities) {
+        this.capabilities = capabilities;
+    }
+
+    public String getCapability() {
+        return this.capability;
+    }
+
+    public void setCapability(String capability) {
+        this.capability = capability;
     }
 
     public String getCatalogKey() {

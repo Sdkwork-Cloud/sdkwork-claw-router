@@ -812,9 +812,9 @@ test("admin group service manages channel bindings through generated backend SDK
               providerCode: "openai",
               providerName: "OpenAI",
               channelCode: "openai-primary",
-              models: ["openai/gpt-4o-mini"],
+              resourceCodes: ["api.openai.chat_completions"],
+              apiScope: ["openai.chat_completions"],
               capabilities: ["llm"],
-              modelScope: ["openai/gpt-4o-mini"],
               priority: "5",
               weight: "80",
               status: "active",
@@ -835,9 +835,9 @@ test("admin group service manages channel bindings through generated backend SDK
               providerCode: "openai",
               providerName: "OpenAI",
               channelCode: "openai-primary",
-              models: ["openai/gpt-4o-mini"],
+              resourceCodes: ["api.openai.chat_completions"],
+              apiScope: ["openai.chat_completions"],
               capabilities: ["llm"],
-              modelScope: [],
               priority: 10,
               weight: 60,
               status: "disabled",
@@ -856,7 +856,8 @@ test("admin group service manages channel bindings through generated backend SDK
           priority: 10,
           weight: 60,
           status: "disabled",
-          modelScope: [],
+          resourceCodes: ["api.openai.chat_completions"],
+          apiScope: ["openai.chat_completions"],
           capabilities: ["llm"],
         },
       ]);
@@ -879,7 +880,8 @@ test("admin group service manages channel bindings through generated backend SDK
             priority: 10,
             weight: 60,
             status: "disabled",
-            modelScope: [],
+            resourceCodes: ["api.openai.chat_completions"],
+            apiScope: ["openai.chat_completions"],
             capabilities: ["llm"],
           },
         ],
@@ -887,6 +889,137 @@ test("admin group service manages channel bindings through generated backend SDK
       for (const request of captured) {
         assert.equal(request.headers["x-request-id"], undefined);
       }
+    },
+  );
+});
+
+test("admin group channel bindings are scoped by resources instead of direct models", async () => {
+  const serviceSource = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-group/src/groupService.ts", import.meta.url),
+    "utf8",
+  );
+  const pageSource = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-group/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.doesNotMatch(serviceSource, /models:\s*string\[\];/);
+  assert.doesNotMatch(serviceSource, /modelScope\??:\s*string\[\];/);
+  assert.doesNotMatch(serviceSource, /models:\s*readStringArray\(item,\s*'models'\)/);
+  assert.doesNotMatch(serviceSource, /modelScope:\s*readStringArray\(item,\s*'modelScope'\)/);
+  assert.doesNotMatch(serviceSource, /modelScope:\s*item\.modelScope/);
+  assert.match(serviceSource, /resourceCodes:\s*string\[\];/);
+  assert.match(serviceSource, /apiScope:\s*string\[\];/);
+  assert.match(serviceSource, /resourceCodes:\s*readStringArray\(item,\s*'resourceCodes'\)/);
+  assert.match(serviceSource, /apiScope:\s*readStringArray\(item,\s*'apiScope'\)/);
+
+  for (const legacyMarker of [
+    "row.models",
+    "channel.models",
+    "row.modelScope",
+    "draft?.modelScope",
+    "admin.group.channelBindings.columns.models",
+    "admin.group.channelBindings.columns.modelScope",
+    "admin.group.channelBindings.allModels",
+    "admin.group.channelBindings.noModels",
+  ]) {
+    assert.ok(!pageSource.includes(legacyMarker), `legacy direct model binding marker should be removed: ${legacyMarker}`);
+  }
+
+  for (const resourceMarker of [
+    "row.resourceCodes",
+    "row.apiScope",
+    "channel.resourceCodes",
+    "channel.apiScope",
+    "admin.group.channelBindings.columns.resourceCodes",
+    "admin.group.channelBindings.columns.apiScope",
+    "admin.group.channelBindings.noResourceCodes",
+    "admin.group.channelBindings.noApiScope",
+  ]) {
+    assert.ok(pageSource.includes(resourceMarker), `missing resource scoped binding marker: ${resourceMarker}`);
+  }
+
+  await withBackendSdkFetch(
+    (url, init) => {
+      const method = init?.method ?? "GET";
+      if (url === "/backend/v3/api/ai/channel_groups/group-1/channel_bindings" && method === "GET") {
+        return {
+          items: [
+            {
+              id: "binding-1",
+              channelGroupId: "group-1",
+              channelId: "3001",
+              channelName: "OpenAI primary",
+              providerCode: "openai",
+              providerName: "OpenAI",
+              channelCode: "openai-primary",
+              resourceCodes: ["api.openai.chat_completions"],
+              apiScope: ["openai.chat_completions"],
+              capabilities: ["llm"],
+              priority: 5,
+              weight: 80,
+              status: "active",
+              healthStatus: "active",
+            },
+          ],
+        };
+      }
+      if (url === "/backend/v3/api/ai/channel_groups/group-1/channel_bindings" && method === "PUT") {
+        const body = JSON.parse(String(init?.body ?? "{}")) as Record<string, unknown>;
+        assert.deepEqual(body, {
+          items: [
+            {
+              channelId: "3001",
+              priority: 10,
+              weight: 60,
+              status: "active",
+              resourceCodes: ["api.openai.chat_completions"],
+              apiScope: ["openai.chat_completions"],
+              capabilities: ["llm"],
+            },
+          ],
+        });
+        return {
+          items: [
+            {
+              id: "binding-1",
+              channelGroupId: "group-1",
+              channelId: "3001",
+              channelName: "OpenAI primary",
+              providerCode: "openai",
+              providerName: "OpenAI",
+              channelCode: "openai-primary",
+              resourceCodes: ["api.openai.chat_completions"],
+              apiScope: ["openai.chat_completions"],
+              capabilities: ["llm"],
+              priority: 10,
+              weight: 60,
+              status: "active",
+              healthStatus: "active",
+            },
+          ],
+        };
+      }
+      throw new Error(`Unexpected SDK request ${method} ${url}`);
+    },
+    async () => {
+      const bindings = await GroupService.fetchGroupChannelBindings("group-1");
+      assert.deepEqual(bindings[0].resourceCodes, ["api.openai.chat_completions"]);
+      assert.deepEqual(bindings[0].apiScope, ["openai.chat_completions"]);
+      assert.equal("models" in bindings[0], false);
+      assert.equal("modelScope" in bindings[0], false);
+
+      await GroupService.replaceGroupChannelBindings("group-1", [
+        {
+          channelId: "3001",
+          priority: 10,
+          weight: 60,
+          status: "active",
+          resourceCodes: ["api.openai.chat_completions"],
+          apiScope: ["openai.chat_completions"],
+          capabilities: ["llm"],
+        },
+      ]);
     },
   );
 });

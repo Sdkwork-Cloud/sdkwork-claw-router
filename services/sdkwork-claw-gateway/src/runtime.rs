@@ -2735,8 +2735,8 @@ mod tests {
         use axum::http::HeaderMap;
         use axum::routing::get;
         use sdkwork_claw_provider_adapter_contract::{
-            AdapterInvocationShape, ProviderAdapterEndpointManifest, ProviderAdapterManifest,
-            ProviderAdapterProviderManifest,
+            AdapterEndpointRuntimeState, AdapterInvocationShape, ProviderAdapterEndpointManifest,
+            ProviderAdapterManifest, ProviderAdapterProviderManifest,
         };
         use std::sync::Mutex;
 
@@ -2759,6 +2759,14 @@ mod tests {
                                 endpoints: vec![ProviderAdapterEndpointManifest {
                                     endpoint_key: "video.start_end2video".to_owned(),
                                     capability: Some("video_generation".to_owned()),
+                                    service_group: None,
+                                    openapi_operation_id: None,
+                                    s3_operation: None,
+                                    iaas_operation: None,
+                                    request_schema: None,
+                                    response_schema: None,
+                                    endpoint_styles: Vec::new(),
+                                    runtime_state: AdapterEndpointRuntimeState::RuntimeAvailable,
                                     method: "POST".to_owned(),
                                     standard_path_pattern: "/vidu/ent/v2/start-end2video"
                                         .to_owned(),

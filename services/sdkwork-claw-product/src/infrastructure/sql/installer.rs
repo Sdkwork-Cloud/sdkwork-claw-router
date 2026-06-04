@@ -66,7 +66,7 @@ const GENERATED_POSTGRES_SCHEMA: &str =
     include_str!("../../../../../generated/schema/postgres/schema.sql");
 const BUNDLED_MODELS_CATALOG_MANIFEST: &str =
     include_str!("../../../../../data/sdkwork-models/sdkwork-models.json");
-pub const CURRENT_SCHEMA_VERSION: &str = "2026.05.08.1";
+pub const CURRENT_SCHEMA_VERSION: &str = "2026.06.04.1";
 pub const DEFAULT_SEED_PROFILE: &str = "commercial";
 pub const DEFAULT_INSTALL_ENVIRONMENT: &str = "production";
 pub const ENV_INSTALL_ENVIRONMENT: &str = "SDKWORK_CLAW_INSTALL_ENVIRONMENT";
@@ -3245,7 +3245,7 @@ async fn upsert_sqlite_bootstrap_admin_recharge_packages(
             INSERT INTO commerce_product_spu_category
                 (id, tenant_id, organization_id, spu_id, category_id, primary_flag, sort_order, status, created_at, updated_at)
             VALUES
-                (?, ?, ?, ?, 'commerce-recharge', TRUE, 0, 'active', ?, ?)
+                (?, ?, ?, ?, 'commerce-recharge', 1, 0, 'active', ?, ?)
             ON CONFLICT(tenant_id, spu_id, category_id) DO UPDATE SET
                 organization_id = excluded.organization_id,
                 primary_flag = excluded.primary_flag,
@@ -3447,7 +3447,7 @@ async fn upsert_postgres_bootstrap_admin_recharge_packages(
             INSERT INTO commerce_product_spu_category
                 (id, tenant_id, organization_id, spu_id, category_id, primary_flag, sort_order, status, created_at, updated_at)
             VALUES
-                ($1, $2, $3, $4, 'commerce-recharge', TRUE, 0, 'active', $5, $6)
+                ($1, $2, $3, $4, 'commerce-recharge', 1, 0, 'active', $5, $6)
             ON CONFLICT(tenant_id, spu_id, category_id) DO UPDATE SET
                 organization_id = excluded.organization_id,
                 primary_flag = excluded.primary_flag,
@@ -6898,13 +6898,13 @@ mod tests {
     }
 
     #[test]
-    fn postgres_add_column_definition_preserves_channel_endpoint_columns() {
+    fn postgres_add_column_definition_preserves_non_nullable_text_and_integer_defaults() {
         let columns = create_table_columns(
             r#"
-            CREATE TABLE IF NOT EXISTS ai_channel_endpoint (
+            CREATE TABLE IF NOT EXISTS ai_channel_credential (
                 id BIGSERIAL PRIMARY KEY,
-                channel_type VARCHAR(32) NOT NULL,
-                api_code VARCHAR(128) NOT NULL,
+                credential_type VARCHAR(32) NOT NULL,
+                auth_type VARCHAR(64) NOT NULL,
                 priority INTEGER NOT NULL DEFAULT 100,
                 weight INTEGER NOT NULL DEFAULT 100
             )
@@ -6918,12 +6918,12 @@ mod tests {
         .collect::<BTreeMap<_, _>>();
 
         assert_eq!(
-            "\"channel_type\" VARCHAR(32) NOT NULL DEFAULT ''",
-            columns["channel_type"]
+            "\"credential_type\" VARCHAR(32) NOT NULL DEFAULT ''",
+            columns["credential_type"]
         );
         assert_eq!(
-            "\"api_code\" VARCHAR(128) NOT NULL DEFAULT ''",
-            columns["api_code"]
+            "\"auth_type\" VARCHAR(64) NOT NULL DEFAULT ''",
+            columns["auth_type"]
         );
         assert_eq!(
             "\"priority\" INTEGER NOT NULL DEFAULT 100",

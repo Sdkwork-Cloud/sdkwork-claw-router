@@ -6,9 +6,9 @@ use axum::response::IntoResponse;
 use axum::routing::post;
 use axum::{Json, Router};
 use sdkwork_claw_provider_adapter_contract::{
-    AdapterInvocationMetadata, AdapterInvocationRequest, AdapterInvocationResponse,
-    AdapterInvocationShape, AdapterKind, AdapterProviderContext, AdapterRouteStatus, AdapterSecret,
-    AdapterSubject,
+    AdapterEndpointRuntimeState, AdapterInvocationMetadata, AdapterInvocationRequest,
+    AdapterInvocationResponse, AdapterInvocationShape, AdapterKind, AdapterProviderContext,
+    AdapterRouteStatus, AdapterSecret, AdapterSubject,
 };
 use sdkwork_claw_provider_adapter_registry::ProviderAdapterRouteConfig;
 use serde_json::json;
@@ -77,6 +77,12 @@ fn adapter_route(base_url: &str) -> ProviderAdapterRouteConfig {
         adapter_base_url: base_url.to_owned(),
         capability: Some("video_generation".to_owned()),
         endpoint_key: Some("video.start_end2video".to_owned()),
+        service_group: None,
+        openapi_operation_id: None,
+        s3_operation: None,
+        iaas_operation: None,
+        endpoint_styles: Vec::new(),
+        runtime_state: AdapterEndpointRuntimeState::RuntimeAvailable,
         method: "POST".to_owned(),
         invocation_shape: AdapterInvocationShape::AsyncTaskStart,
         standard_path_pattern: "/vidu/ent/v2/start-end2video".to_owned(),

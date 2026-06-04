@@ -86,8 +86,8 @@ Ubuntu/Debian service package:
 
 ```bash
 sudo apt install ./clawrouter-linux-x64-server-0.3.0.deb
-sudo editor /etc/clawrouter/clawrouter.toml
-sudo editor /etc/clawrouter/database.secret
+sudo editor /etc/sdkwork/router/clawrouter.toml
+sudo editor /etc/sdkwork/router/database.secret
 sudo systemctl start clawrouter
 curl http://127.0.0.1:3900/healthz
 curl http://127.0.0.1:3900/readyz
@@ -108,9 +108,9 @@ complete domain and the file name stem. Generated configs proxy to
 `http://127.0.0.1:3900`. Use `etc/nginx/NGINX_SAMPLE.conf` as the canonical
 template and `etc/nginx/sdkwork/` for full-domain examples.
 
-The Debian service package creates `/etc/clawrouter/clawrouter.toml`,
-`/etc/clawrouter/clawrouter.env`, `/etc/clawrouter/database.secret`,
-`/etc/clawrouter/redis.secret`, and the writable data/log directories. The
+The Debian service package creates `/etc/sdkwork/router/clawrouter.toml`,
+`/etc/sdkwork/router/clawrouter.env`, `/etc/sdkwork/router/database.secret`,
+`/etc/sdkwork/router/redis.secret`, and the writable data/log directories. The
 package enables `clawrouter.service` on systemd hosts but does not start it
 until the PostgreSQL host, database,
 username, and password are configured. The systemd unit runs installer
@@ -135,9 +135,9 @@ Linux native desktop package:
 macOS native desktop package:
 
 ```bash
-/opt/clawrouter/bin/clawrouterctl ensure
-/opt/clawrouter/bin/clawrouterctl refresh-catalog --force
-/opt/clawrouter/bin/clawrouter
+/opt/sdkwork/router/bin/clawrouterctl ensure
+/opt/sdkwork/router/bin/clawrouterctl refresh-catalog --force
+/opt/sdkwork/router/bin/clawrouter
 ```
 
 Portable release package root on Linux/macOS:

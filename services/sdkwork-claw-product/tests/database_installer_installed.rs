@@ -1,5 +1,6 @@
 use sdkwork_claw_product::infrastructure::sql::installer::{
     CatalogRefreshOptions, DatabaseInstallOptions, DatabaseInstaller, InstallationStatus,
+    CURRENT_SCHEMA_VERSION,
 };
 use sdkwork_claw_product::infrastructure::sql::sqlite::SqliteAdminAiResourceStore;
 use sdkwork_claw_product::ports::{
@@ -10,7 +11,7 @@ use sdkwork_claw_product_test_support::installed_sqlite_pool;
 use sqlx::{Row, SqlitePool};
 use std::collections::{BTreeMap, BTreeSet};
 
-const SCHEMA_VERSION: &str = "2026.05.08.1";
+const SCHEMA_VERSION: &str = CURRENT_SCHEMA_VERSION;
 const CATALOG_VERSION: &str = "2026.05.08.1";
 
 #[tokio::test]
@@ -301,7 +302,8 @@ async fn sqlite_installer_imports_bundled_ai_routing_seed_catalog() {
           AND organization_id = 0
           AND resource_type = 'api_endpoint'
           AND (
-              resource_code LIKE 'api.openai.codex.%'
+              resource_code = 'api.openai.codex'
+              OR resource_code LIKE 'api.openai.codex.%'
               OR resource_code IN ('api.openai.containers', 'api.openai.skills')
           )
           AND status = 1
@@ -319,7 +321,8 @@ async fn sqlite_installer_imports_bundled_ai_routing_seed_catalog() {
           AND organization_id = 0
           AND resource_group_id = ?
           AND (
-              resource_code LIKE 'api.openai.codex.%'
+              resource_code = 'api.openai.codex'
+              OR resource_code LIKE 'api.openai.codex.%'
               OR resource_code IN ('api.openai.containers', 'api.openai.skills')
           )
           AND status = 1
@@ -501,43 +504,33 @@ async fn sqlite_installer_imports_bundled_ai_routing_seed_catalog() {
         "AI routing seed must create a disabled default admin channel for configuring provider endpoints"
     );
 
-    let default_channel_endpoint_codes = sqlx::query_scalar::<_, String>(
+    let default_channel_credential_count: i64 = sqlx::query_scalar(
         r#"
-        SELECT e.api_code
-        FROM ai_channel_endpoint e
+        SELECT COUNT(1)
+        FROM ai_channel_credential cc
         INNER JOIN ai_channel c
-          ON c.id = e.channel_id
-         AND c.tenant_id = e.tenant_id
-         AND c.organization_id = e.organization_id
-        WHERE e.tenant_id = 10
-          AND e.organization_id = 20
-          AND e.vendor_code = 'openai'
-          AND e.region_code = 'global'
-          AND e.base_url = 'https://api.openai.com/v1'
-          AND e.status = 0
-          AND e.deleted_at IS NULL
+          ON c.id = cc.channel_id
+         AND c.tenant_id = cc.tenant_id
+         AND c.organization_id = cc.organization_id
+        WHERE cc.tenant_id = 10
+          AND cc.organization_id = 20
+          AND cc.provider_code = 'openai'
+          AND cc.channel_code = 'openai-default'
+          AND cc.base_url = 'https://api.openai.com/v1'
+          AND cc.status = 1
+          AND cc.deleted_at IS NULL
           AND c.channel_code = 'openai-default'
           AND c.deleted_at IS NULL
-          AND json_extract(e.metadata, '$.catalogCode') = 'sdkwork-ai-routing'
-        ORDER BY e.api_code ASC
+          AND json_extract(cc.metadata, '$.catalogCode') = 'sdkwork-ai-routing'
         "#,
     )
-    .fetch_all(&pool)
+    .fetch_one(&pool)
     .await
-    .unwrap()
-    .into_iter()
-    .collect::<BTreeSet<_>>();
-
-    for expected in [
-        "openai.responses",
-        "openai.chat_completions",
-        "openai.embeddings",
-    ] {
-        assert!(
-            default_channel_endpoint_codes.contains(expected),
-            "default admin channel endpoint seed must include {expected}"
-        );
-    }
+    .unwrap();
+    assert_eq!(
+        1, default_channel_credential_count,
+        "AI routing seed must create one active credential for the disabled default admin channel"
+    );
 }
 
 #[tokio::test]
@@ -564,9 +557,10 @@ async fn sqlite_ai_routing_seed_reimport_disables_removed_system_api_groups() {
         r#"
         UPDATE system_schema_migration
         SET checksum = 'stale-ai-routing-checksum'
-        WHERE migration_key = 'ai-routing:2026.05.08.1'
+        WHERE migration_key = ?
         "#,
     )
+    .bind(format!("ai-routing:{SCHEMA_VERSION}"))
     .execute(&pool)
     .await
     .unwrap();

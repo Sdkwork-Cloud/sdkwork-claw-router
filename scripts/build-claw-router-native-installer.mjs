@@ -33,8 +33,20 @@ import {
 import {
   DEFAULT_VERSION,
   PACKAGE_NAME,
+  LINUX_SERVICE_CONFIG_ROOT,
+  LINUX_SERVICE_DATA_ROOT,
+  LINUX_SERVICE_LOG_ROOT,
+  LINUX_SERVICE_RUNTIME_ROOT,
+  LINUX_SHARED_DOC_ROOT,
+  LINUX_SHARED_ROOT,
+  MACOS_SHARED_DOC_ROOT,
+  MACOS_SHARED_ROOT,
+  MACOS_SERVICE_ROOT,
   POSIX_INSTALL_ROOT,
   RUNTIME_DISPLAY_NAME,
+  USER_PRIVATE_ROUTER_ROOT,
+  WINDOWS_INSTALL_ROOT,
+  WINDOWS_SYSTEM_ROOT,
   artifactIdForPackage,
   createInstallPackagePlan,
   RUNTIME_CONFIG_TEMPLATE_PATH,
@@ -49,9 +61,12 @@ const NATIVE_INSTALLER_SCHEMA_VERSION = '2026-05-16.native-installer-build.v1';
 const NATIVE_INSTALL_LAYOUT_SCHEMA_VERSION = '2026-05-16.native-install-layout.v1';
 const NATIVE_INSTALLER_DEPLOYMENT_MODES = Object.freeze(['service', 'desktop']);
 const WINDOWS_UPGRADE_CODE = '9D40C7E8-CE6F-4AB3-9D91-1E969070D7E2';
-const LINUX_NATIVE_INSTALL_ROOT = '/usr/lib/clawrouter';
+const LINUX_NATIVE_INSTALL_ROOT = LINUX_SERVICE_RUNTIME_ROOT;
 const LINUX_NATIVE_BIN_DIR = '/usr/bin';
-const LINUX_SERVICE_CONFIG_ROOT = '/etc/clawrouter';
+const LINUX_NATIVE_SHARED_ROOT = LINUX_SHARED_ROOT;
+const LINUX_NATIVE_SHARED_DOC_ROOT = LINUX_SHARED_DOC_ROOT;
+const MACOS_NATIVE_SHARED_ROOT = MACOS_SHARED_ROOT;
+const MACOS_NATIVE_SHARED_DOC_ROOT = MACOS_SHARED_DOC_ROOT;
 
 function printHelp() {
   console.log(`Usage: node scripts/build-claw-router-native-installer.mjs [options]
@@ -355,17 +370,17 @@ function createLinuxNativeInstallLayout(packageItem) {
     privateBinary: `${LINUX_NATIVE_INSTALL_ROOT}/bin/${packageItem.binaryName}`,
     privateInstaller: `${LINUX_NATIVE_INSTALL_ROOT}/bin/${packageItem.installerBinaryName}`,
     portal: `${LINUX_NATIVE_INSTALL_ROOT}/portal/dist`,
-    documentation: '/usr/share/doc/clawrouter/INSTALL.md',
-    installManifest: '/usr/share/clawrouter/install-manifest.json',
+    documentation: `${LINUX_NATIVE_SHARED_DOC_ROOT}/INSTALL.md`,
+    installManifest: `${LINUX_NATIVE_SHARED_ROOT}/install-manifest.json`,
     releaseEnvTemplate: isService
       ? `${LINUX_SERVICE_CONFIG_ROOT}/.env.release.example`
-      : '${XDG_CONFIG_HOME:-~/.config}/clawrouter/.env.release.example',
+      : `${USER_PRIVATE_ROUTER_ROOT}/config/.env.release.example`,
     runtimeConfig: isService
       ? `${LINUX_SERVICE_CONFIG_ROOT}/clawrouter.toml`
       : packageItem.databasePolicy.configFile.path,
     runtimeConfigTemplate: isService
       ? `${LINUX_SERVICE_CONFIG_ROOT}/clawrouter.toml.example`
-      : '/usr/share/clawrouter/config/clawrouter.toml.example',
+      : `${LINUX_NATIVE_SHARED_ROOT}/config/clawrouter.toml.example`,
     dataDirectory: packageItem.databasePolicy.dataDirectory.path,
   };
 
@@ -402,21 +417,21 @@ function createLinuxNativeInstallLayout(packageItem) {
         { path: `${LINUX_SERVICE_CONFIG_ROOT}/clawrouter.env`, owner: 'root', group: 'sdkwork', mode: '0640' },
         { path: `${LINUX_SERVICE_CONFIG_ROOT}/database.secret`, owner: 'root', group: 'sdkwork', mode: '0640' },
         { path: `${LINUX_SERVICE_CONFIG_ROOT}/redis.secret`, owner: 'root', group: 'sdkwork', mode: '0640' },
-        { path: '/var/lib/clawrouter', owner: 'sdkwork', group: 'sdkwork', mode: '0750' },
-        { path: '/var/log/clawrouter', owner: 'sdkwork', group: 'sdkwork', mode: '0750' },
+        { path: LINUX_SERVICE_DATA_ROOT, owner: 'sdkwork', group: 'sdkwork', mode: '0750' },
+        { path: LINUX_SERVICE_LOG_ROOT, owner: 'sdkwork', group: 'sdkwork', mode: '0750' },
       ]
       : [
         { path: LINUX_NATIVE_INSTALL_ROOT, owner: 'root', group: 'root', mode: '0755' },
         { path: `${LINUX_NATIVE_INSTALL_ROOT}/bin`, owner: 'root', group: 'root', mode: '0755' },
         { path: `${LINUX_NATIVE_BIN_DIR}/${packageItem.binaryName}`, owner: 'root', group: 'root', mode: '0755' },
         { path: `${LINUX_NATIVE_BIN_DIR}/${packageItem.installerBinaryName}`, owner: 'root', group: 'root', mode: '0755' },
-        { path: '/usr/share/clawrouter', owner: 'root', group: 'root', mode: '0755' },
+        { path: LINUX_NATIVE_SHARED_ROOT, owner: 'root', group: 'root', mode: '0755' },
       ],
     commands: isService
       ? {
         configure: [
-          'sudo editor /etc/clawrouter/clawrouter.toml',
-          'sudo editor /etc/clawrouter/database.secret',
+          `sudo editor ${LINUX_SERVICE_CONFIG_ROOT}/clawrouter.toml`,
+          `sudo editor ${LINUX_SERVICE_CONFIG_ROOT}/database.secret`,
         ],
         start: 'sudo systemctl start clawrouter',
         status: 'sudo systemctl status clawrouter --no-pager',
@@ -431,19 +446,19 @@ function createLinuxNativeInstallLayout(packageItem) {
 
 function createMacosNativeInstallLayout(packageItem) {
   const isService = packageItem.deploymentMode === 'service';
-  const configRoot = '/Library/Application Support/SdkWork/ClawRouter';
-  const sharedTemplatePath = '/usr/local/share/clawrouter/config/clawrouter.toml.example';
+  const configRoot = MACOS_SERVICE_ROOT;
+  const sharedTemplatePath = `${MACOS_NATIVE_SHARED_ROOT}/config/clawrouter.toml.example`;
   const serviceInstallRoot = configRoot;
   const installRoot = isService ? serviceInstallRoot : POSIX_INSTALL_ROOT;
   const files = {
     binary: `${installRoot}/bin/${packageItem.binaryName}`,
     installer: `${installRoot}/bin/${packageItem.installerBinaryName}`,
     portal: `${installRoot}/portal/dist`,
-    documentation: '/usr/local/share/clawrouter/INSTALL.md',
-    installManifest: '/usr/local/share/clawrouter/install-manifest.json',
+    documentation: `${MACOS_NATIVE_SHARED_DOC_ROOT}/INSTALL.md`,
+    installManifest: `${MACOS_NATIVE_SHARED_ROOT}/install-manifest.json`,
     releaseEnvTemplate: isService
       ? `${configRoot}/.env.release.example`
-      : '~/Library/Application Support/SdkWork/ClawRouter/.env.release.example',
+      : `${USER_PRIVATE_ROUTER_ROOT}/config/.env.release.example`,
     runtimeConfig: packageItem.databasePolicy.configFile.path,
     runtimeConfigTemplate: isService ? `${configRoot}/clawrouter.toml.example` : sharedTemplatePath,
     dataDirectory: packageItem.databasePolicy.dataDirectory.path,
@@ -481,13 +496,13 @@ function createMacosNativeInstallLayout(packageItem) {
         { path: `${configRoot}/.env.release.example`, owner: 'root', group: 'wheel', mode: '0640' },
         { path: `${configRoot}/clawrouter.toml.example`, owner: 'root', group: 'wheel', mode: '0640' },
         { path: `${configRoot}/clawrouter.toml`, owner: 'root', group: 'wheel', mode: '0640' },
-        { path: '/var/log/clawrouter', owner: 'root', group: 'wheel', mode: '0750' },
+        { path: LINUX_SERVICE_LOG_ROOT, owner: 'root', group: 'wheel', mode: '0750' },
         { path: '/Library/LaunchDaemons/com.sdkwork.clawrouter.plist', owner: 'root', group: 'wheel', mode: '0644' },
       ]
       : [
         { path: POSIX_INSTALL_ROOT, owner: 'root', group: 'wheel', mode: '0755' },
         { path: `${POSIX_INSTALL_ROOT}/bin`, owner: 'root', group: 'wheel', mode: '0755' },
-        { path: '/usr/local/share/clawrouter/config', owner: 'root', group: 'wheel', mode: '0755' },
+        { path: `${MACOS_NATIVE_SHARED_ROOT}/config`, owner: 'root', group: 'wheel', mode: '0755' },
       ],
     commands: isService
       ? {
@@ -507,16 +522,16 @@ function createMacosNativeInstallLayout(packageItem) {
 
 function createWindowsNativeInstallLayout(packageItem) {
   const isService = packageItem.deploymentMode === 'service';
-  const installRoot = '%ProgramFiles%/ClawRouter';
+  const installRoot = WINDOWS_INSTALL_ROOT;
   const files = {
     binary: `${installRoot}/bin/${packageItem.binaryName}`,
     installer: `${installRoot}/bin/${packageItem.installerBinaryName}`,
     portal: `${installRoot}/portal/dist`,
     documentation: `${installRoot}/INSTALL.md`,
     installManifest: `${installRoot}/install-manifest.json`,
-    releaseEnvTemplate: '%ProgramData%/SdkWork/ClawRouter/.env.release.example',
+    releaseEnvTemplate: `${WINDOWS_SYSTEM_ROOT}/.env.release.example`,
     runtimeConfig: packageItem.databasePolicy.configFile.path,
-    runtimeConfigTemplate: '%ProgramData%/SdkWork/ClawRouter/clawrouter.toml.example',
+    runtimeConfigTemplate: `${WINDOWS_SYSTEM_ROOT}/clawrouter.toml.example`,
     dataDirectory: packageItem.databasePolicy.dataDirectory.path,
   };
   if (packageItem.databasePolicy.passwordFile?.path) {
@@ -544,9 +559,9 @@ function createWindowsNativeInstallLayout(packageItem) {
       : null,
     permissions: [
       { path: installRoot, owner: 'SYSTEM', group: 'Administrators', mode: 'inherited-programfiles-acl' },
-      { path: '%ProgramData%/SdkWork/ClawRouter', owner: 'SYSTEM', group: 'Administrators', mode: 'inherited-programdata-acl' },
-      { path: '%ProgramData%/SdkWork/ClawRouter/.env.release.example', owner: 'SYSTEM', group: 'Administrators', mode: 'inherited-programdata-acl' },
-      { path: '%ProgramData%/SdkWork/ClawRouter/clawrouter.toml.example', owner: 'SYSTEM', group: 'Administrators', mode: 'inherited-programdata-acl' },
+      { path: WINDOWS_SYSTEM_ROOT, owner: 'SYSTEM', group: 'Administrators', mode: 'inherited-programdata-acl' },
+      { path: `${WINDOWS_SYSTEM_ROOT}/.env.release.example`, owner: 'SYSTEM', group: 'Administrators', mode: 'inherited-programdata-acl' },
+      { path: `${WINDOWS_SYSTEM_ROOT}/clawrouter.toml.example`, owner: 'SYSTEM', group: 'Administrators', mode: 'inherited-programdata-acl' },
       ...(isService
         ? [
           { path: packageItem.databasePolicy.configFile.path, owner: 'SYSTEM', group: 'Administrators', mode: 'inherited-programdata-acl' },
@@ -646,57 +661,57 @@ function createDebianPostinst(plan) {
     '  groupadd --system sdkwork',
     'fi',
     'if ! id -u sdkwork >/dev/null 2>&1; then',
-    '  useradd --system --gid sdkwork --home-dir /var/lib/clawrouter --shell /usr/sbin/nologin sdkwork',
+    `  useradd --system --gid sdkwork --home-dir ${LINUX_SERVICE_DATA_ROOT} --shell /usr/sbin/nologin sdkwork`,
     'fi',
-    'mkdir -p /etc/clawrouter /var/lib/clawrouter /var/log/clawrouter',
+    `mkdir -p ${LINUX_SERVICE_CONFIG_ROOT} ${LINUX_SERVICE_DATA_ROOT} ${LINUX_SERVICE_LOG_ROOT}`,
     `chown root:root ${LINUX_NATIVE_INSTALL_ROOT} ${LINUX_NATIVE_INSTALL_ROOT}/bin ${LINUX_NATIVE_BIN_DIR}/${plan.package.binaryName} ${LINUX_NATIVE_BIN_DIR}/${plan.package.installerBinaryName}`,
     `chmod 0755 ${LINUX_NATIVE_INSTALL_ROOT} ${LINUX_NATIVE_INSTALL_ROOT}/bin ${LINUX_NATIVE_BIN_DIR}/${plan.package.binaryName} ${LINUX_NATIVE_BIN_DIR}/${plan.package.installerBinaryName}`,
-    'chown root:sdkwork /etc/clawrouter',
-    'chmod 0750 /etc/clawrouter',
-    'if [ -f /etc/clawrouter/.env.release.example ]; then',
-    '  chown root:sdkwork /etc/clawrouter/.env.release.example || true',
-    '  chmod 0640 /etc/clawrouter/.env.release.example || true',
+    `chown root:sdkwork ${LINUX_SERVICE_CONFIG_ROOT}`,
+    `chmod 0750 ${LINUX_SERVICE_CONFIG_ROOT}`,
+    `if [ -f ${LINUX_SERVICE_CONFIG_ROOT}/.env.release.example ]; then`,
+    `  chown root:sdkwork ${LINUX_SERVICE_CONFIG_ROOT}/.env.release.example || true`,
+    `  chmod 0640 ${LINUX_SERVICE_CONFIG_ROOT}/.env.release.example || true`,
     'fi',
-    'if [ -f /etc/clawrouter/clawrouter.toml.example ]; then',
-    '  chown root:sdkwork /etc/clawrouter/clawrouter.toml.example || true',
-    '  chmod 0640 /etc/clawrouter/clawrouter.toml.example || true',
+    `if [ -f ${LINUX_SERVICE_CONFIG_ROOT}/clawrouter.toml.example ]; then`,
+    `  chown root:sdkwork ${LINUX_SERVICE_CONFIG_ROOT}/clawrouter.toml.example || true`,
+    `  chmod 0640 ${LINUX_SERVICE_CONFIG_ROOT}/clawrouter.toml.example || true`,
     'fi',
-    'chown -R sdkwork:sdkwork /var/lib/clawrouter /var/log/clawrouter',
-    'chmod 0750 /var/lib/clawrouter /var/log/clawrouter',
-    'if [ ! -f /etc/clawrouter/clawrouter.toml ] && [ -f /etc/clawrouter/clawrouter.toml.example ]; then',
-    '  cp /etc/clawrouter/clawrouter.toml.example /etc/clawrouter/clawrouter.toml',
+    `chown -R sdkwork:sdkwork ${LINUX_SERVICE_DATA_ROOT} ${LINUX_SERVICE_LOG_ROOT}`,
+    `chmod 0750 ${LINUX_SERVICE_DATA_ROOT} ${LINUX_SERVICE_LOG_ROOT}`,
+    `if [ ! -f ${LINUX_SERVICE_CONFIG_ROOT}/clawrouter.toml ] && [ -f ${LINUX_SERVICE_CONFIG_ROOT}/clawrouter.toml.example ]; then`,
+    `  cp ${LINUX_SERVICE_CONFIG_ROOT}/clawrouter.toml.example ${LINUX_SERVICE_CONFIG_ROOT}/clawrouter.toml`,
     'fi',
-    'if [ -f /etc/clawrouter/clawrouter.toml ]; then',
-    '  chown root:sdkwork /etc/clawrouter/clawrouter.toml || true',
-    '  chmod 0640 /etc/clawrouter/clawrouter.toml || true',
+    `if [ -f ${LINUX_SERVICE_CONFIG_ROOT}/clawrouter.toml ]; then`,
+    `  chown root:sdkwork ${LINUX_SERVICE_CONFIG_ROOT}/clawrouter.toml || true`,
+    `  chmod 0640 ${LINUX_SERVICE_CONFIG_ROOT}/clawrouter.toml || true`,
     'fi',
-    'if [ ! -f /etc/clawrouter/clawrouter.env ]; then',
-    '  cat > /etc/clawrouter/clawrouter.env <<\'EOF\'',
+    `if [ ! -f ${LINUX_SERVICE_CONFIG_ROOT}/clawrouter.env ]; then`,
+    `  cat > ${LINUX_SERVICE_CONFIG_ROOT}/clawrouter.env <<'EOF'`,
     '# ClawRouter service environment.',
     '# Created by the Debian package for service process overrides.',
-    '# Keep secrets in /etc/clawrouter/*.secret or protected TOML, not in PORTAL_PUBLIC_* values.',
-    '# Runtime defaults live in /etc/clawrouter/clawrouter.toml; use this file only for explicit process overrides.',
+    `# Keep secrets in ${LINUX_SERVICE_CONFIG_ROOT}/*.secret or protected TOML, not in PORTAL_PUBLIC_* values.`,
+    `# Runtime defaults live in ${LINUX_SERVICE_CONFIG_ROOT}/clawrouter.toml; use this file only for explicit process overrides.`,
     'SDKWORK_CLAW_DEPLOYMENT_MODE=server',
-    'SDKWORK_CLAW_CONFIG_FILE=/etc/clawrouter/clawrouter.toml',
+    `SDKWORK_CLAW_CONFIG_FILE=${LINUX_SERVICE_CONFIG_ROOT}/clawrouter.toml`,
     'EOF',
     'fi',
-    'if [ -f /etc/clawrouter/clawrouter.env ]; then',
-    '  chown root:sdkwork /etc/clawrouter/clawrouter.env || true',
-    '  chmod 0640 /etc/clawrouter/clawrouter.env || true',
+    `if [ -f ${LINUX_SERVICE_CONFIG_ROOT}/clawrouter.env ]; then`,
+    `  chown root:sdkwork ${LINUX_SERVICE_CONFIG_ROOT}/clawrouter.env || true`,
+    `  chmod 0640 ${LINUX_SERVICE_CONFIG_ROOT}/clawrouter.env || true`,
     'fi',
-    'if [ ! -f /etc/clawrouter/database.secret ]; then',
-    '  printf "%s\\n" "change-me" > /etc/clawrouter/database.secret',
+    `if [ ! -f ${LINUX_SERVICE_CONFIG_ROOT}/database.secret ]; then`,
+    `  printf "%s\\n" "change-me" > ${LINUX_SERVICE_CONFIG_ROOT}/database.secret`,
     'fi',
-    'if [ -f /etc/clawrouter/database.secret ]; then',
-    '  chown root:sdkwork /etc/clawrouter/database.secret || true',
-    '  chmod 0640 /etc/clawrouter/database.secret || true',
+    `if [ -f ${LINUX_SERVICE_CONFIG_ROOT}/database.secret ]; then`,
+    `  chown root:sdkwork ${LINUX_SERVICE_CONFIG_ROOT}/database.secret || true`,
+    `  chmod 0640 ${LINUX_SERVICE_CONFIG_ROOT}/database.secret || true`,
     'fi',
-    'if [ ! -f /etc/clawrouter/redis.secret ]; then',
-    '  : > /etc/clawrouter/redis.secret',
+    `if [ ! -f ${LINUX_SERVICE_CONFIG_ROOT}/redis.secret ]; then`,
+    `  : > ${LINUX_SERVICE_CONFIG_ROOT}/redis.secret`,
     'fi',
-    'if [ -f /etc/clawrouter/redis.secret ]; then',
-    '  chown root:sdkwork /etc/clawrouter/redis.secret || true',
-    '  chmod 0640 /etc/clawrouter/redis.secret || true',
+    `if [ -f ${LINUX_SERVICE_CONFIG_ROOT}/redis.secret ]; then`,
+    `  chown root:sdkwork ${LINUX_SERVICE_CONFIG_ROOT}/redis.secret || true`,
+    `  chmod 0640 ${LINUX_SERVICE_CONFIG_ROOT}/redis.secret || true`,
     'fi',
     'if command -v systemctl >/dev/null 2>&1; then',
     '  systemctl daemon-reload || true',
@@ -751,16 +766,16 @@ function debianInstallSummaryLines(plan) {
     'ClawRouter installation summary',
     '-------------------------------',
     `Package: ${plan.package.id}`,
-    'Runtime TOML: /etc/clawrouter/clawrouter.toml',
-    'Service environment: /etc/clawrouter/clawrouter.env',
-    'PostgreSQL password file: /etc/clawrouter/database.secret',
-    'Redis password file: /etc/clawrouter/redis.secret',
+    `Runtime TOML: ${LINUX_SERVICE_CONFIG_ROOT}/clawrouter.toml`,
+    `Service environment: ${LINUX_SERVICE_CONFIG_ROOT}/clawrouter.env`,
+    `PostgreSQL password file: ${LINUX_SERVICE_CONFIG_ROOT}/database.secret`,
+    `Redis password file: ${LINUX_SERVICE_CONFIG_ROOT}/redis.secret`,
     'Systemd service: clawrouter.service',
     'Redis is enabled and required by default for server deployments; configure [redis] before first startup.',
     '',
     'Before first start:',
-    '  sudo editor /etc/clawrouter/clawrouter.toml',
-    '  sudo editor /etc/clawrouter/database.secret',
+    `  sudo editor ${LINUX_SERVICE_CONFIG_ROOT}/clawrouter.toml`,
+    `  sudo editor ${LINUX_SERVICE_CONFIG_ROOT}/database.secret`,
     '  sudo systemctl start clawrouter',
     '  sudo systemctl status clawrouter --no-pager',
     '  sudo journalctl -u clawrouter -f',
@@ -836,10 +851,10 @@ function parentDirectoriesForTarPath(relativePath) {
 }
 
 function debianDirectoryMode(directory) {
-  if (directory === './etc/clawrouter') {
+  if (directory === `.${LINUX_SERVICE_CONFIG_ROOT}`) {
     return 0o750;
   }
-  if (directory === './var/lib/clawrouter' || directory === './var/log/clawrouter') {
+  if (directory === `.${LINUX_SERVICE_DATA_ROOT}` || directory === `.${LINUX_SERVICE_LOG_ROOT}`) {
     return 0o750;
   }
   return 0o755;
@@ -896,8 +911,8 @@ function debianInstallPathForArchivePath(plan, archivePath) {
   }
   if (normalized === RUNTIME_CONFIG_TEMPLATE_PATH) {
     return plan.package.deploymentMode === 'service'
-      ? '/etc/clawrouter/clawrouter.toml.example'
-      : '/usr/share/clawrouter/config/clawrouter.toml.example';
+      ? `${LINUX_SERVICE_CONFIG_ROOT}/clawrouter.toml.example`
+      : `${LINUX_NATIVE_SHARED_ROOT}/config/clawrouter.toml.example`;
   }
   if (normalized === 'service/linux/clawrouter.service') {
     return plan.package.deploymentMode === 'service'
@@ -905,13 +920,13 @@ function debianInstallPathForArchivePath(plan, archivePath) {
       : null;
   }
   if (normalized === 'INSTALL.md') {
-    return '/usr/share/doc/clawrouter/INSTALL.md';
+    return `${LINUX_NATIVE_SHARED_DOC_ROOT}/INSTALL.md`;
   }
   if (normalized === PACKAGE_MANIFEST_FILE) {
-    return '/usr/share/clawrouter/install-manifest.json';
+    return `${LINUX_NATIVE_SHARED_ROOT}/install-manifest.json`;
   }
   if (normalized.startsWith('desktop/')) {
-    return `/usr/share/clawrouter/${normalized}`;
+    return `${LINUX_NATIVE_SHARED_ROOT}/${normalized}`;
   }
   return `${LINUX_NATIVE_INSTALL_ROOT}/${normalized}`;
 }
@@ -954,20 +969,20 @@ async function buildMacosPkg(plan, fileEntries) {
 function macosInstallPathForArchivePath(plan, archivePath) {
   const normalized = String(archivePath).replaceAll('\\', '/');
   const runtimeRoot = plan.package.deploymentMode === 'service'
-    ? '/Library/Application Support/SdkWork/ClawRouter'
+    ? MACOS_SERVICE_ROOT
     : POSIX_INSTALL_ROOT;
   if (normalized.startsWith('bin/') || normalized.startsWith('portal/')) {
     return `${runtimeRoot}/${normalized}`;
   }
   if (normalized === '.env.release.example') {
     return plan.package.deploymentMode === 'service'
-      ? '/Library/Application Support/SdkWork/ClawRouter/.env.release.example'
+      ? `${MACOS_SERVICE_ROOT}/.env.release.example`
       : null;
   }
   if (normalized === RUNTIME_CONFIG_TEMPLATE_PATH) {
     return plan.package.deploymentMode === 'service'
-      ? '/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml.example'
-      : '/usr/local/share/clawrouter/config/clawrouter.toml.example';
+      ? `${MACOS_SERVICE_ROOT}/clawrouter.toml.example`
+      : `${MACOS_NATIVE_SHARED_ROOT}/config/clawrouter.toml.example`;
   }
   if (normalized === 'service/macos/com.sdkwork.clawrouter.plist') {
     return plan.package.deploymentMode === 'service'
@@ -975,45 +990,45 @@ function macosInstallPathForArchivePath(plan, archivePath) {
       : null;
   }
   if (normalized === 'INSTALL.md') {
-    return '/usr/local/share/clawrouter/INSTALL.md';
+    return `${MACOS_NATIVE_SHARED_DOC_ROOT}/INSTALL.md`;
   }
   if (normalized === PACKAGE_MANIFEST_FILE) {
-    return '/usr/local/share/clawrouter/install-manifest.json';
+    return `${MACOS_NATIVE_SHARED_ROOT}/install-manifest.json`;
   }
   if (normalized.startsWith('desktop/')) {
-    return `/usr/local/share/clawrouter/${normalized}`;
+    return `${MACOS_NATIVE_SHARED_ROOT}/${normalized}`;
   }
   return `${runtimeRoot}/${normalized}`;
 }
 
 function createMacosPostinstall(plan) {
   const runtimeRoot = plan.package.deploymentMode === 'service'
-    ? '/Library/Application Support/SdkWork/ClawRouter'
+    ? MACOS_SERVICE_ROOT
     : POSIX_INSTALL_ROOT;
   const serviceSetup = plan.package.deploymentMode === 'service'
     ? [
-      'mkdir -p "/Library/Application Support/SdkWork/ClawRouter" /var/log/clawrouter',
-      'mkdir -p "/Library/Application Support/SdkWork/ClawRouter/bin" "/Library/Application Support/SdkWork/ClawRouter/service/macos"',
-      'chown root:wheel /var/log/clawrouter || true',
-      'chmod 0750 /var/log/clawrouter || true',
-      'chown root:wheel "/Library/Application Support/SdkWork/ClawRouter" || true',
-      'chmod 0750 "/Library/Application Support/SdkWork/ClawRouter" || true',
-      'chown root:wheel "/Library/Application Support/SdkWork/ClawRouter/bin" "/Library/Application Support/SdkWork/ClawRouter/service" "/Library/Application Support/SdkWork/ClawRouter/service/macos" || true',
-      'chmod 0755 "/Library/Application Support/SdkWork/ClawRouter/bin" "/Library/Application Support/SdkWork/ClawRouter/service" "/Library/Application Support/SdkWork/ClawRouter/service/macos" || true',
-      'if [ -f "/Library/Application Support/SdkWork/ClawRouter/.env.release.example" ]; then',
-      '  chown root:wheel "/Library/Application Support/SdkWork/ClawRouter/.env.release.example" || true',
-      '  chmod 0640 "/Library/Application Support/SdkWork/ClawRouter/.env.release.example" || true',
+      `mkdir -p "${MACOS_SERVICE_ROOT}" ${LINUX_SERVICE_LOG_ROOT}`,
+      `mkdir -p "${MACOS_SERVICE_ROOT}/bin" "${MACOS_SERVICE_ROOT}/service/macos"`,
+      `chown root:wheel ${LINUX_SERVICE_LOG_ROOT} || true`,
+      `chmod 0750 ${LINUX_SERVICE_LOG_ROOT} || true`,
+      `chown root:wheel "${MACOS_SERVICE_ROOT}" || true`,
+      `chmod 0750 "${MACOS_SERVICE_ROOT}" || true`,
+      `chown root:wheel "${MACOS_SERVICE_ROOT}/bin" "${MACOS_SERVICE_ROOT}/service" "${MACOS_SERVICE_ROOT}/service/macos" || true`,
+      `chmod 0755 "${MACOS_SERVICE_ROOT}/bin" "${MACOS_SERVICE_ROOT}/service" "${MACOS_SERVICE_ROOT}/service/macos" || true`,
+      `if [ -f "${MACOS_SERVICE_ROOT}/.env.release.example" ]; then`,
+      `  chown root:wheel "${MACOS_SERVICE_ROOT}/.env.release.example" || true`,
+      `  chmod 0640 "${MACOS_SERVICE_ROOT}/.env.release.example" || true`,
       'fi',
-      'if [ -f "/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml.example" ]; then',
-      '  chown root:wheel "/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml.example" || true',
-      '  chmod 0640 "/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml.example" || true',
+      `if [ -f "${MACOS_SERVICE_ROOT}/clawrouter.toml.example" ]; then`,
+      `  chown root:wheel "${MACOS_SERVICE_ROOT}/clawrouter.toml.example" || true`,
+      `  chmod 0640 "${MACOS_SERVICE_ROOT}/clawrouter.toml.example" || true`,
       'fi',
-      'if [ ! -f "/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml" ] && [ -f "/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml.example" ]; then',
-      '  cp "/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml.example" "/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml"',
+      `if [ ! -f "${MACOS_SERVICE_ROOT}/clawrouter.toml" ] && [ -f "${MACOS_SERVICE_ROOT}/clawrouter.toml.example" ]; then`,
+      `  cp "${MACOS_SERVICE_ROOT}/clawrouter.toml.example" "${MACOS_SERVICE_ROOT}/clawrouter.toml"`,
       'fi',
-      'if [ -f "/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml" ]; then',
-      '  chown root:wheel "/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml" || true',
-      '  chmod 0640 "/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml" || true',
+      `if [ -f "${MACOS_SERVICE_ROOT}/clawrouter.toml" ]; then`,
+      `  chown root:wheel "${MACOS_SERVICE_ROOT}/clawrouter.toml" || true`,
+      `  chmod 0640 "${MACOS_SERVICE_ROOT}/clawrouter.toml" || true`,
       'fi',
       'if [ -f /Library/LaunchDaemons/com.sdkwork.clawrouter.plist ]; then',
       '  chown root:wheel /Library/LaunchDaemons/com.sdkwork.clawrouter.plist || true',
@@ -1021,8 +1036,8 @@ function createMacosPostinstall(plan) {
       'fi',
     ]
     : [
-      'mkdir -p /usr/local/share/clawrouter/config',
-      'echo "ClawRouter desktop config is user-scoped. Run /opt/clawrouter/bin/clawrouterctl ensure as the target user before first start."',
+      `mkdir -p ${MACOS_NATIVE_SHARED_ROOT}/config`,
+      `echo "ClawRouter desktop config is user-scoped. Run ${POSIX_INSTALL_ROOT}/bin/clawrouterctl ensure as the target user before first start."`,
     ];
   return [
     '#!/bin/sh',
@@ -1066,10 +1081,10 @@ async function buildWindowsMsi(plan, fileEntries) {
 function windowsPayloadPathForArchivePath(plan, archivePath) {
   const normalized = String(archivePath).replaceAll('\\', '/');
   if (normalized === '.env.release.example') {
-    return 'ProgramData/SdkWork/ClawRouter/.env.release.example';
+    return 'ProgramData/sdkwork/router/.env.release.example';
   }
   if (normalized === RUNTIME_CONFIG_TEMPLATE_PATH) {
-    return 'ProgramData/SdkWork/ClawRouter/clawrouter.toml.example';
+    return 'ProgramData/sdkwork/router/clawrouter.toml.example';
   }
   if (normalized === PACKAGE_MANIFEST_FILE) {
     return 'install-manifest.json';
@@ -1079,9 +1094,9 @@ function windowsPayloadPathForArchivePath(plan, archivePath) {
 
 function createWixSource(plan, payloadRoot, fileEntries) {
   const componentRefs = [];
-  const programFilesTree = new DirectoryNode('INSTALLFOLDER', 'ClawRouter');
-  const programDataTree = new DirectoryNode('COMMONAPPDATASDKWORK', 'SdkWork');
-  const appDataTree = new DirectoryNode('APPDATASDKWORK', 'SdkWork');
+  const programFilesTree = new DirectoryNode('PROGRAMFILESSDKWORK', 'sdkwork');
+  const programDataTree = new DirectoryNode('COMMONAPPDATASDKWORK', 'sdkwork');
+  const appDataTree = new DirectoryNode('APPDATASDKWORK', 'sdkwork');
   for (const entry of fileEntries) {
     const payloadPath = windowsPayloadPathForArchivePath(plan, entry.relativePath);
     if (!payloadPath) {
@@ -1139,18 +1154,18 @@ function windowsWixDestinationForPayloadPath(payloadPath, trees) {
   if (parts[0] === 'ProgramData') {
     return {
       tree: trees.programDataTree,
-      parts: stripWindowsRootDirectoryName(parts.slice(1), 'SdkWork'),
+      parts: stripWindowsRootDirectoryName(parts.slice(1), 'sdkwork'),
     };
   }
   if (parts[0] === 'AppData') {
     return {
       tree: trees.appDataTree,
-      parts: stripWindowsRootDirectoryName(parts.slice(1), 'SdkWork'),
+      parts: stripWindowsRootDirectoryName(parts.slice(1), 'sdkwork'),
     };
   }
   return {
     tree: trees.programFilesTree,
-    parts,
+    parts: ['router', ...parts],
   };
 }
 

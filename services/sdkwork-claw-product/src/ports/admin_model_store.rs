@@ -231,6 +231,7 @@ pub struct CreateAdminModelVendorCommand {
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct AdminAiModelRegionPriceCommand {
     pub region_code: String,
+    pub currency: String,
     pub price_in: String,
     pub price_out: String,
     pub cache_read_price: Option<String>,

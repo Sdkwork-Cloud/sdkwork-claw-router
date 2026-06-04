@@ -707,6 +707,7 @@ fn sdk_generator_type(sdk_type: &str) -> Result<SdkType, String> {
         "app" => Ok(SdkType::App),
         "backend" => Ok(SdkType::Backend),
         "ai" => Ok(SdkType::Ai),
+        "cloud-services" => Ok(SdkType::Custom),
         "custom" => Ok(SdkType::Custom),
         _ => Err(format!("config.sdkType {sdk_type} is not supported")),
     }

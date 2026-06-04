@@ -5,7 +5,21 @@ import { existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
 import { gunzipSync } from 'node:zlib';
-import { createInstallPackagePlan } from './plan-claw-router-install-packages.mjs';
+import {
+  LINUX_SERVICE_CONFIG_ROOT,
+  LINUX_SERVICE_DATA_ROOT,
+  LINUX_SERVICE_LOG_ROOT,
+  LINUX_SERVICE_RUNTIME_ROOT,
+  LINUX_SHARED_ROOT,
+  MACOS_SHARED_ROOT,
+  MACOS_SERVICE_ROOT,
+  POSIX_INSTALL_ROOT,
+  USER_PRIVATE_ROUTER_ROOT,
+  WINDOWS_INSTALL_ROOT,
+  WINDOWS_SYSTEM_ROOT,
+  WINDOWS_USER_ROOT,
+  createInstallPackagePlan,
+} from './plan-claw-router-install-packages.mjs';
 
 function printHelp() {
   console.log(`Usage: node scripts/validate-claw-router-install-artifacts.mjs --package-id <id> --artifact-path <path> [options]
@@ -189,69 +203,71 @@ function validateDebianArtifact(packageItem, artifactBytes) {
   }
   const postinst = controlEntries.get('./postinst')?.data.toString('utf8') ?? '';
   if (packageItem.deploymentMode === 'service') {
-    requireText(postinst, 'chown root:root /usr/lib/clawrouter /usr/lib/clawrouter/bin /usr/bin/clawrouter /usr/bin/clawrouterctl', 'postinst runtime binary ownership', issues);
-    requireText(postinst, 'chmod 0755 /usr/lib/clawrouter /usr/lib/clawrouter/bin /usr/bin/clawrouter /usr/bin/clawrouterctl', 'postinst runtime binary modes', issues);
-    requireText(postinst, 'chmod 0750 /etc/clawrouter', 'postinst config directory mode', issues);
-    requireText(postinst, 'chmod 0640 /etc/clawrouter/.env.release.example', 'postinst release env template mode', issues);
-    requireText(postinst, 'chmod 0640 /etc/clawrouter/clawrouter.toml.example', 'postinst config template mode', issues);
-    requireText(postinst, 'chmod 0750 /var/lib/clawrouter /var/log/clawrouter', 'postinst state/log directory modes', issues);
+    requireText(postinst, `chown root:root ${LINUX_SERVICE_RUNTIME_ROOT} ${LINUX_SERVICE_RUNTIME_ROOT}/bin /usr/bin/clawrouter /usr/bin/clawrouterctl`, 'postinst runtime binary ownership', issues);
+    requireText(postinst, `chmod 0755 ${LINUX_SERVICE_RUNTIME_ROOT} ${LINUX_SERVICE_RUNTIME_ROOT}/bin /usr/bin/clawrouter /usr/bin/clawrouterctl`, 'postinst runtime binary modes', issues);
+    requireText(postinst, `chmod 0750 ${LINUX_SERVICE_CONFIG_ROOT}`, 'postinst config directory mode', issues);
+    requireText(postinst, `chmod 0640 ${LINUX_SERVICE_CONFIG_ROOT}/.env.release.example`, 'postinst release env template mode', issues);
+    requireText(postinst, `chmod 0640 ${LINUX_SERVICE_CONFIG_ROOT}/clawrouter.toml.example`, 'postinst config template mode', issues);
+    requireText(postinst, `chmod 0750 ${LINUX_SERVICE_DATA_ROOT} ${LINUX_SERVICE_LOG_ROOT}`, 'postinst state/log directory modes', issues);
   } else {
-    requireText(postinst, 'chmod 0755 /usr/lib/clawrouter /usr/lib/clawrouter/bin /usr/bin/clawrouter /usr/bin/clawrouterctl', 'desktop postinst binary modes', issues);
-    if (postinst.includes('/etc/clawrouter/database.secret') || postinst.includes('systemctl enable clawrouter.service')) {
+    requireText(postinst, `chmod 0755 ${LINUX_SERVICE_RUNTIME_ROOT} ${LINUX_SERVICE_RUNTIME_ROOT}/bin /usr/bin/clawrouter /usr/bin/clawrouterctl`, 'desktop postinst binary modes', issues);
+    if (postinst.includes(`${LINUX_SERVICE_CONFIG_ROOT}/database.secret`) || postinst.includes('systemctl enable clawrouter.service')) {
       issues.push('desktop postinst must not configure server secrets or systemd service');
     }
   }
 
   const dataEntries = readTarEntries(gunzipSync(arEntries.get('data.tar.gz')));
   const dataEntryNames = [...dataEntries.keys()];
-  if (dataEntryNames.some((entry) => entry.startsWith('./opt/clawrouter'))) {
-    issues.push('Linux native .deb payload must not install files under /opt/clawrouter');
+  const legacyOptRoot = `./${['opt', 'clawrouter'].join('/')}`;
+  if (dataEntryNames.some((entry) => entry.startsWith(legacyOptRoot))) {
+    issues.push('Linux native .deb payload must not install files under the legacy opt root');
   }
   requireTarEntry(dataEntries, './usr/bin', 'directory', 0o755, issues);
   requireTarEntry(dataEntries, './usr/bin/clawrouter', 'file', 0o755, issues);
   requireTarEntry(dataEntries, './usr/bin/clawrouterctl', 'file', 0o755, issues);
-  requireTarEntry(dataEntries, './usr/lib/clawrouter', 'directory', 0o755, issues);
-  requireTarEntry(dataEntries, './usr/lib/clawrouter/bin', 'directory', 0o755, issues);
-  requireTarEntry(dataEntries, './usr/lib/clawrouter/bin/clawrouter', 'file', 0o755, issues);
-  requireTarEntry(dataEntries, './usr/lib/clawrouter/bin/clawrouterctl', 'file', 0o755, issues);
-  requireTarEntry(dataEntries, './usr/lib/clawrouter/portal/dist/index.html', 'file', 0o644, issues);
-  requireTarEntry(dataEntries, './usr/share/clawrouter/install-manifest.json', 'file', 0o644, issues);
+  requireTarEntry(dataEntries, `.${LINUX_SERVICE_RUNTIME_ROOT}`, 'directory', 0o755, issues);
+  requireTarEntry(dataEntries, `.${LINUX_SERVICE_RUNTIME_ROOT}/bin`, 'directory', 0o755, issues);
+  requireTarEntry(dataEntries, `.${LINUX_SERVICE_RUNTIME_ROOT}/bin/clawrouter`, 'file', 0o755, issues);
+  requireTarEntry(dataEntries, `.${LINUX_SERVICE_RUNTIME_ROOT}/bin/clawrouterctl`, 'file', 0o755, issues);
+  requireTarEntry(dataEntries, `.${LINUX_SERVICE_RUNTIME_ROOT}/portal/dist/index.html`, 'file', 0o644, issues);
+  const linuxSharedArchiveRoot = `.${LINUX_SHARED_ROOT}`;
+  requireTarEntry(dataEntries, `${linuxSharedArchiveRoot}/install-manifest.json`, 'file', 0o644, issues);
   requireParentBeforeChild(dataEntryNames, './usr/bin', './usr/bin/clawrouter', issues);
-  requireParentBeforeChild(dataEntryNames, './usr/lib/clawrouter', './usr/lib/clawrouter/bin/clawrouter', issues);
-  if (dataEntries.has('./opt/clawrouter/.env.release.example') || dataEntries.has('./usr/lib/clawrouter/.env.release.example')) {
-    issues.push('release env template must not be installed under /opt/clawrouter or /usr/lib/clawrouter');
+  requireParentBeforeChild(dataEntryNames, `.${LINUX_SERVICE_RUNTIME_ROOT}`, `.${LINUX_SERVICE_RUNTIME_ROOT}/bin/clawrouter`, issues);
+  if (dataEntries.has(`.${POSIX_INSTALL_ROOT}/.env.release.example`) || dataEntries.has(`.${LINUX_SERVICE_RUNTIME_ROOT}/.env.release.example`)) {
+    issues.push(`release env template must not be installed under ${POSIX_INSTALL_ROOT} or ${LINUX_SERVICE_RUNTIME_ROOT}`);
   }
 
   if (packageItem.deploymentMode === 'service') {
-    requireTarEntry(dataEntries, './etc/clawrouter', 'directory', 0o750, issues);
-    requireTarEntry(dataEntries, './etc/clawrouter/.env.release.example', 'file', 0o640, issues);
-    requireTarEntry(dataEntries, './etc/clawrouter/clawrouter.toml.example', 'file', 0o640, issues);
+    requireTarEntry(dataEntries, `.${LINUX_SERVICE_CONFIG_ROOT}`, 'directory', 0o750, issues);
+    requireTarEntry(dataEntries, `.${LINUX_SERVICE_CONFIG_ROOT}/.env.release.example`, 'file', 0o640, issues);
+    requireTarEntry(dataEntries, `.${LINUX_SERVICE_CONFIG_ROOT}/clawrouter.toml.example`, 'file', 0o640, issues);
     requireTarEntry(dataEntries, './lib/systemd/system/clawrouter.service', 'file', 0o644, issues);
-    requireParentBeforeChild(dataEntryNames, './etc/clawrouter', './etc/clawrouter/.env.release.example', issues);
-    requireParentBeforeChild(dataEntryNames, './etc/clawrouter', './etc/clawrouter/clawrouter.toml.example', issues);
+    requireParentBeforeChild(dataEntryNames, `.${LINUX_SERVICE_CONFIG_ROOT}`, `.${LINUX_SERVICE_CONFIG_ROOT}/.env.release.example`, issues);
+    requireParentBeforeChild(dataEntryNames, `.${LINUX_SERVICE_CONFIG_ROOT}`, `.${LINUX_SERVICE_CONFIG_ROOT}/clawrouter.toml.example`, issues);
     const systemdUnit = dataEntries.get('./lib/systemd/system/clawrouter.service')?.data.toString('utf8') ?? '';
-    requireText(systemdUnit, 'WorkingDirectory=/usr/lib/clawrouter', 'systemd working directory', issues);
+    requireText(systemdUnit, `WorkingDirectory=${LINUX_SERVICE_RUNTIME_ROOT}`, 'systemd working directory', issues);
     requireText(systemdUnit, 'ExecStartPre=/usr/bin/clawrouterctl ensure', 'systemd ensure command', issues);
     requireText(systemdUnit, 'ExecStart=/usr/bin/clawrouter', 'systemd start command', issues);
     requireText(systemdUnit, 'UMask=0027', 'systemd umask', issues);
     requireText(systemdUnit, 'StateDirectoryMode=0750', 'systemd state directory mode', issues);
     requireText(systemdUnit, 'LogsDirectoryMode=0750', 'systemd logs directory mode', issues);
     requireText(systemdUnit, 'ConfigurationDirectoryMode=0750', 'systemd config directory mode', issues);
-    requireText(systemdUnit, 'ReadWritePaths=/var/lib/clawrouter /var/log/clawrouter', 'systemd writable paths', issues);
-    requireText(systemdUnit, 'ReadOnlyPaths=/usr/lib/clawrouter /etc/clawrouter', 'systemd readonly paths', issues);
+    requireText(systemdUnit, `ReadWritePaths=${LINUX_SERVICE_DATA_ROOT} ${LINUX_SERVICE_LOG_ROOT}`, 'systemd writable paths', issues);
+    requireText(systemdUnit, `ReadOnlyPaths=${LINUX_SERVICE_RUNTIME_ROOT} ${LINUX_SERVICE_CONFIG_ROOT}`, 'systemd readonly paths', issues);
   } else {
-    requireTarEntry(dataEntries, './usr/share/clawrouter/config', 'directory', 0o755, issues);
-    requireTarEntry(dataEntries, './usr/share/clawrouter/config/clawrouter.toml.example', 'file', 0o644, issues);
-    requireParentBeforeChild(dataEntryNames, './usr/share/clawrouter/config', './usr/share/clawrouter/config/clawrouter.toml.example', issues);
+    requireTarEntry(dataEntries, `${linuxSharedArchiveRoot}/config`, 'directory', 0o755, issues);
+    requireTarEntry(dataEntries, `${linuxSharedArchiveRoot}/config/clawrouter.toml.example`, 'file', 0o644, issues);
+    requireParentBeforeChild(dataEntryNames, `${linuxSharedArchiveRoot}/config`, `${linuxSharedArchiveRoot}/config/clawrouter.toml.example`, issues);
     if ([...dataEntries.keys()].some((entry) => entry.endsWith('/.env.release.example'))) {
       issues.push('Linux desktop native package must not install .env.release.example into system payload');
     }
-    if (dataEntries.has('./etc/clawrouter/clawrouter.toml.example')) {
-      issues.push('Linux desktop native package must keep runtime config template under /usr/share/clawrouter/config');
+    if (dataEntries.has(`.${LINUX_SERVICE_CONFIG_ROOT}/clawrouter.toml.example`)) {
+      issues.push(`Linux desktop native package must keep runtime config template under ${LINUX_SHARED_ROOT}/config`);
     }
   }
 
-  const manifestText = dataEntries.get('./usr/share/clawrouter/install-manifest.json')?.data.toString('utf8') ?? '';
+  const manifestText = dataEntries.get(`${linuxSharedArchiveRoot}/install-manifest.json`)?.data.toString('utf8') ?? '';
   if (manifestText) {
     try {
       const manifest = JSON.parse(manifestText);
@@ -276,20 +292,20 @@ function validateNativeManifest(packageItem, manifest) {
   }
   requireManifestPath(nativeInstall, 'files.binary', '/usr/bin/clawrouter', issues);
   requireManifestPath(nativeInstall, 'files.installer', '/usr/bin/clawrouterctl', issues);
-  requireManifestPath(nativeInstall, 'files.privateBinary', '/usr/lib/clawrouter/bin/clawrouter', issues);
-  requireManifestPath(nativeInstall, 'files.portal', '/usr/lib/clawrouter/portal/dist', issues);
+  requireManifestPath(nativeInstall, 'files.privateBinary', `${LINUX_SERVICE_RUNTIME_ROOT}/bin/clawrouter`, issues);
+  requireManifestPath(nativeInstall, 'files.portal', `${LINUX_SERVICE_RUNTIME_ROOT}/portal/dist`, issues);
   if (packageItem.deploymentMode === 'service') {
-    requireManifestPath(nativeInstall, 'installRoot', '/usr/lib/clawrouter', issues);
-    requireManifestPath(nativeInstall, 'files.releaseEnvTemplate', '/etc/clawrouter/.env.release.example', issues);
-    requireManifestPath(nativeInstall, 'files.runtimeConfigTemplate', '/etc/clawrouter/clawrouter.toml.example', issues);
-    requirePermission(nativeInstall, '/etc/clawrouter', 'root', 'sdkwork', '0750', issues);
-    requirePermission(nativeInstall, '/etc/clawrouter/.env.release.example', 'root', 'sdkwork', '0640', issues);
-    requirePermission(nativeInstall, '/var/lib/clawrouter', 'sdkwork', 'sdkwork', '0750', issues);
-    requirePermission(nativeInstall, '/var/log/clawrouter', 'sdkwork', 'sdkwork', '0750', issues);
+    requireManifestPath(nativeInstall, 'installRoot', LINUX_SERVICE_RUNTIME_ROOT, issues);
+    requireManifestPath(nativeInstall, 'files.releaseEnvTemplate', `${LINUX_SERVICE_CONFIG_ROOT}/.env.release.example`, issues);
+    requireManifestPath(nativeInstall, 'files.runtimeConfigTemplate', `${LINUX_SERVICE_CONFIG_ROOT}/clawrouter.toml.example`, issues);
+    requirePermission(nativeInstall, LINUX_SERVICE_CONFIG_ROOT, 'root', 'sdkwork', '0750', issues);
+    requirePermission(nativeInstall, `${LINUX_SERVICE_CONFIG_ROOT}/.env.release.example`, 'root', 'sdkwork', '0640', issues);
+    requirePermission(nativeInstall, LINUX_SERVICE_DATA_ROOT, 'sdkwork', 'sdkwork', '0750', issues);
+    requirePermission(nativeInstall, LINUX_SERVICE_LOG_ROOT, 'sdkwork', 'sdkwork', '0750', issues);
   } else {
-    requireManifestPath(nativeInstall, 'files.releaseEnvTemplate', '${XDG_CONFIG_HOME:-~/.config}/clawrouter/.env.release.example', issues);
-    requireManifestPath(nativeInstall, 'files.runtimeConfigTemplate', '/usr/share/clawrouter/config/clawrouter.toml.example', issues);
-    requirePermission(nativeInstall, '/usr/lib/clawrouter', 'root', 'root', '0755', issues);
+    requireManifestPath(nativeInstall, 'files.releaseEnvTemplate', `${USER_PRIVATE_ROUTER_ROOT}/config/.env.release.example`, issues);
+    requireManifestPath(nativeInstall, 'files.runtimeConfigTemplate', `${LINUX_SHARED_ROOT}/config/clawrouter.toml.example`, issues);
+    requirePermission(nativeInstall, LINUX_SERVICE_RUNTIME_ROOT, 'root', 'root', '0755', issues);
     requirePermission(nativeInstall, '/usr/bin/clawrouter', 'root', 'root', '0755', issues);
   }
   return issues;
@@ -322,28 +338,28 @@ function validateWindowsNativeManifest(packageItem, manifest) {
     issues.push('Windows native manifest missing nativeInstall');
     return issues;
   }
-  requireManifestPath(nativeInstall, 'installRoot', '%ProgramFiles%/ClawRouter', issues);
-  requireManifestPath(nativeInstall, 'files.binary', '%ProgramFiles%/ClawRouter/bin/clawrouter.exe', issues);
-  requireManifestPath(nativeInstall, 'files.installer', '%ProgramFiles%/ClawRouter/bin/clawrouterctl.exe', issues);
-  requireManifestPath(nativeInstall, 'files.portal', '%ProgramFiles%/ClawRouter/portal/dist', issues);
-  requirePermission(nativeInstall, '%ProgramFiles%/ClawRouter', 'SYSTEM', 'Administrators', 'inherited-programfiles-acl', issues);
-  requirePermission(nativeInstall, '%ProgramData%/SdkWork/ClawRouter', 'SYSTEM', 'Administrators', 'inherited-programdata-acl', issues);
-  requirePermission(nativeInstall, '%ProgramData%/SdkWork/ClawRouter/.env.release.example', 'SYSTEM', 'Administrators', 'inherited-programdata-acl', issues);
-  requirePermission(nativeInstall, '%ProgramData%/SdkWork/ClawRouter/clawrouter.toml.example', 'SYSTEM', 'Administrators', 'inherited-programdata-acl', issues);
+  requireManifestPath(nativeInstall, 'installRoot', WINDOWS_INSTALL_ROOT, issues);
+  requireManifestPath(nativeInstall, 'files.binary', `${WINDOWS_INSTALL_ROOT}/bin/clawrouter.exe`, issues);
+  requireManifestPath(nativeInstall, 'files.installer', `${WINDOWS_INSTALL_ROOT}/bin/clawrouterctl.exe`, issues);
+  requireManifestPath(nativeInstall, 'files.portal', `${WINDOWS_INSTALL_ROOT}/portal/dist`, issues);
+  requirePermission(nativeInstall, WINDOWS_INSTALL_ROOT, 'SYSTEM', 'Administrators', 'inherited-programfiles-acl', issues);
+  requirePermission(nativeInstall, WINDOWS_SYSTEM_ROOT, 'SYSTEM', 'Administrators', 'inherited-programdata-acl', issues);
+  requirePermission(nativeInstall, `${WINDOWS_SYSTEM_ROOT}/.env.release.example`, 'SYSTEM', 'Administrators', 'inherited-programdata-acl', issues);
+  requirePermission(nativeInstall, `${WINDOWS_SYSTEM_ROOT}/clawrouter.toml.example`, 'SYSTEM', 'Administrators', 'inherited-programdata-acl', issues);
   if (packageItem.deploymentMode === 'service') {
-    requireManifestPath(nativeInstall, 'files.releaseEnvTemplate', '%ProgramData%/SdkWork/ClawRouter/.env.release.example', issues);
-    requireManifestPath(nativeInstall, 'files.runtimeConfigTemplate', '%ProgramData%/SdkWork/ClawRouter/clawrouter.toml.example', issues);
-    requireManifestPath(nativeInstall, 'files.runtimeConfig', '%ProgramData%/SdkWork/ClawRouter/clawrouter.toml', issues);
-    requirePermission(nativeInstall, '%ProgramData%/SdkWork/ClawRouter/clawrouter.toml', 'SYSTEM', 'Administrators', 'inherited-programdata-acl', issues);
-    requirePermission(nativeInstall, '%ProgramData%/SdkWork/ClawRouter/database.secret', 'SYSTEM', 'Administrators', 'inherited-programdata-acl', issues);
-    requirePermission(nativeInstall, '%ProgramData%/SdkWork/ClawRouter/redis.secret', 'SYSTEM', 'Administrators', 'inherited-programdata-acl', issues);
-    requirePermission(nativeInstall, '%ProgramData%/SdkWork/ClawRouter/Data', 'SYSTEM', 'Administrators', 'inherited-programdata-acl', issues);
+    requireManifestPath(nativeInstall, 'files.releaseEnvTemplate', `${WINDOWS_SYSTEM_ROOT}/.env.release.example`, issues);
+    requireManifestPath(nativeInstall, 'files.runtimeConfigTemplate', `${WINDOWS_SYSTEM_ROOT}/clawrouter.toml.example`, issues);
+    requireManifestPath(nativeInstall, 'files.runtimeConfig', `${WINDOWS_SYSTEM_ROOT}/clawrouter.toml`, issues);
+    requirePermission(nativeInstall, `${WINDOWS_SYSTEM_ROOT}/clawrouter.toml`, 'SYSTEM', 'Administrators', 'inherited-programdata-acl', issues);
+    requirePermission(nativeInstall, `${WINDOWS_SYSTEM_ROOT}/database.secret`, 'SYSTEM', 'Administrators', 'inherited-programdata-acl', issues);
+    requirePermission(nativeInstall, `${WINDOWS_SYSTEM_ROOT}/redis.secret`, 'SYSTEM', 'Administrators', 'inherited-programdata-acl', issues);
+    requirePermission(nativeInstall, `${WINDOWS_SYSTEM_ROOT}/Data`, 'SYSTEM', 'Administrators', 'inherited-programdata-acl', issues);
   } else {
-    requireManifestPath(nativeInstall, 'files.releaseEnvTemplate', '%ProgramData%/SdkWork/ClawRouter/.env.release.example', issues);
-    requireManifestPath(nativeInstall, 'files.runtimeConfigTemplate', '%ProgramData%/SdkWork/ClawRouter/clawrouter.toml.example', issues);
-    requireManifestPath(nativeInstall, 'files.runtimeConfig', '%APPDATA%/SdkWork/ClawRouter/clawrouter.toml', issues);
-    requirePermission(nativeInstall, '%APPDATA%/SdkWork/ClawRouter/clawrouter.toml', 'current-user', 'current-user', 'user-profile-acl', issues);
-    requirePermission(nativeInstall, '%LOCALAPPDATA%/SdkWork/ClawRouter', 'current-user', 'current-user', 'user-profile-acl', issues);
+    requireManifestPath(nativeInstall, 'files.releaseEnvTemplate', `${WINDOWS_SYSTEM_ROOT}/.env.release.example`, issues);
+    requireManifestPath(nativeInstall, 'files.runtimeConfigTemplate', `${WINDOWS_SYSTEM_ROOT}/clawrouter.toml.example`, issues);
+    requireManifestPath(nativeInstall, 'files.runtimeConfig', `${WINDOWS_USER_ROOT}/config/clawrouter.toml`, issues);
+    requirePermission(nativeInstall, `${WINDOWS_USER_ROOT}/config/clawrouter.toml`, 'current-user', 'current-user', 'user-profile-acl', issues);
+    requirePermission(nativeInstall, `${WINDOWS_USER_ROOT}/data`, 'current-user', 'current-user', 'user-profile-acl', issues);
   }
   return issues;
 }
@@ -356,28 +372,28 @@ function validateMacosNativeManifest(packageItem, manifest) {
     return issues;
   }
   if (packageItem.deploymentMode === 'service') {
-    requireManifestPath(nativeInstall, 'installRoot', '/Library/Application Support/SdkWork/ClawRouter', issues);
-    requireManifestPath(nativeInstall, 'files.binary', '/Library/Application Support/SdkWork/ClawRouter/bin/clawrouter', issues);
-    requireManifestPath(nativeInstall, 'files.installer', '/Library/Application Support/SdkWork/ClawRouter/bin/clawrouterctl', issues);
-    requireManifestPath(nativeInstall, 'files.releaseEnvTemplate', '/Library/Application Support/SdkWork/ClawRouter/.env.release.example', issues);
-    requireManifestPath(nativeInstall, 'files.runtimeConfigTemplate', '/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml.example', issues);
-    requireManifestPath(nativeInstall, 'files.serviceRunner', '/Library/Application Support/SdkWork/ClawRouter/service/macos/clawrouter-service-runner', issues);
-    requirePermission(nativeInstall, '/Library/Application Support/SdkWork/ClawRouter', 'root', 'wheel', '0750', issues);
-    requirePermission(nativeInstall, '/Library/Application Support/SdkWork/ClawRouter/bin', 'root', 'wheel', '0755', issues);
-    requirePermission(nativeInstall, '/Library/Application Support/SdkWork/ClawRouter/.env.release.example', 'root', 'wheel', '0640', issues);
-    requirePermission(nativeInstall, '/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml.example', 'root', 'wheel', '0640', issues);
-    requirePermission(nativeInstall, '/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml', 'root', 'wheel', '0640', issues);
-    requirePermission(nativeInstall, '/var/log/clawrouter', 'root', 'wheel', '0750', issues);
+    requireManifestPath(nativeInstall, 'installRoot', MACOS_SERVICE_ROOT, issues);
+    requireManifestPath(nativeInstall, 'files.binary', `${MACOS_SERVICE_ROOT}/bin/clawrouter`, issues);
+    requireManifestPath(nativeInstall, 'files.installer', `${MACOS_SERVICE_ROOT}/bin/clawrouterctl`, issues);
+    requireManifestPath(nativeInstall, 'files.releaseEnvTemplate', `${MACOS_SERVICE_ROOT}/.env.release.example`, issues);
+    requireManifestPath(nativeInstall, 'files.runtimeConfigTemplate', `${MACOS_SERVICE_ROOT}/clawrouter.toml.example`, issues);
+    requireManifestPath(nativeInstall, 'files.serviceRunner', `${MACOS_SERVICE_ROOT}/service/macos/clawrouter-service-runner`, issues);
+    requirePermission(nativeInstall, MACOS_SERVICE_ROOT, 'root', 'wheel', '0750', issues);
+    requirePermission(nativeInstall, `${MACOS_SERVICE_ROOT}/bin`, 'root', 'wheel', '0755', issues);
+    requirePermission(nativeInstall, `${MACOS_SERVICE_ROOT}/.env.release.example`, 'root', 'wheel', '0640', issues);
+    requirePermission(nativeInstall, `${MACOS_SERVICE_ROOT}/clawrouter.toml.example`, 'root', 'wheel', '0640', issues);
+    requirePermission(nativeInstall, `${MACOS_SERVICE_ROOT}/clawrouter.toml`, 'root', 'wheel', '0640', issues);
+    requirePermission(nativeInstall, LINUX_SERVICE_LOG_ROOT, 'root', 'wheel', '0750', issues);
     requirePermission(nativeInstall, '/Library/LaunchDaemons/com.sdkwork.clawrouter.plist', 'root', 'wheel', '0644', issues);
   } else {
-    requireManifestPath(nativeInstall, 'installRoot', '/opt/clawrouter', issues);
-    requireManifestPath(nativeInstall, 'files.binary', '/opt/clawrouter/bin/clawrouter', issues);
-    requireManifestPath(nativeInstall, 'files.installer', '/opt/clawrouter/bin/clawrouterctl', issues);
-    requireManifestPath(nativeInstall, 'files.releaseEnvTemplate', '~/Library/Application Support/SdkWork/ClawRouter/.env.release.example', issues);
-    requireManifestPath(nativeInstall, 'files.runtimeConfigTemplate', '/usr/local/share/clawrouter/config/clawrouter.toml.example', issues);
-    requirePermission(nativeInstall, '/opt/clawrouter', 'root', 'wheel', '0755', issues);
-    requirePermission(nativeInstall, '/opt/clawrouter/bin', 'root', 'wheel', '0755', issues);
-    requirePermission(nativeInstall, '/usr/local/share/clawrouter/config', 'root', 'wheel', '0755', issues);
+    requireManifestPath(nativeInstall, 'installRoot', POSIX_INSTALL_ROOT, issues);
+    requireManifestPath(nativeInstall, 'files.binary', `${POSIX_INSTALL_ROOT}/bin/clawrouter`, issues);
+    requireManifestPath(nativeInstall, 'files.installer', `${POSIX_INSTALL_ROOT}/bin/clawrouterctl`, issues);
+    requireManifestPath(nativeInstall, 'files.releaseEnvTemplate', `${USER_PRIVATE_ROUTER_ROOT}/config/.env.release.example`, issues);
+    requireManifestPath(nativeInstall, 'files.runtimeConfigTemplate', `${MACOS_SHARED_ROOT}/config/clawrouter.toml.example`, issues);
+    requirePermission(nativeInstall, POSIX_INSTALL_ROOT, 'root', 'wheel', '0755', issues);
+    requirePermission(nativeInstall, `${POSIX_INSTALL_ROOT}/bin`, 'root', 'wheel', '0755', issues);
+    requirePermission(nativeInstall, `${MACOS_SHARED_ROOT}/config`, 'root', 'wheel', '0755', issues);
   }
   return issues;
 }

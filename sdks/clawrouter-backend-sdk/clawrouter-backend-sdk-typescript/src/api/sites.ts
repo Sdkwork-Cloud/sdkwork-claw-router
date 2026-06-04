@@ -1,7 +1,7 @@
 import { backendApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 
-import type { AdminSiteActionRequest, AdminSiteCreateRequest, AdminSiteModelCreateRequest, AdminSiteModelsReplaceRequest, AdminSiteModelUpdateRequest, AdminSiteUpdateRequest, HealthCheckCreateResult, SiteCatalogListResult, SiteChannelsListResult, SiteCreateResult, SiteDeleteResult, SiteModelsCreateResult, SiteModelsDeleteResult, SiteModelsListResult, SiteModelsReplaceResult, SiteModelsUpdateResult, SiteUpdateResult, TestConnectionCreateResult } from '../types';
+import type { AdminSiteActionRequest, AdminSiteCreateRequest, AdminSiteUpdateRequest, HealthCheckCreateResult, SiteCatalogListResult, SiteChannelsListResult, SiteCreateResult, SiteDeleteResult, SiteUpdateResult, TestConnectionCreateResult } from '../types';
 
 
 export class SitesTestConnectionApi {
@@ -15,40 +15,6 @@ export class SitesTestConnectionApi {
 /** Test site connection */
   async create(siteId: string, body: AdminSiteActionRequest): Promise<TestConnectionCreateResult> {
     return this.client.post<TestConnectionCreateResult>(backendApiPath(`/sites/${serializePathParameter(siteId, { name: 'siteId', style: 'simple', explode: false })}/test_connection`), body, undefined, undefined, 'application/json');
-  }
-}
-
-export class SitesSiteModelsApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** List site models */
-  async list(siteId: string): Promise<SiteModelsListResult> {
-    return this.client.get<SiteModelsListResult>(backendApiPath(`/sites/${serializePathParameter(siteId, { name: 'siteId', style: 'simple', explode: false })}/models`));
-  }
-
-/** Create site model */
-  async create(siteId: string, body: AdminSiteModelCreateRequest): Promise<SiteModelsCreateResult> {
-    return this.client.post<SiteModelsCreateResult>(backendApiPath(`/sites/${serializePathParameter(siteId, { name: 'siteId', style: 'simple', explode: false })}/models`), body, undefined, undefined, 'application/json');
-  }
-
-/** Replace site models */
-  async replace(siteId: string, body: AdminSiteModelsReplaceRequest): Promise<SiteModelsReplaceResult> {
-    return this.client.put<SiteModelsReplaceResult>(backendApiPath(`/sites/${serializePathParameter(siteId, { name: 'siteId', style: 'simple', explode: false })}/models`), body, undefined, undefined, 'application/json');
-  }
-
-/** Delete site model */
-  async delete(siteId: string, siteModelId: string): Promise<SiteModelsDeleteResult> {
-    return this.client.delete<SiteModelsDeleteResult>(backendApiPath(`/sites/${serializePathParameter(siteId, { name: 'siteId', style: 'simple', explode: false })}/models/${serializePathParameter(siteModelId, { name: 'siteModelId', style: 'simple', explode: false })}`));
-  }
-
-/** Update site model */
-  async update(siteId: string, siteModelId: string, body: AdminSiteModelUpdateRequest): Promise<SiteModelsUpdateResult> {
-    return this.client.patch<SiteModelsUpdateResult>(backendApiPath(`/sites/${serializePathParameter(siteId, { name: 'siteId', style: 'simple', explode: false })}/models/${serializePathParameter(siteModelId, { name: 'siteModelId', style: 'simple', explode: false })}`), body, undefined, undefined, 'application/json');
   }
 }
 
@@ -106,7 +72,6 @@ export class SitesApi {
   public readonly siteCatalog: SitesSiteCatalogApi;
   public readonly siteChannels: SitesSiteChannelsApi;
   public readonly healthCheck: SitesHealthCheckApi;
-  public readonly siteModels: SitesSiteModelsApi;
   public readonly testConnection: SitesTestConnectionApi;
 
   constructor(client: HttpClient) {
@@ -114,7 +79,6 @@ export class SitesApi {
     this.siteCatalog = new SitesSiteCatalogApi(client);
     this.siteChannels = new SitesSiteChannelsApi(client);
     this.healthCheck = new SitesHealthCheckApi(client);
-    this.siteModels = new SitesSiteModelsApi(client);
     this.testConnection = new SitesTestConnectionApi(client);
   }
 

@@ -6,6 +6,7 @@ from typing import TYPE_CHECKING, Optional, List, Dict, Any
 @dataclass
 class AdminAiModelRegionPrice:
     """Regional official reference pricing returned by admin AI model payloads."""
+    currency: str
     price_in: str
     price_out: str
     region_code: str

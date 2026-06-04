@@ -16,13 +16,10 @@ type AppModelCatalogItem struct {
 	MaxOutputTokens int `json:"maxOutputTokens"`
 	Modalities []string `json:"modalities"`
 	Model string `json:"model"`
-	OfficialReferenceCurrency string `json:"officialReferenceCurrency"`
 	OfficialReferencePrices []AppModelCatalogReferencePrice `json:"officialReferencePrices"`
-	OfficialReferenceUnitPrice string `json:"officialReferenceUnitPrice"`
 	OutputModalities []string `json:"outputModalities"`
 	PriceAvailability AppModelCatalogPriceAvailability `json:"priceAvailability"`
 	ProviderCodes []string `json:"providerCodes"`
-	RegionCode string `json:"regionCode"`
 	ReleaseStage int `json:"releaseStage"`
 	ReplacementModel string `json:"replacementModel"`
 	RoutingState int `json:"routingState"`

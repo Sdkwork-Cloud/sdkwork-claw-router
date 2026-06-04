@@ -3,6 +3,8 @@ package types
 // Admin ai resource item schema exposed by Claw Router.
 type AdminAiResourceItem struct {
 	ApiEndpointCode string `json:"apiEndpointCode"`
+	Capabilities []string `json:"capabilities"`
+	Capability string `json:"capability"`
 	CatalogKey string `json:"catalogKey"`
 	CompositionMode string `json:"compositionMode"`
 	DisplayName string `json:"displayName"`

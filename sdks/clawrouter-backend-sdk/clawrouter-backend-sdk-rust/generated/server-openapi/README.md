@@ -137,8 +137,8 @@ println!("{result:?}");
 ### integration
 
 ```rust
-// List channel endpoints
-let result = client.integration().channel_endpoints_list().await?;
+// List channels
+let result = client.integration().channels_list().await?;
 println!("{result:?}");
 ```
 

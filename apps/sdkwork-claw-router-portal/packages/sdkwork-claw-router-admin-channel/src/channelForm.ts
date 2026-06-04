@@ -9,9 +9,7 @@ import type {
   ChannelUpdateInput,
   CredentialRotationStrategy,
   ProviderSecretInput,
-  ChannelEndpoint,
-  ChannelEndpointCreateInput,
-  ChannelEndpointUpdateInput,
+  AccountModelMappingInput,
   ProviderSecretUpdateInput,
 } from './channelService';
 
@@ -28,7 +26,7 @@ export type ChannelFormValues = {
   expiresAt?: string;
   capabilities: string[];
   resourceCodes?: string[];
-  models: string[];
+  modelMappings?: AccountModelMappingInput[];
   circuitBreakerEnabled?: boolean;
   circuitBreakerFailureThreshold?: number | string | null;
   weight: number;
@@ -52,19 +50,6 @@ export type ProviderSecretFormValues = {
   authType: string;
   secretRef: string;
   status: string;
-};
-
-export type ChannelEndpointFormValues = {
-  channelId?: string;
-  vendorCode?: string;
-  regionCode?: string;
-  apiEndpointCode?: string;
-  baseUrl?: string;
-  priority?: number | string | null;
-  weight?: number | string | null;
-  status?: string;
-  effectiveFrom?: string;
-  effectiveTo?: string;
 };
 
 export type AiResourceFormValues = {
@@ -105,7 +90,6 @@ export function createChannelEditDraft(channel: ChannelItem): ChannelFormValues 
     expiresAt: channel.expiresAt ?? '',
     capabilities: [...channel.capabilities],
     resourceCodes: [...channel.resourceCodes],
-    models: [...channel.models],
     circuitBreakerEnabled: Boolean(channel.circuitBreakerPolicy),
     circuitBreakerFailureThreshold: channel.circuitBreakerPolicy?.failureThreshold ?? '',
     weight: channel.weight,
@@ -202,7 +186,6 @@ export function createChannelInputFromForm(values: ChannelFormValues): ChannelCr
     expiresAt: optionalText(values.expiresAt),
     capabilities: normalizedCapabilities(values.capabilities),
     resourceCodes: normalizedResourceCodes(values.resourceCodes),
-    models: normalizedTextArray(values.models),
     circuitBreakerPolicy: normalizeCreateCircuitBreakerPolicy(values),
     weight,
     status: channelStatus(values.status),
@@ -223,7 +206,6 @@ export function createChannelUpdateInputFromForm(values: ChannelFormValues): Cha
     expiresAt: values.expiresAt === undefined ? undefined : optionalText(values.expiresAt) ?? null,
     capabilities: normalizedCapabilities(values.capabilities),
     resourceCodes: normalizedResourceCodesForUpdate(values.resourceCodes),
-    models: normalizedTextArray(values.models),
     circuitBreakerPolicy: 'circuitBreakerEnabled' in values
       ? normalizeCircuitBreakerPolicy(values, true)
       : undefined,
@@ -269,56 +251,6 @@ export function createProviderSecretUpdateInputFromForm(values: ProviderSecretFo
 
 export function createProviderSecretStatusUpdateInput(status: string): ProviderSecretUpdateInput {
   return { status: providerSecretStatus(status) };
-}
-
-export function createChannelEndpointEditDraft(
-  endpoint: ChannelEndpoint,
-): ChannelEndpointFormValues {
-  return {
-    channelId: endpoint.channelId,
-    vendorCode: endpoint.vendorCode,
-    regionCode: endpoint.regionCode,
-    apiEndpointCode: endpoint.apiEndpointCode,
-    baseUrl: endpoint.baseUrl,
-    priority: endpoint.priority,
-    weight: endpoint.weight,
-    status: endpoint.status,
-    effectiveFrom: endpoint.effectiveFrom ?? '',
-    effectiveTo: endpoint.effectiveTo ?? '',
-  };
-}
-
-export function createChannelEndpointInputFromForm(
-  values: ChannelEndpointFormValues,
-): ChannelEndpointCreateInput {
-  return omitUndefined({
-    channelId: positiveIdText(values.channelId, 'channelId'),
-    vendorCode: providerEndpointCode(values.vendorCode, 'vendorCode'),
-    regionCode: providerEndpointCode(values.regionCode, 'regionCode'),
-    apiEndpointCode: providerEndpointCode(values.apiEndpointCode, 'apiEndpointCode'),
-    baseUrl: providerEndpointBaseUrl(values.baseUrl),
-    priority: optionalPositiveInteger(values.priority, 'priority'),
-    weight: optionalPositiveInteger(values.weight, 'weight'),
-    status: channelEndpointStatus(values.status ?? 'active'),
-    effectiveFrom: optionalText(values.effectiveFrom),
-    effectiveTo: optionalText(values.effectiveTo),
-  });
-}
-
-export function createChannelEndpointUpdateInputFromForm(
-  values: ChannelEndpointFormValues,
-): ChannelEndpointUpdateInput {
-  return omitUndefined({
-    vendorCode: optionalProviderEndpointCode(values.vendorCode, 'vendorCode'),
-    regionCode: optionalProviderEndpointCode(values.regionCode, 'regionCode'),
-    apiEndpointCode: optionalProviderEndpointCode(values.apiEndpointCode, 'apiEndpointCode'),
-    baseUrl: values.baseUrl === undefined ? undefined : providerEndpointBaseUrl(values.baseUrl),
-    priority: optionalPositiveInteger(values.priority, 'priority'),
-    weight: optionalPositiveInteger(values.weight, 'weight'),
-    status: optionalChannelEndpointStatus(values.status),
-    effectiveFrom: values.effectiveFrom === undefined ? undefined : optionalNullableText(values.effectiveFrom) ?? null,
-    effectiveTo: values.effectiveTo === undefined ? undefined : optionalNullableText(values.effectiveTo) ?? null,
-  });
 }
 
 export function createAiResourceEditDraft(resource: AiResource): AiResourceFormValues {
@@ -622,42 +554,6 @@ function providerSecretStatus(value: string): NonNullable<ProviderSecretInput['s
     return normalized;
   }
   throw new Error(normalized ? `Unsupported provider credential status: ${normalized}` : 'Provider credential status is required');
-}
-
-function channelEndpointStatus(value: string): NonNullable<ChannelEndpointCreateInput['status']> {
-  const normalized = value.trim().toLowerCase();
-  if (normalized === 'active' || normalized === 'disabled' || normalized === 'inactive') {
-    return normalized;
-  }
-  throw new Error(normalized ? `Unsupported channel endpoint status: ${normalized}` : 'Channel endpoint status is required');
-}
-
-function optionalChannelEndpointStatus(
-  value: string | undefined,
-): ChannelEndpointUpdateInput['status'] {
-  const normalized = optionalText(value);
-  return normalized === undefined ? undefined : channelEndpointStatus(normalized);
-}
-
-function positiveIdText(value: string | undefined, fieldName: string): string {
-  const normalized = requiredText(value ?? '', fieldName);
-  if (!/^[1-9][0-9]*$/.test(normalized)) {
-    throw new Error(`${fieldName} must be a positive integer`);
-  }
-  return normalized;
-}
-
-function providerEndpointCode(value: string | undefined, fieldName: string): string {
-  const normalized = requiredText(value ?? '', fieldName).toLowerCase();
-  if (!/^[a-z0-9._*-]+$/.test(normalized)) {
-    throw new Error(`${fieldName} may only contain letters, numbers, ., -, _, and *`);
-  }
-  return normalized;
-}
-
-function optionalProviderEndpointCode(value: string | undefined, fieldName: string): string | undefined {
-  const normalized = optionalText(value);
-  return normalized === undefined ? undefined : providerEndpointCode(normalized, fieldName);
 }
 
 function providerEndpointBaseUrl(value: string | undefined): string {

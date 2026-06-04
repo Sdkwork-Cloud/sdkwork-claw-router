@@ -1174,7 +1174,6 @@ pub struct ProviderChannelGroupBinding {
     pub group_id: i64,
     pub priority: i32,
     pub weight: i32,
-    pub model_scope: Vec<String>,
     pub api_scope: Vec<String>,
     pub capabilities: Vec<String>,
 }
@@ -1185,48 +1184,21 @@ impl ProviderChannelGroupBinding {
             group_id,
             priority,
             weight,
-            model_scope: Vec::new(),
             api_scope: Vec::new(),
             capabilities: Vec::new(),
         }
     }
 
-    pub fn new_scoped<M, C, MS, CS>(
+    pub fn new_resource_scoped<A, C, AS, CS>(
         group_id: i64,
         priority: i32,
         weight: i32,
-        model_scope: MS,
-        capabilities: CS,
-    ) -> Self
-    where
-        M: Into<String>,
-        C: Into<String>,
-        MS: IntoIterator<Item = M>,
-        CS: IntoIterator<Item = C>,
-    {
-        Self {
-            group_id,
-            priority,
-            weight,
-            model_scope: model_scope.into_iter().map(Into::into).collect(),
-            api_scope: Vec::new(),
-            capabilities: capabilities.into_iter().map(Into::into).collect(),
-        }
-    }
-
-    pub fn new_resource_scoped<M, A, C, MS, AS, CS>(
-        group_id: i64,
-        priority: i32,
-        weight: i32,
-        model_scope: MS,
         api_scope: AS,
         capabilities: CS,
     ) -> Self
     where
-        M: Into<String>,
         A: Into<String>,
         C: Into<String>,
-        MS: IntoIterator<Item = M>,
         AS: IntoIterator<Item = A>,
         CS: IntoIterator<Item = C>,
     {
@@ -1234,7 +1206,6 @@ impl ProviderChannelGroupBinding {
             group_id,
             priority,
             weight,
-            model_scope: model_scope.into_iter().map(Into::into).collect(),
             api_scope: api_scope.into_iter().map(Into::into).collect(),
             capabilities: capabilities.into_iter().map(Into::into).collect(),
         }
@@ -1358,45 +1329,17 @@ impl ProviderChannelRoute {
         self
     }
 
-    pub fn with_scoped_group_binding<M, C, MS, CS>(
+    pub fn with_resource_scoped_group_binding<A, C, AS, CS>(
         mut self,
         group_id: i64,
         priority: i32,
         weight: i32,
-        model_scope: MS,
-        capabilities: CS,
-    ) -> Self
-    where
-        M: Into<String>,
-        C: Into<String>,
-        MS: IntoIterator<Item = M>,
-        CS: IntoIterator<Item = C>,
-    {
-        self.group_bindings
-            .push(ProviderChannelGroupBinding::new_scoped(
-                group_id,
-                priority,
-                weight,
-                model_scope,
-                capabilities,
-            ));
-        self
-    }
-
-    pub fn with_resource_scoped_group_binding<M, A, C, MS, AS, CS>(
-        mut self,
-        group_id: i64,
-        priority: i32,
-        weight: i32,
-        model_scope: MS,
         api_scope: AS,
         capabilities: CS,
     ) -> Self
     where
-        M: Into<String>,
         A: Into<String>,
         C: Into<String>,
-        MS: IntoIterator<Item = M>,
         AS: IntoIterator<Item = A>,
         CS: IntoIterator<Item = C>,
     {
@@ -1405,7 +1348,6 @@ impl ProviderChannelRoute {
                 group_id,
                 priority,
                 weight,
-                model_scope,
                 api_scope,
                 capabilities,
             ));

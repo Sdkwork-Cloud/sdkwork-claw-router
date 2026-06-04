@@ -20,13 +20,10 @@ namespace Sdkwork.ClawRouter.App.Models
         public int? MaxOutputTokens { get; set; }
         public List<string>? Modalities { get; set; }
         public string? Model { get; set; }
-        public string? OfficialReferenceCurrency { get; set; }
         public List<AppModelCatalogReferencePrice>? OfficialReferencePrices { get; set; }
-        public string? OfficialReferenceUnitPrice { get; set; }
         public List<string>? OutputModalities { get; set; }
         public AppModelCatalogPriceAvailability? PriceAvailability { get; set; }
         public List<string>? ProviderCodes { get; set; }
-        public string? RegionCode { get; set; }
         public int? ReleaseStage { get; set; }
         public string? ReplacementModel { get; set; }
         public int? RoutingState { get; set; }

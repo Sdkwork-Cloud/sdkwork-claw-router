@@ -116,7 +116,7 @@ async fn sqlite_gateway_usage_recorder_upserts_trace_and_usage_fact_without_dupl
     );
     assert_eq!("4.290000", usage.get::<String, _>("upstream_cost_amount"));
     assert_eq!("7.722000", usage.get::<String, _>("customer_charge_amount"));
-    assert_eq!("4.290000", usage.get::<String, _>("cost_amount"));
+    assert_eq!("7.722000", usage.get::<String, _>("cost_amount"));
     assert_eq!("USD", usage.get::<String, _>("currency"));
     assert_eq!("standard", usage.get::<String, _>("pricing_plan_code"));
     let pricing_snapshot: serde_json::Value =
@@ -299,7 +299,7 @@ async fn sqlite_gateway_usage_recorder_uses_command_modality_and_meter() {
     assert_eq!(0_i64, usage.get::<i64, _>("completion_tokens"));
     assert_eq!(13_i64, usage.get::<i64, _>("total_tokens"));
     assert_eq!("0.343200", usage.get::<String, _>("customer_charge_amount"));
-    assert_eq!("0.130000", usage.get::<String, _>("cost_amount"));
+    assert_eq!("0.343200", usage.get::<String, _>("cost_amount"));
 }
 
 #[tokio::test]
@@ -604,7 +604,7 @@ async fn sqlite_gateway_usage_recorder_records_request_and_video_duration_as_ind
         "0.050000000000",
         rows[0].get::<String, _>("customer_charge_amount")
     );
-    assert_eq!("0.030000000000", rows[0].get::<String, _>("cost_amount"));
+    assert_eq!("0.050000000000", rows[0].get::<String, _>("cost_amount"));
 
     assert_eq!(6_i64, rows[1].get::<i64, _>("usage_type"));
     assert_eq!(
@@ -627,7 +627,7 @@ async fn sqlite_gateway_usage_recorder_records_request_and_video_duration_as_ind
         "3.000000000000",
         rows[1].get::<String, _>("customer_charge_amount")
     );
-    assert_eq!("1.800000000000", rows[1].get::<String, _>("cost_amount"));
+    assert_eq!("3.000000000000", rows[1].get::<String, _>("cost_amount"));
 }
 
 #[test]

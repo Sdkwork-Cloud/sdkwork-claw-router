@@ -10,7 +10,7 @@ export interface AdminChannelItem {
   balance: string;
   /** Capabilities field on admin channel item. */
   capabilities: ('llm' | 'image' | 'audio' | 'music' | 'sfx' | 'video')[];
-  /** Scoped ai_channel id used by channel endpoint configuration. */
+  /** Scoped ai_channel id used by account route and credential configuration. */
   channelId: string;
   /** Channel type field on admin channel item. */
   channelType: 'official' | 'relay';
@@ -30,8 +30,6 @@ export interface AdminChannelItem {
   id: string;
   /** Is multimodal field on admin channel item. */
   isMultimodal: boolean;
-  /** Models field on admin channel item. */
-  models: string[];
   /** Name field on admin channel item. */
   name: string;
   /** Protocol field on admin channel item. */

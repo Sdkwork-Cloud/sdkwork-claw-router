@@ -2,6 +2,8 @@ package com.sdkwork.clawrouter.backend
 
 data class AdminAiResourceItem(
     val apiEndpointCode: String? = null,
+    val capabilities: List<String>? = null,
+    val capability: String? = null,
     val catalogKey: String? = null,
     val compositionMode: String? = null,
     val displayName: String? = null,

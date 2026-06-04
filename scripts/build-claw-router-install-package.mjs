@@ -11,11 +11,17 @@ import { createZip } from './archive-claw-router-sdks.mjs';
 import {
   DEFAULT_VERSION,
   INTERNAL_PROJECT_NAME,
+  LINUX_SERVICE_CONFIG_ROOT,
+  LINUX_SERVICE_DATA_ROOT,
+  LINUX_SERVICE_LOG_ROOT,
+  LINUX_SERVICE_RUNTIME_ROOT,
+  MACOS_SERVICE_ROOT,
   PACKAGE_NAME,
   POSIX_INSTALL_ROOT,
   createInstallPackagePlan,
   RUNTIME_CONFIG_TEMPLATE_PATH,
   RUNTIME_DISPLAY_NAME,
+  WINDOWS_SYSTEM_ROOT,
   WINDOWS_INSTALL_ROOT,
   validateInstallPackagePlan,
 } from './plan-claw-router-install-packages.mjs';
@@ -632,7 +638,7 @@ function createInstallConfiguration(packageItem) {
     files.redisPasswordFile = redisPolicy.passwordFile.path;
   }
   if (isLinuxService) {
-    files.serviceEnvironment = '/etc/clawrouter/clawrouter.env';
+    files.serviceEnvironment = `${LINUX_SERVICE_CONFIG_ROOT}/clawrouter.env`;
     files.systemdUnit = '/lib/systemd/system/clawrouter.service';
   }
   if (packageItem.serviceIntegration?.manifest) {
@@ -785,8 +791,8 @@ function courseUploadPolicyFor(packageItem) {
 function installConfigurationCommands(packageItem) {
   if (packageItem.platform === 'linux' && packageItem.deploymentMode === 'service') {
     return {
-      editConfig: 'sudo editor /etc/clawrouter/clawrouter.toml',
-      editDatabasePassword: 'sudo editor /etc/clawrouter/database.secret',
+      editConfig: `sudo editor ${LINUX_SERVICE_CONFIG_ROOT}/clawrouter.toml`,
+      editDatabasePassword: `sudo editor ${LINUX_SERVICE_CONFIG_ROOT}/database.secret`,
       start: 'sudo systemctl start clawrouter',
       status: 'sudo systemctl status clawrouter --no-pager',
       logs: 'sudo journalctl -u clawrouter -f',
@@ -831,13 +837,13 @@ function installConfigurationCommands(packageItem) {
 
 function nativeBinaryRootForInstallGuide(packageItem) {
   if (packageItem.platform === 'windows') {
-    return 'C:/Program Files/ClawRouter/bin';
+    return 'C:/Program Files/sdkwork/router/bin';
   }
   if (packageItem.platform === 'linux' && ['service', 'desktop'].includes(packageItem.deploymentMode)) {
     return '/usr/bin';
   }
   if (packageItem.platform === 'macos' && packageItem.deploymentMode === 'service') {
-    return '/Library/Application Support/SdkWork/ClawRouter/bin';
+    return `${MACOS_SERVICE_ROOT}/bin`;
   }
   return `${POSIX_INSTALL_ROOT}/bin`;
 }
@@ -1161,8 +1167,10 @@ function createRuntimeConfigTemplate(packageItem) {
   const sdkArchiveRoot = `${runtimeAssetRoot}/portal/dist/sdk-archives`;
   const modelsCatalogRoot = `${runtimeAssetRoot}/catalog`;
   const secretRoot = packageItem.platform === 'windows'
-    ? 'C:/ProgramData/SdkWork/ClawRouter/Secrets'
-    : '/etc/clawrouter';
+    ? `${WINDOWS_SYSTEM_ROOT}/Secrets`
+    : packageItem.platform === 'linux'
+      ? LINUX_SERVICE_CONFIG_ROOT
+      : String(policy.configFile.path).replace(/\/clawrouter\.toml$/u, '');
   const lines = [
     `# ${RUNTIME_DISPLAY_NAME} runtime configuration template.`,
     `# Install this file as: ${policy.configFile.path}`,
@@ -1409,10 +1417,10 @@ function runtimeInstallPath(packageItem, relativePath) {
 
 function nativeRuntimeAssetRoot(packageItem) {
   if (packageItem.platform === 'linux' && ['service', 'desktop'].includes(packageItem.deploymentMode)) {
-    return '/usr/lib/clawrouter';
+    return LINUX_SERVICE_RUNTIME_ROOT;
   }
   if (packageItem.platform === 'macos' && packageItem.deploymentMode === 'service') {
-    return '/Library/Application Support/SdkWork/ClawRouter';
+    return MACOS_SERVICE_ROOT;
   }
   return runtimeInstallPath(packageItem, '').replace(/\/$/u, '');
 }
@@ -1460,15 +1468,15 @@ function createServiceManifest(packageItem) {
       '  <key>KeepAlive</key>',
       '  <true/>',
       '  <key>StandardOutPath</key>',
-      '  <string>/var/log/clawrouter/stdout.log</string>',
+      `  <string>${LINUX_SERVICE_LOG_ROOT}/stdout.log</string>`,
       '  <key>StandardErrorPath</key>',
-      '  <string>/var/log/clawrouter/stderr.log</string>',
+      `  <string>${LINUX_SERVICE_LOG_ROOT}/stderr.log</string>`,
       '</dict>',
       '</plist>',
       '',
     ].join('\n');
   }
-  const linuxRuntimeRoot = packageItem.deploymentMode === 'service' ? '/usr/lib/clawrouter' : POSIX_INSTALL_ROOT;
+  const linuxRuntimeRoot = packageItem.deploymentMode === 'service' ? LINUX_SERVICE_RUNTIME_ROOT : POSIX_INSTALL_ROOT;
   const linuxBinaryRoot = packageItem.deploymentMode === 'service' ? '/usr/bin' : `${POSIX_INSTALL_ROOT}/bin`;
   return [
     '[Unit]',
@@ -1479,7 +1487,7 @@ function createServiceManifest(packageItem) {
     '[Service]',
     'Type=simple',
     `WorkingDirectory=${linuxRuntimeRoot}`,
-    'EnvironmentFile=-/etc/clawrouter/clawrouter.env',
+    `EnvironmentFile=-${LINUX_SERVICE_CONFIG_ROOT}/clawrouter.env`,
     `Environment=SDKWORK_CLAW_CONFIG_FILE=${packageItem.databasePolicy.configFile.path}`,
     'Environment=SDKWORK_CLAW_DEPLOYMENT_MODE=server',
     `ExecStartPre=${linuxBinaryRoot}/${packageItem.installerBinaryName} ensure`,
@@ -1490,11 +1498,11 @@ function createServiceManifest(packageItem) {
     'User=sdkwork',
     'Group=sdkwork',
     'UMask=0027',
-    'StateDirectory=clawrouter',
+    'StateDirectory=sdkwork/router',
     'StateDirectoryMode=0750',
-    'LogsDirectory=clawrouter',
+    'LogsDirectory=sdkwork/router',
     'LogsDirectoryMode=0750',
-    'ConfigurationDirectory=clawrouter',
+    'ConfigurationDirectory=sdkwork/router',
     'ConfigurationDirectoryMode=0750',
     'NoNewPrivileges=true',
     'PrivateTmp=true',
@@ -1506,8 +1514,8 @@ function createServiceManifest(packageItem) {
     'RestrictSUIDSGID=true',
     'SystemCallArchitectures=native',
     'LimitNOFILE=65535',
-    'ReadWritePaths=/var/lib/clawrouter /var/log/clawrouter',
-    `ReadOnlyPaths=${linuxRuntimeRoot} /etc/clawrouter`,
+    `ReadWritePaths=${LINUX_SERVICE_DATA_ROOT} ${LINUX_SERVICE_LOG_ROOT}`,
+    `ReadOnlyPaths=${linuxRuntimeRoot} ${LINUX_SERVICE_CONFIG_ROOT}`,
     '',
     '[Install]',
     'WantedBy=multi-user.target',

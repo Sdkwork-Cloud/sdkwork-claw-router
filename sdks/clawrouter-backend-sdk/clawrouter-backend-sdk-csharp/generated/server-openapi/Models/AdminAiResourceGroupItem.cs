@@ -6,6 +6,8 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class AdminAiResourceGroupItem
     {
+        public List<string>? Capabilities { get; set; }
+        public string? Capability { get; set; }
         public string? Description { get; set; }
         public bool? Dynamic { get; set; }
         public string? GroupCode { get; set; }
@@ -16,5 +18,6 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? SelectionMode { get; set; }
         public int? SortOrder { get; set; }
         public string? Status { get; set; }
+        public List<string>? VendorCodes { get; set; }
     }
 }

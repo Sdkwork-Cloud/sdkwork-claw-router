@@ -71,6 +71,9 @@ struct AdminAiResourceItemResponse {
     model: Option<String>,
     #[serde(skip_serializing_if = "Option::is_none")]
     provider_native_model: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    capability: Option<String>,
+    capabilities: Vec<String>,
     composition_mode: String,
     status: String,
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -123,6 +126,10 @@ struct AdminAiResourceGroupItemResponse {
     selection_mode: String,
     #[serde(skip_serializing_if = "Option::is_none")]
     description: Option<String>,
+    vendor_codes: Vec<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    capability: Option<String>,
+    capabilities: Vec<String>,
     #[serde(skip_serializing_if = "Option::is_none")]
     sort_order: Option<i64>,
     status: String,
@@ -556,6 +563,8 @@ fn to_item_response(item: AdminAiResourceItem) -> AdminAiResourceItemResponse {
         catalog_key: item.catalog_key,
         model: item.model,
         provider_native_model: item.provider_native_model,
+        capability: item.capability,
+        capabilities: item.capabilities,
         composition_mode: item.composition_mode,
         status: item.status,
         sort_order: item.sort_order,
@@ -581,6 +590,9 @@ fn to_group_response(item: AdminAiResourceGroupItem) -> AdminAiResourceGroupItem
         group_type: item.group_type,
         selection_mode: item.selection_mode,
         description: item.description,
+        vendor_codes: item.vendor_codes,
+        capability: item.capability,
+        capabilities: item.capabilities,
         sort_order: item.sort_order,
         status: item.status,
         resource_count: item.resource_count,

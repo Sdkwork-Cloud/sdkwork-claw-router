@@ -18,27 +18,13 @@ class AiRoutingStickyCacheSchemaTest(unittest.TestCase):
     def test_ai_routing_sticky_cache_tables_are_registered(self) -> None:
         tables = _registry_tables()
         expected = {
-            "ai_resource_route_profile",
             "ai_provider_object_route",
-            "ai_route_idempotency",
             "ai_config_version",
             "ai_config_change_event",
         }
         self.assertTrue(expected.issubset(tables))
-
-        route_profile = tables["ai_resource_route_profile"]
-        self.assertIs(route_profile["system_of_record"], True)
-        for column in [
-            "resource_id",
-            "resource_code",
-            "route_strategy",
-            "failure_strategy",
-            "selection_strategy",
-            "model_requirement",
-            "request_extractors",
-            "response_bindings",
-        ]:
-            self.assertIn(column, route_profile["columns"])
+        self.assertNotIn("ai_resource_route_profile", tables)
+        self.assertNotIn("ai_route_idempotency", tables)
 
         object_route = tables["ai_provider_object_route"]
         self.assertIs(object_route["system_of_record"], True)
@@ -51,14 +37,15 @@ class AiRoutingStickyCacheSchemaTest(unittest.TestCase):
     def test_ai_routing_sticky_cache_tables_are_in_generated_postgres_schema(self) -> None:
         schema = GENERATED_SCHEMA_PATH.read_text(encoding="utf-8")
         for table in [
-            "ai_resource_route_profile",
             "ai_provider_object_route",
-            "ai_route_idempotency",
             "ai_config_version",
             "ai_config_change_event",
         ]:
             self.assertIn(f"CREATE TABLE IF NOT EXISTS {table}", schema)
             self.assertIn(f"uk_{table}_uuid", schema)
+
+        self.assertNotIn("CREATE TABLE IF NOT EXISTS ai_resource_route_profile", schema)
+        self.assertNotIn("CREATE TABLE IF NOT EXISTS ai_route_idempotency", schema)
 
         self.assertIn("idx_ai_provider_object_route_fast", schema)
         self.assertIn("idx_ai_config_change_event_pending", schema)

@@ -125,7 +125,7 @@ async fn load_settleable_usage_facts(
             COALESCE(user_id, owner_id, 0) AS user_id,
             request_id,
             trace_id,
-            CAST(COALESCE(NULLIF(customer_charge_amount, ''), NULLIF(cost_amount, ''), '0') AS TEXT) AS amount,
+            CAST(COALESCE(NULLIF(customer_charge_amount, ''), '0') AS TEXT) AS amount,
             COALESCE(total_tokens, 0) AS tokens,
             COALESCE(NULLIF(currency, ''), 'USD') AS currency,
             COALESCE(NULLIF(pricing_snapshot, ''), '{}') AS pricing_snapshot

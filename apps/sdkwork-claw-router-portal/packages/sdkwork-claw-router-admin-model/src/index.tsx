@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { AdminTableShell, BottomPagination, BusinessStateTableRow, ConfirmDialog, readMediaResourceUrl } from 'sdkwork-claw-router-commons';
 import { Search, Plus, Cpu, X, Layers, Image as ImageIcon, MessageSquare, Headphones, ChevronRight, ChevronDown, Activity, Trash2, Edit, Music, Loader2, RefreshCw, Video, Volume2, Power, PowerOff, Globe2, ArrowRightLeft, Upload, Check } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { ModelService, SiteService, ModelMappingService, Vendor, Model, SiteItem, ModelMappingRule, ModelMappingCreateInput, ModelMappingUpdateInput, ModelMappingBindingInput, ModelMappingRuleItemInput, KNOWN_VENDORS, selectPreferredModelVendorId } from './modelService';
+import { ModelService, SiteService, ModelMappingService, Vendor, Model, ModelMappingModelOption, SiteItem, ModelMappingRule, ModelMappingCreateInput, ModelMappingUpdateInput, ModelMappingBindingInput, ModelMappingRuleItemInput, KNOWN_VENDORS, selectPreferredModelVendorId } from './modelService';
 import { MODEL_PRICING_REGIONS, createModelInputFromForm, createVendorInputFromForm, updateModelInputFromForm } from './modelForm';
 export { ResourceAdmin } from './resourceAdmin';
 
@@ -279,9 +279,9 @@ export function ModelAdmin() {
     const regionPrices = getModelRegionPrices(model);
     const defaultPrice = regionPrices.find(price => price.regionCode === 'global') ?? regionPrices[0];
     if (!defaultPrice) {
-      return `${t('admin.model.pricing.input')} ${formatPrice('')} / ${t('admin.model.pricing.output')} ${formatPrice('')}`;
+      return `${t('admin.model.pricing.input')} ${formatPrice('', 'USD')} / ${t('admin.model.pricing.output')} ${formatPrice('', 'USD')}`;
     }
-    return `${t('admin.model.pricing.input')} ${formatPrice(defaultPrice.priceIn)} / ${t('admin.model.pricing.output')} ${formatPrice(defaultPrice.priceOut)}`;
+    return `${t('admin.model.pricing.input')} ${formatPrice(defaultPrice.priceIn, defaultPrice.currency)} / ${t('admin.model.pricing.output')} ${formatPrice(defaultPrice.priceOut, defaultPrice.currency)}`;
   };
 
   const formatContextTokens = (tokens: number | null) => {
@@ -643,6 +643,7 @@ export function ModelAdmin() {
                                   const defaultPriceRegionCode = regionPrices.find(price => price.regionCode === 'global')?.regionCode ?? regionPrices[0]?.regionCode ?? 'global';
                                   const selectedPriceRegionCode = priceRegionByModelId[m.id] ?? defaultPriceRegionCode;
                                   const selectedPriceRegion = regionPrices.find(price => price.regionCode === selectedPriceRegionCode) ?? regionPrices[0];
+                                  const selectedPriceCurrency = selectedPriceRegion?.currency ?? 'USD';
                                   const priceRows = [
                                     { label: t('admin.model.pricing.input'), value: selectedPriceRegion?.priceIn },
                                     { label: t('admin.model.pricing.output'), value: selectedPriceRegion?.priceOut },
@@ -714,7 +715,7 @@ export function ModelAdmin() {
                                               {priceRows.map(row => (
                                                 <div key={row.label} className="flex items-center justify-between gap-3 rounded-md bg-slate-50 px-2.5 py-1.5 text-xs dark:bg-white/5">
                                                   <span className="text-slate-500 dark:text-slate-400">{row.label}</span>
-                                                  <span className="font-mono text-slate-900 dark:text-slate-100">{formatPrice(row.value ?? '')}</span>
+                                                  <span className="font-mono text-slate-900 dark:text-slate-100">{formatPrice(row.value ?? '', selectedPriceCurrency)}</span>
                                                 </div>
                                               ))}
                                             </div>
@@ -931,9 +932,30 @@ function modelsForVendor(models: readonly Model[], vendor: Vendor): Model[] {
   return models.filter((model) => model.vendorId === vendor.id || model.vendorCode === vendor.vendorCode);
 }
 
-function formatPrice(value: string): string {
+function formatPrice(value: string, currency: string): string {
   const normalized = value.trim();
-  return normalized ? `$${normalized}` : '-';
+  if (!normalized) {
+    return '-';
+  }
+  const normalizedCurrency = currency.trim().toUpperCase();
+  const symbol = currencySymbol(normalizedCurrency);
+  return symbol ? `${symbol}${normalized}` : `${normalizedCurrency || 'USD'} ${normalized}`;
+}
+
+function currencySymbol(currency: string): string {
+  switch (currency) {
+    case 'CNY':
+    case 'JPY':
+      return '¥';
+    case 'USD':
+      return '$';
+    case 'EUR':
+      return '€';
+    case 'GBP':
+      return '£';
+    default:
+      return '';
+  }
 }
 
 function modelTypeI18nKey(type: Model['type']): string {
@@ -1010,7 +1032,7 @@ export function SiteAdmin() {
     try {
       const input = siteInputFromForm(formData);
       if (editingSite) {
-        const updated = await SiteService.updateSite(editingSite.id, { ...input, siteCode: editingSite.siteCode });
+        const updated = await SiteService.updateSite(editingSite.id, input);
         setSites((current) => current.map((site) => (site.id === updated.id ? updated : site)));
       } else {
         const created = await SiteService.createSite(input);
@@ -1261,7 +1283,7 @@ export function ModelMappingAdmin() {
   const { t } = useTranslation();
   const [mappings, setMappings] = useState<ModelMappingRule[]>([]);
   const [vendors, setVendors] = useState<Vendor[]>([]);
-  const [models, setModels] = useState<Model[]>([]);
+  const [models, setModels] = useState<ModelMappingModelOption[]>([]);
   const [bindingFilter, setBindingFilter] = useState<ModelMappingBindingFilter>('global');
   const [search, setSearch] = useState('');
   const [loading, setLoading] = useState(true);
@@ -1309,7 +1331,7 @@ export function ModelMappingAdmin() {
     setCatalogLoading(true);
     setCatalogError(null);
     try {
-      const { vendors: vendorList, models: modelList } = await ModelService.fetchInitializedCatalog();
+      const { vendors: vendorList, models: modelList } = await ModelMappingService.fetchModelOptionsCatalog();
       setVendors(vendorList);
       setModels(modelList);
     } catch (error) {
@@ -1859,7 +1881,7 @@ function ModelMappingFormModal({
 }: {
   mapping: ModelMappingRule | null;
   vendors: readonly Vendor[];
-  models: readonly Model[];
+  models: readonly ModelMappingModelOption[];
   catalogLoading: boolean;
   saving: boolean;
   error: ModelMappingFormErrors | null;
@@ -2172,8 +2194,8 @@ function ModelMappingRowsTable({
   onChange,
 }: {
   rows: readonly ModelMappingRowDraft[];
-  sourceModels: readonly Model[];
-  targetModels: readonly Model[];
+  sourceModels: readonly ModelMappingModelOption[];
+  targetModels: readonly ModelMappingModelOption[];
   loading: boolean;
   searchPlaceholder: string;
   inputPlaceholder: string;
@@ -2253,7 +2275,7 @@ function ModelComboboxCell({
   onChange,
 }: {
   value: string;
-  models: readonly Model[];
+  models: readonly ModelMappingModelOption[];
   loading: boolean;
   searchPlaceholder: string;
   inputPlaceholder: string;
@@ -2529,7 +2551,7 @@ function ModelMappingRelationEditorModal({
   onClose,
 }: {
   mapping: ModelMappingRule;
-  models: readonly Model[];
+  models: readonly ModelMappingModelOption[];
   catalogLoading: boolean;
   saving: boolean;
   error: ModelMappingFormErrors | null;
@@ -2785,7 +2807,6 @@ function siteInputFromForm(formData: FormData) {
   const domains = parseMultilineFormList(formData, 'domains');
   const vendorCodes = parseJsonStringArrayFormValue(formData, 'vendorCodes');
   return {
-    siteCode: generateSiteCode(displayName, siteName, baseUrl, ...domains, ...vendorCodes),
     siteName,
     displayName,
     baseUrl,
@@ -2815,29 +2836,6 @@ function siteDomains(site: SiteItem | null): string[] {
 
 function vendorLabel(vendorCode: string, vendors: readonly Vendor[]): string {
   return vendors.find((vendor) => vendor.vendorCode === vendorCode)?.name ?? vendorCode;
-}
-
-function generateSiteCode(...values: string[]): string {
-  for (const value of values) {
-    const normalized = normalizeSiteCodeCandidate(value);
-    if (normalized) {
-      return normalized;
-    }
-  }
-  throw new Error('Site code requires a stable ASCII site name, base URL, domain, or vendor code');
-}
-
-function normalizeSiteCodeCandidate(value: string): string {
-  const withoutProtocol = value
-    .trim()
-    .toLowerCase()
-    .replace(/https?:\/\//u, '');
-  const host = withoutProtocol.split(/[/?#]/u, 1)[0] ?? '';
-  return host
-    .replace(/[^a-z0-9._-]+/gu, '_')
-    .replace(/_+/gu, '_')
-    .replace(/^[_\-.]+|[_\-.]+$/gu, '')
-    .slice(0, 64);
 }
 
 function readSiteLogoFromForm(formData: FormData) {
@@ -3241,7 +3239,7 @@ function syncRowsForVendor(
   rows: readonly ModelMappingRowDraft[],
   field: 'sourceModel' | 'targetModel',
   vendorCode: string,
-  models: readonly Model[],
+  models: readonly ModelMappingModelOption[],
 ): ModelMappingRowDraft[] {
   const vendorModels = models.filter((model) => model.vendorCode === vendorCode);
   return rows.map((row) => {
@@ -3260,10 +3258,10 @@ function syncRowsForVendor(
 }
 
 function modelsForMappingSide(
-  models: readonly Model[],
+  models: readonly ModelMappingModelOption[],
   mapping: ModelMappingRule,
   side: 'source' | 'target',
-): Model[] {
+): ModelMappingModelOption[] {
   const code = side === 'source' ? mapping.sourceVendorCode : mapping.targetVendorCode;
   return code ? models.filter((model) => model.vendorCode === code) : [...models];
 }

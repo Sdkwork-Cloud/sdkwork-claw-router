@@ -1546,6 +1546,7 @@ dependencies = [
  "sdkwork-claw-config",
  "sdkwork-claw-contract",
  "sdkwork-claw-core",
+ "sdkwork-claw-paas-api",
  "sdkwork-claw-security",
  "sdkwork_iam_core",
  "serde",
@@ -1577,6 +1578,15 @@ dependencies = [
  "sdkwork-claw-config",
  "tracing",
  "tracing-subscriber",
+]
+
+[[package]]
+name = "sdkwork-claw-paas-api"
+version = "0.1.0"
+dependencies = [
+ "serde",
+ "serde_json",
+ "tokio",
 ]
 
 [[package]]

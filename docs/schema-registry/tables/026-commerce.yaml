@@ -1,55 +1,4 @@
 tables:
-- table: commerce_usage_service_provider_settlement
-  domain: commerce
-  profile: commercial_provider_usage_settlement
-  compliance_level: L3
-  system_of_record: false
-  write_owner: settlement-worker
-  common_columns: event_log
-  source_tables:
-  - ai_usage_service_provider_edge
-  - commerce_account
-  - commerce_account_ledger_entry
-  frontend_routes:
-  - /admin/service-providers/statements
-  - /admin/service-providers/wallet
-  api_surfaces:
-  - backend
-  - worker
-  columns:
-    settlement_no: string(128)
-    usage_edge_id: int64
-    seller_provider_id: int64
-    buyer_provider_id: int64
-    buyer_account_id: string(128)
-    seller_account_id: string(128)
-    buyer_ledger_entry_id: string(128)
-    seller_ledger_entry_id: string(128)
-    settlement_mode: string(32)
-    direction: string(16)
-    amount: decimal
-    currency: string(10)
-    settlement_status: enum_int32
-    settled_at: instant
-    failure_code: string(128)
-    failure_message: string(512)
-  indexes:
-  - name: uk_commerce_usage_service_provider_settlement_edge
-    unique: true
-    columns:
-    - tenant_id
-    - organization_id
-    - usage_edge_id
-    - direction
-  - name: idx_commerce_usage_service_provider_settlement_status
-    columns:
-    - tenant_id
-    - organization_id
-    - settlement_status
-    - created_at
-    - id
-  security:
-    financial: true
 - table: commerce_usage_service_provider_statement
   domain: commerce
   profile: commercial_provider_statement
@@ -59,7 +8,6 @@ tables:
   common_columns: projection
   source_tables:
   - ai_usage_service_provider_edge
-  - commerce_usage_service_provider_settlement
   frontend_routes:
   - /admin/service-providers/statements
   api_surfaces:
@@ -99,43 +47,6 @@ tables:
     - statement_status
     - period_end
     - id
-  security:
-    financial: true
-- table: commerce_usage_service_provider_statement_item
-  domain: commerce
-  profile: commercial_provider_statement_item
-  compliance_level: L3
-  system_of_record: false
-  write_owner: billing-worker
-  common_columns: projection
-  source_tables:
-  - commerce_usage_service_provider_statement
-  - ai_usage_service_provider_edge
-  frontend_routes:
-  - /admin/service-providers/statements
-  api_surfaces:
-  - backend
-  - worker
-  columns:
-    statement_id: int64
-    usage_edge_id: int64
-    billing_meter_code: string(64)
-    token_kind: string(64)
-    model: string(128)
-    request_count: int64
-    token_count: int64
-    quantity: decimal
-    amount: decimal
-    currency: string(10)
-    source_usage_fact_ids: json
-  indexes:
-  - name: idx_commerce_usage_service_provider_statement_item_statement
-    columns:
-    - tenant_id
-    - organization_id
-    - statement_id
-    - billing_meter_code
-    - token_kind
   security:
     financial: true
 - table: commerce_usage_service_provider_adjustment

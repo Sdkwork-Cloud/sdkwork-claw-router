@@ -323,7 +323,6 @@ routes:
   required_tables:
   - ai_site
   - ai_site_service
-  - ai_site_model
   - ai_channel
   - ops_audit_log
   evidence:
@@ -338,52 +337,15 @@ routes:
   operation_routes:
   - /admin/model/mappings
   required_tables:
+  - ai_model
   - ai_model_mapping_rule
+  - ai_model_mapping_rule_binding
+  - ai_model_mapping_rule_item
   - ai_model_vendor
   - ai_channel
   - ops_audit_log
   evidence:
   - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
-  - docs/schema-registry/frontend-field-contracts.yaml
-- route: /admin/channel/resources
-  package: sdkwork-claw-router-admin-channel
-  owner: admin-control-plane
-  route_scope: admin
-  delivery_kind: sdk_backed_business_runtime
-  api_surface: backend
-  operation_routes:
-  - /admin/channel/resources
-  required_tables:
-  - ai_resource
-  - ai_resource_group_item
-  - ops_audit_log
-  evidence:
-  - apps/sdkwork-claw-router-portal/src/App.tsx
-  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/index.tsx
-  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
-  - docs/schema-registry/frontend-field-contracts.yaml
-- route: /admin/channel/endpoints
-  package: sdkwork-claw-router-admin-channel
-  owner: admin-control-plane
-  route_scope: admin
-  delivery_kind: sdk_backed_business_runtime
-  api_surface: backend
-  operation_routes:
-  - /admin/channel/endpoints
-  required_tables:
-  - ai_provider
-  - ai_channel
-  - ai_channel_model
-  - ai_channel_resource
-  - ai_channel_endpoint
-  - integration_provider_health_snapshot
-  - ai_model_vendor
-  - ai_api_endpoint
-  - ops_audit_log
-  evidence:
-  - apps/sdkwork-claw-router-portal/src/App.tsx
-  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
-  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/index.tsx
   - docs/schema-registry/frontend-field-contracts.yaml
 - route: /admin/app
   package: sdkwork-claw-router-app-center
@@ -2127,7 +2089,6 @@ routes:
   required_tables:
   - integration_service_provider_edge
   - integration_service_provider_contract
-  - integration_service_provider_contract_version
   - integration_service_provider_finance_profile
   - ops_audit_log
   evidence:
@@ -2146,7 +2107,6 @@ routes:
   - integration_service_provider_edge
   - integration_service_provider_price_plan
   - integration_service_provider_price_rule
-  - integration_service_provider_price_change_request
   - ai_model_pricing
   - ops_audit_log
   evidence:
@@ -2163,7 +2123,6 @@ routes:
   - /admin/service-providers/usage
   required_tables:
   - ai_usage_fact
-  - ai_usage_service_provider_chain
   - ai_usage_service_provider_edge
   - ops_audit_log
   evidence:
@@ -2179,8 +2138,6 @@ routes:
   operation_routes:
   - /admin/service-providers/wallet
   required_tables:
-  - integration_service_provider_account_binding
-  - commerce_account
   - commerce_account_ledger_entry
   - commerce_service_provider_exposure_snapshot
   - ops_audit_log
@@ -2197,9 +2154,7 @@ routes:
   operation_routes:
   - /admin/service-providers/statements
   required_tables:
-  - commerce_usage_service_provider_settlement
   - commerce_usage_service_provider_statement
-  - commerce_usage_service_provider_statement_item
   - ops_audit_log
   evidence:
   - apps/sdkwork-claw-router-portal/src/App.tsx
@@ -2214,8 +2169,8 @@ routes:
   operation_routes:
   - /admin/service-providers/reconciliation
   required_tables:
-  - ai_provider_invoice_import
-  - ai_provider_invoice_item
+  - integration_provider_invoice_import
+  - integration_provider_invoice_item
   - commerce_usage_service_provider_reconciliation_run
   - commerce_usage_service_provider_reconciliation_item
   - ops_audit_log

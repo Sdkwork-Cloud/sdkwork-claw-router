@@ -4,14 +4,14 @@ import java.util.List;
 
 public class AdminChannelItem {
     private String accessType;
-    private String apiKey;
     private String balance;
-    private String baseUrl;
     private List<String> capabilities;
     private String channelId;
     private String channelType;
     private ProviderCircuitBreakerPolicy circuitBreakerPolicy;
     private String createdAt;
+    private String credentialRotation;
+    private List<AdminChannelCredentialItem> credentials;
     private Integer errors;
     private String expiresAt;
     private String id;
@@ -21,7 +21,6 @@ public class AdminChannelItem {
     private String protocol;
     private List<String> resourceCodes;
     private ProviderRetryPolicy retryPolicy;
-    private String secretRef;
     private String status;
     private Integer timeoutMs;
     private String vendor;
@@ -35,28 +34,12 @@ public class AdminChannelItem {
         this.accessType = accessType;
     }
 
-    public String getApiKey() {
-        return this.apiKey;
-    }
-
-    public void setApiKey(String apiKey) {
-        this.apiKey = apiKey;
-    }
-
     public String getBalance() {
         return this.balance;
     }
 
     public void setBalance(String balance) {
         this.balance = balance;
-    }
-
-    public String getBaseUrl() {
-        return this.baseUrl;
-    }
-
-    public void setBaseUrl(String baseUrl) {
-        this.baseUrl = baseUrl;
     }
 
     public List<String> getCapabilities() {
@@ -97,6 +80,22 @@ public class AdminChannelItem {
 
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public String getCredentialRotation() {
+        return this.credentialRotation;
+    }
+
+    public void setCredentialRotation(String credentialRotation) {
+        this.credentialRotation = credentialRotation;
+    }
+
+    public List<AdminChannelCredentialItem> getCredentials() {
+        return this.credentials;
+    }
+
+    public void setCredentials(List<AdminChannelCredentialItem> credentials) {
+        this.credentials = credentials;
     }
 
     public Integer getErrors() {
@@ -169,14 +168,6 @@ public class AdminChannelItem {
 
     public void setRetryPolicy(ProviderRetryPolicy retryPolicy) {
         this.retryPolicy = retryPolicy;
-    }
-
-    public String getSecretRef() {
-        return this.secretRef;
-    }
-
-    public void setSecretRef(String secretRef) {
-        this.secretRef = secretRef;
     }
 
     public String getStatus() {

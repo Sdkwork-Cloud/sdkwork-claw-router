@@ -3,7 +3,20 @@ import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import test from 'node:test';
 
+import { clearStoredAppSessionToken } from './packages/sdkwork-claw-router-commons/src/app-session-token.ts';
+import { resetClawRouterSdkClients } from './packages/sdkwork-claw-router-commons/src/sdk-clients.ts';
+import { ModelMappingService } from './packages/sdkwork-claw-router-admin-model/src/modelService.ts';
+
 const PORTAL_ROOT = import.meta.dirname;
+const originalFetch = globalThis.fetch;
+const originalWindowDescriptor = Object.getOwnPropertyDescriptor(globalThis, 'window');
+
+type CapturedBackendRequest = {
+  url: string;
+  method: string;
+  headers: Record<string, string>;
+  body: string;
+};
 
 function readPortalFile(relativePath: string): string {
   return readFileSync(resolve(PORTAL_ROOT, relativePath), 'utf8');
@@ -17,6 +30,51 @@ function sourceBetween(source: string, startToken: string, endToken: string): st
   return source.slice(start, end);
 }
 
+async function withBackendSdkFetch<T>(
+  handler: (url: string, init?: RequestInit) => unknown,
+  fn: (captured: CapturedBackendRequest[]) => Promise<T>,
+): Promise<T> {
+  const captured: CapturedBackendRequest[] = [];
+  Object.defineProperty(globalThis, 'window', {
+    configurable: true,
+    enumerable: true,
+    value: {
+      dispatchEvent: () => true,
+    },
+  });
+  globalThis.fetch = (async (input: RequestInfo | URL, init?: RequestInit) => {
+    const url = typeof input === 'string' ? input : input instanceof URL ? input.toString() : input.url;
+    const body = typeof init?.body === 'string' ? init.body : '';
+    const headers = Object.fromEntries(new Headers(init?.headers).entries());
+    captured.push({
+      url,
+      method: init?.method ?? 'GET',
+      headers,
+      body,
+    });
+    const result = handler(url, init);
+    return new Response(JSON.stringify({ code: '2000', data: result }), {
+      status: 200,
+      headers: { 'content-type': 'application/json' },
+    });
+  }) as typeof fetch;
+  clearStoredAppSessionToken();
+  resetClawRouterSdkClients();
+
+  try {
+    return await fn(captured);
+  } finally {
+    clearStoredAppSessionToken();
+    resetClawRouterSdkClients();
+    globalThis.fetch = originalFetch;
+    if (originalWindowDescriptor) {
+      Object.defineProperty(globalThis, 'window', originalWindowDescriptor);
+    } else {
+      delete (globalThis as { window?: Window }).window;
+    }
+  }
+}
+
 test('admin model mapping service is backend SDK backed', () => {
   const modelService = readPortalFile('packages/sdkwork-claw-router-admin-model/src/modelService.ts');
 
@@ -26,8 +84,11 @@ test('admin model mapping service is backend SDK backed', () => {
     'export interface ModelMappingRuleItem',
     'export interface ModelMappingRuleBinding',
     'export interface ModelMappingResolveResult',
+    'export interface ModelMappingModelOption',
     'mappingItems: ModelMappingRuleItem[]',
     'bindings: ModelMappingRuleBinding[]',
+    'fetchModelOptionsCatalog',
+    'normalizeModelMappingModelOption',
     'getClawRouterBackendSdkClient().ai.modelMappings.list(',
     'getClawRouterBackendSdkClient().ai.modelMappings.create(',
     'getClawRouterBackendSdkClient().ai.modelMappings.update(',
@@ -271,6 +332,7 @@ test('admin model mapping scope tabs request server-filtered rule rows', () => {
   const modelAdminSource = readPortalFile('packages/sdkwork-claw-router-admin-model/src/index.tsx');
   const mappingAdminSource = sourceBetween(modelAdminSource, 'export function ModelMappingAdmin', 'function SiteFormModal');
   const loadSource = sourceBetween(mappingAdminSource, 'const loadMappings = async', 'const loadCatalog = async');
+  const catalogSource = sourceBetween(mappingAdminSource, 'const loadCatalog = async', 'const filteredMappings = mappings.filter((mapping) => {');
   const filteredSource = sourceBetween(mappingAdminSource, 'const filteredMappings = mappings.filter((mapping) => {', 'const openCreateMapping = () => {');
   const headerSource = sourceBetween(mappingAdminSource, 'header={(', '{(loadError || catalogError)');
 
@@ -281,6 +343,71 @@ test('admin model mapping scope tabs request server-filtered rule rows', () => {
   assert.ok(loadSource.includes('nextBindingFilter'), 'mapping loader should accept the requested scope explicitly');
   assert.ok(loadSource.includes('bindingType: nextBindingFilter'), 'mapping loader should pass the requested scope to the backend SDK service');
   assert.ok(loadSource.includes('setLoading(true)'), 'scope changes should keep the table in loading state while server data is pending');
+  assert.ok(catalogSource.includes('ModelMappingService.fetchModelOptionsCatalog()'), 'mapping catalog should use lightweight model options instead of strict priced model records');
+  assert.equal(catalogSource.includes('ModelService.fetchInitializedCatalog()'), false, 'mapping catalog must not load strict model admin catalog because region prices are not needed for mapping choices');
+});
+
+test('admin model mapping catalog tolerates models without region prices', async () => {
+  await withBackendSdkFetch(
+    (url, init) => {
+      const method = init?.method ?? 'GET';
+      if (url === '/backend/v3/api/ai/model_vendors' && method === 'GET') {
+        return {
+          items: [
+            {
+              id: 'vendor-openai',
+              vendorCode: 'openai',
+              name: 'OpenAI',
+              status: 'active',
+              color: 'bg-indigo-500',
+              description: 'OpenAI models',
+            },
+          ],
+        };
+      }
+      if (url === '/backend/v3/api/ai/models' && method === 'GET') {
+        return {
+          items: [
+            {
+              id: 'model-gpt-4o-mini',
+              vendorId: 'vendor-openai',
+              vendorCode: 'openai',
+              model: 'gpt-4o-mini',
+              displayName: 'GPT-4o mini',
+              name: 'GPT-4o mini',
+              type: 'Chat',
+              status: 'active',
+            },
+          ],
+        };
+      }
+      throw new Error(`Unexpected SDK request ${method} ${url}`);
+    },
+    async (captured) => {
+      const catalog = await ModelMappingService.fetchModelOptionsCatalog();
+
+      assert.deepEqual(catalog.vendors.map((vendor) => vendor.vendorCode), ['openai']);
+      assert.deepEqual(catalog.models, [
+        {
+          id: 'model-gpt-4o-mini',
+          vendorId: 'vendor-openai',
+          vendorCode: 'openai',
+          model: 'gpt-4o-mini',
+          displayName: 'GPT-4o mini',
+          name: 'GPT-4o mini',
+          type: 'Chat',
+          status: 'active',
+        },
+      ]);
+      assert.deepEqual(
+        captured.map((request) => `${request.method} ${request.url}`),
+        [
+          'GET /backend/v3/api/ai/model_vendors',
+          'GET /backend/v3/api/ai/models',
+        ],
+      );
+    },
+  );
 });
 
 test('admin model mapping relation cell opens focused relation editor modal', () => {

@@ -40,31 +40,6 @@ public class SitesApi {
         return try await client.post(ApiPaths.backendPath("/sites/\(serializePathParameter(siteId, PathParameterSpec(name: "siteId", style: "simple", explode: false)))/health_check"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: HealthCheckCreateResult.self)
     }
 
-    /// List site models
-    public func siteModelsList(siteId: String) async throws -> SiteModelsListResult? {
-        return try await client.get(ApiPaths.backendPath("/sites/\(serializePathParameter(siteId, PathParameterSpec(name: "siteId", style: "simple", explode: false)))/models"), responseType: SiteModelsListResult.self)
-    }
-
-    /// Create site model
-    public func siteModelsCreate(siteId: String, body: AdminSiteModelCreateRequest) async throws -> SiteModelsCreateResult? {
-        return try await client.post(ApiPaths.backendPath("/sites/\(serializePathParameter(siteId, PathParameterSpec(name: "siteId", style: "simple", explode: false)))/models"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: SiteModelsCreateResult.self)
-    }
-
-    /// Replace site models
-    public func siteModelsReplace(siteId: String, body: AdminSiteModelsReplaceRequest) async throws -> SiteModelsReplaceResult? {
-        return try await client.put(ApiPaths.backendPath("/sites/\(serializePathParameter(siteId, PathParameterSpec(name: "siteId", style: "simple", explode: false)))/models"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: SiteModelsReplaceResult.self)
-    }
-
-    /// Delete site model
-    public func siteModelsDelete(siteId: String, siteModelId: String) async throws -> SiteModelsDeleteResult? {
-        return try await client.delete(ApiPaths.backendPath("/sites/\(serializePathParameter(siteId, PathParameterSpec(name: "siteId", style: "simple", explode: false)))/models/\(serializePathParameter(siteModelId, PathParameterSpec(name: "siteModelId", style: "simple", explode: false)))"), responseType: SiteModelsDeleteResult.self)
-    }
-
-    /// Update site model
-    public func siteModelsUpdate(siteId: String, siteModelId: String, body: AdminSiteModelUpdateRequest) async throws -> SiteModelsUpdateResult? {
-        return try await client.patch(ApiPaths.backendPath("/sites/\(serializePathParameter(siteId, PathParameterSpec(name: "siteId", style: "simple", explode: false)))/models/\(serializePathParameter(siteModelId, PathParameterSpec(name: "siteModelId", style: "simple", explode: false)))"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: SiteModelsUpdateResult.self)
-    }
-
     /// Test site connection
     public func testConnectionCreate(siteId: String, body: AdminSiteActionRequest) async throws -> TestConnectionCreateResult? {
         return try await client.post(ApiPaths.backendPath("/sites/\(serializePathParameter(siteId, PathParameterSpec(name: "siteId", style: "simple", explode: false)))/test_connection"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: TestConnectionCreateResult.self)

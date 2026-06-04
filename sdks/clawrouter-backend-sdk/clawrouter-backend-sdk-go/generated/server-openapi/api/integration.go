@@ -17,36 +17,6 @@ func NewIntegrationApi(client *sdkhttp.Client) *IntegrationApi {
     return &IntegrationApi{client: client}
 }
 
-// List channel endpoints
-func (a *IntegrationApi) ChannelEndpointsList() (sdktypes.ChannelEndpointsListResult, error) {
-    raw, err := a.client.Get(BackendApiPath("/integration/channel_endpoints"), nil, nil)
-    if err != nil {
-        var zero sdktypes.ChannelEndpointsListResult
-        return zero, err
-    }
-    return decodeResult[sdktypes.ChannelEndpointsListResult](raw)
-}
-
-// Create channel endpoint
-func (a *IntegrationApi) ChannelEndpointsCreate(body sdktypes.AdminChannelEndpointCreateRequest) (sdktypes.ChannelEndpointsCreateResult, error) {
-    raw, err := a.client.Post(BackendApiPath("/integration/channel_endpoints"), body, nil, nil, "application/json")
-    if err != nil {
-        var zero sdktypes.ChannelEndpointsCreateResult
-        return zero, err
-    }
-    return decodeResult[sdktypes.ChannelEndpointsCreateResult](raw)
-}
-
-// Update channel endpoint
-func (a *IntegrationApi) ChannelEndpointsUpdate(endpointId string, body sdktypes.AdminChannelEndpointUpdateRequest) (sdktypes.ChannelEndpointsUpdateResult, error) {
-    raw, err := a.client.Put(BackendApiPath(fmt.Sprintf("/integration/channel_endpoints/%s", SerializePathParameter(endpointId, PathParameterSpec{Name: "endpointId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
-    if err != nil {
-        var zero sdktypes.ChannelEndpointsUpdateResult
-        return zero, err
-    }
-    return decodeResult[sdktypes.ChannelEndpointsUpdateResult](raw)
-}
-
 // List channels
 func (a *IntegrationApi) ChannelsList() (sdktypes.ChannelsListResult, error) {
     raw, err := a.client.Get(BackendApiPath("/integration/channels"), nil, nil)

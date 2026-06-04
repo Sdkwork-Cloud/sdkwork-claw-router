@@ -71,54 +71,6 @@ class SitesApi {
     })();
   }
 
-  /// List site models
-  Future<SiteModelsListResult?> siteModelsList(String siteId) async {
-    final response = await _client.get(ApiPaths.backendPath('/sites/${serializePathParameter(siteId, const PathParameterSpec('siteId', 'simple', false))}/models'));
-    return (() {
-      final map = sdkworkResponseAsMap(response);
-      return map == null ? null : SiteModelsListResult.fromJson(map);
-    })();
-  }
-
-  /// Create site model
-  Future<SiteModelsCreateResult?> siteModelsCreate(String siteId, AdminSiteModelCreateRequest body) async {
-    final payload = body.toJson();
-    final response = await _client.post(ApiPaths.backendPath('/sites/${serializePathParameter(siteId, const PathParameterSpec('siteId', 'simple', false))}/models'), body: payload, contentType: 'application/json');
-    return (() {
-      final map = sdkworkResponseAsMap(response);
-      return map == null ? null : SiteModelsCreateResult.fromJson(map);
-    })();
-  }
-
-  /// Replace site models
-  Future<SiteModelsReplaceResult?> siteModelsReplace(String siteId, AdminSiteModelsReplaceRequest body) async {
-    final payload = body.toJson();
-    final response = await _client.put(ApiPaths.backendPath('/sites/${serializePathParameter(siteId, const PathParameterSpec('siteId', 'simple', false))}/models'), body: payload, contentType: 'application/json');
-    return (() {
-      final map = sdkworkResponseAsMap(response);
-      return map == null ? null : SiteModelsReplaceResult.fromJson(map);
-    })();
-  }
-
-  /// Delete site model
-  Future<SiteModelsDeleteResult?> siteModelsDelete(String siteId, String siteModelId) async {
-    final response = await _client.delete(ApiPaths.backendPath('/sites/${serializePathParameter(siteId, const PathParameterSpec('siteId', 'simple', false))}/models/${serializePathParameter(siteModelId, const PathParameterSpec('siteModelId', 'simple', false))}'));
-    return (() {
-      final map = sdkworkResponseAsMap(response);
-      return map == null ? null : SiteModelsDeleteResult.fromJson(map);
-    })();
-  }
-
-  /// Update site model
-  Future<SiteModelsUpdateResult?> siteModelsUpdate(String siteId, String siteModelId, AdminSiteModelUpdateRequest body) async {
-    final payload = body.toJson();
-    final response = await _client.patch(ApiPaths.backendPath('/sites/${serializePathParameter(siteId, const PathParameterSpec('siteId', 'simple', false))}/models/${serializePathParameter(siteModelId, const PathParameterSpec('siteModelId', 'simple', false))}'), body: payload, contentType: 'application/json');
-    return (() {
-      final map = sdkworkResponseAsMap(response);
-      return map == null ? null : SiteModelsUpdateResult.fromJson(map);
-    })();
-  }
-
   /// Test site connection
   Future<TestConnectionCreateResult?> testConnectionCreate(String siteId, AdminSiteActionRequest body) async {
     final payload = body.toJson();

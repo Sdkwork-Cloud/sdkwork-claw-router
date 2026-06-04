@@ -14,7 +14,7 @@ const LOAD_USAGE_SUMMARY: &str = r#"
 SELECT
     CAST(COALESCE(SUM(COALESCE(request_count, 0)), 0) AS TEXT) AS request_count,
     CAST(COALESCE(SUM(COALESCE(total_tokens, 0)), 0) AS TEXT) AS total_tokens,
-    CAST(COALESCE(SUM(COALESCE(customer_charge_amount, cost_amount, 0)), 0) AS TEXT) AS used_credits,
+    CAST(COALESCE(SUM(COALESCE(customer_charge_amount, 0)), 0) AS TEXT) AS used_credits,
     CAST(COALESCE(SUM(CASE WHEN modality = 2 THEN COALESCE(request_count, 0) ELSE 0 END), 0) AS TEXT) AS image_requests,
     CAST(COALESCE(SUM(CASE WHEN modality = 5 THEN COALESCE(request_count, 0) ELSE 0 END), 0) AS TEXT) AS video_requests,
     CAST(COALESCE(SUM(CASE WHEN modality = 3 THEN COALESCE(request_count, 0) ELSE 0 END), 0) AS TEXT) AS audio_requests,
@@ -48,7 +48,7 @@ WHERE status = 1
 const LOAD_USAGE_TOTALS: &str = r#"
 SELECT
     CAST(COALESCE(SUM(COALESCE(request_count, 0)), 0) AS TEXT) AS total_request_count,
-    CAST(COALESCE(SUM(COALESCE(customer_charge_amount, cost_amount, 0)), 0) AS TEXT) AS total_used_credits
+    CAST(COALESCE(SUM(COALESCE(customer_charge_amount, 0)), 0) AS TEXT) AS total_used_credits
 FROM ai_usage_fact
 WHERE status = 1
   AND tenant_id = $1

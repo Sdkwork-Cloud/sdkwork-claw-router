@@ -102,8 +102,8 @@ Quick Ubuntu/Debian service install from a release asset:
 
 ```bash
 sudo apt install ./clawrouter-linux-x64-server-0.3.0.deb
-sudo editor /etc/clawrouter/clawrouter.toml
-sudo editor /etc/clawrouter/database.secret
+sudo editor /etc/sdkwork/router/clawrouter.toml
+sudo editor /etc/sdkwork/router/database.secret
 sudo systemctl start clawrouter
 curl http://127.0.0.1:3900/healthz
 curl http://127.0.0.1:3900/readyz
@@ -126,20 +126,20 @@ template and [`etc/nginx/sdkwork`](./etc/nginx/sdkwork/) for full-domain
 examples. See the release install guide for certificate path conventions under
 `/opt/certs/letsencrypt/live/<cert-name>`.
 
-The `.deb` package creates `/etc/clawrouter/clawrouter.toml`,
-`/etc/clawrouter/clawrouter.env`, `/etc/clawrouter/database.secret`,
-`/var/lib/clawrouter`, and the
+The `.deb` package creates `/etc/sdkwork/router/clawrouter.toml`,
+`/etc/sdkwork/router/clawrouter.env`, `/etc/sdkwork/router/database.secret`,
+`/var/lib/sdkwork/router`, and the
 `sdkwork` system user. The Linux systemd service runs `clawrouterctl
 ensure` and `refresh-catalog --force` automatically before the gateway starts,
 and service packages enable `clawrouter.service` during installation on systemd
 hosts. The service is not started until the operator configures PostgreSQL in
-`/etc/clawrouter/clawrouter.toml` or uses a protected
-`SDKWORK_CLAW_DATABASE_URL` override in `/etc/clawrouter/clawrouter.env`.
+`/etc/sdkwork/router/clawrouter.toml` or uses a protected
+`SDKWORK_CLAW_DATABASE_URL` override in `/etc/sdkwork/router/clawrouter.env`.
 The package post-install step prints the runtime TOML, service environment,
 PostgreSQL password file, systemd service name, and the exact first-start
 commands so the operator can configure the service without hunting through
 package contents.
-The generated `/etc/clawrouter/database.secret` contains the placeholder
+The generated `/etc/sdkwork/router/database.secret` contains the placeholder
 `change-me`; replace it with the real PostgreSQL password before starting the
 service. Startup rejects default placeholder hosts or passwords.
 
@@ -152,7 +152,7 @@ it after first login.
 Quick MSI install root initialization on Windows:
 
 ```powershell
-Set-Location "C:\Program Files\ClawRouter"
+Set-Location "C:\Program Files\sdkwork\router"
 .\bin\clawrouterctl.exe ensure
 .\bin\clawrouterctl.exe refresh-catalog --force
 .\bin\clawrouter.exe
@@ -169,9 +169,9 @@ Quick Linux native desktop package initialization:
 Quick macOS native package initialization:
 
 ```bash
-/opt/clawrouter/bin/clawrouterctl ensure
-/opt/clawrouter/bin/clawrouterctl refresh-catalog --force
-/opt/clawrouter/bin/clawrouter
+/opt/sdkwork/router/bin/clawrouterctl ensure
+/opt/sdkwork/router/bin/clawrouterctl refresh-catalog --force
+/opt/sdkwork/router/bin/clawrouter
 ```
 
 Quick portable package initialization on Linux and macOS:
@@ -367,7 +367,8 @@ Command intent:
   `release:preflight`, and then runs the full `verify` gate.
 - `pnpm.cmd portal:dev` starts the browser portal only.
 - `pnpm.cmd desktop:dev` starts the full install-checked workspace with
-  desktop environment flags.
+  desktop environment flags. It still uses the workspace PostgreSQL integration
+  profile by default.
 - `pnpm.cmd service:dev` starts the full install-checked workspace with
   service-mode environment flags.
 - `pnpm.cmd server:dev` starts the all-in-one Rust edge/API process plus the
@@ -389,6 +390,12 @@ Command intent:
   binaries.
 
 Use `pnpm.cmd`, not `pnpm.ps1`, on Windows shells that block PowerShell scripts.
+
+Workspace development commands use PostgreSQL for integration testing.
+Desktop packages and first-run local user data use SQLite under `~/.sdkwork/router/data`.
+On Windows, the equivalent path is `%USERPROFILE%/.sdkwork/router/data`.
+Use `pnpm.cmd desktop:dev:sqlite` or `pnpm.cmd tauri:dev:sqlite` when validating
+desktop local-data behavior from the workspace.
 
 Edge startup prints the browser and API access matrix before launching
 processes. With default ports, the Rust edge server at `3900` is the single
@@ -789,7 +796,7 @@ declares:
 
 Database defaults are explicit by package profile. `archive`, `service`, and
 `container` are server release profiles and default to external PostgreSQL.
-Desktop packages default to local SQLite in the operating system user data
+Desktop packages default to local SQLite in the SDKWork user private data
 directory and may still be pointed at another database through the same runtime
 config file.
 
@@ -800,9 +807,9 @@ The runtime config file is TOML and supports:
 engine = "postgresql"
 host = "db.example.com"
 port = 5432
-database = "sdkwork_claw_router"
-username = "sdkwork_claw_router"
-password_file = "/etc/clawrouter/database.secret"
+database = "sdkwork_ai_prod"
+username = "sdkworkprod@2026++"
+password_file = "/etc/sdkwork/router/database.secret"
 # password = "change-me"
 ssl_mode = "require"
 max_connections = 16
@@ -816,7 +823,7 @@ port = 6379
 database = 0
 # username = "default"
 # url = "redis://redis.example.com:6379/0"
-# password_file = "/etc/clawrouter/redis.secret"
+# password_file = "/etc/sdkwork/router/redis.secret"
 # password = "change-me"
 key_prefix = "clawrouter"
 tls = false
@@ -853,7 +860,7 @@ gateway_base_url = "http://127.0.0.1:18080"
 backend_api_base_url = "http://127.0.0.1:18081"
 app_api_base_url = "http://127.0.0.1:18082"
 portal_base_url = "http://127.0.0.1:3901"
-portal_static_dist = "/usr/lib/clawrouter/portal/dist"
+portal_static_dist = "/usr/lib/sdkwork/router/portal/dist"
 cors_allowed_origins = []
 upstream_request_timeout_millis = 30000
 upstream_ready_timeout_millis = 2000
@@ -880,11 +887,11 @@ csp_frame_src = ["https://player.bilibili.com"]
 rate_limit_requests = 120
 rate_limit_window_seconds = 60
 max_body_bytes = 1048576
-sdk_archive_root = "/usr/lib/clawrouter/portal/dist/sdk-archives"
+sdk_archive_root = "/usr/lib/sdkwork/router/portal/dist/sdk-archives"
 
 [provider_relay.openai]
 # base_url = "https://api.openai.com/v1"
-# bearer_token_file = "/etc/clawrouter/openai-relay.secret"
+# bearer_token_file = "/etc/sdkwork/router/openai-relay.secret"
 
 [provider_relay.runtime]
 response_timeout_millis = 120000
@@ -899,8 +906,8 @@ retryable_status_codes = [429, 500, 502, 503, 504]
 backoff_millis = 0
 
 [paths]
-data_directory = "/var/lib/clawrouter"
-course_upload_root = "/var/lib/clawrouter/uploads/courses"
+data_directory = "/var/lib/sdkwork/router"
+course_upload_root = "/var/lib/sdkwork/router/uploads/courses"
 
 [courses]
 video_upload_max_bytes = 1073741824
@@ -914,13 +921,13 @@ payment_callback_body_max_bytes = 65536
 
 [install]
 # Optional override for externally mounted sdkwork-models catalog data.
-# models_catalog_root = "/usr/lib/clawrouter/catalog"
+# models_catalog_root = "/usr/lib/sdkwork/router/catalog"
 ```
 
 `password_file` may be an absolute path, a path relative to `clawrouter.toml`,
 or a path that uses standard environment variable expansion such as
 `${SECRET_ROOT}/database.secret`, `$SECRET_ROOT/database.secret`, or
-`%ProgramData%/SdkWork/ClawRouter/database.secret`. Generated service templates
+`%ProgramData%/sdkwork/router/database.secret`. Generated service templates
 use placeholder values and startup refuses server configurations that still use
 `db.example.com` or `change-me`.
 
@@ -931,8 +938,8 @@ set `[redis].enabled = true`, configure `[redis].host`, `[redis].port`, and
 `[redis].database`, and prefer `[redis].password_file` over `[redis].password`.
 Use `[redis].url` only as an advanced override for managed Redis endpoints that
 cannot be represented cleanly with separate fields. Standard optional secret
-paths are `/etc/clawrouter/redis.secret` for Linux service installs,
-`/run/secrets/clawrouter-redis-password` for containers, and the matching
+paths are `/etc/sdkwork/router/redis.secret` for Linux service installs,
+`/run/secrets/sdkwork/router/redis-password` for containers, and the matching
 ClawRouter config/data directory on Windows, macOS, and desktop installs.
 
 `[paths]` contains runtime-owned filesystem roots. `data_directory` is the
@@ -984,8 +991,8 @@ instead of using a separate password file:
 engine = "postgresql"
 host = "db.internal"
 port = 5432
-database = "sdkwork_claw_router"
-username = "sdkwork_claw_router"
+database = "sdkwork_ai_prod"
+username = "sdkworkprod@2026++"
 password = "real-password"
 ssl_mode = "require"
 max_connections = 16
@@ -993,12 +1000,12 @@ max_connections = 16
 
 The standard config file locations are:
 
-- Linux server: `/etc/clawrouter/clawrouter.toml`
-- Linux desktop: `${XDG_CONFIG_HOME:-~/.config}/clawrouter/clawrouter.toml`
-- Windows server: `%ProgramData%/SdkWork/ClawRouter/clawrouter.toml`
-- Windows desktop: `%APPDATA%/SdkWork/ClawRouter/clawrouter.toml`
-- macOS server: `/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml`
-- macOS desktop: `~/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml`
+- Linux server: `/etc/sdkwork/router/clawrouter.toml`
+- Linux desktop: `~/.sdkwork/router/config/clawrouter.toml`
+- Windows server: `%ProgramData%/sdkwork/router/clawrouter.toml`
+- Windows desktop: `%USERPROFILE%/.sdkwork/router/config/clawrouter.toml`
+- macOS server: `/Library/Application Support/sdkwork/router/clawrouter.toml`
+- macOS desktop: `~/.sdkwork/router/config/clawrouter.toml`
 
 At runtime, `SDKWORK_CLAW_CONFIG_FILE` can point to any explicit TOML config
 file. `SDKWORK_CLAW_DATABASE_URL` and
@@ -1065,7 +1072,7 @@ consumes the same staged production directory and package plan to build:
 - macOS `.pkg` packages through `pkgbuild` for service and desktop install
   targets.
   macOS service packages include a launchd runner at
-  `/Library/Application Support/SdkWork/ClawRouter/service/macos/clawrouter-service-runner`
+  `/Library/Application Support/sdkwork/router/service/macos/clawrouter-service-runner`
   so launchd runs `clawrouterctl ensure` and
   `clawrouterctl refresh-catalog --force` before starting the gateway.
 
@@ -1075,9 +1082,9 @@ The native installer builder writes the installer, a per-installer
 installer CLI, runtime TOML, template, data directory, service metadata,
 permissions, and first-start commands. Linux `.deb` packages place public
 commands under `/usr/bin`, immutable private runtime assets under
-`/usr/lib/clawrouter`, service configuration and templates under
-`/etc/clawrouter`, mutable data/logs under `/var/lib/clawrouter` and
-`/var/log/clawrouter`, docs under `/usr/share/doc/clawrouter`, and service
+`/usr/lib/sdkwork/router`, service configuration and templates under
+`/etc/sdkwork/router`, mutable data/logs under `/var/lib/sdkwork/router` and
+`/var/log/sdkwork/router`, docs under `/usr/share/doc/sdkwork/router`, and service
 units under `/lib/systemd/system` for service mode. The Debian post-install
 script creates the `sdkwork` user/group, applies root-owned `0755` modes to
 runtime binaries, keeps service config templates and secrets as `root:sdkwork`
@@ -1089,20 +1096,21 @@ hosts. The generated service unit uses a restricted runtime profile with
 state/log/config directories with `0750` directory modes, kernel and
 control-group protections, native syscall architecture filtering, and
 `LimitNOFILE=65535`. The running service can write data and logs, while
-`/usr/lib/clawrouter` and `/etc/clawrouter` stay read-only to the service
+`/usr/lib/sdkwork/router` and `/etc/sdkwork/router` stay read-only to the service
 process after installation.
 Operators configure PostgreSQL through
-`/etc/clawrouter/clawrouter.toml`, `/etc/clawrouter/database.secret`, or a
-protected override in `/etc/clawrouter/clawrouter.env`, then start the service.
-Windows `.msi` packages keep binaries under `%ProgramFiles%/ClawRouter` and
-shared templates under `%ProgramData%/SdkWork/ClawRouter`; native manifests
+`/etc/sdkwork/router/clawrouter.toml`, `/etc/sdkwork/router/database.secret`, or a
+protected override in `/etc/sdkwork/router/clawrouter.env`, then start the service.
+Windows `.msi` packages keep binaries under `%ProgramFiles%/sdkwork/router` and
+shared templates under `%ProgramData%/sdkwork/router`; native manifests
 record inherited ProgramData ACLs for service templates, runtime TOML, secrets,
 and data directories, while desktop runtime files remain user-profile ACLs
-under `%APPDATA%` and `%LOCALAPPDATA%`. macOS service packages install service
-runtime files under `/Library/Application Support/SdkWork/ClawRouter` with
+under `%USERPROFILE%/.sdkwork/router/config` and
+`%USERPROFILE%/.sdkwork/router/data`. macOS service packages install service
+runtime files under `/Library/Application Support/sdkwork/router` with
 `root:wheel` ownership, `0750` on the service root, `0640` on service templates
 and copied runtime TOML, and `0644` on the launchd plist; macOS desktop keeps
-runtime config in the user's Application Support directory.
+runtime config and local SQLite data under `~/.sdkwork/router`.
 
 `scripts/smoke-install-package-init.mjs` validates the fast initialization
 contract separately from service startup. The default root command is a dry-run

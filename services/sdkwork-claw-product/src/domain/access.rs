@@ -18,6 +18,7 @@ pub struct GatewayApiKey {
     pub expire_at: Option<String>,
     pub status_code: i32,
     pub default_for_runtime: bool,
+    pub group_bindings: Vec<GatewayApiKeyGroupBinding>,
 }
 
 impl GatewayApiKey {
@@ -40,6 +41,7 @@ impl GatewayApiKey {
             expire_at: None,
             status_code: 1,
             default_for_runtime: false,
+            group_bindings: Vec::new(),
         }
     }
 
@@ -78,6 +80,19 @@ impl GatewayApiKey {
         self
     }
 
+    pub fn with_group_bindings(mut self, group_bindings: Vec<GatewayApiKeyGroupBinding>) -> Self {
+        self.group_bindings = normalized_group_bindings(group_bindings);
+        self
+    }
+
+    pub fn effective_group_bindings(&self) -> Vec<GatewayApiKeyGroupBinding> {
+        if self.group_bindings.is_empty() {
+            vec![GatewayApiKeyGroupBinding::default_route(self.group_id)]
+        } else {
+            self.group_bindings.clone()
+        }
+    }
+
     pub fn display_name(&self) -> String {
         if !self.name.trim().is_empty() {
             self.name.clone()
@@ -99,6 +114,69 @@ impl GatewayApiKey {
             1 => "enabled",
             _ => "disabled",
         }
+    }
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct GatewayApiKeyGroupBinding {
+    pub group_id: i64,
+    pub group_code: String,
+    pub pricing_plan_code: String,
+    pub binding_role: String,
+    pub routing_strategy: String,
+    pub priority: i32,
+    pub weight: i32,
+}
+
+impl GatewayApiKeyGroupBinding {
+    pub fn new(
+        group_id: i64,
+        group_code: &str,
+        pricing_plan_code: &str,
+        priority: i32,
+        weight: i32,
+    ) -> Self {
+        Self {
+            group_id,
+            group_code: group_code.trim().to_owned(),
+            pricing_plan_code: pricing_plan_code.trim().to_owned(),
+            binding_role: "route".to_owned(),
+            routing_strategy: "auto".to_owned(),
+            priority,
+            weight,
+        }
+    }
+
+    pub fn default_route(group_id: i64) -> Self {
+        Self {
+            group_id,
+            group_code: String::new(),
+            pricing_plan_code: String::new(),
+            binding_role: "route".to_owned(),
+            routing_strategy: "auto".to_owned(),
+            priority: 100,
+            weight: 100,
+        }
+    }
+
+    pub fn with_binding_role(mut self, binding_role: &str) -> Self {
+        self.binding_role = normalized_text_or(binding_role, "route");
+        self
+    }
+
+    pub fn with_routing_strategy(mut self, routing_strategy: &str) -> Self {
+        self.routing_strategy = normalized_text_or(routing_strategy, "auto");
+        self
+    }
+
+    pub fn with_group_code(mut self, group_code: &str) -> Self {
+        self.group_code = group_code.trim().to_owned();
+        self
+    }
+
+    pub fn with_pricing_plan_code(mut self, pricing_plan_code: &str) -> Self {
+        self.pricing_plan_code = pricing_plan_code.trim().to_owned();
+        self
     }
 }
 
@@ -176,6 +254,38 @@ fn mask_key_prefix(key_prefix: &str) -> String {
         "********".to_owned()
     } else {
         format!("{key_prefix}********")
+    }
+}
+
+fn normalized_group_bindings(
+    group_bindings: Vec<GatewayApiKeyGroupBinding>,
+) -> Vec<GatewayApiKeyGroupBinding> {
+    let mut bindings = group_bindings
+        .into_iter()
+        .filter(|binding| binding.group_id > 0)
+        .map(|mut binding| {
+            binding.binding_role = normalized_text_or(&binding.binding_role, "route");
+            binding.routing_strategy = normalized_text_or(&binding.routing_strategy, "auto");
+            binding
+        })
+        .collect::<Vec<_>>();
+    bindings.sort_by_key(|binding| {
+        (
+            binding.priority,
+            std::cmp::Reverse(binding.weight),
+            binding.group_id,
+        )
+    });
+    bindings.dedup_by_key(|binding| binding.group_id);
+    bindings
+}
+
+fn normalized_text_or(value: &str, fallback: &str) -> String {
+    let value = value.trim();
+    if value.is_empty() {
+        fallback.to_owned()
+    } else {
+        value.to_owned()
     }
 }
 

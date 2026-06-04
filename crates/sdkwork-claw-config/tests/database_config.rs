@@ -107,7 +107,7 @@ fn runtime_config_file_supports_sqlite_desktop_defaults() {
         r#"
 [database]
 engine = "sqlite"
-url = "sqlite:///Users/example/Library/Application Support/SdkWork/ClawRouter/clawrouter.sqlite"
+url = "sqlite:///Users/example/.sdkwork/router/data/clawrouter.sqlite"
 max_connections = 1
 "#,
     );
@@ -305,45 +305,45 @@ max_connections = 12
 fn runtime_config_locations_follow_platform_conventions() {
     let linux_server = RuntimeConfigLocation::for_platform("linux", RuntimeConfigProfile::Server);
     assert_eq!(
-        PathBuf::from("/etc/clawrouter/clawrouter.toml"),
+        PathBuf::from("/etc/sdkwork/router/clawrouter.toml"),
         linux_server.config_file
     );
     assert_eq!(
-        PathBuf::from("/var/lib/clawrouter"),
+        PathBuf::from("/var/lib/sdkwork/router"),
         linux_server.data_directory
     );
 
     let linux_desktop = RuntimeConfigLocation::for_platform("linux", RuntimeConfigProfile::Desktop);
     assert_eq!(
-        PathBuf::from("${XDG_CONFIG_HOME:-~/.config}/clawrouter/clawrouter.toml"),
+        PathBuf::from("~/.sdkwork/router/config/clawrouter.toml"),
         linux_desktop.config_file
     );
     assert_eq!(
-        PathBuf::from("${XDG_DATA_HOME:-~/.local/share}/clawrouter"),
+        PathBuf::from("~/.sdkwork/router/data"),
         linux_desktop.data_directory
     );
 
     let windows_server =
         RuntimeConfigLocation::for_platform("windows", RuntimeConfigProfile::Server);
     assert_eq!(
-        PathBuf::from("%ProgramData%/SdkWork/ClawRouter/clawrouter.toml"),
+        PathBuf::from("%ProgramData%/sdkwork/router/clawrouter.toml"),
         windows_server.config_file
     );
 
     let windows_desktop =
         RuntimeConfigLocation::for_platform("windows", RuntimeConfigProfile::Desktop);
     assert_eq!(
-        PathBuf::from("%APPDATA%/SdkWork/ClawRouter/clawrouter.toml"),
+        PathBuf::from("%USERPROFILE%/.sdkwork/router/config/clawrouter.toml"),
         windows_desktop.config_file
     );
     assert_eq!(
-        PathBuf::from("%LOCALAPPDATA%/SdkWork/ClawRouter"),
+        PathBuf::from("%USERPROFILE%/.sdkwork/router/data"),
         windows_desktop.data_directory
     );
 
     let macos_desktop = RuntimeConfigLocation::for_platform("macos", RuntimeConfigProfile::Desktop);
     assert_eq!(
-        PathBuf::from("~/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml"),
+        PathBuf::from("~/.sdkwork/router/config/clawrouter.toml"),
         macos_desktop.config_file
     );
 }
@@ -352,14 +352,14 @@ fn runtime_config_locations_follow_platform_conventions() {
 fn runtime_config_locations_expose_desktop_sqlite_database_paths() {
     let linux_desktop = RuntimeConfigLocation::for_platform("linux", RuntimeConfigProfile::Desktop);
     assert_eq!(
-        PathBuf::from("${XDG_DATA_HOME:-~/.local/share}/clawrouter/clawrouter.sqlite"),
+        PathBuf::from("~/.sdkwork/router/data/clawrouter.sqlite"),
         linux_desktop.sqlite_database_path()
     );
 
     let windows_desktop =
         RuntimeConfigLocation::for_platform("windows", RuntimeConfigProfile::Desktop);
     assert_eq!(
-        PathBuf::from("%LOCALAPPDATA%/SdkWork/ClawRouter/clawrouter.sqlite"),
+        PathBuf::from("%USERPROFILE%/.sdkwork/router/data/clawrouter.sqlite"),
         windows_desktop.sqlite_database_path()
     );
 }
@@ -427,8 +427,8 @@ fn from_env_or_initialize_creates_server_postgres_template_and_requires_real_dat
     assert!(content.contains("engine = \"postgresql\""));
     assert!(content.contains("host = \"db.example.com\""));
     assert!(content.contains("port = 5432"));
-    assert!(content.contains("database = \"sdkwork_claw_router\""));
-    assert!(content.contains("username = \"sdkwork_claw_router\""));
+    assert!(content.contains("database = \"sdkwork_ai_prod\""));
+    assert!(content.contains("username = \"sdkworkprod@2026++\""));
     assert!(content.contains(&format!(
         "password_file = \"{}\"",
         slash_path(&config_path.parent().unwrap().join("database.secret"))
@@ -492,7 +492,7 @@ fn startup_help_text_covers_standard_config_paths_and_database_guidance() {
         &linux_server,
     )
     .join("\n");
-    assert!(server_help.contains("/etc/clawrouter/clawrouter.toml"));
+    assert!(server_help.contains("/etc/sdkwork/router/clawrouter.toml"));
     assert!(server_help.contains("SDKWORK_CLAW_DATABASE_URL"));
     assert!(server_help.contains("SDKWORK_CLAW_CONFIG_FILE"));
     assert!(server_help.contains("PostgreSQL"));
@@ -504,8 +504,8 @@ fn startup_help_text_covers_standard_config_paths_and_database_guidance() {
         &linux_desktop,
     )
     .join("\n");
-    assert!(desktop_help.contains("${XDG_CONFIG_HOME:-~/.config}/clawrouter/clawrouter.toml"));
-    assert!(desktop_help.contains("${XDG_DATA_HOME:-~/.local/share}/clawrouter/clawrouter.sqlite"));
+    assert!(desktop_help.contains("~/.sdkwork/router/config/clawrouter.toml"));
+    assert!(desktop_help.contains("~/.sdkwork/router/data/clawrouter.sqlite"));
     assert!(desktop_help.contains("SDKWORK_CLAW_CONFIG_FILE"));
     assert!(desktop_help.contains("SQLite"));
 }
@@ -515,6 +515,9 @@ fn server_runtime_validation_rejects_placeholder_postgres_host_and_password() {
     let location = RuntimeConfigLocation::for_platform("linux", RuntimeConfigProfile::Server);
 
     for url in [
+        "postgresql://sdkworkprod%402026%2B%2B:change-me@db.example.com:5432/sdkwork_ai_prod?sslmode=require",
+        "postgresql://sdkworkprod%402026%2B%2B:secret@db.example.com:5432/sdkwork_ai_prod?sslmode=require",
+        "postgresql://sdkworkprod%402026%2B%2B:change-me@db.internal:5432/sdkwork_ai_prod?sslmode=require",
         "postgresql://sdkwork_claw_router:change-me@db.example.com:5432/sdkwork_claw_router?sslmode=require",
         "postgresql://sdkwork_claw_router:secret@db.example.com:5432/sdkwork_claw_router?sslmode=require",
         "postgresql://sdkwork_claw_router:change-me@db.internal:5432/sdkwork_claw_router?sslmode=require",
@@ -532,7 +535,7 @@ fn server_runtime_validation_rejects_placeholder_postgres_host_and_password() {
 fn server_runtime_validation_accepts_real_postgres_location_and_password() {
     let location = RuntimeConfigLocation::for_platform("linux", RuntimeConfigProfile::Server);
     let config = DatabaseConfig::from_url(
-        "postgresql://sdkwork_claw_router:real-password@db.internal:5432/sdkwork_claw_router?sslmode=require",
+        "postgresql://sdkworkprod%402026%2B%2B:real-password@db.internal:5432/sdkwork_ai_prod?sslmode=require",
     )
     .unwrap();
 
@@ -552,7 +555,7 @@ fn runtime_config_locations_resolve_to_real_os_paths_for_process_lookup() {
         },
     );
     assert_eq!(
-        "C:/ProgramData/SdkWork/ClawRouter/clawrouter.toml",
+        "C:/ProgramData/sdkwork/router/clawrouter.toml",
         slash_path(&windows_server.config_file)
     );
 
@@ -560,17 +563,16 @@ fn runtime_config_locations_resolve_to_real_os_paths_for_process_lookup() {
         "windows",
         RuntimeConfigProfile::Desktop,
         |key| match key {
-            "APPDATA" => Some("C:/Users/Ada/AppData/Roaming".to_owned()),
-            "LOCALAPPDATA" => Some("C:/Users/Ada/AppData/Local".to_owned()),
+            "USERPROFILE" => Some("C:/Users/Ada".to_owned()),
             _ => None,
         },
     );
     assert_eq!(
-        "C:/Users/Ada/AppData/Roaming/SdkWork/ClawRouter/clawrouter.toml",
+        "C:/Users/Ada/.sdkwork/router/config/clawrouter.toml",
         slash_path(&windows_desktop.config_file)
     );
     assert_eq!(
-        "C:/Users/Ada/AppData/Local/SdkWork/ClawRouter",
+        "C:/Users/Ada/.sdkwork/router/data",
         slash_path(&windows_desktop.data_directory)
     );
 
@@ -578,18 +580,16 @@ fn runtime_config_locations_resolve_to_real_os_paths_for_process_lookup() {
         "linux",
         RuntimeConfigProfile::Desktop,
         |key| match key {
-            "XDG_CONFIG_HOME" => Some("/home/ada/.config-xdg".to_owned()),
-            "XDG_DATA_HOME" => Some("/home/ada/.data-xdg".to_owned()),
             "HOME" => Some("/home/ada".to_owned()),
             _ => None,
         },
     );
     assert_eq!(
-        "/home/ada/.config-xdg/clawrouter/clawrouter.toml",
+        "/home/ada/.sdkwork/router/config/clawrouter.toml",
         slash_path(&linux_desktop.config_file)
     );
     assert_eq!(
-        "/home/ada/.data-xdg/clawrouter",
+        "/home/ada/.sdkwork/router/data",
         slash_path(&linux_desktop.data_directory)
     );
 
@@ -602,11 +602,11 @@ fn runtime_config_locations_resolve_to_real_os_paths_for_process_lookup() {
         },
     );
     assert_eq!(
-        "/home/ada/.config/clawrouter/clawrouter.toml",
+        "/home/ada/.sdkwork/router/config/clawrouter.toml",
         slash_path(&linux_desktop_fallback.config_file)
     );
     assert_eq!(
-        "/home/ada/.local/share/clawrouter",
+        "/home/ada/.sdkwork/router/data",
         slash_path(&linux_desktop_fallback.data_directory)
     );
 
@@ -619,7 +619,7 @@ fn runtime_config_locations_resolve_to_real_os_paths_for_process_lookup() {
         },
     );
     assert_eq!(
-        "/Users/ada/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml",
+        "/Users/ada/.sdkwork/router/config/clawrouter.toml",
         slash_path(&macos_desktop.config_file)
     );
 }

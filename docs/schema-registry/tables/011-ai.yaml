@@ -193,9 +193,13 @@ tables:
   columns:
     channel_group_id: int64
     resource_id: int64
-    resource_code: string(192)
+    resource_code:
+      type: string(192)
+      constraints: NOT NULL DEFAULT ''
     resource_group_id: int64
-    resource_group_code: string(128)
+    resource_group_code:
+      type: string(128)
+      constraints: NOT NULL DEFAULT ''
     grant_type:
       type: string(32)
       constraints: NOT NULL DEFAULT 'allow'

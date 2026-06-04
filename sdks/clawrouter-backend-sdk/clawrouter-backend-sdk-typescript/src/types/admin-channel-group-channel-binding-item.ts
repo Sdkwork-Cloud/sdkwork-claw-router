@@ -1,5 +1,7 @@
 /** Admin channel group channel binding item schema exposed by Claw Router. */
 export interface AdminChannelGroupChannelBindingItem {
+  /** Api scope field on admin channel group channel binding item. */
+  apiScope: string[];
   /** Capabilities field on admin channel group channel binding item. */
   capabilities: string[];
   /** Channel code field on admin channel group channel binding item. */
@@ -14,16 +16,14 @@ export interface AdminChannelGroupChannelBindingItem {
   healthStatus: 'active' | 'error';
   /** Id field on admin channel group channel binding item. */
   id: string;
-  /** Model scope field on admin channel group channel binding item. */
-  modelScope: string[];
-  /** Models field on admin channel group channel binding item. */
-  models: string[];
   /** Priority field on admin channel group channel binding item. */
   priority: number;
   /** Provider code field on admin channel group channel binding item. */
   providerCode: string;
   /** Provider name field on admin channel group channel binding item. */
   providerName: string;
+  /** Resource codes field on admin channel group channel binding item. */
+  resourceCodes: string[];
   /** Status field on admin channel group channel binding item. */
   status: 'active' | 'disabled';
   /** Weight field on admin channel group channel binding item. */

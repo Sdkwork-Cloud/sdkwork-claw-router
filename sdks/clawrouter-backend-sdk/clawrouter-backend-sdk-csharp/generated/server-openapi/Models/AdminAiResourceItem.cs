@@ -7,6 +7,8 @@ namespace Sdkwork.ClawRouter.Backend.Models
     public class AdminAiResourceItem
     {
         public string? ApiEndpointCode { get; set; }
+        public List<string>? Capabilities { get; set; }
+        public string? Capability { get; set; }
         public string? CatalogKey { get; set; }
         public string? CompositionMode { get; set; }
         public string? DisplayName { get; set; }

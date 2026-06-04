@@ -17,6 +17,8 @@ class AdminAiResourceItem:
     resource_type: str
     status: str
     api_endpoint_code: Optional[str] = None
+    capabilities: Optional[List[str]] = None
+    capability: Optional[str] = None
     catalog_key: Optional[str] = None
     modality_code: Optional[str] = None
     model: Optional[str] = None

@@ -20,8 +20,6 @@ import type {
   AdminAiResourceGroupCreateRequest,
   AdminAiResourceGroupUpdateRequest,
   AdminSiteCreateRequest,
-  AdminSiteModelCreateRequest,
-  AdminSiteModelUpdateRequest,
   AdminSiteUpdateRequest,
   AdminModelCatalogSyncRequest,
   AdminModelCatalogSyncResponse,
@@ -113,6 +111,22 @@ export type InitializedModelCatalog = {
   models: Model[];
 };
 
+export interface ModelMappingModelOption {
+  id: string;
+  vendorId: string;
+  vendorCode: string;
+  model: string;
+  displayName: string;
+  name: string;
+  type: Model['type'];
+  status: Model['status'];
+}
+
+export type ModelMappingModelOptionsCatalog = {
+  vendors: Vendor[];
+  models: ModelMappingModelOption[];
+};
+
 export type ModelRankingRefreshStatusView = {
   cacheMaxAgeSeconds: number;
   generatedAt: string;
@@ -145,6 +159,7 @@ export type VendorCreateInput = {
 
 export type ModelRegionPriceInput = {
   regionCode: string;
+  currency: string;
   priceIn: string;
   priceOut: string;
   cacheReadPrice?: string;
@@ -201,7 +216,6 @@ export interface SiteItem {
 }
 
 export interface SiteCreateInput {
-  siteCode: string;
   siteName: string;
   displayName: string;
   description?: string | null;
@@ -240,69 +254,8 @@ export interface SiteUpdateInput {
   maskedLabel?: string | null;
 }
 
-export interface SiteModelItem {
-  id: string;
-  siteId: string;
-  siteCode: string;
-  siteServiceId: string;
-  siteServiceCode: string | null;
-  serviceType: 'ai_model_relay';
-  modelCode: string;
-  modelName: string;
-  displayName: string | null;
-  providerModel: string | null;
-  providerNativeModel: string | null;
-  vendorCode: string | null;
-  modality: string | null;
-  capabilities: string[];
-  contextTokens: number | null;
-  maxInputTokens: number | null;
-  maxOutputTokens: number | null;
-  supportsStreaming: boolean;
-  supportsTools: boolean;
-  supportsJsonSchema: boolean;
-  healthStatus: SiteItem['healthStatus'];
-  lastLatencyMs: number | null;
-  consecutiveErrorCount: number;
-  lastSyncAt: string | null;
-  status: SiteItem['status'];
-}
 
-export interface SiteModelCreateInput {
-  modelCode: string;
-  modelName: string;
-  displayName?: string | null;
-  providerModel?: string | null;
-  providerNativeModel?: string | null;
-  vendorCode?: string | null;
-  modality?: string | null;
-  capabilities?: string[];
-  contextTokens?: number | null;
-  maxInputTokens?: number | null;
-  maxOutputTokens?: number | null;
-  supportsStreaming?: boolean;
-  supportsTools?: boolean;
-  supportsJsonSchema?: boolean;
-  status?: SiteItem['status'];
-}
 
-export interface SiteModelUpdateInput {
-  modelCode?: string;
-  modelName?: string;
-  displayName?: string | null;
-  providerModel?: string | null;
-  providerNativeModel?: string | null;
-  vendorCode?: string | null;
-  modality?: string | null;
-  capabilities?: string[];
-  contextTokens?: number | null;
-  maxInputTokens?: number | null;
-  maxOutputTokens?: number | null;
-  supportsStreaming?: boolean;
-  supportsTools?: boolean;
-  supportsJsonSchema?: boolean;
-  status?: SiteItem['status'];
-}
 
 export interface SiteChannelItem {
   id: string;
@@ -658,50 +611,10 @@ export class SiteService {
     return readBoolean(readApiRecord(result), 'deleted', false);
   }
 
-  static async fetchSiteModels(siteId: string): Promise<SiteModelItem[]> {
-    const result = await getClawRouterBackendSdkClient().sites.siteModels.list(requiredSafePathSegment(siteId, 'siteId'));
-    ensureSdkworkApiSuccess(result, 'Failed to fetch site models');
-    return readRequiredApiItems(result, 'Failed to fetch site models')
-      .map(normalizeSiteModelItem);
-  }
 
-  static async createSiteModel(siteId: string, input: SiteModelCreateInput): Promise<SiteModelItem> {
-    const result = await getClawRouterBackendSdkClient().sites.siteModels.create(
-      requiredSafePathSegment(siteId, 'siteId'),
-      toSiteModelCreateRequest(input),
-    );
-    ensureSdkworkApiSuccess(result, 'Failed to create site model');
-    return normalizeSiteModelItem(readRequiredApiItem(result, 'Failed to create site model'));
-  }
 
-  static async replaceSiteModels(siteId: string, items: SiteModelCreateInput[]): Promise<SiteModelItem[]> {
-    const result = await getClawRouterBackendSdkClient().sites.siteModels.replace(
-      requiredSafePathSegment(siteId, 'siteId'),
-      { items: items.map(toSiteModelCreateRequest) },
-    );
-    ensureSdkworkApiSuccess(result, 'Failed to replace site models');
-    return readRequiredApiItems(result, 'Failed to replace site models')
-      .map(normalizeSiteModelItem);
-  }
 
-  static async updateSiteModel(siteId: string, siteModelId: string, input: SiteModelUpdateInput): Promise<SiteModelItem> {
-    const result = await getClawRouterBackendSdkClient().sites.siteModels.update(
-      requiredSafePathSegment(siteId, 'siteId'),
-      requiredSafePathSegment(siteModelId, 'siteModelId'),
-      toSiteModelUpdateRequest(input),
-    );
-    ensureSdkworkApiSuccess(result, 'Failed to update site model');
-    return normalizeSiteModelItem(readRequiredApiItem(result, 'Failed to update site model'));
-  }
 
-  static async deleteSiteModel(siteId: string, siteModelId: string): Promise<boolean> {
-    const result = await getClawRouterBackendSdkClient().sites.siteModels.delete(
-      requiredSafePathSegment(siteId, 'siteId'),
-      requiredSafePathSegment(siteModelId, 'siteModelId'),
-    );
-    ensureSdkworkApiSuccess(result, 'Failed to delete site model');
-    return readBoolean(readApiRecord(result), 'deleted', false);
-  }
 
   static async fetchSiteChannels(siteId: string): Promise<SiteChannelItem[]> {
     const result = await getClawRouterBackendSdkClient().sites.siteChannels.list(requiredSafePathSegment(siteId, 'siteId'));
@@ -800,6 +713,21 @@ export class ResourceGroupService {
 }
 
 export class ModelMappingService {
+  static async fetchModelOptionsCatalog(): Promise<ModelMappingModelOptionsCatalog> {
+    const [vendorsResult, modelsResult] = await Promise.all([
+      getClawRouterBackendSdkClient().ai.modelVendors.list(),
+      getClawRouterBackendSdkClient().ai.models.list(),
+    ]);
+    ensureSdkworkApiSuccess(vendorsResult, 'Failed to fetch model mapping vendors');
+    ensureSdkworkApiSuccess(modelsResult, 'Failed to fetch model mapping models');
+    return {
+      vendors: readRequiredApiItems(vendorsResult, 'Failed to fetch model mapping vendors')
+        .map(normalizeVendor),
+      models: readRequiredApiItems(modelsResult, 'Failed to fetch model mapping models')
+        .map(normalizeModelMappingModelOption),
+    };
+  }
+
   static async fetchModelMappings(params?: {
     bindingType?: ModelMappingRule['bindingType'] | 'all';
     vendorCode?: string | null;
@@ -1005,6 +933,7 @@ function toCreateModelRequest(model: ModelCreateInput): AdminAiModelCreateReques
     type: modelType(model.type),
     regionPrices: regionPrices.map((regionPrice) => ({
       regionCode: regionCode(regionPrice.regionCode, 'regionPrices.regionCode'),
+      currency: currencyCode(regionPrice.currency, `regionPrices.${regionPrice.regionCode}.currency`),
       priceIn: decimalAmount(regionPrice.priceIn, `regionPrices.${regionPrice.regionCode}.priceIn`),
       priceOut: decimalAmount(regionPrice.priceOut, `regionPrices.${regionPrice.regionCode}.priceOut`),
       cacheReadPrice: optionalDecimalAmount(regionPrice.cacheReadPrice, `regionPrices.${regionPrice.regionCode}.cacheReadPrice`),
@@ -1033,6 +962,7 @@ function toUpdateModelRequest(model: ModelPatchInput): AdminAiModelUpdateRequest
   if (model.regionPrices !== undefined) {
     request.regionPrices = normalizedRegionPrices(model).map((regionPrice) => ({
       regionCode: regionCode(regionPrice.regionCode, 'regionPrices.regionCode'),
+      currency: currencyCode(regionPrice.currency, `regionPrices.${regionPrice.regionCode}.currency`),
       priceIn: decimalAmount(regionPrice.priceIn, `regionPrices.${regionPrice.regionCode}.priceIn`),
       priceOut: decimalAmount(regionPrice.priceOut, `regionPrices.${regionPrice.regionCode}.priceOut`),
       cacheReadPrice: optionalDecimalAmount(regionPrice.cacheReadPrice, `regionPrices.${regionPrice.regionCode}.cacheReadPrice`),
@@ -1111,6 +1041,14 @@ function regionCode(value: string, fieldName: string): string {
   const normalized = requiredText(value, fieldName);
   if (!/^[a-z0-9][a-z0-9_-]{0,63}$/.test(normalized)) {
     throw new Error(`${fieldName} must be a lowercase region code`);
+  }
+  return normalized;
+}
+
+function currencyCode(value: string, fieldName: string): string {
+  const normalized = requiredText(value, fieldName).toUpperCase();
+  if (!/^[A-Z]{3}$/.test(normalized)) {
+    throw new Error(`${fieldName} must be a 3-letter ISO currency code`);
   }
   return normalized;
 }
@@ -1425,6 +1363,22 @@ function normalizeModel(value: unknown): Model {
   };
 }
 
+function normalizeModelMappingModelOption(value: unknown): ModelMappingModelOption {
+  const item = readRequiredRecord(value, 'Model mapping model option record is required');
+  const runtimeModel = readModelIdentifier(item);
+  const displayName = readModelDisplayName(item, runtimeModel);
+  return {
+    id: readRequiredString(item, 'id', 'Model option id is required'),
+    vendorId: readRequiredString(item, 'vendorId', 'Model option vendor id is required'),
+    vendorCode: readRequiredString(item, 'vendorCode', 'Model option vendor code is required'),
+    model: runtimeModel,
+    displayName,
+    name: displayName,
+    type: readModelType(item),
+    status: readModelStatus(item),
+  };
+}
+
 function readModelRegionPrices(item: ApiRecord): ModelRegionPriceInput[] {
   if (!('regionPrices' in item) || item.regionPrices === null || item.regionPrices === undefined) {
     throw new Error('Model region prices are required');
@@ -1433,12 +1387,13 @@ function readModelRegionPrices(item: ApiRecord): ModelRegionPriceInput[] {
     throw new Error('Model region prices must be an array');
   }
   if (item.regionPrices.length === 0) {
-    throw new Error('Model region prices are required');
+    return [];
   }
   return item.regionPrices.map((value) => {
     const regionPrice = readRequiredRecord(value, 'Model region price record is required');
     return {
       regionCode: readRequiredString(regionPrice, 'regionCode', 'Model region price region code is required'),
+      currency: currencyCode(readRequiredString(regionPrice, 'currency', 'Model region price currency is required'), 'regionPrices.currency'),
       priceIn: readRequiredStringField(regionPrice, 'priceIn', 'Model region input price is required'),
       priceOut: readRequiredStringField(regionPrice, 'priceOut', 'Model region output price is required'),
       cacheReadPrice: readString(regionPrice, 'cacheReadPrice').trim(),
@@ -1642,36 +1597,6 @@ function readOptionalMediaResource(item: ApiRecord, key: string): MediaResource 
   return value as unknown as MediaResource;
 }
 
-function normalizeSiteModelItem(value: unknown): SiteModelItem {
-  const item = readRequiredRecord(value, 'Site model item must be an object');
-  return {
-    id: readRequiredString(item, 'id', 'Site model id is required'),
-    siteId: readRequiredString(item, 'siteId', 'Site model site id is required'),
-    siteCode: readRequiredString(item, 'siteCode', 'Site model site code is required'),
-    siteServiceId: readRequiredString(item, 'siteServiceId', 'Site model service id is required'),
-    siteServiceCode: readNullableString(item, 'siteServiceCode'),
-    serviceType: readSiteServiceType(item),
-    modelCode: readRequiredString(item, 'modelCode', 'Site model code is required'),
-    modelName: readRequiredString(item, 'modelName', 'Site model name is required'),
-    displayName: readNullableString(item, 'displayName'),
-    providerModel: readNullableString(item, 'providerModel'),
-    providerNativeModel: readNullableString(item, 'providerNativeModel'),
-    vendorCode: readNullableString(item, 'vendorCode'),
-    modality: readNullableString(item, 'modality'),
-    capabilities: readStringArray(item, 'capabilities'),
-    contextTokens: readNullableNumber(item, 'contextTokens'),
-    maxInputTokens: readNullableNumber(item, 'maxInputTokens'),
-    maxOutputTokens: readNullableNumber(item, 'maxOutputTokens'),
-    supportsStreaming: readBoolean(item, 'supportsStreaming', false),
-    supportsTools: readBoolean(item, 'supportsTools', false),
-    supportsJsonSchema: readBoolean(item, 'supportsJsonSchema', false),
-    healthStatus: readSiteHealthStatus(item),
-    lastLatencyMs: readNullableNumber(item, 'lastLatencyMs'),
-    consecutiveErrorCount: readNonNegativeInteger(item, 'consecutiveErrorCount', 0),
-    lastSyncAt: readNullableString(item, 'lastSyncAt'),
-    status: readSiteStatus(item),
-  };
-}
 
 function normalizeSiteChannelItem(value: unknown): SiteChannelItem {
   const item = readRequiredRecord(value, 'Site channel item must be an object');
@@ -1771,7 +1696,6 @@ function normalizeModelMappingResolveResult(value: unknown): ModelMappingResolve
 
 function toSiteCreateRequest(input: SiteCreateInput): AdminSiteCreateRequest {
   return {
-    siteCode: input.siteCode,
     siteName: input.siteName,
     displayName: input.displayName,
     description: input.description ?? null,
@@ -1807,40 +1731,7 @@ function toSiteUpdateRequest(input: SiteUpdateInput): AdminSiteUpdateRequest {
   };
 }
 
-function toSiteModelCreateRequest(input: SiteModelCreateInput): AdminSiteModelCreateRequest {
-  return {
-    modelCode: input.modelCode,
-    modelName: input.modelName,
-    displayName: input.displayName ?? null,
-    providerModel: input.providerModel ?? null,
-    providerNativeModel: input.providerNativeModel ?? null,
-    vendorCode: input.vendorCode ?? null,
-    modality: input.modality ?? null,
-    capabilities: input.capabilities ?? [],
-    contextTokens: input.contextTokens ?? null,
-    maxInputTokens: input.maxInputTokens ?? null,
-    maxOutputTokens: input.maxOutputTokens ?? null,
-    supportsStreaming: input.supportsStreaming ?? true,
-    supportsTools: input.supportsTools ?? false,
-    supportsJsonSchema: input.supportsJsonSchema ?? false,
-    status: input.status ?? 'active',
-  };
-}
 
-function toSiteModelUpdateRequest(input: SiteModelUpdateInput): AdminSiteModelUpdateRequest {
-  return {
-    ...input,
-    displayName: input.displayName ?? undefined,
-    providerModel: input.providerModel ?? undefined,
-    providerNativeModel: input.providerNativeModel ?? undefined,
-    vendorCode: input.vendorCode ?? undefined,
-    modality: input.modality ?? undefined,
-    capabilities: input.capabilities ?? undefined,
-    contextTokens: input.contextTokens ?? undefined,
-    maxInputTokens: input.maxInputTokens ?? undefined,
-    maxOutputTokens: input.maxOutputTokens ?? undefined,
-  };
-}
 
 function readSiteType(item: ApiRecord): SiteItem['siteType'] {
   const value = readRequiredString(item, 'siteType', 'Site type is required');
@@ -1874,13 +1765,6 @@ function readSiteStatus(item: ApiRecord): SiteItem['status'] {
   throw new Error(`Unsupported site status: ${value}`);
 }
 
-function readSiteServiceType(item: ApiRecord): SiteModelItem['serviceType'] {
-  const value = readRequiredString(item, 'serviceType', 'Site service type is required');
-  if (value === 'ai_model_relay') {
-    return value;
-  }
-  throw new Error(`Unsupported site service type: ${value}`);
-}
 
 function readConnectionCheckStatus(item: ApiRecord): SiteConnectionCheckResult['status'] {
   const value = readRequiredString(item, 'status', 'Site connection check status is required');

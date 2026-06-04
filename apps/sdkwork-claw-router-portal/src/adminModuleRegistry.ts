@@ -208,8 +208,6 @@ export const ADMIN_MODULE_MENUS: AdminModuleMenu[] = [
       groupBlock('admin.menu.home.accountPoolManagement', [
         itemBlock({ path: '/admin/group', labelKey: 'admin.menu.groups', icon: UserCog }),
         itemBlock({ path: '/admin/channel', labelKey: 'admin.menu.channels', icon: Network }),
-        itemBlock({ path: '/admin/channel/resources', labelKey: 'admin.menu.aiResources', icon: Boxes, iconColor: 'text-indigo-500' }),
-        itemBlock({ path: '/admin/channel/endpoints', labelKey: 'admin.menu.channelEndpoints', icon: Server, iconColor: 'text-cyan-500' }),
       ]),
       groupBlock('admin.menu.home.agentSkills', [
         itemBlock({ path: '/admin/agents', labelKey: 'admin.menu.agents', icon: Bot }),

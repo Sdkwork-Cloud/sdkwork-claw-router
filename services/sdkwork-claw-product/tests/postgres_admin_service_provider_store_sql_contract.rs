@@ -16,7 +16,6 @@ fn service_provider_commercial_tables_exist_in_postgres_schema() {
         "integration_service_provider_finance_profile",
         "integration_service_provider_price_plan",
         "integration_service_provider_price_rule",
-        "ai_usage_service_provider_chain",
         "ai_usage_service_provider_edge",
         "commerce_usage_service_provider_statement",
         "commerce_usage_service_provider_adjustment",
@@ -28,6 +27,26 @@ fn service_provider_commercial_tables_exist_in_postgres_schema() {
         assert!(
             POSTGRES_SCHEMA.contains(&format!("CREATE TABLE IF NOT EXISTS {table}")),
             "missing service-provider table {table}"
+        );
+    }
+    assert!(
+        !POSTGRES_SCHEMA.contains("CREATE TABLE IF NOT EXISTS ai_usage_service_provider_chain"),
+        "service-provider usage should be modeled by edge facts, not the removed chain table"
+    );
+    assert!(
+        !POSTGRES_SCHEMA.contains("chain_id BIGINT"),
+        "ai_usage_service_provider_edge must not retain the removed chain_id column"
+    );
+    for removed_table in [
+        "commerce_usage_service_provider_settlement",
+        "commerce_usage_service_provider_statement_item",
+        "integration_service_provider_account_binding",
+        "integration_service_provider_contract_version",
+        "integration_service_provider_price_change_request",
+    ] {
+        assert!(
+            !POSTGRES_SCHEMA.contains(&format!("CREATE TABLE IF NOT EXISTS {removed_table}")),
+            "{removed_table} is not read or written by the service-provider store and must stay out of the active schema"
         );
     }
 }
@@ -138,7 +157,7 @@ fn service_provider_sql_stores_maintain_downstreams_and_pricing_rules() {
 }
 
 #[test]
-fn service_provider_sql_stores_apply_chain_filters_to_read_surfaces() {
+fn service_provider_sql_stores_apply_provider_edge_filters_to_read_surfaces() {
     for (label, source) in [("postgres", POSTGRES_STORE), ("sqlite", SQLITE_STORE)] {
         assert!(
             source.matches("query.provider_id.as_deref()").count() >= 10,
@@ -171,7 +190,7 @@ fn service_provider_sql_stores_apply_chain_filters_to_read_surfaces() {
         ] {
             assert!(
                 source.contains(required_source),
-                "{label} store chain filters must cover {required_source}"
+                "{label} store provider-edge filters must cover {required_source}"
             );
         }
     }

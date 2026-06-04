@@ -392,8 +392,6 @@ pub(crate) async fn sqlite_template_objects_current(pool: &SqlitePool) -> bool {
         ("index", "idx_plus_agent_skill_package_seed_scope"),
         ("index", "idx_plus_agent_skill_seed_scope"),
         ("index", "idx_plus_agent_skill_official_seed"),
-        ("index", "uk_ai_channel_endpoint_scope"),
-        ("index", "idx_ai_channel_endpoint_lookup"),
     ];
     for (object_type, name) in required_schema_objects {
         let exists: i64 = match sqlx::query_scalar(

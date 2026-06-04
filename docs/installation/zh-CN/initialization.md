@@ -11,7 +11,7 @@ clawrouterctl refresh-catalog --force
 clawrouter
 ```
 
-如果安装的是 Linux 原生 `.deb`，公共命令位于 `/usr/bin`，私有运行时文件位于 `/usr/lib/clawrouter`：
+如果安装的是 Linux 原生 `.deb`，公共命令位于 `/usr/bin`，私有运行时文件位于 `/usr/lib/sdkwork/router`：
 
 ```bash
 /usr/bin/clawrouterctl ensure
@@ -19,18 +19,18 @@ clawrouter
 /usr/bin/clawrouter
 ```
 
-如果安装的是 macOS 原生 `.pkg`，desktop 二进制位于 `/opt/clawrouter/bin`，service 二进制位于 `/Library/Application Support/SdkWork/ClawRouter/bin`：
+如果安装的是 macOS 原生 `.pkg`，desktop 二进制位于 `/opt/sdkwork/router/bin`，service 二进制位于 `/Library/Application Support/sdkwork/router/bin`：
 
 ```bash
-/opt/clawrouter/bin/clawrouterctl ensure
-/opt/clawrouter/bin/clawrouterctl refresh-catalog --force
-/opt/clawrouter/bin/clawrouter
+/opt/sdkwork/router/bin/clawrouterctl ensure
+/opt/sdkwork/router/bin/clawrouterctl refresh-catalog --force
+/opt/sdkwork/router/bin/clawrouter
 ```
 
 如果安装的是 Windows MSI，默认安装目录为：
 
 ```text
-C:\Program Files\ClawRouter
+C:\Program Files\sdkwork\router
 ```
 
 ## 初始化顺序
@@ -45,13 +45,13 @@ archive/manual 部署推荐顺序：
 6. 启动 `clawrouter`。
 7. 检查 `/healthz` 和 `/readyz`。
 
-Linux `service` 部署中，`.deb` 会创建默认运行时 TOML、`/etc/clawrouter/clawrouter.env` 和 `/etc/clawrouter/database.secret`。systemd unit 会在 gateway 启动前自动执行 `ensure` 和 `refresh-catalog --force`。运行中的服务只能写入 `/var/lib/clawrouter` 和 `/var/log/clawrouter`；`/etc/clawrouter` 对服务进程保持只读。
+Linux `service` 部署中，`.deb` 会创建默认运行时 TOML、`/etc/sdkwork/router/clawrouter.env` 和 `/etc/sdkwork/router/database.secret`。systemd unit 会在 gateway 启动前自动执行 `ensure` 和 `refresh-catalog --force`。运行中的服务只能写入 `/var/lib/sdkwork/router` 和 `/var/log/sdkwork/router`；`/etc/sdkwork/router` 对服务进程保持只读。
 
 Linux service 包推荐顺序：
 
 ```bash
 sudo apt install ./clawrouter-linux-x64-server-0.3.0.deb
-sudo editor /etc/clawrouter/clawrouter.toml
+sudo editor /etc/sdkwork/router/clawrouter.toml
 sudo systemctl start clawrouter
 sudo systemctl status clawrouter --no-pager
 ```
@@ -62,37 +62,37 @@ server/service/container 默认路径：
 
 | 平台 | 配置文件 |
 | --- | --- |
-| Windows | `%ProgramData%/SdkWork/ClawRouter/clawrouter.toml` |
-| Linux | `/etc/clawrouter/clawrouter.toml` |
-| macOS | `/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml` |
+| Windows | `%ProgramData%/sdkwork/router/clawrouter.toml` |
+| Linux | `/etc/sdkwork/router/clawrouter.toml` |
+| macOS | `/Library/Application Support/sdkwork/router/clawrouter.toml` |
 
 desktop 默认路径：
 
 | 平台 | 配置文件 |
 | --- | --- |
-| Windows | `%APPDATA%/SdkWork/ClawRouter/clawrouter.toml` |
-| Linux | `${XDG_CONFIG_HOME:-~/.config}/clawrouter/clawrouter.toml` |
-| macOS | `~/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml` |
+| Windows | `%USERPROFILE%/.sdkwork/router/config/clawrouter.toml` |
+| Linux | `~/.sdkwork/router/config/clawrouter.toml` |
+| macOS | `~/.sdkwork/router/config/clawrouter.toml` |
 
 可用 `SDKWORK_CLAW_CONFIG_FILE` 覆盖：
 
 ```bash
-export SDKWORK_CLAW_CONFIG_FILE="/etc/clawrouter/clawrouter.toml"
+export SDKWORK_CLAW_CONFIG_FILE="/etc/sdkwork/router/clawrouter.toml"
 ```
 
 PowerShell：
 
 ```powershell
-$env:SDKWORK_CLAW_CONFIG_FILE="C:\ProgramData\SdkWork\ClawRouter\clawrouter.toml"
+$env:SDKWORK_CLAW_CONFIG_FILE="C:\ProgramData\sdkwork\router\clawrouter.toml"
 ```
 
 原生安装包默认位置：
 
 | 平台 | 二进制目录 | 说明 |
 | --- | --- | --- |
-| Linux `.deb` | `/usr/bin` 公共命令，`/usr/lib/clawrouter/bin` 私有二进制 | `service` 包还会安装 `/lib/systemd/system/clawrouter.service`、`/etc/clawrouter`、`/var/lib/clawrouter` 和 `/var/log/clawrouter`。 |
-| Windows `.msi` | `C:\Program Files\ClawRouter\bin` | MSI 安装运行文件；如需 Windows Service 托管，按部署系统单独配置。 |
-| macOS `.pkg` | desktop 为 `/opt/clawrouter/bin`，service 为 `/Library/Application Support/SdkWork/ClawRouter/bin` | `service` 包还会安装 `/Library/LaunchDaemons/com.sdkwork.clawrouter.plist`。 |
+| Linux `.deb` | `/usr/bin` 公共命令，`/usr/lib/sdkwork/router/bin` 私有二进制 | `service` 包还会安装 `/lib/systemd/system/clawrouter.service`、`/etc/sdkwork/router`、`/var/lib/sdkwork/router` 和 `/var/log/sdkwork/router`。 |
+| Windows `.msi` | `C:\Program Files\sdkwork\router\bin` | MSI 安装运行文件；如需 Windows Service 托管，按部署系统单独配置。 |
+| macOS `.pkg` | desktop 为 `/opt/sdkwork/router/bin`，service 为 `/Library/Application Support/sdkwork/router/bin` | `service` 包还会安装 `/Library/LaunchDaemons/com.sdkwork.clawrouter.plist`。 |
 
 每个包都包含带 `installConfiguration` 的 `install-manifest.json`。原生安装包还包含 `nativeInstall`，用于描述最终安装路径、服务元数据、权限和运维命令。
 
@@ -118,9 +118,9 @@ server/service/container：
 engine = "postgresql"
 host = "db.example.com"
 port = 5432
-database = "sdkwork_claw_router"
-username = "sdkwork_claw_router"
-password_file = "/etc/clawrouter/database.secret"
+database = "sdkwork_ai_prod"
+username = "sdkworkprod@2026++"
+password_file = "/etc/sdkwork/router/database.secret"
 # password = "change-me"
 ssl_mode = "require"
 max_connections = 16
@@ -132,7 +132,7 @@ port = 6379
 database = 0
 # username = "default"
 # url = "redis://redis.example.com:6379/0"
-# password_file = "/etc/clawrouter/redis.secret"
+# password_file = "/etc/sdkwork/router/redis.secret"
 # password = "change-me"
 key_prefix = "clawrouter"
 tls = false
@@ -169,7 +169,7 @@ gateway_base_url = "http://127.0.0.1:18080"
 backend_api_base_url = "http://127.0.0.1:18081"
 app_api_base_url = "http://127.0.0.1:18082"
 portal_base_url = "http://127.0.0.1:3901"
-portal_static_dist = "/usr/lib/clawrouter/portal/dist"
+portal_static_dist = "/usr/lib/sdkwork/router/portal/dist"
 cors_allowed_origins = []
 upstream_request_timeout_millis = 30000
 upstream_ready_timeout_millis = 2000
@@ -196,11 +196,11 @@ csp_frame_src = ["https://player.bilibili.com"]
 rate_limit_requests = 120
 rate_limit_window_seconds = 60
 max_body_bytes = 1048576
-sdk_archive_root = "/usr/lib/clawrouter/portal/dist/sdk-archives"
+sdk_archive_root = "/usr/lib/sdkwork/router/portal/dist/sdk-archives"
 
 [provider_relay.openai]
 # base_url = "https://api.openai.com/v1"
-# bearer_token_file = "/etc/clawrouter/openai-relay.secret"
+# bearer_token_file = "/etc/sdkwork/router/openai-relay.secret"
 
 [provider_relay.runtime]
 response_timeout_millis = 120000
@@ -215,8 +215,8 @@ retryable_status_codes = [429, 500, 502, 503, 504]
 backoff_millis = 0
 
 [paths]
-data_directory = "/var/lib/clawrouter"
-course_upload_root = "/var/lib/clawrouter/uploads/courses"
+data_directory = "/var/lib/sdkwork/router"
+course_upload_root = "/var/lib/sdkwork/router/uploads/courses"
 
 [courses]
 video_upload_max_bytes = 1073741824
@@ -232,9 +232,9 @@ payment_callback_body_max_bytes = 65536
 deployment_mode = "server"
 ```
 
-`.deb` 包创建的 `/etc/clawrouter/database.secret` 初始内容是占位值 `change-me`。启动 `clawrouter` 前必须替换为真实 PostgreSQL 密码；server 配置仍使用 `db.example.com` 或 `change-me` 时会被启动校验拒绝。
+`.deb` 包创建的 `/etc/sdkwork/router/database.secret` 初始内容是占位值 `change-me`。启动 `clawrouter` 前必须替换为真实 PostgreSQL 密码；server 配置仍使用 `db.example.com` 或 `change-me` 时会被启动校验拒绝。
 
-server/service/container 部署默认启用并要求 Redis。首次启动前必须配置 `[redis].host`、`[redis].port`、`[redis].database`；只有托管 Redis 端点无法用分离字段清晰表达时，才使用 `[redis].url` 作为高级覆盖。优先使用 `/etc/clawrouter/redis.secret` 或其他受保护的 `password_file`，只有 TOML 文件本身按密钥文件管理时才直接使用 `[redis].password`。desktop 部署仍保持 Redis 可选且默认关闭。
+server/service/container 部署默认启用并要求 Redis。首次启动前必须配置 `[redis].host`、`[redis].port`、`[redis].database`；只有托管 Redis 端点无法用分离字段清晰表达时，才使用 `[redis].url` 作为高级覆盖。优先使用 `/etc/sdkwork/router/redis.secret` 或其他受保护的 `password_file`，只有 TOML 文件本身按密钥文件管理时才直接使用 `[redis].password`。desktop 部署仍保持 Redis 可选且默认关闭。
 
 `[paths].course_upload_root` 用于保存本地课程申请视频上传文件。service 和 container 部署应放在持久化存储中，默认保持在应用数据卷内；只有明确挂载独立媒体卷时才改到其他目录。
 `[courses].video_upload_max_bytes` 是允许的视频文件大小，`[courses].video_upload_body_limit_bytes` 包含 multipart 开销。反向代理、容器 ingress 和负载均衡的请求体限制应不低于 body limit。
@@ -256,15 +256,15 @@ server/service/container 部署默认启用并要求 Redis。首次启动前必�
 engine = "postgresql"
 host = "db.internal"
 port = 5432
-database = "sdkwork_claw_router"
-username = "sdkwork_claw_router"
+database = "sdkwork_ai_prod"
+username = "sdkworkprod@2026++"
 password = "real-password"
 ssl_mode = "require"
 max_connections = 16
 
 [paths]
-data_directory = "/var/lib/clawrouter"
-course_upload_root = "/var/lib/clawrouter/uploads/courses"
+data_directory = "/var/lib/sdkwork/router"
+course_upload_root = "/var/lib/sdkwork/router/uploads/courses"
 
 [courses]
 video_upload_max_bytes = 1073741824
@@ -280,10 +280,10 @@ payment_callback_body_max_bytes = 65536
 deployment_mode = "server"
 ```
 
-`SDKWORK_CLAW_DATABASE_URL` 仍可在 `/etc/clawrouter/clawrouter.env` 或进程环境中作为明确运维覆盖：
+`SDKWORK_CLAW_DATABASE_URL` 仍可在 `/etc/sdkwork/router/clawrouter.env` 或进程环境中作为明确运维覆盖：
 
 ```text
-SDKWORK_CLAW_DATABASE_URL=postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router
+SDKWORK_CLAW_DATABASE_URL=postgresql://sdkworkprod%402026%2B%2B:<password>@db.example.com:5432/sdkwork_ai_prod
 ```
 
 desktop SQLite 示例：
@@ -313,15 +313,15 @@ Linux 原生 `.deb` 安装包使用：
 macOS 原生 `.pkg` desktop 安装包使用：
 
 ```bash
-/opt/clawrouter/bin/clawrouterctl status
-/opt/clawrouter/bin/clawrouterctl ensure
-/opt/clawrouter/bin/clawrouterctl refresh-catalog --force
+/opt/sdkwork/router/bin/clawrouterctl status
+/opt/sdkwork/router/bin/clawrouterctl ensure
+/opt/sdkwork/router/bin/clawrouterctl refresh-catalog --force
 ```
 
 Windows MSI 默认安装目录中使用：
 
 ```powershell
-Set-Location "C:\Program Files\ClawRouter"
+Set-Location "C:\Program Files\sdkwork\router"
 .\bin\clawrouterctl.exe status
 .\bin\clawrouterctl.exe ensure
 .\bin\clawrouterctl.exe refresh-catalog --force

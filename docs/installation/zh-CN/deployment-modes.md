@@ -36,9 +36,9 @@ Linux 原生 `.deb` 启动：
 macOS 原生 `.pkg` 启动：
 
 ```bash
-/opt/clawrouter/bin/clawrouterctl ensure
-/opt/clawrouter/bin/clawrouterctl refresh-catalog --force
-/opt/clawrouter/bin/clawrouter
+/opt/sdkwork/router/bin/clawrouterctl ensure
+/opt/sdkwork/router/bin/clawrouterctl refresh-catalog --force
+/opt/sdkwork/router/bin/clawrouter
 ```
 
 如果从可移植归档包根目录启动：
@@ -75,10 +75,10 @@ macOS 原生 `.pkg` 启动：
 - macOS `.pkg` service 包会安装 launchd plist。
 - macOS service 包通过 launchd runner 启动，runner 会在 gateway 前执行 `ensure` 和 `refresh-catalog --force`。
 - Windows `.msi` 包安装运行文件和服务元数据，实际服务注册由目标主机部署系统配置。
-- 默认使用 PostgreSQL，Linux 服务覆盖项保存在 `/etc/clawrouter/clawrouter.env`。
-- PostgreSQL 密码默认放在 `/etc/clawrouter/database.secret`，也可以在受保护 TOML 中直接配置 `password`。
-- 如 Redis 启用了认证，可使用 `/etc/clawrouter/redis.secret` 保存 Redis 密码。
-- Linux service 包会让运行中的服务只读访问 `/etc/clawrouter`，只允许写入数据和日志目录。
+- 默认使用 PostgreSQL，Linux 服务覆盖项保存在 `/etc/sdkwork/router/clawrouter.env`。
+- PostgreSQL 密码默认放在 `/etc/sdkwork/router/database.secret`，也可以在受保护 TOML 中直接配置 `password`。
+- 如 Redis 启用了认证，可使用 `/etc/sdkwork/router/redis.secret` 保存 Redis 密码。
+- Linux service 包会让运行中的服务只读访问 `/etc/sdkwork/router`，只允许写入数据和日志目录。
 - 原生安装包 manifest 包含 `nativeInstall`，记录最终路径、服务元数据、权限和运维命令。
 
 原生服务资产：
@@ -93,7 +93,7 @@ Linux 安装 `.deb` 后通常只需要检查服务状态：
 
 ```bash
 sudo apt install ./clawrouter-linux-x64-server-0.3.0.deb
-sudo editor /etc/clawrouter/clawrouter.toml
+sudo editor /etc/sdkwork/router/clawrouter.toml
 sudo systemctl start clawrouter
 sudo systemctl status clawrouter --no-pager
 ```
@@ -111,9 +111,9 @@ sudo systemctl status clawrouter --no-pager
 ```bash
 docker build -f container/Containerfile -t clawrouter:0.3.0 .
 docker run --rm -p 3900:3900 \
-  -v "$PWD/config/clawrouter.toml.example:/etc/clawrouter/clawrouter.toml:ro" \
-  -v "$PWD/secrets/postgres-password:/run/secrets/clawrouter-postgres-password:ro" \
-  -v "$PWD/secrets/redis-password:/run/secrets/clawrouter-redis-password:ro" \
+  -v "$PWD/config/clawrouter.toml.example:/etc/sdkwork/router/clawrouter.toml:ro" \
+  -v "$PWD/secrets/postgres-password:/run/secrets/sdkwork/router/postgres-password:ro" \
+  -v "$PWD/secrets/redis-password:/run/secrets/sdkwork/router/redis-password:ro" \
   clawrouter:0.3.0
 ```
 

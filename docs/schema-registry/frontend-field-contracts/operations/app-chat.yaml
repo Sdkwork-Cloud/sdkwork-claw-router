@@ -488,6 +488,7 @@ frontend_operations:
                   minimum: 0
                 costAmount:
                   type: string
+                  description: Customer-facing runtime usage amount for this chat message. This value is not an upstream, provider, channel, or access-cost field.
                   nullable: true
                   maxLength: 64
                 currency:
@@ -709,9 +710,11 @@ frontend_operations:
             minimum: 0
           cost:
             type: string
+            description: Customer-facing runtime usage amount supplied by the runtime callback. Upstream, provider, channel, and access-cost fields are not part of the app API contract.
             maxLength: 64
           costAmount:
             type: string
+            description: Customer-facing runtime usage amount supplied by the runtime callback. Upstream, provider, channel, and access-cost fields are not part of the app API contract.
             maxLength: 64
           currency:
             type: string

@@ -17,8 +17,8 @@
 - Modify: `services/sdkwork-claw-product/src/infrastructure/sql/queries/snapshot.rs`
 - Modify: `services/sdkwork-claw-product/src/infrastructure/sql/sqlite/queries.rs`
 
-- [ ] Write failing tests that `load_provider_routes` does not depend on `ai_route_candidate`.
-- [ ] Change Postgres and SQLite snapshot SQL to derive model routes from `ai_channel_model`, `ai_channel_endpoint`, `ai_channel`, and `ai_provider`.
+- [ ] Write failing tests that `load_provider_routes` is derived from normalized channel/resource/credential facts.
+- [ ] Change Postgres and SQLite snapshot SQL to derive routes from `ai_channel_resource`, `ai_channel_credential`, `ai_channel`, resource groups, and model mapping rules.
 - [ ] Verify focused Rust contract tests.
 
 ### Task 2: Schema Registry Tables
@@ -27,7 +27,7 @@
 - Modify: `docs/schema-registry/tables/017-integration.yaml`
 - Modify generated schema outputs through tooling.
 
-- [ ] Write failing schema tests for `ai_resource_route_profile`, `ai_provider_object_route`, `ai_route_idempotency`, `ai_config_version`, and `ai_config_change_event`.
+- [ ] Write failing schema tests for `ai_provider_object_route`, `ai_config_version`, and `ai_config_change_event`; route taxonomy stays in code and policy rules.
 - [ ] Add registry definitions with compact indexes and TTL/hash lookup fields.
 - [ ] Regenerate effective registry, manifest, PostgreSQL DDL, and OpenAPI components.
 

@@ -4,6 +4,7 @@ package com.sdkwork.clawrouter.app.model;
 public class AppModelCatalogReferencePrice {
     private String billingMeter;
     private String currency;
+    private String regionCode;
     private String unitPrice;
 
     public String getBillingMeter() {
@@ -20,6 +21,14 @@ public class AppModelCatalogReferencePrice {
 
     public void setCurrency(String currency) {
         this.currency = currency;
+    }
+
+    public String getRegionCode() {
+        return this.regionCode;
+    }
+
+    public void setRegionCode(String regionCode) {
+        this.regionCode = regionCode;
     }
 
     public String getUnitPrice() {

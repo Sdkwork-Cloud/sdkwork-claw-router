@@ -66,8 +66,9 @@ fn sql_queries_use_schema_registry_tables_and_never_forbidden_synonyms() {
         "ai_channel_group_metric_snapshot",
         "ai_provider",
         "ai_channel",
-        "ai_channel_endpoint",
-        "ai_channel_model",
+        "ai_channel_credential",
+        "ai_channel_resource",
+        "ai_resource",
         "ai_routing_policy",
         "ai_routing_profile",
         "ai_routing_rule",
@@ -220,11 +221,11 @@ fn row_mappers_reject_empty_catalog_key_segments_with_shared_identity_standard()
         retry_policy_json: None,
     }
     .try_into_domain()
-    .expect_err("ai_channel_model.catalog_key must reject empty path segments");
+    .expect_err("provider route catalog_key must reject empty path segments");
     assert!(
         route_error
             .to_string()
-            .contains("ai_channel_model.catalog_key must use vendor/model identity"),
+            .contains("provider route catalog_key must use vendor/model identity"),
         "{route_error}"
     );
 
@@ -295,9 +296,7 @@ fn sql_queries_project_stable_codes_instead_of_enum_ordinals() {
 fn provider_route_queries_use_explicit_region_context_not_catalog_key_segments() {
     let postgres_sql = PricingCatalogSql::load_provider_routes();
     assert!(postgres_sql.contains("AS region_code"));
-    assert!(postgres_sql.contains(
-        "COALESCE(NULLIF(e.region_code, ''), NULLIF(c.region_code, ''), 'global') AS region_code"
-    ));
+    assert!(postgres_sql.contains("COALESCE(NULLIF(c.region_code, ''), 'global') AS region_code"));
     assert!(
         !PricingCatalogSql::load_provider_channel_routes()
             .contains("endpoint.region_code IN"),
@@ -325,9 +324,7 @@ fn provider_route_queries_use_explicit_region_context_not_catalog_key_segments()
         .and_then(|value| value.split("\"#;").next())
         .expect("sqlite load provider channel routes query must be present");
     assert!(sqlite_sql.contains("AS region_code"));
-    assert!(sqlite_sql.contains(
-        "COALESCE(NULLIF(e.region_code, ''), NULLIF(c.region_code, ''), 'global') AS region_code"
-    ));
+    assert!(sqlite_sql.contains("COALESCE(NULLIF(c.region_code, ''), 'global') AS region_code"));
     assert!(
         !sqlite_sql.contains("endpoint.region_code IN"),
         "sqlite channel route SQL must not filter endpoint deployments by channel region; endpoint region is the deployment dimension"
@@ -435,8 +432,9 @@ fn snapshot_load_queries_are_parameterless_and_cover_every_catalog_row_set() {
         "ai_quota_policy",
         "ai_provider",
         "ai_channel",
-        "ai_channel_endpoint",
-        "ai_channel_model",
+        "ai_channel_credential",
+        "ai_channel_resource",
+        "ai_resource",
         "ai_routing_policy",
         "ai_routing_profile",
         "ai_routing_rule",
@@ -454,7 +452,7 @@ fn snapshot_load_queries_are_parameterless_and_cover_every_catalog_row_set() {
     );
     assert!(
         !sql.contains("gateway_model"),
-        "snapshot load queries must use ai_channel_model.model"
+        "snapshot load queries must use normalized model and resource tables"
     );
     assert!(sql.contains("price_side_code"));
     assert!(sql.contains("base_price_side_code"));
@@ -464,7 +462,12 @@ fn snapshot_load_queries_are_parameterless_and_cover_every_catalog_row_set() {
     );
     assert!(
         PricingCatalogSql::load_api_keys().contains("channel_group_id"),
-        "API key snapshot query must bind gateway keys to ai_channel_group through channel_group_id"
+        "API key snapshot query must keep iam_gateway_api_key.channel_group_id as the default route group"
+    );
+    assert!(
+        PricingCatalogSql::load_api_keys().contains("iam_gateway_api_key_channel_group")
+            && PricingCatalogSql::load_api_keys().contains("group_bindings_json"),
+        "API key snapshot query must load explicit multi-group route bindings from iam_gateway_api_key_channel_group"
     );
     assert!(
         PricingCatalogSql::load_channel_groups().contains("ai_channel_group"),
@@ -497,13 +500,47 @@ fn snapshot_load_queries_are_parameterless_and_cover_every_catalog_row_set() {
         "provider route snapshot query must not read the precomputed route candidate projection"
     );
     assert!(
-        PricingCatalogSql::load_provider_routes().contains("ai_channel_endpoint"),
-        "provider route snapshot query must join region-aware channel endpoints"
+        !PricingCatalogSql::load_provider_routes().contains("ai_channel_endpoint"),
+        "provider route snapshot query must not depend on channel endpoints"
     );
+    for sql in [
+        PricingCatalogSql::list_provider_routes(),
+        PricingCatalogSql::find_provider_route(),
+    ] {
+        assert!(
+            !sql.contains("ai_channel_model"),
+            "provider route lookup queries must not depend on account model allowlists"
+        );
+        assert!(
+            !sql.contains("ai_channel_vendor") && sql.contains("ai_channel_resource"),
+            "provider route lookup queries must derive account support from resource bindings"
+        );
+        assert!(
+            sql.contains("scope.binding_id IS NOT NULL"),
+            "provider route lookup queries must require explicit account resource bindings"
+        );
+        assert!(
+            sql.contains("c.tenant_id = m.tenant_id")
+                && sql.contains("c.organization_id = m.organization_id"),
+            "provider route lookup queries must not combine models and channel accounts across tenant boundaries"
+        );
+        assert!(
+            !sql.contains("cr_check"),
+            "provider route lookup queries must not treat accounts without resources as unrestricted"
+        );
+    }
     assert!(
         PricingCatalogSql::load_provider_routes()
-            .contains("COALESCE(NULLIF(e.base_url, ''), NULLIF(cc.base_url, ''), p.base_url)"),
-        "provider route snapshot query must prefer endpoint base_url before credential/provider fallback"
+            .contains("COALESCE(NULLIF(cc.base_url, ''), NULLIF(c.base_url, ''), p.base_url)"),
+        "provider route snapshot query must resolve base_url from credential/channel/provider"
+    );
+    assert!(
+        PricingCatalogSql::load_provider_routes().contains("scope.binding_id IS NOT NULL"),
+        "provider route snapshot query must require explicit account resource bindings"
+    );
+    assert!(
+        !PricingCatalogSql::load_provider_routes().contains("cr_check"),
+        "provider route snapshot query must not treat accounts without resources as unrestricted"
     );
     assert!(
         PricingCatalogSql::load_provider_routes().contains("JOIN ai_channel_credential cc"),
@@ -517,9 +554,9 @@ fn snapshot_load_queries_are_parameterless_and_cover_every_catalog_row_set() {
         "provider route snapshot query must project credential identity and channel rotation strategy"
     );
     assert!(
-        PricingCatalogSql::load_provider_routes().contains("e.region_code")
-            && PricingCatalogSql::load_provider_routes().contains("'global'"),
-        "provider route snapshot query must preserve explicit endpoint/channel route region with global fallback"
+        PricingCatalogSql::load_provider_routes()
+            .contains("COALESCE(NULLIF(c.region_code, ''), 'global') AS region_code"),
+        "provider route snapshot query must preserve account route region with global fallback"
     );
     assert!(
         PricingCatalogSql::load_provider_routes().contains("LEFT JOIN ai_provider p"),
@@ -530,8 +567,15 @@ fn snapshot_load_queries_are_parameterless_and_cover_every_catalog_row_set() {
         "provider route snapshot query must require an active channel for callable routing"
     );
     assert!(
-        PricingCatalogSql::load_provider_routes().contains("FROM ai_channel_model cm"),
-        "provider route snapshot query must drive model-scoped routing from channel model support"
+        PricingCatalogSql::load_provider_routes().contains("c.tenant_id = m.tenant_id")
+            && PricingCatalogSql::load_provider_routes()
+                .contains("c.organization_id = m.organization_id"),
+        "provider route snapshot query must not combine models and channel accounts across tenant boundaries"
+    );
+    assert!(
+        PricingCatalogSql::load_provider_routes().contains("FROM ai_model m")
+            && PricingCatalogSql::load_provider_routes().contains("JOIN channel_resource_scope scope"),
+        "provider route snapshot query must drive model-scoped routing from catalog and account resources"
     );
     assert!(
         PricingCatalogSql::load_provider_routes().contains("secret_ref"),
@@ -555,7 +599,7 @@ fn snapshot_load_queries_are_parameterless_and_cover_every_catalog_row_set() {
     );
     assert!(
         PricingCatalogSql::load_provider_routes().contains(
-            "NULLIF(COALESCE(NULLIF(e.base_url, ''), NULLIF(cc.base_url, ''), p.base_url), '')"
+            "NULLIF(COALESCE(NULLIF(cc.base_url, ''), NULLIF(c.base_url, ''), p.base_url), '')"
         ),
         "provider route snapshot query must filter routes without resolved base_url"
     );
@@ -578,13 +622,13 @@ fn snapshot_load_queries_are_parameterless_and_cover_every_catalog_row_set() {
         "channel group snapshot query must project resolved provider base_url for model-less route-scoped forwarding"
     );
     assert!(
-        PricingCatalogSql::load_provider_channel_routes().contains("ai_channel_endpoint"),
-        "channel group snapshot query must join channel endpoints for region-aware forwarding"
+        !PricingCatalogSql::load_provider_channel_routes().contains("ai_channel_endpoint"),
+        "channel group snapshot query must not depend on channel endpoints for forwarding"
     );
     assert!(
         PricingCatalogSql::load_provider_channel_routes()
-            .contains("COALESCE(NULLIF(e.base_url, ''), NULLIF(cc.base_url, ''), p.base_url)"),
-        "channel group snapshot query must prefer endpoint base_url before credential/provider fallback"
+            .contains("COALESCE(NULLIF(cc.base_url, ''), NULLIF(c.base_url, ''), p.base_url)"),
+        "channel group snapshot query must resolve base_url from credential/channel/provider"
     );
     assert!(
         PricingCatalogSql::load_provider_channel_routes().contains("JOIN ai_channel_credential cc"),
@@ -599,7 +643,7 @@ fn snapshot_load_queries_are_parameterless_and_cover_every_catalog_row_set() {
     );
     assert!(
         PricingCatalogSql::load_provider_channel_routes()
-            .contains("COALESCE(NULLIF(e.region_code, ''), NULLIF(c.region_code, ''), 'global') AS region_code"),
+            .contains("COALESCE(NULLIF(c.region_code, ''), 'global') AS region_code"),
         "channel group snapshot query must project explicit route region context for pricing and usage"
     );
     assert!(
@@ -668,11 +712,10 @@ fn snapshot_load_queries_are_parameterless_and_cover_every_catalog_row_set() {
         "channel group snapshot query must exclude disabled group-channel bindings"
     );
     assert!(
-        PricingCatalogSql::load_provider_channel_routes()
-            .contains("COALESCE(e.timeout_ms, c.timeout_ms) AS timeout_ms")
+        PricingCatalogSql::load_provider_channel_routes().contains("c.timeout_ms AS timeout_ms")
             && PricingCatalogSql::load_provider_channel_routes()
-                .contains("COALESCE(e.retry_policy, c.retry_policy)::text AS retry_policy_json"),
-        "channel group snapshot query must project endpoint timeout and retry policy for each endpoint deployment row"
+                .contains("c.retry_policy::text AS retry_policy_json"),
+        "channel group snapshot query must project account timeout and retry policy"
     );
     assert!(
         !PricingCatalogSql::load_provider_channel_routes().contains("FROM ai_route_candidate b"),
@@ -700,7 +743,7 @@ fn snapshot_load_queries_are_parameterless_and_cover_every_catalog_row_set() {
     );
     assert!(
         PricingCatalogSql::load_provider_channel_routes().contains(
-            "NULLIF(COALESCE(NULLIF(e.base_url, ''), NULLIF(cc.base_url, ''), p.base_url), '')"
+            "NULLIF(COALESCE(NULLIF(cc.base_url, ''), NULLIF(c.base_url, ''), p.base_url), '')"
         ),
         "channel route snapshot query must filter channels without resolved base_url"
     );
@@ -712,9 +755,10 @@ fn snapshot_load_queries_are_parameterless_and_cover_every_catalog_row_set() {
         "channel route snapshot query must filter circuit-broken channels until the recovery probe window opens"
     );
     assert!(
-        PricingCatalogSql::load_provider_channel_routes().contains("modelScope")
+        !PricingCatalogSql::load_provider_channel_routes().contains("modelScope")
+            && PricingCatalogSql::load_provider_channel_routes().contains("apiScope")
             && PricingCatalogSql::load_provider_channel_routes().contains("capabilities"),
-        "channel route snapshot query must include group binding model and capability scopes"
+        "channel route snapshot query must scope account-pool bindings by API and capability, not direct model bindings"
     );
     assert!(
         PricingCatalogSql::load_routing_policies().contains("default_profile_id"),
@@ -739,8 +783,9 @@ fn provider_route_snapshot_derives_model_routes_from_normalized_channel_facts() 
         "provider route snapshot must not depend on the precomputed route candidate projection; it would grow as channel_group x api x model data"
     );
     for required_table in [
-        "ai_channel_model",
-        "ai_channel_endpoint",
+        "ai_model",
+        "ai_channel_resource",
+        "ai_resource",
         "ai_channel",
         "ai_provider",
     ] {
@@ -750,9 +795,9 @@ fn provider_route_snapshot_derives_model_routes_from_normalized_channel_facts() 
         );
     }
     assert!(
-        sql.contains("cm.catalog_key AS catalog_key")
-            && sql.contains("COALESCE(NULLIF(e.region_code, ''), NULLIF(c.region_code, ''), 'global') AS region_code"),
-        "provider route snapshot must keep model identity region-free and resolve region only from endpoint/channel context"
+        sql.contains("m.catalog_key AS catalog_key")
+            && sql.contains("COALESCE(NULLIF(c.region_code, ''), 'global') AS region_code"),
+        "provider route snapshot must keep model identity region-free and resolve region only from account context"
     );
 }
 
@@ -843,7 +888,7 @@ fn row_mappers_convert_sql_rows_into_domain_objects() {
             r#"{"max_attempts":3,"retryable_status_codes":[429,500,503],"backoff_ms":25}"#
                 .to_owned(),
         ),
-        group_bindings_json: r#"[{"groupId":10,"priority":7,"weight":80,"modelScope":["openai/gpt-4o-mini"],"apiScope":["openai.chat_completions"],"capabilities":["llm"]}]"#.to_owned(),
+        group_bindings_json: r#"[{"groupId":10,"priority":7,"weight":80,"apiScope":["openai.chat_completions"],"capabilities":["llm"]}]"#.to_owned(),
     }
     .try_into_domain()
     .unwrap();
@@ -884,10 +929,6 @@ fn row_mappers_convert_sql_rows_into_domain_objects() {
     assert_eq!(7, channel_route.group_bindings[0].priority);
     assert_eq!(80, channel_route.group_bindings[0].weight);
     assert_eq!(
-        vec!["openai/gpt-4o-mini".to_owned()],
-        channel_route.group_bindings[0].model_scope
-    );
-    assert_eq!(
         vec!["openai.chat_completions".to_owned()],
         channel_route.group_bindings[0].api_scope
     );
@@ -902,6 +943,7 @@ fn row_mappers_convert_sql_rows_into_domain_objects() {
         organization_id: 20,
         user_id: 30,
         group_id: 10,
+        group_bindings_json: r#"[{"groupId":20,"groupCode":"premium-group","bindingRole":"route","routingStrategy":"auto","priority":1,"weight":100},{"groupId":10,"groupCode":"standard-group","bindingRole":"route","routingStrategy":"auto","priority":50,"weight":10}]"#.to_owned(),
         name: "Production Key".to_owned(),
         key_prefix: "sk-test".to_owned(),
         key_display_masked: "sk-test********ABCD".to_owned(),
@@ -916,6 +958,13 @@ fn row_mappers_convert_sql_rows_into_domain_objects() {
     }
     .into_domain();
     assert_eq!(10, api_key.group_id);
+    assert_eq!(2, api_key.group_bindings.len());
+    assert_eq!(20, api_key.group_bindings[0].group_id);
+    assert_eq!("premium-group", api_key.group_bindings[0].group_code);
+    assert_eq!("route", api_key.group_bindings[0].binding_role);
+    assert_eq!("auto", api_key.group_bindings[0].routing_strategy);
+    assert_eq!(1, api_key.group_bindings[0].priority);
+    assert_eq!(100, api_key.group_bindings[0].weight);
     assert_eq!("hash:sk-test", api_key.key_hash);
     assert_eq!("Production Key", api_key.name);
     assert_eq!("sk-test********ABCD", api_key.key_display_masked);
@@ -1154,7 +1203,7 @@ fn model_provider_route_row_normalizes_catalog_key_provider_model_to_native_mode
 
     assert_eq!(
         "gpt-5.5", route.provider_model,
-        "default channel model mappings must send provider-native model ids upstream"
+        "default provider route mappings must send provider-native model ids upstream"
     );
 }
 
@@ -1282,7 +1331,7 @@ fn sql_catalog_snapshot_rejects_legacy_regional_route_identity() {
     assert!(
         error
             .to_string()
-            .contains("ai_channel_model.catalog_key must use vendor/model identity"),
+            .contains("provider route catalog_key must use vendor/model identity"),
         "{error}"
     );
 }
@@ -1317,7 +1366,7 @@ fn sql_catalog_snapshot_rejects_cloud_region_route_identity() {
     assert!(
         error
             .to_string()
-            .contains("ai_channel_model.catalog_key must use vendor/model identity"),
+            .contains("provider route catalog_key must use vendor/model identity"),
         "{error}"
     );
 }
@@ -1716,6 +1765,7 @@ fn priced_catalog_rows() -> PricingCatalogRows {
             organization_id: 20,
             user_id: 30,
             group_id: 10,
+            group_bindings_json: "[]".to_owned(),
             name: "Production Key".to_owned(),
             key_prefix: "sk-test".to_owned(),
             key_display_masked: "sk-test********ABCD".to_owned(),

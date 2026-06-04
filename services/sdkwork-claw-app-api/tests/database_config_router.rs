@@ -104,7 +104,7 @@ async fn database_config_app_model_catalog_refreshes_runtime_snapshot_after_data
     seed_catalog_with_two_user_api_keys(&pool).await;
     pool.close().await;
 
-    let router = configured_router(&database_url).await;
+    let router = configured_router_with_catalog_refresh(&database_url).await;
     let (_, initial_payload, _) = request_json(
         router.clone(),
         Request::builder()
@@ -120,11 +120,47 @@ async fn database_config_app_model_catalog_refreshes_runtime_snapshot_after_data
     sqlx::query(
         r#"
         INSERT INTO ai_model
-            (id, uuid, catalog_key, model, display_name, vendor_code, capabilities, status, rank_score)
+            (id, uuid, tenant_id, organization_id, catalog_key, model, display_name, vendor_code, capabilities, release_stage, shelf_state, routing_state, status, rank_score)
         VALUES
-            (99, 'model-refresh-99', 'openai/gpt-4o-refresh', 'gpt-4o-refresh', 'GPT-4o refresh', 'openai', '["chat"]', 1, '90.0')
+            (99, 'model-refresh-99', 0, 0, 'openai/gpt-4o-refresh', 'gpt-4o-refresh', 'GPT-4o refresh', 'openai', '["chat"]', 1, 1, 1, 1, '90.0')
         "#,
     )
+    .execute(&update_pool)
+    .await
+    .unwrap();
+    let refresh_resource_id = sqlx::query(
+        r#"
+        INSERT INTO ai_resource
+            (uuid, tenant_id, organization_id, resource_code, resource_type, display_name, vendor_code, modality_code, api_code, catalog_key, model, provider_native_model, status, sort_order)
+        VALUES
+            ('resource-model-openai-gpt-4o-refresh-chat-app-api-test', 10, 20, 'model.openai.gpt-4o-refresh.chat', 'model_api', 'GPT-4o refresh Chat', 'openai', 'chat', 'openai.chat_completions', 'openai/gpt-4o-refresh', 'gpt-4o-refresh', 'gpt-4o-refresh', 1, 99)
+        "#,
+    )
+    .execute(&update_pool)
+    .await
+    .unwrap()
+    .last_insert_rowid();
+    sqlx::query(
+        r#"
+        INSERT INTO ai_channel_resource
+            (uuid, tenant_id, organization_id, channel_id, provider_code, channel_code, resource_id, resource_code, grant_type, priority, status)
+        VALUES
+            ('channel-resource-openrouter-gpt-4o-refresh-app-api-test', 10, 20, 3001, 'openrouter', 'openrouter-main', ?1, 'model.openai.gpt-4o-refresh.chat', 'allow', 1, 1)
+        "#,
+    )
+    .bind(refresh_resource_id)
+    .execute(&update_pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO ai_channel_group_resource
+            (uuid, tenant_id, organization_id, channel_group_id, resource_id, resource_code, grant_type, priority, status)
+        VALUES
+            ('channel-group-resource-openrouter-gpt-4o-refresh-app-api-test', 10, 20, 10, ?1, 'model.openai.gpt-4o-refresh.chat', 'allow', 1, 1)
+        "#,
+    )
+    .bind(refresh_resource_id)
     .execute(&update_pool)
     .await
     .unwrap();
@@ -188,7 +224,7 @@ async fn database_config_user_profile_requires_session_and_returns_safe_subject_
     )
     .await;
 
-    assert_eq!(StatusCode::OK, status);
+    assert_eq!(StatusCode::OK, status, "{body_text}");
     assert_eq!("2000", payload["code"]);
     assert_eq!("Owner User", payload["data"]["displayName"]);
     assert_eq!("owner@example.com", payload["data"]["email"]);
@@ -876,7 +912,7 @@ async fn database_config_auth_runtime_settings_are_public_and_match_persisted_po
     .await;
     pool.close().await;
 
-    let (status, payload, _body_text) = request_json(
+    let (status, payload, body_text) = request_json(
         configured_router(&database_url).await,
         Request::builder()
             .method("GET")
@@ -886,7 +922,7 @@ async fn database_config_auth_runtime_settings_are_public_and_match_persisted_po
     )
     .await;
 
-    assert_eq!(StatusCode::OK, status);
+    assert_eq!(StatusCode::OK, status, "{body_text}");
     assert_eq!("2000", payload["code"]);
     assert_eq!("highlights-only", payload["data"]["leftRailMode"]);
     assert_eq!(
@@ -1344,7 +1380,7 @@ async fn database_config_auth_verification_codes_queue_messaging_delivery_in_ser
     )
     .await;
 
-    assert_eq!(StatusCode::OK, status);
+    assert_eq!(StatusCode::OK, status, "{body_text}");
     assert_eq!("2000", payload["code"]);
     assert!(payload["data"]["codeId"].as_str().unwrap().len() > 12);
     assert!(payload["data"].get("debugCode").is_none());
@@ -1703,7 +1739,7 @@ async fn database_config_dashboard_scopes_metrics_to_app_session_subject() {
     )
     .await;
 
-    assert_eq!(StatusCode::OK, status);
+    assert_eq!(StatusCode::OK, status, "{body_text}");
     assert_eq!("2000", payload["code"]);
     assert_eq!(7, payload["data"]["summary"]["requestCount"]);
     assert_eq!(1.25, payload["data"]["summary"]["usedCredits"]);
@@ -1717,7 +1753,9 @@ async fn database_config_dashboard_scopes_metrics_to_app_session_subject() {
         2.0,
         payload["data"]["chartData"][0]["image (Midjourney/DALL-E)"]
     );
-    assert_eq!("gpt-4o-mini", payload["data"]["topModels"][0]["name"]);
+    let top_models = payload["data"]["topModels"].as_array().unwrap();
+    assert!(!top_models.is_empty());
+    assert!(top_models.iter().any(|item| item["name"] == "qwen3.7-max"));
     assert_eq!(
         "Planned model upgrade",
         payload["data"]["announcements"][0]["text"]
@@ -1982,6 +2020,7 @@ async fn database_config_billing_reads_return_empty_defaults_when_optional_read_
     seed_app_user_data(&pool).await;
     for table in [
         "promotion_coupon_ledger_entry",
+        "promotion_discount_application",
         "promotion_user_coupon",
         "promotion_code",
         "promotion_coupon_stock",
@@ -2445,8 +2484,14 @@ async fn database_config_app_routing_routes_require_session_scope_and_redact_sen
         channels_payload["data"]["items"][0]["apiKey"]
     );
     assert_eq!(
-        "openai/gpt-4o-mini",
-        channels_payload["data"]["items"][0]["models"][0]
+        "llm",
+        channels_payload["data"]["items"][0]["capabilities"][0]
+    );
+    assert_eq!(
+        true,
+        channels_payload["data"]["items"][0]["models"]
+            .as_array()
+            .is_some_and(Vec::is_empty)
     );
     assert!(!channels_body_text.contains("vault://providers/openai/main"));
     assert!(!channels_body_text.contains("Other Tenant Channel"));
@@ -2713,7 +2758,6 @@ async fn database_config_app_routing_channel_commands_persist_and_scope_without_
                         "accessType": "Standard API Key",
                         "baseUrl": "https://unauthenticated.example/v1",
                         "secretRef": "vault://providers/openai/unauthenticated",
-                        "models": ["openai/gpt-4o-mini"],
                         "capabilities": ["llm"],
                         "weight": 25,
                         "status": "active"
@@ -2733,7 +2777,6 @@ async fn database_config_app_routing_channel_commands_persist_and_scope_without_
         "accessType": "Standard API Key",
         "baseUrl": "file:///etc/passwd",
         "secretRef": "vault://providers/openai/invalid-base-url",
-        "models": ["openai/gpt-4o-mini"],
         "capabilities": ["llm"],
         "weight": 25,
         "status": "active"
@@ -2759,7 +2802,6 @@ async fn database_config_app_routing_channel_commands_persist_and_scope_without_
         "accessType": "Standard API Key",
         "baseUrl": "https://console-created.example/v1",
         "secretRef": "vault://providers/openai/console-created",
-        "models": ["openai/gpt-4o-mini"],
         "capabilities": ["llm", "image"],
         "weight": 75,
         "status": "active"
@@ -2780,9 +2822,20 @@ async fn database_config_app_routing_channel_commands_persist_and_scope_without_
         create_payload["data"]["item"]["name"]
     );
     assert_eq!("OpenAI", create_payload["data"]["item"]["vendor"]);
+    let created_capabilities = create_payload["data"]["item"]["capabilities"]
+        .as_array()
+        .unwrap();
+    assert!(created_capabilities
+        .iter()
+        .any(|capability| capability == "llm"));
+    assert!(created_capabilities
+        .iter()
+        .any(|capability| capability == "image"));
     assert_eq!(
-        "openai/gpt-4o-mini",
-        create_payload["data"]["item"]["models"][0]
+        true,
+        create_payload["data"]["item"]["models"]
+            .as_array()
+            .is_some_and(Vec::is_empty)
     );
     assert_eq!(
         "ref:***console-created",
@@ -2826,7 +2879,6 @@ async fn database_config_app_routing_channel_commands_persist_and_scope_without_
         "accessType": "Standard API Key",
         "baseUrl": "https://console-updated.example/v1",
         "secretRef": "vault://providers/openai/console-updated",
-        "models": ["openai/gpt-4o-mini"],
         "capabilities": ["llm"],
         "weight": 88
     });
@@ -2853,7 +2905,7 @@ async fn database_config_app_routing_channel_commands_persist_and_scope_without_
     assert_eq!(88, update_payload["data"]["item"]["weight"]);
     assert_eq!(
         1,
-        update_payload["data"]["item"]["models"]
+        update_payload["data"]["item"]["capabilities"]
             .as_array()
             .unwrap()
             .len()
@@ -2996,8 +3048,14 @@ async fn database_config_app_routing_channel_commands_persist_and_scope_without_
     .fetch_one(&verification_pool)
     .await
     .unwrap();
-    let active_model_count: i64 = sqlx::query_scalar(
-        "SELECT COUNT(1) FROM ai_channel_model WHERE channel_id = ?1 AND status = 1 AND deleted_at IS NULL",
+    let channel_model_table_count: i64 = sqlx::query_scalar(
+        "SELECT COUNT(1) FROM sqlite_master WHERE type = 'table' AND name = 'ai_channel_model'",
+    )
+    .fetch_one(&verification_pool)
+    .await
+    .unwrap();
+    let active_channel_resource_count: i64 = sqlx::query_scalar(
+        "SELECT COUNT(1) FROM ai_channel_resource WHERE channel_id = ?1 AND status = 1 AND deleted_at IS NULL",
     )
     .bind(parsed_channel_id)
     .fetch_one(&verification_pool)
@@ -3015,6 +3073,20 @@ async fn database_config_app_routing_channel_commands_persist_and_scope_without_
             .fetch_one(&verification_pool)
             .await
             .unwrap();
+    let model_resource_was_not_written_count: i64 = sqlx::query_scalar(
+        "SELECT COUNT(1) FROM ai_channel_resource WHERE channel_id = ?1 AND resource_code = 'model.openai.gpt-4o-mini.chat'",
+    )
+    .bind(parsed_channel_id)
+    .fetch_one(&verification_pool)
+    .await
+    .unwrap();
+    let modality_resource_was_written_count: i64 = sqlx::query_scalar(
+        "SELECT COUNT(1) FROM ai_channel_resource WHERE channel_id = ?1 AND resource_code = 'modality.llm'",
+    )
+    .bind(parsed_channel_id)
+    .fetch_one(&verification_pool)
+    .await
+    .unwrap();
     let synthetic_latency_count: i64 = sqlx::query_scalar(
         "SELECT COUNT(1) FROM ai_channel WHERE id = ?1 AND last_latency_ms = 45",
     )
@@ -3036,12 +3108,15 @@ async fn database_config_app_routing_channel_commands_persist_and_scope_without_
     verification_pool.close().await;
 
     assert_eq!(-1, deleted_status);
-    assert_eq!(0, active_model_count);
+    assert_eq!(0, channel_model_table_count);
+    assert_eq!(0, active_channel_resource_count);
     assert_eq!(1, other_tenant_channel_count);
     assert_eq!(
         "vault://providers/openai/console-updated",
         stored_secret_ref
     );
+    assert_eq!(0, model_resource_was_not_written_count);
+    assert_eq!(1, modality_resource_was_written_count);
     assert_eq!(0, synthetic_latency_count);
     assert_eq!(0, provider_snapshot_uuid_reuse_count);
 }
@@ -3978,7 +4053,7 @@ async fn database_config_usage_logs_require_session_filter_and_scope_logs_to_sub
         ),
     )
     .await;
-    assert_eq!(StatusCode::OK, success_status);
+    assert_eq!(StatusCode::OK, success_status, "{success_body_text}");
     assert_eq!("2000", success_payload["code"]);
     assert_eq!(1, success_payload["data"]["total"]);
     let success_logs = success_payload["data"]["logs"].as_array().unwrap();
@@ -4010,6 +4085,30 @@ async fn database_config_usage_logs_require_session_filter_and_scope_logs_to_sub
     assert!(!success_body_text.contains("other-user-usage-request"));
     assert!(!success_body_text.contains("203.0.113.42"));
 
+    let (cost_only_status, cost_only_payload, cost_only_body_text) = request_json(
+        router.clone(),
+        session_request(
+            "GET",
+            "/app/v3/api/ai/usage/logs?status=success&q=gpt-4o-cost-only&start_time=2026-04-29T00:00:00Z&end_time=2026-04-29T23:59:59Z",
+            Body::empty(),
+            10,
+            20,
+            30,
+        ),
+    )
+    .await;
+    assert_eq!(StatusCode::OK, cost_only_status, "{cost_only_body_text}");
+    assert_eq!("2000", cost_only_payload["code"]);
+    assert_eq!(1, cost_only_payload["data"]["total"]);
+    let cost_only_logs = cost_only_payload["data"]["logs"].as_array().unwrap();
+    assert_eq!(1, cost_only_logs.len());
+    assert_eq!("usage-owner-cost-only", cost_only_logs[0]["requestId"]);
+    assert_eq!("0.000000000", cost_only_logs[0]["cost"]);
+    assert!(
+        !cost_only_body_text.contains("777.123456"),
+        "app usage logs must not expose upstream cost compatibility fields"
+    );
+
     let (error_status, error_payload, error_body_text) = request_json(
         router,
         session_request(
@@ -4022,7 +4121,7 @@ async fn database_config_usage_logs_require_session_filter_and_scope_logs_to_sub
         ),
     )
     .await;
-    assert_eq!(StatusCode::OK, error_status);
+    assert_eq!(StatusCode::OK, error_status, "{error_body_text}");
     assert_eq!("2000", error_payload["code"]);
     assert_eq!(1, error_payload["data"]["total"]);
     let error_logs = error_payload["data"]["logs"].as_array().unwrap();
@@ -4070,13 +4169,42 @@ async fn capture_provider_health_probe(
 }
 
 async fn configured_router(database_url: &str) -> axum::Router {
-    configured_router_with_deployment_mode(database_url, DeploymentMode::Desktop).await
+    let pool = create_sqlite_pool(database_url).await;
+    sdkwork_claw_app_api::router_with_sqlite_product_catalog(
+        pool,
+        api_key_security_config(),
+        trusted_subject_config(),
+        app_session_config(),
+        payment_webhook_config(),
+    )
+    .await
+    .unwrap()
+}
+
+async fn configured_router_with_catalog_refresh(database_url: &str) -> axum::Router {
+    let _model_ranking_enabled =
+        EnvOverride::set("SDKWORK_CLAW_MODEL_RANKING_REFRESH_WORKER_ENABLED", "false");
+    let _catalog_refresh_interval = EnvOverride::set(
+        "SDKWORK_CLAW_PROVIDER_CATALOG_REFRESH_INTERVAL_MILLIS",
+        "50",
+    );
+    sdkwork_claw_app_api::router_with_database_config_api_key_trusted_subject_app_session_deployment_mode_config(
+        DatabaseConfig::from_url_with_max_connections(database_url, 1).unwrap(),
+        api_key_security_config(),
+        trusted_subject_config(),
+        app_session_config(),
+        payment_webhook_config(),
+        DeploymentMode::Desktop,
+    )
+    .await
+    .unwrap()
 }
 
 async fn configured_router_with_deployment_mode(
     database_url: &str,
     deployment_mode: DeploymentMode,
 ) -> axum::Router {
+    let _runtime_guard = AppRuntimeWorkerEnvGuard::disabled_for_test();
     sdkwork_claw_app_api::router_with_database_config_api_key_trusted_subject_app_session_deployment_mode_config(
         DatabaseConfig::from_url_with_max_connections(database_url, 1).unwrap(),
         api_key_security_config(),
@@ -4093,6 +4221,7 @@ async fn configured_router_with_provider_secret_map(
     database_url: &str,
     provider_secret_map_config: ProviderSecretMapConfig,
 ) -> axum::Router {
+    let _runtime_guard = AppRuntimeWorkerEnvGuard::disabled_for_test();
     sdkwork_claw_app_api::router_with_database_config_api_key_trusted_subject_app_session_provider_secret_map_and_deployment_mode_config(
         DatabaseConfig::from_url_with_max_connections(database_url, 1).unwrap(),
         api_key_security_config(),
@@ -4172,6 +4301,26 @@ impl Drop for EnvOverride {
             std::env::set_var(self.key, value);
         } else {
             std::env::remove_var(self.key);
+        }
+    }
+}
+
+struct AppRuntimeWorkerEnvGuard {
+    _model_ranking_enabled: EnvOverride,
+    _catalog_refresh_interval: EnvOverride,
+}
+
+impl AppRuntimeWorkerEnvGuard {
+    fn disabled_for_test() -> Self {
+        Self {
+            _model_ranking_enabled: EnvOverride::set(
+                "SDKWORK_CLAW_MODEL_RANKING_REFRESH_WORKER_ENABLED",
+                "false",
+            ),
+            _catalog_refresh_interval: EnvOverride::set(
+                "SDKWORK_CLAW_PROVIDER_CATALOG_REFRESH_INTERVAL_MILLIS",
+                "3600000",
+            ),
         }
     }
 }
@@ -4273,22 +4422,199 @@ async fn create_schema(pool: &SqlitePool) {
     for statement in [
         r#"CREATE TABLE ai_model_vendor (
             id INTEGER PRIMARY KEY,
+            uuid TEXT NOT NULL,
+            tenant_id INTEGER NOT NULL DEFAULT 0,
+            organization_id INTEGER NOT NULL DEFAULT 0,
+            data_scope INTEGER NOT NULL DEFAULT 0,
+            status INTEGER NOT NULL DEFAULT 1,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            version INTEGER NOT NULL DEFAULT 0,
+            deleted_at TEXT,
+            deleted_by INTEGER,
+            metadata TEXT NOT NULL DEFAULT '{}',
             vendor_code TEXT NOT NULL,
             display_name TEXT NOT NULL,
-            status INTEGER NOT NULL,
-            deleted_at TEXT,
+            legal_name TEXT,
+            description TEXT,
+            website_url TEXT,
+            docs_url TEXT,
+            logo_media_resource_id TEXT,
+            logo_object_blob_id INTEGER,
+            logo_resource_snapshot TEXT,
+            icon_media_resource_id TEXT,
+            icon_object_blob_id INTEGER,
+            icon_resource_snapshot TEXT,
+            color_token TEXT,
+            country_region TEXT,
+            vendor_type INTEGER,
+            model_families TEXT,
+            capabilities TEXT,
+            supported_protocols TEXT,
+            client_api_compatibility TEXT,
+            open_source INTEGER,
             sort_order INTEGER NOT NULL
         )"#,
         r#"CREATE TABLE ai_model (
             id INTEGER PRIMARY KEY,
+            uuid TEXT,
+            tenant_id INTEGER,
+            organization_id INTEGER,
+            data_scope INTEGER,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            version INTEGER NOT NULL DEFAULT 0,
+            metadata TEXT NOT NULL DEFAULT '{}',
             catalog_key TEXT,
             model TEXT NOT NULL,
             display_name TEXT NOT NULL,
+            vendor_id INTEGER,
             vendor_code TEXT NOT NULL,
-            capabilities TEXT NOT NULL,
+            vendor_name_snapshot TEXT,
+            family_id INTEGER,
+            family_code TEXT,
+            provider_hint TEXT,
+            model_family TEXT,
+            model_version TEXT,
+            model_aliases TEXT,
+            capability INTEGER,
+            modalities TEXT,
+            input_modalities TEXT,
+            output_modalities TEXT,
+            icon_media_resource_id TEXT,
+            icon_object_blob_id INTEGER,
+            icon_resource_snapshot TEXT,
+            color_token TEXT,
+            docs_url TEXT,
+            license_type INTEGER,
+            description TEXT,
+            capability_intro TEXT,
+            limitations TEXT,
+            supported_languages TEXT,
+            use_cases TEXT,
+            training_data_cutoff TEXT,
+            context_tokens INTEGER,
+            max_input_tokens INTEGER,
+            max_output_tokens INTEGER,
+            max_duration_seconds INTEGER,
+            supports_streaming INTEGER,
+            supports_tools INTEGER,
+            supports_json_schema INTEGER,
+            api_format TEXT,
+            performance_profile TEXT,
+            default_pricing_id INTEGER,
+            release_stage INTEGER NOT NULL DEFAULT 1,
+            shelf_state INTEGER NOT NULL DEFAULT 1,
+            routing_state INTEGER NOT NULL DEFAULT 1,
+            deprecated_at TEXT,
+            retired_at TEXT,
+            replacement_model TEXT,
+            capabilities TEXT NOT NULL DEFAULT '[]',
             status INTEGER NOT NULL,
             deleted_at TEXT,
+            deleted_by INTEGER,
             rank_score TEXT
+        )"#,
+        "CREATE UNIQUE INDEX uk_ai_model_catalog_key ON ai_model (tenant_id, organization_id, catalog_key)",
+        r#"CREATE TABLE ai_model_capability (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            uuid TEXT,
+            tenant_id INTEGER,
+            organization_id INTEGER,
+            data_scope INTEGER,
+            status INTEGER NOT NULL DEFAULT 1,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            version INTEGER NOT NULL DEFAULT 0,
+            metadata TEXT NOT NULL DEFAULT '{}',
+            deleted_at TEXT,
+            deleted_by INTEGER,
+            model_id INTEGER,
+            catalog_key TEXT,
+            model TEXT,
+            vendor_code TEXT,
+            capability INTEGER,
+            capability_code TEXT,
+            modality INTEGER,
+            input_modalities TEXT,
+            output_modalities TEXT,
+            endpoint_formats TEXT,
+            parameter_name TEXT,
+            parameter_schema TEXT,
+            supported INTEGER,
+            limit_unit TEXT,
+            limit_value TEXT,
+            schema_version TEXT,
+            sort_order INTEGER,
+            description TEXT
+        )"#,
+        "CREATE UNIQUE INDEX uk_ai_model_capability_uuid ON ai_model_capability (uuid)",
+        r#"CREATE TABLE ai_model_mapping_rule (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT NOT NULL DEFAULT 'seed-model-mapping-rule',
+            tenant_id INTEGER NOT NULL DEFAULT 10,
+            organization_id INTEGER NOT NULL DEFAULT 20,
+            data_scope INTEGER NOT NULL DEFAULT 0,
+            status INTEGER NOT NULL DEFAULT 1,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            version INTEGER NOT NULL DEFAULT 0,
+            deleted_at TEXT,
+            deleted_by INTEGER,
+            metadata TEXT NOT NULL DEFAULT '{}',
+            source_vendor_id INTEGER,
+            source_vendor_code TEXT NOT NULL DEFAULT '',
+            target_vendor_id INTEGER,
+            target_vendor_code TEXT NOT NULL DEFAULT '',
+            mapping_mode TEXT NOT NULL DEFAULT 'alias',
+            match_type TEXT NOT NULL DEFAULT 'exact',
+            enabled INTEGER NOT NULL DEFAULT 1
+        )"#,
+        r#"CREATE TABLE ai_model_mapping_rule_binding (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT NOT NULL DEFAULT 'seed-model-mapping-rule-binding',
+            tenant_id INTEGER NOT NULL DEFAULT 10,
+            organization_id INTEGER NOT NULL DEFAULT 20,
+            data_scope INTEGER NOT NULL DEFAULT 0,
+            status INTEGER NOT NULL DEFAULT 1,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            version INTEGER NOT NULL DEFAULT 0,
+            deleted_at TEXT,
+            deleted_by INTEGER,
+            metadata TEXT NOT NULL DEFAULT '{}',
+            rule_id INTEGER NOT NULL DEFAULT 0,
+            rule_uuid TEXT,
+            binding_type TEXT NOT NULL DEFAULT 'global',
+            binding_id INTEGER,
+            binding_code TEXT,
+            binding_name_snapshot TEXT,
+            sort_order INTEGER NOT NULL DEFAULT 100,
+            enabled INTEGER NOT NULL DEFAULT 1
+        )"#,
+        r#"CREATE TABLE ai_model_mapping_rule_item (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT NOT NULL DEFAULT 'seed-model-mapping-rule-item',
+            tenant_id INTEGER NOT NULL DEFAULT 10,
+            organization_id INTEGER NOT NULL DEFAULT 20,
+            data_scope INTEGER NOT NULL DEFAULT 0,
+            status INTEGER NOT NULL DEFAULT 1,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            version INTEGER NOT NULL DEFAULT 0,
+            deleted_at TEXT,
+            deleted_by INTEGER,
+            metadata TEXT NOT NULL DEFAULT '{}',
+            rule_id INTEGER NOT NULL DEFAULT 0,
+            rule_uuid TEXT,
+            source_model TEXT NOT NULL DEFAULT '',
+            source_catalog_key TEXT,
+            target_model TEXT NOT NULL DEFAULT '',
+            target_catalog_key TEXT,
+            target_provider_model TEXT,
+            target_provider_native_model TEXT,
+            sort_order INTEGER NOT NULL DEFAULT 100,
+            enabled INTEGER NOT NULL DEFAULT 1
         )"#,
         r#"CREATE TABLE ai_provider (
             id INTEGER PRIMARY KEY,
@@ -4365,11 +4691,17 @@ async fn create_schema(pool: &SqlitePool) {
             data_scope INTEGER,
             provider_id INTEGER,
             provider_code TEXT NOT NULL,
+            site_id INTEGER,
+            site_service_id INTEGER,
+            site_code TEXT,
+            site_service_code TEXT,
+            site_channel_role TEXT,
             channel_code TEXT,
             channel_name TEXT,
             channel_type TEXT,
             protocol_code TEXT,
             auth_type INTEGER,
+            credential_rotation_strategy TEXT NOT NULL DEFAULT 'default',
             auth_config TEXT,
             credential_ref TEXT,
             credential_hash TEXT,
@@ -4384,6 +4716,7 @@ async fn create_schema(pool: &SqlitePool) {
             capabilities TEXT,
             upstream_balance_amount TEXT,
             upstream_balance_currency TEXT,
+            region_code TEXT,
             created_at TEXT,
             updated_at TEXT,
             version INTEGER DEFAULT 0,
@@ -4396,31 +4729,6 @@ async fn create_schema(pool: &SqlitePool) {
             last_latency_ms INTEGER,
             rpm_limit INTEGER,
             consecutive_error_count INTEGER
-        )"#,
-        r#"CREATE TABLE ai_channel_model (
-            id INTEGER PRIMARY KEY,
-            uuid TEXT,
-            tenant_id INTEGER,
-            organization_id INTEGER,
-            data_scope INTEGER,
-            catalog_key TEXT,
-            model TEXT NOT NULL,
-            channel_id INTEGER NOT NULL,
-            vendor_code TEXT,
-            provider_model TEXT NOT NULL,
-            provider_native_model TEXT,
-            api_code TEXT,
-            capability INTEGER,
-            supports_streaming INTEGER,
-            supports_tools INTEGER,
-            created_at TEXT,
-            updated_at TEXT,
-            version INTEGER DEFAULT 0,
-            status INTEGER NOT NULL,
-            deleted_at TEXT,
-            deleted_by INTEGER,
-            effective_from TEXT,
-            effective_to TEXT
         )"#,
         r#"CREATE TABLE ai_resource (
             id INTEGER PRIMARY KEY,
@@ -4436,6 +4744,7 @@ async fn create_schema(pool: &SqlitePool) {
             model_code TEXT,
             catalog_key TEXT,
             model TEXT,
+            provider_native_model TEXT,
             status INTEGER NOT NULL,
             deleted_at TEXT,
             sort_order INTEGER
@@ -4451,6 +4760,29 @@ async fn create_schema(pool: &SqlitePool) {
             selection_mode TEXT,
             status INTEGER NOT NULL,
             deleted_at TEXT,
+            sort_order INTEGER
+        )"#,
+        r#"CREATE TABLE ai_resource_group_item (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT,
+            tenant_id INTEGER NOT NULL DEFAULT 10,
+            organization_id INTEGER NOT NULL DEFAULT 20,
+            data_scope INTEGER,
+            status INTEGER NOT NULL,
+            created_at TEXT,
+            updated_at TEXT,
+            version INTEGER DEFAULT 0,
+            deleted_at TEXT,
+            deleted_by INTEGER,
+            metadata TEXT NOT NULL DEFAULT '{}',
+            resource_group_id INTEGER NOT NULL,
+            resource_group_code TEXT,
+            item_type TEXT NOT NULL,
+            resource_id INTEGER,
+            resource_code TEXT,
+            child_resource_group_id INTEGER,
+            child_resource_group_code TEXT,
+            item_role TEXT,
             sort_order INTEGER
         )"#,
         r#"CREATE TABLE ai_channel_resource (
@@ -4478,7 +4810,8 @@ async fn create_schema(pool: &SqlitePool) {
             effective_from TEXT,
             effective_to TEXT
         )"#,
-        r#"CREATE TABLE ai_channel_vendor (
+        "CREATE UNIQUE INDEX uk_ai_channel_resource ON ai_channel_resource (tenant_id, organization_id, channel_id, resource_code, resource_group_code)",
+        r#"CREATE TABLE ai_channel_credential (
             id INTEGER PRIMARY KEY,
             uuid TEXT,
             tenant_id INTEGER NOT NULL DEFAULT 10,
@@ -4488,72 +4821,27 @@ async fn create_schema(pool: &SqlitePool) {
             created_at TEXT,
             updated_at TEXT,
             version INTEGER DEFAULT 0,
+            metadata TEXT DEFAULT '{}',
             deleted_at TEXT,
             deleted_by INTEGER,
             channel_id INTEGER NOT NULL,
             provider_code TEXT,
             channel_code TEXT,
-            vendor_id INTEGER,
-            vendor_code TEXT NOT NULL,
-            channel_type TEXT,
-            supported INTEGER,
-            sort_order INTEGER
-        )"#,
-        r#"CREATE TABLE ai_channel_endpoint (
-            id INTEGER PRIMARY KEY,
-            uuid TEXT,
-            tenant_id INTEGER NOT NULL DEFAULT 10,
-            organization_id INTEGER NOT NULL DEFAULT 20,
-            data_scope INTEGER,
-            status INTEGER NOT NULL,
-            created_at TEXT,
-            updated_at TEXT,
-            version INTEGER DEFAULT 0,
-            deleted_at TEXT,
-            deleted_by INTEGER,
-            channel_id INTEGER NOT NULL,
-            provider_code TEXT NOT NULL,
-            channel_code TEXT NOT NULL,
-            channel_type TEXT NOT NULL,
-            vendor_id INTEGER,
-            vendor_code TEXT NOT NULL,
-            region_code TEXT NOT NULL,
-            api_endpoint_id INTEGER,
-            api_code TEXT NOT NULL,
-            base_url TEXT NOT NULL,
-            path_prefix TEXT,
+            credential_name TEXT NOT NULL,
+            auth_type INTEGER,
+            auth_config TEXT NOT NULL DEFAULT '{}',
+            credential_ref TEXT,
+            credential_hash TEXT,
+            masked_label TEXT,
+            base_url TEXT,
             priority INTEGER,
             weight INTEGER,
             timeout_ms INTEGER,
-            retry_policy TEXT,
             health_status INTEGER,
             last_latency_ms INTEGER,
             consecutive_error_count INTEGER,
-            effective_from TEXT,
-            effective_to TEXT
-        )"#,
-        r#"CREATE TABLE ai_route_candidate (
-            id INTEGER PRIMARY KEY,
-            uuid TEXT,
-            tenant_id INTEGER NOT NULL DEFAULT 10,
-            organization_id INTEGER NOT NULL DEFAULT 20,
-            channel_group_id INTEGER,
-            channel_id INTEGER,
-            endpoint_id INTEGER,
-            provider_code TEXT,
-            channel_type TEXT,
-            vendor_code TEXT,
-            api_code TEXT,
-            model_code TEXT,
-            catalog_key TEXT,
-            region_code TEXT,
-            priority INTEGER,
-            weight INTEGER,
-            health_status INTEGER,
-            updated_at TEXT,
-            status INTEGER NOT NULL
-        )"#,
-        r#"CREATE TABLE integration_provider_health_snapshot (
+            last_verified_at TEXT
+        )"#,        r#"CREATE TABLE integration_provider_health_snapshot (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             uuid TEXT NOT NULL,
             tenant_id INTEGER,
@@ -4922,6 +5210,7 @@ async fn create_schema(pool: &SqlitePool) {
             requested_model_catalog_key TEXT,
             model TEXT,
             provider_native_model TEXT,
+            region_code TEXT,
             channel_id INTEGER,
             status INTEGER NOT NULL,
             usage_type INTEGER,
@@ -4958,6 +5247,7 @@ async fn create_schema(pool: &SqlitePool) {
             owner_name_snapshot TEXT,
             requested_model_catalog_key TEXT,
             provider_native_model TEXT,
+            region_code TEXT,
             metadata TEXT,
             request_payload_hash TEXT,
             response_payload_hash TEXT,
@@ -5074,19 +5364,23 @@ async fn create_schema(pool: &SqlitePool) {
         )"#,
         r#"CREATE TABLE ai_model_rank_snapshot (
             id INTEGER PRIMARY KEY,
+            snapshot_date TEXT,
+            snapshot_period TEXT,
+            rank_scope TEXT,
+            catalog_key TEXT,
+            model TEXT,
+            vendor_code TEXT,
+            region_code TEXT,
+            vendor_name_snapshot TEXT,
+            modality INTEGER,
+            rank_no INTEGER,
+            previous_rank_no INTEGER,
+            request_count INTEGER,
+            cost_amount TEXT,
             tenant_id INTEGER,
             organization_id INTEGER,
             status INTEGER NOT NULL,
-            rank_no INTEGER,
-            previous_rank_no INTEGER,
-            model TEXT,
-            vendor_name_snapshot TEXT,
-            vendor_code TEXT,
-            modality INTEGER,
-            request_count INTEGER,
-            cost_amount TEXT,
-            snapshot_date TEXT,
-            snapshot_period TEXT
+            deleted_at TEXT
         )"#,
         r#"CREATE TABLE content_announcement (
             id INTEGER PRIMARY KEY,
@@ -5472,12 +5766,20 @@ async fn create_schema(pool: &SqlitePool) {
             ON ops_notification_delivery (tenant_id, organization_id, message_id, user_id, app_id, delivery_channel)"#,
         r#"CREATE TABLE ops_gateway_instance (
             id INTEGER PRIMARY KEY,
+            uuid TEXT,
             tenant_id INTEGER,
             organization_id INTEGER,
             status INTEGER NOT NULL,
+            created_at TEXT,
+            updated_at TEXT,
             deleted_at TEXT,
+            metadata TEXT,
+            instance_code TEXT,
             deployment_mode INTEGER,
             region TEXT,
+            cell TEXT,
+            host_name TEXT,
+            ip_address_masked TEXT,
             node_name TEXT,
             health_status INTEGER,
             last_heartbeat_at TEXT
@@ -5664,6 +5966,25 @@ async fn create_schema(pool: &SqlitePool) {
             updated_at TEXT NOT NULL,
             UNIQUE (tenant_id, coupon_no),
             UNIQUE (tenant_id, coupon_code)
+        )"#,
+        r#"CREATE TABLE promotion_discount_application (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT,
+            order_id TEXT,
+            order_no TEXT,
+            user_coupon_id TEXT NOT NULL,
+            offer_id TEXT,
+            offer_version_id TEXT,
+            subject_type TEXT NOT NULL,
+            subject_id TEXT NOT NULL,
+            discount_amount TEXT NOT NULL DEFAULT '0',
+            currency_code TEXT,
+            applied_at TEXT,
+            request_no TEXT,
+            idempotency_key TEXT,
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL
         )"#,
         r#"CREATE TABLE promotion_coupon_ledger_entry (
             id TEXT PRIMARY KEY,
@@ -6148,14 +6469,22 @@ async fn seed_catalog_with_two_user_api_keys(pool: &SqlitePool) {
     let owner_key_metadata = api_key_metadata_json("sk-owner-secret");
     let other_key_metadata = api_key_metadata_json("sk-other-secret");
     for statement in [
-        "INSERT INTO ai_model_vendor (id, vendor_code, display_name, status, sort_order) VALUES (1, 'openai', 'OpenAI', 1, 1)",
+        "INSERT INTO ai_model_vendor (id, uuid, tenant_id, organization_id, vendor_code, display_name, status, sort_order) VALUES (1, 'vendor-openai-app-api-test', 10, 20, 'openai', 'OpenAI', 1, 1)",
+        "INSERT INTO ai_model_vendor (id, uuid, tenant_id, organization_id, vendor_code, display_name, status, sort_order) VALUES (2, 'vendor-cohere-app-api-test', 10, 20, 'cohere', 'Cohere', 1, 2)",
         r#"INSERT INTO ai_model
-            (id, catalog_key, model, display_name, vendor_code, capabilities, status, rank_score)
-            VALUES (1, 'openai/gpt-4o-mini', 'gpt-4o-mini', 'GPT-4o mini', 'openai', '["chat"]', 1, '100.0')"#,
+            (id, uuid, tenant_id, organization_id, catalog_key, model, display_name, vendor_code, capabilities, release_stage, shelf_state, routing_state, status, rank_score)
+            VALUES (1, 'model-openai-gpt-4o-mini-app-api-test', 0, 0, 'openai/gpt-4o-mini', 'gpt-4o-mini', 'GPT-4o mini', 'openai', '["chat"]', 1, 1, 1, 1, '100.0')"#,
         "INSERT INTO ai_provider (id, tenant_id, organization_id, provider_code, default_vendor_code, provider_type, protocol_code, base_url, status) VALUES (2, 10, 20, 'openrouter', 'openai', 'relay_aggregator', 'openai_v1', 'http://provider-proxy.internal/openrouter-template', 1)",
-        "INSERT INTO ai_channel (id, tenant_id, organization_id, provider_id, provider_code, channel_code, channel_name, channel_type, base_url, credential_ref, status, priority, weight, health_status) VALUES (3001, 10, 20, 2, 'openrouter', 'openrouter-main', 'OpenRouter Main', 'relay', 'http://provider-proxy.internal/openrouter', 'vault://providers/openrouter/account/main', 1, 10, 100, 1)",
-        "INSERT INTO ai_channel_model (id, tenant_id, organization_id, catalog_key, model, channel_id, vendor_code, provider_model, provider_native_model, api_code, status) VALUES (1, 10, 20, 'openai/gpt-4o-mini', 'gpt-4o-mini', 3001, 'openai', 'gpt-4o-mini', 'gpt-4o-mini', 'openai.chat_completions', 1)",
-        "INSERT INTO ai_route_candidate (id, uuid, tenant_id, organization_id, channel_group_id, channel_id, provider_code, channel_type, vendor_code, api_code, model_code, catalog_key, region_code, priority, weight, health_status, status) VALUES (1, 'route-openrouter-gpt-4o-mini-chat', 10, 20, 10, 3001, 'openrouter', 'relay', 'openai', 'openai.chat_completions', 'gpt-4o-mini', 'openai/gpt-4o-mini', 'global', 1, 100, 1, 1)",
+        "INSERT INTO ai_channel (id, tenant_id, organization_id, provider_id, provider_code, channel_code, channel_name, channel_type, base_url, credential_ref, region_code, status, priority, weight, health_status) VALUES (3001, 10, 20, 2, 'openrouter', 'openrouter-main', 'OpenRouter Main', 'relay', 'http://provider-proxy.internal/openrouter', 'vault://providers/openrouter/account/main', 'global', 1, 10, 100, 1)",
+        "INSERT INTO ai_channel_credential (id, uuid, tenant_id, organization_id, channel_id, provider_code, channel_code, credential_name, auth_config, credential_ref, credential_hash, base_url, priority, weight, health_status, status) VALUES (300101, 'channel-credential-openrouter-main', 10, 20, 3001, 'openrouter', 'openrouter-main', 'primary', '{}', 'vault://providers/openrouter/account/main', 'hash:openrouter-main', 'http://provider-proxy.internal/openrouter', 1, 100, 1, 1)",
+        "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, vendor_code, status, sort_order) VALUES (9101, 'resource-vendor-openai-app-api-test', 10, 20, 'vendor.openai', 'vendor', 'OpenAI', 'openai', 1, 1)",
+        "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, vendor_code, status, sort_order) VALUES (9106, 'resource-vendor-cohere-app-api-test', 10, 20, 'vendor.cohere', 'vendor', 'Cohere', 'cohere', 1, 6)",
+        "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, vendor_code, modality_code, api_code, catalog_key, model, provider_native_model, status, sort_order) VALUES (9102, 'resource-model-openai-gpt-4o-mini-app-api-test', 10, 20, 'model.openai.gpt-4o-mini.chat', 'model_api', 'GPT-4o mini Chat', 'openai', 'chat', 'openai.chat_completions', 'openai/gpt-4o-mini', 'gpt-4o-mini', 'gpt-4o-mini', 1, 2)",
+        "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, modality_code, status, sort_order) VALUES (9103, 'resource-modality-llm-app-api-test', 10, 20, 'modality.llm', 'modality', 'LLM', 'llm', 1, 3)",
+        "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, modality_code, status, sort_order) VALUES (9104, 'resource-modality-image-app-api-test', 10, 20, 'modality.image', 'modality', 'Image', 'image', 1, 4)",
+        "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, vendor_code, modality_code, api_code, catalog_key, model, provider_native_model, status, sort_order) VALUES (9105, 'resource-model-openai-gpt-4o-mini-image-app-api-test', 10, 20, 'model.openai.gpt-4o-mini.image', 'model_api', 'GPT-4o mini Image', 'openai', 'image', 'openai.images', 'openai/gpt-4o-mini', 'gpt-4o-mini', 'gpt-4o-mini', 1, 5)",
+        "INSERT INTO ai_channel_resource (id, uuid, tenant_id, organization_id, channel_id, provider_code, channel_code, resource_id, resource_code, grant_type, priority, status) VALUES (9202, 'channel-resource-openrouter-gpt-4o-mini-app-api-test', 10, 20, 3001, 'openrouter', 'openrouter-main', 9102, 'model.openai.gpt-4o-mini.chat', 'allow', 1, 1)",
+        "INSERT INTO ai_channel_group_resource (id, uuid, tenant_id, organization_id, channel_group_id, resource_id, resource_code, grant_type, priority, status) VALUES (9203, 'channel-group-resource-openrouter-gpt-4o-mini-app-api-test', 10, 20, 10, 9102, 'model.openai.gpt-4o-mini.chat', 'allow', 1, 1)",
         "INSERT INTO ai_pricing_plan (id, plan_code, base_price_side, default_multiplier, default_markup_amount, currency, status, priority) VALUES (1, 'standard', 1, '1.200000', '0.000000', 'USD', 1, 1)",
         "INSERT INTO ai_channel_group (id, tenant_id, organization_id, group_code, group_name, pricing_plan_code, rate_multiplier, official_price_multiplier, status, updated_at) VALUES (10, 10, 20, 'standard-group', 'Standard Group', 'standard', '1.000000', '1.100000', 1, '2026-04-29 09:00:00')",
         "INSERT INTO ai_channel_group_member (id, tenant_id, organization_id, channel_group_id, channel_id, priority, weight, enabled, status) VALUES (600, 10, 20, 10, 3001, 1, 100, 1, 1)",
@@ -6309,9 +6638,12 @@ async fn seed_dashboard_data(pool: &SqlitePool) {
         r#"INSERT INTO ai_request_trace
             (id, tenant_id, organization_id, user_id, request_id, status, started_at, http_status, provider_error_code, error_type)
             VALUES (2005, 10, 20, 31, 'other-user-request', 1, '2026-04-29 12:05:00', 500, 'other_provider_500', 'provider_error')"#,
+        r#"INSERT INTO ai_model
+            (id, uuid, tenant_id, organization_id, catalog_key, model, display_name, vendor_code, capabilities, release_stage, shelf_state, routing_state, status, rank_score)
+            VALUES (2006, 'model-alibaba-qwen3-7-max-dashboard-test', 0, 0, 'alibaba/qwen3.7-max', 'qwen3.7-max', 'Qwen3.7 Max', 'alibaba', '["chat"]', 1, 1, 1, 1, '95.0')"#,
         r#"INSERT INTO ai_model_rank_snapshot
-            (id, tenant_id, organization_id, status, rank_no, previous_rank_no, model, vendor_name_snapshot, vendor_code, modality, request_count, cost_amount, snapshot_date, snapshot_period)
-            VALUES (2006, 10, 20, 1, 1, 2, 'gpt-4o-mini', 'OpenAI', 'openai', 1, 7, '1.250000', '2026-04-29', 'daily')"#,
+            (id, tenant_id, organization_id, status, snapshot_date, snapshot_period, rank_scope, catalog_key, model, vendor_code, region_code, vendor_name_snapshot, modality, rank_no, previous_rank_no, request_count, cost_amount)
+            VALUES (2006, 10, 20, 1, '2026-04-29', 'daily', 'commercial-default', 'alibaba/qwen3.7-max', 'qwen3.7-max', 'alibaba', 'global', 'Alibaba', 1, 1, 2, 7, '1.250000')"#,
         r#"INSERT INTO ops_notification_message
             (id, uuid, tenant_id, organization_id, status, app_id, scope_type, message_code, message_type, title, summary, content, severity, priority, show_as_popup, published_at, expire_at, created_at, updated_at)
             VALUES (2007, 'dashboard-announcement-2007', 10, 20, 1, NULL, 2, 'announcement:2007', 1, 'Planned model upgrade', 'Planned model upgrade', 'Planned model upgrade content', 3, 100, 1, '2026-04-29 08:00:00', '2099-01-01 00:00:00', '2026-04-29 08:00:00', '2026-04-29 08:00:00')"#,
@@ -6378,16 +6710,12 @@ async fn seed_app_routing_runtime_data(pool: &SqlitePool) {
              'https://api.openai.example/v1', 'vault://providers/openai/main',
              'vault-label-openai-main', '42.50', 'USD', '["llm","vision"]',
              1, 1, 100, 1, 321, 600, 0)"#,
-        r#"INSERT INTO ai_channel_model
-            (id, tenant_id, organization_id, catalog_key, model, channel_id, vendor_code, provider_model, provider_native_model, api_code, status)
-            VALUES (4004, 10, 20, 'openai/gpt-4o-mini', 'gpt-4o-mini', 4003, 'openai', 'gpt-4o-mini', 'gpt-4o-mini', 'openai.chat_completions', 1)"#,
-        r#"INSERT INTO ai_route_candidate
-            (id, uuid, tenant_id, organization_id, channel_group_id, channel_id,
-             provider_code, channel_type, vendor_code, api_code, model_code, catalog_key,
-             region_code, priority, weight, health_status, status)
-            VALUES (4004, 'route-openai-primary-gpt-4o-mini', 10, 20, 10, 4003,
-             'openai', 'official', 'openai', 'openai.chat_completions',
-             'gpt-4o-mini', 'openai/gpt-4o-mini', 'global', 1, 100, 1, 1)"#,
+        r#"INSERT INTO ai_channel_resource
+            (id, uuid, tenant_id, organization_id, channel_id, provider_code, channel_code, resource_code, grant_type, priority, status)
+            VALUES (4005, 'channel-resource-openai-primary-gpt-4o-mini', 10, 20, 4003, 'openai', 'openai-primary', 'model.openai.gpt-4o-mini.chat', 'allow', 1, 1)"#,
+        r#"INSERT INTO ai_channel_resource
+            (id, uuid, tenant_id, organization_id, channel_id, provider_code, channel_code, resource_code, grant_type, priority, status)
+            VALUES (4004, 'channel-resource-openai-primary-vendor-openai', 10, 20, 4003, 'openai', 'openai-primary', 'vendor.openai', 'allow', 0, 1)"#,
         r#"INSERT INTO ai_channel
             (id, tenant_id, organization_id, provider_id, provider_code, channel_code,
              channel_name, channel_type, protocol_code, auth_type, base_url,
@@ -6451,9 +6779,12 @@ async fn seed_app_providers_runtime_data(pool: &SqlitePool) {
              'https://tenant-openai.example/v1', 'vault://providers/openai/main',
              'sk-provider-secret', '10.00', 'USD', '["llm"]',
              1, 1, 100, 1, 111, 600, 0)"#,
-        r#"INSERT INTO ai_channel_model
-            (id, tenant_id, organization_id, catalog_key, model, channel_id, vendor_code, provider_model, provider_native_model, api_code, status)
-            VALUES (4104, 10, 20, 'openai/gpt-4o-mini', 'gpt-4o-mini', 4103, 'openai', 'gpt-4o-mini', 'gpt-4o-mini', 'openai.chat_completions', 1)"#,
+        r#"INSERT INTO ai_channel_resource
+            (id, uuid, tenant_id, organization_id, channel_id, provider_code, channel_code, resource_code, grant_type, priority, status)
+            VALUES (4106, 'channel-resource-tenant-openai-primary-gpt-4o-mini', 10, 20, 4103, 'openai', 'tenant-openai-primary', 'model.openai.gpt-4o-mini.chat', 'allow', 1, 1)"#,
+        r#"INSERT INTO ai_channel_resource
+            (id, uuid, tenant_id, organization_id, channel_id, provider_code, channel_code, resource_code, grant_type, priority, status)
+            VALUES (4104, 'channel-resource-tenant-openai-primary-vendor-openai', 10, 20, 4103, 'openai', 'tenant-openai-primary', 'vendor.openai', 'allow', 0, 1)"#,
         r#"INSERT INTO ai_provider
             (id, tenant_id, organization_id, provider_code, default_vendor_code, provider_type, protocol_code, display_name, description, base_url, auth_type, status, sort_order)
             VALUES (4105, 10, 21, 'anthropic', 'anthropic', 'official', 'anthropic', 'Other Tenant Provider', 'Other tenant provider', 'https://other-provider.example/v1', 1, 1, 1)"#,
@@ -6500,7 +6831,43 @@ async fn seed_checkout_runtime_data(pool: &SqlitePool) {
     }
 }
 
+async fn seed_bootstrap_recharge_packages(pool: &SqlitePool) {
+    for statement in [
+        r#"INSERT INTO commerce_product_spu
+            (id, tenant_id, organization_id, spu_no, title, product_type, sales_status, visible_surfaces, created_at, updated_at)
+            VALUES
+            ('bootstrap-admin-recharge-spu-10-cny', '10', '20', 'bootstrap-admin-recharge-cny', 'Bootstrap admin recharge catalog (CNY)', 'points_recharge', 'active', '["app","console","admin"]', '2026-04-29 08:00:00', '2026-04-29 08:00:00')"#,
+        r#"INSERT INTO commerce_product_sku
+            (id, tenant_id, organization_id, spu_id, sku_no, name, title, price_amount, currency_code, delivery_mode, inventory_tracking, sales_status, created_at, updated_at)
+            VALUES
+            ('bootstrap-admin-recharge-sku-10-501', '10', '20', 'bootstrap-admin-recharge-spu-10-cny', 'bootstrap-admin-recharge-501', '5 RMB points package', '5 RMB points package', '5.00', 'CNY', 'points_credit', 'untracked', 'active', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
+            ('bootstrap-admin-recharge-sku-10-502', '10', '20', 'bootstrap-admin-recharge-spu-10-cny', 'bootstrap-admin-recharge-502', '10 RMB points package', '10 RMB points package', '10.00', 'CNY', 'points_credit', 'untracked', 'active', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
+            ('bootstrap-admin-recharge-sku-10-503', '10', '20', 'bootstrap-admin-recharge-spu-10-cny', 'bootstrap-admin-recharge-503', '20 RMB points package', '20 RMB points package', '20.00', 'CNY', 'points_credit', 'untracked', 'active', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
+            ('bootstrap-admin-recharge-sku-10-504', '10', '20', 'bootstrap-admin-recharge-spu-10-cny', 'bootstrap-admin-recharge-504', '30 RMB points package', '30 RMB points package', '30.00', 'CNY', 'points_credit', 'untracked', 'active', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
+            ('bootstrap-admin-recharge-sku-10-505', '10', '20', 'bootstrap-admin-recharge-spu-10-cny', 'bootstrap-admin-recharge-505', '50 RMB points package', '50 RMB points package', '50.00', 'CNY', 'points_credit', 'untracked', 'active', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
+            ('bootstrap-admin-recharge-sku-10-506', '10', '20', 'bootstrap-admin-recharge-spu-10-cny', 'bootstrap-admin-recharge-506', '100 RMB points package', '100 RMB points package', '100.00', 'CNY', 'points_credit', 'untracked', 'active', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
+            ('bootstrap-admin-recharge-sku-10-507', '10', '20', 'bootstrap-admin-recharge-spu-10-cny', 'bootstrap-admin-recharge-507', '200 RMB points package', '200 RMB points package', '200.00', 'CNY', 'points_credit', 'untracked', 'active', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
+            ('bootstrap-admin-recharge-sku-10-508', '10', '20', 'bootstrap-admin-recharge-spu-10-cny', 'bootstrap-admin-recharge-508', '500 RMB points package', '500 RMB points package', '500.00', 'CNY', 'points_credit', 'untracked', 'active', '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
+            ('bootstrap-admin-recharge-sku-10-509', '10', '20', 'bootstrap-admin-recharge-spu-10-cny', 'bootstrap-admin-recharge-509', '1000 RMB points package', '1000 RMB points package', '1000.00', 'CNY', 'points_credit', 'untracked', 'active', '2026-04-29 08:00:00', '2026-04-29 08:00:00')"#,
+        r#"INSERT INTO commerce_recharge_package
+            (id, tenant_id, organization_id, package_no, sku_id, name, price_amount, currency_code, bonus_points, status, valid_from, valid_to, sort_weight, created_at, updated_at)
+            VALUES
+            ('bootstrap-admin-recharge-package-10-501', '10', '20', 'bootstrap-admin-recharge-501', 'bootstrap-admin-recharge-sku-10-501', '5 RMB points package', '5.00', 'CNY', 0, 'active', NULL, NULL, 101, '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
+            ('bootstrap-admin-recharge-package-10-502', '10', '20', 'bootstrap-admin-recharge-502', 'bootstrap-admin-recharge-sku-10-502', '10 RMB points package', '10.00', 'CNY', 0, 'active', NULL, NULL, 102, '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
+            ('bootstrap-admin-recharge-package-10-503', '10', '20', 'bootstrap-admin-recharge-503', 'bootstrap-admin-recharge-sku-10-503', '20 RMB points package', '20.00', 'CNY', 0, 'active', NULL, NULL, 103, '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
+            ('bootstrap-admin-recharge-package-10-504', '10', '20', 'bootstrap-admin-recharge-504', 'bootstrap-admin-recharge-sku-10-504', '30 RMB points package', '30.00', 'CNY', 0, 'active', NULL, NULL, 104, '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
+            ('bootstrap-admin-recharge-package-10-505', '10', '20', 'bootstrap-admin-recharge-505', 'bootstrap-admin-recharge-sku-10-505', '50 RMB points package', '50.00', 'CNY', 0, 'active', NULL, NULL, 105, '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
+            ('bootstrap-admin-recharge-package-10-506', '10', '20', 'bootstrap-admin-recharge-506', 'bootstrap-admin-recharge-sku-10-506', '100 RMB points package', '100.00', 'CNY', 0, 'active', NULL, NULL, 106, '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
+            ('bootstrap-admin-recharge-package-10-507', '10', '20', 'bootstrap-admin-recharge-507', 'bootstrap-admin-recharge-sku-10-507', '200 RMB points package', '200.00', 'CNY', 0, 'active', NULL, NULL, 107, '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
+            ('bootstrap-admin-recharge-package-10-508', '10', '20', 'bootstrap-admin-recharge-508', 'bootstrap-admin-recharge-sku-10-508', '500 RMB points package', '500.00', 'CNY', 0, 'active', NULL, NULL, 108, '2026-04-29 08:00:00', '2026-04-29 08:00:00'),
+            ('bootstrap-admin-recharge-package-10-509', '10', '20', 'bootstrap-admin-recharge-509', 'bootstrap-admin-recharge-sku-10-509', '1000 RMB points package', '1000.00', 'CNY', 0, 'active', NULL, NULL, 109, '2026-04-29 08:00:00', '2026-04-29 08:00:00')"#,
+    ] {
+        sqlx::query(statement).execute(pool).await.unwrap();
+    }
+}
+
 async fn seed_recharge_runtime_data(pool: &SqlitePool) {
+    seed_bootstrap_recharge_packages(pool).await;
     for statement in [
         r#"INSERT INTO commerce_product_spu
             (id, tenant_id, organization_id, spu_no, title, product_type, sales_status, visible_surfaces, created_at, updated_at)
@@ -6581,6 +6948,12 @@ async fn seed_usage_logs_runtime_data(pool: &SqlitePool) {
         r#"INSERT INTO ai_routing_decision_log
             (id, tenant_id, organization_id, user_id, request_id, status, created_at, requested_model, resolved_model, selected_channel_id)
             VALUES (6407, 10, 20, 30, 'usage-owner-success', 1, '2026-04-29 10:15:00', 'gpt-4o-mini', 'gpt-4o-mini', 4003)"#,
+        r#"INSERT INTO ai_usage_fact
+            (id, tenant_id, organization_id, user_id, api_key_id, request_id, model, status, request_count, total_tokens, prompt_tokens, cached_tokens, completion_tokens, customer_charge_amount, cost_amount, modality, rate_multiplier, base_input_unit_price, base_output_unit_price, cache_read_unit_price, occurred_at)
+            VALUES (6408, 10, 20, 30, 100, 'usage-owner-cost-only', 'gpt-4o-cost-only', 1, 1, 16, 10, 0, 6, NULL, '777.123456', 1, '1.000000', '0.150000', '0.600000', '0.050000', '2026-04-29 12:15:00')"#,
+        r#"INSERT INTO ai_request_trace
+            (id, tenant_id, organization_id, user_id, request_id, trace_id, status, created_at, api_key_name_snapshot, channel_group_snapshot, channel_name_snapshot, requested_model, provider_model, started_at, http_status, provider_error_code, error_type, latency_ms, ttft_ms, streaming, prompt_tokens, cached_tokens, completion_tokens, reasoning_effort, total_tokens, client_ip_masked, request_path, endpoint, http_method)
+            VALUES (6409, 10, 20, 30, 'usage-owner-cost-only', 'trace-usage-owner-cost-only', 1, '2026-04-29 12:15:00', 'Owner Usage Key', 'standard-group', 'OpenAI Primary', 'gpt-4o-cost-only', 'gpt-4o-cost-only', '2026-04-29 12:15:00', 200, NULL, NULL, 87, 30, 0, 10, 0, 6, 'low', 16, '203.0.113.***', '/v1/chat/completions', '/v1/chat/completions', 'POST')"#,
     ] {
         sqlx::query(statement).execute(pool).await.unwrap();
     }

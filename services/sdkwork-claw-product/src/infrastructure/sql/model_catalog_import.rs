@@ -1291,6 +1291,7 @@ pub(crate) fn catalog_preview_admin_items(
                 model_type: preview_model_type(model),
                 region_prices: vec![AdminAiModelRegionPriceCommand {
                     region_code: vendor.vendor.region_code.clone(),
+                    currency: preview_currency(prices, &vendor.vendor.region_code),
                     price_in: preview_price(prices, true),
                     price_out: preview_price(prices, false),
                     cache_read_price: non_empty_preview_cache_price(prices, "llm_cache_read_token"),
@@ -1420,6 +1421,18 @@ fn preview_model_type(model: &ModelInfo) -> String {
     .to_owned()
 }
 
+fn preview_currency(pricing: Option<&sdkwork_models::ModelPricing>, region_code: &str) -> String {
+    pricing
+        .map(|pricing| pricing.currency.trim().to_ascii_uppercase())
+        .filter(|currency| {
+            currency.len() == 3 && currency.bytes().all(|byte| byte.is_ascii_uppercase())
+        })
+        .unwrap_or_else(|| match region_code {
+            "cn" => "CNY".to_owned(),
+            _ => "USD".to_owned(),
+        })
+}
+
 fn preview_modalities(model: &ModelInfo) -> Vec<String> {
     let mut values = model.input_modalities.clone();
     for modality in &model.output_modalities {
@@ -1439,9 +1452,11 @@ fn preview_price(pricing: Option<&sdkwork_models::ModelPricing>, input: bool) ->
             "llm_input_token",
             "embedding_input_token",
             "image_input_token",
+            "image_megapixel",
             "audio_input_token",
             "audio_input_second",
             "audio_input_minute",
+            "stt_audio_minute",
             "tts_input_character",
             "api_request",
             "video_input_token",
@@ -1451,12 +1466,14 @@ fn preview_price(pricing: Option<&sdkwork_models::ModelPricing>, input: bool) ->
             "llm_output_token",
             "image_output_token",
             "image_result",
+            "image_megapixel",
             "audio_output_token",
             "audio_output_second",
             "music_output_second",
             "sfx_result",
             "video_output_token",
             "video_output_second",
+            "video_result",
             "api_result",
         ]
     };

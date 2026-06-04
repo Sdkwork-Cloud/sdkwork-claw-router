@@ -332,6 +332,42 @@ export function ApiReference() {
                     <p className="mt-3 max-w-xl text-sm leading-6 text-slate-600 dark:text-slate-400">
                       {activeSystemData?.description || t('api.planned.description', 'This API group is reserved for upcoming aggregation APIs. Endpoints will appear here after the OpenAPI contract is implemented.')}
                     </p>
+                    {activeSystemData?.serviceGroups.length ? (
+                      <div className="mt-8 grid w-full max-w-4xl gap-3 text-left sm:grid-cols-2 xl:grid-cols-3">
+                        {activeSystemData.serviceGroups.map((group) => (
+                          <div key={group.code} className="rounded-lg border border-slate-200 bg-white p-4 dark:border-white/10 dark:bg-[#101010]">
+                            <div className="flex items-start justify-between gap-3">
+                              <div className="min-w-0">
+                                <h3 className="truncate text-sm font-semibold text-slate-900 dark:text-white">{group.name}</h3>
+                                <p className="mt-1 font-mono text-[11px] text-slate-400">{group.code}</p>
+                              </div>
+                              {group.providerCodes.length > 0 && (
+                                <span className="shrink-0 rounded-full bg-blue-50 px-2 py-0.5 text-[11px] font-semibold text-blue-600 dark:bg-blue-500/10 dark:text-blue-300">
+                                  {group.providerCodes.length}
+                                </span>
+                              )}
+                            </div>
+                            {group.description && (
+                              <p className="mt-3 line-clamp-3 text-xs leading-5 text-slate-500 dark:text-slate-400">{group.description}</p>
+                            )}
+                            {group.providerCodes.length > 0 && (
+                              <div className="mt-3 flex flex-wrap gap-1.5">
+                                {group.providerCodes.map((providerCode) => (
+                                  <span key={providerCode} className="rounded-md bg-slate-100 px-1.5 py-0.5 font-mono text-[11px] text-slate-600 dark:bg-white/10 dark:text-slate-300">
+                                    {providerCode}
+                                  </span>
+                                ))}
+                              </div>
+                            )}
+                            {group.operations.length > 0 && (
+                              <p className="mt-3 line-clamp-2 font-mono text-[11px] leading-5 text-slate-400">
+                                {group.operations.join(' / ')}
+                              </p>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    ) : null}
                   </motion.div>
                 ) : activeEndpoint ? (
                   <motion.div

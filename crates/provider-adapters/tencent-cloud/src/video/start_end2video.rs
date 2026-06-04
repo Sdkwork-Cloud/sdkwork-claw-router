@@ -15,13 +15,13 @@ pub const STANDARD_PATH: &str = "/vidu/ent/v2/start-end2video";
 pub struct TencentCloudViduStartEnd2VideoAdapter;
 
 pub fn endpoint_manifest() -> ProviderAdapterEndpoint {
-    ProviderAdapterEndpoint {
-        endpoint_key: ENDPOINT_KEY.to_owned(),
-        capability: Some(CAPABILITY.to_owned()),
-        method: "POST".to_owned(),
-        standard_path_pattern: STANDARD_PATH.to_owned(),
-        invocation_shape: AdapterInvocationShape::AsyncTaskStart,
-    }
+    ProviderAdapterEndpoint::runtime_available(
+        ENDPOINT_KEY,
+        Some(CAPABILITY.to_owned()),
+        "POST",
+        STANDARD_PATH,
+        AdapterInvocationShape::AsyncTaskStart,
+    )
 }
 
 impl EndpointAdapter for TencentCloudViduStartEnd2VideoAdapter {

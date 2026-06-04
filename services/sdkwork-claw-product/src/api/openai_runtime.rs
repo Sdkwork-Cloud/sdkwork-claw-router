@@ -305,22 +305,12 @@ fn resolve_model_route(
     channel_routes: &[crate::domain::ProviderChannelRoute],
 ) -> Result<ResolvedOpenAiProviderRoute, OpenAiRouteError> {
     let model_route = selection.route;
-    let channel_route = channel_routes
-        .iter()
-        .find(|route| {
-            route.channel_id == model_route.channel_id
-                && route.credential_id == model_route.credential_id
-        })
-        .cloned()
-        .ok_or_else(|| {
-            provider_route_selection_error(ProviderRouteSelectionError::provider_route_unavailable(
-                format!(
-                    "provider route is not available for configured channel route: selected channel {} credential {:?} has no configured channel route for model {}",
-                    model_route.channel_id, model_route.credential_id, catalog_key
-                ),
-            ))
-        })?;
-    if channel_route.provider_code != model_route.provider_code {
+    let channel_metadata = find_selected_channel_route_metadata(&model_route, channel_routes);
+    if channel_metadata
+        .as_ref()
+        .map(|route| route.provider_code.as_str())
+        .is_some_and(|provider_code| provider_code != model_route.provider_code)
+    {
         return Err(provider_route_selection_error(
             ProviderRouteSelectionError::provider_route_unavailable(format!(
                 "provider route is not available for configured channel route: selected channel {} provider mismatch for model {}",
@@ -328,12 +318,10 @@ fn resolve_model_route(
             )),
         ));
     }
-    if !has_text(channel_route.base_url.as_deref())
-        || !has_text(channel_route.secret_ref.as_deref())
-    {
+    if !has_text(model_route.base_url.as_deref()) || !has_text(model_route.secret_ref.as_deref()) {
         return Err(provider_route_selection_error(
             ProviderRouteSelectionError::provider_route_unavailable(format!(
-                "provider route is not available for configured channel route: selected channel {} is missing callable channel endpoint for model {}",
+                "provider route is not available for configured channel route: selected channel {} is missing callable base URL or credential for model {}",
                 model_route.channel_id, catalog_key
             )),
         ));
@@ -344,13 +332,27 @@ fn resolve_model_route(
         &ResolveModelMappingContext::new()
             .with_vendor_code(vendor_code)
             .with_channel_id(model_route.channel_id)
-            .with_channel_code(channel_route.channel_code.as_deref().unwrap_or_default())
+            .with_channel_code(
+                channel_metadata
+                    .as_ref()
+                    .and_then(|route| route.channel_code.as_deref())
+                    .unwrap_or_default(),
+            )
             .with_channel_group_id(context.group_id)
             .with_channel_group_code(context.group_code.as_str())
-            .with_site(channel_route.site_id, channel_route.site_code.as_deref())
+            .with_site(
+                channel_metadata.as_ref().and_then(|route| route.site_id),
+                channel_metadata
+                    .as_ref()
+                    .and_then(|route| route.site_code.as_deref()),
+            )
             .with_site_service(
-                channel_route.site_service_id,
-                channel_route.site_service_code.as_deref(),
+                channel_metadata
+                    .as_ref()
+                    .and_then(|route| route.site_service_id),
+                channel_metadata
+                    .as_ref()
+                    .and_then(|route| route.site_service_code.as_deref()),
             ),
     );
     let model_route = match channel_mapping.as_ref() {
@@ -358,6 +360,7 @@ fn resolve_model_route(
             .list_provider_routes(rule.effective_catalog_key())
             .into_iter()
             .find(|candidate| candidate.channel_id == model_route.channel_id)
+            .map(|candidate| apply_selected_route_account(candidate, &model_route))
             .ok_or_else(|| {
                 provider_route_selection_error(ProviderRouteSelectionError::provider_route_unavailable(
                     format!(
@@ -369,7 +372,11 @@ fn resolve_model_route(
             })?,
         _ => model_route,
     };
-    if channel_route.provider_code != model_route.provider_code {
+    if channel_metadata
+        .as_ref()
+        .map(|route| route.provider_code.as_str())
+        .is_some_and(|provider_code| provider_code != model_route.provider_code)
+    {
         return Err(provider_route_selection_error(
             ProviderRouteSelectionError::provider_route_unavailable(format!(
                 "provider route is not available for configured channel route: selected channel {} provider mismatch for model {}",
@@ -389,7 +396,7 @@ fn resolve_model_route(
             )
         });
     let region_code =
-        resolved_deployment_region_code(&model_route.region_code, &channel_route.region_code);
+        resolved_deployment_region_code(&model_route.region_code, channel_metadata.as_ref());
 
     Ok(ResolvedOpenAiProviderRoute {
         catalog_key: model_route.catalog_key,
@@ -399,20 +406,100 @@ fn resolve_model_route(
         region_code,
         channel_id: model_route.channel_id,
         provider_model,
-        provider_base_url: channel_route.base_url,
-        provider_secret_ref: channel_route.secret_ref,
-        provider_auth_profile: channel_route.auth_profile,
-        provider_timeout_ms: channel_route.timeout_ms,
-        provider_retry_policy: channel_route.retry_policy,
+        provider_base_url: model_route.base_url,
+        provider_secret_ref: model_route.secret_ref,
+        provider_auth_profile: model_route.auth_profile,
+        provider_timeout_ms: model_route.timeout_ms,
+        provider_retry_policy: model_route.retry_policy,
     })
 }
 
-fn resolved_deployment_region_code(model_route_region: &str, channel_route_region: &str) -> String {
+fn find_selected_channel_route_metadata(
+    model_route: &crate::domain::ModelProviderRoute,
+    channel_routes: &[crate::domain::ProviderChannelRoute],
+) -> Option<crate::domain::ProviderChannelRoute> {
+    let mut candidates = channel_routes
+        .iter()
+        .filter(|route| {
+            route.channel_id == model_route.channel_id
+                && route.credential_id == model_route.credential_id
+                && route.provider_code == model_route.provider_code
+                && same_region(&route.region_code, &model_route.region_code)
+        })
+        .cloned()
+        .collect::<Vec<_>>();
+    candidates.sort_by_key(|route| {
+        (
+            route.credential_priority,
+            std::cmp::Reverse(route.credential_weight),
+            route.credential_id.unwrap_or(i64::MAX),
+            route.region_code.clone(),
+            route.provider_code.clone(),
+        )
+    });
+
+    if has_text(model_route.base_url.as_deref()) || has_text(model_route.secret_ref.as_deref()) {
+        if let Some(route) = candidates.iter().find(|route| {
+            same_optional_text(route.base_url.as_deref(), model_route.base_url.as_deref())
+                && same_optional_text(route.secret_ref.as_deref(), model_route.secret_ref.as_deref())
+        }) {
+            return Some(route.clone());
+        }
+    }
+
+    candidates.into_iter().next()
+}
+
+fn apply_selected_route_account(
+    mut model_route: crate::domain::ModelProviderRoute,
+    selected_route: &crate::domain::ModelProviderRoute,
+) -> crate::domain::ModelProviderRoute {
+    model_route.region_code = selected_route.region_code.clone();
+    model_route.credential_id = selected_route.credential_id;
+    model_route.credential_rotation = selected_route.credential_rotation.clone();
+    model_route.credential_priority = selected_route.credential_priority;
+    model_route.credential_weight = selected_route.credential_weight;
+    model_route.base_url = selected_route.base_url.clone();
+    model_route.secret_ref = selected_route.secret_ref.clone();
+    model_route.auth_profile = selected_route.auth_profile.clone();
+    model_route.timeout_ms = selected_route.timeout_ms;
+    model_route.retry_policy = selected_route.retry_policy.clone();
+    model_route
+}
+
+fn same_optional_text(left: Option<&str>, right: Option<&str>) -> bool {
+    match (left, right) {
+        (Some(left), Some(right)) => left.trim() == right.trim(),
+        (None, None) => true,
+        _ => false,
+    }
+}
+
+fn same_region(left: &str, right: &str) -> bool {
+    normalize_region_code(left).eq_ignore_ascii_case(&normalize_region_code(right))
+}
+
+fn normalize_region_code(value: &str) -> String {
+    let value = value.trim();
+    if value.is_empty() {
+        "global".to_owned()
+    } else {
+        value.to_owned()
+    }
+}
+
+fn resolved_deployment_region_code(
+    model_route_region: &str,
+    channel_metadata: Option<&crate::domain::ProviderChannelRoute>,
+) -> String {
     let model_route_region = model_route_region.trim();
     if !model_route_region.is_empty() {
         return model_route_region.to_owned();
     }
-    let channel_route_region = channel_route_region.trim();
+    let channel_route_region = channel_metadata
+        .map(|route| route.region_code.as_str())
+        .unwrap_or_default()
+        .trim();
     if channel_route_region.is_empty() {
         "global".to_owned()
     } else {

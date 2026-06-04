@@ -19,7 +19,7 @@ WITH latest_config AS (
       AND source_table IN (
           'ai_provider',
           'ai_channel',
-          'ai_channel_model',
+          'ai_channel_resource',
           'integration_proxy'
       )
     GROUP BY tenant_id, organization_id
@@ -36,7 +36,7 @@ ranked_channel AS (
         c.health_status AS channel_health_status,
         px.status AS proxy_status,
         px.health_status AS proxy_health_status,
-        COUNT(m.id) AS model_count,
+        COUNT(DISTINCT r.catalog_key) AS model_count,
         ROW_NUMBER() OVER (
             PARTITION BY COALESCE(CAST(c.provider_id AS TEXT), c.provider_code)
             ORDER BY
@@ -52,14 +52,25 @@ ranked_channel AS (
      AND px.tenant_id = c.tenant_id
      AND px.organization_id = c.organization_id
      AND px.deleted_at IS NULL
-    LEFT JOIN ai_channel_model m
-      ON m.channel_id = c.id
-     AND m.tenant_id = c.tenant_id
-     AND m.organization_id = c.organization_id
-     AND m.deleted_at IS NULL
-     AND m.status = 1
-     AND (m.effective_from IS NULL OR datetime(m.effective_from) <= CURRENT_TIMESTAMP)
-     AND (m.effective_to IS NULL OR datetime(m.effective_to) > CURRENT_TIMESTAMP)
+    LEFT JOIN ai_channel_resource cr
+      ON cr.channel_id = c.id
+     AND cr.tenant_id = c.tenant_id
+     AND cr.organization_id = c.organization_id
+     AND cr.deleted_at IS NULL
+     AND cr.status = 1
+     AND cr.grant_type = 'allow'
+     AND (cr.effective_from IS NULL OR datetime(cr.effective_from) <= CURRENT_TIMESTAMP)
+     AND (cr.effective_to IS NULL OR datetime(cr.effective_to) > CURRENT_TIMESTAMP)
+    LEFT JOIN ai_resource r
+      ON r.tenant_id = cr.tenant_id
+     AND r.organization_id = cr.organization_id
+     AND r.deleted_at IS NULL
+     AND r.status = 1
+     AND (
+          r.id = cr.resource_id
+          OR (NULLIF(cr.resource_code, '') IS NOT NULL AND r.resource_code = cr.resource_code)
+     )
+     AND COALESCE(NULLIF(r.catalog_key, ''), '') <> ''
     WHERE c.tenant_id = ?1
       AND c.organization_id = ?2
       AND c.deleted_at IS NULL

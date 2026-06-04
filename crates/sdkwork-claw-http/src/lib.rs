@@ -15,10 +15,11 @@ pub use auth::{
     TrustedRequestSubjectError, TrustedSubjectBoundaryError,
 };
 pub use contract_routes::{
-    app_openapi_response, backend_openapi_response, contract_fallback, gateway_openapi_response,
-    openapi_schema_tabs_response_for_surface, payment_aggregate_openapi_response, APP_OPENAPI_PATH,
-    BACKEND_OPENAPI_PATH, GATEWAY_OPENAPI_PATH, OPENAPI_SCHEMA_TABS_PATH,
-    PAYMENT_AGGREGATE_OPENAPI_PATH,
+    app_openapi_response, backend_openapi_response, cloud_services_openapi_response,
+    contract_fallback, gateway_openapi_response, openapi_schema_tabs_response_for_surface,
+    paas_openapi_response, payment_aggregate_openapi_response, APP_OPENAPI_PATH,
+    BACKEND_OPENAPI_PATH, CLOUD_SERVICES_OPENAPI_PATH, GATEWAY_OPENAPI_PATH,
+    OPENAPI_SCHEMA_TABS_PATH, PAAS_OPENAPI_PATH, PAYMENT_AGGREGATE_OPENAPI_PATH,
 };
 pub use error::{NotImplementedData, PlusErrorEnvelope};
 pub use headers::{default_security_headers, redact_http_header};

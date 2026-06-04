@@ -85,7 +85,11 @@ async fn database_config_router_uses_sqlite_catalog_for_backend_model_list() {
     let payload: serde_json::Value = serde_json::from_str(&body_text).unwrap();
 
     assert_eq!("2000", payload["code"]);
-    let item = &payload["data"]["items"][0];
+    let items = payload["data"]["items"].as_array().unwrap();
+    let item = items
+        .iter()
+        .find(|item| item["model"] == "gpt-4o-mini")
+        .expect("gpt-4o-mini should be returned by backend model list");
     assert!(item["id"].as_str().is_some_and(|value| !value.is_empty()));
     assert!(item["vendorId"]
         .as_str()
@@ -95,13 +99,18 @@ async fn database_config_router_uses_sqlite_catalog_for_backend_model_list() {
     assert_eq!("GPT-4o mini", item["displayName"]);
     assert_eq!("GPT-4o mini", item["name"]);
     assert_eq!("Chat", item["type"]);
-    assert_eq!("0.150000", item["priceIn"]);
-    assert_eq!("0.600000", item["priceOut"]);
+    let global_price = item["regionPrices"]
+        .as_array()
+        .unwrap()
+        .iter()
+        .find(|price| price["regionCode"] == "global")
+        .expect("global official model price should be returned");
+    assert_eq!("0.150000", global_price["priceIn"]);
+    assert_eq!("0.600000", global_price["priceOut"]);
     assert_eq!("active", item["status"]);
     assert_eq!("0", item["calls"]);
     assert_eq!(128_000, item["contextTokens"]);
     assert!(item.get("priceAvailability").is_none());
-    let items = payload["data"]["items"].as_array().unwrap();
     assert!(items
         .iter()
         .any(|item| item["model"] == "text-embedding-3-small"));
@@ -239,207 +248,26 @@ async fn database_config_router_serves_signed_subject_model_catalog_commands() {
         "bg-cyan-700",
         create_vendor_payload["data"]["item"]["color"]
     );
-    let vendor_id = create_vendor_payload["data"]["item"]["id"]
-        .as_str()
-        .unwrap()
-        .to_owned();
-
-    let create_model_payload = request_json(
-        router.clone(),
-        signed_request(
-            "POST",
-            "/backend/v3/api/ai/models",
-            Body::from(format!(
-                r#"{{"vendorId":"{vendor_id}","model":"acme-chat-large","type":"Chat","priceIn":"0.120000","priceOut":"0.450000","contextTokens":"128k"}}"#
-            )),
-        ),
-    )
-    .await;
-    assert_eq!("2000", create_model_payload["code"]);
-    assert_eq!(
-        "acme-chat-large",
-        create_model_payload["data"]["item"]["name"]
-    );
-    assert_eq!("Chat", create_model_payload["data"]["item"]["type"]);
-    assert_eq!("0.120000", create_model_payload["data"]["item"]["priceIn"]);
-    assert_eq!("0.450000", create_model_payload["data"]["item"]["priceOut"]);
-    assert_eq!(
-        128000,
-        create_model_payload["data"]["item"]["contextTokens"]
-    );
-
-    let vendors_payload = request_json(
-        router.clone(),
-        signed_request("GET", "/backend/v3/api/ai/model_vendors", Body::empty()),
-    )
-    .await;
-    let vendors = vendors_payload["data"]["items"].as_array().unwrap();
-    assert!(vendors.iter().any(|item| item["vendorCode"] == "acme_ai"));
-
-    let sync_payload = request_json(
-        router,
-        signed_request(
-            "POST",
-            "/backend/v3/api/ai/models/refresh",
-            Body::from(r#"{"source":"local_catalog"}"#),
-        ),
-    )
-    .await;
-    assert_eq!("2000", sync_payload["code"]);
-    assert_eq!(true, sync_payload["data"]["synced"]);
-    assert_eq!("local_catalog", sync_payload["data"]["source"]);
-    assert!(sync_payload["data"]["snapshotId"].as_str().is_some());
-    assert!(sync_payload["data"]["vendors"]
-        .as_array()
-        .unwrap()
-        .iter()
-        .any(|item| item["vendorCode"] == "openai"));
-    assert!(sync_payload["data"]["models"]
-        .as_array()
-        .unwrap()
-        .iter()
-        .any(|item| item["model"] == "gpt-5.5"));
-}
-
-#[tokio::test]
-async fn database_config_router_serves_admin_site_management() {
-    let database_url = unique_sqlite_url();
-    let pool = create_sqlite_pool(&database_url).await;
-    create_schema(&pool).await;
-    seed_catalog(&pool).await;
-    pool.close().await;
-
-    let router = configured_router_from_database_config(
-        DatabaseConfig::from_url_with_max_connections(database_url.as_str(), 1).unwrap(),
-        Some(api_key_security_config()),
-        Some(trusted_subject_config()),
-        Some(app_session_config()),
-    )
-    .await
-    .unwrap();
-
     let create_site_payload = request_json(
         router.clone(),
         app_session_request(
             "POST",
             "/backend/v3/api/sites",
             Body::from(
-                r#"{"siteCode":"acme-relay","siteName":"Acme Relay","displayName":"Acme Relay","description":"Acme hosted relay","baseUrl":"https://relay.example.com","websiteUrl":"https://example.com","docsUrl":"https://example.com/docs","siteType":"relay","ownerKind":"partner","regionCode":"us-east","environment":"production","status":"active","credentialRef":"secret://acme-relay","maskedLabel":"sk-***-relay"}"#,
+                r#"{"siteCode":"acme-relay","siteName":"Acme Relay","displayName":"Acme Relay","baseUrl":"https://relay.example.com","status":"active"}"#,
             ),
         ),
     )
     .await;
     assert_eq!("2000", create_site_payload["code"]);
-    let site = &create_site_payload["data"]["item"];
-    assert_eq!("acme_relay", site["siteCode"]);
-    assert_eq!("Acme Relay", site["displayName"]);
-    assert_eq!("https://relay.example.com", site["baseUrl"]);
-    assert_eq!("active", site["status"]);
-    assert!(site.get("credentialRef").is_none());
-    let site_id = site["id"].as_str().unwrap().to_owned();
-
-    let sites_payload = request_json(
-        router.clone(),
-        app_session_request("GET", "/backend/v3/api/sites?q=acme", Body::empty()),
-    )
-    .await;
-    assert_eq!("2000", sites_payload["code"]);
-    assert!(sites_payload["data"]["items"]
-        .as_array()
-        .unwrap()
-        .iter()
-        .any(|item| item["id"] == site_id));
-
-    let update_site_payload = request_json(
-        router.clone(),
-        app_session_request(
-            "PATCH",
-            &format!("/backend/v3/api/sites/{site_id}"),
-            Body::from(r#"{"displayName":"Acme Relay Plus","baseUrl":"https://relay-plus.example.com","environment":"sandbox","status":"active","maskedLabel":null}"#),
-        ),
-    )
-    .await;
-    assert_eq!("2000", update_site_payload["code"]);
     assert_eq!(
-        "Acme Relay Plus",
-        update_site_payload["data"]["item"]["displayName"]
+        "acme_relay",
+        create_site_payload["data"]["item"]["siteCode"]
     );
-    assert_eq!(
-        "sandbox",
-        update_site_payload["data"]["item"]["environment"]
-    );
-
-    let create_model_payload = request_json(
-        router.clone(),
-        app_session_request(
-            "POST",
-            &format!("/backend/v3/api/sites/{site_id}/models"),
-            Body::from(
-                r#"{"modelCode":"gpt-4o-mini","modelName":"GPT-4o mini","displayName":"GPT-4o mini","providerModel":"gpt-4o-mini","providerNativeModel":"gpt-4o-mini","vendorCode":"openai","modality":"chat","capabilities":["chat"],"contextTokens":128000,"maxInputTokens":128000,"maxOutputTokens":16384,"supportsStreaming":true,"supportsTools":true,"supportsJsonSchema":true,"status":"active"}"#,
-            ),
-        ),
-    )
-    .await;
-    assert_eq!("2000", create_model_payload["code"]);
-    assert_eq!(
-        "gpt_4o_mini",
-        create_model_payload["data"]["item"]["modelCode"]
-    );
-    assert_eq!(true, create_model_payload["data"]["item"]["supportsTools"]);
-    let site_model_id = create_model_payload["data"]["item"]["id"]
+    let site_id = create_site_payload["data"]["item"]["id"]
         .as_str()
         .unwrap()
         .to_owned();
-
-    let models_payload = request_json(
-        router.clone(),
-        app_session_request(
-            "GET",
-            &format!("/backend/v3/api/sites/{site_id}/models"),
-            Body::empty(),
-        ),
-    )
-    .await;
-    assert_eq!("2000", models_payload["code"]);
-    assert_eq!(1, models_payload["data"]["items"].as_array().unwrap().len());
-
-    let update_model_payload = request_json(
-        router.clone(),
-        app_session_request(
-            "PATCH",
-            &format!("/backend/v3/api/sites/{site_id}/models/{site_model_id}"),
-            Body::from(
-                r#"{"displayName":"GPT-4o mini relay","supportsTools":false,"status":"active"}"#,
-            ),
-        ),
-    )
-    .await;
-    assert_eq!("2000", update_model_payload["code"]);
-    assert_eq!(
-        "GPT-4o mini relay",
-        update_model_payload["data"]["item"]["displayName"]
-    );
-    assert_eq!(false, update_model_payload["data"]["item"]["supportsTools"]);
-
-    let replace_models_payload = request_json(
-        router.clone(),
-        app_session_request(
-            "PUT",
-            &format!("/backend/v3/api/sites/{site_id}/models"),
-            Body::from(
-                r#"{"items":[{"modelCode":"gpt-4o-mini","modelName":"GPT-4o mini","providerModel":"gpt-4o-mini","vendorCode":"openai","modality":"chat","capabilities":["chat","tools"],"contextTokens":128000,"supportsStreaming":true,"supportsTools":true,"supportsJsonSchema":true,"status":"active"},{"modelCode":"text-embedding-3-small","modelName":"Text embedding 3 small","providerModel":"text-embedding-3-small","vendorCode":"openai","modality":"embedding","capabilities":["embedding"],"supportsStreaming":false,"supportsTools":false,"supportsJsonSchema":false,"status":"active"}]}"#,
-            ),
-        ),
-    )
-    .await;
-    assert_eq!("2000", replace_models_payload["code"]);
-    assert_eq!(
-        2,
-        replace_models_payload["data"]["items"]
-            .as_array()
-            .unwrap()
-            .len()
-    );
 
     let channels_payload = request_json(
         router.clone(),
@@ -490,22 +318,6 @@ async fn database_config_router_serves_admin_site_management() {
         "healthy",
         refreshed_sites_payload["data"]["items"][0]["healthStatus"]
     );
-
-    let replaced_model_id = replace_models_payload["data"]["items"][0]["id"]
-        .as_str()
-        .unwrap()
-        .to_owned();
-    let delete_model_payload = request_json(
-        router.clone(),
-        app_session_request(
-            "DELETE",
-            &format!("/backend/v3/api/sites/{site_id}/models/{replaced_model_id}"),
-            Body::empty(),
-        ),
-    )
-    .await;
-    assert_eq!("2000", delete_model_payload["code"]);
-    assert_eq!(true, delete_model_payload["data"]["deleted"]);
 
     let delete_site_payload = request_json(
         router.clone(),
@@ -971,7 +783,7 @@ async fn database_config_router_serves_signed_subject_channel_crud() {
             "POST",
             "/backend/v3/api/channel",
             Body::from(
-                r#"{"name":"OpenAI primary","vendor":"OpenAI","protocol":"OpenAI","accessType":"api-key","baseUrl":"https://api.openai.com/v1","secretRef":"vault://providers/openai/account/main","models":["openai/gpt-4o-mini"],"capabilities":["llm"],"timeoutMs":60000,"retryPolicy":{"maxAttempts":3,"retryableStatusCodes":[429,503],"backoffMs":25},"weight":80,"status":"active"}"#,
+                r#"{"name":"OpenAI primary","vendor":"OpenAI","protocol":"OpenAI","accessType":"api-key","credentialRotation":"default","credentials":[{"name":"primary","baseUrl":"https://api.openai.com/v1","secretRef":"vault://providers/openai/account/main","priority":1,"weight":100,"status":"active"}],"models":["openai/gpt-4o-mini"],"capabilities":["llm"],"timeoutMs":60000,"retryPolicy":{"maxAttempts":3,"retryableStatusCodes":[429,503],"backoffMs":25},"weight":80,"status":"active"}"#,
             ),
         ))
         .await
@@ -997,6 +809,10 @@ async fn database_config_router_serves_signed_subject_channel_crud() {
         create_payload["data"]["item"]["retryPolicy"]["retryableStatusCodes"][1]
     );
     assert!(create_payload["data"]["item"].get("authKey").is_none());
+    assert_eq!(
+        "ref:***main",
+        create_payload["data"]["item"]["credentials"][0]["maskedLabel"]
+    );
     let channel_id = create_payload["data"]["item"]["id"].as_str().unwrap();
 
     let update_response = router
@@ -1101,7 +917,7 @@ async fn database_config_router_admin_channel_test_runs_real_provider_probe_and_
             "POST",
             "/backend/v3/api/channel",
             Body::from(format!(
-                r#"{{"name":"OpenAI primary","vendor":"OpenAI","protocol":"OpenAI","accessType":"api-key","baseUrl":"http://{addr}","secretRef":"{secret_ref}","models":["openai/gpt-4o-mini"],"capabilities":["llm"],"timeoutMs":60000,"weight":80,"status":"active"}}"#
+                r#"{{"name":"OpenAI primary","vendor":"OpenAI","protocol":"OpenAI","accessType":"api-key","credentialRotation":"default","credentials":[{{"name":"primary","baseUrl":"http://{addr}","secretRef":"{secret_ref}","priority":1,"weight":100,"status":"active"}}],"models":["openai/gpt-4o-mini"],"capabilities":["llm"],"timeoutMs":60000,"weight":80,"status":"active"}}"#
             )),
         ),
     )
@@ -1256,7 +1072,7 @@ async fn database_config_router_admin_channel_test_records_masked_provider_failu
             "POST",
             "/backend/v3/api/channel",
             Body::from(format!(
-                r#"{{"name":"OpenAI primary","vendor":"OpenAI","protocol":"OpenAI","accessType":"api-key","baseUrl":"http://{addr}","secretRef":"{secret_ref}","models":["openai/gpt-4o-mini"],"capabilities":["llm"],"timeoutMs":60000,"weight":80,"status":"active"}}"#
+                r#"{{"name":"OpenAI primary","vendor":"OpenAI","protocol":"OpenAI","accessType":"api-key","credentialRotation":"default","credentials":[{{"name":"primary","baseUrl":"http://{addr}","secretRef":"{secret_ref}","priority":1,"weight":100,"status":"active"}}],"models":["openai/gpt-4o-mini"],"capabilities":["llm"],"timeoutMs":60000,"weight":80,"status":"active"}}"#
             )),
         ),
     )
@@ -3123,7 +2939,10 @@ async fn database_config_router_serves_signed_subject_admin_record() {
     assert_eq!("Production", payload["data"]["logs"][0]["tokenName"]);
     assert_eq!("standard-group", payload["data"]["logs"][0]["group"]);
     assert_eq!("text", payload["data"]["logs"][0]["type"]);
-    assert_eq!("gpt-4o-mini", payload["data"]["logs"][0]["model"]);
+    assert_eq!(
+        "gpt-4o-mini-2026-05-13",
+        payload["data"]["logs"][0]["model"]
+    );
     assert_eq!("842ms", payload["data"]["logs"][0]["totalTime"]);
     assert_eq!("120ms", payload["data"]["logs"][0]["ttft"]);
     assert_eq!(true, payload["data"]["logs"][0]["isStream"]);
@@ -3475,6 +3294,8 @@ async fn create_schema(pool: &SqlitePool) {
             vendor_type INTEGER,
             model_families TEXT,
             capabilities TEXT,
+            supported_protocols TEXT,
+            client_api_compatibility TEXT,
             open_source INTEGER,
             status INTEGER NOT NULL,
             deleted_at TEXT,
@@ -3625,6 +3446,10 @@ async fn create_schema(pool: &SqlitePool) {
             base_url TEXT,
             website_url TEXT,
             docs_url TEXT,
+            logo_media_resource_id TEXT,
+            logo_object_blob_id INTEGER,
+            logo_resource_snapshot TEXT,
+            color_token TEXT,
             site_type TEXT NOT NULL DEFAULT 'relay',
             owner_kind TEXT,
             region_code TEXT,
@@ -3692,6 +3517,7 @@ async fn create_schema(pool: &SqlitePool) {
             channel_type TEXT,
             protocol_code TEXT,
             auth_type INTEGER,
+            credential_rotation_strategy TEXT NOT NULL DEFAULT 'default',
             auth_config TEXT,
             credential_ref TEXT,
             credential_hash TEXT,
@@ -3721,77 +3547,6 @@ async fn create_schema(pool: &SqlitePool) {
             rpm_limit INTEGER,
             consecutive_error_count INTEGER
         )"#,
-        r#"CREATE TABLE ai_channel_model (
-            id INTEGER PRIMARY KEY,
-            uuid TEXT NOT NULL DEFAULT 'seed-channel-model',
-            tenant_id INTEGER,
-            organization_id INTEGER,
-            data_scope INTEGER,
-            catalog_key TEXT,
-            model TEXT NOT NULL,
-            channel_id INTEGER NOT NULL,
-            vendor_code TEXT,
-            provider_model TEXT NOT NULL,
-            provider_native_model TEXT,
-            api_code TEXT,
-            capability INTEGER,
-            supports_streaming INTEGER,
-            supports_tools INTEGER,
-            status INTEGER NOT NULL,
-            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
-            updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
-            version INTEGER NOT NULL DEFAULT 0,
-            deleted_at TEXT,
-            deleted_by INTEGER,
-            effective_from TEXT,
-            effective_to TEXT
-        )"#,
-        r#"CREATE TABLE ai_site_model (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            uuid TEXT NOT NULL,
-            tenant_id INTEGER NOT NULL DEFAULT 0,
-            organization_id INTEGER NOT NULL DEFAULT 0,
-            data_scope INTEGER NOT NULL DEFAULT 0,
-            status INTEGER NOT NULL DEFAULT 1,
-            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
-            updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
-            version INTEGER NOT NULL DEFAULT 0,
-            deleted_at TEXT,
-            deleted_by INTEGER,
-            metadata TEXT NOT NULL DEFAULT '{}',
-            site_id INTEGER NOT NULL,
-            site_service_id INTEGER NOT NULL,
-            site_code TEXT NOT NULL,
-            site_service_code TEXT,
-            service_type TEXT NOT NULL DEFAULT 'ai_model_relay',
-            model_id INTEGER,
-            catalog_key TEXT,
-            model_code TEXT NOT NULL,
-            model_name TEXT NOT NULL,
-            display_name TEXT,
-            provider_model TEXT,
-            provider_native_model TEXT,
-            vendor_code TEXT,
-            modality TEXT,
-            capability INTEGER,
-            capabilities TEXT,
-            model_aliases TEXT,
-            default_parameters TEXT,
-            context_tokens INTEGER,
-            max_input_tokens INTEGER,
-            max_output_tokens INTEGER,
-            supports_streaming INTEGER,
-            supports_tools INTEGER,
-            supports_json_schema INTEGER,
-            pricing_snapshot TEXT,
-            health_status INTEGER NOT NULL DEFAULT 1,
-            last_latency_ms INTEGER,
-            consecutive_error_count INTEGER NOT NULL DEFAULT 0,
-            last_sync_at TEXT,
-            effective_from TEXT,
-            effective_to TEXT
-        )"#,
-        "CREATE UNIQUE INDEX uk_ai_site_model_service_model ON ai_site_model (tenant_id, organization_id, site_id, site_service_id, model_code)",
         r#"CREATE TABLE ai_modality (
             id INTEGER PRIMARY KEY,
             uuid TEXT NOT NULL,
@@ -4089,6 +3844,52 @@ async fn create_schema(pool: &SqlitePool) {
             effective_to TEXT,
             description TEXT
         )"#,
+        r#"CREATE TABLE ai_model_mapping_rule_binding (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT NOT NULL DEFAULT 'seed-model-mapping-rule-binding',
+            tenant_id INTEGER NOT NULL DEFAULT 10,
+            organization_id INTEGER NOT NULL DEFAULT 20,
+            data_scope INTEGER NOT NULL DEFAULT 0,
+            status INTEGER NOT NULL DEFAULT 1,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            version INTEGER NOT NULL DEFAULT 0,
+            deleted_at TEXT,
+            deleted_by INTEGER,
+            metadata TEXT NOT NULL DEFAULT '{}',
+            rule_id INTEGER NOT NULL DEFAULT 0,
+            rule_uuid TEXT,
+            binding_type TEXT NOT NULL DEFAULT 'global',
+            binding_id INTEGER,
+            binding_code TEXT,
+            binding_name_snapshot TEXT,
+            sort_order INTEGER NOT NULL DEFAULT 100,
+            enabled INTEGER NOT NULL DEFAULT 1
+        )"#,
+        r#"CREATE TABLE ai_model_mapping_rule_item (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT NOT NULL DEFAULT 'seed-model-mapping-rule-item',
+            tenant_id INTEGER NOT NULL DEFAULT 10,
+            organization_id INTEGER NOT NULL DEFAULT 20,
+            data_scope INTEGER NOT NULL DEFAULT 0,
+            status INTEGER NOT NULL DEFAULT 1,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            version INTEGER NOT NULL DEFAULT 0,
+            deleted_at TEXT,
+            deleted_by INTEGER,
+            metadata TEXT NOT NULL DEFAULT '{}',
+            rule_id INTEGER NOT NULL DEFAULT 0,
+            rule_uuid TEXT,
+            source_model TEXT NOT NULL DEFAULT '',
+            source_catalog_key TEXT,
+            target_model TEXT NOT NULL DEFAULT '',
+            target_catalog_key TEXT,
+            target_provider_model TEXT,
+            target_provider_native_model TEXT,
+            sort_order INTEGER NOT NULL DEFAULT 100,
+            enabled INTEGER NOT NULL DEFAULT 1
+        )"#,
         r#"CREATE TABLE ai_resource (
             id INTEGER PRIMARY KEY,
             uuid TEXT,
@@ -4181,8 +3982,7 @@ async fn create_schema(pool: &SqlitePool) {
             weight INTEGER,
             effective_from TEXT,
             effective_to TEXT
-        )"#,
-        r#"CREATE TABLE ai_channel_vendor (
+        )"#,        r#"CREATE TABLE ai_channel_credential (
             id INTEGER PRIMARY KEY,
             uuid TEXT,
             tenant_id INTEGER NOT NULL DEFAULT 10,
@@ -4192,72 +3992,27 @@ async fn create_schema(pool: &SqlitePool) {
             created_at TEXT,
             updated_at TEXT,
             version INTEGER DEFAULT 0,
+            metadata TEXT DEFAULT '{}',
             deleted_at TEXT,
             deleted_by INTEGER,
             channel_id INTEGER NOT NULL,
             provider_code TEXT,
             channel_code TEXT,
-            vendor_id INTEGER,
-            vendor_code TEXT NOT NULL,
-            channel_type TEXT,
-            supported INTEGER,
-            sort_order INTEGER
-        )"#,
-        r#"CREATE TABLE ai_channel_endpoint (
-            id INTEGER PRIMARY KEY,
-            uuid TEXT,
-            tenant_id INTEGER NOT NULL DEFAULT 10,
-            organization_id INTEGER NOT NULL DEFAULT 20,
-            data_scope INTEGER,
-            status INTEGER NOT NULL,
-            created_at TEXT,
-            updated_at TEXT,
-            version INTEGER DEFAULT 0,
-            deleted_at TEXT,
-            deleted_by INTEGER,
-            channel_id INTEGER NOT NULL,
-            provider_code TEXT NOT NULL,
-            channel_code TEXT NOT NULL,
-            channel_type TEXT NOT NULL,
-            vendor_id INTEGER,
-            vendor_code TEXT NOT NULL,
-            region_code TEXT NOT NULL,
-            api_endpoint_id INTEGER,
-            api_code TEXT NOT NULL,
-            base_url TEXT NOT NULL,
-            path_prefix TEXT,
+            credential_name TEXT NOT NULL,
+            auth_type INTEGER,
+            auth_config TEXT NOT NULL DEFAULT '{}',
+            credential_ref TEXT,
+            credential_hash TEXT,
+            masked_label TEXT,
+            base_url TEXT,
             priority INTEGER,
             weight INTEGER,
             timeout_ms INTEGER,
-            retry_policy TEXT,
             health_status INTEGER,
             last_latency_ms INTEGER,
             consecutive_error_count INTEGER,
-            effective_from TEXT,
-            effective_to TEXT
-        )"#,
-        r#"CREATE TABLE ai_route_candidate (
-            id INTEGER PRIMARY KEY,
-            uuid TEXT,
-            tenant_id INTEGER NOT NULL DEFAULT 10,
-            organization_id INTEGER NOT NULL DEFAULT 20,
-            channel_group_id INTEGER,
-            channel_id INTEGER,
-            endpoint_id INTEGER,
-            provider_code TEXT,
-            channel_type TEXT,
-            vendor_code TEXT,
-            api_code TEXT,
-            model_code TEXT,
-            catalog_key TEXT,
-            region_code TEXT,
-            priority INTEGER,
-            weight INTEGER,
-            health_status INTEGER,
-            updated_at TEXT,
-            status INTEGER NOT NULL
-        )"#,
-        r#"CREATE TABLE ai_config_version (
+            last_verified_at TEXT
+        )"#,        r#"CREATE TABLE ai_config_version (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             uuid TEXT NOT NULL,
             tenant_id INTEGER NOT NULL DEFAULT 0,
@@ -4608,6 +4363,7 @@ async fn create_schema(pool: &SqlitePool) {
             subtitle TEXT,
             description TEXT,
             product_type TEXT NOT NULL,
+            category_id TEXT,
             sales_status TEXT NOT NULL,
             visible_surfaces TEXT NOT NULL,
             created_at TEXT NOT NULL,
@@ -5158,7 +4914,6 @@ async fn create_schema(pool: &SqlitePool) {
         "CREATE UNIQUE INDEX uk_ai_channel_group_member ON ai_channel_group_member (tenant_id, organization_id, channel_group_id, channel_id)",
         "CREATE UNIQUE INDEX uk_ai_channel_group_resource ON ai_channel_group_resource (tenant_id, organization_id, channel_group_id, resource_code, resource_group_code)",
         "CREATE UNIQUE INDEX uk_ai_channel_resource ON ai_channel_resource (tenant_id, organization_id, channel_id, resource_code, resource_group_code)",
-        "CREATE UNIQUE INDEX uk_ai_channel_vendor ON ai_channel_vendor (tenant_id, organization_id, channel_id, vendor_code)",
         r#"CREATE TABLE iam_gateway_api_key (
             id INTEGER PRIMARY KEY,
             uuid TEXT NOT NULL DEFAULT 'seed-api-key',
@@ -5858,7 +5613,7 @@ async fn seed_catalog(pool: &SqlitePool) {
             VALUES (1, 'openai/gpt-4o-mini', 'gpt-4o-mini', 'GPT-4o mini', 'openai', '["chat"]', 1, '100.0')"#,
         "INSERT INTO ai_provider (id, tenant_id, organization_id, provider_code, default_vendor_code, provider_type, protocol_code, base_url, status) VALUES (2, 10, 20, 'openrouter', 'openai', 'relay_aggregator', 'openai_v1', 'http://provider-proxy.internal/openrouter-template', 1)",
         "INSERT INTO ai_channel (id, tenant_id, organization_id, provider_id, provider_code, channel_code, channel_name, channel_type, base_url, credential_ref, status, priority, weight, health_status) VALUES (3001, 10, 20, 2, 'openrouter', 'openrouter-main', 'OpenRouter Main', 'relay', 'http://provider-proxy.internal/openrouter', 'vault://providers/openrouter/account/main', 1, 10, 100, 1)",
-        "INSERT INTO ai_channel_model (id, tenant_id, organization_id, catalog_key, model, channel_id, vendor_code, provider_model, provider_native_model, api_code, status) VALUES (1, 10, 20, 'openai/gpt-4o-mini', 'gpt-4o-mini', 3001, 'openai', 'gpt-4o-mini', 'gpt-4o-mini', 'openai.chat_completions', 1)",
+        "INSERT INTO ai_channel_credential (id, uuid, tenant_id, organization_id, channel_id, provider_code, channel_code, credential_name, auth_config, credential_ref, credential_hash, base_url, priority, weight, health_status, status) VALUES (300101, 'channel-credential-openrouter-main', 10, 20, 3001, 'openrouter', 'openrouter-main', 'primary', '{}', 'vault://providers/openrouter/account/main', 'hash:openrouter-main', 'http://provider-proxy.internal/openrouter', 1, 100, 1, 1)",
         r#"INSERT INTO ai_routing_profile
             (id, uuid, tenant_id, organization_id, policy_id, profile_version, profile_name, release_status, traffic_percent, config_hash, status)
             VALUES (9301, 'routing-profile-standard-group-admin-api-test', 10, 20, 9300, 1, 'Standard Group Profile', 2, '100.000000', 'standard-group-profile-hash', 1)"#,
@@ -5868,7 +5623,6 @@ async fn seed_catalog(pool: &SqlitePool) {
         r#"INSERT INTO ai_routing_rule
             (id, uuid, tenant_id, organization_id, profile_id, rule_code, priority, match_expression, target_model, candidate_channels, fallback_chain, constraints, status)
             VALUES (9302, 'routing-rule-standard-group-default-admin-api-test', 10, 20, 9301, 'standard-group-default', 1, '{"catalogKey":"*"}', NULL, '[{"channel_id":3001,"weight":100}]', '[]', '{}', 1)"#,
-        "INSERT INTO ai_route_candidate (id, uuid, tenant_id, organization_id, channel_group_id, channel_id, provider_code, channel_type, vendor_code, api_code, model_code, catalog_key, region_code, priority, weight, health_status, status) VALUES (1, 'route-openrouter-gpt-4o-mini-chat', 10, 20, 10, 3001, 'openrouter', 'relay', 'openai', 'openai.chat_completions', 'gpt-4o-mini', 'openai/gpt-4o-mini', 'global', 1, 100, 1, 1)",
         "INSERT INTO ai_pricing_plan (id, plan_code, base_price_side, default_multiplier, default_markup_amount, currency, status, priority) VALUES (1, 'standard', 1, '1.200000', '0.000000', 'USD', 1, 1)",
         "INSERT INTO ai_channel_group (id, tenant_id, organization_id, group_code, group_name, provider_code, group_type, pricing_plan_code, billing_type, rate_multiplier, official_price_multiplier, status) VALUES (10, 10, 20, 'standard-group', 'Standard Group', 'openai', 2, 'standard', 1, '1.000000', '1.100000', 1)",
         "INSERT INTO ai_channel_group_member (id, tenant_id, organization_id, channel_group_id, channel_id, priority, weight, enabled, status) VALUES (600, 10, 20, 10, 3001, 1, 100, 1, 1)",

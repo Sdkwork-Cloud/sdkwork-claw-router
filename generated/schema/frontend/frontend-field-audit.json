@@ -546,6 +546,21 @@
     },
     {
       "data_sources": [
+        "ai_model_mapping_rule",
+        "ai_model_mapping_rule_item"
+      ],
+      "fields": [
+        "sourceModel",
+        "targetModel",
+        "targetVendorCode"
+      ],
+      "file_targets": [],
+      "interface": "AccountModelMappingInput",
+      "route": "/admin/channel",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts"
+    },
+    {
+      "data_sources": [
         "ai_resource",
         "ai_resource_group_item"
       ],
@@ -560,6 +575,8 @@
         "catalogKey",
         "model",
         "providerNativeModel",
+        "capability",
+        "capabilities",
         "compositionMode",
         "status",
         "sortOrder",
@@ -572,7 +589,7 @@
       ],
       "file_targets": [],
       "interface": "AiResource",
-      "route": "/admin/channel/resources",
+      "route": "/admin/channel",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts"
     },
     {
@@ -598,7 +615,7 @@
       ],
       "file_targets": [],
       "interface": "AiResourceCreateInput",
-      "route": "/admin/channel/resources",
+      "route": "/admin/model/resources",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts"
     },
     {
@@ -614,7 +631,7 @@
       ],
       "file_targets": [],
       "interface": "AiResourceMember",
-      "route": "/admin/channel/resources",
+      "route": "/admin/channel",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts"
     },
     {
@@ -629,7 +646,7 @@
       ],
       "file_targets": [],
       "interface": "AiResourceMemberInput",
-      "route": "/admin/channel/resources",
+      "route": "/admin/channel",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts"
     },
     {
@@ -655,16 +672,14 @@
       ],
       "file_targets": [],
       "interface": "AiResourceUpdateInput",
-      "route": "/admin/channel/resources",
+      "route": "/admin/model/resources",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts"
     },
     {
       "data_sources": [
         "ai_channel",
-        "ai_channel_model",
+        "ai_channel_credential",
         "ai_provider",
-        "ai_channel",
-        "ai_channel_resource",
         "ai_channel_resource"
       ],
       "fields": [
@@ -673,11 +688,16 @@
         "channelType",
         "protocol",
         "accessType",
-        "baseUrl",
-        "apiKey",
-        "secretRef",
+        "credentialRotation",
+        "credentials",
+        "credentials.name",
+        "credentials.baseUrl",
+        "credentials.apiKey",
+        "credentials.secretRef",
+        "credentials.priority",
+        "credentials.weight",
+        "credentials.status",
         "expiresAt",
-        "models",
         "capabilities",
         "resourceCodes",
         "timeoutMs",
@@ -693,101 +713,49 @@
     },
     {
       "data_sources": [
-        "ai_channel",
-        "ai_channel_endpoint",
-        "ai_model_vendor",
-        "ai_api_endpoint"
+        "ai_channel_credential"
+      ],
+      "fields": [
+        "name",
+        "baseUrl",
+        "apiKey",
+        "secretRef",
+        "priority",
+        "weight",
+        "status"
+      ],
+      "file_targets": [],
+      "interface": "ChannelCredentialInput",
+      "route": "/admin/channel",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_channel_credential"
       ],
       "fields": [
         "id",
-        "channelId",
-        "providerCode",
-        "channelCode",
-        "channelType",
-        "vendorCode",
-        "regionCode",
-        "apiEndpointCode",
-        "baseUrl",
-        "priority",
-        "weight",
-        "healthStatus",
-        "status",
-        "effectiveFrom",
-        "effectiveTo"
-      ],
-      "file_targets": [],
-      "interface": "ChannelEndpoint",
-      "route": "/admin/channel/endpoints",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts"
-    },
-    {
-      "data_sources": [
-        "ai_channel"
-      ],
-      "fields": [
-        "channelId",
+        "credentialId",
         "name",
-        "vendor"
+        "baseUrl",
+        "secretRef",
+        "apiKey",
+        "maskedLabel",
+        "priority",
+        "weight",
+        "status",
+        "errors"
       ],
       "file_targets": [],
-      "interface": "ChannelEndpointChannelOption",
-      "route": "/admin/channel/endpoints",
+      "interface": "ChannelCredentialItem",
+      "route": "/admin/channel",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts"
     },
     {
       "data_sources": [
         "ai_channel",
-        "ai_channel_endpoint",
-        "ai_model_vendor",
-        "ai_api_endpoint",
-        "ops_audit_log"
-      ],
-      "fields": [
-        "channelId",
-        "vendorCode",
-        "regionCode",
-        "apiEndpointCode",
-        "baseUrl",
-        "priority",
-        "weight",
-        "status",
-        "effectiveFrom",
-        "effectiveTo"
-      ],
-      "file_targets": [],
-      "interface": "ChannelEndpointCreateInput",
-      "route": "/admin/channel/endpoints",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts"
-    },
-    {
-      "data_sources": [
-        "ai_channel_endpoint",
-        "ai_model_vendor",
-        "ai_api_endpoint",
-        "ops_audit_log"
-      ],
-      "fields": [
-        "vendorCode",
-        "regionCode",
-        "apiEndpointCode",
-        "baseUrl",
-        "priority",
-        "weight",
-        "status",
-        "effectiveFrom",
-        "effectiveTo"
-      ],
-      "file_targets": [],
-      "interface": "ChannelEndpointUpdateInput",
-      "route": "/admin/channel/endpoints",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts"
-    },
-    {
-      "data_sources": [
-        "ai_channel",
-        "ai_channel_model",
+        "ai_channel_credential",
         "ai_provider",
-        "ai_channel",
         "ai_channel_resource",
         "integration_provider_health_snapshot"
       ],
@@ -799,12 +767,21 @@
         "channelType",
         "protocol",
         "accessType",
-        "baseUrl",
-        "secretRef",
-        "apiKey",
+        "credentialRotation",
+        "credentials",
+        "credentials.id",
+        "credentials.credentialId",
+        "credentials.name",
+        "credentials.baseUrl",
+        "credentials.secretRef",
+        "credentials.apiKey",
+        "credentials.maskedLabel",
+        "credentials.priority",
+        "credentials.weight",
+        "credentials.status",
+        "credentials.errors",
         "createdAt",
         "expiresAt",
-        "models",
         "capabilities",
         "resourceCodes",
         "isMultimodal",
@@ -841,6 +818,7 @@
     {
       "data_sources": [
         "ai_channel",
+        "ai_channel_credential",
         "ai_channel_resource",
         "ai_channel",
         "integration_provider_health_snapshot",
@@ -860,12 +838,21 @@
         "item.channelType",
         "item.protocol",
         "item.accessType",
-        "item.baseUrl",
-        "item.secretRef",
-        "item.apiKey",
+        "item.credentialRotation",
+        "item.credentials",
+        "item.credentials.id",
+        "item.credentials.credentialId",
+        "item.credentials.name",
+        "item.credentials.baseUrl",
+        "item.credentials.secretRef",
+        "item.credentials.apiKey",
+        "item.credentials.maskedLabel",
+        "item.credentials.priority",
+        "item.credentials.weight",
+        "item.credentials.status",
+        "item.credentials.errors",
         "item.createdAt",
         "item.expiresAt",
-        "item.models",
         "item.capabilities",
         "item.resourceCodes",
         "item.isMultimodal",
@@ -885,10 +872,8 @@
     {
       "data_sources": [
         "ai_channel",
-        "ai_channel_model",
+        "ai_channel_credential",
         "ai_provider",
-        "ai_channel",
-        "ai_channel_resource",
         "ai_channel_resource"
       ],
       "fields": [
@@ -897,11 +882,16 @@
         "channelType",
         "protocol",
         "accessType",
-        "baseUrl",
-        "apiKey",
-        "secretRef",
+        "credentialRotation",
+        "credentials",
+        "credentials.name",
+        "credentials.baseUrl",
+        "credentials.apiKey",
+        "credentials.secretRef",
+        "credentials.priority",
+        "credentials.weight",
+        "credentials.status",
         "expiresAt",
-        "models",
         "capabilities",
         "resourceCodes",
         "timeoutMs",
@@ -965,6 +955,27 @@
       ],
       "file_targets": [],
       "interface": "ProviderSecretUpdateInput",
+      "route": "/admin/channel",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_channel",
+        "ai_model_mapping_rule",
+        "ai_model_mapping_rule_binding",
+        "ai_model_mapping_rule_item"
+      ],
+      "fields": [
+        "channelId",
+        "channelName",
+        "accountVendorCode",
+        "mappings",
+        "mappings.sourceModel",
+        "mappings.targetModel",
+        "mappings.targetVendorCode"
+      ],
+      "file_targets": [],
+      "interface": "ReplaceAccountModelMappingsInput",
       "route": "/admin/channel",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts"
     },
@@ -1064,7 +1075,7 @@
         "ai_channel_group_member",
         "ai_provider",
         "ai_channel",
-        "ai_channel_model"
+        "ai_channel_group_resource"
       ],
       "fields": [
         "id",
@@ -1074,9 +1085,9 @@
         "providerCode",
         "providerName",
         "channelCode",
-        "models",
+        "resourceCodes",
+        "apiScope",
         "capabilities",
-        "modelScope",
         "priority",
         "weight",
         "status",
@@ -1097,7 +1108,8 @@
         "priority",
         "weight",
         "status",
-        "modelScope",
+        "resourceCodes",
+        "apiScope",
         "capabilities"
       ],
       "file_targets": [],
@@ -1109,7 +1121,7 @@
       "data_sources": [
         "ai_provider",
         "ai_channel",
-        "ai_channel_model"
+        "ai_channel_group_resource"
       ],
       "fields": [
         "id",
@@ -1117,7 +1129,8 @@
         "providerCode",
         "providerName",
         "channelCode",
-        "models",
+        "resourceCodes",
+        "apiScope",
         "capabilities",
         "status",
         "healthStatus"
@@ -1771,6 +1784,7 @@
         "models.type",
         "models.regionPrices",
         "models.regionPrices.regionCode",
+        "models.regionPrices.currency",
         "models.regionPrices.priceIn",
         "models.regionPrices.priceOut",
         "models.regionPrices.cacheReadPrice",
@@ -1818,6 +1832,7 @@
         "type",
         "regionPrices",
         "regionPrices.regionCode",
+        "regionPrices.currency",
         "regionPrices.priceIn",
         "regionPrices.priceOut",
         "regionPrices.cacheReadPrice",
@@ -1895,6 +1910,7 @@
         "models.type",
         "models.regionPrices",
         "models.regionPrices.regionCode",
+        "models.regionPrices.currency",
         "models.regionPrices.priceIn",
         "models.regionPrices.priceOut",
         "models.regionPrices.cacheReadPrice",
@@ -1940,6 +1956,7 @@
         "type",
         "regionPrices",
         "regionPrices.regionCode",
+        "regionPrices.currency",
         "regionPrices.priceIn",
         "regionPrices.priceOut",
         "regionPrices.cacheReadPrice",
@@ -1989,6 +2006,54 @@
       ],
       "file_targets": [],
       "interface": "ModelMappingCreateInput",
+      "route": "/admin/model/mappings",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_model",
+        "ai_model_vendor"
+      ],
+      "fields": [
+        "id",
+        "vendorId",
+        "vendorCode",
+        "model",
+        "displayName",
+        "name",
+        "type",
+        "status"
+      ],
+      "file_targets": [],
+      "interface": "ModelMappingModelOption",
+      "route": "/admin/model/mappings",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts"
+    },
+    {
+      "data_sources": [
+        "ai_model",
+        "ai_model_vendor"
+      ],
+      "fields": [
+        "vendors",
+        "vendors.id",
+        "vendors.vendorCode",
+        "vendors.name",
+        "vendors.status",
+        "vendors.color",
+        "vendors.description",
+        "models",
+        "models.id",
+        "models.vendorId",
+        "models.vendorCode",
+        "models.model",
+        "models.displayName",
+        "models.name",
+        "models.type",
+        "models.status"
+      ],
+      "file_targets": [],
+      "interface": "ModelMappingModelOptionsCatalog",
       "route": "/admin/model/mappings",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts"
     },
@@ -2192,6 +2257,7 @@
       ],
       "fields": [
         "regionCode",
+        "currency",
         "priceIn",
         "priceOut",
         "cacheReadPrice",
@@ -2383,7 +2449,6 @@
         "ai_site_service"
       ],
       "fields": [
-        "siteCode",
         "siteName",
         "displayName",
         "description",
@@ -2437,100 +2502,6 @@
       ],
       "file_targets": [],
       "interface": "SiteItem",
-      "route": "/admin/model/sites",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts"
-    },
-    {
-      "data_sources": [
-        "ai_site_model",
-        "ai_site",
-        "ai_site_service"
-      ],
-      "fields": [
-        "modelCode",
-        "modelName",
-        "displayName",
-        "providerModel",
-        "providerNativeModel",
-        "vendorCode",
-        "modality",
-        "capabilities",
-        "contextTokens",
-        "maxInputTokens",
-        "maxOutputTokens",
-        "supportsStreaming",
-        "supportsTools",
-        "supportsJsonSchema",
-        "status"
-      ],
-      "file_targets": [],
-      "interface": "SiteModelCreateInput",
-      "route": "/admin/model/sites",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts"
-    },
-    {
-      "data_sources": [
-        "ai_site_model",
-        "ai_site",
-        "ai_site_service"
-      ],
-      "fields": [
-        "id",
-        "siteId",
-        "siteCode",
-        "siteServiceId",
-        "siteServiceCode",
-        "serviceType",
-        "modelCode",
-        "modelName",
-        "displayName",
-        "providerModel",
-        "providerNativeModel",
-        "vendorCode",
-        "modality",
-        "capabilities",
-        "contextTokens",
-        "maxInputTokens",
-        "maxOutputTokens",
-        "supportsStreaming",
-        "supportsTools",
-        "supportsJsonSchema",
-        "healthStatus",
-        "lastLatencyMs",
-        "consecutiveErrorCount",
-        "lastSyncAt",
-        "status"
-      ],
-      "file_targets": [],
-      "interface": "SiteModelItem",
-      "route": "/admin/model/sites",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts"
-    },
-    {
-      "data_sources": [
-        "ai_site_model",
-        "ai_site",
-        "ai_site_service"
-      ],
-      "fields": [
-        "modelCode",
-        "modelName",
-        "displayName",
-        "providerModel",
-        "providerNativeModel",
-        "vendorCode",
-        "modality",
-        "capabilities",
-        "contextTokens",
-        "maxInputTokens",
-        "maxOutputTokens",
-        "supportsStreaming",
-        "supportsTools",
-        "supportsJsonSchema",
-        "status"
-      ],
-      "file_targets": [],
-      "interface": "SiteModelUpdateInput",
       "route": "/admin/model/sites",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts"
     },
@@ -3064,8 +3035,7 @@
     },
     {
       "data_sources": [
-        "commerce_usage_service_provider_statement",
-        "commerce_usage_service_provider_statement_item"
+        "commerce_usage_service_provider_statement"
       ],
       "fields": [
         "id",
@@ -3085,7 +3055,6 @@
     },
     {
       "data_sources": [
-        "ai_usage_service_provider_chain",
         "ai_usage_service_provider_edge"
       ],
       "fields": [
@@ -6264,7 +6233,7 @@
     }
   ],
   "summary": {
-    "interface_count": 258,
+    "interface_count": 257,
     "source_file_count": 50
   }
 }

@@ -131,8 +131,8 @@ print(result);
 
 ### integration
 ```dart
-// List channel endpoints
-final result = await client.integration.channelEndpointsList();
+// List channels
+final result = await client.integration.channelsList();
 print(result);
 ```
 

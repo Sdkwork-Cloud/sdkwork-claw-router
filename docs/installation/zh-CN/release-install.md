@@ -78,21 +78,21 @@ pnpm install:package:build -- --package-id linux-x64-service
 
 ```bash
 sudo apt install ./clawrouter-linux-x64-server-0.3.0.deb
-sudo editor /etc/clawrouter/clawrouter.toml
-sudo editor /etc/clawrouter/database.secret
+sudo editor /etc/sdkwork/router/clawrouter.toml
+sudo editor /etc/sdkwork/router/database.secret
 sudo systemctl start clawrouter
 curl http://127.0.0.1:3900/healthz
 curl http://127.0.0.1:3900/readyz
 ```
 
-`.deb` 包会创建 `sdkwork` 系统用户、`/etc/clawrouter/clawrouter.toml`、`/etc/clawrouter/clawrouter.env`、`/etc/clawrouter/database.secret`、`/var/lib/clawrouter`、`/var/log/clawrouter` 和 systemd unit。在 systemd 主机上，安装过程会启用但不会立即启动 `clawrouter.service`。首次启动会通过 `ExecStartPre` 自动执行 `clawrouterctl ensure` 和 `clawrouterctl refresh-catalog --force`。生成的 systemd unit 默认使用受限运行配置，包括 `NoNewPrivileges`、`ProtectSystem=strict`、`ProtectHome=true`、systemd 管理的 state/log/config 目录、内核和 control group 保护、原生系统调用架构过滤，以及 `LimitNOFILE=65535`。运行中的服务只能写入数据和日志目录，`/etc/clawrouter` 对服务进程保持只读。
+`.deb` 包会创建 `sdkwork` 系统用户、`/etc/sdkwork/router/clawrouter.toml`、`/etc/sdkwork/router/clawrouter.env`、`/etc/sdkwork/router/database.secret`、`/var/lib/sdkwork/router`、`/var/log/sdkwork/router` 和 systemd unit。在 systemd 主机上，安装过程会启用但不会立即启动 `clawrouter.service`。首次启动会通过 `ExecStartPre` 自动执行 `clawrouterctl ensure` 和 `clawrouterctl refresh-catalog --force`。生成的 systemd unit 默认使用受限运行配置，包括 `NoNewPrivileges`、`ProtectSystem=strict`、`ProtectHome=true`、systemd 管理的 state/log/config 目录、内核和 control group 保护、原生系统调用架构过滤，以及 `LimitNOFILE=65535`。运行中的服务只能写入数据和日志目录，`/etc/sdkwork/router` 对服务进程保持只读。
 
 安装后输出会打印一段配置摘要，直接列出运行时 TOML、服务环境文件、PostgreSQL 密码文件、服务名和首次启动命令：
 
 ```text
-Runtime TOML: /etc/clawrouter/clawrouter.toml
-Service environment: /etc/clawrouter/clawrouter.env
-PostgreSQL password file: /etc/clawrouter/database.secret
+Runtime TOML: /etc/sdkwork/router/clawrouter.toml
+Service environment: /etc/sdkwork/router/clawrouter.env
+PostgreSQL password file: /etc/sdkwork/router/database.secret
 Systemd service: clawrouter.service
 ```
 
@@ -103,9 +103,9 @@ Systemd service: clawrouter.service
 engine = "postgresql"
 host = "db.example.com"
 port = 5432
-database = "sdkwork_claw_router"
-username = "sdkwork_claw_router"
-password_file = "/etc/clawrouter/database.secret"
+database = "sdkwork_ai_prod"
+username = "sdkworkprod@2026++"
+password_file = "/etc/sdkwork/router/database.secret"
 # password = "change-me"
 ssl_mode = "require"
 max_connections = 16
@@ -138,7 +138,7 @@ gateway_base_url = "http://127.0.0.1:18080"
 backend_api_base_url = "http://127.0.0.1:18081"
 app_api_base_url = "http://127.0.0.1:18082"
 portal_base_url = "http://127.0.0.1:3901"
-portal_static_dist = "/usr/lib/clawrouter/portal/dist"
+portal_static_dist = "/usr/lib/sdkwork/router/portal/dist"
 cors_allowed_origins = []
 upstream_request_timeout_millis = 30000
 upstream_ready_timeout_millis = 2000
@@ -165,11 +165,11 @@ csp_frame_src = ["https://player.bilibili.com"]
 rate_limit_requests = 120
 rate_limit_window_seconds = 60
 max_body_bytes = 1048576
-sdk_archive_root = "/usr/lib/clawrouter/portal/dist/sdk-archives"
+sdk_archive_root = "/usr/lib/sdkwork/router/portal/dist/sdk-archives"
 
 [provider_relay.openai]
 # base_url = "https://api.openai.com/v1"
-# bearer_token_file = "/etc/clawrouter/openai-relay.secret"
+# bearer_token_file = "/etc/sdkwork/router/openai-relay.secret"
 
 [provider_relay.runtime]
 response_timeout_millis = 120000
@@ -184,8 +184,8 @@ retryable_status_codes = [429, 500, 502, 503, 504]
 backoff_millis = 0
 
 [paths]
-data_directory = "/var/lib/clawrouter"
-course_upload_root = "/var/lib/clawrouter/uploads/courses"
+data_directory = "/var/lib/sdkwork/router"
+course_upload_root = "/var/lib/sdkwork/router/uploads/courses"
 
 [courses]
 video_upload_max_bytes = 1073741824
@@ -201,7 +201,7 @@ payment_callback_body_max_bytes = 65536
 deployment_mode = "server"
 ```
 
-首次启动前请编辑 `/etc/clawrouter/clawrouter.toml`。推荐把数据库密码保存在 `/etc/clawrouter/database.secret`。如果 TOML 文件本身由密钥系统保护，也可以直接配置 `password`：
+首次启动前请编辑 `/etc/sdkwork/router/clawrouter.toml`。推荐把数据库密码保存在 `/etc/sdkwork/router/database.secret`。如果 TOML 文件本身由密钥系统保护，也可以直接配置 `password`：
 
 `.deb` 包创建的 `database.secret` 初始内容是占位值 `change-me`。启动服务前必须替换为真实 PostgreSQL 密码；server 配置仍使用 `db.example.com` 或 `change-me` 时会被启动校验拒绝。`password_file` 可以是绝对路径、相对 `clawrouter.toml` 所在目录的路径，也可以使用 `${VAR}`、`$VAR`、`%VAR%` 或 `~` 展开，用于平台 Secret 路径。
 
@@ -210,8 +210,8 @@ deployment_mode = "server"
 engine = "postgresql"
 host = "db.internal"
 port = 5432
-database = "sdkwork_claw_router"
-username = "sdkwork_claw_router"
+database = "sdkwork_ai_prod"
+username = "sdkworkprod@2026++"
 password = "real-password"
 ssl_mode = "require"
 max_connections = 16
@@ -220,21 +220,21 @@ max_connections = 16
 deployment_mode = "server"
 ```
 
-`SDKWORK_CLAW_DATABASE_URL` 仍可写入 `/etc/clawrouter/clawrouter.env`，但只建议作为明确的运维覆盖或平台密钥注入方式。
+`SDKWORK_CLAW_DATABASE_URL` 仍可写入 `/etc/sdkwork/router/clawrouter.env`，但只建议作为明确的运维覆盖或平台密钥注入方式。
 
 `.deb` 安装脚本会创建：
 
 - `/usr/bin/clawrouter`
 - `/usr/bin/clawrouterctl`
-- `/usr/lib/clawrouter`
-- `/etc/clawrouter`
-- `/etc/clawrouter/clawrouter.env`
-- `/etc/clawrouter/database.secret`
-- `/var/lib/clawrouter`
-- `/var/log/clawrouter`
+- `/usr/lib/sdkwork/router`
+- `/etc/sdkwork/router`
+- `/etc/sdkwork/router/clawrouter.env`
+- `/etc/sdkwork/router/database.secret`
+- `/var/lib/sdkwork/router`
+- `/var/log/sdkwork/router`
 - `service` 包会安装 `/lib/systemd/system/clawrouter.service`
 
-Linux `.deb` payload 使用标准系统目录：不可变私有运行时文件位于 `/usr/lib/clawrouter`，公共运维命令位于 `/usr/bin`，服务配置位于 `/etc/clawrouter`，可变状态位于 `/var/lib/clawrouter`，日志位于 `/var/log/clawrouter`。服务配置文件和模板使用 `root:sdkwork`、`0640` 文件权限；`/etc/clawrouter`、`/var/lib/clawrouter` 和 `/var/log/clawrouter` 使用 `0750` 目录权限。
+Linux `.deb` payload 使用标准系统目录：不可变私有运行时文件位于 `/usr/lib/sdkwork/router`，公共运维命令位于 `/usr/bin`，服务配置位于 `/etc/sdkwork/router`，可变状态位于 `/var/lib/sdkwork/router`，日志位于 `/var/log/sdkwork/router`。服务配置文件和模板使用 `root:sdkwork`、`0640` 文件权限；`/etc/sdkwork/router`、`/var/lib/sdkwork/router` 和 `/var/log/sdkwork/router` 使用 `0750` 目录权限。
 
 如果服务启动时自动初始化数据库，请从日志中保存首次管理员密码：
 
@@ -253,7 +253,7 @@ sudo apt install ./clawrouter-linux-x64-desktop-0.3.0.deb
 /usr/bin/clawrouter
 ```
 
-`desktop` 模式使用当前 OS 用户的配置和数据目录，默认不要求 PostgreSQL。Linux desktop `.deb` 会把共享模板安装到 `/usr/share/clawrouter/config/clawrouter.toml.example`，不会创建 `/etc/clawrouter/clawrouter.toml`、`/etc/clawrouter/database.secret` 或 systemd 服务。
+`desktop` 模式使用当前 OS 用户的配置和数据目录，默认不要求 PostgreSQL。Linux desktop `.deb` 会把共享模板安装到 `/usr/share/sdkwork/router/config/clawrouter.toml.example`，不会创建 `/etc/sdkwork/router/clawrouter.toml`、`/etc/sdkwork/router/database.secret` 或 systemd 服务。
 
 ### Windows 桌面或服务文件
 
@@ -266,13 +266,13 @@ msiexec /i .\clawrouter-windows-x64-desktop-0.3.0.msi
 默认安装目录：
 
 ```text
-C:\Program Files\ClawRouter
+C:\Program Files\sdkwork\router
 ```
 
 初始化并启动。server/service 模式建议使用管理员 PowerShell，desktop 模式可使用普通 PowerShell：
 
 ```powershell
-Set-Location "C:\Program Files\ClawRouter"
+Set-Location "C:\Program Files\sdkwork\router"
 .\bin\clawrouterctl.exe ensure
 .\bin\clawrouterctl.exe refresh-catalog --force
 .\bin\clawrouter.exe
@@ -281,10 +281,10 @@ Set-Location "C:\Program Files\ClawRouter"
 生产或多节点 server/service 部署需要在受保护的服务环境或运行时 TOML 中配置 PostgreSQL：
 
 ```powershell
-$env:SDKWORK_CLAW_DATABASE_URL="postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router"
+$env:SDKWORK_CLAW_DATABASE_URL="postgresql://sdkworkprod%402026%2B%2B:<password>@db.example.com:5432/sdkwork_ai_prod"
 ```
 
-Windows `.msi` 会把程序二进制放在 `%ProgramFiles%/ClawRouter`，把共享模板放在 `%ProgramData%/SdkWork/ClawRouter`。原生安装清单会记录 service 模板、运行时 TOML、密码文件和数据目录继承 ProgramData ACL；desktop 运行时文件由当前用户初始化到 `%APPDATA%/SdkWork/ClawRouter` 和 `%LOCALAPPDATA%/SdkWork/ClawRouter`，使用当前用户 profile ACL。
+Windows `.msi` 会把程序二进制放在 `%ProgramFiles%/sdkwork/router`，把共享模板放在 `%ProgramData%/sdkwork/router`。原生安装清单会记录 service 模板、运行时 TOML、密码文件和数据目录继承 ProgramData ACL；desktop 运行时文件由当前用户初始化到 `%USERPROFILE%/.sdkwork/router/config` 和 `%USERPROFILE%/.sdkwork/router/data`，使用当前用户 profile ACL。
 
 ### macOS 桌面或服务文件
 
@@ -297,25 +297,25 @@ sudo installer -pkg clawrouter-macos-arm64-desktop-0.3.0.pkg -target /
 默认运行文件：
 
 ```text
-Binaries: /opt/clawrouter/bin
-Desktop config template: /usr/local/share/clawrouter/config/clawrouter.toml.example
-Desktop runtime config: ~/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml
-Service config template: /Library/Application Support/SdkWork/ClawRouter/clawrouter.toml.example
+Binaries: /opt/sdkwork/router/bin
+Desktop config template: /usr/local/share/sdkwork/router/config/clawrouter.toml.example
+Desktop runtime config: ~/.sdkwork/router/config/clawrouter.toml
+Service config template: /Library/Application Support/sdkwork/router/clawrouter.toml.example
 Service plist for service package: /Library/LaunchDaemons/com.sdkwork.clawrouter.plist
-Service runner for service package: /Library/Application Support/SdkWork/ClawRouter/service/macos/clawrouter-service-runner
+Service runner for service package: /Library/Application Support/sdkwork/router/service/macos/clawrouter-service-runner
 ```
 
 初始化并启动：
 
 ```bash
-/opt/clawrouter/bin/clawrouterctl ensure
-/opt/clawrouter/bin/clawrouterctl refresh-catalog --force
-/opt/clawrouter/bin/clawrouter
+/opt/sdkwork/router/bin/clawrouterctl ensure
+/opt/sdkwork/router/bin/clawrouterctl refresh-catalog --force
+/opt/sdkwork/router/bin/clawrouter
 ```
 
 macOS service 包由 launchd 启动 service runner。runner 会先执行 `clawrouterctl ensure` 和 `clawrouterctl refresh-catalog --force`，然后用 gateway 进程替换自身。
 
-macOS service 包会把服务运行文件安装到 `/Library/Application Support/SdkWork/ClawRouter`，使用 `root:wheel` 所有权；服务根目录为 `0750`，服务模板和复制出的运行时 TOML 为 `0640`，`/Library/LaunchDaemons/com.sdkwork.clawrouter.plist` 为 `0644`。macOS desktop 包仍把运行时配置放在当前用户的 Application Support 目录中。
+macOS service 包会把服务运行文件安装到 `/Library/Application Support/sdkwork/router`，使用 `root:wheel` 所有权；服务根目录为 `0750`，服务模板和复制出的运行时 TOML 为 `0640`，`/Library/LaunchDaemons/com.sdkwork.clawrouter.plist` 为 `0644`。macOS desktop 包仍把运行时配置放在当前用户的 Application Support 目录中。
 
 ### 可移植归档包
 
@@ -324,9 +324,9 @@ macOS service 包会把服务运行文件安装到 `/Library/Application Support
 Linux/macOS：
 
 ```bash
-mkdir -p /opt/clawrouter
-tar -xzf clawrouter-linux-x64-archive-0.3.0.tar.gz -C /opt/clawrouter
-cd /opt/clawrouter
+mkdir -p /opt/sdkwork/router
+tar -xzf clawrouter-linux-x64-archive-0.3.0.tar.gz -C /opt/sdkwork/router
+cd /opt/sdkwork/router
 cp .env.release.example .env.release.local
 editor .env.release.local
 ./bin/clawrouterctl ensure
@@ -337,8 +337,8 @@ editor .env.release.local
 Windows：
 
 ```powershell
-Expand-Archive .\clawrouter-windows-x64-archive-0.3.0.zip -DestinationPath C:\clawrouter
-Set-Location C:\clawrouter
+Expand-Archive .\clawrouter-windows-x64-archive-0.3.0.zip -DestinationPath C:\sdkwork\router
+Set-Location C:\sdkwork\router
 Copy-Item .env.release.example .env.release.local
 notepad .env.release.local
 .\bin\clawrouterctl.exe ensure
@@ -367,19 +367,21 @@ release 包包含运行 Claw Router 所需文件：
 
 `archive` 和 `container` release 资产仍然是可移植 `.tar.gz` 或 `.zip`。
 
-每个包的 `install-manifest.json` 都包含 `installConfiguration`，记录运行时 TOML、模板、数据库策略、必填字段、密码路径、首次启动命令和后续步骤。原生安装包还包含 `nativeInstall`，用机器可读方式描述最终安装布局，例如 `/usr/bin/clawrouter`、`/usr/lib/clawrouter/portal/dist`、`/etc/clawrouter/clawrouter.toml`、`/etc/clawrouter/database.secret`、`/lib/systemd/system/clawrouter.service`、服务启动策略、权限和运维命令。部署自动化应读取这些字段，而不是解析 `INSTALL.md`。
+每个包的 `install-manifest.json` 都包含 `installConfiguration`，记录运行时 TOML、模板、数据库策略、必填字段、密码路径、首次启动命令和后续步骤。原生安装包还包含 `nativeInstall`，用机器可读方式描述最终安装布局，例如 `/usr/bin/clawrouter`、`/usr/lib/sdkwork/router/portal/dist`、`/etc/sdkwork/router/clawrouter.toml`、`/etc/sdkwork/router/database.secret`、`/lib/systemd/system/clawrouter.service`、服务启动策略、权限和运维命令。部署自动化应读取这些字段，而不是解析 `INSTALL.md`。
 
-不要把 `.env.release.local` 打包或提交。归档部署可以在目标机器上生成它；Linux service 部署使用 `/etc/clawrouter/clawrouter.env` 保存受保护的进程覆盖项，并使用 `/etc/clawrouter/clawrouter.toml` 作为主要运行时配置。`PORTAL_PUBLIC_*` 只能放浏览器可见配置，不要放数据库密码、供应商密钥或管理员凭据。
+不要把 `.env.release.local` 打包或提交。归档部署可以在目标机器上生成它；Linux service 部署使用 `/etc/sdkwork/router/clawrouter.env` 保存受保护的进程覆盖项，并使用 `/etc/sdkwork/router/clawrouter.toml` 作为主要运行时配置。`PORTAL_PUBLIC_*` 只能放浏览器可见配置，不要放数据库密码、供应商密钥或管理员凭据。
 
 ## 4. 数据库策略
 
 `desktop` 包默认使用 SQLite：
 
 ```text
-Windows: %LOCALAPPDATA%/SdkWork/ClawRouter/clawrouter.sqlite
-Linux: ${XDG_DATA_HOME:-~/.local/share}/clawrouter/clawrouter.sqlite
-macOS: ~/Library/Application Support/SdkWork/ClawRouter/clawrouter.sqlite
+Windows: %USERPROFILE%/.sdkwork/router/data/clawrouter.sqlite
+Linux: ~/.sdkwork/router/data/clawrouter.sqlite
+macOS: ~/.sdkwork/router/data/clawrouter.sqlite
 ```
+
+Desktop SQLite policy is independent from the workspace PostgreSQL development profile used by `pnpm dev`.
 
 `archive`、`service`、`container` 包默认使用 PostgreSQL。请在 TOML 中配置 `host`、`port`、`database`、`username`，并使用 `password_file` 或受保护的 `password`。生产环境优先使用 `password_file`。
 
@@ -393,7 +395,7 @@ port = 6379
 database = 0
 # username = "default"
 # url = "redis://redis.example.com:6379/0"
-# password_file = "/etc/clawrouter/redis.secret"
+# password_file = "/etc/sdkwork/router/redis.secret"
 # password = "change-me"
 key_prefix = "clawrouter"
 tls = false
@@ -403,7 +405,7 @@ command_timeout_millis = 1000
 pool_idle_timeout_seconds = 60
 ```
 
-server 部署保持 `[redis].enabled = true`，首次启动前配置 `host`、`port`、`database`；只有托管 Redis 端点无法用分离字段清晰表达时，才使用 `url` 作为高级覆盖。优先使用 `password_file`，不要把密码直接写入普通配置文件。Linux service 安装使用 `/etc/clawrouter/redis.secret`；container 包使用 `/run/secrets/clawrouter-redis-password` 挂载。desktop 包仍保持 Redis 可选且默认关闭。
+server 部署保持 `[redis].enabled = true`，首次启动前配置 `host`、`port`、`database`；只有托管 Redis 端点无法用分离字段清晰表达时，才使用 `url` 作为高级覆盖。优先使用 `password_file`，不要把密码直接写入普通配置文件。Linux service 安装使用 `/etc/sdkwork/router/redis.secret`；container 包使用 `/run/secrets/sdkwork/router/redis-password` 挂载。desktop 包仍保持 Redis 可选且默认关闭。
 
 `[edge]` 负责打包后的 Rust edge server、上游服务目标、portal 静态资源目录、上游超时和额外 CORS origin allowlist。同源打包部署保持 `cors_allowed_origins` 为空；只有外部可信 portal 或 CDN 必须从不同浏览器 origin 调用 edge API 时，才填写明确的 HTTP/HTTPS origin。通配符和带 path 的 origin 会被拒绝。`[portal.static]` 将 HTML/runtime env 的 no-store 响应与长期缓存的 hash 静态资源分离。`[portal.security]` 控制浏览器侧安全策略；只有公网主机名已经通过 HTTPS 访问时才启用 HSTS，启用 preload 时保持 `hsts_max_age_seconds >= 31536000` 且 `hsts_include_subdomains = true`。`csp_frame_src` 只填写允许 portal 嵌入的明确信任 HTTP/HTTPS origin。`[portal.tools]` 将可选工具 API 的请求体限制和限流放在 TOML 中。`[provider_relay.runtime]` 控制 OpenAI-compatible 上游响应超时和渠道健康检查超时。`[provider_relay.retry]` 是数据库路由渠道未单独定义 retry policy 时使用的默认重试策略。`[courses]` 控制本地课程视频上传大小；反向代理、容器 ingress 和负载均衡的请求体限制应不低于 `video_upload_body_limit_bytes`。`[request_limits]` 控制后台应用 JSON、后台技能 JSON、公开论坛 JSON 和支付回调请求体限制；负载均衡、反向代理和容器 ingress 的限制应与这些值保持一致。`[observability]` 负责生产日志默认策略：`log_filter` 是 tracing 过滤器，`log_format` 可选 `compact`、`json`、`pretty` 或 `full`，systemd 和 container 日志建议保持 `log_ansi = false`，target/thread 字段控制输出的日志元信息；`RUST_LOG` 只建议作为临时进程级覆盖。
 
@@ -440,9 +442,9 @@ Linux 原生 `.deb` 安装路径：
 macOS 原生 `.pkg` desktop 安装路径：
 
 ```bash
-/opt/clawrouter/bin/clawrouterctl status
-/opt/clawrouter/bin/clawrouterctl ensure
-/opt/clawrouter/bin/clawrouterctl refresh-catalog --force
+/opt/sdkwork/router/bin/clawrouterctl status
+/opt/sdkwork/router/bin/clawrouterctl ensure
+/opt/sdkwork/router/bin/clawrouterctl refresh-catalog --force
 ```
 
 初始化命令输出 JSON。首次成功安装可能包含：
@@ -536,12 +538,12 @@ curl https://api.sdkwork.com/readyz
 示例：
 
 ```bash
-tar -xzf clawrouter-linux-x64-container-0.3.0.tar.gz -C /opt/clawrouter
-cd /opt/clawrouter
+tar -xzf clawrouter-linux-x64-container-0.3.0.tar.gz -C /opt/sdkwork/router
+cd /opt/sdkwork/router
 docker build -f container/Containerfile -t clawrouter:0.3.0 .
 docker run --rm -p 3900:3900 \
-  -v "$PWD/config/clawrouter.toml.example:/etc/clawrouter/clawrouter.toml:ro" \
-  -v "$PWD/secrets/postgres-password:/run/secrets/clawrouter-postgres-password:ro" \
+  -v "$PWD/config/clawrouter.toml.example:/etc/sdkwork/router/clawrouter.toml:ro" \
+  -v "$PWD/secrets/postgres-password:/run/secrets/sdkwork/router/postgres-password:ro" \
   clawrouter:0.3.0
 ```
 
@@ -553,7 +555,7 @@ docker run --rm -p 3900:3900 \
 2. 备份数据库和运行时配置。
 3. 停止旧版本服务。
 4. 安装或解压新 release 包。
-5. 保留目标机器上的 `/etc/clawrouter/clawrouter.env`、`/etc/clawrouter/database.secret`、归档部署可能使用的 `.env.release.local` 和运行时 TOML。
+5. 保留目标机器上的 `/etc/sdkwork/router/clawrouter.env`、`/etc/sdkwork/router/database.secret`、归档部署可能使用的 `.env.release.local` 和运行时 TOML。
 6. Linux service 包直接启动服务，让 systemd 自动执行 `ensure` 和 `refresh-catalog --force`。
 7. archive/manual 部署手动执行 `clawrouterctl ensure` 和 `clawrouterctl refresh-catalog --force`。
 8. 启动新版本并检查 `/healthz` 和 `/readyz`。
@@ -567,4 +569,4 @@ docker run --rm -p 3900:3900 \
 - `catalog_error`：模型目录路径、版本或内容校验失败。
 - `commerce_error`：Commerce bootstrap schema 或种子数据初始化失败。
 - `/healthz` 成功但 `/readyz` 失败：edge 进程已启动，但 gateway/admin/app/portal upstream 或数据库未就绪。
-- Linux 服务启动后立即退出：检查 `/etc/clawrouter/clawrouter.toml`、`/etc/clawrouter/database.secret`、`/etc/clawrouter/clawrouter.env` 和 `journalctl -u clawrouter`。
+- Linux 服务启动后立即退出：检查 `/etc/sdkwork/router/clawrouter.toml`、`/etc/sdkwork/router/database.secret`、`/etc/sdkwork/router/clawrouter.env` 和 `journalctl -u clawrouter`。

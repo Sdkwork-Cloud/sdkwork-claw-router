@@ -52,36 +52,6 @@ public class SitesApi {
         return client.convertValue(raw, new TypeReference<HealthCheckCreateResult>() {});
     }
 
-    /** List site models */
-    public SiteModelsListResult siteModelsList(String siteId) throws Exception {
-        Object raw = client.get(ApiPaths.backendPath("/sites/" + serializePathParameter(siteId, new PathParameterSpec("siteId", "simple", false)) + "/models"));
-        return client.convertValue(raw, new TypeReference<SiteModelsListResult>() {});
-    }
-
-    /** Create site model */
-    public SiteModelsCreateResult siteModelsCreate(String siteId, AdminSiteModelCreateRequest body) throws Exception {
-        Object raw = client.post(ApiPaths.backendPath("/sites/" + serializePathParameter(siteId, new PathParameterSpec("siteId", "simple", false)) + "/models"), body, null, null, "application/json");
-        return client.convertValue(raw, new TypeReference<SiteModelsCreateResult>() {});
-    }
-
-    /** Replace site models */
-    public SiteModelsReplaceResult siteModelsReplace(String siteId, AdminSiteModelsReplaceRequest body) throws Exception {
-        Object raw = client.put(ApiPaths.backendPath("/sites/" + serializePathParameter(siteId, new PathParameterSpec("siteId", "simple", false)) + "/models"), body, null, null, "application/json");
-        return client.convertValue(raw, new TypeReference<SiteModelsReplaceResult>() {});
-    }
-
-    /** Delete site model */
-    public SiteModelsDeleteResult siteModelsDelete(String siteId, String siteModelId) throws Exception {
-        Object raw = client.delete(ApiPaths.backendPath("/sites/" + serializePathParameter(siteId, new PathParameterSpec("siteId", "simple", false)) + "/models/" + serializePathParameter(siteModelId, new PathParameterSpec("siteModelId", "simple", false)) + ""));
-        return client.convertValue(raw, new TypeReference<SiteModelsDeleteResult>() {});
-    }
-
-    /** Update site model */
-    public SiteModelsUpdateResult siteModelsUpdate(String siteId, String siteModelId, AdminSiteModelUpdateRequest body) throws Exception {
-        Object raw = client.patch(ApiPaths.backendPath("/sites/" + serializePathParameter(siteId, new PathParameterSpec("siteId", "simple", false)) + "/models/" + serializePathParameter(siteModelId, new PathParameterSpec("siteModelId", "simple", false)) + ""), body, null, null, "application/json");
-        return client.convertValue(raw, new TypeReference<SiteModelsUpdateResult>() {});
-    }
-
     /** Test site connection */
     public TestConnectionCreateResult testConnectionCreate(String siteId, AdminSiteActionRequest body) throws Exception {
         Object raw = client.post(ApiPaths.backendPath("/sites/" + serializePathParameter(siteId, new PathParameterSpec("siteId", "simple", false)) + "/test_connection"), body, null, null, "application/json");

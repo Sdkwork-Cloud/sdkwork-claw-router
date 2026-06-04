@@ -590,6 +590,14 @@ const paymentAggregateSpec = JSON.parse(readFileSync(
   new URL("../../crates/sdkwork-claw-http/specs/payment-aggregate-openapi.json", import.meta.url),
   "utf8",
 ));
+const paasSpec = JSON.parse(readFileSync(
+  new URL("../../crates/sdkwork-claw-http/specs/paas-openapi.json", import.meta.url),
+  "utf8",
+));
+const cloudStorageSpec = JSON.parse(readFileSync(
+  new URL("../../crates/sdkwork-claw-http/specs/cloud-services-openapi.json", import.meta.url),
+  "utf8",
+));
 
 test("api reference schema tabs sort by backend order and keep schema urls", () => {
   const tabs: ApiSchemaTab[] = [
@@ -621,24 +629,90 @@ test("api reference builds one system per backend schema tab", async () => {
   assert.equal(systems[1].categories[0].endpoints[0].path, "/app/v3/api/ai/models");
 });
 
-test("api reference loads available payment aggregate schema before planned cloud and app", async () => {
+test("api reference loads available payment aggregate, paas, cloud storage and app schemas", async () => {
   const manifest: ApiSchemaTabsDocument = {
     cacheTtlSeconds: 30,
     tabs: [
       {
         id: "app",
         name: "App API",
-        order: 40,
+        order: 50,
         schemaUrls: ["/app/v3/api/openapi.json"],
         defaultSchemaUrl: "/app/v3/api/openapi.json",
       },
       {
+        id: "paas-api",
+        name: "PaaS API",
+        order: 30,
+        schemaUrls: ["/paas/v3/openapi.json"],
+        defaultSchemaUrl: "/paas/v3/openapi.json",
+        status: "available",
+        description: "PaaS aggregation APIs cover OCR, face verification, content safety, and document intelligence.",
+        serviceGroups: [
+          {
+            code: "ocr",
+            name: "OCR识别",
+            providerCodes: ["baidu", "alibaba", "tencent"],
+            operations: ["general_text", "document_text", "id_card", "bank_card", "business_license"],
+          },
+          {
+            code: "face_compare",
+            name: "人脸比对",
+            providerCodes: ["baidu", "alibaba", "tencent"],
+            operations: ["one_to_one", "one_to_many", "quality_check"],
+          },
+          {
+            code: "face_liveness_verification",
+            name: "人脸核身",
+            providerCodes: ["baidu", "alibaba", "tencent"],
+            operations: ["liveness_detection", "id_verification", "video_liveness"],
+          },
+          {
+            code: "content_moderation",
+            name: "内容安全",
+            providerCodes: ["baidu", "alibaba", "tencent"],
+            operations: ["image_moderation", "text_moderation", "audio_moderation", "video_moderation"],
+          },
+        ],
+      },
+      {
         id: "cloud-services",
         name: "基础云服务API",
-        order: 30,
-        schemaUrls: [],
-        status: "planned",
-        description: "Object storage and SMS aggregation APIs are planned.",
+        order: 40,
+        schemaUrls: ["/cloud/v3/openapi.json"],
+        defaultSchemaUrl: "/cloud/v3/openapi.json",
+        status: "available",
+        description: "S3-compatible object storage APIs expose bucket, object, multipart, presigned URL, and browser SDK config contracts.",
+        serviceGroups: [
+          {
+            code: "object_storage",
+            name: "S3 Object Storage",
+            description: "S3-compatible cloud object storage.",
+            providerCodes: ["aws_s3", "minio", "cloudflare_r2", "aliyun_oss", "tencent_cos", "huawei_obs", "volcengine_tos", "baidu_bos"],
+            operations: ["s3_bucket_list", "s3_bucket_create", "s3_bucket_acl", "s3_bucket_tagging", "s3_object_list", "s3_object_put", "s3_object_batch_delete", "s3_object_acl", "s3_object_tagging", "s3_multipart_upload", "s3_multipart_upload_list", "s3_presigned_url", "s3_presigned_post", "s3_browser_sdk_config", "s3_temporary_credentials", "s3_checksum", "s3_server_side_encryption"],
+          },
+          {
+            code: "cloud_compute",
+            name: "Cloud Compute",
+            description: "Unified IaaS compute lifecycle APIs.",
+            providerCodes: ["aws_ec2", "azure_compute", "gcp_compute", "alicloud_ecs", "tencent_cvm", "huawei_ecs", "volcengine_ecs"],
+            operations: ["compute_instance_list", "compute_instance_create", "compute_instance_lifecycle", "compute_instance_resize", "compute_image_list", "compute_flavor_list", "compute_ssh_key", "compute_security_group", "compute_volume"],
+          },
+          {
+            code: "container_runtime",
+            name: "Container Runtime",
+            description: "Provider-backed container runtime APIs.",
+            providerCodes: ["aws_ec2", "azure_compute", "gcp_compute", "alicloud_ecs", "tencent_cvm", "huawei_ecs", "volcengine_ecs"],
+            operations: ["container_create", "container_actions"],
+          },
+          {
+            code: "deployment_orchestration",
+            name: "Deployment Orchestration",
+            description: "Cloud deployment application, release, and rollout APIs.",
+            providerCodes: ["aws_ec2", "azure_compute", "gcp_compute", "alicloud_ecs", "tencent_cvm", "huawei_ecs", "volcengine_ecs"],
+            operations: ["deployment_application", "deployment_release", "deployment_rollout"],
+          },
+        ],
       },
       {
         id: "gateway",
@@ -664,12 +738,14 @@ test("api reference loads available payment aggregate schema before planned clou
     requested.push(url);
     if (url === "/openapi.json") return gatewaySpec;
     if (url === "/payments/v3/openapi.json") return paymentAggregateSpec;
+    if (url === "/paas/v3/openapi.json") return paasSpec;
+    if (url === "/cloud/v3/openapi.json") return cloudStorageSpec;
     if (url === "/app/v3/api/openapi.json") return appSpec;
     throw new Error(`unexpected schema fetch ${url}`);
   });
 
-  assert.deepEqual(systems.map((system) => system.id), ["gateway", "payment-aggregate", "cloud-services", "app"]);
-  assert.deepEqual(requested, ["/openapi.json", "/payments/v3/openapi.json", "/app/v3/api/openapi.json"]);
+  assert.deepEqual(systems.map((system) => system.id), ["gateway", "payment-aggregate", "paas-api", "cloud-services", "app"]);
+  assert.deepEqual(requested, ["/openapi.json", "/payments/v3/openapi.json", "/paas/v3/openapi.json", "/cloud/v3/openapi.json", "/app/v3/api/openapi.json"]);
   assert.equal(getApiSystemDisplayName(systems[0]), "AI聚合API");
   assert.equal(systems[0].requestBaseUrl, "/v1");
   assert.equal(systems[1].status, "available");
@@ -681,12 +757,50 @@ test("api reference loads available payment aggregate schema before planned clou
   assert.equal(paymentEndpointIds.includes("paymentIntents.capture"), true);
   assert.equal(paymentEndpointIds.includes("paymentReconciliationTasks.differences.list"), true);
   assert.equal(paymentEndpointIds.includes("paymentWebhooks.events.create"), true);
-  assert.equal(systems[2].status, "planned");
-  assert.equal(systems[2].schemaUrl, "");
-  assert.equal(systems[2].requestBaseUrl, "");
-  assert.equal(systems[2].categories.length, 0);
-  assert.equal(getDefaultApiReferenceEndpoint(systems[2]), null);
-  assert.equal(systems[3].requestBaseUrl, "/app/v3/api");
+  assert.equal(systems[2].status, "available");
+  assert.equal(systems[2].schemaUrl, "/paas/v3/openapi.json");
+  assert.equal(systems[2].requestBaseUrl, "/paas/v3");
+  assert.equal(systems[2].categories.some((category) => category.name === "PaaS/OCR"), true);
+  assert.equal(systems[2].categories.some((category) => category.name === "PaaS/Face"), true);
+  assert.deepEqual(systems[2].serviceGroups.map((group) => group.code), ["ocr", "face_compare", "face_liveness_verification", "content_moderation"]);
+  assert.deepEqual(systems[2].serviceGroups[0].providerCodes, ["baidu", "alibaba", "tencent"]);
+  assert.deepEqual(systems[2].serviceGroups[1].operations, ["one_to_one", "one_to_many", "quality_check"]);
+  assert.equal(getDefaultApiReferenceEndpoint(systems[2])?.path, "/paas/v3/ocr/recognitions");
+  const paasSidebar = buildApiCategorySidebarTree(systems[2].categories);
+  const paasRoot = paasSidebar.find((node) => node.fullName === "PaaS");
+  assert.deepEqual(paasRoot?.children.slice(0, 2).map((node) => node.fullName), ["PaaS/OCR", "PaaS/Face"]);
+  assert.equal(systems[3].status, "available");
+  assert.equal(systems[3].schemaUrl, "/cloud/v3/openapi.json");
+  assert.equal(systems[3].requestBaseUrl, "/cloud/v3");
+  assert.equal(systems[3].openApiSpec?.["x-s3-compatible"], true);
+  assert.equal(systems[3].categories.some((category) => category.name === "Cloud Storage/S3 Buckets"), true);
+  assert.equal(systems[3].categories.some((category) => category.name === "Cloud Storage/S3 Presigned"), true);
+  assert.equal(systems[3].categories.some((category) => category.name === "Cloud IaaS/Compute Instances"), true);
+  assert.equal(systems[3].categories.some((category) => category.name === "Cloud IaaS/Containers"), true);
+  assert.equal(systems[3].categories.some((category) => category.name === "Cloud IaaS/Deployments"), true);
+  assert.deepEqual(systems[3].serviceGroups.map((group) => group.code), ["object_storage", "cloud_compute", "container_runtime", "deployment_orchestration"]);
+  assert.deepEqual(systems[3].serviceGroups[0].providerCodes, ["aws_s3", "minio", "cloudflare_r2", "aliyun_oss", "tencent_cos", "huawei_obs", "volcengine_tos", "baidu_bos"]);
+  assert.equal(systems[3].serviceGroups[0].operations.includes("s3_object_batch_delete"), true);
+  assert.equal(systems[3].serviceGroups[0].operations.includes("s3_server_side_encryption"), true);
+  assert.deepEqual(systems[3].serviceGroups[1].providerCodes, ["aws_ec2", "azure_compute", "gcp_compute", "alicloud_ecs", "tencent_cvm", "huawei_ecs", "volcengine_ecs"]);
+  assert.equal(systems[3].serviceGroups[1].operations.includes("compute_instance_create"), true);
+  assert.equal(systems[3].serviceGroups[1].operations.includes("compute_volume"), true);
+  assert.equal(systems[3].serviceGroups[2].operations.includes("container_actions"), true);
+  assert.equal(systems[3].serviceGroups[3].operations.includes("deployment_release"), true);
+  const cloudEndpointIds = systems[3].categories.flatMap((category) => category.endpoints.map((endpoint) => endpoint.id));
+  assert.equal(cloudEndpointIds.includes("cloudStorageBuckets.acl.retrieve"), true);
+  assert.equal(cloudEndpointIds.includes("cloudStorageObjects.batchDelete"), true);
+  assert.equal(cloudEndpointIds.includes("cloudStorageMultipartUploads.list"), true);
+  assert.equal(cloudEndpointIds.includes("cloudIaasComputeInstances.create"), true);
+  assert.equal(cloudEndpointIds.includes("cloudIaasContainers.actions.invoke"), true);
+  assert.equal(cloudEndpointIds.includes("cloudIaasDeploymentReleases.create"), true);
+  assert.equal(getDefaultApiReferenceEndpoint(systems[3])?.path, "/cloud/v3/storage/providers");
+  const cloudSidebar = buildApiCategorySidebarTree(systems[3].categories);
+  const cloudRoot = cloudSidebar.find((node) => node.fullName === "Cloud Storage");
+  assert.deepEqual(cloudRoot?.children.slice(0, 3).map((node) => node.fullName), ["Cloud Storage/S3 Providers", "Cloud Storage/S3 SDK", "Cloud Storage/S3 Buckets"]);
+  const cloudIaasRoot = cloudSidebar.find((node) => node.fullName === "Cloud IaaS");
+  assert.deepEqual(cloudIaasRoot?.children.slice(0, 3).map((node) => node.fullName), ["Cloud IaaS/Providers", "Cloud IaaS/Regions", "Cloud IaaS/Compute Instances"]);
+  assert.equal(systems[4].requestBaseUrl, "/app/v3/api");
 });
 
 test("api reference systems derive request base urls per API surface", async () => {
@@ -765,6 +879,9 @@ test("api reference page renders planned API groups as planned empty states", ()
   assert.equal(source.includes("activeSystemData?.status === 'planned'"), true);
   assert.equal(source.includes("system.status === 'planned'"), true);
   assert.equal(source.includes("api.planned.title"), true);
+  assert.equal(source.includes("activeSystemData?.serviceGroups.length"), true);
+  assert.equal(source.includes("group.providerCodes.map"), true);
+  assert.equal(source.includes("group.operations.join"), true);
 });
 
 test("api reference endpoint view and playground use system request base urls instead of global API base url", () => {
@@ -1369,13 +1486,14 @@ test("sdk reference reuses schema tabs and maps tabs to generated SDK metadata",
     cacheTtlSeconds: 30,
     tabs: [
       { id: "payment-aggregate", name: "支付聚合API", order: 20, schemaUrls: ["/payments/v3/openapi.json"], defaultSchemaUrl: "/payments/v3/openapi.json", status: "available" },
-      { id: "cloud-services", name: "基础云服务API", order: 30, schemaUrls: [], status: "planned" },
+      { id: "cloud-services", name: "基础云服务API", order: 30, schemaUrls: ["/cloud/v3/openapi.json"], defaultSchemaUrl: "/cloud/v3/openapi.json", status: "available" },
       { id: "app", name: "App API", order: 40, schemaUrls: ["/app/v3/api/openapi.json"], defaultSchemaUrl: "/app/v3/api/openapi.json" },
       { id: "backend", name: "Backend API", order: 50, schemaUrls: ["/backend/v3/api/openapi.json"], defaultSchemaUrl: "/backend/v3/api/openapi.json" },
     ],
   };
 
   const systems = await buildSdkReferenceSystems(manifest, async (url) => {
+    if (url === "/cloud/v3/openapi.json") return cloudStorageSpec;
     if (url === "/app/v3/api/openapi.json") return appSpec;
     if (url === "/backend/v3/api/openapi.json") {
       return {
@@ -1394,10 +1512,20 @@ test("sdk reference reuses schema tabs and maps tabs to generated SDK metadata",
     throw new Error(`unexpected sdk reference url ${url}`);
   });
 
-  assert.deepEqual(systems.map((system) => system.id), ["app", "backend"]);
-  assert.equal(systems[0].categories[0].endpoints[0].path, "/app/v3/api/ai/models");
+  assert.deepEqual(systems.map((system) => system.id), ["cloud-services", "app", "backend"]);
+  assert.equal(systems[0].schemaUrl, "/cloud/v3/openapi.json");
+  assert.equal(systems[0].requestBaseUrl, "/cloud/v3");
+  assert.equal(systems[0].categories.some((category) => category.name === "Cloud Storage/S3 Buckets"), true);
+  assert.equal(systems[1].categories[0].endpoints[0].path, "/app/v3/api/ai/models");
+  assert.equal(getGeneratedSdkMetadataForSystem("cloud-services").packageName, "@sdkwork/clawrouter-cloud-services-sdk");
   assert.equal(getGeneratedSdkMetadataForSystem("app").packageName, "@sdkwork/clawrouter-app-sdk");
   assert.equal(getGeneratedSdkMetadataForSystem("backend").packageName, "@sdkwork/clawrouter-backend-sdk");
+
+  const cloudConfig = createGeneratedSdkToolConfig("cloud-services", "typescript", "/cloud/v3/openapi.json");
+  assert.equal(cloudConfig.sdkType, "cloud-services");
+  assert.equal(cloudConfig.apiSpecPath, "/cloud/v3/openapi.json");
+  assert.equal(cloudConfig.baseUrl, "/cloud/v3");
+  assert.equal(cloudConfig.packageName, "@sdkwork/clawrouter-cloud-services-sdk");
 
   const config = createGeneratedSdkToolConfig("backend", "typescript", "/backend/v3/api/openapi.json");
   assert.equal(config.sdkType, "backend");

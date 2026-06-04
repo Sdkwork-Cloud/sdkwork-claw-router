@@ -46,28 +46,30 @@ class AiRoutingSeedBundleStandardTest(unittest.TestCase):
         sections = manifest["sections"]
         self.assertGreaterEqual(len(sections["resources"]), 3)
         self.assertGreaterEqual(len(sections["resourceGroups"]), 2)
-        self.assertGreaterEqual(len(sections["channelEndpointTemplates"]), 2)
+        self.assertNotIn(
+            "channelEndpointTemplates",
+            sections,
+            "routing seed should not carry channel endpoint templates after endpoint routing was removed",
+        )
+        self.assertFalse(
+            (AI_ROUTING_ROOT / "channel-endpoint-templates").exists(),
+            "routing seed data should not keep obsolete channel endpoint template files",
+        )
 
         resources = load_section_items("resources", sections["resources"])
         groups = load_section_items("resource-groups", sections["resourceGroups"])
-        templates = load_section_items(
-            "channel-endpoint-templates", sections["channelEndpointTemplates"]
-        )
 
         route_keys, api_codes = route_taxonomy_codes()
         resource_codes = unique_values(
             (item["resourceCode"] for item in resources), "resourceCode"
         )
         group_codes = unique_values((item["groupCode"] for item in groups), "groupCode")
-        template_codes = unique_values(
-            (item["templateCode"] for item in templates), "templateCode"
-        )
 
         self.assertIn("api.openai.responses", resource_codes)
         self.assertIn("api.openai.chat_completions", resource_codes)
         self.assertIn("api.openai.images.generations", resource_codes)
         self.assertIn("api.openai.audio.transcriptions", resource_codes)
-        self.assertIn("api.openai.codex.responses", resource_codes)
+        self.assertIn("api.openai.codex", resource_codes)
         self.assertIn("api.anthropic.claude_code", resource_codes)
         self.assertIn("api.gemini.generate_content", resource_codes)
         self.assertIn("api.gemini.nano_banana.image_generation", resource_codes)
@@ -106,15 +108,6 @@ class AiRoutingSeedBundleStandardTest(unittest.TestCase):
                         self.assertIn(item["resourceCode"], resource_codes)
                     else:
                         self.assertIn(item["groupCode"], group_codes)
-
-        for template in templates:
-            with self.subTest(template=template.get("templateCode")):
-                self.assertIn(template["templateCode"], template_codes)
-                self.assertIn(template["apiCode"], api_codes | route_keys)
-                self.assertTrue(template["pathTemplate"].startswith("/"))
-                self.assertIn(template["method"], {"GET", "POST", "DELETE"})
-                self.assertGreater(template["timeoutMs"], 0)
-                self.assertIn(template["capability"], template["capabilities"])
 
     def test_official_and_relay_resource_groups_cover_vendor_native_api_codes(self) -> None:
         manifest = read_json(AI_ROUTING_ROOT / "install-manifest.json")
@@ -160,7 +153,8 @@ class AiRoutingSeedBundleStandardTest(unittest.TestCase):
             for item in resources
             if item["resourceType"] == "api_endpoint"
             and (
-                item["resourceCode"].startswith("api.openai.codex.")
+                item["resourceCode"] == "api.openai.codex"
+                or item["resourceCode"].startswith("api.openai.codex.")
                 or item["resourceCode"]
                 in {"api.openai.containers", "api.openai.skills"}
             )
@@ -225,26 +219,15 @@ class AiRoutingSeedBundleStandardTest(unittest.TestCase):
                 self.assertIn(token, ai_seed)
         self.assertIn("validate_bundle_kind", ai_seed)
 
-    def test_every_api_endpoint_resource_has_endpoint_seed_and_template_metadata(self) -> None:
+    def test_api_endpoint_resources_do_not_require_channel_endpoint_templates(self) -> None:
         manifest = read_json(AI_ROUTING_ROOT / "install-manifest.json")
         sections = manifest["sections"]
         resources = load_section_items("resources", sections["resources"])
-        templates = load_section_items(
-            "channel-endpoint-templates", sections["channelEndpointTemplates"]
-        )
         api_endpoint_resources = [
             item for item in resources if item["resourceType"] == "api_endpoint"
         ]
-        resource_api_codes = unique_values(
+        unique_values(
             (item["apiCode"] for item in api_endpoint_resources), "api endpoint apiCode"
-        )
-        template_api_codes = unique_values(
-            (item["apiCode"] for item in templates), "channel endpoint template apiCode"
-        )
-        self.assertEqual(
-            resource_api_codes,
-            template_api_codes,
-            "channel endpoint template metadata must cover every bundled API endpoint resource",
         )
 
         ai_seed = (
@@ -256,16 +239,16 @@ class AiRoutingSeedBundleStandardTest(unittest.TestCase):
             / "sql"
             / "ai_routing_seed.rs"
         ).read_text(encoding="utf-8")
-        self.assertIn("endpoint_definitions(catalog)", ai_seed)
         self.assertIn("api_endpoint_resources(catalog)", ai_seed)
-        self.assertRegex(
+        self.assertNotIn(
+            "ChannelEndpointTemplate",
             ai_seed,
-            r"fn expected_endpoint_codes\(catalog: &AiRoutingSeedCatalog\) -> BTreeSet<String>",
+            "AI routing seed should derive API metadata from resources, not endpoint templates",
         )
         self.assertNotIn(
-            "catalog\n        .channel_endpoint_templates\n        .iter()\n        .map(|item| item.api_code.clone())",
+            "ai_channel_endpoint",
             ai_seed,
-            "seed completeness must be based on API resources, not template-only coverage",
+            "AI routing seed should not write channel endpoint rows",
         )
 
     def test_api_endpoint_resources_are_classified_for_resource_pricing(self) -> None:
@@ -387,29 +370,56 @@ class AiRoutingSeedBundleStandardTest(unittest.TestCase):
         )
         self.assertIn('unwrap_or("")', ai_seed)
 
-    def test_sql_runtime_snapshot_recognizes_every_seeded_api_code(self) -> None:
-        manifest = read_json(AI_ROUTING_ROOT / "install-manifest.json")
-        resources = load_section_items("resources", manifest["sections"]["resources"])
-        api_codes = sorted(
-            {
-                item["apiCode"]
-                for item in resources
-                if item["resourceType"] == "api_endpoint"
-            }
-        )
+    def test_ai_routing_seed_uuid_generation_fits_database_uuid_column(self) -> None:
+        ai_seed = (
+            ROOT
+            / "services"
+            / "sdkwork-claw-product"
+            / "src"
+            / "infrastructure"
+            / "sql"
+            / "ai_routing_seed.rs"
+        ).read_text(encoding="utf-8")
+
+        self.assertIn("const MAX_SEED_UUID_LENGTH: usize = 64;", ai_seed)
+        self.assertIn("let digest_chars = MAX_SEED_UUID_LENGTH - prefix.len() - 1;", ai_seed)
+        self.assertNotIn("hex::encode(&digest[..20])", ai_seed)
+
+    def test_postgres_default_channel_seed_casts_text_backed_identity_parameters(self) -> None:
+        ai_seed = (
+            ROOT
+            / "services"
+            / "sdkwork-claw-product"
+            / "src"
+            / "infrastructure"
+            / "sql"
+            / "ai_routing_seed.rs"
+        ).read_text(encoding="utf-8")
+
+        self.assertIn("$2::bigint, $3::bigint", ai_seed)
+        self.assertIn("WHERE c.tenant_id = $13::bigint", ai_seed)
+        self.assertIn("AND c.organization_id = $14::bigint", ai_seed)
+        self.assertIn("WHERE tenant_id = $1::bigint", ai_seed)
+        self.assertIn("AND organization_id = $2::bigint", ai_seed)
+        self.assertIn("WHERE c.tenant_id = $1::bigint", ai_seed)
+        self.assertIn("AND c.organization_id = $2::bigint", ai_seed)
+
+    def test_sql_runtime_snapshot_loads_api_codes_from_resource_scopes(self) -> None:
         query_sources = {
             "postgres": SNAPSHOT_QUERY_SOURCE.read_text(encoding="utf-8"),
             "sqlite": SQLITE_QUERY_SOURCE.read_text(encoding="utf-8"),
         }
 
-        for api_code in api_codes:
-            for runtime, snapshot_source in query_sources.items():
-                with self.subTest(runtime=runtime, api_code=api_code):
-                    self.assertIn(
-                        api_code,
-                        snapshot_source,
-                        "runtime pricing snapshot must load channel endpoint and resource scopes for every seeded API code",
-                    )
+        for runtime, snapshot_source in query_sources.items():
+            with self.subTest(runtime=runtime):
+                self.assertIn("JOIN ai_resource r", snapshot_source)
+                self.assertIn("r.api_code", snapshot_source)
+                self.assertIn("group_resource_scope AS", snapshot_source)
+                self.assertIn("channel_resource_scope AS", snapshot_source)
+                self.assertIn("matched_resource_scope AS", snapshot_source)
+                self.assertNotIn("channel_model_scope AS", snapshot_source)
+                self.assertNotIn("ai_channel_model", snapshot_source)
+                self.assertNotIn("ai_channel_endpoint", snapshot_source)
 
 
 def load_section_items(folder: str, files: list[str]) -> list[dict]:

@@ -12,19 +12,20 @@ test("admin sidebar resolves only the most specific active item for channel chil
 
   const channelItem = accountPoolGroup.items.find((item) => item.path === "/admin/channel");
   const resourcesItem = accountPoolGroup.items.find((item) => item.path === "/admin/channel/resources");
-  const endpointsItem = accountPoolGroup.items.find((item) => item.path === "/admin/channel/endpoints");
 
   assert.ok(channelItem, "channel menu item must exist");
   assert.ok(resourcesItem, "resources menu item must exist");
-  assert.ok(endpointsItem, "endpoints menu item must exist");
+  assert.equal(
+    accountPoolGroup.items.some((item) => item.path === "/admin/channel/endpoints"),
+    false,
+    "channel endpoints menu item must not exist",
+  );
 
   assert.deepEqual(getActiveSidebarItemPaths("/admin/channel/resources", homeMenu), ["/admin/channel/resources"]);
   assert.equal(isSidebarItemActive("/admin/channel/resources", channelItem, accountPoolGroup.items), false);
   assert.equal(isSidebarItemActive("/admin/channel/resources", resourcesItem, accountPoolGroup.items), true);
-  assert.equal(isSidebarItemActive("/admin/channel/resources", endpointsItem, accountPoolGroup.items), false);
 
-  assert.deepEqual(getActiveSidebarItemPaths("/admin/channel/endpoints", homeMenu), ["/admin/channel/endpoints"]);
+  assert.deepEqual(getActiveSidebarItemPaths("/admin/channel/endpoints", homeMenu), []);
   assert.equal(isSidebarItemActive("/admin/channel/endpoints", channelItem, accountPoolGroup.items), false);
   assert.equal(isSidebarItemActive("/admin/channel/endpoints", resourcesItem, accountPoolGroup.items), false);
-  assert.equal(isSidebarItemActive("/admin/channel/endpoints", endpointsItem, accountPoolGroup.items), true);
 });

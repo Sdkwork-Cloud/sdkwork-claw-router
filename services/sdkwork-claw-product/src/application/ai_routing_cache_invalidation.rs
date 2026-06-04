@@ -4,27 +4,25 @@ use crate::domain::DomainResult;
 use crate::ports::{
     AdminAiModelItem, AdminAiResourceGroupItem, AdminAiResourceGroupResourceItem,
     AdminAiResourceItem, AdminAiResourceReadFuture, AdminAiResourceStore,
-    AdminChannelCommandFuture, AdminChannelEndpointFuture, AdminChannelEndpointItem,
-    AdminChannelEndpointStore, AdminChannelGroupChannelBindingItem, AdminChannelGroupCommandFuture,
+    AdminChannelCommandFuture, AdminChannelGroupChannelBindingItem, AdminChannelGroupCommandFuture,
     AdminChannelGroupItem, AdminChannelGroupStore, AdminChannelItem, AdminChannelStore,
     AdminChannelTestOutcome, AdminModelCatalogSyncItem, AdminModelCommandFuture,
     AdminModelMappingRuleItem, AdminModelStore, AdminModelVendorItem,
     AdminProviderSecretCommandFuture, AdminProviderSecretItem, AdminProviderSecretStore,
     CreateAdminAiModelCommand, CreateAdminAiResourceCommand, CreateAdminAiResourceGroupCommand,
-    CreateAdminChannelCommand, CreateAdminChannelEndpointCommand, CreateAdminChannelGroupCommand,
-    CreateAdminModelMappingCommand, CreateAdminModelVendorCommand,
-    CreateAdminProviderSecretCommand, DeleteAdminAiModelCommand, DeleteAdminAiResourceGroupCommand,
-    DeleteAdminChannelCommand, DeleteAdminChannelGroupCommand, DeleteAdminModelMappingCommand,
-    DeleteAdminProviderSecretCommand, ListAdminAiModelsQuery,
+    CreateAdminChannelCommand, CreateAdminChannelGroupCommand, CreateAdminModelMappingCommand,
+    CreateAdminModelVendorCommand, CreateAdminProviderSecretCommand, DeleteAdminAiModelCommand,
+    DeleteAdminAiResourceGroupCommand, DeleteAdminChannelCommand, DeleteAdminChannelGroupCommand,
+    DeleteAdminModelMappingCommand, DeleteAdminProviderSecretCommand, ListAdminAiModelsQuery,
     ListAdminAiResourceGroupResourcesQuery, ListAdminAiResourceGroupsQuery,
-    ListAdminAiResourcesQuery, ListAdminChannelEndpointsQuery,
-    ListAdminChannelGroupChannelBindingsQuery, ListAdminChannelGroupsQuery, ListAdminChannelsQuery,
-    ListAdminModelMappingsQuery, ListAdminModelVendorsQuery, ListAdminProviderSecretsQuery,
+    ListAdminAiResourcesQuery, ListAdminChannelGroupChannelBindingsQuery,
+    ListAdminChannelGroupsQuery, ListAdminChannelsQuery, ListAdminModelMappingsQuery,
+    ListAdminModelVendorsQuery, ListAdminProviderSecretsQuery,
     ReplaceAdminChannelGroupChannelBindingsCommand, ResolveAdminModelMappingQuery,
     ResolveAdminModelMappingResult, SyncAdminModelCatalogCommand, TestAdminChannelCommand,
     UpdateAdminAiModelCommand, UpdateAdminAiResourceCommand, UpdateAdminAiResourceGroupCommand,
-    UpdateAdminChannelCommand, UpdateAdminChannelEndpointCommand, UpdateAdminChannelGroupCommand,
-    UpdateAdminModelMappingCommand, UpdateAdminProviderSecretCommand,
+    UpdateAdminChannelCommand, UpdateAdminChannelGroupCommand, UpdateAdminModelMappingCommand,
+    UpdateAdminProviderSecretCommand,
 };
 
 use super::{
@@ -447,59 +445,6 @@ impl AdminChannelGroupStore for AiRoutingCacheInvalidatingAdminChannelGroupStore
             let items = self.inner.replace_channel_bindings(command).await?;
             self.invalidator.invalidate_routing_facts().await?;
             Ok(items)
-        })
-    }
-}
-
-#[derive(Clone)]
-pub struct AiRoutingCacheInvalidatingAdminChannelEndpointStore {
-    inner: Arc<dyn AdminChannelEndpointStore + Send + Sync>,
-    invalidator: AiRoutingCacheInvalidator,
-}
-
-impl AiRoutingCacheInvalidatingAdminChannelEndpointStore {
-    pub fn new(
-        inner: Arc<dyn AdminChannelEndpointStore + Send + Sync>,
-        manager: RuntimeCacheManager,
-    ) -> Self {
-        Self {
-            inner,
-            invalidator: AiRoutingCacheInvalidator::new(manager),
-        }
-    }
-}
-
-impl AdminChannelEndpointStore for AiRoutingCacheInvalidatingAdminChannelEndpointStore {
-    fn list_channel_endpoints<'a>(
-        &'a self,
-        query: ListAdminChannelEndpointsQuery,
-    ) -> AdminChannelEndpointFuture<'a, Vec<AdminChannelEndpointItem>> {
-        self.inner.list_channel_endpoints(query)
-    }
-
-    fn create_channel_endpoint<'a>(
-        &'a self,
-        command: CreateAdminChannelEndpointCommand,
-    ) -> AdminChannelEndpointFuture<'a, Option<AdminChannelEndpointItem>> {
-        Box::pin(async move {
-            let item = self.inner.create_channel_endpoint(command).await?;
-            if item.is_some() {
-                self.invalidator.invalidate_routing_facts().await?;
-            }
-            Ok(item)
-        })
-    }
-
-    fn update_channel_endpoint<'a>(
-        &'a self,
-        command: UpdateAdminChannelEndpointCommand,
-    ) -> AdminChannelEndpointFuture<'a, Option<AdminChannelEndpointItem>> {
-        Box::pin(async move {
-            let item = self.inner.update_channel_endpoint(command).await?;
-            if item.is_some() {
-                self.invalidator.invalidate_routing_facts().await?;
-            }
-            Ok(item)
         })
     }
 }

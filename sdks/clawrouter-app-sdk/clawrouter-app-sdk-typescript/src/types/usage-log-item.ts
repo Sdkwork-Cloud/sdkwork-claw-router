@@ -8,7 +8,7 @@ export interface UsageLogItem {
   cacheReadPrice: string;
   /** Cache read tokens field on usage log item. */
   cacheReadTokens: number;
-  /** Customer-facing spend amount for the request, normalized to 9 decimal places for console display. Uses customer_charge_amount from the usage ledger and falls back to cost_amount only for legacy rows. */
+  /** Customer-facing spend amount for the request, normalized to 9 decimal places for console display. Uses customer_charge_amount from the usage ledger and never exposes upstream cost fields. */
   cost: string;
   /** Error code field on usage log item. */
   errorCode: string;

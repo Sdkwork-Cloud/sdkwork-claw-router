@@ -21,8 +21,6 @@ export interface AdminChannelUpdateRequest {
   expiresAt?: string | null;
   /** Id field on admin channel update request. */
   id: string;
-  /** Models field on admin channel update request. */
-  models?: string[];
   /** Name field on admin channel update request. */
   name?: string;
   /** Protocol field on admin channel update request. */

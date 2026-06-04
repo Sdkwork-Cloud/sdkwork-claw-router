@@ -1,7 +1,7 @@
 import { backendApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 
-import type { AdminChannelCreateRequest, AdminChannelEndpointCreateRequest, AdminChannelEndpointUpdateRequest, AdminChannelUpdateRequest, AdminProviderSecretCreateRequest, AdminProviderSecretUpdateRequest, ChannelEndpointsCreateResult, ChannelEndpointsListResult, ChannelEndpointsUpdateResult, ChannelsCreateResult, ChannelsDeleteResult, ChannelsListResult, ChannelsUpdateResult, ChannelsVerifyResult, ProviderSecretsCreateResult, ProviderSecretsDeleteResult, ProviderSecretsListResult, ProviderSecretsUpdateResult } from '../types';
+import type { AdminChannelCreateRequest, AdminChannelUpdateRequest, AdminProviderSecretCreateRequest, AdminProviderSecretUpdateRequest, ChannelsCreateResult, ChannelsDeleteResult, ChannelsListResult, ChannelsUpdateResult, ChannelsVerifyResult, ProviderSecretsCreateResult, ProviderSecretsDeleteResult, ProviderSecretsListResult, ProviderSecretsUpdateResult } from '../types';
 
 
 export interface IntegrationProviderSecretsListParams {
@@ -76,39 +76,13 @@ export class IntegrationChannelsApi {
   }
 }
 
-export class IntegrationChannelEndpointsApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** List channel endpoints */
-  async list(): Promise<ChannelEndpointsListResult> {
-    return this.client.get<ChannelEndpointsListResult>(backendApiPath(`/integration/channel_endpoints`));
-  }
-
-/** Create channel endpoint */
-  async create(body: AdminChannelEndpointCreateRequest): Promise<ChannelEndpointsCreateResult> {
-    return this.client.post<ChannelEndpointsCreateResult>(backendApiPath(`/integration/channel_endpoints`), body, undefined, undefined, 'application/json');
-  }
-
-/** Update channel endpoint */
-  async update(endpointId: string, body: AdminChannelEndpointUpdateRequest): Promise<ChannelEndpointsUpdateResult> {
-    return this.client.put<ChannelEndpointsUpdateResult>(backendApiPath(`/integration/channel_endpoints/${serializePathParameter(endpointId, { name: 'endpointId', style: 'simple', explode: false })}`), body, undefined, undefined, 'application/json');
-  }
-}
-
 export class IntegrationApi {
   private client: HttpClient;
-  public readonly channelEndpoints: IntegrationChannelEndpointsApi;
   public readonly channels: IntegrationChannelsApi;
   public readonly providerSecrets: IntegrationProviderSecretsApi;
 
   constructor(client: HttpClient) {
     this.client = client;
-    this.channelEndpoints = new IntegrationChannelEndpointsApi(client);
     this.channels = new IntegrationChannelsApi(client);
     this.providerSecrets = new IntegrationProviderSecretsApi(client);
   }

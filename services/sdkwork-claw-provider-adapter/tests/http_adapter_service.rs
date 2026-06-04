@@ -11,6 +11,7 @@ use sdkwork_claw_provider_adapter_core::{
     ProviderAdapterEndpoint,
 };
 use serde_json::json;
+use std::collections::{BTreeMap, BTreeSet};
 use std::sync::{Mutex, OnceLock};
 use tower::ServiceExt;
 
@@ -34,13 +35,13 @@ impl ProviderAdapter for EchoProviderAdapter {
     }
 
     fn endpoints(&self) -> Vec<ProviderAdapterEndpoint> {
-        vec![ProviderAdapterEndpoint {
-            endpoint_key: "video.start_end2video".to_owned(),
-            capability: Some("video_generation".to_owned()),
-            method: "POST".to_owned(),
-            standard_path_pattern: "/vidu/ent/v2/start-end2video".to_owned(),
-            invocation_shape: AdapterInvocationShape::AsyncTaskStart,
-        }]
+        vec![ProviderAdapterEndpoint::runtime_available(
+            "video.start_end2video",
+            Some("video_generation".to_owned()),
+            "POST",
+            "/vidu/ent/v2/start-end2video",
+            AdapterInvocationShape::AsyncTaskStart,
+        )]
     }
 
     fn resolve_endpoint(
@@ -203,6 +204,280 @@ async fn adapter_service_default_manifest_composes_provider_packages_without_fal
     assert_eq!("alicloud", alicloud["providerFamily"]);
     assert_eq!(json!(["alicloud", "aliyun"]), alicloud["providerCodes"]);
     assert_eq!(json!([]), alicloud["endpoints"]);
+
+    let cloud_storage = providers
+        .iter()
+        .find(|provider| provider["package"] == "sdkwork-cloud-storage")
+        .expect("default manifest should include cloud storage definition-only provider package");
+    assert_eq!(
+        "s3-compatible-object-storage",
+        cloud_storage["providerFamily"]
+    );
+    assert_eq!(
+        json!([
+            "aws_s3",
+            "minio",
+            "cloudflare_r2",
+            "aliyun_oss",
+            "tencent_cos",
+            "huawei_obs",
+            "volcengine_tos",
+            "baidu_bos"
+        ]),
+        cloud_storage["providerCodes"]
+    );
+    let storage_put = cloud_storage["endpoints"]
+        .as_array()
+        .unwrap()
+        .iter()
+        .find(|endpoint| endpoint["endpointKey"] == "storage.objects.put")
+        .expect("cloud storage manifest should expose PutObject contract endpoint");
+    assert_eq!("s3_object_put", storage_put["capability"]);
+    assert_eq!("object_storage", storage_put["serviceGroup"]);
+    assert_eq!("cloudStorageObjects.put", storage_put["openapiOperationId"]);
+    assert_eq!("PutObject", storage_put["s3Operation"]);
+    assert_eq!("definition_only", storage_put["runtimeState"]);
+    assert_eq!("PUT", storage_put["method"]);
+    assert_eq!(
+        "/cloud/v3/storage/buckets/{bucket}/objects/{objectKey}",
+        storage_put["standardPathPattern"]
+    );
+    assert_eq!(
+        json!(["virtualHosted", "pathStyle"]),
+        storage_put["endpointStyles"]
+    );
+
+    let cloud_iaas = providers
+        .iter()
+        .find(|provider| provider["package"] == "sdkwork-cloud-iaas")
+        .expect("default manifest should include cloud IaaS definition-only provider package");
+    assert_eq!("multi-cloud-iaas-compute", cloud_iaas["providerFamily"]);
+    assert_eq!(
+        json!([
+            "aws_ec2",
+            "azure_compute",
+            "gcp_compute",
+            "alicloud_ecs",
+            "tencent_cvm",
+            "huawei_ecs",
+            "volcengine_ecs"
+        ]),
+        cloud_iaas["providerCodes"]
+    );
+    let compute_create = cloud_iaas["endpoints"]
+        .as_array()
+        .unwrap()
+        .iter()
+        .find(|endpoint| endpoint["endpointKey"] == "iaas.compute.instances.create")
+        .expect("cloud IaaS manifest should expose compute instance create contract endpoint");
+    assert_eq!("compute_instance_create", compute_create["capability"]);
+    assert_eq!("cloud_compute", compute_create["serviceGroup"]);
+    assert_eq!(
+        "cloudIaasComputeInstances.create",
+        compute_create["openapiOperationId"]
+    );
+    assert_eq!("ComputeCreateInstance", compute_create["iaasOperation"]);
+    assert!(compute_create.get("s3Operation").is_none());
+    assert_eq!("definition_only", compute_create["runtimeState"]);
+    assert_eq!("POST", compute_create["method"]);
+    assert_eq!(
+        "/cloud/v3/iaas/compute/instances",
+        compute_create["standardPathPattern"]
+    );
+}
+
+#[tokio::test]
+async fn adapter_service_default_manifest_covers_cloud_storage_openapi_operations() {
+    let router = sdkwork_claw_provider_adapter::router_with_default_adapters("test-token");
+
+    let manifest = router
+        .oneshot(
+            Request::builder()
+                .uri("/internal/adapter-manifest")
+                .header("authorization", "Bearer test-token")
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, manifest.status());
+    let payload = response_json(manifest).await;
+    let cloud_storage = payload["providers"]
+        .as_array()
+        .expect("manifest providers should be an array")
+        .iter()
+        .find(|provider| provider["package"] == "sdkwork-cloud-storage")
+        .expect("default manifest should include cloud storage definition-only provider package");
+    let endpoints = cloud_storage["endpoints"]
+        .as_array()
+        .expect("cloud storage endpoints should be an array");
+    let endpoints_by_operation_id: BTreeMap<String, &serde_json::Value> = endpoints
+        .iter()
+        .map(|endpoint| {
+            (
+                endpoint["openapiOperationId"]
+                    .as_str()
+                    .expect("cloud storage endpoint should declare openapiOperationId")
+                    .to_owned(),
+                endpoint,
+            )
+        })
+        .collect();
+
+    let openapi_operations = cloud_storage_openapi_operations();
+    assert_eq!(
+        openapi_operations.len(),
+        endpoints_by_operation_id.len(),
+        "cloud storage manifest must declare exactly one endpoint for every cloud storage OpenAPI operation"
+    );
+
+    let manifest_operation_ids: BTreeSet<&str> = endpoints_by_operation_id
+        .keys()
+        .map(String::as_str)
+        .collect();
+    let openapi_operation_ids: BTreeSet<&str> =
+        openapi_operations.keys().map(String::as_str).collect();
+    assert_eq!(
+        openapi_operation_ids, manifest_operation_ids,
+        "cloud storage manifest operation IDs must match the cloud services OpenAPI document"
+    );
+
+    for (operation_id, expected) in openapi_operations {
+        let endpoint = endpoints_by_operation_id
+            .get(&operation_id)
+            .unwrap_or_else(|| panic!("missing cloud storage endpoint for {operation_id}"));
+        assert_eq!(
+            "definition_only", endpoint["runtimeState"],
+            "{operation_id}"
+        );
+        assert_eq!("object_storage", endpoint["serviceGroup"], "{operation_id}");
+        assert_eq!(expected.method, endpoint["method"], "{operation_id}");
+        assert_eq!(
+            expected.path, endpoint["standardPathPattern"],
+            "{operation_id}"
+        );
+        assert_eq!(
+            expected.s3_operation, endpoint["s3Operation"],
+            "{operation_id}"
+        );
+        assert_eq!(
+            json!(["virtualHosted", "pathStyle"]),
+            endpoint["endpointStyles"],
+            "{operation_id}"
+        );
+    }
+}
+
+#[tokio::test]
+async fn adapter_service_default_manifest_covers_cloud_iaas_openapi_operations() {
+    let router = sdkwork_claw_provider_adapter::router_with_default_adapters("test-token");
+
+    let manifest = router
+        .oneshot(
+            Request::builder()
+                .uri("/internal/adapter-manifest")
+                .header("authorization", "Bearer test-token")
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, manifest.status());
+    let payload = response_json(manifest).await;
+    let cloud_iaas = payload["providers"]
+        .as_array()
+        .expect("manifest providers should be an array")
+        .iter()
+        .find(|provider| provider["package"] == "sdkwork-cloud-iaas")
+        .expect("default manifest should include cloud IaaS definition-only provider package");
+    let endpoints = cloud_iaas["endpoints"]
+        .as_array()
+        .expect("cloud IaaS endpoints should be an array");
+    let endpoints_by_operation_id: BTreeMap<String, &serde_json::Value> = endpoints
+        .iter()
+        .map(|endpoint| {
+            (
+                endpoint["openapiOperationId"]
+                    .as_str()
+                    .expect("cloud IaaS endpoint should declare openapiOperationId")
+                    .to_owned(),
+                endpoint,
+            )
+        })
+        .collect();
+
+    let openapi_operations = cloud_iaas_openapi_operations();
+    assert_eq!(
+        openapi_operations.len(),
+        endpoints_by_operation_id.len(),
+        "cloud IaaS manifest must declare exactly one endpoint for every cloud IaaS OpenAPI operation"
+    );
+
+    let manifest_operation_ids: BTreeSet<&str> = endpoints_by_operation_id
+        .keys()
+        .map(String::as_str)
+        .collect();
+    let openapi_operation_ids: BTreeSet<&str> =
+        openapi_operations.keys().map(String::as_str).collect();
+    assert_eq!(
+        openapi_operation_ids, manifest_operation_ids,
+        "cloud IaaS manifest operation IDs must match the cloud services OpenAPI document"
+    );
+
+    for (operation_id, expected) in openapi_operations {
+        let endpoint = endpoints_by_operation_id
+            .get(&operation_id)
+            .unwrap_or_else(|| panic!("missing cloud IaaS endpoint for {operation_id}"));
+        assert_eq!(
+            "definition_only", endpoint["runtimeState"],
+            "{operation_id}"
+        );
+        assert_eq!(
+            expected.service_group, endpoint["serviceGroup"],
+            "{operation_id}"
+        );
+        assert_eq!(expected.method, endpoint["method"], "{operation_id}");
+        assert_eq!(
+            expected.path, endpoint["standardPathPattern"],
+            "{operation_id}"
+        );
+        assert_eq!(
+            expected.iaas_operation, endpoint["iaasOperation"],
+            "{operation_id}"
+        );
+        if let Some(expected_capability) = expected.capability.as_deref() {
+            assert_eq!(
+                expected_capability, endpoint["capability"],
+                "{operation_id}"
+            );
+        } else {
+            assert!(
+                endpoint.get("capability").is_none(),
+                "cloud IaaS provider discovery endpoints should omit capability metadata: {operation_id}"
+            );
+        }
+        if let Some(expected_request_schema) = expected.request_schema.as_deref() {
+            assert_eq!(
+                expected_request_schema, endpoint["requestSchema"],
+                "{operation_id}"
+            );
+        } else {
+            assert!(
+                endpoint.get("requestSchema").is_none(),
+                "cloud IaaS endpoints without JSON request bodies should omit requestSchema metadata: {operation_id}"
+            );
+        }
+        assert_eq!(
+            expected.response_schema, endpoint["responseSchema"],
+            "{operation_id}"
+        );
+        assert!(
+            endpoint.get("s3Operation").is_none(),
+            "cloud IaaS endpoints must not reuse S3 operation metadata: {operation_id}"
+        );
+    }
 }
 
 #[tokio::test]
@@ -561,4 +836,118 @@ fn unique_secret_path(name: &str) -> std::path::PathBuf {
             .unwrap()
             .as_nanos()
     ))
+}
+
+struct CloudStorageOpenApiOperation {
+    method: String,
+    path: String,
+    s3_operation: String,
+}
+
+struct CloudIaasOpenApiOperation {
+    method: String,
+    path: String,
+    service_group: String,
+    capability: Option<String>,
+    iaas_operation: String,
+    request_schema: Option<String>,
+    response_schema: String,
+}
+
+fn cloud_storage_openapi_operations() -> BTreeMap<String, CloudStorageOpenApiOperation> {
+    let spec: serde_json::Value = serde_json::from_str(include_str!(
+        "../../../crates/sdkwork-claw-http/specs/cloud-services-openapi.json"
+    ))
+    .expect("cloud services OpenAPI spec should parse as JSON");
+    let mut operations = BTreeMap::new();
+    for (path, path_item) in spec["paths"]
+        .as_object()
+        .expect("cloud services OpenAPI spec should declare paths")
+    {
+        if !path.starts_with("/cloud/v3/storage") {
+            continue;
+        }
+        for (method, operation) in path_item
+            .as_object()
+            .expect("OpenAPI path item should be an object")
+        {
+            if method == "parameters" {
+                continue;
+            }
+            let operation_id = operation["operationId"]
+                .as_str()
+                .expect("cloud storage OpenAPI operation should declare operationId");
+            let s3_operation = operation["x-sdkwork-s3-operation"]
+                .as_str()
+                .expect("cloud storage OpenAPI operation should declare x-sdkwork-s3-operation");
+            operations.insert(
+                operation_id.to_owned(),
+                CloudStorageOpenApiOperation {
+                    method: method.to_ascii_uppercase(),
+                    path: path.to_owned(),
+                    s3_operation: s3_operation.to_owned(),
+                },
+            );
+        }
+    }
+    operations
+}
+
+fn cloud_iaas_openapi_operations() -> BTreeMap<String, CloudIaasOpenApiOperation> {
+    let spec: serde_json::Value = serde_json::from_str(include_str!(
+        "../../../crates/sdkwork-claw-http/specs/cloud-services-openapi.json"
+    ))
+    .expect("cloud services OpenAPI spec should parse as JSON");
+    let operation_catalog = spec["x-sdkwork-iaas-operation-catalog"]
+        .as_object()
+        .expect("cloud services OpenAPI spec should declare x-sdkwork-iaas-operation-catalog");
+    let mut operations = BTreeMap::new();
+    for (path, path_item) in spec["paths"]
+        .as_object()
+        .expect("cloud services OpenAPI spec should declare paths")
+    {
+        if !path.starts_with("/cloud/v3/iaas") {
+            continue;
+        }
+        for (method, operation) in path_item
+            .as_object()
+            .expect("OpenAPI path item should be an object")
+        {
+            if method == "parameters" {
+                continue;
+            }
+            let operation_id = operation["operationId"]
+                .as_str()
+                .expect("cloud IaaS OpenAPI operation should declare operationId");
+            let catalog_entry = operation_catalog.get(operation_id).unwrap_or_else(|| {
+                panic!("cloud IaaS OpenAPI catalog should declare {operation_id}")
+            });
+            operations.insert(
+                operation_id.to_owned(),
+                CloudIaasOpenApiOperation {
+                    method: method.to_ascii_uppercase(),
+                    path: path.to_owned(),
+                    service_group: catalog_entry["serviceGroup"]
+                        .as_str()
+                        .expect("cloud IaaS catalog entry should declare serviceGroup")
+                        .to_owned(),
+                    capability: catalog_entry["capabilityCode"]
+                        .as_str()
+                        .map(ToOwned::to_owned),
+                    iaas_operation: catalog_entry["iaasOperation"]
+                        .as_str()
+                        .expect("cloud IaaS catalog entry should declare iaasOperation")
+                        .to_owned(),
+                    request_schema: catalog_entry["requestSchema"]
+                        .as_str()
+                        .map(ToOwned::to_owned),
+                    response_schema: catalog_entry["responseSchema"]
+                        .as_str()
+                        .expect("cloud IaaS catalog entry should declare responseSchema")
+                        .to_owned(),
+                },
+            );
+        }
+    }
+    operations
 }

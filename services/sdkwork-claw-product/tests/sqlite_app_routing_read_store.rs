@@ -33,20 +33,10 @@ async fn sqlite_routing_usage_ignores_missing_latency_when_averaging() {
 }
 
 #[tokio::test]
-async fn sqlite_routing_channels_include_rfc3339_effective_channel_models() {
+async fn sqlite_routing_channels_do_not_return_account_model_allowlists() {
     let pool = sqlite_pool().await;
     create_routing_channel_tables(&pool).await;
     seed_routing_channel(&pool).await;
-    sqlx::query(
-        r#"
-        UPDATE ai_channel_model
-        SET effective_from = strftime('%Y-%m-%dT00:00:00Z', 'now')
-        WHERE id = 3001
-        "#,
-    )
-    .execute(&pool)
-    .await
-    .unwrap();
 
     let store = SqliteAppRoutingReadStore::new(pool);
     let channels = store
@@ -55,7 +45,10 @@ async fn sqlite_routing_channels_include_rfc3339_effective_channel_models() {
         .unwrap();
 
     assert_eq!(1, channels.len());
-    assert_eq!(vec!["openai/gpt-4o-mini".to_owned()], channels[0].models);
+    assert!(
+        channels[0].models.is_empty(),
+        "accounts expose resource/capability routing state, not model allowlists"
+    );
     assert_eq!("active", channels[0].status);
     assert_eq!(Some(60_000), channels[0].timeout_ms);
     let retry_policy = channels[0]
@@ -393,12 +386,27 @@ async fn create_routing_channel_tables(pool: &SqlitePool) {
         )
         "#,
         r#"
+        CREATE TABLE ai_channel_credential (
+            id INTEGER PRIMARY KEY,
+            tenant_id INTEGER NOT NULL,
+            organization_id INTEGER NOT NULL,
+            channel_id INTEGER NOT NULL,
+            base_url TEXT,
+            masked_label TEXT,
+            priority INTEGER,
+            weight INTEGER,
+            status INTEGER NOT NULL,
+            deleted_at TEXT
+        )
+        "#,
+        r#"
         CREATE TABLE ai_resource (
             id INTEGER PRIMARY KEY,
             tenant_id INTEGER NOT NULL,
             organization_id INTEGER NOT NULL,
             resource_code TEXT NOT NULL,
             resource_type TEXT NOT NULL,
+            modality_code TEXT,
             status INTEGER NOT NULL,
             deleted_at TEXT
         )
@@ -414,20 +422,6 @@ async fn create_routing_channel_tables(pool: &SqlitePool) {
             deleted_at TEXT
         )
         "#,
-        r#"
-        CREATE TABLE ai_channel_model (
-            id INTEGER PRIMARY KEY,
-            tenant_id INTEGER NOT NULL,
-            organization_id INTEGER NOT NULL,
-            channel_id INTEGER NOT NULL,
-            catalog_key TEXT NOT NULL,
-            model TEXT NOT NULL,
-            status INTEGER NOT NULL,
-            effective_from TEXT,
-            effective_to TEXT,
-            deleted_at TEXT
-        )
-        "#,
     ] {
         sqlx::query(statement).execute(pool).await.unwrap();
     }
@@ -437,9 +431,9 @@ async fn seed_routing_channel(pool: &SqlitePool) {
     sqlx::query(
         r#"
         INSERT INTO ai_resource (
-            id, tenant_id, organization_id, resource_code, resource_type, status
+            id, tenant_id, organization_id, resource_code, resource_type, modality_code, status
         )
-        VALUES (5001, 10, 20, 'llm', 'modality', 1)
+        VALUES (5001, 10, 20, 'llm', 'modality', 'llm', 1)
         "#,
     )
     .execute(pool)
@@ -473,18 +467,6 @@ async fn seed_routing_channel(pool: &SqlitePool) {
             id, tenant_id, organization_id, channel_id, resource_code, grant_type, status
         )
         VALUES (6001, 10, 20, 2001, 'llm', 'allow', 1)
-        "#,
-    )
-    .execute(pool)
-    .await
-    .unwrap();
-
-    sqlx::query(
-        r#"
-        INSERT INTO ai_channel_model (
-            id, tenant_id, organization_id, channel_id, catalog_key, model, status
-        )
-        VALUES (3001, 10, 20, 2001, 'openai/gpt-4o-mini', 'gpt-4o-mini', 1)
         "#,
     )
     .execute(pool)

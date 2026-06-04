@@ -8,4 +8,5 @@ class AppModelCatalogReferencePrice:
     """App model catalog reference price schema exposed by Claw Router."""
     billing_meter: str
     currency: str
+    region_code: str
     unit_price: str

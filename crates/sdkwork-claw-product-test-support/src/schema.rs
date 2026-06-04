@@ -7,7 +7,7 @@ use sdkwork_claw_product::infrastructure::sql::installer::CatalogRefreshOptions;
 use sqlx::{query, SqlitePool};
 use std::path::Path;
 
-const SCHEMA_SQLITE_TEMPLATE_REVISION: &str = "v4";
+const SCHEMA_SQLITE_TEMPLATE_REVISION: &str = "v6";
 
 pub async fn schema_sqlite_pool() -> SqlitePool {
     let template_path = sqlite_template_path("schema", SCHEMA_SQLITE_TEMPLATE_REVISION);

@@ -65,6 +65,95 @@ fn openrouter_account_pool_secret_map() -> ProviderSecretMapConfig {
     .unwrap()
 }
 
+async fn set_channel_and_credential_base_url(
+    pool: &sqlx::SqlitePool,
+    channel_id: i64,
+    base_url: &str,
+) {
+    sqlx::query("UPDATE ai_channel SET base_url = ? WHERE id = ?")
+        .bind(base_url)
+        .bind(channel_id)
+        .execute(pool)
+        .await
+        .unwrap();
+    sqlx::query("UPDATE ai_channel_credential SET base_url = ? WHERE channel_id = ?")
+        .bind(base_url)
+        .bind(channel_id)
+        .execute(pool)
+        .await
+        .unwrap();
+}
+
+async fn set_channel_and_credential_secret(
+    pool: &sqlx::SqlitePool,
+    channel_id: i64,
+    secret_ref: &str,
+    auth_config: &str,
+) {
+    sqlx::query(
+        r#"
+        UPDATE ai_channel
+        SET credential_ref = ?,
+            auth_config = ?
+        WHERE id = ?
+        "#,
+    )
+    .bind(secret_ref)
+    .bind(auth_config)
+    .bind(channel_id)
+    .execute(pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        UPDATE ai_channel_credential
+        SET credential_ref = ?,
+            auth_config = ?
+        WHERE channel_id = ?
+        "#,
+    )
+    .bind(secret_ref)
+    .bind(auth_config)
+    .bind(channel_id)
+    .execute(pool)
+    .await
+    .unwrap();
+}
+
+async fn insert_channel_credential(
+    pool: &sqlx::SqlitePool,
+    credential_id: i64,
+    channel_id: i64,
+    provider_code: &str,
+    channel_code: &str,
+    secret_ref: &str,
+    base_url: &str,
+    auth_config: &str,
+) {
+    sqlx::query(
+        r#"
+        INSERT INTO ai_channel_credential
+            (id, uuid, tenant_id, organization_id, channel_id, provider_code, channel_code,
+             credential_name, auth_config, credential_ref, credential_hash, base_url,
+             priority, weight, health_status, status)
+        VALUES
+            (?, ?, 10, 20, ?, ?, ?, 'primary', ?, ?, ?, ?, 1, 100, 1, 1)
+        "#,
+    )
+    .bind(credential_id)
+    .bind(format!("channel-credential-{channel_code}"))
+    .bind(channel_id)
+    .bind(provider_code)
+    .bind(channel_code)
+    .bind(auth_config)
+    .bind(secret_ref)
+    .bind(format!("hash:{channel_code}"))
+    .bind(base_url)
+    .execute(pool)
+    .await
+    .unwrap();
+}
+
 async fn seeded_gateway_router_with_provider_configs(
     catalog: &SeededSqliteCatalog,
     provider_relay_config: Option<ProviderRelayConfig>,
@@ -2069,7 +2158,7 @@ async fn gateway_database_provider_native_direct_passthrough_records_api_request
         "0.006600000000",
         usage.get::<String, _>("customer_charge_amount")
     );
-    assert_eq!("0.003000000000", usage.get::<String, _>("cost_amount"));
+    assert_eq!("0.006600000000", usage.get::<String, _>("cost_amount"));
     assert_eq!("USD", usage.get::<String, _>("currency"));
     assert_eq!("standard", usage.get::<String, _>("pricing_plan_code"));
     assert_eq!(0_i64, usage.get::<i64, _>("settlement_status"));
@@ -2303,7 +2392,16 @@ async fn gateway_database_openai_passthrough_routes_by_channel_group_channel_rou
             .await
             .unwrap();
 
-        assert_eq!(StatusCode::CREATED, response.status(), "{prompt}");
+        let status = response.status();
+        let body = axum::body::to_bytes(response.into_body(), usize::MAX)
+            .await
+            .unwrap();
+        assert_eq!(
+            StatusCode::CREATED,
+            status,
+            "{prompt}: {}",
+            String::from_utf8_lossy(&body)
+        );
     }
 
     let captured_standard = captured_standard.lock().unwrap();
@@ -3060,28 +3158,7 @@ async fn gateway_database_route_scoped_openai_chat_passthrough_records_usage() {
         .await
         .unwrap();
     let pool = catalog.open_pool().await.unwrap();
-    sqlx::query(
-        r#"
-        UPDATE ai_channel
-        SET base_url = ?
-        WHERE id = 3001
-        "#,
-    )
-    .bind(format!("http://{addr}"))
-    .execute(&pool)
-    .await
-    .unwrap();
-    sqlx::query(
-        r#"
-        UPDATE ai_channel_endpoint
-        SET base_url = ?
-        WHERE channel_id = 3001
-        "#,
-    )
-    .bind(format!("http://{addr}"))
-    .execute(&pool)
-    .await
-    .unwrap();
+    set_channel_and_credential_base_url(&pool, 3001, &format!("http://{addr}")).await;
     pool.close().await;
 
     let secret_ref = "vault://providers/openrouter/account/main";
@@ -3198,7 +3275,7 @@ async fn gateway_database_route_scoped_openai_chat_passthrough_records_usage() {
         "0.000004554000",
         usage.get::<String, _>("customer_charge_amount")
     );
-    assert_eq!("0.000002530000", usage.get::<String, _>("cost_amount"));
+    assert_eq!("0.000004554000", usage.get::<String, _>("cost_amount"));
     assert_eq!("USD", usage.get::<String, _>("currency"));
     assert_eq!("standard", usage.get::<String, _>("pricing_plan_code"));
     assert_eq!(0_i64, usage.get::<i64, _>("settlement_status"));
@@ -3221,28 +3298,7 @@ async fn gateway_database_route_scoped_openai_legacy_completion_passthrough_reco
         .await
         .unwrap();
     let pool = catalog.open_pool().await.unwrap();
-    sqlx::query(
-        r#"
-        UPDATE ai_channel
-        SET base_url = ?
-        WHERE id = 3001
-        "#,
-    )
-    .bind(format!("http://{addr}"))
-    .execute(&pool)
-    .await
-    .unwrap();
-    sqlx::query(
-        r#"
-        UPDATE ai_channel_endpoint
-        SET base_url = ?
-        WHERE channel_id = 3001
-        "#,
-    )
-    .bind(format!("http://{addr}"))
-    .execute(&pool)
-    .await
-    .unwrap();
+    set_channel_and_credential_base_url(&pool, 3001, &format!("http://{addr}")).await;
     pool.close().await;
 
     let secret_ref = "vault://providers/openrouter/account/main";
@@ -3359,7 +3415,7 @@ async fn gateway_database_route_scoped_openai_legacy_completion_passthrough_reco
         "0.000004554000",
         usage.get::<String, _>("customer_charge_amount")
     );
-    assert_eq!("0.000002530000", usage.get::<String, _>("cost_amount"));
+    assert_eq!("0.000004554000", usage.get::<String, _>("cost_amount"));
     assert_eq!("USD", usage.get::<String, _>("currency"));
     assert_eq!("standard", usage.get::<String, _>("pricing_plan_code"));
     assert_eq!(0_i64, usage.get::<i64, _>("settlement_status"));
@@ -3487,7 +3543,7 @@ async fn gateway_database_route_scoped_openai_image_passthrough_records_image_re
         "0.132000000000",
         usage.get::<String, _>("customer_charge_amount")
     );
-    assert_eq!("0.060000000000", usage.get::<String, _>("cost_amount"));
+    assert_eq!("0.132000000000", usage.get::<String, _>("cost_amount"));
     assert_eq!("USD", usage.get::<String, _>("currency"));
     assert_eq!("standard", usage.get::<String, _>("pricing_plan_code"));
     assert_eq!(0_i64, usage.get::<i64, _>("settlement_status"));
@@ -3614,7 +3670,7 @@ async fn gateway_database_route_scoped_openai_management_passthrough_records_api
         "0.001320000000",
         usage.get::<String, _>("customer_charge_amount")
     );
-    assert_eq!("0.000500000000", usage.get::<String, _>("cost_amount"));
+    assert_eq!("0.001320000000", usage.get::<String, _>("cost_amount"));
     assert_eq!("USD", usage.get::<String, _>("currency"));
     assert_eq!("standard", usage.get::<String, _>("pricing_plan_code"));
     assert_eq!(0_i64, usage.get::<i64, _>("settlement_status"));
@@ -5411,19 +5467,38 @@ async fn openai_passthrough_group_route_catalog_template_fork_preserves_seeded_r
         "http://127.0.0.1:41002",
         premium_channel.get::<String, _>("base_url")
     );
-
-    let route_count: i64 = sqlx::query_scalar(
+    let image_route_channel_count: i64 = sqlx::query_scalar(
         r#"
-        SELECT COUNT(*)
-        FROM ai_route_candidate
-        WHERE id IN (9001, 9002)
-          AND catalog_key = 'openai/gpt-image-1'
+        SELECT COUNT(DISTINCT cr.channel_id)
+        FROM ai_channel_resource cr
+        JOIN ai_resource_group_item rgi
+          ON rgi.tenant_id = cr.tenant_id
+         AND rgi.organization_id = cr.organization_id
+         AND rgi.deleted_at IS NULL
+         AND rgi.status = 1
+         AND (
+             (cr.resource_group_id IS NOT NULL AND rgi.resource_group_id = cr.resource_group_id)
+             OR (NULLIF(cr.resource_group_code, '') IS NOT NULL AND rgi.resource_group_code = cr.resource_group_code)
+         )
+        JOIN ai_resource r
+          ON r.tenant_id = rgi.tenant_id
+         AND r.organization_id = rgi.organization_id
+         AND r.deleted_at IS NULL
+         AND r.status = 1
+         AND (
+             r.id = rgi.resource_id
+             OR (NULLIF(rgi.resource_code, '') IS NOT NULL AND r.resource_code = rgi.resource_code)
+         )
+        WHERE cr.channel_id IN (3001, 3002)
+          AND cr.status = 1
+          AND cr.grant_type = 'allow'
+          AND r.catalog_key = 'openai/gpt-image-1'
         "#,
     )
     .fetch_one(&pool)
     .await
     .unwrap();
-    assert_eq!(2, route_count);
+    assert_eq!(2, image_route_channel_count);
 
     let pricing_count: i64 = sqlx::query_scalar(
         r#"
@@ -5932,33 +6007,8 @@ async fn fork_openai_passthrough_group_route_catalog(
         .fork()
         .unwrap();
     let pool = catalog.open_pool().await.unwrap();
-    sqlx::query(
-        r#"
-        UPDATE ai_channel
-        SET base_url = CASE id
-            WHEN 3001 THEN ?
-            WHEN 3002 THEN ?
-            ELSE base_url
-        END
-        WHERE id IN (3001, 3002)
-        "#,
-    )
-    .bind(standard_base_url)
-    .bind(premium_base_url)
-    .execute(&pool)
-    .await
-    .unwrap();
-    sqlx::query(
-        r#"
-        UPDATE ai_channel_endpoint
-        SET base_url = ?
-        WHERE channel_id = 3001
-        "#,
-    )
-    .bind(standard_base_url)
-    .execute(&pool)
-    .await
-    .unwrap();
+    set_channel_and_credential_base_url(&pool, 3001, standard_base_url).await;
+    set_channel_and_credential_base_url(&pool, 3002, premium_base_url).await;
     pool.close().await;
     catalog
 }
@@ -5989,7 +6039,6 @@ async fn ensure_ai_provider_object_route_table(catalog: &SeededSqliteCatalog) {
             parent_object_id TEXT,
             provider_code TEXT,
             channel_id INTEGER NOT NULL,
-            endpoint_id INTEGER,
             vendor_code TEXT,
             api_code TEXT,
             catalog_key TEXT,
@@ -6142,6 +6191,84 @@ async fn grant_openrouter_standard_bundle_to_group(
     .unwrap();
 }
 
+struct ChannelScopedModelMappingSeed<'a> {
+    rule_id: i64,
+    channel_id: i64,
+    channel_code: &'a str,
+    source_model: &'a str,
+    source_catalog_key: &'a str,
+    target_model: &'a str,
+    target_catalog_key: &'a str,
+    target_provider_model: &'a str,
+    target_provider_native_model: &'a str,
+    sort_order: i64,
+}
+
+async fn insert_channel_scoped_model_mapping(
+    pool: &sqlx::SqlitePool,
+    seed: &ChannelScopedModelMappingSeed<'_>,
+) {
+    sqlx::query(
+        r#"
+        INSERT INTO ai_model_mapping_rule
+            (id, uuid, tenant_id, organization_id, source_vendor_code, target_vendor_code,
+             mapping_mode, match_type, enabled, status)
+        VALUES
+            (?, ?, 10, 20, 'openai', 'openai', 'alias', 'exact', 1, 1)
+        "#,
+    )
+    .bind(seed.rule_id)
+    .bind(format!("model-mapping-rule-channel-{}", seed.rule_id))
+    .execute(pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO ai_model_mapping_rule_binding
+            (id, uuid, tenant_id, organization_id, rule_id, binding_type, binding_id,
+             binding_code, binding_name_snapshot, sort_order, enabled, status)
+        VALUES
+            (?, ?, 10, 20, ?, 'channel', ?, ?, ?, ?, 1, 1)
+        "#,
+    )
+    .bind(seed.rule_id)
+    .bind(format!(
+        "model-mapping-rule-binding-channel-{}",
+        seed.rule_id
+    ))
+    .bind(seed.rule_id)
+    .bind(seed.channel_id)
+    .bind(seed.channel_code)
+    .bind(seed.channel_code)
+    .bind(seed.sort_order)
+    .execute(pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO ai_model_mapping_rule_item
+            (id, uuid, tenant_id, organization_id, rule_id, source_model,
+             source_catalog_key, target_model, target_catalog_key, target_provider_model,
+             target_provider_native_model, sort_order, enabled, status)
+        VALUES
+            (?, ?, 10, 20, ?, ?, ?, ?, ?, ?, ?, ?, 1, 1)
+        "#,
+    )
+    .bind(seed.rule_id)
+    .bind(format!("model-mapping-rule-item-channel-{}", seed.rule_id))
+    .bind(seed.rule_id)
+    .bind(seed.source_model)
+    .bind(seed.source_catalog_key)
+    .bind(seed.target_model)
+    .bind(seed.target_catalog_key)
+    .bind(seed.target_provider_model)
+    .bind(seed.target_provider_native_model)
+    .bind(seed.sort_order)
+    .execute(pool)
+    .await
+    .unwrap();
+}
+
 async fn grant_provider_native_api_resource(
     pool: &sqlx::SqlitePool,
     id: i64,
@@ -6280,6 +6407,84 @@ async fn grant_provider_native_api_resource_with_modality(
     .unwrap();
 }
 
+async fn grant_provider_native_model_api_resource(
+    pool: &sqlx::SqlitePool,
+    id: i64,
+    channel_id: i64,
+    provider_code: &str,
+    channel_code: &str,
+    vendor_code: &str,
+    api_code: &str,
+    modality_code: &str,
+    catalog_key: &str,
+    model: &str,
+    provider_native_model: &str,
+) {
+    let resource_code = format!("model.{}.{}", catalog_key.replace('/', "."), api_code);
+    let uuid_suffix = resource_code.replace(['.', '/'], "-");
+    sqlx::query(
+        r#"
+        INSERT INTO ai_resource
+            (id, uuid, tenant_id, organization_id, resource_code, resource_type,
+             display_name, vendor_code, modality_code, api_code, catalog_key, model,
+             provider_native_model, status, sort_order)
+        VALUES
+            (?, ?, 10, 20, ?, 'model_api', ?, ?, ?, ?, ?, ?, ?, 1, ?)
+        "#,
+    )
+    .bind(id)
+    .bind(format!("resource-{uuid_suffix}"))
+    .bind(&resource_code)
+    .bind(model)
+    .bind(vendor_code)
+    .bind(modality_code)
+    .bind(api_code)
+    .bind(catalog_key)
+    .bind(model)
+    .bind(provider_native_model)
+    .bind(id)
+    .execute(pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO ai_channel_resource
+            (id, uuid, tenant_id, organization_id, channel_id, provider_code, channel_code,
+             resource_id, resource_code, grant_type, priority, weight, status)
+        VALUES
+            (?, ?, 10, 20, ?, ?, ?, ?, ?, 'allow', 1, 100, 1)
+        "#,
+    )
+    .bind(id)
+    .bind(format!("channel-resource-{provider_code}-{uuid_suffix}"))
+    .bind(channel_id)
+    .bind(provider_code)
+    .bind(channel_code)
+    .bind(id)
+    .bind(&resource_code)
+    .execute(pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO ai_channel_group_resource
+            (id, uuid, tenant_id, organization_id, channel_group_id,
+             resource_id, resource_code, grant_type, priority, status)
+        VALUES
+            (?, ?, 10, 20, 10, ?, ?, 'allow', 1, 1)
+        "#,
+    )
+    .bind(id)
+    .bind(format!(
+        "channel-group-resource-{provider_code}-{uuid_suffix}"
+    ))
+    .bind(id)
+    .bind(&resource_code)
+    .execute(pool)
+    .await
+    .unwrap();
+}
+
 async fn seed_vidu_start_end2video_channel_route(
     catalog: &sdkwork_claw_test_support::SeededSqliteCatalog,
     base_url: &str,
@@ -6349,6 +6554,17 @@ async fn seed_gemini_generate_content_channel_route(
     .execute(&pool)
     .await
     .unwrap();
+    insert_channel_credential(
+        &pool,
+        960101,
+        9601,
+        "google",
+        "google-main",
+        "vault://providers/google/account/main",
+        base_url,
+        r#"{"name":"x-goog-api-key"}"#,
+    )
+    .await;
     sqlx::query(
         r#"
         INSERT INTO ai_routing_profile
@@ -6400,21 +6616,6 @@ async fn seed_gemini_generate_content_channel_route(
              enabled, status)
         VALUES
             (9601, 10, 20, 10, 9601, 1, 100, 1, 1)
-        "#,
-    )
-    .execute(&pool)
-    .await
-    .unwrap();
-    sqlx::query(
-        r#"
-        INSERT INTO ai_route_candidate
-            (id, uuid, tenant_id, organization_id, channel_group_id, channel_id,
-             provider_code, channel_type, vendor_code, api_code, model_code, catalog_key,
-             region_code, priority, weight, health_status, status)
-        VALUES
-            (9601, 'route-gemini-generate-content', 10, 20, 10, 9601,
-             'google', 'official', 'google', 'gemini.generate_content',
-             NULL, NULL, 'global', 1, 100, 1, 1)
         "#,
     )
     .execute(&pool)
@@ -6495,37 +6696,20 @@ async fn seed_gemini_generate_content_billing_catalog(
     .execute(&pool)
     .await
     .unwrap();
-    sqlx::query(
-        r#"
-        INSERT INTO ai_channel_model
-            (id, uuid, tenant_id, organization_id, catalog_key, model, vendor_code,
-             channel_id, provider_model, provider_native_model, api_code, status)
-        VALUES
-            (9601, 'channel-model-google-gemini-2-5-flash-generate-content',
-             10, 20, 'google/gemini-2.5-flash', 'gemini-2.5-flash',
-             'google', 9601, 'gemini-2.5-flash', 'gemini-2.5-flash',
-             'gemini.generate_content', 1)
-        "#,
+    grant_provider_native_model_api_resource(
+        &pool,
+        29601,
+        9601,
+        "google",
+        "google-main",
+        "google",
+        "gemini.generate_content",
+        "llm",
+        "google/gemini-2.5-flash",
+        "gemini-2.5-flash",
+        "gemini-2.5-flash",
     )
-    .execute(&pool)
-    .await
-    .unwrap();
-    sqlx::query(
-        r#"
-        INSERT INTO ai_route_candidate
-            (id, uuid, tenant_id, organization_id, channel_group_id, channel_id,
-             provider_code, channel_type, vendor_code, api_code, model_code, catalog_key,
-             region_code, priority, weight, health_status, status)
-        VALUES
-            (9602, 'route-gemini-generate-content-model', 10, 20, 10, 9601,
-             'google', 'official', 'google', 'gemini.generate_content',
-             'gemini-2.5-flash', 'google/gemini-2.5-flash',
-             'global', 1, 100, 1, 1)
-        "#,
-    )
-    .execute(&pool)
-    .await
-    .unwrap();
+    .await;
     sqlx::query(
         r#"
         INSERT INTO ai_model_pricing
@@ -6593,6 +6777,17 @@ async fn seed_kling_text_to_video_channel_route(
     .execute(&pool)
     .await
     .unwrap();
+    insert_channel_credential(
+        &pool,
+        950101,
+        9501,
+        "kling",
+        "kling-main",
+        "vault://providers/kling/account/main",
+        base_url,
+        "{}",
+    )
+    .await;
     sqlx::query(
         r#"
         INSERT INTO ai_routing_profile
@@ -6644,21 +6839,6 @@ async fn seed_kling_text_to_video_channel_route(
              enabled, status)
         VALUES
             (9501, 10, 20, 10, 9501, 1, 100, 1, 1)
-        "#,
-    )
-    .execute(&pool)
-    .await
-    .unwrap();
-    sqlx::query(
-        r#"
-        INSERT INTO ai_route_candidate
-            (id, uuid, tenant_id, organization_id, channel_group_id, channel_id,
-             provider_code, channel_type, vendor_code, api_code, model_code, catalog_key,
-             region_code, priority, weight, health_status, status)
-        VALUES
-            (9501, 'route-kling-text-to-video', 10, 20, 10, 9501,
-             'kling', 'official', 'kling', 'kling.text_to_video',
-             NULL, NULL, 'global', 1, 100, 1, 1)
         "#,
     )
     .execute(&pool)
@@ -6720,6 +6900,17 @@ async fn seed_start_end2video_channel_route(
     .execute(&pool)
     .await
     .unwrap();
+    insert_channel_credential(
+        &pool,
+        id * 100 + 1,
+        id,
+        provider_code,
+        &format!("{provider_code}-main"),
+        secret_ref,
+        base_url,
+        auth_config,
+    )
+    .await;
     sqlx::query(
         r#"
         INSERT INTO ai_routing_profile
@@ -6775,25 +6966,6 @@ async fn seed_start_end2video_channel_route(
     )
     .bind(id)
     .bind(id)
-    .execute(&pool)
-    .await
-    .unwrap();
-    sqlx::query(
-        r#"
-        INSERT INTO ai_route_candidate
-            (id, uuid, tenant_id, organization_id, channel_group_id, channel_id,
-             provider_code, channel_type, vendor_code, api_code, model_code, catalog_key,
-             region_code, priority, weight, health_status, status)
-        VALUES
-            (?, ?, 10, 20, 10, ?, ?, 'relay', ?, 'vidu.start_end_to_video',
-             NULL, NULL, 'global', 1, 100, 1, 1)
-        "#,
-    )
-    .bind(id)
-    .bind(format!("route-{provider_code}-start-end2video"))
-    .bind(id)
-    .bind(provider_code)
-    .bind(upstream_vendor_code)
     .execute(&pool)
     .await
     .unwrap();
@@ -6871,35 +7043,20 @@ async fn seed_tencent_cloud_vidu_billing_catalog(
     .execute(&pool)
     .await
     .unwrap();
-    sqlx::query(
-        r#"
-        INSERT INTO ai_channel_model
-            (id, uuid, tenant_id, organization_id, catalog_key, model, vendor_code,
-             channel_id, provider_model, provider_native_model, api_code, status)
-        VALUES
-            (9401, 'channel-model-tencent-cloud-global-vidu2', 10, 20,
-             'tencent-cloud/vidu2.0', 'vidu2.0', 'tencent-cloud',
-             9301, 'vidu2.0', 'vidu2.0', 'vidu.start_end_to_video', 1)
-        "#,
+    grant_provider_native_model_api_resource(
+        &pool,
+        19401,
+        9301,
+        "tencent-cloud",
+        "tencent-cloud-main",
+        "tencent-cloud",
+        "vidu.start_end_to_video",
+        "video",
+        "tencent-cloud/vidu2.0",
+        "vidu2.0",
+        "vidu2.0",
     )
-    .execute(&pool)
-    .await
-    .unwrap();
-    sqlx::query(
-        r#"
-        INSERT INTO ai_route_candidate
-            (id, uuid, tenant_id, organization_id, channel_group_id, channel_id,
-             provider_code, channel_type, vendor_code, api_code, model_code, catalog_key,
-             region_code, priority, weight, health_status, status)
-        VALUES
-            (9401, 'route-tencent-cloud-vidu2-start-end2video', 10, 20, 10, 9301,
-             'tencent-cloud', 'relay', 'tencent-cloud', 'vidu.start_end_to_video',
-             'vidu2.0', 'tencent-cloud/vidu2.0', 'global', 1, 100, 1, 1)
-        "#,
-    )
-    .execute(&pool)
-    .await
-    .unwrap();
+    .await;
     sqlx::query(
         r#"
         INSERT INTO ai_model_pricing
@@ -7033,43 +7190,20 @@ async fn seed_vidu_billing_catalog_for_provider(
     .execute(&pool)
     .await
     .unwrap();
-    sqlx::query(
-        r#"
-        INSERT INTO ai_channel_model
-            (id, uuid, tenant_id, organization_id, catalog_key, model, vendor_code,
-             channel_id, provider_model, provider_native_model, api_code, status)
-        VALUES
-            (?, ?, 10, 20, ?, 'vidu2.0', ?,
-             9301, 'vidu2.0', 'vidu2.0', 'vidu.start_end_to_video', 1)
-        "#,
+    grant_provider_native_model_api_resource(
+        &pool,
+        seed_id + 10000,
+        9301,
+        provider_code,
+        &format!("{provider_code}-main"),
+        provider_code,
+        "vidu.start_end_to_video",
+        "video",
+        &catalog_key,
+        "vidu2.0",
+        "vidu2.0",
     )
-    .bind(seed_id)
-    .bind(format!("channel-model-{provider_code}-global-vidu2"))
-    .bind(&catalog_key)
-    .bind(provider_code)
-    .execute(&pool)
-    .await
-    .unwrap();
-    sqlx::query(
-        r#"
-        INSERT INTO ai_route_candidate
-            (id, uuid, tenant_id, organization_id, channel_group_id, channel_id,
-             provider_code, channel_type, vendor_code, api_code, model_code, catalog_key,
-             region_code, priority, weight, health_status, status)
-        VALUES
-            (?, ?, 10, 20, 10, 9301,
-             ?, 'relay', ?, 'vidu.start_end_to_video',
-             'vidu2.0', ?, 'global', 1, 100, 1, 1)
-        "#,
-    )
-    .bind(seed_id)
-    .bind(format!("route-{provider_code}-vidu2-start-end2video"))
-    .bind(provider_code)
-    .bind(provider_code)
-    .bind(&catalog_key)
-    .execute(&pool)
-    .await
-    .unwrap();
+    .await;
     sqlx::query(
         r#"
         INSERT INTO ai_model_pricing
@@ -7538,38 +7672,8 @@ async fn seed_openai_passthrough_group_channel_routes(
     add_resource_to_openrouter_standard_bundle(&pool, 9030, 2, "api.openai.chat_completions", 9030)
         .await;
 
-    sqlx::query(
-        r#"
-        UPDATE ai_channel
-        SET credential_ref = 'vault://providers/openrouter/channel/main'
-        WHERE id = 3001
-        "#,
-    )
-    .execute(&pool)
-    .await
-    .unwrap();
-    sqlx::query(
-        r#"
-        UPDATE ai_channel
-        SET base_url = ?
-        WHERE id = 3001
-        "#,
-    )
-    .bind(standard_base_url)
-    .execute(&pool)
-    .await
-    .unwrap();
-    sqlx::query(
-        r#"
-        UPDATE ai_channel_endpoint
-        SET base_url = ?
-        WHERE channel_id = 3001
-        "#,
-    )
-    .bind(standard_base_url)
-    .execute(&pool)
-    .await
-    .unwrap();
+    set_channel_and_credential_secret(&pool, 3001, OPENROUTER_STANDARD_SECRET_REF, "{}").await;
+    set_channel_and_credential_base_url(&pool, 3001, standard_base_url).await;
     sqlx::query(
         r#"
         INSERT INTO ai_channel
@@ -7586,41 +7690,49 @@ async fn seed_openai_passthrough_group_channel_routes(
     .execute(&pool)
     .await
     .unwrap();
-    sqlx::query(
-        r#"
-        INSERT INTO ai_channel_model
-            (id, uuid, tenant_id, organization_id, catalog_key, model, vendor_code,
-             channel_id, provider_model, provider_native_model, api_code, status)
-        VALUES
-            (9001, 'channel-model-openai-global-gpt-image-1-standard-generations',
-             10, 20, 'openai/gpt-image-1', 'gpt-image-1', 'openai',
-             3001, 'openrouter/gpt-image-1-standard', 'gpt-image-1', 'openai.images.generations', 1),
-            (9002, 'channel-model-openai-global-gpt-image-1-premium-generations',
-             10, 20, 'openai/gpt-image-1', 'gpt-image-1', 'openai',
-             3002, 'openrouter/gpt-image-1-premium', 'gpt-image-1', 'openai.images.generations', 1),
-            (9003, 'channel-model-openai-global-gpt-image-1-standard-edits',
-             10, 20, 'openai/gpt-image-1', 'gpt-image-1', 'openai',
-             3001, 'openrouter/gpt-image-1-standard', 'gpt-image-1', 'openai.images.edits', 1),
-            (9004, 'channel-model-openai-global-gpt-image-1-premium-edits',
-             10, 20, 'openai/gpt-image-1', 'gpt-image-1', 'openai',
-             3002, 'openrouter/gpt-image-1-premium', 'gpt-image-1', 'openai.images.edits', 1),
-            (9005, 'channel-model-openai-global-gpt-image-1-standard-variations',
-             10, 20, 'openai/gpt-image-1', 'gpt-image-1', 'openai',
-             3001, 'openrouter/gpt-image-1-standard', 'gpt-image-1', 'openai.images.variations', 1),
-            (9006, 'channel-model-openai-global-gpt-image-1-premium-variations',
-             10, 20, 'openai/gpt-image-1', 'gpt-image-1', 'openai',
-             3002, 'openrouter/gpt-image-1-premium', 'gpt-image-1', 'openai.images.variations', 1),
-            (9007, 'channel-model-openai-gpt-4o-mini-evals-standard',
-             10, 20, 'openai/gpt-4o-mini', 'gpt-4o-mini', 'openai',
-             3001, 'gpt-4o-mini', 'gpt-4o-mini', 'openai.evals', 1),
-            (9008, 'channel-model-openai-gpt-4o-mini-evals-premium',
-             10, 20, 'openai/gpt-4o-mini', 'gpt-4o-mini', 'openai',
-             3002, 'gpt-4o-mini', 'gpt-4o-mini', 'openai.evals', 1)
-        "#,
+    insert_channel_credential(
+        &pool,
+        300201,
+        3002,
+        "openrouter",
+        "openrouter-premium",
+        OPENROUTER_ACCOUNT_PREMIUM_SECRET_REF,
+        premium_base_url,
+        "{}",
     )
-    .execute(&pool)
-    .await
-    .unwrap();
+    .await;
+    insert_channel_scoped_model_mapping(
+        &pool,
+        &ChannelScopedModelMappingSeed {
+            rule_id: 9001,
+            channel_id: 3001,
+            channel_code: "openrouter-main",
+            source_model: "gpt-image-1",
+            source_catalog_key: "openai/gpt-image-1",
+            target_model: "gpt-image-1",
+            target_catalog_key: "openai/gpt-image-1",
+            target_provider_model: "openrouter/gpt-image-1-standard",
+            target_provider_native_model: "gpt-image-1-standard",
+            sort_order: 1,
+        },
+    )
+    .await;
+    insert_channel_scoped_model_mapping(
+        &pool,
+        &ChannelScopedModelMappingSeed {
+            rule_id: 9002,
+            channel_id: 3002,
+            channel_code: "openrouter-premium",
+            source_model: "gpt-image-1",
+            source_catalog_key: "openai/gpt-image-1",
+            target_model: "gpt-image-1",
+            target_catalog_key: "openai/gpt-image-1",
+            target_provider_model: "openrouter/gpt-image-1-premium",
+            target_provider_native_model: "gpt-image-1-premium",
+            sort_order: 1,
+        },
+    )
+    .await;
     grant_openrouter_standard_bundle_to_channel(&pool, 9002, 3002, "openrouter-premium", 1, 100)
         .await;
 
@@ -7663,43 +7775,6 @@ async fn seed_openai_passthrough_group_channel_routes(
     .execute(&pool)
     .await
     .unwrap();
-    sqlx::query(
-        r#"
-        INSERT INTO ai_route_candidate
-            (id, uuid, tenant_id, organization_id, channel_group_id, channel_id,
-             provider_code, channel_type, vendor_code, api_code, model_code, catalog_key,
-             region_code, priority, weight, health_status, status)
-        VALUES
-            (9001, 'route-openrouter-standard-gpt-image-1', 10, 20, 10, 3001,
-             'openrouter', 'relay', 'openai', 'openai.images.generations', 'gpt-image-1',
-             'openai/gpt-image-1', 'global', 1, 100, 1, 1),
-            (9002, 'route-openrouter-premium-gpt-image-1', 10, 20, 11, 3002,
-             'openrouter', 'relay', 'openai', 'openai.images.generations', 'gpt-image-1',
-             'openai/gpt-image-1', 'global', 1, 100, 1, 1),
-            (9003, 'route-openrouter-standard-gpt-image-1-edits', 10, 20, 10, 3001,
-             'openrouter', 'relay', 'openai', 'openai.images.edits', 'gpt-image-1',
-             'openai/gpt-image-1', 'global', 1, 100, 1, 1),
-            (9004, 'route-openrouter-premium-gpt-image-1-edits', 10, 20, 11, 3002,
-             'openrouter', 'relay', 'openai', 'openai.images.edits', 'gpt-image-1',
-             'openai/gpt-image-1', 'global', 1, 100, 1, 1),
-            (9005, 'route-openrouter-standard-gpt-image-1-variations', 10, 20, 10, 3001,
-             'openrouter', 'relay', 'openai', 'openai.images.variations', 'gpt-image-1',
-             'openai/gpt-image-1', 'global', 1, 100, 1, 1),
-            (9006, 'route-openrouter-premium-gpt-image-1-variations', 10, 20, 11, 3002,
-             'openrouter', 'relay', 'openai', 'openai.images.variations', 'gpt-image-1',
-             'openai/gpt-image-1', 'global', 1, 100, 1, 1),
-            (9007, 'route-openrouter-standard-gpt-4o-mini-evals', 10, 20, 10, 3001,
-             'openrouter', 'relay', 'openai', 'openai.evals', 'gpt-4o-mini',
-             'openai/gpt-4o-mini', 'global', 1, 100, 1, 1),
-            (9008, 'route-openrouter-premium-gpt-4o-mini-evals', 10, 20, 11, 3002,
-             'openrouter', 'relay', 'openai', 'openai.evals', 'gpt-4o-mini',
-             'openai/gpt-4o-mini', 'global', 1, 100, 1, 1)
-        "#,
-    )
-    .execute(&pool)
-    .await
-    .unwrap();
-
     sqlx::query(
         r#"
         INSERT INTO ai_model_pricing
@@ -7801,40 +7876,30 @@ async fn set_channel_managed_provider_secret(
     let api_key_config = catalog.api_key_security_config().unwrap();
     let codec = RingAeadApiKeySecretCodec::new(api_key_config.pepper_secret()).unwrap();
     let ciphertext = codec.encode_secret(secret_value).unwrap();
+    let auth_config = json!({ "secretMaterialCiphertext": ciphertext }).to_string();
     let pool = catalog.open_pool().await.unwrap();
-    sqlx::query(
-        r#"
-        UPDATE ai_channel
-        SET credential_ref = ?,
-            auth_config = ?
-        WHERE id = ?
-        "#,
-    )
-    .bind(secret_ref)
-    .bind(json!({ "secretMaterialCiphertext": ciphertext }).to_string())
-    .bind(channel_id)
-    .execute(&pool)
-    .await
-    .unwrap();
+    set_channel_and_credential_secret(&pool, channel_id, secret_ref, &auth_config).await;
     pool.close().await;
 }
 
 async fn seed_openai_chat_fallback_route(catalog: &sdkwork_claw_test_support::SeededSqliteCatalog) {
     let pool = catalog.open_pool().await.unwrap();
-    sqlx::query(
-        r#"
-        INSERT INTO ai_channel_model
-            (id, uuid, tenant_id, organization_id, catalog_key, model, vendor_code,
-             channel_id, provider_model, provider_native_model, api_code, status)
-        VALUES
-            (9011, 'channel-model-openai-gpt-4o-mini-fallback',
-             10, 20, 'openai/gpt-4o-mini', 'gpt-4o-mini', 'openai',
-             3002, 'gpt-4o-mini-fallback', 'gpt-4o-mini', 'openai.chat_completions', 1)
-        "#,
+    insert_channel_scoped_model_mapping(
+        &pool,
+        &ChannelScopedModelMappingSeed {
+            rule_id: 9011,
+            channel_id: 3002,
+            channel_code: "openrouter-premium",
+            source_model: "gpt-4o-mini",
+            source_catalog_key: "openai/gpt-4o-mini",
+            target_model: "gpt-4o-mini",
+            target_catalog_key: "openai/gpt-4o-mini",
+            target_provider_model: "gpt-4o-mini-fallback",
+            target_provider_native_model: "gpt-4o-mini-fallback",
+            sort_order: 1,
+        },
     )
-    .execute(&pool)
-    .await
-    .unwrap();
+    .await;
     sqlx::query(
         r#"
         INSERT INTO ai_model_pricing
@@ -7907,17 +7972,7 @@ async fn seed_openai_passthrough_default_channel_route_fallback(
 ) {
     let pool = catalog.open_pool().await.unwrap();
 
-    sqlx::query(
-        r#"
-        UPDATE ai_channel
-        SET base_url = ?
-        WHERE id = 3001
-        "#,
-    )
-    .bind(group_base_url)
-    .execute(&pool)
-    .await
-    .unwrap();
+    set_channel_and_credential_base_url(&pool, 3001, group_base_url).await;
     sqlx::query(
         r#"
         UPDATE ai_routing_rule
@@ -7945,6 +8000,17 @@ async fn seed_openai_passthrough_default_channel_route_fallback(
     .execute(&pool)
     .await
     .unwrap();
+    insert_channel_credential(
+        &pool,
+        300401,
+        3004,
+        "openrouter",
+        "openrouter-default",
+        "vault://providers/openrouter/account/default",
+        default_base_url,
+        "{}",
+    )
+    .await;
     sqlx::query(
         r#"
         INSERT INTO ai_routing_profile
@@ -7996,21 +8062,6 @@ async fn seed_openai_passthrough_default_channel_route_fallback(
              enabled, status)
         VALUES
             (604, 10, 20, 10, 3004, 1, 100, 1, 1)
-        "#,
-    )
-    .execute(&pool)
-    .await
-    .unwrap();
-    sqlx::query(
-        r#"
-        INSERT INTO ai_route_candidate
-            (id, uuid, tenant_id, organization_id, channel_group_id, channel_id,
-             provider_code, channel_type, vendor_code, api_code, model_code, catalog_key,
-             region_code, priority, weight, health_status, status)
-        VALUES
-            (9004, 'route-openrouter-default-files', 10, 20, 10, 3004,
-             'openrouter', 'relay', 'openai', 'openai.files',
-             NULL, NULL, 'global', 1, 100, 1, 1)
         "#,
     )
     .execute(&pool)
@@ -8119,6 +8170,22 @@ async fn seed_openai_passthrough_header_auth_channel_route_with_auth_config(
     .unwrap();
     sqlx::query(
         r#"
+        UPDATE ai_channel_credential
+        SET provider_code = 'google',
+            channel_code = 'google-main',
+            credential_ref = 'vault://providers/google/account/main',
+            base_url = ?,
+            auth_config = ?
+        WHERE channel_id = 3001
+        "#,
+    )
+    .bind(base_url)
+    .bind(auth_config)
+    .execute(&pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
         UPDATE ai_routing_policy
         SET capability = 10
         WHERE id = 9001
@@ -8133,22 +8200,6 @@ async fn seed_openai_passthrough_header_auth_channel_route_with_auth_config(
         SET match_expression = '{"routeKey":"openai/management/files"}',
             target_model = 'openai/management/files'
         WHERE id = 9102
-        "#,
-    )
-    .execute(&pool)
-    .await
-    .unwrap();
-    sqlx::query(
-        r#"
-        UPDATE ai_route_candidate
-        SET provider_code = 'google',
-            channel_type = 'relay',
-            vendor_code = 'google',
-            api_code = 'openai.files',
-            model_code = NULL,
-            catalog_key = NULL
-        WHERE channel_id = 3001
-          AND channel_group_id = 10
         "#,
     )
     .execute(&pool)

@@ -80,56 +80,6 @@ func (a *SitesApi) HealthCheckCreate(siteId string, body sdktypes.AdminSiteActio
     return decodeResult[sdktypes.HealthCheckCreateResult](raw)
 }
 
-// List site models
-func (a *SitesApi) SiteModelsList(siteId string) (sdktypes.SiteModelsListResult, error) {
-    raw, err := a.client.Get(BackendApiPath(fmt.Sprintf("/sites/%s/models", SerializePathParameter(siteId, PathParameterSpec{Name: "siteId", Style: "simple", Explode: false}))), nil, nil)
-    if err != nil {
-        var zero sdktypes.SiteModelsListResult
-        return zero, err
-    }
-    return decodeResult[sdktypes.SiteModelsListResult](raw)
-}
-
-// Create site model
-func (a *SitesApi) SiteModelsCreate(siteId string, body sdktypes.AdminSiteModelCreateRequest) (sdktypes.SiteModelsCreateResult, error) {
-    raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/sites/%s/models", SerializePathParameter(siteId, PathParameterSpec{Name: "siteId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
-    if err != nil {
-        var zero sdktypes.SiteModelsCreateResult
-        return zero, err
-    }
-    return decodeResult[sdktypes.SiteModelsCreateResult](raw)
-}
-
-// Replace site models
-func (a *SitesApi) SiteModelsReplace(siteId string, body sdktypes.AdminSiteModelsReplaceRequest) (sdktypes.SiteModelsReplaceResult, error) {
-    raw, err := a.client.Put(BackendApiPath(fmt.Sprintf("/sites/%s/models", SerializePathParameter(siteId, PathParameterSpec{Name: "siteId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
-    if err != nil {
-        var zero sdktypes.SiteModelsReplaceResult
-        return zero, err
-    }
-    return decodeResult[sdktypes.SiteModelsReplaceResult](raw)
-}
-
-// Delete site model
-func (a *SitesApi) SiteModelsDelete(siteId string, siteModelId string) (sdktypes.SiteModelsDeleteResult, error) {
-    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/sites/%s/models/%s", SerializePathParameter(siteId, PathParameterSpec{Name: "siteId", Style: "simple", Explode: false}), SerializePathParameter(siteModelId, PathParameterSpec{Name: "siteModelId", Style: "simple", Explode: false}))), nil, nil)
-    if err != nil {
-        var zero sdktypes.SiteModelsDeleteResult
-        return zero, err
-    }
-    return decodeResult[sdktypes.SiteModelsDeleteResult](raw)
-}
-
-// Update site model
-func (a *SitesApi) SiteModelsUpdate(siteId string, siteModelId string, body sdktypes.AdminSiteModelUpdateRequest) (sdktypes.SiteModelsUpdateResult, error) {
-    raw, err := a.client.Patch(BackendApiPath(fmt.Sprintf("/sites/%s/models/%s", SerializePathParameter(siteId, PathParameterSpec{Name: "siteId", Style: "simple", Explode: false}), SerializePathParameter(siteModelId, PathParameterSpec{Name: "siteModelId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
-    if err != nil {
-        var zero sdktypes.SiteModelsUpdateResult
-        return zero, err
-    }
-    return decodeResult[sdktypes.SiteModelsUpdateResult](raw)
-}
-
 // Test site connection
 func (a *SitesApi) TestConnectionCreate(siteId string, body sdktypes.AdminSiteActionRequest) (sdktypes.TestConnectionCreateResult, error) {
     raw, err := a.client.Post(BackendApiPath(fmt.Sprintf("/sites/%s/test_connection", SerializePathParameter(siteId, PathParameterSpec{Name: "siteId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")

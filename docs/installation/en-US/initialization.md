@@ -11,7 +11,7 @@ clawrouterctl refresh-catalog --force
 clawrouter
 ```
 
-If you installed a native Linux `.deb`, public commands are under `/usr/bin` and private runtime assets are under `/usr/lib/clawrouter`:
+If you installed a native Linux `.deb`, public commands are under `/usr/bin` and private runtime assets are under `/usr/lib/sdkwork/router`:
 
 ```bash
 /usr/bin/clawrouterctl ensure
@@ -19,18 +19,18 @@ If you installed a native Linux `.deb`, public commands are under `/usr/bin` and
 /usr/bin/clawrouter
 ```
 
-If you installed a native macOS `.pkg`, desktop binaries are under `/opt/clawrouter/bin`; service binaries are under `/Library/Application Support/SdkWork/ClawRouter/bin`:
+If you installed a native macOS `.pkg`, desktop binaries are under `/opt/sdkwork/router/bin`; service binaries are under `/Library/Application Support/sdkwork/router/bin`:
 
 ```bash
-/opt/clawrouter/bin/clawrouterctl ensure
-/opt/clawrouter/bin/clawrouterctl refresh-catalog --force
-/opt/clawrouter/bin/clawrouter
+/opt/sdkwork/router/bin/clawrouterctl ensure
+/opt/sdkwork/router/bin/clawrouterctl refresh-catalog --force
+/opt/sdkwork/router/bin/clawrouter
 ```
 
 If you installed the Windows MSI, the default install root is:
 
 ```text
-C:\Program Files\ClawRouter
+C:\Program Files\sdkwork\router
 ```
 
 ## Initialization Order
@@ -45,13 +45,13 @@ Recommended order for archive/manual deployments:
 6. Start `clawrouter`.
 7. Check `/healthz` and `/readyz`.
 
-For Linux `service` deployments, the `.deb` creates the default runtime TOML, `/etc/clawrouter/clawrouter.env`, and `/etc/clawrouter/database.secret`. The systemd unit runs `ensure` and `refresh-catalog --force` automatically before the gateway starts. The service can write `/var/lib/clawrouter` and `/var/log/clawrouter`; `/etc/clawrouter` is read-only to the running process.
+For Linux `service` deployments, the `.deb` creates the default runtime TOML, `/etc/sdkwork/router/clawrouter.env`, and `/etc/sdkwork/router/database.secret`. The systemd unit runs `ensure` and `refresh-catalog --force` automatically before the gateway starts. The service can write `/var/lib/sdkwork/router` and `/var/log/sdkwork/router`; `/etc/sdkwork/router` is read-only to the running process.
 
 Linux service packages should follow this order:
 
 ```bash
 sudo apt install ./clawrouter-linux-x64-server-0.3.0.deb
-sudo editor /etc/clawrouter/clawrouter.toml
+sudo editor /etc/sdkwork/router/clawrouter.toml
 sudo systemctl start clawrouter
 sudo systemctl status clawrouter --no-pager
 ```
@@ -62,37 +62,37 @@ server/service/container defaults:
 
 | Platform | Config file |
 | --- | --- |
-| Windows | `%ProgramData%/SdkWork/ClawRouter/clawrouter.toml` |
-| Linux | `/etc/clawrouter/clawrouter.toml` |
-| macOS | `/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml` |
+| Windows | `%ProgramData%/sdkwork/router/clawrouter.toml` |
+| Linux | `/etc/sdkwork/router/clawrouter.toml` |
+| macOS | `/Library/Application Support/sdkwork/router/clawrouter.toml` |
 
 desktop defaults:
 
 | Platform | Config file |
 | --- | --- |
-| Windows | `%APPDATA%/SdkWork/ClawRouter/clawrouter.toml` |
-| Linux | `${XDG_CONFIG_HOME:-~/.config}/clawrouter/clawrouter.toml` |
-| macOS | `~/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml` |
+| Windows | `%USERPROFILE%/.sdkwork/router/config/clawrouter.toml` |
+| Linux | `~/.sdkwork/router/config/clawrouter.toml` |
+| macOS | `~/.sdkwork/router/config/clawrouter.toml` |
 
 Override with `SDKWORK_CLAW_CONFIG_FILE`:
 
 ```bash
-export SDKWORK_CLAW_CONFIG_FILE="/etc/clawrouter/clawrouter.toml"
+export SDKWORK_CLAW_CONFIG_FILE="/etc/sdkwork/router/clawrouter.toml"
 ```
 
 PowerShell:
 
 ```powershell
-$env:SDKWORK_CLAW_CONFIG_FILE="C:\ProgramData\SdkWork\ClawRouter\clawrouter.toml"
+$env:SDKWORK_CLAW_CONFIG_FILE="C:\ProgramData\sdkwork\router\clawrouter.toml"
 ```
 
 Native package install locations:
 
 | Platform | Binaries | Notes |
 | --- | --- | --- |
-| Linux `.deb` | `/usr/bin` public commands, `/usr/lib/clawrouter/bin` private binaries | `service` packages also install `/lib/systemd/system/clawrouter.service`, `/etc/clawrouter`, `/var/lib/clawrouter`, and `/var/log/clawrouter`. |
-| Windows `.msi` | `C:\Program Files\ClawRouter\bin` | Shared config templates use `%ProgramData%/SdkWork/ClawRouter`; desktop runtime config is created under `%APPDATA%/SdkWork/ClawRouter` during user initialization. |
-| macOS `.pkg` | `/opt/clawrouter/bin` for desktop, `/Library/Application Support/SdkWork/ClawRouter/bin` for service | `service` packages also install `/Library/LaunchDaemons/com.sdkwork.clawrouter.plist`. |
+| Linux `.deb` | `/usr/bin` public commands, `/usr/lib/sdkwork/router/bin` private binaries | `service` packages also install `/lib/systemd/system/clawrouter.service`, `/etc/sdkwork/router`, `/var/lib/sdkwork/router`, and `/var/log/sdkwork/router`. |
+| Windows `.msi` | `C:\Program Files\sdkwork\router\bin` | Shared config templates use `%ProgramData%/sdkwork/router`; desktop runtime config is created under `%USERPROFILE%/.sdkwork/router/config` during user initialization. |
+| macOS `.pkg` | `/opt/sdkwork/router/bin` for desktop, `/Library/Application Support/sdkwork/router/bin` for service | `service` packages also install `/Library/LaunchDaemons/com.sdkwork.clawrouter.plist`. |
 
 Every package includes `install-manifest.json` with `installConfiguration`. Native installers also include `nativeInstall`, which describes the final install paths, service metadata, permissions, and operator commands.
 
@@ -118,9 +118,9 @@ For a default Linux service deployment, the package creates this runtime databas
 engine = "postgresql"
 host = "db.example.com"
 port = 5432
-database = "sdkwork_claw_router"
-username = "sdkwork_claw_router"
-password_file = "/etc/clawrouter/database.secret"
+database = "sdkwork_ai_prod"
+username = "sdkworkprod@2026++"
+password_file = "/etc/sdkwork/router/database.secret"
 # password = "change-me"
 ssl_mode = "require"
 max_connections = 16
@@ -132,7 +132,7 @@ port = 6379
 database = 0
 # username = "default"
 # url = "redis://redis.example.com:6379/0"
-# password_file = "/etc/clawrouter/redis.secret"
+# password_file = "/etc/sdkwork/router/redis.secret"
 # password = "change-me"
 key_prefix = "clawrouter"
 tls = false
@@ -169,7 +169,7 @@ gateway_base_url = "http://127.0.0.1:18080"
 backend_api_base_url = "http://127.0.0.1:18081"
 app_api_base_url = "http://127.0.0.1:18082"
 portal_base_url = "http://127.0.0.1:3901"
-portal_static_dist = "/usr/lib/clawrouter/portal/dist"
+portal_static_dist = "/usr/lib/sdkwork/router/portal/dist"
 cors_allowed_origins = []
 upstream_request_timeout_millis = 30000
 upstream_ready_timeout_millis = 2000
@@ -196,11 +196,11 @@ csp_frame_src = ["https://player.bilibili.com"]
 rate_limit_requests = 120
 rate_limit_window_seconds = 60
 max_body_bytes = 1048576
-sdk_archive_root = "/usr/lib/clawrouter/portal/dist/sdk-archives"
+sdk_archive_root = "/usr/lib/sdkwork/router/portal/dist/sdk-archives"
 
 [provider_relay.openai]
 # base_url = "https://api.openai.com/v1"
-# bearer_token_file = "/etc/clawrouter/openai-relay.secret"
+# bearer_token_file = "/etc/sdkwork/router/openai-relay.secret"
 
 [provider_relay.runtime]
 response_timeout_millis = 120000
@@ -215,8 +215,8 @@ retryable_status_codes = [429, 500, 502, 503, 504]
 backoff_millis = 0
 
 [paths]
-data_directory = "/var/lib/clawrouter"
-course_upload_root = "/var/lib/clawrouter/uploads/courses"
+data_directory = "/var/lib/sdkwork/router"
+course_upload_root = "/var/lib/sdkwork/router/uploads/courses"
 
 [courses]
 video_upload_max_bytes = 1073741824
@@ -232,12 +232,12 @@ payment_callback_body_max_bytes = 65536
 deployment_mode = "server"
 ```
 
-The `.deb` package creates `/etc/clawrouter/database.secret` with the placeholder value `change-me`. Replace that file with the real PostgreSQL password before starting `clawrouter`; startup rejects server configurations that still use `db.example.com` or `change-me`.
+The `.deb` package creates `/etc/sdkwork/router/database.secret` with the placeholder value `change-me`. Replace that file with the real PostgreSQL password before starting `clawrouter`; startup rejects server configurations that still use `db.example.com` or `change-me`.
 
 Redis is enabled and required by default for server/service/container
 deployments. Configure `[redis].host`, `[redis].port`, and `[redis].database`
 before first startup; use `[redis].url` only as an advanced managed-endpoint
-override. Use `/etc/clawrouter/redis.secret` or another protected
+override. Use `/etc/sdkwork/router/redis.secret` or another protected
 `password_file`, and keep direct `[redis].password` only for TOML files managed
 as secret-bearing files. Desktop deployments keep Redis optional and disabled
 by default.
@@ -295,15 +295,15 @@ For production server/service/container deployments, use the structured TOML fie
 engine = "postgresql"
 host = "db.internal"
 port = 5432
-database = "sdkwork_claw_router"
-username = "sdkwork_claw_router"
+database = "sdkwork_ai_prod"
+username = "sdkworkprod@2026++"
 password = "real-password"
 ssl_mode = "require"
 max_connections = 16
 
 [paths]
-data_directory = "/var/lib/clawrouter"
-course_upload_root = "/var/lib/clawrouter/uploads/courses"
+data_directory = "/var/lib/sdkwork/router"
+course_upload_root = "/var/lib/sdkwork/router/uploads/courses"
 
 [courses]
 video_upload_max_bytes = 1073741824
@@ -319,10 +319,10 @@ payment_callback_body_max_bytes = 65536
 deployment_mode = "server"
 ```
 
-`SDKWORK_CLAW_DATABASE_URL` remains available in `/etc/clawrouter/clawrouter.env` or the process environment only as an explicit operator override:
+`SDKWORK_CLAW_DATABASE_URL` remains available in `/etc/sdkwork/router/clawrouter.env` or the process environment only as an explicit operator override:
 
 ```text
-SDKWORK_CLAW_DATABASE_URL=postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router
+SDKWORK_CLAW_DATABASE_URL=postgresql://sdkworkprod%402026%2B%2B:<password>@db.example.com:5432/sdkwork_ai_prod
 ```
 
 Desktop SQLite example:
@@ -352,15 +352,15 @@ From native Linux `.deb` packages, use:
 From native macOS `.pkg` desktop packages, use:
 
 ```bash
-/opt/clawrouter/bin/clawrouterctl status
-/opt/clawrouter/bin/clawrouterctl ensure
-/opt/clawrouter/bin/clawrouterctl refresh-catalog --force
+/opt/sdkwork/router/bin/clawrouterctl status
+/opt/sdkwork/router/bin/clawrouterctl ensure
+/opt/sdkwork/router/bin/clawrouterctl refresh-catalog --force
 ```
 
 From the default Windows MSI install directory, use:
 
 ```powershell
-Set-Location "C:\Program Files\ClawRouter"
+Set-Location "C:\Program Files\sdkwork\router"
 .\bin\clawrouterctl.exe status
 .\bin\clawrouterctl.exe ensure
 .\bin\clawrouterctl.exe refresh-catalog --force

@@ -9,6 +9,7 @@ import {
   readSdkworkMediaResource,
   type SdkworkMediaResource,
 } from "@sdkwork/appbase-pc-react";
+import { unwrapIamSdkResponse } from "@sdkwork/iam-sdk-adapter";
 import {
   createSdkworkAuthMessages,
   formatSdkworkAuthTemplate,
@@ -289,13 +290,6 @@ export interface SdkworkAuthService {
   verifyCode(input: SdkworkAuthVerifyCodeInput): Promise<boolean>;
 }
 
-interface SdkworkAppSdkEnvelope<T> {
-  code?: number | string;
-  data?: T;
-  message?: string;
-  msg?: string;
-}
-
 interface SdkworkRemoteIdentity {
   avatar?: unknown;
   displayName?: string;
@@ -365,33 +359,11 @@ interface SdkworkRemoteVerificationPolicy {
   phoneRegistrationVerificationRequired?: boolean;
 }
 
-function isSuccessCode(code: number | string | undefined): boolean {
-  if (code === undefined || code === null) {
-    return true;
-  }
-
-  const normalized = String(code).trim();
-  return normalized === "0" || normalized === "200" || normalized === "2000";
-}
-
 function unwrapAppSdkResponse<T>(
   payload: unknown,
   fallbackMessage: string,
 ): T {
-  if (!payload || typeof payload !== "object") {
-    return payload as T;
-  }
-
-  if (!("code" in payload) && !("data" in payload)) {
-    return payload as T;
-  }
-
-  const envelope = payload as SdkworkAppSdkEnvelope<T>;
-  if (!isSuccessCode(envelope.code)) {
-    throw new Error(String(envelope.message || envelope.msg || fallbackMessage).trim());
-  }
-
-  return (envelope.data ?? null) as T;
+  return unwrapIamSdkResponse<T>(payload, fallbackMessage);
 }
 
 function isExpiredQrLoginCodeError(error: unknown): boolean {

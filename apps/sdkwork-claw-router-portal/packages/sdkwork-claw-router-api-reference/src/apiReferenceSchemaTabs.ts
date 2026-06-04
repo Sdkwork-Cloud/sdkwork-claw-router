@@ -1,5 +1,5 @@
 import type { ElementType } from 'react';
-import { Cloud, CreditCard, Layout, Server, Settings, Sparkles } from 'lucide-react';
+import { Cloud, CreditCard, FileScan, Layout, Server, Settings, Sparkles } from 'lucide-react';
 import type {
   ApiParameter,
   ApiReferenceEndpoint,
@@ -43,6 +43,15 @@ export interface ApiSchemaTab {
   cacheTtlSeconds?: number;
   status?: ApiSchemaTabStatus;
   description?: string;
+  serviceGroups?: ApiSchemaServiceGroup[];
+}
+
+export interface ApiSchemaServiceGroup {
+  code: string;
+  name: string;
+  description: string;
+  providerCodes: string[];
+  operations: string[];
 }
 
 export interface ApiSchemaTabsDocument {
@@ -56,6 +65,7 @@ export interface ApiCategory {
   id: string;
   name: string;
   endpoints: ApiReferenceEndpoint[];
+  sortOrder?: number;
 }
 
 export interface ApiCategorySidebarNode {
@@ -65,6 +75,7 @@ export interface ApiCategorySidebarNode {
   endpoints: ApiReferenceEndpoint[];
   children: ApiCategorySidebarNode[];
   totalEndpoints: number;
+  sortOrder?: number;
 }
 
 export interface ApiSystemData {
@@ -77,6 +88,7 @@ export interface ApiSystemData {
   categories: ApiCategory[];
   status: ApiSchemaTabStatus;
   description?: string;
+  serviceGroups: ApiSchemaServiceGroup[];
 }
 
 export type ApiReferenceFetchJson = (url: string) => Promise<unknown>;
@@ -109,6 +121,7 @@ export function buildApiCategorySidebarTree(categories: ApiCategory[]): ApiCateg
           endpoints: [],
           children: [],
           totalEndpoints: 0,
+          sortOrder: index === segments.length - 1 ? category.sortOrder : undefined,
         };
         nodeMap[fullName] = node;
 
@@ -119,6 +132,9 @@ export function buildApiCategorySidebarTree(categories: ApiCategory[]): ApiCateg
         }
       }
 
+      if (index === segments.length - 1 && typeof category.sortOrder === 'number') {
+        node.sortOrder = category.sortOrder;
+      }
       parentNode = node;
     });
 
@@ -166,6 +182,7 @@ export async function buildApiReferenceSystemsFromTabs(
         categories: [],
         status: tab.status,
         description: tab.description,
+        serviceGroups: tab.serviceGroups ?? [],
       };
     }
 
@@ -189,6 +206,7 @@ export async function buildApiReferenceSystemsFromTabs(
       categories: schemaDocs.flatMap((schemaDoc) => openApiDocumentToCategories(schemaDoc.spec)),
       status: tab.status ?? 'available',
       description: tab.description,
+      serviceGroups: tab.serviceGroups ?? [],
     };
   }));
 
@@ -272,11 +290,40 @@ function normalizeApiSchemaTab(value: unknown): ApiSchemaTab {
     cacheTtlSeconds: numberOrUndefined(value.cacheTtlSeconds),
     status: normalizeApiSchemaTabStatus(value.status),
     description: typeof value.description === 'string' ? value.description : undefined,
+    serviceGroups: normalizeApiSchemaServiceGroups(value.serviceGroups),
+  };
+}
+
+function normalizeApiSchemaServiceGroups(value: unknown): ApiSchemaServiceGroup[] {
+  if (!Array.isArray(value)) {
+    return [];
+  }
+  return value
+    .map(normalizeApiSchemaServiceGroup)
+    .filter((group): group is ApiSchemaServiceGroup => group !== null);
+}
+
+function normalizeApiSchemaServiceGroup(value: unknown): ApiSchemaServiceGroup | null {
+  if (!isRecord(value)) {
+    return null;
+  }
+  const code = stringOrUndefined(value.code);
+  const name = stringOrUndefined(value.name);
+  if (!code || !name) {
+    return null;
+  }
+  return {
+    code,
+    name,
+    description: stringOrUndefined(value.description) ?? '',
+    providerCodes: stringList(value.providerCodes),
+    operations: stringList(value.operations),
   };
 }
 
 function openApiDocumentToCategories(spec: OpenApiDocument): ApiCategory[] {
   const categoriesMap: Record<string, ApiCategory> = {};
+  const categorySortOrders = openApiTagSortOrders(spec);
 
   Object.entries(spec.paths).forEach(([path, pathItem]: [string, OpenApiPathItem]) => {
     Object.entries(pathItem).forEach(([method, operation]) => {
@@ -288,6 +335,7 @@ function openApiDocumentToCategories(spec: OpenApiDocument): ApiCategory[] {
           id: tag.toLowerCase().replace(/\s+/g, '-'),
           name: tag,
           endpoints: [],
+          sortOrder: categorySortOrders[tag],
         };
       }
 
@@ -336,6 +384,17 @@ function shouldPreserveApiDisplayWord(word: string): boolean {
 
 function sortApiCategories(categories: ApiCategory[]): ApiCategory[] {
   return [...categories].sort((left, right) => {
+    const leftOrder = left.sortOrder;
+    const rightOrder = right.sortOrder;
+    if (typeof leftOrder === 'number' && typeof rightOrder === 'number' && leftOrder !== rightOrder) {
+      return leftOrder - rightOrder;
+    }
+    if (typeof leftOrder === 'number' && typeof rightOrder !== 'number') {
+      return -1;
+    }
+    if (typeof leftOrder !== 'number' && typeof rightOrder === 'number') {
+      return 1;
+    }
     const leftKey = categorySortKey(left.name);
     const rightKey = categorySortKey(right.name);
     for (let index = 0; index < Math.max(leftKey.length, rightKey.length); index += 1) {
@@ -351,6 +410,17 @@ function sortApiCategories(categories: ApiCategory[]): ApiCategory[] {
 
 function sortApiSidebarNodes(nodes: ApiCategorySidebarNode[]): ApiCategorySidebarNode[] {
   return [...nodes].sort((left, right) => {
+    const leftOrder = left.sortOrder;
+    const rightOrder = right.sortOrder;
+    if (typeof leftOrder === 'number' && typeof rightOrder === 'number' && leftOrder !== rightOrder) {
+      return leftOrder - rightOrder;
+    }
+    if (typeof leftOrder === 'number' && typeof rightOrder !== 'number') {
+      return -1;
+    }
+    if (typeof leftOrder !== 'number' && typeof rightOrder === 'number') {
+      return 1;
+    }
     const leftKey = categorySortKey(left.fullName);
     const rightKey = categorySortKey(right.fullName);
     for (let index = 0; index < Math.max(leftKey.length, rightKey.length); index += 1) {
@@ -366,9 +436,13 @@ function sortApiSidebarNodes(nodes: ApiCategorySidebarNode[]): ApiCategorySideba
 
 function finalizeApiSidebarNode(node: ApiCategorySidebarNode): ApiCategorySidebarNode {
   const children = sortApiSidebarNodes(node.children).map(finalizeApiSidebarNode);
+  const childSortOrders = children
+    .map((child) => child.sortOrder)
+    .filter((sortOrder): sortOrder is number => typeof sortOrder === 'number');
   return {
     ...node,
     children,
+    sortOrder: node.sortOrder ?? (childSortOrders.length ? Math.min(...childSortOrders) : undefined),
     totalEndpoints: node.endpoints.length + children.reduce((sum, child) => sum + child.totalEndpoints, 0),
   };
 }
@@ -376,6 +450,17 @@ function finalizeApiSidebarNode(node: ApiCategorySidebarNode): ApiCategorySideba
 function splitApiCategoryPath(categoryName: string): string[] {
   const segments = categoryName.split('/').map((segment) => segment.trim()).filter(Boolean);
   return segments.length > 0 ? segments : ['Default'];
+}
+
+function openApiTagSortOrders(spec: OpenApiDocument): Record<string, number> {
+  const tags = Array.isArray(spec.tags) ? spec.tags : [];
+  return Object.fromEntries(tags
+    .filter((tag) => (
+      typeof tag.name === 'string'
+      && typeof tag['x-display-order'] === 'number'
+      && Number.isFinite(tag['x-display-order'])
+    ))
+    .map((tag) => [tag.name as string, tag['x-display-order'] as number]));
 }
 
 function createApiSidebarNodeId(fullName: string): string {
@@ -498,6 +583,7 @@ async function defaultFetchJson(url: string): Promise<unknown> {
 
 function iconForTab(id: string): ElementType {
   if (id === 'payment-aggregate') return CreditCard;
+  if (id === 'paas-api') return FileScan;
   if (id === 'cloud-services') return Cloud;
   if (id === 'backend') return Settings;
   if (id === 'app') return Layout;
@@ -514,6 +600,23 @@ function stringOrThrow(value: unknown, label: string): string {
     throw new Error(`${label} is required`);
   }
   return value;
+}
+
+function stringOrUndefined(value: unknown): string | undefined {
+  if (typeof value !== 'string') {
+    return undefined;
+  }
+  const normalized = value.trim();
+  return normalized ? normalized : undefined;
+}
+
+function stringList(value: unknown): string[] {
+  if (!Array.isArray(value)) {
+    return [];
+  }
+  return value
+    .map(stringOrUndefined)
+    .filter((item): item is string => item !== undefined);
 }
 
 function numberOrUndefined(value: unknown): number | undefined {

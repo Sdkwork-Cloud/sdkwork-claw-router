@@ -28,7 +28,6 @@ class AppModelCatalogItem:
     output_modalities: List[str]
     price_availability: AppModelCatalogPriceAvailability
     provider_codes: List[str]
-    region_code: str
     release_stage: Optional[int]
     replacement_model: Optional[str]
     routing_state: Optional[int]
@@ -41,5 +40,3 @@ class AppModelCatalogItem:
     use_cases: List[str]
     vendor: str
     vendor_code: str
-    official_reference_currency: Optional[str] = None
-    official_reference_unit_price: Optional[str] = None

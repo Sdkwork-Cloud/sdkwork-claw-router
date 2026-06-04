@@ -1207,7 +1207,7 @@ async fn edge_server_can_serve_portal_dist_without_node_server() {
 
     let schema_tabs_payload =
         json_request(router.clone(), Method::GET, "/openapi/schema-tabs.json", "").await;
-    assert_eq!(5, schema_tabs_payload["tabs"].as_array().unwrap().len());
+    assert_eq!(6, schema_tabs_payload["tabs"].as_array().unwrap().len());
     assert_eq!("gateway", schema_tabs_payload["tabs"][0]["id"]);
     assert_eq!("AI聚合API", schema_tabs_payload["tabs"][0]["name"]);
     assert_eq!("available", schema_tabs_payload["tabs"][0]["status"]);
@@ -1226,20 +1226,126 @@ async fn edge_server_can_serve_portal_dist_without_node_server() {
         "/payments/v3/openapi.json",
         schema_tabs_payload["tabs"][1]["defaultSchemaUrl"]
     );
-    assert_eq!("cloud-services", schema_tabs_payload["tabs"][2]["id"]);
-    assert_eq!("基础云服务API", schema_tabs_payload["tabs"][2]["name"]);
-    assert_eq!("planned", schema_tabs_payload["tabs"][2]["status"]);
+    assert_eq!("paas-api", schema_tabs_payload["tabs"][2]["id"]);
+    assert_eq!("PaaS API", schema_tabs_payload["tabs"][2]["name"]);
     assert!(schema_tabs_payload["tabs"][2]["schemaUrls"]
         .as_array()
         .unwrap()
-        .is_empty());
-    assert!(schema_tabs_payload["tabs"][2]
-        .get("defaultSchemaUrl")
-        .is_none());
-    assert_eq!("app", schema_tabs_payload["tabs"][3]["id"]);
+        .contains(&json!("/paas/v3/openapi.json")));
+    assert_eq!(
+        "/paas/v3/openapi.json",
+        schema_tabs_payload["tabs"][2]["defaultSchemaUrl"]
+    );
+    assert_eq!("available", schema_tabs_payload["tabs"][2]["status"]);
+    assert_eq!(
+        "ocr",
+        schema_tabs_payload["tabs"][2]["serviceGroups"][0]["code"]
+    );
+    assert_eq!(
+        "face_compare",
+        schema_tabs_payload["tabs"][2]["serviceGroups"][1]["code"]
+    );
+    assert_eq!(
+        "face_liveness_verification",
+        schema_tabs_payload["tabs"][2]["serviceGroups"][2]["code"]
+    );
+    assert_eq!("cloud-services", schema_tabs_payload["tabs"][3]["id"]);
+    assert_eq!("available", schema_tabs_payload["tabs"][3]["status"]);
     assert_eq!(40, schema_tabs_payload["tabs"][3]["order"]);
-    assert_eq!("backend", schema_tabs_payload["tabs"][4]["id"]);
+    assert_eq!(
+        "/cloud/v3/openapi.json",
+        schema_tabs_payload["tabs"][3]["schemaUrls"][0]
+    );
+    assert_eq!(
+        "/cloud/v3/openapi.json",
+        schema_tabs_payload["tabs"][3]["defaultSchemaUrl"]
+    );
+    assert_eq!(
+        "object_storage",
+        schema_tabs_payload["tabs"][3]["serviceGroups"][0]["code"]
+    );
+    assert!(
+        schema_tabs_payload["tabs"][3]["serviceGroups"][0]["providerCodes"]
+            .as_array()
+            .unwrap()
+            .contains(&json!("huawei_obs"))
+    );
+    assert!(
+        schema_tabs_payload["tabs"][3]["serviceGroups"][0]["providerCodes"]
+            .as_array()
+            .unwrap()
+            .contains(&json!("volcengine_tos"))
+    );
+    assert!(
+        schema_tabs_payload["tabs"][3]["serviceGroups"][0]["providerCodes"]
+            .as_array()
+            .unwrap()
+            .contains(&json!("baidu_bos"))
+    );
+    assert!(
+        schema_tabs_payload["tabs"][3]["serviceGroups"][0]["operations"]
+            .as_array()
+            .unwrap()
+            .contains(&json!("s3_object_batch_delete"))
+    );
+    assert!(
+        schema_tabs_payload["tabs"][3]["serviceGroups"][0]["operations"]
+            .as_array()
+            .unwrap()
+            .contains(&json!("s3_server_side_encryption"))
+    );
+    let cloud_service_groups = schema_tabs_payload["tabs"][3]["serviceGroups"]
+        .as_array()
+        .unwrap();
+    assert!(cloud_service_groups
+        .iter()
+        .any(|group| group["code"] == "cloud_compute"));
+    assert!(cloud_service_groups
+        .iter()
+        .any(|group| group["code"] == "container_runtime"));
+    assert!(cloud_service_groups
+        .iter()
+        .any(|group| group["code"] == "deployment_orchestration"));
+    let cloud_compute = cloud_service_groups
+        .iter()
+        .find(|group| group["code"] == "cloud_compute")
+        .unwrap();
+    assert!(cloud_compute["providerCodes"]
+        .as_array()
+        .unwrap()
+        .contains(&json!("aws_ec2")));
+    assert!(cloud_compute["providerCodes"]
+        .as_array()
+        .unwrap()
+        .contains(&json!("alicloud_ecs")));
+    assert!(cloud_compute["operations"]
+        .as_array()
+        .unwrap()
+        .contains(&json!("compute_instance_create")));
+    assert!(cloud_compute["operations"]
+        .as_array()
+        .unwrap()
+        .contains(&json!("compute_volume")));
+    let container_runtime = cloud_service_groups
+        .iter()
+        .find(|group| group["code"] == "container_runtime")
+        .unwrap();
+    assert!(container_runtime["operations"]
+        .as_array()
+        .unwrap()
+        .contains(&json!("container_actions")));
+    let deployment_orchestration = cloud_service_groups
+        .iter()
+        .find(|group| group["code"] == "deployment_orchestration")
+        .unwrap();
+    assert!(deployment_orchestration["operations"]
+        .as_array()
+        .unwrap()
+        .contains(&json!("deployment_release")));
+    assert_eq!("app", schema_tabs_payload["tabs"][4]["id"]);
     assert_eq!(50, schema_tabs_payload["tabs"][4]["order"]);
+    assert_eq!("backend", schema_tabs_payload["tabs"][5]["id"]);
+    assert_eq!(60, schema_tabs_payload["tabs"][5]["order"]);
 
     let openapi_payload = json_request(router.clone(), Method::GET, "/openapi.json", "").await;
     assert_eq!("3.0.3", openapi_payload["openapi"]);
@@ -1255,9 +1361,69 @@ async fn edge_server_can_serve_portal_dist_without_node_server() {
         "SDKWork Payment Aggregate API",
         payment_openapi_payload["info"]["title"]
     );
+
+    let paas_openapi_payload =
+        json_request(router.clone(), Method::GET, "/paas/v3/openapi.json", "").await;
+    assert_eq!("3.1.2", paas_openapi_payload["openapi"]);
+    assert_eq!("SDKWork PaaS API", paas_openapi_payload["info"]["title"]);
+    assert!(paas_openapi_payload["paths"]
+        .get("/paas/v3/ocr/recognitions")
+        .is_some());
     assert!(payment_openapi_payload["paths"]
         .get("/payments/v3/payment_intents")
         .is_some());
+
+    let cloud_openapi_payload =
+        json_request(router.clone(), Method::GET, "/cloud/v3/openapi.json", "").await;
+    assert_eq!("3.1.2", cloud_openapi_payload["openapi"]);
+    assert_eq!(
+        "SDKWork Cloud Services API",
+        cloud_openapi_payload["info"]["title"]
+    );
+    assert_eq!(true, cloud_openapi_payload["x-s3-compatible"]);
+    assert!(cloud_openapi_payload["paths"]
+        .get("/cloud/v3/storage/buckets")
+        .is_some());
+    assert!(cloud_openapi_payload["paths"]
+        .get("/cloud/v3/storage/presigned-urls")
+        .is_some());
+    assert!(cloud_openapi_payload["paths"]
+        .get("/cloud/v3/storage/sdk-config")
+        .is_some());
+    assert!(cloud_openapi_payload["paths"]
+        .get("/cloud/v3/storage/buckets/{bucket}/acl")
+        .is_some());
+    assert!(cloud_openapi_payload["paths"]
+        .get("/cloud/v3/iaas/compute/instances")
+        .is_some());
+    assert!(cloud_openapi_payload["paths"]
+        .get("/cloud/v3/iaas/containers")
+        .is_some());
+    assert!(cloud_openapi_payload["paths"]
+        .get("/cloud/v3/iaas/deployments/applications")
+        .is_some());
+    assert!(cloud_openapi_payload["paths"]
+        .get("/cloud/v3/storage/buckets/{bucket}/tagging")
+        .is_some());
+    assert!(cloud_openapi_payload["paths"]
+        .get("/cloud/v3/storage/buckets/{bucket}/objects/delete")
+        .is_some());
+    assert!(cloud_openapi_payload["paths"]
+        .get("/cloud/v3/storage/buckets/{bucket}/objects/{objectKey}/acl")
+        .is_some());
+    assert!(cloud_openapi_payload["paths"]
+        .get("/cloud/v3/storage/buckets/{bucket}/objects/{objectKey}/tagging")
+        .is_some());
+    assert!(cloud_openapi_payload["paths"]
+        .get("/cloud/v3/storage/buckets/{bucket}/multipart_uploads")
+        .is_some());
+    assert!(cloud_openapi_payload["components"]["schemas"]["S3AccessControlPolicy"].is_object());
+    assert!(
+        cloud_openapi_payload["components"]["schemas"]["S3ObjectBatchDeleteRequest"].is_object()
+    );
+    assert!(
+        cloud_openapi_payload["components"]["schemas"]["S3MultipartUploadListResult"].is_object()
+    );
 
     let app_openapi_payload =
         json_request(router.clone(), Method::GET, "/app/v3/api/openapi.json", "").await;

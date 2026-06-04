@@ -32,11 +32,6 @@ class AdminSiteRuntimeStandardTest(unittest.TestCase):
             f"{source}#createSite",
             f"{source}#updateSite",
             f"{source}#deleteSite",
-            f"{source}#fetchSiteModels",
-            f"{source}#createSiteModel",
-            f"{source}#replaceSiteModels",
-            f"{source}#updateSiteModel",
-            f"{source}#deleteSiteModel",
             f"{source}#fetchSiteChannels",
             f"{source}#testSiteConnection",
             f"{source}#healthCheckSite",
@@ -61,26 +56,6 @@ class AdminSiteRuntimeStandardTest(unittest.TestCase):
             operations[f"{source}#deleteSite"]["api_path"],
         )
         self.assertEqual(
-            "/backend/v3/api/sites/{siteId}/models",
-            operations[f"{source}#fetchSiteModels"]["api_path"],
-        )
-        self.assertEqual(
-            "/backend/v3/api/sites/{siteId}/models",
-            operations[f"{source}#createSiteModel"]["api_path"],
-        )
-        self.assertEqual(
-            "/backend/v3/api/sites/{siteId}/models",
-            operations[f"{source}#replaceSiteModels"]["api_path"],
-        )
-        self.assertEqual(
-            "/backend/v3/api/sites/{siteId}/models/{siteModelId}",
-            operations[f"{source}#updateSiteModel"]["api_path"],
-        )
-        self.assertEqual(
-            "/backend/v3/api/sites/{siteId}/models/{siteModelId}",
-            operations[f"{source}#deleteSiteModel"]["api_path"],
-        )
-        self.assertEqual(
             "/backend/v3/api/sites/{siteId}/channels",
             operations[f"{source}#fetchSiteChannels"]["api_path"],
         )
@@ -95,14 +70,18 @@ class AdminSiteRuntimeStandardTest(unittest.TestCase):
 
         serialized_operations = str(operations)
         self.assertNotIn("/backend/v3/api/integration/sites", serialized_operations)
+        self.assertNotIn("/backend/v3/api/sites/{siteId}/models", serialized_operations)
         self.assertNotIn("/backend/v3/api/sites/{siteId}/services/{serviceId}/models", serialized_operations)
         self.assertNotIn("relay_stations", serialized_operations)
         self.assertNotIn("integration_site", serialized_operations)
+        self.assertNotIn("siteModels.", serialized_operations)
 
         tables = {item["table"]: item for item in table_items}
-        for table_name in ["ai_site", "ai_site_service", "ai_site_model"]:
+        for table_name in ["ai_site", "ai_site_service"]:
             self.assertIn(table_name, tables)
             self.assertIn(table_name, effective_registry)
+        self.assertNotIn("ai_site_model", tables)
+        self.assertNotIn("ai_site_model", effective_registry)
 
         ai_channel_columns = tables["ai_channel"]["columns"]
         for field_name in [
@@ -114,8 +93,6 @@ class AdminSiteRuntimeStandardTest(unittest.TestCase):
         ]:
             self.assertIn(field_name, ai_channel_columns)
 
-        self.assertIn("site_service_id", tables["ai_site_model"]["columns"])
-        self.assertIn("service_type", tables["ai_site_model"]["columns"])
         self.assertIn("credential_ref", tables["ai_site_service"]["columns"])
         self.assertIn("credential_hash", tables["ai_site_service"]["columns"])
         self.assertIn("masked_label", tables["ai_site_service"]["columns"])
@@ -134,9 +111,6 @@ class AdminSiteRuntimeStandardTest(unittest.TestCase):
                 "SiteItem",
                 "SiteCreateInput",
                 "SiteUpdateInput",
-                "SiteModelItem",
-                "SiteModelCreateInput",
-                "SiteModelUpdateInput",
                 "SiteChannelItem",
                 "SiteConnectionCheckResult",
             }
@@ -146,9 +120,6 @@ class AdminSiteRuntimeStandardTest(unittest.TestCase):
                 "SiteItem": "/admin/model/sites",
                 "SiteCreateInput": "/admin/model/sites",
                 "SiteUpdateInput": "/admin/model/sites",
-                "SiteModelItem": "/admin/model/sites",
-                "SiteModelCreateInput": "/admin/model/sites",
-                "SiteModelUpdateInput": "/admin/model/sites",
                 "SiteChannelItem": "/admin/model/sites",
                 "SiteConnectionCheckResult": "/admin/model/sites",
             },
@@ -156,13 +127,35 @@ class AdminSiteRuntimeStandardTest(unittest.TestCase):
         )
 
     def test_admin_site_runtime_files_use_confirmed_route_markers(self) -> None:
-        plan = (ROOT / "docs" / "superpowers" / "plans" / "2026-06-02-admin-model-sites.md").read_text(
-            encoding="utf-8"
+        sources = "\n".join(
+            [
+                (ROOT / "docs" / "schema-registry" / "frontend-field-contracts.yaml").read_text(
+                    encoding="utf-8"
+                ),
+                (
+                    ROOT
+                    / "services"
+                    / "sdkwork-claw-product"
+                    / "src"
+                    / "api"
+                    / "admin_site.rs"
+                ).read_text(encoding="utf-8"),
+                (
+                    ROOT
+                    / "services"
+                    / "sdkwork-claw-product"
+                    / "src"
+                    / "infrastructure"
+                    / "sql"
+                    / "sqlite"
+                    / "admin_site_store.rs"
+                ).read_text(encoding="utf-8"),
+            ]
         )
-        self.assertIn("/backend/v3/api/sites", plan)
-        self.assertIn("ai_site", plan)
-        self.assertIn("ai_site_service", plan)
-        self.assertIn("ai_site_model", plan)
+        self.assertIn("/backend/v3/api/sites", sources)
+        self.assertIn("ai_site", sources)
+        self.assertIn("ai_site_service", sources)
+        self.assertNotIn("ai_upstream_provider", sources)
 
 
 if __name__ == "__main__":

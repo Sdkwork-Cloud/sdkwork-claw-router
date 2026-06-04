@@ -4,11 +4,11 @@ import java.util.List;
 
 public class AdminChannelUpdateRequest {
     private String accessType;
-    private String apiKey;
-    private String baseUrl;
     private List<String> capabilities;
     private String channelType;
     private ProviderCircuitBreakerPolicy circuitBreakerPolicy;
+    private String credentialRotation;
+    private List<AdminChannelCredentialInput> credentials;
     private String expiresAt;
     private String id;
     private List<String> models;
@@ -16,7 +16,6 @@ public class AdminChannelUpdateRequest {
     private String protocol;
     private List<String> resourceCodes;
     private ProviderRetryPolicy retryPolicy;
-    private String secretRef;
     private String status;
     private Integer timeoutMs;
     private String vendor;
@@ -28,22 +27,6 @@ public class AdminChannelUpdateRequest {
 
     public void setAccessType(String accessType) {
         this.accessType = accessType;
-    }
-
-    public String getApiKey() {
-        return this.apiKey;
-    }
-
-    public void setApiKey(String apiKey) {
-        this.apiKey = apiKey;
-    }
-
-    public String getBaseUrl() {
-        return this.baseUrl;
-    }
-
-    public void setBaseUrl(String baseUrl) {
-        this.baseUrl = baseUrl;
     }
 
     public List<String> getCapabilities() {
@@ -68,6 +51,22 @@ public class AdminChannelUpdateRequest {
 
     public void setCircuitBreakerPolicy(ProviderCircuitBreakerPolicy circuitBreakerPolicy) {
         this.circuitBreakerPolicy = circuitBreakerPolicy;
+    }
+
+    public String getCredentialRotation() {
+        return this.credentialRotation;
+    }
+
+    public void setCredentialRotation(String credentialRotation) {
+        this.credentialRotation = credentialRotation;
+    }
+
+    public List<AdminChannelCredentialInput> getCredentials() {
+        return this.credentials;
+    }
+
+    public void setCredentials(List<AdminChannelCredentialInput> credentials) {
+        this.credentials = credentials;
     }
 
     public String getExpiresAt() {
@@ -124,14 +123,6 @@ public class AdminChannelUpdateRequest {
 
     public void setRetryPolicy(ProviderRetryPolicy retryPolicy) {
         this.retryPolicy = retryPolicy;
-    }
-
-    public String getSecretRef() {
-        return this.secretRef;
-    }
-
-    public void setSecretRef(String secretRef) {
-        this.secretRef = secretRef;
     }
 
     public String getStatus() {

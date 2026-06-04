@@ -112,8 +112,10 @@ class ConsoleRoutingBackendRuntimeStandardTest(unittest.TestCase):
             self.assertIn(store_name, store)
             for table in [
                 "ai_channel",
-                "ai_channel_model",
-                "integration_provider_account",
+                "ai_channel_resource",
+                "ai_channel_credential",
+                "ai_resource",
+                "ai_resource_group",
                 "iam_gateway_api_key",
                 "ai_request_trace",
                 "ai_routing_decision_log",
@@ -327,13 +329,15 @@ class ConsoleRoutingBackendRuntimeStandardTest(unittest.TestCase):
             self.assertIn(store_name, store)
             for table in [
                 "integration_provider",
-                "integration_provider_account",
+                "ai_channel_credential",
                 "ai_channel",
-                "ai_channel_model",
+                "ai_channel_resource",
+                "ai_resource",
                 "ops_config_snapshot",
                 "ops_audit_log",
             ]:
                 self.assertIn(table, store)
+            self.assertNotIn("ai_channel_model", store)
 
             for method_name in [
                 "create_channel",
@@ -342,8 +346,8 @@ class ConsoleRoutingBackendRuntimeStandardTest(unittest.TestCase):
                 "delete_channel",
                 "test_channel",
                 "insert_or_load_provider",
-                "insert_provider_account",
-                "replace_channel_models",
+                "replace_channel_credential",
+                "replace_channel_resource_bindings",
                 "soft_delete_channel",
             ]:
                 self.assertIn(method_name, store)

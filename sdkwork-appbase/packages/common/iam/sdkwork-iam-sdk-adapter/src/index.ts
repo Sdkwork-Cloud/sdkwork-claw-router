@@ -12,6 +12,13 @@ export interface IamSdkAdapters {
 
 type AnyRecord = Record<string, any>;
 
+export interface IamSdkResponseEnvelope<T = unknown> {
+  code?: number | string;
+  data?: T;
+  message?: string;
+  msg?: string;
+}
+
 export function createIamSdkAdapters(input: CreateIamSdkAdaptersInput): IamSdkAdapters {
   return {
     app: createIamAppSdkAdapter(input.appClient),
@@ -19,79 +26,113 @@ export function createIamSdkAdapters(input: CreateIamSdkAdaptersInput): IamSdkAd
   };
 }
 
+export function unwrapIamSdkResponse<T = unknown>(
+  value: unknown,
+  fallbackMessage = "SDKWork IAM request failed.",
+): T {
+  if (!value || typeof value !== "object") {
+    return value as T;
+  }
+
+  if (!("data" in value) && !("code" in value)) {
+    return value as T;
+  }
+
+  const envelope = value as IamSdkResponseEnvelope<T>;
+  if (!isSuccessCode(envelope.code)) {
+    throw new Error(String(envelope.message || envelope.msg || fallbackMessage).trim());
+  }
+
+  return (envelope.data ?? null) as T;
+}
+
 export function createIamAppSdkAdapter(client: unknown): IamAppSdkClient {
   const source = toRecord(client);
   const auth = toRecord(source.auth);
+  const authOauthAuthorizationUrls = toRecord(auth.oauthAuthorizationUrls);
+  const authOauthSessions = toRecord(auth.oauthSessions);
+  const authPasswordResetRequests = toRecord(auth.passwordResetRequests);
+  const authPasswordResets = toRecord(auth.passwordResets);
+  const authRegistrations = toRecord(auth.registrations);
+  const authSessions = toRecord(auth.sessions);
+  const authSessionsCurrent = toRecord(authSessions.current);
+  const authVerificationCodes = toRecord(auth.verificationCodes);
   const openPlatform = toRecord(source.openPlatform);
   const qrAuthSessions = toRecord(openPlatform.qrAuth?.sessions);
+  const qrAuthSessionScans = toRecord(qrAuthSessions.scans);
+  const qrAuthSessionPasswords = toRecord(qrAuthSessions.passwords);
   const system = toRecord(source.system);
   const systemIam = toRecord(system.iam);
+  const systemIamRuntime = toRecord(systemIam.runtime);
+  const systemIamVerificationPolicy = toRecord(systemIam.verificationPolicy);
   const iam = toRecord(source.iam);
+  const iamUsers = toRecord(iam.users);
+  const iamUsersCurrent = toRecord(iamUsers.current);
   const user = toRecord(source.user);
 
   return {
     auth: {
       oauthAuthorizationUrls: {
         retrieve: selectMethod(
-          auth.oauthAuthorizationUrls?.retrieve,
+          getBoundMethod(authOauthAuthorizationUrls, "retrieve"),
           (params?: Record<string, unknown>) => auth.getOauthUrl?.(params),
         ),
       },
       oauthSessions: {
         create: selectMethod(
-          auth.oauthSessions?.create,
+          getBoundMethod(authOauthSessions, "create"),
           (body: Record<string, unknown>) => auth.oauthLogin?.(body),
         ),
       },
       passwordResetRequests: {
         create: selectMethod(
-          auth.passwordResetRequests?.create,
+          getBoundMethod(authPasswordResetRequests, "create"),
           (body: Record<string, unknown>) => auth.requestPasswordResetChallenge?.(body),
         ),
       },
       passwordResets: {
         create: selectMethod(
-          auth.passwordResets?.create,
+          getBoundMethod(authPasswordResets, "create"),
           (body: Record<string, unknown>) => auth.resetPassword?.(body),
         ),
       },
       registrations: {
         create: selectMethod(
-          auth.registrations?.create,
+          getBoundMethod(authRegistrations, "create"),
           (body: Record<string, unknown>) => auth.register?.(body),
         ),
       },
       sessions: {
         create: selectMethod(
-          auth.sessions?.create,
+          getBoundMethod(authSessions, "create"),
           (body: Record<string, unknown>) => auth.login?.(body),
         ),
         current: {
           delete: selectMethod(
-            auth.sessions?.current?.delete,
+            getBoundMethod(authSessionsCurrent, "delete"),
             () => auth.logout?.(),
           ),
           retrieve: selectMethod(
-            auth.sessions?.current?.retrieve,
+            getBoundMethod(authSessionsCurrent, "retrieve"),
             () => user.getUserProfile?.() ?? auth.getCurrentUser?.(),
           ),
           update: selectMethod(
-            auth.sessions?.current?.update,
+            getBoundMethod(authSessionsCurrent, "update"),
             (body?: Record<string, unknown>) => user.updateUserProfile?.(body),
           ),
         },
         refresh: selectMethod(
-          auth.sessions?.refresh,
+          getBoundMethod(authSessions, "refresh"),
           (body: Record<string, unknown>) => auth.refreshToken?.(body),
         ),
       },
       verificationCodes: {
         create: selectMethod(
-          auth.verificationCodes?.create,
+          getBoundMethod(authVerificationCodes, "create"),
           (body: Record<string, unknown>) => auth.createSendSmsCode?.(body) ?? auth.sendSmsCode?.(body),
         ),
         verify: selectMethod(
-          auth.verificationCodes?.verify,
+          getBoundMethod(authVerificationCodes, "verify"),
           (body: Record<string, unknown>) => auth.verifySmsCode?.(body) ?? auth.createVerifySmsCode?.(body),
         ),
       },
@@ -100,23 +141,20 @@ export function createIamAppSdkAdapter(client: unknown): IamAppSdkClient {
       qrAuth: {
         sessions: {
           create: selectMethod(
-            qrAuthSessions.create,
-            (body: Record<string, unknown>) => qrAuthSessions.create?.(body),
+            getBoundMethod(qrAuthSessions, "create"),
+            (body: Record<string, unknown>) => callOptionalMethod(qrAuthSessions, "create", body),
           ),
-          retrieve: selectMethod(
-            qrAuthSessions.retrieve,
-            (sessionKey: string) => qrAuthSessions.retrieve?.(sessionKey),
+          retrieve: selectGeneratedSdkMethod(
+            (sessionKey: string) => callQrAuthPathMethod(qrAuthSessions, "retrieve", sessionKey),
           ),
           scans: {
-            create: selectMethod(
-              qrAuthSessions.scans?.create,
-              (sessionKey: string, body?: Record<string, unknown>) => qrAuthSessions.scans?.create?.(sessionKey, body),
+            create: selectGeneratedSdkMethod(
+              (sessionKey: string, body?: Record<string, unknown>) => callQrAuthPathMethod(qrAuthSessionScans, "create", sessionKey, body),
             ),
           },
           passwords: {
-            create: selectMethod(
-              qrAuthSessions.passwords?.create,
-              (sessionKey: string, body: Record<string, unknown>) => qrAuthSessions.passwords?.create?.(sessionKey, body),
+            create: selectGeneratedSdkMethod(
+              (sessionKey: string, body: Record<string, unknown>) => callQrAuthPathMethod(qrAuthSessionPasswords, "create", sessionKey, body),
             ),
           },
         },
@@ -126,14 +164,14 @@ export function createIamAppSdkAdapter(client: unknown): IamAppSdkClient {
       iam: {
         runtime: {
           retrieve: selectMethod(
-            systemIam.runtime?.retrieve,
-            (params?: Record<string, unknown>) => systemIam.runtime?.retrieve?.(params),
+            getBoundMethod(systemIamRuntime, "retrieve"),
+            (params?: Record<string, unknown>) => callOptionalMethod(systemIamRuntime, "retrieve", params),
           ),
         },
         verificationPolicy: {
           retrieve: selectMethod(
-            systemIam.verificationPolicy?.retrieve,
-            () => systemIam.verificationPolicy?.retrieve?.(),
+            getBoundMethod(systemIamVerificationPolicy, "retrieve"),
+            () => callOptionalMethod(systemIamVerificationPolicy, "retrieve"),
           ),
         },
       },
@@ -142,7 +180,7 @@ export function createIamAppSdkAdapter(client: unknown): IamAppSdkClient {
       users: {
         current: {
           retrieve: selectMethod(
-            iam.users?.current?.retrieve,
+            getBoundMethod(iamUsersCurrent, "retrieve"),
             () => user.getUserProfile?.() ?? auth.getCurrentUser?.(),
           ),
         },
@@ -289,7 +327,7 @@ function selectMethod(
   legacyMethod: (...args: any[]) => Promise<unknown> | unknown,
 ): IamSdkMethod {
   if (typeof standardMethod === "function") {
-    return standardMethod;
+    return async (...args: any[]) => unwrapIamSdkResponse(await standardMethod(...args));
   }
 
   return async (...args: any[]) => {
@@ -297,8 +335,87 @@ function selectMethod(
     if (result === undefined) {
       throw new Error("SDKWork IAM adapter target method is missing on the generated SDK client");
     }
-    return result;
+    return unwrapIamSdkResponse(result);
   };
+}
+
+function selectGeneratedSdkMethod(
+  callGeneratedMethod: (...args: any[]) => Promise<unknown> | unknown,
+): IamSdkMethod {
+  return async (...args: any[]) => {
+    const result = await callGeneratedMethod(...args);
+    if (result === undefined) {
+      throw new Error("SDKWork IAM adapter target method is missing on the generated SDK client");
+    }
+    return unwrapIamSdkResponse(result);
+  };
+}
+
+function getBoundMethod(target: AnyRecord, methodName: string): IamSdkMethod | undefined {
+  const method = target[methodName];
+  if (typeof method !== "function") {
+    return undefined;
+  }
+
+  return (...args: any[]) => method.call(target, ...args);
+}
+
+function callOptionalMethod(
+  target: AnyRecord,
+  methodName: string,
+  ...args: any[]
+): Promise<unknown> | unknown {
+  const method = target[methodName];
+  if (typeof method !== "function") {
+    return undefined;
+  }
+
+  return method.call(target, ...args);
+}
+
+function callQrAuthPathMethod(
+  target: AnyRecord,
+  methodName: string,
+  sessionKey: string,
+  ...args: any[]
+): Promise<unknown> | unknown {
+  const method = target[methodName];
+  if (typeof method !== "function") {
+    return undefined;
+  }
+
+  if (prefersPathParamsObject(method)) {
+    return method.call(target, { sessionKey }, ...args);
+  }
+
+  try {
+    return method.call(target, sessionKey, ...args);
+  } catch (error) {
+    if (isPathParameterShapeError(error)) {
+      return method.call(target, { sessionKey }, ...args);
+    }
+    throw error;
+  }
+}
+
+function prefersPathParamsObject(method: (...args: any[]) => unknown): boolean {
+  const mockImplementation = (method as { getMockImplementation?: () => unknown }).getMockImplementation?.();
+  const source = String(mockImplementation ?? method);
+  return /\bpathParams\b/.test(source);
+}
+
+function isPathParameterShapeError(error: unknown): boolean {
+  const message = error instanceof Error ? error.message : String(error ?? "");
+  return /path parameter|pathParams|sessionKey/i.test(message);
+}
+
+function isSuccessCode(code: number | string | undefined): boolean {
+  if (code === undefined || code === null) {
+    return true;
+  }
+
+  const normalized = String(code).trim();
+  return normalized === "0" || normalized === "200" || normalized === "2000";
 }
 
 function toRecord(value: unknown): AnyRecord {

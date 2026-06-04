@@ -89,7 +89,6 @@ struct AdminChannelGroupChannelBindingRequestItem {
     status: Option<String>,
     resource_codes: Option<Vec<String>>,
     api_scope: Option<Vec<String>>,
-    model_scope: Option<Vec<String>>,
     capabilities: Option<Vec<String>>,
 }
 
@@ -189,9 +188,7 @@ struct AdminChannelGroupChannelBindingItemResponse {
     channel_code: String,
     resource_codes: Vec<String>,
     api_scope: Vec<String>,
-    models: Vec<String>,
     capabilities: Vec<String>,
-    model_scope: Vec<String>,
     priority: i64,
     weight: i64,
     status: String,
@@ -657,10 +654,6 @@ fn normalize_channel_binding_replace_request(
                 item.api_scope.unwrap_or_default(),
                 "channel group channel binding apiScope",
             )?,
-            model_scope: normalize_scope_items(
-                item.model_scope.unwrap_or_default(),
-                "channel group channel binding modelScope",
-            )?,
             capabilities: normalize_scope_items(
                 item.capabilities.unwrap_or_default(),
                 "channel group channel binding capabilities",
@@ -1046,9 +1039,7 @@ fn to_channel_binding_item_response(
         channel_code: item.channel_code,
         resource_codes: item.resource_codes,
         api_scope: item.api_scope,
-        models: item.models,
         capabilities: item.capabilities,
-        model_scope: item.model_scope,
         priority: item.priority,
         weight: item.weight,
         status: item.status,

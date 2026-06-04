@@ -38,6 +38,8 @@ impl InMemoryPricingCatalog {
     }
 
     pub fn add_provider_channel_route(&mut self, route: ProviderChannelRoute) {
+        self.provider_channel_routes
+            .retain(|existing| !same_provider_channel_route_identity(existing, &route));
         self.provider_channel_routes.push(route);
     }
 
@@ -94,6 +96,27 @@ impl InMemoryPricingCatalog {
 
     pub fn add_price(&mut self, price: ModelPrice) {
         self.prices.push(price);
+    }
+}
+
+fn same_provider_channel_route_identity(
+    left: &ProviderChannelRoute,
+    right: &ProviderChannelRoute,
+) -> bool {
+    left.provider_code == right.provider_code
+        && left.channel_id == right.channel_id
+        && left.credential_id == right.credential_id
+        && normalized_region_code(&left.region_code).eq_ignore_ascii_case(&normalized_region_code(
+            &right.region_code,
+        ))
+}
+
+fn normalized_region_code(value: &str) -> String {
+    let value = value.trim();
+    if value.is_empty() {
+        "global".to_owned()
+    } else {
+        value.to_owned()
     }
 }
 

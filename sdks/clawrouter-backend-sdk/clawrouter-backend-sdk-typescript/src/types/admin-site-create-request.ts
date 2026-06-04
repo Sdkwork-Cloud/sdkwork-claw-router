@@ -25,7 +25,7 @@ export interface AdminSiteCreateRequest {
   /** Region code field on admin site create request. */
   regionCode?: string | null;
   /** Site code field on admin site create request. */
-  siteCode: string;
+  siteCode?: string;
   /** Site name field on admin site create request. */
   siteName: string;
   /** Site type field on admin site create request. */

@@ -2,9 +2,371 @@ import { describe, expect, it, vi } from "vitest";
 
 import { assertIamAppSdkClient, assertIamBackendSdkClient } from "@sdkwork/iam-sdk-ports";
 
-import { createIamAppSdkAdapter, createIamBackendSdkAdapter, createIamSdkAdapters } from "../src/index";
+import {
+  createIamAppSdkAdapter,
+  createIamBackendSdkAdapter,
+  createIamSdkAdapters,
+  unwrapIamSdkResponse,
+} from "../src/index";
 
 describe("SDKWork IAM generated SDK adapters", () => {
+  it("unwraps standard response envelopes at the IAM app SDK adapter boundary", async () => {
+    const generatedAppClient = {
+      auth: {
+        sessions: {
+          create: vi.fn().mockResolvedValue({
+            code: "2000",
+            msg: "SUCCESS",
+            data: {
+              accessToken: "access",
+              authToken: "auth",
+            },
+          }),
+        },
+      },
+      openPlatform: {
+        qrAuth: {
+          sessions: {
+            create: vi.fn().mockResolvedValue({
+              code: 2000,
+              data: {
+                qrContent: {
+                  content: "https://127.0.0.1:3900/auth/qr/session-1",
+                  mode: "fallback_url",
+                },
+                sessionKey: "session-1",
+                status: "pending",
+              },
+              msg: "SUCCESS",
+            }),
+          },
+        },
+      },
+    };
+
+    const appClient = createIamAppSdkAdapter(generatedAppClient);
+
+    await expect(appClient.auth?.sessions?.create?.({
+      password: "secret",
+      username: "alice",
+    })).resolves.toEqual({
+      accessToken: "access",
+      authToken: "auth",
+    });
+    await expect(appClient.openPlatform?.qrAuth?.sessions?.create?.({ purpose: "login" })).resolves.toEqual({
+      qrContent: {
+        content: "https://127.0.0.1:3900/auth/qr/session-1",
+        mode: "fallback_url",
+      },
+      sessionKey: "session-1",
+      status: "pending",
+    });
+  });
+
+  it("adapts generated openPlatform QR path-parameter methods to standard IAM ports", async () => {
+    const qrSession = (sessionKey: string, status: string) => ({
+      id: `qr_auth_session_${sessionKey}`,
+      sessionKey,
+      purpose: "login",
+      defaultAccountId: null,
+      defaultEntryId: null,
+      defaultProvider: null,
+      defaultAccountType: null,
+      qrContent: {
+        content: `https://127.0.0.1:3900/auth/qr/${sessionKey}?session_key=${sessionKey}&purpose=login&scan_source=browser`,
+        mode: "fallback_url",
+      },
+      fallbackUrl: `https://127.0.0.1:3900/auth/qr/${sessionKey}?session_key=${sessionKey}&purpose=login&scan_source=browser`,
+      status,
+      scannedAt: null,
+      completedAt: null,
+      expiresAt: "2099-01-01T00:00:00Z",
+      createdAt: "2026-06-03T00:00:00Z",
+      updatedAt: "2026-06-03T00:00:00Z",
+    });
+    const generatedAppClient = {
+      openPlatform: {
+        qrAuth: {
+          sessions: {
+            create: vi.fn().mockResolvedValue({
+              code: "2000",
+              msg: "SUCCESS",
+              data: qrSession("qr-session-1", "pending"),
+            }),
+            retrieve: vi.fn().mockImplementation((pathParams: { sessionKey: string }) => Promise.resolve({
+              code: "2000",
+              msg: "SUCCESS",
+              data: qrSession(pathParams.sessionKey, "pending"),
+            })),
+            scans: {
+              create: vi.fn().mockImplementation((pathParams: { sessionKey: string }, body: Record<string, unknown>) => Promise.resolve({
+                code: "2000",
+                msg: "SUCCESS",
+                data: {
+                  ...qrSession(pathParams.sessionKey, "scanned"),
+                  scannedAt: "2026-06-03T00:01:00Z",
+                  scanSource: body.scanSource,
+                },
+              })),
+            },
+            passwords: {
+              create: vi.fn().mockImplementation((pathParams: { sessionKey: string }, body: Record<string, unknown>) => Promise.resolve({
+                code: "2000",
+                msg: "SUCCESS",
+                data: {
+                  ...qrSession(pathParams.sessionKey, "completed"),
+                  completedAt: "2026-06-03T00:02:00Z",
+                  session: {
+                    accessToken: "access-token",
+                    authToken: "auth-token",
+                    user: {
+                      email: body.username,
+                      id: "user-1",
+                    },
+                  },
+                },
+              })),
+            },
+          },
+        },
+      },
+    };
+
+    const appClient = createIamAppSdkAdapter(generatedAppClient);
+
+    await expect(appClient.openPlatform?.qrAuth?.sessions?.create?.({ purpose: "login" })).resolves.toMatchObject({
+      qrContent: { mode: "fallback_url" },
+      sessionKey: "qr-session-1",
+      status: "pending",
+    });
+    await expect(appClient.openPlatform?.qrAuth?.sessions?.retrieve?.("qr-session-1")).resolves.toMatchObject({
+      sessionKey: "qr-session-1",
+      status: "pending",
+    });
+    await expect(appClient.openPlatform?.qrAuth?.sessions?.scans?.create?.("qr-session-1", {
+      scanSource: "browser",
+    })).resolves.toMatchObject({
+      sessionKey: "qr-session-1",
+      status: "scanned",
+    });
+    await expect(appClient.openPlatform?.qrAuth?.sessions?.passwords?.create?.("qr-session-1", {
+      password: "secret",
+      username: "alice@example.com",
+    })).resolves.toMatchObject({
+      session: {
+        accessToken: "access-token",
+        authToken: "auth-token",
+      },
+      sessionKey: "qr-session-1",
+      status: "completed",
+    });
+
+    expect(generatedAppClient.openPlatform.qrAuth.sessions.retrieve).toHaveBeenCalledWith({ sessionKey: "qr-session-1" });
+    expect(generatedAppClient.openPlatform.qrAuth.sessions.scans.create).toHaveBeenCalledWith({ sessionKey: "qr-session-1" }, {
+      scanSource: "browser",
+    });
+    expect(generatedAppClient.openPlatform.qrAuth.sessions.passwords.create).toHaveBeenCalledWith({ sessionKey: "qr-session-1" }, {
+      password: "secret",
+      username: "alice@example.com",
+    });
+  });
+
+  it("adapts string path-parameter openPlatform QR methods from claw-router style generated SDKs", async () => {
+    const qrSession = (sessionKey: string, status: string) => ({
+      id: `qr_auth_session_${sessionKey}`,
+      sessionKey,
+      purpose: "login",
+      defaultAccountId: null,
+      defaultEntryId: null,
+      defaultProvider: null,
+      defaultAccountType: null,
+      qrContent: {
+        content: `https://127.0.0.1:3900/auth/qr/${sessionKey}?session_key=${sessionKey}&purpose=login&scan_source=browser`,
+        mode: "fallback_url",
+      },
+      fallbackUrl: `https://127.0.0.1:3900/auth/qr/${sessionKey}?session_key=${sessionKey}&purpose=login&scan_source=browser`,
+      status,
+      scannedAt: null,
+      completedAt: null,
+      expiresAt: "2099-01-01T00:00:00Z",
+      createdAt: "2026-06-03T00:00:00Z",
+      updatedAt: "2026-06-03T00:00:00Z",
+    });
+    const generatedAppClient = {
+      openPlatform: {
+        qrAuth: {
+          sessions: {
+            retrieve: vi.fn().mockImplementation((sessionKey: string) => Promise.resolve({
+              code: "2000",
+              msg: "SUCCESS",
+              data: qrSession(sessionKey, "pending"),
+            })),
+            scans: {
+              create: vi.fn().mockImplementation((sessionKey: string, body: Record<string, unknown>) => Promise.resolve({
+                code: "2000",
+                msg: "SUCCESS",
+                data: {
+                  ...qrSession(sessionKey, "scanned"),
+                  scannedAt: "2026-06-03T00:01:00Z",
+                  scanSource: body.scanSource,
+                },
+              })),
+            },
+            passwords: {
+              create: vi.fn().mockImplementation((sessionKey: string, body: Record<string, unknown>) => Promise.resolve({
+                code: "2000",
+                msg: "SUCCESS",
+                data: {
+                  ...qrSession(sessionKey, "completed"),
+                  completedAt: "2026-06-03T00:02:00Z",
+                  session: {
+                    accessToken: "access-token",
+                    authToken: "auth-token",
+                    user: {
+                      email: body.username,
+                      id: "user-1",
+                    },
+                  },
+                },
+              })),
+            },
+          },
+        },
+      },
+    };
+
+    const appClient = createIamAppSdkAdapter(generatedAppClient);
+
+    await expect(appClient.openPlatform?.qrAuth?.sessions?.retrieve?.("qr-session-1")).resolves.toMatchObject({
+      sessionKey: "qr-session-1",
+      status: "pending",
+    });
+    await expect(appClient.openPlatform?.qrAuth?.sessions?.scans?.create?.("qr-session-1", {
+      scanSource: "browser",
+    })).resolves.toMatchObject({
+      sessionKey: "qr-session-1",
+      status: "scanned",
+    });
+    await expect(appClient.openPlatform?.qrAuth?.sessions?.passwords?.create?.("qr-session-1", {
+      password: "secret",
+      username: "alice@example.com",
+    })).resolves.toMatchObject({
+      session: {
+        accessToken: "access-token",
+        authToken: "auth-token",
+      },
+      sessionKey: "qr-session-1",
+      status: "completed",
+    });
+
+    expect(generatedAppClient.openPlatform.qrAuth.sessions.retrieve).toHaveBeenCalledWith("qr-session-1");
+    expect(generatedAppClient.openPlatform.qrAuth.sessions.scans.create).toHaveBeenCalledWith("qr-session-1", {
+      scanSource: "browser",
+    });
+    expect(generatedAppClient.openPlatform.qrAuth.sessions.passwords.create).toHaveBeenCalledWith("qr-session-1", {
+      password: "secret",
+      username: "alice@example.com",
+    });
+  });
+
+  it("preserves class method this-binding for generated app SDK IAM resources", async () => {
+    const transport = {
+      request: vi.fn().mockImplementation((operation: string, payload?: unknown) => Promise.resolve({
+        code: "2000",
+        msg: "SUCCESS",
+        data: {
+          operation,
+          payload,
+          sessionKey: operation.includes("qrAuth.sessions")
+            ? (Array.isArray(payload) ? payload[0] : "qr-session-1")
+            : undefined,
+          status: operation.includes("passwords") ? "completed" : "pending",
+        },
+      })),
+    };
+
+    class SessionsApi {
+      constructor(private readonly apiTransport: typeof transport) {}
+
+      create(body: Record<string, unknown>) {
+        return this.apiTransport.request("auth.sessions.create", body);
+      }
+    }
+
+    class QrAuthSessionPasswordsApi {
+      constructor(private readonly apiTransport: typeof transport) {}
+
+      create(sessionKey: string, body: Record<string, unknown>) {
+        return this.apiTransport.request("openPlatform.qrAuth.sessions.passwords.create", [sessionKey, body]);
+      }
+    }
+
+    class QrAuthSessionsApi {
+      readonly passwords: QrAuthSessionPasswordsApi;
+
+      constructor(private readonly apiTransport: typeof transport) {
+        this.passwords = new QrAuthSessionPasswordsApi(apiTransport);
+      }
+
+      create(body: Record<string, unknown>) {
+        return this.apiTransport.request("openPlatform.qrAuth.sessions.create", body);
+      }
+
+      retrieve(sessionKey: string) {
+        return this.apiTransport.request("openPlatform.qrAuth.sessions.retrieve", [sessionKey]);
+      }
+    }
+
+    const generatedAppClient = {
+      auth: {
+        sessions: new SessionsApi(transport),
+      },
+      openPlatform: {
+        qrAuth: {
+          sessions: new QrAuthSessionsApi(transport),
+        },
+      },
+    };
+
+    const appClient = createIamAppSdkAdapter(generatedAppClient);
+
+    await expect(appClient.auth?.sessions?.create?.({
+      password: "secret",
+      username: "alice",
+    })).resolves.toMatchObject({
+      operation: "auth.sessions.create",
+    });
+    await expect(appClient.openPlatform?.qrAuth?.sessions?.create?.({ purpose: "login" })).resolves.toMatchObject({
+      operation: "openPlatform.qrAuth.sessions.create",
+    });
+    await expect(appClient.openPlatform?.qrAuth?.sessions?.retrieve?.("qr-session-1")).resolves.toMatchObject({
+      operation: "openPlatform.qrAuth.sessions.retrieve",
+      sessionKey: "qr-session-1",
+    });
+    await expect(appClient.openPlatform?.qrAuth?.sessions?.passwords?.create?.("qr-session-1", {
+      password: "secret",
+      username: "alice",
+    })).resolves.toMatchObject({
+      operation: "openPlatform.qrAuth.sessions.passwords.create",
+      sessionKey: "qr-session-1",
+      status: "completed",
+    });
+  });
+
+  it("keeps raw DTOs and rejects non-success standard IAM envelopes", () => {
+    expect(unwrapIamSdkResponse({ sessionKey: "session-1", status: "pending" })).toEqual({
+      sessionKey: "session-1",
+      status: "pending",
+    });
+    expect(unwrapIamSdkResponse({ code: "0", data: { ok: true } })).toEqual({ ok: true });
+    expect(unwrapIamSdkResponse({ code: 200, data: ["a"] })).toEqual(["a"]);
+    expect(() => unwrapIamSdkResponse({
+      code: "5000",
+      data: null,
+      msg: "QR session unavailable",
+    }, "QR auth failed")).toThrow("QR session unavailable");
+  });
+
   it("adapts the current generated app SDK auth and system IAM surfaces into standard IAM ports", async () => {
     const generatedAppClient = {
       auth: {

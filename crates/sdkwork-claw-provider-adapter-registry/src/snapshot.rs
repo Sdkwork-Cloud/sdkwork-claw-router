@@ -1,5 +1,5 @@
 use sdkwork_claw_provider_adapter_contract::{
-    AdapterKind, AdapterRouteStatus, ProviderAdapterManifest,
+    AdapterEndpointRuntimeState, AdapterKind, AdapterRouteStatus, ProviderAdapterManifest,
 };
 use serde::{Deserialize, Serialize};
 
@@ -37,12 +37,22 @@ impl ProviderAdapterSnapshot {
                         provider
                             .endpoints
                             .iter()
+                            .filter(|endpoint| {
+                                endpoint.runtime_state
+                                    == AdapterEndpointRuntimeState::RuntimeAvailable
+                            })
                             .map(move |endpoint| ProviderAdapterRouteConfig {
                                 provider_code: provider_code.clone(),
                                 adapter_kind: AdapterKind::InternalHttp,
                                 adapter_base_url: adapter_base_url.to_owned(),
                                 capability: endpoint.capability.clone(),
                                 endpoint_key: Some(endpoint.endpoint_key.clone()),
+                                service_group: endpoint.service_group.clone(),
+                                openapi_operation_id: endpoint.openapi_operation_id.clone(),
+                                s3_operation: endpoint.s3_operation.clone(),
+                                iaas_operation: endpoint.iaas_operation.clone(),
+                                endpoint_styles: endpoint.endpoint_styles.clone(),
+                                runtime_state: endpoint.runtime_state.clone(),
                                 method: endpoint.method.to_ascii_uppercase(),
                                 invocation_shape: endpoint.invocation_shape.clone(),
                                 standard_path_pattern: normalize_path(

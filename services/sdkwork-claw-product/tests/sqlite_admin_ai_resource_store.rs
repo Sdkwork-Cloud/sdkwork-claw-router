@@ -556,6 +556,9 @@ async fn sqlite_admin_ai_resource_store_treats_api_all_all_mode_as_static_member
         .expect("api.all group should be listed");
     assert_eq!("all", api_all.selection_mode);
     assert!(!api_all.dynamic);
+    assert_eq!(vec!["openai".to_owned()], api_all.vendor_codes);
+    assert_eq!(Some("chat"), api_all.capability.as_deref());
+    assert_eq!(vec!["chat".to_owned()], api_all.capabilities);
     assert_eq!(
         1, api_all.resource_count,
         "api.all with selection_mode=all must count persisted group relationships"
@@ -602,6 +605,13 @@ async fn sqlite_admin_ai_resource_store_lists_system_seeded_api_groups_for_admin
         .expect("admin subject should see system-seeded API groups");
     assert_eq!("all", api_all.selection_mode);
     assert_eq!(2, api_all.resource_count);
+    assert_eq!(vec!["openai".to_owned()], api_all.vendor_codes);
+    assert_eq!(None, api_all.capability.as_deref());
+    assert_eq!(
+        vec!["chat".to_owned(), "image".to_owned()],
+        api_all.capabilities,
+        "API resource group summaries must expose every member primary capability so account resource pickers can hide cross-capability groups"
+    );
 
     let resources = store
         .list_ai_resource_group_resources(ListAdminAiResourceGroupResourcesQuery {

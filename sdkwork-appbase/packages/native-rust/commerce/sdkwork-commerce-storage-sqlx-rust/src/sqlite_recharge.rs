@@ -14,6 +14,17 @@ const DEFAULT_BASE_CURRENCY_CODE: &str = "CNY";
 const DEFAULT_BASE_POINTS_PER_CNY: &str = "10";
 const DEFAULT_USD_TO_CNY_RATE: &str = "7";
 const RECHARGE_RULE_NO: &str = "CASH_TO_POINTS";
+const DEFAULT_RECHARGE_PACKAGES: [(&str, &str); 9] = [
+    ("500", "5.00"),
+    ("1000", "10.00"),
+    ("2000", "20.00"),
+    ("3000", "30.00"),
+    ("5000", "50.00"),
+    ("10000", "100.00"),
+    ("20000", "200.00"),
+    ("50000", "500.00"),
+    ("100000", "1000.00"),
+];
 
 const LOAD_RECHARGE_PACKAGES_SCOPED: &str = r#"
 SELECT
@@ -469,6 +480,7 @@ impl SqliteCommerceRechargeStore {
                 .bind(current_query_timestamp())
                 .fetch_all(&self.pool)
                 .await
+                .or_else(empty_rows_when_read_model_is_missing)
         } else {
             let scoped_rows = sqlx::query(LOAD_RECHARGE_PACKAGES_SCOPED)
                 .bind(&query.tenant_id)
@@ -476,21 +488,28 @@ impl SqliteCommerceRechargeStore {
                 .bind(current_query_timestamp())
                 .fetch_all(&self.pool)
                 .await
+                .or_else(empty_rows_when_read_model_is_missing)
                 .map_err(|error| store_error("failed to list recharge packages", error))?;
             if scoped_rows.is_empty() {
                 sqlx::query(LOAD_RECHARGE_PACKAGES_PUBLIC)
                     .bind(current_query_timestamp())
                     .fetch_all(&self.pool)
                     .await
+                    .or_else(empty_rows_when_read_model_is_missing)
             } else {
                 Ok(scoped_rows)
             }
         }
         .map_err(|error| store_error("failed to list recharge packages", error))?;
 
-        rows.iter()
+        let mut packages = rows
+            .iter()
             .map(|row| map_package_row(row, &settings))
-            .collect()
+            .collect::<Result<Vec<_>, _>>()?;
+        if packages.is_empty() {
+            packages = default_recharge_packages(&settings)?;
+        }
+        Ok(packages)
     }
 
     pub async fn load_recharge_settings(
@@ -761,6 +780,40 @@ fn map_package_row(
         price_amount,
         &currency_code,
         bonus_points,
+        grant_amount,
+        grant_amount,
+    )
+}
+
+fn default_recharge_packages(
+    settings: &RechargeSettingsModel,
+) -> Result<Vec<RechargePackageItem>, CommerceServiceError> {
+    DEFAULT_RECHARGE_PACKAGES
+        .iter()
+        .map(|(amount_minor, price_amount)| {
+            let package_id = format!("seed-recharge-package-cny-{amount_minor}");
+            default_recharge_package(&package_id, price_amount, settings)
+        })
+        .collect()
+}
+
+fn default_recharge_package(
+    id: &str,
+    price_amount: &str,
+    settings: &RechargeSettingsModel,
+) -> Result<RechargePackageItem, CommerceServiceError> {
+    let price_amount = CommerceMoney::new(price_amount).map_err(CommerceServiceError::storage)?;
+    let grant_amount = compute_grant_amount(
+        price_amount.as_str(),
+        DEFAULT_BASE_CURRENCY_CODE,
+        0,
+        settings,
+    )?;
+    RechargePackageItem::new(
+        id,
+        price_amount,
+        DEFAULT_BASE_CURRENCY_CODE,
+        0,
         grant_amount,
         grant_amount,
     )
@@ -1765,4 +1818,24 @@ mod tests {
 
 fn store_error(context: &str, error: sqlx::Error) -> CommerceServiceError {
     CommerceServiceError::storage(format!("{context}: {error}"))
+}
+
+fn empty_rows_when_read_model_is_missing(
+    error: sqlx::Error,
+) -> Result<Vec<sqlx::sqlite::SqliteRow>, sqlx::Error> {
+    if is_missing_sqlite_read_model(&error) {
+        Ok(Vec::new())
+    } else {
+        Err(error)
+    }
+}
+
+fn is_missing_sqlite_read_model(error: &sqlx::Error) -> bool {
+    match error {
+        sqlx::Error::Database(database_error) => {
+            let message = database_error.message().to_ascii_lowercase();
+            message.contains("no such table") || message.contains("no such column")
+        }
+        _ => false,
+    }
 }

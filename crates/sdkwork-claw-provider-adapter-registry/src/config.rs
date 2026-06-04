@@ -1,5 +1,5 @@
 use sdkwork_claw_provider_adapter_contract::{
-    AdapterInvocationShape, AdapterKind, AdapterRouteStatus,
+    AdapterEndpointRuntimeState, AdapterInvocationShape, AdapterKind, AdapterRouteStatus,
 };
 use serde::{Deserialize, Serialize};
 
@@ -13,6 +13,18 @@ pub struct ProviderAdapterRouteConfig {
     pub capability: Option<String>,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub endpoint_key: Option<String>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub service_group: Option<String>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub openapi_operation_id: Option<String>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub s3_operation: Option<String>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub iaas_operation: Option<String>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub endpoint_styles: Vec<String>,
+    #[serde(default)]
+    pub runtime_state: AdapterEndpointRuntimeState,
     pub method: String,
     #[serde(default)]
     pub invocation_shape: AdapterInvocationShape,

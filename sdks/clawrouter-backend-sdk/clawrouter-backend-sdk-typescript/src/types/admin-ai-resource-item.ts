@@ -4,6 +4,10 @@ import type { AdminAiResourceMemberItem } from './admin-ai-resource-member-item'
 export interface AdminAiResourceItem {
   /** Api endpoint code field on admin ai resource item. */
   apiEndpointCode?: string;
+  /** Capabilities field on admin ai resource item. */
+  capabilities?: string[];
+  /** Capability field on admin ai resource item. */
+  capability?: string | null;
   /** Catalog key field on admin ai resource item. */
   catalogKey?: string;
   /** Composition mode field on admin ai resource item. */

@@ -84,6 +84,9 @@ async fn admin_ai_resource_group_route_manages_groups_and_static_all_api_resourc
     assert_eq!("api.all", list_payload["data"]["items"][0]["groupCode"]);
     assert_eq!("全部API", list_payload["data"]["items"][0]["groupName"]);
     assert_eq!("all", list_payload["data"]["items"][0]["selectionMode"]);
+    assert_eq!("openai", list_payload["data"]["items"][0]["vendorCodes"][0]);
+    assert_eq!("llm", list_payload["data"]["items"][0]["capability"]);
+    assert_eq!("llm", list_payload["data"]["items"][0]["capabilities"][0]);
     assert_eq!(false, list_payload["data"]["items"][0]["dynamic"]);
 
     let all_resources_response = router
@@ -406,6 +409,15 @@ impl AdminAiResourceStore for TestAiResourceStore {
                     catalog_key: None,
                     model: None,
                     provider_native_model: None,
+                    capability: Some("network".to_owned()),
+                    capabilities: vec![
+                        "llm".to_owned(),
+                        "image".to_owned(),
+                        "audio".to_owned(),
+                        "video".to_owned(),
+                        "embedding".to_owned(),
+                        "network".to_owned(),
+                    ],
                     composition_mode: "single".to_owned(),
                     status: "active".to_owned(),
                     sort_order: Some(1),
@@ -422,6 +434,8 @@ impl AdminAiResourceStore for TestAiResourceStore {
                     catalog_key: None,
                     model: None,
                     provider_native_model: None,
+                    capability: Some("llm".to_owned()),
+                    capabilities: vec!["llm".to_owned(), "chat".to_owned()],
                     composition_mode: "all".to_owned(),
                     status: "active".to_owned(),
                     sort_order: Some(5),
@@ -468,6 +482,8 @@ impl AdminAiResourceStore for TestAiResourceStore {
                 catalog_key: command.catalog_key,
                 model: command.model,
                 provider_native_model: command.provider_native_model,
+                capability: None,
+                capabilities: Vec::new(),
                 composition_mode: command.composition_mode,
                 status: command.status,
                 sort_order: command.sort_order,
@@ -506,6 +522,8 @@ impl AdminAiResourceStore for TestAiResourceStore {
                 catalog_key: None,
                 model: None,
                 provider_native_model: None,
+                capability: Some("llm".to_owned()),
+                capabilities: vec!["llm".to_owned(), "chat".to_owned()],
                 composition_mode: "all".to_owned(),
                 status: command.status.unwrap(),
                 sort_order: Some(5),
@@ -536,6 +554,9 @@ impl AdminAiResourceStore for TestAiResourceStore {
                     group_type: "api_group".to_owned(),
                     selection_mode: "all".to_owned(),
                     description: Some("All seeded API resources".to_owned()),
+                    vendor_codes: vec!["openai".to_owned()],
+                    capability: Some("llm".to_owned()),
+                    capabilities: vec!["llm".to_owned()],
                     sort_order: Some(1),
                     status: "active".to_owned(),
                     resource_count: 2,
@@ -548,6 +569,9 @@ impl AdminAiResourceStore for TestAiResourceStore {
                     group_type: "api_group".to_owned(),
                     selection_mode: "manual".to_owned(),
                     description: None,
+                    vendor_codes: vec!["openai".to_owned()],
+                    capability: Some("llm".to_owned()),
+                    capabilities: vec!["llm".to_owned()],
                     sort_order: Some(4),
                     status: "active".to_owned(),
                     resource_count: 1,
@@ -619,6 +643,9 @@ impl AdminAiResourceStore for TestAiResourceStore {
                 group_type: "api_group".to_owned(),
                 selection_mode: "manual".to_owned(),
                 description: Some("Custom group".to_owned()),
+                vendor_codes: vec!["openai".to_owned()],
+                capability: Some("llm".to_owned()),
+                capabilities: vec!["llm".to_owned()],
                 sort_order: Some(30),
                 status: "active".to_owned(),
                 resource_count: 1,
@@ -645,6 +672,9 @@ impl AdminAiResourceStore for TestAiResourceStore {
                 group_type: "api_group".to_owned(),
                 selection_mode: "manual".to_owned(),
                 description: Some("Custom group".to_owned()),
+                vendor_codes: vec!["openai".to_owned()],
+                capability: Some("llm".to_owned()),
+                capabilities: vec!["llm".to_owned()],
                 sort_order: Some(30),
                 status: "active".to_owned(),
                 resource_count: 1,

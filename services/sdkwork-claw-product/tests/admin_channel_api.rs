@@ -37,7 +37,7 @@ async fn admin_channel_route_creates_lists_updates_and_soft_deletes_items() {
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"name":"OpenAI primary","vendor":"OpenAI","channelType":"official","protocol":"OpenAI","accessType":"api-key","credentials":[{"name":"primary","baseUrl":"https://api.openai.com/v1","secretRef":"vault://providers/openai/account/main"}],"models":["openai/gpt-4o-mini"],"capabilities":["llm"],"resourceCodes":["vendor.openai","model.openai.gpt-4o-mini.chat"],"timeoutMs":60000,"retryPolicy":{"maxAttempts":3,"retryableStatusCodes":[429,503],"backoffMs":25},"circuitBreakerPolicy":{"failureThreshold":2},"expiresAt":"2026-06-30T08:00:00Z","weight":80,"status":"active"}"#,
+                    r#"{"name":"OpenAI primary","vendor":"OpenAI","channelType":"official","protocol":"OpenAI","accessType":"api-key","credentials":[{"name":"primary","baseUrl":"https://api.openai.com/v1","secretRef":"vault://providers/openai/account/main"}],"capabilities":["llm"],"resourceCodes":["vendor.openai","model.openai.gpt-4o-mini.chat"],"timeoutMs":60000,"retryPolicy":{"maxAttempts":3,"retryableStatusCodes":[429,503],"backoffMs":25},"circuitBreakerPolicy":{"failureThreshold":2},"expiresAt":"2026-06-30T08:00:00Z","weight":80,"status":"active"}"#,
                 ))
                 .unwrap(),
         )
@@ -53,10 +53,7 @@ async fn admin_channel_route_creates_lists_updates_and_soft_deletes_items() {
     assert_eq!("official", create_payload["data"]["item"]["channelType"]);
     assert_eq!("active", create_payload["data"]["item"]["status"]);
     assert_eq!(80, create_payload["data"]["item"]["weight"]);
-    assert_eq!(
-        "openai/gpt-4o-mini",
-        create_payload["data"]["item"]["models"][0]
-    );
+    assert!(create_payload["data"]["item"].get("models").is_none());
     assert_eq!(
         "vendor.openai",
         create_payload["data"]["item"]["resourceCodes"][0]
@@ -100,7 +97,7 @@ async fn admin_channel_route_creates_lists_updates_and_soft_deletes_items() {
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"id":"1","channelType":"relay","status":"disabled","weight":15,"models":["openai/gpt-4o-mini"],"capabilities":["llm","image"],"resourceCodes":["bundle.openrouter.openai.standard"],"timeoutMs":120000,"retryPolicy":null,"circuitBreakerPolicy":{"failureThreshold":3},"expiresAt":null}"#,
+                    r#"{"id":"1","channelType":"relay","status":"disabled","weight":15,"capabilities":["llm","image"],"resourceCodes":["bundle.openrouter.openai.standard"],"timeoutMs":120000,"retryPolicy":null,"circuitBreakerPolicy":{"failureThreshold":3},"expiresAt":null}"#,
                 ))
                 .unwrap(),
         )
@@ -123,13 +120,7 @@ async fn admin_channel_route_creates_lists_updates_and_soft_deletes_items() {
         3,
         update_payload["data"]["item"]["circuitBreakerPolicy"]["failureThreshold"]
     );
-    assert_eq!(
-        1,
-        update_payload["data"]["item"]["models"]
-            .as_array()
-            .unwrap()
-            .len()
-    );
+    assert!(update_payload["data"]["item"].get("models").is_none());
     assert!(update_payload["data"]["item"]["createdAt"]
         .as_str()
         .is_some_and(|value| !value.trim().is_empty()));
@@ -292,7 +283,7 @@ async fn admin_channel_route_invalidates_routing_cache_after_successful_mutation
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"name":"OpenAI primary","vendor":"OpenAI","channelType":"official","protocol":"OpenAI","accessType":"api-key","credentials":[{"name":"primary","baseUrl":"https://api.openai.com/v1","secretRef":"vault://providers/openai/account/main"}],"models":["openai/gpt-4o-mini"],"capabilities":["llm"],"resourceCodes":["vendor.openai"],"weight":80,"status":"active"}"#,
+                    r#"{"name":"OpenAI primary","vendor":"OpenAI","channelType":"official","protocol":"OpenAI","accessType":"api-key","credentials":[{"name":"primary","baseUrl":"https://api.openai.com/v1","secretRef":"vault://providers/openai/account/main"}],"capabilities":["llm"],"resourceCodes":["vendor.openai"],"weight":80,"status":"active"}"#,
                 ))
                 .unwrap(),
         )
@@ -344,7 +335,7 @@ async fn admin_channel_route_returns_manageable_plaintext_api_key_for_channels()
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"name":"OpenAI primary","vendor":"OpenAI","protocol":"OpenAI","accessType":"api-key","credentials":[{"name":"primary","baseUrl":"https://api.openai.com/v1","apiKey":"sk-live-secret"}],"models":["openai/gpt-4o-mini"],"capabilities":["llm"],"weight":80,"status":"active"}"#,
+                    r#"{"name":"OpenAI primary","vendor":"OpenAI","protocol":"OpenAI","accessType":"api-key","credentials":[{"name":"primary","baseUrl":"https://api.openai.com/v1","apiKey":"sk-live-secret"}],"capabilities":["llm"],"weight":80,"status":"active"}"#,
                 ))
                 .unwrap(),
         )
@@ -412,7 +403,7 @@ async fn admin_channel_route_rejects_invalid_payload_without_calling_store() {
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"name":"","vendor":"OpenAI","credentials":[{"name":"primary","baseUrl":"https://api.openai.com/v1","secretRef":"vault://providers/openai/account/main"}],"models":["openai/gpt-4o-mini"],"capabilities":["llm"]}"#,
+                    r#"{"name":"","vendor":"OpenAI","credentials":[{"name":"primary","baseUrl":"https://api.openai.com/v1","secretRef":"vault://providers/openai/account/main"}],"capabilities":["llm"]}"#,
                 ))
                 .unwrap(),
         )
@@ -445,7 +436,7 @@ async fn admin_channel_route_creates_channel_with_multiple_upstream_credentials_
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"name":"OpenAI pooled","vendor":"OpenAI","protocol":"OpenAI","accessType":"api-key","credentialRotation":"weighted_round_robin","credentials":[{"name":"primary","baseUrl":"https://api1.openai.example/v1","apiKey":"sk-primary","priority":10,"weight":80,"status":"active"},{"name":"backup","baseUrl":"https://api2.openai.example/v1","apiKey":"sk-backup","priority":20,"weight":20,"status":"active"}],"models":["openai/gpt-4o-mini"],"capabilities":["llm"],"weight":80,"status":"active"}"#,
+                    r#"{"name":"OpenAI pooled","vendor":"OpenAI","protocol":"OpenAI","accessType":"api-key","credentialRotation":"weighted_round_robin","credentials":[{"name":"primary","baseUrl":"https://api1.openai.example/v1","apiKey":"sk-primary","priority":10,"weight":80,"status":"active"},{"name":"backup","baseUrl":"https://api2.openai.example/v1","apiKey":"sk-backup","priority":20,"weight":20,"status":"active"}],"capabilities":["llm"],"weight":80,"status":"active"}"#,
                 ))
                 .unwrap(),
         )
@@ -504,7 +495,7 @@ async fn admin_channel_route_rejects_create_without_upstream_credentials() {
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"name":"OpenAI primary","vendor":"OpenAI","baseUrl":"https://api.openai.com/v1","apiKey":"sk-live-secret","models":["openai/gpt-4o-mini"],"capabilities":["llm"]}"#,
+                    r#"{"name":"OpenAI primary","vendor":"OpenAI","baseUrl":"https://api.openai.com/v1","apiKey":"sk-live-secret","capabilities":["llm"]}"#,
                 ))
                 .unwrap(),
         )
@@ -537,7 +528,7 @@ async fn admin_channel_route_rejects_invalid_channel_type_without_calling_store(
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"name":"OpenAI primary","vendor":"OpenAI","channelType":"proxy","credentials":[{"name":"primary","baseUrl":"https://api.openai.com/v1","secretRef":"vault://providers/openai/account/main"}],"models":["openai/gpt-4o-mini"],"capabilities":["llm"]}"#,
+                    r#"{"name":"OpenAI primary","vendor":"OpenAI","channelType":"proxy","credentials":[{"name":"primary","baseUrl":"https://api.openai.com/v1","secretRef":"vault://providers/openai/account/main"}],"capabilities":["llm"]}"#,
                 ))
                 .unwrap(),
         )
@@ -570,7 +561,7 @@ async fn admin_channel_route_rejects_plaintext_auth_key_without_calling_store() 
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"name":"OpenAI primary","vendor":"OpenAI","authKey":"sk-live-secret","models":["openai/gpt-4o-mini"],"capabilities":["llm"]}"#,
+                    r#"{"name":"OpenAI primary","vendor":"OpenAI","authKey":"sk-live-secret","capabilities":["llm"]}"#,
                 ))
                 .unwrap(),
         )
@@ -603,7 +594,7 @@ async fn admin_channel_route_rejects_invalid_base_url_without_calling_store() {
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"name":"OpenAI primary","vendor":"OpenAI","credentials":[{"name":"primary","baseUrl":"javascript:alert(1)","secretRef":"vault://providers/openai/account/main"}],"models":["openai/gpt-4o-mini"],"capabilities":["llm"]}"#,
+                    r#"{"name":"OpenAI primary","vendor":"OpenAI","credentials":[{"name":"primary","baseUrl":"javascript:alert(1)","secretRef":"vault://providers/openai/account/main"}],"capabilities":["llm"]}"#,
                 ))
                 .unwrap(),
         )
@@ -643,7 +634,7 @@ async fn admin_channel_route_rejects_unsafe_secret_ref_without_calling_store() {
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"name":"OpenAI primary","vendor":"OpenAI","credentials":[{"name":"primary","baseUrl":"https://api.openai.com/v1","secretRef":"vault://"}],"models":["openai/gpt-4o-mini"],"capabilities":["llm"]}"#,
+                    r#"{"name":"OpenAI primary","vendor":"OpenAI","credentials":[{"name":"primary","baseUrl":"https://api.openai.com/v1","secretRef":"vault://"}],"capabilities":["llm"]}"#,
                 ))
                 .unwrap(),
         )
@@ -666,7 +657,7 @@ async fn admin_channel_route_rejects_unsafe_secret_ref_without_calling_store() {
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"name":"OpenAI primary","vendor":"OpenAI","credentials":[{"name":"primary","baseUrl":"https://api.openai.com/v1","secretRef":"vault://providers/openai/account/main","api_key":"sk-live-secret"}],"models":["openai/gpt-4o-mini"],"capabilities":["llm"]}"#,
+                    r#"{"name":"OpenAI primary","vendor":"OpenAI","credentials":[{"name":"primary","baseUrl":"https://api.openai.com/v1","secretRef":"vault://providers/openai/account/main","api_key":"sk-live-secret"}],"capabilities":["llm"]}"#,
                 ))
                 .unwrap(),
         )
@@ -699,7 +690,7 @@ async fn admin_channel_route_rejects_invalid_retry_policy_without_calling_store(
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"name":"OpenAI primary","vendor":"OpenAI","credentials":[{"name":"primary","baseUrl":"https://api.openai.com/v1","secretRef":"vault://providers/openai/account/main"}],"models":["openai/gpt-4o-mini"],"retryPolicy":{"maxAttempts":6,"retryableStatusCodes":[503]}}"#,
+                    r#"{"name":"OpenAI primary","vendor":"OpenAI","credentials":[{"name":"primary","baseUrl":"https://api.openai.com/v1","secretRef":"vault://providers/openai/account/main"}],"retryPolicy":{"maxAttempts":6,"retryableStatusCodes":[503]}}"#,
                 ))
                 .unwrap(),
         )
@@ -732,7 +723,7 @@ async fn admin_channel_route_rejects_invalid_circuit_breaker_policy_without_call
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"name":"OpenAI primary","vendor":"OpenAI","credentials":[{"name":"primary","baseUrl":"https://api.openai.com/v1","secretRef":"vault://providers/openai/account/main"}],"models":["openai/gpt-4o-mini"],"circuitBreakerPolicy":{"failureThreshold":0}}"#,
+                    r#"{"name":"OpenAI primary","vendor":"OpenAI","credentials":[{"name":"primary","baseUrl":"https://api.openai.com/v1","secretRef":"vault://providers/openai/account/main"}],"circuitBreakerPolicy":{"failureThreshold":0}}"#,
                 ))
                 .unwrap(),
         )
@@ -766,7 +757,7 @@ async fn admin_channel_route_rejects_null_create_runtime_policy_fields_without_c
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"name":"OpenAI primary","vendor":"OpenAI","credentials":[{"name":"primary","baseUrl":"https://api.openai.com/v1","secretRef":"vault://providers/openai/account/main"}],"models":["openai/gpt-4o-mini"],"timeoutMs":null}"#,
+                    r#"{"name":"OpenAI primary","vendor":"OpenAI","credentials":[{"name":"primary","baseUrl":"https://api.openai.com/v1","secretRef":"vault://providers/openai/account/main"}],"timeoutMs":null}"#,
                 ))
                 .unwrap(),
         )
@@ -790,7 +781,7 @@ async fn admin_channel_route_rejects_null_create_runtime_policy_fields_without_c
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"name":"OpenAI primary","vendor":"OpenAI","credentials":[{"name":"primary","baseUrl":"https://api.openai.com/v1","secretRef":"vault://providers/openai/account/main"}],"models":["openai/gpt-4o-mini"],"retryPolicy":null}"#,
+                    r#"{"name":"OpenAI primary","vendor":"OpenAI","credentials":[{"name":"primary","baseUrl":"https://api.openai.com/v1","secretRef":"vault://providers/openai/account/main"}],"retryPolicy":null}"#,
                 ))
                 .unwrap(),
         )
@@ -813,7 +804,7 @@ async fn admin_channel_route_rejects_null_create_runtime_policy_fields_without_c
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"name":"OpenAI primary","vendor":"OpenAI","credentials":[{"name":"primary","baseUrl":"https://api.openai.com/v1","secretRef":"vault://providers/openai/account/main"}],"models":["openai/gpt-4o-mini"],"circuitBreakerPolicy":null}"#,
+                    r#"{"name":"OpenAI primary","vendor":"OpenAI","credentials":[{"name":"primary","baseUrl":"https://api.openai.com/v1","secretRef":"vault://providers/openai/account/main"}],"circuitBreakerPolicy":null}"#,
                 ))
                 .unwrap(),
         )
@@ -839,6 +830,47 @@ async fn json_payload(response: axum::response::Response) -> Value {
         .await
         .unwrap();
     serde_json::from_slice(&body).unwrap()
+}
+
+#[tokio::test]
+async fn admin_channel_create_accepts_accounts_without_model_allowlist() {
+    let store = Arc::new(TestChannelStore::default());
+    let app = sdkwork_claw_product::api::admin_channel_router_with_store(
+        store,
+        Arc::new(TestUuidGenerator),
+    );
+
+    let response = app
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/backend/v3/api/channel")
+                .header("content-type", "application/json")
+                .internal_trusted_subject(10, 20, 30)
+                .body(Body::from(
+                    serde_json::json!({
+                        "name": "OpenAI account",
+                        "vendor": "OpenAI",
+                        "credentials": [{
+                            "name": "primary",
+                            "baseUrl": "https://api.openai.com/v1",
+                            "apiKey": "sk-live-test-secret"
+                        }],
+                        "capabilities": ["llm"],
+                        "resourceCodes": ["vendor.openai", "api.openai.chat_completions"]
+                    })
+                    .to_string(),
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    let payload = json_payload(response).await;
+    assert_eq!("2000", payload["code"]);
+    assert!(payload.pointer("/data/item/models").is_none());
+    assert!(payload.pointer("/item/models").is_none());
 }
 
 #[derive(Default)]
@@ -906,7 +938,6 @@ impl AdminChannelStore for TestChannelStore {
                         errors: 0,
                     })
                     .collect(),
-                models: command.models,
                 capabilities: command.capabilities,
                 resource_codes: command.resource_codes,
                 is_multimodal: command.is_multimodal,
@@ -981,9 +1012,6 @@ impl AdminChannelStore for TestChannelStore {
                         errors: 0,
                     })
                     .collect();
-            }
-            if let Some(models) = command.models {
-                item.models = models;
             }
             if let Some(capabilities) = command.capabilities {
                 item.is_multimodal = capabilities.iter().any(|capability| capability != "llm");

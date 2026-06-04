@@ -32,26 +32,17 @@ async fn sqlite_app_providers_loads_provider_family_and_canonical_integration_ty
 }
 
 #[tokio::test]
-async fn sqlite_app_providers_counts_rfc3339_effective_channel_models_as_active() {
+async fn sqlite_app_providers_counts_model_resources_as_active() {
     let pool = sqlite_pool().await;
     create_provider_tables(&pool).await;
     seed_provider_with_type(&pool, 2).await;
-    sqlx::query(
-        r#"
-        UPDATE ai_channel_model
-        SET effective_from = strftime('%Y-%m-%dT00:00:00Z', 'now')
-        WHERE id = 3001
-        "#,
-    )
-    .execute(&pool)
-    .await
-    .unwrap();
 
     let store = SqliteAppProvidersReadStore::new(pool);
     let items = store.load_providers(Some(owner_subject())).await.unwrap();
 
     assert_eq!(1, items.len());
     assert_eq!("active", items[0].status);
+    assert_eq!("https://azure.example.test/openai", items[0].url);
 }
 
 #[tokio::test]
@@ -148,12 +139,26 @@ async fn create_provider_tables(pool: &SqlitePool) {
         )
         "#,
         r#"
-        CREATE TABLE ai_channel_model (
+        CREATE TABLE ai_resource (
+            id INTEGER PRIMARY KEY,
+            tenant_id INTEGER NOT NULL,
+            organization_id INTEGER NOT NULL,
+            resource_code TEXT NOT NULL,
+            resource_type TEXT NOT NULL,
+            catalog_key TEXT,
+            status INTEGER NOT NULL,
+            deleted_at TEXT
+        )
+        "#,
+        r#"
+        CREATE TABLE ai_channel_resource (
             id INTEGER PRIMARY KEY,
             tenant_id INTEGER NOT NULL,
             organization_id INTEGER NOT NULL,
             channel_id INTEGER NOT NULL,
-            model TEXT NOT NULL,
+            resource_id INTEGER,
+            resource_code TEXT,
+            grant_type TEXT NOT NULL DEFAULT 'allow',
             status INTEGER NOT NULL,
             effective_from TEXT,
             effective_to TEXT,
@@ -239,14 +244,30 @@ async fn seed_provider_with_type(pool: &SqlitePool, integration_type: i64) {
 
     sqlx::query(
         r#"
-        INSERT INTO ai_channel_model (
-            id, tenant_id, organization_id, channel_id, model, status
+        INSERT INTO ai_resource (
+            id, tenant_id, organization_id, resource_code, resource_type, catalog_key, status
         )
-        VALUES (?, 10, 20, ?, 'gpt-4o-mini', 1)
+        VALUES (?, 10, 20, ?, 'model_api', 'openai/gpt-4o-mini', 1)
         "#,
     )
     .bind(3000 + id)
+    .bind(format!("model.{code}.gpt-4o-mini"))
+    .execute(pool)
+    .await
+    .unwrap();
+
+    sqlx::query(
+        r#"
+        INSERT INTO ai_channel_resource (
+            id, tenant_id, organization_id, channel_id, resource_id, resource_code, grant_type, status
+        )
+        VALUES (?, 10, 20, ?, ?, ?, 'allow', 1)
+        "#,
+    )
+    .bind(4000 + id)
     .bind(2000 + id)
+    .bind(3000 + id)
+    .bind(format!("model.{code}.gpt-4o-mini"))
     .execute(pool)
     .await
     .unwrap();

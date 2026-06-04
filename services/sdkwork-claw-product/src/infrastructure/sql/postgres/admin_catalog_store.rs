@@ -956,7 +956,7 @@ async fn replace_product_categories(
         .bind(command.subject.organization_id)
         .bind(product_id)
         .bind(category_id)
-        .bind(index == 0)
+        .bind(if index == 0 { 1 } else { 0 })
         .bind(index as i64)
         .bind(&command.requested_at)
         .execute(&mut **tx)

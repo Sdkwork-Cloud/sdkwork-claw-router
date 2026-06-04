@@ -1,6 +1,7 @@
 import {
   CLAWROUTER_APP_SDK_REFERENCE_METADATA,
   CLAWROUTER_BACKEND_SDK_REFERENCE_METADATA,
+  CLAWROUTER_CLOUD_SERVICES_SDK_REFERENCE_METADATA,
   SDK_SYSTEM_CONFIG,
 } from 'sdkwork-claw-router-commons/runtime';
 import type { ClawRouterGeneratedSdkMetadata } from 'sdkwork-claw-router-commons/runtime';
@@ -25,6 +26,7 @@ export type GeneratedSdkMetadata = ClawRouterGeneratedSdkMetadata;
 export {
   CLAWROUTER_APP_SDK_REFERENCE_METADATA,
   CLAWROUTER_BACKEND_SDK_REFERENCE_METADATA,
+  CLAWROUTER_CLOUD_SERVICES_SDK_REFERENCE_METADATA,
 };
 
 export const getGeneratedSdkMetadataForSystem = (system: ApiSystem): GeneratedSdkMetadata => (
@@ -40,6 +42,7 @@ function fallbackGatewayBaseUrl(apiPrefix: string): string {
 export const getSdkDataForSystem = (system: ApiSystem): SdkLanguage[] => {
   const systemNames = {
     gateway: 'Claw Router Open API',
+    'cloud-services': 'Cloud Services API',
     app: 'App API',
     backend: 'Backend API'
   };
@@ -55,6 +58,17 @@ export const getSdkDataForSystem = (system: ApiSystem): SdkLanguage[] => {
       csharp: 'Sdkwork.AiSdk',
       rust: 'sdkwork-ai-sdk',
       flutter: 'sdkwork_ai_sdk'
+    },
+    'cloud-services': {
+      ts: SDK_SYSTEM_CONFIG['cloud-services'].packageName,
+      py: 'sdkwork-clawrouter-cloud-services-sdk',
+      go: 'github.com/sdkwork/clawrouter-cloud-services-sdk-go',
+      java: 'clawrouter-cloud-services-sdk-java',
+      ruby: 'sdkwork-clawrouter-cloud-services-sdk',
+      php: 'sdkwork/clawrouter-cloud-services-sdk-php',
+      csharp: 'Sdkwork.ClawrouterCloudServicesSdk',
+      rust: 'sdkwork-clawrouter-cloud-services-sdk',
+      flutter: 'clawrouter_cloud_services_sdk'
     },
     app: {
       ts: SDK_SYSTEM_CONFIG.app.packageName,
@@ -82,6 +96,7 @@ export const getSdkDataForSystem = (system: ApiSystem): SdkLanguage[] => {
 
   const classNames = {
     gateway: SDK_SYSTEM_CONFIG.gateway.name,
+    'cloud-services': SDK_SYSTEM_CONFIG['cloud-services'].name,
     app: SDK_SYSTEM_CONFIG.app.name,
     backend: SDK_SYSTEM_CONFIG.backend.name
   };
@@ -108,6 +123,17 @@ export const getSdkDataForSystem = (system: ApiSystem): SdkLanguage[] => {
       csharp: `var apiKeys = await client.Apikey.FetchApiKeysMapAsync();\nConsole.WriteLine(apiKeys);`,
       rust: `let api_keys = client.apikey().fetch_api_keys_map().await?;\nprintln!("{:?}", api_keys);`,
       flutter: `void main() async {\n  final apiKeys = await client.iam.apiKeys.fetchApiKeysMap();\n  print(apiKeys);\n}`
+    },
+    'cloud-services': {
+      ts: `async function main() {\n  const config = await client.storage.sdkConfig.retrieve({\n    providerCode: "aws_s3",\n    bucket: "uploads",\n  });\n  console.log(config.data.endpoint);\n}\n\nmain();`,
+      py: `def main():\n    config = client.storage.sdk_config.retrieve(provider_code="aws_s3", bucket="uploads")\n    print(config.data.endpoint)\n\nif __name__ == "__main__":\n    main()`,
+      go: `func main() {\n    config, err := client.Storage.SdkConfig.Retrieve(context.Background(), claw.StorageSdkConfigRetrieveParams{\n        ProviderCode: \"aws_s3\",\n        Bucket: \"uploads\",\n    })\n    if err != nil {\n        log.Fatal(err)\n    }\n    fmt.Println(config.Data.Endpoint)\n}`,
+      java: `public class Main {\n    public static void main(String[] args) {\n        S3ClientSdkConfigResult config = client.storage().sdkConfig().retrieve(\n            StorageSdkConfigRetrieveParams.builder()\n                .providerCode(\"aws_s3\")\n                .bucket(\"uploads\")\n                .build()\n        );\n        System.out.println(config.getData().getEndpoint());\n    }\n}`,
+      ruby: `config = client.storage.sdk_config.retrieve(provider_code: "aws_s3", bucket: "uploads")\nputs config.data.endpoint`,
+      php: `$config = $client->storage()->sdkConfig()->retrieve([\n    'providerCode' => 'aws_s3',\n    'bucket' => 'uploads'\n]);\necho $config->data->endpoint;`,
+      csharp: `var config = await client.Storage.SdkConfig.RetrieveAsync(new StorageSdkConfigRetrieveParams\n{\n    ProviderCode = "aws_s3",\n    Bucket = "uploads"\n});\nConsole.WriteLine(config.Data.Endpoint);`,
+      rust: `let config = client.storage().sdk_config().retrieve(StorageSdkConfigRetrieveParams {\n    provider_code: Some("aws_s3".to_string()),\n    bucket: Some("uploads".to_string()),\n}).await?;\nprintln!("{}", config.data.endpoint);`,
+      flutter: `void main() async {\n  final config = await client.storage.sdkConfig.retrieve(\n    providerCode: 'aws_s3',\n    bucket: 'uploads',\n  );\n  print(config.data.endpoint);\n}`
     },
     app: {
       ts: `async function main() {\n  const profile = await client.iam.users.current.retrieve();\n  console.log(profile);\n}\n\nmain();`,

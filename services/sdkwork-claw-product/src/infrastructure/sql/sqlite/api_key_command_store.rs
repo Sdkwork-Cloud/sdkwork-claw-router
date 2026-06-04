@@ -450,6 +450,7 @@ async fn insert_api_key(
         expire_at: command.expire_at.clone(),
         status_code: 1,
         default_for_runtime: command.default_for_runtime,
+        group_bindings: Vec::new(),
     })
 }
 
@@ -746,6 +747,7 @@ fn gateway_api_key_from_row(
         default_for_runtime: row
             .try_get::<bool, _>("default_for_runtime")
             .map_err(row_error)?,
+        group_bindings: Vec::new(),
     })
 }
 

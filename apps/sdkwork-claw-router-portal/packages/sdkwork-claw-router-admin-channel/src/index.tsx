@@ -30,52 +30,42 @@ import {
 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import {
+  AccountModelMappingService,
   ChannelAiResourceService,
   ChannelService,
-  ChannelEndpointService,
   ProviderSecretService,
   ChannelModelCatalogService,
+  type AccountModelMappingInput,
   type AiResource,
   type AiResourceGroup,
-  type AiResourceCreateInput,
-  type AiResourceUpdateInput,
   type ChannelCredentialItem,
-  type ChannelEndpointChannelOption,
   type ChannelItem,
   type ChannelModelCatalogItem,
   type ChannelUpdateInput,
-  type ChannelEndpoint,
-  type ChannelEndpointCreateInput,
-  type ChannelEndpointUpdateInput,
   type ProviderSecretItem,
   isCatalogModelKey,
   normalizeModelCatalogKey,
   providerCodeForVendor,
 } from './channelService';
-import { authTypesList, knownModelVendors, prefillModels } from './channelOptions';
+import { authTypesList, knownModelVendors } from './channelOptions';
 import {
-  createAiResourceEditDraft,
-  createAiResourceInputFromForm,
-  createAiResourceUpdateInputFromForm,
   createChannelCopyDraft,
   createChannelEditDraft,
   createChannelInputFromForm,
   createChannelStatusUpdateInput,
   createChannelUpdateInputFromForm,
-  createChannelEndpointEditDraft,
-  createChannelEndpointInputFromForm,
-  createChannelEndpointUpdateInputFromForm,
   defaultChannelCredentialFormValue,
   resolveAuthTypeFormValue,
   resolveAuthTypeSubmitValue,
   resolveChannelSelectFormValue,
-  type AiResourceFormValues,
   type ChannelCredentialFormValue,
   type ChannelFormValues,
-  type ChannelEndpointFormValues,
 } from './channelForm';
 import {
+  channelAiResourceCapabilityCodes,
   deriveChannelTargetVendorCodes,
+  isAiResourceGroupVisibleForChannelVendorScope,
+  isAiResourceVisibleForChannelVendorScope,
   reconcileChannelVendorSelection,
 } from './channelVendorSelection.ts';
 import { AdminTableShell, AiResourceSelectorModal, BusinessStateTableRow, ConfirmDialog } from 'sdkwork-claw-router-commons';
@@ -83,21 +73,19 @@ import { AdminTableShell, AiResourceSelectorModal, BusinessStateTableRow, Confir
 type ToastState = { message: string; type: 'success' | 'info' | 'error' } | null;
 type AccountDrawerMode = 'create' | 'copy' | 'edit';
 type PendingChannelAction = 'test' | 'update' | 'delete';
-type AiResourceModalMode = 'create' | 'edit';
-type PendingAiResourceAction = 'status';
-type ChannelEndpointModalMode = 'create' | 'edit';
-type PendingChannelEndpointAction = 'status';
 type ChannelType = 'official' | 'relay';
 type AiResourceCategory = 'model' | 'image' | 'video' | 'audio' | 'music' | 'sfx' | 'api_resource';
 type AccountDrawerContentTab = 'models' | 'resources';
+type ModelRouteTab = 'targetModels' | 'mappingRules';
 type ResourceAssociationTab = 'groups' | 'resources';
-type ChannelModelMappingRow = {
+type AccountModelMappingRow = {
   id: string;
   sourceModel: string;
   targetModel: string;
   custom: boolean;
 };
-type ChannelModelMappingsByVendor = Record<string, ChannelModelMappingRow[]>;
+type ChannelTargetModelsByVendor = Record<string, string[]>;
+type AccountModelMappingsByVendor = Record<string, AccountModelMappingRow[]>;
 type EditableChannelCredential = ChannelCredentialFormValue & {
   localId: string;
 };
@@ -159,26 +147,6 @@ const credentialRotationOptions = [
   { id: 'weighted_round_robin', labelKey: 'admin.channel.rotation.weightedRoundRobin', descKey: 'admin.channel.rotation.weightedRoundRobinDesc' },
   { id: 'random', labelKey: 'admin.channel.rotation.random', descKey: 'admin.channel.rotation.randomDesc' },
 ] as const;
-
-const aiResourceTypeOptions: Array<AiResource['resourceType']> = [
-  'vendor',
-  'modality',
-  'api_endpoint',
-  'model_api',
-  'bundle',
-];
-
-const aiResourceCompositionOptions: Array<AiResource['compositionMode']> = [
-  'single',
-  'any',
-  'all',
-];
-
-const aiResourceStatusOptions: Array<AiResource['status']> = [
-  'active',
-  'disabled',
-  'inactive',
-];
 
 const credentialFieldSets: Record<string, CredentialFieldConfig[]> = {
   'claude-code': [
@@ -266,12 +234,6 @@ function readPositiveIntegerFormValue(
   return value;
 }
 
-function fallbackCatalogModelKeys(vendor: string): string[] {
-  return (prefillModels[vendor] ?? [])
-    .filter((model) => !model.includes('/'))
-    .map((model) => normalizeModelCatalogKey(model, vendor));
-}
-
 function toDateTimeLocalValue(value: string | undefined): string {
   const normalized = value?.trim();
   if (!normalized) {
@@ -318,67 +280,7 @@ function normalizeAiResourceCode(value: string): string {
   return value.trim().toLowerCase();
 }
 
-function aiResourceFormValuesFromFormData(formData: FormData): AiResourceFormValues {
-  return {
-    resourceCode: String(formData.get('resourceCode') ?? ''),
-    resourceType: String(formData.get('resourceType') ?? ''),
-    displayName: String(formData.get('displayName') ?? ''),
-    vendorCode: String(formData.get('vendorCode') ?? ''),
-    modalityCode: String(formData.get('modalityCode') ?? ''),
-    apiEndpointCode: String(formData.get('apiEndpointCode') ?? ''),
-    catalogKey: String(formData.get('catalogKey') ?? ''),
-    model: String(formData.get('model') ?? ''),
-    providerNativeModel: String(formData.get('providerNativeModel') ?? ''),
-    compositionMode: String(formData.get('compositionMode') ?? ''),
-    status: String(formData.get('status') ?? ''),
-    sortOrder: String(formData.get('sortOrder') ?? ''),
-    membersText: String(formData.get('membersText') ?? ''),
-  };
-}
-
-function channelEndpointFormValuesFromFormData(formData: FormData): ChannelEndpointFormValues {
-  return {
-    channelId: String(formData.get('channelId') ?? ''),
-    vendorCode: String(formData.get('vendorCode') ?? ''),
-    regionCode: String(formData.get('regionCode') ?? ''),
-    apiEndpointCode: String(formData.get('apiEndpointCode') ?? ''),
-    baseUrl: String(formData.get('baseUrl') ?? ''),
-    priority: String(formData.get('priority') ?? ''),
-    weight: String(formData.get('weight') ?? ''),
-    status: String(formData.get('status') ?? ''),
-    effectiveFrom: String(formData.get('effectiveFrom') ?? ''),
-    effectiveTo: String(formData.get('effectiveTo') ?? ''),
-  };
-}
-
-function isAiResourceVisibleForAccount(
-  resource: AiResource,
-  channelType: ChannelType,
-  selectedVendorCodes: readonly string[],
-  selectedCodes: readonly string[],
-): boolean {
-  if (selectedCodes.includes(normalizeAiResourceCode(resource.resourceCode))) {
-    return true;
-  }
-  const selectedVendorSet = new Set(selectedVendorCodes);
-  if (channelType === 'relay' && selectedVendorSet.size === 0) {
-    return true;
-  }
-  const vendorCode = resource.vendorCode ? providerCodeForVendor(resource.vendorCode) : '';
-  return !vendorCode || selectedVendorSet.has(vendorCode);
-}
-
-function compareAiResources(
-  left: AiResource,
-  right: AiResource,
-  selectedVendorCodes: readonly string[],
-): number {
-  const selectedVendorSet = new Set(selectedVendorCodes);
-  const leftVendorMatch = left.vendorCode && selectedVendorSet.has(providerCodeForVendor(left.vendorCode)) ? 0 : 1;
-  const rightVendorMatch = right.vendorCode && selectedVendorSet.has(providerCodeForVendor(right.vendorCode)) ? 0 : 1;
-  if (leftVendorMatch !== rightVendorMatch) {
-    return leftVendorMatch - rightVendorMatch;
-  }
+function compareChannelBindableAiResources(left: AiResource, right: AiResource): number {
   const leftOrder = left.sortOrder ?? Number.MAX_SAFE_INTEGER;
   const rightOrder = right.sortOrder ?? Number.MAX_SAFE_INTEGER;
   if (leftOrder !== rightOrder) {
@@ -427,6 +329,21 @@ function modelVendorIdForCode(vendorCode: string): string {
     ?? normalizedVendorCode;
 }
 
+function vendorSummariesForCodes(
+  vendorCodes: readonly string[],
+  t: ReturnType<typeof useTranslation>['t'],
+): Array<{ code: string; id: string; name: string }> {
+  return Array.from(new Set(vendorCodes.map((code) => providerCodeForVendor(code)).filter(Boolean)))
+    .map((code) => {
+      const vendor = knownModelVendors.find((item) => providerCodeForVendor(item.id) === code);
+      return {
+        code,
+        id: vendor?.id ?? code,
+        name: vendor ? optionalTranslatedLabel(t, vendor) : code,
+      };
+    });
+}
+
 function catalogModelVendorCode(model: string, fallbackVendorCode: string): string {
   const normalized = model.trim();
   if (!isCatalogModelKey(normalized)) {
@@ -453,58 +370,176 @@ function stableModelMappingRowId(vendorCode: string, sourceModel: string, target
   ].join(':');
 }
 
-function createModelMappingRow(model: string, vendorCode: string, custom = false): ChannelModelMappingRow {
+function normalizeTargetModelForVendor(model: string, vendorCode: string): string {
   const normalizedModel = model.trim();
-  const targetModel = isCatalogModelKey(normalizedModel)
+  if (!normalizedModel) {
+    return '';
+  }
+  return isCatalogModelKey(normalizedModel)
     ? normalizedModel
     : normalizeModelCatalogKey(normalizedModel, modelVendorIdForCode(vendorCode));
-  const sourceModel = catalogModelRuntimeId(targetModel);
-  return {
-    id: stableModelMappingRowId(vendorCode, sourceModel, targetModel, custom),
-    sourceModel,
-    targetModel,
-    custom,
-  };
 }
 
-function buildModelMappingsByVendor(
-  models: readonly string[],
-  vendorCodes: readonly string[],
+function mergeTargetModelsFromMappingInputs(
+  targetModelsByVendor: ChannelTargetModelsByVendor,
+  mappings: readonly AccountModelMappingInput[],
   accountVendorCode: string,
-): ChannelModelMappingsByVendor {
-  const next: ChannelModelMappingsByVendor = {};
-  for (const vendorCode of vendorCodes) {
-    next[vendorCode] = [];
-  }
-  for (const model of models) {
-    const normalizedModel = model.trim();
-    if (!normalizedModel) {
-      continue;
+): ChannelTargetModelsByVendor {
+  const next: ChannelTargetModelsByVendor = Object.fromEntries(
+    Object.entries(targetModelsByVendor).map(([vendorCode, models]) => [vendorCode, [...models]]),
+  );
+  for (const mapping of mappings) {
+    const targetVendorCode = providerCodeForVendor(
+      mapping.targetVendorCode ?? catalogModelVendorCode(mapping.targetModel, accountVendorCode),
+    );
+    const targetModel = normalizeTargetModelForVendor(mapping.targetModel, targetVendorCode);
+    if (targetModel && !(next[targetVendorCode] ?? []).includes(targetModel)) {
+      next[targetVendorCode] = [...(next[targetVendorCode] ?? []), targetModel];
     }
-    const vendorCode = catalogModelVendorCode(normalizedModel, accountVendorCode);
-    next[vendorCode] = [...(next[vendorCode] ?? []), createModelMappingRow(normalizedModel, vendorCode, true)];
   }
   return next;
 }
 
-function ensureModelMappingVendors(
-  current: ChannelModelMappingsByVendor,
+function buildModelMappingsByVendorFromInputs(
+  mappings: readonly AccountModelMappingInput[],
   vendorCodes: readonly string[],
-): ChannelModelMappingsByVendor {
-  const next: ChannelModelMappingsByVendor = {};
+  accountVendorCode: string,
+): AccountModelMappingsByVendor {
+  const next: AccountModelMappingsByVendor = {};
+  for (const vendorCode of vendorCodes) {
+    next[vendorCode] = [];
+  }
+  for (const mapping of mappings) {
+    const targetVendorCode = providerCodeForVendor(
+      mapping.targetVendorCode ?? catalogModelVendorCode(mapping.targetModel, accountVendorCode),
+    );
+    const targetModel = isCatalogModelKey(mapping.targetModel)
+      ? mapping.targetModel.trim()
+      : normalizeModelCatalogKey(mapping.targetModel, modelVendorIdForCode(targetVendorCode));
+    const sourceModel = mapping.sourceModel.trim() || catalogModelRuntimeId(targetModel);
+    next[targetVendorCode] = [
+      ...(next[targetVendorCode] ?? []),
+      {
+        id: stableModelMappingRowId(targetVendorCode, sourceModel, targetModel, true),
+        sourceModel,
+        targetModel,
+        custom: true,
+      },
+    ];
+  }
+  return next;
+}
+
+function ensureTargetModelVendors(
+  current: ChannelTargetModelsByVendor,
+  vendorCodes: readonly string[],
+): ChannelTargetModelsByVendor {
+  const next: ChannelTargetModelsByVendor = {};
   for (const vendorCode of vendorCodes) {
     next[vendorCode] = current[vendorCode] ?? [];
   }
   return next;
 }
 
-function flattenModelMappings(mappings: ChannelModelMappingsByVendor): string[] {
+function ensureModelMappingVendors(
+  current: AccountModelMappingsByVendor,
+  vendorCodes: readonly string[],
+): AccountModelMappingsByVendor {
+  const next: AccountModelMappingsByVendor = {};
+  for (const vendorCode of vendorCodes) {
+    next[vendorCode] = current[vendorCode] ?? [];
+  }
+  return next;
+}
+
+function flattenModelMappings(mappings: AccountModelMappingsByVendor): AccountModelMappingRow[] {
+  return Object.values(mappings)
+    .flat()
+    .map((row) => ({
+      ...row,
+      sourceModel: row.sourceModel.trim(),
+      targetModel: row.targetModel.trim(),
+    }))
+    .filter((row) => row.sourceModel && row.targetModel);
+}
+
+function flattenTargetModels(modelsByVendor: ChannelTargetModelsByVendor): string[] {
   return Array.from(new Set(
-    Object.values(mappings)
-      .flat()
-      .map((row) => row.targetModel.trim())
+    Object.values(modelsByVendor).flat()
+      .map((model) => model.trim())
       .filter(Boolean),
   ));
+}
+
+function targetModelRowsFromVendorMap(modelsByVendor: ChannelTargetModelsByVendor): AccountModelMappingRow[] {
+  return Object.entries(modelsByVendor).flatMap(([vendorCode, models]) => models
+    .map((model) => normalizeTargetModelForVendor(model, vendorCode))
+    .filter(Boolean)
+    .map((targetModel) => ({
+      id: stableModelMappingRowId(vendorCode, catalogModelRuntimeId(targetModel), targetModel, false),
+      sourceModel: catalogModelRuntimeId(targetModel),
+      targetModel,
+      custom: false,
+    })));
+}
+
+function accountModelMappingInputs(
+  mappings: readonly AccountModelMappingRow[],
+  accountVendorCode: string,
+): AccountModelMappingInput[] {
+  return mappings.map((row) => ({
+    sourceModel: row.sourceModel.trim(),
+    targetModel: row.targetModel.trim(),
+    targetVendorCode: catalogModelVendorCode(row.targetModel, accountVendorCode),
+  }));
+}
+
+function validateModelMappingVendorScope(
+  mappings: readonly AccountModelMappingRow[],
+  channelType: ChannelType,
+  accountVendorCode: string,
+  selectedVendorCodes: readonly string[],
+): void {
+  const allowedVendorCodes = new Set(
+    (channelType === 'official' ? [accountVendorCode] : selectedVendorCodes)
+      .map((vendorCode) => providerCodeForVendor(vendorCode)),
+  );
+  for (const row of mappings) {
+    const targetVendorCode = catalogModelVendorCode(row.targetModel, accountVendorCode);
+    if (!allowedVendorCodes.has(targetVendorCode)) {
+      throw new Error(`target model vendor ${targetVendorCode} is not enabled for this channel`);
+    }
+  }
+}
+
+function validateTargetModelVendorScope(
+  models: readonly string[],
+  channelType: ChannelType,
+  accountVendorCode: string,
+  selectedVendorCodes: readonly string[],
+): void {
+  const allowedVendorCodes = new Set(
+    (channelType === 'official' ? [accountVendorCode] : selectedVendorCodes)
+      .map((vendorCode) => providerCodeForVendor(vendorCode)),
+  );
+  for (const model of models) {
+    const targetVendorCode = catalogModelVendorCode(model, accountVendorCode);
+    if (!allowedVendorCodes.has(targetVendorCode)) {
+      throw new Error(`target model vendor ${targetVendorCode} is not enabled for this channel`);
+    }
+  }
+}
+
+function validateMappingTargetsExist(
+  mappings: readonly AccountModelMappingRow[],
+  targetModels: readonly string[],
+): void {
+  const targetModelSet = new Set(targetModels.map((model) => model.trim().toLowerCase()));
+  for (const row of mappings) {
+    if (!targetModelSet.has(row.targetModel.trim().toLowerCase())) {
+      throw new Error(`target model ${row.targetModel} must be selected before adding a mapping rule`);
+    }
+  }
 }
 
 function inferProtocolForVendor(vendor: string): string {
@@ -583,7 +618,7 @@ function createEditableCredential(
     ...defaultChannelCredentialFormValue(),
     ...value,
     name: value?.name ?? (index === 0 ? 'Primary' : `Credential ${index + 1}`),
-    localId: `credential-${Date.now()}-${index}-${Math.random().toString(36).slice(2, 8)}`,
+    localId: editableCredentialLocalId(index),
   };
 }
 
@@ -594,6 +629,19 @@ function initialEditableCredentials(values: ChannelFormValues | null | undefined
 
 function nextEditableCredential(index: number): EditableChannelCredential {
   return createEditableCredential({ name: `Credential ${index + 1}` }, index);
+}
+
+function editableCredentialLocalId(index: number): string {
+  return `credential-${index}`;
+}
+
+function nextEditableCredentialIndex(credentials: readonly EditableChannelCredential[]): number {
+  const usedIndexes = credentials
+    .map((credential) => /^credential-(\d+)$/.exec(credential.localId)?.[1])
+    .filter((value): value is string => value !== undefined)
+    .map((value) => Number(value))
+    .filter((value) => Number.isSafeInteger(value) && value >= 0);
+  return usedIndexes.length > 0 ? Math.max(...usedIndexes) + 1 : credentials.length;
 }
 
 function areStringArraysEqual(left: readonly string[], right: readonly string[]): boolean {
@@ -636,12 +684,15 @@ function AddAccountDrawer({
   const initialResourceAssociationCodes = splitResourceAssociationCodes(initialResourceCodes, aiResourceGroups);
   const [channelType, setChannelType] = useState<ChannelType>(resolveChannelType(initialValues?.channelType));
   const [activeAuthType, setActiveAuthType] = useState(resolveAuthTypeFormValue(initialValues?.accessType, authTypesList));
-  const [showMoreAuth, setShowMoreAuth] = useState(false);
   const [modelVendor, setModelVendor] = useState(resolveChannelSelectFormValue(initialValues?.vendor, knownModelVendors, 'OpenAI'));
   const [vendorPickerOpen, setVendorPickerOpen] = useState(false);
   const [resourceGroupSelectorOpen, setResourceGroupSelectorOpen] = useState(false);
   const [resourceSelectorOpen, setResourceSelectorOpen] = useState(false);
+  const [targetModelSelectorOpen, setTargetModelSelectorOpen] = useState(false);
+  const [mappingRuleModalOpen, setMappingRuleModalOpen] = useState(false);
+  const [editingMappingRule, setEditingMappingRule] = useState<AccountModelMappingRow | null>(null);
   const [activeAccountDrawerTab, setActiveAccountDrawerTab] = useState<AccountDrawerContentTab>('models');
+  const [activeModelRouteTab, setActiveModelRouteTab] = useState<ModelRouteTab>('targetModels');
   const [activeResourceAssociationTab, setActiveResourceAssociationTab] = useState<ResourceAssociationTab>('groups');
   const [selectedResourceCodes, setSelectedResourceCodes] = useState<string[]>(
     initialResourceAssociationCodes.resourceCodes,
@@ -652,27 +703,47 @@ function AddAccountDrawer({
   const [selectedVendorCodes, setSelectedVendorCodes] = useState<string[]>(() => deriveChannelTargetVendorCodes({
     channelType: initialValues?.channelType,
     accountVendor: resolveChannelSelectFormValue(initialValues?.vendor, knownModelVendors, 'OpenAI'),
-    models: initialValues?.models ?? [],
+    modelMappings: initialValues?.modelMappings ?? [],
     resourceCodes: initialValues?.resourceCodes ?? [],
   }));
   const [capabilities, setCapabilities] = useState<string[]>(
     initialValues?.capabilities?.length ? initialValues.capabilities : ['llm'],
   );
-  const [activeMappingVendorCode, setActiveMappingVendorCode] = useState('');
-  const [customMappingSourceModel, setCustomMappingSourceModel] = useState('');
-  const [customMappingTargetModel, setCustomMappingTargetModel] = useState('');
-  const [modelMappingsByVendor, setModelMappingsByVendor] = useState<ChannelModelMappingsByVendor>(() => buildModelMappingsByVendor(
-    initialValues?.models ?? [],
-    deriveChannelTargetVendorCodes({
+  const [targetModelsByVendor, setTargetModelsByVendor] = useState<ChannelTargetModelsByVendor>(() => {
+    const initialAccountVendor = resolveChannelSelectFormValue(initialValues?.vendor, knownModelVendors, 'OpenAI');
+    const initialVendorCodes = deriveChannelTargetVendorCodes({
       channelType: initialValues?.channelType,
-      accountVendor: resolveChannelSelectFormValue(initialValues?.vendor, knownModelVendors, 'OpenAI'),
-      models: initialValues?.models ?? [],
+      accountVendor: initialAccountVendor,
+      modelMappings: initialValues?.modelMappings ?? [],
       resourceCodes: initialValues?.resourceCodes ?? [],
-    }),
-    providerCodeForVendor(resolveChannelSelectFormValue(initialValues?.vendor, knownModelVendors, 'OpenAI')),
-  ));
+    });
+    const initialAccountVendorCode = providerCodeForVendor(initialAccountVendor);
+    return mergeTargetModelsFromMappingInputs(
+      ensureTargetModelVendors({}, initialVendorCodes),
+      initialValues?.modelMappings ?? [],
+      initialAccountVendorCode,
+    );
+  });
+  const [modelMappingsByVendor, setModelMappingsByVendor] = useState<AccountModelMappingsByVendor>(() => {
+    const initialAccountVendor = resolveChannelSelectFormValue(initialValues?.vendor, knownModelVendors, 'OpenAI');
+    const initialVendorCodes = deriveChannelTargetVendorCodes({
+      channelType: initialValues?.channelType,
+      accountVendor: initialAccountVendor,
+      modelMappings: initialValues?.modelMappings ?? [],
+      resourceCodes: initialValues?.resourceCodes ?? [],
+    });
+    const initialAccountVendorCode = providerCodeForVendor(initialAccountVendor);
+    return initialValues?.modelMappings?.length
+      ? buildModelMappingsByVendorFromInputs(
+        initialValues.modelMappings,
+        initialVendorCodes,
+        initialAccountVendorCode,
+      )
+      : ensureModelMappingVendors({}, initialVendorCodes);
+  });
   const [credentialRotation, setCredentialRotation] = useState(initialValues?.credentialRotation ?? 'default');
   const [credentials, setCredentials] = useState<EditableChannelCredential[]>(() => initialEditableCredentials(initialValues));
+  const [activeCredentialId, setActiveCredentialId] = useState('');
   const [apiKeyVisible, setApiKeyVisible] = useState(false);
   const [localError, setLocalError] = useState<string | null>(null);
 
@@ -689,35 +760,56 @@ function AddAccountDrawer({
     ],
     [aiResourceGroups, aiResources],
   );
+  const selectedDirectResourceCodes = useMemo(
+    () => selectedResourceCodes.filter((resourceCode) => {
+      const resource = findAiResourceByCode(aiResources, resourceCode);
+      return resource
+        ? isAiResourceVisibleForChannelVendorScope(resource, selectedVendorCodes, capabilities)
+        : false;
+    }),
+    [aiResources, capabilities, selectedResourceCodes, selectedVendorCodes],
+  );
   const visibleAiResources = useMemo(
     () => aiResources
       .filter((resource) => resource.status === 'active')
-      .filter((resource) => isAiResourceVisibleForAccount(
-        resource,
-        channelType,
-        selectedVendorCodes,
-        selectedResourceCodes,
-      ))
-      .sort((left, right) => compareAiResources(left, right, selectedVendorCodes)),
-    [channelType, aiResources, selectedResourceCodes, selectedVendorCodes],
+      .filter((resource) => isAiResourceVisibleForChannelVendorScope(resource, selectedVendorCodes, capabilities))
+      .sort(compareChannelBindableAiResources),
+    [aiResources, capabilities, selectedVendorCodes],
   );
   const visibleAiResourceGroups = useMemo(
     () => aiResourceGroups
       .filter((group) => group.status === 'active')
+      .filter((group) => isAiResourceGroupVisibleForChannelVendorScope(group, selectedVendorCodes, capabilities))
       .sort((left, right) => {
         const leftOrder = left.sortOrder ?? Number.MAX_SAFE_INTEGER;
         const rightOrder = right.sortOrder ?? Number.MAX_SAFE_INTEGER;
         return leftOrder === rightOrder ? left.groupCode.localeCompare(right.groupCode) : leftOrder - rightOrder;
       }),
-    [aiResourceGroups],
+    [aiResourceGroups, capabilities, selectedVendorCodes],
   );
-  const activeVendorCatalogModels = useMemo(
-    () => availableModels.filter((model) => model.vendorCode === activeMappingVendorCode).slice(0, 24),
-    [activeMappingVendorCode, availableModels],
+  const selectedVisibleResourceGroupCodes = useMemo(() => {
+    const visibleGroupCodes = new Set(visibleAiResourceGroups.map((group) => normalizeAiResourceCode(group.groupCode)));
+    return selectedResourceGroupCodes.filter((groupCode) => visibleGroupCodes.has(normalizeAiResourceCode(groupCode)));
+  }, [selectedResourceGroupCodes, visibleAiResourceGroups]);
+  const mappingRuleRows = useMemo(
+    () => flattenModelMappings(modelMappingsByVendor),
+    [modelMappingsByVendor],
   );
-  const activeVendorMappings = modelMappingsByVendor[activeMappingVendorCode] ?? [];
-  const submittedModelCount = flattenModelMappings(modelMappingsByVendor).length;
-  const selectedResourceAssociationCount = selectedResourceGroupCodes.length + selectedResourceCodes.length;
+  const targetModelRows = useMemo(
+    () => targetModelRowsFromVendorMap(targetModelsByVendor),
+    [targetModelsByVendor],
+  );
+  const submittedModelCount = targetModelRows.length;
+  const mappingRuleCount = mappingRuleRows.length;
+  const availableTargetModels = useMemo(
+    () => availableModels.filter((model) => selectedVendorCodes.includes(providerCodeForVendor(model.vendorCode))),
+    [availableModels, selectedVendorCodes],
+  );
+  const selectedResourceAssociationCount = selectedVisibleResourceGroupCodes.length + selectedDirectResourceCodes.length;
+  const selectedVendorSummaries = useMemo(
+    () => vendorSummariesForCodes(selectedVendorCodes, t),
+    [selectedVendorCodes, t],
+  );
   const resourceSelectorOptions = useMemo(() => visibleAiResources.map((resource) => ({
     id: resource.id,
     resourceCode: normalizeAiResourceCode(resource.resourceCode),
@@ -729,15 +821,23 @@ function AddAccountDrawer({
     catalogKey: resource.catalogKey ?? null,
     model: resource.model ?? null,
     providerNativeModel: resource.providerNativeModel ?? null,
+    capability: resource.capability ?? null,
+    capabilities: channelAiResourceCapabilityCodes(resource),
     status: resource.status,
   })), [t, visibleAiResources]);
+  const activeCredential = useMemo(
+    () => credentials.find((credential) => credential.localId === activeCredentialId) ?? credentials[0],
+    [activeCredentialId, credentials],
+  );
+  const activeCredentialIndex = activeCredential
+    ? credentials.findIndex((credential) => credential.localId === activeCredential.localId)
+    : -1;
+  const activeCredentialNumber = activeCredentialIndex >= 0 ? activeCredentialIndex + 1 : 1;
 
   useEffect(() => {
+    setTargetModelsByVendor((current) => ensureTargetModelVendors(current, selectedVendorCodes));
     setModelMappingsByVendor((current) => ensureModelMappingVendors(current, selectedVendorCodes));
-    if (!activeMappingVendorCode || !selectedVendorCodes.includes(activeMappingVendorCode)) {
-      setActiveMappingVendorCode(selectedVendorCodes[0] ?? '');
-    }
-  }, [activeMappingVendorCode, selectedVendorCodes]);
+  }, [selectedVendorCodes]);
 
   useEffect(() => {
     const reconciled = reconcileChannelVendorSelection({
@@ -758,6 +858,12 @@ function AddAccountDrawer({
       setSelectedResourceCodes(nextAssociationCodes.resourceCodes);
     }
   }, [aiResourceGroups, availableResourceCodes, channelType, modelVendor, selectedResourceCodes, selectedResourceGroupCodes, selectedVendorCodes]);
+
+  useEffect(() => {
+    if (!credentials.some((credential) => credential.localId === activeCredentialId)) {
+      setActiveCredentialId(credentials[0]?.localId ?? '');
+    }
+  }, [activeCredentialId, credentials]);
 
   const toggleCapability = (capability: string) => {
     setCapabilities((current) => {
@@ -843,97 +949,123 @@ function AddAccountDrawer({
   };
 
   const addCredential = () => {
-    setCredentials((current) => [...current, nextEditableCredential(current.length)]);
+    const nextCredential = nextEditableCredential(nextEditableCredentialIndex(credentials));
+    setCredentials((current) => [...current, nextCredential]);
+    setActiveCredentialId(nextCredential.localId);
   };
 
   const removeCredential = (localId: string) => {
-    setCredentials((current) => {
-      if (current.length <= 1) {
-        return current;
-      }
-      return current.filter((credential) => credential.localId !== localId);
-    });
+    if (credentials.length <= 1) {
+      return;
+    }
+    const credentialIndex = credentials.findIndex((credential) => credential.localId === localId);
+    if (credentialIndex < 0) {
+      return;
+    }
+    const nextCredentials = credentials.filter((credential) => credential.localId !== localId);
+    setCredentials(nextCredentials);
+    if ((activeCredential?.localId ?? activeCredentialId) === localId) {
+      const nextActiveCredential = nextCredentials[
+        Math.min(Math.max(credentialIndex, 0), nextCredentials.length - 1)
+      ] ?? nextCredentials[0];
+      setActiveCredentialId(nextActiveCredential?.localId ?? '');
+    }
   };
 
-  const applyDefaultModelMappings = () => {
-    if (!activeMappingVendorCode) {
-      return;
-    }
-    const catalogKeys = activeVendorCatalogModels.length > 0
-      ? activeVendorCatalogModels.map((model) => model.catalogKey)
-      : fallbackCatalogModelKeys(modelVendorIdForCode(activeMappingVendorCode));
-    setModelMappingsByVendor((current) => ({
-      ...current,
-      [activeMappingVendorCode]: catalogKeys.map((model) => createModelMappingRow(model, activeMappingVendorCode)),
-    }));
-  };
-
-  const clearActiveModelMappings = () => {
-    if (!activeMappingVendorCode) {
-      return;
-    }
-    setModelMappingsByVendor((current) => ({
-      ...current,
-      [activeMappingVendorCode]: [],
-    }));
-  };
-
-  const addCustomModelMapping = () => {
-    const rawTargetModel = customMappingTargetModel.trim();
-    if (!activeMappingVendorCode || !rawTargetModel) {
-      return;
-    }
-    let targetModel: string;
-    try {
-      targetModel = isCatalogModelKey(rawTargetModel)
-        ? rawTargetModel
-        : normalizeModelCatalogKey(rawTargetModel, modelVendorIdForCode(activeMappingVendorCode));
-    } catch (err) {
-      setLocalError(err instanceof Error ? err.message : t('admin.channel.validation.modelRequired'));
-      return;
-    }
-    const sourceModel = customMappingSourceModel.trim() || catalogModelRuntimeId(targetModel);
-    setModelMappingsByVendor((current) => {
-      const rows = current[activeMappingVendorCode] ?? [];
-      if (rows.some((row) => row.targetModel === targetModel)) {
+  const addTargetModel = (model: ChannelModelCatalogItem) => {
+    const vendorCode = providerCodeForVendor(model.vendorCode);
+    setTargetModelsByVendor((current) => {
+      const models = current[vendorCode] ?? [];
+      if (models.includes(model.catalogKey)) {
         return current;
       }
       return {
         ...current,
-        [activeMappingVendorCode]: [
-          ...rows,
+        [vendorCode]: [...models, model.catalogKey],
+      };
+    });
+  };
+
+  const removeTargetModel = (targetModel: string) => {
+    const targetVendorCode = catalogModelVendorCode(targetModel, accountVendorCode);
+    setTargetModelsByVendor((current) => ({
+      ...current,
+      [targetVendorCode]: (current[targetVendorCode] ?? []).filter((model) => model !== targetModel),
+    }));
+    setModelMappingsByVendor((current) => ({
+      ...current,
+      [targetVendorCode]: (current[targetVendorCode] ?? []).filter((row) => row.targetModel !== targetModel),
+    }));
+  };
+
+  const upsertModelMappingRule = (sourceModel: string, targetModel: string, existingRowId?: string) => {
+    const normalizedSourceModel = sourceModel.trim();
+    const normalizedTargetModel = targetModel.trim();
+    if (!normalizedSourceModel || !normalizedTargetModel) {
+      return;
+    }
+    const targetVendorCode = catalogModelVendorCode(normalizedTargetModel, accountVendorCode);
+    setModelMappingsByVendor((current) => {
+      const rows = current[targetVendorCode] ?? [];
+      const nextRows = rows.filter((row) => row.id !== existingRowId);
+      if (nextRows.some((row) => row.sourceModel === normalizedSourceModel && row.targetModel === normalizedTargetModel)) {
+        return current;
+      }
+      return {
+        ...current,
+        [targetVendorCode]: [
+          ...nextRows,
           {
-            id: stableModelMappingRowId(activeMappingVendorCode, sourceModel, targetModel, true),
-            sourceModel,
-            targetModel,
+            id: stableModelMappingRowId(targetVendorCode, normalizedSourceModel, normalizedTargetModel, true),
+            sourceModel: normalizedSourceModel,
+            targetModel: normalizedTargetModel,
             custom: true,
           },
         ],
       };
     });
-    setCustomMappingSourceModel('');
-    setCustomMappingTargetModel('');
   };
 
-  const addCatalogModel = (model: ChannelModelCatalogItem) => {
-    const vendorCode = providerCodeForVendor(model.vendorCode);
-    setModelMappingsByVendor((current) => {
-      const rows = current[vendorCode] ?? [];
-      if (rows.some((row) => row.targetModel === model.catalogKey)) {
-        return current;
-      }
-      return {
-        ...current,
-        [vendorCode]: [...rows, createModelMappingRow(model.catalogKey, vendorCode)],
-      };
-    });
-  };
-
-  const removeModelMapping = (vendorCode: string, rowId: string) => {
+  const removeModelMappingRule = (row: AccountModelMappingRow) => {
+    const targetVendorCode = catalogModelVendorCode(row.targetModel, accountVendorCode);
     setModelMappingsByVendor((current) => ({
       ...current,
-      [vendorCode]: (current[vendorCode] ?? []).filter((row) => row.id !== rowId),
+      [targetVendorCode]: (current[targetVendorCode] ?? []).filter((item) => item.id !== row.id),
     }));
+  };
+
+  const openCreateMappingRuleModal = () => {
+    setEditingMappingRule(null);
+    setMappingRuleModalOpen(true);
+  };
+
+  const openEditMappingRuleModal = (row: AccountModelMappingRow) => {
+    setEditingMappingRule(row);
+    setMappingRuleModalOpen(true);
+  };
+
+  const generateSameNameMappings = () => {
+    setModelMappingsByVendor((current) => {
+      const next: AccountModelMappingsByVendor = { ...current };
+      for (const row of targetModelRows) {
+        const targetVendorCode = catalogModelVendorCode(row.targetModel, accountVendorCode);
+        const sourceModel = catalogModelRuntimeId(row.targetModel);
+        const rows = next[targetVendorCode] ?? [];
+        if (rows.some((item) => item.sourceModel === sourceModel && item.targetModel === row.targetModel)) {
+          continue;
+        }
+        next[targetVendorCode] = [
+          ...rows,
+          {
+            id: stableModelMappingRowId(targetVendorCode, sourceModel, row.targetModel, false),
+            sourceModel,
+            targetModel: row.targetModel,
+            custom: false,
+          },
+        ];
+      }
+      return next;
+    });
   };
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -942,18 +1074,17 @@ function AddAccountDrawer({
     const formData = new FormData(event.currentTarget);
     const name = String(formData.get('name') ?? '').trim();
     const expiresAt = String(formData.get('expiresAt') ?? '').trim();
-    const models = flattenModelMappings(modelMappingsByVendor);
+    const modelMappingRows = flattenModelMappings(modelMappingsByVendor);
+    const models = flattenTargetModels(targetModelsByVendor);
 
     if (!name) {
       setLocalError(t('admin.channel.validation.channelNameRequired'));
       return;
     }
-    if (models.length === 0) {
-      setLocalError(t('admin.channel.validation.modelRequired'));
-      return;
-    }
-
     try {
+      validateTargetModelVendorScope(models, channelType, accountVendorCode, selectedVendorCodes);
+      validateModelMappingVendorScope(modelMappingRows, channelType, accountVendorCode, selectedVendorCodes);
+      validateMappingTargetsExist(modelMappingRows, models);
       const weight = readPositiveIntegerFormValue(formData, 'weight', {
         required: t('admin.channel.validation.weightRequired'),
         positiveInteger: t('admin.channel.validation.weightPositiveInteger'),
@@ -969,8 +1100,8 @@ function AddAccountDrawer({
         credentials,
         expiresAt,
         capabilities,
-        resourceCodes: [...selectedResourceGroupCodes, ...selectedResourceCodes],
-        models,
+        resourceCodes: [...selectedVisibleResourceGroupCodes, ...selectedDirectResourceCodes],
+        modelMappings: accountModelMappingInputs(modelMappingRows, accountVendorCode),
         circuitBreakerEnabled,
         circuitBreakerFailureThreshold: String(formData.get('circuitBreakerFailureThreshold') ?? '').trim(),
         weight,
@@ -981,10 +1112,9 @@ function AddAccountDrawer({
     }
   };
 
-  const credentialSecretHelp = isApiKeyAuthType(activeAuthType)
-    ? t('admin.channel.help.apiKeyCredential')
-    : t('admin.channel.help.credentialMaterial');
   const activeCredentialFields = credentialFieldsForAuthType(activeAuthType);
+  const activeSecretLabel = t(credentialSecretLabelKey(activeAuthType));
+  const activeSecretPlaceholder = t(credentialSecretPlaceholderKey(activeAuthType));
 
   return (
     <div className="fixed inset-0 z-50 flex justify-start bg-slate-900/50 backdrop-blur-sm" data-admin-channel-account-drawer>
@@ -1014,7 +1144,7 @@ function AddAccountDrawer({
             <input key={`resource-group-code-${code}`} type="hidden" name="resourceGroupCodes" value={code} />
           ))}
           <div className="flex min-h-0 flex-1 overflow-hidden">
-            <div className="min-w-0 w-[40%] max-w-[40%] shrink-0 p-5 space-y-5 border-r border-slate-200 dark:border-white/10 overflow-y-auto custom-scrollbar">
+            <div className="min-w-0 w-[40%] max-w-[40%] shrink-0 space-y-3 overflow-y-auto border-r border-slate-200 bg-slate-50/80 p-4 dark:border-white/10 dark:bg-[#121212] custom-scrollbar" data-admin-channel-account-left-form>
               {localError && (
                 <div className="flex items-center gap-2 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-700 dark:border-red-500/20 dark:bg-red-500/10 dark:text-red-300">
                   <AlertCircle className="h-4 w-4" />
@@ -1022,160 +1152,109 @@ function AddAccountDrawer({
                 </div>
               )}
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm text-slate-700 dark:text-slate-300 mb-2 font-medium">{t('admin.channel.fields.channelName')}</label>
-                  <input
-                    required
-                    name="name"
-                    type="text"
-                    defaultValue={initialValues?.name ?? ''}
-                    placeholder={t('admin.channel.placeholders.channelName')}
-                    className="w-full bg-white dark:bg-black border border-slate-200 dark:border-white/10 focus:border-emerald-500 rounded-lg px-3 py-2 text-sm text-slate-900 dark:text-white focus:outline-none transition-colors"
-                  />
+              <section className="rounded-xl border border-slate-200 bg-white p-3 shadow-sm dark:border-white/10 dark:bg-black" data-admin-channel-left-section="identity">
+                <div className="mb-3 flex items-center justify-between gap-3 border-b border-slate-100 pb-2 dark:border-white/10" data-admin-channel-left-section-title>
+                  <div className="flex min-w-0 items-center gap-2">
+                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-slate-500 dark:bg-white/10 dark:text-slate-300">
+                      <Server className="h-3.5 w-3.5" />
+                    </span>
+                    <span className="min-w-0 truncate text-xs font-semibold uppercase text-slate-700 dark:text-slate-300">{t('admin.channel.credentials.channelTitle')}</span>
+                  </div>
+                  <span className="shrink-0 rounded-md bg-slate-100 px-2 py-0.5 font-mono text-[10px] text-slate-500 dark:bg-white/10 dark:text-slate-400">{accountVendorCode}</span>
                 </div>
-              </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm text-slate-700 dark:text-slate-300 mb-2 font-medium">{t('admin.channel.fields.channelName')}</label>
+                    <input
+                      required
+                      name="name"
+                      type="text"
+                      defaultValue={initialValues?.name ?? ''}
+                      placeholder={t('admin.channel.placeholders.channelName')}
+                      className="w-full bg-white dark:bg-black border border-slate-200 dark:border-white/10 focus:border-emerald-500 rounded-lg px-3 py-2 text-sm text-slate-900 dark:text-white focus:outline-none transition-colors"
+                    />
+                  </div>
+                </div>
 
-              <div>
-                <label className="block text-sm text-slate-700 dark:text-slate-300 mb-2 font-medium">{t('admin.channel.fields.channelType')}</label>
-                <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
-                  {channelTypeOptions.map((option) => {
-                    const isSelected = channelType === option.id;
-                    return (
-                      <button
-                        key={option.id}
-                        type="button"
-                        onClick={() => setAccountType(option.id)}
-                        className={`rounded-lg border p-3 text-left transition-colors ${
-                          isSelected
-                            ? 'border-emerald-500 bg-emerald-50 text-emerald-800 ring-1 ring-emerald-500/40 dark:bg-emerald-500/10 dark:text-emerald-300'
-                            : 'border-slate-200 bg-white text-slate-700 hover:border-slate-300 dark:border-white/10 dark:bg-black dark:text-slate-300 dark:hover:border-white/20'
-                        }`}
-                      >
-                        <span className="flex items-center gap-2 text-sm font-semibold">
+                <div className="mt-3 space-y-2">
+                  <label className="block text-sm text-slate-700 dark:text-slate-300 font-medium">{t('admin.channel.fields.channelType')}</label>
+                  <div className="inline-flex w-full rounded-lg border border-slate-200 bg-white p-1 dark:border-white/10 dark:bg-black" data-admin-channel-account-type-segmented>
+                    {channelTypeOptions.map((option) => {
+                      const isSelected = channelType === option.id;
+                      return (
+                        <button
+                          key={option.id}
+                          type="button"
+                          onClick={() => setAccountType(option.id)}
+                          className={`flex min-w-0 flex-1 items-center justify-center gap-2 rounded-md px-3 py-2 text-xs font-semibold transition-colors ${
+                            isSelected
+                              ? 'bg-emerald-600 text-white shadow-sm dark:bg-emerald-500'
+                              : 'text-slate-600 hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-white/10'
+                          }`}
+                        >
                           <span
                             className={`flex h-4 w-4 items-center justify-center rounded border ${
-                              isSelected ? 'border-emerald-500 bg-emerald-500' : 'border-slate-300 dark:border-slate-500'
+                              isSelected ? 'border-white/70 bg-white/20' : 'border-slate-300 dark:border-slate-500'
                             }`}
                           >
                             {isSelected && <Check className="h-3 w-3 text-white" />}
                           </span>
-                          {t(option.titleKey)}
-                        </span>
-                        <span className="mt-1 block text-xs text-slate-500 dark:text-slate-400">{t(option.descKey)}</span>
-                      </button>
-                    );
-                  })}
-                </div>
-                <button
-                  type="button"
-                  data-admin-channel-account-type-vendor-picker
-                  onClick={() => setVendorPickerOpen(true)}
-                  className="mt-3 flex w-full items-center justify-between gap-3 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-left shadow-sm transition-colors hover:border-emerald-300 hover:bg-emerald-100 dark:border-emerald-500/20 dark:bg-emerald-500/10 dark:hover:bg-emerald-500/20"
-                >
-                  <span className="min-w-0">
-                    <span className="flex items-center gap-2 text-sm font-semibold text-emerald-800 dark:text-emerald-200">
-                      <Server className="h-4 w-4" />
-                      {t('admin.channel.vendorPicker.currentVendor')}
-                    </span>
-                    <span data-admin-channel-account-type-vendor-summary className="mt-1 flex min-w-0 flex-wrap items-center gap-2 text-xs">
-                      <span className="truncate rounded-md bg-white px-2 py-1 font-semibold text-slate-800 ring-1 ring-emerald-100 dark:bg-black dark:text-white dark:ring-emerald-500/20">{modelVendor}</span>
-                      <span className="font-mono text-emerald-700/80 dark:text-emerald-300/80">{accountVendorCode}</span>
-                    </span>
-                    <span className="mt-1 block text-xs text-emerald-700/70 dark:text-emerald-300/70">{t('admin.channel.vendorPicker.accountTypeHint')}</span>
-                  </span>
-                  <span className="inline-flex shrink-0 items-center gap-1.5 rounded-lg bg-emerald-600 px-3 py-2 text-xs font-semibold text-white shadow-sm">
-                    <Plus className="h-3.5 w-3.5" />
-                    {t('admin.channel.vendorPicker.choose')}
-                  </span>
-                </button>
-              </div>
-
-              <div>
-                <div className="flex items-center justify-between mb-2">
-                  <label className="text-sm text-slate-700 dark:text-slate-300 font-medium">{t('admin.channel.fields.credentialMode')}</label>
-                  <button
-                    type="button"
-                    onClick={() => setShowMoreAuth((current) => !current)}
-                    className="text-xs text-emerald-600 dark:text-emerald-400 hover:underline"
-                  >
-                    {showMoreAuth
-                      ? t('admin.channel.actions.hideAdvancedModes')
-                      : t('admin.channel.actions.showAdvancedModes')}
-                  </button>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                {authTypesList
-                    .filter((type) => !type.isSpecial || showMoreAuth)
-                    .map((type) => {
-                      const isActive = activeAuthType === type.id;
-                      return (
-                        <button
-                          type="button"
-                          key={type.id}
-                          onClick={() => setActiveAuthType(type.id)}
-                          className={`text-left p-2.5 rounded-xl border transition-all duration-200 flex flex-col gap-1.5 ${
-                            isActive
-                              ? 'bg-emerald-50 dark:bg-emerald-500/10 border-emerald-500 ring-1 ring-emerald-500/50'
-                              : 'bg-white dark:bg-black border-slate-200 dark:border-white/10 hover:border-slate-300 dark:hover:border-white/20'
-                          }`}
-                        >
-                          <span className="flex items-center gap-2">
-                            <span
-                              className={`p-1 rounded ${
-                                isActive
-                                  ? 'bg-emerald-500 text-white'
-                                  : 'bg-slate-100 dark:bg-white/10 text-slate-500 dark:text-slate-400'
-                              }`}
-                            >
-                              {type.icon}
-                            </span>
-                            <span className={`font-semibold text-[13px] ${isActive ? 'text-slate-900 dark:text-emerald-400' : 'text-slate-700 dark:text-slate-300'}`}>
-                              {t(type.titleKey)}
-                            </span>
-                          </span>
-                          <span className={`text-[10px] font-mono tracking-wide ${isActive ? 'text-emerald-700/70 dark:text-emerald-400/70' : 'text-slate-500'}`}>
-                            {t(type.descKey)}
-                          </span>
+                          <span className="truncate">{t(option.titleKey)}</span>
                         </button>
                       );
                     })}
-                  {!authTypesList.some((type) => type.id === activeAuthType) && (
-                    <button
-                      key={activeAuthType}
-                      type="button"
-                      onClick={() => setActiveAuthType(activeAuthType)}
-                      className="flex items-center gap-2 rounded-lg border px-3 py-2 text-left text-xs transition-all border-amber-300 bg-amber-50 text-amber-800 dark:border-amber-500/40 dark:bg-amber-500/10 dark:text-amber-200"
-                    >
-                      <Key className="h-4 w-4" />
-                      <span>
-                        <span className="block font-semibold">{activeAuthType}</span>
-                        <span className="text-[10px] opacity-80">{t('admin.channel.actions.customBackendAuthType')}</span>
-                      </span>
-                    </button>
-                  )}
-                </div>
-              </div>
-
-              <div className="rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-white/10 dark:bg-[#121212]" data-admin-channel-credentials-editor>
-                <div className="mb-4 flex items-start justify-between gap-3">
-                  <div className="min-w-0">
-                    <h4 className="text-sm font-semibold text-slate-900 dark:text-white">{t('admin.channel.credentials.editorTitle')}</h4>
-                    <p className="mt-1 text-xs leading-5 text-slate-500 dark:text-slate-400">{credentialSecretHelp}</p>
                   </div>
-                  <div className="flex shrink-0 gap-2">
-                    <button
-                      type="button"
-                      onClick={() => setApiKeyVisible((current) => !current)}
-                      className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-semibold text-slate-600 transition-colors hover:border-emerald-300 hover:text-emerald-700 dark:border-white/10 dark:bg-black dark:text-slate-300 dark:hover:border-emerald-500/40 dark:hover:text-emerald-300"
-                    >
-                      {apiKeyVisible ? <EyeOff className="h-3.5 w-3.5" /> : <Eye className="h-3.5 w-3.5" />}
-                      {apiKeyVisible ? t('admin.channel.actions.hideApiKey') : t('admin.channel.actions.showApiKey')}
-                    </button>
+                  <button
+                    type="button"
+                    data-admin-channel-account-type-vendor-picker
+                    onClick={() => setVendorPickerOpen(true)}
+                    className="flex w-full flex-col items-stretch gap-2 rounded-lg border border-indigo-200 bg-indigo-50 px-3 py-2 text-left transition-colors hover:border-indigo-300 hover:bg-indigo-100 dark:border-indigo-500/20 dark:bg-indigo-500/10 dark:hover:bg-indigo-500/20"
+                  >
+                    <span className="flex min-w-0 items-center justify-between gap-3">
+                      <span data-admin-channel-account-type-vendor-summary className="flex min-w-0 items-center gap-2 text-xs">
+                        <Server className="h-4 w-4 shrink-0 text-indigo-500 dark:text-indigo-300" />
+                        <span className="shrink-0 font-medium text-slate-600 dark:text-slate-300">{t('admin.channel.vendorPicker.currentVendor')}</span>
+                        <span className="truncate font-semibold text-slate-950 dark:text-white">{modelVendor}</span>
+                        <span className="truncate font-mono text-indigo-500 dark:text-indigo-300">{accountVendorCode}</span>
+                      </span>
+                      <span className="inline-flex shrink-0 items-center gap-1.5 rounded-md bg-indigo-600 px-2.5 py-1.5 text-xs font-semibold text-white shadow-sm transition-colors hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-400">
+                        <Plus className="h-3.5 w-3.5" />
+                        {t('admin.channel.vendorPicker.choose')}
+                      </span>
+                    </span>
+                    <span data-admin-channel-target-vendor-summary className="flex min-w-0 flex-col gap-1 rounded-md border border-indigo-100 bg-white/80 px-2 py-1.5 dark:border-indigo-500/20 dark:bg-black/20">
+                      <span className="text-[11px] font-semibold text-indigo-700 dark:text-indigo-200">
+                        {t('admin.channel.vendorPicker.selectedCount', { count: selectedVendorCodes.length })}
+                      </span>
+                      <span className="flex min-w-0 flex-wrap gap-1.5">
+                        {selectedVendorSummaries.map((vendor) => (
+                          <span key={vendor.code} className="inline-flex max-w-full items-center gap-1 rounded-md bg-indigo-100 px-2 py-1 text-[11px] font-semibold text-indigo-700 dark:bg-indigo-500/15 dark:text-indigo-200">
+                            <span className="truncate">{vendor.name}</span>
+                            <span className="truncate font-mono text-indigo-500 dark:text-indigo-300">{vendor.code}</span>
+                          </span>
+                        ))}
+                      </span>
+                    </span>
+                  </button>
+                </div>
+              </section>
+
+              <section className="rounded-xl border border-slate-200 bg-white p-3 shadow-sm dark:border-white/10 dark:bg-black" data-admin-channel-left-section="credentials">
+                <div className="mb-3 flex items-center justify-between gap-3 border-b border-slate-100 pb-2 dark:border-white/10" data-admin-channel-left-section-title>
+                  <div className="flex min-w-0 items-center gap-2">
+                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600 dark:bg-emerald-500/10 dark:text-emerald-300">
+                      <Key className="h-3.5 w-3.5" />
+                    </span>
+                    <span className="min-w-0 truncate text-xs font-semibold uppercase text-slate-700 dark:text-slate-300">{t('admin.channel.credentials.editorTitle')}</span>
+                  </div>
+                  <div className="flex shrink-0 items-center gap-2">
+                    <span className="rounded-md bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-300">
+                      {t('admin.channel.credentials.count', { count: credentials.length })}
+                    </span>
                     <button
                       type="button"
                       onClick={addCredential}
-                      className="inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-3 py-2 text-xs font-semibold text-white shadow-sm transition-colors hover:bg-emerald-700"
+                      className="inline-flex h-7 items-center gap-1 rounded-md bg-emerald-600 px-2.5 text-xs font-semibold text-white shadow-sm transition-colors hover:bg-emerald-700"
                     >
                       <Plus className="h-3.5 w-3.5" />
                       {t('admin.channel.credentials.addCredential')}
@@ -1183,149 +1262,209 @@ function AddAccountDrawer({
                   </div>
                 </div>
 
-                <label className="mb-2 block text-xs font-semibold text-slate-600 dark:text-slate-300">{t('admin.channel.fields.credentialRotation')}</label>
-                <div className="mb-4 grid grid-cols-1 gap-2" data-admin-channel-credential-rotation>
-                  {credentialRotationOptions.map((option) => {
-                    const isSelected = credentialRotation === option.id;
-                    return (
-                      <button
-                        key={option.id}
-                        type="button"
-                        onClick={() => setCredentialRotation(option.id)}
-                        className={`rounded-lg border px-3 py-2 text-left transition-colors ${
-                          isSelected
-                            ? 'border-emerald-500 bg-emerald-50 text-emerald-800 ring-1 ring-emerald-500/30 dark:bg-emerald-500/10 dark:text-emerald-300'
-                            : 'border-slate-200 bg-white text-slate-700 hover:border-slate-300 dark:border-white/10 dark:bg-black dark:text-slate-300 dark:hover:border-white/20'
-                        }`}
-                      >
-                        <span className="flex items-center gap-2 text-xs font-semibold">
-                          <span className={`flex h-4 w-4 items-center justify-center rounded border ${isSelected ? 'border-emerald-500 bg-emerald-500' : 'border-slate-300 dark:border-slate-500'}`}>
-                            {isSelected && <Check className="h-3 w-3 text-white" />}
-                          </span>
-                          {t(option.labelKey)}
-                        </span>
-                        <span className="mt-1 block pl-6 text-[11px] text-slate-500 dark:text-slate-400">{t(option.descKey)}</span>
-                      </button>
-                    );
-                  })}
+                <div className="grid grid-cols-1 gap-2 sm:grid-cols-2" data-admin-channel-credential-controls>
+                  <div>
+                    <label className="mb-1 block text-xs font-semibold text-slate-600 dark:text-slate-300">{t('admin.channel.fields.credentialMode')}</label>
+                    <select
+                      data-admin-channel-credential-mode-select
+                      value={activeAuthType}
+                      onChange={(event) => setActiveAuthType(event.currentTarget.value)}
+                      className="h-9 w-full rounded-lg border border-slate-200 bg-white px-3 text-sm text-slate-900 transition-colors focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-[#121212] dark:text-white"
+                    >
+                      {authTypesList.map((type) => (
+                        <option key={type.id} value={type.id}>{t(type.titleKey)}</option>
+                      ))}
+                      {!authTypesList.some((type) => type.id === activeAuthType) && (
+                        <option key={activeAuthType} value={activeAuthType}>{activeAuthType}</option>
+                      )}
+                    </select>
+                    {!authTypesList.some((type) => type.id === activeAuthType) && (
+                      <div className="mt-2 flex items-center gap-2 rounded-lg border border-amber-300 bg-amber-50 px-3 py-2 text-xs text-amber-800 dark:border-amber-500/40 dark:bg-amber-500/10 dark:text-amber-200">
+                        <Key className="h-4 w-4" />
+                        <span className="font-semibold">{t('admin.channel.actions.customBackendAuthType')}</span>
+                      </div>
+                    )}
+                  </div>
+                  <div>
+                    <label className="mb-1 block text-xs font-semibold text-slate-600 dark:text-slate-300">{t('admin.channel.fields.credentialRotation')}</label>
+                    <select
+                      data-admin-channel-credential-rotation
+                      value={credentialRotation}
+                      onChange={(event) => setCredentialRotation(event.currentTarget.value)}
+                      className="h-9 w-full rounded-lg border border-slate-200 bg-white px-3 text-sm text-slate-900 transition-colors focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-[#121212] dark:text-white"
+                    >
+                      {credentialRotationOptions.map((option) => (
+                        <option key={option.id} value={option.id}>{t(option.labelKey)}</option>
+                      ))}
+                    </select>
+                  </div>
                 </div>
 
-                <div className="space-y-3" data-admin-channel-credential-list>
+              <div className="mt-3 space-y-3" data-admin-channel-credentials-editor>
+                <div className="mb-3 flex gap-2 overflow-x-auto pb-1" data-admin-channel-credential-tabs>
                   {credentials.map((credential, index) => {
-                    const activeSecretLabel = t(credentialSecretLabelKey(activeAuthType));
-                    const activeSecretPlaceholder = t(credentialSecretPlaceholderKey(activeAuthType));
+                    const isActive = activeCredential?.localId === credential.localId;
                     return (
-                      <div key={credential.localId} className="rounded-lg border border-slate-200 bg-white p-3 dark:border-white/10 dark:bg-black" data-admin-channel-credential-row>
-                        <div className="mb-3 flex items-center justify-between gap-3">
-                          <div className="min-w-0">
-                            <div className="flex items-center gap-2 text-sm font-semibold text-slate-900 dark:text-white">
-                              <Key className="h-4 w-4 text-emerald-500" />
-                              {t('admin.channel.credentials.rowTitle', { index: index + 1 })}
-                            </div>
-                            <div className="mt-0.5 font-mono text-[11px] text-slate-400">{credential.baseUrl || t('admin.channel.credentials.baseUrlPending')}</div>
-                          </div>
-                          <button
-                            type="button"
-                            onClick={() => removeCredential(credential.localId)}
-                            disabled={credentials.length <= 1}
-                            className="shrink-0 rounded-md p-1 text-slate-400 transition-colors hover:bg-red-50 hover:text-red-500 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:text-slate-400 dark:hover:bg-red-500/10"
-                            title={t('admin.channel.credentials.removeCredential')}
-                            aria-label={t('admin.channel.credentials.removeCredential')}
-                          >
-                            <Trash2 className="h-4 w-4" />
-                          </button>
-                        </div>
-
-                        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-                          <div>
-                            <label className="mb-1 block text-xs font-medium text-slate-500 dark:text-slate-400">{t('admin.channel.fields.credentialName')}</label>
-                            <input
-                              type="text"
-                              value={credential.name ?? ''}
-                              onChange={(event) => updateCredential(credential.localId, { name: event.currentTarget.value })}
-                              placeholder={t('admin.channel.placeholders.credentialName')}
-                              className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 transition-colors focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-[#121212] dark:text-white"
-                            />
-                          </div>
-                          <div>
-                            <label className="mb-1 block text-xs font-medium text-slate-500 dark:text-slate-400">{t('admin.channel.fields.baseUrl')}</label>
-                            <input
-                              type="url"
-                              value={credential.baseUrl}
-                              onChange={(event) => updateCredential(credential.localId, { baseUrl: event.currentTarget.value })}
-                              placeholder="https://api.openai.com/v1"
-                              className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 font-mono text-xs text-slate-900 transition-colors focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-[#121212] dark:text-white"
-                            />
-                          </div>
-                          {isApiKeyAuthType(activeAuthType) ? (
-                            <div className="sm:col-span-2">
-                              <label className="mb-1 block text-xs font-medium text-slate-500 dark:text-slate-400">{activeSecretLabel}</label>
-                              <input
-                                type={apiKeyVisible ? 'text' : 'password'}
-                                value={credential.apiKey ?? ''}
-                                onChange={(event) => updateCredential(credential.localId, { apiKey: event.currentTarget.value, credentialFields: undefined })}
-                                autoComplete="off"
-                                placeholder={activeSecretPlaceholder}
-                                className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 font-mono text-xs text-slate-900 transition-colors focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-[#121212] dark:text-white"
-                              />
-                            </div>
-                          ) : (
-                            <div className="grid grid-cols-1 gap-3 sm:col-span-2 sm:grid-cols-2">
-                              {activeCredentialFields.map((field) => (
-                                <div key={field.name} className={field.textarea ? 'sm:col-span-2' : undefined}>
-                                  <label className="mb-1 block text-xs font-medium text-slate-500 dark:text-slate-400">{t(field.labelKey)}</label>
-                                  {field.textarea ? (
-                                    <textarea
-                                      value={credential.credentialFields?.[field.name] ?? ''}
-                                      onChange={(event) => updateCredentialField(credential.localId, field.name, event.currentTarget.value)}
-                                      autoComplete="off"
-                                      rows={4}
-                                      placeholder={t(field.placeholderKey)}
-                                      className="w-full resize-y rounded-lg border border-slate-200 bg-white px-3 py-2 font-mono text-xs text-slate-900 transition-colors focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-[#121212] dark:text-white"
-                                    />
-                                  ) : (
-                                    <input
-                                      type={field.secret && !apiKeyVisible ? 'password' : 'text'}
-                                      value={credential.credentialFields?.[field.name] ?? ''}
-                                      onChange={(event) => updateCredentialField(credential.localId, field.name, event.currentTarget.value)}
-                                      autoComplete="off"
-                                      placeholder={t(field.placeholderKey)}
-                                      className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 transition-colors focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-[#121212] dark:text-white"
-                                    />
-                                  )}
-                                </div>
-                              ))}
-                            </div>
-                          )}
-                          <div>
-                            <label className="mb-1 block text-xs font-medium text-slate-500 dark:text-slate-400">{t('admin.channel.credentials.priority')}</label>
-                            <input
-                              type="number"
-                              min="1"
-                              max="1000000"
-                              value={credential.priority ?? ''}
-                              onChange={(event) => updateCredential(credential.localId, { priority: event.currentTarget.value })}
-                              className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 transition-colors focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-[#121212] dark:text-white"
-                            />
-                          </div>
-                          <div>
-                            <label className="mb-1 block text-xs font-medium text-slate-500 dark:text-slate-400">{t('admin.channel.credentials.weight')}</label>
-                            <input
-                              type="number"
-                              min="1"
-                              max="10000"
-                              value={credential.weight ?? ''}
-                              onChange={(event) => updateCredential(credential.localId, { weight: event.currentTarget.value })}
-                              className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 transition-colors focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-[#121212] dark:text-white"
-                            />
-                          </div>
-                        </div>
+                      <div
+                        key={credential.localId}
+                        className={`flex min-w-[10rem] max-w-[13rem] items-stretch overflow-hidden rounded-lg border transition-colors ${
+                          isActive
+                            ? 'border-emerald-500 bg-emerald-50 ring-1 ring-emerald-500/30 dark:bg-emerald-500/10'
+                            : 'border-slate-200 bg-white hover:border-slate-300 dark:border-white/10 dark:bg-black dark:hover:border-white/20'
+                        }`}
+                      >
+                        <button
+                          type="button"
+                          onClick={() => setActiveCredentialId(credential.localId)}
+                          className="min-w-0 flex-1 px-3 py-2 text-left"
+                        >
+                          <span className={`flex items-center gap-1.5 truncate text-xs font-semibold ${isActive ? 'text-emerald-800 dark:text-emerald-300' : 'text-slate-700 dark:text-slate-300'}`}>
+                            <Key className="h-3.5 w-3.5 shrink-0" />
+                            <span className="truncate">{credential.name?.trim() || t('admin.channel.credentials.rowTitle', { index: index + 1 })}</span>
+                          </span>
+                          <span className="mt-0.5 block truncate font-mono text-[10px] text-slate-400">
+                            {credential.baseUrl || t('admin.channel.credentials.baseUrlPending')}
+                          </span>
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => removeCredential(credential.localId)}
+                          disabled={credentials.length <= 1}
+                          className="shrink-0 border-l border-slate-200 px-2 text-slate-400 transition-colors hover:bg-red-50 hover:text-red-500 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:text-slate-400 dark:border-white/10 dark:hover:bg-red-500/10"
+                          title={t('admin.channel.credentials.removeCredential')}
+                          aria-label={t('admin.channel.credentials.removeCredential')}
+                        >
+                          <Trash2 className="h-3.5 w-3.5" />
+                        </button>
                       </div>
                     );
                   })}
                 </div>
-              </div>
 
+                {activeCredential && (
+                  <div className="rounded-lg border border-slate-200 bg-white p-3 dark:border-white/10 dark:bg-black" data-admin-channel-active-credential-form>
+                    <div className="mb-3 flex items-center justify-between gap-3">
+                      <div className="min-w-0">
+                        <div className="flex items-center gap-2 text-sm font-semibold text-slate-900 dark:text-white">
+                          <Key className="h-4 w-4 text-emerald-500" />
+                          {t('admin.channel.credentials.rowTitle', { index: activeCredentialNumber })}
+                        </div>
+                        <div className="mt-0.5 truncate font-mono text-[11px] text-slate-400">
+                          {activeCredential.baseUrl || t('admin.channel.credentials.baseUrlPending')}
+                        </div>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => removeCredential(activeCredential.localId)}
+                        disabled={credentials.length <= 1}
+                        className="shrink-0 rounded-md p-1.5 text-slate-400 transition-colors hover:bg-red-50 hover:text-red-500 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:text-slate-400 dark:hover:bg-red-500/10"
+                        title={t('admin.channel.credentials.removeCredential')}
+                        aria-label={t('admin.channel.credentials.removeCredential')}
+                      >
+                        <Trash2 className="h-4 w-4" />
+                      </button>
+                    </div>
+
+                    <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                      <div className="sm:col-span-2">
+                        <label className="mb-1 block text-xs font-medium text-slate-500 dark:text-slate-400">{t('admin.channel.fields.baseUrl')}</label>
+                        <input
+                          type="url"
+                          value={activeCredential.baseUrl}
+                          onChange={(event) => updateCredential(activeCredential.localId, { baseUrl: event.currentTarget.value })}
+                          placeholder="https://api.openai.com/v1"
+                          className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 font-mono text-xs text-slate-900 transition-colors focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-[#121212] dark:text-white"
+                        />
+                      </div>
+                      {isApiKeyAuthType(activeAuthType) ? (
+                        <div className="sm:col-span-2">
+                          <label className="mb-1 block text-xs font-medium text-slate-500 dark:text-slate-400">{activeSecretLabel}</label>
+                          <div className="relative" data-admin-channel-api-key-input-shell>
+                            <input
+                              type={apiKeyVisible ? 'text' : 'password'}
+                              value={activeCredential.apiKey ?? ''}
+                              onChange={(event) => updateCredential(activeCredential.localId, { apiKey: event.currentTarget.value, credentialFields: undefined })}
+                              autoComplete="off"
+                              placeholder={activeSecretPlaceholder}
+                              className="w-full rounded-lg border border-slate-200 bg-white py-2 pl-3 pr-10 font-mono text-xs text-slate-900 transition-colors focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-[#121212] dark:text-white"
+                            />
+                            <button
+                              type="button"
+                              data-admin-channel-api-key-visibility-toggle
+                              onClick={() => setApiKeyVisible((current) => !current)}
+                              className="pointer-events-auto absolute inset-y-0 right-2 flex items-center rounded-md px-1.5 text-slate-400 transition-colors hover:text-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-500/40 dark:text-slate-500 dark:hover:text-emerald-300"
+                              title={apiKeyVisible ? t('admin.channel.actions.hideApiKey') : t('admin.channel.actions.showApiKey')}
+                              aria-label={apiKeyVisible ? t('admin.channel.actions.hideApiKey') : t('admin.channel.actions.showApiKey')}
+                            >
+                              {apiKeyVisible ? <EyeOff className="h-3.5 w-3.5" /> : <Eye className="h-3.5 w-3.5" />}
+                            </button>
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="grid grid-cols-1 gap-3 sm:col-span-2 sm:grid-cols-2">
+                          {activeCredentialFields.map((field) => (
+                            <div key={field.name} className={field.textarea ? 'sm:col-span-2' : undefined}>
+                              <label className="mb-1 block text-xs font-medium text-slate-500 dark:text-slate-400">{t(field.labelKey)}</label>
+                              {field.textarea ? (
+                                <textarea
+                                  value={activeCredential.credentialFields?.[field.name] ?? ''}
+                                  onChange={(event) => updateCredentialField(activeCredential.localId, field.name, event.currentTarget.value)}
+                                  autoComplete="off"
+                                  rows={4}
+                                  placeholder={t(field.placeholderKey)}
+                                  className="w-full resize-y rounded-lg border border-slate-200 bg-white px-3 py-2 font-mono text-xs text-slate-900 transition-colors focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-[#121212] dark:text-white"
+                                />
+                              ) : (
+                                <input
+                                  type={field.secret && !apiKeyVisible ? 'password' : 'text'}
+                                  value={activeCredential.credentialFields?.[field.name] ?? ''}
+                                  onChange={(event) => updateCredentialField(activeCredential.localId, field.name, event.currentTarget.value)}
+                                  autoComplete="off"
+                                  placeholder={t(field.placeholderKey)}
+                                  className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 transition-colors focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-[#121212] dark:text-white"
+                                />
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                      <div>
+                        <label className="mb-1 block text-xs font-medium text-slate-500 dark:text-slate-400">{t('admin.channel.credentials.priority')}</label>
+                        <input
+                          type="number"
+                          min="1"
+                          max="1000000"
+                          value={activeCredential.priority ?? ''}
+                          onChange={(event) => updateCredential(activeCredential.localId, { priority: event.currentTarget.value })}
+                          className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 transition-colors focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-[#121212] dark:text-white"
+                        />
+                      </div>
+                      <div>
+                        <label className="mb-1 block text-xs font-medium text-slate-500 dark:text-slate-400">{t('admin.channel.credentials.weight')}</label>
+                        <input
+                          type="number"
+                          min="1"
+                          max="10000"
+                          value={activeCredential.weight ?? ''}
+                          onChange={(event) => updateCredential(activeCredential.localId, { weight: event.currentTarget.value })}
+                          className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 transition-colors focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-[#121212] dark:text-white"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+              </section>
+
+              <section className="rounded-xl border border-slate-200 bg-white p-3 shadow-sm dark:border-white/10 dark:bg-black" data-admin-channel-left-section="policy">
+                <div className="mb-3 flex items-center justify-between gap-3 border-b border-slate-100 pb-2 dark:border-white/10" data-admin-channel-left-section-title>
+                  <div className="flex min-w-0 items-center gap-2">
+                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-indigo-50 text-indigo-600 dark:bg-indigo-500/10 dark:text-indigo-300">
+                      <Network className="h-3.5 w-3.5" />
+                    </span>
+                  <span className="min-w-0 truncate text-xs font-semibold uppercase text-slate-700 dark:text-slate-300">{t('admin.channel.fields.routing')}</span>
+                </div>
+              </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm text-slate-700 dark:text-slate-300 mb-2 font-medium">{t('admin.channel.fields.trafficWeight')}</label>
@@ -1351,8 +1490,11 @@ function AddAccountDrawer({
                 </div>
               </div>
 
-              <div className="rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-white/10 dark:bg-[#121212]">
-                <label className="mb-2 flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-300">
+              <div
+                className="mt-3 flex flex-col gap-2 rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 dark:border-white/10 dark:bg-[#121212] sm:flex-row sm:items-center"
+                data-admin-channel-circuit-breaker-compact
+              >
+                <label className="flex min-w-0 flex-1 items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-300">
                   <input
                     name="circuitBreakerEnabled"
                     type="checkbox"
@@ -1361,24 +1503,30 @@ function AddAccountDrawer({
                   />
                   {t('admin.channel.fields.circuitBreaker')}
                 </label>
-                <p className="mb-3 text-xs text-slate-500 dark:text-slate-400">
-                  {t('admin.channel.help.circuitBreaker')}
-                </p>
-                <div className="max-w-xs">
-                  <label className="mb-1 block text-xs text-slate-500">{t('admin.channel.fields.failureThreshold')}</label>
+                <div className="flex shrink-0 items-center gap-2">
+                  <label className="text-xs text-slate-500 dark:text-slate-400">{t('admin.channel.fields.failureThreshold')}</label>
                   <input
                     name="circuitBreakerFailureThreshold"
                     type="number"
                     min="1"
                     max="100"
                     defaultValue={initialValues?.circuitBreakerFailureThreshold ?? 3}
-                    className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 transition-colors focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
+                    className="h-9 w-20 rounded-lg border border-slate-200 bg-white px-2 text-sm text-slate-900 transition-colors focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-[#121212] dark:text-white"
                   />
                 </div>
               </div>
+              </section>
 
-              <div>
-                <label className="block text-sm text-slate-700 dark:text-slate-300 mb-2 font-medium">{t('admin.channel.fields.capabilities')}</label>
+              <section className="rounded-xl border border-slate-200 bg-white p-3 shadow-sm dark:border-white/10 dark:bg-black" data-admin-channel-left-section="capabilities">
+                <div className="mb-3 flex items-center justify-between gap-3 border-b border-slate-100 pb-2 dark:border-white/10" data-admin-channel-left-section-title>
+                  <div className="flex min-w-0 items-center gap-2">
+                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-blue-50 text-blue-600 dark:bg-blue-500/10 dark:text-blue-300">
+                      <Cpu className="h-3.5 w-3.5" />
+                    </span>
+                    <span className="min-w-0 truncate text-xs font-semibold uppercase text-slate-700 dark:text-slate-300">{t('admin.channel.fields.capabilities')}</span>
+                  </div>
+                  <span className="shrink-0 rounded-md bg-blue-50 px-2 py-0.5 text-[10px] font-semibold text-blue-700 dark:bg-blue-500/10 dark:text-blue-300">{capabilities.length}</span>
+                </div>
                 <div className="grid grid-cols-3 sm:grid-cols-3 gap-2">
                   {capabilityOptions.map((capability) => {
                     const isChecked = capabilities.includes(capability.id);
@@ -1399,228 +1547,233 @@ function AddAccountDrawer({
                     );
                   })}
                 </div>
-              </div>
+              </section>
             </div>
 
-            <div className="min-w-0 flex flex-1 flex-col gap-4 overflow-hidden bg-slate-50 px-6 py-4 dark:bg-transparent" data-admin-channel-right-panel>
-              <div className="inline-flex shrink-0 rounded-lg border border-slate-200 bg-white p-1 text-xs font-semibold dark:border-white/10 dark:bg-black" data-admin-channel-right-tabs>
-                {([
-                  ['models', t('admin.channel.drawerTabs.models'), submittedModelCount],
-                  ['resources', t('admin.channel.drawerTabs.resources'), selectedResourceAssociationCount],
-                ] as Array<[AccountDrawerContentTab, string, number]>).map(([tab, label, count]) => {
-                  const isActive = activeAccountDrawerTab === tab;
-                  return (
-                    <button
-                      key={tab}
-                      type="button"
-                      onClick={() => setActiveAccountDrawerTab(tab)}
-                      className={`inline-flex items-center gap-2 rounded-md px-3 py-1.5 transition-colors ${
-                        isActive
-                          ? 'bg-emerald-50 text-emerald-700 shadow-sm dark:bg-emerald-500/10 dark:text-emerald-300'
-                          : 'text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200'
-                      }`}
-                    >
-                      {label}
-                      <span className={`rounded px-1.5 py-0.5 text-[10px] ${isActive ? 'bg-emerald-100 dark:bg-emerald-500/20' : 'bg-slate-100 dark:bg-white/10'}`}>{count}</span>
-                    </button>
-                  );
-                })}
-              </div>
+            <div className="min-w-0 flex flex-1 overflow-hidden bg-slate-50 px-6 py-4 dark:bg-transparent" data-admin-channel-right-panel>
+              <div className="flex min-h-0 flex-1 flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm dark:border-white/10 dark:bg-black" data-admin-channel-right-shell>
+                <div data-admin-channel-right-tabs className="flex shrink-0 items-end gap-1 border-b border-slate-200 bg-white px-4 pt-3 text-xs font-semibold dark:border-white/10 dark:bg-black">
+                  {([
+                    ['models', t('admin.channel.drawerTabs.models'), submittedModelCount],
+                    ['resources', t('admin.channel.drawerTabs.resources'), selectedResourceAssociationCount],
+                  ] as Array<[AccountDrawerContentTab, string, number]>).map(([tab, label, count]) => {
+                    const isActive = activeAccountDrawerTab === tab;
+                    return (
+                      <button
+                        key={tab}
+                        type="button"
+                        onClick={() => setActiveAccountDrawerTab(tab)}
+                        className={`inline-flex items-center gap-2 rounded-t-lg border border-b-0 px-3 py-2 transition-colors ${
+                          isActive
+                            ? '-mb-px border-slate-200 bg-white text-emerald-700 dark:border-white/10 dark:bg-black dark:text-emerald-300'
+                            : 'border-transparent text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200'
+                        }`}
+                      >
+                        {label}
+                        <span className={`rounded px-1.5 py-0.5 text-[10px] ${isActive ? 'bg-emerald-100 dark:bg-emerald-500/20' : 'bg-slate-100 dark:bg-white/10'}`}>{count}</span>
+                      </button>
+                    );
+                  })}
+                </div>
 
+                <div data-admin-channel-right-content className="min-h-0 flex-1 overflow-hidden bg-white dark:bg-black p-4">
               {activeAccountDrawerTab === 'models' && (
-                <section className="flex min-h-0 flex-1 flex-col overflow-hidden rounded-lg border border-slate-200 bg-white p-4 dark:border-white/10 dark:bg-black" data-admin-channel-model-mapping-card>
-                  <div className="mb-4 flex shrink-0 items-start justify-between gap-3">
+                <section className="flex min-h-0 flex-1 flex-col overflow-hidden" data-admin-channel-model-routing-card>
+                  <div className="flex shrink-0 items-center justify-between gap-3 border-b border-slate-100 pb-3 dark:border-white/10">
                     <div className="min-w-0">
-                      <h4 className="text-sm font-semibold text-slate-900 dark:text-white">{t('admin.channel.models.mappingTitle')}</h4>
-                      <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">{t('admin.channel.models.mappingDescription')}</p>
-                    </div>
-                    <span className="shrink-0 rounded-md bg-slate-100 px-2 py-1 text-xs text-slate-500 dark:bg-white/10 dark:text-slate-400">
-                      {t('admin.channel.modelCount', { count: submittedModelCount })}
-                    </span>
-                  </div>
-                  <div className="flex min-h-0 flex-1 overflow-hidden rounded-lg border border-slate-200 dark:border-white/10" data-admin-channel-model-mapping-body>
-                    <aside className="flex min-h-0 w-52 shrink-0 flex-col border-r border-slate-200 bg-slate-50 p-2 dark:border-white/10 dark:bg-[#121212]" data-admin-channel-model-mapping-sidebar>
-                      <div className="min-h-0 flex-1 space-y-1 overflow-y-auto pr-1 custom-scrollbar">
-                        {selectedVendorCodes.map((vendorCode) => {
-                          const isActive = activeMappingVendorCode === vendorCode;
-                          const count = modelMappingsByVendor[vendorCode]?.length ?? 0;
-                          return (
-                            <button
-                              key={vendorCode}
-                              type="button"
-                              onClick={() => setActiveMappingVendorCode(vendorCode)}
-                              className={`flex w-full items-center justify-between gap-2 rounded-lg px-3 py-2 text-left text-xs transition-colors ${
-                                isActive
-                                  ? 'bg-white text-emerald-700 shadow-sm ring-1 ring-emerald-200 dark:bg-black dark:text-emerald-300 dark:ring-emerald-500/30'
-                                  : 'text-slate-600 hover:bg-white dark:text-slate-400 dark:hover:bg-black'
-                              }`}
-                            >
-                              <span className="min-w-0">
-                                <span className="block truncate font-semibold">{modelVendorIdForCode(vendorCode)}</span>
-                                <span className="block truncate font-mono text-[10px] opacity-70">{vendorCode}</span>
-                              </span>
-                              <span className="shrink-0 rounded bg-slate-100 px-1.5 py-0.5 text-[10px] dark:bg-white/10">{count}</span>
-                            </button>
-                          );
-                        })}
+                      <h4 className="text-sm font-semibold text-slate-900 dark:text-white">{t('admin.channel.models.routingTitle')}</h4>
+                      <div className="mt-1 flex flex-wrap gap-2 text-[11px] font-medium text-slate-500 dark:text-slate-400">
+                        <span>{t('admin.channel.models.selectedTargetCount', { count: submittedModelCount })}</span>
+                        <span>{t('admin.channel.models.mappingCount', { count: mappingRuleCount })}</span>
                       </div>
-                    </aside>
-                    <div className="flex min-h-0 min-w-0 flex-1 flex-col bg-white p-4 dark:bg-black">
-                      {activeMappingVendorCode ? (
-                        <div className="flex min-h-0 flex-1 flex-col gap-4">
-                          <div className="flex shrink-0 items-center justify-between gap-3">
-                            <div className="min-w-0">
-                              <div className="truncate text-sm font-semibold text-slate-900 dark:text-white">
-                                {modelVendorIdForCode(activeMappingVendorCode)}
-                              </div>
-                              <div className="font-mono text-[11px] text-slate-400">{activeMappingVendorCode}</div>
-                            </div>
-                            <div className="flex shrink-0 gap-2">
-                              <button
-                                type="button"
-                                onClick={applyDefaultModelMappings}
-                                disabled={activeVendorCatalogModels.length === 0 && fallbackCatalogModelKeys(modelVendorIdForCode(activeMappingVendorCode)).length === 0}
-                                className="rounded-lg border border-indigo-200 bg-indigo-50 px-3 py-2 text-xs font-semibold text-indigo-700 transition-colors hover:bg-indigo-100 disabled:cursor-not-allowed disabled:opacity-50 dark:border-indigo-500/20 dark:bg-indigo-500/10 dark:text-indigo-300 dark:hover:bg-indigo-500/20"
-                              >
-                                {t('common.actions.applyDefaults')}
-                              </button>
-                              <button
-                                type="button"
-                                onClick={clearActiveModelMappings}
-                                className="rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-xs font-semibold text-red-600 transition-colors hover:bg-red-100 dark:border-red-500/20 dark:bg-red-500/10 dark:text-red-300 dark:hover:bg-red-500/20"
-                              >
-                                {t('common.actions.clearAll')}
-                              </button>
-                            </div>
-                          </div>
-
-                          <div className="grid max-h-36 shrink-0 gap-2 overflow-y-auto pr-1 custom-scrollbar" data-admin-channel-model-mappings-list>
-                            {activeVendorMappings.map((mapping) => (
-                              <div
-                                key={mapping.id}
-                                className="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)_auto] items-center gap-2 rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-xs dark:border-white/10 dark:bg-[#121212]"
-                              >
-                                <span className="min-w-0">
-                                  <span className="block truncate text-slate-500 dark:text-slate-400">{t('admin.channel.models.requestModel')}</span>
-                                  <span className="block truncate font-mono text-slate-900 dark:text-white">{mapping.sourceModel}</span>
-                                </span>
-                                <ChevronRight className="h-4 w-4 text-slate-400" />
-                                <span className="min-w-0">
-                                  <span className="block truncate text-slate-500 dark:text-slate-400">{t('admin.channel.models.providerModel')}</span>
-                                  <span className="block truncate font-mono text-slate-900 dark:text-white">{mapping.targetModel}</span>
-                                </span>
-                                <button
-                                  type="button"
-                                  onClick={() => removeModelMapping(activeMappingVendorCode, mapping.id)}
-                                  className="rounded-md p-1 text-slate-400 transition-colors hover:bg-white hover:text-red-500 dark:hover:bg-white/10"
-                                >
-                                  <X className="h-4 w-4" />
-                                </button>
-                              </div>
-                            ))}
-                            {activeVendorMappings.length === 0 && (
-                              <div className="rounded-lg border border-dashed border-slate-200 py-8 text-center text-xs text-slate-500 dark:border-white/10 dark:text-slate-400">
-                                {t('admin.channel.models.emptyMappings')}
-                              </div>
-                            )}
-                          </div>
-
-                          <div className="flex min-h-0 flex-1 flex-col overflow-hidden rounded-lg border border-slate-200 bg-slate-50 dark:border-white/10 dark:bg-[#121212]">
-                            <div className="flex shrink-0 items-center justify-between gap-3 border-b border-slate-200 px-3 py-2 dark:border-white/10">
-                              <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">{t('admin.channel.models.catalogForVendor')}</span>
-                              <span className="font-mono text-[10px] text-slate-400">{activeMappingVendorCode}</span>
-                            </div>
-                            {modelCatalogLoading ? (
-                              <div className="flex items-center gap-2 p-3 text-xs text-slate-500">
-                                <Loader2 className="h-3.5 w-3.5 animate-spin" />
-                                {t('admin.channel.models.loading')}
-                              </div>
-                            ) : modelCatalogError ? (
-                              <div className="p-3 text-xs text-amber-700 dark:text-amber-300">{modelCatalogError}</div>
-                            ) : activeVendorCatalogModels.length > 0 ? (
-                              <div className="min-h-0 flex-1 overflow-auto custom-scrollbar" data-admin-channel-model-catalog-scroll>
-                                <table className="w-full min-w-[560px] text-left text-xs text-slate-600 dark:text-slate-400" data-admin-channel-model-catalog-table>
-                                  <thead className="sticky top-0 bg-slate-100 text-[11px] font-semibold text-slate-500 dark:bg-[#181818] dark:text-slate-400">
-                                    <tr>
-                                      <th className="px-3 py-2">{t('admin.channel.models.catalogColumns.model')}</th>
-                                      <th className="w-20 px-3 py-2"></th>
-                                    </tr>
-                                  </thead>
-                                  <tbody className="divide-y divide-slate-200 dark:divide-white/5">
-                                    {activeVendorCatalogModels.map((model) => {
-                                      const alreadyAdded = activeVendorMappings.some((mapping) => mapping.targetModel === model.catalogKey);
-                                      return (
-                                        <tr key={model.catalogKey} className="hover:bg-white dark:hover:bg-black">
-                                          <td className="px-3 py-2">
-                                            <div className="truncate font-medium text-slate-800 dark:text-slate-200">{model.displayName || model.model}</div>
-                                            <div className="font-mono text-[10px] text-slate-400">{model.model}</div>
-                                          </td>
-                                          <td className="px-3 py-2 text-right">
-                                            <button
-                                              type="button"
-                                              onClick={() => addCatalogModel(model)}
-                                              disabled={alreadyAdded}
-                                              className="rounded-md border border-slate-200 bg-white px-2 py-1 text-[11px] font-semibold text-slate-600 transition-colors hover:border-emerald-300 hover:text-emerald-700 disabled:cursor-default disabled:border-emerald-200 disabled:bg-emerald-50 disabled:text-emerald-700 dark:border-white/10 dark:bg-black dark:text-slate-300 dark:hover:border-emerald-500/40 dark:hover:text-emerald-300 dark:disabled:border-emerald-500/30 dark:disabled:bg-emerald-500/10 dark:disabled:text-emerald-300"
-                                            >
-                                              {t('common.actions.add')}
-                                            </button>
-                                          </td>
-                                        </tr>
-                                      );
-                                    })}
-                                  </tbody>
-                                </table>
-                              </div>
-                            ) : (
-                              <div className="p-3 text-xs text-slate-500 dark:text-slate-400">{t('admin.channel.models.emptyForVendor')}</div>
-                            )}
-                          </div>
-
-                          <div className="shrink-0 rounded-lg border border-slate-200 bg-slate-50 p-3 dark:border-white/10 dark:bg-[#121212]">
-                            <label className="mb-2 block text-xs font-semibold text-slate-600 dark:text-slate-300">{t('admin.channel.models.customMapping')}</label>
-                            <div className="grid gap-2 sm:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_auto]">
-                              <input
-                                value={customMappingSourceModel}
-                                onChange={(event) => setCustomMappingSourceModel(event.target.value)}
-                                className="min-w-0 rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs text-slate-900 focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
-                                placeholder={t('admin.channel.models.requestModelPlaceholder')}
-                              />
-                              <input
-                                value={customMappingTargetModel}
-                                onChange={(event) => setCustomMappingTargetModel(event.target.value)}
-                                onKeyDown={(event) => {
-                                  if (event.key === 'Enter') {
-                                    event.preventDefault();
-                                    addCustomModelMapping();
-                                  }
-                                }}
-                                className="min-w-0 rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs text-slate-900 focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
-                                placeholder={`${activeMappingVendorCode}/model-id`}
-                              />
-                              <button
-                                type="button"
-                                onClick={addCustomModelMapping}
-                                className="inline-flex items-center justify-center gap-2 rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-2 text-xs font-semibold text-emerald-700 transition-colors hover:bg-emerald-100 dark:border-emerald-500/20 dark:bg-emerald-500/10 dark:text-emerald-300 dark:hover:bg-emerald-500/20"
-                              >
-                                <Plus className="h-3.5 w-3.5" />
-                                {t('common.actions.add')}
-                              </button>
-                            </div>
-                          </div>
-                        </div>
+                    </div>
+                    <div className="flex shrink-0 flex-wrap justify-end gap-2">
+                      {activeModelRouteTab === 'targetModels' ? (
+                        <button
+                          type="button"
+                          data-admin-channel-select-target-model
+                          onClick={() => setTargetModelSelectorOpen(true)}
+                          disabled={selectedVendorCodes.length === 0}
+                          className="inline-flex items-center gap-2 rounded-lg bg-emerald-600 px-3 py-2 text-xs font-semibold text-white shadow-sm shadow-emerald-500/20 transition-colors hover:bg-emerald-700 disabled:cursor-not-allowed disabled:opacity-50"
+                        >
+                          <Plus className="h-3.5 w-3.5" />
+                          {t('admin.channel.models.selectTargetModel')}
+                        </button>
                       ) : (
-                        <div className="flex min-h-56 items-center justify-center text-center text-sm text-slate-500 dark:text-slate-400">
-                          {t('admin.channel.vendorPicker.emptySelection')}
-                        </div>
+                        <>
+                          <button
+                            type="button"
+                            data-admin-channel-generate-same-name-mappings
+                            onClick={generateSameNameMappings}
+                            disabled={targetModelRows.length === 0}
+                            className="rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-semibold text-slate-700 transition-colors hover:border-emerald-300 hover:bg-emerald-50 disabled:cursor-not-allowed disabled:opacity-50 dark:border-white/10 dark:bg-[#121212] dark:text-slate-300 dark:hover:border-emerald-500/40 dark:hover:bg-emerald-500/10"
+                          >
+                            {t('admin.channel.models.generateSameNameMappings')}
+                          </button>
+                          <button
+                            type="button"
+                            data-admin-channel-add-mapping-rule
+                            onClick={openCreateMappingRuleModal}
+                            disabled={targetModelRows.length === 0}
+                            className="inline-flex items-center gap-2 rounded-lg bg-emerald-600 px-3 py-2 text-xs font-semibold text-white shadow-sm shadow-emerald-500/20 transition-colors hover:bg-emerald-700 disabled:cursor-not-allowed disabled:opacity-50"
+                          >
+                            <Plus className="h-3.5 w-3.5" />
+                            {t('admin.channel.models.addMappingRule')}
+                          </button>
+                        </>
                       )}
                     </div>
+                  </div>
+
+                  <div className="flex shrink-0 items-end gap-1 border-b border-slate-200 pt-3 text-xs font-semibold dark:border-white/10" data-admin-channel-model-route-tabs>
+                    {([
+                      ['targetModels', t('admin.channel.models.targetModelsTab'), submittedModelCount],
+                      ['mappingRules', t('admin.channel.models.mappingRulesTab'), mappingRuleCount],
+                    ] as Array<[ModelRouteTab, string, number]>).map(([tab, label, count]) => {
+                      const isActive = activeModelRouteTab === tab;
+                      return (
+                        <button
+                          key={tab}
+                          type="button"
+                          data-admin-channel-target-models-tab={tab === 'targetModels' ? true : undefined}
+                          data-admin-channel-mapping-rules-tab={tab === 'mappingRules' ? true : undefined}
+                          onClick={() => setActiveModelRouteTab(tab)}
+                          className={`inline-flex items-center gap-2 rounded-t-lg border border-b-0 px-3 py-2 transition-colors ${
+                            isActive
+                              ? '-mb-px border-slate-200 bg-white text-emerald-700 dark:border-white/10 dark:bg-black dark:text-emerald-300'
+                              : 'border-transparent text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200'
+                          }`}
+                        >
+                          {label}
+                          <span className={`rounded px-1.5 py-0.5 text-[10px] ${isActive ? 'bg-emerald-100 dark:bg-emerald-500/20' : 'bg-slate-100 dark:bg-white/10'}`}>{count}</span>
+                        </button>
+                      );
+                    })}
+                  </div>
+
+                  <div className="min-h-0 flex-1 overflow-hidden border-x border-b border-slate-200 dark:border-white/10">
+                    {modelCatalogLoading ? (
+                      <div className="flex min-h-56 items-center justify-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+                        <Loader2 className="h-4 w-4 animate-spin" />
+                        {t('admin.channel.models.loading')}
+                      </div>
+                    ) : modelCatalogError ? (
+                      <div className="flex min-h-56 items-center justify-center px-6 text-center text-sm text-amber-700 dark:text-amber-300">{modelCatalogError}</div>
+                    ) : activeModelRouteTab === 'targetModels' ? (
+                      <div className="min-h-0 flex-1 overflow-auto custom-scrollbar">
+                        <table className="w-full min-w-[680px] text-left text-xs text-slate-600 dark:text-slate-400" data-admin-channel-target-models-table>
+                          <thead className="sticky top-0 z-10 border-b border-slate-200 bg-slate-50 text-[11px] font-semibold uppercase text-slate-500 dark:border-white/10 dark:bg-[#121212] dark:text-slate-400">
+                            <tr>
+                              <th className="px-4 py-3">{t('admin.channel.models.targetModel')}</th>
+                              <th className="w-36 px-4 py-3">{t('admin.channel.models.vendor')}</th>
+                              <th className="w-28 px-4 py-3">{t('admin.channel.models.runtimeModel')}</th>
+                              <th className="w-20 px-4 py-3 text-right">{t('admin.channel.models.actions')}</th>
+                            </tr>
+                          </thead>
+                          <tbody className="divide-y divide-slate-200 dark:divide-white/5">
+                            {targetModelRows.map((row) => {
+                              const vendorCode = catalogModelVendorCode(row.targetModel, accountVendorCode);
+                              const catalogModel = availableModels.find((model) => model.catalogKey === row.targetModel);
+                              return (
+                                <tr key={row.id} className="hover:bg-slate-50 dark:hover:bg-white/5">
+                                  <td className="px-4 py-3">
+                                    <div className="truncate font-medium text-slate-900 dark:text-white">{catalogModel?.displayName ?? catalogModelRuntimeId(row.targetModel)}</div>
+                                    <div className="mt-0.5 truncate font-mono text-[11px] text-slate-500 dark:text-slate-400">{row.targetModel}</div>
+                                  </td>
+                                  <td className="px-4 py-3">
+                                    <span className="rounded bg-slate-100 px-2 py-1 font-mono text-[11px] text-slate-600 dark:bg-white/10 dark:text-slate-300">{vendorCode}</span>
+                                  </td>
+                                  <td className="px-4 py-3 font-mono text-[11px] text-slate-500">{catalogModelRuntimeId(row.targetModel)}</td>
+                                  <td className="px-4 py-3 text-right">
+                                    <button
+                                      type="button"
+                                      onClick={() => removeTargetModel(row.targetModel)}
+                                      className="inline-flex h-8 w-8 items-center justify-center rounded-md text-slate-400 transition-colors hover:bg-red-50 hover:text-red-500 dark:hover:bg-red-500/10"
+                                      aria-label={t('common.actions.delete')}
+                                    >
+                                      <Trash2 className="h-4 w-4" />
+                                    </button>
+                                  </td>
+                                </tr>
+                              );
+                            })}
+                            {targetModelRows.length === 0 && (
+                              <tr>
+                                <td colSpan={4} className="px-4 py-12 text-center text-sm text-slate-500 dark:text-slate-400">
+                                  {t('admin.channel.models.emptyTargetModels')}
+                                </td>
+                              </tr>
+                            )}
+                          </tbody>
+                        </table>
+                      </div>
+                    ) : (
+                      <div className="min-h-0 flex-1 overflow-auto custom-scrollbar">
+                        <table className="w-full min-w-[760px] text-left text-xs text-slate-600 dark:text-slate-400" data-admin-channel-mapping-rules-table>
+                          <thead className="sticky top-0 z-10 border-b border-slate-200 bg-slate-50 text-[11px] font-semibold uppercase text-slate-500 dark:border-white/10 dark:bg-[#121212] dark:text-slate-400">
+                            <tr>
+                              <th className="px-4 py-3">{t('admin.channel.models.requestModel')}</th>
+                              <th className="w-10 px-2 py-3"></th>
+                              <th className="px-4 py-3">{t('admin.channel.models.actualTargetModel')}</th>
+                              <th className="w-32 px-4 py-3">{t('admin.channel.models.vendor')}</th>
+                              <th className="w-24 px-4 py-3 text-right">{t('admin.channel.models.actions')}</th>
+                            </tr>
+                          </thead>
+                          <tbody className="divide-y divide-slate-200 dark:divide-white/5">
+                            {mappingRuleRows.map((row) => {
+                              const vendorCode = catalogModelVendorCode(row.targetModel, accountVendorCode);
+                              return (
+                                <tr key={row.id} className="hover:bg-slate-50 dark:hover:bg-white/5">
+                                  <td className="px-4 py-3 font-mono text-[11px] text-slate-900 dark:text-white">{row.sourceModel}</td>
+                                  <td className="px-2 py-3 text-slate-400"><ChevronRight className="h-4 w-4" /></td>
+                                  <td className="px-4 py-3">
+                                    <div className="truncate font-mono text-[11px] text-slate-900 dark:text-white">{row.targetModel}</div>
+                                    <div className="mt-0.5 truncate text-[11px] text-slate-500 dark:text-slate-400">{catalogModelRuntimeId(row.targetModel)}</div>
+                                  </td>
+                                  <td className="px-4 py-3">
+                                    <span className="rounded bg-slate-100 px-2 py-1 font-mono text-[11px] text-slate-600 dark:bg-white/10 dark:text-slate-300">{vendorCode}</span>
+                                  </td>
+                                  <td className="px-4 py-3 text-right">
+                                    <div className="inline-flex items-center justify-end gap-1">
+                                      <button
+                                        type="button"
+                                        onClick={() => openEditMappingRuleModal(row)}
+                                        className="inline-flex h-8 w-8 items-center justify-center rounded-md text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-700 dark:hover:bg-white/10 dark:hover:text-slate-200"
+                                        aria-label={t('common.actions.edit')}
+                                      >
+                                        <Edit2 className="h-4 w-4" />
+                                      </button>
+                                      <button
+                                        type="button"
+                                        onClick={() => removeModelMappingRule(row)}
+                                        className="inline-flex h-8 w-8 items-center justify-center rounded-md text-slate-400 transition-colors hover:bg-red-50 hover:text-red-500 dark:hover:bg-red-500/10"
+                                        aria-label={t('common.actions.delete')}
+                                      >
+                                        <Trash2 className="h-4 w-4" />
+                                      </button>
+                                    </div>
+                                  </td>
+                                </tr>
+                              );
+                            })}
+                            {mappingRuleRows.length === 0 && (
+                              <tr>
+                                <td colSpan={5} className="px-4 py-12 text-center text-sm text-slate-500 dark:text-slate-400">
+                                  {t('admin.channel.models.emptyMappingRules')}
+                                </td>
+                              </tr>
+                            )}
+                          </tbody>
+                        </table>
+                      </div>
+                    )}
                   </div>
                 </section>
               )}
 
               {activeAccountDrawerTab === 'resources' && (
-                <section className="flex min-h-0 flex-1 flex-col overflow-hidden rounded-lg border border-slate-200 bg-white p-4 dark:border-white/10 dark:bg-black" data-admin-channel-resource-association-card>
-                  <div className="mb-4 flex shrink-0 items-start justify-between gap-3">
+                <section className="flex min-h-0 flex-1 flex-col overflow-hidden" data-admin-channel-resource-association-card>
+                  <div className="flex shrink-0 items-start justify-between gap-3 border-b border-slate-100 pb-3 dark:border-white/10">
                     <div>
                       <h4 className="text-sm font-semibold text-slate-900 dark:text-white">{t('admin.channel.resourceAssociations.title')}</h4>
                       <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">{t('admin.channel.help.aiResources')}</p>
@@ -1662,7 +1815,7 @@ function AddAccountDrawer({
                       {aiResourceGroupsError ?? aiResourcesError}
                     </div>
                   ) : (
-                    <div className="flex min-h-0 flex-1 flex-col gap-4" data-admin-channel-resource-association-body>
+                    <div className="mt-4 flex min-h-0 flex-1 flex-col gap-4" data-admin-channel-resource-association-body>
                       <div className="inline-flex shrink-0 rounded-lg border border-slate-200 bg-slate-50 p-1 text-xs font-semibold dark:border-white/10 dark:bg-[#121212]" data-admin-channel-resource-tabs>
                         <button
                           type="button"
@@ -1674,7 +1827,7 @@ function AddAccountDrawer({
                               : 'text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200'
                           }`}
                         >
-                          {t('admin.channel.resourceAssociations.tabs.groups', { count: selectedResourceGroupCodes.length })}
+                          {t('admin.channel.resourceAssociations.tabs.groups', { count: selectedVisibleResourceGroupCodes.length })}
                         </button>
                         <button
                           type="button"
@@ -1686,13 +1839,13 @@ function AddAccountDrawer({
                               : 'text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200'
                           }`}
                         >
-                          {t('admin.channel.resourceAssociations.tabs.resources', { count: selectedResourceCodes.length })}
+                          {t('admin.channel.resourceAssociations.tabs.resources', { count: selectedDirectResourceCodes.length })}
                         </button>
                       </div>
 
                       {activeResourceAssociationTab === 'groups' && (
                         <div className="grid min-h-0 flex-1 content-start gap-2 overflow-y-auto pr-1 custom-scrollbar" data-admin-channel-selected-resource-groups-list>
-                          {selectedResourceGroupCodes.map((groupCode) => {
+                          {selectedVisibleResourceGroupCodes.map((groupCode) => {
                             const group = findAiResourceGroupByCode(aiResourceGroups, groupCode);
                             return (
                               <div key={groupCode} className="rounded-lg border border-blue-200 bg-blue-50 p-3 dark:border-blue-500/20 dark:bg-blue-500/10">
@@ -1719,7 +1872,7 @@ function AddAccountDrawer({
                               </div>
                             );
                           })}
-                          {selectedResourceGroupCodes.length === 0 && (
+                          {selectedVisibleResourceGroupCodes.length === 0 && (
                             <div className="rounded-lg border border-dashed border-slate-200 py-8 text-center text-xs text-slate-500 dark:border-white/10 dark:text-slate-400">
                               {t('admin.channel.aiResources.noneSelected')}
                             </div>
@@ -1729,7 +1882,7 @@ function AddAccountDrawer({
 
                       {activeResourceAssociationTab === 'resources' && (
                         <div className="grid min-h-0 flex-1 content-start gap-2 overflow-y-auto pr-1 custom-scrollbar" data-admin-channel-selected-resources-list>
-                          {selectedResourceCodes.map((resourceCode) => {
+                          {selectedDirectResourceCodes.map((resourceCode) => {
                             const resource = findAiResourceByCode(aiResources, resourceCode);
                             return (
                               <div key={resourceCode} className="rounded-lg border border-emerald-300 bg-emerald-50 p-3 dark:border-emerald-500/30 dark:bg-emerald-500/10">
@@ -1756,7 +1909,7 @@ function AddAccountDrawer({
                               </div>
                             );
                           })}
-                          {selectedResourceCodes.length === 0 && (
+                          {selectedDirectResourceCodes.length === 0 && (
                             <div className="rounded-lg border border-dashed border-slate-200 py-8 text-center text-xs text-slate-500 dark:border-white/10 dark:text-slate-400">
                               {t('admin.channel.aiResources.noneSelected')}
                             </div>
@@ -1767,7 +1920,9 @@ function AddAccountDrawer({
                   )}
                 </section>
               )}
+                </div>
             </div>
+          </div>
           </div>
           <div className="shrink-0 border-t border-slate-200 p-4 dark:border-white/10 bg-slate-50 dark:bg-[#121212] flex justify-end gap-3">
             <button
@@ -1801,7 +1956,7 @@ function AddAccountDrawer({
         {resourceGroupSelectorOpen && (
           <AiResourceGroupSelectorModal
             groups={visibleAiResourceGroups}
-            selectedCodes={selectedResourceGroupCodes}
+            selectedCodes={selectedVisibleResourceGroupCodes}
             loading={aiResourceGroupsLoading}
             onChange={setSelectedResourceGroupCodes}
             onClose={() => setResourceGroupSelectorOpen(false)}
@@ -1811,10 +1966,10 @@ function AddAccountDrawer({
           <div data-admin-channel-resource-selector-modal>
             <AiResourceSelectorModal
               loading={aiResourcesLoading}
-              onChange={setSelectedResourceCodes}
+              onChange={(codes) => setSelectedResourceCodes(codes)}
               onClose={() => setResourceSelectorOpen(false)}
               options={resourceSelectorOptions}
-              selectedCodes={selectedResourceCodes}
+              selectedCodes={selectedDirectResourceCodes}
               selectionMode="multiple"
               searchDataAttribute="data-admin-channel-resource-selector-search"
               labels={{
@@ -1834,6 +1989,32 @@ function AddAccountDrawer({
               }}
             />
           </div>
+        )}
+        {targetModelSelectorOpen && (
+          <ChannelTargetModelSelectorModal
+            availableModels={availableTargetModels}
+            selectedTargetModels={targetModelRows.map((row) => row.targetModel)}
+            loading={modelCatalogLoading}
+            error={modelCatalogError}
+            onAdd={addTargetModel}
+            onRemove={removeTargetModel}
+            onClose={() => setTargetModelSelectorOpen(false)}
+          />
+        )}
+        {mappingRuleModalOpen && (
+          <ChannelMappingRuleModal
+            targetModelRows={targetModelRows}
+            initialRule={editingMappingRule}
+            onSubmit={(sourceModel, targetModel) => {
+              upsertModelMappingRule(sourceModel, targetModel, editingMappingRule?.id);
+              setMappingRuleModalOpen(false);
+              setEditingMappingRule(null);
+            }}
+            onClose={() => {
+              setMappingRuleModalOpen(false);
+              setEditingMappingRule(null);
+            }}
+          />
         )}
       </div>
     </div>
@@ -1857,6 +2038,10 @@ function ChannelVendorPickerModal({
 }) {
   const { t } = useTranslation();
   const [vendorSearchQuery, setVendorSearchQuery] = useState('');
+  const selectedVendorSummaries = useMemo(
+    () => vendorSummariesForCodes(selectedVendorCodes, t),
+    [selectedVendorCodes, t],
+  );
   const filteredVendors = knownModelVendors.filter((vendor) => {
     const keyword = vendorSearchQuery.trim().toLowerCase();
     if (!keyword) {
@@ -1890,8 +2075,28 @@ function ChannelVendorPickerModal({
               value={vendorSearchQuery}
               onChange={(event) => setVendorSearchQuery(event.currentTarget.value)}
               placeholder={t('admin.channel.vendorPicker.searchPlaceholder')}
-              className="h-10 w-full rounded-lg border border-slate-200 bg-slate-50 pl-10 pr-3 text-sm text-slate-900 outline-none transition-colors placeholder:text-slate-400 focus:border-emerald-500 focus:bg-white dark:border-white/10 dark:bg-[#121212] dark:text-white dark:focus:border-emerald-500"
+              className="h-10 w-full rounded-lg border border-slate-200 bg-slate-50 pl-10 pr-3 text-sm text-slate-900 outline-none transition-colors placeholder:text-slate-400 focus:border-indigo-500 focus:bg-white dark:border-white/10 dark:bg-[#121212] dark:text-white dark:focus:border-indigo-400"
             />
+          </div>
+          <div data-admin-channel-vendor-picker-selected-summary className="mt-3 rounded-lg border border-indigo-300 bg-indigo-50 px-3 py-2 dark:border-indigo-500/30 dark:bg-indigo-500/10">
+            <div className="mb-2 flex items-center justify-between gap-3">
+              <span className="text-xs font-semibold text-indigo-700 dark:text-indigo-200">
+                {t('admin.channel.vendorPicker.selectedCount', { count: selectedVendorCodes.length })}
+              </span>
+              <span className="text-[11px] font-medium text-slate-500 dark:text-slate-400">
+                {channelType === 'official'
+                  ? t('admin.channel.vendorPicker.officialHint')
+                  : t('admin.channel.vendorPicker.relayHint')}
+              </span>
+            </div>
+            <div data-admin-channel-vendor-picker-selected-list className="flex min-w-0 flex-wrap gap-1.5">
+              {selectedVendorSummaries.map((vendor) => (
+                <span key={vendor.code} className="inline-flex max-w-full items-center gap-1 rounded-md bg-white px-2 py-1 text-[11px] font-semibold text-indigo-700 ring-1 ring-indigo-100 dark:bg-black/30 dark:text-indigo-200 dark:ring-indigo-500/20">
+                  <span className="truncate">{vendor.name}</span>
+                  <span className="truncate font-mono text-indigo-500 dark:text-indigo-300">{vendor.code}</span>
+                </span>
+              ))}
+            </div>
           </div>
         </div>
         <div className="min-h-0 flex-1 overflow-auto p-5">
@@ -1901,7 +2106,11 @@ function ChannelVendorPickerModal({
               const isAccountVendor = vendor.id === modelVendor;
               const isSelected = selectedVendorCodes.includes(vendorCode);
               return (
-                <div key={vendor.id} className="rounded-lg border border-slate-200 bg-slate-50 p-3 dark:border-white/10 dark:bg-[#121212]">
+                <div key={vendor.id} className={`rounded-lg border p-3 transition-colors ${
+                  isSelected
+                    ? 'border-indigo-300 bg-indigo-50 dark:border-indigo-500/30 dark:bg-indigo-500/10'
+                    : 'border-slate-200 bg-slate-50 dark:border-white/10 dark:bg-[#121212]'
+                }`}>
                   <div className="flex items-start justify-between gap-3">
                     <span className="min-w-0">
                       <span className="block truncate text-sm font-semibold text-slate-900 dark:text-white">{optionalTranslatedLabel(t, vendor)}</span>
@@ -1921,14 +2130,15 @@ function ChannelVendorPickerModal({
                   </div>
                   <button
                     type="button"
+                    data-admin-channel-vendor-target-toggle
                     onClick={() => onTargetVendorToggle(vendorCode)}
                     className={`mt-3 flex w-full items-center gap-2 rounded-lg border px-3 py-2 text-left text-xs transition-colors ${
                       isSelected
-                        ? 'border-emerald-400 bg-emerald-50 text-emerald-800 dark:border-emerald-500/40 dark:bg-emerald-500/10 dark:text-emerald-300'
+                        ? 'border-indigo-500 bg-indigo-600 text-white shadow-sm dark:border-indigo-400 dark:bg-indigo-500'
                         : 'border-slate-200 bg-white text-slate-600 hover:border-slate-300 dark:border-white/10 dark:bg-black dark:text-slate-400 dark:hover:border-white/20'
                     }`}
                   >
-                    <span className={`flex h-4 w-4 shrink-0 items-center justify-center rounded border ${isSelected ? 'border-emerald-500 bg-emerald-500' : 'border-slate-300 dark:border-slate-500'}`}>
+                    <span className={`flex h-4 w-4 shrink-0 items-center justify-center rounded border ${isSelected ? 'border-white bg-white/20' : 'border-slate-300 dark:border-slate-500'}`}>
                       {isSelected && <Check className="h-3 w-3 text-white" />}
                     </span>
                     {t('admin.channel.vendorPicker.targetVendors')}
@@ -1946,6 +2156,263 @@ function ChannelVendorPickerModal({
             {t('common.actions.done')}
           </button>
         </div>
+      </div>
+    </div>
+  );
+}
+
+function ChannelTargetModelSelectorModal({
+  availableModels,
+  selectedTargetModels,
+  loading,
+  error,
+  onAdd,
+  onRemove,
+  onClose,
+}: {
+  availableModels: ChannelModelCatalogItem[];
+  selectedTargetModels: string[];
+  loading: boolean;
+  error: string | null;
+  onAdd: (model: ChannelModelCatalogItem) => void;
+  onRemove: (targetModel: string) => void;
+  onClose: () => void;
+}) {
+  const { t } = useTranslation();
+  const [modelSearchQuery, setModelSearchQuery] = useState('');
+  const selectedTargetSet = useMemo(
+    () => new Set(selectedTargetModels.map((model) => model.trim().toLowerCase())),
+    [selectedTargetModels],
+  );
+  const filteredModels = availableModels.filter((model) => {
+    const keyword = modelSearchQuery.trim().toLowerCase();
+    if (!keyword) {
+      return true;
+    }
+    return [model.displayName, model.model, model.catalogKey, model.vendorCode, model.regionCode]
+      .join(' ')
+      .toLowerCase()
+      .includes(keyword);
+  });
+  const toggleModel = (model: ChannelModelCatalogItem) => {
+    if (selectedTargetSet.has(model.catalogKey.toLowerCase())) {
+      onRemove(model.catalogKey);
+      return;
+    }
+    onAdd(model);
+  };
+
+  return (
+    <div className="fixed inset-0 z-[70] flex items-center justify-center bg-slate-950/55 p-4 backdrop-blur-sm" data-admin-channel-target-model-selector-modal>
+      <div className="flex h-[76vh] max-h-[76vh] w-[88vw] max-w-5xl flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-2xl dark:border-white/10 dark:bg-[#1a1a1a]">
+        <div className="flex shrink-0 items-center justify-between gap-4 border-b border-slate-200 p-5 dark:border-white/10">
+          <h3 className="text-lg font-bold text-slate-900 dark:text-white">{t('admin.channel.models.targetModelSelectorTitle')}</h3>
+          <button type="button" onClick={onClose} className="inline-flex h-9 w-9 items-center justify-center rounded-lg text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-600 dark:hover:bg-white/10 dark:hover:text-slate-200">
+            <X className="h-5 w-5" />
+          </button>
+        </div>
+        <div className="shrink-0 border-b border-slate-200 px-5 py-4 dark:border-white/10">
+          <div className="relative">
+            <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+            <input
+              type="search"
+              value={modelSearchQuery}
+              onChange={(event) => setModelSearchQuery(event.currentTarget.value)}
+              placeholder={t('admin.channel.models.targetModelSearchPlaceholder')}
+              className="h-10 w-full rounded-lg border border-slate-200 bg-slate-50 pl-10 pr-3 text-sm text-slate-900 outline-none transition-colors placeholder:text-slate-400 focus:border-emerald-500 focus:bg-white dark:border-white/10 dark:bg-[#121212] dark:text-white dark:focus:border-emerald-500"
+            />
+          </div>
+        </div>
+        <div className="min-h-0 flex-1 overflow-auto">
+          {loading ? (
+            <div className="flex min-h-56 items-center justify-center gap-2 px-6 text-sm text-slate-500 dark:text-slate-400">
+              <Loader2 className="h-4 w-4 animate-spin" />
+              {t('admin.channel.models.loading')}
+            </div>
+          ) : error ? (
+            <div className="flex min-h-56 items-center justify-center px-6 text-center text-sm text-amber-700 dark:text-amber-300">{error}</div>
+          ) : availableModels.length === 0 ? (
+            <div className="flex min-h-56 items-center justify-center px-6 text-center text-sm text-slate-500 dark:text-slate-400">{t('admin.channel.models.emptyForVendor')}</div>
+          ) : filteredModels.length === 0 ? (
+            <div className="flex min-h-56 items-center justify-center px-6 text-center text-sm text-slate-500 dark:text-slate-400">{t('admin.channel.models.emptySearch')}</div>
+          ) : (
+            <table className="w-full min-w-[760px] text-left text-sm text-slate-600 dark:text-slate-400" data-admin-channel-target-model-selector-table>
+              <thead className="sticky top-0 z-10 border-b border-slate-200 bg-slate-50 text-xs font-semibold text-slate-500 dark:border-white/10 dark:bg-[#121212] dark:text-slate-400">
+                <tr>
+                  <th className="w-12 px-5 py-3"></th>
+                  <th className="px-5 py-3">{t('admin.channel.models.targetModel')}</th>
+                  <th className="px-5 py-3">{t('admin.channel.models.vendor')}</th>
+                  <th className="px-5 py-3">{t('admin.channel.models.runtimeModel')}</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-200 dark:divide-white/5">
+                {filteredModels.map((model) => {
+                  const isSelected = selectedTargetSet.has(model.catalogKey.toLowerCase());
+                  return (
+                    <tr key={model.catalogKey} className="cursor-pointer hover:bg-slate-50 dark:hover:bg-white/5" onClick={() => toggleModel(model)}>
+                      <td className="px-5 py-3">
+                        <input
+                          type="checkbox"
+                          checked={isSelected}
+                          onChange={(event) => {
+                            event.stopPropagation();
+                            toggleModel(model);
+                          }}
+                          onClick={(event) => event.stopPropagation()}
+                          className="h-4 w-4 rounded border-slate-300 text-emerald-600 focus:ring-emerald-500"
+                        />
+                      </td>
+                      <td className="px-5 py-3">
+                        <div className="font-medium text-slate-900 dark:text-white">{model.displayName || model.model}</div>
+                        <div className="font-mono text-xs text-slate-500">{model.catalogKey}</div>
+                      </td>
+                      <td className="px-5 py-3">
+                        <span className="rounded bg-slate-100 px-2 py-1 font-mono text-xs text-slate-600 dark:bg-white/10 dark:text-slate-300">{model.vendorCode}</span>
+                      </td>
+                      <td className="px-5 py-3 font-mono text-xs">{model.model}</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          )}
+        </div>
+        <div className="flex shrink-0 items-center justify-between gap-3 border-t border-slate-200 p-5 dark:border-white/10">
+          <div className="min-w-0 text-sm text-slate-500 dark:text-slate-400">
+            {t('admin.channel.models.selectedTargetCount', { count: selectedTargetModels.length })}
+          </div>
+          <button type="button" onClick={onClose} className="rounded-lg border border-slate-200 bg-slate-50 px-5 py-2.5 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-100 dark:border-white/10 dark:bg-[#1a1a1a] dark:text-slate-300 dark:hover:bg-white/5">
+            {t('common.actions.done')}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ChannelMappingRuleModal({
+  targetModelRows,
+  initialRule,
+  onSubmit,
+  onClose,
+}: {
+  targetModelRows: AccountModelMappingRow[];
+  initialRule: AccountModelMappingRow | null;
+  onSubmit: (sourceModel: string, targetModel: string) => void;
+  onClose: () => void;
+}) {
+  const { t } = useTranslation();
+  const [sourceModel, setSourceModel] = useState(initialRule?.sourceModel ?? '');
+  const [targetModel, setTargetModel] = useState(initialRule?.targetModel ?? targetModelRows[0]?.targetModel ?? '');
+  const [targetSearchQuery, setTargetSearchQuery] = useState('');
+  const [localError, setLocalError] = useState<string | null>(null);
+  const filteredTargets = targetModelRows.filter((row) => {
+    const keyword = targetSearchQuery.trim().toLowerCase();
+    if (!keyword) {
+      return true;
+    }
+    return [row.targetModel, catalogModelRuntimeId(row.targetModel), catalogModelVendorCode(row.targetModel, '')]
+      .join(' ')
+      .toLowerCase()
+      .includes(keyword);
+  });
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const normalizedSourceModel = sourceModel.trim();
+    const normalizedTargetModel = targetModel.trim();
+    if (!normalizedSourceModel) {
+      setLocalError(t('admin.channel.validation.mappingSourceRequired'));
+      return;
+    }
+    if (!normalizedTargetModel) {
+      setLocalError(t('admin.channel.validation.mappingTargetRequired'));
+      return;
+    }
+    onSubmit(normalizedSourceModel, normalizedTargetModel);
+  };
+
+  return (
+    <div className="fixed inset-0 z-[70] flex items-center justify-center bg-slate-950/55 p-4 backdrop-blur-sm" data-admin-channel-mapping-rule-modal>
+      <div className="flex max-h-[82vh] w-[86vw] max-w-4xl flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-2xl dark:border-white/10 dark:bg-[#1a1a1a]">
+        <div className="flex shrink-0 items-center justify-between gap-4 border-b border-slate-200 p-5 dark:border-white/10">
+          <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+            {initialRule ? t('admin.channel.models.mappingRuleEditTitle') : t('admin.channel.models.mappingRuleCreateTitle')}
+          </h3>
+          <button type="button" onClick={onClose} className="inline-flex h-9 w-9 items-center justify-center rounded-lg text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-600 dark:hover:bg-white/10 dark:hover:text-slate-200">
+            <X className="h-5 w-5" />
+          </button>
+        </div>
+        <form onSubmit={handleSubmit} className="flex min-h-0 flex-1 flex-col">
+          <div className="min-h-0 flex-1 overflow-y-auto p-5">
+            {localError && (
+              <div className="mb-4 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-700 dark:border-red-500/20 dark:bg-red-500/10 dark:text-red-300">
+                {localError}
+              </div>
+            )}
+            <div className="grid gap-4 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
+              <label>
+                <span className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-300">{t('admin.channel.models.requestModel')}</span>
+                <input
+                  value={sourceModel}
+                  onChange={(event) => setSourceModel(event.currentTarget.value)}
+                  className="h-10 w-full rounded-lg border border-slate-200 bg-white px-3 text-sm text-slate-900 outline-none transition-colors placeholder:text-slate-400 focus:border-emerald-500 dark:border-white/10 dark:bg-black dark:text-white"
+                  placeholder={t('admin.channel.models.requestModelPlaceholder')}
+                />
+              </label>
+              <div className="min-w-0">
+                <span className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-300">{t('admin.channel.models.actualTargetModel')}</span>
+                <div className="relative mb-2">
+                  <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+                  <input
+                    type="search"
+                    value={targetSearchQuery}
+                    onChange={(event) => setTargetSearchQuery(event.currentTarget.value)}
+                    placeholder={t('admin.channel.models.mappingTargetSearchPlaceholder')}
+                    className="h-10 w-full rounded-lg border border-slate-200 bg-slate-50 pl-10 pr-3 text-sm text-slate-900 outline-none transition-colors placeholder:text-slate-400 focus:border-emerald-500 focus:bg-white dark:border-white/10 dark:bg-black dark:text-white"
+                  />
+                </div>
+                <div className="max-h-72 overflow-y-auto rounded-lg border border-slate-200 dark:border-white/10">
+                  {filteredTargets.map((row) => {
+                    const isSelected = row.targetModel === targetModel;
+                    return (
+                      <button
+                        key={row.id}
+                        type="button"
+                        onClick={() => setTargetModel(row.targetModel)}
+                        className={`flex w-full items-center gap-3 border-b border-slate-200 px-3 py-2 text-left text-xs last:border-b-0 dark:border-white/5 ${
+                          isSelected
+                            ? 'bg-emerald-50 text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-300'
+                            : 'bg-white text-slate-600 hover:bg-slate-50 dark:bg-black dark:text-slate-300 dark:hover:bg-white/5'
+                        }`}
+                      >
+                        <span className={`flex h-4 w-4 shrink-0 items-center justify-center rounded-full border ${isSelected ? 'border-emerald-500 bg-emerald-500 text-white' : 'border-slate-300 dark:border-slate-500'}`}>
+                          {isSelected && <Check className="h-3 w-3" />}
+                        </span>
+                        <span className="min-w-0 flex-1">
+                          <span className="block truncate font-mono">{row.targetModel}</span>
+                          <span className="mt-0.5 block truncate text-[11px] opacity-70">{catalogModelRuntimeId(row.targetModel)}</span>
+                        </span>
+                      </button>
+                    );
+                  })}
+                  {filteredTargets.length === 0 && (
+                    <div className="px-3 py-8 text-center text-sm text-slate-500 dark:text-slate-400">
+                      {t('admin.channel.models.emptyTargetModels')}
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="flex shrink-0 items-center justify-end gap-3 border-t border-slate-200 bg-slate-50 p-5 dark:border-white/10 dark:bg-[#121212]">
+            <button type="button" onClick={onClose} className="rounded-lg border border-slate-200 bg-white px-5 py-2.5 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50 dark:border-white/10 dark:bg-[#1a1a1a] dark:text-slate-300 dark:hover:bg-white/5">
+              {t('common.actions.cancel')}
+            </button>
+            <button type="submit" disabled={targetModelRows.length === 0} className="rounded-lg bg-emerald-600 px-6 py-2.5 text-sm font-bold text-white shadow-lg shadow-emerald-500/20 transition-colors hover:bg-emerald-700 disabled:cursor-not-allowed disabled:opacity-60">
+              {t('common.actions.save')}
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   );
@@ -1972,7 +2439,16 @@ function AiResourceGroupSelectorModal({
     if (!keyword) {
       return true;
     }
-    return [group.groupName, group.groupCode, group.groupType, group.selectionMode, group.status]
+    return [
+      group.groupName,
+      group.groupCode,
+      group.groupType,
+      group.selectionMode,
+      group.status,
+      group.capability,
+      group.capabilities.join(' '),
+      group.vendorCodes.join(' '),
+    ]
       .join(' ')
       .toLowerCase()
       .includes(keyword);
@@ -2039,6 +2515,20 @@ function AiResourceGroupSelectorModal({
                       <td className="px-5 py-3">
                         <div className="font-medium text-slate-900 dark:text-white">{group.groupName}</div>
                         <div className="font-mono text-xs text-slate-500">{group.groupCode}</div>
+                        <div className="mt-1 flex flex-wrap gap-1.5">
+                          {(group.capabilities.length > 0 ? group.capabilities : [group.capability])
+                            .filter(Boolean)
+                            .map((capability) => (
+                              <span key={capability} className="rounded bg-emerald-50 px-1.5 py-0.5 font-mono text-[10px] text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-300">
+                                {capability}
+                              </span>
+                            ))}
+                          {group.vendorCodes.map((vendorCode) => (
+                            <span key={vendorCode} className="rounded bg-blue-50 px-1.5 py-0.5 font-mono text-[10px] text-blue-700 dark:bg-blue-500/10 dark:text-blue-300">
+                              {vendorCode}
+                            </span>
+                          ))}
+                        </div>
                       </td>
                       <td className="px-5 py-3">{group.selectionMode}</td>
                       <td className="px-5 py-3">{group.resourceCount}</td>
@@ -2337,1228 +2827,6 @@ function CredentialDetailField({
   );
 }
 
-function AiResourceFormModal({
-  mode,
-  resource,
-  availableModels,
-  availableResources,
-  isSaving,
-  onClose,
-  onCreateSubmit,
-  onUpdateSubmit,
-}: {
-  mode: AiResourceModalMode;
-  resource: AiResource | null;
-  availableModels: ChannelModelCatalogItem[];
-  availableResources: AiResource[];
-  isSaving: boolean;
-  onClose: () => void;
-  onCreateSubmit: (input: AiResourceCreateInput) => Promise<void>;
-  onUpdateSubmit: (input: AiResourceUpdateInput) => Promise<void>;
-}) {
-  const { t } = useTranslation();
-  const [localError, setLocalError] = useState<string | null>(null);
-  const isEdit = mode === 'edit';
-  const draft = useMemo(
-    () => (resource ? createAiResourceEditDraft(resource) : null),
-    [resource],
-  );
-
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setLocalError(null);
-    const formData = new FormData(event.currentTarget);
-    try {
-      const values = aiResourceFormValuesFromFormData(formData);
-      if (isEdit) {
-        await onUpdateSubmit(createAiResourceUpdateInputFromForm(values));
-      } else {
-        await onCreateSubmit(createAiResourceInputFromForm(values));
-      }
-    } catch (err) {
-      setLocalError(err instanceof Error ? err.message : t('admin.channel.aiResources.errors.saveFailed'));
-    }
-  };
-
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto bg-slate-900/50 p-4 backdrop-blur-sm">
-      <div className="absolute inset-0" onClick={onClose} />
-      <div className="relative z-10 flex max-h-[92vh] w-full max-w-4xl flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-xl dark:border-white/10 dark:bg-[#1a1a1a]">
-        <div className="flex shrink-0 items-center justify-between border-b border-slate-200 bg-slate-50 p-5 dark:border-white/10 dark:bg-[#121212]">
-          <h3 className="flex items-center gap-2 text-lg font-bold text-slate-900 dark:text-white">
-            <Boxes className="h-5 w-5 text-emerald-500" />
-            {isEdit
-              ? t('admin.channel.aiResources.modals.editTitle')
-              : t('admin.channel.aiResources.modals.createTitle')}
-          </h3>
-          <button
-            type="button"
-            onClick={onClose}
-            disabled={isSaving}
-            aria-label={t('common.actions.close')}
-            className="text-slate-400 transition-colors hover:text-slate-600 disabled:cursor-not-allowed disabled:opacity-50 dark:hover:text-slate-200"
-          >
-            <X className="h-5 w-5" />
-          </button>
-        </div>
-
-        <form onSubmit={handleSubmit} className="flex min-h-0 flex-1 flex-col">
-          <div className="min-h-0 flex-1 overflow-y-auto p-5">
-            {localError && (
-              <div className="mb-4 rounded-lg border border-red-200 bg-red-50 p-3 text-sm text-red-700 dark:border-red-500/20 dark:bg-red-500/10 dark:text-red-300">
-                {localError}
-              </div>
-            )}
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-              <AiResourceField label={t('admin.channel.aiResources.fields.resourceCode')}>
-                <input
-                  name="resourceCode"
-                  required
-                  defaultValue={draft?.resourceCode ?? ''}
-                  className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
-                  placeholder="bundle.openrouter.openai.chat"
-                />
-              </AiResourceField>
-              <AiResourceField label={t('admin.channel.aiResources.fields.displayName')}>
-                <input
-                  name="displayName"
-                  required
-                  defaultValue={draft?.displayName ?? ''}
-                  className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
-                  placeholder="OpenRouter OpenAI Chat"
-                />
-              </AiResourceField>
-              <AiResourceField label={t('admin.channel.aiResources.fields.resourceType')}>
-                <select
-                  name="resourceType"
-                  defaultValue={draft?.resourceType ?? 'bundle'}
-                  className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
-                >
-                  {aiResourceTypeOptions.map((kind) => (
-                    <option key={kind} value={kind}>{t(`admin.channel.aiResourceType.${kind}`)}</option>
-                  ))}
-                </select>
-              </AiResourceField>
-              <AiResourceField label={t('admin.channel.aiResources.fields.status')}>
-                <select
-                  name="status"
-                  defaultValue={draft?.status ?? 'active'}
-                  className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
-                >
-                  {aiResourceStatusOptions.map((status) => (
-                    <option key={status} value={status}>{t(`admin.channel.aiResources.status.${status}`)}</option>
-                  ))}
-                </select>
-              </AiResourceField>
-              <AiResourceField label={t('admin.channel.aiResources.fields.vendorCode')}>
-                <input
-                  name="vendorCode"
-                  defaultValue={draft?.vendorCode ?? ''}
-                  className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
-                  placeholder="openai"
-                />
-              </AiResourceField>
-              <AiResourceField label={t('admin.channel.aiResources.fields.modalityCode')}>
-                <input
-                  name="modalityCode"
-                  defaultValue={draft?.modalityCode ?? ''}
-                  className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
-                  placeholder="chat"
-                />
-              </AiResourceField>
-              <AiResourceField label={t('admin.channel.aiResources.fields.apiEndpointCode')}>
-                <input
-                  name="apiEndpointCode"
-                  defaultValue={draft?.apiEndpointCode ?? ''}
-                  className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
-                  placeholder="chat_completions"
-                />
-              </AiResourceField>
-              <AiResourceField label={t('admin.channel.aiResources.fields.catalogKey')}>
-                <AiResourceModelSelector
-                  defaultCatalogKey={draft?.catalogKey ?? ''}
-                  availableModels={availableModels}
-                />
-              </AiResourceField>
-              <AiResourceField label={t('admin.channel.aiResources.fields.model')}>
-                <input
-                  name="model"
-                  defaultValue={draft?.model ?? ''}
-                  className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
-                  placeholder="gpt-5.5"
-                />
-              </AiResourceField>
-              <AiResourceField label={t('admin.channel.aiResources.fields.providerNativeModel')}>
-                <input
-                  name="providerNativeModel"
-                  readOnly
-                  defaultValue={draft?.providerNativeModel ?? ''}
-                  className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
-                  placeholder="gpt-5.5"
-                />
-              </AiResourceField>
-              <AiResourceField label={t('admin.channel.aiResources.fields.compositionMode')}>
-                <select
-                  name="compositionMode"
-                  defaultValue={draft?.compositionMode ?? 'single'}
-                  className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
-                >
-                  {aiResourceCompositionOptions.map((modeOption) => (
-                    <option key={modeOption} value={modeOption}>{t(`admin.channel.aiResources.composition.${modeOption}`)}</option>
-                  ))}
-                </select>
-              </AiResourceField>
-              <AiResourceField label={t('admin.channel.aiResources.fields.sortOrder')}>
-                <input
-                  name="sortOrder"
-                  type="number"
-                  min={0}
-                  step={1}
-                  defaultValue={draft?.sortOrder ?? ''}
-                  className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
-                />
-              </AiResourceField>
-              <AiResourceField label={t('admin.channel.aiResources.fields.members')} wide>
-                <AiResourceMemberSelector
-                  currentResourceCode={draft?.resourceCode ?? ''}
-                  defaultMembersText={draft?.membersText ?? ''}
-                  availableResources={availableResources}
-                />
-                <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
-                  {t('admin.channel.aiResources.help.members')}
-                </p>
-              </AiResourceField>
-            </div>
-          </div>
-
-          <div className="flex shrink-0 justify-end gap-3 border-t border-slate-200 bg-slate-50 p-4 dark:border-white/10 dark:bg-[#121212]">
-            <button
-              type="button"
-              onClick={onClose}
-              disabled={isSaving}
-              className="rounded-lg border border-slate-300 px-5 py-2.5 text-sm font-medium text-slate-600 transition-colors hover:bg-white disabled:cursor-not-allowed disabled:opacity-50 dark:border-white/10 dark:text-slate-300 dark:hover:bg-white/5"
-            >
-              {t('common.actions.cancel')}
-            </button>
-            <button
-              type="submit"
-              disabled={isSaving}
-              className="flex items-center gap-2 rounded-lg bg-emerald-600 px-6 py-2.5 text-sm font-bold text-white shadow-lg shadow-emerald-500/20 transition-colors hover:bg-emerald-700 disabled:cursor-not-allowed disabled:opacity-60"
-            >
-              {isSaving && <Loader2 className="h-4 w-4 animate-spin" />}
-              {isEdit ? t('common.actions.saveChanges') : t('common.actions.create')}
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-  );
-}
-
-function AiResourceField({
-  label,
-  children,
-  wide = false,
-}: {
-  label: string;
-  children: React.ReactNode;
-  wide?: boolean;
-}) {
-  return (
-    <label className={wide ? 'sm:col-span-2' : undefined}>
-      <span className="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-300">{label}</span>
-      {children}
-    </label>
-  );
-}
-
-function AiResourceModelSelector({
-  defaultCatalogKey,
-  availableModels,
-}: {
-  defaultCatalogKey: string;
-  availableModels: ChannelModelCatalogItem[];
-}) {
-  const normalizedDefault = defaultCatalogKey.trim();
-  return (
-    <select
-      data-ai-resource-model-selector
-      name="catalogKey"
-      defaultValue={normalizedDefault}
-      className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
-    >
-      <option value="" />
-      {normalizedDefault && !availableModels.some((model) => model.catalogKey === normalizedDefault) && (
-        <option value={normalizedDefault}>{normalizedDefault}</option>
-      )}
-      {availableModels.map((model) => (
-        <option key={model.catalogKey} value={model.catalogKey}>
-          {model.displayName} ({model.catalogKey})
-        </option>
-      ))}
-    </select>
-  );
-}
-
-function AiResourceMemberSelector({
-  currentResourceCode,
-  defaultMembersText,
-  availableResources,
-}: {
-  currentResourceCode: string;
-  defaultMembersText: string;
-  availableResources: AiResource[];
-}) {
-  const [memberLines, setMemberLines] = useState<string[]>(() => parseAiResourceMemberLines(defaultMembersText));
-  useEffect(() => {
-    setMemberLines(parseAiResourceMemberLines(defaultMembersText));
-  }, [defaultMembersText]);
-  const selectedCodes = useMemo(
-    () => new Set(memberLines.map((line) => normalizeAiResourceCode(line.split('|')[0] ?? '')).filter(Boolean)),
-    [memberLines],
-  );
-  const currentCode = normalizeAiResourceCode(currentResourceCode);
-  const toggleMember = (resourceCode: string) => {
-    const normalizedCode = normalizeAiResourceCode(resourceCode);
-    if (!normalizedCode) {
-      return;
-    }
-    setMemberLines((current) => {
-      const exists = current.some((line) => normalizeAiResourceCode(line.split('|')[0] ?? '') === normalizedCode);
-      if (exists) {
-        return current.filter((line) => normalizeAiResourceCode(line.split('|')[0] ?? '') !== normalizedCode);
-      }
-      return [...current, `${normalizedCode} | included | true | ${current.length + 1}`];
-    });
-  };
-  return (
-    <div data-ai-resource-member-selector className="space-y-2">
-      <textarea
-        name="membersText"
-        readOnly
-        value={memberLines.join('\n')}
-        className="sr-only"
-      />
-      <div className="grid max-h-52 grid-cols-1 gap-2 overflow-y-auto rounded-lg border border-slate-200 bg-slate-50 p-2 dark:border-white/10 dark:bg-black">
-        {availableResources
-          .filter((resource) => normalizeAiResourceCode(resource.resourceCode) !== currentCode)
-          .map((resource) => {
-            const isSelected = selectedCodes.has(normalizeAiResourceCode(resource.resourceCode));
-            return (
-              <label
-                key={resource.resourceCode}
-                className={`flex items-start gap-2 rounded-md border p-2 text-xs ${
-                  isSelected
-                    ? 'border-emerald-300 bg-emerald-50 text-emerald-900 dark:border-emerald-500/40 dark:bg-emerald-500/10 dark:text-emerald-200'
-                    : 'border-slate-200 bg-white text-slate-600 dark:border-white/10 dark:bg-[#1e1e1e] dark:text-slate-300'
-                }`}
-              >
-                <input
-                  type="checkbox"
-                  checked={isSelected}
-                  onChange={() => toggleMember(resource.resourceCode)}
-                  className="mt-0.5 h-3.5 w-3.5 rounded border-slate-300 text-emerald-600"
-                />
-                <span className="min-w-0">
-                  <span className="block truncate font-medium">{resource.displayName}</span>
-                  <span className="mt-0.5 block truncate font-mono text-[11px] text-slate-500 dark:text-slate-400">
-                    {resource.resourceCode}
-                  </span>
-                </span>
-              </label>
-            );
-          })}
-      </div>
-    </div>
-  );
-}
-
-function parseAiResourceMemberLines(value: string): string[] {
-  return value
-    .split(/\r?\n/)
-    .map((line) => line.trim())
-    .filter(Boolean);
-}
-
-function ChannelEndpointFormModal({
-  mode,
-  endpoint,
-  channels,
-  isSaving,
-  onClose,
-  onCreateSubmit,
-  onUpdateSubmit,
-}: {
-  mode: ChannelEndpointModalMode;
-  endpoint: ChannelEndpoint | null;
-  channels: ChannelEndpointChannelOption[];
-  isSaving: boolean;
-  onClose: () => void;
-  onCreateSubmit: (input: ChannelEndpointCreateInput) => Promise<void>;
-  onUpdateSubmit: (input: ChannelEndpointUpdateInput) => Promise<void>;
-}) {
-  const { t } = useTranslation();
-  const [localError, setLocalError] = useState<string | null>(null);
-  const draft = endpoint ? createChannelEndpointEditDraft(endpoint) : null;
-  const isEdit = mode === 'edit';
-
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setLocalError(null);
-    const values = channelEndpointFormValuesFromFormData(new FormData(event.currentTarget));
-    try {
-      if (isEdit) {
-        await onUpdateSubmit(createChannelEndpointUpdateInputFromForm(values));
-      } else {
-        await onCreateSubmit(createChannelEndpointInputFromForm(values));
-      }
-    } catch (err) {
-      setLocalError(err instanceof Error ? err.message : t('admin.channel.channelEndpoints.errors.saveFailed'));
-    }
-  };
-
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 p-4 backdrop-blur-sm">
-      <div className="absolute inset-0" onClick={isSaving ? undefined : onClose} />
-      <div className="relative z-10 w-full max-w-3xl overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl dark:border-white/10 dark:bg-[#1a1a1a]">
-        <div className="flex items-center justify-between border-b border-slate-200 bg-slate-50 p-5 dark:border-white/10 dark:bg-[#121212]">
-          <h3 className="flex items-center gap-2 text-lg font-bold text-slate-900 dark:text-white">
-            <Server className="h-5 w-5 text-emerald-500" />
-            {isEdit
-              ? t('admin.channel.channelEndpoints.modals.editTitle')
-              : t('admin.channel.channelEndpoints.modals.createTitle')}
-          </h3>
-          <button
-            type="button"
-            onClick={onClose}
-            disabled={isSaving}
-            aria-label={t('common.actions.close')}
-            className="text-slate-400 transition-colors hover:text-slate-600 disabled:opacity-50 dark:hover:text-slate-200"
-          >
-            <X className="h-5 w-5" />
-          </button>
-        </div>
-
-        <form onSubmit={handleSubmit}>
-          <div className="space-y-5 p-5">
-            {localError && (
-              <div className="flex items-center gap-2 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-700 dark:border-red-500/20 dark:bg-red-500/10 dark:text-red-300">
-                <AlertCircle className="h-4 w-4" />
-                {localError}
-              </div>
-            )}
-
-            <div>
-              <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
-                {t('admin.channel.channelEndpoints.fields.channel')}
-              </label>
-              <select
-                name="channelId"
-                required={!isEdit}
-                disabled={isEdit}
-                defaultValue={draft?.channelId ?? channels[0]?.channelId ?? ''}
-                className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 transition-colors focus:border-emerald-500 focus:outline-none disabled:bg-slate-100 disabled:text-slate-500 dark:border-white/10 dark:bg-black dark:text-white dark:disabled:bg-white/5"
-              >
-                {!isEdit && channels.length === 0 && (
-                  <option value="">{t('admin.channel.channelEndpoints.emptyChannels')}</option>
-                )}
-                {channels.map((channel) => (
-                  <option key={channel.channelId} value={channel.channelId}>
-                    {channel.name} / {providerCodeForVendor(channel.vendor)} / {channel.channelId}
-                  </option>
-                ))}
-                {isEdit && draft?.channelId && !channels.some((channel) => channel.channelId === draft.channelId) && (
-                  <option value={draft.channelId}>{draft.channelId}</option>
-                )}
-              </select>
-            </div>
-
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-              <div>
-                <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
-                  {t('admin.channel.channelEndpoints.fields.vendorCode')}
-                </label>
-                <input
-                  required
-                  name="vendorCode"
-                  defaultValue={draft?.vendorCode ?? ''}
-                  placeholder="openai"
-                  className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 font-mono text-sm text-slate-900 transition-colors focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
-                />
-              </div>
-              <div>
-                <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
-                  {t('admin.channel.channelEndpoints.fields.regionCode')}
-                </label>
-                <input
-                  required
-                  name="regionCode"
-                  defaultValue={draft?.regionCode ?? 'global'}
-                  placeholder="global"
-                  className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 font-mono text-sm text-slate-900 transition-colors focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
-                />
-              </div>
-              <div>
-                <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
-                  {t('admin.channel.channelEndpoints.fields.apiEndpointCode')}
-                </label>
-                <input
-                  required
-                  name="apiEndpointCode"
-                  defaultValue={draft?.apiEndpointCode ?? 'chat_completions'}
-                  placeholder="chat_completions"
-                  className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 font-mono text-sm text-slate-900 transition-colors focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
-                {t('admin.channel.channelEndpoints.fields.baseUrl')}
-              </label>
-              <input
-                required
-                type="url"
-                name="baseUrl"
-                defaultValue={draft?.baseUrl ?? ''}
-                placeholder="https://api.openai.com/v1"
-                className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 font-mono text-sm text-slate-900 transition-colors focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
-              />
-            </div>
-
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-4">
-              <div>
-                <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
-                  {t('admin.channel.channelEndpoints.fields.priority')}
-                </label>
-                <input
-                  name="priority"
-                  type="number"
-                  min="1"
-                  defaultValue={draft?.priority ?? 100}
-                  className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 transition-colors focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
-                />
-              </div>
-              <div>
-                <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
-                  {t('admin.channel.channelEndpoints.fields.weight')}
-                </label>
-                <input
-                  name="weight"
-                  type="number"
-                  min="1"
-                  defaultValue={draft?.weight ?? 100}
-                  className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 transition-colors focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
-                />
-              </div>
-              <div>
-                <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
-                  {t('admin.channel.channelEndpoints.fields.effectiveFrom')}
-                </label>
-                <input
-                  name="effectiveFrom"
-                  type="datetime-local"
-                  defaultValue={toDateTimeLocalValue(draft?.effectiveFrom)}
-                  className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 transition-colors focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
-                />
-              </div>
-              <div>
-                <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
-                  {t('admin.channel.channelEndpoints.fields.effectiveTo')}
-                </label>
-                <input
-                  name="effectiveTo"
-                  type="datetime-local"
-                  defaultValue={toDateTimeLocalValue(draft?.effectiveTo)}
-                  className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 transition-colors focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
-                {t('admin.channel.channelEndpoints.fields.status')}
-              </label>
-              <select
-                name="status"
-                defaultValue={draft?.status ?? 'active'}
-                className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 transition-colors focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
-              >
-                <option value="active">{t('admin.channel.channelEndpoints.status.active')}</option>
-                <option value="disabled">{t('admin.channel.channelEndpoints.status.disabled')}</option>
-                <option value="inactive">{t('admin.channel.channelEndpoints.status.inactive')}</option>
-              </select>
-            </div>
-          </div>
-
-          <div className="flex justify-end gap-3 border-t border-slate-200 bg-slate-50 p-4 dark:border-white/10 dark:bg-[#121212]">
-            <button
-              type="button"
-              onClick={onClose}
-              disabled={isSaving}
-              className="rounded-lg border border-slate-300 px-5 py-2.5 text-sm font-medium text-slate-600 transition-colors hover:bg-white disabled:opacity-50 dark:border-white/10 dark:text-slate-300 dark:hover:bg-white/5"
-            >
-              {t('common.actions.cancel')}
-            </button>
-            <button
-              type="submit"
-              disabled={isSaving || (!isEdit && channels.length === 0)}
-              className="flex items-center gap-2 rounded-lg bg-emerald-600 px-6 py-2.5 text-sm font-bold text-white shadow-lg shadow-emerald-500/20 transition-colors hover:bg-emerald-700 disabled:cursor-not-allowed disabled:opacity-60"
-            >
-              {isSaving && <Loader2 className="h-4 w-4 animate-spin" />}
-              {isEdit ? t('common.actions.saveChanges') : t('admin.channel.channelEndpoints.actions.add')}
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-  );
-}
-
-export function AiResourceAdmin() {
-  const { t } = useTranslation();
-  const [resources, setResources] = useState<AiResource[]>([]);
-  const [modelCatalog, setModelCatalog] = useState<ChannelModelCatalogItem[]>([]);
-  const [search, setSearch] = useState('');
-  const [loading, setLoading] = useState(true);
-  const [loadError, setLoadError] = useState<string | null>(null);
-  const [modalMode, setModalMode] = useState<AiResourceModalMode | null>(null);
-  const [editingResource, setEditingResource] = useState<AiResource | null>(null);
-  const [saving, setSaving] = useState(false);
-  const [pendingResourceId, setPendingResourceId] = useState<string | null>(null);
-  const [pendingAction, setPendingAction] = useState<PendingAiResourceAction | null>(null);
-  const [toast, setToast] = useState<ToastState>(null);
-
-  const loadResources = useCallback(async (isActive: () => boolean = () => true) => {
-    setLoading(true);
-    setLoadError(null);
-    try {
-      const items = await ChannelAiResourceService.fetchAiResources();
-      if (isActive()) {
-        setResources(items);
-      }
-    } catch (err) {
-      if (isActive()) {
-        setLoadError(getLoadErrorMessage(err, t('admin.channel.aiResources.loadError')));
-      }
-    } finally {
-      if (isActive()) {
-        setLoading(false);
-      }
-    }
-  }, [t]);
-
-  const loadModelCatalog = useCallback(async (isActive: () => boolean = () => true) => {
-    try {
-      const items = await ChannelModelCatalogService.fetchModels();
-      if (isActive()) {
-        setModelCatalog(items);
-      }
-    } catch {
-      if (isActive()) {
-        setModelCatalog([]);
-      }
-    }
-  }, []);
-
-  useEffect(() => {
-    let active = true;
-    void Promise.all([loadResources(() => active), loadModelCatalog(() => active)]);
-    return () => {
-      active = false;
-    };
-  }, [loadModelCatalog, loadResources]);
-
-  const filteredResources = useMemo(() => {
-    const keyword = search.trim().toLowerCase();
-    if (!keyword) {
-      return resources;
-    }
-    return resources.filter((resource) => [
-      resource.resourceCode,
-      resource.displayName,
-      resource.resourceType,
-      resource.vendorCode,
-      resource.modalityCode,
-      resource.apiEndpointCode,
-      resource.catalogKey,
-      resource.model,
-      resource.providerNativeModel,
-    ].filter(Boolean).join(' ').toLowerCase().includes(keyword));
-  }, [resources, search]);
-
-  const showToast = useCallback((message: string, type: 'success' | 'info' | 'error' = 'success') => {
-    setToast({ message, type });
-    window.setTimeout(() => setToast(null), 3000);
-  }, []);
-
-  const openCreateModal = () => {
-    setEditingResource(null);
-    setModalMode('create');
-  };
-
-  const openEditModal = (resource: AiResource) => {
-    setEditingResource(resource);
-    setModalMode('edit');
-  };
-
-  const closeModal = () => {
-    if (saving) {
-      return;
-    }
-    setModalMode(null);
-    setEditingResource(null);
-  };
-
-  const handleCreateResource = async (input: AiResourceCreateInput) => {
-    setSaving(true);
-    try {
-      const created = await ChannelAiResourceService.createAiResource(input);
-      setResources((current) => [created, ...current]);
-      showToast(t('admin.channel.aiResources.messages.created'));
-      setLoadError(null);
-      setModalMode(null);
-      setEditingResource(null);
-    } catch (err) {
-      const message = err instanceof Error ? err.message : t('admin.channel.aiResources.errors.saveFailed');
-      showToast(message, 'error');
-      throw err;
-    } finally {
-      setSaving(false);
-    }
-  };
-
-  const handleUpdateResource = async (input: AiResourceUpdateInput) => {
-    if (!editingResource) {
-      return;
-    }
-    setSaving(true);
-    try {
-      const updated = await ChannelAiResourceService.updateAiResource(editingResource.id, input);
-      setResources((current) => current.map((item) => (item.id === updated.id ? updated : item)));
-      showToast(t('admin.channel.aiResources.messages.updated'));
-      setLoadError(null);
-      setModalMode(null);
-      setEditingResource(null);
-    } catch (err) {
-      const message = err instanceof Error ? err.message : t('admin.channel.aiResources.errors.saveFailed');
-      showToast(message, 'error');
-      throw err;
-    } finally {
-      setSaving(false);
-    }
-  };
-
-  const handleUpdateResourceStatus = async (resource: AiResource) => {
-    const nextStatus: AiResource['status'] = resource.status === 'active' ? 'disabled' : 'active';
-    setPendingResourceId(resource.id);
-    setPendingAction('status');
-    try {
-      const updated = await ChannelAiResourceService.updateAiResource(resource.id, { status: nextStatus });
-      setResources((current) => current.map((item) => (item.id === updated.id ? updated : item)));
-      showToast(
-        nextStatus === 'active'
-          ? t('admin.channel.aiResources.messages.enabled')
-          : t('admin.channel.aiResources.messages.disabled'),
-        'info',
-      );
-    } catch (err) {
-      showToast(err instanceof Error ? err.message : t('admin.channel.aiResources.errors.updateFailed'), 'error');
-    } finally {
-      setPendingResourceId(null);
-      setPendingAction(null);
-    }
-  };
-
-  return (
-    <div className="flex h-full min-h-0 w-full flex-col gap-4 overflow-hidden">
-      {toast && (
-        <div
-          className={`fixed right-6 top-6 z-40 rounded-lg border px-4 py-3 text-sm shadow-lg ${
-            toast.type === 'error'
-              ? 'border-red-200 bg-red-50 text-red-700 dark:border-red-500/20 dark:bg-red-500/10 dark:text-red-300'
-              : 'border-emerald-200 bg-emerald-50 text-emerald-700 dark:border-emerald-500/20 dark:bg-emerald-500/10 dark:text-emerald-300'
-          }`}
-        >
-          {toast.message}
-        </div>
-      )}
-      <div className="flex shrink-0 flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <div>
-          <h2 className="text-xl font-bold text-slate-900 dark:text-white">{t('admin.channel.aiResources.title')}</h2>
-          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">{t('admin.channel.aiResources.subtitle')}</p>
-        </div>
-        <div className="flex w-full flex-col gap-2 sm:w-auto sm:flex-row sm:items-center">
-          <div className="relative w-full sm:w-80">
-            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
-            <input
-              type="text"
-              placeholder={t('admin.channel.aiResources.searchPlaceholder')}
-              value={search}
-              onChange={(event) => setSearch(event.target.value)}
-              className="w-full rounded-lg border border-slate-200 bg-white py-2 pl-9 pr-4 text-sm text-slate-900 shadow-sm transition-colors placeholder-slate-500 focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-[#1e1e1e] dark:text-white"
-            />
-          </div>
-          <button
-            type="button"
-            onClick={openCreateModal}
-            className="flex w-full items-center justify-center gap-2 rounded-lg bg-emerald-600 px-4 py-2 text-sm font-medium text-white shadow-lg shadow-emerald-500/20 transition-colors hover:bg-emerald-700 sm:w-auto"
-          >
-            <Plus className="h-4 w-4" />
-            {t('admin.channel.aiResources.actions.add')}
-          </button>
-        </div>
-      </div>
-
-      <AdminTableShell
-        data-admin-channel-ai-resource-table-card
-        className="flex-1 min-h-0 rounded-xl dark:bg-[#1a1a1a]"
-        viewportClassName="min-h-0 flex-1"
-        viewportProps={{ 'data-admin-channel-ai-resource-table-viewport': true }}
-        footer={(
-          <div className="flex items-center justify-between border-t border-slate-200 bg-slate-50 p-4 text-sm text-slate-500 dark:border-white/10 dark:bg-[#121212] dark:text-slate-400">
-            {t('admin.channel.aiResources.total', { count: filteredResources.length })}
-          </div>
-        )}
-      >
-        <div className="contents">
-          <table className="w-full text-left text-sm text-slate-600 dark:text-slate-400">
-            <thead className="sticky top-0 z-10 border-b border-slate-200 bg-slate-50 text-xs font-semibold uppercase text-slate-500 dark:border-white/10 dark:bg-[#121212] dark:text-slate-400">
-              <tr>
-                <th className="px-6 py-4">{t('admin.channel.aiResources.table.resource')}</th>
-                <th className="px-6 py-4">{t('admin.channel.aiResources.table.kind')}</th>
-                <th className="px-6 py-4">{t('admin.channel.aiResources.table.vendor')}</th>
-                <th className="px-6 py-4">{t('admin.channel.aiResources.table.modality')}</th>
-                <th className="px-6 py-4">{t('admin.channel.aiResources.table.apiEndpoint')}</th>
-                <th className="px-6 py-4">{t('admin.channel.aiResources.table.composition')}</th>
-                <th className="px-6 py-4">{t('admin.channel.aiResources.table.status')}</th>
-                <th className="px-6 py-4 text-right">{t('admin.channel.table.actions')}</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-slate-200 dark:divide-white/5">
-              {loading ? (
-                <BusinessStateTableRow colSpan={8} kind="loading" title={t('admin.channel.aiResources.loading')} />
-              ) : loadError ? (
-                <BusinessStateTableRow
-                  colSpan={8}
-                  kind="error"
-                  title={t('admin.channel.aiResources.loadError')}
-                  description={loadError}
-                  onRetry={() => void loadResources()}
-                />
-              ) : filteredResources.length === 0 ? (
-                <BusinessStateTableRow
-                  colSpan={8}
-                  kind="empty"
-                  title={t('admin.channel.aiResources.empty')}
-                  description={resources.length === 0
-                    ? t('admin.channel.aiResources.emptyDescription')
-                    : t('admin.channel.aiResources.emptySearchDescription')}
-                  action={resources.length === 0 ? { label: t('admin.channel.aiResources.actions.add'), onClick: openCreateModal } : undefined}
-                />
-              ) : (
-                filteredResources.map((resource) => (
-                  <tr key={resource.resourceCode} className="transition-colors hover:bg-slate-50 dark:hover:bg-white/5">
-                    <td className="px-6 py-4 align-top">
-                      <div className="max-w-md">
-                        <div className="truncate font-semibold text-slate-900 dark:text-white">{resource.displayName}</div>
-                        <div className="mt-1 truncate font-mono text-xs text-slate-500 dark:text-slate-400">{resource.resourceCode}</div>
-                        {resource.providerNativeModel && (
-                          <div className="mt-1 truncate font-mono text-[11px] text-slate-400">{resource.providerNativeModel}</div>
-                        )}
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 align-top">
-                      <span className="rounded-md bg-slate-100 px-2 py-1 text-xs font-medium text-slate-600 dark:bg-white/10 dark:text-slate-300">
-                        {displayAiResourceCategory(resource, t)}
-                      </span>
-                    </td>
-                    <td className="px-6 py-4 align-top font-mono text-xs">{resource.vendorCode ?? '-'}</td>
-                    <td className="px-6 py-4 align-top font-mono text-xs">{resource.modalityCode ?? '-'}</td>
-                    <td className="px-6 py-4 align-top font-mono text-xs">{resource.apiEndpointCode ?? '-'}</td>
-                    <td className="px-6 py-4 align-top text-xs">
-                      {t(`admin.channel.aiResources.composition.${resource.compositionMode}`)}
-                      {resource.members.length > 0 && (
-                        <span className="ml-2 text-slate-400">
-                          {t('admin.channel.aiResources.memberCount', { count: resource.members.length })}
-                        </span>
-                      )}
-                    </td>
-                    <td className="px-6 py-4 align-top text-xs">
-                      {t(`admin.channel.aiResources.status.${resource.status}`)}
-                    </td>
-                    <td className="px-6 py-4 text-right align-top">
-                      <div className="flex items-center justify-end gap-1">
-                        <IconButton
-                          title={t('admin.channel.aiResources.actions.edit')}
-                          onClick={() => openEditModal(resource)}
-                          disabled={pendingResourceId === resource.id}
-                        >
-                          <Edit2 className="h-4 w-4" />
-                        </IconButton>
-                        <IconButton
-                          title={resource.status === 'active'
-                            ? t('admin.channel.aiResources.actions.disable')
-                            : t('admin.channel.aiResources.actions.enable')}
-                          onClick={() => void handleUpdateResourceStatus(resource)}
-                          disabled={pendingResourceId === resource.id}
-                          tone="warning"
-                        >
-                          {pendingResourceId === resource.id && pendingAction === 'status' ? (
-                            <Loader2 className="h-4 w-4 animate-spin" />
-                          ) : resource.status === 'active' ? (
-                            <Ban className="h-4 w-4" />
-                          ) : (
-                            <CheckCircle className="h-4 w-4" />
-                          )}
-                        </IconButton>
-                      </div>
-                    </td>
-                  </tr>
-                ))
-              )}
-            </tbody>
-          </table>
-        </div>
-      </AdminTableShell>
-
-      {modalMode && (
-        <AiResourceFormModal
-          mode={modalMode}
-          resource={editingResource}
-          availableModels={modelCatalog}
-          availableResources={resources}
-          isSaving={saving}
-          onClose={closeModal}
-          onCreateSubmit={handleCreateResource}
-          onUpdateSubmit={handleUpdateResource}
-        />
-      )}
-    </div>
-  );
-}
-
-export function ChannelEndpointAdmin() {
-  const { t } = useTranslation();
-  const [endpoints, setEndpoints] = useState<ChannelEndpoint[]>([]);
-  const [channels, setChannels] = useState<ChannelEndpointChannelOption[]>([]);
-  const [search, setSearch] = useState('');
-  const [loading, setLoading] = useState(true);
-  const [loadError, setLoadError] = useState<string | null>(null);
-  const [modalMode, setModalMode] = useState<ChannelEndpointModalMode | null>(null);
-  const [editingEndpoint, setEditingEndpoint] = useState<ChannelEndpoint | null>(null);
-  const [saving, setSaving] = useState(false);
-  const [pendingEndpointId, setPendingEndpointId] = useState<string | null>(null);
-  const [pendingAction, setPendingAction] = useState<PendingChannelEndpointAction | null>(null);
-  const [toast, setToast] = useState<ToastState>(null);
-
-  const loadData = useCallback(async (isActive: () => boolean = () => true) => {
-    setLoading(true);
-    setLoadError(null);
-    try {
-      const [endpointItems, channelItems] = await Promise.all([
-        ChannelEndpointService.fetchChannelEndpoints(),
-        ChannelService.fetchChannelEndpointOptions(),
-      ]);
-      if (isActive()) {
-        setEndpoints(endpointItems);
-        setChannels(channelItems);
-      }
-    } catch (err) {
-      if (isActive()) {
-        setLoadError(getLoadErrorMessage(err, t('admin.channel.channelEndpoints.loadError')));
-      }
-    } finally {
-      if (isActive()) {
-        setLoading(false);
-      }
-    }
-  }, [t]);
-
-  useEffect(() => {
-    let active = true;
-    void loadData(() => active);
-    return () => {
-      active = false;
-    };
-  }, [loadData]);
-
-  const filteredEndpoints = useMemo(() => {
-    const keyword = search.trim().toLowerCase();
-    if (!keyword) {
-      return endpoints;
-    }
-    return endpoints.filter((endpoint) => [
-      endpoint.channelId,
-      endpoint.providerCode,
-      endpoint.channelCode,
-      endpoint.channelType,
-      endpoint.vendorCode,
-      endpoint.regionCode,
-      endpoint.apiEndpointCode,
-      endpoint.baseUrl,
-      endpoint.healthStatus,
-      endpoint.status,
-    ].join(' ').toLowerCase().includes(keyword));
-  }, [endpoints, search]);
-
-  const showToast = useCallback((message: string, type: 'success' | 'info' | 'error' = 'success') => {
-    setToast({ message, type });
-    window.setTimeout(() => setToast(null), 3000);
-  }, []);
-
-  const openCreateModal = () => {
-    setEditingEndpoint(null);
-    setModalMode('create');
-  };
-
-  const openEditModal = (endpoint: ChannelEndpoint) => {
-    setEditingEndpoint(endpoint);
-    setModalMode('edit');
-  };
-
-  const closeModal = () => {
-    if (saving) {
-      return;
-    }
-    setModalMode(null);
-    setEditingEndpoint(null);
-  };
-
-  const handleCreateEndpoint = async (input: ChannelEndpointCreateInput) => {
-    setSaving(true);
-    try {
-      const created = await ChannelEndpointService.createChannelEndpoint(input);
-      setEndpoints((current) => [created, ...current]);
-      showToast(t('admin.channel.channelEndpoints.messages.created'));
-      setLoadError(null);
-      setModalMode(null);
-      setEditingEndpoint(null);
-    } catch (err) {
-      const message = err instanceof Error ? err.message : t('admin.channel.channelEndpoints.errors.saveFailed');
-      showToast(message, 'error');
-      throw err;
-    } finally {
-      setSaving(false);
-    }
-  };
-
-  const handleUpdateEndpoint = async (input: ChannelEndpointUpdateInput) => {
-    if (!editingEndpoint) {
-      return;
-    }
-    setSaving(true);
-    try {
-      const updated = await ChannelEndpointService.updateChannelEndpoint(editingEndpoint.id, input);
-      setEndpoints((current) => current.map((item) => (item.id === updated.id ? updated : item)));
-      showToast(t('admin.channel.channelEndpoints.messages.updated'));
-      setLoadError(null);
-      setModalMode(null);
-      setEditingEndpoint(null);
-    } catch (err) {
-      const message = err instanceof Error ? err.message : t('admin.channel.channelEndpoints.errors.saveFailed');
-      showToast(message, 'error');
-      throw err;
-    } finally {
-      setSaving(false);
-    }
-  };
-
-  const handleUpdateEndpointStatus = async (endpoint: ChannelEndpoint) => {
-    const nextStatus: ChannelEndpoint['status'] = endpoint.status === 'active' ? 'disabled' : 'active';
-    setPendingEndpointId(endpoint.id);
-    setPendingAction('status');
-    try {
-      const updated = await ChannelEndpointService.updateChannelEndpoint(endpoint.id, { status: nextStatus });
-      setEndpoints((current) => current.map((item) => (item.id === updated.id ? updated : item)));
-      showToast(
-        nextStatus === 'active'
-          ? t('admin.channel.channelEndpoints.messages.enabled')
-          : t('admin.channel.channelEndpoints.messages.disabled'),
-        'info',
-      );
-    } catch (err) {
-      showToast(err instanceof Error ? err.message : t('admin.channel.channelEndpoints.errors.updateFailed'), 'error');
-    } finally {
-      setPendingEndpointId(null);
-      setPendingAction(null);
-    }
-  };
-
-  return (
-    <div className="flex h-full min-h-0 w-full flex-col gap-4 overflow-hidden">
-      {toast && (
-        <div
-          className={`fixed right-6 top-6 z-40 rounded-lg border px-4 py-3 text-sm shadow-lg ${
-            toast.type === 'error'
-              ? 'border-red-200 bg-red-50 text-red-700 dark:border-red-500/20 dark:bg-red-500/10 dark:text-red-300'
-              : 'border-emerald-200 bg-emerald-50 text-emerald-700 dark:border-emerald-500/20 dark:bg-emerald-500/10 dark:text-emerald-300'
-          }`}
-        >
-          {toast.message}
-        </div>
-      )}
-
-      <div className="flex shrink-0 flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <div>
-          <h2 className="text-xl font-bold text-slate-900 dark:text-white">{t('admin.channel.channelEndpoints.title')}</h2>
-          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">{t('admin.channel.channelEndpoints.subtitle')}</p>
-        </div>
-        <div className="flex w-full flex-col gap-2 sm:w-auto sm:flex-row sm:items-center">
-          <div className="relative w-full sm:w-80">
-            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
-            <input
-              type="text"
-              placeholder={t('admin.channel.channelEndpoints.searchPlaceholder')}
-              value={search}
-              onChange={(event) => setSearch(event.target.value)}
-              className="w-full rounded-lg border border-slate-200 bg-white py-2 pl-9 pr-4 text-sm text-slate-900 shadow-sm transition-colors placeholder-slate-500 focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-[#1e1e1e] dark:text-white"
-            />
-          </div>
-          <button
-            type="button"
-            onClick={openCreateModal}
-            className="flex w-full items-center justify-center gap-2 rounded-lg bg-emerald-600 px-4 py-2 text-sm font-medium text-white shadow-lg shadow-emerald-500/20 transition-colors hover:bg-emerald-700 sm:w-auto"
-          >
-            <Plus className="h-4 w-4" />
-            {t('admin.channel.channelEndpoints.actions.add')}
-          </button>
-        </div>
-      </div>
-
-      <AdminTableShell
-        data-admin-channel-endpoint-table-card
-        className="flex-1 min-h-0 rounded-xl dark:bg-[#1a1a1a]"
-        viewportClassName="min-h-0 flex-1"
-        viewportProps={{ 'data-admin-channel-endpoint-table-viewport': true }}
-        footer={(
-          <div className="flex items-center justify-between border-t border-slate-200 bg-slate-50 p-4 text-sm text-slate-500 dark:border-white/10 dark:bg-[#121212] dark:text-slate-400">
-            {t('admin.channel.channelEndpoints.total', { count: filteredEndpoints.length })}
-          </div>
-        )}
-      >
-        <div className="contents">
-          <table className="w-full text-left text-sm text-slate-600 dark:text-slate-400">
-            <thead className="sticky top-0 z-10 border-b border-slate-200 bg-slate-50 text-xs font-semibold uppercase text-slate-500 dark:border-white/10 dark:bg-[#121212] dark:text-slate-400">
-              <tr>
-                <th className="px-6 py-4">{t('admin.channel.channelEndpoints.table.channel')}</th>
-                <th className="px-6 py-4">{t('admin.channel.channelEndpoints.table.scope')}</th>
-                <th className="px-6 py-4">{t('admin.channel.channelEndpoints.table.baseUrl')}</th>
-                <th className="px-6 py-4">{t('admin.channel.channelEndpoints.table.routing')}</th>
-                <th className="px-6 py-4">{t('admin.channel.channelEndpoints.table.health')}</th>
-                <th className="px-6 py-4">{t('admin.channel.channelEndpoints.table.status')}</th>
-                <th className="px-6 py-4 text-right">{t('admin.channel.table.actions')}</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-slate-200 dark:divide-white/5">
-              {loading ? (
-                <BusinessStateTableRow colSpan={7} kind="loading" title={t('admin.channel.channelEndpoints.loading')} />
-              ) : loadError ? (
-                <BusinessStateTableRow
-                  colSpan={7}
-                  kind="error"
-                  title={t('admin.channel.channelEndpoints.loadError')}
-                  description={loadError}
-                  onRetry={() => void loadData()}
-                />
-              ) : filteredEndpoints.length === 0 ? (
-                <BusinessStateTableRow
-                  colSpan={7}
-                  kind="empty"
-                  title={t('admin.channel.channelEndpoints.empty')}
-                  description={endpoints.length === 0
-                    ? t('admin.channel.channelEndpoints.emptyDescription')
-                    : t('admin.channel.channelEndpoints.emptySearchDescription')}
-                  action={endpoints.length === 0 ? { label: t('admin.channel.channelEndpoints.actions.add'), onClick: openCreateModal } : undefined}
-                />
-              ) : (
-                filteredEndpoints.map((endpoint) => (
-                  <tr key={endpoint.id} className="transition-colors hover:bg-slate-50 dark:hover:bg-white/5">
-                    <td className="px-6 py-4 align-top">
-                      <div className="space-y-1">
-                        <div className="font-medium text-slate-900 dark:text-white">{endpoint.providerCode}</div>
-                        <div className="font-mono text-xs text-slate-500 dark:text-slate-400">{endpoint.channelCode}</div>
-                        <div className="text-xs text-slate-500 dark:text-slate-400">
-                          {t(`admin.channel.channelType.${endpoint.channelType}`)} / {endpoint.channelId}
-                        </div>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 align-top">
-                      <div className="space-y-1 font-mono text-xs">
-                        <div>{endpoint.vendorCode}</div>
-                        <div className="text-slate-500 dark:text-slate-400">{endpoint.regionCode}</div>
-                        <div className="text-cyan-700 dark:text-cyan-300">{endpoint.apiEndpointCode}</div>
-                      </div>
-                    </td>
-                    <td className="max-w-md px-6 py-4 align-top">
-                      <div className="truncate font-mono text-xs text-slate-700 dark:text-slate-300" title={endpoint.baseUrl}>
-                        {endpoint.baseUrl}
-                      </div>
-                      {(endpoint.effectiveFrom || endpoint.effectiveTo) && (
-                        <div className="mt-1 text-[11px] text-slate-400">
-                          {displayChannelTime(endpoint.effectiveFrom, '-')}&nbsp;-&nbsp;{displayChannelTime(endpoint.effectiveTo, '-')}
-                        </div>
-                      )}
-                    </td>
-                    <td className="px-6 py-4 align-top font-mono text-xs">
-                      P{endpoint.priority} / W{endpoint.weight}
-                    </td>
-                    <td className="px-6 py-4 align-top text-xs">
-                      {t(`admin.channel.channelEndpoints.health.${endpoint.healthStatus}`)}
-                    </td>
-                    <td className="px-6 py-4 align-top text-xs">
-                      {t(`admin.channel.channelEndpoints.status.${endpoint.status}`)}
-                    </td>
-                    <td className="px-6 py-4 text-right align-top">
-                      <div className="flex items-center justify-end gap-1">
-                        <IconButton
-                          title={t('admin.channel.channelEndpoints.actions.edit')}
-                          onClick={() => openEditModal(endpoint)}
-                          disabled={pendingEndpointId === endpoint.id}
-                        >
-                          <Edit2 className="h-4 w-4" />
-                        </IconButton>
-                        <IconButton
-                          title={endpoint.status === 'active'
-                            ? t('admin.channel.channelEndpoints.actions.disable')
-                            : t('admin.channel.channelEndpoints.actions.enable')}
-                          onClick={() => void handleUpdateEndpointStatus(endpoint)}
-                          disabled={pendingEndpointId === endpoint.id}
-                          tone="warning"
-                        >
-                          {pendingEndpointId === endpoint.id && pendingAction === 'status' ? (
-                            <Loader2 className="h-4 w-4 animate-spin" />
-                          ) : endpoint.status === 'active' ? (
-                            <Ban className="h-4 w-4" />
-                          ) : (
-                            <CheckCircle className="h-4 w-4" />
-                          )}
-                        </IconButton>
-                      </div>
-                    </td>
-                  </tr>
-                ))
-              )}
-            </tbody>
-          </table>
-        </div>
-      </AdminTableShell>
-
-      {modalMode && (
-        <ChannelEndpointFormModal
-          mode={modalMode}
-          endpoint={editingEndpoint}
-          channels={channels}
-          isSaving={saving}
-          onClose={closeModal}
-          onCreateSubmit={handleCreateEndpoint}
-          onUpdateSubmit={handleUpdateEndpoint}
-        />
-      )}
-    </div>
-  );
-}
-
 export function ChannelAdmin() {
   const { t } = useTranslation();
   const [search, setSearch] = useState('');
@@ -3732,7 +3000,14 @@ export function ChannelAdmin() {
     const keyword = search.trim().toLowerCase();
     return channels.filter((channel) => {
       const matchesTab = activeTab === 'all' || channel.vendor === activeTab;
-      const searchable = [channel.name, channel.vendor, ...channel.models].join(' ').toLowerCase();
+      const searchable = [
+        channel.name,
+        channel.vendor,
+        channel.accessType,
+        channel.channelType,
+        ...channel.capabilities,
+        ...channel.resourceCodes,
+      ].join(' ').toLowerCase();
       return matchesTab && (!keyword || searchable.includes(keyword));
     });
   }, [activeTab, channels, search]);
@@ -3750,12 +3025,23 @@ export function ChannelAdmin() {
     setEditingChannel(channel);
     setChannelFormDraft(createChannelEditDraft(channel));
     setModalMode('edit');
+    void draftWithAccountModelMappings(channel, createChannelEditDraft(channel));
   };
 
   const openCopyCreateModal = (channel: ChannelItem) => {
     setEditingChannel(null);
     setChannelFormDraft(createChannelCopyDraft(channel));
     setModalMode('copy');
+    void draftWithAccountModelMappings(channel, createChannelCopyDraft(channel));
+  };
+
+  const draftWithAccountModelMappings = async (channel: ChannelItem, draft: ChannelFormValues) => {
+    try {
+      const modelMappings = await AccountModelMappingService.fetchAccountMappings(channel.channelId);
+      setChannelFormDraft({ ...draft, modelMappings });
+    } catch (err) {
+      showToast(err instanceof Error ? err.message : t('admin.channel.errors.channelSaveFailed'), 'error');
+    }
   };
 
   const closeModal = () => {
@@ -3788,6 +3074,12 @@ export function ChannelAdmin() {
     try {
       if (modalMode === 'edit' && editingChannel) {
         const updated = await ChannelService.updateChannel(editingChannel.id, createChannelUpdateInputFromForm(channel));
+        await AccountModelMappingService.replaceAccountMappings({
+          channelId: updated.channelId,
+          channelName: updated.name,
+          accountVendorCode: providerCodeForVendor(channel.vendor),
+          mappings: channel.modelMappings ?? [],
+        });
         if (updated) {
           setChannels((current) => current.map((item) => (item.id === editingChannel.id ? updated : item)));
         }
@@ -3795,6 +3087,12 @@ export function ChannelAdmin() {
         showToast(t('admin.channel.messages.channelUpdated'));
       } else {
         const added = await ChannelService.addChannel(createChannelInputFromForm(channel));
+        await AccountModelMappingService.replaceAccountMappings({
+          channelId: added.channelId,
+          channelName: added.name,
+          accountVendorCode: providerCodeForVendor(channel.vendor),
+          mappings: channel.modelMappings ?? [],
+        });
         setChannels((current) => [added, ...current]);
         setLoadError(null);
         showToast(t('admin.channel.messages.channelCreated'));
@@ -3975,7 +3273,6 @@ export function ChannelAdmin() {
                 <th className="px-6 py-4">{t('admin.channel.table.channel')}</th>
                 <th className="px-6 py-4">{t('admin.channel.table.provider')}</th>
                 <th className="px-6 py-4">{t('admin.channel.table.credentials')}</th>
-                <th className="px-6 py-4 w-48">{t('admin.channel.table.models')}</th>
                 <th className="px-6 py-4">{t('admin.channel.table.weight')}</th>
                 <th className="px-6 py-4">{t('admin.channel.table.status')}</th>
                 <th className="px-6 py-4">{t('admin.channel.table.createdAt')}</th>
@@ -3985,10 +3282,10 @@ export function ChannelAdmin() {
             </thead>
             <tbody className="divide-y divide-slate-200 dark:divide-white/5">
               {loading ? (
-                <BusinessStateTableRow colSpan={9} kind="loading" title={t('admin.channel.states.loadingChannels')} />
+                <BusinessStateTableRow colSpan={8} kind="loading" title={t('admin.channel.states.loadingChannels')} />
               ) : loadError ? (
                 <BusinessStateTableRow
-                  colSpan={9}
+                  colSpan={8}
                   kind="error"
                   title={t('admin.channel.states.channelsLoadErrorTitle')}
                   description={loadError}
@@ -3996,7 +3293,7 @@ export function ChannelAdmin() {
                 />
               ) : paginatedChannels.length === 0 ? (
                 <BusinessStateTableRow
-                  colSpan={9}
+                  colSpan={8}
                   kind="empty"
                   title={t('admin.channel.states.emptyChannelsTitle')}
                   description={
@@ -4064,9 +3361,6 @@ export function ChannelAdmin() {
                     </td>
                     <td className="px-6 py-4 align-top">
                       <CredentialSummaryCell channel={channel} />
-                    </td>
-                    <td className="px-6 py-4 align-top">
-                      <ChannelModelsCell models={channel.models} />
                     </td>
                     <td className="px-6 py-4 font-mono font-medium text-slate-700 dark:text-slate-300 align-top">{channel.weight}</td>
                     <td className="px-6 py-4 align-top">
@@ -4225,46 +3519,6 @@ function CapabilityBadges({ capabilities }: { capabilities: string[] }) {
           </span>
         );
       })}
-    </div>
-  );
-}
-
-function ChannelModelsCell({ models }: { models: string[] }) {
-  const { t } = useTranslation();
-  const [open, setOpen] = useState(false);
-
-  return (
-    <div className="relative inline-flex">
-      <button
-        type="button"
-        onClick={() => setOpen((current) => !current)}
-        className="inline-flex h-8 items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-2.5 text-xs font-medium text-slate-700 shadow-sm transition-colors hover:border-emerald-300 hover:text-emerald-700 dark:border-white/10 dark:bg-black dark:text-slate-300 dark:hover:border-emerald-500/50 dark:hover:text-emerald-300"
-      >
-        <Layers className="h-3.5 w-3.5 text-slate-400" />
-        {t('admin.channel.modelCount', { count: models.length })}
-      </button>
-      {open && (
-        <>
-          <button
-            type="button"
-            aria-label={t('common.actions.close')}
-            className="fixed inset-0 z-20 cursor-default bg-transparent"
-            onClick={() => setOpen(false)}
-          />
-          <div className="absolute left-0 top-9 z-30 w-80 max-w-[calc(100vw-2rem)] rounded-lg border border-slate-200 bg-white p-2 shadow-xl dark:border-white/10 dark:bg-[#1a1a1a]">
-            <div className="max-h-64 overflow-y-auto pr-1">
-              {models.map((model) => (
-                <div
-                  key={model}
-                  className="mb-1 last:mb-0 rounded-md bg-slate-50 px-2 py-1.5 font-mono text-xs text-slate-700 dark:bg-black dark:text-slate-300"
-                >
-                  {model}
-                </div>
-              ))}
-            </div>
-          </div>
-        </>
-      )}
     </div>
   );
 }

@@ -500,6 +500,7 @@ async fn app_model_catalog_route_returns_public_plus_result_without_secret_mater
     assert!(!body_text.contains("keyHash"));
     assert!(!body_text.contains("key_hash"));
     assert!(!body_text.contains("99.000000"));
+    assert_public_model_catalog_response_has_no_sensitive_material(&body_text);
 }
 
 #[tokio::test]
@@ -536,6 +537,7 @@ async fn app_model_catalog_route_returns_complete_public_reference_prices_in_one
     assert!(!body_text.contains("99.000000"));
     assert!(!body_text.contains("customerUnitPrice"));
     assert!(!body_text.contains("grossMarginPerUnit"));
+    assert_public_model_catalog_response_has_no_sensitive_material(&body_text);
 }
 
 #[tokio::test]
@@ -632,8 +634,8 @@ async fn app_model_catalog_route_returns_public_taxonomy_and_filters_server_side
     );
     catalog.add_provider_channel_route(
         ProviderChannelRoute::new("openrouter", 3001)
-            .with_scoped_group_binding(10, 10, 100, vec!["openai/gpt-4o-mini"], vec!["llm"])
-            .with_scoped_group_binding(11, 20, 100, Vec::<String>::new(), vec!["tools"]),
+            .with_resource_scoped_group_binding(10, 10, 100, Vec::<String>::new(), vec!["llm"])
+            .with_resource_scoped_group_binding(11, 20, 100, Vec::<String>::new(), vec!["tools"]),
     );
     let router = sdkwork_claw_product::api::app_model_catalog_router(Arc::new(catalog));
     let response = router
@@ -668,7 +670,7 @@ async fn app_model_catalog_route_returns_public_taxonomy_and_filters_server_side
     assert_eq!(
         serde_json::json!([
             { "key": "premium-lab", "label": "Premium Lab", "modelCount": 1 },
-            { "key": "standard-group", "label": "standard-group", "modelCount": 1 },
+            { "key": "standard-group", "label": "standard-group", "modelCount": 3 },
             { "key": "empty-admin-group", "label": "Empty Admin Group", "modelCount": 0 }
         ]),
         payload["data"]["groups"]
@@ -766,4 +768,42 @@ fn assert_no_model_catalog_price(item: &serde_json::Value, billing_meter: &str) 
             .any(|price| price["billingMeter"] == billing_meter),
         "unexpected official reference price for {billing_meter}"
     );
+}
+
+fn assert_public_model_catalog_response_has_no_sensitive_material(body_text: &str) {
+    for sensitive in [
+        "lowestUpstreamCostUnitPrice",
+        "lowest_upstream_cost_unit_price",
+        "upstreamCost",
+        "upstream_cost",
+        "upstreamCostAmount",
+        "upstream_cost_amount",
+        "costAmount",
+        "cost_amount",
+        "costPrice",
+        "cost_price",
+        "customerUnitPrice",
+        "customer_unit_price",
+        "customerChargeAmount",
+        "customer_charge_amount",
+        "grossMarginPerUnit",
+        "gross_margin_per_unit",
+        "pricingPlanCode",
+        "pricing_plan_code",
+        "pricingSnapshot",
+        "pricing_snapshot",
+        "groupCode",
+        "group_code",
+        "secretRef",
+        "secret_ref",
+        "credentialRef",
+        "credential_ref",
+        "keyHash",
+        "key_hash",
+    ] {
+        assert!(
+            !body_text.contains(sensitive),
+            "public app model catalog response must not expose sensitive field {sensitive}"
+        );
+    }
 }

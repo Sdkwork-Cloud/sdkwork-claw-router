@@ -315,7 +315,7 @@ async fn load_ranking_aggregates(
                 m.context_tokens,
                 SUM(COALESCE(u.request_count, 1)) AS request_count,
                 SUM(COALESCE(u.total_tokens, 0)) AS token_count,
-                SUM(CAST(COALESCE(NULLIF(CAST(u.cost_amount AS TEXT), ''), '0') AS REAL)) AS cost_amount,
+                SUM(CAST(COALESCE(NULLIF(CAST(u.customer_charge_amount AS TEXT), ''), '0') AS REAL)) AS cost_amount,
                 COALESCE(NULLIF(MAX(u.currency), ''), 'USD') AS currency
             FROM ai_usage_fact u
             JOIN model_scope m

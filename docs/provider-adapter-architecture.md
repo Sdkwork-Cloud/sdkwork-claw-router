@@ -116,8 +116,8 @@ For production deployments, prefer split manifest configuration so the registry 
 ```toml
 [provider_adapter]
 adapter_base_url = "http://127.0.0.1:39110"
-manifest_file = "/etc/clawrouter/provider-adapter-manifest.json"
-gateway_token_file = "/etc/clawrouter/provider-adapter-token.secret"
+manifest_file = "/etc/sdkwork/router/provider-adapter-manifest.json"
+gateway_token_file = "/etc/sdkwork/router/provider-adapter-token.secret"
 ```
 
 The equivalent environment variables are:

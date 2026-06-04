@@ -14,10 +14,24 @@ const PACKAGE_NAME = 'clawrouter';
 const RUNTIME_DISPLAY_NAME = 'SdkWork ClawRouter';
 const EDGE_BINARY_BASENAME = 'clawrouter';
 const INSTALLER_BINARY_BASENAME = 'clawrouterctl';
-const POSIX_INSTALL_ROOT = '/opt/clawrouter';
-const WINDOWS_INSTALL_ROOT = 'C:/clawrouter';
+const POSIX_INSTALL_ROOT = '/opt/sdkwork/router';
+const LINUX_SERVICE_RUNTIME_ROOT = '/usr/lib/sdkwork/router';
+const LINUX_SERVICE_CONFIG_ROOT = '/etc/sdkwork/router';
+const LINUX_SERVICE_DATA_ROOT = '/var/lib/sdkwork/router';
+const LINUX_SERVICE_LOG_ROOT = '/var/log/sdkwork/router';
+const LINUX_SHARED_ROOT = '/usr/share/sdkwork/router';
+const LINUX_SHARED_DOC_ROOT = '/usr/share/doc/sdkwork/router';
+const MACOS_SHARED_ROOT = '/usr/local/share/sdkwork/router';
+const MACOS_SHARED_DOC_ROOT = '/usr/local/share/doc/sdkwork/router';
+const WINDOWS_INSTALL_ROOT = '%ProgramFiles%/sdkwork/router';
+const WINDOWS_CONTAINER_INSTALL_ROOT = 'C:/sdkwork/router';
+const WINDOWS_SYSTEM_ROOT = '%ProgramData%/sdkwork/router';
+const WINDOWS_USER_ROOT = '%USERPROFILE%/.sdkwork/router';
+const MACOS_SERVICE_ROOT = '/Library/Application Support/sdkwork/router';
+const USER_PRIVATE_ROUTER_ROOT = '~/.sdkwork/router';
+const CONTAINER_SECRET_ROOT = '/run/secrets/sdkwork/router';
 const RUNTIME_CONFIG_TEMPLATE_PATH = 'config/clawrouter.toml.example';
-const POSTGRES_DSN_EXAMPLE = 'postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router';
+const POSTGRES_DSN_EXAMPLE = 'postgresql://sdkworkprod%402026%2B%2B:<password>@db.example.com:5432/sdkwork_ai_prod';
 const FAST_INITIALIZATION_CONTRACT = Object.freeze([
   'host-env-prepare',
   'runtime-config-write',
@@ -376,8 +390,8 @@ function databasePolicyFor({ platform, runtimeProfile, deploymentMode = 'archive
     defaultEngine: 'postgresql',
     defaultHost: 'db.example.com',
     defaultPort: 5432,
-    defaultDatabase: 'sdkwork_claw_router',
-    defaultUsername: 'sdkwork_claw_router',
+    defaultDatabase: 'sdkwork_ai_prod',
+    defaultUsername: 'sdkworkprod@2026++',
     passwordFile: {
       path: passwordFile,
       required: true,
@@ -393,17 +407,17 @@ function databasePolicyFor({ platform, runtimeProfile, deploymentMode = 'archive
 function postgresPasswordFileFor(platform, deploymentMode, locations) {
   if (deploymentMode === 'container') {
     return platform === 'windows'
-      ? 'C:/clawrouter/secrets/postgres-password'
-      : '/run/secrets/clawrouter-postgres-password';
+      ? `${WINDOWS_CONTAINER_INSTALL_ROOT}/secrets/postgres-password`
+      : `${CONTAINER_SECRET_ROOT}/postgres-password`;
   }
   if (platform === 'windows') {
-    return '%ProgramData%/SdkWork/ClawRouter/database.secret';
+    return `${WINDOWS_SYSTEM_ROOT}/database.secret`;
   }
   if (platform === 'macos') {
-    return '/Library/Application Support/SdkWork/ClawRouter/database.secret';
+    return `${MACOS_SERVICE_ROOT}/database.secret`;
   }
-  if (locations.configFile === '/etc/clawrouter/clawrouter.toml') {
-    return '/etc/clawrouter/database.secret';
+  if (locations.configFile === `${LINUX_SERVICE_CONFIG_ROOT}/clawrouter.toml`) {
+    return `${LINUX_SERVICE_CONFIG_ROOT}/database.secret`;
   }
   return `${locations.dataDirectory}/database.secret`;
 }
@@ -411,19 +425,19 @@ function postgresPasswordFileFor(platform, deploymentMode, locations) {
 function redisPasswordFileFor(platform, deploymentMode, locations) {
   if (deploymentMode === 'container') {
     return platform === 'windows'
-      ? 'C:/clawrouter/secrets/redis-password'
-      : '/run/secrets/clawrouter-redis-password';
+      ? `${WINDOWS_CONTAINER_INSTALL_ROOT}/secrets/redis-password`
+      : `${CONTAINER_SECRET_ROOT}/redis-password`;
   }
   if (platform === 'windows') {
     return deploymentMode === 'desktop'
       ? `${locations.dataDirectory}/redis.secret`
-      : '%ProgramData%/SdkWork/ClawRouter/redis.secret';
+      : `${WINDOWS_SYSTEM_ROOT}/redis.secret`;
   }
   if (platform === 'macos') {
     return `${locations.dataDirectory}/redis.secret`;
   }
-  if (locations.configFile === '/etc/clawrouter/clawrouter.toml') {
-    return '/etc/clawrouter/redis.secret';
+  if (locations.configFile === `${LINUX_SERVICE_CONFIG_ROOT}/clawrouter.toml`) {
+    return `${LINUX_SERVICE_CONFIG_ROOT}/redis.secret`;
   }
   return `${locations.dataDirectory}/redis.secret`;
 }
@@ -432,43 +446,43 @@ function runtimeConfigLocationsFor(platform, runtimeProfile) {
   if (runtimeProfile === 'desktop') {
     if (platform === 'windows') {
       return {
-        configFile: '%APPDATA%/SdkWork/ClawRouter/clawrouter.toml',
-        dataDirectory: '%LOCALAPPDATA%/SdkWork/ClawRouter',
-        sqlitePath: '%LOCALAPPDATA%/SdkWork/ClawRouter/clawrouter.sqlite',
+        configFile: `${WINDOWS_USER_ROOT}/config/clawrouter.toml`,
+        dataDirectory: `${WINDOWS_USER_ROOT}/data`,
+        sqlitePath: `${WINDOWS_USER_ROOT}/data/clawrouter.sqlite`,
       };
     }
     if (platform === 'macos') {
       return {
-        configFile: '~/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml',
-        dataDirectory: '~/Library/Application Support/SdkWork/ClawRouter',
-        sqlitePath: '~/Library/Application Support/SdkWork/ClawRouter/clawrouter.sqlite',
+        configFile: `${USER_PRIVATE_ROUTER_ROOT}/config/clawrouter.toml`,
+        dataDirectory: `${USER_PRIVATE_ROUTER_ROOT}/data`,
+        sqlitePath: `${USER_PRIVATE_ROUTER_ROOT}/data/clawrouter.sqlite`,
       };
     }
     return {
-      configFile: '${XDG_CONFIG_HOME:-~/.config}/clawrouter/clawrouter.toml',
-      dataDirectory: '${XDG_DATA_HOME:-~/.local/share}/clawrouter',
-      sqlitePath: '${XDG_DATA_HOME:-~/.local/share}/clawrouter/clawrouter.sqlite',
+      configFile: `${USER_PRIVATE_ROUTER_ROOT}/config/clawrouter.toml`,
+      dataDirectory: `${USER_PRIVATE_ROUTER_ROOT}/data`,
+      sqlitePath: `${USER_PRIVATE_ROUTER_ROOT}/data/clawrouter.sqlite`,
     };
   }
 
   if (platform === 'windows') {
     return {
-      configFile: '%ProgramData%/SdkWork/ClawRouter/clawrouter.toml',
-      dataDirectory: '%ProgramData%/SdkWork/ClawRouter/Data',
-      sqlitePath: '%ProgramData%/SdkWork/ClawRouter/Data/clawrouter.sqlite',
+      configFile: `${WINDOWS_SYSTEM_ROOT}/clawrouter.toml`,
+      dataDirectory: `${WINDOWS_SYSTEM_ROOT}/Data`,
+      sqlitePath: `${WINDOWS_SYSTEM_ROOT}/Data/clawrouter.sqlite`,
     };
   }
   if (platform === 'macos') {
     return {
-      configFile: '/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml',
-      dataDirectory: '/Library/Application Support/SdkWork/ClawRouter',
-      sqlitePath: '/Library/Application Support/SdkWork/ClawRouter/clawrouter.sqlite',
+      configFile: `${MACOS_SERVICE_ROOT}/clawrouter.toml`,
+      dataDirectory: `${MACOS_SERVICE_ROOT}/Data`,
+      sqlitePath: `${MACOS_SERVICE_ROOT}/Data/clawrouter.sqlite`,
     };
   }
   return {
-    configFile: '/etc/clawrouter/clawrouter.toml',
-    dataDirectory: '/var/lib/clawrouter',
-    sqlitePath: '/var/lib/clawrouter/clawrouter.sqlite',
+    configFile: `${LINUX_SERVICE_CONFIG_ROOT}/clawrouter.toml`,
+    dataDirectory: LINUX_SERVICE_DATA_ROOT,
+    sqlitePath: `${LINUX_SERVICE_DATA_ROOT}/clawrouter.sqlite`,
   };
 }
 
@@ -516,8 +530,8 @@ function containerIntegrationFor(platform, deploymentMode, binaryName) {
     return {
       kind: 'container-image',
       baseImagePolicy: 'windows-nanoserver-runtime',
-      entrypoint: `${WINDOWS_INSTALL_ROOT}/bin/${binaryName}`,
-      workingDirectory: WINDOWS_INSTALL_ROOT,
+      entrypoint: `${WINDOWS_CONTAINER_INSTALL_ROOT}/bin/${binaryName}`,
+      workingDirectory: WINDOWS_CONTAINER_INSTALL_ROOT,
       runtimeUser: 'ContainerUser',
       exposedPorts: [3900],
     };
@@ -534,7 +548,7 @@ function containerIntegrationFor(platform, deploymentMode, binaryName) {
 
 function containerEntrypoint(platform, binaryName) {
   if (platform === 'windows') {
-    return `${WINDOWS_INSTALL_ROOT}/bin/${binaryName}`;
+    return `${WINDOWS_CONTAINER_INSTALL_ROOT}/bin/${binaryName}`;
   }
   return `${POSIX_INSTALL_ROOT}/bin/${binaryName}`;
 }
@@ -870,6 +884,14 @@ export {
   INSTALLER_BINARY_BASENAME,
   INSTALL_PACKAGE_SCHEMA_VERSION,
   INTERNAL_PROJECT_NAME,
+  LINUX_SERVICE_CONFIG_ROOT,
+  LINUX_SERVICE_DATA_ROOT,
+  LINUX_SERVICE_LOG_ROOT,
+  LINUX_SERVICE_RUNTIME_ROOT,
+  LINUX_SHARED_DOC_ROOT,
+  LINUX_SHARED_ROOT,
+  MACOS_SHARED_DOC_ROOT,
+  MACOS_SHARED_ROOT,
   PACKAGE_NAME,
   POSIX_INSTALL_ROOT,
   RUNTIME_CONFIG_TEMPLATE_PATH,
@@ -878,7 +900,13 @@ export {
   SUPPORTED_ARCHITECTURES,
   SUPPORTED_DEPLOYMENT_MODES,
   SUPPORTED_PLATFORMS,
+  CONTAINER_SECRET_ROOT,
+  MACOS_SERVICE_ROOT,
+  USER_PRIVATE_ROUTER_ROOT,
+  WINDOWS_CONTAINER_INSTALL_ROOT,
   WINDOWS_INSTALL_ROOT,
+  WINDOWS_SYSTEM_ROOT,
+  WINDOWS_USER_ROOT,
   artifactDeploymentLabelForMode,
   artifactIdForPackage,
   createInstallPackagePlan,

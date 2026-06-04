@@ -377,7 +377,7 @@ frontend_operations:
   - ai_channel_group
   - ai_channel_group_member
   - ai_channel
-  - ai_channel_model
+  - ai_channel_group_resource
   - ai_provider
   query_parameters: []
   response_schema:
@@ -402,9 +402,9 @@ frontend_operations:
           - providerCode
           - providerName
           - channelCode
-          - models
+          - resourceCodes
+          - apiScope
           - capabilities
-          - modelScope
           - priority
           - weight
           - status
@@ -438,7 +438,14 @@ frontend_operations:
               type: string
               minLength: 1
               maxLength: 64
-            models:
+            resourceCodes:
+              type: array
+              maxItems: 200
+              items:
+                type: string
+                minLength: 1
+                maxLength: 128
+            apiScope:
               type: array
               maxItems: 200
               items:
@@ -452,13 +459,6 @@ frontend_operations:
                 type: string
                 minLength: 1
                 maxLength: 64
-            modelScope:
-              type: array
-              maxItems: 200
-              items:
-                type: string
-                minLength: 1
-                maxLength: 128
             priority:
               type: integer
               minimum: 0
@@ -491,7 +491,7 @@ frontend_operations:
   - ai_channel_group
   - ai_channel_group_member
   - ai_channel
-  - ai_channel_model
+  - ai_channel_group_resource
   - ai_provider
   write_tables:
   - ai_channel_group_member
@@ -531,7 +531,14 @@ frontend_operations:
               enum:
               - active
               - disabled
-            modelScope:
+            resourceCodes:
+              type: array
+              maxItems: 200
+              items:
+                type: string
+                minLength: 1
+                maxLength: 128
+            apiScope:
               type: array
               maxItems: 200
               items:
@@ -561,7 +568,7 @@ frontend_operations:
           additionalProperties: false
           required: *adminChannelGroupChannelBindingItemRequired
           properties: *adminChannelGroupChannelBindingItemProperties
-- route: /admin/channel/resources
+- route: /admin/channel
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
   operation: fetchAiResources
   operation_id: aiResources.list
@@ -632,6 +639,17 @@ frontend_operations:
             providerNativeModel:
               type: string
               maxLength: 256
+            capability:
+              type: string
+              nullable: true
+              maxLength: 64
+            capabilities:
+              type: array
+              maxItems: 64
+              items:
+                type: string
+                minLength: 1
+                maxLength: 64
             compositionMode:
               type: string
               enum:
@@ -679,7 +697,7 @@ frontend_operations:
                   sortOrder:
                     type: integer
                     format: int64
-- route: /admin/channel/resources
+- route: /admin/model/resources
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
   operation: createAiResource
   operation_id: aiResources.create
@@ -802,7 +820,7 @@ frontend_operations:
         additionalProperties: false
         required: *adminAiResourceItemRequired
         properties: *adminAiResourceItemProperties
-- route: /admin/channel/resources
+- route: /admin/model/resources
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
   operation: updateAiResource
   operation_id: aiResources.update
@@ -936,6 +954,24 @@ frontend_operations:
               type: string
               nullable: true
               maxLength: 512
+            vendorCodes:
+              type: array
+              maxItems: 64
+              items:
+                type: string
+                minLength: 1
+                maxLength: 64
+            capability:
+              type: string
+              nullable: true
+              maxLength: 64
+            capabilities:
+              type: array
+              maxItems: 64
+              items:
+                type: string
+                minLength: 1
+                maxLength: 64
             sortOrder:
               type: integer
               format: int64
@@ -953,7 +989,7 @@ frontend_operations:
               minimum: 0
             dynamic:
               type: boolean
-- route: /admin/channel/resources
+- route: /admin/channel
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
   operation: fetchAiResourceGroups
   operation_id: aiResourceGroups.list
@@ -1392,7 +1428,6 @@ frontend_operations:
   request_schema:
     name: AdminSiteCreateRequest
     required:
-    - siteCode
     - siteName
     - displayName
     - baseUrl
@@ -1524,7 +1559,6 @@ frontend_operations:
   write_tables:
   - ai_site
   - ai_site_service
-  - ai_site_model
   - ops_audit_log
   response_schema: &adminSiteDeleteResponse
     name: AdminSiteDeleteResponse
@@ -1535,336 +1569,6 @@ frontend_operations:
     properties:
       deleted:
         type: boolean
-- route: /admin/model/sites
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
-  operation: fetchSiteModels
-  operation_id: siteModels.list
-  sdk_domain: sites
-  kind: read
-  api_surface: backend
-  api_method: GET
-  api_path: /backend/v3/api/sites/{siteId}/models
-  path_params:
-  - siteId
-  read_sources:
-  - ai_site_model
-  - ai_site
-  - ai_site_service
-  query_parameters: []
-  response_schema:
-    name: AdminSiteModelsResponse
-    required:
-    - items
-    properties:
-      items:
-        type: array
-        items:
-          name: AdminSiteModelItem
-          type: object
-          additionalProperties: false
-          required: &adminSiteModelItemRequired
-          - id
-          - siteId
-          - siteCode
-          - siteServiceId
-          - serviceType
-          - modelCode
-          - modelName
-          - healthStatus
-          - status
-          properties: &adminSiteModelItemProperties
-            id:
-              type: string
-              minLength: 1
-              maxLength: 128
-            siteId:
-              type: string
-              minLength: 1
-              maxLength: 128
-            siteCode:
-              type: string
-              minLength: 1
-              maxLength: 64
-            siteServiceId:
-              type: string
-              minLength: 1
-              maxLength: 128
-            siteServiceCode:
-              type: string
-              nullable: true
-              maxLength: 64
-            serviceType:
-              type: string
-              enum:
-              - ai_model_relay
-            modelCode:
-              type: string
-              minLength: 1
-              maxLength: 128
-              pattern: ^[A-Za-z0-9._:/-]+$
-            modelName:
-              type: string
-              minLength: 1
-              maxLength: 128
-            displayName:
-              type: string
-              nullable: true
-              maxLength: 128
-            providerModel:
-              type: string
-              nullable: true
-              maxLength: 128
-            providerNativeModel:
-              type: string
-              nullable: true
-              maxLength: 256
-            vendorCode:
-              type: string
-              nullable: true
-              maxLength: 64
-            modality:
-              type: string
-              nullable: true
-              maxLength: 64
-            capabilities:
-              type: array
-              maxItems: 64
-              items:
-                type: string
-                minLength: 1
-                maxLength: 64
-            contextTokens:
-              type: integer
-              format: int64
-              nullable: true
-              minimum: 0
-            maxInputTokens:
-              type: integer
-              format: int64
-              nullable: true
-              minimum: 0
-            maxOutputTokens:
-              type: integer
-              format: int64
-              nullable: true
-              minimum: 0
-            supportsStreaming:
-              type: boolean
-            supportsTools:
-              type: boolean
-            supportsJsonSchema:
-              type: boolean
-            healthStatus:
-              type: string
-              enum:
-              - unknown
-              - healthy
-              - degraded
-              - unhealthy
-            lastLatencyMs:
-              type: integer
-              format: int64
-              nullable: true
-              minimum: 0
-            consecutiveErrorCount:
-              type: integer
-              format: int64
-              minimum: 0
-            lastSyncAt:
-              type: string
-              nullable: true
-            status:
-              type: string
-              enum:
-              - active
-              - disabled
-- route: /admin/model/sites
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
-  operation: createSiteModel
-  operation_id: siteModels.create
-  sdk_domain: sites
-  kind: create
-  api_surface: backend
-  api_method: POST
-  api_path: /backend/v3/api/sites/{siteId}/models
-  path_params:
-  - siteId
-  read_sources:
-  - ai_site_model
-  - ai_site
-  - ai_site_service
-  write_tables:
-  - ai_site_model
-  - ops_audit_log
-  request_schema:
-    name: AdminSiteModelCreateRequest
-    required:
-    - modelCode
-    - modelName
-    properties: &adminSiteModelMutationRequestProperties
-      modelCode:
-        type: string
-        minLength: 1
-        maxLength: 128
-        pattern: ^[A-Za-z0-9._:/-]+$
-      modelName:
-        type: string
-        minLength: 1
-        maxLength: 128
-      displayName:
-        type: string
-        nullable: true
-        maxLength: 128
-      providerModel:
-        type: string
-        nullable: true
-        maxLength: 128
-      providerNativeModel:
-        type: string
-        nullable: true
-        maxLength: 256
-      vendorCode:
-        type: string
-        nullable: true
-        maxLength: 64
-      modality:
-        type: string
-        nullable: true
-        maxLength: 64
-      capabilities:
-        type: array
-        maxItems: 64
-        items:
-          type: string
-          minLength: 1
-          maxLength: 64
-      contextTokens:
-        type: integer
-        format: int64
-        nullable: true
-        minimum: 0
-      maxInputTokens:
-        type: integer
-        format: int64
-        nullable: true
-        minimum: 0
-      maxOutputTokens:
-        type: integer
-        format: int64
-        nullable: true
-        minimum: 0
-      supportsStreaming:
-        type: boolean
-      supportsTools:
-        type: boolean
-      supportsJsonSchema:
-        type: boolean
-      status:
-        type: string
-        enum:
-        - active
-        - disabled
-  response_schema: &adminSiteModelMutationResponse
-    name: AdminSiteModelMutationResponse
-    required:
-    - item
-    properties:
-      item:
-        name: AdminSiteModelItem
-        type: object
-        additionalProperties: false
-        required: *adminSiteModelItemRequired
-        properties: *adminSiteModelItemProperties
-- route: /admin/model/sites
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
-  operation: replaceSiteModels
-  operation_id: siteModels.replace
-  sdk_domain: sites
-  kind: update
-  api_surface: backend
-  api_method: PUT
-  api_path: /backend/v3/api/sites/{siteId}/models
-  path_params:
-  - siteId
-  read_sources:
-  - ai_site_model
-  - ai_site
-  - ai_site_service
-  write_tables:
-  - ai_site_model
-  - ops_audit_log
-  request_schema:
-    name: AdminSiteModelsReplaceRequest
-    required:
-    - items
-    properties:
-      items:
-        type: array
-        maxItems: 512
-        items:
-          name: AdminSiteModelCreateRequest
-          type: object
-          additionalProperties: false
-          required:
-          - modelCode
-          - modelName
-          properties: *adminSiteModelMutationRequestProperties
-  response_schema:
-    name: AdminSiteModelsReplaceResponse
-    required:
-    - items
-    properties:
-      items:
-        type: array
-        items:
-          name: AdminSiteModelItem
-          type: object
-          additionalProperties: false
-          required: *adminSiteModelItemRequired
-          properties: *adminSiteModelItemProperties
-- route: /admin/model/sites
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
-  operation: updateSiteModel
-  operation_id: siteModels.update
-  sdk_domain: sites
-  kind: update
-  api_surface: backend
-  api_method: PATCH
-  api_path: /backend/v3/api/sites/{siteId}/models/{siteModelId}
-  path_params:
-  - siteId
-  - siteModelId
-  read_sources:
-  - ai_site_model
-  - ai_site
-  - ai_site_service
-  write_tables:
-  - ai_site_model
-  - ops_audit_log
-  request_schema:
-    name: AdminSiteModelUpdateRequest
-    properties: *adminSiteModelMutationRequestProperties
-  response_schema: *adminSiteModelMutationResponse
-- route: /admin/model/sites
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
-  operation: deleteSiteModel
-  operation_id: siteModels.delete
-  sdk_domain: sites
-  kind: delete
-  api_surface: backend
-  api_method: DELETE
-  api_path: /backend/v3/api/sites/{siteId}/models/{siteModelId}
-  path_params:
-  - siteId
-  - siteModelId
-  read_sources:
-  - ai_site_model
-  - ai_site
-  - ai_site_service
-  write_tables:
-  - ai_site_model
-  - ops_audit_log
-  response_schema: *adminSiteDeleteResponse
 - route: /admin/model/sites
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
   operation: fetchSiteChannels
@@ -2231,6 +1935,114 @@ frontend_operations:
               type: string
               nullable: true
               maxLength: 64
+- route: /admin/channel
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  operation: fetchAccountMappings
+  operation_id: modelMappings.list
+  sdk_domain: ai
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/ai/model_mappings
+  openapi_exposed: false
+  read_sources:
+  - ai_model_mapping_rule
+  - ai_model_mapping_rule_binding
+  - ai_model_mapping_rule_item
+  query_parameters:
+  - name: binding_type
+    type: string
+    required: false
+  - name: channel_id
+    type: string
+    required: false
+  response_schema:
+    name: AdminModelMappingsResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        maxItems: 1000
+        items:
+          name: AdminModelMappingRule
+          type: object
+          additionalProperties: false
+          required: *adminModelMappingRuleRequired
+          properties: *adminModelMappingRuleProperties
+- route: /admin/channel
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  operation: replaceAccountMappings
+  operation_id: modelMappings.replace
+  sdk_domain: ai
+  kind: update
+  api_surface: backend
+  api_method: PUT
+  api_path: /backend/v3/api/ai/model_mappings
+  openapi_exposed: false
+  read_sources:
+  - ai_channel
+  - ai_model_mapping_rule
+  - ai_model_mapping_rule_binding
+  - ai_model_mapping_rule_item
+  write_tables:
+  - ai_model_mapping_rule
+  - ai_model_mapping_rule_binding
+  - ai_model_mapping_rule_item
+  - ops_audit_log
+  request_schema:
+    name: AdminAccountModelMappingsReplaceRequest
+    required:
+    - channelId
+    - accountVendorCode
+    - mappings
+    properties:
+      channelId:
+        type: string
+        minLength: 1
+        maxLength: 128
+      channelName:
+        type: string
+        nullable: true
+        maxLength: 128
+      accountVendorCode:
+        type: string
+        minLength: 1
+        maxLength: 64
+        pattern: ^[A-Za-z0-9._-]+$
+      mappings:
+        type: array
+        maxItems: 1000
+        items:
+          name: AdminAccountModelMappingInput
+          type: object
+          additionalProperties: false
+          required:
+          - sourceModel
+          - targetModel
+          properties:
+            sourceModel:
+              type: string
+              minLength: 1
+              maxLength: 256
+            targetModel:
+              type: string
+              minLength: 1
+              maxLength: 256
+            targetVendorCode:
+              type: string
+              nullable: true
+              maxLength: 64
+              pattern: ^[A-Za-z0-9._-]+$
+  response_schema:
+    name: AdminAccountModelMappingsReplaceResponse
+    type: object
+    additionalProperties: false
+    required:
+    - ok
+    properties:
+      ok:
+        type: boolean
 - route: /admin/model/mappings
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
   operation: createModelMapping
@@ -2525,6 +2337,126 @@ frontend_operations:
         additionalProperties: false
         required: *adminModelMappingRuleRequired
         properties: *adminModelMappingRuleProperties
+- route: /admin/model/mappings
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  operation: fetchModelOptionsCatalog
+  operation_id: modelMappingOptions.list
+  sdk_domain: ai
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/ai/model_mapping_options
+  openapi_exposed: false
+  read_sources:
+  - ai_model
+  - ai_model_vendor
+  query_parameters: []
+  response_schema:
+    name: AdminModelMappingOptionsCatalogResponse
+    type: object
+    additionalProperties: false
+    required:
+    - vendors
+    - models
+    properties:
+      vendors:
+        type: array
+        maxItems: 1000
+        items:
+          name: AdminModelVendorItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - vendorCode
+          - name
+          - status
+          - color
+          - description
+          properties:
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            vendorCode:
+              type: string
+              minLength: 1
+              maxLength: 64
+            name:
+              type: string
+              minLength: 1
+              maxLength: 128
+            status:
+              type: string
+              enum:
+              - active
+              - inactive
+            color:
+              type: string
+              minLength: 1
+              maxLength: 64
+            description:
+              type: string
+              maxLength: 512
+      models:
+        type: array
+        maxItems: 10000
+        items:
+          name: AdminModelMappingModelOption
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - vendorId
+          - vendorCode
+          - model
+          - displayName
+          - name
+          - type
+          - status
+          properties:
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            vendorId:
+              type: string
+              minLength: 1
+              maxLength: 128
+            vendorCode:
+              type: string
+              minLength: 1
+              maxLength: 64
+            model:
+              type: string
+              minLength: 1
+              maxLength: 256
+            displayName:
+              type: string
+              minLength: 1
+              maxLength: 256
+            name:
+              type: string
+              minLength: 1
+              maxLength: 256
+            type:
+              type: string
+              enum:
+              - llm
+              - image
+              - video
+              - audio
+              - music
+              - sfx
+              - multimodal
+              - embedding
+              - rerank
+            status:
+              type: string
+              enum:
+              - active
+              - inactive
+              - deprecated
 - route: /admin/channel
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
   operation: fetchModels
@@ -2731,6 +2663,7 @@ frontend_operations:
                 description: Regional official reference pricing returned by admin AI model payloads.
                 required:
                 - regionCode
+                - currency
                 - priceIn
                 - priceOut
                 properties:
@@ -2740,22 +2673,28 @@ frontend_operations:
                     maxLength: 64
                     pattern: ^[a-z][a-z0-9_-]{0,63}$
                     description: Model catalog pricing region code.
+                  currency:
+                    type: string
+                    minLength: 3
+                    maxLength: 3
+                    pattern: ^[A-Z]{3}$
+                    description: Official reference price currency code for this region.
                   priceIn:
                     type: string
                     pattern: ^[0-9]+(\.[0-9]{1,12})?$
-                    description: Official reference input unit price in USD.
+                    description: Official reference input unit price in native official reference currency.
                   priceOut:
                     type: string
                     pattern: ^[0-9]+(\.[0-9]{1,12})?$
-                    description: Official reference output unit price in USD.
+                    description: Official reference output unit price in native official reference currency.
                   cacheReadPrice:
                     type: string
                     pattern: ^$|^[0-9]+(\.[0-9]{1,12})?$
-                    description: Optional official reference cache-read unit price in USD.
+                    description: Optional official reference cache-read unit price in native official reference currency.
                   cacheWritePrice:
                     type: string
                     pattern: ^$|^[0-9]+(\.[0-9]{1,12})?$
-                    description: Optional official reference cache-write unit price in USD.
+                    description: Optional official reference cache-write unit price in native official reference currency.
             status:
               type: string
               enum:

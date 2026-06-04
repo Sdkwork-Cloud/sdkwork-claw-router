@@ -75,34 +75,152 @@ ORDER BY rank_score DESC, display_name ASC, id ASC
 
     pub fn list_provider_routes() -> &'static str {
         r#"
+WITH RECURSIVE resource_group_tree AS (
+    SELECT
+        item.tenant_id,
+        item.organization_id,
+        item.resource_group_id AS root_group_id,
+        item.resource_group_code AS root_group_code,
+        item.resource_id,
+        item.resource_code,
+        item.child_resource_group_id,
+        item.child_resource_group_code,
+        0 AS depth
+    FROM ai_resource_group_item item
+    WHERE item.deleted_at IS NULL
+      AND item.status = 1
+    UNION ALL
+    SELECT
+        tree.tenant_id,
+        tree.organization_id,
+        tree.root_group_id,
+        tree.root_group_code,
+        child.resource_id,
+        child.resource_code,
+        child.child_resource_group_id,
+        child.child_resource_group_code,
+        tree.depth + 1 AS depth
+    FROM resource_group_tree tree
+    JOIN ai_resource_group_item child
+      ON child.tenant_id = tree.tenant_id
+     AND child.organization_id = tree.organization_id
+     AND child.deleted_at IS NULL
+     AND child.status = 1
+     AND (
+          (tree.child_resource_group_id IS NOT NULL AND child.resource_group_id = tree.child_resource_group_id)
+          OR (NULLIF(tree.child_resource_group_code, '') IS NOT NULL AND child.resource_group_code = tree.child_resource_group_code)
+     )
+    WHERE tree.depth < 8
+      AND (
+          tree.child_resource_group_id IS NOT NULL
+          OR NULLIF(tree.child_resource_group_code, '') IS NOT NULL
+      )
+),
+resource_group_leaf AS (
+    SELECT DISTINCT
+        tenant_id,
+        organization_id,
+        root_group_id AS resource_group_id,
+        root_group_code AS resource_group_code,
+        resource_id,
+        resource_code
+    FROM resource_group_tree
+    WHERE resource_id IS NOT NULL
+       OR NULLIF(resource_code, '') IS NOT NULL
+),
+channel_resource_scope AS (
+    SELECT DISTINCT
+        cr.tenant_id,
+        cr.organization_id,
+        cr.channel_id,
+        r.resource_type,
+        r.vendor_code,
+        r.api_code,
+        r.catalog_key,
+        r.model,
+        r.provider_native_model,
+        cr.priority,
+        cr.weight,
+        cr.id AS binding_id
+    FROM ai_channel_resource cr
+    LEFT JOIN resource_group_leaf rgi
+      ON rgi.tenant_id = cr.tenant_id
+     AND rgi.organization_id = cr.organization_id
+     AND (
+         (cr.resource_group_id IS NOT NULL AND rgi.resource_group_id = cr.resource_group_id)
+         OR (NULLIF(cr.resource_group_code, '') IS NOT NULL AND rgi.resource_group_code = cr.resource_group_code)
+         OR (NULLIF(cr.resource_code, '') IS NOT NULL AND rgi.resource_group_code = cr.resource_code)
+     )
+    JOIN ai_resource r
+      ON r.tenant_id = cr.tenant_id
+     AND r.organization_id = cr.organization_id
+     AND r.deleted_at IS NULL
+     AND r.status = 1
+     AND (
+         r.id = cr.resource_id
+         OR r.id = rgi.resource_id
+         OR (NULLIF(cr.resource_code, '') IS NOT NULL AND r.resource_code = cr.resource_code)
+         OR (NULLIF(rgi.resource_code, '') IS NOT NULL AND r.resource_code = rgi.resource_code)
+     )
+    WHERE cr.deleted_at IS NULL
+      AND cr.status = 1
+      AND cr.grant_type = 'allow'
+      AND (cr.effective_from IS NULL OR cr.effective_from <= CURRENT_TIMESTAMP)
+      AND (cr.effective_to IS NULL OR cr.effective_to > CURRENT_TIMESTAMP)
+)
 SELECT
-    rc.catalog_key AS catalog_key,
-    COALESCE(NULLIF(cm.model, ''), NULLIF(rc.model_code, ''), rc.catalog_key) AS model,
-    COALESCE(NULLIF(rc.provider_code, ''), c.provider_code) AS provider_code,
-    rc.channel_id,
-    COALESCE(NULLIF(cm.provider_native_model, ''), NULLIF(cm.provider_model, ''), NULLIF(rc.model_code, ''), NULLIF(cm.model, ''), rc.catalog_key) AS provider_model
-FROM ai_route_candidate rc
-JOIN ai_channel c ON c.id = rc.channel_id
-JOIN ai_channel_model cm
-  ON cm.channel_id = rc.channel_id
- AND cm.tenant_id = rc.tenant_id
- AND cm.organization_id = rc.organization_id
- AND cm.catalog_key = rc.catalog_key
+    m.catalog_key AS catalog_key,
+    m.model AS model,
+    c.provider_code AS provider_code,
+    c.id AS channel_id,
+    COALESCE(NULLIF(scope.provider_native_model, ''), NULLIF(scope.model, ''), NULLIF(m.model, ''), m.catalog_key) AS provider_model
+FROM ai_model m
+JOIN ai_channel c
+  ON c.deleted_at IS NULL
+ AND c.tenant_id = m.tenant_id
+ AND c.organization_id = m.organization_id
+LEFT JOIN ai_provider p
+  ON p.provider_code = c.provider_code
+ AND p.tenant_id = c.tenant_id
+ AND p.organization_id = c.organization_id
+LEFT JOIN channel_resource_scope scope
+  ON scope.channel_id = c.id
+ AND scope.tenant_id = c.tenant_id
+ AND scope.organization_id = c.organization_id
  AND (
-     NULLIF(cm.api_code, '') IS NULL
-     OR NULLIF(rc.api_code, '') IS NULL
-     OR rc.api_code = '*'
-     OR cm.api_code = rc.api_code
+      scope.catalog_key = m.catalog_key
+      OR (
+          NULLIF(scope.model, '') IS NOT NULL
+          AND (scope.model = m.model OR scope.model = m.catalog_key)
+      )
+      OR (
+          NULLIF(scope.vendor_code, '') IS NOT NULL
+          AND scope.vendor_code = m.vendor_code
+          AND scope.resource_type = 'vendor'
+      )
+      OR (
+          NULLIF(scope.api_code, '') IS NOT NULL
+          AND scope.resource_type = 'api_endpoint'
+          AND (NULLIF(scope.vendor_code, '') IS NULL OR scope.vendor_code = m.vendor_code)
+      )
  )
-WHERE rc.status = 1
+WHERE m.catalog_key = $1
+  AND m.deleted_at IS NULL
   AND c.deleted_at IS NULL
-  AND cm.deleted_at IS NULL
+  AND (p.id IS NULL OR p.deleted_at IS NULL)
+  AND m.status = 1
+  AND COALESCE(m.release_stage, 1) IN (1, 2)
+  AND COALESCE(m.shelf_state, 1) = 1
+  AND COALESCE(m.routing_state, 1) = 1
   AND c.status = 1
-  AND cm.status = 1
-  AND rc.catalog_key = $1
-  AND (cm.effective_from IS NULL OR cm.effective_from <= CURRENT_TIMESTAMP)
-  AND (cm.effective_to IS NULL OR cm.effective_to > CURRENT_TIMESTAMP)
-ORDER BY COALESCE(rc.priority, c.priority, 100) ASC, COALESCE(rc.weight, c.weight, 100) DESC, rc.id ASC
+  AND COALESCE(c.health_status, 1) = 1
+  AND (p.id IS NULL OR p.status = 1)
+  AND scope.binding_id IS NOT NULL
+ORDER BY COALESCE(scope.priority, c.priority, 100) ASC,
+         COALESCE(scope.weight, c.weight, 100) DESC,
+         m.id ASC,
+         scope.binding_id ASC,
+         c.id ASC
 "#
     }
 
@@ -291,35 +409,153 @@ LIMIT 1
 
     pub fn find_provider_route() -> &'static str {
         r#"
+WITH RECURSIVE resource_group_tree AS (
+    SELECT
+        item.tenant_id,
+        item.organization_id,
+        item.resource_group_id AS root_group_id,
+        item.resource_group_code AS root_group_code,
+        item.resource_id,
+        item.resource_code,
+        item.child_resource_group_id,
+        item.child_resource_group_code,
+        0 AS depth
+    FROM ai_resource_group_item item
+    WHERE item.deleted_at IS NULL
+      AND item.status = 1
+    UNION ALL
+    SELECT
+        tree.tenant_id,
+        tree.organization_id,
+        tree.root_group_id,
+        tree.root_group_code,
+        child.resource_id,
+        child.resource_code,
+        child.child_resource_group_id,
+        child.child_resource_group_code,
+        tree.depth + 1 AS depth
+    FROM resource_group_tree tree
+    JOIN ai_resource_group_item child
+      ON child.tenant_id = tree.tenant_id
+     AND child.organization_id = tree.organization_id
+     AND child.deleted_at IS NULL
+     AND child.status = 1
+     AND (
+          (tree.child_resource_group_id IS NOT NULL AND child.resource_group_id = tree.child_resource_group_id)
+          OR (NULLIF(tree.child_resource_group_code, '') IS NOT NULL AND child.resource_group_code = tree.child_resource_group_code)
+     )
+    WHERE tree.depth < 8
+      AND (
+          tree.child_resource_group_id IS NOT NULL
+          OR NULLIF(tree.child_resource_group_code, '') IS NOT NULL
+      )
+),
+resource_group_leaf AS (
+    SELECT DISTINCT
+        tenant_id,
+        organization_id,
+        root_group_id AS resource_group_id,
+        root_group_code AS resource_group_code,
+        resource_id,
+        resource_code
+    FROM resource_group_tree
+    WHERE resource_id IS NOT NULL
+       OR NULLIF(resource_code, '') IS NOT NULL
+),
+channel_resource_scope AS (
+    SELECT DISTINCT
+        cr.tenant_id,
+        cr.organization_id,
+        cr.channel_id,
+        r.resource_type,
+        r.vendor_code,
+        r.api_code,
+        r.catalog_key,
+        r.model,
+        r.provider_native_model,
+        cr.priority,
+        cr.weight,
+        cr.id AS binding_id
+    FROM ai_channel_resource cr
+    LEFT JOIN resource_group_leaf rgi
+      ON rgi.tenant_id = cr.tenant_id
+     AND rgi.organization_id = cr.organization_id
+     AND (
+         (cr.resource_group_id IS NOT NULL AND rgi.resource_group_id = cr.resource_group_id)
+         OR (NULLIF(cr.resource_group_code, '') IS NOT NULL AND rgi.resource_group_code = cr.resource_group_code)
+         OR (NULLIF(cr.resource_code, '') IS NOT NULL AND rgi.resource_group_code = cr.resource_code)
+     )
+    JOIN ai_resource r
+      ON r.tenant_id = cr.tenant_id
+     AND r.organization_id = cr.organization_id
+     AND r.deleted_at IS NULL
+     AND r.status = 1
+     AND (
+         r.id = cr.resource_id
+         OR r.id = rgi.resource_id
+         OR (NULLIF(cr.resource_code, '') IS NOT NULL AND r.resource_code = cr.resource_code)
+         OR (NULLIF(rgi.resource_code, '') IS NOT NULL AND r.resource_code = rgi.resource_code)
+     )
+    WHERE cr.deleted_at IS NULL
+      AND cr.status = 1
+      AND cr.grant_type = 'allow'
+      AND (cr.effective_from IS NULL OR cr.effective_from <= CURRENT_TIMESTAMP)
+      AND (cr.effective_to IS NULL OR cr.effective_to > CURRENT_TIMESTAMP)
+)
 SELECT
-    rc.catalog_key AS catalog_key,
-    COALESCE(NULLIF(cm.model, ''), NULLIF(rc.model_code, ''), rc.catalog_key) AS model,
-    COALESCE(NULLIF(rc.provider_code, ''), c.provider_code) AS provider_code,
-    rc.channel_id,
-    COALESCE(NULLIF(cm.provider_native_model, ''), NULLIF(cm.provider_model, ''), NULLIF(rc.model_code, ''), NULLIF(cm.model, ''), rc.catalog_key) AS provider_model
-FROM ai_route_candidate rc
-JOIN ai_channel c ON c.id = rc.channel_id
-JOIN ai_channel_model cm
-  ON cm.channel_id = rc.channel_id
- AND cm.tenant_id = rc.tenant_id
- AND cm.organization_id = rc.organization_id
- AND cm.catalog_key = rc.catalog_key
+    m.catalog_key AS catalog_key,
+    m.model AS model,
+    c.provider_code AS provider_code,
+    c.id AS channel_id,
+    COALESCE(NULLIF(scope.provider_native_model, ''), NULLIF(scope.model, ''), NULLIF(m.model, ''), m.catalog_key) AS provider_model
+FROM ai_model m
+JOIN ai_channel c
+  ON c.deleted_at IS NULL
+ AND c.tenant_id = m.tenant_id
+ AND c.organization_id = m.organization_id
+LEFT JOIN ai_provider p
+  ON p.provider_code = c.provider_code
+ AND p.tenant_id = c.tenant_id
+ AND p.organization_id = c.organization_id
+LEFT JOIN channel_resource_scope scope
+  ON scope.channel_id = c.id
+ AND scope.tenant_id = c.tenant_id
+ AND scope.organization_id = c.organization_id
  AND (
-     NULLIF(cm.api_code, '') IS NULL
-     OR NULLIF(rc.api_code, '') IS NULL
-     OR rc.api_code = '*'
-     OR cm.api_code = rc.api_code
+      scope.catalog_key = m.catalog_key
+      OR (
+          NULLIF(scope.model, '') IS NOT NULL
+          AND (scope.model = m.model OR scope.model = m.catalog_key)
+      )
+      OR (
+          NULLIF(scope.vendor_code, '') IS NOT NULL
+          AND scope.vendor_code = m.vendor_code
+          AND scope.resource_type = 'vendor'
+      )
+      OR (
+          NULLIF(scope.api_code, '') IS NOT NULL
+          AND scope.resource_type = 'api_endpoint'
+          AND (NULLIF(scope.vendor_code, '') IS NULL OR scope.vendor_code = m.vendor_code)
+      )
  )
-WHERE rc.status = 1
+WHERE m.catalog_key = $1
+  AND c.provider_code = $2
+  AND m.deleted_at IS NULL
   AND c.deleted_at IS NULL
-  AND cm.deleted_at IS NULL
+  AND (p.id IS NULL OR p.deleted_at IS NULL)
+  AND m.status = 1
+  AND COALESCE(m.release_stage, 1) IN (1, 2)
+  AND COALESCE(m.shelf_state, 1) = 1
+  AND COALESCE(m.routing_state, 1) = 1
   AND c.status = 1
-  AND cm.status = 1
-  AND rc.catalog_key = $1
-  AND COALESCE(NULLIF(rc.provider_code, ''), c.provider_code) = $2
-  AND (cm.effective_from IS NULL OR cm.effective_from <= CURRENT_TIMESTAMP)
-  AND (cm.effective_to IS NULL OR cm.effective_to > CURRENT_TIMESTAMP)
-ORDER BY COALESCE(rc.priority, c.priority, 100) ASC, COALESCE(rc.weight, c.weight, 100) DESC, rc.id ASC
+  AND COALESCE(c.health_status, 1) = 1
+  AND (p.id IS NULL OR p.status = 1)
+  AND scope.binding_id IS NOT NULL
+ORDER BY COALESCE(scope.priority, c.priority, 100) ASC,
+         COALESCE(scope.weight, c.weight, 100) DESC,
+         m.id ASC,
+         scope.binding_id ASC,
+         c.id ASC
 LIMIT 1
 "#
     }

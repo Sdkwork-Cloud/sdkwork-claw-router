@@ -26,15 +26,10 @@ test("admin model site service is SDK-backed and uses confirmed route surface", 
     "getClawRouterBackendSdkClient().sites.create(",
     "getClawRouterBackendSdkClient().sites.update(",
     "getClawRouterBackendSdkClient().sites.delete(",
-    "getClawRouterBackendSdkClient().sites.siteModels.list(",
-    "getClawRouterBackendSdkClient().sites.siteModels.create(",
-    "getClawRouterBackendSdkClient().sites.siteModels.update(",
-    "getClawRouterBackendSdkClient().sites.siteModels.delete(",
     "getClawRouterBackendSdkClient().sites.siteChannels.list(",
     "getClawRouterBackendSdkClient().sites.testConnection.create(",
     "getClawRouterBackendSdkClient().sites.healthCheck.create(",
     "export interface SiteItem",
-    "export interface SiteModelItem",
     "export interface SiteChannelItem",
     "export interface SiteConnectionCheckResult",
   ]) {
@@ -48,7 +43,9 @@ test("admin model site service is SDK-backed and uses confirmed route surface", 
     "relay_stations",
     "integration_site",
     ".sites.services.",
+    ".sites.siteModels.",
     "/services/{serviceId}/models",
+    "export interface SiteModelItem",
   ]) {
     assert.equal(modelService.includes(forbidden), false, `unexpected forbidden site token: ${forbidden}`);
   }
@@ -61,7 +58,7 @@ test("admin model page exposes site management route and navigation markers", ()
   const i18nSource = readPortalFile("packages/sdkwork-claw-router-i18n/src/resources/admin/core-navigation.ts");
   const modelI18nSource = readPortalFile("packages/sdkwork-claw-router-i18n/src/resources/admin/model.ts");
   const siteAdminStart = modelAdminSource.indexOf("export function SiteAdmin");
-  const siteAdminEnd = modelAdminSource.indexOf("type ModelMappingScopeFilter");
+  const siteAdminEnd = modelAdminSource.indexOf("type ModelMappingBindingFilter");
   assert.notEqual(siteAdminStart, -1, "missing SiteAdmin source start");
   assert.notEqual(siteAdminEnd, -1, "missing SiteAdmin source end");
   const siteAdminSource = modelAdminSource.slice(siteAdminStart, siteAdminEnd);
@@ -188,7 +185,9 @@ test("admin model site form supports upstream provider profile fields", () => {
     "site name should be the first visible identity field in the upstream provider modal",
   );
   assert.equal(siteFormSource.includes('name="siteCode"'), false, "site code should not be a visible form input");
-  assert.ok(siteInputSource.includes("generateSiteCode("), "site code should be generated from form data");
+  assert.equal(siteInputSource.includes("siteCode:"), false, "frontend site form payload should not include siteCode");
+  assert.equal(modelAdminSource.includes("generateSiteCode"), false, "site code should be backend-generated, not generated in the portal");
+  assert.equal(modelAdminSource.includes("siteCode: editingSite.siteCode"), false, "site update should not resubmit generated siteCode");
   assert.equal(siteInputSource.includes("readFormString(formData, 'siteCode')"), false, "siteInputFromForm should not read a visible siteCode field");
 
   for (const token of [
@@ -224,6 +223,11 @@ test("admin model site form supports upstream provider profile fields", () => {
   ]) {
     assert.ok(modelServiceSource.includes(token), `missing site service profile marker: ${token}`);
   }
+
+  const siteCreateInputSource = sourceBetween(modelServiceSource, "export interface SiteCreateInput", "export interface SiteUpdateInput");
+  const toSiteCreateRequestSource = sourceBetween(modelServiceSource, "function toSiteCreateRequest", "function toSiteUpdateRequest");
+  assert.equal(siteCreateInputSource.includes("siteCode"), false, "portal create input should not expose siteCode");
+  assert.equal(toSiteCreateRequestSource.includes("siteCode:"), false, "portal create request should omit siteCode so the backend generates it");
 
   assert.ok(
     adminSiteApiSource.includes("const MAX_MEDIA_LOCATOR_LEN: usize = 1_048_576;"),

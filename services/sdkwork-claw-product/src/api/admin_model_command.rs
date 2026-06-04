@@ -166,6 +166,7 @@ struct AdminAiModelUpdateRequest {
 #[serde(rename_all = "camelCase")]
 struct AdminAiModelRegionPriceRequest {
     region_code: Option<String>,
+    currency: Option<String>,
     price_in: Option<Value>,
     price_out: Option<Value>,
     cache_read_price: Option<Value>,
@@ -413,6 +414,7 @@ struct AdminAiModelItemResponse {
 #[serde(rename_all = "camelCase")]
 struct AdminAiModelRegionPriceResponse {
     region_code: String,
+    currency: String,
     price_in: String,
     price_out: String,
     cache_read_price: String,
@@ -1675,6 +1677,32 @@ fn normalize_region_code(
     Ok(value.to_owned())
 }
 
+fn normalize_currency_code(
+    value: Option<&str>,
+    region_code: &str,
+    field_name: &str,
+) -> Result<String, AdminModelCommandBuildError> {
+    let fallback = default_currency_for_region(region_code);
+    let value = value.unwrap_or(fallback).trim();
+    if value.is_empty() {
+        return Ok(fallback.to_owned());
+    }
+    let normalized = value.to_ascii_uppercase();
+    if normalized.len() != 3 || !normalized.bytes().all(|byte| byte.is_ascii_uppercase()) {
+        return Err(AdminModelCommandBuildError::BadRequest(format!(
+            "{field_name} must be a 3-letter ISO currency code"
+        )));
+    }
+    Ok(normalized)
+}
+
+fn default_currency_for_region(region_code: &str) -> &'static str {
+    match region_code {
+        "cn" => "CNY",
+        _ => "USD",
+    }
+}
+
 fn normalize_create_region_prices(
     region_prices: Option<Vec<AdminAiModelRegionPriceRequest>>,
 ) -> Result<Vec<AdminAiModelRegionPriceCommand>, AdminModelCommandBuildError> {
@@ -1723,6 +1751,11 @@ fn normalize_region_price_requests(
                 "{field_prefix}.regionCode duplicates region {region_code}"
             )));
         }
+        let currency = normalize_currency_code(
+            price.currency.as_deref(),
+            &region_code,
+            &format!("{field_prefix}.currency"),
+        )?;
         let price_in = if require_prices {
             normalize_decimal_amount(price.price_in.as_ref(), &format!("{field_prefix}.priceIn"))?
         } else {
@@ -1746,6 +1779,7 @@ fn normalize_region_price_requests(
         };
         normalized.push(AdminAiModelRegionPriceCommand {
             region_code,
+            currency,
             price_in,
             price_out,
             cache_read_price: normalize_optional_decimal_amount(
@@ -2552,6 +2586,7 @@ fn to_model_region_price_response(
 ) -> AdminAiModelRegionPriceResponse {
     AdminAiModelRegionPriceResponse {
         region_code: item.region_code,
+        currency: item.currency,
         price_in: item.price_in,
         price_out: item.price_out,
         cache_read_price: item.cache_read_price.unwrap_or_default(),

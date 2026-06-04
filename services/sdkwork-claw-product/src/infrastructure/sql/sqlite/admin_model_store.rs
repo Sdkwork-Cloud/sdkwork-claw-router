@@ -27,8 +27,8 @@ const AI_MODEL_TARGET_TYPE: i32 = 42;
 const MODEL_CATALOG_SYNC_TARGET_TYPE: i32 = 43;
 const MODEL_MAPPING_TARGET_TYPE: i32 = 44;
 const OFFICIAL_REFERENCE_PRICE_SIDE: i32 = 1;
-const INPUT_BILLING_METER_FILTER_SQL: &str = "('llm_input_token', 'embedding_input_token', 'image_input_token', 'audio_input_second', 'audio_input_minute', 'tts_input_character', 'api_request')";
-const OUTPUT_BILLING_METER_FILTER_SQL: &str = "('llm_output_token', 'image_output_token', 'image_result', 'audio_output_second', 'music_output_second', 'sfx_result', 'video_output_second', 'api_result')";
+const INPUT_BILLING_METER_FILTER_SQL: &str = "('llm_input_token', 'embedding_input_token', 'image_input_token', 'image_megapixel', 'audio_input_second', 'audio_input_minute', 'stt_audio_minute', 'tts_input_character', 'api_request')";
+const OUTPUT_BILLING_METER_FILTER_SQL: &str = "('llm_output_token', 'image_output_token', 'image_result', 'image_megapixel', 'audio_output_second', 'music_output_second', 'sfx_result', 'video_output_second', 'video_result', 'api_result')";
 const CACHE_READ_BILLING_METER_FILTER_SQL: &str = "('llm_cache_read_token')";
 const CACHE_WRITE_BILLING_METER_FILTER_SQL: &str = "('llm_cache_write_token')";
 
@@ -1661,6 +1661,7 @@ async fn insert_model_region_pricing(
             command,
             vendor,
             &region_price.region_code,
+            &region_price.currency,
             input_billing_meter(&command.model_type),
             &region_price.price_in,
             1,
@@ -1673,6 +1674,7 @@ async fn insert_model_region_pricing(
             command,
             vendor,
             &region_price.region_code,
+            &region_price.currency,
             output_billing_meter(&command.model_type),
             &region_price.price_out,
             2,
@@ -1690,6 +1692,7 @@ async fn insert_model_region_pricing(
                 command,
                 vendor,
                 &region_price.region_code,
+                &region_price.currency,
                 "llm_cache_read_token",
                 price,
                 3,
@@ -1708,6 +1711,7 @@ async fn insert_model_region_pricing(
                 command,
                 vendor,
                 &region_price.region_code,
+                &region_price.currency,
                 "llm_cache_write_token",
                 price,
                 4,
@@ -1725,6 +1729,7 @@ async fn insert_region_model_pricing(
     command: &CreateAdminAiModelCommand,
     vendor: &VendorIdentity,
     region_code: &str,
+    currency: &str,
     meter: &str,
     unit_price: &str,
     priority: i32,
@@ -1740,7 +1745,7 @@ async fn insert_region_model_pricing(
         INSERT INTO ai_model_pricing
             (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, model_id, catalog_key, model, vendor_code, region_code, price_side, pricing_scope, billing_type, billing_mode, billing_meter_code, price_item_type, unit, unit_size, metering_mode, quantity_source, minimum_quantity, quantity_step, included_quantity, unit_price, currency, rounding_mode, min_charge_amount, pricing_formula_mode, price_origin, priority, effective_from)
         VALUES
-            (?, ?, ?, 1, 1, ?, ?, 0, '{}', ?, ?, ?, ?, ?, ?, 1, 1, 1, ?, 1, 1, 1, 1, 1, 0, 1, 0, ?, 'USD', 1, 0, 1, 1, ?, ?)
+            (?, ?, ?, 1, 1, ?, ?, 0, '{}', ?, ?, ?, ?, ?, ?, 1, 1, 1, ?, 1, 1, 1, 1, 1, 0, 1, 0, ?, ?, 1, 0, 1, 1, ?, ?)
         "#,
     )
     .bind(uuid)
@@ -1756,6 +1761,7 @@ async fn insert_region_model_pricing(
     .bind(OFFICIAL_REFERENCE_PRICE_SIDE)
     .bind(meter)
     .bind(unit_price)
+    .bind(currency)
     .bind(priority)
     .bind(&command.requested_at)
     .execute(&mut **tx)
@@ -2141,7 +2147,15 @@ fn region_pricing_select_sql() -> String {
         SELECT
             COALESCE(NULLIF(region_code, ''), 'global') AS region_code,
             billing_meter_code,
-            CAST(unit_price AS TEXT) AS unit_price
+            CAST(metadata AS TEXT) AS metadata,
+            CAST(unit_price AS TEXT) AS unit_price,
+            COALESCE(
+              NULLIF(currency, ''),
+              CASE COALESCE(NULLIF(region_code, ''), 'global')
+                WHEN 'cn' THEN 'CNY'
+                ELSE 'USD'
+              END
+            ) AS currency
         FROM ai_model_pricing
         WHERE model_id = ?
           AND price_side = {OFFICIAL_REFERENCE_PRICE_SIDE}
@@ -2185,20 +2199,27 @@ fn region_prices_from_rows(
         let meter = row
             .try_get::<String, _>("billing_meter_code")
             .map_err(row_error)?;
+        let metadata = row.try_get::<String, _>("metadata").unwrap_or_default();
         let unit_price = row.try_get::<String, _>("unit_price").map_err(row_error)?;
+        let currency = row
+            .try_get::<String, _>("currency")
+            .map(|value| model_region_price_currency(&value, &region_code))
+            .unwrap_or_else(|_| default_currency_for_region(&region_code).to_owned());
         let entry = grouped.entry(region_code.clone()).or_insert_with(|| {
             region_order.push(region_code.clone());
             AdminAiModelRegionPriceCommand {
                 region_code,
+                currency,
                 price_in: String::new(),
                 price_out: String::new(),
                 cache_read_price: None,
                 cache_write_price: None,
             }
         });
-        if is_input_billing_meter(&meter) && entry.price_in.is_empty() {
+        let direction = model_price_direction(&meter, &metadata);
+        if direction.allows_input() && entry.price_in.is_empty() {
             entry.price_in = unit_price;
-        } else if is_output_billing_meter(&meter) && entry.price_out.is_empty() {
+        } else if direction.allows_output() && entry.price_out.is_empty() {
             entry.price_out = unit_price;
         } else if is_cache_read_billing_meter(&meter) && entry.cache_read_price.is_none() {
             entry.cache_read_price = Some(unit_price);
@@ -2211,6 +2232,22 @@ fn region_prices_from_rows(
         .filter_map(|region_code| grouped.remove(&region_code))
         .filter(|price| !price.price_in.is_empty() || !price.price_out.is_empty())
         .collect())
+}
+
+fn model_region_price_currency(value: &str, region_code: &str) -> String {
+    let normalized = value.trim().to_ascii_uppercase();
+    if normalized.len() == 3 && normalized.bytes().all(|byte| byte.is_ascii_uppercase()) {
+        normalized
+    } else {
+        default_currency_for_region(region_code).to_owned()
+    }
+}
+
+fn default_currency_for_region(region_code: &str) -> &'static str {
+    match region_code {
+        "cn" => "CNY",
+        _ => "USD",
+    }
 }
 
 async fn find_model_for_delete(
@@ -2750,6 +2787,7 @@ async fn replace_model_region_pricing(
             vendor,
             update,
             &region_price.region_code,
+            &region_price.currency,
             input_billing_meter(&update.model_type),
             &region_price.price_in,
             1,
@@ -2763,6 +2801,7 @@ async fn replace_model_region_pricing(
             vendor,
             update,
             &region_price.region_code,
+            &region_price.currency,
             output_billing_meter(&update.model_type),
             &region_price.price_out,
             2,
@@ -2781,6 +2820,7 @@ async fn replace_model_region_pricing(
                 vendor,
                 update,
                 &region_price.region_code,
+                &region_price.currency,
                 "llm_cache_read_token",
                 price,
                 3,
@@ -2800,6 +2840,7 @@ async fn replace_model_region_pricing(
                 vendor,
                 update,
                 &region_price.region_code,
+                &region_price.currency,
                 "llm_cache_write_token",
                 price,
                 4,
@@ -2818,6 +2859,7 @@ async fn insert_update_region_model_pricing(
     vendor: &VendorIdentity,
     update: &EffectiveModelUpdate,
     region_code: &str,
+    currency: &str,
     meter: &str,
     unit_price: &str,
     priority: i32,
@@ -2840,7 +2882,7 @@ async fn insert_update_region_model_pricing(
         INSERT INTO ai_model_pricing
             (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, model_id, catalog_key, model, vendor_code, region_code, price_side, pricing_scope, billing_type, billing_mode, billing_meter_code, price_item_type, unit, unit_size, metering_mode, quantity_source, minimum_quantity, quantity_step, included_quantity, unit_price, currency, rounding_mode, min_charge_amount, pricing_formula_mode, price_origin, priority, effective_from)
         VALUES
-            (?, ?, ?, 1, 1, ?, ?, 0, '{}', ?, ?, ?, ?, ?, ?, 1, 1, 1, ?, 1, 1, 1, 1, 1, 0, 1, 0, ?, 'USD', 1, 0, 1, 1, ?, ?)
+            (?, ?, ?, 1, 1, ?, ?, 0, '{}', ?, ?, ?, ?, ?, ?, 1, 1, 1, ?, 1, 1, 1, 1, 1, 0, 1, 0, ?, ?, 1, 0, 1, 1, ?, ?)
         "#,
     )
     .bind(uuid)
@@ -2856,6 +2898,7 @@ async fn insert_update_region_model_pricing(
     .bind(OFFICIAL_REFERENCE_PRICE_SIDE)
     .bind(meter)
     .bind(unit_price)
+    .bind(currency)
     .bind(priority)
     .bind(&command.requested_at)
     .execute(&mut **tx)
@@ -3799,8 +3842,10 @@ fn is_input_billing_meter(value: &str) -> bool {
         "llm_input_token"
             | "embedding_input_token"
             | "image_input_token"
+            | "image_megapixel"
             | "audio_input_second"
             | "audio_input_minute"
+            | "stt_audio_minute"
             | "tts_input_character"
             | "api_request"
     )
@@ -3812,10 +3857,12 @@ fn is_output_billing_meter(value: &str) -> bool {
         "llm_output_token"
             | "image_output_token"
             | "image_result"
+            | "image_megapixel"
             | "audio_output_second"
             | "music_output_second"
             | "sfx_result"
             | "video_output_second"
+            | "video_result"
             | "api_result"
     )
 }
@@ -3826,6 +3873,95 @@ fn is_cache_read_billing_meter(value: &str) -> bool {
 
 fn is_cache_write_billing_meter(value: &str) -> bool {
     value == "llm_cache_write_token"
+}
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+enum ModelPriceDirection {
+    Input,
+    Output,
+    Both,
+    Unknown,
+}
+
+impl ModelPriceDirection {
+    fn allows_input(self) -> bool {
+        matches!(self, Self::Input | Self::Both)
+    }
+
+    fn allows_output(self) -> bool {
+        matches!(self, Self::Output | Self::Both)
+    }
+}
+
+fn model_price_direction(meter: &str, metadata: &str) -> ModelPriceDirection {
+    match price_direction_from_metadata(metadata) {
+        ModelPriceDirection::Unknown => {}
+        direction => return direction,
+    }
+    match (
+        is_input_billing_meter(meter),
+        is_output_billing_meter(meter),
+    ) {
+        (true, true) => ModelPriceDirection::Both,
+        (true, false) => ModelPriceDirection::Input,
+        (false, true) => ModelPriceDirection::Output,
+        (false, false) => ModelPriceDirection::Unknown,
+    }
+}
+
+fn price_direction_from_metadata(metadata: &str) -> ModelPriceDirection {
+    let Ok(value) = serde_json::from_str::<serde_json::Value>(metadata) else {
+        return ModelPriceDirection::Unknown;
+    };
+    let extra = value.get("extra").unwrap_or(&value);
+    if let Some(price_side) = extra
+        .get("priceSide")
+        .and_then(|value| value.as_str())
+        .map(normalize_price_direction_token)
+    {
+        match price_side.as_str() {
+            "input" => return ModelPriceDirection::Input,
+            "output" | "result" => return ModelPriceDirection::Output,
+            _ => {}
+        }
+    }
+    let Some(price_id) = extra
+        .get("priceId")
+        .and_then(|value| value.as_str())
+        .map(normalize_price_direction_token)
+    else {
+        return ModelPriceDirection::Unknown;
+    };
+    if price_id.contains("cache_read") || price_id.contains("cache_write") {
+        return ModelPriceDirection::Unknown;
+    }
+    if price_id.contains("input") {
+        ModelPriceDirection::Input
+    } else if price_id.contains("output")
+        || price_id.contains("result")
+        || price_id.contains("second")
+    {
+        ModelPriceDirection::Output
+    } else if price_id.contains("audio") {
+        ModelPriceDirection::Input
+    } else {
+        ModelPriceDirection::Unknown
+    }
+}
+
+fn normalize_price_direction_token(value: &str) -> String {
+    value
+        .trim()
+        .to_ascii_lowercase()
+        .chars()
+        .map(|character| {
+            if character.is_ascii_alphanumeric() {
+                character
+            } else {
+                '_'
+            }
+        })
+        .collect()
 }
 
 fn normalize_catalog_source_code(value: &str) -> String {

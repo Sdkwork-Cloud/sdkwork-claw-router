@@ -107,6 +107,70 @@ class AdminGroupRuntimeStandardTest(unittest.TestCase):
         self.assertIn("export type { ChannelGroupsUpdateResult }", type_exports)
         self.assertIn("export type { ChannelGroupsDeleteResult }", type_exports)
 
+    def test_admin_group_channel_binding_contract_uses_resource_scope_not_direct_models(self) -> None:
+        manifest = ApiContractManifestGenerator(root=ROOT).generate()
+        operations = {operation["key"]: operation for operation in manifest["operations"]}
+        source = "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts"
+        list_bindings = operations[f"{source}#fetchGroupChannelBindings"]
+        update_bindings = operations[f"{source}#replaceGroupChannelBindings"]
+
+        binding_item = (
+            list_bindings["response_schema"]["schema"]["properties"]["items"]["items"]
+        )
+        self.assertNotIn("models", binding_item["required"])
+        self.assertNotIn("modelScope", binding_item["required"])
+        self.assertNotIn("models", binding_item["properties"])
+        self.assertNotIn("modelScope", binding_item["properties"])
+        self.assertIn("resourceCodes", binding_item["required"])
+        self.assertIn("apiScope", binding_item["required"])
+        self.assertIn("resourceCodes", binding_item["properties"])
+        self.assertIn("apiScope", binding_item["properties"])
+
+        binding_input = (
+            update_bindings["request_schema"]["schema"]["properties"]["items"]["items"]
+        )
+        self.assertNotIn("modelScope", binding_input["properties"])
+        self.assertNotIn("models", binding_input["properties"])
+        self.assertIn("resourceCodes", binding_input["properties"])
+        self.assertIn("apiScope", binding_input["properties"])
+
+        contract = (
+            ROOT / "docs" / "schema-registry" / "frontend-field-contracts.yaml"
+        ).read_text(encoding="utf-8")
+        group_section = contract[
+            contract.index("interface: GroupChannelBindingData") :
+            contract.index("interface: GroupResourceGroupOption")
+        ]
+        self.assertNotIn("- models", group_section)
+        self.assertNotIn("- modelScope", group_section)
+        self.assertIn("- resourceCodes", group_section)
+        self.assertIn("- apiScope", group_section)
+
+        sdk_item = (
+            ROOT
+            / "sdks"
+            / "clawrouter-backend-sdk"
+            / "clawrouter-backend-sdk-typescript"
+            / "src"
+            / "types"
+            / "admin-channel-group-channel-binding-item.ts"
+        ).read_text(encoding="utf-8")
+        sdk_input = (
+            ROOT
+            / "sdks"
+            / "clawrouter-backend-sdk"
+            / "clawrouter-backend-sdk-typescript"
+            / "src"
+            / "types"
+            / "admin-channel-group-channel-binding-input.ts"
+        ).read_text(encoding="utf-8")
+        self.assertNotIn("models", sdk_item)
+        self.assertNotIn("modelScope", sdk_item + sdk_input)
+        self.assertIn("resourceCodes: string[]", sdk_item)
+        self.assertIn("apiScope: string[]", sdk_item)
+        self.assertIn("resourceCodes?: string[]", sdk_input)
+        self.assertIn("apiScope?: string[]", sdk_input)
+
     def test_admin_group_channel_binding_drawer_lists_only_current_group_bindings(self) -> None:
         view = (
             ROOT

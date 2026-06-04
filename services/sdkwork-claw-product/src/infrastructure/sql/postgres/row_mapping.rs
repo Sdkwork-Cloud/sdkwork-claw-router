@@ -243,6 +243,7 @@ pub async fn load_api_keys(
             organization_id: row.try_get("organization_id")?,
             user_id: row.try_get("user_id")?,
             group_id: row.try_get("group_id")?,
+            group_bindings_json: row.try_get("group_bindings_json")?,
             name: row.try_get("name")?,
             key_prefix: row.try_get("key_prefix")?,
             key_display_masked: row.try_get("key_display_masked")?,

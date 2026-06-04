@@ -169,8 +169,8 @@ fmt.Println(result)
 ### integration
 
 ```go
-// List channel endpoints
-result, err := client.Integration.ChannelEndpointsList()
+// List channels
+result, err := client.Integration.ChannelsList()
 if err != nil {
     panic(err)
 }

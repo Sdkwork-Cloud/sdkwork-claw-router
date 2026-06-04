@@ -108,9 +108,9 @@ export interface GroupChannelBindingData {
   providerCode: string;
   providerName: string;
   channelCode: string;
-  models: string[];
+  resourceCodes: string[];
+  apiScope: string[];
   capabilities: string[];
-  modelScope: string[];
   priority: number;
   weight: number;
   status: 'active' | 'disabled';
@@ -122,7 +122,8 @@ export interface GroupChannelBindingInput {
   priority?: number;
   weight?: number;
   status?: GroupChannelBindingData['status'];
-  modelScope?: string[];
+  resourceCodes?: string[];
+  apiScope?: string[];
   capabilities?: string[];
 }
 
@@ -132,7 +133,8 @@ export interface GroupChannelOption {
   providerCode: string;
   providerName: string;
   channelCode: string;
-  models: string[];
+  resourceCodes: string[];
+  apiScope: string[];
   capabilities: string[];
   status: 'active' | 'disabled' | 'error';
   healthStatus: 'active' | 'error';
@@ -301,7 +303,8 @@ function toReplaceChannelBindingsRequest(
     priority?: number;
     weight?: number;
     status?: GroupChannelBindingData['status'];
-    modelScope?: string[];
+    resourceCodes?: string[];
+    apiScope?: string[];
     capabilities?: string[];
   }>;
 } {
@@ -311,7 +314,8 @@ function toReplaceChannelBindingsRequest(
       priority: optionalNonNegativeInteger(item.priority, 'priority'),
       weight: optionalNonNegativeInteger(item.weight, 'weight'),
       status: item.status === undefined ? undefined : toBackendBindingStatus(item.status),
-      modelScope: item.modelScope === undefined ? undefined : normalizedOptionalStringArray(item.modelScope),
+      resourceCodes: item.resourceCodes === undefined ? undefined : normalizedOptionalResourceCodes(item.resourceCodes),
+      apiScope: item.apiScope === undefined ? undefined : normalizedOptionalStringArray(item.apiScope),
       capabilities: item.capabilities === undefined ? undefined : normalizedOptionalStringArray(item.capabilities),
     })),
   };
@@ -476,9 +480,9 @@ function normalizeGroupChannelBinding(value: unknown): GroupChannelBindingData {
     providerCode: readRequiredString(item, 'providerCode', 'Group channel binding provider code is required'),
     providerName: readRequiredString(item, 'providerName', 'Group channel binding provider name is required'),
     channelCode: readRequiredString(item, 'channelCode', 'Group channel binding channel code is required'),
-    models: readStringArray(item, 'models'),
+    resourceCodes: readStringArray(item, 'resourceCodes'),
+    apiScope: readStringArray(item, 'apiScope'),
     capabilities: readStringArray(item, 'capabilities'),
-    modelScope: readStringArray(item, 'modelScope'),
     priority: readRequiredNonNegativeInteger(item, 'priority', 'Group channel binding priority is required'),
     weight: readRequiredNonNegativeInteger(item, 'weight', 'Group channel binding weight is required'),
     status: readBindingStatus(item),
@@ -498,7 +502,8 @@ function normalizeGroupChannelOption(value: unknown): GroupChannelOption {
     providerCode,
     providerName,
     channelCode: readDisplayString(item, 'channelCode', id),
-    models: readStringArray(item, 'models'),
+    resourceCodes: readStringArray(item, 'resourceCodes'),
+    apiScope: readStringArray(item, 'apiScope'),
     capabilities: readStringArray(item, 'capabilities'),
     status,
     healthStatus: status === 'error' ? 'error' : 'active',

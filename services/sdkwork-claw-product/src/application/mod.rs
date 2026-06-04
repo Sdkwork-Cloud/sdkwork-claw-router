@@ -31,7 +31,6 @@ pub use ai_route_taxonomy::{
 };
 pub use ai_routing_cache_invalidation::{
     AiRoutingCacheInvalidatingAdminAiResourceStore,
-    AiRoutingCacheInvalidatingAdminChannelEndpointStore,
     AiRoutingCacheInvalidatingAdminChannelGroupStore, AiRoutingCacheInvalidatingAdminChannelStore,
     AiRoutingCacheInvalidatingAdminModelStore, AiRoutingCacheInvalidatingAdminProviderSecretStore,
     AiRoutingCacheInvalidator,

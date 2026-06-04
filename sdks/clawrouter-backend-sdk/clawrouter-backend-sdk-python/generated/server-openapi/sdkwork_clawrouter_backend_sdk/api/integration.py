@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Optional
 from ..http_client import HttpClient
-from ..models import AdminChannelCreateRequest, AdminChannelEndpointCreateRequest, AdminChannelEndpointUpdateRequest, AdminChannelUpdateRequest, AdminProviderSecretCreateRequest, AdminProviderSecretUpdateRequest, ChannelEndpointsCreateResult, ChannelEndpointsListResult, ChannelEndpointsUpdateResult, ChannelsCreateResult, ChannelsDeleteResult, ChannelsListResult, ChannelsUpdateResult, ChannelsVerifyResult, ProviderSecretsCreateResult, ProviderSecretsDeleteResult, ProviderSecretsListResult, ProviderSecretsUpdateResult
+from ..models import AdminChannelCreateRequest, AdminChannelUpdateRequest, AdminProviderSecretCreateRequest, AdminProviderSecretUpdateRequest, ChannelsCreateResult, ChannelsDeleteResult, ChannelsListResult, ChannelsUpdateResult, ChannelsVerifyResult, ProviderSecretsCreateResult, ProviderSecretsDeleteResult, ProviderSecretsListResult, ProviderSecretsUpdateResult
 
 def _append_query_string(path: str, raw_query_string: str) -> str:
     query = raw_query_string.lstrip('?')
@@ -189,29 +189,9 @@ class IntegrationApi:
 
     def __init__(self, client: HttpClient):
         self._client = client
-        self.channel_endpoints = IntegrationChannelEndpointsApi(client)
         self.channels = IntegrationChannelsApi(client)
         self.provider_secrets = IntegrationProviderSecretsApi(client)
 
-
-class IntegrationChannelEndpointsApi:
-    """integration integration.channel_endpoints API client."""
-
-    def __init__(self, client: HttpClient):
-        self._client = client
-
-
-    def list(self) -> ChannelEndpointsListResult:
-        """List channel endpoints"""
-        return self._client.get(f"/backend/v3/api/integration/channel_endpoints")
-
-    def create(self, body: AdminChannelEndpointCreateRequest) -> ChannelEndpointsCreateResult:
-        """Create channel endpoint"""
-        return self._client.post(f"/backend/v3/api/integration/channel_endpoints", json=body)
-
-    def update(self, endpoint_id: str, body: AdminChannelEndpointUpdateRequest) -> ChannelEndpointsUpdateResult:
-        """Update channel endpoint"""
-        return self._client.put(f"/backend/v3/api/integration/channel_endpoints/{serialize_path_parameter(endpoint_id, {'name': 'endpointId', 'style': 'simple', 'explode': False})}", json=body)
 
 class IntegrationChannelsApi:
     """integration integration.channels API client."""

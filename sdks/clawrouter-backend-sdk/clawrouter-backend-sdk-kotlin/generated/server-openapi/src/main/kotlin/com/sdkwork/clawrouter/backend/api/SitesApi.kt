@@ -47,36 +47,6 @@ class SitesApi(private val client: HttpClient) {
         return client.convertValue(raw, object : TypeReference<HealthCheckCreateResult>() {})
     }
 
-    /** List site models */
-    suspend fun siteModelsList(siteId: String): SiteModelsListResult? {
-        val raw = client.get(ApiPaths.backendPath("/sites/${serializePathParameter(siteId, PathParameterSpec("siteId", "simple", false))}/models"))
-        return client.convertValue(raw, object : TypeReference<SiteModelsListResult>() {})
-    }
-
-    /** Create site model */
-    suspend fun siteModelsCreate(siteId: String, body: AdminSiteModelCreateRequest): SiteModelsCreateResult? {
-        val raw = client.post(ApiPaths.backendPath("/sites/${serializePathParameter(siteId, PathParameterSpec("siteId", "simple", false))}/models"), body, null, null, "application/json")
-        return client.convertValue(raw, object : TypeReference<SiteModelsCreateResult>() {})
-    }
-
-    /** Replace site models */
-    suspend fun siteModelsReplace(siteId: String, body: AdminSiteModelsReplaceRequest): SiteModelsReplaceResult? {
-        val raw = client.put(ApiPaths.backendPath("/sites/${serializePathParameter(siteId, PathParameterSpec("siteId", "simple", false))}/models"), body, null, null, "application/json")
-        return client.convertValue(raw, object : TypeReference<SiteModelsReplaceResult>() {})
-    }
-
-    /** Delete site model */
-    suspend fun siteModelsDelete(siteId: String, siteModelId: String): SiteModelsDeleteResult? {
-        val raw = client.delete(ApiPaths.backendPath("/sites/${serializePathParameter(siteId, PathParameterSpec("siteId", "simple", false))}/models/${serializePathParameter(siteModelId, PathParameterSpec("siteModelId", "simple", false))}"))
-        return client.convertValue(raw, object : TypeReference<SiteModelsDeleteResult>() {})
-    }
-
-    /** Update site model */
-    suspend fun siteModelsUpdate(siteId: String, siteModelId: String, body: AdminSiteModelUpdateRequest): SiteModelsUpdateResult? {
-        val raw = client.patch(ApiPaths.backendPath("/sites/${serializePathParameter(siteId, PathParameterSpec("siteId", "simple", false))}/models/${serializePathParameter(siteModelId, PathParameterSpec("siteModelId", "simple", false))}"), body, null, null, "application/json")
-        return client.convertValue(raw, object : TypeReference<SiteModelsUpdateResult>() {})
-    }
-
     /** Test site connection */
     suspend fun testConnectionCreate(siteId: String, body: AdminSiteActionRequest): TestConnectionCreateResult? {
         val raw = client.post(ApiPaths.backendPath("/sites/${serializePathParameter(siteId, PathParameterSpec("siteId", "simple", false))}/test_connection"), body, null, null, "application/json")

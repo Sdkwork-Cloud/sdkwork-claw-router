@@ -296,44 +296,6 @@ tables:
   security:
     financial: true
     audit_required: true
-- table: integration_service_provider_contract_version
-  domain: integration
-  profile: commercial_provider_contract_version
-  compliance_level: L3
-  system_of_record: true
-  write_owner: service-provider-service
-  common_columns: tenant_entity
-  source_tables:
-  - integration_service_provider_contract
-  frontend_routes:
-  - /admin/service-providers/contracts
-  api_surfaces:
-  - backend
-  required_columns:
-  - uuid
-  - contract_id
-  - version_no
-  columns:
-    contract_id: int64
-    version_no: int32
-    version_hash: string(128)
-    contract_payload: json
-    approval_status: string(32)
-    requested_by: int64
-    approved_by: int64
-    approved_at: instant
-    published_at: instant
-  indexes:
-  - name: uk_integration_service_provider_contract_version
-    unique: true
-    columns:
-    - tenant_id
-    - organization_id
-    - contract_id
-    - version_no
-  security:
-    financial: true
-    audit_required: true
 - table: integration_service_provider_finance_profile
   domain: integration
   profile: commercial_provider_finance_profile
@@ -371,44 +333,6 @@ tables:
     - tenant_id
     - organization_id
     - service_provider_id
-  security:
-    financial: true
-    audit_required: true
-- table: integration_service_provider_account_binding
-  domain: integration
-  profile: commercial_provider_account_binding
-  compliance_level: L3
-  system_of_record: true
-  write_owner: service-provider-service
-  common_columns: tenant_entity
-  source_tables:
-  - integration_service_provider
-  - commerce_account
-  frontend_routes:
-  - /admin/service-providers/wallet
-  api_surfaces:
-  - backend
-  - worker
-  required_columns:
-  - uuid
-  - service_provider_id
-  - commerce_account_id
-  columns:
-    service_provider_id: int64
-    commerce_account_id: string(128)
-    account_role: string(64)
-    asset_type: string(32)
-    currency: string(10)
-  indexes:
-  - name: uk_integration_service_provider_account_binding
-    unique: true
-    columns:
-    - tenant_id
-    - organization_id
-    - service_provider_id
-    - account_role
-    - asset_type
-    - currency
   security:
     financial: true
     audit_required: true
@@ -521,46 +445,6 @@ tables:
     - billing_meter_code
     - token_kind
     - status
-  security:
-    financial: true
-    audit_required: true
-- table: integration_service_provider_price_change_request
-  domain: integration
-  profile: commercial_provider_price_change_request
-  compliance_level: L3
-  system_of_record: true
-  write_owner: pricing-service
-  common_columns: tenant_entity
-  source_tables:
-  - integration_service_provider_price_plan
-  - integration_service_provider_price_rule
-  frontend_routes:
-  - /admin/service-providers/pricing
-  api_surfaces:
-  - backend
-  required_columns:
-  - uuid
-  - change_no
-  columns:
-    change_no: string(128)
-    seller_provider_id: int64
-    buyer_provider_id: int64
-    change_type: string(64)
-    draft_payload: json
-    before_hash: string(128)
-    after_hash: string(128)
-    approval_status: string(32)
-    requested_by: int64
-    approved_by: int64
-    effective_from: instant
-    published_at: instant
-  indexes:
-  - name: uk_integration_service_provider_price_change_no
-    unique: true
-    columns:
-    - tenant_id
-    - organization_id
-    - change_no
   security:
     financial: true
     audit_required: true

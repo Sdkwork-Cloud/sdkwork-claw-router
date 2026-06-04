@@ -226,6 +226,8 @@ async fn admin_channel_group_route_lists_and_replaces_channel_bindings() {
     assert_eq!("openai", list_payload["data"]["items"][0]["providerCode"]);
     assert_eq!(80, list_payload["data"]["items"][0]["weight"]);
     assert!(list_payload["data"]["items"][0].get("secretRef").is_none());
+    assert!(list_payload["data"]["items"][0].get("models").is_none());
+    assert!(list_payload["data"]["items"][0].get("modelScope").is_none());
 
     let replace_response = router
         .clone()
@@ -236,7 +238,7 @@ async fn admin_channel_group_route_lists_and_replaces_channel_bindings() {
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"items":[{"channelId":"3001","priority":5,"weight":100,"status":"active","modelScope":["openai/gpt-4o-mini"],"apiScope":["openai.chat_completions"],"capabilities":["llm"],"resourceCodes":["model.openai.gpt-4o-mini.chat","api.openai.chat_completions","bundle.openrouter.openai.standard"]},{"channelId":"3003","priority":30,"weight":20,"status":"disabled"}]}"#,
+                    r#"{"items":[{"channelId":"3001","priority":5,"weight":100,"status":"active","apiScope":["openai.chat_completions"],"capabilities":["llm"],"resourceCodes":["model.openai.gpt-4o-mini.chat","api.openai.chat_completions","bundle.openrouter.openai.standard"]},{"channelId":"3003","priority":30,"weight":20,"status":"disabled"}]}"#,
                 ))
                 .unwrap(),
         )
@@ -253,10 +255,8 @@ async fn admin_channel_group_route_lists_and_replaces_channel_bindings() {
     assert_eq!("3001", replace_payload["data"]["items"][0]["channelId"]);
     assert_eq!(5, replace_payload["data"]["items"][0]["priority"]);
     assert_eq!(100, replace_payload["data"]["items"][0]["weight"]);
-    assert_eq!(
-        "openai/gpt-4o-mini",
-        replace_payload["data"]["items"][0]["modelScope"][0]
-    );
+    assert!(replace_payload["data"]["items"][0].get("models").is_none());
+    assert!(replace_payload["data"]["items"][0].get("modelScope").is_none());
     assert_eq!(
         "llm",
         replace_payload["data"]["items"][0]["capabilities"][0]
@@ -680,7 +680,6 @@ impl AdminChannelGroupStore for TestChannelGroupStore {
                     input.weight,
                     &input.status,
                 );
-                item.model_scope = input.model_scope;
                 item.api_scope = input.api_scope;
                 item.capabilities = input.capabilities;
                 item.resource_codes = input.resource_codes;
@@ -723,9 +722,7 @@ fn channel_binding_item(
         channel_code: format!("{provider_code}-{channel_id}"),
         resource_codes: Vec::new(),
         api_scope: Vec::new(),
-        models: Vec::new(),
         capabilities: Vec::new(),
-        model_scope: Vec::new(),
         priority,
         weight,
         status: status.to_owned(),

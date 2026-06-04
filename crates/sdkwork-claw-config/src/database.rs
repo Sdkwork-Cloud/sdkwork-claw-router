@@ -65,14 +65,14 @@ impl DatabaseConfig {
     pub const DESKTOP_SQLITE_DEFAULT_MAX_CONNECTIONS: u32 = 8;
     pub const ENV_CONFIG_FILE: &'static str = "SDKWORK_CLAW_CONFIG_FILE";
     pub const SERVER_DEFAULT_POSTGRES_URL: &'static str =
-        "postgresql://sdkwork_claw_router:change-me@db.example.com:5432/sdkwork_claw_router?sslmode=require";
+        "postgresql://sdkworkprod%402026%2B%2B:change-me@db.example.com:5432/sdkwork_ai_prod?sslmode=require";
     pub const SERVER_DEFAULT_POSTGRES_HOST: &'static str = "db.example.com";
     pub const SERVER_DEFAULT_POSTGRES_PORT: u16 = 5432;
-    pub const SERVER_DEFAULT_POSTGRES_DATABASE: &'static str = "sdkwork_claw_router";
-    pub const SERVER_DEFAULT_POSTGRES_USERNAME: &'static str = "sdkwork_claw_router";
+    pub const SERVER_DEFAULT_POSTGRES_DATABASE: &'static str = "sdkwork_ai_prod";
+    pub const SERVER_DEFAULT_POSTGRES_USERNAME: &'static str = "sdkworkprod@2026++";
     pub const SERVER_DEFAULT_POSTGRES_PASSWORD: &'static str = "change-me";
     pub const SERVER_DEFAULT_POSTGRES_PASSWORD_FILE: &'static str =
-        "/etc/clawrouter/database.secret";
+        "/etc/sdkwork/router/database.secret";
     pub const SERVER_DEFAULT_POSTGRES_SSL_MODE: &'static str = "require";
 
     pub fn from_url(url: impl Into<String>) -> Result<Self, String> {
@@ -342,13 +342,7 @@ impl DatabaseConfig {
     ) -> Result<Self, String> {
         match profile {
             RuntimeConfigProfile::Server => Self::from_url_with_max_connections(
-                format!(
-                    "postgresql://{}:change-me@{}:{}/{}?sslmode=require",
-                    Self::SERVER_DEFAULT_POSTGRES_USERNAME,
-                    Self::SERVER_DEFAULT_POSTGRES_HOST,
-                    Self::SERVER_DEFAULT_POSTGRES_PORT,
-                    Self::SERVER_DEFAULT_POSTGRES_DATABASE
-                ),
+                Self::SERVER_DEFAULT_POSTGRES_URL,
                 Self::DEFAULT_MAX_CONNECTIONS,
             ),
             RuntimeConfigProfile::Desktop => Self::from_url_with_max_connections(
@@ -483,7 +477,7 @@ impl DatabaseEngine {
 
 fn server_default_postgres_password_file(location: &RuntimeConfigLocation) -> String {
     let config_file = portable_path(&location.config_file);
-    if config_file == "/etc/clawrouter/clawrouter.toml" {
+    if config_file == "/etc/sdkwork/router/clawrouter.toml" {
         return DatabaseConfig::SERVER_DEFAULT_POSTGRES_PASSWORD_FILE.to_owned();
     }
     if let Some(parent) = location
@@ -783,10 +777,13 @@ fn required_value(label: &str, value: Option<String>) -> Result<String, String> 
 fn is_placeholder_postgres_url(value: &str) -> bool {
     const LEGACY_SERVER_DEFAULT_POSTGRES_URL: &str =
         "postgresql://sdkwork_claw_router:change-me@localhost:5432/sdkwork_claw_router";
+    const LEGACY_SERVER_DEFAULT_POSTGRES_URL_V2: &str =
+        "postgresql://sdkwork_claw_router:change-me@db.example.com:5432/sdkwork_claw_router?sslmode=require";
 
     let value = value.trim();
     if value == DatabaseConfig::SERVER_DEFAULT_POSTGRES_URL
         || value == LEGACY_SERVER_DEFAULT_POSTGRES_URL
+        || value == LEGACY_SERVER_DEFAULT_POSTGRES_URL_V2
     {
         return true;
     }
@@ -818,34 +815,30 @@ impl RuntimeConfigLocation {
     pub fn for_platform(platform: &str, profile: RuntimeConfigProfile) -> Self {
         match (normalize_platform(platform).as_str(), profile) {
             ("windows", RuntimeConfigProfile::Server) => Self {
-                config_file: PathBuf::from("%ProgramData%/SdkWork/ClawRouter/clawrouter.toml"),
-                data_directory: PathBuf::from("%ProgramData%/SdkWork/ClawRouter/Data"),
+                config_file: PathBuf::from("%ProgramData%/sdkwork/router/clawrouter.toml"),
+                data_directory: PathBuf::from("%ProgramData%/sdkwork/router/Data"),
             },
             ("windows", RuntimeConfigProfile::Desktop) => Self {
-                config_file: PathBuf::from("%APPDATA%/SdkWork/ClawRouter/clawrouter.toml"),
-                data_directory: PathBuf::from("%LOCALAPPDATA%/SdkWork/ClawRouter"),
+                config_file: PathBuf::from("%USERPROFILE%/.sdkwork/router/config/clawrouter.toml"),
+                data_directory: PathBuf::from("%USERPROFILE%/.sdkwork/router/data"),
             },
             ("macos", RuntimeConfigProfile::Server) => Self {
                 config_file: PathBuf::from(
-                    "/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml",
+                    "/Library/Application Support/sdkwork/router/clawrouter.toml",
                 ),
-                data_directory: PathBuf::from("/Library/Application Support/SdkWork/ClawRouter"),
+                data_directory: PathBuf::from("/Library/Application Support/sdkwork/router/Data"),
             },
             ("macos", RuntimeConfigProfile::Desktop) => Self {
-                config_file: PathBuf::from(
-                    "~/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml",
-                ),
-                data_directory: PathBuf::from("~/Library/Application Support/SdkWork/ClawRouter"),
+                config_file: PathBuf::from("~/.sdkwork/router/config/clawrouter.toml"),
+                data_directory: PathBuf::from("~/.sdkwork/router/data"),
             },
             (_, RuntimeConfigProfile::Server) => Self {
-                config_file: PathBuf::from("/etc/clawrouter/clawrouter.toml"),
-                data_directory: PathBuf::from("/var/lib/clawrouter"),
+                config_file: PathBuf::from("/etc/sdkwork/router/clawrouter.toml"),
+                data_directory: PathBuf::from("/var/lib/sdkwork/router"),
             },
             (_, RuntimeConfigProfile::Desktop) => Self {
-                config_file: PathBuf::from(
-                    "${XDG_CONFIG_HOME:-~/.config}/clawrouter/clawrouter.toml",
-                ),
-                data_directory: PathBuf::from("${XDG_DATA_HOME:-~/.local/share}/clawrouter"),
+                config_file: PathBuf::from("~/.sdkwork/router/config/clawrouter.toml"),
+                data_directory: PathBuf::from("~/.sdkwork/router/data"),
             },
         }
     }
@@ -860,46 +853,50 @@ impl RuntimeConfigLocation {
                 let program_data = get_env("ProgramData")
                     .or_else(|| get_env("PROGRAMDATA"))
                     .unwrap_or_else(|| "C:/ProgramData".to_owned());
-                let root = join_runtime_path(&program_data, "SdkWork/ClawRouter");
+                let root = join_runtime_path(&program_data, "sdkwork/router");
                 Self {
                     config_file: PathBuf::from(join_runtime_path(&root, "clawrouter.toml")),
                     data_directory: PathBuf::from(join_runtime_path(&root, "Data")),
                 }
             }
             ("windows", RuntimeConfigProfile::Desktop) => {
-                let app_data = get_env("APPDATA")
-                    .unwrap_or_else(|| "C:/Users/Default/AppData/Roaming".to_owned());
-                let local_app_data = get_env("LOCALAPPDATA")
-                    .unwrap_or_else(|| "C:/Users/Default/AppData/Local".to_owned());
-                let config_root = join_runtime_path(&app_data, "SdkWork/ClawRouter");
-                let data_root = join_runtime_path(&local_app_data, "SdkWork/ClawRouter");
+                let home = get_env("USERPROFILE")
+                    .or_else(|| match (get_env("HOMEDRIVE"), get_env("HOMEPATH")) {
+                        (Some(drive), Some(path)) => Some(format!("{drive}{path}")),
+                        _ => None,
+                    })
+                    .unwrap_or_else(|| "C:/Users/Default".to_owned());
+                let root = join_runtime_path(&home, ".sdkwork/router");
                 Self {
-                    config_file: PathBuf::from(join_runtime_path(&config_root, "clawrouter.toml")),
-                    data_directory: PathBuf::from(data_root),
+                    config_file: PathBuf::from(join_runtime_path(
+                        &root,
+                        "config/clawrouter.toml",
+                    )),
+                    data_directory: PathBuf::from(join_runtime_path(&root, "data")),
                 }
             }
             ("macos", RuntimeConfigProfile::Server) => Self::for_platform(platform, profile),
             ("macos", RuntimeConfigProfile::Desktop) => {
                 let home = get_env("HOME").unwrap_or_else(|| "~".to_owned());
-                let root =
-                    join_runtime_path(&home, "Library/Application Support/SdkWork/ClawRouter");
+                let root = join_runtime_path(&home, ".sdkwork/router");
                 Self {
-                    config_file: PathBuf::from(join_runtime_path(&root, "clawrouter.toml")),
-                    data_directory: PathBuf::from(root),
+                    config_file: PathBuf::from(join_runtime_path(
+                        &root,
+                        "config/clawrouter.toml",
+                    )),
+                    data_directory: PathBuf::from(join_runtime_path(&root, "data")),
                 }
             }
             (_, RuntimeConfigProfile::Server) => Self::for_platform(platform, profile),
             (_, RuntimeConfigProfile::Desktop) => {
                 let home = get_env("HOME").unwrap_or_else(|| "~".to_owned());
-                let config_home = get_env("XDG_CONFIG_HOME")
-                    .unwrap_or_else(|| join_runtime_path(&home, ".config"));
-                let data_home = get_env("XDG_DATA_HOME")
-                    .unwrap_or_else(|| join_runtime_path(&home, ".local/share"));
-                let config_root = join_runtime_path(&config_home, "clawrouter");
-                let data_root = join_runtime_path(&data_home, "clawrouter");
+                let root = join_runtime_path(&home, ".sdkwork/router");
                 Self {
-                    config_file: PathBuf::from(join_runtime_path(&config_root, "clawrouter.toml")),
-                    data_directory: PathBuf::from(data_root),
+                    config_file: PathBuf::from(join_runtime_path(
+                        &root,
+                        "config/clawrouter.toml",
+                    )),
+                    data_directory: PathBuf::from(join_runtime_path(&root, "data")),
                 }
             }
         }

@@ -7,21 +7,6 @@ public class IntegrationApi {
         self.client = client
     }
 
-    /// List channel endpoints
-    public func channelEndpointsList() async throws -> ChannelEndpointsListResult? {
-        return try await client.get(ApiPaths.backendPath("/integration/channel_endpoints"), responseType: ChannelEndpointsListResult.self)
-    }
-
-    /// Create channel endpoint
-    public func channelEndpointsCreate(body: AdminChannelEndpointCreateRequest) async throws -> ChannelEndpointsCreateResult? {
-        return try await client.post(ApiPaths.backendPath("/integration/channel_endpoints"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: ChannelEndpointsCreateResult.self)
-    }
-
-    /// Update channel endpoint
-    public func channelEndpointsUpdate(endpointId: String, body: AdminChannelEndpointUpdateRequest) async throws -> ChannelEndpointsUpdateResult? {
-        return try await client.put(ApiPaths.backendPath("/integration/channel_endpoints/\(serializePathParameter(endpointId, PathParameterSpec(name: "endpointId", style: "simple", explode: false)))"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: ChannelEndpointsUpdateResult.self)
-    }
-
     /// List channels
     public func channelsList() async throws -> ChannelsListResult? {
         return try await client.get(ApiPaths.backendPath("/integration/channels"), responseType: ChannelsListResult.self)

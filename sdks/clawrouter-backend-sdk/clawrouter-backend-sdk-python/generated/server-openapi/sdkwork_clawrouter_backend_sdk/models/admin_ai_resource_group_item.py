@@ -14,5 +14,8 @@ class AdminAiResourceGroupItem:
     resource_count: int
     selection_mode: str
     status: str
+    capabilities: Optional[List[str]] = None
+    capability: Optional[str] = None
     description: Optional[str] = None
     sort_order: Optional[int] = None
+    vendor_codes: Optional[List[str]] = None

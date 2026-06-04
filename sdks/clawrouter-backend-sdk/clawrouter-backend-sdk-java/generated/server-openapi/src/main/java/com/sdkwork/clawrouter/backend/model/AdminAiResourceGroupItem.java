@@ -1,7 +1,10 @@
 package com.sdkwork.clawrouter.backend.model;
 
+import java.util.List;
 
 public class AdminAiResourceGroupItem {
+    private List<String> capabilities;
+    private String capability;
     private String description;
     private Boolean dynamic;
     private String groupCode;
@@ -12,6 +15,23 @@ public class AdminAiResourceGroupItem {
     private String selectionMode;
     private Integer sortOrder;
     private String status;
+    private List<String> vendorCodes;
+
+    public List<String> getCapabilities() {
+        return this.capabilities;
+    }
+
+    public void setCapabilities(List<String> capabilities) {
+        this.capabilities = capabilities;
+    }
+
+    public String getCapability() {
+        return this.capability;
+    }
+
+    public void setCapability(String capability) {
+        this.capability = capability;
+    }
 
     public String getDescription() {
         return this.description;
@@ -91,5 +111,13 @@ public class AdminAiResourceGroupItem {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public List<String> getVendorCodes() {
+        return this.vendorCodes;
+    }
+
+    public void setVendorCodes(List<String> vendorCodes) {
+        this.vendorCodes = vendorCodes;
     }
 }

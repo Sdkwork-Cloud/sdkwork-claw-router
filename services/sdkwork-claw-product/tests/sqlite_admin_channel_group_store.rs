@@ -735,7 +735,6 @@ fn binding_input(
             "bundle.openrouter.openai.standard".to_owned(),
         ],
         api_scope: vec!["openai.chat_completions".to_owned()],
-        model_scope: vec!["openai/gpt-4o-mini".to_owned()],
         capabilities: vec!["llm".to_owned()],
     }
 }

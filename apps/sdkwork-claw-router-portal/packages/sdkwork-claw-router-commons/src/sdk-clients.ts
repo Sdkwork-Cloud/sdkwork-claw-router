@@ -14,8 +14,9 @@ import { readClawRouterRuntimeEnv } from './utils/env.ts';
 export const APP_API_PREFIX = '/app/v3/api';
 export const BACKEND_API_PREFIX = '/backend/v3/api';
 export const OPEN_API_PREFIX = '/v1';
+export const CLOUD_API_PREFIX = '/cloud/v3';
 
-export type ClawRouterGeneratedSdkType = 'app' | 'backend' | 'ai';
+export type ClawRouterGeneratedSdkType = 'app' | 'backend' | 'ai' | 'cloud-services';
 
 export interface ClawRouterGeneratedSdkMetadata {
   name: string;
@@ -69,8 +70,22 @@ export const CLAWROUTER_AI_SDK_REFERENCE_METADATA: ClawRouterGeneratedSdkMetadat
   description: 'SDKWork OpenAI-compatible AI API SDK',
 };
 
+export const CLAWROUTER_CLOUD_SERVICES_SDK_REFERENCE_METADATA: ClawRouterGeneratedSdkMetadata = {
+  name: 'SdkworkCloudServicesClient',
+  packageName: '@sdkwork/clawrouter-cloud-services-sdk',
+  version: '0.1.0',
+  sdkType: 'cloud-services',
+  apiPrefix: CLOUD_API_PREFIX,
+  runtimeEnvName: 'VITE_CLAWROUTER_CLOUD_API_BASE_URL',
+  sourceDir: 'sdks/clawrouter-cloud-services-sdk/clawrouter-cloud-services-sdk-typescript',
+  archiveLanguage: 'typescript',
+  archiveName: 'sdkwork-clawrouter-cloud-services-sdk-typescript-0.1.0.zip',
+  description: 'SDKWork S3-compatible cloud services API SDK',
+};
+
 export const SDK_SYSTEM_CONFIG = {
   gateway: CLAWROUTER_AI_SDK_REFERENCE_METADATA,
+  'cloud-services': CLAWROUTER_CLOUD_SERVICES_SDK_REFERENCE_METADATA,
   app: CLAWROUTER_APP_SDK_REFERENCE_METADATA,
   backend: CLAWROUTER_BACKEND_SDK_REFERENCE_METADATA,
 } as const satisfies Record<string, ClawRouterGeneratedSdkMetadata>;

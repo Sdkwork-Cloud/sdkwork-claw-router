@@ -127,7 +127,7 @@ impl PostgresPricingCatalogLoader {
     pub async fn load_routing_config_version(&self) -> Result<i64, PostgresCatalogLoadError> {
         sqlx::query_scalar(
             r#"
-            SELECT COALESCE(
+            SELECT CAST(COALESCE(
                 (
                     SELECT config_version
                     FROM ai_config_version
@@ -147,7 +147,7 @@ impl PostgresPricingCatalogLoader {
                       AND NOT (tenant_id = 0 AND organization_id = 0)
                 ),
                 0
-            )
+            ) AS BIGINT)
             "#,
         )
         .bind(AI_ROUTING_CONFIG_SCOPE)

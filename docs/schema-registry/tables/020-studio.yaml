@@ -96,6 +96,12 @@ tables:
     - artifact_id
     - sort_order
     - id
+  - name: uk_studio_catalog_asset_uuid
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - uuid
   - name: idx_studio_catalog_asset_seed_source
     columns:
     - tenant_id
@@ -172,6 +178,12 @@ tables:
     - version
     - platform_type
     - os_name
+  - name: uk_studio_catalog_artifact_uuid
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - uuid
   - name: idx_studio_catalog_artifact_seed_source
     columns:
     - tenant_id

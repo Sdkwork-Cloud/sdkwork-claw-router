@@ -8,6 +8,7 @@ namespace Sdkwork.ClawRouter.App.Models
     {
         public string? BillingMeter { get; set; }
         public string? Currency { get; set; }
+        public string? RegionCode { get; set; }
         public string? UnitPrice { get; set; }
     }
 }

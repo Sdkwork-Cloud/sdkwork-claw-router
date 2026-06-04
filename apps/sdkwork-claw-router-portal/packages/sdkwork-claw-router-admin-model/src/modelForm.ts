@@ -10,11 +10,12 @@ const DEFAULT_VENDOR_COLOR = 'bg-indigo-500';
 const DEFAULT_VENDOR_DESCRIPTION = 'Custom model vendor';
 const MODEL_TYPES: readonly Model['type'][] = ['Chat', 'Image', 'Audio', 'Embedding', 'Music', 'SoundEffect', 'Video'];
 export const MODEL_PRICING_REGIONS = [
-  { code: 'cn', labelKey: 'admin.model.modelModal.pricingRegion.cn' },
-  { code: 'global', labelKey: 'admin.model.modelModal.pricingRegion.global' },
+  { code: 'cn', currency: 'CNY', labelKey: 'admin.model.modelModal.pricingRegion.cn' },
+  { code: 'global', currency: 'USD', labelKey: 'admin.model.modelModal.pricingRegion.global' },
 ] as const;
 
 type ModelPricingRegionCode = typeof MODEL_PRICING_REGIONS[number]['code'];
+type ModelPricingRegion = typeof MODEL_PRICING_REGIONS[number];
 
 export function createVendorInputFromForm(
   formData: FormData,
@@ -115,13 +116,15 @@ function readOptionalDecimalText(value: FormDataEntryValue | null): string {
 
 function readRegionPrices(formData: FormData): ModelCreateInput['regionPrices'] {
   return MODEL_PRICING_REGIONS
-    .map((region) => readRegionPrice(formData, region.code))
+    .map((region) => readRegionPrice(formData, region))
     .filter((price): price is NonNullable<ModelCreateInput['regionPrices']>[number] => price !== null);
 }
 
-function readRegionPrice(formData: FormData, regionCode: ModelPricingRegionCode): ModelCreateInput['regionPrices'][number] | null {
+function readRegionPrice(formData: FormData, region: ModelPricingRegion): ModelCreateInput['regionPrices'][number] | null {
+  const regionCode: ModelPricingRegionCode = region.code;
   const price = {
     regionCode,
+    currency: region.currency,
     priceIn: readDecimalText(formData.get(`priceIn.${regionCode}`)),
     priceOut: readDecimalText(formData.get(`priceOut.${regionCode}`)),
     cacheReadPrice: readOptionalDecimalText(formData.get(`cacheReadPrice.${regionCode}`)),

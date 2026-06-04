@@ -171,7 +171,7 @@ async fn import_meters(conn: &mut PgConnection, catalog: &ModelCatalog) -> Resul
             INSERT INTO ai_billing_meter
                 (uuid, tenant_id, organization_id, data_scope, status, metadata, meter_code, display_name, description, modality, usage_type, billing_mode, default_unit, default_unit_size, quantity_precision, quantity_source, aggregation_mode, supports_tier, supports_expression, allow_negative_quantity, canonical_price_item_type, sort_order)
             VALUES
-                ($1, $2, $3, $4, $5, $6::jsonb, $7, $8, $9, $10, 1, 1, 1, $11, $12, 1, 1, false, false, false, 1, $13)
+                ($1, $2, $3, $4, $5, $6::jsonb, $7, $8, $9, $10, 1, 1, 1, CAST($11 AS NUMERIC), $12, 1, 1, false, false, false, 1, $13)
             ON CONFLICT(tenant_id, organization_id, meter_code) DO UPDATE SET
                 display_name = excluded.display_name,
                 description = excluded.description,
@@ -367,7 +367,7 @@ async fn import_models(
                 INSERT INTO ai_model
                     (uuid, tenant_id, organization_id, data_scope, status, metadata, catalog_key, model, display_name, vendor_id, vendor_code, vendor_name_snapshot, family_id, family_code, provider_hint, model_family, capability, capabilities, modalities, input_modalities, output_modalities, color_token, docs_url, api_format, context_tokens, max_input_tokens, max_output_tokens, supports_streaming, supports_tools, supports_json_schema, performance_profile, rank_score, release_stage, shelf_state, routing_state, replacement_model, description)
                 VALUES
-                    ($1, $2, $3, $4, $5, $6::jsonb, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18::jsonb, $19::jsonb, $20::jsonb, $21::jsonb, $22, $23, $24, $25, $26, $27, $28, $29, $30, $31, $32::jsonb, $33, $34, $35, $36, $37)
+                    ($1, $2, $3, $4, $5, $6::jsonb, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18::jsonb, $19::jsonb, $20::jsonb, $21::jsonb, $22, $23, $24, $25, $26, $27, $28, $29, $30, $31::jsonb, CAST($32 AS NUMERIC), $33, $34, $35, $36, $37)
                 ON CONFLICT(tenant_id, organization_id, catalog_key) DO UPDATE SET
                     display_name = excluded.display_name,
                     vendor_id = excluded.vendor_id,
@@ -1016,7 +1016,7 @@ async fn import_pricing(
                     INSERT INTO ai_model_pricing
                         (uuid, tenant_id, organization_id, data_scope, status, metadata, model_id, catalog_key, model, vendor_code, region_code, provider_code, price_side, pricing_scope, billing_type, billing_mode, billing_meter_id, billing_meter_code, price_item_type, unit, unit_size, metering_mode, quantity_source, minimum_quantity, quantity_step, included_quantity, unit_price, currency, rounding_mode, min_charge_amount, pricing_formula_mode, price_origin, priority, price_version, source_url, observed_at, effective_from)
                     VALUES
-                        ($1, $2, $3, $4, $5, $6::jsonb, $7, $8, $9, $10, $11, $12, $13, $14, 1, 1, $15, $16, 1, 1, $17, 1, 1, $18, $19, 0, $20, $21, 1, 0, 1, 1, $22, $23, $24, $25, $26)
+                        ($1, $2, $3, $4, $5, $6::jsonb, $7, $8, $9, $10, $11, $12, $13, $14, 1, 1, $15, $16, 1, 1, CAST($17 AS NUMERIC), 1, 1, CAST($18 AS NUMERIC), CAST($19 AS NUMERIC), 0, CAST($20 AS NUMERIC), $21, 1, 0, 1, 1, $22, $23, $24, $25::timestamptz, $26::timestamptz)
                     ON CONFLICT(uuid) DO UPDATE SET
                         model_id = excluded.model_id,
                         catalog_key = excluded.catalog_key,
@@ -1057,7 +1057,11 @@ async fn import_pricing(
                 .bind(SYSTEM_ORGANIZATION_ID)
                 .bind(SYSTEM_DATA_SCOPE)
                 .bind(ACTIVE_STATUS)
-                .bind(metadata_json(catalog, "sdkwork_models_pricing", serde_json::json!({ "priceId": price.price_id, "sourceUrl": price.source.source_url })))
+                .bind(metadata_json(catalog, "sdkwork_models_pricing", serde_json::json!({
+                    "priceId": price.price_id,
+                    "priceSide": price.price_side,
+                    "sourceUrl": price.source.source_url
+                })))
                 .bind(model_id)
                 .bind(&pricing_catalog_key)
                 .bind(&pricing.model_id)
@@ -1112,7 +1116,7 @@ async fn import_rankings(
                     INSERT INTO ai_model_rank_snapshot
                         (uuid, tenant_id, organization_id, source_type, source_version, status, metadata, snapshot_date, snapshot_period, rank_scope, model_id, catalog_key, model, vendor_code, region_code, vendor_name_snapshot, provider_code, modality, rank_no, previous_rank_no, color_token, pricing_text, strengths, latency_p50_ms, latency_p95_ms, win_rate, trend_score, rank_payload)
                     VALUES
-                        ($1, $2, $3, $4, 1, $5, $6::jsonb, $7, 1, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21::jsonb, $22, $23, $24, $25, $26::jsonb)
+                        ($1, $2, $3, $4, 1, $5, $6::jsonb, $7::date, 1, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21::jsonb, $22, $23, CAST($24 AS NUMERIC), CAST($25 AS NUMERIC), $26::jsonb)
                     ON CONFLICT(tenant_id, organization_id, snapshot_date, snapshot_period, rank_scope, vendor_code, region_code, catalog_key) DO UPDATE SET
                         model_id = excluded.model_id,
                         catalog_key = excluded.catalog_key,

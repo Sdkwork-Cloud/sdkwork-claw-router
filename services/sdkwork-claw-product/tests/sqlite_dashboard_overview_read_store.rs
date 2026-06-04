@@ -117,7 +117,7 @@ async fn sqlite_dashboard_overview_excludes_deprecated_hidden_and_catalog_only_t
         .unwrap();
 
     assert_eq!(1, snapshot.top_models.len());
-    assert_eq!("gpt-active", snapshot.top_models[0].model);
+    assert_eq!("gpt-active", snapshot.top_models[0].name);
 }
 
 async fn create_schema(pool: &sqlx::SqlitePool) {

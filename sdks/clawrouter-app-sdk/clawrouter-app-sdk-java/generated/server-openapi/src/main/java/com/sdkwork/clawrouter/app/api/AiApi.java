@@ -78,6 +78,30 @@ public class AiApi {
         return client.convertValue(raw, new TypeReference<ModelsListResult>() {});
     }
 
+    /** List routing API keys */
+    public RoutingApiKeysListResult routingApiKeysList() throws Exception {
+        Object raw = client.get(ApiPaths.appPath("/ai/routing/api_keys"));
+        return client.convertValue(raw, new TypeReference<RoutingApiKeysListResult>() {});
+    }
+
+    /** List routing channels */
+    public RoutingChannelsListResult routingChannelsList() throws Exception {
+        Object raw = client.get(ApiPaths.appPath("/ai/routing/channels"));
+        return client.convertValue(raw, new TypeReference<RoutingChannelsListResult>() {});
+    }
+
+    /** List routing request traces */
+    public RoutingRequestTracesListResult routingRequestTracesList() throws Exception {
+        Object raw = client.get(ApiPaths.appPath("/ai/routing/request_traces"));
+        return client.convertValue(raw, new TypeReference<RoutingRequestTracesListResult>() {});
+    }
+
+    /** List routing usage */
+    public RoutingUsageListResult routingUsageList() throws Exception {
+        Object raw = client.get(ApiPaths.appPath("/ai/routing/usage"));
+        return client.convertValue(raw, new TypeReference<RoutingUsageListResult>() {});
+    }
+
     /** List logs */
     public UsageLogsListResult usageLogsList(Integer page, Integer pageSize, String q, String status, String startTime, String endTime) throws Exception {
         String query = buildQueryString(List.of(

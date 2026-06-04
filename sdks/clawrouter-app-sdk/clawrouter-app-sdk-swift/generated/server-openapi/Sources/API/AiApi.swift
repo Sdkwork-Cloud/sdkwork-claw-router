@@ -65,6 +65,26 @@ public class AiApi {
         return try await client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/ai/models"), query), responseType: ModelsListResult.self)
     }
 
+    /// List routing API keys
+    public func routingApiKeysList() async throws -> RoutingApiKeysListResult? {
+        return try await client.get(ApiPaths.appPath("/ai/routing/api_keys"), responseType: RoutingApiKeysListResult.self)
+    }
+
+    /// List routing channels
+    public func routingChannelsList() async throws -> RoutingChannelsListResult? {
+        return try await client.get(ApiPaths.appPath("/ai/routing/channels"), responseType: RoutingChannelsListResult.self)
+    }
+
+    /// List routing request traces
+    public func routingRequestTracesList() async throws -> RoutingRequestTracesListResult? {
+        return try await client.get(ApiPaths.appPath("/ai/routing/request_traces"), responseType: RoutingRequestTracesListResult.self)
+    }
+
+    /// List routing usage
+    public func routingUsageList() async throws -> RoutingUsageListResult? {
+        return try await client.get(ApiPaths.appPath("/ai/routing/usage"), responseType: RoutingUsageListResult.self)
+    }
+
     /// List logs
     public func usageLogsList(page: Int? = nil, pageSize: Int? = nil, q: String? = nil, status: String? = nil, startTime: String? = nil, endTime: String? = nil) async throws -> UsageLogsListResult? {
         let query = buildQueryString([

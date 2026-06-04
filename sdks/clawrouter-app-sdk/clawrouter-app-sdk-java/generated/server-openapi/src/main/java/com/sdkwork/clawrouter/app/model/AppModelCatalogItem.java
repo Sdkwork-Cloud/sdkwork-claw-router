@@ -17,13 +17,10 @@ public class AppModelCatalogItem {
     private Integer maxOutputTokens;
     private List<String> modalities;
     private String model;
-    private String officialReferenceCurrency;
     private List<AppModelCatalogReferencePrice> officialReferencePrices;
-    private String officialReferenceUnitPrice;
     private List<String> outputModalities;
     private AppModelCatalogPriceAvailability priceAvailability;
     private List<String> providerCodes;
-    private String regionCode;
     private Integer releaseStage;
     private String replacementModel;
     private Integer routingState;
@@ -149,28 +146,12 @@ public class AppModelCatalogItem {
         this.model = model;
     }
 
-    public String getOfficialReferenceCurrency() {
-        return this.officialReferenceCurrency;
-    }
-
-    public void setOfficialReferenceCurrency(String officialReferenceCurrency) {
-        this.officialReferenceCurrency = officialReferenceCurrency;
-    }
-
     public List<AppModelCatalogReferencePrice> getOfficialReferencePrices() {
         return this.officialReferencePrices;
     }
 
     public void setOfficialReferencePrices(List<AppModelCatalogReferencePrice> officialReferencePrices) {
         this.officialReferencePrices = officialReferencePrices;
-    }
-
-    public String getOfficialReferenceUnitPrice() {
-        return this.officialReferenceUnitPrice;
-    }
-
-    public void setOfficialReferenceUnitPrice(String officialReferenceUnitPrice) {
-        this.officialReferenceUnitPrice = officialReferenceUnitPrice;
     }
 
     public List<String> getOutputModalities() {
@@ -195,14 +176,6 @@ public class AppModelCatalogItem {
 
     public void setProviderCodes(List<String> providerCodes) {
         this.providerCodes = providerCodes;
-    }
-
-    public String getRegionCode() {
-        return this.regionCode;
-    }
-
-    public void setRegionCode(String regionCode) {
-        this.regionCode = regionCode;
     }
 
     public Integer getReleaseStage() {

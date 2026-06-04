@@ -3,7 +3,7 @@ use std::sync::Arc;
 use crate::api::paths::backend_path;
 use crate::api::paths::append_query_string;
 use crate::http::{SdkworkError, SdkworkHttpClient};
-use crate::models::{AdminChannelCreateRequest, AdminChannelEndpointCreateRequest, AdminChannelEndpointUpdateRequest, AdminChannelUpdateRequest, AdminProviderSecretCreateRequest, AdminProviderSecretUpdateRequest, ChannelEndpointsCreateResult, ChannelEndpointsListResult, ChannelEndpointsUpdateResult, ChannelsCreateResult, ChannelsDeleteResult, ChannelsListResult, ChannelsUpdateResult, ChannelsVerifyResult, ProviderSecretsCreateResult, ProviderSecretsDeleteResult, ProviderSecretsListResult, ProviderSecretsUpdateResult};
+use crate::models::{AdminChannelCreateRequest, AdminChannelUpdateRequest, AdminProviderSecretCreateRequest, AdminProviderSecretUpdateRequest, ChannelsCreateResult, ChannelsDeleteResult, ChannelsListResult, ChannelsUpdateResult, ChannelsVerifyResult, ProviderSecretsCreateResult, ProviderSecretsDeleteResult, ProviderSecretsListResult, ProviderSecretsUpdateResult};
 
 #[derive(Clone)]
 pub struct IntegrationApi {
@@ -13,24 +13,6 @@ pub struct IntegrationApi {
 impl IntegrationApi {
     pub fn new(client: Arc<SdkworkHttpClient>) -> Self {
         Self { client }
-    }
-
-    /// List channel endpoints
-    pub async fn channel_endpoints_list(&self) -> Result<ChannelEndpointsListResult, SdkworkError> {
-        let path = backend_path(&"/integration/channel_endpoints".to_string());
-        self.client.get(&path, None, None).await
-    }
-
-    /// Create channel endpoint
-    pub async fn channel_endpoints_create(&self, body: &AdminChannelEndpointCreateRequest) -> Result<ChannelEndpointsCreateResult, SdkworkError> {
-        let path = backend_path(&"/integration/channel_endpoints".to_string());
-        self.client.post(&path, Some(body), None, None, Some("application/json")).await
-    }
-
-    /// Update channel endpoint
-    pub async fn channel_endpoints_update(&self, endpoint_id: &str, body: &AdminChannelEndpointUpdateRequest) -> Result<ChannelEndpointsUpdateResult, SdkworkError> {
-        let path = backend_path(&format!("/integration/channel_endpoints/{}", serialize_path_parameter(endpoint_id, PathParameterSpec::new("endpointId", "simple", false))));
-        self.client.put(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// List channels

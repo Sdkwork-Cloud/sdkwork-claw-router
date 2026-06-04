@@ -90,6 +90,7 @@ export interface OpenApiPathItem {
 }
 
 export interface OpenApiDocument {
+  tags?: OpenApiTag[];
   paths: Record<string, OpenApiPathItem>;
   components?: {
     schemas?: Record<string, OpenApiJsonSchema>;
@@ -97,6 +98,12 @@ export interface OpenApiDocument {
     [key: string]: unknown;
   };
   "x-api-prefix"?: string;
+  [key: string]: unknown;
+}
+
+export interface OpenApiTag {
+  name?: string;
+  'x-display-order'?: number;
   [key: string]: unknown;
 }
 

@@ -1803,6 +1803,88 @@ describe("sdkwork-auth-pc-react service", () => {
     });
   });
 
+  it("accepts claw-router QR password completion envelopes with completed status and embedded session", async () => {
+    const create = vi.fn().mockResolvedValue({
+      code: "2000",
+      msg: "SUCCESS",
+      data: {
+        id: "qr_auth_session_f87f5a94c62a69b471a71faaa0922b9e",
+        sessionKey: "f87f5a94c62a69b471a71faaa0922b9e",
+        purpose: "login",
+        defaultAccountId: null,
+        defaultEntryId: null,
+        defaultProvider: null,
+        defaultAccountType: null,
+        qrContent: {
+          content: "https://127.0.0.1:3900/auth/qr/f87f5a94c62a69b471a71faaa0922b9e?session_key=f87f5a94c62a69b471a71faaa0922b9e&purpose=login&scan_source=browser",
+          mode: "fallback_url",
+        },
+        fallbackUrl: "https://127.0.0.1:3900/auth/qr/f87f5a94c62a69b471a71faaa0922b9e?session_key=f87f5a94c62a69b471a71faaa0922b9e&purpose=login&scan_source=browser",
+        status: "completed",
+        scannedAt: "2026-06-03T13:24:01Z",
+        completedAt: "2026-06-03T13:24:02Z",
+        expiresAt: "2026-06-03T13:28:32Z",
+        createdAt: "2026-06-03T13:23:32Z",
+        updatedAt: "2026-06-03T13:24:02Z",
+        session: {
+          accessToken: "claw-router-qr-access-token",
+          authToken: "claw-router-qr-auth-token",
+          refreshToken: "claw-router-qr-refresh-token",
+          user: {
+            displayName: "Claw Router QR Operator",
+            email: "claw-router-qr@sdkwork.ai",
+            id: "claw-router-qr-user-1",
+          },
+        },
+      },
+    });
+    const persistSession = vi.fn();
+    const service = createSdkworkAuthService({
+      getClient: () => ({
+        auth: {},
+        openPlatform: {
+          qrAuth: {
+            sessions: {
+              passwords: {
+                create,
+              },
+            },
+          },
+        },
+      } as unknown as SdkworkAuthClient),
+      persistSession,
+    });
+
+    await expect(service.confirmLoginQrCode({
+      password: "login-secret",
+      sessionKey: " f87f5a94c62a69b471a71faaa0922b9e ",
+      username: "alice",
+    })).resolves.toMatchObject({
+      session: {
+        accessToken: "claw-router-qr-access-token",
+        authToken: "claw-router-qr-auth-token",
+        refreshToken: "claw-router-qr-refresh-token",
+        user: {
+          email: "claw-router-qr@sdkwork.ai",
+          id: "claw-router-qr-user-1",
+        },
+      },
+      status: "confirmed",
+      user: {
+        email: "claw-router-qr@sdkwork.ai",
+      },
+    });
+    expect(create).toHaveBeenCalledWith("f87f5a94c62a69b471a71faaa0922b9e", {
+      password: "login-secret",
+      username: "alice",
+    });
+    expect(persistSession).toHaveBeenCalledWith({
+      accessToken: "claw-router-qr-access-token",
+      authToken: "claw-router-qr-auth-token",
+      refreshToken: "claw-router-qr-refresh-token",
+    });
+  });
+
   it("preserves platform QR images as MediaResource objects from SDK responses", async () => {
     const service = createSdkworkAuthService({
       getClient: () => ({

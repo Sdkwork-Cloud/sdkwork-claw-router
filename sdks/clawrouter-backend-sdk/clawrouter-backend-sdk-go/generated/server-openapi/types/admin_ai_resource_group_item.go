@@ -2,6 +2,8 @@ package types
 
 // Admin ai resource group item schema exposed by Claw Router.
 type AdminAiResourceGroupItem struct {
+	Capabilities []string `json:"capabilities"`
+	Capability string `json:"capability"`
 	Description string `json:"description"`
 	Dynamic bool `json:"dynamic"`
 	GroupCode string `json:"groupCode"`
@@ -12,4 +14,5 @@ type AdminAiResourceGroupItem struct {
 	SelectionMode string `json:"selectionMode"`
 	SortOrder int `json:"sortOrder"`
 	Status string `json:"status"`
+	VendorCodes []string `json:"vendorCodes"`
 }

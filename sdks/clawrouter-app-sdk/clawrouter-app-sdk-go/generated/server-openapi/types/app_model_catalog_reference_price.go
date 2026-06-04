@@ -4,5 +4,6 @@ package types
 type AppModelCatalogReferencePrice struct {
 	BillingMeter string `json:"billingMeter"`
 	Currency string `json:"currency"`
+	RegionCode string `json:"regionCode"`
 	UnitPrice string `json:"unitPrice"`
 }

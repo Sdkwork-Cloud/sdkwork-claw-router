@@ -20,13 +20,13 @@ impl ProviderAdapter for EchoProviderAdapter {
     }
 
     fn endpoints(&self) -> Vec<ProviderAdapterEndpoint> {
-        vec![ProviderAdapterEndpoint {
-            endpoint_key: "video.start_end2video".to_owned(),
-            capability: Some("video_generation".to_owned()),
-            method: "POST".to_owned(),
-            standard_path_pattern: "/vidu/ent/v2/start-end2video".to_owned(),
-            invocation_shape: AdapterInvocationShape::AsyncTaskStart,
-        }]
+        vec![ProviderAdapterEndpoint::runtime_available(
+            "video.start_end2video",
+            Some("video_generation".to_owned()),
+            "POST",
+            "/vidu/ent/v2/start-end2video",
+            AdapterInvocationShape::AsyncTaskStart,
+        )]
     }
 
     fn resolve_endpoint(

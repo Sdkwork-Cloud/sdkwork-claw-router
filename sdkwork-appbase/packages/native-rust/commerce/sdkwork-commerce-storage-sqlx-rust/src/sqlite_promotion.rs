@@ -85,6 +85,7 @@ impl SqliteCommercePromotionStore {
         .bind(query.status.as_deref())
         .fetch_all(&self.pool)
         .await
+        .or_else(empty_rows_when_read_model_is_missing)
         .map_err(|error| store_error("failed to list current user coupons", error))?;
 
         rows.iter()
@@ -124,9 +125,14 @@ impl SqliteCommercePromotionStore {
         .bind(&query.owner_user_id)
         .bind(CommerceAccountAssetType::Points.as_str())
         .bind(POINTS_CURRENCY_CODE)
-        .fetch_one(&self.pool)
+        .fetch_optional(&self.pool)
         .await
+        .or_else(optional_points_balance_row_when_read_model_is_missing)
         .map_err(|error| store_error("failed to retrieve points balance", error))?;
+
+        let Some(row) = row else {
+            return PointsBalance::new(0, 0);
+        };
 
         PointsBalance::new(
             integer_cell(&row, "available_points"),
@@ -161,6 +167,7 @@ impl SqliteCommercePromotionStore {
         .bind(CommerceAccountAssetType::Points.as_str())
         .fetch_all(&self.pool)
         .await
+        .or_else(empty_rows_when_read_model_is_missing)
         .map_err(|error| store_error("failed to list points history", error))?;
 
         rows.iter()
@@ -1125,6 +1132,36 @@ fn optional_integer_cell(row: &sqlx::sqlite::SqliteRow, column: &str) -> Option<
 
 fn store_error(context: &str, error: sqlx::Error) -> CommerceServiceError {
     CommerceServiceError::storage(format!("{context}: {error}"))
+}
+
+fn empty_rows_when_read_model_is_missing(
+    error: sqlx::Error,
+) -> Result<Vec<sqlx::sqlite::SqliteRow>, sqlx::Error> {
+    if is_missing_sqlite_read_model(&error) {
+        Ok(Vec::new())
+    } else {
+        Err(error)
+    }
+}
+
+fn optional_points_balance_row_when_read_model_is_missing(
+    error: sqlx::Error,
+) -> Result<Option<sqlx::sqlite::SqliteRow>, sqlx::Error> {
+    if is_missing_sqlite_read_model(&error) {
+        Ok(None)
+    } else {
+        Err(error)
+    }
+}
+
+fn is_missing_sqlite_read_model(error: &sqlx::Error) -> bool {
+    match error {
+        sqlx::Error::Database(database_error) => {
+            let message = database_error.message().to_ascii_lowercase();
+            message.contains("no such table") || message.contains("no such column")
+        }
+        _ => false,
+    }
 }
 
 fn current_timestamp_string() -> String {

@@ -167,6 +167,20 @@ describe("SDKWork IAM SDK port contracts", () => {
         },
         verificationCodes: new OperationResource(),
       },
+      openPlatform: {
+        qrAuth: {
+          sessions: {
+            create: new OperationResource().create,
+            retrieve: new OperationResource().retrieve,
+            passwords: {
+              create: new OperationResource().create,
+            },
+            scans: {
+              create: new OperationResource().create,
+            },
+          },
+        },
+      },
       system: {
         iam: {
           runtime: new OperationResource(),
@@ -225,6 +239,20 @@ describe("SDKWork IAM SDK port contracts", () => {
         verificationCodes: {
           create: vi.fn(),
           verify: vi.fn(),
+        },
+      },
+      openPlatform: {
+        qrAuth: {
+          sessions: {
+            create: vi.fn(),
+            retrieve: vi.fn(),
+            passwords: {
+              create: vi.fn(),
+            },
+            scans: {
+              create: vi.fn(),
+            },
+          },
         },
       },
       system: {

@@ -68,46 +68,6 @@ namespace Sdkwork.ClawRouter.Backend.Api
         }
 
         /// <summary>
-        /// List site models
-        /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.SiteModelsListResult?> SiteModelsListAsync(string siteId)
-        {
-            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.SiteModelsListResult>(ApiPaths.BackendPath($"/sites/{SerializePathParameter(siteId, new PathParameterSpec("siteId", "simple", false))}/models"));
-        }
-
-        /// <summary>
-        /// Create site model
-        /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.SiteModelsCreateResult?> SiteModelsCreateAsync(string siteId, Sdkwork.ClawRouter.Backend.Models.AdminSiteModelCreateRequest body)
-        {
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.SiteModelsCreateResult>(ApiPaths.BackendPath($"/sites/{SerializePathParameter(siteId, new PathParameterSpec("siteId", "simple", false))}/models"), body, null, null, "application/json");
-        }
-
-        /// <summary>
-        /// Replace site models
-        /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.SiteModelsReplaceResult?> SiteModelsReplaceAsync(string siteId, Sdkwork.ClawRouter.Backend.Models.AdminSiteModelsReplaceRequest body)
-        {
-            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.SiteModelsReplaceResult>(ApiPaths.BackendPath($"/sites/{SerializePathParameter(siteId, new PathParameterSpec("siteId", "simple", false))}/models"), body, null, null, "application/json");
-        }
-
-        /// <summary>
-        /// Delete site model
-        /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.SiteModelsDeleteResult?> SiteModelsDeleteAsync(string siteId, string siteModelId)
-        {
-            return await _client.DeleteAsync<Sdkwork.ClawRouter.Backend.Models.SiteModelsDeleteResult>(ApiPaths.BackendPath($"/sites/{SerializePathParameter(siteId, new PathParameterSpec("siteId", "simple", false))}/models/{SerializePathParameter(siteModelId, new PathParameterSpec("siteModelId", "simple", false))}"));
-        }
-
-        /// <summary>
-        /// Update site model
-        /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.SiteModelsUpdateResult?> SiteModelsUpdateAsync(string siteId, string siteModelId, Sdkwork.ClawRouter.Backend.Models.AdminSiteModelUpdateRequest body)
-        {
-            return await _client.PatchAsync<Sdkwork.ClawRouter.Backend.Models.SiteModelsUpdateResult>(ApiPaths.BackendPath($"/sites/{SerializePathParameter(siteId, new PathParameterSpec("siteId", "simple", false))}/models/{SerializePathParameter(siteModelId, new PathParameterSpec("siteModelId", "simple", false))}"), body, null, null, "application/json");
-        }
-
-        /// <summary>
         /// Test site connection
         /// </summary>
         public async Task<Sdkwork.ClawRouter.Backend.Models.TestConnectionCreateResult?> TestConnectionCreateAsync(string siteId, Sdkwork.ClawRouter.Backend.Models.AdminSiteActionRequest body)

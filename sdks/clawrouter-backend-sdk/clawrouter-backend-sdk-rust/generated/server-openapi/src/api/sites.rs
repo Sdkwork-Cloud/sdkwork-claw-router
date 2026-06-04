@@ -3,7 +3,7 @@ use std::sync::Arc;
 use crate::api::paths::backend_path;
 use crate::api::paths::append_query_string;
 use crate::http::{SdkworkError, SdkworkHttpClient};
-use crate::models::{AdminSiteActionRequest, AdminSiteCreateRequest, AdminSiteModelCreateRequest, AdminSiteModelUpdateRequest, AdminSiteModelsReplaceRequest, AdminSiteUpdateRequest, HealthCheckCreateResult, SiteCatalogListResult, SiteChannelsListResult, SiteCreateResult, SiteDeleteResult, SiteModelsCreateResult, SiteModelsDeleteResult, SiteModelsListResult, SiteModelsReplaceResult, SiteModelsUpdateResult, SiteUpdateResult, TestConnectionCreateResult};
+use crate::models::{AdminSiteActionRequest, AdminSiteCreateRequest, AdminSiteUpdateRequest, HealthCheckCreateResult, SiteCatalogListResult, SiteChannelsListResult, SiteCreateResult, SiteDeleteResult, SiteUpdateResult, TestConnectionCreateResult};
 
 #[derive(Clone)]
 pub struct SitesApi {
@@ -52,36 +52,6 @@ impl SitesApi {
     pub async fn health_check_create(&self, site_id: &str, body: &AdminSiteActionRequest) -> Result<HealthCheckCreateResult, SdkworkError> {
         let path = backend_path(&format!("/sites/{}/health_check", serialize_path_parameter(site_id, PathParameterSpec::new("siteId", "simple", false))));
         self.client.post(&path, Some(body), None, None, Some("application/json")).await
-    }
-
-    /// List site models
-    pub async fn site_models_list(&self, site_id: &str) -> Result<SiteModelsListResult, SdkworkError> {
-        let path = backend_path(&format!("/sites/{}/models", serialize_path_parameter(site_id, PathParameterSpec::new("siteId", "simple", false))));
-        self.client.get(&path, None, None).await
-    }
-
-    /// Create site model
-    pub async fn site_models_create(&self, site_id: &str, body: &AdminSiteModelCreateRequest) -> Result<SiteModelsCreateResult, SdkworkError> {
-        let path = backend_path(&format!("/sites/{}/models", serialize_path_parameter(site_id, PathParameterSpec::new("siteId", "simple", false))));
-        self.client.post(&path, Some(body), None, None, Some("application/json")).await
-    }
-
-    /// Replace site models
-    pub async fn site_models_replace(&self, site_id: &str, body: &AdminSiteModelsReplaceRequest) -> Result<SiteModelsReplaceResult, SdkworkError> {
-        let path = backend_path(&format!("/sites/{}/models", serialize_path_parameter(site_id, PathParameterSpec::new("siteId", "simple", false))));
-        self.client.put(&path, Some(body), None, None, Some("application/json")).await
-    }
-
-    /// Delete site model
-    pub async fn site_models_delete(&self, site_id: &str, site_model_id: &str) -> Result<SiteModelsDeleteResult, SdkworkError> {
-        let path = backend_path(&format!("/sites/{}/models/{}", serialize_path_parameter(site_id, PathParameterSpec::new("siteId", "simple", false)), serialize_path_parameter(site_model_id, PathParameterSpec::new("siteModelId", "simple", false))));
-        self.client.delete(&path, None, None).await
-    }
-
-    /// Update site model
-    pub async fn site_models_update(&self, site_id: &str, site_model_id: &str, body: &AdminSiteModelUpdateRequest) -> Result<SiteModelsUpdateResult, SdkworkError> {
-        let path = backend_path(&format!("/sites/{}/models/{}", serialize_path_parameter(site_id, PathParameterSpec::new("siteId", "simple", false)), serialize_path_parameter(site_model_id, PathParameterSpec::new("siteModelId", "simple", false))));
-        self.client.patch(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// Test site connection

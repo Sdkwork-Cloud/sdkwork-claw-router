@@ -966,10 +966,10 @@ async fn import_postgres_assets(
                 mime_type = $13,
                 width = $14,
                 height = $15,
-                duration_seconds = $16,
+                duration_seconds = CAST($16 AS NUMERIC),
                 file_size = $17,
                 sort_order = $18,
-                published_at = $19,
+                published_at = $19::timestamptz,
                 metadata = $20::jsonb,
                 status = $21,
                 deleted_at = NULL,
@@ -1019,7 +1019,7 @@ async fn import_postgres_assets(
             INSERT INTO studio_catalog_asset
                 (uuid, tenant_id, organization_id, data_scope, status, metadata, target_type, target_id, artifact_id, asset_type, asset_media_resource_id, asset_object_blob_id, asset_resource_snapshot, thumbnail_media_resource_id, thumbnail_object_blob_id, thumbnail_resource_snapshot, title, alt_text, mime_type, width, height, duration_seconds, file_size, sort_order, published_at)
             VALUES
-                ($1, $2, $3, $4, $5, $6::jsonb, $7, $8, $9, $10, $11, $12, $13::jsonb, $14, $15, $16::jsonb, $17, $18, $19, $20, $21, $22, $23, $24, $25)
+                ($1, $2, $3, $4, $5, $6::jsonb, $7, $8, $9, $10, $11, $12, $13::jsonb, $14, $15, $16::jsonb, $17, $18, $19, $20, $21, CAST($22 AS NUMERIC), $23, $24, $25::timestamptz)
             "#,
         )
         .bind(&item.uuid)
@@ -1070,7 +1070,7 @@ async fn import_postgres_artifacts(
             INSERT INTO studio_catalog_artifact
                 (uuid, tenant_id, organization_id, data_scope, status, metadata, target_type, target_id, artifact_type, version, platform_type, os_name, artifact_ref, artifact_media_resource_id, artifact_object_blob_id, artifact_resource_snapshot, artifact_size_bytes, runtime, frameworks, license_name, checksum_hash, release_notes, published_at, deprecated_at)
             VALUES
-                ($1, $2, $3, $4, $5, $6::jsonb, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16::jsonb, $17, $18, $19::jsonb, $20, $21, $22, $23, $24)
+                ($1, $2, $3, $4, $5, $6::jsonb, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16::jsonb, $17, $18, $19::jsonb, $20, $21, $22, $23::timestamptz, $24::timestamptz)
             ON CONFLICT(tenant_id, organization_id, target_type, target_id, artifact_type, version, platform_type, os_name) DO UPDATE SET
                 uuid = excluded.uuid,
                 artifact_ref = excluded.artifact_ref,
@@ -2699,7 +2699,7 @@ async fn postgres_asset_seed_standard_count(
               AND mime_type IS NOT DISTINCT FROM $17
               AND width IS NOT DISTINCT FROM $18
               AND height IS NOT DISTINCT FROM $19
-              AND duration_seconds = $20
+              AND duration_seconds = CAST($20 AS NUMERIC)
               AND file_size IS NOT DISTINCT FROM $21
               AND sort_order = $22
               AND published_at IS NOT DISTINCT FROM $23::timestamptz

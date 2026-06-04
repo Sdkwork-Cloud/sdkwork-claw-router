@@ -1828,18 +1828,6 @@ fn channel_binding_select_sql(predicate: &str) -> &'static str {
             COALESCE(c.channel_code, '') AS channel_code,
             COALESCE(
                 (
-                    SELECT json_group_array(cm.catalog_key)
-                    FROM ai_channel_model cm
-                    WHERE cm.channel_id = c.id
-                      AND cm.tenant_id = c.tenant_id
-                      AND cm.organization_id = c.organization_id
-                      AND cm.deleted_at IS NULL
-                      AND cm.status = 1
-                ),
-                '[]'
-            ) AS models_json,
-            COALESCE(
-                (
                     SELECT json_group_array(selected.code)
                     FROM (
                         SELECT DISTINCT COALESCE(NULLIF(gr.resource_code, ''), gr.resource_group_code) AS code
@@ -1933,37 +1921,6 @@ fn channel_binding_select_sql(predicate: &str) -> &'static str {
                 ),
                 '[]'
             ) AS capabilities_json,
-            COALESCE(
-                (
-                    SELECT json_group_array(selected.code)
-                    FROM (
-                        SELECT DISTINCT COALESCE(NULLIF(r.catalog_key, ''), NULLIF(r.model, ''), NULLIF(r.provider_native_model, ''), NULLIF(gr.resource_code, ''), gr.resource_group_code) AS code
-                        FROM ai_channel_group_resource gr
-                        LEFT JOIN ai_resource r
-                          ON r.resource_code = gr.resource_code
-                         AND r.tenant_id = gr.tenant_id
-                         AND r.organization_id = gr.organization_id
-                         AND r.deleted_at IS NULL
-                        LEFT JOIN ai_resource_group rg
-                          ON rg.group_code = gr.resource_group_code
-                         AND rg.tenant_id = gr.tenant_id
-                         AND rg.organization_id = gr.organization_id
-                         AND rg.deleted_at IS NULL
-                        WHERE gr.channel_group_id = b.channel_group_id
-                          AND gr.tenant_id = b.tenant_id
-                          AND gr.organization_id = b.organization_id
-                          AND gr.deleted_at IS NULL
-                          AND gr.status = 1
-                          AND COALESCE(NULLIF(gr.resource_code, ''), gr.resource_group_code, '') <> ''
-                          AND (
-                              COALESCE(r.resource_type, rg.group_type, '') IN ('model', 'model_api')
-                              OR gr.resource_code LIKE '%/%'
-                          )
-                        ORDER BY code
-                    ) selected
-                ),
-                '[]'
-            ) AS model_scope_json,
             COALESCE(b.priority, c.priority, 100) AS priority,
             COALESCE(b.weight, c.weight, 100) AS weight,
             b.status,
@@ -2007,9 +1964,7 @@ fn channel_binding_item_from_row(
         channel_code: row.try_get("channel_code").map_err(row_error)?,
         resource_codes: json_string_array_cell(&row, "resource_codes_json")?,
         api_scope: json_string_array_cell(&row, "api_scope_json")?,
-        models: json_string_array_cell(&row, "models_json")?,
         capabilities: json_string_array_cell(&row, "capabilities_json")?,
-        model_scope: json_string_array_cell(&row, "model_scope_json")?,
         priority: optional_integer_cell(&row, "priority").unwrap_or(100),
         weight: optional_integer_cell(&row, "weight").unwrap_or(100),
         status: status_label(required_integer_cell(&row, "status", "status")?)?,

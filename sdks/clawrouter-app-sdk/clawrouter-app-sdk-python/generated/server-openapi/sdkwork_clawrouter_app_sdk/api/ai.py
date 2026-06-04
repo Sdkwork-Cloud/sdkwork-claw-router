@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Optional
 from ..http_client import HttpClient
-from ..models import ChannelGroupsListResult, DashboardOverviewRetrieveResult, GatewayTracesListResult, GenerationListResult, ModelRankingsListResult, ModelsListResult, ModelVendorsListResult, UsageLogsListResult
+from ..models import ChannelGroupsListResult, DashboardOverviewRetrieveResult, GatewayTracesListResult, GenerationListResult, ModelRankingsListResult, ModelsListResult, ModelVendorsListResult, RoutingApiKeysListResult, RoutingChannelsListResult, RoutingRequestTracesListResult, RoutingUsageListResult, UsageLogsListResult
 
 def _append_query_string(path: str, raw_query_string: str) -> str:
     query = raw_query_string.lstrip('?')
@@ -135,6 +135,7 @@ class AiApi:
         self.model_rankings = AiModelRankingsApi(client)
         self.model_vendors = AiModelVendorsApi(client)
         self.models = AiModelsApi(client)
+        self.routing = AiRoutingApi(client)
         self.usage = AiUsageApi(client)
 
 
@@ -253,6 +254,61 @@ class AiModelsApi:
             {'name': 'limit', 'value': limit, 'style': 'form', 'explode': True, 'allow_reserved': False},
         ])
         return self._client.get(_append_query_string(f"/app/v3/api/ai/models", query))
+
+class AiRoutingApi:
+    """ai ai.routing API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+        self.api_keys = AiRoutingApiKeysApi(client)
+        self.channels = AiRoutingChannelsApi(client)
+        self.request_traces = AiRoutingRequestTracesApi(client)
+        self.usage = AiRoutingUsageApi(client)
+
+
+class AiRoutingApiKeysApi:
+    """ai ai.routing.api_keys API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self) -> RoutingApiKeysListResult:
+        """List routing API keys"""
+        return self._client.get(f"/app/v3/api/ai/routing/api_keys")
+
+class AiRoutingChannelsApi:
+    """ai ai.routing.channels API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self) -> RoutingChannelsListResult:
+        """List routing channels"""
+        return self._client.get(f"/app/v3/api/ai/routing/channels")
+
+class AiRoutingRequestTracesApi:
+    """ai ai.routing.request_traces API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self) -> RoutingRequestTracesListResult:
+        """List routing request traces"""
+        return self._client.get(f"/app/v3/api/ai/routing/request_traces")
+
+class AiRoutingUsageApi:
+    """ai ai.routing.usage API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self) -> RoutingUsageListResult:
+        """List routing usage"""
+        return self._client.get(f"/app/v3/api/ai/routing/usage")
 
 class AiUsageApi:
     """ai ai.usage API client."""

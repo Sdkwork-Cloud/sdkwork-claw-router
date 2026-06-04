@@ -3,7 +3,7 @@ use std::sync::Arc;
 use crate::api::paths::app_path;
 use crate::api::paths::append_query_string;
 use crate::http::{SdkworkError, SdkworkHttpClient};
-use crate::models::{ChannelGroupsListResult, DashboardOverviewRetrieveResult, GatewayTracesListResult, GenerationListResult, ModelRankingsListResult, ModelVendorsListResult, ModelsListResult, UsageLogsListResult};
+use crate::models::{ChannelGroupsListResult, DashboardOverviewRetrieveResult, GatewayTracesListResult, GenerationListResult, ModelRankingsListResult, ModelVendorsListResult, ModelsListResult, RoutingApiKeysListResult, RoutingChannelsListResult, RoutingRequestTracesListResult, RoutingUsageListResult, UsageLogsListResult};
 
 #[derive(Clone)]
 pub struct AiApi {
@@ -77,6 +77,30 @@ impl AiApi {
             QueryParameterSpec::new("limit", limit, "form", true, false, None),
         ]);
         let path = append_query_string(app_path(&"/ai/models".to_string()), &query);
+        self.client.get(&path, None, None).await
+    }
+
+    /// List routing API keys
+    pub async fn routing_api_keys_list(&self) -> Result<RoutingApiKeysListResult, SdkworkError> {
+        let path = app_path(&"/ai/routing/api_keys".to_string());
+        self.client.get(&path, None, None).await
+    }
+
+    /// List routing channels
+    pub async fn routing_channels_list(&self) -> Result<RoutingChannelsListResult, SdkworkError> {
+        let path = app_path(&"/ai/routing/channels".to_string());
+        self.client.get(&path, None, None).await
+    }
+
+    /// List routing request traces
+    pub async fn routing_request_traces_list(&self) -> Result<RoutingRequestTracesListResult, SdkworkError> {
+        let path = app_path(&"/ai/routing/request_traces".to_string());
+        self.client.get(&path, None, None).await
+    }
+
+    /// List routing usage
+    pub async fn routing_usage_list(&self) -> Result<RoutingUsageListResult, SdkworkError> {
+        let path = app_path(&"/ai/routing/usage".to_string());
         self.client.get(&path, None, None).await
     }
 

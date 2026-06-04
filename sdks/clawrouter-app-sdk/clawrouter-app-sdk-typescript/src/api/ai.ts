@@ -1,7 +1,7 @@
 import { appApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 
-import type { ChannelGroupsListResult, DashboardOverviewRetrieveResult, GatewayTracesListResult, GenerationListResult, ModelRankingsListResult, ModelsListResult, ModelVendorsListResult, UsageLogsListResult } from '../types';
+import type { ChannelGroupsListResult, DashboardOverviewRetrieveResult, GatewayTracesListResult, GenerationListResult, ModelRankingsListResult, ModelsListResult, ModelVendorsListResult, RoutingApiKeysListResult, RoutingChannelsListResult, RoutingRequestTracesListResult, RoutingUsageListResult, UsageLogsListResult } from '../types';
 
 
 export interface AiUsageLogsListParams {
@@ -42,6 +42,79 @@ export class AiUsageApi {
   constructor(client: HttpClient) {
     this.client = client;
     this.logs = new AiUsageLogsApi(client);
+  }
+
+}
+
+export class AiRoutingUsageApi {
+  private client: HttpClient;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** List routing usage */
+  async list(): Promise<RoutingUsageListResult> {
+    return this.client.get<RoutingUsageListResult>(appApiPath(`/ai/routing/usage`));
+  }
+}
+
+export class AiRoutingRequestTracesApi {
+  private client: HttpClient;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** List routing request traces */
+  async list(): Promise<RoutingRequestTracesListResult> {
+    return this.client.get<RoutingRequestTracesListResult>(appApiPath(`/ai/routing/request_traces`));
+  }
+}
+
+export class AiRoutingChannelsApi {
+  private client: HttpClient;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** List routing channels */
+  async list(): Promise<RoutingChannelsListResult> {
+    return this.client.get<RoutingChannelsListResult>(appApiPath(`/ai/routing/channels`));
+  }
+}
+
+export class AiRoutingApiKeysApi {
+  private client: HttpClient;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** List routing API keys */
+  async list(): Promise<RoutingApiKeysListResult> {
+    return this.client.get<RoutingApiKeysListResult>(appApiPath(`/ai/routing/api_keys`));
+  }
+}
+
+export class AiRoutingApi {
+  private client: HttpClient;
+  public readonly apiKeys: AiRoutingApiKeysApi;
+  public readonly channels: AiRoutingChannelsApi;
+  public readonly requestTraces: AiRoutingRequestTracesApi;
+  public readonly usage: AiRoutingUsageApi;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+    this.apiKeys = new AiRoutingApiKeysApi(client);
+    this.channels = new AiRoutingChannelsApi(client);
+    this.requestTraces = new AiRoutingRequestTracesApi(client);
+    this.usage = new AiRoutingUsageApi(client);
   }
 
 }
@@ -224,6 +297,7 @@ export class AiApi {
   public readonly modelRankings: AiModelRankingsApi;
   public readonly modelVendors: AiModelVendorsApi;
   public readonly models: AiModelsApi;
+  public readonly routing: AiRoutingApi;
   public readonly usage: AiUsageApi;
 
   constructor(client: HttpClient) {
@@ -235,6 +309,7 @@ export class AiApi {
     this.modelRankings = new AiModelRankingsApi(client);
     this.modelVendors = new AiModelVendorsApi(client);
     this.models = new AiModelsApi(client);
+    this.routing = new AiRoutingApi(client);
     this.usage = new AiUsageApi(client);
   }
 

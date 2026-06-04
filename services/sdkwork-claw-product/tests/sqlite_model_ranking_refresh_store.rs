@@ -27,12 +27,12 @@ async fn sqlite_model_ranking_refresh_store_generates_rank_snapshot_from_usage_f
     sqlx::query(
         r#"
         INSERT INTO ai_usage_fact
-            (id, tenant_id, organization_id, status, catalog_key, model, modality, request_count, total_tokens, cost_amount, currency, occurred_at)
+            (id, tenant_id, organization_id, status, catalog_key, model, modality, request_count, total_tokens, customer_charge_amount, cost_amount, currency, occurred_at)
         VALUES
-            (1, 0, 0, 1, 'openai/alpha', 'alpha', 1, 5, 5000, '2.500000', 'USD', '2026-05-07T10:00:00Z'),
-            (2, 0, 0, 1, 'openai/alpha', 'alpha', 1, 7, 9000, '3.000000', 'USD', '2026-05-07T11:00:00Z'),
-            (3, 0, 0, 1, 'anthropic/beta', 'beta', 1, 4, 2000, '1.000000', 'USD', '2026-05-07T12:00:00Z'),
-            (4, 0, 0, 1, 'openai/alpha', 'alpha', 1, 99, 99000, '9.900000', 'USD', '2026-04-01T00:00:00Z')
+            (1, 0, 0, 1, 'openai/alpha', 'alpha', 1, 5, 5000, '2.500000', '250.000000', 'USD', '2026-05-07T10:00:00Z'),
+            (2, 0, 0, 1, 'openai/alpha', 'alpha', 1, 7, 9000, '3.000000', '300.000000', 'USD', '2026-05-07T11:00:00Z'),
+            (3, 0, 0, 1, 'anthropic/beta', 'beta', 1, 4, 2000, '1.000000', '100.000000', 'USD', '2026-05-07T12:00:00Z'),
+            (4, 0, 0, 1, 'openai/alpha', 'alpha', 1, 99, 99000, '9.900000', '990.000000', 'USD', '2026-04-01T00:00:00Z')
         "#,
     )
     .execute(&pool)
@@ -119,9 +119,9 @@ async fn sqlite_model_ranking_refresh_store_rejects_regional_catalog_key_compati
     sqlx::query(
         r#"
         INSERT INTO ai_usage_fact
-            (id, tenant_id, organization_id, status, catalog_key, model, modality, request_count, total_tokens, cost_amount, currency, occurred_at)
+            (id, tenant_id, organization_id, status, catalog_key, model, modality, request_count, total_tokens, customer_charge_amount, cost_amount, currency, occurred_at)
         VALUES
-            (1, 0, 0, 1, 'openai/global/alpha', 'alpha', 1, 5, 5000, '2.500000', 'USD', '2026-05-07T10:00:00Z')
+            (1, 0, 0, 1, 'openai/global/alpha', 'alpha', 1, 5, 5000, '2.500000', '2.500000', 'USD', '2026-05-07T10:00:00Z')
         "#,
     )
     .execute(&pool)
@@ -189,12 +189,12 @@ async fn sqlite_model_ranking_refresh_store_excludes_deprecated_hidden_and_catal
     sqlx::query(
         r#"
         INSERT INTO ai_usage_fact
-            (id, tenant_id, organization_id, status, catalog_key, model, modality, request_count, total_tokens, cost_amount, currency, occurred_at)
+            (id, tenant_id, organization_id, status, catalog_key, model, modality, request_count, total_tokens, customer_charge_amount, cost_amount, currency, occurred_at)
         VALUES
-            (1, 0, 0, 1, 'openai/deprecated-alpha', 'deprecated-alpha', 1, 50, 50000, '50.000000', 'USD', '2026-05-07T10:00:00Z'),
-            (2, 0, 0, 1, 'openai/hidden-alpha', 'hidden-alpha', 1, 40, 40000, '40.000000', 'USD', '2026-05-07T10:00:00Z'),
-            (3, 0, 0, 1, 'openai/catalog-only-alpha', 'catalog-only-alpha', 1, 30, 30000, '30.000000', 'USD', '2026-05-07T10:00:00Z'),
-            (4, 0, 0, 1, 'openai/alpha', 'alpha', 1, 5, 5000, '5.000000', 'USD', '2026-05-07T10:00:00Z')
+            (1, 0, 0, 1, 'openai/deprecated-alpha', 'deprecated-alpha', 1, 50, 50000, '50.000000', '50.000000', 'USD', '2026-05-07T10:00:00Z'),
+            (2, 0, 0, 1, 'openai/hidden-alpha', 'hidden-alpha', 1, 40, 40000, '40.000000', '40.000000', 'USD', '2026-05-07T10:00:00Z'),
+            (3, 0, 0, 1, 'openai/catalog-only-alpha', 'catalog-only-alpha', 1, 30, 30000, '30.000000', '30.000000', 'USD', '2026-05-07T10:00:00Z'),
+            (4, 0, 0, 1, 'openai/alpha', 'alpha', 1, 5, 5000, '5.000000', '5.000000', 'USD', '2026-05-07T10:00:00Z')
         "#,
     )
     .execute(&pool)
@@ -328,9 +328,9 @@ async fn sqlite_model_ranking_refresh_store_normalizes_invalid_global_organizati
     sqlx::query(
         r#"
         INSERT INTO ai_usage_fact
-            (id, tenant_id, organization_id, status, catalog_key, model, modality, request_count, total_tokens, cost_amount, currency, occurred_at)
+            (id, tenant_id, organization_id, status, catalog_key, model, modality, request_count, total_tokens, customer_charge_amount, cost_amount, currency, occurred_at)
         VALUES
-            (1, 0, 0, 1, 'openai/alpha', 'alpha', 1, 5, 5000, '2.500000', 'USD', '2026-05-07T10:00:00Z')
+            (1, 0, 0, 1, 'openai/alpha', 'alpha', 1, 5, 5000, '2.500000', '2.500000', 'USD', '2026-05-07T10:00:00Z')
         "#,
     )
     .execute(&pool)
@@ -396,9 +396,9 @@ async fn sqlite_model_ranking_refresh_store_normalizes_snapshot_scope_and_period
     sqlx::query(
         r#"
         INSERT INTO ai_usage_fact
-            (id, tenant_id, organization_id, status, catalog_key, model, modality, request_count, total_tokens, cost_amount, currency, occurred_at)
+            (id, tenant_id, organization_id, status, catalog_key, model, modality, request_count, total_tokens, customer_charge_amount, cost_amount, currency, occurred_at)
         VALUES
-            (1, 0, 0, 1, 'openai/alpha', 'alpha', 1, 5, 5000, '2.500000', 'USD', '2026-05-07T10:00:00Z')
+            (1, 0, 0, 1, 'openai/alpha', 'alpha', 1, 5, 5000, '2.500000', '2.500000', 'USD', '2026-05-07T10:00:00Z')
         "#,
     )
     .execute(&pool)
@@ -484,6 +484,7 @@ async fn create_tables(pool: &SqlitePool) {
             modality INTEGER,
             request_count INTEGER,
             total_tokens INTEGER,
+            customer_charge_amount TEXT,
             cost_amount TEXT,
             currency TEXT,
             occurred_at TEXT

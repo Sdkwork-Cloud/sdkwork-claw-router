@@ -86,6 +86,7 @@ tables:
   - /c/:conversationId
   - /admin/model
   - /admin/channel
+  - /admin/model/mappings
   api_surfaces:
   - app
   - backend
@@ -1663,6 +1664,11 @@ tables:
     occurred_at: instant
     settlement_status: enum_int32
     settlement_id: int64
+  column_descriptions:
+    official_reference_amount: Vendor official reference amount captured for audit and comparison.
+    upstream_cost_amount: Sensitive upstream access cost captured for admin cost accounting only.
+    customer_charge_amount: Customer-facing sales/charge amount used by app usage display, settlement, and ranking refresh.
+    cost_amount: Legacy compatibility field for customer-facing charge amount; new gateway writes mirror customer_charge_amount, never upstream_cost_amount.
   semantic_contracts:
     ranking_refresh_source_fact:
       time_field: occurred_at
@@ -1674,7 +1680,7 @@ tables:
       metric_fields:
       - request_count
       - total_tokens
-      - cost_amount
+      - customer_charge_amount
       - currency
       pricing_snapshot_field: pricing_snapshot
   indexes:
@@ -4076,46 +4082,6 @@ tables:
     stores_secret_plaintext: false
     secret_reference_only: true
     audit_required: true
-- table: ai_rate_limit_bucket
-  domain: ai
-  profile: projection
-  compliance_level: L2
-  system_of_record: false
-  write_owner: gateway-runtime
-  common_columns: projection
-  source_tables:
-  - ai_quota_policy
-  - iam_gateway_api_key
-  - ai_channel_group
-  - iam_gateway_risk_rule
-  frontend_routes:
-  - /admin/ratelimit
-  api_surfaces:
-  - backend
-  - worker
-  columns:
-    bucket_key: string(256)
-    subject_type: enum_int32
-    subject_id: int64
-    quota_policy_id: int64
-    window_start: instant
-    window_end: instant
-    current_count: int64
-    current_tokens: int64
-    remaining_count: int64
-    remaining_tokens: int64
-    last_request_at: instant
-  indexes:
-  - name: uk_ai_rate_limit_bucket_key
-    unique: true
-    columns:
-    - bucket_key
-    - window_start
-  - name: idx_ai_rate_limit_bucket_subject
-    columns:
-    - subject_type
-    - subject_id
-    - window_end
 - table: ai_generation_session
   domain: ai
   profile: user_entity

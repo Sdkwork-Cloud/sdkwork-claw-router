@@ -48,6 +48,7 @@ async fn sqlite_admin_model_store_creates_region_pricing_catalog_rows() {
             region_prices: vec![
                 AdminAiModelRegionPriceCommand {
                     region_code: "cn".to_owned(),
+                    currency: "CNY".to_owned(),
                     price_in: "0.180000".to_owned(),
                     price_out: "0.560000".to_owned(),
                     cache_read_price: Some("0.040000".to_owned()),
@@ -55,6 +56,7 @@ async fn sqlite_admin_model_store_creates_region_pricing_catalog_rows() {
                 },
                 AdminAiModelRegionPriceCommand {
                     region_code: "global".to_owned(),
+                    currency: "USD".to_owned(),
                     price_in: "0.120000".to_owned(),
                     price_out: "0.450000".to_owned(),
                     cache_read_price: None,
@@ -121,7 +123,7 @@ async fn sqlite_admin_model_store_creates_region_pricing_catalog_rows() {
 
     let pricing_rows = sqlx::query(
         r#"
-        SELECT catalog_key, region_code, billing_meter_code, CAST(unit_price AS TEXT) AS unit_price
+        SELECT catalog_key, region_code, billing_meter_code, CAST(unit_price AS TEXT) AS unit_price, currency
         FROM ai_model_pricing
         WHERE model_id = ?
           AND price_side = 1
@@ -143,24 +145,31 @@ async fn sqlite_admin_model_store_creates_region_pricing_catalog_rows() {
                 row.get::<String, _>("region_code"),
                 row.get::<String, _>("billing_meter_code"),
                 decimal_value(&row.get::<String, _>("unit_price")),
+                row.get::<String, _>("currency"),
             )
         })
         .collect::<Vec<_>>();
     assert_eq!(6, pricing.len());
-    assert!(pricing.iter().any(|(catalog_key, region, meter, price)| {
-        catalog_key == "openai/admin-region-model"
-            && region == "cn"
-            && meter == "llm_input_token"
-            && *price == 0.18
-    }));
-    assert!(pricing.iter().any(|(catalog_key, region, meter, price)| {
-        catalog_key == "openai/admin-region-model"
-            && region == "global"
-            && meter == "llm_output_token"
-            && *price == 0.45
-    }));
-    assert!(pricing.iter().any(|(_, region, meter, price)| {
-        region == "cn" && meter == "llm_cache_read_token" && *price == 0.04
+    assert!(pricing
+        .iter()
+        .any(|(catalog_key, region, meter, price, currency)| {
+            catalog_key == "openai/admin-region-model"
+                && region == "cn"
+                && meter == "llm_input_token"
+                && *price == 0.18
+                && currency == "CNY"
+        }));
+    assert!(pricing
+        .iter()
+        .any(|(catalog_key, region, meter, price, currency)| {
+            catalog_key == "openai/admin-region-model"
+                && region == "global"
+                && meter == "llm_output_token"
+                && *price == 0.45
+                && currency == "USD"
+        }));
+    assert!(pricing.iter().any(|(_, region, meter, price, currency)| {
+        region == "cn" && meter == "llm_cache_read_token" && *price == 0.04 && currency == "CNY"
     }));
 
     let models = store
@@ -206,6 +215,53 @@ async fn sqlite_admin_model_store_lists_catalog_region_prices_for_dual_region_ve
             .unwrap_or_else(|| panic!("{vendor_code}/{model_name} should be listed"));
         assert_model_region_codes(&model.region_prices, &["cn", "global"]);
     }
+}
+
+#[tokio::test]
+async fn sqlite_admin_model_store_lists_catalog_prices_for_latest_media_meters() {
+    let pool = SqlitePoolOptions::new()
+        .max_connections(1)
+        .connect("sqlite::memory:")
+        .await
+        .unwrap();
+    install_admin_model_catalog(&pool, &["black_forest_labs", "kuaishou", "openai"]).await;
+
+    let models = SqliteAdminModelStore::new(pool.clone())
+        .list_models(ListAdminAiModelsQuery {
+            subject: AdminModelSubject {
+                tenant_id: 0,
+                organization_id: 0,
+                operator_id: 99,
+                operator_type: 1,
+            },
+        })
+        .await
+        .unwrap();
+
+    assert_model_region_price_side(
+        &models,
+        "black_forest_labs",
+        "flux-2-pro",
+        "global",
+        Some(0.015),
+        Some(0.03),
+    );
+    assert_model_region_price_side(
+        &models,
+        "kuaishou",
+        "kling-v3-0-preview",
+        "global",
+        None,
+        Some(0.8),
+    );
+    assert_model_region_price_side(
+        &models,
+        "openai",
+        "gpt-4o-transcribe",
+        "global",
+        Some(0.006),
+        None,
+    );
 }
 
 #[tokio::test]
@@ -354,7 +410,7 @@ async fn sqlite_admin_model_store_updates_installed_model_graph() {
 
     let pricing_rows = sqlx::query(
         r#"
-        SELECT region_code, billing_meter_code, CAST(unit_price AS TEXT) AS unit_price
+        SELECT region_code, billing_meter_code, CAST(unit_price AS TEXT) AS unit_price, currency
         FROM ai_model_pricing
         WHERE model_id = ?
           AND price_side = 1
@@ -375,6 +431,7 @@ async fn sqlite_admin_model_store_updates_installed_model_graph() {
                 row.get::<String, _>("region_code"),
                 row.get::<String, _>("billing_meter_code"),
                 row.get::<String, _>("unit_price"),
+                row.get::<String, _>("currency"),
             )
         })
         .collect::<Vec<_>>();
@@ -433,6 +490,7 @@ async fn sqlite_admin_model_store_replaces_region_prices_when_explicit() {
             model_type: Some("Chat".to_owned()),
             region_prices: Some(vec![AdminAiModelRegionPriceCommand {
                 region_code: "global".to_owned(),
+                currency: "USD".to_owned(),
                 price_in: "0.333333".to_owned(),
                 price_out: "1.444444".to_owned(),
                 cache_read_price: Some("0.111111".to_owned()),
@@ -467,6 +525,7 @@ async fn sqlite_admin_model_store_replaces_region_prices_when_explicit() {
     assert_eq!(
         vec![AdminAiModelRegionPriceCommand {
             region_code: "global".to_owned(),
+            currency: "USD".to_owned(),
             price_in: "0.333333".to_owned(),
             price_out: "1.444444".to_owned(),
             cache_read_price: Some("0.111111".to_owned()),
@@ -488,6 +547,7 @@ async fn sqlite_admin_model_store_replaces_region_prices_when_explicit() {
             region_prices: Some(vec![
                 AdminAiModelRegionPriceCommand {
                     region_code: "cn".to_owned(),
+                    currency: "CNY".to_owned(),
                     price_in: "0.444444".to_owned(),
                     price_out: "1.555555".to_owned(),
                     cache_read_price: None,
@@ -495,6 +555,7 @@ async fn sqlite_admin_model_store_replaces_region_prices_when_explicit() {
                 },
                 AdminAiModelRegionPriceCommand {
                     region_code: "global".to_owned(),
+                    currency: "USD".to_owned(),
                     price_in: "0.555555".to_owned(),
                     price_out: "1.666666".to_owned(),
                     cache_read_price: None,
@@ -531,6 +592,7 @@ async fn sqlite_admin_model_store_replaces_region_prices_when_explicit() {
         vec![
             AdminAiModelRegionPriceCommand {
                 region_code: "cn".to_owned(),
+                currency: "CNY".to_owned(),
                 price_in: "0.444444".to_owned(),
                 price_out: "1.555555".to_owned(),
                 cache_read_price: None,
@@ -538,6 +600,7 @@ async fn sqlite_admin_model_store_replaces_region_prices_when_explicit() {
             },
             AdminAiModelRegionPriceCommand {
                 region_code: "global".to_owned(),
+                currency: "USD".to_owned(),
                 price_in: "0.555555".to_owned(),
                 price_out: "1.666666".to_owned(),
                 cache_read_price: None,
@@ -570,22 +633,26 @@ async fn sqlite_admin_model_store_replaces_region_prices_when_explicit() {
             (
                 "cn".to_owned(),
                 "llm_input_token".to_owned(),
-                "0.444444".to_owned()
+                "0.444444".to_owned(),
+                "CNY".to_owned()
             ),
             (
                 "cn".to_owned(),
                 "llm_output_token".to_owned(),
-                "1.555555".to_owned()
+                "1.555555".to_owned(),
+                "CNY".to_owned()
             ),
             (
                 "global".to_owned(),
                 "llm_input_token".to_owned(),
-                "0.555555".to_owned()
+                "0.555555".to_owned(),
+                "USD".to_owned()
             ),
             (
                 "global".to_owned(),
                 "llm_output_token".to_owned(),
-                "1.666666".to_owned()
+                "1.666666".to_owned(),
+                "USD".to_owned()
             ),
         ],
         active_pricing
@@ -1697,9 +1764,11 @@ async fn create_admin_model_tables(pool: &sqlx::SqlitePool) {
             id INTEGER PRIMARY KEY,
             model_id INTEGER,
             region_code TEXT,
+            metadata TEXT NOT NULL DEFAULT '{}',
             price_side INTEGER,
             billing_meter_code TEXT,
             unit_price TEXT,
+            currency TEXT,
             priority INTEGER,
             status INTEGER,
             deleted_at TEXT
@@ -1787,10 +1856,10 @@ fn catalog_model_is_publicly_active(model: &sdkwork_models::ModelInfo) -> bool {
 async fn active_model_pricing_snapshot(
     pool: &sqlx::SqlitePool,
     model_id: i64,
-) -> Vec<(String, String, String)> {
+) -> Vec<(String, String, String, String)> {
     sqlx::query(
         r#"
-        SELECT region_code, billing_meter_code, CAST(unit_price AS TEXT) AS unit_price
+        SELECT region_code, billing_meter_code, CAST(unit_price AS TEXT) AS unit_price, currency
         FROM ai_model_pricing
         WHERE model_id = ?
           AND price_side = 1
@@ -1810,6 +1879,7 @@ async fn active_model_pricing_snapshot(
             row.get::<String, _>("region_code"),
             row.get::<String, _>("billing_meter_code"),
             row.get::<String, _>("unit_price"),
+            row.get::<String, _>("currency"),
         )
     })
     .collect()
@@ -1818,6 +1888,7 @@ async fn active_model_pricing_snapshot(
 fn assert_admin_region_model_prices(region_prices: &[AdminAiModelRegionPriceCommand]) {
     assert_eq!(2, region_prices.len());
     assert_eq!("cn", region_prices[0].region_code);
+    assert_eq!("CNY", region_prices[0].currency);
     assert_eq!(0.18, decimal_value(&region_prices[0].price_in));
     assert_eq!(0.56, decimal_value(&region_prices[0].price_out));
     assert_eq!(
@@ -1835,6 +1906,7 @@ fn assert_admin_region_model_prices(region_prices: &[AdminAiModelRegionPriceComm
             .map(decimal_value)
     );
     assert_eq!("global", region_prices[1].region_code);
+    assert_eq!("USD", region_prices[1].currency);
     assert_eq!(0.12, decimal_value(&region_prices[1].price_in));
     assert_eq!(0.45, decimal_value(&region_prices[1].price_out));
     assert_eq!(None, region_prices[1].cache_read_price);
@@ -1856,5 +1928,44 @@ fn assert_model_region_codes(
             "{} region price must include input or output price",
             region_price.region_code
         );
+    }
+}
+
+fn assert_model_region_price_side(
+    models: &[sdkwork_claw_product::ports::AdminAiModelItem],
+    vendor_code: &str,
+    model_name: &str,
+    region_code: &str,
+    expected_price_in: Option<f64>,
+    expected_price_out: Option<f64>,
+) {
+    let model = models
+        .iter()
+        .find(|item| item.vendor_code == vendor_code && item.model == model_name)
+        .unwrap_or_else(|| panic!("{vendor_code}/{model_name} should be listed"));
+    let region_price = model
+        .region_prices
+        .iter()
+        .find(|price| price.region_code == region_code)
+        .unwrap_or_else(|| {
+            panic!("{vendor_code}/{model_name} should include {region_code} region price")
+        });
+    assert_eq!(
+        expected_price_in,
+        non_empty_decimal_value(&region_price.price_in),
+        "{vendor_code}/{model_name} input price"
+    );
+    assert_eq!(
+        expected_price_out,
+        non_empty_decimal_value(&region_price.price_out),
+        "{vendor_code}/{model_name} output price"
+    );
+}
+
+fn non_empty_decimal_value(value: &str) -> Option<f64> {
+    if value.trim().is_empty() {
+        None
+    } else {
+        Some(decimal_value(value))
     }
 }

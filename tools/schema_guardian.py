@@ -206,7 +206,6 @@ REQUIRED_TABLE_COLUMNS = {
     "iam_gateway_api_key": {"channel_group_id", "key_hash", "policy_id", "quota_policy_id", "rate_limit_policy_id"},
     "ai_channel_group": {"pricing_plan_id", "pricing_plan_code", "official_price_multiplier", "billing_type"},
     "ai_provider": {"provider_code", "default_vendor_code", "provider_type", "resource_schema"},
-    "ai_channel_model": {"model", "vendor_code", "provider_model", "capability"},
 }
 
 MESSAGING_STANDARD_TABLES: tuple[str, ...] = (

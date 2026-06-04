@@ -19,7 +19,7 @@ pub struct UsageLogItem {
     #[serde(rename = "cacheReadTokens")]
     pub cache_read_tokens: i64,
 
-    /// Customer-facing spend amount for the request, normalized to 9 decimal places for console display. Uses customer_charge_amount from the usage ledger and falls back to cost_amount only for legacy rows.
+    /// Customer-facing spend amount for the request, normalized to 9 decimal places for console display. Uses customer_charge_amount from the usage ledger and never exposes upstream cost fields.
     pub cost: String,
 
     /// Error code field on usage log item.
@@ -75,6 +75,10 @@ pub struct UsageLogItem {
     /// Reasoning effort field on usage log item.
     #[serde(rename = "reasoningEffort")]
     pub reasoning_effort: String,
+
+    /// Deployment region used by the selected endpoint and pricing resolver. This is not part of the model catalog identity.
+    #[serde(rename = "regionCode")]
+    pub region_code: String,
 
     /// Request id field on usage log item.
     #[serde(rename = "requestId")]

@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Optional
 from ..http_client import HttpClient
-from ..models import AdminSiteActionRequest, AdminSiteCreateRequest, AdminSiteModelCreateRequest, AdminSiteModelsReplaceRequest, AdminSiteModelUpdateRequest, AdminSiteUpdateRequest, HealthCheckCreateResult, SiteCatalogListResult, SiteChannelsListResult, SiteCreateResult, SiteDeleteResult, SiteModelsCreateResult, SiteModelsDeleteResult, SiteModelsListResult, SiteModelsReplaceResult, SiteModelsUpdateResult, SiteUpdateResult, TestConnectionCreateResult
+from ..models import AdminSiteActionRequest, AdminSiteCreateRequest, AdminSiteUpdateRequest, HealthCheckCreateResult, SiteCatalogListResult, SiteChannelsListResult, SiteCreateResult, SiteDeleteResult, SiteUpdateResult, TestConnectionCreateResult
 
 def _append_query_string(path: str, raw_query_string: str) -> str:
     query = raw_query_string.lstrip('?')
@@ -192,7 +192,6 @@ class SitesApi:
         self.site_catalog = SitesSiteCatalogApi(client)
         self.site_channels = SitesSiteChannelsApi(client)
         self.health_check = SitesHealthCheckApi(client)
-        self.site_models = SitesSiteModelsApi(client)
         self.test_connection = SitesTestConnectionApi(client)
 
 
@@ -243,33 +242,6 @@ class SitesHealthCheckApi:
     def create(self, site_id: str, body: AdminSiteActionRequest) -> HealthCheckCreateResult:
         """Health check site"""
         return self._client.post(f"/backend/v3/api/sites/{serialize_path_parameter(site_id, {'name': 'siteId', 'style': 'simple', 'explode': False})}/health_check", json=body)
-
-class SitesSiteModelsApi:
-    """sites sites.site_models API client."""
-
-    def __init__(self, client: HttpClient):
-        self._client = client
-
-
-    def list(self, site_id: str) -> SiteModelsListResult:
-        """List site models"""
-        return self._client.get(f"/backend/v3/api/sites/{serialize_path_parameter(site_id, {'name': 'siteId', 'style': 'simple', 'explode': False})}/models")
-
-    def create(self, site_id: str, body: AdminSiteModelCreateRequest) -> SiteModelsCreateResult:
-        """Create site model"""
-        return self._client.post(f"/backend/v3/api/sites/{serialize_path_parameter(site_id, {'name': 'siteId', 'style': 'simple', 'explode': False})}/models", json=body)
-
-    def replace(self, site_id: str, body: AdminSiteModelsReplaceRequest) -> SiteModelsReplaceResult:
-        """Replace site models"""
-        return self._client.put(f"/backend/v3/api/sites/{serialize_path_parameter(site_id, {'name': 'siteId', 'style': 'simple', 'explode': False})}/models", json=body)
-
-    def delete(self, site_id: str, site_model_id: str) -> SiteModelsDeleteResult:
-        """Delete site model"""
-        return self._client.delete(f"/backend/v3/api/sites/{serialize_path_parameter(site_id, {'name': 'siteId', 'style': 'simple', 'explode': False})}/models/{serialize_path_parameter(site_model_id, {'name': 'siteModelId', 'style': 'simple', 'explode': False})}")
-
-    def update(self, site_id: str, site_model_id: str, body: AdminSiteModelUpdateRequest) -> SiteModelsUpdateResult:
-        """Update site model"""
-        return self._client.patch(f"/backend/v3/api/sites/{serialize_path_parameter(site_id, {'name': 'siteId', 'style': 'simple', 'explode': False})}/models/{serialize_path_parameter(site_model_id, {'name': 'siteModelId', 'style': 'simple', 'explode': False})}", json=body)
 
 class SitesTestConnectionApi:
     """sites sites.test_connection API client."""

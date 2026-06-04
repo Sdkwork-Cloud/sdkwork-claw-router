@@ -756,7 +756,7 @@ class SdkworkModelsStandardTest(unittest.TestCase):
             "codex": {
                 "displayName": "Codex",
                 "defaultApiCode": "openai.codex.responses",
-                "defaultResourceCode": "api.openai.codex.responses",
+                "defaultResourceCode": "api.openai.codex",
             },
             "claude_code": {
                 "displayName": "Claude Code",

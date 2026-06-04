@@ -6,6 +6,11 @@ import { createServer } from 'node:net';
 import path from 'node:path';
 import process from 'node:process';
 import { fileURLToPath } from 'node:url';
+import {
+  defaultClawRouterDevPostgresDatabaseUrl,
+  defaultClawRouterDevPostgresMaxConnections,
+  resolveClawRouterDevDatabaseEnv,
+} from './claw-router-dev-database-env.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -118,6 +123,17 @@ function cargoCommand(platform = process.platform) {
 
 function localSqliteDatabaseUrl(workspaceRoot) {
   return `sqlite://${toPortablePath(DEFAULT_DEV_DATABASE_RELATIVE_PATH)}`;
+}
+
+function environmentDatabaseConfig() {
+  return resolveClawRouterDevDatabaseEnv({
+    env: process.env,
+    defaultDatabase: 'none',
+  });
+}
+
+function defaultPostgresDatabaseUrl() {
+  return defaultClawRouterDevPostgresDatabaseUrl();
 }
 
 function defaultModelsCatalogRoot(workspaceRoot) {
@@ -274,7 +290,9 @@ function serviceEnv(settings, bindEnvName, bindValue, {
   startupInstallMode = 'ensure',
 } = {}) {
   const databaseMaxConnections = process.env.SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS
-    ?? (String(settings.databaseUrl ?? '').trim().toLowerCase().startsWith('sqlite:') ? '1' : undefined);
+    ?? (String(settings.databaseUrl ?? '').trim().toLowerCase().startsWith('sqlite:')
+      ? '1'
+      : defaultClawRouterDevPostgresMaxConnections());
   const redisUrl = String(process.env.SDKWORK_CLAW_REDIS_URL ?? '').trim();
   const baseEnv = { ...process.env };
   const redisStructuredDefaults = redisUrl
@@ -378,7 +396,7 @@ export function buildWorkspaceCommandPlan(settings, {
 } = {}) {
   const portalRelativeDir = 'apps/sdkwork-claw-router-portal';
   const portalBind = splitBind(settings.portalBind, '--portal-bind');
-  settings.databaseUrl ??= localSqliteDatabaseUrl(workspaceRoot);
+  settings.databaseUrl ??= environmentDatabaseConfig().databaseUrl ?? defaultPostgresDatabaseUrl();
   settings.modelsCatalogRoot = resolveModelsCatalogRoot(settings, workspaceRoot);
   ensureLocalSqliteDatabaseDirectory(settings, workspaceRoot);
   const steps = [];
@@ -620,7 +638,7 @@ export function workspaceHelpText() {
 Starts the all-in-one Rust edge runtime plus the claw router portal dev server.
 
 Options:
-  --database-url <url>    Optional shared SDKWORK_CLAW_DATABASE_URL override
+  --database-url <url>    Optional shared SDKWORK_CLAW_DATABASE_URL override (default ${defaultPostgresDatabaseUrl()})
   --gateway-bind <bind>   SDKWORK_CLAW_GATEWAY_BIND override (default ${DEFAULT_GATEWAY_BIND})
   --admin-api-bind <bind> SDKWORK_CLAW_ADMIN_API_BIND override (default ${DEFAULT_ADMIN_API_BIND})
   --app-api-bind <bind>   SDKWORK_CLAW_APP_API_BIND override (default ${DEFAULT_APP_API_BIND})
@@ -679,7 +697,7 @@ export function renderWorkspaceDryRun(settings, plan) {
   return [
     '[start-workspace] edge launch settings',
     `  SDKWORK_CLAW_RUNTIME_MODE=${settings.runtimeMode}`,
-    `  SDKWORK_CLAW_DATABASE_URL=${settings.databaseUrl ?? '(local SQLite dev database)'}`,
+    `  SDKWORK_CLAW_DATABASE_URL=${settings.databaseUrl ?? defaultPostgresDatabaseUrl()}`,
     `  SDKWORK_MODELS_CATALOG_ROOT=${settings.modelsCatalogRoot}`,
     `  SDKWORK_CLAW_GATEWAY_BIND=${settings.gatewayBind}`,
     `  SDKWORK_CLAW_ADMIN_API_BIND=${settings.adminApiBind}`,

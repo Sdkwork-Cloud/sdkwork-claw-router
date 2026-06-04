@@ -19,8 +19,21 @@ describe("SDKWork IAM standard contracts", () => {
     expect(SDKWORK_IAM_STANDARD.api.appPrefix).toBe("/app/v3/api");
     expect(SDKWORK_IAM_STANDARD.api.backendPrefix).toBe("/backend/v3/api");
     expect(SDKWORK_IAM_STANDARD.api.openapi).toBe("3.1.2");
+    expect(SDKWORK_IAM_STANDARD.sdkNamespaces).toContain("openPlatform");
     expect(SDKWORK_IAM_API_ROUTES.auth.sessions.create.path).toBe("/app/v3/api/auth/sessions");
     expect(SDKWORK_IAM_API_ROUTES.auth.registrations.create.path).toBe("/app/v3/api/auth/registrations");
+    expect(SDKWORK_IAM_API_ROUTES.openPlatform.qrAuth.sessions.create.path).toBe(
+      "/app/v3/api/open_platform/qr_auth/sessions",
+    );
+    expect(SDKWORK_IAM_API_ROUTES.openPlatform.qrAuth.sessions.retrieve.path).toBe(
+      "/app/v3/api/open_platform/qr_auth/sessions/{sessionKey}",
+    );
+    expect(SDKWORK_IAM_API_ROUTES.openPlatform.qrAuth.sessions.scans.create.path).toBe(
+      "/app/v3/api/open_platform/qr_auth/sessions/{sessionKey}/scans",
+    );
+    expect(SDKWORK_IAM_API_ROUTES.openPlatform.qrAuth.sessions.passwords.create.path).toBe(
+      "/app/v3/api/open_platform/qr_auth/sessions/{sessionKey}/passwords",
+    );
     expect(SDKWORK_IAM_API_ROUTES.auth.sessions.current.retrieve.path).toBe("/app/v3/api/auth/sessions/current");
     expect(SDKWORK_IAM_API_ROUTES.system.iam.runtime.retrieve.path).toBe("/app/v3/api/system/iam/runtime");
     expect(SDKWORK_IAM_API_ROUTES.system.iam.verificationPolicy.retrieve.path).toBe("/app/v3/api/system/iam/verification_policy");
@@ -58,6 +71,10 @@ describe("SDKWork IAM standard contracts", () => {
     expect(operationIds).not.toContain("verificationPolicy.retrieve");
     expect(operationIds).toContain("verificationCodes.create");
     expect(operationIds).toContain("passwordResetRequests.create");
+    expect(operationIds).toContain("qrAuth.sessions.create");
+    expect(operationIds).toContain("qrAuth.sessions.retrieve");
+    expect(operationIds).toContain("qrAuth.sessions.scans.create");
+    expect(operationIds).toContain("qrAuth.sessions.passwords.create");
     expect(operationIds).toContain("apiKeys.list");
     expect(operationIds).toContain("securityEvents.list");
     expect(operationIds).toContain("auditEvents.list");
@@ -237,10 +254,14 @@ describe("SDKWork IAM standard contracts", () => {
       ]),
     });
     expect(SDKWORK_IAM_CAPABILITIES.find((capability) => capability.name === "sessionSecurity")).toMatchObject({
-      sdkNamespaces: ["auth"],
+      sdkNamespaces: ["auth", "openPlatform"],
       operations: expect.arrayContaining([
         "oauthAuthorizationUrls.retrieve",
         "oauthSessions.create",
+        "qrAuth.sessions.create",
+        "qrAuth.sessions.passwords.create",
+        "qrAuth.sessions.retrieve",
+        "qrAuth.sessions.scans.create",
         "sessions.create",
         "sessions.current.delete",
         "sessions.current.retrieve",

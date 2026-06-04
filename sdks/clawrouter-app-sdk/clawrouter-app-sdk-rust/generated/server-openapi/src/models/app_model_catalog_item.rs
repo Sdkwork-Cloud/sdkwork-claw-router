@@ -54,19 +54,9 @@ pub struct AppModelCatalogItem {
     /// Model field on app model catalog item.
     pub model: String,
 
-    /// Official reference currency field on app model catalog item.
-    #[serde(rename = "officialReferenceCurrency")]
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub official_reference_currency: Option<String>,
-
-    /// Complete public official reference prices keyed by billing meter. Customer, upstream, provider, and channel prices are never exposed here.
+    /// Complete public official reference prices keyed by regionCode and billing meter. Customer, upstream, provider, and channel prices are never exposed here.
     #[serde(rename = "officialReferencePrices")]
     pub official_reference_prices: Vec<AppModelCatalogReferencePrice>,
-
-    /// Official reference unit price field on app model catalog item.
-    #[serde(rename = "officialReferenceUnitPrice")]
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub official_reference_unit_price: Option<String>,
 
     /// Output modalities field on app model catalog item.
     #[serde(rename = "outputModalities")]
@@ -79,10 +69,6 @@ pub struct AppModelCatalogItem {
     /// Provider codes field on app model catalog item.
     #[serde(rename = "providerCodes")]
     pub provider_codes: Vec<String>,
-
-    /// Region code field on app model catalog item.
-    #[serde(rename = "regionCode")]
-    pub region_code: String,
 
     /// Release stage field on app model catalog item.
     #[serde(rename = "releaseStage")]

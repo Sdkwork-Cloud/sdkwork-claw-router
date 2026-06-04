@@ -1,5 +1,5 @@
 import type { ElementType } from 'react';
-import { Layout, Server, Settings } from 'lucide-react';
+import { Cloud, Layout, Server, Settings } from 'lucide-react';
 import type {
   ApiCategory,
   ApiCategorySidebarNode,
@@ -12,10 +12,10 @@ import {
   loadApiReferenceSystems,
 } from 'sdkwork-claw-router-api-reference/apiReferenceSchemaTabs';
 import { readClawRouterRuntimeEnv } from 'sdkwork-claw-router-commons/runtime';
-import { APP_API_PREFIX, BACKEND_API_PREFIX, SDK_SYSTEM_CONFIG } from 'sdkwork-claw-router-commons/runtime';
+import { APP_API_PREFIX, BACKEND_API_PREFIX, CLOUD_API_PREFIX, SDK_SYSTEM_CONFIG } from 'sdkwork-claw-router-commons/runtime';
 import type { ClawRouterGeneratedSdkMetadata, ClawRouterGeneratedSdkType } from 'sdkwork-claw-router-commons/runtime';
 
-export type SdkReferenceSystem = 'gateway' | 'app' | 'backend';
+export type SdkReferenceSystem = 'gateway' | 'cloud-services' | 'app' | 'backend';
 export type GeneratedSdkType = ClawRouterGeneratedSdkType;
 export type GeneratedSdkMetadata = ClawRouterGeneratedSdkMetadata;
 
@@ -170,10 +170,11 @@ function isSdkReferenceSystemData(system: ApiReferenceSystemData): system is Api
 }
 
 function isSdkReferenceSystemId(system: string): system is SdkReferenceSystem {
-  return system === 'gateway' || system === 'app' || system === 'backend';
+  return system === 'gateway' || system === 'cloud-services' || system === 'app' || system === 'backend';
 }
 
 function iconForSdkSystem(system: SdkReferenceSystem): ElementType {
+  if (system === 'cloud-services') return Cloud;
   if (system === 'backend') return Settings;
   if (system === 'app') return Layout;
   return Server;
@@ -182,5 +183,6 @@ function iconForSdkSystem(system: SdkReferenceSystem): ElementType {
 function defaultSchemaUrlForSystem(system: string): string {
   if (system === 'backend') return `${BACKEND_API_PREFIX}/openapi.json`;
   if (system === 'app') return `${APP_API_PREFIX}/openapi.json`;
+  if (system === 'cloud-services') return `${CLOUD_API_PREFIX}/openapi.json`;
   return '/openapi.json';
 }

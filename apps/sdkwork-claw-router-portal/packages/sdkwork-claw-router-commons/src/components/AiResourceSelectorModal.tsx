@@ -14,6 +14,8 @@ export interface AiResourceSelectorOption {
   catalogKey: string | null;
   model: string | null;
   providerNativeModel: string | null;
+  capability?: string | null;
+  capabilities?: string[];
   status: string;
 }
 
@@ -66,6 +68,8 @@ export function AiResourceSelectorModal({
     option.catalogKey,
     option.model,
     option.providerNativeModel,
+    option.capability,
+    option.capabilities?.join(' '),
     option.status,
   ]));
   const toggleCode = (code: string) => {
@@ -130,7 +134,17 @@ export function AiResourceSelectorModal({
                       <div className="font-medium text-slate-900 dark:text-white">{option.displayName}</div>
                       <div className="font-mono text-xs text-slate-500">{option.resourceCode}</div>
                     </td>
-                    <td className="px-5 py-3">{option.resourceType}</td>
+                    <td className="px-5 py-3">
+                      <div className="flex flex-wrap gap-1.5">
+                        {((option.capabilities?.length ?? 0) > 0 ? option.capabilities ?? [] : [option.capability ?? option.resourceType])
+                          .filter(Boolean)
+                          .map(capability => (
+                            <span key={capability} className="rounded bg-emerald-50 px-1.5 py-0.5 font-mono text-[10px] text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-300">
+                              {capability}
+                            </span>
+                          ))}
+                      </div>
+                    </td>
                     <td className="px-5 py-3">{option.vendorCode ?? '-'}</td>
                     <td className="px-5 py-3">{option.status}</td>
                   </tr>

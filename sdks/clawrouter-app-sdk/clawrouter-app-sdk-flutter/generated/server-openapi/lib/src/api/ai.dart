@@ -97,6 +97,42 @@ class AiApi {
     })();
   }
 
+  /// List routing API keys
+  Future<RoutingApiKeysListResult?> routingApiKeysList() async {
+    final response = await _client.get(ApiPaths.appPath('/ai/routing/api_keys'));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : RoutingApiKeysListResult.fromJson(map);
+    })();
+  }
+
+  /// List routing channels
+  Future<RoutingChannelsListResult?> routingChannelsList() async {
+    final response = await _client.get(ApiPaths.appPath('/ai/routing/channels'));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : RoutingChannelsListResult.fromJson(map);
+    })();
+  }
+
+  /// List routing request traces
+  Future<RoutingRequestTracesListResult?> routingRequestTracesList() async {
+    final response = await _client.get(ApiPaths.appPath('/ai/routing/request_traces'));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : RoutingRequestTracesListResult.fromJson(map);
+    })();
+  }
+
+  /// List routing usage
+  Future<RoutingUsageListResult?> routingUsageList() async {
+    final response = await _client.get(ApiPaths.appPath('/ai/routing/usage'));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : RoutingUsageListResult.fromJson(map);
+    })();
+  }
+
   /// List logs
   Future<UsageLogsListResult?> usageLogsList([int? page, int? pageSize, String? q, String? status, String? startTime, String? endTime]) async {
     final query = buildQueryString([

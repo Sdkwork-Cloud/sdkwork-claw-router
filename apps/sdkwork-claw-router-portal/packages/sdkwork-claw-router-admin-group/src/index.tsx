@@ -324,7 +324,8 @@ export function GroupAdmin() {
           priority: 100,
           weight: 100,
           status: 'active',
-          modelScope: [],
+          resourceCodes: channel.resourceCodes,
+          apiScope: channel.apiScope,
           capabilities: channel.capabilities,
         };
       }
@@ -394,9 +395,9 @@ export function GroupAdmin() {
         providerCode: persisted?.providerCode ?? option?.providerCode ?? 'unknown',
         providerName: persisted?.providerName ?? option?.providerName ?? 'unknown',
         channelCode: persisted?.channelCode ?? option?.channelCode ?? draft.channelId,
-        models: persisted?.models ?? option?.models ?? [],
+        resourceCodes: draft.resourceCodes ?? persisted?.resourceCodes ?? option?.resourceCodes ?? [],
+        apiScope: draft.apiScope ?? persisted?.apiScope ?? option?.apiScope ?? [],
         capabilities: draft.capabilities ?? persisted?.capabilities ?? option?.capabilities ?? [],
-        modelScope: draft.modelScope ?? persisted?.modelScope ?? [],
         priority: draft.priority ?? persisted?.priority ?? 100,
         weight: draft.weight ?? persisted?.weight ?? 100,
         status: draft.status ?? persisted?.status ?? 'active',
@@ -408,7 +409,8 @@ export function GroupAdmin() {
       row.channelCode,
       row.providerName,
       row.providerCode,
-      ...row.models,
+      ...row.resourceCodes,
+      ...row.apiScope,
       ...row.capabilities,
     ]))
     .sort((left, right) => {
@@ -421,7 +423,8 @@ export function GroupAdmin() {
       channel.channelCode,
       channel.providerName,
       channel.providerCode,
-      ...channel.models,
+      ...channel.resourceCodes,
+      ...channel.apiScope,
       ...channel.capabilities,
     ]))
     .sort((left, right) => `${left.providerName} ${left.name}`.localeCompare(`${right.providerName} ${right.name}`));
@@ -888,13 +891,13 @@ export function GroupAdmin() {
                   </div>
                 </div>
               ) : (
-                <table className="w-full min-w-[1180px] text-left text-sm text-slate-600 dark:text-slate-400">
+                <table className="w-full min-w-[1080px] text-left text-sm text-slate-600 dark:text-slate-400">
                   <thead className="sticky top-0 z-10 border-b border-slate-200 bg-slate-50 text-xs font-semibold text-slate-500 dark:border-white/10 dark:bg-[#121212] dark:text-slate-400">
                     <tr>
                       <th className="px-5 py-3">{t('admin.group.channelBindings.columns.channel')}</th>
                       <th className="px-5 py-3">{t('admin.group.channelBindings.columns.provider')}</th>
-                      <th className="px-5 py-3">{t('admin.group.channelBindings.columns.models')}</th>
-                      <th className="px-5 py-3">{t('admin.group.channelBindings.columns.modelScope')}</th>
+                      <th className="px-5 py-3">{t('admin.group.channelBindings.columns.resourceCodes')}</th>
+                      <th className="px-5 py-3">{t('admin.group.channelBindings.columns.apiScope')}</th>
                       <th className="px-5 py-3">{t('admin.group.channelBindings.columns.priority')}</th>
                       <th className="px-5 py-3">{t('admin.group.channelBindings.columns.weight')}</th>
                       <th className="px-5 py-3">{t('admin.group.channelBindings.columns.status')}</th>
@@ -920,21 +923,17 @@ export function GroupAdmin() {
                             </div>
                           </td>
                           <td className="max-w-[260px] px-5 py-3 align-middle">
-                            <div className="truncate whitespace-nowrap text-xs text-slate-500" title={row.models.join(', ')}>
-                              {row.models.length > 0 ? row.models.join(', ') : t('admin.group.channelBindings.noModels')}
+                            <div className="truncate whitespace-nowrap text-xs text-slate-500" title={row.resourceCodes.join(', ')}>
+                              {row.resourceCodes.length > 0 ? row.resourceCodes.join(', ') : t('admin.group.channelBindings.noResourceCodes')}
                             </div>
                             <div className="mt-1 truncate whitespace-nowrap text-[11px] text-slate-400" title={row.capabilities.join(', ')}>
                               {row.capabilities.join(', ')}
                             </div>
                           </td>
-                          <td className="px-5 py-3 align-middle">
-                            <input
-                              type="text"
-                              value={draft?.modelScope?.join(', ') ?? ''}
-                              onChange={event => updateChannelBindingDraft(row.channelId, { modelScope: stringListInputValue(event.currentTarget.value) })}
-                              placeholder={t('admin.group.channelBindings.allModels')}
-                              className="w-52 rounded-lg border border-slate-200 bg-white px-2 py-1 text-sm text-slate-900 outline-none focus:border-emerald-500 dark:border-white/10 dark:bg-[#202020] dark:text-white"
-                            />
+                          <td className="max-w-[240px] px-5 py-3 align-middle">
+                            <div className="truncate whitespace-nowrap text-xs text-slate-500" title={row.apiScope.join(', ')}>
+                              {row.apiScope.length > 0 ? row.apiScope.join(', ') : t('admin.group.channelBindings.noApiScope')}
+                            </div>
                           </td>
                           <td className="px-5 py-3 align-middle">
                             <input
@@ -1056,7 +1055,7 @@ export function GroupAdmin() {
                           <th className="w-12 px-5 py-3"></th>
                           <th className="px-5 py-3">{t('admin.group.channelBindings.columns.channel')}</th>
                           <th className="px-5 py-3">{t('admin.group.channelBindings.columns.provider')}</th>
-                          <th className="px-5 py-3">{t('admin.group.channelBindings.columns.models')}</th>
+                          <th className="px-5 py-3">{t('admin.group.channelBindings.columns.resourceCodes')}</th>
                           <th className="px-5 py-3">{t('admin.group.channelBindings.columns.status')}</th>
                         </tr>
                       </thead>
@@ -1094,8 +1093,11 @@ export function GroupAdmin() {
                                 </div>
                               </td>
                               <td className="max-w-[320px] px-5 py-3 align-middle">
-                                <div className="truncate whitespace-nowrap text-xs text-slate-500" title={channel.models.join(', ')}>
-                                  {channel.models.length > 0 ? channel.models.join(', ') : t('admin.group.channelBindings.noModels')}
+                                <div className="truncate whitespace-nowrap text-xs text-slate-500" title={channel.resourceCodes.join(', ')}>
+                                  {channel.resourceCodes.length > 0 ? channel.resourceCodes.join(', ') : t('admin.group.channelBindings.noResourceCodes')}
+                                </div>
+                                <div className="mt-1 truncate whitespace-nowrap text-[11px] text-slate-400" title={channel.apiScope.join(', ')}>
+                                  {channel.apiScope.length > 0 ? channel.apiScope.join(', ') : t('admin.group.channelBindings.noApiScope')}
                                 </div>
                                 <div className="mt-1 truncate whitespace-nowrap text-[11px] text-slate-400" title={channel.capabilities.join(', ')}>
                                   {channel.capabilities.join(', ')}
@@ -1277,7 +1279,8 @@ function bindingsToDraft(bindings: GroupChannelBindingData[]): Record<string, Gr
         priority: binding.priority,
         weight: binding.weight,
         status: binding.status,
-        modelScope: binding.modelScope,
+        resourceCodes: binding.resourceCodes,
+        apiScope: binding.apiScope,
         capabilities: binding.capabilities,
       },
     ]),
@@ -1287,17 +1290,6 @@ function bindingsToDraft(bindings: GroupChannelBindingData[]): Record<string, Gr
 function numericInputValue(value: string): number {
   const parsed = Number(value);
   return Number.isFinite(parsed) && parsed >= 0 ? Math.trunc(parsed) : 0;
-}
-
-function stringListInputValue(value: string): string[] {
-  return Array.from(
-    new Set(
-      value
-        .split(/[,\n]/)
-        .map(item => item.trim())
-        .filter(Boolean),
-    ),
-  );
 }
 
 function matchesChannelSearch(query: string, values: string[]): boolean {

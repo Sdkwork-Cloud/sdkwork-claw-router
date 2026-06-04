@@ -53,9 +53,7 @@ pub struct AdminChannelGroupChannelBindingItem {
     pub channel_code: String,
     pub resource_codes: Vec<String>,
     pub api_scope: Vec<String>,
-    pub models: Vec<String>,
     pub capabilities: Vec<String>,
-    pub model_scope: Vec<String>,
     pub priority: i64,
     pub weight: i64,
     pub status: String,
@@ -71,7 +69,6 @@ pub struct AdminChannelGroupChannelBindingInput {
     pub status: String,
     pub resource_codes: Vec<String>,
     pub api_scope: Vec<String>,
-    pub model_scope: Vec<String>,
     pub capabilities: Vec<String>,
 }
 

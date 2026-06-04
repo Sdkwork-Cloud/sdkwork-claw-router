@@ -20,7 +20,7 @@ PostgreSQL runtime template:
 
 ```bash
 sudo apt install ./clawrouter-linux-x64-server-0.3.0.deb
-sudo editor /etc/clawrouter/clawrouter.toml
+sudo editor /etc/sdkwork/router/clawrouter.toml
 sudo systemctl start clawrouter
 ```
 
@@ -40,12 +40,12 @@ the complete domain name. Generated configs proxy to `http://127.0.0.1:3900`.
 Use `etc/nginx/NGINX_SAMPLE.conf` as the canonical template and see
 `etc/nginx/sdkwork/` for full-domain examples.
 
-The package creates the default TOML, `/etc/clawrouter/clawrouter.env`,
-`/etc/clawrouter/database.secret`, `/etc/clawrouter/redis.secret`, data/log directories, enables
+The package creates the default TOML, `/etc/sdkwork/router/clawrouter.env`,
+`/etc/sdkwork/router/database.secret`, `/etc/sdkwork/router/redis.secret`, data/log directories, enables
 `clawrouter.service` on systemd hosts, and runs initialization from systemd
 before startup. Configure PostgreSQL before starting the service. The running
-service can write `/var/lib/clawrouter` and `/var/log/clawrouter`; it reads
-`/etc/clawrouter` as protected configuration. Each package also includes
+service can write `/var/lib/sdkwork/router` and `/var/log/sdkwork/router`; it reads
+`/etc/sdkwork/router` as protected configuration. Each package also includes
 `install-manifest.json` with `installConfiguration`, and native installers add a
 `nativeInstall` layout for deployment automation.
 

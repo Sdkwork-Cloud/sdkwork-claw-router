@@ -22,6 +22,21 @@ impl Default for AdapterInvocationShape {
 
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
 #[serde(rename_all = "snake_case")]
+pub enum AdapterEndpointRuntimeState {
+    RuntimeAvailable,
+    DefinitionOnly,
+    Planned,
+    Deprecated,
+}
+
+impl Default for AdapterEndpointRuntimeState {
+    fn default() -> Self {
+        Self::RuntimeAvailable
+    }
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[serde(rename_all = "snake_case")]
 pub enum AdapterStreamingMode {
     None,
     SsePassthrough,

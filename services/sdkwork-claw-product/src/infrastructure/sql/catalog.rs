@@ -99,11 +99,7 @@ impl SqlPricingCatalogSnapshot {
             model_mappings: map_rows(rows.model_mappings, ModelMappingRuleRow::try_into_domain)?,
             pricing_plans,
             channel_groups: map_rows(rows.channel_groups, ChannelGroupRow::try_into_domain)?,
-            api_keys: rows
-                .api_keys
-                .into_iter()
-                .map(GatewayApiKeyRow::into_domain)
-                .collect(),
+            api_keys: map_rows(rows.api_keys, GatewayApiKeyRow::try_into_domain)?,
             access_policies: map_rows(
                 rows.access_policies,
                 GatewayAccessPolicyRow::try_into_domain,

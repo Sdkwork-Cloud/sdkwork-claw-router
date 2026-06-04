@@ -78,3 +78,91 @@ tables:
     sensitivity: SECRET_HASH
     stores_secret_plaintext: false
     audit_required: true
+- table: iam_gateway_api_key_channel_group
+  domain: iam
+  profile: relation_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: api-key-service
+  common_columns: user_entity
+  source_tables:
+  - iam_gateway_api_key
+  - ai_channel_group
+  frontend_routes:
+  - /console/routing
+  - /console/api-keys
+  - /admin/user
+  - /admin/ratelimit
+  - /admin/service-providers/bindings
+  api_surfaces:
+  - app
+  - backend
+  - openai_v1
+  - worker
+  not_null_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - user_id
+  - status
+  - api_key_id
+  - channel_group_id
+  - binding_role
+  - routing_strategy
+  - priority
+  - weight
+  unique_constraints:
+  - columns:
+    - uuid
+    source: column_unique
+  - name: uk_iam_gateway_api_key_channel_group_binding
+    columns:
+    - tenant_id
+    - organization_id
+    - api_key_id
+    - channel_group_id
+    - binding_role
+  columns:
+    api_key_id:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    channel_group_id:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    channel_group_code: string(64)
+    binding_role:
+      type: string(32)
+      constraints: NOT NULL DEFAULT 'route'
+    routing_strategy:
+      type: string(32)
+      constraints: NOT NULL DEFAULT 'auto'
+    priority:
+      type: int32
+      constraints: NOT NULL DEFAULT 100
+    weight:
+      type: int32
+      constraints: NOT NULL DEFAULT 100
+    effective_from: instant
+    effective_to: instant
+  indexes:
+  - name: idx_iam_gateway_api_key_channel_group_active
+    columns:
+    - tenant_id
+    - organization_id
+    - api_key_id
+    - status
+    - priority
+    - weight
+    - id
+  - name: idx_iam_gateway_api_key_channel_group_group
+    columns:
+    - tenant_id
+    - organization_id
+    - channel_group_id
+    - status
+    - priority
+    - id
+  security:
+    sensitivity: SECRET_HASH
+    stores_secret_plaintext: false
+    audit_required: true

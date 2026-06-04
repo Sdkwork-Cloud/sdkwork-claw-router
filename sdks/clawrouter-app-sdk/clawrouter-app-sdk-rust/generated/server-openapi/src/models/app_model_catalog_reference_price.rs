@@ -10,6 +10,10 @@ pub struct AppModelCatalogReferencePrice {
     /// Currency field on app model catalog reference price.
     pub currency: String,
 
+    /// Deployment or pricing region for this public reference price. Region is never encoded in catalogKey.
+    #[serde(rename = "regionCode")]
+    pub region_code: String,
+
     /// Decimal unit price in the native official reference currency.
     #[serde(rename = "unitPrice")]
     pub unit_price: String,

@@ -13,6 +13,7 @@ frontend_models:
   - type
   - regionPrices
   - regionPrices.regionCode
+  - regionPrices.currency
   - regionPrices.priceIn
   - regionPrices.priceOut
   - regionPrices.cacheReadPrice
@@ -82,6 +83,7 @@ frontend_models:
   - models.type
   - models.regionPrices
   - models.regionPrices.regionCode
+  - models.regionPrices.currency
   - models.regionPrices.priceIn
   - models.regionPrices.priceOut
   - models.regionPrices.cacheReadPrice
@@ -136,6 +138,7 @@ frontend_models:
   - models.type
   - models.regionPrices
   - models.regionPrices.regionCode
+  - models.regionPrices.currency
   - models.regionPrices.priceIn
   - models.regionPrices.priceOut
   - models.regionPrices.cacheReadPrice
@@ -202,6 +205,7 @@ frontend_models:
   - type
   - regionPrices
   - regionPrices.regionCode
+  - regionPrices.currency
   - regionPrices.priceIn
   - regionPrices.priceOut
   - regionPrices.cacheReadPrice
@@ -226,6 +230,7 @@ frontend_models:
   interface: ModelRegionPriceInput
   fields:
   - regionCode
+  - currency
   - priceIn
   - priceOut
   - cacheReadPrice
@@ -394,7 +399,6 @@ frontend_models:
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
   interface: SiteCreateInput
   fields:
-  - siteCode
   - siteName
   - displayName
   - description
@@ -436,85 +440,6 @@ frontend_models:
   - credentialRef
   - maskedLabel
   data_sources:
-  - ai_site
-  - ai_site_service
-- route: /admin/model/sites
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
-  interface: SiteModelItem
-  fields:
-  - id
-  - siteId
-  - siteCode
-  - siteServiceId
-  - siteServiceCode
-  - serviceType
-  - modelCode
-  - modelName
-  - displayName
-  - providerModel
-  - providerNativeModel
-  - vendorCode
-  - modality
-  - capabilities
-  - contextTokens
-  - maxInputTokens
-  - maxOutputTokens
-  - supportsStreaming
-  - supportsTools
-  - supportsJsonSchema
-  - healthStatus
-  - lastLatencyMs
-  - consecutiveErrorCount
-  - lastSyncAt
-  - status
-  data_sources:
-  - ai_site_model
-  - ai_site
-  - ai_site_service
-- route: /admin/model/sites
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
-  interface: SiteModelCreateInput
-  fields:
-  - modelCode
-  - modelName
-  - displayName
-  - providerModel
-  - providerNativeModel
-  - vendorCode
-  - modality
-  - capabilities
-  - contextTokens
-  - maxInputTokens
-  - maxOutputTokens
-  - supportsStreaming
-  - supportsTools
-  - supportsJsonSchema
-  - status
-  data_sources:
-  - ai_site_model
-  - ai_site
-  - ai_site_service
-- route: /admin/model/sites
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
-  interface: SiteModelUpdateInput
-  fields:
-  - modelCode
-  - modelName
-  - displayName
-  - providerModel
-  - providerNativeModel
-  - vendorCode
-  - modality
-  - capabilities
-  - contextTokens
-  - maxInputTokens
-  - maxOutputTokens
-  - supportsStreaming
-  - supportsTools
-  - supportsJsonSchema
-  - status
-  data_sources:
-  - ai_site_model
   - ai_site
   - ai_site_service
 - route: /admin/model/sites
@@ -589,6 +514,44 @@ frontend_models:
   - ai_model_mapping_rule
   - ai_model_mapping_rule_binding
   - ai_model_mapping_rule_item
+- route: /admin/model/mappings
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  interface: ModelMappingModelOption
+  fields:
+  - id
+  - vendorId
+  - vendorCode
+  - model
+  - displayName
+  - name
+  - type
+  - status
+  data_sources:
+  - ai_model
+  - ai_model_vendor
+- route: /admin/model/mappings
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  interface: ModelMappingModelOptionsCatalog
+  fields:
+  - vendors
+  - vendors.id
+  - vendors.vendorCode
+  - vendors.name
+  - vendors.status
+  - vendors.color
+  - vendors.description
+  - models
+  - models.id
+  - models.vendorId
+  - models.vendorCode
+  - models.model
+  - models.displayName
+  - models.name
+  - models.type
+  - models.status
+  data_sources:
+  - ai_model
+  - ai_model_vendor
 - route: /admin/model/mappings
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
   interface: ModelMappingRuleBinding

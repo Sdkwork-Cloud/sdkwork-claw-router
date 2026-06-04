@@ -68,7 +68,7 @@
 | `/console/recharge` | 充值包、充值方式 | `plus_vip_recharge_pack`、`plus_vip_recharge_method` | 充值包沿用存量结构 |
 | `/console/settings` | 语言、时区、Webhook、通知偏好 | `iam_user_preference`、`integration_webhook_endpoint`、`ops_notification_delivery` | Webhook secret 存引用，通知偏好入用户偏好 |
 | `/console/notifications` | 通知列表、详情、已读、账单提醒、预警 | `ops_notification_message`、`ops_notification_delivery` | 通知定义和用户投递状态分离 |
-| `/console/providers` | Claude/Codex/Gemini/OpenCode 配置、模型、代理 | `integration_provider`、`ai_channel`、`integration_provider_account`、`integration_proxy`、`ai_channel_model` | 本地/云 Provider 用同一标准表 |
+| `/console/providers` | Claude/Codex/Gemini/OpenCode 配置、资源能力、代理 | `integration_provider`、`ai_channel`、`ai_channel_credential`、`ai_channel_resource`、`integration_proxy`、`ai_model_mapping_rule*` | 本地/云 Provider 用同一标准表；账号资源授权和模型映射分离 |
 | `/console/user` | 个人资料、OAuth、MFA、安全状态、最近登录 | `plus_user`、`plus_oauth_account`、`iam_user_preference`、`iam_user_security_setting`、`iam_user_login_event` | 用户主数据仍在 `plus_user`，OAuth 物理表名与 entity 保持一致 |
 
 ### 3.3 Admin
@@ -79,12 +79,12 @@
 | `/admin/user` | 用户管理、余额充值/退款、用户 Key | `plus_user`、`plus_account`、`plus_account_history`、`plus_api_key`、`iam_gateway_api_key` | 后台余额操作必须写账户流水和审计 |
 | `/admin/group` | 分组、平台、计费类型、倍率、默认定价方案、账号容量、使用量 | `ai_channel_group`、`ai_channel_group_metric_snapshot`、`iam_gateway_access_policy`、`ai_pricing_plan`、`ai_pricing_plan_binding` | 分组不是用户组替代表，是 Key/计费/策略分组；创建 Key 选择该分组；容量和用量从快照读取，避免页面扫热事实表 |
 | `/admin/model` | 模型厂家、模型族、模型、接入供应商、计量表、官方价、供应商价、销售价、上下文、调用量 | `ai_model_vendor`、`ai_model_family`、`ai_model`、`ai_billing_meter`、`ai_model_pricing`、`ai_pricing_plan`、`ai_pricing_rule`、`ai_pricing_tier`、`integration_provider`、`ai_model_rank_snapshot` | 新价格表不使用 float/double；`BillingMeter` 覆盖 token、请求、结果、个数、秒数、字符、存储和流量；`price_side` 区分官方参考价、供应商上游成本价、客户销售价 |
-| `/admin/channel` | 渠道账号、协议、认证、模型厂家、模型白名单/映射、权重 | `ai_model_vendor`、`integration_provider`、`ai_channel`、`integration_provider_account`、`ai_channel_model`、`integration_proxy` | Secret 只存 `secret_ref`；模型映射保存 `vendor_code` |
+| `/admin/channel` | 上游服务商账号、协议、认证、资源能力、模型映射、权重 | `ai_model_vendor`、`integration_provider`、`ai_channel`、`ai_channel_credential`、`ai_channel_resource`、`ai_model_mapping_rule*`、`integration_proxy` | Secret 只存引用；资源授权和模型映射分别维护 |
 | `/admin/announcement` | 公告发布、草稿、目标人群 | `content_announcement` | 发布、撤回写审计 |
 | `/admin/marketing` | 优惠券、批次、兑换、充值记录、邀请统计 | `promotion_offer`、`promotion_offer_version`、`promotion_coupon_stock`、`promotion_code`、`promotion_user_coupon`、`promotion_discount_application`、`promotion_coupon_ledger_entry`、`promotion_external_binding`、`plus_vip_recharge*`、`plus_invitation*`、`plus_partner` | 卡券营销事实统一进入 `promotion_*` |
 | `/admin/finance` | 交易流水、账单、充值、退款、消费 | `plus_account_history`、`plus_payment`、`plus_refund`、`commerce_usage_statement` | 财务事实以 `plus_account_history`、支付退款表为准 |
 | `/admin/record` | 请求日志、计费明细、价格快照、IP | `ai_request_trace`、`ai_usage_fact`、`ai_routing_decision_log` | 请求事实可按 request_id 回放 |
-| `/admin/ratelimit` | IP、Token、模型限流、防火墙 | `ai_quota_policy`、`ai_rate_limit_bucket`、`iam_gateway_risk_rule`、`iam_gateway_access_policy` | 黑白名单和限流策略可版本化 |
+| `/admin/ratelimit` | IP、Token、模型限流、防火墙 | `ai_quota_policy`、`iam_gateway_risk_rule`、`iam_gateway_access_policy`、`ai_usage_fact`、`ops_metric_snapshot` | 黑白名单和限流策略可版本化；运行态用量从请求事实和指标投影聚合 |
 | `/admin/monitor` | 节点、CPU、内存、告警、性能曲线 | `ops_gateway_instance`、`ops_gateway_heartbeat`、`ops_alert_event`、`ops_metric_snapshot` | 监控指标与审计/配置分离 |
 
 ## 4. Schema Registry 落地方式
@@ -154,7 +154,11 @@ schema-registry YAML
 - `integration_provider`
 - `ai_channel`
 - `integration_provider_account`
-- `ai_channel_model`
+- `ai_channel_credential`
+- `ai_channel_resource`
+- `ai_model_mapping_rule`
+- `ai_model_mapping_rule_binding`
+- `ai_model_mapping_rule_item`
 - `ai_model_vendor`
 - `ai_model_family`
 - `ai_model`

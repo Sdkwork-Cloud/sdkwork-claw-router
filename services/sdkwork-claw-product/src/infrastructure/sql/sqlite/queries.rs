@@ -116,29 +116,133 @@ ORDER BY CAST(COALESCE(rank_score, '0') AS REAL) DESC, display_name ASC, id ASC
 "#;
 
 pub const LOAD_PROVIDER_ROUTES: &str = r#"
+WITH RECURSIVE resource_group_tree AS (
+    SELECT
+        item.tenant_id,
+        item.organization_id,
+        item.resource_group_id AS root_group_id,
+        item.resource_group_code AS root_group_code,
+        item.resource_id,
+        item.resource_code,
+        item.child_resource_group_id,
+        item.child_resource_group_code,
+        0 AS depth
+    FROM ai_resource_group_item item
+    WHERE item.deleted_at IS NULL
+      AND item.status = 1
+    UNION ALL
+    SELECT
+        tree.tenant_id,
+        tree.organization_id,
+        tree.root_group_id,
+        tree.root_group_code,
+        child.resource_id,
+        child.resource_code,
+        child.child_resource_group_id,
+        child.child_resource_group_code,
+        tree.depth + 1 AS depth
+    FROM resource_group_tree tree
+    JOIN ai_resource_group_item child
+      ON child.tenant_id = tree.tenant_id
+     AND child.organization_id = tree.organization_id
+     AND child.deleted_at IS NULL
+     AND child.status = 1
+     AND (
+          (tree.child_resource_group_id IS NOT NULL AND child.resource_group_id = tree.child_resource_group_id)
+          OR (NULLIF(tree.child_resource_group_code, '') IS NOT NULL AND child.resource_group_code = tree.child_resource_group_code)
+     )
+    WHERE tree.depth < 8
+      AND (
+          tree.child_resource_group_id IS NOT NULL
+          OR NULLIF(tree.child_resource_group_code, '') IS NOT NULL
+      )
+),
+resource_group_leaf AS (
+    SELECT DISTINCT
+        tenant_id,
+        organization_id,
+        root_group_id AS resource_group_id,
+        root_group_code AS resource_group_code,
+        resource_id,
+        resource_code
+    FROM resource_group_tree
+    WHERE resource_id IS NOT NULL
+       OR NULLIF(resource_code, '') IS NOT NULL
+),
+channel_resource_scope AS (
+    SELECT DISTINCT
+        cr.tenant_id,
+        cr.organization_id,
+        cr.channel_id,
+        r.resource_code,
+        r.resource_type,
+        r.vendor_code,
+        r.modality_code,
+        r.api_code,
+        r.catalog_key,
+        r.model,
+        r.provider_native_model,
+        cr.priority,
+        cr.weight,
+        cr.id AS binding_id
+    FROM ai_channel_resource cr
+    LEFT JOIN resource_group_leaf rgi
+      ON rgi.tenant_id = cr.tenant_id
+     AND rgi.organization_id = cr.organization_id
+     AND (
+         (cr.resource_group_id IS NOT NULL AND rgi.resource_group_id = cr.resource_group_id)
+         OR (NULLIF(cr.resource_group_code, '') IS NOT NULL AND rgi.resource_group_code = cr.resource_group_code)
+         OR (NULLIF(cr.resource_code, '') IS NOT NULL AND rgi.resource_group_code = cr.resource_code)
+     )
+    JOIN ai_resource r
+      ON r.tenant_id = cr.tenant_id
+     AND r.organization_id = cr.organization_id
+     AND r.deleted_at IS NULL
+     AND r.status = 1
+     AND (
+         r.id = cr.resource_id
+         OR r.id = rgi.resource_id
+         OR (NULLIF(cr.resource_code, '') IS NOT NULL AND r.resource_code = cr.resource_code)
+         OR (NULLIF(rgi.resource_code, '') IS NOT NULL AND r.resource_code = rgi.resource_code)
+     )
+    WHERE cr.deleted_at IS NULL
+      AND cr.status = 1
+      AND cr.grant_type = 'allow'
+      AND (cr.effective_from IS NULL OR datetime(cr.effective_from) <= CURRENT_TIMESTAMP)
+      AND (cr.effective_to IS NULL OR datetime(cr.effective_to) > CURRENT_TIMESTAMP)
+)
 SELECT
-    cm.catalog_key AS catalog_key,
-    COALESCE(NULLIF(cm.model, ''), cm.catalog_key) AS model,
-    NULLIF(cm.api_code, '') AS api_code,
-    COALESCE(NULLIF(e.region_code, ''), NULLIF(c.region_code, ''), 'global') AS region_code,
+    m.catalog_key AS catalog_key,
+    m.model AS model,
+    NULLIF(COALESCE(NULLIF(scope.api_code, ''), CASE
+        WHEN COALESCE(m.capability, 1) = 6 THEN 'openai.embeddings'
+        WHEN COALESCE(m.capability, 1) = 2 THEN 'openai.images'
+        WHEN COALESCE(m.capability, 1) = 3 THEN 'openai.audio'
+        WHEN COALESCE(m.capability, 1) = 4 THEN 'suno.music'
+        WHEN COALESCE(m.capability, 1) = 5 THEN 'openai.video'
+        WHEN COALESCE(m.capability, 1) = 7 THEN 'rerank'
+        WHEN COALESCE(m.api_format, '') = 'openai_responses' THEN 'openai.responses'
+        ELSE 'openai.chat_completions'
+    END), '') AS api_code,
+    COALESCE(NULLIF(c.region_code, ''), 'global') AS region_code,
     c.provider_code AS provider_code,
     c.id AS channel_id,
     cc.id AS credential_id,
     COALESCE(NULLIF(c.credential_rotation_strategy, ''), 'default') AS credential_rotation,
     COALESCE(cc.priority, 100) AS credential_priority,
     COALESCE(cc.weight, 100) AS credential_weight,
-    COALESCE(NULLIF(cm.provider_model, ''), NULLIF(cm.provider_native_model, ''), NULLIF(cm.model, ''), cm.catalog_key) AS provider_model,
-    COALESCE(NULLIF(e.base_url, ''), NULLIF(cc.base_url, ''), p.base_url) AS base_url,
+    COALESCE(NULLIF(scope.provider_native_model, ''), NULLIF(scope.model, ''), NULLIF(m.model, ''), m.catalog_key) AS provider_model,
+    COALESCE(NULLIF(cc.base_url, ''), NULLIF(c.base_url, ''), p.base_url) AS base_url,
     cc.credential_ref AS secret_ref,
     CAST(c.auth_type AS TEXT) AS auth_type,
     CAST(cc.auth_config AS TEXT) AS auth_config_json,
-    COALESCE(e.timeout_ms, c.timeout_ms) AS timeout_ms,
-    COALESCE(e.retry_policy, c.retry_policy) AS retry_policy_json
-FROM ai_channel_model cm
+    c.timeout_ms AS timeout_ms,
+    c.retry_policy AS retry_policy_json
+FROM ai_model m
 JOIN ai_channel c
-  ON c.id = cm.channel_id
- AND c.tenant_id = cm.tenant_id
- AND c.organization_id = cm.organization_id
+  ON c.deleted_at IS NULL
+ AND c.tenant_id = m.tenant_id
+ AND c.organization_id = m.organization_id
 JOIN ai_channel_credential cc
   ON cc.channel_id = c.id
  AND cc.tenant_id = c.tenant_id
@@ -149,33 +253,36 @@ LEFT JOIN ai_provider p
   ON p.provider_code = c.provider_code
  AND p.tenant_id = c.tenant_id
  AND p.organization_id = c.organization_id
-LEFT JOIN ai_channel_endpoint e
-  ON e.channel_id = cm.channel_id
- AND e.tenant_id = cm.tenant_id
- AND e.organization_id = cm.organization_id
- AND e.vendor_code = COALESCE(NULLIF(cm.vendor_code, ''), NULLIF(p.default_vendor_code, ''), c.provider_code)
+LEFT JOIN channel_resource_scope scope
+  ON scope.channel_id = c.id
+ AND scope.tenant_id = c.tenant_id
+ AND scope.organization_id = c.organization_id
  AND (
-     NULLIF(cm.api_code, '') IS NULL
-     OR e.api_code = cm.api_code
-     OR e.api_code = '*'
+      scope.catalog_key = m.catalog_key
+      OR (
+          NULLIF(scope.model, '') IS NOT NULL
+          AND (scope.model = m.model OR scope.model = m.catalog_key)
+      )
+      OR (
+          NULLIF(scope.vendor_code, '') IS NOT NULL
+          AND scope.vendor_code = m.vendor_code
+          AND scope.resource_type = 'vendor'
+      )
+      OR (
+          NULLIF(scope.api_code, '') IS NOT NULL
+          AND scope.resource_type = 'api_endpoint'
+          AND (NULLIF(scope.vendor_code, '') IS NULL OR scope.vendor_code = m.vendor_code)
+      )
  )
- AND e.deleted_at IS NULL
- AND e.status = 1
- AND (e.effective_from IS NULL OR datetime(e.effective_from) <= CURRENT_TIMESTAMP)
- AND (e.effective_to IS NULL OR datetime(e.effective_to) > CURRENT_TIMESTAMP)
- AND (
-     COALESCE(e.health_status, 1) = 1
-     OR datetime(
-         COALESCE(e.updated_at, CURRENT_TIMESTAMP),
-         '+' || CAST(? AS TEXT) || ' seconds'
-     ) <= CURRENT_TIMESTAMP
- )
-WHERE NULLIF(cm.catalog_key, '') IS NOT NULL
+WHERE NULLIF(m.catalog_key, '') IS NOT NULL
+  AND m.deleted_at IS NULL
   AND c.deleted_at IS NULL
-  AND cm.deleted_at IS NULL
   AND (p.id IS NULL OR p.deleted_at IS NULL)
+  AND m.status = 1
+  AND COALESCE(m.release_stage, 1) IN (1, 2)
+  AND COALESCE(m.shelf_state, 1) = 1
+  AND COALESCE(m.routing_state, 1) = 1
   AND c.status = 1
-  AND cm.status = 1
   AND (
       COALESCE(c.health_status, 1) = 1
       OR datetime(
@@ -191,17 +298,16 @@ WHERE NULLIF(cm.catalog_key, '') IS NOT NULL
       ) <= CURRENT_TIMESTAMP
   )
   AND (p.id IS NULL OR p.status = 1)
-  AND COALESCE(NULLIF(e.base_url, ''), NULLIF(cc.base_url, ''), p.base_url) IS NOT NULL
-  AND NULLIF(COALESCE(NULLIF(e.base_url, ''), NULLIF(cc.base_url, ''), p.base_url), '') IS NOT NULL
+  AND scope.binding_id IS NOT NULL
+  AND COALESCE(NULLIF(cc.base_url, ''), NULLIF(c.base_url, ''), p.base_url) IS NOT NULL
+  AND NULLIF(COALESCE(NULLIF(cc.base_url, ''), NULLIF(c.base_url, ''), p.base_url), '') IS NOT NULL
   AND NULLIF(cc.credential_ref, '') IS NOT NULL
-  AND (cm.effective_from IS NULL OR datetime(cm.effective_from) <= CURRENT_TIMESTAMP)
-  AND (cm.effective_to IS NULL OR datetime(cm.effective_to) > CURRENT_TIMESTAMP)
-ORDER BY COALESCE(e.priority, c.priority, 100) ASC,
-         COALESCE(e.weight, c.weight, 100) DESC,
+ORDER BY COALESCE(scope.priority, c.priority, 100) ASC,
+         COALESCE(scope.weight, c.weight, 100) DESC,
          COALESCE(cc.priority, 100) ASC,
          COALESCE(cc.weight, 100) DESC,
-         cm.id ASC,
-         e.id ASC,
+         m.id ASC,
+         scope.binding_id ASC,
          cc.id ASC
 "#;
 
@@ -387,24 +493,23 @@ SELECT
     COALESCE(cc.priority, 100) AS credential_priority,
     COALESCE(cc.weight, 100) AS credential_weight,
     NULLIF(c.channel_code, '') AS channel_code,
-    COALESCE(NULLIF(e.region_code, ''), NULLIF(c.region_code, ''), 'global') AS region_code,
+    COALESCE(NULLIF(c.region_code, ''), 'global') AS region_code,
     c.site_id AS site_id,
     NULLIF(c.site_code, '') AS site_code,
     c.site_service_id AS site_service_id,
     NULLIF(c.site_service_code, '') AS site_service_code,
-    COALESCE(NULLIF(e.base_url, ''), NULLIF(cc.base_url, ''), p.base_url) AS base_url,
+    COALESCE(NULLIF(cc.base_url, ''), NULLIF(c.base_url, ''), p.base_url) AS base_url,
     cc.credential_ref AS secret_ref,
     CAST(c.auth_type AS TEXT) AS auth_type,
     CAST(cc.auth_config AS TEXT) AS auth_config_json,
-    COALESCE(e.timeout_ms, c.timeout_ms) AS timeout_ms,
-    COALESCE(e.retry_policy, c.retry_policy) AS retry_policy_json,
+    c.timeout_ms AS timeout_ms,
+    c.retry_policy AS retry_policy_json,
     COALESCE((
         SELECT json_group_array(
             json_object(
                 'groupId', binding.channel_group_id,
                 'priority', binding.priority,
                 'weight', binding.weight,
-                'modelScope', json(binding.model_scope),
                 'apiScope', json(binding.api_scope),
                 'capabilities', json(binding.capabilities)
             )
@@ -414,28 +519,6 @@ SELECT
                 b.channel_group_id AS channel_group_id,
                 COALESCE(b.priority, 100) AS priority,
                 COALESCE(b.weight, 100) AS weight,
-                CASE
-                    WHEN NOT EXISTS (
-                        SELECT 1 FROM matched_resource_scope mrs
-                        WHERE mrs.tenant_id = b.tenant_id
-                          AND mrs.organization_id = b.organization_id
-                          AND mrs.channel_group_id = b.channel_group_id
-                          AND mrs.channel_id = c.id
-                    ) THEN json_array('__deny__')
-                    ELSE COALESCE((
-                        SELECT json_group_array(scope.value)
-                        FROM (
-                            SELECT DISTINCT COALESCE(NULLIF(mrs.catalog_key, ''), NULLIF(mrs.model, ''), NULLIF(mrs.provider_native_model, '')) AS value
-                            FROM matched_resource_scope mrs
-                            WHERE mrs.tenant_id = b.tenant_id
-                              AND mrs.organization_id = b.organization_id
-                              AND mrs.channel_group_id = b.channel_group_id
-                              AND mrs.channel_id = c.id
-                              AND COALESCE(NULLIF(mrs.catalog_key, ''), NULLIF(mrs.model, ''), NULLIF(mrs.provider_native_model, ''), '') <> ''
-                            ORDER BY value
-                        ) scope
-                    ), '[]')
-                END AS model_scope,
                 CASE
                     WHEN NOT EXISTS (
                         SELECT 1 FROM matched_resource_scope mrs
@@ -526,46 +609,6 @@ LEFT JOIN ai_provider p
   ON p.provider_code = c.provider_code
  AND p.tenant_id = c.tenant_id
  AND p.organization_id = c.organization_id
-LEFT JOIN ai_channel_endpoint e
-  ON e.deleted_at IS NULL
- AND e.status = 1
- AND e.tenant_id = c.tenant_id
- AND e.organization_id = c.organization_id
- AND e.channel_id = c.id
- AND e.vendor_code = COALESCE(NULLIF(p.default_vendor_code, ''), c.provider_code)
- AND e.api_code IN (
-            '*',
-            'chat_completions', 'openai.chat_completions',
-            'completions', 'openai.completions',
-            'responses', 'openai.responses',
-            'embeddings', 'embedding', 'openai.embeddings',
-            'files', 'openai.files',
-            'audio', 'openai.audio', 'openai.audio.transcriptions', 'openai.audio.translations', 'openai.audio.speech',
-            'images', 'image', 'openai.images', 'openai.images.generations', 'openai.images.edits', 'openai.images.variations',
-            'video', 'videos', 'openai.video', 'openai.videos',
-            'uploads', 'openai.uploads',
-            'openai.batches', 'openai.fine_tuning', 'openai.realtime', 'openai.models', 'openai.moderations',
-            'openai.assistants', 'openai.threads', 'openai.vector_stores', 'openai.evals', 'openai.conversations',
-            'openai.chatkit.sessions', 'openai.containers', 'openai.skills', 'openai.administration',
-            'openai.codex.responses', 'anthropic.claude_code',
-            'gemini.generate_content', 'gemini.stream_generate_content', 'gemini.embed_content', 'gemini.live',
-            'gemini.image_generation', 'gemini.video_generation', 'gemini.nano_banana.image_generation',
-            'kling.text_to_video', 'kling.image_to_video', 'kling.image_generation', 'kling.task_query',
-            'jimeng.image_generation', 'jimeng.video_generation', 'jimeng.task_query',
-            'volcengine.image_generation', 'volcengine.video_generation', 'volcengine.task_query',
-            'minimax.music_generation',
-            'vidu.reference_to_image', 'vidu.start_end_to_video'
- )
- AND NULLIF(e.base_url, '') IS NOT NULL
- AND (e.effective_from IS NULL OR datetime(e.effective_from) <= CURRENT_TIMESTAMP)
- AND (e.effective_to IS NULL OR datetime(e.effective_to) > CURRENT_TIMESTAMP)
- AND (
-     COALESCE(e.health_status, 1) = 1
-     OR datetime(
-         COALESCE(e.updated_at, CURRENT_TIMESTAMP),
-         '+' || CAST(? AS TEXT) || ' seconds'
-     ) <= CURRENT_TIMESTAMP
- )
 WHERE c.deleted_at IS NULL
   AND (p.id IS NULL OR p.deleted_at IS NULL)
   AND c.status = 1
@@ -596,15 +639,14 @@ WHERE c.deleted_at IS NULL
         AND (member.effective_from IS NULL OR datetime(member.effective_from) <= CURRENT_TIMESTAMP)
         AND (member.effective_to IS NULL OR datetime(member.effective_to) > CURRENT_TIMESTAMP)
   )
-  AND COALESCE(NULLIF(e.base_url, ''), NULLIF(cc.base_url, ''), p.base_url) IS NOT NULL
-  AND NULLIF(COALESCE(NULLIF(e.base_url, ''), NULLIF(cc.base_url, ''), p.base_url), '') IS NOT NULL
+  AND COALESCE(NULLIF(cc.base_url, ''), NULLIF(c.base_url, ''), p.base_url) IS NOT NULL
+  AND NULLIF(COALESCE(NULLIF(cc.base_url, ''), NULLIF(c.base_url, ''), p.base_url), '') IS NOT NULL
   AND NULLIF(cc.credential_ref, '') IS NOT NULL
-ORDER BY COALESCE(e.priority, c.priority, 100) ASC,
-         COALESCE(e.weight, c.weight, 100) DESC,
+ORDER BY COALESCE(c.priority, 100) ASC,
+         COALESCE(c.weight, 100) DESC,
          COALESCE(cc.priority, 100) ASC,
          COALESCE(cc.weight, 100) DESC,
          c.id ASC,
-         e.id ASC,
          cc.id ASC
 "#;
 
@@ -748,6 +790,65 @@ SELECT
     COALESCE(organization_id, 0) AS organization_id,
     COALESCE(user_id, 0) AS user_id,
     COALESCE(channel_group_id, 0) AS group_id,
+    COALESCE((
+        SELECT json_group_array(
+            json_object(
+                'groupId', binding.channel_group_id,
+                'groupCode', COALESCE(NULLIF(binding.channel_group_code, ''), g.group_code, ''),
+                'pricingPlanCode', COALESCE(NULLIF(g.pricing_plan_code, ''), 'standard'),
+                'bindingRole', COALESCE(NULLIF(binding.binding_role, ''), 'route'),
+                'routingStrategy', COALESCE(NULLIF(binding.routing_strategy, ''), 'auto'),
+                'priority', COALESCE(binding.priority, 100),
+                'weight', COALESCE(binding.weight, 100)
+            )
+        )
+        FROM (
+            SELECT
+                kg.channel_group_id,
+                kg.channel_group_code,
+                kg.binding_role,
+                kg.routing_strategy,
+                kg.priority,
+                kg.weight
+            FROM iam_gateway_api_key_channel_group kg
+            WHERE kg.deleted_at IS NULL
+              AND kg.status = 1
+              AND kg.tenant_id = iam_gateway_api_key.tenant_id
+              AND kg.organization_id = iam_gateway_api_key.organization_id
+              AND kg.api_key_id = iam_gateway_api_key.id
+              AND (kg.effective_from IS NULL OR datetime(kg.effective_from) <= CURRENT_TIMESTAMP)
+              AND (kg.effective_to IS NULL OR datetime(kg.effective_to) > CURRENT_TIMESTAMP)
+            UNION ALL
+            SELECT
+                iam_gateway_api_key.channel_group_id,
+                NULL AS channel_group_code,
+                'route' AS binding_role,
+                'auto' AS routing_strategy,
+                100 AS priority,
+                100 AS weight
+            WHERE iam_gateway_api_key.channel_group_id IS NOT NULL
+              AND NOT EXISTS (
+                  SELECT 1
+                  FROM iam_gateway_api_key_channel_group kg
+                  WHERE kg.deleted_at IS NULL
+                    AND kg.status = 1
+                    AND kg.tenant_id = iam_gateway_api_key.tenant_id
+                    AND kg.organization_id = iam_gateway_api_key.organization_id
+                    AND kg.api_key_id = iam_gateway_api_key.id
+                    AND (kg.effective_from IS NULL OR datetime(kg.effective_from) <= CURRENT_TIMESTAMP)
+                    AND (kg.effective_to IS NULL OR datetime(kg.effective_to) > CURRENT_TIMESTAMP)
+              )
+            ORDER BY COALESCE(priority, 100) ASC,
+                     COALESCE(weight, 100) DESC,
+                     channel_group_id ASC
+        ) binding
+        LEFT JOIN ai_channel_group g
+          ON g.deleted_at IS NULL
+         AND g.status = 1
+         AND g.tenant_id = iam_gateway_api_key.tenant_id
+         AND g.organization_id = iam_gateway_api_key.organization_id
+         AND g.id = binding.channel_group_id
+    ), '[]') AS group_bindings_json,
     COALESCE(name, '') AS name,
     COALESCE(key_prefix, '') AS key_prefix,
     COALESCE(NULLIF(key_display_masked, ''), COALESCE(key_prefix, '') || '********') AS key_display_masked,

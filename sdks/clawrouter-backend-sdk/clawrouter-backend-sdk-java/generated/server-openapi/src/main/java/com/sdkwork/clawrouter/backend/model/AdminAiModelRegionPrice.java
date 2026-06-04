@@ -4,6 +4,7 @@ package com.sdkwork.clawrouter.backend.model;
 public class AdminAiModelRegionPrice {
     private String cacheReadPrice;
     private String cacheWritePrice;
+    private String currency;
     private String priceIn;
     private String priceOut;
     private String regionCode;
@@ -22,6 +23,14 @@ public class AdminAiModelRegionPrice {
 
     public void setCacheWritePrice(String cacheWritePrice) {
         this.cacheWritePrice = cacheWritePrice;
+    }
+
+    public String getCurrency() {
+        return this.currency;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
     }
 
     public String getPriceIn() {

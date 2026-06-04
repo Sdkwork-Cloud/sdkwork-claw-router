@@ -3283,14 +3283,14 @@ mod tests {
         assert_eq!(
             8,
             effective_sqlite_runtime_pool_max_connections(
-                "sqlite://C:/Users/Ada/AppData/Local/SdkWork/ClawRouter/clawrouter.sqlite",
+                "sqlite://C:/Users/Ada/.sdkwork/router/data/clawrouter.sqlite",
                 1,
             )
         );
         assert_eq!(
             16,
             effective_sqlite_runtime_pool_max_connections(
-                "sqlite:///var/lib/clawrouter/clawrouter.sqlite",
+                "sqlite:///var/lib/sdkwork/router/clawrouter.sqlite",
                 16,
             )
         );

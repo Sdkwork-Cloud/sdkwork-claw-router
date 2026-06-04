@@ -142,8 +142,8 @@ const result = await client.iam.apiKeys.list();
 ### integration
 
 ```typescript
-// List channel endpoints
-const result = await client.integration.channelEndpoints.list();
+// List channels
+const result = await client.integration.channels.list();
 ```
 
 ### mcp

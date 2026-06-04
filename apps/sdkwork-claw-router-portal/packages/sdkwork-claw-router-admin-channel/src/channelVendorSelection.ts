@@ -5,7 +5,10 @@ export type ChannelVendorSelectionType = 'official' | 'relay';
 export type DeriveChannelTargetVendorCodesInput = {
   channelType?: string;
   accountVendor: string;
-  models?: readonly string[];
+  modelMappings?: readonly {
+    targetVendorCode?: string;
+    targetModel?: string;
+  }[];
   resourceCodes?: readonly string[];
 };
 
@@ -22,12 +25,49 @@ export type ReconciledChannelVendorSelection = {
   selectedResourceCodes: string[];
 };
 
+export type ChannelAiResourceVisibilityInput = {
+  resourceCode?: string;
+  resourceType?: string;
+  vendorCode?: string | null;
+  modalityCode?: string | null;
+  capability?: string | null;
+  capabilities?: readonly string[] | null;
+};
+
+export type ChannelAiResourceGroupVisibilityInput = {
+  groupCode?: string;
+  groupName?: string;
+  vendorCodes?: readonly string[] | null;
+  capability?: string | null;
+  capabilities?: readonly string[] | null;
+};
+
+const DIRECT_CHANNEL_BINDABLE_AI_RESOURCE_TYPES = new Set([
+  'api_endpoint',
+  'model_api',
+  'bundle',
+]);
+
 export function normalizeChannelVendorCode(value: string): string {
-  return providerCodeForVendor(value);
+  const normalized = value.trim();
+  return normalized ? providerCodeForVendor(normalized) : '';
 }
 
 export function normalizeChannelResourceCode(value: string): string {
   return value.trim().toLowerCase();
+}
+
+export function normalizeChannelCapabilityCode(value: string): string {
+  const normalized = value.trim().toLowerCase();
+  switch (normalized) {
+    case 'chat':
+    case 'text':
+      return 'llm';
+    case 'speech':
+      return 'audio';
+    default:
+      return normalized;
+  }
 }
 
 export function vendorResourceCode(vendorCode: string): string {
@@ -36,6 +76,96 @@ export function vendorResourceCode(vendorCode: string): string {
 
 export function isVendorResourceCode(resourceCode: string): boolean {
   return normalizeChannelResourceCode(resourceCode).startsWith('vendor.');
+}
+
+export function isDirectChannelBindableAiResource(resource: ChannelAiResourceVisibilityInput): boolean {
+  return DIRECT_CHANNEL_BINDABLE_AI_RESOURCE_TYPES.has(resource.resourceType?.trim().toLowerCase() ?? '');
+}
+
+export function isAiResourceVisibleForChannelVendorScope(
+  resource: ChannelAiResourceVisibilityInput,
+  selectedVendorCodes: readonly string[],
+  selectedCapabilities: readonly string[] = [],
+): boolean {
+  if (!isDirectChannelBindableAiResource(resource)) {
+    return false;
+  }
+  const resourceVendorCode = normalizeChannelVendorCode(resource.vendorCode ?? '');
+  if (!resourceVendorCode) {
+    return false;
+  }
+  const selectedVendorSet = new Set(
+    selectedVendorCodes.map(normalizeChannelVendorCode).filter(Boolean),
+  );
+  if (!selectedVendorSet.has(resourceVendorCode)) {
+    return false;
+  }
+  const selectedCapabilitySet = new Set(
+    selectedCapabilities.map(normalizeChannelCapabilityCode).filter(Boolean),
+  );
+  if (selectedCapabilitySet.size === 0) {
+    return true;
+  }
+  return channelAiResourceCapabilityCodes(resource)
+    .some((capability) => selectedCapabilitySet.has(capability));
+}
+
+export function isAiResourceGroupVisibleForChannelVendorScope(
+  group: ChannelAiResourceGroupVisibilityInput,
+  selectedVendorCodes: readonly string[],
+  selectedCapabilities: readonly string[] = [],
+): boolean {
+  const selectedVendorSet = new Set(
+    selectedVendorCodes.map(normalizeChannelVendorCode).filter(Boolean),
+  );
+  const groupVendorCodes = channelAiResourceGroupVendorCodes(group);
+  if (selectedVendorSet.size > 0 && groupVendorCodes.length > 0) {
+    if (!groupVendorCodes.every((vendorCode) => selectedVendorSet.has(vendorCode))) {
+      return false;
+    }
+  }
+
+  const selectedCapabilitySet = new Set(
+    selectedCapabilities.map(normalizeChannelCapabilityCode).filter(Boolean),
+  );
+  if (selectedCapabilitySet.size === 0) {
+    return true;
+  }
+  const groupCapabilities = channelAiResourceGroupCapabilityCodes(group);
+  return groupCapabilities.length > 0
+    && groupCapabilities.every((capability) => selectedCapabilitySet.has(capability));
+}
+
+export function channelAiResourceCapabilityCodes(resource: ChannelAiResourceVisibilityInput): string[] {
+  const primaryCapability = normalizeChannelCapabilityCode(resource.capability ?? '');
+  if (primaryCapability) {
+    return [primaryCapability];
+  }
+  const modalityCapability = normalizeChannelCapabilityCode(resource.modalityCode ?? '');
+  if (modalityCapability) {
+    return [modalityCapability];
+  }
+  return uniqueStrings((resource.capabilities ?? [])
+    .map(normalizeChannelCapabilityCode)
+    .filter(Boolean));
+}
+
+export function channelAiResourceGroupCapabilityCodes(group: ChannelAiResourceGroupVisibilityInput): string[] {
+  const primaryCapabilities = uniqueStrings([
+    group.capability ?? '',
+  ].map(normalizeChannelCapabilityCode).filter(Boolean));
+  if (primaryCapabilities.length > 0) {
+    return primaryCapabilities;
+  }
+  return uniqueStrings((group.capabilities ?? [])
+    .map(normalizeChannelCapabilityCode)
+    .filter(Boolean));
+}
+
+export function channelAiResourceGroupVendorCodes(group: ChannelAiResourceGroupVisibilityInput): string[] {
+  return uniqueStrings((group.vendorCodes ?? [])
+    .map(normalizeChannelVendorCode)
+    .filter(Boolean));
 }
 
 export function deriveChannelTargetVendorCodes(
@@ -47,7 +177,7 @@ export function deriveChannelTargetVendorCodes(
   }
 
   const vendorCodes = [
-    ...(input.models ?? []).map(vendorCodeFromCatalogModel).filter(isNonEmptyString),
+    ...(input.modelMappings ?? []).map(vendorCodeFromModelMapping).filter(isNonEmptyString),
     ...(input.resourceCodes ?? []).map(vendorCodeFromVendorResource).filter(isNonEmptyString),
   ];
   return uniqueStrings(vendorCodes.length > 0 ? vendorCodes : [accountVendorCode]);
@@ -91,6 +221,16 @@ function vendorCodeFromCatalogModel(model: string): string | undefined {
     return undefined;
   }
   return normalizeChannelVendorCode(normalized.split('/')[0] ?? '');
+}
+
+function vendorCodeFromModelMapping(
+  mapping: { targetVendorCode?: string; targetModel?: string },
+): string | undefined {
+  const targetVendorCode = normalizeChannelVendorCode(mapping.targetVendorCode ?? '');
+  if (targetVendorCode) {
+    return targetVendorCode;
+  }
+  return mapping.targetModel ? vendorCodeFromCatalogModel(mapping.targetModel) : undefined;
 }
 
 function vendorCodeFromVendorResource(resourceCode: string): string | undefined {

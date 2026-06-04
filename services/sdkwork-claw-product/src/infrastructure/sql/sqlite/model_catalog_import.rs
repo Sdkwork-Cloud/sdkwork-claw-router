@@ -1116,7 +1116,11 @@ async fn import_pricing(
                 .bind(metadata_json(
                     catalog,
                     "sdkwork_models_pricing",
-                    serde_json::json!({ "priceId": price.price_id, "sourceUrl": price.source.source_url }),
+                    serde_json::json!({
+                        "priceId": price.price_id,
+                        "priceSide": price.price_side,
+                        "sourceUrl": price.source.source_url
+                    }),
                 ))
                 .bind(model_id)
                 .bind(&pricing_catalog_key)

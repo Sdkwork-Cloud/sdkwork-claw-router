@@ -5,7 +5,7 @@ use sha2::{Digest, Sha256};
 use sqlx::{Row, Sqlite, SqlitePool, Transaction};
 
 use crate::application::ApiKeySecretCodec;
-use crate::domain::{parse_model_catalog_identity, DomainError, DomainResult};
+use crate::domain::{DomainError, DomainResult};
 use crate::infrastructure::sql::routing_config_change::{
     record_sqlite_ai_routing_config_change, AiRoutingConfigChange,
 };
@@ -116,31 +116,20 @@ impl AdminChannelStore for SqliteAdminChannelStore {
                 self.api_key_secret_codec.as_deref(),
             )
             .await?;
-            replace_channel_models(
-                &mut tx,
-                channel_id,
-                &command.model_uuids,
-                command.subject.tenant_id,
-                command.subject.organization_id,
-                command.subject.operator_id,
+            let resource_codes = merge_capability_resource_codes(
                 &command.provider_code,
-                &command.models,
+                &command.resource_codes,
                 &command.capabilities,
-                &command.requested_at,
-            )
-            .await?;
-            let resource_codes =
-                merge_capability_resource_codes(&command.resource_codes, &command.capabilities);
+            );
             replace_ai_resource_bindings(
                 &mut tx,
                 AiResourceBindingScope {
-                    channel_id: channel_id,
+                    channel_id,
                     tenant_id: command.subject.tenant_id,
                     organization_id: command.subject.organization_id,
                     operator_id: command.subject.operator_id,
                     provider_code: command.provider_code.clone(),
                     channel_code: entity_code("chn", &command.channel_uuid),
-                    channel_type: command.channel_type.clone(),
                     weight: command.weight,
                     request_id: command.request_id.clone(),
                     requested_at: command.requested_at.clone(),
@@ -177,7 +166,6 @@ impl AdminChannelStore for SqliteAdminChannelStore {
                     "name": &command.name,
                     "providerCode": &command.provider_code,
                     "channelType": &command.channel_type,
-                    "models": &command.models,
                     "capabilities": &command.capabilities,
                     "resourceCodes": &resource_codes,
                     "credentialCount": command.credentials.len(),
@@ -200,7 +188,6 @@ impl AdminChannelStore for SqliteAdminChannelStore {
                         "channelId": channel_id,
                         "providerCode": &command.provider_code,
                         "channelType": &command.channel_type,
-                        "modelsChanged": true,
                         "resourcesChanged": true,
                         "credentialsChanged": true,
                         "credentialRotationChanged": true
@@ -298,17 +285,17 @@ impl AdminChannelStore for SqliteAdminChannelStore {
                         .clone()
                         .unwrap_or(binding_context.provider_code),
                     channel_code: binding_context.channel_code,
-                    channel_type: command
-                        .channel_type
-                        .clone()
-                        .unwrap_or(binding_context.channel_type),
                     weight: command.weight.unwrap_or(binding_context.weight),
                     request_id: command.request_id.clone(),
                     requested_at: command.requested_at.clone(),
                 };
                 if let Some(resource_codes) = command.resource_codes.as_ref() {
                     let resource_codes = if let Some(capabilities) = command.capabilities.as_ref() {
-                        merge_capability_resource_codes(resource_codes, capabilities)
+                        merge_capability_resource_codes(
+                            &binding_scope.provider_code,
+                            resource_codes,
+                            capabilities,
+                        )
                     } else {
                         resource_codes.clone()
                     };
@@ -322,41 +309,6 @@ impl AdminChannelStore for SqliteAdminChannelStore {
                     )
                     .await?;
                 }
-            }
-            if let Some(models) = command.models.as_ref() {
-                let scope = DeleteAdminChannelModelScope::from(&command);
-                soft_delete_channel_models(&mut tx, &scope).await?;
-                let provider_code = match command.provider_code.as_deref() {
-                    Some(provider_code) => provider_code.to_owned(),
-                    None => load_channel_provider_code(
-                        &mut tx,
-                        command.channel_id,
-                        command.subject.tenant_id,
-                        command.subject.organization_id,
-                    )
-                    .await?
-                    .unwrap_or_else(|| "custom".to_owned()),
-                };
-                let fallback_capabilities;
-                let capabilities = if let Some(capabilities) = command.capabilities.as_deref() {
-                    capabilities
-                } else {
-                    fallback_capabilities = vec!["llm".to_owned()];
-                    fallback_capabilities.as_slice()
-                };
-                replace_channel_models(
-                    &mut tx,
-                    command.channel_id,
-                    &command.model_uuids,
-                    command.subject.tenant_id,
-                    command.subject.organization_id,
-                    command.subject.operator_id,
-                    &provider_code,
-                    models,
-                    capabilities,
-                    &command.requested_at,
-                )
-                .await?;
             }
             insert_config_snapshot(
                 &mut tx,
@@ -372,7 +324,6 @@ impl AdminChannelStore for SqliteAdminChannelStore {
                     "nameChanged": command.name.is_some(),
                     "providerChanged": command.provider_code.is_some(),
                     "channelTypeChanged": command.channel_type.is_some(),
-                    "modelsChanged": command.models.is_some(),
                     "capabilitiesChanged": command.capabilities.is_some(),
                     "resourcesChanged": command.resource_codes.is_some(),
                     "timeoutChanged": command.timeout_ms.is_some(),
@@ -404,7 +355,6 @@ impl AdminChannelStore for SqliteAdminChannelStore {
                     "channelTypeChanged": command.channel_type.is_some(),
                     "protocol": command.protocol,
                     "accessType": command.access_type,
-                    "modelsChanged": command.models.is_some(),
                     "capabilitiesChanged": command.capabilities.is_some(),
                     "resourcesChanged": command.resource_codes.is_some(),
                     "timeoutChanged": command.timeout_ms.is_some(),
@@ -431,7 +381,6 @@ impl AdminChannelStore for SqliteAdminChannelStore {
                         "channelId": command.channel_id,
                         "providerChanged": command.provider_code.is_some(),
                         "channelTypeChanged": command.channel_type.is_some(),
-                        "modelsChanged": command.models.is_some(),
                         "capabilitiesChanged": command.capabilities.is_some(),
                         "resourcesChanged": command.resource_codes.is_some(),
                         "timeoutChanged": command.timeout_ms.is_some(),
@@ -472,8 +421,6 @@ impl AdminChannelStore for SqliteAdminChannelStore {
                 .map_err(|error| store_error("failed to begin channel transaction", error))?;
             let deleted = soft_delete_channel(&mut tx, &command).await?;
             if deleted {
-                let scope = DeleteAdminChannelModelScope::from(command.clone());
-                soft_delete_channel_models(&mut tx, &scope).await?;
                 soft_delete_channel_relationships(&mut tx, &command).await?;
                 insert_config_snapshot(
                     &mut tx,
@@ -751,9 +698,6 @@ async fn list_channels(
     .await
     .map_err(|error| store_error("failed to list channels", error))?;
 
-    let models =
-        load_models_for_channels(pool, query.subject.tenant_id, query.subject.organization_id)
-            .await?;
     let ai_resources =
         load_resources_for_channels(pool, query.subject.tenant_id, query.subject.organization_id)
             .await?;
@@ -765,7 +709,7 @@ async fn list_channels(
     )
     .await?;
     rows.into_iter()
-        .map(|row| item_from_sqlite_row(row, &models, &ai_resources, &credentials))
+        .map(|row| item_from_sqlite_row(row, &ai_resources, &credentials))
         .collect()
 }
 
@@ -1076,56 +1020,6 @@ async fn insert_channel_credential(
     Ok(())
 }
 
-async fn replace_channel_models(
-    tx: &mut Transaction<'_, Sqlite>,
-    channel_id: i64,
-    model_uuids: &[String],
-    tenant_id: i64,
-    organization_id: i64,
-    _operator_id: i64,
-    _provider_code: &str,
-    models: &[String],
-    capabilities: &[String],
-    requested_at: &str,
-) -> DomainResult<()> {
-    let capability = capabilities
-        .first()
-        .map(|value| capability_code(value))
-        .unwrap_or(1);
-    for (index, model) in models.iter().enumerate() {
-        let (catalog_key, vendor_code, official_model) = split_catalog_model_key(model)?;
-        let uuid = model_uuids
-            .get(index)
-            .cloned()
-            .unwrap_or_else(|| digest_hex(&format!("{channel_id}:{model}:{index}")));
-        sqlx::query(
-            r#"
-            INSERT INTO ai_channel_model
-                (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, channel_id, catalog_key, model, vendor_code, provider_model, provider_native_model, api_code, capability, supports_streaming, supports_tools)
-            VALUES
-                (?, ?, ?, 1, 1, ?, ?, 0, ?, ?, ?, ?, ?, ?, ?, ?, 1, 1)
-            "#,
-        )
-        .bind(uuid)
-        .bind(tenant_id)
-        .bind(organization_id)
-        .bind(requested_at)
-        .bind(requested_at)
-        .bind(channel_id)
-        .bind(&catalog_key)
-        .bind(&official_model)
-        .bind(&vendor_code)
-        .bind(&official_model)
-        .bind(&official_model)
-        .bind(api_endpoint_code(capability))
-        .bind(capability)
-        .execute(&mut **tx)
-        .await
-        .map_err(|error| store_error("failed to replace channel models", error))?;
-    }
-    Ok(())
-}
-
 #[derive(Debug, Clone)]
 struct AiResourceBindingScope {
     channel_id: i64,
@@ -1134,7 +1028,6 @@ struct AiResourceBindingScope {
     operator_id: i64,
     provider_code: String,
     channel_code: String,
-    channel_type: String,
     weight: i64,
     request_id: String,
     requested_at: String,
@@ -1145,7 +1038,6 @@ struct ResourceBindingContext {
     channel_id: i64,
     provider_code: String,
     channel_code: String,
-    channel_type: String,
     weight: i64,
 }
 
@@ -1177,10 +1069,19 @@ fn modality_resource_codes(capabilities: &[String]) -> Vec<String> {
 }
 
 fn merge_capability_resource_codes(
+    provider_code: &str,
     resource_codes: &[String],
     capabilities: &[String],
 ) -> Vec<String> {
     let mut merged: Vec<String> = resource_codes.to_vec();
+    let provider_vendor_resource = format!("vendor.{provider_code}");
+    if !provider_code.trim().is_empty()
+        && !merged
+            .iter()
+            .any(|existing| existing.eq_ignore_ascii_case(&provider_vendor_resource))
+    {
+        merged.push(provider_vendor_resource);
+    }
     for resource_code in modality_resource_codes(capabilities) {
         if !merged
             .iter()
@@ -1198,8 +1099,7 @@ async fn replace_ai_resource_bindings(
     resource_codes: &[String],
 ) -> DomainResult<()> {
     soft_delete_removed_resources(tx, &scope, resource_codes).await?;
-    upsert_ai_resource_bindings(tx, &scope, resource_codes, 0).await?;
-    replace_channel_vendor_bindings(tx, &scope, resource_codes).await
+    upsert_ai_resource_bindings(tx, &scope, resource_codes, 0).await
 }
 
 async fn replace_channel_modality_resource_bindings(
@@ -1486,115 +1386,6 @@ async fn load_non_modality_resource_priority_ceiling(
     Ok(optional_integer_cell(&row, "priority_ceiling").unwrap_or(0))
 }
 
-async fn replace_channel_vendor_bindings(
-    tx: &mut Transaction<'_, Sqlite>,
-    scope: &AiResourceBindingScope,
-    resource_codes: &[String],
-) -> DomainResult<()> {
-    let mut vendor_codes = Vec::<String>::new();
-    if !scope.provider_code.trim().is_empty() {
-        vendor_codes.push(scope.provider_code.clone());
-    }
-    for resource_code in resource_codes {
-        if let Some(vendor_code) = resource_code.strip_prefix("vendor.") {
-            let vendor_code = vendor_code.trim();
-            if !vendor_code.is_empty()
-                && !vendor_codes
-                    .iter()
-                    .any(|existing| existing.eq_ignore_ascii_case(vendor_code))
-            {
-                vendor_codes.push(vendor_code.to_owned());
-            }
-        }
-    }
-    for (index, vendor_code) in vendor_codes.iter().enumerate() {
-        ensure_vendor_resource_exists(tx, scope, vendor_code).await?;
-        let uuid_suffix = digest_hex(&format!(
-            "{}:{}:{}",
-            scope.request_id, scope.channel_id, vendor_code
-        ))
-        .chars()
-        .take(32)
-        .collect::<String>();
-        let sort_order = i64::try_from(index + 1).unwrap_or(i64::MAX);
-        sqlx::query(
-            r#"
-            INSERT INTO ai_channel_vendor
-                (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, channel_id, provider_code, channel_code, vendor_id, vendor_code, channel_type, supported, sort_order)
-            VALUES
-                (?, ?, ?, 1, 1, ?, ?, 0, ?, ?, ?, (
-                    SELECT id
-                    FROM ai_model_vendor
-                    WHERE tenant_id = ?
-                      AND organization_id = ?
-                      AND vendor_code = ?
-                      AND deleted_at IS NULL
-                    LIMIT 1
-                ), ?, ?, 1, ?)
-            ON CONFLICT(tenant_id, organization_id, channel_id, vendor_code) DO UPDATE SET
-                status = 1,
-                deleted_at = NULL,
-                deleted_by = NULL,
-                updated_at = excluded.updated_at,
-                provider_code = excluded.provider_code,
-                channel_code = excluded.channel_code,
-                vendor_id = excluded.vendor_id,
-                channel_type = excluded.channel_type,
-                supported = 1,
-                sort_order = excluded.sort_order,
-                version = COALESCE(ai_channel_vendor.version, 0) + 1
-            "#,
-        )
-        .bind(format!("chn-vendor-{uuid_suffix}"))
-        .bind(scope.tenant_id)
-        .bind(scope.organization_id)
-        .bind(&scope.requested_at)
-        .bind(&scope.requested_at)
-        .bind(scope.channel_id)
-        .bind(&scope.provider_code)
-        .bind(&scope.channel_code)
-        .bind(scope.tenant_id)
-        .bind(scope.organization_id)
-        .bind(vendor_code)
-        .bind(vendor_code)
-        .bind(&scope.channel_type)
-        .bind(sort_order)
-        .execute(&mut **tx)
-        .await
-        .map_err(|error| store_error("failed to upsert channel vendor binding", error))?;
-    }
-    Ok(())
-}
-
-async fn ensure_vendor_resource_exists(
-    tx: &mut Transaction<'_, Sqlite>,
-    scope: &AiResourceBindingScope,
-    vendor_code: &str,
-) -> DomainResult<()> {
-    let exists: i64 = sqlx::query_scalar(
-        r#"
-        SELECT COUNT(1)
-        FROM ai_model_vendor
-        WHERE tenant_id = ?
-          AND organization_id = ?
-          AND vendor_code = ?
-          AND deleted_at IS NULL
-        "#,
-    )
-    .bind(scope.tenant_id)
-    .bind(scope.organization_id)
-    .bind(vendor_code)
-    .fetch_one(&mut **tx)
-    .await
-    .map_err(|error| store_error("failed to resolve channel vendor", error))?;
-    if exists == 0 {
-        return Err(DomainError::not_found(format!(
-            "AI vendor was not found: {vendor_code}"
-        )));
-    }
-    Ok(())
-}
-
 async fn load_resource_binding_context(
     tx: &mut Transaction<'_, Sqlite>,
     channel_id: i64,
@@ -1607,7 +1398,6 @@ async fn load_resource_binding_context(
             c.id AS channel_id,
             COALESCE(c.provider_code, 'custom') AS provider_code,
             COALESCE(NULLIF(c.channel_code, ''), '') AS channel_code,
-            COALESCE(NULLIF(c.channel_type, ''), 'official') AS channel_type,
             COALESCE(c.weight, 100) AS weight
         FROM ai_channel c
         WHERE c.id = ?
@@ -1629,41 +1419,10 @@ async fn load_resource_binding_context(
             channel_id: row.try_get("channel_id").map_err(row_error)?,
             provider_code: row.try_get("provider_code").map_err(row_error)?,
             channel_code: row.try_get("channel_code").map_err(row_error)?,
-            channel_type: row.try_get("channel_type").map_err(row_error)?,
             weight: row.try_get("weight").map_err(row_error)?,
         })
     })
     .transpose()
-}
-
-async fn soft_delete_channel_models(
-    tx: &mut Transaction<'_, Sqlite>,
-    command: &DeleteAdminChannelModelScope,
-) -> DomainResult<()> {
-    sqlx::query(
-        r#"
-        UPDATE ai_channel_model
-        SET status = -1,
-            deleted_at = ?,
-            deleted_by = ?,
-            updated_at = ?,
-            version = COALESCE(version, 0) + 1
-        WHERE channel_id = ?
-          AND tenant_id = ?
-          AND organization_id = ?
-          AND deleted_at IS NULL
-        "#,
-    )
-    .bind(&command.requested_at)
-    .bind(command.operator_id)
-    .bind(&command.requested_at)
-    .bind(command.channel_id)
-    .bind(command.tenant_id)
-    .bind(command.organization_id)
-    .execute(&mut **tx)
-    .await
-    .map_err(|error| store_error("failed to delete channel models", error))?;
-    Ok(())
 }
 
 async fn soft_delete_channel_relationships(
@@ -1676,8 +1435,6 @@ async fn soft_delete_channel_relationships(
             "failed to delete channel credentials",
         ),
         ("ai_channel_resource", "failed to delete channel resources"),
-        ("ai_channel_vendor", "failed to delete channel vendors"),
-        ("ai_channel_endpoint", "failed to delete channel endpoints"),
     ] {
         let sql = format!(
             r#"
@@ -1763,7 +1520,7 @@ async fn load_channel_probe_target(
             COALESCE(NULLIF(cc.base_url, ''), NULLIF(p.base_url, ''), '') AS provider_base_url,
             COALESCE(NULLIF(cc.credential_ref, ''), '') AS provider_secret_ref,
             CAST(cc.auth_config AS TEXT) AS channel_auth_config,
-            COALESCE(NULLIF(cm.provider_model, ''), '') AS provider_model,
+            COALESCE(NULLIF(r.provider_native_model, ''), NULLIF(r.model, ''), 'gpt-4o-mini') AS provider_model,
             c.timeout_ms
         FROM ai_channel c
         JOIN ai_channel_credential cc
@@ -1780,17 +1537,25 @@ async fn load_channel_probe_target(
              OR (p.tenant_id = 0 AND p.organization_id = 0)
              OR (p.tenant_id IS NULL AND p.organization_id IS NULL)
          )
-        LEFT JOIN ai_channel_model cm
-          ON cm.channel_id = c.id
-         AND cm.tenant_id = c.tenant_id
-         AND cm.organization_id = c.organization_id
-         AND cm.status = 1
-         AND cm.deleted_at IS NULL
+        LEFT JOIN ai_channel_resource cr
+          ON cr.channel_id = c.id
+         AND cr.tenant_id = c.tenant_id
+         AND cr.organization_id = c.organization_id
+         AND cr.status = 1
+         AND cr.deleted_at IS NULL
+         AND cr.grant_type = 'allow'
+        LEFT JOIN ai_resource r
+          ON r.resource_code = cr.resource_code
+         AND r.tenant_id = cr.tenant_id
+         AND r.organization_id = cr.organization_id
+         AND r.deleted_at IS NULL
+         AND r.status = 1
+         AND COALESCE(r.resource_type, '') IN ('model', 'model_api')
         WHERE c.id = ?
           AND c.tenant_id = ?
           AND c.organization_id = ?
           AND c.deleted_at IS NULL
-        ORDER BY cc.priority ASC, cc.weight DESC, cc.id ASC, cm.id ASC
+        ORDER BY cc.priority ASC, cc.weight DESC, cc.id ASC, cr.priority ASC, cr.id ASC
         LIMIT 1
         "#,
     )
@@ -2056,89 +1821,11 @@ async fn load_channel_by_id(
     let Some(row) = row else {
         return Ok(None);
     };
-    let models = load_models_for_channels_tx(tx, tenant_id, organization_id).await?;
     let ai_resources = load_resources_for_channels_tx(tx, tenant_id, organization_id).await?;
     let credentials =
         load_credentials_for_channels_tx(tx, tenant_id, organization_id, api_key_secret_codec)
             .await?;
-    item_from_sqlite_row(row, &models, &ai_resources, &credentials).map(Some)
-}
-
-async fn load_channel_provider_code(
-    tx: &mut Transaction<'_, Sqlite>,
-    channel_id: i64,
-    tenant_id: i64,
-    organization_id: i64,
-) -> DomainResult<Option<String>> {
-    sqlx::query_scalar(
-        r#"
-        SELECT provider_code
-        FROM ai_channel
-        WHERE id = ?
-          AND tenant_id = ?
-          AND organization_id = ?
-          AND deleted_at IS NULL
-        LIMIT 1
-        "#,
-    )
-    .bind(channel_id)
-    .bind(tenant_id)
-    .bind(organization_id)
-    .fetch_optional(&mut **tx)
-    .await
-    .map_err(|error| store_error("failed to load channel provider code", error))
-}
-
-async fn load_models_for_channels(
-    pool: &SqlitePool,
-    tenant_id: i64,
-    organization_id: i64,
-) -> DomainResult<HashMap<i64, Vec<String>>> {
-    let rows = sqlx::query(
-        r#"
-        SELECT channel_id, COALESCE(catalog_key, '') AS model
-        FROM ai_channel_model
-        WHERE tenant_id = ?
-          AND organization_id = ?
-          AND deleted_at IS NULL
-          AND status = 1
-          AND (effective_from IS NULL OR datetime(effective_from) <= CURRENT_TIMESTAMP)
-          AND (effective_to IS NULL OR datetime(effective_to) > CURRENT_TIMESTAMP)
-        ORDER BY id ASC
-        "#,
-    )
-    .bind(tenant_id)
-    .bind(organization_id)
-    .fetch_all(pool)
-    .await
-    .map_err(|error| store_error("failed to load channel models", error))?;
-    models_from_rows(rows)
-}
-
-async fn load_models_for_channels_tx(
-    tx: &mut Transaction<'_, Sqlite>,
-    tenant_id: i64,
-    organization_id: i64,
-) -> DomainResult<HashMap<i64, Vec<String>>> {
-    let rows = sqlx::query(
-        r#"
-        SELECT channel_id, COALESCE(catalog_key, '') AS model
-        FROM ai_channel_model
-        WHERE tenant_id = ?
-          AND organization_id = ?
-          AND deleted_at IS NULL
-          AND status = 1
-          AND (effective_from IS NULL OR datetime(effective_from) <= CURRENT_TIMESTAMP)
-          AND (effective_to IS NULL OR datetime(effective_to) > CURRENT_TIMESTAMP)
-        ORDER BY id ASC
-        "#,
-    )
-    .bind(tenant_id)
-    .bind(organization_id)
-    .fetch_all(&mut **tx)
-    .await
-    .map_err(|error| store_error("failed to load channel models", error))?;
-    models_from_rows(rows)
+    item_from_sqlite_row(row, &ai_resources, &credentials).map(Some)
 }
 
 async fn load_resources_for_channels(
@@ -2324,41 +2011,6 @@ fn resources_from_rows(
     Ok(resources)
 }
 
-fn models_from_rows(rows: Vec<sqlx::sqlite::SqliteRow>) -> DomainResult<HashMap<i64, Vec<String>>> {
-    let mut models: HashMap<i64, Vec<String>> = HashMap::new();
-    for row in rows {
-        let channel_id: i64 = row.try_get("channel_id").map_err(row_error)?;
-        let model: String = row.try_get("model").map_err(row_error)?;
-        if !model.trim().is_empty() {
-            models.entry(channel_id).or_default().push(model);
-        }
-    }
-    Ok(models)
-}
-
-fn split_catalog_model_key(catalog_key: &str) -> DomainResult<(String, String, String)> {
-    let value = catalog_key.trim();
-    let identity = parse_model_catalog_identity(value).ok_or_else(|| {
-        DomainError::new(format!(
-            "channel model must be a catalog key in vendorCode/modelId format: {value}"
-        ))
-    })?;
-    let official_model = identity.model_id();
-    Ok((value.to_owned(), identity.vendor_code, official_model))
-}
-
-fn api_endpoint_code(capability: i32) -> &'static str {
-    match capability {
-        2 => "openai.images",
-        3 => "openai.audio",
-        4 => "suno.music",
-        5 => "openai.video",
-        6 => "openai.embeddings",
-        7 => "rerank",
-        _ => "openai.chat_completions",
-    }
-}
-
 async fn insert_config_snapshot(
     tx: &mut Transaction<'_, Sqlite>,
     snapshot_uuid: &str,
@@ -2438,7 +2090,6 @@ async fn insert_audit_log(
 
 fn item_from_sqlite_row(
     row: sqlx::sqlite::SqliteRow,
-    models: &HashMap<i64, Vec<String>>,
     ai_resources: &HashMap<i64, Vec<String>>,
     credentials: &HashMap<i64, Vec<AdminChannelCredentialItem>>,
 ) -> DomainResult<AdminChannelItem> {
@@ -2488,7 +2139,6 @@ fn item_from_sqlite_row(
             .try_get::<String, _>("credential_rotation")
             .unwrap_or_else(|_| "default".to_owned()),
         credentials: item_credentials,
-        models: models.get(&id).cloned().unwrap_or_default(),
         resource_codes: ai_resources.get(&id).cloned().unwrap_or_default(),
         is_multimodal: capabilities.iter().any(|capability| capability != "llm"),
         capabilities,
@@ -2501,39 +2151,6 @@ fn item_from_sqlite_row(
         errors,
         deleted_at: row.try_get("deleted_at").ok().flatten(),
     })
-}
-
-#[derive(Debug, Clone)]
-struct DeleteAdminChannelModelScope {
-    channel_id: i64,
-    tenant_id: i64,
-    organization_id: i64,
-    operator_id: i64,
-    requested_at: String,
-}
-
-impl From<DeleteAdminChannelCommand> for DeleteAdminChannelModelScope {
-    fn from(value: DeleteAdminChannelCommand) -> Self {
-        Self {
-            channel_id: value.channel_id,
-            tenant_id: value.subject.tenant_id,
-            organization_id: value.subject.organization_id,
-            operator_id: value.subject.operator_id,
-            requested_at: value.requested_at,
-        }
-    }
-}
-
-impl From<&UpdateAdminChannelCommand> for DeleteAdminChannelModelScope {
-    fn from(value: &UpdateAdminChannelCommand) -> Self {
-        Self {
-            channel_id: value.channel_id,
-            tenant_id: value.subject.tenant_id,
-            organization_id: value.subject.organization_id,
-            operator_id: value.subject.operator_id,
-            requested_at: value.requested_at.clone(),
-        }
-    }
 }
 
 fn channel_snapshot_payload(channel_id: i64, name: &str, provider_code: &str) -> serde_json::Value {
@@ -2695,17 +2312,6 @@ fn access_type_label(value: i64) -> DomainResult<String> {
         ))),
     }
     .map(str::to_owned)
-}
-
-fn capability_code(value: &str) -> i32 {
-    match value {
-        "image" => 2,
-        "audio" => 3,
-        "music" => 4,
-        "sfx" => 5,
-        "video" => 6,
-        _ => 1,
-    }
 }
 
 fn status_code(value: &str) -> i32 {

@@ -574,8 +574,8 @@ class ClawRouterOpenApiGenerator:
             schemas[name] = schema
         for name, schema in self._operation_result_schemas(operations, operation_ids, schema_components).items():
             schemas[name] = schema
-        for name, schema in schema_components.items():
-            schemas.setdefault(name, schema)
+        for name in self._reachable_schema_component_names(schemas, schema_components, operations):
+            schemas.setdefault(name, schema_components[name])
         return {
             "schemas": schemas,
             "securitySchemes": {
@@ -917,6 +917,89 @@ class ClawRouterOpenApiGenerator:
         if self._string_list(operation.get("path_params")):
             return record_ref
         return {"type": "array", "items": record_ref}
+
+    def _reachable_schema_component_names(
+        self,
+        schemas: dict[str, Any],
+        schema_components: dict[str, Any],
+        operations: list[dict[str, Any]],
+    ) -> list[str]:
+        pending = self._schema_component_root_names(operations, schema_components)
+        pending.extend(self._schema_ref_names(schemas))
+        reachable: list[str] = []
+        seen: set[str] = set()
+        while pending:
+            name = pending.pop(0)
+            if name in seen:
+                continue
+            seen.add(name)
+            if name in schemas:
+                pending.extend(self._schema_ref_names(schemas[name]))
+                continue
+            component = schema_components.get(name)
+            if not isinstance(component, dict):
+                continue
+            reachable.append(name)
+            pending.extend(self._schema_ref_names(component))
+        return reachable
+
+    def _schema_component_root_names(
+        self,
+        operations: list[dict[str, Any]],
+        schema_components: dict[str, Any],
+    ) -> list[str]:
+        roots: list[str] = []
+        seen: set[str] = set()
+
+        def add(name: str) -> None:
+            if name in schema_components and name not in seen:
+                seen.add(name)
+                roots.append(name)
+
+        for operation in operations:
+            if self._operation_has_request_body(operation):
+                request_schema = self._payload_schema(operation.get("request_schema"))
+                if request_schema is not None:
+                    add(request_schema[0])
+            response_schema = self._payload_schema(operation.get("response_schema"))
+            if response_schema is not None:
+                add(response_schema[0])
+                continue
+            if self._string(operation.get("api_method")).upper() != "GET":
+                continue
+            read_sources = self._string_list(operation.get("read_sources"))
+            if len(read_sources) == 1:
+                add(self._record_component_name(read_sources[0]))
+        return roots
+
+    def _schema_ref_names(self, value: Any) -> list[str]:
+        names: list[str] = []
+        seen: set[str] = set()
+
+        def visit(node: Any) -> None:
+            if isinstance(node, list):
+                for item in node:
+                    visit(item)
+                return
+            if not isinstance(node, dict):
+                return
+            ref_name = self._component_ref_name(node.get("$ref"))
+            if ref_name and ref_name not in seen:
+                seen.add(ref_name)
+                names.append(ref_name)
+            for item in node.values():
+                visit(item)
+
+        visit(value)
+        return names
+
+    def _component_ref_name(self, value: Any) -> str:
+        if not isinstance(value, str):
+            return ""
+        prefix = "#/components/schemas/"
+        if not value.startswith(prefix):
+            return ""
+        return value.removeprefix(prefix)
 
     def _operation_request_component_name(self, operation_id: str) -> str:
         if not operation_id:

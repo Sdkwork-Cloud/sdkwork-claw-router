@@ -359,6 +359,18 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
                         retryPolicy:
                           $ref: '#/components/schemas/ProviderRetryPolicy'
                           nullable: true
+                    AiUsageFactRecord:
+                      type: object
+                      x-table: ai_usage_fact
+                      properties:
+                        request_id:
+                          type: string
+                        customer_charge_amount:
+                          type: string
+                          format: decimal
+                        upstream_cost_amount:
+                          type: string
+                          format: decimal
                 """
             ).strip()
             + "\n",
@@ -799,6 +811,20 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
                 app_spec["components"]["schemas"]["PromotionsCodesRedemptionsCreateRequest"],
             )
 
+    def test_filters_unreachable_schema_components_from_openapi_specs(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_manifest(root)
+            self.write_schema_components(root)
+
+            app_spec = ClawRouterOpenApiGenerator(root=root).generate("app")
+            backend_spec = ClawRouterOpenApiGenerator(root=root).generate("backend")
+
+            app_schemas = app_spec["components"]["schemas"]
+            self.assertIn("AiModelVendorRecord", app_schemas)
+            self.assertNotIn("AiUsageFactRecord", app_schemas)
+            self.assertNotIn("AiUsageFactRecord", backend_spec["components"]["schemas"])
+
     def test_get_single_read_source_uses_record_response_wrapper(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -906,7 +932,32 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
     def test_normalizes_openapi_reference_quality_for_sdk_docs(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
-            self.write_manifest(root)
+            manifest_path = self.write_manifest(root)
+            manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+            manifest["operations"].append(
+                {
+                    "api_surface": "app",
+                    "api_method": "GET",
+                    "api_path": "/app/v3/api/integration/retry_policy_probe",
+                    "operation": "fetchRetryPolicyProbe",
+                    "operation_id": "retryPolicyProbe.retrieve",
+                    "tag": "integration",
+                    "sdk_domain": "integration",
+                    "kind": "read",
+                    "module": "integration",
+                    "path_params": [],
+                    "source": "apps/portal/integrationService.ts",
+                    "read_sources": ["integration_provider"],
+                    "write_tables": [],
+                    "query_parameters_declared": True,
+                    "query_parameters": [],
+                    "response_schema": {
+                        "name": "NullableRetryCarrier",
+                        "schema": {"$ref": "#/components/schemas/NullableRetryCarrier"},
+                    },
+                }
+            )
+            manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
             self.write_schema_components(root)
 
             app_spec = ClawRouterOpenApiGenerator(root=root).generate("app")

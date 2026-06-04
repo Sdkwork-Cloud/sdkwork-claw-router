@@ -8,24 +8,6 @@ import com.sdkwork.clawrouter.backend.http.HttpClient
 
 class IntegrationApi(private val client: HttpClient) {
 
-    /** List channel endpoints */
-    suspend fun channelEndpointsList(): ChannelEndpointsListResult? {
-        val raw = client.get(ApiPaths.backendPath("/integration/channel_endpoints"))
-        return client.convertValue(raw, object : TypeReference<ChannelEndpointsListResult>() {})
-    }
-
-    /** Create channel endpoint */
-    suspend fun channelEndpointsCreate(body: AdminChannelEndpointCreateRequest): ChannelEndpointsCreateResult? {
-        val raw = client.post(ApiPaths.backendPath("/integration/channel_endpoints"), body, null, null, "application/json")
-        return client.convertValue(raw, object : TypeReference<ChannelEndpointsCreateResult>() {})
-    }
-
-    /** Update channel endpoint */
-    suspend fun channelEndpointsUpdate(endpointId: String, body: AdminChannelEndpointUpdateRequest): ChannelEndpointsUpdateResult? {
-        val raw = client.put(ApiPaths.backendPath("/integration/channel_endpoints/${serializePathParameter(endpointId, PathParameterSpec("endpointId", "simple", false))}"), body, null, null, "application/json")
-        return client.convertValue(raw, object : TypeReference<ChannelEndpointsUpdateResult>() {})
-    }
-
     /** List channels */
     suspend fun channelsList(): ChannelsListResult? {
         val raw = client.get(ApiPaths.backendPath("/integration/channels"))

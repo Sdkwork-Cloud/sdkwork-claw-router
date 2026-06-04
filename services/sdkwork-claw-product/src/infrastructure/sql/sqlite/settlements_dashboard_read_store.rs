@@ -92,11 +92,11 @@ ORDER BY s.period_end DESC, i.statement_id DESC, i.item_type ASC, i.model ASC
 const LOAD_SETTLEMENT_CHART: &str = r#"
 SELECT
     substr(CAST(occurred_at AS TEXT), 1, 10) AS day,
-    CAST(COALESCE(SUM(CASE WHEN modality = 1 THEN COALESCE(customer_charge_amount, cost_amount, 0) ELSE 0 END), 0) AS TEXT) AS text_cost,
-    CAST(COALESCE(SUM(CASE WHEN modality = 2 THEN COALESCE(customer_charge_amount, cost_amount, 0) ELSE 0 END), 0) AS TEXT) AS image_cost,
-    CAST(COALESCE(SUM(CASE WHEN modality = 5 THEN COALESCE(customer_charge_amount, cost_amount, 0) ELSE 0 END), 0) AS TEXT) AS video_cost,
-    CAST(COALESCE(SUM(CASE WHEN modality = 3 THEN COALESCE(customer_charge_amount, cost_amount, 0) ELSE 0 END), 0) AS TEXT) AS audio_cost,
-    CAST(COALESCE(SUM(CASE WHEN modality = 4 THEN COALESCE(customer_charge_amount, cost_amount, 0) ELSE 0 END), 0) AS TEXT) AS music_cost
+    CAST(COALESCE(SUM(CASE WHEN modality = 1 THEN COALESCE(customer_charge_amount, 0) ELSE 0 END), 0) AS TEXT) AS text_cost,
+    CAST(COALESCE(SUM(CASE WHEN modality = 2 THEN COALESCE(customer_charge_amount, 0) ELSE 0 END), 0) AS TEXT) AS image_cost,
+    CAST(COALESCE(SUM(CASE WHEN modality = 5 THEN COALESCE(customer_charge_amount, 0) ELSE 0 END), 0) AS TEXT) AS video_cost,
+    CAST(COALESCE(SUM(CASE WHEN modality = 3 THEN COALESCE(customer_charge_amount, 0) ELSE 0 END), 0) AS TEXT) AS audio_cost,
+    CAST(COALESCE(SUM(CASE WHEN modality = 4 THEN COALESCE(customer_charge_amount, 0) ELSE 0 END), 0) AS TEXT) AS music_cost
 FROM ai_usage_fact
 WHERE status = 1
   AND tenant_id = ?1

@@ -72,6 +72,7 @@ function adminModel(overrides: Record<string, unknown> = {}): Record<string, unk
     regionPrices: [
       {
         regionCode: "global",
+        currency: "USD",
         priceIn: "0.1500",
         priceOut: "0.6000",
         cacheReadPrice: "0.0750",
@@ -116,6 +117,7 @@ function modelRegionPrice(
 ): Record<string, unknown> {
   return {
     regionCode: "global",
+    currency: "USD",
     priceIn,
     priceOut,
     ...overrides,
@@ -415,6 +417,7 @@ test("admin ai model create input does not reuse returned model view model", () 
     regionPrices: [
       {
         regionCode: "cn",
+        currency: "CNY",
         priceIn: "0.2000",
         priceOut: "0.8000",
         cacheReadPrice: "0.1000",
@@ -422,6 +425,7 @@ test("admin ai model create input does not reuse returned model view model", () 
       },
       {
         regionCode: "global",
+        currency: "USD",
         priceIn: "0.1500",
         priceOut: "0.6000",
         cacheReadPrice: "0.0750",
@@ -498,6 +502,7 @@ test("admin ai model update input preserves current type marker for partial upda
     regionPrices: [
       {
         regionCode: "cn",
+        currency: "CNY",
         priceIn: "0.3000",
         priceOut: "0.9000",
         cacheReadPrice: "0.1500",
@@ -505,6 +510,7 @@ test("admin ai model update input preserves current type marker for partial upda
       },
       {
         regionCode: "global",
+        currency: "USD",
         priceIn: "0.2000",
         priceOut: "0.8000",
         cacheReadPrice: "0.1000",
@@ -540,6 +546,7 @@ test("admin ai model form keeps cache prices optional", () => {
   assert.deepEqual(input.regionPrices, [
     {
       regionCode: "global",
+      currency: "USD",
       priceIn: "0.1500",
       priceOut: "0.6000",
       cacheReadPrice: "",
@@ -606,7 +613,9 @@ test("admin model editor creates default mainland China and global pricing regio
   for (const expected of [
     "MODEL_PRICING_REGIONS = [",
     "code: 'cn'",
+    "currency: 'CNY'",
     "code: 'global'",
+    "currency: 'USD'",
     "formData.get(`priceIn.${regionCode}`)",
     "formData.get(`priceOut.${regionCode}`)",
     "formData.get(`cacheReadPrice.${regionCode}`)",
@@ -627,6 +636,7 @@ test("admin model editor creates default mainland China and global pricing regio
   for (const expected of [
     "regionPrices: ModelRegionPriceInput[]",
     "regionPrices: regionPrices.map",
+    "currency: currencyCode(regionPrice.currency",
   ]) {
     assert.ok(serviceSource.includes(expected), `missing region pricing service marker: ${expected}`);
   }
@@ -906,6 +916,7 @@ test("admin model service calls generated backend SDK paths and normalizes model
         regionPrices: [
           {
             regionCode: "global",
+            currency: "USD",
             priceIn: "0.01",
             priceOut: "0.02",
           },
@@ -928,6 +939,7 @@ test("admin model service calls generated backend SDK paths and normalizes model
         regionPrices: [
           {
             regionCode: "global",
+            currency: "USD",
             priceIn: "0.03",
             priceOut: "0.04",
           },
@@ -1036,6 +1048,70 @@ test("admin model service initializes empty catalog through generated backend SD
       for (const request of captured) {
         assert.equal(request.headers["x-request-id"], undefined);
       }
+    },
+  );
+});
+
+test("admin model service keeps initialized catalog rows when returned models have no regional prices", async () => {
+  await withBackendSdkFetch(
+    (url, init) => {
+      const method = init?.method ?? "GET";
+      if (url === "/backend/v3/api/ai/model_vendors" && method === "GET") {
+        return {
+          items: [
+            adminVendor({
+              id: "vendor-openai",
+              vendorCode: "openai",
+              name: "OpenAI",
+            }),
+          ],
+        };
+      }
+      if (url === "/backend/v3/api/ai/models" && method === "GET") {
+        return {
+          items: [
+            adminModel({
+              id: "model-openai-gpt-image",
+              vendorId: "vendor-openai",
+              vendorCode: "openai",
+              model: "gpt-image-1.5",
+              type: "Image",
+              modalities: ["image"],
+              inputModalities: ["text", "image"],
+              outputModalities: ["image"],
+              regionPrices: [],
+            }),
+            adminModel({
+              id: "model-openai-gpt-4o-mini",
+              vendorId: "vendor-openai",
+              vendorCode: "openai",
+              model: "gpt-4o-mini",
+            }),
+          ],
+        };
+      }
+      if (url === "/backend/v3/api/ai/model_rankings?limit=200" && method === "GET") {
+        return { items: [] };
+      }
+      throw new Error(`Unexpected SDK request ${method} ${url}`);
+    },
+    async (captured) => {
+      const catalog = await ModelService.fetchInitializedCatalog();
+
+      assert.equal(catalog.initialized, false);
+      assert.equal(catalog.vendors.length, 1);
+      assert.equal(catalog.vendors[0].name, "OpenAI");
+      assert.equal(catalog.models.length, 2);
+      assert.equal(catalog.models[0].model, "gpt-image-1.5");
+      assert.deepEqual(catalog.models[0].regionPrices, []);
+      assert.deepEqual(
+        captured.map((request) => `${request.method} ${request.url}`),
+        [
+          "GET /backend/v3/api/ai/model_vendors",
+          "GET /backend/v3/api/ai/models",
+          "GET /backend/v3/api/ai/model_rankings?limit=200",
+        ],
+      );
     },
   );
 });
@@ -1448,6 +1524,7 @@ test("admin model list preserves regional prices and rejects missing region pric
               regionPrices: [
                 {
                   regionCode: "cn",
+                  currency: "CNY",
                   priceIn: "0.2000",
                   priceOut: "0.8000",
                   cacheReadPrice: "0.1000",
@@ -1455,6 +1532,7 @@ test("admin model list preserves regional prices and rejects missing region pric
                 },
                 {
                   regionCode: "global",
+                  currency: "USD",
                   priceIn: "0.1500",
                   priceOut: "0.6000",
                   cacheReadPrice: "0.0750",
@@ -1476,6 +1554,7 @@ test("admin model list preserves regional prices and rejects missing region pric
       assert.deepEqual(models[0].regionPrices, [
         {
           regionCode: "cn",
+          currency: "CNY",
           priceIn: "0.2000",
           priceOut: "0.8000",
           cacheReadPrice: "0.1000",
@@ -1483,12 +1562,39 @@ test("admin model list preserves regional prices and rejects missing region pric
         },
         {
           regionCode: "global",
+          currency: "USD",
           priceIn: "0.1500",
           priceOut: "0.6000",
           cacheReadPrice: "0.0750",
           cacheWritePrice: "0.1500",
         },
       ]);
+    },
+  );
+
+  await withBackendSdkFetch(
+    (url, init) => {
+      const method = init?.method ?? "GET";
+      if (url === "/backend/v3/api/ai/models" && method === "GET") {
+        return {
+          items: [
+            adminModel({
+              id: "model-no-visible-price",
+              regionPrices: [],
+            }),
+          ],
+        };
+      }
+      if (url === "/backend/v3/api/ai/model_rankings?limit=200" && method === "GET") {
+        return { items: [] };
+      }
+      throw new Error(`Unexpected SDK request ${method} ${url}`);
+    },
+    async () => {
+      const models = await ModelService.fetchModels();
+
+      assert.equal(models.length, 1);
+      assert.deepEqual(models[0].regionPrices, []);
     },
   );
 
@@ -1553,6 +1659,7 @@ test("admin model list keeps catalog rows when one pricing side is not available
       assert.deepEqual(models[0].regionPrices, [
         {
           regionCode: "global",
+          currency: "USD",
           priceIn: "0.1500",
           priceOut: "",
           cacheReadPrice: "",
@@ -2189,10 +2296,12 @@ test("admin model editor supports cache read and write prices", () => {
     "const priceRows = [",
     "value: selectedPriceRegion?.cacheReadPrice",
     "value: selectedPriceRegion?.cacheWritePrice",
-    "formatPrice(row.value ?? '')",
+    "const selectedPriceCurrency = selectedPriceRegion?.currency ?? 'USD'",
+    "formatPrice(row.value ?? '', selectedPriceCurrency)",
   ]) {
     assert.ok(source.includes(expected), `missing editor cache price marker: ${expected}`);
   }
+  assert.equal(source.includes("formatPrice(row.value ?? '')"), false, "price popover must pass region currency into formatPrice");
 });
 
 test("admin model editor uses six-decimal pricing precision", () => {

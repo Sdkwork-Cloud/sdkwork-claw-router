@@ -7,7 +7,8 @@ mod routing;
 mod types;
 
 pub use access::{
-    ChannelGroup, ChannelGroupMetricSnapshot, GatewayAccessPolicy, GatewayApiKey, QuotaPolicy,
+    ChannelGroup, ChannelGroupMetricSnapshot, GatewayAccessPolicy, GatewayApiKey,
+    GatewayApiKeyGroupBinding, QuotaPolicy,
 };
 pub use catalog::{
     ensure_canonical_model_catalog_key, is_model_region_segment, model_catalog_scope_matches_key,

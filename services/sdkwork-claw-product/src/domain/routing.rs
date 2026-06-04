@@ -70,7 +70,7 @@ impl AiRouteStrategy {
             6 => Ok(Self::PrimaryChannel),
             7 => Ok(Self::FanoutAggregate),
             value => Err(DomainError::new(format!(
-                "ai_resource_route_profile.route_strategy contains unsupported value: {value}"
+                "ai_route_taxonomy.route_strategy contains unsupported value: {value}"
             ))),
         }
     }
@@ -112,7 +112,7 @@ impl AiRouteFailureStrategy {
             1 => Ok(Self::Failover),
             2 => Ok(Self::FailClosed),
             value => Err(DomainError::new(format!(
-                "ai_resource_route_profile.failure_strategy contains unsupported value: {value}"
+                "ai_route_taxonomy.failure_strategy contains unsupported value: {value}"
             ))),
         }
     }
@@ -143,7 +143,7 @@ impl AiRouteModelRequirement {
             2 => Ok(Self::Optional),
             3 => Ok(Self::Ignored),
             value => Err(DomainError::new(format!(
-                "ai_resource_route_profile.model_requirement contains unsupported value: {value}"
+                "ai_route_taxonomy.model_requirement contains unsupported value: {value}"
             ))),
         }
     }

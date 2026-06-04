@@ -75,7 +75,6 @@ frontend_models:
   - chargeAmount
   - currency
   data_sources:
-  - ai_usage_service_provider_chain
   - ai_usage_service_provider_edge
 - route: /admin/service-providers/statements
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
@@ -92,4 +91,3 @@ frontend_models:
   - statementStatus
   data_sources:
   - commerce_usage_service_provider_statement
-  - commerce_usage_service_provider_statement_item

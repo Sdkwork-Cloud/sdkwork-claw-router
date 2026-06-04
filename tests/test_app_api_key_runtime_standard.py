@@ -713,6 +713,47 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
                 self.assertIn("idempotency_key", source)
                 self.assertIn("request_id", source)
 
+    def test_app_api_key_multi_group_bindings_are_in_database_schema(self) -> None:
+        schema = render_schema_registry(
+            ROOT / "docs" / "schema-registry" / "sdkwork-claw-router.tables.yaml"
+        )
+        effective_schema = (
+            ROOT / "generated" / "schema" / "registry" / "sdkwork-claw-router.tables.effective.yaml"
+        ).read_text(encoding="utf-8")
+        postgres_schema = (
+            ROOT / "generated" / "schema" / "postgres" / "schema.sql"
+        ).read_text(encoding="utf-8")
+
+        for source in [schema, effective_schema]:
+            with self.subTest(source="schema-registry"):
+                self.assertIn("- table: iam_gateway_api_key_channel_group", source)
+                binding_table = source.split(
+                    "- table: iam_gateway_api_key_channel_group", 1
+                )[1].split("- table:", 1)[0]
+                for column in [
+                    "api_key_id",
+                    "channel_group_id",
+                    "channel_group_code",
+                    "binding_role",
+                    "routing_strategy",
+                    "priority",
+                    "weight",
+                    "effective_from",
+                    "effective_to",
+                ]:
+                    self.assertIn(column, binding_table)
+
+        self.assertIn(
+            "CREATE TABLE IF NOT EXISTS iam_gateway_api_key_channel_group",
+            postgres_schema,
+        )
+        self.assertIn("api_key_id BIGINT NOT NULL", postgres_schema)
+        self.assertIn("channel_group_id BIGINT NOT NULL", postgres_schema)
+        self.assertIn(
+            "idx_iam_gateway_api_key_channel_group_active",
+            postgres_schema,
+        )
+
     def test_app_api_key_creation_uses_signed_trusted_subject_boundary(self) -> None:
         service = ROOT / "services" / "sdkwork-claw-app-api" / "src" / "lib.rs"
         service_source = service.read_text(encoding="utf-8")

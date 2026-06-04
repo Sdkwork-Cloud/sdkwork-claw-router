@@ -26,7 +26,6 @@ async fn sqlite_admin_channel_store_encrypts_channel_api_key_material() {
                 operator_type: 1,
             },
             channel_uuid: "channel-api-key-credential".to_owned(),
-            model_uuids: vec!["channel-model-api-key-credential".to_owned()],
             audit_log_uuid: "audit-api-key-credential".to_owned(),
             config_snapshot_uuid: "snapshot-api-key-credential".to_owned(),
             name: "OpenAI primary".to_owned(),
@@ -48,7 +47,6 @@ async fn sqlite_admin_channel_store_encrypts_channel_api_key_material() {
                 weight: 100,
                 status: "active".to_owned(),
             }],
-            models: vec!["openai/gpt-4o-mini".to_owned()],
             capabilities: vec!["llm".to_owned()],
             resource_codes: vec![
                 "vendor.openai".to_owned(),
@@ -215,6 +213,56 @@ async fn sqlite_admin_channel_store_encrypts_channel_api_key_material() {
 }
 
 #[tokio::test]
+async fn sqlite_admin_channel_store_does_not_bind_models_to_accounts() {
+    let pool = schema_sqlite_pool().await;
+    seed_channel_capability_prerequisites(&pool).await;
+    let codec = Arc::new(RingAeadApiKeySecretCodec::new("test-pepper").unwrap());
+    let store = SqliteAdminChannelStore::with_api_key_secret_codec(pool.clone(), codec);
+    let mut command = duplicate_secret_channel_command("no-account-models", "2026-05-18 12:02:30");
+    command.resource_codes = vec!["model.openai.gpt-4o-mini.chat".to_owned()];
+
+    let created = store.create_channel(command).await.unwrap();
+    let channel_model_table_count: i64 = sqlx::query_scalar(
+        "SELECT COUNT(1) FROM sqlite_master WHERE type = 'table' AND name = 'ai_channel_model'",
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(
+        0, channel_model_table_count,
+        "accounts must not be backed by ai_channel_model"
+    );
+    let listed = store
+        .list_channels(ListAdminChannelsQuery {
+            subject: AdminChannelSubject {
+                tenant_id: 10,
+                organization_id: 20,
+                operator_id: 30,
+                operator_type: 1,
+            },
+        })
+        .await
+        .unwrap();
+    let listed_item = listed
+        .iter()
+        .find(|item| item.id == created.id)
+        .expect("created account should be listed");
+    let resource_codes = &listed_item.resource_codes;
+    assert!(
+        resource_codes.contains(&"model.openai.gpt-4o-mini.chat".to_owned()),
+        "model access should be represented through ai_channel_resource"
+    );
+    assert!(
+        resource_codes.contains(&"vendor.openai".to_owned()),
+        "model resources should derive vendor scope for account routing"
+    );
+    assert!(
+        resource_codes.contains(&"modality.llm".to_owned()),
+        "model resources should derive modality scope for account routing"
+    );
+}
+
+#[tokio::test]
 async fn sqlite_admin_channel_store_prefers_resource_group_for_group_backed_resource_code() {
     let pool = schema_sqlite_pool().await;
     seed_channel_capability_prerequisites(&pool).await;
@@ -269,7 +317,6 @@ async fn sqlite_admin_channel_store_updates_modality_resources_without_clearing_
                 operator_type: 1,
             },
             channel_uuid: "channel-modality-resource-update".to_owned(),
-            model_uuids: vec!["channel-model-modality-resource-update".to_owned()],
             audit_log_uuid: "audit-modality-resource-update-create".to_owned(),
             config_snapshot_uuid: "snapshot-modality-resource-update-create".to_owned(),
             name: "OpenAI modality resource".to_owned(),
@@ -291,7 +338,6 @@ async fn sqlite_admin_channel_store_updates_modality_resources_without_clearing_
                 weight: 100,
                 status: "active".to_owned(),
             }],
-            models: vec!["openai/gpt-4o-mini".to_owned()],
             capabilities: vec!["llm".to_owned()],
             resource_codes: vec![
                 "vendor.openai".to_owned(),
@@ -319,7 +365,6 @@ async fn sqlite_admin_channel_store_updates_modality_resources_without_clearing_
                 operator_type: 1,
             },
             channel_id: created.id,
-            model_uuids: Vec::new(),
             audit_log_uuid: "audit-modality-resource-update".to_owned(),
             config_snapshot_uuid: "snapshot-modality-resource-update".to_owned(),
             name: None,
@@ -330,7 +375,6 @@ async fn sqlite_admin_channel_store_updates_modality_resources_without_clearing_
             access_type: None,
             credential_rotation: None,
             credentials: None,
-            models: None,
             capabilities: Some(vec!["llm".to_owned(), "image".to_owned()]),
             resource_codes: None,
             timeout_ms: None,
@@ -420,8 +464,6 @@ async fn sqlite_admin_channel_store_soft_delete_cascades_channel_relationships()
         ))
         .await
         .unwrap();
-    seed_channel_endpoint(&pool, created.id).await;
-
     let deleted = store
         .delete_channel(DeleteAdminChannelCommand {
             subject: AdminChannelSubject {
@@ -444,13 +486,6 @@ async fn sqlite_admin_channel_store_soft_delete_cascades_channel_relationships()
         r#"
         SELECT (
             SELECT COUNT(1)
-            FROM ai_channel_model
-            WHERE tenant_id = 10
-              AND organization_id = 20
-              AND channel_id = ?
-              AND deleted_at IS NULL
-        ) + (
-            SELECT COUNT(1)
             FROM ai_channel_credential
             WHERE tenant_id = 10
               AND organization_id = 20
@@ -463,26 +498,9 @@ async fn sqlite_admin_channel_store_soft_delete_cascades_channel_relationships()
               AND organization_id = 20
               AND channel_id = ?
               AND deleted_at IS NULL
-        ) + (
-            SELECT COUNT(1)
-            FROM ai_channel_vendor
-            WHERE tenant_id = 10
-              AND organization_id = 20
-              AND channel_id = ?
-              AND deleted_at IS NULL
-        ) + (
-            SELECT COUNT(1)
-            FROM ai_channel_endpoint
-            WHERE tenant_id = 10
-              AND organization_id = 20
-              AND channel_id = ?
-              AND deleted_at IS NULL
         )
         "#,
     )
-    .bind(created.id)
-    .bind(created.id)
-    .bind(created.id)
     .bind(created.id)
     .bind(created.id)
     .fetch_one(&pool)
@@ -503,7 +521,6 @@ fn duplicate_secret_channel_command(suffix: &str, requested_at: &str) -> CreateA
             operator_type: 1,
         },
         channel_uuid: format!("{suffix}-channel-duplicate-secret"),
-        model_uuids: vec![format!("channel-model-duplicate-secret-{suffix}")],
         audit_log_uuid: format!("audit-duplicate-secret-{suffix}"),
         config_snapshot_uuid: format!("snapshot-duplicate-secret-{suffix}"),
         name: format!("OpenAI {suffix}"),
@@ -525,7 +542,6 @@ fn duplicate_secret_channel_command(suffix: &str, requested_at: &str) -> CreateA
             weight: 100,
             status: "active".to_owned(),
         }],
-        models: vec!["openai/gpt-4o-mini".to_owned()],
         capabilities: vec!["llm".to_owned()],
         resource_codes: Vec::new(),
         is_multimodal: false,
@@ -538,22 +554,6 @@ fn duplicate_secret_channel_command(suffix: &str, requested_at: &str) -> CreateA
         request_id: format!("req-duplicate-secret-{suffix}"),
         requested_at: requested_at.to_owned(),
     }
-}
-
-async fn seed_channel_endpoint(pool: &sqlx::SqlitePool, channel_id: i64) {
-    sqlx::query(
-        r#"
-        INSERT INTO ai_channel_endpoint
-            (uuid, tenant_id, organization_id, status, channel_id, provider_code, channel_code, channel_type, vendor_code, region_code, api_code, base_url)
-        VALUES
-            (?, 10, 20, 1, ?, 'openai', 'openai-delete-cascade', 'official', 'openai', 'global', 'openai.chat_completions', 'https://api.openai.com/v1')
-        "#,
-    )
-    .bind(format!("endpoint-delete-cascade-{channel_id}"))
-    .bind(channel_id)
-    .execute(pool)
-    .await
-    .unwrap();
 }
 
 async fn seed_channel_capability_prerequisites(pool: &sqlx::SqlitePool) {

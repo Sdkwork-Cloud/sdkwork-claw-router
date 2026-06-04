@@ -332,9 +332,13 @@ test("claw router auth controller reuses appbase runtime while preserving app SD
   const routeSource = readPortalFile("./src/auth/ClawRouterAuthRoutes.tsx");
   const configSource = readPortalFile("./src/auth/clawRouterAuthConfig.ts");
   const settingsServiceSource = readPortalFile("./src/auth/clawRouterAuthSettingsService.ts");
+  const iamRuntimeSource = readPortalFile("./packages/sdkwork-claw-router-commons/src/iam-runtime.ts");
 
   assert.match(controllerSource, /createSdkworkIamRuntimeAuthController/);
   assert.match(controllerSource, /getClawRouterIamRuntime/);
+  assert.match(iamRuntimeSource, /from '@sdkwork\/iam-sdk-adapter'/);
+  assert.match(iamRuntimeSource, /createIamAppSdkAdapter\(getClawRouterAppSdkClient\(\)\)/);
+  assert.doesNotMatch(iamRuntimeSource, /app:\s*getClawRouterAppSdkClient\(\)/);
   assert.doesNotMatch(controllerSource, /createSdkworkAuthController/);
   assert.doesNotMatch(controllerSource, /createSdkworkLocalAuthService/);
   assert.doesNotMatch(controllerSource, /\.service\.auth\.sessions\.create/);
@@ -2564,6 +2568,7 @@ test("portal aliases appbase auth and Tauri host packages for local reuse", () =
   assert.equal(packageJson.dependencies["@sdkwork/iam-core-pc-react"], "workspace:*");
   assert.equal(packageJson.dependencies["@sdkwork/iam-react"], "workspace:*");
   assert.equal(packageJson.dependencies["@sdkwork/iam-runtime"], "workspace:*");
+  assert.equal(packageJson.dependencies["@sdkwork/iam-sdk-adapter"], "workspace:*");
   assert.equal(packageJson.dependencies["@sdkwork/iam-sdk-ports"], "workspace:*");
   assert.equal(packageJson.dependencies["@sdkwork/iam-service"], "workspace:*");
   assert.equal(packageJson.dependencies["@sdkwork/runtime-bootstrap"], "workspace:*");
@@ -2585,6 +2590,7 @@ test("portal aliases appbase auth and Tauri host packages for local reuse", () =
     "@sdkwork/iam-core-pc-react",
     "@sdkwork/iam-react",
     "@sdkwork/iam-runtime",
+    "@sdkwork/iam-sdk-adapter",
     "@sdkwork/iam-sdk-ports",
     "@sdkwork/iam-service",
     "@sdkwork/runtime-bootstrap",

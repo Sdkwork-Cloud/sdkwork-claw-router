@@ -1,6 +1,8 @@
 package com.sdkwork.clawrouter.backend
 
 data class AdminAiResourceGroupItem(
+    val capabilities: List<String>? = null,
+    val capability: String? = null,
     val description: String? = null,
     val dynamic_: Boolean? = null,
     val groupCode: String? = null,
@@ -10,5 +12,6 @@ data class AdminAiResourceGroupItem(
     val resourceCount: Int? = null,
     val selectionMode: String? = null,
     val sortOrder: Int? = null,
-    val status: String? = null
+    val status: String? = null,
+    val vendorCodes: List<String>? = null
 )

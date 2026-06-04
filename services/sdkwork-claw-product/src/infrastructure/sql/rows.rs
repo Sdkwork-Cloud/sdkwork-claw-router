@@ -1,11 +1,12 @@
 use crate::domain::{
     ensure_canonical_model_catalog_key, provider_native_model_id, AiModel, AiModelPublicMetadata,
     BillingMeter, ChannelGroup, ChannelGroupMetricSnapshot, DecimalValue, DomainError,
-    DomainResult, GatewayAccessPolicy, GatewayApiKey, ModelMappingBindingType, ModelMappingRule,
-    ModelPrice, ModelProviderRoute, ModelVendor, ModelVendorDefinition, Money, PriceSide,
-    PricingPlan, ProviderAuthProfile, ProviderChannelGroupBinding, ProviderChannelRoute,
-    ProviderRetryPolicy, QuotaPolicy, RouteCandidate, RoutingCapability, RoutingFallbackMode,
-    RoutingPolicy, RoutingPolicyScope, RoutingRule,
+    DomainResult, GatewayAccessPolicy, GatewayApiKey, GatewayApiKeyGroupBinding,
+    ModelMappingBindingType, ModelMappingRule, ModelPrice, ModelProviderRoute, ModelVendor,
+    ModelVendorDefinition, Money, PriceSide, PricingPlan, ProviderAuthProfile,
+    ProviderChannelGroupBinding, ProviderChannelRoute, ProviderRetryPolicy, QuotaPolicy,
+    RouteCandidate, RoutingCapability, RoutingFallbackMode, RoutingPolicy, RoutingPolicyScope,
+    RoutingRule,
 };
 
 pub struct ModelVendorRow {
@@ -252,7 +253,7 @@ impl ModelProviderRouteRow {
     pub fn try_into_domain(self) -> DomainResult<ModelProviderRoute> {
         ensure_base_catalog_key(
             &self.catalog_key,
-            "ai_channel_model.catalog_key must use vendor/model identity",
+            "provider route catalog_key must use vendor/model identity",
         )?;
         let timeout_ms = parse_timeout_ms(self.timeout_ms)?;
         let retry_policy = parse_retry_policy(self.retry_policy_json)?;
@@ -433,6 +434,7 @@ pub struct GatewayApiKeyRow {
     pub organization_id: i64,
     pub user_id: i64,
     pub group_id: i64,
+    pub group_bindings_json: String,
     pub name: String,
     pub key_prefix: String,
     pub key_display_masked: String,
@@ -448,7 +450,12 @@ pub struct GatewayApiKeyRow {
 
 impl GatewayApiKeyRow {
     pub fn into_domain(self) -> GatewayApiKey {
-        GatewayApiKey {
+        self.try_into_domain()
+            .expect("gateway api key group bindings must be valid")
+    }
+
+    pub fn try_into_domain(self) -> DomainResult<GatewayApiKey> {
+        Ok(GatewayApiKey {
             id: self.id,
             tenant_id: self.tenant_id,
             organization_id: self.organization_id,
@@ -465,13 +472,118 @@ impl GatewayApiKeyRow {
             expire_at: self.expire_at,
             status_code: self.status_code,
             default_for_runtime: self.default_for_runtime,
-        }
+            group_bindings: parse_gateway_api_key_group_bindings(&self.group_bindings_json)?,
+        })
     }
 
     pub fn with_copyable_key(mut self, copyable_key: Option<String>) -> Self {
         self.copyable_key = copyable_key;
         self
     }
+}
+
+fn parse_gateway_api_key_group_bindings(
+    value: &str,
+) -> DomainResult<Vec<GatewayApiKeyGroupBinding>> {
+    let value = parse_json_value(value, "gateway api key group bindings")?;
+    let serde_json::Value::Array(items) = value else {
+        return Err(DomainError::new(
+            "gateway api key group bindings must be a json array",
+        ));
+    };
+
+    let mut bindings = items
+        .into_iter()
+        .enumerate()
+        .map(|(index, value)| parse_gateway_api_key_group_binding(value, index))
+        .collect::<DomainResult<Vec<_>>>()?;
+    bindings.sort_by_key(|binding| {
+        (
+            binding.priority,
+            std::cmp::Reverse(binding.weight),
+            binding.group_id,
+        )
+    });
+    bindings.dedup_by_key(|binding| binding.group_id);
+    Ok(bindings)
+}
+
+fn parse_gateway_api_key_group_binding(
+    value: serde_json::Value,
+    index: usize,
+) -> DomainResult<GatewayApiKeyGroupBinding> {
+    let serde_json::Value::Object(object) = value else {
+        return Err(DomainError::new(format!(
+            "gateway api key group bindings[{index}] must be a json object"
+        )));
+    };
+    let group_id = object
+        .get("groupId")
+        .or_else(|| object.get("group_id"))
+        .and_then(serde_json::Value::as_i64)
+        .ok_or_else(|| {
+            DomainError::new(format!(
+                "gateway api key group bindings[{index}] must contain integer groupId"
+            ))
+        })?;
+    if group_id <= 0 {
+        return Err(DomainError::new(format!(
+            "gateway api key group bindings[{index}].groupId must be positive"
+        )));
+    }
+    let group_code =
+        parse_optional_object_string(&object, "groupCode", "group_code").unwrap_or_default();
+    let pricing_plan_code =
+        parse_optional_object_string(&object, "pricingPlanCode", "pricing_plan_code")
+            .unwrap_or_default();
+    let binding_role =
+        parse_optional_object_string(&object, "bindingRole", "binding_role")
+            .unwrap_or_else(|| "route".to_owned());
+    let routing_strategy =
+        parse_optional_object_string(&object, "routingStrategy", "routing_strategy")
+            .unwrap_or_else(|| "auto".to_owned());
+    let priority = parse_optional_i32(&object, "priority", index)?.unwrap_or(100);
+    let weight = parse_optional_i32(&object, "weight", index)?.unwrap_or(100);
+    Ok(GatewayApiKeyGroupBinding::new(
+        group_id,
+        &group_code,
+        &pricing_plan_code,
+        priority,
+        weight,
+    )
+    .with_binding_role(&binding_role)
+    .with_routing_strategy(&routing_strategy))
+}
+
+fn parse_optional_object_string(
+    object: &serde_json::Map<String, serde_json::Value>,
+    camel_key: &str,
+    snake_key: &str,
+) -> Option<String> {
+    object
+        .get(camel_key)
+        .or_else(|| object.get(snake_key))
+        .and_then(serde_json::Value::as_str)
+        .map(str::trim)
+        .filter(|value| !value.is_empty())
+        .map(str::to_owned)
+}
+
+fn parse_optional_i32(
+    object: &serde_json::Map<String, serde_json::Value>,
+    key: &str,
+    index: usize,
+) -> DomainResult<Option<i32>> {
+    object
+        .get(key)
+        .and_then(serde_json::Value::as_i64)
+        .map(i32::try_from)
+        .transpose()
+        .map_err(|error| {
+            DomainError::new(format!(
+                "gateway api key group bindings[{index}].{key} is invalid: {error}"
+            ))
+        })
 }
 
 pub struct ChannelGroupRow {
@@ -652,10 +764,10 @@ fn parse_route_candidates(value: &str, field_name: &str) -> DomainResult<Vec<Rou
 fn parse_provider_channel_group_bindings(
     value: &str,
 ) -> DomainResult<Vec<ProviderChannelGroupBinding>> {
-    let value = parse_json_value(value, "ai_route_candidate group bindings")?;
+    let value = parse_json_value(value, "route candidate group bindings")?;
     let serde_json::Value::Array(items) = value else {
         return Err(DomainError::new(
-            "ai_route_candidate group bindings must be a json array",
+            "route candidate group bindings must be a json array",
         ));
     };
 
@@ -672,7 +784,7 @@ fn parse_provider_channel_route_group_binding(
 ) -> DomainResult<ProviderChannelGroupBinding> {
     let serde_json::Value::Object(object) = value else {
         return Err(DomainError::new(format!(
-            "ai_route_candidate group bindings[{index}] must be a json object"
+            "route candidate group bindings[{index}] must be a json object"
         )));
     };
     let group_id = object
@@ -681,12 +793,12 @@ fn parse_provider_channel_route_group_binding(
         .and_then(serde_json::Value::as_i64)
         .ok_or_else(|| {
             DomainError::new(format!(
-                "ai_route_candidate group bindings[{index}] must contain integer groupId"
+                "route candidate group bindings[{index}] must contain integer groupId"
             ))
         })?;
     if group_id <= 0 {
         return Err(DomainError::new(format!(
-            "ai_route_candidate group bindings[{index}].groupId must be positive"
+            "route candidate group bindings[{index}].groupId must be positive"
         )));
     }
     let priority = object
@@ -696,7 +808,7 @@ fn parse_provider_channel_route_group_binding(
         .transpose()
         .map_err(|error| {
             DomainError::new(format!(
-                "ai_route_candidate group bindings[{index}].priority is invalid: {error}"
+                "route candidate group bindings[{index}].priority is invalid: {error}"
             ))
         })?
         .unwrap_or(100);
@@ -707,18 +819,16 @@ fn parse_provider_channel_route_group_binding(
         .transpose()
         .map_err(|error| {
             DomainError::new(format!(
-                "ai_route_candidate group bindings[{index}].weight is invalid: {error}"
+                "route candidate group bindings[{index}].weight is invalid: {error}"
             ))
         })?
         .unwrap_or(100);
-    let model_scope = parse_binding_string_array(&object, "modelScope", "model_scope", index)?;
     let api_scope = parse_binding_string_array(&object, "apiScope", "api_scope", index)?;
     let capabilities = parse_binding_string_array(&object, "capabilities", "capabilities", index)?;
     Ok(ProviderChannelGroupBinding::new_resource_scoped(
         group_id,
         priority,
         weight,
-        model_scope,
         api_scope,
         capabilities,
     ))
@@ -738,7 +848,7 @@ fn parse_binding_string_array(
     }
     let serde_json::Value::Array(items) = value else {
         return Err(DomainError::new(format!(
-            "ai_route_candidate group bindings[{index}].{camel_key} must be a json array"
+            "route candidate group bindings[{index}].{camel_key} must be a json array"
         )));
     };
     let mut seen = std::collections::BTreeSet::new();
@@ -746,7 +856,7 @@ fn parse_binding_string_array(
     for item in items {
         let Some(value) = item.as_str() else {
             return Err(DomainError::new(format!(
-                "ai_route_candidate group bindings[{index}].{camel_key} must contain only strings"
+                "route candidate group bindings[{index}].{camel_key} must contain only strings"
             )));
         };
         let value = value.trim();

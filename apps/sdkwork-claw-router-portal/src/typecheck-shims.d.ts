@@ -1182,6 +1182,10 @@ declare module '@sdkwork/iam-react' {
   export default iamReact;
 }
 
+declare module '@sdkwork/iam-sdk-adapter' {
+  export function createIamAppSdkAdapter(client: unknown): unknown;
+}
+
 declare module '@sdkwork/iam-sdk-ports' {
   const iamSdkPorts: unknown;
   export default iamSdkPorts;

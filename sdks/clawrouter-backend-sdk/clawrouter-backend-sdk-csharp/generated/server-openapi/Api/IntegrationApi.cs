@@ -16,30 +16,6 @@ namespace Sdkwork.ClawRouter.Backend.Api
         }
 
         /// <summary>
-        /// List channel endpoints
-        /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.ChannelEndpointsListResult?> ChannelEndpointsListAsync()
-        {
-            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.ChannelEndpointsListResult>(ApiPaths.BackendPath("/integration/channel_endpoints"));
-        }
-
-        /// <summary>
-        /// Create channel endpoint
-        /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.ChannelEndpointsCreateResult?> ChannelEndpointsCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminChannelEndpointCreateRequest body)
-        {
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.ChannelEndpointsCreateResult>(ApiPaths.BackendPath("/integration/channel_endpoints"), body, null, null, "application/json");
-        }
-
-        /// <summary>
-        /// Update channel endpoint
-        /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.ChannelEndpointsUpdateResult?> ChannelEndpointsUpdateAsync(string endpointId, Sdkwork.ClawRouter.Backend.Models.AdminChannelEndpointUpdateRequest body)
-        {
-            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.ChannelEndpointsUpdateResult>(ApiPaths.BackendPath($"/integration/channel_endpoints/{SerializePathParameter(endpointId, new PathParameterSpec("endpointId", "simple", false))}"), body, null, null, "application/json");
-        }
-
-        /// <summary>
         /// List channels
         /// </summary>
         public async Task<Sdkwork.ClawRouter.Backend.Models.ChannelsListResult?> ChannelsListAsync()

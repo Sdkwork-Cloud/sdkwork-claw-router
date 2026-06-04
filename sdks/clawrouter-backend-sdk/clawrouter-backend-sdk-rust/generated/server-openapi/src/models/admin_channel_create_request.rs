@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::models::{ProviderCircuitBreakerPolicy, ProviderRetryPolicy};
+use crate::models::{AdminChannelCredentialInput, ProviderCircuitBreakerPolicy, ProviderRetryPolicy};
 
 /// Admin channel create request schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
@@ -9,15 +9,6 @@ pub struct AdminChannelCreateRequest {
     #[serde(rename = "accessType")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub access_type: Option<String>,
-
-    /// Plaintext provider API key accepted only on create/update input. Backend encrypts it into ai_channel.auth_config and never returns it.
-    #[serde(rename = "apiKey")]
-    pub api_key: String,
-
-    /// Base url field on admin channel create request.
-    #[serde(rename = "baseUrl")]
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub base_url: Option<String>,
 
     /// Capabilities field on admin channel create request.
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -33,13 +24,22 @@ pub struct AdminChannelCreateRequest {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub circuit_breaker_policy: Option<ProviderCircuitBreakerPolicy>,
 
+    /// Credential selection strategy for the upstream credential list.
+    #[serde(rename = "credentialRotation")]
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub credential_rotation: Option<String>,
+
+    /// Credentials field on admin channel create request.
+    pub credentials: Vec<AdminChannelCredentialInput>,
+
     /// Expires at field on admin channel create request.
     #[serde(rename = "expiresAt")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub expires_at: Option<String>,
 
-    /// Models field on admin channel create request.
-    pub models: Vec<String>,
+    /// Optional model resource bindings. Omit or leave empty to route by vendor, AI resource, API path, and capability only; model-specific upstream translation is handled by account, vendor, or global mapping rules.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub models: Option<Vec<String>>,
 
     /// Name field on admin channel create request.
     pub name: String,
@@ -57,11 +57,6 @@ pub struct AdminChannelCreateRequest {
     #[serde(rename = "retryPolicy")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub retry_policy: Option<ProviderRetryPolicy>,
-
-    /// Optional compatibility path for existing Vault/KMS secret references. New admin UI submits apiKey instead.
-    #[serde(rename = "secretRef")]
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub secret_ref: Option<String>,
 
     /// Status field on admin channel create request.
     #[serde(default, skip_serializing_if = "Option::is_none")]

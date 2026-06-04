@@ -1,5 +1,5 @@
 use sdkwork_claw_provider_adapter_contract::{
-    AdapterInvocationShape, AdapterKind, AdapterRouteStatus,
+    AdapterEndpointRuntimeState, AdapterInvocationShape, AdapterKind, AdapterRouteStatus,
 };
 use sdkwork_claw_provider_adapter_registry::{
     ProviderAdapterLookup, ProviderAdapterRegistry, ProviderAdapterRouteConfig,
@@ -13,6 +13,12 @@ fn vidu_route(priority: i32, status: AdapterRouteStatus) -> ProviderAdapterRoute
         adapter_base_url: "http://127.0.0.1:39110".to_owned(),
         capability: Some("video_generation".to_owned()),
         endpoint_key: Some("video.start_end2video".to_owned()),
+        service_group: None,
+        openapi_operation_id: None,
+        s3_operation: None,
+        iaas_operation: None,
+        endpoint_styles: Vec::new(),
+        runtime_state: AdapterEndpointRuntimeState::RuntimeAvailable,
         method: "POST".to_owned(),
         invocation_shape: AdapterInvocationShape::AsyncTaskStart,
         standard_path_pattern: "/vidu/ent/v2/start-end2video".to_owned(),
@@ -32,6 +38,12 @@ fn tencent_cloud_vidu_route(
         adapter_base_url: "http://127.0.0.1:39110".to_owned(),
         capability: Some("video_generation".to_owned()),
         endpoint_key: Some("video.start_end2video".to_owned()),
+        service_group: None,
+        openapi_operation_id: None,
+        s3_operation: None,
+        iaas_operation: None,
+        endpoint_styles: Vec::new(),
+        runtime_state: AdapterEndpointRuntimeState::RuntimeAvailable,
         method: "POST".to_owned(),
         invocation_shape: AdapterInvocationShape::AsyncTaskStart,
         standard_path_pattern: "/vidu/ent/v2/start-end2video".to_owned(),

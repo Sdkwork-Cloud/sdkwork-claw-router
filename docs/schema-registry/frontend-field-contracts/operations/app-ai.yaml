@@ -1025,6 +1025,337 @@ frontend_operations:
               description: HTTP latency display value, for example 128ms.
             channel:
               type: string
+- route: /console/api-keys
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/routingApiOperations.ts
+  operation: fetchRoutingChannels
+  operation_scope: app_shell
+  operation_id: routing.channels.list
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/ai/routing/channels
+  read_sources:
+  - ai_channel
+  - ai_channel_credential
+  - ai_channel_resource
+  - ai_resource
+  - ai_resource_group
+  query_parameters: []
+  response_schema:
+    name: RoutingChannelsResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items:
+          name: RoutingChannelItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - name
+          - vendor
+          - provider
+          - providerCode
+          - protocol
+          - accessType
+          - baseUrl
+          - apiKey
+          - models
+          - capabilities
+          - isMultimodal
+          - weight
+          - status
+          - latency
+          - rpm
+          - balance
+          - errors
+          properties:
+            id:
+              type: string
+            name:
+              type: string
+            vendor:
+              type: string
+            provider:
+              type: string
+            providerCode:
+              type: string
+            protocol:
+              type: string
+            accessType:
+              type: string
+            baseUrl:
+              type: string
+            apiKey:
+              type: string
+              description: Masked credential label from the selected upstream credential. Raw secret material is never returned.
+            models:
+              type: array
+              items:
+                type: string
+            capabilities:
+              type: array
+              items:
+                type: string
+            isMultimodal:
+              type: boolean
+            timeoutMs:
+              type: integer
+              format: int64
+              nullable: true
+            retryPolicy:
+              name: RoutingRetryPolicy
+              type: object
+              additionalProperties: false
+              nullable: true
+              required:
+              - maxAttempts
+              - retryableStatusCodes
+              - backoffMs
+              properties:
+                maxAttempts:
+                  type: integer
+                  format: int64
+                retryableStatusCodes:
+                  type: array
+                  items:
+                    type: integer
+                    format: int64
+                backoffMs:
+                  type: integer
+                  format: int64
+            circuitBreakerPolicy:
+              name: RoutingCircuitBreakerPolicy
+              type: object
+              additionalProperties: false
+              nullable: true
+              required:
+              - failureThreshold
+              properties:
+                failureThreshold:
+                  type: integer
+                  format: int64
+            weight:
+              type: integer
+              format: int64
+            status:
+              type: string
+            latency:
+              type: string
+            rpm:
+              type: integer
+              format: int64
+            balance:
+              type: string
+            errors:
+              type: integer
+              format: int64
+- route: /console/api-keys
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/routingApiOperations.ts
+  operation: fetchRoutingApiKeys
+  operation_scope: app_shell
+  operation_id: routing.apiKeys.list
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/ai/routing/api_keys
+  read_sources:
+  - iam_gateway_api_key
+  - ai_usage_fact
+  query_parameters: []
+  response_schema:
+    name: RoutingApiKeysResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items:
+          name: RoutingApiKeyItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - name
+          - displayKey
+          - status
+          - totalUsage
+          - createdAt
+          properties:
+            id:
+              type: string
+            name:
+              type: string
+            displayKey:
+              type: string
+            copyableKey:
+              type: string
+              nullable: true
+              description: Returned only when the app API key secret codec is configured for the trusted console subject.
+            status:
+              type: string
+            totalUsage:
+              type: string
+            createdAt:
+              type: string
+- route: /console/gateway
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/routingApiOperations.ts
+  operation: fetchRoutingRequestTraces
+  operation_scope: app_shell
+  operation_id: routing.requestTraces.list
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/ai/routing/request_traces
+  read_sources:
+  - ai_request_trace
+  - ai_routing_decision_log
+  - ai_usage_fact
+  query_parameters: []
+  response_schema:
+    name: RoutingRequestTracesResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items:
+          name: RoutingRequestTraceItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - time
+          - model
+          - channel
+          - status
+          - duration
+          - tokens
+          - traceId
+          - requestId
+          - requestPath
+          - httpMethod
+          - requestPayloadHash
+          - responsePayloadHash
+          - requestBytes
+          - responseBytes
+          - providerErrorCode
+          - errorType
+          - errorMessageMasked
+          - startedAt
+          - endedAt
+          - streaming
+          properties:
+            id:
+              type: string
+            time:
+              type: string
+            model:
+              type: string
+            channel:
+              type: string
+            status:
+              type: integer
+              format: int64
+            duration:
+              type: string
+            tokens:
+              type: integer
+              format: int64
+            traceId:
+              type: string
+            requestId:
+              type: string
+            requestPath:
+              type: string
+            httpMethod:
+              type: string
+            requestPayloadHash:
+              type: string
+            responsePayloadHash:
+              type: string
+            requestBytes:
+              type: integer
+              format: int64
+            responseBytes:
+              type: integer
+              format: int64
+            providerErrorCode:
+              type: string
+            errorType:
+              type: string
+            errorMessageMasked:
+              type: string
+            startedAt:
+              type: string
+            endedAt:
+              type: string
+            streaming:
+              type: boolean
+- route: /console/usage
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/routingApiOperations.ts
+  operation: fetchRoutingUsage
+  operation_scope: app_shell
+  operation_id: routing.usage.list
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/ai/routing/usage
+  read_sources:
+  - ai_request_trace
+  - ai_usage_fact
+  - ai_routing_decision_log
+  query_parameters: []
+  response_schema:
+    name: RoutingUsageSnapshot
+    required:
+    - chartData
+    - modelStats
+    properties:
+      chartData:
+        type: array
+        items:
+          name: RoutingUsageData
+          type: object
+          additionalProperties: false
+          required:
+          - time
+          - requests
+          - latency
+          properties:
+            time:
+              type: string
+            requests:
+              type: integer
+              format: int64
+            latency:
+              type: integer
+              format: int64
+      modelStats:
+        type: array
+        items:
+          name: RoutingModelStats
+          type: object
+          additionalProperties: false
+          required:
+          - m
+          - req
+          - sr
+          - tok
+          - lat
+          properties:
+            m:
+              type: string
+            req:
+              type: string
+            sr:
+              type: string
+            tok:
+              type: string
+            lat:
+              type: string
 - route: /console/usage
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-usage/src/usageService.ts
   operation: fetchLogs
@@ -1165,7 +1496,7 @@ frontend_operations:
             cost:
               type: string
               format: decimal
-              description: Customer-facing spend amount for the request, normalized to 9 decimal places for console display. Uses customer_charge_amount from the usage ledger and falls back to cost_amount only for legacy rows.
+              description: Customer-facing spend amount for the request, normalized to 9 decimal places for console display. Uses customer_charge_amount from the usage ledger and never exposes upstream cost fields.
             multiplier:
               type: string
               format: decimal

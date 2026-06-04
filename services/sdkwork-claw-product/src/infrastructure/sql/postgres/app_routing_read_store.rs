@@ -1,4 +1,3 @@
-use std::collections::HashMap;
 use std::sync::Arc;
 
 use sqlx::{PgPool, Row};
@@ -27,32 +26,66 @@ SELECT
         ELSE 9
     END AS protocol,
     COALESCE(c.auth_type, 1) AS access_type,
-    COALESCE(NULLIF(c.base_url, ''), '') AS base_url,
-    COALESCE(NULLIF(c.masked_label, ''), 'configured') AS api_key,
+    COALESCE(NULLIF(cc.base_url, ''), NULLIF(c.base_url, ''), '') AS base_url,
+    COALESCE(NULLIF(cc.masked_label, ''), NULLIF(c.masked_label, ''), 'configured') AS api_key,
     COALESCE(
         (
-            SELECT jsonb_agg(selected.code ORDER BY selected.code)::text
+            SELECT jsonb_agg(selected.capability ORDER BY selected.capability)::text
             FROM (
-                SELECT DISTINCT COALESCE(NULLIF(cr.resource_code, ''), cr.resource_group_code) AS code
-                FROM ai_channel_resource cr
-                LEFT JOIN ai_resource r
-                  ON r.resource_code = cr.resource_code
-                 AND r.tenant_id = cr.tenant_id
-                 AND r.organization_id = cr.organization_id
-                 AND r.deleted_at IS NULL
-                LEFT JOIN ai_resource_group rg
-                  ON rg.group_code = cr.resource_group_code
-                 AND rg.tenant_id = cr.tenant_id
-                 AND rg.organization_id = cr.organization_id
-                 AND rg.deleted_at IS NULL
-                WHERE cr.channel_id = c.id
-                  AND cr.tenant_id = c.tenant_id
-                  AND cr.organization_id = c.organization_id
-                  AND cr.deleted_at IS NULL
-                  AND cr.status = 1
-                  AND cr.grant_type = 'allow'
-                  AND COALESCE(r.resource_type, rg.group_type, '') NOT IN ('model', 'model_api')
-                  AND COALESCE(NULLIF(cr.resource_code, ''), cr.resource_group_code, '') <> ''
+                SELECT DISTINCT capability
+                FROM (
+                    SELECT CASE LOWER(COALESCE(NULLIF(r.modality_code, ''), NULLIF(cr.resource_code, ''), NULLIF(cr.resource_group_code, '')))
+                        WHEN 'llm' THEN 'llm'
+                        WHEN 'chat' THEN 'llm'
+                        WHEN 'embedding' THEN 'llm'
+                        WHEN 'rerank' THEN 'llm'
+                        WHEN 'modality.llm' THEN 'llm'
+                        WHEN 'modality.chat' THEN 'llm'
+                        WHEN 'modality.embedding' THEN 'llm'
+                        WHEN 'modality.rerank' THEN 'llm'
+                        WHEN 'image' THEN 'image'
+                        WHEN 'vision' THEN 'image'
+                        WHEN 'modality.image' THEN 'image'
+                        WHEN 'modality.vision' THEN 'image'
+                        WHEN 'audio' THEN 'audio'
+                        WHEN 'speech' THEN 'audio'
+                        WHEN 'modality.audio' THEN 'audio'
+                        WHEN 'modality.speech' THEN 'audio'
+                        WHEN 'music' THEN 'music'
+                        WHEN 'modality.music' THEN 'music'
+                        WHEN 'sfx' THEN 'sfx'
+                        WHEN 'sound_effect' THEN 'sfx'
+                        WHEN 'sound_effects' THEN 'sfx'
+                        WHEN 'modality.sfx' THEN 'sfx'
+                        WHEN 'modality.sound_effect' THEN 'sfx'
+                        WHEN 'modality.sound_effects' THEN 'sfx'
+                        WHEN 'video' THEN 'video'
+                        WHEN 'modality.video' THEN 'video'
+                    END AS capability
+                    FROM ai_channel_resource cr
+                    LEFT JOIN ai_resource r
+                      ON r.resource_code = cr.resource_code
+                     AND r.tenant_id = cr.tenant_id
+                     AND r.organization_id = cr.organization_id
+                     AND r.deleted_at IS NULL
+                    LEFT JOIN ai_resource_group rg
+                      ON rg.group_code = cr.resource_group_code
+                     AND rg.tenant_id = cr.tenant_id
+                     AND rg.organization_id = cr.organization_id
+                     AND rg.deleted_at IS NULL
+                    WHERE cr.channel_id = c.id
+                      AND cr.tenant_id = c.tenant_id
+                      AND cr.organization_id = c.organization_id
+                      AND cr.deleted_at IS NULL
+                      AND cr.status = 1
+                      AND cr.grant_type = 'allow'
+                      AND (
+                          COALESCE(r.resource_type, rg.group_type, '') = 'modality'
+                          OR cr.resource_code LIKE 'modality.%'
+                          OR cr.resource_group_code LIKE 'modality.%'
+                      )
+                ) capability_source
+                WHERE capability IS NOT NULL
             ) selected
         ),
         '["llm"]'
@@ -69,25 +102,22 @@ SELECT
     COALESCE(c.upstream_balance_currency, '') AS balance_currency,
     COALESCE(c.consecutive_error_count, 0) AS errors
 FROM ai_channel c
+LEFT JOIN LATERAL (
+    SELECT credential.id, credential.base_url, credential.masked_label
+    FROM ai_channel_credential credential
+    WHERE credential.channel_id = c.id
+      AND credential.tenant_id = c.tenant_id
+      AND credential.organization_id = c.organization_id
+      AND credential.status = 1
+      AND credential.deleted_at IS NULL
+    ORDER BY COALESCE(credential.priority, 100) ASC, COALESCE(credential.weight, 100) DESC, credential.id ASC
+    LIMIT 1
+) cc ON true
 WHERE c.tenant_id = $1
   AND c.organization_id = $2
   AND c.deleted_at IS NULL
 ORDER BY c.priority ASC NULLS LAST, c.weight DESC NULLS LAST, c.id DESC
 LIMIT 500
-"#;
-
-const LOAD_CHANNEL_MODELS: &str = r#"
-SELECT
-    CAST(channel_id AS TEXT) AS channel_id,
-    COALESCE(NULLIF(catalog_key, ''), '') AS model
-FROM ai_channel_model
-WHERE tenant_id = $1
-  AND organization_id = $2
-  AND deleted_at IS NULL
-  AND status = 1
-  AND (effective_from IS NULL OR effective_from <= CURRENT_TIMESTAMP)
-  AND (effective_to IS NULL OR effective_to > CURRENT_TIMESTAMP)
-ORDER BY id ASC
 "#;
 
 const LOAD_ROUTING_API_KEYS: &str = r#"
@@ -360,10 +390,7 @@ impl AppRoutingReadStore for PostgresAppRoutingReadStore {
                 .fetch_all(&self.pool)
                 .await
                 .map_err(sql_error)?;
-            let models = load_models_for_channels(&self.pool, subject).await?;
-            rows.into_iter()
-                .map(|row| row_to_channel(row, &models))
-                .collect()
+            rows.into_iter().map(row_to_channel).collect()
         })
     }
 
@@ -430,31 +457,7 @@ impl AppRoutingReadStore for PostgresAppRoutingReadStore {
     }
 }
 
-async fn load_models_for_channels(
-    pool: &PgPool,
-    subject: AppRoutingSubject,
-) -> DomainResult<HashMap<String, Vec<String>>> {
-    let rows = sqlx::query(LOAD_CHANNEL_MODELS)
-        .bind(subject.tenant_id)
-        .bind(subject.organization_id)
-        .fetch_all(pool)
-        .await
-        .map_err(sql_error)?;
-    let mut models: HashMap<String, Vec<String>> = HashMap::new();
-    for row in rows {
-        let channel_id = string_cell(&row, "channel_id");
-        let model = string_cell(&row, "model");
-        if !model.trim().is_empty() {
-            models.entry(channel_id).or_default().push(model);
-        }
-    }
-    Ok(models)
-}
-
-fn row_to_channel(
-    row: sqlx::postgres::PgRow,
-    models: &HashMap<String, Vec<String>>,
-) -> DomainResult<AppRoutingChannelItem> {
+fn row_to_channel(row: sqlx::postgres::PgRow) -> DomainResult<AppRoutingChannelItem> {
     let id = string_cell(&row, "id");
     let capabilities = parse_string_array(&string_cell(&row, "capabilities_json"))?;
     let errors = integer_cell(&row, "errors");
@@ -472,7 +475,7 @@ fn row_to_channel(
         access_type: access_type_label(required_integer_cell(&row, "access_type")?)?,
         base_url: string_cell(&row, "base_url"),
         api_key: string_cell(&row, "api_key"),
-        models: models.get(&id).cloned().unwrap_or_default(),
+        models: Vec::new(),
         is_multimodal: capabilities.iter().any(|capability| capability != "llm"),
         capabilities,
         timeout_ms: row.try_get("timeout_ms").ok().flatten(),
@@ -573,16 +576,54 @@ fn require_subject(subject: Option<AppRoutingSubject>) -> DomainResult<AppRoutin
 }
 
 fn parse_string_array(value: &str) -> DomainResult<Vec<String>> {
-    let mut parsed: Vec<String> = serde_json::from_str(value).map_err(|error| {
+    let parsed: Vec<String> = serde_json::from_str(value).map_err(|error| {
         DomainError::new(format!(
             "invalid routing channel capabilities json from database row: {error}"
         ))
     })?;
-    parsed.retain(|value| !value.trim().is_empty());
-    if parsed.is_empty() {
-        parsed.push("llm".to_owned());
+    let mut normalized = Vec::new();
+    for value in parsed {
+        let Some(capability) = normalize_capability(&value) else {
+            continue;
+        };
+        if !normalized.iter().any(|value| value == capability) {
+            normalized.push(capability.to_owned());
+        }
     }
-    Ok(parsed)
+    if normalized.is_empty() {
+        normalized.push("llm".to_owned());
+    }
+    Ok(normalized)
+}
+
+fn normalize_capability(value: &str) -> Option<&'static str> {
+    match value.trim().to_ascii_lowercase().as_str() {
+        "" => None,
+        "llm" | "chat" | "completion" | "completions" | "response" | "responses" | "embedding"
+        | "embeddings" | "rerank" | "modality.llm" | "modality.chat" | "modality.embedding"
+        | "modality.rerank" => Some("llm"),
+        "image" | "images" | "vision" | "modality.image" | "modality.images"
+        | "modality.vision" => Some("image"),
+        "audio" | "speech" | "stt" | "tts" | "modality.audio" | "modality.speech"
+        | "modality.stt" | "modality.tts" => Some("audio"),
+        "music" | "modality.music" => Some("music"),
+        "sfx"
+        | "sound_effect"
+        | "sound_effects"
+        | "modality.sfx"
+        | "modality.sound_effect"
+        | "modality.sound_effects" => Some("sfx"),
+        "video" | "videos" | "modality.video" | "modality.videos" => Some("video"),
+        value
+            if value.starts_with("vendor.")
+                || value.starts_with("api.")
+                || value.starts_with("model.")
+                || value.starts_with("bundle.") =>
+        {
+            None
+        }
+        _ => None,
+    }
 }
 
 fn string_cell(row: &sqlx::postgres::PgRow, column: &str) -> String {

@@ -5,10 +5,9 @@ use std::fmt::{Display, Formatter};
 use std::sync::atomic::{AtomicU64, Ordering};
 
 use crate::domain::{
-    model_catalog_scope_matches_key, parse_model_catalog_identity, provider_native_model_id,
-    BillingMeter, DomainError, DomainResult, ModelProviderRoute, ProviderChannelGroupBinding,
-    ProviderChannelRoute, RouteCandidate, RoutingCapability, RoutingPolicy, RoutingPolicyScope,
-    RoutingRule,
+    parse_model_catalog_identity, provider_native_model_id, BillingMeter, DomainError,
+    DomainResult, ModelProviderRoute, ProviderChannelGroupBinding, ProviderChannelRoute,
+    RouteCandidate, RoutingCapability, RoutingPolicy, RoutingPolicyScope, RoutingRule,
 };
 use crate::ports::PricingCatalog;
 
@@ -53,6 +52,9 @@ pub struct SelectProviderRouteQuery {
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct SelectedProviderRoute {
     pub route: ModelProviderRoute,
+    pub group_id: i64,
+    pub group_code: String,
+    pub pricing_plan_code: String,
     pub policy_id: Option<i64>,
     pub rule_id: Option<i64>,
 }
@@ -75,6 +77,9 @@ pub struct SelectProviderChannelRouteQuery {
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct SelectedProviderChannelRoute {
     pub route: ProviderChannelRoute,
+    pub group_id: i64,
+    pub group_code: String,
+    pub pricing_plan_code: String,
     pub policy_id: Option<i64>,
     pub rule_id: Option<i64>,
 }
@@ -170,12 +175,10 @@ impl<'a, C: PricingCatalog> ProviderRouteSelector<'a, C> {
     ) -> Result<SelectedProviderRoutePlan, ProviderRouteSelectionError> {
         let channel_routes = self.catalog.list_provider_channel_routes();
         let channel_routes_loaded = channel_routes.len();
-        let model_scope_keys = [query.catalog_key.as_str(), query.requested_model.as_str()];
         let api_scope_keys = [query.api_code.as_str()];
         let group_bindings = channel_group_bindings(
             &channel_routes,
             query.context.group_id,
-            &model_scope_keys,
             &api_scope_keys,
             query.capability,
         );
@@ -243,7 +246,6 @@ impl<'a, C: PricingCatalog> ProviderRouteSelector<'a, C> {
         let group_bindings = channel_group_bindings(
             &channel_routes,
             query.context.group_id,
-            &[],
             &api_scope_keys,
             query.capability,
         );
@@ -270,7 +272,9 @@ impl<'a, C: PricingCatalog> ProviderRouteSelector<'a, C> {
                 PolicyScopeChannelRouteSelection::HardError(error) => return Err(error),
             }
         }
-        if let Some(selection) = self.select_group_bound_channel_route(&routes, &group_bindings) {
+        if let Some(selection) =
+            self.select_group_bound_channel_route(&routes, &group_bindings, &query.context)
+        {
             return Ok(selection);
         }
         if let Some(error) = last_unavailable {
@@ -361,10 +365,13 @@ impl<'a, C: PricingCatalog> ProviderRouteSelector<'a, C> {
                     return PolicyScopeRouteSelection::Planned(SelectedProviderRoutePlan {
                         routes: routes
                             .into_iter()
-                            .map(|route| SelectedProviderRoute {
-                                route,
-                                policy_id: Some(policy.id),
-                                rule_id: Some(rule.id),
+                            .map(|route| {
+                                selected_provider_route(
+                                    route,
+                                    &query.context,
+                                    Some(policy.id),
+                                    Some(rule.id),
+                                )
                             })
                             .collect(),
                         policy_id: Some(policy.id),
@@ -455,11 +462,12 @@ impl<'a, C: PricingCatalog> ProviderRouteSelector<'a, C> {
             match self.evaluate_candidate_channel_routes(routes, candidate_chain) {
                 CandidateChannelRouteEvaluation::Selected(route) => {
                     return PolicyScopeChannelRouteSelection::Selected(
-                        SelectedProviderChannelRoute {
+                        selected_provider_channel_route(
                             route,
-                            policy_id: Some(policy.id),
-                            rule_id: Some(rule.id),
-                        },
+                            &query.context,
+                            Some(policy.id),
+                            Some(rule.id),
+                        ),
                     );
                 }
                 CandidateChannelRouteEvaluation::NoCallableCandidate => {}
@@ -568,7 +576,7 @@ impl<'a, C: PricingCatalog> ProviderRouteSelector<'a, C> {
                     continue;
                 }
                 match self.ensure_route_is_priced(query, &route) {
-                    Ok(()) => selected_routes.push(route),
+                    Ok(()) => push_unique_model_route(&mut selected_routes, route),
                     Err(error) => {
                         pricing_error.get_or_insert(error);
                     }
@@ -604,11 +612,7 @@ impl<'a, C: PricingCatalog> ProviderRouteSelector<'a, C> {
             CandidateRouteEvaluation::Planned(routes) => Ok(Some(SelectedProviderRoutePlan {
                 routes: routes
                     .into_iter()
-                    .map(|route| SelectedProviderRoute {
-                        route,
-                        policy_id: None,
-                        rule_id: None,
-                    })
+                    .map(|route| selected_provider_route(route, &query.context, None, None))
                     .collect(),
                 policy_id: None,
                 rule_id: None,
@@ -632,15 +636,37 @@ impl<'a, C: PricingCatalog> ProviderRouteSelector<'a, C> {
     ) -> Vec<ModelProviderRoute> {
         let model_routes = routes
             .iter()
-            .filter(|route| {
-                route.channel_id == candidate.channel_id
-                    && candidate_region_matches(
+            .filter_map(|route| {
+                if route.channel_id != candidate.channel_id
+                    || !candidate_region_matches(
                         &route.region_code,
                         candidate.region_code.as_deref(),
                     )
-                    && model_route_matches_request_api(route, &query.api_code)
+                    || !model_route_matches_request_api(route, &query.api_code)
+                {
+                    return None;
+                }
+                if route.credential_id.is_some() && self.route_is_callable(route) {
+                    return Some(route.clone());
+                }
+                let channel_route = channel_routes
+                    .iter()
+                    .filter(|channel_route| {
+                        channel_route.channel_id == route.channel_id
+                            && channel_route.provider_code == route.provider_code
+                            && same_region(&channel_route.region_code, &route.region_code)
+                            && self.channel_route_is_callable(channel_route)
+                    })
+                    .cloned()
+                    .collect::<Vec<_>>()
+                    .pipe(order_channel_credential_routes)
+                    .into_iter()
+                    .next();
+                Some(match channel_route {
+                    Some(channel_route) => apply_channel_route_account(route.clone(), &channel_route),
+                    None => route.clone(),
+                })
             })
-            .cloned()
             .collect::<Vec<_>>();
         if !model_routes.is_empty() {
             return order_model_credential_routes(model_routes);
@@ -697,6 +723,7 @@ impl<'a, C: PricingCatalog> ProviderRouteSelector<'a, C> {
         &self,
         routes: &[ProviderChannelRoute],
         group_bindings: &ChannelGroupBindings,
+        context: &AuthenticatedApiKeyContext,
     ) -> Option<SelectedProviderChannelRoute> {
         if group_bindings.unrestricted() {
             return None;
@@ -704,13 +731,9 @@ impl<'a, C: PricingCatalog> ProviderRouteSelector<'a, C> {
 
         let candidates = group_bound_channel_route_candidates(routes, group_bindings);
         match self.evaluate_candidate_channel_routes(routes, candidates) {
-            CandidateChannelRouteEvaluation::Selected(route) => {
-                Some(SelectedProviderChannelRoute {
-                    route,
-                    policy_id: None,
-                    rule_id: None,
-                })
-            }
+            CandidateChannelRouteEvaluation::Selected(route) => Some(selected_provider_channel_route(
+                route, context, None, None,
+            )),
             CandidateChannelRouteEvaluation::NoCallableCandidate => None,
         }
     }
@@ -781,6 +804,38 @@ impl SelectedProviderRoutePlan {
             .first()
             .cloned()
             .expect("selected provider route plan must contain at least one route")
+    }
+}
+
+fn selected_provider_route(
+    route: ModelProviderRoute,
+    context: &AuthenticatedApiKeyContext,
+    policy_id: Option<i64>,
+    rule_id: Option<i64>,
+) -> SelectedProviderRoute {
+    SelectedProviderRoute {
+        route,
+        group_id: context.group_id,
+        group_code: context.group_code.clone(),
+        pricing_plan_code: context.pricing_plan_code.clone(),
+        policy_id,
+        rule_id,
+    }
+}
+
+fn selected_provider_channel_route(
+    route: ProviderChannelRoute,
+    context: &AuthenticatedApiKeyContext,
+    policy_id: Option<i64>,
+    rule_id: Option<i64>,
+) -> SelectedProviderChannelRoute {
+    SelectedProviderChannelRoute {
+        route,
+        group_id: context.group_id,
+        group_code: context.group_code.clone(),
+        pricing_plan_code: context.pricing_plan_code.clone(),
+        policy_id,
+        rule_id,
     }
 }
 
@@ -991,7 +1046,6 @@ fn log_unavailable_model_route_diagnostics(
 fn channel_group_bindings(
     routes: &[ProviderChannelRoute],
     group_id: i64,
-    model_scope_keys: &[&str],
     api_scope_keys: &[&str],
     capability: RoutingCapability,
 ) -> ChannelGroupBindings {
@@ -1005,8 +1059,7 @@ fn channel_group_bindings(
                 if binding.group_id != group_id {
                     return false;
                 }
-                binding_matches_request_scope(binding, model_scope_keys, api_scope_keys)
-                    && binding_matches_api_scope(binding, api_scope_keys)
+                binding_matches_api_scope(binding, api_scope_keys)
                     && binding_matches_capability(binding, capability)
             })
             .cloned()
@@ -1018,48 +1071,12 @@ fn channel_group_bindings(
     bindings
 }
 
-fn binding_matches_request_scope(
-    binding: &ProviderChannelGroupBinding,
-    model_scope_keys: &[&str],
-    api_scope_keys: &[&str],
-) -> bool {
-    if binding.model_scope.is_empty() {
-        return true;
-    }
-    if !model_scope_keys.is_empty() {
-        return binding_matches_model_scope(binding, model_scope_keys);
-    }
-
-    if api_scope_keys.is_empty() {
-        return false;
-    }
-
-    !binding.api_scope.is_empty() && binding_matches_api_scope(binding, api_scope_keys)
-}
-
 fn best_group_binding(
     bindings: &[ProviderChannelGroupBinding],
 ) -> Option<&ProviderChannelGroupBinding> {
     bindings
         .iter()
         .min_by_key(|binding| (binding.priority, Reverse(binding.weight)))
-}
-
-fn binding_matches_model_scope(
-    binding: &ProviderChannelGroupBinding,
-    model_scope_keys: &[&str],
-) -> bool {
-    if binding.model_scope.is_empty() {
-        return true;
-    }
-    if model_scope_keys.is_empty() {
-        return false;
-    }
-    binding.model_scope.iter().any(|scope| {
-        model_scope_keys
-            .iter()
-            .any(|key| model_catalog_scope_matches_key(scope, key))
-    })
 }
 
 fn binding_matches_api_scope(
@@ -1156,6 +1173,28 @@ fn synthetic_model_route_from_channel_route(
     model_route
 }
 
+fn apply_channel_route_account(
+    route: ModelProviderRoute,
+    channel_route: &ProviderChannelRoute,
+) -> ModelProviderRoute {
+    let mut route = route
+        .with_region_code(&channel_route.region_code)
+        .with_credential(
+            channel_route.credential_id,
+            channel_route.credential_rotation.clone(),
+            channel_route.credential_priority,
+            channel_route.credential_weight,
+        )
+        .with_provider_endpoint(
+            channel_route.base_url.clone(),
+            channel_route.secret_ref.clone(),
+        )
+        .with_auth_profile(channel_route.auth_profile.clone());
+    route.timeout_ms = channel_route.timeout_ms;
+    route.retry_policy = channel_route.retry_policy.clone();
+    route
+}
+
 static CREDENTIAL_ROTATION_COUNTER: AtomicU64 = AtomicU64::new(0);
 
 trait Pipe: Sized {
@@ -1190,6 +1229,28 @@ fn order_model_credential_routes(mut routes: Vec<ModelProviderRoute>) -> Vec<Mod
         "round_robin" | "random" => rotate_model_routes(routes, strategy),
         _ => routes,
     }
+}
+
+fn push_unique_model_route(routes: &mut Vec<ModelProviderRoute>, route: ModelProviderRoute) {
+    if routes
+        .iter()
+        .any(|existing| same_model_route_target(existing, &route))
+    {
+        return;
+    }
+    routes.push(route);
+}
+
+fn same_model_route_target(left: &ModelProviderRoute, right: &ModelProviderRoute) -> bool {
+    left.channel_id == right.channel_id
+        && left.credential_id == right.credential_id
+        && left.region_code == right.region_code
+        && left.provider_code == right.provider_code
+        && left.catalog_key == right.catalog_key
+        && left.api_code == right.api_code
+        && left.provider_model == right.provider_model
+        && left.base_url == right.base_url
+        && left.secret_ref == right.secret_ref
 }
 
 fn order_channel_credential_routes(

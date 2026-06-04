@@ -2,6 +2,7 @@ use sdkwork_claw_product::application::{PasswordHasher, Pbkdf2Sha256PasswordHash
 use sdkwork_claw_product::domain::DecimalValue;
 use sdkwork_claw_product::infrastructure::sql::installer::{
     CatalogRefreshOptions, DatabaseInstallOptions, DatabaseInstaller, InstallationStatus,
+    CURRENT_SCHEMA_VERSION,
 };
 use sdkwork_claw_product::infrastructure::sql::sqlite::{
     SqliteAdminMarketingStore, SqliteAdminUserStore, SqliteAppSkillsReadStore, SqliteForumStore,
@@ -28,7 +29,7 @@ use std::path::{Path, PathBuf};
 use std::sync::atomic::{AtomicU64, Ordering};
 use std::time::{SystemTime, UNIX_EPOCH};
 
-const SCHEMA_VERSION: &str = "2026.05.08.1";
+const SCHEMA_VERSION: &str = CURRENT_SCHEMA_VERSION;
 const CATALOG_VERSION: &str = "2026.05.08.1";
 
 static CATALOG_ROOT_COUNTER: AtomicU64 = AtomicU64::new(0);
@@ -140,67 +141,21 @@ async fn sqlite_installer_installs_schema_and_sdkwork_models_catalog_once() {
     assert_table_exists(&pool, "ai_resource").await;
     assert_table_exists(&pool, "ai_resource_group").await;
     assert_table_exists(&pool, "ai_resource_group_item").await;
-    assert_table_exists(&pool, "ai_channel_vendor").await;
     assert_table_exists(&pool, "ai_channel_resource").await;
-    assert_table_exists(&pool, "ai_channel_endpoint").await;
-    assert_sqlite_columns_exist(
-        &pool,
-        "ai_channel_endpoint",
-        &[
-            "channel_id",
-            "provider_code",
-            "channel_code",
-            "channel_type",
-            "vendor_code",
-            "region_code",
-            "api_code",
-            "base_url",
-            "priority",
-            "weight",
-            "health_status",
-        ],
-    )
-    .await;
-    assert_sqlite_index_exists(&pool, "uk_ai_channel_endpoint_scope").await;
-    assert_sqlite_index_columns(
-        &pool,
-        "uk_ai_channel_endpoint_scope",
-        true,
-        &[
-            "tenant_id",
-            "organization_id",
-            "channel_id",
-            "vendor_code",
-            "region_code",
-            "api_code",
-        ],
-    )
-    .await;
-    assert_sqlite_index_exists(&pool, "idx_ai_channel_endpoint_lookup").await;
-    assert_sqlite_index_columns(
-        &pool,
-        "idx_ai_channel_endpoint_lookup",
-        false,
-        &[
-            "tenant_id",
-            "organization_id",
-            "status",
-            "channel_id",
-            "vendor_code",
-            "region_code",
-            "api_code",
-            "priority",
-            "weight",
-            "id",
-        ],
-    )
-    .await;
-    assert_sqlite_columns_exist(
-        &pool,
-        "ai_channel_model",
-        &["provider_native_model", "api_code"],
-    )
-    .await;
+    assert_table_absent(&pool, "ai_channel_endpoint").await;
+    assert_table_absent(&pool, "ai_channel_model").await;
+    assert_table_absent(&pool, "ai_channel_vendor").await;
+    assert_table_absent(&pool, "ai_rate_limit_bucket").await;
+    assert_table_absent(&pool, "ai_resource_route_profile").await;
+    assert_table_absent(&pool, "ai_route_idempotency").await;
+    assert_table_absent(&pool, "ai_site_model").await;
+    assert_table_absent(&pool, "ai_route_candidate").await;
+    assert_table_absent(&pool, "ai_usage_service_provider_chain").await;
+    assert_table_absent(&pool, "commerce_usage_service_provider_settlement").await;
+    assert_table_absent(&pool, "commerce_usage_service_provider_statement_item").await;
+    assert_table_absent(&pool, "integration_service_provider_account_binding").await;
+    assert_table_absent(&pool, "integration_service_provider_contract_version").await;
+    assert_table_absent(&pool, "integration_service_provider_price_change_request").await;
     assert_sqlite_columns_exist(&pool, "ai_model_pricing", &["region_code"]).await;
     assert_sqlite_columns_exist(
         &pool,
@@ -1608,111 +1563,6 @@ async fn sqlite_installer_repairs_missing_model_catalog_capability_projection_ro
     assert!(repaired.changed);
 
     assert_catalog_capability_projection_rows(&pool, &catalog).await;
-}
-
-#[tokio::test]
-async fn sqlite_installer_repairs_missing_default_channel_endpoints_on_startup_check() {
-    let pool = repair_sqlite_pool().await;
-    let installer = installer(pool.clone());
-
-    sqlx::query(
-        r#"
-        DELETE FROM ai_channel_endpoint
-        WHERE tenant_id = 10
-          AND organization_id = 20
-          AND json_extract(metadata, '$.catalogCode') = 'sdkwork-ai-routing'
-        "#,
-    )
-    .execute(&pool)
-    .await
-    .unwrap();
-
-    sqlx::query(
-        r#"
-        INSERT INTO ai_channel
-            (id, uuid, tenant_id, organization_id, provider_code, channel_code, channel_name, channel_type, status)
-        VALUES
-            (999003, 'test-shadow-openai-channel', 10, 20, 'openai', 'openai-shadow', 'OpenAI shadow', 'official', 0)
-        ON CONFLICT(tenant_id, organization_id, channel_code) DO UPDATE SET
-            deleted_at = NULL
-        "#,
-    )
-    .execute(&pool)
-    .await
-    .unwrap();
-
-    sqlx::query(
-        r#"
-        INSERT INTO ai_channel_endpoint
-            (uuid, tenant_id, organization_id, data_scope, status, metadata,
-             channel_id, provider_code, channel_code, channel_type, vendor_code, region_code,
-             api_code, base_url, priority, weight, health_status)
-        SELECT
-            'test-shadow-default-endpoint-' || e.endpoint_code,
-            10,
-            20,
-            1,
-            0,
-            '{"catalogCode":"sdkwork-ai-routing","itemType":"wrong_channel_shadow"}',
-            999003,
-            'openai',
-            'openai-shadow',
-            'official',
-            'openai',
-            'global',
-            e.endpoint_code,
-            'https://api.openai.com/v1',
-            100,
-            100,
-            1
-        FROM ai_api_endpoint e
-        WHERE e.tenant_id = 0
-          AND e.organization_id = 0
-          AND e.endpoint_code LIKE 'openai.%'
-          AND e.deleted_at IS NULL
-        "#,
-    )
-    .execute(&pool)
-    .await
-    .unwrap();
-
-    assert_eq!(
-        InstallationStatus::UpgradeRequired,
-        installer.status().await.unwrap(),
-        "installer status must detect missing default admin channel endpoint seed rows attached to openai-default"
-    );
-
-    let repaired = installer.ensure_installed().await.unwrap();
-    assert_eq!(InstallationStatus::Installed, repaired.status);
-    assert!(repaired.changed);
-
-    let repaired_endpoint_count: i64 = sqlx::query_scalar(
-        r#"
-        SELECT COUNT(1)
-        FROM ai_channel_endpoint e
-        INNER JOIN ai_channel c
-          ON c.id = e.channel_id
-         AND c.tenant_id = e.tenant_id
-         AND c.organization_id = e.organization_id
-        WHERE e.tenant_id = 10
-          AND e.organization_id = 20
-          AND e.vendor_code = 'openai'
-          AND e.region_code = 'global'
-          AND e.base_url = 'https://api.openai.com/v1'
-          AND e.status = 0
-          AND e.deleted_at IS NULL
-          AND c.channel_code = 'openai-default'
-          AND c.deleted_at IS NULL
-          AND json_extract(e.metadata, '$.catalogCode') = 'sdkwork-ai-routing'
-        "#,
-    )
-    .fetch_one(&pool)
-    .await
-    .unwrap();
-    assert!(
-        repaired_endpoint_count >= 3,
-        "startup repair must restore the default admin channel endpoints"
-    );
 }
 
 #[tokio::test]
@@ -3678,9 +3528,9 @@ async fn sqlite_installer_refresh_deactivates_models_removed_from_vendor_catalog
         })
         .await
         .unwrap();
-    assert_active_model_graph(&pool, "gpt-5.2", 1).await;
+    assert_active_model_graph(&pool, "gpt-5.5", 1).await;
 
-    remove_model_from_catalog_root(&catalog_root, "openai", "gpt-5.2");
+    remove_model_from_catalog_root(&catalog_root, "openai", "gpt-5.5");
     installer
         .refresh_catalog(CatalogRefreshOptions {
             catalog_root: Some(catalog_root.to_string_lossy().to_string()),
@@ -3692,8 +3542,8 @@ async fn sqlite_installer_refresh_deactivates_models_removed_from_vendor_catalog
         .await
         .unwrap();
 
-    assert_active_model_graph(&pool, "gpt-5.2", 0).await;
-    assert_active_model_graph(&pool, "gpt-5.5", 1).await;
+    assert_active_model_graph(&pool, "gpt-5.5", 0).await;
+    assert_active_model_graph(&pool, "gpt-5.4", 1).await;
 
     remove_catalog_root(catalog_root);
 }
@@ -3760,10 +3610,10 @@ async fn sqlite_installer_refresh_reactivates_soft_deleted_catalog_rows() {
         })
         .await
         .unwrap();
-    assert_active_model_graph(&pool, "gpt-5.2", 1).await;
+    assert_active_model_graph(&pool, "gpt-5.5", 1).await;
 
     let family_code: String = sqlx::query_scalar(
-        "SELECT family_code FROM ai_model WHERE model = 'gpt-5.2' AND status = 1",
+        "SELECT family_code FROM ai_model WHERE model = 'gpt-5.5' AND status = 1",
     )
     .fetch_one(&pool)
     .await
@@ -3783,10 +3633,10 @@ async fn sqlite_installer_refresh_reactivates_soft_deleted_catalog_rows() {
         true,
     )
     .await;
-    soft_delete_catalog_row(&pool, "ai_model", "model = 'gpt-5.2'", true).await;
-    soft_delete_catalog_row(&pool, "ai_model_capability", "model = 'gpt-5.2'", true).await;
-    soft_delete_catalog_row(&pool, "ai_model_pricing", "model = 'gpt-5.2'", true).await;
-    soft_delete_catalog_row(&pool, "ai_model_rank_snapshot", "model = 'gpt-5.2'", false).await;
+    soft_delete_catalog_row(&pool, "ai_model", "model = 'gpt-5.5'", true).await;
+    soft_delete_catalog_row(&pool, "ai_model_capability", "model = 'gpt-5.5'", true).await;
+    soft_delete_catalog_row(&pool, "ai_model_pricing", "model = 'gpt-5.5'", true).await;
+    soft_delete_catalog_row(&pool, "ai_model_rank_snapshot", "model = 'gpt-5.5'", false).await;
 
     installer
         .refresh_catalog(CatalogRefreshOptions {
@@ -3814,10 +3664,10 @@ async fn sqlite_installer_refresh_reactivates_soft_deleted_catalog_rows() {
         true,
     )
     .await;
-    assert_catalog_row_restored(&pool, "ai_model", "model = 'gpt-5.2'", true).await;
-    assert_catalog_row_restored(&pool, "ai_model_capability", "model = 'gpt-5.2'", true).await;
-    assert_catalog_row_restored(&pool, "ai_model_pricing", "model = 'gpt-5.2'", true).await;
-    assert_catalog_row_restored(&pool, "ai_model_rank_snapshot", "model = 'gpt-5.2'", false).await;
+    assert_catalog_row_restored(&pool, "ai_model", "model = 'gpt-5.5'", true).await;
+    assert_catalog_row_restored(&pool, "ai_model_capability", "model = 'gpt-5.5'", true).await;
+    assert_catalog_row_restored(&pool, "ai_model_pricing", "model = 'gpt-5.5'", true).await;
+    assert_catalog_row_restored(&pool, "ai_model_rank_snapshot", "model = 'gpt-5.5'", false).await;
     assert_pricing_snapshot_contains_catalog_models(&pool, &catalog).await;
 
     remove_catalog_root(catalog_root);
@@ -3829,7 +3679,7 @@ async fn sqlite_installer_status_detects_catalog_rows_hidden_by_soft_delete_mark
     let installer = installer(pool.clone());
 
     let family_code: String = sqlx::query_scalar(
-        "SELECT family_code FROM ai_model WHERE model = 'gpt-5.2' AND status = 1",
+        "SELECT family_code FROM ai_model WHERE model = 'gpt-5.5' AND status = 1",
     )
     .fetch_one(&pool)
     .await
@@ -3848,9 +3698,9 @@ async fn sqlite_installer_status_detects_catalog_rows_hidden_by_soft_delete_mark
         format!("vendor_code = 'openai' AND family_code = '{family_code}'").as_str(),
     )
     .await;
-    mark_catalog_row_deleted_but_active(&pool, "ai_model", "model = 'gpt-5.2'").await;
-    mark_catalog_row_deleted_but_active(&pool, "ai_model_capability", "model = 'gpt-5.2'").await;
-    mark_catalog_row_deleted_but_active(&pool, "ai_model_pricing", "model = 'gpt-5.2'").await;
+    mark_catalog_row_deleted_but_active(&pool, "ai_model", "model = 'gpt-5.5'").await;
+    mark_catalog_row_deleted_but_active(&pool, "ai_model_capability", "model = 'gpt-5.5'").await;
+    mark_catalog_row_deleted_but_active(&pool, "ai_model_pricing", "model = 'gpt-5.5'").await;
 
     assert_eq!(
         InstallationStatus::UpgradeRequired,
@@ -3876,9 +3726,9 @@ async fn sqlite_installer_status_detects_catalog_rows_hidden_by_soft_delete_mark
         true,
     )
     .await;
-    assert_catalog_row_restored(&pool, "ai_model", "model = 'gpt-5.2'", true).await;
-    assert_catalog_row_restored(&pool, "ai_model_capability", "model = 'gpt-5.2'", true).await;
-    assert_catalog_row_restored(&pool, "ai_model_pricing", "model = 'gpt-5.2'", true).await;
+    assert_catalog_row_restored(&pool, "ai_model", "model = 'gpt-5.5'", true).await;
+    assert_catalog_row_restored(&pool, "ai_model_capability", "model = 'gpt-5.5'", true).await;
+    assert_catalog_row_restored(&pool, "ai_model_pricing", "model = 'gpt-5.5'", true).await;
 }
 
 #[test]

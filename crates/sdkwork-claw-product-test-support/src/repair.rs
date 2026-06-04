@@ -8,7 +8,7 @@ use sqlx::{query, SqlitePool};
 use std::fs;
 use std::path::Path;
 
-const REPAIR_SQLITE_TEMPLATE_REVISION: &str = "v3";
+const REPAIR_SQLITE_TEMPLATE_REVISION: &str = "v4";
 
 pub async fn repair_sqlite_pool() -> SqlitePool {
     let template_path = sqlite_template_path("repair", REPAIR_SQLITE_TEMPLATE_REVISION);

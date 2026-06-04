@@ -2,8 +2,8 @@ use std::cmp::Reverse;
 use std::collections::BTreeMap;
 
 use crate::domain::{
-    model_catalog_scope_matches_key, AiRouteFailureStrategy, AiRouteModelRequirement,
-    AiRouteStrategy, BillingMeter, ProviderChannelRoute, RoutingCapability,
+    AiRouteFailureStrategy, AiRouteModelRequirement, AiRouteStrategy, BillingMeter,
+    ProviderChannelRoute, RoutingCapability,
 };
 use crate::ports::PricingCatalog;
 
@@ -92,15 +92,9 @@ impl AiRoutingIndex {
         group_id: i64,
         api_code: &str,
         capability: RoutingCapability,
-        catalog_key: Option<&str>,
-        requested_model: Option<&str>,
+        _catalog_key: Option<&str>,
+        _requested_model: Option<&str>,
     ) -> Vec<ProviderChannelRoute> {
-        let model_scope_keys = [catalog_key.unwrap_or(""), requested_model.unwrap_or("")];
-        let model_scope_keys = model_scope_keys
-            .iter()
-            .copied()
-            .filter(|value| !value.trim().is_empty())
-            .collect::<Vec<_>>();
         let api_scope_keys = [api_code];
 
         if self.group_binding_count == 0 {
@@ -133,12 +127,6 @@ impl AiRoutingIndex {
                     .iter()
                     .filter(|binding| {
                         binding.group_id == group_id
-                            && binding_matches_request_scope(
-                                binding.model_scope.as_slice(),
-                                binding.api_scope.as_slice(),
-                                &model_scope_keys,
-                                &api_scope_keys,
-                            )
                             && binding_matches_api_scope(
                                 binding.api_scope.as_slice(),
                                 &api_scope_keys,
@@ -681,40 +669,6 @@ where
             )
         })
         .min()
-}
-
-fn binding_matches_request_scope(
-    model_scope: &[String],
-    api_scope: &[String],
-    model_scope_keys: &[&str],
-    api_scope_keys: &[&str],
-) -> bool {
-    if model_scope.is_empty() {
-        return true;
-    }
-    if !model_scope_keys.is_empty() {
-        return binding_matches_model_scope(model_scope, model_scope_keys);
-    }
-
-    if api_scope_keys.is_empty() {
-        return false;
-    }
-
-    !api_scope.is_empty() && binding_matches_api_scope(api_scope, api_scope_keys)
-}
-
-fn binding_matches_model_scope(model_scope: &[String], model_scope_keys: &[&str]) -> bool {
-    if model_scope.is_empty() {
-        return true;
-    }
-    if model_scope_keys.is_empty() {
-        return false;
-    }
-    model_scope.iter().any(|scope| {
-        model_scope_keys
-            .iter()
-            .any(|key| model_catalog_scope_matches_key(scope, key))
-    })
 }
 
 fn binding_matches_api_scope(api_scope: &[String], api_scope_keys: &[&str]) -> bool {

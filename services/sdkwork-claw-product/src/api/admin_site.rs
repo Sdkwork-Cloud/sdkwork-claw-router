@@ -16,12 +16,9 @@ use crate::api::response::PlusApiResult;
 use crate::application::EntityUuidGenerator;
 use crate::domain::DomainError;
 use crate::ports::{
-    AdminSiteChannelItem, AdminSiteConnectionCheckItem, AdminSiteItem, AdminSiteModelCommand,
-    AdminSiteModelItem, AdminSiteModelPatch, AdminSiteStore, AdminSiteSubject,
-    CreateAdminSiteCommand, CreateAdminSiteModelCommand, DeleteAdminSiteCommand,
-    DeleteAdminSiteModelCommand, ListAdminSiteChannelsQuery, ListAdminSiteModelsQuery,
-    ListAdminSitesQuery, ReplaceAdminSiteModelsCommand, TestAdminSiteConnectionCommand,
-    UpdateAdminSiteCommand, UpdateAdminSiteModelCommand,
+    AdminSiteChannelItem, AdminSiteConnectionCheckItem, AdminSiteItem, AdminSiteStore,
+    AdminSiteSubject, CreateAdminSiteCommand, DeleteAdminSiteCommand, ListAdminSiteChannelsQuery,
+    ListAdminSitesQuery, TestAdminSiteConnectionCommand, UpdateAdminSiteCommand,
 };
 
 const MAX_CODE_LEN: usize = 128;
@@ -37,8 +34,6 @@ const MAX_DOMAIN_LEN: usize = 255;
 const MAX_VENDOR_CODES: usize = 64;
 const MAX_MEDIA_LABEL_LEN: usize = 64;
 const MAX_MEDIA_LOCATOR_LEN: usize = 1_048_576;
-const MAX_CAPABILITIES: usize = 64;
-const MAX_REPLACE_MODELS: usize = 512;
 
 #[derive(Clone)]
 struct AdminSiteState {
@@ -95,52 +90,6 @@ struct SiteUpdateRequest {
     masked_label: Option<Option<String>>,
 }
 
-#[derive(Debug, Deserialize)]
-#[serde(rename_all = "camelCase")]
-struct SiteModelRequest {
-    model_code: Option<String>,
-    model_name: Option<String>,
-    display_name: Option<String>,
-    provider_model: Option<String>,
-    provider_native_model: Option<String>,
-    vendor_code: Option<String>,
-    modality: Option<String>,
-    capabilities: Option<Vec<String>>,
-    context_tokens: Option<i64>,
-    max_input_tokens: Option<i64>,
-    max_output_tokens: Option<i64>,
-    supports_streaming: Option<bool>,
-    supports_tools: Option<bool>,
-    supports_json_schema: Option<bool>,
-    status: Option<String>,
-}
-
-#[derive(Debug, Deserialize)]
-#[serde(rename_all = "camelCase")]
-struct SiteModelUpdateRequest {
-    model_code: Option<String>,
-    model_name: Option<String>,
-    display_name: Option<Option<String>>,
-    provider_model: Option<Option<String>>,
-    provider_native_model: Option<Option<String>>,
-    vendor_code: Option<Option<String>>,
-    modality: Option<Option<String>>,
-    capabilities: Option<Vec<String>>,
-    context_tokens: Option<Option<i64>>,
-    max_input_tokens: Option<Option<i64>>,
-    max_output_tokens: Option<Option<i64>>,
-    supports_streaming: Option<bool>,
-    supports_tools: Option<bool>,
-    supports_json_schema: Option<bool>,
-    status: Option<String>,
-}
-
-#[derive(Debug, Deserialize)]
-#[serde(rename_all = "camelCase")]
-struct ReplaceSiteModelsRequest {
-    items: Vec<SiteModelRequest>,
-}
-
 #[derive(Debug, Serialize)]
 #[serde(rename_all = "camelCase")]
 struct SiteListResponse {
@@ -183,48 +132,6 @@ struct SiteResponse {
     last_checked_at: Option<String>,
     last_sync_at: Option<String>,
     sort_order: i64,
-    status: String,
-}
-
-#[derive(Debug, Serialize)]
-#[serde(rename_all = "camelCase")]
-struct SiteModelsResponse {
-    items: Vec<SiteModelResponse>,
-}
-
-#[derive(Debug, Serialize)]
-#[serde(rename_all = "camelCase")]
-struct SiteModelEnvelope {
-    item: SiteModelResponse,
-}
-
-#[derive(Debug, Serialize)]
-#[serde(rename_all = "camelCase")]
-struct SiteModelResponse {
-    id: String,
-    site_id: String,
-    site_code: String,
-    site_service_id: String,
-    site_service_code: Option<String>,
-    service_type: String,
-    model_code: String,
-    model_name: String,
-    display_name: Option<String>,
-    provider_model: Option<String>,
-    provider_native_model: Option<String>,
-    vendor_code: Option<String>,
-    modality: Option<String>,
-    capabilities: Vec<String>,
-    context_tokens: Option<i64>,
-    max_input_tokens: Option<i64>,
-    max_output_tokens: Option<i64>,
-    supports_streaming: bool,
-    supports_tools: bool,
-    supports_json_schema: bool,
-    health_status: String,
-    last_latency_ms: Option<i64>,
-    consecutive_error_count: i64,
-    last_sync_at: Option<String>,
     status: String,
 }
 
@@ -273,16 +180,6 @@ pub fn admin_site_router_with_store(
         .route(
             "/backend/v3/api/sites/{site_id}",
             patch(update_site).delete(delete_site),
-        )
-        .route(
-            "/backend/v3/api/sites/{site_id}/models",
-            get(fetch_site_models)
-                .post(create_site_model)
-                .put(replace_site_models),
-        )
-        .route(
-            "/backend/v3/api/sites/{site_id}/models/{site_model_id}",
-            patch(update_site_model).delete(delete_site_model),
         )
         .route(
             "/backend/v3/api/sites/{site_id}/channels",
@@ -411,175 +308,6 @@ async fn delete_site(
     }
 }
 
-async fn fetch_site_models(
-    State(state): State<AdminSiteState>,
-    Path(site_id): Path<String>,
-    headers: HeaderMap,
-) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
-    let site_id = match parse_positive_id(&site_id, "site id") {
-        Ok(site_id) => site_id,
-        Err(message) => return bad_request(message),
-    };
-    match state
-        .store
-        .list_site_models(ListAdminSiteModelsQuery { subject, site_id })
-        .await
-    {
-        Ok(items) => Json(PlusApiResult::success(SiteModelsResponse {
-            items: items.into_iter().map(to_site_model_response).collect(),
-        }))
-        .into_response(),
-        Err(error) => system_response("Site model read model is unavailable", error),
-    }
-}
-
-async fn create_site_model(
-    State(state): State<AdminSiteState>,
-    Path(site_id): Path<String>,
-    headers: HeaderMap,
-    body: Bytes,
-) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
-    let site_id = match parse_positive_id(&site_id, "site id") {
-        Ok(site_id) => site_id,
-        Err(message) => return bad_request(message),
-    };
-    let request = match parse_json_body::<SiteModelRequest>(&body, "site model") {
-        Ok(request) => request,
-        Err(message) => return bad_request(message),
-    };
-    let command = match build_create_site_model_command(state.clone(), subject, site_id, request) {
-        Ok(command) => command,
-        Err(error) => return command_build_error_response(error),
-    };
-    match state.store.create_site_model(command).await {
-        Ok(item) => Json(PlusApiResult::success(SiteModelEnvelope {
-            item: to_site_model_response(item),
-        }))
-        .into_response(),
-        Err(error) if error.is_not_found() => not_found_response(error.to_string()),
-        Err(error) if error.is_conflict() => conflict_response(error),
-        Err(error) => system_response("Site model command store is unavailable", error),
-    }
-}
-
-async fn replace_site_models(
-    State(state): State<AdminSiteState>,
-    Path(site_id): Path<String>,
-    headers: HeaderMap,
-    body: Bytes,
-) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
-    let site_id = match parse_positive_id(&site_id, "site id") {
-        Ok(site_id) => site_id,
-        Err(message) => return bad_request(message),
-    };
-    let request = match parse_json_body::<ReplaceSiteModelsRequest>(&body, "site models replace") {
-        Ok(request) => request,
-        Err(message) => return bad_request(message),
-    };
-    if request.items.len() > MAX_REPLACE_MODELS {
-        return bad_request(format!(
-            "site model replace request cannot contain more than {MAX_REPLACE_MODELS} items"
-        ));
-    }
-    let command = match build_replace_site_models_command(state.clone(), subject, site_id, request)
-    {
-        Ok(command) => command,
-        Err(error) => return command_build_error_response(error),
-    };
-    match state.store.replace_site_models(command).await {
-        Ok(items) => Json(PlusApiResult::success(SiteModelsResponse {
-            items: items.into_iter().map(to_site_model_response).collect(),
-        }))
-        .into_response(),
-        Err(error) if error.is_not_found() => not_found_response(error.to_string()),
-        Err(error) if error.is_conflict() => conflict_response(error),
-        Err(error) => system_response("Site model command store is unavailable", error),
-    }
-}
-
-async fn update_site_model(
-    State(state): State<AdminSiteState>,
-    Path((site_id, site_model_id)): Path<(String, String)>,
-    headers: HeaderMap,
-    body: Bytes,
-) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
-    let site_id = match parse_positive_id(&site_id, "site id") {
-        Ok(site_id) => site_id,
-        Err(message) => return bad_request(message),
-    };
-    let site_model_id = match parse_positive_id(&site_model_id, "site model id") {
-        Ok(site_model_id) => site_model_id,
-        Err(message) => return bad_request(message),
-    };
-    let request = match parse_json_body::<SiteModelUpdateRequest>(&body, "site model update") {
-        Ok(request) => request,
-        Err(message) => return bad_request(message),
-    };
-    let command = match build_update_site_model_command(
-        state.clone(),
-        subject,
-        site_id,
-        site_model_id,
-        request,
-    ) {
-        Ok(command) => command,
-        Err(error) => return command_build_error_response(error),
-    };
-    match state.store.update_site_model(command).await {
-        Ok(Some(item)) => Json(PlusApiResult::success(SiteModelEnvelope {
-            item: to_site_model_response(item),
-        }))
-        .into_response(),
-        Ok(None) => not_found_response("Site model was not found"),
-        Err(error) if error.is_conflict() => conflict_response(error),
-        Err(error) => system_response("Site model command store is unavailable", error),
-    }
-}
-
-async fn delete_site_model(
-    State(state): State<AdminSiteState>,
-    Path((site_id, site_model_id)): Path<(String, String)>,
-    headers: HeaderMap,
-) -> Response {
-    let subject = match resolve_subject(&headers) {
-        Ok(subject) => subject,
-        Err(response) => return response,
-    };
-    let site_id = match parse_positive_id(&site_id, "site id") {
-        Ok(site_id) => site_id,
-        Err(message) => return bad_request(message),
-    };
-    let site_model_id = match parse_positive_id(&site_model_id, "site model id") {
-        Ok(site_model_id) => site_model_id,
-        Err(message) => return bad_request(message),
-    };
-    let command =
-        match build_delete_site_model_command(state.clone(), subject, site_id, site_model_id) {
-            Ok(command) => command,
-            Err(error) => return command_build_error_response(error),
-        };
-    match state.store.delete_site_model(command).await {
-        Ok(deleted) => Json(PlusApiResult::success(SiteDeleteResponse { deleted })).into_response(),
-        Err(error) => system_response("Site model command store is unavailable", error),
-    }
-}
-
 async fn fetch_site_channels(
     State(state): State<AdminSiteState>,
     Path(site_id): Path<String>,
@@ -670,17 +398,17 @@ fn build_create_site_command(
     subject: AdminSiteSubject,
     request: SiteRequest,
 ) -> Result<CreateAdminSiteCommand, SiteCommandBuildError> {
+    let site_uuid = generate_entity_uuid(&state)?;
+    let site_code = match normalize_optional(request.site_code, MAX_SITE_CODE_LEN) {
+        Some(value) => normalize_code(value)?,
+        None => generated_site_code(&site_uuid),
+    };
     Ok(CreateAdminSiteCommand {
         subject,
-        site_uuid: generate_entity_uuid(&state)?,
+        site_uuid,
         service_uuid: generate_entity_uuid(&state)?,
         audit_log_uuid: generate_entity_uuid(&state)?,
-        site_code: normalize_code(required_text(
-            request.site_code,
-            "siteCode",
-            "site code",
-            MAX_SITE_CODE_LEN,
-        )?)?,
+        site_code,
         site_name: required_text(request.site_name, "siteName", "site name", MAX_NAME_LEN)?,
         display_name: required_text(
             request.display_name,
@@ -783,78 +511,6 @@ fn build_delete_site_command(
     })
 }
 
-fn build_create_site_model_command(
-    state: AdminSiteState,
-    subject: AdminSiteSubject,
-    site_id: i64,
-    request: SiteModelRequest,
-) -> Result<CreateAdminSiteModelCommand, SiteCommandBuildError> {
-    Ok(CreateAdminSiteModelCommand {
-        subject,
-        site_id,
-        site_model_uuid: generate_entity_uuid(&state)?,
-        audit_log_uuid: generate_entity_uuid(&state)?,
-        input: normalize_site_model_request(request)?,
-        request_id: generate_request_id()?,
-        requested_at: now_iso_string(),
-    })
-}
-
-fn build_replace_site_models_command(
-    state: AdminSiteState,
-    subject: AdminSiteSubject,
-    site_id: i64,
-    request: ReplaceSiteModelsRequest,
-) -> Result<ReplaceAdminSiteModelsCommand, SiteCommandBuildError> {
-    let mut items = Vec::with_capacity(request.items.len());
-    for item in request.items {
-        items.push(normalize_site_model_request(item)?);
-    }
-    Ok(ReplaceAdminSiteModelsCommand {
-        subject,
-        site_id,
-        site_model_uuids: generate_entity_uuids(&state, items.len())?,
-        audit_log_uuid: generate_entity_uuid(&state)?,
-        items,
-        request_id: generate_request_id()?,
-        requested_at: now_iso_string(),
-    })
-}
-
-fn build_update_site_model_command(
-    state: AdminSiteState,
-    subject: AdminSiteSubject,
-    site_id: i64,
-    site_model_id: i64,
-    request: SiteModelUpdateRequest,
-) -> Result<UpdateAdminSiteModelCommand, SiteCommandBuildError> {
-    Ok(UpdateAdminSiteModelCommand {
-        subject,
-        site_id,
-        site_model_id,
-        audit_log_uuid: generate_entity_uuid(&state)?,
-        input: normalize_site_model_patch(request)?,
-        request_id: generate_request_id()?,
-        requested_at: now_iso_string(),
-    })
-}
-
-fn build_delete_site_model_command(
-    state: AdminSiteState,
-    subject: AdminSiteSubject,
-    site_id: i64,
-    site_model_id: i64,
-) -> Result<DeleteAdminSiteModelCommand, SiteCommandBuildError> {
-    Ok(DeleteAdminSiteModelCommand {
-        subject,
-        site_id,
-        site_model_id,
-        audit_log_uuid: generate_entity_uuid(&state)?,
-        request_id: generate_request_id()?,
-        requested_at: now_iso_string(),
-    })
-}
-
 fn build_test_site_connection_command(
     state: AdminSiteState,
     subject: AdminSiteSubject,
@@ -868,81 +524,6 @@ fn build_test_site_connection_command(
         request_id: generate_request_id()?,
         requested_at: now_iso_string(),
         persist_health,
-    })
-}
-
-fn normalize_site_model_request(
-    request: SiteModelRequest,
-) -> Result<AdminSiteModelCommand, SiteCommandBuildError> {
-    Ok(AdminSiteModelCommand {
-        model_code: normalize_code(required_text(
-            request.model_code,
-            "modelCode",
-            "model code",
-            MAX_CODE_LEN,
-        )?)?,
-        model_name: required_text(request.model_name, "modelName", "model name", MAX_NAME_LEN)?,
-        display_name: normalize_optional(request.display_name, MAX_NAME_LEN),
-        provider_model: normalize_optional(request.provider_model, MAX_CODE_LEN),
-        provider_native_model: normalize_optional(request.provider_native_model, 256),
-        vendor_code: optional_code(request.vendor_code)?,
-        modality: normalize_optional(request.modality, MAX_REGION_LEN),
-        capabilities: normalize_capabilities(request.capabilities.unwrap_or_default())?,
-        context_tokens: validate_optional_non_negative(request.context_tokens, "contextTokens")?,
-        max_input_tokens: validate_optional_non_negative(
-            request.max_input_tokens,
-            "maxInputTokens",
-        )?,
-        max_output_tokens: validate_optional_non_negative(
-            request.max_output_tokens,
-            "maxOutputTokens",
-        )?,
-        supports_streaming: request.supports_streaming.unwrap_or(true),
-        supports_tools: request.supports_tools.unwrap_or(false),
-        supports_json_schema: request.supports_json_schema.unwrap_or(false),
-        status: normalize_status(request.status)?,
-    })
-}
-
-fn normalize_site_model_patch(
-    request: SiteModelUpdateRequest,
-) -> Result<AdminSiteModelPatch, SiteCommandBuildError> {
-    Ok(AdminSiteModelPatch {
-        model_code: optional_code(request.model_code)?,
-        model_name: optional_text(request.model_name, "modelName", "model name", MAX_NAME_LEN)?,
-        display_name: request
-            .display_name
-            .map(|value| normalize_optional(value, MAX_NAME_LEN)),
-        provider_model: request
-            .provider_model
-            .map(|value| normalize_optional(value, MAX_CODE_LEN)),
-        provider_native_model: request
-            .provider_native_model
-            .map(|value| normalize_optional(value, 256)),
-        vendor_code: request.vendor_code.map(optional_code).transpose()?,
-        modality: request
-            .modality
-            .map(|value| normalize_optional(value, MAX_REGION_LEN)),
-        capabilities: request
-            .capabilities
-            .map(normalize_capabilities)
-            .transpose()?,
-        context_tokens: request
-            .context_tokens
-            .map(|value| validate_optional_non_negative(value, "contextTokens"))
-            .transpose()?,
-        max_input_tokens: request
-            .max_input_tokens
-            .map(|value| validate_optional_non_negative(value, "maxInputTokens"))
-            .transpose()?,
-        max_output_tokens: request
-            .max_output_tokens
-            .map(|value| validate_optional_non_negative(value, "maxOutputTokens"))
-            .transpose()?,
-        supports_streaming: request.supports_streaming,
-        supports_tools: request.supports_tools,
-        supports_json_schema: request.supports_json_schema,
-        status: request.status.map(Some).map(normalize_status).transpose()?,
     })
 }
 
@@ -969,36 +550,6 @@ fn to_site_response(item: AdminSiteItem) -> SiteResponse {
         last_checked_at: item.last_checked_at,
         last_sync_at: item.last_sync_at,
         sort_order: item.sort_order,
-        status: item.status,
-    }
-}
-
-fn to_site_model_response(item: AdminSiteModelItem) -> SiteModelResponse {
-    SiteModelResponse {
-        id: item.id.to_string(),
-        site_id: item.site_id.to_string(),
-        site_code: item.site_code,
-        site_service_id: item.site_service_id.to_string(),
-        site_service_code: item.site_service_code,
-        service_type: item.service_type,
-        model_code: item.model_code,
-        model_name: item.model_name,
-        display_name: item.display_name,
-        provider_model: item.provider_model,
-        provider_native_model: item.provider_native_model,
-        vendor_code: item.vendor_code,
-        modality: item.modality,
-        capabilities: item.capabilities,
-        context_tokens: item.context_tokens,
-        max_input_tokens: item.max_input_tokens,
-        max_output_tokens: item.max_output_tokens,
-        supports_streaming: item.supports_streaming,
-        supports_tools: item.supports_tools,
-        supports_json_schema: item.supports_json_schema,
-        health_status: item.health_status,
-        last_latency_ms: item.last_latency_ms,
-        consecutive_error_count: item.consecutive_error_count,
-        last_sync_at: item.last_sync_at,
         status: item.status,
     }
 }
@@ -1097,6 +648,24 @@ fn optional_code(value: Option<String>) -> Result<Option<String>, SiteCommandBui
     }
 }
 
+fn generated_site_code(site_uuid: &str) -> String {
+    let normalized: String = site_uuid
+        .chars()
+        .filter(|ch| ch.is_ascii_alphanumeric())
+        .take(32)
+        .collect::<String>()
+        .to_ascii_lowercase();
+    let suffix = if normalized.is_empty() {
+        "generated".to_owned()
+    } else {
+        normalized
+    };
+    format!("site_{suffix}")
+        .chars()
+        .take(MAX_SITE_CODE_LEN)
+        .collect()
+}
+
 fn normalize_site_type(value: Option<String>) -> Result<String, SiteCommandBuildError> {
     let value = normalize_optional(value, 32).unwrap_or_else(|| "relay".to_owned());
     if value == "relay" {
@@ -1128,18 +697,6 @@ fn normalize_status(value: Option<String>) -> Result<String, SiteCommandBuildErr
             "unsupported status: {value}"
         )))
     }
-}
-
-fn normalize_capabilities(values: Vec<String>) -> Result<Vec<String>, SiteCommandBuildError> {
-    if values.len() > MAX_CAPABILITIES {
-        return Err(SiteCommandBuildError::BadRequest(format!(
-            "capabilities cannot contain more than {MAX_CAPABILITIES} items"
-        )));
-    }
-    Ok(values
-        .into_iter()
-        .filter_map(|value| normalize_optional(Some(value), 64))
-        .collect())
 }
 
 fn normalize_domains(values: Vec<String>) -> Result<Vec<String>, SiteCommandBuildError> {
@@ -1248,18 +805,6 @@ fn media_resource_required_text(
     required_text(value, &format!("{field}.{key}"), key, max_len)
 }
 
-fn validate_optional_non_negative(
-    value: Option<i64>,
-    field: &str,
-) -> Result<Option<i64>, SiteCommandBuildError> {
-    if value.is_some_and(|value| value < 0) {
-        return Err(SiteCommandBuildError::BadRequest(format!(
-            "{field} must be a non-negative integer"
-        )));
-    }
-    Ok(value)
-}
-
 fn parse_positive_id(raw: &str, label: &str) -> Result<i64, String> {
     let parsed = raw
         .parse::<i64>()
@@ -1275,13 +820,6 @@ fn generate_entity_uuid(state: &AdminSiteState) -> Result<String, SiteCommandBui
         .entity_uuid_generator
         .generate_entity_uuid()
         .map_err(SiteCommandBuildError::System)
-}
-
-fn generate_entity_uuids(
-    state: &AdminSiteState,
-    len: usize,
-) -> Result<Vec<String>, SiteCommandBuildError> {
-    (0..len).map(|_| generate_entity_uuid(state)).collect()
 }
 
 fn generate_request_id() -> Result<String, SiteCommandBuildError> {

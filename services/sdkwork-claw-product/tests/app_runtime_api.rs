@@ -3979,7 +3979,6 @@ impl sdkwork_claw_product::ports::PricingCatalog for TestRuntimeCatalog {
                     10,
                     1,
                     100,
-                    vec![self.catalog_key.clone(), self.model.clone()],
                     vec![
                         "openai.chat_completions".to_owned(),
                         "openai.responses".to_owned(),

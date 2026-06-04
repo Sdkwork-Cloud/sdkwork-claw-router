@@ -325,7 +325,7 @@ function normalizeNullablePositiveInteger(value: unknown): number | null | undef
 
 function normalizePriceAvailability(
   value: unknown,
-  officialReferencePrices: readonly AppModelCatalogReferencePrice[],
+  officialReferencePrices: readonly RuntimeModelCatalogReferencePrice[],
 ): AppModelCatalogPriceAvailability {
   const hasReferencePrice = officialReferencePrices.length > 0;
   const fallbackStatus = hasReferencePrice

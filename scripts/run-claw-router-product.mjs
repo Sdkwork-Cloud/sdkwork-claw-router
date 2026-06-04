@@ -5,6 +5,10 @@ import { existsSync } from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import {
+  loadClawRouterDevEnvFile,
+  resolveClawRouterDevDatabaseEnv,
+} from './dev/claw-router-dev-database-env.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -23,6 +27,22 @@ function toPortablePath(value) {
 
 function appendForwardArgs(args, extraArgs) {
   return extraArgs.length > 0 ? [...args, ...extraArgs] : args;
+}
+
+function hasForwardedDatabaseUrl(extraArgs) {
+  return extraArgs.includes('--database-url');
+}
+
+function defaultDevEnvFileForWorkspace(workspaceRoot) {
+  const localOverride = path.join(workspaceRoot, '.env.postgres');
+  if (existsSync(localOverride)) {
+    return localOverride;
+  }
+  const example = path.join(workspaceRoot, '.env.postgres.example');
+  if (existsSync(example)) {
+    return example;
+  }
+  return undefined;
 }
 
 function installCandidatesForMode(mode) {
@@ -44,12 +64,14 @@ export function parseClawRouterProductArgs(argv) {
     install: false,
     dryRun: false,
     help: false,
+    devEnvFile: undefined,
     extraArgs: [],
   };
 
   let modeSet = false;
   let forwardOnly = false;
-  for (const arg of argv) {
+  for (let index = 0; index < argv.length; index += 1) {
+    const arg = argv[index];
     if (forwardOnly) {
       result.extraArgs.push(arg);
       continue;
@@ -64,6 +86,15 @@ export function parseClawRouterProductArgs(argv) {
     }
     if (arg === '--dry-run') {
       result.dryRun = true;
+      continue;
+    }
+    if (arg === '--dev-env-file') {
+      const value = argv[index + 1];
+      if (!value || value.startsWith('--')) {
+        throw new Error('--dev-env-file requires a path');
+      }
+      result.devEnvFile = value;
+      index += 1;
       continue;
     }
     if (arg === '--help' || arg === '-h') {
@@ -100,6 +131,28 @@ function portalServiceEnv(env) {
   };
 }
 
+function resolveLaunchEnv({
+  env,
+  workspaceRoot,
+  devEnvFile,
+  extraArgs,
+}) {
+  const resolvedDevEnvFile = devEnvFile ?? (
+    hasForwardedDatabaseUrl(extraArgs) ? undefined : defaultDevEnvFileForWorkspace(workspaceRoot)
+  );
+  const mergedEnv = {
+    ...env,
+    ...loadClawRouterDevEnvFile(resolvedDevEnvFile, { workspaceRoot }),
+  };
+  return {
+    ...mergedEnv,
+    ...resolveClawRouterDevDatabaseEnv({
+      env: mergedEnv,
+      defaultDatabase: hasForwardedDatabaseUrl(extraArgs) ? 'none' : 'postgresql',
+    }).env,
+  };
+}
+
 function workspaceDevelopmentStep({
   workspaceRoot,
   label,
@@ -128,6 +181,7 @@ export function createClawRouterProductLaunchPlan({
   install = false,
   platform = process.platform,
   env = process.env,
+  devEnvFile = undefined,
   extraArgs = [],
 } = {}) {
   const portalRelativeDir = toPortablePath(path.join('apps', 'sdkwork-claw-router-portal'));
@@ -136,6 +190,7 @@ export function createClawRouterProductLaunchPlan({
   const shell = shellForPnpm(platform);
   const nodeCommand = process.execPath;
   const plan = [];
+  const launchEnv = resolveLaunchEnv({ env, workspaceRoot, devEnvFile, extraArgs });
 
   for (const relativeDir of installCandidatesForMode(mode)) {
     const absoluteDir = path.join(workspaceRoot, relativeDir);
@@ -148,7 +203,7 @@ export function createClawRouterProductLaunchPlan({
       command: pnpm,
       args: ['--dir', relativeDir, 'install'],
       cwd: workspaceRoot,
-      env,
+      env: launchEnv,
       shell,
       windowsHide: platform === 'win32',
     });
@@ -159,7 +214,7 @@ export function createClawRouterProductLaunchPlan({
       plan.push(workspaceDevelopmentStep({
         workspaceRoot,
         label: 'desktop development workspace',
-        env: portalDesktopEnv(env),
+        env: portalDesktopEnv(launchEnv),
         extraArgs,
         platform,
         nodeCommand,
@@ -169,7 +224,7 @@ export function createClawRouterProductLaunchPlan({
       plan.push(workspaceDevelopmentStep({
         workspaceRoot,
         label: 'service development workspace',
-        env: portalServiceEnv(env),
+        env: portalServiceEnv(launchEnv),
         extraArgs,
         platform,
         nodeCommand,
@@ -179,7 +234,7 @@ export function createClawRouterProductLaunchPlan({
       plan.push(workspaceDevelopmentStep({
         workspaceRoot,
         label: 'server development workspace',
-        env,
+        env: launchEnv,
         extraArgs,
         platform,
         nodeCommand,
@@ -195,7 +250,7 @@ export function createClawRouterProductLaunchPlan({
           ...extraArgs,
         ],
         cwd: workspaceRoot,
-        env,
+        env: launchEnv,
         shell: false,
         windowsHide: platform === 'win32',
       });
@@ -206,7 +261,7 @@ export function createClawRouterProductLaunchPlan({
         command: pnpm,
         args: appendForwardArgs(['--dir', portalRelativeDir, 'browser:dev'], extraArgs),
         cwd: workspaceRoot,
-        env,
+        env: launchEnv,
         shell,
         windowsHide: platform === 'win32',
       });
@@ -217,7 +272,7 @@ export function createClawRouterProductLaunchPlan({
         command: pnpm,
         args: ['--dir', portalRelativeDir, 'product:check'],
         cwd: workspaceRoot,
-        env,
+        env: launchEnv,
         shell,
         windowsHide: platform === 'win32',
       });
@@ -243,14 +298,24 @@ Modes:
   browser  Start only the standalone portal browser dev server
 
 Options:
-  --install   Run portal pnpm install before starting
-  --dry-run   Print the planned commands without running them
-  -h, --help  Show this help
+  --install              Run portal pnpm install before starting
+  --dev-env-file <path>  Load a dotenv-style local dev environment file before starting
+  --dry-run              Print the planned commands without running them
+  -h, --help             Show this help
+
+Database profiles:
+  pnpm dev / pnpm server:dev use the PostgreSQL workspace integration profile.
+  pnpm desktop:dev / pnpm tauri:dev use the PostgreSQL workspace integration profile.
+  Desktop packages and first-run local user data use SQLite under ~/.sdkwork/router/data.
+  Use pnpm desktop:dev:sqlite or pnpm tauri:dev:sqlite to validate desktop local data behavior.
 
 Examples:
   pnpm desktop:dev
   pnpm service:dev
   pnpm server:dev -- --gateway-bind 0.0.0.0:19080
+  pnpm dev
+  pnpm dev:sqlite
+  pnpm dev:postgres
   pnpm server:dev:distributed
   pnpm server:plan
 `);
@@ -267,15 +332,30 @@ async function printDryRun(step) {
   if (step.command === process.execPath && path.resolve(step.args[0] ?? '') === startWorkspacePath) {
     const workspaceModule = await import(pathToFileURL(startWorkspacePath).href);
     const forwardedArgs = step.args.slice(1).filter((arg) => arg !== '--dry-run');
-    const settings = workspaceModule.parseWorkspaceArgs([
-      ...forwardedArgs,
-      '--dry-run',
-    ]);
-    const plan = workspaceModule.buildWorkspaceCommandPlan(settings, {
-      workspaceRoot: step.cwd,
-    });
-    for (const line of workspaceModule.renderWorkspaceDryRun(settings, plan)) {
-      console.log(line);
+    const previousEnv = {};
+    for (const [name, value] of Object.entries(step.env ?? {})) {
+      previousEnv[name] = process.env[name];
+      process.env[name] = value;
+    }
+    try {
+      const settings = workspaceModule.parseWorkspaceArgs([
+        ...forwardedArgs,
+        '--dry-run',
+      ]);
+      const plan = workspaceModule.buildWorkspaceCommandPlan(settings, {
+        workspaceRoot: step.cwd,
+      });
+      for (const line of workspaceModule.renderWorkspaceDryRun(settings, plan)) {
+        console.log(line);
+      }
+    } finally {
+      for (const [name, value] of Object.entries(previousEnv)) {
+        if (value === undefined) {
+          delete process.env[name];
+        } else {
+          process.env[name] = value;
+        }
+      }
     }
   }
 }
@@ -315,6 +395,7 @@ async function main() {
   const plan = createClawRouterProductLaunchPlan({
     mode: settings.mode,
     install: settings.install,
+    devEnvFile: settings.devEnvFile,
     extraArgs: settings.extraArgs,
   });
 

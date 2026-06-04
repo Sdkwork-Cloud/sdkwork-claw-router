@@ -143,17 +143,11 @@ test("service provider commercial schema, contract, OpenAPI, and SDK are registe
     "integration_service_provider_member",
     "integration_service_provider_subject_binding",
     "integration_service_provider_contract",
-    "integration_service_provider_contract_version",
     "integration_service_provider_finance_profile",
-    "integration_service_provider_account_binding",
     "integration_service_provider_price_plan",
     "integration_service_provider_price_rule",
-    "integration_service_provider_price_change_request",
-    "ai_usage_service_provider_chain",
     "ai_usage_service_provider_edge",
-    "commerce_usage_service_provider_settlement",
     "commerce_usage_service_provider_statement",
-    "commerce_usage_service_provider_statement_item",
     "commerce_usage_service_provider_adjustment",
     "integration_provider_invoice_import",
     "integration_provider_invoice_item",
@@ -164,6 +158,17 @@ test("service provider commercial schema, contract, OpenAPI, and SDK are registe
     "analytics_service_provider_edge_daily",
   ]) {
     assert.match(schemaSource, new RegExp(`- table: ${table}\\r?\\n`), `missing schema table ${table}`);
+  }
+  assert.doesNotMatch(schemaSource, /- table: ai_usage_service_provider_chain\r?\n/);
+  assert.doesNotMatch(schemaSource, /\bchain_id:\s*int64\b/);
+  for (const removedTable of [
+    "commerce_usage_service_provider_settlement",
+    "commerce_usage_service_provider_statement_item",
+    "integration_service_provider_account_binding",
+    "integration_service_provider_contract_version",
+    "integration_service_provider_price_change_request",
+  ]) {
+    assert.doesNotMatch(schemaSource, new RegExp(`- table: ${removedTable}\\r?\\n`), `${removedTable} must stay out of the active schema`);
   }
 
   const serviceProviderOperationIds = new Set(

@@ -73,6 +73,30 @@ class AiApi(private val client: HttpClient) {
         return client.convertValue(raw, object : TypeReference<ModelsListResult>() {})
     }
 
+    /** List routing API keys */
+    suspend fun routingApiKeysList(): RoutingApiKeysListResult? {
+        val raw = client.get(ApiPaths.appPath("/ai/routing/api_keys"))
+        return client.convertValue(raw, object : TypeReference<RoutingApiKeysListResult>() {})
+    }
+
+    /** List routing channels */
+    suspend fun routingChannelsList(): RoutingChannelsListResult? {
+        val raw = client.get(ApiPaths.appPath("/ai/routing/channels"))
+        return client.convertValue(raw, object : TypeReference<RoutingChannelsListResult>() {})
+    }
+
+    /** List routing request traces */
+    suspend fun routingRequestTracesList(): RoutingRequestTracesListResult? {
+        val raw = client.get(ApiPaths.appPath("/ai/routing/request_traces"))
+        return client.convertValue(raw, object : TypeReference<RoutingRequestTracesListResult>() {})
+    }
+
+    /** List routing usage */
+    suspend fun routingUsageList(): RoutingUsageListResult? {
+        val raw = client.get(ApiPaths.appPath("/ai/routing/usage"))
+        return client.convertValue(raw, object : TypeReference<RoutingUsageListResult>() {})
+    }
+
     /** List logs */
     suspend fun usageLogsList(page: Int? = null, pageSize: Int? = null, q: String? = null, status: String? = null, startTime: String? = null, endTime: String? = null): UsageLogsListResult? {
         val query = buildQueryString(listOf(

@@ -10,6 +10,10 @@ import {
   parseStartProductionArgs,
   prepareStartProductionRuntimeConfig,
 } from './start-claw-router-production.mjs';
+import {
+  loadClawRouterDevEnvFile,
+  resolveClawRouterDevDatabaseEnv,
+} from './dev/claw-router-dev-database-env.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -49,6 +53,7 @@ export function parseResetAdminArgs(argv = []) {
     email: DEFAULT_ADMIN_EMAIL,
     password: null,
     configFile: null,
+    devEnvFile: null,
     databaseUrl: null,
     databaseMaxConnections: null,
   };
@@ -56,6 +61,8 @@ export function parseResetAdminArgs(argv = []) {
   for (let index = 0; index < argv.length; index += 1) {
     const arg = argv[index];
     switch (arg) {
+      case '--':
+        break;
       case '--help':
       case '-h':
         settings.help = true;
@@ -85,6 +92,10 @@ export function parseResetAdminArgs(argv = []) {
         break;
       case '--config-file':
         settings.configFile = requireValue(argv, index, arg);
+        index += 1;
+        break;
+      case '--dev-env-file':
+        settings.devEnvFile = requireValue(argv, index, arg);
         index += 1;
         break;
       case '--database-url':
@@ -149,9 +160,24 @@ function installerArgs(settings) {
 }
 
 function devResetEnv(settings, env, root, { write = true } = {}) {
-  const databaseUrl = settings.databaseUrl ?? env.SDKWORK_CLAW_DATABASE_URL ?? devDatabaseUrl(root);
+  const devEnv = {
+    ...env,
+    ...loadClawRouterDevEnvFile(settings.devEnvFile, { workspaceRoot: root }),
+  };
+  const resolvedDatabase = resolveClawRouterDevDatabaseEnv({
+    env: {
+      ...devEnv,
+      ...(settings.databaseUrl ? { SDKWORK_CLAW_DATABASE_URL: settings.databaseUrl } : {}),
+      ...(settings.databaseMaxConnections
+        ? { SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS: settings.databaseMaxConnections }
+        : {}),
+    },
+    defaultDatabase: 'none',
+  });
+  const databaseUrl = resolvedDatabase.databaseUrl ?? devDatabaseUrl(root);
   const databaseMaxConnections = settings.databaseMaxConnections
-    ?? env.SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS
+    ?? resolvedDatabase.env.SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS
+    ?? devEnv.SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS
     ?? (String(databaseUrl).trim().toLowerCase().startsWith('sqlite:') ? '1' : null);
   if (write && databaseUrl === devDatabaseUrl(root)) {
     mkdirSync(path.dirname(path.join(root, DEFAULT_DEV_DATABASE_RELATIVE_PATH)), {
@@ -159,7 +185,8 @@ function devResetEnv(settings, env, root, { write = true } = {}) {
     });
   }
   return {
-    ...env,
+    ...devEnv,
+    ...resolvedDatabase.env,
     SDKWORK_CLAW_DATABASE_URL: databaseUrl,
     SDKWORK_CLAW_DEPLOYMENT_MODE: env.SDKWORK_CLAW_DEPLOYMENT_MODE ?? 'server',
     SDKWORK_CLAW_INSTALL_ENVIRONMENT: env.SDKWORK_CLAW_INSTALL_ENVIRONMENT ?? 'development',
@@ -240,12 +267,13 @@ function printHelp() {
 Reset the Claw Router admin account password through the installer database layer.
 
 Options:
-  --mode <dev|release>          dev uses target/dev/clawrouter.sqlite; release uses runtime config
+  --mode <dev|release>          dev uses target/dev/clawrouter.sqlite unless a database env/url is provided; release uses runtime config
   --username <username>         Admin username (default admin)
   --display-name <name>         Admin display name (default Administrator)
   --email <email>               Admin email identity (default admin@sdkwork.com)
   --password <password>         New admin password; may also be set with SDKWORK_CLAW_ADMIN_RESET_PASSWORD
   --config-file <path>          Release runtime TOML path
+  --dev-env-file <path>         Dev dotenv file such as .env.postgres
   --database-url <url>          Database override
   --database-max-connections <n>
   --dry-run                     Print the command without executing it
@@ -253,6 +281,7 @@ Options:
 
 Examples:
   pnpm admin:reset:dev -- --password "Admin-Dev-Password-2026!"
+  pnpm admin:reset:dev:postgres -- --password "Admin-Dev-Password-2026!"
   pnpm admin:reset:release -- --password "Admin-Release-Password-2026!"
   SDKWORK_CLAW_ADMIN_RESET_PASSWORD="Admin-Release-Password-2026!" pnpm admin:reset:release
 `);

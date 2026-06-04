@@ -110,6 +110,46 @@ func (a *AiApi) ModelsList(billingMeter *string, vendorCode *string, vendorCodes
     return decodeResult[sdktypes.ModelsListResult](raw)
 }
 
+// List routing API keys
+func (a *AiApi) RoutingApiKeysList() (sdktypes.RoutingApiKeysListResult, error) {
+    raw, err := a.client.Get(AppApiPath("/ai/routing/api_keys"), nil, nil)
+    if err != nil {
+        var zero sdktypes.RoutingApiKeysListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.RoutingApiKeysListResult](raw)
+}
+
+// List routing channels
+func (a *AiApi) RoutingChannelsList() (sdktypes.RoutingChannelsListResult, error) {
+    raw, err := a.client.Get(AppApiPath("/ai/routing/channels"), nil, nil)
+    if err != nil {
+        var zero sdktypes.RoutingChannelsListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.RoutingChannelsListResult](raw)
+}
+
+// List routing request traces
+func (a *AiApi) RoutingRequestTracesList() (sdktypes.RoutingRequestTracesListResult, error) {
+    raw, err := a.client.Get(AppApiPath("/ai/routing/request_traces"), nil, nil)
+    if err != nil {
+        var zero sdktypes.RoutingRequestTracesListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.RoutingRequestTracesListResult](raw)
+}
+
+// List routing usage
+func (a *AiApi) RoutingUsageList() (sdktypes.RoutingUsageListResult, error) {
+    raw, err := a.client.Get(AppApiPath("/ai/routing/usage"), nil, nil)
+    if err != nil {
+        var zero sdktypes.RoutingUsageListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.RoutingUsageListResult](raw)
+}
+
 // List logs
 func (a *AiApi) UsageLogsList(page *int, pageSize *int, q *string, status *string, startTime *string, endTime *string) (sdktypes.UsageLogsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{

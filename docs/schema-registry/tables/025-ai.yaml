@@ -10,6 +10,7 @@ tables:
   - ai_model_vendor
   frontend_routes:
   - /admin/model/mappings
+  - /admin/channel
   api_surfaces:
   - backend
   - worker
@@ -84,6 +85,7 @@ tables:
   - ai_model
   frontend_routes:
   - /admin/model/mappings
+  - /admin/channel
   api_surfaces:
   - backend
   - worker
@@ -175,6 +177,7 @@ tables:
   - ai_site_service
   frontend_routes:
   - /admin/model/mappings
+  - /admin/channel
   api_surfaces:
   - backend
   - worker
@@ -272,51 +275,6 @@ tables:
     references_table: ai_model_mapping_rule
     references_columns:
     - id
-- table: ai_usage_service_provider_chain
-  domain: ai
-  profile: commercial_usage_chain_fact
-  compliance_level: L3
-  system_of_record: true
-  write_owner: gateway-runtime
-  common_columns: event_log
-  source_tables:
-  - ai_usage_fact
-  - integration_service_provider
-  frontend_routes:
-  - /admin/service-providers/usage
-  api_surfaces:
-  - backend
-  - worker
-  required_columns:
-  - uuid
-  - usage_fact_id
-  columns:
-    usage_fact_id: int64
-    leaf_provider_id: int64
-    root_provider_id: int64
-    chain_depth: int32
-    chain_path_snapshot: json
-    chain_hash: string(128)
-    resolved_subject_type: string(64)
-    resolved_subject_id: int64
-    occurred_at: instant
-  indexes:
-  - name: uk_ai_usage_service_provider_chain_usage
-    unique: true
-    columns:
-    - tenant_id
-    - organization_id
-    - usage_fact_id
-  - name: idx_ai_usage_service_provider_chain_leaf_time
-    columns:
-    - tenant_id
-    - organization_id
-    - leaf_provider_id
-    - occurred_at
-    - id
-  security:
-    financial: true
-    audit_required: true
 - table: ai_usage_service_provider_edge
   domain: ai
   profile: commercial_usage_edge_fact
@@ -326,7 +284,6 @@ tables:
   common_columns: event_log
   source_tables:
   - ai_usage_fact
-  - ai_usage_service_provider_chain
   - integration_service_provider_edge
   frontend_routes:
   - /admin/service-providers/dashboard
@@ -341,7 +298,6 @@ tables:
   - edge_id
   columns:
     usage_fact_id: int64
-    chain_id: int64
     edge_id: int64
     edge_depth: int32
     seller_provider_id: int64

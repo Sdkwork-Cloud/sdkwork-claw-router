@@ -29,11 +29,14 @@ import type {
   AdminChannelCreateRequest,
   AdminChannelCredentialInput,
   AdminChannelUpdateRequest,
-  AdminChannelEndpointCreateRequest,
-  AdminChannelEndpointItem,
-  AdminChannelEndpointUpdateRequest,
+  AdminModelMappingCreateRequest,
+  AdminModelMappingRule,
+  AdminModelMappingRuleBindingInput,
+  AdminModelMappingRuleItemInput,
+  AdminModelMappingUpdateRequest,
   AdminProviderSecretCreateRequest,
   AdminProviderSecretUpdateRequest,
+  AiModelMappingsListParams,
   IntegrationProviderSecretsListParams,
   ProviderCircuitBreakerPolicy,
   ProviderRetryPolicy,
@@ -58,7 +61,7 @@ export interface ChannelCredentialItem {
   credentialId: string;
   name: string;
   baseUrl: string;
-  secretRef: string;
+  secretRef?: string;
   apiKey?: string;
   maskedLabel: string;
   priority: number;
@@ -79,7 +82,6 @@ export interface ChannelItem {
   credentials: ChannelCredentialItem[];
   createdAt: string;
   expiresAt?: string;
-  models: string[];
   capabilities: string[];
   resourceCodes: string[];
   isMultimodal: boolean;
@@ -92,12 +94,6 @@ export interface ChannelItem {
   errors: number;
 }
 
-export interface ChannelEndpointChannelOption {
-  channelId: string;
-  name: string;
-  vendor: string;
-}
-
 export interface ChannelModelCatalogItem {
   catalogKey: string;
   model: string;
@@ -106,9 +102,36 @@ export interface ChannelModelCatalogItem {
   regionCode: string;
 }
 
-export type AiResource = AdminAiResourceItem;
+export interface AiResource {
+  id: AdminAiResourceItem['id'];
+  resourceCode: AdminAiResourceItem['resourceCode'];
+  resourceType: AdminAiResourceItem['resourceType'];
+  displayName: AdminAiResourceItem['displayName'];
+  vendorCode?: AdminAiResourceItem['vendorCode'];
+  modalityCode?: AdminAiResourceItem['modalityCode'];
+  apiEndpointCode?: AdminAiResourceItem['apiEndpointCode'];
+  catalogKey?: AdminAiResourceItem['catalogKey'];
+  model?: AdminAiResourceItem['model'];
+  providerNativeModel?: AdminAiResourceItem['providerNativeModel'];
+  capability?: string;
+  capabilities: string[];
+  compositionMode: AdminAiResourceItem['compositionMode'];
+  status: AdminAiResourceItem['status'];
+  sortOrder?: AdminAiResourceItem['sortOrder'];
+  members: {
+    parentResourceCode: AdminAiResourceMemberItem['parentResourceCode'];
+    memberResourceCode: AdminAiResourceMemberItem['memberResourceCode'];
+    memberRole: AdminAiResourceMemberItem['memberRole'];
+    required: AdminAiResourceMemberItem['required'];
+    sortOrder?: AdminAiResourceMemberItem['sortOrder'];
+  }[];
+}
 
-export type AiResourceGroup = AdminAiResourceGroupItem;
+export type AiResourceGroup = AdminAiResourceGroupItem & {
+  vendorCodes: string[];
+  capability?: string;
+  capabilities: string[];
+};
 
 export type AiResourceMember = AdminAiResourceMemberItem;
 
@@ -155,7 +178,6 @@ export type ChannelCreateInput = {
   credentialRotation?: CredentialRotationStrategy;
   credentials: ChannelCredentialInput[];
   expiresAt?: string;
-  models: string[];
   capabilities?: NonNullable<AdminChannelCreateRequest['capabilities']>;
   resourceCodes?: string[];
   timeoutMs?: number;
@@ -174,7 +196,6 @@ export type ChannelUpdateInput = {
   credentialRotation?: CredentialRotationStrategy;
   credentials?: ChannelCredentialInput[];
   expiresAt?: string | null;
-  models?: string[];
   capabilities?: NonNullable<AdminChannelUpdateRequest['capabilities']>;
   resourceCodes?: string[];
   timeoutMs?: number | null;
@@ -182,6 +203,19 @@ export type ChannelUpdateInput = {
   circuitBreakerPolicy?: ProviderCircuitBreakerPolicy | null;
   weight?: number;
   status?: AdminChannelUpdateRequest['status'];
+};
+
+export type AccountModelMappingInput = {
+  sourceModel: string;
+  targetModel: string;
+  targetVendorCode?: string;
+};
+
+export type ReplaceAccountModelMappingsInput = {
+  channelId: string;
+  channelName?: string;
+  accountVendorCode: string;
+  mappings: AccountModelMappingInput[];
 };
 
 export interface ChannelTestResult {
@@ -221,46 +255,12 @@ export type ProviderSecretUpdateInput = {
   status?: 'active' | 'disabled';
 };
 
-export type ChannelEndpoint = AdminChannelEndpointItem;
-
-export interface ChannelEndpointCreateInput {
-  channelId: string;
-  vendorCode: string;
-  regionCode: string;
-  apiEndpointCode: string;
-  baseUrl: string;
-  priority?: number;
-  weight?: number;
-  status?: ChannelEndpoint['status'];
-  effectiveFrom?: string | null;
-  effectiveTo?: string | null;
-}
-
-export interface ChannelEndpointUpdateInput {
-  vendorCode?: string;
-  regionCode?: string;
-  apiEndpointCode?: string;
-  baseUrl?: string;
-  priority?: number;
-  weight?: number;
-  status?: ChannelEndpoint['status'];
-  effectiveFrom?: string | null;
-  effectiveTo?: string | null;
-}
-
 export class ChannelService {
   static async fetchChannels(): Promise<ChannelItem[]> {
     const result = await channelBackendClient().integration.channels.list();
     ensureSdkworkApiSuccess(result, 'Failed to fetch channels');
     return readRequiredApiItems(result, 'Failed to fetch channels')
       .map(normalizeChannel);
-  }
-
-  static async fetchChannelEndpointOptions(): Promise<ChannelEndpointChannelOption[]> {
-    const result = await channelBackendClient().integration.channels.list();
-    ensureSdkworkApiSuccess(result, 'Failed to fetch channel endpoint channel options');
-    return readRequiredApiItems(result, 'Failed to fetch channel endpoint channel options')
-      .map(normalizeChannelEndpointOption);
   }
 
   static async addChannel(channel: ChannelCreateInput): Promise<ChannelItem> {
@@ -350,35 +350,50 @@ export class ChannelAiResourceService {
   }
 }
 
-export class ChannelEndpointService {
-  static async fetchChannelEndpoints(): Promise<ChannelEndpoint[]> {
-    const result = await channelBackendClient().integration.channelEndpoints.list();
-    ensureSdkworkApiSuccess(result, 'Failed to fetch channel endpoints');
-    return readRequiredApiItems(result, 'Failed to fetch channel endpoints')
-      .map(normalizeChannelEndpoint);
+export class AccountModelMappingService {
+  static async fetchAccountMappings(channelId: string): Promise<AccountModelMappingInput[]> {
+    const normalizedChannelId = requiredPositiveIdText(channelId, 'channelId');
+    const mappings = await fetchAccountModelMappings(normalizedChannelId);
+    return mappings.flatMap((mapping) => (
+      mapping.mappingItems
+        .filter((item) => item.enabled)
+        .map((item) => ({
+          sourceModel: item.sourceModel,
+          targetModel: item.targetCatalogKey ?? item.targetModel,
+          targetVendorCode: mapping.targetVendorCode,
+        }))
+    ));
   }
 
-  static async createChannelEndpoint(
-    input: ChannelEndpointCreateInput,
-  ): Promise<ChannelEndpoint> {
-    const result = await channelBackendClient().integration.channelEndpoints.create(
-      toCreateChannelEndpointRequest(input),
+  static async replaceAccountMappings(input: ReplaceAccountModelMappingsInput): Promise<void> {
+    const channelId = requiredPositiveIdText(input.channelId, 'channelId');
+    const accountVendorCode = requiredProviderEndpointCode(input.accountVendorCode, 'accountVendorCode');
+    const nextGroups = groupAccountModelMappings(input.mappings, accountVendorCode);
+    const existing = await fetchAccountModelMappings(channelId);
+    const existingByTargetVendor = new Map(
+      existing.map((mapping) => [providerCodeForVendor(mapping.targetVendorCode), mapping]),
     );
-    ensureSdkworkApiSuccess(result, 'Failed to create channel endpoint');
-    return normalizeChannelEndpoint(readRequiredApiItem(result, 'Created channel endpoint response is missing data'));
-  }
 
-  static async updateChannelEndpoint(
-    id: string,
-    input: ChannelEndpointUpdateInput,
-  ): Promise<ChannelEndpoint> {
-    const endpointId = requiredSafePathSegment(id, 'channelEndpointId');
-    const result = await channelBackendClient().integration.channelEndpoints.update(
-      endpointId,
-      toUpdateChannelEndpointRequest(input),
-    );
-    ensureSdkworkApiSuccess(result, 'Failed to update channel endpoint');
-    return normalizeChannelEndpoint(readRequiredApiItem(result, 'Updated channel endpoint response is missing data'));
+    await Promise.all(Array.from(nextGroups.entries()).map(async ([targetVendorCode, mappingItems]) => {
+      const payload = accountModelMappingRulePayload({
+        channelId,
+        channelName: input.channelName,
+        accountVendorCode,
+        targetVendorCode,
+        mappingItems,
+      });
+      const current = existingByTargetVendor.get(targetVendorCode);
+      if (current) {
+        await updateAccountModelMapping(String(current.id), payload);
+      } else {
+        await createAccountModelMapping(payload);
+      }
+      existingByTargetVendor.delete(targetVendorCode);
+    }));
+
+    await Promise.all(Array.from(existingByTargetVendor.values()).map((mapping) => (
+      deleteAccountModelMapping(String(mapping.id))
+    )));
   }
 }
 
@@ -420,16 +435,16 @@ export class ProviderSecretService {
 }
 
 function toCreateChannelRequest(channel: ChannelCreateInput): AdminChannelCreateRequest {
+  const channelType = channel.channelType === undefined ? undefined : channelTypeValue(channel.channelType);
   return pruneUndefined({
     name: requiredText(channel.name, 'name'),
     vendor: requiredText(channel.vendor, 'vendor'),
-    channelType: channel.channelType === undefined ? undefined : channelTypeValue(channel.channelType),
+    channelType,
     protocol: optionalText(channel.protocol),
     accessType: optionalText(channel.accessType),
     credentialRotation: channel.credentialRotation === undefined ? undefined : credentialRotationValue(channel.credentialRotation),
     credentials: toCredentialInputs(channel.credentials),
     expiresAt: optionalText(channel.expiresAt),
-    models: requiredCatalogModelKeys(channel.models, channel.vendor),
     capabilities: channel.capabilities === undefined ? undefined : toChannelCapabilities(channel.capabilities),
     resourceCodes: channel.resourceCodes === undefined
       ? undefined
@@ -445,17 +460,17 @@ function toCreateChannelRequest(channel: ChannelCreateInput): AdminChannelCreate
 }
 
 function toUpdateChannelRequest(id: string, updates: ChannelUpdateInput): AdminChannelUpdateRequest {
+  const channelType = updates.channelType === undefined ? undefined : channelTypeValue(updates.channelType);
   return pruneUndefined({
     id,
     name: updates.name === undefined ? undefined : requiredText(updates.name, 'name'),
     vendor: updates.vendor === undefined ? undefined : requiredText(updates.vendor, 'vendor'),
-    channelType: updates.channelType === undefined ? undefined : channelTypeValue(updates.channelType),
+    channelType,
     protocol: optionalText(updates.protocol),
     accessType: optionalText(updates.accessType),
     credentialRotation: updates.credentialRotation === undefined ? undefined : credentialRotationValue(updates.credentialRotation),
     credentials: updates.credentials === undefined ? undefined : toCredentialInputs(updates.credentials),
     expiresAt: updates.expiresAt === undefined ? undefined : updates.expiresAt === null ? null : updates.expiresAt.trim(),
-    models: updates.models === undefined ? undefined : requiredCatalogModelKeys(updates.models, updates.vendor),
     capabilities: updates.capabilities === undefined ? undefined : toChannelCapabilities(updates.capabilities),
     resourceCodes: updates.resourceCodes === undefined
       ? undefined
@@ -470,6 +485,140 @@ function toUpdateChannelRequest(id: string, updates: ChannelUpdateInput): AdminC
     weight: optionalInteger(updates.weight),
     status: updates.status,
   });
+}
+
+async function fetchAccountModelMappings(channelId: string): Promise<AdminModelMappingRule[]> {
+  const params: AiModelMappingsListParams = {
+    bindingType: 'channel',
+    channelId,
+  };
+  const result = await channelBackendClient().ai.modelMappings.list(params);
+  ensureSdkworkApiSuccess(result, 'Failed to fetch account model mappings');
+  return readRequiredApiItems(result, 'Failed to fetch account model mappings')
+    .map(readModelMappingRule);
+}
+
+async function createAccountModelMapping(input: AdminModelMappingCreateRequest): Promise<void> {
+  const result = await channelBackendClient().ai.modelMappings.create(input);
+  ensureSdkworkApiSuccess(result, 'Failed to create account model mapping');
+}
+
+async function updateAccountModelMapping(id: string, input: AdminModelMappingUpdateRequest): Promise<void> {
+  const result = await channelBackendClient().ai.modelMappings.update(
+    requiredSafePathSegment(id, 'mappingId'),
+    input,
+  );
+  ensureSdkworkApiSuccess(result, 'Failed to update account model mapping');
+}
+
+async function deleteAccountModelMapping(id: string): Promise<void> {
+  const result = await channelBackendClient().ai.modelMappings.delete(
+    requiredSafePathSegment(id, 'mappingId'),
+  );
+  ensureSdkworkApiSuccess(result, 'Failed to delete stale account model mapping');
+}
+
+function groupAccountModelMappings(
+  mappings: readonly AccountModelMappingInput[],
+  accountVendorCode: string,
+): Map<string, AdminModelMappingRuleItemInput[]> {
+  const grouped = new Map<string, AdminModelMappingRuleItemInput[]>();
+  const dedupe = new Set<string>();
+  for (const mapping of mappings) {
+    const targetVendorCode = requiredProviderEndpointCode(
+      mapping.targetVendorCode ?? catalogVendorCode(mapping.targetModel, accountVendorCode),
+      'targetVendorCode',
+    );
+    const targetCatalogKey = toCatalogModelKey(mapping.targetModel, targetVendorCode);
+    const targetModel = catalogRuntimeModelId(targetCatalogKey);
+    const sourceModel = requiredText(mapping.sourceModel, 'sourceModel');
+    const key = `${targetVendorCode}:${sourceModel.toLowerCase()}:${targetCatalogKey.toLowerCase()}`;
+    if (dedupe.has(key)) {
+      continue;
+    }
+    dedupe.add(key);
+    const rows = grouped.get(targetVendorCode) ?? [];
+    rows.push(pruneUndefined({
+      sourceModel,
+      targetModel,
+      targetCatalogKey,
+      targetProviderModel: targetModel,
+      targetProviderNativeModel: targetModel,
+      enabled: true,
+    }));
+    grouped.set(targetVendorCode, rows);
+  }
+  return grouped;
+}
+
+function accountModelMappingRulePayload({
+  channelId,
+  channelName,
+  accountVendorCode,
+  targetVendorCode,
+  mappingItems,
+}: {
+  channelId: string;
+  channelName?: string;
+  accountVendorCode: string;
+  targetVendorCode: string;
+  mappingItems: AdminModelMappingRuleItemInput[];
+}): AdminModelMappingCreateRequest {
+  return {
+    sourceVendorCode: accountVendorCode,
+    targetVendorCode,
+    mappingMode: 'alias',
+    matchType: 'exact',
+    enabled: true,
+    bindings: [
+      accountModelMappingBinding(channelId, channelName),
+    ],
+    mappingItems,
+  };
+}
+
+function accountModelMappingBinding(
+  channelId: string,
+  channelName: string | undefined,
+): AdminModelMappingRuleBindingInput {
+  return pruneUndefined({
+    bindingType: 'channel' as const,
+    bindingId: channelId,
+    bindingName: optionalText(channelName),
+    enabled: true,
+  });
+}
+
+function readModelMappingRule(value: unknown): AdminModelMappingRule {
+  const item = readRequiredRecord(value, 'Model mapping record is required');
+  const id = readRequiredString(item, 'id', 'Model mapping id is required');
+  const bindingType = readRequiredString(item, 'bindingType', 'Model mapping binding type is required');
+  if (bindingType !== 'channel') {
+    throw new Error(`Unsupported account model mapping binding type: ${bindingType}`);
+  }
+  const sourceVendorCode = readRequiredString(item, 'sourceVendorCode', 'Model mapping source vendor is required');
+  const targetVendorCode = readRequiredString(item, 'targetVendorCode', 'Model mapping target vendor is required');
+  if (!Array.isArray(item.bindings)) {
+    throw new Error('Model mapping bindings are required');
+  }
+  if (!Array.isArray(item.mappingItems)) {
+    throw new Error('Model mapping items are required');
+  }
+  return {
+    id,
+    bindingType,
+    sourceVendorCode,
+    targetVendorCode,
+    sourceVendorId: readOptionalNullableString(item, 'sourceVendorId'),
+    targetVendorId: readOptionalNullableString(item, 'targetVendorId'),
+    mappingMode: 'alias',
+    matchType: 'exact',
+    enabled: readRequiredBoolean(item, 'enabled', 'Model mapping enabled flag is required'),
+    bindings: item.bindings as AdminModelMappingRule['bindings'],
+    mappingItems: item.mappingItems as AdminModelMappingRule['mappingItems'],
+    createdAt: readOptionalNullableString(item, 'createdAt'),
+    updatedAt: readOptionalNullableString(item, 'updatedAt'),
+  };
 }
 
 function toCredentialInputs(credentials: ChannelCredentialInput[]): AdminChannelCredentialInput[] {
@@ -533,47 +682,6 @@ function toUpdateProviderSecretRequest(
     authType: optionalText(updates.authType),
     secretRef: updates.secretRef === undefined ? undefined : requiredText(updates.secretRef, 'secretRef'),
     status: updates.status,
-  });
-}
-
-function toCreateChannelEndpointRequest(
-  input: ChannelEndpointCreateInput,
-): AdminChannelEndpointCreateRequest {
-  return pruneUndefined({
-    channelId: requiredPositiveIdText(input.channelId, 'channelId'),
-    vendorCode: requiredProviderEndpointCode(input.vendorCode, 'vendorCode'),
-    regionCode: requiredProviderEndpointCode(input.regionCode, 'regionCode'),
-    apiEndpointCode: requiredProviderEndpointCode(input.apiEndpointCode, 'apiEndpointCode'),
-    baseUrl: requiredProviderEndpointBaseUrl(input.baseUrl),
-    priority: optionalBoundedPositiveInteger(input.priority, 'priority', 1_000_000),
-    weight: optionalBoundedPositiveInteger(input.weight, 'weight', 1_000_000),
-    status: input.status === undefined ? undefined : channelEndpointStatus(input.status),
-    effectiveFrom: optionalNullableText(input.effectiveFrom),
-    effectiveTo: optionalNullableText(input.effectiveTo),
-  });
-}
-
-function toUpdateChannelEndpointRequest(
-  input: ChannelEndpointUpdateInput,
-): AdminChannelEndpointUpdateRequest {
-  return pruneUndefined({
-    vendorCode: input.vendorCode === undefined
-      ? undefined
-      : requiredProviderEndpointCode(input.vendorCode, 'vendorCode'),
-    regionCode: input.regionCode === undefined
-      ? undefined
-      : requiredProviderEndpointCode(input.regionCode, 'regionCode'),
-    apiEndpointCode: input.apiEndpointCode === undefined
-      ? undefined
-      : requiredProviderEndpointCode(input.apiEndpointCode, 'apiEndpointCode'),
-    baseUrl: input.baseUrl === undefined
-      ? undefined
-      : requiredProviderEndpointBaseUrl(input.baseUrl),
-    priority: optionalBoundedPositiveInteger(input.priority, 'priority', 1_000_000),
-    weight: optionalBoundedPositiveInteger(input.weight, 'weight', 1_000_000),
-    status: input.status === undefined ? undefined : channelEndpointStatus(input.status),
-    effectiveFrom: input.effectiveFrom === undefined ? undefined : optionalNullableText(input.effectiveFrom),
-    effectiveTo: input.effectiveTo === undefined ? undefined : optionalNullableText(input.effectiveTo),
   });
 }
 
@@ -812,27 +920,8 @@ function requiredProviderEndpointBaseUrl(value: string): string {
   return normalized;
 }
 
-function channelEndpointStatus(value: string): ChannelEndpoint['status'] {
-  if (value === 'active' || value === 'disabled' || value === 'inactive') {
-    return value;
-  }
-  throw new Error(`Unsupported channel endpoint status: ${value}`);
-}
-
 function normalizedStringArray(values: string[]): string[] {
   return Array.from(new Set(values.map((value) => value.trim()).filter(Boolean)));
-}
-
-function requiredStringArray(values: string[], fieldName: string): string[] {
-  const normalized = normalizedStringArray(values);
-  if (normalized.length === 0) {
-    throw new Error(`${fieldName} must include at least one item`);
-  }
-  return normalized;
-}
-
-function requiredCatalogModelKeys(values: string[], vendor: string | undefined): string[] {
-  return requiredStringArray(values, 'models').map((model) => toCatalogModelKey(model, vendor));
 }
 
 function toCatalogModelKey(model: string, vendor: string | undefined): string {
@@ -843,12 +932,22 @@ function toCatalogModelKey(model: string, vendor: string | undefined): string {
   if (value.includes('/') && !isCatalogModelKey(value)) {
     throw new Error('catalogKey must use vendor/model identity');
   }
-  const vendorCode = providerCodeForVendor(vendor ?? 'custom');
   const identity = parseModelCatalogIdentity(value);
-  if (identity && providerCodeForVendor(identity.vendorCode) === vendorCode) {
+  if (identity) {
     return value;
   }
+  const vendorCode = providerCodeForVendor(vendor ?? 'custom');
   return `${vendorCode}/${value}`;
+}
+
+function catalogVendorCode(model: string, fallbackVendorCode: string): string {
+  const identity = parseModelCatalogIdentity(model.trim());
+  return identity ? providerCodeForVendor(identity.vendorCode) : fallbackVendorCode;
+}
+
+function catalogRuntimeModelId(catalogKey: string): string {
+  const identity = parseModelCatalogIdentity(catalogKey.trim());
+  return identity?.modelId ?? catalogKey.trim();
 }
 
 export function providerCodeForVendor(vendor: string): string {
@@ -963,7 +1062,6 @@ function normalizeChannel(value: unknown): ChannelItem {
     credentials: readCredentialItems(item),
     createdAt: readRequiredString(item, 'createdAt', 'Channel created time is required'),
     expiresAt: readOptionalString(item, 'expiresAt'),
-    models: readOptionalStringArray(item, 'models'),
     capabilities: readRequiredStringArray(item, 'capabilities', 'Channel capabilities are required'),
     resourceCodes: readRequiredStringArrayField(item, 'resourceCodes', 'Channel AI resource codes are required'),
     isMultimodal: readRequiredBoolean(item, 'isMultimodal', 'Channel multimodal flag is required'),
@@ -995,22 +1093,13 @@ function normalizeChannelCredential(value: unknown, index: number): ChannelCrede
     credentialId: readPositiveIdText(item, 'credentialId', 'Channel credential scoped id is required'),
     name: readRequiredString(item, 'name', 'Channel credential name is required'),
     baseUrl: readProviderEndpointBaseUrl(item),
-    secretRef: readRequiredString(item, 'secretRef', 'Channel credential secret reference is required'),
+    secretRef: readOptionalString(item, 'secretRef'),
     apiKey: readOptionalString(item, 'apiKey'),
     maskedLabel: readRequiredString(item, 'maskedLabel', 'Channel credential masked label is required'),
     priority: readRequiredBoundedInteger(item, 'priority', 'Channel credential priority is required', 1, 1_000_000),
     weight: readRequiredBoundedInteger(item, 'weight', 'Channel credential weight is required', 1, 10_000),
     status: readCredentialStatus(item),
     errors: readRequiredNonNegativeInteger(item, 'errors', 'Channel credential errors are required'),
-  };
-}
-
-function normalizeChannelEndpointOption(value: unknown): ChannelEndpointChannelOption {
-  const item = readRequiredRecord(value, 'Channel endpoint channel option is required');
-  return {
-    channelId: readPositiveIdText(item, 'channelId', 'Channel id is required'),
-    name: readRequiredString(item, 'name', 'Channel name is required'),
-    vendor: readRequiredString(item, 'vendor', 'Channel vendor is required'),
   };
 }
 
@@ -1048,6 +1137,8 @@ function normalizeAiResource(value: unknown): AiResource {
     catalogKey: readOptionalString(item, 'catalogKey'),
     model: readOptionalString(item, 'model'),
     providerNativeModel: readOptionalString(item, 'providerNativeModel'),
+    capability: readOptionalString(item, 'capability'),
+    capabilities: readOptionalStringArray(item, 'capabilities'),
     compositionMode: readAiResourceCompositionMode(item),
     status: readAiResourceStatus(item),
     sortOrder: readOptionalNonNegativeInteger(item, 'sortOrder', 'AI resource sort order must be a non-negative integer'),
@@ -1066,6 +1157,9 @@ function normalizeAiResourceGroup(value: unknown): AiResourceGroup {
     status: readAiResourceGroupStatus(item),
     dynamic: readRequiredBoolean(item, 'dynamic', 'AI resource group dynamic flag is required'),
     resourceCount: readRequiredNonNegativeInteger(item, 'resourceCount', 'AI resource group resource count must be a non-negative integer'),
+    vendorCodes: readOptionalStringArray(item, 'vendorCodes'),
+    capability: readOptionalString(item, 'capability'),
+    capabilities: readOptionalStringArray(item, 'capabilities'),
     sortOrder: readOptionalNonNegativeInteger(item, 'sortOrder', 'AI resource group sort order must be a non-negative integer') ?? null,
     description: readOptionalString(item, 'description') ?? null,
   };
@@ -1079,27 +1173,6 @@ function normalizeAiResourceMember(value: unknown): AiResourceMember {
     memberRole: readAiResourceMemberRole(item),
     required: readRequiredBoolean(item, 'required', 'AI resource member required flag is required'),
     sortOrder: readOptionalNonNegativeInteger(item, 'sortOrder', 'AI resource member sort order must be a non-negative integer'),
-  };
-}
-
-function normalizeChannelEndpoint(value: unknown): ChannelEndpoint {
-  const item = readRequiredRecord(value, 'Channel endpoint record is required');
-  return {
-    id: readPositiveIdText(item, 'id', 'Channel endpoint id is required'),
-    channelId: readPositiveIdText(item, 'channelId', 'Channel endpoint channel id is required'),
-    providerCode: readRequiredString(item, 'providerCode', 'Channel endpoint provider code is required'),
-    channelCode: readRequiredString(item, 'channelCode', 'Channel endpoint channel code is required'),
-    channelType: readChannelEndpointType(item),
-    vendorCode: readProviderEndpointCode(item, 'vendorCode', 'Channel endpoint vendor code is required'),
-    regionCode: readProviderEndpointCode(item, 'regionCode', 'Channel endpoint region code is required'),
-    apiEndpointCode: readProviderEndpointCode(item, 'apiEndpointCode', 'Channel endpoint API code is required'),
-    baseUrl: readProviderEndpointBaseUrl(item),
-    priority: readRequiredBoundedInteger(item, 'priority', 'Channel endpoint priority must be between 1 and 1000000', 1, 1_000_000),
-    weight: readRequiredBoundedInteger(item, 'weight', 'Channel endpoint weight must be between 1 and 1000000', 1, 1_000_000),
-    healthStatus: readChannelEndpointHealthStatus(item),
-    status: readChannelEndpointStatus(item),
-    effectiveFrom: readOptionalNullableString(item, 'effectiveFrom'),
-    effectiveTo: readOptionalNullableString(item, 'effectiveTo'),
   };
 }
 
@@ -1188,14 +1261,6 @@ function readPositiveIdText(item: ApiRecord, key: string, message: string): stri
   return value;
 }
 
-function readProviderEndpointCode(item: ApiRecord, key: string, message: string): string {
-  const value = readRequiredString(item, key, message).trim().toLowerCase();
-  if (!/^[a-z0-9._*-]+$/.test(value)) {
-    throw new Error(`${key} may only contain letters, numbers, ., -, _, and *`);
-  }
-  return value;
-}
-
 function readProviderEndpointBaseUrl(item: ApiRecord): string {
   const value = readRequiredString(item, 'baseUrl', 'Channel endpoint base URL is required').trim();
   if (!/^https?:\/\//i.test(value)) {
@@ -1205,27 +1270,6 @@ function readProviderEndpointBaseUrl(item: ApiRecord): string {
     throw new Error('Channel endpoint base URL must not contain whitespace or control characters');
   }
   return value;
-}
-
-function readChannelEndpointType(item: ApiRecord): ChannelEndpoint['channelType'] {
-  const kind = readRequiredString(item, 'channelType', 'Channel endpoint channel type is required');
-  if (kind === 'official' || kind === 'relay') {
-    return kind;
-  }
-  throw new Error(`Unsupported channel endpoint channel type: ${kind}`);
-}
-
-function readChannelEndpointHealthStatus(item: ApiRecord): ChannelEndpoint['healthStatus'] {
-  const status = readRequiredString(item, 'healthStatus', 'Channel endpoint health status is required');
-  if (status === 'healthy' || status === 'unhealthy' || status === 'unknown') {
-    return status;
-  }
-  throw new Error(`Unsupported channel endpoint health status: ${status}`);
-}
-
-function readChannelEndpointStatus(item: ApiRecord): ChannelEndpoint['status'] {
-  const status = readRequiredString(item, 'status', 'Channel endpoint status is required');
-  return channelEndpointStatus(status);
 }
 
 function readOptionalNullableString(item: ApiRecord, key: string): string | null | undefined {

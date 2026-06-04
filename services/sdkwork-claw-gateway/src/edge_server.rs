@@ -546,6 +546,12 @@ impl EdgeServerConfig {
         if path == sdkwork_claw_http::PAYMENT_AGGREGATE_OPENAPI_PATH {
             return Some(&self.gateway_base_url);
         }
+        if path == sdkwork_claw_http::PAAS_OPENAPI_PATH {
+            return Some(&self.gateway_base_url);
+        }
+        if path == sdkwork_claw_http::CLOUD_SERVICES_OPENAPI_PATH {
+            return Some(&self.gateway_base_url);
+        }
         if path == "/v1" || path.starts_with("/v1/") {
             return Some(&self.gateway_base_url);
         }
@@ -569,6 +575,8 @@ fn surface_for_path(path: &str) -> Option<EdgeApiSurface> {
     if path == sdkwork_claw_http::OPENAPI_SCHEMA_TABS_PATH
         || path == "/openapi.json"
         || path == sdkwork_claw_http::PAYMENT_AGGREGATE_OPENAPI_PATH
+        || path == sdkwork_claw_http::PAAS_OPENAPI_PATH
+        || path == sdkwork_claw_http::CLOUD_SERVICES_OPENAPI_PATH
         || path == "/v1"
         || path.starts_with("/v1/")
     {
@@ -840,6 +848,10 @@ fn static_portal_contract_response(state: &EdgeServerState, request: &Request) -
         }
         sdkwork_claw_http::PAYMENT_AGGREGATE_OPENAPI_PATH => {
             Some(sdkwork_claw_http::payment_aggregate_openapi_response())
+        }
+        sdkwork_claw_http::PAAS_OPENAPI_PATH => Some(sdkwork_claw_http::paas_openapi_response()),
+        sdkwork_claw_http::CLOUD_SERVICES_OPENAPI_PATH => {
+            Some(sdkwork_claw_http::cloud_services_openapi_response())
         }
         sdkwork_claw_http::APP_OPENAPI_PATH => Some(sdkwork_claw_http::app_openapi_response()),
         sdkwork_claw_http::BACKEND_OPENAPI_PATH => {
@@ -1599,6 +1611,7 @@ fn sdk_generator_type(sdk_type: &str) -> Result<SdkType, String> {
         "app" => Ok(SdkType::App),
         "backend" => Ok(SdkType::Backend),
         "ai" => Ok(SdkType::Ai),
+        "cloud-services" => Ok(SdkType::Custom),
         "custom" => Ok(SdkType::Custom),
         _ => Err(format!("config.sdkType {sdk_type} is not supported")),
     }

@@ -7,7 +7,11 @@ import process from 'node:process';
 import { fileURLToPath } from 'node:url';
 import { createRuntimeConfigTemplate } from './build-claw-router-install-package.mjs';
 import { productionGatewayBinaryPath } from './claw-router-production-artifacts.mjs';
-import { redisPolicyFor } from './plan-claw-router-install-packages.mjs';
+import {
+  LINUX_SERVICE_CONFIG_ROOT,
+  LINUX_SERVICE_DATA_ROOT,
+  redisPolicyFor,
+} from './plan-claw-router-install-packages.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -15,12 +19,12 @@ const workspaceRoot = path.resolve(__dirname, '..');
 const portalDist = path.join(workspaceRoot, 'apps', 'sdkwork-claw-router-portal', 'dist');
 const SERVER_DEFAULT_POSTGRES_HOST = 'db.example.com';
 const SERVER_DEFAULT_POSTGRES_PORT = 5432;
-const SERVER_DEFAULT_POSTGRES_DATABASE = 'sdkwork_claw_router';
-const SERVER_DEFAULT_POSTGRES_USERNAME = 'sdkwork_claw_router';
+const SERVER_DEFAULT_POSTGRES_DATABASE = 'sdkwork_ai_prod';
+const SERVER_DEFAULT_POSTGRES_USERNAME = 'sdkworkprod@2026++';
 const SERVER_DEFAULT_POSTGRES_PASSWORD = 'change-me';
 const SERVER_DEFAULT_POSTGRES_SSL_MODE = 'require';
-const SERVER_DEFAULT_POSTGRES_URL = `postgresql://${SERVER_DEFAULT_POSTGRES_USERNAME}:${SERVER_DEFAULT_POSTGRES_PASSWORD}@${SERVER_DEFAULT_POSTGRES_HOST}:${SERVER_DEFAULT_POSTGRES_PORT}/${SERVER_DEFAULT_POSTGRES_DATABASE}?sslmode=${SERVER_DEFAULT_POSTGRES_SSL_MODE}`;
-const EXAMPLE_POSTGRES_URL = 'postgresql://sdkwork_claw_router:<password>@db.example.com:5432/sdkwork_claw_router';
+const SERVER_DEFAULT_POSTGRES_URL = `postgresql://${encodeURIComponent(SERVER_DEFAULT_POSTGRES_USERNAME)}:${SERVER_DEFAULT_POSTGRES_PASSWORD}@${SERVER_DEFAULT_POSTGRES_HOST}:${SERVER_DEFAULT_POSTGRES_PORT}/${SERVER_DEFAULT_POSTGRES_DATABASE}?sslmode=${SERVER_DEFAULT_POSTGRES_SSL_MODE}`;
+const EXAMPLE_POSTGRES_URL = `postgresql://${encodeURIComponent(SERVER_DEFAULT_POSTGRES_USERNAME)}:<password>@db.example.com:5432/${SERVER_DEFAULT_POSTGRES_DATABASE}`;
 
 function cargoCommand(platform = process.platform) {
   return platform === 'win32' ? 'cargo.exe' : 'cargo';
@@ -75,12 +79,12 @@ Production PostgreSQL configuration:
   Or edit [database] in the generated runtime TOML.
 
 Default runtime config paths:
-  Linux server: /etc/clawrouter/clawrouter.toml
-  Linux desktop: \${XDG_CONFIG_HOME:-~/.config}/clawrouter/clawrouter.toml
-  Windows server: %ProgramData%/SdkWork/ClawRouter/clawrouter.toml
-  Windows desktop: %APPDATA%/SdkWork/ClawRouter/clawrouter.toml
-  macOS server: /Library/Application Support/SdkWork/ClawRouter/clawrouter.toml
-  macOS desktop: ~/Library/Application Support/SdkWork/ClawRouter/clawrouter.toml
+  Linux server: /etc/sdkwork/router/clawrouter.toml
+  Linux desktop: ~/.sdkwork/router/config/clawrouter.toml
+  Windows server: %ProgramData%/sdkwork/router/clawrouter.toml
+  Windows desktop: %USERPROFILE%/.sdkwork/router/config/clawrouter.toml
+  macOS server: /Library/Application Support/sdkwork/router/clawrouter.toml
+  macOS desktop: ~/.sdkwork/router/config/clawrouter.toml
 `;
 }
 
@@ -288,55 +292,74 @@ function runtimeConfigLocationForPlatform(
   if (normalizedPlatform === 'windows') {
     if (normalizedDeploymentMode === 'server') {
       const programData = getEnv('ProgramData') || getEnv('PROGRAMDATA') || 'C:/ProgramData';
-      const root = joinRuntimePath(programData, 'SdkWork/ClawRouter');
+      const root = joinRuntimePath(programData, 'sdkwork/router');
       return {
         configFile: joinRuntimePath(root, 'clawrouter.toml'),
         dataDirectory: joinRuntimePath(root, 'Data'),
         sqlitePath: joinRuntimePath(root, 'Data/clawrouter.sqlite'),
       };
     }
-    const appData = getEnv('APPDATA') || 'C:/Users/Default/AppData/Roaming';
-    const localAppData = getEnv('LOCALAPPDATA') || 'C:/Users/Default/AppData/Local';
-    const configRoot = joinRuntimePath(appData, 'SdkWork/ClawRouter');
-    const dataDirectory = joinRuntimePath(localAppData, 'SdkWork/ClawRouter');
+    const userProfile = getEnv('USERPROFILE')
+      || `${getEnv('HOMEDRIVE')}${getEnv('HOMEPATH')}`.trim()
+      || 'C:/Users/Default';
+    const root = joinRuntimePath(userProfile, '.sdkwork/router');
+    const dataDirectory = joinRuntimePath(root, 'data');
     return {
-      configFile: joinRuntimePath(configRoot, 'clawrouter.toml'),
+      configFile: joinRuntimePath(root, 'config/clawrouter.toml'),
       dataDirectory,
       sqlitePath: joinRuntimePath(dataDirectory, 'clawrouter.sqlite'),
     };
   }
   if (normalizedPlatform === 'macos') {
     if (normalizedDeploymentMode === 'server') {
-      const root = '/Library/Application Support/SdkWork/ClawRouter';
+      const root = '/Library/Application Support/sdkwork/router';
       return {
         configFile: joinRuntimePath(root, 'clawrouter.toml'),
-        dataDirectory: root,
-        sqlitePath: joinRuntimePath(root, 'clawrouter.sqlite'),
+        dataDirectory: joinRuntimePath(root, 'Data'),
+        sqlitePath: joinRuntimePath(root, 'Data/clawrouter.sqlite'),
       };
     }
     const home = getEnv('HOME') || '~';
-    const root = joinRuntimePath(home, 'Library/Application Support/SdkWork/ClawRouter');
+    const root = joinRuntimePath(home, '.sdkwork/router');
+    const dataDirectory = joinRuntimePath(root, 'data');
     return {
-      configFile: joinRuntimePath(root, 'clawrouter.toml'),
-      dataDirectory: root,
-      sqlitePath: joinRuntimePath(root, 'clawrouter.sqlite'),
+      configFile: joinRuntimePath(root, 'config/clawrouter.toml'),
+      dataDirectory,
+      sqlitePath: joinRuntimePath(dataDirectory, 'clawrouter.sqlite'),
     };
   }
 
   if (normalizedDeploymentMode === 'server') {
     return {
-      configFile: '/etc/clawrouter/clawrouter.toml',
-      dataDirectory: '/var/lib/clawrouter',
-      sqlitePath: '/var/lib/clawrouter/clawrouter.sqlite',
+      configFile: `${LINUX_SERVICE_CONFIG_ROOT}/clawrouter.toml`,
+      dataDirectory: LINUX_SERVICE_DATA_ROOT,
+      sqlitePath: `${LINUX_SERVICE_DATA_ROOT}/clawrouter.sqlite`,
     };
   }
   const home = getEnv('HOME') || '~';
-  const configHome = getEnv('XDG_CONFIG_HOME') || joinRuntimePath(home, '.config');
-  const dataHome = getEnv('XDG_DATA_HOME') || joinRuntimePath(home, '.local/share');
-  const configRoot = joinRuntimePath(configHome, 'clawrouter');
-  const dataDirectory = joinRuntimePath(dataHome, 'clawrouter');
+  const root = joinRuntimePath(home, '.sdkwork/router');
+  const dataDirectory = joinRuntimePath(root, 'data');
   return {
-    configFile: joinRuntimePath(configRoot, 'clawrouter.toml'),
+    configFile: joinRuntimePath(root, 'config/clawrouter.toml'),
+    dataDirectory,
+    sqlitePath: joinRuntimePath(dataDirectory, 'clawrouter.sqlite'),
+  };
+}
+
+function runtimeConfigLocationWithExplicitConfigFile(defaults, configFile) {
+  const normalizedConfigFile = String(configFile ?? '').trim();
+  if (!normalizedConfigFile || normalizedConfigFile === defaults.configFile) {
+    return {
+      ...defaults,
+      configFile: normalizedConfigFile || defaults.configFile,
+    };
+  }
+  const configParent = path.dirname(normalizedConfigFile).replaceAll('\\', '/');
+  const dataDirectory = configParent && configParent !== '.'
+    ? joinRuntimePath(configParent, 'Data')
+    : defaults.dataDirectory;
+  return {
+    configFile: normalizedConfigFile,
     dataDirectory,
     sqlitePath: joinRuntimePath(dataDirectory, 'clawrouter.sqlite'),
   };
@@ -457,8 +480,8 @@ function runtimeConfigPasswordFileForMode(deploymentMode, configFile, dataDirect
     return null;
   }
   const normalizedConfigFile = toPortablePath(configFile);
-  if (normalizedConfigFile === '/etc/clawrouter/clawrouter.toml') {
-    return '/etc/clawrouter/database.secret';
+  if (normalizedConfigFile === `${LINUX_SERVICE_CONFIG_ROOT}/clawrouter.toml`) {
+    return `${LINUX_SERVICE_CONFIG_ROOT}/database.secret`;
   }
   const normalizedDataDirectory = toPortablePath(dataDirectory);
   if (normalizedConfigFile.endsWith('/clawrouter.toml')) {
@@ -566,22 +589,26 @@ function runtimeConfigPostgresUrlFromStructuredFields({
   if (!host || !database || !username) {
     return null;
   }
-  const parsed = new URL('postgresql://localhost');
-  parsed.hostname = host;
-  parsed.port = String(port || SERVER_DEFAULT_POSTGRES_PORT);
-  parsed.pathname = `/${database}`;
-  parsed.username = username;
+  const passwordValue = password
+    ?? passwordFileValue
+    ?? (!passwordFile ? SERVER_DEFAULT_POSTGRES_PASSWORD : '');
+  const credentials = passwordValue
+    ? `${encodeURIComponent(username)}:${encodeURIComponent(passwordValue)}@`
+    : `${encodeURIComponent(username)}@`;
+  const authority = `${credentials}${host}${port ? `:${port}` : `:${SERVER_DEFAULT_POSTGRES_PORT}`}`;
+  const params = new URLSearchParams();
   if (password) {
-    parsed.password = password;
+    // Password already folded into credentials above.
   } else if (passwordFileValue) {
-    parsed.password = passwordFileValue;
+    // Password already folded into credentials above.
   } else if (!passwordFile) {
-    parsed.password = SERVER_DEFAULT_POSTGRES_PASSWORD;
+    // Placeholder password already folded into credentials above.
   }
   if (sslMode) {
-    parsed.searchParams.set('sslmode', sslMode);
+    params.set('sslmode', sslMode);
   }
-  return parsed.toString();
+  const query = params.toString();
+  return `postgresql://${authority}/${encodeURIComponent(database).replaceAll('%2F', '/')}${query ? `?${query}` : ''}`;
 }
 
 function readRuntimeConfigPasswordFile(passwordFile, configFile, env = process.env) {
@@ -718,11 +745,13 @@ function prepareStartProductionRuntimeConfig({
     settings.deploymentMode ?? baseEnv.SDKWORK_CLAW_DEPLOYMENT_MODE ?? 'server',
   );
   const defaults = runtimeConfigLocationForPlatform(platform, deploymentMode, baseEnv);
-  const configFile = String(
+  const requestedConfigFile = String(
     settings.configFile ?? baseEnv.SDKWORK_CLAW_CONFIG_FILE ?? defaults.configFile,
   ).trim();
-  const dataDirectory = defaults.dataDirectory;
-  const sqlitePath = defaults.sqlitePath;
+  const location = runtimeConfigLocationWithExplicitConfigFile(defaults, requestedConfigFile);
+  const configFile = location.configFile;
+  const dataDirectory = location.dataDirectory;
+  const sqlitePath = location.sqlitePath;
   const explicitDatabaseUrl = String(settings.databaseUrl ?? baseEnv.SDKWORK_CLAW_DATABASE_URL ?? '').trim();
   const defaultDatabaseUrl = runtimeConfigDefaultUrlForMode(
     deploymentMode,
@@ -1123,6 +1152,7 @@ export {
   runtimeConfigDefaultUrlForMode,
   runtimeConfigEngineForMode,
   runtimeConfigLocationForPlatform,
+  runtimeConfigLocationWithExplicitConfigFile,
   runtimeConfigRedactedUrl,
   runtimeConfigTemplateContent,
   prepareStartProductionRuntimeConfig,

@@ -45,6 +45,7 @@ impl SqliteCommerceBillingHistoryStore {
         .bind(query.offset())
         .fetch_all(&self.pool)
         .await
+        .or_else(empty_rows_when_read_model_is_missing)
         .map_err(|error| store_error("failed to list billing history", error))?;
 
         rows.iter().map(map_billing_history_item).collect()
@@ -96,4 +97,24 @@ fn integer_cell(row: &sqlx::sqlite::SqliteRow, name: &str) -> i64 {
 
 fn store_error(context: &str, error: sqlx::Error) -> CommerceServiceError {
     CommerceServiceError::storage(format!("{context}: {error}"))
+}
+
+fn empty_rows_when_read_model_is_missing(
+    error: sqlx::Error,
+) -> Result<Vec<sqlx::sqlite::SqliteRow>, sqlx::Error> {
+    if is_missing_sqlite_read_model(&error) {
+        Ok(Vec::new())
+    } else {
+        Err(error)
+    }
+}
+
+fn is_missing_sqlite_read_model(error: &sqlx::Error) -> bool {
+    match error {
+        sqlx::Error::Database(database_error) => {
+            let message = database_error.message().to_ascii_lowercase();
+            message.contains("no such table") || message.contains("no such column")
+        }
+        _ => false,
+    }
 }

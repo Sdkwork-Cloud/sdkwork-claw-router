@@ -3,6 +3,7 @@ import {
   type IamRuntime,
   type IamTokenStore,
 } from '@sdkwork/iam-runtime';
+import { createIamAppSdkAdapter } from '@sdkwork/iam-sdk-adapter';
 import type { IamStoredSession } from '@sdkwork/iam-service';
 import {
   clearStoredAppSessionToken,
@@ -20,7 +21,7 @@ let runtime: IamRuntime | null = null;
 export function createClawRouterIamRuntime(): IamRuntime {
   return createIamRuntime({
     clients: {
-      app: getClawRouterAppSdkClient(),
+      app: createIamAppSdkAdapter(getClawRouterAppSdkClient()),
     },
     config: {
       appId: readClawRouterRuntimeEnv('VITE_SDKWORK_APP_ID') ?? 'sdkwork-claw-router',

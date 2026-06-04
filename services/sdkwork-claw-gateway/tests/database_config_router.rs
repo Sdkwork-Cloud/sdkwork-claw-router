@@ -41,7 +41,7 @@ async fn set_openrouter_test_base_url(pool: &SqlitePool, base_url: &str) {
         .execute(pool)
         .await
         .unwrap();
-    sqlx::query("UPDATE ai_channel_endpoint SET base_url = ? WHERE channel_id = 3001")
+    sqlx::query("UPDATE ai_channel_credential SET base_url = ? WHERE channel_id = 3001")
         .bind(base_url)
         .execute(pool)
         .await
@@ -357,7 +357,7 @@ async fn database_config_router_records_non_stream_chat_usage_when_provider_succ
         "0.000000990000",
         usage.get::<String, _>("customer_charge_amount")
     );
-    assert_eq!("0.000000550000", usage.get::<String, _>("cost_amount"));
+    assert_eq!("0.000000990000", usage.get::<String, _>("cost_amount"));
     assert_eq!("USD", usage.get::<String, _>("currency"));
     assert_eq!("standard", usage.get::<String, _>("pricing_plan_code"));
     assert_eq!(0_i64, usage.get::<i64, _>("settlement_status"));
@@ -506,7 +506,7 @@ async fn database_config_router_applies_database_retry_policy_without_duplicate_
         "0.000002772000",
         usage.get::<String, _>("customer_charge_amount")
     );
-    assert_eq!("0.000001540000", usage.get::<String, _>("cost_amount"));
+    assert_eq!("0.000002772000", usage.get::<String, _>("cost_amount"));
     assert_eq!(0_i64, usage.get::<i64, _>("settlement_status"));
 
     let trace_count: i64 =
@@ -854,7 +854,7 @@ async fn database_config_router_uses_provider_relay_config_for_streaming_chat_co
         "0.000000990000",
         usage.get::<String, _>("customer_charge_amount")
     );
-    assert_eq!("0.000000550000", usage.get::<String, _>("cost_amount"));
+    assert_eq!("0.000000990000", usage.get::<String, _>("cost_amount"));
     assert_eq!(0_i64, usage.get::<i64, _>("settlement_status"));
     read_pool.close().await;
 }
