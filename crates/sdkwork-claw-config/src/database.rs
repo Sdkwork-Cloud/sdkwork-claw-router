@@ -868,10 +868,7 @@ impl RuntimeConfigLocation {
                     .unwrap_or_else(|| "C:/Users/Default".to_owned());
                 let root = join_runtime_path(&home, ".sdkwork/router");
                 Self {
-                    config_file: PathBuf::from(join_runtime_path(
-                        &root,
-                        "config/clawrouter.toml",
-                    )),
+                    config_file: PathBuf::from(join_runtime_path(&root, "config/clawrouter.toml")),
                     data_directory: PathBuf::from(join_runtime_path(&root, "data")),
                 }
             }
@@ -880,10 +877,7 @@ impl RuntimeConfigLocation {
                 let home = get_env("HOME").unwrap_or_else(|| "~".to_owned());
                 let root = join_runtime_path(&home, ".sdkwork/router");
                 Self {
-                    config_file: PathBuf::from(join_runtime_path(
-                        &root,
-                        "config/clawrouter.toml",
-                    )),
+                    config_file: PathBuf::from(join_runtime_path(&root, "config/clawrouter.toml")),
                     data_directory: PathBuf::from(join_runtime_path(&root, "data")),
                 }
             }
@@ -892,10 +886,7 @@ impl RuntimeConfigLocation {
                 let home = get_env("HOME").unwrap_or_else(|| "~".to_owned());
                 let root = join_runtime_path(&home, ".sdkwork/router");
                 Self {
-                    config_file: PathBuf::from(join_runtime_path(
-                        &root,
-                        "config/clawrouter.toml",
-                    )),
+                    config_file: PathBuf::from(join_runtime_path(&root, "config/clawrouter.toml")),
                     data_directory: PathBuf::from(join_runtime_path(&root, "data")),
                 }
             }
