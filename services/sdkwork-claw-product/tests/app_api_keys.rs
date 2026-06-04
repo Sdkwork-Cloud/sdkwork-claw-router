@@ -299,6 +299,7 @@ impl GatewayApiKeyManagementReadStore for TestApiKeyReadStore {
                     expire_at: None,
                     status_code: 1,
                     default_for_runtime: false,
+                    group_bindings: Vec::new(),
                 });
                 snapshot.channel_groups.push(
                     ChannelGroup::new_scoped(
@@ -384,6 +385,7 @@ impl GatewayApiKeyCommandStore for TestApiKeyCommandStore {
                     expire_at: command.expire_at,
                     status_code: 1,
                     default_for_runtime: false,
+                    group_bindings: Vec::new(),
                 },
                 access_policy: None,
                 quota_policy: Some(QuotaPolicy::new(
@@ -418,6 +420,7 @@ impl GatewayApiKeyCommandStore for TestApiKeyCommandStore {
                     expire_at: None,
                     status_code: 1,
                     default_for_runtime: command.default_for_runtime.unwrap_or(false),
+                    group_bindings: Vec::new(),
                 },
                 access_policy: None,
                 quota_policy: Some(QuotaPolicy::new(

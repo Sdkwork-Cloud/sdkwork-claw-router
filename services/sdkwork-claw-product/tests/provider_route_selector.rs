@@ -304,7 +304,6 @@ fn authenticated_context() -> AuthenticatedApiKeyContext {
         group_id: 10,
         group_code: "standard-group".to_owned(),
         pricing_plan_code: "standard".to_owned(),
-        group_bindings: Vec::new(),
     }
 }
 

@@ -334,6 +334,7 @@ impl GatewayApiKeyCommandStore for TestGatewayApiKeyStore {
                 expire_at: command.expire_at,
                 status_code: 1,
                 default_for_runtime: command.default_for_runtime,
+                group_bindings: Vec::new(),
             };
 
             let mut catalog = self

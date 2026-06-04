@@ -1249,7 +1249,7 @@ impl AppRoutingChannelCommandStore for InMemoryAppRoutingStore {
                 access_type: command.access_type,
                 base_url: command.base_url.unwrap_or_default(),
                 api_key: "ref:***edge-created".to_owned(),
-                models: command.models,
+                models: Vec::new(),
                 capabilities: command.capabilities,
                 is_multimodal: command.is_multimodal,
                 timeout_ms: command.timeout_ms,
@@ -1297,9 +1297,6 @@ impl AppRoutingChannelCommandStore for InMemoryAppRoutingStore {
             }
             if let Some(base_url) = command.base_url {
                 item.base_url = base_url.unwrap_or_default();
-            }
-            if let Some(models) = command.models {
-                item.models = models;
             }
             if let Some(capabilities) = command.capabilities {
                 item.capabilities = capabilities;
