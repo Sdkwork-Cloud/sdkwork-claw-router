@@ -26,7 +26,7 @@ For an existing database, make sure the host, port, database name, username, and
 
 ## 2. Optional .env.postgres Override
 
-`pnpm dev` does not require `.env.postgres` when your local database uses the default values. To customize the PostgreSQL fields, copy the checked-in template:
+`pnpm dev` reads `.env.postgres` for the local PostgreSQL profile. If the file is missing or you need to customize the PostgreSQL fields, copy the checked-in template:
 
 ```powershell
 Copy-Item .env.postgres.example .env.postgres
@@ -42,7 +42,7 @@ Edit `.env.postgres`:
 
 ```env
 SDKWORK_CLAW_DATABASE_ENGINE=postgresql
-SDKWORK_CLAW_DATABASE_HOST=127.0.0.1
+SDKWORK_CLAW_DATABASE_HOST=[::1]
 SDKWORK_CLAW_DATABASE_PORT=5432
 SDKWORK_CLAW_DATABASE_NAME=sdkwork_ai_dev
 SDKWORK_CLAW_DATABASE_SCHEMA=sdkwork_ai_dev
@@ -84,12 +84,12 @@ pnpm dev --dry-run
 The default dev profile assembles:
 
 ```text
-SDKWORK_CLAW_DATABASE_URL=postgresql://sdkwork_ai_dev:sdkworkdev123@127.0.0.1:5432/sdkwork_ai_dev?sslmode=disable
+SDKWORK_CLAW_DATABASE_URL=postgresql://sdkwork_ai_dev:sdkworkdev123@[::1]:5432/sdkwork_ai_dev?sslmode=disable
 ```
 
 and passes the URL plus `SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS` to the installer, catalog refresh, gateway, and edge runtime steps.
 
-Use the explicit PostgreSQL scripts when you want the launcher to load `.env.postgres`:
+`pnpm dev` already loads `.env.postgres`. These explicit PostgreSQL scripts are aliases for the same profile:
 
 ```powershell
 pnpm dev:postgres

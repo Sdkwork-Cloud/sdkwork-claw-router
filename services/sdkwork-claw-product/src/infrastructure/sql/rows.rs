@@ -536,23 +536,18 @@ fn parse_gateway_api_key_group_binding(
     let pricing_plan_code =
         parse_optional_object_string(&object, "pricingPlanCode", "pricing_plan_code")
             .unwrap_or_default();
-    let binding_role =
-        parse_optional_object_string(&object, "bindingRole", "binding_role")
-            .unwrap_or_else(|| "route".to_owned());
+    let binding_role = parse_optional_object_string(&object, "bindingRole", "binding_role")
+        .unwrap_or_else(|| "route".to_owned());
     let routing_strategy =
         parse_optional_object_string(&object, "routingStrategy", "routing_strategy")
             .unwrap_or_else(|| "auto".to_owned());
     let priority = parse_optional_i32(&object, "priority", index)?.unwrap_or(100);
     let weight = parse_optional_i32(&object, "weight", index)?.unwrap_or(100);
-    Ok(GatewayApiKeyGroupBinding::new(
-        group_id,
-        &group_code,
-        &pricing_plan_code,
-        priority,
-        weight,
+    Ok(
+        GatewayApiKeyGroupBinding::new(group_id, &group_code, &pricing_plan_code, priority, weight)
+            .with_binding_role(&binding_role)
+            .with_routing_strategy(&routing_strategy),
     )
-    .with_binding_role(&binding_role)
-    .with_routing_strategy(&routing_strategy))
 }
 
 fn parse_optional_object_string(

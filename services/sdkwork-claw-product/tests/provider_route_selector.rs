@@ -3,11 +3,11 @@ use sdkwork_claw_product::application::{
     SelectProviderChannelRouteQuery, SelectProviderRouteQuery,
 };
 use sdkwork_claw_product::domain::{
-    AiModel, BillingMeter, ChannelGroup, DecimalValue, GatewayApiKey,
-    GatewayApiKeyGroupBinding, ModelMappingBindingType, ModelMappingRule, ModelPrice,
-    ModelProviderRoute, ModelVendor, ModelVendorDefinition, Money, PriceSide, PricingPlan,
-    ProviderChannelRoute, ResolveModelMappingContext, RouteCandidate, RoutingCapability,
-    RoutingFallbackMode, RoutingPolicy, RoutingPolicyScope, RoutingRule,
+    AiModel, BillingMeter, ChannelGroup, DecimalValue, GatewayApiKey, GatewayApiKeyGroupBinding,
+    ModelMappingBindingType, ModelMappingRule, ModelPrice, ModelProviderRoute, ModelVendor,
+    ModelVendorDefinition, Money, PriceSide, PricingPlan, ProviderChannelRoute,
+    ResolveModelMappingContext, RouteCandidate, RoutingCapability, RoutingFallbackMode,
+    RoutingPolicy, RoutingPolicyScope, RoutingRule,
 };
 use sdkwork_claw_product::infrastructure::InMemoryPricingCatalog;
 use sdkwork_claw_product::ports::PricingCatalog;
@@ -1957,13 +1957,7 @@ fn selector_restricts_channel_group_bindings_by_api_scope() {
                 Some("http://provider-proxy.internal/openrouter-files-api"),
                 Some("vault://providers/openrouter-files-api/account/main"),
             )
-            .with_resource_scoped_group_binding(
-                10,
-                50,
-                1,
-                vec!["api.openai.files"],
-                vec!["llm"],
-            ),
+            .with_resource_scoped_group_binding(10, 50, 1, vec!["api.openai.files"], vec!["llm"]),
     );
     add_group_policy_rule(
         &mut catalog,
@@ -2089,13 +2083,7 @@ fn selector_matches_modeless_channel_route_when_api_scope_matches() {
                 Some("http://provider-proxy.internal/openrouter-files-api"),
                 Some("vault://providers/openrouter-files-api/account/main"),
             )
-            .with_resource_scoped_group_binding(
-                10,
-                1,
-                100,
-                vec!["openai.files"],
-                vec!["network"],
-            ),
+            .with_resource_scoped_group_binding(10, 1, 100, vec!["openai.files"], vec!["network"]),
     );
     add_group_policy_rule(
         &mut catalog,
@@ -2128,13 +2116,7 @@ fn selector_allows_capability_scoped_channel_route_when_api_scope_is_unrestricte
                 Some("http://provider-proxy.internal/openrouter-network"),
                 Some("vault://providers/openrouter-network/account/main"),
             )
-            .with_resource_scoped_group_binding(
-                10,
-                1,
-                100,
-                Vec::<String>::new(),
-                vec!["network"],
-            ),
+            .with_resource_scoped_group_binding(10, 1, 100, Vec::<String>::new(), vec!["network"]),
     );
     add_group_policy_rule(
         &mut catalog,
@@ -2167,13 +2149,7 @@ fn selector_matches_channel_group_bindings_by_standard_api_code() {
                 Some("http://provider-proxy.internal/openrouter-files-other-api"),
                 Some("vault://providers/openrouter-files-other-api/account/main"),
             )
-            .with_resource_scoped_group_binding(
-                10,
-                1,
-                100,
-                vec!["openai.responses"],
-                vec!["llm"],
-            ),
+            .with_resource_scoped_group_binding(10, 1, 100, vec!["openai.responses"], vec!["llm"]),
     );
     catalog.add_provider_channel_route(
         ProviderChannelRoute::new("openrouter-files-api", 3002)
@@ -2181,13 +2157,7 @@ fn selector_matches_channel_group_bindings_by_standard_api_code() {
                 Some("http://provider-proxy.internal/openrouter-files-api"),
                 Some("vault://providers/openrouter-files-api/account/main"),
             )
-            .with_resource_scoped_group_binding(
-                10,
-                50,
-                1,
-                vec!["openai.files"],
-                vec!["llm"],
-            ),
+            .with_resource_scoped_group_binding(10, 50, 1, vec!["openai.files"], vec!["llm"]),
     );
     add_group_policy_rule(
         &mut catalog,

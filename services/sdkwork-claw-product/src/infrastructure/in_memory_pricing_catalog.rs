@@ -106,9 +106,8 @@ fn same_provider_channel_route_identity(
     left.provider_code == right.provider_code
         && left.channel_id == right.channel_id
         && left.credential_id == right.credential_id
-        && normalized_region_code(&left.region_code).eq_ignore_ascii_case(&normalized_region_code(
-            &right.region_code,
-        ))
+        && normalized_region_code(&left.region_code)
+            .eq_ignore_ascii_case(&normalized_region_code(&right.region_code))
 }
 
 fn normalized_region_code(value: &str) -> String {

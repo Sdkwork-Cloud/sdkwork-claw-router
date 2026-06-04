@@ -353,6 +353,7 @@ export function parseAppStoreSeedArgs(argv) {
         break;
       case '--check':
         settings.check = true;
+        settings.initializeMissing = false;
         break;
       case '--sync-db':
         settings.syncDb = true;

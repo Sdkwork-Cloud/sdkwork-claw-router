@@ -441,7 +441,10 @@ fn find_selected_channel_route_metadata(
     if has_text(model_route.base_url.as_deref()) || has_text(model_route.secret_ref.as_deref()) {
         if let Some(route) = candidates.iter().find(|route| {
             same_optional_text(route.base_url.as_deref(), model_route.base_url.as_deref())
-                && same_optional_text(route.secret_ref.as_deref(), model_route.secret_ref.as_deref())
+                && same_optional_text(
+                    route.secret_ref.as_deref(),
+                    model_route.secret_ref.as_deref(),
+                )
         }) {
             return Some(route.clone());
         }

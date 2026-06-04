@@ -663,7 +663,9 @@ impl<'a, C: PricingCatalog> ProviderRouteSelector<'a, C> {
                     .into_iter()
                     .next();
                 Some(match channel_route {
-                    Some(channel_route) => apply_channel_route_account(route.clone(), &channel_route),
+                    Some(channel_route) => {
+                        apply_channel_route_account(route.clone(), &channel_route)
+                    }
                     None => route.clone(),
                 })
             })
@@ -731,9 +733,9 @@ impl<'a, C: PricingCatalog> ProviderRouteSelector<'a, C> {
 
         let candidates = group_bound_channel_route_candidates(routes, group_bindings);
         match self.evaluate_candidate_channel_routes(routes, candidates) {
-            CandidateChannelRouteEvaluation::Selected(route) => Some(selected_provider_channel_route(
-                route, context, None, None,
-            )),
+            CandidateChannelRouteEvaluation::Selected(route) => {
+                Some(selected_provider_channel_route(route, context, None, None))
+            }
             CandidateChannelRouteEvaluation::NoCallableCandidate => None,
         }
     }

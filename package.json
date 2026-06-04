@@ -5,7 +5,7 @@
   "type": "module",
   "packageManager": "pnpm@10.33.0",
   "scripts": {
-    "dev": "node scripts/run-claw-router-product.mjs server",
+    "dev": "node scripts/run-claw-router-product.mjs server --dev-env-file .env.postgres",
     "dev:sqlite": "node scripts/run-claw-router-product.mjs server -- --database-url sqlite://target/dev/clawrouter.sqlite",
     "dev:postgres": "node scripts/run-claw-router-product.mjs server --dev-env-file .env.postgres",
     "dev:distributed": "node scripts/run-claw-router-product.mjs server -- --distributed",
@@ -14,6 +14,7 @@
     "start": "node scripts/start-claw-router-production.mjs",
     "release": "pnpm downloads:check && pnpm release:env:write -- --check && pnpm release:env:write -- --force && pnpm release:preflight -- --strict --env-file .env.release.local --strict-root-clean && pnpm verify",
     "admin:reset:dev": "node scripts/reset-admin-account.mjs --mode dev",
+    "admin:reset:dev:sqlite": "node scripts/reset-admin-account.mjs --mode dev",
     "admin:reset:dev:postgres": "node scripts/reset-admin-account.mjs --mode dev --dev-env-file .env.postgres",
     "admin:reset:release": "node scripts/reset-admin-account.mjs --mode release",
     "db": "node scripts/manage-claw-router-database.mjs",

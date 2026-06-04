@@ -281,6 +281,7 @@ Options:
 
 Examples:
   pnpm admin:reset:dev -- --password "Admin-Dev-Password-2026!"
+  pnpm admin:reset:dev:sqlite -- --password "Admin-Dev-Password-2026!"
   pnpm admin:reset:dev:postgres -- --password "Admin-Dev-Password-2026!"
   pnpm admin:reset:release -- --password "Admin-Release-Password-2026!"
   SDKWORK_CLAW_ADMIN_RESET_PASSWORD="Admin-Release-Password-2026!" pnpm admin:reset:release

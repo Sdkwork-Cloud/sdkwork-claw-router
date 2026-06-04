@@ -256,7 +256,9 @@ async fn admin_channel_group_route_lists_and_replaces_channel_bindings() {
     assert_eq!(5, replace_payload["data"]["items"][0]["priority"]);
     assert_eq!(100, replace_payload["data"]["items"][0]["weight"]);
     assert!(replace_payload["data"]["items"][0].get("models").is_none());
-    assert!(replace_payload["data"]["items"][0].get("modelScope").is_none());
+    assert!(replace_payload["data"]["items"][0]
+        .get("modelScope")
+        .is_none());
     assert_eq!(
         "llm",
         replace_payload["data"]["items"][0]["capabilities"][0]

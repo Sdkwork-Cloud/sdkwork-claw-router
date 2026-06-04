@@ -23,7 +23,7 @@ const validReleaseEnv = Object.freeze({
   PORTAL_PUBLIC_TOOL_API_ENABLED: 'false',
 });
 const defaultDevPostgresDatabaseUrl =
-  'postgresql://sdkwork_ai_dev:sdkworkdev123@127.0.0.1:5432/sdkwork_ai_dev?sslmode=disable';
+  'postgresql://sdkwork_ai_dev:sdkworkdev123@[::1]:5432/sdkwork_ai_dev?sslmode=disable';
 const defaultProdPostgresDatabase = 'sdkwork_ai_prod';
 const defaultProdPostgresUsername = 'sdkworkprod@2026++';
 const defaultProdPostgresUrl =
@@ -144,7 +144,12 @@ test('root package exposes pnpm product entrypoints', () => {
   assert.equal(rootPackage.packageManager, 'pnpm@10.33.0');
   assert.equal(
     rootPackage.scripts.dev,
-    'node scripts/run-claw-router-product.mjs server',
+    'node scripts/run-claw-router-product.mjs server --dev-env-file .env.postgres',
+  );
+  assert.doesNotMatch(
+    rootPackage.scripts.dev,
+    /(^|\s)--env-file(\s|$)/u,
+    'pnpm dev must use --dev-env-file because Node 22 reserves --env-file',
   );
   assert.equal(
     rootPackage.scripts['dev:sqlite'],
@@ -185,6 +190,10 @@ test('root package exposes pnpm product entrypoints', () => {
   );
   assert.equal(
     rootPackage.scripts['admin:reset:dev'],
+    'node scripts/reset-admin-account.mjs --mode dev',
+  );
+  assert.equal(
+    rootPackage.scripts['admin:reset:dev:sqlite'],
     'node scripts/reset-admin-account.mjs --mode dev',
   );
   assert.equal(
@@ -1502,6 +1511,28 @@ test('claw router product launcher preserves forwarded mode arguments after --',
   assert.deepEqual(parsed.extraArgs, ['--help']);
 });
 
+test('claw router product launcher drops repeated pnpm separator inside forwarded arguments', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'run-claw-router-product.mjs')).href
+  );
+
+  const parsed = module.parseClawRouterProductArgs([
+    'server',
+    '--',
+    '--database-url',
+    'sqlite://target/dev/clawrouter.sqlite',
+    '--',
+    '--dry-run',
+  ]);
+
+  assert.equal(parsed.mode, 'server');
+  assert.deepEqual(parsed.extraArgs, [
+    '--database-url',
+    'sqlite://target/dev/clawrouter.sqlite',
+    '--dry-run',
+  ]);
+});
+
 test('claw router product launcher help distinguishes workspace PostgreSQL from desktop SQLite runtime', async () => {
   const { stdout } = await execFileAsync(process.execPath, [
     path.join(workspaceRoot, 'scripts', 'run-claw-router-product.mjs'),
@@ -1638,7 +1669,7 @@ test('claw router dev postgres env example documents split database fields', () 
   assert.ok(!ignored.includes('!.env.postgres'));
   for (const requiredName of [
     'SDKWORK_CLAW_DATABASE_ENGINE=postgresql',
-    'SDKWORK_CLAW_DATABASE_HOST=127.0.0.1',
+    'SDKWORK_CLAW_DATABASE_HOST=[::1]',
     'SDKWORK_CLAW_DATABASE_PORT=5432',
     'SDKWORK_CLAW_DATABASE_NAME=sdkwork_ai_dev',
     'SDKWORK_CLAW_DATABASE_SCHEMA=sdkwork_ai_dev',
@@ -1673,7 +1704,7 @@ test('claw router product launcher loads dev env file into server workspace env'
     'postgres.env',
     [
       'SDKWORK_CLAW_DATABASE_ENGINE=postgresql',
-      'SDKWORK_CLAW_DATABASE_HOST=127.0.0.1',
+      'SDKWORK_CLAW_DATABASE_HOST=[::1]',
       'SDKWORK_CLAW_DATABASE_PORT=15433',
       'SDKWORK_CLAW_DATABASE_NAME=env_file_db',
       'SDKWORK_CLAW_DATABASE_USERNAME=env_file_user',
@@ -1697,7 +1728,7 @@ test('claw router product launcher loads dev env file into server workspace env'
   assert.equal(plan.length, 1);
   assert.equal(
     plan[0].env.SDKWORK_CLAW_DATABASE_URL,
-    'postgresql://env_file_user:env%20file%20pass@127.0.0.1:15433/env_file_db?sslmode=disable',
+    'postgresql://env_file_user:env%20file%20pass@[::1]:15433/env_file_db?sslmode=disable',
   );
   assert.equal(plan[0].env.SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS, '15');
 });
@@ -1712,7 +1743,7 @@ test('claw router product launcher loads default PostgreSQL dev profile from wor
     '.env.postgres.example',
     [
       'SDKWORK_CLAW_DATABASE_ENGINE=postgresql',
-      'SDKWORK_CLAW_DATABASE_HOST=127.0.0.1',
+      'SDKWORK_CLAW_DATABASE_HOST=[::1]',
       'SDKWORK_CLAW_DATABASE_PORT=15432',
       'SDKWORK_CLAW_DATABASE_NAME=example_dev_db',
       'SDKWORK_CLAW_DATABASE_SCHEMA=example_dev_schema',
@@ -1743,7 +1774,7 @@ test('claw router product launcher loads default PostgreSQL dev profile from wor
   assert.equal(examplePlan.length, 1);
   assert.equal(
     examplePlan[0].env.SDKWORK_CLAW_DATABASE_URL,
-    'postgresql://example_dev_user:example_dev_pass@127.0.0.1:15432/example_dev_db?sslmode=disable',
+    'postgresql://example_dev_user:example_dev_pass@[::1]:15432/example_dev_db?sslmode=disable',
   );
   assert.equal(examplePlan[0].env.SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS, '9');
   assert.equal(examplePlan[0].env.SDKWORK_CLAW_DATABASE_SCHEMA, 'example_dev_schema');
@@ -1754,7 +1785,7 @@ test('claw router product launcher loads default PostgreSQL dev profile from wor
     '.env.postgres',
     [
       'SDKWORK_CLAW_DATABASE_ENGINE=postgresql',
-      'SDKWORK_CLAW_DATABASE_HOST=127.0.0.1',
+      'SDKWORK_CLAW_DATABASE_HOST=[::1]',
       'SDKWORK_CLAW_DATABASE_PORT=25432',
       'SDKWORK_CLAW_DATABASE_NAME=local_override_db',
       'SDKWORK_CLAW_DATABASE_USERNAME=local_override_user',
@@ -1776,7 +1807,7 @@ test('claw router product launcher loads default PostgreSQL dev profile from wor
 
   assert.equal(
     overridePlan[0].env.SDKWORK_CLAW_DATABASE_URL,
-    'postgresql://local_override_user:local_override_pass@127.0.0.1:25432/local_override_db?sslmode=require',
+    'postgresql://local_override_user:local_override_pass@[::1]:25432/local_override_db?sslmode=require',
   );
   assert.equal(overridePlan[0].env.SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS, '11');
   rmSync(fixtureRoot, { recursive: true, force: true });
@@ -7921,21 +7952,21 @@ test('verification plan includes real browser DOM smoke after production HTTP sm
   assert.match(browserSmokeSource, /for \(const route of BROWSER_SMOKE_ROUTES\)/);
   const defaultModelsRouteSource = browserSmokeSource.slice(
     browserSmokeSource.indexOf('pathName: "/models"'),
-    browserSmokeSource.indexOf('pathName: "/models/openai%2Fglobal%2Fgpt-5.5-pro"'),
+    browserSmokeSource.indexOf('pathName: "/models/openai%2Fgpt-5.5-pro"'),
   );
   const defaultModelDetailRouteSource = browserSmokeSource.slice(
-    browserSmokeSource.indexOf('pathName: "/models/openai%2Fglobal%2Fgpt-5.5-pro"'),
+    browserSmokeSource.indexOf('pathName: "/models/openai%2Fgpt-5.5-pro"'),
     browserSmokeSource.indexOf('pathName: "/models?__browser-smoke-runtime=1"'),
   );
   assert.match(defaultModelsRouteSource, /appSdkFixtureMode: APP_SDK_MODEL_FIXTURE_MODE/);
   assert.match(defaultModelDetailRouteSource, /appSdkFixtureMode: APP_SDK_MODEL_FIXTURE_MODE/);
-  assert.match(browserSmokeSource, /\/models\/openai%2Fglobal%2Fgpt-5\.5-pro/);
+  assert.match(browserSmokeSource, /\/models\/openai%2Fgpt-5\.5-pro/);
   assert.match(browserSmokeSource, /GPT-5\.5 Pro/);
   assert.match(browserSmokeSource, /Claude Opus 4\.7/);
   assert.ok(browserSmokeSource.includes('/models?__browser-smoke-runtime=1'));
   assert.ok(browserSmokeSource.includes('/models?__browser-smoke-groups=1'));
   assert.ok(browserSmokeSource.includes('/models?__browser-smoke-empty-runtime=1'));
-  assert.ok(browserSmokeSource.includes('/models/newvendor%2Fglobal%2Fruntime-good?__browser-smoke-detail=1'));
+  assert.ok(browserSmokeSource.includes('/models/newvendor%2Fruntime-good?__browser-smoke-detail=1'));
   assert.match(browserSmokeSource, /BROWSER_SMOKE_MODEL_RECORDS/);
   assert.match(browserSmokeSource, /APP_SDK_MODEL_FIXTURE_MODE/);
   assert.match(browserSmokeSource, /APP_SDK_MODEL_EMPTY_FIXTURE_MODE/);

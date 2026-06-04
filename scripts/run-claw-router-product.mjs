@@ -73,6 +73,9 @@ export function parseClawRouterProductArgs(argv) {
   for (let index = 0; index < argv.length; index += 1) {
     const arg = argv[index];
     if (forwardOnly) {
+      if (arg === '--') {
+        continue;
+      }
       result.extraArgs.push(arg);
       continue;
     }
