@@ -427,21 +427,21 @@ SELECT
     COALESCE(ib.identity_binding_count, 0) AS identity_binding_count
 FROM iam_session s
 JOIN iam_user u
-  ON u.tenant_id = s.tenant_id
- AND u.id = s.user_id
+  ON CAST(u.tenant_id AS TEXT) = s.tenant_id
+ AND CAST(u.id AS TEXT) = s.user_id
 JOIN iam_organization_member om
-  ON om.tenant_id = s.tenant_id
- AND om.organization_id = s.organization_id
- AND om.user_id = s.user_id
+  ON CAST(om.tenant_id AS TEXT) = s.tenant_id
+ AND CAST(om.organization_id AS TEXT) = s.organization_id
+ AND CAST(om.user_id AS TEXT) = s.user_id
  AND om.status = 'active'
 LEFT JOIN iam_user_preference pref
-  ON pref.tenant_id = s.tenant_id
- AND pref.organization_id = s.organization_id
- AND pref.user_id = s.user_id
+  ON CAST(pref.tenant_id AS TEXT) = s.tenant_id
+ AND CAST(pref.organization_id AS TEXT) = s.organization_id
+ AND CAST(pref.user_id AS TEXT) = s.user_id
 LEFT JOIN iam_user_security_setting sec
-  ON sec.tenant_id = s.tenant_id
- AND sec.organization_id = s.organization_id
- AND sec.user_id = s.user_id
+  ON CAST(sec.tenant_id AS TEXT) = s.tenant_id
+ AND CAST(sec.organization_id AS TEXT) = s.organization_id
+ AND CAST(sec.user_id AS TEXT) = s.user_id
 LEFT JOIN (
     SELECT tenant_id, user_id, COUNT(DISTINCT provider) AS identity_binding_count
     FROM iam_user_identity
@@ -453,9 +453,9 @@ LEFT JOIN iam_user_login_event ll
   ON ll.id = (
       SELECT id
       FROM iam_user_login_event
-      WHERE tenant_id = s.tenant_id
-        AND organization_id = s.organization_id
-        AND user_id = s.user_id
+      WHERE CAST(tenant_id AS TEXT) = s.tenant_id
+        AND CAST(organization_id AS TEXT) = s.organization_id
+        AND CAST(user_id AS TEXT) = s.user_id
       ORDER BY occurred_at DESC NULLS LAST, id DESC
       LIMIT 1
   )

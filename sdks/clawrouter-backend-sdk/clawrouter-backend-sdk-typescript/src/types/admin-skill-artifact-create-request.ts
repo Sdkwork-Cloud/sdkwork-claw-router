@@ -7,7 +7,7 @@ export interface AdminSkillArtifactCreateRequest {
   /** Artifact ref field on admin skill artifact create request. */
   artifactRef?: string;
   /** Artifact size bytes field on admin skill artifact create request. */
-  artifactSizeBytes?: number;
+  artifactSizeBytes?: string;
   /** Artifact type field on admin skill artifact create request. */
   artifactType?: number;
   /** Checksum hash field on admin skill artifact create request. */

@@ -5,7 +5,7 @@ export interface AgentRunItem {
   /** Agent version id field on agent run item. */
   agentVersionId: string;
   /** Cached tokens field on agent run item. */
-  cachedTokens?: number | null;
+  cachedTokens?: string | null;
   /** Completed at field on agent run item. */
   completedAt?: string | null;
   /** Created at field on agent run item. */
@@ -19,7 +19,7 @@ export interface AgentRunItem {
   /** Input message field on agent run item. */
   inputMessage?: string | null;
   /** Input tokens field on agent run item. */
-  inputTokens?: number | null;
+  inputTokens?: string | null;
   /** Memory space id field on agent run item. */
   memorySpaceId?: string | null;
   /** Model field on agent run item. */
@@ -27,7 +27,7 @@ export interface AgentRunItem {
   /** Output message field on agent run item. */
   outputMessage?: string | null;
   /** Output tokens field on agent run item. */
-  outputTokens?: number | null;
+  outputTokens?: string | null;
   /** Request id field on agent run item. */
   requestId: string;
   /** Runtime field on agent run item. */
@@ -41,9 +41,9 @@ export interface AgentRunItem {
   /** Status field on agent run item. */
   status: 'queued' | 'running' | 'completed' | 'failed' | 'cancelled';
   /** Total steps field on agent run item. */
-  totalSteps: number;
+  totalSteps: string;
   /** Total tokens field on agent run item. */
-  totalTokens?: number | null;
+  totalTokens?: string | null;
   /** Trace id field on agent run item. */
   traceId?: string | null;
 }

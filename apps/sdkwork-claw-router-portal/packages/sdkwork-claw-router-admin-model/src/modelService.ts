@@ -32,8 +32,6 @@ import type {
   AdminModelMappingUpdateRequest,
   AdminModelVendorCreateRequest,
   ModelRankingItem,
-  ModelRankingRefreshJobHistoryPage,
-  ModelRankingRefreshJobItem,
   ModelRankingRefreshStatus,
   ModelRankingRefreshTriggerRequest,
   ModelRankingRefreshTriggerResponse,
@@ -131,9 +129,9 @@ export type ModelRankingRefreshStatusView = {
   cacheMaxAgeSeconds: number;
   generatedAt: string;
   generatedCount: number;
-  latestJob: ModelRankingRefreshJobItem | null;
+  latestJob: ModelRankingRefreshJobView | null;
   nextRefreshAt: string;
-  organizationId: number;
+  organizationId: string;
   rankScope: string;
   refreshIntervalSeconds: number;
   snapshotDate: string;
@@ -141,14 +139,55 @@ export type ModelRankingRefreshStatusView = {
   sourceCount: number;
   sourceTables: string[];
   status: ModelRankingRefreshStatus['status'];
-  tenantId: number;
+  tenantId: string;
   windowEnd: string;
   windowStart: string;
 };
 
-export type ModelRankingRefreshJobHistoryView = ModelRankingRefreshJobHistoryPage;
+type ModelRankingRefreshJobStatus = 'succeeded' | 'failed' | 'empty' | 'skipped' | 'running';
 
-export type ModelRankingRefreshTriggerView = ModelRankingRefreshTriggerResponse;
+type ModelRankingRefreshJobView = {
+  durationMs: number;
+  endedAt: string;
+  failureCount: number;
+  failureReason: string | null;
+  generatedCount: number;
+  id: string;
+  jobName: string;
+  nextRefreshAt: string;
+  organizationId: string;
+  rankScope: string;
+  snapshotDate: string;
+  snapshotPeriod: string;
+  sourceCount: number;
+  startedAt: string;
+  status: ModelRankingRefreshJobStatus;
+  successCount: number;
+  tenantId: string;
+  windowEnd: string;
+  windowStart: string;
+};
+
+type ModelRankingRefreshJobHistoryView = {
+  items: ModelRankingRefreshJobView[];
+};
+
+type ModelRankingRefreshTriggerView = {
+  cacheMaxAgeSeconds: number;
+  generatedCount: number;
+  nextRefreshAt: string;
+  organizationId: string;
+  rankScope: string;
+  refreshIntervalSeconds: number;
+  snapshotDate: string;
+  snapshotPeriod: 'hourly' | 'daily' | 'weekly' | 'monthly';
+  sourceCount: number;
+  status: 'succeeded' | 'empty';
+  tenantId: string;
+  triggered: boolean;
+  windowEnd: string;
+  windowStart: string;
+};
 
 export type VendorCreateInput = {
   name: string;
@@ -483,7 +522,7 @@ export class ModelService {
   }
 
   static async fetchModelRankings(): Promise<Pick<ModelRankingItem, 'name' | 'requests' | 'baseVolume'>[]> {
-    const result = await getClawRouterBackendSdkClient().ai.modelRankings.list({ limit: 200 });
+    const result = await getClawRouterBackendSdkClient().ai.modelRankings.list({ limit: '200' });
     ensureSdkworkApiSuccess(result, 'Failed to fetch model rankings');
     return readRequiredApiItems(readApiRecord(result), 'Failed to fetch model rankings', ['items'])
       .map(normalizeRankingItem)
@@ -497,7 +536,7 @@ export class ModelService {
   }
 
   static async fetchModelRankingRefreshJobs(): Promise<ModelRankingRefreshJobHistoryView> {
-    const result = await getClawRouterBackendSdkClient().ai.modelRankings.jobs.list({ limit: 20 });
+    const result = await getClawRouterBackendSdkClient().ai.modelRankings.jobs.list({ limit: '20' });
     ensureSdkworkApiSuccess(result, 'Failed to fetch model ranking refresh jobs');
     return {
       items: readRequiredApiItems(readApiRecord(result), 'Failed to fetch model ranking refresh jobs', ['items'])
@@ -821,8 +860,8 @@ function normalizeModelRankingRefreshStatus(value: ApiRecord): ModelRankingRefre
   }
   return {
     status,
-    tenantId: readRequiredNonNegativeInteger(value, 'tenantId', 'Model ranking refresh status tenant id'),
-    organizationId: readRequiredNonNegativeInteger(value, 'organizationId', 'Model ranking refresh status organization id'),
+    tenantId: readRequiredNonNegativeInt64String(value, 'tenantId', 'Model ranking refresh status tenant id'),
+    organizationId: readRequiredNonNegativeInt64String(value, 'organizationId', 'Model ranking refresh status organization id'),
     rankScope: readRequiredString(value, 'rankScope', 'Model ranking refresh status is missing rankScope'),
     snapshotDate: readString(value, 'snapshotDate'),
     snapshotPeriod: readRequiredString(value, 'snapshotPeriod', 'Model ranking refresh status is missing snapshotPeriod'),
@@ -839,7 +878,7 @@ function normalizeModelRankingRefreshStatus(value: ApiRecord): ModelRankingRefre
   };
 }
 
-function normalizeModelRankingRefreshJob(value: unknown): ModelRankingRefreshJobItem {
+function normalizeModelRankingRefreshJob(value: unknown): ModelRankingRefreshJobView {
   const item = readRequiredRecord(value, 'Model ranking refresh job record is required');
   const status = readRequiredString(item, 'status', 'Model ranking refresh job status is required');
   if (status !== 'succeeded' && status !== 'failed' && status !== 'empty' && status !== 'skipped' && status !== 'running') {
@@ -849,8 +888,8 @@ function normalizeModelRankingRefreshJob(value: unknown): ModelRankingRefreshJob
     id: readRequiredString(item, 'id', 'Model ranking refresh job id is required'),
     jobName: readRequiredString(item, 'jobName', 'Model ranking refresh job name is required'),
     status,
-    tenantId: readRequiredNonNegativeInteger(item, 'tenantId', 'Model ranking refresh job tenant id'),
-    organizationId: readRequiredNonNegativeInteger(item, 'organizationId', 'Model ranking refresh job organization id'),
+    tenantId: readRequiredNonNegativeInt64String(item, 'tenantId', 'Model ranking refresh job tenant id'),
+    organizationId: readRequiredNonNegativeInt64String(item, 'organizationId', 'Model ranking refresh job organization id'),
     rankScope: readRequiredString(item, 'rankScope', 'Model ranking refresh job is missing rankScope'),
     snapshotDate: readString(item, 'snapshotDate'),
     snapshotPeriod: readRequiredString(item, 'snapshotPeriod', 'Model ranking refresh job is missing snapshotPeriod'),
@@ -876,8 +915,8 @@ function normalizeModelRankingRefreshTrigger(value: ApiRecord): ModelRankingRefr
   return {
     triggered: readRequiredBoolean(value, 'triggered', 'Model ranking refresh trigger response is missing triggered flag'),
     status,
-    tenantId: readRequiredNonNegativeInteger(value, 'tenantId', 'Model ranking refresh trigger tenant id'),
-    organizationId: readRequiredNonNegativeInteger(value, 'organizationId', 'Model ranking refresh trigger organization id'),
+    tenantId: readRequiredNonNegativeInt64String(value, 'tenantId', 'Model ranking refresh trigger tenant id'),
+    organizationId: readRequiredNonNegativeInt64String(value, 'organizationId', 'Model ranking refresh trigger organization id'),
     rankScope: readRequiredString(value, 'rankScope', 'Model ranking refresh trigger response is missing rankScope'),
     snapshotDate: readRequiredString(value, 'snapshotDate', 'Model ranking refresh trigger response is missing snapshotDate'),
     snapshotPeriod: readSnapshotPeriod(value, 'snapshotPeriod', 'Model ranking refresh trigger response is missing snapshotPeriod'),
@@ -899,10 +938,10 @@ function toModelRankingRefreshTriggerRequest(): ModelRankingRefreshTriggerReques
   return {
     rankScope: 'commercial-default',
     snapshotPeriod: 'daily',
-    limit: 200,
-    lookbackDays: 7,
-    refreshIntervalSeconds: 3600,
-    cacheMaxAgeSeconds: 60,
+    limit: '200',
+    lookbackDays: '7',
+    refreshIntervalSeconds: '3600',
+    cacheMaxAgeSeconds: '60',
   };
 }
 
@@ -1110,6 +1149,11 @@ function optionalNonNegativeInteger(value: number | null | undefined, fieldName:
   return value;
 }
 
+function optionalNonNegativeInt64String(value: number | null | undefined, fieldName: string): string | null {
+  const normalized = optionalNonNegativeInteger(value, fieldName);
+  return normalized === null ? null : String(normalized);
+}
+
 function boundedStringArray(values: string[] | undefined, fieldName: string, maxItems: number, maxLength: number): string[] {
   const normalizedValues = values ?? [];
   if (normalizedValues.length > maxItems) {
@@ -1153,7 +1197,7 @@ function modelCapabilityMetadata(model: Partial<ModelCreateInput>): Partial<Pick
     metadata.useCases = boundedStringArray(model.useCases, 'useCases', 64, 256);
   }
   if (model.maxOutputTokens !== undefined) {
-    metadata.maxOutputTokens = optionalNonNegativeInteger(model.maxOutputTokens, 'maxOutputTokens');
+    metadata.maxOutputTokens = optionalNonNegativeInt64String(model.maxOutputTokens, 'maxOutputTokens');
   }
   if (typeof model.supportsStreaming === 'boolean') {
     metadata.supportsStreaming = model.supportsStreaming;
@@ -1200,7 +1244,7 @@ function toResourceGroupMembers(members: ResourceGroupMemberInput[] | undefined)
     .map((member) => removeUndefinedProperties({
       resourceCode: resourceCode(member.resourceCode, 'resourceCode'),
       itemRole: member.itemRole ?? 'included',
-      sortOrder: optionalNonNegativeInteger(member.sortOrder, 'sortOrder'),
+      sortOrder: optionalNonNegativeInt64String(member.sortOrder, 'sortOrder'),
     }));
 }
 
@@ -1211,7 +1255,7 @@ function toResourceGroupCreateRequest(input: ResourceGroupCreateInput): AdminAiR
     groupType: input.groupType ?? 'api_group',
     selectionMode: input.selectionMode ?? 'manual',
     description: optionalNullableText(input.description, 'description', 512),
-    sortOrder: optionalNonNegativeInteger(input.sortOrder, 'sortOrder'),
+    sortOrder: optionalNonNegativeInt64String(input.sortOrder, 'sortOrder'),
     status: input.status ?? 'active',
     members: toResourceGroupMembers(input.members),
   });
@@ -1235,7 +1279,7 @@ function toResourceGroupUpdateRequest(input: ResourceGroupUpdateInput): AdminAiR
     request.description = optionalNullableText(input.description, 'description', 512);
   }
   if (input.sortOrder !== undefined) {
-    request.sortOrder = optionalNonNegativeInteger(input.sortOrder, 'sortOrder');
+    request.sortOrder = optionalNonNegativeInt64String(input.sortOrder, 'sortOrder');
   }
   if (input.status !== undefined) {
     request.status = input.status;
@@ -1419,7 +1463,9 @@ function modelCallsByName(items: Pick<ModelRankingItem, 'name' | 'requests' | 'b
   const callsByName = new Map<string, string>();
   items
     .forEach((item) => {
-      const calls = item.requests > 0 ? item.requests : item.baseVolume;
+      const requests = Number(item.requests);
+      const baseVolume = Number(item.baseVolume);
+      const calls = Number.isFinite(requests) && requests > 0 ? requests : baseVolume;
       callsByName.set(item.name, formatCount(calls));
     });
   return callsByName;
@@ -1435,14 +1481,22 @@ function normalizeRankingItem(value: unknown): Pick<ModelRankingItem, 'name' | '
   }
   return {
     name,
-    requests: readRequiredNonNegativeInteger(value, 'requests', 'Admin model ranking requests'),
-    baseVolume: readRequiredNonNegativeInteger(value, 'baseVolume', 'Admin model ranking base volume'),
+    requests: readRequiredNonNegativeInt64String(value, 'requests', 'Admin model ranking requests'),
+    baseVolume: readRequiredNonNegativeInt64String(value, 'baseVolume', 'Admin model ranking base volume'),
   };
 }
 
 function readRequiredNonNegativeInteger(record: ApiRecord, key: string, label: string): number {
   const value = readNumber(record, key, Number.NaN);
   if (!Number.isInteger(value) || value < 0) {
+    throw new Error(`${label} must be a non-negative integer`);
+  }
+  return value;
+}
+
+function readRequiredNonNegativeInt64String(record: ApiRecord, key: string, label: string): string {
+  const value = readString(record, key).trim();
+  if (!/^(0|[1-9]\d*)$/u.test(value)) {
     throw new Error(`${label} must be a non-negative integer`);
   }
   return value;
@@ -1921,9 +1975,9 @@ function defaultModelCreateMetadata(type: Model['type']): Pick<
   | 'routingState'
 > {
   const common = {
-    releaseStage: 1,
-    shelfState: 1,
-    routingState: 1,
+    releaseStage: '1',
+    shelfState: '1',
+    routingState: '1',
   };
   switch (type) {
     case 'Image':

@@ -66,7 +66,7 @@ export interface BillingHistoryItem {
 
 export class RechargeService {
   static async fetchPackages(): Promise<RechargePackage[]> {
-    const result = await appRechargesPackagesList({ page: 1, pageSize: 100, status: 'active' });
+    const result = await appRechargesPackagesList({ page: '1', pageSize: '100', status: 'active' });
     return readRequiredApiItems(result, 'console.recharge.errors.packagesFallback')
       .map(normalizeRechargePackage);
   }
@@ -80,8 +80,8 @@ export class RechargeService {
 
   static async fetchBillingHistory(params: { type?: BillingHistoryType } = {}): Promise<BillingHistoryItem[]> {
     const result = await appBillingHistoryList({
-      page: 1,
-      pageSize: 100,
+      page: '1',
+      pageSize: '100',
       ...(params.type ? { type: params.type } : {}),
     });
     const missingIdMessage = params.type === 'recharge'

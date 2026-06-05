@@ -19,7 +19,7 @@ export interface RoutingRequestTraceItem {
   /** Provider error code field on routing request trace item. */
   providerErrorCode: string;
   /** Request bytes field on routing request trace item. */
-  requestBytes: number;
+  requestBytes: string;
   /** Request id field on routing request trace item. */
   requestId: string;
   /** Request path field on routing request trace item. */
@@ -27,19 +27,19 @@ export interface RoutingRequestTraceItem {
   /** Request payload hash field on routing request trace item. */
   requestPayloadHash: string;
   /** Response bytes field on routing request trace item. */
-  responseBytes: number;
+  responseBytes: string;
   /** Response payload hash field on routing request trace item. */
   responsePayloadHash: string;
   /** Started at field on routing request trace item. */
   startedAt: string;
   /** Status field on routing request trace item. */
-  status: number;
+  status: string;
   /** Streaming field on routing request trace item. */
   streaming: boolean;
   /** Time field on routing request trace item. */
   time: string;
   /** Tokens field on routing request trace item. */
-  tokens: number;
+  tokens: string;
   /** Trace id field on routing request trace item. */
   traceId: string;
 }

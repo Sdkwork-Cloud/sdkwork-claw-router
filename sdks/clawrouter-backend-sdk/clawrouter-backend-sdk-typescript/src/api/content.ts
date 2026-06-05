@@ -5,8 +5,8 @@ import type { AdminAnnouncementCreateRequest, AdminAnnouncementUpdateRequest, Ad
 
 
 export interface ContentCourseEngagementListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   q?: string;
   status?: string;
 }
@@ -32,8 +32,8 @@ export class ContentCourseEngagementApi {
 }
 
 export interface ContentCourseCommentsListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   q?: string;
   status?: string;
 }
@@ -64,8 +64,8 @@ export class ContentCourseCommentsApi {
 }
 
 export interface ContentCoursesSectionsListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   q?: string;
   status?: string;
 }
@@ -96,8 +96,8 @@ export class ContentCoursesSectionsApi {
 }
 
 export interface ContentCoursesRelationsListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   q?: string;
   status?: string;
 }
@@ -128,8 +128,8 @@ export class ContentCoursesRelationsApi {
 }
 
 export interface ContentCoursesLessonsListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   q?: string;
   status?: string;
 }
@@ -174,8 +174,8 @@ export class ContentCoursesDashboardApi {
 }
 
 export interface ContentCoursesListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   q?: string;
   status?: string;
 }
@@ -262,8 +262,8 @@ export class ContentCourseLessonsApi {
 }
 
 export interface ContentCourseApplicationsListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   q?: string;
   status?: string;
 }

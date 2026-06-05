@@ -17,11 +17,11 @@ export interface AdminAiResourceGroupItem {
   /** Id field on admin ai resource group item. */
   id: string;
   /** Resource count field on admin ai resource group item. */
-  resourceCount: number;
+  resourceCount: string;
   /** Selection mode field on admin ai resource group item. */
   selectionMode: 'manual' | 'all' | 'any' | 'dynamic_all_api';
   /** Sort order field on admin ai resource group item. */
-  sortOrder?: number | null;
+  sortOrder?: string | null;
   /** Status field on admin ai resource group item. */
   status: 'active' | 'disabled' | 'inactive';
   /** Vendor codes field on admin ai resource group item. */

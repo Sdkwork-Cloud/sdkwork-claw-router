@@ -3,7 +3,7 @@ import type { ProviderJsonValue } from './provider-json-value';
 /** OpenAI-compatible reusable video character object. */
 export interface OpenAiVideoCharacter {
   /** Unix timestamp in seconds when the character was created. */
-  created_at?: number;
+  created_at?: string;
   /** Human-readable character description. */
   description?: string;
   /** Video character identifier. */

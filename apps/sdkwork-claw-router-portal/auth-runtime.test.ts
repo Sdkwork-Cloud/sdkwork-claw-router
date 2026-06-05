@@ -1351,6 +1351,33 @@ test("appbase IAM runtime exposes generated open platform QR auth SDK methods to
       },
     },
     iam: {
+      organizations: {
+        list: async () => ({ data: { items: [] } }),
+        tree: {
+          retrieve: async () => ({ data: { items: [] } }),
+        },
+      },
+      organizationMemberships: {
+        list: async () => ({ data: { items: [] } }),
+      },
+      departments: {
+        list: async () => ({ data: { items: [] } }),
+        tree: {
+          retrieve: async () => ({ data: { items: [] } }),
+        },
+      },
+      departmentAssignments: {
+        list: async () => ({ data: { items: [] } }),
+      },
+      positions: {
+        list: async () => ({ data: { items: [] } }),
+      },
+      positionAssignments: {
+        list: async () => ({ data: { items: [] } }),
+      },
+      roleBindings: {
+        list: async () => ({ data: { items: [] } }),
+      },
       users: {
         current: {
           retrieve: async () => ({ data: { displayName: "Ada", id: "user-1" } }),
@@ -1783,20 +1810,23 @@ test("admin group and AI channels are grouped under AI channel management", () =
   assert.match(i18nSource, /"admin\.menu\.home\.accountPoolManagement":\s*"AI 渠道管理"/);
 });
 
-test("admin channel accounts expose API key copy without showing secret references", () => {
+test("admin channel credential details expose API key copy without leaking hidden values in the table", () => {
   const channelSource = readPortalFile("./packages/sdkwork-claw-router-admin-channel/src/index.tsx");
   const i18nSource = readI18nResourceSource();
 
   assert.match(channelSource, /Copy,/);
-  assert.match(channelSource, /const handleCopyApiKey = useCallback/);
+  assert.match(channelSource, /const handleCopyCredentialApiKey = useCallback/);
   assert.match(channelSource, /navigator\.clipboard\.writeText\(apiKey\)/);
-  assert.match(channelSource, /t\('admin\.channel\.table\.apiKey'\)/);
-  assert.match(channelSource, /<ApiKeyCell channel=\{channel\} onCopyApiKey=\{handleCopyApiKey\} \/>/);
-  assert.match(channelSource, /<BusinessStateTableRow colSpan=\{9\}/);
+  assert.match(channelSource, /t\('admin\.channel\.fields\.apiKey'\)/);
+  assert.match(channelSource, /<CredentialDetailsModal[\s\S]*onCopyCredentialApiKey=\{handleCopyCredentialApiKey\}/);
+  assert.match(channelSource, /<BusinessStateTableRow colSpan=\{8\}/);
   assert.match(channelSource, /copyLabel=\{t\('common\.actions\.copyApiKey'\)\}/);
-  assert.match(channelSource, /onCopy=\{\(\) => onCopyApiKey\(channel\)\}/);
-  assert.doesNotMatch(channelSource, /label=\{t\('admin\.channel\.fields\.secretReference'\)\}/);
-  assert.doesNotMatch(channelSource, /value=\{secretRef \|\| t\('admin\.channel\.credentials\.noReferenceValue'\)\}/);
+  assert.match(channelSource, /onCopy=\{\(\) => onCopyCredentialApiKey\(credential\)\}/);
+  assert.match(channelSource, /copyDisabled=\{!hasApiKey\}/);
+  assert.match(channelSource, /const hasApiKey = Boolean\(credential\.apiKey\?\.trim\(\)\);/);
+  assert.match(channelSource, /maskApiKeyForDisplay\(credential\.apiKey\)/);
+  assert.match(channelSource, /<CredentialSummaryCell channel=\{channel\} \/>/);
+  assert.doesNotMatch(channelSource, /<ApiKeyCell/);
   assert.doesNotMatch(channelSource, /apiKeyVisible\s*\?\s*channel\.apiKey/);
   assert.ok(findI18nLocaleKeys(i18nSource, "en").has("admin.channel.table.apiKey"));
   assert.ok(findI18nLocaleKeys(i18nSource, "zh").has("admin.channel.table.apiKey"));

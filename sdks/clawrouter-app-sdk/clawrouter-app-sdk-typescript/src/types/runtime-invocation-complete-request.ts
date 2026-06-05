@@ -10,11 +10,11 @@ export interface RuntimeInvocationCompleteRequest {
   /** Error type field on runtime invocation complete request. */
   errorType?: string;
   /** Exit code field on runtime invocation complete request. */
-  exitCode?: number;
+  exitCode?: string;
   /** Finish reason field on runtime invocation complete request. */
   finishReason?: string;
   /** Latency ms field on runtime invocation complete request. */
-  latencyMs?: number;
+  latencyMs?: string;
   /** Metadata field on runtime invocation complete request. */
   metadata?: Record<string, JsonValue>;
   /** Provider conversation id field on runtime invocation complete request. */
@@ -30,7 +30,7 @@ export interface RuntimeInvocationCompleteRequest {
   /** Status field on runtime invocation complete request. */
   status?: 'pending' | 'running' | 'streaming' | 'completed' | 'failed' | 'cancelled';
   /** Ttft ms field on runtime invocation complete request. */
-  ttftMs?: number;
+  ttftMs?: string;
   /** Usage json field on runtime invocation complete request. */
   usageJson?: UsageSnapshot;
 }

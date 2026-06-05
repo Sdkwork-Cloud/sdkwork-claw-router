@@ -3,7 +3,7 @@ export interface AdminCacheOperationResponse {
   /** Cache key field on admin cache operation response. */
   cacheKey?: string | null;
   /** Deleted entries field on admin cache operation response. */
-  deletedEntries: number;
+  deletedEntries: string;
   /** Instance name field on admin cache operation response. */
   instanceName?: string | null;
   /** Namespace field on admin cache operation response. */
@@ -11,7 +11,7 @@ export interface AdminCacheOperationResponse {
   /** Operation field on admin cache operation response. */
   operation: string;
   /** Refreshed entries field on admin cache operation response. */
-  refreshedEntries: number;
+  refreshedEntries: string;
   /** Status field on admin cache operation response. */
   status: string;
 }

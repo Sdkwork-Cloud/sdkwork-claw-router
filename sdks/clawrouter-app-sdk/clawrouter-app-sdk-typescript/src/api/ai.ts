@@ -5,8 +5,8 @@ import type { ChannelGroupsListResult, DashboardOverviewRetrieveResult, GatewayT
 
 
 export interface AiUsageLogsListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   q?: string;
   status?: string;
   startTime?: string;
@@ -128,7 +128,7 @@ export interface AiModelsListParams {
   categories?: string[];
   groups?: string[];
   q?: string;
-  limit?: number;
+  limit?: string;
 }
 
 export class AiModelsApi {
@@ -175,7 +175,7 @@ export interface AiModelRankingsListParams {
   vendorCode?: string;
   modality?: string;
   q?: string;
-  limit?: number;
+  limit?: string;
 }
 
 export class AiModelRankingsApi {

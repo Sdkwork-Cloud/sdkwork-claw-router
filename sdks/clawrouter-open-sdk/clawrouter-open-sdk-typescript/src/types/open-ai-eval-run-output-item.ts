@@ -3,7 +3,7 @@ import type { ProviderJsonValue } from './provider-json-value';
 /** OpenAI-compatible eval run output item. */
 export interface OpenAiEvalRunOutputItem {
   /** Unix timestamp in seconds when the output item was created. */
-  created_at?: number;
+  created_at?: string;
   /** Eval identifier associated with the output item. */
   eval_id?: string;
   /** Eval run output item identifier. */

@@ -9,27 +9,27 @@ export interface AdminPromptItem {
   /** Description field on admin prompt item. */
   description?: string | null;
   /** Id field on admin prompt item. */
-  id: number;
+  id: string;
   /** Latest version id field on admin prompt item. */
-  latestVersionId?: number | null;
+  latestVersionId?: string | null;
   /** Name field on admin prompt item. */
   name: string;
   /** Organization id field on admin prompt item. */
-  organizationId: number;
+  organizationId: string;
   /** Owner user id field on admin prompt item. */
-  ownerUserId?: number | null;
+  ownerUserId?: string | null;
   /** Prompt key field on admin prompt item. */
   promptKey: string;
   /** Prompt type field on admin prompt item. */
   promptType: string;
   /** Published version id field on admin prompt item. */
-  publishedVersionId?: number | null;
+  publishedVersionId?: string | null;
   /** Status field on admin prompt item. */
   status: string;
   /** Tags field on admin prompt item. */
   tags: string[];
   /** Tenant id field on admin prompt item. */
-  tenantId: number;
+  tenantId: string;
   /** Updated at field on admin prompt item. */
   updatedAt: string;
   /** Uuid field on admin prompt item. */

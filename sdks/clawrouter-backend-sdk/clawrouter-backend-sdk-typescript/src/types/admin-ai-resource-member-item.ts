@@ -9,5 +9,5 @@ export interface AdminAiResourceMemberItem {
   /** Required field on admin ai resource member item. */
   required: boolean;
   /** Sort order field on admin ai resource member item. */
-  sortOrder?: number;
+  sortOrder?: string;
 }

@@ -2047,8 +2047,8 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         self.assertIn("const query = toSettlementDashboardQueryParams(params)", service)
         self.assertIn("const SETTLEMENT_LEDGER_PAGE_SIZE = 200;", service)
         self.assertIn("const SETTLEMENT_INVOICE_PAGE_SIZE = 100;", service)
-        self.assertIn("appWalletLedgerEntriesList({ page: 1, pageSize: SETTLEMENT_LEDGER_PAGE_SIZE })", service)
-        self.assertIn("appInvoicesList({ page: 1, pageSize: SETTLEMENT_INVOICE_PAGE_SIZE })", service)
+        self.assertIn("appWalletLedgerEntriesList({ page: '1', pageSize: String(SETTLEMENT_LEDGER_PAGE_SIZE) })", service)
+        self.assertIn("appInvoicesList({ page: '1', pageSize: String(SETTLEMENT_INVOICE_PAGE_SIZE) })", service)
         self.assertIn("buildSettlementDashboard(query.year, ledgerEntries, invoices)", service)
         self.assertIn("readRequiredApiItems(ledgerResult, 'Settlement ledger entries are required')", service)
         self.assertIn("readRequiredApiItems(invoiceResult, 'Settlement invoice records are required')", service)
@@ -2274,7 +2274,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "return readRequiredApiItems(result, 'Failed to fetch provider credentials')\n      .map(normalizeProviderSecret)",
                 "readRequiredRecord(value, 'Channel record is required')",
                 "readRequiredRecord(value, 'Provider credential record is required')",
-                "readRequiredStringArray(item, 'models', 'Channel models are required')",
+                "readRequiredStringArrayField(item, 'resourceCodes', 'Channel AI resource codes are required')",
                 "readRequiredStringArray(item, 'capabilities', 'Channel capabilities are required')",
                 "readRequiredString(item, 'secretRef', 'Provider credential secret reference is required')",
                 "throw new Error(status ? `Unsupported channel status: ${status}` : 'Channel status is required')",

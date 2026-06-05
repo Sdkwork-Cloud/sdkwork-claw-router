@@ -13,7 +13,7 @@ export interface AdminSkillAssetCreateRequest {
   /** Duration seconds field on admin skill asset create request. */
   durationSeconds?: string;
   /** File size field on admin skill asset create request. */
-  fileSize?: number;
+  fileSize?: string;
   /** Height field on admin skill asset create request. */
   height?: number;
   /** Mime type field on admin skill asset create request. */

@@ -3,7 +3,7 @@ import type { ProviderJsonValue } from './provider-json-value';
 /** OpenAI-compatible voice object. */
 export interface OpenAiVoice {
   /** Unix timestamp in seconds when the voice was created. */
-  created_at?: number;
+  created_at?: string;
   /** Human-readable voice description. */
   description?: string;
   /** Voice identifier. */

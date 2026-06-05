@@ -200,18 +200,22 @@ describe("SDKWork IAM service", () => {
         organizations: {
           create: vi.fn().mockResolvedValue({ data: "organization-created" }),
           delete: vi.fn().mockResolvedValue({ data: "organization-deleted" }),
-          list: vi.fn().mockResolvedValue({ data: ["organization"] }),
           retrieve: vi.fn().mockResolvedValue({ data: "organization-retrieved" }),
-          tree: {
-            retrieve: vi.fn().mockResolvedValue({ data: ["organization-tree"] }),
-          },
           update: vi.fn().mockResolvedValue({ data: "organization-updated" }),
-          members: {
-            create: vi.fn().mockResolvedValue({ data: "organization-member-created" }),
-            delete: vi.fn().mockResolvedValue({ data: "organization-member-deleted" }),
-            list: vi.fn().mockResolvedValue({ data: ["organization-member"] }),
-            update: vi.fn().mockResolvedValue({ data: "organization-member-updated" }),
-          },
+        },
+        organizationMemberships: {
+          create: vi.fn().mockResolvedValue({ data: "organization-membership-created" }),
+          update: vi.fn().mockResolvedValue({ data: "organization-membership-updated" }),
+        },
+        departments: {
+          create: vi.fn().mockResolvedValue({ data: "department-created" }),
+          delete: vi.fn().mockResolvedValue({ data: "department-deleted" }),
+          retrieve: vi.fn().mockResolvedValue({ data: "department-retrieved" }),
+          update: vi.fn().mockResolvedValue({ data: "department-updated" }),
+        },
+        departmentAssignments: {
+          create: vi.fn().mockResolvedValue({ data: "department-assignment-created" }),
+          update: vi.fn().mockResolvedValue({ data: "department-assignment-updated" }),
         },
         permissions: {
           create: vi.fn().mockResolvedValue({ data: "permission-created" }),
@@ -227,6 +231,15 @@ describe("SDKWork IAM service", () => {
           retrieve: vi.fn().mockResolvedValue({ data: "policy-retrieved" }),
           update: vi.fn().mockResolvedValue({ data: "policy-updated" }),
         },
+        positions: {
+          create: vi.fn().mockResolvedValue({ data: "position-created" }),
+          delete: vi.fn().mockResolvedValue({ data: "position-deleted" }),
+          update: vi.fn().mockResolvedValue({ data: "position-updated" }),
+        },
+        positionAssignments: {
+          create: vi.fn().mockResolvedValue({ data: "position-assignment-created" }),
+          update: vi.fn().mockResolvedValue({ data: "position-assignment-updated" }),
+        },
         roles: {
           create: vi.fn().mockResolvedValue({ data: "role-created" }),
           delete: vi.fn().mockResolvedValue({ data: "role-deleted" }),
@@ -238,6 +251,10 @@ describe("SDKWork IAM service", () => {
             delete: vi.fn().mockResolvedValue({ data: "role-permission-deleted" }),
             list: vi.fn().mockResolvedValue({ data: ["role-permission"] }),
           },
+        },
+        roleBindings: {
+          create: vi.fn().mockResolvedValue({ data: "role-binding-created" }),
+          delete: vi.fn().mockResolvedValue({ data: "role-binding-deleted" }),
         },
         securityEvents: {
           list: vi.fn().mockResolvedValue({ data: ["security-event"] }),
@@ -261,17 +278,39 @@ describe("SDKWork IAM service", () => {
           list: vi.fn().mockResolvedValue({ data: ["user"] }),
           retrieve: vi.fn().mockResolvedValue({ data: { displayName: "Bob", id: "u1" } }),
           update: vi.fn().mockResolvedValue({ data: "user-updated" }),
-          roles: {
-            create: vi.fn().mockResolvedValue({ data: "user-role-created" }),
-            delete: vi.fn().mockResolvedValue({ data: "user-role-deleted" }),
-            list: vi.fn().mockResolvedValue({ data: ["user-role"] }),
-          },
         },
       },
     };
     const service = createSdkworkIamService({
       appClient: {
         iam: {
+          organizations: {
+            list: vi.fn().mockResolvedValue({ data: ["organization"] }),
+            tree: {
+              retrieve: vi.fn().mockResolvedValue({ data: ["organization-tree"] }),
+            },
+          },
+          organizationMemberships: {
+            list: vi.fn().mockResolvedValue({ data: ["organization-membership"] }),
+          },
+          departments: {
+            list: vi.fn().mockResolvedValue({ data: ["department"] }),
+            tree: {
+              retrieve: vi.fn().mockResolvedValue({ data: ["department-tree"] }),
+            },
+          },
+          departmentAssignments: {
+            list: vi.fn().mockResolvedValue({ data: ["department-assignment"] }),
+          },
+          positions: {
+            list: vi.fn().mockResolvedValue({ data: ["position"] }),
+          },
+          positionAssignments: {
+            list: vi.fn().mockResolvedValue({ data: ["position-assignment"] }),
+          },
+          roleBindings: {
+            list: vi.fn().mockResolvedValue({ data: ["role-binding"] }),
+          },
           users: {
             current: {
               retrieve: vi.fn().mockResolvedValue({ data: { displayName: "Alice", id: "current-user" } }),
@@ -291,10 +330,19 @@ describe("SDKWork IAM service", () => {
     await expect(service.iam.organizations.retrieve("o1")).resolves.toBe("organization-retrieved");
     await expect(service.iam.organizations.tree.retrieve({ q: "Org" })).resolves.toEqual(["organization-tree"]);
     await expect(service.iam.organizations.update("o1", { name: "Updated Org" })).resolves.toBe("organization-updated");
-    await expect(service.iam.organizations.members.create("o1", { userId: "u1" })).resolves.toBe("organization-member-created");
-    await expect(service.iam.organizations.members.delete("o1", "u1")).resolves.toBe("organization-member-deleted");
-    await expect(service.iam.organizations.members.list("o1")).resolves.toEqual(["organization-member"]);
-    await expect(service.iam.organizations.members.update("o1", "u1", { roleCode: "owner" })).resolves.toBe("organization-member-updated");
+    await expect(service.iam.organizationMemberships.create({ organizationId: "o1", userId: "u1" })).resolves.toBe("organization-membership-created");
+    await expect(service.iam.organizationMemberships.list({ organizationId: "o1" })).resolves.toEqual(["organization-membership"]);
+    await expect(service.iam.organizationMemberships.update("m1", { status: "active" })).resolves.toBe("organization-membership-updated");
+    await expect(service.iam.departments.create({ organizationId: "o1", name: "Product" })).resolves.toBe("department-created");
+    await expect(service.iam.departments.delete("d1")).resolves.toBe("department-deleted");
+    await expect(service.iam.departments.list({ organizationId: "o1" })).resolves.toEqual(["department"]);
+    await expect(service.iam.departments.retrieve("d1")).resolves.toBe("department-retrieved");
+    await expect(service.iam.departments.tree.retrieve({ organizationId: "o1" })).resolves.toEqual(["department-tree"]);
+    await expect(service.iam.departments.update("d1", { name: "Product Platform" })).resolves.toBe("department-updated");
+    await expect(service.iam.departmentAssignments.create({ departmentId: "d1", organizationMembershipId: "m1" })).resolves.toBe("department-assignment-created");
+    await expect(service.iam.departmentAssignments.list({ departmentId: "d1" })).resolves.toEqual(["department-assignment"]);
+    await expect(service.iam.departmentAssignments.update("da1", { isPrimary: true })).resolves.toBe("department-assignment-updated");
+    expect(Object.prototype.hasOwnProperty.call(service.iam.organizations, "members")).toBe(false);
     await expect(service.iam.permissions.create({ code: "iam.users.read" })).resolves.toBe("permission-created");
     await expect(service.iam.permissions.delete("p1")).resolves.toBe("permission-deleted");
     await expect(service.iam.permissions.list()).resolves.toEqual(["permission"]);
@@ -305,6 +353,13 @@ describe("SDKWork IAM service", () => {
     await expect(service.iam.policies.list()).resolves.toEqual(["policy"]);
     await expect(service.iam.policies.retrieve("po1")).resolves.toBe("policy-retrieved");
     await expect(service.iam.policies.update("po1", { name: "Policy" })).resolves.toBe("policy-updated");
+    await expect(service.iam.positions.create({ name: "Product Owner" })).resolves.toBe("position-created");
+    await expect(service.iam.positions.delete("pos1")).resolves.toBe("position-deleted");
+    await expect(service.iam.positions.list({ departmentId: "d1" })).resolves.toEqual(["position"]);
+    await expect(service.iam.positions.update("pos1", { name: "Senior Product Owner" })).resolves.toBe("position-updated");
+    await expect(service.iam.positionAssignments.create({ departmentAssignmentId: "da1", positionId: "pos1" })).resolves.toBe("position-assignment-created");
+    await expect(service.iam.positionAssignments.list({ departmentAssignmentId: "da1" })).resolves.toEqual(["position-assignment"]);
+    await expect(service.iam.positionAssignments.update("pa1", { isPrimary: true })).resolves.toBe("position-assignment-updated");
     await expect(service.iam.roles.create({ code: "admin" })).resolves.toBe("role-created");
     await expect(service.iam.roles.delete("r1")).resolves.toBe("role-deleted");
     await expect(service.iam.roles.list()).resolves.toEqual(["role"]);
@@ -313,6 +368,9 @@ describe("SDKWork IAM service", () => {
     await expect(service.iam.roles.permissions.create("r1", "p1")).resolves.toBe("role-permission-created");
     await expect(service.iam.roles.permissions.delete("r1", "p1")).resolves.toBe("role-permission-deleted");
     await expect(service.iam.roles.permissions.list("r1")).resolves.toEqual(["role-permission"]);
+    await expect(service.iam.roleBindings.create({ roleId: "r1", scopeKind: "organization", scopeId: "o1" })).resolves.toBe("role-binding-created");
+    await expect(service.iam.roleBindings.delete("rb1")).resolves.toBe("role-binding-deleted");
+    await expect(service.iam.roleBindings.list({ scopeId: "o1" })).resolves.toEqual(["role-binding"]);
     await expect(service.iam.securityEvents.list()).resolves.toEqual(["security-event"]);
     await expect(service.iam.tenants.create({ name: "Tenant" })).resolves.toBe("tenant-created");
     await expect(service.iam.tenants.delete("t1")).resolves.toBe("tenant-deleted");
@@ -335,19 +393,32 @@ describe("SDKWork IAM service", () => {
       id: "u1",
     });
     await expect(service.iam.users.update("u1", { displayName: "Bob" })).resolves.toBe("user-updated");
-    await expect(service.iam.users.roles.create("u1", "r1")).resolves.toBe("user-role-created");
-    await expect(service.iam.users.roles.delete("u1", "r1")).resolves.toBe("user-role-deleted");
-    await expect(service.iam.users.roles.list("u1")).resolves.toEqual(["user-role"]);
+    expect(Object.prototype.hasOwnProperty.call(service.iam.users, "roles")).toBe(false);
 
     expect(backendClient.iam.organizations.create).toHaveBeenCalledWith({ name: "Org" });
     expect(backendClient.iam.organizations.delete).toHaveBeenCalledWith("o1");
     expect(backendClient.iam.organizations.retrieve).toHaveBeenCalledWith("o1");
-    expect(backendClient.iam.organizations.tree.retrieve).toHaveBeenCalledWith({ q: "Org" });
     expect(backendClient.iam.organizations.update).toHaveBeenCalledWith("o1", { name: "Updated Org" });
-    expect(backendClient.iam.organizations.members.delete).toHaveBeenCalledWith("o1", "u1");
-    expect(backendClient.iam.organizations.members.update).toHaveBeenCalledWith("o1", "u1", { roleCode: "owner" });
+    expect(backendClient.iam.organizationMemberships.create).toHaveBeenCalledWith({ organizationId: "o1", userId: "u1" });
+    expect(backendClient.iam.organizationMemberships.update).toHaveBeenCalledWith("m1", { status: "active" });
+    expect(backendClient.iam.departments.create).toHaveBeenCalledWith({ organizationId: "o1", name: "Product" });
+    expect(backendClient.iam.departments.delete).toHaveBeenCalledWith("d1");
+    expect(backendClient.iam.departments.retrieve).toHaveBeenCalledWith("d1");
+    expect(backendClient.iam.departments.update).toHaveBeenCalledWith("d1", { name: "Product Platform" });
+    expect(backendClient.iam.departmentAssignments.create).toHaveBeenCalledWith({ departmentId: "d1", organizationMembershipId: "m1" });
+    expect(backendClient.iam.departmentAssignments.update).toHaveBeenCalledWith("da1", { isPrimary: true });
+    expect(Object.prototype.hasOwnProperty.call(backendClient.iam.organizations, "list")).toBe(false);
+    expect(Object.prototype.hasOwnProperty.call(backendClient.iam.organizations, "tree")).toBe(false);
+    expect(Object.prototype.hasOwnProperty.call(backendClient.iam.organizations, "members")).toBe(false);
     expect(backendClient.iam.permissions.update).toHaveBeenCalledWith("p1", { name: "Read users" });
+    expect(backendClient.iam.positions.create).toHaveBeenCalledWith({ name: "Product Owner" });
+    expect(backendClient.iam.positions.delete).toHaveBeenCalledWith("pos1");
+    expect(backendClient.iam.positions.update).toHaveBeenCalledWith("pos1", { name: "Senior Product Owner" });
+    expect(backendClient.iam.positionAssignments.create).toHaveBeenCalledWith({ departmentAssignmentId: "da1", positionId: "pos1" });
+    expect(backendClient.iam.positionAssignments.update).toHaveBeenCalledWith("pa1", { isPrimary: true });
     expect(backendClient.iam.roles.update).toHaveBeenCalledWith("r1", { name: "Admin" });
+    expect(backendClient.iam.roleBindings.create).toHaveBeenCalledWith({ roleId: "r1", scopeKind: "organization", scopeId: "o1" });
+    expect(backendClient.iam.roleBindings.delete).toHaveBeenCalledWith("rb1");
     expect(backendClient.iam.tenants.members.create).toHaveBeenCalledWith("t1", { userId: "u1" });
     expect(backendClient.iam.tenants.members.delete).toHaveBeenCalledWith("t1", "u1");
     expect(backendClient.iam.tenants.members.update).toHaveBeenCalledWith("t1", "u1", { status: "active" });
@@ -356,7 +427,7 @@ describe("SDKWork IAM service", () => {
     expect(backendClient.iam.users.delete).toHaveBeenCalledWith("u1");
     expect(backendClient.iam.users.retrieve).toHaveBeenCalledWith("u1");
     expect(backendClient.iam.users.update).toHaveBeenCalledWith("u1", { displayName: "Bob" });
-    expect(backendClient.iam.users.roles.create).toHaveBeenCalledWith("u1", "r1");
+    expect(service.iam.organizations.list).toBeDefined();
   });
 
   it("covers every generated app auth resource through the common service facade", async () => {

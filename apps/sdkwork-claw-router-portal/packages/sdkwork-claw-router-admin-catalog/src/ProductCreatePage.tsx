@@ -76,8 +76,8 @@ type ProductCategoryRecordInput = {
   label?: string | null;
   parentId?: string | number | null;
   parent_id?: string | number | null;
-  sortOrder?: number | null;
-  sort_order?: number | null;
+  sortOrder?: number | string | null;
+  sort_order?: number | string | null;
   status?: string | null;
 };
 
@@ -326,7 +326,7 @@ export function ProductCreatePage({ mode = 'create', productId }: ProductCreateP
   useEffect(() => {
     let cancelled = false;
 
-    listCommerceCategories({ page: 1, pageSize: 200, status: 'active' })
+    listCommerceCategories({ page: '1', pageSize: '200', status: 'active' })
       .then((result) => {
         if (cancelled) {
           return;
@@ -351,7 +351,7 @@ export function ProductCreatePage({ mode = 'create', productId }: ProductCreateP
   useEffect(() => {
     let cancelled = false;
 
-    listCommerceAttributes({ page: 1, pageSize: 200, status: 'active' })
+    listCommerceAttributes({ page: '1', pageSize: '200', status: 'active' })
       .then((result) => {
         if (cancelled) {
           return;
@@ -467,7 +467,7 @@ export function ProductCreatePage({ mode = 'create', productId }: ProductCreateP
       categoryNo: input.categoryNo?.trim() || buildEntityNo('CAT', input.name),
       name: input.name.trim(),
       parentId: input.parentId || null,
-      sortOrder: 0,
+      sortOrder: '0',
       status: 'active',
     });
     const item = result.data?.item;
@@ -1821,7 +1821,7 @@ export function buildSkuMutationPayloads(
 
 export async function ensureSkuAttributeDefinitions(specGroups: ProductSpecGroup[]): Promise<Map<string, string>> {
   const attributeIdByName = new Map<string, string>();
-  const listResult = await listCommerceAttributes({ page: 1, pageSize: 200, status: 'active' });
+  const listResult = await listCommerceAttributes({ page: '1', pageSize: '200', status: 'active' });
   for (const attribute of listResult.data?.items ?? []) {
     if (attribute.name) {
       attributeIdByName.set(attribute.name, attribute.id);
@@ -1907,18 +1907,18 @@ type CatalogRecord = Record<string, unknown>;
 
 export async function loadProductDraftForEdit(productId: string): Promise<ProductDraftState> {
   const product = await loadProductRecordForEdit(productId);
-  const skuResult = await listCommerceSkus({ page: 1, pageSize: 200, productId });
+  const skuResult = await listCommerceSkus({ page: '1', pageSize: '200', productId });
   return createProductDraftFromCatalogRecords(product, (skuResult.data?.items ?? []) as unknown as CatalogRecord[]);
 }
 
 async function loadProductRecordForEdit(productId: string): Promise<CatalogRecord> {
-  const firstResult = await listCommerceProducts({ page: 1, pageSize: 50, q: productId });
+  const firstResult = await listCommerceProducts({ page: '1', pageSize: '50', q: productId });
   const directMatch = findCatalogRecordById((firstResult.data?.items ?? []) as unknown as CatalogRecord[], productId);
   if (directMatch) {
     return directMatch;
   }
 
-  const fallbackResult = await listCommerceProducts({ page: 1, pageSize: 200 });
+  const fallbackResult = await listCommerceProducts({ page: '1', pageSize: '200' });
   const fallbackMatch = findCatalogRecordById((fallbackResult.data?.items ?? []) as unknown as CatalogRecord[], productId);
   if (fallbackMatch) {
     return fallbackMatch;
@@ -2259,7 +2259,8 @@ function normalizeRecordLabel(record: ProductCategoryRecordInput): string | null
 
 function normalizeSortOrder(record: ProductCategoryRecordInput): number {
   const value = record.sortOrder ?? record.sort_order;
-  return typeof value === 'number' && Number.isFinite(value) ? value : 0;
+  const numberValue = typeof value === 'number' ? value : Number(value ?? 0);
+  return Number.isFinite(numberValue) ? numberValue : 0;
 }
 
 function sortCategoryNodes(nodes: Array<ProductCategoryNode & { sortOrder: number }>) {

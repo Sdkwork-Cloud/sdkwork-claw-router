@@ -7,7 +7,7 @@ export interface AdminRecordLogItem {
   /** Cache read price field on admin record log item. */
   cacheReadPrice: string;
   /** Cache read tokens field on admin record log item. */
-  cacheReadTokens: number;
+  cacheReadTokens: string;
   /** Cost field on admin record log item. */
   cost: string;
   /** Error code field on admin record log item. */
@@ -21,11 +21,11 @@ export interface AdminRecordLogItem {
   /** Http method field on admin record log item. */
   httpMethod: 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE' | 'OPTIONS' | 'HEAD';
   /** Http status field on admin record log item. */
-  httpStatus: number;
+  httpStatus: string;
   /** Id field on admin record log item. */
   id: string;
   /** Input tokens field on admin record log item. */
-  inputTokens: number;
+  inputTokens: string;
   /** Ip field on admin record log item. */
   ip: string;
   /** Is stream field on admin record log item. */
@@ -35,7 +35,7 @@ export interface AdminRecordLogItem {
   /** Multiplier field on admin record log item. */
   multiplier: string;
   /** Output tokens field on admin record log item. */
-  outputTokens: number;
+  outputTokens: string;
   /** Path field on admin record log item. */
   path: string;
   /** Provider native model field on admin record log item. */

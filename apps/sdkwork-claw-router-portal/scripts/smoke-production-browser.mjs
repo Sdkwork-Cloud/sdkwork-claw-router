@@ -1776,7 +1776,7 @@ const BROWSER_SMOKE_ROUTES = [
   },
   {
     pathName: "/api-reference",
-    requiredTextTokens: ["AI鑱氬悎API", "Create Chat Completion", "Request Parameters", "Response Properties"],
+    requiredTextTokens: ["AI聚合API", "Create Chat Completion", "Request Parameters", "Response Properties"],
   },
   {
     pathName: "/api-reference?__browser-smoke-tool-api-disabled=1",

@@ -37,8 +37,8 @@ export function AdminAgentsView() {
     if (normalizedQ) {
       nextQuery.q = normalizedQ;
     }
-    const normalizedOwnerUserId = Number(ownerUserId);
-    if (ownerUserId.trim() && Number.isSafeInteger(normalizedOwnerUserId) && normalizedOwnerUserId > 0) {
+    const normalizedOwnerUserId = ownerUserId.trim();
+    if (/^[1-9]\d*$/u.test(normalizedOwnerUserId)) {
       nextQuery.ownerUserId = normalizedOwnerUserId;
     }
     if (status === 'active' || status === 'disabled') {

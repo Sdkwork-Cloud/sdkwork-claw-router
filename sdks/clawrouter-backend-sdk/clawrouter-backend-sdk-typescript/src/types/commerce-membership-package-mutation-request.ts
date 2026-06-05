@@ -5,7 +5,7 @@ export interface CommerceMembershipPackageMutationRequest {
   /** Currency code field on commerce membership package mutation request. */
   currencyCode?: string;
   /** Duration days field on commerce membership package mutation request. */
-  durationDays: number;
+  durationDays: string;
   /** Name field on commerce membership package mutation request. */
   name: string;
   /** Package group id field on commerce membership package mutation request. */

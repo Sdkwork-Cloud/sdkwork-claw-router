@@ -15,7 +15,7 @@ export interface CommerceProductMediaItem {
   /** Resource field on commerce product media item. */
   resource: MediaResource;
   /** Sort order field on commerce product media item. */
-  sortOrder: number;
+  sortOrder: string;
   /** Status field on commerce product media item. */
   status: 'active' | 'inactive' | 'deleted';
 }

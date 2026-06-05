@@ -9,7 +9,7 @@ export interface ForumCommentItem {
   /** Content field on forum comment item. */
   content: string;
   /** Content id field on forum comment item. */
-  contentId: number;
+  contentId: string;
   /** Content type field on forum comment item. */
   contentType: 'FEEDS' | 'COMMENTS' | 'COURSE';
   /** Created at field on forum comment item. */
@@ -17,13 +17,13 @@ export interface ForumCommentItem {
   /** Is top field on forum comment item. */
   isTop: boolean;
   /** Likes field on forum comment item. */
-  likes: number;
+  likes: string;
   /** Parent id field on forum comment item. */
-  parentId?: number;
+  parentId?: string;
   /** Reply count field on forum comment item. */
-  replyCount: number;
+  replyCount: string;
   /** Status field on forum comment item. */
   status: 'PUBLISHED' | 'PENDING' | 'DELETED';
   /** User id field on forum comment item. */
-  userId: number;
+  userId: string;
 }

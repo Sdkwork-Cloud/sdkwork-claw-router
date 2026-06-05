@@ -9,9 +9,9 @@ export interface AdminAnalyticsUserRankItem {
   /** Points field on admin analytics user rank item. */
   points: number;
   /** Rank field on admin analytics user rank item. */
-  rank: number;
+  rank: string;
   /** Request count field on admin analytics user rank item. */
-  requestCount: number;
+  requestCount: string;
   /** Total tokens field on admin analytics user rank item. */
   totalTokens: number;
   /** User id field on admin analytics user rank item. */

@@ -15,7 +15,7 @@ export interface AdminAiResourceGroupUpdateRequest {
   /** Selection mode field on admin ai resource group update request. */
   selectionMode?: 'manual' | 'all' | 'any' | 'dynamic_all_api';
   /** Sort order field on admin ai resource group update request. */
-  sortOrder?: number | null;
+  sortOrder?: string | null;
   /** Status field on admin ai resource group update request. */
   status?: 'active' | 'disabled' | 'inactive';
 }

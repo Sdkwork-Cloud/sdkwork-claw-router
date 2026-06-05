@@ -13,6 +13,7 @@ pub struct PricingResolver<'a, C: PricingCatalog> {
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct ResolveModelPriceQuery {
     pub api_key_id: i64,
+    pub channel_group_id: Option<i64>,
     pub model: String,
     pub billing_meter: BillingMeter,
     pub provider_code: Option<String>,
@@ -51,7 +52,7 @@ impl<'a, C: PricingCatalog> PricingResolver<'a, C> {
 
     pub fn resolve(&self, query: ResolveModelPriceQuery) -> DomainResult<ResolvedModelPrice> {
         let api_key = self.find_api_key(query.api_key_id)?;
-        let group = self.find_group(api_key.group_id)?;
+        let group = self.find_group(query.channel_group_id.unwrap_or(api_key.group_id))?;
         let plan = self.find_plan(&group.pricing_plan_code)?;
         let model = self.find_model(&query.model)?;
         let vendor = self.find_vendor(&model.vendor_code)?;

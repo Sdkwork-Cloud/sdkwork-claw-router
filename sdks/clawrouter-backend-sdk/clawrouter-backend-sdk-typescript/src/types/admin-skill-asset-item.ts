@@ -15,7 +15,7 @@ export interface AdminSkillAssetItem {
   /** Duration seconds field on admin skill asset item. */
   durationSeconds?: string | null;
   /** File size field on admin skill asset item. */
-  fileSize?: number | null;
+  fileSize?: string | null;
   /** Height field on admin skill asset item. */
   height?: number | null;
   /** Id field on admin skill asset item. */

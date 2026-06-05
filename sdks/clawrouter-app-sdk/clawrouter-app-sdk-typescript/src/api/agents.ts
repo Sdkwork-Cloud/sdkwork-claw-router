@@ -5,8 +5,8 @@ import type { AgentCreateRequest, AgentDefinitionsCreateResult, AgentDefinitions
 
 
 export interface AgentsAgentSessionsListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
 }
 
 export interface AgentsAgentSessionsCreateParams {
@@ -48,8 +48,8 @@ export class AgentsAgentSessionsApi {
 }
 
 export interface AgentsAgentRunStepsListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
 }
 
 export interface AgentsAgentRunStepsCreateParams {
@@ -105,8 +105,8 @@ export interface AgentsAgentRunsSubmitParams {
 }
 
 export interface AgentsAgentRunsListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
 }
 
 export interface AgentsAgentRunsCreateParams {
@@ -159,8 +159,8 @@ export class AgentsAgentRunsApi {
 }
 
 export interface AgentsAgentDefinitionsListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   q?: string;
 }
 

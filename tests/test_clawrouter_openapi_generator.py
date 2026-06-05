@@ -14,6 +14,15 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
         self.assertNotEqual("", schema.get("description", "").strip())
         self.assertNotIn("$ref", schema)
 
+    def walk_schema_nodes(self, value: object):
+        if isinstance(value, dict):
+            yield value
+            for item in value.values():
+                yield from self.walk_schema_nodes(item)
+        elif isinstance(value, list):
+            for item in value:
+                yield from self.walk_schema_nodes(item)
+
     def write_manifest(self, root: Path) -> Path:
         manifest = root / "generated" / "api" / "api-contract-manifest.json"
         manifest.parent.mkdir(parents=True, exist_ok=True)
@@ -277,6 +286,35 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
                             "write_tables": ["content_announcement"],
                         },
                         {
+                            "api_surface": "backend",
+                            "api_method": "GET",
+                            "api_path": "/backend/v3/api/content/announcement_audit_events",
+                            "operation": "fetchAnnouncementAuditEvents",
+                            "operation_id": "announcementAuditEvents.list",
+                            "tag": "content",
+                            "sdk_domain": "content",
+                            "kind": "read",
+                            "module": "admin-announcement",
+                            "path_params": [],
+                            "source": "apps/portal/announcementService.ts",
+                            "read_sources": ["content_announcement_audit_event"],
+                            "write_tables": [],
+                            "query_parameters_declared": True,
+                            "query_parameters": [],
+                            "response_schema": {
+                                "name": "AdminAnnouncementAuditEventResponse",
+                                "schema": {
+                                    "type": "object",
+                                    "additionalProperties": False,
+                                    "required": ["id"],
+                                    "properties": {
+                                        "id": {"type": "integer", "format": "int64", "minimum": 1},
+                                        "title": {"type": "string"},
+                                    },
+                                },
+                            },
+                        },
+                        {
                             "api_surface": "app",
                             "api_method": "POST",
                             "api_path": "/app/v3/api/auth/qr_login_codes",
@@ -371,6 +409,41 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
                         upstream_cost_amount:
                           type: string
                           format: decimal
+                    MediaResource:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                    PlusAgentSkillPackageRecord:
+                      type: object
+                      x-table: plus_agent_skill_package
+                      x-domain: legacy
+                      x-generated-by-this-project: true
+                      properties:
+                        name:
+                          type: string
+                        icon:
+                          $ref: '#/components/schemas/MediaResource'
+                    PlusAgentSkillRecord:
+                      type: object
+                      x-table: plus_agent_skill
+                      x-domain: legacy
+                      x-generated-by-this-project: true
+                      properties:
+                        name:
+                          type: string
+                        icon:
+                          $ref: '#/components/schemas/MediaResource'
+                    PlusCategoryRecord:
+                      type: object
+                      x-table: plus_category
+                      x-domain: legacy
+                      x-generated-by-this-project: true
+                      properties:
+                        name:
+                          type: string
+                        icon:
+                          $ref: '#/components/schemas/MediaResource'
                 """
             ).strip()
             + "\n",
@@ -477,7 +550,13 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
                     "name": "folderId",
                     "in": "query",
                     "required": False,
-                    "schema": {"type": "integer", "format": "int64", "minimum": 1},
+                    "schema": {
+                        "type": "string",
+                        "format": "int64",
+                        "pattern": "^[1-9][0-9]*$",
+                        "x-sdkwork-int64-string": True,
+                        "x-sdkwork-rust-type": "i64",
+                    },
                     "description": "Folder id query parameter.",
                 },
                 post_query_operation["parameters"],
@@ -784,6 +863,38 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
                 ["id", "coupon_no", "face_value_minor", "currency_code", "status"],
                 schemas["PromotionUserCouponWalletItem"]["required"],
             )
+            face_value_schema = schemas["PromotionUserCouponWalletItem"]["properties"]["face_value_minor"]
+            self.assertEqual("string", face_value_schema["type"])
+            self.assertEqual("int64", face_value_schema["format"])
+            self.assertEqual("^-?[0-9]+$", face_value_schema["pattern"])
+            self.assertEqual(True, face_value_schema["x-sdkwork-int64-string"])
+            self.assertEqual("i64", face_value_schema["x-sdkwork-rust-type"])
+
+    def test_openapi_generation_never_emits_integer_int64_json_contracts(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_manifest(root)
+            self.write_schema_components(root)
+
+            for surface in ("app", "backend"):
+                spec = ClawRouterOpenApiGenerator(root=root).generate(surface)
+                integer_int64_nodes = [
+                    node
+                    for node in self.walk_schema_nodes(spec)
+                    if node.get("type") == "integer" and node.get("format") == "int64"
+                ]
+                self.assertEqual([], integer_int64_nodes, f"{surface} OpenAPI must serialize int64 as strings")
+
+                int64_string_nodes = [
+                    node
+                    for node in self.walk_schema_nodes(spec)
+                    if node.get("type") == "string" and node.get("format") == "int64"
+                ]
+                self.assertTrue(int64_string_nodes, f"{surface} OpenAPI test fixture must contain int64 string nodes")
+                for node in int64_string_nodes:
+                    self.assertIn(node.get("pattern"), {"^-?[0-9]+$", "^[0-9]+$", "^[1-9][0-9]*$"})
+                    self.assertEqual(True, node.get("x-sdkwork-int64-string"))
+                    self.assertEqual("i64", node.get("x-sdkwork-rust-type"))
 
     def test_merges_schema_components_into_final_openapi_specs(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -824,6 +935,28 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
             self.assertIn("AiModelVendorRecord", app_schemas)
             self.assertNotIn("AiUsageFactRecord", app_schemas)
             self.assertNotIn("AiUsageFactRecord", backend_spec["components"]["schemas"])
+
+    def test_preserves_public_project_legacy_record_components_for_sdk_types(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_manifest(root)
+            self.write_schema_components(root)
+
+            app_spec = ClawRouterOpenApiGenerator(root=root).generate("app")
+            backend_spec = ClawRouterOpenApiGenerator(root=root).generate("backend")
+
+            for schemas in (
+                app_spec["components"]["schemas"],
+                backend_spec["components"]["schemas"],
+            ):
+                self.assertIn("PlusCategoryRecord", schemas)
+                self.assertIn("PlusAgentSkillRecord", schemas)
+                self.assertIn("PlusAgentSkillPackageRecord", schemas)
+                self.assertIn("MediaResource", schemas)
+                self.assertDescribedSchemaRef(
+                    schemas["PlusCategoryRecord"]["properties"]["icon"],
+                    "#/components/schemas/MediaResource",
+                )
 
     def test_get_single_read_source_uses_record_response_wrapper(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:

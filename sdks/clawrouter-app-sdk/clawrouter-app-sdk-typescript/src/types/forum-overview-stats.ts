@@ -1,11 +1,11 @@
 /** Forum overview stats schema exposed by Claw Router. */
 export interface ForumOverviewStats {
   /** Member count field on forum overview stats. */
-  memberCount: number;
+  memberCount: string;
   /** Online members field on forum overview stats. */
-  onlineMembers: number;
+  onlineMembers: string;
   /** Total comments field on forum overview stats. */
-  totalComments: number;
+  totalComments: string;
   /** Total posts field on forum overview stats. */
-  totalPosts: number;
+  totalPosts: string;
 }

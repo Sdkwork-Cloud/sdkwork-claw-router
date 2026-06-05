@@ -18,10 +18,12 @@ async fn sqlite_model_rankings_read_store_reads_only_the_selected_latest_snapsho
     sqlx::query(
         r#"
         INSERT INTO ai_model_rank_snapshot
-            (id, tenant_id, organization_id, status, snapshot_date, snapshot_period, rank_scope, model, vendor_code, vendor_name_snapshot, modality, rank_no, previous_rank_no, request_count, base_volume, cost_indicator, latency_p50_ms, strengths)
+            (id, tenant_id, organization_id, status, snapshot_date, snapshot_period, rank_scope, catalog_key, model, vendor_code, vendor_name_snapshot, modality, rank_no, previous_rank_no, request_count, base_volume, cost_indicator, latency_p50_ms, strengths)
         VALUES
-            (1, 0, 0, 1, '2026-05-07', 1, 'commercial-default', 'gpt-5.2', 'openai', 'OpenAI', 1, 1, 2, 100, 100, 4, 1200, '["reasoning"]'),
-            (2, 0, 0, 1, '2026-05-06', 1, 'commercial-default', 'text-embedding-3-small', 'openai', 'OpenAI', 6, 2, 3, 90, 90, 1, 420, '["embedding"]')
+            (1, 0, 0, 1, '2026-05-07', 1, 'commercial-default', 'openai/gpt-5.1', 'gpt-5.1', 'openai', 'OpenAI', 1, 1, 2, 100, 100, 4, 1200, '["reasoning"]'),
+            (2, 0, 0, 1, '2026-05-08', 1, 'commercial-default', 'openai/gpt-5.1', 'gpt-5.1', 'openai', 'OpenAI', 1, 2, 1, 140, 140, 4, 1000, '["reasoning"]'),
+            (3, 0, 0, 1, '2026-05-07', 1, 'commercial-default', 'anthropic/claude-sonnet-4-6', 'claude-sonnet-4-6', 'anthropic', 'Anthropic', 1, 3, 4, 90, 90, 4, 900, '["agentic"]'),
+            (4, 0, 0, 1, '2026-06-03', 1, 'commercial-default', 'alibaba/qwen3-plus', 'qwen3-plus', 'alibaba', 'Alibaba', 1, 1, 2, 180, 180, 3, 800, '["balanced"]')
         "#,
     )
     .execute(&pool)
@@ -39,9 +41,23 @@ async fn sqlite_model_rankings_read_store_reads_only_the_selected_latest_snapsho
         .await
         .unwrap();
 
-    assert_eq!("2026-05-07", snapshot.source.observed_at);
+    assert_eq!("2026-06-03", snapshot.source.observed_at);
+    assert_eq!("2026-06-03", snapshot.source.snapshot_date);
     assert_eq!(1, snapshot.items.len());
-    assert_eq!("gpt-5.2", snapshot.items[0].name);
+    assert_eq!("qwen3-plus", snapshot.items[0].name);
+    assert_eq!(
+        vec!["2026-06-03".to_owned()],
+        snapshot
+            .history
+            .iter()
+            .map(|point| point.date.clone())
+            .collect::<Vec<_>>()
+    );
+    assert!(snapshot
+        .history
+        .iter()
+        .flat_map(|point| &point.entries)
+        .all(|entry| entry.catalog_key == "alibaba/qwen3-plus"));
 }
 
 #[tokio::test]
@@ -299,14 +315,12 @@ async fn sqlite_model_rankings_read_store_exposes_task_metadata_and_history_from
             .all(|item| !item.id.starts_with("2026-05-08:")),
         "ranking item id must be the stable catalog identity, not a snapshot-scoped display key"
     );
-    assert_eq!(2, snapshot.history.len());
-    assert_eq!("2026-05-07", snapshot.history[0].date);
-    assert_eq!("2026-05-08", snapshot.history[1].date);
+    assert_eq!(1, snapshot.history.len());
+    assert_eq!("2026-05-08", snapshot.history[0].date);
     assert_eq!(0, snapshot.history[0].index);
-    assert_eq!(1, snapshot.history[1].index);
     assert_eq!(
         Some(320),
-        snapshot.history[1]
+        snapshot.history[0]
             .entries
             .iter()
             .find(|entry| entry.model == "gpt-5.2")
@@ -396,7 +410,8 @@ async fn sqlite_model_rankings_read_store_applies_query_filters_to_history() {
 
     assert_eq!(1, snapshot.items.len());
     assert_eq!("gpt-5.2", snapshot.items[0].name);
-    assert_eq!(2, snapshot.history.len());
+    assert_eq!(1, snapshot.history.len());
+    assert_eq!("2026-05-08", snapshot.history[0].date);
     assert!(snapshot
         .history
         .iter()
@@ -491,7 +506,7 @@ async fn sqlite_model_rankings_read_store_keeps_history_in_selected_visibility_s
 
     assert_eq!("2026-05-08", snapshot.source.snapshot_date);
     assert_eq!(
-        vec!["2026-05-07".to_owned(), "2026-05-08".to_owned()],
+        vec!["2026-05-08".to_owned()],
         snapshot
             .history
             .iter()

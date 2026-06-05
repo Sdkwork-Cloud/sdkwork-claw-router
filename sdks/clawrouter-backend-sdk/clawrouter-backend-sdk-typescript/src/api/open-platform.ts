@@ -105,8 +105,8 @@ export interface OpenPlatformAccountsListParams {
   provider?: 'wechat' | 'alipay' | 'douyin' | 'baidu' | 'kuaishou' | 'feishu';
   type_?: 'official_account' | 'mini_app' | 'life_account' | 'bot';
   status?: 'active' | 'inactive';
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
 }
 
 export class OpenPlatformAccountsApi {

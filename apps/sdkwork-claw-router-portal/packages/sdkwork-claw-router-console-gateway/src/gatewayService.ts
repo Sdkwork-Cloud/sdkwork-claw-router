@@ -14,7 +14,7 @@ export interface GatewayTrace {
   ip: SdkGatewayTrace['ip'];
   endpoint: SdkGatewayTrace['endpoint'];
   method: SdkGatewayTrace['method'];
-  status: SdkGatewayTrace['status'];
+  status: number;
   duration: SdkGatewayTrace['duration'];
   channel: SdkGatewayTrace['channel'];
 }

@@ -72,22 +72,6 @@ function createLocalAuthorityColumns(
         { dataType: "timestamp", name: "created_at", nullable: false, role: "timestamp" },
         { dataType: "timestamp", name: "updated_at", nullable: false, role: "timestamp" },
       ];
-    case "IamAccount":
-      return [
-        { dataType: "varchar(64)", indexed: true, name: "id", nullable: false, role: "id" },
-        { dataType: "varchar(64)", indexed: true, name: "user_id", nullable: true, role: "user-id" },
-        { dataType: "varchar(64)", indexed: true, name: "owner_id", nullable: true, role: "owner-id" },
-        { dataType: "varchar(32)", name: "owner", nullable: true, role: "relation" },
-        { dataType: "decimal(18,2)", name: "available_balance", nullable: false, role: "amount" },
-        { dataType: "decimal(18,2)", name: "frozen_balance", nullable: false, role: "amount" },
-        { dataType: "bigint", name: "available_points", nullable: false, role: "amount" },
-        { dataType: "bigint", name: "frozen_points", nullable: false, role: "amount" },
-        { dataType: "bigint", name: "token_balance", nullable: false, role: "amount" },
-        { dataType: "bigint", name: "frozen_token_balance", nullable: false, role: "amount" },
-        { dataType: "varchar(32)", indexed: true, name: "status", nullable: true, role: "status" },
-        { dataType: "timestamp", name: "created_at", nullable: false, role: "timestamp" },
-        { dataType: "timestamp", name: "updated_at", nullable: false, role: "timestamp" },
-      ];
     case "IamMembership":
       return [
         { dataType: "varchar(64)", indexed: true, name: "id", nullable: false, role: "id" },
@@ -101,24 +85,60 @@ function createLocalAuthorityColumns(
         { dataType: "timestamp", name: "created_at", nullable: false, role: "timestamp" },
         { dataType: "timestamp", name: "updated_at", nullable: false, role: "timestamp" },
       ];
-    case "IamOrganizationMember":
+    case "IamOrganizationMembership":
       return [
         { dataType: "varchar(64)", indexed: true, name: "id", nullable: false, role: "id" },
+        { dataType: "varchar(64)", indexed: true, name: "organization_id", nullable: false, role: "relation" },
         { dataType: "varchar(64)", indexed: true, name: "user_id", nullable: true, role: "user-id" },
-        { dataType: "varchar(64)", indexed: true, name: "owner_id", nullable: true, role: "owner-id" },
-        { dataType: "varchar(32)", name: "owner", nullable: true, role: "relation" },
-        { dataType: "boolean", name: "is_active", nullable: false, role: "flag" },
+        { dataType: "varchar(32)", name: "membership_kind", nullable: true, role: "relation" },
+        { dataType: "varchar(64)", name: "employee_no", nullable: true, role: "relation" },
+        { dataType: "varchar(128)", name: "display_name", nullable: true, role: "relation" },
+        { dataType: "varchar(32)", indexed: true, name: "status", nullable: true, role: "status" },
+        { dataType: "timestamp", name: "joined_at", nullable: true, role: "timestamp" },
+        { dataType: "timestamp", name: "left_at", nullable: true, role: "timestamp" },
         { dataType: "timestamp", name: "created_at", nullable: false, role: "timestamp" },
         { dataType: "timestamp", name: "updated_at", nullable: false, role: "timestamp" },
       ];
-    case "IamMemberRelation":
+    case "IamDepartmentAssignment":
       return [
         { dataType: "varchar(64)", indexed: true, name: "id", nullable: false, role: "id" },
-        { dataType: "varchar(64)", indexed: true, name: "member_id", nullable: true, role: "relation" },
-        { dataType: "varchar(64)", indexed: true, name: "target_id", nullable: true, role: "relation" },
-        { dataType: "varchar(32)", indexed: true, name: "relation_type", nullable: true, role: "relation" },
+        { dataType: "varchar(64)", indexed: true, name: "organization_id", nullable: false, role: "relation" },
+        { dataType: "varchar(64)", indexed: true, name: "organization_membership_id", nullable: false, role: "relation" },
+        { dataType: "varchar(64)", indexed: true, name: "department_id", nullable: false, role: "relation" },
+        { dataType: "varchar(64)", indexed: true, name: "user_id", nullable: true, role: "user-id" },
+        { dataType: "varchar(32)", indexed: true, name: "assignment_kind", nullable: true, role: "relation" },
         { dataType: "boolean", name: "is_primary", nullable: false, role: "flag" },
-        { dataType: "boolean", name: "is_active", nullable: false, role: "flag" },
+        { dataType: "varchar(32)", indexed: true, name: "status", nullable: true, role: "status" },
+        { dataType: "timestamp", name: "effective_from", nullable: true, role: "timestamp" },
+        { dataType: "timestamp", name: "effective_to", nullable: true, role: "timestamp" },
+        { dataType: "timestamp", name: "created_at", nullable: false, role: "timestamp" },
+        { dataType: "timestamp", name: "updated_at", nullable: false, role: "timestamp" },
+      ];
+    case "IamPositionAssignment":
+      return [
+        { dataType: "varchar(64)", indexed: true, name: "id", nullable: false, role: "id" },
+        { dataType: "varchar(64)", indexed: true, name: "organization_id", nullable: false, role: "relation" },
+        { dataType: "varchar(64)", indexed: true, name: "department_assignment_id", nullable: false, role: "relation" },
+        { dataType: "varchar(64)", indexed: true, name: "position_id", nullable: false, role: "relation" },
+        { dataType: "varchar(64)", indexed: true, name: "user_id", nullable: true, role: "user-id" },
+        { dataType: "boolean", name: "is_primary", nullable: false, role: "flag" },
+        { dataType: "varchar(32)", indexed: true, name: "status", nullable: true, role: "status" },
+        { dataType: "timestamp", name: "effective_from", nullable: true, role: "timestamp" },
+        { dataType: "timestamp", name: "effective_to", nullable: true, role: "timestamp" },
+        { dataType: "timestamp", name: "created_at", nullable: false, role: "timestamp" },
+        { dataType: "timestamp", name: "updated_at", nullable: false, role: "timestamp" },
+      ];
+    case "IamRoleBinding":
+      return [
+        { dataType: "varchar(64)", indexed: true, name: "id", nullable: false, role: "id" },
+        { dataType: "varchar(64)", indexed: true, name: "role_id", nullable: false, role: "relation" },
+        { dataType: "varchar(32)", indexed: true, name: "principal_kind", nullable: false, role: "relation" },
+        { dataType: "varchar(64)", indexed: true, name: "principal_id", nullable: false, role: "relation" },
+        { dataType: "varchar(32)", indexed: true, name: "scope_kind", nullable: false, role: "relation" },
+        { dataType: "varchar(64)", indexed: true, name: "scope_id", nullable: false, role: "relation" },
+        { dataType: "varchar(16)", name: "effect", nullable: false, role: "relation" },
+        { dataType: "json", name: "condition_json", nullable: true, role: "metadata" },
+        { dataType: "varchar(32)", indexed: true, name: "status", nullable: true, role: "status" },
         { dataType: "timestamp", name: "created_at", nullable: false, role: "timestamp" },
         { dataType: "timestamp", name: "updated_at", nullable: false, role: "timestamp" },
       ];
@@ -157,24 +177,29 @@ function createServerRepositories(): UserCenterServerRepositoryContract[] {
       purpose: "Persists canonical IAM tenant records.",
     },
     {
-      entityNames: ["IamAccount"],
-      id: "account-repository",
-      purpose: "Persists canonical IAM account balance records.",
-    },
-    {
       entityNames: ["IamMembership"],
       id: "membership-repository",
       purpose: "Persists canonical IAM membership lifecycle records.",
     },
     {
-      entityNames: ["IamOrganizationMember"],
-      id: "organization-member-repository",
+      entityNames: ["IamOrganizationMembership"],
+      id: "organization-membership-repository",
       purpose: "Persists canonical IAM organization membership rows.",
     },
     {
-      entityNames: ["IamMemberRelation"],
-      id: "member-relations-repository",
-      purpose: "Persists canonical IAM member relation rows.",
+      entityNames: ["IamDepartmentAssignment"],
+      id: "department-assignment-repository",
+      purpose: "Persists canonical IAM department assignment rows.",
+    },
+    {
+      entityNames: ["IamPositionAssignment"],
+      id: "position-assignment-repository",
+      purpose: "Persists canonical IAM position assignment rows.",
+    },
+    {
+      entityNames: ["IamRoleBinding"],
+      id: "role-binding-repository",
+      purpose: "Persists canonical IAM scoped role binding rows.",
     },
     {
       entityNames: [],

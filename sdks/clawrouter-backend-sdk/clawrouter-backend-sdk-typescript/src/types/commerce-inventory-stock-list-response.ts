@@ -5,9 +5,9 @@ export interface CommerceInventoryStockListResponse {
   /** Items field on commerce inventory stock list response. */
   items: CommerceInventoryStockItem[];
   /** Page field on commerce inventory stock list response. */
-  page: number;
+  page: string;
   /** Page size field on commerce inventory stock list response. */
-  pageSize: number;
+  pageSize: string;
   /** Total field on commerce inventory stock list response. */
-  total: number;
+  total: string;
 }

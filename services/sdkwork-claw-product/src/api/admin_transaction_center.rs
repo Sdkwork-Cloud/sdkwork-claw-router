@@ -696,6 +696,12 @@ fn build_create_payment_provider_account_command(
     let normalized = normalize_payment_provider_account_mutation(request)?;
     let idempotency_key = required_header(headers, IDEMPOTENCY_KEY_HEADER)?;
     let account_no = generate_payment_provider_account_no(&subject, &idempotency_key);
+    if !is_ascii_identifier(&account_no) {
+        return Err(transaction_center_system_response(
+            "payment provider account number generation failed",
+            DomainError::new("generated accountNo violates the provider account contract"),
+        ));
+    }
 
     Ok(CreateAdminPaymentProviderAccountCommand {
         subject,
@@ -895,6 +901,14 @@ fn generate_payment_provider_account_no(
     }
     let digest = hasher.finalize();
     format!("pacc-{}", hex::encode(&digest[..16]))
+}
+
+fn is_ascii_identifier(value: &str) -> bool {
+    !value.is_empty()
+        && value.len() <= MAX_ID_LEN
+        && value
+            .bytes()
+            .all(|byte| byte.is_ascii_alphanumeric() || byte == b'_' || byte == b'-')
 }
 
 fn validate_secret_ref(provider_code: &str, value: &str) -> Result<(), Response> {

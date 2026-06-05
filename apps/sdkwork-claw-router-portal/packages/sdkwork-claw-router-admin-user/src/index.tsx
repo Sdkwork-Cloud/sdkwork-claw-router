@@ -50,14 +50,14 @@ export function UserAdmin() {
   const [groupsTarget, setGroupsTarget] = useState<UserListItem | null>(null);
   const [isCreateApiKeyModalOpen, setIsCreateApiKeyModalOpen] = useState(false);
   const [newlyCreatedKey, setNewlyCreatedKey] = useState<string | null>(null);
-  const [activeDropdown, setActiveDropdown] = useState<number | null>(null);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState<string | null>(null);
   const [apiKeysLoadError, setApiKeysLoadError] = useState<string | null>(null);
   const [users, setUsers] = useState<UserListItem[]>([]);
-  const [apiKeysMap, setApiKeysMap] = useState<Record<number, ApiKeyItem[]>>({});
+  const [apiKeysMap, setApiKeysMap] = useState<Record<string, ApiKeyItem[]>>({});
 
   const loadUsers = async () => {
     setLoading(true);

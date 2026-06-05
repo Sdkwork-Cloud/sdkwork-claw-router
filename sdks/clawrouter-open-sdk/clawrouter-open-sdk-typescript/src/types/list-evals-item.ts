@@ -3,9 +3,9 @@ import type { ProviderJsonValue } from './provider-json-value';
 /** Item module returned inside the listEvals list response. */
 export interface ListEvalsItem {
   /** Unix timestamp in seconds when the object was created. */
-  created?: number;
+  created?: string;
   /** Unix timestamp in seconds when the object was created. */
-  created_at?: number;
+  created_at?: string;
   /** Eval data source returned by the upstream. */
   data_source?: ProviderJsonValue;
   /** Resource identifier returned by the selected upstream. */

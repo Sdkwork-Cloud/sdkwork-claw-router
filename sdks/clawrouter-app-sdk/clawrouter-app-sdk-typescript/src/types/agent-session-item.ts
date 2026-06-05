@@ -21,13 +21,13 @@ export interface AgentSessionItem {
   /** Last run id field on agent session item. */
   lastRunId?: string | null;
   /** Last step id field on agent session item. */
-  lastStepId?: number | null;
+  lastStepId?: string | null;
   /** Memory space id field on agent session item. */
   memorySpaceId?: string | null;
   /** Permission mode field on agent session item. */
   permissionMode?: string | null;
   /** Run count field on agent session item. */
-  runCount: number;
+  runCount: string;
   /** Runtime field on agent session item. */
   runtime?: string | null;
   /** Sandbox policy field on agent session item. */
@@ -39,11 +39,11 @@ export interface AgentSessionItem {
   /** Status field on agent session item. */
   status: 'active' | 'idle' | 'running' | 'completed' | 'failed' | 'cancelled' | 'archived' | 'deleted';
   /** Step count field on agent session item. */
-  stepCount: number;
+  stepCount: string;
   /** Title field on agent session item. */
   title: string;
   /** Tool call count field on agent session item. */
-  toolCallCount?: number;
+  toolCallCount?: string;
   /** Updated at field on agent session item. */
   updatedAt: string;
 }

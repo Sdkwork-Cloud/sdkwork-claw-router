@@ -15,6 +15,7 @@ import { adminAppCenterMessages } from './admin/app-center';
 import { adminAuthSettingsMessages } from './admin/auth-settings';
 import { adminCacheMessages } from './admin/cache';
 import { adminChannelMessages } from './admin/channel';
+import { adminChannelResourceRoutingMessages } from './admin/channel-resource-routing';
 import { adminCoreColumnsMessages } from './admin/core-columns';
 import { adminCoreNavigationMessages } from './admin/core-navigation';
 import { adminDashboardMessages } from './admin/dashboard';
@@ -81,6 +82,7 @@ export const resources = mergeI18nBundles([
   adminAuthSettingsMessages,
   adminCacheMessages,
   adminChannelMessages,
+  adminChannelResourceRoutingMessages,
   adminCoreColumnsMessages,
   adminCoreNavigationMessages,
   adminDashboardMessages,

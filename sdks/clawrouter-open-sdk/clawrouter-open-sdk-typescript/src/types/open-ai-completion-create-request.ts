@@ -23,7 +23,7 @@ export interface OpenAiCompletionCreateRequest {
   /** Prompt text, prompt array, token array, or token-array batch to complete. */
   prompt: string | string[] | number[] | number[][];
   /** Best-effort deterministic sampling seed. */
-  seed?: number;
+  seed?: string;
   /** Stop sequence or list of stop sequences. */
   stop?: string | string[];
   /** Whether to stream completion chunks. */

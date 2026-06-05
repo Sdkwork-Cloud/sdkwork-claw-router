@@ -54,8 +54,8 @@ export class SettlementsService {
   }> {
     const query = toSettlementDashboardQueryParams(params);
     const [ledgerResult, invoiceResult] = await Promise.all([
-      appWalletLedgerEntriesList({ page: 1, pageSize: SETTLEMENT_LEDGER_PAGE_SIZE }),
-      appInvoicesList({ page: 1, pageSize: SETTLEMENT_INVOICE_PAGE_SIZE }),
+      appWalletLedgerEntriesList({ page: '1', pageSize: String(SETTLEMENT_LEDGER_PAGE_SIZE) }),
+      appInvoicesList({ page: '1', pageSize: String(SETTLEMENT_INVOICE_PAGE_SIZE) }),
     ]);
     const ledgerEntries = readRequiredApiItems(ledgerResult, 'Settlement ledger entries are required')
       .map((item) => readRequiredRecord(item, 'Settlement ledger entry is required'));

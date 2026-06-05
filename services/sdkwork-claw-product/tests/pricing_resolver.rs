@@ -74,6 +74,7 @@ fn resolves_customer_price_from_channel_group_plan_and_official_reference() {
     let resolved = resolver
         .resolve(ResolveModelPriceQuery {
             api_key_id: 100,
+            channel_group_id: None,
             model: "openai/gpt-4o-mini".to_owned(),
             billing_meter: BillingMeter::LlmInputToken,
             provider_code: Some("openrouter".to_owned()),
@@ -147,6 +148,7 @@ fn resolves_upstream_cost_for_the_selected_provider_channel() {
     let resolved = resolver
         .resolve(ResolveModelPriceQuery {
             api_key_id: 100,
+            channel_group_id: None,
             model: "openai/gpt-4o-mini".to_owned(),
             billing_meter: BillingMeter::LlmInputToken,
             provider_code: Some("openrouter".to_owned()),
@@ -208,6 +210,7 @@ fn model_catalog_identity_does_not_supply_pricing_region_without_route_context()
     let error = resolver
         .resolve(ResolveModelPriceQuery {
             api_key_id: 100,
+            channel_group_id: None,
             model: "openai/gpt-4o-mini".to_owned(),
             billing_meter: BillingMeter::VideoOutputSecond,
             provider_code: None,
@@ -316,6 +319,7 @@ fn base_catalog_key_resolves_selected_channel_region_price_stack() {
     let resolved = PricingResolver::new(&catalog)
         .resolve(ResolveModelPriceQuery {
             api_key_id: 100,
+            channel_group_id: None,
             model: "minimax/MiniMax-M2.7".to_owned(),
             billing_meter: BillingMeter::LlmInputToken,
             provider_code: Some("minimax_cn_direct".to_owned()),
@@ -341,6 +345,7 @@ fn base_catalog_key_resolves_selected_channel_region_price_stack() {
     let resolved = PricingResolver::new(&catalog)
         .resolve(ResolveModelPriceQuery {
             api_key_id: 100,
+            channel_group_id: None,
             model: "minimax/MiniMax-M2.7".to_owned(),
             billing_meter: BillingMeter::LlmInputToken,
             provider_code: Some("minimax_global_direct".to_owned()),
@@ -439,6 +444,7 @@ fn selected_route_region_disambiguates_same_provider_channel_deployments() {
     let resolved = PricingResolver::new(&catalog)
         .resolve(ResolveModelPriceQuery {
             api_key_id: 100,
+            channel_group_id: None,
             model: "deepseek/deepseek-v4-pro".to_owned(),
             billing_meter: BillingMeter::LlmInputToken,
             provider_code: Some("deepseek_official".to_owned()),
@@ -474,6 +480,7 @@ fn rejects_selected_channel_that_is_not_a_provider_route_for_the_model() {
     let error = resolver
         .resolve(ResolveModelPriceQuery {
             api_key_id: 100,
+            channel_group_id: None,
             model: "openai/gpt-4o-mini".to_owned(),
             billing_meter: BillingMeter::LlmInputToken,
             provider_code: Some("openrouter".to_owned()),
@@ -549,6 +556,7 @@ fn channel_route_resolves_price_stack_with_its_explicit_region() {
     let resolved = PricingResolver::new(&catalog)
         .resolve(ResolveModelPriceQuery {
             api_key_id: 100,
+            channel_group_id: None,
             model: "minimax/MiniMax-M2.7".to_owned(),
             billing_meter: BillingMeter::LlmInputToken,
             provider_code: Some("minimax_upstream".to_owned()),
@@ -593,6 +601,7 @@ fn explicit_plan_customer_price_overrides_official_reference_and_keeps_group_mul
     let resolved = resolver
         .resolve(ResolveModelPriceQuery {
             api_key_id: 100,
+            channel_group_id: None,
             model: "openai/gpt-4o-mini".to_owned(),
             billing_meter: BillingMeter::LlmInputToken,
             provider_code: Some("openrouter".to_owned()),
@@ -638,6 +647,7 @@ fn supports_non_token_meter_without_new_pricing_table_shape() {
     let resolved = resolver
         .resolve(ResolveModelPriceQuery {
             api_key_id: 100,
+            channel_group_id: None,
             model: "openai/gpt-4o-mini".to_owned(),
             billing_meter: BillingMeter::ApiResult,
             provider_code: None,
@@ -661,6 +671,7 @@ fn missing_price_returns_a_domain_error_instead_of_fake_success() {
     let error = resolver
         .resolve(ResolveModelPriceQuery {
             api_key_id: 100,
+            channel_group_id: None,
             model: "openai/gpt-4o-mini".to_owned(),
             billing_meter: BillingMeter::VideoOutputSecond,
             provider_code: None,
@@ -702,6 +713,7 @@ fn pricing_resolver_returns_domain_error_when_decimal_math_overflows() {
     let error = resolver
         .resolve(ResolveModelPriceQuery {
             api_key_id: 100,
+            channel_group_id: None,
             model: "openai/gpt-4o-mini".to_owned(),
             billing_meter: BillingMeter::ApiResult,
             provider_code: None,

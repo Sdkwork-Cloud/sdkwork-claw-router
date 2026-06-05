@@ -185,7 +185,7 @@ function sampleAsset(overrides: Record<string, unknown> = {}) {
     width: 1200,
     height: 720,
     durationSeconds: null,
-    fileSize: 182000,
+    fileSize: "182000",
     sortOrder: 10,
     status: 1,
     publishedAt: "2026-05-09T00:00:00Z",
@@ -207,7 +207,7 @@ function sampleArtifact(overrides: Record<string, unknown> = {}) {
     osName: "runtime",
     artifactRef: "builtin://sdkwork.skills.research_brief@1.0.0",
     artifact: mediaResource("data/skills/artifacts/research-brief-1.0.0.json", "archive"),
-    artifactSizeBytes: 2048,
+    artifactSizeBytes: "2048",
     runtime: "builtin",
     frameworks: ["Rust service", "OpenAI-compatible"],
     licenseName: "SDKWork Commercial",
@@ -751,11 +751,13 @@ test("admin skill service calls generated backend SDK asset and artifact paths",
       const deletedArtifact = await AdminSkillService.deleteSkillArtifact("8101", "9201");
 
       assert.equal(assets[0].title, "Skill cover");
+      assert.equal(assets[0].fileSize, "182000");
       assert.equal(asset.artifactId, null);
       assert.equal(createdAsset.id, "9102");
       assert.equal(updatedAsset.sortOrder, 20);
       assert.equal(deletedAsset, true);
       assert.deepEqual(artifacts[0].frameworks, ["Rust service", "OpenAI-compatible"]);
+      assert.equal(artifacts[0].artifactSizeBytes, "2048");
       assert.equal(artifact.checksumHash, "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
       assert.equal(createdArtifact.version, "1.1.0");
       assert.deepEqual(updatedArtifact.frameworks, ["Rust service"]);
@@ -782,7 +784,7 @@ test("admin skill service calls generated backend SDK asset and artifact paths",
         assetType: 1,
         width: 1200,
         height: 630,
-        fileSize: 2048,
+        fileSize: "2048",
         sortOrder: 10,
         status: 1,
       });
@@ -791,7 +793,7 @@ test("admin skill service calls generated backend SDK asset and artifact paths",
         platformType: "web",
         osName: "any",
         artifact: mediaResource("artifact://skills/research/skill.json", "archive"),
-        artifactSizeBytes: 4096,
+        artifactSizeBytes: "4096",
         runtime: "agent-skill",
         frameworks: ["React portal", "Rust service"],
         checksumHash: "sha256:0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
@@ -978,11 +980,13 @@ test("admin skill service calls generated backend SDK paths and normalizes packa
       assert.equal(created.id, "9001");
       assert.equal(updated.name, "Research Brief Pro");
       assert.equal(assets[0].targetType, 35);
+      assert.equal(assets[0].fileSize, "182000");
       assert.equal(readMediaResourceUrl(asset.asset), "https://cdn.example.test/skills/research/cover.png");
       assert.equal(createdAsset.id, "9102");
       assert.equal(updatedAsset.thumbnail, undefined);
       assert.equal(deletedAsset, true);
       assert.equal(artifacts[0].frameworks.length, 2);
+      assert.equal(artifacts[0].artifactSizeBytes, "2048");
       assert.equal(artifact.artifactRef, "builtin://sdkwork.skills.research_brief@1.0.0");
       assert.equal(createdArtifact.version, "1.0.1");
       assert.equal(updatedArtifact.checksumHash, null);
@@ -1044,7 +1048,7 @@ test("admin skill service calls generated backend SDK paths and normalizes packa
         mimeType: "image/png",
         width: 1200,
         height: 720,
-        fileSize: 182000,
+        fileSize: "182000",
         sortOrder: 20,
         status: 1,
       });
@@ -1060,7 +1064,7 @@ test("admin skill service calls generated backend SDK paths and normalizes packa
         version: "1.0.1",
         artifactRef: "builtin://sdkwork.skills.research_brief@1.0.1",
         artifact: mediaResource("data/skills/artifacts/research-brief-1.0.1.json", "archive"),
-        artifactSizeBytes: 4096,
+        artifactSizeBytes: "4096",
         runtime: "builtin",
         frameworks: ["Rust service", "OpenAI-compatible"],
         checksumHash: "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",

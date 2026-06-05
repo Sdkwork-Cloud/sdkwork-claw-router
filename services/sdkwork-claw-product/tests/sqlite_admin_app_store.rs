@@ -12,7 +12,7 @@ use sqlx::{Row, SqlitePool};
 const TENANT_ID: i64 = 42;
 const ORGANIZATION_ID: i64 = 84;
 const OPERATOR_ID: i64 = 9001;
-const ASSIGNED_ID_FLOOR: i64 = 1_000_000_000_000;
+const SNOWFLAKE_ID_FLOOR: i64 = 1_000_000_000_000;
 const PUBLIC_APP_STORE_TENANT_ID: i64 = 20_001;
 
 fn external_media_resource(locator: &str, kind: &str) -> serde_json::Value {
@@ -80,8 +80,8 @@ async fn sqlite_admin_app_store_manages_plus_app_lifecycle_with_market_state_and
         .unwrap();
 
     assert!(
-        created.id > ASSIGNED_ID_FLOOR,
-        "admin-created apps must use Java-compatible assigned ids, not SQLite rowids"
+        created.id > SNOWFLAKE_ID_FLOOR,
+        "admin-created apps must use appbase Snowflake ids, not SQLite rowids"
     );
     assert_eq!(TENANT_ID, created.tenant_id);
     assert_eq!(ORGANIZATION_ID, created.organization_id);
@@ -349,8 +349,8 @@ async fn sqlite_admin_app_store_manages_app_template_lifecycle_with_audit() {
         .unwrap();
 
     assert!(
-        created.id > ASSIGNED_ID_FLOOR,
-        "admin-created app templates must use Java-compatible assigned ids"
+        created.id > SNOWFLAKE_ID_FLOOR,
+        "admin-created app templates must use appbase Snowflake ids"
     );
     assert_eq!("agent-dashboard", created.template_code);
     assert_eq!("TENANT", created.visibility);

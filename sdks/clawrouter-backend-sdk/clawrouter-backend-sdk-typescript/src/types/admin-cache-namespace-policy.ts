@@ -9,7 +9,7 @@ export interface AdminCacheNamespacePolicy {
   /** Instance name field on admin cache namespace policy. */
   instanceName: string;
   /** Jitter percent field on admin cache namespace policy. */
-  jitterPercent: number;
+  jitterPercent: string;
   /** Namespace field on admin cache namespace policy. */
   namespace: string;
   /** Scope field on admin cache namespace policy. */
@@ -17,9 +17,9 @@ export interface AdminCacheNamespacePolicy {
   /** Sensitivity field on admin cache namespace policy. */
   sensitivity: string;
   /** Stale while revalidate seconds field on admin cache namespace policy. */
-  staleWhileRevalidateSeconds: number;
+  staleWhileRevalidateSeconds: string;
   /** Tags field on admin cache namespace policy. */
   tags: string[];
   /** Ttl seconds field on admin cache namespace policy. */
-  ttlSeconds: number;
+  ttlSeconds: string;
 }

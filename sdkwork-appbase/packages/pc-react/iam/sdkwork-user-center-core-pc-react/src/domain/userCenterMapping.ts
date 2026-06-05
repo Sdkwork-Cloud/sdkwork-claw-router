@@ -67,21 +67,21 @@ export function mapStandardUserCenterSnapshot(
     },
     organization: {
       departmentIds: collectOrganizationTargetIds(
-        snapshot.organizationMember?.memberRelations,
+        snapshot.organizationMembership?.membershipRelations,
         "DEPARTMENT",
       ),
-      isActive: snapshot.organizationMember?.isActive !== false,
-      owner: normalizeOptionalText(snapshot.organizationMember?.owner),
-      ownerId: normalizeOptionalText(snapshot.organizationMember?.ownerId),
+      isActive: snapshot.organizationMembership?.isActive !== false,
+      owner: normalizeOptionalText(snapshot.organizationMembership?.owner),
+      ownerId: normalizeOptionalText(snapshot.organizationMembership?.ownerId),
       positionIds: collectOrganizationTargetIds(
-        snapshot.organizationMember?.memberRelations,
+        snapshot.organizationMembership?.membershipRelations,
         "POSITION",
       ),
       roleIds: collectOrganizationTargetIds(
-        snapshot.organizationMember?.memberRelations,
+        snapshot.organizationMembership?.membershipRelations,
         "ROLE",
       ),
-      userId: normalizeOptionalText(snapshot.organizationMember?.userId),
+      userId: normalizeOptionalText(snapshot.organizationMembership?.userId),
     },
     tenant: {
       bizType: normalizeOptionalText(snapshot.tenant?.bizType),

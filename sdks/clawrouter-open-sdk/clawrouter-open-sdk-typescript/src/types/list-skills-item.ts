@@ -3,9 +3,9 @@ import type { ProviderJsonValue } from './provider-json-value';
 /** Item module returned inside the listSkills list response. */
 export interface ListSkillsItem {
   /** Unix timestamp in seconds when the object was created. */
-  created?: number;
+  created?: string;
   /** Unix timestamp in seconds when the object was created. */
-  created_at?: number;
+  created_at?: string;
   /** Human-readable skill description. */
   description?: string;
   /** Resource identifier returned by the selected upstream. */

@@ -3,9 +3,9 @@ import type { ProviderJsonValue } from './provider-json-value';
 /** Item module returned inside the listBatches list response. */
 export interface ListBatchesItem {
   /** Unix timestamp in seconds when the object was created. */
-  created?: number;
+  created?: string;
   /** Unix timestamp in seconds when the object was created. */
-  created_at?: number;
+  created_at?: string;
   /** Endpoint processed by the batch. */
   endpoint?: string;
   /** Error file identifier produced by the batch. */

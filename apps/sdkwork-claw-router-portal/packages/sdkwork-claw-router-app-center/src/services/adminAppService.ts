@@ -163,9 +163,9 @@ interface AdminAppListSdkParams {
   status?: AdminAppStatus;
   marketStatus?: AdminAppMarketStatus;
   appType?: string;
-  categoryId?: number;
-  page?: number;
-  pageSize?: number;
+  categoryId?: string;
+  page?: string;
+  pageSize?: string;
 }
 
 export interface AdminAppPage {
@@ -278,9 +278,9 @@ interface AdminAppTemplateListSdkParams {
   publishStatus?: AdminAppTemplatePublishStatus;
   templateType?: string;
   runtime?: string;
-  categoryId?: number;
-  page?: number;
-  pageSize?: number;
+  categoryId?: string;
+  page?: string;
+  pageSize?: string;
 }
 
 export interface AdminAppTemplatePage {
@@ -333,8 +333,8 @@ export class AdminAppService {
     const data = readRequiredRecord(readApiData(result), 'Failed to fetch apps');
     const items = readRequiredApiItems(result, 'Failed to fetch apps')
       .map(normalizeAdminApp);
-    const fallbackPage = request.page ?? 1;
-    const fallbackPageSize = request.pageSize ?? 100;
+    const fallbackPage = Number(request.page ?? 1);
+    const fallbackPageSize = Number(request.pageSize ?? 100);
     return {
       items,
       total: readOptionalNonNegativeInteger(data, 'total', items.length),
@@ -434,8 +434,8 @@ export class AdminAppService {
     const data = readRequiredRecord(readApiData(result), 'Failed to fetch app templates');
     const items = readRequiredApiItems(result, 'Failed to fetch app templates')
       .map(normalizeAdminAppTemplate);
-    const fallbackPage = request.page ?? 1;
-    const fallbackPageSize = request.pageSize ?? 100;
+    const fallbackPage = Number(request.page ?? 1);
+    const fallbackPageSize = Number(request.pageSize ?? 100);
     return {
       items,
       total: readOptionalNonNegativeInteger(data, 'total', items.length),
@@ -607,13 +607,13 @@ function normalizeListRequest(input: AdminAppListInput): AdminAppListSdkParams {
     request.appType = appType;
   }
   if (input.categoryId !== undefined) {
-    request.categoryId = positiveInteger(input.categoryId, 'categoryId', 1_000_000_000_000);
+    request.categoryId = String(positiveInteger(input.categoryId, 'categoryId', 1_000_000_000_000));
   }
   if (input.page !== undefined) {
-    request.page = positiveInteger(input.page, 'page', 1_000_000);
+    request.page = String(positiveInteger(input.page, 'page', 1_000_000));
   }
   if (input.pageSize !== undefined) {
-    request.pageSize = positiveInteger(input.pageSize, 'pageSize', 200);
+    request.pageSize = String(positiveInteger(input.pageSize, 'pageSize', 200));
   }
   return request;
 }
@@ -636,13 +636,13 @@ function normalizeTemplateListRequest(input: AdminAppTemplateListInput): AdminAp
     request.runtime = runtime;
   }
   if (input.categoryId !== undefined) {
-    request.categoryId = positiveInteger(input.categoryId, 'categoryId', 1_000_000_000_000);
+    request.categoryId = String(positiveInteger(input.categoryId, 'categoryId', 1_000_000_000_000));
   }
   if (input.page !== undefined) {
-    request.page = positiveInteger(input.page, 'page', 1_000_000);
+    request.page = String(positiveInteger(input.page, 'page', 1_000_000));
   }
   if (input.pageSize !== undefined) {
-    request.pageSize = positiveInteger(input.pageSize, 'pageSize', 200);
+    request.pageSize = String(positiveInteger(input.pageSize, 'pageSize', 200));
   }
   return request;
 }

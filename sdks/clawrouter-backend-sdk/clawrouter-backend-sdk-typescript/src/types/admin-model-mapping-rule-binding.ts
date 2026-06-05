@@ -15,7 +15,7 @@ export interface AdminModelMappingRuleBinding {
   /** Id field on admin model mapping rule binding. */
   id: string;
   /** Sort order field on admin model mapping rule binding. */
-  sortOrder: number;
+  sortOrder: string;
   /** Updated at field on admin model mapping rule binding. */
   updatedAt?: string | null;
 }

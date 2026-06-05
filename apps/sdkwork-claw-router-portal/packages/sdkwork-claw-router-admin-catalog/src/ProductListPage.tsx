@@ -90,8 +90,8 @@ export function ProductListPage() {
     let active = true;
     setState((current) => ({ ...current, loading: true, error: null }));
     void listCommerceProducts({
-      page: pagination.page,
-      pageSize: pagination.pageSize,
+      page: String(pagination.page),
+      pageSize: String(pagination.pageSize),
       q: queryText || undefined,
       status: activeTab.status,
     })

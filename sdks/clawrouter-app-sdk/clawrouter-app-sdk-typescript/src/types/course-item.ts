@@ -9,11 +9,11 @@ export interface CourseItem {
   /** Category label field on course item. */
   categoryLabel: string;
   /** Comment count field on course item. */
-  commentCount: number;
+  commentCount: string;
   /** Content field on course item. */
   content: string;
   /** Content id field on course item. */
-  contentId: number;
+  contentId: string;
   /** Course code field on course item. */
   courseCode: string;
   /** Currency field on course item. */
@@ -33,9 +33,9 @@ export interface CourseItem {
   /** Is collection field on course item. */
   isCollection: boolean;
   /** Lessons count field on course item. */
-  lessonsCount: number;
+  lessonsCount: string;
   /** Level field on course item. */
-  level: number;
+  level: string;
   /** Level label field on course item. */
   levelLabel: string;
   /** Price amount field on course item. */
@@ -45,7 +45,7 @@ export interface CourseItem {
   /** Rating score field on course item. */
   ratingScore: number;
   /** Students count field on course item. */
-  studentsCount: number;
+  studentsCount: string;
   /** Tags field on course item. */
   tags: string[];
   /** Thumbnail field on course item. */

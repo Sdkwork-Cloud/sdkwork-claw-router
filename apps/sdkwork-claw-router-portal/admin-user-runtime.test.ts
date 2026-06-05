@@ -107,14 +107,14 @@ test("admin API key create input uses stable command naming without clock drift"
   const named = new FormData();
   named.set("keyName", " Production Key ");
 
-  assert.deepEqual(createApiKeyInputFromForm(named, 42), {
-    userId: 42,
+  assert.deepEqual(createApiKeyInputFromForm(named, "9007199254740993"), {
+    userId: "9007199254740993",
     name: "Production Key",
   });
 
   const unnamed = new FormData();
-  assert.deepEqual(createApiKeyInputFromForm(unnamed, 42), {
-    userId: 42,
+  assert.deepEqual(createApiKeyInputFromForm(unnamed, "9007199254740993"), {
+    userId: "9007199254740993",
     name: "Default API Key",
   });
 });
@@ -318,10 +318,14 @@ test("admin user service reads created API key data returned by the generated ba
       },
     },
     async (captured) => {
-      const result = await UserService.createApiKey({ userId: 42, name: "Production Key" });
+      const result = await UserService.createApiKey({ userId: "9007199254740993", name: "Production Key" });
 
       assert.equal(captured[0].url, "/backend/v3/api/iam/api_keys");
       assert.equal(captured[0].method, "POST");
+      assert.deepEqual(JSON.parse(captured[0].body), {
+        userId: "9007199254740993",
+        name: "Production Key",
+      });
       assert.equal(result.key.id, "admin-key-1");
       assert.equal(result.rawKey, "sk-admin-secret");
     },
@@ -331,7 +335,7 @@ test("admin user service reads created API key data returned by the generated ba
 test("admin user initial table load preserves users when API key prefetch fails", async () => {
   const users = [
     {
-      id: 42,
+      id: "9007199254740993",
       email: "admin@example.com",
       username: "Admin",
       role: "admin",
@@ -375,7 +379,7 @@ test("admin user create and update use generated IAM users SDK commands", async 
       code: "2000",
       data: {
         item: {
-          id: 42,
+          id: "9007199254740993",
           email: "admin@example.com",
           username: "Admin",
           role: "admin",
@@ -390,7 +394,7 @@ test("admin user create and update use generated IAM users SDK commands", async 
     },
     async (captured) => {
       await UserService.addUser({ email: " admin@example.com ", username: " Admin " });
-      await UserService.updateUser(42, { username: " Owner ", group: " vip " });
+      await UserService.updateUser("9007199254740993", { username: " Owner ", group: " vip " });
 
       assert.equal(captured[0].url, "/backend/v3/api/iam/users");
       assert.equal(captured[0].method, "POST");
@@ -401,7 +405,7 @@ test("admin user create and update use generated IAM users SDK commands", async 
       assert.equal(captured[1].url, "/backend/v3/api/iam/users");
       assert.equal(captured[1].method, "PUT");
       assert.deepEqual(JSON.parse(captured[1].body), {
-        id: 42,
+        id: "9007199254740993",
         username: "Owner",
         group: "vip",
       });
@@ -421,7 +425,7 @@ test("admin user service rejects unsafe API key path ids before calling generate
     },
     async (captured) => {
       await assert.rejects(
-        () => UserService.deleteApiKey(42, "key/1"),
+        () => UserService.deleteApiKey("9007199254740993", "key/1"),
         /apiKeyId must be a safe path segment/,
       );
       assert.equal(captured.length, 0);
@@ -438,7 +442,7 @@ test("admin API key delete fails closed unless backend confirms deletion", async
       },
       async () => {
         await assert.rejects(
-          () => UserService.deleteApiKey(42, "admin-key-1"),
+          () => UserService.deleteApiKey("9007199254740993", "admin-key-1"),
           /admin\.user\.errors\.deleteApiKeyFallback/,
         );
       },
@@ -482,7 +486,7 @@ test("admin user list fails closed when backend returns malformed user rows", as
       data: {
         items: [
           {
-            id: 42,
+            id: "9007199254740993",
             email: "admin@example.com",
             username: "Admin",
             role: "admin",
@@ -513,7 +517,7 @@ test("admin user list fails closed when backend omits user email", async () => {
       data: {
         items: [
           {
-            id: 42,
+            id: "9007199254740993",
             username: "Admin",
             role: "admin",
             group: "default",
@@ -542,7 +546,7 @@ test("admin user list fails closed when backend returns unsupported user status"
       data: {
         items: [
           {
-            id: 42,
+            id: "9007199254740993",
             email: "admin@example.com",
             username: "Admin",
             role: "admin",
@@ -570,7 +574,7 @@ test("admin API key map fails closed when backend returns malformed key rows", a
     {
       code: "2000",
       data: {
-        42: ["malformed-api-key-row"],
+        "9007199254740993": ["malformed-api-key-row"],
       },
     },
     async () => {
@@ -584,10 +588,10 @@ test("admin API key map fails closed when backend returns malformed key rows", a
 
 test("admin API key map fails closed when backend returns malformed map shape", async () => {
   for (const [data, message] of [
-    [{ 42: { id: "key-1" } }, /API key list for user 42 is required/],
-    [{ guest: [] }, /API key map user id must be a positive integer/],
-    [{ 0: [] }, /API key map user id must be a positive integer/],
-    [{ "42.5": [] }, /API key map user id must be a positive integer/],
+    [{ "9007199254740993": { id: "key-1" } }, /API key list for user 9007199254740993 is required/],
+    [{ guest: [] }, /API key map user id must be a positive int64 string/],
+    [{ 0: [] }, /API key map user id must be a positive int64 string/],
+    [{ "42.5": [] }, /API key map user id must be a positive int64 string/],
   ] as const) {
     await withBackendSdkResponse(
       {
@@ -609,7 +613,7 @@ test("admin API key map fails closed when backend omits stable key ids", async (
     {
       code: "2000",
       data: {
-        42: [
+        "9007199254740993": [
           {
             name: "Production Key",
             key: "sk-****1234",
@@ -644,7 +648,7 @@ test("admin API key creation fails closed when backend omits stable key ids", as
     },
     async () => {
       await assert.rejects(
-        () => UserService.createApiKey({ userId: 42, name: "Production Key" }),
+        () => UserService.createApiKey({ userId: "9007199254740993", name: "Production Key" }),
         /API key id is required/,
       );
     },
@@ -667,7 +671,7 @@ test("admin API key creation fails closed when backend omits key material", asyn
     },
     async () => {
       await assert.rejects(
-        () => UserService.createApiKey({ userId: 42, name: "Production Key" }),
+        () => UserService.createApiKey({ userId: "9007199254740993", name: "Production Key" }),
         /API key value is required/,
       );
     },

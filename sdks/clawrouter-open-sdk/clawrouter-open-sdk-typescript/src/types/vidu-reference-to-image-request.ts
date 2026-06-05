@@ -15,7 +15,7 @@ export interface ViduReferenceToImageRequest {
   /** Text prompt sent to the Vidu API. */
   prompt: string;
   /** Optional deterministic seed. */
-  seed?: number;
+  seed?: string;
   /** Provider-specific image style option when supported. */
   style?: string;
 }

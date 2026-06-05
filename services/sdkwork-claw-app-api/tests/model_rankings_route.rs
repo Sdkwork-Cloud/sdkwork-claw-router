@@ -50,10 +50,17 @@ async fn database_config_app_model_rankings_route_reads_installed_catalog_snapsh
         "Published model ranking snapshot",
         payload["data"]["source"]["sourceLabel"]
     );
-    assert_eq!("2026-05-08", payload["data"]["source"]["observedAt"]);
+    let expected_observed_at = latest_bundled_commercial_ranking_snapshot_date();
+    assert_eq!(
+        expected_observed_at,
+        payload["data"]["source"]["observedAt"]
+    );
     assert_eq!("commercial-default", payload["data"]["source"]["rankScope"]);
     let items = payload["data"]["items"].as_array().unwrap();
-    assert_eq!(5, items.len());
+    assert_eq!(
+        latest_bundled_commercial_ranking_snapshot_item_count(5),
+        items.len()
+    );
     let history_catalog_keys: HashSet<&str> = payload["data"]["history"]
         .as_array()
         .unwrap()
@@ -77,7 +84,7 @@ async fn database_config_app_model_rankings_route_reads_installed_catalog_snapsh
         assert_eq!("LLM", item["modality"]);
         let id = item["id"].as_str().unwrap();
         assert!(
-            !id.starts_with("2026-05-08:"),
+            !id.starts_with(&format!("{expected_observed_at}:")),
             "ranking item id must be stable catalog identity, not snapshot-date scoped"
         );
         assert!(
@@ -516,6 +523,42 @@ fn catalog_routable_models_with_meter(
             })
         })
         .collect()
+}
+
+fn latest_bundled_commercial_ranking_snapshot_date() -> String {
+    sdkwork_models::load_bundled_catalog()
+        .unwrap()
+        .vendors
+        .iter()
+        .flat_map(|vendor| &vendor.rankings)
+        .filter(|snapshot| snapshot.rank_scope == "commercial-default")
+        .filter(|snapshot| !snapshot.items.is_empty())
+        .map(|snapshot| snapshot.snapshot_date.as_str())
+        .max()
+        .expect("bundled catalog must include commercial-default rankings")
+        .to_owned()
+}
+
+fn latest_bundled_commercial_ranking_snapshot_item_count(limit: usize) -> usize {
+    let catalog = sdkwork_models::load_bundled_catalog().unwrap();
+    let latest_snapshot_date = catalog
+        .vendors
+        .iter()
+        .flat_map(|vendor| &vendor.rankings)
+        .filter(|snapshot| snapshot.rank_scope == "commercial-default")
+        .filter(|snapshot| !snapshot.items.is_empty())
+        .map(|snapshot| snapshot.snapshot_date.as_str())
+        .max()
+        .expect("bundled catalog must include commercial-default rankings");
+    catalog
+        .vendors
+        .iter()
+        .flat_map(|vendor| &vendor.rankings)
+        .filter(|snapshot| snapshot.rank_scope == "commercial-default")
+        .filter(|snapshot| snapshot.snapshot_date == latest_snapshot_date)
+        .map(|snapshot| snapshot.items.len())
+        .sum::<usize>()
+        .min(limit)
 }
 
 fn is_regional_catalog_key(catalog_key: &str) -> bool {

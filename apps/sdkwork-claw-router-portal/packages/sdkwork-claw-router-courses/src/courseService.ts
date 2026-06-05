@@ -183,8 +183,8 @@ export const courseService = {
     const catalog = normalizeCourseCatalogPayload(result);
     return {
       ...catalog,
-      page: catalog.page || normalized.page || 1,
-      size: catalog.size || normalized.pageSize || MAX_COURSE_PAGE_SIZE,
+      page: catalog.page || Number(normalized.page ?? 1),
+      size: catalog.size || Number(normalized.pageSize ?? MAX_COURSE_PAGE_SIZE),
     };
   },
 
@@ -313,18 +313,21 @@ export function normalizeCourseDetailPayload(result: unknown): CourseDetailResul
 }
 
 function normalizeCourseQuery(query: CourseQuery): {
-  level?: number;
+  level?: string;
   category?: string;
   searchQuery?: string;
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
 } {
+  const page = optionalPositiveInteger(query.page, 'page');
+  const pageSize = optionalBoundedPositiveInteger(query.size, 'size', MAX_COURSE_PAGE_SIZE);
+  const level = normalizeCourseLevelQuery(query.level);
   return {
-    level: normalizeCourseLevelQuery(query.level),
+    level: level === undefined ? undefined : String(level),
     category: normalizeCategoryQuery(query.category),
     searchQuery: optionalText(query.searchQuery, 'searchQuery', MAX_COURSE_QUERY_TEXT_LENGTH),
-    page: optionalPositiveInteger(query.page, 'page'),
-    pageSize: optionalBoundedPositiveInteger(query.size, 'size', MAX_COURSE_PAGE_SIZE),
+    page: page === undefined ? undefined : String(page),
+    pageSize: pageSize === undefined ? undefined : String(pageSize),
   };
 }
 

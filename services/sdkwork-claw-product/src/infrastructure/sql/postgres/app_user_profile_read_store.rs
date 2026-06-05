@@ -8,42 +8,54 @@ use crate::ports::{
 };
 
 const LOAD_USER_PROFILE: &str = r#"
-WITH latest_session AS (
+WITH subject AS (
     SELECT
-        tenant_id,
-        organization_id,
-        user_id,
-        CAST(created_at AS TEXT) AS last_login
-    FROM iam_session
-    WHERE tenant_id = $1
-      AND organization_id = $2
-      AND user_id = $3
-      AND revoked_at IS NULL
-    ORDER BY created_at DESC NULLS LAST, id DESC
+        $1::text AS tenant_id_text,
+        $2::text AS organization_id_text,
+        $3::text AS user_id_text,
+        $4::bigint AS tenant_id,
+        $5::bigint AS organization_id,
+        $6::bigint AS user_id
+),
+latest_session AS (
+    SELECT
+        s.tenant_id,
+        s.organization_id,
+        s.user_id,
+        CAST(s.created_at AS TEXT) AS last_login
+    FROM iam_session s
+    JOIN subject ON true
+    WHERE s.tenant_id = subject.tenant_id_text
+      AND s.organization_id = subject.organization_id_text
+      AND s.user_id = subject.user_id_text
+      AND s.revoked_at IS NULL
+    ORDER BY s.created_at DESC NULLS LAST, s.id DESC
     LIMIT 1
 ),
 latest_login AS (
     SELECT
-        tenant_id,
-        organization_id,
-        user_id,
-        CAST(occurred_at AS TEXT) AS last_login,
-        COALESCE(client_ip_masked, '') AS last_login_ip
-    FROM iam_user_login_event
-    WHERE tenant_id = $1
-      AND organization_id = $2
-      AND user_id = $3
-    ORDER BY occurred_at DESC NULLS LAST, id DESC
+        CAST(e.tenant_id AS TEXT) AS tenant_id,
+        CAST(e.organization_id AS TEXT) AS organization_id,
+        CAST(e.user_id AS TEXT) AS user_id,
+        CAST(e.occurred_at AS TEXT) AS last_login,
+        COALESCE(e.client_ip_masked, '') AS last_login_ip
+    FROM iam_user_login_event e
+    JOIN subject ON true
+    WHERE e.tenant_id = subject.tenant_id
+      AND e.organization_id = subject.organization_id
+      AND e.user_id = subject.user_id
+    ORDER BY e.occurred_at DESC NULLS LAST, e.id DESC
     LIMIT 1
 ),
 identity_bindings AS (
     SELECT
-        user_id,
-        COUNT(DISTINCT provider) AS identity_binding_count
-    FROM iam_user_identity
-    WHERE tenant_id = $1
-      AND user_id = $3
-    GROUP BY user_id
+        ui.user_id,
+        COUNT(DISTINCT ui.provider) AS identity_binding_count
+    FROM iam_user_identity ui
+    JOIN subject ON true
+    WHERE ui.tenant_id = subject.tenant_id_text
+      AND ui.user_id = subject.user_id_text
+    GROUP BY ui.user_id
 )
 SELECT
     u.id,
@@ -61,10 +73,11 @@ SELECT
     COALESCE(sec.mfa_enabled, false) AS mfa_enabled,
     COALESCE(ib.identity_binding_count, 0) AS identity_binding_count
 FROM iam_user u
+JOIN subject ON true
 JOIN iam_organization_member om
-  ON om.tenant_id = u.tenant_id
- AND om.user_id = u.id
- AND om.organization_id = $2
+  ON CAST(om.tenant_id AS TEXT) = u.tenant_id
+ AND CAST(om.user_id AS TEXT) = u.id
+ AND CAST(om.organization_id AS TEXT) = subject.organization_id_text
  AND om.status = 'active'
 LEFT JOIN latest_session ls
   ON ls.tenant_id = u.tenant_id
@@ -73,17 +86,17 @@ LEFT JOIN latest_login ll
   ON ll.tenant_id = u.tenant_id
  AND ll.user_id = u.id
 LEFT JOIN iam_user_preference pref
-  ON pref.tenant_id = u.tenant_id
- AND pref.organization_id = $2
- AND pref.user_id = u.id
+  ON pref.tenant_id = subject.tenant_id
+ AND pref.organization_id = subject.organization_id
+ AND pref.user_id = subject.user_id
 LEFT JOIN iam_user_security_setting sec
-  ON sec.tenant_id = u.tenant_id
- AND sec.organization_id = $2
- AND sec.user_id = u.id
+  ON sec.tenant_id = subject.tenant_id
+ AND sec.organization_id = subject.organization_id
+ AND sec.user_id = subject.user_id
 LEFT JOIN identity_bindings ib
   ON ib.user_id = u.id
-WHERE u.tenant_id = $1
-  AND u.id = $3
+WHERE CAST(u.tenant_id AS TEXT) = subject.tenant_id_text
+  AND CAST(u.id AS TEXT) = subject.user_id_text
 LIMIT 1
 "#;
 
@@ -118,6 +131,9 @@ async fn load_user_profile(
         .bind(subject.tenant_id.to_string())
         .bind(subject.organization_id.to_string())
         .bind(subject.user_id.to_string())
+        .bind(subject.tenant_id)
+        .bind(subject.organization_id)
+        .bind(subject.user_id)
         .fetch_optional(pool)
         .await
         .map_err(sql_error)?;

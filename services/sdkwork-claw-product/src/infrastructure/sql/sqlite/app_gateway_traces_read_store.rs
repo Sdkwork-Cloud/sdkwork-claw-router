@@ -84,7 +84,7 @@ impl AppGatewayTracesReadStore for SqliteAppGatewayTracesReadStore {
 
 fn row_to_gateway_trace(row: sqlx::sqlite::SqliteRow) -> DomainResult<AppGatewayTraceItem> {
     let status = gateway_http_status(required_integer_cell(&row, "status")?)?;
-    let latency_ms = gateway_latency_ms(integer_cell(&row, "latency_ms"))?;
+    let latency_ms = gateway_latency_ms(required_integer_cell(&row, "latency_ms")?)?;
     let health_status = gateway_health_status(&row)?;
     let deployment_mode = gateway_deployment_mode(&row)?;
     Ok(AppGatewayTraceItem {

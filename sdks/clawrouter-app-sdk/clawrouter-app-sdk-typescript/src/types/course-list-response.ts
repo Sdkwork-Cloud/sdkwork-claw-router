@@ -7,9 +7,9 @@ export interface CourseListResponse {
   /** Items field on course list response. */
   items: CourseItem[];
   /** Page field on course list response. */
-  page: number;
+  page: string;
   /** Size field on course list response. */
-  size: number;
+  size: string;
   /** Total elements field on course list response. */
-  totalElements: number;
+  totalElements: string;
 }

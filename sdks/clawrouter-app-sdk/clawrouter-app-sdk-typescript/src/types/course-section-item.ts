@@ -5,19 +5,19 @@ export interface CourseSectionItem {
   /** Description field on course section item. */
   description: string;
   /** Duration seconds field on course section item. */
-  durationSeconds: number;
+  durationSeconds: string;
   /** Id field on course section item. */
   id: string;
   /** Lesson count field on course section item. */
-  lessonCount: number;
+  lessonCount: string;
   /** Lessons field on course section item. */
   lessons: CourseLessonItem[];
   /** Section id field on course section item. */
-  sectionId: number;
+  sectionId: string;
   /** Section no field on course section item. */
-  sectionNo: number;
+  sectionNo: string;
   /** Sort order field on course section item. */
-  sortOrder: number;
+  sortOrder: string;
   /** Title field on course section item. */
   title: string;
 }

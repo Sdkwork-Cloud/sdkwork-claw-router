@@ -9,7 +9,7 @@ export interface AdminUserItem {
   /** Group field on admin user item. */
   group: string;
   /** Id field on admin user item. */
-  id: number;
+  id: string;
   /** Last active field on admin user item. */
   lastActive: string;
   /** Last used field on admin user item. */

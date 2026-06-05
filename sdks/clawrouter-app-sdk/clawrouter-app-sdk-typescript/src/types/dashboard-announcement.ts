@@ -1,7 +1,7 @@
 /** Dashboard announcement schema exposed by Claw Router. */
 export interface DashboardAnnouncement {
   /** Id field on dashboard announcement. */
-  id: number;
+  id: string;
   /** Text field on dashboard announcement. */
   text: string;
   /** Time field on dashboard announcement. */

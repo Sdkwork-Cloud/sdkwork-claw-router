@@ -3,11 +3,11 @@ import type { ProviderJsonValue } from './provider-json-value';
 /** OpenAI-compatible video object. */
 export interface OpenAiVideo {
   /** Unix timestamp in seconds when the video completed. */
-  completed_at?: number;
+  completed_at?: string;
   /** URL for video bytes when returned separately. */
   content_url?: string;
   /** Unix timestamp in seconds when the video was created. */
-  created_at?: number;
+  created_at?: string;
   /** Video identifier. */
   id: string;
   /** Developer-defined or provider-returned video metadata. */

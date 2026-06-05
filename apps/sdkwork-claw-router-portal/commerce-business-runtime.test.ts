@@ -276,7 +276,7 @@ test("console business services use standard membership, recharge, checkout, wal
       assert.equal(requestPath(captured[0]?.url), "/app/v3/api/memberships/purchases");
       assert.equal(captured[0]?.method, "POST");
       assert.deepEqual(JSON.parse(captured[0]?.body ?? "{}"), {
-        packageId: 1,
+        packageId: "1",
       });
     },
   );
@@ -482,6 +482,7 @@ test("admin orders center uses server pagination and exposes common row actions"
   assert.match(resourceCenterSource, /disabled=\{actionDisabled\}/);
 
   assert.match(serviceSource, /backendOrdersList\(params\?: Parameters<BackendCommerce\['orders'\]\['list'\]>\[0\]\)/);
+  assert.match(serviceSource, /toSdkListParams\(params\)/);
   assert.doesNotMatch(serviceSource, /\bfetch\s*\(|axios|XMLHttpRequest/);
 
   for (const key of [
@@ -538,11 +539,15 @@ test("admin catalog category management uses compact cascade columns and modal e
   assert.match(categorySource, /updateCommerceCategory\(record\.id/);
   assert.match(categorySource, /buildCategoryColumns/);
   assert.match(categorySource, /activePathIds/);
-  assert.match(categorySource, /pageSize:\s*200/);
-  assert.match(categorySource, /h-\[calc\(100vh-96px\)\]/);
-  assert.match(categorySource, /max-h-\[calc\(100vh-96px\)\]/);
+  assert.match(categorySource, /pageSize:\s*(?:String\(CATEGORY_LIST_PAGE_SIZE\)|['"]200['"]|200)/);
+  assert.match(categorySource, /relative flex h-full min-h-0 w-full flex-col overflow-hidden/);
+  assert.match(categorySource, /flex min-h-0 flex-1 flex-col gap-3 overflow-hidden/);
+  assert.match(categorySource, /grid min-h-0 flex-1 overflow-hidden gap-3/);
+  assert.match(categorySource, /flex h-full min-h-0 overflow-hidden/);
+  assert.match(categorySource, /flex h-full min-h-0 overflow-x-auto/);
   assert.match(categorySource, /w-\[360px\]/);
   assert.match(categorySource, /data-admin-category-scroll-shell/);
+  assert.match(categorySource, /data-admin-category-cascade-columns/);
   assert.match(categorySource, /data-admin-category-toolbar/);
   assert.match(categorySource, /generateCategoryNo/);
   assert.match(categorySource, /data-admin-category-generated-no/);

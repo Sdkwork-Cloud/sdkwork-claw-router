@@ -196,7 +196,7 @@ export function CategoryManagementPage() {
       parentId: form.parentId.trim() || null,
       name: form.name.trim(),
       status: form.status,
-      sortOrder: Number.parseInt(form.sortOrder, 10) || 0,
+      sortOrder: String(Number.parseInt(form.sortOrder, 10) || 0),
     };
     try {
       if (form.id) {
@@ -1102,7 +1102,7 @@ function createCategorySortPayload(record: CategoryRecord, sortOrder: number) {
     parentId: record.parentId,
     name: record.name,
     status: record.status,
-    sortOrder,
+    sortOrder: String(sortOrder),
   };
 }
 
@@ -1232,7 +1232,7 @@ export function readCategoryRecords(result: unknown): CategoryRecord[] {
 
 export async function loadAllCategoryRecords(): Promise<CategoryRecord[]> {
   const records: CategoryRecord[] = [];
-  const firstResult = await listCommerceCategories({ page: 1, pageSize: 200 });
+  const firstResult = await listCommerceCategories({ page: '1', pageSize: String(CATEGORY_LIST_PAGE_SIZE) });
   records.push(...readCategoryRecords(firstResult));
   const total = readCategoryTotal(firstResult);
 
@@ -1241,7 +1241,7 @@ export async function loadAllCategoryRecords(): Promise<CategoryRecord[]> {
   }
 
   for (let page = 2; page <= MAX_CATEGORY_LIST_PAGES; page += 1) {
-    const result = await listCommerceCategories({ page, pageSize: 200 });
+    const result = await listCommerceCategories({ page: String(page), pageSize: String(CATEGORY_LIST_PAGE_SIZE) });
     const pageRecords = readCategoryRecords(result);
     records.push(...pageRecords);
 

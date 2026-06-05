@@ -1924,17 +1924,18 @@ function formatJson(value: Record<string, unknown>): string {
   return JSON.stringify(value, null, 2);
 }
 
-function formatBytes(value: number | null | undefined): string {
-  if (!Number.isFinite(value) || !value || value < 0) {
+function formatBytes(value: string | number | null | undefined): string {
+  const numericValue = typeof value === 'string' ? Number(value.trim()) : value;
+  if (!Number.isFinite(numericValue) || !numericValue || numericValue < 0) {
     return '-';
   }
-  if (value < 1024) {
-    return `${value} B`;
+  if (numericValue < 1024) {
+    return `${numericValue} B`;
   }
-  if (value < 1024 * 1024) {
-    return `${(value / 1024).toFixed(1)} KB`;
+  if (numericValue < 1024 * 1024) {
+    return `${(numericValue / 1024).toFixed(1)} KB`;
   }
-  return `${(value / 1024 / 1024).toFixed(1)} MB`;
+  return `${(numericValue / 1024 / 1024).toFixed(1)} MB`;
 }
 
 function errorMessage(error: unknown, fallback: string): string {

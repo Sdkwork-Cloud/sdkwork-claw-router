@@ -7,9 +7,9 @@ export interface ForumCommentPage {
   /** Items field on forum comment page. */
   items: ForumCommentItem[];
   /** Page field on forum comment page. */
-  page: number;
+  page: string;
   /** Size field on forum comment page. */
-  size: number;
+  size: string;
   /** Total elements field on forum comment page. */
-  totalElements: number;
+  totalElements: string;
 }

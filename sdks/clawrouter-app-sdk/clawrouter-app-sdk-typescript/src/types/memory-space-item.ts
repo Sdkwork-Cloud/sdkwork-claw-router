@@ -7,11 +7,11 @@ export interface MemorySpaceItem {
   /** Created at field on memory space item. */
   createdAt: string;
   /** Entry count field on memory space item. */
-  entryCount: number;
+  entryCount: string;
   /** Id field on memory space item. */
   id: string;
   /** Max injected tokens field on memory space item. */
-  maxInjectedTokens?: number | null;
+  maxInjectedTokens?: string | null;
   /** Memory enabled field on memory space item. */
   memoryEnabled: boolean;
   /** Owner id field on memory space item. */

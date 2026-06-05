@@ -250,23 +250,6 @@ selected_catalog_keys AS (
     ORDER BY MIN(COALESCE(r.rank_no, 2147483647)) ASC, MAX(r.id) DESC
     LIMIT ?7
 ),
-visible_snapshots AS (
-    SELECT
-        r.tenant_id,
-        r.organization_id,
-        r.snapshot_date,
-        r.snapshot_period,
-        COALESCE(r.rank_scope, 'commercial-default') AS rank_scope
-    FROM ai_model_rank_snapshot r
-    JOIN selected_scope s
-      ON r.tenant_id = s.tenant_id
-     AND r.organization_id = s.organization_id
-     AND COALESCE(r.rank_scope, 'commercial-default') = s.rank_scope
-    WHERE r.status = 1
-    GROUP BY r.tenant_id, r.organization_id, r.snapshot_date, r.snapshot_period, COALESCE(r.rank_scope, 'commercial-default')
-    ORDER BY r.snapshot_date DESC, r.snapshot_period DESC
-    LIMIT 40
-),
 selected_snapshots AS (
     SELECT
         tenant_id,
@@ -274,7 +257,7 @@ selected_snapshots AS (
         snapshot_date,
         snapshot_period,
         rank_scope
-    FROM visible_snapshots
+    FROM latest_snapshot
     ORDER BY snapshot_date ASC, snapshot_period ASC
 ),
 ranked AS (

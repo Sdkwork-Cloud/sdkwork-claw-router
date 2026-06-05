@@ -3,7 +3,7 @@ import type { JsonValue } from './json-value';
 /** Storage usage ledger entry schema exposed by Claw Router. */
 export interface StorageUsageLedgerEntry {
   /** Delta bytes field on storage usage ledger entry. */
-  deltaBytes?: number;
+  deltaBytes?: string;
   /** Id field on storage usage ledger entry. */
   id: string;
   /** Occurred at field on storage usage ledger entry. */

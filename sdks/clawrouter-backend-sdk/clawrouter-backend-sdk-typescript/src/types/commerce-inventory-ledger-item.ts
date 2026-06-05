@@ -1,7 +1,7 @@
 /** Commerce inventory ledger item schema exposed by Claw Router. */
 export interface CommerceInventoryLedgerItem {
   /** Balance after field on commerce inventory ledger item. */
-  balanceAfter: number;
+  balanceAfter: string;
   /** Business type field on commerce inventory ledger item. */
   businessType: string;
   /** Created at field on commerce inventory ledger item. */
@@ -13,7 +13,7 @@ export interface CommerceInventoryLedgerItem {
   /** Movement no field on commerce inventory ledger item. */
   movementNo: string;
   /** Quantity field on commerce inventory ledger item. */
-  quantity: number;
+  quantity: string;
   /** Sku id field on commerce inventory ledger item. */
   skuId: string;
   /** Source id field on commerce inventory ledger item. */

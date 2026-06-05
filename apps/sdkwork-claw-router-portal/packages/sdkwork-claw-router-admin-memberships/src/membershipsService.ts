@@ -364,9 +364,9 @@ export async function backendMembershipsRechargeSettingsUpdate(
 
 export async function fetchMembershipAdminPackageCatalog(): Promise<MembershipsAdminPackageCatalog> {
   const [packagesResult, groupsResult, plansResult] = await Promise.all([
-    backendMembershipsPackagesList({ page: 1, pageSize: 200 }),
-    backendMembershipsPackageGroupsList({ page: 1, pageSize: 100 }),
-    backendMembershipsPlansList({ page: 1, pageSize: 100 }),
+    backendMembershipsPackagesList({ page: '1', pageSize: '200' }),
+    backendMembershipsPackageGroupsList({ page: '1', pageSize: '100' }),
+    backendMembershipsPlansList({ page: '1', pageSize: '100' }),
   ]);
 
   const rawPackages = readRequiredApiItems(packagesResult, 'Membership packages could not be loaded');
@@ -413,8 +413,8 @@ export async function fetchMembershipAdminPackageCatalog(): Promise<MembershipsA
 
 export async function fetchMembershipAdminPackageGroups(): Promise<MembershipsAdminPackageGroup[]> {
   const [groupsResult, packagesResult] = await Promise.all([
-    backendMembershipsPackageGroupsList({ page: 1, pageSize: 100 }),
-    backendMembershipsPackagesList({ page: 1, pageSize: 200 }),
+    backendMembershipsPackageGroupsList({ page: '1', pageSize: '100' }),
+    backendMembershipsPackagesList({ page: '1', pageSize: '200' }),
   ]);
   const groups = readRequiredApiItems(groupsResult, 'Membership package groups could not be loaded')
     .map(normalizeAdminPackageGroup);
@@ -462,8 +462,8 @@ export async function fetchMembershipAdminPackages(
   params: MembershipsAdminPackagesListParams = {},
 ): Promise<MembershipsAdminPackageItem[]> {
   const result = await backendMembershipsPackagesList({
-    page: 1,
-    pageSize: 200,
+    page: '1',
+    pageSize: '200',
     packageGroupId: params.packageGroupId,
     planId: params.planId,
     status: params.status,
@@ -500,7 +500,7 @@ export async function deleteMembershipAdminPackage(packageId: string): Promise<v
 }
 
 export async function fetchMembershipAdminPlans(): Promise<MembershipsAdminPlanItem[]> {
-  const result = await backendMembershipsPlansList({ page: 1, pageSize: 100 });
+  const result = await backendMembershipsPlansList({ page: '1', pageSize: '100' });
   return readRequiredApiItems(result, 'Membership plans could not be loaded').map(normalizeAdminPlan);
 }
 
@@ -534,8 +534,8 @@ export async function fetchMembershipAdminMembers(
   params: MembershipsAdminMembersListParams = {},
 ): Promise<MembershipsAdminRecord[]> {
   const result = await backendMembershipsMembersList({
-    page: 1,
-    pageSize: 100,
+    page: '1',
+    pageSize: '100',
     userId: params.userId,
     planId: params.planId,
     status: params.status,
@@ -559,8 +559,8 @@ export async function fetchMembershipAdminEntitlements(
   params: MembershipsAdminEntitlementsListParams = {},
 ): Promise<MembershipsAdminRecord[]> {
   const result = await backendMembershipsEntitlementsList({
-    page: 1,
-    pageSize: 100,
+    page: '1',
+    pageSize: '100',
     membershipId: params.membershipId,
     planId: params.planId,
     status: params.status,
@@ -569,7 +569,7 @@ export async function fetchMembershipAdminEntitlements(
 }
 
 export async function fetchMembershipAdminRechargePackages(): Promise<MembershipsAdminRechargePackageItem[]> {
-  const result = await backendMembershipsRechargePackagesList({ page: 1, pageSize: 100 });
+  const result = await backendMembershipsRechargePackagesList({ page: '1', pageSize: '100' });
   return readRequiredApiItems(result, 'Recharge packages could not be loaded').map(normalizeAdminRechargePackage);
 }
 
@@ -755,6 +755,21 @@ function requiredNonNegativeInteger(value: number | undefined, fieldName: string
   return value;
 }
 
+function requiredPositiveInt64String(value: number | undefined, fieldName: string): string {
+  return String(requiredPositiveInteger(value, fieldName));
+}
+
+function requiredNonNegativeInt64String(value: number | undefined, fieldName: string): string {
+  return String(requiredNonNegativeInteger(value, fieldName));
+}
+
+function optionalNonNegativeInt64String(value: number | undefined, fieldName: string): string | undefined {
+  if (value === undefined) {
+    return undefined;
+  }
+  return requiredNonNegativeInt64String(value, fieldName);
+}
+
 function requiredMoneyAmount(value: string | undefined, fieldName: string): string {
   const normalized = requiredMembershipText(value, fieldName);
   if (!/^\d+(?:\.\d{1,2})?$/.test(normalized)) {
@@ -786,7 +801,7 @@ function requiredMembershipMemberStatus(value: string | undefined): MembershipsA
 }
 
 function buildPlanMutationRequest(input: MembershipsAdminPlanMutationInput) {
-  const rank = input.rank === undefined ? undefined : requiredNonNegativeInteger(input.rank, 'rank');
+  const rank = optionalNonNegativeInt64String(input.rank, 'rank');
   return {
     code: requiredMembershipCode(input.code, 'code'),
     name: requiredMembershipText(input.name, 'name'),
@@ -798,14 +813,14 @@ function buildPlanMutationRequest(input: MembershipsAdminPlanMutationInput) {
 
 function buildPlanBenefitMutationRequest(input: MembershipsAdminPlanBenefitInput) {
   return {
-    id: input.id === undefined ? undefined : requiredNonNegativeInteger(input.id, 'benefit id'),
+    id: optionalNonNegativeInt64String(input.id, 'benefit id'),
     name: requiredMembershipText(input.name, 'benefit name'),
     benefitKey: optionalBoundedText(input.benefitKey),
     type: optionalBoundedText(input.type),
     description: optionalBoundedText(input.description),
     icon: input.icon,
-    usageLimit: input.usageLimit === undefined ? undefined : requiredNonNegativeInteger(input.usageLimit, 'usageLimit'),
-    usedCount: input.usedCount === undefined ? undefined : requiredNonNegativeInteger(input.usedCount, 'usedCount'),
+    usageLimit: optionalNonNegativeInt64String(input.usageLimit, 'usageLimit'),
+    usedCount: optionalNonNegativeInt64String(input.usedCount, 'usedCount'),
     claimed: input.claimed ?? false,
   };
 }
@@ -816,8 +831,8 @@ function buildPackageGroupMutationRequest(input: MembershipsAdminPackageGroupMut
     name: requiredMembershipText(input.name, 'name'),
     description: optionalBoundedText(input.description),
     billingCycle: requiredMembershipText(input.billingCycle, 'billingCycle'),
-    durationDays: requiredPositiveInteger(input.durationDays, 'durationDays'),
-    sortWeight: input.sortWeight === undefined ? 0 : requiredNonNegativeInteger(input.sortWeight, 'sortWeight'),
+    durationDays: requiredPositiveInt64String(input.durationDays, 'durationDays'),
+    sortWeight: input.sortWeight === undefined ? '0' : requiredNonNegativeInt64String(input.sortWeight, 'sortWeight'),
     status: requiredResourceStatus(input.status, 'status'),
   };
 }
@@ -830,18 +845,18 @@ function buildPackageMutationRequest(input: MembershipsAdminPackageMutationInput
     name: requiredMembershipText(input.name, 'name'),
     priceAmount: requiredMoneyAmount(input.priceAmount, 'priceAmount'),
     currencyCode: normalizeCurrencyCode(input.currencyCode),
-    durationDays: requiredPositiveInteger(input.durationDays, 'durationDays'),
+    durationDays: requiredPositiveInt64String(input.durationDays, 'durationDays'),
     status: requiredResourceStatus(input.status, 'status'),
   };
 }
 
 function buildRechargePackageMutationRequest(
   input: MembershipsAdminRechargePackageMutationInput,
-): MembershipsAdminRechargePackageMutationInput {
+): Parameters<BackendCommerce['recharges']['packages']['create']>[0] {
   return {
     priceAmount: requiredMoneyAmount(input.priceAmount, 'priceAmount'),
     currencyCode: normalizeCurrencyCode(input.currencyCode),
-    bonusPoints: requiredNonNegativeInteger(input.bonusPoints, 'bonusPoints'),
+    bonusPoints: requiredNonNegativeInt64String(input.bonusPoints, 'bonusPoints'),
     status: input.status ?? 'active',
   };
 }

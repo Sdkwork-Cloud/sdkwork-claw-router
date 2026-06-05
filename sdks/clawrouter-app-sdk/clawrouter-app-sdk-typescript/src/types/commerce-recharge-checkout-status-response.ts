@@ -29,7 +29,7 @@ export interface CommerceRechargeCheckoutStatusResponse {
   /** Payment status field on commerce recharge checkout status response. */
   paymentStatus: string;
   /** Points field on commerce recharge checkout status response. */
-  points: number;
+  points: string;
   /** Provider code field on commerce recharge checkout status response. */
   providerCode: string;
   /** Standard QR payload field for recharge checkout. When nextAction is scan_qr, this value must be an http or https payment page URL rather than a native app scheme. */

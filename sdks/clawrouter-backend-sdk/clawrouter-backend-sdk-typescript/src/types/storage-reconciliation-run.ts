@@ -11,7 +11,7 @@ export interface StorageReconciliationRun {
   /** Id field on storage reconciliation run. */
   id: string;
   /** Issue count field on storage reconciliation run. */
-  issueCount?: number;
+  issueCount?: string;
   /** Issues field on storage reconciliation run. */
   issues?: string;
   /** Provider code field on storage reconciliation run. */

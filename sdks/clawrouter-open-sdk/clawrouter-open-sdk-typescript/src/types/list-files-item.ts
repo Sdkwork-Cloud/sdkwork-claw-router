@@ -3,11 +3,11 @@ import type { ProviderJsonValue } from './provider-json-value';
 /** Item module returned inside the listFiles list response. */
 export interface ListFilesItem {
   /** File size in bytes. */
-  bytes?: number;
+  bytes?: string;
   /** Unix timestamp in seconds when the object was created. */
-  created?: number;
+  created?: string;
   /** Unix timestamp in seconds when the object was created. */
-  created_at?: number;
+  created_at?: string;
   /** Uploaded or returned file name. */
   filename?: string;
   /** Resource identifier returned by the selected upstream. */

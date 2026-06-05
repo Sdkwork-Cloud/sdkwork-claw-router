@@ -51,56 +51,72 @@ impl SqlitePricingCatalogLoader {
 
     pub async fn load_snapshot(&self) -> Result<SqlPricingCatalogSnapshot, SqlCatalogLoadError> {
         let rows = PricingCatalogRows {
-            vendors: row_mapping::load_vendors(&self.pool, queries::LOAD_VENDORS).await?,
-            models: row_mapping::load_models(&self.pool, queries::LOAD_MODELS).await?,
+            vendors: row_mapping::load_vendors(&self.pool, queries::LOAD_VENDORS)
+                .await
+                .map_err(|source| sqlite_query_error("LOAD_VENDORS", source))?,
+            models: row_mapping::load_models(&self.pool, queries::LOAD_MODELS)
+                .await
+                .map_err(|source| sqlite_query_error("LOAD_MODELS", source))?,
             provider_routes: row_mapping::load_provider_routes(
                 &self.pool,
                 queries::LOAD_PROVIDER_ROUTES,
                 self.circuit_breaker_recovery_window_seconds,
             )
-            .await?,
+            .await
+            .map_err(|source| sqlite_query_error("LOAD_PROVIDER_ROUTES", source))?,
             provider_channel_routes: row_mapping::load_provider_channel_routes(
                 &self.pool,
                 queries::LOAD_PROVIDER_CHANNEL_ROUTES,
                 self.circuit_breaker_recovery_window_seconds,
             )
-            .await?,
+            .await
+            .map_err(|source| sqlite_query_error("LOAD_PROVIDER_CHANNEL_ROUTES", source))?,
             routing_policies: row_mapping::load_routing_policies(
                 &self.pool,
                 queries::LOAD_ROUTING_POLICIES,
             )
-            .await?,
+            .await
+            .map_err(|source| sqlite_query_error("LOAD_ROUTING_POLICIES", source))?,
             routing_rules: row_mapping::load_routing_rules(&self.pool, queries::LOAD_ROUTING_RULES)
-                .await?,
+                .await
+                .map_err(|source| sqlite_query_error("LOAD_ROUTING_RULES", source))?,
             model_mappings: row_mapping::load_model_mappings(
                 &self.pool,
                 queries::LOAD_MODEL_MAPPINGS,
             )
-            .await?,
+            .await
+            .map_err(|source| sqlite_query_error("LOAD_MODEL_MAPPINGS", source))?,
             pricing_plans: row_mapping::load_pricing_plans(&self.pool, queries::LOAD_PRICING_PLANS)
-                .await?,
+                .await
+                .map_err(|source| sqlite_query_error("LOAD_PRICING_PLANS", source))?,
             channel_groups: row_mapping::load_channel_groups(
                 &self.pool,
                 queries::LOAD_API_KEY_GROUPS,
             )
-            .await?,
+            .await
+            .map_err(|source| sqlite_query_error("LOAD_API_KEY_GROUPS", source))?,
             api_keys: self.load_api_key_rows().await?,
             access_policies: row_mapping::load_access_policies(
                 &self.pool,
                 queries::LOAD_ACCESS_POLICIES,
             )
-            .await?,
+            .await
+            .map_err(|source| sqlite_query_error("LOAD_ACCESS_POLICIES", source))?,
             quota_policies: row_mapping::load_quota_policies(
                 &self.pool,
                 queries::LOAD_QUOTA_POLICIES,
             )
-            .await?,
+            .await
+            .map_err(|source| sqlite_query_error("LOAD_QUOTA_POLICIES", source))?,
             channel_group_metric_snapshots: row_mapping::load_channel_group_metric_snapshots(
                 &self.pool,
                 queries::LOAD_API_KEY_GROUP_METRIC_SNAPSHOTS,
             )
-            .await?,
-            prices: row_mapping::load_prices(&self.pool, queries::LOAD_PRICES).await?,
+            .await
+            .map_err(|source| sqlite_query_error("LOAD_API_KEY_GROUP_METRIC_SNAPSHOTS", source))?,
+            prices: row_mapping::load_prices(&self.pool, queries::LOAD_PRICES)
+                .await
+                .map_err(|source| sqlite_query_error("LOAD_PRICES", source))?,
         };
         let managed_provider_secrets = managed_provider_secrets_from_rows(
             &rows.provider_routes,
@@ -155,6 +171,10 @@ impl SqlitePricingCatalogLoader {
             .collect::<DomainResult<Vec<_>>>()
             .map_err(SqlCatalogLoadError::from)
     }
+}
+
+fn sqlite_query_error(query: &'static str, source: sqlx::Error) -> SqlCatalogLoadError {
+    SqlCatalogLoadError::DatabaseQuery { query, source }
 }
 
 fn default_circuit_breaker_recovery_window_seconds() -> i64 {

@@ -117,7 +117,7 @@ class AdminAgentsRuntimeStandardTest(unittest.TestCase):
         self.assertIn("public readonly agentDefinitions: AgentsAgentDefinitionsApi;", agents_api)
         self.assertIn("readonly agents: AgentsApi;", sdk)
         self.assertIn("export interface AdminAgentItem", item_type)
-        self.assertIn("ownerUserId", item_type)
+        self.assertIn("ownerUserId: string;", item_type)
         self.assertIn("defaultVersion", item_type)
 
 

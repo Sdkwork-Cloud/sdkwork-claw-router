@@ -1,7 +1,7 @@
 /** Admin course engagement item schema exposed by Claw Router. */
 export interface AdminCourseEngagementItem {
   /** Count field on admin course engagement item. */
-  count?: number | null;
+  count?: string | null;
   /** Course id field on admin course engagement item. */
   courseId?: string | null;
   /** Id field on admin course engagement item. */

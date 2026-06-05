@@ -27,7 +27,7 @@ type AdminAnalyticsSdkQuery = {
   timeRange?: AdminAnalyticsTimeRange;
   startTime?: string;
   endTime?: string;
-  limit?: number;
+  limit?: string;
 };
 
 export interface PieChartData {
@@ -134,7 +134,7 @@ export class AdminAnalyticsService {
 function normalizeAnalyticsQuery(query: AdminAnalyticsQuery): AdminAnalyticsSdkQuery {
   const params: AdminAnalyticsSdkQuery = {
     timeRange: normalizeTimeRange(query.timeRange, 'timeRange'),
-    limit: normalizeLimit(query.limit),
+    limit: String(normalizeLimit(query.limit)),
   };
   const startTime = optionalText(query.startTime, 'startTime', 64);
   const endTime = optionalText(query.endTime, 'endTime', 64);

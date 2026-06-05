@@ -5,9 +5,9 @@ export interface CommercePriceListResponse {
   /** Items field on commerce price list response. */
   items: CommercePriceListItem[];
   /** Page field on commerce price list response. */
-  page: number;
+  page: string;
   /** Page size field on commerce price list response. */
-  pageSize: number;
+  pageSize: string;
   /** Total field on commerce price list response. */
-  total: number;
+  total: string;
 }

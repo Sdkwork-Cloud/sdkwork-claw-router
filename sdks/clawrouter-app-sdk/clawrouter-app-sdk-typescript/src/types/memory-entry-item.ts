@@ -13,7 +13,7 @@ export interface MemoryEntryItem {
   /** Memory type field on memory entry item. */
   memoryType: string;
   /** Recall count field on memory entry item. */
-  recallCount: number;
+  recallCount: string;
   /** Sensitivity level field on memory entry item. */
   sensitivityLevel: string;
   /** Source conversation id field on memory entry item. */

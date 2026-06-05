@@ -607,6 +607,7 @@ where
 {
     let input_price = PricingResolver::new(catalog).resolve(ResolveModelPriceQuery {
         api_key_id: context.api_key_id,
+        channel_group_id: Some(route.group_id),
         model: route.catalog_key.clone(),
         billing_meter: billing_profile.input_meter.clone(),
         provider_code: Some(route.provider_code.clone()),
@@ -617,6 +618,7 @@ where
         Some(output_meter) => Some(PricingResolver::new(catalog).resolve(
             ResolveModelPriceQuery {
                 api_key_id: context.api_key_id,
+                channel_group_id: Some(route.group_id),
                 model: route.catalog_key.clone(),
                 billing_meter: output_meter,
                 provider_code: Some(route.provider_code.clone()),
@@ -666,8 +668,8 @@ where
         user_id: context.user_id,
         api_key_id: context.api_key_id,
         api_key_name_snapshot: context.api_key_name_snapshot.clone(),
-        channel_group_id: context.group_id,
-        channel_group_snapshot: context.group_code.clone(),
+        channel_group_id: route.group_id,
+        channel_group_snapshot: route.group_code.clone(),
         catalog_key: route.catalog_key.clone(),
         requested_model: invocation_context.requested_model.clone(),
         requested_model_catalog_key,
@@ -719,7 +721,7 @@ where
             .map(upstream_unit_price)
             .unwrap_or(DecimalValue::ZERO),
         currency: input_price.customer_charge.currency,
-        pricing_plan_code: context.pricing_plan_code.clone(),
+        pricing_plan_code: route.pricing_plan_code.clone(),
         pricing_snapshot,
     })
 }
@@ -736,6 +738,7 @@ where
 {
     match PricingResolver::new(catalog).resolve(ResolveModelPriceQuery {
         api_key_id: context.api_key_id,
+        channel_group_id: Some(route.group_id),
         model: route.catalog_key.clone(),
         billing_meter: meter,
         provider_code: Some(route.provider_code.clone()),

@@ -486,7 +486,7 @@ test("forum service publishes public discussions without a session bootstrap req
           JSON.stringify({
             content: "Public community publishing should not require an app session.",
             title: "Public forum publishing",
-            categoryId: 1000,
+            categoryId: "1000",
             tags: ["community"],
           }),
         );

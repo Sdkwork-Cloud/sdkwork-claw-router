@@ -60,6 +60,7 @@ frontend_operations:
         properties: &id002
           id:
             type: integer
+            format: int64
             minimum: 1
           email:
             type: string
@@ -115,6 +116,7 @@ frontend_operations:
     properties:
       id:
         type: integer
+        format: int64
         minimum: 1
         description: User identifier.
       username:

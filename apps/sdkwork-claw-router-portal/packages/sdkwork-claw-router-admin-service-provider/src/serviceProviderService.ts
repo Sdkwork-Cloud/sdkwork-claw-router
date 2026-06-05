@@ -82,8 +82,8 @@ export type ServiceProviderPricingRuleCreateInput = Parameters<BackendServicePro
 export type ServiceProviderPricingRuleUpdateInput = Parameters<BackendServiceProviders['pricingRules']['update']>[1];
 
 export const DEFAULT_SERVICE_PROVIDER_PAGE_PARAMS = {
-  page: 1,
-  pageSize: 100,
+  page: '1',
+  pageSize: '100',
 } as const;
 
 export async function backendServiceProviderDashboardRetrieve(

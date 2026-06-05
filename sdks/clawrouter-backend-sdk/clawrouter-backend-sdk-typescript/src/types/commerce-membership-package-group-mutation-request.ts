@@ -7,11 +7,11 @@ export interface CommerceMembershipPackageGroupMutationRequest {
   /** Description field on commerce membership package group mutation request. */
   description?: string | null;
   /** Duration days field on commerce membership package group mutation request. */
-  durationDays: number;
+  durationDays: string;
   /** Name field on commerce membership package group mutation request. */
   name: string;
   /** Sort weight field on commerce membership package group mutation request. */
-  sortWeight?: number;
+  sortWeight?: string;
   /** Status field on commerce membership package group mutation request. */
   status?: 'active' | 'inactive' | 'disabled';
 }

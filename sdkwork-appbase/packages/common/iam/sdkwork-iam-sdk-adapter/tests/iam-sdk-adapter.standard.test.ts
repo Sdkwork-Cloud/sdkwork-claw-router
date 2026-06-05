@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
 
-import { assertIamAppSdkClient, assertIamBackendSdkClient } from "@sdkwork/iam-sdk-ports";
+import { assertIamAppSdkClient, assertIamBackendSdkClient, getIamSdkSurface } from "@sdkwork/iam-sdk-ports";
 
 import {
   createIamAppSdkAdapter,
@@ -402,6 +402,35 @@ describe("SDKWork IAM generated SDK adapters", () => {
           },
         },
       },
+      iam: {
+        organizations: {
+          list: vi.fn().mockResolvedValue({ data: [{ organizationId: "org-1" }] }),
+          tree: {
+            retrieve: vi.fn().mockResolvedValue({ data: [{ organizationId: "org-1", children: [] }] }),
+          },
+        },
+        organizationMemberships: {
+          list: vi.fn().mockResolvedValue({ data: [{ id: "membership-1", organizationId: "org-1", userId: "u1" }] }),
+        },
+        departments: {
+          list: vi.fn().mockResolvedValue({ data: [{ departmentId: "dept-1", organizationId: "org-1" }] }),
+          tree: {
+            retrieve: vi.fn().mockResolvedValue({ data: [{ departmentId: "dept-1", children: [] }] }),
+          },
+        },
+        departmentAssignments: {
+          list: vi.fn().mockResolvedValue({ data: [{ departmentId: "dept-1", userId: "u1" }] }),
+        },
+        positions: {
+          list: vi.fn().mockResolvedValue({ data: [{ positionId: "position-1" }] }),
+        },
+        positionAssignments: {
+          list: vi.fn().mockResolvedValue({ data: [{ positionId: "position-1", userId: "u1" }] }),
+        },
+        roleBindings: {
+          list: vi.fn().mockResolvedValue({ data: [{ roleId: "role-1", scopeId: "org-1" }] }),
+        },
+      },
       user: {
         getUserProfile: vi.fn().mockResolvedValue({ data: { displayName: "Alice", id: "u1" } }),
         updateUserProfile: vi.fn().mockResolvedValue({ data: { displayName: "Alice Updated", id: "u1" } }),
@@ -417,6 +446,15 @@ describe("SDKWork IAM generated SDK adapters", () => {
     await appClient.system?.iam?.verificationPolicy?.retrieve?.();
     await appClient.auth?.verificationCodes?.create?.({ target: "a@example.com" });
     await appClient.iam?.users?.current?.retrieve?.();
+    await appClient.iam?.organizations?.list?.({ tenantId: "tenant-1" });
+    await appClient.iam?.organizations?.tree?.retrieve?.({ tenantId: "tenant-1" });
+    await appClient.iam?.organizationMemberships?.list?.({ organizationId: "org-1" });
+    await appClient.iam?.departments?.list?.({ organizationId: "org-1" });
+    await appClient.iam?.departments?.tree?.retrieve?.({ organizationId: "org-1" });
+    await appClient.iam?.departmentAssignments?.list?.({ departmentId: "dept-1" });
+    await appClient.iam?.positions?.list?.({ departmentId: "dept-1" });
+    await appClient.iam?.positionAssignments?.list?.({ departmentAssignmentId: "assignment-1" });
+    await appClient.iam?.roleBindings?.list?.({ scopeId: "org-1" });
 
     expect(generatedAppClient.auth.login).toHaveBeenCalledWith({ password: "secret", username: "alice" });
     expect(generatedAppClient.auth.register).toHaveBeenCalledWith({ password: "secret", username: "alice", verificationCode: "123456" });
@@ -424,77 +462,108 @@ describe("SDKWork IAM generated SDK adapters", () => {
     expect(generatedAppClient.system.iam.verificationPolicy.retrieve).toHaveBeenCalledTimes(1);
     expect(generatedAppClient.auth.createSendSmsCode).toHaveBeenCalledWith({ target: "a@example.com" });
     expect(generatedAppClient.user.getUserProfile).toHaveBeenCalled();
+    expect(generatedAppClient.iam.organizations.list).toHaveBeenCalledWith({ tenantId: "tenant-1" });
+    expect(generatedAppClient.iam.organizations.tree.retrieve).toHaveBeenCalledWith({ tenantId: "tenant-1" });
+    expect(generatedAppClient.iam.departments.list).toHaveBeenCalledWith({ organizationId: "org-1" });
+    expect(generatedAppClient.iam.departmentAssignments.list).toHaveBeenCalledWith({ departmentId: "dept-1" });
   });
 
   it("adapts the current generated backend SDK management surface into standard IAM ports", async () => {
-    const legacyBackendClient = {
-      apikey: {
-        delete: vi.fn().mockResolvedValue({ data: true }),
-        listAllEntities: vi.fn().mockResolvedValue({ data: [] }),
-      },
-      organization: {
-        create: vi.fn().mockResolvedValue({ data: { id: "organization-1" } }),
-        createListAllEntitiesOrganization: vi.fn().mockResolvedValue({ data: [] }),
-        delete: vi.fn().mockResolvedValue({ data: true }),
-        getById: vi.fn().mockResolvedValue({ data: { id: "organization-1" } }),
-        getTree: vi.fn().mockResolvedValue({ data: [] }),
-        update: vi.fn().mockResolvedValue({ data: { id: "organization-1" } }),
-      },
-      organizationMember: {
-        create: vi.fn().mockResolvedValue({ data: { id: "member-1" } }),
-        delete: vi.fn().mockResolvedValue({ data: true }),
-        getMemberRoleIds: vi.fn().mockResolvedValue({ data: ["role-1"] }),
-        listAllEntities: vi.fn().mockResolvedValue({ data: [] }),
-        update: vi.fn().mockResolvedValue({ data: { id: "member-1" } }),
-      },
-      permission: {
-        create: vi.fn().mockResolvedValue({ data: { id: "permission-1" } }),
-        delete: vi.fn().mockResolvedValue({ data: true }),
-        getById: vi.fn().mockResolvedValue({ data: { id: "permission-1" } }),
-        listAllEntities: vi.fn().mockResolvedValue({ data: [] }),
-        update: vi.fn().mockResolvedValue({ data: { id: "permission-1" } }),
-      },
-      policy: {
-        create: vi.fn().mockResolvedValue({ data: { id: "policy-1" } }),
-        delete: vi.fn().mockResolvedValue({ data: true }),
-        getById: vi.fn().mockResolvedValue({ data: { id: "policy-1" } }),
-        listAllEntities: vi.fn().mockResolvedValue({ data: [] }),
-        update: vi.fn().mockResolvedValue({ data: { id: "policy-1" } }),
-      },
-      role: {
-        create: vi.fn().mockResolvedValue({ data: { id: "role-1" } }),
-        createListAllEntities: vi.fn().mockResolvedValue({ data: [] }),
-        createListAllEntitiesRole: vi.fn().mockResolvedValue({ data: [] }),
-        createPermission: vi.fn().mockResolvedValue({ data: { id: "rp-1" } }),
-        delete: vi.fn().mockResolvedValue({ data: true }),
-        deletePermission: vi.fn().mockResolvedValue({ data: true }),
-        getById: vi.fn().mockResolvedValue({ data: { id: "role-1" } }),
-        update: vi.fn().mockResolvedValue({ data: { id: "role-1" } }),
-      },
-      security: {
-        listAllEntities: vi.fn().mockResolvedValue({ data: [] }),
-      },
-      tenant: {
-        create: vi.fn().mockResolvedValue({ data: { id: "tenant-1" } }),
-        createMember: vi.fn().mockResolvedValue({ data: { id: "tenant-member-1" } }),
-        delete: vi.fn().mockResolvedValue({ data: true }),
-        deleteMember: vi.fn().mockResolvedValue({ data: true }),
-        getById: vi.fn().mockResolvedValue({ data: { id: "tenant-1" } }),
-        listAllEntities: vi.fn().mockResolvedValue({ data: [] }),
-        listAuditLogs: vi.fn().mockResolvedValue({ data: [] }),
-        update: vi.fn().mockResolvedValue({ data: { id: "tenant-1" } }),
-        updateMember: vi.fn().mockResolvedValue({ data: { id: "tenant-member-1" } }),
-      },
-      user: {
-        create: vi.fn().mockResolvedValue({ data: { id: "user-1" } }),
-        createListAllEntitiesUser: vi.fn().mockResolvedValue({ data: [] }),
-        delete: vi.fn().mockResolvedValue({ data: true }),
-        getById: vi.fn().mockResolvedValue({ data: { id: "u1" } }),
-        update: vi.fn().mockResolvedValue({ data: { id: "u1" } }),
+    const generatedBackendClient = {
+      iam: {
+        apiKeys: {
+          list: vi.fn().mockResolvedValue({ data: [] }),
+          revoke: vi.fn().mockResolvedValue({ data: true }),
+        },
+        auditEvents: {
+          list: vi.fn().mockResolvedValue({ data: [] }),
+        },
+        organizations: {
+          create: vi.fn().mockResolvedValue({ data: { id: "organization-1" } }),
+          delete: vi.fn().mockResolvedValue({ data: true }),
+          retrieve: vi.fn().mockResolvedValue({ data: { id: "organization-1" } }),
+          update: vi.fn().mockResolvedValue({ data: { id: "organization-1" } }),
+        },
+        organizationMemberships: {
+          create: vi.fn().mockResolvedValue({ data: { id: "membership-1" } }),
+          update: vi.fn().mockResolvedValue({ data: { id: "membership-1" } }),
+        },
+        departments: {
+          create: vi.fn().mockResolvedValue({ data: { id: "department-1" } }),
+          delete: vi.fn().mockResolvedValue({ data: true }),
+          retrieve: vi.fn().mockResolvedValue({ data: { id: "department-1" } }),
+          update: vi.fn().mockResolvedValue({ data: { id: "department-1" } }),
+        },
+        departmentAssignments: {
+          create: vi.fn().mockResolvedValue({ data: { id: "department-assignment-1" } }),
+          update: vi.fn().mockResolvedValue({ data: { id: "department-assignment-1" } }),
+        },
+        permissions: {
+          create: vi.fn().mockResolvedValue({ data: { id: "permission-1" } }),
+          delete: vi.fn().mockResolvedValue({ data: true }),
+          list: vi.fn().mockResolvedValue({ data: [] }),
+          retrieve: vi.fn().mockResolvedValue({ data: { id: "permission-1" } }),
+          update: vi.fn().mockResolvedValue({ data: { id: "permission-1" } }),
+        },
+        policies: {
+          create: vi.fn().mockResolvedValue({ data: { id: "policy-1" } }),
+          delete: vi.fn().mockResolvedValue({ data: true }),
+          list: vi.fn().mockResolvedValue({ data: [] }),
+          retrieve: vi.fn().mockResolvedValue({ data: { id: "policy-1" } }),
+          update: vi.fn().mockResolvedValue({ data: { id: "policy-1" } }),
+        },
+        positions: {
+          create: vi.fn().mockResolvedValue({ data: { id: "position-1" } }),
+          delete: vi.fn().mockResolvedValue({ data: true }),
+          update: vi.fn().mockResolvedValue({ data: { id: "position-1" } }),
+        },
+        positionAssignments: {
+          create: vi.fn().mockResolvedValue({ data: { id: "position-assignment-1" } }),
+          update: vi.fn().mockResolvedValue({ data: { id: "position-assignment-1" } }),
+        },
+        roles: {
+          create: vi.fn().mockResolvedValue({ data: { id: "role-1" } }),
+          delete: vi.fn().mockResolvedValue({ data: true }),
+          list: vi.fn().mockResolvedValue({ data: [] }),
+          retrieve: vi.fn().mockResolvedValue({ data: { id: "role-1" } }),
+          update: vi.fn().mockResolvedValue({ data: { id: "role-1" } }),
+          permissions: {
+            create: vi.fn().mockResolvedValue({ data: { id: "rp-1" } }),
+            delete: vi.fn().mockResolvedValue({ data: true }),
+            list: vi.fn().mockResolvedValue({ data: [] }),
+          },
+        },
+        roleBindings: {
+          create: vi.fn().mockResolvedValue({ data: { id: "role-binding-1" } }),
+          delete: vi.fn().mockResolvedValue({ data: true }),
+        },
+        securityEvents: {
+          list: vi.fn().mockResolvedValue({ data: [] }),
+        },
+        tenants: {
+          create: vi.fn().mockResolvedValue({ data: { id: "tenant-1" } }),
+          delete: vi.fn().mockResolvedValue({ data: true }),
+          list: vi.fn().mockResolvedValue({ data: [] }),
+          retrieve: vi.fn().mockResolvedValue({ data: { id: "tenant-1" } }),
+          update: vi.fn().mockResolvedValue({ data: { id: "tenant-1" } }),
+          members: {
+            create: vi.fn().mockResolvedValue({ data: { id: "tenant-member-1" } }),
+            delete: vi.fn().mockResolvedValue({ data: true }),
+            list: vi.fn().mockResolvedValue({ data: [] }),
+            update: vi.fn().mockResolvedValue({ data: { id: "tenant-member-1" } }),
+          },
+        },
+        users: {
+          create: vi.fn().mockResolvedValue({ data: { id: "user-1" } }),
+          delete: vi.fn().mockResolvedValue({ data: true }),
+          list: vi.fn().mockResolvedValue({ data: [] }),
+          retrieve: vi.fn().mockResolvedValue({ data: { id: "u1" } }),
+          update: vi.fn().mockResolvedValue({ data: { id: "u1" } }),
+        },
       },
     };
 
-    const backendClient = createIamBackendSdkAdapter(legacyBackendClient);
+    const backendClient = createIamBackendSdkAdapter(generatedBackendClient);
 
     expect(() => assertIamBackendSdkClient(backendClient)).not.toThrow();
     await backendClient.iam?.tenants?.create?.({ name: "Tenant" });
@@ -506,16 +575,23 @@ describe("SDKWork IAM generated SDK adapters", () => {
     await backendClient.iam?.tenants?.members?.delete?.("t1", "u1");
     await backendClient.iam?.tenants?.members?.list?.("t1");
     await backendClient.iam?.tenants?.members?.update?.("t1", "u1", { status: "active" });
+    await backendClient.iam?.apiKeys?.list?.();
+    await backendClient.iam?.apiKeys?.revoke?.("api-key-1");
+    await backendClient.iam?.auditEvents?.list?.({ tenantId: "tenant-1" });
+    await backendClient.iam?.securityEvents?.list?.({ tenantId: "tenant-1" });
     await backendClient.iam?.organizations?.create?.({ name: "Org" });
     await backendClient.iam?.organizations?.delete?.("o1");
-    await backendClient.iam?.organizations?.list?.();
     await backendClient.iam?.organizations?.retrieve?.("o1");
-    await backendClient.iam?.organizations?.tree?.retrieve?.({ q: "Org" });
     await backendClient.iam?.organizations?.update?.("o1", { name: "Org 2" });
-    await backendClient.iam?.organizations?.members?.create?.("o1", { userId: "u1" });
-    await backendClient.iam?.organizations?.members?.delete?.("o1", "u1");
-    await backendClient.iam?.organizations?.members?.list?.("o1");
-    await backendClient.iam?.organizations?.members?.update?.("o1", "u1", { roleCode: "owner" });
+    await backendClient.iam?.organizationMemberships?.create?.({ organizationId: "o1", userId: "u1" });
+    await backendClient.iam?.organizationMemberships?.update?.("membership-1", { status: "active" });
+    await backendClient.iam?.departments?.create?.({ organizationId: "o1", name: "Product" });
+    await backendClient.iam?.departments?.delete?.("department-1");
+    await backendClient.iam?.departments?.retrieve?.("department-1");
+    await backendClient.iam?.departments?.update?.("department-1", { name: "Platform" });
+    await backendClient.iam?.departmentAssignments?.create?.({ departmentId: "department-1", userId: "u1" });
+    await backendClient.iam?.departmentAssignments?.update?.("department-assignment-1", { isPrimary: true });
+    expect(Object.prototype.hasOwnProperty.call(backendClient.iam?.organizations ?? {}, "members")).toBe(false);
     await backendClient.iam?.users?.create?.({ username: "alice" });
     await backendClient.iam?.users?.delete?.("u1");
     await backendClient.iam?.users?.list?.();
@@ -539,43 +615,74 @@ describe("SDKWork IAM generated SDK adapters", () => {
     await backendClient.iam?.policies?.list?.();
     await backendClient.iam?.policies?.retrieve?.("po1");
     await backendClient.iam?.policies?.update?.("po1", { name: "Policy" });
-    await backendClient.iam?.users?.roles?.list?.("u1");
+    await backendClient.iam?.positions?.create?.({ name: "Product Owner" });
+    await backendClient.iam?.positions?.delete?.("position-1");
+    await backendClient.iam?.positions?.update?.("position-1", { name: "Senior Product Owner" });
+    await backendClient.iam?.positionAssignments?.create?.({ positionId: "position-1", userId: "u1" });
+    await backendClient.iam?.positionAssignments?.update?.("position-assignment-1", { isPrimary: true });
+    await backendClient.iam?.roleBindings?.create?.({ roleId: "role-1", scopeId: "o1" });
+    await backendClient.iam?.roleBindings?.delete?.("role-binding-1");
+    expect(Object.prototype.hasOwnProperty.call(backendClient.iam?.users ?? {}, "roles")).toBe(false);
 
-    expect(legacyBackendClient.tenant.create).toHaveBeenCalledWith({ name: "Tenant" });
-    expect(legacyBackendClient.tenant.delete).toHaveBeenCalledWith("t1");
-    expect(legacyBackendClient.tenant.getById).toHaveBeenCalledWith("t1");
-    expect(legacyBackendClient.tenant.update).toHaveBeenCalledWith("t1", { name: "Tenant 2" });
-    expect(legacyBackendClient.tenant.createMember).toHaveBeenCalledWith({ tenantId: "t1", userId: "u1" });
-    expect(legacyBackendClient.tenant.deleteMember).toHaveBeenCalledWith({ tenantId: "t1", userId: "u1" });
-    expect(legacyBackendClient.tenant.updateMember).toHaveBeenCalledWith({ status: "active", tenantId: "t1", userId: "u1" });
-    expect(legacyBackendClient.tenant.listAllEntities).toHaveBeenCalled();
-    expect(legacyBackendClient.organization.create).toHaveBeenCalledWith({ name: "Org" });
-    expect(legacyBackendClient.organization.delete).toHaveBeenCalledWith("o1");
-    expect(legacyBackendClient.organization.getById).toHaveBeenCalledWith("o1");
-    expect(legacyBackendClient.organization.getTree).toHaveBeenCalledWith({ q: "Org" });
-    expect(legacyBackendClient.organization.update).toHaveBeenCalledWith("o1", { name: "Org 2" });
-    expect(legacyBackendClient.organizationMember.create).toHaveBeenCalledWith({ organizationId: "o1", userId: "u1" });
-    expect(legacyBackendClient.organizationMember.delete).toHaveBeenCalledWith("o1", "u1");
-    expect(legacyBackendClient.organizationMember.update).toHaveBeenCalledWith("o1", "u1", { roleCode: "owner" });
-    expect(legacyBackendClient.user.create).toHaveBeenCalledWith({ username: "alice" });
-    expect(legacyBackendClient.user.delete).toHaveBeenCalledWith("u1");
-    expect(legacyBackendClient.user.getById).toHaveBeenCalledWith("u1");
-    expect(legacyBackendClient.user.update).toHaveBeenCalledWith("u1", { displayName: "Alice" });
-    expect(legacyBackendClient.role.create).toHaveBeenCalledWith({ code: "admin" });
-    expect(legacyBackendClient.role.delete).toHaveBeenCalledWith("r1");
-    expect(legacyBackendClient.role.getById).toHaveBeenCalledWith("r1");
-    expect(legacyBackendClient.role.update).toHaveBeenCalledWith("r1", { name: "Admin" });
-    expect(legacyBackendClient.role.createPermission).toHaveBeenCalledWith({ permissionId: "p1", roleId: "r1" });
-    expect(legacyBackendClient.role.deletePermission).toHaveBeenCalledWith("p1");
-    expect(legacyBackendClient.permission.create).toHaveBeenCalledWith({ code: "iam.users.read" });
-    expect(legacyBackendClient.permission.delete).toHaveBeenCalledWith("p1");
-    expect(legacyBackendClient.permission.getById).toHaveBeenCalledWith("p1");
-    expect(legacyBackendClient.permission.update).toHaveBeenCalledWith("p1", { name: "Read users" });
-    expect(legacyBackendClient.policy.create).toHaveBeenCalledWith({ code: "policy" });
-    expect(legacyBackendClient.policy.delete).toHaveBeenCalledWith("po1");
-    expect(legacyBackendClient.policy.getById).toHaveBeenCalledWith("po1");
-    expect(legacyBackendClient.policy.update).toHaveBeenCalledWith("po1", { name: "Policy" });
-    expect(legacyBackendClient.organizationMember.getMemberRoleIds).toHaveBeenCalledWith("u1");
+    expect(generatedBackendClient.iam.tenants.create).toHaveBeenCalledWith({ name: "Tenant" });
+    expect(generatedBackendClient.iam.tenants.delete).toHaveBeenCalledWith("t1");
+    expect(generatedBackendClient.iam.tenants.retrieve).toHaveBeenCalledWith("t1");
+    expect(generatedBackendClient.iam.tenants.update).toHaveBeenCalledWith("t1", { name: "Tenant 2" });
+    expect(generatedBackendClient.iam.tenants.members.create).toHaveBeenCalledWith("t1", { userId: "u1" });
+    expect(generatedBackendClient.iam.tenants.members.delete).toHaveBeenCalledWith("t1", "u1");
+    expect(generatedBackendClient.iam.tenants.members.update).toHaveBeenCalledWith("t1", "u1", { status: "active" });
+    expect(generatedBackendClient.iam.tenants.list).toHaveBeenCalled();
+    expect(generatedBackendClient.iam.apiKeys.list).toHaveBeenCalled();
+    expect(generatedBackendClient.iam.apiKeys.revoke).toHaveBeenCalledWith("api-key-1");
+    expect(generatedBackendClient.iam.auditEvents.list).toHaveBeenCalledWith({ tenantId: "tenant-1" });
+    expect(generatedBackendClient.iam.securityEvents.list).toHaveBeenCalledWith({ tenantId: "tenant-1" });
+    expect(generatedBackendClient.iam.organizations.create).toHaveBeenCalledWith({ name: "Org" });
+    expect(generatedBackendClient.iam.organizations.delete).toHaveBeenCalledWith("o1");
+    expect(generatedBackendClient.iam.organizations.retrieve).toHaveBeenCalledWith("o1");
+    expect(generatedBackendClient.iam.organizations.update).toHaveBeenCalledWith("o1", { name: "Org 2" });
+    expect(generatedBackendClient.iam.organizationMemberships.create).toHaveBeenCalledWith({ organizationId: "o1", userId: "u1" });
+    expect(generatedBackendClient.iam.organizationMemberships.update).toHaveBeenCalledWith("membership-1", { status: "active" });
+    expect(generatedBackendClient.iam.departments.create).toHaveBeenCalledWith({ organizationId: "o1", name: "Product" });
+    expect(generatedBackendClient.iam.departments.delete).toHaveBeenCalledWith("department-1");
+    expect(generatedBackendClient.iam.departments.retrieve).toHaveBeenCalledWith("department-1");
+    expect(generatedBackendClient.iam.departments.update).toHaveBeenCalledWith("department-1", { name: "Platform" });
+    expect(generatedBackendClient.iam.departmentAssignments.create).toHaveBeenCalledWith({ departmentId: "department-1", userId: "u1" });
+    expect(generatedBackendClient.iam.departmentAssignments.update).toHaveBeenCalledWith("department-assignment-1", { isPrimary: true });
+    expect(generatedBackendClient.iam.users.create).toHaveBeenCalledWith({ username: "alice" });
+    expect(generatedBackendClient.iam.users.delete).toHaveBeenCalledWith("u1");
+    expect(generatedBackendClient.iam.users.retrieve).toHaveBeenCalledWith("u1");
+    expect(generatedBackendClient.iam.users.update).toHaveBeenCalledWith("u1", { displayName: "Alice" });
+    expect(generatedBackendClient.iam.roles.create).toHaveBeenCalledWith({ code: "admin" });
+    expect(generatedBackendClient.iam.roles.delete).toHaveBeenCalledWith("r1");
+    expect(generatedBackendClient.iam.roles.retrieve).toHaveBeenCalledWith("r1");
+    expect(generatedBackendClient.iam.roles.update).toHaveBeenCalledWith("r1", { name: "Admin" });
+    expect(generatedBackendClient.iam.roles.permissions.create).toHaveBeenCalledWith("r1", "p1");
+    expect(generatedBackendClient.iam.roles.permissions.delete).toHaveBeenCalledWith("r1", "p1");
+    expect(generatedBackendClient.iam.roles.permissions.list).toHaveBeenCalledWith("r1");
+    expect(generatedBackendClient.iam.permissions.create).toHaveBeenCalledWith({ code: "iam.users.read" });
+    expect(generatedBackendClient.iam.permissions.delete).toHaveBeenCalledWith("p1");
+    expect(generatedBackendClient.iam.permissions.retrieve).toHaveBeenCalledWith("p1");
+    expect(generatedBackendClient.iam.permissions.update).toHaveBeenCalledWith("p1", { name: "Read users" });
+    expect(generatedBackendClient.iam.policies.create).toHaveBeenCalledWith({ code: "policy" });
+    expect(generatedBackendClient.iam.policies.delete).toHaveBeenCalledWith("po1");
+    expect(generatedBackendClient.iam.policies.retrieve).toHaveBeenCalledWith("po1");
+    expect(generatedBackendClient.iam.policies.update).toHaveBeenCalledWith("po1", { name: "Policy" });
+    expect(generatedBackendClient.iam.positions.create).toHaveBeenCalledWith({ name: "Product Owner" });
+    expect(generatedBackendClient.iam.positions.delete).toHaveBeenCalledWith("position-1");
+    expect(generatedBackendClient.iam.positions.update).toHaveBeenCalledWith("position-1", { name: "Senior Product Owner" });
+    expect(generatedBackendClient.iam.positionAssignments.create).toHaveBeenCalledWith({ positionId: "position-1", userId: "u1" });
+    expect(generatedBackendClient.iam.positionAssignments.update).toHaveBeenCalledWith("position-assignment-1", { isPrimary: true });
+    expect(generatedBackendClient.iam.roleBindings.create).toHaveBeenCalledWith({ roleId: "role-1", scopeId: "o1" });
+    expect(generatedBackendClient.iam.roleBindings.delete).toHaveBeenCalledWith("role-binding-1");
+    expect(getIamSdkSurface(backendClient)).not.toContain("iam.organizations.list");
+    expect(getIamSdkSurface(backendClient)).not.toContain("iam.organizations.tree.retrieve");
+    expect(getIamSdkSurface(backendClient)).not.toContain("iam.organizations.members.create");
+    expect(getIamSdkSurface(backendClient)).not.toContain("iam.organizations.members.delete");
+    expect(getIamSdkSurface(backendClient)).not.toContain("iam.organizations.members.list");
+    expect(getIamSdkSurface(backendClient)).not.toContain("iam.organizations.members.update");
+    expect(getIamSdkSurface(backendClient)).not.toContain("iam.users.roles.create");
+    expect(getIamSdkSurface(backendClient)).not.toContain("iam.users.roles.delete");
+    expect(getIamSdkSurface(backendClient)).not.toContain("iam.users.roles.list");
   });
 
   it("returns app and backend adapters together for runtime bootstrap", () => {

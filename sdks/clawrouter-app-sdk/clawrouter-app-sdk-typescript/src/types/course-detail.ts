@@ -12,11 +12,11 @@ export interface CourseDetail {
   /** Category label field on course detail. */
   categoryLabel: string;
   /** Comment count field on course detail. */
-  commentCount: number;
+  commentCount: string;
   /** Content field on course detail. */
   content: string;
   /** Content id field on course detail. */
-  contentId: number;
+  contentId: string;
   /** Course code field on course detail. */
   courseCode: string;
   /** Currency field on course detail. */
@@ -36,9 +36,9 @@ export interface CourseDetail {
   /** Is collection field on course detail. */
   isCollection: boolean;
   /** Lessons count field on course detail. */
-  lessonsCount: number;
+  lessonsCount: string;
   /** Level field on course detail. */
-  level: number;
+  level: string;
   /** Level label field on course detail. */
   levelLabel: string;
   /** Price amount field on course detail. */
@@ -54,7 +54,7 @@ export interface CourseDetail {
   /** Source field on course detail. */
   source: CourseOverviewSource;
   /** Students count field on course detail. */
-  studentsCount: number;
+  studentsCount: string;
   /** Tags field on course detail. */
   tags: string[];
   /** Thumbnail field on course detail. */

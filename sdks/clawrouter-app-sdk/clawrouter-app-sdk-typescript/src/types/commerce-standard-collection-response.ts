@@ -3,9 +3,9 @@ export interface CommerceStandardCollectionResponse {
   /** Items field on commerce standard collection response. */
   items: Record<string, unknown>[];
   /** Page field on commerce standard collection response. */
-  page: number;
+  page: string;
   /** Page size field on commerce standard collection response. */
-  pageSize: number;
+  pageSize: string;
   /** Total field on commerce standard collection response. */
-  total: number;
+  total: string;
 }

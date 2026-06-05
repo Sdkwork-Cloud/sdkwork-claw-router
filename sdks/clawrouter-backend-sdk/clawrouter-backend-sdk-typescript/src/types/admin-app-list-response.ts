@@ -7,9 +7,9 @@ export interface AdminAppListResponse {
   /** PlusApp snapshots returned by the backend management API. */
   items: AdminAppItemResponse[];
   /** Page field on admin app list response. */
-  page: number;
+  page: string;
   /** Page size field on admin app list response. */
-  pageSize: number;
+  pageSize: string;
   /** Total field on admin app list response. */
-  total: number;
+  total: string;
 }

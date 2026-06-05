@@ -3,7 +3,7 @@ export interface AdminUserUpdateRequest {
   /** Optional user group label update. */
   group?: string;
   /** User identifier. */
-  id: number;
+  id: string;
   /** Status field on admin user update request. */
   status?: 'active' | 'banned';
   /** Optional display name update. */

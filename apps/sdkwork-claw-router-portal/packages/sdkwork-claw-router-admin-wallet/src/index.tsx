@@ -12,7 +12,7 @@ import {
 type WalletAdminTab = 'rechargeOrders' | 'walletAccounts' | 'walletLedger' | 'exchangeRules';
 type WalletAdminGroup = string;
 
-const DEFAULT_PAGE_PARAMS = { page: 1, pageSize: 100 };
+const DEFAULT_PAGE_PARAMS = { page: '1', pageSize: '100' };
 const DEFAULT_WALLET_SECTION_ID: WalletAdminTab = 'walletAccounts';
 
 type WalletAdminProps = {

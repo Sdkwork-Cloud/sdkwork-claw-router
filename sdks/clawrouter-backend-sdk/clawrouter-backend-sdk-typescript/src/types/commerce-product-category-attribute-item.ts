@@ -25,7 +25,7 @@ export interface CommerceProductCategoryAttributeItem {
   /** Searchable field on commerce product category attribute item. */
   searchable: boolean;
   /** Sort order field on commerce product category attribute item. */
-  sortOrder: number;
+  sortOrder: string;
   /** Status field on commerce product category attribute item. */
   status: 'active' | 'inactive' | 'archived';
   /** Updated at field on commerce product category attribute item. */

@@ -9,7 +9,7 @@ export interface AdminCourseRelationItem {
   /** Relation type field on admin course relation item. */
   relationType?: string | null;
   /** Sort order field on admin course relation item. */
-  sortOrder?: number | null;
+  sortOrder?: string | null;
   /** Status field on admin course relation item. */
   status?: string | null;
 }

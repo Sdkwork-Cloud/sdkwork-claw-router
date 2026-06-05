@@ -5,7 +5,7 @@ export interface AdminSiteConnectionCheckResponse {
   /** Health status field on admin site connection check response. */
   healthStatus: 'unknown' | 'healthy' | 'degraded' | 'unhealthy';
   /** Latency ms field on admin site connection check response. */
-  latencyMs?: number | null;
+  latencyMs?: string | null;
   /** Message field on admin site connection check response. */
   message?: string | null;
   /** Site id field on admin site connection check response. */

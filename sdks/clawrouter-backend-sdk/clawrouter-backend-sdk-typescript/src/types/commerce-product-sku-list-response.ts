@@ -5,9 +5,9 @@ export interface CommerceProductSkuListResponse {
   /** Items field on commerce product sku list response. */
   items: CommerceProductSkuItem[];
   /** Page field on commerce product sku list response. */
-  page: number;
+  page: string;
   /** Page size field on commerce product sku list response. */
-  pageSize: number;
+  pageSize: string;
   /** Total field on commerce product sku list response. */
-  total: number;
+  total: string;
 }

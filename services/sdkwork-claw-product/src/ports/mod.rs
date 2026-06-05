@@ -39,6 +39,7 @@ mod app_auth_store;
 mod app_chat_store;
 mod app_gateway_traces_read_store;
 mod app_generation_history_read_store;
+mod app_iam_directory_read_store;
 mod app_memory_store;
 mod app_notification_store;
 mod app_providers_read_store;
@@ -340,6 +341,13 @@ pub use app_gateway_traces_read_store::{
 pub use app_generation_history_read_store::{
     AppGenerationHistoryItem, AppGenerationHistoryItems, AppGenerationHistoryReadFuture,
     AppGenerationHistoryReadStore, AppGenerationHistorySubject,
+};
+pub use app_iam_directory_read_store::{
+    AppIamDepartmentAssignmentItem, AppIamDepartmentItem, AppIamDepartmentTreeItem,
+    AppIamDirectoryItems, AppIamDirectoryQuery, AppIamDirectoryReadFuture,
+    AppIamDirectoryReadStore, AppIamDirectorySubject, AppIamOrganizationItem,
+    AppIamOrganizationMembershipItem, AppIamOrganizationTreeItem, AppIamPositionAssignmentItem,
+    AppIamPositionItem, AppIamRoleBindingItem,
 };
 pub use app_memory_store::{
     AppMemoryEntryItem, AppMemoryEntryList, AppMemoryFuture, AppMemorySpaceItem,

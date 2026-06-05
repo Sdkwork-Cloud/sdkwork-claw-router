@@ -5,9 +5,9 @@ export interface CommerceInventoryReservationListResponse {
   /** Items field on commerce inventory reservation list response. */
   items: CommerceInventoryReservationItem[];
   /** Page field on commerce inventory reservation list response. */
-  page: number;
+  page: string;
   /** Page size field on commerce inventory reservation list response. */
-  pageSize: number;
+  pageSize: string;
   /** Total field on commerce inventory reservation list response. */
-  total: number;
+  total: string;
 }

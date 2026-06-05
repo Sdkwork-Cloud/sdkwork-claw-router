@@ -17,7 +17,7 @@ export interface CommercePaymentRouteRuleItem {
   /** Method code field on commerce payment route rule item. */
   methodCode: 'wechat_pay' | 'alipay' | 'paypal' | 'card' | 'apple_pay' | 'google_pay' | 'wallet_balance';
   /** Priority field on commerce payment route rule item. */
-  priority: number;
+  priority: string;
   /** Rule no field on commerce payment route rule item. */
   ruleNo: string;
   /** Scene code field on commerce payment route rule item. */

@@ -5,9 +5,9 @@ export interface AdminMcpDiscoveryResponse {
   /** Checked at field on admin mcp discovery response. */
   checkedAt: string;
   /** Discovered count field on admin mcp discovery response. */
-  discoveredCount: number;
+  discoveredCount: string;
   /** Server id field on admin mcp discovery response. */
-  serverId: number;
+  serverId: string;
   /** Tools field on admin mcp discovery response. */
   tools: AdminMcpToolItem[];
 }

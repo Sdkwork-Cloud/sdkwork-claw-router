@@ -6,7 +6,7 @@ export interface AdminCourseLessonMutationRequest {
   /** Description field on admin course lesson mutation request. */
   description?: string;
   /** Duration seconds field on admin course lesson mutation request. */
-  durationSeconds?: number;
+  durationSeconds?: string;
   /** External bvid field on admin course lesson mutation request. */
   externalBvid?: string;
   /** Free preview field on admin course lesson mutation request. */

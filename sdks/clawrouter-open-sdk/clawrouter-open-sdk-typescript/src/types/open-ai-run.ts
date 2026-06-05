@@ -6,15 +6,15 @@ export interface OpenAiRun {
   /** Assistant identifier used by the run. */
   assistant_id: string;
   /** Unix timestamp in seconds when the run was cancelled. */
-  cancelled_at?: number;
+  cancelled_at?: string;
   /** Unix timestamp in seconds when the run completed. */
-  completed_at?: number;
+  completed_at?: string;
   /** Unix timestamp in seconds when the run was created. */
-  created_at: number;
+  created_at: string;
   /** Unix timestamp in seconds when the run expires. */
-  expires_at?: number;
+  expires_at?: string;
   /** Unix timestamp in seconds when the run failed. */
-  failed_at?: number;
+  failed_at?: string;
   /** Run identifier. */
   id: string;
   /** Instructions applied to the run. */
@@ -30,7 +30,7 @@ export interface OpenAiRun {
   /** Action required to continue the run. */
   required_action?: ProviderJsonValue;
   /** Unix timestamp in seconds when the run started. */
-  started_at?: number;
+  started_at?: string;
   /** Run status. */
   status: string;
   /** Thread identifier used by the run. */

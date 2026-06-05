@@ -83,7 +83,7 @@ export class WechatMiniProgramService {
     const result = await getClawRouterBackendSdkClient().openPlatform.accounts.list({
       provider: 'wechat',
       type_: 'mini_app',
-      pageSize: 200,
+      pageSize: '200',
     });
     return readRequiredApiItems(result, 'WeChat mini programs are required')
       .map(normalizeMiniProgram);

@@ -149,7 +149,7 @@ export class AiModelRankingsStatusApi {
 
 export interface AiModelRankingsJobsListParams {
   rankScope?: string;
-  limit?: number;
+  limit?: string;
 }
 
 export class AiModelRankingsJobsApi {
@@ -175,7 +175,7 @@ export interface AiModelRankingsListParams {
   vendorCode?: string;
   modality?: string;
   q?: string;
-  limit?: number;
+  limit?: string;
 }
 
 export class AiModelRankingsApi {

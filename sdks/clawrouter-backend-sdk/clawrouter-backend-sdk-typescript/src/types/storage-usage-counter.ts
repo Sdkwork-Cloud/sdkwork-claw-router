@@ -1,7 +1,7 @@
 /** Storage usage counter schema exposed by Claw Router. */
 export interface StorageUsageCounter {
   /** File count field on storage usage counter. */
-  fileCount: number;
+  fileCount: string;
   /** Files field on storage usage counter. */
   files?: string;
   /** Id field on storage usage counter. */
@@ -9,7 +9,7 @@ export interface StorageUsageCounter {
   /** Reserved field on storage usage counter. */
   reserved?: string;
   /** Reserved bytes field on storage usage counter. */
-  reservedBytes: number;
+  reservedBytes: string;
   /** Scope field on storage usage counter. */
   scope?: string;
   /** Scope id field on storage usage counter. */
@@ -23,5 +23,5 @@ export interface StorageUsageCounter {
   /** Used field on storage usage counter. */
   used?: string;
   /** Used bytes field on storage usage counter. */
-  usedBytes: number;
+  usedBytes: string;
 }

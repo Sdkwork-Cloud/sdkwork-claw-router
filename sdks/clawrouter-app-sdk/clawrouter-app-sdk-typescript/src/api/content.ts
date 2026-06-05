@@ -63,11 +63,11 @@ export class ContentCoursesCategoriesApi {
 }
 
 export interface ContentCoursesListParams {
-  level?: number;
+  level?: string;
   category?: string;
   q?: string;
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
 }
 
 export class ContentCoursesApi {
@@ -101,8 +101,8 @@ export class ContentCoursesApi {
 }
 
 export interface ContentUsersCurrentCommentsListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
 }
 
 export class ContentUsersCurrentCommentsApi {
@@ -209,7 +209,7 @@ export class ContentFeedsCollectionsCurrentApi {
 }
 
 export interface ContentFeedsCollectionsCreateParams {
-  folderId?: number;
+  folderId?: string;
 }
 
 export class ContentFeedsCollectionsApi {
@@ -232,7 +232,7 @@ export class ContentFeedsCollectionsApi {
 }
 
 export interface ContentFeedsTopListParams {
-  limit?: number;
+  limit?: string;
 }
 
 export class ContentFeedsTopApi {
@@ -253,7 +253,7 @@ export class ContentFeedsTopApi {
 }
 
 export interface ContentFeedsRecommendListParams {
-  limit?: number;
+  limit?: string;
 }
 
 export class ContentFeedsRecommendApi {
@@ -288,7 +288,7 @@ export class ContentFeedsOverviewApi {
 }
 
 export interface ContentFeedsMostViewedListParams {
-  limit?: number;
+  limit?: string;
 }
 
 export class ContentFeedsMostViewedApi {
@@ -309,7 +309,7 @@ export class ContentFeedsMostViewedApi {
 }
 
 export interface ContentFeedsMostLikedListParams {
-  limit?: number;
+  limit?: string;
 }
 
 export class ContentFeedsMostLikedApi {
@@ -330,7 +330,7 @@ export class ContentFeedsMostLikedApi {
 }
 
 export interface ContentFeedsHotListParams {
-  limit?: number;
+  limit?: string;
 }
 
 export class ContentFeedsHotApi {
@@ -351,8 +351,8 @@ export class ContentFeedsHotApi {
 }
 
 export interface ContentFeedsCategoryRetrieveParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
 }
 
 export class ContentFeedsCategoryApi {
@@ -377,9 +377,9 @@ export interface ContentFeedsListParams {
   type_?: 'recommend' | 'hot' | 'top';
   contentType?: 'all' | 'feeds' | 'FEEDS';
   q?: string;
-  authorId?: number;
-  page?: number;
-  pageSize?: number;
+  authorId?: string;
+  page?: string;
+  pageSize?: string;
 }
 
 export class ContentFeedsApi {
@@ -440,8 +440,8 @@ export class ContentFeedsApi {
 }
 
 export interface ContentCommentsRepliesListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
 }
 
 export class ContentCommentsRepliesApi {
@@ -529,7 +529,7 @@ export class ContentCommentsLikesApi {
 
 export interface ContentCommentsStatisticsListParams {
   contentType: 'feeds' | 'comments' | 'course' | 'courses' | 'FEEDS' | 'COMMENTS' | 'COURSE' | 'COURSES';
-  contentId: number;
+  contentId: string;
 }
 
 export class ContentCommentsStatisticsApi {
@@ -552,9 +552,9 @@ export class ContentCommentsStatisticsApi {
 
 export interface ContentCommentsListParams {
   contentType: 'feeds' | 'comments' | 'course' | 'courses' | 'FEEDS' | 'COMMENTS' | 'COURSE' | 'COURSES';
-  contentId: number;
-  page?: number;
-  pageSize?: number;
+  contentId: string;
+  page?: string;
+  pageSize?: string;
 }
 
 export class ContentCommentsApi {

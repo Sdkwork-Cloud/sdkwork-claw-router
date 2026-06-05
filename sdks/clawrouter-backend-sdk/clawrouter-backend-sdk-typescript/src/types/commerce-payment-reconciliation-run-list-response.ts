@@ -5,9 +5,9 @@ export interface CommercePaymentReconciliationRunListResponse {
   /** Items field on commerce payment reconciliation run list response. */
   items: CommercePaymentReconciliationRunItem[];
   /** Page field on commerce payment reconciliation run list response. */
-  page: number;
+  page: string;
   /** Page size field on commerce payment reconciliation run list response. */
-  pageSize: number;
+  pageSize: string;
   /** Total field on commerce payment reconciliation run list response. */
-  total: number;
+  total: string;
 }

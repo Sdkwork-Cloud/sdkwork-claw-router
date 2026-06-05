@@ -58,6 +58,16 @@ COMMON_COLUMN_TYPES = {
 }
 
 
+def int64_string_schema() -> dict[str, Any]:
+    return {
+        "type": "string",
+        "format": "int64",
+        "pattern": "^-?[0-9]+$",
+        "x-sdkwork-int64-string": True,
+        "x-sdkwork-rust-type": "i64",
+    }
+
+
 MEDIA_RESOURCE_COMPONENTS: dict[str, Any] = {
     "MediaKind": {
         "type": "string",
@@ -131,8 +141,8 @@ MEDIA_RESOURCE_COMPONENTS: dict[str, Any] = {
             "url": {"type": "string", "format": "uri", "maxLength": 4096},
             "publicUrl": {"type": "string", "format": "uri", "maxLength": 4096},
             "uri": {"type": "string", "maxLength": 4096},
-            "objectBlobId": {"type": "string", "format": "int64"},
-            "bucketId": {"type": "string", "format": "int64"},
+            "objectBlobId": int64_string_schema(),
+            "bucketId": int64_string_schema(),
             "objectKey": {"type": "string", "maxLength": 1024},
             "objectVersion": {"type": "string", "maxLength": 256},
             "fileName": {"type": "string", "maxLength": 512},
@@ -343,7 +353,7 @@ class OpenApiComponentGenerator:
         if registry_type == "enum_int32":
             return {"type": "string", "x-db-type": "enum_int32"}
         if registry_type == "int64":
-            return {"type": "string", "format": "int64"}
+            return self._int64_string_schema()
         if registry_type == "decimal":
             return {"type": "string", "format": "decimal"}
         if registry_type == "instant":
@@ -351,6 +361,9 @@ class OpenApiComponentGenerator:
         if registry_type == "date":
             return {"type": "string", "format": "date"}
         return {"type": "string", "x-db-type": registry_type}
+
+    def _int64_string_schema(self) -> dict[str, Any]:
+        return int64_string_schema()
 
     def _component_name(self, table_name: str) -> str:
         return "".join(part.capitalize() for part in table_name.split("_")) + "Record"

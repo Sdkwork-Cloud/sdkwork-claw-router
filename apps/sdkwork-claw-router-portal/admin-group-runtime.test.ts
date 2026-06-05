@@ -787,14 +787,16 @@ test("admin group service normalizes assignable resource group and resource opti
   );
 });
 
-test("admin group runtime does not generate business identifiers with Math.random", () => {
+test("admin group runtime does not generate business identifiers with browser randomness", () => {
   const source = readFileSync(
     new URL("./packages/sdkwork-claw-router-admin-group/src/groupService.ts", import.meta.url),
     "utf8",
   );
 
   assert.doesNotMatch(source, /Math\.random/);
-  assert.match(source, /crypto\.randomUUID/);
+  assert.doesNotMatch(source, /crypto\.randomUUID/);
+  assert.doesNotMatch(source, /Date\.now/);
+  assert.match(source, /group-local-/);
 });
 
 test("admin group service manages channel bindings through generated backend SDK paths", async () => {

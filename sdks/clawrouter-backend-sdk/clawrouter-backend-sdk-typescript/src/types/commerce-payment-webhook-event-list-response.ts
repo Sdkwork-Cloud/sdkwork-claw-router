@@ -5,9 +5,9 @@ export interface CommercePaymentWebhookEventListResponse {
   /** Items field on commerce payment webhook event list response. */
   items: CommercePaymentWebhookEventItem[];
   /** Page field on commerce payment webhook event list response. */
-  page: number;
+  page: string;
   /** Page size field on commerce payment webhook event list response. */
-  pageSize: number;
+  pageSize: string;
   /** Total field on commerce payment webhook event list response. */
-  total: number;
+  total: string;
 }

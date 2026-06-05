@@ -11,7 +11,9 @@ import {
   getClawRouterAppSdkClient,
   isRecord,
   optionalBoundedPositiveInteger,
+  optionalBoundedPositiveInt64String,
   optionalInteger,
+  optionalPositiveInt64String,
   optionalPositiveInteger,
   optionalText,
   readApiData,
@@ -235,7 +237,10 @@ export const forumService = {
     const normalizedCommentId = requiredSafePathSegment(commentId, 'commentId');
     const page = optionalPositiveInteger(query.page, 'page');
     const pageSize = optionalBoundedPositiveInteger(query.size, 'size', MAX_FORUM_PAGE_SIZE);
-    const result = await getClawRouterAppSdkClient().content.comments.replies.list(normalizedCommentId, { page, pageSize });
+    const result = await getClawRouterAppSdkClient().content.comments.replies.list(normalizedCommentId, {
+      page: page === undefined ? undefined : String(page),
+      pageSize: pageSize === undefined ? undefined : String(pageSize),
+    });
     ensureSdkworkApiSuccess(result, 'Failed to fetch forum comment replies');
     return readForumCommentTree(result, 'Failed to fetch forum comment replies');
   },
@@ -252,7 +257,10 @@ export const forumService = {
   async fetchMyForumComments(query: Partial<ForumCommentQuery> = {}): Promise<ForumComment[]> {
     const page = optionalPositiveInteger(query.page, 'page');
     const pageSize = optionalBoundedPositiveInteger(query.size, 'size', MAX_FORUM_PAGE_SIZE);
-    const result = await getClawRouterAppSdkClient().content.users.current.comments.list({ page, pageSize });
+    const result = await getClawRouterAppSdkClient().content.users.current.comments.list({
+      page: page === undefined ? undefined : String(page),
+      pageSize: pageSize === undefined ? undefined : String(pageSize),
+    });
     ensureSdkworkApiSuccess(result, 'Failed to fetch my forum comments');
     return readForumCommentTree(result, 'Failed to fetch my forum comments');
   },
@@ -295,9 +303,9 @@ export const forumService = {
   },
 
   async collectForumFeed(feedId: string, input: ForumCollectInput = {}): Promise<ForumPost> {
-    const folderId = optionalPositiveInteger(input.folderId, 'folderId');
-    return mutateFeed(feedId, (id) => getClawRouterAppSdkClient().content.feeds.collections.create(id, {
-      folderId,
+  const folderId = optionalPositiveInteger(input.folderId, 'folderId');
+  return mutateFeed(feedId, (id) => getClawRouterAppSdkClient().content.feeds.collections.create(id, {
+      folderId: folderId === undefined ? undefined : String(folderId),
     }), 'Failed to collect forum feed');
   },
 
@@ -490,19 +498,19 @@ function normalizeFeedQuery(filters: ForumFeedFilters | ForumFeedLimitFilters): 
   type?: 'recommend' | 'hot' | 'top';
   contentType?: 'all' | 'feeds' | 'FEEDS';
   searchQuery?: string;
-  authorId?: number;
-  page?: number;
-  pageSize?: number;
-  limit?: number;
+  authorId?: string;
+  page?: string;
+  pageSize?: string;
+  limit?: string;
 } {
   return {
     type: filters.type,
     contentType: normalizeFeedContentType(filters.contentType),
     searchQuery: optionalText(filters.searchQuery, 'searchQuery', MAX_FORUM_QUERY_TEXT_LENGTH),
-    authorId: optionalPositiveInteger(filters.authorId, 'authorId'),
-    page: optionalPositiveInteger(filters.page, 'page'),
-    pageSize: optionalBoundedPositiveInteger(filters.size, 'size', MAX_FORUM_PAGE_SIZE),
-    limit: optionalBoundedPositiveInteger('limit' in filters ? filters.limit : undefined, 'limit', MAX_FORUM_PAGE_SIZE),
+    authorId: optionalPositiveInt64String(filters.authorId, 'authorId'),
+    page: optionalPositiveInt64String(filters.page, 'page'),
+    pageSize: optionalBoundedPositiveInt64String(filters.size, 'size', MAX_FORUM_PAGE_SIZE),
+    limit: optionalBoundedPositiveInt64String('limit' in filters ? filters.limit : undefined, 'limit', MAX_FORUM_PAGE_SIZE),
   };
 }
 
@@ -519,15 +527,15 @@ function normalizeFeedContentType(value: unknown): 'all' | 'feeds' | 'FEEDS' | u
 
 function normalizeCommentQuery(query: ForumCommentQuery): {
   contentType: 'feeds' | 'comments' | 'FEEDS' | 'COMMENTS';
-  contentId: number;
-  page?: number;
-  pageSize?: number;
+  contentId: string;
+  page?: string;
+  pageSize?: string;
 } {
   return {
     contentType: normalizeContentType(query.contentType),
-    contentId: optionalPositiveInteger(query.contentId, 'contentId') ?? missingPositiveInteger('contentId'),
-    page: optionalPositiveInteger(query.page, 'page'),
-    pageSize: optionalBoundedPositiveInteger(query.size, 'size', MAX_FORUM_PAGE_SIZE),
+    contentId: optionalPositiveInt64String(query.contentId, 'contentId') ?? missingPositiveInteger('contentId'),
+    page: optionalPositiveInt64String(query.page, 'page'),
+    pageSize: optionalBoundedPositiveInt64String(query.size, 'size', MAX_FORUM_PAGE_SIZE),
   };
 }
 
@@ -539,7 +547,7 @@ function normalizeCreateFeedRequest(input: ForumFeedInput): SdkForumCreateFeedRe
   return {
     content,
     title: optionalText(input.title, 'title', 255),
-    categoryId: optionalNonNegativeInteger(input.categoryId, 'categoryId'),
+    categoryId: optionalNonNegativeInt64String(input.categoryId, 'categoryId'),
     images: normalizeMediaResourceList(input.images, 'images', MAX_FEED_IMAGE_COUNT),
     tags: normalizeStringList(input.tags, 'tags', MAX_FEED_TAG_COUNT, MAX_FEED_TAG_LENGTH),
     source: optionalText(input.source, 'source', 100),
@@ -555,7 +563,7 @@ function normalizeCreateCommentRequest(input: ForumCommentInput): SdkForumCreate
   return {
     content,
     contentType: normalizeContentType(input.contentType),
-    contentId: optionalPositiveInteger(input.contentId, 'contentId') ?? missingPositiveInteger('contentId'),
+    contentId: optionalPositiveInt64String(input.contentId, 'contentId') ?? missingPositiveInteger('contentId'),
     deviceInfo: optionalText(input.deviceInfo, 'deviceInfo', 512),
   };
 }
@@ -935,6 +943,11 @@ function optionalNonNegativeInteger(value: unknown, fieldName: string): number |
     throw new Error(`${fieldName} must be greater than or equal to 0`);
   }
   return numberValue;
+}
+
+function optionalNonNegativeInt64String(value: unknown, fieldName: string): string | undefined {
+  const numberValue = optionalNonNegativeInteger(value, fieldName);
+  return numberValue === undefined ? undefined : String(numberValue);
 }
 
 export type {

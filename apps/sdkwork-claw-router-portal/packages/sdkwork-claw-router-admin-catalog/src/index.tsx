@@ -19,7 +19,7 @@ import { SkuManagementPage } from './SkuManagementPage';
 type CatalogAdminTab = 'categories' | 'products' | 'productCreate' | 'productEdit' | 'skus' | 'attributes' | 'prices';
 type CatalogAdminGroup = string;
 
-const DEFAULT_PAGE_PARAMS = { page: 1, pageSize: 100 };
+const DEFAULT_PAGE_PARAMS = { page: '1', pageSize: '100' };
 const DEFAULT_CATALOG_SECTION_ID: CatalogAdminTab = 'products';
 
 type CatalogAdminProps = {

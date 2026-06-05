@@ -7,7 +7,7 @@ export interface AdminChannelCredentialItem {
   /** Credential id field on admin channel credential item. */
   credentialId: string;
   /** Errors field on admin channel credential item. */
-  errors: number;
+  errors: string;
   /** Id field on admin channel credential item. */
   id: string;
   /** Masked label field on admin channel credential item. */
@@ -15,11 +15,11 @@ export interface AdminChannelCredentialItem {
   /** Name field on admin channel credential item. */
   name: string;
   /** Priority field on admin channel credential item. */
-  priority: number;
+  priority: string;
   /** Secret ref field on admin channel credential item. */
   secretRef: string;
   /** Status field on admin channel credential item. */
   status: 'active' | 'disabled' | 'error';
   /** Weight field on admin channel credential item. */
-  weight: number;
+  weight: string;
 }

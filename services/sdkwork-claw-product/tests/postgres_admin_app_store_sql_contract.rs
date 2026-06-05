@@ -32,15 +32,18 @@ fn assert_source_not_contains_exact(source: &str, forbidden: &str) {
 }
 
 #[test]
-fn postgres_admin_app_writes_java_compatible_assigned_ids_explicitly() {
+fn postgres_admin_app_writes_appbase_snowflake_ids_explicitly() {
     for expected in [
-        "const ASSIGNED_ID_FLOOR: i64 = 1_000_000_000_000;",
-        "fn assigned_entity_id(namespace: &str, entity_uuid: &str, attempt: u8) -> i64",
+        "use crate::infrastructure::sql::runtime_id::next_admin_app_id;",
+        "const MAX_RUNTIME_ID_ATTEMPTS: u8 = 16;",
+        "let id = next_admin_app_id(context)?;",
         "SELECT COUNT(1) FROM plus_app WHERE id = $1",
         "INSERT INTO plus_app (id, uuid, tenant_id, organization_id",
     ] {
         assert_sql_contains(POSTGRES_ADMIN_APP_STORE, expected);
     }
+    assert_sql_not_contains(POSTGRES_ADMIN_APP_STORE, "ASSIGNED_ID_FLOOR");
+    assert_sql_not_contains(POSTGRES_ADMIN_APP_STORE, "fn assigned_entity_id");
     assert_sql_not_contains(POSTGRES_ADMIN_APP_STORE, "RETURNING id");
 }
 

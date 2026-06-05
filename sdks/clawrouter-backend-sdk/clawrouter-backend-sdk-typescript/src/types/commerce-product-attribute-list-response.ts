@@ -5,9 +5,9 @@ export interface CommerceProductAttributeListResponse {
   /** Items field on commerce product attribute list response. */
   items: CommerceProductAttributeItem[];
   /** Page field on commerce product attribute list response. */
-  page: number;
+  page: string;
   /** Page size field on commerce product attribute list response. */
-  pageSize: number;
+  pageSize: string;
   /** Total field on commerce product attribute list response. */
-  total: number;
+  total: string;
 }

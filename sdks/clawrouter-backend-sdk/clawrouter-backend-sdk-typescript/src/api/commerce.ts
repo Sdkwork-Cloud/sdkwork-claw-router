@@ -5,8 +5,8 @@ import type { AuditCommerceEventsListResult, CatalogAttributesCreateResult, Cata
 
 
 export interface CommerceWalletLedgerEntriesListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
 }
 
@@ -30,8 +30,8 @@ export class CommerceWalletLedgerEntriesApi {
 }
 
 export interface CommerceWalletExchangeRulesListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
 }
 
@@ -79,8 +79,8 @@ export class CommerceWalletAdjustmentsApi {
 }
 
 export interface CommerceWalletAccountsListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
 }
 
@@ -121,8 +121,8 @@ export class CommerceWalletApi {
 }
 
 export interface CommerceShipmentsTrackingEventsListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
 }
 
@@ -146,8 +146,8 @@ export class CommerceShipmentsTrackingEventsApi {
 }
 
 export interface CommerceShipmentsListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
 }
 
@@ -173,8 +173,8 @@ export class CommerceShipmentsApi {
 }
 
 export interface CommerceRefundsListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
 }
 
@@ -222,8 +222,8 @@ export class CommerceRechargesSettingsApi {
 }
 
 export interface CommerceRechargesPackagesListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
 }
 
@@ -282,8 +282,8 @@ export class CommerceRechargesPackagesApi {
 }
 
 export interface CommerceRechargesOrdersListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
 }
 
@@ -323,8 +323,8 @@ export class CommerceRechargesApi {
 
 export interface CommercePaymentsWebhookEventsListParams {
   providerCode?: 'wechat_pay' | 'alipay' | 'paypal' | 'stripe' | 'apple_pay' | 'google_pay';
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
 }
 
@@ -384,8 +384,8 @@ export interface CommercePaymentsRouteRulesListParams {
   methodCode?: 'wechat_pay' | 'alipay' | 'paypal' | 'card' | 'apple_pay' | 'google_pay' | 'wallet_balance';
   countryCode?: string;
   currencyCode?: string;
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
 }
 
@@ -414,8 +414,8 @@ export class CommercePaymentsRouteRulesApi {
 export interface CommercePaymentsReconciliationRunsListParams {
   providerCode?: 'wechat_pay' | 'alipay' | 'paypal' | 'stripe' | 'apple_pay' | 'google_pay';
   businessDate?: string;
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
 }
 
@@ -441,8 +441,8 @@ export class CommercePaymentsReconciliationRunsApi {
 }
 
 export interface CommercePaymentsProvidersListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
 }
 
@@ -491,8 +491,8 @@ export class CommercePaymentsProviderAccountsStatusApi {
 
 export interface CommercePaymentsProviderAccountsListParams {
   providerCode?: 'wechat_pay' | 'alipay' | 'paypal' | 'stripe' | 'apple_pay' | 'google_pay';
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
 }
 
@@ -554,8 +554,8 @@ export class CommercePaymentsProviderAccountsApi {
 }
 
 export interface CommercePaymentsMethodsListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
 }
 
@@ -581,8 +581,8 @@ export class CommercePaymentsMethodsApi {
 export interface CommercePaymentsIntentsListParams {
   orderId?: string;
   providerCode?: 'wechat_pay' | 'alipay' | 'paypal' | 'stripe' | 'apple_pay' | 'google_pay';
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
 }
 
@@ -610,8 +610,8 @@ export class CommercePaymentsIntentsApi {
 export interface CommercePaymentsChannelsListParams {
   providerAccountId?: string;
   methodCode?: 'wechat_pay' | 'alipay' | 'paypal' | 'card' | 'apple_pay' | 'google_pay' | 'wallet_balance';
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
 }
 
@@ -639,8 +639,8 @@ export class CommercePaymentsChannelsApi {
 export interface CommercePaymentsAttemptsListParams {
   intentId?: string;
   providerCode?: 'wechat_pay' | 'alipay' | 'paypal' | 'stripe' | 'apple_pay' | 'google_pay';
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
 }
 
@@ -695,8 +695,8 @@ export class CommercePaymentsApi {
 }
 
 export interface CommerceOrdersEventsListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
 }
 
@@ -720,8 +720,8 @@ export class CommerceOrdersEventsApi {
 }
 
 export interface CommerceOrdersListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
 }
 
@@ -752,8 +752,8 @@ export class CommerceOrdersApi {
 }
 
 export interface CommerceMembershipsPlansListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
 }
 
@@ -812,8 +812,8 @@ export class CommerceMembershipsPlansApi {
 }
 
 export interface CommerceMembershipsPackagesListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   packageGroupId?: string;
   planId?: string;
   status?: string;
@@ -876,8 +876,8 @@ export class CommerceMembershipsPackagesApi {
 }
 
 export interface CommerceMembershipsPackageGroupsListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
 }
 
@@ -960,8 +960,8 @@ export class CommerceMembershipsMembersStatusApi {
 }
 
 export interface CommerceMembershipsMembersListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   cursor?: string;
   userId?: string;
   planId?: string;
@@ -993,8 +993,8 @@ export class CommerceMembershipsMembersApi {
 }
 
 export interface CommerceMembershipsEntitlementsListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   planId?: string;
   membershipId?: string;
   status?: string;
@@ -1041,8 +1041,8 @@ export class CommerceMembershipsApi {
 }
 
 export interface CommerceInvoicesTitlesListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
 }
 
@@ -1066,8 +1066,8 @@ export class CommerceInvoicesTitlesApi {
 }
 
 export interface CommerceInvoicesListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
 }
 
@@ -1101,8 +1101,8 @@ export interface CommerceInventoryStocksListParams {
   skuId?: string;
   warehouseId?: string;
   status?: string;
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
 }
 
 export interface CommerceInventoryStocksUpdateParams {
@@ -1146,8 +1146,8 @@ export interface CommerceInventoryReservationsListParams {
   orderId?: string;
   checkoutSessionId?: string;
   status?: string;
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
 }
 
 export class CommerceInventoryReservationsApi {
@@ -1177,8 +1177,8 @@ export interface CommerceInventoryLedgerEntriesListParams {
   warehouseId?: string;
   sourceType?: string;
   sourceId?: string;
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
 }
 
 export class CommerceInventoryLedgerEntriesApi {
@@ -1219,8 +1219,8 @@ export class CommerceInventoryApi {
 }
 
 export interface CommerceFulfillmentsListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
 }
 
@@ -1244,8 +1244,8 @@ export class CommerceFulfillmentsApi {
 }
 
 export interface CommerceCommerceReportsRefundsListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
 }
 
@@ -1283,8 +1283,8 @@ export class CommerceCommerceReportsPaymentReconciliationApi {
 }
 
 export interface CommerceCommerceReportsOrderRevenueListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
 }
 
@@ -1326,8 +1326,8 @@ export interface CommerceCatalogSkusListParams {
   productId?: string;
   fulfillmentType?: string;
   status?: string;
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
 }
 
 export interface CommerceCatalogSkusCreateParams {
@@ -1391,8 +1391,8 @@ export interface CommerceCatalogProductsListParams {
   categoryId?: string;
   productType?: string;
   status?: string;
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   sort?: string;
 }
 
@@ -1458,8 +1458,8 @@ export interface CommerceCatalogPriceListsListParams {
   currencyCode?: string;
   marketCode?: string;
   status?: string;
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
 }
 
 export interface CommerceCatalogPriceListsCreateParams {
@@ -1526,8 +1526,8 @@ export interface CommerceCatalogCategoryAttributesListParams {
   categoryId?: string;
   attributeId?: string;
   status?: string;
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
 }
 
 export interface CommerceCatalogCategoryAttributesCreateParams {
@@ -1589,8 +1589,8 @@ export class CommerceCatalogCategoryAttributesApi {
 export interface CommerceCatalogCategoriesListParams {
   parentId?: string;
   status?: string;
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
 }
 
 export interface CommerceCatalogCategoriesCreateParams {
@@ -1651,8 +1651,8 @@ export class CommerceCatalogCategoriesApi {
 export interface CommerceCatalogAttributesListParams {
   scope?: string;
   status?: string;
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
 }
 
 export interface CommerceCatalogAttributesCreateParams {
@@ -1714,8 +1714,8 @@ export class CommerceCatalogApi {
 }
 
 export interface CommerceAuditCommerceEventsListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
 }
 

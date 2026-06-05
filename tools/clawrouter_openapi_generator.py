@@ -2,6 +2,7 @@ from __future__ import annotations
 
 # clawrouter-openapi-strong-types-marker
 import argparse
+import copy
 import json
 import re
 from dataclasses import dataclass
@@ -64,6 +65,11 @@ class ClawRouterOpenApiGenerator:
         "verificationCodes.verify",
     }
     REFRESH_TOKEN_OPERATION_IDS = {"sessions.refresh"}
+    PUBLIC_PROJECT_LEGACY_RECORD_COMPONENTS = {
+        "PlusAgentSkillPackageRecord",
+        "PlusAgentSkillRecord",
+        "PlusCategoryRecord",
+    }
     DEFAULT_QUERY_PARAMETERS = [
         {"name": "page", "in": "query", "required": False, "schema": {"type": "integer", "format": "int32"}},
         {"name": "page_size", "in": "query", "required": False, "schema": {"type": "integer", "format": "int32"}},
@@ -342,7 +348,10 @@ class ClawRouterOpenApiGenerator:
                     "name": name,
                     "in": "query",
                     "required": bool(parameter.get("required", False)),
-                    "schema": schema if isinstance(schema, dict) else {"type": "string"},
+                    "schema": self._normalized_parameter_schema(
+                        schema,
+                        location=f"#/paths/{self._string(operation.get('api_path'))}/{method.lower()}/parameters/{name}.schema",
+                    ),
                 }
                 description = self._string(parameter.get("description"))
                 if description:
@@ -654,6 +663,8 @@ class ClawRouterOpenApiGenerator:
                     node["description"] = description
 
         schema_type = node.get("type")
+        self._normalize_int64_json_schema(node)
+        schema_type = node.get("type")
         if schema_type == "object":
             if "additionalProperties" not in node:
                 node["additionalProperties"] = False
@@ -723,6 +734,66 @@ class ClawRouterOpenApiGenerator:
                     schema_name=schema_name,
                     location=f"{location}.{union_key}[{index}]",
                 )
+
+    def _normalized_parameter_schema(self, value: Any, *, location: str) -> dict[str, Any]:
+        schema = copy.deepcopy(value) if isinstance(value, dict) else {"type": "string"}
+        self._normalize_int64_json_schema_tree(schema, location=location)
+        return schema
+
+    def _normalize_int64_json_schema_tree(self, node: Any, *, location: str) -> None:
+        if isinstance(node, list):
+            for index, item in enumerate(node):
+                self._normalize_int64_json_schema_tree(item, location=f"{location}[{index}]")
+            return
+        if not isinstance(node, dict):
+            return
+        self._normalize_int64_json_schema(node)
+        for key, value in list(node.items()):
+            if key == "$ref":
+                continue
+            self._normalize_int64_json_schema_tree(value, location=f"{location}.{key}")
+
+    def _normalize_int64_json_schema(self, node: dict[str, Any]) -> None:
+        if node.get("format") != "int64":
+            return
+
+        schema_type = node.get("type")
+        if isinstance(schema_type, list):
+            node["type"] = ["string" if item in {"integer", "number"} else item for item in schema_type]
+        elif schema_type in {"integer", "number", "string"}:
+            node["type"] = "string"
+        elif schema_type is None:
+            node["type"] = "string"
+        else:
+            return
+
+        node["format"] = "int64"
+        node.setdefault("pattern", self._int64_string_pattern(node))
+        node["x-sdkwork-int64-string"] = True
+        node.setdefault("x-sdkwork-rust-type", "i64")
+        for numeric_constraint in (
+            "minimum",
+            "maximum",
+            "exclusiveMinimum",
+            "exclusiveMaximum",
+            "multipleOf",
+        ):
+            node.pop(numeric_constraint, None)
+
+    def _int64_string_pattern(self, node: dict[str, Any]) -> str:
+        minimum = node.get("minimum")
+        exclusive_minimum = node.get("exclusiveMinimum")
+        if isinstance(minimum, (int, float)):
+            if minimum >= 1:
+                return "^[1-9][0-9]*$"
+            if minimum >= 0:
+                return "^[0-9]+$"
+        if isinstance(exclusive_minimum, (int, float)):
+            if exclusive_minimum >= 0:
+                return "^[1-9][0-9]*$"
+            if exclusive_minimum >= -1:
+                return "^[0-9]+$"
+        return "^-?[0-9]+$"
 
     def _wrap_ref_schema_with_description(self, schema: dict[str, Any], *, description: str) -> None:
         schema_ref = schema.get("$ref")
@@ -955,6 +1026,16 @@ class ClawRouterOpenApiGenerator:
             if name in schema_components and name not in seen:
                 seen.add(name)
                 roots.append(name)
+
+        for name in self.PUBLIC_PROJECT_LEGACY_RECORD_COMPONENTS:
+            component = schema_components.get(name)
+            if not isinstance(component, dict):
+                continue
+            if component.get("x-domain") != "legacy":
+                continue
+            if component.get("x-generated-by-this-project") is not True:
+                continue
+            add(name)
 
         for operation in operations:
             if self._operation_has_request_body(operation):

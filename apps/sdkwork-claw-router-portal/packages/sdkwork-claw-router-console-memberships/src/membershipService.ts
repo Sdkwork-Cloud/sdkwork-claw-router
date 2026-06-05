@@ -190,7 +190,7 @@ export class MembershipService {
   }
 
   static async fetchMembershipPackages(): Promise<MembershipPackage[]> {
-    const result = await appMembershipsPackagesList({ page: 1, pageSize: 100, status: 'active' });
+    const result = await appMembershipsPackagesList({ page: '1', pageSize: '100', status: 'active' });
     ensureSdkworkApiSuccess(result, 'console.memberships.errors.packagesFallback');
     return readRequiredApiItems(result, 'console.memberships.errors.packagesFallback')
       .map((item, index) => normalizeMembershipPackage(item, null, index))
@@ -711,7 +711,7 @@ async function createMembershipPackageAction(
   action: (body: Parameters<AppCommerce['memberships']['purchases']['create']>[0]) => Promise<unknown>,
 ): Promise<MembershipActionResult> {
   const result = await action({
-    packageId: requiredPositiveIntegerId(packageId, 'packageId'),
+    packageId: String(requiredPositiveIntegerId(packageId, 'packageId')),
   });
   return normalizeMembershipActionResult(result, 'Membership purchase request number is required');
 }

@@ -476,8 +476,18 @@ async fn edge_server_proxies_real_sqlite_gateway_admin_and_app_services() {
     assert_eq!("gpt-5.5-pro", admin_model["model"]);
     assert_eq!("GPT-5.5 Pro", admin_model["displayName"]);
     assert_eq!("Chat", admin_model["type"]);
-    assert!(admin_model["priceIn"].as_str().is_some());
-    assert!(admin_model["priceOut"].as_str().is_some());
+    let admin_region_prices = admin_model["regionPrices"]
+        .as_array()
+        .expect("admin ai model must return regional price entries");
+    let admin_global_price = admin_region_prices
+        .iter()
+        .find(|price| price["regionCode"] == "global")
+        .expect("admin ai model must return a global reference price");
+    assert_eq!("USD", admin_global_price["currency"]);
+    assert!(admin_global_price["priceIn"].as_str().is_some());
+    assert!(admin_global_price["priceOut"].as_str().is_some());
+    assert!(admin_model.get("priceIn").is_none());
+    assert!(admin_model.get("priceOut").is_none());
     assert_eq!("active", admin_model["status"]);
     assert!(admin_model.get("priceAvailability").is_none());
 

@@ -965,6 +965,7 @@ where
     let quantity = GatewayUsageQuantity::single_request();
     let price = PricingResolver::new(catalog).resolve(ResolveModelPriceQuery {
         api_key_id: context.api_key_context.api_key_id,
+        channel_group_id: Some(context.api_key_context.group_id),
         model: context.catalog_key.clone(),
         billing_meter: billing_meter.clone(),
         provider_code: Some(context.account_route.provider_code.clone()),
@@ -1141,6 +1142,7 @@ where
     let region_code = adapter_provider_region_code(invocation)?;
     let price = PricingResolver::new(catalog).resolve(ResolveModelPriceQuery {
         api_key_id: context.api_key_id,
+        channel_group_id: Some(context.group_id),
         model: catalog_key.clone(),
         billing_meter: billing_meter.clone(),
         provider_code: Some(invocation.provider.provider_code.clone()),

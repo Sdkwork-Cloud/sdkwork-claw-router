@@ -3,9 +3,9 @@ import type { ProviderJsonValue } from './provider-json-value';
 /** OpenAI-compatible file object. */
 export interface OpenAiFile {
   /** File size in bytes. */
-  bytes: number;
+  bytes: string;
   /** Unix timestamp in seconds when the file was created. */
-  created_at: number;
+  created_at: string;
   /** Uploaded file name. */
   filename: string;
   /** File identifier. */

@@ -5,9 +5,9 @@ export interface CommercePaymentIntentListResponse {
   /** Items field on commerce payment intent list response. */
   items: CommercePaymentIntentItem[];
   /** Page field on commerce payment intent list response. */
-  page: number;
+  page: string;
   /** Page size field on commerce payment intent list response. */
-  pageSize: number;
+  pageSize: string;
   /** Total field on commerce payment intent list response. */
-  total: number;
+  total: string;
 }

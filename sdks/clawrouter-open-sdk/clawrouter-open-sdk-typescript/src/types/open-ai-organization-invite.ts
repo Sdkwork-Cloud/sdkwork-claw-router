@@ -3,11 +3,11 @@ import type { ProviderJsonValue } from './provider-json-value';
 /** OpenAI-compatible organization invite object. */
 export interface OpenAiOrganizationInvite {
   /** Unix timestamp in seconds when the invite was created. */
-  created_at?: number;
+  created_at?: string;
   /** Invitee email address. */
   email: string;
   /** Unix timestamp in seconds when the invite expires. */
-  expires_at?: number;
+  expires_at?: string;
   /** Organization invite identifier. */
   id: string;
   /** Object type, normally organization.invite. */

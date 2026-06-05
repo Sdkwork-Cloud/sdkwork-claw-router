@@ -1,7 +1,7 @@
 /** Admin cache key item schema exposed by Claw Router. */
 export interface AdminCacheKeyItem {
   /** Expires in seconds field on admin cache key item. */
-  expiresInSeconds?: number | null;
+  expiresInSeconds?: string | null;
   /** Instance name field on admin cache key item. */
   instanceName: string;
   /** Key field on admin cache key item. */

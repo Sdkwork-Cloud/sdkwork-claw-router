@@ -446,10 +446,12 @@ fn snapshot_load_queries_are_parameterless_and_cover_every_catalog_row_set() {
         );
     }
 
-    assert!(
-        !sql.contains("api_key_id") && !sql.contains("group_id = $"),
-        "snapshot load queries must not depend on request-time route selection parameters"
-    );
+    for request_filter in ["api_key_id = $", "group_id = $"] {
+        assert!(
+            !sql.contains(request_filter),
+            "snapshot load queries must not depend on request-time route selection parameters"
+        );
+    }
     assert!(
         !sql.contains("gateway_model"),
         "snapshot load queries must use normalized model and resource tables"

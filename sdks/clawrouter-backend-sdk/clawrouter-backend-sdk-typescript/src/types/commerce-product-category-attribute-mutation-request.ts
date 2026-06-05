@@ -11,7 +11,7 @@ export interface CommerceProductCategoryAttributeMutationRequest {
   /** Searchable field on commerce product category attribute mutation request. */
   searchable: boolean;
   /** Sort order field on commerce product category attribute mutation request. */
-  sortOrder?: number;
+  sortOrder?: string;
   /** Status field on commerce product category attribute mutation request. */
   status: 'active' | 'inactive' | 'archived';
 }

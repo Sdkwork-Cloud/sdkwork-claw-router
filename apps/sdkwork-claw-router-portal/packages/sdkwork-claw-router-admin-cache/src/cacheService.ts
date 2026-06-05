@@ -159,7 +159,7 @@ export class AdminCacheService {
     cursor?: string | null,
   ): Promise<CacheKeyList> {
     const result = await getClawRouterBackendSdkClient().system.cache.namespaces.keys.list(namespace, {
-      limit,
+      limit: String(limit),
       ...(cursor ? { cursor } : {}),
     });
     ensureSdkworkApiSuccess(result, 'Failed to list cache keys');

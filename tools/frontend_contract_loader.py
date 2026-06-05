@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import re
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
@@ -14,11 +15,57 @@ else:
     _YAML_IMPORT_ERROR = None
 
 
+class _FlowList(list[Any]):
+    pass
+
+
+class _FlowDict(dict[str, Any]):
+    pass
+
+
 DEFAULT_CONTRACT_SNAPSHOT = Path("docs") / "schema-registry" / "frontend-field-contracts.yaml"
 DEFAULT_CONTRACT_INDEX = Path("docs") / "schema-registry" / "frontend-field-contracts" / "index.yaml"
 MERGEABLE_LIST_SECTIONS = {"frontend_models", "frontend_operations", "routes"}
 MERGEABLE_MAPPING_SECTIONS = {"x_response_entities"}
 METADATA_KEYS = {"schema", "version", "source", "rule"}
+FLOW_SEQUENCE_KEYS = {"enum", "required"}
+FLOW_SCHEMA_KEYS = {
+    "additionalProperties",
+    "default",
+    "description",
+    "enum",
+    "format",
+    "maxLength",
+    "maximum",
+    "minLength",
+    "minimum",
+    "nullable",
+    "pattern",
+    "type",
+}
+
+if yaml is not None:
+    class _ContractYamlDumper(yaml.SafeDumper):
+        def increase_indent(self, flow: bool = False, indentless: bool = False) -> None:
+            return super().increase_indent(flow, False)
+
+    def _represent_flow_list(
+        dumper: _ContractYamlDumper,
+        value: _FlowList,
+    ) -> yaml.SequenceNode:
+        return dumper.represent_sequence("tag:yaml.org,2002:seq", value, flow_style=True)
+
+    def _represent_flow_dict(
+        dumper: _ContractYamlDumper,
+        value: _FlowDict,
+    ) -> yaml.MappingNode:
+        return dumper.represent_mapping("tag:yaml.org,2002:map", value, flow_style=True)
+
+    _ContractYamlDumper.add_representer(_FlowList, _represent_flow_list)
+    _ContractYamlDumper.add_representer(_FlowDict, _represent_flow_dict)
+else:  # pragma: no cover - exercised only when PyYAML is unavailable
+    _ContractYamlDumper = None
+
 
 
 @dataclass(frozen=True)
@@ -80,7 +127,16 @@ def render_frontend_field_contract(root: Path, index_path: Path | None = None) -
     if yaml is None:
         raise RuntimeError("PyYAML is required to render frontend field contracts") from _YAML_IMPORT_ERROR
     payload = compile_frontend_field_contract(root=root, index_path=index_path)
-    return yaml.safe_dump(payload, allow_unicode=True, sort_keys=False, width=240)
+    styled_payload = _style_frontend_contract_snapshot(payload)
+    content = yaml.dump(
+        styled_payload,
+        Dumper=_ContractYamlDumper,
+        allow_unicode=True,
+        default_flow_style=False,
+        sort_keys=False,
+        width=240,
+    )
+    return _normalize_frontend_contract_yaml_style(content)
 
 
 class FrontendFieldContractCompiler:
@@ -179,6 +235,43 @@ def _merge_fragment(compiled: dict[str, Any], fragment: dict[str, Any], *, root:
             compiled[key].update(value)
             continue
         raise ValueError(f"{_display(root, fragment_path)} declares unsupported frontend field contract section: {key}")
+
+
+def _style_frontend_contract_snapshot(value: Any, *, key: str | None = None) -> Any:
+    if isinstance(value, list):
+        styled = [_style_frontend_contract_snapshot(item) for item in value]
+        if key in FLOW_SEQUENCE_KEYS and _is_scalar_sequence(styled):
+            return _FlowList(styled)
+        return styled
+    if isinstance(value, dict):
+        styled = {
+            item_key: _style_frontend_contract_snapshot(item_value, key=str(item_key))
+            for item_key, item_value in value.items()
+        }
+        if _is_flow_schema_mapping(styled):
+            return _FlowDict(styled)
+        return styled
+    return value
+
+
+def _is_scalar_sequence(value: list[Any]) -> bool:
+    return all(not isinstance(item, (dict, list)) for item in value)
+
+
+def _is_flow_schema_mapping(value: dict[str, Any]) -> bool:
+    if not value or not set(value).issubset(FLOW_SCHEMA_KEYS):
+        return False
+    if "description" in value:
+        return False
+    return all(
+        not isinstance(item, dict)
+        and (not isinstance(item, list) or _is_scalar_sequence(item))
+        for item in value.values()
+    )
+
+
+def _normalize_frontend_contract_yaml_style(content: str) -> str:
+    return re.sub(r"\{([^{}\n]*:[^{}\n]*)\}", r"{ \1 }", content)
 
 
 def _display(root: Path, path: Path) -> str:

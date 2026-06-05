@@ -17,7 +17,7 @@ use sqlx::Row;
 const TENANT_ID: i64 = 42;
 const ORGANIZATION_ID: i64 = 84;
 const OPERATOR_ID: i64 = 9001;
-const ASSIGNED_ID_FLOOR: i64 = 1_000_000_000_000;
+const SNOWFLAKE_ID_FLOOR: i64 = 1_000_000_000_000;
 
 fn external_image(url: &str) -> serde_json::Value {
     json!({
@@ -65,8 +65,8 @@ async fn sqlite_admin_skill_store_generates_assigned_ids_and_manages_market_life
         .unwrap();
 
     assert!(
-        category.id > ASSIGNED_ID_FLOOR,
-        "skill category ids must be Java-compatible assigned ids, not SQLite rowids"
+        category.id > SNOWFLAKE_ID_FLOOR,
+        "skill category ids must use appbase Snowflake ids, not SQLite rowids"
     );
     assert_eq!(TENANT_ID, category.tenant_id);
     assert_eq!("workflow-automation", category.code.as_deref().unwrap());
@@ -107,8 +107,8 @@ async fn sqlite_admin_skill_store_generates_assigned_ids_and_manages_market_life
         .unwrap();
 
     assert!(
-        package.id > ASSIGNED_ID_FLOOR,
-        "skill package ids must use Java-compatible assigned ids"
+        package.id > SNOWFLAKE_ID_FLOOR,
+        "skill package ids must use appbase Snowflake ids"
     );
     assert_eq!("workflow-package", package.package_key);
     assert_eq!(category.id, package.category_id.unwrap());
@@ -257,8 +257,8 @@ async fn sqlite_admin_skill_store_generates_assigned_ids_and_manages_market_life
         .unwrap();
 
     assert!(
-        skill.id > ASSIGNED_ID_FLOOR,
-        "skills must use the same assigned-id standard on SQLite and Postgres"
+        skill.id > SNOWFLAKE_ID_FLOOR,
+        "skills must use the same appbase Snowflake id standard on SQLite and Postgres"
     );
     assert_eq!(category.id, skill.category_id.unwrap());
     assert_eq!(package.id, skill.package_id.unwrap());
@@ -509,7 +509,7 @@ async fn sqlite_admin_skill_store_generates_assigned_ids_and_manages_market_life
             (?, 'user-skill-workflow-planner-pro', ?, ?, 1, 1001, ?, 1, '{}')
         "#,
     )
-    .bind(ASSIGNED_ID_FLOOR + 99)
+    .bind(SNOWFLAKE_ID_FLOOR + 99)
     .bind(TENANT_ID)
     .bind(ORGANIZATION_ID)
     .bind(skill.id)
@@ -570,7 +570,7 @@ async fn sqlite_admin_skill_store_generates_assigned_ids_and_manages_market_life
             description: None,
             icon: None,
             cover: None,
-            category_id: Some(ASSIGNED_ID_FLOOR + 123),
+            category_id: Some(SNOWFLAKE_ID_FLOOR + 123),
             package_id: None,
             provider: None,
             version: None,
@@ -619,7 +619,7 @@ async fn sqlite_admin_skill_store_generates_assigned_ids_and_manages_market_life
             icon: None,
             cover: None,
             category_id: None,
-            package_id: Some(ASSIGNED_ID_FLOOR + 456),
+            package_id: Some(SNOWFLAKE_ID_FLOOR + 456),
             provider: None,
             version: None,
             version_name: None,
@@ -833,8 +833,8 @@ async fn sqlite_admin_skill_store_manages_assets_and_artifacts_as_skill_catalog_
         .unwrap();
 
     assert!(
-        asset.id > ASSIGNED_ID_FLOOR,
-        "skill asset ids must be Java-compatible assigned ids"
+        asset.id > SNOWFLAKE_ID_FLOOR,
+        "skill asset ids must use appbase Snowflake ids"
     );
     assert_eq!(35, asset.target_type);
     assert_eq!(skill.id, asset.target_id);
@@ -966,8 +966,8 @@ async fn sqlite_admin_skill_store_manages_assets_and_artifacts_as_skill_catalog_
         .unwrap();
 
     assert!(
-        artifact.id > ASSIGNED_ID_FLOOR,
-        "skill artifact ids must be Java-compatible assigned ids"
+        artifact.id > SNOWFLAKE_ID_FLOOR,
+        "skill artifact ids must use appbase Snowflake ids"
     );
     assert_eq!(35, artifact.target_type);
     assert_eq!(skill.id, artifact.target_id);
@@ -1077,7 +1077,7 @@ async fn sqlite_admin_skill_store_manages_assets_and_artifacts_as_skill_catalog_
     let missing_skill_asset = store
         .create_asset(CreateAdminSkillAssetCommand {
             subject,
-            skill_id: ASSIGNED_ID_FLOOR + 321,
+            skill_id: SNOWFLAKE_ID_FLOOR + 321,
             asset_uuid: "admin-skill-asset-missing-skill".to_owned(),
             audit_log_uuid: "audit-create-admin-skill-asset-missing-skill".to_owned(),
             artifact_id: None,
@@ -1112,7 +1112,7 @@ async fn sqlite_admin_skill_store_manages_assets_and_artifacts_as_skill_catalog_
     let missing_skill_artifact = store
         .create_artifact(CreateAdminSkillArtifactCommand {
             subject,
-            skill_id: ASSIGNED_ID_FLOOR + 654,
+            skill_id: SNOWFLAKE_ID_FLOOR + 654,
             artifact_uuid: "admin-skill-artifact-missing-skill".to_owned(),
             audit_log_uuid: "audit-create-admin-skill-artifact-missing-skill".to_owned(),
             artifact_type: 1,

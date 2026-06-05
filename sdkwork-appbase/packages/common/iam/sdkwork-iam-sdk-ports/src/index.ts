@@ -44,6 +44,33 @@ export interface IamBackendSdkClient {
 }
 
 export interface IamAppIamResourceClient {
+  organizations?: {
+    list?: IamSdkMethod;
+    tree?: {
+      retrieve?: IamSdkMethod;
+    };
+  };
+  organizationMemberships?: {
+    list?: IamSdkMethod;
+  };
+  departments?: {
+    list?: IamSdkMethod;
+    tree?: {
+      retrieve?: IamSdkMethod;
+    };
+  };
+  departmentAssignments?: {
+    list?: IamSdkMethod;
+  };
+  positions?: {
+    list?: IamSdkMethod;
+  };
+  positionAssignments?: {
+    list?: IamSdkMethod;
+  };
+  roleBindings?: {
+    list?: IamSdkMethod;
+  };
   users?: {
     current?: {
       retrieve?: IamSdkMethod;
@@ -88,18 +115,22 @@ export interface IamBackendIamResourceClient {
   organizations?: {
     create?: IamSdkMethod;
     delete?: IamSdkMethod;
-    list?: IamSdkMethod;
     retrieve?: IamSdkMethod;
-    tree?: {
-      retrieve?: IamSdkMethod;
-    };
     update?: IamSdkMethod;
-    members?: {
-      create?: IamSdkMethod;
-      delete?: IamSdkMethod;
-      list?: IamSdkMethod;
-      update?: IamSdkMethod;
-    };
+  };
+  organizationMemberships?: {
+    create?: IamSdkMethod;
+    update?: IamSdkMethod;
+  };
+  departments?: {
+    create?: IamSdkMethod;
+    delete?: IamSdkMethod;
+    retrieve?: IamSdkMethod;
+    update?: IamSdkMethod;
+  };
+  departmentAssignments?: {
+    create?: IamSdkMethod;
+    update?: IamSdkMethod;
   };
   permissions?: {
     create?: IamSdkMethod;
@@ -115,6 +146,15 @@ export interface IamBackendIamResourceClient {
     retrieve?: IamSdkMethod;
     update?: IamSdkMethod;
   };
+  positions?: {
+    create?: IamSdkMethod;
+    delete?: IamSdkMethod;
+    update?: IamSdkMethod;
+  };
+  positionAssignments?: {
+    create?: IamSdkMethod;
+    update?: IamSdkMethod;
+  };
   roles?: {
     create?: IamSdkMethod;
     delete?: IamSdkMethod;
@@ -126,6 +166,10 @@ export interface IamBackendIamResourceClient {
       delete?: IamSdkMethod;
       list?: IamSdkMethod;
     };
+  };
+  roleBindings?: {
+    create?: IamSdkMethod;
+    delete?: IamSdkMethod;
   };
   securityEvents?: {
     list?: IamSdkMethod;
@@ -149,15 +193,24 @@ export interface IamBackendIamResourceClient {
     list?: IamSdkMethod;
     retrieve?: IamSdkMethod;
     update?: IamSdkMethod;
-    roles?: {
-      create?: IamSdkMethod;
-      delete?: IamSdkMethod;
-      list?: IamSdkMethod;
-    };
   };
 }
 
-export interface IamSdkResourceClient extends Omit<IamAppIamResourceClient, "users">, Omit<IamBackendIamResourceClient, "users"> {
+export interface IamSdkResourceClient {
+  apiKeys?: IamBackendIamResourceClient["apiKeys"];
+  auditEvents?: IamBackendIamResourceClient["auditEvents"];
+  organizations?: NonNullable<IamAppIamResourceClient["organizations"]> & NonNullable<IamBackendIamResourceClient["organizations"]>;
+  organizationMemberships?: NonNullable<IamAppIamResourceClient["organizationMemberships"]> & NonNullable<IamBackendIamResourceClient["organizationMemberships"]>;
+  departments?: NonNullable<IamAppIamResourceClient["departments"]> & NonNullable<IamBackendIamResourceClient["departments"]>;
+  departmentAssignments?: NonNullable<IamAppIamResourceClient["departmentAssignments"]> & NonNullable<IamBackendIamResourceClient["departmentAssignments"]>;
+  permissions?: IamBackendIamResourceClient["permissions"];
+  positions?: NonNullable<IamAppIamResourceClient["positions"]> & NonNullable<IamBackendIamResourceClient["positions"]>;
+  positionAssignments?: NonNullable<IamAppIamResourceClient["positionAssignments"]> & NonNullable<IamBackendIamResourceClient["positionAssignments"]>;
+  policies?: IamBackendIamResourceClient["policies"];
+  roles?: IamBackendIamResourceClient["roles"];
+  roleBindings?: NonNullable<IamAppIamResourceClient["roleBindings"]> & NonNullable<IamBackendIamResourceClient["roleBindings"]>;
+  securityEvents?: IamBackendIamResourceClient["securityEvents"];
+  tenants?: IamBackendIamResourceClient["tenants"];
   users?: NonNullable<IamAppIamResourceClient["users"]> & NonNullable<IamBackendIamResourceClient["users"]>;
 }
 
@@ -171,6 +224,29 @@ export const SDKWORK_IAM_BACKEND_SDK_REQUIRED_METHODS = [
 
 export const SDKWORK_IAM_BACKEND_SDK_FORBIDDEN_METHODS = [
   ...requiredSdkMethodsForPrefix(SDKWORK_IAM_STANDARD.api.appPrefix).filter((method) => method.startsWith("iam.")),
+] as const;
+
+export const SDKWORK_IAM_RETIRED_BACKEND_SDK_METHODS = [
+  "iam.organizations.members.create",
+  "iam.organizations.members.delete",
+  "iam.organizations.members.list",
+  "iam.organizations.members.update",
+  "iam.users.roles.create",
+  "iam.users.roles.delete",
+  "iam.users.roles.list",
+] as const;
+
+const SDKWORK_IAM_RETIRED_ORGANIZATION_MEMBER_METHODS = [
+  "iam.organizations.members.create",
+  "iam.organizations.members.delete",
+  "iam.organizations.members.list",
+  "iam.organizations.members.update",
+] as const;
+
+const SDKWORK_IAM_RETIRED_DIRECT_USER_ROLE_METHODS = [
+  "iam.users.roles.create",
+  "iam.users.roles.delete",
+  "iam.users.roles.list",
 ] as const;
 
 const SDKWORK_IAM_APP_OPEN_PLATFORM_QR_METHODS = [
@@ -221,6 +297,24 @@ export function assertIamBackendSdkClient(client: unknown): asserts client is Ia
   const forbiddenMethods = surface.filter((method) => SDKWORK_IAM_BACKEND_SDK_FORBIDDEN_METHODS.includes(method));
   if (forbiddenMethods.length > 0) {
     throw new Error(`Generated backend SDK client must not expose app-only IAM resources: ${forbiddenMethods.join(", ")}`);
+  }
+
+  const retiredOrganizationMemberMethods = surface.filter((method) =>
+    SDKWORK_IAM_RETIRED_ORGANIZATION_MEMBER_METHODS.includes(method as (typeof SDKWORK_IAM_RETIRED_ORGANIZATION_MEMBER_METHODS)[number])
+  );
+  if (retiredOrganizationMemberMethods.length > 0) {
+    throw new Error(
+      `Generated backend SDK client exposes retired IAM organization member resources: ${retiredOrganizationMemberMethods.join(", ")}. Use iam.organizationMemberships methods.`,
+    );
+  }
+
+  const retiredDirectUserRoleMethods = surface.filter((method) =>
+    SDKWORK_IAM_RETIRED_DIRECT_USER_ROLE_METHODS.includes(method as (typeof SDKWORK_IAM_RETIRED_DIRECT_USER_ROLE_METHODS)[number])
+  );
+  if (retiredDirectUserRoleMethods.length > 0) {
+    throw new Error(
+      `Generated backend SDK client exposes retired IAM direct user role resources: ${retiredDirectUserRoleMethods.join(", ")}. Use iam.roleBindings for scoped role assignment.`,
+    );
   }
 
   if (missingMethods.length > 0) {

@@ -27,12 +27,16 @@ export interface SdkworkIamPolicy {
   tenantId?: string;
 }
 
-export interface SdkworkIamUserRole {
+export interface SdkworkIamRoleBinding {
+  effect?: string;
   id: string;
-  organizationId?: string;
-  roleCode?: string;
+  principalId: string;
+  principalKind: string;
   roleId: string;
-  userId?: string;
+  scopeId: string;
+  scopeKind: string;
+  status?: string;
+  tenantId?: string;
 }
 
 export interface SdkworkAuthorizationHint {
@@ -45,14 +49,14 @@ export interface SdkworkAuthorizationHint {
 }
 
 export interface SdkworkIamPermissionState {
-  lastUserId?: string;
+  lastPrincipalId?: string;
   permissionScope: readonly string[];
   permissions: readonly SdkworkIamPermission[];
   policies: readonly SdkworkIamPolicy[];
+  roleBindings: readonly SdkworkIamRoleBinding[];
   rolePermissions: Readonly<Record<string, readonly SdkworkIamPermission[]>>;
   roles: readonly SdkworkIamRole[];
   status: "idle" | "loading" | "ready" | "error";
-  userRoles: readonly SdkworkIamUserRole[];
 }
 
 export interface CreateSdkworkIamPermissionControllerInput {
@@ -61,17 +65,17 @@ export interface CreateSdkworkIamPermissionControllerInput {
 }
 
 export interface SdkworkIamPermissionController {
+  assignRoleBinding(body: Record<string, unknown>): Promise<SdkworkIamRoleBinding>;
   assignRolePermission(roleId: string, permissionId: string): Promise<unknown>;
-  assignUserRole(userId: string, roleId: string): Promise<unknown>;
   can(hint: string | SdkworkAuthorizationHint): boolean;
   getState(): SdkworkIamPermissionState;
   listPermissions(params?: Record<string, unknown>): Promise<readonly SdkworkIamPermission[]>;
   listPolicies(params?: Record<string, unknown>): Promise<readonly SdkworkIamPolicy[]>;
+  listRoleBindings(params?: Record<string, unknown>): Promise<readonly SdkworkIamRoleBinding[]>;
   listRolePermissions(roleId: string, params?: Record<string, unknown>): Promise<readonly SdkworkIamPermission[]>;
   listRoles(params?: Record<string, unknown>): Promise<readonly SdkworkIamRole[]>;
-  listUserRoles(userId: string, params?: Record<string, unknown>): Promise<readonly SdkworkIamUserRole[]>;
+  revokeRoleBinding(roleBindingId: string): Promise<unknown>;
   revokeRolePermission(roleId: string, permissionId: string): Promise<unknown>;
-  revokeUserRole(userId: string, roleId: string): Promise<unknown>;
 }
 
 export function createSdkworkIamPermissionController(
@@ -79,14 +83,14 @@ export function createSdkworkIamPermissionController(
 ): SdkworkIamPermissionController {
   const resolved = resolveInput(input);
   let state: SdkworkIamPermissionState = {
-    lastUserId: undefined,
+    lastPrincipalId: undefined,
     permissionScope: [...new Set((resolved.permissionScope ?? []).map(normalizeRequiredCode))],
     permissions: [],
     policies: [],
+    roleBindings: [],
     rolePermissions: {},
     roles: [],
     status: "idle",
-    userRoles: [],
   };
 
   const setState = (patch: Partial<SdkworkIamPermissionState>) => {
@@ -97,6 +101,17 @@ export function createSdkworkIamPermissionController(
   };
 
   return {
+    assignRoleBinding: async (body) => {
+      const roleBinding = toRoleBinding(await resolved.service.iam.roleBindings.create(body));
+      if (!roleBinding) {
+        throw new Error("SDKWork IAM permission controller received an invalid role binding response");
+      }
+      setState({
+        lastPrincipalId: roleBinding.principalId,
+        roleBindings: upsertById(state.roleBindings, roleBinding),
+      });
+      return roleBinding;
+    },
     assignRolePermission: async (roleId, permissionId) => {
       const result = await resolved.service.iam.roles.permissions.create(
         requireId(roleId, "roleId"),
@@ -104,21 +119,17 @@ export function createSdkworkIamPermissionController(
       );
       return result;
     },
-    assignUserRole: async (userId, roleId) => resolved.service.iam.users.roles.create(
-      requireId(userId, "userId"),
-      requireId(roleId, "roleId"),
-    ),
     can: (hint) => evaluateAuthorization(state, hint),
     getState: () => ({
       ...state,
       permissionScope: [...state.permissionScope],
       permissions: [...state.permissions],
       policies: [...state.policies],
+      roleBindings: [...state.roleBindings],
       rolePermissions: Object.fromEntries(
         Object.entries(state.rolePermissions).map(([roleId, permissions]) => [roleId, [...permissions]]),
       ),
       roles: [...state.roles],
-      userRoles: [...state.userRoles],
     }),
     listPermissions: async (params) => {
       setState({ status: "loading" });
@@ -141,6 +152,23 @@ export function createSdkworkIamPermissionController(
           .filter(Boolean) as SdkworkIamPolicy[];
         setState({ policies, status: "ready" });
         return policies;
+      } catch (error) {
+        setState({ status: "error" });
+        throw error;
+      }
+    },
+    listRoleBindings: async (params) => {
+      setState({ status: "loading" });
+      try {
+        const roleBindings = extractList(await resolved.service.iam.roleBindings.list(params))
+          .map(toRoleBinding)
+          .filter(Boolean) as SdkworkIamRoleBinding[];
+        setState({
+          lastPrincipalId: optionalString(params?.principalId) || optionalString(params?.principal_id),
+          roleBindings,
+          status: "ready",
+        });
+        return roleBindings;
       } catch (error) {
         setState({ status: "error" });
         throw error;
@@ -179,27 +207,17 @@ export function createSdkworkIamPermissionController(
         throw error;
       }
     },
-    listUserRoles: async (userId, params) => {
-      const normalizedUserId = requireId(userId, "userId");
-      setState({ status: "loading" });
-      try {
-        const roles = extractList(await resolved.service.iam.users.roles.list(normalizedUserId, params))
-          .map((role) => toUserRole(role, normalizedUserId))
-          .filter(Boolean) as SdkworkIamUserRole[];
-        setState({ lastUserId: normalizedUserId, status: "ready", userRoles: roles });
-        return roles;
-      } catch (error) {
-        setState({ status: "error" });
-        throw error;
-      }
+    revokeRoleBinding: async (roleBindingId) => {
+      const normalizedRoleBindingId = requireId(roleBindingId, "roleBindingId");
+      const result = await resolved.service.iam.roleBindings.delete(normalizedRoleBindingId);
+      setState({
+        roleBindings: state.roleBindings.filter((binding) => binding.id !== normalizedRoleBindingId),
+      });
+      return result;
     },
     revokeRolePermission: async (roleId, permissionId) => resolved.service.iam.roles.permissions.delete(
       requireId(roleId, "roleId"),
       requireId(permissionId, "permissionId"),
-    ),
-    revokeUserRole: async (userId, roleId) => resolved.service.iam.users.roles.delete(
-      requireId(userId, "userId"),
-      requireId(roleId, "roleId"),
     ),
   };
 }
@@ -226,7 +244,10 @@ function evaluateAuthorization(
 
   const grantedCodes = new Set(state.permissionScope.map(normalizeRequiredCode));
   const roleIds = new Set([
-    ...state.userRoles.map((role) => role.roleId),
+    ...state.roleBindings
+      .filter((binding) => normalizeRequiredCode(binding.effect || "allow") !== "deny")
+      .filter((binding) => !["disabled", "inactive", "revoked"].includes(normalizeRequiredCode(binding.status)))
+      .map((binding) => binding.roleId),
     ...(normalizedHint.roleIds ?? []).map(normalizeRequiredCode),
   ]);
 
@@ -373,20 +394,35 @@ function toPolicy(value: unknown): SdkworkIamPolicy | undefined {
   };
 }
 
-function toUserRole(value: unknown, fallbackUserId: string): SdkworkIamUserRole | undefined {
+function toRoleBinding(value: unknown): SdkworkIamRoleBinding | undefined {
   const record = toRecord(value);
+  const id = optionalString(record.id) || optionalString(record.roleBindingId) || optionalString(record.role_binding_id);
   const roleId = optionalString(record.roleId) || optionalString(record.role_id) || optionalString(record.id);
-  if (!roleId) {
+  const principalKind = optionalString(record.principalKind) || optionalString(record.principal_kind);
+  const principalId = optionalString(record.principalId) || optionalString(record.principal_id);
+  const scopeKind = optionalString(record.scopeKind) || optionalString(record.scope_kind);
+  const scopeId = optionalString(record.scopeId) || optionalString(record.scope_id);
+  if (!id || !roleId || !principalKind || !principalId || !scopeKind || !scopeId) {
     return undefined;
   }
 
   return {
-    id: optionalString(record.id) || roleId,
-    organizationId: optionalString(record.organizationId) || optionalString(record.organization_id),
-    roleCode: optionalString(record.roleCode) || optionalString(record.code),
+    effect: optionalString(record.effect),
+    id,
+    principalId,
+    principalKind,
     roleId,
-    userId: optionalString(record.userId) || optionalString(record.user_id) || fallbackUserId,
+    scopeId,
+    scopeKind,
+    status: optionalString(record.status),
+    tenantId: optionalString(record.tenantId) || optionalString(record.tenant_id),
   };
+}
+
+function upsertById<T extends { id: string }>(items: readonly T[], item: T): T[] {
+  const next = items.filter((candidate) => candidate.id !== item.id);
+  next.push(item);
+  return next;
 }
 
 function toRecord(value: unknown): Record<string, unknown> {

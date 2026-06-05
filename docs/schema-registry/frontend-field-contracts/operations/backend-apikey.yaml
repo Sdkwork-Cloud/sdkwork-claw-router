@@ -22,6 +22,7 @@ frontend_operations:
     properties:
       userId:
         type: integer
+        format: int64
         minimum: 1
         description: User identifier that owns the API key.
       name:

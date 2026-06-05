@@ -5,9 +5,9 @@ export interface ServiceProviderCollectionResponse {
   /** Items field on service provider collection response. */
   items: Record<string, JsonValue>[];
   /** Page field on service provider collection response. */
-  page: number;
+  page: string;
   /** Page size field on service provider collection response. */
-  pageSize: number;
+  pageSize: string;
   /** Total field on service provider collection response. */
-  total: number;
+  total: string;
 }

@@ -3,9 +3,9 @@ export interface PromotionCollectionResponse {
   /** Items field on promotion collection response. */
   items: Record<string, unknown>[];
   /** Page field on promotion collection response. */
-  page: number;
+  page: string;
   /** Page size field on promotion collection response. */
-  pageSize: number;
+  pageSize: string;
   /** Total field on promotion collection response. */
-  total: number;
+  total: string;
 }

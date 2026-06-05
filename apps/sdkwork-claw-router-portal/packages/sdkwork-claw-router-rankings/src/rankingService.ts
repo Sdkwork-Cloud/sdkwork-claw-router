@@ -45,7 +45,7 @@ export class RankingService {
       vendorCode: normalizeQueryString(filters.vendorCode),
       modality: normalizeQueryString(filters.modality),
       q: normalizeQueryString(filters.searchQuery),
-      limit: filters.limit ?? 200,
+      limit: String(filters.limit ?? 200),
     });
     ensureSdkworkApiSuccess(result, 'Failed to fetch model rankings');
     const data = readApiRecord(result);

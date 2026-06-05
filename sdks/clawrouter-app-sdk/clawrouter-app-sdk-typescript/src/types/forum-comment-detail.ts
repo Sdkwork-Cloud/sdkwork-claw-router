@@ -10,7 +10,7 @@ export interface ForumCommentDetail {
   /** Content field on forum comment detail. */
   content: string;
   /** Content id field on forum comment detail. */
-  contentId: number;
+  contentId: string;
   /** Content type field on forum comment detail. */
   contentType: 'FEEDS' | 'COMMENTS' | 'COURSE';
   /** Created at field on forum comment detail. */
@@ -22,17 +22,17 @@ export interface ForumCommentDetail {
   /** Is top field on forum comment detail. */
   isTop: boolean;
   /** Likes field on forum comment detail. */
-  likes: number;
+  likes: string;
   /** Parent id field on forum comment detail. */
-  parentId?: number;
+  parentId?: string;
   /** Replies field on forum comment detail. */
   replies: ForumCommentItem[];
   /** Reply count field on forum comment detail. */
-  replyCount: number;
+  replyCount: string;
   /** Status field on forum comment detail. */
   status: 'PUBLISHED' | 'PENDING' | 'DELETED';
   /** Updated at field on forum comment detail. */
   updatedAt: string;
   /** User id field on forum comment detail. */
-  userId: number;
+  userId: string;
 }

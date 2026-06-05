@@ -5,9 +5,9 @@ export interface CommercePaymentProviderListResponse {
   /** Items field on commerce payment provider list response. */
   items: CommercePaymentProviderItem[];
   /** Page field on commerce payment provider list response. */
-  page: number;
+  page: string;
   /** Page size field on commerce payment provider list response. */
-  pageSize: number;
+  pageSize: string;
   /** Total field on commerce payment provider list response. */
-  total: number;
+  total: string;
 }

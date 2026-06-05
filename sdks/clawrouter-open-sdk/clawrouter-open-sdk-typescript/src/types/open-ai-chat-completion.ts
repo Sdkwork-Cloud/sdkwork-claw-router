@@ -7,7 +7,7 @@ export interface OpenAiChatCompletion {
   /** Generated chat completion choices. */
   choices: OpenAiChatCompletionChoice[];
   /** Unix timestamp in seconds when the completion was created. */
-  created: number;
+  created: string;
   /** Chat completion identifier. */
   id: string;
   /** Model id used by the upstream response. */

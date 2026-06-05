@@ -1,7 +1,7 @@
-use sha2::{Digest, Sha256};
 use sqlx::{Row, Sqlite, SqlitePool, Transaction};
 
 use crate::domain::{DomainError, DomainResult};
+use crate::infrastructure::sql::runtime_id::next_admin_app_id;
 use crate::infrastructure::sql::sql_admin_product_center::{
     media_resource_locator, media_resource_object_blob_id, media_resource_stable_id,
 };
@@ -21,9 +21,7 @@ const PUBLIC_APP_STORE_TENANT_ID: i64 = 20_001;
 const PUBLIC_APP_STORE_ORGANIZATION_ID: i64 = 0;
 const APP_STORE_CATEGORY_TYPE: i32 = 999_999;
 const APP_STORE_CATEGORY_GROUP: &str = "app-store";
-const ASSIGNED_ID_FLOOR: i64 = 1_000_000_000_000;
-const ASSIGNED_ID_RANGE: u64 = 8_000_000_000_000;
-const MAX_ASSIGNED_ID_ATTEMPTS: u8 = 16;
+const MAX_RUNTIME_ID_ATTEMPTS: u8 = 16;
 
 #[derive(Debug, Clone)]
 pub struct SqliteAdminAppStore {
@@ -2209,74 +2207,65 @@ async fn insert_audit_log(
 }
 
 async fn next_assigned_id(tx: &mut Transaction<'_, Sqlite>, app_uuid: &str) -> DomainResult<i64> {
-    for attempt in 0..MAX_ASSIGNED_ID_ATTEMPTS {
-        let id = assigned_entity_id("admin-app", app_uuid, attempt);
-        let exists: i64 = sqlx::query_scalar("SELECT COUNT(1) FROM plus_app WHERE id = ?")
-            .bind(id)
-            .fetch_one(&mut **tx)
-            .await
-            .map_err(|error| store_error("failed to check app assigned id", error))?;
-        if exists == 0 {
-            return Ok(id);
-        }
-    }
-    Err(DomainError::conflict(
-        "failed to allocate assigned id for admin-app",
-    ))
+    next_app_table_id(
+        tx,
+        "admin-app",
+        app_uuid,
+        "SELECT COUNT(1) FROM plus_app WHERE id = ?",
+        "failed to check app runtime id",
+    )
+    .await
 }
 
 async fn next_category_assigned_id(
     tx: &mut Transaction<'_, Sqlite>,
     category_uuid: &str,
 ) -> DomainResult<i64> {
-    for attempt in 0..MAX_ASSIGNED_ID_ATTEMPTS {
-        let id = assigned_entity_id("admin-app-category", category_uuid, attempt);
-        let exists: i64 = sqlx::query_scalar("SELECT COUNT(1) FROM plus_category WHERE id = ?")
-            .bind(id)
-            .fetch_one(&mut **tx)
-            .await
-            .map_err(|error| store_error("failed to check app category assigned id", error))?;
-        if exists == 0 {
-            return Ok(id);
-        }
-    }
-    Err(DomainError::conflict(
-        "failed to allocate assigned id for admin-app-category",
-    ))
+    next_app_table_id(
+        tx,
+        "admin-app-category",
+        category_uuid,
+        "SELECT COUNT(1) FROM plus_category WHERE id = ?",
+        "failed to check app category runtime id",
+    )
+    .await
 }
 
 async fn next_template_assigned_id(
     tx: &mut Transaction<'_, Sqlite>,
     template_uuid: &str,
 ) -> DomainResult<i64> {
-    for attempt in 0..MAX_ASSIGNED_ID_ATTEMPTS {
-        let id = assigned_entity_id("admin-app-template", template_uuid, attempt);
-        let exists: i64 =
-            sqlx::query_scalar("SELECT COUNT(1) FROM studio_app_template WHERE id = ?")
-                .bind(id)
-                .fetch_one(&mut **tx)
-                .await
-                .map_err(|error| store_error("failed to check app template assigned id", error))?;
+    next_app_table_id(
+        tx,
+        "admin-app-template",
+        template_uuid,
+        "SELECT COUNT(1) FROM studio_app_template WHERE id = ?",
+        "failed to check app template runtime id",
+    )
+    .await
+}
+
+async fn next_app_table_id(
+    tx: &mut Transaction<'_, Sqlite>,
+    context: &'static str,
+    entity_uuid: &str,
+    exists_sql: &'static str,
+    exists_error: &'static str,
+) -> DomainResult<i64> {
+    for _ in 0..MAX_RUNTIME_ID_ATTEMPTS {
+        let id = next_admin_app_id(context)?;
+        let exists: i64 = sqlx::query_scalar(exists_sql)
+            .bind(id)
+            .fetch_one(&mut **tx)
+            .await
+            .map_err(|error| store_error(exists_error, error))?;
         if exists == 0 {
             return Ok(id);
         }
     }
-    Err(DomainError::conflict(
-        "failed to allocate assigned id for admin-app-template",
-    ))
-}
-
-fn assigned_entity_id(namespace: &str, entity_uuid: &str, attempt: u8) -> i64 {
-    let mut hasher = Sha256::new();
-    hasher.update(namespace.as_bytes());
-    hasher.update([0]);
-    hasher.update(entity_uuid.as_bytes());
-    hasher.update([0]);
-    hasher.update([attempt]);
-    let digest = hasher.finalize();
-    let mut bytes = [0_u8; 8];
-    bytes.copy_from_slice(&digest[..8]);
-    ASSIGNED_ID_FLOOR + (u64::from_be_bytes(bytes) % ASSIGNED_ID_RANGE) as i64
+    Err(DomainError::conflict(format!(
+        "failed to allocate snowflake id for {context}: {entity_uuid}"
+    )))
 }
 
 fn normalize_config(

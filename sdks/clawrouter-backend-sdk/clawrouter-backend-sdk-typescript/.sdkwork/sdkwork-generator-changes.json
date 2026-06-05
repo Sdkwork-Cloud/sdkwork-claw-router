@@ -8,13 +8,10 @@
     "sdkType": "backend",
     "packageName": "@sdkwork/clawrouter-backend-sdk"
   },
-  "changeFingerprint": "6a7681b2200c99a6b131d74c3ac241acbc265f402197cb0b2514cd718a78ccd3",
+  "changeFingerprint": "e8fb444f4098d9164f975fbf4e53425ba09c91789d326546329f76f320f58801",
   "changes": {
     "createdGeneratedFiles": [],
-    "updatedGeneratedFiles": [
-      "src/types/admin-channel-group-channel-binding-input.ts",
-      "src/types/admin-channel-group-channel-binding-item.ts"
-    ],
+    "updatedGeneratedFiles": [],
     "unchangedGeneratedFiles": [
       "bin/publish-core.mjs",
       "bin/publish.ps1",
@@ -145,6 +142,8 @@
       "src/types/admin-channel-create-request.ts",
       "src/types/admin-channel-credential-input.ts",
       "src/types/admin-channel-credential-item.ts",
+      "src/types/admin-channel-group-channel-binding-input.ts",
+      "src/types/admin-channel-group-channel-binding-item.ts",
       "src/types/admin-channel-group-channel-bindings-replace-request.ts",
       "src/types/admin-channel-group-channel-bindings-response.ts",
       "src/types/admin-channel-group-create-request.ts",
@@ -668,7 +667,10 @@
       "src/types/payments-route-rules-list-result.ts",
       "src/types/payments-runtime-snapshot-retrieve-result.ts",
       "src/types/payments-webhook-events-list-result.ts",
+      "src/types/plus-agent-skill-package-record.ts",
+      "src/types/plus-agent-skill-record.ts",
       "src/types/plus-api-result.ts",
+      "src/types/plus-category-record.ts",
       "src/types/price-simulation-create-result.ts",
       "src/types/pricing-rules-create-result.ts",
       "src/types/pricing-rules-list-result.ts",
@@ -856,73 +858,26 @@
   },
   "impact": {
     "schemaVersion": 1,
-    "areas": [
-      "models"
-    ],
-    "details": [
-      {
-        "area": "models",
-        "paths": [
-          "src/types/admin-channel-group-channel-binding-input.ts",
-          "src/types/admin-channel-group-channel-binding-item.ts"
-        ]
-      }
-    ],
-    "requiresVerification": true,
-    "summary": "Detected impact areas: models. Verification is required."
+    "areas": [],
+    "details": [],
+    "requiresVerification": false,
+    "summary": "No generated, scaffold, or backup changes detected. Verification can be skipped."
   },
   "verificationPlan": {
-    "shouldRun": true,
-    "runPhase": "now",
-    "summary": "Detected impact areas: models. Verification is required. Run the required verification commands now against the generated SDK output.",
-    "steps": [
-      {
-        "id": "check",
-        "title": "Unified package check",
-        "required": true,
-        "rationale": "Validate the generated package with the unified publish helper. Triggered by: models.",
-        "workingDirectory": "D:\\javasource\\spring-ai-plus\\spring-ai-plus-business\\apps\\sdkwork-claw-router\\sdks\\clawrouter-backend-sdk\\clawrouter-backend-sdk-typescript",
-        "command": "node",
-        "args": [
-          "./bin/publish-core.mjs",
-          "--language",
-          "typescript",
-          "--project-dir",
-          ".",
-          "--action",
-          "check"
-        ],
-        "displayCommand": "node ./bin/publish-core.mjs --language typescript --project-dir . --action check"
-      },
-      {
-        "id": "build",
-        "title": "Unified package build",
-        "required": true,
-        "rationale": "Run the full package build because this language uses a lighter check path than the final build. Triggered by: models.",
-        "workingDirectory": "D:\\javasource\\spring-ai-plus\\spring-ai-plus-business\\apps\\sdkwork-claw-router\\sdks\\clawrouter-backend-sdk\\clawrouter-backend-sdk-typescript",
-        "command": "node",
-        "args": [
-          "./bin/publish-core.mjs",
-          "--language",
-          "typescript",
-          "--project-dir",
-          ".",
-          "--action",
-          "build"
-        ],
-        "displayCommand": "node ./bin/publish-core.mjs --language typescript --project-dir . --action build"
-      }
-    ]
+    "shouldRun": false,
+    "runPhase": "skip",
+    "summary": "No generated, scaffold, or backup changes detected. Verification can be skipped.",
+    "steps": []
   },
   "executionDecision": {
     "schemaVersion": 1,
-    "riskLevel": "medium",
-    "nextAction": "verify",
+    "riskLevel": "low",
+    "nextAction": "skip",
     "requiresManualReview": false,
     "applyRequiresExpectedFingerprint": false,
-    "summary": "Changes have been applied. Run the required verification plan now.",
+    "summary": "No actionable changes were detected. No apply or verification step is required.",
     "reasons": [
-      "verification-required"
+      "no-actionable-changes"
     ]
   },
   "preservedLegacyFiles": false

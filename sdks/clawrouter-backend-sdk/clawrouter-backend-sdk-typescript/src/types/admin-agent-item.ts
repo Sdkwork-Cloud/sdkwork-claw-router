@@ -21,7 +21,7 @@ export interface AdminAgentItem {
   /** Name field on admin agent item. */
   name: string;
   /** Owner user id field on admin agent item. */
-  ownerUserId: number;
+  ownerUserId: string;
   /** Status field on admin agent item. */
   status: 'active' | 'disabled';
   /** Template source field on admin agent item. */

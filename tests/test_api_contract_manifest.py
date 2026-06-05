@@ -170,6 +170,110 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                 schema["properties"]["media"]["items"],
             )
 
+    def test_int64_json_contracts_are_serialized_as_browser_safe_strings(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            contract = self.write_contract(
+                root,
+                """
+                frontend_operations:
+                  - route: /admin/user
+                    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts
+                    operation: updateUser
+                    kind: update
+                    api_surface: backend
+                    api_method: PUT
+                    api_path: /backend/v3/api/user
+                    read_sources: [iam_user]
+                    write_tables: [iam_user]
+                    request_schema:
+                      name: AdminUserUpdateRequest
+                      required: [id]
+                      properties:
+                        id:
+                          type: integer
+                          format: int64
+                          minimum: 1
+                          description: User identifier.
+                    response_schema:
+                      name: AdminUserMutationResponse
+                      required: [item]
+                      properties:
+                        item:
+                          type: object
+                          additionalProperties: false
+                          required: [id]
+                          properties:
+                            id:
+                              type: integer
+                              format: int64
+                              minimum: 1
+                  - route: /admin/user
+                    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts
+                    operation: fetchUsers
+                    kind: read
+                    api_surface: backend
+                    api_method: GET
+                    api_path: /backend/v3/api/iam/users
+                    read_sources: [iam_user]
+                    query_parameters:
+                      - name: after_id
+                        schema:
+                          type: integer
+                          format: int64
+                          minimum: 0
+                    response_schema:
+                      name: AdminUsersResponse
+                      required: [items]
+                      properties:
+                        items:
+                          type: array
+                          items:
+                            type: object
+                            required: [id]
+                            properties:
+                              id:
+                                type: integer
+                                format: int64
+                                minimum: 1
+                """,
+            )
+
+            manifest = ApiContractManifestGenerator(root=root, contract_path=contract).generate()
+            operations = {operation["operation"]: operation for operation in manifest["operations"]}
+            expected_positive = {
+                "type": "string",
+                "format": "int64",
+                "pattern": "^[1-9][0-9]*$",
+                "x-sdkwork-int64-string": True,
+                "x-sdkwork-rust-type": "i64",
+            }
+            expected_non_negative = {
+                "type": "string",
+                "format": "int64",
+                "pattern": "^[0-9]+$",
+                "x-sdkwork-int64-string": True,
+                "x-sdkwork-rust-type": "i64",
+            }
+
+            update_schema = operations["updateUser"]["request_schema"]["schema"]
+            self.assertEqual(
+                {**expected_positive, "description": "User identifier."},
+                update_schema["properties"]["id"],
+            )
+            self.assertEqual(
+                expected_positive,
+                operations["updateUser"]["response_schema"]["schema"]["properties"]["item"]["properties"]["id"],
+            )
+            self.assertEqual(
+                expected_non_negative,
+                operations["fetchUsers"]["query_parameters"][0]["schema"],
+            )
+            self.assertEqual(
+                expected_positive,
+                operations["fetchUsers"]["response_schema"]["schema"]["properties"]["items"]["items"]["properties"]["id"],
+            )
+
     def test_open_platform_paths_compile_to_open_platform_sdk_namespace(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

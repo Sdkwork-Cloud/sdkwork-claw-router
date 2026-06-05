@@ -33,7 +33,43 @@ describe("SDKWork IAM SDK port contracts", () => {
         .map((operation) => `${operation.tag}.${operation.operationId}`)
         .sort(),
     );
+    expect(SDKWORK_IAM_APP_SDK_REQUIRED_METHODS).toEqual(
+      expect.arrayContaining([
+        "iam.organizations.list",
+        "iam.organizations.tree.retrieve",
+        "iam.organizationMemberships.list",
+        "iam.departments.list",
+        "iam.departments.tree.retrieve",
+        "iam.departmentAssignments.list",
+        "iam.positions.list",
+        "iam.positionAssignments.list",
+        "iam.roleBindings.list",
+      ]),
+    );
+    expect(SDKWORK_IAM_BACKEND_SDK_REQUIRED_METHODS).toEqual(
+      expect.arrayContaining([
+        "iam.organizations.create",
+        "iam.organizations.retrieve",
+        "iam.organizationMemberships.create",
+        "iam.organizationMemberships.update",
+        "iam.departments.create",
+        "iam.departments.retrieve",
+        "iam.departmentAssignments.create",
+        "iam.positions.create",
+        "iam.positionAssignments.create",
+        "iam.roleBindings.create",
+      ]),
+    );
     expect(SDKWORK_IAM_BACKEND_SDK_REQUIRED_METHODS).not.toContain("iam.users.current.retrieve");
+    expect(SDKWORK_IAM_BACKEND_SDK_REQUIRED_METHODS).not.toContain("iam.organizations.list");
+    expect(SDKWORK_IAM_BACKEND_SDK_REQUIRED_METHODS).not.toContain("iam.departments.list");
+    expect(SDKWORK_IAM_BACKEND_SDK_REQUIRED_METHODS).not.toContain("iam.users.roles.create");
+    expect(SDKWORK_IAM_BACKEND_SDK_REQUIRED_METHODS).not.toContain("iam.users.roles.delete");
+    expect(SDKWORK_IAM_BACKEND_SDK_REQUIRED_METHODS).not.toContain("iam.users.roles.list");
+    expect(SDKWORK_IAM_BACKEND_SDK_REQUIRED_METHODS).not.toContain("iam.organizations.members.create");
+    expect(SDKWORK_IAM_BACKEND_SDK_REQUIRED_METHODS).not.toContain("iam.organizations.members.delete");
+    expect(SDKWORK_IAM_BACKEND_SDK_REQUIRED_METHODS).not.toContain("iam.organizations.members.list");
+    expect(SDKWORK_IAM_BACKEND_SDK_REQUIRED_METHODS).not.toContain("iam.organizations.members.update");
   });
 
   it("accepts generated app SDK clients with resource-oriented auth and iam namespaces", () => {
@@ -92,13 +128,7 @@ describe("SDKWork IAM SDK port contracts", () => {
           },
         },
       },
-      iam: {
-        users: {
-          current: {
-            retrieve: vi.fn(),
-          },
-        },
-      },
+      iam: createAppIamDirectoryResources(),
     };
 
     expect(() => assertIamAppSdkClient(appClient)).not.toThrow();
@@ -120,11 +150,25 @@ describe("SDKWork IAM SDK port contracts", () => {
     expect(getIamSdkSurface(appClient)).toContain("auth.passwordResetRequests.create");
     expect(getIamSdkSurface(appClient)).toContain("auth.oauthAuthorizationUrls.retrieve");
     expect(getIamSdkSurface(appClient)).toContain("iam.users.current.retrieve");
+    expect(getIamSdkSurface(appClient)).toContain("iam.organizations.list");
+    expect(getIamSdkSurface(appClient)).toContain("iam.organizations.tree.retrieve");
+    expect(getIamSdkSurface(appClient)).toContain("iam.organizationMemberships.list");
+    expect(getIamSdkSurface(appClient)).toContain("iam.departments.list");
+    expect(getIamSdkSurface(appClient)).toContain("iam.departments.tree.retrieve");
+    expect(getIamSdkSurface(appClient)).toContain("iam.departmentAssignments.list");
+    expect(getIamSdkSurface(appClient)).toContain("iam.positions.list");
+    expect(getIamSdkSurface(appClient)).toContain("iam.positionAssignments.list");
+    expect(getIamSdkSurface(appClient)).toContain("iam.roleBindings.list");
+    expect(getIamSdkSurface(appClient)).not.toContain("iam.departmentMembers.list");
   });
 
   it("accepts generated app SDK clients whose operation methods live on class prototypes", () => {
     class OperationResource {
       async confirm() {
+        return {};
+      }
+
+      async list() {
         return {};
       }
 
@@ -187,11 +231,7 @@ describe("SDKWork IAM SDK port contracts", () => {
           verificationPolicy: new OperationResource(),
         },
       },
-      iam: {
-        users: {
-          current: new OperationResource(),
-        },
-      },
+      iam: createAppIamDirectoryResources(() => new OperationResource()),
     };
 
     expect(() => assertIamAppSdkClient(appClient)).not.toThrow();
@@ -199,6 +239,8 @@ describe("SDKWork IAM SDK port contracts", () => {
     expect(getIamSdkSurface(appClient)).toContain("system.iam.runtime.retrieve");
     expect(getIamSdkSurface(appClient)).toContain("system.iam.verificationPolicy.retrieve");
     expect(getIamSdkSurface(appClient)).toContain("iam.users.current.retrieve");
+    expect(getIamSdkSurface(appClient)).toContain("iam.departments.list");
+    expect(getIamSdkSurface(appClient)).toContain("iam.departmentAssignments.list");
   });
 
   it("rejects retired IAM QR login resources because platform qrAuth owns QR login", () => {
@@ -265,13 +307,7 @@ describe("SDKWork IAM SDK port contracts", () => {
           },
         },
       },
-      iam: {
-        users: {
-          current: {
-            retrieve: vi.fn(),
-          },
-        },
-      },
+      iam: createAppIamDirectoryResources(),
     };
 
     expect(() => assertIamAppSdkClient(appClient)).toThrow(/retired IAM QR login resources/i);
@@ -336,13 +372,7 @@ describe("SDKWork IAM SDK port contracts", () => {
           },
         },
       },
-      iam: {
-        users: {
-          current: {
-            retrieve: vi.fn(),
-          },
-        },
-      },
+      iam: createAppIamDirectoryResources(),
     };
 
     expect(() => assertIamAppSdkClient(partialQrAppClient)).toThrow(
@@ -412,14 +442,28 @@ describe("SDKWork IAM SDK port contracts", () => {
         auditEvents: { list: vi.fn() },
         organizations: {
           list: vi.fn(),
+          tree: {
+            retrieve: vi.fn(),
+          },
           members: { create: vi.fn(), list: vi.fn() },
         },
+        organizationMemberships: { list: vi.fn() },
+        departments: {
+          list: vi.fn(),
+          tree: {
+            retrieve: vi.fn(),
+          },
+        },
+        departmentAssignments: { list: vi.fn() },
         permissions: { list: vi.fn() },
+        positions: { list: vi.fn() },
+        positionAssignments: { list: vi.fn() },
         policies: { list: vi.fn() },
         roles: {
           list: vi.fn(),
           permissions: { create: vi.fn(), delete: vi.fn(), list: vi.fn() },
         },
+        roleBindings: { list: vi.fn() },
         securityEvents: { list: vi.fn() },
         tenants: {
           list: vi.fn(),
@@ -431,101 +475,64 @@ describe("SDKWork IAM SDK port contracts", () => {
           },
           list: vi.fn(),
           retrieve: vi.fn(),
-          roles: { create: vi.fn(), delete: vi.fn(), list: vi.fn() },
         },
       },
     };
 
     expect(() => assertIamBackendSdkClient(invalidBackendClient)).toThrow(
-      /app-only IAM resource.*iam\.users\.current\.retrieve/i,
+      /app-only IAM resource.*iam\.organizations\.list/i,
     );
   });
 
-  it("accepts backend SDK clients that only manage IAM resources", () => {
-    const backendClient = {
+  it("rejects backend SDK clients that expose retired organization member subresources", () => {
+    const invalidBackendClient = {
       iam: {
-        apiKeys: {
-          list: vi.fn(),
-          revoke: vi.fn(),
-        },
-        auditEvents: {
-          list: vi.fn(),
-        },
         organizations: {
           create: vi.fn(),
           delete: vi.fn(),
-          list: vi.fn(),
-          retrieve: vi.fn(),
-          tree: {
-            retrieve: vi.fn(),
-          },
-          update: vi.fn(),
-          members: {
-            create: vi.fn(),
-            delete: vi.fn(),
-            list: vi.fn(),
-            update: vi.fn(),
-          },
-        },
-        permissions: {
-          create: vi.fn(),
-          delete: vi.fn(),
-          list: vi.fn(),
-          retrieve: vi.fn(),
-          update: vi.fn(),
-        },
-        policies: {
-          create: vi.fn(),
-          delete: vi.fn(),
-          list: vi.fn(),
-          retrieve: vi.fn(),
-          update: vi.fn(),
-        },
-        roles: {
-          create: vi.fn(),
-          delete: vi.fn(),
-          list: vi.fn(),
-          retrieve: vi.fn(),
-          update: vi.fn(),
-          permissions: {
-            create: vi.fn(),
-            delete: vi.fn(),
-            list: vi.fn(),
-          },
-        },
-        securityEvents: {
-          list: vi.fn(),
-        },
-        tenants: {
-          create: vi.fn(),
-          delete: vi.fn(),
-          list: vi.fn(),
           retrieve: vi.fn(),
           update: vi.fn(),
           members: {
             create: vi.fn(),
-            delete: vi.fn(),
-            list: vi.fn(),
-            update: vi.fn(),
-          },
-        },
-        users: {
-          create: vi.fn(),
-          delete: vi.fn(),
-          list: vi.fn(),
-          retrieve: vi.fn(),
-          update: vi.fn(),
-          roles: {
-            create: vi.fn(),
-            delete: vi.fn(),
-            list: vi.fn(),
           },
         },
       },
     };
 
+    expect(() => assertIamBackendSdkClient(invalidBackendClient)).toThrow(
+      /retired IAM organization member resource.*iam\.organizations\.members\.create/i,
+    );
+  });
+
+  it("rejects backend SDK clients that expose retired direct user role resources", () => {
+    const invalidBackendClient = createBackendIamManagementResources({
+      usersRoles: true,
+    });
+
+    expect(() => assertIamBackendSdkClient(invalidBackendClient)).toThrow(
+      /retired IAM direct user role resource.*iam\.users\.roles\.create/i,
+    );
+  });
+
+  it("accepts backend SDK clients that only manage IAM resources", () => {
+    const backendClient = createBackendIamManagementResources();
+
     expect(() => assertIamBackendSdkClient(backendClient)).not.toThrow();
-    expect(getIamSdkSurface(backendClient)).toContain("iam.organizations.tree.retrieve");
+    expect(getIamSdkSurface(backendClient)).toContain("iam.organizationMemberships.create");
+    expect(getIamSdkSurface(backendClient)).toContain("iam.departments.retrieve");
+    expect(getIamSdkSurface(backendClient)).toContain("iam.departmentAssignments.update");
+    expect(getIamSdkSurface(backendClient)).toContain("iam.positions.update");
+    expect(getIamSdkSurface(backendClient)).toContain("iam.positionAssignments.create");
+    expect(getIamSdkSurface(backendClient)).toContain("iam.roleBindings.delete");
+    expect(getIamSdkSurface(backendClient)).not.toContain("iam.organizations.members.create");
+    expect(getIamSdkSurface(backendClient)).not.toContain("iam.organizations.members.delete");
+    expect(getIamSdkSurface(backendClient)).not.toContain("iam.organizations.members.list");
+    expect(getIamSdkSurface(backendClient)).not.toContain("iam.organizations.members.update");
+    expect(getIamSdkSurface(backendClient)).not.toContain("iam.users.roles.create");
+    expect(getIamSdkSurface(backendClient)).not.toContain("iam.users.roles.delete");
+    expect(getIamSdkSurface(backendClient)).not.toContain("iam.users.roles.list");
+    expect(getIamSdkSurface(backendClient)).not.toContain("iam.organizations.tree.retrieve");
+    expect(getIamSdkSurface(backendClient)).not.toContain("iam.departments.list");
     expect(getIamSdkSurface(backendClient)).toContain("iam.roles.permissions.delete");
     expect(getIamSdkSurface(backendClient)).toContain("iam.tenants.members.update");
   });
@@ -544,3 +551,129 @@ describe("SDKWork IAM SDK port contracts", () => {
     );
   });
 });
+
+function createAppIamDirectoryResources(createResource?: () => { list?: unknown; retrieve?: unknown }) {
+  const listResource = () => createResource?.() ?? { list: vi.fn() };
+  const retrieveResource = () => createResource?.() ?? { retrieve: vi.fn() };
+  const withTree = (resource: Record<string, unknown> | object) => Object.assign(resource, {
+    tree: retrieveResource(),
+  });
+
+  return {
+    organizations: withTree(listResource()),
+    organizationMemberships: listResource(),
+    departments: withTree(listResource()),
+    departmentAssignments: listResource(),
+    positions: listResource(),
+    positionAssignments: listResource(),
+    roleBindings: listResource(),
+    users: {
+      current: retrieveResource(),
+    },
+  };
+}
+
+function createBackendIamManagementResources(options?: { usersRoles?: boolean }) {
+  return {
+    iam: {
+      apiKeys: {
+        list: vi.fn(),
+        revoke: vi.fn(),
+      },
+      auditEvents: {
+        list: vi.fn(),
+      },
+      organizations: {
+        create: vi.fn(),
+        delete: vi.fn(),
+        retrieve: vi.fn(),
+        update: vi.fn(),
+      },
+      organizationMemberships: {
+        create: vi.fn(),
+        update: vi.fn(),
+      },
+      departments: {
+        create: vi.fn(),
+        delete: vi.fn(),
+        retrieve: vi.fn(),
+        update: vi.fn(),
+      },
+      departmentAssignments: {
+        create: vi.fn(),
+        update: vi.fn(),
+      },
+      permissions: {
+        create: vi.fn(),
+        delete: vi.fn(),
+        list: vi.fn(),
+        retrieve: vi.fn(),
+        update: vi.fn(),
+      },
+      policies: {
+        create: vi.fn(),
+        delete: vi.fn(),
+        list: vi.fn(),
+        retrieve: vi.fn(),
+        update: vi.fn(),
+      },
+      positions: {
+        create: vi.fn(),
+        delete: vi.fn(),
+        update: vi.fn(),
+      },
+      positionAssignments: {
+        create: vi.fn(),
+        update: vi.fn(),
+      },
+      roles: {
+        create: vi.fn(),
+        delete: vi.fn(),
+        list: vi.fn(),
+        retrieve: vi.fn(),
+        update: vi.fn(),
+        permissions: {
+          create: vi.fn(),
+          delete: vi.fn(),
+          list: vi.fn(),
+        },
+      },
+      roleBindings: {
+        create: vi.fn(),
+        delete: vi.fn(),
+      },
+      securityEvents: {
+        list: vi.fn(),
+      },
+      tenants: {
+        create: vi.fn(),
+        delete: vi.fn(),
+        list: vi.fn(),
+        retrieve: vi.fn(),
+        update: vi.fn(),
+        members: {
+          create: vi.fn(),
+          delete: vi.fn(),
+          list: vi.fn(),
+          update: vi.fn(),
+        },
+      },
+      users: {
+        create: vi.fn(),
+        delete: vi.fn(),
+        list: vi.fn(),
+        retrieve: vi.fn(),
+        update: vi.fn(),
+        ...(options?.usersRoles
+          ? {
+              roles: {
+                create: vi.fn(),
+                delete: vi.fn(),
+                list: vi.fn(),
+              },
+            }
+          : {}),
+      },
+    },
+  };
+}

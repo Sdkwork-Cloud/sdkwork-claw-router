@@ -3,7 +3,7 @@ import type { ProviderJsonValue } from './provider-json-value';
 /** OpenAI-compatible skill version object exposed by Claw Router. */
 export interface OpenAiSkillVersion {
   /** Unix timestamp in seconds when the version was created. */
-  created_at?: number;
+  created_at?: string;
   /** Skill version identifier. */
   id: string;
   /** Developer-defined skill version metadata. */

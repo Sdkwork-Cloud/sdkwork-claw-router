@@ -20,7 +20,7 @@ export interface RuntimeArtifactCreateRequest {
   /** Sha 256 field on runtime artifact create request. */
   sha256?: string;
   /** Size bytes field on runtime artifact create request. */
-  sizeBytes?: number;
+  sizeBytes?: string;
   /** Storage key field on runtime artifact create request. */
   storageKey?: string;
 }

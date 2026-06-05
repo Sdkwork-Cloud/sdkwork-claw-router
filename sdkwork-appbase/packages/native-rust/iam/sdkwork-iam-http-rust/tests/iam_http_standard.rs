@@ -40,6 +40,73 @@ fn app_routes_own_auth_sessions_and_current_user() {
 }
 
 #[test]
+fn app_routes_expose_independent_organization_directory_reads() {
+    let routes = app_routes();
+
+    for route in [
+        IamHttpRoute::new(
+            HttpMethod::Get,
+            "/app/v3/api/iam/organizations",
+            "iam",
+            "organizations.list",
+        ),
+        IamHttpRoute::new(
+            HttpMethod::Get,
+            "/app/v3/api/iam/organizations/tree",
+            "iam",
+            "organizations.tree.retrieve",
+        ),
+        IamHttpRoute::new(
+            HttpMethod::Get,
+            "/app/v3/api/iam/organization_memberships",
+            "iam",
+            "organizationMemberships.list",
+        ),
+        IamHttpRoute::new(
+            HttpMethod::Get,
+            "/app/v3/api/iam/departments",
+            "iam",
+            "departments.list",
+        ),
+        IamHttpRoute::new(
+            HttpMethod::Get,
+            "/app/v3/api/iam/departments/tree",
+            "iam",
+            "departments.tree.retrieve",
+        ),
+        IamHttpRoute::new(
+            HttpMethod::Get,
+            "/app/v3/api/iam/department_assignments",
+            "iam",
+            "departmentAssignments.list",
+        ),
+        IamHttpRoute::new(
+            HttpMethod::Get,
+            "/app/v3/api/iam/positions",
+            "iam",
+            "positions.list",
+        ),
+        IamHttpRoute::new(
+            HttpMethod::Get,
+            "/app/v3/api/iam/position_assignments",
+            "iam",
+            "positionAssignments.list",
+        ),
+        IamHttpRoute::new(
+            HttpMethod::Get,
+            "/app/v3/api/iam/role_bindings",
+            "iam",
+            "roleBindings.list",
+        ),
+    ] {
+        assert!(
+            routes.contains(&route),
+            "missing app IAM directory route: {route:?}"
+        );
+    }
+}
+
+#[test]
 fn app_route_manifest_matches_the_standard_operation_surface() {
     let routes = app_routes();
     assert!(
@@ -79,15 +146,24 @@ fn app_route_manifest_matches_the_standard_operation_surface() {
     assert_eq!(
         operation_ids,
         vec![
+            "departmentAssignments.list",
+            "departments.list",
+            "departments.tree.retrieve",
             "oauthAuthorizationUrls.retrieve",
             "oauthSessions.create",
+            "organizationMemberships.list",
+            "organizations.list",
+            "organizations.tree.retrieve",
             "passwordResetRequests.create",
             "passwordResets.create",
+            "positionAssignments.list",
+            "positions.list",
             "qrAuth.sessions.create",
             "qrAuth.sessions.passwords.create",
             "qrAuth.sessions.retrieve",
             "qrAuth.sessions.scans.create",
             "registrations.create",
+            "roleBindings.list",
             "sessions.create",
             "sessions.current.delete",
             "sessions.current.retrieve",
@@ -138,15 +214,17 @@ fn backend_route_manifest_matches_the_standard_management_operation_surface() {
             "apiKeys.list",
             "apiKeys.revoke",
             "auditEvents.list",
+            "departmentAssignments.create",
+            "departmentAssignments.update",
+            "departments.create",
+            "departments.delete",
+            "departments.retrieve",
+            "departments.update",
+            "organizationMemberships.create",
+            "organizationMemberships.update",
             "organizations.create",
             "organizations.delete",
-            "organizations.list",
-            "organizations.members.create",
-            "organizations.members.delete",
-            "organizations.members.list",
-            "organizations.members.update",
             "organizations.retrieve",
-            "organizations.tree.retrieve",
             "organizations.update",
             "permissions.create",
             "permissions.delete",
@@ -158,6 +236,13 @@ fn backend_route_manifest_matches_the_standard_management_operation_surface() {
             "policies.list",
             "policies.retrieve",
             "policies.update",
+            "positionAssignments.create",
+            "positionAssignments.update",
+            "positions.create",
+            "positions.delete",
+            "positions.update",
+            "roleBindings.create",
+            "roleBindings.delete",
             "roles.create",
             "roles.delete",
             "roles.list",
@@ -180,13 +265,19 @@ fn backend_route_manifest_matches_the_standard_management_operation_surface() {
             "users.delete",
             "users.list",
             "users.retrieve",
-            "users.roles.create",
-            "users.roles.delete",
-            "users.roles.list",
             "users.update",
         ]
     );
     assert!(!operation_ids.contains(&"users.current.retrieve"));
+    assert!(!operation_ids.contains(&"users.roles.create"));
+    assert!(!operation_ids.contains(&"users.roles.delete"));
+    assert!(!operation_ids.contains(&"users.roles.list"));
+    assert!(
+        backend_routes()
+            .iter()
+            .all(|route| !route.path.contains("/users/{userId}/roles")),
+        "direct user-role backend routes must be retired; use /iam/role_bindings"
+    );
 }
 
 #[test]

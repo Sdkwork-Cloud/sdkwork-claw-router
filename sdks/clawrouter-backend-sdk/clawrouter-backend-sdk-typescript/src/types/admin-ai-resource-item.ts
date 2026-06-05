@@ -29,7 +29,7 @@ export interface AdminAiResourceItem {
   /** Resource type field on admin ai resource item. */
   resourceType: 'vendor' | 'modality' | 'api_endpoint' | 'model_api' | 'bundle';
   /** Sort order field on admin ai resource item. */
-  sortOrder?: number;
+  sortOrder?: string;
   /** Status field on admin ai resource item. */
   status: 'active' | 'disabled' | 'inactive';
   /** Vendor code field on admin ai resource item. */

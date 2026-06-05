@@ -3,11 +3,11 @@ import type { ProviderJsonValue } from './provider-json-value';
 /** OpenAI-compatible container file object. */
 export interface OpenAiContainerFile {
   /** File size in bytes. */
-  bytes?: number;
+  bytes?: string;
   /** Container identifier that owns the file. */
   container_id?: string;
   /** Unix timestamp in seconds when the file was created. */
-  created_at: number;
+  created_at: string;
   /** Container file name. */
   filename?: string;
   /** Container file identifier. */

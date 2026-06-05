@@ -11,7 +11,7 @@ import {
 type InventoryAdminTab = 'stocks' | 'reservations' | 'ledger';
 type InventoryAdminGroup = string;
 
-const DEFAULT_PAGE_PARAMS = { page: 1, pageSize: 100 };
+const DEFAULT_PAGE_PARAMS = { page: '1', pageSize: '100' };
 const DEFAULT_INVENTORY_SECTION_ID: InventoryAdminTab = 'stocks';
 
 type InventoryAdminProps = {

@@ -5,8 +5,8 @@ import type { AdjustmentsListResult, AuditEventsListResult, BindingsListResult, 
 
 
 export interface ServiceProvidersProviderWalletAccountsListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
   providerId?: string;
   sellerProviderId?: string;
@@ -38,8 +38,8 @@ export class ServiceProvidersProviderWalletAccountsApi {
 }
 
 export interface ServiceProvidersUsageListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
   providerId?: string;
   sellerProviderId?: string;
@@ -71,8 +71,8 @@ export class ServiceProvidersUsageApi {
 }
 
 export interface ServiceProvidersStatementsListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
   providerId?: string;
   sellerProviderId?: string;
@@ -104,8 +104,8 @@ export class ServiceProvidersStatementsApi {
 }
 
 export interface ServiceProvidersRiskEventsListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
   providerId?: string;
   sellerProviderId?: string;
@@ -137,8 +137,8 @@ export class ServiceProvidersRiskEventsApi {
 }
 
 export interface ServiceProvidersRelationsListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
   providerId?: string;
   sellerProviderId?: string;
@@ -170,8 +170,8 @@ export class ServiceProvidersRelationsApi {
 }
 
 export interface ServiceProvidersReconciliationRunsListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
   providerId?: string;
   sellerProviderId?: string;
@@ -203,8 +203,8 @@ export class ServiceProvidersReconciliationRunsApi {
 }
 
 export interface ServiceProvidersProviderRegistryListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
   providerId?: string;
   sellerProviderId?: string;
@@ -260,8 +260,8 @@ export class ServiceProvidersPriceSimulationApi {
 }
 
 export interface ServiceProvidersPricingRulesListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
   providerId?: string;
   sellerProviderId?: string;
@@ -323,8 +323,8 @@ export class ServiceProvidersPricingRulesApi {
 }
 
 export interface ServiceProvidersMembersListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
   providerId?: string;
   sellerProviderId?: string;
@@ -356,8 +356,8 @@ export class ServiceProvidersMembersApi {
 }
 
 export interface ServiceProvidersDownstreamsListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
   providerId?: string;
   sellerProviderId?: string;
@@ -404,8 +404,8 @@ export class ServiceProvidersDownstreamsApi {
 }
 
 export interface ServiceProvidersDashboardRetrieveParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
   providerId?: string;
   sellerProviderId?: string;
@@ -437,8 +437,8 @@ export class ServiceProvidersDashboardApi {
 }
 
 export interface ServiceProvidersContractsListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
   providerId?: string;
   sellerProviderId?: string;
@@ -470,8 +470,8 @@ export class ServiceProvidersContractsApi {
 }
 
 export interface ServiceProvidersBindingsListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
   providerId?: string;
   sellerProviderId?: string;
@@ -503,8 +503,8 @@ export class ServiceProvidersBindingsApi {
 }
 
 export interface ServiceProvidersAuditEventsListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
   providerId?: string;
   sellerProviderId?: string;
@@ -536,8 +536,8 @@ export class ServiceProvidersAuditEventsApi {
 }
 
 export interface ServiceProvidersAdjustmentsListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
   providerId?: string;
   sellerProviderId?: string;

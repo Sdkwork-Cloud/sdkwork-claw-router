@@ -1538,10 +1538,10 @@ function updateToolInputFromForm(form: FormData, t: TranslationFn): AdminMcpTool
 
 function createMcpBindingInputFromForm(form: FormData, t: TranslationFn): AdminMcpBindingCreateInput {
   return {
-    serverRevisionId: optionalInteger(form, 'serverRevisionId', t),
-    toolId: optionalInteger(form, 'toolId', t),
+    serverRevisionId: optionalIntegerString(form, 'serverRevisionId', t),
+    toolId: optionalIntegerString(form, 'toolId', t),
     ownerType: requiredMcpFormText(form, 'ownerType', t),
-    ownerId: requiredInteger(form, 'ownerId', t),
+    ownerId: requiredIntegerString(form, 'ownerId', t),
     allowedTools: parseOptionalStringArray(form, 'allowedTools', t),
     deniedTools: parseOptionalStringArray(form, 'deniedTools', t),
     policyJson: parseOptionalJsonObject(form, 'policyJson', t),
@@ -1553,10 +1553,10 @@ function createMcpBindingInputFromForm(form: FormData, t: TranslationFn): AdminM
 
 function updateMcpBindingInputFromForm(form: FormData, t: TranslationFn): AdminMcpBindingUpdateInput {
   return pruneUndefined({
-    serverRevisionId: optionalNullableInteger(form, 'serverRevisionId', MCP_BINDING_NULL_REVISION_VALUE, t),
-    toolId: optionalNullableInteger(form, 'toolId', MCP_BINDING_NULL_TOOL_VALUE, t),
+    serverRevisionId: optionalNullableIntegerString(form, 'serverRevisionId', MCP_BINDING_NULL_REVISION_VALUE, t),
+    toolId: optionalNullableIntegerString(form, 'toolId', MCP_BINDING_NULL_TOOL_VALUE, t),
     ownerType: optionalFormText(form, 'ownerType'),
-    ownerId: optionalInteger(form, 'ownerId', t),
+    ownerId: optionalIntegerString(form, 'ownerId', t),
     allowedTools: parseOptionalStringArray(form, 'allowedTools', t),
     deniedTools: parseOptionalStringArray(form, 'deniedTools', t),
     policyJson: parseOptionalJsonObject(form, 'policyJson', t),
@@ -1671,6 +1671,10 @@ function requiredInteger(form: FormData, key: string, t: TranslationFn): number 
   return value;
 }
 
+function requiredIntegerString(form: FormData, key: string, t: TranslationFn): string {
+  return String(requiredInteger(form, key, t));
+}
+
 function optionalFormText(form: FormData, key: string): string | undefined {
   const value = form.get(key);
   if (typeof value !== 'string') {
@@ -1692,6 +1696,11 @@ function optionalInteger(form: FormData, key: string, t: TranslationFn): number 
   return numberValue;
 }
 
+function optionalIntegerString(form: FormData, key: string, t: TranslationFn): string | undefined {
+  const value = optionalInteger(form, key, t);
+  return value === undefined ? undefined : String(value);
+}
+
 function optionalNullableInteger(form: FormData, key: string, nullValue: string, t: TranslationFn): number | null | undefined {
   const value = optionalFormText(form, key);
   if (value === undefined) {
@@ -1705,6 +1714,20 @@ function optionalNullableInteger(form: FormData, key: string, nullValue: string,
     throw new Error(mcpValidationMessage(t, key, 'integer'));
   }
   return numberValue;
+}
+
+function optionalNullableIntegerString(form: FormData, key: string, nullValue: string, t: TranslationFn): string | null | undefined {
+  const value = optionalFormText(form, key);
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === nullValue) {
+    return null;
+  }
+  if (!/^-?\d+$/u.test(value)) {
+    throw new Error(mcpValidationMessage(t, key, 'integer'));
+  }
+  return value;
 }
 
 function optionalBoolean(form: FormData, key: string, t: TranslationFn): boolean | undefined {

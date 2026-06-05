@@ -1009,17 +1009,10 @@ frontend_operations:
               type: string
             method:
               type: string
-              enum:
-              - GET
-              - POST
-              - PUT
-              - PATCH
-              - DELETE
-              - OPTIONS
-              - HEAD
+              enum: [GET, POST, PUT, PATCH, DELETE, OPTIONS, HEAD]
             status:
               type: integer
-              format: int64
+              format: int32
             duration:
               type: string
               description: HTTP latency display value, for example 128ms.

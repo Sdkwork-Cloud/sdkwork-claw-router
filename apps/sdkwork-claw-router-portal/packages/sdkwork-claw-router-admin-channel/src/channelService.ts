@@ -117,27 +117,40 @@ export interface AiResource {
   capabilities: string[];
   compositionMode: AdminAiResourceItem['compositionMode'];
   status: AdminAiResourceItem['status'];
-  sortOrder?: AdminAiResourceItem['sortOrder'];
+  sortOrder?: number;
   members: {
     parentResourceCode: AdminAiResourceMemberItem['parentResourceCode'];
     memberResourceCode: AdminAiResourceMemberItem['memberResourceCode'];
     memberRole: AdminAiResourceMemberItem['memberRole'];
     required: AdminAiResourceMemberItem['required'];
-    sortOrder?: AdminAiResourceMemberItem['sortOrder'];
+    sortOrder?: number;
   }[];
 }
 
-export type AiResourceGroup = AdminAiResourceGroupItem & {
+export type AiResourceGroup = Omit<AdminAiResourceGroupItem, 'resourceCount' | 'sortOrder'> & {
+  resourceCount: number;
+  sortOrder: number | null;
   vendorCodes: string[];
   capability?: string;
   capabilities: string[];
 };
 
-export type AiResourceMember = AdminAiResourceMemberItem;
+export interface AiResourceMember {
+  parentResourceCode: AdminAiResourceMemberItem['parentResourceCode'];
+  memberResourceCode: AdminAiResourceMemberItem['memberResourceCode'];
+  memberRole: AdminAiResourceMemberItem['memberRole'];
+  required: AdminAiResourceMemberItem['required'];
+  sortOrder?: number;
+}
 
-export type AiResourceMemberInput = AdminAiResourceMemberInput;
+export interface AiResourceMemberInput {
+  memberResourceCode: AdminAiResourceMemberInput['memberResourceCode'];
+  memberRole?: AdminAiResourceMemberInput['memberRole'];
+  required?: AdminAiResourceMemberInput['required'];
+  sortOrder?: number | null;
+}
 
-export type AiResourceCreateInput = {
+export interface AiResourceCreateInput {
   resourceCode: string;
   resourceType: AiResource['resourceType'];
   displayName: string;
@@ -151,9 +164,9 @@ export type AiResourceCreateInput = {
   status?: AiResource['status'];
   sortOrder?: number | null;
   members?: AiResourceMemberInput[];
-};
+}
 
-export type AiResourceUpdateInput = {
+export interface AiResourceUpdateInput {
   resourceCode?: string;
   resourceType?: AiResource['resourceType'];
   displayName?: string;
@@ -167,7 +180,7 @@ export type AiResourceUpdateInput = {
   status?: AiResource['status'];
   sortOrder?: number | null;
   members?: AiResourceMemberInput[];
-};
+}
 
 export type ChannelCreateInput = {
   name: string;
@@ -449,12 +462,12 @@ function toCreateChannelRequest(channel: ChannelCreateInput): AdminChannelCreate
     resourceCodes: channel.resourceCodes === undefined
       ? undefined
       : toResourceCodes(channel.resourceCodes),
-    timeoutMs: optionalInteger(channel.timeoutMs),
+    timeoutMs: optionalPositiveIntegerString(channel.timeoutMs, 'timeoutMs'),
     retryPolicy: channel.retryPolicy,
     circuitBreakerPolicy: channel.circuitBreakerPolicy === undefined
       ? undefined
       : normalizeCircuitBreakerPolicy(channel.circuitBreakerPolicy),
-    weight: optionalInteger(channel.weight),
+    weight: optionalPositiveIntegerString(channel.weight, 'weight'),
     status: channel.status,
   });
 }
@@ -475,14 +488,14 @@ function toUpdateChannelRequest(id: string, updates: ChannelUpdateInput): AdminC
     resourceCodes: updates.resourceCodes === undefined
       ? undefined
       : toResourceCodesForUpdate(updates.resourceCodes),
-    timeoutMs: updates.timeoutMs === undefined ? undefined : optionalNullableInteger(updates.timeoutMs),
+    timeoutMs: updates.timeoutMs === undefined ? undefined : optionalNullablePositiveIntegerString(updates.timeoutMs, 'timeoutMs'),
     retryPolicy: updates.retryPolicy,
     circuitBreakerPolicy: updates.circuitBreakerPolicy === undefined
       ? undefined
       : updates.circuitBreakerPolicy === null
         ? null
         : normalizeCircuitBreakerPolicy(updates.circuitBreakerPolicy),
-    weight: optionalInteger(updates.weight),
+    weight: optionalPositiveIntegerString(updates.weight, 'weight'),
     status: updates.status,
   });
 }
@@ -646,8 +659,8 @@ function toCredentialInput(credential: ChannelCredentialInput, index: number): A
     baseUrl: requiredProviderEndpointBaseUrl(credential.baseUrl),
     apiKey,
     secretRef,
-    priority: optionalBoundedPositiveInteger(credential.priority, `credentials[${index}].priority`, 1_000_000),
-    weight: optionalBoundedPositiveInteger(credential.weight, `credentials[${index}].weight`, 10_000),
+    priority: optionalBoundedPositiveIntegerString(credential.priority, `credentials[${index}].priority`, 1_000_000),
+    weight: optionalBoundedPositiveIntegerString(credential.weight, `credentials[${index}].weight`, 10_000),
     status: credential.status === undefined ? undefined : credentialStatusValue(credential.status),
   });
 }
@@ -702,7 +715,7 @@ function toCreateAiResourceRequest(
       ? undefined
       : aiResourceCompositionMode(input.compositionMode),
     status: input.status === undefined ? undefined : aiResourceStatus(input.status),
-    sortOrder: optionalNullableNonNegativeInteger(input.sortOrder),
+    sortOrder: optionalNullableNonNegativeIntegerString(input.sortOrder, 'sortOrder'),
     members: input.members === undefined ? undefined : toAiResourceMemberInputs(input.members),
   });
 }
@@ -740,7 +753,7 @@ function toUpdateAiResourceRequest(
     status: input.status === undefined ? undefined : aiResourceStatus(input.status),
     sortOrder: input.sortOrder === undefined
       ? undefined
-      : optionalNullableNonNegativeInteger(input.sortOrder),
+      : optionalNullableNonNegativeIntegerString(input.sortOrder, 'sortOrder'),
     members: input.members === undefined ? undefined : toAiResourceMemberInputs(input.members),
   });
 }
@@ -833,7 +846,7 @@ function toAiResourceMemberInputs(
     required: member.required,
     sortOrder: member.sortOrder === undefined
       ? undefined
-      : optionalNullableNonNegativeInteger(member.sortOrder),
+      : optionalNullableNonNegativeIntegerString(member.sortOrder, `members[${index}].sortOrder`),
   }));
 }
 
@@ -996,6 +1009,16 @@ function optionalInteger(value: number | undefined): number | undefined {
   return value;
 }
 
+function optionalPositiveIntegerString(value: number | undefined, fieldName: string): string | undefined {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (!Number.isSafeInteger(value) || value < 1) {
+    throw new Error(`${fieldName} must be a positive integer`);
+  }
+  return String(value);
+}
+
 function optionalBoundedPositiveInteger(value: number | undefined, fieldName: string, maxValue: number): number | undefined {
   if (value === undefined) {
     return undefined;
@@ -1006,11 +1029,30 @@ function optionalBoundedPositiveInteger(value: number | undefined, fieldName: st
   return value;
 }
 
+function optionalBoundedPositiveIntegerString(
+  value: number | undefined,
+  fieldName: string,
+  maxValue: number,
+): string | undefined {
+  const normalized = optionalBoundedPositiveInteger(value, fieldName, maxValue);
+  return normalized === undefined ? undefined : String(normalized);
+}
+
 function optionalNullableInteger(value: number | null | undefined): number | null | undefined {
   if (value === null) {
     return null;
   }
   return optionalInteger(value);
+}
+
+function optionalNullablePositiveIntegerString(
+  value: number | null | undefined,
+  fieldName: string,
+): string | null | undefined {
+  if (value === null) {
+    return null;
+  }
+  return optionalPositiveIntegerString(value, fieldName);
 }
 
 function optionalNullableNonNegativeInteger(value: number | null | undefined): number | null | undefined {
@@ -1024,6 +1066,22 @@ function optionalNullableNonNegativeInteger(value: number | null | undefined): n
     throw new Error('value must be a non-negative integer');
   }
   return value;
+}
+
+function optionalNullableNonNegativeIntegerString(
+  value: number | null | undefined,
+  fieldName: string,
+): string | null | undefined {
+  if (value === null) {
+    return null;
+  }
+  if (value === undefined) {
+    return undefined;
+  }
+  if (!Number.isSafeInteger(value) || value < 0) {
+    throw new Error(`${fieldName} must be a non-negative integer`);
+  }
+  return String(value);
 }
 
 function optionalNullableText(value: string | null | undefined): string | null | undefined {

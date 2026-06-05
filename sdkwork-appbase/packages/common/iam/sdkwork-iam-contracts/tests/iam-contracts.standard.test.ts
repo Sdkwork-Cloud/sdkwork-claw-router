@@ -38,7 +38,17 @@ describe("SDKWork IAM standard contracts", () => {
     expect(SDKWORK_IAM_API_ROUTES.system.iam.runtime.retrieve.path).toBe("/app/v3/api/system/iam/runtime");
     expect(SDKWORK_IAM_API_ROUTES.system.iam.verificationPolicy.retrieve.path).toBe("/app/v3/api/system/iam/verification_policy");
     expect(SDKWORK_IAM_API_ROUTES.iam.users.current.retrieve.path).toBe("/app/v3/api/iam/users/current");
+    expect(SDKWORK_IAM_API_ROUTES.iam.organizations.list.path).toBe("/app/v3/api/iam/organizations");
+    expect(SDKWORK_IAM_API_ROUTES.iam.organizations.tree.retrieve.path).toBe("/app/v3/api/iam/organizations/tree");
+    expect(SDKWORK_IAM_API_ROUTES.iam.organizationMemberships.list.path).toBe("/app/v3/api/iam/organization_memberships");
+    expect(SDKWORK_IAM_API_ROUTES.iam.departments.list.path).toBe("/app/v3/api/iam/departments");
+    expect(SDKWORK_IAM_API_ROUTES.iam.departments.tree.retrieve.path).toBe("/app/v3/api/iam/departments/tree");
+    expect(SDKWORK_IAM_API_ROUTES.iam.departmentAssignments.list.path).toBe("/app/v3/api/iam/department_assignments");
+    expect(SDKWORK_IAM_API_ROUTES.iam.positions.list.path).toBe("/app/v3/api/iam/positions");
+    expect(SDKWORK_IAM_API_ROUTES.iam.positionAssignments.list.path).toBe("/app/v3/api/iam/position_assignments");
+    expect(SDKWORK_IAM_API_ROUTES.iam.roleBindings.list.path).toBe("/app/v3/api/iam/role_bindings");
     expect(SDKWORK_IAM_API_ROUTES.iam.users.list.path).toBe("/backend/v3/api/iam/users");
+    expect(Object.prototype.hasOwnProperty.call(SDKWORK_IAM_API_ROUTES.iam.users, "roles")).toBe(false);
   });
 
   it("uses lower_snake_case URL segments without double underscores", () => {
@@ -55,6 +65,9 @@ describe("SDKWork IAM standard contracts", () => {
     expect(paths).toContain("/backend/v3/api/iam/api_keys");
     expect(paths).toContain("/backend/v3/api/iam/security_events");
     expect(paths).toContain("/backend/v3/api/iam/audit_events");
+    expect(paths).toContain("/app/v3/api/iam/departments");
+    expect(paths).toContain("/app/v3/api/iam/department_assignments");
+    expect(paths.join("\n")).not.toMatch(/iam_accounts|iam_department_members|\/iam\/users\/\{userId\}\/roles/);
   });
 
   it("uses dotted lowerCamelCase operationIds that generate nested SDK resources", () => {
@@ -78,6 +91,29 @@ describe("SDKWork IAM standard contracts", () => {
     expect(operationIds).toContain("apiKeys.list");
     expect(operationIds).toContain("securityEvents.list");
     expect(operationIds).toContain("auditEvents.list");
+    expect(operationIds).toContain("organizations.list");
+    expect(operationIds).toContain("organizations.tree.retrieve");
+    expect(operationIds).toContain("organizationMemberships.list");
+    expect(operationIds).toContain("organizationMemberships.create");
+    expect(operationIds).toContain("organizationMemberships.update");
+    expect(operationIds).not.toContain("organizations.members.create");
+    expect(operationIds).not.toContain("organizations.members.delete");
+    expect(operationIds).not.toContain("organizations.members.list");
+    expect(operationIds).not.toContain("organizations.members.update");
+    expect(operationIds).toContain("departments.list");
+    expect(operationIds).toContain("departments.tree.retrieve");
+    expect(operationIds).toContain("departments.create");
+    expect(operationIds).toContain("departments.update");
+    expect(operationIds).toContain("departmentAssignments.list");
+    expect(operationIds).toContain("positions.list");
+    expect(operationIds).toContain("positionAssignments.list");
+    expect(operationIds).toContain("roleBindings.list");
+    expect(operationIds).toContain("roleBindings.create");
+    expect(operationIds).toContain("roleBindings.delete");
+    expect(operationIds).not.toContain("users.roles.create");
+    expect(operationIds).not.toContain("users.roles.delete");
+    expect(operationIds).not.toContain("users.roles.list");
+    expect(operationIds).not.toContain("departmentMembers.list");
     expect(operationIds).not.toContain("loginQrCodeCallbacks.create");
     expect(operationIds).not.toContain("loginQrCodes.confirm");
     expect(operationIds).not.toContain("loginQrCodes.create");
@@ -121,7 +157,14 @@ describe("SDKWork IAM standard contracts", () => {
     expect(SDKWORK_IAM_TABLES).toMatchObject({
       tenant: "iam_tenant",
       organization: "iam_organization",
-      organizationMember: "iam_organization_member",
+      organizationClosure: "iam_organization_closure",
+      organizationMembership: "iam_organization_membership",
+      department: "iam_department",
+      departmentClosure: "iam_department_closure",
+      departmentAssignment: "iam_department_assignment",
+      position: "iam_position",
+      positionAssignment: "iam_position_assignment",
+      roleBinding: "iam_role_binding",
       user: "iam_user",
       userIdentity: "iam_user_identity",
       credential: "iam_credential",
@@ -132,7 +175,6 @@ describe("SDKWork IAM standard contracts", () => {
       permission: "iam_permission",
       policy: "iam_policy",
       rolePermission: "iam_role_permission",
-      userRole: "iam_user_role",
       apiKey: "iam_api_key",
       securityEvent: "iam_security_event",
       auditEvent: "iam_audit_event",
@@ -141,6 +183,11 @@ describe("SDKWork IAM standard contracts", () => {
     for (const tableName of Object.values(SDKWORK_IAM_TABLES)) {
       expect(tableName).toMatch(/^iam_[a-z0-9_]+$/);
       expect(tableName).not.toContain("__");
+      expect(tableName).not.toBe("iam_account");
+      expect(tableName).not.toBe("iam_accounts");
+      expect(tableName).not.toBe("iam_department_member");
+      expect(tableName).not.toBe("iam_department_members");
+      expect(tableName).not.toBe("iam_user_role");
     }
   });
 
@@ -148,7 +195,14 @@ describe("SDKWork IAM standard contracts", () => {
     expect(SDKWORK_IAM_DOMAIN_MODELS.map((model) => model.name)).toEqual([
       "tenant",
       "organization",
-      "organizationMember",
+      "organizationClosure",
+      "organizationMembership",
+      "department",
+      "departmentClosure",
+      "departmentAssignment",
+      "position",
+      "positionAssignment",
+      "roleBinding",
       "user",
       "userIdentity",
       "credential",
@@ -159,7 +213,6 @@ describe("SDKWork IAM standard contracts", () => {
       "permission",
       "policy",
       "rolePermission",
-      "userRole",
       "apiKey",
       "securityEvent",
       "auditEvent",
@@ -180,16 +233,83 @@ describe("SDKWork IAM standard contracts", () => {
     expect(SDKWORK_IAM_DOMAIN_MODELS.find((model) => model.name === "permission")?.ownership).toBe("global");
     expect(SDKWORK_IAM_DOMAIN_MODELS.find((model) => model.name === "permission")?.fields).toContain("code");
     expect(SDKWORK_IAM_DOMAIN_MODELS.find((model) => model.name === "permission")?.fields).not.toContain("tenant_id");
-    expect(SDKWORK_IAM_DOMAIN_MODELS.find((model) => model.name === "organizationMember")?.fields).toEqual([
+    expect(SDKWORK_IAM_DOMAIN_MODELS.find((model) => model.name === "organization")?.fields).toEqual([
+      "id",
+      "tenant_id",
+      "parent_organization_id",
+      "code",
+      "name",
+      "organization_kind",
+      "tenant_boundary_kind",
+      "data_boundary_kind",
+      "app_boundary_enabled",
+      "verification_status",
+      "path",
+      "status",
+      "created_at",
+      "updated_at",
+    ]);
+    expect(SDKWORK_IAM_DOMAIN_MODELS.find((model) => model.name === "organizationClosure")?.fields).toEqual([
+      "id",
+      "tenant_id",
+      "ancestor_organization_id",
+      "descendant_organization_id",
+      "depth",
+      "created_at",
+    ]);
+    expect(SDKWORK_IAM_DOMAIN_MODELS.find((model) => model.name === "organizationMembership")?.fields).toEqual([
       "id",
       "tenant_id",
       "organization_id",
       "user_id",
-      "role_code",
+      "membership_kind",
+      "employee_no",
+      "display_name",
       "status",
       "joined_at",
       "left_at",
       "remark",
+    ]);
+    expect(SDKWORK_IAM_DOMAIN_MODELS.find((model) => model.name === "department")?.fields).toEqual([
+      "id",
+      "tenant_id",
+      "organization_id",
+      "parent_department_id",
+      "code",
+      "name",
+      "path",
+      "status",
+      "created_at",
+      "updated_at",
+    ]);
+    expect(SDKWORK_IAM_DOMAIN_MODELS.find((model) => model.name === "departmentAssignment")?.fields).toEqual([
+      "id",
+      "tenant_id",
+      "organization_id",
+      "organization_membership_id",
+      "department_id",
+      "user_id",
+      "assignment_kind",
+      "is_primary",
+      "effective_from",
+      "effective_to",
+      "status",
+      "created_at",
+      "updated_at",
+    ]);
+    expect(SDKWORK_IAM_DOMAIN_MODELS.find((model) => model.name === "roleBinding")?.fields).toEqual([
+      "id",
+      "tenant_id",
+      "role_id",
+      "principal_kind",
+      "principal_id",
+      "scope_kind",
+      "scope_id",
+      "effect",
+      "condition_json",
+      "status",
+      "created_at",
+      "updated_at",
     ]);
     expect(SDKWORK_IAM_DOMAIN_MODELS.find((model) => model.name === "user")?.fields).toEqual([
       "id",
@@ -221,6 +341,8 @@ describe("SDKWork IAM standard contracts", () => {
     expect(SDKWORK_IAM_CAPABILITIES.map((capability) => capability.name)).toEqual([
       "tenantManagement",
       "organizationManagement",
+      "departmentManagement",
+      "positionManagement",
       "userDirectory",
       "accountIdentity",
       "sessionSecurity",
@@ -283,12 +405,17 @@ describe("SDKWork IAM standard contracts", () => {
     expect(SDKWORK_IAM_CAPABILITIES.find((capability) => capability.name === "accessControl")).toMatchObject({
       sdkNamespaces: ["iam"],
       operations: expect.arrayContaining([
+        "roleBindings.create",
+        "roleBindings.delete",
+        "roleBindings.list",
         "roles.permissions.create",
-        "users.roles.list",
         "permissions.list",
         "policies.list",
       ]),
     });
+    expect(SDKWORK_IAM_CAPABILITIES.find((capability) => capability.name === "accessControl")?.operations).not.toEqual(
+      expect.arrayContaining(["users.roles.create", "users.roles.delete", "users.roles.list"]),
+    );
   });
 
   it("assigns every operation to exactly one composable capability block", () => {
@@ -327,8 +454,8 @@ describe("SDKWork IAM standard contracts", () => {
     });
 
     expect(createIamShardingContext(appContext)).toEqual({
-      shardingKey: "t1",
-      shardingStrategy: "tenant",
+      shardingKey: "o1",
+      shardingStrategy: "organization",
     });
   });
 });

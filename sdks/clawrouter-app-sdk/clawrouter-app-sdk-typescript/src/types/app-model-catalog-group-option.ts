@@ -5,5 +5,5 @@ export interface AppModelCatalogGroupOption {
   /** Label field on app model catalog group option. */
   label: string;
   /** Model count field on app model catalog group option. */
-  modelCount: number;
+  modelCount: string;
 }

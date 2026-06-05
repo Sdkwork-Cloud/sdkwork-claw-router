@@ -1909,9 +1909,9 @@ async fn has_postgres_admin_access(
         r#"
         SELECT COUNT(1)
         FROM iam_organization_member
-        WHERE tenant_id = $1
-          AND organization_id = $2
-          AND user_id = $3
+        WHERE CAST(tenant_id AS TEXT) = $1
+          AND CAST(organization_id AS TEXT) = $2
+          AND CAST(user_id AS TEXT) = $3
           AND status = 'active'
           AND LOWER(COALESCE(role_code, '')) = 'admin'
         "#,

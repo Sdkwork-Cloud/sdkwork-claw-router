@@ -48,7 +48,7 @@ export interface OpenAiChatCompletionRequest {
   /** Response format field on the open ai chat completion request, using the open ai response format module. */
   response_format?: OpenAiResponseFormat;
   /** Best-effort deterministic sampling seed. */
-  seed?: number;
+  seed?: string;
   /** Requested upstream service tier when supported. */
   service_tier?: 'auto' | 'default' | 'flex' | 'priority';
   /** Stop sequence or list of stop sequences. */

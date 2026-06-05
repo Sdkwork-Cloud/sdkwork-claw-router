@@ -29,9 +29,9 @@ export interface AdminChannelCreateRequest {
   /** Status field on admin channel create request. */
   status?: 'active' | 'disabled' | 'error';
   /** Per-channel upstream response timeout in milliseconds. */
-  timeoutMs?: number;
+  timeoutMs?: string;
   /** Vendor field on admin channel create request. */
   vendor: string;
   /** Weight field on admin channel create request. */
-  weight?: number;
+  weight?: string;
 }

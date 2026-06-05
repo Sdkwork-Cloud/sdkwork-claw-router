@@ -162,6 +162,7 @@ impl<'a, C: PricingCatalog> ModelCatalogQueryService<'a, C> {
                     .map(|api_key_id| {
                         resolver.resolve(ResolveModelPriceQuery {
                             api_key_id,
+                            channel_group_id: None,
                             model: model_lookup_key.to_owned(),
                             billing_meter: query.billing_meter.clone(),
                             provider_code: provider_for_resolve,

@@ -418,6 +418,736 @@ frontend_operations:
     name: IamUserResponse
     schema:
       $ref: '#/components/schemas/IamUserResponse'
+- route: /console/user
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/iamDirectoryApiOperations.ts
+  operation: fetchIamOrganizations
+  operation_scope: app_shell
+  operation_id: organizations.list
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/iam/organizations
+  sdk_domain: iam
+  summary: List current IAM organizations
+  description: Lists active tenant organizations visible to the current app IAM subject.
+  read_sources:
+  - iam_organization
+  - iam_organization_member
+  query_parameters: &iamDirectoryQueryParameters
+  - name: organization_id
+    schema:
+      type: string
+      maxLength: 128
+  - name: department_id
+    schema:
+      type: string
+      maxLength: 128
+  - name: user_id
+    schema:
+      type: string
+      maxLength: 128
+  - name: scope_id
+    schema:
+      type: string
+      maxLength: 128
+  - name: status
+    schema:
+      type: string
+      maxLength: 64
+  - name: q
+    schema:
+      type: string
+      maxLength: 256
+  - name: page
+    schema:
+      type: integer
+      minimum: 1
+  - name: page_size
+    schema:
+      type: integer
+      minimum: 1
+      maximum: 500
+  response_schema:
+    name: IamOrganizationListResponse
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items: &iamOrganizationItem
+          name: IamOrganizationItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - tenantId
+          - code
+          - name
+          - path
+          - status
+          - createdAt
+          - updatedAt
+          properties:
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            tenantId:
+              type: string
+              minLength: 1
+              maxLength: 128
+            parentId:
+              type: string
+              nullable: true
+              maxLength: 128
+            code:
+              type: string
+              maxLength: 128
+            name:
+              type: string
+              maxLength: 256
+            path:
+              type: string
+              maxLength: 1024
+            status:
+              type: string
+              maxLength: 64
+            createdAt:
+              type: string
+              maxLength: 64
+            updatedAt:
+              type: string
+              maxLength: 64
+- route: /console/user
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/iamDirectoryApiOperations.ts
+  operation: fetchIamOrganizationTree
+  operation_scope: app_shell
+  operation_id: organizations.tree.retrieve
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/iam/organizations/tree
+  sdk_domain: iam
+  summary: Retrieve current IAM organization tree
+  description: Returns the visible organization tree for the current app IAM subject.
+  read_sources:
+  - iam_organization
+  - iam_organization_member
+  query_parameters: *iamDirectoryQueryParameters
+  response_schema:
+    name: IamOrganizationTreeResponse
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items: &iamOrganizationTreeItem
+          name: IamOrganizationTreeItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - tenantId
+          - code
+          - name
+          - path
+          - status
+          - createdAt
+          - updatedAt
+          - children
+          properties:
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            tenantId:
+              type: string
+              minLength: 1
+              maxLength: 128
+            parentId:
+              type: string
+              nullable: true
+              maxLength: 128
+            code:
+              type: string
+              maxLength: 128
+            name:
+              type: string
+              maxLength: 256
+            path:
+              type: string
+              maxLength: 1024
+            status:
+              type: string
+              maxLength: 64
+            createdAt:
+              type: string
+              maxLength: 64
+            updatedAt:
+              type: string
+              maxLength: 64
+            children:
+              type: array
+              items:
+                name: IamOrganizationTreeChildItem
+                type: object
+                additionalProperties: true
+- route: /console/user
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/iamDirectoryApiOperations.ts
+  operation: fetchIamOrganizationMemberships
+  operation_scope: app_shell
+  operation_id: organizationMemberships.list
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/iam/organization_memberships
+  sdk_domain: iam
+  summary: List current IAM organization memberships
+  description: Lists organization memberships for the current app IAM subject.
+  read_sources:
+  - iam_organization_member
+  query_parameters: *iamDirectoryQueryParameters
+  response_schema:
+    name: IamOrganizationMembershipListResponse
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items:
+          name: IamOrganizationMembershipItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - tenantId
+          - organizationId
+          - userId
+          - roleCode
+          - status
+          - joinedAt
+          - leftAt
+          - remark
+          properties:
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            tenantId:
+              type: string
+              minLength: 1
+              maxLength: 128
+            organizationId:
+              type: string
+              minLength: 1
+              maxLength: 128
+            userId:
+              type: string
+              minLength: 1
+              maxLength: 128
+            roleCode:
+              type: string
+              maxLength: 128
+            status:
+              type: string
+              maxLength: 64
+            joinedAt:
+              type: string
+              maxLength: 64
+            leftAt:
+              type: string
+              maxLength: 64
+            remark:
+              type: string
+              maxLength: 1024
+- route: /console/user
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/iamDirectoryApiOperations.ts
+  operation: fetchIamDepartments
+  operation_scope: app_shell
+  operation_id: departments.list
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/iam/departments
+  sdk_domain: iam
+  summary: List current IAM departments
+  description: Lists active departments visible to the current app IAM subject.
+  read_sources:
+  - iam_organization
+  - iam_organization_member
+  query_parameters: *iamDirectoryQueryParameters
+  response_schema:
+    name: IamDepartmentListResponse
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items: &iamDepartmentItem
+          name: IamDepartmentItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - tenantId
+          - organizationId
+          - code
+          - name
+          - path
+          - status
+          - createdAt
+          - updatedAt
+          properties:
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            tenantId:
+              type: string
+              minLength: 1
+              maxLength: 128
+            organizationId:
+              type: string
+              minLength: 1
+              maxLength: 128
+            parentDepartmentId:
+              type: string
+              nullable: true
+              maxLength: 128
+            code:
+              type: string
+              maxLength: 128
+            name:
+              type: string
+              maxLength: 256
+            path:
+              type: string
+              maxLength: 1024
+            status:
+              type: string
+              maxLength: 64
+            createdAt:
+              type: string
+              maxLength: 64
+            updatedAt:
+              type: string
+              maxLength: 64
+- route: /console/user
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/iamDirectoryApiOperations.ts
+  operation: fetchIamDepartmentTree
+  operation_scope: app_shell
+  operation_id: departments.tree.retrieve
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/iam/departments/tree
+  sdk_domain: iam
+  summary: Retrieve current IAM department tree
+  description: Returns the visible department tree for the current app IAM subject.
+  read_sources:
+  - iam_organization
+  - iam_organization_member
+  query_parameters: *iamDirectoryQueryParameters
+  response_schema:
+    name: IamDepartmentTreeResponse
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items:
+          name: IamDepartmentTreeItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - tenantId
+          - organizationId
+          - code
+          - name
+          - path
+          - status
+          - createdAt
+          - updatedAt
+          - children
+          properties:
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            tenantId:
+              type: string
+              minLength: 1
+              maxLength: 128
+            organizationId:
+              type: string
+              minLength: 1
+              maxLength: 128
+            parentDepartmentId:
+              type: string
+              nullable: true
+              maxLength: 128
+            code:
+              type: string
+              maxLength: 128
+            name:
+              type: string
+              maxLength: 256
+            path:
+              type: string
+              maxLength: 1024
+            status:
+              type: string
+              maxLength: 64
+            createdAt:
+              type: string
+              maxLength: 64
+            updatedAt:
+              type: string
+              maxLength: 64
+            children:
+              type: array
+              items:
+                name: IamDepartmentTreeChildItem
+                type: object
+                additionalProperties: true
+- route: /console/user
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/iamDirectoryApiOperations.ts
+  operation: fetchIamDepartmentAssignments
+  operation_scope: app_shell
+  operation_id: departmentAssignments.list
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/iam/department_assignments
+  sdk_domain: iam
+  summary: List current IAM department assignments
+  description: Lists department assignments visible to the current app IAM subject.
+  read_sources:
+  - iam_organization
+  - iam_organization_member
+  query_parameters: *iamDirectoryQueryParameters
+  response_schema:
+    name: IamDepartmentAssignmentListResponse
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items:
+          name: IamDepartmentAssignmentItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - tenantId
+          - organizationId
+          - organizationMembershipId
+          - departmentId
+          - userId
+          - assignmentKind
+          - isPrimary
+          - effectiveFrom
+          - effectiveTo
+          - status
+          - createdAt
+          - updatedAt
+          properties:
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            tenantId:
+              type: string
+              minLength: 1
+              maxLength: 128
+            organizationId:
+              type: string
+              minLength: 1
+              maxLength: 128
+            organizationMembershipId:
+              type: string
+              maxLength: 128
+            departmentId:
+              type: string
+              maxLength: 128
+            userId:
+              type: string
+              minLength: 1
+              maxLength: 128
+            assignmentKind:
+              type: string
+              maxLength: 128
+            isPrimary:
+              type: boolean
+            effectiveFrom:
+              type: string
+              maxLength: 64
+            effectiveTo:
+              type: string
+              maxLength: 64
+            status:
+              type: string
+              maxLength: 64
+            createdAt:
+              type: string
+              maxLength: 64
+            updatedAt:
+              type: string
+              maxLength: 64
+- route: /console/user
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/iamDirectoryApiOperations.ts
+  operation: fetchIamPositions
+  operation_scope: app_shell
+  operation_id: positions.list
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/iam/positions
+  sdk_domain: iam
+  summary: List current IAM positions
+  description: Lists positions visible to the current app IAM subject.
+  read_sources:
+  - iam_organization
+  - iam_organization_member
+  query_parameters: *iamDirectoryQueryParameters
+  response_schema:
+    name: IamPositionListResponse
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items:
+          name: IamPositionItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - tenantId
+          - organizationId
+          - departmentId
+          - code
+          - name
+          - positionKind
+          - rankLevel
+          - status
+          - createdAt
+          - updatedAt
+          properties:
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            tenantId:
+              type: string
+              minLength: 1
+              maxLength: 128
+            organizationId:
+              type: string
+              minLength: 1
+              maxLength: 128
+            departmentId:
+              type: string
+              maxLength: 128
+            code:
+              type: string
+              maxLength: 128
+            name:
+              type: string
+              maxLength: 256
+            positionKind:
+              type: string
+              maxLength: 128
+            rankLevel:
+              type: string
+              maxLength: 64
+            status:
+              type: string
+              maxLength: 64
+            createdAt:
+              type: string
+              maxLength: 64
+            updatedAt:
+              type: string
+              maxLength: 64
+- route: /console/user
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/iamDirectoryApiOperations.ts
+  operation: fetchIamPositionAssignments
+  operation_scope: app_shell
+  operation_id: positionAssignments.list
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/iam/position_assignments
+  sdk_domain: iam
+  summary: List current IAM position assignments
+  description: Lists position assignments visible to the current app IAM subject.
+  read_sources:
+  - iam_organization
+  - iam_organization_member
+  query_parameters: *iamDirectoryQueryParameters
+  response_schema:
+    name: IamPositionAssignmentListResponse
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items:
+          name: IamPositionAssignmentItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - tenantId
+          - organizationId
+          - departmentAssignmentId
+          - positionId
+          - userId
+          - isPrimary
+          - effectiveFrom
+          - effectiveTo
+          - status
+          - createdAt
+          - updatedAt
+          properties:
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            tenantId:
+              type: string
+              minLength: 1
+              maxLength: 128
+            organizationId:
+              type: string
+              minLength: 1
+              maxLength: 128
+            departmentAssignmentId:
+              type: string
+              maxLength: 128
+            positionId:
+              type: string
+              maxLength: 128
+            userId:
+              type: string
+              minLength: 1
+              maxLength: 128
+            isPrimary:
+              type: boolean
+            effectiveFrom:
+              type: string
+              maxLength: 64
+            effectiveTo:
+              type: string
+              maxLength: 64
+            status:
+              type: string
+              maxLength: 64
+            createdAt:
+              type: string
+              maxLength: 64
+            updatedAt:
+              type: string
+              maxLength: 64
+- route: /console/user
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/iamDirectoryApiOperations.ts
+  operation: fetchIamRoleBindings
+  operation_scope: app_shell
+  operation_id: roleBindings.list
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/iam/role_bindings
+  sdk_domain: iam
+  summary: List current IAM role bindings
+  description: Lists role bindings visible to the current app IAM subject.
+  read_sources:
+  - iam_organization
+  - iam_organization_member
+  query_parameters: *iamDirectoryQueryParameters
+  response_schema:
+    name: IamRoleBindingListResponse
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items:
+          name: IamRoleBindingItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - tenantId
+          - roleId
+          - principalKind
+          - principalId
+          - scopeKind
+          - scopeId
+          - effect
+          - conditionJson
+          - status
+          - createdAt
+          - updatedAt
+          properties:
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            tenantId:
+              type: string
+              minLength: 1
+              maxLength: 128
+            roleId:
+              type: string
+              maxLength: 128
+            principalKind:
+              type: string
+              maxLength: 128
+            principalId:
+              type: string
+              maxLength: 128
+            scopeKind:
+              type: string
+              maxLength: 128
+            scopeId:
+              type: string
+              maxLength: 128
+            effect:
+              type: string
+              maxLength: 64
+            conditionJson:
+              type: string
+              maxLength: 4096
+            status:
+              type: string
+              maxLength: 64
+            createdAt:
+              type: string
+              maxLength: 64
+            updatedAt:
+              type: string
+              maxLength: 64
 - route: /auth/login
   source: apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts
   operation: signInWithSessionBridge

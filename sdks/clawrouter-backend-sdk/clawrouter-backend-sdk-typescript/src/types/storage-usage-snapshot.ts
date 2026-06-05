@@ -1,11 +1,11 @@
 /** Storage usage snapshot schema exposed by Claw Router. */
 export interface StorageUsageSnapshot {
   /** File count field on storage usage snapshot. */
-  fileCount: number;
+  fileCount: string;
   /** Id field on storage usage snapshot. */
   id: string;
   /** Reserved bytes field on storage usage snapshot. */
-  reservedBytes?: number;
+  reservedBytes?: string;
   /** Scope field on storage usage snapshot. */
   scope?: string;
   /** Scope id field on storage usage snapshot. */
@@ -17,5 +17,5 @@ export interface StorageUsageSnapshot {
   /** Snapshot type field on storage usage snapshot. */
   snapshotType?: string;
   /** Used bytes field on storage usage snapshot. */
-  usedBytes: number;
+  usedBytes: string;
 }

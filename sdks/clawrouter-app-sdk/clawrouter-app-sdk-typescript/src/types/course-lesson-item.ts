@@ -7,7 +7,7 @@ export interface CourseLessonItem {
   /** Description field on course lesson item. */
   description: string;
   /** Duration seconds field on course lesson item. */
-  durationSeconds: number;
+  durationSeconds: string;
   /** Duration text field on course lesson item. */
   durationText: string;
   /** External bvid field on course lesson item. */
@@ -17,13 +17,13 @@ export interface CourseLessonItem {
   /** Id field on course lesson item. */
   id: string;
   /** Lesson id field on course lesson item. */
-  lessonId: number;
+  lessonId: string;
   /** Lesson no field on course lesson item. */
-  lessonNo: number;
+  lessonNo: string;
   /** Number field on course lesson item. */
-  number: number;
+  number: string;
   /** Sort order field on course lesson item. */
-  sortOrder: number;
+  sortOrder: string;
   /** Source provider field on course lesson item. */
   sourceProvider: string;
   /** Title field on course lesson item. */

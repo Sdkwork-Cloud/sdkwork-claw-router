@@ -25,5 +25,5 @@ export interface AgentVersionItem {
   /** Updated at field on agent version item. */
   updatedAt: string;
   /** Version no field on agent version item. */
-  versionNo: number;
+  versionNo: string;
 }

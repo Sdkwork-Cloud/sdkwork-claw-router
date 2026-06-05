@@ -617,7 +617,10 @@ export type { PaymentsReconciliationRunsListResult } from './payments-reconcilia
 export type { PaymentsRouteRulesListResult } from './payments-route-rules-list-result';
 export type { PaymentsRuntimeSnapshotRetrieveResult } from './payments-runtime-snapshot-retrieve-result';
 export type { PaymentsWebhookEventsListResult } from './payments-webhook-events-list-result';
+export type { PlusAgentSkillPackageRecord } from './plus-agent-skill-package-record';
+export type { PlusAgentSkillRecord } from './plus-agent-skill-record';
 export type { PlusApiResult } from './plus-api-result';
+export type { PlusCategoryRecord } from './plus-category-record';
 export type { PriceSimulationCreateResult } from './price-simulation-create-result';
 export type { PricingRulesCreateResult } from './pricing-rules-create-result';
 export type { PricingRulesListResult } from './pricing-rules-list-result';

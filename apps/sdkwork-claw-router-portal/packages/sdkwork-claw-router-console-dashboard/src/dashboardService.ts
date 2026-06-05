@@ -16,22 +16,37 @@ import type {
 
 export type DashboardTimeRange = 'hourly' | 'daily' | 'monthly' | 'yearly';
 
+interface DashboardSummary {
+  availableCredits: number;
+  usedCredits: number;
+  requestCount: number;
+  totalUsedCredits: number;
+  totalRequestCount: number;
+  errorCount: number;
+  imageRequests: number;
+  videoRequests: number;
+  audioRequests: number;
+  musicRequests: number;
+  rpm: number;
+  tpm: number;
+}
+
 export interface DashboardData {
-  time: SdkDashboardOverviewResponse['chartData'][number]['time'];
-  'llm (Text)': SdkDashboardOverviewResponse['chartData'][number]['llm (Text)'];
-  'image (Midjourney/DALL-E)': SdkDashboardOverviewResponse['chartData'][number]['image (Midjourney/DALL-E)'];
-  'video (Runway/Sora)': SdkDashboardOverviewResponse['chartData'][number]['video (Runway/Sora)'];
-  'audio (Whisper)': SdkDashboardOverviewResponse['chartData'][number]['audio (Whisper)'];
-  'music (Suno)': SdkDashboardOverviewResponse['chartData'][number]['music (Suno)'];
+  time: string;
+  'llm (Text)': number;
+  'image (Midjourney/DALL-E)': number;
+  'video (Runway/Sora)': number;
+  'audio (Whisper)': number;
+  'music (Suno)': number;
 }
 
 export interface ModelUsage {
-  rank: SdkDashboardOverviewResponse['topModels'][number]['rank'];
+  rank: number;
   name: SdkDashboardOverviewResponse['topModels'][number]['name'];
   supplier: SdkDashboardOverviewResponse['topModels'][number]['supplier'];
   modality: SdkDashboardOverviewResponse['topModels'][number]['modality'];
-  requests: SdkDashboardOverviewResponse['topModels'][number]['requests'];
-  cost: SdkDashboardOverviewResponse['topModels'][number]['cost'];
+  requests: number;
+  cost: number;
   trend: SdkDashboardOverviewResponse['topModels'][number]['trend'];
   isUp: SdkDashboardOverviewResponse['topModels'][number]['isUp'];
 }
@@ -43,7 +58,7 @@ type DashboardAnnouncementTypeContract = {
 type DashboardAnnouncementType = DashboardAnnouncementContract['type'] & DashboardAnnouncementTypeContract['type'];
 
 export interface Announcement {
-  id: DashboardAnnouncementContract['id'];
+  id: string;
   text: DashboardAnnouncementContract['text'];
   textI18nKey?: string;
   time: DashboardAnnouncementContract['time'];
@@ -61,12 +76,12 @@ export interface ConfigurationDomain {
 }
 
 interface DashboardSnapshot {
-  summary: SdkDashboardOverviewResponse['summary'];
-  requestSparkline: SdkDashboardOverviewResponse['requestSparkline'];
-  multimodalSparkline: SdkDashboardOverviewResponse['multimodalSparkline'];
-  performanceSparkline: SdkDashboardOverviewResponse['performanceSparkline'];
+  summary: DashboardSummary;
+  requestSparkline: Array<{ value: number }>;
+  multimodalSparkline: Array<{ value: number }>;
+  performanceSparkline: Array<{ value: number }>;
   chartData: DashboardData[];
-  topModels: SdkDashboardOverviewResponse['topModels'];
+  topModels: ModelUsage[];
   announcements: Announcement[];
   configurationDomains: ConfigurationDomain[];
   warnings: SdkDashboardOverviewResponse['warnings'];
@@ -94,7 +109,7 @@ const CONFIGURATION_DOMAIN_KEYS = [
 
 const DEFAULT_GATEWAY_DOMAIN = 'https://api.sdkwork.com/v1';
 
-const EMPTY_SUMMARY: SdkDashboardOverviewResponse['summary'] = {
+const EMPTY_SUMMARY: DashboardSummary = {
   availableCredits: 0,
   usedCredits: 0,
   requestCount: 0,
@@ -236,7 +251,7 @@ function createInitialChartLabels(timeRange: DashboardTimeRange): string[] {
   return Array.from({ length: 4 }, (_, index) => String(now.getFullYear() - (3 - index)));
 }
 
-function createZeroSparkline(length: number): SdkDashboardOverviewResponse['requestSparkline'] {
+function createZeroSparkline(length: number): Array<{ value: number }> {
   return Array.from({ length: Math.max(1, length) }, () => ({ value: 0 }));
 }
 
@@ -317,7 +332,7 @@ function normalizeTopModels(record: ApiRecord): ModelUsage[] {
 function normalizeAnnouncements(record: ApiRecord): Announcement[] {
   return readRequiredRecordArray(record, 'announcements', 'Dashboard overview announcements is required', 'Dashboard announcement record is required')
     .map((item) => ({
-      id: readRequiredFirstNumber(item, ['id', 'messageId', 'message_id'], 'Dashboard announcement id is required'),
+      id: readRequiredFirstString(item, ['id', 'messageId', 'message_id'], 'Dashboard announcement id is required'),
       text: readRequiredFirstString(item, ['text', 'title', 'summary', 'content'], 'Dashboard announcement text is required'),
       textI18nKey: readOptionalFirstString(item, ['textI18nKey', 'text_i18n_key']),
       time: readRequiredFirstString(item, ['time', 'publishedAt', 'published_at', 'createdAt', 'created_at'], 'Dashboard announcement time is required'),
@@ -354,7 +369,7 @@ function normalizeConfigurationDomains(record: ApiRecord): ConfigurationDomain[]
     });
 }
 
-function normalizeSummary(summaryRecord: ApiRecord): SdkDashboardOverviewResponse['summary'] {
+function normalizeSummary(summaryRecord: ApiRecord): DashboardSummary {
   return {
     availableCredits: readRequiredFirstNumber(summaryRecord, ['availableCredits', 'balance', 'credits'], 'Dashboard overview available credits are required'),
     usedCredits: readRequiredFirstNumber(summaryRecord, ['usedCredits', 'cost', 'costAmount'], 'Dashboard overview used credits are required'),
@@ -377,7 +392,7 @@ function normalizeSparkline(
   label: string,
   fallbackItems: DashboardData[],
   fallbackSelector: (item: DashboardData) => number,
-): SdkDashboardOverviewResponse['requestSparkline'] {
+): Array<{ value: number }> {
   const explicit = readRequiredRecordArray(
     record,
     key,

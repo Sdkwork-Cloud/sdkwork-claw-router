@@ -32,9 +32,9 @@ export interface AdminChannelUpdateRequest {
   /** Status field on admin channel update request. */
   status?: 'active' | 'disabled' | 'error';
   /** Timeout ms field on admin channel update request. */
-  timeoutMs?: number | null;
+  timeoutMs?: string | null;
   /** Vendor field on admin channel update request. */
   vendor?: string;
   /** Weight field on admin channel update request. */
-  weight?: number;
+  weight?: string;
 }

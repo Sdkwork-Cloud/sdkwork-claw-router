@@ -6,7 +6,7 @@ import type { CreateStorageBucketRequest, CreateStorageGarbageCollectionJobReque
 
 export interface OssUsageSnapshotsListParams {
   cursor?: string;
-  limit?: number;
+  limit?: string;
   scopeType?: 'app' | 'business_domain' | 'organization' | 'space' | 'tenant' | 'user';
   scopeId?: string;
 }
@@ -33,7 +33,7 @@ export class OssUsageSnapshotsApi {
 
 export interface OssUsageLedgerListParams {
   cursor?: string;
-  limit?: number;
+  limit?: string;
   scopeType?: 'app' | 'business_domain' | 'organization' | 'space' | 'tenant' | 'user';
   scopeId?: string;
 }
@@ -60,7 +60,7 @@ export class OssUsageLedgerApi {
 
 export interface OssUsageListParams {
   cursor?: string;
-  limit?: number;
+  limit?: string;
   scopeType?: 'app' | 'business_domain' | 'organization' | 'space' | 'tenant' | 'user';
   scopeId?: string;
 }
@@ -91,7 +91,7 @@ export class OssUsageApi {
 
 export interface OssReconciliationRunsListParams {
   cursor?: string;
-  limit?: number;
+  limit?: string;
   runType?: string;
   status?: 'canceled' | 'completed' | 'created' | 'failed' | 'running';
 }
@@ -212,7 +212,7 @@ export class OssProvidersApi {
 
 export interface OssGcJobsListParams {
   cursor?: string;
-  limit?: number;
+  limit?: string;
   status?: 'canceled' | 'completed' | 'created' | 'failed' | 'running';
 }
 
@@ -278,7 +278,7 @@ export class OssDefaultBucketsApi {
 
 export interface OssBucketsListParams {
   cursor?: string;
-  limit?: number;
+  limit?: string;
   status?: 'active' | 'archived' | 'disabled';
 }
 

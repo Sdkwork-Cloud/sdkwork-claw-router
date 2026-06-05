@@ -67,8 +67,8 @@ export class CommerceWalletOverviewApi {
 }
 
 export interface CommerceWalletLedgerEntriesListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
 }
 
@@ -106,8 +106,8 @@ export class CommerceWalletExchangeRateApi {
 }
 
 export interface CommerceWalletAccountsListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
 }
 
@@ -166,8 +166,8 @@ export class CommerceShipmentsApi {
 }
 
 export interface CommerceRefundsListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
 }
 
@@ -225,8 +225,8 @@ export class CommerceRechargesSettingsApi {
 }
 
 export interface CommerceRechargesPackagesListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
 }
 
@@ -294,8 +294,8 @@ export class CommerceRechargesApi {
 }
 
 export interface CommercePaymentsMethodsListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
 }
 
@@ -403,8 +403,8 @@ export class CommercePaymentsApi {
 }
 
 export interface CommerceOrdersEventsListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
 }
 
@@ -452,8 +452,8 @@ export class CommerceOrdersCancellationsApi {
 }
 
 export interface CommerceOrdersListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
 }
 
@@ -581,8 +581,8 @@ export class CommerceMembershipsPrivilegesApi {
 }
 
 export interface CommerceMembershipsPointsHistoryListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   cursor?: string;
 }
 
@@ -679,8 +679,8 @@ export class CommerceMembershipsPlansApi {
 }
 
 export interface CommerceMembershipsPackagesListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
 }
 
@@ -709,7 +709,7 @@ export class CommerceMembershipsPackagesApi {
 }
 
 export interface CommerceMembershipsPackageGroupsPackagesListParams {
-  planId?: number;
+  planId?: string;
 }
 
 export class CommerceMembershipsPackageGroupsPackagesApi {
@@ -730,7 +730,7 @@ export class CommerceMembershipsPackageGroupsPackagesApi {
 }
 
 export interface CommerceMembershipsPackageGroupsListParams {
-  planId?: number;
+  planId?: string;
   recommendedOnly?: boolean;
 }
 
@@ -790,7 +790,7 @@ export class CommerceMembershipsCurrentApi {
 }
 
 export interface CommerceMembershipsBenefitsListParams {
-  planId?: number;
+  planId?: string;
 }
 
 export class CommerceMembershipsBenefitsApi {
@@ -836,8 +836,8 @@ export class CommerceMembershipsApi {
 }
 
 export interface CommerceInvoicesListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
 }
 
@@ -881,8 +881,8 @@ export class CommerceInvoicesApi {
 }
 
 export interface CommerceFulfillmentsListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
 }
 
@@ -1021,8 +1021,8 @@ export interface CommerceCatalogProductsListParams {
   categoryId?: string;
   productType?: string;
   status?: string;
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   sort?: string;
 }
 
@@ -1057,8 +1057,8 @@ export class CommerceCatalogProductsApi {
 export interface CommerceCatalogCategoriesListParams {
   parentId?: string;
   status?: string;
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
 }
 
 export class CommerceCatalogCategoriesApi {
@@ -1178,8 +1178,8 @@ export class CommerceCartApi {
 }
 
 export interface CommerceBillingHistoryListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   type_?: 'redeem' | 'recharge';
   status?: string;
 }
@@ -1240,8 +1240,8 @@ export class CommerceAddressesDefaultSelectionApi {
 }
 
 export interface CommerceAddressesListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
 }
 

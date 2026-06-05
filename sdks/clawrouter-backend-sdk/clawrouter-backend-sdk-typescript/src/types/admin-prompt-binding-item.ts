@@ -9,11 +9,11 @@ export interface AdminPromptBindingItem {
   /** Enabled field on admin prompt binding item. */
   enabled: boolean;
   /** Id field on admin prompt binding item. */
-  id: number;
+  id: string;
   /** Organization id field on admin prompt binding item. */
-  organizationId: number;
+  organizationId: string;
   /** Owner id field on admin prompt binding item. */
-  ownerId: number;
+  ownerId: string;
   /** Owner type field on admin prompt binding item. */
   ownerType: string;
   /** Policy json field on admin prompt binding item. */
@@ -21,13 +21,13 @@ export interface AdminPromptBindingItem {
   /** Priority field on admin prompt binding item. */
   priority: number;
   /** Prompt id field on admin prompt binding item. */
-  promptId: number;
+  promptId: string;
   /** Prompt version id field on admin prompt binding item. */
-  promptVersionId?: number | null;
+  promptVersionId?: string | null;
   /** Snapshot json field on admin prompt binding item. */
   snapshotJson: Record<string, JsonValue>;
   /** Tenant id field on admin prompt binding item. */
-  tenantId: number;
+  tenantId: string;
   /** Updated at field on admin prompt binding item. */
   updatedAt: string;
   /** Uuid field on admin prompt binding item. */

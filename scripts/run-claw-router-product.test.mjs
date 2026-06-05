@@ -289,6 +289,14 @@ test('root package exposes pnpm product entrypoints', () => {
     'node scripts/verify-claw-router-product.mjs --fast',
   );
   assert.equal(
+    rootPackage.scripts['verify:precommit'],
+    'node scripts/verify-claw-router-product.mjs --precommit',
+  );
+  assert.equal(
+    rootPackage.scripts['verify:parallel'],
+    'node scripts/verify-claw-router-product.mjs --parallel',
+  );
+  assert.equal(
     rootPackage.scripts['test:rust:auto'],
     'node scripts/run-claw-router-rust-tests.mjs auto',
   );
@@ -6045,12 +6053,18 @@ test('verification runner handles package-manager argument separators', async ()
     skipPythonTests: false,
     skipSchemaGate: false,
     skipContractGuardians: false,
+    precommit: false,
+    parallel: false,
+    concurrency: 4,
     dryRun: true,
     help: false,
   });
   assert.deepEqual(module.parseArgs(['--', '--with-edge-dev-smoke']).withEdgeDevSmoke, true);
   assert.deepEqual(module.parseArgs(['--', '--skip-edge-dev-smoke']).skipEdgeDevSmoke, true);
   assert.deepEqual(module.parseArgs(['--', '--skip-contract-guardians']).skipContractGuardians, true);
+  assert.deepEqual(module.parseArgs(['--precommit']).precommit, true);
+  assert.deepEqual(module.parseArgs(['--parallel']).parallel, true);
+  assert.deepEqual(module.parseArgs(['--parallel', '--concurrency', '6']).concurrency, 6);
   assert.deepEqual(module.parseArgs(['--fast']), {
     buildJobs: null,
     fast: true,
@@ -6060,12 +6074,83 @@ test('verification runner handles package-manager argument separators', async ()
     skipPythonTests: false,
     skipSchemaGate: false,
     skipContractGuardians: false,
+    precommit: false,
+    parallel: false,
+    concurrency: 4,
     dryRun: false,
     help: false,
   });
 });
 
-test('fast verification plan keeps only low-cost Codex iteration checks', async () => {
+test('precommit verification plan keeps commit-time checks lightweight and staged-aware', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'verify-claw-router-product.mjs')).href
+  );
+
+  const plan = module.buildVerificationPlan({ precommit: true }, {});
+  const labels = plan.map((step) => step.label);
+  const commandLines = plan.map((step) => `${step.command} ${step.args.join(' ')}`);
+
+  assert.deepEqual(labels, [
+    'sdkwork-models catalog check',
+    'claw router download catalog check',
+    'app store seed check',
+    'skills seed check',
+    'repository delivery guard',
+    'tooling contract tests',
+    'app SDK runtime build',
+    'backend SDK runtime build',
+    'open SDK runtime build',
+    'frontend source hygiene tests',
+    'staged Rust auto tests',
+  ]);
+  assert.deepEqual(commandLines.at(-1), 'node scripts/run-claw-router-rust-tests.mjs auto --staged');
+  assert.ok(!labels.includes('portal frontend typecheck'));
+  assert.ok(!labels.includes('production artifact build'));
+  assert.ok(!labels.includes('portal production browser DOM smoke'));
+  assert.ok(!labels.includes('rust compile warnings gate'));
+  assert.ok(!labels.includes('rust workspace tests'));
+  assert.ok(!labels.includes('python standard tests'));
+  assert.ok(!labels.includes('schema quality gate'));
+});
+
+test('parallel verification execution plan groups only dependency-safe expensive checks', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'verify-claw-router-product.mjs')).href
+  );
+
+  const settings = {
+    parallel: true,
+    concurrency: 3,
+    skipRustTests: false,
+    skipPythonTests: false,
+    skipSchemaGate: false,
+  };
+  const executionPlan = module.buildVerificationExecutionPlan(settings, {});
+  const groupedLabels = executionPlan.groups.map((group) => group.steps.map((step) => step.label));
+  const flatLabels = groupedLabels.flat();
+
+  assert.equal(executionPlan.parallel, true);
+  assert.equal(executionPlan.concurrency, 3);
+  assert.deepEqual(flatLabels, module.buildVerificationPlan(settings, {}).map((step) => step.label));
+  assert.ok(groupedLabels.some((labels) =>
+    labels.includes('app SDK runtime build')
+      && labels.includes('backend SDK runtime build')
+      && labels.includes('open SDK runtime build'),
+  ));
+  assert.ok(groupedLabels.some((labels) =>
+    labels.includes('portal admin group runtime tests')
+      && labels.includes('portal admin channel runtime tests')
+      && labels.includes('portal admin user runtime tests'),
+  ));
+  for (const labels of groupedLabels) {
+    assert.ok(!labels.includes('rust compile warnings gate') || labels.length === 1);
+    assert.ok(!labels.includes('rust workspace tests') || labels.length === 1);
+    assert.ok(!labels.includes('portal production browser DOM smoke') || labels.length === 1);
+  }
+});
+
+test('fast verification plan refreshes SDK dist before low-cost Codex iteration checks', async () => {
   const module = await import(
     pathToFileURL(path.join(workspaceRoot, 'scripts', 'verify-claw-router-product.mjs')).href
   );
@@ -6081,6 +6166,9 @@ test('fast verification plan keeps only low-cost Codex iteration checks', async 
     'skills seed check',
     'repository delivery guard',
     'tooling contract tests',
+    'app SDK runtime build',
+    'backend SDK runtime build',
+    'open SDK runtime build',
     'portal auth runtime tests',
     'frontend source hygiene tests',
   ]);
@@ -6091,6 +6179,9 @@ test('fast verification plan keeps only low-cost Codex iteration checks', async 
     'pnpm.cmd skills:seed:check',
     'python -B -m tools.repository_delivery_guardian',
     'node scripts/run-claw-router-product.test.mjs',
+    'pnpm.cmd --dir sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript build',
+    'pnpm.cmd --dir sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript build',
+    'pnpm.cmd --dir sdks/clawrouter-open-sdk/clawrouter-open-sdk-typescript build',
     'pnpm.cmd --dir apps/sdkwork-claw-router-portal exec tsx auth-runtime.test.ts',
     'python -B -m unittest tests.test_frontend_source_hygiene_standard',
   ]);
@@ -7312,10 +7403,20 @@ test('verification plan runs frontend source hygiene before portal build', async
   );
   const commandLines = plan.map((step) => `${step.command} ${step.args.join(' ')}`);
   const hygieneIndex = plan.findIndex((step) => step.label === 'frontend source hygiene tests');
+  const sdkBuildLabels = [
+    'app SDK runtime build',
+    'backend SDK runtime build',
+    'open SDK runtime build',
+  ];
   const typecheckIndex = plan.findIndex((step) => step.label === 'portal frontend typecheck');
   const buildIndex = plan.findIndex((step) => step.label === 'production artifact build');
 
   assert.ok(hygieneIndex > -1, 'frontend source hygiene must be part of the product verification plan');
+  for (const label of sdkBuildLabels) {
+    const sdkBuildIndex = plan.findIndex((step) => step.label === label);
+    assert.ok(sdkBuildIndex > -1, `${label} must be part of the product verification plan`);
+    assert.ok(sdkBuildIndex < hygieneIndex, `${label} must refresh dist before source hygiene reads published SDK types`);
+  }
   assert.ok(hygieneIndex < typecheckIndex, 'source hygiene must fail before expensive portal typecheck');
   assert.ok(hygieneIndex < buildIndex, 'source hygiene must fail before production build');
   assert.ok(commandLines.includes(
@@ -7515,7 +7616,9 @@ test('portal mutable entity services must require backend stable ids', () => {
       assert.ok(
         source.includes(`readRequiredString(item, 'id', '${message}')`)
           || source.includes(`readRequiredNumber(item, 'id', '${message}')`)
+          || source.includes(`readRequiredPositiveInt64String(item, 'id', '${message}')`)
           || source.includes(`readRequiredString(item, 'vendorId', '${message}')`)
+          || source.includes(`readRequiredPositiveInt64String(item, 'vendorId', '${message}')`)
           || source.includes(`firstRequiredString(item, ['id', 'transactionNo', 'transaction_no', 'requestNo', 'request_no'], '${message}')`)
           || source.includes(`readRequiredAnyString(item, ['id', 'uuid', 'channelCode', 'channel_code'], '${message}')`),
         `${service.file} must fail closed with "${message}" when backend omits a stable id`,

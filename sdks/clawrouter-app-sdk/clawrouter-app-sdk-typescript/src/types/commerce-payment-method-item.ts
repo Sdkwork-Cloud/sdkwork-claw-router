@@ -15,7 +15,7 @@ export interface CommercePaymentMethodItem {
   /** Provider code field on commerce payment method item. */
   providerCode?: 'wechat_pay' | 'alipay' | 'paypal' | 'stripe' | 'apple_pay' | 'google_pay' | null;
   /** Sort order field on commerce payment method item. */
-  sortOrder: number;
+  sortOrder: string;
   /** Status field on commerce payment method item. */
   status: 'active' | 'inactive' | 'disabled';
   /** Updated at field on commerce payment method item. */

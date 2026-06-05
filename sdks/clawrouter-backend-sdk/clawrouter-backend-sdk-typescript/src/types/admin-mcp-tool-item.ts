@@ -11,7 +11,7 @@ export interface AdminMcpToolItem {
   /** Enabled field on admin mcp tool item. */
   enabled: boolean;
   /** Id field on admin mcp tool item. */
-  id: number;
+  id: string;
   /** Input schema field on admin mcp tool item. */
   inputSchema: Record<string, JsonValue>;
   /** Last invoked at field on admin mcp tool item. */
@@ -19,7 +19,7 @@ export interface AdminMcpToolItem {
   /** Name field on admin mcp tool item. */
   name: string;
   /** Organization id field on admin mcp tool item. */
-  organizationId: number;
+  organizationId: string;
   /** Output schema field on admin mcp tool item. */
   outputSchema: Record<string, JsonValue>;
   /** Rate limit policy field on admin mcp tool item. */
@@ -31,15 +31,15 @@ export interface AdminMcpToolItem {
   /** Schema hash field on admin mcp tool item. */
   schemaHash: string;
   /** Server id field on admin mcp tool item. */
-  serverId: number;
+  serverId: string;
   /** Server revision id field on admin mcp tool item. */
-  serverRevisionId?: number | null;
+  serverRevisionId?: string | null;
   /** Sort weight field on admin mcp tool item. */
   sortWeight: number;
   /** Status field on admin mcp tool item. */
   status: string;
   /** Tenant id field on admin mcp tool item. */
-  tenantId: number;
+  tenantId: string;
   /** Tool key field on admin mcp tool item. */
   toolKey: string;
   /** Updated at field on admin mcp tool item. */

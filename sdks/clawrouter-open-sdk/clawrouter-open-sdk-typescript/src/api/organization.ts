@@ -86,8 +86,8 @@ export class OrganizationUsersApi {
 }
 
 export interface OrganizationUsageVectorStoresListParams {
-  startTime?: number;
-  endTime?: number;
+  startTime?: string;
+  endTime?: string;
   bucketWidth?: string;
   projectIds?: string[];
   userIds?: string[];
@@ -125,8 +125,8 @@ export class OrganizationUsageVectorStoresApi {
 }
 
 export interface OrganizationUsageModerationsListParams {
-  startTime?: number;
-  endTime?: number;
+  startTime?: string;
+  endTime?: string;
   bucketWidth?: string;
   projectIds?: string[];
   userIds?: string[];
@@ -164,8 +164,8 @@ export class OrganizationUsageModerationsApi {
 }
 
 export interface OrganizationUsageImagesListParams {
-  startTime?: number;
-  endTime?: number;
+  startTime?: string;
+  endTime?: string;
   bucketWidth?: string;
   projectIds?: string[];
   userIds?: string[];
@@ -203,8 +203,8 @@ export class OrganizationUsageImagesApi {
 }
 
 export interface OrganizationUsageEmbeddingsListParams {
-  startTime?: number;
-  endTime?: number;
+  startTime?: string;
+  endTime?: string;
   bucketWidth?: string;
   projectIds?: string[];
   userIds?: string[];
@@ -242,8 +242,8 @@ export class OrganizationUsageEmbeddingsApi {
 }
 
 export interface OrganizationUsageCompletionsListParams {
-  startTime?: number;
-  endTime?: number;
+  startTime?: string;
+  endTime?: string;
   bucketWidth?: string;
   projectIds?: string[];
   userIds?: string[];
@@ -281,8 +281,8 @@ export class OrganizationUsageCompletionsApi {
 }
 
 export interface OrganizationUsageCodeInterpreterSessionsListParams {
-  startTime?: number;
-  endTime?: number;
+  startTime?: string;
+  endTime?: string;
   bucketWidth?: string;
   projectIds?: string[];
   userIds?: string[];
@@ -320,8 +320,8 @@ export class OrganizationUsageCodeInterpreterSessionsApi {
 }
 
 export interface OrganizationUsageAudioTranscriptionsListParams {
-  startTime?: number;
-  endTime?: number;
+  startTime?: string;
+  endTime?: string;
   bucketWidth?: string;
   projectIds?: string[];
   userIds?: string[];
@@ -359,8 +359,8 @@ export class OrganizationUsageAudioTranscriptionsApi {
 }
 
 export interface OrganizationUsageAudioSpeechesListParams {
-  startTime?: number;
-  endTime?: number;
+  startTime?: string;
+  endTime?: string;
   bucketWidth?: string;
   projectIds?: string[];
   userIds?: string[];
@@ -961,8 +961,8 @@ export class OrganizationGroupsApi {
 }
 
 export interface OrganizationCostsListParams {
-  startTime?: number;
-  endTime?: number;
+  startTime?: string;
+  endTime?: string;
   bucketWidth?: string;
   projectIds?: string[];
   userIds?: string[];
@@ -1074,8 +1074,8 @@ export class OrganizationCertificatesApi {
 }
 
 export interface OrganizationAuditLogsListParams {
-  effectiveAtGte?: number;
-  effectiveAtLte?: number;
+  effectiveAtGte?: string;
+  effectiveAtLte?: string;
   projectIds?: string[];
   eventTypes?: string[];
   actorIds?: string[];

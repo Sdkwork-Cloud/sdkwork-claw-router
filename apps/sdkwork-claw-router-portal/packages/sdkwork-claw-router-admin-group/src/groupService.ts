@@ -282,17 +282,8 @@ function baseChannelGroupRequest(
 }
 
 function generateUniqueGroupCode(): string {
-  if (globalThis.crypto && typeof globalThis.crypto.randomUUID === 'function') {
-    return `group-${globalThis.crypto.randomUUID()}`;
-  }
-  if (globalThis.crypto && typeof globalThis.crypto.getRandomValues === 'function') {
-    const bytes = new Uint8Array(16);
-    globalThis.crypto.getRandomValues(bytes);
-    const encoded = Array.from(bytes, value => value.toString(36).padStart(2, '0')).join('');
-    return `group-${encoded}`;
-  }
   groupCodeFallbackCounter = (groupCodeFallbackCounter + 1) % 1_679_616;
-  return `group-${Date.now().toString(36)}-${groupCodeFallbackCounter.toString(36).padStart(4, '0')}`;
+  return `group-local-${groupCodeFallbackCounter.toString(36).padStart(8, '0')}`;
 }
 
 function toReplaceChannelBindingsRequest(

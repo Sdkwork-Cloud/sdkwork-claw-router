@@ -1,11 +1,11 @@
 /** Course overview stats schema exposed by Claw Router. */
 export interface CourseOverviewStats {
   /** Total categories field on course overview stats. */
-  totalCategories: number;
+  totalCategories: string;
   /** Total courses field on course overview stats. */
-  totalCourses: number;
+  totalCourses: string;
   /** Total lessons field on course overview stats. */
-  totalLessons: number;
+  totalLessons: string;
   /** Total students field on course overview stats. */
-  totalStudents: number;
+  totalStudents: string;
 }

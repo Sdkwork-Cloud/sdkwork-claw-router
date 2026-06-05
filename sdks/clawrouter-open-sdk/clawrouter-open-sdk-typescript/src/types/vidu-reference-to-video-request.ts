@@ -21,5 +21,5 @@ export interface ViduReferenceToVideoRequest {
   /** Requested output resolution when supported. */
   resolution?: string;
   /** Optional deterministic seed. */
-  seed?: number;
+  seed?: string;
 }

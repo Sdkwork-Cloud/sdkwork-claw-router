@@ -565,6 +565,7 @@ async fn sqlite_loader_supplies_standard_pricing_plan_when_runtime_plan_table_is
     let price = PricingResolver::new(&snapshot)
         .resolve(ResolveModelPriceQuery {
             api_key_id: 100,
+            channel_group_id: None,
             model: "openai/gpt-4o-mini".to_owned(),
             billing_meter: BillingMeter::LlmInputToken,
             provider_code: Some("openrouter".to_owned()),

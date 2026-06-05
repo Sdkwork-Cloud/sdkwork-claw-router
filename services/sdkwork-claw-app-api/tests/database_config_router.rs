@@ -257,6 +257,105 @@ async fn database_config_user_profile_requires_session_and_returns_safe_subject_
 }
 
 #[tokio::test]
+async fn database_config_app_iam_directory_requires_session_and_lists_subject_directory() {
+    let database_url = unique_sqlite_url();
+    let pool = create_sqlite_pool(&database_url).await;
+    create_schema(&pool).await;
+    seed_catalog_with_two_user_api_keys(&pool).await;
+    seed_app_user_data(&pool).await;
+    seed_second_app_organization_membership(&pool).await;
+    pool.close().await;
+
+    let router = configured_router(&database_url).await;
+
+    let unauthenticated_response = router
+        .clone()
+        .oneshot(
+            Request::builder()
+                .method("GET")
+                .uri("/app/v3/api/iam/organizations")
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::UNAUTHORIZED, unauthenticated_response.status());
+
+    let (status, payload, body_text) = request_json(
+        router.clone(),
+        session_request(
+            "GET",
+            "/app/v3/api/iam/organizations",
+            Body::empty(),
+            10,
+            20,
+            30,
+        ),
+    )
+    .await;
+    assert_eq!(StatusCode::OK, status, "{body_text}");
+    assert_eq!("2000", payload["code"]);
+    let organizations = payload["data"]["items"].as_array().unwrap();
+    assert_eq!(2, organizations.len(), "{body_text}");
+    assert!(organizations
+        .iter()
+        .any(|item| item["name"] == "Root Organization"));
+    assert!(
+        organizations
+            .iter()
+            .any(|item| item["name"] == "Workspace Organization"),
+        "{body_text}"
+    );
+    assert!(!body_text.contains("Other User"));
+
+    let (status, memberships_payload, memberships_body_text) = request_json(
+        router.clone(),
+        session_request(
+            "GET",
+            "/app/v3/api/iam/organization_memberships",
+            Body::empty(),
+            10,
+            20,
+            30,
+        ),
+    )
+    .await;
+    assert_eq!(StatusCode::OK, status, "{memberships_body_text}");
+    assert_eq!("2000", memberships_payload["code"]);
+    let memberships = memberships_payload["data"]["items"].as_array().unwrap();
+    assert_eq!(2, memberships.len(), "{memberships_body_text}");
+    assert!(
+        memberships
+            .iter()
+            .all(|item| item["userId"] == "30" && item["tenantId"] == "10"),
+        "{memberships_body_text}"
+    );
+    assert!(!memberships_body_text.contains("member-31"));
+
+    for uri in [
+        "/app/v3/api/iam/departments",
+        "/app/v3/api/iam/departments/tree",
+        "/app/v3/api/iam/department_assignments",
+        "/app/v3/api/iam/positions",
+        "/app/v3/api/iam/position_assignments",
+        "/app/v3/api/iam/role_bindings",
+    ] {
+        let (status, payload, body_text) = request_json(
+            router.clone(),
+            session_request("GET", uri, Body::empty(), 10, 20, 30),
+        )
+        .await;
+        assert_eq!(StatusCode::OK, status, "{uri}: {body_text}");
+        assert_eq!("2000", payload["code"], "{uri}: {body_text}");
+        assert_eq!(
+            0,
+            payload["data"]["items"].as_array().unwrap().len(),
+            "{uri}: {body_text}"
+        );
+    }
+}
+
+#[tokio::test]
 async fn database_config_password_login_issues_app_session_and_records_password_provider_event() {
     let database_url = unique_sqlite_url();
     let pool = create_sqlite_pool(&database_url).await;
@@ -4959,6 +5058,24 @@ async fn create_schema(pool: &SqlitePool) {
             last_revealed_at TEXT,
             metadata TEXT NOT NULL DEFAULT '{}'
         )"#,
+        r#"CREATE TABLE iam_gateway_api_key_channel_group (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT NOT NULL DEFAULT 'gateway-api-key-channel-group-uuid',
+            tenant_id INTEGER NOT NULL,
+            organization_id INTEGER NOT NULL,
+            user_id INTEGER NOT NULL DEFAULT 0,
+            api_key_id INTEGER NOT NULL,
+            channel_group_id INTEGER NOT NULL,
+            channel_group_code TEXT,
+            binding_role TEXT NOT NULL DEFAULT 'route',
+            routing_strategy TEXT NOT NULL DEFAULT 'auto',
+            priority INTEGER NOT NULL DEFAULT 100,
+            weight INTEGER NOT NULL DEFAULT 100,
+            status INTEGER NOT NULL,
+            deleted_at TEXT,
+            effective_from TEXT,
+            effective_to TEXT
+        )"#,
         r#"CREATE TABLE iam_gateway_access_policy (
             id INTEGER PRIMARY KEY,
             uuid TEXT,
@@ -6514,6 +6631,12 @@ async fn seed_catalog_with_two_user_api_keys(pool: &SqlitePool) {
     .execute(pool)
     .await
     .unwrap();
+    for statement in [
+        "INSERT INTO iam_gateway_api_key_channel_group (id, uuid, tenant_id, organization_id, user_id, api_key_id, channel_group_id, channel_group_code, binding_role, routing_strategy, priority, weight, status) VALUES (1000, 'gateway-api-key-channel-group-owner-app-api-test', 10, 20, 30, 100, 10, 'standard-group', 'route', 'auto', 100, 100, 1)",
+        "INSERT INTO iam_gateway_api_key_channel_group (id, uuid, tenant_id, organization_id, user_id, api_key_id, channel_group_id, channel_group_code, binding_role, routing_strategy, priority, weight, status) VALUES (1001, 'gateway-api-key-channel-group-other-app-api-test', 10, 20, 31, 101, 10, 'standard-group', 'route', 'auto', 100, 100, 1)",
+    ] {
+        sqlx::query(statement).execute(pool).await.unwrap();
+    }
 }
 
 fn api_key_metadata_json(secret: &str) -> String {

@@ -184,10 +184,10 @@ describe("sdkwork-iam-core-pc-react", () => {
     const backendClient = {
       iam: {
         organizations: {
-          list: vi.fn().mockResolvedValue([{ organizationId: "org-1", name: "Platform" }]),
-          members: {
-            create: vi.fn().mockResolvedValue({ memberId: "member-1" }),
-          },
+          retrieve: vi.fn().mockResolvedValue({ organizationId: "org-1", name: "Platform" }),
+        },
+        organizationMemberships: {
+          create: vi.fn().mockResolvedValue({ membershipId: "membership-1" }),
         },
         permissions: {
           list: vi.fn().mockResolvedValue([{ code: "iam.users.read" }]),
@@ -209,11 +209,6 @@ describe("sdkwork-iam-core-pc-react", () => {
             displayName: "Backend User",
             userId: "backend-user",
           }),
-          roles: {
-            create: vi.fn().mockResolvedValue({ roleId: "role-1", userId: "backend-user" }),
-            delete: vi.fn().mockResolvedValue(undefined),
-            list: vi.fn().mockResolvedValue([{ roleId: "role-1" }]),
-          },
         },
       },
     };
@@ -233,13 +228,14 @@ describe("sdkwork-iam-core-pc-react", () => {
       displayName: "App Current User",
       id: "app-user",
     });
-    await expect(service.iam.organizations.members.create("org-1", { userId: "user-1" })).resolves.toEqual({
-      memberId: "member-1",
+    await expect(service.iam.organizationMemberships.create({ organizationId: "org-1", userId: "user-1" })).resolves.toEqual({
+      membershipId: "membership-1",
     });
     await expect(service.iam.roles.permissions.delete("role-1", "iam.users.read")).resolves.toBeUndefined();
 
     expect(backendClient.iam.tenants.list).toHaveBeenCalledWith({ page_size: 20 });
-    expect(backendClient.iam.organizations.members.create).toHaveBeenCalledWith("org-1", {
+    expect(backendClient.iam.organizationMemberships.create).toHaveBeenCalledWith({
+      organizationId: "org-1",
       userId: "user-1",
     });
     expect(backendClient.iam.roles.permissions.delete).toHaveBeenCalledWith(
@@ -277,7 +273,40 @@ describe("sdkwork-iam-core-pc-react", () => {
           verificationPolicy: { retrieve: vi.fn() },
         },
       },
+      openPlatform: {
+        qrAuth: {
+          sessions: {
+            create: vi.fn(),
+            passwords: { create: vi.fn() },
+            retrieve: vi.fn(),
+            scans: { create: vi.fn() },
+          },
+        },
+      },
       iam: {
+        organizations: {
+          list: vi.fn(),
+          tree: { retrieve: vi.fn() },
+        },
+        organizationMemberships: {
+          list: vi.fn(),
+        },
+        departments: {
+          list: vi.fn(),
+          tree: { retrieve: vi.fn() },
+        },
+        departmentAssignments: {
+          list: vi.fn(),
+        },
+        positions: {
+          list: vi.fn(),
+        },
+        positionAssignments: {
+          list: vi.fn(),
+        },
+        roleBindings: {
+          list: vi.fn(),
+        },
         users: {
           current: {
             retrieve: vi.fn(),
@@ -292,16 +321,22 @@ describe("sdkwork-iam-core-pc-react", () => {
         organizations: {
           create: vi.fn(),
           delete: vi.fn(),
-          list: vi.fn(),
           retrieve: vi.fn(),
-          tree: { retrieve: vi.fn() },
           update: vi.fn(),
-          members: {
-            create: vi.fn(),
-            delete: vi.fn(),
-            list: vi.fn(),
-            update: vi.fn(),
-          },
+        },
+        organizationMemberships: {
+          create: vi.fn(),
+          update: vi.fn(),
+        },
+        departments: {
+          create: vi.fn(),
+          delete: vi.fn(),
+          retrieve: vi.fn(),
+          update: vi.fn(),
+        },
+        departmentAssignments: {
+          create: vi.fn(),
+          update: vi.fn(),
         },
         permissions: {
           create: vi.fn(),
@@ -317,6 +352,15 @@ describe("sdkwork-iam-core-pc-react", () => {
           retrieve: vi.fn(),
           update: vi.fn(),
         },
+        positions: {
+          create: vi.fn(),
+          delete: vi.fn(),
+          update: vi.fn(),
+        },
+        positionAssignments: {
+          create: vi.fn(),
+          update: vi.fn(),
+        },
         roles: {
           create: vi.fn(),
           delete: vi.fn(),
@@ -324,6 +368,10 @@ describe("sdkwork-iam-core-pc-react", () => {
           retrieve: vi.fn(),
           update: vi.fn(),
           permissions: { create: vi.fn(), delete: vi.fn(), list: vi.fn() },
+        },
+        roleBindings: {
+          create: vi.fn(),
+          delete: vi.fn(),
         },
         securityEvents: { list: vi.fn() },
         tenants: {
@@ -345,7 +393,6 @@ describe("sdkwork-iam-core-pc-react", () => {
           list: vi.fn(),
           retrieve: vi.fn(),
           update: vi.fn(),
-          roles: { create: vi.fn(), delete: vi.fn(), list: vi.fn() },
         },
       },
     };

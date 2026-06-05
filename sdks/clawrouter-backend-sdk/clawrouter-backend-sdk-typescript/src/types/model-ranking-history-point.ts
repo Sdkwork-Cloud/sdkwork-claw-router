@@ -7,5 +7,5 @@ export interface ModelRankingHistoryPoint {
   /** Entries field on model ranking history point. */
   entries: ModelRankingHistoryEntry[];
   /** Index field on model ranking history point. */
-  index: number;
+  index: string;
 }

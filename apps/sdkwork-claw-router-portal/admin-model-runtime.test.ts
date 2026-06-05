@@ -96,9 +96,9 @@ function adminModel(overrides: Record<string, unknown> = {}): Record<string, unk
     supportsStreaming: true,
     supportsTools: true,
     supportsJsonSchema: true,
-    releaseStage: 1,
-    shelfState: 1,
-    routingState: 1,
+                releaseStage: "1",
+                shelfState: "1",
+                routingState: "1",
     replacementModel: null,
     ...overrides,
   };
@@ -713,8 +713,8 @@ test("admin model service calls generated backend SDK paths and normalizes model
             {
               id: "rank-1",
               name: "gpt-4o-mini",
-              requests: 1_234_567,
-              baseVolume: 42,
+              requests: "1234567",
+              baseVolume: "42",
             },
           ],
         };
@@ -929,9 +929,9 @@ test("admin model service calls generated backend SDK paths and normalizes model
         supportsStreaming: false,
         supportsTools: false,
         supportsJsonSchema: false,
-        releaseStage: 1,
-        shelfState: 1,
-        routingState: 1,
+        releaseStage: "1",
+        shelfState: "1",
+        routingState: "1",
       });
       assert.deepEqual(JSON.parse(captured[6].body), {
         vendorId: "vendor-3",
@@ -1122,26 +1122,26 @@ test("admin model service reads model ranking refresh status through generated b
       if (url === "/backend/v3/api/ai/model_rankings/status" && (init?.method ?? "GET") === "GET") {
         return {
           status: "ready",
-          tenantId: 10,
-          organizationId: 20,
+          tenantId: "9007199254740993",
+          organizationId: "9007199254740995",
           rankScope: "commercial-default",
           snapshotDate: "2026-05-08",
           snapshotPeriod: "daily",
           windowStart: "2026-05-07T00:00:00Z",
           windowEnd: "2026-05-08T00:00:00Z",
           generatedAt: "2026-05-08T00:05:00Z",
-          refreshIntervalSeconds: 3600,
+          refreshIntervalSeconds: "3600",
           nextRefreshAt: "2026-05-08T01:05:00Z",
-          cacheMaxAgeSeconds: 60,
-          generatedCount: 2,
-          sourceCount: 10,
+          cacheMaxAgeSeconds: "60",
+          generatedCount: "2",
+          sourceCount: "10",
           sourceTables: ["ai_usage_fact", "ai_model", "ai_model_rank_snapshot"],
           latestJob: {
             id: "job-failed",
             jobName: "model_ranking_refresh",
             status: "failed",
-            tenantId: 10,
-            organizationId: 20,
+            tenantId: "9007199254740993",
+            organizationId: "9007199254740995",
             rankScope: "commercial-default",
             snapshotDate: "2026-05-08",
             snapshotPeriod: "daily",
@@ -1149,11 +1149,11 @@ test("admin model service reads model ranking refresh status through generated b
             windowEnd: "2026-05-09T00:00:00Z",
             startedAt: "2026-05-08T01:00:00Z",
             endedAt: "2026-05-08T01:00:01Z",
-            durationMs: 1000,
-            generatedCount: 0,
-            sourceCount: 0,
-            successCount: 0,
-            failureCount: 1,
+            durationMs: "1000",
+            generatedCount: "0",
+            sourceCount: "0",
+            successCount: "0",
+            failureCount: "1",
             nextRefreshAt: "2026-05-08T02:00:00Z",
             failureReason: "usage aggregate failed",
           },
@@ -1165,6 +1165,8 @@ test("admin model service reads model ranking refresh status through generated b
       const status = await ModelService.fetchModelRankingRefreshStatus();
 
       assert.equal(status.status, "ready");
+      assert.equal(status.tenantId, "9007199254740993");
+      assert.equal(status.organizationId, "9007199254740995");
       assert.equal(status.rankScope, "commercial-default");
       assert.equal(status.snapshotDate, "2026-05-08");
       assert.equal(status.generatedCount, 2);
@@ -1187,19 +1189,19 @@ test("admin model ranking refresh status rejects fractional counters", async () 
       if (url === "/backend/v3/api/ai/model_rankings/status" && (init?.method ?? "GET") === "GET") {
         return {
           status: "ready",
-          tenantId: 10,
-          organizationId: 20,
+          tenantId: "9007199254740993",
+          organizationId: "9007199254740995",
           rankScope: "commercial-default",
           snapshotDate: "2026-05-08",
           snapshotPeriod: "daily",
           windowStart: "2026-05-01T00:00:00.000Z",
           windowEnd: "2026-05-08T00:00:00.000Z",
           generatedAt: "2026-05-08T08:00:00.000Z",
-          refreshIntervalSeconds: 3600,
+          refreshIntervalSeconds: "3600",
           nextRefreshAt: "2026-05-08T09:00:00.000Z",
-          cacheMaxAgeSeconds: 60,
-          generatedCount: 2.5,
-          sourceCount: 10,
+          cacheMaxAgeSeconds: "60",
+          generatedCount: "2.5",
+          sourceCount: "10",
           sourceTables: ["ai_usage_fact", "ai_model_rank_snapshot"],
           latestJob: null,
         };
@@ -1225,8 +1227,8 @@ test("admin model service reads model ranking refresh job history through genera
               id: "job-failed",
               jobName: "model_ranking_refresh",
               status: "failed",
-              tenantId: 10,
-              organizationId: 20,
+              tenantId: "9007199254740993",
+              organizationId: "9007199254740995",
               rankScope: "commercial-default",
               snapshotDate: "2026-05-08",
               snapshotPeriod: "daily",
@@ -1234,11 +1236,11 @@ test("admin model service reads model ranking refresh job history through genera
               windowEnd: "2026-05-08T00:00:00Z",
               startedAt: "2026-05-08T01:00:00Z",
               endedAt: "2026-05-08T01:00:01Z",
-              durationMs: 1000,
-              generatedCount: 0,
-              sourceCount: 0,
-              successCount: 0,
-              failureCount: 1,
+              durationMs: "1000",
+              generatedCount: "0",
+              sourceCount: "0",
+              successCount: "0",
+              failureCount: "1",
               nextRefreshAt: "2026-05-08T02:00:00Z",
               failureReason: "usage aggregate failed",
             },
@@ -1253,6 +1255,8 @@ test("admin model service reads model ranking refresh job history through genera
       assert.equal(page.items.length, 1);
       assert.equal(page.items[0].id, "job-failed");
       assert.equal(page.items[0].status, "failed");
+      assert.equal(page.items[0].tenantId, "9007199254740993");
+      assert.equal(page.items[0].organizationId, "9007199254740995");
       assert.equal(page.items[0].rankScope, "commercial-default");
       assert.equal(page.items[0].failureReason, "usage aggregate failed");
       assert.deepEqual(
@@ -1270,17 +1274,17 @@ test("admin model service triggers model ranking refresh through generated backe
         return {
           triggered: true,
           status: "succeeded",
-          tenantId: 10,
-          organizationId: 20,
+          tenantId: "9007199254740993",
+          organizationId: "9007199254740995",
           rankScope: "commercial-default",
           snapshotDate: "2026-05-08",
           snapshotPeriod: "daily",
           windowStart: "2026-05-07T00:00:00Z",
           windowEnd: "2026-05-08T00:00:00Z",
-          generatedCount: 7,
-          sourceCount: 9,
-          refreshIntervalSeconds: 3600,
-          cacheMaxAgeSeconds: 60,
+          generatedCount: "7",
+          sourceCount: "9",
+          refreshIntervalSeconds: "3600",
+          cacheMaxAgeSeconds: "60",
           nextRefreshAt: "2026-05-08T01:00:00Z",
         };
       }
@@ -1291,6 +1295,8 @@ test("admin model service triggers model ranking refresh through generated backe
 
       assert.equal(result.triggered, true);
       assert.equal(result.status, "succeeded");
+      assert.equal(result.tenantId, "9007199254740993");
+      assert.equal(result.organizationId, "9007199254740995");
       assert.equal(result.rankScope, "commercial-default");
       assert.equal(result.generatedCount, 7);
       assert.deepEqual(
@@ -1300,10 +1306,10 @@ test("admin model service triggers model ranking refresh through generated backe
       assert.deepEqual(JSON.parse(captured[0].body), {
         rankScope: "commercial-default",
         snapshotPeriod: "daily",
-        limit: 200,
-        lookbackDays: 7,
-        refreshIntervalSeconds: 3600,
-        cacheMaxAgeSeconds: 60,
+        limit: "200",
+        lookbackDays: "7",
+        refreshIntervalSeconds: "3600",
+        cacheMaxAgeSeconds: "60",
       });
       assert.equal(captured[0].headers["x-request-id"], undefined);
     },
@@ -1314,8 +1320,8 @@ test("admin model ranking refresh diagnostics surface latest failed execution ev
   const diagnostics = deriveModelRankingRefreshDiagnostics(
     {
       status: "ready",
-      tenantId: 10,
-      organizationId: 20,
+      tenantId: "9007199254740993",
+      organizationId: "9007199254740995",
       rankScope: "commercial-default",
       snapshotDate: "2026-05-08",
       snapshotPeriod: "daily",
@@ -1332,8 +1338,8 @@ test("admin model ranking refresh diagnostics surface latest failed execution ev
         id: "job-failed",
         jobName: "model_ranking_refresh",
         status: "failed",
-        tenantId: 10,
-        organizationId: 20,
+        tenantId: "9007199254740993",
+        organizationId: "9007199254740995",
         rankScope: "commercial-default",
         snapshotDate: "2026-05-08",
         snapshotPeriod: "daily",
@@ -1365,8 +1371,8 @@ test("admin model ranking refresh diagnostics remain useful without job history"
   const diagnostics = deriveModelRankingRefreshDiagnostics(
     {
       status: "empty",
-      tenantId: 10,
-      organizationId: 20,
+      tenantId: "9007199254740993",
+      organizationId: "9007199254740995",
       rankScope: "commercial-default",
       snapshotDate: "",
       snapshotPeriod: "daily",
@@ -1439,8 +1445,8 @@ test("admin model ranking summary rejects fractional request counters", async ()
               vendor: "OpenAI",
               vendorCode: "openai",
               modality: "LLM",
-              baseVolume: 1200,
-              requests: 1200.5,
+              baseVolume: "1200",
+              requests: "1200.5",
               tokens: 456000,
               cost: 12.34,
               currency: "USD",
@@ -1488,8 +1494,8 @@ test("admin model list keeps backend calls when ranking summary is malformed", a
               vendor: "OpenAI",
               vendorCode: "openai",
               modality: "LLM",
-              baseVolume: 1200,
-              requests: 1200.5,
+              baseVolume: "1200",
+              requests: "1200.5",
               tokens: 456000,
               cost: 12.34,
               currency: "USD",
@@ -2605,13 +2611,13 @@ test("admin model resource group service calls generated backend SDK resource gr
           groupType: "api_group",
           selectionMode: "manual",
           description: "Custom endpoints",
-          sortOrder: 22,
+          sortOrder: "22",
           status: "active",
           members: [
             {
               resourceCode: "api.openai.chat_completions",
               itemRole: "included",
-              sortOrder: 1,
+              sortOrder: "1",
             },
           ],
         });

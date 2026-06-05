@@ -10,6 +10,12 @@ import {
 } from 'sdkwork-claw-router-commons/runtime';
 
 type JsonObject = Record<string, JsonValue>;
+type SdkUsageSnapshot = {
+  cachedTokens?: string;
+  inputTokens?: string;
+  outputTokens?: string;
+  totalTokens?: string;
+};
 
 interface MutationOptions {
   idempotencyPrefix?: string;
@@ -213,7 +219,7 @@ export async function listAgentDefinitions(
   sdkClient?: ClawRouterAppSdkClient,
 ): Promise<unknown> {
   const client = appClient(sdkClient);
-  return client.agents.agentDefinitions.list(params);
+  return client.agents.agentDefinitions.list(sdkPageParams(params));
 }
 
 export async function createAgentDefinition(
@@ -247,9 +253,9 @@ export async function listModelCatalog(
   sdkClient?: ClawRouterAppSdkClient,
 ): Promise<unknown> {
   if (sdkClient) {
-    return sdkClient.ai.models.list(params);
+    return sdkClient.ai.models.list(sdkModelCatalogParams(params));
   }
-  return getClawRouterAppSdkClient().ai.models.list(params);
+  return getClawRouterAppSdkClient().ai.models.list(sdkModelCatalogParams(params));
 }
 
 export async function listAgentSessions(
@@ -258,7 +264,7 @@ export async function listAgentSessions(
   sdkClient?: ClawRouterAppSdkClient,
 ): Promise<unknown> {
   const client = appClient(sdkClient);
-  return client.agents.agentSessions.list(agentId, params);
+  return client.agents.agentSessions.list(agentId, sdkPageParams(params));
 }
 
 export async function createAgentSession(
@@ -285,7 +291,7 @@ export async function listAgentRuns(
   sdkClient?: ClawRouterAppSdkClient,
 ): Promise<unknown> {
   const client = appClient(sdkClient);
-  return client.agents.agentRuns.list(sessionId, params);
+  return client.agents.agentRuns.list(sessionId, sdkPageParams(params));
 }
 
 export async function createAgentRun(
@@ -313,7 +319,7 @@ export async function completeAgentRun(
   sdkClient?: ClawRouterAppSdkClient,
 ): Promise<unknown> {
   const client = appClient(sdkClient);
-  return client.agents.agentRuns.submit(runId, body, mutationParams('agent-run-complete', options));
+  return client.agents.agentRuns.submit(runId, sdkAgentRunCompleteBody(body), mutationParams('agent-run-complete', options));
 }
 
 export async function listAgentRunSteps(
@@ -322,7 +328,7 @@ export async function listAgentRunSteps(
   sdkClient?: ClawRouterAppSdkClient,
 ): Promise<unknown> {
   const client = appClient(sdkClient);
-  return client.agents.agentRunSteps.list(runId, params);
+  return client.agents.agentRunSteps.list(runId, sdkPageParams(params));
 }
 
 export async function createAgentRunStep(
@@ -332,7 +338,7 @@ export async function createAgentRunStep(
   sdkClient?: ClawRouterAppSdkClient,
 ): Promise<unknown> {
   const client = appClient(sdkClient);
-  return client.agents.agentRunSteps.create(runId, body, mutationParams('agent-run-step', options));
+  return client.agents.agentRunSteps.create(runId, sdkAgentRunStepCreateBody(body), mutationParams('agent-run-step', options));
 }
 
 export async function completeAgentRunStep(
@@ -346,7 +352,7 @@ export async function completeAgentRunStep(
   return client.agents.agentRunSteps.submit(
     runId,
     stepId,
-    body,
+    sdkAgentRunStepCompleteBody(body),
     mutationParams('agent-run-step-complete', options),
   );
 }
@@ -356,7 +362,7 @@ export async function listChatConversations(
   sdkClient?: ClawRouterAppSdkClient,
 ): Promise<unknown> {
   const client = appClient(sdkClient);
-  return client.chat.conversations.list(params);
+  return client.chat.conversations.list(sdkPageParams(params));
 }
 
 export async function createChatConversation(
@@ -382,7 +388,10 @@ export async function listChatMessages(
   sdkClient?: ClawRouterAppSdkClient,
 ): Promise<unknown> {
   const client = appClient(sdkClient);
-  return client.chat.conversationMessages.list(conversationId, params);
+  return client.chat.conversationMessages.list(conversationId, {
+    ...params,
+    limit: params.limit === undefined ? undefined : String(params.limit),
+  });
 }
 
 export async function createChatTurn(
@@ -416,7 +425,7 @@ export async function listMemorySpaces(
   sdkClient?: ClawRouterAppSdkClient,
 ): Promise<unknown> {
   const client = appClient(sdkClient);
-  return client.memory.spaces.list(params);
+  return client.memory.spaces.list(sdkPageParams(params));
 }
 
 export async function createMemorySpace(
@@ -442,7 +451,7 @@ export async function listMemoryEntries(
   sdkClient?: ClawRouterAppSdkClient,
 ): Promise<unknown> {
   const client = appClient(sdkClient);
-  return client.memory.entries.list(spaceId, params);
+  return client.memory.entries.list(spaceId, sdkPageParams(params));
 }
 
 export async function createMemoryEntry(
@@ -474,7 +483,7 @@ export async function listRuntimeInvocations(
   sdkClient?: ClawRouterAppSdkClient,
 ): Promise<unknown> {
   const client = appClient(sdkClient);
-  return client.runtime.invocations.list(params);
+  return client.runtime.invocations.list(sdkPageParams(params));
 }
 
 export async function createRuntimeInvocation(
@@ -503,7 +512,7 @@ export async function completeRuntimeInvocation(
   const client = appClient(sdkClient);
   return client.runtime.invocations.submit(
     invocationId,
-    body,
+    sdkRuntimeInvocationCompleteBody(body),
     mutationParams('runtime-invocation-complete', options),
   );
 }
@@ -514,7 +523,7 @@ export async function listRuntimeEvents(
   sdkClient?: ClawRouterAppSdkClient,
 ): Promise<unknown> {
   const client = appClient(sdkClient);
-  return client.runtime.invocationEvents.list(invocationId, params);
+  return client.runtime.invocationEvents.list(invocationId, sdkPageParams(params));
 }
 
 export async function streamRuntimeEvents(
@@ -546,7 +555,7 @@ export async function listRuntimeArtifacts(
   sdkClient?: ClawRouterAppSdkClient,
 ): Promise<unknown> {
   const client = appClient(sdkClient);
-  return client.runtime.artifacts.list(invocationId, params);
+  return client.runtime.artifacts.list(invocationId, sdkPageParams(params));
 }
 
 export async function createRuntimeArtifact(
@@ -556,5 +565,70 @@ export async function createRuntimeArtifact(
   sdkClient?: ClawRouterAppSdkClient,
 ): Promise<unknown> {
   const client = appClient(sdkClient);
-  return client.runtime.artifacts.create(invocationId, body, mutationParams('runtime-artifact', options));
+  return client.runtime.artifacts.create(invocationId, sdkRuntimeArtifactCreateBody(body), mutationParams('runtime-artifact', options));
+}
+
+function sdkPageParams<T extends PageParams>(params: T): Omit<T, 'page' | 'pageSize'> & {
+  page?: string;
+  pageSize?: string;
+} {
+  return {
+    ...params,
+    page: params.page === undefined ? undefined : String(params.page),
+    pageSize: params.pageSize === undefined ? undefined : String(params.pageSize),
+  };
+}
+
+function sdkModelCatalogParams(params: ModelCatalogParams): Omit<ModelCatalogParams, 'limit'> & { limit?: string } {
+  return {
+    ...params,
+    limit: params.limit === undefined ? undefined : String(params.limit),
+  };
+}
+
+function sdkUsageSnapshot(value: RuntimeUsageSnapshot | undefined): SdkUsageSnapshot | undefined {
+  if (!value) {
+    return undefined;
+  }
+  return {
+    cachedTokens: String(value.cachedTokens),
+    inputTokens: String(value.inputTokens),
+    outputTokens: String(value.outputTokens),
+    totalTokens: String(value.totalTokens),
+  };
+}
+
+function sdkAgentRunCompleteBody(body: AgentRunCompleteBody): Omit<AgentRunCompleteBody, 'usageJson'> & { usageJson?: SdkUsageSnapshot } {
+  return {
+    ...body,
+    usageJson: sdkUsageSnapshot(body.usageJson),
+  };
+}
+
+function sdkAgentRunStepCreateBody(body: AgentRunStepCreateBody): Omit<AgentRunStepCreateBody, 'usageJson'> & { usageJson?: SdkUsageSnapshot } {
+  return {
+    ...body,
+    usageJson: sdkUsageSnapshot(body.usageJson),
+  };
+}
+
+function sdkAgentRunStepCompleteBody(body: AgentRunStepCompleteBody): Omit<AgentRunStepCompleteBody, 'usageJson'> & { usageJson?: SdkUsageSnapshot } {
+  return {
+    ...body,
+    usageJson: sdkUsageSnapshot(body.usageJson),
+  };
+}
+
+function sdkRuntimeInvocationCompleteBody(body: RuntimeInvocationCompleteBody): Omit<RuntimeInvocationCompleteBody, 'usageJson'> & { usageJson?: SdkUsageSnapshot } {
+  return {
+    ...body,
+    usageJson: sdkUsageSnapshot(body.usageJson),
+  };
+}
+
+function sdkRuntimeArtifactCreateBody(body: RuntimeArtifactCreateBody): Omit<RuntimeArtifactCreateBody, 'sizeBytes'> & { sizeBytes?: string } {
+  return {
+    ...body,
+    sizeBytes: body.sizeBytes === undefined ? undefined : String(body.sizeBytes),
+  };
 }

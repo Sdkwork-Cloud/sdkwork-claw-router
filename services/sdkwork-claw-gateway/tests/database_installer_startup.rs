@@ -3,7 +3,9 @@ use std::time::{SystemTime, UNIX_EPOCH};
 
 use sdkwork_claw_config::{ApiKeySecurityConfig, DatabaseConfig};
 use sdkwork_claw_gateway::runtime::router_with_database_and_api_key_config;
-use sdkwork_claw_product::infrastructure::sql::installer::DatabaseInstaller;
+use sdkwork_claw_product::infrastructure::sql::installer::{
+    DatabaseInstaller, CURRENT_SCHEMA_VERSION,
+};
 use sqlx::sqlite::{SqliteConnectOptions, SqlitePoolOptions};
 use sqlx::Row;
 use std::str::FromStr;
@@ -36,7 +38,10 @@ async fn gateway_startup_installs_empty_sqlite_database_before_loading_catalog()
             .await
             .unwrap();
     assert_eq!("installed", state.get::<String, _>("status"));
-    assert_eq!("2026.05.08.1", state.get::<String, _>("schema_version"));
+    assert_eq!(
+        CURRENT_SCHEMA_VERSION,
+        state.get::<String, _>("schema_version")
+    );
     assert_eq!("2026.05.08.1", state.get::<String, _>("catalog_version"));
 
     let gpt_5_5_count: i64 =

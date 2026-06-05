@@ -7,9 +7,9 @@ export interface OpenAiCertificate {
   /** Certificate content or PEM when returned. */
   content?: string;
   /** Unix timestamp in seconds when the certificate was created. */
-  created_at?: number;
+  created_at?: string;
   /** Unix timestamp in seconds when the certificate expires. */
-  expires_at?: number;
+  expires_at?: string;
   /** Certificate identifier. */
   id: string;
   /** Human-readable certificate name. */

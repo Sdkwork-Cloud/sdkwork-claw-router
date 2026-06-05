@@ -28,7 +28,8 @@ use sdkwork_claw_product::api::{
 use sdkwork_claw_product::application::{
     ApiKeySecretHasher, AuthenticatedApiKeyContext, PricingResolver, ProviderRouteSelectionError,
     ProviderRouteSelectionErrorKind, ProviderRouteSelector, ResolveModelPriceQuery,
-    SelectProviderChannelRouteQuery, SelectProviderRouteQuery, SelectedProviderRoute,
+    SelectProviderChannelRouteQuery, SelectProviderRouteQuery, SelectedProviderChannelRoute,
+    SelectedProviderRoute,
 };
 use sdkwork_claw_product::domain::{
     provider_native_model_id, AiModel, AiRouteFailureStrategy, AiRouteModelRequirement,
@@ -250,6 +251,7 @@ struct StickyObjectRouteBinding {
     parent_object_id: Option<String>,
     provider_code: String,
     channel_id: i64,
+    channel_group_id: Option<i64>,
     vendor_code: Option<String>,
     api_code: Option<String>,
     catalog_key: Option<String>,
@@ -860,6 +862,7 @@ where
     let quantity = route_scoped_metered_usage_quantity(context, response_body)?;
     let price = PricingResolver::new(catalog).resolve(ResolveModelPriceQuery {
         api_key_id: context.api_key_context.api_key_id,
+        channel_group_id: Some(route.group_id),
         model: route.catalog_key.clone(),
         billing_meter: context.billing_meter.clone(),
         provider_code: Some(route.provider_code.clone()),
@@ -904,8 +907,8 @@ where
         user_id: context.api_key_context.user_id,
         api_key_id: context.api_key_context.api_key_id,
         api_key_name_snapshot: context.api_key_context.api_key_name_snapshot.clone(),
-        channel_group_id: context.api_key_context.group_id,
-        channel_group_snapshot: context.api_key_context.group_code.clone(),
+        channel_group_id: route.group_id,
+        channel_group_snapshot: route.group_code.clone(),
         catalog_key: route.catalog_key.clone(),
         requested_model: context.requested_model.clone(),
         requested_model_catalog_key: route.catalog_key.clone(),
@@ -968,6 +971,7 @@ where
     let quantity = GatewayUsageQuantity::single_request();
     let price = PricingResolver::new(catalog).resolve(ResolveModelPriceQuery {
         api_key_id: context.api_key_context.api_key_id,
+        channel_group_id: Some(route.group_id),
         model: route.catalog_key.clone(),
         billing_meter: billing_meter.clone(),
         provider_code: Some(route.provider_code.clone()),
@@ -1010,8 +1014,8 @@ where
         user_id: context.api_key_context.user_id,
         api_key_id: context.api_key_context.api_key_id,
         api_key_name_snapshot: context.api_key_context.api_key_name_snapshot.clone(),
-        channel_group_id: context.api_key_context.group_id,
-        channel_group_snapshot: context.api_key_context.group_code.clone(),
+        channel_group_id: route.group_id,
+        channel_group_snapshot: route.group_code.clone(),
         catalog_key: route.catalog_key.clone(),
         requested_model: context.requested_model.clone(),
         requested_model_catalog_key: route.catalog_key.clone(),
@@ -1083,7 +1087,7 @@ async fn record_sticky_object_route_if_needed(
         tenant_id: context.api_key_context.tenant_id,
         organization_id: context.api_key_context.organization_id,
         api_key_id: context.api_key_context.api_key_id,
-        channel_group_id: context.api_key_context.group_id,
+        channel_group_id: route.group_id,
         object_type: context.object_type.clone(),
         object_id: object_id.clone(),
         object_key_hash: sticky_object_key_hash(
@@ -1100,7 +1104,7 @@ async fn record_sticky_object_route_if_needed(
         api_code: context.api_code.clone(),
         catalog_key: route.catalog_key.clone(),
         provider_model: route.provider_model.clone(),
-        region_code: Some("global".to_owned()),
+        region_code: Some(route.region_code.clone()),
         sticky_scope: context.sticky_scope.clone(),
     };
     sticky_store.upsert(&command).await
@@ -1155,7 +1159,7 @@ impl StickyObjectRouteStore {
             StickyObjectRouteStore::Sqlite(pool) => sqlx::query(
                 r#"
                 SELECT object_type, object_id, parent_object_type, parent_object_id,
-                       provider_code, channel_id, vendor_code, api_code, catalog_key,
+                       provider_code, channel_id, channel_group_id, vendor_code, api_code, catalog_key,
                        provider_model, region_code, sticky_scope
                 FROM ai_provider_object_route
                 WHERE tenant_id = ?
@@ -1180,7 +1184,7 @@ impl StickyObjectRouteStore {
             StickyObjectRouteStore::Postgres(pool) => sqlx::query(
                 r#"
                 SELECT object_type, object_id, parent_object_type, parent_object_id,
-                       provider_code, channel_id, vendor_code, api_code, catalog_key,
+                       provider_code, channel_id, channel_group_id, vendor_code, api_code, catalog_key,
                        provider_model, region_code, sticky_scope
                 FROM ai_provider_object_route
                 WHERE tenant_id = $1
@@ -1330,6 +1334,7 @@ fn sticky_binding_from_row(row: sqlx::sqlite::SqliteRow) -> StickyObjectRouteBin
         parent_object_id: row.get("parent_object_id"),
         provider_code: row.get("provider_code"),
         channel_id: row.get("channel_id"),
+        channel_group_id: row.get("channel_group_id"),
         vendor_code: row.get("vendor_code"),
         api_code: row.get("api_code"),
         catalog_key: row.get("catalog_key"),
@@ -1347,6 +1352,7 @@ fn sticky_binding_from_pg_row(row: sqlx::postgres::PgRow) -> StickyObjectRouteBi
         parent_object_id: row.get("parent_object_id"),
         provider_code: row.get("provider_code"),
         channel_id: row.get("channel_id"),
+        channel_group_id: row.get("channel_group_id"),
         vendor_code: row.get("vendor_code"),
         api_code: row.get("api_code"),
         catalog_key: row.get("catalog_key"),
@@ -1840,7 +1846,7 @@ where
                     capability: intent.capability,
                 },
             )?;
-            vec![channel_route_to_passthrough_target(selection.route)]
+            vec![channel_route_to_passthrough_target(selection)]
         }
     };
     if targets.is_empty() {
@@ -1941,6 +1947,7 @@ where
         PricingResolver::new(catalog)
             .resolve(ResolveModelPriceQuery {
                 api_key_id: context.api_key_id,
+                channel_group_id: Some(sticky_binding_group_id(context, binding)),
                 model: route.catalog_key.clone(),
                 billing_meter: intent.billing_meter.clone(),
                 provider_code: Some(route.provider_code.clone()),
@@ -1950,6 +1957,8 @@ where
             .map_err(|error| {
                 RouteScopedOpenAiPassthroughError::pricing_unavailable(error.to_string())
             })?;
+        let (group_id, group_code, pricing_plan_code) =
+            sticky_binding_group_context(catalog, context, binding);
         let provider_model = channel_mapping
             .as_ref()
             .and_then(|rule| rule.effective_provider_model().map(str::to_owned))
@@ -1957,9 +1966,9 @@ where
         return Ok(model_route_to_passthrough_target_with_provider_model(
             SelectedProviderRoute {
                 route,
-                group_id: context.group_id,
-                group_code: context.group_code.clone(),
-                pricing_plan_code: context.pricing_plan_code.clone(),
+                group_id,
+                group_code,
+                pricing_plan_code,
                 policy_id: None,
                 rule_id: None,
             },
@@ -1967,7 +1976,69 @@ where
         ));
     }
 
-    Ok(channel_route_to_passthrough_target(channel_route))
+    Ok(channel_route_to_passthrough_target(
+        selected_sticky_provider_channel_route(channel_route, catalog, context, binding),
+    ))
+}
+
+fn selected_sticky_provider_channel_route<C>(
+    route: ProviderChannelRoute,
+    catalog: &C,
+    context: &AuthenticatedApiKeyContext,
+    binding: &StickyObjectRouteBinding,
+) -> SelectedProviderChannelRoute
+where
+    C: PricingCatalog + Send + Sync + 'static,
+{
+    let (group_id, group_code, pricing_plan_code) =
+        sticky_binding_group_context(catalog, context, binding);
+    SelectedProviderChannelRoute {
+        route,
+        group_id,
+        group_code,
+        pricing_plan_code,
+        policy_id: None,
+        rule_id: None,
+    }
+}
+
+fn sticky_binding_group_context<C>(
+    catalog: &C,
+    context: &AuthenticatedApiKeyContext,
+    binding: &StickyObjectRouteBinding,
+) -> (i64, String, String)
+where
+    C: PricingCatalog + Send + Sync + 'static,
+{
+    let group_id = sticky_binding_group_id(context, binding);
+    if group_id == context.group_id {
+        return (
+            context.group_id,
+            context.group_code.clone(),
+            context.pricing_plan_code.clone(),
+        );
+    }
+
+    catalog
+        .find_channel_group(group_id)
+        .map(|group| (group.id, group.code, group.pricing_plan_code))
+        .unwrap_or_else(|| {
+            (
+                context.group_id,
+                context.group_code.clone(),
+                context.pricing_plan_code.clone(),
+            )
+        })
+}
+
+fn sticky_binding_group_id(
+    context: &AuthenticatedApiKeyContext,
+    binding: &StickyObjectRouteBinding,
+) -> i64 {
+    binding
+        .channel_group_id
+        .filter(|group_id| *group_id > 0)
+        .unwrap_or(context.group_id)
 }
 
 fn binding_region_matches(route_region_code: &str, binding_region_code: Option<&str>) -> bool {
@@ -2199,6 +2270,15 @@ fn resolve_route_scoped_model_route_target<C>(
 where
     C: PricingCatalog + Send + Sync + 'static,
 {
+    let selected_group_id = selection.group_id;
+    let selected_group_code = selection.group_code.clone();
+    let selected_pricing_plan_code = selection.pricing_plan_code.clone();
+    let selected_context = AuthenticatedApiKeyContext {
+        group_id: selected_group_id,
+        group_code: selected_group_code.clone(),
+        pricing_plan_code: selected_pricing_plan_code.clone(),
+        ..context.clone()
+    };
     let mut model_route = selection.route;
     let channel_route = catalog
         .list_provider_channel_routes()
@@ -2218,7 +2298,7 @@ where
     }
     let channel_mapping = resolve_route_scoped_channel_mapping(
         catalog,
-        context,
+        &selected_context,
         requested_model,
         vendor_code,
         &channel_route,
@@ -2261,9 +2341,9 @@ where
     Ok(Some(model_route_to_passthrough_target_with_provider_model(
         SelectedProviderRoute {
             route: model_route,
-            group_id: context.group_id,
-            group_code: context.group_code.clone(),
-            pricing_plan_code: context.pricing_plan_code.clone(),
+            group_id: selected_group_id,
+            group_code: selected_group_code,
+            pricing_plan_code: selected_pricing_plan_code,
             policy_id: selection.policy_id,
             rule_id: selection.rule_id,
         },
@@ -2349,6 +2429,9 @@ fn model_route_to_passthrough_target_with_provider_model(
         route.catalog_key.clone(),
         selection.policy_id,
         selection.rule_id,
+        selection.group_id,
+        selection.group_code.clone(),
+        selection.pricing_plan_code.clone(),
         route.provider_code.clone(),
         route.channel_id,
         provider_model.clone(),
@@ -2376,6 +2459,9 @@ fn openai_provider_usage_route_from_model_route(
     catalog_key: String,
     policy_id: Option<i64>,
     rule_id: Option<i64>,
+    group_id: i64,
+    group_code: String,
+    pricing_plan_code: String,
     provider_code: String,
     channel_id: i64,
     provider_model: String,
@@ -2390,6 +2476,9 @@ fn openai_provider_usage_route_from_model_route(
         catalog_key,
         policy_id,
         rule_id,
+        group_id,
+        group_code,
+        pricing_plan_code,
         provider_code,
         channel_id,
         provider_model,
@@ -2403,12 +2492,16 @@ fn openai_provider_usage_route_from_model_route(
 }
 
 fn openai_provider_usage_route_from_channel_route(
-    route: &ProviderChannelRoute,
+    selection: &SelectedProviderChannelRoute,
 ) -> OpenAiProviderRoute {
+    let route = &selection.route;
     OpenAiProviderRoute {
         catalog_key: default_route_scoped_api_request_catalog_key().to_owned(),
-        policy_id: None,
-        rule_id: None,
+        policy_id: selection.policy_id,
+        rule_id: selection.rule_id,
+        group_id: selection.group_id,
+        group_code: selection.group_code.clone(),
+        pricing_plan_code: selection.pricing_plan_code.clone(),
         provider_code: route.provider_code.clone(),
         channel_id: route.channel_id,
         provider_model: provider_native_model_id(default_route_scoped_api_request_catalog_key()),
@@ -2426,9 +2519,10 @@ fn default_route_scoped_api_request_catalog_key() -> &'static str {
 }
 
 fn channel_route_to_passthrough_target(
-    route: ProviderChannelRoute,
+    selection: SelectedProviderChannelRoute,
 ) -> RouteScopedOpenAiPassthroughTarget {
-    let channel_usage_route = openai_provider_usage_route_from_channel_route(&route);
+    let channel_usage_route = openai_provider_usage_route_from_channel_route(&selection);
+    let route = selection.route;
     RouteScopedOpenAiPassthroughTarget {
         provider_code: route.provider_code,
         channel_id: route.channel_id,
@@ -2884,6 +2978,7 @@ mod tests {
             parent_object_id: None,
             provider_code: "openrouter".to_owned(),
             channel_id: 3001,
+            channel_group_id: None,
             vendor_code: None,
             api_code: Some("openai.files".to_owned()),
             catalog_key: None,
@@ -2946,6 +3041,7 @@ mod tests {
             parent_object_id: None,
             provider_code: "openrouter".to_owned(),
             channel_id: 3001,
+            channel_group_id: None,
             vendor_code: None,
             api_code: Some("openai.responses".to_owned()),
             catalog_key: Some("openai/gpt-4o-mini".to_owned()),
@@ -3035,6 +3131,9 @@ mod tests {
             catalog_key: "openai/gpt-4o-mini".to_owned(),
             policy_id: Some(9001),
             rule_id: Some(9102),
+            group_id: context.api_key_context.group_id,
+            group_code: context.api_key_context.group_code.clone(),
+            pricing_plan_code: context.api_key_context.pricing_plan_code.clone(),
             provider_code: "openrouter".to_owned(),
             channel_id: 3001,
             provider_model: "openrouter/gpt-4o-mini".to_owned(),
@@ -3048,6 +3147,7 @@ mod tests {
         let price = PricingResolver::new(&catalog)
             .resolve(ResolveModelPriceQuery {
                 api_key_id: context.api_key_context.api_key_id,
+                channel_group_id: Some(route.group_id),
                 model: route.catalog_key.clone(),
                 billing_meter: context.billing_meter.clone(),
                 provider_code: Some(route.provider_code.clone()),

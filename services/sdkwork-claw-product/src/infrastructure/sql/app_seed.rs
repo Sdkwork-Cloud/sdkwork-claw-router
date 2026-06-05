@@ -500,13 +500,109 @@ async fn repair_sqlite_apps(
         let icon_resource_snapshot = icon.as_ref().map(Value::to_string);
         let (artifact_media_resource_id, artifact_object_blob_id, artifact_resource_snapshot) =
             app_artifact_columns(entry);
+        let stable_id = stable_app_id(index);
+        let app_uuid = app_uuid(&entry.app_key);
+        sqlx::query(
+            r#"
+            UPDATE plus_app
+            SET uuid = uuid || '-retired-' || id,
+                status = ?,
+                config = json_patch(
+                    COALESCE(NULLIF(config, ''), '{}'),
+                    '{"portal":{"marketStatus":"OFFLINE"}}'
+                ),
+                updated_at = CURRENT_TIMESTAMP
+            WHERE uuid = ?
+              AND id <> ?
+            "#,
+        )
+        .bind(INACTIVE_STATUS)
+        .bind(&app_uuid)
+        .bind(stable_id)
+        .execute(&mut **tx)
+        .await?;
+
+        let result = sqlx::query(
+            r#"
+            UPDATE plus_app
+            SET
+                uuid = ?,
+                tenant_id = ?,
+                organization_id = ?,
+                data_scope = ?,
+                user_id = ?,
+                name = ?,
+                icon = ?,
+                resource_list = ?,
+                project_id = ?,
+                description = ?,
+                version = ?,
+                icon_media_resource_id = ?,
+                icon_object_blob_id = ?,
+                icon_resource_snapshot = ?,
+                access_url = ?,
+                config = ?,
+                status = ?,
+                app_type = ?,
+                platforms = ?,
+                install_platforms = ?,
+                install_skill = ?,
+                install_config = ?,
+                release_notes = ?,
+                package_name = ?,
+                bundle_id = ?,
+                store_url = ?,
+                artifact_media_resource_id = ?,
+                artifact_object_blob_id = ?,
+                artifact_resource_snapshot = ?,
+                updated_at = CURRENT_TIMESTAMP
+            WHERE id = ?
+            "#,
+        )
+        .bind(&app_uuid)
+        .bind(entry.tenant_id)
+        .bind(install_projection_organization_id(entry))
+        .bind(SYSTEM_DATA_SCOPE)
+        .bind(0_i64)
+        .bind(&entry.plus_app.name)
+        .bind(icon_json(entry))
+        .bind(resource_list_json(entry))
+        .bind(0_i64)
+        .bind(&entry.plus_app.description)
+        .bind(&entry.plus_app.version)
+        .bind(&icon_media_resource_id)
+        .bind(icon_object_blob_id)
+        .bind(&icon_resource_snapshot)
+        .bind(&entry.plus_app.access_url)
+        .bind(entry.plus_app.config.to_string())
+        .bind(app_status_code(&entry.plus_app.status)?)
+        .bind(&entry.plus_app.app_type)
+        .bind(entry.plus_app.platforms.to_string())
+        .bind(entry.plus_app.install_platforms.to_string())
+        .bind(entry.plus_app.install_skill.to_string())
+        .bind(entry.plus_app.install_config.to_string())
+        .bind(entry.plus_app.release_notes.to_string())
+        .bind(&entry.plus_app.package_name)
+        .bind(&entry.plus_app.bundle_id)
+        .bind(&entry.plus_app.store_url)
+        .bind(&artifact_media_resource_id)
+        .bind(artifact_object_blob_id)
+        .bind(&artifact_resource_snapshot)
+        .bind(stable_id)
+        .execute(&mut **tx)
+        .await?;
+        if result.rows_affected() > 0 {
+            continue;
+        }
+
         sqlx::query(
             r#"
             INSERT INTO plus_app
                 (id, uuid, tenant_id, organization_id, data_scope, user_id, name, icon, resource_list, project_id, description, version, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot, access_url, config, status, app_type, platforms, install_platforms, install_skill, install_config, release_notes, package_name, bundle_id, store_url, artifact_media_resource_id, artifact_object_blob_id, artifact_resource_snapshot)
             VALUES
                 (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-            ON CONFLICT(uuid) DO UPDATE SET
+            ON CONFLICT(id) DO UPDATE SET
+                uuid = excluded.uuid,
                 tenant_id = excluded.tenant_id,
                 organization_id = excluded.organization_id,
                 data_scope = excluded.data_scope,
@@ -538,8 +634,8 @@ async fn repair_sqlite_apps(
                 updated_at = CURRENT_TIMESTAMP
             "#,
         )
-        .bind(stable_app_id(index))
-        .bind(app_uuid(&entry.app_key))
+        .bind(stable_id)
+        .bind(&app_uuid)
         .bind(entry.tenant_id)
         .bind(install_projection_organization_id(entry))
         .bind(SYSTEM_DATA_SCOPE)
@@ -721,6 +817,7 @@ async fn repair_sqlite_artifacts(
             .as_ref()
             .and_then(media_resource_object_blob_id);
         let artifact_resource_snapshot = item.artifact.as_ref().map(Value::to_string);
+        release_sqlite_app_artifact_uuid_owner(tx, item).await?;
         sqlx::query(
             r#"
             INSERT INTO studio_catalog_artifact
@@ -858,13 +955,106 @@ async fn import_postgres_apps(
         let icon_resource_snapshot = icon.as_ref().map(Value::to_string);
         let (artifact_media_resource_id, artifact_object_blob_id, artifact_resource_snapshot) =
             app_artifact_columns(entry);
+        let stable_id = stable_app_id(index);
+        let app_uuid = app_uuid(&entry.app_key);
+        sqlx::query(
+            r#"
+            UPDATE plus_app
+            SET uuid = uuid || '-retired-' || id::text,
+                status = $1,
+                config = jsonb_set(COALESCE(config, '{}'::jsonb), '{portal,marketStatus}', '"OFFLINE"'::jsonb, true),
+                updated_at = CURRENT_TIMESTAMP
+            WHERE uuid = $2
+              AND id <> $3
+            "#,
+        )
+        .bind(INACTIVE_STATUS)
+        .bind(&app_uuid)
+        .bind(stable_id)
+        .execute(&mut **tx)
+        .await?;
+
+        let result = sqlx::query(
+            r#"
+            UPDATE plus_app
+            SET
+                uuid = $1,
+                tenant_id = $2,
+                organization_id = $3,
+                data_scope = $4,
+                user_id = $5,
+                name = $6,
+                icon = $7::jsonb,
+                resource_list = $8::jsonb,
+                project_id = $9,
+                description = $10,
+                version = $11,
+                icon_media_resource_id = $12,
+                icon_object_blob_id = $13,
+                icon_resource_snapshot = $14::jsonb,
+                access_url = $15,
+                config = $16::jsonb,
+                status = $17,
+                app_type = $18,
+                platforms = $19::jsonb,
+                install_platforms = $20::jsonb,
+                install_skill = $21::jsonb,
+                install_config = $22::jsonb,
+                release_notes = $23::jsonb,
+                package_name = $24,
+                bundle_id = $25,
+                store_url = $26,
+                artifact_media_resource_id = $27,
+                artifact_object_blob_id = $28,
+                artifact_resource_snapshot = $29::jsonb,
+                updated_at = CURRENT_TIMESTAMP
+            WHERE id = $30
+            "#,
+        )
+        .bind(&app_uuid)
+        .bind(entry.tenant_id)
+        .bind(install_projection_organization_id(entry))
+        .bind(SYSTEM_DATA_SCOPE)
+        .bind(0_i64)
+        .bind(&entry.plus_app.name)
+        .bind(icon_json(entry))
+        .bind(resource_list_json(entry))
+        .bind(0_i64)
+        .bind(&entry.plus_app.description)
+        .bind(&entry.plus_app.version)
+        .bind(&icon_media_resource_id)
+        .bind(icon_object_blob_id)
+        .bind(&icon_resource_snapshot)
+        .bind(&entry.plus_app.access_url)
+        .bind(entry.plus_app.config.to_string())
+        .bind(app_status_code(&entry.plus_app.status)?)
+        .bind(&entry.plus_app.app_type)
+        .bind(entry.plus_app.platforms.to_string())
+        .bind(entry.plus_app.install_platforms.to_string())
+        .bind(entry.plus_app.install_skill.to_string())
+        .bind(entry.plus_app.install_config.to_string())
+        .bind(entry.plus_app.release_notes.to_string())
+        .bind(&entry.plus_app.package_name)
+        .bind(&entry.plus_app.bundle_id)
+        .bind(&entry.plus_app.store_url)
+        .bind(&artifact_media_resource_id)
+        .bind(artifact_object_blob_id)
+        .bind(&artifact_resource_snapshot)
+        .bind(stable_id)
+        .execute(&mut **tx)
+        .await?;
+        if result.rows_affected() > 0 {
+            continue;
+        }
+
         sqlx::query(
             r#"
             INSERT INTO plus_app
                 (id, uuid, tenant_id, organization_id, data_scope, user_id, name, icon, resource_list, project_id, description, version, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot, access_url, config, status, app_type, platforms, install_platforms, install_skill, install_config, release_notes, package_name, bundle_id, store_url, artifact_media_resource_id, artifact_object_blob_id, artifact_resource_snapshot)
             VALUES
                 ($1, $2, $3, $4, $5, $6, $7, $8::jsonb, $9::jsonb, $10, $11, $12, $13, $14, $15::jsonb, $16, $17::jsonb, $18, $19, $20::jsonb, $21::jsonb, $22::jsonb, $23::jsonb, $24::jsonb, $25, $26, $27, $28, $29, $30::jsonb)
-            ON CONFLICT(uuid) DO UPDATE SET
+            ON CONFLICT(id) DO UPDATE SET
+                uuid = excluded.uuid,
                 tenant_id = excluded.tenant_id,
                 organization_id = excluded.organization_id,
                 data_scope = excluded.data_scope,
@@ -896,8 +1086,8 @@ async fn import_postgres_apps(
                 updated_at = CURRENT_TIMESTAMP
             "#,
         )
-        .bind(stable_app_id(index))
-        .bind(app_uuid(&entry.app_key))
+        .bind(stable_id)
+        .bind(&app_uuid)
         .bind(entry.tenant_id)
         .bind(install_projection_organization_id(entry))
         .bind(SYSTEM_DATA_SCOPE)
@@ -1065,6 +1255,7 @@ async fn import_postgres_artifacts(
             .as_ref()
             .and_then(media_resource_object_blob_id);
         let artifact_resource_snapshot = item.artifact.as_ref().map(Value::to_string);
+        release_postgres_app_artifact_uuid_owner(tx, item).await?;
         sqlx::query(
             r#"
             INSERT INTO studio_catalog_artifact
@@ -1124,6 +1315,86 @@ async fn import_postgres_artifacts(
         .execute(&mut **tx)
         .await?;
     }
+    Ok(())
+}
+
+async fn release_sqlite_app_artifact_uuid_owner(
+    tx: &mut sqlx::Transaction<'_, sqlx::Sqlite>,
+    item: &AppArtifactSeed,
+) -> Result<(), sqlx::Error> {
+    sqlx::query(
+        r#"
+        UPDATE studio_catalog_artifact
+        SET uuid = uuid || '-retired-' || id,
+            status = ?,
+            deleted_at = CURRENT_TIMESTAMP,
+            deleted_by = 0,
+            updated_at = CURRENT_TIMESTAMP
+        WHERE tenant_id = ?
+          AND organization_id = ?
+          AND uuid = ?
+          AND NOT (
+                target_type = ?
+            AND target_id = ?
+            AND artifact_type = ?
+            AND version = ?
+            AND platform_type = ?
+            AND os_name = ?
+          )
+        "#,
+    )
+    .bind(INACTIVE_STATUS)
+    .bind(item.tenant_id)
+    .bind(item.organization_id)
+    .bind(&item.uuid)
+    .bind(APP_TARGET_TYPE)
+    .bind(item.target_id)
+    .bind(item.artifact_type)
+    .bind(&item.version)
+    .bind(&item.platform_type)
+    .bind(&item.os_name)
+    .execute(&mut **tx)
+    .await?;
+    Ok(())
+}
+
+async fn release_postgres_app_artifact_uuid_owner(
+    tx: &mut sqlx::Transaction<'_, sqlx::Postgres>,
+    item: &AppArtifactSeed,
+) -> Result<(), sqlx::Error> {
+    sqlx::query(
+        r#"
+        UPDATE studio_catalog_artifact
+        SET uuid = uuid || '-retired-' || id::text,
+            status = $1,
+            deleted_at = CURRENT_TIMESTAMP,
+            deleted_by = 0,
+            updated_at = CURRENT_TIMESTAMP
+        WHERE tenant_id = $2
+          AND organization_id = $3
+          AND uuid = $4
+          AND NOT (
+                target_type = $5
+            AND target_id = $6
+            AND artifact_type = $7
+            AND version = $8
+            AND platform_type = $9
+            AND os_name = $10
+          )
+        "#,
+    )
+    .bind(INACTIVE_STATUS)
+    .bind(item.tenant_id)
+    .bind(item.organization_id)
+    .bind(&item.uuid)
+    .bind(APP_TARGET_TYPE)
+    .bind(item.target_id)
+    .bind(item.artifact_type)
+    .bind(&item.version)
+    .bind(&item.platform_type)
+    .bind(&item.os_name)
+    .execute(&mut **tx)
+    .await?;
     Ok(())
 }
 

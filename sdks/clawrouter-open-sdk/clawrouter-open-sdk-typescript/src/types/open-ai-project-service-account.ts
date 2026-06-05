@@ -6,7 +6,7 @@ export interface OpenAiProjectServiceAccount {
   /** Api key field on the open ai project service account, using the open ai project api key module. */
   api_key?: OpenAiProjectApiKey;
   /** Unix timestamp in seconds when the service account was created. */
-  created_at?: number;
+  created_at?: string;
   /** Service account identifier. */
   id: string;
   /** Human-readable service account name. */

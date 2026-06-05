@@ -6,9 +6,9 @@ export interface ForumFeedItem {
   /** Author field on forum feed item. */
   author: ForumAuthor;
   /** Category id field on forum feed item. */
-  categoryId: number;
+  categoryId: string;
   /** Comment count field on forum feed item. */
-  commentCount: number;
+  commentCount: string;
   /** Content field on forum feed item. */
   content: string;
   /** Content type field on forum feed item. */
@@ -18,7 +18,7 @@ export interface ForumFeedItem {
   /** Created at field on forum feed item. */
   createdAt: string;
   /** Id field on forum feed item. */
-  id: number;
+  id: string;
   /** Is collected field on forum feed item. */
   isCollected: boolean;
   /** Is hot field on forum feed item. */
@@ -30,9 +30,9 @@ export interface ForumFeedItem {
   /** Is top field on forum feed item. */
   isTop: boolean;
   /** Like count field on forum feed item. */
-  likeCount: number;
+  likeCount: string;
   /** Share count field on forum feed item. */
-  shareCount: number;
+  shareCount: string;
   /** Summary field on forum feed item. */
   summary: string;
   /** Tags field on forum feed item. */
@@ -42,5 +42,5 @@ export interface ForumFeedItem {
   /** Updated at field on forum feed item. */
   updatedAt: string;
   /** View count field on forum feed item. */
-  viewCount: number;
+  viewCount: string;
 }

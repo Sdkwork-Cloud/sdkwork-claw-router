@@ -17,7 +17,7 @@ export interface AdminAiModelUpdateRequest {
   /** Limitations field on admin ai model update request. */
   limitations?: string[];
   /** Max output tokens field on admin ai model update request. */
-  maxOutputTokens?: number | null;
+  maxOutputTokens?: string | null;
   /** Modalities field on admin ai model update request. */
   modalities?: string[];
   /** Optional runtime model identifier update. */
@@ -27,13 +27,13 @@ export interface AdminAiModelUpdateRequest {
   /** Optional official reference prices by region. */
   regionPrices?: AdminAiModelRegionPrice[];
   /** Release stage field on admin ai model update request. */
-  releaseStage?: number | null;
+  releaseStage?: string | null;
   /** Replacement model field on admin ai model update request. */
   replacementModel?: string | null;
   /** Routing state field on admin ai model update request. */
-  routingState?: number | null;
+  routingState?: string | null;
   /** Shelf state field on admin ai model update request. */
-  shelfState?: number | null;
+  shelfState?: string | null;
   /** Optional model catalog status. */
   status?: 'active' | 'inactive';
   /** Supported languages field on admin ai model update request. */

@@ -2237,6 +2237,188 @@ async fn sqlite_installer_repairs_drifted_app_seed_standard_fields_on_startup_ch
 }
 
 #[tokio::test]
+async fn sqlite_installer_repairs_app_seed_uuid_drift_on_stable_id_without_primary_key_conflict() {
+    let pool = repair_sqlite_pool().await;
+    let installer = installer(pool.clone());
+
+    let changed = sqlx::query(
+        r#"
+        UPDATE plus_app
+        SET uuid = 'sdkwork-app-legacy-claw-studio',
+            name = 'Legacy Claw Studio',
+            status = 1,
+            config = '{"standard":{"appKey":"legacy-claw-studio"},"portal":{"marketStatus":"PUBLISHED"}}'
+        WHERE tenant_id = 20001
+          AND organization_id = 0
+          AND id = 20001001
+          AND uuid = 'sdkwork-app-claw-studio'
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap()
+    .rows_affected();
+    assert_eq!(1, changed, "test setup must drift the first app seed row");
+
+    assert_eq!(
+        InstallationStatus::UpgradeRequired,
+        installer.status().await.unwrap(),
+        "installer status must detect a seed row whose reserved id still exists but uuid drifted"
+    );
+
+    let repaired = installer.ensure_installed().await.unwrap();
+    assert_eq!(InstallationStatus::Installed, repaired.status);
+    assert!(repaired.changed);
+
+    let claw_studio = sqlx::query(
+        r#"
+        SELECT uuid, name, status, config
+        FROM plus_app
+        WHERE id = 20001001
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(
+        "sdkwork-app-claw-studio",
+        claw_studio.get::<String, _>("uuid")
+    );
+    assert_eq!("Claw Studio", claw_studio.get::<String, _>("name"));
+    assert_eq!(1, claw_studio.get::<i64, _>("status"));
+
+    let config: serde_json::Value =
+        serde_json::from_str(claw_studio.get::<String, _>("config").as_str()).unwrap();
+    assert_eq!("claw-studio", config["standard"]["appKey"]);
+    assert_eq!("PUBLISHED", config["portal"]["marketStatus"]);
+}
+
+#[tokio::test]
+async fn sqlite_installer_repairs_app_artifact_uuid_drift_without_unique_uuid_conflict() {
+    let pool = repair_sqlite_pool().await;
+    let installer = installer(pool.clone());
+
+    let canonical = sqlx::query(
+        r#"
+        SELECT id, uuid, tenant_id, organization_id, target_type, target_id, artifact_type,
+               version, platform_type, os_name
+        FROM studio_catalog_artifact
+        WHERE tenant_id = 20001
+          AND organization_id = 0
+          AND target_type = 15
+          AND uuid LIKE 'sdkapp-artifact-%'
+          AND status = 1
+          AND deleted_at IS NULL
+        ORDER BY id
+        LIMIT 1
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    let artifact_id = canonical.get::<i64, _>("id");
+    let artifact_uuid = canonical.get::<String, _>("uuid");
+    let target_id = canonical.get::<i64, _>("target_id");
+    let artifact_type = canonical.get::<i64, _>("artifact_type");
+    let version = canonical.get::<String, _>("version");
+    let platform_type = canonical.get::<String, _>("platform_type");
+    let os_name = canonical.get::<String, _>("os_name");
+
+    let changed = sqlx::query(
+        r#"
+        UPDATE studio_catalog_artifact
+        SET uuid = 'sdkapp-artifact-legacy-claw-router-package',
+            artifact_ref = 'legacy-package',
+            status = 0,
+            metadata = '{"seedKind":"sdkwork.plus_app.seed","itemType":"app_artifact","appKey":"legacy","sourceHash":"old"}'
+        WHERE id = ?
+        "#,
+    )
+    .bind(artifact_id)
+    .execute(&pool)
+    .await
+    .unwrap()
+    .rows_affected();
+    assert_eq!(
+        1, changed,
+        "test setup must drift the canonical artifact row"
+    );
+
+    sqlx::query(
+        r#"
+        INSERT INTO studio_catalog_artifact
+            (uuid, tenant_id, organization_id, data_scope, status, metadata, target_type, target_id, artifact_type, version, platform_type, os_name, artifact_ref, artifact_size_bytes, published_at)
+        VALUES
+            (?, 20001, 0, 0, 1, '{"seedKind":"sdkwork.plus_app.seed","itemType":"app_artifact","appKey":"wrong-owner","sourceHash":"old"}', 15, ?, ?, ?, ?, ?, 'wrong-owner-package', 1, '2026-05-09T00:00:00Z')
+        "#,
+    )
+    .bind(&artifact_uuid)
+    .bind(target_id + 99_999)
+    .bind(artifact_type)
+    .bind(&version)
+    .bind(&platform_type)
+    .bind(&os_name)
+    .execute(&pool)
+    .await
+    .unwrap();
+
+    assert_eq!(
+        InstallationStatus::UpgradeRequired,
+        installer.status().await.unwrap(),
+        "installer status must detect app artifact uuid drift and the wrong row occupying the canonical uuid"
+    );
+
+    let repaired = installer.ensure_installed().await.unwrap();
+    assert_eq!(InstallationStatus::Installed, repaired.status);
+    assert!(repaired.changed);
+
+    let repaired_artifact = sqlx::query(
+        r#"
+        SELECT uuid, status, deleted_at, artifact_ref, target_id, artifact_type, version, platform_type, os_name
+        FROM studio_catalog_artifact
+        WHERE id = ?
+        "#,
+    )
+    .bind(artifact_id)
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(artifact_uuid, repaired_artifact.get::<String, _>("uuid"));
+    assert_eq!(1, repaired_artifact.get::<i64, _>("status"));
+    assert!(repaired_artifact
+        .get::<Option<String>, _>("deleted_at")
+        .is_none());
+    assert_eq!(target_id, repaired_artifact.get::<i64, _>("target_id"));
+    assert_eq!(
+        artifact_type,
+        repaired_artifact.get::<i64, _>("artifact_type")
+    );
+    assert_eq!(version, repaired_artifact.get::<String, _>("version"));
+    assert_eq!(
+        platform_type,
+        repaired_artifact.get::<String, _>("platform_type")
+    );
+    assert_eq!(os_name, repaired_artifact.get::<String, _>("os_name"));
+
+    let wrong_owner_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM studio_catalog_artifact
+        WHERE tenant_id = 20001
+          AND organization_id = 0
+          AND uuid = ?
+          AND id <> ?
+        "#,
+    )
+    .bind(&artifact_uuid)
+    .bind(artifact_id)
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(0, wrong_owner_count);
+}
+
+#[tokio::test]
 async fn sqlite_installer_retires_stale_app_seed_artifact_projections_on_startup_check() {
     let pool = repair_sqlite_pool().await;
     let installer = installer(pool.clone());
@@ -4462,22 +4644,27 @@ async fn assert_app_store_seed_rows(pool: &SqlitePool) {
         "PlusApp release_notes must preserve standard release metadata"
     );
 
-    let app_category_count: i64 = sqlx::query_scalar(
+    let expected_app_category_codes = sdkwork_app_category_seed_codes();
+    let app_category_rows = sqlx::query(
         r#"
-        SELECT COUNT(1)
+        SELECT code
         FROM plus_category
         WHERE tenant_id = 20001
           AND organization_id = 0
-          AND code IN ('app-store-html', 'app-store-react', 'app-store-productivity')
           AND type = 999999
           AND status = 1
+        ORDER BY code
         "#,
     )
-    .fetch_one(pool)
+    .fetch_all(pool)
     .await
     .unwrap();
+    let app_category_codes = app_category_rows
+        .into_iter()
+        .map(|row| row.get::<String, _>("code"))
+        .collect::<BTreeSet<_>>();
     assert_eq!(
-        3, app_category_count,
+        expected_app_category_codes, app_category_codes,
         "installer must normalize AppCenter portal categories into PlusCategory records"
     );
 
@@ -5206,6 +5393,36 @@ fn sdkwork_app_seed_count() -> usize {
         "bundled app seed count must match apps length"
     );
     actual_count
+}
+
+fn sdkwork_app_category_seed_codes() -> BTreeSet<String> {
+    let seed: serde_json::Value = serde_json::from_str(include_str!(
+        "../../../data/app/sdkwork-app-categories.json"
+    ))
+    .expect("bundled app category seed must parse");
+    let declared_count = seed
+        .get("count")
+        .and_then(serde_json::Value::as_u64)
+        .expect("bundled app category seed must declare count") as usize;
+    let categories = seed
+        .get("categories")
+        .and_then(serde_json::Value::as_array)
+        .expect("bundled app category seed must include categories");
+    assert_eq!(
+        declared_count,
+        categories.len(),
+        "bundled app category seed count must match categories length"
+    );
+    categories
+        .iter()
+        .map(|category| {
+            category
+                .get("code")
+                .and_then(serde_json::Value::as_str)
+                .expect("bundled app category seed must include category codes")
+                .to_owned()
+        })
+        .collect()
 }
 
 fn catalog_model_keys(catalog: &sdkwork_models::ModelCatalog) -> Vec<String> {

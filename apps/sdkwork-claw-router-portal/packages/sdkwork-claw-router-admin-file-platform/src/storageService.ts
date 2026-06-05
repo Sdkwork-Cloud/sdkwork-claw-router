@@ -197,7 +197,7 @@ export async function createStorageQuota(input: StorageQuotaCreateInput): Promis
       scopeType: normalizeQuotaScopeType(input.scopeType),
       scopeId: requiredText(input.scopeId, 'scopeId'),
       quotaLimit: requiredText(input.quotaLimit, 'quotaLimit'),
-      quotaLimitBytes: parseRequiredBytes(input.quotaLimit, 'quotaLimit'),
+      quotaLimitBytes: String(parseRequiredBytes(input.quotaLimit, 'quotaLimit')),
     },
     idempotencyParams(),
   );

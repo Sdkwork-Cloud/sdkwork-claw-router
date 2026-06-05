@@ -7,7 +7,7 @@ export interface UsageLogItem {
   /** Cache read price field on usage log item. */
   cacheReadPrice: string;
   /** Cache read tokens field on usage log item. */
-  cacheReadTokens: number;
+  cacheReadTokens: string;
   /** Customer-facing spend amount for the request, normalized to 9 decimal places for console display. Uses customer_charge_amount from the usage ledger and never exposes upstream cost fields. */
   cost: string;
   /** Error code field on usage log item. */
@@ -19,11 +19,11 @@ export interface UsageLogItem {
   /** Maintained channel group display name. Falls back to the recorded group snapshot when the group has been removed or renamed outside the read model. */
   group: string;
   /** Http status field on usage log item. */
-  httpStatus: number;
+  httpStatus: string;
   /** Id field on usage log item. */
   id: string;
   /** Input tokens field on usage log item. */
-  inputTokens: number;
+  inputTokens: string;
   /** Ip field on usage log item. */
   ip: string;
   /** Is stream field on usage log item. */
@@ -33,7 +33,7 @@ export interface UsageLogItem {
   /** Multiplier field on usage log item. */
   multiplier: string;
   /** Output tokens field on usage log item. */
-  outputTokens: number;
+  outputTokens: string;
   /** Path field on usage log item. */
   path: string;
   /** Provider native model id, for example gpt-5.5. */

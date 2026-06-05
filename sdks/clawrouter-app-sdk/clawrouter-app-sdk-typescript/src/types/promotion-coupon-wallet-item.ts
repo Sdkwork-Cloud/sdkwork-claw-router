@@ -15,7 +15,7 @@ export interface PromotionCouponWalletItem {
   /** Expires at field on promotion coupon wallet item. */
   expiresAt: string;
   /** Face value minor field on promotion coupon wallet item. */
-  faceValueMinor?: number | null;
+  faceValueMinor?: string | null;
   /** Stable promotion_user_coupon id. */
   id: string;
   /** Lock expires at field on promotion coupon wallet item. */

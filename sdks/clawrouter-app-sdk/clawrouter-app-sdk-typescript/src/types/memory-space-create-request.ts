@@ -7,7 +7,7 @@ export interface MemorySpaceCreateRequest {
   /** Auto recall enabled field on memory space create request. */
   autoRecallEnabled?: boolean;
   /** Max injected tokens field on memory space create request. */
-  maxInjectedTokens?: number;
+  maxInjectedTokens?: string;
   /** Memory enabled field on memory space create request. */
   memoryEnabled?: boolean;
   /** Metadata field on memory space create request. */

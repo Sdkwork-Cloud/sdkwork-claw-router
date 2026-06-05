@@ -13,7 +13,7 @@ export interface AnthropicFile {
   /** File MIME type. */
   mime_type: string;
   /** File size in bytes. */
-  size_bytes: number;
+  size_bytes: string;
   /** Object type, always file. */
   type: 'file';
 }

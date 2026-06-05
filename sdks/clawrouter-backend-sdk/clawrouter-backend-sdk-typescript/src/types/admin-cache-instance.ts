@@ -1,31 +1,31 @@
 /** Admin cache instance schema exposed by Claw Router. */
 export interface AdminCacheInstance {
   /** Cache deletes field on admin cache instance. */
-  cacheDeletes: number;
+  cacheDeletes: string;
   /** Cache errors field on admin cache instance. */
-  cacheErrors: number;
+  cacheErrors: string;
   /** Cache hits field on admin cache instance. */
-  cacheHits: number;
+  cacheHits: string;
   /** Cache inspections field on admin cache instance. */
-  cacheInspections: number;
+  cacheInspections: string;
   /** Cache misses field on admin cache instance. */
-  cacheMisses: number;
+  cacheMisses: string;
   /** Cache refreshes field on admin cache instance. */
-  cacheRefreshes: number;
+  cacheRefreshes: string;
   /** Cache writes field on admin cache instance. */
-  cacheWrites: number;
+  cacheWrites: string;
   /** Connection profile name field on admin cache instance. */
   connectionProfileName?: string | null;
   /** Default ttl seconds field on admin cache instance. */
-  defaultTtlSeconds: number;
+  defaultTtlSeconds: string;
   /** Entry count field on admin cache instance. */
-  entryCount: number;
+  entryCount: string;
   /** Expired entry count field on admin cache instance. */
-  expiredEntryCount: number;
+  expiredEntryCount: string;
   /** Key prefix field on admin cache instance. */
   keyPrefix: string;
   /** Max entries field on admin cache instance. */
-  maxEntries?: number | null;
+  maxEntries?: string | null;
   /** Name field on admin cache instance. */
   name: string;
   /** Provider kind field on admin cache instance. */

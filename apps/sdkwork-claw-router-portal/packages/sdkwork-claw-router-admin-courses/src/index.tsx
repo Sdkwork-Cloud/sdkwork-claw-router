@@ -6,10 +6,16 @@ import { CourseRelationsPage } from './pages/CourseRelationsPage';
 import { CourseApplicationsPage } from './pages/CourseApplicationsPage';
 import { CourseCommentsPage } from './pages/CourseCommentsPage';
 import { CourseEngagementPage } from './pages/CourseEngagementPage';
+import { CourseAdminService } from './courseAdminService';
 import type { CourseAdminSectionId } from './courseAdminTypes';
 
 type CourseAdminProps = {
   sectionId?: string;
+};
+
+export const courseAdminServiceBoundary = {
+  fetchDashboard: CourseAdminService.fetchDashboard,
+  fetchCourses: CourseAdminService.fetchCourses,
 };
 
 function resolveSectionId(sectionId: string | undefined): CourseAdminSectionId {

@@ -9,7 +9,7 @@ export interface RuntimeInvocationItem {
   /** Approval policy field on runtime invocation item. */
   approvalPolicy?: string | null;
   /** Attempt no field on runtime invocation item. */
-  attemptNo: number;
+  attemptNo: string;
   /** Chat item id field on runtime invocation item. */
   chatItemId?: string | null;
   /** Chat turn id field on runtime invocation item. */
@@ -31,17 +31,17 @@ export interface RuntimeInvocationItem {
   /** Error type field on runtime invocation item. */
   errorType?: string | null;
   /** Exit code field on runtime invocation item. */
-  exitCode?: number | null;
+  exitCode?: string | null;
   /** Finish reason field on runtime invocation item. */
   finishReason?: string | null;
   /** Id field on runtime invocation item. */
   id: string;
   /** Invocation no field on runtime invocation item. */
-  invocationNo: number;
+  invocationNo: string;
   /** Invocation type field on runtime invocation item. */
   invocationType: string;
   /** Latency ms field on runtime invocation item. */
-  latencyMs?: number | null;
+  latencyMs?: string | null;
   /** Model field on runtime invocation item. */
   model?: string | null;
   /** Permission mode field on runtime invocation item. */
@@ -75,5 +75,5 @@ export interface RuntimeInvocationItem {
   /** Trace id field on runtime invocation item. */
   traceId?: string | null;
   /** Ttft ms field on runtime invocation item. */
-  ttftMs?: number | null;
+  ttftMs?: string | null;
 }

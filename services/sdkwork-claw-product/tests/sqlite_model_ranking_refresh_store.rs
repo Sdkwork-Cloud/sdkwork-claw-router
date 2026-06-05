@@ -97,6 +97,144 @@ async fn sqlite_model_ranking_refresh_store_generates_rank_snapshot_from_usage_f
 }
 
 #[tokio::test]
+async fn sqlite_model_ranking_refresh_store_uses_cost_amount_when_customer_charge_is_missing() {
+    let pool = SqlitePoolOptions::new()
+        .max_connections(1)
+        .connect("sqlite::memory:")
+        .await
+        .unwrap();
+    create_tables(&pool).await;
+
+    sqlx::query(
+        r#"
+        INSERT INTO ai_model
+            (id, tenant_id, organization_id, status, catalog_key, model, display_name, vendor_code, region_code, vendor_name_snapshot, capability, color_token, license_type, context_tokens, rank_score)
+        VALUES
+            (1, 0, 0, 1, 'openai/alpha', 'alpha', 'Alpha', 'openai', 'global', 'OpenAI', 1, '#111111', 2, 128000, '100')
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO ai_usage_fact
+            (id, tenant_id, organization_id, status, catalog_key, model, modality, request_count, total_tokens, customer_charge_amount, cost_amount, currency, occurred_at)
+        VALUES
+            (1, 0, 0, 1, 'openai/alpha', 'alpha', 1, 5, 5000, NULL, '1.250000', 'USD', '2026-05-07T10:00:00Z'),
+            (2, 0, 0, 1, 'openai/alpha', 'alpha', 1, 2, 2000, '', '0.750000', 'USD', '2026-05-07T11:00:00Z')
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+
+    let outcome = SqliteModelRankingRefreshStore::new(pool.clone())
+        .refresh_model_rankings(ModelRankingRefreshCommand {
+            tenant_id: 0,
+            organization_id: 0,
+            rank_scope: "commercial-default".to_owned(),
+            snapshot_date: "2026-05-08".to_owned(),
+            snapshot_period: "daily".to_owned(),
+            window_start: "2026-05-07T00:00:00Z".to_owned(),
+            window_end: "2026-05-08T00:00:00Z".to_owned(),
+            requested_at: "2026-05-08 00:05:00".to_owned(),
+            limit: 200,
+            refresh_interval_seconds: 3600,
+            cache_max_age_seconds: 60,
+            trigger_type: 1,
+        })
+        .await
+        .unwrap();
+
+    assert_eq!(1, outcome.generated_count);
+    assert_eq!(2, outcome.source_count);
+
+    let cost_amount: String = sqlx::query_scalar(
+        r#"
+        SELECT cost_amount
+        FROM ai_model_rank_snapshot
+        WHERE snapshot_date = '2026-05-08'
+          AND catalog_key = 'openai/alpha'
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+
+    assert_eq!("2", cost_amount);
+}
+
+#[tokio::test]
+async fn sqlite_model_ranking_refresh_store_uses_legacy_cost_amount_when_customer_charge_defaults_to_zero(
+) {
+    let pool = SqlitePoolOptions::new()
+        .max_connections(1)
+        .connect("sqlite::memory:")
+        .await
+        .unwrap();
+    create_tables(&pool).await;
+
+    sqlx::query(
+        r#"
+        INSERT INTO ai_model
+            (id, tenant_id, organization_id, status, catalog_key, model, display_name, vendor_code, region_code, vendor_name_snapshot, capability, color_token, license_type, context_tokens, rank_score)
+        VALUES
+            (1, 0, 0, 1, 'openai/alpha', 'alpha', 'Alpha', 'openai', 'global', 'OpenAI', 1, '#111111', 2, 128000, '100')
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        INSERT INTO ai_usage_fact
+            (id, tenant_id, organization_id, status, catalog_key, model, modality, request_count, total_tokens, customer_charge_amount, cost_amount, currency, occurred_at)
+        VALUES
+            (1, 0, 0, 1, 'openai/alpha', 'alpha', 1, 7, 1000, '0', '1.250000', 'USD', '2026-05-07T10:00:00Z')
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+
+    let outcome = SqliteModelRankingRefreshStore::new(pool.clone())
+        .refresh_model_rankings(ModelRankingRefreshCommand {
+            tenant_id: 0,
+            organization_id: 0,
+            rank_scope: "commercial-default".to_owned(),
+            snapshot_date: "2026-05-08".to_owned(),
+            snapshot_period: "daily".to_owned(),
+            window_start: "2026-05-07T00:00:00Z".to_owned(),
+            window_end: "2026-05-08T00:00:00Z".to_owned(),
+            requested_at: "2026-05-08 00:05:00".to_owned(),
+            limit: 200,
+            refresh_interval_seconds: 3600,
+            cache_max_age_seconds: 60,
+            trigger_type: 1,
+        })
+        .await
+        .unwrap();
+
+    assert_eq!(1, outcome.generated_count);
+    assert_eq!(1, outcome.source_count);
+
+    let cost_amount: String = sqlx::query_scalar(
+        r#"
+        SELECT cost_amount
+        FROM ai_model_rank_snapshot
+        WHERE snapshot_date = '2026-05-08'
+          AND catalog_key = 'openai/alpha'
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+
+    assert_eq!("1.25", cost_amount);
+}
+
+#[tokio::test]
 async fn sqlite_model_ranking_refresh_store_rejects_regional_catalog_key_compatibility() {
     let pool = SqlitePoolOptions::new()
         .max_connections(1)

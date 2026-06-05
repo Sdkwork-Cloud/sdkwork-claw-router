@@ -23,7 +23,7 @@ export interface AdminChannelItem {
   /** Credentials field on admin channel item. */
   credentials: AdminChannelCredentialItem[];
   /** Errors field on admin channel item. */
-  errors: number;
+  errors: string;
   /** Expires at field on admin channel item. */
   expiresAt?: string | null;
   /** Id field on admin channel item. */
@@ -41,9 +41,9 @@ export interface AdminChannelItem {
   /** Status field on admin channel item. */
   status: 'active' | 'disabled' | 'error';
   /** Timeout ms field on admin channel item. */
-  timeoutMs?: number;
+  timeoutMs?: string;
   /** Vendor field on admin channel item. */
   vendor: string;
   /** Weight field on admin channel item. */
-  weight: number;
+  weight: string;
 }

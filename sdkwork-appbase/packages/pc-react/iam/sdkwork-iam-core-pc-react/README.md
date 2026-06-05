@@ -26,7 +26,7 @@ client.auth.sessions.refresh(body)
 client.auth.sessions.current.delete()
 client.iam.users.current.retrieve()
 backendClient.iam.tenants.list(params)
-backendClient.iam.organizations.members.create(organizationId, body)
+backendClient.iam.organizationMemberships.create({ organizationId, userId })
 backendClient.iam.roles.permissions.delete(roleId, permissionId)
 ```
 

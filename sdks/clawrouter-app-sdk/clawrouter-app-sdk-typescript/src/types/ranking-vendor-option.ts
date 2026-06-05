@@ -5,5 +5,5 @@ export interface RankingVendorOption {
   /** Label field on ranking vendor option. */
   label: string;
   /** Model count field on ranking vendor option. */
-  modelCount: number;
+  modelCount: string;
 }

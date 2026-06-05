@@ -26,6 +26,38 @@ export function optionalBoundedPositiveInteger(value: unknown, fieldName: string
   return numberValue;
 }
 
+export function optionalPositiveInt64String(value: unknown, fieldName: string): string | undefined {
+  const normalized = optionalIntegerString(value, fieldName);
+  if (normalized === undefined) {
+    return undefined;
+  }
+  if (!/^[1-9]\d*$/u.test(normalized)) {
+    throw new Error(`${fieldName} must be a positive integer`);
+  }
+  return normalized;
+}
+
+export function optionalBoundedPositiveInt64String(value: unknown, fieldName: string, maxValue: number): string | undefined {
+  const numberValue = optionalBoundedPositiveInteger(value, fieldName, maxValue);
+  return numberValue === undefined ? undefined : String(numberValue);
+}
+
+export function positiveInt64String(value: unknown, fieldName: string): string {
+  const normalized = optionalPositiveInt64String(value, fieldName);
+  if (normalized === undefined) {
+    throw new Error(`${fieldName} must be a positive integer`);
+  }
+  return normalized;
+}
+
+export function nonNegativeInt64String(value: unknown, fieldName: string): string {
+  const normalized = optionalIntegerString(value, fieldName);
+  if (normalized === undefined || !/^(0|[1-9]\d*)$/u.test(normalized)) {
+    throw new Error(`${fieldName} must be a non-negative integer`);
+  }
+  return normalized;
+}
+
 export function optionalPositiveInteger(value: unknown, fieldName: string): number | undefined {
   let numberValue: number | undefined;
   try {
@@ -43,6 +75,18 @@ export function optionalPositiveInteger(value: unknown, fieldName: string): numb
 }
 
 export function optionalInteger(value: unknown, fieldName: string): number | undefined {
+  const textValue = optionalIntegerString(value, fieldName);
+  if (textValue === undefined) {
+    return undefined;
+  }
+  const numberValue = Number(textValue);
+  if (!Number.isSafeInteger(numberValue)) {
+    throw new Error(`${fieldName} must be an integer`);
+  }
+  return numberValue;
+}
+
+function optionalIntegerString(value: unknown, fieldName: string): string | undefined {
   if (value === undefined || value === null) {
     return undefined;
   }
@@ -57,11 +101,7 @@ export function optionalInteger(value: unknown, fieldName: string): number | und
   if (!/^-?\d+$/u.test(textValue)) {
     throw new Error(`${fieldName} must be an integer`);
   }
-  const numberValue = Number(textValue);
-  if (!Number.isSafeInteger(numberValue)) {
-    throw new Error(`${fieldName} must be an integer`);
-  }
-  return numberValue;
+  return textValue;
 }
 
 export function optionalText(value: unknown, fieldName: string, maxLength: number): string | undefined {
@@ -81,8 +121,12 @@ export function optionalText(value: unknown, fieldName: string, maxLength: numbe
   return normalized;
 }
 
-export function pruneUndefinedQueryParams<T extends Record<string, unknown>>(value: T): Record<string, string | number> {
-  return Object.fromEntries(Object.entries(value).filter(([, item]) => item !== undefined)) as Record<string, string | number>;
+export function pruneUndefinedQueryParams<T extends Record<string, unknown>>(value: T): Record<string, string> {
+  return Object.fromEntries(
+    Object.entries(value)
+      .filter(([, item]) => item !== undefined)
+      .map(([key, item]) => [key, String(item)]),
+  ) as Record<string, string>;
 }
 
 export type StandardListQueryArguments = [

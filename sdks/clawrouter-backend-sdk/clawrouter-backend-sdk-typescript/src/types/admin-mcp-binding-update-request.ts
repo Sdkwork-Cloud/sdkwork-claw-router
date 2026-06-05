@@ -9,7 +9,7 @@ export interface AdminMcpBindingUpdateRequest {
   /** Enabled field on admin mcp binding update request. */
   enabled?: boolean;
   /** Owner id field on admin mcp binding update request. */
-  ownerId?: number;
+  ownerId?: string;
   /** Owner type field on admin mcp binding update request. */
   ownerType?: string;
   /** Policy json field on admin mcp binding update request. */
@@ -17,9 +17,9 @@ export interface AdminMcpBindingUpdateRequest {
   /** Priority field on admin mcp binding update request. */
   priority?: number;
   /** Server revision id field on admin mcp binding update request. */
-  serverRevisionId?: number | null;
+  serverRevisionId?: string | null;
   /** Status field on admin mcp binding update request. */
   status?: string;
   /** Tool id field on admin mcp binding update request. */
-  toolId?: number | null;
+  toolId?: string | null;
 }

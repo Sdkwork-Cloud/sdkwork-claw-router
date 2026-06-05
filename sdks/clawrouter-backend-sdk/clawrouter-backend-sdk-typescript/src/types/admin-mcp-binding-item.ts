@@ -11,11 +11,11 @@ export interface AdminMcpBindingItem {
   /** Enabled field on admin mcp binding item. */
   enabled: boolean;
   /** Id field on admin mcp binding item. */
-  id: number;
+  id: string;
   /** Organization id field on admin mcp binding item. */
-  organizationId: number;
+  organizationId: string;
   /** Owner id field on admin mcp binding item. */
-  ownerId: number;
+  ownerId: string;
   /** Owner type field on admin mcp binding item. */
   ownerType: string;
   /** Policy json field on admin mcp binding item. */
@@ -23,17 +23,17 @@ export interface AdminMcpBindingItem {
   /** Priority field on admin mcp binding item. */
   priority: number;
   /** Server id field on admin mcp binding item. */
-  serverId: number;
+  serverId: string;
   /** Server revision id field on admin mcp binding item. */
-  serverRevisionId?: number | null;
+  serverRevisionId?: string | null;
   /** Snapshot json field on admin mcp binding item. */
   snapshotJson: Record<string, JsonValue>;
   /** Status field on admin mcp binding item. */
   status: string;
   /** Tenant id field on admin mcp binding item. */
-  tenantId: number;
+  tenantId: string;
   /** Tool id field on admin mcp binding item. */
-  toolId?: number | null;
+  toolId?: string | null;
   /** Updated at field on admin mcp binding item. */
   updatedAt: string;
   /** Uuid field on admin mcp binding item. */

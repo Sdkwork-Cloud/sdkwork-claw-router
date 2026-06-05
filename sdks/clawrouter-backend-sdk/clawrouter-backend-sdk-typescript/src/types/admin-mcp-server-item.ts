@@ -13,23 +13,23 @@ export interface AdminMcpServerItem {
   /** Health status field on admin mcp server item. */
   healthStatus: string;
   /** Id field on admin mcp server item. */
-  id: number;
+  id: string;
   /** Last checked at field on admin mcp server item. */
   lastCheckedAt?: string | null;
   /** Last error masked field on admin mcp server item. */
   lastErrorMasked?: string | null;
   /** Latest revision id field on admin mcp server item. */
-  latestRevisionId?: number | null;
+  latestRevisionId?: string | null;
   /** Name field on admin mcp server item. */
   name: string;
   /** Organization id field on admin mcp server item. */
-  organizationId: number;
+  organizationId: string;
   /** Owner user id field on admin mcp server item. */
-  ownerUserId?: number | null;
+  ownerUserId?: string | null;
   /** Published at field on admin mcp server item. */
   publishedAt?: string | null;
   /** Published revision id field on admin mcp server item. */
-  publishedRevisionId?: number | null;
+  publishedRevisionId?: string | null;
   /** Server key field on admin mcp server item. */
   serverKey: string;
   /** Status field on admin mcp server item. */
@@ -37,7 +37,7 @@ export interface AdminMcpServerItem {
   /** Tags field on admin mcp server item. */
   tags: string[];
   /** Tenant id field on admin mcp server item. */
-  tenantId: number;
+  tenantId: string;
   /** Transport field on admin mcp server item. */
   transport: string;
   /** Updated at field on admin mcp server item. */

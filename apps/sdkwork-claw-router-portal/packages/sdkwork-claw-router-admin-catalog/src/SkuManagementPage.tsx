@@ -108,8 +108,8 @@ export function SkuManagementPage() {
     setState((current) => ({ ...current, loading: true, error: null }));
     try {
       const [skuResult, productResult] = await Promise.all([
-        listCommerceSkus({ page: 1, pageSize: 200 }),
-        listCommerceProducts({ page: 1, pageSize: 200 }),
+        listCommerceSkus({ page: '1', pageSize: '200' }),
+        listCommerceProducts({ page: '1', pageSize: '200' }),
       ]);
       const nextProductOptions = readProductRecords(productResult).map((record) => {
         const id = readProductString(record, ['id']);

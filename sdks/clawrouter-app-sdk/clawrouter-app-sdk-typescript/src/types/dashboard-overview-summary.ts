@@ -1,21 +1,21 @@
 /** Dashboard overview summary schema exposed by Claw Router. */
 export interface DashboardOverviewSummary {
   /** Audio requests field on dashboard overview summary. */
-  audioRequests: number;
+  audioRequests: string;
   /** Available credits field on dashboard overview summary. */
   availableCredits: number;
   /** Error count field on dashboard overview summary. */
-  errorCount: number;
+  errorCount: string;
   /** Image requests field on dashboard overview summary. */
-  imageRequests: number;
+  imageRequests: string;
   /** Music requests field on dashboard overview summary. */
-  musicRequests: number;
+  musicRequests: string;
   /** Request count field on dashboard overview summary. */
-  requestCount: number;
+  requestCount: string;
   /** Rpm field on dashboard overview summary. */
   rpm: number;
   /** Total request count field on dashboard overview summary. */
-  totalRequestCount: number;
+  totalRequestCount: string;
   /** Total used credits field on dashboard overview summary. */
   totalUsedCredits: number;
   /** Tpm field on dashboard overview summary. */
@@ -23,5 +23,5 @@ export interface DashboardOverviewSummary {
   /** Used credits field on dashboard overview summary. */
   usedCredits: number;
   /** Video requests field on dashboard overview summary. */
-  videoRequests: number;
+  videoRequests: string;
 }

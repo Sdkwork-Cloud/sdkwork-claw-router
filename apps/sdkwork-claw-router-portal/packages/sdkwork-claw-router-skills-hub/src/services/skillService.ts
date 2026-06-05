@@ -53,8 +53,8 @@ type SkillCatalogQueryFilterInput = SkillFilters & {
 
 type SkillCatalogQueryParams = {
   q?: string;
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
   startTime?: string;
   endTime?: string;

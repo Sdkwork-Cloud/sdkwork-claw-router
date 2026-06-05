@@ -1,7 +1,7 @@
 /** Agent run step item schema exposed by Claw Router. */
 export interface AgentRunStepItem {
   /** Cached tokens field on agent run step item. */
-  cachedTokens?: number | null;
+  cachedTokens?: string | null;
   /** Completed at field on agent run step item. */
   completedAt?: string | null;
   /** Created at field on agent run step item. */
@@ -9,13 +9,13 @@ export interface AgentRunStepItem {
   /** Id field on agent run step item. */
   id: string;
   /** Input tokens field on agent run step item. */
-  inputTokens?: number | null;
+  inputTokens?: string | null;
   /** Latency ms field on agent run step item. */
-  latencyMs?: number | null;
+  latencyMs?: string | null;
   /** Model field on agent run step item. */
   model?: string | null;
   /** Output tokens field on agent run step item. */
-  outputTokens?: number | null;
+  outputTokens?: string | null;
   /** Run id field on agent run step item. */
   runId: string;
   /** Runtime invocation id field on agent run step item. */
@@ -25,7 +25,7 @@ export interface AgentRunStepItem {
   /** Status field on agent run step item. */
   status: 'queued' | 'running' | 'completed' | 'failed' | 'cancelled';
   /** Step index field on agent run step item. */
-  stepIndex: number;
+  stepIndex: string;
   /** Step type field on agent run step item. */
   stepType: 'input' | 'model' | 'tool' | 'memory' | 'runtime' | 'system' | 'custom';
   /** Title field on agent run step item. */
@@ -33,5 +33,5 @@ export interface AgentRunStepItem {
   /** Tool name field on agent run step item. */
   toolName?: string | null;
   /** Total tokens field on agent run step item. */
-  totalTokens?: number | null;
+  totalTokens?: string | null;
 }

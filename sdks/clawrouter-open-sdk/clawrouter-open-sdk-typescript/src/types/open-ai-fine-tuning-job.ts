@@ -3,13 +3,13 @@ import type { ProviderJsonValue } from './provider-json-value';
 /** OpenAI-compatible fine-tuning job object. */
 export interface OpenAiFineTuningJob {
   /** Unix timestamp in seconds when the job was created. */
-  created_at: number;
+  created_at: string;
   /** Fine-tuning error object when the job fails. */
   error?: ProviderJsonValue;
   /** Fine-tuned model id when available. */
   fine_tuned_model?: string;
   /** Unix timestamp in seconds when the job finished. */
-  finished_at?: number;
+  finished_at?: string;
   /** Fine-tuning hyperparameters. */
   hyperparameters?: ProviderJsonValue;
   /** Fine-tuning job identifier. */

@@ -278,6 +278,8 @@ class ClawRouterStrictSdkGenerateTest(unittest.TestCase):
                 "export interface AdminApiKeysMapResponse {\n  [key: string]: AdminApiKeyItem[];\n}",
                 files["src/types/admin-api-keys-map-response.ts"],
             )
+            self.assertIn("id: string;", files["src/types/admin-api-key-item.ts"])
+            self.assertNotIn("id: number;", files["src/types/admin-api-key-item.ts"])
             self.assertNotIn(
                 "export type AdminApiKeysMapResponse = Record<string, AdminApiKeyItem[]>;",
                 files["src/types/admin-api-keys-map-response.ts"],
@@ -462,7 +464,12 @@ class ClawRouterStrictSdkGenerateTest(unittest.TestCase):
             self.assertNotIn("vite", package["devDependencies"])
             self.assertNotIn("vite-plugin-dts", package["devDependencies"])
 
-            self.assertTrue((output / "custom" / "build-runtime.mjs").is_file())
+            build_runtime = output / "custom" / "build-runtime.mjs"
+            self.assertTrue(build_runtime.is_file())
+            build_runtime_source = build_runtime.read_text(encoding="utf-8")
+            self.assertIn("await removeTypeOnlyRuntimeReExports(path.join(tempEsmDir, 'index.js'));", build_runtime_source)
+            self.assertIn("async function removeTypeOnlyRuntimeReExports(entryFile) {", build_runtime_source)
+            self.assertIn("line.trim() === \"export * from './types';\"", build_runtime_source)
             self.assertTrue((family / "README.md").is_file())
             self.assertTrue((family / ".sdkwork-assembly.json").is_file())
             self.assertTrue((family / "openapi" / "clawrouter-app-sdk.openapi.json").is_file())

@@ -17,7 +17,7 @@ export interface RoutingChannelItem {
   /** Circuit breaker policy field on routing channel item. */
   circuitBreakerPolicy?: RoutingCircuitBreakerPolicy | JsonNull;
   /** Errors field on routing channel item. */
-  errors: number;
+  errors: string;
   /** Id field on routing channel item. */
   id: string;
   /** Is multimodal field on routing channel item. */
@@ -37,13 +37,13 @@ export interface RoutingChannelItem {
   /** Retry policy field on routing channel item. */
   retryPolicy?: RoutingRetryPolicy | JsonNull;
   /** Rpm field on routing channel item. */
-  rpm: number;
+  rpm: string;
   /** Status field on routing channel item. */
   status: string;
   /** Timeout ms field on routing channel item. */
-  timeoutMs?: number | null;
+  timeoutMs?: string | null;
   /** Vendor field on routing channel item. */
   vendor: string;
   /** Weight field on routing channel item. */
-  weight: number;
+  weight: string;
 }

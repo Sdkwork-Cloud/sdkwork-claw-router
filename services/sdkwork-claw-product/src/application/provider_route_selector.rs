@@ -6,8 +6,9 @@ use std::sync::atomic::{AtomicU64, Ordering};
 
 use crate::domain::{
     parse_model_catalog_identity, provider_native_model_id, BillingMeter, DomainError,
-    DomainResult, ModelProviderRoute, ProviderChannelGroupBinding, ProviderChannelRoute,
-    RouteCandidate, RoutingCapability, RoutingPolicy, RoutingPolicyScope, RoutingRule,
+    DomainResult, GatewayApiKeyGroupBinding, ModelProviderRoute, ProviderChannelGroupBinding,
+    ProviderChannelRoute, RouteCandidate, RoutingCapability, RoutingPolicy, RoutingPolicyScope,
+    RoutingRule,
 };
 use crate::ports::PricingCatalog;
 
@@ -173,6 +174,37 @@ impl<'a, C: PricingCatalog> ProviderRouteSelector<'a, C> {
         &self,
         query: SelectProviderRouteQuery,
     ) -> Result<SelectedProviderRoutePlan, ProviderRouteSelectionError> {
+        let mut last_unavailable = None;
+        for context in self.route_contexts(&query.context) {
+            let scoped_query = SelectProviderRouteQuery {
+                context,
+                ..query.clone()
+            };
+            match self.select_plan_for_context(scoped_query) {
+                Ok(selection) => return Ok(selection),
+                Err(error)
+                    if error.kind() == ProviderRouteSelectionErrorKind::PricingUnavailable =>
+                {
+                    return Err(error);
+                }
+                Err(error) => {
+                    last_unavailable = Some(error);
+                }
+            }
+        }
+
+        Err(last_unavailable.unwrap_or_else(|| {
+            ProviderRouteSelectionError::provider_route_unavailable(format!(
+                "provider route is not available for model: {}",
+                query.catalog_key
+            ))
+        }))
+    }
+
+    fn select_plan_for_context(
+        &self,
+        query: SelectProviderRouteQuery,
+    ) -> Result<SelectedProviderRoutePlan, ProviderRouteSelectionError> {
         let channel_routes = self.catalog.list_provider_channel_routes();
         let channel_routes_loaded = channel_routes.len();
         let api_scope_keys = [query.api_code.as_str()];
@@ -241,6 +273,37 @@ impl<'a, C: PricingCatalog> ProviderRouteSelector<'a, C> {
         &self,
         query: SelectProviderChannelRouteQuery,
     ) -> Result<SelectedProviderChannelRoute, ProviderRouteSelectionError> {
+        let mut last_unavailable = None;
+        for context in self.route_contexts(&query.context) {
+            let scoped_query = SelectProviderChannelRouteQuery {
+                context,
+                ..query.clone()
+            };
+            match self.select_channel_route_for_context(scoped_query) {
+                Ok(selection) => return Ok(selection),
+                Err(error)
+                    if error.kind() == ProviderRouteSelectionErrorKind::PricingUnavailable =>
+                {
+                    return Err(error);
+                }
+                Err(error) => {
+                    last_unavailable = Some(error);
+                }
+            }
+        }
+
+        Err(last_unavailable.unwrap_or_else(|| {
+            ProviderRouteSelectionError::provider_route_unavailable(format!(
+                "provider route is not available for configured channel route: routing policy scope is required for route {}",
+                query.route_key
+            ))
+        }))
+    }
+
+    fn select_channel_route_for_context(
+        &self,
+        query: SelectProviderChannelRouteQuery,
+    ) -> Result<SelectedProviderChannelRoute, ProviderRouteSelectionError> {
         let channel_routes = self.catalog.list_provider_channel_routes();
         let api_scope_keys = [query.api_code.as_str()];
         let group_bindings = channel_group_bindings(
@@ -287,6 +350,50 @@ impl<'a, C: PricingCatalog> ProviderRouteSelector<'a, C> {
                 query.route_key
             ),
         ))
+    }
+
+    fn route_contexts(
+        &self,
+        context: &AuthenticatedApiKeyContext,
+    ) -> Vec<AuthenticatedApiKeyContext> {
+        let mut contexts = self
+            .catalog
+            .find_api_key(context.api_key_id)
+            .map(|api_key| {
+                api_key
+                    .effective_group_bindings()
+                    .into_iter()
+                    .filter(|binding| binding.binding_role.trim().eq_ignore_ascii_case("route"))
+                    .filter_map(|binding| self.context_from_group_binding(context, &binding))
+                    .collect::<Vec<_>>()
+            })
+            .unwrap_or_default();
+
+        if contexts.is_empty() {
+            contexts.push(context.clone());
+        }
+        contexts
+    }
+
+    fn context_from_group_binding(
+        &self,
+        context: &AuthenticatedApiKeyContext,
+        binding: &GatewayApiKeyGroupBinding,
+    ) -> Option<AuthenticatedApiKeyContext> {
+        let group = self.catalog.find_channel_group(binding.group_id)?;
+        Some(AuthenticatedApiKeyContext {
+            api_key_id: context.api_key_id,
+            tenant_id: context.tenant_id,
+            organization_id: context.organization_id,
+            user_id: context.user_id,
+            api_key_name_snapshot: context.api_key_name_snapshot.clone(),
+            group_id: group.id,
+            group_code: normalized_text_or(&binding.group_code, &group.code),
+            pricing_plan_code: normalized_text_or(
+                &binding.pricing_plan_code,
+                &group.pricing_plan_code,
+            ),
+        })
     }
 
     fn select_policy_scopes(
@@ -790,6 +897,7 @@ impl<'a, C: PricingCatalog> ProviderRouteSelector<'a, C> {
         PricingResolver::new(self.catalog)
             .resolve(ResolveModelPriceQuery {
                 api_key_id: query.context.api_key_id,
+                channel_group_id: Some(query.context.group_id),
                 model: route.catalog_key.clone(),
                 billing_meter: query.billing_meter.clone(),
                 provider_code: Some(route.provider_code.clone()),
@@ -979,6 +1087,15 @@ fn same_tenant(policy: &RoutingPolicy, context: &AuthenticatedApiKeyContext) -> 
 
 fn has_text(value: Option<&str>) -> bool {
     value.map(str::trim).is_some_and(|value| !value.is_empty())
+}
+
+fn normalized_text_or(value: &str, fallback: &str) -> String {
+    let value = value.trim();
+    if value.is_empty() {
+        fallback.to_owned()
+    } else {
+        value.to_owned()
+    }
 }
 
 fn candidate_region_matches(route_region_code: &str, candidate_region_code: Option<&str>) -> bool {

@@ -3,7 +3,7 @@ import type { ProviderJsonValue } from './provider-json-value';
 /** OpenAI-compatible organization group object. */
 export interface OpenAiOrganizationGroup {
   /** Unix timestamp in seconds when the group was created. */
-  created_at?: number;
+  created_at?: string;
   /** Human-readable group description. */
   description?: string;
   /** Group identifier. */

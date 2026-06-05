@@ -7,7 +7,7 @@ export interface ModelRankingHistoryEntry {
   /** Model field on model ranking history entry. */
   model: string;
   /** Rank field on model ranking history entry. */
-  rank: number;
+  rank: string;
   /** Volume field on model ranking history entry. */
-  volume: number;
+  volume: string;
 }

@@ -26,7 +26,7 @@ export class CourseAdminService {
   }
 
   static async fetchAdminCourses(params: AdminCourseListParams = DEFAULT_ADMIN_COURSE_PAGE_PARAMS) {
-    return getClawRouterBackendSdkClient().content.courses.list(params);
+    return getClawRouterBackendSdkClient().content.courses.list(toCourseListSdkParams(params));
   }
 
   static fetchCourses(params: AdminCourseListParams = DEFAULT_ADMIN_COURSE_PAGE_PARAMS) {
@@ -58,7 +58,7 @@ export class CourseAdminService {
   }
 
   static async fetchAdminCourseSections(courseId: string, params: AdminCourseListParams = DEFAULT_ADMIN_COURSE_PAGE_PARAMS) {
-    return getClawRouterBackendSdkClient().content.courses.sections.list(courseId, params);
+    return getClawRouterBackendSdkClient().content.courses.sections.list(courseId, toCourseListSdkParams(params));
   }
 
   static fetchSections(courseId: string, params: AdminCourseListParams = DEFAULT_ADMIN_COURSE_PAGE_PARAMS) {
@@ -90,7 +90,7 @@ export class CourseAdminService {
   }
 
   static async fetchAdminCourseLessons(courseId: string, params: AdminCourseListParams = DEFAULT_ADMIN_COURSE_PAGE_PARAMS) {
-    return getClawRouterBackendSdkClient().content.courses.lessons.list(courseId, params);
+    return getClawRouterBackendSdkClient().content.courses.lessons.list(courseId, toCourseListSdkParams(params));
   }
 
   static fetchLessons(courseId: string, params: AdminCourseListParams = DEFAULT_ADMIN_COURSE_PAGE_PARAMS) {
@@ -122,7 +122,7 @@ export class CourseAdminService {
   }
 
   static async fetchAdminCourseRelations(courseId: string, params: AdminCourseListParams = DEFAULT_ADMIN_COURSE_PAGE_PARAMS) {
-    return getClawRouterBackendSdkClient().content.courses.relations.list(courseId, params);
+    return getClawRouterBackendSdkClient().content.courses.relations.list(courseId, toCourseListSdkParams(params));
   }
 
   static fetchRelations(courseId: string, params: AdminCourseListParams = DEFAULT_ADMIN_COURSE_PAGE_PARAMS) {
@@ -138,7 +138,7 @@ export class CourseAdminService {
   }
 
   static async fetchAdminCourseApplications(params: AdminCourseListParams = DEFAULT_ADMIN_COURSE_PAGE_PARAMS) {
-    return getClawRouterBackendSdkClient().content.courseApplications.list(params);
+    return getClawRouterBackendSdkClient().content.courseApplications.list(toCourseListSdkParams(params));
   }
 
   static fetchApplications(params: AdminCourseListParams = DEFAULT_ADMIN_COURSE_PAGE_PARAMS) {
@@ -154,7 +154,7 @@ export class CourseAdminService {
   }
 
   static async fetchAdminCourseComments(params: AdminCourseListParams = DEFAULT_ADMIN_COURSE_PAGE_PARAMS) {
-    return getClawRouterBackendSdkClient().content.courseComments.list(params);
+    return getClawRouterBackendSdkClient().content.courseComments.list(toCourseListSdkParams(params));
   }
 
   static fetchComments(params: AdminCourseListParams = DEFAULT_ADMIN_COURSE_PAGE_PARAMS) {
@@ -170,10 +170,21 @@ export class CourseAdminService {
   }
 
   static async fetchAdminCourseEngagement(params: AdminCourseListParams = DEFAULT_ADMIN_COURSE_PAGE_PARAMS) {
-    return getClawRouterBackendSdkClient().content.courseEngagement.list(params);
+    return getClawRouterBackendSdkClient().content.courseEngagement.list(toCourseListSdkParams(params));
   }
 
   static fetchEngagement(params: AdminCourseListParams = DEFAULT_ADMIN_COURSE_PAGE_PARAMS) {
     return this.fetchAdminCourseEngagement(params);
   }
+}
+
+function toCourseListSdkParams(params: AdminCourseListParams): Omit<AdminCourseListParams, 'page' | 'pageSize'> & {
+  page?: string;
+  pageSize?: string;
+} {
+  return {
+    ...params,
+    page: params.page === undefined ? undefined : String(params.page),
+    pageSize: params.pageSize === undefined ? undefined : String(params.pageSize),
+  };
 }

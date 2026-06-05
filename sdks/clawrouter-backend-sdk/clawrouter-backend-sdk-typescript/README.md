@@ -95,11 +95,11 @@ const client = new SdkworkBackendClient({
 // List managed agents
 const params = {
   q: 'q',
-  owner_user_id: 2,
+  owner_user_id: 'owner_user_id',
   status: 'active',
   visibility: 'private',
-  page: 5,
-  page_size: 6,
+  page: 'page',
+  page_size: 'page_size',
 };
 const result = await client.agents.agentDefinitions.list(params);
 ```
@@ -151,8 +151,8 @@ const result = await client.integration.channels.list();
 ```typescript
 // List MCP servers
 const params = {
-  page: 1,
-  page_size: 2,
+  page: 'page',
+  page_size: 'page_size',
   q: 'q',
   transport: 'transport',
   visibility: 'visibility',
@@ -167,8 +167,8 @@ const result = await client.mcp.servers.list(params);
 ```typescript
 // Messaging provider accounts list
 const params = {
-  page: 1,
-  page_size: 2,
+  page: 'page',
+  page_size: 'page_size',
   q: 'q',
   status: 'status',
   channel: 'sms',
@@ -206,8 +206,8 @@ const result = await client.system.auth.settings.retrieve();
 ```typescript
 // List admin prompts
 const params = {
-  page: 1,
-  page_size: 2,
+  page: 'page',
+  page_size: 'page_size',
   q: 'q',
   prompt_type: 'prompt_type',
   visibility: 'visibility',
@@ -222,8 +222,8 @@ const result = await client.prompts.definitions.list(params);
 ```typescript
 // Service Provider Adjustments List
 const params = {
-  page: 1,
-  page_size: 2,
+  page: 'page',
+  page_size: 'page_size',
   status: 'status',
   provider_id: 'provider_id',
   seller_provider_id: 'seller_provider_id',

@@ -95,8 +95,8 @@ export interface EcosystemSkillsPackageListParams {
   q?: string;
   enabled?: boolean;
   categoryId?: string;
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
 }
 
 export class EcosystemSkillsPackageApi {
@@ -186,8 +186,8 @@ export interface EcosystemSkillsListParams {
   visibility?: 'PUBLIC' | 'PRIVATE' | 'UNLISTED';
   enabled?: boolean;
   categoryId?: string;
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
 }
 
 export class EcosystemSkillsApi {

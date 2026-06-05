@@ -13,15 +13,15 @@ export interface AdminAnalyticsModelRankItem {
   /** Points field on admin analytics model rank item. */
   points: number;
   /** Rank field on admin analytics model rank item. */
-  rank: number;
+  rank: string;
   /** Request count field on admin analytics model rank item. */
-  requestCount: number;
+  requestCount: string;
   /** Total tokens field on admin analytics model rank item. */
   totalTokens: number;
   /** Upstream cost field on admin analytics model rank item. */
   upstreamCost: number;
   /** User count field on admin analytics model rank item. */
-  userCount: number;
+  userCount: string;
   /** Vendor field on admin analytics model rank item. */
   vendor: string;
 }

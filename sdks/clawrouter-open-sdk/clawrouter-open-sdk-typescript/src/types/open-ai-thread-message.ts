@@ -7,15 +7,15 @@ export interface OpenAiThreadMessage {
   /** Message file or tool attachments. */
   attachments?: ProviderJsonValue[];
   /** Unix timestamp in seconds when the message completed. */
-  completed_at?: number;
+  completed_at?: string;
   /** Message content parts. */
   content: ProviderJsonValue[];
   /** Unix timestamp in seconds when the message was created. */
-  created_at: number;
+  created_at: string;
   /** Message identifier. */
   id: string;
   /** Unix timestamp in seconds when the message became incomplete. */
-  incomplete_at?: number;
+  incomplete_at?: string;
   /** Details explaining why a message is incomplete. */
   incomplete_details?: ProviderJsonValue;
   /** Developer-defined message metadata. */

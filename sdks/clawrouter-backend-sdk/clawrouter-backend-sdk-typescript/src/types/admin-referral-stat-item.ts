@@ -9,7 +9,7 @@ export interface AdminReferralStatItem {
   /** Link field on admin referral stat item. */
   link: string;
   /** Total invited field on admin referral stat item. */
-  total_invited: number;
+  total_invited: string;
   /** Total revenue field on admin referral stat item. */
   total_revenue: string;
 }

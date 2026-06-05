@@ -38,6 +38,15 @@ import { authTypesList, knownModelVendors, protocolsList } from "./packages/sdkw
 const originalFetch = globalThis.fetch;
 const originalWindowDescriptor = Object.getOwnPropertyDescriptor(globalThis, "window");
 
+function readAdminChannelI18nSource(): string {
+  return [
+    "./packages/sdkwork-claw-router-i18n/src/resources/admin/channel.ts",
+    "./packages/sdkwork-claw-router-i18n/src/resources/admin/channel-resource-routing.ts",
+  ]
+    .map((path) => readFileSync(new URL(path, import.meta.url), "utf8"))
+    .join("\n");
+}
+
 type CapturedBackendRequest = {
   url: string;
   method: string;
@@ -299,21 +308,21 @@ test("admin channel service creates accounts with multiple upstream credentials 
             name: "Primary",
             baseUrl: "https://api.openai.com/v1",
             apiKey: "sk-primary",
-            priority: 10,
-            weight: 100,
+            priority: "10",
+            weight: "100",
             status: "active",
           },
           {
             name: "Backup",
             baseUrl: "https://backup.openai.example/v1",
             apiKey: "sk-backup",
-            priority: 20,
-            weight: 50,
+            priority: "20",
+            weight: "50",
             status: "active",
           },
         ],
         capabilities: ["llm"],
-        weight: 100,
+        weight: "100",
         status: "active",
       });
     },
@@ -1110,10 +1119,7 @@ test("admin channel account lifetime fields are shown with never-expires default
     new URL("./packages/sdkwork-claw-router-admin-channel/src/index.tsx", import.meta.url),
     "utf8",
   );
-  const i18nSource = readFileSync(
-    new URL("./packages/sdkwork-claw-router-i18n/src/resources/admin/channel.ts", import.meta.url),
-    "utf8",
-  );
+  const i18nSource = readAdminChannelI18nSource();
 
   assert.match(source, /name="expiresAt"/);
   assert.match(source, /type="datetime-local"/);
@@ -1161,10 +1167,7 @@ test("admin channel row actions expose copy-create without copying credentials",
     new URL("./packages/sdkwork-claw-router-admin-channel/src/index.tsx", import.meta.url),
     "utf8",
   );
-  const i18nSource = readFileSync(
-    new URL("./packages/sdkwork-claw-router-i18n/src/resources/admin/channel.ts", import.meta.url),
-    "utf8",
-  );
+  const i18nSource = readAdminChannelI18nSource();
 
   assert.match(source, /type AccountDrawerMode = 'create' \| 'copy' \| 'edit'/);
   assert.match(source, /const openCopyCreateModal = \(channel: ChannelItem\) =>/);
@@ -1246,10 +1249,7 @@ test("admin channel drawer permits accounts without target model bindings", () =
     new URL("./packages/sdkwork-claw-router-admin-channel/src/index.tsx", import.meta.url),
     "utf8",
   );
-  const i18nSource = readFileSync(
-    new URL("./packages/sdkwork-claw-router-i18n/src/resources/admin/channel.ts", import.meta.url),
-    "utf8",
-  );
+  const i18nSource = readAdminChannelI18nSource();
 
   assert.match(source, /const models = flattenTargetModels\(targetModelsByVendor\)/);
   assert.match(source, /models,/);
@@ -1371,10 +1371,7 @@ test("admin channel account drawer places vendor selection directly under accoun
     new URL("./packages/sdkwork-claw-router-admin-channel/src/index.tsx", import.meta.url),
     "utf8",
   );
-  const i18nSource = readFileSync(
-    new URL("./packages/sdkwork-claw-router-i18n/src/resources/admin/channel.ts", import.meta.url),
-    "utf8",
-  );
+  const i18nSource = readAdminChannelI18nSource();
   const drawerStart = source.indexOf("data-admin-channel-account-drawer");
   const rightPanelStart = source.indexOf("data-admin-channel-right-panel");
   assert.notEqual(drawerStart, -1, "missing account drawer marker");
@@ -1507,12 +1504,9 @@ test("admin channel drawer binds resource groups and resources through selector 
     new URL("./packages/sdkwork-claw-router-admin-channel/src/channelService.ts", import.meta.url),
     "utf8",
   );
-  const messages = readFileSync(
-    new URL("./packages/sdkwork-claw-router-i18n/src/resources/admin/channel.ts", import.meta.url),
-    "utf8",
-  );
+  const messages = readAdminChannelI18nSource();
 
-  assert.match(serviceSource, /type AiResourceGroup = AdminAiResourceGroupItem/);
+  assert.match(serviceSource, /type AiResourceGroup = Omit<AdminAiResourceGroupItem, 'resourceCount' \| 'sortOrder'>/);
   assert.match(serviceSource, /ChannelAiResourceService[\s\S]*fetchAiResourceGroups/);
   assert.match(serviceSource, /channelBackendClient\(\)\.ai\.aiResourceGroups\.list\(\)/);
   assert.match(source, /const \[resourceGroupSelectorOpen, setResourceGroupSelectorOpen\] = useState\(false\)/);
@@ -1587,10 +1581,7 @@ test("admin channel visible account copy is routed through i18n resources", () =
     new URL("./packages/sdkwork-claw-router-admin-channel/src/channelOptions.ts", import.meta.url),
     "utf8",
   );
-  const i18nSource = readFileSync(
-    new URL("./packages/sdkwork-claw-router-i18n/src/resources/admin/channel.ts", import.meta.url),
-    "utf8",
-  );
+  const i18nSource = readAdminChannelI18nSource();
 
   const hardcodedVisiblePhrases = [
     "Edit channel account",
@@ -1783,10 +1774,7 @@ test("admin channel AI resources expose product categories including per-call AP
     new URL("./packages/sdkwork-claw-router-admin-channel/src/index.tsx", import.meta.url),
     "utf8",
   );
-  const messages = readFileSync(
-    new URL("./packages/sdkwork-claw-router-i18n/src/resources/admin/channel.ts", import.meta.url),
-    "utf8",
-  );
+  const messages = readAdminChannelI18nSource();
 
   for (const expected of [
     "type AiResourceCategory",
@@ -1857,10 +1845,7 @@ test("admin channel endpoint management UI and SDK calls are removed", () => {
     new URL("./packages/sdkwork-claw-router-admin-channel/src/channelForm.ts", import.meta.url),
     "utf8",
   );
-  const i18nSource = readFileSync(
-    new URL("./packages/sdkwork-claw-router-i18n/src/resources/admin/channel.ts", import.meta.url),
-    "utf8",
-  );
+  const i18nSource = readAdminChannelI18nSource();
 
   for (const [name, content] of [
     ["source", source],
@@ -1878,10 +1863,7 @@ test("admin channel endpoint management UI and SDK calls are removed", () => {
 });
 
 test("admin channel copy describes resource access instead of direct model bindings", () => {
-  const i18nSource = readFileSync(
-    new URL("./packages/sdkwork-claw-router-i18n/src/resources/admin/channel.ts", import.meta.url),
-    "utf8",
-  );
+  const i18nSource = readAdminChannelI18nSource();
 
   assert.doesNotMatch(
     i18nSource,
@@ -1979,13 +1961,13 @@ test("admin channel AI resource service creates and updates through generated ba
           vendorCode: "openai",
           compositionMode: "all",
           status: "active",
-          sortOrder: 5,
+          sortOrder: "5",
           members: [
             {
               memberResourceCode: "model.openai.gpt-4o-mini.chat",
               memberRole: "included",
               required: true,
-              sortOrder: 1,
+              sortOrder: "1",
             },
           ],
         });
@@ -2106,10 +2088,7 @@ test("admin channel standalone AI resource admin page is removed while binding s
     new URL("./packages/sdkwork-claw-router-admin-channel/src/index.tsx", import.meta.url),
     "utf8",
   );
-  const i18nSource = readFileSync(
-    new URL("./packages/sdkwork-claw-router-i18n/src/resources/admin/channel.ts", import.meta.url),
-    "utf8",
-  );
+  const i18nSource = readAdminChannelI18nSource();
 
   assert.doesNotMatch(source, /export function AiResourceAdmin/);
   assert.doesNotMatch(source, /function AiResourceFormModal/);
@@ -2880,21 +2859,21 @@ test("admin channel service calls generated backend SDK paths and normalizes cha
             name: "Backup",
             baseUrl: "https://api.anthropic.com",
             apiKey: "sk-ant-live-secret",
-            priority: 1,
-            weight: 100,
+            priority: "1",
+            weight: "100",
             status: "active",
           },
         ],
         expiresAt: "2026-07-01T00:00:00Z",
         capabilities: ["llm"],
         circuitBreakerPolicy: { failureThreshold: 4 },
-        weight: 20,
+        weight: "20",
         status: "active",
       });
       assert.deepEqual(JSON.parse(captured[2].body), {
         id: "channel-2",
         name: "Anthropic Updated",
-        weight: 30,
+        weight: "30",
         status: "disabled",
         expiresAt: null,
       });
@@ -3203,7 +3182,7 @@ test("admin channel service rejects invalid commands before calling generated ba
             credentials: [channelCredentialForm({ baseUrl: "https://api.openai.com/v1", apiKey: "sk-openai" })],
             weight: 1.5,
           }),
-        /value must be a positive integer/,
+        /weight must be a positive integer/,
       );
       await assert.rejects(
         () =>

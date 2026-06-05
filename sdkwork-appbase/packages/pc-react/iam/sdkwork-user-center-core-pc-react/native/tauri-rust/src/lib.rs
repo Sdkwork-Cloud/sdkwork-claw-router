@@ -619,23 +619,28 @@ fn default_entity_bindings(table_prefix: &str) -> Vec<UserCenterStorageEntityBin
         },
         UserCenterStorageEntityBinding {
             primary_key_column_name: "id".to_string(),
-            standard_entity_name: "IamAccount".to_string(),
-            table_name: format!("{table_prefix}account"),
-        },
-        UserCenterStorageEntityBinding {
-            primary_key_column_name: "id".to_string(),
             standard_entity_name: "IamMembership".to_string(),
             table_name: format!("{table_prefix}membership"),
         },
         UserCenterStorageEntityBinding {
             primary_key_column_name: "id".to_string(),
-            standard_entity_name: "IamOrganizationMember".to_string(),
-            table_name: format!("{table_prefix}organization_member"),
+            standard_entity_name: "IamOrganizationMembership".to_string(),
+            table_name: format!("{table_prefix}organization_membership"),
         },
         UserCenterStorageEntityBinding {
             primary_key_column_name: "id".to_string(),
-            standard_entity_name: "IamMemberRelation".to_string(),
-            table_name: format!("{table_prefix}member_relation"),
+            standard_entity_name: "IamDepartmentAssignment".to_string(),
+            table_name: format!("{table_prefix}department_assignment"),
+        },
+        UserCenterStorageEntityBinding {
+            primary_key_column_name: "id".to_string(),
+            standard_entity_name: "IamPositionAssignment".to_string(),
+            table_name: format!("{table_prefix}position_assignment"),
+        },
+        UserCenterStorageEntityBinding {
+            primary_key_column_name: "id".to_string(),
+            standard_entity_name: "IamRoleBinding".to_string(),
+            table_name: format!("{table_prefix}role_binding"),
         },
     ]
 }

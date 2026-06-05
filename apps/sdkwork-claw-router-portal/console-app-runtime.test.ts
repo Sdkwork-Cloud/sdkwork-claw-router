@@ -2244,9 +2244,15 @@ test("playground generation agent propagates Runtime SSE usage into Agent run an
         outputTokens: 8,
         totalTokens: 23,
       };
-      assert.deepEqual(captured[6].body.usageJson, expectedUsage);
-      assert.deepEqual(captured[7].body.usageJson, expectedUsage);
-      assert.deepEqual(captured[8].body.usageJson, expectedUsage);
+      const expectedSdkUsage = {
+        cachedTokens: "3",
+        inputTokens: "12",
+        outputTokens: "8",
+        totalTokens: "23",
+      };
+      assert.deepEqual(captured[6].body.usageJson, expectedSdkUsage);
+      assert.deepEqual(captured[7].body.usageJson, expectedSdkUsage);
+      assert.deepEqual(captured[8].body.usageJson, expectedSdkUsage);
       assert.equal(result.usage.promptTokens, 12);
       assert.equal(result.usage.completionTokens, 8);
       assert.equal(result.usage.cachedTokens, 3);
@@ -4004,7 +4010,13 @@ test("playground chat SSE propagates Runtime usage into invocation and turn resp
         outputTokens: 4,
         totalTokens: 15,
       };
-      assert.deepEqual(captured[4].body.usageJson, expectedUsage);
+      const expectedSdkUsage = {
+        cachedTokens: "2",
+        inputTokens: "9",
+        outputTokens: "4",
+        totalTokens: "15",
+      };
+      assert.deepEqual(captured[4].body.usageJson, expectedSdkUsage);
       assert.deepEqual(captured[5].body.usage, expectedUsage);
       assert.equal(result.assistantMessage.content, "Hello usage");
     },
@@ -4102,10 +4114,10 @@ test("playground chat merges final Runtime completion usage into turn response c
         totalTokens: 19,
       };
       assert.deepEqual(captured[4].body.usageJson, {
-        cachedTokens: 0,
-        inputTokens: 0,
-        outputTokens: 0,
-        totalTokens: 0,
+        cachedTokens: "0",
+        inputTokens: "0",
+        outputTokens: "0",
+        totalTokens: "0",
       });
       assert.deepEqual(captured[5].body.usage, expectedUsage);
       assert.equal(result.assistantMessage.content, "Hello final usage");
@@ -4199,7 +4211,13 @@ test("playground chat recomputes total Runtime usage when cached tokens arrive i
         outputTokens: 4,
         totalTokens: 15,
       };
-      assert.deepEqual(captured[4].body.usageJson, expectedUsage);
+      const expectedSdkUsage = {
+        cachedTokens: "2",
+        inputTokens: "9",
+        outputTokens: "4",
+        totalTokens: "15",
+      };
+      assert.deepEqual(captured[4].body.usageJson, expectedSdkUsage);
       assert.deepEqual(captured[5].body.usage, expectedUsage);
       assert.equal(result.assistantMessage.content, "Hello split usage");
     },

@@ -5,8 +5,8 @@ import type { DiagnosticsRouteSimulationCreateResult, DiagnosticsTestSendsCreate
 
 
 export interface MessagingVerificationPoliciesListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   q?: string;
   status?: string;
   channel?: 'sms' | 'email';
@@ -55,8 +55,8 @@ export class MessagingTemplatesVersionsApi {
 }
 
 export interface MessagingTemplatesListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   q?: string;
   status?: string;
   channel?: 'sms' | 'email';
@@ -127,8 +127,8 @@ export class MessagingTemplateSendsApi {
 }
 
 export interface MessagingSuppressionsListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
   channel?: 'sms' | 'email';
   targetHash?: string;
@@ -173,8 +173,8 @@ export class MessagingSuppressionsApi {
 }
 
 export interface MessagingSenderIdentitiesListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   q?: string;
   status?: string;
   channel?: 'sms' | 'email';
@@ -219,8 +219,8 @@ export class MessagingSenderIdentitiesApi {
 }
 
 export interface MessagingSendRequestsListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
   channel?: 'sms' | 'email';
   sceneCode?: string;
@@ -252,8 +252,8 @@ export class MessagingSendRequestsApi {
 }
 
 export interface MessagingRouteRulesListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   q?: string;
   status?: string;
   channel?: 'sms' | 'email';
@@ -298,8 +298,8 @@ export class MessagingRouteRulesApi {
 }
 
 export interface MessagingRateLimitBucketsListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   sceneCode?: string;
   channel?: 'sms' | 'email';
   targetHash?: string;
@@ -331,8 +331,8 @@ export class MessagingRateLimitBucketsApi {
 }
 
 export interface MessagingProviderAccountsListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   q?: string;
   status?: string;
   channel?: 'sms' | 'email';

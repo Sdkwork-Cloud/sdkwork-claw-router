@@ -13,7 +13,7 @@ export interface AdminSkillAssetUpdateRequest {
   /** Duration seconds field on admin skill asset update request. */
   durationSeconds?: string | null;
   /** File size field on admin skill asset update request. */
-  fileSize?: number | null;
+  fileSize?: string | null;
   /** Height field on admin skill asset update request. */
   height?: number | null;
   /** Mime type field on admin skill asset update request. */

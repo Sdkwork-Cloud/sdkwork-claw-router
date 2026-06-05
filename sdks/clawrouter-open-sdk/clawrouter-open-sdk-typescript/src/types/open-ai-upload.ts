@@ -4,11 +4,11 @@ import type { ProviderJsonValue } from './provider-json-value';
 /** OpenAI-compatible upload object. */
 export interface OpenAiUpload {
   /** Total number of bytes expected in the upload. */
-  bytes: number;
+  bytes: string;
   /** Unix timestamp in seconds when the upload was created. */
-  created_at: number;
+  created_at: string;
   /** Unix timestamp in seconds when the upload expires. */
-  expires_at?: number;
+  expires_at?: string;
   /** File field on the open ai upload, using the open ai file module. */
   file?: OpenAiFile;
   /** Upload filename. */

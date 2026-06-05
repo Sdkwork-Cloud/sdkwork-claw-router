@@ -14,6 +14,7 @@ pub(crate) mod provider_classification;
 mod queries;
 pub(crate) mod routing_config_change;
 pub mod rows;
+pub(crate) mod runtime_id;
 pub(crate) mod skills_seed;
 pub(crate) mod sql_admin_analytics;
 pub(crate) mod sql_admin_auth_settings;

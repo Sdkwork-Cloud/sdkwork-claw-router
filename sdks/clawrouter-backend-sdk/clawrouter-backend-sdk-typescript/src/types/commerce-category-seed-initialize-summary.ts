@@ -7,11 +7,11 @@ export interface CommerceCategorySeedInitializeSummary {
   /** Install default enabled field on commerce category seed initialize summary. */
   installDefaultEnabled: boolean;
   /** Requested field on commerce category seed initialize summary. */
-  requested: number;
+  requested: string;
   /** Skipped field on commerce category seed initialize summary. */
-  skipped: number;
+  skipped: string;
   /** Target table field on commerce category seed initialize summary. */
   targetTable: 'commerce_product_category' | 'plus_category';
   /** Upserted field on commerce category seed initialize summary. */
-  upserted: number;
+  upserted: string;
 }

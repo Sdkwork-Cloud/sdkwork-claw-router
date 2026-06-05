@@ -21,7 +21,7 @@ export interface AgentItem {
   /** Name field on agent item. */
   name: string;
   /** Owner user id field on agent item. */
-  ownerUserId: number;
+  ownerUserId: string;
   /** Status field on agent item. */
   status: 'active' | 'disabled';
   /** Template source field on agent item. */

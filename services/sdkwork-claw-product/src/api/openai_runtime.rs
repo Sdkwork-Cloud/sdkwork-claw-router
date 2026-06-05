@@ -21,6 +21,9 @@ pub struct ResolvedOpenAiProviderRoute {
     pub catalog_key: String,
     pub policy_id: Option<i64>,
     pub rule_id: Option<i64>,
+    pub group_id: i64,
+    pub group_code: String,
+    pub pricing_plan_code: String,
     pub provider_code: String,
     pub region_code: String,
     pub channel_id: i64,
@@ -297,7 +300,7 @@ fn openai_api_code(capability_label: &str) -> &'static str {
 
 fn resolve_model_route(
     catalog: &(impl PricingCatalog + ?Sized),
-    context: &AuthenticatedApiKeyContext,
+    _context: &AuthenticatedApiKeyContext,
     requested_model: &str,
     vendor_code: &str,
     catalog_key: &str,
@@ -338,8 +341,8 @@ fn resolve_model_route(
                     .and_then(|route| route.channel_code.as_deref())
                     .unwrap_or_default(),
             )
-            .with_channel_group_id(context.group_id)
-            .with_channel_group_code(context.group_code.as_str())
+            .with_channel_group_id(selection.group_id)
+            .with_channel_group_code(selection.group_code.as_str())
             .with_site(
                 channel_metadata.as_ref().and_then(|route| route.site_id),
                 channel_metadata
@@ -402,6 +405,9 @@ fn resolve_model_route(
         catalog_key: model_route.catalog_key,
         policy_id: selection.policy_id,
         rule_id: selection.rule_id,
+        group_id: selection.group_id,
+        group_code: selection.group_code,
+        pricing_plan_code: selection.pricing_plan_code,
         provider_code: model_route.provider_code,
         region_code,
         channel_id: model_route.channel_id,

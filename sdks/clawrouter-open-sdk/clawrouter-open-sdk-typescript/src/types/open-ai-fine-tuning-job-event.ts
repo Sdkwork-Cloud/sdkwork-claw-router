@@ -3,7 +3,7 @@ import type { ProviderJsonValue } from './provider-json-value';
 /** OpenAI-compatible fine-tuning job event object. */
 export interface OpenAiFineTuningJobEvent {
   /** Unix timestamp in seconds when the event was created. */
-  created_at: number;
+  created_at: string;
   /** Provider-specific event data. */
   data?: ProviderJsonValue;
   /** Fine-tuning job event identifier. */

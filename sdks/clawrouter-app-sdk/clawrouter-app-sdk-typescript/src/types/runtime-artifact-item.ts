@@ -21,7 +21,7 @@ export interface RuntimeArtifactItem {
   /** Sha 256 field on runtime artifact item. */
   sha256?: string | null;
   /** Size bytes field on runtime artifact item. */
-  sizeBytes?: number | null;
+  sizeBytes?: string | null;
   /** Storage key field on runtime artifact item. */
   storageKey?: string | null;
 }

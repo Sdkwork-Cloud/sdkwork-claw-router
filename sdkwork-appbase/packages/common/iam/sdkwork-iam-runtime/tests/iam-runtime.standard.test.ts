@@ -110,8 +110,8 @@ describe("SDKWork IAM runtime", () => {
       userId: "u1",
     });
     expect(await runtime.contextStore.getShardingContext()).toEqual({
-      shardingKey: "t1",
-      shardingStrategy: "tenant",
+      shardingKey: "o1",
+      shardingStrategy: "organization",
     });
   });
 
@@ -258,6 +258,20 @@ function createStandardAppClient(session: StandardSessionOptions = {}) {
         verify: vi.fn(),
       },
     },
+    openPlatform: {
+      qrAuth: {
+        sessions: {
+          create: vi.fn(),
+          retrieve: vi.fn(),
+          scans: {
+            create: vi.fn(),
+          },
+          passwords: {
+            create: vi.fn(),
+          },
+        },
+      },
+    },
     system: {
       iam: {
         runtime: {
@@ -269,6 +283,33 @@ function createStandardAppClient(session: StandardSessionOptions = {}) {
       },
     },
     iam: {
+      organizations: {
+        list: vi.fn(),
+        tree: {
+          retrieve: vi.fn(),
+        },
+      },
+      organizationMemberships: {
+        list: vi.fn(),
+      },
+      departments: {
+        list: vi.fn(),
+        tree: {
+          retrieve: vi.fn(),
+        },
+      },
+      departmentAssignments: {
+        list: vi.fn(),
+      },
+      positions: {
+        list: vi.fn(),
+      },
+      positionAssignments: {
+        list: vi.fn(),
+      },
+      roleBindings: {
+        list: vi.fn(),
+      },
       users: {
         current: {
           retrieve: vi.fn(),
@@ -290,18 +331,22 @@ function createStandardBackendIamClient() {
     organizations: {
       create: vi.fn(),
       delete: vi.fn(),
-      list: vi.fn(),
       retrieve: vi.fn(),
-      tree: {
-        retrieve: vi.fn(),
-      },
       update: vi.fn(),
-      members: {
-        create: vi.fn(),
-        delete: vi.fn(),
-        list: vi.fn(),
-        update: vi.fn(),
-      },
+    },
+    organizationMemberships: {
+      create: vi.fn(),
+      update: vi.fn(),
+    },
+    departments: {
+      create: vi.fn(),
+      delete: vi.fn(),
+      retrieve: vi.fn(),
+      update: vi.fn(),
+    },
+    departmentAssignments: {
+      create: vi.fn(),
+      update: vi.fn(),
     },
     permissions: {
       create: vi.fn(),
@@ -317,6 +362,15 @@ function createStandardBackendIamClient() {
       retrieve: vi.fn(),
       update: vi.fn(),
     },
+    positions: {
+      create: vi.fn(),
+      delete: vi.fn(),
+      update: vi.fn(),
+    },
+    positionAssignments: {
+      create: vi.fn(),
+      update: vi.fn(),
+    },
     roles: {
       create: vi.fn(),
       delete: vi.fn(),
@@ -328,6 +382,10 @@ function createStandardBackendIamClient() {
         delete: vi.fn(),
         list: vi.fn(),
       },
+    },
+    roleBindings: {
+      create: vi.fn(),
+      delete: vi.fn(),
     },
     securityEvents: {
       list: vi.fn(),
@@ -351,11 +409,6 @@ function createStandardBackendIamClient() {
       list: vi.fn(),
       retrieve: vi.fn(),
       update: vi.fn(),
-      roles: {
-        create: vi.fn(),
-        delete: vi.fn(),
-        list: vi.fn(),
-      },
     },
   };
 }

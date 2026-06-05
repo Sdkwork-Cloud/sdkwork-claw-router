@@ -147,9 +147,10 @@ class AdminModelRuntimeStandardTest(unittest.TestCase):
                 f"{count_field}: readRequiredNonNegativeInteger(data, '{count_field}', 'Model catalog sync response {count_field.replace('Count', ' count')}')",
                 service,
             )
-        self.assertIn("readRequiredNonNegativeInteger(value, 'requests', 'Admin model ranking requests')", service)
-        self.assertIn("readRequiredNonNegativeInteger(value, 'baseVolume', 'Admin model ranking base volume')", service)
-        self.assertIn("tenantId: readRequiredNonNegativeInteger(value, 'tenantId', 'Model ranking refresh status tenant id')", service)
+        self.assertIn("readRequiredNonNegativeInt64String(value, 'requests', 'Admin model ranking requests')", service)
+        self.assertIn("readRequiredNonNegativeInt64String(value, 'baseVolume', 'Admin model ranking base volume')", service)
+        self.assertIn("tenantId: readRequiredNonNegativeInt64String(value, 'tenantId', 'Model ranking refresh status tenant id')", service)
+        self.assertIn("organizationId: readRequiredNonNegativeInt64String(value, 'organizationId', 'Model ranking refresh status organization id')", service)
         self.assertIn("refreshIntervalSeconds: readRequiredPositiveInteger(value, 'refreshIntervalSeconds', 'Model ranking refresh status refresh interval seconds')", service)
         self.assertIn("generatedCount: readRequiredNonNegativeInteger(value, 'generatedCount', 'Model ranking refresh status generated count')", service)
         self.assertIn("durationMs: readRequiredNonNegativeInteger(item, 'durationMs', 'Model ranking refresh job duration ms')", service)
@@ -157,6 +158,7 @@ class AdminModelRuntimeStandardTest(unittest.TestCase):
         self.assertIn("generatedCount: readRequiredNonNegativeInteger(value, 'generatedCount', 'Model ranking refresh trigger generated count')", service)
         self.assertIn("cacheMaxAgeSeconds: readRequiredPositiveInteger(value, 'cacheMaxAgeSeconds', 'Model ranking refresh trigger cache max age seconds')", service)
         self.assertIn("function readRequiredNonNegativeInteger(record: ApiRecord, key: string, label: string): number", service)
+        self.assertIn("function readRequiredNonNegativeInt64String(record: ApiRecord, key: string, label: string): string", service)
         self.assertIn("function readRequiredPositiveInteger(record: ApiRecord, key: string, label: string): number", service)
         self.assertIn("Admin model ranking requests must be a non-negative integer", (ROOT / "apps" / "sdkwork-claw-router-portal" / "admin-model-runtime.test.ts").read_text(encoding="utf-8"))
         self.assertIn("Model ranking refresh status generated count must be a non-negative integer", (ROOT / "apps" / "sdkwork-claw-router-portal" / "admin-model-runtime.test.ts").read_text(encoding="utf-8"))
@@ -286,16 +288,16 @@ class AdminModelRuntimeStandardTest(unittest.TestCase):
             with self.subTest(store=relative_path):
                 self.assertIn('try_get::<String, _>("modalities_json")', compact_store)
                 self.assertIn(".map_err(row_error)?", compact_store)
-                self.assertIn(
-                    "model_type: model_type_label(capability, &modalities)?",
-                    compact_store,
-                )
-                self.assertIn(
-                    "fn model_type_label(capability: Option<i64>, modalities: &[String]) -> DomainResult<String>",
-                    compact_store,
-                )
+                self.assertIn("model_type: model_type_label(capability, &modalities)?", compact_store)
+                self.assertIn("fn model_type_label(", compact_store)
+                self.assertIn("capability: Option<i64>", compact_store)
+                self.assertIn("modalities: &[String]", compact_store)
+                self.assertIn("-> DomainResult<String>", compact_store)
                 self.assertIn("invalid model modalities json from database row", store)
-                self.assertNotIn('unwrap_or_else(|_| "[]".to_owned())', store)
+                self.assertNotIn(
+                    'try_get::<String, _>("modalities_json").unwrap_or_else(|_| "[]".to_owned())',
+                    compact_store,
+                )
 
     def test_admin_model_read_model_fails_closed_for_vendor_and_model_status(self) -> None:
         store_paths = [

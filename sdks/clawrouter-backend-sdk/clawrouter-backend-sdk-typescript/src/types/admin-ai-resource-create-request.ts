@@ -23,7 +23,7 @@ export interface AdminAiResourceCreateRequest {
   /** Resource type field on admin ai resource create request. */
   resourceType: 'vendor' | 'modality' | 'api_endpoint' | 'model_api' | 'bundle';
   /** Sort order field on admin ai resource create request. */
-  sortOrder?: number | null;
+  sortOrder?: string | null;
   /** Status field on admin ai resource create request. */
   status?: 'active' | 'disabled' | 'inactive';
   /** Vendor code field on admin ai resource create request. */

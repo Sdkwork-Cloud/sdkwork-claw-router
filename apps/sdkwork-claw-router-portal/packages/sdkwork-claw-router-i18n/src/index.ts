@@ -2,6 +2,55 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import { resources } from './resources';
 
+export const consoleGatewayI18nKeyRegistry = {
+  en: [
+    "console.gateway.title",
+    "console.gateway.subtitle",
+    "console.gateway.summary.traceRows",
+    "console.gateway.summary.successful",
+    "console.gateway.summary.failed",
+    "console.gateway.summary.channels",
+    "console.gateway.table.title",
+    "console.gateway.table.description",
+    "console.gateway.table.traceId",
+    "console.gateway.table.timestamp",
+    "console.gateway.table.clientIp",
+    "console.gateway.table.method",
+    "console.gateway.table.endpoint",
+    "console.gateway.table.status",
+    "console.gateway.table.duration",
+    "console.gateway.table.routedChannel",
+    "console.gateway.states.loading",
+    "console.gateway.states.loadErrorTitle",
+    "console.gateway.states.loadErrorFallback",
+    "console.gateway.states.emptyTitle",
+    "console.gateway.states.emptyDescription",
+  ],
+  zh: [
+    "console.gateway.title",
+    "console.gateway.subtitle",
+    "console.gateway.summary.traceRows",
+    "console.gateway.summary.successful",
+    "console.gateway.summary.failed",
+    "console.gateway.summary.channels",
+    "console.gateway.table.title",
+    "console.gateway.table.description",
+    "console.gateway.table.traceId",
+    "console.gateway.table.timestamp",
+    "console.gateway.table.clientIp",
+    "console.gateway.table.method",
+    "console.gateway.table.endpoint",
+    "console.gateway.table.status",
+    "console.gateway.table.duration",
+    "console.gateway.table.routedChannel",
+    "console.gateway.states.loading",
+    "console.gateway.states.loadErrorTitle",
+    "console.gateway.states.loadErrorFallback",
+    "console.gateway.states.emptyTitle",
+    "console.gateway.states.emptyDescription",
+  ],
+} as const;
+
 interface LegacyNavigatorLanguage {
   userLanguage?: string;
 }

@@ -1,7 +1,7 @@
-use sha2::{Digest, Sha256};
 use sqlx::{PgPool, Postgres, Row, Transaction};
 
 use crate::domain::{DomainError, DomainResult};
+use crate::infrastructure::sql::runtime_id::next_admin_skill_id;
 use crate::infrastructure::sql::sql_admin_product_center::{
     empty_media_resource, media_resource_object_blob_id, media_resource_stable_id,
 };
@@ -24,9 +24,7 @@ const CATEGORY_TYPE_SKILLS: i32 = 19;
 const CATEGORY_TYPE_SKILLS_COLLECTION: i32 = 20;
 const PUBLIC_SKILLS_TENANT_ID: i64 = 0;
 const PUBLIC_SKILLS_ORGANIZATION_ID: i64 = 0;
-const ASSIGNED_ID_FLOOR: i64 = 1_000_000_000_000;
-const ASSIGNED_ID_RANGE: u64 = 8_000_000_000_000;
-const MAX_ASSIGNED_ID_ATTEMPTS: u8 = 16;
+const MAX_RUNTIME_ID_ATTEMPTS: u8 = 16;
 
 #[derive(Debug, Clone)]
 pub struct PostgresAdminSkillStore {
@@ -3280,14 +3278,14 @@ async fn next_assigned_id(
     namespace: &'static str,
     entity_uuid: &str,
 ) -> DomainResult<i64> {
-    for attempt in 0..MAX_ASSIGNED_ID_ATTEMPTS {
-        let id = assigned_entity_id(namespace, entity_uuid, attempt);
+    for _ in 0..MAX_RUNTIME_ID_ATTEMPTS {
+        let id = next_admin_skill_id(namespace)?;
         if !assigned_id_exists(tx, table_name, id).await? {
             return Ok(id);
         }
     }
     Err(DomainError::conflict(format!(
-        "failed to allocate assigned id for {namespace}"
+        "failed to allocate snowflake id for {namespace}: {entity_uuid}"
     )))
 }
 
@@ -3337,19 +3335,6 @@ async fn assigned_id_exists(
         }
     };
     Ok(count > 0)
-}
-
-fn assigned_entity_id(namespace: &str, entity_uuid: &str, attempt: u8) -> i64 {
-    let mut hasher = Sha256::new();
-    hasher.update(namespace.as_bytes());
-    hasher.update([0]);
-    hasher.update(entity_uuid.as_bytes());
-    hasher.update([0]);
-    hasher.update([attempt]);
-    let digest = hasher.finalize();
-    let mut bytes = [0_u8; 8];
-    bytes.copy_from_slice(&digest[..8]);
-    ASSIGNED_ID_FLOOR + (u64::from_be_bytes(bytes) % ASSIGNED_ID_RANGE) as i64
 }
 
 fn bool_cell(row: &sqlx::postgres::PgRow, column: &str) -> bool {

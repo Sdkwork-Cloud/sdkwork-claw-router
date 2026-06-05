@@ -9,5 +9,5 @@ export interface AdminAnalyticsTrendPoint {
   /** Tokens field on admin analytics trend point. */
   tokens: number;
   /** Users field on admin analytics trend point. */
-  users: number;
+  users: string;
 }

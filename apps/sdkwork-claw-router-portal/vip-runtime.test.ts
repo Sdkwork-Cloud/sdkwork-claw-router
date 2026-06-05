@@ -831,7 +831,7 @@ test("VIP purchase uses idempotent generated app SDK membership purchase path", 
       assert.equal(requestPath(captured[0]?.url), "/app/v3/api/memberships/purchases");
       assert.equal(captured[0]?.method, "POST");
       assert.deepEqual(JSON.parse(captured[0]?.body ?? "{}"), {
-        packageId: 1,
+        packageId: "1",
       });
     },
   );
@@ -1049,7 +1049,7 @@ test("membership purchase uses idempotent generated app SDK purchase path", asyn
       assert.equal(requestPath(captured[0]?.url), "/app/v3/api/memberships/purchases");
       assert.equal(captured[0]?.method, "POST");
       assert.deepEqual(JSON.parse(captured[0]?.body ?? "{}"), {
-        packageId: 1,
+        packageId: "1",
       });
     },
   );

@@ -129,8 +129,8 @@ export class McpServersBindingsApi {
 }
 
 export interface McpServersListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   q?: string;
   transport?: string;
   visibility?: string;

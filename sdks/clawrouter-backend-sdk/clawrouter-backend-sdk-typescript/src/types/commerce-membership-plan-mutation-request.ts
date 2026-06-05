@@ -9,7 +9,7 @@ export interface CommerceMembershipPlanMutationRequest {
   /** Name field on commerce membership plan mutation request. */
   name: string;
   /** Rank field on commerce membership plan mutation request. */
-  rank?: number;
+  rank?: string;
   /** Status field on commerce membership plan mutation request. */
   status?: 'active' | 'inactive' | 'disabled';
 }

@@ -1,11 +1,13 @@
-import type { ModelRankingRefreshJobItem } from '@sdkwork/clawrouter-backend-sdk';
 import type { ModelRankingRefreshStatusView } from './modelService';
+
+type ModelRankingRefreshJobView = NonNullable<ModelRankingRefreshStatusView['latestJob']>;
+type ModelRankingRefreshJobStatus = ModelRankingRefreshJobView['status'];
 
 export type ModelRankingRefreshHealthTone = 'healthy' | 'warning' | 'critical' | 'neutral';
 
 export interface ModelRankingRefreshJobDiagnostic {
   id: string;
-  status: ModelRankingRefreshJobItem['status'];
+  status: ModelRankingRefreshJobStatus;
   statusLabel: string;
   startedAtLabel: string;
   endedAtLabel: string;
@@ -48,7 +50,7 @@ export function deriveModelRankingRefreshDiagnostics(
   };
 }
 
-function deriveJobDiagnostic(job: ModelRankingRefreshJobItem): ModelRankingRefreshJobDiagnostic {
+function deriveJobDiagnostic(job: ModelRankingRefreshJobView): ModelRankingRefreshJobDiagnostic {
   return {
     id: job.id,
     status: job.status,
@@ -64,7 +66,7 @@ function deriveJobDiagnostic(job: ModelRankingRefreshJobItem): ModelRankingRefre
 
 function deriveHealthTone(
   status: ModelRankingRefreshStatusView['status'],
-  latestJobStatus?: ModelRankingRefreshJobItem['status'],
+  latestJobStatus?: ModelRankingRefreshJobStatus,
 ): ModelRankingRefreshHealthTone {
   if (latestJobStatus === 'failed') {
     return 'critical';
@@ -81,7 +83,7 @@ function deriveHealthTone(
   return 'critical';
 }
 
-function labelStatus(status: ModelRankingRefreshStatusView['status'] | ModelRankingRefreshJobItem['status']): string {
+function labelStatus(status: ModelRankingRefreshStatusView['status'] | ModelRankingRefreshJobStatus): string {
   switch (status) {
     case 'ready':
       return 'Ready';

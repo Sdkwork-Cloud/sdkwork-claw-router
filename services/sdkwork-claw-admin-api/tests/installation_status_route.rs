@@ -1,6 +1,7 @@
 use axum::body::Body;
 use axum::http::{Request, StatusCode};
 use sdkwork_claw_config::{ApiKeySecurityConfig, DatabaseConfig};
+use sdkwork_claw_product::infrastructure::sql::installer::CURRENT_SCHEMA_VERSION;
 use sdkwork_claw_test_support::{
     api_key_security_config, app_session_config, app_session_dual_token_headers,
     payment_webhook_config, trusted_request_subject, trusted_subject_config,
@@ -49,7 +50,7 @@ async fn admin_api_reports_database_installation_status_after_startup_install() 
 
     assert_eq!("2000", payload["code"]);
     assert_eq!("installed", payload["data"]["status"]);
-    assert_eq!("2026.05.08.1", payload["data"]["schemaVersion"]);
+    assert_eq!(CURRENT_SCHEMA_VERSION, payload["data"]["schemaVersion"]);
     assert_eq!("2026.05.08.1", payload["data"]["catalogVersion"]);
     assert_eq!("bundled", payload["data"]["catalogSource"]);
     assert_eq!(false, payload["data"]["externalCatalog"]);

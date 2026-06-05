@@ -11,13 +11,13 @@ export interface CommerceMembershipBenefitMutationRequest {
   /** Icon field on commerce membership benefit mutation request. */
   icon?: MediaResource;
   /** Id field on commerce membership benefit mutation request. */
-  id?: number;
+  id?: string;
   /** Name field on commerce membership benefit mutation request. */
   name: string;
   /** Type field on commerce membership benefit mutation request. */
   type?: string | null;
   /** Usage limit field on commerce membership benefit mutation request. */
-  usageLimit?: number | null;
+  usageLimit?: string | null;
   /** Used count field on commerce membership benefit mutation request. */
-  usedCount?: number | null;
+  usedCount?: string | null;
 }

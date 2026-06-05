@@ -21,7 +21,7 @@ export interface AdminAiResourceGroupResourceItem {
   /** Resource type field on admin ai resource group resource item. */
   resourceType: 'api_endpoint';
   /** Sort order field on admin ai resource group resource item. */
-  sortOrder?: number | null;
+  sortOrder?: string | null;
   /** Status field on admin ai resource group resource item. */
   status: 'active' | 'disabled' | 'inactive';
   /** Vendor code field on admin ai resource group resource item. */

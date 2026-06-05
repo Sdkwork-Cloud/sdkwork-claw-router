@@ -33,8 +33,8 @@ export type AdminMcpServerRevisionCreateInput = AdminMcpServerRevisionCreateRequ
 export type AdminMcpToolUpdateInput = AdminMcpToolUpdateRequest;
 
 export const DEFAULT_MCP_PAGE_PARAMS = {
-  page: 1,
-  pageSize: 100,
+  page: '1',
+  pageSize: '100',
 } as const;
 
 export const EMPTY_MCP_ITEMS = {

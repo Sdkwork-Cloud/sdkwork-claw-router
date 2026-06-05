@@ -116,8 +116,8 @@ const result = await client.commerce.accounts.current.summary.retrieve();
 ```typescript
 // List Playground agent definitions
 const params = {
-  page: 1,
-  page_size: 2,
+  page: 'page',
+  page_size: 'page_size',
   q: 'q',
 };
 const result = await client.agents.agentDefinitions.list(params);
@@ -157,8 +157,8 @@ const result = await client.auth.sessions.create(body);
 ```typescript
 // List product chat conversations
 const params = {
-  page: 1,
-  page_size: 2,
+  page: 'page',
+  page_size: 'page_size',
 };
 const result = await client.chat.conversations.list(params);
 ```
@@ -189,8 +189,8 @@ const result = await client.iam.apiKeys.list();
 ```typescript
 // List memory spaces
 const params = {
-  page: 1,
-  page_size: 2,
+  page: 'page',
+  page_size: 'page_size',
 };
 const result = await client.memory.spaces.list(params);
 ```
@@ -237,8 +237,8 @@ const result = await client.system.iam.verificationPolicy.retrieve();
 ```typescript
 // List runtime invocations
 const params = {
-  page: 1,
-  page_size: 2,
+  page: 'page',
+  page_size: 'page_size',
   conversation_id: 'conversation_id',
   chat_turn_id: 'chat_turn_id',
   agent_session_id: 'agent_session_id',

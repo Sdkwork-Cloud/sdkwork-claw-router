@@ -7,7 +7,7 @@ export interface AdminModelMappingRuleItem {
   /** Id field on admin model mapping rule item. */
   id: string;
   /** Sort order field on admin model mapping rule item. */
-  sortOrder: number;
+  sortOrder: string;
   /** Source catalog key field on admin model mapping rule item. */
   sourceCatalogKey?: string | null;
   /** Source model field on admin model mapping rule item. */

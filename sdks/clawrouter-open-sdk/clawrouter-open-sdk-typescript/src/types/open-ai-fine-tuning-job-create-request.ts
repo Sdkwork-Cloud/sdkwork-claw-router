@@ -11,7 +11,7 @@ export interface OpenAiFineTuningJobCreateRequest {
   /** Base model id to fine-tune. */
   model: string;
   /** Best-effort deterministic seed. */
-  seed?: number;
+  seed?: string;
   /** Suffix added to the fine-tuned model name. */
   suffix?: string;
   /** Training file identifier. */

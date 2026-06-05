@@ -53,7 +53,7 @@ export class ChatTurnsApi {
 }
 
 export interface ChatConversationMessagesListParams {
-  limit?: number;
+  limit?: string;
   order?: 'asc' | 'desc';
 }
 
@@ -76,8 +76,8 @@ export class ChatConversationMessagesApi {
 }
 
 export interface ChatConversationsListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
 }
 
 export interface ChatConversationsCreateParams {

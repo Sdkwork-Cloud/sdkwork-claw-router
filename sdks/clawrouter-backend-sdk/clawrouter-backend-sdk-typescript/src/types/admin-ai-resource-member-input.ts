@@ -7,5 +7,5 @@ export interface AdminAiResourceMemberInput {
   /** Required field on admin ai resource member input. */
   required?: boolean;
   /** Sort order field on admin ai resource member input. */
-  sortOrder?: number | null;
+  sortOrder?: string | null;
 }

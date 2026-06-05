@@ -8,7 +8,9 @@ export type IamCapabilityName =
   | "accountIdentity"
   | "accessControl"
   | "apiAccess"
+  | "departmentManagement"
   | "organizationManagement"
+  | "positionManagement"
   | "securityAudit"
   | "sessionSecurity"
   | "tenantManagement"
@@ -95,18 +97,24 @@ export const SDKWORK_IAM_TABLES = {
   credential: "iam_credential",
   device: "iam_device",
   mfaFactor: "iam_mfa_factor",
+  department: "iam_department",
+  departmentAssignment: "iam_department_assignment",
+  departmentClosure: "iam_department_closure",
   organization: "iam_organization",
-  organizationMember: "iam_organization_member",
+  organizationClosure: "iam_organization_closure",
+  organizationMembership: "iam_organization_membership",
   permission: "iam_permission",
   policy: "iam_policy",
+  position: "iam_position",
+  positionAssignment: "iam_position_assignment",
   role: "iam_role",
+  roleBinding: "iam_role_binding",
   rolePermission: "iam_role_permission",
   securityEvent: "iam_security_event",
   session: "iam_session",
   tenant: "iam_tenant",
   user: "iam_user",
   userIdentity: "iam_user_identity",
-  userRole: "iam_user_role",
 } as const;
 
 export const SDKWORK_IAM_DOMAIN_MODELS = [
@@ -122,7 +130,45 @@ export const SDKWORK_IAM_DOMAIN_MODELS = [
   model("organization", "tenant", ["organizationManagement"], [
     "id",
     "tenant_id",
-    "parent_id",
+    "parent_organization_id",
+    "code",
+    "name",
+    "organization_kind",
+    "tenant_boundary_kind",
+    "data_boundary_kind",
+    "app_boundary_enabled",
+    "verification_status",
+    "path",
+    "status",
+    "created_at",
+    "updated_at",
+  ]),
+  model("organizationClosure", "tenant", ["organizationManagement"], [
+    "id",
+    "tenant_id",
+    "ancestor_organization_id",
+    "descendant_organization_id",
+    "depth",
+    "created_at",
+  ]),
+  model("organizationMembership", "tenant", ["organizationManagement", "userDirectory"], [
+    "id",
+    "tenant_id",
+    "organization_id",
+    "user_id",
+    "membership_kind",
+    "employee_no",
+    "display_name",
+    "status",
+    "joined_at",
+    "left_at",
+    "remark",
+  ]),
+  model("department", "tenant", ["departmentManagement", "organizationManagement"], [
+    "id",
+    "tenant_id",
+    "organization_id",
+    "parent_department_id",
     "code",
     "name",
     "path",
@@ -130,16 +176,70 @@ export const SDKWORK_IAM_DOMAIN_MODELS = [
     "created_at",
     "updated_at",
   ]),
-  model("organizationMember", "tenant", ["organizationManagement", "userDirectory"], [
+  model("departmentClosure", "tenant", ["departmentManagement", "organizationManagement"], [
     "id",
     "tenant_id",
     "organization_id",
+    "ancestor_department_id",
+    "descendant_department_id",
+    "depth",
+    "created_at",
+  ]),
+  model("departmentAssignment", "tenant", ["departmentManagement", "userDirectory"], [
+    "id",
+    "tenant_id",
+    "organization_id",
+    "organization_membership_id",
+    "department_id",
     "user_id",
-    "role_code",
+    "assignment_kind",
+    "is_primary",
+    "effective_from",
+    "effective_to",
     "status",
-    "joined_at",
-    "left_at",
-    "remark",
+    "created_at",
+    "updated_at",
+  ]),
+  model("position", "tenant", ["positionManagement", "departmentManagement"], [
+    "id",
+    "tenant_id",
+    "organization_id",
+    "department_id",
+    "code",
+    "name",
+    "position_kind",
+    "rank_level",
+    "status",
+    "created_at",
+    "updated_at",
+  ]),
+  model("positionAssignment", "tenant", ["positionManagement", "departmentManagement", "userDirectory"], [
+    "id",
+    "tenant_id",
+    "organization_id",
+    "department_assignment_id",
+    "position_id",
+    "user_id",
+    "is_primary",
+    "effective_from",
+    "effective_to",
+    "status",
+    "created_at",
+    "updated_at",
+  ]),
+  model("roleBinding", "tenant", ["accessControl", "organizationManagement", "departmentManagement"], [
+    "id",
+    "tenant_id",
+    "role_id",
+    "principal_kind",
+    "principal_id",
+    "scope_kind",
+    "scope_id",
+    "effect",
+    "condition_json",
+    "status",
+    "created_at",
+    "updated_at",
   ]),
   model("user", "tenant", ["userDirectory", "accountIdentity"], [
     "id",
@@ -248,14 +348,6 @@ export const SDKWORK_IAM_DOMAIN_MODELS = [
     "tenant_id",
     "role_id",
     "permission_id",
-    "created_at",
-  ]),
-  model("userRole", "tenant", ["accessControl", "userDirectory"], [
-    "id",
-    "tenant_id",
-    "user_id",
-    "role_id",
-    "organization_id",
     "created_at",
   ]),
   model("apiKey", "tenant", ["apiAccess"], [
@@ -390,18 +482,32 @@ export const SDKWORK_IAM_API_ROUTES = {
     organizations: {
       create: operation("POST", `${backend}/iam/organizations`, "iam", "organizations.create", "dualToken"),
       delete: operation("DELETE", `${backend}/iam/organizations/{organizationId}`, "iam", "organizations.delete", "dualToken"),
-      list: operation("GET", `${backend}/iam/organizations`, "iam", "organizations.list", "dualToken"),
+      list: operation("GET", `${app}/iam/organizations`, "iam", "organizations.list", "dualToken"),
       retrieve: operation("GET", `${backend}/iam/organizations/{organizationId}`, "iam", "organizations.retrieve", "dualToken"),
       tree: {
-        retrieve: operation("GET", `${backend}/iam/organizations/tree`, "iam", "organizations.tree.retrieve", "dualToken"),
+        retrieve: operation("GET", `${app}/iam/organizations/tree`, "iam", "organizations.tree.retrieve", "dualToken"),
       },
       update: operation("PATCH", `${backend}/iam/organizations/{organizationId}`, "iam", "organizations.update", "dualToken"),
-      members: {
-        create: operation("POST", `${backend}/iam/organizations/{organizationId}/members`, "iam", "organizations.members.create", "dualToken"),
-        delete: operation("DELETE", `${backend}/iam/organizations/{organizationId}/members/{userId}`, "iam", "organizations.members.delete", "dualToken"),
-        list: operation("GET", `${backend}/iam/organizations/{organizationId}/members`, "iam", "organizations.members.list", "dualToken"),
-        update: operation("PATCH", `${backend}/iam/organizations/{organizationId}/members/{userId}`, "iam", "organizations.members.update", "dualToken"),
+    },
+    organizationMemberships: {
+      create: operation("POST", `${backend}/iam/organization_memberships`, "iam", "organizationMemberships.create", "dualToken"),
+      list: operation("GET", `${app}/iam/organization_memberships`, "iam", "organizationMemberships.list", "dualToken"),
+      update: operation("PATCH", `${backend}/iam/organization_memberships/{membershipId}`, "iam", "organizationMemberships.update", "dualToken"),
+    },
+    departments: {
+      create: operation("POST", `${backend}/iam/departments`, "iam", "departments.create", "dualToken"),
+      delete: operation("DELETE", `${backend}/iam/departments/{departmentId}`, "iam", "departments.delete", "dualToken"),
+      list: operation("GET", `${app}/iam/departments`, "iam", "departments.list", "dualToken"),
+      retrieve: operation("GET", `${backend}/iam/departments/{departmentId}`, "iam", "departments.retrieve", "dualToken"),
+      tree: {
+        retrieve: operation("GET", `${app}/iam/departments/tree`, "iam", "departments.tree.retrieve", "dualToken"),
       },
+      update: operation("PATCH", `${backend}/iam/departments/{departmentId}`, "iam", "departments.update", "dualToken"),
+    },
+    departmentAssignments: {
+      create: operation("POST", `${backend}/iam/department_assignments`, "iam", "departmentAssignments.create", "dualToken"),
+      list: operation("GET", `${app}/iam/department_assignments`, "iam", "departmentAssignments.list", "dualToken"),
+      update: operation("PATCH", `${backend}/iam/department_assignments/{assignmentId}`, "iam", "departmentAssignments.update", "dualToken"),
     },
     permissions: {
       create: operation("POST", `${backend}/iam/permissions`, "iam", "permissions.create", "dualToken"),
@@ -409,6 +515,17 @@ export const SDKWORK_IAM_API_ROUTES = {
       list: operation("GET", `${backend}/iam/permissions`, "iam", "permissions.list", "dualToken"),
       retrieve: operation("GET", `${backend}/iam/permissions/{permissionId}`, "iam", "permissions.retrieve", "dualToken"),
       update: operation("PATCH", `${backend}/iam/permissions/{permissionId}`, "iam", "permissions.update", "dualToken"),
+    },
+    positions: {
+      create: operation("POST", `${backend}/iam/positions`, "iam", "positions.create", "dualToken"),
+      delete: operation("DELETE", `${backend}/iam/positions/{positionId}`, "iam", "positions.delete", "dualToken"),
+      list: operation("GET", `${app}/iam/positions`, "iam", "positions.list", "dualToken"),
+      update: operation("PATCH", `${backend}/iam/positions/{positionId}`, "iam", "positions.update", "dualToken"),
+    },
+    positionAssignments: {
+      create: operation("POST", `${backend}/iam/position_assignments`, "iam", "positionAssignments.create", "dualToken"),
+      list: operation("GET", `${app}/iam/position_assignments`, "iam", "positionAssignments.list", "dualToken"),
+      update: operation("PATCH", `${backend}/iam/position_assignments/{assignmentId}`, "iam", "positionAssignments.update", "dualToken"),
     },
     policies: {
       create: operation("POST", `${backend}/iam/policies`, "iam", "policies.create", "dualToken"),
@@ -428,6 +545,11 @@ export const SDKWORK_IAM_API_ROUTES = {
         delete: operation("DELETE", `${backend}/iam/roles/{roleId}/permissions/{permissionId}`, "iam", "roles.permissions.delete", "dualToken"),
         list: operation("GET", `${backend}/iam/roles/{roleId}/permissions`, "iam", "roles.permissions.list", "dualToken"),
       },
+    },
+    roleBindings: {
+      create: operation("POST", `${backend}/iam/role_bindings`, "iam", "roleBindings.create", "dualToken"),
+      delete: operation("DELETE", `${backend}/iam/role_bindings/{roleBindingId}`, "iam", "roleBindings.delete", "dualToken"),
+      list: operation("GET", `${app}/iam/role_bindings`, "iam", "roleBindings.list", "dualToken"),
     },
     securityEvents: {
       list: operation("GET", `${backend}/iam/security_events`, "iam", "securityEvents.list", "dualToken"),
@@ -454,11 +576,6 @@ export const SDKWORK_IAM_API_ROUTES = {
       list: operation("GET", `${backend}/iam/users`, "iam", "users.list", "dualToken"),
       retrieve: operation("GET", `${backend}/iam/users/{userId}`, "iam", "users.retrieve", "dualToken"),
       update: operation("PATCH", `${backend}/iam/users/{userId}`, "iam", "users.update", "dualToken"),
-      roles: {
-        create: operation("POST", `${backend}/iam/users/{userId}/roles`, "iam", "users.roles.create", "dualToken"),
-        delete: operation("DELETE", `${backend}/iam/users/{userId}/roles/{roleId}`, "iam", "users.roles.delete", "dualToken"),
-        list: operation("GET", `${backend}/iam/users/{userId}/roles`, "iam", "users.roles.list", "dualToken"),
-      },
     },
   },
 } as const;
@@ -485,24 +602,53 @@ export const SDKWORK_IAM_CAPABILITIES = [
   capability(
     "organizationManagement",
     ["iam"],
-    ["organization", "organizationMember"],
+    ["organization", "organizationClosure", "organizationMembership"],
     [
       "organizations.create",
       "organizations.delete",
       "organizations.list",
-      "organizations.members.create",
-      "organizations.members.delete",
-      "organizations.members.list",
-      "organizations.members.update",
+      "organizationMemberships.create",
+      "organizationMemberships.list",
+      "organizationMemberships.update",
       "organizations.retrieve",
       "organizations.tree.retrieve",
       "organizations.update",
     ],
   ),
   capability(
+    "departmentManagement",
+    ["iam"],
+    ["department", "departmentClosure", "departmentAssignment"],
+    [
+      "departmentAssignments.create",
+      "departmentAssignments.list",
+      "departmentAssignments.update",
+      "departments.create",
+      "departments.delete",
+      "departments.list",
+      "departments.retrieve",
+      "departments.tree.retrieve",
+      "departments.update",
+    ],
+  ),
+  capability(
+    "positionManagement",
+    ["iam"],
+    ["position", "positionAssignment"],
+    [
+      "positionAssignments.create",
+      "positionAssignments.list",
+      "positionAssignments.update",
+      "positions.create",
+      "positions.delete",
+      "positions.list",
+      "positions.update",
+    ],
+  ),
+  capability(
     "userDirectory",
     ["iam"],
-    ["user", "organizationMember", "userRole"],
+    ["user", "organizationMembership", "departmentAssignment", "positionAssignment"],
     ["users.create", "users.delete", "users.list", "users.retrieve", "users.update"],
   ),
   capability(
@@ -541,7 +687,7 @@ export const SDKWORK_IAM_CAPABILITIES = [
   capability(
     "accessControl",
     ["iam"],
-    ["role", "permission", "policy", "rolePermission", "userRole"],
+    ["role", "roleBinding", "permission", "policy", "rolePermission"],
     [
       "permissions.create",
       "permissions.delete",
@@ -561,9 +707,9 @@ export const SDKWORK_IAM_CAPABILITIES = [
       "roles.permissions.delete",
       "roles.permissions.list",
       "roles.update",
-      "users.roles.create",
-      "users.roles.delete",
-      "users.roles.list",
+      "roleBindings.create",
+      "roleBindings.delete",
+      "roleBindings.list",
     ],
   ),
   capability(
@@ -589,17 +735,17 @@ export function createIamAppContext(input: IamAppContext): IamAppContext {
 }
 
 export function createIamShardingContext(input: IamAppContext): IamShardingContext {
-  if (input.tenantId) {
-    return {
-      shardingKey: input.tenantId,
-      shardingStrategy: "tenant",
-    };
-  }
-
   if (input.organizationId) {
     return {
       shardingKey: input.organizationId,
       shardingStrategy: "organization",
+    };
+  }
+
+  if (input.tenantId) {
+    return {
+      shardingKey: input.tenantId,
+      shardingStrategy: "tenant",
     };
   }
 

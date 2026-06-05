@@ -7,7 +7,7 @@ export interface OpenAiVectorStoreFile {
   /** Chunking strategy applied to this file. */
   chunking_strategy?: ProviderJsonValue;
   /** Unix timestamp in seconds when the vector store file was created. */
-  created_at: number;
+  created_at: string;
   /** Vector store file identifier. */
   id: string;
   /** Last processing error returned by the upstream. */
@@ -17,7 +17,7 @@ export interface OpenAiVectorStoreFile {
   /** Vector store file processing status. */
   status: string;
   /** Storage used by the vector store file in bytes. */
-  usage_bytes?: number;
+  usage_bytes?: string;
   /** Vector store identifier that owns this file. */
   vector_store_id: string;
 }

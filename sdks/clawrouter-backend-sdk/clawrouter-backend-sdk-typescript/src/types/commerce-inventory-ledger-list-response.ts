@@ -5,9 +5,9 @@ export interface CommerceInventoryLedgerListResponse {
   /** Items field on commerce inventory ledger list response. */
   items: CommerceInventoryLedgerItem[];
   /** Page field on commerce inventory ledger list response. */
-  page: number;
+  page: string;
   /** Page size field on commerce inventory ledger list response. */
-  pageSize: number;
+  pageSize: string;
   /** Total field on commerce inventory ledger list response. */
-  total: number;
+  total: string;
 }

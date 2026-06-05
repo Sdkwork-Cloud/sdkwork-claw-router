@@ -66,6 +66,15 @@ export function createIamAppSdkAdapter(client: unknown): IamAppSdkClient {
   const systemIamRuntime = toRecord(systemIam.runtime);
   const systemIamVerificationPolicy = toRecord(systemIam.verificationPolicy);
   const iam = toRecord(source.iam);
+  const iamOrganizations = toRecord(iam.organizations);
+  const iamOrganizationsTree = toRecord(iamOrganizations.tree);
+  const iamOrganizationMemberships = toRecord(iam.organizationMemberships);
+  const iamDepartments = toRecord(iam.departments);
+  const iamDepartmentsTree = toRecord(iamDepartments.tree);
+  const iamDepartmentAssignments = toRecord(iam.departmentAssignments);
+  const iamPositions = toRecord(iam.positions);
+  const iamPositionAssignments = toRecord(iam.positionAssignments);
+  const iamRoleBindings = toRecord(iam.roleBindings);
   const iamUsers = toRecord(iam.users);
   const iamUsersCurrent = toRecord(iamUsers.current);
   const user = toRecord(source.user);
@@ -177,6 +186,60 @@ export function createIamAppSdkAdapter(client: unknown): IamAppSdkClient {
       },
     },
     iam: {
+      organizations: {
+        list: selectMethod(
+          getBoundMethod(iamOrganizations, "list"),
+          (params?: Record<string, unknown>) => callOptionalMethod(iamOrganizations, "list", params),
+        ),
+        tree: {
+          retrieve: selectMethod(
+            getBoundMethod(iamOrganizationsTree, "retrieve"),
+            (params?: Record<string, unknown>) => callOptionalMethod(iamOrganizationsTree, "retrieve", params),
+          ),
+        },
+      },
+      organizationMemberships: {
+        list: selectMethod(
+          getBoundMethod(iamOrganizationMemberships, "list"),
+          (params?: Record<string, unknown>) => callOptionalMethod(iamOrganizationMemberships, "list", params),
+        ),
+      },
+      departments: {
+        list: selectMethod(
+          getBoundMethod(iamDepartments, "list"),
+          (params?: Record<string, unknown>) => callOptionalMethod(iamDepartments, "list", params),
+        ),
+        tree: {
+          retrieve: selectMethod(
+            getBoundMethod(iamDepartmentsTree, "retrieve"),
+            (params?: Record<string, unknown>) => callOptionalMethod(iamDepartmentsTree, "retrieve", params),
+          ),
+        },
+      },
+      departmentAssignments: {
+        list: selectMethod(
+          getBoundMethod(iamDepartmentAssignments, "list"),
+          (params?: Record<string, unknown>) => callOptionalMethod(iamDepartmentAssignments, "list", params),
+        ),
+      },
+      positions: {
+        list: selectMethod(
+          getBoundMethod(iamPositions, "list"),
+          (params?: Record<string, unknown>) => callOptionalMethod(iamPositions, "list", params),
+        ),
+      },
+      positionAssignments: {
+        list: selectMethod(
+          getBoundMethod(iamPositionAssignments, "list"),
+          (params?: Record<string, unknown>) => callOptionalMethod(iamPositionAssignments, "list", params),
+        ),
+      },
+      roleBindings: {
+        list: selectMethod(
+          getBoundMethod(iamRoleBindings, "list"),
+          (params?: Record<string, unknown>) => callOptionalMethod(iamRoleBindings, "list", params),
+        ),
+      },
       users: {
         current: {
           retrieve: selectMethod(
@@ -192,9 +255,14 @@ export function createIamAppSdkAdapter(client: unknown): IamAppSdkClient {
 export function createIamBackendSdkAdapter(client: unknown): IamBackendSdkClient {
   const source = toRecord(client);
   const iam = toRecord(source.iam);
+  const iamOrganizations = toRecord(iam.organizations);
+  const iamOrganizationMemberships = toRecord(iam.organizationMemberships);
+  const iamDepartments = toRecord(iam.departments);
+  const iamDepartmentAssignments = toRecord(iam.departmentAssignments);
+  const iamPositions = toRecord(iam.positions);
+  const iamPositionAssignments = toRecord(iam.positionAssignments);
+  const iamRoleBindings = toRecord(iam.roleBindings);
   const apikey = toRecord(source.apikey ?? source.apiKey);
-  const organization = toRecord(source.organization);
-  const organizationMember = toRecord(source.organizationMember);
   const permission = toRecord(source.permission);
   const policy = toRecord(source.policy);
   const role = toRecord(source.role);
@@ -212,36 +280,24 @@ export function createIamBackendSdkAdapter(client: unknown): IamBackendSdkClient
         list: selectMethod(iam.auditEvents?.list, (params?: Record<string, unknown>) => tenant.listAuditLogs?.(params?.tenantId ?? params?.tenant_id ?? params?.id, params)),
       },
       organizations: {
-        create: selectMethod(iam.organizations?.create, (body: Record<string, unknown>) => callCreate(organization, body)),
-        delete: selectMethod(iam.organizations?.delete, (organizationId: string) => callDelete(organization, organizationId)),
-        list: selectMethod(iam.organizations?.list, (params?: Record<string, unknown>) => organization.createListAllEntitiesOrganization?.(params)),
-        retrieve: selectMethod(iam.organizations?.retrieve, (organizationId: string) => callRetrieve(organization, organizationId)),
-        tree: {
-          retrieve: selectMethod(
-            iam.organizations?.tree?.retrieve,
-            (params?: Record<string, unknown>) => organization.tree?.retrieve?.(params) ?? organization.getTree?.(params) ?? organization.retrieveTree?.(params),
-          ),
-        },
-        update: selectMethod(iam.organizations?.update, (organizationId: string, body: Record<string, unknown>) => callUpdate(organization, organizationId, body)),
-        members: {
-          create: selectMethod(
-            iam.organizations?.members?.create,
-            (organizationId: string, body: Record<string, unknown>) => organizationMember.create?.({ ...body, organizationId }),
-          ),
-          delete: selectMethod(
-            iam.organizations?.members?.delete,
-            (organizationId: string, userId: string) => organizationMember.delete?.(organizationId, userId) ?? organizationMember.deleteMember?.({ organizationId, userId }),
-          ),
-          list: selectMethod(
-            iam.organizations?.members?.list,
-            (_organizationId: string, params?: Record<string, unknown>) => organizationMember.listAllEntities?.(params),
-          ),
-          update: selectMethod(
-            iam.organizations?.members?.update,
-            (organizationId: string, userId: string, body: Record<string, unknown>) =>
-              organizationMember.update?.(organizationId, userId, body) ?? organizationMember.updateMember?.({ ...body, organizationId, userId }),
-          ),
-        },
+        create: selectGeneratedSdkMethod((body: Record<string, unknown>) => callOptionalMethod(iamOrganizations, "create", body)),
+        delete: selectGeneratedSdkMethod((organizationId: string) => callOptionalMethod(iamOrganizations, "delete", organizationId)),
+        retrieve: selectGeneratedSdkMethod((organizationId: string) => callOptionalMethod(iamOrganizations, "retrieve", organizationId)),
+        update: selectGeneratedSdkMethod((organizationId: string, body: Record<string, unknown>) => callOptionalMethod(iamOrganizations, "update", organizationId, body)),
+      },
+      organizationMemberships: {
+        create: selectGeneratedSdkMethod((body: Record<string, unknown>) => callOptionalMethod(iamOrganizationMemberships, "create", body)),
+        update: selectGeneratedSdkMethod((membershipId: string, body: Record<string, unknown>) => callOptionalMethod(iamOrganizationMemberships, "update", membershipId, body)),
+      },
+      departments: {
+        create: selectGeneratedSdkMethod((body: Record<string, unknown>) => callOptionalMethod(iamDepartments, "create", body)),
+        delete: selectGeneratedSdkMethod((departmentId: string) => callOptionalMethod(iamDepartments, "delete", departmentId)),
+        retrieve: selectGeneratedSdkMethod((departmentId: string) => callOptionalMethod(iamDepartments, "retrieve", departmentId)),
+        update: selectGeneratedSdkMethod((departmentId: string, body: Record<string, unknown>) => callOptionalMethod(iamDepartments, "update", departmentId, body)),
+      },
+      departmentAssignments: {
+        create: selectGeneratedSdkMethod((body: Record<string, unknown>) => callOptionalMethod(iamDepartmentAssignments, "create", body)),
+        update: selectGeneratedSdkMethod((assignmentId: string, body: Record<string, unknown>) => callOptionalMethod(iamDepartmentAssignments, "update", assignmentId, body)),
       },
       permissions: {
         create: selectMethod(iam.permissions?.create, (body: Record<string, unknown>) => callCreate(permission, body)),
@@ -256,6 +312,15 @@ export function createIamBackendSdkAdapter(client: unknown): IamBackendSdkClient
         list: selectMethod(iam.policies?.list, (params?: Record<string, unknown>) => policy.listAllEntities?.(params) ?? security.listAllEntities?.(params)),
         retrieve: selectMethod(iam.policies?.retrieve, (policyId: string) => callRetrieve(policy, policyId) ?? callRetrieve(security, policyId)),
         update: selectMethod(iam.policies?.update, (policyId: string, body: Record<string, unknown>) => callUpdate(policy, policyId, body) ?? callUpdate(security, policyId, body)),
+      },
+      positions: {
+        create: selectGeneratedSdkMethod((body: Record<string, unknown>) => callOptionalMethod(iamPositions, "create", body)),
+        delete: selectGeneratedSdkMethod((positionId: string) => callOptionalMethod(iamPositions, "delete", positionId)),
+        update: selectGeneratedSdkMethod((positionId: string, body: Record<string, unknown>) => callOptionalMethod(iamPositions, "update", positionId, body)),
+      },
+      positionAssignments: {
+        create: selectGeneratedSdkMethod((body: Record<string, unknown>) => callOptionalMethod(iamPositionAssignments, "create", body)),
+        update: selectGeneratedSdkMethod((assignmentId: string, body: Record<string, unknown>) => callOptionalMethod(iamPositionAssignments, "update", assignmentId, body)),
       },
       roles: {
         create: selectMethod(iam.roles?.create, (body: Record<string, unknown>) => callCreate(role, body)),
@@ -274,6 +339,10 @@ export function createIamBackendSdkAdapter(client: unknown): IamBackendSdkClient
           ),
           list: selectMethod(iam.roles?.permissions?.list, (params?: Record<string, unknown>) => role.createListAllEntities?.(params)),
         },
+      },
+      roleBindings: {
+        create: selectGeneratedSdkMethod((body: Record<string, unknown>) => callOptionalMethod(iamRoleBindings, "create", body)),
+        delete: selectGeneratedSdkMethod((roleBindingId: string) => callOptionalMethod(iamRoleBindings, "delete", roleBindingId)),
       },
       securityEvents: {
         list: selectMethod(iam.securityEvents?.list, (params?: Record<string, unknown>) => security.listAllEntities?.(params)),
@@ -306,17 +375,6 @@ export function createIamBackendSdkAdapter(client: unknown): IamBackendSdkClient
         list: selectMethod(iam.users?.list, (params?: Record<string, unknown>) => user.createListAllEntitiesUser?.(params)),
         retrieve: selectMethod(iam.users?.retrieve, (userId: string) => user.getById?.(userId)),
         update: selectMethod(iam.users?.update, (userId: string, body: Record<string, unknown>) => callUpdate(user, userId, body)),
-        roles: {
-          create: selectMethod(
-            iam.users?.roles?.create,
-            (userId: string, roleId: string) => organizationMember.create?.({ roleId, userId }),
-          ),
-          delete: selectMethod(
-            iam.users?.roles?.delete,
-            (_userId: string, roleId: string) => role.deletePermission?.(roleId),
-          ),
-          list: selectMethod(iam.users?.roles?.list, (userId: string) => organizationMember.getMemberRoleIds?.(userId)),
-        },
       },
     },
   };

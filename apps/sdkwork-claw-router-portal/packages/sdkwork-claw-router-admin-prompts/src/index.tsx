@@ -1472,9 +1472,9 @@ function renderPromptInputFromForm(form: FormData, t: TranslationFn): AdminPromp
 
 function createPromptBindingInputFromForm(form: FormData, t: TranslationFn): AdminPromptBindingCreateInput {
   return {
-    promptVersionId: optionalInteger(form, 'promptVersionId', t),
+    promptVersionId: optionalIntegerString(form, 'promptVersionId', t),
     ownerType: requiredPromptFormText(form, 'ownerType', t),
-    ownerId: requiredInteger(form, 'ownerId', t),
+    ownerId: requiredIntegerString(form, 'ownerId', t),
     bindingRole: requiredPromptFormText(form, 'bindingRole', t),
     priority: optionalInteger(form, 'priority', t),
     enabled: optionalBoolean(form, 'enabled', t),
@@ -1484,9 +1484,9 @@ function createPromptBindingInputFromForm(form: FormData, t: TranslationFn): Adm
 
 function updatePromptBindingInputFromForm(form: FormData, t: TranslationFn): AdminPromptBindingUpdateInput {
   return pruneUndefined({
-    promptVersionId: optionalNullableInteger(form, 'promptVersionId', PROMPT_BINDING_NULL_VERSION_VALUE, t),
+    promptVersionId: optionalNullableIntegerString(form, 'promptVersionId', PROMPT_BINDING_NULL_VERSION_VALUE, t),
     ownerType: optionalFormText(form, 'ownerType'),
-    ownerId: optionalInteger(form, 'ownerId', t),
+    ownerId: optionalIntegerString(form, 'ownerId', t),
     bindingRole: optionalFormText(form, 'bindingRole'),
     priority: optionalInteger(form, 'priority', t),
     enabled: optionalBoolean(form, 'enabled', t),
@@ -1602,6 +1602,10 @@ function requiredInteger(form: FormData, key: string, t: TranslationFn): number 
   return value;
 }
 
+function requiredIntegerString(form: FormData, key: string, t: TranslationFn): string {
+  return String(requiredInteger(form, key, t));
+}
+
 function optionalInteger(form: FormData, key: string, t: TranslationFn): number | undefined {
   const value = optionalFormText(form, key);
   if (value === undefined) {
@@ -1612,6 +1616,11 @@ function optionalInteger(form: FormData, key: string, t: TranslationFn): number 
     throw new Error(promptValidationMessage(t, key, 'integer'));
   }
   return numberValue;
+}
+
+function optionalIntegerString(form: FormData, key: string, t: TranslationFn): string | undefined {
+  const value = optionalInteger(form, key, t);
+  return value === undefined ? undefined : String(value);
 }
 
 function optionalNullableInteger(form: FormData, key: string, nullValue: string, t: TranslationFn): number | null | undefined {
@@ -1627,6 +1636,20 @@ function optionalNullableInteger(form: FormData, key: string, nullValue: string,
     throw new Error(promptValidationMessage(t, key, 'integer'));
   }
   return numberValue;
+}
+
+function optionalNullableIntegerString(form: FormData, key: string, nullValue: string, t: TranslationFn): string | null | undefined {
+  const value = optionalFormText(form, key);
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === nullValue) {
+    return null;
+  }
+  if (!/^-?\d+$/u.test(value)) {
+    throw new Error(promptValidationMessage(t, key, 'integer'));
+  }
+  return value;
 }
 
 function optionalBoolean(form: FormData, key: string, t: TranslationFn): boolean | undefined {

@@ -7,7 +7,7 @@ export interface AdminPromptBindingCreateRequest {
   /** Enabled field on admin prompt binding create request. */
   enabled?: boolean;
   /** Owner id field on admin prompt binding create request. */
-  ownerId: number;
+  ownerId: string;
   /** Owner type field on admin prompt binding create request. */
   ownerType: string;
   /** Policy json field on admin prompt binding create request. */
@@ -15,5 +15,5 @@ export interface AdminPromptBindingCreateRequest {
   /** Priority field on admin prompt binding create request. */
   priority?: number;
   /** Prompt version id field on admin prompt binding create request. */
-  promptVersionId?: number | null;
+  promptVersionId?: string | null;
 }

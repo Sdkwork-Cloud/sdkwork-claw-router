@@ -43,6 +43,7 @@ SELECT
     shelf_state,
     routing_state,
     replacement_model,
+    CAST(COALESCE(rank_score, '0') AS REAL) AS rank_score_order,
     COALESCE(
         json_group_array(DISTINCT capability_code),
         '[]'
@@ -112,7 +113,7 @@ FROM (
       AND c.capability_code IS NOT NULL
 ) m
 GROUP BY id, catalog_key, model, display_name, vendor_code, description, modalities, input_modalities, output_modalities, api_format, capability_intro, limitations, supported_languages, use_cases, training_data_cutoff, context_tokens, max_output_tokens, supports_streaming, supports_tools, supports_json_schema, release_stage, shelf_state, routing_state, replacement_model, rank_score
-ORDER BY CAST(COALESCE(rank_score, '0') AS REAL) DESC, display_name ASC, id ASC
+ORDER BY rank_score_order DESC, display_name ASC, id ASC
 "#;
 
 pub const LOAD_PROVIDER_ROUTES: &str = r#"
@@ -808,8 +809,8 @@ SELECT
                 kg.channel_group_code,
                 kg.binding_role,
                 kg.routing_strategy,
-                kg.priority,
-                kg.weight
+                COALESCE(kg.priority, 100) AS priority,
+                COALESCE(kg.weight, 100) AS weight
             FROM iam_gateway_api_key_channel_group kg
             WHERE kg.deleted_at IS NULL
               AND kg.status = 1
@@ -838,8 +839,8 @@ SELECT
                     AND (kg.effective_from IS NULL OR datetime(kg.effective_from) <= CURRENT_TIMESTAMP)
                     AND (kg.effective_to IS NULL OR datetime(kg.effective_to) > CURRENT_TIMESTAMP)
               )
-            ORDER BY COALESCE(priority, 100) ASC,
-                     COALESCE(weight, 100) DESC,
+            ORDER BY priority ASC,
+                     weight DESC,
                      channel_group_id ASC
         ) binding
         LEFT JOIN ai_channel_group g

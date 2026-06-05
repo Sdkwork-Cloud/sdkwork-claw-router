@@ -29,8 +29,8 @@ export type AdminPromptVersionCreateInput = AdminPromptVersionCreateRequest;
 export type AdminPromptRenderInput = AdminPromptRenderRequest;
 
 export const DEFAULT_PROMPT_PAGE_PARAMS = {
-  page: 1,
-  pageSize: 100,
+  page: '1',
+  pageSize: '100',
 } as const;
 
 export const EMPTY_PROMPT_ITEMS = {

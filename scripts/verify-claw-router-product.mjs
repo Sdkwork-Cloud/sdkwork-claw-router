@@ -10,6 +10,9 @@ Run the standard sdkwork-claw-router verification sequence.
 
 Options:
   --fast                 Run the low-cost local iteration gate for Codex loops.
+  --precommit            Run the staged, commit-time verification gate.
+  --parallel             Run dependency-safe verification groups concurrently.
+  --concurrency <count>  Maximum commands to run at once in a parallel group. Defaults to 4.
   --build-jobs <count>   Override Cargo build parallelism for Rust verify steps.
   --with-edge-dev-smoke  Also run the real pnpm dev edge server smoke.
   --skip-edge-dev-smoke
@@ -28,6 +31,9 @@ function parseArgs(argv) {
   const settings = {
     buildJobs: null,
     fast: false,
+    precommit: false,
+    parallel: false,
+    concurrency: 4,
     withEdgeDevSmoke: false,
     skipEdgeDevSmoke: false,
     skipRustTests: false,
@@ -53,6 +59,19 @@ function parseArgs(argv) {
         break;
       case '--fast':
         settings.fast = true;
+        break;
+      case '--precommit':
+        settings.precommit = true;
+        break;
+      case '--parallel':
+        settings.parallel = true;
+        break;
+      case '--concurrency':
+        index += 1;
+        if (!argv[index] || !/^[1-9][0-9]*$/u.test(argv[index])) {
+          throw new Error('--concurrency requires a positive integer');
+        }
+        settings.concurrency = Number(argv[index]);
         break;
       case '--with-edge-dev-smoke':
         settings.withEdgeDevSmoke = true;
@@ -84,6 +103,10 @@ function parseArgs(argv) {
       default:
         throw new Error(`Unsupported verify option: ${arg}`);
     }
+  }
+
+  if (settings.fast && settings.precommit) {
+    throw new Error('Choose only one verification profile: --fast or --precommit');
   }
 
   return settings;
@@ -168,6 +191,29 @@ function buildCommercialContractGuardianPlan(env = process.env) {
   }));
 }
 
+function buildSdkRuntimeBuildPlan(env = process.env) {
+  return [
+    {
+      label: 'app SDK runtime build',
+      command: pnpmCommand(),
+      args: ['--dir', 'sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript', 'build'],
+      env,
+    },
+    {
+      label: 'backend SDK runtime build',
+      command: pnpmCommand(),
+      args: ['--dir', 'sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript', 'build'],
+      env,
+    },
+    {
+      label: 'open SDK runtime build',
+      command: pnpmCommand(),
+      args: ['--dir', 'sdks/clawrouter-open-sdk/clawrouter-open-sdk-typescript', 'build'],
+      env,
+    },
+  ];
+}
+
 function buildFastVerificationPlan(env = process.env) {
   return [
     {
@@ -206,6 +252,7 @@ function buildFastVerificationPlan(env = process.env) {
       args: ['scripts/run-claw-router-product.test.mjs'],
       env,
     },
+    ...buildSdkRuntimeBuildPlan(env),
     {
       label: 'portal auth runtime tests',
       command: pnpmCommand(),
@@ -221,9 +268,66 @@ function buildFastVerificationPlan(env = process.env) {
   ];
 }
 
+function buildPrecommitVerificationPlan(env = process.env) {
+  return [
+    {
+      label: 'sdkwork-models catalog check',
+      command: pnpmCommand(),
+      args: ['models:check'],
+      env,
+    },
+    {
+      label: 'claw router download catalog check',
+      command: pnpmCommand(),
+      args: ['downloads:check'],
+      env,
+    },
+    {
+      label: 'app store seed check',
+      command: pnpmCommand(),
+      args: ['app-store:seed:check'],
+      env,
+    },
+    {
+      label: 'skills seed check',
+      command: pnpmCommand(),
+      args: ['skills:seed:check'],
+      env,
+    },
+    {
+      label: 'repository delivery guard',
+      command: 'python',
+      args: ['-B', '-m', 'tools.repository_delivery_guardian'],
+      env,
+    },
+    {
+      label: 'tooling contract tests',
+      command: 'node',
+      args: ['scripts/run-claw-router-product.test.mjs'],
+      env,
+    },
+    ...buildSdkRuntimeBuildPlan(env),
+    {
+      label: 'frontend source hygiene tests',
+      command: 'python',
+      args: ['-B', '-m', 'unittest', 'tests.test_frontend_source_hygiene_standard'],
+      env,
+    },
+    {
+      label: 'staged Rust auto tests',
+      command: 'node',
+      args: ['scripts/run-claw-router-rust-tests.mjs', 'auto', '--staged'],
+      env,
+    },
+  ];
+}
+
 function buildVerificationPlan(settings, env = process.env) {
   if (settings.fast) {
     return buildFastVerificationPlan(env);
+  }
+  if (settings.precommit) {
+    return buildPrecommitVerificationPlan(env);
   }
 
   const rustEnv = buildCargoVerificationEnv(env, settings);
@@ -266,6 +370,7 @@ function buildVerificationPlan(settings, env = process.env) {
   if (!settings.skipContractGuardians) {
     plan.push(...buildCommercialContractGuardianPlan(env));
   }
+  plan.push(...buildSdkRuntimeBuildPlan(env));
   plan.push({
     label: 'frontend source hygiene tests',
     command: 'python',
@@ -286,24 +391,6 @@ function buildVerificationPlan(settings, env = process.env) {
       env: rustEnv,
     });
   }
-  plan.push({
-    label: 'app SDK runtime build',
-    command: pnpmCommand(),
-    args: ['--dir', 'sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript', 'build'],
-    env,
-  });
-  plan.push({
-    label: 'backend SDK runtime build',
-    command: pnpmCommand(),
-    args: ['--dir', 'sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript', 'build'],
-    env,
-  });
-  plan.push({
-    label: 'open SDK runtime build',
-    command: pnpmCommand(),
-    args: ['--dir', 'sdks/clawrouter-open-sdk/clawrouter-open-sdk-typescript', 'build'],
-    env,
-  });
   plan.push({
     label: 'portal frontend typecheck',
     command: pnpmCommand(),
@@ -565,6 +652,96 @@ function buildVerificationPlan(settings, env = process.env) {
   return plan;
 }
 
+const PARALLEL_SAFE_LABELS = new Set([
+  ...COMMERCIAL_CONTRACT_GUARDIANS.map(([label]) => label),
+  'app SDK runtime build',
+  'backend SDK runtime build',
+  'open SDK runtime build',
+  'portal runtime app SDK refresh',
+  'portal runtime backend SDK refresh',
+  'portal runtime open SDK refresh',
+  'portal commons runtime tests',
+  'portal auth runtime tests',
+  'portal models runtime tests',
+  'portal rankings runtime tests',
+  'portal courses runtime tests',
+  'portal forum runtime tests',
+  'portal skills runtime tests',
+  'portal app center runtime tests',
+  'portal home downloads runtime tests',
+  'portal api reference playground runtime tests',
+  'portal api reference SSR smoke tests',
+  'portal playground chat runtime tests',
+  'portal api key runtime tests',
+  'portal commerce business runtime tests',
+  'portal console app runtime tests',
+  'portal console agents runtime tests',
+  'portal console routing runtime tests',
+  'portal console operations runtime tests',
+  'portal admin group runtime tests',
+  'portal admin channel runtime tests',
+  'portal admin user runtime tests',
+  'portal admin model runtime tests',
+  'portal admin app runtime tests',
+  'portal admin skill runtime tests',
+  'portal admin ratelimit runtime tests',
+  'portal admin marketing runtime tests',
+  'portal admin operations runtime tests',
+  'portal admin announcement runtime tests',
+  'portal models SSR smoke tests',
+]);
+
+function canRunInParallel(step) {
+  return PARALLEL_SAFE_LABELS.has(step.label);
+}
+
+function buildVerificationExecutionPlan(settings, env = process.env) {
+  const steps = buildVerificationPlan(settings, env);
+  const concurrency = Number(settings.concurrency ?? 4);
+  if (!settings.parallel) {
+    return {
+      parallel: false,
+      concurrency,
+      groups: steps.map((step) => ({
+        parallel: false,
+        steps: [step],
+      })),
+    };
+  }
+
+  const groups = [];
+  let currentParallelGroup = [];
+  const flushParallelGroup = () => {
+    if (currentParallelGroup.length === 0) {
+      return;
+    }
+    groups.push({
+      parallel: currentParallelGroup.length > 1,
+      steps: currentParallelGroup,
+    });
+    currentParallelGroup = [];
+  };
+
+  for (const step of steps) {
+    if (canRunInParallel(step)) {
+      currentParallelGroup.push(step);
+      continue;
+    }
+    flushParallelGroup();
+    groups.push({
+      parallel: false,
+      steps: [step],
+    });
+  }
+  flushParallelGroup();
+
+  return {
+    parallel: true,
+    concurrency,
+    groups,
+  };
+}
+
 function runStep(step, { dryRun = false } = {}) {
   const commandLine = `${step.command} ${step.args.join(' ')}`;
   if (dryRun) {
@@ -597,6 +774,49 @@ function runStep(step, { dryRun = false } = {}) {
   });
 }
 
+async function runStepGroup(group, { dryRun = false, concurrency = 4 } = {}) {
+  if (!group.parallel || group.steps.length <= 1) {
+    for (const step of group.steps) {
+      await runStep(step, { dryRun });
+    }
+    return;
+  }
+
+  if (dryRun) {
+    console.log(`# parallel group (${Math.min(concurrency, group.steps.length)} workers)`);
+    for (const step of group.steps) {
+      await runStep(step, { dryRun });
+    }
+    return;
+  }
+
+  console.error(
+    `[verify-claw-router-product] parallel group: ${group.steps.length} steps, concurrency ${concurrency}`,
+  );
+  let nextIndex = 0;
+  let firstError = null;
+  const workerCount = Math.min(concurrency, group.steps.length);
+  const workers = Array.from({ length: workerCount }, async () => {
+    while (!firstError) {
+      const step = group.steps[nextIndex];
+      nextIndex += 1;
+      if (!step) {
+        return;
+      }
+      try {
+        await runStep(step, { dryRun });
+      } catch (error) {
+        firstError = error;
+        throw error;
+      }
+    }
+  });
+  await Promise.allSettled(workers);
+  if (firstError) {
+    throw firstError;
+  }
+}
+
 async function main() {
   const settings = parseArgs(process.argv.slice(2));
   if (settings.help) {
@@ -604,8 +824,12 @@ async function main() {
     return;
   }
 
-  for (const step of buildVerificationPlan(settings)) {
-    await runStep(step, { dryRun: settings.dryRun });
+  const executionPlan = buildVerificationExecutionPlan(settings);
+  for (const group of executionPlan.groups) {
+    await runStepGroup(group, {
+      dryRun: settings.dryRun,
+      concurrency: executionPlan.concurrency,
+    });
   }
 }
 
@@ -618,10 +842,15 @@ if (process.argv[1] && import.meta.url.endsWith(process.argv[1].replaceAll('\\',
 
 export {
   buildFastVerificationPlan,
+  buildPrecommitVerificationPlan,
   buildVerificationPlan,
+  buildVerificationExecutionPlan,
   cargoVerifyEnv,
+  buildSdkRuntimeBuildPlan,
+  canRunInParallel,
   mergeRustFlags,
   parseArgs,
   pnpmCommand,
+  runStepGroup,
   shouldRunEdgeDevSmoke,
 };

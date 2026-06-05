@@ -8,8 +8,9 @@ import {
   readBoolean,
   readRequiredApiItems,
   readRequiredApiItem,
-  readRequiredNumber,
+  readRequiredPositiveInt64String,
   requiredSafePathSegment,
+  requiredPositiveInt64String,
   readRequiredString,
   readString,
   type ApiRecord,
@@ -21,7 +22,7 @@ import type {
 } from '@sdkwork/clawrouter-backend-sdk';
 
 export interface UserListItem {
-  id: number;
+  id: string;
   email: string;
   username: string;
   role: string;
@@ -54,13 +55,13 @@ export type UserUpdateInput = {
 };
 
 export type ApiKeyCreateInput = {
-  userId: number;
+  userId: string;
   name: string;
 };
 
 export type UserAdminTableData = {
   users: UserListItem[];
-  apiKeysMap: Record<number, ApiKeyItem[]>;
+  apiKeysMap: Record<string, ApiKeyItem[]>;
   apiKeysLoadError: Error | null;
 };
 
@@ -77,7 +78,7 @@ export class UserService {
       .map(normalizeUser);
   }
 
-  static async fetchApiKeysMap(): Promise<Record<number, ApiKeyItem[]>> {
+  static async fetchApiKeysMap(): Promise<Record<string, ApiKeyItem[]>> {
     const result = await getClawRouterBackendSdkClient().iam.apiKeys.list();
     ensureSdkworkApiSuccess(result, 'admin.user.errors.fetchApiKeysFallback');
     return normalizeApiKeysMap(readApiData(result));
@@ -91,7 +92,7 @@ export class UserService {
     return normalizeUser(readRequiredApiItem(result, 'admin.user.errors.addUserMissingData'));
   }
 
-  static async updateUser(id: number, updates: UserUpdateInput): Promise<UserListItem> {
+  static async updateUser(id: string, updates: UserUpdateInput): Promise<UserListItem> {
     const result = await getClawRouterBackendSdkClient().iam.users.update(
       toUpdateUserRequest(id, updates),
     );
@@ -121,7 +122,7 @@ export class UserService {
     };
   }
 
-  static async deleteApiKey(userId: number, keyId: string): Promise<void> {
+  static async deleteApiKey(userId: string, keyId: string): Promise<void> {
     const result = await getClawRouterBackendSdkClient().iam.apiKeys.delete(
       requiredSafePathSegment(keyId, 'apiKeyId'),
     );
@@ -162,9 +163,9 @@ function toCreateUserRequest(user: UserCreateInput): AdminUserCreateRequest {
   });
 }
 
-function toUpdateUserRequest(id: number, updates: UserUpdateInput): AdminUserUpdateRequest {
+function toUpdateUserRequest(id: string, updates: UserUpdateInput): AdminUserUpdateRequest {
   return pruneUndefined({
-    id: positiveId(id, 'id'),
+    id: requiredPositiveInt64String(id, 'id'),
     username: optionalText(updates.username),
     group: optionalText(updates.group),
     status: updates.status,
@@ -173,7 +174,7 @@ function toUpdateUserRequest(id: number, updates: UserUpdateInput): AdminUserUpd
 
 function toCreateApiKeyRequest(input: ApiKeyCreateInput): AdminApiKeyCreateRequest {
   return {
-    userId: positiveId(input.userId, 'userId'),
+    userId: requiredPositiveInt64String(input.userId, 'userId'),
     name: requiredText(input.name, 'name'),
   };
 }
@@ -189,13 +190,6 @@ function requiredText(value: string | undefined, fieldName: string): string {
 function optionalText(value: string | undefined): string | undefined {
   const normalized = value?.trim();
   return normalized ? normalized : undefined;
-}
-
-function positiveId(value: number, fieldName: string): number {
-  if (!Number.isInteger(value) || value < 1) {
-    throw new Error(`${fieldName} must be a positive integer`);
-  }
-  return value;
 }
 
 function pruneUndefined<T extends object>(value: T): T {
@@ -216,7 +210,7 @@ function asError(error: unknown): Error {
 function normalizeUser(value: unknown): UserListItem {
   const item = readRequiredRecord(value, 'User record is required');
   return {
-    id: readRequiredNumber(item, 'id', 'User id is required'),
+    id: readRequiredPositiveInt64String(item, 'id', 'User id is required'),
     email: readRequiredString(item, 'email', 'User email is required'),
     username: readRequiredString(item, 'username', 'Username is required'),
     role: readRequiredString(item, 'role', 'User role is required'),
@@ -240,8 +234,8 @@ function normalizeApiKey(value: unknown): ApiKeyItem {
   };
 }
 
-function normalizeApiKeysMap(data: unknown): Record<number, ApiKeyItem[]> {
-  const result: Record<number, ApiKeyItem[]> = {};
+function normalizeApiKeysMap(data: unknown): Record<string, ApiKeyItem[]> {
+  const result: Record<string, ApiKeyItem[]> = {};
   if (!isRecord(data)) {
     throw new Error('API key map is required');
   }
@@ -249,9 +243,9 @@ function normalizeApiKeysMap(data: unknown): Record<number, ApiKeyItem[]> {
     if (!Array.isArray(value)) {
       throw new Error(`API key list for user ${key} is required`);
     }
-    const userId = Number(key);
-    if (!Number.isSafeInteger(userId) || userId < 1 || String(userId) !== key) {
-      throw new Error('API key map user id must be a positive integer');
+    const userId = requiredPositiveInt64String(key, 'API key map user id');
+    if (userId !== key) {
+      throw new Error('API key map user id must be a positive int64 string');
     }
     result[userId] = value.map(normalizeApiKey);
   }

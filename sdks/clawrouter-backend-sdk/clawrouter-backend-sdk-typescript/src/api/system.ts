@@ -119,8 +119,8 @@ export class SystemRuntimeRegionApi {
 }
 
 export interface SystemRecordsListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   user?: string;
   token?: string;
   model?: string;
@@ -440,7 +440,7 @@ export class SystemCacheNamespacesRefreshApi {
 }
 
 export interface SystemCacheNamespacesKeysListParams {
-  limit?: number;
+  limit?: string;
   cursor?: string;
 }
 
@@ -566,7 +566,7 @@ export interface SystemAnalyticsAdminOverviewRetrieveParams {
   timeRange?: 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly';
   startTime?: string;
   endTime?: string;
-  limit?: number;
+  limit?: string;
 }
 
 export class SystemAnalyticsAdminOverviewApi {
@@ -612,8 +612,8 @@ export class SystemAnalyticsApi {
 }
 
 export interface SystemPromotionsUserCouponsManagementListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
 }
 
@@ -648,8 +648,8 @@ export class SystemPromotionsUserCouponsApi {
 }
 
 export interface SystemPromotionsOffersManagementListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
 }
 
@@ -726,8 +726,8 @@ export class SystemPromotionsEventsApi {
 }
 
 export interface SystemPromotionsDiscountApplicationsListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
 }
 
@@ -772,8 +772,8 @@ export class SystemPromotionsDiscountAllocationsApi {
 }
 
 export interface SystemPromotionsCouponStocksListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
 }
 
@@ -818,8 +818,8 @@ export class SystemPromotionsCouponLedgerEntriesApi {
 }
 
 export interface SystemPromotionsCodesRedemptionsListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   codeStatus?: string;
 }
 
@@ -843,8 +843,8 @@ export class SystemPromotionsCodesRedemptionsApi {
 }
 
 export interface SystemPromotionsCodesListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   status?: string;
 }
 

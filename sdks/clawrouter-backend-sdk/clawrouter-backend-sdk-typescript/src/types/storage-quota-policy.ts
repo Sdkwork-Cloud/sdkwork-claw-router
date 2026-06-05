@@ -7,21 +7,21 @@ export interface StorageQuotaPolicy {
   /** Id field on storage quota policy. */
   id: string;
   /** Limit field on storage quota policy. */
-  limit?: number;
+  limit?: string;
   /** Quota limit bytes field on storage quota policy. */
-  quotaLimitBytes: number;
+  quotaLimitBytes: string;
   /** Scope id field on storage quota policy. */
   scopeId: string;
   /** Scope type field on storage quota policy. */
   scopeType: 'app' | 'organization' | 'space' | 'tenant' | 'user';
   /** Single file limit bytes field on storage quota policy. */
-  singleFileLimitBytes?: number;
+  singleFileLimitBytes?: string;
   /** Status field on storage quota policy. */
   status: 'active' | 'archived' | 'disabled';
   /** Updated at field on storage quota policy. */
   updatedAt?: string;
   /** Used field on storage quota policy. */
-  used?: number;
+  used?: string;
   /** Used bytes field on storage quota policy. */
-  usedBytes: number;
+  usedBytes: string;
 }

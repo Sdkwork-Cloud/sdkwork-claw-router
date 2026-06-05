@@ -7,7 +7,7 @@ export interface OpenAiCompletion {
   /** Generated completion choices. */
   choices: CreateCompletionChoice[];
   /** Unix timestamp in seconds when the completion was created. */
-  created: number;
+  created: string;
   /** Completion identifier. */
   id: string;
   /** Model id used by the completion. */

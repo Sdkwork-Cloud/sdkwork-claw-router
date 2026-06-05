@@ -260,7 +260,7 @@ table-count: 324
 | `iam_security_event` | 身份、访问与安全的事件日志，记录 安全事件。 | `event_log` | `sdkwork-appbase-iam` | yes |
 | `iam_audit_event` | 身份、访问与安全的审计日志，记录 审计事件。 | `audit_log` | `sdkwork-appbase-iam` | yes |
 | `iam_gateway_api_key` | 中转站对外 API Key 索引，保存密钥哈希、默认分组、策略和限额引用。 | `credential_index` | `api-key-service` | yes |
-| `iam_gateway_api_key_channel_group` | 身份、访问与安全的关系绑定，记录 gatewayapikeychannelgroup。 | `relation_entity` | `api-key-service` | yes |
+| `iam_gateway_api_key_channel_group` | 网关 API Key 到业务渠道分组的多绑定关系，用于表达该 Key 可路由到哪些 `ai_channel_group`，不得用于表达上游供应商账号池。 | `relation_entity` | `api-key-service` | yes |
 | `iam_gateway_access_policy` | 保存网关 API Key 的访问能力、IP 白名单等访问控制策略。 | `tenant_entity` | `access-policy-service` | yes |
 | `iam_gateway_risk_rule` | 身份、访问与安全的租户级主数据，记录 gatewayriskrule。 | `tenant_entity` | `risk-service` | yes |
 | `iam_user_preference` | 身份、访问与安全的用户级数据，记录 用户偏好。 | `user_entity` | `user-preference-service` | yes |

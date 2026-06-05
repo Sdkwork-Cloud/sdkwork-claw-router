@@ -85,9 +85,9 @@ export function AttributeManagementPage() {
     setError(null);
     try {
       const [attributeResult, categoryResult, bindingResult] = await Promise.all([
-        listCommerceAttributes({ page: 1, pageSize: 200 }),
-        listCommerceCategories({ page: 1, pageSize: 200 }),
-        listCommerceCategoryAttributes({ page: 1, pageSize: 200 }),
+        listCommerceAttributes({ page: '1', pageSize: '200' }),
+        listCommerceCategories({ page: '1', pageSize: '200' }),
+        listCommerceCategoryAttributes({ page: '1', pageSize: '200' }),
       ]);
       setAttributes(readAttributeOptions(attributeResult));
       setCategories(readCategoryOptions(categoryResult));
@@ -115,7 +115,7 @@ export function AttributeManagementPage() {
       required: form.required,
       searchable: form.searchable,
       filterable: form.filterable,
-      sortOrder: Number.parseInt(form.sortOrder, 10) || 0,
+      sortOrder: String(Number.parseInt(form.sortOrder, 10) || 0),
       status: form.status,
     };
     try {

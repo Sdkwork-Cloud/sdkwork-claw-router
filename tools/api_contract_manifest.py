@@ -1339,7 +1339,49 @@ class ApiContractManifestGenerator:
                 if normalized is not None:
                     schema[key] = normalized
 
+        self._normalize_int64_json_schema(schema)
         return schema if schema else None
+
+    def _normalize_int64_json_schema(self, schema: dict[str, Any]) -> None:
+        if schema.get("format") != "int64":
+            return
+
+        schema_type = schema.get("type")
+        if isinstance(schema_type, list):
+            schema["type"] = ["string" if item in {"integer", "number"} else item for item in schema_type]
+        elif schema_type in {"integer", "number", "string"}:
+            schema["type"] = "string"
+        elif schema_type is None:
+            schema["type"] = "string"
+        else:
+            return
+
+        schema.setdefault("pattern", self._int64_string_pattern(schema))
+        schema["x-sdkwork-int64-string"] = True
+        schema.setdefault("x-sdkwork-rust-type", "i64")
+        for numeric_constraint in (
+            "minimum",
+            "maximum",
+            "exclusiveMinimum",
+            "exclusiveMaximum",
+            "multipleOf",
+        ):
+            schema.pop(numeric_constraint, None)
+
+    def _int64_string_pattern(self, schema: dict[str, Any]) -> str:
+        minimum = schema.get("minimum")
+        exclusive_minimum = schema.get("exclusiveMinimum")
+        if isinstance(minimum, (int, float)):
+            if minimum >= 1:
+                return "^[1-9][0-9]*$"
+            if minimum >= 0:
+                return "^[0-9]+$"
+        if isinstance(exclusive_minimum, (int, float)):
+            if exclusive_minimum >= 0:
+                return "^[1-9][0-9]*$"
+            if exclusive_minimum >= -1:
+                return "^[0-9]+$"
+        return "^-?[0-9]+$"
 
     def _normalize_schema_type(self, value: Any) -> tuple[str, bool]:
         if isinstance(value, str):
@@ -1391,7 +1433,9 @@ class ApiContractManifestGenerator:
                 "name": name,
                 "in": "query",
                 "required": bool(parameter.get("required", False)),
-                "schema": parameter.get("schema") if isinstance(parameter.get("schema"), dict) else {"type": "string"},
+                "schema": self._normalize_json_schema(parameter.get("schema"))
+                if isinstance(parameter.get("schema"), dict)
+                else {"type": "string"},
             }
             description = parameter.get("description")
             if isinstance(description, str) and description:

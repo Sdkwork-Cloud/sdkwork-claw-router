@@ -43,9 +43,9 @@ export interface UsageLog {
   totalTime: SdkUsageLogsResponse['logs'][number]['totalTime'];
   ttft: SdkUsageLogsResponse['logs'][number]['ttft'];
   isStream: SdkUsageLogsResponse['logs'][number]['isStream'];
-  inputTokens: SdkUsageLogsResponse['logs'][number]['inputTokens'];
-  cacheReadTokens: SdkUsageLogsResponse['logs'][number]['cacheReadTokens'];
-  outputTokens: SdkUsageLogsResponse['logs'][number]['outputTokens'];
+  inputTokens: number;
+  cacheReadTokens: number;
+  outputTokens: number;
   cost: string & SdkUsageLogsResponse['logs'][number]['cost'];
   multiplier: string & SdkUsageLogsResponse['logs'][number]['multiplier'];
   baseInputPrice: string & SdkUsageLogsResponse['logs'][number]['baseInputPrice'];
@@ -59,7 +59,7 @@ export interface UsageLog {
 
 type UsageLogPage = {
   logs: UsageLog[];
-  total: SdkUsageLogsResponse['total'];
+  total: number;
 };
 
 export class UsageService {
@@ -80,8 +80,8 @@ export class UsageService {
 }
 
 function toUsageLogQueryParams(params: Record<string, unknown> = {}): {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   q?: string;
   status?: string;
   startTime?: string;

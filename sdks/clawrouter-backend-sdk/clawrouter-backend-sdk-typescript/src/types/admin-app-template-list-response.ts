@@ -7,9 +7,9 @@ export interface AdminAppTemplateListResponse {
   /** App template snapshots returned by the backend management API. */
   items: AdminAppTemplateItemResponse[];
   /** Page field on admin app template list response. */
-  page: number;
+  page: string;
   /** Page size field on admin app template list response. */
-  pageSize: number;
+  pageSize: string;
   /** Total field on admin app template list response. */
-  total: number;
+  total: string;
 }

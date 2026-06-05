@@ -25,8 +25,8 @@ export type VerificationPolicyListParams = ListParams<BackendMessaging['verifica
 export type VerificationPolicyUpdateInput = Parameters<BackendMessaging['verificationPolicies']['update']>[1];
 
 export const DEFAULT_MESSAGING_PAGE_PARAMS = {
-  page: 1,
-  pageSize: 100,
+  page: '1',
+  pageSize: '100',
 } as const;
 
 export async function listMessagingProviderAccounts(params?: MessagingProviderAccountListParams) {

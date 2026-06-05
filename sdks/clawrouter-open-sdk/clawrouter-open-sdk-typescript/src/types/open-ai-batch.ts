@@ -4,15 +4,15 @@ import type { ProviderJsonValue } from './provider-json-value';
 /** OpenAI-compatible batch object. */
 export interface OpenAiBatch {
   /** Unix timestamp in seconds when the batch was cancelled. */
-  cancelled_at?: number;
+  cancelled_at?: string;
   /** Unix timestamp in seconds when cancellation started. */
-  cancelling_at?: number;
+  cancelling_at?: string;
   /** Unix timestamp in seconds when the batch completed. */
-  completed_at?: number;
+  completed_at?: string;
   /** Time window in which the batch should be processed. */
   completion_window: string;
   /** Unix timestamp in seconds when the batch was created. */
-  created_at?: number;
+  created_at?: string;
   /** Endpoint processed by the batch. */
   endpoint: string;
   /** Error file identifier produced by the batch. */
@@ -20,17 +20,17 @@ export interface OpenAiBatch {
   /** Batch error list or envelope when returned. */
   errors?: ProviderJsonValue;
   /** Unix timestamp in seconds when the batch expired. */
-  expired_at?: number;
+  expired_at?: string;
   /** Unix timestamp in seconds when the batch expires. */
-  expires_at?: number;
+  expires_at?: string;
   /** Unix timestamp in seconds when the batch failed. */
-  failed_at?: number;
+  failed_at?: string;
   /** Unix timestamp in seconds when the batch started finalizing. */
-  finalizing_at?: number;
+  finalizing_at?: string;
   /** Batch identifier. */
   id: string;
   /** Unix timestamp in seconds when the batch started. */
-  in_progress_at?: number;
+  in_progress_at?: string;
   /** Input file identifier containing batch requests. */
   input_file_id: string;
   /** Developer-defined batch metadata. */

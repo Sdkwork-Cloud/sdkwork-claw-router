@@ -6,15 +6,15 @@ export interface OpenAiRunStep {
   /** Assistant identifier associated with the run step. */
   assistant_id: string;
   /** Unix timestamp in seconds when the run step was cancelled. */
-  cancelled_at?: number;
+  cancelled_at?: string;
   /** Unix timestamp in seconds when the run step completed. */
-  completed_at?: number;
+  completed_at?: string;
   /** Unix timestamp in seconds when the run step was created. */
-  created_at: number;
+  created_at: string;
   /** Unix timestamp in seconds when the run step expired. */
-  expired_at?: number;
+  expired_at?: string;
   /** Unix timestamp in seconds when the run step failed. */
-  failed_at?: number;
+  failed_at?: string;
   /** Run step identifier. */
   id: string;
   /** Last run step error returned by the upstream. */

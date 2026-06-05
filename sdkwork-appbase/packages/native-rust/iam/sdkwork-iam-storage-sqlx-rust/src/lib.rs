@@ -4,7 +4,13 @@ pub struct IamTables;
 impl IamTables {
     pub const TENANT: &'static str = "iam_tenant";
     pub const ORGANIZATION: &'static str = "iam_organization";
-    pub const ORGANIZATION_MEMBER: &'static str = "iam_organization_member";
+    pub const ORGANIZATION_CLOSURE: &'static str = "iam_organization_closure";
+    pub const ORGANIZATION_MEMBERSHIP: &'static str = "iam_organization_membership";
+    pub const DEPARTMENT: &'static str = "iam_department";
+    pub const DEPARTMENT_CLOSURE: &'static str = "iam_department_closure";
+    pub const DEPARTMENT_ASSIGNMENT: &'static str = "iam_department_assignment";
+    pub const POSITION: &'static str = "iam_position";
+    pub const POSITION_ASSIGNMENT: &'static str = "iam_position_assignment";
     pub const USER: &'static str = "iam_user";
     pub const USER_IDENTITY: &'static str = "iam_user_identity";
     pub const CREDENTIAL: &'static str = "iam_credential";
@@ -12,10 +18,10 @@ impl IamTables {
     pub const MFA_FACTOR: &'static str = "iam_mfa_factor";
     pub const DEVICE: &'static str = "iam_device";
     pub const ROLE: &'static str = "iam_role";
+    pub const ROLE_BINDING: &'static str = "iam_role_binding";
     pub const PERMISSION: &'static str = "iam_permission";
     pub const POLICY: &'static str = "iam_policy";
     pub const ROLE_PERMISSION: &'static str = "iam_role_permission";
-    pub const USER_ROLE: &'static str = "iam_user_role";
     pub const API_KEY: &'static str = "iam_api_key";
     pub const SECURITY_EVENT: &'static str = "iam_security_event";
     pub const AUDIT_EVENT: &'static str = "iam_audit_event";
@@ -67,7 +73,13 @@ pub fn iam_database_tables() -> Vec<&'static str> {
     vec![
         IamTables::TENANT,
         IamTables::ORGANIZATION,
-        IamTables::ORGANIZATION_MEMBER,
+        IamTables::ORGANIZATION_CLOSURE,
+        IamTables::ORGANIZATION_MEMBERSHIP,
+        IamTables::DEPARTMENT,
+        IamTables::DEPARTMENT_CLOSURE,
+        IamTables::DEPARTMENT_ASSIGNMENT,
+        IamTables::POSITION,
+        IamTables::POSITION_ASSIGNMENT,
         IamTables::USER,
         IamTables::USER_IDENTITY,
         IamTables::CREDENTIAL,
@@ -75,10 +87,10 @@ pub fn iam_database_tables() -> Vec<&'static str> {
         IamTables::MFA_FACTOR,
         IamTables::DEVICE,
         IamTables::ROLE,
+        IamTables::ROLE_BINDING,
         IamTables::PERMISSION,
         IamTables::POLICY,
         IamTables::ROLE_PERMISSION,
-        IamTables::USER_ROLE,
         IamTables::API_KEY,
         IamTables::SECURITY_EVENT,
         IamTables::AUDIT_EVENT,

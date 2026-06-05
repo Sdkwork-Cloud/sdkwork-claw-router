@@ -3,7 +3,7 @@ export interface CourseCategoryItem {
   /** Code field on course category item. */
   code: string;
   /** Course count field on course category item. */
-  courseCount: number;
+  courseCount: string;
   /** Description field on course category item. */
   description: string;
   /** Icon key field on course category item. */
@@ -15,5 +15,5 @@ export interface CourseCategoryItem {
   /** Name field on course category item. */
   name: string;
   /** Sort weight field on course category item. */
-  sortWeight: number;
+  sortWeight: string;
 }

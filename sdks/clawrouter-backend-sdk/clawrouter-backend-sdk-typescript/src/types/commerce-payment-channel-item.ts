@@ -13,7 +13,7 @@ export interface CommercePaymentChannelItem {
   /** Method code field on commerce payment channel item. */
   methodCode: 'wechat_pay' | 'alipay' | 'paypal' | 'card' | 'apple_pay' | 'google_pay' | 'wallet_balance';
   /** Priority field on commerce payment channel item. */
-  priority: number;
+  priority: string;
   /** Provider account id field on commerce payment channel item. */
   providerAccountId: string;
   /** Provider code field on commerce payment channel item. */

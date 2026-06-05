@@ -37,6 +37,7 @@ async function main() {
 
   emitDeclarations();
   emitRuntimeModules();
+  await removeTypeOnlyRuntimeReExports(path.join(tempEsmDir, 'index.js'));
   await bundleRuntime('es', path.join(distDir, 'index.js'));
   await bundleRuntime('cjs', path.join(distDir, 'index.cjs'));
 
@@ -107,6 +108,17 @@ function emitProgram(parsed) {
   if (diagnostics.length > 0) {
     throw new Error(formatDiagnostics(diagnostics));
   }
+}
+
+async function removeTypeOnlyRuntimeReExports(entryFile) {
+  const source = await fs.readFile(entryFile, 'utf-8');
+  const runtimeLines = source.split(/\r?\n/u).map((line) => {
+    if (line.trim() === "export * from './types';") {
+      return "export { DEFAULT_TIMEOUT, SUCCESS_CODES } from '@sdkwork/sdk-common';";
+    }
+    return line;
+  });
+  await fs.writeFile(entryFile, runtimeLines.join('\n'), 'utf-8');
 }
 
 async function bundleRuntime(format, file) {
@@ -856,6 +868,9 @@ function schemaToTypeScriptType(schema, spec) {
   }
   if (Array.isArray(schema.enum) && schema.enum.length > 0) {
     return schema.enum.map((value) => JSON.stringify(value)).join(' | ');
+  }
+  if (schema.format === 'int64' || schema['x-sdkwork-int64-string'] === true) {
+    return 'string';
   }
   if (schema.type === 'string') {
     return 'string';

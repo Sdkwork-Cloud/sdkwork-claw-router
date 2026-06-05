@@ -7,7 +7,7 @@ export interface OpenAiOrganizationAuditLog {
   /** API key identifier associated with the event when available. */
   api_key_id?: string;
   /** Unix timestamp in seconds when the event took effect. */
-  effective_at?: number;
+  effective_at?: string;
   /** Audit log event identifier. */
   id: string;
   /** Provider-specific audit metadata. */

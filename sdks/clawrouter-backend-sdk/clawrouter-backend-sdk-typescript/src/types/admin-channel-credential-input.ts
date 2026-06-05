@@ -7,11 +7,11 @@ export interface AdminChannelCredentialInput {
   /** Name field on admin channel credential input. */
   name?: string;
   /** Priority field on admin channel credential input. */
-  priority?: number;
+  priority?: string;
   /** Secret ref field on admin channel credential input. */
   secretRef?: string;
   /** Status field on admin channel credential input. */
   status?: 'active' | 'disabled' | 'error';
   /** Weight field on admin channel credential input. */
-  weight?: number;
+  weight?: string;
 }

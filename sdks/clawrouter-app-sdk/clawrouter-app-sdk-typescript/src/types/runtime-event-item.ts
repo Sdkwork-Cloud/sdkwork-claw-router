@@ -5,7 +5,7 @@ export interface RuntimeEventItem {
   /** Created at field on runtime event item. */
   createdAt: string;
   /** Event no field on runtime event item. */
-  eventNo: number;
+  eventNo: string;
   /** Event source field on runtime event item. */
   eventSource: string;
   /** Event type field on runtime event item. */

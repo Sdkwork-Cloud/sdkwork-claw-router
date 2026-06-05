@@ -4942,6 +4942,24 @@ async fn create_schema(pool: &SqlitePool) {
             updated_at TEXT,
             metadata TEXT NOT NULL DEFAULT '{}'
         )"#,
+        r#"CREATE TABLE iam_gateway_api_key_channel_group (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT NOT NULL DEFAULT 'gateway-api-key-channel-group-uuid',
+            tenant_id INTEGER NOT NULL,
+            organization_id INTEGER NOT NULL,
+            user_id INTEGER NOT NULL DEFAULT 0,
+            api_key_id INTEGER NOT NULL,
+            channel_group_id INTEGER NOT NULL,
+            channel_group_code TEXT,
+            binding_role TEXT NOT NULL DEFAULT 'route',
+            routing_strategy TEXT NOT NULL DEFAULT 'auto',
+            priority INTEGER NOT NULL DEFAULT 100,
+            weight INTEGER NOT NULL DEFAULT 100,
+            status INTEGER NOT NULL,
+            deleted_at TEXT,
+            effective_from TEXT,
+            effective_to TEXT
+        )"#,
         r#"CREATE TABLE iam_gateway_access_policy (
             id INTEGER PRIMARY KEY,
             allowed_capabilities TEXT,
@@ -5637,6 +5655,7 @@ async fn seed_catalog(pool: &SqlitePool) {
         "INSERT INTO ai_channel_resource (id, uuid, tenant_id, organization_id, channel_id, provider_code, channel_code, resource_group_id, resource_group_code, grant_type, priority, status) VALUES (9203, 'channel-resource-openrouter-openai-admin-api-test', 10, 20, 3001, 'openrouter', 'openrouter-main', 9201, 'bundle.openrouter.openai.standard', 'allow', 1, 1)",
         "INSERT INTO ai_channel_group_resource (id, uuid, tenant_id, organization_id, channel_group_id, resource_group_id, resource_group_code, grant_type, priority, status) VALUES (9204, 'channel-group-resource-openrouter-openai-admin-api-test', 10, 20, 10, 9201, 'bundle.openrouter.openai.standard', 'allow', 1, 1)",
         "INSERT INTO iam_gateway_api_key (id, tenant_id, organization_id, user_id, channel_group_id, key_prefix, key_hash, idempotency_key, status) VALUES (100, 10, 20, 30, 10, 'sk-test', 'hash:sk-test', 'seed-api-key-100', 1)",
+        "INSERT INTO iam_gateway_api_key_channel_group (id, uuid, tenant_id, organization_id, user_id, api_key_id, channel_group_id, channel_group_code, binding_role, routing_strategy, priority, weight, status) VALUES (1000, 'gateway-api-key-channel-group-standard-admin-api-test', 10, 20, 30, 100, 10, 'standard-group', 'route', 'auto', 100, 100, 1)",
         r#"INSERT INTO iam_user (id, tenant_id, username, display_name, email, phone, avatar_media_resource_id, avatar_object_blob_id, avatar_resource_snapshot, status, created_at, updated_at) VALUES ('1', '10', 'bootstrap-admin', 'Bootstrap Admin', 'bootstrap-admin@example.com', '', 'media-bootstrap-admin-avatar', 'iam-user-avatar:bootstrap-admin', '{"kind":"image","source":"provider_asset","uri":"iam-user-avatar:bootstrap-admin"}', 'active', '2026-04-01 08:00:00', '2026-04-29 08:30:00')"#,
         "INSERT INTO iam_organization_member (id, tenant_id, organization_id, user_id, role_code, status, joined_at, left_at, remark) VALUES ('member-1-admin', '10', '20', '1', 'admin', 'active', '2026-04-01 08:00:00', NULL, 'seed bootstrap admin membership')",
         "INSERT INTO ai_model_pricing (id, catalog_key, model, vendor_code, region_code, price_side, billing_meter_code, unit_price, currency, status, priority) VALUES (1, 'openai/gpt-4o-mini', 'gpt-4o-mini', 'openai', 'global', 1, 'llm_input_token', '0.150000', 'USD', 1, 1)",

@@ -121,16 +121,17 @@ ON iam_organization(status, is_deleted);
 CREATE INDEX IF NOT EXISTS idx_iam_organization_parent_id
 ON iam_organization(parent_id, is_deleted);
 
-CREATE TABLE IF NOT EXISTS iam_organization_member (
+CREATE TABLE IF NOT EXISTS iam_organization_membership (
     id INTEGER PRIMARY KEY,
     uuid TEXT NOT NULL UNIQUE,
     tenant_id INTEGER NOT NULL DEFAULT 0,
     organization_id INTEGER NOT NULL DEFAULT 0,
     data_scope INTEGER NOT NULL DEFAULT 1,
     user_id INTEGER NOT NULL,
-    owner INTEGER NOT NULL,
-    owner_id INTEGER NOT NULL,
-    is_active INTEGER NOT NULL DEFAULT 1,
+    membership_kind TEXT NOT NULL DEFAULT 'employee',
+    employee_no TEXT NULL,
+    display_name TEXT NULL,
+    status TEXT NOT NULL DEFAULT 'active',
     joined_at TEXT NULL,
     left_at TEXT NULL,
     remark TEXT NULL,
@@ -140,33 +141,29 @@ CREATE TABLE IF NOT EXISTS iam_organization_member (
     is_deleted INTEGER NOT NULL DEFAULT 0
 );
 
-CREATE INDEX IF NOT EXISTS idx_org_member_user_id
-ON iam_organization_member(user_id);
+CREATE INDEX IF NOT EXISTS idx_iam_org_membership_user
+ON iam_organization_membership(tenant_id, user_id, status, is_deleted);
 
-CREATE INDEX IF NOT EXISTS idx_org_member_owner_id
-ON iam_organization_member(owner_id);
+CREATE INDEX IF NOT EXISTS idx_iam_org_membership_org
+ON iam_organization_membership(tenant_id, organization_id, status, is_deleted);
 
-CREATE INDEX IF NOT EXISTS idx_org_member_user_owner
-ON iam_organization_member(user_id, owner_id);
+CREATE UNIQUE INDEX IF NOT EXISTS idx_iam_org_membership_org_user
+ON iam_organization_membership(tenant_id, organization_id, user_id);
 
-CREATE TABLE IF NOT EXISTS iam_member_relation (
+CREATE TABLE IF NOT EXISTS iam_department_assignment (
     id INTEGER PRIMARY KEY,
     uuid TEXT NOT NULL UNIQUE,
     tenant_id INTEGER NOT NULL DEFAULT 0,
     organization_id INTEGER NOT NULL DEFAULT 0,
     data_scope INTEGER NOT NULL DEFAULT 1,
-    parent_id INTEGER NULL,
-    parent_uuid TEXT NULL,
-    parent_metadata TEXT NULL,
-    member_id INTEGER NOT NULL,
-    owner INTEGER NOT NULL,
-    owner_id INTEGER NOT NULL,
-    relation_type INTEGER NOT NULL,
-    target_id INTEGER NOT NULL,
+    organization_membership_id INTEGER NOT NULL,
+    department_id INTEGER NOT NULL,
+    user_id INTEGER NOT NULL,
+    assignment_kind TEXT NOT NULL DEFAULT 'member',
     is_primary INTEGER NOT NULL DEFAULT 0,
-    is_active INTEGER NOT NULL DEFAULT 1,
-    effective_at TEXT NULL,
-    expired_at TEXT NULL,
+    effective_from TEXT NULL,
+    effective_to TEXT NULL,
+    status TEXT NOT NULL DEFAULT 'active',
     sort_order INTEGER NULL,
     remark TEXT NULL,
     created_at TEXT NOT NULL,
@@ -175,20 +172,72 @@ CREATE TABLE IF NOT EXISTS iam_member_relation (
     is_deleted INTEGER NOT NULL DEFAULT 0
 );
 
-CREATE INDEX IF NOT EXISTS idx_member_rel_member_id
-ON iam_member_relation(member_id);
+CREATE INDEX IF NOT EXISTS idx_iam_department_assignment_membership
+ON iam_department_assignment(tenant_id, organization_membership_id, status, is_deleted);
 
-CREATE INDEX IF NOT EXISTS idx_member_rel_target_id
-ON iam_member_relation(target_id);
+CREATE INDEX IF NOT EXISTS idx_iam_department_assignment_department
+ON iam_department_assignment(tenant_id, organization_id, department_id, status, is_deleted);
 
-CREATE INDEX IF NOT EXISTS idx_member_rel_relation_type
-ON iam_member_relation(relation_type);
+CREATE INDEX IF NOT EXISTS idx_iam_department_assignment_user
+ON iam_department_assignment(tenant_id, user_id, status, is_deleted);
 
-CREATE INDEX IF NOT EXISTS idx_member_rel_owner_id
-ON iam_member_relation(owner_id);
+CREATE TABLE IF NOT EXISTS iam_position_assignment (
+    id INTEGER PRIMARY KEY,
+    uuid TEXT NOT NULL UNIQUE,
+    tenant_id INTEGER NOT NULL DEFAULT 0,
+    organization_id INTEGER NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 1,
+    department_assignment_id INTEGER NOT NULL,
+    position_id INTEGER NOT NULL,
+    user_id INTEGER NOT NULL,
+    is_primary INTEGER NOT NULL DEFAULT 0,
+    effective_from TEXT NULL,
+    effective_to TEXT NULL,
+    status TEXT NOT NULL DEFAULT 'active',
+    remark TEXT NULL,
+    created_at TEXT NOT NULL,
+    updated_at TEXT NOT NULL,
+    version INTEGER NOT NULL DEFAULT 0,
+    is_deleted INTEGER NOT NULL DEFAULT 0
+);
 
-CREATE INDEX IF NOT EXISTS idx_member_rel_member_owner
-ON iam_member_relation(member_id, owner_id);
+CREATE INDEX IF NOT EXISTS idx_iam_position_assignment_department
+ON iam_position_assignment(tenant_id, department_assignment_id, status, is_deleted);
+
+CREATE INDEX IF NOT EXISTS idx_iam_position_assignment_position
+ON iam_position_assignment(tenant_id, organization_id, position_id, status, is_deleted);
+
+CREATE INDEX IF NOT EXISTS idx_iam_position_assignment_user
+ON iam_position_assignment(tenant_id, user_id, status, is_deleted);
+
+CREATE TABLE IF NOT EXISTS iam_role_binding (
+    id INTEGER PRIMARY KEY,
+    uuid TEXT NOT NULL UNIQUE,
+    tenant_id INTEGER NOT NULL DEFAULT 0,
+    organization_id INTEGER NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 1,
+    role_id INTEGER NOT NULL,
+    principal_kind TEXT NOT NULL,
+    principal_id INTEGER NOT NULL,
+    scope_kind TEXT NOT NULL,
+    scope_id INTEGER NOT NULL,
+    effect TEXT NOT NULL DEFAULT 'allow',
+    condition_json TEXT NULL,
+    status TEXT NOT NULL DEFAULT 'active',
+    created_at TEXT NOT NULL,
+    updated_at TEXT NOT NULL,
+    version INTEGER NOT NULL DEFAULT 0,
+    is_deleted INTEGER NOT NULL DEFAULT 0
+);
+
+CREATE INDEX IF NOT EXISTS idx_iam_role_binding_principal
+ON iam_role_binding(tenant_id, principal_kind, principal_id, status, is_deleted);
+
+CREATE INDEX IF NOT EXISTS idx_iam_role_binding_scope
+ON iam_role_binding(tenant_id, scope_kind, scope_id, status, is_deleted);
+
+CREATE INDEX IF NOT EXISTS idx_iam_role_binding_role
+ON iam_role_binding(tenant_id, role_id, status, is_deleted);
 
 CREATE TABLE IF NOT EXISTS iam_role (
     id INTEGER PRIMARY KEY,
@@ -241,20 +290,6 @@ CREATE TABLE IF NOT EXISTS iam_role_permission (
 
 CREATE UNIQUE INDEX IF NOT EXISTS idx_role_permission1
 ON iam_role_permission(role_id, permission_id);
-
-CREATE TABLE IF NOT EXISTS iam_user_role (
-    id INTEGER NULL,
-    uuid TEXT NULL,
-    created_at TEXT NOT NULL,
-    updated_at TEXT NOT NULL,
-    user_id INTEGER NOT NULL,
-    role_id INTEGER NOT NULL,
-    operator_id INTEGER NULL,
-    PRIMARY KEY (user_id, role_id)
-);
-
-CREATE UNIQUE INDEX IF NOT EXISTS idx_user_role1
-ON iam_user_role(user_id, role_id);
 
 CREATE TABLE IF NOT EXISTS iam_user (
     id INTEGER PRIMARY KEY,
@@ -390,30 +425,6 @@ CREATE TABLE IF NOT EXISTS iam_membership (
     updated_at TEXT NOT NULL,
     version INTEGER NOT NULL DEFAULT 0,
     is_deleted INTEGER NOT NULL DEFAULT 0
-);
-
-CREATE TABLE IF NOT EXISTS iam_account (
-    id INTEGER PRIMARY KEY,
-    uuid TEXT NOT NULL UNIQUE,
-    tenant_id INTEGER NOT NULL DEFAULT 0,
-    organization_id INTEGER NOT NULL DEFAULT 0,
-    data_scope INTEGER NOT NULL DEFAULT 1,
-    user_id INTEGER NULL,
-    account_type TEXT NOT NULL,
-    owner TEXT NULL,
-    owner_id INTEGER NOT NULL,
-    available_balance NUMERIC NOT NULL DEFAULT 0,
-    frozen_balance NUMERIC NOT NULL DEFAULT 0,
-    available_points INTEGER NOT NULL DEFAULT 0,
-    frozen_points INTEGER NOT NULL DEFAULT 0,
-    token_balance INTEGER NOT NULL DEFAULT 0,
-    frozen_token INTEGER NOT NULL DEFAULT 0,
-    status TEXT NOT NULL,
-    created_at TEXT NOT NULL,
-    updated_at TEXT NOT NULL,
-    version INTEGER NOT NULL DEFAULT 0,
-    is_deleted INTEGER NOT NULL DEFAULT 0,
-    UNIQUE (tenant_id, organization_id, user_id, account_type)
 );
 
 CREATE TABLE IF NOT EXISTS iam_session (

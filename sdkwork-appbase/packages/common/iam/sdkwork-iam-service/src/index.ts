@@ -127,12 +127,26 @@ export interface SdkworkIamService {
         retrieve(params?: Record<string, unknown>): Promise<unknown>;
       };
       update(organizationId: string, body: Record<string, unknown>): Promise<unknown>;
-      members: {
-        create(organizationId: string, body: Record<string, unknown>): Promise<unknown>;
-        delete(organizationId: string, userId: string): Promise<unknown>;
-        list(organizationId: string, params?: Record<string, unknown>): Promise<unknown>;
-        update(organizationId: string, userId: string, body: Record<string, unknown>): Promise<unknown>;
+    };
+    organizationMemberships: {
+      create(body: Record<string, unknown>): Promise<unknown>;
+      list(params?: Record<string, unknown>): Promise<unknown>;
+      update(membershipId: string, body: Record<string, unknown>): Promise<unknown>;
+    };
+    departments: {
+      create(body: Record<string, unknown>): Promise<unknown>;
+      delete(departmentId: string): Promise<unknown>;
+      list(params?: Record<string, unknown>): Promise<unknown>;
+      retrieve(departmentId: string): Promise<unknown>;
+      tree: {
+        retrieve(params?: Record<string, unknown>): Promise<unknown>;
       };
+      update(departmentId: string, body: Record<string, unknown>): Promise<unknown>;
+    };
+    departmentAssignments: {
+      create(body: Record<string, unknown>): Promise<unknown>;
+      list(params?: Record<string, unknown>): Promise<unknown>;
+      update(assignmentId: string, body: Record<string, unknown>): Promise<unknown>;
     };
     permissions: {
       create(body: Record<string, unknown>): Promise<unknown>;
@@ -140,6 +154,17 @@ export interface SdkworkIamService {
       list(params?: Record<string, unknown>): Promise<unknown>;
       retrieve(permissionId: string): Promise<unknown>;
       update(permissionId: string, body: Record<string, unknown>): Promise<unknown>;
+    };
+    positions: {
+      create(body: Record<string, unknown>): Promise<unknown>;
+      delete(positionId: string): Promise<unknown>;
+      list(params?: Record<string, unknown>): Promise<unknown>;
+      update(positionId: string, body: Record<string, unknown>): Promise<unknown>;
+    };
+    positionAssignments: {
+      create(body: Record<string, unknown>): Promise<unknown>;
+      list(params?: Record<string, unknown>): Promise<unknown>;
+      update(assignmentId: string, body: Record<string, unknown>): Promise<unknown>;
     };
     policies: {
       create(body: Record<string, unknown>): Promise<unknown>;
@@ -159,6 +184,11 @@ export interface SdkworkIamService {
         delete(roleId: string, permissionId: string): Promise<unknown>;
         list(roleId: string, params?: Record<string, unknown>): Promise<unknown>;
       };
+    };
+    roleBindings: {
+      create(body: Record<string, unknown>): Promise<unknown>;
+      delete(roleBindingId: string): Promise<unknown>;
+      list(params?: Record<string, unknown>): Promise<unknown>;
     };
     securityEvents: {
       list(params?: Record<string, unknown>): Promise<unknown>;
@@ -185,11 +215,6 @@ export interface SdkworkIamService {
       list(params?: Record<string, unknown>): Promise<unknown>;
       retrieve(userId: string): Promise<IamUser>;
       update(userId: string, body: Record<string, unknown>): Promise<unknown>;
-      roles: {
-        create(userId: string, roleId: string): Promise<unknown>;
-        delete(userId: string, roleId: string): Promise<unknown>;
-        list(userId: string, params?: Record<string, unknown>): Promise<unknown>;
-      };
     };
   };
 }
@@ -312,18 +337,32 @@ export function createSdkworkIamService(input: CreateSdkworkIamServiceInput): Sd
       organizations: {
         create: (body) => callBackendIam(backendIam, (iam) => iam.organizations, "create", "iam.organizations.create", body),
         delete: (organizationId) => callBackendIam(backendIam, (iam) => iam.organizations, "delete", "iam.organizations.delete", organizationId),
-        list: (params) => callBackendIam(backendIam, (iam) => iam.organizations, "list", "iam.organizations.list", params),
+        list: (params) => callRaw(appIam?.organizations, "list", "appClient.iam.organizations.list", params),
         retrieve: (organizationId) => callBackendIam(backendIam, (iam) => iam.organizations, "retrieve", "iam.organizations.retrieve", organizationId),
         tree: {
-          retrieve: (params) => callBackendIam(backendIam, (iam) => iam.organizations?.tree, "retrieve", "iam.organizations.tree.retrieve", params),
+          retrieve: (params) => callRaw(appIam?.organizations?.tree, "retrieve", "appClient.iam.organizations.tree.retrieve", params),
         },
         update: (organizationId, body) => callBackendIam(backendIam, (iam) => iam.organizations, "update", "iam.organizations.update", organizationId, body),
-        members: {
-          create: (organizationId, body) => callBackendIam(backendIam, (iam) => iam.organizations?.members, "create", "iam.organizations.members.create", organizationId, body),
-          delete: (organizationId, userId) => callBackendIam(backendIam, (iam) => iam.organizations?.members, "delete", "iam.organizations.members.delete", organizationId, userId),
-          list: (organizationId, params) => callBackendIam(backendIam, (iam) => iam.organizations?.members, "list", "iam.organizations.members.list", organizationId, params),
-          update: (organizationId, userId, body) => callBackendIam(backendIam, (iam) => iam.organizations?.members, "update", "iam.organizations.members.update", organizationId, userId, body),
+      },
+      organizationMemberships: {
+        create: (body) => callBackendIam(backendIam, (iam) => iam.organizationMemberships, "create", "iam.organizationMemberships.create", body),
+        list: (params) => callRaw(appIam?.organizationMemberships, "list", "appClient.iam.organizationMemberships.list", params),
+        update: (membershipId, body) => callBackendIam(backendIam, (iam) => iam.organizationMemberships, "update", "iam.organizationMemberships.update", membershipId, body),
+      },
+      departments: {
+        create: (body) => callBackendIam(backendIam, (iam) => iam.departments, "create", "iam.departments.create", body),
+        delete: (departmentId) => callBackendIam(backendIam, (iam) => iam.departments, "delete", "iam.departments.delete", departmentId),
+        list: (params) => callRaw(appIam?.departments, "list", "appClient.iam.departments.list", params),
+        retrieve: (departmentId) => callBackendIam(backendIam, (iam) => iam.departments, "retrieve", "iam.departments.retrieve", departmentId),
+        tree: {
+          retrieve: (params) => callRaw(appIam?.departments?.tree, "retrieve", "appClient.iam.departments.tree.retrieve", params),
         },
+        update: (departmentId, body) => callBackendIam(backendIam, (iam) => iam.departments, "update", "iam.departments.update", departmentId, body),
+      },
+      departmentAssignments: {
+        create: (body) => callBackendIam(backendIam, (iam) => iam.departmentAssignments, "create", "iam.departmentAssignments.create", body),
+        list: (params) => callRaw(appIam?.departmentAssignments, "list", "appClient.iam.departmentAssignments.list", params),
+        update: (assignmentId, body) => callBackendIam(backendIam, (iam) => iam.departmentAssignments, "update", "iam.departmentAssignments.update", assignmentId, body),
       },
       permissions: {
         create: (body) => callBackendIam(backendIam, (iam) => iam.permissions, "create", "iam.permissions.create", body),
@@ -331,6 +370,17 @@ export function createSdkworkIamService(input: CreateSdkworkIamServiceInput): Sd
         list: (params) => callBackendIam(backendIam, (iam) => iam.permissions, "list", "iam.permissions.list", params),
         retrieve: (permissionId) => callBackendIam(backendIam, (iam) => iam.permissions, "retrieve", "iam.permissions.retrieve", permissionId),
         update: (permissionId, body) => callBackendIam(backendIam, (iam) => iam.permissions, "update", "iam.permissions.update", permissionId, body),
+      },
+      positions: {
+        create: (body) => callBackendIam(backendIam, (iam) => iam.positions, "create", "iam.positions.create", body),
+        delete: (positionId) => callBackendIam(backendIam, (iam) => iam.positions, "delete", "iam.positions.delete", positionId),
+        list: (params) => callRaw(appIam?.positions, "list", "appClient.iam.positions.list", params),
+        update: (positionId, body) => callBackendIam(backendIam, (iam) => iam.positions, "update", "iam.positions.update", positionId, body),
+      },
+      positionAssignments: {
+        create: (body) => callBackendIam(backendIam, (iam) => iam.positionAssignments, "create", "iam.positionAssignments.create", body),
+        list: (params) => callRaw(appIam?.positionAssignments, "list", "appClient.iam.positionAssignments.list", params),
+        update: (assignmentId, body) => callBackendIam(backendIam, (iam) => iam.positionAssignments, "update", "iam.positionAssignments.update", assignmentId, body),
       },
       policies: {
         create: (body) => callBackendIam(backendIam, (iam) => iam.policies, "create", "iam.policies.create", body),
@@ -350,6 +400,11 @@ export function createSdkworkIamService(input: CreateSdkworkIamServiceInput): Sd
           delete: (roleId, permissionId) => callBackendIam(backendIam, (iam) => iam.roles?.permissions, "delete", "iam.roles.permissions.delete", roleId, permissionId),
           list: (roleId, params) => callBackendIam(backendIam, (iam) => iam.roles?.permissions, "list", "iam.roles.permissions.list", roleId, params),
         },
+      },
+      roleBindings: {
+        create: (body) => callBackendIam(backendIam, (iam) => iam.roleBindings, "create", "iam.roleBindings.create", body),
+        delete: (roleBindingId) => callBackendIam(backendIam, (iam) => iam.roleBindings, "delete", "iam.roleBindings.delete", roleBindingId),
+        list: (params) => callRaw(appIam?.roleBindings, "list", "appClient.iam.roleBindings.list", params),
       },
       securityEvents: {
         list: (params) => callBackendIam(backendIam, (iam) => iam.securityEvents, "list", "iam.securityEvents.list", params),
@@ -376,11 +431,6 @@ export function createSdkworkIamService(input: CreateSdkworkIamServiceInput): Sd
         list: (params) => callBackendIam(backendIam, (iam) => iam.users, "list", "iam.users.list", params),
         retrieve: async (userId) => toUser(unwrap(await callBackendIam(backendIam, (iam) => iam.users, "retrieve", "iam.users.retrieve", userId), "iam.users.retrieve")),
         update: (userId, body) => callBackendIam(backendIam, (iam) => iam.users, "update", "iam.users.update", userId, body),
-        roles: {
-          create: (userId, roleId) => callBackendIam(backendIam, (iam) => iam.users?.roles, "create", "iam.users.roles.create", userId, roleId),
-          delete: (userId, roleId) => callBackendIam(backendIam, (iam) => iam.users?.roles, "delete", "iam.users.roles.delete", userId, roleId),
-          list: (userId, params) => callBackendIam(backendIam, (iam) => iam.users?.roles, "list", "iam.users.roles.list", userId, params),
-        },
       },
     },
   };

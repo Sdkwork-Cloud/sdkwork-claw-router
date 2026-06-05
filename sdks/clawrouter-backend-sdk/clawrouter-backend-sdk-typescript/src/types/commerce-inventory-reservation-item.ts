@@ -11,7 +11,7 @@ export interface CommerceInventoryReservationItem {
   /** Order id field on commerce inventory reservation item. */
   orderId?: string | null;
   /** Quantity field on commerce inventory reservation item. */
-  quantity: number;
+  quantity: string;
   /** Reservation no field on commerce inventory reservation item. */
   reservationNo: string;
   /** Sku id field on commerce inventory reservation item. */

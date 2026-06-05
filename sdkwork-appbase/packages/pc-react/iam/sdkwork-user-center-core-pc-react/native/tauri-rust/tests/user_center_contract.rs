@@ -163,16 +163,17 @@ fn creates_the_canonical_iam_sqlite_authority_tables() {
     for table_name in [
         "iam_tenant",
         "iam_organization",
-        "iam_organization_member",
+        "iam_organization_membership",
+        "iam_department_assignment",
+        "iam_position_assignment",
+        "iam_role_binding",
         "iam_role",
         "iam_permission",
         "iam_role_permission",
-        "iam_user_role",
         "iam_user",
         "iam_user_identity",
         "iam_credential",
         "iam_membership",
-        "iam_account",
         "iam_api_key",
         "iam_session",
         "iam_verification_code",
@@ -210,6 +211,27 @@ fn creates_the_canonical_iam_sqlite_authority_tables() {
         retired_vip_membership_table_exists, 0,
         "canonical IAM authority schema must not create retired iam_vip_membership.",
     );
+    for retired_table_name in [
+        "iam_organization_member",
+        "iam_member_relation",
+        "iam_account",
+        "iam_accounts",
+        "iam_department_member",
+        "iam_department_members",
+        "iam_user_role",
+    ] {
+        let exists: i64 = connection
+            .query_row(
+                "SELECT EXISTS(SELECT 1 FROM sqlite_master WHERE type = 'table' AND name = ?1)",
+                [retired_table_name],
+                |row| row.get(0),
+            )
+            .unwrap_or_else(|error| panic!("probe {retired_table_name} failed: {error}"));
+        assert_eq!(
+            exists, 0,
+            "{retired_table_name} must not be created by the user-center IAM authority schema.",
+        );
+    }
 
     let user_count: i64 = connection
         .query_row(

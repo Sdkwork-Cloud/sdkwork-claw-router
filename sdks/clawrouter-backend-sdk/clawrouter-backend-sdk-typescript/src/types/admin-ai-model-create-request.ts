@@ -17,7 +17,7 @@ export interface AdminAiModelCreateRequest {
   /** Limitations field on admin ai model create request. */
   limitations?: string[];
   /** Max output tokens field on admin ai model create request. */
-  maxOutputTokens?: number | null;
+  maxOutputTokens?: string | null;
   /** Modalities field on admin ai model create request. */
   modalities?: string[];
   /** Runtime model identifier used for provider calls, routing, and pricing keys. */
@@ -27,13 +27,13 @@ export interface AdminAiModelCreateRequest {
   /** Official reference prices by region. */
   regionPrices: AdminAiModelRegionPrice[];
   /** Release stage field on admin ai model create request. */
-  releaseStage?: number | null;
+  releaseStage?: string | null;
   /** Replacement model field on admin ai model create request. */
   replacementModel?: string | null;
   /** Routing state field on admin ai model create request. */
-  routingState?: number | null;
+  routingState?: string | null;
   /** Shelf state field on admin ai model create request. */
-  shelfState?: number | null;
+  shelfState?: string | null;
   /** Supported languages field on admin ai model create request. */
   supportedLanguages?: string[];
   /** Supports json schema field on admin ai model create request. */

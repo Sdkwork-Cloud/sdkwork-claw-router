@@ -17,7 +17,7 @@ export interface CommerceRechargeOrderCreateResponse {
   /** Payment product field on commerce recharge order create response. */
   paymentProduct: string;
   /** Points field on commerce recharge order create response. */
-  points: number;
+  points: string;
   /** Provider code field on commerce recharge order create response. */
   providerCode: string;
   /** Qr code payload field on commerce recharge order create response. */

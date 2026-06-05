@@ -14,7 +14,7 @@ export interface AppModelCatalogItem {
   /** Categories field on app model catalog item. */
   categories: ('Recommended' | 'Open Source' | 'Proprietary' | 'Free' | 'New')[];
   /** Context tokens field on app model catalog item. */
-  contextTokens: number | null;
+  contextTokens: string | null;
   /** Description field on app model catalog item. */
   description: string | null;
   /** Display name field on app model catalog item. */
@@ -26,7 +26,7 @@ export interface AppModelCatalogItem {
   /** Limitations field on app model catalog item. */
   limitations: string[];
   /** Max output tokens field on app model catalog item. */
-  maxOutputTokens: number | null;
+  maxOutputTokens: string | null;
   /** Modalities field on app model catalog item. */
   modalities: string[];
   /** Model field on app model catalog item. */
@@ -40,13 +40,13 @@ export interface AppModelCatalogItem {
   /** Provider codes field on app model catalog item. */
   providerCodes: string[];
   /** Release stage field on app model catalog item. */
-  releaseStage: number | null;
+  releaseStage: string | null;
   /** Replacement model field on app model catalog item. */
   replacementModel: string | null;
   /** Routing state field on app model catalog item. */
-  routingState: number | null;
+  routingState: string | null;
   /** Shelf state field on app model catalog item. */
-  shelfState: number | null;
+  shelfState: string | null;
   /** Supported languages field on app model catalog item. */
   supportedLanguages: string[];
   /** Supports json schema field on app model catalog item. */

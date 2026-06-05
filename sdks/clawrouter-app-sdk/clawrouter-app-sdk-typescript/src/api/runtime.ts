@@ -19,8 +19,8 @@ export class RuntimeInvocationEventStreamsApi {
 }
 
 export interface RuntimeInvocationEventsListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
 }
 
 export interface RuntimeInvocationEventsCreateParams {
@@ -57,8 +57,8 @@ export class RuntimeInvocationEventsApi {
 }
 
 export interface RuntimeArtifactsListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
 }
 
 export interface RuntimeArtifactsCreateParams {
@@ -95,8 +95,8 @@ export class RuntimeArtifactsApi {
 }
 
 export interface RuntimeInvocationsListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   conversationId?: string;
   chatTurnId?: string;
   agentSessionId?: string;

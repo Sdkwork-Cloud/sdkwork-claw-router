@@ -3,7 +3,7 @@ import type { ProviderJsonValue } from './provider-json-value';
 /** OpenAI-compatible role object. */
 export interface OpenAiRole {
   /** Unix timestamp in seconds when the role was created. */
-  created_at?: number;
+  created_at?: string;
   /** Human-readable role description. */
   description?: string;
   /** Role identifier. */

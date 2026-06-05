@@ -11,5 +11,5 @@ export interface AppCatalogResponse {
   /** Page size field on app catalog response. */
   pageSize: number;
   /** Total field on app catalog response. */
-  total: number;
+  total: string;
 }

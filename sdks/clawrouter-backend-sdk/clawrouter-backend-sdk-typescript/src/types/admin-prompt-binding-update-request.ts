@@ -7,7 +7,7 @@ export interface AdminPromptBindingUpdateRequest {
   /** Enabled field on admin prompt binding update request. */
   enabled?: boolean;
   /** Owner id field on admin prompt binding update request. */
-  ownerId?: number;
+  ownerId?: string;
   /** Owner type field on admin prompt binding update request. */
   ownerType?: string;
   /** Policy json field on admin prompt binding update request. */
@@ -15,5 +15,5 @@ export interface AdminPromptBindingUpdateRequest {
   /** Priority field on admin prompt binding update request. */
   priority?: number;
   /** Prompt version id field on admin prompt binding update request. */
-  promptVersionId?: number | null;
+  promptVersionId?: string | null;
 }

@@ -257,6 +257,35 @@ Do not use generic success components such as `OperationResponse`, `PageResult`,
 or untyped `Record<string, unknown>` DTOs. Use operation-specific request and
 response schemas.
 
+## Int64 JSON Boundary
+
+Rust and database code keep native numeric types for 64-bit values. Domain
+models, SQL bind values, and persistence schemas should continue to use `i64`,
+`u64` where explicitly unsigned, and SQL `BIGINT` according to the database
+contract. Do not convert Rust internals to strings just because the browser
+receives JSON.
+
+OpenAPI, generated TypeScript SDKs, and frontend service models expose every
+browser-facing `int64`/`long` value as `string`. OpenAPI schemas must use:
+
+```yaml
+type: string
+format: int64
+pattern: ^-?[0-9]+$
+x-sdkwork-int64-string: true
+x-sdkwork-rust-type: i64
+```
+
+Use `^[0-9]+$` for non-negative values and `^[1-9][0-9]*$` for positive IDs.
+Do not emit `type: integer, format: int64` in app/backend OpenAPI documents.
+The TypeScript SDK must not map `int64` IDs, snowflake IDs, versions, sequence
+numbers, byte counters, or monetary minor-unit values to `number`.
+
+Incoming browser requests submit those values as strings. The Rust HTTP adapter
+parses and validates the string at the API boundary, then passes native numeric
+values into domain logic and SQL. Frontend code must compare and forward these
+values as opaque strings unless a domain-specific display formatter is used.
+
 ## Error Contract
 
 Errors use RFC 7807 compatible `ProblemDetail` payloads and

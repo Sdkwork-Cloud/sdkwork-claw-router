@@ -6,11 +6,11 @@ import type { AgentDefinitionsListResult, AgentDefinitionsRetrieveResult } from 
 
 export interface AgentsAgentDefinitionsListParams {
   q?: string;
-  ownerUserId?: number;
+  ownerUserId?: string;
   status?: 'active' | 'disabled';
   visibility?: 'private' | 'organization' | 'public';
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
 }
 
 export class AgentsAgentDefinitionsApi {

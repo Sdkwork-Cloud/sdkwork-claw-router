@@ -6,7 +6,7 @@ export interface OpenAiConversationItem {
   /** Text or multimodal content parts for the item. */
   content?: OpenAiConversationContentPart[];
   /** Unix timestamp in seconds when the item was created. */
-  created_at?: number;
+  created_at?: string;
   /** Conversation item identifier. */
   id: string;
   /** Developer-defined metadata attached to the item. */

@@ -46,7 +46,11 @@ fn bootstrap_manifest_is_complete_for_first_slice_host_startup() {
         manifest.runtime.operation_contracts.len(),
         operation_contracts().len()
     );
-    assert_eq!(manifest.storage.tables.len(), 67);
+    assert_eq!(manifest.storage.tables.len(), 68);
+    assert!(manifest
+        .storage
+        .tables
+        .contains(&"commerce_product_spu_category"));
     assert_eq!(manifest.storage.business_repositories.len(), 14);
     assert_eq!(
         manifest.http.execution_metadata.len(),
@@ -495,7 +499,7 @@ fn bootstrap_preflight_exposes_host_startup_plan_after_validation() {
         preflight.runtime_operations,
         manifest.runtime.operation_contracts.len()
     );
-    assert_eq!(preflight.storage_tables, 67);
+    assert_eq!(preflight.storage_tables, 68);
     assert_eq!(preflight.storage_repositories, 15);
     assert_eq!(
         preflight.storage_migration_lock_table,

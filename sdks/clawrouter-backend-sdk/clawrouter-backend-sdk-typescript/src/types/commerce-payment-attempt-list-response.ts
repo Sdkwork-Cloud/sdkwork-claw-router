@@ -5,9 +5,9 @@ export interface CommercePaymentAttemptListResponse {
   /** Items field on commerce payment attempt list response. */
   items: CommercePaymentAttemptItem[];
   /** Page field on commerce payment attempt list response. */
-  page: number;
+  page: string;
   /** Page size field on commerce payment attempt list response. */
-  pageSize: number;
+  pageSize: string;
   /** Total field on commerce payment attempt list response. */
-  total: number;
+  total: string;
 }

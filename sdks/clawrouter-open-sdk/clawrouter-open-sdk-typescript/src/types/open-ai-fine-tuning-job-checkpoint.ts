@@ -3,7 +3,7 @@ import type { ProviderJsonValue } from './provider-json-value';
 /** OpenAI-compatible fine-tuning job checkpoint object. */
 export interface OpenAiFineTuningJobCheckpoint {
   /** Unix timestamp in seconds when the checkpoint was created. */
-  created_at: number;
+  created_at: string;
   /** Fine-tuned model checkpoint id. */
   fine_tuned_model_checkpoint?: string;
   /** Fine-tuning job identifier that owns this checkpoint. */

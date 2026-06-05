@@ -13,7 +13,7 @@ export interface AdminMcpServerRevisionItem {
   /** Created at field on admin mcp server revision item. */
   createdAt: string;
   /** Created by field on admin mcp server revision item. */
-  createdBy: number;
+  createdBy: string;
   /** Deprecated at field on admin mcp server revision item. */
   deprecatedAt?: string | null;
   /** Endpoint url field on admin mcp server revision item. */
@@ -21,11 +21,11 @@ export interface AdminMcpServerRevisionItem {
   /** Env schema field on admin mcp server revision item. */
   envSchema: Record<string, JsonValue>;
   /** Id field on admin mcp server revision item. */
-  id: number;
+  id: string;
   /** Lifecycle status field on admin mcp server revision item. */
   lifecycleStatus: string;
   /** Organization id field on admin mcp server revision item. */
-  organizationId: number;
+  organizationId: string;
   /** Published at field on admin mcp server revision item. */
   publishedAt?: string | null;
   /** Retry policy field on admin mcp server revision item. */
@@ -35,11 +35,11 @@ export interface AdminMcpServerRevisionItem {
   /** Secret ref field on admin mcp server revision item. */
   secretRef?: string | null;
   /** Server id field on admin mcp server revision item. */
-  serverId: number;
+  serverId: string;
   /** Status field on admin mcp server revision item. */
   status: string;
   /** Tenant id field on admin mcp server revision item. */
-  tenantId: number;
+  tenantId: string;
   /** Timeout ms field on admin mcp server revision item. */
   timeoutMs: number;
   /** Transport field on admin mcp server revision item. */

@@ -59,7 +59,7 @@ async function fetchModelCatalogResult(filters: ModelCatalogServiceFilters): Pro
     categories: normalizeQueryValues(filters.categories),
     groups: normalizeQueryValues(filters.groups),
     q: normalizeQueryString(filters.searchQuery),
-    limit: filters.limit,
+    limit: filters.limit === undefined ? undefined : String(filters.limit),
   });
   ensureSdkworkApiSuccess(result, 'Failed to fetch models');
   const data = readApiRecord(result);

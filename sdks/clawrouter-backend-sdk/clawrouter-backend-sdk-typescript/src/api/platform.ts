@@ -9,9 +9,9 @@ export interface PlatformAppsTemplatesListParams {
   publishStatus?: 'DRAFT' | 'PUBLISHED' | 'OFFLINE';
   templateType?: string;
   runtime?: string;
-  categoryId?: number;
-  page?: number;
-  pageSize?: number;
+  categoryId?: string;
+  page?: string;
+  pageSize?: string;
 }
 
 export class PlatformAppsTemplatesApi {
@@ -101,9 +101,9 @@ export interface PlatformAppsListParams {
   status?: 'ACTIVE' | 'INACTIVE';
   marketStatus?: 'DRAFT' | 'PUBLISHED' | 'OFFLINE';
   appType?: string;
-  categoryId?: number;
-  page?: number;
-  pageSize?: number;
+  categoryId?: string;
+  page?: string;
+  pageSize?: string;
 }
 
 export class PlatformAppsApi {

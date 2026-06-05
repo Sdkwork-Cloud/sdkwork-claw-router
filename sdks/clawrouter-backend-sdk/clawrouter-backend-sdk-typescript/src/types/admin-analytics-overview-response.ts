@@ -12,7 +12,7 @@ export interface AdminAnalyticsOverviewResponse {
   /** Insights field on admin analytics overview response. */
   insights: AdminAnalyticsInsight[];
   /** Limit field on admin analytics overview response. */
-  limit: number;
+  limit: string;
   /** Modality distribution field on admin analytics overview response. */
   modalityDistribution: AdminPieChartItem[];
   /** Model distribution field on admin analytics overview response. */

@@ -50,17 +50,26 @@ describe("@sdkwork/iam-permission-pc-react", () => {
             ]),
           },
         },
-        users: {
-          roles: {
-            create: vi.fn().mockResolvedValue({ id: "ur-1" }),
-            delete: vi.fn().mockResolvedValue(undefined),
-            list: vi.fn().mockResolvedValue([
-              {
-                roleId: "role-1",
-                userId: "user-1",
-              },
-            ]),
-          },
+        roleBindings: {
+          create: vi.fn().mockResolvedValue({
+            id: "role-binding-1",
+            principalId: "user-1",
+            principalKind: "user",
+            roleId: "role-1",
+            scopeId: "org-1",
+            scopeKind: "organization",
+          }),
+          delete: vi.fn().mockResolvedValue(undefined),
+          list: vi.fn().mockResolvedValue([
+            {
+              id: "role-binding-1",
+              principalId: "user-1",
+              principalKind: "user",
+              roleId: "role-1",
+              scopeId: "org-1",
+              scopeKind: "organization",
+            },
+          ]),
         },
       },
     };
@@ -83,16 +92,33 @@ describe("@sdkwork/iam-permission-pc-react", () => {
     await controller.listPermissions();
     await controller.listPolicies();
     await controller.listRolePermissions("role-1");
-    await controller.listUserRoles("user-1");
+    await controller.listRoleBindings({ principalKind: "user", principalId: "user-1", scopeKind: "organization", scopeId: "org-1" });
     await controller.assignRolePermission("role-1", "permission-1");
     await controller.revokeRolePermission("role-1", "permission-1");
-    await controller.assignUserRole("user-1", "role-1");
-    await controller.revokeUserRole("user-1", "role-1");
+    await controller.assignRoleBinding({
+      principalId: "user-1",
+      principalKind: "user",
+      roleId: "role-1",
+      scopeId: "org-1",
+      scopeKind: "organization",
+    });
 
     expect(controller.can("iam.users.read")).toBe(true);
     expect(controller.can({ action: "read", resource: "iam.audit" })).toBe(true);
     expect(controller.can({ action: "delete", resource: "iam.users" })).toBe(false);
+    await controller.revokeRoleBinding("role-binding-1");
+
     expect(service.iam.roles.permissions.create).toHaveBeenCalledWith("role-1", "permission-1");
-    expect(service.iam.users.roles.create).toHaveBeenCalledWith("user-1", "role-1");
+    expect(service.iam.roleBindings.create).toHaveBeenCalledWith({
+      principalId: "user-1",
+      principalKind: "user",
+      roleId: "role-1",
+      scopeId: "org-1",
+      scopeKind: "organization",
+    });
+    expect(service.iam.roleBindings.delete).toHaveBeenCalledWith("role-binding-1");
+    expect(Object.prototype.hasOwnProperty.call(controller, "assignUserRole")).toBe(false);
+    expect(Object.prototype.hasOwnProperty.call(controller, "listUserRoles")).toBe(false);
+    expect(Object.prototype.hasOwnProperty.call(controller.getState(), "userRoles")).toBe(false);
   });
 });

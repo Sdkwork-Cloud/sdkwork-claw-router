@@ -8,7 +8,7 @@ export function createUserInputFromForm(formData: FormData): UserCreateInput {
   });
 }
 
-export function createApiKeyInputFromForm(formData: FormData, userId: number): ApiKeyCreateInput {
+export function createApiKeyInputFromForm(formData: FormData, userId: string): ApiKeyCreateInput {
   return {
     userId,
     name: optionalFormText(formData, 'keyName') ?? 'Default API Key',

@@ -461,6 +461,9 @@ ID 策略是跨语言、跨数据库、跨区域同步和互通的基础设施�
 规则：
 
 - ID 生成器 MUST 明确节点 ID、时钟回拨、序列溢出、重启恢复和监控策略。
+- 运行时业务数据 INSERT 的 `BIGINT id` MUST 由统一 ID 生成器显式生成并绑定写入；Rust 实现 MUST 优先复用 `sdkwork-appbase/packages/native-rust/foundation/sdkwork-id-rust` 中的 `sdkwork_id::SnowflakeIdGenerator`，其他语言实现应在 appbase 对应包中提供等价能力。
+- 运行时业务数据 INSERT SHOULD NOT 依赖 `BIGSERIAL`、`AUTOINCREMENT`、单条数据库 `RETURNING id`、`MAX(id)+1` 或本地哈希派生 ID 作为主键分配策略；历史表、临时测试表、外部导入落地表和已声明迁移中的兼容表除外。
+- 官方安装种子、内置目录、标准配置和需要被 `target_id` 稳定引用的数据 MUST 使用保留稳定 ID 或稳定 UUID，不得改用运行时雪花 ID，否则会破坏安装幂等、引用修复和跨版本升级。
 - 雪花 ID 或时间有序 ID 在多区域部署时 MUST 处理 clock rollback，不能假设机器时钟永远单调。
 - 对外公开 ID SHOULD 使用 `uuid`、ULID、KSUID 或业务单号，不直接暴露连续自增 ID。
 - 业务单号不能只由时间戳组成，必须考虑并发、重试、预测风险和人工录入校验。
@@ -552,6 +555,8 @@ SHOULD NOT：
 6. 表达工作空间、项目、应用、文档页、PPT 模板等设计时资产的表归入 `studio_`，不要使用 `app_`、`project_` 作为全局前缀。
 7. 表达二进制/媒体资源、媒体发布记录、文件分片、图片、视频、音频、数字人的表归入 `media_`。
 8. 如果一个表跨多个模块，优先使用唯一写入方或事实来源模块；其它模块通过视图、投影表、事件或 API 读取。
+
+AI 网关中的分组边界 MUST 明确拆开：`iam_gateway_api_key.channel_group_id` 是 API Key 默认业务渠道分组，`iam_gateway_api_key_channel_group` 只表达单个 API Key 可以路由到多个 `ai_channel_group` 的授权/路由绑定；上游供应商账号池和账号可用性 MUST 由 `ai_channel_group_member`、`ai_channel`、`ai_channel_credential` 或 `integration_provider_account` 等账号/渠道事实表表达，不得把供应商账号 group 写入 API Key 分组绑定表。
 
 ### 7.1.2 前缀判定模型
 
@@ -1644,6 +1649,10 @@ append-only 表允许补充处理状态，但 MUST NOT 覆盖事实字段，例�
 | `bytes` | base64 字符串 | JSON 兼容 |
 | `enum_int32` | number + 文档映射 | 内部紧凑 |
 | `enum_string` | 大写蛇形字符串 | 对外可读 |
+
+`int64` 的字符串规则只适用于 HTTP JSON、浏览器、TypeScript SDK、GraphQL JSON gateway 等会经过 JavaScript number 的边界。数据库列、Rust 领域模型、SQL bind 参数、Java/Kotlin 领域模型、Go/C# 后端模型仍必须保持原生数值类型，例如 SQL `BIGINT`、Rust `i64`、Java `long`、Go `int64`、C# `long`。不得为了前端 JSON 安全而把 Rust 内部 ID、版本、序列号、计数器或金额最小单位改成字符串。
+
+浏览器提交 `int64` 时也必须提交字符串；服务端 HTTP adapter 在请求边界负责解析、校验正负号和范围，再把原生数值传给领域逻辑和数据库。OpenAPI 中面向浏览器的 `int64` 必须声明为 `type: string`、`format: int64`、数字 pattern，并用 `x-sdkwork-int64-string: true` 和实现侧原始类型扩展标明边界转换。
 
 ### 20.3 版本和并发
 

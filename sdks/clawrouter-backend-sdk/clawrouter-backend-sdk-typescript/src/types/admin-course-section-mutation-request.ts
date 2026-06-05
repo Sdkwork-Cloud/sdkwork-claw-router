@@ -9,7 +9,7 @@ export interface AdminCourseSectionMutationRequest {
   /** Section no field on admin course section mutation request. */
   sectionNo?: string;
   /** Sort order field on admin course section mutation request. */
-  sortOrder?: number;
+  sortOrder?: string;
   /** Status field on admin course section mutation request. */
   status?: string;
   /** Title field on admin course section mutation request. */

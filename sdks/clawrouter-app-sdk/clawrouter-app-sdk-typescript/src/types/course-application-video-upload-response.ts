@@ -9,7 +9,7 @@ export interface CourseApplicationVideoUploadResponse {
   /** Sha 256 field on course application video upload response. */
   sha256: string;
   /** Size bytes field on course application video upload response. */
-  sizeBytes: number;
+  sizeBytes: string;
   /** Uploaded at field on course application video upload response. */
   uploadedAt: string;
   /** Video field on course application video upload response. */

@@ -7,7 +7,7 @@ export interface ForumAuthor {
   /** Bio field on forum author. */
   bio?: string;
   /** Id field on forum author. */
-  id: number;
+  id: string;
   /** Is following field on forum author. */
   isFollowing: boolean;
   /** Name field on forum author. */

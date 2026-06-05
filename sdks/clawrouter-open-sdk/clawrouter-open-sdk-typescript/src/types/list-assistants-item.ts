@@ -6,9 +6,9 @@ export interface ListAssistantsItem {
   /** Message or item content returned by the upstream. */
   content?: ProviderJsonValue;
   /** Unix timestamp in seconds when the object was created. */
-  created?: number;
+  created?: string;
   /** Unix timestamp in seconds when the object was created. */
-  created_at?: number;
+  created_at?: string;
   /** Resource identifier returned by the selected upstream. */
   id?: string;
   /** Developer-defined or provider-returned metadata. */

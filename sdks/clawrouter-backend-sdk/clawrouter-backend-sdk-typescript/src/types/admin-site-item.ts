@@ -5,7 +5,7 @@ export interface AdminSiteItem {
   /** Base url field on admin site item. */
   baseUrl: string;
   /** Consecutive error count field on admin site item. */
-  consecutiveErrorCount?: number;
+  consecutiveErrorCount?: string;
   /** Description field on admin site item. */
   description?: string | null;
   /** Display name field on admin site item. */
@@ -23,7 +23,7 @@ export interface AdminSiteItem {
   /** Last checked at field on admin site item. */
   lastCheckedAt?: string | null;
   /** Last latency ms field on admin site item. */
-  lastLatencyMs?: number | null;
+  lastLatencyMs?: string | null;
   /** Last sync at field on admin site item. */
   lastSyncAt?: string | null;
   /** Logo field on admin site item. */
@@ -39,7 +39,7 @@ export interface AdminSiteItem {
   /** Site type field on admin site item. */
   siteType: 'relay';
   /** Sort order field on admin site item. */
-  sortOrder?: number;
+  sortOrder?: string;
   /** Status field on admin site item. */
   status: 'active' | 'disabled';
   /** Vendor codes field on admin site item. */

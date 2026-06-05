@@ -10,6 +10,7 @@ use tower::ServiceExt;
 
 #[tokio::test]
 async fn app_api_exposes_standard_chat_and_agent_session_routes_with_sqlite_store() {
+    let _runtime_guard = AppRuntimeWorkerEnvGuard::disabled_for_test();
     let catalog = seeded_sqlite_catalog().await.unwrap();
     let router = sdkwork_claw_app_api::router_with_database_config_api_key_trusted_subject_and_app_session_config(
         catalog.database_config().unwrap(),
@@ -609,4 +610,47 @@ fn current_unix_seconds() -> i64 {
         .duration_since(std::time::UNIX_EPOCH)
         .map(|duration| duration.as_secs() as i64)
         .unwrap_or(1_800_000_000)
+}
+
+struct EnvOverride {
+    key: &'static str,
+    previous: Option<String>,
+}
+
+impl EnvOverride {
+    fn set(key: &'static str, value: &str) -> Self {
+        let previous = std::env::var(key).ok();
+        std::env::set_var(key, value);
+        Self { key, previous }
+    }
+}
+
+impl Drop for EnvOverride {
+    fn drop(&mut self) {
+        if let Some(value) = self.previous.as_deref() {
+            std::env::set_var(self.key, value);
+        } else {
+            std::env::remove_var(self.key);
+        }
+    }
+}
+
+struct AppRuntimeWorkerEnvGuard {
+    _model_ranking_enabled: EnvOverride,
+    _catalog_refresh_interval: EnvOverride,
+}
+
+impl AppRuntimeWorkerEnvGuard {
+    fn disabled_for_test() -> Self {
+        Self {
+            _model_ranking_enabled: EnvOverride::set(
+                "SDKWORK_CLAW_MODEL_RANKING_REFRESH_WORKER_ENABLED",
+                "false",
+            ),
+            _catalog_refresh_interval: EnvOverride::set(
+                "SDKWORK_CLAW_PROVIDER_CATALOG_REFRESH_INTERVAL_MILLIS",
+                "3600000",
+            ),
+        }
+    }
 }

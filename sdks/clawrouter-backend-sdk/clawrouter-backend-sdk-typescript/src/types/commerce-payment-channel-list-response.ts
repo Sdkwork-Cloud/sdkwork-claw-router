@@ -5,9 +5,9 @@ export interface CommercePaymentChannelListResponse {
   /** Items field on commerce payment channel list response. */
   items: CommercePaymentChannelItem[];
   /** Page field on commerce payment channel list response. */
-  page: number;
+  page: string;
   /** Page size field on commerce payment channel list response. */
-  pageSize: number;
+  pageSize: string;
   /** Total field on commerce payment channel list response. */
-  total: number;
+  total: string;
 }

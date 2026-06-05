@@ -38,10 +38,11 @@ export const USER_CENTER_DEFAULT_TABLE_PREFIX = "iam_";
 export const USER_CENTER_STANDARD_ENTITY_NAMES = [
   "IamUser",
   "IamTenant",
-  "IamAccount",
   "IamMembership",
-  "IamOrganizationMember",
-  "IamMemberRelation",
+  "IamOrganizationMembership",
+  "IamDepartmentAssignment",
+  "IamPositionAssignment",
+  "IamRoleBinding",
 ] as const satisfies readonly UserCenterStandardEntityName[];
 export const USER_CENTER_DEFAULT_ROUTES: UserCenterRoutes = {
   authBasePath: "/auth",
@@ -74,10 +75,11 @@ export const USER_CENTER_DEFAULT_SECRET_RESOLUTION_TTL_MS = 300_000;
 export const USER_CENTER_DEFAULT_HANDSHAKE_FRESHNESS_WINDOW_MS = 30_000;
 
 const DEFAULT_ENTITY_TABLE_SUFFIX: Record<UserCenterStandardEntityName, string> = {
-  IamAccount: "account",
-  IamMemberRelation: "member_relation",
+  IamDepartmentAssignment: "department_assignment",
   IamMembership: "membership",
-  IamOrganizationMember: "organization_member",
+  IamOrganizationMembership: "organization_membership",
+  IamPositionAssignment: "position_assignment",
+  IamRoleBinding: "role_binding",
   IamTenant: "tenant",
   IamUser: "user",
 };

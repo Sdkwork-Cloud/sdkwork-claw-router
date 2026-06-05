@@ -90,16 +90,6 @@ impl IamAppContext {
 
 impl IamShardingContext {
     pub fn from_app_context(context: &IamAppContext) -> Self {
-        if !context.tenant_id.trim().is_empty() {
-            return Self {
-                sharding_key: context.tenant_id.clone(),
-                sharding_strategy: IamShardingStrategy::Tenant,
-                database_key: None,
-                schema: None,
-                table_partition: None,
-            };
-        }
-
         if let Some(organization_id) = context.organization_id.as_ref() {
             if !organization_id.trim().is_empty() {
                 return Self {
@@ -110,6 +100,16 @@ impl IamShardingContext {
                     table_partition: None,
                 };
             }
+        }
+
+        if !context.tenant_id.trim().is_empty() {
+            return Self {
+                sharding_key: context.tenant_id.clone(),
+                sharding_strategy: IamShardingStrategy::Tenant,
+                database_key: None,
+                schema: None,
+                table_partition: None,
+            };
         }
 
         if !context.user_id.trim().is_empty() {

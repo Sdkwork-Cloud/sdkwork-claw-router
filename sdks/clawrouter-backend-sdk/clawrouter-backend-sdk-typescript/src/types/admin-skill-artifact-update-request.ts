@@ -7,7 +7,7 @@ export interface AdminSkillArtifactUpdateRequest {
   /** Artifact ref field on admin skill artifact update request. */
   artifactRef?: string | null;
   /** Artifact size bytes field on admin skill artifact update request. */
-  artifactSizeBytes?: number;
+  artifactSizeBytes?: string;
   /** Artifact type field on admin skill artifact update request. */
   artifactType?: number;
   /** Checksum hash field on admin skill artifact update request. */

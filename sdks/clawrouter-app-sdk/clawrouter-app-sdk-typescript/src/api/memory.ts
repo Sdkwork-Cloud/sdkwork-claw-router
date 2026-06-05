@@ -5,8 +5,8 @@ import type { EntriesCreateResult, EntriesListResult, EntriesRetrieveResult, Mem
 
 
 export interface MemorySpacesListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
 }
 
 export interface MemorySpacesCreateParams {
@@ -48,8 +48,8 @@ export class MemorySpacesApi {
 }
 
 export interface MemoryEntriesListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
 }
 
 export interface MemoryEntriesCreateParams {

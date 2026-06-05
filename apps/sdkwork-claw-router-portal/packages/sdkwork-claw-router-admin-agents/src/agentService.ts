@@ -3,13 +3,15 @@ import {
   getClawRouterBackendSdkClient,
   isRecord,
   optionalBoundedPositiveInteger,
-  optionalPositiveInteger,
+  optionalBoundedPositiveInt64String,
+  optionalPositiveInt64String,
   optionalText,
   readApiData,
   readRequiredApiItem,
   readRequiredApiItems,
   readRequiredNonNegativeNumber,
   readRequiredNumber,
+  readRequiredPositiveInt64String,
   readRequiredString,
   readString,
   readMediaResource,
@@ -43,7 +45,7 @@ export interface AdminAgentVersion {
 
 export interface AdminAgentItem {
   id: string;
-  ownerUserId: number;
+  ownerUserId: string;
   code: string;
   name: string;
   description: string;
@@ -59,7 +61,7 @@ export interface AdminAgentItem {
 
 export interface AdminAgentListQuery {
   q?: string;
-  ownerUserId?: number;
+  ownerUserId?: string;
   status?: AdminAgentItem['status'];
   visibility?: AdminAgentItem['visibility'];
   page?: number;
@@ -101,7 +103,7 @@ function normalizeListQuery(query: AdminAgentListQuery): BackendAgentsListParams
   if (q) {
     normalized.q = q;
   }
-  const ownerUserId = optionalPositiveInteger(query.ownerUserId, 'ownerUserId');
+  const ownerUserId = optionalPositiveInt64String(query.ownerUserId, 'ownerUserId');
   if (ownerUserId !== undefined) {
     normalized.ownerUserId = ownerUserId;
   }
@@ -111,11 +113,11 @@ function normalizeListQuery(query: AdminAgentListQuery): BackendAgentsListParams
   if (query.visibility !== undefined) {
     normalized.visibility = requiredAgentVisibility(query.visibility);
   }
-  const page = optionalPositiveInteger(query.page, 'page');
+  const page = optionalPositiveInt64String(query.page, 'page');
   if (page !== undefined) {
     normalized.page = page;
   }
-  const pageSize = optionalBoundedPositiveInteger(query.pageSize, 'pageSize', 100);
+  const pageSize = optionalBoundedPositiveInt64String(query.pageSize, 'pageSize', 100);
   if (pageSize !== undefined) {
     normalized.pageSize = pageSize;
   }
@@ -129,7 +131,7 @@ function normalizeAdminAgentItem(value: unknown): AdminAgentItem {
 
   return {
     id: readRequiredString(item, 'id', 'Agent id is required'),
-    ownerUserId: readRequiredNumber(item, 'ownerUserId', 'Agent owner user id is required'),
+    ownerUserId: readRequiredPositiveInt64String(item, 'ownerUserId', 'Agent owner user id is required'),
     code: readRequiredString(item, 'code', 'Agent code is required'),
     name: readRequiredString(item, 'name', 'Agent name is required'),
     description: readString(item, 'description'),

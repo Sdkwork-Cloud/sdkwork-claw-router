@@ -181,6 +181,7 @@ function normalizeModelOption(value: unknown): PlaygroundModelOption {
   const maxOutputTokens = readOptionalNumber(item, 'maxOutputTokens');
   const apiFormat = readNullableString(item, 'apiFormat') ?? undefined;
   const officialReferencePrices = readReferencePrices(item, 'officialReferencePrices');
+  const officialReferenceUnitPrice = readPositiveDecimal(readNullableString(item, 'officialReferenceUnitPrice'));
   const versionLabel = deriveVersionLabel(displayName, model, apiFormat, item);
 
   return {
@@ -203,7 +204,7 @@ function normalizeModelOption(value: unknown): PlaygroundModelOption {
     contextTokens,
     maxOutputTokens,
     officialReferencePrices,
-    priceAvailability: readPriceAvailability(item, officialReferencePrices),
+    priceAvailability: readPriceAvailability(item, officialReferenceUnitPrice, officialReferencePrices),
     providerCodes: readProviderCodes(item),
     supportsStreaming: readBoolean(item, 'supportsStreaming', false),
     supportsTools: readBoolean(item, 'supportsTools', false),
@@ -246,9 +247,10 @@ function readReferencePrices(record: ApiRecord, key: string): PlaygroundModelRef
 
 function readPriceAvailability(
   record: ApiRecord,
+  officialReferenceUnitPrice: string | null,
   officialReferencePrices: readonly PlaygroundModelReferencePrice[],
 ): PlaygroundModelPriceAvailability {
-  const fallbackStatus = officialReferencePrices.length > 0
+  const fallbackStatus = officialReferenceUnitPrice !== null || officialReferencePrices.length > 0
     ? 'reference'
     : 'unavailable';
   const value = record.priceAvailability;

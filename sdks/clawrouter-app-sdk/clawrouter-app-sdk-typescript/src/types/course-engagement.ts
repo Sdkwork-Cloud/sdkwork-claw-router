@@ -1,15 +1,15 @@
 /** Course engagement schema exposed by Claw Router. */
 export interface CourseEngagement {
   /** Discussions field on course engagement. */
-  discussions: number;
+  discussions: string;
   /** Likes field on course engagement. */
-  likes: number;
+  likes: string;
   /** Saves field on course engagement. */
-  saves: number;
+  saves: string;
   /** Shares field on course engagement. */
-  shares: number;
+  shares: string;
   /** Students count field on course engagement. */
-  studentsCount: number;
+  studentsCount: string;
   /** Views field on course engagement. */
-  views: number;
+  views: string;
 }

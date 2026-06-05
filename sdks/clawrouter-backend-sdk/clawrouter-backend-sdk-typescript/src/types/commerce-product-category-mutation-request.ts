@@ -7,7 +7,7 @@ export interface CommerceProductCategoryMutationRequest {
   /** Parent id field on commerce product category mutation request. */
   parentId?: string | null;
   /** Sort order field on commerce product category mutation request. */
-  sortOrder?: number;
+  sortOrder?: string;
   /** Status field on commerce product category mutation request. */
   status: 'active' | 'inactive' | 'archived';
 }

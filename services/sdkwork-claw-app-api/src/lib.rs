@@ -31,13 +31,13 @@ use sdkwork_claw_product::infrastructure::sql::postgres::{
     PostgresAdminAuthSettingsStore, PostgresAdminOpenPlatformStore, PostgresAppAgentRegistryStore,
     PostgresAppAgentRunStore, PostgresAppAgentSessionStore, PostgresAppAuthStore,
     PostgresAppChatStore, PostgresAppGatewayTracesReadStore, PostgresAppGenerationHistoryReadStore,
-    PostgresAppMemoryStore, PostgresAppNotificationStore, PostgresAppProvidersReadStore,
-    PostgresAppRoutingChannelCommandStore, PostgresAppRoutingReadStore,
-    PostgresAppRoutingStrategyStore, PostgresAppRuntimeStore, PostgresAppSessionEventStore,
-    PostgresAppSkillsReadStore, PostgresAppStoreReadStore, PostgresAppUserProfileReadStore,
-    PostgresCatalogLoadError, PostgresCourseStore, PostgresDashboardOverviewReadStore,
-    PostgresForumStore, PostgresGatewayApiKeyCommandStore, PostgresModelRankingRefreshStore,
-    PostgresModelRankingsReadStore, PostgresPaymentCallbackStore,
+    PostgresAppIamDirectoryReadStore, PostgresAppMemoryStore, PostgresAppNotificationStore,
+    PostgresAppProvidersReadStore, PostgresAppRoutingChannelCommandStore,
+    PostgresAppRoutingReadStore, PostgresAppRoutingStrategyStore, PostgresAppRuntimeStore,
+    PostgresAppSessionEventStore, PostgresAppSkillsReadStore, PostgresAppStoreReadStore,
+    PostgresAppUserProfileReadStore, PostgresCatalogLoadError, PostgresCourseStore,
+    PostgresDashboardOverviewReadStore, PostgresForumStore, PostgresGatewayApiKeyCommandStore,
+    PostgresModelRankingRefreshStore, PostgresModelRankingsReadStore, PostgresPaymentCallbackStore,
     PostgresPaymentIntentRuntimeStore, PostgresPricingCatalogLoader, PostgresSettingsStore,
     PostgresSettlementsDashboardReadStore, PostgresSiteSettingsStore, PostgresUsageLogsReadStore,
     PostgresVerificationDeliveryConfigStore, PostgresVerificationDeliveryQueueSender,
@@ -46,15 +46,15 @@ use sdkwork_claw_product::infrastructure::sql::sqlite::{
     SqlCatalogLoadError, SqliteAdminAuthSettingsStore, SqliteAdminOpenPlatformStore,
     SqliteAppAgentRegistryStore, SqliteAppAgentRunStore, SqliteAppAgentSessionStore,
     SqliteAppAuthStore, SqliteAppChatStore, SqliteAppGatewayTracesReadStore,
-    SqliteAppGenerationHistoryReadStore, SqliteAppMemoryStore, SqliteAppNotificationStore,
-    SqliteAppProvidersReadStore, SqliteAppRoutingChannelCommandStore, SqliteAppRoutingReadStore,
-    SqliteAppRoutingStrategyStore, SqliteAppRuntimeStore, SqliteAppSessionEventStore,
-    SqliteAppSkillsReadStore, SqliteAppStoreReadStore, SqliteAppUserProfileReadStore,
-    SqliteCourseStore, SqliteDashboardOverviewReadStore, SqliteForumStore,
-    SqliteGatewayApiKeyCommandStore, SqliteModelRankingRefreshStore, SqliteModelRankingsReadStore,
-    SqlitePaymentCallbackStore, SqlitePaymentIntentRuntimeStore, SqlitePricingCatalogLoader,
-    SqliteSettingsStore, SqliteSettlementsDashboardReadStore, SqliteSiteSettingsStore,
-    SqliteUsageLogsReadStore, SqliteVerificationDeliveryConfigStore,
+    SqliteAppGenerationHistoryReadStore, SqliteAppIamDirectoryReadStore, SqliteAppMemoryStore,
+    SqliteAppNotificationStore, SqliteAppProvidersReadStore, SqliteAppRoutingChannelCommandStore,
+    SqliteAppRoutingReadStore, SqliteAppRoutingStrategyStore, SqliteAppRuntimeStore,
+    SqliteAppSessionEventStore, SqliteAppSkillsReadStore, SqliteAppStoreReadStore,
+    SqliteAppUserProfileReadStore, SqliteCourseStore, SqliteDashboardOverviewReadStore,
+    SqliteForumStore, SqliteGatewayApiKeyCommandStore, SqliteModelRankingRefreshStore,
+    SqliteModelRankingsReadStore, SqlitePaymentCallbackStore, SqlitePaymentIntentRuntimeStore,
+    SqlitePricingCatalogLoader, SqliteSettingsStore, SqliteSettlementsDashboardReadStore,
+    SqliteSiteSettingsStore, SqliteUsageLogsReadStore, SqliteVerificationDeliveryConfigStore,
     SqliteVerificationDeliveryQueueSender,
 };
 use sdkwork_claw_product::infrastructure::{
@@ -65,11 +65,11 @@ use sdkwork_claw_product::ports::PricingCatalog;
 use sdkwork_claw_product::ports::{
     AdminAuthSettingsStore, AdminOpenPlatformStore, AppAgentRegistryStore, AppAgentRunStore,
     AppAgentSessionStore, AppAuthStore, AppChatStore, AppGatewayTracesReadStore,
-    AppGenerationHistoryReadStore, AppMemoryStore, AppNotificationStore, AppProvidersReadStore,
-    AppRoutingChannelCommandStore, AppRoutingReadStore, AppRoutingStrategyStore, AppRuntimeStore,
-    AppSessionEventStore, AppSkillsCommandStore, AppSkillsReadStore, AppStoreReadStore,
-    AppUserProfileReadStore, CourseApplicationCommandStore, CourseReadStore,
-    DashboardOverviewReadStore, ForumCommentCommandStore, ForumCommentReadStore,
+    AppGenerationHistoryReadStore, AppIamDirectoryReadStore, AppMemoryStore, AppNotificationStore,
+    AppProvidersReadStore, AppRoutingChannelCommandStore, AppRoutingReadStore,
+    AppRoutingStrategyStore, AppRuntimeStore, AppSessionEventStore, AppSkillsCommandStore,
+    AppSkillsReadStore, AppStoreReadStore, AppUserProfileReadStore, CourseApplicationCommandStore,
+    CourseReadStore, DashboardOverviewReadStore, ForumCommentCommandStore, ForumCommentReadStore,
     ForumFeedCommandStore, ForumFeedReadStore, GatewayApiKeyCommandStore,
     GatewayApiKeyManagementReadStore, ModelRankingRefreshOutcome, ModelRankingRefreshRunStatus,
     ModelRankingRefreshStore, ModelRankingsCacheInvalidation, ModelRankingsReadModelStore,
@@ -143,6 +143,7 @@ type PaymentIntentAggregateRuntimeStore = Arc<dyn PaymentAggregateRuntimeStore>;
 type SettlementsDashboardStore = Arc<dyn SettlementsDashboardReadStore + Send + Sync>;
 type SettingsRuntimeStore = Arc<dyn SettingsStore + Send + Sync>;
 type UsageLogsStore = Arc<dyn UsageLogsReadStore + Send + Sync>;
+type AppIamDirectoryStore = Arc<dyn AppIamDirectoryReadStore + Send + Sync>;
 type ProviderHealthProbeRuntime = Arc<dyn ProviderHealthProbe + Send + Sync>;
 type ModelRankingRefreshRuntimeStore = Arc<dyn ModelRankingRefreshStore + Send + Sync>;
 type ModelRankingsRuntimeStore = Arc<dyn ModelRankingsReadModelStore + Send + Sync>;
@@ -205,6 +206,7 @@ pub fn router() -> Router {
     )
     .merge(sdkwork_claw_product::api::app_site_settings_router())
     .merge(sdkwork_claw_product::api::app_user_profile_router())
+    .merge(sdkwork_claw_product::api::app_iam_directory_router())
     .merge(sdkwork_commerce_membership_sqlx::app_membership_router())
     .merge(sdkwork_claw_product::api::app_payment_callback_router())
     .merge(sdkwork_claw_product::api::payment_aggregate_router())
@@ -314,6 +316,7 @@ pub fn router_with_api_key_management_read_store_command_store_and_api_key_secur
         None,
         None,
         None,
+        None,
         RequestLimitsConfig::default(),
     ))
 }
@@ -357,6 +360,7 @@ fn router_with_app_session_event_store_auth_settings_store_and_config_inner(
     )
     .merge(sdkwork_claw_product::api::app_site_settings_router())
     .merge(sdkwork_claw_product::api::app_user_profile_router())
+    .merge(sdkwork_claw_product::api::app_iam_directory_router())
     .merge(sdkwork_commerce_membership_sqlx::app_membership_router())
     .merge(sdkwork_claw_product::api::app_payment_callback_router())
     .merge(sdkwork_claw_product::api::app_dashboard_overview_router())
@@ -408,6 +412,7 @@ where
     )
     .merge(sdkwork_claw_product::api::app_site_settings_router())
     .merge(sdkwork_claw_product::api::app_user_profile_router())
+    .merge(sdkwork_claw_product::api::app_iam_directory_router())
     .merge(sdkwork_commerce_membership_sqlx::app_membership_router())
     .merge(sdkwork_claw_product::api::app_payment_callback_router())
     .merge(sdkwork_claw_product::api::app_dashboard_overview_router())
@@ -462,6 +467,7 @@ fn router_with_api_key_management_store_and_database_status(
     appbase_billing_history_router: Option<Router>,
     appbase_invoice_router: Option<Router>,
     app_user_profile_read_store: Option<AppUserProfileStore>,
+    app_iam_directory_read_store: Option<AppIamDirectoryStore>,
     membership_store: Option<AppMembershipRuntimeStore>,
     payment_callback_store: Option<PaymentCallbackRuntimeStore>,
     payment_intent_runtime_store: Option<PaymentIntentAggregateRuntimeStore>,
@@ -575,6 +581,17 @@ fn router_with_api_key_management_store_and_database_status(
             ),
         ),
         None => router.merge(sdkwork_claw_product::api::app_user_profile_router()),
+    };
+    router = match app_iam_directory_read_store {
+        Some(read_store) => router.merge(
+            sdkwork_claw_product::api::app_iam_directory_router_with_read_store(read_store).layer(
+                from_fn_with_state(
+                    subject_boundary_config.clone(),
+                    sdkwork_claw_http::app_request_subject_boundary,
+                ),
+            ),
+        ),
+        None => router.merge(sdkwork_claw_product::api::app_iam_directory_router()),
     };
     if let Some(appbase_router) = appbase_commerce_router {
         router = router.merge(appbase_router.layer(from_fn_with_state(
@@ -1171,6 +1188,7 @@ pub async fn router_with_sqlite_product_catalog(
                 &app_session_config,
             ));
     let app_user_profile_read_store = Arc::new(SqliteAppUserProfileReadStore::new(pool.clone()));
+    let app_iam_directory_read_store = Arc::new(SqliteAppIamDirectoryReadStore::new(pool.clone()));
     let membership_store = Arc::new(SqliteCommerceMembershipStore::new(pool.clone()));
     let payment_callback_store = Arc::new(SqlitePaymentCallbackStore::new(pool.clone()));
     let payment_intent_runtime_store = Arc::new(SqlitePaymentIntentRuntimeStore::new(pool.clone()));
@@ -1248,6 +1266,7 @@ pub async fn router_with_sqlite_product_catalog(
         Some(appbase_billing_history_router),
         Some(appbase_invoice_router),
         Some(app_user_profile_read_store),
+        Some(app_iam_directory_read_store),
         Some(membership_store),
         Some(payment_callback_store),
         Some(payment_intent_runtime_store),
@@ -1311,6 +1330,8 @@ pub async fn router_with_postgres_product_catalog(
                 &app_session_config,
             ));
     let app_user_profile_read_store = Arc::new(PostgresAppUserProfileReadStore::new(pool.clone()));
+    let app_iam_directory_read_store =
+        Arc::new(PostgresAppIamDirectoryReadStore::new(pool.clone()));
     let membership_store = Arc::new(PostgresCommerceMembershipStore::new(pool.clone()));
     let payment_callback_store = Arc::new(PostgresPaymentCallbackStore::new(pool.clone()));
     let payment_intent_runtime_store =
@@ -1389,6 +1410,7 @@ pub async fn router_with_postgres_product_catalog(
         Some(appbase_billing_history_router),
         Some(appbase_invoice_router),
         Some(app_user_profile_read_store),
+        Some(app_iam_directory_read_store),
         Some(membership_store),
         Some(payment_callback_store),
         Some(payment_intent_runtime_store),
@@ -1464,6 +1486,7 @@ pub async fn router_with_sqlite_shared_runtime(
         &app_session_config,
     ));
     let app_user_profile_read_store = Arc::new(SqliteAppUserProfileReadStore::new(pool.clone()));
+    let app_iam_directory_read_store = Arc::new(SqliteAppIamDirectoryReadStore::new(pool.clone()));
     let membership_store = Arc::new(SqliteCommerceMembershipStore::new(pool.clone()));
     let payment_callback_store = Arc::new(SqlitePaymentCallbackStore::new(pool.clone()));
     let payment_intent_runtime_store = Arc::new(SqlitePaymentIntentRuntimeStore::new(pool.clone()));
@@ -1553,6 +1576,7 @@ pub async fn router_with_sqlite_shared_runtime(
         Some(appbase_billing_history_router),
         Some(appbase_invoice_router),
         Some(app_user_profile_read_store),
+        Some(app_iam_directory_read_store),
         Some(membership_store),
         Some(payment_callback_store),
         Some(payment_intent_runtime_store),
@@ -1628,6 +1652,8 @@ pub async fn router_with_postgres_shared_runtime(
         &app_session_config,
     ));
     let app_user_profile_read_store = Arc::new(PostgresAppUserProfileReadStore::new(pool.clone()));
+    let app_iam_directory_read_store =
+        Arc::new(PostgresAppIamDirectoryReadStore::new(pool.clone()));
     let membership_store = Arc::new(PostgresCommerceMembershipStore::new(pool.clone()));
     let payment_callback_store = Arc::new(PostgresPaymentCallbackStore::new(pool.clone()));
     let payment_intent_runtime_store =
@@ -1718,6 +1744,7 @@ pub async fn router_with_postgres_shared_runtime(
         Some(appbase_billing_history_router),
         Some(appbase_invoice_router),
         Some(app_user_profile_read_store),
+        Some(app_iam_directory_read_store),
         Some(membership_store),
         Some(payment_callback_store),
         Some(payment_intent_runtime_store),
@@ -1984,6 +2011,8 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
             ));
             let app_user_profile_read_store =
                 Arc::new(SqliteAppUserProfileReadStore::new(pool.clone()));
+            let app_iam_directory_read_store =
+                Arc::new(SqliteAppIamDirectoryReadStore::new(pool.clone()));
             let membership_store = Arc::new(SqliteCommerceMembershipStore::new(pool.clone()));
             let payment_callback_store = Arc::new(SqlitePaymentCallbackStore::new(pool.clone()));
             let payment_intent_runtime_store =
@@ -2075,6 +2104,7 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
                 Some(appbase_billing_history_router),
                 Some(appbase_invoice_router),
                 Some(app_user_profile_read_store),
+                Some(app_iam_directory_read_store),
                 Some(membership_store),
                 Some(payment_callback_store),
                 Some(payment_intent_runtime_store),
@@ -2165,6 +2195,8 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
             ));
             let app_user_profile_read_store =
                 Arc::new(PostgresAppUserProfileReadStore::new(pool.clone()));
+            let app_iam_directory_read_store =
+                Arc::new(PostgresAppIamDirectoryReadStore::new(pool.clone()));
             let membership_store = Arc::new(PostgresCommerceMembershipStore::new(pool.clone()));
             let payment_callback_store = Arc::new(PostgresPaymentCallbackStore::new(pool.clone()));
             let payment_intent_runtime_store =
@@ -2262,6 +2294,7 @@ async fn router_with_database_config_api_key_trusted_subject_app_session_and_opt
                 Some(appbase_billing_history_router),
                 Some(appbase_invoice_router),
                 Some(app_user_profile_read_store),
+                Some(app_iam_directory_read_store),
                 Some(membership_store),
                 Some(payment_callback_store),
                 Some(payment_intent_runtime_store),

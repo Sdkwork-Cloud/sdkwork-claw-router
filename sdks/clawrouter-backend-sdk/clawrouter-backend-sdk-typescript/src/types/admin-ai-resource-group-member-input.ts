@@ -5,5 +5,5 @@ export interface AdminAiResourceGroupMemberInput {
   /** Resource code field on admin ai resource group member input. */
   resourceCode: string;
   /** Sort order field on admin ai resource group member input. */
-  sortOrder?: number | null;
+  sortOrder?: string | null;
 }

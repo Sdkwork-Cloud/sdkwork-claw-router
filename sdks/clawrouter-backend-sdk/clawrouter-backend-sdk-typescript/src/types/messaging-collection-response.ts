@@ -5,9 +5,9 @@ export interface MessagingCollectionResponse {
   /** Items field on messaging collection response. */
   items: Record<string, JsonValue>[];
   /** Page field on messaging collection response. */
-  page: number;
+  page: string;
   /** Page size field on messaging collection response. */
-  pageSize: number;
+  pageSize: string;
   /** Total field on messaging collection response. */
-  total: number;
+  total: string;
 }

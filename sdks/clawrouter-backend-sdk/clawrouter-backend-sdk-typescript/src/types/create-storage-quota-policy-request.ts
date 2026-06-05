@@ -5,11 +5,11 @@ export interface CreateStorageQuotaPolicyRequest {
   /** Quota limit field on create storage quota policy request. */
   quotaLimit?: string;
   /** Quota limit bytes field on create storage quota policy request. */
-  quotaLimitBytes: number;
+  quotaLimitBytes: string;
   /** Scope id field on create storage quota policy request. */
   scopeId: string;
   /** Scope type field on create storage quota policy request. */
   scopeType: 'app' | 'organization' | 'space' | 'tenant' | 'user';
   /** Single file limit bytes field on create storage quota policy request. */
-  singleFileLimitBytes?: number;
+  singleFileLimitBytes?: string;
 }

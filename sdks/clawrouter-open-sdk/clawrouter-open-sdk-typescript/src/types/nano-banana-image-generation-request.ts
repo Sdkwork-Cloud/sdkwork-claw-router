@@ -13,7 +13,7 @@ export interface NanoBananaImageGenerationRequest {
   /** Image prompt sent to the Nano Banana compatible provider. */
   prompt: string;
   /** Optional deterministic seed. */
-  seed?: number;
+  seed?: string;
   /** Requested image size. */
   size?: string;
 }

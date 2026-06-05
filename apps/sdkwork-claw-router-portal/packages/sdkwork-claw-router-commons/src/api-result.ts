@@ -167,6 +167,30 @@ export function readRequiredString(record: ApiRecord, key: string, message: stri
   return value;
 }
 
+export function requiredPositiveInt64String(value: string, fieldName: string): string {
+  const normalized = value.trim();
+  if (!/^[1-9][0-9]*$/u.test(normalized)) {
+    throw new Error(`${fieldName} must be a positive int64 string`);
+  }
+  return normalized;
+}
+
+export function readRequiredPositiveInt64String(record: ApiRecord, key: string, message: string): string {
+  const value = readString(record, key).trim();
+  if (!/^[1-9][0-9]*$/u.test(value)) {
+    throw new Error(message);
+  }
+  return value;
+}
+
+export function readRequiredNonNegativeInt64String(record: ApiRecord, key: string, message: string): string {
+  const value = readString(record, key).trim();
+  if (!/^(0|[1-9][0-9]*)$/u.test(value)) {
+    throw new Error(message);
+  }
+  return value;
+}
+
 export function readNullableString(record: ApiRecord, key: string): string | null {
   const value = record[key];
   if (value === null || value === undefined || value === '') {

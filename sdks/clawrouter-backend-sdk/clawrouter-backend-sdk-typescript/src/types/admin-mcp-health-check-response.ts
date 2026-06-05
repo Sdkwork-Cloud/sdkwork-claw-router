@@ -9,7 +9,7 @@ export interface AdminMcpHealthCheckResponse {
   /** Healthy field on admin mcp health check response. */
   healthy: boolean;
   /** Latency ms field on admin mcp health check response. */
-  latencyMs?: number | null;
+  latencyMs?: string | null;
   /** Server id field on admin mcp health check response. */
-  serverId: number;
+  serverId: string;
 }

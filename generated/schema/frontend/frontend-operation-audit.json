@@ -7424,6 +7424,149 @@
       "write_tables": []
     },
     {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/iam/department_assignments",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "fetchIamDepartmentAssignments",
+      "operation_scope": "app_shell",
+      "read_sources": [
+        "iam_organization",
+        "iam_organization_member"
+      ],
+      "route": "/console/user",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/iamDirectoryApiOperations.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/iam/departments/tree",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "fetchIamDepartmentTree",
+      "operation_scope": "app_shell",
+      "read_sources": [
+        "iam_organization",
+        "iam_organization_member"
+      ],
+      "route": "/console/user",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/iamDirectoryApiOperations.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/iam/departments",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "fetchIamDepartments",
+      "operation_scope": "app_shell",
+      "read_sources": [
+        "iam_organization",
+        "iam_organization_member"
+      ],
+      "route": "/console/user",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/iamDirectoryApiOperations.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/iam/organization_memberships",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "fetchIamOrganizationMemberships",
+      "operation_scope": "app_shell",
+      "read_sources": [
+        "iam_organization_member"
+      ],
+      "route": "/console/user",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/iamDirectoryApiOperations.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/iam/organizations/tree",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "fetchIamOrganizationTree",
+      "operation_scope": "app_shell",
+      "read_sources": [
+        "iam_organization",
+        "iam_organization_member"
+      ],
+      "route": "/console/user",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/iamDirectoryApiOperations.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/iam/organizations",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "fetchIamOrganizations",
+      "operation_scope": "app_shell",
+      "read_sources": [
+        "iam_organization",
+        "iam_organization_member"
+      ],
+      "route": "/console/user",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/iamDirectoryApiOperations.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/iam/position_assignments",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "fetchIamPositionAssignments",
+      "operation_scope": "app_shell",
+      "read_sources": [
+        "iam_organization",
+        "iam_organization_member"
+      ],
+      "route": "/console/user",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/iamDirectoryApiOperations.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/iam/positions",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "fetchIamPositions",
+      "operation_scope": "app_shell",
+      "read_sources": [
+        "iam_organization",
+        "iam_organization_member"
+      ],
+      "route": "/console/user",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/iamDirectoryApiOperations.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/iam/role_bindings",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "fetchIamRoleBindings",
+      "operation_scope": "app_shell",
+      "read_sources": [
+        "iam_organization",
+        "iam_organization_member"
+      ],
+      "route": "/console/user",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/iamDirectoryApiOperations.ts",
+      "write_tables": []
+    },
+    {
       "api_method": "POST",
       "api_path": "/app/v3/api/notification/notifications/{notificationId}/acknowledge",
       "api_surface": "app",
@@ -11971,8 +12114,8 @@
     }
   ],
   "summary": {
-    "operation_count": 629,
-    "source_file_count": 64,
+    "operation_count": 638,
+    "source_file_count": 65,
     "write_operation_count": 314
   }
 }

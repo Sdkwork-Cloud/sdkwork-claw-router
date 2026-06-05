@@ -17,7 +17,7 @@ export interface ChatConversationItem {
   /** Memory space id field on chat conversation item. */
   memorySpaceId?: string | null;
   /** Message count field on chat conversation item. */
-  messageCount: number;
+  messageCount: string;
   /** Source surface field on chat conversation item. */
   sourceSurface: string;
   /** Status field on chat conversation item. */
@@ -25,7 +25,7 @@ export interface ChatConversationItem {
   /** Title field on chat conversation item. */
   title: string;
   /** Turn count field on chat conversation item. */
-  turnCount: number;
+  turnCount: string;
   /** Updated at field on chat conversation item. */
   updatedAt: string;
 }

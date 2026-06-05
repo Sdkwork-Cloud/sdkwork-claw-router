@@ -25,10 +25,11 @@ export type UserCenterSecretResolutionScope = "organization-preferred";
 export type UserCenterStandardEntityName =
   | "IamUser"
   | "IamTenant"
-  | "IamAccount"
   | "IamMembership"
-  | "IamOrganizationMember"
-  | "IamMemberRelation";
+  | "IamOrganizationMembership"
+  | "IamDepartmentAssignment"
+  | "IamPositionAssignment"
+  | "IamRoleBinding";
 
 export interface UserCenterProviderConfig {
   baseUrl?: string;
@@ -439,9 +440,9 @@ export interface StandardUserCenterOrganizationRelationRecord {
   type?: "DEPARTMENT" | "POSITION" | "ROLE";
 }
 
-export interface StandardUserCenterOrganizationMemberRecord {
+export interface StandardUserCenterOrganizationMembershipRecord {
   isActive?: boolean;
-  memberRelations?: StandardUserCenterOrganizationRelationRecord[];
+  membershipRelations?: StandardUserCenterOrganizationRelationRecord[];
   owner?: string;
   ownerId?: string;
   userId?: string;
@@ -450,7 +451,7 @@ export interface StandardUserCenterOrganizationMemberRecord {
 export interface StandardUserCenterSnapshotInput {
   account?: StandardUserCenterAccountRecord;
   membership?: StandardUserCenterMembershipRecord;
-  organizationMember?: StandardUserCenterOrganizationMemberRecord;
+  organizationMembership?: StandardUserCenterOrganizationMembershipRecord;
   tenant?: StandardUserCenterTenantRecord;
   user?: StandardUserCenterUserRecord;
 }

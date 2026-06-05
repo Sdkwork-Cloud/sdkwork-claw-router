@@ -3,7 +3,7 @@ export interface SkillPackageItem {
   /** Artifact ref field on skill package item. */
   artifactRef: string;
   /** Artifact size bytes field on skill package item. */
-  artifactSizeBytes: number;
+  artifactSizeBytes: string;
   /** Frameworks field on skill package item. */
   frameworks: string[];
   /** Id field on skill package item. */

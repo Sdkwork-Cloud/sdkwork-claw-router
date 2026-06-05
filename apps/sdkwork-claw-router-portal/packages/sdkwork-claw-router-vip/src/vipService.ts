@@ -129,7 +129,7 @@ export class VipService {
   static async purchaseVipPackage(packageId: string): Promise<VipPurchaseResult> {
     const result = await appMembershipsPurchasesCreate(
       {
-        packageId: requiredPositiveIntegerId(packageId, 'packageId'),
+        packageId: String(requiredPositiveIntegerId(packageId, 'packageId')),
       },
     );
     const data = readApiRecord(result);

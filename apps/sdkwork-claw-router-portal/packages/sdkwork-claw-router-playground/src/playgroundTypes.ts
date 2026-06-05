@@ -21,6 +21,9 @@ export type PlaygroundGenerationConfig = SdkworkGenerationSerializedAssetConfig;
 export interface PlaygroundReferenceImageInput {
   name: string;
   mimeType?: string;
+  dataUrl?: string;
+  url?: string;
+  assetId?: string;
   resource: ClawRouterMediaResource;
   sizeBytes?: number;
 }
@@ -46,6 +49,9 @@ export interface PlaygroundReferenceAssetInput {
   role: 'first_frame' | 'last_frame' | 'reference_image' | 'reference_audio' | 'reference_video';
   name: string;
   mimeType?: string;
+  dataUrl?: string;
+  url?: string;
+  assetId?: string;
   resource: ClawRouterMediaResource;
   sizeBytes?: number;
 }

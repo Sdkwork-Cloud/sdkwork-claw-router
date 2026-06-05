@@ -1445,6 +1445,7 @@ async fn import_postgres_artifacts(
             .artifact_resource_snapshot
             .as_ref()
             .map(serde_json::Value::to_string);
+        release_postgres_skill_artifact_uuid_owner(tx, item).await?;
         sqlx::query(
             r#"
             INSERT INTO studio_catalog_artifact
@@ -1499,6 +1500,45 @@ async fn import_postgres_artifacts(
         .execute(&mut **tx)
         .await?;
     }
+    Ok(())
+}
+
+async fn release_postgres_skill_artifact_uuid_owner(
+    tx: &mut sqlx::Transaction<'_, sqlx::Postgres>,
+    item: &CatalogArtifactSeed,
+) -> Result<(), sqlx::Error> {
+    sqlx::query(
+        r#"
+        UPDATE studio_catalog_artifact
+        SET uuid = uuid || '-retired-' || id::text,
+            status = 0,
+            deleted_at = CURRENT_TIMESTAMP,
+            deleted_by = 0,
+            updated_at = CURRENT_TIMESTAMP
+        WHERE tenant_id = $1
+          AND organization_id = $2
+          AND uuid = $3
+          AND NOT (
+                target_type = $4
+            AND target_id = $5
+            AND artifact_type = $6
+            AND version = $7
+            AND platform_type = $8
+            AND os_name = $9
+          )
+        "#,
+    )
+    .bind(SYSTEM_TENANT_ID)
+    .bind(SYSTEM_ORGANIZATION_ID)
+    .bind(&item.uuid)
+    .bind(item.target_type)
+    .bind(item.target_id)
+    .bind(item.artifact_type)
+    .bind(&item.version)
+    .bind(&item.platform_type)
+    .bind(&item.os_name)
+    .execute(&mut **tx)
+    .await?;
     Ok(())
 }
 

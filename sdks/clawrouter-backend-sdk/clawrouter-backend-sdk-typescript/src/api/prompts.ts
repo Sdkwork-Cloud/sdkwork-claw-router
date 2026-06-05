@@ -87,8 +87,8 @@ export class PromptsDefinitionBindingsApi {
 }
 
 export interface PromptsDefinitionsListParams {
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
   q?: string;
   promptType?: string;
   visibility?: string;

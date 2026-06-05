@@ -5,7 +5,7 @@ export interface OpenAiVoiceConsent {
   /** Consent document or provider-specific consent payload. */
   consent_document?: ProviderJsonValue;
   /** Unix timestamp in seconds when the consent was created. */
-  created_at?: number;
+  created_at?: string;
   /** Voice consent identifier. */
   id: string;
   /** Developer-defined consent metadata. */

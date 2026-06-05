@@ -3,9 +3,9 @@ import type { ProviderJsonValue } from './provider-json-value';
 /** Item module returned inside the listVectorStoreFileBatchFiles list response. */
 export interface ListVectorStoreFileBatchFilesItem {
   /** Unix timestamp in seconds when the object was created. */
-  created?: number;
+  created?: string;
   /** Unix timestamp in seconds when the object was created. */
-  created_at?: number;
+  created_at?: string;
   /** Vector store file identifier. */
   file_id?: string;
   /** File identifiers attached to the vector store or batch. */
@@ -21,5 +21,5 @@ export interface ListVectorStoreFileBatchFilesItem {
   /** Current resource status when returned by the selected upstream. */
   status?: string;
   /** Vector store storage usage in bytes. */
-  usage_bytes?: number;
+  usage_bytes?: string;
 }

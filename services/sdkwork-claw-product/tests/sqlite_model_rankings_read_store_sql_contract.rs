@@ -14,6 +14,17 @@ fn assert_sql_contains(sql: &str, expected: &str) {
     );
 }
 
+fn assert_sql_contains_any(sql: &str, expected: &[&str], description: &str) {
+    let actual = compact_sql(sql);
+    assert!(
+        expected
+            .iter()
+            .map(|fragment| compact_sql(fragment))
+            .any(|fragment| actual.contains(&fragment)),
+        "SQLite model rankings read SQL must contain {description}"
+    );
+}
+
 #[test]
 fn sqlite_model_rankings_read_store_uses_snapshot_scope_fallback_for_rankings_and_source_metadata()
 {
@@ -51,7 +62,6 @@ fn sqlite_model_rankings_read_store_uses_public_active_model_catalog_filter() {
     for expected in [
         "public_model_catalog AS",
         "FROM ai_model m",
-        "AND m.deleted_at IS NULL",
         "AND COALESCE(m.release_stage, 1) IN (1, 2)",
         "AND COALESCE(m.shelf_state, 1) = 1",
         "AND COALESCE(m.routing_state, 1) = 1",
@@ -59,6 +69,12 @@ fn sqlite_model_rankings_read_store_uses_public_active_model_catalog_filter() {
     ] {
         assert_sql_contains(SQLITE_MODEL_RANKINGS_READ_STORE, expected);
     }
+
+    assert_sql_contains_any(
+        SQLITE_MODEL_RANKINGS_READ_STORE,
+        &["WHERE m.deleted_at IS NULL", "AND m.deleted_at IS NULL"],
+        "the public model catalog deleted-at predicate",
+    );
 }
 
 #[test]

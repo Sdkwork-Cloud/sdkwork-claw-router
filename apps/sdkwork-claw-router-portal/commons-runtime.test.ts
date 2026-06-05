@@ -596,13 +596,13 @@ test("console wallet uses recharge exchange wording and concise tabs", () => {
   assert.doesNotMatch(walletSource, /<h1[^>]*>/);
   assert.doesNotMatch(walletSource, /w-6 h-6 text-lobster-500/);
   assert.doesNotMatch(walletSource, /py-2 border-b border-slate-200/);
-  assert.match(walletSource, /"兑换"/);
-  assert.match(walletSource, /"充�?/);
-  assert.match(billingI18nSource, /"console\.billing\.billingview\.text\.gd62li": "充值兑�?/);
-  assert.match(billingI18nSource, /"console\.billing\.billingview\.text\.1iq97ql": "兑换"/);
-  assert.match(billingI18nSource, /"console\.billing\.billingview\.text\.1wlfhep": "充�?/);
-  assert.match(rechargeI18nSource, /"console\.recharge\.tabs\.redeem": "兑换"/);
-  assert.match(rechargeI18nSource, /"console\.recharge\.tabs\.online": "充�?/);
+  assert.match(walletSource, /"\u5151\u6362"/u);
+  assert.match(walletSource, /"\u5145\u503c"/u);
+  assert.match(billingI18nSource, /"console\.billing\.billingview\.text\.gd62li": "\u5145\u503c\u5151\u6362"/u);
+  assert.match(billingI18nSource, /"console\.billing\.billingview\.text\.1iq97ql": "\u5151\u6362"/u);
+  assert.match(billingI18nSource, /"console\.billing\.billingview\.text\.1wlfhep": "\u5145\u503c"/u);
+  assert.match(rechargeI18nSource, /"console\.recharge\.tabs\.redeem": "\u5151\u6362"/u);
+  assert.match(rechargeI18nSource, /"console\.recharge\.tabs\.online": "\u5145\u503c"/u);
   assert.match(walletPackageJson, /"sdkwork-claw-router-console-recharge": "workspace:\*"/);
   assert.match(walletSource, /import \{ RechargePanel, RechargeRecordsTabs \} from 'sdkwork-claw-router-console-recharge';/);
   assert.match(walletSource, /const \[activeTab, setActiveTab\] = useState<'redeem' \| 'recharge'>\('redeem'\);/);
@@ -613,8 +613,8 @@ test("console wallet uses recharge exchange wording and concise tabs", () => {
   assert.doesNotMatch(walletSource, /historyTab === 'recharge'/);
   assert.doesNotMatch(walletSource, /<WalletHistoryTable/);
   assert.doesNotMatch(walletSource, /fetchRechargeHistory/);
-  assert.doesNotMatch(walletSource, /"钱包与充�?|"卡密兑换"/);
-  assert.doesNotMatch(rechargeSource, /"卡密兑换"|"在线充�?/);
+  assert.doesNotMatch(walletSource, /"\u94b1\u5305\u4e0e\u5145\u503c"|"\u5361\u5bc6\u5151\u6362"/u);
+  assert.doesNotMatch(rechargeSource, /"\u5361\u5bc6\u5151\u6362"|"\u5728\u7ebf\u5145\u503c"/u);
   const legacyWalletMojibakePattern = new RegExp(
     [
       "\\u7490\\ufe3d\\u57db",
@@ -644,7 +644,6 @@ test("console wallet uses recharge exchange wording and concise tabs", () => {
   assert.doesNotMatch(rechargeI18nSource, /"console\.recharge\.tabs\.redeem": "\u5361\u5bc6\u5151\u6362"/u);
   assert.doesNotMatch(rechargeI18nSource, /"console\.recharge\.tabs\.online": "\u5728\u7ebf\u5145\u503c"/u);
 });
-
 test("portal auth helpers preserve the current route for login-required actions", () => {
   clearStoredAppSessionToken();
 
@@ -731,10 +730,10 @@ test("sdk request boundary validates query primitives and safe path segments", (
       zero: 0,
     }),
     {
-      page: 2,
-      pageSize: 100,
+      page: "2",
+      pageSize: "100",
       searchQuery: "gpt-4o",
-      zero: 0,
+      zero: "0",
     },
   );
 

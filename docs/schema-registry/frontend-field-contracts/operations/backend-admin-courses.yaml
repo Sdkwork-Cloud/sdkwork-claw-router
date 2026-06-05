@@ -178,6 +178,7 @@ frontend_operations:
   api_surface: backend
   api_method: POST
   api_path: /backend/v3/api/content/courses
+  request_id_header: false
   sdk_domain: content
   summary: Admin Course Create
   description: Creates a managed course catalog record using the existing content course table.
@@ -257,6 +258,7 @@ frontend_operations:
   api_surface: backend
   api_method: PATCH
   api_path: /backend/v3/api/content/courses/{courseId}
+  request_id_header: false
   sdk_domain: content
   summary: Admin Course Update
   description: Updates mutable course catalog fields without changing the existing database schema.
@@ -276,6 +278,7 @@ frontend_operations:
   api_surface: backend
   api_method: DELETE
   api_path: /backend/v3/api/content/courses/{courseId}
+  request_id_header: false
   sdk_domain: content
   summary: Admin Course Delete
   description: Soft-deletes or archives a course record and writes the operation audit trail.
@@ -365,6 +368,7 @@ frontend_operations:
   api_surface: backend
   api_method: POST
   api_path: /backend/v3/api/content/courses/{courseId}/sections
+  request_id_header: false
   sdk_domain: content
   summary: Admin Course Section Create
   description: Creates a course section under the selected course.
@@ -437,6 +441,7 @@ frontend_operations:
   api_surface: backend
   api_method: PATCH
   api_path: /backend/v3/api/content/course-sections/{sectionId}
+  request_id_header: false
   sdk_domain: content
   summary: Admin Course Section Update
   description: Updates a course section record.
@@ -456,6 +461,7 @@ frontend_operations:
   api_surface: backend
   api_method: DELETE
   api_path: /backend/v3/api/content/course-sections/{sectionId}
+  request_id_header: false
   sdk_domain: content
   summary: Admin Course Section Delete
   description: Deletes or archives a course section record.
@@ -540,6 +546,7 @@ frontend_operations:
   api_surface: backend
   api_method: POST
   api_path: /backend/v3/api/content/courses/{courseId}/lessons
+  request_id_header: false
   sdk_domain: content
   summary: Admin Course Lesson Create
   description: Creates a course lesson under the selected course.
@@ -626,6 +633,7 @@ frontend_operations:
   api_surface: backend
   api_method: PATCH
   api_path: /backend/v3/api/content/course-lessons/{lessonId}
+  request_id_header: false
   sdk_domain: content
   summary: Admin Course Lesson Update
   description: Updates a course lesson record.
@@ -645,6 +653,7 @@ frontend_operations:
   api_surface: backend
   api_method: DELETE
   api_path: /backend/v3/api/content/course-lessons/{lessonId}
+  request_id_header: false
   sdk_domain: content
   summary: Admin Course Lesson Delete
   description: Deletes or archives a course lesson record.
@@ -718,6 +727,7 @@ frontend_operations:
   api_surface: backend
   api_method: PUT
   api_path: /backend/v3/api/content/courses/{courseId}/relations
+  request_id_header: false
   sdk_domain: content
   summary: Admin Course Relations Replace
   description: Replaces the related course graph rows for a selected course.
@@ -825,6 +835,7 @@ frontend_operations:
   api_surface: backend
   api_method: PATCH
   api_path: /backend/v3/api/content/course-applications/{applicationId}/review
+  request_id_header: false
   sdk_domain: content
   summary: Admin Course Application Review
   description: Reviews a submitted course application and records the audit trail.
@@ -937,6 +948,7 @@ frontend_operations:
   api_surface: backend
   api_method: PATCH
   api_path: /backend/v3/api/content/courses/comments/{commentId}/moderation
+  request_id_header: false
   sdk_domain: content
   summary: Admin Course Comment Moderate
   description: Moderates a course comment and writes the operation audit trail.

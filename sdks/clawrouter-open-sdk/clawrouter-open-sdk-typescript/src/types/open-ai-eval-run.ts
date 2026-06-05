@@ -4,7 +4,7 @@ import type { ProviderJsonValue } from './provider-json-value';
 /** OpenAI-compatible eval run object. */
 export interface OpenAiEvalRun {
   /** Unix timestamp in seconds when the eval run was created. */
-  created_at: number;
+  created_at: string;
   /** Data source used by this eval run. */
   data_source?: ProviderJsonValue;
   /** Eval identifier that owns this run. */

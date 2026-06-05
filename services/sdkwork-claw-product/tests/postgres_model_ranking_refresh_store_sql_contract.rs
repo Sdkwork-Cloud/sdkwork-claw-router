@@ -90,6 +90,14 @@ fn postgres_model_ranking_refresh_reads_previous_rank_from_same_scope_period_and
 }
 
 #[test]
+fn postgres_model_ranking_refresh_cost_falls_back_to_usage_cost_amount() {
+    assert_sql_contains(
+        POSTGRES_MODEL_RANKING_REFRESH_STORE,
+        "SUM(COALESCE(NULLIF(u.customer_charge_amount, 0), u.cost_amount, 0)) AS cost_amount",
+    );
+}
+
+#[test]
 fn postgres_model_ranking_refresh_uses_canonical_catalog_key_and_regionless_model_context() {
     for expected in [
         "'global' AS region_code",

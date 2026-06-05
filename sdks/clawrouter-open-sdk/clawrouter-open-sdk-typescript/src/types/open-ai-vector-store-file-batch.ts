@@ -4,7 +4,7 @@ import type { ProviderJsonValue } from './provider-json-value';
 /** OpenAI-compatible vector store file batch object. */
 export interface OpenAiVectorStoreFileBatch {
   /** Unix timestamp in seconds when the batch was created. */
-  created_at: number;
+  created_at: string;
   /** File counts field on the open ai vector store file batch, using the open ai vector store file counts module. */
   file_counts?: OpenAiVectorStoreFileCounts;
   /** Vector store file batch identifier. */

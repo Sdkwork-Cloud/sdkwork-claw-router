@@ -86,7 +86,7 @@ export class WechatOfficialAccountService {
     const result = await getClawRouterBackendSdkClient().openPlatform.accounts.list({
       provider: 'wechat',
       type_: 'official_account',
-      pageSize: 200,
+      pageSize: '200',
     });
     return readRequiredApiItems(result, 'WeChat official accounts are required')
       .map(normalizeOfficialAccount);

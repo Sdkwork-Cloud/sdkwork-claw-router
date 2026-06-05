@@ -9,15 +9,15 @@ export interface AdminCacheKeyListResponse {
   /** Items field on admin cache key list response. */
   items: AdminCacheKeyItem[];
   /** Limit field on admin cache key list response. */
-  limit: number | null;
+  limit: string | null;
   /** Namespace field on admin cache key list response. */
   namespace: string;
   /** Next cursor field on admin cache key list response. */
   nextCursor: string | null;
   /** Returned items field on admin cache key list response. */
-  returnedItems: number;
+  returnedItems: string;
   /** Scan complete field on admin cache key list response. */
   scanComplete: boolean;
   /** Scanned items field on admin cache key list response. */
-  scannedItems: number;
+  scannedItems: string;
 }

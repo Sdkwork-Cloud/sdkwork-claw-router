@@ -9,7 +9,7 @@ export interface AdminAiModelItem {
   /** Capability intro field on admin ai model item. */
   capabilityIntro: string | null;
   /** Context tokens field on admin ai model item. */
-  contextTokens: number | null;
+  contextTokens: string | null;
   /** Description field on admin ai model item. */
   description: string | null;
   /** Product display name. Falls back to model when no display name is configured. */
@@ -21,7 +21,7 @@ export interface AdminAiModelItem {
   /** Limitations field on admin ai model item. */
   limitations: string[];
   /** Max output tokens field on admin ai model item. */
-  maxOutputTokens: number | null;
+  maxOutputTokens: string | null;
   /** Modalities field on admin ai model item. */
   modalities: string[];
   /** Runtime model identifier used for provider calls, routing, and pricing keys. */
@@ -33,13 +33,13 @@ export interface AdminAiModelItem {
   /** Region prices field on admin ai model item. */
   regionPrices: AdminAiModelRegionPrice[];
   /** Release stage field on admin ai model item. */
-  releaseStage: number | null;
+  releaseStage: string | null;
   /** Replacement model field on admin ai model item. */
   replacementModel: string | null;
   /** Routing state field on admin ai model item. */
-  routingState: number | null;
+  routingState: string | null;
   /** Shelf state field on admin ai model item. */
-  shelfState: number | null;
+  shelfState: string | null;
   /** Status field on admin ai model item. */
   status: 'active' | 'inactive';
   /** Supported languages field on admin ai model item. */

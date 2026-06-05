@@ -9,6 +9,7 @@ import {
   readNumber,
   readRequiredApiItem,
   readRequiredApiItems,
+  readRequiredNonNegativeInt64String,
   readRequiredString,
   readString,
   readStringArray,
@@ -257,7 +258,7 @@ export interface AdminSkillAsset {
   width?: number | null;
   height?: number | null;
   durationSeconds?: string | null;
-  fileSize?: number | null;
+  fileSize?: string | null;
   sortOrder: number;
   status: number;
   publishedAt?: string | null;
@@ -310,7 +311,7 @@ export interface AdminSkillArtifact {
   osName: string;
   artifactRef?: string | null;
   artifact?: ClawRouterMediaResource;
-  artifactSizeBytes: number;
+  artifactSizeBytes: string;
   runtime?: string | null;
   frameworks: string[];
   licenseName?: string | null;
@@ -385,16 +386,16 @@ interface AdminSkillListSdkParams {
   visibility?: SkillVisibility;
   enabled?: boolean;
   categoryId?: string;
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
 }
 
 interface AdminSkillPackageListSdkParams {
   q?: string;
   enabled?: boolean;
   categoryId?: string;
-  page?: number;
-  pageSize?: number;
+  page?: string;
+  pageSize?: string;
 }
 
 export class AdminSkillService {
@@ -871,10 +872,10 @@ function normalizeListRequest(input: AdminSkillListInput): AdminSkillListSdkPara
     request.categoryId = categoryId;
   }
   if (input.page !== undefined) {
-    request.page = positiveInteger(input.page, 'page', 1_000_000);
+    request.page = positiveIntegerString(input.page, 'page', 1_000_000);
   }
   if (input.pageSize !== undefined) {
-    request.pageSize = positiveInteger(input.pageSize, 'pageSize', 200);
+    request.pageSize = positiveIntegerString(input.pageSize, 'pageSize', 200);
   }
   return request;
 }
@@ -893,10 +894,10 @@ function normalizePackageListRequest(input: AdminSkillPackageListInput): AdminSk
     request.categoryId = categoryId;
   }
   if (input.page !== undefined) {
-    request.page = positiveInteger(input.page, 'page', 1_000_000);
+    request.page = positiveIntegerString(input.page, 'page', 1_000_000);
   }
   if (input.pageSize !== undefined) {
-    request.pageSize = positiveInteger(input.pageSize, 'pageSize', 200);
+    request.pageSize = positiveIntegerString(input.pageSize, 'pageSize', 200);
   }
   return request;
 }
@@ -1024,7 +1025,7 @@ function normalizeCreateAssetRequest(input: AdminSkillAssetCreateInput): AdminSk
     width: input.width === undefined ? undefined : nonNegativeInteger(input.width, 'width', 1_000_000),
     height: input.height === undefined ? undefined : nonNegativeInteger(input.height, 'height', 1_000_000),
     durationSeconds: optionalText(input.durationSeconds, 'durationSeconds', 64),
-    fileSize: input.fileSize === undefined ? undefined : nonNegativeInteger(input.fileSize, 'fileSize', Number.MAX_SAFE_INTEGER),
+    fileSize: input.fileSize === undefined ? undefined : nonNegativeIntegerString(input.fileSize, 'fileSize', Number.MAX_SAFE_INTEGER),
     sortOrder: input.sortOrder === undefined ? undefined : nonNegativeInteger(input.sortOrder, 'sortOrder', 1_000_000),
     status: input.status === undefined ? undefined : nonNegativeInteger(input.status, 'status', 1_000_000),
     publishedAt: optionalText(input.publishedAt, 'publishedAt', 64),
@@ -1043,7 +1044,7 @@ function normalizeUpdateAssetRequest(input: AdminSkillAssetUpdateInput): AdminSk
     width: input.width === null ? null : input.width === undefined ? undefined : nonNegativeInteger(input.width, 'width', 1_000_000),
     height: input.height === null ? null : input.height === undefined ? undefined : nonNegativeInteger(input.height, 'height', 1_000_000),
     durationSeconds: normalizeNullableText(input.durationSeconds, 'durationSeconds', 64),
-    fileSize: input.fileSize === null ? null : input.fileSize === undefined ? undefined : nonNegativeInteger(input.fileSize, 'fileSize', Number.MAX_SAFE_INTEGER),
+    fileSize: input.fileSize === null ? null : input.fileSize === undefined ? undefined : nonNegativeIntegerString(input.fileSize, 'fileSize', Number.MAX_SAFE_INTEGER),
     sortOrder: input.sortOrder === undefined ? undefined : nonNegativeInteger(input.sortOrder, 'sortOrder', 1_000_000),
     status: input.status === undefined ? undefined : nonNegativeInteger(input.status, 'status', 1_000_000),
     publishedAt: normalizeNullableText(input.publishedAt, 'publishedAt', 64),
@@ -1063,7 +1064,7 @@ function normalizeCreateArtifactRequest(input: AdminSkillArtifactCreateInput): A
     osName: optionalText(input.osName, 'osName', 128),
     artifactRef,
     artifact,
-    artifactSizeBytes: input.artifactSizeBytes === undefined ? undefined : nonNegativeInteger(input.artifactSizeBytes, 'artifactSizeBytes', Number.MAX_SAFE_INTEGER),
+    artifactSizeBytes: input.artifactSizeBytes === undefined ? undefined : nonNegativeIntegerString(input.artifactSizeBytes, 'artifactSizeBytes', Number.MAX_SAFE_INTEGER),
     runtime: optionalText(input.runtime, 'runtime', 64),
     frameworks: input.frameworks ? normalizeLabelArray(input.frameworks, 'frameworks') : undefined,
     licenseName: optionalText(input.licenseName, 'licenseName', 128),
@@ -1083,7 +1084,7 @@ function normalizeUpdateArtifactRequest(input: AdminSkillArtifactUpdateInput): A
     osName: optionalText(input.osName, 'osName', 128),
     artifactRef: normalizeNullableResourceRef(input.artifactRef, 'artifactRef'),
     artifact: nullableMediaResourceInput(input.artifact, 'artifact'),
-    artifactSizeBytes: input.artifactSizeBytes === undefined ? undefined : nonNegativeInteger(input.artifactSizeBytes, 'artifactSizeBytes', Number.MAX_SAFE_INTEGER),
+    artifactSizeBytes: input.artifactSizeBytes === undefined ? undefined : nonNegativeIntegerString(input.artifactSizeBytes, 'artifactSizeBytes', Number.MAX_SAFE_INTEGER),
     runtime: normalizeNullableText(input.runtime, 'runtime', 64),
     frameworks: input.frameworks ? normalizeLabelArray(input.frameworks, 'frameworks') : undefined,
     licenseName: normalizeNullableText(input.licenseName, 'licenseName', 128),
@@ -1207,7 +1208,7 @@ function normalizeSkillAsset(value: unknown): AdminSkillAsset {
     width: readNullableNumber(item, 'width'),
     height: readNullableNumber(item, 'height'),
     durationSeconds: readNullableString(item, 'durationSeconds'),
-    fileSize: readNullableNumber(item, 'fileSize'),
+    fileSize: readNullableNonNegativeIntegerString(item, 'fileSize', 'Skill asset file size must be a non-negative int64 string'),
     sortOrder: readRequiredNonNegativeInteger(item, 'sortOrder', 'Skill asset sort order is required'),
     status: readRequiredNonNegativeInteger(item, 'status', 'Skill asset status is required'),
     publishedAt: readNullableString(item, 'publishedAt'),
@@ -1233,7 +1234,7 @@ function normalizeSkillArtifact(value: unknown): AdminSkillArtifact {
     osName: readRequiredString(item, 'osName', 'Skill artifact OS name is required'),
     artifactRef: readNullableString(item, 'artifactRef'),
     artifact: readMediaResource(item.artifact),
-    artifactSizeBytes: readRequiredNonNegativeInteger(item, 'artifactSizeBytes', 'Skill artifact size is required'),
+    artifactSizeBytes: readRequiredNonNegativeInt64String(item, 'artifactSizeBytes', 'Skill artifact size is required'),
     runtime: readNullableString(item, 'runtime'),
     frameworks: uniqueStrings(readRequiredStringArray(item, 'frameworks', 'Skill artifact frameworks are required')),
     licenseName: readNullableString(item, 'licenseName'),
@@ -1796,6 +1797,10 @@ function positiveInteger(value: unknown, fieldName: string, maxValue: number): n
   return numberValue;
 }
 
+function positiveIntegerString(value: unknown, fieldName: string, maxValue: number): string {
+  return String(positiveInteger(value, fieldName, maxValue));
+}
+
 function nonNegativeInteger(value: unknown, fieldName: string, maxValue: number): number {
   const numberValue = typeof value === 'string' ? Number(value.trim()) : value;
   if (typeof numberValue !== 'number') {
@@ -1807,6 +1812,10 @@ function nonNegativeInteger(value: unknown, fieldName: string, maxValue: number)
   return numberValue;
 }
 
+function nonNegativeIntegerString(value: unknown, fieldName: string, maxValue: number): string {
+  return String(nonNegativeInteger(value, fieldName, maxValue));
+}
+
 function readNullableNumber(record: ApiRecord, key: string): number | null {
   const value = record[key];
   if (value === null || value === undefined || value === '') {
@@ -1814,6 +1823,18 @@ function readNullableNumber(record: ApiRecord, key: string): number | null {
   }
   const numberValue = readNumber(record, key, Number.NaN);
   return Number.isFinite(numberValue) ? numberValue : null;
+}
+
+function readNullableNonNegativeIntegerString(record: ApiRecord, key: string, message: string): string | null {
+  const value = record[key];
+  if (value === null || value === undefined || value === '') {
+    return null;
+  }
+  const normalized = readString(record, key).trim();
+  if (!/^(0|[1-9][0-9]*)$/.test(normalized)) {
+    throw new Error(message);
+  }
+  return normalized;
 }
 
 function ensureDeleteResult(result: unknown, message: string): void {

@@ -5,9 +5,9 @@ export interface AdminRecordLogsResponse {
   /** Logs field on admin record logs response. */
   logs: AdminRecordLogItem[];
   /** Page field on admin record logs response. */
-  page: number;
+  page: string;
   /** Page size field on admin record logs response. */
-  pageSize: number;
+  pageSize: string;
   /** Total field on admin record logs response. */
-  total: number;
+  total: string;
 }

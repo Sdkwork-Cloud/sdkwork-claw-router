@@ -1,27 +1,27 @@
 /** Admin cache summary schema exposed by Claw Router. */
 export interface AdminCacheSummary {
   /** Cache deletes field on admin cache summary. */
-  cacheDeletes: number;
+  cacheDeletes: string;
   /** Cache errors field on admin cache summary. */
-  cacheErrors: number;
+  cacheErrors: string;
   /** Cache hits field on admin cache summary. */
-  cacheHits: number;
+  cacheHits: string;
   /** Cache inspections field on admin cache summary. */
-  cacheInspections: number;
+  cacheInspections: string;
   /** Cache misses field on admin cache summary. */
-  cacheMisses: number;
+  cacheMisses: string;
   /** Cache refreshes field on admin cache summary. */
-  cacheRefreshes: number;
+  cacheRefreshes: string;
   /** Cache writes field on admin cache summary. */
-  cacheWrites: number;
+  cacheWrites: string;
   /** Expired entries field on admin cache summary. */
-  expiredEntries: number;
+  expiredEntries: string;
   /** Runtime target field on admin cache summary. */
   runtimeTarget: 'desktop_packaged' | 'service';
   /** Total entries field on admin cache summary. */
-  totalEntries: number;
+  totalEntries: string;
   /** Total instances field on admin cache summary. */
-  totalInstances: number;
+  totalInstances: string;
   /** Total namespaces field on admin cache summary. */
-  totalNamespaces: number;
+  totalNamespaces: string;
 }

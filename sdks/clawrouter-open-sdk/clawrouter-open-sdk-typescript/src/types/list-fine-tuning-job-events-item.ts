@@ -3,9 +3,9 @@ import type { ProviderJsonValue } from './provider-json-value';
 /** Item module returned inside the listFineTuningJobEvents list response. */
 export interface ListFineTuningJobEventsItem {
   /** Unix timestamp in seconds when the object was created. */
-  created?: number;
+  created?: string;
   /** Unix timestamp in seconds when the object was created. */
-  created_at?: number;
+  created_at?: string;
   /** Fine-tuned model id when available. */
   fine_tuned_model?: string;
   /** Resource identifier returned by the selected upstream. */

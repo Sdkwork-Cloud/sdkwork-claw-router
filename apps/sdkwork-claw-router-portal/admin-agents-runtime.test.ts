@@ -79,7 +79,7 @@ async function withBackendSdkFetch<T>(
 function sampleAgent(overrides: Record<string, unknown> = {}) {
   return {
     id: "agent-1",
-    ownerUserId: 42,
+    ownerUserId: "9007199254740993",
     code: "product-studio-agent",
     name: "Product Studio Agent",
     description: "Creates product content.",
@@ -115,7 +115,7 @@ function sampleAgent(overrides: Record<string, unknown> = {}) {
 test("admin agent service lists agents through generated backend SDK and normalizes filters", async () => {
   await withBackendSdkFetch(
     (url) => {
-      assert.equal(url, "/backend/v3/api/agents?q=studio&owner_user_id=42&status=active&visibility=private&page=2&page_size=25");
+      assert.equal(url, "/backend/v3/api/agents?q=studio&owner_user_id=9007199254740993&status=active&visibility=private&page=2&page_size=25");
       return { items: [sampleAgent()] };
     },
     async (captured) => {
@@ -123,7 +123,7 @@ test("admin agent service lists agents through generated backend SDK and normali
         page: 2,
         pageSize: 25,
         q: " studio ",
-        ownerUserId: 42,
+        ownerUserId: "9007199254740993",
         status: "active",
         visibility: "private",
       });
@@ -131,7 +131,7 @@ test("admin agent service lists agents through generated backend SDK and normali
       assert.equal(captured.length, 1);
       assert.equal(captured[0].method, "GET");
       assert.equal(items[0].id, "agent-1");
-      assert.equal(items[0].ownerUserId, 42);
+      assert.equal(items[0].ownerUserId, "9007199254740993");
       assert.equal(items[0].defaultVersion.model, "gpt-4.1");
       assert.deepEqual(items[0].capabilities, {
         memoryEnabled: true,

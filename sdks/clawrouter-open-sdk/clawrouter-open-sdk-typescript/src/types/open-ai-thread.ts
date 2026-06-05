@@ -3,7 +3,7 @@ import type { ProviderJsonValue } from './provider-json-value';
 /** OpenAI-compatible thread object. */
 export interface OpenAiThread {
   /** Unix timestamp in seconds when the thread was created. */
-  created_at: number;
+  created_at: string;
   /** Thread identifier. */
   id: string;
   /** Developer-defined thread metadata. */

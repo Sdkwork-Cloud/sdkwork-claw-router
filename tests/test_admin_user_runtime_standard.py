@@ -24,11 +24,43 @@ class AdminUserRuntimeStandardTest(unittest.TestCase):
 
         self.assertEqual("AdminUserUpdateRequest", update_user["request_schema"]["name"])
         self.assertEqual(["id"], update_user["request_schema"]["schema"]["required"])
+        self.assertEqual(
+            {
+                "type": "string",
+                "format": "int64",
+                "pattern": "^[1-9][0-9]*$",
+                "x-sdkwork-int64-string": True,
+                "x-sdkwork-rust-type": "i64",
+                "description": "User identifier.",
+            },
+            update_user["request_schema"]["schema"]["properties"]["id"],
+        )
         self.assertEqual("AdminUserMutationResponse", update_user["response_schema"]["name"])
+        self.assertEqual(
+            {
+                "type": "string",
+                "format": "int64",
+                "pattern": "^[1-9][0-9]*$",
+                "x-sdkwork-int64-string": True,
+                "x-sdkwork-rust-type": "i64",
+            },
+            update_user["response_schema"]["schema"]["properties"]["item"]["properties"]["id"],
+        )
         self.assertFalse(update_user["request_id_header"])
 
         self.assertEqual("AdminApiKeyCreateRequest", create_api_key["request_schema"]["name"])
         self.assertEqual(["userId", "name"], create_api_key["request_schema"]["schema"]["required"])
+        self.assertEqual(
+            {
+                "type": "string",
+                "format": "int64",
+                "pattern": "^[1-9][0-9]*$",
+                "x-sdkwork-int64-string": True,
+                "x-sdkwork-rust-type": "i64",
+                "description": "User identifier that owns the API key.",
+            },
+            create_api_key["request_schema"]["schema"]["properties"]["userId"],
+        )
         self.assertEqual("AdminApiKeyCreateResponse", create_api_key["response_schema"]["name"])
         self.assertTrue(create_api_key["idempotency_required"])
 
@@ -141,12 +173,18 @@ class AdminUserRuntimeStandardTest(unittest.TestCase):
         self.assertIn("export type UserUpdateInput", service)
         self.assertIn("export type ApiKeyCreateInput", service)
         self.assertIn("static async addUser(user: UserCreateInput): Promise<UserListItem>", service)
-        self.assertIn("static async updateUser(id: number, updates: UserUpdateInput): Promise<UserListItem>", service)
+        self.assertIn("static async updateUser(id: string, updates: UserUpdateInput): Promise<UserListItem>", service)
         self.assertIn("readRequiredApiItem(result, 'admin.user.errors.updateUserMissingData')", service)
         self.assertIn("static async createApiKey(input: ApiKeyCreateInput): Promise<{ key: ApiKeyItem; rawKey: string }>", service)
         self.assertIn("function toCreateUserRequest(user: UserCreateInput)", service)
-        self.assertIn("function toUpdateUserRequest(id: number, updates: UserUpdateInput)", service)
+        self.assertIn("function toUpdateUserRequest(id: string, updates: UserUpdateInput)", service)
         self.assertIn("function toCreateApiKeyRequest(input: ApiKeyCreateInput)", service)
+        self.assertIn("readRequiredPositiveInt64String(item, 'id', 'User id is required')", service)
+        self.assertIn("requiredPositiveInt64String(input.userId, 'userId')", service)
+        self.assertIn("apiKeysMap: Record<string, ApiKeyItem[]>", service)
+        self.assertNotIn("Record<number, ApiKeyItem[]>", service)
+        self.assertNotIn("readRequiredNumber(item, 'id'", service)
+        self.assertNotIn("function positiveId(value: number", service)
         self.assertIn("createUserInputFromForm", view)
         self.assertIn("createApiKeyInputFromForm", view)
         self.assertIn("UserService.addUser(createUserInputFromForm(formData))", view)

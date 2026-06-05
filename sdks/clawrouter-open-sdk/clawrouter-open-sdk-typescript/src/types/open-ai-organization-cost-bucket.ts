@@ -7,11 +7,11 @@ export interface OpenAiOrganizationCostBucket {
   /** Currency for the cost amount. */
   currency?: string;
   /** Unix timestamp for the bucket end. */
-  end_time?: number;
+  end_time?: string;
   /** Object type returned by the costs endpoint. */
   object?: string;
   /** Cost results grouped inside this bucket. */
   results?: ProviderJsonValue[];
   /** Unix timestamp for the bucket start. */
-  start_time?: number;
+  start_time?: string;
 }

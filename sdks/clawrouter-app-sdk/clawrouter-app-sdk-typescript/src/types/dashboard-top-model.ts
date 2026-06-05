@@ -9,9 +9,9 @@ export interface DashboardTopModel {
   /** Name field on dashboard top model. */
   name: string;
   /** Rank field on dashboard top model. */
-  rank: number;
+  rank: string;
   /** Requests field on dashboard top model. */
-  requests: number;
+  requests: string;
   /** Supplier field on dashboard top model. */
   supplier: string;
   /** Trend field on dashboard top model. */

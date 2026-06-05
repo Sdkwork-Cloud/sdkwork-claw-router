@@ -4,7 +4,7 @@ use sdkwork_iam_core::{
 };
 
 #[test]
-fn creates_app_context_and_tenant_sharding_context() {
+fn creates_app_context_and_organization_first_sharding_context() {
     let context = IamAppContext::new(
         "tenant-1",
         Some("org-1"),
@@ -24,6 +24,33 @@ fn creates_app_context_and_tenant_sharding_context() {
     assert_eq!(context.environment, Environment::Dev);
     assert_eq!(context.deployment_mode, DeploymentMode::Saas);
     assert_eq!(context.auth_level, AuthLevel::Mfa);
+
+    assert_eq!(
+        IamShardingContext::from_app_context(&context),
+        IamShardingContext {
+            sharding_key: "org-1".to_string(),
+            sharding_strategy: IamShardingStrategy::Organization,
+            database_key: None,
+            schema: None,
+            table_partition: None,
+        }
+    );
+}
+
+#[test]
+fn falls_back_to_tenant_sharding_when_no_organization_context_exists() {
+    let context = IamAppContext::new(
+        "tenant-1",
+        None,
+        "user-1",
+        "session-1",
+        "sdkwork-router",
+        Environment::Dev,
+        DeploymentMode::Saas,
+        AuthLevel::Password,
+        vec![],
+        vec![],
+    );
 
     assert_eq!(
         IamShardingContext::from_app_context(&context),

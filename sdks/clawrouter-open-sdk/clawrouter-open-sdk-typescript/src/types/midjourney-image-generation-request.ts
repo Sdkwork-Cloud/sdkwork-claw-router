@@ -11,7 +11,7 @@ export interface MidjourneyImageGenerationRequest {
   /** Image prompt sent to the Midjourney-compatible provider. */
   prompt: string;
   /** Optional deterministic seed. */
-  seed?: number;
+  seed?: string;
   /** Style option. */
   style?: string;
 }
