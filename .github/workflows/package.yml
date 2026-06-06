@@ -1,0 +1,94 @@
+name: Package Application
+
+on:
+  push:
+    tags:
+      - v*
+      - '*.*.*'
+  release:
+    types:
+      - published
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Release tag or source ref to package.
+        required: true
+        default: v0.3.0
+      package_version:
+        description: Package version used in artifact names and manifests.
+        required: true
+        default: 0.3.0
+      platform:
+        description: Platform filter.
+        required: true
+        default: all
+      architecture:
+        description: CPU architecture filter.
+        required: true
+        default: all
+      profile:
+        description: Runtime profile filter.
+        required: true
+        default: all
+      format:
+        description: Package format filter.
+        required: true
+        default: all
+      deploy:
+        description: Run configured deployment environments after packaging.
+        required: true
+        default: false
+        type: boolean
+      sdkwork_appbase_ref:
+        description: sdkwork-appbase commit/ref.
+        required: false
+        default: 3280447a2166a86b7e20bcfa394611effa0c9ec3
+      sdkwork_core_ref:
+        description: sdkwork-core commit/ref.
+        required: false
+        default: 339ab3e063671e0f97db92bf098c9e9d8768d8dd
+      sdkwork_ui_ref:
+        description: sdkwork-ui commit/ref.
+        required: false
+        default: a4c90948ab5e43241a8e06303891bdc370702fad
+      sdkwork_im_sdk_ref:
+        description: sdkwork-im-sdk commit/ref.
+        required: false
+        default: 8245ff9095f7d11c70aa062e16a9e42a715604b1
+      sdkwork_sdk_generator_ref:
+        description: sdkwork-sdk-generator commit/ref.
+        required: false
+        default: c20c147b69453a64535e25fc18032597e8af9e75
+
+permissions:
+  contents: write
+  actions: read
+  id-token: write
+  attestations: write
+  artifact-metadata: write
+
+jobs:
+  package:
+    uses: Sdkwork-Cloud/sdkwork-github-workflow/.github/workflows/sdkwork-package.yml@19b419908f320d43d9adebee02c4d882f2f7dad1
+    with:
+      config_path: sdkwork.workflow.json
+      tag: ${{ github.event.inputs.tag || github.event.release.tag_name || github.ref_name }}
+      package_version: ${{ github.event.inputs.package_version || github.event.release.tag_name || github.ref_name }}
+      platform: ${{ github.event.inputs.platform || 'all' }}
+      architecture: ${{ github.event.inputs.architecture || 'all' }}
+      profile: ${{ github.event.inputs.profile || 'all' }}
+      format: ${{ github.event.inputs.format || 'all' }}
+      publish_release: true
+      upload_artifact: true
+      deploy: ${{ github.event.inputs.deploy == 'true' || github.event_name == 'release' }}
+      retention_days: 30
+      framework_ref: 19b419908f320d43d9adebee02c4d882f2f7dad1
+      dependency_refs_json: >-
+        {
+          "SDKWORK_APPBASE_REF": "${{ github.event.inputs.sdkwork_appbase_ref || vars.SDKWORK_APPBASE_REF }}",
+          "SDKWORK_CORE_REF": "${{ github.event.inputs.sdkwork_core_ref || vars.SDKWORK_CORE_REF }}",
+          "SDKWORK_UI_REF": "${{ github.event.inputs.sdkwork_ui_ref || vars.SDKWORK_UI_REF }}",
+          "SDKWORK_IM_SDK_REF": "${{ github.event.inputs.sdkwork_im_sdk_ref || vars.SDKWORK_IM_SDK_REF }}",
+          "SDKWORK_SDK_GENERATOR_REF": "${{ github.event.inputs.sdkwork_sdk_generator_ref || vars.SDKWORK_SDK_GENERATOR_REF }}"
+        }
+    secrets: inherit
