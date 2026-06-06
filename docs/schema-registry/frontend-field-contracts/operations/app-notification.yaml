@@ -1,7 +1,7 @@
 fragment: operations/app-notification
 frontend_operations:
 - route: /console/notifications
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/notificationService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts
   operation: fetchNotifications
   kind: read
   api_surface: app
@@ -99,7 +99,7 @@ frontend_operations:
               nullable: true
               maxLength: 512
 - route: /console/notifications
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/notificationService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts
   operation: list
   kind: read
   api_surface: app
@@ -130,7 +130,7 @@ frontend_operations:
       minimum: 1
       maximum: 100
 - route: /console/notifications
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/notificationService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts
   operation: acknowledge
   operation_id: notifications.acknowledge.create
   kind: action
@@ -166,7 +166,7 @@ frontend_operations:
         - acknowledged
         - popup_seen
 - route: /console/notifications
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/notificationService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts
   operation: markPopupSeen
   operation_id: notifications.popupSeen.create
   kind: action

@@ -59,18 +59,18 @@ The admin Membership Center is already routed and uses the standard membership
 package:
 
 - Portal route registration:
-  - `apps/sdkwork-claw-router-portal/src/App.tsx`
+  - `apps/sdkwork-clawrouter-pc/src/App.tsx`
   - `/admin/memberships/packages`
   - `/admin/memberships/plans`
   - `/admin/memberships/members`
   - `/admin/memberships/entitlements`
   - `/admin/memberships/recharge-packages`
 - Admin navigation:
-  - `apps/sdkwork-claw-router-portal/src/AdminLayout.tsx`
+  - `apps/sdkwork-clawrouter-pc/src/AdminLayout.tsx`
 - Portal package:
-  - `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships`
+  - `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships`
 - Service boundary:
-  - `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts`
+  - `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts`
 
 The service already uses the generated backend SDK through
 `getClawRouterBackendSdkClient().commerce.*` and must keep doing so.
@@ -125,7 +125,7 @@ keeping the public export stable.
 Target file layout:
 
 ```text
-apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/
+apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/
   index.tsx
   membershipsService.ts
   components/
@@ -160,7 +160,7 @@ Responsibilities:
     generated-SDK request parameter creation.
   - Expose typed functions for pages and forms.
   - Continue importing backend SDK access only through
-    `sdkwork-claw-router-commons/runtime`.
+    `sdkwork-clawrouter-pc-commons/runtime`.
 - `pages/*Page.tsx`
   - Own list loading, filters, selected row, drawer open state, delete/disable
     confirmation state, mutation refresh, loading, error, and empty states for
@@ -555,7 +555,7 @@ Expected verification commands:
 ```powershell
 node --test admin-membership-recharge-runtime.test.ts admin-membership-entitlement-runtime.test.ts membership-runtime.test.ts
 cargo test -p sdkwork_membership_subscription_sqlx --test membership_sqlx_standard
-pnpm --dir apps/sdkwork-claw-router-portal typecheck
+pnpm --dir apps/sdkwork-clawrouter-pc typecheck
 python -B -m tools.schema_quality_gate
 ```
 

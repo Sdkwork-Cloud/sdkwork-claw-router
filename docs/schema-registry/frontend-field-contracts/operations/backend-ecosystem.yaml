@@ -1,7 +1,7 @@
 fragment: operations/backend-ecosystem
 frontend_operations:
 - route: /admin/skill
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
   operation: fetchSkillCategories
   kind: read
   api_surface: backend
@@ -72,7 +72,7 @@ frontend_operations:
               - 20
         description: Skill category snapshots returned by the backend.
 - route: /admin/skill
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
   operation: createSkillCategory
   kind: create
   api_surface: backend
@@ -142,7 +142,7 @@ frontend_operations:
         properties: *id002
         description: Persisted skill category snapshot returned by the backend.
 - route: /admin/skill
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
   operation: updateSkillCategory
   kind: update
   api_surface: backend
@@ -215,7 +215,7 @@ frontend_operations:
         properties: *id002
         description: Updated skill category snapshot returned by the backend.
 - route: /admin/skill
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
   operation: deleteSkillCategory
   kind: delete
   api_surface: backend
@@ -238,7 +238,7 @@ frontend_operations:
         type: boolean
         description: Whether the skill category was deleted.
 - route: /admin/skill
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
   operation: fetchSkillPackages
   kind: read
   api_surface: backend
@@ -350,7 +350,7 @@ frontend_operations:
               maxLength: 64
         description: Skill package snapshots returned by the backend.
 - route: /admin/skill
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
   operation: getSkillPackage
   kind: read
   api_surface: backend
@@ -373,7 +373,7 @@ frontend_operations:
         properties: *id004
         description: Skill package snapshot returned by the backend.
 - route: /admin/skill
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
   operation: createSkillPackage
   kind: create
   api_surface: backend
@@ -445,7 +445,7 @@ frontend_operations:
         properties: *id004
         description: Persisted skill package snapshot returned by the backend.
 - route: /admin/skill
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
   operation: updateSkillPackage
   kind: update
   api_surface: backend
@@ -518,7 +518,7 @@ frontend_operations:
         properties: *id004
         description: Updated skill package snapshot returned by the backend.
 - route: /admin/skill
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
   operation: deleteSkillPackage
   kind: delete
   api_surface: backend
@@ -540,7 +540,7 @@ frontend_operations:
         type: boolean
         description: Whether the skill package was deleted.
 - route: /admin/skill
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
   operation: enableSkillPackage
   kind: action
   api_surface: backend
@@ -565,7 +565,7 @@ frontend_operations:
         properties: *id004
         description: Enabled skill package snapshot returned by the backend.
 - route: /admin/skill
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
   operation: disableSkillPackage
   kind: action
   api_surface: backend
@@ -590,7 +590,7 @@ frontend_operations:
         properties: *id004
         description: Disabled skill package snapshot returned by the backend.
 - route: /admin/skill
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
   operation: fetchSkills
   kind: read
   api_surface: backend
@@ -845,7 +845,7 @@ frontend_operations:
               maxLength: 64
         description: Agent skill snapshots returned by the backend.
 - route: /admin/skill
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
   operation: getSkill
   kind: read
   api_surface: backend
@@ -869,7 +869,7 @@ frontend_operations:
         properties: *id006
         description: Agent skill snapshot returned by the backend.
 - route: /admin/skill
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
   operation: createSkill
   kind: create
   api_surface: backend
@@ -1031,7 +1031,7 @@ frontend_operations:
         properties: *id006
         description: Persisted agent skill snapshot returned by the backend.
 - route: /admin/skill
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
   operation: updateSkill
   kind: update
   api_surface: backend
@@ -1188,7 +1188,7 @@ frontend_operations:
         properties: *id006
         description: Updated agent skill snapshot returned by the backend.
 - route: /admin/skill
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
   operation: deleteSkill
   kind: delete
   api_surface: backend
@@ -1210,7 +1210,7 @@ frontend_operations:
         type: boolean
         description: Whether the agent skill was deleted.
 - route: /admin/skill
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
   operation: enableSkill
   kind: action
   api_surface: backend
@@ -1235,7 +1235,7 @@ frontend_operations:
         properties: *id006
         description: Enabled agent skill snapshot returned by the backend.
 - route: /admin/skill
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
   operation: disableSkill
   kind: action
   api_surface: backend
@@ -1260,7 +1260,7 @@ frontend_operations:
         properties: *id006
         description: Disabled agent skill snapshot returned by the backend.
 - route: /admin/skill
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
   operation: publishSkill
   kind: action
   api_surface: backend
@@ -1285,7 +1285,7 @@ frontend_operations:
         properties: *id006
         description: Published agent skill snapshot returned by the backend.
 - route: /admin/skill
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
   operation: offlineSkill
   kind: action
   api_surface: backend
@@ -1310,7 +1310,7 @@ frontend_operations:
         properties: *id006
         description: Offline agent skill snapshot returned by the backend.
 - route: /admin/skill
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
   operation: approveSkill
   kind: action
   api_surface: backend
@@ -1344,7 +1344,7 @@ frontend_operations:
         properties: *id006
         description: Reviewed agent skill snapshot returned by the backend.
 - route: /admin/skill
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
   operation: rejectSkill
   kind: action
   api_surface: backend
@@ -1378,7 +1378,7 @@ frontend_operations:
         properties: *id006
         description: Reviewed agent skill snapshot returned by the backend.
 - route: /admin/skill
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
   operation: fetchSkillAssets
   kind: read
   api_surface: backend
@@ -1495,7 +1495,7 @@ frontend_operations:
               maxLength: 64
         description: Skill catalog assets attached to the agent skill.
 - route: /admin/skill
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
   operation: getSkillAsset
   kind: read
   api_surface: backend
@@ -1519,7 +1519,7 @@ frontend_operations:
         properties: *id008
         description: Skill catalog asset snapshot returned by the backend.
 - route: /admin/skill
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
   operation: createSkillAsset
   kind: create
   api_surface: backend
@@ -1598,7 +1598,7 @@ frontend_operations:
         properties: *id008
         description: Persisted skill catalog asset snapshot returned by the backend.
 - route: /admin/skill
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
   operation: updateSkillAsset
   kind: update
   api_surface: backend
@@ -1685,7 +1685,7 @@ frontend_operations:
         properties: *id008
         description: Updated skill catalog asset snapshot returned by the backend.
 - route: /admin/skill
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
   operation: deleteSkillAsset
   kind: delete
   api_surface: backend
@@ -1706,7 +1706,7 @@ frontend_operations:
         type: boolean
         description: Whether the skill catalog asset was deleted.
 - route: /admin/skill
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
   operation: fetchSkillArtifacts
   kind: read
   api_surface: backend
@@ -1838,7 +1838,7 @@ frontend_operations:
               maxLength: 64
         description: Skill catalog artifacts attached to the agent skill.
 - route: /admin/skill
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
   operation: getSkillArtifact
   kind: read
   api_surface: backend
@@ -1862,7 +1862,7 @@ frontend_operations:
         properties: *id010
         description: Skill catalog artifact snapshot returned by the backend.
 - route: /admin/skill
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
   operation: createSkillArtifact
   kind: create
   api_surface: backend
@@ -1950,7 +1950,7 @@ frontend_operations:
         properties: *id010
         description: Persisted skill catalog artifact snapshot returned by the backend.
 - route: /admin/skill
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
   operation: updateSkillArtifact
   kind: update
   api_surface: backend
@@ -2046,7 +2046,7 @@ frontend_operations:
         properties: *id010
         description: Updated skill catalog artifact snapshot returned by the backend.
 - route: /admin/skill
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts
   operation: deleteSkillArtifact
   kind: delete
   api_surface: backend

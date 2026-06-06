@@ -12,7 +12,7 @@ class AdminChannelRuntimeStandardTest(unittest.TestCase):
     def test_admin_channel_contracts_use_operation_specific_payloads(self) -> None:
         manifest = ApiContractManifestGenerator(root=ROOT).generate()
         operations = {operation["key"]: operation for operation in manifest["operations"]}
-        source = "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts"
+        source = "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts"
 
         fetch_channels = operations[f"{source}#fetchChannels"]
         add_channel = operations[f"{source}#addChannel"]
@@ -96,9 +96,9 @@ class AdminChannelRuntimeStandardTest(unittest.TestCase):
         service = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-admin-channel"
+            / "sdkwork-clawrouter-pc-admin-channel"
             / "src"
             / "channelService.ts"
         ).read_text(encoding="utf-8")
@@ -209,9 +209,9 @@ class AdminChannelRuntimeStandardTest(unittest.TestCase):
         package_root = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-admin-channel"
+            / "sdkwork-clawrouter-pc-admin-channel"
         )
         package = json.loads((package_root / "package.json").read_text(encoding="utf-8"))
         service = (package_root / "src" / "channelService.ts").read_text(encoding="utf-8")
@@ -261,16 +261,16 @@ class AdminChannelRuntimeStandardTest(unittest.TestCase):
         source_dir = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-admin-channel"
+            / "sdkwork-clawrouter-pc-admin-channel"
             / "src"
         )
         view = (source_dir / "index.tsx").read_text(encoding="utf-8")
         service = (source_dir / "channelService.ts").read_text(encoding="utf-8")
         form = (source_dir / "channelForm.ts").read_text(encoding="utf-8")
-        app = (ROOT / "apps" / "sdkwork-claw-router-portal" / "src" / "App.tsx").read_text(encoding="utf-8")
-        registry = (ROOT / "apps" / "sdkwork-claw-router-portal" / "src" / "adminModuleRegistry.ts").read_text(encoding="utf-8")
+        app = (ROOT / "apps" / "sdkwork-clawrouter-pc" / "src" / "App.tsx").read_text(encoding="utf-8")
+        registry = (ROOT / "apps" / "sdkwork-clawrouter-pc" / "src" / "adminModuleRegistry.ts").read_text(encoding="utf-8")
 
         for source_text in [view, service, form, app, registry]:
             self.assertNotIn("ChannelEndpoint", source_text)
@@ -295,15 +295,15 @@ class AdminChannelRuntimeStandardTest(unittest.TestCase):
         package_root = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-admin-channel"
+            / "sdkwork-clawrouter-pc-admin-channel"
         )
         service = (package_root / "src" / "channelService.ts").read_text(encoding="utf-8")
         view = (package_root / "src" / "index.tsx").read_text(encoding="utf-8")
         form = (package_root / "src" / "channelForm.ts").read_text(encoding="utf-8")
         runtime_test = (
-            ROOT / "apps" / "sdkwork-claw-router-portal" / "admin-channel-runtime.test.ts"
+            ROOT / "apps" / "sdkwork-clawrouter-pc" / "admin-channel-runtime.test.ts"
         ).read_text(encoding="utf-8")
 
         self.assertIn("export type ProviderSecretUpdateInput", service)
@@ -346,14 +346,14 @@ class AdminChannelRuntimeStandardTest(unittest.TestCase):
         source_dir = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-admin-channel"
+            / "sdkwork-clawrouter-pc-admin-channel"
             / "src"
         )
         service = (source_dir / "channelService.ts").read_text(encoding="utf-8")
         runtime_test = (
-            ROOT / "apps" / "sdkwork-claw-router-portal" / "admin-channel-runtime.test.ts"
+            ROOT / "apps" / "sdkwork-clawrouter-pc" / "admin-channel-runtime.test.ts"
         ).read_text(encoding="utf-8")
 
         normalizer = service.split("function normalizeModelCatalogItem", 1)[1]
@@ -380,9 +380,9 @@ class AdminChannelRuntimeStandardTest(unittest.TestCase):
         source_dir = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-admin-channel"
+            / "sdkwork-clawrouter-pc-admin-channel"
             / "src"
         )
         service = (source_dir / "channelService.ts").read_text(encoding="utf-8")
@@ -414,17 +414,17 @@ class AdminChannelRuntimeStandardTest(unittest.TestCase):
         commons_dir = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-commons"
+            / "sdkwork-clawrouter-pc-commons"
             / "src"
         )
         ui = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-admin-channel"
+            / "sdkwork-clawrouter-pc-admin-channel"
             / "src"
             / "index.tsx"
         ).read_text(encoding="utf-8")

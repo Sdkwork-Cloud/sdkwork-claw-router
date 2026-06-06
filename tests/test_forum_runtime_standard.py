@@ -9,9 +9,9 @@ ROOT = Path(__file__).resolve().parents[1]
 FORUM_PACKAGE = (
     ROOT
     / "apps"
-    / "sdkwork-claw-router-portal"
+    / "sdkwork-clawrouter-pc"
     / "packages"
-    / "sdkwork-claw-router-forum"
+    / "sdkwork-clawrouter-pc-forum"
 )
 CLASSIFICATION_PATH = ROOT / "docs" / "schema-registry" / "frontend-route-classification.yaml"
 STATIC_SOURCE_PATH = ROOT / "docs" / "schema-registry" / "frontend-static-source-snapshots.yaml"
@@ -23,7 +23,7 @@ class ForumRuntimeStandardTest(unittest.TestCase):
         catalog_path = FORUM_PACKAGE / "src" / "forumCatalog.ts"
         forum_view_path = FORUM_PACKAGE / "src" / "components" / "ForumView.tsx"
         post_view_path = FORUM_PACKAGE / "src" / "components" / "ForumPostView.tsx"
-        runtime_test_path = ROOT / "apps" / "sdkwork-claw-router-portal" / "forum-runtime.test.ts"
+        runtime_test_path = ROOT / "apps" / "sdkwork-clawrouter-pc" / "forum-runtime.test.ts"
         verifier_path = ROOT / "scripts" / "verify-claw-router-product.mjs"
 
         self.assertTrue(catalog_path.exists(), "Forum business logic must live in a pure content catalog module.")
@@ -64,7 +64,7 @@ class ForumRuntimeStandardTest(unittest.TestCase):
         self.assertIn("forum runtime pages do not use curated static data as live fallback", runtime_test_source)
         self.assertIn("deriveForumPostDetailView", runtime_test_source)
         self.assertIn("portal forum runtime tests", verifier_source)
-        self.assertIn("apps/sdkwork-claw-router-portal/forum-runtime.test.ts", verifier_source)
+        self.assertIn("apps/sdkwork-clawrouter-pc/forum-runtime.test.ts", verifier_source)
 
     def test_forum_components_have_no_runtime_drift_or_corrupt_copy(self) -> None:
         combined = "\n".join(
@@ -101,7 +101,7 @@ class ForumRuntimeStandardTest(unittest.TestCase):
         classification = yaml.safe_load(CLASSIFICATION_PATH.read_text(encoding="utf-8"))
         forum_route = self._route_entry(classification, "/forum")
         detail_route = self._route_entry(classification, "/forum/:id")
-        expected_service = "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumService.ts"
+        expected_service = "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts"
         expected_contract = "docs/schema-registry/frontend-field-contracts.yaml"
 
         for route in [forum_route, detail_route]:
@@ -363,7 +363,7 @@ class ForumRuntimeStandardTest(unittest.TestCase):
 
     def test_forum_frontend_service_preserves_content_request_validation_contract(self) -> None:
         service_source = (FORUM_PACKAGE / "src" / "forumService.ts").read_text(encoding="utf-8")
-        runtime_test_source = (ROOT / "apps" / "sdkwork-claw-router-portal" / "forum-runtime.test.ts").read_text(
+        runtime_test_source = (ROOT / "apps" / "sdkwork-clawrouter-pc" / "forum-runtime.test.ts").read_text(
             encoding="utf-8"
         )
 
@@ -531,7 +531,7 @@ class ForumRuntimeStandardTest(unittest.TestCase):
         self.assertIn("const DEFAULT_REPLY_PAGE_SIZE: i64 = 10;", api_source)
 
     def test_forum_production_smoke_covers_route_and_chunk_semantics(self) -> None:
-        smoke_path = ROOT / "apps" / "sdkwork-claw-router-portal" / "scripts" / "smoke-production-browser.mjs"
+        smoke_path = ROOT / "apps" / "sdkwork-clawrouter-pc" / "scripts" / "smoke-production-browser.mjs"
         product_test_path = ROOT / "scripts" / "run-claw-router-product.test.mjs"
         catalog_path = FORUM_PACKAGE / "src" / "forumCatalog.ts"
 

@@ -1,7 +1,7 @@
 fragment: operations/backend-commerce-recharges
 frontend_operations:
 - route: /admin/memberships/recharge-packages
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   operation: backendMembershipsRechargePackagesList
   operation_id: recharges.packages.list
   kind: read
@@ -105,7 +105,7 @@ frontend_operations:
               minLength: 1
               maxLength: 64
 - route: /admin/memberships/recharge-packages
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   operation: backendMembershipsRechargePackagesCreate
   operation_id: recharges.packages.create
   kind: create
@@ -160,7 +160,7 @@ frontend_operations:
     properties:
       item: *id003
 - route: /admin/memberships/recharge-packages
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   operation: backendMembershipsRechargePackagesUpdate
   operation_id: recharges.packages.update
   kind: update
@@ -183,7 +183,7 @@ frontend_operations:
   request_schema: *id004
   response_schema: *id005
 - route: /admin/memberships/recharge-packages
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   operation: backendMembershipsRechargePackagesDelete
   operation_id: recharges.packages.delete
   kind: delete
@@ -209,7 +209,7 @@ frontend_operations:
       deleted:
         type: boolean
 - route: /admin/memberships/recharge-packages
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   operation: backendMembershipsRechargeSettingsRetrieve
   operation_id: recharges.settings.retrieve
   kind: read
@@ -245,7 +245,7 @@ frontend_operations:
           type: string
           pattern: ^\d+(?:\.\d{1,6})?$
 - route: /admin/memberships/recharge-packages
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   operation: backendMembershipsRechargeSettingsUpdate
   operation_id: recharges.settings.update
   kind: update
@@ -285,7 +285,7 @@ frontend_operations:
           pattern: ^\d+(?:\.\d{1,6})?$
   response_schema: *id007
 - route: /admin/memberships/recharge-packages
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   operation: fetchMembershipAdminRechargePackages
   operation_scope: app_shell
   operation_id: memberships.admin.rechargePackages.fetch
@@ -308,7 +308,7 @@ frontend_operations:
   - commerce_account
   - commerce_account_ledger_entry
 - route: /admin/memberships/recharge-packages
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   operation: createMembershipAdminRechargePackage
   operation_scope: app_shell
   operation_id: memberships.admin.rechargePackages.create
@@ -332,7 +332,7 @@ frontend_operations:
   request_schema: *id004
   response_schema: *id005
 - route: /admin/memberships/recharge-packages
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   operation: updateMembershipAdminRechargePackage
   operation_scope: app_shell
   operation_id: memberships.admin.rechargePackages.update
@@ -356,7 +356,7 @@ frontend_operations:
   request_schema: *id004
   response_schema: *id005
 - route: /admin/memberships/recharge-packages
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   operation: deleteMembershipAdminRechargePackage
   operation_scope: app_shell
   operation_id: memberships.admin.rechargePackages.delete
@@ -376,7 +376,7 @@ frontend_operations:
   - ops_audit_log
   response_schema: *id006
 - route: /admin/memberships/recharge-packages
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   operation: fetchMembershipAdminRechargeSettings
   operation_scope: app_shell
   operation_id: memberships.admin.rechargeSettings.fetch
@@ -391,7 +391,7 @@ frontend_operations:
   read_sources:
   - commerce_exchange_rule
 - route: /admin/memberships/recharge-packages
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   operation: updateMembershipAdminRechargeSettings
   operation_scope: app_shell
   operation_id: memberships.admin.rechargeSettings.update
@@ -411,7 +411,7 @@ frontend_operations:
   request_schema: *id008
   response_schema: *id007
 - route: /admin/wallet
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wallet/src/walletService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wallet/src/walletService.ts
   operation: backendRechargesOrdersList
   operation_id: recharges.orders.list
   kind: read

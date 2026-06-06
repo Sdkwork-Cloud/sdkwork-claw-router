@@ -281,9 +281,9 @@ class ConsoleUserBackendRuntimeStandardTest(unittest.TestCase):
         package_root = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-user"
+            / "sdkwork-clawrouter-pc-console-user"
         )
         package = __import__("json").loads((package_root / "package.json").read_text(encoding="utf-8"))
         openapi = (
@@ -304,9 +304,9 @@ class ConsoleUserBackendRuntimeStandardTest(unittest.TestCase):
         frontend = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-user"
+            / "sdkwork-clawrouter-pc-console-user"
             / "src"
             / "userService.ts"
         ).read_text(encoding="utf-8")
@@ -350,18 +350,18 @@ class ConsoleUserBackendRuntimeStandardTest(unittest.TestCase):
         user_view = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-user"
+            / "sdkwork-clawrouter-pc-console-user"
             / "src"
             / "UserView.tsx"
         ).read_text(encoding="utf-8")
         user_service = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-user"
+            / "sdkwork-clawrouter-pc-console-user"
             / "src"
             / "userService.ts"
         ).read_text(encoding="utf-8")
@@ -418,9 +418,9 @@ class ConsoleUserBackendRuntimeStandardTest(unittest.TestCase):
         user_view = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-user"
+            / "sdkwork-clawrouter-pc-console-user"
             / "src"
             / "UserView.tsx"
         ).read_text(encoding="utf-8")
@@ -441,27 +441,27 @@ class ConsoleUserBackendRuntimeStandardTest(unittest.TestCase):
         user_view = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-user"
+            / "sdkwork-clawrouter-pc-console-user"
             / "src"
             / "UserView.tsx"
         ).read_text(encoding="utf-8")
         user_service = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-user"
+            / "sdkwork-clawrouter-pc-console-user"
             / "src"
             / "userService.ts"
         ).read_text(encoding="utf-8")
         i18n = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-i18n"
+            / "sdkwork-clawrouter-pc-i18n"
             / "src"
             / "resources"
             / "console"

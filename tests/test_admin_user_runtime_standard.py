@@ -11,7 +11,7 @@ class AdminUserRuntimeStandardTest(unittest.TestCase):
     def test_admin_user_write_contracts_use_operation_specific_payloads(self) -> None:
         manifest = ApiContractManifestGenerator(root=ROOT).generate()
         operations = {operation["key"]: operation for operation in manifest["operations"]}
-        source = "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts"
+        source = "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-user/src/userService.ts"
 
         add_user = operations[f"{source}#addUser"]
         update_user = operations[f"{source}#updateUser"]
@@ -68,9 +68,9 @@ class AdminUserRuntimeStandardTest(unittest.TestCase):
         service = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-admin-user"
+            / "sdkwork-clawrouter-pc-admin-user"
             / "src"
             / "userService.ts"
         ).read_text(encoding="utf-8")
@@ -157,9 +157,9 @@ class AdminUserRuntimeStandardTest(unittest.TestCase):
         package_root = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-admin-user"
+            / "sdkwork-clawrouter-pc-admin-user"
         )
         package = __import__("json").loads((package_root / "package.json").read_text(encoding="utf-8"))
         service = (package_root / "src" / "userService.ts").read_text(encoding="utf-8")
@@ -203,15 +203,15 @@ class AdminUserRuntimeStandardTest(unittest.TestCase):
         package_root = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-admin-user"
+            / "sdkwork-clawrouter-pc-admin-user"
         )
         service = (package_root / "src" / "userService.ts").read_text(encoding="utf-8")
         view = (package_root / "src" / "index.tsx").read_text(encoding="utf-8")
         form = (package_root / "src" / "userForm.ts").read_text(encoding="utf-8")
         runtime_test = (
-            ROOT / "apps" / "sdkwork-claw-router-portal" / "admin-user-runtime.test.ts"
+            ROOT / "apps" / "sdkwork-clawrouter-pc" / "admin-user-runtime.test.ts"
         ).read_text(encoding="utf-8")
 
         self.assertNotIn("export type UserBalanceAdjustmentInput", service)
@@ -246,9 +246,9 @@ class AdminUserRuntimeStandardTest(unittest.TestCase):
         view = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-admin-user"
+            / "sdkwork-clawrouter-pc-admin-user"
             / "src"
             / "index.tsx"
         ).read_text(encoding="utf-8")

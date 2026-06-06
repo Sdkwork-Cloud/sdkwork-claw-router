@@ -73,3 +73,42 @@ Verify this SDK family from the project root:
 ```bash
 node ./sdks/clawrouter-app-sdk/bin/verify-sdk.mjs
 ```
+
+## SDKWork Documentation Contract
+
+Domain: platform
+Capability: router
+Package type: sdk-family
+Status: standardizing
+
+### Public API
+
+Public exports are declared in `specs/component.spec.json` under `contracts.publicExports`.
+
+### Required SDK Surface
+
+- `SdkworkAppClient`
+
+### Configuration
+
+Configuration keys and runtime entrypoints are declared in `specs/component.spec.json`.
+
+### SaaS/Private/Local Behavior
+
+This module follows the canonical standards linked from `specs/component.spec.json`, including deployment and runtime configuration rules where applicable.
+
+### Security
+
+Do not add secrets, live tokens, manual auth headers, or app-local credential handling to this module.
+
+### Extension Points
+
+Extension points are limited to declared public exports, runtime entrypoints, SDK clients, events, and config keys.
+
+### Verification
+
+- `node apps/scripts/validate-component-specs.mjs --apps-root apps --json`
+
+### Owner And Status
+
+Owner and lifecycle status are tracked in `specs/component.spec.json`.

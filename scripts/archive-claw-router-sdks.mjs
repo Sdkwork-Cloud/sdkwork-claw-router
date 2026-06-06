@@ -23,7 +23,7 @@ for (let index = 0; index < 256; index += 1) {
 }
 
 function defaultSdkArchiveRoot(root = workspaceRoot) {
-  return path.join(root, 'apps', 'sdkwork-claw-router-portal', 'dist', 'sdk-archives');
+  return path.join(root, 'apps', 'sdkwork-clawrouter-pc', 'dist', 'sdk-archives');
 }
 
 function defaultSdkArchiveSpecs(root = workspaceRoot) {

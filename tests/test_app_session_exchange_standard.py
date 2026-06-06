@@ -19,9 +19,9 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
         session_service = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-commons"
+            / "sdkwork-clawrouter-pc-commons"
             / "src"
             / "sessionService.ts"
         )
@@ -82,9 +82,9 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
         commons_root = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-commons"
+            / "sdkwork-clawrouter-pc-commons"
             / "src"
         )
         session_service = (commons_root / "sessionService.ts").read_text(encoding="utf-8")
@@ -145,9 +145,9 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
         portal_session = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-commons"
+            / "sdkwork-clawrouter-pc-commons"
             / "src"
             / "portal-session.ts"
         ).read_text(encoding="utf-8")
@@ -169,9 +169,9 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
         api_result = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-commons"
+            / "sdkwork-clawrouter-pc-commons"
             / "src"
             / "api-result.ts"
         ).read_text(encoding="utf-8")
@@ -192,12 +192,12 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
         admin_packages_root = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
         )
 
         offenders = []
-        for service_path in sorted(admin_packages_root.glob("sdkwork-claw-router-admin-*/src/*Service.ts*")):
+        for service_path in sorted(admin_packages_root.glob("sdkwork-clawrouter-pc-admin-*/src/*Service.ts*")):
             source = service_path.read_text(encoding="utf-8")
             if "getStoredAppSessionToken" in source:
                 offenders.append(service_path.relative_to(ROOT).as_posix())
@@ -208,9 +208,9 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
         playground = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-api-reference"
+            / "sdkwork-clawrouter-pc-api-reference"
             / "src"
             / "components"
             / "ApiPlayground.tsx"
@@ -218,9 +218,9 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
         playground_request = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-api-reference"
+            / "sdkwork-clawrouter-pc-api-reference"
             / "src"
             / "playgroundRequest.ts"
         ).read_text(encoding="utf-8")
@@ -244,9 +244,9 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
         commons_root = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-commons"
+            / "sdkwork-clawrouter-pc-commons"
             / "src"
         )
         session_service = (commons_root / "sessionService.ts").read_text(encoding="utf-8")
@@ -255,7 +255,7 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
         auth_controller = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "src"
             / "auth"
             / "clawRouterAuthController.ts"
@@ -263,7 +263,7 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
         auth_routes = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "src"
             / "auth"
             / "ClawRouterAuthRoutes.tsx"
@@ -271,9 +271,9 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
         console_layout = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-core"
+            / "sdkwork-clawrouter-pc-console-core"
             / "src"
             / "ConsoleLayout.tsx"
         ).read_text(encoding="utf-8")
@@ -309,7 +309,7 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
         auth_controller = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "src"
             / "auth"
             / "clawRouterAuthController.ts"
@@ -317,7 +317,7 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
         auth_routes = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "src"
             / "auth"
             / "ClawRouterAuthRoutes.tsx"
@@ -325,9 +325,9 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
         navbar = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-commons"
+            / "sdkwork-clawrouter-pc-commons"
             / "src"
             / "components"
             / "Navbar.tsx"
@@ -375,9 +375,9 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
         session_service = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-commons"
+            / "sdkwork-clawrouter-pc-commons"
             / "src"
             / "sessionService.ts"
         ).read_text(encoding="utf-8")

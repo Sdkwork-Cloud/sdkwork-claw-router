@@ -6,9 +6,9 @@ ROOT = Path(__file__).resolve().parents[1]
 API_REFERENCE_ROOT = (
     ROOT
     / "apps"
-    / "sdkwork-claw-router-portal"
+    / "sdkwork-clawrouter-pc"
     / "packages"
-    / "sdkwork-claw-router-api-reference"
+    / "sdkwork-clawrouter-pc-api-reference"
     / "src"
 )
 
@@ -143,7 +143,7 @@ class ApiReferencePlaygroundStandardTest(unittest.TestCase):
 
     def test_api_reference_sidebar_uses_fixed_width_without_resize_drag_handle(self) -> None:
         api_reference_source = (API_REFERENCE_ROOT / "pages" / "ApiReference.tsx").read_text(encoding="utf-8")
-        portal_css = (ROOT / "apps" / "sdkwork-claw-router-portal" / "src" / "index.css").read_text(encoding="utf-8")
+        portal_css = (ROOT / "apps" / "sdkwork-clawrouter-pc" / "src" / "index.css").read_text(encoding="utf-8")
 
         self.assertIn("md:flex sticky top-[110px]", api_reference_source)
         self.assertIn("w-[360px] max-w-[360px] basis-[360px]", api_reference_source)
@@ -171,8 +171,8 @@ class ApiReferencePlaygroundStandardTest(unittest.TestCase):
         row_runtime = (API_REFERENCE_ROOT / "apiPlaygroundRows.ts").read_text(encoding="utf-8")
         code_snippet_runtime = (API_REFERENCE_ROOT / "codeSnippetClient.ts").read_text(encoding="utf-8")
         playground = (API_REFERENCE_ROOT / "components" / "ApiPlayground.tsx").read_text(encoding="utf-8")
-        smoke = ROOT / "apps" / "sdkwork-claw-router-portal" / "api-reference-ssr-smoke.test.cjs"
-        production_smoke = ROOT / "apps" / "sdkwork-claw-router-portal" / "scripts" / "smoke-production-browser.mjs"
+        smoke = ROOT / "apps" / "sdkwork-clawrouter-pc" / "api-reference-ssr-smoke.test.cjs"
+        production_smoke = ROOT / "apps" / "sdkwork-clawrouter-pc" / "scripts" / "smoke-production-browser.mjs"
         playground_request = API_REFERENCE_ROOT / "playgroundRequest.ts"
         playground_download = API_REFERENCE_ROOT / "playgroundResponseDownload.ts"
         verifier = (ROOT / "scripts" / "verify-claw-router-product.mjs").read_text(encoding="utf-8")
@@ -247,7 +247,7 @@ class ApiReferencePlaygroundStandardTest(unittest.TestCase):
         browser_smoke = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "scripts"
             / "smoke-production-browser.mjs"
         ).read_text(encoding="utf-8")
@@ -285,7 +285,7 @@ class ApiReferencePlaygroundStandardTest(unittest.TestCase):
         browser_smoke = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "scripts"
             / "smoke-production-browser.mjs"
         ).read_text(encoding="utf-8")
@@ -321,7 +321,7 @@ class ApiReferencePlaygroundStandardTest(unittest.TestCase):
         browser_smoke = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "scripts"
             / "smoke-production-browser.mjs"
         ).read_text(encoding="utf-8")
@@ -340,7 +340,7 @@ class ApiReferencePlaygroundStandardTest(unittest.TestCase):
         browser_smoke = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "scripts"
             / "smoke-production-browser.mjs"
         ).read_text(encoding="utf-8")
@@ -376,7 +376,7 @@ class ApiReferencePlaygroundStandardTest(unittest.TestCase):
         browser_smoke = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "scripts"
             / "smoke-production-browser.mjs"
         ).read_text(encoding="utf-8")

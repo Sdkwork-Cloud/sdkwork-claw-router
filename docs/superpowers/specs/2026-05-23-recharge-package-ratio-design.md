@@ -175,7 +175,7 @@ Audit logging:
 
 ### Console Recharge
 
-`apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge`
+`apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-recharge`
 
 Changes:
 
@@ -192,7 +192,7 @@ Changes:
 
 ### membership Credit Purchase
 
-`apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-membership/src/MembershipView.tsx`
+`apps/sdkwork-clawrouter-pc/packages/sdkwork-claw-router-membership/src/MembershipView.tsx`
 
 Changes:
 
@@ -203,7 +203,7 @@ Changes:
 
 ### Admin Membership Center
 
-`apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships`
+`apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships`
 
 Changes:
 

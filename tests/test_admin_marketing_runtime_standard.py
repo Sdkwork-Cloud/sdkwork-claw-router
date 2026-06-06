@@ -10,9 +10,9 @@ ROOT = Path(__file__).resolve().parents[1]
 PACKAGE_ROOT = (
     ROOT
     / "apps"
-    / "sdkwork-claw-router-portal"
+    / "sdkwork-clawrouter-pc"
     / "packages"
-    / "sdkwork-claw-router-admin-marketing"
+    / "sdkwork-clawrouter-pc-admin-marketing"
 )
 SERVICE_PATH = PACKAGE_ROOT / "src" / "marketingService.ts"
 VIEW_PATH = PACKAGE_ROOT / "src" / "index.tsx"
@@ -20,9 +20,9 @@ PACKAGE_JSON_PATH = PACKAGE_ROOT / "package.json"
 ADMIN_FINANCE_SERVICE_PATH = (
     ROOT
     / "apps"
-    / "sdkwork-claw-router-portal"
+    / "sdkwork-clawrouter-pc"
     / "packages"
-    / "sdkwork-claw-router-admin-finance"
+    / "sdkwork-clawrouter-pc-admin-finance"
     / "src"
     / "financeService.ts"
 )
@@ -605,8 +605,8 @@ class AdminMarketingRuntimeStandardTest(unittest.TestCase):
         manifest = ApiContractManifestGenerator(root=ROOT).generate()
         operations = {operation["key"]: operation for operation in manifest["operations"]}
         key = (
-            "apps/sdkwork-claw-router-portal/packages/"
-            "sdkwork-claw-router-admin-marketing/src/marketingService.ts#fetchReferralStats"
+            "apps/sdkwork-clawrouter-pc/packages/"
+            "sdkwork-clawrouter-pc-admin-marketing/src/marketingService.ts#fetchReferralStats"
         )
         operation = operations[key]
 

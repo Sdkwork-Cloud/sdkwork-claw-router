@@ -10,9 +10,9 @@ class ConsoleAccountBackendRuntimeStandardTest(unittest.TestCase):
         account_view = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-account"
+            / "sdkwork-clawrouter-pc-console-account"
             / "src"
             / "AccountView.tsx"
         ).read_text(encoding="utf-8")
@@ -29,27 +29,27 @@ class ConsoleAccountBackendRuntimeStandardTest(unittest.TestCase):
         account_view = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-account"
+            / "sdkwork-clawrouter-pc-console-account"
             / "src"
             / "AccountView.tsx"
         ).read_text(encoding="utf-8")
         account_service = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-account"
+            / "sdkwork-clawrouter-pc-console-account"
             / "src"
             / "accountService.ts"
         ).read_text(encoding="utf-8")
         i18n = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-i18n"
+            / "sdkwork-clawrouter-pc-i18n"
             / "src"
             / "resources"
             / "console"
@@ -83,18 +83,18 @@ class ConsoleAccountBackendRuntimeStandardTest(unittest.TestCase):
         account_view = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-account"
+            / "sdkwork-clawrouter-pc-console-account"
             / "src"
             / "AccountView.tsx"
         ).read_text(encoding="utf-8")
         account_service = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-account"
+            / "sdkwork-clawrouter-pc-console-account"
             / "src"
             / "accountService.ts"
         ).read_text(encoding="utf-8")
@@ -141,7 +141,7 @@ class ConsoleAccountBackendRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("static async updateSecurity", account_service)
         self.assertNotIn("static async updateAccount", account_service)
         self.assertIn("route: /console/account", contract)
-        self.assertIn("source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-account/src/accountService.ts", contract)
+        self.assertIn("source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-account/src/accountService.ts", contract)
         self.assertIn("operation: fetchAccountDetails", contract)
         self.assertIn("operation_id: console.accountDetails.retrieve", account_operation_contract)
         self.assertIn("api_path: /app/v3/api/accounts/current/summary", account_operation_contract)
@@ -381,9 +381,9 @@ class ConsoleAccountBackendRuntimeStandardTest(unittest.TestCase):
         package_root = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-account"
+            / "sdkwork-clawrouter-pc-console-account"
         )
         package = __import__("json").loads((package_root / "package.json").read_text(encoding="utf-8"))
         openapi = (
@@ -407,9 +407,9 @@ class ConsoleAccountBackendRuntimeStandardTest(unittest.TestCase):
         frontend = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-account"
+            / "sdkwork-clawrouter-pc-console-account"
             / "src"
             / "accountService.ts"
         ).read_text(encoding="utf-8")

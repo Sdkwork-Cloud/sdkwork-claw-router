@@ -53,14 +53,14 @@ class WorkspaceDeliveryStandardTest(unittest.TestCase):
             (
                 ROOT
                 / "apps"
-                / "sdkwork-claw-router-portal"
+                / "sdkwork-clawrouter-pc"
                 / "package.json"
             ).read_text(encoding="utf-8")
         )
         build_script = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "scripts"
             / "build-portal.mjs"
         ).read_text(encoding="utf-8")
@@ -80,7 +80,7 @@ class WorkspaceDeliveryStandardTest(unittest.TestCase):
         smoke_script = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "scripts"
             / "smoke-production-browser.mjs"
         ).read_text(encoding="utf-8")

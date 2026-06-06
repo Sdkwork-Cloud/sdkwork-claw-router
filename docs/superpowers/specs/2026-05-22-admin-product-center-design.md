@@ -60,8 +60,8 @@ The repository already contains the foundation:
   - `/admin/inventory/reservations`
   - `/admin/inventory/ledger`
 - Frontend packages:
-  - `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog`
-  - `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-inventory`
+  - `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog`
+  - `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-inventory`
 - Services already use the generated backend SDK:
   - `getClawRouterBackendSdkClient().commerce.catalog.*`
   - `getClawRouterBackendSdkClient().commerce.inventory.*`
@@ -379,13 +379,13 @@ encode workflow semantics as arbitrary partial updates from the UI.
 
 Keep the packages:
 
-- `sdkwork-claw-router-admin-catalog`
-- `sdkwork-claw-router-admin-inventory`
+- `sdkwork-clawrouter-pc-admin-catalog`
+- `sdkwork-clawrouter-pc-admin-inventory`
 
 Refactor each package into focused files:
 
 ```text
-packages/sdkwork-claw-router-admin-catalog/src/
+packages/sdkwork-clawrouter-pc-admin-catalog/src/
   index.tsx
   catalogService.ts
   catalogTypes.ts
@@ -400,7 +400,7 @@ packages/sdkwork-claw-router-admin-catalog/src/
   PublicationPanel.tsx
   ProductAuditPanel.tsx
 
-packages/sdkwork-claw-router-admin-inventory/src/
+packages/sdkwork-clawrouter-pc-admin-inventory/src/
   index.tsx
   inventoryService.ts
   inventoryTypes.ts
@@ -412,7 +412,7 @@ packages/sdkwork-claw-router-admin-inventory/src/
 ```
 
 The service files remain the only remote-call boundary and must import from
-`sdkwork-claw-router-commons/runtime`. View components call service functions,
+`sdkwork-clawrouter-pc-commons/runtime`. View components call service functions,
 not the SDK directly.
 
 The UI should be operational and dense:
@@ -554,7 +554,7 @@ python -B -m tools.clawrouter_openapi_generator
 node sdks\clawrouter-backend-sdk\bin\generate-sdk.mjs --language typescript
 python -B -m tools.clawrouter_sdk_guardian
 python -B -m tools.schema_quality_gate
-pnpm --dir apps\sdkwork-claw-router-portal exec tsx --test commerce-business-runtime.test.ts
+pnpm --dir apps\sdkwork-clawrouter-pc exec tsx --test commerce-business-runtime.test.ts
 ```
 
 Add narrower test commands per task in the implementation plan.

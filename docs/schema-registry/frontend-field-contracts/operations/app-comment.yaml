@@ -1,7 +1,7 @@
 fragment: operations/app-comment
 frontend_operations:
 - route: /forum/:id
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts
   operation: fetchForumComments
   kind: read
   api_surface: app
@@ -160,7 +160,7 @@ frontend_operations:
         minimum: 1
         maximum: 100
 - route: /forum/:id
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts
   operation: fetchForumCommentReplies
   kind: read
   api_surface: app
@@ -184,7 +184,7 @@ frontend_operations:
       maximum: 100
   response_schema: *id002
 - route: /forum/:id
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts
   operation: fetchForumCommentDetail
   kind: read
   api_surface: app
@@ -276,7 +276,7 @@ frontend_operations:
         maxItems: 100
         items: *id001
 - route: /forum/:id
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts
   operation: fetchMyForumComments
   kind: read
   api_surface: app
@@ -300,7 +300,7 @@ frontend_operations:
       maximum: 100
   response_schema: *id002
 - route: /forum/:id
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts
   operation: fetchForumCommentStatistics
   kind: read
   api_surface: app
@@ -341,7 +341,7 @@ frontend_operations:
         format: int64
         minimum: 0
 - route: /forum/:id
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts
   operation: createForumComment
   kind: create
   api_surface: app
@@ -385,7 +385,7 @@ frontend_operations:
         maxLength: 512
   response_schema: *id001
 - route: /forum/:id
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts
   operation: replyForumComment
   kind: create
   api_surface: app
@@ -412,7 +412,7 @@ frontend_operations:
         maxLength: 512
   response_schema: *id001
 - route: /forum/:id
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts
   operation: deleteForumComment
   kind: delete
   api_surface: app
@@ -428,7 +428,7 @@ frontend_operations:
     schema:
       $ref: '#/components/schemas/NoData'
 - route: /forum/:id
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts
   operation: likeForumComment
   kind: action
   api_surface: app
@@ -444,7 +444,7 @@ frontend_operations:
   request_body_required: false
   response_schema: *id001
 - route: /forum/:id
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts
   operation: unlikeForumComment
   kind: delete
   api_surface: app
@@ -459,7 +459,7 @@ frontend_operations:
   - plus_comments
   response_schema: *id001
 - route: /forum/:id
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts
   operation: pinForumComment
   kind: action
   api_surface: app
@@ -473,7 +473,7 @@ frontend_operations:
   request_body_required: false
   response_schema: *id001
 - route: /forum/:id
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts
   operation: unpinForumComment
   kind: delete
   api_surface: app

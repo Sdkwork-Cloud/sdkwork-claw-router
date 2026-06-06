@@ -34,7 +34,7 @@ cd sdkwork-claw-router
 安装 portal workspace 依赖：
 
 ```powershell
-pnpm --dir apps\sdkwork-claw-router-portal install
+pnpm --dir apps\sdkwork-clawrouter-pc install
 ```
 
 也可以直接使用根命令，它会在需要时安装 portal 依赖：

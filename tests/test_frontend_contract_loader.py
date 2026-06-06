@@ -48,7 +48,7 @@ class FrontendContractLoaderTest(unittest.TestCase):
             fragment: operations/demo
             frontend_operations:
               - route: /demo
-                source: apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts
+                source: apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts
                 operation: fetchDemo
                 kind: read
                 api_surface: app
@@ -63,7 +63,7 @@ class FrontendContractLoaderTest(unittest.TestCase):
             """
             schema: sdkwork-claw-router-frontend-field-contracts
             version: 0.1.0
-            source: apps/sdkwork-claw-router-portal/src/App.tsx
+            source: apps/sdkwork-clawrouter-pc/src/App.tsx
             rule: every actual portal route must be backed by explicit schema tables.
             fragments:
               - shared/entities.yaml

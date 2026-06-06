@@ -12,7 +12,7 @@
 
 核心差异：
 
-1. 前端产品统一到 `apps/sdkwork-claw-router-portal` 一个应用，内部拆分 public、console、admin 模块。
+1. 前端产品统一到 `apps/sdkwork-clawrouter-pc` 一个应用，内部拆分 public、console、admin 模块。
 2. 新版数据库必须遵守 `DATABASE_SPEC.md` 的合同优先、业务前缀、L1/L2/L3 合规标准。
 3. 新版必须对齐 Spring AI Plus 既有业务实体表。用户、VIP、账户、优惠券、积分充值、订单支付等表结构保持与 `spring-ai-plus-business-entity` 完全一致。
 4. 新版 API 管理面和用户面必须使用已存在的 backend/app API 标准，不能重新发明一套控制面协议。
@@ -139,7 +139,7 @@ Gateway 面保持行业兼容：
 5. 不把新表命名为 `claw_*`、`router_*`、`sdkwork_*` 这种产品前缀。
 6. 不改名或破坏 `spring-ai-plus-business-entity` 中用户、VIP、账户、优惠券、交易账户域的既有表结构。
 7. 不为 App/Backend API 增加 `/claw-router` 这类产品路径前缀；公共业务路径必须与 Java app-api/backend-api 一致。
-8. 不因数据结构、接口契约、SDK 替换或实现问题擅自改变 `apps/sdkwork-claw-router-portal` 的 UI 视觉设计、布局、交互风格、组件外观或品牌表达；前端视觉以用户当前设计为准。
+8. 不因数据结构、接口契约、SDK 替换或实现问题擅自改变 `apps/sdkwork-clawrouter-pc` 的 UI 视觉设计、布局、交互风格、组件外观或品牌表达；前端视觉以用户当前设计为准。
 
 ## 6. 版本路线
 
@@ -160,5 +160,5 @@ Gateway 面保持行业兼容：
 5. 用户、VIP、账户、优惠券、积分充值、订单支付等直接使用既有 `plus_*` 表结构。
 6. 四种部署形态能用相同配置模型启动，差异只体现在 profile、数据库、缓存、实例拓扑和 SDK base URL。
 7. 同一套前端构建产物可以在本地 claw-router、私有化 Server、Docker、K8S 和中央 Java app-api/backend-api 之间自由切换，不修改 API 路径和 DTO。
-8. 前端实现接入真实 API/SDK 后，视觉表现与 `apps/sdkwork-claw-router-portal` 当前用户设计保持一致；如需调整视觉、布局、导航、色彩、字体、间距或组件形态，必须先获得用户明确确认。
+8. 前端实现接入真实 API/SDK 后，视觉表现与 `apps/sdkwork-clawrouter-pc` 当前用户设计保持一致；如需调整视觉、布局、导航、色彩、字体、间距或组件形态，必须先获得用户明确确认。
 9. 发布前有单元测试、API 契约测试、数据库契约检查、基础压测和安全检查证据。

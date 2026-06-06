@@ -1,7 +1,7 @@
 fragment: operations/backend-open-platform-shell
 frontend_operations:
 - route: /admin/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   operation: fetchMembershipAdminPlans
   operation_scope: app_shell
   operation_id: memberships.admin.plans.fetch
@@ -14,7 +14,7 @@ frontend_operations:
   read_sources:
   - commerce_membership_plan
 - route: /admin/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   operation: createMembershipAdminPlan
   operation_scope: app_shell
   operation_id: memberships.admin.plans.create
@@ -31,7 +31,7 @@ frontend_operations:
   - commerce_membership_entitlement
   - ops_audit_log
 - route: /admin/open-platform/mini-programs/accounts
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wechat-mini-program/src/openPlatformWechatMiniProgramService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-mini-program/src/openPlatformWechatMiniProgramService.ts
   operation: fetchAccounts
   operation_scope: app_shell
   operation_id: openPlatform.wechatMini.accounts.fetch
@@ -44,7 +44,7 @@ frontend_operations:
   read_sources:
   - open_platform_account
 - route: /admin/open-platform/mini-programs/accounts
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wechat-mini-program/src/openPlatformWechatMiniProgramService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-mini-program/src/openPlatformWechatMiniProgramService.ts
   operation: createAccount
   operation_scope: app_shell
   operation_id: openPlatform.wechatMini.accounts.create
@@ -60,7 +60,7 @@ frontend_operations:
   - open_platform_account
   - ops_audit_log
 - route: /admin/open-platform/mini-programs/accounts
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wechat-mini-program/src/openPlatformWechatMiniProgramService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-mini-program/src/openPlatformWechatMiniProgramService.ts
   operation: updateAccount
   operation_scope: app_shell
   operation_id: openPlatform.wechatMini.accounts.update
@@ -76,7 +76,7 @@ frontend_operations:
   - open_platform_account
   - ops_audit_log
 - route: /admin/open-platform/mini-programs/urls
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wechat-mini-program/src/openPlatformWechatMiniProgramService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-mini-program/src/openPlatformWechatMiniProgramService.ts
   operation: fetchEntries
   operation_scope: app_shell
   operation_id: openPlatform.wechatMini.entries.fetch
@@ -90,7 +90,7 @@ frontend_operations:
   - open_platform_account
   - open_platform_entry
 - route: /admin/open-platform/mini-programs/urls
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wechat-mini-program/src/openPlatformWechatMiniProgramService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-mini-program/src/openPlatformWechatMiniProgramService.ts
   operation: createEntry
   operation_scope: app_shell
   operation_id: openPlatform.wechatMini.entries.create
@@ -107,7 +107,7 @@ frontend_operations:
   - open_platform_entry
   - ops_audit_log
 - route: /admin/open-platform/mini-programs/urls
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wechat-mini-program/src/openPlatformWechatMiniProgramService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-mini-program/src/openPlatformWechatMiniProgramService.ts
   operation: updateEntry
   operation_scope: app_shell
   operation_id: openPlatform.wechatMini.entries.update
@@ -125,7 +125,7 @@ frontend_operations:
   - open_platform_account
   - ops_audit_log
 - route: /admin/open-platform/mini-programs/urls
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wechat-mini-program/src/openPlatformWechatMiniProgramService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-mini-program/src/openPlatformWechatMiniProgramService.ts
   operation: deleteEntry
   operation_scope: app_shell
   operation_id: openPlatform.wechatMini.entries.delete
@@ -143,7 +143,7 @@ frontend_operations:
   - open_platform_account
   - ops_audit_log
 - route: /admin/open-platform/official-accounts/accounts
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wechat-official-account/src/openPlatformWechatOfficialService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-official-account/src/openPlatformWechatOfficialService.ts
   operation: fetchAccounts
   operation_scope: app_shell
   operation_id: openPlatform.wechatOfficial.accounts.fetch
@@ -156,7 +156,7 @@ frontend_operations:
   read_sources:
   - open_platform_account
 - route: /admin/open-platform/official-accounts/accounts
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wechat-official-account/src/openPlatformWechatOfficialService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-official-account/src/openPlatformWechatOfficialService.ts
   operation: createAccount
   operation_scope: app_shell
   operation_id: openPlatform.wechatOfficial.accounts.create
@@ -172,7 +172,7 @@ frontend_operations:
   - open_platform_account
   - ops_audit_log
 - route: /admin/open-platform/official-accounts/accounts
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wechat-official-account/src/openPlatformWechatOfficialService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-official-account/src/openPlatformWechatOfficialService.ts
   operation: updateAccount
   operation_scope: app_shell
   operation_id: openPlatform.wechatOfficial.accounts.update
@@ -188,7 +188,7 @@ frontend_operations:
   - open_platform_account
   - ops_audit_log
 - route: /admin/open-platform/official-accounts/menus
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wechat-official-account/src/openPlatformWechatOfficialService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-official-account/src/openPlatformWechatOfficialService.ts
   operation: fetchEntries
   operation_scope: app_shell
   operation_id: openPlatform.wechatOfficial.entries.fetch
@@ -202,7 +202,7 @@ frontend_operations:
   - open_platform_account
   - open_platform_entry
 - route: /admin/open-platform/official-accounts/menus
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wechat-official-account/src/openPlatformWechatOfficialService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-official-account/src/openPlatformWechatOfficialService.ts
   operation: createEntry
   operation_scope: app_shell
   operation_id: openPlatform.wechatOfficial.entries.create
@@ -219,7 +219,7 @@ frontend_operations:
   - open_platform_entry
   - ops_audit_log
 - route: /admin/open-platform/official-accounts/menus
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wechat-official-account/src/openPlatformWechatOfficialService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-official-account/src/openPlatformWechatOfficialService.ts
   operation: updateEntry
   operation_scope: app_shell
   operation_id: openPlatform.wechatOfficial.entries.update
@@ -237,7 +237,7 @@ frontend_operations:
   - open_platform_account
   - ops_audit_log
 - route: /admin/open-platform/official-accounts/menus
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wechat-official-account/src/openPlatformWechatOfficialService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wechat-official-account/src/openPlatformWechatOfficialService.ts
   operation: deleteEntry
   operation_scope: app_shell
   operation_id: openPlatform.wechatOfficial.entries.delete

@@ -126,7 +126,7 @@ SDK_DESCRIPTIONS = {
 SDK_GENERATED_OPENAPI_PATHS = {
     "clawrouter-app-sdk": Path("generated/openapi/clawrouter-app-openapi.json"),
     "clawrouter-backend-sdk": Path("generated/openapi/clawrouter-backend-openapi.json"),
-    "clawrouter-open-sdk": Path("apps/sdkwork-claw-router-portal/public/openapi.json"),
+    "clawrouter-open-sdk": Path("apps/sdkwork-clawrouter-pc/public/openapi.json"),
 }
 SDK_DEPENDENCIES = {
     "clawrouter-app-sdk": [

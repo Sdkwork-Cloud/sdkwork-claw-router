@@ -7,24 +7,24 @@ ROOT = Path(__file__).resolve().parents[1]
 
 class ConsoleMessagesRuntimeStandardTest(unittest.TestCase):
     def test_console_notification_route_and_navbar_use_notification_naming(self) -> None:
-        app = (ROOT / "apps" / "sdkwork-claw-router-portal" / "src" / "App.tsx").read_text(
+        app = (ROOT / "apps" / "sdkwork-clawrouter-pc" / "src" / "App.tsx").read_text(
             encoding="utf-8"
         )
         console_layout = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-core"
+            / "sdkwork-clawrouter-pc-console-core"
             / "src"
             / "ConsoleLayout.tsx"
         ).read_text(encoding="utf-8")
         navbar = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-commons"
+            / "sdkwork-clawrouter-pc-commons"
             / "src"
             / "components"
             / "Navbar.tsx"
@@ -44,18 +44,18 @@ class ConsoleMessagesRuntimeStandardTest(unittest.TestCase):
         messages_view = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-messages"
+            / "sdkwork-clawrouter-pc-console-messages"
             / "src"
             / "MessagesView.tsx"
         ).read_text(encoding="utf-8")
         messages_service = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-messages"
+            / "sdkwork-clawrouter-pc-console-messages"
             / "src"
             / "messagesService.ts"
         ).read_text(encoding="utf-8")
@@ -64,8 +64,8 @@ class ConsoleMessagesRuntimeStandardTest(unittest.TestCase):
         ).read_text(encoding="utf-8")
         notification_operation_marker = (
             "  - route: /console/notifications\n"
-            "    source: apps/sdkwork-claw-router-portal/packages/"
-            "sdkwork-claw-router-console-messages/src/messagesService.ts\n"
+            "    source: apps/sdkwork-clawrouter-pc/packages/"
+            "sdkwork-clawrouter-pc-console-messages/src/messagesService.ts\n"
             "    operation: fetchMessages"
         )
         notification_operation_start = contract.index(notification_operation_marker)

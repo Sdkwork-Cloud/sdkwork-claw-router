@@ -1,7 +1,7 @@
 fragment: operations/backend-promotion
 frontend_operations:
 - route: /admin/marketing
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-marketing/src/marketingService.ts
   operation: backendPromotionOffersList
   operation_id: promotions.offers.management.list
   kind: read
@@ -82,7 +82,7 @@ frontend_operations:
         minimum: 1
         maximum: 200
 - route: /admin/marketing
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-marketing/src/marketingService.ts
   operation: backendPromotionCouponStocksList
   operation_id: promotions.couponStocks.list
   kind: read
@@ -117,7 +117,7 @@ frontend_operations:
       maxLength: 32
   response_schema: *id001
 - route: /admin/marketing
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-marketing/src/marketingService.ts
   operation: backendPromotionCodesList
   operation_id: promotions.codes.list
   kind: read
@@ -152,7 +152,7 @@ frontend_operations:
       maxLength: 32
   response_schema: *id001
 - route: /admin/marketing
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-marketing/src/marketingService.ts
   operation: backendPromotionDiscountApplicationsList
   operation_id: promotions.discountApplications.list
   kind: read
@@ -190,7 +190,7 @@ frontend_operations:
       maxLength: 32
   response_schema: *id001
 - route: /admin/marketing
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-marketing/src/marketingService.ts
   operation: backendPromotionCodeRedemptionsList
   operation_id: promotions.codes.redemptions.list
   kind: read
@@ -226,7 +226,7 @@ frontend_operations:
       maxLength: 64
   response_schema: *id001
 - route: /admin/marketing
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-marketing/src/marketingService.ts
   operation: backendPromotionUserCouponsList
   operation_id: promotions.userCoupons.management.list
   kind: read
@@ -262,7 +262,7 @@ frontend_operations:
       maxLength: 64
   response_schema: *id001
 - route: /admin/marketing
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-marketing/src/marketingService.ts
   operation: backendPromotionDiscountAllocationsList
   operation_id: promotions.discountAllocations.list
   kind: read
@@ -284,7 +284,7 @@ frontend_operations:
       maxLength: 128
   response_schema: *id001
 - route: /admin/marketing
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-marketing/src/marketingService.ts
   operation: backendPromotionCouponLedgerEntriesList
   operation_id: promotions.couponLedgerEntries.list
   kind: read
@@ -306,7 +306,7 @@ frontend_operations:
       maxLength: 128
   response_schema: *id001
 - route: /admin/marketing
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-marketing/src/marketingService.ts
   operation: backendPromotionBudgetLedgerEntriesList
   operation_id: promotions.budgetLedgerEntries.list
   kind: read
@@ -327,7 +327,7 @@ frontend_operations:
       maxLength: 128
   response_schema: *id001
 - route: /admin/marketing
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-marketing/src/marketingService.ts
   operation: backendPromotionExternalBindingsList
   operation_id: promotions.externalBindings.list
   kind: read
@@ -351,7 +351,7 @@ frontend_operations:
       maxLength: 64
   response_schema: *id001
 - route: /admin/marketing
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-marketing/src/marketingService.ts
   operation: backendPromotionEventsList
   operation_id: promotions.events.list
   kind: read

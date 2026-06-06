@@ -1,7 +1,7 @@
 fragment: models/sdk-reference
 frontend_models:
 - route: /sdk-reference
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-sdk-reference/src/data/sdkData.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-sdk-reference/src/data/sdkData.ts
   interface: SdkLanguage
   fields:
   - id
@@ -16,7 +16,7 @@ frontend_models:
   data_sources:
   - content_sdk_release
 - route: /sdk-reference
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-sdk-reference/src/sdkReferenceGenerationService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-sdk-reference/src/sdkReferenceGenerationService.ts
   interface: GenerateSdkReferenceInput
   fields:
   - spec

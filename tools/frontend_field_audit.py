@@ -263,7 +263,7 @@ class FrontendFieldAudit:
         return FrontendFieldAuditResult(ok=not messages, messages=messages)
 
     def _source_files(self) -> list[Path]:
-        portal = self.root / "apps" / "sdkwork-claw-router-portal" / "packages"
+        portal = self.root / "apps" / "sdkwork-clawrouter-pc" / "packages"
         if not portal.exists():
             return []
 

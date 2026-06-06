@@ -1,7 +1,7 @@
 fragment: operations/app-feed
 frontend_operations:
 - route: /forum
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts
   operation: fetchForumOverview
   kind: read
   api_surface: app
@@ -114,7 +114,7 @@ frontend_operations:
             minLength: 1
             maxLength: 64
 - route: /forum
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts
   operation: fetchForumFeeds
   kind: read
   api_surface: app
@@ -278,7 +278,7 @@ frontend_operations:
           type: string
           maxLength: 64
 - route: /forum/:id
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts
   operation: fetchForumFeedDetail
   kind: read
   api_surface: app
@@ -292,7 +292,7 @@ frontend_operations:
   query_parameters: []
   response_schema: *id001
 - route: /forum
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts
   operation: createForumFeed
   kind: create
   api_surface: app
@@ -341,7 +341,7 @@ frontend_operations:
         maxLength: 500
   response_schema: *id001
 - route: /forum/:id
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts
   operation: deleteForumFeed
   kind: delete
   api_surface: app
@@ -356,7 +356,7 @@ frontend_operations:
     name: ForumBooleanResponse
     type: boolean
 - route: /forum/:id
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts
   operation: likeForumFeed
   kind: action
   api_surface: app
@@ -372,7 +372,7 @@ frontend_operations:
   request_body_required: false
   response_schema: *id001
 - route: /forum/:id
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts
   operation: unlikeForumFeed
   kind: delete
   api_surface: app
@@ -388,7 +388,7 @@ frontend_operations:
   request_body_required: false
   response_schema: *id001
 - route: /forum/:id
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts
   operation: collectForumFeed
   kind: action
   api_surface: app
@@ -410,7 +410,7 @@ frontend_operations:
       minimum: 1
   response_schema: *id001
 - route: /forum/:id
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts
   operation: uncollectForumFeed
   kind: delete
   api_surface: app
@@ -426,7 +426,7 @@ frontend_operations:
   request_body_required: false
   response_schema: *id001
 - route: /forum/:id
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts
   operation: shareForumFeed
   kind: action
   api_surface: app
@@ -440,7 +440,7 @@ frontend_operations:
   request_body_required: false
   response_schema: *id001
 - route: /forum
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts
   operation: fetchHotForumFeeds
   kind: read
   api_surface: app
@@ -460,7 +460,7 @@ frontend_operations:
       maximum: 100
   response_schema: *id002
 - route: /forum
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts
   operation: fetchRecommendedForumFeeds
   kind: read
   api_surface: app
@@ -480,7 +480,7 @@ frontend_operations:
       maximum: 100
   response_schema: *id002
 - route: /forum
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts
   operation: searchForumFeeds
   kind: read
   api_surface: app
@@ -511,7 +511,7 @@ frontend_operations:
       maximum: 100
   response_schema: *id002
 - route: /forum
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts
   operation: fetchTopForumFeeds
   kind: read
   api_surface: app
@@ -531,7 +531,7 @@ frontend_operations:
       maximum: 100
   response_schema: *id002
 - route: /forum
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts
   operation: fetchCategoryForumFeeds
   kind: read
   api_surface: app
@@ -556,7 +556,7 @@ frontend_operations:
       maximum: 100
   response_schema: *id002
 - route: /forum
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts
   operation: fetchMostViewedForumFeeds
   kind: read
   api_surface: app
@@ -576,7 +576,7 @@ frontend_operations:
       maximum: 100
   response_schema: *id002
 - route: /forum
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts
   operation: fetchMostLikedForumFeeds
   kind: read
   api_surface: app
@@ -596,7 +596,7 @@ frontend_operations:
       maximum: 100
   response_schema: *id002
 - route: /forum/:id
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumService.ts
   operation: checkForumFeedCollected
   kind: read
   api_surface: app

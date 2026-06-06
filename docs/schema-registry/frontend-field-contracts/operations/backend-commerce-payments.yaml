@@ -1,7 +1,7 @@
 fragment: operations/backend-commerce-payments
 frontend_operations:
 - route: /admin/payments
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-payments/src/paymentsService.ts
   operation: backendPaymentsProvidersList
   operation_id: payments.providers.list
   kind: read
@@ -148,7 +148,7 @@ frontend_operations:
         minimum: 1
         maximum: 200
 - route: /admin/payments
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-payments/src/paymentsService.ts
   operation: backendPaymentsProviderAccountsList
   operation_id: payments.providerAccounts.list
   kind: read
@@ -252,7 +252,7 @@ frontend_operations:
       page: *pageSchema
       pageSize: *pageSizeSchema
 - route: /admin/payments
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-payments/src/paymentsService.ts
   operation: backendPaymentsProviderAccountsCreate
   operation_id: payments.providerAccounts.create
   kind: create
@@ -317,7 +317,7 @@ frontend_operations:
     properties:
       item: *commercePaymentProviderAccountItem
 - route: /admin/payments
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-payments/src/paymentsService.ts
   operation: backendPaymentsProviderAccountsUpdate
   operation_id: payments.providerAccounts.update
   kind: update
@@ -335,7 +335,7 @@ frontend_operations:
   request_schema: *commercePaymentProviderAccountMutationRequest
   response_schema: *commercePaymentProviderAccountMutationResponse
 - route: /admin/payments
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-payments/src/paymentsService.ts
   operation: backendPaymentsProviderAccountsDelete
   operation_id: payments.providerAccounts.delete
   kind: delete
@@ -361,7 +361,7 @@ frontend_operations:
       deleted:
         type: boolean
 - route: /admin/payments
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-payments/src/paymentsService.ts
   operation: backendPaymentsProviderAccountsStatusUpdate
   operation_id: payments.providerAccounts.status.update
   kind: update
@@ -396,7 +396,7 @@ frontend_operations:
         maxLength: 512
   response_schema: *commercePaymentProviderAccountMutationResponse
 - route: /admin/payments
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-payments/src/paymentsService.ts
   operation: backendPaymentsRuntimeSnapshotRetrieve
   operation_id: payments.runtime.snapshot.retrieve
   kind: read
@@ -488,7 +488,7 @@ frontend_operations:
               nullable: true
               maxLength: 1024
 - route: /admin/payments
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-payments/src/paymentsService.ts
   operation: backendPaymentsMethodsList
   operation_id: payments.methods.list
   kind: read
@@ -582,7 +582,7 @@ frontend_operations:
       page: *pageSchema
       pageSize: *pageSizeSchema
 - route: /admin/payments
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-payments/src/paymentsService.ts
   operation: backendPaymentsChannelsList
   operation_id: payments.channels.list
   kind: read
@@ -660,7 +660,7 @@ frontend_operations:
       page: *pageSchema
       pageSize: *pageSizeSchema
 - route: /admin/payments
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-payments/src/paymentsService.ts
   operation: backendPaymentsRouteRulesList
   operation_id: payments.routeRules.list
   kind: read
@@ -745,7 +745,7 @@ frontend_operations:
       page: *pageSchema
       pageSize: *pageSizeSchema
 - route: /admin/payments
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-payments/src/paymentsService.ts
   operation: backendPaymentsIntentsList
   operation_id: payments.intents.list
   kind: read
@@ -859,7 +859,7 @@ frontend_operations:
       page: *pageSchema
       pageSize: *pageSizeSchema
 - route: /admin/payments
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-payments/src/paymentsService.ts
   operation: backendPaymentsAttemptsList
   operation_id: payments.attempts.list
   kind: read
@@ -939,7 +939,7 @@ frontend_operations:
       page: *pageSchema
       pageSize: *pageSizeSchema
 - route: /admin/payments
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-payments/src/paymentsService.ts
   operation: backendPaymentsWebhookEventsList
   operation_id: payments.webhookEvents.list
   kind: read
@@ -1016,7 +1016,7 @@ frontend_operations:
       page: *pageSchema
       pageSize: *pageSizeSchema
 - route: /admin/payments
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-payments/src/paymentsService.ts
   operation: backendPaymentsReconciliationRunsList
   operation_id: payments.reconciliationRuns.list
   kind: read

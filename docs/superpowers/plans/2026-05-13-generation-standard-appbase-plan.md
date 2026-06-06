@@ -89,7 +89,7 @@
 
 **Files:**
 - Create: `spring-ai-plus-business/apps/sdkwork-appbase/packages/pc-react/content/sdkwork-playground-pc-react`
-- Modify: `spring-ai-plus-business/apps/sdkwork-claw-router/apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground`
+- Modify: `spring-ai-plus-business/apps/sdkwork-claw-router/apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground`
 
 - [ ] Move generic Playground types/components/service interfaces into appbase.
 - [ ] Keep claw-router-specific SDK calls in a host adapter.

@@ -1,7 +1,7 @@
 fragment: operations/app-promotion
 frontend_operations:
 - route: /console/wallet
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-wallet/src/walletService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-wallet/src/walletService.ts
   operation: appPromotionUserCouponsList
   operation_id: promotions.userCoupons.wallet.list
   kind: read
@@ -127,7 +127,7 @@ frontend_operations:
               nullable: true
               maxLength: 64
 - route: /console/wallet
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-wallet/src/walletService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-wallet/src/walletService.ts
   operation: appPromotionUserCouponClaimsCreate
   operation_id: promotions.userCoupons.claims.create
   kind: create
@@ -200,7 +200,7 @@ frontend_operations:
       qrCode:
         $ref: '#/components/schemas/MediaResource'
 - route: /console/wallet
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-wallet/src/walletService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-wallet/src/walletService.ts
   operation: appPromotionCodeRedemptionsCreate
   operation_id: promotions.codes.redemptions.create
   kind: create
@@ -255,7 +255,7 @@ frontend_operations:
         maxLength: 512
   response_schema: *id002
 - route: /console/checkout
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-checkout/src/checkoutService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-checkout/src/checkoutService.ts
   operation: appPromotionDiscountApplicationsCreate
   operation_id: promotions.discountApplications.create
   kind: create
@@ -289,7 +289,7 @@ frontend_operations:
   request_schema: *id001
   response_schema: *id002
 - route: /console/checkout
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-checkout/src/checkoutService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-checkout/src/checkoutService.ts
   operation: appPromotionDiscountApplicationsSettle
   operation_id: promotions.discountApplications.settle
   kind: create
@@ -316,7 +316,7 @@ frontend_operations:
   request_schema: *id001
   response_schema: *id002
 - route: /console/checkout
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-checkout/src/checkoutService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-checkout/src/checkoutService.ts
   operation: appPromotionDiscountApplicationsRelease
   operation_id: promotions.discountApplications.release
   kind: create
@@ -342,7 +342,7 @@ frontend_operations:
   request_schema: *id001
   response_schema: *id002
 - route: /console/checkout
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-checkout/src/checkoutService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-checkout/src/checkoutService.ts
   operation: appPromotionDiscountApplicationReversalsCreate
   operation_id: promotions.discountApplications.reversals.create
   kind: create
@@ -369,7 +369,7 @@ frontend_operations:
   request_schema: *id001
   response_schema: *id002
 - route: /console/wallet
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-wallet/src/walletService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-wallet/src/walletService.ts
   operation: redeemCode
   operation_id: console.promotionCodeRedemptions.create
   operation_scope: app_shell

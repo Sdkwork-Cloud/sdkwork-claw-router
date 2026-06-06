@@ -2,7 +2,7 @@
 
 版本：0.1.0
 日期：2026-04-28
-约束：不改变 `apps/sdkwork-claw-router-portal` 的 UI 视觉设计；后端数据结构和 API DTO 适配既有页面。
+约束：不改变 `apps/sdkwork-clawrouter-pc` 的 UI 视觉设计；后端数据结构和 API DTO 适配既有页面。
 
 ## 1. 结论
 

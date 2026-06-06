@@ -70,7 +70,7 @@ class FrontendOperationAudit:
         r"(?:from\s+|import\s*\(\s*)['\"](\.{1,2}/[^'\"]*RuntimeApiOperations(?:\.[cm]?[tj]sx?)?)['\"]"
     )
     COMMERCE_RUNTIME_SOURCE = (
-        "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/commerce-runtime.ts"
+        "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/commerce-runtime.ts"
     )
     APPBASE_IAM_RUNTIME_PATTERN = re.compile(r"\bgetClawRouterIamRuntime\s*\(\s*\)\s*\.service\b")
     APPBASE_IAM_CONTROLLER_PATTERN = re.compile(
@@ -322,7 +322,7 @@ class FrontendOperationAudit:
         return FrontendOperationAuditResult(ok=not messages, messages=messages)
 
     def _source_files(self) -> list[Path]:
-        portal_root = self.root / "apps" / "sdkwork-claw-router-portal"
+        portal_root = self.root / "apps" / "sdkwork-clawrouter-pc"
         source_roots = [portal_root / "packages", portal_root / "src"]
         files: list[Path] = []
         for source_root in source_roots:

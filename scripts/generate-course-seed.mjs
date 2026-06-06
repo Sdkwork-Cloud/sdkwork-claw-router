@@ -4,8 +4,8 @@ import { fileURLToPath } from 'node:url';
 
 const root = dirname(fileURLToPath(import.meta.url)).replace(/\\scripts$/, '');
 const seedPath = join(root, 'data', 'courses', 'course-seed.json');
-const coversDir = join(root, 'apps', 'sdkwork-claw-router-portal', 'public', 'assets', 'courses', 'covers');
-const avatarsDir = join(root, 'apps', 'sdkwork-claw-router-portal', 'public', 'assets', 'courses', 'avatars');
+const coversDir = join(root, 'apps', 'sdkwork-clawrouter-pc', 'public', 'assets', 'courses', 'covers');
+const avatarsDir = join(root, 'apps', 'sdkwork-clawrouter-pc', 'public', 'assets', 'courses', 'avatars');
 const generatedAt = '2026-05-12T00:00:00Z';
 const courseCount = 216;
 

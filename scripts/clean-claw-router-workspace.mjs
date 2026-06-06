@@ -9,8 +9,8 @@ const DEFAULT_SAFE_CLEAN_PATHS = [
   '.pytest_cache',
   '.mypy_cache',
   '.ruff_cache',
-  path.join('apps', 'sdkwork-claw-router-portal', '.turbo'),
-  path.join('apps', 'sdkwork-claw-router-portal', 'dist'),
+  path.join('apps', 'sdkwork-clawrouter-pc', '.turbo'),
+  path.join('apps', 'sdkwork-clawrouter-pc', 'dist'),
 ];
 
 const DEFAULT_PYTHON_CACHE_ROOTS = [
@@ -124,7 +124,7 @@ function buildCleanPlan({
   );
 
   if (nodeModules) {
-    relativePaths.push(path.join('apps', 'sdkwork-claw-router-portal', 'node_modules'));
+    relativePaths.push(path.join('apps', 'sdkwork-clawrouter-pc', 'node_modules'));
   }
 
   return relativePaths.map((relativePath) => createCleanEntry(workspaceRoot, relativePath));

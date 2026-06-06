@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env node
+#!/usr/bin/env node
 
 import { spawn } from 'node:child_process';
 import process from 'node:process';
@@ -98,7 +98,7 @@ function createProductionBuildPlan(
     {
       label: 'portal production assets',
       command: pnpmCommand(platform),
-      args: ['--dir', 'apps/sdkwork-claw-router-portal', 'build'],
+      args: ['--dir', 'apps/sdkwork-clawrouter-pc', 'build'],
       env,
       cwd: root,
     },
@@ -128,7 +128,7 @@ function renderProductionBuildPlan(
   return [
     '[build-production] Build Plan',
     ...plan.map((step) => `[build-production]   ${step.label}: ${step.command} ${step.args.join(' ')}`),
-    `[build-production]   SDK archive root: ${path.join(root, 'apps', 'sdkwork-claw-router-portal', 'dist', 'sdk-archives')}`,
+    `[build-production]   SDK archive root: ${path.join(root, 'apps', 'sdkwork-clawrouter-pc', 'dist', 'sdk-archives')}`,
     `[build-production]   Rust edge binary: ${productionGatewayBinaryPath({
       env,
       platform,

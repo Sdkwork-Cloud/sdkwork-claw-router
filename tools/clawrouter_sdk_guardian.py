@@ -870,8 +870,8 @@ class ClawRouterSdkGuardian:
 
     def _check_portal_boundary(self) -> list[str]:
         messages: list[str] = []
-        portal_root = self.root / "apps" / "sdkwork-claw-router-portal"
-        commons_root = portal_root / "packages" / "sdkwork-claw-router-commons"
+        portal_root = self.root / "apps" / "sdkwork-clawrouter-pc"
+        commons_root = portal_root / "packages" / "sdkwork-clawrouter-pc-commons"
 
         portal_package = self._read_json(portal_root / "package.json", messages)
         if portal_package is not None:
@@ -921,7 +921,7 @@ class ClawRouterSdkGuardian:
                 messages,
             )
 
-        boundary_relative = "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/sdk-clients.ts"
+        boundary_relative = "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts"
         boundary_path = self.root / boundary_relative
         boundary_source = self._read_text(boundary_path, [])
         if boundary_source is None:
@@ -938,16 +938,16 @@ class ClawRouterSdkGuardian:
                 if token not in boundary_source:
                     messages.append(f"portal SDK boundary must mention {token}")
 
-        runtime_relative = "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/runtime.ts"
+        runtime_relative = "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/runtime.ts"
         runtime_source = self._read_text(self.root / runtime_relative, [])
         if runtime_source is None or "./sdk-clients.ts" not in runtime_source:
             messages.append(f"portal commons runtime must export ./sdk-clients.ts: {runtime_relative}")
 
-        index_relative = "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/index.ts"
+        index_relative = "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/index.ts"
         index_source = self._read_text(self.root / index_relative, [])
         if index_source is not None and re.search(r"['\"]\./sdk-clients(?:\.(?:ts|js))?['\"]", index_source):
             messages.append(
-                "portal commons UI root must not export ./sdk-clients; use sdkwork-claw-router-commons/runtime: "
+                "portal commons UI root must not export ./sdk-clients; use sdkwork-clawrouter-pc-commons/runtime: "
                 f"{index_relative}"
             )
 

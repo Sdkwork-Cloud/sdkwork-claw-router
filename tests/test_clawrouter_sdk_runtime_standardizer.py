@@ -291,7 +291,7 @@ class SdkRuntimeStandardizerTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             self.write_minimal_typescript_sdk(root, "clawrouter-open-sdk", "@sdkwork/clawrouter-open-sdk")
-            source_path = root / "apps" / "sdkwork-claw-router-portal" / "public" / "openapi.json"
+            source_path = root / "apps" / "sdkwork-clawrouter-pc" / "public" / "openapi.json"
             source_path.parent.mkdir(parents=True, exist_ok=True)
             source = {
                 "openapi": "3.0.3",

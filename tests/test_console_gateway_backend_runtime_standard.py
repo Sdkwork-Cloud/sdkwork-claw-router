@@ -231,9 +231,9 @@ class ConsoleGatewayBackendRuntimeStandardTest(unittest.TestCase):
         frontend = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-gateway"
+            / "sdkwork-clawrouter-pc-console-gateway"
             / "src"
             / "gatewayService.ts"
         ).read_text(encoding="utf-8")
@@ -265,18 +265,18 @@ class ConsoleGatewayBackendRuntimeStandardTest(unittest.TestCase):
         gateway_view = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-gateway"
+            / "sdkwork-clawrouter-pc-console-gateway"
             / "src"
             / "GatewayView.tsx"
         ).read_text(encoding="utf-8")
         gateway_service = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-gateway"
+            / "sdkwork-clawrouter-pc-console-gateway"
             / "src"
             / "gatewayService.ts"
         ).read_text(encoding="utf-8")
@@ -285,8 +285,8 @@ class ConsoleGatewayBackendRuntimeStandardTest(unittest.TestCase):
         ).read_text(encoding="utf-8")
         gateway_operation_marker = (
             "  - route: /console/gateway\n"
-            "    source: apps/sdkwork-claw-router-portal/packages/"
-            "sdkwork-claw-router-console-gateway/src/gatewayService.ts\n"
+            "    source: apps/sdkwork-clawrouter-pc/packages/"
+            "sdkwork-clawrouter-pc-console-gateway/src/gatewayService.ts\n"
             "    operation: fetchTraces"
         )
         gateway_operation_start = contract.index(gateway_operation_marker)
@@ -340,27 +340,27 @@ class ConsoleGatewayBackendRuntimeStandardTest(unittest.TestCase):
         gateway_view = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-gateway"
+            / "sdkwork-clawrouter-pc-console-gateway"
             / "src"
             / "GatewayView.tsx"
         ).read_text(encoding="utf-8")
         gateway_service = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-gateway"
+            / "sdkwork-clawrouter-pc-console-gateway"
             / "src"
             / "gatewayService.ts"
         ).read_text(encoding="utf-8")
         i18n = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-i18n"
+            / "sdkwork-clawrouter-pc-i18n"
             / "src"
             / "index.ts"
         ).read_text(encoding="utf-8")

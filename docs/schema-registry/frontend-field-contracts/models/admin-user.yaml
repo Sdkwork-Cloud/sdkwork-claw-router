@@ -1,7 +1,7 @@
 fragment: models/admin-user
 frontend_models:
 - route: /admin/user
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-user/src/userService.ts
   interface: ApiKeyItem
   fields:
   - id
@@ -12,7 +12,7 @@ frontend_models:
   data_sources:
   - iam_gateway_api_key
 - route: /admin/user
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-user/src/userService.ts
   interface: ApiKeyCreateInput
   fields:
   - userId
@@ -21,7 +21,7 @@ frontend_models:
   - iam_user
   - iam_gateway_api_key
 - route: /admin/user
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-user/src/userService.ts
   interface: UserCreateInput
   fields:
   - email
@@ -31,7 +31,7 @@ frontend_models:
   - iam_user
   - commerce_account
 - route: /admin/user
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-user/src/userService.ts
   interface: UserListItem
   fields:
   - id
@@ -51,7 +51,7 @@ frontend_models:
   - iam_user_role
   - iam_user_login_event
 - route: /admin/user
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-user/src/userService.ts
   interface: UserAdminTableData
   fields:
   - users
@@ -71,7 +71,7 @@ frontend_models:
   - iam_user
   - iam_gateway_api_key
 - route: /admin/user
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-user/src/userService.ts
   interface: UserUpdateInput
   fields:
   - username

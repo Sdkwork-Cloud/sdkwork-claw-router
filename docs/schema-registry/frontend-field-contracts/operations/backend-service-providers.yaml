@@ -1,7 +1,7 @@
 fragment: operations/backend-service-providers
 frontend_operations:
 - route: /admin/service-providers/dashboard
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-service-provider/src/serviceProviderService.ts
   operation: backendServiceProviderDashboardRetrieve
   operation_id: dashboard.retrieve
   kind: read
@@ -103,7 +103,7 @@ frontend_operations:
             nullable: true
             minimum: 0
 - route: /admin/service-providers/providers
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-service-provider/src/serviceProviderService.ts
   operation: backendServiceProvidersList
   operation_id: providerRegistry.list
   kind: read
@@ -164,7 +164,7 @@ frontend_operations:
         minimum: 1
         maximum: 200
 - route: /admin/service-providers/relations
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-service-provider/src/serviceProviderService.ts
   operation: backendServiceProviderRelationsList
   operation_id: relations.list
   kind: read
@@ -180,7 +180,7 @@ frontend_operations:
   query_parameters: *serviceProviderPageQuery
   response_schema: *serviceProviderCollectionResponse
 - route: /admin/service-providers/downstreams
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-service-provider/src/serviceProviderService.ts
   operation: backendServiceProviderDownstreamsList
   operation_id: downstreams.list
   kind: read
@@ -198,7 +198,7 @@ frontend_operations:
   query_parameters: *serviceProviderPageQuery
   response_schema: *serviceProviderCollectionResponse
 - route: /admin/service-providers/downstreams
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-service-provider/src/serviceProviderService.ts
   operation: backendServiceProviderDownstreamCreate
   operation_id: downstreams.create
   kind: create
@@ -313,7 +313,7 @@ frontend_operations:
             nullable: true
             maxLength: 32
 - route: /admin/service-providers/members
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-service-provider/src/serviceProviderService.ts
   operation: backendServiceProviderMembersList
   operation_id: members.list
   kind: read
@@ -328,7 +328,7 @@ frontend_operations:
   query_parameters: *serviceProviderPageQuery
   response_schema: *serviceProviderCollectionResponse
 - route: /admin/service-providers/bindings
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-service-provider/src/serviceProviderService.ts
   operation: backendServiceProviderBindingsList
   operation_id: bindings.list
   kind: read
@@ -345,7 +345,7 @@ frontend_operations:
   query_parameters: *serviceProviderPageQuery
   response_schema: *serviceProviderCollectionResponse
 - route: /admin/service-providers/contracts
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-service-provider/src/serviceProviderService.ts
   operation: backendServiceProviderContractsList
   operation_id: contracts.list
   kind: read
@@ -361,7 +361,7 @@ frontend_operations:
   query_parameters: *serviceProviderPageQuery
   response_schema: *serviceProviderCollectionResponse
 - route: /admin/service-providers/pricing
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-service-provider/src/serviceProviderService.ts
   operation: backendServiceProviderPricingRulesList
   operation_id: pricingRules.list
   kind: read
@@ -377,7 +377,7 @@ frontend_operations:
   query_parameters: *serviceProviderPageQuery
   response_schema: *serviceProviderCollectionResponse
 - route: /admin/service-providers/pricing
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-service-provider/src/serviceProviderService.ts
   operation: backendServiceProviderPricingRuleCreate
   operation_id: pricingRules.create
   kind: create
@@ -535,7 +535,7 @@ frontend_operations:
             minLength: 1
             maxLength: 64
 - route: /admin/service-providers/pricing
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-service-provider/src/serviceProviderService.ts
   operation: backendServiceProviderPricingRuleUpdate
   operation_id: pricingRules.update
   kind: update
@@ -578,7 +578,7 @@ frontend_operations:
         - suspended
   response_schema: *serviceProviderPricingRuleMutationResponse
 - route: /admin/service-providers/pricing
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-service-provider/src/serviceProviderService.ts
   operation: backendServiceProviderPriceSimulationCreate
   operation_id: priceSimulation.create
   kind: create
@@ -650,7 +650,7 @@ frontend_operations:
             nullable: true
             maxLength: 128
 - route: /admin/service-providers/usage
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-service-provider/src/serviceProviderService.ts
   operation: backendServiceProviderUsageList
   operation_id: usage.list
   kind: read
@@ -666,7 +666,7 @@ frontend_operations:
   query_parameters: *serviceProviderPageQuery
   response_schema: *serviceProviderCollectionResponse
 - route: /admin/service-providers/wallet
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-service-provider/src/serviceProviderService.ts
   operation: backendServiceProviderWalletAccountsList
   operation_id: providerWalletAccounts.list
   kind: read
@@ -681,7 +681,7 @@ frontend_operations:
   query_parameters: *serviceProviderPageQuery
   response_schema: *serviceProviderCollectionResponse
 - route: /admin/service-providers/statements
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-service-provider/src/serviceProviderService.ts
   operation: backendServiceProviderStatementsList
   operation_id: statements.list
   kind: read
@@ -696,7 +696,7 @@ frontend_operations:
   query_parameters: *serviceProviderPageQuery
   response_schema: *serviceProviderCollectionResponse
 - route: /admin/service-providers/reconciliation
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-service-provider/src/serviceProviderService.ts
   operation: backendServiceProviderReconciliationRunsList
   operation_id: reconciliationRuns.list
   kind: read
@@ -714,7 +714,7 @@ frontend_operations:
   query_parameters: *serviceProviderPageQuery
   response_schema: *serviceProviderCollectionResponse
 - route: /admin/service-providers/adjustments
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-service-provider/src/serviceProviderService.ts
   operation: backendServiceProviderAdjustmentsList
   operation_id: adjustments.list
   kind: read
@@ -729,7 +729,7 @@ frontend_operations:
   query_parameters: *serviceProviderPageQuery
   response_schema: *serviceProviderCollectionResponse
 - route: /admin/service-providers/risk
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-service-provider/src/serviceProviderService.ts
   operation: backendServiceProviderRiskEventsList
   operation_id: riskEvents.list
   kind: read
@@ -745,7 +745,7 @@ frontend_operations:
   query_parameters: *serviceProviderPageQuery
   response_schema: *serviceProviderCollectionResponse
 - route: /admin/service-providers/audit
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-service-provider/src/serviceProviderService.ts
   operation: backendServiceProviderAuditEventsList
   operation_id: auditEvents.list
   kind: read

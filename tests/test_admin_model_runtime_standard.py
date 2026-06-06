@@ -12,7 +12,7 @@ class AdminModelRuntimeStandardTest(unittest.TestCase):
     def test_admin_model_write_contracts_use_operation_specific_payloads(self) -> None:
         manifest = ApiContractManifestGenerator(root=ROOT).generate()
         operations = {operation["key"]: operation for operation in manifest["operations"]}
-        source = "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts"
+        source = "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts"
 
         sync_models = operations[f"{source}#syncVendorsAndModels"]
         add_vendor = operations[f"{source}#addVendor"]
@@ -51,9 +51,9 @@ class AdminModelRuntimeStandardTest(unittest.TestCase):
         service = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-admin-model"
+            / "sdkwork-clawrouter-pc-admin-model"
             / "src"
             / "modelService.ts"
         ).read_text(encoding="utf-8")
@@ -160,9 +160,9 @@ class AdminModelRuntimeStandardTest(unittest.TestCase):
         self.assertIn("function readRequiredNonNegativeInteger(record: ApiRecord, key: string, label: string): number", service)
         self.assertIn("function readRequiredNonNegativeInt64String(record: ApiRecord, key: string, label: string): string", service)
         self.assertIn("function readRequiredPositiveInteger(record: ApiRecord, key: string, label: string): number", service)
-        self.assertIn("Admin model ranking requests must be a non-negative integer", (ROOT / "apps" / "sdkwork-claw-router-portal" / "admin-model-runtime.test.ts").read_text(encoding="utf-8"))
-        self.assertIn("Model ranking refresh status generated count must be a non-negative integer", (ROOT / "apps" / "sdkwork-claw-router-portal" / "admin-model-runtime.test.ts").read_text(encoding="utf-8"))
-        self.assertIn("Model catalog sync response meter count must be a non-negative integer", (ROOT / "apps" / "sdkwork-claw-router-portal" / "admin-model-runtime.test.ts").read_text(encoding="utf-8"))
+        self.assertIn("Admin model ranking requests must be a non-negative integer", (ROOT / "apps" / "sdkwork-clawrouter-pc" / "admin-model-runtime.test.ts").read_text(encoding="utf-8"))
+        self.assertIn("Model ranking refresh status generated count must be a non-negative integer", (ROOT / "apps" / "sdkwork-clawrouter-pc" / "admin-model-runtime.test.ts").read_text(encoding="utf-8"))
+        self.assertIn("Model catalog sync response meter count must be a non-negative integer", (ROOT / "apps" / "sdkwork-clawrouter-pc" / "admin-model-runtime.test.ts").read_text(encoding="utf-8"))
 
         self.assertIn(
             "async refresh(body: AdminModelCatalogSyncRequest): Promise<ModelsRefreshResult>",
@@ -242,9 +242,9 @@ class AdminModelRuntimeStandardTest(unittest.TestCase):
         package_root = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-admin-model"
+            / "sdkwork-clawrouter-pc-admin-model"
         )
         package = json.loads((package_root / "package.json").read_text(encoding="utf-8"))
         service = (package_root / "src" / "modelService.ts").read_text(encoding="utf-8")

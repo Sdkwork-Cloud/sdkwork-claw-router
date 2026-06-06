@@ -1,7 +1,7 @@
 fragment: operations/backend-ai
 frontend_operations:
 - route: /admin/group
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-group/src/groupService.ts
   operation: fetchGroups
   operation_id: channelGroups.list
   kind: read
@@ -140,7 +140,7 @@ frontend_operations:
               - active
               - disabled
 - route: /admin/group
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-group/src/groupService.ts
   operation: addGroup
   operation_id: channelGroups.create
   kind: create
@@ -241,7 +241,7 @@ frontend_operations:
         properties: *adminChannelGroupItemProperties
         description: Persisted channel group snapshot returned by the backend.
 - route: /admin/group
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-group/src/groupService.ts
   operation: updateGroup
   operation_id: channelGroups.update
   kind: update
@@ -339,7 +339,7 @@ frontend_operations:
         properties: *adminChannelGroupItemProperties
         description: Persisted channel group snapshot returned by the backend.
 - route: /admin/group
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-group/src/groupService.ts
   operation: deleteGroup
   operation_id: channelGroups.delete
   kind: delete
@@ -364,7 +364,7 @@ frontend_operations:
       deleted:
         type: boolean
 - route: /admin/group
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-group/src/groupService.ts
   operation: fetchGroupChannelBindings
   operation_id: channelGroups.channelBindings.list
   kind: read
@@ -478,7 +478,7 @@ frontend_operations:
               - active
               - error
 - route: /admin/group
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-group/src/groupService.ts
   operation: replaceGroupChannelBindings
   operation_id: channelGroups.channelBindings.update
   kind: update
@@ -569,7 +569,7 @@ frontend_operations:
           required: *adminChannelGroupChannelBindingItemRequired
           properties: *adminChannelGroupChannelBindingItemProperties
 - route: /admin/channel
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts
   operation: fetchAiResources
   operation_id: aiResources.list
   kind: read
@@ -698,7 +698,7 @@ frontend_operations:
                     type: integer
                     format: int64
 - route: /admin/model/resources
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts
   operation: createAiResource
   operation_id: aiResources.create
   kind: create
@@ -821,7 +821,7 @@ frontend_operations:
         required: *adminAiResourceItemRequired
         properties: *adminAiResourceItemProperties
 - route: /admin/model/resources
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts
   operation: updateAiResource
   operation_id: aiResources.update
   kind: update
@@ -842,7 +842,7 @@ frontend_operations:
     properties: *adminAiResourceMutationRequestProperties
   response_schema: *adminAiResourceMutationResponse
 - route: /admin/group
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-group/src/groupService.ts
   operation: fetchAssignableResources
   operation_id: aiResources.list
   openapi_exposed: false
@@ -868,7 +868,7 @@ frontend_operations:
           required: *adminAiResourceItemRequired
           properties: *adminAiResourceItemProperties
 - route: /admin/model/resources
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts
   operation: fetchAssignableResources
   operation_id: aiResources.list
   openapi_exposed: false
@@ -894,7 +894,7 @@ frontend_operations:
           required: *adminAiResourceItemRequired
           properties: *adminAiResourceItemProperties
 - route: /admin/model/resources
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts
   operation: fetchResourceGroups
   operation_id: aiResourceGroups.list
   kind: read
@@ -990,7 +990,7 @@ frontend_operations:
             dynamic:
               type: boolean
 - route: /admin/channel
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts
   operation: fetchAiResourceGroups
   operation_id: aiResourceGroups.list
   openapi_exposed: false
@@ -1017,7 +1017,7 @@ frontend_operations:
           required: *adminAiResourceGroupItemRequired
           properties: *adminAiResourceGroupItemProperties
 - route: /admin/model/resources
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts
   operation: fetchResourceGroupResources
   operation_id: aiResourceGroups.resources.list
   kind: read
@@ -1110,7 +1110,7 @@ frontend_operations:
               - optional
               - fallback
 - route: /admin/group
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-group/src/groupService.ts
   operation: fetchAssignableResourceGroups
   operation_id: aiResourceGroups.list
   openapi_exposed: false
@@ -1137,7 +1137,7 @@ frontend_operations:
           required: *adminAiResourceGroupItemRequired
           properties: *adminAiResourceGroupItemProperties
 - route: /admin/model/resources
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts
   operation: createResourceGroup
   operation_id: aiResourceGroups.create
   kind: create
@@ -1228,7 +1228,7 @@ frontend_operations:
         required: *adminAiResourceGroupItemRequired
         properties: *adminAiResourceGroupItemProperties
 - route: /admin/model/resources
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts
   operation: updateResourceGroup
   operation_id: aiResourceGroups.update
   kind: update
@@ -1249,7 +1249,7 @@ frontend_operations:
     properties: *adminAiResourceGroupMutationRequestProperties
   response_schema: *adminAiResourceGroupMutationResponse
 - route: /admin/model/resources
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts
   operation: deleteResourceGroup
   operation_id: aiResourceGroups.delete
   kind: delete
@@ -1274,7 +1274,7 @@ frontend_operations:
       deleted:
         type: boolean
 - route: /admin/model/sites
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts
   operation: fetchSites
   operation_id: siteCatalog.list
   sdk_domain: sites
@@ -1410,7 +1410,7 @@ frontend_operations:
               - active
               - disabled
 - route: /admin/model/sites
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts
   operation: createSite
   operation_id: create
   sdk_domain: sites
@@ -1521,7 +1521,7 @@ frontend_operations:
         required: *adminSiteItemRequired
         properties: *adminSiteItemProperties
 - route: /admin/model/sites
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts
   operation: updateSite
   operation_id: update
   sdk_domain: sites
@@ -1543,7 +1543,7 @@ frontend_operations:
     properties: *adminSiteMutationRequestProperties
   response_schema: *adminSiteMutationResponse
 - route: /admin/model/sites
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts
   operation: deleteSite
   operation_id: delete
   sdk_domain: sites
@@ -1570,7 +1570,7 @@ frontend_operations:
       deleted:
         type: boolean
 - route: /admin/model/sites
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts
   operation: fetchSiteChannels
   operation_id: siteChannels.list
   sdk_domain: sites
@@ -1644,7 +1644,7 @@ frontend_operations:
               - active
               - disabled
 - route: /admin/model/sites
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts
   operation: testSiteConnection
   operation_id: testConnection.create
   sdk_domain: sites
@@ -1700,7 +1700,7 @@ frontend_operations:
         nullable: true
         maxLength: 512
 - route: /admin/model/sites
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts
   operation: healthCheckSite
   operation_id: healthCheck.create
   sdk_domain: sites
@@ -1720,7 +1720,7 @@ frontend_operations:
   request_schema: *adminSiteEmptyActionRequest
   response_schema: *adminSiteConnectionCheckResponse
 - route: /admin/model/mappings
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts
   operation: fetchModelMappings
   operation_id: modelMappings.list
   sdk_domain: ai
@@ -1936,7 +1936,7 @@ frontend_operations:
               nullable: true
               maxLength: 64
 - route: /admin/channel
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts
   operation: fetchAccountMappings
   operation_id: modelMappings.list
   sdk_domain: ai
@@ -1971,7 +1971,7 @@ frontend_operations:
           required: *adminModelMappingRuleRequired
           properties: *adminModelMappingRuleProperties
 - route: /admin/channel
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts
   operation: replaceAccountMappings
   operation_id: modelMappings.replace
   sdk_domain: ai
@@ -2044,7 +2044,7 @@ frontend_operations:
       ok:
         type: boolean
 - route: /admin/model/mappings
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts
   operation: createModelMapping
   operation_id: modelMappings.create
   sdk_domain: ai
@@ -2184,7 +2184,7 @@ frontend_operations:
         required: *adminModelMappingRuleRequired
         properties: *adminModelMappingRuleProperties
 - route: /admin/model/mappings
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts
   operation: updateModelMapping
   operation_id: modelMappings.update
   sdk_domain: ai
@@ -2209,7 +2209,7 @@ frontend_operations:
     properties: *adminModelMappingMutationRequestProperties
   response_schema: *adminModelMappingMutationResponse
 - route: /admin/model/mappings
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts
   operation: deleteModelMapping
   operation_id: modelMappings.delete
   sdk_domain: ai
@@ -2238,7 +2238,7 @@ frontend_operations:
       deleted:
         type: boolean
 - route: /admin/model/mappings
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts
   operation: resolveModelMapping
   operation_id: modelMappings.resolve.create
   sdk_domain: ai
@@ -2338,7 +2338,7 @@ frontend_operations:
         required: *adminModelMappingRuleRequired
         properties: *adminModelMappingRuleProperties
 - route: /admin/model/mappings
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts
   operation: fetchModelOptionsCatalog
   operation_id: modelMappingOptions.list
   sdk_domain: ai
@@ -2458,7 +2458,7 @@ frontend_operations:
               - inactive
               - deprecated
 - route: /admin/channel
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts
   operation: fetchModels
   kind: read
   api_surface: backend
@@ -2506,7 +2506,7 @@ frontend_operations:
               minLength: 1
               maxLength: 64
 - route: /admin/model
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts
   operation: fetchVendors
   kind: read
   api_surface: backend
@@ -2560,7 +2560,7 @@ frontend_operations:
               maxLength: 512
         description: Model vendor snapshots returned by the backend.
 - route: /admin/model
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts
   operation: fetchModels
   kind: read
   api_surface: backend
@@ -2795,7 +2795,7 @@ frontend_operations:
               maxLength: 128
         description: AI model catalog snapshots returned by the backend.
 - route: /admin/model
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts
   operation: fetchInitializedCatalog
   kind: action
   api_surface: backend
@@ -2862,7 +2862,7 @@ frontend_operations:
           properties: *id004
         description: AI model snapshots after optional initialization.
 - route: /admin/model
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts
   operation: fetchModelRankings
   kind: read
   api_surface: backend
@@ -3145,7 +3145,7 @@ frontend_operations:
                     minLength: 1
                     maxLength: 64
 - route: /admin/model
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts
   operation: fetchModelRankingRefreshStatus
   kind: read
   api_surface: backend
@@ -3359,7 +3359,7 @@ frontend_operations:
             - 'null'
             maxLength: 1024
 - route: /admin/model
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts
   operation: fetchModelRankingRefreshJobs
   kind: read
   api_surface: backend
@@ -3491,7 +3491,7 @@ frontend_operations:
               - 'null'
               maxLength: 1024
 - route: /admin/model
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts
   operation: triggerModelRankingRefresh
   kind: action
   api_surface: backend
@@ -3625,7 +3625,7 @@ frontend_operations:
         minLength: 1
         maxLength: 64
 - route: /admin/model
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts
   operation: syncVendorsAndModels
   kind: action
   api_surface: backend
@@ -3816,7 +3816,7 @@ frontend_operations:
           properties: *id004
         description: Current ai model snapshots after sync.
 - route: /admin/model
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts
   operation: addVendor
   kind: create
   api_surface: backend
@@ -3870,7 +3870,7 @@ frontend_operations:
         properties: *id002
         description: Persisted model vendor snapshot returned by the backend.
 - route: /admin/model
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts
   operation: addModel
   kind: create
   api_surface: backend
@@ -4032,7 +4032,7 @@ frontend_operations:
         properties: *id004
         description: Persisted ai model snapshot returned by the backend.
 - route: /admin/model
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts
   operation: updateModel
   kind: update
   api_surface: backend
@@ -4194,7 +4194,7 @@ frontend_operations:
         properties: *id004
         description: Persisted ai model snapshot returned by the backend.
 - route: /admin/model
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts
   operation: deleteModel
   kind: delete
   api_surface: backend

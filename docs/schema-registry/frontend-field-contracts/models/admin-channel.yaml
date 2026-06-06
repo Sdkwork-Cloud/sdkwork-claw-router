@@ -1,7 +1,7 @@
 fragment: models/admin-channel
 frontend_models:
 - route: /admin/channel
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts
   interface: ChannelItem
   fields:
   - id
@@ -43,7 +43,7 @@ frontend_models:
   - ai_channel_resource
   - integration_provider_health_snapshot
 - route: /admin/channel
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts
   interface: ChannelCredentialInput
   fields:
   - name
@@ -56,7 +56,7 @@ frontend_models:
   data_sources:
   - ai_channel_credential
 - route: /admin/channel
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts
   interface: ChannelCredentialItem
   fields:
   - id
@@ -73,7 +73,7 @@ frontend_models:
   data_sources:
   - ai_channel_credential
 - route: /admin/channel
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts
   interface: ChannelModelCatalogItem
   fields:
   - catalogKey
@@ -85,7 +85,7 @@ frontend_models:
   - ai_model_vendor
   - ai_model
 - route: /admin/channel
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts
   interface: ChannelCreateInput
   fields:
   - name
@@ -116,7 +116,7 @@ frontend_models:
   - ai_provider
   - ai_channel_resource
 - route: /admin/channel
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts
   interface: ChannelUpdateInput
   fields:
   - name
@@ -147,7 +147,7 @@ frontend_models:
   - ai_provider
   - ai_channel_resource
 - route: /admin/channel
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts
   interface: ChannelTestResult
   fields:
   - channelId
@@ -196,7 +196,7 @@ frontend_models:
   - ops_config_snapshot
   - ops_audit_log
 - route: /admin/channel
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts
   interface: ProviderSecretItem
   fields:
   - id
@@ -212,7 +212,7 @@ frontend_models:
   data_sources:
   - ai_channel
 - route: /admin/channel
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts
   interface: ProviderSecretInput
   fields:
   - providerCode
@@ -223,7 +223,7 @@ frontend_models:
   data_sources:
   - ai_channel
 - route: /admin/channel
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts
   interface: ProviderSecretUpdateInput
   fields:
   - providerCode
@@ -234,7 +234,7 @@ frontend_models:
   data_sources:
   - ai_channel
 - route: /admin/channel
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts
   interface: AccountModelMappingInput
   fields:
   - sourceModel
@@ -244,7 +244,7 @@ frontend_models:
   - ai_model_mapping_rule
   - ai_model_mapping_rule_item
 - route: /admin/channel
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts
   interface: ReplaceAccountModelMappingsInput
   fields:
   - channelId
@@ -260,7 +260,7 @@ frontend_models:
   - ai_model_mapping_rule_binding
   - ai_model_mapping_rule_item
 - route: /admin/channel
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts
   interface: AiResource
   fields:
   - id
@@ -288,7 +288,7 @@ frontend_models:
   - ai_resource
   - ai_resource_group_item
 - route: /admin/channel
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts
   interface: AiResourceMember
   fields:
   - parentResourceCode
@@ -299,7 +299,7 @@ frontend_models:
   data_sources:
   - ai_resource_group_item
 - route: /admin/channel
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts
   interface: AiResourceMemberInput
   fields:
   - memberResourceCode
@@ -309,7 +309,7 @@ frontend_models:
   data_sources:
   - ai_resource_group_item
 - route: /admin/model/resources
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts
   interface: AiResourceCreateInput
   fields:
   - resourceCode
@@ -334,7 +334,7 @@ frontend_models:
   - ai_resource_group_item
   - ops_audit_log
 - route: /admin/model/resources
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts
   interface: AiResourceUpdateInput
   fields:
   - resourceCode

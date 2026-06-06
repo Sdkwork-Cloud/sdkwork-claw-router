@@ -28,23 +28,23 @@ BACKEND_SDK_PATH = (
 PORTAL_PACKAGE_ROOT = (
     ROOT
     / "apps"
-    / "sdkwork-claw-router-portal"
+    / "sdkwork-clawrouter-pc"
     / "packages"
-    / "sdkwork-claw-router-admin-agents"
+    / "sdkwork-clawrouter-pc-admin-agents"
 )
 
 
 class AdminAgentsRuntimeStandardTest(unittest.TestCase):
     def test_admin_agents_route_nav_and_service_use_backend_sdk(self) -> None:
-        app = (ROOT / "apps/sdkwork-claw-router-portal/src/App.tsx").read_text(encoding="utf-8")
-        registry = (ROOT / "apps/sdkwork-claw-router-portal/src/adminModuleRegistry.ts").read_text(
+        app = (ROOT / "apps/sdkwork-clawrouter-pc/src/App.tsx").read_text(encoding="utf-8")
+        registry = (ROOT / "apps/sdkwork-clawrouter-pc/src/adminModuleRegistry.ts").read_text(
             encoding="utf-8"
         )
         service = (PORTAL_PACKAGE_ROOT / "src" / "agentService.ts").read_text(encoding="utf-8")
         package_json = json.loads((PORTAL_PACKAGE_ROOT / "package.json").read_text(encoding="utf-8"))
 
-        self.assertEqual("sdkwork-claw-router-admin-agents", package_json["name"])
-        self.assertIn("sdkwork-claw-router-admin-agents", app)
+        self.assertEqual("sdkwork-clawrouter-pc-admin-agents", package_json["name"])
+        self.assertIn("sdkwork-clawrouter-pc-admin-agents", app)
         self.assertIn("const AgentsAdmin", app)
         self.assertIn('<Route path="agents" element={<AgentsAdmin />} />', app)
         self.assertIn("'/admin/agents'", registry)

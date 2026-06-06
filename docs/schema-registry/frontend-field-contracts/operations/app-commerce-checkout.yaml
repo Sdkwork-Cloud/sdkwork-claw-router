@@ -1,7 +1,7 @@
 fragment: operations/app-commerce-checkout
 frontend_operations:
 - route: /console/checkout
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-checkout/src/checkoutService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-checkout/src/checkoutService.ts
   operation: appCheckoutSessionsCreate
   operation_id: checkout.sessions.create
   kind: create
@@ -76,7 +76,7 @@ frontend_operations:
       qrCode:
         $ref: '#/components/schemas/MediaResource'
 - route: /console/checkout
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-checkout/src/checkoutService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-checkout/src/checkoutService.ts
   operation: appCheckoutSessionsRetrieve
   operation_id: checkout.sessions.retrieve
   kind: read
@@ -129,7 +129,7 @@ frontend_operations:
             nullable: true
             maxLength: 64
 - route: /console/checkout
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-checkout/src/checkoutService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-checkout/src/checkoutService.ts
   operation: appCheckoutSessionsQuotesCreate
   operation_id: checkout.sessions.quotes.create
   kind: create
@@ -160,7 +160,7 @@ frontend_operations:
   request_schema: *id001
   response_schema: *id002
 - route: /console/checkout
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-checkout/src/checkoutService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-checkout/src/checkoutService.ts
   operation: appCheckoutSessionsOrdersCreate
   operation_id: checkout.sessions.orders.create
   kind: create

@@ -1,7 +1,7 @@
 fragment: models/admin-ratelimit
 frontend_models:
 - route: /admin/ratelimit
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-ratelimit/src/ratelimitService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-ratelimit/src/ratelimitService.ts
   interface: FirewallCreateInput
   fields:
   - type
@@ -10,7 +10,7 @@ frontend_models:
   data_sources:
   - iam_gateway_risk_rule
 - route: /admin/ratelimit
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-ratelimit/src/ratelimitService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-ratelimit/src/ratelimitService.ts
   interface: FirewallRule
   fields:
   - id
@@ -21,7 +21,7 @@ frontend_models:
   data_sources:
   - iam_gateway_risk_rule
 - route: /admin/ratelimit
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-ratelimit/src/ratelimitService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-ratelimit/src/ratelimitService.ts
   interface: IpLimitCreateInput
   fields:
   - ruleName
@@ -33,7 +33,7 @@ frontend_models:
   - iam_gateway_risk_rule
   - ai_quota_policy
 - route: /admin/ratelimit
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-ratelimit/src/ratelimitService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-ratelimit/src/ratelimitService.ts
   interface: IpLimitRule
   fields:
   - id
@@ -46,7 +46,7 @@ frontend_models:
   data_sources:
   - iam_gateway_risk_rule
 - route: /admin/ratelimit
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-ratelimit/src/ratelimitService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-ratelimit/src/ratelimitService.ts
   interface: ModelLimitCreateInput
   fields:
   - model
@@ -57,7 +57,7 @@ frontend_models:
   - ai_quota_policy
   - ai_channel_group
 - route: /admin/ratelimit
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-ratelimit/src/ratelimitService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-ratelimit/src/ratelimitService.ts
   interface: ModelLimitRule
   fields:
   - id
@@ -72,7 +72,7 @@ frontend_models:
   - ai_quota_policy
   - ai_channel_group
 - route: /admin/ratelimit
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-ratelimit/src/ratelimitService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-ratelimit/src/ratelimitService.ts
   interface: TokenLimitCreateInput
   fields:
   - keyPrefix
@@ -84,7 +84,7 @@ frontend_models:
   - ai_quota_policy
   - iam_gateway_api_key
 - route: /admin/ratelimit
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-ratelimit/src/ratelimitService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-ratelimit/src/ratelimitService.ts
   interface: TokenLimitRule
   fields:
   - id

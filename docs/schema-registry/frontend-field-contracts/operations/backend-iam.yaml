@@ -1,7 +1,7 @@
 fragment: operations/backend-iam
 frontend_operations:
 - route: /admin/user
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-user/src/userService.ts
   operation: fetchUsers
   kind: read
   api_surface: backend
@@ -72,7 +72,7 @@ frontend_operations:
               type: string
               maxLength: 64
 - route: /admin/user
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-user/src/userService.ts
   operation: fetchApiKeysMap
   kind: read
   api_surface: backend

@@ -2,7 +2,7 @@
 
 ## 1. Purpose
 
-`sdkwork-claw-router` is the Rust-first AI gateway runtime for Spring AI Plus. It keeps the user-facing product boundary in `apps/sdkwork-claw-router-portal` and implements the runtime architecture as a high-performance, modular Rust service set.
+`sdkwork-claw-router` is the Rust-first AI gateway runtime for Spring AI Plus. It keeps the user-facing product boundary in `apps/sdkwork-clawrouter-pc` and implements the runtime architecture as a high-performance, modular Rust service set.
 
 This document defines the implementation boundary between:
 
@@ -21,7 +21,7 @@ The goal is a standard system that supports local desktop, server, Docker, and K
    - app/console/public: `/app/v3/api/**`
    - admin/backend: `/backend/v3/api/**`
    - OpenAI-compatible inference runtime: `/v1/**`
-3. Portal UI visual design is owned by `apps/sdkwork-claw-router-portal`; implementation must not alter visual layout, colors, spacing, component hierarchy, or interaction design unless a later product requirement explicitly asks for it.
+3. Portal UI visual design is owned by `apps/sdkwork-clawrouter-pc`; implementation must not alter visual layout, colors, spacing, component hierarchy, or interaction design unless a later product requirement explicitly asks for it.
 4. Frontend business calls must use generated SDKs or thin wrappers that delegate to generated SDKs.
 5. Rust services that call Java app/backend business APIs must use generated Rust SDKs when those packages are available. If a generated Rust package is missing, the generator and canonical SDK package must be fixed first; do not introduce handwritten Rust clients for app/backend business endpoints.
 6. Generated SDK output must not be hand-edited. Fix OpenAPI source or generator templates, regenerate, and commit the generated artifact if required.

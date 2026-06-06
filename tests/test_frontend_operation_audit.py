@@ -30,7 +30,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
                 """
                 schema: sdkwork-claw-router-frontend-field-contracts
                 version: 0.1.0
-                source: apps/sdkwork-claw-router-portal/src/App.tsx
+                source: apps/sdkwork-clawrouter-pc/src/App.tsx
                 rule: every actual portal route must be backed by explicit schema tables.
                 fragments:
                   - operations/demo.yaml
@@ -46,7 +46,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
             root = Path(tmp)
             class_source = self.write_file(
                 root,
-                "apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts",
+                "apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts",
                 """
                 export class DemoService {
                   static async fetchItems(): Promise<string[]> {
@@ -63,7 +63,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
             )
             object_source = self.write_file(
                 root,
-                "apps/sdkwork-claw-router-portal/packages/demo/src/services/appService.ts",
+                "apps/sdkwork-clawrouter-pc/packages/demo/src/services/appService.ts",
                 """
                 export const appService = {
                   async getApps(): Promise<string[]> {
@@ -86,9 +86,9 @@ class FrontendOperationAuditTest(unittest.TestCase):
             root = Path(tmp)
             self.write_file(
                 root,
-                "apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts",
+                "apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts",
                 """
-                import { getClawRouterAppSdkClient } from 'sdkwork-claw-router-commons/runtime';
+                import { getClawRouterAppSdkClient } from 'sdkwork-clawrouter-pc-commons/runtime';
 
                 export async function loadCurrentUser(): Promise<void> {
                   await getClawRouterAppSdkClient().user.fetchUserProfile();
@@ -103,7 +103,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
                     required_tables: [plus_user]
                 frontend_operations:
                   - route: /auth/login
-                    source: apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts
+                    source: apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts
                     operation: loadCurrentUser
                     kind: read
                     api_surface: app
@@ -122,9 +122,9 @@ class FrontendOperationAuditTest(unittest.TestCase):
             root = Path(tmp)
             self.write_file(
                 root,
-                "apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts",
+                "apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts",
                 """
-                import { getClawRouterIamRuntime } from 'sdkwork-claw-router-commons/runtime';
+                import { getClawRouterIamRuntime } from 'sdkwork-clawrouter-pc-commons/runtime';
 
                 export async function login(): Promise<void> {
                   await getClawRouterIamRuntime().service.auth.sessions.create({ grantType: 'password' });
@@ -139,7 +139,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
                     required_tables: [iam_user, iam_credential, iam_session, iam_security_event]
                 frontend_operations:
                   - route: /auth/login
-                    source: apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts
+                    source: apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts
                     operation: login
                     operation_id: sessions.create
                     kind: create
@@ -160,10 +160,10 @@ class FrontendOperationAuditTest(unittest.TestCase):
             root = Path(tmp)
             source = self.write_file(
                 root,
-                "apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts",
+                "apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts",
                 """
                 import { createSdkworkIamRuntimeAuthController } from '@sdkwork/auth-pc-react';
-                import { getClawRouterIamRuntime } from 'sdkwork-claw-router-commons/runtime';
+                import { getClawRouterIamRuntime } from 'sdkwork-clawrouter-pc-commons/runtime';
 
                 export const clawRouterAuthController = createSdkworkIamRuntimeAuthController({
                   getRuntime: getClawRouterIamRuntime,
@@ -191,7 +191,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
             root = Path(tmp)
             self.write_file(
                 root,
-                "apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts",
+                "apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts",
                 """
                 export class DemoService {
                   static async fetchItems(): Promise<string[]> {
@@ -214,7 +214,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "frontend operation missing from contract: apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts#fetchItems",
+                "frontend operation missing from contract: apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts#fetchItems",
                 result.messages,
             )
 
@@ -223,7 +223,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
             root = Path(tmp)
             self.write_file(
                 root,
-                "apps/sdkwork-claw-router-portal/packages/demo/node_modules/sdkwork-claw-router-commons/src/sessionService.ts",
+                "apps/sdkwork-clawrouter-pc/packages/demo/node_modules/sdkwork-clawrouter-pc-commons/src/sessionService.ts",
                 """
                 export async function createAppSession(): Promise<void> {
                 }
@@ -248,9 +248,9 @@ class FrontendOperationAuditTest(unittest.TestCase):
             root = Path(tmp)
             self.write_file(
                 root,
-                "apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts",
+                "apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts",
                 """
-                import { getClawRouterAppSdkClient } from 'sdkwork-claw-router-commons/runtime';
+                import { getClawRouterAppSdkClient } from 'sdkwork-clawrouter-pc-commons/runtime';
 
                 export async function fetchItems(): Promise<void> {
                   await getClawRouterAppSdkClient().demo.items.list();
@@ -272,7 +272,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
                     required_tables: [demo_table]
                 frontend_operations:
                   - route: /demo
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts
                     operation: fetchItems
                     kind: read
                     api_surface: app
@@ -289,7 +289,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
     def test_skips_broken_paths_when_recursive_scan_encounters_vanished_node_modules(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
-            portal = root / "apps" / "sdkwork-claw-router-portal" / "packages"
+            portal = root / "apps" / "sdkwork-clawrouter-pc" / "packages"
             portal.mkdir(parents=True)
             self.write_contract(
                 root,
@@ -309,7 +309,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
             root = Path(tmp)
             self.write_file(
                 root,
-                "apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts",
+                "apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts",
                 """
                 export class DemoService {
                   static async updateItem(): Promise<void> {
@@ -325,7 +325,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
                     required_tables: [demo_table]
                 frontend_operations:
                   - route: /demo
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts
                     operation: updateItem
                     kind: update
                     api_surface: app
@@ -339,7 +339,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "frontend operation apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts#updateItem kind update must declare non-empty write_tables",
+                "frontend operation apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts#updateItem kind update must declare non-empty write_tables",
                 result.messages,
             )
 
@@ -348,9 +348,9 @@ class FrontendOperationAuditTest(unittest.TestCase):
             root = Path(tmp)
             self.write_file(
                 root,
-                "apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts",
+                "apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts",
                 """
-                import { getClawRouterAppSdkClient } from 'sdkwork-claw-router-commons/runtime';
+                import { getClawRouterAppSdkClient } from 'sdkwork-clawrouter-pc-commons/runtime';
 
                 export async function uploadVideo(): Promise<void> {
                   const formData = new FormData();
@@ -366,7 +366,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
                     required_tables: [content_course_application]
                 frontend_operations:
                   - route: /demo
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts
                     operation: uploadVideo
                     operation_id: applications.videos.create
                     kind: create
@@ -389,9 +389,9 @@ class FrontendOperationAuditTest(unittest.TestCase):
             root = Path(tmp)
             self.write_file(
                 root,
-                "apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts",
+                "apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts",
                 """
-                import { getClawRouterAppSdkClient } from 'sdkwork-claw-router-commons/runtime';
+                import { getClawRouterAppSdkClient } from 'sdkwork-clawrouter-pc-commons/runtime';
 
                 export async function uploadVideo(): Promise<void> {
                   const formData = new FormData();
@@ -407,7 +407,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
                     required_tables: [content_course_application]
                 frontend_operations:
                   - route: /demo
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts
                     operation: uploadVideo
                     operation_id: applications.videos.create
                     kind: create
@@ -424,7 +424,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "frontend operation apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts#uploadVideo multipart upload must declare non-empty file_targets",
+                "frontend operation apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts#uploadVideo multipart upload must declare non-empty file_targets",
                 result.messages,
             )
 
@@ -433,7 +433,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
             root = Path(tmp)
             self.write_file(
                 root,
-                "apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts",
+                "apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts",
                 """
                 export class DemoService {
                   static async fetchItems(): Promise<string[]> {
@@ -450,7 +450,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
                     required_tables: [demo_table]
                 frontend_operations:
                   - route: /demo
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts
                     operation: fetchItems
                     kind: read
                     api_surface: app
@@ -464,7 +464,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "frontend operation apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts#fetchItems read_source missing_table is not declared in route /demo required_tables",
+                "frontend operation apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts#fetchItems read_source missing_table is not declared in route /demo required_tables",
                 result.messages,
             )
 
@@ -473,7 +473,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
             root = Path(tmp)
             self.write_file(
                 root,
-                "apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts",
+                "apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts",
                 """
                 export class DemoService {
                   static async addItem(): Promise<void> {
@@ -489,7 +489,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
                     required_tables: [demo_table, ops_audit_log]
                 frontend_operations:
                   - route: /demo
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts
                     operation: addItem
                     kind: create
                     api_surface: app
@@ -515,7 +515,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
             root = Path(tmp)
             self.write_file(
                 root,
-                "apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts",
+                "apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts",
                 """
                 export class DemoService {
                   static async fetchItems(): Promise<string[]> {
@@ -532,7 +532,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
                     required_tables: [demo_table]
                 frontend_operations:
                   - route: /demo
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts
                     operation: fetchItems
                     kind: read
                     read_sources: [demo_table]
@@ -543,15 +543,15 @@ class FrontendOperationAuditTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "frontend operation apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts#fetchItems must declare api_surface",
+                "frontend operation apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts#fetchItems must declare api_surface",
                 result.messages,
             )
             self.assertIn(
-                "frontend operation apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts#fetchItems must declare api_method",
+                "frontend operation apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts#fetchItems must declare api_method",
                 result.messages,
             )
             self.assertIn(
-                "frontend operation apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts#fetchItems must declare api_path",
+                "frontend operation apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts#fetchItems must declare api_path",
                 result.messages,
             )
 
@@ -560,9 +560,9 @@ class FrontendOperationAuditTest(unittest.TestCase):
             root = Path(tmp)
             self.write_file(
                 root,
-                "apps/sdkwork-claw-router-portal/packages/demo/src/adminService.ts",
+                "apps/sdkwork-clawrouter-pc/packages/demo/src/adminService.ts",
                 """
-                import { getClawRouterBackendSdkClient } from 'sdkwork-claw-router-commons';
+                import { getClawRouterBackendSdkClient } from 'sdkwork-clawrouter-pc-commons';
 
                 export class AdminService {
                   static async fetchItems(): Promise<string[]> {
@@ -580,7 +580,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
                     required_tables: [demo_table]
                 frontend_operations:
                   - route: /admin/demo
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/adminService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/adminService.ts
                     operation: fetchItems
                     kind: read
                     api_surface: app
@@ -594,7 +594,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "frontend operation apps/sdkwork-claw-router-portal/packages/demo/src/adminService.ts#fetchItems route /admin/demo must use backend api_surface",
+                "frontend operation apps/sdkwork-clawrouter-pc/packages/demo/src/adminService.ts#fetchItems route /admin/demo must use backend api_surface",
                 result.messages,
             )
 
@@ -603,9 +603,9 @@ class FrontendOperationAuditTest(unittest.TestCase):
             root = Path(tmp)
             self.write_file(
                 root,
-                "apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts",
+                "apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts",
                 """
-                import { getClawRouterAppSdkClient } from 'sdkwork-claw-router-commons/runtime';
+                import { getClawRouterAppSdkClient } from 'sdkwork-clawrouter-pc-commons/runtime';
 
                 export class DemoService {
                   static async fetchItems(): Promise<string[]> {
@@ -623,7 +623,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
                     required_tables: [demo_table]
                 frontend_operations:
                   - route: /demo
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts
                     operation: fetchItems
                     kind: read
                     api_surface: app
@@ -642,7 +642,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
             root = Path(tmp)
             self.write_file(
                 root,
-                "apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts",
+                "apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts",
                 """
                 export class DemoService {
                   static async addItem(): Promise<void> {
@@ -658,7 +658,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
                     required_tables: [demo_table]
                 frontend_operations:
                   - route: /demo
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts
                     operation: addItem
                     kind: create
                     api_surface: app
@@ -673,7 +673,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "frontend operation apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts#addItem kind create does not allow api_method GET",
+                "frontend operation apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts#addItem kind create does not allow api_method GET",
                 result.messages,
             )
 
@@ -682,9 +682,9 @@ class FrontendOperationAuditTest(unittest.TestCase):
             root = Path(tmp)
             self.write_file(
                 root,
-                "apps/sdkwork-claw-router-portal/packages/demo/src/adminService.ts",
+                "apps/sdkwork-clawrouter-pc/packages/demo/src/adminService.ts",
                 """
-                import { getClawRouterBackendSdkClient } from 'sdkwork-claw-router-commons';
+                import { getClawRouterBackendSdkClient } from 'sdkwork-clawrouter-pc-commons';
 
                 export class AdminService {
                   static async fetchItems(): Promise<string[]> {
@@ -702,7 +702,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
                     required_tables: [demo_table]
                 frontend_operations:
                   - route: /admin/demo
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/adminService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/adminService.ts
                     operation: fetchItems
                     kind: read
                     api_surface: backend
@@ -721,7 +721,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
             root = Path(tmp)
             self.write_file(
                 root,
-                "apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts",
+                "apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts",
                 """
                 export class DemoService {
                   static async fetchItems(): Promise<string[]> {
@@ -740,7 +740,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
                     required_tables: [demo_table]
                 frontend_operations:
                   - route: /demo
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts
                     operation: fetchItems
                     kind: read
                     api_surface: app
@@ -754,11 +754,11 @@ class FrontendOperationAuditTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "frontend operation apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts#fetchItems must use getClawRouterAppSdkClient for app api_surface",
+                "frontend operation apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts#fetchItems must use getClawRouterAppSdkClient for app api_surface",
                 result.messages,
             )
             self.assertIn(
-                "frontend operation apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts#fetchItems must not use mock async data pattern: setTimeout",
+                "frontend operation apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts#fetchItems must not use mock async data pattern: setTimeout",
                 result.messages,
             )
 
@@ -767,7 +767,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
             root = Path(tmp)
             self.write_file(
                 root,
-                "apps/sdkwork-claw-router-portal/packages/demo/src/adminService.ts",
+                "apps/sdkwork-clawrouter-pc/packages/demo/src/adminService.ts",
                 """
                 export class AdminService {
                   static async fetchItems(): Promise<string[]> {
@@ -784,7 +784,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
                     required_tables: [demo_table]
                 frontend_operations:
                   - route: /admin/demo
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/adminService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/adminService.ts
                     operation: fetchItems
                     kind: read
                     api_surface: backend
@@ -798,7 +798,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "frontend operation apps/sdkwork-claw-router-portal/packages/demo/src/adminService.ts#fetchItems must use getClawRouterBackendSdkClient for backend api_surface",
+                "frontend operation apps/sdkwork-clawrouter-pc/packages/demo/src/adminService.ts#fetchItems must use getClawRouterBackendSdkClient for backend api_surface",
                 result.messages,
             )
 
@@ -807,9 +807,9 @@ class FrontendOperationAuditTest(unittest.TestCase):
             root = Path(tmp)
             self.write_file(
                 root,
-                "apps/sdkwork-claw-router-portal/packages/demo/src/billingService.ts",
+                "apps/sdkwork-clawrouter-pc/packages/demo/src/billingService.ts",
                 """
-                import { getClawRouterCommerceService } from 'sdkwork-claw-router-commons/runtime';
+                import { getClawRouterCommerceService } from 'sdkwork-clawrouter-pc-commons/runtime';
 
                 export class BillingService {
                   static async fetchWallet(): Promise<unknown> {
@@ -820,7 +820,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
             )
             self.write_file(
                 root,
-                "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/commerce-runtime.ts",
+                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/commerce-runtime.ts",
                 """
                 import {
                   getClawRouterAppSdkClient,
@@ -853,7 +853,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
                     required_tables: [commerce_account]
                 frontend_operations:
                   - route: /console/commerce
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/billingService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/billingService.ts
                     operation: fetchWallet
                     kind: read
                     api_surface: app
@@ -872,7 +872,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
             root = Path(tmp)
             self.write_file(
                 root,
-                "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/commerce-runtime.ts",
+                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/commerce-runtime.ts",
                 """
                 import { getClawRouterAppSdkClient } from './sdk-clients.ts';
 
@@ -883,7 +883,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
             )
             self.write_file(
                 root,
-                "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/commerce-console-service.ts",
+                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/commerce-console-service.ts",
                 """
                 import { appAccountsCurrentSummaryRetrieve } from './commerce-runtime.ts';
 
@@ -902,7 +902,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
                     required_tables: [commerce_account]
                 frontend_operations:
                   - route: /console/account
-                    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/commerce-console-service.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/commerce-console-service.ts
                     operation: fetchAccountDetails
                     operation_scope: app_shell
                     kind: read
@@ -922,9 +922,9 @@ class FrontendOperationAuditTest(unittest.TestCase):
             root = Path(tmp)
             self.write_file(
                 root,
-                "apps/sdkwork-claw-router-portal/packages/demo/src/appRuntimeApiOperations.ts",
+                "apps/sdkwork-clawrouter-pc/packages/demo/src/appRuntimeApiOperations.ts",
                 """
-                import { getClawRouterAppSdkClient } from 'sdkwork-claw-router-commons/runtime';
+                import { getClawRouterAppSdkClient } from 'sdkwork-clawrouter-pc-commons/runtime';
 
                 export async function listModelCatalog(): Promise<unknown> {
                   return getClawRouterAppSdkClient().intelligence.modelsList();
@@ -933,7 +933,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
             )
             self.write_file(
                 root,
-                "apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts",
+                "apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts",
                 """
                 import { listModelCatalog } from './appRuntimeApiOperations.ts';
 
@@ -952,7 +952,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
                     required_tables: [ai_model]
                 frontend_operations:
                   - route: /demo
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/appRuntimeApiOperations.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/appRuntimeApiOperations.ts
                     operation: listModelCatalog
                     kind: read
                     api_surface: app
@@ -960,7 +960,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
                     api_path: /app/v3/api/ai/models
                     read_sources: [ai_model]
                   - route: /demo
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts
                     operation: fetchModelGroups
                     operation_scope: app_shell
                     kind: read
@@ -980,7 +980,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
             root = Path(tmp)
             self.write_file(
                 root,
-                "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/siteBranding.ts",
+                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/siteBranding.ts",
                 """
                 import { getClawRouterAppSdkClient } from './sdk-clients.ts';
 
@@ -998,7 +998,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
                 frontend_operations:
                   - route: /
                     operation_scope: app_shell
-                    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/siteBranding.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/siteBranding.ts
                     operation: fetchSiteBranding
                     operation_id: site.runtime.retrieve
                     kind: read
@@ -1021,9 +1021,9 @@ class FrontendOperationAuditTest(unittest.TestCase):
             root = Path(tmp)
             self.write_file(
                 root,
-                "apps/sdkwork-claw-router-portal/packages/demo/src/chatService.ts",
+                "apps/sdkwork-clawrouter-pc/packages/demo/src/chatService.ts",
                 """
-                import { getClawRouterAiSdkClient } from 'sdkwork-claw-router-commons/runtime';
+                import { getClawRouterAiSdkClient } from 'sdkwork-clawrouter-pc-commons/runtime';
 
                 export class ChatService {
                   static async sendMessage(): Promise<string> {
@@ -1045,7 +1045,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
                     required_tables: [ai_request_trace, ai_usage_fact]
                 frontend_operations:
                   - route: /demo
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/chatService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/chatService.ts
                     operation: sendMessage
                     kind: create
                     api_surface: openai_v1
@@ -1065,7 +1065,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
             root = Path(tmp)
             self.write_file(
                 root,
-                "apps/sdkwork-claw-router-portal/packages/demo/src/chatService.ts",
+                "apps/sdkwork-clawrouter-pc/packages/demo/src/chatService.ts",
                 """
                 export class ChatService {
                   static async sendMessage(): Promise<string> {
@@ -1082,7 +1082,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
                     required_tables: [ai_request_trace, ai_usage_fact]
                 frontend_operations:
                   - route: /demo
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/chatService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/chatService.ts
                     operation: sendMessage
                     kind: create
                     api_surface: openai_v1
@@ -1097,7 +1097,7 @@ class FrontendOperationAuditTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "frontend operation apps/sdkwork-claw-router-portal/packages/demo/src/chatService.ts#sendMessage must use getClawRouterAiSdkClient for openai_v1 api_surface",
+                "frontend operation apps/sdkwork-clawrouter-pc/packages/demo/src/chatService.ts#sendMessage must use getClawRouterAiSdkClient for openai_v1 api_surface",
                 result.messages,
             )
 

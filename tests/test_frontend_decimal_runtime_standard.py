@@ -3,8 +3,8 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-PORTAL = ROOT / "apps" / "sdkwork-claw-router-portal"
-COMMONS = PORTAL / "packages" / "sdkwork-claw-router-commons" / "src"
+PORTAL = ROOT / "apps" / "sdkwork-clawrouter-pc"
+COMMONS = PORTAL / "packages" / "sdkwork-clawrouter-pc-commons" / "src"
 
 
 class FrontendDecimalRuntimeStandardTest(unittest.TestCase):
@@ -26,38 +26,38 @@ class FrontendDecimalRuntimeStandardTest(unittest.TestCase):
         usage_service = (
             PORTAL
             / "packages"
-            / "sdkwork-claw-router-console-usage"
+            / "sdkwork-clawrouter-pc-console-usage"
             / "src"
             / "usageService.ts"
         ).read_text(encoding="utf-8")
         record_service = (
             PORTAL
             / "packages"
-            / "sdkwork-claw-router-admin-record"
+            / "sdkwork-clawrouter-pc-admin-record"
             / "src"
             / "recordService.ts"
         ).read_text(encoding="utf-8")
         settlements_service = (
             PORTAL
             / "packages"
-            / "sdkwork-claw-router-console-settlements"
+            / "sdkwork-clawrouter-pc-console-settlements"
             / "src"
             / "settlementsService.ts"
         ).read_text(encoding="utf-8")
         usage_view = (
             PORTAL
             / "packages"
-            / "sdkwork-claw-router-console-usage"
+            / "sdkwork-clawrouter-pc-console-usage"
             / "src"
             / "UsageView.tsx"
         ).read_text(encoding="utf-8")
         record_view = (
-            PORTAL / "packages" / "sdkwork-claw-router-admin-record" / "src" / "index.tsx"
+            PORTAL / "packages" / "sdkwork-clawrouter-pc-admin-record" / "src" / "index.tsx"
         ).read_text(encoding="utf-8")
         settlements_view = (
             PORTAL
             / "packages"
-            / "sdkwork-claw-router-console-settlements"
+            / "sdkwork-clawrouter-pc-console-settlements"
             / "src"
             / "SettlementsView.tsx"
         ).read_text(encoding="utf-8")
@@ -69,13 +69,13 @@ class FrontendDecimalRuntimeStandardTest(unittest.TestCase):
 
         self.assertIn("formatDecimalAmount", usage_view)
         self.assertIn("sumDecimalStrings", usage_view)
-        self.assertIn("from 'sdkwork-claw-router-commons/runtime'", usage_view)
+        self.assertIn("from 'sdkwork-clawrouter-pc-commons/runtime'", usage_view)
         self.assertIn("formatDecimalAmount", record_view)
-        self.assertIn("from 'sdkwork-claw-router-commons/runtime'", record_view)
+        self.assertIn("from 'sdkwork-clawrouter-pc-commons/runtime'", record_view)
         self.assertIn("formatDecimalAmount", settlements_view)
         self.assertIn("sumDecimalStrings", settlements_view)
         self.assertIn("decimalNumber", settlements_view)
-        self.assertIn("from 'sdkwork-claw-router-commons/runtime'", settlements_view)
+        self.assertIn("from 'sdkwork-clawrouter-pc-commons/runtime'", settlements_view)
 
         for view in [usage_view, record_view, settlements_view]:
             self.assertNotIn("function decimalUnits", view)

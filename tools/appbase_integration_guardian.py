@@ -30,7 +30,7 @@ else:
 
 APPBASE_CATALOG_PATH = Path("sdkwork-appbase") / "specs" / "appbase-capabilities.yaml"
 DEFAULT_INTEGRATION_PATH = Path("specs") / "appbase-integration.yaml"
-PORTAL_PACKAGE_PATH = Path("apps") / "sdkwork-claw-router-portal" / "package.json"
+PORTAL_PACKAGE_PATH = Path("apps") / "sdkwork-clawrouter-pc" / "package.json"
 FRONTEND_FIELD_CONTRACTS_PATH = DEFAULT_CONTRACT_SNAPSHOT
 FRONTEND_ROUTE_CLASSIFICATION_PATH = Path("docs") / "schema-registry" / "frontend-route-classification.yaml"
 TABLE_REGISTRY_PATH = Path("docs") / "schema-registry" / "sdkwork-claw-router.tables.yaml"
@@ -45,36 +45,36 @@ MATURITY_RANK: dict[str, int] = {
 
 REQUIRED_FRONTEND_ADAPTERS: dict[str, tuple[str, ...]] = {
     "commerce": (
-        "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts",
-        "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-inventory/src/inventoryService.ts",
-        "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-orders/src/ordersService.ts",
-        "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts",
-        "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts",
-        "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wallet/src/walletService.ts",
-        "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/financeService.ts",
-        "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-account/src/accountService.ts",
-        "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-wallet/src/walletService.ts",
-        "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts",
-        "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-checkout/src/checkoutService.ts",
-        "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts",
-        "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-settlements/src/settlementsService.ts",
+        "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts",
+        "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-inventory/src/inventoryService.ts",
+        "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts",
+        "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-payments/src/paymentsService.ts",
+        "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts",
+        "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wallet/src/walletService.ts",
+        "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-finance/src/financeService.ts",
+        "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-account/src/accountService.ts",
+        "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-wallet/src/walletService.ts",
+        "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-recharge/src/rechargeService.ts",
+        "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-checkout/src/checkoutService.ts",
+        "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts",
+        "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-settlements/src/settlementsService.ts",
     ),
 }
 
 COMMERCE_FRONTEND_FEATURE_ROOTS: tuple[str, ...] = (
-    "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src",
-    "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-inventory/src",
-    "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-orders/src",
-    "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src",
-    "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src",
-    "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wallet/src",
-    "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src",
-    "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-account/src",
-    "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-wallet/src",
-    "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src",
-    "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-checkout/src",
-    "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src",
-    "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-settlements/src",
+    "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src",
+    "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-inventory/src",
+    "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src",
+    "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-payments/src",
+    "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src",
+    "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wallet/src",
+    "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-finance/src",
+    "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-account/src",
+    "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-wallet/src",
+    "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-recharge/src",
+    "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-checkout/src",
+    "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src",
+    "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-settlements/src",
 )
 
 FRONTEND_SOURCE_SUFFIXES: tuple[str, ...] = (
@@ -98,9 +98,9 @@ BUILT_IN_FORBIDDEN_PRODUCT_FORKS: tuple[str, ...] = (
     "/".join(
         [
             "apps",
-            "sdkwork-claw-router-portal",
+            "sdkwork-clawrouter-pc",
             "packages",
-            "sdkwork-claw-router-commons",
+            "sdkwork-clawrouter-pc-commons",
             "src",
             f"{'-'.join(['appbase', 'sdk', 'clients'])}.ts",
         ]

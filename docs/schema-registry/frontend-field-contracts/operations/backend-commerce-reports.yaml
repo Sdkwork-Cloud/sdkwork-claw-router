@@ -1,7 +1,7 @@
 fragment: operations/backend-commerce-reports
 frontend_operations:
 - route: /admin/finance
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/financeService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-finance/src/financeService.ts
   operation: backendCommerceReportsPaymentReconciliationRetrieve
   operation_id: commerceReports.paymentReconciliation.retrieve
   kind: read
@@ -51,7 +51,7 @@ frontend_operations:
             nullable: true
             maxLength: 64
 - route: /admin/finance
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/financeService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-finance/src/financeService.ts
   operation: backendCommerceReportsOrderRevenueList
   operation_id: commerceReports.orderRevenue.list
   kind: read
@@ -134,7 +134,7 @@ frontend_operations:
         minimum: 1
         maximum: 200
 - route: /admin/finance
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/financeService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-finance/src/financeService.ts
   operation: backendCommerceReportsRefundsList
   operation_id: commerceReports.refunds.list
   kind: read

@@ -1,7 +1,7 @@
 fragment: operations/backend-commerce-orders
 frontend_operations:
 - route: /admin/orders
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-orders/src/ordersService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
   operation: backendOrdersList
   operation_id: orders.list
   kind: read
@@ -86,7 +86,7 @@ frontend_operations:
         minimum: 1
         maximum: 200
 - route: /admin/orders
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-orders/src/ordersService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
   operation: backendOrdersRetrieve
   operation_id: orders.retrieve
   kind: read
@@ -138,7 +138,7 @@ frontend_operations:
             nullable: true
             maxLength: 64
 - route: /admin/orders
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-orders/src/ordersService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
   operation: backendOrdersEventsList
   operation_id: orders.events.list
   kind: read

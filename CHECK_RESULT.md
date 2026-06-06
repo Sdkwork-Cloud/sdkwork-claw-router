@@ -335,7 +335,7 @@ The main improvements made in this pass are:
   active-component checks before state updates, `BusinessStatePanel` error UI,
   and retry actions instead of unhandled Promise rejections or infinite
   skeleton loading when the app SDK/API is unavailable.
-- `sdkwork-claw-router-commons` now exports `getLoadErrorMessage()` so SDK
+- `sdkwork-clawrouter-pc-commons` now exports `getLoadErrorMessage()` so SDK
   business pages share a single public-safe error-message adapter. It accepts
   real `Error.message` values and falls back for empty, non-Error, or raw object
   throws, preventing accidental rendering of low-quality exception objects.
@@ -536,10 +536,10 @@ Commands:
 ```powershell
 node scripts\run-claw-router-product.test.mjs
 python -B -m unittest tests.test_api_reference_playground_standard
-node --check apps\sdkwork-claw-router-portal\scripts\smoke-production-browser.mjs
-node --experimental-strip-types apps\sdkwork-claw-router-portal\api-reference-playground-runtime.test.ts
-node apps\sdkwork-claw-router-portal\api-reference-ssr-smoke.test.cjs
-pnpm.cmd --dir apps\sdkwork-claw-router-portal --filter sdkwork-claw-router-api-reference typecheck
+node --check apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\api-reference-playground-runtime.test.ts
+node apps\sdkwork-clawrouter-pc\api-reference-ssr-smoke.test.cjs
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc --filter sdkwork-clawrouter-pc-api-reference typecheck
 pnpm.cmd verify
 ```
 
@@ -571,11 +571,11 @@ Results:
 - Fresh verification evidence: `python -B -m unittest
   tests.test_api_reference_playground_standard` ran 7 tests, OK.
 - Fresh syntax check evidence: `node --check
-  apps\sdkwork-claw-router-portal\scripts\smoke-production-browser.mjs`
+  apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs`
   exited successfully.
 - Fresh runtime/SSR/typecheck evidence: `api-reference-playground-runtime.test.ts`
   ran 12 tests, all passed; `api-reference-ssr-smoke.test.cjs` ran 3 tests, all
-  passed; `sdkwork-claw-router-api-reference` package `tsc --noEmit` passed.
+  passed; `sdkwork-clawrouter-pc-api-reference` package `tsc --noEmit` passed.
 - Fresh full gate evidence: `pnpm.cmd verify` exited successfully. The gate
   included Rust format, Rust warnings-as-errors compile, generated SDK guard,
   project skill guard, architecture guards, OpenAPI and payload SDK audits,
@@ -594,9 +594,9 @@ Commands:
 ```powershell
 node scripts\run-claw-router-product.test.mjs
 python -B -m unittest tests.test_api_reference_playground_standard
-node --check apps\sdkwork-claw-router-portal\scripts\smoke-production-browser.mjs
-node --experimental-strip-types apps\sdkwork-claw-router-portal\api-reference-playground-runtime.test.ts
-node apps\sdkwork-claw-router-portal\api-reference-ssr-smoke.test.cjs
+node --check apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\api-reference-playground-runtime.test.ts
+node apps\sdkwork-clawrouter-pc\api-reference-ssr-smoke.test.cjs
 pnpm.cmd verify
 ```
 
@@ -630,7 +630,7 @@ Results:
 - Fresh verification evidence: `python -B -m unittest
   tests.test_api_reference_playground_standard` ran 6 tests, OK.
 - Fresh syntax check evidence: `node --check
-  apps\sdkwork-claw-router-portal\scripts\smoke-production-browser.mjs`
+  apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs`
   exited successfully.
 - Fresh runtime/SSR evidence: `api-reference-playground-runtime.test.ts` ran
   12 tests, all passed; `api-reference-ssr-smoke.test.cjs` ran 3 tests, all
@@ -652,7 +652,7 @@ Commands:
 
 ```powershell
 node scripts\run-claw-router-product.test.mjs
-node --check apps\sdkwork-claw-router-portal\scripts\smoke-production-browser.mjs
+node --check apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs
 pnpm.cmd verify
 ```
 
@@ -688,7 +688,7 @@ Results:
   helpers, forbidden-text assertions, and retry resolver, the same command
   passed 36 checks.
 - Fresh syntax check evidence: `node --check
-  apps\sdkwork-claw-router-portal\scripts\smoke-production-browser.mjs`
+  apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs`
   exited successfully.
 - Fresh full gate evidence: `pnpm.cmd verify` exited successfully. The gate
   included Rust format, Rust warnings-as-errors compile, generated SDK guard,
@@ -707,15 +707,15 @@ Commands:
 
 ```powershell
 node scripts\run-claw-router-product.test.mjs
-node --check apps\sdkwork-claw-router-portal\scripts\smoke-production-browser.mjs
-node --experimental-strip-types apps\sdkwork-claw-router-portal\api-reference-playground-runtime.test.ts
-node apps\sdkwork-claw-router-portal\api-reference-ssr-smoke.test.cjs
+node --check apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\api-reference-playground-runtime.test.ts
+node apps\sdkwork-clawrouter-pc\api-reference-ssr-smoke.test.cjs
 python -B -m unittest tests.test_frontend_source_hygiene_standard
-pnpm.cmd --dir apps\sdkwork-claw-router-portal build
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc build
 cargo test -p sdkwork-claw-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
-node apps\sdkwork-claw-router-portal\scripts\smoke-production-browser.mjs
-$env:CLAWROUTER_BROWSER_SMOKE_REQUIRED='1'; node apps\sdkwork-claw-router-portal\scripts\smoke-production-browser.mjs
-node --experimental-strip-types apps\sdkwork-claw-router-portal\server.test.ts
+node apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs
+$env:CLAWROUTER_BROWSER_SMOKE_REQUIRED='1'; node apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\server.test.ts
 pnpm.cmd verify
 ```
 
@@ -753,7 +753,7 @@ Results:
 - `api-reference-playground-runtime.test.ts`: 12 tests passed.
 - `api-reference-ssr-smoke.test.cjs`: 3 tests passed.
 - `test_frontend_source_hygiene_standard`: Ran 3 tests, OK.
-- `pnpm.cmd --dir apps\sdkwork-claw-router-portal build`: passed and rebuilt
+- `pnpm.cmd --dir apps\sdkwork-clawrouter-pc build`: passed and rebuilt
   `dist\server.mjs`.
 - `edge_server_can_serve_portal_dist_without_node_server`: passed.
 - local non-required `smoke-production-browser.mjs`: explicit skip with
@@ -776,15 +776,15 @@ Commands:
 ```powershell
 node scripts\run-claw-router-product.test.mjs
 python -B -m unittest tests.test_api_reference_playground_standard
-node --check apps\sdkwork-claw-router-portal\scripts\smoke-production-browser.mjs
-node --experimental-strip-types apps\sdkwork-claw-router-portal\api-reference-playground-runtime.test.ts
-node apps\sdkwork-claw-router-portal\api-reference-ssr-smoke.test.cjs
+node --check apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\api-reference-playground-runtime.test.ts
+node apps\sdkwork-clawrouter-pc\api-reference-ssr-smoke.test.cjs
 python -B -m unittest tests.test_api_reference_playground_standard tests.test_frontend_source_hygiene_standard
-pnpm.cmd --dir apps\sdkwork-claw-router-portal --filter sdkwork-claw-router-api-reference typecheck
-pnpm.cmd --dir apps\sdkwork-claw-router-portal build
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc --filter sdkwork-clawrouter-pc-api-reference typecheck
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc build
 cargo test -p sdkwork-claw-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
-node apps\sdkwork-claw-router-portal\scripts\smoke-production-browser.mjs
-$env:CLAWROUTER_BROWSER_SMOKE_REQUIRED='1'; node apps\sdkwork-claw-router-portal\scripts\smoke-production-browser.mjs
+node apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs
+$env:CLAWROUTER_BROWSER_SMOKE_REQUIRED='1'; node apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs
 pnpm.cmd verify
 ```
 
@@ -845,8 +845,8 @@ Results:
 - `test_api_reference_playground_standard`: Ran 4 tests, OK.
 - `test_api_reference_playground_standard + test_frontend_source_hygiene_standard`:
   Ran 7 tests, OK.
-- `sdkwork-claw-router-api-reference typecheck`: `tsc --noEmit` passed.
-- `pnpm.cmd --dir apps\sdkwork-claw-router-portal build`: passed and generated
+- `sdkwork-clawrouter-pc-api-reference typecheck`: `tsc --noEmit` passed.
+- `pnpm.cmd --dir apps\sdkwork-clawrouter-pc build`: passed and generated
   `assets/api-reference-Bhqncum6.js` plus `dist\server.mjs`.
 - `edge_server_can_serve_portal_dist_without_node_server`: passed.
 - local non-required `smoke-production-browser.mjs`: explicit skip with
@@ -868,7 +868,7 @@ Commands:
 ```powershell
 node scripts\run-claw-router-product.test.mjs
 python -B -m unittest tests.test_api_reference_playground_standard
-node --check apps\sdkwork-claw-router-portal\scripts\smoke-production-browser.mjs
+node --check apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs
 pnpm.cmd verify
 ```
 
@@ -914,7 +914,7 @@ Results:
 - Fresh verification evidence: `python -B -m unittest
   tests.test_api_reference_playground_standard` ran 5 tests, OK.
 - Fresh syntax check evidence: `node --check
-  apps\sdkwork-claw-router-portal\scripts\smoke-production-browser.mjs`
+  apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs`
   exited successfully.
 - Fresh full gate evidence: `pnpm.cmd verify` exited successfully. The gate
   included Rust format, Rust warnings-as-errors compile, generated SDK guard,
@@ -933,15 +933,15 @@ Commands:
 
 ```powershell
 node scripts\run-claw-router-product.test.mjs
-node --check apps\sdkwork-claw-router-portal\scripts\smoke-production-browser.mjs
-node --experimental-strip-types apps\sdkwork-claw-router-portal\models-runtime.test.ts
-node apps\sdkwork-claw-router-portal\models-ssr-smoke.test.cjs
+node --check apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\models-runtime.test.ts
+node apps\sdkwork-clawrouter-pc\models-ssr-smoke.test.cjs
 python -B -m unittest tests.test_models_catalog_runtime_standard tests.test_frontend_source_hygiene_standard
-pnpm.cmd --dir apps\sdkwork-claw-router-portal build
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc build
 cargo test -p sdkwork-claw-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
-node apps\sdkwork-claw-router-portal\scripts\smoke-production-browser.mjs
-$env:CLAWROUTER_BROWSER_SMOKE_REQUIRED='1'; node apps\sdkwork-claw-router-portal\scripts\smoke-production-browser.mjs
-node --experimental-strip-types apps\sdkwork-claw-router-portal\server.test.ts
+node apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs
+$env:CLAWROUTER_BROWSER_SMOKE_REQUIRED='1'; node apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\server.test.ts
 python -B -m unittest tests.test_frontend_source_hygiene_standard tests.test_models_catalog_runtime_standard tests.test_workspace_delivery_standard
 pnpm.cmd verify
 ```
@@ -985,7 +985,7 @@ Results:
 - `models-ssr-smoke.test.cjs`: 3 tests passed.
 - `test_models_catalog_runtime_standard` plus
   `test_frontend_source_hygiene_standard`: Ran 15 tests, OK.
-- `pnpm.cmd --dir apps\sdkwork-claw-router-portal build`: passed and rebuilt
+- `pnpm.cmd --dir apps\sdkwork-clawrouter-pc build`: passed and rebuilt
   `dist\server.mjs`; the production `models-*.js` route chunk remained about
   93.87 kB.
 - `edge_server_can_serve_portal_dist_without_node_server`: passed.
@@ -1011,15 +1011,15 @@ Commands:
 
 ```powershell
 node scripts\run-claw-router-product.test.mjs
-node --check apps\sdkwork-claw-router-portal\scripts\smoke-production-browser.mjs
-node --experimental-strip-types apps\sdkwork-claw-router-portal\courses-runtime.test.ts
+node --check apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\courses-runtime.test.ts
 python -B -m unittest tests.test_courses_runtime_standard
 python -B -m unittest tests.test_frontend_source_hygiene_standard
-pnpm.cmd --dir apps\sdkwork-claw-router-portal --filter sdkwork-claw-router-courses typecheck
-pnpm.cmd --dir apps\sdkwork-claw-router-portal build
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc --filter sdkwork-clawrouter-pc-courses typecheck
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc build
 cargo test -p sdkwork-claw-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
-node apps\sdkwork-claw-router-portal\scripts\smoke-production-browser.mjs
-$env:CLAWROUTER_BROWSER_SMOKE_REQUIRED='1'; node apps\sdkwork-claw-router-portal\scripts\smoke-production-browser.mjs
+node apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs
+$env:CLAWROUTER_BROWSER_SMOKE_REQUIRED='1'; node apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs
 ```
 
 Results:
@@ -1068,15 +1068,15 @@ Commands:
 
 ```powershell
 node scripts\run-claw-router-product.test.mjs
-node --check apps\sdkwork-claw-router-portal\scripts\smoke-production-browser.mjs
-node --experimental-strip-types apps\sdkwork-claw-router-portal\forum-runtime.test.ts
+node --check apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\forum-runtime.test.ts
 python -B -m unittest tests.test_forum_runtime_standard
 python -B -m unittest tests.test_frontend_source_hygiene_standard tests.test_forum_runtime_standard
-pnpm.cmd --dir apps\sdkwork-claw-router-portal --filter sdkwork-claw-router-forum typecheck
-pnpm.cmd --dir apps\sdkwork-claw-router-portal build
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc --filter sdkwork-clawrouter-pc-forum typecheck
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc build
 cargo test -p sdkwork-claw-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
-node apps\sdkwork-claw-router-portal\scripts\smoke-production-browser.mjs
-$env:CLAWROUTER_BROWSER_SMOKE_REQUIRED='1'; node apps\sdkwork-claw-router-portal\scripts\smoke-production-browser.mjs
+node apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs
+$env:CLAWROUTER_BROWSER_SMOKE_REQUIRED='1'; node apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs
 ```
 
 Results:
@@ -1129,14 +1129,14 @@ Results:
 
 ```powershell
 node scripts\run-claw-router-product.test.mjs
-pnpm.cmd --dir apps\sdkwork-claw-router-portal build
-node --experimental-strip-types apps\sdkwork-claw-router-portal\app-runtime.test.ts
-node --experimental-strip-types apps\sdkwork-claw-router-portal\skills-runtime.test.ts
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc build
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\app-runtime.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\skills-runtime.test.ts
 python -B -m unittest tests.test_app_center_runtime_standard tests.test_skills_runtime_standard
 cargo test -p sdkwork-claw-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
-node apps\sdkwork-claw-router-portal\scripts\smoke-production-browser.mjs
-$env:CLAWROUTER_BROWSER_SMOKE_REQUIRED="1"; node apps\sdkwork-claw-router-portal\scripts\smoke-production-browser.mjs; $exit=$LASTEXITCODE; Remove-Item Env:\CLAWROUTER_BROWSER_SMOKE_REQUIRED; exit $exit
-node --experimental-strip-types apps\sdkwork-claw-router-portal\server.test.ts
+node apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs
+$env:CLAWROUTER_BROWSER_SMOKE_REQUIRED="1"; node apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs; $exit=$LASTEXITCODE; Remove-Item Env:\CLAWROUTER_BROWSER_SMOKE_REQUIRED; exit $exit
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\server.test.ts
 pnpm.cmd verify
 ```
 
@@ -1170,24 +1170,24 @@ Results:
   scripts\run-claw-router-product.test.mjs` failed on missing
   `/apps/__browser-smoke-success`; after implementing the CDP fixture
   interceptor and success routes, the same command passed with 36 checks.
-- `pnpm.cmd --dir apps\sdkwork-claw-router-portal build`: production build
+- `pnpm.cmd --dir apps\sdkwork-clawrouter-pc build`: production build
   passed and emitted `dist\server.mjs`.
-- `node --experimental-strip-types apps\sdkwork-claw-router-portal\app-runtime.test.ts`:
+- `node --experimental-strip-types apps\sdkwork-clawrouter-pc\app-runtime.test.ts`:
   5 passed, 0 failed.
-- `node --experimental-strip-types apps\sdkwork-claw-router-portal\skills-runtime.test.ts`:
+- `node --experimental-strip-types apps\sdkwork-clawrouter-pc\skills-runtime.test.ts`:
   5 passed, 0 failed.
 - `python -B -m unittest tests.test_app_center_runtime_standard tests.test_skills_runtime_standard`:
   15 tests passed, 0 failed.
 - `cargo test -p sdkwork-claw-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server`:
   production HTTP smoke passed at `http://127.0.0.1:3200`.
-- `node apps\sdkwork-claw-router-portal\scripts\smoke-production-browser.mjs`:
+- `node apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs`:
   local non-required run started the production server and then emitted
   `[browser-smoke] skipped: Unable to spawn Chrome or Edge for browser DOM
   smoke: spawn EPERM`, which is the current machine limitation.
 - required browser smoke mode: exited with code 1 on this machine and reported
   `CLAWROUTER_BROWSER_SMOKE_REQUIRED is enabled`, so CI/release still fails
   when real-browser evidence is missing.
-- `node --experimental-strip-types apps\sdkwork-claw-router-portal\server.test.ts`:
+- `node --experimental-strip-types apps\sdkwork-clawrouter-pc\server.test.ts`:
   50 passed, 0 failed.
 - `pnpm.cmd verify`: passed with exit code 0. The run included Rust format,
   Rust warnings-as-errors compile, product tooling tests, generated SDK guards,
@@ -1201,11 +1201,11 @@ Results:
 
 ```powershell
 node scripts\run-claw-router-product.test.mjs
-node apps\sdkwork-claw-router-portal\scripts\smoke-production-browser.mjs
-$env:CLAWROUTER_BROWSER_SMOKE_REQUIRED="1"; node apps\sdkwork-claw-router-portal\scripts\smoke-production-browser.mjs; $exit=$LASTEXITCODE; Remove-Item Env:\CLAWROUTER_BROWSER_SMOKE_REQUIRED; exit $exit
-pnpm.cmd --dir apps\sdkwork-claw-router-portal build
+node apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs
+$env:CLAWROUTER_BROWSER_SMOKE_REQUIRED="1"; node apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs; $exit=$LASTEXITCODE; Remove-Item Env:\CLAWROUTER_BROWSER_SMOKE_REQUIRED; exit $exit
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc build
 cargo test -p sdkwork-claw-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
-node --experimental-strip-types apps\sdkwork-claw-router-portal\server.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\server.test.ts
 python -B -m unittest tests.test_app_center_runtime_standard tests.test_skills_runtime_standard
 pnpm.cmd verify
 ```
@@ -1226,18 +1226,18 @@ Results:
 - `node scripts\run-claw-router-product.test.mjs`: 36 product tooling tests
   passed, including the guard that requires the new SDK-backed browser route
   coverage and async token-wait helper.
-- `node apps\sdkwork-claw-router-portal\scripts\smoke-production-browser.mjs`:
+- `node apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs`:
   local non-required run started the production server and then emitted
   `[browser-smoke] skipped: Unable to spawn Chrome or Edge for browser DOM
   smoke: spawn EPERM`, which is the expected local sandbox limitation.
 - required browser smoke mode: exited with code 1 on this machine and reported
   `CLAWROUTER_BROWSER_SMOKE_REQUIRED is enabled`, proving CI/release can fail
   missing browser evidence instead of silently skipping it.
-- `pnpm.cmd --dir apps\sdkwork-claw-router-portal build`: production build
+- `pnpm.cmd --dir apps\sdkwork-clawrouter-pc build`: production build
   passed and emitted `dist\server.mjs`.
 - `cargo test -p sdkwork-claw-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server`:
   production HTTP smoke passed at `http://127.0.0.1:3200`.
-- `node --experimental-strip-types apps\sdkwork-claw-router-portal\server.test.ts`:
+- `node --experimental-strip-types apps\sdkwork-clawrouter-pc\server.test.ts`:
   50 passed, 0 failed.
 - `python -B -m unittest tests.test_app_center_runtime_standard tests.test_skills_runtime_standard`:
   15 tests passed, 0 failed.
@@ -1254,13 +1254,13 @@ Results:
 ```powershell
 node scripts\run-claw-router-product.test.mjs
 python -B -m unittest tests.test_courses_runtime_standard
-node --experimental-strip-types apps\sdkwork-claw-router-portal\courses-runtime.test.ts
-node apps\sdkwork-claw-router-portal\scripts\smoke-production-browser.mjs
-$env:CLAWROUTER_BROWSER_SMOKE_REQUIRED="1"; node apps\sdkwork-claw-router-portal\scripts\smoke-production-browser.mjs; $exit=$LASTEXITCODE; Remove-Item Env:\CLAWROUTER_BROWSER_SMOKE_REQUIRED; exit $exit
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\courses-runtime.test.ts
+node apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs
+$env:CLAWROUTER_BROWSER_SMOKE_REQUIRED="1"; node apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs; $exit=$LASTEXITCODE; Remove-Item Env:\CLAWROUTER_BROWSER_SMOKE_REQUIRED; exit $exit
 cargo test -p sdkwork-claw-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
-node --experimental-strip-types apps\sdkwork-claw-router-portal\server.test.ts
-pnpm.cmd --dir apps\sdkwork-claw-router-portal typecheck --force
-pnpm.cmd --dir apps\sdkwork-claw-router-portal build
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\server.test.ts
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc typecheck --force
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc build
 pnpm.cmd verify
 pnpm.cmd test:postgres
 pnpm.cmd test:postgres:docker
@@ -1278,7 +1278,7 @@ Results:
 - `python -B -m unittest tests.test_courses_runtime_standard`: 4 tests passed.
   The course detail page now uses the shared `courses.aboutThisCourse` i18n
   copy instead of a separate hard-coded `Course overview` label.
-- `node --experimental-strip-types apps\sdkwork-claw-router-portal\courses-runtime.test.ts`:
+- `node --experimental-strip-types apps\sdkwork-clawrouter-pc\courses-runtime.test.ts`:
   5 tests passed, confirming course catalog/detail runtime derivation remains
   deterministic after the UI copy standardization.
 - `smoke-production-browser.mjs`: passed the local non-required path by
@@ -1309,9 +1309,9 @@ Results:
 2026-05-03 runtime deployment hardening pass:
 
 ```powershell
-node --experimental-strip-types apps\sdkwork-claw-router-portal\server.test.ts
-pnpm.cmd --dir apps\sdkwork-claw-router-portal build
-pnpm.cmd --dir apps\sdkwork-claw-router-portal typecheck --force
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\server.test.ts
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc build
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc typecheck --force
 cargo test -p sdkwork-claw-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
 pnpm.cmd verify
 pnpm.cmd test:postgres
@@ -1349,37 +1349,37 @@ Latest commands executed in this pass:
 ```powershell
 python -B -m tools.api_contract_manifest
 python -B -m tools.clawrouter_openapi_generator
-apps\sdkwork-claw-router-portal\node_modules\.bin\sdkgen.cmd generate -i generated\openapi\clawrouter-app-openapi.json -o sdks\clawrouter-app-sdk -n clawrouter-app-sdk -t app -l typescript --base-url http://localhost:18082 --api-prefix /app/v3/api --package-name @sdkwork/clawrouter-app-sdk --description "SDKWork Claw Router app API SDK" --fixed-sdk-version 0.1.3 --no-sync-published-version
+apps\sdkwork-clawrouter-pc\node_modules\.bin\sdkgen.cmd generate -i generated\openapi\clawrouter-app-openapi.json -o sdks\clawrouter-app-sdk -n clawrouter-app-sdk -t app -l typescript --base-url http://localhost:18082 --api-prefix /app/v3/api --package-name @sdkwork/clawrouter-app-sdk --description "SDKWork Claw Router app API SDK" --fixed-sdk-version 0.1.3 --no-sync-published-version
 python -B -m tools.frontend_field_audit
 python -B -m tools.clawrouter_sdk_runtime_standardizer
 node scripts\verify-claw-router-product.mjs
 python -B -m unittest discover tests
 python -B -m unittest tests.test_frontend_source_hygiene_standard tests.test_models_catalog_runtime_standard tests.test_workspace_delivery_standard
-pnpm.cmd --dir apps\sdkwork-claw-router-portal run product:check
-pnpm.cmd --dir apps\sdkwork-claw-router-portal --filter sdkwork-claw-router-models typecheck
-pnpm.cmd --dir apps\sdkwork-claw-router-portal --filter sdkwork-claw-router-i18n typecheck
-node --experimental-strip-types apps\sdkwork-claw-router-portal\models-runtime.test.ts
-node --experimental-strip-types apps\sdkwork-claw-router-portal\rankings-runtime.test.ts
-node --experimental-strip-types apps\sdkwork-claw-router-portal\courses-runtime.test.ts
-node --experimental-strip-types apps\sdkwork-claw-router-portal\forum-runtime.test.ts
-node --experimental-strip-types apps\sdkwork-claw-router-portal\commons-runtime.test.ts
-node --experimental-strip-types apps\sdkwork-claw-router-portal\skills-runtime.test.ts
-node --experimental-strip-types apps\sdkwork-claw-router-portal\app-runtime.test.ts
-node --experimental-strip-types apps\sdkwork-claw-router-portal\api-reference-playground-runtime.test.ts
-node apps\sdkwork-claw-router-portal\api-reference-ssr-smoke.test.cjs
-node --experimental-strip-types apps\sdkwork-claw-router-portal\console-routing-runtime.test.ts
-node --experimental-strip-types apps\sdkwork-claw-router-portal\admin-group-runtime.test.ts
-node --experimental-strip-types apps\sdkwork-claw-router-portal\admin-user-runtime.test.ts
-node apps\sdkwork-claw-router-portal\models-ssr-smoke.test.cjs
-node --experimental-strip-types apps\sdkwork-claw-router-portal\server.test.ts
-pnpm.cmd --dir apps\sdkwork-claw-router-portal --filter sdkwork-claw-router-api-reference typecheck
-pnpm.cmd --dir apps\sdkwork-claw-router-portal typecheck --force
-pnpm.cmd --dir apps\sdkwork-claw-router-portal --filter sdkwork-claw-router-commons typecheck
-pnpm.cmd --dir apps\sdkwork-claw-router-portal --filter sdkwork-claw-router-console-routing typecheck
-pnpm.cmd --dir apps\sdkwork-claw-router-portal --filter sdkwork-claw-router-admin-group typecheck
-pnpm.cmd --dir apps\sdkwork-claw-router-portal --filter sdkwork-claw-router-app-center typecheck
-pnpm.cmd --dir apps\sdkwork-claw-router-portal --filter sdkwork-claw-router-courses typecheck
-pnpm.cmd --dir apps\sdkwork-claw-router-portal --filter sdkwork-claw-router-forum typecheck
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc run product:check
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc --filter sdkwork-clawrouter-pc-models typecheck
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc --filter sdkwork-clawrouter-pc-i18n typecheck
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\models-runtime.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\rankings-runtime.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\courses-runtime.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\forum-runtime.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\commons-runtime.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\skills-runtime.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\app-runtime.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\api-reference-playground-runtime.test.ts
+node apps\sdkwork-clawrouter-pc\api-reference-ssr-smoke.test.cjs
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\console-routing-runtime.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\admin-group-runtime.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\admin-user-runtime.test.ts
+node apps\sdkwork-clawrouter-pc\models-ssr-smoke.test.cjs
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\server.test.ts
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc --filter sdkwork-clawrouter-pc-api-reference typecheck
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc typecheck --force
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc --filter sdkwork-clawrouter-pc-commons typecheck
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc --filter sdkwork-clawrouter-pc-console-routing typecheck
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc --filter sdkwork-clawrouter-pc-admin-group typecheck
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc --filter sdkwork-clawrouter-pc-app-center typecheck
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc --filter sdkwork-clawrouter-pc-courses typecheck
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc --filter sdkwork-clawrouter-pc-forum typecheck
 python -B -m unittest tests.test_courses_runtime_standard
 python -B -m unittest tests.test_forum_runtime_standard
 python -B -m unittest tests.test_skills_runtime_standard
@@ -1395,11 +1395,11 @@ python -B -m unittest tests.test_workspace_delivery_standard tests.test_admin_gr
 python -B -m unittest tests.test_courses_runtime_standard tests.test_frontend_route_classification_standard tests.test_frontend_static_source_manifest
 python -B -m unittest tests.test_frontend_route_classification_standard tests.test_frontend_static_source_manifest tests.test_forum_runtime_standard
 python -B -m tools.frontend_static_source_manifest --check
-node apps\sdkwork-claw-router-portal\scripts\audit-bundle-budget.mjs
+node apps\sdkwork-clawrouter-pc\scripts\audit-bundle-budget.mjs
 python -B -m unittest tests.test_frontend_field_audit
 python -B -m tools.frontend_field_audit
 python -B -m tools.frontend_field_audit --check
-git diff --check -- CHECK_RESULT.md apps/sdkwork-claw-router-portal/models-runtime.test.ts apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-models/src/modelCatalog.ts apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-models/src/pages/ModelDetails.tsx apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-models/src/pages/Models.tsx apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-i18n/src/index.ts tests/test_models_catalog_runtime_standard.py
+git diff --check -- CHECK_RESULT.md apps/sdkwork-clawrouter-pc/models-runtime.test.ts apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-models/src/modelCatalog.ts apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-models/src/pages/ModelDetails.tsx apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-models/src/pages/Models.tsx apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-i18n/src/index.ts tests/test_models_catalog_runtime_standard.py
 node scripts\run-claw-router-product.test.mjs
 node .\bin\publish-core.mjs --language typescript --project-dir . --action check
 node .\bin\publish-core.mjs --language typescript --project-dir . --action build
@@ -1442,80 +1442,80 @@ python -B -m unittest tests.test_frontend_source_hygiene_standard tests.test_mod
 Ran 20 tests
 OK
 
-pnpm.cmd --dir apps\sdkwork-claw-router-portal run product:check
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc run product:check
 turbo run typecheck: 17 successful, 17 total
 vite production build completed and built dist\server.mjs
 
-pnpm.cmd --dir apps\sdkwork-claw-router-portal --filter sdkwork-claw-router-models typecheck
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc --filter sdkwork-clawrouter-pc-models typecheck
 tsc --noEmit passed
 
-pnpm.cmd --dir apps\sdkwork-claw-router-portal --filter sdkwork-claw-router-i18n typecheck
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc --filter sdkwork-clawrouter-pc-i18n typecheck
 tsc --noEmit passed
 
-node --experimental-strip-types apps\sdkwork-claw-router-portal\models-runtime.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\models-runtime.test.ts
 22 passed
 
-node --experimental-strip-types apps\sdkwork-claw-router-portal\rankings-runtime.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\rankings-runtime.test.ts
 5 passed
 
-node --experimental-strip-types apps\sdkwork-claw-router-portal\courses-runtime.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\courses-runtime.test.ts
 5 passed
 
-node --experimental-strip-types apps\sdkwork-claw-router-portal\forum-runtime.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\forum-runtime.test.ts
 5 passed
 
-node --experimental-strip-types apps\sdkwork-claw-router-portal\commons-runtime.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\commons-runtime.test.ts
 4 passed
 
-node --experimental-strip-types apps\sdkwork-claw-router-portal\skills-runtime.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\skills-runtime.test.ts
 5 passed
 
-node --experimental-strip-types apps\sdkwork-claw-router-portal\app-runtime.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\app-runtime.test.ts
 5 passed
 
-node --experimental-strip-types apps\sdkwork-claw-router-portal\api-reference-playground-runtime.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\api-reference-playground-runtime.test.ts
 6 passed
 
-node apps\sdkwork-claw-router-portal\api-reference-ssr-smoke.test.cjs
+node apps\sdkwork-clawrouter-pc\api-reference-ssr-smoke.test.cjs
 3 passed
 
-node --experimental-strip-types apps\sdkwork-claw-router-portal\console-routing-runtime.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\console-routing-runtime.test.ts
 3 passed
 
-node --experimental-strip-types apps\sdkwork-claw-router-portal\admin-group-runtime.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\admin-group-runtime.test.ts
 3 passed
 
-node --experimental-strip-types apps\sdkwork-claw-router-portal\admin-user-runtime.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\admin-user-runtime.test.ts
 3 passed
 
-node apps\sdkwork-claw-router-portal\models-ssr-smoke.test.cjs
+node apps\sdkwork-clawrouter-pc\models-ssr-smoke.test.cjs
 3 passed
 
-node --experimental-strip-types apps\sdkwork-claw-router-portal\server.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\server.test.ts
 43 passed
 
-pnpm.cmd --dir apps\sdkwork-claw-router-portal --filter sdkwork-claw-router-api-reference typecheck
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc --filter sdkwork-clawrouter-pc-api-reference typecheck
 tsc --noEmit passed
 
-pnpm.cmd --dir apps\sdkwork-claw-router-portal --filter sdkwork-claw-router-commons typecheck
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc --filter sdkwork-clawrouter-pc-commons typecheck
 tsc --noEmit passed
 
-pnpm.cmd --dir apps\sdkwork-claw-router-portal --filter sdkwork-claw-router-console-routing typecheck
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc --filter sdkwork-clawrouter-pc-console-routing typecheck
 tsc --noEmit passed
 
-pnpm.cmd --dir apps\sdkwork-claw-router-portal --filter sdkwork-claw-router-admin-group typecheck
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc --filter sdkwork-clawrouter-pc-admin-group typecheck
 tsc --noEmit passed
 
-pnpm.cmd --dir apps\sdkwork-claw-router-portal --filter sdkwork-claw-router-admin-user typecheck
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc --filter sdkwork-clawrouter-pc-admin-user typecheck
 tsc --noEmit passed
 
-pnpm.cmd --dir apps\sdkwork-claw-router-portal --filter sdkwork-claw-router-app-center typecheck
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc --filter sdkwork-clawrouter-pc-app-center typecheck
 tsc --noEmit passed
 
-pnpm.cmd --dir apps\sdkwork-claw-router-portal --filter sdkwork-claw-router-courses typecheck
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc --filter sdkwork-clawrouter-pc-courses typecheck
 tsc --noEmit passed
 
-pnpm.cmd --dir apps\sdkwork-claw-router-portal --filter sdkwork-claw-router-forum typecheck
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc --filter sdkwork-clawrouter-pc-forum typecheck
 tsc --noEmit passed
 
 python -B -m unittest tests.test_courses_runtime_standard
@@ -1560,7 +1560,7 @@ Wrote frontend field audit to generated\schema\frontend\frontend-field-audit.jso
 python -B -m tools.frontend_field_audit --check
 Frontend field audit is current
 
-git diff --check -- CHECK_RESULT.md apps/sdkwork-claw-router-portal/models-runtime.test.ts apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-models/src/modelCatalog.ts apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-models/src/pages/ModelDetails.tsx apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-models/src/pages/Models.tsx apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-i18n/src/index.ts tests/test_models_catalog_runtime_standard.py
+git diff --check -- CHECK_RESULT.md apps/sdkwork-clawrouter-pc/models-runtime.test.ts apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-models/src/modelCatalog.ts apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-models/src/pages/ModelDetails.tsx apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-models/src/pages/Models.tsx apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-i18n/src/index.ts tests/test_models_catalog_runtime_standard.py
 passed
 
 cargo test -p sdkwork-claw-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
@@ -1593,7 +1593,7 @@ build, with gzip approximately 9.22 kB
 python -B -m tools.frontend_static_source_manifest --check
 Frontend static source manifest is current
 
-node apps\sdkwork-claw-router-portal\scripts\audit-bundle-budget.mjs
+node apps\sdkwork-clawrouter-pc\scripts\audit-bundle-budget.mjs
 Portal bundle budget passed
 
 node scripts\run-claw-router-product.test.mjs
@@ -1665,7 +1665,7 @@ OK
 
 The standard covers:
 
-- every route in `apps/sdkwork-claw-router-portal/src/App.tsx` has exactly one
+- every route in `apps/sdkwork-clawrouter-pc/src/App.tsx` has exactly one
   entry in `docs/schema-registry/frontend-route-classification.yaml`
 - `sdk_backed_business_runtime` routes match their required API surface and use
   the expected generated SDK client
@@ -1890,17 +1890,17 @@ The standard covers:
 Command:
 
 ```powershell
-node --experimental-strip-types apps\sdkwork-claw-router-portal\models-runtime.test.ts
-node --experimental-strip-types apps\sdkwork-claw-router-portal\rankings-runtime.test.ts
-node apps\sdkwork-claw-router-portal\models-ssr-smoke.test.cjs
-node --experimental-strip-types apps\sdkwork-claw-router-portal\server.test.ts
-node --experimental-strip-types apps\sdkwork-claw-router-portal\courses-runtime.test.ts
-node --experimental-strip-types apps\sdkwork-claw-router-portal\forum-runtime.test.ts
-node --experimental-strip-types apps\sdkwork-claw-router-portal\skills-runtime.test.ts
-node --experimental-strip-types apps\sdkwork-claw-router-portal\app-runtime.test.ts
-node --experimental-strip-types apps\sdkwork-claw-router-portal\api-reference-playground-runtime.test.ts
-node --experimental-strip-types apps\sdkwork-claw-router-portal\console-routing-runtime.test.ts
-node --experimental-strip-types apps\sdkwork-claw-router-portal\admin-group-runtime.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\models-runtime.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\rankings-runtime.test.ts
+node apps\sdkwork-clawrouter-pc\models-ssr-smoke.test.cjs
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\server.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\courses-runtime.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\forum-runtime.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\skills-runtime.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\app-runtime.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\api-reference-playground-runtime.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\console-routing-runtime.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\admin-group-runtime.test.ts
 cargo test -p sdkwork-claw-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
 node scripts\run-claw-router-product.test.mjs
 ```
@@ -2004,7 +2004,7 @@ The runtime tests cover:
 Command:
 
 ```powershell
-node --experimental-strip-types apps\sdkwork-claw-router-portal\rankings-runtime.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\rankings-runtime.test.ts
 python -B -m unittest tests.test_rankings_runtime_standard
 cargo test -p sdkwork-claw-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
 ```
@@ -2043,12 +2043,12 @@ The rankings hardening covers:
 Command:
 
 ```powershell
-node --experimental-strip-types apps\sdkwork-claw-router-portal\courses-runtime.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\courses-runtime.test.ts
 python -B -m unittest tests.test_courses_runtime_standard
-pnpm.cmd --dir apps\sdkwork-claw-router-portal --filter sdkwork-claw-router-courses typecheck
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc --filter sdkwork-clawrouter-pc-courses typecheck
 python -B -m unittest tests.test_courses_runtime_standard tests.test_frontend_route_classification_standard tests.test_frontend_static_source_manifest
 python -B -m tools.frontend_static_source_manifest --check
-node apps\sdkwork-claw-router-portal\scripts\audit-bundle-budget.mjs
+node apps\sdkwork-clawrouter-pc\scripts\audit-bundle-budget.mjs
 cargo test -p sdkwork-claw-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
 ```
 
@@ -2057,7 +2057,7 @@ Observed result:
 ```text
 courses-runtime.test.ts: 5 passed
 test_courses_runtime_standard: Ran 5 tests, OK
-sdkwork-claw-router-courses typecheck: tsc --noEmit passed
+sdkwork-clawrouter-pc-courses typecheck: tsc --noEmit passed
 courses plus route/static manifest tests: Ran 11 tests, OK
 Frontend static source manifest is current
 Portal bundle budget passed
@@ -2116,7 +2116,7 @@ The courses hardening covers:
   Bilibili frame sources through explicit CSP directives rather than relying on
   permissive defaults or silently breaking course media in production.
 - the frontend field contract for `/courses` now references
-  `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseCatalog.ts#Course`
+  `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseCatalog.ts#Course`
   directly and records `instructor.title`, `instructor.bio`, and deterministic
   engagement seed fields instead of depending on the old `data.ts` re-export
   compatibility layer.
@@ -2130,12 +2130,12 @@ The courses hardening covers:
 Command:
 
 ```powershell
-node --experimental-strip-types apps\sdkwork-claw-router-portal\forum-runtime.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\forum-runtime.test.ts
 python -B -m unittest tests.test_forum_runtime_standard
-pnpm.cmd --dir apps\sdkwork-claw-router-portal --filter sdkwork-claw-router-forum typecheck
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc --filter sdkwork-clawrouter-pc-forum typecheck
 python -B -m unittest tests.test_frontend_route_classification_standard tests.test_frontend_static_source_manifest tests.test_forum_runtime_standard
 python -B -m tools.frontend_static_source_manifest --check
-node apps\sdkwork-claw-router-portal\scripts\audit-bundle-budget.mjs
+node apps\sdkwork-clawrouter-pc\scripts\audit-bundle-budget.mjs
 cargo test -p sdkwork-claw-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
 node scripts\verify-claw-router-product.mjs
 ```
@@ -2145,7 +2145,7 @@ Observed result:
 ```text
 forum-runtime.test.ts: 5 passed
 test_forum_runtime_standard: Ran 4 tests, OK
-sdkwork-claw-router-forum typecheck: tsc --noEmit passed
+sdkwork-clawrouter-pc-forum typecheck: tsc --noEmit passed
 forum plus route/static manifest tests: Ran 11 tests, OK
 Frontend static source manifest is current
 Portal bundle budget passed
@@ -2176,7 +2176,7 @@ The forum hardening covers:
   `toLocaleDateString`, `window.location.href`, and known mojibake fragments.
 - route classification and static source manifest entries for `/forum` and
   `/forum/:id` point at
-  `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumCatalog.ts`,
+  `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-forum/src/forumCatalog.ts`,
   keeping schema provenance and hash-backed source evidence aligned.
 - production smoke requests `/forum` and `/forum/1`, then checks the real
   `forum-*.js` route chunk for snapshot metadata, catalog/detail derivation,
@@ -2191,14 +2191,14 @@ The forum hardening covers:
 Command:
 
 ```powershell
-node --experimental-strip-types apps\sdkwork-claw-router-portal\app-runtime.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\app-runtime.test.ts
 python -B -m unittest tests.test_app_center_runtime_standard
-pnpm.cmd --dir apps\sdkwork-claw-router-portal --filter sdkwork-claw-router-app-center typecheck
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc --filter sdkwork-clawrouter-pc-app-center typecheck
 python -B -m tools.frontend_field_audit --check
 python -B -m tools.frontend_operation_audit --check
 python -B -m tools.frontend_static_source_manifest --check
 python -B -m tools.frontend_contract_guardian
-node apps\sdkwork-claw-router-portal\scripts\audit-bundle-budget.mjs
+node apps\sdkwork-clawrouter-pc\scripts\audit-bundle-budget.mjs
 cargo test -p sdkwork-claw-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
 node scripts\verify-claw-router-product.mjs
 ```
@@ -2208,7 +2208,7 @@ Observed result:
 ```text
 app-runtime.test.ts: 5 passed
 test_app_center_runtime_standard: Ran 7 tests, OK
-sdkwork-claw-router-app-center typecheck: tsc --noEmit passed
+sdkwork-clawrouter-pc-app-center typecheck: tsc --noEmit passed
 Frontend field audit is current
 Frontend operation audit is current
 Frontend static source manifest is current
@@ -2234,7 +2234,7 @@ The App Center hardening covers:
   and artifacts into public app/release view data, formats counts/dates without
   locale drift, filters and sorts catalog rows, derives catalog/detail views,
   and centralizes release download availability.
-- the removed `packages/sdkwork-claw-router-app-center/src/data/apps.ts` static
+- the removed `packages/sdkwork-clawrouter-pc-app-center/src/data/apps.ts` static
   seed source is absent from runtime imports, field audit output, extraction
   scripts, translation application scripts, and i18n bundles.
 - App Details uses real release URLs from the SDK-backed artifact shape and
@@ -2252,13 +2252,13 @@ The App Center hardening covers:
 Command:
 
 ```powershell
-node --experimental-strip-types apps\sdkwork-claw-router-portal\api-reference-playground-runtime.test.ts
-node apps\sdkwork-claw-router-portal\api-reference-ssr-smoke.test.cjs
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\api-reference-playground-runtime.test.ts
+node apps\sdkwork-clawrouter-pc\api-reference-ssr-smoke.test.cjs
 python -B -m unittest tests.test_api_reference_playground_standard
-node --experimental-strip-types apps\sdkwork-claw-router-portal\server.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\server.test.ts
 cargo test -p sdkwork-claw-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
-pnpm.cmd --dir apps\sdkwork-claw-router-portal --filter sdkwork-claw-router-api-reference typecheck
-pnpm.cmd --dir apps\sdkwork-claw-router-portal typecheck --force
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc --filter sdkwork-clawrouter-pc-api-reference typecheck
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc typecheck --force
 python -B -m unittest tests.test_frontend_route_classification_standard tests.test_frontend_clipboard_standard tests.test_app_session_exchange_standard
 node scripts\run-claw-router-product.test.mjs
 node scripts\verify-claw-router-product.mjs
@@ -2272,7 +2272,7 @@ api-reference-ssr-smoke.test.cjs: 3 passed
 test_api_reference_playground_standard: Ran 3 tests, OK
 server.test.ts: 45 passed
 edge_server_can_serve_portal_dist_without_node_server: Rust edge portal smoke passed at http://127.0.0.1:3900
-sdkwork-claw-router-api-reference typecheck: tsc --noEmit passed
+sdkwork-clawrouter-pc-api-reference typecheck: tsc --noEmit passed
 portal typecheck --force: 27 successful, 27 total
 route classification plus clipboard/session tests: Ran 15 tests, OK
 run-claw-router-product.test.mjs: 35 passed
@@ -2373,10 +2373,10 @@ The API Reference Playground hardening covers:
 Command:
 
 ```powershell
-node --experimental-strip-types apps\sdkwork-claw-router-portal\commons-runtime.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\commons-runtime.test.ts
 python -B -m unittest tests.test_frontend_request_token_standard
 python -B -m unittest tests.test_app_session_exchange_standard tests.test_app_api_key_runtime_standard
-pnpm.cmd --dir apps\sdkwork-claw-router-portal --filter sdkwork-claw-router-commons typecheck
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc --filter sdkwork-clawrouter-pc-commons typecheck
 node scripts\run-claw-router-product.test.mjs
 ```
 
@@ -2386,7 +2386,7 @@ Observed result:
 commons-runtime.test.ts: 4 passed
 test_frontend_request_token_standard: Ran 2 tests, OK
 app session plus api key standards: Ran 19 tests, OK
-sdkwork-claw-router-commons typecheck: tsc --noEmit passed
+sdkwork-clawrouter-pc-commons typecheck: tsc --noEmit passed
 run-claw-router-product.test.mjs: 26 passed
 ```
 
@@ -2412,10 +2412,10 @@ The request token hardening covers:
 Command:
 
 ```powershell
-node --experimental-strip-types apps\sdkwork-claw-router-portal\console-routing-runtime.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\console-routing-runtime.test.ts
 python -B -m unittest tests.test_console_routing_runtime_standard tests.test_frontend_request_token_standard
-pnpm.cmd --dir apps\sdkwork-claw-router-portal --filter sdkwork-claw-router-console-routing typecheck
-pnpm.cmd --dir apps\sdkwork-claw-router-portal typecheck --force
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc --filter sdkwork-clawrouter-pc-console-routing typecheck
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc typecheck --force
 node scripts\run-claw-router-product.test.mjs
 ```
 
@@ -2424,7 +2424,7 @@ Observed result:
 ```text
 console-routing-runtime.test.ts: 3 passed
 console routing plus request-token standards: Ran 10 tests, OK
-sdkwork-claw-router-console-routing typecheck: tsc --noEmit passed
+sdkwork-clawrouter-pc-console-routing typecheck: tsc --noEmit passed
 portal typecheck --force: 15 successful, 15 total
 run-claw-router-product.test.mjs: 26 passed
 ```
@@ -2453,12 +2453,12 @@ The routing strategy hardening covers:
 Commands:
 
 ```powershell
-node --experimental-strip-types apps\sdkwork-claw-router-portal\console-routing-runtime.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\console-routing-runtime.test.ts
 python -B -m unittest tests.test_console_routing_runtime_standard
-pnpm.cmd --dir apps\sdkwork-claw-router-portal --filter sdkwork-claw-router-console-routing typecheck
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc --filter sdkwork-clawrouter-pc-console-routing typecheck
 python -B -m tools.frontend_field_audit --check
 node scripts\run-claw-router-product.test.mjs
-pnpm.cmd --dir apps\sdkwork-claw-router-portal typecheck --force
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc typecheck --force
 node scripts\verify-claw-router-product.mjs
 ```
 
@@ -2467,7 +2467,7 @@ Observed result:
 ```text
 console-routing-runtime.test.ts: 5 passed
 test_console_routing_runtime_standard: Ran 9 tests, OK
-sdkwork-claw-router-console-routing typecheck: tsc --noEmit passed
+sdkwork-clawrouter-pc-console-routing typecheck: tsc --noEmit passed
 frontend_field_audit --check: Frontend field audit is current
 run-claw-router-product.test.mjs: 32 passed
 portal typecheck --force: 26 successful, 26 total
@@ -2505,12 +2505,12 @@ The console routing channel command hardening covers:
 Commands:
 
 ```powershell
-node --experimental-strip-types apps\sdkwork-claw-router-portal\api-key-runtime.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\api-key-runtime.test.ts
 python -B -m unittest tests.test_app_api_key_runtime_standard
-pnpm.cmd --dir apps\sdkwork-claw-router-portal --filter sdkwork-claw-router-console-api-keys typecheck
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc --filter sdkwork-clawrouter-pc-console-api-keys typecheck
 python -B -m tools.frontend_field_audit --check
 node scripts\run-claw-router-product.test.mjs
-pnpm.cmd --dir apps\sdkwork-claw-router-portal typecheck --force
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc typecheck --force
 node scripts\verify-claw-router-product.mjs
 ```
 
@@ -2519,7 +2519,7 @@ Observed result:
 ```text
 api-key-runtime.test.ts: 3 passed
 test_app_api_key_runtime_standard: Ran 12 tests, OK
-sdkwork-claw-router-console-api-keys typecheck: tsc --noEmit passed
+sdkwork-clawrouter-pc-console-api-keys typecheck: tsc --noEmit passed
 frontend_field_audit --check: Frontend field audit is current
 run-claw-router-product.test.mjs: 33 passed
 portal typecheck --force: 27 successful, 27 total
@@ -2552,10 +2552,10 @@ The console API key create-command hardening covers:
 - `CreateKeyDrawer.tsx` exports `ApiKeyFormValues` from the form contract
   instead of owning a separate `CreateKeyFormData` interface, preventing future
   drift between drawer state and service command input.
-- `sdkwork-claw-router-console-api-keys` now has `"type": "module"`,
+- `sdkwork-clawrouter-pc-console-api-keys` now has `"type": "module"`,
   `"typecheck": "tsc --noEmit"`, a strict package `tsconfig.json`, direct
   generated app SDK dependency declaration, and lockfile entries synchronized by
-  `pnpm.cmd --dir apps\sdkwork-claw-router-portal install --lockfile-only --offline`.
+  `pnpm.cmd --dir apps\sdkwork-clawrouter-pc install --lockfile-only --offline`.
 - `scripts/verify-claw-router-product.mjs` runs `portal api key runtime tests`
   before console routing and before broad Rust/Python suites, so API key command
   safety fails fast in the commercial gate.
@@ -2565,11 +2565,11 @@ The console API key create-command hardening covers:
 Command:
 
 ```powershell
-node --experimental-strip-types apps\sdkwork-claw-router-portal\admin-group-runtime.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\admin-group-runtime.test.ts
 python -B -m unittest tests.test_admin_group_runtime_standard
-pnpm.cmd --dir apps\sdkwork-claw-router-portal --filter sdkwork-claw-router-admin-group typecheck
-pnpm.cmd --dir apps\sdkwork-claw-router-portal --filter sdkwork-claw-router-admin-user typecheck
-pnpm.cmd --dir apps\sdkwork-claw-router-portal typecheck --force
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc --filter sdkwork-clawrouter-pc-admin-group typecheck
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc --filter sdkwork-clawrouter-pc-admin-user typecheck
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc typecheck --force
 node scripts\run-claw-router-product.test.mjs
 ```
 
@@ -2580,8 +2580,8 @@ admin-group-runtime.test.ts: 4 passed
 test_admin_group_runtime_standard: Ran 4 tests, OK
 frontend_field_audit --check: Frontend field audit is current
 test_frontend_field_audit + test_admin_group_runtime_standard: Ran 14 tests, OK
-sdkwork-claw-router-admin-group typecheck: tsc --noEmit passed
-sdkwork-claw-router-admin-user typecheck: tsc --noEmit passed
+sdkwork-clawrouter-pc-admin-group typecheck: tsc --noEmit passed
+sdkwork-clawrouter-pc-admin-user typecheck: tsc --noEmit passed
 portal typecheck --force: 17 successful, 17 total
 run-claw-router-product.test.mjs: 27 passed
 ```
@@ -2618,9 +2618,9 @@ The admin group create-input hardening covers:
 Commands:
 
 ```powershell
-node --experimental-strip-types apps\sdkwork-claw-router-portal\admin-channel-runtime.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\admin-channel-runtime.test.ts
 python -B -m unittest tests.test_admin_channel_runtime_standard
-pnpm.cmd --dir apps\sdkwork-claw-router-portal --filter sdkwork-claw-router-admin-channel typecheck
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc --filter sdkwork-clawrouter-pc-admin-channel typecheck
 python -B -m tools.frontend_field_audit --check
 node scripts\run-claw-router-product.test.mjs
 ```
@@ -2630,7 +2630,7 @@ Observed result:
 ```text
 admin-channel-runtime.test.ts: 7 passed
 test_admin_channel_runtime_standard: Ran 6 tests, OK
-sdkwork-claw-router-admin-channel typecheck: tsc --noEmit passed
+sdkwork-clawrouter-pc-admin-channel typecheck: tsc --noEmit passed
 frontend_field_audit --check: Frontend field audit is current
 run-claw-router-product.test.mjs: 32 passed
 ```
@@ -2670,10 +2670,10 @@ The admin channel command-input hardening covers:
 Commands:
 
 ```powershell
-node --experimental-strip-types apps\sdkwork-claw-router-portal\admin-user-runtime.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\admin-user-runtime.test.ts
 python -B -m unittest tests.test_admin_user_runtime_standard
 python -B -m tools.frontend_field_audit --check
-pnpm.cmd --dir apps\sdkwork-claw-router-portal --filter sdkwork-claw-router-admin-user typecheck
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc --filter sdkwork-clawrouter-pc-admin-user typecheck
 node scripts\run-claw-router-product.test.mjs
 ```
 
@@ -2683,7 +2683,7 @@ Observed result:
 admin-user-runtime.test.ts: 6 passed
 test_admin_user_runtime_standard: Ran 4 tests, OK
 frontend_field_audit --check: Frontend field audit is current
-sdkwork-claw-router-admin-user typecheck: tsc --noEmit passed
+sdkwork-clawrouter-pc-admin-user typecheck: tsc --noEmit passed
 run-claw-router-product.test.mjs: 32 passed
 ```
 
@@ -2721,11 +2721,11 @@ The admin user hardening covers:
 Commands:
 
 ```powershell
-node --experimental-strip-types apps\sdkwork-claw-router-portal\admin-model-runtime.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\admin-model-runtime.test.ts
 python -B -m unittest tests.test_admin_model_runtime_standard
 python -B -m tools.frontend_field_audit --check
-pnpm.cmd --dir apps\sdkwork-claw-router-portal --filter sdkwork-claw-router-admin-model typecheck
-pnpm.cmd --dir apps\sdkwork-claw-router-portal typecheck --force
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc --filter sdkwork-clawrouter-pc-admin-model typecheck
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc typecheck --force
 node scripts\run-claw-router-product.test.mjs
 node scripts\verify-claw-router-product.mjs
 ```
@@ -2736,7 +2736,7 @@ Observed result:
 admin-model-runtime.test.ts: 3 passed
 test_admin_model_runtime_standard: Ran 3 tests, OK
 frontend_field_audit --check: Frontend field audit is current
-sdkwork-claw-router-admin-model typecheck: tsc --noEmit passed
+sdkwork-clawrouter-pc-admin-model typecheck: tsc --noEmit passed
 portal typecheck --force: 18 successful, 18 total
 run-claw-router-product.test.mjs: 28 passed
 verify-claw-router-product: Ran 458 Python tests, OK; schema quality gate passed
@@ -2771,7 +2771,7 @@ Commands:
 
 ```powershell
 python -B -m unittest tests.test_admin_package_typecheck_standard
-pnpm.cmd --dir apps\sdkwork-claw-router-portal typecheck --force
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc typecheck --force
 python -B -m unittest tests.test_admin_package_typecheck_standard tests.test_admin_model_runtime_standard tests.test_admin_user_runtime_standard tests.test_admin_group_runtime_standard tests.test_admin_destructive_action_standard tests.test_frontend_field_audit
 node scripts\verify-claw-router-product.mjs
 ```
@@ -2787,8 +2787,8 @@ verify-claw-router-product: Ran 459 Python tests, OK; schema quality gate passed
 
 The admin package standard hardening covers:
 
-- every `sdkwork-claw-router-admin-*` package now declares `"type": "module"`.
-- every `sdkwork-claw-router-admin-*` package now exposes
+- every `sdkwork-clawrouter-pc-admin-*` package now declares `"type": "module"`.
+- every `sdkwork-clawrouter-pc-admin-*` package now exposes
   `"typecheck": "tsc --noEmit"`, so Turbo includes admin surfaces in forced
   portal typechecking instead of silently skipping packages without scripts.
 - the forced portal typecheck expanded from 18 package tasks to 26 package
@@ -2808,12 +2808,12 @@ The admin package standard hardening covers:
 Commands:
 
 ```powershell
-node --experimental-strip-types apps\sdkwork-claw-router-portal\admin-ratelimit-runtime.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\admin-ratelimit-runtime.test.ts
 python -B -m unittest tests.test_admin_ratelimit_runtime_standard
-pnpm.cmd --dir apps\sdkwork-claw-router-portal --filter sdkwork-claw-router-admin-ratelimit typecheck
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc --filter sdkwork-clawrouter-pc-admin-ratelimit typecheck
 python -B -m tools.frontend_field_audit --check
 node scripts\run-claw-router-product.test.mjs
-pnpm.cmd --dir apps\sdkwork-claw-router-portal typecheck --force
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc typecheck --force
 node scripts\verify-claw-router-product.mjs
 ```
 
@@ -2822,7 +2822,7 @@ Observed result:
 ```text
 admin-ratelimit-runtime.test.ts: 4 passed
 test_admin_ratelimit_runtime_standard: Ran 3 tests, OK
-sdkwork-claw-router-admin-ratelimit typecheck: tsc --noEmit passed
+sdkwork-clawrouter-pc-admin-ratelimit typecheck: tsc --noEmit passed
 frontend_field_audit --check: Frontend field audit is current
 run-claw-router-product.test.mjs: 29 passed
 portal typecheck --force: 26 successful, 26 total
@@ -2856,9 +2856,9 @@ The admin rate-limit hardening covers:
 Commands:
 
 ```powershell
-node --experimental-strip-types apps\sdkwork-claw-router-portal\admin-marketing-runtime.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\admin-marketing-runtime.test.ts
 python -B -m unittest tests.test_admin_marketing_runtime_standard
-pnpm.cmd --dir apps\sdkwork-claw-router-portal --filter sdkwork-claw-router-admin-marketing typecheck
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc --filter sdkwork-clawrouter-pc-admin-marketing typecheck
 python -B -m tools.frontend_field_audit --check
 node scripts\run-claw-router-product.test.mjs
 ```
@@ -2868,7 +2868,7 @@ Observed result:
 ```text
 admin-marketing-runtime.test.ts: 4 passed
 test_admin_marketing_runtime_standard: Ran 3 tests, OK
-sdkwork-claw-router-admin-marketing typecheck: tsc --noEmit passed
+sdkwork-clawrouter-pc-admin-marketing typecheck: tsc --noEmit passed
 frontend_field_audit --check: Frontend field audit is current
 run-claw-router-product.test.mjs: 30 passed
 ```
@@ -2894,9 +2894,9 @@ The admin marketing hardening covers:
 Commands:
 
 ```powershell
-node --experimental-strip-types apps\sdkwork-claw-router-portal\admin-announcement-runtime.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\admin-announcement-runtime.test.ts
 python -B -m unittest tests.test_admin_announcement_runtime_standard
-pnpm.cmd --dir apps\sdkwork-claw-router-portal --filter sdkwork-claw-router-admin-announcement typecheck
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc --filter sdkwork-clawrouter-pc-admin-announcement typecheck
 python -B -m tools.frontend_field_audit --check
 node scripts\run-claw-router-product.test.mjs
 ```
@@ -2906,7 +2906,7 @@ Observed result:
 ```text
 admin-announcement-runtime.test.ts: 4 passed
 test_admin_announcement_runtime_standard: Ran 3 tests, OK
-sdkwork-claw-router-admin-announcement typecheck: tsc --noEmit passed
+sdkwork-clawrouter-pc-admin-announcement typecheck: tsc --noEmit passed
 frontend_field_audit --check: Frontend field audit is current
 run-claw-router-product.test.mjs: 31 passed
 ```
@@ -3184,13 +3184,13 @@ Commands:
 
 ```powershell
 python -B -m unittest tests.test_app_center_runtime_standard tests.test_skills_runtime_standard
-node --experimental-strip-types apps\sdkwork-claw-router-portal\commons-runtime.test.ts
-node --experimental-strip-types apps\sdkwork-claw-router-portal\app-runtime.test.ts
-node --experimental-strip-types apps\sdkwork-claw-router-portal\skills-runtime.test.ts
-pnpm.cmd --dir apps\sdkwork-claw-router-portal typecheck --force
-pnpm.cmd --dir apps\sdkwork-claw-router-portal build
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\commons-runtime.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\app-runtime.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\skills-runtime.test.ts
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc typecheck --force
+pnpm.cmd --dir apps\sdkwork-clawrouter-pc build
 cargo test -p sdkwork-claw-gateway --test edge_server edge_server_can_serve_portal_dist_without_node_server
-node --experimental-strip-types apps\sdkwork-claw-router-portal\server.test.ts
+node --experimental-strip-types apps\sdkwork-clawrouter-pc\server.test.ts
 node scripts\run-claw-router-product.test.mjs
 ```
 
@@ -3586,7 +3586,7 @@ outside the Node process and pass the DevTools port:
 ```powershell
 $env:CLAWROUTER_BROWSER_DEBUG_PORT="9222"
 $env:CLAWROUTER_BROWSER_SMOKE_REQUIRED="1"
-node apps\sdkwork-claw-router-portal\scripts\smoke-production-browser.mjs
+node apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs
 ```
 
 Then run Docker-backed Postgres verification on a machine where Docker Desktop

@@ -1,7 +1,7 @@
 fragment: operations/backend-messaging
 frontend_operations:
 - route: /admin/messaging/providers
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts
   operation: listMessagingProviderAccounts
   operation_id: providerAccounts.list
   kind: read
@@ -75,7 +75,7 @@ frontend_operations:
       page: { type: integer, format: int64, minimum: 1 }
       pageSize: { type: integer, format: int64, minimum: 1, maximum: 200 }
 - route: /admin/messaging/providers
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts
   operation: createMessagingProviderAccount
   operation_id: providerAccounts.create
   kind: create
@@ -123,7 +123,7 @@ frontend_operations:
       id: { type: string, minLength: 1, maxLength: 128 }
       status: { type: string, minLength: 1, maxLength: 32 }
 - route: /admin/messaging/sender-identities
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts
   operation: listMessagingSenderIdentities
   operation_id: senderIdentities.list
   kind: read
@@ -139,7 +139,7 @@ frontend_operations:
   query_parameters: *messagingPageQuery
   response_schema: *messagingCollectionResponse
 - route: /admin/messaging/sender-identities
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts
   operation: createMessagingSenderIdentity
   operation_id: senderIdentities.create
   kind: create
@@ -174,7 +174,7 @@ frontend_operations:
       countryCode: { type: string, maxLength: 16 }
   response_schema: *messagingMutationResponse
 - route: /admin/messaging/templates
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts
   operation: listMessagingTemplates
   operation_id: templates.list
   kind: read
@@ -192,7 +192,7 @@ frontend_operations:
   query_parameters: *messagingPageQuery
   response_schema: *messagingCollectionResponse
 - route: /admin/messaging/templates
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts
   operation: createMessagingTemplate
   operation_id: templates.create
   kind: create
@@ -231,7 +231,7 @@ frontend_operations:
         additionalProperties: true
   response_schema: *messagingMutationResponse
 - route: /admin/messaging/templates
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts
   operation: publishMessagingTemplateVersion
   operation_id: templates.versions.publish
   kind: action
@@ -251,7 +251,7 @@ frontend_operations:
   request_body_required: false
   response_schema: *messagingMutationResponse
 - route: /admin/messaging/route-rules
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts
   operation: listMessagingRouteRules
   operation_id: routeRules.list
   kind: read
@@ -269,7 +269,7 @@ frontend_operations:
   query_parameters: *messagingPageQuery
   response_schema: *messagingCollectionResponse
 - route: /admin/messaging/route-rules
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts
   operation: createMessagingRouteRule
   operation_id: routeRules.create
   kind: create
@@ -322,7 +322,7 @@ frontend_operations:
             weight: { type: integer, minimum: 1, maximum: 10000 }
   response_schema: *messagingMutationResponse
 - route: /admin/messaging/send-requests
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts
   operation: listMessagingSendRequests
   operation_id: sendRequests.list
   kind: read
@@ -353,7 +353,7 @@ frontend_operations:
     schema: { type: string, maxLength: 128 }
   response_schema: *messagingCollectionResponse
 - route: /admin/messaging/diagnostics
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts
   operation: simulateMessagingRoute
   operation_id: diagnostics.routeSimulation.create
   kind: action
@@ -396,7 +396,7 @@ frontend_operations:
           type: object
           additionalProperties: true
 - route: /admin/messaging/diagnostics
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts
   operation: testMessagingSend
   operation_id: diagnostics.testSends.create
   kind: action
@@ -448,7 +448,7 @@ frontend_operations:
       deliveryStatus: { type: string, minLength: 1, maxLength: 32 }
       providerCode: { type: string, nullable: true, maxLength: 64 }
 - route: /admin/messaging/diagnostics
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts
   operation: sendMessagingTemplate
   operation_id: templateSends.create
   kind: action
@@ -502,7 +502,7 @@ frontend_operations:
       deliveryStatus: { type: string, minLength: 1, maxLength: 32 }
       providerCode: { type: string, nullable: true, maxLength: 64 }
 - route: /admin/messaging/suppressions
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts
   operation: listMessagingSuppressions
   operation_id: suppressions.list
   kind: read
@@ -529,7 +529,7 @@ frontend_operations:
     schema: { type: string, maxLength: 128 }
   response_schema: *messagingCollectionResponse
 - route: /admin/messaging/suppressions
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts
   operation: createMessagingSuppression
   operation_id: suppressions.create
   kind: create
@@ -563,7 +563,7 @@ frontend_operations:
       note: { type: string, nullable: true, maxLength: 512 }
   response_schema: *messagingMutationResponse
 - route: /admin/messaging/rate-limits
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts
   operation: listMessagingRateLimitBuckets
   operation_id: rateLimitBuckets.list
   kind: read
@@ -592,7 +592,7 @@ frontend_operations:
     schema: { type: string, maxLength: 128 }
   response_schema: *messagingCollectionResponse
 - route: /admin/messaging/verification-policies
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts
   operation: listVerificationPolicies
   operation_id: verificationPolicies.list
   kind: read
@@ -608,7 +608,7 @@ frontend_operations:
   query_parameters: *messagingPageQuery
   response_schema: *messagingCollectionResponse
 - route: /admin/messaging/verification-policies
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts
   operation: updateVerificationPolicy
   operation_id: verificationPolicies.update
   kind: update

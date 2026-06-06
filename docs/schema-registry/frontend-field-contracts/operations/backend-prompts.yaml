@@ -1,7 +1,7 @@
 fragment: operations/backend-prompts
 frontend_operations:
 - route: /admin/prompts
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-prompts/src/promptService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-prompts/src/promptService.ts
   operation: listPrompts
   operation_id: definitions.list
   kind: read
@@ -66,7 +66,7 @@ frontend_operations:
             createdAt: { type: string, minLength: 1, maxLength: 64 }
             updatedAt: { type: string, minLength: 1, maxLength: 64 }
 - route: /admin/prompts
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-prompts/src/promptService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-prompts/src/promptService.ts
   operation: createPrompt
   operation_id: definitions.create
   kind: create
@@ -107,7 +107,7 @@ frontend_operations:
     properties:
       item: *adminPromptItem
 - route: /admin/prompts
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-prompts/src/promptService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-prompts/src/promptService.ts
   operation: listPromptVersions
   operation_id: versions.list
   kind: read
@@ -163,7 +163,7 @@ frontend_operations:
             createdAt: { type: string, minLength: 1, maxLength: 64 }
             updatedAt: { type: string, minLength: 1, maxLength: 64 }
 - route: /admin/prompts
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-prompts/src/promptService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-prompts/src/promptService.ts
   operation: createPromptVersion
   operation_id: versions.create
   kind: create
@@ -208,7 +208,7 @@ frontend_operations:
     properties:
       item: *adminPromptVersionItem
 - route: /admin/prompts
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-prompts/src/promptService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-prompts/src/promptService.ts
   operation: publishPromptVersion
   operation_id: versions.publish
   kind: action
@@ -232,7 +232,7 @@ frontend_operations:
     schema:
       $ref: "#/components/schemas/AdminPromptVersionMutationResponse"
 - route: /admin/prompts
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-prompts/src/promptService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-prompts/src/promptService.ts
   operation: renderPromptVersion
   operation_id: versionRenders.create
   kind: action
@@ -262,7 +262,7 @@ frontend_operations:
     properties:
       rendered: { type: string, maxLength: 50000 }
 - route: /admin/prompts
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-prompts/src/promptService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-prompts/src/promptService.ts
   operation: listPromptBindings
   operation_id: definitionBindings.list
   kind: read
@@ -309,7 +309,7 @@ frontend_operations:
             createdAt: { type: string, minLength: 1, maxLength: 64 }
             updatedAt: { type: string, minLength: 1, maxLength: 64 }
 - route: /admin/prompts
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-prompts/src/promptService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-prompts/src/promptService.ts
   operation: createPromptBinding
   operation_id: definitionBindings.create
   kind: create
@@ -349,7 +349,7 @@ frontend_operations:
     properties:
       item: *adminPromptBindingItem
 - route: /admin/prompts
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-prompts/src/promptService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-prompts/src/promptService.ts
   operation: updatePromptBinding
   operation_id: definitionBindings.update
   kind: update

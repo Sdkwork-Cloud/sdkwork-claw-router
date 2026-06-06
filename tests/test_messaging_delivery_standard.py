@@ -133,7 +133,7 @@ class MessagingDeliveryStandardTest(unittest.TestCase):
             for operation in contract.get("frontend_operations", [])
             if isinstance(operation, dict)
             and str(operation.get("source", "")).endswith(
-                "packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts"
+                "packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts"
             )
         }
         self.assertTrue(
@@ -160,10 +160,10 @@ class MessagingDeliveryStandardTest(unittest.TestCase):
             operations,
         )
 
-        app_tsx = (ROOT / "apps" / "sdkwork-claw-router-portal" / "src" / "App.tsx").read_text(
+        app_tsx = (ROOT / "apps" / "sdkwork-clawrouter-pc" / "src" / "App.tsx").read_text(
             encoding="utf-8"
         )
-        self.assertIn("sdkwork-claw-router-admin-messaging", app_tsx)
+        self.assertIn("sdkwork-clawrouter-pc-admin-messaging", app_tsx)
         for route in [
             'path="messaging"',
             'path="messaging/providers"',
@@ -181,9 +181,9 @@ class MessagingDeliveryStandardTest(unittest.TestCase):
         service_path = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-admin-messaging"
+            / "sdkwork-clawrouter-pc-admin-messaging"
             / "src"
             / "messagingService.ts"
         )
@@ -198,9 +198,9 @@ class MessagingDeliveryStandardTest(unittest.TestCase):
         admin_source = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-admin-messaging"
+            / "sdkwork-clawrouter-pc-admin-messaging"
             / "src"
             / "index.tsx"
         ).read_text(encoding="utf-8")

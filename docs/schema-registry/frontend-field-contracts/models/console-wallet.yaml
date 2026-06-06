@@ -1,7 +1,7 @@
 fragment: models/console-wallet
 frontend_models:
 - route: /console/wallet
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-wallet/src/walletService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-wallet/src/walletService.ts
   interface: CommerceHistoryItem
   fields:
   - id
@@ -11,7 +11,7 @@ frontend_models:
   data_sources:
   - commerce_billing_history
 - route: /console/wallet
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-wallet/src/walletService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-wallet/src/walletService.ts
   interface: RechargeHistoryItem
   fields:
   - orderNo
@@ -19,7 +19,7 @@ frontend_models:
   data_sources:
   - commerce_billing_history
 - route: /console/wallet
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-wallet/src/walletService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-wallet/src/walletService.ts
   interface: RedeemHistoryItem
   fields:
   - code

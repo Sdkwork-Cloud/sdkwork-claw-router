@@ -124,18 +124,18 @@ class RechargeRuntimeStandardTest(unittest.TestCase):
         recharge_view = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-recharge"
+            / "sdkwork-clawrouter-pc-console-recharge"
             / "src"
             / "RechargeView.tsx"
         ).read_text(encoding="utf-8")
         recharge_service = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-recharge"
+            / "sdkwork-clawrouter-pc-console-recharge"
             / "src"
             / "rechargeService.ts"
         ).read_text(encoding="utf-8")

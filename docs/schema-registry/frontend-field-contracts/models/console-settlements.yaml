@@ -1,7 +1,7 @@
 fragment: models/console-settlements
 frontend_models:
 - route: /console/settlements
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-settlements/src/settlementsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-settlements/src/settlementsService.ts
   interface: Bill
   fields:
   - id
@@ -36,7 +36,7 @@ frontend_models:
   - commerce_usage_statement
   - commerce_usage_statement_item
 - route: /console/settlements
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-settlements/src/settlementsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-settlements/src/settlementsService.ts
   interface: BillBreakdownItem
   fields:
   - cost
@@ -45,7 +45,7 @@ frontend_models:
   data_sources:
   - commerce_usage_statement_item
 - route: /console/settlements
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-settlements/src/settlementsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-settlements/src/settlementsService.ts
   interface: SettlementChartData
   fields:
   - day

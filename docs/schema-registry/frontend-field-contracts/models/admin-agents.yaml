@@ -1,13 +1,13 @@
 fragment: models/admin-agents
 frontend_models:
 - route: /admin/agents
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-agents/src/agentService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-agents/src/agentService.ts
   interface: AdminAgentPolicyDocument
   fields: []
   data_sources:
   - ai_agent_version
 - route: /admin/agents
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-agents/src/agentService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-agents/src/agentService.ts
   interface: AdminAgentCapabilities
   fields:
   - memoryEnabled
@@ -19,7 +19,7 @@ frontend_models:
   - ai_agent_mcp_server
   - ai_agent_memory
 - route: /admin/agents
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-agents/src/agentService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-agents/src/agentService.ts
   interface: AdminAgentVersion
   fields:
   - id
@@ -37,7 +37,7 @@ frontend_models:
   data_sources:
   - ai_agent_version
 - route: /admin/agents
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-agents/src/agentService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-agents/src/agentService.ts
   interface: AdminAgentItem
   fields:
   - id
@@ -75,7 +75,7 @@ frontend_models:
   - ai_agent_mcp_server
   - ai_agent_memory
 - route: /admin/agents
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-agents/src/agentService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-agents/src/agentService.ts
   interface: AdminAgentListQuery
   fields:
   - q

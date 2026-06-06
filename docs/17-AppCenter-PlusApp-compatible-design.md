@@ -2,7 +2,7 @@
 
 > 版本：0.1
 > 日期：2026-04-28
-> 适用范围：`apps/sdkwork-claw-router-portal` 的 `/apps`、`/apps/:id`、首页 AppCenterPreview，以及 Console/Admin 中与 App 管理相关的页面。
+> 适用范围：`apps/sdkwork-clawrouter-pc` 的 `/apps`、`/apps/:id`、首页 AppCenterPreview，以及 Console/Admin 中与 App 管理相关的页面。
 
 ## 1. 结论
 
@@ -56,11 +56,11 @@ Backend/Admin 走 backend-api 标准，路径沿用 Java：
 | 后台 App CRUD | `/backend/v3/api/app` |
 | App 聚合后台能力 | `/backend/v3/api/app/admin` |
 
-因此 `sdkwork-claw-router` 不能新增 `/appcenter/*`、`/portal/apps/*`、`/claw-router/apps/*` 之类路径。前端服务适配层只能在本地把 Java DTO 转换成现有页面需要的 `App`/`AppRelease` view model，不能要求修改 `apps/sdkwork-claw-router-portal` 的 UI 视觉设计。
+因此 `sdkwork-claw-router` 不能新增 `/appcenter/*`、`/portal/apps/*`、`/claw-router/apps/*` 之类路径。前端服务适配层只能在本地把 Java DTO 转换成现有页面需要的 `App`/`AppRelease` view model，不能要求修改 `apps/sdkwork-clawrouter-pc` 的 UI 视觉设计。
 
 ## 4. 前端字段映射
 
-当前前端 `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/data/apps.ts` 的模型如下：
+当前前端 `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/data/apps.ts` 的模型如下：
 
 | 前端字段 | Java DTO/数据库来源 | 处理规则 |
 | --- | --- | --- |
@@ -93,7 +93,7 @@ Schema Registry 已按以下原则调整：
 
 ## 6. 实现约束
 
-- 不改变 `apps/sdkwork-claw-router-portal` 的 UI 视觉设计和页面交互，所有差异由 service adapter 或 DTO mapper 解决。
+- 不改变 `apps/sdkwork-clawrouter-pc` 的 UI 视觉设计和页面交互，所有差异由 service adapter 或 DTO mapper 解决。
 - AppCenter API 必须与 Java app-api/backend-api 保持路径、响应包裹、字段命名一致，支持从 mock 数据自由切换到 Java SDK。
 - `plus_app` 的物理表结构以 `spring-ai-plus-business-entity` 为准，Rust/Java/TypeScript 只能生成兼容模型，不能在 claw-router 内另起一套 App 表。
 - 如果未来需要更复杂的应用市场运营能力，优先扩展 `plus_app.config/resource_list/install_config/release_notes` 的 JSON 契约，或增加独立的行为/投影表；不得再为 AppCenter 新建第二套应用主表。

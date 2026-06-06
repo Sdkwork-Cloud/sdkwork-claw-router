@@ -25,7 +25,7 @@ class FrontendStaticSourceManifestTest(unittest.TestCase):
             root = Path(tmp)
             self.write_file(
                 root,
-                "apps/sdkwork-claw-router-portal/packages/demo/src/data.ts",
+                "apps/sdkwork-clawrouter-pc/packages/demo/src/data.ts",
                 """
                 export const demoContent = [{ title: 'Demo' }];
                 """,
@@ -39,7 +39,7 @@ class FrontendStaticSourceManifestTest(unittest.TestCase):
                   - id: static-route:/demo
                     route: /demo
                     mode: curated_seed_content
-                    source_ref: apps/sdkwork-claw-router-portal/packages/demo/src/data.ts
+                    source_ref: apps/sdkwork-clawrouter-pc/packages/demo/src/data.ts
                     observed_at: "2026-05-03"
                     schema_tables: [content_demo]
                 """,
@@ -60,7 +60,7 @@ class FrontendStaticSourceManifestTest(unittest.TestCase):
             root = Path(tmp)
             self.write_file(
                 root,
-                "apps/sdkwork-claw-router-portal/packages/demo/src/data.ts",
+                "apps/sdkwork-clawrouter-pc/packages/demo/src/data.ts",
                 """
                 export const demoContent = [];
                 """,
@@ -74,7 +74,7 @@ class FrontendStaticSourceManifestTest(unittest.TestCase):
                   - id: static-route:/demo
                     route: /demo
                     mode: curated_seed_content
-                    source_ref: apps/sdkwork-claw-router-portal/packages/demo/src/data.ts
+                    source_ref: apps/sdkwork-clawrouter-pc/packages/demo/src/data.ts
                     observed_at: "2026-05-03"
                     schema_tables: [content_demo]
                 """,

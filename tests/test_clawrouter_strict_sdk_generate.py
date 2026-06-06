@@ -503,7 +503,7 @@ class ClawRouterStrictSdkGenerateTest(unittest.TestCase):
             temp_root = Path(tmp)
             family = temp_root / "sdks" / "clawrouter-open-sdk"
             output = family / "clawrouter-open-sdk-typescript"
-            authority_source = temp_root / "apps" / "sdkwork-claw-router-portal" / "public" / "openapi.json"
+            authority_source = temp_root / "apps" / "sdkwork-clawrouter-pc" / "public" / "openapi.json"
             authority_source.parent.mkdir(parents=True, exist_ok=True)
             authority_spec_path = self.write_openapi(temp_root)
             authority = json.loads(authority_spec_path.read_text(encoding="utf-8"))

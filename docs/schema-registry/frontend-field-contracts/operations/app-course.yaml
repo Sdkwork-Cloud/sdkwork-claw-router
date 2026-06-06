@@ -1,7 +1,7 @@
 fragment: operations/app-course
 frontend_operations:
 - route: /courses
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseService.ts
   operation: fetchCourses
   kind: read
   api_surface: app
@@ -239,7 +239,7 @@ frontend_operations:
         format: int64
         minimum: 0
 - route: /courses
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseService.ts
   operation: fetchCourseOverview
   kind: read
   api_surface: app
@@ -316,7 +316,7 @@ frontend_operations:
             minLength: 1
             maxLength: 64
 - route: /courses
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseService.ts
   operation: fetchCourseCategories
   kind: read
   api_surface: app
@@ -375,7 +375,7 @@ frontend_operations:
           format: int64
           minimum: 0
 - route: /courses
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseService.ts
   operation: submitCourseApplication
   operation_id: applications.create
   kind: create
@@ -487,7 +487,7 @@ frontend_operations:
         minLength: 1
         maxLength: 64
 - route: /courses
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseService.ts
   operation: uploadCourseApplicationVideo
   operation_id: applications.videos.create
   kind: create
@@ -550,7 +550,7 @@ frontend_operations:
         minLength: 1
         maxLength: 64
 - route: /courses/:id
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseService.ts
   operation: fetchCourseDetail
   kind: read
   api_surface: app

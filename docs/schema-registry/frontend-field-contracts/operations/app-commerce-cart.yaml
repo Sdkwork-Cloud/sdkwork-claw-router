@@ -1,7 +1,7 @@
 fragment: operations/app-commerce-cart
 frontend_operations:
 - route: /console/checkout
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-checkout/src/checkoutService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-checkout/src/checkoutService.ts
   operation: appCartCurrentRetrieve
   operation_id: cart.current.retrieve
   kind: read
@@ -51,7 +51,7 @@ frontend_operations:
             nullable: true
             maxLength: 64
 - route: /console/checkout
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-checkout/src/checkoutService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-checkout/src/checkoutService.ts
   operation: appCartItemsCreate
   operation_id: cart.items.create
   kind: create
@@ -122,7 +122,7 @@ frontend_operations:
       qrCode:
         $ref: '#/components/schemas/MediaResource'
 - route: /console/checkout
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-checkout/src/checkoutService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-checkout/src/checkoutService.ts
   operation: appCartItemsUpdate
   operation_id: cart.items.update
   kind: update
@@ -148,7 +148,7 @@ frontend_operations:
   request_schema: *id001
   response_schema: *id002
 - route: /console/checkout
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-checkout/src/checkoutService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-checkout/src/checkoutService.ts
   operation: appCartItemsDelete
   operation_id: cart.items.delete
   kind: delete

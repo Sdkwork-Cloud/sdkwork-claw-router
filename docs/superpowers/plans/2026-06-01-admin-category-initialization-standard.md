@@ -28,10 +28,10 @@
 - Regenerate: `generated/api/api-contract-manifest.json`
 - Regenerate: `generated/openapi/clawrouter-backend-openapi.json`
 - Regenerate: `sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/**`
-- Modify: `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts`
-- Create: `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/CategoryManagementPage.tsx`
-- Modify: `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/index.tsx`
-- Modify: `apps/sdkwork-claw-router-portal/admin-catalog-runtime.test.ts`
+- Modify: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts`
+- Create: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/CategoryManagementPage.tsx`
+- Modify: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/index.tsx`
+- Modify: `apps/sdkwork-clawrouter-pc/admin-catalog-runtime.test.ts`
 
 ## Tasks
 

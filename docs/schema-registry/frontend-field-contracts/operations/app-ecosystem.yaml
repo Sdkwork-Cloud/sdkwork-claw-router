@@ -1,7 +1,7 @@
 fragment: operations/app-ecosystem
 frontend_operations:
 - route: /skills-hub
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-skills-hub/src/services/skillService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-skills-hub/src/services/skillService.ts
   operation: getSkills
   kind: read
   api_surface: app
@@ -178,7 +178,7 @@ frontend_operations:
                     type: string
                     maxLength: 64
 - route: /skills-hub
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-skills-hub/src/services/skillService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-skills-hub/src/services/skillService.ts
   operation: getSkillById
   kind: read
   api_surface: app
@@ -199,7 +199,7 @@ frontend_operations:
     required: *id001
     properties: *id002
 - route: /skills-hub
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-skills-hub/src/services/skillService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-skills-hub/src/services/skillService.ts
   operation: getCategories
   kind: read
   api_surface: app
@@ -221,7 +221,7 @@ frontend_operations:
           minLength: 1
           maxLength: 128
 - route: /skills-hub
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-skills-hub/src/services/skillService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-skills-hub/src/services/skillService.ts
   operation: getMySkills
   kind: read
   api_surface: app
@@ -278,7 +278,7 @@ frontend_operations:
               maxLength: 64
             skill: *id003
 - route: /skills-hub
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-skills-hub/src/services/skillService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-skills-hub/src/services/skillService.ts
   operation: enableSkill
   kind: action
   api_surface: app
@@ -315,7 +315,7 @@ frontend_operations:
     properties:
       item: *id004
 - route: /skills-hub
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-skills-hub/src/services/skillService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-skills-hub/src/services/skillService.ts
   operation: disableSkill
   kind: action
   api_surface: app
@@ -338,7 +338,7 @@ frontend_operations:
     properties:
       item: *id004
 - route: /skills-hub
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-skills-hub/src/services/skillService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-skills-hub/src/services/skillService.ts
   operation: updateSkillConfig
   kind: update
   api_surface: app

@@ -30,8 +30,8 @@ tables:
   - backend
   compatibility_rule: canonical_media_resource_contract
   frontend_contract:
-    list_component: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/pages/AppCenter.tsx
-    detail_component: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/pages/AppDetails.tsx
+    list_component: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/pages/AppCenter.tsx
+    detail_component: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/pages/AppDetails.tsx
     source_of_truth: plus_app
     adapter_rule: map app API DTOs to portal App/AppRelease view models while preserving MediaResource objects until concrete display or download boundaries
     field_mapping:
@@ -490,8 +490,8 @@ tables:
       app: com.sdkwork.ai.gateway.api.app.v3.skill.vo.SkillVO
       backend: com.sdkwork.spring.ai.plus.vo.skill.PlusAgentSkillVO
   frontend_contract:
-    list_component: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-skills-hub/src/pages/SkillsHub.tsx
-    detail_component: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-skills-hub/src/pages/SkillDetails.tsx
+    list_component: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-skills-hub/src/pages/SkillsHub.tsx
+    detail_component: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-skills-hub/src/pages/SkillDetails.tsx
     source_of_truth: plus_agent_skill
     adapter_rule: map Java SkillVO/PlusAgentSkillVO to the existing portal Skill view model without changing UI; portal-only display fields come from manifestUrl/defaultConfig.portal metadata or stable projections.
     field_mapping:

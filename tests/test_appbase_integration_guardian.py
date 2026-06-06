@@ -15,36 +15,36 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 COMMERCE_FRONTEND_DEPENDENCIES = [
     "@sdkwork/clawrouter-app-sdk",
     "@sdkwork/clawrouter-backend-sdk",
-    "sdkwork-claw-router-commons",
-    "sdkwork-claw-router-admin-catalog",
-    "sdkwork-claw-router-admin-inventory",
-    "sdkwork-claw-router-admin-orders",
-    "sdkwork-claw-router-admin-payments",
-    "sdkwork-claw-router-admin-memberships",
-    "sdkwork-claw-router-admin-wallet",
-    "sdkwork-claw-router-admin-finance",
-    "sdkwork-claw-router-console-account",
-    "sdkwork-claw-router-console-wallet",
-    "sdkwork-claw-router-console-recharge",
-    "sdkwork-claw-router-console-checkout",
-    "sdkwork-claw-router-console-memberships",
-    "sdkwork-claw-router-console-settlements",
+    "sdkwork-clawrouter-pc-commons",
+    "sdkwork-clawrouter-pc-admin-catalog",
+    "sdkwork-clawrouter-pc-admin-inventory",
+    "sdkwork-clawrouter-pc-admin-orders",
+    "sdkwork-clawrouter-pc-admin-payments",
+    "sdkwork-clawrouter-pc-admin-memberships",
+    "sdkwork-clawrouter-pc-admin-wallet",
+    "sdkwork-clawrouter-pc-admin-finance",
+    "sdkwork-clawrouter-pc-console-account",
+    "sdkwork-clawrouter-pc-console-wallet",
+    "sdkwork-clawrouter-pc-console-recharge",
+    "sdkwork-clawrouter-pc-console-checkout",
+    "sdkwork-clawrouter-pc-console-memberships",
+    "sdkwork-clawrouter-pc-console-settlements",
 ]
 
 COMMERCE_FRONTEND_SERVICE_ADAPTERS = [
-    "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts",
-    "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-inventory/src/inventoryService.ts",
-    "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-orders/src/ordersService.ts",
-    "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts",
-    "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts",
-    "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wallet/src/walletService.ts",
-    "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/financeService.ts",
-    "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-account/src/accountService.ts",
-    "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-wallet/src/walletService.ts",
-    "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts",
-    "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-checkout/src/checkoutService.ts",
-    "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts",
-    "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-settlements/src/settlementsService.ts",
+    "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts",
+    "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-inventory/src/inventoryService.ts",
+    "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts",
+    "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-payments/src/paymentsService.ts",
+    "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts",
+    "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wallet/src/walletService.ts",
+    "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-finance/src/financeService.ts",
+    "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-account/src/accountService.ts",
+    "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-wallet/src/walletService.ts",
+    "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-recharge/src/rechargeService.ts",
+    "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-checkout/src/checkoutService.ts",
+    "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts",
+    "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-settlements/src/settlementsService.ts",
 ]
 
 
@@ -56,9 +56,9 @@ def retired_appbase_sdk_clients_path() -> str:
     return "/".join(
         [
             "apps",
-            "sdkwork-claw-router-portal",
+            "sdkwork-clawrouter-pc",
             "packages",
-            "sdkwork-claw-router-commons",
+            "sdkwork-clawrouter-pc-commons",
             "src",
             f"{retired_appbase_sdk_clients_module()}.ts",
         ]
@@ -111,7 +111,7 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
         manifest.write_text(textwrap.dedent(content).strip() + "\n", encoding="utf-8")
 
     def write_portal_package(self, root: Path, dependencies: dict[str, str]) -> None:
-        package = root / "apps" / "sdkwork-claw-router-portal" / "package.json"
+        package = root / "apps" / "sdkwork-clawrouter-pc" / "package.json"
         package.parent.mkdir(parents=True, exist_ok=True)
         package.write_text(
             json.dumps({"dependencies": dependencies}, indent=2) + "\n",
@@ -227,7 +227,7 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
                 """
                 schema: sdkwork-claw-router-frontend-field-contracts
                 version: 0.1.0
-                source: apps/sdkwork-claw-router-portal/src/App.tsx
+                source: apps/sdkwork-clawrouter-pc/src/App.tsx
                 rule: every actual portal route must be backed by explicit schema tables.
                 fragments:
                   - operations/commerce.yaml
@@ -376,7 +376,7 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "appbase integration commerce must declare required frontend adapter: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts",
+                "appbase integration commerce must declare required frontend adapter: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-payments/src/paymentsService.ts",
                 result.messages,
             )
 
@@ -401,10 +401,10 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
                         - "@sdkwork/commerce-service"
                         - "@sdkwork/commerce-sdk-ports"
                       adapters:
-                        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/commerce-runtime.ts
-                        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/index.tsx
+                        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/commerce-runtime.ts
+                        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-payments/src/index.tsx
                       sdkInjectionAdapters:
-                        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/commerce-runtime.ts
+                        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/commerce-runtime.ts
                     verification:
                       - python -B -m unittest tests.test_commerce_standard tests.test_commerce_billing_standard
                     forbiddenProductForks: []
@@ -444,10 +444,10 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
                         - "@sdkwork/commerce-service"
                         - "@sdkwork/commerce-sdk-ports"
                       adapters:
-                        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/commerce-runtime.ts
-                        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/index.tsx
+                        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/commerce-runtime.ts
+                        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-payments/src/index.tsx
                       sdkInjectionAdapters:
-                        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/commerce-runtime.ts
+                        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/commerce-runtime.ts
                     verification:
                       - python -B -m unittest tests.test_commerce_standard
                     forbiddenProductForks: []
@@ -641,7 +641,7 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
                     f"""
                     routes:
                       - route: {'/console/' + 'billing'}
-                        package: sdkwork-claw-router-console-commerce
+                        package: sdkwork-clawrouter-pc-console-commerce
                         operation_routes: [{'/console/' + 'billing'}]
                     """
                 ).strip()
@@ -702,14 +702,14 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
             self.write_valid_files(root)
             self.write_runtime_adapter(
                 root,
-                "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/index.tsx",
+                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-payments/src/index.tsx",
             )
             (
                 root
                 / "apps"
-                / "sdkwork-claw-router-portal"
+                / "sdkwork-clawrouter-pc"
                 / "packages"
-                / "sdkwork-claw-router-admin-payments"
+                / "sdkwork-clawrouter-pc-admin-payments"
                 / "src"
                 / "index.tsx"
             ).write_text(
@@ -721,7 +721,7 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "appbase integration commerce frontend source apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/index.tsx must not import ClawRouter generated SDK packages; use the local commerce service boundary",
+                "appbase integration commerce frontend source apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-payments/src/index.tsx must not import ClawRouter generated SDK packages; use the local commerce service boundary",
                 result.messages,
             )
 
@@ -732,9 +732,9 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
             feature_file = (
                 root
                 / "apps"
-                / "sdkwork-claw-router-portal"
+                / "sdkwork-clawrouter-pc"
                 / "packages"
-                / "sdkwork-claw-router-admin-payments"
+                / "sdkwork-clawrouter-pc-admin-payments"
                 / "src"
                 / "nested"
                 / "directSdk.ts"
@@ -749,7 +749,7 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "appbase integration commerce frontend source apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/nested/directSdk.ts must not import ClawRouter generated SDK packages; use the local commerce service boundary",
+                "appbase integration commerce frontend source apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-payments/src/nested/directSdk.ts must not import ClawRouter generated SDK packages; use the local commerce service boundary",
                 result.messages,
             )
 
@@ -772,7 +772,7 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
                       dependencies:
                         - "@sdkwork/commerce-service"
                       adapters:
-                        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/commerce-runtime.ts
+                        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/commerce-runtime.ts
                     verification:
                       - python -B -m unittest tests.test_missing_appbase_integration
                     forbiddenProductForks: []
@@ -807,7 +807,7 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
                       dependencies:
                         - "@sdkwork/commerce-service"
                       adapters:
-                        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/commerce-runtime.ts
+                        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/commerce-runtime.ts
                     forbiddenProductForks: []
                     sdkBoundary: generated-sdk-through-ports
                 """,
@@ -840,7 +840,7 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
                       dependencies:
                         - "@sdkwork/commerce-service"
                       adapters:
-                        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/commerce-runtime.ts
+                        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/commerce-runtime.ts
                     verification:
                       - npm test
                     forbiddenProductForks: []
@@ -866,7 +866,7 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
 
         messages = guardian._validate_commerce_text(
             "appbase integration commerce",
-            "sdkwork-claw-router-vip",
+            "sdkwork-clawrouter-pc-vip",
         )
 
         self.assertEqual([], messages)
@@ -876,12 +876,12 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
 
         messages = guardian._validate_commerce_text(
             "appbase integration commerce",
-            "sdkwork-claw-router-admin-vip",
+            "sdkwork-clawrouter-pc-admin-vip",
         )
 
         self.assertIn(
             "appbase integration commerce must not reference retired commerce frontend artifact: "
-            "sdkwork-claw-router-admin-vip",
+            "sdkwork-clawrouter-pc-admin-vip",
             messages,
         )
 

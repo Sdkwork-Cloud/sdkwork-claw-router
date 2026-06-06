@@ -5,7 +5,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-PORTAL_ROOT = ROOT / "apps" / "sdkwork-claw-router-portal"
+PORTAL_ROOT = ROOT / "apps" / "sdkwork-clawrouter-pc"
 PORTAL_PACKAGES = PORTAL_ROOT / "packages"
 
 
@@ -111,13 +111,13 @@ class FrontendThemeStandardTest(unittest.TestCase):
     def test_console_appearance_uses_explicit_theme_setter(self) -> None:
         console_core = (
             PORTAL_PACKAGES
-            / "sdkwork-claw-router-console-core"
+            / "sdkwork-clawrouter-pc-console-core"
             / "src"
             / "ConsoleLayout.tsx"
         ).read_text(encoding="utf-8")
         settings_view = (
             PORTAL_PACKAGES
-            / "sdkwork-claw-router-console-settings"
+            / "sdkwork-clawrouter-pc-console-settings"
             / "src"
             / "SettingsView.tsx"
         ).read_text(encoding="utf-8")
@@ -130,9 +130,9 @@ class FrontendThemeStandardTest(unittest.TestCase):
 
     def test_dark_designed_pages_are_scoped_for_light_theme_overrides(self) -> None:
         adaptive_pages = [
-            PORTAL_PACKAGES / "sdkwork-claw-router-rankings" / "src" / "Rankings.tsx",
-            PORTAL_PACKAGES / "sdkwork-claw-router-playground" / "src" / "pages" / "Playground.tsx",
-            PORTAL_PACKAGES / "sdkwork-claw-router-console-settlements" / "src" / "SettlementsView.tsx",
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-rankings" / "src" / "Rankings.tsx",
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-playground" / "src" / "pages" / "Playground.tsx",
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-console-settlements" / "src" / "SettlementsView.tsx",
         ]
         css_source = (PORTAL_ROOT / "src" / "index.css").read_text(encoding="utf-8")
 
@@ -160,7 +160,7 @@ class FrontendThemeStandardTest(unittest.TestCase):
 
     def test_playground_dark_tokens_have_light_theme_overrides(self) -> None:
         playground_root = (
-            PORTAL_PACKAGES / "sdkwork-claw-router-playground" / "src"
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-playground" / "src"
         )
         playground_source = "\n".join(
             source_path.read_text(encoding="utf-8")

@@ -26,7 +26,7 @@ class ClawRouterSkillGuardian:
             "Never hand-edit generated SDK output",
             "raw fetch",
             "axios",
-            "apps/sdkwork-claw-router-portal",
+            "apps/sdkwork-clawrouter-pc",
         ),
         "clawrouter-backend-sdk-integration": (
             "@sdkwork/clawrouter-backend-sdk",
@@ -36,7 +36,7 @@ class ClawRouterSkillGuardian:
             "Never hand-edit generated SDK output",
             "raw fetch",
             "axios",
-            "apps/sdkwork-claw-router-portal",
+            "apps/sdkwork-clawrouter-pc",
         ),
         "clawrouter-sdk-generation": (
             "@sdkwork/clawrouter-app-sdk",

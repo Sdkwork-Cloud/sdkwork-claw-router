@@ -1,7 +1,7 @@
 fragment: models/admin-memberships
 frontend_models:
 - route: /admin/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   interface: MembershipsAdminPackageGroup
   fields:
   - id
@@ -18,7 +18,7 @@ frontend_models:
   - commerce_membership_package_group
   - commerce_membership_package
 - route: /admin/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   interface: MembershipsAdminPackageItem
   fields:
   - id
@@ -38,7 +38,7 @@ frontend_models:
   - commerce_membership_plan
   - commerce_product_sku
 - route: /admin/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   interface: MembershipsAdminPlanBenefitInput
   fields:
   - id
@@ -54,7 +54,7 @@ frontend_models:
   - commerce_membership_plan
   - commerce_membership_entitlement
 - route: /admin/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   interface: MembershipsAdminPlanItem
   fields:
   - id
@@ -79,7 +79,7 @@ frontend_models:
   - commerce_membership_plan
   - commerce_membership_entitlement
 - route: /admin/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   interface: MembershipsAdminPlanMutationInput
   fields:
   - code
@@ -100,7 +100,7 @@ frontend_models:
   - commerce_membership_plan
   - commerce_membership_entitlement
 - route: /admin/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   interface: MembershipsAdminPlanCreateInput
   fields:
   - code
@@ -121,7 +121,7 @@ frontend_models:
   - commerce_membership_plan
   - commerce_membership_entitlement
 - route: /admin/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   interface: MembershipsAdminPackageGroupMutationInput
   fields:
   - code
@@ -134,7 +134,7 @@ frontend_models:
   data_sources:
   - commerce_membership_package_group
 - route: /admin/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   interface: MembershipsAdminPackageMutationInput
   fields:
   - code
@@ -151,7 +151,7 @@ frontend_models:
   - commerce_membership_plan
   - commerce_product_sku
 - route: /admin/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   interface: MembershipsAdminMembersListParams
   fields:
   - userId
@@ -161,7 +161,7 @@ frontend_models:
   - commerce_membership
   - commerce_membership_plan
 - route: /admin/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   interface: MembershipsAdminEntitlementsListParams
   fields:
   - membershipId
@@ -172,7 +172,7 @@ frontend_models:
   - commerce_membership_plan
   - commerce_membership_entitlement
 - route: /admin/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   interface: MembershipsAdminPackagesListParams
   fields:
   - packageGroupId
@@ -183,14 +183,14 @@ frontend_models:
   - commerce_membership_package_group
   - commerce_membership_plan
 - route: /admin/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   interface: MembershipsAdminMemberStatusInput
   fields:
   - status
   data_sources:
   - commerce_membership
 - route: /admin/memberships/recharge-packages
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   interface: MembershipsAdminRechargePackageItem
   fields:
   - id
@@ -209,7 +209,7 @@ frontend_models:
   - commerce_product_spu
   - commerce_product_sku
 - route: /admin/memberships/recharge-packages
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   interface: MembershipsAdminRechargePackageMutationInput
   fields:
   - priceAmount
@@ -219,7 +219,7 @@ frontend_models:
   data_sources:
   - commerce_recharge_package
 - route: /admin/memberships/recharge-packages
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   interface: MembershipsAdminRechargeSettingsItem
   fields:
   - baseCurrencyCode
@@ -228,7 +228,7 @@ frontend_models:
   data_sources:
   - commerce_exchange_rule
 - route: /admin/memberships/recharge-packages
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   interface: MembershipsAdminRechargeSettingsUpdateInput
   fields:
   - baseCurrencyCode
@@ -237,7 +237,7 @@ frontend_models:
   data_sources:
   - commerce_exchange_rule
 - route: /admin/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   interface: MembershipsAdminPackageCatalog
   fields:
   - groups

@@ -30,8 +30,8 @@ class AiChannelGroupContractStandardizationTest(unittest.TestCase):
             "Access " + "Group",
         ]
         scanned_roots = [
-            ROOT / "apps" / "sdkwork-claw-router-portal" / "packages" / "sdkwork-claw-router-admin-group",
-            ROOT / "apps" / "sdkwork-claw-router-portal" / "packages" / "sdkwork-claw-router-admin-ratelimit",
+            ROOT / "apps" / "sdkwork-clawrouter-pc" / "packages" / "sdkwork-clawrouter-pc-admin-group",
+            ROOT / "apps" / "sdkwork-clawrouter-pc" / "packages" / "sdkwork-clawrouter-pc-admin-ratelimit",
             ROOT / "docs" / "schema-registry" / "frontend-field-contracts" / "operations" / "backend-ai.yaml",
             ROOT / "docs" / "schema-registry" / "frontend-field-contracts" / "operations" / "backend-system.yaml",
             ROOT / "docs" / "schema-registry" / "frontend-field-contracts" / "operations" / "backend-router.yaml",

@@ -1,7 +1,7 @@
 fragment: operations/app-commerce-recharges
 frontend_operations:
 - route: /console/recharge
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-recharge/src/rechargeService.ts
   operation: appRechargesPackagesList
   operation_id: recharges.packages.list
   kind: read
@@ -100,7 +100,7 @@ frontend_operations:
               nullable: true
               maxLength: 64
 - route: /console/recharge
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-recharge/src/rechargeService.ts
   operation: appRechargesSettingsRetrieve
   operation_id: recharges.settings.retrieve
   kind: read
@@ -151,7 +151,7 @@ frontend_operations:
                 format: int64
                 minimum: 0
 - route: /console/recharge
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-recharge/src/rechargeService.ts
   operation: appRechargesOrdersCreate
   operation_id: recharges.orders.create
   kind: create
@@ -277,7 +277,7 @@ frontend_operations:
         minLength: 1
         maxLength: 64
 - route: /console/checkout
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-checkout/src/checkoutService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-checkout/src/checkoutService.ts
   operation: appRechargesOrdersRetrieve
   operation_id: recharges.orders.retrieve
   kind: read
@@ -400,7 +400,7 @@ frontend_operations:
         nullable: true
         additionalProperties: true
 - route: /console/recharge
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-recharge/src/rechargeService.ts
   operation: fetchRechargePackages
   operation_id: console.rechargePackages.list
   operation_scope: app_shell
@@ -415,7 +415,7 @@ frontend_operations:
   file_targets: []
   openapi_exposed: false
 - route: /console/recharge
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-recharge/src/rechargeService.ts
   operation: fetchPackages
   operation_id: console.rechargePackages.fetch
   operation_scope: app_shell
@@ -430,7 +430,7 @@ frontend_operations:
   file_targets: []
   openapi_exposed: false
 - route: /console/recharge
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-recharge/src/rechargeService.ts
   operation: fetchRechargeSettings
   operation_id: console.rechargeSettings.retrieve
   operation_scope: app_shell
@@ -444,7 +444,7 @@ frontend_operations:
   file_targets: []
   openapi_exposed: false
 - route: /console/recharge
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-recharge/src/rechargeService.ts
   operation: submitRecharge
   operation_id: console.rechargeOrders.create
   operation_scope: app_shell
@@ -463,7 +463,7 @@ frontend_operations:
   file_targets: []
   openapi_exposed: false
 - route: /console/checkout
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-checkout/src/checkoutService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-checkout/src/checkoutService.ts
   operation: fetchCheckoutStatus
   operation_id: console.checkoutStatus.retrieve
   operation_scope: app_shell

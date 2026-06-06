@@ -1,7 +1,7 @@
 fragment: operations/backend-system
 frontend_operations:
 - route: /admin/ratelimit
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-ratelimit/src/ratelimitService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-ratelimit/src/ratelimitService.ts
   operation: fetchIpLimits
   operation_id: rateLimits.ip.list
   kind: read
@@ -78,7 +78,7 @@ frontend_operations:
               - inactive
               - exhausted
 - route: /admin/ratelimit
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-ratelimit/src/ratelimitService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-ratelimit/src/ratelimitService.ts
   operation: addIpLimit
   operation_id: rateLimits.ip.create
   kind: create
@@ -142,7 +142,7 @@ frontend_operations:
         properties: *adminRateLimitItemProperties
         description: Persisted rate limit rule snapshot returned by the backend.
 - route: /admin/ratelimit
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-ratelimit/src/ratelimitService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-ratelimit/src/ratelimitService.ts
   operation: fetchTokenLimits
   operation_id: rateLimits.apiKeys.list
   kind: read
@@ -162,7 +162,7 @@ frontend_operations:
         type: array
         items: *adminRateLimitItem
 - route: /admin/ratelimit
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-ratelimit/src/ratelimitService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-ratelimit/src/ratelimitService.ts
   operation: addTokenLimit
   operation_id: rateLimits.apiKeys.create
   kind: create
@@ -227,7 +227,7 @@ frontend_operations:
         properties: *adminRateLimitItemProperties
         description: Persisted rate limit rule snapshot returned by the backend.
 - route: /admin/ratelimit
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-ratelimit/src/ratelimitService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-ratelimit/src/ratelimitService.ts
   operation: fetchModelLimits
   operation_id: rateLimits.models.list
   kind: read
@@ -247,7 +247,7 @@ frontend_operations:
         type: array
         items: *adminRateLimitItem
 - route: /admin/ratelimit
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-ratelimit/src/ratelimitService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-ratelimit/src/ratelimitService.ts
   operation: addModelLimit
   operation_id: rateLimits.models.create
   kind: create
@@ -306,7 +306,7 @@ frontend_operations:
         properties: *adminRateLimitItemProperties
         description: Persisted rate limit rule snapshot returned by the backend.
 - route: /admin/settings
-  source: apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthSettingsService.ts
+  source: apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthSettingsService.ts
   operation: fetchClawRouterAuthSettings
   operation_id: auth.settings.retrieve
   kind: read
@@ -538,7 +538,7 @@ frontend_operations:
                   - trial
                   - develop
 - route: /admin/settings
-  source: apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthSettingsService.ts
+  source: apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthSettingsService.ts
   operation: updateClawRouterAuthSettings
   operation_id: auth.settings.update
   kind: update
@@ -635,7 +635,7 @@ frontend_operations:
             items: *id003
   response_schema: *id004
 - route: /admin/site
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-site/src/SiteSettingsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-site/src/SiteSettingsService.ts
   operation: fetchSettings
   operation_id: site.settings.retrieve
   kind: read
@@ -733,7 +733,7 @@ frontend_operations:
         type: string
         maxLength: 20000
 - route: /admin/site
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-site/src/SiteSettingsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-site/src/SiteSettingsService.ts
   operation: updateSettings
   operation_id: site.settings.update
   kind: update
@@ -813,7 +813,7 @@ frontend_operations:
         maxLength: 20000
   response_schema: *id005
 - route: /admin/runtime-region
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-runtime-region/src/runtimeRegionService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-runtime-region/src/runtimeRegionService.ts
   operation: fetchSettings
   operation_id: runtimeRegion.settings.retrieve
   kind: read
@@ -851,7 +851,7 @@ frontend_operations:
         maxLength: 512
         description: Operator-facing explanation for how this runtime region is used.
 - route: /admin/runtime-region
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-runtime-region/src/runtimeRegionService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-runtime-region/src/runtimeRegionService.ts
   operation: updateSettings
   operation_id: runtimeRegion.settings.update
   kind: update
@@ -887,7 +887,7 @@ frontend_operations:
         description: Operator-facing explanation for how this runtime region is used.
   response_schema: *adminRuntimeRegionSettingsResponse
 - route: /admin/cache
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-cache/src/cacheService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-cache/src/cacheService.ts
   operation: fetchOverview
   operation_id: cache.overview.retrieve
   kind: read
@@ -1152,7 +1152,7 @@ frontend_operations:
             enabled:
               type: boolean
 - route: /admin/cache
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-cache/src/cacheService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-cache/src/cacheService.ts
   operation: refreshAll
   operation_id: cache.refresh.create
   kind: create
@@ -1207,7 +1207,7 @@ frontend_operations:
         minLength: 1
         maxLength: 64
 - route: /admin/cache
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-cache/src/cacheService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-cache/src/cacheService.ts
   operation: refreshInstance
   operation_id: cache.instances.refresh.create
   kind: create
@@ -1231,7 +1231,7 @@ frontend_operations:
       maxLength: 128
   response_schema: *id006
 - route: /admin/cache
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-cache/src/cacheService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-cache/src/cacheService.ts
   operation: deleteInstance
   operation_id: cache.instances.delete
   kind: delete
@@ -1254,7 +1254,7 @@ frontend_operations:
       maxLength: 128
   response_schema: *id006
 - route: /admin/cache
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-cache/src/cacheService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-cache/src/cacheService.ts
   operation: deleteNamespace
   operation_id: cache.namespaces.delete
   kind: delete
@@ -1277,7 +1277,7 @@ frontend_operations:
       maxLength: 160
   response_schema: *id006
 - route: /admin/cache
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-cache/src/cacheService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-cache/src/cacheService.ts
   operation: refreshNamespace
   operation_id: cache.namespaces.refresh.create
   kind: create
@@ -1301,7 +1301,7 @@ frontend_operations:
       maxLength: 160
   response_schema: *id006
 - route: /admin/cache
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-cache/src/cacheService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-cache/src/cacheService.ts
   operation: listKeys
   operation_id: cache.namespaces.keys.list
   kind: read
@@ -1412,7 +1412,7 @@ frontend_operations:
               nullable: true
               minimum: 0
 - route: /admin/cache
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-cache/src/cacheService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-cache/src/cacheService.ts
   operation: deleteKey
   operation_id: cache.namespaces.keys.delete
   kind: delete
@@ -1440,7 +1440,7 @@ frontend_operations:
       maxLength: 512
   response_schema: *id006
 - route: /admin/dashboard
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-dashboard/src/dashboardService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-dashboard/src/dashboardService.ts
   operation: fetchDashboardData
   operation_id: dashboard.admin.overview.retrieve
   kind: read
@@ -1574,7 +1574,7 @@ frontend_operations:
               type: string
               pattern: ^-?\d+(?:\.\d{1,6})?$
 - route: /admin/dashboard
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-dashboard/src/dashboardService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-dashboard/src/dashboardService.ts
   operation: fetchInstallationStatus
   kind: read
   api_surface: backend
@@ -1638,7 +1638,7 @@ frontend_operations:
         type: boolean
         description: Always false for status reads; install and upgrade actions report changes through the installer command path.
 - route: /admin/analytics
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-analytics/src/analyticsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-analytics/src/analyticsService.ts
   operation: fetchOverview
   kind: read
   api_surface: backend
@@ -1985,7 +1985,7 @@ frontend_operations:
               minLength: 1
               maxLength: 512
 - route: /admin/record
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-record/src/recordService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-record/src/recordService.ts
   operation: fetchLogs
   kind: read
   api_surface: backend
@@ -2203,7 +2203,7 @@ frontend_operations:
         minimum: 1
         maximum: 200
 - route: /admin/service-nodes
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-nodes/src/serviceNodeService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-service-nodes/src/serviceNodeService.ts
   operation: fetchNodes
   operation_id: serviceNodes.list
   kind: read
@@ -2284,7 +2284,7 @@ frontend_operations:
               type: string
               maxLength: 64
 - route: /admin/service-nodes
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-nodes/src/serviceNodeService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-service-nodes/src/serviceNodeService.ts
   operation: createNode
   operation_id: serviceNodes.create
   kind: create
@@ -2336,7 +2336,7 @@ frontend_operations:
     properties:
       item: *adminServiceNodeItem
 - route: /admin/service-nodes
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-nodes/src/serviceNodeService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-service-nodes/src/serviceNodeService.ts
   operation: updateNode
   operation_id: serviceNodes.update
   kind: update
@@ -2372,7 +2372,7 @@ frontend_operations:
         maxLength: 512
   response_schema: *adminServiceNodeMutationResponse
 - route: /admin/service-nodes
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-nodes/src/serviceNodeService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-service-nodes/src/serviceNodeService.ts
   operation: updateNodeStatus
   operation_id: serviceNodes.status.update
   kind: update
@@ -2400,7 +2400,7 @@ frontend_operations:
         - disabled
   response_schema: *adminServiceNodeMutationResponse
 - route: /admin/service-nodes
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-nodes/src/serviceNodeService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-service-nodes/src/serviceNodeService.ts
   operation: deleteNode
   operation_id: serviceNodes.delete
   kind: delete

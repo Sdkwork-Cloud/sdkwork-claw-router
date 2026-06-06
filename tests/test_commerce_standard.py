@@ -14,7 +14,7 @@ FIELD_CONTRACTS_PATH = ROOT / "docs" / "schema-registry" / "frontend-field-contr
 ROUTE_CLASSIFICATION_PATH = ROOT / "docs" / "schema-registry" / "frontend-route-classification.yaml"
 TABLE_REGISTRY_PATH = ROOT / "docs" / "schema-registry" / "sdkwork-claw-router.tables.yaml"
 APPBASE_CAPABILITY_PATH = ROOT / "sdkwork-appbase" / "specs" / "appbase-capabilities.yaml"
-PORTAL_PATH = ROOT / "apps" / "sdkwork-claw-router-portal"
+PORTAL_PATH = ROOT / "apps" / "sdkwork-clawrouter-pc"
 APP_OPENAPI_PATH = ROOT / "generated" / "openapi" / "clawrouter-app-openapi.json"
 BACKEND_OPENAPI_PATH = ROOT / "generated" / "openapi" / "clawrouter-backend-openapi.json"
 APP_SDK_TYPES_PATH = ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types"
@@ -239,9 +239,9 @@ class CommerceStandardTest(unittest.TestCase):
             '"@sdkwork/vip-admin-pc-react"',
             '"@sdkwork/vip-pc-react"',
             '"@sdkwork/vip-purchase-pc-react"',
-            '"sdkwork-claw-router-admin-commerce"',
-            '"sdkwork-claw-router-admin-vip"',
-            '"sdkwork-claw-router-console-commerce"',
+            '"sdkwork-clawrouter-pc-admin-commerce"',
+            '"sdkwork-clawrouter-pc-admin-vip"',
+            '"sdkwork-clawrouter-pc-console-commerce"',
             "/admin/commerce",
             "/admin/vip",
             "/console/commerce",
@@ -268,11 +268,11 @@ class CommerceStandardTest(unittest.TestCase):
 
     def test_retired_frontend_aggregate_package_directories_are_removed(self) -> None:
         retired_package_names = [
-            "sdkwork-claw-router-admin-billing",
-            "sdkwork-claw-router-admin-commerce",
-            "sdkwork-claw-router-admin-vip",
-            "sdkwork-claw-router-console-billing",
-            "sdkwork-claw-router-console-commerce",
+            "sdkwork-clawrouter-pc-admin-billing",
+            "sdkwork-clawrouter-pc-admin-commerce",
+            "sdkwork-clawrouter-pc-admin-vip",
+            "sdkwork-clawrouter-pc-console-billing",
+            "sdkwork-clawrouter-pc-console-commerce",
         ]
 
         violations = [
@@ -288,7 +288,7 @@ class CommerceStandardTest(unittest.TestCase):
         navbar = (
             PORTAL_PATH
             / "packages"
-            / "sdkwork-claw-router-commons"
+            / "sdkwork-clawrouter-pc-commons"
             / "src"
             / "components"
             / "Navbar.tsx"
@@ -296,17 +296,17 @@ class CommerceStandardTest(unittest.TestCase):
         package_json = (PORTAL_PATH / "package.json").read_text(encoding="utf-8")
         tsconfig = (PORTAL_PATH / "tsconfig.typecheck.json").read_text(encoding="utf-8")
         route_classification = ROUTE_CLASSIFICATION_PATH.read_text(encoding="utf-8")
-        vip_package = PORTAL_PATH / "packages" / "sdkwork-claw-router-vip"
+        vip_package = PORTAL_PATH / "packages" / "sdkwork-clawrouter-pc-vip"
 
-        self.assertTrue(vip_package.exists(), "sdkwork-claw-router-vip owns the public /vip purchase page")
+        self.assertTrue(vip_package.exists(), "sdkwork-clawrouter-pc-vip owns the public /vip purchase page")
         self.assertTrue((vip_package / "src" / "VipView.tsx").exists())
         self.assertTrue((vip_package / "src" / "vipService.ts").exists())
-        self.assertIn("import('sdkwork-claw-router-vip')", app)
+        self.assertIn("import('sdkwork-clawrouter-pc-vip')", app)
         self.assertIn('<Route path="/vip" element={<VipView />} />', app)
         self.assertIn("href: '/vip'", navbar)
-        self.assertIn('"sdkwork-claw-router-vip": "workspace:*"', package_json)
-        self.assertIn('"sdkwork-claw-router-vip"', tsconfig)
-        self.assertRegex(route_classification, r"route: /vip[\s\S]*package: sdkwork-claw-router-vip")
+        self.assertIn('"sdkwork-clawrouter-pc-vip": "workspace:*"', package_json)
+        self.assertIn('"sdkwork-clawrouter-pc-vip"', tsconfig)
+        self.assertRegex(route_classification, r"route: /vip[\s\S]*package: sdkwork-clawrouter-pc-vip")
 
     def test_appbase_integration_verification_uses_standard_commerce_module(self) -> None:
         manifest = (ROOT / "specs" / "appbase-integration.yaml").read_text(encoding="utf-8")
@@ -598,14 +598,14 @@ class CommerceStandardTest(unittest.TestCase):
         service = (
             PORTAL_PATH
             / "packages"
-            / "sdkwork-claw-router-admin-payments"
+            / "sdkwork-clawrouter-pc-admin-payments"
             / "src"
             / "paymentsService.ts"
         ).read_text(encoding="utf-8")
         view = (
             PORTAL_PATH
             / "packages"
-            / "sdkwork-claw-router-admin-payments"
+            / "sdkwork-clawrouter-pc-admin-payments"
             / "src"
             / "index.tsx"
         ).read_text(encoding="utf-8")
@@ -769,7 +769,7 @@ class CommerceStandardTest(unittest.TestCase):
         product_create_page = (
             PORTAL_PATH
             / "packages"
-            / "sdkwork-claw-router-admin-catalog"
+            / "sdkwork-clawrouter-pc-admin-catalog"
             / "src"
             / "ProductCreatePage.tsx"
         ).read_text(encoding="utf-8")
@@ -1249,7 +1249,7 @@ class CommerceStandardTest(unittest.TestCase):
         console_layout = (
             PORTAL_PATH
             / "packages"
-            / "sdkwork-claw-router-console-core"
+            / "sdkwork-clawrouter-pc-console-core"
             / "src"
             / "ConsoleLayout.tsx"
         ).read_text(encoding="utf-8")
@@ -1257,25 +1257,25 @@ class CommerceStandardTest(unittest.TestCase):
         tsconfig = (PORTAL_PATH / "tsconfig.typecheck.json").read_text(encoding="utf-8")
 
         console_packages = [
-            ("sdkwork-claw-router-console-account", "/console/account"),
-            ("sdkwork-claw-router-console-wallet", "/console/wallet"),
-            ("sdkwork-claw-router-console-recharge", "/console/recharge"),
-            ("sdkwork-claw-router-console-checkout", "/console/checkout"),
-            ("sdkwork-claw-router-console-memberships", "/console/memberships"),
-            ("sdkwork-claw-router-console-settlements", "/console/settlements"),
+            ("sdkwork-clawrouter-pc-console-account", "/console/account"),
+            ("sdkwork-clawrouter-pc-console-wallet", "/console/wallet"),
+            ("sdkwork-clawrouter-pc-console-recharge", "/console/recharge"),
+            ("sdkwork-clawrouter-pc-console-checkout", "/console/checkout"),
+            ("sdkwork-clawrouter-pc-console-memberships", "/console/memberships"),
+            ("sdkwork-clawrouter-pc-console-settlements", "/console/settlements"),
         ]
         hidden_console_routes = {
             "/console/recharge",
             "/console/checkout",
         }
         admin_packages = [
-            ("sdkwork-claw-router-admin-catalog", "/admin/catalog"),
-            ("sdkwork-claw-router-admin-inventory", "/admin/inventory"),
-            ("sdkwork-claw-router-admin-orders", "/admin/orders"),
-            ("sdkwork-claw-router-admin-payments", "/admin/payments"),
-            ("sdkwork-claw-router-admin-memberships", "/admin/memberships"),
-            ("sdkwork-claw-router-admin-wallet", "/admin/wallet"),
-            ("sdkwork-claw-router-admin-finance", "/admin/finance"),
+            ("sdkwork-clawrouter-pc-admin-catalog", "/admin/catalog"),
+            ("sdkwork-clawrouter-pc-admin-inventory", "/admin/inventory"),
+            ("sdkwork-clawrouter-pc-admin-orders", "/admin/orders"),
+            ("sdkwork-clawrouter-pc-admin-payments", "/admin/payments"),
+            ("sdkwork-clawrouter-pc-admin-memberships", "/admin/memberships"),
+            ("sdkwork-clawrouter-pc-admin-wallet", "/admin/wallet"),
+            ("sdkwork-clawrouter-pc-admin-finance", "/admin/finance"),
         ]
 
         for package_name, route_path in [*console_packages, *admin_packages]:
@@ -1294,8 +1294,8 @@ class CommerceStandardTest(unittest.TestCase):
             self.assertIn(route_path, admin_layout)
 
         for forbidden in [
-            "sdkwork-claw-router-console-commerce",
-            "sdkwork-claw-router-admin-commerce",
+            "sdkwork-clawrouter-pc-console-commerce",
+            "sdkwork-clawrouter-pc-admin-commerce",
             'path="commerce"',
             "/console/commerce",
             "/admin/commerce",
@@ -1312,14 +1312,14 @@ class CommerceStandardTest(unittest.TestCase):
         view = (
             PORTAL_PATH
             / "packages"
-            / "sdkwork-claw-router-console-memberships"
+            / "sdkwork-clawrouter-pc-console-memberships"
             / "src"
             / "MembershipsView.tsx"
         ).read_text(encoding="utf-8")
         service = (
             PORTAL_PATH
             / "packages"
-            / "sdkwork-claw-router-console-memberships"
+            / "sdkwork-clawrouter-pc-console-memberships"
             / "src"
             / "membershipService.ts"
         ).read_text(encoding="utf-8")
@@ -1345,7 +1345,7 @@ class CommerceStandardTest(unittest.TestCase):
         self.assertNotIn("console-commerce", service)
 
     def test_commons_does_not_own_concrete_commerce_business_runtime(self) -> None:
-        commons_dir = PORTAL_PATH / "packages" / "sdkwork-claw-router-commons"
+        commons_dir = PORTAL_PATH / "packages" / "sdkwork-clawrouter-pc-commons"
         runtime = (commons_dir / "src" / "runtime.ts").read_text(encoding="utf-8")
         package_json = (commons_dir / "package.json").read_text(encoding="utf-8")
         index = (commons_dir / "src" / "index.ts").read_text(encoding="utf-8")
@@ -1360,19 +1360,19 @@ class CommerceStandardTest(unittest.TestCase):
         self.assertNotIn("@sdkwork/commerce-sdk-ports", package_json)
 
         business_services = {
-            "sdkwork-claw-router-console-account/src/accountService.ts": "getClawRouterAppSdkClient().commerce.accounts.current.summary.retrieve",
-            "sdkwork-claw-router-console-recharge/src/rechargeService.ts": "getClawRouterAppSdkClient().commerce.recharges.orders.create",
-            "sdkwork-claw-router-console-checkout/src/checkoutService.ts": "getClawRouterAppSdkClient().commerce.recharges.orders.retrieve",
-            "sdkwork-claw-router-console-memberships/src/membershipService.ts": "getClawRouterAppSdkClient().commerce.memberships.purchases.create",
-            "sdkwork-claw-router-console-wallet/src/walletService.ts": "getClawRouterAppSdkClient().commerce.wallet.overview.retrieve",
-            "sdkwork-claw-router-console-settlements/src/settlementsService.ts": "getClawRouterAppSdkClient().commerce.invoices.list",
-            "sdkwork-claw-router-admin-catalog/src/catalogService.ts": "getClawRouterBackendSdkClient().commerce.catalog.products.list",
-            "sdkwork-claw-router-admin-inventory/src/inventoryService.ts": "getClawRouterBackendSdkClient().commerce.inventory.stocks.list",
-            "sdkwork-claw-router-admin-orders/src/ordersService.ts": "getClawRouterBackendSdkClient().commerce.orders.list",
-            "sdkwork-claw-router-admin-payments/src/paymentsService.ts": "getClawRouterBackendSdkClient().commerce.payments.providers.list",
-            "sdkwork-claw-router-admin-memberships/src/membershipsService.ts": "getClawRouterBackendSdkClient().commerce.memberships.plans.list",
-            "sdkwork-claw-router-admin-wallet/src/walletService.ts": "getClawRouterBackendSdkClient().commerce.wallet.accounts.list",
-            "sdkwork-claw-router-admin-finance/src/financeService.ts": "getClawRouterBackendSdkClient().commerce.invoices.list",
+            "sdkwork-clawrouter-pc-console-account/src/accountService.ts": "getClawRouterAppSdkClient().commerce.accounts.current.summary.retrieve",
+            "sdkwork-clawrouter-pc-console-recharge/src/rechargeService.ts": "getClawRouterAppSdkClient().commerce.recharges.orders.create",
+            "sdkwork-clawrouter-pc-console-checkout/src/checkoutService.ts": "getClawRouterAppSdkClient().commerce.recharges.orders.retrieve",
+            "sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts": "getClawRouterAppSdkClient().commerce.memberships.purchases.create",
+            "sdkwork-clawrouter-pc-console-wallet/src/walletService.ts": "getClawRouterAppSdkClient().commerce.wallet.overview.retrieve",
+            "sdkwork-clawrouter-pc-console-settlements/src/settlementsService.ts": "getClawRouterAppSdkClient().commerce.invoices.list",
+            "sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts": "getClawRouterBackendSdkClient().commerce.catalog.products.list",
+            "sdkwork-clawrouter-pc-admin-inventory/src/inventoryService.ts": "getClawRouterBackendSdkClient().commerce.inventory.stocks.list",
+            "sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts": "getClawRouterBackendSdkClient().commerce.orders.list",
+            "sdkwork-clawrouter-pc-admin-payments/src/paymentsService.ts": "getClawRouterBackendSdkClient().commerce.payments.providers.list",
+            "sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts": "getClawRouterBackendSdkClient().commerce.memberships.plans.list",
+            "sdkwork-clawrouter-pc-admin-wallet/src/walletService.ts": "getClawRouterBackendSdkClient().commerce.wallet.accounts.list",
+            "sdkwork-clawrouter-pc-admin-finance/src/financeService.ts": "getClawRouterBackendSdkClient().commerce.invoices.list",
         }
 
         for relative_path, required_token in business_services.items():
@@ -1384,30 +1384,30 @@ class CommerceStandardTest(unittest.TestCase):
 
     def test_console_business_packages_move_existing_pages_without_legacy_billing_route(self) -> None:
         migrated_files = {
-            "sdkwork-claw-router-console-account/src/AccountView.tsx": [
+            "sdkwork-clawrouter-pc-console-account/src/AccountView.tsx": [
                 "AccountView",
                 "AccountStats",
                 "/console/recharge",
             ],
-            "sdkwork-claw-router-console-wallet/src/WalletView.tsx": [
+            "sdkwork-clawrouter-pc-console-wallet/src/WalletView.tsx": [
                 "WalletView",
                 "RechargeRecordsTabs",
                 "recordsRefreshSeed",
             ],
-            "sdkwork-claw-router-console-recharge/src/RechargeView.tsx": [
+            "sdkwork-clawrouter-pc-console-recharge/src/RechargeView.tsx": [
                 "RechargeView",
                 "RechargePackage",
                 "RechargeRecordsTabs",
                 "RechargeService.fetchBillingHistory",
                 "/console/checkout",
             ],
-            "sdkwork-claw-router-console-checkout/src/CheckoutView.tsx": [
+            "sdkwork-clawrouter-pc-console-checkout/src/CheckoutView.tsx": [
                 "CheckoutView",
                 "CheckoutStatus",
                 "fetchCheckoutStatus",
                 "/console/recharge",
             ],
-            "sdkwork-claw-router-console-settlements/src/SettlementsView.tsx": [
+            "sdkwork-clawrouter-pc-console-settlements/src/SettlementsView.tsx": [
                 "SettlementsView",
                 "SettlementChartData",
                 "loadSettlementDashboard",
@@ -1422,7 +1422,7 @@ class CommerceStandardTest(unittest.TestCase):
             self.assertNotIn("/console/commerce", content)
             self.assertNotIn("./commerceService", content)
             self.assertNotIn("./billingService", content)
-            if relative_path == "sdkwork-claw-router-console-wallet/src/WalletView.tsx":
+            if relative_path == "sdkwork-clawrouter-pc-console-wallet/src/WalletView.tsx":
                 self.assertNotIn("RedeemHistoryTable", content)
                 self.assertNotIn("BusinessStateTableRow", content)
                 self.assertNotIn("fetchRedeemHistory", content)
@@ -1430,7 +1430,7 @@ class CommerceStandardTest(unittest.TestCase):
 
     def test_admin_business_packages_are_split_by_transaction_capability(self) -> None:
         package_requirements = {
-            "sdkwork-claw-router-admin-catalog": (
+            "sdkwork-clawrouter-pc-admin-catalog": (
                 "catalogService.ts",
                 "CatalogAdmin",
                 [
@@ -1441,7 +1441,7 @@ class CommerceStandardTest(unittest.TestCase):
                     "listCommercePriceLists",
                 ],
             ),
-            "sdkwork-claw-router-admin-inventory": (
+            "sdkwork-clawrouter-pc-admin-inventory": (
                 "inventoryService.ts",
                 "InventoryAdmin",
                 [
@@ -1450,7 +1450,7 @@ class CommerceStandardTest(unittest.TestCase):
                     "listInventoryLedgerEntries",
                 ],
             ),
-            "sdkwork-claw-router-admin-orders": (
+            "sdkwork-clawrouter-pc-admin-orders": (
                 "ordersService.ts",
                 "OrdersAdmin",
                 [
@@ -1460,7 +1460,7 @@ class CommerceStandardTest(unittest.TestCase):
                     "backendShipmentsList",
                 ],
             ),
-            "sdkwork-claw-router-admin-payments": (
+            "sdkwork-clawrouter-pc-admin-payments": (
                 "paymentsService.ts",
                 "PaymentsAdmin",
                 [
@@ -1476,7 +1476,7 @@ class CommerceStandardTest(unittest.TestCase):
                     "backendPaymentsProviderAccountsCreate",
                 ],
             ),
-            "sdkwork-claw-router-admin-memberships": (
+            "sdkwork-clawrouter-pc-admin-memberships": (
                 "membershipsService.ts",
                 "MembershipsAdmin",
                 [
@@ -1490,7 +1490,7 @@ class CommerceStandardTest(unittest.TestCase):
                     "backendMembershipsRechargePackagesDelete",
                 ],
             ),
-            "sdkwork-claw-router-admin-wallet": (
+            "sdkwork-clawrouter-pc-admin-wallet": (
                 "walletService.ts",
                 "WalletAdmin",
                 [
@@ -1500,7 +1500,7 @@ class CommerceStandardTest(unittest.TestCase):
                     "backendWalletExchangeRulesList",
                 ],
             ),
-            "sdkwork-claw-router-admin-finance": (
+            "sdkwork-clawrouter-pc-admin-finance": (
                 "financeService.ts",
                 "FinanceAdmin",
                 [
@@ -1524,9 +1524,9 @@ class CommerceStandardTest(unittest.TestCase):
                 self.assertIn(token, service_content, f"{package_name} should own {token}")
             self.assertNotIn("billing.finance", view_content)
             self.assertNotIn("billing.finance", service_content)
-            self.assertNotIn("sdkwork-claw-router-admin-commerce", view_content)
-            self.assertNotIn("sdkwork-claw-router-admin-commerce", service_content)
-            if package_name == "sdkwork-claw-router-admin-wallet":
+            self.assertNotIn("sdkwork-clawrouter-pc-admin-commerce", view_content)
+            self.assertNotIn("sdkwork-clawrouter-pc-admin-commerce", service_content)
+            if package_name == "sdkwork-clawrouter-pc-admin-wallet":
                 self.assertNotIn("backendRechargesPackagesList", service_content)
                 self.assertNotIn("recharges.packages.list", service_content)
                 self.assertNotIn("rechargePackages", view_content)
@@ -1538,7 +1538,7 @@ class CommerceStandardTest(unittest.TestCase):
         admin_marketing_service = (
             PORTAL_PATH
             / "packages"
-            / "sdkwork-claw-router-admin-marketing"
+            / "sdkwork-clawrouter-pc-admin-marketing"
             / "src"
             / "marketingService.ts"
         ).read_text(encoding="utf-8")
@@ -1552,14 +1552,14 @@ class CommerceStandardTest(unittest.TestCase):
         view = (
             PORTAL_PATH
             / "packages"
-            / "sdkwork-claw-router-console-commerce"
+            / "sdkwork-clawrouter-pc-console-commerce"
             / "src"
             / "CommerceView.tsx"
         ).read_text(encoding="utf-8")
         service = (
             PORTAL_PATH
             / "packages"
-            / "sdkwork-claw-router-console-commerce"
+            / "sdkwork-clawrouter-pc-console-commerce"
             / "src"
             / "commerceService.ts"
         ).read_text(encoding="utf-8")
@@ -1577,7 +1577,7 @@ class CommerceStandardTest(unittest.TestCase):
 
     @unittest.skip("retired commerce aggregate test replaced by business-scoped package and path tests")
     def test_console_commerce_moves_existing_commerce_pages_without_legacy_routes(self) -> None:
-        console_commerce = PORTAL_PATH / "packages" / "sdkwork-claw-router-console-commerce" / "src"
+        console_commerce = PORTAL_PATH / "packages" / "sdkwork-clawrouter-pc-console-commerce" / "src"
         migrated_files = {
             "AccountOverviewView.tsx": [
                 "AccountOverviewView",
@@ -1603,10 +1603,10 @@ class CommerceStandardTest(unittest.TestCase):
                 self.assertIn(token, content, f"{filename} should preserve migrated UI token {token!r}")
             self.assertNotIn("/console/billing", content)
             self.assertNotIn("/console/checkout", content)
-            self.assertNotIn("sdkwork-claw-router-console-account", content)
-            self.assertNotIn("sdkwork-claw-router-console-recharge", content)
-            self.assertNotIn("sdkwork-claw-router-console-billing", content)
-            self.assertNotIn("sdkwork-claw-router-console-settlements", content)
+            self.assertNotIn("sdkwork-clawrouter-pc-console-account", content)
+            self.assertNotIn("sdkwork-clawrouter-pc-console-recharge", content)
+            self.assertNotIn("sdkwork-clawrouter-pc-console-billing", content)
+            self.assertNotIn("sdkwork-clawrouter-pc-console-settlements", content)
 
         commerce_view = (console_commerce / "CommerceView.tsx").read_text(encoding="utf-8")
         self.assertIn("<AccountOverviewView />", commerce_view)
@@ -1619,14 +1619,14 @@ class CommerceStandardTest(unittest.TestCase):
         admin_commerce = (
             PORTAL_PATH
             / "packages"
-            / "sdkwork-claw-router-admin-commerce"
+            / "sdkwork-clawrouter-pc-admin-commerce"
             / "src"
             / "index.tsx"
         ).read_text(encoding="utf-8")
         admin_marketing_service = (
             PORTAL_PATH
             / "packages"
-            / "sdkwork-claw-router-admin-marketing"
+            / "sdkwork-clawrouter-pc-admin-marketing"
             / "src"
             / "marketingService.ts"
         ).read_text(encoding="utf-8")
@@ -1674,7 +1674,7 @@ class CommerceStandardTest(unittest.TestCase):
 
     @unittest.skip("retired commerce aggregate test replaced by business-scoped package and path tests")
     def test_admin_commerce_moves_finance_management_without_old_finance_package(self) -> None:
-        admin_commerce = PORTAL_PATH / "packages" / "sdkwork-claw-router-admin-commerce" / "src"
+        admin_commerce = PORTAL_PATH / "packages" / "sdkwork-clawrouter-pc-admin-commerce" / "src"
         finance_panel = (admin_commerce / "AdminFinancePanel.tsx").read_text(encoding="utf-8")
         finance_service = (admin_commerce / "adminFinanceService.ts").read_text(encoding="utf-8")
         commerce_admin = (admin_commerce / "index.tsx").read_text(encoding="utf-8")
@@ -1692,7 +1692,7 @@ class CommerceStandardTest(unittest.TestCase):
 
         self.assertIn("financeCenter", commerce_admin)
         self.assertIn("<AdminFinancePanel />", commerce_admin)
-        self.assertNotIn("sdkwork-claw-router-admin-finance", finance_panel)
+        self.assertNotIn("sdkwork-clawrouter-pc-admin-finance", finance_panel)
         self.assertNotIn("billing.finance", finance_service)
 
 

@@ -4,8 +4,8 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-PORTAL_ROOT = ROOT / "apps" / "sdkwork-claw-router-portal"
-AGENTS_PACKAGE = PORTAL_ROOT / "packages" / "sdkwork-claw-router-console-agents"
+PORTAL_ROOT = ROOT / "apps" / "sdkwork-clawrouter-pc"
+AGENTS_PACKAGE = PORTAL_ROOT / "packages" / "sdkwork-clawrouter-pc-console-agents"
 
 
 class ConsoleAgentsRuntimeStandardTest(unittest.TestCase):
@@ -14,7 +14,7 @@ class ConsoleAgentsRuntimeStandardTest(unittest.TestCase):
         console_layout = (
             PORTAL_ROOT
             / "packages"
-            / "sdkwork-claw-router-console-core"
+            / "sdkwork-clawrouter-pc-console-core"
             / "src"
             / "ConsoleLayout.tsx"
         ).read_text(encoding="utf-8")
@@ -22,12 +22,12 @@ class ConsoleAgentsRuntimeStandardTest(unittest.TestCase):
         console_routes = app.split("{/* Console Routes", 1)[1].split("{/* Admin Routes", 1)[0]
 
         self.assertFalse(AGENTS_PACKAGE.exists())
-        self.assertNotIn("sdkwork-claw-router-console-agents", app)
+        self.assertNotIn("sdkwork-clawrouter-pc-console-agents", app)
         self.assertNotIn('path="agents"', console_routes)
         self.assertNotIn("/console/agents", console_layout)
         self.assertNotIn("console.menu.agents", console_layout)
         self.assertNotIn("console.menu.group.aiWorkspace", console_layout)
-        self.assertNotIn("sdkwork-claw-router-console-agents", portal_package.get("dependencies", {}))
+        self.assertNotIn("sdkwork-clawrouter-pc-console-agents", portal_package.get("dependencies", {}))
 
     def test_console_agents_retirement_is_reflected_in_schema_governance(self) -> None:
         schema_sources = [
@@ -41,5 +41,5 @@ class ConsoleAgentsRuntimeStandardTest(unittest.TestCase):
             source = schema_source.read_text(encoding="utf-8")
             with self.subTest(schema_source=schema_source.relative_to(ROOT).as_posix()):
                 self.assertNotIn("/console/agents", source)
-                self.assertNotIn("sdkwork-claw-router-console-agents", source)
+                self.assertNotIn("sdkwork-clawrouter-pc-console-agents", source)
                 self.assertNotIn("console-agents.yaml", source)

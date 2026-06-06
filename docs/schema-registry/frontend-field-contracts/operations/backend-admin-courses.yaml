@@ -2,7 +2,7 @@ fragment: operations/backend-admin-courses
 frontend_operations:
 - route: /admin/courses
   module: admin-courses
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-courses/src/courseAdminService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-courses/src/courseAdminService.ts
   operation: fetchCourseDashboard
   operation_id: courses.dashboard.retrieve
   kind: read
@@ -79,7 +79,7 @@ frontend_operations:
             minimum: 0
 - route: /admin/courses
   module: admin-courses
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-courses/src/courseAdminService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-courses/src/courseAdminService.ts
   operation: fetchAdminCourses
   operation_id: courses.list
   kind: read
@@ -171,7 +171,7 @@ frontend_operations:
               maxLength: 64
 - route: /admin/courses
   module: admin-courses
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-courses/src/courseAdminService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-courses/src/courseAdminService.ts
   operation: createAdminCourse
   operation_id: courses.create
   kind: create
@@ -251,7 +251,7 @@ frontend_operations:
             maxLength: 64
 - route: /admin/courses
   module: admin-courses
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-courses/src/courseAdminService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-courses/src/courseAdminService.ts
   operation: updateAdminCourse
   operation_id: courses.update
   kind: update
@@ -271,7 +271,7 @@ frontend_operations:
   response_schema: *adminCourseMutationResponse
 - route: /admin/courses
   module: admin-courses
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-courses/src/courseAdminService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-courses/src/courseAdminService.ts
   operation: deleteAdminCourse
   operation_id: courses.delete
   kind: delete
@@ -298,7 +298,7 @@ frontend_operations:
         type: boolean
 - route: /admin/courses
   module: admin-courses
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-courses/src/courseAdminService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-courses/src/courseAdminService.ts
   operation: fetchAdminCourseSections
   operation_id: courses.sections.list
   kind: read
@@ -361,7 +361,7 @@ frontend_operations:
               maxLength: 64
 - route: /admin/courses
   module: admin-courses
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-courses/src/courseAdminService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-courses/src/courseAdminService.ts
   operation: createAdminCourseSection
   operation_id: courses.sections.create
   kind: create
@@ -434,7 +434,7 @@ frontend_operations:
             maxLength: 64
 - route: /admin/courses
   module: admin-courses
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-courses/src/courseAdminService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-courses/src/courseAdminService.ts
   operation: updateAdminCourseSection
   operation_id: courseSections.update
   kind: update
@@ -454,7 +454,7 @@ frontend_operations:
   response_schema: *adminCourseSectionMutationResponse
 - route: /admin/courses
   module: admin-courses
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-courses/src/courseAdminService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-courses/src/courseAdminService.ts
   operation: deleteAdminCourseSection
   operation_id: courseSections.delete
   kind: delete
@@ -473,7 +473,7 @@ frontend_operations:
   response_schema: *adminDeleteResponse
 - route: /admin/courses
   module: admin-courses
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-courses/src/courseAdminService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-courses/src/courseAdminService.ts
   operation: fetchAdminCourseLessons
   operation_id: courses.lessons.list
   kind: read
@@ -539,7 +539,7 @@ frontend_operations:
               maxLength: 64
 - route: /admin/courses
   module: admin-courses
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-courses/src/courseAdminService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-courses/src/courseAdminService.ts
   operation: createAdminCourseLesson
   operation_id: courses.lessons.create
   kind: create
@@ -626,7 +626,7 @@ frontend_operations:
             maxLength: 64
 - route: /admin/courses
   module: admin-courses
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-courses/src/courseAdminService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-courses/src/courseAdminService.ts
   operation: updateAdminCourseLesson
   operation_id: courseLessons.update
   kind: update
@@ -646,7 +646,7 @@ frontend_operations:
   response_schema: *adminCourseLessonMutationResponse
 - route: /admin/courses
   module: admin-courses
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-courses/src/courseAdminService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-courses/src/courseAdminService.ts
   operation: deleteAdminCourseLesson
   operation_id: courseLessons.delete
   kind: delete
@@ -665,7 +665,7 @@ frontend_operations:
   response_schema: *adminDeleteResponse
 - route: /admin/courses
   module: admin-courses
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-courses/src/courseAdminService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-courses/src/courseAdminService.ts
   operation: fetchAdminCourseRelations
   operation_id: courses.relations.list
   kind: read
@@ -720,7 +720,7 @@ frontend_operations:
               maxLength: 64
 - route: /admin/courses
   module: admin-courses
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-courses/src/courseAdminService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-courses/src/courseAdminService.ts
   operation: replaceAdminCourseRelations
   operation_id: courses.relations.replace
   kind: update
@@ -765,7 +765,7 @@ frontend_operations:
   response_schema: *adminCourseRelationCollectionResponse
 - route: /admin/courses
   module: admin-courses
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-courses/src/courseAdminService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-courses/src/courseAdminService.ts
   operation: fetchAdminCourseApplications
   operation_id: courseApplications.list
   kind: read
@@ -828,7 +828,7 @@ frontend_operations:
               maxLength: 64
 - route: /admin/courses
   module: admin-courses
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-courses/src/courseAdminService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-courses/src/courseAdminService.ts
   operation: reviewAdminCourseApplication
   operation_id: courseApplications.review
   kind: update
@@ -886,7 +886,7 @@ frontend_operations:
             maxLength: 64
 - route: /admin/courses
   module: admin-courses
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-courses/src/courseAdminService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-courses/src/courseAdminService.ts
   operation: fetchAdminCourseComments
   operation_id: courseComments.list
   kind: read
@@ -941,7 +941,7 @@ frontend_operations:
               maxLength: 64
 - route: /admin/courses
   module: admin-courses
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-courses/src/courseAdminService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-courses/src/courseAdminService.ts
   operation: moderateAdminCourseComment
   operation_id: courseComments.moderate
   kind: update
@@ -974,7 +974,7 @@ frontend_operations:
   response_schema: *adminCourseCommentCollectionResponse
 - route: /admin/courses
   module: admin-courses
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-courses/src/courseAdminService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-courses/src/courseAdminService.ts
   operation: fetchAdminCourseEngagement
   operation_id: courseEngagement.list
   kind: read

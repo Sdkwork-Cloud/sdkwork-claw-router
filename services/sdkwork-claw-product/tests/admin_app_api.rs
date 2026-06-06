@@ -36,7 +36,7 @@ async fn admin_app_route_manages_plus_apps_and_market_state() {
                 .internal_trusted_subject(10, 20, 30)
                 .header("X-Request-Id", "00000000-0000-4000-8000-000000000101")
                 .body(Body::from(
-                    r#"{"name":"Claw Router Portal","description":"Unified app portal","version":"1.0.0","icon":{"kind":"image","source":"external_url","url":"https://cdn.example.test/app.png","publicUrl":"https://cdn.example.test/app.png"},"accessUrl":"https://portal.example.test","config":{"standard":{"appKey":"claw-router-portal"}},"appType":"web","platforms":{"platforms":["web"]},"installPlatforms":{"platforms":["web"]},"installSkill":{"name":"Portal Installer"},"installConfig":{"packages":[{"version":"1.0.0","downloadUrl":"https://cdn.example.test/portal.zip"}]},"releaseNotes":[{"version":"1.0.0","notes":["Initial release"]}],"packageName":"com.sdkwork.claw.portal","bundleId":"com.sdkwork.claw.portal","storeUrl":"https://store.example.test/portal","artifact":{"kind":"archive","source":"external_url","url":"https://cdn.example.test/portal.zip","publicUrl":"https://cdn.example.test/portal.zip"}}"#,
+                    r#"{"name":"ClawRouter PC","description":"Unified app portal","version":"1.0.0","icon":{"kind":"image","source":"external_url","url":"https://cdn.example.test/app.png","publicUrl":"https://cdn.example.test/app.png"},"accessUrl":"https://portal.example.test","config":{"standard":{"appKey":"claw-router-portal"}},"appType":"web","platforms":{"platforms":["web"]},"installPlatforms":{"platforms":["web"]},"installSkill":{"name":"Portal Installer"},"installConfig":{"packages":[{"version":"1.0.0","downloadUrl":"https://cdn.example.test/portal.zip"}]},"releaseNotes":[{"version":"1.0.0","notes":["Initial release"]}],"packageName":"com.sdkwork.claw.portal","bundleId":"com.sdkwork.claw.portal","storeUrl":"https://store.example.test/portal","artifact":{"kind":"archive","source":"external_url","url":"https://cdn.example.test/portal.zip","publicUrl":"https://cdn.example.test/portal.zip"}}"#,
                 ))
                 .unwrap(),
         )
@@ -47,7 +47,7 @@ async fn admin_app_route_manages_plus_apps_and_market_state() {
     let create_payload = json_payload(create_response).await;
     assert_eq!("2000", create_payload["code"]);
     assert_eq!("1", create_payload["data"]["item"]["id"]);
-    assert_eq!("Claw Router Portal", create_payload["data"]["item"]["name"]);
+    assert_eq!("ClawRouter PC", create_payload["data"]["item"]["name"]);
     assert_eq!("ACTIVE", create_payload["data"]["item"]["status"]);
     assert_eq!("DRAFT", create_payload["data"]["item"]["marketStatus"]);
     assert_eq!(
@@ -174,7 +174,7 @@ async fn admin_app_route_manages_plus_apps_and_market_state() {
     assert_eq!(100, list_payload["data"]["pageSize"]);
     assert_eq!(false, list_payload["data"]["hasNextPage"]);
     assert_eq!(
-        "Claw Router Portal",
+        "ClawRouter PC",
         list_payload["data"]["items"][0]["name"]
     );
 

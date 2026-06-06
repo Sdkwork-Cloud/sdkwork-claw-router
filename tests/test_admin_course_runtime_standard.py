@@ -20,9 +20,9 @@ BACKEND_CONTENT_API_PATH = (
 PORTAL_PACKAGE_ROOT = (
     ROOT
     / "apps"
-    / "sdkwork-claw-router-portal"
+    / "sdkwork-clawrouter-pc"
     / "packages"
-    / "sdkwork-claw-router-admin-courses"
+    / "sdkwork-clawrouter-pc-admin-courses"
 )
 
 
@@ -133,7 +133,7 @@ class AdminCourseRuntimeStandardTest(unittest.TestCase):
         service = (PORTAL_PACKAGE_ROOT / "src" / "courseAdminService.ts").read_text(encoding="utf-8")
         view = (PORTAL_PACKAGE_ROOT / "src" / "index.tsx").read_text(encoding="utf-8")
 
-        self.assertEqual("sdkwork-claw-router-admin-courses", manifest["name"])
+        self.assertEqual("sdkwork-clawrouter-pc-admin-courses", manifest["name"])
         self.assertEqual("module", manifest["type"])
         self.assertEqual("tsc --noEmit", manifest["scripts"]["typecheck"])
         self.assertIn("getClawRouterBackendSdkClient().content.courses.dashboard.retrieve", service)

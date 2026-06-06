@@ -11,9 +11,9 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         package = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-app-center"
+            / "sdkwork-clawrouter-pc-app-center"
         )
         runtime_path = package / "src" / "appRuntime.ts"
         service_path = package / "src" / "services" / "appService.ts"
@@ -21,7 +21,7 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         list_path = package / "src" / "pages" / "AppCenter.tsx"
         detail_path = package / "src" / "pages" / "AppDetails.tsx"
         preview_path = package / "src" / "components" / "AppCenterPreview.tsx"
-        runtime_test_path = ROOT / "apps" / "sdkwork-claw-router-portal" / "app-runtime.test.ts"
+        runtime_test_path = ROOT / "apps" / "sdkwork-clawrouter-pc" / "app-runtime.test.ts"
         verifier_path = ROOT / "scripts" / "verify-claw-router-product.mjs"
 
         self.assertTrue(runtime_path.exists(), "App Center runtime mapping must live in a pure module.")
@@ -51,7 +51,7 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         self.assertIn("toAppCatalogQueryParams", service_source)
         self.assertNotIn("filterAppsForCatalog(", service_source)
         self.assertIn(
-            "sdkwork-claw-router-commons",
+            "sdkwork-clawrouter-pc-commons",
             package_manifest.get("dependencies", {}),
             "App Center must consume generated SDKs through the shared runtime boundary.",
         )
@@ -64,7 +64,7 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         self.assertIn("deriveAppDetailView", detail_source)
         self.assertIn("app runtime normalizes app SDK records", runtime_test_source)
         self.assertIn("portal app center runtime tests", verifier_source)
-        self.assertIn("apps/sdkwork-claw-router-portal/app-runtime.test.ts", verifier_source)
+        self.assertIn("apps/sdkwork-clawrouter-pc/app-runtime.test.ts", verifier_source)
 
     def test_app_center_uses_precise_app_sdk_response_contracts(self) -> None:
         contract = (ROOT / "docs" / "schema-registry" / "frontend-field-contracts.yaml").read_text(
@@ -79,9 +79,9 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         app_service = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-app-center"
+            / "sdkwork-clawrouter-pc-app-center"
             / "src"
             / "services"
             / "appService.ts"
@@ -236,9 +236,9 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         admin_service_path = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-app-center"
+            / "sdkwork-clawrouter-pc-app-center"
             / "src"
             / "services"
             / "adminAppService.ts"
@@ -411,9 +411,9 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         admin_service = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-app-center"
+            / "sdkwork-clawrouter-pc-app-center"
             / "src"
             / "services"
             / "adminAppService.ts"
@@ -421,9 +421,9 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         app_admin_source = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-app-center"
+            / "sdkwork-clawrouter-pc-app-center"
             / "src"
             / "pages"
             / "AppAdmin.tsx"
@@ -493,9 +493,9 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         app_admin_source = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-app-center"
+            / "sdkwork-clawrouter-pc-app-center"
             / "src"
             / "pages"
             / "AppAdmin.tsx"
@@ -503,9 +503,9 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         admin_service = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-app-center"
+            / "sdkwork-clawrouter-pc-app-center"
             / "src"
             / "services"
             / "adminAppService.ts"
@@ -513,9 +513,9 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         i18n_source = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-i18n"
+            / "sdkwork-clawrouter-pc-i18n"
             / "src"
             / "resources"
             / "admin"
@@ -555,9 +555,9 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         app_admin_source = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-app-center"
+            / "sdkwork-clawrouter-pc-app-center"
             / "src"
             / "pages"
             / "AppAdmin.tsx"
@@ -588,9 +588,9 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         app_admin_source = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-app-center"
+            / "sdkwork-clawrouter-pc-app-center"
             / "src"
             / "pages"
             / "AppAdmin.tsx"
@@ -602,13 +602,13 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("defaultValue={app?.appType ?? 'web'}", app_admin_source)
 
     def test_admin_app_management_has_stable_route_navigation_and_package_export(self) -> None:
-        portal = ROOT / "apps" / "sdkwork-claw-router-portal"
+        portal = ROOT / "apps" / "sdkwork-clawrouter-pc"
         app_source = (portal / "src" / "App.tsx").read_text(encoding="utf-8")
         admin_registry_source = (portal / "src" / "adminModuleRegistry.ts").read_text(encoding="utf-8")
         core_navigation_source = (
             portal
             / "packages"
-            / "sdkwork-claw-router-i18n"
+            / "sdkwork-clawrouter-pc-i18n"
             / "src"
             / "resources"
             / "admin"
@@ -617,13 +617,13 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         app_center_index = (
             portal
             / "packages"
-            / "sdkwork-claw-router-app-center"
+            / "sdkwork-clawrouter-pc-app-center"
             / "src"
             / "index.ts"
         ).read_text(encoding="utf-8")
 
         self.assertIn(
-            "const AppAdmin = lazyRoute(() => import('sdkwork-claw-router-app-center'), 'AppAdmin');",
+            "const AppAdmin = lazyRoute(() => import('sdkwork-clawrouter-pc-app-center'), 'AppAdmin');",
             app_source,
         )
         self.assertIn('<Route path="app" element={<AppAdmin />} />', app_source)
@@ -636,15 +636,15 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         package = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-app-center"
+            / "sdkwork-clawrouter-pc-app-center"
         )
         list_source = (package / "src" / "pages" / "AppCenter.tsx").read_text(encoding="utf-8")
         detail_source = (package / "src" / "pages" / "AppDetails.tsx").read_text(encoding="utf-8")
         preview_source = (package / "src" / "components" / "AppCenterPreview.tsx").read_text(encoding="utf-8")
         commons_runtime_test = (
-            ROOT / "apps" / "sdkwork-claw-router-portal" / "commons-runtime.test.ts"
+            ROOT / "apps" / "sdkwork-clawrouter-pc" / "commons-runtime.test.ts"
         ).read_text(encoding="utf-8")
 
         self.assertIn("getLoadErrorMessage returns Error messages", commons_runtime_test)
@@ -684,9 +684,9 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         package = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-app-center"
+            / "sdkwork-clawrouter-pc-app-center"
         )
         data_path = package / "src" / "data" / "apps.ts"
         list_source = (package / "src" / "pages" / "AppCenter.tsx").read_text(encoding="utf-8")
@@ -736,16 +736,16 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         operation_audit = (ROOT / "generated" / "schema" / "frontend" / "frontend-operation-audit.json").read_text(encoding="utf-8")
         route_classification = (ROOT / "docs" / "schema-registry" / "frontend-route-classification.yaml").read_text(encoding="utf-8")
 
-        expected_source = "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/appRuntime.ts"
-        service_source = "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/appService.ts"
-        old_source = "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/data/apps.ts"
+        expected_source = "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/appRuntime.ts"
+        service_source = "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/appService.ts"
+        old_source = "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/data/apps.ts"
 
         self.assertIn("route: /apps", contracts)
         self.assertIn(f"source: {expected_source}", contracts)
         self.assertIn(f"source: {service_source}", contracts)
         self.assertNotIn(f"source: {old_source}", contracts)
-        self.assertIn('"source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/appRuntime.ts"', field_audit)
-        self.assertNotIn('"source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/data/apps.ts"', field_audit)
+        self.assertIn('"source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/appRuntime.ts"', field_audit)
+        self.assertNotIn('"source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/data/apps.ts"', field_audit)
         self.assertIn("/app/v3/api/platform/apps/store", operation_audit)
         self.assertIn("/app/v3/api/platform/apps/store/{appId}", operation_audit)
         self.assertIn("delivery_kind: sdk_backed_business_runtime", route_classification)
@@ -755,7 +755,7 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         smoke_source = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "scripts"
             / "smoke-production-browser.mjs"
         ).read_text(encoding="utf-8")
@@ -765,9 +765,9 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         service_source = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-app-center"
+            / "sdkwork-clawrouter-pc-app-center"
             / "src"
             / "services"
             / "appService.ts"
@@ -775,9 +775,9 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         runtime_source = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-app-center"
+            / "sdkwork-clawrouter-pc-app-center"
             / "src"
             / "appRuntime.ts"
         ).read_text(encoding="utf-8")
@@ -817,20 +817,20 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
 
     def test_app_center_auxiliary_scripts_do_not_depend_on_removed_seed_data(self) -> None:
         extractor_source = (
-            ROOT / "apps" / "sdkwork-claw-router-portal" / "app" / "applet" / "extract_data.mjs"
+            ROOT / "apps" / "sdkwork-clawrouter-pc" / "app" / "applet" / "extract_data.mjs"
         ).read_text(encoding="utf-8")
         apply_translations_source = (
-            ROOT / "apps" / "sdkwork-claw-router-portal" / "app" / "applet" / "apply_translations.mjs"
+            ROOT / "apps" / "sdkwork-clawrouter-pc" / "app" / "applet" / "apply_translations.mjs"
         ).read_text(encoding="utf-8")
 
-        self.assertNotIn("packages/sdkwork-claw-router-app-center/src/data/apps.ts", extractor_source)
+        self.assertNotIn("packages/sdkwork-clawrouter-pc-app-center/src/data/apps.ts", extractor_source)
         self.assertNotIn("apps.data.", extractor_source)
         self.assertNotIn("apps.data.", apply_translations_source)
         self.assertNotIn("require(", extractor_source)
 
     def test_app_center_runtime_fields_are_not_overridden_by_static_sample_translations(self) -> None:
         i18n_source = (
-            ROOT / "apps" / "sdkwork-claw-router-portal" / "packages" / "sdkwork-claw-router-i18n" / "src" / "index.ts"
+            ROOT / "apps" / "sdkwork-clawrouter-pc" / "packages" / "sdkwork-clawrouter-pc-i18n" / "src" / "index.ts"
         ).read_text(encoding="utf-8")
 
         self.assertNotIn("apps.data.", i18n_source)
@@ -839,9 +839,9 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         app_details = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-app-center"
+            / "sdkwork-clawrouter-pc-app-center"
             / "src"
             / "pages"
             / "AppDetails.tsx"
@@ -849,18 +849,18 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         app_runtime = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-app-center"
+            / "sdkwork-clawrouter-pc-app-center"
             / "src"
             / "appRuntime.ts"
         ).read_text(encoding="utf-8")
         app_service = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-app-center"
+            / "sdkwork-clawrouter-pc-app-center"
             / "src"
             / "services"
             / "appService.ts"

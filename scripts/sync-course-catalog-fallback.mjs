@@ -7,9 +7,9 @@ const seedPath = join(root, 'data', 'courses', 'course-seed.json');
 const catalogPath = join(
   root,
   'apps',
-  'sdkwork-claw-router-portal',
+  'sdkwork-clawrouter-pc',
   'packages',
-  'sdkwork-claw-router-courses',
+  'sdkwork-clawrouter-pc-courses',
   'src',
   'courseCatalog.ts',
 );

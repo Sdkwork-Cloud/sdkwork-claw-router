@@ -1,7 +1,7 @@
 fragment: operations/backend-storage
 frontend_operations:
 - route: /admin/storage/providers
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-file-platform/src/storageService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts
   operation: fetchStorageProviders
   operation_id: oss.providers.list
   kind: read
@@ -52,7 +52,7 @@ frontend_operations:
             updatedAt: { type: string, maxLength: 64 }
       requestId: { type: string, minLength: 1, maxLength: 128 }
 - route: /admin/storage/providers
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-file-platform/src/storageService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts
   operation: createStorageProvider
   operation_id: oss.providers.create
   kind: create
@@ -96,7 +96,7 @@ frontend_operations:
       provider: *storageProviderConfig
       requestId: { type: string, minLength: 1, maxLength: 128 }
 - route: /admin/storage/providers
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-file-platform/src/storageService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts
   operation: deleteStorageProvider
   operation_id: oss.providers.update
   kind: update
@@ -121,7 +121,7 @@ frontend_operations:
       reason: { type: string, minLength: 1, maxLength: 512 }
   response_schema: *storageProviderMutationResponse
 - route: /admin/storage/providers
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-file-platform/src/storageService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts
   operation: checkStorageProviderHealth
   operation_id: oss.providers.healthChecks.create
   kind: action
@@ -149,7 +149,7 @@ frontend_operations:
       checkedAt: { type: string, maxLength: 64 }
       requestId: { type: string, minLength: 1, maxLength: 128 }
 - route: /admin/storage/buckets
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-file-platform/src/storageService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts
   operation: fetchStorageBuckets
   operation_id: oss.buckets.list
   kind: read
@@ -208,7 +208,7 @@ frontend_operations:
       nextCursor: { type: string, maxLength: 256 }
       requestId: { type: string, minLength: 1, maxLength: 128 }
 - route: /admin/storage/buckets
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-file-platform/src/storageService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts
   operation: createStorageBucket
   operation_id: oss.buckets.create
   kind: create
@@ -256,7 +256,7 @@ frontend_operations:
       bucket: *storageBucketConfig
       requestId: { type: string, minLength: 1, maxLength: 128 }
 - route: /admin/storage/buckets
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-file-platform/src/storageService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts
   operation: deleteStorageBucket
   operation_id: oss.buckets.update
   kind: update
@@ -282,7 +282,7 @@ frontend_operations:
       reason: { type: string, minLength: 1, maxLength: 512 }
   response_schema: *storageBucketMutationResponse
 - route: /admin/storage/default-buckets
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-file-platform/src/storageService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts
   operation: fetchStorageDefaultBuckets
   operation_id: oss.defaultBuckets.list
   kind: read
@@ -328,7 +328,7 @@ frontend_operations:
             updatedAt: { type: string, maxLength: 64 }
       requestId: { type: string, minLength: 1, maxLength: 128 }
 - route: /admin/storage/default-buckets
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-file-platform/src/storageService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts
   operation: createStorageDefaultBucket
   operation_id: oss.defaultBuckets.update
   kind: update
@@ -362,7 +362,7 @@ frontend_operations:
       defaultBucket: *storageDefaultBucketConfig
       requestId: { type: string, minLength: 1, maxLength: 128 }
 - route: /admin/storage/quotas
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-file-platform/src/storageService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts
   operation: fetchStorageQuotas
   operation_id: oss.quotas.list
   kind: read
@@ -404,7 +404,7 @@ frontend_operations:
             updatedAt: { type: string, maxLength: 64 }
       requestId: { type: string, minLength: 1, maxLength: 128 }
 - route: /admin/storage/quotas
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-file-platform/src/storageService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts
   operation: createStorageQuota
   operation_id: oss.quotas.create
   kind: create
@@ -441,7 +441,7 @@ frontend_operations:
       quotaPolicy: *storageQuotaPolicy
       requestId: { type: string, minLength: 1, maxLength: 128 }
 - route: /admin/storage/usage
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-file-platform/src/storageService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts
   operation: fetchStorageUsage
   operation_id: oss.usage.list
   kind: read
@@ -492,7 +492,7 @@ frontend_operations:
       nextCursor: { type: string, maxLength: 256 }
       requestId: { type: string, minLength: 1, maxLength: 128 }
 - route: /admin/storage/usage
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-file-platform/src/storageService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts
   operation: fetchStorageUsageLedgerRecords
   operation_id: oss.usage.ledger.list
   kind: read
@@ -528,7 +528,7 @@ frontend_operations:
       nextCursor: { type: string, maxLength: 256 }
       requestId: { type: string, minLength: 1, maxLength: 128 }
 - route: /admin/storage/usage
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-file-platform/src/storageService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts
   operation: fetchStorageUsageSnapshotRecords
   operation_id: oss.usage.snapshots.list
   kind: read
@@ -568,7 +568,7 @@ frontend_operations:
       nextCursor: { type: string, maxLength: 256 }
       requestId: { type: string, minLength: 1, maxLength: 128 }
 - route: /admin/storage/reconciliation
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-file-platform/src/storageService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts
   operation: fetchStorageReconciliations
   operation_id: oss.reconciliationRuns.list
   kind: read
@@ -623,7 +623,7 @@ frontend_operations:
       nextCursor: { type: string, maxLength: 256 }
       requestId: { type: string, minLength: 1, maxLength: 128 }
 - route: /admin/storage/reconciliation
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-file-platform/src/storageService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts
   operation: createStorageReconciliation
   operation_id: oss.reconciliationRuns.create
   kind: create
@@ -663,7 +663,7 @@ frontend_operations:
       reconciliationRun: *storageReconciliationRun
       requestId: { type: string, minLength: 1, maxLength: 128 }
 - route: /admin/storage/garbage-collection
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-file-platform/src/storageService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts
   operation: fetchStorageGarbageCollections
   operation_id: oss.gcJobs.list
   kind: read
@@ -711,7 +711,7 @@ frontend_operations:
       nextCursor: { type: string, maxLength: 256 }
       requestId: { type: string, minLength: 1, maxLength: 128 }
 - route: /admin/storage/garbage-collection
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-file-platform/src/storageService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts
   operation: createStorageGarbageCollection
   operation_id: oss.gcJobs.create
   kind: create

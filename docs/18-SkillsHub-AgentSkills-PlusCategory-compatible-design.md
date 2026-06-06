@@ -2,7 +2,7 @@
 
 > 版本：0.1
 > 日期：2026-04-28
-> 范围：`apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-skills-hub`、`spring-ai-plus-app-api`、`spring-ai-plus-backend-api`、`spring-ai-plus-business-entity`
+> 范围：`apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-skills-hub`、`spring-ai-plus-app-api`、`spring-ai-plus-backend-api`、`spring-ai-plus-business-entity`
 
 ## 1. 结论
 
@@ -113,7 +113,7 @@ backend 管理端 API 固定走 Java `spring-ai-plus-backend-api` 已有路径�
 
 ## 4. 前端字段映射
 
-`apps/sdkwork-claw-router-portal` 现有 `Skill` view model 必须保持不变：
+`apps/sdkwork-clawrouter-pc` 现有 `Skill` view model 必须保持不变：
 
 | 前端字段 | 后端来源 |
 | --- | --- |
@@ -177,7 +177,7 @@ backend 管理端 API 固定走 Java `spring-ai-plus-backend-api` 已有路径�
 
 ## 7. 实现边界
 
-- 不改变 `apps/sdkwork-claw-router-portal` 当前 UI 视觉设计。
+- 不改变 `apps/sdkwork-clawrouter-pc` 当前 UI 视觉设计。
 - 不改变 Java 已有 API 路径；Rust、TypeScript、Java SDK 只消费 app/backend 生成 SDK。
 - 不在 claw-router 新建与 AgentSkills 重名或同义的技能主数据表。
 - 分类只认 `PlusCategory`，不在 SkillsHub 使用自由文本分类作为事实来源。

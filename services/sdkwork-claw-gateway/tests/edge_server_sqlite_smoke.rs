@@ -1051,7 +1051,7 @@ fn portal_router() -> Router {
             get(|| async {
                 Json(json!({
                     "status": "ok",
-                    "service": "sdkwork-claw-router-portal",
+                    "service": "sdkwork-clawrouter-pc",
                 }))
                 .into_response()
             }),

@@ -89,9 +89,9 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         frontend = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-api-keys"
+            / "sdkwork-clawrouter-pc-console-api-keys"
             / "src"
             / "apiKeyService.ts"
         ).read_text(encoding="utf-8")
@@ -106,9 +106,9 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         self.assertIn("post<ApiKeysCreateResult>", sdk)
         self.assertNotIn("xRequestId", sdk)
         self.assertIn("createClientOperationToken", frontend)
-        self.assertIn("from 'sdkwork-claw-router-commons/idempotency'", frontend)
-        self.assertIn("from 'sdkwork-claw-router-commons/sdk-clients'", frontend)
-        self.assertIn("from 'sdkwork-claw-router-commons/api-result'", frontend)
+        self.assertIn("from 'sdkwork-clawrouter-pc-commons/idempotency'", frontend)
+        self.assertIn("from 'sdkwork-clawrouter-pc-commons/sdk-clients'", frontend)
+        self.assertIn("from 'sdkwork-clawrouter-pc-commons/api-result'", frontend)
         self.assertNotIn("function createClientOperationToken", frontend)
         self.assertIn("const idempotencyKey = createClientOperationToken('create-api-key');", frontend)
         self.assertNotIn("createClientOperationToken('request')", frontend)
@@ -122,9 +122,9 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         frontend = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-api-keys"
+            / "sdkwork-clawrouter-pc-console-api-keys"
             / "src"
             / "apiKeyService.ts"
         ).read_text(encoding="utf-8")
@@ -147,9 +147,9 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         frontend = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-api-keys"
+            / "sdkwork-clawrouter-pc-console-api-keys"
             / "src"
             / "apiKeyService.ts"
         ).read_text(encoding="utf-8")
@@ -169,27 +169,27 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         view = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-api-keys"
+            / "sdkwork-clawrouter-pc-console-api-keys"
             / "src"
             / "ApiKeysView.tsx"
         ).read_text(encoding="utf-8")
         drawer = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-api-keys"
+            / "sdkwork-clawrouter-pc-console-api-keys"
             / "src"
             / "CreateKeyDrawer.tsx"
         ).read_text(encoding="utf-8")
         usage_drawer = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-api-keys"
+            / "sdkwork-clawrouter-pc-console-api-keys"
             / "src"
             / "usage-details"
             / "ApiKeyUsageDetailsDrawer.tsx"
@@ -197,18 +197,18 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         service = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-api-keys"
+            / "sdkwork-clawrouter-pc-console-api-keys"
             / "src"
             / "apiKeyService.ts"
         ).read_text(encoding="utf-8")
         i18n_resources_dir = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-i18n"
+            / "sdkwork-clawrouter-pc-i18n"
             / "src"
             / "resources"
         )
@@ -279,9 +279,9 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         frontend = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-api-keys"
+            / "sdkwork-clawrouter-pc-console-api-keys"
             / "src"
             / "apiKeyService.ts"
         ).read_text(encoding="utf-8")
@@ -324,35 +324,35 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         package = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-api-keys"
+            / "sdkwork-clawrouter-pc-console-api-keys"
             / "package.json"
         ).read_text(encoding="utf-8")
         form_path = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-api-keys"
+            / "sdkwork-clawrouter-pc-console-api-keys"
             / "src"
             / "apiKeyForm.ts"
         )
         view = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-api-keys"
+            / "sdkwork-clawrouter-pc-console-api-keys"
             / "src"
             / "ApiKeysView.tsx"
         ).read_text(encoding="utf-8")
         drawer = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-api-keys"
+            / "sdkwork-clawrouter-pc-console-api-keys"
             / "src"
             / "CreateKeyDrawer.tsx"
         ).read_text(encoding="utf-8")
@@ -405,27 +405,27 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         service = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-api-keys"
+            / "sdkwork-clawrouter-pc-console-api-keys"
             / "src"
             / "apiKeyService.ts"
         ).read_text(encoding="utf-8")
         view = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-api-keys"
+            / "sdkwork-clawrouter-pc-console-api-keys"
             / "src"
             / "ApiKeysView.tsx"
         ).read_text(encoding="utf-8")
         drawer = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-api-keys"
+            / "sdkwork-clawrouter-pc-console-api-keys"
             / "src"
             / "CreateKeyDrawer.tsx"
         ).read_text(encoding="utf-8")
@@ -440,7 +440,7 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
 
         self.assertIn("copyableKey:", contract)
         console_api_key_model = contract.split(
-            "source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts\n  interface: ApiKey",
+            "source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-api-keys/src/apiKeyService.ts\n  interface: ApiKey",
             1,
         )[1].split("- route:", 1)[0]
         for field in [
@@ -589,8 +589,8 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("App" + "Api" + "Key" + "Group", contract)
         self.assertNotIn("Api" + "Key" + "Group", contract)
         source_marker = (
-            "source: apps/sdkwork-claw-router-portal/packages/"
-            "sdkwork-claw-router-console-api-keys/src/apiKeyService.ts"
+            "source: apps/sdkwork-clawrouter-pc/packages/"
+            "sdkwork-clawrouter-pc-console-api-keys/src/apiKeyService.ts"
         )
         console_api_key_contract = "\n".join(
             block.split("\n- route:", 1)[0] for block in contract.split(source_marker)[1:]
@@ -789,9 +789,9 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         sdk_clients = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-commons"
+            / "sdkwork-clawrouter-pc-commons"
             / "src"
             / "sdk-clients.ts"
         ).read_text(encoding="utf-8")

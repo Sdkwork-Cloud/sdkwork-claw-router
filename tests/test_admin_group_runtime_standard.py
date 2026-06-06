@@ -14,10 +14,10 @@ class AdminGroupRuntimeStandardTest(unittest.TestCase):
         operations = {operation["key"]: operation for operation in manifest["operations"]}
 
         add_group = operations[
-            "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts#addGroup"
+            "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-group/src/groupService.ts#addGroup"
         ]
         update_group = operations[
-            "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts#updateGroup"
+            "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-group/src/groupService.ts#updateGroup"
         ]
 
         self.assertEqual("/backend/v3/api/ai/channel_groups", add_group["api_path"])
@@ -39,9 +39,9 @@ class AdminGroupRuntimeStandardTest(unittest.TestCase):
         service = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-admin-group"
+            / "sdkwork-clawrouter-pc-admin-group"
             / "src"
             / "groupService.ts"
         ).read_text(encoding="utf-8")
@@ -110,7 +110,7 @@ class AdminGroupRuntimeStandardTest(unittest.TestCase):
     def test_admin_group_channel_binding_contract_uses_resource_scope_not_direct_models(self) -> None:
         manifest = ApiContractManifestGenerator(root=ROOT).generate()
         operations = {operation["key"]: operation for operation in manifest["operations"]}
-        source = "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts"
+        source = "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-group/src/groupService.ts"
         list_bindings = operations[f"{source}#fetchGroupChannelBindings"]
         update_bindings = operations[f"{source}#replaceGroupChannelBindings"]
 
@@ -175,9 +175,9 @@ class AdminGroupRuntimeStandardTest(unittest.TestCase):
         view = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-admin-group"
+            / "sdkwork-clawrouter-pc-admin-group"
             / "src"
             / "index.tsx"
         ).read_text(encoding="utf-8")
@@ -210,9 +210,9 @@ class AdminGroupRuntimeStandardTest(unittest.TestCase):
         package = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-admin-group"
+            / "sdkwork-clawrouter-pc-admin-group"
             / "src"
         )
         service = (package / "groupService.ts").read_text(encoding="utf-8")
@@ -238,9 +238,9 @@ class AdminGroupRuntimeStandardTest(unittest.TestCase):
         package_root = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-admin-group"
+            / "sdkwork-clawrouter-pc-admin-group"
         )
         package = json.loads((package_root / "package.json").read_text(encoding="utf-8"))
         service = (package_root / "src" / "groupService.ts").read_text(encoding="utf-8")

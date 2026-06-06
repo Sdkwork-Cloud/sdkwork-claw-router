@@ -7,28 +7,28 @@ snapshots:
   - id: static-route:/
     route: /
     mode: curated_seed_content
-    source_ref: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-home/src/pages/Home.tsx
+    source_ref: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-home/src/pages/Home.tsx
     observed_at: "2026-05-03"
     schema_tables: [content_doc_page, plus_app]
 
   - id: static-route:/courses
     route: /courses
     mode: curated_seed_content
-    source_ref: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseCatalog.ts
+    source_ref: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseCatalog.ts
     observed_at: "2026-05-03"
     schema_tables: [content_course, content_course_relation, content_reaction]
 
   - id: static-route:/courses/:id
     route: /courses/:id
     mode: curated_seed_content
-    source_ref: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseCatalog.ts
+    source_ref: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseCatalog.ts
     observed_at: "2026-05-03"
     schema_tables: [content_course, content_course_section, content_course_lesson, content_course_relation]
 
   - id: static-route:/docs
     route: /docs
     mode: generated_reference_snapshot
-    source_ref: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-api-reference/src/pages/Docs.tsx
+    source_ref: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/pages/Docs.tsx
     observed_at: "2026-05-03"
     schema_tables: [content_doc_page, content_openapi_snapshot, content_sdk_release]
 
@@ -42,7 +42,7 @@ snapshots:
   - id: static-route:/product-docs
     route: /product-docs
     mode: generated_reference_snapshot
-    source_ref: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-api-reference/src/pages/ProductDocs.tsx
+    source_ref: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/pages/ProductDocs.tsx
     observed_at: "2026-05-03"
     schema_tables: [content_doc_page, content_openapi_snapshot]
 
@@ -56,41 +56,41 @@ snapshots:
   - id: static-route:/admin/drive
     route: /admin/drive
     mode: generated_reference_snapshot
-    source_ref: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-file-platform/src/index.tsx
+    source_ref: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/index.tsx
     observed_at: "2026-05-25"
     schema_tables: [iam_user]
 
   - id: static-route:/admin/drive/spaces
     route: /admin/drive/spaces
     mode: generated_reference_snapshot
-    source_ref: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-file-platform/src/index.tsx
+    source_ref: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/index.tsx
     observed_at: "2026-05-25"
     schema_tables: [iam_user]
 
   - id: static-route:/admin/drive/nodes
     route: /admin/drive/nodes
     mode: generated_reference_snapshot
-    source_ref: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-file-platform/src/index.tsx
+    source_ref: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/index.tsx
     observed_at: "2026-05-25"
     schema_tables: [iam_user]
 
   - id: static-route:/admin/drive/permissions
     route: /admin/drive/permissions
     mode: generated_reference_snapshot
-    source_ref: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-file-platform/src/index.tsx
+    source_ref: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/index.tsx
     observed_at: "2026-05-25"
     schema_tables: [iam_user]
 
   - id: static-route:/admin/drive/share-links
     route: /admin/drive/share-links
     mode: generated_reference_snapshot
-    source_ref: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-file-platform/src/index.tsx
+    source_ref: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/index.tsx
     observed_at: "2026-05-25"
     schema_tables: [iam_user]
 
   - id: static-route:/admin/drive/audit
     route: /admin/drive/audit
     mode: generated_reference_snapshot
-    source_ref: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-file-platform/src/index.tsx
+    source_ref: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/index.tsx
     observed_at: "2026-05-25"
     schema_tables: [iam_user]

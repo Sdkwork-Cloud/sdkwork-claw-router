@@ -101,18 +101,18 @@ class SettlementsRuntimeStandardTest(unittest.TestCase):
         service = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-settlements"
+            / "sdkwork-clawrouter-pc-console-settlements"
             / "src"
             / "settlementsService.ts"
         ).read_text(encoding="utf-8")
         view = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-settlements"
+            / "sdkwork-clawrouter-pc-console-settlements"
             / "src"
             / "SettlementsView.tsx"
         ).read_text(encoding="utf-8")
@@ -142,9 +142,9 @@ class SettlementsRuntimeStandardTest(unittest.TestCase):
         view = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-settlements"
+            / "sdkwork-clawrouter-pc-console-settlements"
             / "src"
             / "SettlementsView.tsx"
         ).read_text(encoding="utf-8")
@@ -160,27 +160,27 @@ class SettlementsRuntimeStandardTest(unittest.TestCase):
         view = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-settlements"
+            / "sdkwork-clawrouter-pc-console-settlements"
             / "src"
             / "SettlementsView.tsx"
         ).read_text(encoding="utf-8")
         service = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-settlements"
+            / "sdkwork-clawrouter-pc-console-settlements"
             / "src"
             / "settlementsService.ts"
         ).read_text(encoding="utf-8")
         i18n = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-i18n"
+            / "sdkwork-clawrouter-pc-i18n"
             / "src"
             / "index.ts"
         ).read_text(encoding="utf-8")
@@ -212,18 +212,18 @@ class SettlementsRuntimeStandardTest(unittest.TestCase):
         view = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-settlements"
+            / "sdkwork-clawrouter-pc-console-settlements"
             / "src"
             / "SettlementsView.tsx"
         ).read_text(encoding="utf-8")
         service = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-settlements"
+            / "sdkwork-clawrouter-pc-console-settlements"
             / "src"
             / "settlementsService.ts"
         ).read_text(encoding="utf-8")
@@ -232,8 +232,8 @@ class SettlementsRuntimeStandardTest(unittest.TestCase):
         ).read_text(encoding="utf-8")
         settlement_operation_marker = (
             "  - route: /console/settlements\n"
-            "    source: apps/sdkwork-claw-router-portal/packages/"
-            "sdkwork-claw-router-console-settlements/src/settlementsService.ts\n"
+            "    source: apps/sdkwork-clawrouter-pc/packages/"
+            "sdkwork-clawrouter-pc-console-settlements/src/settlementsService.ts\n"
             "    operation: fetchDashboardData"
         )
         settlement_operation_start = contract.index(settlement_operation_marker)
@@ -281,9 +281,9 @@ class SettlementsRuntimeStandardTest(unittest.TestCase):
         service = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-settlements"
+            / "sdkwork-clawrouter-pc-console-settlements"
             / "src"
             / "settlementsService.ts"
         ).read_text(encoding="utf-8")

@@ -1,7 +1,7 @@
 fragment: models/console-api-keys
 frontend_models:
 - route: /console/api-keys
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-api-keys/src/apiKeyService.ts
   interface: ApiKey
   fields:
   - id
@@ -31,7 +31,7 @@ frontend_models:
   - ai_model_pricing
   - ai_pricing_plan
 - route: /console/api-keys
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-api-keys/src/apiKeyService.ts
   interface: ChannelGroup
   fields:
   - id
@@ -43,7 +43,7 @@ frontend_models:
   - ai_channel_group_metric_snapshot
   - ai_pricing_plan
 - route: /console/api-keys
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-api-keys/src/apiKeyService.ts
   interface: CreatedApiKey
   fields:
   - key
@@ -69,7 +69,7 @@ frontend_models:
   data_sources:
   - iam_gateway_api_key
 - route: /console/api-keys
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-api-keys/src/apiKeyService.ts
   interface: CreateApiKeyInput
   fields:
   - name

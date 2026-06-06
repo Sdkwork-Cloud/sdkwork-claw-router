@@ -21,7 +21,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                 """
                 frontend_operations:
                   - route: /console/api-keys
-                    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-api-keys/src/apiKeyService.ts
                     operation: updateKey
                     kind: update
                     api_surface: app
@@ -30,7 +30,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                     read_sources: [iam_gateway_api_key]
                     write_tables: [iam_gateway_api_key, ops_audit_log]
                   - route: /admin/model
-                    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts
                     operation: syncModels
                     kind: sync
                     api_surface: backend
@@ -39,7 +39,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                     read_sources: [ai_model]
                     write_tables: [ai_model, ai_model_pricing]
                   - route: /playground
-                    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/playgroundService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/playgroundService.ts
                     operation: createChatCompletion
                     kind: action
                     api_surface: openai_v1
@@ -60,7 +60,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
             self.assertEqual("SdkworkAiClient", manifest["sdk_boundaries"]["openai_v1"]["sdk_client"])
 
             app_operation = operations[
-                "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts#updateKey"
+                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-api-keys/src/apiKeyService.ts#updateKey"
             ]
             self.assertEqual("clawrouter-app-sdk", app_operation["sdk_family"])
             self.assertEqual("SdkworkAppClient", app_operation["sdk_client"])
@@ -72,7 +72,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
             self.assertEqual(["iam_gateway_api_key", "ops_audit_log"], app_operation["write_tables"])
 
             admin_operation = operations[
-                "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts#syncModels"
+                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts#syncModels"
             ]
             self.assertEqual("clawrouter-backend-sdk", admin_operation["sdk_family"])
             self.assertEqual("admin", admin_operation["route_scope"])
@@ -81,7 +81,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
             self.assertEqual("models.refresh", admin_operation["operation_id"])
 
             openai_operation = operations[
-                "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/playgroundService.ts#createChatCompletion"
+                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/playgroundService.ts#createChatCompletion"
             ]
             self.assertEqual("clawrouter-open-sdk", openai_operation["sdk_family"])
             self.assertEqual("SdkworkAiClient", openai_operation["sdk_client"])
@@ -95,7 +95,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                 """
                 frontend_operations:
                   - route: /auth/login
-                    source: apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts
+                    source: apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts
                     operation: login
                     operation_id: sessions.create
                     kind: create
@@ -121,7 +121,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
             operation = manifest["operations"][0]
 
             self.assertEqual(
-                "apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts#login",
+                "apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts#login",
                 operation["key"],
             )
             self.assertEqual("login", operation["operation"])
@@ -136,7 +136,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                 """
                 frontend_operations:
                   - route: /admin/catalog
-                    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts
                     operation: getProduct
                     operation_id: catalog.products.retrieve
                     kind: read
@@ -178,7 +178,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                 """
                 frontend_operations:
                   - route: /admin/user
-                    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-user/src/userService.ts
                     operation: updateUser
                     kind: update
                     api_surface: backend
@@ -209,7 +209,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                               format: int64
                               minimum: 1
                   - route: /admin/user
-                    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-user/src/userService.ts
                     operation: fetchUsers
                     kind: read
                     api_surface: backend
@@ -282,7 +282,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                 """
                 frontend_operations:
                   - route: /admin/open-platform
-                    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-open-platform/src/index.tsx
+                    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-open-platform/src/index.tsx
                     operation: listOpenPlatformAccounts
                     operation_id: accounts.list
                     kind: read
@@ -319,7 +319,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                 """
                 frontend_operations:
                   - route: /admin/messaging/templates
-                    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts
                     operation: listMessagingTemplates
                     operation_id: templates.list
                     kind: read
@@ -337,7 +337,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                           items:
                             type: object
                   - route: /admin/messaging/diagnostics
-                    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-messaging/src/messagingService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-messaging/src/messagingService.ts
                     operation: simulateMessagingRoute
                     operation_id: diagnostics.routeSimulation.create
                     kind: action
@@ -375,7 +375,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                 """
                 frontend_operations:
                   - route: /admin/storage
-                    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-file-platform/src/storageService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-file-platform/src/storageService.ts
                     operation: fetchStorageProviders
                     operation_id: oss.providers.list
                     kind: read
@@ -412,7 +412,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                 """
                 frontend_operations:
                   - route: /console/commerce
-                    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/commerce-runtime.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/commerce-runtime.ts
                     operation: listCatalogProducts
                     operation_id: catalog.products.list
                     kind: read
@@ -427,7 +427,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                         items:
                           type: array
                   - route: /admin/commerce
-                    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/commerce-runtime.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/commerce-runtime.ts
                     operation: listInventoryStocks
                     operation_id: inventory.stocks.list
                     kind: read
@@ -460,7 +460,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                 """
                 frontend_operations:
                   - route: /vip
-                    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-vip/src/vipService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-vip/src/vipService.ts
                     operation: retrieveMembership
                     operation_id: memberships.current.retrieve
                     kind: read
@@ -474,7 +474,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                       properties:
                         id: { type: string }
                   - route: /console/commerce
-                    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/commerce-runtime.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/commerce-runtime.ts
                     operation: listWalletAccounts
                     operation_id: wallet.accounts.list
                     kind: read
@@ -489,7 +489,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                         items:
                           type: array
                   - route: /admin/commerce
-                    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/commerce-runtime.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/commerce-runtime.ts
                     operation: listPaymentAttempts
                     operation_id: payments.attempts.list
                     kind: read
@@ -528,7 +528,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                 """
                 frontend_operations:
                   - route: /console/commerce
-                    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/commerce-runtime.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/commerce-runtime.ts
                     operation: fetchCheckoutStatus
                     operation_id: payments.checkout.retrieve
                     kind: read
@@ -542,7 +542,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                       properties:
                         orderNo: { type: string }
                   - route: /admin/payments
-                    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-payments/src/paymentsService.ts
                     operation: fetchPaymentAttempts
                     operation_id: payments.attempts.list
                     kind: read
@@ -578,7 +578,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                 """
                 frontend_operations:
                   - route: /courses
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/courseService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/courseService.ts
                     operation: uploadCourseApplicationVideo
                     operation_id: applications.videos.create
                     kind: create
@@ -622,7 +622,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                 """
                 frontend_operations:
                   - route: /console/api-keys
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/apiKeyService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/apiKeyService.ts
                     operation: createKey
                     kind: create
                     api_surface: app
@@ -660,7 +660,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                 """
                 frontend_operations:
                   - route: /auth/login
-                    source: apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts
+                    source: apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts
                     operation: signIn
                     kind: create
                     api_surface: app
@@ -694,7 +694,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                 """
                 frontend_operations:
                   - route: /courses
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/courseService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/courseService.ts
                     operation: fetchCourses
                     kind: read
                     api_surface: app
@@ -708,7 +708,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                       properties:
                         items: { type: array, items: { type: object, additionalProperties: true } }
                   - route: /forum
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/forumService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/forumService.ts
                     operation: fetchForumFeeds
                     kind: read
                     api_surface: app
@@ -740,7 +740,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                 """
                 frontend_operations:
                   - route: /console/agents
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/agentService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/agentService.ts
                     operation: listAgents
                     operation_id: agentDefinitions.list
                     kind: read
@@ -782,7 +782,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                 """
                 frontend_operations:
                   - route: /admin/channel
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/channelService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/channelService.ts
                     operation: fetchChannels
                     kind: read
                     api_surface: backend
@@ -796,7 +796,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                       properties:
                         items: { type: array, items: { type: object, additionalProperties: true } }
                   - route: /admin/channel
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/channelService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/channelService.ts
                     operation: addChannel
                     kind: create
                     api_surface: backend
@@ -815,7 +815,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                       properties:
                         item: { type: object, additionalProperties: true }
                   - route: /forum
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/forumService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/forumService.ts
                     operation: searchForumFeeds
                     kind: read
                     api_surface: app
@@ -852,43 +852,43 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
         manifest = ApiContractManifestGenerator(root=root).generate()
         operations = {operation["key"]: operation for operation in manifest["operations"]}
         expected = {
-            "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts#fetchChannels": (
+            "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts#fetchChannels": (
                 "/backend/v3/api/integration/channels",
                 "channels.list",
             ),
-            "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts#fetchProviderSecrets": (
+            "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts#fetchProviderSecrets": (
                 "/backend/v3/api/integration/provider_secrets",
                 "providerSecrets.list",
             ),
-            "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts#fetchReferralStats": (
+            "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-marketing/src/marketingService.ts#fetchReferralStats": (
                 "/backend/v3/api/system/marketing/referral_stats",
                 "marketing.referralStats.list",
             ),
-            "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts#fetchModels": (
+            "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts#fetchModels": (
                 "/backend/v3/api/ai/models",
                 "models.list",
             ),
-            "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-record/src/recordService.ts#fetchLogs": (
+            "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-record/src/recordService.ts#fetchLogs": (
                 "/backend/v3/api/system/records",
                 "records.list",
             ),
-            "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts#fetchSkillPackages": (
+            "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts#fetchSkillPackages": (
                 "/backend/v3/api/ecosystem/skills/package",
                 "skills.package.list",
             ),
-            "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-skill/src/skillService.ts#fetchSkills": (
+            "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-skill/src/skillService.ts#fetchSkills": (
                 "/backend/v3/api/ecosystem/skills",
                 "skills.list",
             ),
-            "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts#fetchApiKeysMap": (
+            "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-user/src/userService.ts#fetchApiKeysMap": (
                 "/backend/v3/api/iam/api_keys",
                 "apiKeys.list",
             ),
-            "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts#fetchUsers": (
+            "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-user/src/userService.ts#fetchUsers": (
                 "/backend/v3/api/iam/users",
                 "users.list",
             ),
-            "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts#fetchApps": (
+            "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts#fetchApps": (
                 "/backend/v3/api/platform/apps",
                 "apps.list",
             ),
@@ -914,7 +914,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                 """
                 frontend_operations:
                   - route: /courses/:courseId
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/courseService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/courseService.ts
                     operation: fetchCourseDetail
                     kind: read
                     api_surface: app
@@ -928,7 +928,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                       properties:
                         id: { type: string }
                   - route: /forum
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/forumService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/forumService.ts
                     operation: likeForumComment
                     kind: action
                     api_surface: app
@@ -941,7 +941,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                       name: ForumBooleanResponse
                       type: boolean
                   - route: /forum
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/forumService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/forumService.ts
                     operation: unlikeForumComment
                     kind: delete
                     api_surface: app
@@ -974,7 +974,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
         manifest = ApiContractManifestGenerator(root=root).generate()
         operations = {operation["key"]: operation for operation in manifest["operations"]}
         operation = operations.get(
-            "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts#createKey"
+            "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-api-keys/src/apiKeyService.ts#createKey"
         )
 
         self.assertIsNotNone(operation)
@@ -999,10 +999,10 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
         operations = {operation["key"]: operation for operation in manifest["operations"]}
 
         submit_recharge = operations.get(
-            "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts#submitRecharge"
+            "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-recharge/src/rechargeService.ts#submitRecharge"
         )
         update_settings = operations.get(
-            "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-settings/src/settingsService.ts#updateSettings"
+            "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-settings/src/settingsService.ts#updateSettings"
         )
 
         self.assertIsNotNone(submit_recharge)
@@ -1041,7 +1041,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                 """
                 frontend_operations:
                   - route: /console/api-keys
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/apiKeyService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/apiKeyService.ts
                     operation: createKey
                     kind: create
                     api_surface: app
@@ -1098,7 +1098,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                 """
                 frontend_operations:
                   - route: /console/commerce
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/promotionService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/promotionService.ts
                     operation: appPromotionUserCouponsList
                     kind: read
                     api_surface: app
@@ -1140,7 +1140,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                 """
                 frontend_operations:
                   - route: /console/api-keys
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts
                     operation: fetchKeys
                     kind: read
                     api_surface: app
@@ -1148,7 +1148,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                     api_path: /app/v3/api/router/api-keys
                     read_sources: [iam_gateway_api_key]
                   - route: /console/api-keys
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts
                     operation: fetchKeys
                     kind: read
                     api_surface: app
@@ -1162,7 +1162,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "duplicate api contract operation: apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts#fetchKeys",
+                "duplicate api contract operation: apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts#fetchKeys",
                 result.messages,
             )
 
@@ -1174,7 +1174,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                 """
                 frontend_operations:
                   - route: /models
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/modelService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/modelService.ts
                     operation: fetchModels
                     kind: read
                     api_surface: app
@@ -1193,7 +1193,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                         properties:
                           id: { type: string }
                   - route: /rankings
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/rankingService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/rankingService.ts
                     operation: fetchModelVendors
                     kind: read
                     api_surface: app
@@ -1208,8 +1208,8 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
             self.assertFalse(result.ok)
             self.assertIn(
                 "duplicate OpenAPI path/method on app GET /app/v3/api/ai/models: "
-                "apps/sdkwork-claw-router-portal/packages/demo/src/modelService.ts#fetchModels and "
-                "apps/sdkwork-claw-router-portal/packages/demo/src/rankingService.ts#fetchModelVendors",
+                "apps/sdkwork-clawrouter-pc/packages/demo/src/modelService.ts#fetchModels and "
+                "apps/sdkwork-clawrouter-pc/packages/demo/src/rankingService.ts#fetchModelVendors",
                 result.messages,
             )
 
@@ -1221,7 +1221,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                 """
                 frontend_operations:
                   - route: /models
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/modelService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/modelService.ts
                     operation: fetchModels
                     kind: read
                     api_surface: app
@@ -1240,7 +1240,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                         properties:
                           id: { type: string }
                   - route: /rankings
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/rankingService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/rankingService.ts
                     operation: fetchModelVendors
                     kind: read
                     api_surface: app
@@ -1260,7 +1260,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
             self.assertTrue(result.ok, result.messages)
             self.assertFalse(
                 operations[
-                    "apps/sdkwork-claw-router-portal/packages/demo/src/rankingService.ts#fetchModelVendors"
+                    "apps/sdkwork-clawrouter-pc/packages/demo/src/rankingService.ts#fetchModelVendors"
                 ]["openapi_exposed"]
             )
 
@@ -1272,7 +1272,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                 """
                 frontend_operations:
                   - route: /models
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/modelService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/modelService.ts
                     operation: fetchModels
                     kind: read
                     api_surface: app
@@ -1287,7 +1287,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "api contract apps/sdkwork-claw-router-portal/packages/demo/src/modelService.ts#fetchModels openapi_exposed must be boolean",
+                "api contract apps/sdkwork-clawrouter-pc/packages/demo/src/modelService.ts#fetchModels openapi_exposed must be boolean",
                 result.messages,
             )
 
@@ -1299,7 +1299,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                 """
                 frontend_operations:
                   - route: /console/api-keys
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts
                     operation: fetchKeys
                     kind: read
                     api_surface: backend
@@ -1307,7 +1307,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                     api_path: /backend/v3/api/router/api-keys
                     read_sources: [iam_gateway_api_key]
                   - route: /console/api-keys
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts
                     operation: createTrace
                     kind: action
                     api_surface: openai_v1
@@ -1322,11 +1322,11 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "api contract apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts#fetchKeys route /console/api-keys must not use backend api_surface",
+                "api contract apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts#fetchKeys route /console/api-keys must not use backend api_surface",
                 result.messages,
             )
             self.assertNotIn(
-                "api contract apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts#createTrace api_path must start with /v1",
+                "api contract apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts#createTrace api_path must start with /v1",
                 result.messages,
             )
 
@@ -1338,7 +1338,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                 """
                 frontend_operations:
                   - route: /console/api-keys
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts
                     operation: createTrace
                     kind: action
                     api_surface: openai_v1
@@ -1361,7 +1361,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                 """
                 frontend_operations:
                   - route: /console/api-keys
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/apiKeyService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/apiKeyService.ts
                     operation: createKey
                     kind: create
                     api_surface: app
@@ -1379,11 +1379,11 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "api contract apps/sdkwork-claw-router-portal/packages/demo/src/apiKeyService.ts#createKey request_schema.name must be PascalCase",
+                "api contract apps/sdkwork-clawrouter-pc/packages/demo/src/apiKeyService.ts#createKey request_schema.name must be PascalCase",
                 result.messages,
             )
             self.assertIn(
-                "api contract apps/sdkwork-claw-router-portal/packages/demo/src/apiKeyService.ts#createKey request_schema.properties must be an object",
+                "api contract apps/sdkwork-clawrouter-pc/packages/demo/src/apiKeyService.ts#createKey request_schema.properties must be an object",
                 result.messages,
             )
 
@@ -1395,7 +1395,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                 """
                 frontend_operations:
                   - route: /console/api-keys
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts
                     operation: fetchKeys
                     kind: read
                     api_surface: app
@@ -1403,7 +1403,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                     api_path: /app/v3/api/router/api-keys
                     read_sources: [iam_gateway_api_key]
                   - route: /console/api-keys
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts
                     operation: createKey
                     kind: create
                     api_surface: app
@@ -1417,7 +1417,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                       properties:
                         name: { type: string }
                   - route: /console/api-keys
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts
                     operation: testKey
                     kind: action
                     api_surface: app
@@ -1436,19 +1436,19 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "api contract apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts#fetchKeys GET operations must explicitly declare query_parameters, use [] when there are no query inputs",
+                "api contract apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts#fetchKeys GET operations must explicitly declare query_parameters, use [] when there are no query inputs",
                 result.messages,
             )
             self.assertIn(
-                "api contract apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts#fetchKeys must explicitly declare response_schema",
+                "api contract apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts#fetchKeys must explicitly declare response_schema",
                 result.messages,
             )
             self.assertIn(
-                "api contract apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts#createKey must explicitly declare response_schema",
+                "api contract apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts#createKey must explicitly declare response_schema",
                 result.messages,
             )
             self.assertIn(
-                "api contract apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts#testKey POST operations without request_schema must explicitly set request_body_required: false",
+                "api contract apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts#testKey POST operations without request_schema must explicitly set request_body_required: false",
                 result.messages,
             )
 
@@ -1460,7 +1460,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                 """
                 frontend_operations:
                   - route: /console/usage
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts
                     operation: fetchLogs
                     kind: read
                     api_surface: app
@@ -1489,7 +1489,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "api contract apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts#fetchLogs query_parameters[0].name must be lower_snake_case URL parameter",
+                "api contract apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts#fetchLogs query_parameters[0].name must be lower_snake_case URL parameter",
                 result.messages,
             )
 
@@ -1501,7 +1501,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                 """
                 frontend_operations:
                   - route: /console/usage
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts
                     operation: fetchLogs
                     kind: read
                     api_surface: app
@@ -1540,23 +1540,23 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "api contract apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts#fetchLogs query_parameters[1].name must use q for search text",
+                "api contract apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts#fetchLogs query_parameters[1].name must use q for search text",
                 result.messages,
             )
             self.assertIn(
-                "api contract apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts#fetchLogs query_parameters[2].name must use q for search text",
+                "api contract apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts#fetchLogs query_parameters[2].name must use q for search text",
                 result.messages,
             )
             self.assertIn(
-                "api contract apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts#fetchLogs query_parameters[3].name must use q for search text",
+                "api contract apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts#fetchLogs query_parameters[3].name must use q for search text",
                 result.messages,
             )
             self.assertIn(
-                "api contract apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts#fetchLogs query_parameters[4].name must use q for search text",
+                "api contract apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts#fetchLogs query_parameters[4].name must use q for search text",
                 result.messages,
             )
             self.assertIn(
-                "api contract apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts#fetchLogs query_parameters[5].name must use page_size for page size",
+                "api contract apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts#fetchLogs query_parameters[5].name must use page_size for page size",
                 result.messages,
             )
 
@@ -1568,7 +1568,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                 """
                 frontend_operations:
                   - route: /console/usage
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts
                     operation: queryLogs
                     kind: action
                     api_surface: app
@@ -1604,19 +1604,19 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "api contract apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts#queryLogs request_schema.properties.keyword must use q for search text",
+                "api contract apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts#queryLogs request_schema.properties.keyword must use q for search text",
                 result.messages,
             )
             self.assertIn(
-                "api contract apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts#queryLogs request_schema.properties.search_query must use q for search text",
+                "api contract apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts#queryLogs request_schema.properties.search_query must use q for search text",
                 result.messages,
             )
             self.assertIn(
-                "api contract apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts#queryLogs request_schema.properties.search must use q for search text",
+                "api contract apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts#queryLogs request_schema.properties.search must use q for search text",
                 result.messages,
             )
             self.assertIn(
-                "api contract apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts#queryLogs request_schema.properties.searchQuery must use q for search text",
+                "api contract apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts#queryLogs request_schema.properties.searchQuery must use q for search text",
                 result.messages,
             )
             self.assertFalse(any("request_schema.properties.q must use" in message for message in result.messages))
@@ -1629,7 +1629,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                 """
                 frontend_operations:
                   - route: /console/api-keys
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts
                     operation: deleteKey
                     kind: delete
                     api_surface: app
@@ -1656,7 +1656,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                 """
                 frontend_operations:
                   - route: /console/api-keys
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts
                     operation: fetchKeys
                     kind: read
                     api_surface: app
@@ -1690,7 +1690,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                 """
                 frontend_operations:
                   - route: /console/api-keys
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts
                     operation: fetchKeys
                     kind: read
                     api_surface: app

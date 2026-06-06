@@ -1,7 +1,7 @@
 fragment: models/models
 frontend_models:
 - route: /models
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-models/src/data/models.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-models/src/data/models.ts
   interface: Model
   fields:
   - id
@@ -46,7 +46,7 @@ frontend_models:
   - ai_model_capability
   - ai_model_pricing
 - route: /models
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-models/src/data/models.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-models/src/data/models.ts
   interface: ModelPricing
   fields:
   - input
@@ -65,7 +65,7 @@ frontend_models:
   data_sources:
   - ai_model_pricing
 - route: /models
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-models/src/data/models.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-models/src/data/models.ts
   interface: ModelReferencePrice
   fields:
   - regionCode
@@ -75,7 +75,7 @@ frontend_models:
   data_sources:
   - ai_model_pricing
 - route: /models
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-models/src/modelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-models/src/modelService.ts
   interface: ModelCatalogServiceFilters
   fields:
   - billingMeter
@@ -92,7 +92,7 @@ frontend_models:
   - ai_model_capability
   - ai_model_pricing
 - route: /models
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-models/src/modelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-models/src/modelService.ts
   interface: ModelCatalogGroup
   fields:
   - key
@@ -101,7 +101,7 @@ frontend_models:
   data_sources:
   - ai_channel_group
 - route: /models
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-models/src/modelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-models/src/modelService.ts
   interface: ModelCatalogResult
   fields:
   - models
@@ -117,7 +117,7 @@ frontend_models:
   - ai_channel_group
   - ai_channel_group_member
 - route: /models
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-models/src/runtimeModelCatalog.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-models/src/runtimeModelCatalog.ts
   interface: RuntimeModelCatalogItem
   fields:
   - catalogKey

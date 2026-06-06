@@ -1,11 +1,11 @@
 # Frontend Contract Guardian
 
 `tools.frontend_contract_guardian` keeps the database design aligned with the actual
-`apps/sdkwork-claw-router-portal` application instead of relying on a manual checklist.
+`apps/sdkwork-clawrouter-pc` application instead of relying on a manual checklist.
 
 ## Scope
 
-- Parse `apps/sdkwork-claw-router-portal/src/App.tsx` and extract the public, console, and admin routes that are actually mounted by React Router.
+- Parse `apps/sdkwork-clawrouter-pc/src/App.tsx` and extract the public, console, and admin routes that are actually mounted by React Router.
 - Compare every actual route with `generated/schema/manifest/schema-manifest.json`.
 - Validate the frontend field contract. The human-maintained source is `docs/schema-registry/frontend-field-contracts/index.yaml` plus the fragment files below `docs/schema-registry/frontend-field-contracts/`; `docs/schema-registry/frontend-field-contracts.yaml` is the compiled snapshot used by older direct-text checks and SDK generation quality gates.
 - Run `tools.frontend_field_audit` against portal service/data/type files, extract exported TypeScript data interfaces, and require every interface to be registered with exact fields.

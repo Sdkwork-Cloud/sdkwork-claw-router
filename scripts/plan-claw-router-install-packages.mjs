@@ -214,13 +214,13 @@ function buildArtifacts(binaryName, installerBinaryName, deploymentMode, platfor
     {
       kind: 'portal-dist',
       path: 'portal/dist',
-      source: 'apps/sdkwork-claw-router-portal/dist',
+      source: 'apps/sdkwork-clawrouter-pc/dist',
       required: true,
     },
     {
       kind: 'sdk-archives',
       path: 'portal/dist/sdk-archives',
-      source: 'apps/sdkwork-claw-router-portal/dist/sdk-archives',
+      source: 'apps/sdkwork-clawrouter-pc/dist/sdk-archives',
       required: true,
     },
     {

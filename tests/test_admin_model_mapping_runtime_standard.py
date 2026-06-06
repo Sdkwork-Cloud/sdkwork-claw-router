@@ -8,8 +8,8 @@ from tools.api_contract_manifest import ApiContractManifestGenerator
 
 ROOT = Path(__file__).resolve().parents[1]
 MODEL_SERVICE_SOURCE = (
-    "apps/sdkwork-claw-router-portal/packages/"
-    "sdkwork-claw-router-admin-model/src/modelService.ts"
+    "apps/sdkwork-clawrouter-pc/packages/"
+    "sdkwork-clawrouter-pc-admin-model/src/modelService.ts"
 )
 
 

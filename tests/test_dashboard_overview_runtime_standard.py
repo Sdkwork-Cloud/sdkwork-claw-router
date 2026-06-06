@@ -23,16 +23,16 @@ class DashboardOverviewRuntimeStandardTest(unittest.TestCase):
         frontend = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-dashboard"
+            / "sdkwork-clawrouter-pc-console-dashboard"
             / "src"
             / "dashboardService.ts"
         ).read_text(encoding="utf-8")
 
         operation_key = (
-            "apps/sdkwork-claw-router-portal/packages/"
-            "sdkwork-claw-router-console-dashboard/src/dashboardService.ts#fetchDashboardOverview"
+            "apps/sdkwork-clawrouter-pc/packages/"
+            "sdkwork-clawrouter-pc-console-dashboard/src/dashboardService.ts#fetchDashboardOverview"
         )
         operations = {operation["key"]: operation for operation in manifest["operations"]}
 
@@ -130,9 +130,9 @@ class DashboardOverviewRuntimeStandardTest(unittest.TestCase):
         frontend = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-dashboard"
+            / "sdkwork-clawrouter-pc-console-dashboard"
             / "src"
             / "dashboardService.ts"
         ).read_text(encoding="utf-8")
@@ -169,9 +169,9 @@ class DashboardOverviewRuntimeStandardTest(unittest.TestCase):
         view = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-dashboard"
+            / "sdkwork-clawrouter-pc-console-dashboard"
             / "src"
             / "DashboardView.tsx"
         ).read_text(encoding="utf-8")
@@ -187,27 +187,27 @@ class DashboardOverviewRuntimeStandardTest(unittest.TestCase):
         view = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-dashboard"
+            / "sdkwork-clawrouter-pc-console-dashboard"
             / "src"
             / "DashboardView.tsx"
         ).read_text(encoding="utf-8")
         service = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-dashboard"
+            / "sdkwork-clawrouter-pc-console-dashboard"
             / "src"
             / "dashboardService.ts"
         ).read_text(encoding="utf-8")
         i18n = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-i18n"
+            / "sdkwork-clawrouter-pc-i18n"
             / "src"
             / "index.ts"
         ).read_text(encoding="utf-8")
@@ -241,18 +241,18 @@ class DashboardOverviewRuntimeStandardTest(unittest.TestCase):
         view = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-dashboard"
+            / "sdkwork-clawrouter-pc-console-dashboard"
             / "src"
             / "DashboardView.tsx"
         ).read_text(encoding="utf-8")
         service = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-dashboard"
+            / "sdkwork-clawrouter-pc-console-dashboard"
             / "src"
             / "dashboardService.ts"
         ).read_text(encoding="utf-8")
@@ -273,9 +273,9 @@ class DashboardOverviewRuntimeStandardTest(unittest.TestCase):
         view = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-dashboard"
+            / "sdkwork-clawrouter-pc-console-dashboard"
             / "src"
             / "DashboardView.tsx"
         ).read_text(encoding="utf-8")
@@ -300,18 +300,18 @@ class DashboardOverviewRuntimeStandardTest(unittest.TestCase):
         view = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-dashboard"
+            / "sdkwork-clawrouter-pc-console-dashboard"
             / "src"
             / "DashboardView.tsx"
         ).read_text(encoding="utf-8")
         service = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-dashboard"
+            / "sdkwork-clawrouter-pc-console-dashboard"
             / "src"
             / "dashboardService.ts"
         ).read_text(encoding="utf-8")
@@ -320,8 +320,8 @@ class DashboardOverviewRuntimeStandardTest(unittest.TestCase):
         ).read_text(encoding="utf-8")
         dashboard_operation_marker = (
             "  - route: /console/dashboard\n"
-            "    source: apps/sdkwork-claw-router-portal/packages/"
-            "sdkwork-claw-router-console-dashboard/src/dashboardService.ts\n"
+            "    source: apps/sdkwork-clawrouter-pc/packages/"
+            "sdkwork-clawrouter-pc-console-dashboard/src/dashboardService.ts\n"
             "    operation: fetchDashboardOverview"
         )
         dashboard_operation_start = contract.index(dashboard_operation_marker)
@@ -552,9 +552,9 @@ class DashboardOverviewRuntimeStandardTest(unittest.TestCase):
         dashboard_service = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-dashboard"
+            / "sdkwork-clawrouter-pc-console-dashboard"
             / "src"
             / "dashboardService.ts"
         ).read_text(encoding="utf-8")
@@ -577,9 +577,9 @@ class DashboardOverviewRuntimeStandardTest(unittest.TestCase):
         dashboard_service = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-dashboard"
+            / "sdkwork-clawrouter-pc-console-dashboard"
             / "src"
             / "dashboardService.ts"
         ).read_text(encoding="utf-8")

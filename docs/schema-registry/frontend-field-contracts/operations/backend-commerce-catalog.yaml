@@ -1,7 +1,7 @@
 fragment: operations/backend-commerce-catalog
 frontend_operations:
 - route: /admin/catalog
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts
   operation: listCommerceCategories
   operation_id: catalog.categories.list
   kind: read
@@ -116,7 +116,7 @@ frontend_operations:
         minimum: 1
         maximum: 200
 - route: /admin/catalog
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts
   operation: createCommerceCategory
   operation_id: catalog.categories.create
   kind: create
@@ -172,7 +172,7 @@ frontend_operations:
     properties:
       item: *id001
 - route: /admin/catalog
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts
   operation: updateCommerceCategory
   operation_id: catalog.categories.update
   kind: update
@@ -191,7 +191,7 @@ frontend_operations:
   request_schema: *id002
   response_schema: *id003
 - route: /admin/catalog
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts
   operation: deleteCommerceCategory
   operation_id: catalog.categories.delete
   kind: delete
@@ -217,7 +217,7 @@ frontend_operations:
       deleted:
         type: boolean
 - route: /admin/catalog
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts
   operation: initializeCommerceCategorySeeds
   operation_id: catalog.categorySeeds.create
   kind: create
@@ -304,7 +304,7 @@ frontend_operations:
               minLength: 1
               maxLength: 128
 - route: /admin/catalog
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts
   operation: listCommerceProducts
   operation_id: catalog.products.list
   kind: read
@@ -520,7 +520,7 @@ frontend_operations:
         minimum: 1
         maximum: 200
 - route: /admin/catalog
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts
   operation: createCommerceProduct
   operation_id: catalog.products.create
   kind: create
@@ -602,7 +602,7 @@ frontend_operations:
     properties:
       item: *id004
 - route: /admin/catalog
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts
   operation: updateCommerceProduct
   operation_id: catalog.products.update
   kind: update
@@ -624,7 +624,7 @@ frontend_operations:
   request_schema: *id005
   response_schema: *id006
 - route: /admin/catalog
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts
   operation: deleteCommerceProduct
   operation_id: catalog.products.delete
   kind: delete
@@ -651,7 +651,7 @@ frontend_operations:
       deleted:
         type: boolean
 - route: /admin/catalog
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts
   operation: listCommerceSkus
   operation_id: catalog.skus.list
   kind: read
@@ -838,7 +838,7 @@ frontend_operations:
         minimum: 1
         maximum: 200
 - route: /admin/catalog
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts
   operation: createCommerceSku
   operation_id: catalog.skus.create
   kind: create
@@ -937,7 +937,7 @@ frontend_operations:
     properties:
       item: *id008
 - route: /admin/catalog
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts
   operation: updateCommerceSku
   operation_id: catalog.skus.update
   kind: update
@@ -962,7 +962,7 @@ frontend_operations:
   request_schema: *id009
   response_schema: *id010
 - route: /admin/catalog
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts
   operation: deleteCommerceSku
   operation_id: catalog.skus.delete
   kind: delete
@@ -987,7 +987,7 @@ frontend_operations:
       deleted:
         type: boolean
 - route: /admin/catalog
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts
   operation: listCommerceAttributes
   operation_id: catalog.attributes.list
   kind: read
@@ -1099,7 +1099,7 @@ frontend_operations:
         minimum: 1
         maximum: 200
 - route: /admin/catalog
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts
   operation: createCommerceAttribute
   operation_id: catalog.attributes.create
   kind: create
@@ -1173,7 +1173,7 @@ frontend_operations:
     properties:
       item: *id011
 - route: /admin/catalog
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts
   operation: listCommerceCategoryAttributes
   operation_id: catalog.categoryAttributes.list
   kind: read
@@ -1325,7 +1325,7 @@ frontend_operations:
         minimum: 1
         maximum: 200
 - route: /admin/catalog
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts
   operation: createCommerceCategoryAttribute
   operation_id: catalog.categoryAttributes.create
   kind: create
@@ -1388,7 +1388,7 @@ frontend_operations:
     properties:
       item: *commerceProductCategoryAttributeItem
 - route: /admin/catalog
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts
   operation: updateCommerceCategoryAttribute
   operation_id: catalog.categoryAttributes.update
   kind: update
@@ -1409,7 +1409,7 @@ frontend_operations:
   request_schema: *commerceProductCategoryAttributeMutationRequest
   response_schema: *commerceProductCategoryAttributeMutationResponse
 - route: /admin/catalog
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts
   operation: deleteCommerceCategoryAttribute
   operation_id: catalog.categoryAttributes.delete
   kind: delete
@@ -1434,7 +1434,7 @@ frontend_operations:
       deleted:
         type: boolean
 - route: /admin/catalog
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts
   operation: listCommercePriceLists
   operation_id: catalog.priceLists.list
   kind: read
@@ -1551,7 +1551,7 @@ frontend_operations:
         minimum: 1
         maximum: 200
 - route: /admin/catalog
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts
   operation: createCommercePriceList
   operation_id: catalog.priceLists.create
   kind: create

@@ -1,7 +1,7 @@
 fragment: operations/app-ai
 frontend_operations:
 - route: /console/api-keys
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-api-keys/src/apiKeyService.ts
   operation: fetchGroups
   operation_id: channelGroups.list
   kind: read
@@ -47,7 +47,7 @@ frontend_operations:
               nullable: true
               maxLength: 64
 - route: /models
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-models/src/modelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-models/src/modelService.ts
   operation: fetchModels
   kind: read
   api_surface: app
@@ -386,7 +386,7 @@ frontend_operations:
               format: int64
               minimum: 0
 - route: /rankings
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-rankings/src/rankingService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-rankings/src/rankingService.ts
   operation: fetchModelVendors
   kind: read
   api_surface: app
@@ -430,7 +430,7 @@ frontend_operations:
               format: int64
               minimum: 0
 - route: /rankings
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-rankings/src/rankingService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-rankings/src/rankingService.ts
   operation: fetchModelRankings
   kind: read
   api_surface: app
@@ -713,7 +713,7 @@ frontend_operations:
                     minLength: 1
                     maxLength: 64
 - route: /console/dashboard
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-dashboard/src/dashboardService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-dashboard/src/dashboardService.ts
   operation: fetchDashboardOverview
   kind: read
   api_surface: app
@@ -967,7 +967,7 @@ frontend_operations:
         items:
           type: string
 - route: /console/gateway
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-gateway/src/gatewayService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-gateway/src/gatewayService.ts
   operation: fetchTraces
   kind: read
   api_surface: app
@@ -1019,7 +1019,7 @@ frontend_operations:
             channel:
               type: string
 - route: /console/api-keys
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/routingApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/routingApiOperations.ts
   operation: fetchRoutingChannels
   operation_scope: app_shell
   operation_id: routing.channels.list
@@ -1146,7 +1146,7 @@ frontend_operations:
               type: integer
               format: int64
 - route: /console/api-keys
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/routingApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/routingApiOperations.ts
   operation: fetchRoutingApiKeys
   operation_scope: app_shell
   operation_id: routing.apiKeys.list
@@ -1194,7 +1194,7 @@ frontend_operations:
             createdAt:
               type: string
 - route: /console/gateway
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/routingApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/routingApiOperations.ts
   operation: fetchRoutingRequestTraces
   operation_scope: app_shell
   operation_id: routing.requestTraces.list
@@ -1288,7 +1288,7 @@ frontend_operations:
             streaming:
               type: boolean
 - route: /console/usage
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/routingApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/routingApiOperations.ts
   operation: fetchRoutingUsage
   operation_scope: app_shell
   operation_id: routing.usage.list
@@ -1350,7 +1350,7 @@ frontend_operations:
             lat:
               type: string
 - route: /console/usage
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-usage/src/usageService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-usage/src/usageService.ts
   operation: fetchLogs
   kind: read
   api_surface: app

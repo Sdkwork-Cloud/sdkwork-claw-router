@@ -17,7 +17,7 @@ CLASSIFICATION_PATH = ROOT / "docs" / "schema-registry" / "frontend-route-classi
 CONTRACT_PATH = ROOT / "docs" / "schema-registry" / "frontend-field-contracts.yaml"
 MANIFEST_PATH = ROOT / "generated" / "schema" / "manifest" / "schema-manifest.json"
 STATIC_SOURCE_MANIFEST_PATH = ROOT / "generated" / "schema" / "frontend" / "frontend-static-source-manifest.json"
-PORTAL_ROOT = ROOT / "apps" / "sdkwork-claw-router-portal"
+PORTAL_ROOT = ROOT / "apps" / "sdkwork-clawrouter-pc"
 
 ALLOWED_DELIVERY_KINDS = {
     "sdk_backed_business_runtime",
@@ -98,7 +98,7 @@ class FrontendRouteClassificationStandardTest(unittest.TestCase):
         route_entries = self._route_entries(classification)
 
         self.assertEqual("sdkwork-claw-router-frontend-route-classification", classification["schema"])
-        self.assertEqual("apps/sdkwork-claw-router-portal/src/App.tsx", classification["source"])
+        self.assertEqual("apps/sdkwork-clawrouter-pc/src/App.tsx", classification["source"])
 
         classified_routes = [entry.get("route") for entry in route_entries]
         duplicates = sorted(route for route, count in Counter(classified_routes).items() if count > 1)

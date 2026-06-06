@@ -245,9 +245,9 @@ Open platform admin store and SQL stores:
 
 Admin UI and SDK boundary:
 
-- `apps/sdkwork-claw-router-portal/src/App.tsx`
-- `apps/sdkwork-claw-router-portal/src/AdminLayout.tsx`
-- `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-open-platform/src/openPlatformAdminService.ts`
+- `apps/sdkwork-clawrouter-pc/src/App.tsx`
+- `apps/sdkwork-clawrouter-pc/src/AdminLayout.tsx`
+- `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-open-platform/src/openPlatformAdminService.ts`
 
 Auth UI and appbase IAM runtime:
 

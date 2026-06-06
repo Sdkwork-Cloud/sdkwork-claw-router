@@ -34,7 +34,7 @@ cd sdkwork-claw-router
 Install portal workspace dependencies:
 
 ```bash
-pnpm --dir apps/sdkwork-claw-router-portal install
+pnpm --dir apps/sdkwork-clawrouter-pc install
 ```
 
 Or let the root launcher install them when needed:

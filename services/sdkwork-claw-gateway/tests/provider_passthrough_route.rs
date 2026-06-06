@@ -320,7 +320,7 @@ fn openai_compatible_passthrough_path_manifest_stays_complete() {
 #[test]
 fn gateway_openapi_v1_paths_are_product_routes_or_openai_passthrough_routes() {
     let spec: serde_json::Value = serde_json::from_str(include_str!(
-        "../../../apps/sdkwork-claw-router-portal/public/openapi.json"
+        "../../../apps/sdkwork-clawrouter-pc/public/openapi.json"
     ))
     .unwrap();
     let openapi_paths = spec["paths"]
@@ -367,7 +367,7 @@ fn gateway_openapi_v1_paths_are_product_routes_or_openai_passthrough_routes() {
 #[test]
 fn gateway_openapi_vendor_paths_are_runtime_provider_routes_without_public_manifest() {
     let spec: serde_json::Value = serde_json::from_str(include_str!(
-        "../../../apps/sdkwork-claw-router-portal/public/openapi.json"
+        "../../../apps/sdkwork-clawrouter-pc/public/openapi.json"
     ))
     .unwrap();
     assert!(

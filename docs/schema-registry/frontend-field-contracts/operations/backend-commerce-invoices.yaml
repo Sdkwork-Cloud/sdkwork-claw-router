@@ -1,7 +1,7 @@
 fragment: operations/backend-commerce-invoices
 frontend_operations:
 - route: /admin/finance
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/financeService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-finance/src/financeService.ts
   operation: backendInvoicesTitlesList
   operation_id: invoices.titles.list
   kind: read
@@ -82,7 +82,7 @@ frontend_operations:
         minimum: 1
         maximum: 200
 - route: /admin/finance
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/financeService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-finance/src/financeService.ts
   operation: backendInvoicesList
   operation_id: invoices.list
   kind: read
@@ -117,7 +117,7 @@ frontend_operations:
       maxLength: 32
   response_schema: *id001
 - route: /admin/finance
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/financeService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-finance/src/financeService.ts
   operation: backendInvoicesRetrieve
   operation_id: invoices.retrieve
   kind: read

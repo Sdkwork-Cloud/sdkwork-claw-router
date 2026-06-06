@@ -45,7 +45,7 @@ class ClawRouterSkillGuardianTest(unittest.TestCase):
                 Never use raw fetch or axios for remote business endpoints.
                 Never hand-edit generated SDK output.
                 Regenerate with sdkwork-sdk-generator from generated/openapi/clawrouter-app-openapi.json.
-                Do not change apps/sdkwork-claw-router-portal UI visuals.
+                Do not change apps/sdkwork-clawrouter-pc UI visuals.
                 """,
             )
             self.write_skill(
@@ -62,7 +62,7 @@ class ClawRouterSkillGuardianTest(unittest.TestCase):
                 Never use raw fetch or axios for remote business endpoints.
                 Never hand-edit generated SDK output.
                 Regenerate with sdkwork-sdk-generator from generated/openapi/clawrouter-backend-openapi.json.
-                Do not change apps/sdkwork-claw-router-portal UI visuals.
+                Do not change apps/sdkwork-clawrouter-pc UI visuals.
                 """,
             )
             self.write_skill(
@@ -78,7 +78,7 @@ class ClawRouterSkillGuardianTest(unittest.TestCase):
                 Read generated/api/api-contract-manifest.json.
                 Write generated/openapi/clawrouter-app-openapi.json.
                 Write generated/openapi/clawrouter-backend-openapi.json.
-                Write apps/sdkwork-claw-router-portal/public/openapi.json with tools.clawrouter_gateway_openapi_generator.
+                Write apps/sdkwork-clawrouter-pc/public/openapi.json with tools.clawrouter_gateway_openapi_generator.
                 app/backend SDK generation uses the authority OpenAPI snapshots.
                 open SDK generation uses openapi/clawrouter-open-sdk.sdkgen.json.
                 .sdkwork-assembly.json generationInputSpec declares the actual generation input.
@@ -557,7 +557,7 @@ class ClawRouterSkillGuardianTest(unittest.TestCase):
             Never use raw fetch or axios for remote business endpoints.
             Never hand-edit generated SDK output.
             Regenerate with sdkwork-sdk-generator from generated/openapi/clawrouter-app-openapi.json.
-            Do not change apps/sdkwork-claw-router-portal UI visuals.
+            Do not change apps/sdkwork-clawrouter-pc UI visuals.
             """,
         )
         self.write_skill(
@@ -574,7 +574,7 @@ class ClawRouterSkillGuardianTest(unittest.TestCase):
             Never use raw fetch or axios for remote business endpoints.
             Never hand-edit generated SDK output.
             Regenerate with sdkwork-sdk-generator from generated/openapi/clawrouter-backend-openapi.json.
-            Do not change apps/sdkwork-claw-router-portal UI visuals.
+            Do not change apps/sdkwork-clawrouter-pc UI visuals.
             """,
         )
         self.write_skill(
@@ -590,7 +590,7 @@ class ClawRouterSkillGuardianTest(unittest.TestCase):
             Read generated/api/api-contract-manifest.json.
             Write generated/openapi/clawrouter-app-openapi.json.
             Write generated/openapi/clawrouter-backend-openapi.json.
-            Write apps/sdkwork-claw-router-portal/public/openapi.json with tools.clawrouter_gateway_openapi_generator.
+            Write apps/sdkwork-clawrouter-pc/public/openapi.json with tools.clawrouter_gateway_openapi_generator.
             app/backend SDK generation uses the authority OpenAPI snapshots.
             open SDK generation uses openapi/clawrouter-open-sdk.sdkgen.json.
             .sdkwork-assembly.json generationInputSpec declares the actual generation input.

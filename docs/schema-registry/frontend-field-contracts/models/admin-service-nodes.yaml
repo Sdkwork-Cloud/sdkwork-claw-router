@@ -1,7 +1,7 @@
 fragment: models/admin-service-nodes
 frontend_models:
 - route: /admin/service-nodes
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-nodes/src/serviceNodeService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-service-nodes/src/serviceNodeService.ts
   interface: ServiceNode
   fields:
   - id
@@ -15,7 +15,7 @@ frontend_models:
   data_sources:
   - ops_gateway_instance
 - route: /admin/service-nodes
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-nodes/src/serviceNodeService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-service-nodes/src/serviceNodeService.ts
   interface: ServiceNodeInput
   fields:
   - name
@@ -26,7 +26,7 @@ frontend_models:
   data_sources:
   - ops_gateway_instance
 - route: /admin/service-nodes
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-nodes/src/serviceNodeService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-service-nodes/src/serviceNodeService.ts
   interface: ServiceNodeListParams
   fields:
   - search
@@ -34,7 +34,7 @@ frontend_models:
   data_sources:
   - ops_gateway_instance
 - route: /admin/service-nodes
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-service-nodes/src/serviceNodeService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-service-nodes/src/serviceNodeService.ts
   interface: ServiceNodeDeleteOutcome
   fields:
   - deleted

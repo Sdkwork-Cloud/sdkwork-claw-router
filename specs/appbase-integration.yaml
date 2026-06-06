@@ -22,34 +22,34 @@ integrations:
       dependencies:
         - "@sdkwork/clawrouter-app-sdk"
         - "@sdkwork/clawrouter-backend-sdk"
-        - sdkwork-claw-router-commons
-        - sdkwork-claw-router-admin-catalog
-        - sdkwork-claw-router-admin-inventory
-        - sdkwork-claw-router-admin-orders
-        - sdkwork-claw-router-admin-payments
-        - sdkwork-claw-router-admin-memberships
-        - sdkwork-claw-router-admin-wallet
-        - sdkwork-claw-router-admin-finance
-        - sdkwork-claw-router-console-account
-        - sdkwork-claw-router-console-wallet
-        - sdkwork-claw-router-console-recharge
-        - sdkwork-claw-router-console-checkout
-        - sdkwork-claw-router-console-memberships
-        - sdkwork-claw-router-console-settlements
+        - sdkwork-clawrouter-pc-commons
+        - sdkwork-clawrouter-pc-admin-catalog
+        - sdkwork-clawrouter-pc-admin-inventory
+        - sdkwork-clawrouter-pc-admin-orders
+        - sdkwork-clawrouter-pc-admin-payments
+        - sdkwork-clawrouter-pc-admin-memberships
+        - sdkwork-clawrouter-pc-admin-wallet
+        - sdkwork-clawrouter-pc-admin-finance
+        - sdkwork-clawrouter-pc-console-account
+        - sdkwork-clawrouter-pc-console-wallet
+        - sdkwork-clawrouter-pc-console-recharge
+        - sdkwork-clawrouter-pc-console-checkout
+        - sdkwork-clawrouter-pc-console-memberships
+        - sdkwork-clawrouter-pc-console-settlements
       adapters:
-        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
-        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-inventory/src/inventoryService.ts
-        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-orders/src/ordersService.ts
-        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
-        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
-        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wallet/src/walletService.ts
-        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-finance/src/financeService.ts
-        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-account/src/accountService.ts
-        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-wallet/src/walletService.ts
-        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts
-        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-checkout/src/checkoutService.ts
-        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts
-        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-settlements/src/settlementsService.ts
+        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts
+        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-inventory/src/inventoryService.ts
+        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
+        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-payments/src/paymentsService.ts
+        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
+        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-wallet/src/walletService.ts
+        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-finance/src/financeService.ts
+        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-account/src/accountService.ts
+        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-wallet/src/walletService.ts
+        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-recharge/src/rechargeService.ts
+        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-checkout/src/checkoutService.ts
+        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts
+        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-settlements/src/settlementsService.ts
       sdkInjectionAdapters: []
     rust:
       crates:
@@ -101,16 +101,16 @@ integrations:
         - "@sdkwork/iam-sdk-ports"
         - "@sdkwork/iam-service"
       adapters:
-        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/iam-runtime.ts
-        - apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts
-        - apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthSettingsService.ts
+        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/iam-runtime.ts
+        - apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts
+        - apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthSettingsService.ts
     contractTests:
-      - apps/sdkwork-claw-router-portal/auth-runtime.test.ts
+      - apps/sdkwork-clawrouter-pc/auth-runtime.test.ts
     verification:
       - python -B -m unittest tests.test_iam_identity_contract_standard
     forbiddenProductForks:
-      - apps/sdkwork-claw-router-portal/src/auth/corePcReactCompat.ts
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/iam-sdk-clients.ts
+      - apps/sdkwork-clawrouter-pc/src/auth/corePcReactCompat.ts
+      - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/iam-sdk-clients.ts
     sdkBoundary: generated-sdk-through-ports
 
   - capability: foundation
@@ -122,11 +122,11 @@ integrations:
       dependencies:
         - "@sdkwork/appbase-pc-react"
       adapters:
-        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/sdk-clients.ts
-        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/sdk-request-boundary.ts
-        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/app-session-token.ts
+        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts
+        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/sdk-request-boundary.ts
+        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/app-session-token.ts
     contractTests:
-      - apps/sdkwork-claw-router-portal/auth-runtime.test.ts
+      - apps/sdkwork-clawrouter-pc/auth-runtime.test.ts
       - tests/test_appbase_capability_guardian.py
     verification:
       - python -B -m unittest tests.test_appbase_capability_guardian tests.test_appbase_integration_guardian
@@ -142,15 +142,15 @@ integrations:
       dependencies:
         - "@sdkwork/notification-pc-react"
       adapters:
-        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/notificationService.ts
-        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-messages/src/messagesService.ts
+        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts
+        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-messages/src/messagesService.ts
     contractTests:
       - tests/test_console_messages_runtime_standard.py
       - tests/test_console_messages_backend_runtime_standard.py
     verification:
       - python -B -m unittest tests.test_console_messages_runtime_standard tests.test_console_messages_backend_runtime_standard
     forbiddenProductForks:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/notification-sdk-clients.ts
+      - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/notification-sdk-clients.ts
     sdkBoundary: generated-sdk-through-ports
 
   - capability: generation
@@ -161,20 +161,20 @@ integrations:
     frontend:
       dependencies:
         - "@sdkwork/generation-pc-react"
-        - sdkwork-claw-router-commons
-        - sdkwork-claw-router-playground
+        - sdkwork-clawrouter-pc-commons
+        - sdkwork-clawrouter-pc-playground
       adapters:
-        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/playgroundService.ts
-        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/playgroundGenerationService.ts
-        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/appRuntimeApiOperations.ts
+        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/playgroundService.ts
+        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/playgroundGenerationService.ts
+        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
       sdkInjectionAdapters:
-        - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/appRuntimeApiOperations.ts
+        - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
     contractTests:
       - tests/test_playground_runtime_standard.py
-      - apps/sdkwork-claw-router-portal/playground-chat-runtime.test.ts
+      - apps/sdkwork-clawrouter-pc/playground-chat-runtime.test.ts
     verification:
       - python -B -m unittest tests.test_playground_runtime_standard
     forbiddenProductForks:
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/generation-sdk-clients.ts
-      - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/generationCompat.ts
+      - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/generation-sdk-clients.ts
+      - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/generationCompat.ts
     sdkBoundary: generated-sdk-through-ports

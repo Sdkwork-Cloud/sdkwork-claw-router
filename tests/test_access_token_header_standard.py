@@ -122,9 +122,9 @@ class AccessTokenHeaderStandardTest(unittest.TestCase):
             ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types" / "iam-session-response.ts",
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-api-reference"
+            / "sdkwork-clawrouter-pc-api-reference"
             / "src"
             / "playgroundRequest.ts",
         ]

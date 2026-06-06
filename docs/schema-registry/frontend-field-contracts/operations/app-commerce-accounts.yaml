@@ -1,7 +1,7 @@
 fragment: operations/app-commerce-accounts
 frontend_operations:
 - route: /console/account
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-account/src/accountService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-account/src/accountService.ts
   operation: appAccountsCurrentSummaryRetrieve
   operation_id: accounts.current.summary.retrieve
   kind: read
@@ -48,7 +48,7 @@ frontend_operations:
             nullable: true
             maxLength: 64
 - route: /console/account
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-account/src/accountService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-account/src/accountService.ts
   operation: fetchAccountDetails
   operation_id: console.accountDetails.retrieve
   operation_scope: app_shell

@@ -1,7 +1,7 @@
 fragment: operations/app-commerce-invoices
 frontend_operations:
 - route: /console/settlements
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-settlements/src/settlementsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-settlements/src/settlementsService.ts
   operation: appInvoicesList
   operation_id: invoices.list
   kind: read
@@ -82,7 +82,7 @@ frontend_operations:
         minimum: 1
         maximum: 200
 - route: /console/settlements
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-settlements/src/settlementsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-settlements/src/settlementsService.ts
   operation: appInvoicesRetrieve
   operation_id: invoices.retrieve
   kind: read
@@ -130,7 +130,7 @@ frontend_operations:
             nullable: true
             maxLength: 64
 - route: /console/settlements
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-settlements/src/settlementsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-settlements/src/settlementsService.ts
   operation: appInvoicesCreate
   operation_id: invoices.create
   kind: create

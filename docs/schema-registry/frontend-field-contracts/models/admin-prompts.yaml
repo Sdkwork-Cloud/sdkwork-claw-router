@@ -1,7 +1,7 @@
 fragment: models/admin-prompts
 frontend_models:
 - route: /admin/prompts
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-prompts/src/promptService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-prompts/src/promptService.ts
   interface: AdminPrompt
   fields:
   - id
@@ -26,7 +26,7 @@ frontend_models:
   - ai_prompt
   - plus_category
 - route: /admin/prompts
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-prompts/src/promptService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-prompts/src/promptService.ts
   interface: AdminPromptVersion
   fields:
   - id
@@ -54,7 +54,7 @@ frontend_models:
   - ai_prompt
   - ai_prompt_version
 - route: /admin/prompts
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-prompts/src/promptService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-prompts/src/promptService.ts
   interface: AdminPromptBinding
   fields:
   - id

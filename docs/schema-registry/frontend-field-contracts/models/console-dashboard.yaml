@@ -1,7 +1,7 @@
 fragment: models/console-dashboard
 frontend_models:
 - route: /console/dashboard
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-dashboard/src/dashboardService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-dashboard/src/dashboardService.ts
   interface: Announcement
   fields:
   - id
@@ -13,7 +13,7 @@ frontend_models:
   data_sources:
   - content_announcement
 - route: /console/dashboard
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-dashboard/src/dashboardService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-dashboard/src/dashboardService.ts
   interface: DashboardData
   fields:
   - time
@@ -25,7 +25,7 @@ frontend_models:
   data_sources:
   - ai_usage_fact
 - route: /console/dashboard
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-dashboard/src/dashboardService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-dashboard/src/dashboardService.ts
   interface: ModelUsage
   fields:
   - rank
@@ -40,7 +40,7 @@ frontend_models:
   - ai_model_rank_snapshot
   - ai_usage_fact
 - route: /console/dashboard
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-dashboard/src/dashboardService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-dashboard/src/dashboardService.ts
   interface: ConfigurationDomain
   fields:
   - id

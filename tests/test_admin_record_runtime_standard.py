@@ -16,9 +16,9 @@ class AdminRecordRuntimeStandardTest(unittest.TestCase):
         record_service = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-admin-record"
+            / "sdkwork-clawrouter-pc-admin-record"
             / "src"
             / "recordService.ts"
         ).read_text(encoding="utf-8")

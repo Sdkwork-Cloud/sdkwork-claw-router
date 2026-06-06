@@ -13,12 +13,12 @@
 ### Task 1: Pin Admin Course Center Behavior With Tests
 
 **Files:**
-- Create: `apps/sdkwork-claw-router-portal/admin-course-runtime.test.ts`
+- Create: `apps/sdkwork-clawrouter-pc/admin-course-runtime.test.ts`
 - Modify: `tests/test_admin_course_runtime_standard.py`
-- Test: `apps/sdkwork-claw-router-portal/admin-course-runtime.test.ts`
+- Test: `apps/sdkwork-clawrouter-pc/admin-course-runtime.test.ts`
 - Test: `tests/test_admin_course_runtime_standard.py`
 
-- [ ] Write tests requiring an independent `sdkwork-claw-router-admin-courses` package, `CourseAdmin` export, `/admin/courses/*` routes, `courseCenter` admin header module, sidebar menu labels, and backend contract paths.
+- [ ] Write tests requiring an independent `sdkwork-clawrouter-pc-admin-courses` package, `CourseAdmin` export, `/admin/courses/*` routes, `courseCenter` admin header module, sidebar menu labels, and backend contract paths.
 - [ ] Run the new tests and verify they fail because the module does not exist yet.
 
 ### Task 2: Add Backend Admin Course API
@@ -62,26 +62,26 @@
 ### Task 4: Add Independent Admin Courses Package
 
 **Files:**
-- Create: `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-courses/package.json`
-- Create: `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-courses/tsconfig.json`
-- Create: `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-courses/src/courseAdminService.ts`
-- Create: `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-courses/src/courseAdminTypes.ts`
-- Create: `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-courses/src/index.tsx`
-- Modify: `apps/sdkwork-claw-router-portal/package.json`
+- Create: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-courses/package.json`
+- Create: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-courses/tsconfig.json`
+- Create: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-courses/src/courseAdminService.ts`
+- Create: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-courses/src/courseAdminTypes.ts`
+- Create: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-courses/src/index.tsx`
+- Modify: `apps/sdkwork-clawrouter-pc/package.json`
 
-- [ ] Implement a backend SDK boundary that imports only from `sdkwork-claw-router-commons/runtime` and `@sdkwork/clawrouter-backend-sdk`.
+- [ ] Implement a backend SDK boundary that imports only from `sdkwork-clawrouter-pc-commons/runtime` and `@sdkwork/clawrouter-backend-sdk`.
 - [ ] Implement `CourseAdmin` with tabs for dashboard, catalog, sections, lessons, relations, applications, comments, and engagement.
 - [ ] Use existing admin shell components and avoid raw fetch or local SDK forks.
 
 ### Task 5: Wire Admin Navigation And I18n
 
 **Files:**
-- Modify: `apps/sdkwork-claw-router-portal/src/App.tsx`
-- Modify: `apps/sdkwork-claw-router-portal/src/AdminHeader.tsx`
-- Modify: `apps/sdkwork-claw-router-portal/src/AdminLayout.tsx`
-- Modify: `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-i18n/src/index.ts`
+- Modify: `apps/sdkwork-clawrouter-pc/src/App.tsx`
+- Modify: `apps/sdkwork-clawrouter-pc/src/AdminHeader.tsx`
+- Modify: `apps/sdkwork-clawrouter-pc/src/AdminLayout.tsx`
+- Modify: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-i18n/src/index.ts`
 
-- [ ] Add lazy route import for `sdkwork-claw-router-admin-courses`.
+- [ ] Add lazy route import for `sdkwork-clawrouter-pc-admin-courses`.
 - [ ] Add `/admin/courses` routes and default redirect.
 - [ ] Add `courseCenter` module to `AdminHeader`.
 - [ ] Add Course Center sidebar groups and items to `AdminLayout`.
@@ -92,8 +92,8 @@
 **Files:**
 - All touched files.
 
-- [ ] Run `pnpm --dir apps/sdkwork-claw-router-portal typecheck`.
-- [ ] Run `pnpm --dir apps/sdkwork-claw-router-portal exec vitest run admin-course-runtime.test.ts`.
+- [ ] Run `pnpm --dir apps/sdkwork-clawrouter-pc typecheck`.
+- [ ] Run `pnpm --dir apps/sdkwork-clawrouter-pc exec vitest run admin-course-runtime.test.ts`.
 - [ ] Run `python -B -m pytest tests/test_admin_course_runtime_standard.py`.
 - [ ] Run targeted Rust tests for admin course store/API.
 - [ ] Run `python -B -m tools.schema_quality_gate`.

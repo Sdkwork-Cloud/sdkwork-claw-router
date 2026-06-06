@@ -25,7 +25,7 @@ class FrontendFieldAuditTest(unittest.TestCase):
             root = Path(tmp)
             source = self.write_file(
                 root,
-                "apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts",
+                "apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts",
                 """
                 export interface AccountStats {
                   id: string;
@@ -60,7 +60,7 @@ class FrontendFieldAuditTest(unittest.TestCase):
             root = Path(tmp)
             self.write_file(
                 root,
-                "apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts",
+                "apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts",
                 """
                 export interface DemoModel {
                   id: string;
@@ -73,7 +73,7 @@ class FrontendFieldAuditTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "frontend model interface missing from contract: apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts#DemoModel",
+                "frontend model interface missing from contract: apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts#DemoModel",
                 result.messages,
             )
 
@@ -82,7 +82,7 @@ class FrontendFieldAuditTest(unittest.TestCase):
             root = Path(tmp)
             self.write_file(
                 root,
-                "apps/sdkwork-claw-router-portal/packages/demo/node_modules/ajv/lib/types.ts",
+                "apps/sdkwork-clawrouter-pc/packages/demo/node_modules/ajv/lib/types.ts",
                 """
                 export interface SchemaObjectMap {
                   id: string;
@@ -98,7 +98,7 @@ class FrontendFieldAuditTest(unittest.TestCase):
     def test_skips_broken_paths_when_recursive_scan_encounters_vanished_node_modules(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
-            portal = root / "apps" / "sdkwork-claw-router-portal" / "packages"
+            portal = root / "apps" / "sdkwork-clawrouter-pc" / "packages"
             portal.mkdir(parents=True)
             self.write_contract(root, "routes: []\nfrontend_models: []")
 
@@ -112,7 +112,7 @@ class FrontendFieldAuditTest(unittest.TestCase):
             root = Path(tmp)
             self.write_file(
                 root,
-                "apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts",
+                "apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts",
                 """
                 export interface DemoModel {
                   id: string;
@@ -124,7 +124,7 @@ class FrontendFieldAuditTest(unittest.TestCase):
                 """
                 frontend_models:
                   - route: /demo
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts
                     interface: DemoModel
                     fields: [id]
                     data_sources: [demo_table]
@@ -144,7 +144,7 @@ class FrontendFieldAuditTest(unittest.TestCase):
             root = Path(tmp)
             self.write_file(
                 root,
-                "apps/sdkwork-claw-router-portal/packages/demo/src/runtimeModelCatalog.ts",
+                "apps/sdkwork-clawrouter-pc/packages/demo/src/runtimeModelCatalog.ts",
                 """
                 export interface RuntimeModel {
                   id: string;
@@ -159,7 +159,7 @@ class FrontendFieldAuditTest(unittest.TestCase):
                 """
                 frontend_models:
                   - route: /models
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/runtimeModelCatalog.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/runtimeModelCatalog.ts
                     interface: RuntimeModel
                     fields: [id, priceAvailability, priceAvailability.status]
                     data_sources: [ai_model]
@@ -181,7 +181,7 @@ class FrontendFieldAuditTest(unittest.TestCase):
             root = Path(tmp)
             self.write_file(
                 root,
-                "apps/sdkwork-claw-router-portal/packages/demo/src/courseCatalog.ts",
+                "apps/sdkwork-clawrouter-pc/packages/demo/src/courseCatalog.ts",
                 """
                 export type CourseInstructor = {
                   name: string;
@@ -203,7 +203,7 @@ class FrontendFieldAuditTest(unittest.TestCase):
                 """
                 frontend_models:
                   - route: /courses
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/courseCatalog.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/courseCatalog.ts
                     interface: Course
                     fields: [id, instructor, instructor.name, instructor.avatar]
                     data_sources: [content_course]
@@ -231,7 +231,7 @@ class FrontendFieldAuditTest(unittest.TestCase):
             root = Path(tmp)
             self.write_file(
                 root,
-                "apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts",
+                "apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts",
                 """
                 import type { SdkworkCommerceDemoModel } from '@sdkwork/commerce-service';
 
@@ -243,7 +243,7 @@ class FrontendFieldAuditTest(unittest.TestCase):
                 """
                 frontend_models:
                   - route: /demo
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts
                     interface: DemoModel
                     fields: [id, name]
                     data_sources: [demo_table]
@@ -267,7 +267,7 @@ class FrontendFieldAuditTest(unittest.TestCase):
             root = Path(tmp)
             self.write_file(
                 root,
-                "apps/sdkwork-claw-router-portal/packages/demo/src/settingsService.ts",
+                "apps/sdkwork-clawrouter-pc/packages/demo/src/settingsService.ts",
                 """
                 interface DemoNotifications {
                   billReminder: boolean;
@@ -285,7 +285,7 @@ class FrontendFieldAuditTest(unittest.TestCase):
                 """
                 frontend_models:
                   - route: /settings
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/settingsService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/settingsService.ts
                     interface: DemoSettings
                     fields: [language, notifications, notifications.billReminder, notifications.quotaWarning]
                     data_sources: [iam_user_preference]
@@ -311,7 +311,7 @@ class FrontendFieldAuditTest(unittest.TestCase):
             root = Path(tmp)
             self.write_file(
                 root,
-                "apps/sdkwork-claw-router-portal/packages/demo/src/modelCatalog.ts",
+                "apps/sdkwork-clawrouter-pc/packages/demo/src/modelCatalog.ts",
                 """
                 export interface ModelCatalogFilters {
                   searchQuery: string;
@@ -329,7 +329,7 @@ class FrontendFieldAuditTest(unittest.TestCase):
             root = Path(tmp)
             self.write_file(
                 root,
-                "apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts",
+                "apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts",
                 """
                 export interface DemoModel {
                   id: string;
@@ -343,7 +343,7 @@ class FrontendFieldAuditTest(unittest.TestCase):
                 routes: []
                 frontend_models:
                   - route: /demo
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts
                     interface: DemoModel
                     fields: [id]
                 """,
@@ -353,7 +353,7 @@ class FrontendFieldAuditTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "frontend model fields mismatch for apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts#DemoModel: missing fields [name]",
+                "frontend model fields mismatch for apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts#DemoModel: missing fields [name]",
                 result.messages,
             )
 
@@ -362,7 +362,7 @@ class FrontendFieldAuditTest(unittest.TestCase):
             root = Path(tmp)
             self.write_file(
                 root,
-                "apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts",
+                "apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts",
                 """
                 export interface DemoModel {
                   id: string;
@@ -375,7 +375,7 @@ class FrontendFieldAuditTest(unittest.TestCase):
                 """
                 frontend_models:
                   - route: /demo
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts
                     interface: DemoModel
                     fields: [id]
                     derived_fields: [displayName]
@@ -395,7 +395,7 @@ class FrontendFieldAuditTest(unittest.TestCase):
             root = Path(tmp)
             self.write_file(
                 root,
-                "apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts",
+                "apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts",
                 """
                 export interface DemoModel {
                   id: string;
@@ -407,7 +407,7 @@ class FrontendFieldAuditTest(unittest.TestCase):
                 """
                 frontend_models:
                   - route: /demo
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts
                     interface: DemoModel
                     fields: [id]
                 routes:
@@ -420,7 +420,7 @@ class FrontendFieldAuditTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "frontend model apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts#DemoModel must declare non-empty data_sources",
+                "frontend model apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts#DemoModel must declare non-empty data_sources",
                 result.messages,
             )
 
@@ -429,7 +429,7 @@ class FrontendFieldAuditTest(unittest.TestCase):
             root = Path(tmp)
             self.write_file(
                 root,
-                "apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts",
+                "apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts",
                 """
                 interface MediaResource {
                   kind: string;
@@ -448,7 +448,7 @@ class FrontendFieldAuditTest(unittest.TestCase):
                 """
                 frontend_models:
                   - route: /demo
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts
                     interface: CourseApplicationVideoUploadResult
                     fields: [video, video.kind, video.source, video.uri, fileName]
                     data_sources: []
@@ -470,7 +470,7 @@ class FrontendFieldAuditTest(unittest.TestCase):
             root = Path(tmp)
             self.write_file(
                 root,
-                "apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts",
+                "apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts",
                 """
                 interface MediaResource {
                   kind: string;
@@ -488,7 +488,7 @@ class FrontendFieldAuditTest(unittest.TestCase):
                 """
                 frontend_models:
                   - route: /demo
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts
                     interface: CourseApplicationVideoUploadResult
                     fields: [video, video.kind, video.source, video.uri]
                     data_sources: []
@@ -502,7 +502,7 @@ class FrontendFieldAuditTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "frontend model apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts#CourseApplicationVideoUploadResult must declare non-empty data_sources or file_targets",
+                "frontend model apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts#CourseApplicationVideoUploadResult must declare non-empty data_sources or file_targets",
                 result.messages,
             )
 
@@ -511,7 +511,7 @@ class FrontendFieldAuditTest(unittest.TestCase):
             root = Path(tmp)
             self.write_file(
                 root,
-                "apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts",
+                "apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts",
                 """
                 export interface DemoModel {
                   id: string;
@@ -523,7 +523,7 @@ class FrontendFieldAuditTest(unittest.TestCase):
                 """
                 frontend_models:
                   - route: /demo
-                    source: apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts
                     interface: DemoModel
                     fields: [id]
                     data_sources: [missing_table]
@@ -537,7 +537,7 @@ class FrontendFieldAuditTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "frontend model apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts#DemoModel data_source missing_table is not declared in route /demo required_tables",
+                "frontend model apps/sdkwork-clawrouter-pc/packages/demo/src/demoService.ts#DemoModel data_source missing_table is not declared in route /demo required_tables",
                 result.messages,
             )
 

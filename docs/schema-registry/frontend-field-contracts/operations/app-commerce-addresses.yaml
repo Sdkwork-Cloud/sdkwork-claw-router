@@ -1,7 +1,7 @@
 fragment: operations/app-commerce-addresses
 frontend_operations:
 - route: /console/checkout
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-checkout/src/checkoutService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-checkout/src/checkoutService.ts
   operation: appAddressesList
   operation_id: addresses.list
   kind: read
@@ -77,7 +77,7 @@ frontend_operations:
         minimum: 1
         maximum: 200
 - route: /console/checkout
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-checkout/src/checkoutService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-checkout/src/checkoutService.ts
   operation: appAddressesCreate
   operation_id: addresses.create
   kind: create
@@ -140,7 +140,7 @@ frontend_operations:
       qrCode:
         $ref: '#/components/schemas/MediaResource'
 - route: /console/checkout
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-checkout/src/checkoutService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-checkout/src/checkoutService.ts
   operation: appAddressesUpdate
   operation_id: addresses.update
   kind: update
@@ -159,7 +159,7 @@ frontend_operations:
   request_schema: *id001
   response_schema: *id002
 - route: /console/checkout
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-checkout/src/checkoutService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-checkout/src/checkoutService.ts
   operation: appAddressesDelete
   operation_id: addresses.delete
   kind: delete
@@ -177,7 +177,7 @@ frontend_operations:
   - ops_audit_log
   response_schema: *id002
 - route: /console/checkout
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-checkout/src/checkoutService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-checkout/src/checkoutService.ts
   operation: appAddressesDefaultSelectionCreate
   operation_id: addresses.defaultSelection.create
   kind: create

@@ -81,14 +81,14 @@ RUNTIME_MODEL_IDENTITY_FIXTURE_PATHS = (
     ROOT / "services" / "sdkwork-claw-gateway" / "src" / "route_scoped_openai_passthrough.rs",
 )
 PORTAL_RUNTIME_MODEL_IDENTITY_FIXTURE_PATHS = (
-    ROOT / "apps" / "sdkwork-claw-router-portal" / "admin-channel-runtime.test.ts",
-    ROOT / "apps" / "sdkwork-claw-router-portal" / "admin-group-runtime.test.ts",
-    ROOT / "apps" / "sdkwork-claw-router-portal" / "admin-operations-runtime.test.ts",
-    ROOT / "apps" / "sdkwork-claw-router-portal" / "models-runtime.test.ts",
-    ROOT / "apps" / "sdkwork-claw-router-portal" / "playground-chat-runtime.test.ts",
-    ROOT / "apps" / "sdkwork-claw-router-portal" / "rankings-runtime.test.ts",
-    ROOT / "apps" / "sdkwork-claw-router-portal" / "admin-model-runtime.test.ts",
-    ROOT / "apps" / "sdkwork-claw-router-portal" / "console-app-runtime.test.ts",
+    ROOT / "apps" / "sdkwork-clawrouter-pc" / "admin-channel-runtime.test.ts",
+    ROOT / "apps" / "sdkwork-clawrouter-pc" / "admin-group-runtime.test.ts",
+    ROOT / "apps" / "sdkwork-clawrouter-pc" / "admin-operations-runtime.test.ts",
+    ROOT / "apps" / "sdkwork-clawrouter-pc" / "models-runtime.test.ts",
+    ROOT / "apps" / "sdkwork-clawrouter-pc" / "playground-chat-runtime.test.ts",
+    ROOT / "apps" / "sdkwork-clawrouter-pc" / "rankings-runtime.test.ts",
+    ROOT / "apps" / "sdkwork-clawrouter-pc" / "admin-model-runtime.test.ts",
+    ROOT / "apps" / "sdkwork-clawrouter-pc" / "console-app-runtime.test.ts",
 )
 API_GATEWAY_MODEL_IDENTITY_FIXTURE_PATHS = (
     ROOT / "services" / "sdkwork-claw-admin-api" / "tests" / "database_config_router.rs",
@@ -1596,16 +1596,16 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
         parser_sources = [
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-admin-channel"
+            / "sdkwork-clawrouter-pc-admin-channel"
             / "src"
             / "channelService.ts",
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-models"
+            / "sdkwork-clawrouter-pc-models"
             / "src"
             / "runtimeModelCatalog.ts",
         ]
@@ -1625,15 +1625,15 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
                 self.assertRegex(
                     source,
                     r"parseModelCatalogIdentity|isCanonicalModelCatalogKey|isRegionalModelCatalogKey",
-                    "Portal catalog-key handling must reuse sdkwork-claw-router-commons model catalog identity helpers.",
+                    "Portal catalog-key handling must reuse sdkwork-clawrouter-pc-commons model catalog identity helpers.",
                 )
 
         commons_source = read_text(
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-commons"
+            / "sdkwork-clawrouter-pc-commons"
             / "src"
             / "model-catalog-identity.ts"
         )
@@ -1681,9 +1681,9 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
         runtime_catalog_source = read_text(
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-models"
+            / "sdkwork-clawrouter-pc-models"
             / "src"
             / "runtimeModelCatalog.ts"
         )
@@ -1700,7 +1700,7 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
         app_models_operation = next(
             operation
             for operation in contract["frontend_operations"]
-            if operation.get("source") == "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-models/src/modelService.ts"
+            if operation.get("source") == "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-models/src/modelService.ts"
             and operation.get("operation") == "fetchModels"
         )
         item_schema = app_models_operation["response_schema"]["properties"]["items"]["items"]
@@ -1788,8 +1788,8 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
             "postgres_admin": read_text(ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "postgres" / "admin_record_store.rs"),
             "sqlite_usage": read_text(ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "sqlite" / "usage_logs_read_store.rs"),
             "postgres_usage": read_text(ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "postgres" / "usage_logs_read_store.rs"),
-            "admin_service": read_text(ROOT / "apps" / "sdkwork-claw-router-portal" / "packages" / "sdkwork-claw-router-admin-record" / "src" / "recordService.ts"),
-            "usage_service": read_text(ROOT / "apps" / "sdkwork-claw-router-portal" / "packages" / "sdkwork-claw-router-console-usage" / "src" / "usageService.ts"),
+            "admin_service": read_text(ROOT / "apps" / "sdkwork-clawrouter-pc" / "packages" / "sdkwork-clawrouter-pc-admin-record" / "src" / "recordService.ts"),
+            "usage_service": read_text(ROOT / "apps" / "sdkwork-clawrouter-pc" / "packages" / "sdkwork-clawrouter-pc-console-usage" / "src" / "usageService.ts"),
         }
 
         for contract in (admin_record_contract, console_usage_contract):

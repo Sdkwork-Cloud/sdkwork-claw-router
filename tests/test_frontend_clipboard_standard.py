@@ -4,16 +4,16 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-FRONTEND_ROOT = ROOT / "apps" / "sdkwork-claw-router-portal" / "packages"
+FRONTEND_ROOT = ROOT / "apps" / "sdkwork-clawrouter-pc" / "packages"
 APPROVED_CLIPBOARD_UTILITY = (
     FRONTEND_ROOT
-    / "sdkwork-claw-router-commons"
+    / "sdkwork-clawrouter-pc-commons"
     / "src"
     / "clipboard.ts"
 )
 COPY_BUTTON_COMPONENT = (
     FRONTEND_ROOT
-    / "sdkwork-claw-router-commons"
+    / "sdkwork-clawrouter-pc-commons"
     / "src"
     / "components"
     / "CopyButton.tsx"
@@ -40,7 +40,7 @@ class FrontendClipboardStandardTest(unittest.TestCase):
         self.assertEqual(
             [],
             offenders,
-            "Copy actions must use sdkwork-claw-router-commons copyTextToClipboard so permission failures and unsupported browsers are handled consistently.",
+            "Copy actions must use sdkwork-clawrouter-pc-commons copyTextToClipboard so permission failures and unsupported browsers are handled consistently.",
         )
 
     def test_shared_clipboard_utility_returns_structured_result_without_throwing(self) -> None:
@@ -72,16 +72,16 @@ class FrontendClipboardStandardTest(unittest.TestCase):
 
     def test_high_value_copy_interactions_use_shared_copy_button(self) -> None:
         migrated_files = [
-            FRONTEND_ROOT / "sdkwork-claw-router-admin-marketing" / "src" / "index.tsx",
-            FRONTEND_ROOT / "sdkwork-claw-router-admin-user" / "src" / "index.tsx",
-            FRONTEND_ROOT / "sdkwork-claw-router-console-account" / "src" / "AccountView.tsx",
-            FRONTEND_ROOT / "sdkwork-claw-router-console-api-keys" / "src" / "ApiKeysView.tsx",
-            FRONTEND_ROOT / "sdkwork-claw-router-models" / "src" / "pages" / "ModelDetails.tsx",
-            FRONTEND_ROOT / "sdkwork-claw-router-api-reference" / "src" / "components" / "ApiEndpointView.tsx",
-            FRONTEND_ROOT / "sdkwork-claw-router-api-reference" / "src" / "components" / "ApiPlayground.tsx",
-            FRONTEND_ROOT / "sdkwork-claw-router-sdk-reference" / "src" / "components" / "SdkEndpointView.tsx",
-            FRONTEND_ROOT / "sdkwork-claw-router-sdk-reference" / "src" / "pages" / "SdkReference.tsx",
-            FRONTEND_ROOT / "sdkwork-claw-router-skills-hub" / "src" / "pages" / "SkillDetails.tsx",
+            FRONTEND_ROOT / "sdkwork-clawrouter-pc-admin-marketing" / "src" / "index.tsx",
+            FRONTEND_ROOT / "sdkwork-clawrouter-pc-admin-user" / "src" / "index.tsx",
+            FRONTEND_ROOT / "sdkwork-clawrouter-pc-console-account" / "src" / "AccountView.tsx",
+            FRONTEND_ROOT / "sdkwork-clawrouter-pc-console-api-keys" / "src" / "ApiKeysView.tsx",
+            FRONTEND_ROOT / "sdkwork-clawrouter-pc-models" / "src" / "pages" / "ModelDetails.tsx",
+            FRONTEND_ROOT / "sdkwork-clawrouter-pc-api-reference" / "src" / "components" / "ApiEndpointView.tsx",
+            FRONTEND_ROOT / "sdkwork-clawrouter-pc-api-reference" / "src" / "components" / "ApiPlayground.tsx",
+            FRONTEND_ROOT / "sdkwork-clawrouter-pc-sdk-reference" / "src" / "components" / "SdkEndpointView.tsx",
+            FRONTEND_ROOT / "sdkwork-clawrouter-pc-sdk-reference" / "src" / "pages" / "SdkReference.tsx",
+            FRONTEND_ROOT / "sdkwork-clawrouter-pc-skills-hub" / "src" / "pages" / "SkillDetails.tsx",
         ]
         offenders: list[str] = []
 

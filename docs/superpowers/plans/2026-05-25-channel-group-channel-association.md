@@ -69,16 +69,16 @@
 ### Task 5: Portal UI
 
 **Files:**
-- Modify: `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts`
-- Modify: `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/index.tsx`
-- Modify/add i18n resources under `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-i18n/src/resources/admin/`
-- Test: `apps/sdkwork-claw-router-portal/admin-app-runtime.test.ts` or focused admin group runtime test
+- Modify: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-group/src/groupService.ts`
+- Modify: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-group/src/index.tsx`
+- Modify/add i18n resources under `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-i18n/src/resources/admin/`
+- Test: `apps/sdkwork-clawrouter-pc/admin-app-runtime.test.ts` or focused admin group runtime test
 
 - [ ] Write failing portal runtime/type test proving group service uses backend SDK methods for bindings.
 - [ ] Add service methods for list/replace bindings.
 - [ ] Add a group row action opening a focused channel association dialog.
 - [ ] Reuse channel display data without showing `secretRef`.
-- [ ] Re-run portal runtime test and `pnpm.cmd --dir apps/sdkwork-claw-router-portal typecheck`.
+- [ ] Re-run portal runtime test and `pnpm.cmd --dir apps/sdkwork-clawrouter-pc typecheck`.
 
 ### Task 6: Verification
 

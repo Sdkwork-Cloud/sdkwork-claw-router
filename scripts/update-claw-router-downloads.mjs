@@ -18,9 +18,9 @@ const DOWNLOAD_CATALOG_SCHEMA_VERSION = '2026-05-18.sdkwork-download-catalog.v1'
 const DEFAULT_DOWNLOAD_CATALOG_PATH = path.join(
   workspaceRoot,
   'apps',
-  'sdkwork-claw-router-portal',
+  'sdkwork-clawrouter-pc',
   'packages',
-  'sdkwork-claw-router-home',
+  'sdkwork-clawrouter-pc-home',
   'src',
   'downloads',
   'claw-router-downloads.json',

@@ -1,7 +1,7 @@
 fragment: operations/backend-mcp
 frontend_operations:
 - route: /admin/mcp
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-mcp/src/mcpService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-mcp/src/mcpService.ts
   operation: listMcpServers
   operation_id: servers.list
   kind: read
@@ -71,7 +71,7 @@ frontend_operations:
             createdAt: { type: string, minLength: 1, maxLength: 64 }
             updatedAt: { type: string, minLength: 1, maxLength: 64 }
 - route: /admin/mcp
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-mcp/src/mcpService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-mcp/src/mcpService.ts
   operation: getMcpServer
   operation_id: servers.retrieve
   kind: read
@@ -93,7 +93,7 @@ frontend_operations:
     properties:
       item: *adminMcpServerItem
 - route: /admin/mcp
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-mcp/src/mcpService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-mcp/src/mcpService.ts
   operation: createMcpServer
   operation_id: servers.create
   kind: create
@@ -131,7 +131,7 @@ frontend_operations:
     schema:
       $ref: "#/components/schemas/AdminMcpServerMutationResponse"
 - route: /admin/mcp
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-mcp/src/mcpService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-mcp/src/mcpService.ts
   operation: updateMcpServer
   operation_id: servers.update
   kind: update
@@ -168,7 +168,7 @@ frontend_operations:
     schema:
       $ref: "#/components/schemas/AdminMcpServerMutationResponse"
 - route: /admin/mcp
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-mcp/src/mcpService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-mcp/src/mcpService.ts
   operation: listMcpServerRevisions
   operation_id: servers.revisions.list
   kind: read
@@ -225,7 +225,7 @@ frontend_operations:
             createdAt: { type: string, minLength: 1, maxLength: 64 }
             updatedAt: { type: string, minLength: 1, maxLength: 64 }
 - route: /admin/mcp
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-mcp/src/mcpService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-mcp/src/mcpService.ts
   operation: createMcpServerRevision
   operation_id: servers.revisions.create
   kind: create
@@ -267,7 +267,7 @@ frontend_operations:
     properties:
       item: *adminMcpServerRevisionItem
 - route: /admin/mcp
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-mcp/src/mcpService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-mcp/src/mcpService.ts
   operation: publishMcpServerRevision
   operation_id: revisions.publish
   kind: action
@@ -290,7 +290,7 @@ frontend_operations:
     schema:
       $ref: "#/components/schemas/AdminMcpServerRevisionMutationResponse"
 - route: /admin/mcp
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-mcp/src/mcpService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-mcp/src/mcpService.ts
   operation: discoverMcpTools
   operation_id: servers.tools.refresh
   kind: action
@@ -349,7 +349,7 @@ frontend_operations:
             updatedAt: { type: string, minLength: 1, maxLength: 64 }
       checkedAt: { type: string, minLength: 1, maxLength: 64 }
 - route: /admin/mcp
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-mcp/src/mcpService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-mcp/src/mcpService.ts
   operation: checkMcpServerHealth
   operation_id: servers.healthChecks.create
   kind: action
@@ -379,7 +379,7 @@ frontend_operations:
       latencyMs: { type: integer, nullable: true, format: int64 }
       errorMasked: { type: string, nullable: true, maxLength: 1024 }
 - route: /admin/mcp
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-mcp/src/mcpService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-mcp/src/mcpService.ts
   operation: listMcpTools
   operation_id: servers.tools.list
   kind: read
@@ -405,7 +405,7 @@ frontend_operations:
         maxItems: 200
         items: *adminMcpToolItem
 - route: /admin/mcp
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-mcp/src/mcpService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-mcp/src/mcpService.ts
   operation: updateMcpTool
   operation_id: tools.update
   kind: update
@@ -444,7 +444,7 @@ frontend_operations:
     properties:
       item: *adminMcpToolItem
 - route: /admin/mcp
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-mcp/src/mcpService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-mcp/src/mcpService.ts
   operation: listMcpBindings
   operation_id: servers.bindings.list
   kind: read
@@ -494,7 +494,7 @@ frontend_operations:
             createdAt: { type: string, minLength: 1, maxLength: 64 }
             updatedAt: { type: string, minLength: 1, maxLength: 64 }
 - route: /admin/mcp
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-mcp/src/mcpService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-mcp/src/mcpService.ts
   operation: createMcpBinding
   operation_id: servers.bindings.create
   kind: create
@@ -537,7 +537,7 @@ frontend_operations:
     properties:
       item: *adminMcpBindingItem
 - route: /admin/mcp
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-mcp/src/mcpService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-mcp/src/mcpService.ts
   operation: updateMcpBinding
   operation_id: servers.bindings.update
   kind: update

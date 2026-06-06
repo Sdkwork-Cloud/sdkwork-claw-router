@@ -1,4 +1,4 @@
-﻿# Admin Model Mapping Implementation Plan
+# Admin Model Mapping Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
@@ -13,7 +13,7 @@
 ### Task 1: Contract Tests
 
 - [ ] Add `tests/test_admin_model_mapping_runtime_standard.py` assertions for rule, item, and binding tables.
-- [ ] Add `apps/sdkwork-claw-router-portal/admin-model-mapping-runtime.test.ts` assertions for rule list, associated content, multi-item mapping rows, and edit semantics.
+- [ ] Add `apps/sdkwork-clawrouter-pc/admin-model-mapping-runtime.test.ts` assertions for rule list, associated content, multi-item mapping rows, and edit semantics.
 - [ ] Run both tests and confirm RED.
 
 ### Task 2: Schema And API Contract

@@ -1,7 +1,7 @@
 fragment: operations/backend-agents
 frontend_operations:
 - route: /admin/agents
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-agents/src/agentService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-agents/src/agentService.ts
   operation: listAgents
   operation_id: agentDefinitions.list
   kind: read
@@ -198,7 +198,7 @@ frontend_operations:
                   format: int64
                   minimum: 0
 - route: /admin/agents
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-agents/src/agentService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-agents/src/agentService.ts
   operation: retrieveAgent
   operation_id: agentDefinitions.retrieve
   kind: read

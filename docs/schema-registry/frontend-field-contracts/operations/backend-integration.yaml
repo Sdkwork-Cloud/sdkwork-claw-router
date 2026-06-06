@@ -1,7 +1,7 @@
 fragment: operations/backend-integration
 frontend_operations:
 - route: /admin/channel
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts
   operation: fetchChannels
   kind: read
   api_surface: backend
@@ -252,7 +252,7 @@ frontend_operations:
               format: int64
               minimum: 0
 - route: /admin/group
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-group/src/groupService.ts
   operation: fetchAssignableChannels
   kind: read
   api_surface: backend
@@ -278,7 +278,7 @@ frontend_operations:
           type: object
           additionalProperties: true
 - route: /admin/channel
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts
   operation: addChannel
   kind: create
   api_surface: backend
@@ -471,7 +471,7 @@ frontend_operations:
         properties: *id003
         description: Persisted channel snapshot returned by the backend.
 - route: /admin/channel
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts
   operation: updateChannel
   kind: update
   api_surface: backend
@@ -671,7 +671,7 @@ frontend_operations:
         properties: *id003
         description: Persisted channel snapshot returned by the backend.
 - route: /admin/channel
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts
   operation: deleteChannel
   kind: delete
   api_surface: backend
@@ -696,7 +696,7 @@ frontend_operations:
       deleted:
         type: boolean
 - route: /admin/channel
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts
   operation: testChannel
   kind: action
   api_surface: backend
@@ -743,7 +743,7 @@ frontend_operations:
         properties: *id003
         description: Persisted channel snapshot returned after the provider health probe. Admin management responses may return the stored plaintext provider API key for channel credential relay operations.
 - route: /admin/channel
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts
   operation: fetchProviderSecrets
   kind: read
   api_surface: backend
@@ -828,7 +828,7 @@ frontend_operations:
               minLength: 1
               maxLength: 64
 - route: /admin/channel
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts
   operation: addProviderSecret
   kind: create
   api_surface: backend
@@ -883,7 +883,7 @@ frontend_operations:
         properties: *id007
         description: Persisted provider secret account snapshot returned by the backend.
 - route: /admin/channel
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts
   operation: updateProviderSecret
   kind: update
   api_surface: backend
@@ -940,7 +940,7 @@ frontend_operations:
         properties: *id007
         description: Persisted provider secret account snapshot returned by the backend.
 - route: /admin/channel
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts
   operation: deleteProviderSecret
   kind: delete
   api_surface: backend

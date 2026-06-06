@@ -71,7 +71,7 @@ class FrontendContractGuardian:
     IMPORT_PATTERN = re.compile(r'^\s*import\s+(?:[^"\']+\s+from\s+)?["\']([^"\']+)["\']', re.MULTILINE)
     COMMONS_ROOT_NAMED_IMPORT_PATTERN = re.compile(
         r"^\s*import\s+(?:type\s+)?(?:[^{}\n]+,\s*)?\{(?P<imports>[\s\S]*?)\}\s+from\s+"
-        r"['\"]sdkwork-claw-router-commons['\"]",
+        r"['\"]sdkwork-clawrouter-pc-commons['\"]",
         re.MULTILINE,
     )
     EXPORT_ALL_PATTERN = re.compile(r"^\s*export\s+\*\s+from\s+['\"](?P<module>[^'\"]+)['\"]", re.MULTILINE)
@@ -94,7 +94,7 @@ class FrontendContractGuardian:
     BROWSER_FETCH_CALL_PATTERN = re.compile(r"\bfetch\s*\(\s*([^,\)\n]+)")
     NODE_ONLY_BROWSER_PACKAGES = frozenset({"sdkwork-code-generator"})
     ROUTE_PACKAGE_PREFIX = "sdkwork-claw-router-"
-    STATIC_ROUTE_IMPORT_ALLOWLIST = frozenset({"sdkwork-claw-router-commons"})
+    STATIC_ROUTE_IMPORT_ALLOWLIST = frozenset({"sdkwork-clawrouter-pc-commons"})
     BROWSER_SOURCE_EXTENSIONS = frozenset({".ts", ".tsx", ".js", ".jsx"})
     BROWSER_SOURCE_EXCLUDED_DIRECTORIES = frozenset(
         {
@@ -119,42 +119,42 @@ class FrontendContractGuardian:
         "portal build script must build only Vite portal artifacts and must not build a Node server"
     )
     BUSINESS_API_PREFIX_BOUNDARY_MESSAGE = (
-        "portal business API prefixes must be isolated to sdkwork-claw-router-commons SDK boundary files"
+        "portal business API prefixes must be isolated to sdkwork-clawrouter-pc-commons SDK boundary files"
     )
     BUSINESS_RAW_HTTP_MESSAGE = (
         "portal remote business calls must go through service -> generated SDK clients, not raw fetch/axios/XMLHttpRequest"
     )
     GENERATED_SDK_VALUE_IMPORT_BOUNDARY_MESSAGE = (
-        "portal packages must value-import generated SDK clients only from sdkwork-claw-router-commons SDK boundary files"
+        "portal packages must value-import generated SDK clients only from sdkwork-clawrouter-pc-commons SDK boundary files"
     )
     GENERATED_SDK_CLIENT_CONSTRUCTION_BOUNDARY_MESSAGE = (
-        "portal packages must construct generated SDK clients only in sdkwork-claw-router-commons SDK boundary files"
+        "portal packages must construct generated SDK clients only in sdkwork-clawrouter-pc-commons SDK boundary files"
     )
     GENERATED_SDK_CLIENT_BOUNDARY_MESSAGE = (
-        "sdkwork-claw-router-commons/src/sdk-clients.ts must construct generated app, backend, and AI SDK clients"
+        "sdkwork-clawrouter-pc-commons/src/sdk-clients.ts must construct generated app, backend, and AI SDK clients"
     )
     GENERATED_SDK_CLIENT_OPTIONS_BOUNDARY_MESSAGE = (
-        "sdkwork-claw-router-commons/src/sdk-clients.ts must expose separate app/backend/AI SDK option types "
+        "sdkwork-clawrouter-pc-commons/src/sdk-clients.ts must expose separate app/backend/AI SDK option types "
         "without manual header/baseUrl escape hatches"
     )
     COMMONS_RUNTIME_IMPORT_BOUNDARY_MESSAGE = (
         "portal business service files must import runtime helpers from "
-        "sdkwork-claw-router-commons/runtime instead of the commons UI root"
+        "sdkwork-clawrouter-pc-commons/runtime instead of the commons UI root"
     )
     COMMONS_UI_ROOT_RUNTIME_IMPORT_BOUNDARY_MESSAGE = (
         "portal browser source must import runtime helpers from "
-        "sdkwork-claw-router-commons/runtime instead of the commons UI root"
+        "sdkwork-clawrouter-pc-commons/runtime instead of the commons UI root"
     )
     COMMONS_UI_ROOT_RUNTIME_EXPORT_BOUNDARY_MESSAGE = (
-        "sdkwork-claw-router-commons root must not re-export runtime modules; use "
-        "sdkwork-claw-router-commons/runtime for runtime helpers"
+        "sdkwork-clawrouter-pc-commons root must not re-export runtime modules; use "
+        "sdkwork-clawrouter-pc-commons/runtime for runtime helpers"
     )
     GENERATED_SDK_RESULT_DATA_BOUNDARY_MESSAGE = (
         "portal business service files must read generated SDK results through "
-        "sdkwork-claw-router-commons/runtime helpers instead of result.data"
+        "sdkwork-clawrouter-pc-commons/runtime helpers instead of result.data"
     )
     ADMIN_SESSION_TOKEN_BOUNDARY_MESSAGE = (
-        "portal admin services must let sdkwork-claw-router-commons/src/sdk-clients.ts inject session tokens"
+        "portal admin services must let sdkwork-clawrouter-pc-commons/src/sdk-clients.ts inject session tokens"
     )
     RUNTIME_API_BASE_URL_BOUNDARY_MESSAGE = (
         "portal runtime API base URL defaults must stay same-origin and must not fall back to external domains"
@@ -184,15 +184,15 @@ class FrontendContractGuardian:
     )
     BUSINESS_API_PREFIXES = ("/app/v3/api", "/backend/v3/api")
     SDK_CLIENT_BOUNDARY_FILE = (
-        "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/sdk-clients.ts"
+        "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts"
     )
     SDK_CLIENT_BOUNDARY_FILES = frozenset(
         {
-            "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/sdk-clients.ts",
-            "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/runtime.ts",
+            "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts",
+            "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/runtime.ts",
         }
     )
-    COMMONS_UI_ROOT_FILE = "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/index.ts"
+    COMMONS_UI_ROOT_FILE = "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/index.ts"
     COMMONS_RUNTIME_ONLY_SYMBOLS = frozenset(
         {
             "API_BASE_URL",
@@ -267,12 +267,12 @@ class FrontendContractGuardian:
     )
     RAW_BROWSER_NETWORK_ALLOWLIST = frozenset(
         {
-            "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-api-reference/src/pages/ApiReference.tsx",
-            "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-api-reference/src/apiReferenceSchemaTabs.ts",
-            "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-api-reference/src/components/ApiPlayground.tsx",
-            "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-api-reference/src/codeSnippetClient.ts",
-            "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-core/src/index.ts",
-            "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-sdk-reference/src/pages/SdkReference.tsx",
+            "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/pages/ApiReference.tsx",
+            "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/apiReferenceSchemaTabs.ts",
+            "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/components/ApiPlayground.tsx",
+            "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/codeSnippetClient.ts",
+            "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-core/src/index.ts",
+            "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-sdk-reference/src/pages/SdkReference.tsx",
         }
     )
     FORBIDDEN_PORTAL_SERVER_FILES = (
@@ -352,7 +352,7 @@ class FrontendContractGuardian:
         self.app_path = (
             Path(app_path).resolve()
             if app_path is not None
-            else self.root / "apps" / "sdkwork-claw-router-portal" / "src" / "App.tsx"
+            else self.root / "apps" / "sdkwork-clawrouter-pc" / "src" / "App.tsx"
         )
         self.manifest_path = (
             Path(manifest_path).resolve()
@@ -375,7 +375,7 @@ class FrontendContractGuardian:
             else self.root / "generated" / "schema" / "frontend" / "frontend-static-source-manifest.json"
         )
         self.require_route_classification = require_route_classification
-        self.portal_root = self.root / "apps" / "sdkwork-claw-router-portal"
+        self.portal_root = self.root / "apps" / "sdkwork-clawrouter-pc"
         self.vite_config_path = self.portal_root / "vite.config.ts"
         self.portal_package_path = self.portal_root / "package.json"
 
@@ -613,7 +613,7 @@ class FrontendContractGuardian:
         return [item for item in value if isinstance(item, str)]
 
     def _check_browser_dependency_boundaries(self) -> list[str]:
-        portal_root = self.root / "apps" / "sdkwork-claw-router-portal"
+        portal_root = self.root / "apps" / "sdkwork-clawrouter-pc"
         if not portal_root.exists():
             return []
 
@@ -803,7 +803,7 @@ class FrontendContractGuardian:
         return vite_command.startswith("vite ") and "--configLoader native" in vite_command
 
     def _check_runtime_api_base_url_boundary(self) -> list[str]:
-        env_path = self.portal_root / "packages" / "sdkwork-claw-router-commons" / "src" / "utils" / "env.ts"
+        env_path = self.portal_root / "packages" / "sdkwork-clawrouter-pc-commons" / "src" / "utils" / "env.ts"
         sdk_clients_path = self.root / self.SDK_CLIENT_BOUNDARY_FILE
         env_source = self._safe_read_text(env_path) or ""
         sdk_clients_source = self._safe_read_text(sdk_clients_path) or ""
@@ -836,7 +836,7 @@ class FrontendContractGuardian:
                 )
 
             if service_name_pattern.search(relative) and re.search(
-                r"from\s+['\"]sdkwork-claw-router-commons['\"]",
+                r"from\s+['\"]sdkwork-clawrouter-pc-commons['\"]",
                 source,
             ):
                 messages.append(f"{self.COMMONS_RUNTIME_IMPORT_BOUNDARY_MESSAGE}: {relative}")
@@ -922,7 +922,7 @@ class FrontendContractGuardian:
 
     def _contains_manual_admin_session_token_usage(self, relative: str, source: str) -> bool:
         return (
-            "/packages/sdkwork-claw-router-admin-" in f"/{relative}"
+            "/packages/sdkwork-clawrouter-pc-admin-" in f"/{relative}"
             and "getStoredAppSessionToken" in source
         )
 
@@ -1093,9 +1093,9 @@ class FrontendContractGuardian:
         commerce_runtime = (
             self.root
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-commons"
+            / "sdkwork-clawrouter-pc-commons"
             / "src"
             / "commerce-runtime.ts"
         )

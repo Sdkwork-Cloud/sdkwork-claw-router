@@ -13,9 +13,9 @@ BACKEND_SDK_PATH = ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backen
 PORTAL_PACKAGE_ROOT = (
     ROOT
     / "apps"
-    / "sdkwork-claw-router-portal"
+    / "sdkwork-clawrouter-pc"
     / "packages"
-    / "sdkwork-claw-router-admin-skill"
+    / "sdkwork-clawrouter-pc-admin-skill"
 )
 
 
@@ -314,10 +314,10 @@ class AdminSkillRuntimeStandardTest(unittest.TestCase):
         service_path = PORTAL_PACKAGE_ROOT / "src" / "skillService.ts"
         page_path = PORTAL_PACKAGE_ROOT / "src" / "index.tsx"
         package_path = PORTAL_PACKAGE_ROOT / "package.json"
-        app_path = ROOT / "apps" / "sdkwork-claw-router-portal" / "src" / "App.tsx"
-        admin_layout_path = ROOT / "apps" / "sdkwork-claw-router-portal" / "src" / "AdminLayout.tsx"
-        runtime_test_path = ROOT / "apps" / "sdkwork-claw-router-portal" / "admin-skill-runtime.test.ts"
-        browser_smoke_path = ROOT / "apps" / "sdkwork-claw-router-portal" / "scripts" / "smoke-production-browser.mjs"
+        app_path = ROOT / "apps" / "sdkwork-clawrouter-pc" / "src" / "App.tsx"
+        admin_layout_path = ROOT / "apps" / "sdkwork-clawrouter-pc" / "src" / "AdminLayout.tsx"
+        runtime_test_path = ROOT / "apps" / "sdkwork-clawrouter-pc" / "admin-skill-runtime.test.ts"
+        browser_smoke_path = ROOT / "apps" / "sdkwork-clawrouter-pc" / "scripts" / "smoke-production-browser.mjs"
 
         for path in [service_path, page_path, package_path, runtime_test_path, browser_smoke_path]:
             self.assertTrue(path.exists(), str(path))
@@ -376,7 +376,7 @@ class AdminSkillRuntimeStandardTest(unittest.TestCase):
         self.assertIn("name=\"packageId\"", page)
         self.assertIn("BusinessStateTableRow", page)
         self.assertIn("ConfirmDialog", page)
-        self.assertIn("sdkwork-claw-router-admin-skill", app)
+        self.assertIn("sdkwork-clawrouter-pc-admin-skill", app)
         self.assertIn('path="skill"', app)
         self.assertIn("/admin/skill", admin_layout)
         self.assertIn("admin skill service calls generated backend SDK paths", runtime_test)
@@ -398,8 +398,8 @@ class AdminSkillRuntimeStandardTest(unittest.TestCase):
             ROOT / "services" / "sdkwork-claw-product" / "tests" / "sqlite_app_skills_read_store.rs",
             PORTAL_PACKAGE_ROOT / "src" / "skillService.ts",
             PORTAL_PACKAGE_ROOT / "src" / "index.tsx",
-            ROOT / "apps" / "sdkwork-claw-router-portal" / "admin-skill-runtime.test.ts",
-            ROOT / "apps" / "sdkwork-claw-router-portal" / "scripts" / "smoke-production-browser.mjs",
+            ROOT / "apps" / "sdkwork-clawrouter-pc" / "admin-skill-runtime.test.ts",
+            ROOT / "apps" / "sdkwork-clawrouter-pc" / "scripts" / "smoke-production-browser.mjs",
         ]
 
         for path in skill_surface_paths:

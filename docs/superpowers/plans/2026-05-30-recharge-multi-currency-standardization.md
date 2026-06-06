@@ -18,8 +18,8 @@
 - Modify: `docs/schema-registry/frontend-field-contracts/operations/backend-commerce-recharges.yaml`
 - Modify: `sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-http-rust/tests/app_recharge_checkout_router.rs`
 - Modify: `services/sdkwork-claw-admin-api/tests/database_config_router.rs`
-- Modify: `apps/sdkwork-claw-router-portal/billing-runtime.test.ts`
-- Modify: `apps/sdkwork-claw-router-portal/admin-membership-recharge-runtime.test.ts`
+- Modify: `apps/sdkwork-clawrouter-pc/billing-runtime.test.ts`
+- Modify: `apps/sdkwork-clawrouter-pc/admin-membership-recharge-runtime.test.ts`
 
 - [ ] **Step 1: Add failing tests for multi-currency recharge packages, recharge settings, and frontend custom amount behavior**
 - [ ] **Step 2: Run the targeted tests to verify they fail for the expected legacy-model reasons**
@@ -80,12 +80,12 @@
 ### Task 6: Connect admin membership center and app recharge UI
 
 **Files:**
-- Modify: `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts`
-- Modify: `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/pages/MembershipRechargePackagesPage.tsx`
-- Modify: `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/forms/MembershipRechargePackageDrawerForm.tsx`
-- Modify: `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts`
-- Modify: `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/RechargeView.tsx`
-- Modify: `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-vip/src/VipView.tsx`
+- Modify: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts`
+- Modify: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/pages/MembershipRechargePackagesPage.tsx`
+- Modify: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/forms/MembershipRechargePackageDrawerForm.tsx`
+- Modify: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-recharge/src/rechargeService.ts`
+- Modify: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-recharge/src/RechargeView.tsx`
+- Modify: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-vip/src/VipView.tsx`
 
 - [ ] **Step 1: Add backend SDK wrappers and normalization for recharge settings and standardized package fields**
 - [ ] **Step 2: Add admin membership-center settings maintenance and package currency editing**

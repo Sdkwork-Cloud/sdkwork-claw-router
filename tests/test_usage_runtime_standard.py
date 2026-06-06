@@ -117,36 +117,36 @@ class UsageRuntimeStandardTest(unittest.TestCase):
         usage_service = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-usage"
+            / "sdkwork-clawrouter-pc-console-usage"
             / "src"
             / "usageService.ts"
         ).read_text(encoding="utf-8")
         usage_view = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-usage"
+            / "sdkwork-clawrouter-pc-console-usage"
             / "src"
             / "UsageView.tsx"
         ).read_text(encoding="utf-8")
         record_service = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-admin-record"
+            / "sdkwork-clawrouter-pc-admin-record"
             / "src"
             / "recordService.ts"
         ).read_text(encoding="utf-8")
         record_view = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-admin-record"
+            / "sdkwork-clawrouter-pc-admin-record"
             / "src"
             / "index.tsx"
         ).read_text(encoding="utf-8")

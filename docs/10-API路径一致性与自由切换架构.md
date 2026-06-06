@@ -71,7 +71,7 @@ Gateway API:
 ## 4. 自由切换架构
 
 ```text
-sdkwork-claw-router-portal
+sdkwork-clawrouter-pc
   |
   | generated app SDK / generated backend SDK / OpenAI compatible SDK
   v

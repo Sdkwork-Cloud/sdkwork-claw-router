@@ -1,7 +1,7 @@
 fragment: operations/backend-commerce-memberships
 frontend_operations:
 - route: /admin/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   operation: backendMembershipsPlansList
   operation_id: memberships.plans.list
   kind: read
@@ -86,7 +86,7 @@ frontend_operations:
         minimum: 1
         maximum: 200
 - route: /admin/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   operation: backendMembershipsPlansCreate
   operation_id: memberships.plans.create
   kind: create
@@ -205,7 +205,7 @@ frontend_operations:
             nullable: true
             maxLength: 64
 - route: /admin/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   operation: backendMembershipsPlansUpdate
   operation_id: memberships.plans.update
   kind: update
@@ -226,7 +226,7 @@ frontend_operations:
   request_schema: *id001
   response_schema: *id002
 - route: /admin/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   operation: backendMembershipsPlansDelete
   operation_id: memberships.plans.delete
   kind: delete
@@ -253,7 +253,7 @@ frontend_operations:
       deleted:
         type: boolean
 - route: /admin/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   operation: backendMembershipsPackagesList
   operation_id: memberships.packages.list
   kind: read
@@ -300,7 +300,7 @@ frontend_operations:
       maxLength: 32
   response_schema: *id003
 - route: /admin/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   operation: fetchMembershipAdminPackageCatalog
   operation_scope: app_shell
   operation_id: memberships.admin.packageCatalog.fetch
@@ -325,7 +325,7 @@ frontend_operations:
   - commerce_order_item
   - commerce_payment_attempt
 - route: /admin/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   operation: fetchMembershipAdminMembers
   operation_scope: app_shell
   operation_id: memberships.admin.members.fetch
@@ -342,7 +342,7 @@ frontend_operations:
   - commerce_membership_plan
   - commerce_membership_entitlement
 - route: /admin/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   operation: fetchMembershipAdminEntitlements
   operation_scope: app_shell
   operation_id: memberships.admin.entitlements.fetch
@@ -362,7 +362,7 @@ frontend_operations:
   - commerce_membership_entitlement
   - commerce_membership_entitlement_usage
 - route: /admin/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   operation: backendMembershipsPackagesCreate
   operation_id: memberships.packages.create
   kind: create
@@ -433,7 +433,7 @@ frontend_operations:
         - disabled
   response_schema: *id002
 - route: /admin/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   operation: backendMembershipsPackagesUpdate
   operation_id: memberships.packages.update
   kind: update
@@ -458,7 +458,7 @@ frontend_operations:
   request_schema: *id004
   response_schema: *id002
 - route: /admin/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   operation: backendMembershipsPackagesDelete
   operation_id: memberships.packages.delete
   kind: delete
@@ -477,7 +477,7 @@ frontend_operations:
   - ops_audit_log
   response_schema: *id005
 - route: /admin/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   operation: backendMembershipsPackageGroupsList
   operation_id: memberships.packageGroups.list
   kind: read
@@ -509,7 +509,7 @@ frontend_operations:
       maxLength: 32
   response_schema: *id003
 - route: /admin/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   operation: backendMembershipsPackageGroupsCreate
   operation_id: memberships.packageGroups.create
   kind: create
@@ -570,7 +570,7 @@ frontend_operations:
         - disabled
   response_schema: *id002
 - route: /admin/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   operation: backendMembershipsPackageGroupsUpdate
   operation_id: memberships.packageGroups.update
   kind: update
@@ -591,7 +591,7 @@ frontend_operations:
   request_schema: *id006
   response_schema: *id002
 - route: /admin/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   operation: backendMembershipsPackageGroupsDelete
   operation_id: memberships.packageGroups.delete
   kind: delete
@@ -609,7 +609,7 @@ frontend_operations:
   - ops_audit_log
   response_schema: *id005
 - route: /admin/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   operation: backendMembershipsMembersList
   operation_id: memberships.members.list
   kind: read
@@ -660,7 +660,7 @@ frontend_operations:
       maxLength: 32
   response_schema: *id003
 - route: /admin/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   operation: backendMembershipsMembersStatusUpdate
   operation_id: memberships.members.status.update
   kind: update
@@ -694,7 +694,7 @@ frontend_operations:
         - cancelled
   response_schema: *id002
 - route: /admin/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   operation: backendMembershipsEntitlementsList
   operation_id: memberships.entitlements.list
   kind: read
@@ -741,7 +741,7 @@ frontend_operations:
       maxLength: 32
   response_schema: *id003
 - route: /admin/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   operation: fetchMembershipAdminPackageGroups
   operation_scope: app_shell
   operation_id: memberships.admin.packageGroups.fetch
@@ -757,7 +757,7 @@ frontend_operations:
   - commerce_membership_package_group
   - commerce_membership_package
 - route: /admin/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   operation: createMembershipAdminPackageGroup
   operation_scope: app_shell
   operation_id: memberships.admin.packageGroups.create
@@ -779,7 +779,7 @@ frontend_operations:
   request_schema: *id006
   response_schema: *id002
 - route: /admin/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   operation: updateMembershipAdminPackageGroup
   operation_scope: app_shell
   operation_id: memberships.admin.packageGroups.update
@@ -801,7 +801,7 @@ frontend_operations:
   request_schema: *id006
   response_schema: *id002
 - route: /admin/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   operation: deleteMembershipAdminPackageGroup
   operation_scope: app_shell
   operation_id: memberships.admin.packageGroups.delete
@@ -821,7 +821,7 @@ frontend_operations:
   - ops_audit_log
   response_schema: *id005
 - route: /admin/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   operation: fetchMembershipAdminPackages
   operation_scope: app_shell
   operation_id: memberships.admin.packages.fetch
@@ -839,7 +839,7 @@ frontend_operations:
   - commerce_membership_package_group
   - commerce_product_sku
 - route: /admin/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   operation: createMembershipAdminPackage
   operation_scope: app_shell
   operation_id: memberships.admin.packages.create
@@ -865,7 +865,7 @@ frontend_operations:
   request_schema: *id004
   response_schema: *id002
 - route: /admin/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   operation: updateMembershipAdminPackage
   operation_scope: app_shell
   operation_id: memberships.admin.packages.update
@@ -891,7 +891,7 @@ frontend_operations:
   request_schema: *id004
   response_schema: *id002
 - route: /admin/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   operation: deleteMembershipAdminPackage
   operation_scope: app_shell
   operation_id: memberships.admin.packages.delete
@@ -912,7 +912,7 @@ frontend_operations:
   - ops_audit_log
   response_schema: *id005
 - route: /admin/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   operation: updateMembershipAdminPlan
   operation_scope: app_shell
   operation_id: memberships.admin.plans.update
@@ -934,7 +934,7 @@ frontend_operations:
   request_schema: *id001
   response_schema: *id002
 - route: /admin/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   operation: deleteMembershipAdminPlan
   operation_scope: app_shell
   operation_id: memberships.admin.plans.delete
@@ -955,7 +955,7 @@ frontend_operations:
   - ops_audit_log
   response_schema: *id005
 - route: /admin/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   operation: updateMembershipAdminMemberStatus
   operation_scope: app_shell
   operation_id: memberships.admin.members.status.update

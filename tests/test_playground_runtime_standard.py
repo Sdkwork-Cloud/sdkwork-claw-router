@@ -8,9 +8,9 @@ ROOT = Path(__file__).resolve().parents[1]
 PLAYGROUND_ROOT = (
     ROOT
     / "apps"
-    / "sdkwork-claw-router-portal"
+    / "sdkwork-clawrouter-pc"
     / "packages"
-    / "sdkwork-claw-router-playground"
+    / "sdkwork-clawrouter-pc-playground"
     / "src"
 )
 
@@ -28,7 +28,7 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
 
         self.assertEqual(1, len(playground_contracts))
         self.assertEqual(
-            "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/playgroundTypes.ts",
+            "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/playgroundTypes.ts",
             playground_contracts[0]["source"],
         )
         self.assertIn("outputText", playground_contracts[0]["fields"])
@@ -43,10 +43,10 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
             if "operation_id" in entry
             and entry.get("source")
             in {
-                "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/appRuntimeApiOperations.ts",
-                "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/components/chat/chatService.ts",
-                "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/playgroundService.ts",
-                "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/runtimeStream.ts",
+                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts",
+                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/components/chat/chatService.ts",
+                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/playgroundService.ts",
+                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/runtimeStream.ts",
             }
         }
 
@@ -80,9 +80,9 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
         commons_runtime_source = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-commons"
+            / "sdkwork-clawrouter-pc-commons"
             / "src"
             / "runtime.ts"
         ).read_text(encoding="utf-8")
@@ -94,7 +94,7 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
 
         self.assertIn("APP_API_PREFIX", commons_runtime_source)
         self.assertIn("streamJson<RuntimeStreamEvent>", commons_runtime_source)
-        self.assertIn("sdkwork-claw-router-commons/runtime", runtime_stream_source)
+        self.assertIn("sdkwork-clawrouter-pc-commons/runtime", runtime_stream_source)
         self.assertNotIn("APP_API_PREFIX", runtime_stream_source)
         self.assertNotIn("streamJson<RuntimeStreamEvent>", runtime_stream_source)
 
@@ -105,7 +105,7 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
             entry["operation"]: entry
             for entry in contract["frontend_operations"]
             if entry.get("source")
-            == "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/appRuntimeApiOperations.ts"
+            == "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts"
         }
 
         expected_operation_ids = {
@@ -198,9 +198,9 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
             for entry in contract["frontend_operations"]
             if entry.get("source")
             in {
-                "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/playgroundService.ts",
-                "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/playgroundGenerationService.ts",
-                "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/components/chat/chatService.ts",
+                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/playgroundService.ts",
+                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/playgroundGenerationService.ts",
+                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/components/chat/chatService.ts",
             }
         }
         for operation in [
@@ -259,14 +259,14 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
 
     def test_playground_generation_runtime_uses_appbase_generation_service(self) -> None:
         portal_workspace_source = (
-            ROOT / "apps" / "sdkwork-claw-router-portal" / "pnpm-workspace.yaml"
+            ROOT / "apps" / "sdkwork-clawrouter-pc" / "pnpm-workspace.yaml"
         ).read_text(encoding="utf-8")
         playground_package_source = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-playground"
+            / "sdkwork-clawrouter-pc-playground"
             / "package.json"
         ).read_text(encoding="utf-8")
         service_source = (PLAYGROUND_ROOT / "playgroundService.ts").read_text(encoding="utf-8")
@@ -341,14 +341,14 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
         ).read_text(encoding="utf-8")
         integration_source = (ROOT / "specs" / "appbase-integration.yaml").read_text(encoding="utf-8")
         portal_package_source = (
-            ROOT / "apps" / "sdkwork-claw-router-portal" / "package.json"
+            ROOT / "apps" / "sdkwork-clawrouter-pc" / "package.json"
         ).read_text(encoding="utf-8")
         playground_package_source = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-playground"
+            / "sdkwork-clawrouter-pc-playground"
             / "package.json"
         ).read_text(encoding="utf-8")
 
@@ -356,8 +356,8 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
         self.assertIn("path: packages/pc-react/content/sdkwork-generation-pc-react", appbase_catalog_source)
         self.assertIn("capability: generation", integration_source)
         self.assertIn('- "@sdkwork/generation-pc-react"', integration_source)
-        self.assertIn("apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/playgroundService.ts", integration_source)
-        self.assertIn("apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/appRuntimeApiOperations.ts", integration_source)
+        self.assertIn("apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/playgroundService.ts", integration_source)
+        self.assertIn("apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts", integration_source)
         self.assertIn("tests.test_playground_runtime_standard", integration_source)
         self.assertIn('"@sdkwork/generation-pc-react": "workspace:*"', portal_package_source)
         self.assertIn('"@sdkwork/generation-pc-react": "workspace:*"', playground_package_source)
@@ -436,7 +436,7 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
                 self.assertIn(required_table, deep_link_route["required_tables"])
 
         deep_link_classification = classifications["/c/:conversationId"]
-        self.assertEqual("sdkwork-claw-router-playground", deep_link_classification["package"])
+        self.assertEqual("sdkwork-clawrouter-pc-playground", deep_link_classification["package"])
         self.assertEqual("sdk_backed_business_runtime", deep_link_classification["delivery_kind"])
         self.assertEqual("app", deep_link_classification["api_surface"])
         self.assertIn("/playground", deep_link_classification["operation_routes"])
@@ -460,9 +460,9 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
         i18n_source = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-i18n"
+            / "sdkwork-clawrouter-pc-i18n"
             / "src"
             / "index.ts"
         ).read_text(encoding="utf-8")
@@ -679,9 +679,9 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
         playground_i18n_root = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-i18n"
+            / "sdkwork-clawrouter-pc-i18n"
             / "src"
             / "resources"
             / "playground"
@@ -983,9 +983,9 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
         source = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-i18n"
+            / "sdkwork-clawrouter-pc-i18n"
             / "src"
             / "resources"
             / "playground"
@@ -1037,22 +1037,22 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
         commons_runtime_source = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-commons"
+            / "sdkwork-clawrouter-pc-commons"
             / "src"
             / "runtime.ts"
         ).read_text(encoding="utf-8")
         commons_package_source = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-commons"
+            / "sdkwork-clawrouter-pc-commons"
             / "package.json"
         ).read_text(encoding="utf-8")
         portal_tsconfig_source = (
-            ROOT / "apps" / "sdkwork-claw-router-portal" / "tsconfig.json"
+            ROOT / "apps" / "sdkwork-clawrouter-pc" / "tsconfig.json"
         ).read_text(encoding="utf-8")
 
         self.assertIn("@sdkwork/clawrouter-app-sdk", commons_package_source)
@@ -1177,9 +1177,9 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
         api_key_service_source = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-api-keys"
+            / "sdkwork-clawrouter-pc-console-api-keys"
             / "src"
             / "apiKeyService.ts"
         ).read_text(encoding="utf-8")

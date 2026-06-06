@@ -2095,7 +2095,7 @@ class ClawRouterGatewayOpenApiGeneratorTest(unittest.TestCase):
 
     def test_public_openapi_schema_quality_for_reference_rendering(self) -> None:
         public_spec = json.loads(
-            Path("apps/sdkwork-claw-router-portal/public/openapi.json").read_text(encoding="utf-8")
+            Path("apps/sdkwork-clawrouter-pc/public/openapi.json").read_text(encoding="utf-8")
         )
         provider_prefixes = self._provider_prefixes()
 
@@ -2138,7 +2138,7 @@ class ClawRouterGatewayOpenApiGeneratorTest(unittest.TestCase):
             output = generator.write()
 
             self.assertEqual(
-                root / "apps" / "sdkwork-claw-router-portal" / "public" / "openapi.json",
+                root / "apps" / "sdkwork-clawrouter-pc" / "public" / "openapi.json",
                 output,
             )
             payload = json.loads(output.read_text(encoding="utf-8"))

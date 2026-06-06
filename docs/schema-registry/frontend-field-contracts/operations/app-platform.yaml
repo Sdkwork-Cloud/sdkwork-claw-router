@@ -1,7 +1,7 @@
 fragment: operations/app-platform
 frontend_operations:
 - route: /apps
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/appService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/appService.ts
   operation: getApps
   kind: read
   api_surface: app
@@ -226,7 +226,7 @@ frontend_operations:
       hasNextPage:
         type: boolean
 - route: /apps
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/appService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/appService.ts
   operation: getAppById
   kind: read
   api_surface: app
@@ -247,7 +247,7 @@ frontend_operations:
     required: *id001
     properties: *id002
 - route: /apps
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/appService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/appService.ts
   operation: getCategories
   kind: read
   api_surface: app
@@ -269,7 +269,7 @@ frontend_operations:
           minLength: 1
           maxLength: 128
 - route: /auth/login
-  source: apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts
+  source: apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts
   operation: generateLoginQrCode
   operation_id: qrAuth.sessions.create
   kind: create
@@ -399,7 +399,7 @@ frontend_operations:
       userInfo:
         $ref: '#/components/schemas/IamUserResponse'
 - route: /auth/login
-  source: apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts
+  source: apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts
   operation: checkLoginQrCodeStatus
   operation_id: qrAuth.sessions.retrieve
   kind: read
@@ -423,7 +423,7 @@ frontend_operations:
   - iam_security_event
   response_schema: *id003
 - route: /auth/login
-  source: apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts
+  source: apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts
   operation: callbackLoginQrCode
   operation_id: qrAuth.sessions.scans.create
   kind: create
@@ -525,7 +525,7 @@ frontend_operations:
         type: string
         maxLength: 64
 - route: /auth/login
-  source: apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts
+  source: apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts
   operation: confirmLoginQrCode
   operation_id: qrAuth.sessions.passwords.create
   kind: create

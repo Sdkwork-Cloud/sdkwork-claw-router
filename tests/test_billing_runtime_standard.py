@@ -18,18 +18,18 @@ APPBASE_PROMOTION_STORES = [
 CONSOLE_COMMERCE = (
     ROOT
     / "apps"
-    / "sdkwork-claw-router-portal"
+    / "sdkwork-clawrouter-pc"
     / "packages"
-    / "sdkwork-claw-router-console-commerce"
+    / "sdkwork-clawrouter-pc-console-commerce"
     / "src"
 )
 
 CONSOLE_WALLET = (
     ROOT
     / "apps"
-    / "sdkwork-claw-router-portal"
+    / "sdkwork-clawrouter-pc"
     / "packages"
-    / "sdkwork-claw-router-console-wallet"
+    / "sdkwork-clawrouter-pc-console-wallet"
     / "src"
 )
 
@@ -186,9 +186,9 @@ class BillingRuntimeStandardTest(unittest.TestCase):
         commerce_runtime = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-commons"
+            / "sdkwork-clawrouter-pc-commons"
             / "src"
             / "commerce-runtime.ts"
         ).read_text(encoding="utf-8")
@@ -246,8 +246,8 @@ class BillingRuntimeStandardTest(unittest.TestCase):
         ).read_text(encoding="utf-8")
         redeem_history_marker = (
             "  - route: /console/commerce\n"
-            "    source: apps/sdkwork-claw-router-portal/packages/"
-            "sdkwork-claw-router-console-commerce/src/commerceService.ts\n"
+            "    source: apps/sdkwork-clawrouter-pc/packages/"
+            "sdkwork-clawrouter-pc-console-commerce/src/commerceService.ts\n"
             "    operation: fetchRedeemHistory"
         )
         redeem_history_start = contract.index(redeem_history_marker)
@@ -255,8 +255,8 @@ class BillingRuntimeStandardTest(unittest.TestCase):
         billing_read_contract = contract[redeem_history_start:checkout_contract_start]
         redeem_code_marker = (
             "  - route: /console/commerce\n"
-            "    source: apps/sdkwork-claw-router-portal/packages/"
-            "sdkwork-claw-router-console-commerce/src/commerceService.ts\n"
+            "    source: apps/sdkwork-clawrouter-pc/packages/"
+            "sdkwork-clawrouter-pc-console-commerce/src/commerceService.ts\n"
             "    operation: redeemCode"
         )
         redeem_code_start = contract.index(redeem_code_marker)
@@ -297,9 +297,9 @@ class BillingRuntimeStandardTest(unittest.TestCase):
         i18n = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-i18n"
+            / "sdkwork-clawrouter-pc-i18n"
             / "src"
             / "index.ts"
         ).read_text(encoding="utf-8")
@@ -329,20 +329,20 @@ class BillingRuntimeStandardTest(unittest.TestCase):
         portal_package = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "package.json"
         ).read_text(encoding="utf-8")
         portal_app = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "src"
             / "App.tsx"
         ).read_text(encoding="utf-8")
         pnpm_lock = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "pnpm-lock.yaml"
         ).read_text(encoding="utf-8")
         wallet_service = (CONSOLE_WALLET / "walletService.ts").read_text(encoding="utf-8")
@@ -352,9 +352,9 @@ class BillingRuntimeStandardTest(unittest.TestCase):
         standalone_redeem_package = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-redeem"
+            / "sdkwork-clawrouter-pc-console-redeem"
         )
         standalone_source_files = [
             path
@@ -376,7 +376,7 @@ class BillingRuntimeStandardTest(unittest.TestCase):
         self.assertIn("operation: fetchRedeemHistory", contract)
 
         for forbidden in [
-            "sdkwork-claw-router-console-redeem",
+            "sdkwork-clawrouter-pc-console-redeem",
             "console/redeem",
             "RedeemView",
         ]:
@@ -403,18 +403,18 @@ class BillingRuntimeStandardTest(unittest.TestCase):
         finance_service = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-admin-finance"
+            / "sdkwork-clawrouter-pc-admin-finance"
             / "src"
             / "financeService.ts"
         ).read_text(encoding="utf-8")
         finance_view = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-admin-finance"
+            / "sdkwork-clawrouter-pc-admin-finance"
             / "src"
             / "index.tsx"
         ).read_text(encoding="utf-8")

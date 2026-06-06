@@ -26,7 +26,7 @@ class AdminSiteRuntimeStandardTest(unittest.TestCase):
             ROOT / "generated" / "schema" / "registry" / "sdkwork-claw-router.tables.effective.yaml"
         ).read_text(encoding="utf-8")
 
-        source = "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts"
+        source = "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts"
         expected_operation_keys = [
             f"{source}#fetchSites",
             f"{source}#createSite",

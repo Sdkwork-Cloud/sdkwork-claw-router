@@ -1,7 +1,7 @@
 fragment: operations/app-commerce-payments
 frontend_operations:
 - route: /console/checkout
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-checkout/src/checkoutService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-checkout/src/checkoutService.ts
   operation: appPaymentsMethodsList
   operation_id: payments.methods.list
   kind: read
@@ -135,7 +135,7 @@ frontend_operations:
         minimum: 1
         maximum: 200
 - route: /console/checkout
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-checkout/src/checkoutService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-checkout/src/checkoutService.ts
   operation: appPaymentsIntentsCreate
   operation_id: payments.intents.create
   kind: create
@@ -268,7 +268,7 @@ frontend_operations:
           createdAt: *timestampSchema
           updatedAt: *timestampSchema
 - route: /console/checkout
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-checkout/src/checkoutService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-checkout/src/checkoutService.ts
   operation: appPaymentsIntentsRetrieve
   operation_id: payments.intents.retrieve
   kind: read
@@ -282,7 +282,7 @@ frontend_operations:
   query_parameters: []
   response_schema: *commercePaymentIntentResponse
 - route: /console/checkout
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-checkout/src/checkoutService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-checkout/src/checkoutService.ts
   operation: appPaymentsIntentsAttemptsCreate
   operation_id: payments.intents.attempts.create
   kind: create
@@ -385,7 +385,7 @@ frontend_operations:
             nullable: true
             maxLength: 64
 - route: /console/checkout
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-checkout/src/checkoutService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-checkout/src/checkoutService.ts
   operation: appPaymentsAttemptsRetrieve
   operation_id: payments.attempts.retrieve
   kind: read

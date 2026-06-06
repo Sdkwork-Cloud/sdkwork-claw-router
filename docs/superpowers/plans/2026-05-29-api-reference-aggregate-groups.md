@@ -13,22 +13,22 @@
 ### Task 1: API Reference Runtime
 
 **Files:**
-- Modify: `apps/sdkwork-claw-router-portal/api-reference-playground-runtime.test.ts`
-- Modify: `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-api-reference/src/apiReferenceSchemaTabs.ts`
-- Modify: `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-api-reference/src/pages/ApiReference.tsx`
+- Modify: `apps/sdkwork-clawrouter-pc/api-reference-playground-runtime.test.ts`
+- Modify: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/apiReferenceSchemaTabs.ts`
+- Modify: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/pages/ApiReference.tsx`
 
 - [ ] **Step 1: Write failing runtime tests**
   Add tests proving planned `payment-aggregate` and `cloud-services` tabs survive normalization, remain ordered before `app`, fetch no schemas, expose `status: "planned"`, and keep SDK Reference limited to `gateway`, `app`, and `backend`.
 
 - [ ] **Step 2: Run focused Node test to verify RED**
-  Run: `pnpm.cmd --dir apps\sdkwork-claw-router-portal exec tsx api-reference-playground-runtime.test.ts`
+  Run: `pnpm.cmd --dir apps\sdkwork-clawrouter-pc exec tsx api-reference-playground-runtime.test.ts`
   Expected: FAIL because empty schema tabs are currently filtered out and gateway display is still `Default Open API`.
 
 - [ ] **Step 3: Implement minimal frontend runtime support**
   Add tab `status`/`description`, allow planned tabs with empty `schemaUrls`, keep planned systems in API Reference, skip schema fetches for planned tabs, map gateway display to `AI聚合API`, and render a planned empty state.
 
 - [ ] **Step 4: Re-run focused Node test**
-  Run: `pnpm.cmd --dir apps\sdkwork-claw-router-portal exec tsx api-reference-playground-runtime.test.ts`
+  Run: `pnpm.cmd --dir apps\sdkwork-clawrouter-pc exec tsx api-reference-playground-runtime.test.ts`
   Expected: PASS.
 
 ### Task 2: Runtime Schema-Tabs Contract
@@ -37,7 +37,7 @@
 - Modify: `crates/sdkwork-claw-http/src/contract_routes.rs`
 - Modify: `crates/sdkwork-claw-http/tests/service_router.rs`
 - Modify: `services/sdkwork-claw-gateway/tests/edge_server.rs`
-- Modify: `apps/sdkwork-claw-router-portal/scripts/smoke-production-browser.mjs`
+- Modify: `apps/sdkwork-clawrouter-pc/scripts/smoke-production-browser.mjs`
 
 - [ ] **Step 1: Write/update failing Rust and smoke assertions**
   Expect five schema tabs ordered as `gateway`, `payment-aggregate`, `cloud-services`, `app`, `backend`, with planned status for the new empty groups.
@@ -55,7 +55,7 @@
 
 ### Task 3: Verification
 
-- [ ] Run `pnpm.cmd --dir apps\sdkwork-claw-router-portal exec tsx api-reference-playground-runtime.test.ts`
+- [ ] Run `pnpm.cmd --dir apps\sdkwork-clawrouter-pc exec tsx api-reference-playground-runtime.test.ts`
 - [ ] Run `cargo test -p sdkwork-claw-http service_router_exposes_ordered_openapi_schema_tabs_from_route_config`
 - [ ] Run `cargo test -p sdkwork-claw-gateway edge_server_serves_portal_assets_and_openapi_contracts`
-- [ ] Run `pnpm.cmd --dir apps\sdkwork-claw-router-portal typecheck`
+- [ ] Run `pnpm.cmd --dir apps\sdkwork-clawrouter-pc typecheck`

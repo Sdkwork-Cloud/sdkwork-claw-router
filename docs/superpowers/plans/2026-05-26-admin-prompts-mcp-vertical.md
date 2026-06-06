@@ -84,13 +84,13 @@
 ### Task 6: Admin Portal UI
 
 **Files:**
-- Create: `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-prompts/*`
-- Create: `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-mcp/*`
-- Modify: `apps/sdkwork-claw-router-portal/src/App.tsx`
-- Modify: `apps/sdkwork-claw-router-portal/src/adminModuleRegistry.ts`
-- Modify: `apps/sdkwork-claw-router-portal/package.json`
-- Modify: `apps/sdkwork-claw-router-portal/pnpm-workspace.yaml`
-- Modify i18n resources under `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-i18n/src/resources/admin`
+- Create: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-prompts/*`
+- Create: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-mcp/*`
+- Modify: `apps/sdkwork-clawrouter-pc/src/App.tsx`
+- Modify: `apps/sdkwork-clawrouter-pc/src/adminModuleRegistry.ts`
+- Modify: `apps/sdkwork-clawrouter-pc/package.json`
+- Modify: `apps/sdkwork-clawrouter-pc/pnpm-workspace.yaml`
+- Modify i18n resources under `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-i18n/src/resources/admin`
 - Test: add portal runtime tests for menu, routes, service SDK usage, i18n key alignment.
 
 - [ ] **Step 1: Write failing portal runtime tests** for sidebar entries, route registration, package exports, generated SDK usage, and no raw HTTP.

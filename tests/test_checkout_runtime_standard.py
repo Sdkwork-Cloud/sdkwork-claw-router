@@ -115,18 +115,18 @@ class CheckoutRuntimeStandardTest(unittest.TestCase):
         checkout_view = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-checkout"
+            / "sdkwork-clawrouter-pc-console-checkout"
             / "src"
             / "CheckoutView.tsx"
         ).read_text(encoding="utf-8")
         checkout_service = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-checkout"
+            / "sdkwork-clawrouter-pc-console-checkout"
             / "src"
             / "checkoutService.ts"
         ).read_text(encoding="utf-8")

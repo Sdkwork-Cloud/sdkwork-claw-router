@@ -3,7 +3,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-PORTAL_PACKAGES = ROOT / "apps" / "sdkwork-claw-router-portal" / "packages"
+PORTAL_PACKAGES = ROOT / "apps" / "sdkwork-clawrouter-pc" / "packages"
 
 
 class FrontendBusinessStateStandardTest(unittest.TestCase):
@@ -12,17 +12,17 @@ class FrontendBusinessStateStandardTest(unittest.TestCase):
     ) -> None:
         forbidden_markers = ["localStorage", "sessionStorage"]
         allowed_paths = {
-            "sdkwork-claw-router-commons/src/app-session-token.ts",
-            "sdkwork-claw-router-commons/src/components/Navbar.tsx",
-            "sdkwork-claw-router-i18n/src/index.ts",
+            "sdkwork-clawrouter-pc-commons/src/app-session-token.ts",
+            "sdkwork-clawrouter-pc-commons/src/components/Navbar.tsx",
+            "sdkwork-clawrouter-pc-i18n/src/index.ts",
         }
         violations: list[str] = []
 
         for package_dir in sorted(PORTAL_PACKAGES.glob("sdkwork-claw-router-*")):
             package_name = package_dir.name
             if not (
-                package_name.startswith("sdkwork-claw-router-console-")
-                or package_name.startswith("sdkwork-claw-router-admin-")
+                package_name.startswith("sdkwork-clawrouter-pc-console-")
+                or package_name.startswith("sdkwork-clawrouter-pc-admin-")
             ):
                 continue
             for source in sorted((package_dir / "src").rglob("*")):
@@ -45,81 +45,81 @@ class FrontendBusinessStateStandardTest(unittest.TestCase):
     def test_business_state_components_are_centralized_and_used_by_core_business_tables(
         self,
     ) -> None:
-        commons_index = PORTAL_PACKAGES / "sdkwork-claw-router-commons" / "src" / "index.ts"
+        commons_index = PORTAL_PACKAGES / "sdkwork-clawrouter-pc-commons" / "src" / "index.ts"
         business_state_component = (
             PORTAL_PACKAGES
-            / "sdkwork-claw-router-commons"
+            / "sdkwork-clawrouter-pc-commons"
             / "src"
             / "components"
             / "BusinessState.tsx"
         )
         core_table_components = [
             PORTAL_PACKAGES
-            / "sdkwork-claw-router-admin-user"
+            / "sdkwork-clawrouter-pc-admin-user"
             / "src"
             / "index.tsx",
             PORTAL_PACKAGES
-            / "sdkwork-claw-router-admin-group"
+            / "sdkwork-clawrouter-pc-admin-group"
             / "src"
             / "index.tsx",
             PORTAL_PACKAGES
-            / "sdkwork-claw-router-admin-model"
+            / "sdkwork-clawrouter-pc-admin-model"
             / "src"
             / "index.tsx",
             PORTAL_PACKAGES
-            / "sdkwork-claw-router-admin-finance"
+            / "sdkwork-clawrouter-pc-admin-finance"
             / "src"
             / "index.tsx",
             PORTAL_PACKAGES
-            / "sdkwork-claw-router-admin-record"
+            / "sdkwork-clawrouter-pc-admin-record"
             / "src"
             / "index.tsx",
             PORTAL_PACKAGES
-            / "sdkwork-claw-router-admin-announcement"
+            / "sdkwork-clawrouter-pc-admin-announcement"
             / "src"
             / "index.tsx",
             PORTAL_PACKAGES
-            / "sdkwork-claw-router-admin-ratelimit"
+            / "sdkwork-clawrouter-pc-admin-ratelimit"
             / "src"
             / "index.tsx",
             PORTAL_PACKAGES
-            / "sdkwork-claw-router-admin-channel"
+            / "sdkwork-clawrouter-pc-admin-channel"
             / "src"
             / "index.tsx",
             PORTAL_PACKAGES
-            / "sdkwork-claw-router-console-commerce"
+            / "sdkwork-clawrouter-pc-console-commerce"
             / "src"
             / "CommerceView.tsx",
         ]
         panel_components = [
             PORTAL_PACKAGES
-            / "sdkwork-claw-router-admin-monitor"
+            / "sdkwork-clawrouter-pc-admin-monitor"
             / "src"
             / "index.tsx",
             PORTAL_PACKAGES
-            / "sdkwork-claw-router-admin-marketing"
+            / "sdkwork-clawrouter-pc-admin-marketing"
             / "src"
             / "index.tsx",
             PORTAL_PACKAGES
-            / "sdkwork-claw-router-console-settings"
+            / "sdkwork-clawrouter-pc-console-settings"
             / "src"
             / "SettingsView.tsx",
             PORTAL_PACKAGES
-            / "sdkwork-claw-router-console-account"
+            / "sdkwork-clawrouter-pc-console-account"
             / "src"
             / "AccountView.tsx",
             PORTAL_PACKAGES
-            / "sdkwork-claw-router-console-commerce"
+            / "sdkwork-clawrouter-pc-console-commerce"
             / "src"
             / "CheckoutView.tsx",
             PORTAL_PACKAGES
-            / "sdkwork-claw-router-console-recharge"
+            / "sdkwork-clawrouter-pc-console-recharge"
             / "src"
             / "RechargeView.tsx",
         ]
         marketing_components = [
             PORTAL_PACKAGES
-            / "sdkwork-claw-router-admin-marketing"
+            / "sdkwork-clawrouter-pc-admin-marketing"
             / "src"
             / "index.tsx",
         ]

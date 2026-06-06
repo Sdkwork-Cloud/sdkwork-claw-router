@@ -66,29 +66,29 @@ Modify these backend contract and runtime files first:
 
 Modify these frontend product-center files next:
 
-- Modify `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/index.tsx`
-- Modify `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts`
-- Create `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogTypes.ts`
-- Create `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/ProductCenterShell.tsx`
-- Create `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/ProductsWorkspace.tsx`
-- Create `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/ProductEditorDrawer.tsx`
-- Create `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/ProductSkuMatrix.tsx`
-- Create `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/CategoryTreePanel.tsx`
-- Create `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/AttributeLibraryPanel.tsx`
-- Create `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/PriceListWorkspace.tsx`
-- Create `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/PublicationPanel.tsx`
-- Create `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/ProductAuditPanel.tsx`
-- Modify `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-inventory/src/index.tsx`
-- Modify `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-inventory/src/inventoryService.ts`
-- Create `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-inventory/src/inventoryTypes.ts`
-- Create `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-inventory/src/InventoryWorkspace.tsx`
-- Create `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-inventory/src/StockDashboard.tsx`
-- Create `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-inventory/src/StockAdjustmentDrawer.tsx`
-- Create `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-inventory/src/ReservationMonitor.tsx`
-- Create `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-inventory/src/InventoryLedgerTimeline.tsx`
-- Modify `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-i18n/src/index.ts`
+- Modify `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/index.tsx`
+- Modify `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts`
+- Create `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogTypes.ts`
+- Create `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/ProductCenterShell.tsx`
+- Create `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/ProductsWorkspace.tsx`
+- Create `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/ProductEditorDrawer.tsx`
+- Create `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/ProductSkuMatrix.tsx`
+- Create `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/CategoryTreePanel.tsx`
+- Create `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/AttributeLibraryPanel.tsx`
+- Create `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/PriceListWorkspace.tsx`
+- Create `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/PublicationPanel.tsx`
+- Create `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/ProductAuditPanel.tsx`
+- Modify `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-inventory/src/index.tsx`
+- Modify `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-inventory/src/inventoryService.ts`
+- Create `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-inventory/src/inventoryTypes.ts`
+- Create `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-inventory/src/InventoryWorkspace.tsx`
+- Create `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-inventory/src/StockDashboard.tsx`
+- Create `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-inventory/src/StockAdjustmentDrawer.tsx`
+- Create `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-inventory/src/ReservationMonitor.tsx`
+- Create `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-inventory/src/InventoryLedgerTimeline.tsx`
+- Modify `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-i18n/src/index.ts`
   - Replace the generic catalog/inventory copy with product-center oriented copy for the workspace.
-- Modify `apps/sdkwork-claw-router-portal/src/App.tsx`
+- Modify `apps/sdkwork-clawrouter-pc/src/App.tsx`
   - Keep the current routes, but point them to the upgraded workspaces and add detail routes only if the drawer pattern becomes too constrained.
 
 ## Task 1: Lock The Backend Contract Gaps
@@ -159,15 +159,15 @@ Commit only the backend contract, store, and generated SDK changes for this task
 ## Task 2: Build The Product Workspace Shell
 
 **Files:**
-- Modify: `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/index.tsx`
-- Modify: `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts`
-- Create: `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogTypes.ts`
-- Create: `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/ProductCenterShell.tsx`
-- Create: `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/ProductsWorkspace.tsx`
-- Create: `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/ProductEditorDrawer.tsx`
-- Create: `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/ProductAuditPanel.tsx`
-- Modify: `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-i18n/src/index.ts`
-- Test: `apps/sdkwork-claw-router-portal/admin-catalog-runtime.test.ts`
+- Modify: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/index.tsx`
+- Modify: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts`
+- Create: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogTypes.ts`
+- Create: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/ProductCenterShell.tsx`
+- Create: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/ProductsWorkspace.tsx`
+- Create: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/ProductEditorDrawer.tsx`
+- Create: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/ProductAuditPanel.tsx`
+- Modify: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-i18n/src/index.ts`
+- Test: `apps/sdkwork-clawrouter-pc/admin-catalog-runtime.test.ts`
 
 - [ ] **Step 1: Write failing frontend service/runtime tests**
 
@@ -186,7 +186,7 @@ assert.match(source, /getClawRouterBackendSdkClient\(\)\.commerce\.catalog\.prod
 Run:
 
 ```powershell
-pnpm --dir apps\sdkwork-claw-router-portal exec tsx --test admin-catalog-runtime.test.ts
+pnpm --dir apps\sdkwork-clawrouter-pc exec tsx --test admin-catalog-runtime.test.ts
 ```
 
 Expected: the tests fail because the new workspace files and service calls do not exist yet.
@@ -215,10 +215,10 @@ Commit the product workspace shell and its runtime tests.
 ## Task 3: Add Category, Attribute, And SKU Matrix Operations
 
 **Files:**
-- Modify: `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts`
-- Create: `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/CategoryTreePanel.tsx`
-- Create: `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/AttributeLibraryPanel.tsx`
-- Create: `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/ProductSkuMatrix.tsx`
+- Modify: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts`
+- Create: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/CategoryTreePanel.tsx`
+- Create: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/AttributeLibraryPanel.tsx`
+- Create: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/ProductSkuMatrix.tsx`
 - Create: `services/sdkwork-claw-product/tests/admin_catalog_store_sql_contract.rs`
 
 - [ ] **Step 1: Write the failing tests**
@@ -235,7 +235,7 @@ Run:
 
 ```powershell
 cargo test -p sdkwork-claw-product admin_catalog_store_sql_contract -- --nocapture
-pnpm --dir apps\sdkwork-claw-router-portal exec tsx --test admin-catalog-runtime.test.ts
+pnpm --dir apps\sdkwork-clawrouter-pc exec tsx --test admin-catalog-runtime.test.ts
 ```
 
 - [ ] **Step 3: Implement the minimal category, attribute, and SKU matrix logic**
@@ -253,9 +253,9 @@ Commit only these domain changes.
 ## Task 4: Add Price List And Publication Workflow Operations
 
 **Files:**
-- Modify: `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts`
-- Create: `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/PriceListWorkspace.tsx`
-- Create: `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/PublicationPanel.tsx`
+- Modify: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts`
+- Create: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/PriceListWorkspace.tsx`
+- Create: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/PublicationPanel.tsx`
 - Modify: `services/sdkwork-claw-product/src/api/admin_catalog.rs`
 - Modify: `services/sdkwork-claw-product/tests/admin_catalog_api.rs`
 
@@ -273,7 +273,7 @@ Run:
 
 ```powershell
 cargo test -p sdkwork-claw-product admin_catalog_api -- --nocapture
-pnpm --dir apps\sdkwork-claw-router-portal exec tsx --test admin-catalog-runtime.test.ts
+pnpm --dir apps\sdkwork-clawrouter-pc exec tsx --test admin-catalog-runtime.test.ts
 ```
 
 - [ ] **Step 3: Implement the minimal workflow commands**
@@ -291,14 +291,14 @@ Commit the workflow-focused changes together so the state machine stays coherent
 ## Task 5: Build The Inventory Workspace
 
 **Files:**
-- Modify: `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-inventory/src/index.tsx`
-- Modify: `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-inventory/src/inventoryService.ts`
-- Create: `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-inventory/src/inventoryTypes.ts`
-- Create: `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-inventory/src/InventoryWorkspace.tsx`
-- Create: `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-inventory/src/StockDashboard.tsx`
-- Create: `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-inventory/src/StockAdjustmentDrawer.tsx`
-- Create: `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-inventory/src/ReservationMonitor.tsx`
-- Create: `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-inventory/src/InventoryLedgerTimeline.tsx`
+- Modify: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-inventory/src/index.tsx`
+- Modify: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-inventory/src/inventoryService.ts`
+- Create: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-inventory/src/inventoryTypes.ts`
+- Create: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-inventory/src/InventoryWorkspace.tsx`
+- Create: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-inventory/src/StockDashboard.tsx`
+- Create: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-inventory/src/StockAdjustmentDrawer.tsx`
+- Create: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-inventory/src/ReservationMonitor.tsx`
+- Create: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-inventory/src/InventoryLedgerTimeline.tsx`
 - Create: `services/sdkwork-claw-product/tests/admin_inventory_store_sql_contract.rs`
 
 - [ ] **Step 1: Write failing tests**
@@ -316,7 +316,7 @@ Run:
 
 ```powershell
 cargo test -p sdkwork-claw-product admin_inventory_store_sql_contract -- --nocapture
-pnpm --dir apps\sdkwork-claw-router-portal exec tsx --test admin-inventory-runtime.test.ts
+pnpm --dir apps\sdkwork-clawrouter-pc exec tsx --test admin-inventory-runtime.test.ts
 ```
 
 - [ ] **Step 3: Implement the inventory workspace**
@@ -334,11 +334,11 @@ Commit the inventory work separately from catalog so the boundaries stay clear.
 ## Task 6: Update Copy, Routes, And Final Guards
 
 **Files:**
-- Modify: `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-i18n/src/index.ts`
-- Modify: `apps/sdkwork-claw-router-portal/src/App.tsx`
-- Modify: `apps/sdkwork-claw-router-portal/commerce-business-runtime.test.ts`
-- Modify: `apps/sdkwork-claw-router-portal/admin-catalog-runtime.test.ts`
-- Modify: `apps/sdkwork-claw-router-portal/admin-inventory-runtime.test.ts`
+- Modify: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-i18n/src/index.ts`
+- Modify: `apps/sdkwork-clawrouter-pc/src/App.tsx`
+- Modify: `apps/sdkwork-clawrouter-pc/commerce-business-runtime.test.ts`
+- Modify: `apps/sdkwork-clawrouter-pc/admin-catalog-runtime.test.ts`
+- Modify: `apps/sdkwork-clawrouter-pc/admin-inventory-runtime.test.ts`
 
 - [ ] **Step 1: Add the failing route and copy tests**
 
@@ -349,9 +349,9 @@ Assert that the admin shell still routes through `/admin/catalog/*` and `/admin/
 Run:
 
 ```powershell
-pnpm --dir apps\sdkwork-claw-router-portal exec tsx --test commerce-business-runtime.test.ts
-pnpm --dir apps\sdkwork-claw-router-portal exec tsx --test admin-catalog-runtime.test.ts
-pnpm --dir apps\sdkwork-claw-router-portal exec tsx --test admin-inventory-runtime.test.ts
+pnpm --dir apps\sdkwork-clawrouter-pc exec tsx --test commerce-business-runtime.test.ts
+pnpm --dir apps\sdkwork-clawrouter-pc exec tsx --test admin-catalog-runtime.test.ts
+pnpm --dir apps\sdkwork-clawrouter-pc exec tsx --test admin-inventory-runtime.test.ts
 ```
 
 - [ ] **Step 3: Update the user-facing copy and route wiring**
@@ -388,9 +388,9 @@ python -B -m tools.schema_quality_gate
 Run:
 
 ```powershell
-pnpm --dir apps\sdkwork-claw-router-portal exec tsx --test admin-catalog-runtime.test.ts
-pnpm --dir apps\sdkwork-claw-router-portal exec tsx --test admin-inventory-runtime.test.ts
-pnpm --dir apps\sdkwork-claw-router-portal exec tsx --test commerce-business-runtime.test.ts
+pnpm --dir apps\sdkwork-clawrouter-pc exec tsx --test admin-catalog-runtime.test.ts
+pnpm --dir apps\sdkwork-clawrouter-pc exec tsx --test admin-inventory-runtime.test.ts
+pnpm --dir apps\sdkwork-clawrouter-pc exec tsx --test commerce-business-runtime.test.ts
 ```
 
 - [ ] **Step 3: Verify the admin experience manually**

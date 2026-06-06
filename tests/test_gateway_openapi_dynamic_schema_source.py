@@ -34,7 +34,7 @@ class OpenApiDynamicSchemaSourceTest(unittest.TestCase):
             self.assertIn(schema_name, build_source)
 
         route_source = contract_routes.read_text(encoding="utf-8")
-        self.assertNotIn("apps/sdkwork-claw-router-portal/public/openapi.json", route_source)
+        self.assertNotIn("apps/sdkwork-clawrouter-pc/public/openapi.json", route_source)
         self.assertNotIn("../../../generated/openapi/clawrouter-app-openapi.json", route_source)
         self.assertNotIn("../../../generated/openapi/clawrouter-backend-openapi.json", route_source)
         self.assertIn('env!("OUT_DIR")', route_source)

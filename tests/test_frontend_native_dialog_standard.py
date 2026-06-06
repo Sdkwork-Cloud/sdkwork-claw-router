@@ -4,7 +4,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-FRONTEND_ROOT = ROOT / "apps" / "sdkwork-claw-router-portal" / "packages"
+FRONTEND_ROOT = ROOT / "apps" / "sdkwork-clawrouter-pc" / "packages"
 
 
 class FrontendNativeDialogStandardTest(unittest.TestCase):

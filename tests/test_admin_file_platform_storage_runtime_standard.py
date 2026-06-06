@@ -6,9 +6,9 @@ ROOT = Path(__file__).resolve().parents[1]
 STORAGE_PACKAGE = (
     ROOT
     / "apps"
-    / "sdkwork-claw-router-portal"
+    / "sdkwork-clawrouter-pc"
     / "packages"
-    / "sdkwork-claw-router-admin-file-platform"
+    / "sdkwork-clawrouter-pc-admin-file-platform"
     / "src"
 )
 BACKEND_SDK_SRC = (

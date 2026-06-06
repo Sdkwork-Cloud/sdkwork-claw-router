@@ -1,7 +1,7 @@
 fragment: operations/app-iam
 frontend_operations:
 - route: /console/api-keys
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-api-keys/src/apiKeyService.ts
   operation: fetchKeys
   kind: read
   api_surface: app
@@ -137,7 +137,7 @@ frontend_operations:
               nullable: true
               maxLength: 64
 - route: /console/api-keys
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-api-keys/src/apiKeyService.ts
   operation: createKey
   kind: create
   api_surface: app
@@ -214,7 +214,7 @@ frontend_operations:
         minLength: 1
         description: Full raw API key secret returned by create responses. Authenticated owner management list and update responses also expose this value as item.copyableKey for console copy actions.
 - route: /console/api-keys
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-api-keys/src/apiKeyService.ts
   operation: updateKey
   operation_id: apiKeys.update
   kind: update
@@ -288,7 +288,7 @@ frontend_operations:
         properties: *id003
         description: Updated API key metadata. Authenticated owner management responses include copyableKey for console copy actions.
 - route: /console/api-keys
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-api-keys/src/apiKeyService.ts
   operation: deleteKey
   operation_id: apiKeys.delete
   kind: delete
@@ -313,7 +313,7 @@ frontend_operations:
       deleted:
         type: boolean
 - route: /console/settings
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-settings/src/settingsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-settings/src/settingsService.ts
   operation: fetchSettings
   kind: read
   api_surface: app
@@ -359,7 +359,7 @@ frontend_operations:
           apiMonitor:
             type: boolean
 - route: /console/settings
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-settings/src/settingsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-settings/src/settingsService.ts
   operation: updateSettings
   kind: update
   api_surface: app
@@ -399,7 +399,7 @@ frontend_operations:
       success:
         type: boolean
 - route: /console/user
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-user/src/userService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-user/src/userService.ts
   operation: fetchCurrentUser
   operation_id: users.current.retrieve
   kind: read
@@ -419,7 +419,7 @@ frontend_operations:
     schema:
       $ref: '#/components/schemas/IamUserResponse'
 - route: /console/user
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/iamDirectoryApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/iamDirectoryApiOperations.ts
   operation: fetchIamOrganizations
   operation_scope: app_shell
   operation_id: organizations.list
@@ -521,7 +521,7 @@ frontend_operations:
               type: string
               maxLength: 64
 - route: /console/user
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/iamDirectoryApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/iamDirectoryApiOperations.ts
   operation: fetchIamOrganizationTree
   operation_scope: app_shell
   operation_id: organizations.tree.retrieve
@@ -597,7 +597,7 @@ frontend_operations:
                 type: object
                 additionalProperties: true
 - route: /console/user
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/iamDirectoryApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/iamDirectoryApiOperations.ts
   operation: fetchIamOrganizationMemberships
   operation_scope: app_shell
   operation_id: organizationMemberships.list
@@ -667,7 +667,7 @@ frontend_operations:
               type: string
               maxLength: 1024
 - route: /console/user
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/iamDirectoryApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/iamDirectoryApiOperations.ts
   operation: fetchIamDepartments
   operation_scope: app_shell
   operation_id: departments.list
@@ -741,7 +741,7 @@ frontend_operations:
               type: string
               maxLength: 64
 - route: /console/user
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/iamDirectoryApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/iamDirectoryApiOperations.ts
   operation: fetchIamDepartmentTree
   operation_scope: app_shell
   operation_id: departments.tree.retrieve
@@ -822,7 +822,7 @@ frontend_operations:
                 type: object
                 additionalProperties: true
 - route: /console/user
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/iamDirectoryApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/iamDirectoryApiOperations.ts
   operation: fetchIamDepartmentAssignments
   operation_scope: app_shell
   operation_id: departmentAssignments.list
@@ -908,7 +908,7 @@ frontend_operations:
               type: string
               maxLength: 64
 - route: /console/user
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/iamDirectoryApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/iamDirectoryApiOperations.ts
   operation: fetchIamPositions
   operation_scope: app_shell
   operation_id: positions.list
@@ -986,7 +986,7 @@ frontend_operations:
               type: string
               maxLength: 64
 - route: /console/user
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/iamDirectoryApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/iamDirectoryApiOperations.ts
   operation: fetchIamPositionAssignments
   operation_scope: app_shell
   operation_id: positionAssignments.list
@@ -1068,7 +1068,7 @@ frontend_operations:
               type: string
               maxLength: 64
 - route: /console/user
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/iamDirectoryApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/iamDirectoryApiOperations.ts
   operation: fetchIamRoleBindings
   operation_scope: app_shell
   operation_id: roleBindings.list
@@ -1149,7 +1149,7 @@ frontend_operations:
               type: string
               maxLength: 64
 - route: /auth/login
-  source: apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts
+  source: apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts
   operation: signInWithSessionBridge
   operation_id: sessions.create
   kind: create

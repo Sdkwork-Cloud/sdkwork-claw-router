@@ -3,32 +3,32 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-PORTAL_PACKAGES = ROOT / "apps" / "sdkwork-claw-router-portal" / "packages"
+PORTAL_PACKAGES = ROOT / "apps" / "sdkwork-clawrouter-pc" / "packages"
 OFFICIAL_UI = (
     PORTAL_PACKAGES
-    / "sdkwork-claw-router-admin-wechat-official-account"
+    / "sdkwork-clawrouter-pc-admin-wechat-official-account"
     / "src"
     / "index.tsx"
 )
 OFFICIAL_SERVICE = (
     PORTAL_PACKAGES
-    / "sdkwork-claw-router-admin-wechat-official-account"
+    / "sdkwork-clawrouter-pc-admin-wechat-official-account"
     / "src"
     / "openPlatformWechatOfficialService.ts"
 )
 MINI_UI = (
     PORTAL_PACKAGES
-    / "sdkwork-claw-router-admin-wechat-mini-program"
+    / "sdkwork-clawrouter-pc-admin-wechat-mini-program"
     / "src"
     / "index.tsx"
 )
 MINI_SERVICE = (
     PORTAL_PACKAGES
-    / "sdkwork-claw-router-admin-wechat-mini-program"
+    / "sdkwork-clawrouter-pc-admin-wechat-mini-program"
     / "src"
     / "openPlatformWechatMiniProgramService.ts"
 )
-I18N = PORTAL_PACKAGES / "sdkwork-claw-router-i18n" / "src" / "index.ts"
+I18N = PORTAL_PACKAGES / "sdkwork-clawrouter-pc-i18n" / "src" / "index.ts"
 MODEL_CONTRACT = (
     ROOT
     / "docs"

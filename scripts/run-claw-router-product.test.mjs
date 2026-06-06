@@ -1,4 +1,4 @@
-﻿import assert from 'node:assert/strict';
+import assert from 'node:assert/strict';
 import { execFile } from 'node:child_process';
 import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
@@ -11,7 +11,7 @@ import {
 } from './claw-router-layout.mjs';
 
 const workspaceRoot = path.resolve(import.meta.dirname, '..');
-const portalRoot = path.join(workspaceRoot, 'apps', 'sdkwork-claw-router-portal');
+const portalRoot = path.join(workspaceRoot, 'apps', 'sdkwork-clawrouter-pc');
 const execFileAsync = promisify(execFile);
 
 const validReleaseEnv = Object.freeze({
@@ -1497,7 +1497,7 @@ test('Rust edge server owns configurable portal CSP connect-src policy', () => {
 
 test('portal env example defaults to same-origin Rust edge API paths', () => {
   const envExample = readFileSync(
-    path.join(workspaceRoot, 'apps', 'sdkwork-claw-router-portal', '.env.example'),
+    path.join(workspaceRoot, 'apps', 'sdkwork-clawrouter-pc', '.env.example'),
     'utf8',
   );
 
@@ -1769,7 +1769,7 @@ test('claw router product launcher loads default PostgreSQL dev profile from wor
       '',
     ].join('\n'),
   );
-  writeFixtureFile(fixtureRoot, 'apps/sdkwork-claw-router-portal/node_modules/.keep', '');
+  writeFixtureFile(fixtureRoot, 'apps/sdkwork-clawrouter-pc/node_modules/.keep', '');
 
   const examplePlan = module.createClawRouterProductLaunchPlan({
     workspaceRoot: fixtureRoot,
@@ -1916,7 +1916,7 @@ test('claw router workspace launch plan defaults to all-in-one Rust edge runtime
     );
     assert.deepEqual(plan.steps[2].args, [
       '--dir',
-      'apps/sdkwork-claw-router-portal',
+      'apps/sdkwork-clawrouter-pc',
       'browser:dev',
     ]);
     assert.equal(plan.steps[2].env.PORT, '3901');
@@ -2110,7 +2110,7 @@ test('claw router workspace supports custom edge server and direct portal binds'
 
   assert.deepEqual(portalStep.args, [
     '--dir',
-    'apps/sdkwork-claw-router-portal',
+    'apps/sdkwork-clawrouter-pc',
     'browser:dev',
   ]);
   assert.equal(portalStep.env.HOST, '0.0.0.0');
@@ -2876,7 +2876,7 @@ test('claw router product launcher desktop mode runs install-checked workspace a
 
   assert.equal(plan.length, 2);
   assert.equal(plan[0].label, 'portal install');
-  assert.deepEqual(plan[0].args, ['--dir', 'apps/sdkwork-claw-router-portal', 'install']);
+  assert.deepEqual(plan[0].args, ['--dir', 'apps/sdkwork-clawrouter-pc', 'install']);
   assert.equal(plan[0].command, 'pnpm.cmd');
   assert.equal(plan[0].shell, true);
   assert.equal(plan[1].label, 'desktop development workspace');
@@ -3073,7 +3073,7 @@ test('production starter supports help, dry-run, and full edge access matrix', a
       PORTAL_PUBLIC_API_BASE_URL: 'https://api.example.com/v1',
       CARGO_TARGET_DIR: 'target-codex',
     },
-    path.join(workspaceRoot, 'apps', 'sdkwork-claw-router-portal', 'dist'),
+    path.join(workspaceRoot, 'apps', 'sdkwork-clawrouter-pc', 'dist'),
     module.parseStartProductionArgs([
       '--gateway-forward-url',
       'http://gateway.internal:18080',
@@ -3103,7 +3103,7 @@ test('production starter supports help, dry-run, and full edge access matrix', a
   assert.equal(env.PORTAL_TOOL_API_RATE_LIMIT_WINDOW_SECONDS, '60');
   assert.equal(
     env.PORTAL_TOOL_API_SDK_ARCHIVE_ROOT,
-    path.join(workspaceRoot, 'apps', 'sdkwork-claw-router-portal', 'dist', 'sdk-archives'),
+    path.join(workspaceRoot, 'apps', 'sdkwork-clawrouter-pc', 'dist', 'sdk-archives'),
   );
   assert.equal(env.CARGO_TARGET_DIR, 'target-codex');
   assert.equal(
@@ -3150,7 +3150,7 @@ test('production starter supports help, dry-run, and full edge access matrix', a
   assert.ok(lines.includes('[start-production]   PORTAL_TOOL_API_RATE_LIMIT_WINDOW_SECONDS=60'));
   assert.ok(lines.some((line) => (
     line.startsWith('[start-production]   PORTAL_TOOL_API_SDK_ARCHIVE_ROOT=')
-    && line.includes(path.join('apps', 'sdkwork-claw-router-portal', 'dist', 'sdk-archives'))
+    && line.includes(path.join('apps', 'sdkwork-clawrouter-pc', 'dist', 'sdk-archives'))
   )));
   assert.ok(lines.includes('[start-production]   SDKWORK_CLAW_EDGE_EXTERNAL_SCHEME=https'));
   assert.ok(lines.includes('[start-production]   SDKWORK_CLAW_EDGE_TRUST_FORWARDED_HEADERS=1'));
@@ -3165,7 +3165,7 @@ test('production starter defaults to all-in-one runtime without forwarding targe
     {
       SDKWORK_CLAW_SERVER_BIND: '0.0.0.0:12900',
     },
-    path.join(workspaceRoot, 'apps', 'sdkwork-claw-router-portal', 'dist'),
+    path.join(workspaceRoot, 'apps', 'sdkwork-clawrouter-pc', 'dist'),
     module.parseStartProductionArgs([]),
   );
   const lines = module.buildStartProductionAccessLines(env);
@@ -3483,7 +3483,7 @@ test('production build creates portal assets and Rust edge release artifact', as
   assert.equal(plan[1].attempts, 2);
   assert.equal(plan[2].attempts, 2);
   assert.equal(plan[3].attempts, 2);
-  assert.deepEqual(plan[4].args, ['--dir', 'apps/sdkwork-claw-router-portal', 'build']);
+  assert.deepEqual(plan[4].args, ['--dir', 'apps/sdkwork-clawrouter-pc', 'build']);
   assert.deepEqual(plan[5].args, ['scripts/archive-claw-router-sdks.mjs']);
   assert.equal(plan[5].command, 'node');
   assert.deepEqual(plan[6].args, ['build', '-p', 'sdkwork-claw-gateway', '--bin', 'clawrouter', '--release']);
@@ -4922,7 +4922,7 @@ test('install package tar writer supports long production asset paths', async ()
   const module = await import(
     pathToFileURL(path.join(workspaceRoot, 'scripts', 'build-claw-router-install-package.mjs')).href
   );
-  const longPath = 'portal/dist/assets/admin/operations/runtime/chunks/sdkwork-claw-router-admin-operations-runtime-production-entrypoint-bundle-abcdef1234567890.js';
+  const longPath = 'portal/dist/assets/admin/operations/runtime/chunks/sdkwork-clawrouter-pc-admin-operations-runtime-production-entrypoint-bundle-abcdef1234567890.js';
   assert.ok(longPath.length > 100);
   const tarBytes = module.createTar([
     {
@@ -5181,7 +5181,7 @@ test('production SDK archiver creates deterministic ZIP artifacts for generated 
   });
   assert.equal(
     module.defaultSdkArchiveRoot(workspaceRoot),
-    path.join(workspaceRoot, 'apps', 'sdkwork-claw-router-portal', 'dist', 'sdk-archives'),
+    path.join(workspaceRoot, 'apps', 'sdkwork-clawrouter-pc', 'dist', 'sdk-archives'),
   );
   assert.deepEqual(module.defaultSdkArchiveSpecs().map((spec) => spec.archiveName), [
     'sdkwork-clawrouter-app-sdk-typescript-0.1.0.zip',
@@ -5240,9 +5240,9 @@ test('API router product chain is covered from portal services through SDK and R
     path.join(
       workspaceRoot,
       'apps',
-      'sdkwork-claw-router-portal',
+      'sdkwork-clawrouter-pc',
       'packages',
-      'sdkwork-claw-router-models',
+      'sdkwork-clawrouter-pc-models',
       'src',
       'modelService.ts',
     ),
@@ -5252,9 +5252,9 @@ test('API router product chain is covered from portal services through SDK and R
     path.join(
       workspaceRoot,
       'apps',
-      'sdkwork-claw-router-portal',
+      'sdkwork-clawrouter-pc',
       'packages',
-      'sdkwork-claw-router-playground',
+      'sdkwork-clawrouter-pc-playground',
       'src',
       'playgroundService.ts',
     ),
@@ -5264,9 +5264,9 @@ test('API router product chain is covered from portal services through SDK and R
     path.join(
       workspaceRoot,
       'apps',
-      'sdkwork-claw-router-portal',
+      'sdkwork-clawrouter-pc',
       'packages',
-      'sdkwork-claw-router-playground',
+      'sdkwork-clawrouter-pc-playground',
       'src',
       'appRuntimeApiOperations.ts',
     ),
@@ -5558,8 +5558,8 @@ test('API router product chain is covered from portal services through SDK and R
     const manifestOperation = manifest.operations.find((entry) =>
       entry.source === (
         operation.operation === 'fetchModels'
-          ? 'apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-models/src/modelService.ts'
-          : 'apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/playgroundService.ts'
+          ? 'apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-models/src/modelService.ts'
+          : 'apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/playgroundService.ts'
       )
       && entry.operation === operation.operation
       && entry.api_path === operation.manifestPath
@@ -5600,7 +5600,7 @@ test('API router product chain is covered from portal services through SDK and R
   }
 
   const playgroundModelGroupsOperation = manifest.operations.find((entry) =>
-    entry.source === 'apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/playgroundService.ts'
+    entry.source === 'apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/playgroundService.ts'
     && entry.operation === 'fetchModelGroups',
   );
   assert.ok(
@@ -5659,9 +5659,9 @@ test('portal SDK reference uses real generated SDK package metadata for download
     path.join(
       workspaceRoot,
       'apps',
-      'sdkwork-claw-router-portal',
+      'sdkwork-clawrouter-pc',
       'packages',
-      'sdkwork-claw-router-sdk-reference',
+      'sdkwork-clawrouter-pc-sdk-reference',
       'src',
       'pages',
       'SdkReference.tsx',
@@ -5672,9 +5672,9 @@ test('portal SDK reference uses real generated SDK package metadata for download
     path.join(
       workspaceRoot,
       'apps',
-      'sdkwork-claw-router-portal',
+      'sdkwork-clawrouter-pc',
       'packages',
-      'sdkwork-claw-router-sdk-reference',
+      'sdkwork-clawrouter-pc-sdk-reference',
       'src',
       'data',
       'sdkData.ts',
@@ -5685,9 +5685,9 @@ test('portal SDK reference uses real generated SDK package metadata for download
     path.join(
       workspaceRoot,
       'apps',
-      'sdkwork-claw-router-portal',
+      'sdkwork-clawrouter-pc',
       'packages',
-      'sdkwork-claw-router-commons',
+      'sdkwork-clawrouter-pc-commons',
       'src',
       'sdk-clients.ts',
     ),
@@ -5746,9 +5746,9 @@ test('portal model catalog API examples use the generated app SDK package', () =
     path.join(
       workspaceRoot,
       'apps',
-      'sdkwork-claw-router-portal',
+      'sdkwork-clawrouter-pc',
       'packages',
-      'sdkwork-claw-router-models',
+      'sdkwork-clawrouter-pc-models',
       'src',
       'modelCatalog.ts',
     ),
@@ -5758,9 +5758,9 @@ test('portal model catalog API examples use the generated app SDK package', () =
     path.join(
       workspaceRoot,
       'apps',
-      'sdkwork-claw-router-portal',
+      'sdkwork-clawrouter-pc',
       'packages',
-      'sdkwork-claw-router-commons',
+      'sdkwork-clawrouter-pc-commons',
       'src',
       'sdk-clients.ts',
     ),
@@ -6182,7 +6182,7 @@ test('fast verification plan refreshes SDK dist before low-cost Codex iteration 
     'pnpm.cmd --dir sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi build',
     'pnpm.cmd --dir sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/generated/server-openapi build',
     'pnpm.cmd --dir sdks/clawrouter-open-sdk/clawrouter-open-sdk-typescript/generated/server-openapi build',
-    'pnpm.cmd --dir apps/sdkwork-claw-router-portal exec tsx auth-runtime.test.ts',
+    'pnpm.cmd --dir apps/sdkwork-clawrouter-pc exec tsx auth-runtime.test.ts',
     'python -B -m unittest tests.test_frontend_source_hygiene_standard',
   ]);
   assert.ok(!labels.includes('rust compile warnings gate'));
@@ -6254,7 +6254,7 @@ test('verification plan can include edge dev server smoke when explicitly reques
   );
   const rootReadme = readFileSync(path.join(workspaceRoot, 'README.md'), 'utf8');
   const portalReadme = readFileSync(
-    path.join(workspaceRoot, 'apps', 'sdkwork-claw-router-portal', 'README.md'),
+    path.join(workspaceRoot, 'apps', 'sdkwork-clawrouter-pc', 'README.md'),
     'utf8',
   );
 
@@ -6262,7 +6262,7 @@ test('verification plan can include edge dev server smoke when explicitly reques
   assert.ok(smokeIndex > viteConfigRuntimeIndex, 'edge dev smoke must run after portal Vite config runtime tests');
   assert.ok(smokeIndex < typecheckIndex, 'edge dev smoke must run before artifact-only frontend checks');
   assert.ok(commandLines.includes(
-    'node --experimental-strip-types apps/sdkwork-claw-router-portal/vite-config-runtime.test.ts',
+    'node --experimental-strip-types apps/sdkwork-clawrouter-pc/vite-config-runtime.test.ts',
   ));
   assert.ok(commandLines.includes('node scripts/smoke-edge-dev-server.mjs'));
   assert.ok(smokeSource.includes('pnpm dev'));
@@ -6442,10 +6442,10 @@ test('workspace cleanup plan defaults to rebuildable local artifacts only', asyn
   assert.ok(relativePaths.includes('.pytest_cache'));
   assert.ok(relativePaths.includes('.mypy_cache'));
   assert.ok(relativePaths.includes('.ruff_cache'));
-  assert.ok(relativePaths.includes(path.join('apps', 'sdkwork-claw-router-portal', '.turbo')));
-  assert.ok(relativePaths.includes(path.join('apps', 'sdkwork-claw-router-portal', 'dist')));
+  assert.ok(relativePaths.includes(path.join('apps', 'sdkwork-clawrouter-pc', '.turbo')));
+  assert.ok(relativePaths.includes(path.join('apps', 'sdkwork-clawrouter-pc', 'dist')));
   assert.ok(!relativePaths.includes('target'));
-  assert.ok(!relativePaths.includes(path.join('apps', 'sdkwork-claw-router-portal', 'node_modules')));
+  assert.ok(!relativePaths.includes(path.join('apps', 'sdkwork-clawrouter-pc', 'node_modules')));
 
   const deepPlan = module.buildCleanPlan({
     workspaceRoot,
@@ -6468,7 +6468,7 @@ test('workspace cleanup plan defaults to rebuildable local artifacts only', asyn
     'target-verify-split',
     'target-test-fixtures',
   ]);
-  assert.ok(deepRelativePaths.includes(path.join('apps', 'sdkwork-claw-router-portal', 'node_modules')));
+  assert.ok(deepRelativePaths.includes(path.join('apps', 'sdkwork-clawrouter-pc', 'node_modules')));
 });
 
 test('workspace cleanup continues after a single artifact removal fails', async () => {
@@ -7449,20 +7449,20 @@ test('verification plan validates portal Vite config before dev smoke and build'
   assert.ok(viteConfigRuntimeIndex < typecheckIndex, 'portal Vite config runtime tests must run before frontend typecheck');
   assert.ok(viteConfigRuntimeIndex < buildIndex, 'portal Vite config runtime tests must run before production build');
   assert.ok(commandLines.includes(
-    'node --experimental-strip-types apps/sdkwork-claw-router-portal/vite-config-runtime.test.ts',
+    'node --experimental-strip-types apps/sdkwork-clawrouter-pc/vite-config-runtime.test.ts',
   ));
 });
 
 test('portal service command results must not fabricate returned entities from empty objects', () => {
-  const serviceRoot = path.join(workspaceRoot, 'apps', 'sdkwork-claw-router-portal', 'packages');
+  const serviceRoot = path.join(workspaceRoot, 'apps', 'sdkwork-clawrouter-pc', 'packages');
   const serviceFiles = [
-    'sdkwork-claw-router-admin-announcement/src/announcementService.ts',
-    'sdkwork-claw-router-admin-channel/src/channelService.ts',
-    'sdkwork-claw-router-admin-group/src/groupService.ts',
-    'sdkwork-claw-router-admin-marketing/src/marketingService.ts',
-    'sdkwork-claw-router-admin-model/src/modelService.ts',
-    'sdkwork-claw-router-admin-ratelimit/src/ratelimitService.ts',
-    'sdkwork-claw-router-admin-user/src/userService.ts',
+    'sdkwork-clawrouter-pc-admin-announcement/src/announcementService.ts',
+    'sdkwork-clawrouter-pc-admin-channel/src/channelService.ts',
+    'sdkwork-clawrouter-pc-admin-group/src/groupService.ts',
+    'sdkwork-clawrouter-pc-admin-marketing/src/marketingService.ts',
+    'sdkwork-clawrouter-pc-admin-model/src/modelService.ts',
+    'sdkwork-clawrouter-pc-admin-ratelimit/src/ratelimitService.ts',
+    'sdkwork-clawrouter-pc-admin-user/src/userService.ts',
   ];
 
   for (const relativeFile of serviceFiles) {
@@ -7481,12 +7481,12 @@ test('portal service command results must not fabricate returned entities from e
 });
 
 test('portal admin update commands must require returned entities instead of silent null success', () => {
-  const serviceRoot = path.join(workspaceRoot, 'apps', 'sdkwork-claw-router-portal', 'packages');
+  const serviceRoot = path.join(workspaceRoot, 'apps', 'sdkwork-clawrouter-pc', 'packages');
   const serviceFiles = [
-    'sdkwork-claw-router-admin-announcement/src/announcementService.ts',
-    'sdkwork-claw-router-admin-channel/src/channelService.ts',
-    'sdkwork-claw-router-admin-group/src/groupService.ts',
-    'sdkwork-claw-router-admin-user/src/userService.ts',
+    'sdkwork-clawrouter-pc-admin-announcement/src/announcementService.ts',
+    'sdkwork-clawrouter-pc-admin-channel/src/channelService.ts',
+    'sdkwork-clawrouter-pc-admin-group/src/groupService.ts',
+    'sdkwork-clawrouter-pc-admin-user/src/userService.ts',
   ];
 
   for (const relativeFile of serviceFiles) {
@@ -7505,9 +7505,9 @@ test('portal admin update commands must require returned entities instead of sil
 });
 
 test('portal channel test commands must require returned channel entities', () => {
-  const serviceRoot = path.join(workspaceRoot, 'apps', 'sdkwork-claw-router-portal', 'packages');
+  const serviceRoot = path.join(workspaceRoot, 'apps', 'sdkwork-clawrouter-pc', 'packages');
   const serviceFiles = [
-    'sdkwork-claw-router-admin-channel/src/channelService.ts',
+    'sdkwork-clawrouter-pc-admin-channel/src/channelService.ts',
   ];
 
   for (const relativeFile of serviceFiles) {
@@ -7526,34 +7526,34 @@ test('portal channel test commands must require returned channel entities', () =
 });
 
 test('portal mutable entity services must require backend stable ids', () => {
-  const portalRoot = path.join(workspaceRoot, 'apps', 'sdkwork-claw-router-portal');
+  const portalRoot = path.join(workspaceRoot, 'apps', 'sdkwork-clawrouter-pc');
   const commonsSource = readFileSync(
-    path.join(portalRoot, 'packages', 'sdkwork-claw-router-commons', 'src', 'api-result.ts'),
+    path.join(portalRoot, 'packages', 'sdkwork-clawrouter-pc-commons', 'src', 'api-result.ts'),
     'utf8',
   );
   const guardedServices = [
     {
-      file: path.join('sdkwork-claw-router-admin-group', 'src', 'groupService.ts'),
+      file: path.join('sdkwork-clawrouter-pc-admin-group', 'src', 'groupService.ts'),
       requiredMessages: ['Group id is required'],
       forbidden: [/id:\s*readString\(item,\s*['"]id['"]\)/u],
     },
     {
-      file: path.join('sdkwork-claw-router-admin-channel', 'src', 'channelService.ts'),
+      file: path.join('sdkwork-clawrouter-pc-admin-channel', 'src', 'channelService.ts'),
       requiredMessages: ['Channel id is required', 'Provider credential id is required'],
       forbidden: [/id:\s*readString\(item,\s*['"]id['"]\)/u],
     },
     {
-      file: path.join('sdkwork-claw-router-admin-user', 'src', 'userService.ts'),
+      file: path.join('sdkwork-clawrouter-pc-admin-user', 'src', 'userService.ts'),
       requiredMessages: ['User id is required', 'API key id is required'],
       forbidden: [/id:\s*readNumber\(item,\s*['"]id['"]\)/u, /id:\s*readString\(item,\s*['"]id['"]\)/u],
     },
     {
-      file: path.join('sdkwork-claw-router-admin-model', 'src', 'modelService.ts'),
+      file: path.join('sdkwork-clawrouter-pc-admin-model', 'src', 'modelService.ts'),
       requiredMessages: ['Vendor id is required', 'Model id is required', 'Model vendor id is required'],
       forbidden: [/id:\s*readString\(item,\s*['"]id['"]\)/u, /vendorId:\s*readString\(item,\s*['"]vendorId['"]\)/u],
     },
     {
-      file: path.join('sdkwork-claw-router-admin-ratelimit', 'src', 'ratelimitService.ts'),
+      file: path.join('sdkwork-clawrouter-pc-admin-ratelimit', 'src', 'ratelimitService.ts'),
       requiredMessages: [
         'IP limit id is required',
         'Token limit id is required',
@@ -7563,42 +7563,42 @@ test('portal mutable entity services must require backend stable ids', () => {
       forbidden: [/id:\s*readString\(item,\s*['"]id['"]\)/u],
     },
     {
-      file: path.join('sdkwork-claw-router-admin-marketing', 'src', 'marketingService.ts'),
+      file: path.join('sdkwork-clawrouter-pc-admin-marketing', 'src', 'marketingService.ts'),
       requiredMessages: ['Referral stat id is required'],
       forbidden: [/id:\s*readString\(item,\s*['"]id['"]\)/u],
     },
     {
-      file: path.join('sdkwork-claw-router-admin-announcement', 'src', 'announcementService.ts'),
+      file: path.join('sdkwork-clawrouter-pc-admin-announcement', 'src', 'announcementService.ts'),
       requiredMessages: ['Announcement id is required'],
       forbidden: [/id:\s*readString\(item,\s*['"]id['"]\)/u],
     },
     {
-      file: path.join('sdkwork-claw-router-admin-dashboard', 'src', 'dashboardService.ts'),
+      file: path.join('sdkwork-clawrouter-pc-admin-dashboard', 'src', 'dashboardService.ts'),
       requiredMessages: ['Recent usage trace id is required'],
       forbidden: [/id:\s*readString\(item,\s*['"]id['"]\)/u],
     },
     {
-      file: path.join('sdkwork-claw-router-admin-monitor', 'src', 'monitorService.ts'),
+      file: path.join('sdkwork-clawrouter-pc-admin-monitor', 'src', 'monitorService.ts'),
       requiredMessages: ['System node id is required', 'Alert id is required'],
       forbidden: [/id:\s*readString\(item,\s*['"]id['"]\)/u],
     },
     {
-      file: path.join('sdkwork-claw-router-admin-record', 'src', 'recordService.ts'),
+      file: path.join('sdkwork-clawrouter-pc-admin-record', 'src', 'recordService.ts'),
       requiredMessages: ['Log record id is required'],
       forbidden: [/id:\s*readString\(item,\s*['"]id['"]\)/u],
     },
     {
-      file: path.join('sdkwork-claw-router-console-wallet', 'src', 'walletService.ts'),
+      file: path.join('sdkwork-clawrouter-pc-console-wallet', 'src', 'walletService.ts'),
       requiredMessages: ['Redeem history id is required', 'Recharge history id is required'],
       forbidden: [/id:\s*readNumber\(item,\s*['"]id['"]\)/u],
     },
     {
-      file: path.join('sdkwork-claw-router-admin-wallet', 'src', 'walletService.ts'),
+      file: path.join('sdkwork-clawrouter-pc-admin-wallet', 'src', 'walletService.ts'),
       requiredMessages: ['Recharge record id is required'],
       forbidden: [/id:\s*readString\(item,\s*['"]id['"]\)/u],
     },
     {
-      file: path.join('sdkwork-claw-router-console-usage', 'src', 'usageService.ts'),
+      file: path.join('sdkwork-clawrouter-pc-console-usage', 'src', 'usageService.ts'),
       requiredMessages: ['Usage log id is required'],
       forbidden: [/id:\s*readString\(item,\s*['"]id['"]\)/u],
     },
@@ -7636,10 +7636,10 @@ test('portal mutable entity services must require backend stable ids', () => {
 
 test('portal dev scripts run Vite without a Node server entrypoint', () => {
   const portalPackage = JSON.parse(
-    readFileSync(path.join(workspaceRoot, 'apps', 'sdkwork-claw-router-portal', 'package.json'), 'utf8'),
+    readFileSync(path.join(workspaceRoot, 'apps', 'sdkwork-clawrouter-pc', 'package.json'), 'utf8'),
   );
   const viteConfig = readFileSync(
-    path.join(workspaceRoot, 'apps', 'sdkwork-claw-router-portal', 'vite.config.ts'),
+    path.join(workspaceRoot, 'apps', 'sdkwork-clawrouter-pc', 'vite.config.ts'),
     'utf8',
   );
 
@@ -7671,13 +7671,13 @@ test('portal dev scripts run Vite without a Node server entrypoint', () => {
   assert.ok(viteConfig.includes('PORTAL_PUBLIC_APP_API_BASE_URL'));
   assert.ok(viteConfig.includes('PORTAL_PUBLIC_BACKEND_API_BASE_URL'));
   assert.ok(viteConfig.includes('optimizeDeps'));
-  assert.ok(viteConfig.includes("'sdkwork-claw-router-api-reference'"));
-  assert.ok(viteConfig.includes("'sdkwork-claw-router-sdk-reference'"));
+  assert.ok(viteConfig.includes("'sdkwork-clawrouter-pc-api-reference'"));
+  assert.ok(viteConfig.includes("'sdkwork-clawrouter-pc-sdk-reference'"));
 });
 
 test('portal typecheck project does not compile external appbase or UI source', () => {
   const portalPackage = JSON.parse(
-    readFileSync(path.join(workspaceRoot, 'apps', 'sdkwork-claw-router-portal', 'package.json'), 'utf8'),
+    readFileSync(path.join(workspaceRoot, 'apps', 'sdkwork-clawrouter-pc', 'package.json'), 'utf8'),
   );
   const typecheckConfig = JSON.parse(
     readFileSync(path.join(portalRoot, 'tsconfig.typecheck.json'), 'utf8'),
@@ -7735,47 +7735,47 @@ test('portal typecheck project does not compile external appbase or UI source', 
 });
 
 test('portal workspace packages declare ESM module metadata', () => {
-  const packagesRoot = path.join(workspaceRoot, 'apps', 'sdkwork-claw-router-portal', 'packages');
+  const packagesRoot = path.join(workspaceRoot, 'apps', 'sdkwork-clawrouter-pc', 'packages');
   const packageNames = [
-    'sdkwork-claw-router-admin-announcement',
-    'sdkwork-claw-router-admin-channel',
-    'sdkwork-claw-router-admin-dashboard',
-    'sdkwork-claw-router-admin-finance',
-    'sdkwork-claw-router-admin-group',
-    'sdkwork-claw-router-admin-marketing',
-    'sdkwork-claw-router-admin-model',
-    'sdkwork-claw-router-admin-monitor',
-    'sdkwork-claw-router-admin-ratelimit',
-    'sdkwork-claw-router-admin-record',
-    'sdkwork-claw-router-admin-user',
-    'sdkwork-claw-router-api-reference',
-    'sdkwork-claw-router-app-center',
-    'sdkwork-claw-router-commons',
-    'sdkwork-claw-router-console-account',
-    'sdkwork-claw-router-console-api-keys',
-    'sdkwork-claw-router-console-checkout',
-    'sdkwork-claw-router-console-core',
-    'sdkwork-claw-router-console-dashboard',
-    'sdkwork-claw-router-console-gateway',
-    'sdkwork-claw-router-console-memberships',
-    'sdkwork-claw-router-console-messages',
-    'sdkwork-claw-router-console-recharge',
-    'sdkwork-claw-router-console-settings',
-    'sdkwork-claw-router-console-settlements',
-    'sdkwork-claw-router-console-usage',
-    'sdkwork-claw-router-console-user',
-    'sdkwork-claw-router-console-wallet',
-    'sdkwork-claw-router-core',
-    'sdkwork-claw-router-courses',
-    'sdkwork-claw-router-forum',
-    'sdkwork-claw-router-home',
-    'sdkwork-claw-router-i18n',
-    'sdkwork-claw-router-models',
-    'sdkwork-claw-router-playground',
-    'sdkwork-claw-router-rankings',
-    'sdkwork-claw-router-sdk-reference',
-    'sdkwork-claw-router-skills-hub',
-    'sdkwork-claw-router-types',
+    'sdkwork-clawrouter-pc-admin-announcement',
+    'sdkwork-clawrouter-pc-admin-channel',
+    'sdkwork-clawrouter-pc-admin-dashboard',
+    'sdkwork-clawrouter-pc-admin-finance',
+    'sdkwork-clawrouter-pc-admin-group',
+    'sdkwork-clawrouter-pc-admin-marketing',
+    'sdkwork-clawrouter-pc-admin-model',
+    'sdkwork-clawrouter-pc-admin-monitor',
+    'sdkwork-clawrouter-pc-admin-ratelimit',
+    'sdkwork-clawrouter-pc-admin-record',
+    'sdkwork-clawrouter-pc-admin-user',
+    'sdkwork-clawrouter-pc-api-reference',
+    'sdkwork-clawrouter-pc-app-center',
+    'sdkwork-clawrouter-pc-commons',
+    'sdkwork-clawrouter-pc-console-account',
+    'sdkwork-clawrouter-pc-console-api-keys',
+    'sdkwork-clawrouter-pc-console-checkout',
+    'sdkwork-clawrouter-pc-console-core',
+    'sdkwork-clawrouter-pc-console-dashboard',
+    'sdkwork-clawrouter-pc-console-gateway',
+    'sdkwork-clawrouter-pc-console-memberships',
+    'sdkwork-clawrouter-pc-console-messages',
+    'sdkwork-clawrouter-pc-console-recharge',
+    'sdkwork-clawrouter-pc-console-settings',
+    'sdkwork-clawrouter-pc-console-settlements',
+    'sdkwork-clawrouter-pc-console-usage',
+    'sdkwork-clawrouter-pc-console-user',
+    'sdkwork-clawrouter-pc-console-wallet',
+    'sdkwork-clawrouter-pc-core',
+    'sdkwork-clawrouter-pc-courses',
+    'sdkwork-clawrouter-pc-forum',
+    'sdkwork-clawrouter-pc-home',
+    'sdkwork-clawrouter-pc-i18n',
+    'sdkwork-clawrouter-pc-models',
+    'sdkwork-clawrouter-pc-playground',
+    'sdkwork-clawrouter-pc-rankings',
+    'sdkwork-clawrouter-pc-sdk-reference',
+    'sdkwork-clawrouter-pc-skills-hub',
+    'sdkwork-clawrouter-pc-types',
   ];
 
   for (const packageName of packageNames) {
@@ -7793,9 +7793,9 @@ test('portal commons package exposes runtime subpath for ESM and SSR tooling', (
       path.join(
         workspaceRoot,
         'apps',
-        'sdkwork-claw-router-portal',
+        'sdkwork-clawrouter-pc',
         'packages',
-        'sdkwork-claw-router-commons',
+        'sdkwork-clawrouter-pc-commons',
         'package.json',
       ),
       'utf8',
@@ -7818,7 +7818,7 @@ test('portal commons package exposes runtime subpath for ESM and SSR tooling', (
 
 test('standalone portal Vite dev server defaults to direct port 3901', () => {
   const viteConfig = readFileSync(
-    path.join(workspaceRoot, 'apps', 'sdkwork-claw-router-portal', 'vite.config.ts'),
+    path.join(workspaceRoot, 'apps', 'sdkwork-clawrouter-pc', 'vite.config.ts'),
     'utf8',
   );
 
@@ -7829,7 +7829,7 @@ test('standalone portal Vite dev server defaults to direct port 3901', () => {
 
 test('standalone portal Vite dev server proxies same-origin API paths to Rust services', () => {
   const viteConfig = readFileSync(
-    path.join(workspaceRoot, 'apps', 'sdkwork-claw-router-portal', 'vite.config.ts'),
+    path.join(workspaceRoot, 'apps', 'sdkwork-clawrouter-pc', 'vite.config.ts'),
     'utf8',
   );
 
@@ -7847,10 +7847,10 @@ test('standalone portal Vite dev server proxies same-origin API paths to Rust se
 
 test('portal build script uses native Vite config loading', () => {
   const portalPackage = JSON.parse(
-    readFileSync(path.join(workspaceRoot, 'apps', 'sdkwork-claw-router-portal', 'package.json'), 'utf8'),
+    readFileSync(path.join(workspaceRoot, 'apps', 'sdkwork-clawrouter-pc', 'package.json'), 'utf8'),
   );
   const buildScript = readFileSync(
-    path.join(workspaceRoot, 'apps', 'sdkwork-claw-router-portal', 'scripts', 'build-portal.mjs'),
+    path.join(workspaceRoot, 'apps', 'sdkwork-clawrouter-pc', 'scripts', 'build-portal.mjs'),
     'utf8',
   );
 
@@ -7891,7 +7891,7 @@ test('verification plan includes portal frontend typecheck', async () => {
   }
   assert.deepEqual(portalTypecheck.args, [
     '--dir',
-    'apps/sdkwork-claw-router-portal',
+    'apps/sdkwork-clawrouter-pc',
     'typecheck',
   ]);
   assert.equal(module.pnpmCommand('win32'), 'pnpm.cmd');
@@ -7917,7 +7917,7 @@ test('verification plan includes production artifact build and bundle budget aud
     `${module.pnpmCommand()} build`,
   ));
   assert.ok(commandLines.includes(
-    'node apps/sdkwork-claw-router-portal/scripts/audit-bundle-budget.mjs',
+    'node apps/sdkwork-clawrouter-pc/scripts/audit-bundle-budget.mjs',
   ));
 });
 
@@ -7960,16 +7960,16 @@ test('verification plan includes real browser DOM smoke after production HTTP sm
   const edgeSmokeIndex = plan.findIndex((step) => step.label === 'portal production edge smoke');
   const browserSmokeIndex = plan.findIndex((step) => step.label === 'portal production browser DOM smoke');
   const browserSmokeSource = readFileSync(
-    path.join(workspaceRoot, 'apps', 'sdkwork-claw-router-portal', 'scripts', 'smoke-production-browser.mjs'),
+    path.join(workspaceRoot, 'apps', 'sdkwork-clawrouter-pc', 'scripts', 'smoke-production-browser.mjs'),
     'utf8',
   );
   const apiEndpointViewSource = readFileSync(
     path.join(
       workspaceRoot,
       'apps',
-      'sdkwork-claw-router-portal',
+      'sdkwork-clawrouter-pc',
       'packages',
-      'sdkwork-claw-router-api-reference',
+      'sdkwork-clawrouter-pc-api-reference',
       'src',
       'components',
       'ApiEndpointView.tsx',
@@ -7980,9 +7980,9 @@ test('verification plan includes real browser DOM smoke after production HTTP sm
     path.join(
       workspaceRoot,
       'apps',
-      'sdkwork-claw-router-portal',
+      'sdkwork-clawrouter-pc',
       'packages',
-      'sdkwork-claw-router-api-reference',
+      'sdkwork-clawrouter-pc-api-reference',
       'src',
       'codeSnippetClient.ts',
     ),
@@ -7991,7 +7991,7 @@ test('verification plan includes real browser DOM smoke after production HTTP sm
 
   assert.ok(browserSmokeIndex > edgeSmokeIndex, 'browser DOM smoke must run after Rust edge production smoke');
   assert.ok(commandLines.includes(
-    'node apps/sdkwork-claw-router-portal/scripts/smoke-production-browser.mjs',
+    'node apps/sdkwork-clawrouter-pc/scripts/smoke-production-browser.mjs',
   ));
   assert.match(browserSmokeSource, /Chrome DevTools Protocol/);
   assert.match(browserSmokeSource, /findChromeExecutable/);
@@ -8391,7 +8391,7 @@ test('verification plan includes portal models runtime tests before broad suites
   assert.ok(modelsRuntimeIndex < rustTestsIndex, 'models runtime tests must run before broad Rust tests');
   assert.ok(modelsRuntimeIndex < pythonTestsIndex, 'models runtime tests must run before broad Python tests');
   assert.ok(commandLines.includes(
-    'node --experimental-strip-types apps/sdkwork-claw-router-portal/models-runtime.test.ts',
+    'node --experimental-strip-types apps/sdkwork-clawrouter-pc/models-runtime.test.ts',
   ));
 });
 
@@ -8415,7 +8415,7 @@ test('verification plan includes portal commons runtime tests before route runti
   assert.ok(commonsRuntimeIndex < rustTestsIndex, 'commons runtime tests must run before broad Rust tests');
   assert.ok(commonsRuntimeIndex < pythonTestsIndex, 'commons runtime tests must run before broad Python tests');
   assert.ok(commandLines.includes(
-    'node --experimental-strip-types apps/sdkwork-claw-router-portal/commons-runtime.test.ts',
+    'node --experimental-strip-types apps/sdkwork-clawrouter-pc/commons-runtime.test.ts',
   ));
 });
 
@@ -8439,7 +8439,7 @@ test('verification plan includes portal auth runtime tests before route runtime 
   assert.ok(authRuntimeIndex < rustTestsIndex, 'auth runtime tests must run before broad Rust tests');
   assert.ok(authRuntimeIndex < pythonTestsIndex, 'auth runtime tests must run before broad Python tests');
   assert.ok(commandLines.includes(
-    `${module.pnpmCommand()} --dir apps/sdkwork-claw-router-portal exec tsx auth-runtime.test.ts`,
+    `${module.pnpmCommand()} --dir apps/sdkwork-clawrouter-pc exec tsx auth-runtime.test.ts`,
   ));
 });
 
@@ -8461,7 +8461,7 @@ test('verification plan includes portal skills runtime tests before broad suites
   assert.ok(skillsRuntimeIndex < rustTestsIndex, 'skills runtime tests must run before broad Rust tests');
   assert.ok(skillsRuntimeIndex < pythonTestsIndex, 'skills runtime tests must run before broad Python tests');
   assert.ok(commandLines.includes(
-    'node --experimental-strip-types apps/sdkwork-claw-router-portal/skills-runtime.test.ts',
+    'node --experimental-strip-types apps/sdkwork-clawrouter-pc/skills-runtime.test.ts',
   ));
 });
 
@@ -8483,7 +8483,7 @@ test('verification plan includes portal app center runtime tests before broad su
   assert.ok(appCenterRuntimeIndex < rustTestsIndex, 'app center runtime tests must run before broad Rust tests');
   assert.ok(appCenterRuntimeIndex < pythonTestsIndex, 'app center runtime tests must run before broad Python tests');
   assert.ok(commandLines.includes(
-    'node --experimental-strip-types apps/sdkwork-claw-router-portal/app-runtime.test.ts',
+    'node --experimental-strip-types apps/sdkwork-clawrouter-pc/app-runtime.test.ts',
   ));
 });
 
@@ -8507,7 +8507,7 @@ test('verification plan includes portal home downloads runtime tests before broa
   assert.ok(homeDownloadsRuntimeIndex < rustTestsIndex, 'home downloads runtime tests must run before broad Rust tests');
   assert.ok(homeDownloadsRuntimeIndex < pythonTestsIndex, 'home downloads runtime tests must run before broad Python tests');
   assert.ok(commandLines.includes(
-    'node --experimental-strip-types apps/sdkwork-claw-router-portal/home-downloads-runtime.test.ts',
+    'node --experimental-strip-types apps/sdkwork-clawrouter-pc/home-downloads-runtime.test.ts',
   ));
 });
 
@@ -8529,7 +8529,7 @@ test('verification plan includes portal api reference playground runtime tests b
   assert.ok(apiReferenceRuntimeIndex < rustTestsIndex, 'api reference playground runtime tests must run before broad Rust tests');
   assert.ok(apiReferenceRuntimeIndex < pythonTestsIndex, 'api reference playground runtime tests must run before broad Python tests');
   assert.ok(commandLines.includes(
-    `${module.pnpmCommand()} --dir apps/sdkwork-claw-router-portal exec tsx api-reference-playground-runtime.test.ts`,
+    `${module.pnpmCommand()} --dir apps/sdkwork-clawrouter-pc exec tsx api-reference-playground-runtime.test.ts`,
   ));
 });
 
@@ -8553,7 +8553,7 @@ test('verification plan includes portal api reference SSR smoke before broad sui
   assert.ok(apiReferenceSsrIndex < rustTestsIndex, 'api reference SSR smoke must run before broad Rust tests');
   assert.ok(apiReferenceSsrIndex < pythonTestsIndex, 'api reference SSR smoke must run before broad Python tests');
   assert.ok(commandLines.includes(
-    'node apps/sdkwork-claw-router-portal/api-reference-ssr-smoke.test.cjs',
+    'node apps/sdkwork-clawrouter-pc/api-reference-ssr-smoke.test.cjs',
   ));
 });
 
@@ -8577,22 +8577,22 @@ test('verification plan includes portal playground chat runtime tests before bro
   assert.ok(playgroundChatRuntimeIndex < rustTestsIndex, 'playground chat runtime tests must run before broad Rust tests');
   assert.ok(playgroundChatRuntimeIndex < pythonTestsIndex, 'playground chat runtime tests must run before broad Python tests');
   assert.ok(commandLines.includes(
-    `${module.pnpmCommand()} --dir apps/sdkwork-claw-router-portal exec tsx playground-chat-runtime.test.ts`,
+    `${module.pnpmCommand()} --dir apps/sdkwork-clawrouter-pc exec tsx playground-chat-runtime.test.ts`,
   ));
 });
 
 test('production browser smoke validates api reference route bundle semantics', () => {
   const smokeSource = readFileSync(
-    path.join(workspaceRoot, 'apps', 'sdkwork-claw-router-portal', 'scripts', 'smoke-production-browser.mjs'),
+    path.join(workspaceRoot, 'apps', 'sdkwork-clawrouter-pc', 'scripts', 'smoke-production-browser.mjs'),
     'utf8',
   );
   const playgroundRowsSource = readFileSync(
     path.join(
       workspaceRoot,
       'apps',
-      'sdkwork-claw-router-portal',
+      'sdkwork-clawrouter-pc',
       'packages',
-      'sdkwork-claw-router-api-reference',
+      'sdkwork-clawrouter-pc-api-reference',
       'src',
       'apiPlaygroundRows.ts',
     ),
@@ -8602,9 +8602,9 @@ test('production browser smoke validates api reference route bundle semantics', 
     path.join(
       workspaceRoot,
       'apps',
-      'sdkwork-claw-router-portal',
+      'sdkwork-clawrouter-pc',
       'packages',
-      'sdkwork-claw-router-api-reference',
+      'sdkwork-clawrouter-pc-api-reference',
       'src',
       'playgroundRequest.ts',
     ),
@@ -8614,9 +8614,9 @@ test('production browser smoke validates api reference route bundle semantics', 
     path.join(
       workspaceRoot,
       'apps',
-      'sdkwork-claw-router-portal',
+      'sdkwork-clawrouter-pc',
       'packages',
-      'sdkwork-claw-router-api-reference',
+      'sdkwork-clawrouter-pc-api-reference',
       'src',
       'components',
       'ApiPlayground.tsx',
@@ -8627,9 +8627,9 @@ test('production browser smoke validates api reference route bundle semantics', 
     path.join(
       workspaceRoot,
       'apps',
-      'sdkwork-claw-router-portal',
+      'sdkwork-clawrouter-pc',
       'packages',
-      'sdkwork-claw-router-api-reference',
+      'sdkwork-clawrouter-pc-api-reference',
       'src',
       'playgroundResponseDownload.ts',
     ),
@@ -8667,7 +8667,7 @@ test('production browser smoke validates api reference route bundle semantics', 
 
 test('production browser smoke validates admin skill route through backend SDK fixtures', () => {
   const smokeSource = readFileSync(
-    path.join(workspaceRoot, 'apps', 'sdkwork-claw-router-portal', 'scripts', 'smoke-production-browser.mjs'),
+    path.join(workspaceRoot, 'apps', 'sdkwork-clawrouter-pc', 'scripts', 'smoke-production-browser.mjs'),
     'utf8',
   );
 
@@ -8686,7 +8686,7 @@ test('production browser smoke validates admin skill route through backend SDK f
 
 test('production browser smoke validates admin app route through backend SDK fixtures', () => {
   const smokeSource = readFileSync(
-    path.join(workspaceRoot, 'apps', 'sdkwork-claw-router-portal', 'scripts', 'smoke-production-browser.mjs'),
+    path.join(workspaceRoot, 'apps', 'sdkwork-clawrouter-pc', 'scripts', 'smoke-production-browser.mjs'),
     'utf8',
   );
 
@@ -8706,7 +8706,7 @@ test('production browser smoke validates admin app route through backend SDK fix
 
 test('production browser smoke keeps current-user playground CORS compatible with app session tokens', () => {
   const smokeSource = readFileSync(
-    path.join(workspaceRoot, 'apps', 'sdkwork-claw-router-portal', 'scripts', 'smoke-production-browser.mjs'),
+    path.join(workspaceRoot, 'apps', 'sdkwork-clawrouter-pc', 'scripts', 'smoke-production-browser.mjs'),
     'utf8',
   );
 
@@ -8735,7 +8735,7 @@ test('verification plan includes portal api key runtime tests before broad suite
   assert.ok(apiKeyRuntimeIndex < rustTestsIndex, 'api key runtime tests must run before broad Rust tests');
   assert.ok(apiKeyRuntimeIndex < pythonTestsIndex, 'api key runtime tests must run before broad Python tests');
   assert.ok(commandLines.includes(
-    'node --experimental-strip-types apps/sdkwork-claw-router-portal/api-key-runtime.test.ts',
+    'node --experimental-strip-types apps/sdkwork-clawrouter-pc/api-key-runtime.test.ts',
   ));
 });
 
@@ -8759,7 +8759,7 @@ test('verification plan includes portal commerce business runtime tests before b
   assert.ok(commerceBusinessRuntimeIndex < rustTestsIndex, 'commerce business runtime tests must run before broad Rust tests');
   assert.ok(commerceBusinessRuntimeIndex < pythonTestsIndex, 'commerce business runtime tests must run before broad Python tests');
   assert.ok(commandLines.includes(
-    `${module.pnpmCommand()} --dir apps/sdkwork-claw-router-portal exec tsx commerce-business-runtime.test.ts`,
+    `${module.pnpmCommand()} --dir apps/sdkwork-clawrouter-pc exec tsx commerce-business-runtime.test.ts`,
   ));
 });
 
@@ -8783,7 +8783,7 @@ test('verification plan includes portal console app runtime tests before broad s
   assert.ok(consoleAppRuntimeIndex < rustTestsIndex, 'console app runtime tests must run before broad Rust tests');
   assert.ok(consoleAppRuntimeIndex < pythonTestsIndex, 'console app runtime tests must run before broad Python tests');
   assert.ok(commandLines.includes(
-    `${module.pnpmCommand()} --dir apps/sdkwork-claw-router-portal exec tsx console-app-runtime.test.ts`,
+    `${module.pnpmCommand()} --dir apps/sdkwork-clawrouter-pc exec tsx console-app-runtime.test.ts`,
   ));
 });
 
@@ -8807,7 +8807,7 @@ test('verification plan includes portal console agents runtime tests before broa
   assert.ok(consoleAgentsRuntimeIndex < rustTestsIndex, 'console agents runtime tests must run before broad Rust tests');
   assert.ok(consoleAgentsRuntimeIndex < pythonTestsIndex, 'console agents runtime tests must run before broad Python tests');
   assert.ok(commandLines.includes(
-    'node --experimental-strip-types apps/sdkwork-claw-router-portal/console-agents-runtime.test.ts',
+    'node --experimental-strip-types apps/sdkwork-clawrouter-pc/console-agents-runtime.test.ts',
   ));
 });
 
@@ -8829,7 +8829,7 @@ test('verification plan includes portal console routing runtime tests before bro
   assert.ok(consoleRoutingRuntimeIndex < rustTestsIndex, 'console routing runtime tests must run before broad Rust tests');
   assert.ok(consoleRoutingRuntimeIndex < pythonTestsIndex, 'console routing runtime tests must run before broad Python tests');
   assert.ok(commandLines.includes(
-    'node --experimental-strip-types apps/sdkwork-claw-router-portal/console-routing-runtime.test.ts',
+    'node --experimental-strip-types apps/sdkwork-clawrouter-pc/console-routing-runtime.test.ts',
   ));
 });
 
@@ -8851,7 +8851,7 @@ test('verification plan includes portal admin group runtime tests before broad s
   assert.ok(adminGroupRuntimeIndex < rustTestsIndex, 'admin group runtime tests must run before broad Rust tests');
   assert.ok(adminGroupRuntimeIndex < pythonTestsIndex, 'admin group runtime tests must run before broad Python tests');
   assert.ok(commandLines.includes(
-    'node --experimental-strip-types apps/sdkwork-claw-router-portal/admin-group-runtime.test.ts',
+    'node --experimental-strip-types apps/sdkwork-clawrouter-pc/admin-group-runtime.test.ts',
   ));
 });
 
@@ -8875,7 +8875,7 @@ test('verification plan includes portal console operations runtime tests before 
   assert.ok(consoleOperationsRuntimeIndex < rustTestsIndex, 'console operations runtime tests must run before broad Rust tests');
   assert.ok(consoleOperationsRuntimeIndex < pythonTestsIndex, 'console operations runtime tests must run before broad Python tests');
   assert.ok(commandLines.includes(
-    'node --experimental-strip-types apps/sdkwork-claw-router-portal/console-operations-runtime.test.ts',
+    'node --experimental-strip-types apps/sdkwork-clawrouter-pc/console-operations-runtime.test.ts',
   ));
 });
 
@@ -8899,7 +8899,7 @@ test('verification plan includes portal admin user runtime tests before broad su
   assert.ok(adminUserRuntimeIndex < rustTestsIndex, 'admin user runtime tests must run before broad Rust tests');
   assert.ok(adminUserRuntimeIndex < pythonTestsIndex, 'admin user runtime tests must run before broad Python tests');
   assert.ok(commandLines.includes(
-    'node --experimental-strip-types apps/sdkwork-claw-router-portal/admin-user-runtime.test.ts',
+    'node --experimental-strip-types apps/sdkwork-clawrouter-pc/admin-user-runtime.test.ts',
   ));
 });
 
@@ -8921,7 +8921,7 @@ test('verification plan includes portal admin channel runtime tests before broad
   assert.ok(adminChannelRuntimeIndex < rustTestsIndex, 'admin channel runtime tests must run before broad Rust tests');
   assert.ok(adminChannelRuntimeIndex < pythonTestsIndex, 'admin channel runtime tests must run before broad Python tests');
   assert.ok(commandLines.includes(
-    'node --experimental-strip-types apps/sdkwork-claw-router-portal/admin-channel-runtime.test.ts',
+    'node --experimental-strip-types apps/sdkwork-clawrouter-pc/admin-channel-runtime.test.ts',
   ));
 });
 
@@ -8943,7 +8943,7 @@ test('verification plan includes portal admin model runtime tests before broad s
   assert.ok(adminModelRuntimeIndex < rustTestsIndex, 'admin model runtime tests must run before broad Rust tests');
   assert.ok(adminModelRuntimeIndex < pythonTestsIndex, 'admin model runtime tests must run before broad Python tests');
   assert.ok(commandLines.includes(
-    'node --experimental-strip-types apps/sdkwork-claw-router-portal/admin-model-runtime.test.ts',
+    'node --experimental-strip-types apps/sdkwork-clawrouter-pc/admin-model-runtime.test.ts',
   ));
 });
 
@@ -8967,7 +8967,7 @@ test('verification plan includes portal admin skill runtime tests before broad s
   assert.ok(adminSkillRuntimeIndex < rustTestsIndex, 'admin skill runtime tests must run before broad Rust tests');
   assert.ok(adminSkillRuntimeIndex < pythonTestsIndex, 'admin skill runtime tests must run before broad Python tests');
   assert.ok(commandLines.includes(
-    'node --experimental-strip-types apps/sdkwork-claw-router-portal/admin-skill-runtime.test.ts',
+    'node --experimental-strip-types apps/sdkwork-clawrouter-pc/admin-skill-runtime.test.ts',
   ));
 });
 
@@ -8991,7 +8991,7 @@ test('verification plan includes portal admin app runtime tests before broad sui
   assert.ok(adminAppRuntimeIndex < rustTestsIndex, 'admin app runtime tests must run before broad Rust tests');
   assert.ok(adminAppRuntimeIndex < pythonTestsIndex, 'admin app runtime tests must run before broad Python tests');
   assert.ok(commandLines.includes(
-    'node --experimental-strip-types apps/sdkwork-claw-router-portal/admin-app-runtime.test.ts',
+    'node --experimental-strip-types apps/sdkwork-clawrouter-pc/admin-app-runtime.test.ts',
   ));
 });
 
@@ -9013,7 +9013,7 @@ test('verification plan includes portal admin ratelimit runtime tests before bro
   assert.ok(adminRatelimitRuntimeIndex < rustTestsIndex, 'admin ratelimit runtime tests must run before broad Rust tests');
   assert.ok(adminRatelimitRuntimeIndex < pythonTestsIndex, 'admin ratelimit runtime tests must run before broad Python tests');
   assert.ok(commandLines.includes(
-    'node --experimental-strip-types apps/sdkwork-claw-router-portal/admin-ratelimit-runtime.test.ts',
+    'node --experimental-strip-types apps/sdkwork-clawrouter-pc/admin-ratelimit-runtime.test.ts',
   ));
 });
 
@@ -9035,7 +9035,7 @@ test('verification plan includes portal admin marketing runtime tests before bro
   assert.ok(adminMarketingRuntimeIndex < rustTestsIndex, 'admin marketing runtime tests must run before broad Rust tests');
   assert.ok(adminMarketingRuntimeIndex < pythonTestsIndex, 'admin marketing runtime tests must run before broad Python tests');
   assert.ok(commandLines.includes(
-    'node --experimental-strip-types apps/sdkwork-claw-router-portal/admin-marketing-runtime.test.ts',
+    'node --experimental-strip-types apps/sdkwork-clawrouter-pc/admin-marketing-runtime.test.ts',
   ));
 });
 
@@ -9057,7 +9057,7 @@ test('verification plan includes portal admin announcement runtime tests before 
   assert.ok(adminAnnouncementRuntimeIndex < rustTestsIndex, 'admin announcement runtime tests must run before broad Rust tests');
   assert.ok(adminAnnouncementRuntimeIndex < pythonTestsIndex, 'admin announcement runtime tests must run before broad Python tests');
   assert.ok(commandLines.includes(
-    'node --experimental-strip-types apps/sdkwork-claw-router-portal/admin-announcement-runtime.test.ts',
+    'node --experimental-strip-types apps/sdkwork-clawrouter-pc/admin-announcement-runtime.test.ts',
   ));
 });
 
@@ -9081,7 +9081,7 @@ test('verification plan includes portal admin operations runtime tests before br
   assert.ok(adminOperationsRuntimeIndex < rustTestsIndex, 'admin operations runtime tests must run before broad Rust tests');
   assert.ok(adminOperationsRuntimeIndex < pythonTestsIndex, 'admin operations runtime tests must run before broad Python tests');
   assert.ok(commandLines.includes(
-    'node --experimental-strip-types apps/sdkwork-claw-router-portal/admin-operations-runtime.test.ts',
+    'node --experimental-strip-types apps/sdkwork-clawrouter-pc/admin-operations-runtime.test.ts',
   ));
 });
 
@@ -9103,7 +9103,7 @@ test('verification plan includes portal models SSR smoke before broad suites', a
   assert.ok(modelsSsrIndex < rustTestsIndex, 'models SSR smoke must run before broad Rust tests');
   assert.ok(modelsSsrIndex < pythonTestsIndex, 'models SSR smoke must run before broad Python tests');
   assert.ok(commandLines.includes(
-    'node apps/sdkwork-claw-router-portal/models-ssr-smoke.test.cjs',
+    'node apps/sdkwork-clawrouter-pc/models-ssr-smoke.test.cjs',
   ));
 });
 

@@ -1,7 +1,7 @@
 fragment: operations/backend-apikey
 frontend_operations:
 - route: /admin/user
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-user/src/userService.ts
   operation: createApiKey
   kind: create
   api_surface: backend
@@ -72,7 +72,7 @@ frontend_operations:
         maxLength: 256
         description: Full plaintext API key material returned immediately after creation.
 - route: /admin/user
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-user/src/userService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-user/src/userService.ts
   operation: deleteApiKey
   kind: delete
   api_surface: backend

@@ -48,7 +48,7 @@ class ApiContractManifestGenerator:
             "api_prefix": "/v1",
             "sdk_family": "clawrouter-open-sdk",
             "sdk_client": "SdkworkAiClient",
-            "openapi_source": "apps/sdkwork-claw-router-portal/public/openapi.json",
+            "openapi_source": "apps/sdkwork-clawrouter-pc/public/openapi.json",
             "generated_sdk_home": "sdks/clawrouter-open-sdk/clawrouter-open-sdk-typescript",
             "generator": "sdk/sdkwork-sdk-generator",
         },

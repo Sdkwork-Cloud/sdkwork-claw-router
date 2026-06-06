@@ -48,7 +48,7 @@ class SchemaQualityGateTest(unittest.TestCase):
         return registry
 
     def write_app(self, root: Path, content: str = '<Route path="/models" element={<Models />} />') -> Path:
-        app = root / "apps" / "sdkwork-claw-router-portal" / "src" / "App.tsx"
+        app = root / "apps" / "sdkwork-clawrouter-pc" / "src" / "App.tsx"
         app.parent.mkdir(parents=True, exist_ok=True)
         app.write_text(textwrap.dedent(content).strip() + "\n", encoding="utf-8")
         return app
@@ -81,7 +81,7 @@ class SchemaQualityGateTest(unittest.TestCase):
                 """
                 schema: sdkwork-claw-router-frontend-field-contracts
                 version: 0.1.0
-                source: apps/sdkwork-claw-router-portal/src/App.tsx
+                source: apps/sdkwork-clawrouter-pc/src/App.tsx
                 rule: every actual portal route must be backed by explicit schema tables.
                 fragments:
                   - routes/models.yaml
@@ -633,8 +633,8 @@ class SchemaQualityGateTest(unittest.TestCase):
         (base / "dist" / "index.d.ts").write_text("export {};\n", encoding="utf-8")
 
     def write_portal_sdk_boundary(self, root: Path) -> None:
-        portal = root / "apps" / "sdkwork-claw-router-portal"
-        commons = portal / "packages" / "sdkwork-claw-router-commons"
+        portal = root / "apps" / "sdkwork-clawrouter-pc"
+        commons = portal / "packages" / "sdkwork-clawrouter-pc-commons"
         (commons / "src").mkdir(parents=True, exist_ok=True)
         (portal / "package.json").write_text(
             '{"scripts":{"dev":"vite --configLoader native","browser:dev":"vite --configLoader native","build":"vite build --configLoader native"},"dependencies":{"@sdkwork/clawrouter-app-sdk":"workspace:*","@sdkwork/clawrouter-backend-sdk":"workspace:*","@sdkwork/clawrouter-open-sdk":"workspace:*"}}\n',
@@ -689,7 +689,7 @@ class SchemaQualityGateTest(unittest.TestCase):
             Block raw fetch and axios for remote business endpoints.
             Never hand-edit generated SDK output.
             Regenerate with sdkwork-sdk-generator.
-            Preserve apps/sdkwork-claw-router-portal UI visuals.
+            Preserve apps/sdkwork-clawrouter-pc UI visuals.
             """,
         )
         self.write_skill(
@@ -706,7 +706,7 @@ class SchemaQualityGateTest(unittest.TestCase):
             Block raw fetch and axios for remote business endpoints.
             Never hand-edit generated SDK output.
             Regenerate with sdkwork-sdk-generator.
-            Preserve apps/sdkwork-claw-router-portal UI visuals.
+            Preserve apps/sdkwork-clawrouter-pc UI visuals.
             """,
         )
         self.write_skill(
@@ -722,7 +722,7 @@ class SchemaQualityGateTest(unittest.TestCase):
             Read generated/api/api-contract-manifest.json.
             Write generated/openapi/clawrouter-app-openapi.json.
             Write generated/openapi/clawrouter-backend-openapi.json.
-            Write apps/sdkwork-claw-router-portal/public/openapi.json with tools.clawrouter_gateway_openapi_generator.
+            Write apps/sdkwork-clawrouter-pc/public/openapi.json with tools.clawrouter_gateway_openapi_generator.
             app/backend SDK generation uses the authority OpenAPI snapshots.
             open SDK generation uses openapi/clawrouter-open-sdk.sdkgen.json.
             .sdkwork-assembly.json generationInputSpec declares the actual generation input.
@@ -987,7 +987,7 @@ class SchemaQualityGateTest(unittest.TestCase):
             root = Path(tmp)
             registry = self.write_registry(root, self.valid_registry())
             self.write_generated_artifacts(root, registry)
-            stale = root / "apps" / "sdkwork-claw-router-portal" / "public" / "openapi.json"
+            stale = root / "apps" / "sdkwork-clawrouter-pc" / "public" / "openapi.json"
             stale_spec = json.loads(stale.read_text(encoding="utf-8"))
             stale_spec["info"]["description"] = "Stale generated fixture"
             stale.write_text(json.dumps(stale_spec, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
@@ -1014,7 +1014,7 @@ class SchemaQualityGateTest(unittest.TestCase):
                         required_columns:
                           ai_model_vendor: [vendor_code, display_name]
                     frontend_operations:
-                      - source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-models/src/modelService.ts
+                      - source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-models/src/modelService.ts
                         operation: fetchModelVendors
                         route: /models
                         kind: read
@@ -1047,9 +1047,9 @@ class SchemaQualityGateTest(unittest.TestCase):
             source = (
                 root
                 / "apps"
-                / "sdkwork-claw-router-portal"
+                / "sdkwork-clawrouter-pc"
                 / "packages"
-                / "sdkwork-claw-router-console-models"
+                / "sdkwork-clawrouter-pc-console-models"
                 / "src"
                 / "modelService.ts"
             )

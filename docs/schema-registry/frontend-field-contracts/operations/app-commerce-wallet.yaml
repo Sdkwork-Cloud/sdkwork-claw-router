@@ -1,7 +1,7 @@
 fragment: operations/app-commerce-wallet
 frontend_operations:
 - route: /console/wallet
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-wallet/src/walletService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-wallet/src/walletService.ts
   operation: appWalletOverviewRetrieve
   operation_id: wallet.overview.retrieve
   kind: read
@@ -49,7 +49,7 @@ frontend_operations:
             nullable: true
             maxLength: 64
 - route: /console/wallet
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-wallet/src/walletService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-wallet/src/walletService.ts
   operation: appWalletAccountsList
   operation_id: wallet.accounts.list
   kind: read
@@ -130,7 +130,7 @@ frontend_operations:
         minimum: 1
         maximum: 200
 - route: /console/settlements
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-settlements/src/settlementsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-settlements/src/settlementsService.ts
   operation: appWalletLedgerEntriesList
   operation_id: wallet.ledgerEntries.list
   kind: read
@@ -160,7 +160,7 @@ frontend_operations:
       maxLength: 32
   response_schema: *id001
 - route: /console/wallet
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-wallet/src/walletService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-wallet/src/walletService.ts
   operation: appWalletTokensRetrieve
   operation_id: wallet.tokens.retrieve
   kind: read
@@ -177,7 +177,7 @@ frontend_operations:
   query_parameters: []
   response_schema: *id002
 - route: /console/wallet
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-wallet/src/walletService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-wallet/src/walletService.ts
   operation: appWalletExchangeRateRetrieve
   operation_id: wallet.exchangeRate.retrieve
   kind: read
@@ -193,7 +193,7 @@ frontend_operations:
   query_parameters: []
   response_schema: *id002
 - route: /console/wallet
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-wallet/src/walletService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-wallet/src/walletService.ts
   operation: appWalletPointsExchangeRulesList
   operation_id: wallet.points.exchangeRules.list
   kind: read
@@ -217,7 +217,7 @@ frontend_operations:
       maxLength: 32
   response_schema: *id001
 - route: /console/settlements
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-settlements/src/settlementsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-settlements/src/settlementsService.ts
   operation: fetchSettlementDashboard
   operation_id: console.settlementDashboard.retrieve
   operation_scope: app_shell
@@ -232,7 +232,7 @@ frontend_operations:
   file_targets: []
   openapi_exposed: false
 - route: /console/settlements
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-settlements/src/settlementsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-settlements/src/settlementsService.ts
   operation: fetchDashboardData
   operation_id: console.settlementDashboard.fetch
   operation_scope: app_shell

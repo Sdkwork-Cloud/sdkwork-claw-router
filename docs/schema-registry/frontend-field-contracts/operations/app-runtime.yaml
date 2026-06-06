@@ -1,7 +1,7 @@
 fragment: operations/app-runtime
 frontend_operations:
 - route: /playground
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/appRuntimeApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
   operation: listRuntimeInvocations
   operation_id: invocations.list
   kind: read
@@ -230,7 +230,7 @@ frontend_operations:
               minLength: 1
               maxLength: 64
 - route: /playground
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/appRuntimeApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
   operation: createRuntimeInvocation
   operation_id: invocations.create
   kind: create
@@ -335,7 +335,7 @@ frontend_operations:
     properties:
       item: *id001
 - route: /playground
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/appRuntimeApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
   operation: retrieveRuntimeInvocation
   operation_id: invocations.retrieve
   kind: read
@@ -352,7 +352,7 @@ frontend_operations:
   query_parameters: []
   response_schema: *id001
 - route: /playground
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/appRuntimeApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
   operation: completeRuntimeInvocation
   operation_id: invocations.submit
   kind: action
@@ -447,7 +447,7 @@ frontend_operations:
         additionalProperties: true
   response_schema: *id002
 - route: /playground
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/appRuntimeApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
   operation: listRuntimeEvents
   operation_id: invocationEvents.list
   kind: read
@@ -529,7 +529,7 @@ frontend_operations:
               minLength: 1
               maxLength: 64
 - route: /playground
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/appRuntimeApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
   operation: streamRuntimeEvents
   operation_id: invocationEventStreams.list
   kind: read
@@ -547,7 +547,7 @@ frontend_operations:
   query_parameters: []
   response_schema: *id003
 - route: /playground
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/appRuntimeApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
   operation: createRuntimeEvent
   operation_id: invocationEvents.create
   kind: create
@@ -596,7 +596,7 @@ frontend_operations:
     properties:
       item: *id004
 - route: /playground
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/appRuntimeApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
   operation: listRuntimeArtifacts
   operation_id: artifacts.list
   kind: read
@@ -688,7 +688,7 @@ frontend_operations:
               minLength: 1
               maxLength: 64
 - route: /playground
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/appRuntimeApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
   operation: createRuntimeArtifact
   operation_id: artifacts.create
   kind: create

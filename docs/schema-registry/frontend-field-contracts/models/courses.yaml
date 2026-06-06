@@ -1,7 +1,7 @@
 fragment: models/courses
 frontend_models:
 - route: /courses
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseCatalog.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseCatalog.ts
   interface: Course
   fields:
   - id
@@ -41,7 +41,7 @@ frontend_models:
   - plus_comments
   - content_reaction
 - route: /courses
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseService.ts
   interface: CourseCategory
   fields:
   - id
@@ -56,7 +56,7 @@ frontend_models:
   - plus_category
   - content_course
 - route: /courses
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseService.ts
   interface: CourseOverviewStats
   fields:
   - totalCourses
@@ -69,7 +69,7 @@ frontend_models:
   - plus_comments
   - content_reaction
 - route: /courses
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseService.ts
   interface: CourseOverview
   fields:
   - stats
@@ -84,7 +84,7 @@ frontend_models:
   - plus_comments
   - content_reaction
 - route: /courses
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseService.ts
   interface: CourseQuery
   fields:
   - level
@@ -96,7 +96,7 @@ frontend_models:
   - content_course
   - plus_category
 - route: /courses
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseService.ts
   interface: CourseCatalogResult
   fields:
   - courses
@@ -120,7 +120,7 @@ frontend_models:
   - plus_comments
   - content_reaction
 - route: /courses
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseService.ts
   interface: CourseApplicationInput
   fields:
   - title
@@ -135,7 +135,7 @@ frontend_models:
   data_sources:
   - content_course_application
 - route: /courses
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseService.ts
   interface: CourseApplicationResult
   fields:
   - id
@@ -152,7 +152,7 @@ frontend_models:
   data_sources:
   - content_course_application
 - route: /courses
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseService.ts
   interface: CourseApplicationVideoUploadInput
   fields:
   - file
@@ -162,7 +162,7 @@ frontend_models:
   file_targets:
   - course_application_video_uploads
 - route: /courses
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseService.ts
   interface: CourseApplicationVideoUploadResult
   fields:
   - video
@@ -176,7 +176,7 @@ frontend_models:
   file_targets:
   - course_application_video_uploads
 - route: /courses/:id
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseService.ts
   interface: CourseDetailResult
   fields:
   - detail

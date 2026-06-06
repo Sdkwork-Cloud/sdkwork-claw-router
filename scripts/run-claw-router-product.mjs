@@ -52,7 +52,7 @@ function installCandidatesForMode(mode) {
     case 'server':
     case 'browser':
     case 'check':
-      return [toPortablePath(path.join('apps', 'sdkwork-claw-router-portal'))];
+      return [toPortablePath(path.join('apps', 'sdkwork-clawrouter-pc'))];
     default:
       return [];
   }
@@ -187,7 +187,7 @@ export function createClawRouterProductLaunchPlan({
   devEnvFile = undefined,
   extraArgs = [],
 } = {}) {
-  const portalRelativeDir = toPortablePath(path.join('apps', 'sdkwork-claw-router-portal'));
+  const portalRelativeDir = toPortablePath(path.join('apps', 'sdkwork-clawrouter-pc'));
   const portalAbsoluteDir = path.join(workspaceRoot, portalRelativeDir);
   const pnpm = pnpmCommand(platform);
   const shell = shellForPnpm(platform);

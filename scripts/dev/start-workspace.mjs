@@ -394,7 +394,7 @@ export function buildWorkspaceCommandPlan(settings, {
   workspaceRoot = repositoryRoot,
   platform = process.platform,
 } = {}) {
-  const portalRelativeDir = 'apps/sdkwork-claw-router-portal';
+  const portalRelativeDir = 'apps/sdkwork-clawrouter-pc';
   const portalBind = splitBind(settings.portalBind, '--portal-bind');
   settings.databaseUrl ??= environmentDatabaseConfig().databaseUrl ?? defaultPostgresDatabaseUrl();
   settings.modelsCatalogRoot = resolveModelsCatalogRoot(settings, workspaceRoot);

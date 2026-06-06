@@ -1,7 +1,7 @@
 fragment: operations/app-intelligence
 frontend_operations:
 - route: /playground
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/playgroundService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/playgroundService.ts
   operation: fetchGenerationHistory
   operation_scope: app_shell
   operation_id: generation.list
@@ -103,7 +103,7 @@ frontend_operations:
               type: string
               maxLength: 64
 - route: /playground
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/appRuntimeApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
   operation: listGenerationHistory
   operation_id: generation.list
   kind: read
@@ -130,7 +130,7 @@ frontend_operations:
         maxItems: 100
         items: *id001
 - route: /playground
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/appRuntimeApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
   operation: listModelCatalog
   operation_id: models.list
   kind: read
@@ -213,7 +213,7 @@ frontend_operations:
       minimum: 1
       maximum: 1000
 - route: /playground
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/playgroundService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/playgroundService.ts
   operation: fetchModelGroups
   operation_scope: app_shell
   operation_id: playground.models.grouped

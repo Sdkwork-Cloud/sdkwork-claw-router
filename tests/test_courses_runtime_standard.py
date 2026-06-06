@@ -12,9 +12,9 @@ ROOT = Path(__file__).resolve().parents[1]
 COURSES_PACKAGE = (
     ROOT
     / "apps"
-    / "sdkwork-claw-router-portal"
+    / "sdkwork-clawrouter-pc"
     / "packages"
-    / "sdkwork-claw-router-courses"
+    / "sdkwork-clawrouter-pc-courses"
 )
 CLASSIFICATION_PATH = ROOT / "docs" / "schema-registry" / "frontend-route-classification.yaml"
 APP_OPENAPI_PATH = ROOT / "generated" / "openapi" / "clawrouter-app-openapi.json"
@@ -27,7 +27,7 @@ class CoursesRuntimeStandardTest(unittest.TestCase):
         service_path = COURSES_PACKAGE / "src" / "courseService.ts"
         courses_view_path = COURSES_PACKAGE / "src" / "components" / "CoursesView.tsx"
         detail_view_path = COURSES_PACKAGE / "src" / "components" / "CourseDetailView.tsx"
-        runtime_test_path = ROOT / "apps" / "sdkwork-claw-router-portal" / "courses-runtime.test.ts"
+        runtime_test_path = ROOT / "apps" / "sdkwork-clawrouter-pc" / "courses-runtime.test.ts"
         verifier_path = ROOT / "scripts" / "verify-claw-router-product.mjs"
 
         self.assertTrue(catalog_path.exists(), "Courses view model helpers must stay testable and pure.")
@@ -89,7 +89,7 @@ class CoursesRuntimeStandardTest(unittest.TestCase):
         self.assertIn("selectCourseLesson", service_source)
         self.assertIn("deriveCourseDetailView", runtime_test_source)
         self.assertIn("portal courses runtime tests", verifier_source)
-        self.assertIn("apps/sdkwork-claw-router-portal/courses-runtime.test.ts", verifier_source)
+        self.assertIn("apps/sdkwork-clawrouter-pc/courses-runtime.test.ts", verifier_source)
 
     def test_courses_backend_contract_and_seed_are_real_runtime_sources(self) -> None:
         required_paths = [
@@ -218,7 +218,7 @@ class CoursesRuntimeStandardTest(unittest.TestCase):
                 self.assertNotIn("static_delivery", route)
                 self.assertIn("generated/openapi/clawrouter-app-openapi.json", route["evidence"])
         self.assertIn(
-            "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseService.ts",
+            "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-courses/src/courseService.ts",
             route["evidence"],
         )
         self.assertIn("/courses", courses_route["operation_routes"])
@@ -229,7 +229,7 @@ class CoursesRuntimeStandardTest(unittest.TestCase):
             *(COURSES_PACKAGE / "src").rglob("*.ts"),
             *(COURSES_PACKAGE / "src").rglob("*.tsx"),
             ROOT / "data" / "courses" / "course-seed.json",
-            ROOT / "apps" / "sdkwork-claw-router-portal" / "courses-runtime.test.ts",
+            ROOT / "apps" / "sdkwork-clawrouter-pc" / "courses-runtime.test.ts",
             ROOT / "services" / "sdkwork-claw-product" / "tests" / "app_course_api.rs",
             ROOT / "services" / "sdkwork-claw-product" / "tests" / "sqlite_course_store.rs",
         ]
@@ -252,7 +252,7 @@ class CoursesRuntimeStandardTest(unittest.TestCase):
                     self.assertNotIn(token, source)
 
     def test_courses_production_smoke_covers_route_and_chunk_semantics(self) -> None:
-        smoke_path = ROOT / "apps" / "sdkwork-claw-router-portal" / "scripts" / "smoke-production-browser.mjs"
+        smoke_path = ROOT / "apps" / "sdkwork-clawrouter-pc" / "scripts" / "smoke-production-browser.mjs"
         product_test_path = ROOT / "scripts" / "run-claw-router-product.test.mjs"
         catalog_path = COURSES_PACKAGE / "src" / "courseCatalog.ts"
 
@@ -283,7 +283,7 @@ class CoursesRuntimeStandardTest(unittest.TestCase):
         courses = seed["courses"]
         lessons = seed["lessons"]
         combined = json.dumps(seed, ensure_ascii=False)
-        public_root = ROOT / "apps" / "sdkwork-claw-router-portal" / "public"
+        public_root = ROOT / "apps" / "sdkwork-clawrouter-pc" / "public"
 
         self.assertIn("ai-coding", categories)
         self.assertIn("ai-image-creation", categories)

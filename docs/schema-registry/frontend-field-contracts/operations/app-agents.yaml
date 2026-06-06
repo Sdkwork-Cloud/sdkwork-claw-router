@@ -1,7 +1,7 @@
 fragment: operations/app-agents
 frontend_operations:
 - route: /playground
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/appRuntimeApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
   operation: listAgentDefinitions
   operation_id: agentDefinitions.list
   kind: read
@@ -179,7 +179,7 @@ frontend_operations:
                   format: int64
                   minimum: 0
 - route: /playground
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/appRuntimeApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
   operation: createAgentDefinition
   operation_id: agentDefinitions.create
   kind: create
@@ -235,7 +235,7 @@ frontend_operations:
     properties:
       item: *id002
 - route: /playground
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/appRuntimeApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
   operation: retrieveAgentDefinition
   operation_id: agentDefinitions.retrieve
   kind: read
@@ -256,7 +256,7 @@ frontend_operations:
   query_parameters: []
   response_schema: *id002
 - route: /playground
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/appRuntimeApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
   operation: listAgentSessions
   operation_id: agentSessions.list
   kind: read
@@ -419,7 +419,7 @@ frontend_operations:
               minLength: 1
               maxLength: 64
 - route: /playground
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/appRuntimeApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
   operation: createAgentSession
   operation_id: agentSessions.create
   kind: create
@@ -505,7 +505,7 @@ frontend_operations:
     properties:
       item: *id003
 - route: /playground
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/appRuntimeApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
   operation: retrieveAgentSession
   operation_id: agentSessions.retrieve
   kind: read
@@ -527,7 +527,7 @@ frontend_operations:
   query_parameters: []
   response_schema: *id003
 - route: /playground
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/appRuntimeApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
   operation: listAgentRuns
   operation_id: agentRuns.list
   kind: read
@@ -680,7 +680,7 @@ frontend_operations:
               minLength: 1
               maxLength: 64
 - route: /playground
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/appRuntimeApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
   operation: createAgentRun
   operation_id: agentRuns.create
   kind: create
@@ -748,7 +748,7 @@ frontend_operations:
     properties:
       item: *id004
 - route: /playground
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/appRuntimeApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
   operation: retrieveAgentRun
   operation_id: agentRuns.retrieve
   kind: read
@@ -766,7 +766,7 @@ frontend_operations:
   query_parameters: []
   response_schema: *id004
 - route: /playground
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/appRuntimeApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
   operation: completeAgentRun
   operation_id: agentRuns.submit
   kind: action
@@ -827,7 +827,7 @@ frontend_operations:
         additionalProperties: true
   response_schema: *id005
 - route: /playground
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/appRuntimeApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
   operation: listAgentRunSteps
   operation_id: agentRunSteps.list
   kind: read
@@ -961,7 +961,7 @@ frontend_operations:
               minLength: 1
               maxLength: 64
 - route: /playground
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/appRuntimeApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
   operation: createAgentRunStep
   operation_id: agentRunSteps.create
   kind: create
@@ -1035,7 +1035,7 @@ frontend_operations:
     properties:
       item: *id007
 - route: /playground
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/appRuntimeApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
   operation: completeAgentRunStep
   operation_id: agentRunSteps.submit
   kind: action
@@ -1079,7 +1079,7 @@ frontend_operations:
         additionalProperties: true
   response_schema: *id008
 - route: /playground
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/playgroundGenerationService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/playgroundGenerationService.ts
   operation: runPlaygroundGeneration
   operation_id: playground.agentGeneration.run
   kind: action
@@ -1111,7 +1111,7 @@ frontend_operations:
   - ai_runtime_artifact
   - ai_runtime_usage_link
 - route: /playground
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/playgroundService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/playgroundService.ts
   operation: runAgentGeneration
   operation_id: playground.agentGeneration.run
   kind: action

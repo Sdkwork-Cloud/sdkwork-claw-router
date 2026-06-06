@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env node
+#!/usr/bin/env node
 
 import { spawn } from 'node:child_process';
 import process from 'node:process';
@@ -256,7 +256,7 @@ function buildFastVerificationPlan(env = process.env) {
     {
       label: 'portal auth runtime tests',
       command: pnpmCommand(),
-      args: ['--dir', 'apps/sdkwork-claw-router-portal', 'exec', 'tsx', 'auth-runtime.test.ts'],
+      args: ['--dir', 'apps/sdkwork-clawrouter-pc', 'exec', 'tsx', 'auth-runtime.test.ts'],
       env,
     },
     {
@@ -380,7 +380,7 @@ function buildVerificationPlan(settings, env = process.env) {
   plan.push({
     label: 'portal vite config runtime tests',
     command: 'node',
-    args: ['--experimental-strip-types', 'apps/sdkwork-claw-router-portal/vite-config-runtime.test.ts'],
+    args: ['--experimental-strip-types', 'apps/sdkwork-clawrouter-pc/vite-config-runtime.test.ts'],
     env,
   });
   if (shouldRunEdgeDevSmoke(settings, env)) {
@@ -394,7 +394,7 @@ function buildVerificationPlan(settings, env = process.env) {
   plan.push({
     label: 'portal frontend typecheck',
     command: pnpmCommand(),
-    args: ['--dir', 'apps/sdkwork-claw-router-portal', 'typecheck'],
+    args: ['--dir', 'apps/sdkwork-clawrouter-pc', 'typecheck'],
     env,
   });
   plan.push({
@@ -406,7 +406,7 @@ function buildVerificationPlan(settings, env = process.env) {
   plan.push({
     label: 'portal bundle budget audit',
     command: 'node',
-    args: ['apps/sdkwork-claw-router-portal/scripts/audit-bundle-budget.mjs'],
+    args: ['apps/sdkwork-clawrouter-pc/scripts/audit-bundle-budget.mjs'],
     env,
   });
   plan.push({
@@ -418,7 +418,7 @@ function buildVerificationPlan(settings, env = process.env) {
   plan.push({
     label: 'portal production browser DOM smoke',
     command: 'node',
-    args: ['apps/sdkwork-claw-router-portal/scripts/smoke-production-browser.mjs'],
+    args: ['apps/sdkwork-clawrouter-pc/scripts/smoke-production-browser.mjs'],
     env: rustEnv,
   });
   plan.push({
@@ -442,175 +442,175 @@ function buildVerificationPlan(settings, env = process.env) {
   plan.push({
     label: 'portal commons runtime tests',
     command: 'node',
-    args: ['--experimental-strip-types', 'apps/sdkwork-claw-router-portal/commons-runtime.test.ts'],
+    args: ['--experimental-strip-types', 'apps/sdkwork-clawrouter-pc/commons-runtime.test.ts'],
     env,
   });
   plan.push({
     label: 'portal auth runtime tests',
     command: pnpmCommand(),
-    args: ['--dir', 'apps/sdkwork-claw-router-portal', 'exec', 'tsx', 'auth-runtime.test.ts'],
+    args: ['--dir', 'apps/sdkwork-clawrouter-pc', 'exec', 'tsx', 'auth-runtime.test.ts'],
     env,
   });
   plan.push({
     label: 'portal models runtime tests',
     command: 'node',
-    args: ['--experimental-strip-types', 'apps/sdkwork-claw-router-portal/models-runtime.test.ts'],
+    args: ['--experimental-strip-types', 'apps/sdkwork-clawrouter-pc/models-runtime.test.ts'],
     env,
   });
   plan.push({
     label: 'portal rankings runtime tests',
     command: 'node',
-    args: ['--experimental-strip-types', 'apps/sdkwork-claw-router-portal/rankings-runtime.test.ts'],
+    args: ['--experimental-strip-types', 'apps/sdkwork-clawrouter-pc/rankings-runtime.test.ts'],
     env,
   });
   plan.push({
     label: 'portal courses runtime tests',
     command: 'node',
-    args: ['--experimental-strip-types', 'apps/sdkwork-claw-router-portal/courses-runtime.test.ts'],
+    args: ['--experimental-strip-types', 'apps/sdkwork-clawrouter-pc/courses-runtime.test.ts'],
     env,
   });
   plan.push({
     label: 'portal forum runtime tests',
     command: 'node',
-    args: ['--experimental-strip-types', 'apps/sdkwork-claw-router-portal/forum-runtime.test.ts'],
+    args: ['--experimental-strip-types', 'apps/sdkwork-clawrouter-pc/forum-runtime.test.ts'],
     env,
   });
   plan.push({
     label: 'portal skills runtime tests',
     command: 'node',
-    args: ['--experimental-strip-types', 'apps/sdkwork-claw-router-portal/skills-runtime.test.ts'],
+    args: ['--experimental-strip-types', 'apps/sdkwork-clawrouter-pc/skills-runtime.test.ts'],
     env,
   });
   plan.push({
     label: 'portal app center runtime tests',
     command: 'node',
-    args: ['--experimental-strip-types', 'apps/sdkwork-claw-router-portal/app-runtime.test.ts'],
+    args: ['--experimental-strip-types', 'apps/sdkwork-clawrouter-pc/app-runtime.test.ts'],
     env,
   });
   plan.push({
     label: 'portal home downloads runtime tests',
     command: 'node',
-    args: ['--experimental-strip-types', 'apps/sdkwork-claw-router-portal/home-downloads-runtime.test.ts'],
+    args: ['--experimental-strip-types', 'apps/sdkwork-clawrouter-pc/home-downloads-runtime.test.ts'],
     env,
   });
   plan.push({
     label: 'portal api reference playground runtime tests',
     command: pnpmCommand(),
-    args: ['--dir', 'apps/sdkwork-claw-router-portal', 'exec', 'tsx', 'api-reference-playground-runtime.test.ts'],
+    args: ['--dir', 'apps/sdkwork-clawrouter-pc', 'exec', 'tsx', 'api-reference-playground-runtime.test.ts'],
     env,
   });
   plan.push({
     label: 'portal api reference SSR smoke tests',
     command: 'node',
-    args: ['apps/sdkwork-claw-router-portal/api-reference-ssr-smoke.test.cjs'],
+    args: ['apps/sdkwork-clawrouter-pc/api-reference-ssr-smoke.test.cjs'],
     env,
   });
   plan.push({
     label: 'portal playground chat runtime tests',
     command: pnpmCommand(),
-    args: ['--dir', 'apps/sdkwork-claw-router-portal', 'exec', 'tsx', 'playground-chat-runtime.test.ts'],
+    args: ['--dir', 'apps/sdkwork-clawrouter-pc', 'exec', 'tsx', 'playground-chat-runtime.test.ts'],
     env,
   });
   plan.push({
     label: 'portal api key runtime tests',
     command: 'node',
-    args: ['--experimental-strip-types', 'apps/sdkwork-claw-router-portal/api-key-runtime.test.ts'],
+    args: ['--experimental-strip-types', 'apps/sdkwork-clawrouter-pc/api-key-runtime.test.ts'],
     env,
   });
   plan.push({
     label: 'portal commerce business runtime tests',
     command: pnpmCommand(),
-    args: ['--dir', 'apps/sdkwork-claw-router-portal', 'exec', 'tsx', 'commerce-business-runtime.test.ts'],
+    args: ['--dir', 'apps/sdkwork-clawrouter-pc', 'exec', 'tsx', 'commerce-business-runtime.test.ts'],
     env,
   });
   plan.push({
     label: 'portal console app runtime tests',
     command: pnpmCommand(),
-    args: ['--dir', 'apps/sdkwork-claw-router-portal', 'exec', 'tsx', 'console-app-runtime.test.ts'],
+    args: ['--dir', 'apps/sdkwork-clawrouter-pc', 'exec', 'tsx', 'console-app-runtime.test.ts'],
     env,
   });
   plan.push({
     label: 'portal console agents runtime tests',
     command: 'node',
-    args: ['--experimental-strip-types', 'apps/sdkwork-claw-router-portal/console-agents-runtime.test.ts'],
+    args: ['--experimental-strip-types', 'apps/sdkwork-clawrouter-pc/console-agents-runtime.test.ts'],
     env,
   });
   plan.push({
     label: 'portal console routing runtime tests',
     command: 'node',
-    args: ['--experimental-strip-types', 'apps/sdkwork-claw-router-portal/console-routing-runtime.test.ts'],
+    args: ['--experimental-strip-types', 'apps/sdkwork-clawrouter-pc/console-routing-runtime.test.ts'],
     env,
   });
   plan.push({
     label: 'portal console operations runtime tests',
     command: 'node',
-    args: ['--experimental-strip-types', 'apps/sdkwork-claw-router-portal/console-operations-runtime.test.ts'],
+    args: ['--experimental-strip-types', 'apps/sdkwork-clawrouter-pc/console-operations-runtime.test.ts'],
     env,
   });
   plan.push({
     label: 'portal admin group runtime tests',
     command: 'node',
-    args: ['--experimental-strip-types', 'apps/sdkwork-claw-router-portal/admin-group-runtime.test.ts'],
+    args: ['--experimental-strip-types', 'apps/sdkwork-clawrouter-pc/admin-group-runtime.test.ts'],
     env,
   });
   plan.push({
     label: 'portal admin channel runtime tests',
     command: 'node',
-    args: ['--experimental-strip-types', 'apps/sdkwork-claw-router-portal/admin-channel-runtime.test.ts'],
+    args: ['--experimental-strip-types', 'apps/sdkwork-clawrouter-pc/admin-channel-runtime.test.ts'],
     env,
   });
   plan.push({
     label: 'portal admin user runtime tests',
     command: 'node',
-    args: ['--experimental-strip-types', 'apps/sdkwork-claw-router-portal/admin-user-runtime.test.ts'],
+    args: ['--experimental-strip-types', 'apps/sdkwork-clawrouter-pc/admin-user-runtime.test.ts'],
     env,
   });
   plan.push({
     label: 'portal admin model runtime tests',
     command: 'node',
-    args: ['--experimental-strip-types', 'apps/sdkwork-claw-router-portal/admin-model-runtime.test.ts'],
+    args: ['--experimental-strip-types', 'apps/sdkwork-clawrouter-pc/admin-model-runtime.test.ts'],
     env,
   });
   plan.push({
     label: 'portal admin app runtime tests',
     command: 'node',
-    args: ['--experimental-strip-types', 'apps/sdkwork-claw-router-portal/admin-app-runtime.test.ts'],
+    args: ['--experimental-strip-types', 'apps/sdkwork-clawrouter-pc/admin-app-runtime.test.ts'],
     env,
   });
   plan.push({
     label: 'portal admin skill runtime tests',
     command: 'node',
-    args: ['--experimental-strip-types', 'apps/sdkwork-claw-router-portal/admin-skill-runtime.test.ts'],
+    args: ['--experimental-strip-types', 'apps/sdkwork-clawrouter-pc/admin-skill-runtime.test.ts'],
     env,
   });
   plan.push({
     label: 'portal admin ratelimit runtime tests',
     command: 'node',
-    args: ['--experimental-strip-types', 'apps/sdkwork-claw-router-portal/admin-ratelimit-runtime.test.ts'],
+    args: ['--experimental-strip-types', 'apps/sdkwork-clawrouter-pc/admin-ratelimit-runtime.test.ts'],
     env,
   });
   plan.push({
     label: 'portal admin marketing runtime tests',
     command: 'node',
-    args: ['--experimental-strip-types', 'apps/sdkwork-claw-router-portal/admin-marketing-runtime.test.ts'],
+    args: ['--experimental-strip-types', 'apps/sdkwork-clawrouter-pc/admin-marketing-runtime.test.ts'],
     env,
   });
   plan.push({
     label: 'portal admin operations runtime tests',
     command: 'node',
-    args: ['--experimental-strip-types', 'apps/sdkwork-claw-router-portal/admin-operations-runtime.test.ts'],
+    args: ['--experimental-strip-types', 'apps/sdkwork-clawrouter-pc/admin-operations-runtime.test.ts'],
     env,
   });
   plan.push({
     label: 'portal admin announcement runtime tests',
     command: 'node',
-    args: ['--experimental-strip-types', 'apps/sdkwork-claw-router-portal/admin-announcement-runtime.test.ts'],
+    args: ['--experimental-strip-types', 'apps/sdkwork-clawrouter-pc/admin-announcement-runtime.test.ts'],
     env,
   });
   plan.push({
     label: 'portal models SSR smoke tests',
     command: 'node',
-    args: ['apps/sdkwork-claw-router-portal/models-ssr-smoke.test.cjs'],
+    args: ['apps/sdkwork-clawrouter-pc/models-ssr-smoke.test.cjs'],
     env,
   });
   if (!settings.skipRustTests) {

@@ -222,7 +222,7 @@ Quick portable package initialization on Linux and macOS:
 
 - `services/` - Rust product crates for gateway, app API, admin API, and shared
   product logic.
-- `apps/sdkwork-claw-router-portal/` - React portal workspace.
+- `apps/sdkwork-clawrouter-pc/` - React portal workspace.
 - `sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/` - generated app API TypeScript SDK.
 - `sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/` - generated backend API TypeScript SDK.
 - `sdks/clawrouter-open-sdk/clawrouter-open-sdk-typescript/` - generated OpenAI-compatible gateway TypeScript SDK.
@@ -357,10 +357,10 @@ Command intent:
 - `pnpm.cmd test` runs the launcher/tooling contract tests.
 - `pnpm.cmd build` builds production portal assets, builds the generated app
   and backend SDK runtime packages, creates SDK ZIP archives under
-  `apps/sdkwork-claw-router-portal/dist/sdk-archives`, and builds the Rust edge
+  `apps/sdkwork-clawrouter-pc/dist/sdk-archives`, and builds the Rust edge
   server release binary.
 - `pnpm.cmd start` serves the built production portal from
-  `apps/sdkwork-claw-router-portal/dist` through a single all-in-one Rust edge
+  `apps/sdkwork-clawrouter-pc/dist` through a single all-in-one Rust edge
   process by default, using the release binary when it exists.
 - `pnpm.cmd release` validates the release environment, regenerates
   `.env.release.local` from the release host process environment, runs strict
@@ -601,7 +601,7 @@ and source-standard regressions:
 
 - `python -B -m tools.repository_delivery_guardian`
 - `node scripts/run-claw-router-product.test.mjs`
-- `pnpm.cmd --dir apps/sdkwork-claw-router-portal exec tsx auth-runtime.test.ts`
+- `pnpm.cmd --dir apps/sdkwork-clawrouter-pc exec tsx auth-runtime.test.ts`
 - `python -B -m unittest tests.test_frontend_source_hygiene_standard`
 
 For Rust edits during local development, use the scoped Rust entrypoints instead
@@ -1143,7 +1143,7 @@ package directory.
 ## Production Browser Smoke
 
 `pnpm.cmd verify` runs
-`node apps/sdkwork-claw-router-portal/scripts/smoke-production-browser.mjs`
+`node apps/sdkwork-clawrouter-pc/scripts/smoke-production-browser.mjs`
 after the production edge smoke and before portal runtime tests. The script runs
 the built portal through the Rust edge server in a real Chromium-family browser through Chrome
 DevTools Protocol and verifies:
@@ -1233,7 +1233,7 @@ the Node process and provide its DevTools port:
 & "C:\Program Files\Google\Chrome\Application\chrome.exe" --headless=new --remote-debugging-address=127.0.0.1 --remote-debugging-port=9222 --user-data-dir="$env:TEMP\clawrouter-browser-smoke" about:blank
 $env:CLAWROUTER_BROWSER_DEBUG_PORT="9222"
 $env:CLAWROUTER_BROWSER_SMOKE_REQUIRED="1"
-node apps\sdkwork-claw-router-portal\scripts\smoke-production-browser.mjs
+node apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs
 ```
 
 ## Postgres Integration
@@ -1372,7 +1372,7 @@ to the current web page origin derived from the incoming request host and
 scheme. Configure `PORTAL_TOOL_API_SDK_GENERATOR_API_KEY` when the generator
 requires a bearer token. Standard `pnpm.cmd build` also creates generated
 TypeScript app and backend SDK runtime packages and writes prebuilt SDK ZIP archives
-into `apps/sdkwork-claw-router-portal/dist/sdk-archives`; `pnpm.cmd start`
+into `apps/sdkwork-clawrouter-pc/dist/sdk-archives`; `pnpm.cmd start`
 uses that directory as `PORTAL_TOOL_API_SDK_ARCHIVE_ROOT` by default. When a
 live generator request fails and `PORTAL_TOOL_API_SDK_ARCHIVE_ROOT` is
 configured, the edge server falls back to a matching prebuilt ZIP.
@@ -1450,3 +1450,43 @@ third-party dependencies may include their own license files. Those package or
 artifact license files govern the corresponding generated, standalone,
 vendored, or third-party artifact unless SDKWork explicitly replaces that
 license notice in its package directory.
+
+## SDKWork Documentation Contract
+
+Domain: platform
+Capability: router
+Package type: app
+Status: ACTIVE
+
+### Public API
+
+Public exports are declared in `specs/component.spec.json` under `contracts.publicExports`.
+
+### Required SDK Surface
+
+- None declared in `specs/component.spec.json`.
+
+### Configuration
+
+Configuration keys and runtime entrypoints are declared in `specs/component.spec.json`.
+
+### SaaS/Private/Local Behavior
+
+This module follows the canonical standards linked from `specs/component.spec.json`, including deployment and runtime configuration rules where applicable.
+
+### Security
+
+Do not add secrets, live tokens, manual auth headers, or app-local credential handling to this module.
+
+### Extension Points
+
+Extension points are limited to declared public exports, runtime entrypoints, SDK clients, events, and config keys.
+
+### Verification
+
+- `cargo test --manifest-path apps/sdkwork-claw-router/Cargo.toml`
+- `pnpm --filter sdkwork-claw-router-workspace test`
+
+### Owner And Status
+
+Owner and lifecycle status are tracked in `specs/component.spec.json`.

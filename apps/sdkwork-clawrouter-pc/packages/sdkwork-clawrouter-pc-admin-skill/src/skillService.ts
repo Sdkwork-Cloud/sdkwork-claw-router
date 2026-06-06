@@ -1,0 +1,1989 @@
+import {
+  ensureSdkworkApiSuccess,
+  getClawRouterBackendSdkClient,
+  isRecord,
+  normalizeJsonObject,
+  readApiRecord,
+  readBoolean,
+  readNullableString,
+  readNumber,
+  readRequiredApiItem,
+  readRequiredApiItems,
+  readRequiredNonNegativeInt64String,
+  readRequiredString,
+  readString,
+  readStringArray,
+  readMediaResource,
+  readMediaResourceUrl,
+  readRequiredMediaResource,
+  requiredSafePathSegment,
+  toExternalUrlMediaResource,
+  type ApiRecord,
+  type ClawRouterMediaResource,
+  type JsonObject,
+} from 'sdkwork-clawrouter-pc-commons/runtime';
+import type {
+  AdminSkillArtifactCreateRequest,
+  AdminSkillArtifactUpdateRequest,
+  AdminSkillAssetCreateRequest,
+  AdminSkillAssetUpdateRequest,
+  AdminSkillCategoryCreateRequest,
+  AdminSkillCategoryUpdateRequest,
+  AdminSkillCreateRequest,
+  AdminSkillItem,
+  AdminSkillPackageCreateRequest,
+  AdminSkillPackageUpdateRequest,
+  AdminSkillReviewRequest,
+  AdminSkillUpdateRequest,
+} from '@sdkwork/clawrouter-backend-sdk';
+
+export type SkillMarketStatus = AdminSkillItem['marketStatus'];
+export type SkillReviewStatus = AdminSkillItem['reviewStatus'];
+export type SkillVisibility = AdminSkillItem['visibility'];
+export type SkillSourceType = AdminSkillItem['sourceType'];
+
+export interface AdminSkillCategory {
+  id: string;
+  name: string;
+  description: string;
+  code: string;
+  icon?: ClawRouterMediaResource;
+  sortWeight: number;
+  parentId: string | null;
+  path: string;
+  visible: boolean;
+  status: number;
+  type: 19 | 20;
+}
+
+export interface AdminSkillCategoryCreateInput {
+  name: string;
+  code?: string;
+  description?: string;
+  icon?: ClawRouterMediaResource;
+  sortWeight?: number;
+  parentId?: string | null;
+  path?: string;
+  visible?: boolean;
+  status?: number;
+  type?: 19 | 20;
+}
+
+export interface AdminSkillCategoryUpdateInput {
+  name?: string;
+  code?: string | null;
+  description?: string | null;
+  icon?: ClawRouterMediaResource;
+  sortWeight?: number;
+  parentId?: string | null;
+  path?: string | null;
+  visible?: boolean;
+  status?: number;
+  type?: 19 | 20;
+}
+
+export interface AdminSkillPackage {
+  id: string;
+  packageKey: string;
+  name: string;
+  summary: string;
+  description: string | null;
+  icon?: ClawRouterMediaResource;
+  cover?: ClawRouterMediaResource;
+  categoryId: string | null;
+  enabled: boolean;
+  featured: boolean;
+  sortWeight: number;
+  tags: string[];
+  latestPublishedAt: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface AdminSkillPackageCreateInput {
+  packageKey: string;
+  name: string;
+  summary?: string;
+  description?: string;
+  icon?: ClawRouterMediaResource;
+  cover?: ClawRouterMediaResource;
+  categoryId?: string | null;
+  enabled?: boolean;
+  featured?: boolean;
+  sortWeight?: number;
+  tags?: string[];
+}
+
+export interface AdminSkillPackageUpdateInput {
+  packageKey?: string;
+  name?: string;
+  summary?: string;
+  description?: string | null;
+  icon?: ClawRouterMediaResource;
+  cover?: ClawRouterMediaResource;
+  categoryId?: string | null;
+  enabled?: boolean;
+  featured?: boolean;
+  sortWeight?: number;
+  tags?: string[];
+}
+
+export interface AdminSkill {
+  id: string;
+  skillKey: string;
+  name: string;
+  summary: string;
+  description: string | null;
+  icon?: ClawRouterMediaResource;
+  cover?: ClawRouterMediaResource;
+  categoryId: string | null;
+  packageId: string | null;
+  provider: string;
+  version: string;
+  versionName: string;
+  runtime: string;
+  entrypoint: string;
+  manifestUrl: string;
+  repositoryUrl: string;
+  homepageUrl: string;
+  documentationUrl: string;
+  licenseName: string;
+  sourceType: SkillSourceType;
+  marketStatus: SkillMarketStatus;
+  visibility: SkillVisibility;
+  reviewStatus: SkillReviewStatus;
+  reviewComment: string;
+  reviewedBy: string;
+  reviewedAt: string;
+  builtin: boolean;
+  isBuiltin: boolean;
+  enabled: boolean;
+  featured: boolean;
+  recommendWeight: number;
+  price: string | null;
+  currency: string;
+  installCount: string;
+  ratingAvg: string;
+  ratingCount: string;
+  tags: string[];
+  capabilities: string[];
+  configSchema: JsonObject;
+  defaultConfig: JsonObject;
+  latestPublishedAt: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface AdminSkillCreateInput {
+  skillKey: string;
+  name: string;
+  summary?: string;
+  description?: string;
+  icon?: ClawRouterMediaResource;
+  cover?: ClawRouterMediaResource;
+  categoryId?: string | null;
+  packageId?: string | null;
+  provider?: string;
+  version?: string;
+  versionName?: string;
+  runtime?: string;
+  entrypoint?: string;
+  manifestUrl?: string;
+  repositoryUrl?: string;
+  homepageUrl?: string;
+  documentationUrl?: string;
+  licenseName?: string;
+  sourceType?: SkillSourceType;
+  marketStatus?: SkillMarketStatus;
+  visibility?: SkillVisibility;
+  reviewStatus?: SkillReviewStatus;
+  builtin?: boolean;
+  isBuiltin?: boolean;
+  enabled?: boolean;
+  featured?: boolean;
+  recommendWeight?: number;
+  price?: string | null;
+  currency?: string;
+  tags?: string[];
+  capabilities?: string[];
+  configSchema?: JsonObject;
+  defaultConfig?: JsonObject;
+}
+
+export interface AdminSkillUpdateInput {
+  skillKey?: string;
+  name?: string;
+  summary?: string;
+  description?: string | null;
+  icon?: ClawRouterMediaResource;
+  cover?: ClawRouterMediaResource;
+  categoryId?: string | null;
+  packageId?: string | null;
+  provider?: string | null;
+  version?: string;
+  versionName?: string | null;
+  runtime?: string | null;
+  entrypoint?: string | null;
+  manifestUrl?: string | null;
+  repositoryUrl?: string | null;
+  homepageUrl?: string | null;
+  documentationUrl?: string | null;
+  licenseName?: string | null;
+  sourceType?: SkillSourceType;
+  visibility?: SkillVisibility;
+  builtin?: boolean;
+  isBuiltin?: boolean;
+  featured?: boolean;
+  recommendWeight?: number;
+  price?: string | null;
+  currency?: string;
+  tags?: string[];
+  capabilities?: string[];
+  configSchema?: JsonObject;
+  defaultConfig?: JsonObject;
+}
+
+export interface AdminSkillAsset {
+  id: string;
+  skillId: string;
+  targetType: 35;
+  targetId: string;
+  artifactId?: string | null;
+  assetType: number;
+  asset: ClawRouterMediaResource;
+  thumbnail?: ClawRouterMediaResource;
+  title?: string | null;
+  altText?: string | null;
+  mimeType?: string | null;
+  width?: number | null;
+  height?: number | null;
+  durationSeconds?: string | null;
+  fileSize?: string | null;
+  sortOrder: number;
+  status: number;
+  publishedAt?: string | null;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface AdminSkillAssetCreateInput {
+  artifactId?: string | null;
+  assetType?: number;
+  asset: ClawRouterMediaResource;
+  thumbnail?: ClawRouterMediaResource;
+  title?: string;
+  altText?: string;
+  mimeType?: string;
+  width?: number;
+  height?: number;
+  durationSeconds?: string;
+  fileSize?: number;
+  sortOrder?: number;
+  status?: number;
+  publishedAt?: string;
+}
+
+export interface AdminSkillAssetUpdateInput {
+  artifactId?: string | null;
+  assetType?: number;
+  asset?: ClawRouterMediaResource;
+  thumbnail?: ClawRouterMediaResource | null;
+  title?: string | null;
+  altText?: string | null;
+  mimeType?: string | null;
+  width?: number | null;
+  height?: number | null;
+  durationSeconds?: string | null;
+  fileSize?: number | null;
+  sortOrder?: number;
+  status?: number;
+  publishedAt?: string | null;
+}
+
+export interface AdminSkillArtifact {
+  id: string;
+  skillId: string;
+  targetType: 35;
+  targetId: string;
+  artifactType: number;
+  version: string;
+  platformType: string;
+  osName: string;
+  artifactRef?: string | null;
+  artifact?: ClawRouterMediaResource;
+  artifactSizeBytes: string;
+  runtime?: string | null;
+  frameworks: string[];
+  licenseName?: string | null;
+  checksumHash?: string | null;
+  releaseNotes?: string | null;
+  status: number;
+  publishedAt?: string | null;
+  deprecatedAt?: string | null;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface AdminSkillArtifactCreateInput {
+  artifactType?: number;
+  version?: string;
+  platformType?: string;
+  osName?: string;
+  artifactRef?: string;
+  artifact?: ClawRouterMediaResource;
+  artifactSizeBytes?: number;
+  runtime?: string;
+  frameworks?: string[];
+  licenseName?: string;
+  checksumHash?: string;
+  releaseNotes?: string;
+  status?: number;
+  publishedAt?: string;
+  deprecatedAt?: string;
+}
+
+export interface AdminSkillArtifactUpdateInput {
+  artifactType?: number;
+  version?: string;
+  platformType?: string;
+  osName?: string;
+  artifactRef?: string | null;
+  artifact?: ClawRouterMediaResource | null;
+  artifactSizeBytes?: number;
+  runtime?: string | null;
+  frameworks?: string[];
+  licenseName?: string | null;
+  checksumHash?: string | null;
+  releaseNotes?: string | null;
+  status?: number;
+  publishedAt?: string | null;
+  deprecatedAt?: string | null;
+}
+
+export interface AdminSkillListInput {
+  searchQuery?: unknown;
+  marketStatus?: SkillMarketStatus;
+  reviewStatus?: SkillReviewStatus;
+  visibility?: SkillVisibility;
+  enabled?: boolean;
+  categoryId?: unknown;
+  page?: unknown;
+  pageSize?: unknown;
+}
+
+export interface AdminSkillPackageListInput {
+  searchQuery?: unknown;
+  enabled?: boolean;
+  categoryId?: unknown;
+  page?: unknown;
+  pageSize?: unknown;
+}
+
+interface AdminSkillListSdkParams {
+  q?: string;
+  marketStatus?: SkillMarketStatus;
+  reviewStatus?: SkillReviewStatus;
+  visibility?: SkillVisibility;
+  enabled?: boolean;
+  categoryId?: string;
+  page?: string;
+  pageSize?: string;
+}
+
+interface AdminSkillPackageListSdkParams {
+  q?: string;
+  enabled?: boolean;
+  categoryId?: string;
+  page?: string;
+  pageSize?: string;
+}
+
+export class AdminSkillService {
+  static async fetchSkillCategories(): Promise<AdminSkillCategory[]> {
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.categories.list();
+    ensureSdkworkApiSuccess(result, 'Failed to fetch skill categories');
+    return readRequiredApiItems(result, 'Failed to fetch skill categories')
+      .map(normalizeSkillCategory);
+  }
+
+  static async createSkillCategory(input: AdminSkillCategoryCreateInput): Promise<AdminSkillCategory> {
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.categories.create(
+      normalizeCreateCategoryRequest(input),
+    );
+    ensureSdkworkApiSuccess(result, 'Failed to create skill category');
+    return normalizeSkillCategory(readRequiredApiItem(result, 'Created skill category response is missing data'));
+  }
+
+  static async updateSkillCategory(categoryId: string, input: AdminSkillCategoryUpdateInput): Promise<AdminSkillCategory> {
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.categories.update(
+      requiredSafePathSegment(categoryId, 'categoryId'),
+      normalizeUpdateCategoryRequest(input),
+    );
+    ensureSdkworkApiSuccess(result, 'Failed to update skill category');
+    return normalizeSkillCategory(readRequiredApiItem(result, 'Updated skill category response is missing data'));
+  }
+
+  static async deleteSkillCategory(categoryId: string): Promise<boolean> {
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.categories.delete(
+      requiredSafePathSegment(categoryId, 'categoryId'),
+    );
+    ensureDeleteResult(result, 'Skill category delete confirmation is required');
+    return true;
+  }
+
+  static async fetchSkillPackages(query: AdminSkillPackageListInput = {}): Promise<AdminSkillPackage[]> {
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.package.list(normalizePackageListRequest(query));
+    ensureSdkworkApiSuccess(result, 'Failed to fetch skill packages');
+    return readRequiredApiItems(result, 'Failed to fetch skill packages')
+      .map(normalizeSkillPackage);
+  }
+
+  static async getSkillPackage(packageId: string): Promise<AdminSkillPackage> {
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.package.retrieve(
+      requiredSafePathSegment(packageId, 'packageId'),
+    );
+    ensureSdkworkApiSuccess(result, 'Failed to fetch skill package');
+    return normalizeSkillPackage(readRequiredApiItem(result, 'Skill package response is missing data'));
+  }
+
+  static async createSkillPackage(input: AdminSkillPackageCreateInput): Promise<AdminSkillPackage> {
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.package.create(
+      normalizeCreatePackageRequest(input),
+    );
+    ensureSdkworkApiSuccess(result, 'Failed to create skill package');
+    return normalizeSkillPackage(readRequiredApiItem(result, 'Created skill package response is missing data'));
+  }
+
+  static async updateSkillPackage(packageId: string, input: AdminSkillPackageUpdateInput): Promise<AdminSkillPackage> {
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.package.update(
+      requiredSafePathSegment(packageId, 'packageId'),
+      normalizeUpdatePackageRequest(input),
+    );
+    ensureSdkworkApiSuccess(result, 'Failed to update skill package');
+    return normalizeSkillPackage(readRequiredApiItem(result, 'Updated skill package response is missing data'));
+  }
+
+  static async deleteSkillPackage(packageId: string): Promise<boolean> {
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.package.delete(
+      requiredSafePathSegment(packageId, 'packageId'),
+    );
+    ensureDeleteResult(result, 'Skill package delete confirmation is required');
+    return true;
+  }
+
+  static async enableSkillPackage(packageId: string): Promise<AdminSkillPackage> {
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.package.enable(
+      requiredSafePathSegment(packageId, 'packageId'),
+    );
+    ensureSdkworkApiSuccess(result, 'Failed to enable skill package');
+    return ensureSkillPackageEnabled(
+      normalizeSkillPackage(readRequiredApiItem(result, 'Enabled skill package response is missing data')),
+      true,
+      'Enabled skill package response must have enabled=true',
+    );
+  }
+
+  static async disableSkillPackage(packageId: string): Promise<AdminSkillPackage> {
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.package.disable(
+      requiredSafePathSegment(packageId, 'packageId'),
+    );
+    ensureSdkworkApiSuccess(result, 'Failed to disable skill package');
+    return ensureSkillPackageEnabled(
+      normalizeSkillPackage(readRequiredApiItem(result, 'Disabled skill package response is missing data')),
+      false,
+      'Disabled skill package response must have enabled=false',
+    );
+  }
+
+  static async fetchSkills(query: AdminSkillListInput = {}): Promise<AdminSkill[]> {
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.list(normalizeListRequest(query));
+    ensureSdkworkApiSuccess(result, 'Failed to fetch skills');
+    return readRequiredApiItems(result, 'Failed to fetch skills')
+      .map(normalizeSkill);
+  }
+
+  static async getSkill(skillId: string): Promise<AdminSkill> {
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.retrieve(
+      requiredSafePathSegment(skillId, 'skillId'),
+    );
+    ensureSdkworkApiSuccess(result, 'Failed to fetch skill');
+    return normalizeSkill(readRequiredApiItem(result, 'Skill response is missing data'));
+  }
+
+  static async createSkill(input: AdminSkillCreateInput): Promise<AdminSkill> {
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.create(
+      normalizeCreateSkillRequest(input),
+    );
+    ensureSdkworkApiSuccess(result, 'Failed to create skill');
+    return normalizeSkill(readRequiredApiItem(result, 'Created skill response is missing data'));
+  }
+
+  static async updateSkill(skillId: string, input: AdminSkillUpdateInput): Promise<AdminSkill> {
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.update(
+      requiredSafePathSegment(skillId, 'skillId'),
+      normalizeUpdateSkillRequest(input),
+    );
+    ensureSdkworkApiSuccess(result, 'Failed to update skill');
+    return normalizeSkill(readRequiredApiItem(result, 'Updated skill response is missing data'));
+  }
+
+  static async deleteSkill(skillId: string): Promise<boolean> {
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.delete(
+      requiredSafePathSegment(skillId, 'skillId'),
+    );
+    ensureDeleteResult(result, 'Skill delete confirmation is required');
+    return true;
+  }
+
+  static async enableSkill(skillId: string): Promise<AdminSkill> {
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.enable(
+      requiredSafePathSegment(skillId, 'skillId'),
+    );
+    ensureSdkworkApiSuccess(result, 'Failed to enable skill');
+    return ensureSkillEnabled(
+      normalizeSkill(readRequiredApiItem(result, 'Enabled skill response is missing data')),
+      true,
+      'Enabled skill response must have enabled=true',
+    );
+  }
+
+  static async disableSkill(skillId: string): Promise<AdminSkill> {
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.disable(
+      requiredSafePathSegment(skillId, 'skillId'),
+    );
+    ensureSdkworkApiSuccess(result, 'Failed to disable skill');
+    return ensureSkillEnabled(
+      normalizeSkill(readRequiredApiItem(result, 'Disabled skill response is missing data')),
+      false,
+      'Disabled skill response must have enabled=false',
+    );
+  }
+
+  static async publishSkill(skillId: string): Promise<AdminSkill> {
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.publish(
+      requiredSafePathSegment(skillId, 'skillId'),
+    );
+    ensureSdkworkApiSuccess(result, 'Failed to publish skill');
+    return ensureSkillMarketStatus(
+      normalizeSkill(readRequiredApiItem(result, 'Published skill response is missing data')),
+      'PUBLISHED',
+      'Published skill response must have PUBLISHED market status',
+    );
+  }
+
+  static async offlineSkill(skillId: string): Promise<AdminSkill> {
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.unpublish(
+      requiredSafePathSegment(skillId, 'skillId'),
+    );
+    ensureSdkworkApiSuccess(result, 'Failed to offline skill');
+    return ensureSkillMarketStatus(
+      normalizeSkill(readRequiredApiItem(result, 'Offline skill response is missing data')),
+      'OFFLINE',
+      'Offline skill response must have OFFLINE market status',
+    );
+  }
+
+  static async approveSkill(skillId: string, reviewComment?: string): Promise<AdminSkill> {
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.review.approve(
+      requiredSafePathSegment(skillId, 'skillId'),
+      normalizeReviewRequest({ reviewComment }),
+    );
+    ensureSdkworkApiSuccess(result, 'Failed to approve skill');
+    return ensureSkillReviewStatus(
+      normalizeSkill(readRequiredApiItem(result, 'Approved skill response is missing data')),
+      'APPROVED',
+      'Approved skill response must have APPROVED review status',
+    );
+  }
+
+  static async rejectSkill(skillId: string, reviewComment?: string): Promise<AdminSkill> {
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.review.reject(
+      requiredSafePathSegment(skillId, 'skillId'),
+      normalizeReviewRequest({ reviewComment }),
+    );
+    ensureSdkworkApiSuccess(result, 'Failed to reject skill');
+    return ensureSkillReviewStatus(
+      normalizeSkill(readRequiredApiItem(result, 'Rejected skill response is missing data')),
+      'REJECTED',
+      'Rejected skill response must have REJECTED review status',
+    );
+  }
+
+  static async fetchSkillAssets(skillId: string): Promise<AdminSkillAsset[]> {
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.assets.list(
+      requiredSafePathSegment(skillId, 'skillId'),
+    );
+    ensureSdkworkApiSuccess(result, 'Failed to fetch skill assets');
+    return readRequiredApiItems(result, 'Failed to fetch skill assets')
+      .map(normalizeSkillAsset);
+  }
+
+  static async getSkillAsset(skillId: string, assetId: string): Promise<AdminSkillAsset> {
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.assets.retrieve(
+      requiredSafePathSegment(skillId, 'skillId'),
+      requiredSafePathSegment(assetId, 'assetId'),
+    );
+    ensureSdkworkApiSuccess(result, 'Failed to fetch skill asset');
+    return normalizeSkillAsset(readRequiredApiItem(result, 'Skill asset response is missing data'));
+  }
+
+  static async createSkillAsset(skillId: string, input: AdminSkillAssetCreateInput): Promise<AdminSkillAsset> {
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.assets.create(
+      requiredSafePathSegment(skillId, 'skillId'),
+      normalizeCreateAssetRequest(input),
+    );
+    ensureSdkworkApiSuccess(result, 'Failed to create skill asset');
+    return normalizeSkillAsset(readRequiredApiItem(result, 'Created skill asset response is missing data'));
+  }
+
+  static async updateSkillAsset(skillId: string, assetId: string, input: AdminSkillAssetUpdateInput): Promise<AdminSkillAsset> {
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.assets.update(
+      requiredSafePathSegment(skillId, 'skillId'),
+      requiredSafePathSegment(assetId, 'assetId'),
+      normalizeUpdateAssetRequest(input),
+    );
+    ensureSdkworkApiSuccess(result, 'Failed to update skill asset');
+    return normalizeSkillAsset(readRequiredApiItem(result, 'Updated skill asset response is missing data'));
+  }
+
+  static async deleteSkillAsset(skillId: string, assetId: string): Promise<boolean> {
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.assets.delete(
+      requiredSafePathSegment(skillId, 'skillId'),
+      requiredSafePathSegment(assetId, 'assetId'),
+    );
+    ensureDeleteResult(result, 'Skill asset delete confirmation is required');
+    return true;
+  }
+
+  static async fetchSkillArtifacts(skillId: string): Promise<AdminSkillArtifact[]> {
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.artifacts.list(
+      requiredSafePathSegment(skillId, 'skillId'),
+    );
+    ensureSdkworkApiSuccess(result, 'Failed to fetch skill artifacts');
+    return readRequiredApiItems(result, 'Failed to fetch skill artifacts')
+      .map(normalizeSkillArtifact);
+  }
+
+  static async getSkillArtifact(skillId: string, artifactId: string): Promise<AdminSkillArtifact> {
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.artifacts.retrieve(
+      requiredSafePathSegment(skillId, 'skillId'),
+      requiredSafePathSegment(artifactId, 'artifactId'),
+    );
+    ensureSdkworkApiSuccess(result, 'Failed to fetch skill artifact');
+    return normalizeSkillArtifact(readRequiredApiItem(result, 'Skill artifact response is missing data'));
+  }
+
+  static async createSkillArtifact(skillId: string, input: AdminSkillArtifactCreateInput): Promise<AdminSkillArtifact> {
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.artifacts.create(
+      requiredSafePathSegment(skillId, 'skillId'),
+      normalizeCreateArtifactRequest(input),
+    );
+    ensureSdkworkApiSuccess(result, 'Failed to create skill artifact');
+    return normalizeSkillArtifact(readRequiredApiItem(result, 'Created skill artifact response is missing data'));
+  }
+
+  static async updateSkillArtifact(skillId: string, artifactId: string, input: AdminSkillArtifactUpdateInput): Promise<AdminSkillArtifact> {
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.artifacts.update(
+      requiredSafePathSegment(skillId, 'skillId'),
+      requiredSafePathSegment(artifactId, 'artifactId'),
+      normalizeUpdateArtifactRequest(input),
+    );
+    ensureSdkworkApiSuccess(result, 'Failed to update skill artifact');
+    return normalizeSkillArtifact(readRequiredApiItem(result, 'Updated skill artifact response is missing data'));
+  }
+
+  static async deleteSkillArtifact(skillId: string, artifactId: string): Promise<boolean> {
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.artifacts.delete(
+      requiredSafePathSegment(skillId, 'skillId'),
+      requiredSafePathSegment(artifactId, 'artifactId'),
+    );
+    ensureDeleteResult(result, 'Skill artifact delete confirmation is required');
+    return true;
+  }
+}
+
+export function createSkillCategoryInputFromForm(form: FormData): AdminSkillCategoryCreateInput {
+  const input: AdminSkillCategoryCreateInput = {
+    name: requiredFormText(form, 'name', 255),
+  };
+  mergeSharedCategoryFormFields(input, form, 'create');
+  return input;
+}
+
+export function updateSkillCategoryInputFromForm(form: FormData): AdminSkillCategoryUpdateInput {
+  const input: AdminSkillCategoryUpdateInput = {};
+  const name = optionalFormText(form, 'name', 255);
+  if (name) {
+    input.name = name;
+  }
+  mergeSharedCategoryFormFields(input, form, 'update');
+  return input;
+}
+
+export function createSkillPackageInputFromForm(form: FormData): AdminSkillPackageCreateInput {
+  const input: AdminSkillPackageCreateInput = {
+    packageKey: requiredFormText(form, 'packageKey', 128),
+    name: requiredFormText(form, 'name', 255),
+    enabled: optionalFormBoolean(form, 'enabled') ?? true,
+    featured: optionalFormBoolean(form, 'featured') ?? false,
+  };
+  mergeSharedPackageFormFields(input, form);
+  return input;
+}
+
+export function updateSkillPackageInputFromForm(form: FormData): AdminSkillPackageUpdateInput {
+  const input: AdminSkillPackageUpdateInput = {};
+  const packageKey = optionalFormText(form, 'packageKey', 128);
+  if (packageKey) {
+    input.packageKey = packageKey;
+  }
+  const name = optionalFormText(form, 'name', 255);
+  if (name) {
+    input.name = name;
+  }
+  mergeSharedPackageFormFields(input, form);
+  return input;
+}
+
+export function createSkillInputFromForm(form: FormData): AdminSkillCreateInput {
+  const input: AdminSkillCreateInput = {
+    skillKey: requiredFormText(form, 'skillKey', 128),
+    name: requiredFormText(form, 'name', 255),
+    sourceType: readSourceType(optionalFormText(form, 'sourceType', 32) ?? 'COMMUNITY'),
+    marketStatus: readMarketStatus(optionalFormText(form, 'marketStatus', 32) ?? 'DRAFT'),
+    visibility: readVisibility(optionalFormText(form, 'visibility', 32) ?? 'PUBLIC'),
+    reviewStatus: readReviewStatus(optionalFormText(form, 'reviewStatus', 32) ?? 'PENDING'),
+    enabled: optionalFormBoolean(form, 'enabled') ?? true,
+    featured: optionalFormBoolean(form, 'featured') ?? false,
+    builtin: optionalFormBoolean(form, 'builtin') ?? false,
+    isBuiltin: optionalFormBoolean(form, 'isBuiltin') ?? false,
+  };
+  mergeSharedSkillFormFields(input, form, 'create');
+  return input;
+}
+
+export function updateSkillInputFromForm(form: FormData): AdminSkillUpdateInput {
+  const input: AdminSkillUpdateInput = {};
+  const skillKey = optionalFormText(form, 'skillKey', 128);
+  if (skillKey) {
+    input.skillKey = skillKey;
+  }
+  const name = optionalFormText(form, 'name', 255);
+  if (name) {
+    input.name = name;
+  }
+  mergeSharedSkillFormFields(input, form, 'update');
+  const sourceType = optionalFormText(form, 'sourceType', 32);
+  if (sourceType) {
+    input.sourceType = readSourceType(sourceType);
+  }
+  const visibility = optionalFormText(form, 'visibility', 32);
+  if (visibility) {
+    input.visibility = readVisibility(visibility);
+  }
+  for (const key of ['builtin', 'isBuiltin', 'featured'] as const) {
+    const value = optionalFormBoolean(form, key);
+    if (value !== undefined) {
+      input[key] = value;
+    }
+  }
+  return input;
+}
+
+export function createSkillAssetInputFromForm(form: FormData): AdminSkillAssetCreateInput {
+  const input: AdminSkillAssetCreateInput = {
+    asset: requiredFormMediaResource(form, 'asset', 'other', 1024),
+  };
+  mergeSharedAssetFormFields(input, form);
+  return input;
+}
+
+export function updateSkillAssetInputFromForm(form: FormData): AdminSkillAssetUpdateInput {
+  const input: AdminSkillAssetUpdateInput = {};
+  mergeSharedAssetFormFields(input, form);
+  return input;
+}
+
+export function createSkillArtifactInputFromForm(form: FormData): AdminSkillArtifactCreateInput {
+  const input: AdminSkillArtifactCreateInput = {};
+  mergeSharedArtifactFormFields(input, form);
+  if (!input.artifactRef && !input.artifact) {
+    throw new Error('artifactRef or artifact is required');
+  }
+  return input;
+}
+
+export function updateSkillArtifactInputFromForm(form: FormData): AdminSkillArtifactUpdateInput {
+  const input: AdminSkillArtifactUpdateInput = {};
+  mergeSharedArtifactFormFields(input, form);
+  return input;
+}
+
+function normalizeCreateCategoryRequest(input: AdminSkillCategoryCreateInput): AdminSkillCategoryCreateRequest {
+  return {
+    name: requiredText(input.name, 'name', 255),
+    code: optionalText(input.code, 'code', 128),
+    description: optionalText(input.description, 'description', 512),
+    icon: input.icon,
+    parentId: normalizeNullableId(input.parentId),
+    path: optionalText(input.path, 'path', 1024),
+    visible: input.visible,
+    type: input.type,
+    sortWeight: input.sortWeight === undefined ? undefined : nonNegativeInteger(input.sortWeight, 'sortWeight', 1_000_000),
+    status: input.status === undefined ? undefined : nonNegativeInteger(input.status, 'status', 1_000_000),
+  };
+}
+
+function normalizeUpdateCategoryRequest(input: AdminSkillCategoryUpdateInput): AdminSkillCategoryUpdateRequest {
+  return pruneUndefined({
+    name: optionalText(input.name, 'name', 255),
+    code: normalizeNullableCode(input.code, 'code', 128),
+    description: normalizeNullableText(input.description, 'description', 512),
+    icon: input.icon,
+    parentId: normalizeNullableId(input.parentId),
+    path: normalizeNullablePath(input.path, 'path', 1024),
+    visible: input.visible,
+    type: input.type,
+    sortWeight: input.sortWeight === undefined ? undefined : nonNegativeInteger(input.sortWeight, 'sortWeight', 1_000_000),
+    status: input.status === undefined ? undefined : nonNegativeInteger(input.status, 'status', 1_000_000),
+  });
+}
+
+function normalizeListRequest(input: AdminSkillListInput): AdminSkillListSdkParams {
+  const request: AdminSkillListSdkParams = {};
+  const searchQuery = optionalText(input.searchQuery, 'searchQuery', 128);
+  if (searchQuery) {
+    request.q = searchQuery;
+  }
+  if (input.marketStatus) {
+    request.marketStatus = readMarketStatus(input.marketStatus);
+  }
+  if (input.reviewStatus) {
+    request.reviewStatus = readReviewStatus(input.reviewStatus);
+  }
+  if (input.visibility) {
+    request.visibility = readVisibility(input.visibility);
+  }
+  if (typeof input.enabled === 'boolean') {
+    request.enabled = input.enabled;
+  }
+  const categoryId = optionalText(input.categoryId, 'categoryId', 128);
+  if (categoryId) {
+    request.categoryId = categoryId;
+  }
+  if (input.page !== undefined) {
+    request.page = positiveIntegerString(input.page, 'page', 1_000_000);
+  }
+  if (input.pageSize !== undefined) {
+    request.pageSize = positiveIntegerString(input.pageSize, 'pageSize', 200);
+  }
+  return request;
+}
+
+function normalizePackageListRequest(input: AdminSkillPackageListInput): AdminSkillPackageListSdkParams {
+  const request: AdminSkillPackageListSdkParams = {};
+  const searchQuery = optionalText(input.searchQuery, 'searchQuery', 128);
+  if (searchQuery) {
+    request.q = searchQuery;
+  }
+  if (typeof input.enabled === 'boolean') {
+    request.enabled = input.enabled;
+  }
+  const categoryId = optionalText(input.categoryId, 'categoryId', 128);
+  if (categoryId) {
+    request.categoryId = categoryId;
+  }
+  if (input.page !== undefined) {
+    request.page = positiveIntegerString(input.page, 'page', 1_000_000);
+  }
+  if (input.pageSize !== undefined) {
+    request.pageSize = positiveIntegerString(input.pageSize, 'pageSize', 200);
+  }
+  return request;
+}
+
+function normalizeCreatePackageRequest(input: AdminSkillPackageCreateInput): AdminSkillPackageCreateRequest {
+  return pruneUndefined({
+    packageKey: requiredText(input.packageKey, 'packageKey', 128),
+    name: requiredText(input.name, 'name', 255),
+    summary: optionalText(input.summary, 'summary', 512),
+    description: optionalText(input.description, 'description', 4000),
+    icon: input.icon,
+    cover: input.cover,
+    categoryId: normalizeNullableId(input.categoryId),
+    enabled: input.enabled,
+    featured: input.featured,
+    sortWeight: input.sortWeight === undefined ? undefined : nonNegativeInteger(input.sortWeight, 'sortWeight', 1_000_000),
+    tags: normalizeStringArray(input.tags, 'tags'),
+  });
+}
+
+function normalizeUpdatePackageRequest(input: AdminSkillPackageUpdateInput): AdminSkillPackageUpdateRequest {
+  return pruneUndefined({
+    packageKey: optionalCode(input.packageKey, 'packageKey', 128),
+    name: optionalText(input.name, 'name', 255),
+    summary: optionalText(input.summary, 'summary', 512),
+    description: normalizeNullableText(input.description, 'description', 4000),
+    icon: input.icon,
+    cover: input.cover,
+    categoryId: normalizeNullableId(input.categoryId),
+    enabled: input.enabled,
+    featured: input.featured,
+    sortWeight: input.sortWeight === undefined ? undefined : nonNegativeInteger(input.sortWeight, 'sortWeight', 1_000_000),
+    tags: input.tags ? normalizeStringArray(input.tags, 'tags') : undefined,
+  });
+}
+
+function normalizeCreateSkillRequest(input: AdminSkillCreateInput): AdminSkillCreateRequest {
+  return pruneUndefined({
+    skillKey: requiredText(input.skillKey, 'skillKey', 128),
+    name: requiredText(input.name, 'name', 255),
+    summary: optionalText(input.summary, 'summary', 512),
+    description: optionalText(input.description, 'description', 4000),
+    icon: input.icon,
+    cover: input.cover,
+    categoryId: normalizeNullableId(input.categoryId),
+    packageId: normalizeNullableId(input.packageId),
+    provider: optionalText(input.provider, 'provider', 128),
+    version: optionalText(input.version, 'version', 64),
+    versionName: optionalText(input.versionName, 'versionName', 64),
+    runtime: optionalText(input.runtime, 'runtime', 64),
+    entrypoint: optionalText(input.entrypoint, 'entrypoint', 255),
+    manifestUrl: optionalUrlOrPath(input.manifestUrl, 'manifestUrl', 500),
+    repositoryUrl: optionalUrlOrPath(input.repositoryUrl, 'repositoryUrl', 500),
+    homepageUrl: optionalUrlOrPath(input.homepageUrl, 'homepageUrl', 500),
+    documentationUrl: optionalUrlOrPath(input.documentationUrl, 'documentationUrl', 500),
+    licenseName: optionalText(input.licenseName, 'licenseName', 128),
+    sourceType: readSourceType(input.sourceType ?? 'COMMUNITY'),
+    marketStatus: readMarketStatus(input.marketStatus ?? 'DRAFT'),
+    visibility: readVisibility(input.visibility ?? 'PUBLIC'),
+    reviewStatus: readReviewStatus(input.reviewStatus ?? 'PENDING'),
+    builtin: input.builtin,
+    isBuiltin: input.isBuiltin,
+    enabled: input.enabled,
+    featured: input.featured,
+    recommendWeight: input.recommendWeight === undefined ? undefined : nonNegativeInteger(input.recommendWeight, 'recommendWeight', 1_000_000),
+    price: normalizeNullableDecimal(input.price),
+    currency: normalizeCurrency(input.currency ?? 'CNY'),
+    tags: normalizeStringArray(input.tags, 'tags'),
+    capabilities: normalizeStringArray(input.capabilities, 'capabilities'),
+    configSchema: normalizeObject(input.configSchema, 'configSchema'),
+    defaultConfig: normalizeObject(input.defaultConfig, 'defaultConfig'),
+  });
+}
+
+function normalizeUpdateSkillRequest(input: AdminSkillUpdateInput): AdminSkillUpdateRequest {
+  const request: AdminSkillUpdateRequest = pruneUndefined({
+    skillKey: optionalCode(input.skillKey, 'skillKey', 128),
+    name: optionalText(input.name, 'name', 255),
+    summary: optionalText(input.summary, 'summary', 512),
+    description: normalizeNullableText(input.description, 'description', 4000),
+    icon: input.icon,
+    cover: input.cover,
+    categoryId: normalizeNullableId(input.categoryId),
+    packageId: normalizeNullableId(input.packageId),
+    provider: normalizeNullableText(input.provider, 'provider', 128),
+    version: optionalText(input.version, 'version', 64),
+    versionName: normalizeNullableText(input.versionName, 'versionName', 64),
+    runtime: normalizeNullableText(input.runtime, 'runtime', 64),
+    entrypoint: normalizeNullableText(input.entrypoint, 'entrypoint', 255),
+    manifestUrl: normalizeNullableUrlOrPath(input.manifestUrl, 'manifestUrl', 500),
+    repositoryUrl: normalizeNullableUrlOrPath(input.repositoryUrl, 'repositoryUrl', 500),
+    homepageUrl: normalizeNullableUrlOrPath(input.homepageUrl, 'homepageUrl', 500),
+    documentationUrl: normalizeNullableUrlOrPath(input.documentationUrl, 'documentationUrl', 500),
+    licenseName: normalizeNullableText(input.licenseName, 'licenseName', 128),
+    sourceType: input.sourceType ? readSourceType(input.sourceType) : undefined,
+    visibility: input.visibility ? readVisibility(input.visibility) : undefined,
+    builtin: input.builtin,
+    isBuiltin: input.isBuiltin,
+    featured: input.featured,
+    recommendWeight: input.recommendWeight === undefined ? undefined : nonNegativeInteger(input.recommendWeight, 'recommendWeight', 1_000_000),
+    price: normalizeNullableDecimal(input.price),
+    currency: input.currency ? normalizeCurrency(input.currency) : undefined,
+    tags: input.tags ? normalizeStringArray(input.tags, 'tags') : undefined,
+    capabilities: input.capabilities ? normalizeStringArray(input.capabilities, 'capabilities') : undefined,
+    configSchema: input.configSchema === undefined ? undefined : normalizeObject(input.configSchema, 'configSchema'),
+    defaultConfig: input.defaultConfig === undefined ? undefined : normalizeObject(input.defaultConfig, 'defaultConfig'),
+  });
+  return request;
+}
+
+function normalizeReviewRequest(input: AdminSkillReviewRequest): AdminSkillReviewRequest {
+  const reviewComment = optionalText(input.reviewComment ?? input.comment, 'reviewComment', 1000);
+  return reviewComment ? { reviewComment } : {};
+}
+
+function normalizeCreateAssetRequest(input: AdminSkillAssetCreateInput): AdminSkillAssetCreateRequest {
+  return pruneUndefined({
+    artifactId: normalizeNullableId(input.artifactId),
+    assetType: input.assetType === undefined ? undefined : nonNegativeInteger(input.assetType, 'assetType', 1_000_000),
+    asset: requireMediaResourceInput(input.asset, 'asset'),
+    thumbnail: optionalMediaResourceInput(input.thumbnail, 'thumbnail'),
+    title: optionalText(input.title, 'title', 255),
+    altText: optionalText(input.altText, 'altText', 512),
+    mimeType: optionalText(input.mimeType, 'mimeType', 128),
+    width: input.width === undefined ? undefined : nonNegativeInteger(input.width, 'width', 1_000_000),
+    height: input.height === undefined ? undefined : nonNegativeInteger(input.height, 'height', 1_000_000),
+    durationSeconds: optionalText(input.durationSeconds, 'durationSeconds', 64),
+    fileSize: input.fileSize === undefined ? undefined : nonNegativeIntegerString(input.fileSize, 'fileSize', Number.MAX_SAFE_INTEGER),
+    sortOrder: input.sortOrder === undefined ? undefined : nonNegativeInteger(input.sortOrder, 'sortOrder', 1_000_000),
+    status: input.status === undefined ? undefined : nonNegativeInteger(input.status, 'status', 1_000_000),
+    publishedAt: optionalText(input.publishedAt, 'publishedAt', 64),
+  });
+}
+
+function normalizeUpdateAssetRequest(input: AdminSkillAssetUpdateInput): AdminSkillAssetUpdateRequest {
+  return pruneUndefined({
+    artifactId: normalizeNullableId(input.artifactId),
+    assetType: input.assetType === undefined ? undefined : nonNegativeInteger(input.assetType, 'assetType', 1_000_000),
+    asset: optionalMediaResourceInput(input.asset, 'asset'),
+    thumbnail: nullableMediaResourceInput(input.thumbnail, 'thumbnail'),
+    title: normalizeNullableText(input.title, 'title', 255),
+    altText: normalizeNullableText(input.altText, 'altText', 512),
+    mimeType: normalizeNullableText(input.mimeType, 'mimeType', 128),
+    width: input.width === null ? null : input.width === undefined ? undefined : nonNegativeInteger(input.width, 'width', 1_000_000),
+    height: input.height === null ? null : input.height === undefined ? undefined : nonNegativeInteger(input.height, 'height', 1_000_000),
+    durationSeconds: normalizeNullableText(input.durationSeconds, 'durationSeconds', 64),
+    fileSize: input.fileSize === null ? null : input.fileSize === undefined ? undefined : nonNegativeIntegerString(input.fileSize, 'fileSize', Number.MAX_SAFE_INTEGER),
+    sortOrder: input.sortOrder === undefined ? undefined : nonNegativeInteger(input.sortOrder, 'sortOrder', 1_000_000),
+    status: input.status === undefined ? undefined : nonNegativeInteger(input.status, 'status', 1_000_000),
+    publishedAt: normalizeNullableText(input.publishedAt, 'publishedAt', 64),
+  });
+}
+
+function normalizeCreateArtifactRequest(input: AdminSkillArtifactCreateInput): AdminSkillArtifactCreateRequest {
+  const artifactRef = optionalResourceRef(input.artifactRef, 'artifactRef');
+  const artifact = optionalMediaResourceInput(input.artifact, 'artifact');
+  if (!artifactRef && !artifact) {
+    throw new Error('artifactRef or artifact is required');
+  }
+  return pruneUndefined({
+    artifactType: input.artifactType === undefined ? undefined : nonNegativeInteger(input.artifactType, 'artifactType', 1_000_000),
+    version: optionalText(input.version, 'version', 64),
+    platformType: optionalText(input.platformType, 'platformType', 128),
+    osName: optionalText(input.osName, 'osName', 128),
+    artifactRef,
+    artifact,
+    artifactSizeBytes: input.artifactSizeBytes === undefined ? undefined : nonNegativeIntegerString(input.artifactSizeBytes, 'artifactSizeBytes', Number.MAX_SAFE_INTEGER),
+    runtime: optionalText(input.runtime, 'runtime', 64),
+    frameworks: input.frameworks ? normalizeLabelArray(input.frameworks, 'frameworks') : undefined,
+    licenseName: optionalText(input.licenseName, 'licenseName', 128),
+    checksumHash: normalizeOptionalChecksumHash(input.checksumHash),
+    releaseNotes: optionalText(input.releaseNotes, 'releaseNotes', 4000),
+    status: input.status === undefined ? undefined : nonNegativeInteger(input.status, 'status', 1_000_000),
+    publishedAt: optionalText(input.publishedAt, 'publishedAt', 64),
+    deprecatedAt: optionalText(input.deprecatedAt, 'deprecatedAt', 64),
+  });
+}
+
+function normalizeUpdateArtifactRequest(input: AdminSkillArtifactUpdateInput): AdminSkillArtifactUpdateRequest {
+  return pruneUndefined({
+    artifactType: input.artifactType === undefined ? undefined : nonNegativeInteger(input.artifactType, 'artifactType', 1_000_000),
+    version: optionalText(input.version, 'version', 64),
+    platformType: optionalText(input.platformType, 'platformType', 128),
+    osName: optionalText(input.osName, 'osName', 128),
+    artifactRef: normalizeNullableResourceRef(input.artifactRef, 'artifactRef'),
+    artifact: nullableMediaResourceInput(input.artifact, 'artifact'),
+    artifactSizeBytes: input.artifactSizeBytes === undefined ? undefined : nonNegativeIntegerString(input.artifactSizeBytes, 'artifactSizeBytes', Number.MAX_SAFE_INTEGER),
+    runtime: normalizeNullableText(input.runtime, 'runtime', 64),
+    frameworks: input.frameworks ? normalizeLabelArray(input.frameworks, 'frameworks') : undefined,
+    licenseName: normalizeNullableText(input.licenseName, 'licenseName', 128),
+    checksumHash: normalizeNullableChecksumHash(input.checksumHash),
+    releaseNotes: normalizeNullableText(input.releaseNotes, 'releaseNotes', 4000),
+    status: input.status === undefined ? undefined : nonNegativeInteger(input.status, 'status', 1_000_000),
+    publishedAt: normalizeNullableText(input.publishedAt, 'publishedAt', 64),
+    deprecatedAt: normalizeNullableText(input.deprecatedAt, 'deprecatedAt', 64),
+  });
+}
+
+function normalizeSkillCategory(value: unknown): AdminSkillCategory {
+  const item = readRequiredRecord(value, 'Skill category record is required');
+  const type = readRequiredNonNegativeInteger(item, 'type', 'Skill category type is required');
+  if (type !== 19 && type !== 20) {
+    throw new Error(`Unsupported skill category type: ${type}`);
+  }
+  return {
+    id: readRequiredString(item, 'id', 'Skill category id is required'),
+    name: readRequiredString(item, 'name', 'Skill category name is required'),
+    description: readString(item, 'description'),
+    code: readString(item, 'code'),
+    icon: readMediaResource(item.icon),
+    sortWeight: readRequiredNonNegativeInteger(item, 'sortWeight', 'Skill category sort weight is required'),
+    parentId: readNullableString(item, 'parentId'),
+    path: readString(item, 'path'),
+    visible: readRequiredBoolean(item, 'visible', 'Skill category visibility is required'),
+    status: readRequiredNonNegativeInteger(item, 'status', 'Skill category status is required'),
+    type,
+  };
+}
+
+function normalizeSkillPackage(value: unknown): AdminSkillPackage {
+  const item = readRequiredRecord(value, 'Skill package record is required');
+  return {
+    id: readRequiredString(item, 'id', 'Skill package id is required'),
+    packageKey: readRequiredString(item, 'packageKey', 'Skill package key is required'),
+    name: readRequiredString(item, 'name', 'Skill package name is required'),
+    summary: readString(item, 'summary'),
+    description: readNullableString(item, 'description'),
+    icon: readMediaResource(item.icon),
+    cover: readMediaResource(item.cover),
+    categoryId: readNullableString(item, 'categoryId'),
+    enabled: readRequiredBoolean(item, 'enabled', 'Skill package enabled flag is required'),
+    featured: readRequiredBoolean(item, 'featured', 'Skill package featured flag is required'),
+    sortWeight: readRequiredNonNegativeInteger(item, 'sortWeight', 'Skill package sort weight is required'),
+    tags: uniqueStrings(readRequiredStringArray(item, 'tags', 'Skill package tags are required')),
+    latestPublishedAt: readString(item, 'latestPublishedAt'),
+    createdAt: readRequiredString(item, 'createdAt', 'Skill package created time is required'),
+    updatedAt: readRequiredString(item, 'updatedAt', 'Skill package updated time is required'),
+  };
+}
+
+function normalizeSkill(value: unknown): AdminSkill {
+  const item = readRequiredRecord(value, 'Skill record is required');
+  return {
+    id: readRequiredString(item, 'id', 'Skill id is required'),
+    skillKey: readRequiredString(item, 'skillKey', 'Skill key is required'),
+    name: readRequiredString(item, 'name', 'Skill name is required'),
+    summary: readString(item, 'summary'),
+    description: readNullableString(item, 'description'),
+    icon: readMediaResource(item.icon),
+    cover: readMediaResource(item.cover),
+    categoryId: readNullableString(item, 'categoryId'),
+    packageId: readNullableString(item, 'packageId'),
+    provider: readString(item, 'provider'),
+    version: readString(item, 'version'),
+    versionName: readString(item, 'versionName'),
+    runtime: readString(item, 'runtime'),
+    entrypoint: readString(item, 'entrypoint'),
+    manifestUrl: readString(item, 'manifestUrl'),
+    repositoryUrl: readString(item, 'repositoryUrl'),
+    homepageUrl: readString(item, 'homepageUrl'),
+    documentationUrl: readString(item, 'documentationUrl'),
+    licenseName: readString(item, 'licenseName'),
+    sourceType: readSourceType(readRequiredString(item, 'sourceType', 'Skill source type is required')),
+    marketStatus: readMarketStatus(readRequiredString(item, 'marketStatus', 'Skill market status is required')),
+    visibility: readVisibility(readRequiredString(item, 'visibility', 'Skill visibility is required')),
+    reviewStatus: readReviewStatus(readRequiredString(item, 'reviewStatus', 'Skill review status is required')),
+    reviewComment: readString(item, 'reviewComment'),
+    reviewedBy: readString(item, 'reviewedBy'),
+    reviewedAt: readString(item, 'reviewedAt'),
+    builtin: readRequiredBoolean(item, 'builtin', 'Skill builtin flag is required'),
+    isBuiltin: readRequiredBoolean(item, 'isBuiltin', 'Skill legacy builtin flag is required'),
+    enabled: readRequiredBoolean(item, 'enabled', 'Skill enabled flag is required'),
+    featured: readRequiredBoolean(item, 'featured', 'Skill featured flag is required'),
+    recommendWeight: readRequiredNonNegativeInteger(item, 'recommendWeight', 'Skill recommend weight is required'),
+    price: readNullableString(item, 'price'),
+    currency: readRequiredString(item, 'currency', 'Skill currency is required'),
+    installCount: readRequiredString(item, 'installCount', 'Skill install count is required'),
+    ratingAvg: readRequiredString(item, 'ratingAvg', 'Skill rating average is required'),
+    ratingCount: readRequiredString(item, 'ratingCount', 'Skill rating count is required'),
+    tags: uniqueStrings(readRequiredStringArray(item, 'tags', 'Skill tags are required')),
+    capabilities: uniqueStrings(readRequiredStringArray(item, 'capabilities', 'Skill capabilities are required')),
+    configSchema: readRequiredJsonRecord(item, 'configSchema', 'Skill config schema is required'),
+    defaultConfig: readRequiredJsonRecord(item, 'defaultConfig', 'Skill default config is required'),
+    latestPublishedAt: readString(item, 'latestPublishedAt'),
+    createdAt: readRequiredString(item, 'createdAt', 'Skill created time is required'),
+    updatedAt: readRequiredString(item, 'updatedAt', 'Skill updated time is required'),
+  };
+}
+
+function normalizeSkillAsset(value: unknown): AdminSkillAsset {
+  const item = readRequiredRecord(value, 'Skill asset record is required');
+  const targetType = readRequiredNonNegativeInteger(item, 'targetType', 'Skill asset target type is required');
+  if (targetType !== 35) {
+    throw new Error(`Unsupported skill asset target type: ${targetType}`);
+  }
+  return {
+    id: readRequiredString(item, 'id', 'Skill asset id is required'),
+    skillId: readRequiredString(item, 'skillId', 'Skill asset skill id is required'),
+    targetType,
+    targetId: readRequiredString(item, 'targetId', 'Skill asset target id is required'),
+    artifactId: readNullableString(item, 'artifactId'),
+    assetType: readRequiredNonNegativeInteger(item, 'assetType', 'Skill asset type is required'),
+    asset: readRequiredMediaResource(item.asset, 'Skill asset resource is required'),
+    thumbnail: readMediaResource(item.thumbnail),
+    title: readNullableString(item, 'title'),
+    altText: readNullableString(item, 'altText'),
+    mimeType: readNullableString(item, 'mimeType'),
+    width: readNullableNumber(item, 'width'),
+    height: readNullableNumber(item, 'height'),
+    durationSeconds: readNullableString(item, 'durationSeconds'),
+    fileSize: readNullableNonNegativeIntegerString(item, 'fileSize', 'Skill asset file size must be a non-negative int64 string'),
+    sortOrder: readRequiredNonNegativeInteger(item, 'sortOrder', 'Skill asset sort order is required'),
+    status: readRequiredNonNegativeInteger(item, 'status', 'Skill asset status is required'),
+    publishedAt: readNullableString(item, 'publishedAt'),
+    createdAt: readRequiredString(item, 'createdAt', 'Skill asset created time is required'),
+    updatedAt: readRequiredString(item, 'updatedAt', 'Skill asset updated time is required'),
+  };
+}
+
+function normalizeSkillArtifact(value: unknown): AdminSkillArtifact {
+  const item = readRequiredRecord(value, 'Skill artifact record is required');
+  const targetType = readRequiredNonNegativeInteger(item, 'targetType', 'Skill artifact target type is required');
+  if (targetType !== 35) {
+    throw new Error(`Unsupported skill artifact target type: ${targetType}`);
+  }
+  return {
+    id: readRequiredString(item, 'id', 'Skill artifact id is required'),
+    skillId: readRequiredString(item, 'skillId', 'Skill artifact skill id is required'),
+    targetType,
+    targetId: readRequiredString(item, 'targetId', 'Skill artifact target id is required'),
+    artifactType: readRequiredNonNegativeInteger(item, 'artifactType', 'Skill artifact type is required'),
+    version: readRequiredString(item, 'version', 'Skill artifact version is required'),
+    platformType: readRequiredString(item, 'platformType', 'Skill artifact platform type is required'),
+    osName: readRequiredString(item, 'osName', 'Skill artifact OS name is required'),
+    artifactRef: readNullableString(item, 'artifactRef'),
+    artifact: readMediaResource(item.artifact),
+    artifactSizeBytes: readRequiredNonNegativeInt64String(item, 'artifactSizeBytes', 'Skill artifact size is required'),
+    runtime: readNullableString(item, 'runtime'),
+    frameworks: uniqueStrings(readRequiredStringArray(item, 'frameworks', 'Skill artifact frameworks are required')),
+    licenseName: readNullableString(item, 'licenseName'),
+    checksumHash: readNullableString(item, 'checksumHash'),
+    releaseNotes: readNullableString(item, 'releaseNotes'),
+    status: readRequiredNonNegativeInteger(item, 'status', 'Skill artifact status is required'),
+    publishedAt: readNullableString(item, 'publishedAt'),
+    deprecatedAt: readNullableString(item, 'deprecatedAt'),
+    createdAt: readRequiredString(item, 'createdAt', 'Skill artifact created time is required'),
+    updatedAt: readRequiredString(item, 'updatedAt', 'Skill artifact updated time is required'),
+  };
+}
+
+function mergeSharedSkillFormFields(input: AdminSkillCreateInput | AdminSkillUpdateInput, form: FormData, mode: 'create' | 'update'): void {
+  for (const [key, maxLength] of [
+    ['summary', 512],
+    ['description', 4000],
+    ['categoryId', 128],
+    ['packageId', 128],
+    ['provider', 128],
+    ['version', 64],
+    ['versionName', 64],
+    ['runtime', 64],
+    ['entrypoint', 255],
+    ['manifestUrl', 500],
+    ['repositoryUrl', 500],
+    ['homepageUrl', 500],
+    ['documentationUrl', 500],
+    ['licenseName', 128],
+    ['price', 64],
+    ['currency', 16],
+  ] as const) {
+    const value = optionalFormText(form, key, maxLength);
+    if (value !== undefined) {
+      input[key] = value;
+    }
+  }
+  const icon = optionalFormMediaResource(form, 'icon', 'image', 255);
+  if (icon !== undefined) {
+    input.icon = icon;
+  }
+  const cover = optionalFormMediaResource(form, 'cover', 'image', 255);
+  if (cover !== undefined) {
+    input.cover = cover;
+  }
+  const recommendWeight = optionalFormNonNegativeInteger(form, 'recommendWeight');
+  if (recommendWeight !== undefined) {
+    input.recommendWeight = recommendWeight;
+  }
+  const tags = splitCsvFormField(form, 'tags');
+  if (tags.length > 0) {
+    input.tags = tags;
+  }
+  const capabilities = splitCsvFormField(form, 'capabilities');
+  if (capabilities.length > 0) {
+    input.capabilities = capabilities;
+  }
+  const configSchema = optionalJsonObjectFormField(form, 'configSchema');
+  if (configSchema !== undefined) {
+    input.configSchema = configSchema;
+  }
+  const defaultConfig = optionalJsonObjectFormField(form, 'defaultConfig');
+  if (defaultConfig !== undefined) {
+    input.defaultConfig = defaultConfig;
+  }
+  if (mode === 'create') {
+    const createInput = input as AdminSkillCreateInput;
+    const marketStatus = optionalFormText(form, 'marketStatus', 32);
+    if (marketStatus) {
+      createInput.marketStatus = readMarketStatus(marketStatus);
+    }
+    const reviewStatus = optionalFormText(form, 'reviewStatus', 32);
+    if (reviewStatus) {
+      createInput.reviewStatus = readReviewStatus(reviewStatus);
+    }
+  }
+}
+
+function mergeSharedCategoryFormFields(
+  input: AdminSkillCategoryCreateInput | AdminSkillCategoryUpdateInput,
+  form: FormData,
+  mode: 'create' | 'update',
+): void {
+  for (const [key, maxLength] of [
+    ['code', 128],
+    ['description', 512],
+    ['parentId', 128],
+    ['path', 1024],
+  ] as const) {
+    const value = mode === 'create' || key === 'description'
+      ? optionalFormText(form, key, maxLength)
+      : optionalNullableFormText(form, key, maxLength);
+    if (value !== undefined) {
+      input[key] = value;
+    }
+  }
+  const icon = optionalFormMediaResource(form, 'icon', 'image', 255);
+  if (icon !== undefined) {
+    input.icon = icon;
+  }
+  const sortWeight = optionalFormNonNegativeInteger(form, 'sortWeight');
+  if (sortWeight !== undefined) {
+    input.sortWeight = sortWeight;
+  }
+  const status = optionalFormNonNegativeInteger(form, 'status');
+  if (status !== undefined) {
+    input.status = status;
+  }
+  assignOptionalCategoryType(input, optionalFormInteger(form, 'type'));
+  const visible = optionalFormBoolean(form, 'visible');
+  if (visible !== undefined) {
+    input.visible = visible;
+  }
+}
+
+function mergeSharedPackageFormFields(input: AdminSkillPackageCreateInput | AdminSkillPackageUpdateInput, form: FormData): void {
+  for (const [key, maxLength] of [
+    ['summary', 512],
+    ['description', 4000],
+    ['categoryId', 128],
+  ] as const) {
+    const value = optionalFormText(form, key, maxLength);
+    if (value !== undefined) {
+      input[key] = value;
+    }
+  }
+  const icon = optionalFormMediaResource(form, 'icon', 'image', 255);
+  if (icon !== undefined) {
+    input.icon = icon;
+  }
+  const cover = optionalFormMediaResource(form, 'cover', 'image', 255);
+  if (cover !== undefined) {
+    input.cover = cover;
+  }
+  const sortWeight = optionalFormNonNegativeInteger(form, 'sortWeight');
+  if (sortWeight !== undefined) {
+    input.sortWeight = sortWeight;
+  }
+  for (const key of ['enabled', 'featured'] as const) {
+    const value = optionalFormBoolean(form, key);
+    if (value !== undefined) {
+      input[key] = value;
+    }
+  }
+  const tags = splitCsvFormField(form, 'tags');
+  if (tags.length > 0) {
+    input.tags = tags;
+  }
+}
+
+function mergeSharedAssetFormFields(input: AdminSkillAssetCreateInput | AdminSkillAssetUpdateInput, form: FormData): void {
+  const artifactId = optionalFormText(form, 'artifactId', 128);
+  if (artifactId !== undefined) {
+    input.artifactId = artifactId;
+  }
+  for (const key of ['assetType', 'width', 'height', 'fileSize', 'sortOrder', 'status'] as const) {
+    const value = optionalFormNonNegativeInteger(form, key);
+    if (value !== undefined) {
+      input[key] = value;
+    }
+  }
+  for (const [key, maxLength] of [
+    ['title', 255],
+    ['altText', 512],
+    ['mimeType', 128],
+    ['durationSeconds', 64],
+    ['publishedAt', 64],
+  ] as const) {
+    const value = optionalFormText(form, key, maxLength);
+    if (value !== undefined) {
+      input[key] = value;
+    }
+  }
+  const thumbnail = optionalFormMediaResource(form, 'thumbnail', 'image', 1024);
+  if (thumbnail !== undefined) {
+    input.thumbnail = thumbnail;
+  }
+  const asset = optionalFormMediaResource(form, 'asset', 'other', 1024);
+  if (asset !== undefined) {
+    input.asset = asset;
+  }
+}
+
+function mergeSharedArtifactFormFields(input: AdminSkillArtifactCreateInput | AdminSkillArtifactUpdateInput, form: FormData): void {
+  for (const key of ['artifactType', 'artifactSizeBytes', 'status'] as const) {
+    const value = optionalFormNonNegativeInteger(form, key);
+    if (value !== undefined) {
+      input[key] = value;
+    }
+  }
+  for (const [key, maxLength] of [
+    ['version', 64],
+    ['platformType', 128],
+    ['osName', 128],
+    ['artifactRef', 1024],
+    ['runtime', 64],
+    ['licenseName', 128],
+    ['checksumHash', 128],
+    ['releaseNotes', 4000],
+    ['publishedAt', 64],
+    ['deprecatedAt', 64],
+  ] as const) {
+    const value = optionalFormText(form, key, maxLength);
+    if (value !== undefined) {
+      input[key] = value;
+    }
+  }
+  const artifact = optionalFormMediaResource(form, 'artifact', 'archive', 1024);
+  if (artifact !== undefined) {
+    input.artifact = artifact;
+  }
+  const frameworks = splitCsvFormField(form, 'frameworks');
+  if (frameworks.length > 0) {
+    input.frameworks = frameworks;
+  }
+}
+
+function requiredFormText(form: FormData, key: string, maxLength: number): string {
+  return requiredText(formString(form, key), key, maxLength);
+}
+
+function requiredFormMediaResource(
+  form: FormData,
+  key: string,
+  kind: ClawRouterMediaResource['kind'],
+  maxLength: number,
+): ClawRouterMediaResource {
+  const resource = optionalFormMediaResource(form, key, kind, maxLength);
+  if (!resource) {
+    throw new Error(`${key} is required`);
+  }
+  return resource;
+}
+
+function optionalFormMediaResource(
+  form: FormData,
+  key: string,
+  kind: ClawRouterMediaResource['kind'],
+  maxLength: number,
+): ClawRouterMediaResource | undefined {
+  const value = optionalFormText(form, key, maxLength);
+  return toExternalUrlMediaResource(value, kind);
+}
+
+function requireMediaResourceInput(value: unknown, fieldName: string): ClawRouterMediaResource {
+  return readRequiredMediaResource(value, `${fieldName} is required`);
+}
+
+function optionalMediaResourceInput(value: unknown, fieldName: string): ClawRouterMediaResource | undefined {
+  if (value === undefined) {
+    return undefined;
+  }
+  const resource = readMediaResource(value);
+  if (!resource) {
+    throw new Error(`${fieldName} must be a media resource`);
+  }
+  return resource;
+}
+
+function nullableMediaResourceInput(value: unknown, fieldName: string): ClawRouterMediaResource | null | undefined {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  const resource = readMediaResource(value);
+  if (!resource) {
+    throw new Error(`${fieldName} must be a media resource`);
+  }
+  return resource;
+}
+
+function optionalFormText(form: FormData, key: string, maxLength: number): string | undefined {
+  return optionalText(formString(form, key), key, maxLength);
+}
+
+function optionalNullableFormText(form: FormData, key: string, maxLength: number): string | null | undefined {
+  if (!form.has(key)) {
+    return undefined;
+  }
+  return optionalText(formString(form, key), key, maxLength) ?? null;
+}
+
+function optionalFormInteger(form: FormData, key: string): number | undefined {
+  const value = optionalFormText(form, key, 32);
+  if (value === undefined) {
+    return undefined;
+  }
+  if (!/^-?\d+$/.test(value)) {
+    throw new Error(`${key} must be an integer`);
+  }
+  const numberValue = Number(value);
+  if (!Number.isSafeInteger(numberValue)) {
+    throw new Error(`${key} must be an integer`);
+  }
+  return numberValue;
+}
+
+function optionalFormNonNegativeInteger(form: FormData, key: string): number | undefined {
+  const value = optionalFormInteger(form, key);
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value < 0) {
+    throw new Error(`${key} must be a non-negative integer`);
+  }
+  return value;
+}
+
+function optionalFormBoolean(form: FormData, key: string): boolean | undefined {
+  const value = optionalFormText(form, key, 16);
+  if (value === undefined) {
+    return undefined;
+  }
+  const normalized = value.toLowerCase();
+  if (['true', '1', 'yes', 'on'].includes(normalized)) {
+    return true;
+  }
+  if (['false', '0', 'no', 'off'].includes(normalized)) {
+    return false;
+  }
+  throw new Error(`${key} must be a boolean`);
+}
+
+function optionalJsonObjectFormField(form: FormData, key: string): JsonObject | undefined {
+  const value = optionalFormText(form, key, 65_536);
+  if (value === undefined) {
+    return undefined;
+  }
+  try {
+    const parsed: unknown = JSON.parse(value);
+    return normalizeJsonObject(parsed, key);
+  } catch (error) {
+    if (error instanceof Error && error.message === `${key} must be a JSON object`) {
+      throw error;
+    }
+    throw new Error(`${key} must be valid JSON`);
+  }
+}
+
+function splitCsvFormField(form: FormData, key: string): string[] {
+  const value = optionalFormText(form, key, 4096);
+  if (!value) {
+    return [];
+  }
+  return uniqueStrings(value.split(',').map((item) => item.trim()).filter(Boolean));
+}
+
+function formString(form: FormData, key: string): string | undefined {
+  const value = form.get(key);
+  return typeof value === 'string' ? value : undefined;
+}
+
+function requiredText(value: unknown, fieldName: string, maxLength: number): string {
+  const normalized = optionalText(value, fieldName, maxLength);
+  if (!normalized) {
+    throw new Error(`${fieldName} is required`);
+  }
+  return normalized;
+}
+
+function optionalText(value: unknown, fieldName: string, maxLength: number): string | undefined {
+  if (value === undefined || value === null) {
+    return undefined;
+  }
+  if (typeof value !== 'string') {
+    throw new Error(`${fieldName} must be a string`);
+  }
+  const normalized = value.trim();
+  if (!normalized) {
+    return undefined;
+  }
+  if (normalized.length > maxLength) {
+    throw new Error(`${fieldName} must be at most ${maxLength} characters`);
+  }
+  if (/[\x00-\x1f\x7f]/.test(normalized)) {
+    throw new Error(`${fieldName} must not contain control characters`);
+  }
+  return normalized;
+}
+
+function optionalCode(value: unknown, fieldName: string, maxLength: number): string | undefined {
+  const normalized = optionalText(value, fieldName, maxLength);
+  if (normalized && !/^[A-Za-z0-9_-]+$/.test(normalized)) {
+    throw new Error(`${fieldName} must use ASCII letters, numbers, hyphen, or underscore`);
+  }
+  return normalized;
+}
+
+function normalizeNullableCode(value: unknown, fieldName: string, maxLength: number): string | null | undefined {
+  if (value === null) {
+    return null;
+  }
+  return optionalCode(value, fieldName, maxLength);
+}
+
+function normalizeNullableText(value: unknown, fieldName: string, maxLength: number): string | null | undefined {
+  if (value === null) {
+    return null;
+  }
+  return optionalText(value, fieldName, maxLength);
+}
+
+function optionalUrlOrPath(value: unknown, fieldName: string, maxLength: number): string | undefined {
+  const normalized = optionalText(value, fieldName, maxLength);
+  if (normalized) {
+    validateUrlOrPath(normalized, fieldName);
+  }
+  return normalized;
+}
+
+function normalizeNullableUrlOrPath(value: unknown, fieldName: string, maxLength: number): string | null | undefined {
+  if (value === null) {
+    return null;
+  }
+  return optionalUrlOrPath(value, fieldName, maxLength);
+}
+
+function normalizeNullablePath(value: unknown, fieldName: string, maxLength: number): string | null | undefined {
+  if (value === null) {
+    return null;
+  }
+  const normalized = optionalText(value, fieldName, maxLength);
+  if (normalized && !normalized.startsWith('/')) {
+    throw new Error(`${fieldName} must start with /`);
+  }
+  return normalized;
+}
+
+function validateUrlOrPath(value: string, fieldName: string): void {
+  if (value.startsWith('http://') || value.startsWith('https://') || value.startsWith('artifact://') || value.startsWith('/')) {
+    return;
+  }
+  throw new Error(`${fieldName} must be an http(s), artifact, or absolute path reference`);
+}
+
+function requiredResourceRef(value: unknown, fieldName: string): string {
+  const normalized = requiredText(value, fieldName, 1024);
+  validateResourceRef(normalized, fieldName);
+  return normalized;
+}
+
+function optionalResourceRef(value: unknown, fieldName: string): string | undefined {
+  const normalized = optionalText(value, fieldName, 1024);
+  if (normalized) {
+    validateResourceRef(normalized, fieldName);
+  }
+  return normalized;
+}
+
+function normalizeNullableResourceRef(value: unknown, fieldName: string): string | null | undefined {
+  if (value === null) {
+    return null;
+  }
+  return optionalResourceRef(value, fieldName);
+}
+
+function validateResourceRef(value: string, fieldName: string): void {
+  if (
+    value.startsWith('http://') ||
+    value.startsWith('https://') ||
+    value.startsWith('artifact://') ||
+    value.startsWith('builtin://') ||
+    value.startsWith('data/skills/') ||
+    value.startsWith('/')
+  ) {
+    return;
+  }
+  throw new Error(`${fieldName} must be an http(s), builtin, artifact, data/skills, or absolute path reference`);
+}
+
+function normalizeNullableId(value: unknown): string | null | undefined {
+  if (value === null) {
+    return null;
+  }
+  const normalized = optionalText(value, 'id', 128);
+  if (normalized === undefined) {
+    return undefined;
+  }
+  if (!/^\d+$/.test(normalized) || Number(normalized) <= 0) {
+    throw new Error('id must be a positive integer');
+  }
+  return normalized;
+}
+
+function normalizeNullableDecimal(value: unknown): string | null | undefined {
+  if (value === null) {
+    return null;
+  }
+  if (value === undefined || value === '') {
+    return undefined;
+  }
+  const normalized = typeof value === 'number' ? String(value) : optionalText(value, 'price', 64);
+  if (normalized === undefined) {
+    return undefined;
+  }
+  const withoutFormatting = normalized.trim().replace(/^\$/, '').replace(/,/g, '');
+  if (!/^\d+(?:\.\d{1,12})?$/.test(withoutFormatting)) {
+    throw new Error('price must be a positive decimal amount');
+  }
+  return trimDecimal(withoutFormatting);
+}
+
+function normalizeCurrency(value: string): string {
+  const normalized = requiredText(value, 'currency', 16).toUpperCase();
+  if (!/^[A-Z]+$/.test(normalized)) {
+    throw new Error('currency must be an uppercase ISO-style code');
+  }
+  return normalized;
+}
+
+function normalizeStringArray(values: string[] | undefined, fieldName: string): string[] {
+  return uniqueStrings(values ?? []).map((item) => {
+    const normalized = requiredText(item, fieldName, 64);
+    if (!/^[A-Za-z0-9._:-]+$/.test(normalized)) {
+      throw new Error(`${fieldName} items contain unsupported characters`);
+    }
+    return normalized;
+  });
+}
+
+function normalizeLabelArray(values: string[] | undefined, fieldName: string): string[] {
+  return uniqueStrings(values ?? []).map((item) => requiredText(item, fieldName, 64));
+}
+
+function normalizeOptionalChecksumHash(value: unknown): string | undefined {
+  const normalized = optionalText(value, 'checksumHash', 128);
+  if (normalized) {
+    validateChecksumHash(normalized);
+  }
+  return normalized;
+}
+
+function normalizeNullableChecksumHash(value: unknown): string | null | undefined {
+  if (value === null) {
+    return null;
+  }
+  return normalizeOptionalChecksumHash(value);
+}
+
+function validateChecksumHash(value: string): void {
+  if (!/^sha256:[a-f0-9]{64}$/.test(value)) {
+    throw new Error('checksumHash must use sha256:<64 lowercase hex>');
+  }
+}
+
+function normalizeObject(value: unknown, fieldName: string): JsonObject {
+  return normalizeJsonObject(value, fieldName);
+}
+
+function positiveInteger(value: unknown, fieldName: string, maxValue: number): number {
+  const numberValue = typeof value === 'string' ? Number(value.trim()) : value;
+  if (typeof numberValue !== 'number') {
+    throw new Error(`${fieldName} must be between 1 and ${maxValue}`);
+  }
+  if (!Number.isSafeInteger(numberValue) || numberValue < 1 || numberValue > maxValue) {
+    throw new Error(`${fieldName} must be between 1 and ${maxValue}`);
+  }
+  return numberValue;
+}
+
+function positiveIntegerString(value: unknown, fieldName: string, maxValue: number): string {
+  return String(positiveInteger(value, fieldName, maxValue));
+}
+
+function nonNegativeInteger(value: unknown, fieldName: string, maxValue: number): number {
+  const numberValue = typeof value === 'string' ? Number(value.trim()) : value;
+  if (typeof numberValue !== 'number') {
+    throw new Error(`${fieldName} must be between 0 and ${maxValue}`);
+  }
+  if (!Number.isSafeInteger(numberValue) || numberValue < 0 || numberValue > maxValue) {
+    throw new Error(`${fieldName} must be between 0 and ${maxValue}`);
+  }
+  return numberValue;
+}
+
+function nonNegativeIntegerString(value: unknown, fieldName: string, maxValue: number): string {
+  return String(nonNegativeInteger(value, fieldName, maxValue));
+}
+
+function readNullableNumber(record: ApiRecord, key: string): number | null {
+  const value = record[key];
+  if (value === null || value === undefined || value === '') {
+    return null;
+  }
+  const numberValue = readNumber(record, key, Number.NaN);
+  return Number.isFinite(numberValue) ? numberValue : null;
+}
+
+function readNullableNonNegativeIntegerString(record: ApiRecord, key: string, message: string): string | null {
+  const value = record[key];
+  if (value === null || value === undefined || value === '') {
+    return null;
+  }
+  const normalized = readString(record, key).trim();
+  if (!/^(0|[1-9][0-9]*)$/.test(normalized)) {
+    throw new Error(message);
+  }
+  return normalized;
+}
+
+function ensureDeleteResult(result: unknown, message: string): void {
+  ensureSdkworkApiSuccess(result, message);
+  if (readBoolean(readApiRecord(result), 'deleted') !== true) {
+    throw new Error(message);
+  }
+}
+
+function ensureSkillPackageEnabled(
+  skillPackage: AdminSkillPackage,
+  enabled: boolean,
+  message: string,
+): AdminSkillPackage {
+  if (skillPackage.enabled !== enabled) {
+    throw new Error(message);
+  }
+  return skillPackage;
+}
+
+function ensureSkillEnabled(skill: AdminSkill, enabled: boolean, message: string): AdminSkill {
+  if (skill.enabled !== enabled) {
+    throw new Error(message);
+  }
+  return skill;
+}
+
+function ensureSkillMarketStatus(skill: AdminSkill, marketStatus: SkillMarketStatus, message: string): AdminSkill {
+  if (skill.marketStatus !== marketStatus) {
+    throw new Error(message);
+  }
+  return skill;
+}
+
+function ensureSkillReviewStatus(skill: AdminSkill, reviewStatus: SkillReviewStatus, message: string): AdminSkill {
+  if (skill.reviewStatus !== reviewStatus) {
+    throw new Error(message);
+  }
+  return skill;
+}
+
+function readRequiredBoolean(record: ApiRecord, key: string, message: string): boolean {
+  const value = record[key];
+  if (typeof value !== 'boolean') {
+    throw new Error(message);
+  }
+  return value;
+}
+
+function readRequiredStringArray(record: ApiRecord, key: string, message: string): string[] {
+  const value = record[key];
+  if (!Array.isArray(value)) {
+    throw new Error(message);
+  }
+  return value.map((item) => {
+    if (typeof item !== 'string') {
+      throw new Error(message);
+    }
+    return item;
+  });
+}
+
+function readRequiredJsonRecord(record: ApiRecord, key: string, message: string): JsonObject {
+  const value = record[key];
+  if (!isRecord(value)) {
+    throw new Error(message);
+  }
+  return normalizeJsonObject(value, key);
+}
+
+function readRequiredNonNegativeInteger(record: ApiRecord, key: string, message: string): number {
+  const numberValue = readNumber(record, key, Number.NaN);
+  if (!Number.isSafeInteger(numberValue) || numberValue < 0) {
+    throw new Error(message);
+  }
+  return numberValue;
+}
+
+function readSourceType(value: string): SkillSourceType {
+  const normalized = value.trim().toUpperCase();
+  if (
+    normalized === 'OFFICIAL' ||
+    normalized === 'COMMUNITY' ||
+    normalized === 'ENTERPRISE' ||
+    normalized === 'PRIVATE' ||
+    normalized === 'CUSTOM'
+  ) {
+    return normalized;
+  }
+  throw new Error(`Unsupported skill source type: ${value}`);
+}
+
+function readMarketStatus(value: string): SkillMarketStatus {
+  const normalized = value.trim().toUpperCase();
+  if (normalized === 'DRAFT' || normalized === 'PUBLISHED' || normalized === 'OFFLINE' || normalized === 'DEPRECATED') {
+    return normalized;
+  }
+  throw new Error(`Unsupported skill market status: ${value}`);
+}
+
+function readReviewStatus(value: string): SkillReviewStatus {
+  const normalized = value.trim().toUpperCase();
+  if (normalized === 'PENDING' || normalized === 'APPROVED' || normalized === 'REJECTED') {
+    return normalized;
+  }
+  throw new Error(`Unsupported skill review status: ${value}`);
+}
+
+function readVisibility(value: string): SkillVisibility {
+  const normalized = value.trim().toUpperCase();
+  if (normalized === 'PUBLIC' || normalized === 'PRIVATE' || normalized === 'UNLISTED') {
+    return normalized;
+  }
+  throw new Error(`Unsupported skill visibility: ${value}`);
+}
+
+function assignOptionalCategoryType(target: { type?: 19 | 20 }, value: number | undefined): void {
+  if (value === undefined) {
+    return;
+  }
+  if (value !== 19 && value !== 20) {
+    throw new Error('type must be 19 or 20');
+  }
+  target.type = value;
+}
+
+function readRecord(record: ApiRecord, key: string): JsonObject {
+  const value = record[key];
+  return isRecord(value) ? normalizeJsonObject(value, key) : {};
+}
+
+function readRequiredRecord(value: unknown, message: string): ApiRecord {
+  if (!isRecord(value)) {
+    throw new Error(message);
+  }
+  return value;
+}
+
+function uniqueStrings(values: string[]): string[] {
+  return Array.from(new Set(values.map((item) => item.trim()).filter(Boolean)));
+}
+
+function trimDecimal(value: string): string {
+  const [wholeRaw, fractionRaw = ''] = value.split('.');
+  const whole = wholeRaw.replace(/^0+(?=\d)/, '') || '0';
+  const fraction = fractionRaw.replace(/0+$/g, '');
+  return fraction ? `${whole}.${fraction}` : whole;
+}
+
+function pruneUndefined<T extends Record<string, unknown>>(value: T): T {
+  return Object.fromEntries(Object.entries(value).filter(([, item]) => item !== undefined)) as T;
+}

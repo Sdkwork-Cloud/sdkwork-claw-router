@@ -13,9 +13,9 @@ class SettingsRuntimeStandardTest(unittest.TestCase):
         settings_service = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-settings"
+            / "sdkwork-clawrouter-pc-console-settings"
             / "src"
             / "settingsService.ts"
         ).read_text(encoding="utf-8")
@@ -53,9 +53,9 @@ class SettingsRuntimeStandardTest(unittest.TestCase):
         settings_view = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-settings"
+            / "sdkwork-clawrouter-pc-console-settings"
             / "src"
             / "SettingsView.tsx"
         ).read_text(encoding="utf-8")
@@ -78,27 +78,27 @@ class SettingsRuntimeStandardTest(unittest.TestCase):
         settings_view = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-settings"
+            / "sdkwork-clawrouter-pc-console-settings"
             / "src"
             / "SettingsView.tsx"
         ).read_text(encoding="utf-8")
         settings_service = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-settings"
+            / "sdkwork-clawrouter-pc-console-settings"
             / "src"
             / "settingsService.ts"
         ).read_text(encoding="utf-8")
         i18n = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-i18n"
+            / "sdkwork-clawrouter-pc-i18n"
             / "src"
             / "index.ts"
         ).read_text(encoding="utf-8")
@@ -205,9 +205,9 @@ class SettingsRuntimeStandardTest(unittest.TestCase):
         settings_service = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-settings"
+            / "sdkwork-clawrouter-pc-console-settings"
             / "src"
             / "settingsService.ts"
         ).read_text(encoding="utf-8")

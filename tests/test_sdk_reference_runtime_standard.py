@@ -6,9 +6,9 @@ ROOT = Path(__file__).resolve().parents[1]
 SDK_REFERENCE_ROOT = (
     ROOT
     / "apps"
-    / "sdkwork-claw-router-portal"
+    / "sdkwork-clawrouter-pc"
     / "packages"
-    / "sdkwork-claw-router-sdk-reference"
+    / "sdkwork-clawrouter-pc-sdk-reference"
     / "src"
 )
 
@@ -45,8 +45,8 @@ class SdkReferenceRuntimeStandardTest(unittest.TestCase):
         endpoint_view_source = endpoint_view.read_text(encoding="utf-8")
 
         for token in [
-            "import type { ApiReferenceEndpoint } from 'sdkwork-claw-router-api-reference/openapiTypes'",
-            "import type { OpenApiDocument } from 'sdkwork-claw-router-api-reference/openapiTypes'",
+            "import type { ApiReferenceEndpoint } from 'sdkwork-clawrouter-pc-api-reference/openapiTypes'",
+            "import type { OpenApiDocument } from 'sdkwork-clawrouter-pc-api-reference/openapiTypes'",
             "loadSdkReferenceSystems()",
             "activeSystemData?.openApiSpec",
         ]:
@@ -60,8 +60,8 @@ class SdkReferenceRuntimeStandardTest(unittest.TestCase):
         self.assertIn("const errorData: unknown = await generateResponse.json()", sdk_reference_source)
         self.assertIn("readErrorMessage(errorData)", sdk_reference_source)
 
-        self.assertIn("import type { ApiParameter } from 'sdkwork-claw-router-api-reference/openapiTypes'", endpoint_view_source)
-        self.assertIn("import type { ApiReferenceEndpoint } from 'sdkwork-claw-router-api-reference/openapiTypes'", endpoint_view_source)
+        self.assertIn("import type { ApiParameter } from 'sdkwork-clawrouter-pc-api-reference/openapiTypes'", endpoint_view_source)
+        self.assertIn("import type { ApiReferenceEndpoint } from 'sdkwork-clawrouter-pc-api-reference/openapiTypes'", endpoint_view_source)
         self.assertIn("export interface SdkEndpointData", sdk_documentation_source)
         self.assertIn("function toSdkMethodName(endpoint: ApiReferenceEndpoint, language: string): string", sdk_documentation_source)
         self.assertIn("function upperPathSegment(_match: string, chr: string): string", sdk_documentation_source)
@@ -81,7 +81,7 @@ class SdkReferenceRuntimeStandardTest(unittest.TestCase):
 
     def test_sdk_reference_sidebar_uses_fixed_width_without_resize_drag_handle(self) -> None:
         sdk_reference_source = (SDK_REFERENCE_ROOT / "pages" / "SdkReference.tsx").read_text(encoding="utf-8")
-        portal_css = (ROOT / "apps" / "sdkwork-claw-router-portal" / "src" / "index.css").read_text(encoding="utf-8")
+        portal_css = (ROOT / "apps" / "sdkwork-clawrouter-pc" / "src" / "index.css").read_text(encoding="utf-8")
 
         self.assertIn("md:w-[360px] md:max-w-[360px] md:basis-[360px]", sdk_reference_source)
         self.assertIn("md:h-full overflow-y-auto custom-scrollbar py-6 px-6 md:py-8", sdk_reference_source)

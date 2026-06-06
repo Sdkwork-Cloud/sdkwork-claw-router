@@ -12,7 +12,7 @@ class AdminRateLimitRuntimeStandardTest(unittest.TestCase):
     def test_admin_ratelimit_write_contracts_use_operation_specific_payloads(self) -> None:
         manifest = ApiContractManifestGenerator(root=ROOT).generate()
         operations = {operation["key"]: operation for operation in manifest["operations"]}
-        source = "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-ratelimit/src/ratelimitService.ts"
+        source = "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-ratelimit/src/ratelimitService.ts"
 
         add_ip_limit = operations[f"{source}#addIpLimit"]
         add_token_limit = operations[f"{source}#addTokenLimit"]
@@ -53,9 +53,9 @@ class AdminRateLimitRuntimeStandardTest(unittest.TestCase):
         service = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-admin-ratelimit"
+            / "sdkwork-clawrouter-pc-admin-ratelimit"
             / "src"
             / "ratelimitService.ts"
         ).read_text(encoding="utf-8")
@@ -134,9 +134,9 @@ class AdminRateLimitRuntimeStandardTest(unittest.TestCase):
         package_root = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-admin-ratelimit"
+            / "sdkwork-clawrouter-pc-admin-ratelimit"
         )
         package = json.loads((package_root / "package.json").read_text(encoding="utf-8"))
         service = (package_root / "src" / "ratelimitService.ts").read_text(encoding="utf-8")
@@ -188,9 +188,9 @@ class AdminRateLimitRuntimeStandardTest(unittest.TestCase):
         service = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-admin-ratelimit"
+            / "sdkwork-clawrouter-pc-admin-ratelimit"
             / "src"
             / "ratelimitService.ts"
         ).read_text(encoding="utf-8")

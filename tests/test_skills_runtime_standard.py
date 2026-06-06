@@ -7,9 +7,9 @@ ROOT = Path(__file__).resolve().parents[1]
 SKILLS_PACKAGE = (
     ROOT
     / "apps"
-    / "sdkwork-claw-router-portal"
+    / "sdkwork-clawrouter-pc"
     / "packages"
-    / "sdkwork-claw-router-skills-hub"
+    / "sdkwork-clawrouter-pc-skills-hub"
 )
 
 
@@ -19,7 +19,7 @@ class SkillsRuntimeStandardTest(unittest.TestCase):
         service_path = SKILLS_PACKAGE / "src" / "services" / "skillService.ts"
         list_path = SKILLS_PACKAGE / "src" / "pages" / "SkillsHub.tsx"
         detail_path = SKILLS_PACKAGE / "src" / "pages" / "SkillDetails.tsx"
-        runtime_test_path = ROOT / "apps" / "sdkwork-claw-router-portal" / "skills-runtime.test.ts"
+        runtime_test_path = ROOT / "apps" / "sdkwork-clawrouter-pc" / "skills-runtime.test.ts"
         verifier_path = ROOT / "scripts" / "verify-claw-router-product.mjs"
         tsconfig_path = SKILLS_PACKAGE / "tsconfig.json"
 
@@ -71,10 +71,10 @@ class SkillsRuntimeStandardTest(unittest.TestCase):
         self.assertIn("buildSkillInstallCommand", detail_source)
         self.assertIn("skills runtime normalizes app SDK records", runtime_test_source)
         self.assertIn("portal skills runtime tests", verifier_source)
-        self.assertIn("apps/sdkwork-claw-router-portal/skills-runtime.test.ts", verifier_source)
+        self.assertIn("apps/sdkwork-clawrouter-pc/skills-runtime.test.ts", verifier_source)
         self.assertIn('"include"', tsconfig_source)
         self.assertIn('"src"', tsconfig_source)
-        self.assertNotIn("sdkwork-claw-router-admin-skill", tsconfig_source)
+        self.assertNotIn("sdkwork-clawrouter-pc-admin-skill", tsconfig_source)
 
     def test_skills_command_router_is_public_api_entrypoint(self) -> None:
         api_mod_source = (
@@ -104,9 +104,9 @@ class SkillsRuntimeStandardTest(unittest.TestCase):
         skill_service = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-skills-hub"
+            / "sdkwork-clawrouter-pc-skills-hub"
             / "src"
             / "services"
             / "skillService.ts"
@@ -197,7 +197,7 @@ class SkillsRuntimeStandardTest(unittest.TestCase):
         list_source = (SKILLS_PACKAGE / "src" / "pages" / "SkillsHub.tsx").read_text(encoding="utf-8")
         detail_source = (SKILLS_PACKAGE / "src" / "pages" / "SkillDetails.tsx").read_text(encoding="utf-8")
         commons_runtime_test = (
-            ROOT / "apps" / "sdkwork-claw-router-portal" / "commons-runtime.test.ts"
+            ROOT / "apps" / "sdkwork-clawrouter-pc" / "commons-runtime.test.ts"
         ).read_text(encoding="utf-8")
 
         self.assertIn("getLoadErrorMessage returns Error messages", commons_runtime_test)
@@ -307,13 +307,13 @@ class SkillsRuntimeStandardTest(unittest.TestCase):
         operation_audit = (ROOT / "generated" / "schema" / "frontend" / "frontend-operation-audit.json").read_text(encoding="utf-8")
         route_classification = (ROOT / "docs" / "schema-registry" / "frontend-route-classification.yaml").read_text(encoding="utf-8")
 
-        expected_source = "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-skills-hub/src/skillRuntime.ts"
-        old_source = "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-skills-hub/src/data/skills.ts"
+        expected_source = "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-skills-hub/src/skillRuntime.ts"
+        old_source = "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-skills-hub/src/data/skills.ts"
 
         self.assertIn("route: /skills-hub", contracts)
         self.assertIn(f"source: {expected_source}", contracts)
         self.assertNotIn(f"source: {old_source}", contracts)
-        self.assertIn('"source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-skills-hub/src/skillRuntime.ts"', field_audit)
+        self.assertIn('"source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-skills-hub/src/skillRuntime.ts"', field_audit)
         self.assertIn("/app/v3/api/ecosystem/skills", operation_audit)
         self.assertIn("/app/v3/api/ecosystem/skills/{skillId}", operation_audit)
         self.assertIn("delivery_kind: sdk_backed_business_runtime", route_classification)
@@ -323,7 +323,7 @@ class SkillsRuntimeStandardTest(unittest.TestCase):
         smoke_source = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "scripts"
             / "smoke-production-browser.mjs"
         ).read_text(encoding="utf-8")
@@ -333,9 +333,9 @@ class SkillsRuntimeStandardTest(unittest.TestCase):
         service_source = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-skills-hub"
+            / "sdkwork-clawrouter-pc-skills-hub"
             / "src"
             / "services"
             / "skillService.ts"
@@ -343,9 +343,9 @@ class SkillsRuntimeStandardTest(unittest.TestCase):
         runtime_source = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-skills-hub"
+            / "sdkwork-clawrouter-pc-skills-hub"
             / "src"
             / "skillRuntime.ts"
         ).read_text(encoding="utf-8")
@@ -387,20 +387,20 @@ class SkillsRuntimeStandardTest(unittest.TestCase):
 
     def test_skills_auxiliary_scripts_do_not_depend_on_removed_seed_data(self) -> None:
         extractor_source = (
-            ROOT / "apps" / "sdkwork-claw-router-portal" / "app" / "applet" / "extract_data.mjs"
+            ROOT / "apps" / "sdkwork-clawrouter-pc" / "app" / "applet" / "extract_data.mjs"
         ).read_text(encoding="utf-8")
 
-        self.assertNotIn("packages/sdkwork-claw-router-skills-hub/src/data/skills.ts", extractor_source)
+        self.assertNotIn("packages/sdkwork-clawrouter-pc-skills-hub/src/data/skills.ts", extractor_source)
         self.assertNotIn("require(", extractor_source)
 
     def test_skills_runtime_fields_are_not_overridden_by_static_sample_translations(self) -> None:
         list_source = (SKILLS_PACKAGE / "src" / "pages" / "SkillsHub.tsx").read_text(encoding="utf-8")
         detail_source = (SKILLS_PACKAGE / "src" / "pages" / "SkillDetails.tsx").read_text(encoding="utf-8")
         i18n_source = (
-            ROOT / "apps" / "sdkwork-claw-router-portal" / "packages" / "sdkwork-claw-router-i18n" / "src" / "index.ts"
+            ROOT / "apps" / "sdkwork-clawrouter-pc" / "packages" / "sdkwork-clawrouter-pc-i18n" / "src" / "index.ts"
         ).read_text(encoding="utf-8")
         apply_translations_source = (
-            ROOT / "apps" / "sdkwork-claw-router-portal" / "app" / "applet" / "apply_translations.mjs"
+            ROOT / "apps" / "sdkwork-clawrouter-pc" / "app" / "applet" / "apply_translations.mjs"
         ).read_text(encoding="utf-8")
 
         combined_components = f"{list_source}\n{detail_source}"

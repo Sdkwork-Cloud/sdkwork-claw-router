@@ -1,7 +1,7 @@
 fragment: operations/app-commerce-memberships
 frontend_operations:
 - route: /console/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts
   operation: appMembershipsCurrentRetrieve
   operation_id: memberships.current.retrieve
   kind: read
@@ -53,7 +53,7 @@ frontend_operations:
             nullable: true
             maxLength: 64
 - route: /console/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts
   operation: appMembershipsCurrentStatusRetrieve
   operation_id: memberships.current.status.retrieve
   kind: read
@@ -71,7 +71,7 @@ frontend_operations:
   query_parameters: []
   response_schema: *id001
 - route: /console/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts
   operation: appMembershipsPlansList
   operation_id: memberships.plans.list
   kind: read
@@ -135,7 +135,7 @@ frontend_operations:
         minimum: 1
         maximum: 200
 - route: /console/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts
   operation: appMembershipsBenefitsList
   operation_id: memberships.benefits.list
   kind: read
@@ -157,7 +157,7 @@ frontend_operations:
       minimum: 1
   response_schema: *id002
 - route: /console/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts
   operation: appMembershipsPackageGroupsList
   operation_id: memberships.packageGroups.list
   kind: read
@@ -184,7 +184,7 @@ frontend_operations:
       type: boolean
   response_schema: *id002
 - route: /console/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts
   operation: appMembershipsPackageGroupsRetrieve
   operation_id: memberships.packageGroups.retrieve
   kind: read
@@ -203,7 +203,7 @@ frontend_operations:
   query_parameters: []
   response_schema: *id001
 - route: /console/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts
   operation: appMembershipsPackageGroupsPackagesList
   operation_id: memberships.packageGroups.packages.list
   kind: read
@@ -227,7 +227,7 @@ frontend_operations:
       minimum: 1
   response_schema: *id002
 - route: /console/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts
   operation: appMembershipsPackagesList
   operation_id: memberships.packages.list
   kind: read
@@ -266,7 +266,7 @@ frontend_operations:
       maxLength: 32
   response_schema: *id002
 - route: /console/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts
   operation: appMembershipsPackagesRetrieve
   operation_id: memberships.packages.retrieve
   kind: read
@@ -285,7 +285,7 @@ frontend_operations:
   query_parameters: []
   response_schema: *id001
 - route: /console/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts
   operation: appMembershipsPurchasesCreate
   operation_id: memberships.purchases.create
   kind: create
@@ -391,7 +391,7 @@ frontend_operations:
         nullable: true
         additionalProperties: true
 - route: /console/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts
   operation: appMembershipsPurchasesRenew
   operation_id: memberships.purchases.renew
   kind: create
@@ -422,7 +422,7 @@ frontend_operations:
   request_schema: *id003
   response_schema: *id004
 - route: /console/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts
   operation: appMembershipsPurchasesUpgrade
   operation_id: memberships.purchases.upgrade
   kind: create
@@ -453,7 +453,7 @@ frontend_operations:
   request_schema: *id003
   response_schema: *id004
 - route: /console/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts
   operation: appMembershipsPointsBalanceRetrieve
   operation_id: memberships.points.balance.retrieve
   kind: read
@@ -470,7 +470,7 @@ frontend_operations:
   query_parameters: []
   response_schema: *id001
 - route: /console/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts
   operation: appMembershipsPointsHistoryList
   operation_id: memberships.points.history.list
   kind: read
@@ -502,7 +502,7 @@ frontend_operations:
       maxLength: 256
   response_schema: *id002
 - route: /console/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts
   operation: appMembershipsPointsDailyRewardsCreate
   operation_id: memberships.points.dailyRewards.create
   kind: create
@@ -531,7 +531,7 @@ frontend_operations:
       properties: {}
   response_schema: *id001
 - route: /console/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts
   operation: appMembershipsPointsDailyRewardsStatusRetrieve
   operation_id: memberships.points.dailyRewards.status.retrieve
   kind: read
@@ -548,7 +548,7 @@ frontend_operations:
   query_parameters: []
   response_schema: *id001
 - route: /console/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts
   operation: appMembershipsPrivilegesUsageRetrieve
   operation_id: memberships.privileges.usage.retrieve
   kind: read
@@ -565,7 +565,7 @@ frontend_operations:
   query_parameters: []
   response_schema: *id001
 - route: /console/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts
   operation: appMembershipsPrivilegesSpeedUpsCreate
   operation_id: memberships.privileges.speedUps.create
   kind: create
@@ -592,7 +592,7 @@ frontend_operations:
       properties: {}
   response_schema: *id004
 - route: /vip
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-vip/src/vipService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-vip/src/vipService.ts
   operation: purchaseVipPackage
   operation_id: commerceVipPage.purchases.create
   operation_scope: app_shell
@@ -615,7 +615,7 @@ frontend_operations:
   file_targets: []
   openapi_exposed: false
 - route: /vip
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-vip/src/vipService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-vip/src/vipService.ts
   operation: redeemMembershipCode
   operation_id: commerceVipPage.membershipRedemptions.create
   operation_scope: app_shell
@@ -634,7 +634,7 @@ frontend_operations:
   file_targets: []
   openapi_exposed: false
 - route: /console/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts
   operation: fetchMembershipSummary
   operation_id: console.membershipSummary.retrieve
   operation_scope: app_shell
@@ -650,7 +650,7 @@ frontend_operations:
   file_targets: []
   openapi_exposed: false
 - route: /console/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts
   operation: fetchMembershipPackages
   operation_id: console.membershipPackages.list
   operation_scope: app_shell
@@ -666,7 +666,7 @@ frontend_operations:
   file_targets: []
   openapi_exposed: false
 - route: /console/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts
   operation: fetchMembershipOverview
   operation_id: console.membershipOverview.retrieve
   operation_scope: app_shell
@@ -688,7 +688,7 @@ frontend_operations:
   file_targets: []
   openapi_exposed: false
 - route: /console/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts
   operation: purchaseMembership
   operation_id: console.membershipPurchases.create
   operation_scope: app_shell
@@ -707,7 +707,7 @@ frontend_operations:
   file_targets: []
   openapi_exposed: false
 - route: /console/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts
   operation: renewMembership
   operation_id: console.membershipPurchases.renew
   operation_scope: app_shell
@@ -729,7 +729,7 @@ frontend_operations:
   file_targets: []
   openapi_exposed: false
 - route: /console/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts
   operation: upgradeMembership
   operation_id: console.membershipPurchases.upgrade
   operation_scope: app_shell
@@ -751,7 +751,7 @@ frontend_operations:
   file_targets: []
   openapi_exposed: false
 - route: /console/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts
   operation: claimDailyReward
   operation_id: console.membershipDailyRewards.claim
   operation_scope: app_shell
@@ -771,7 +771,7 @@ frontend_operations:
   file_targets: []
   openapi_exposed: false
 - route: /console/memberships
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-memberships/src/membershipService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts
   operation: activateSpeedUp
   operation_id: console.membershipPrivileges.speedUps.create
   operation_scope: app_shell
@@ -789,7 +789,7 @@ frontend_operations:
   file_targets: []
   openapi_exposed: false
 - route: /vip
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-vip/src/vipService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-vip/src/vipService.ts
   operation: fetchVipCatalog
   operation_id: commerceVipPage.catalog.retrieve
   operation_scope: app_shell

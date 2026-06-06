@@ -576,7 +576,7 @@ def _raw_schema_ref(schema: Any) -> str | None:
 class ClawRouterGatewayOpenApiGenerator:
     """Generate the Claw Router gateway OpenAPI document for /v1 and vendor APIs."""
 
-    OUTPUT = Path("apps") / "sdkwork-claw-router-portal" / "public" / "openapi.json"
+    OUTPUT = Path("apps") / "sdkwork-clawrouter-pc" / "public" / "openapi.json"
 
     def __init__(self, root: Path, output_path: Path | None = None) -> None:
         self.root = Path(root).resolve()

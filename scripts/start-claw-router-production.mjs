@@ -16,7 +16,7 @@ import {
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const workspaceRoot = path.resolve(__dirname, '..');
-const portalDist = path.join(workspaceRoot, 'apps', 'sdkwork-claw-router-portal', 'dist');
+const portalDist = path.join(workspaceRoot, 'apps', 'sdkwork-clawrouter-pc', 'dist');
 const SERVER_DEFAULT_POSTGRES_HOST = 'db.example.com';
 const SERVER_DEFAULT_POSTGRES_PORT = 5432;
 const SERVER_DEFAULT_POSTGRES_DATABASE = 'sdkwork_ai_prod';

@@ -51,9 +51,9 @@ Contract and API reference:
 - Modify: `crates/sdkwork-claw-http/specs/payment-aggregate-openapi.json`
 - Modify: `crates/sdkwork-claw-http/src/contract_routes.rs`
 - Modify: `crates/sdkwork-claw-http/src/router.rs`
-- Modify: `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-api-reference/src/apiReferenceSchemaTabs.ts`
-- Modify: `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-api-reference/src/pages/ApiReference.tsx`
-- Modify: `apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-i18n/src/resources/public/api-reference.ts`
+- Modify: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/apiReferenceSchemaTabs.ts`
+- Modify: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/pages/ApiReference.tsx`
+- Modify: `apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-i18n/src/resources/public/api-reference.ts`
 
 Schema and registry:
 
@@ -86,7 +86,7 @@ Bootstrap catalog:
 Tests:
 
 - Modify: `crates/sdkwork-claw-http/tests/service_router.rs`
-- Modify: `apps/sdkwork-claw-router-portal/api-reference-playground-runtime.test.ts`
+- Modify: `apps/sdkwork-clawrouter-pc/api-reference-playground-runtime.test.ts`
 - Create: `services/sdkwork-claw-product/tests/payment_provider_catalog_contract.rs`
 - Create: `services/sdkwork-claw-product/tests/payment_adapter_registry.rs`
 - Create: `tests/test_payment_transit_schema_contract.py`

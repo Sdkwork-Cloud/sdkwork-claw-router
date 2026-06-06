@@ -1,7 +1,7 @@
 fragment: operations/app-auth
 frontend_operations:
 - route: /auth/login
-  source: apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthSettingsService.ts
+  source: apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthSettingsService.ts
   operation: fetchClawRouterAuthRuntimeSettings
   operation_id: iam.runtime.retrieve
   kind: read
@@ -117,7 +117,7 @@ frontend_operations:
           phoneRegistrationVerificationRequired:
             type: boolean
 - route: /auth/login
-  source: apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts
+  source: apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts
   operation: signIn
   operation_id: sessions.create
   kind: create
@@ -343,7 +343,7 @@ frontend_operations:
             type: string
             description: Safe OAuth provider binding summary without provider subject IDs or tokens.
 - route: /auth/login
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/sessionService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/sessionService.ts
   operation: createAppSession
   operation_id: sessions.create
   kind: create
@@ -360,7 +360,7 @@ frontend_operations:
   - iam_security_event
   - iam_audit_event
 - route: /auth/login
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/sessionService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/sessionService.ts
   operation: revokeAppSession
   operation_id: sessions.current.delete
   kind: delete
@@ -375,7 +375,7 @@ frontend_operations:
   - iam_session
   - iam_security_event
 - route: /auth/login
-  source: apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts
+  source: apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts
   operation: signInWithEmailCode
   operation_id: sessions.create
   kind: create
@@ -393,7 +393,7 @@ frontend_operations:
   - iam_security_event
   - iam_audit_event
 - route: /auth/login
-  source: apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts
+  source: apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts
   operation: signInWithPhoneCode
   operation_id: sessions.create
   kind: create
@@ -411,7 +411,7 @@ frontend_operations:
   - iam_security_event
   - iam_audit_event
 - route: /auth/register
-  source: apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts
+  source: apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts
   operation: register
   operation_id: registrations.create
   kind: create
@@ -475,7 +475,7 @@ frontend_operations:
     schema:
       $ref: '#/components/schemas/IamSessionResponse'
 - route: /auth/login
-  source: apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthSettingsService.ts
+  source: apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthSettingsService.ts
   operation: fetchClawRouterAuthVerificationPolicy
   operation_id: iam.verificationPolicy.retrieve
   kind: read
@@ -490,7 +490,7 @@ frontend_operations:
   query_parameters: []
   response_schema: *id001
 - route: /auth/login
-  source: apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts
+  source: apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts
   operation: bootstrap
   operation_id: sessions.current.retrieve
   kind: read
@@ -509,7 +509,7 @@ frontend_operations:
     schema:
       $ref: '#/components/schemas/IamSessionResponse'
 - route: /auth/login
-  source: apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts
+  source: apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts
   operation: updateCurrentSession
   operation_id: sessions.current.update
   kind: update
@@ -541,7 +541,7 @@ frontend_operations:
     schema:
       $ref: '#/components/schemas/IamSessionResponse'
 - route: /auth/login
-  source: apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts
+  source: apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts
   operation: signOut
   operation_id: sessions.current.delete
   kind: delete
@@ -560,7 +560,7 @@ frontend_operations:
     name: NoData
     properties: {}
 - route: /auth/login
-  source: apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts
+  source: apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts
   operation: refreshSession
   operation_id: sessions.refresh
   kind: create
@@ -587,7 +587,7 @@ frontend_operations:
     schema:
       $ref: '#/components/schemas/IamSessionResponse'
 - route: /auth/forgot-password
-  source: apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts
+  source: apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts
   operation: requestPasswordReset
   operation_id: passwordResetRequests.create
   kind: create
@@ -631,7 +631,7 @@ frontend_operations:
         maxLength: 32
         description: Local/private deployment development code returned only when no notification adapter is configured.
 - route: /auth/forgot-password
-  source: apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts
+  source: apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts
   operation: resetPassword
   operation_id: passwordResets.create
   kind: create
@@ -675,7 +675,7 @@ frontend_operations:
     name: NoData
     properties: {}
 - route: /auth/login
-  source: apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts
+  source: apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts
   operation: sendVerifyCode
   operation_id: verificationCodes.create
   kind: create
@@ -731,7 +731,7 @@ frontend_operations:
         maxLength: 128
         description: Messaging send request id that carries the external SMS or email delivery audit trail.
 - route: /auth/login
-  source: apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts
+  source: apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts
   operation: verifyCode
   operation_id: verificationCodes.verify
   kind: create
@@ -788,7 +788,7 @@ frontend_operations:
       valid:
         type: boolean
 - route: /auth/oauth/callback/:provider
-  source: apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts
+  source: apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts
   operation: getOAuthAuthorizationUrl
   operation_id: oauthAuthorizationUrls.retrieve
   kind: read
@@ -831,7 +831,7 @@ frontend_operations:
         minLength: 1
         maxLength: 2048
 - route: /auth/oauth/callback/:provider
-  source: apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts
+  source: apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts
   operation: signInWithOAuth
   operation_id: oauthSessions.create
   kind: create

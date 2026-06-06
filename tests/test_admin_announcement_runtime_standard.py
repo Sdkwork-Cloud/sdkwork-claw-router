@@ -13,8 +13,8 @@ class AdminAnnouncementRuntimeStandardTest(unittest.TestCase):
         manifest = ApiContractManifestGenerator(root=ROOT).generate()
         operations = {operation["key"]: operation for operation in manifest["operations"]}
         source = (
-            "apps/sdkwork-claw-router-portal/packages/"
-            "sdkwork-claw-router-admin-announcement/src/announcementService.ts"
+            "apps/sdkwork-clawrouter-pc/packages/"
+            "sdkwork-clawrouter-pc-admin-announcement/src/announcementService.ts"
         )
 
         add_announcement = operations[f"{source}#addAnnouncement"]
@@ -37,9 +37,9 @@ class AdminAnnouncementRuntimeStandardTest(unittest.TestCase):
         service = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-admin-announcement"
+            / "sdkwork-clawrouter-pc-admin-announcement"
             / "src"
             / "announcementService.ts"
         ).read_text(encoding="utf-8")
@@ -92,9 +92,9 @@ class AdminAnnouncementRuntimeStandardTest(unittest.TestCase):
         package_root = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-admin-announcement"
+            / "sdkwork-clawrouter-pc-admin-announcement"
         )
         package = json.loads((package_root / "package.json").read_text(encoding="utf-8"))
         service = (package_root / "src" / "announcementService.ts").read_text(encoding="utf-8")

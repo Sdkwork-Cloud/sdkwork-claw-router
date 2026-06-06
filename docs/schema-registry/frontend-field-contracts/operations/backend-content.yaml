@@ -1,7 +1,7 @@
 fragment: operations/backend-content
 frontend_operations:
 - route: /admin/announcement
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-announcement/src/announcementService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-announcement/src/announcementService.ts
   operation: fetchAnnouncements
   kind: read
   api_surface: backend
@@ -61,7 +61,7 @@ frontend_operations:
               minLength: 1
               maxLength: 20000
 - route: /admin/announcement
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-announcement/src/announcementService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-announcement/src/announcementService.ts
   operation: addAnnouncement
   kind: create
   api_surface: backend
@@ -121,7 +121,7 @@ frontend_operations:
         properties: *id002
         description: Persisted announcement snapshot returned by the backend.
 - route: /admin/announcement
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-announcement/src/announcementService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-announcement/src/announcementService.ts
   operation: updateAnnouncement
   kind: update
   api_surface: backend
@@ -175,7 +175,7 @@ frontend_operations:
         properties: *id002
         description: Persisted announcement snapshot returned by the backend.
 - route: /admin/announcement
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-announcement/src/announcementService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-announcement/src/announcementService.ts
   operation: deleteAnnouncement
   kind: delete
   api_surface: backend

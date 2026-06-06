@@ -6,8 +6,8 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-PORTAL_ROOT = ROOT / "apps" / "sdkwork-claw-router-portal"
-PORTAL_PACKAGES = ROOT / "apps" / "sdkwork-claw-router-portal" / "packages"
+PORTAL_ROOT = ROOT / "apps" / "sdkwork-clawrouter-pc"
+PORTAL_PACKAGES = ROOT / "apps" / "sdkwork-clawrouter-pc" / "packages"
 
 
 class FrontendSourceHygieneStandardTest(unittest.TestCase):
@@ -79,12 +79,12 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
 
     def test_portal_runtime_sources_do_not_log_errors_to_browser_console(self) -> None:
         allowed_example_sources = {
-            "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-api-reference/src/codeSnippetClient.ts",
-            "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-api-reference/src/pages/Docs.tsx",
-            "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-core/src/index.ts",
-            "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-models/src/pages/ModelDetails.tsx",
-            "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-sdk-reference/src/components/SdkEndpointView.tsx",
-            "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-sdk-reference/src/data/sdkData.ts",
+            "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/codeSnippetClient.ts",
+            "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-api-reference/src/pages/Docs.tsx",
+            "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-core/src/index.ts",
+            "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-models/src/pages/ModelDetails.tsx",
+            "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-sdk-reference/src/components/SdkEndpointView.tsx",
+            "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-sdk-reference/src/data/sdkData.ts",
         }
         violations: list[str] = []
         console_call = re.compile(r"\bconsole\.(?:log|error|warn|debug|trace)\s*\(")
@@ -105,7 +105,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         )
 
     def test_commons_json_highlighter_accepts_unknown_input_without_any_boundary(self) -> None:
-        highlighter = PORTAL_PACKAGES / "sdkwork-claw-router-commons" / "src" / "utils" / "index.ts"
+        highlighter = PORTAL_PACKAGES / "sdkwork-clawrouter-pc-commons" / "src" / "utils" / "index.ts"
         source = highlighter.read_text(encoding="utf-8")
 
         self.assertIn("export const syntaxHighlightJson = (json: unknown): string =>", source)
@@ -116,7 +116,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         self.assertNotIn("as any", source)
 
     def test_i18n_browser_language_detection_uses_typed_legacy_navigator(self) -> None:
-        i18n_source_path = PORTAL_PACKAGES / "sdkwork-claw-router-i18n" / "src" / "index.ts"
+        i18n_source_path = PORTAL_PACKAGES / "sdkwork-clawrouter-pc-i18n" / "src" / "index.ts"
         source = i18n_source_path.read_text(encoding="utf-8")
 
         self.assertIn("interface LegacyNavigatorLanguage", source)
@@ -144,12 +144,12 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
 
     def test_portal_service_media_fields_preserve_media_resource_objects(self) -> None:
         service_sources = [
-            PORTAL_PACKAGES / "sdkwork-claw-router-admin-agents" / "src" / "agentService.ts",
-            PORTAL_PACKAGES / "sdkwork-claw-router-admin-skill" / "src" / "skillService.ts",
-            PORTAL_PACKAGES / "sdkwork-claw-router-app-center" / "src" / "services" / "adminAppService.ts",
-            PORTAL_PACKAGES / "sdkwork-claw-router-commons" / "src" / "admin-category-options.ts",
-            PORTAL_PACKAGES / "sdkwork-claw-router-console-user" / "src" / "userService.ts",
-            PORTAL_PACKAGES / "sdkwork-claw-router-courses" / "src" / "courseService.ts",
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-agents" / "src" / "agentService.ts",
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-skill" / "src" / "skillService.ts",
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-app-center" / "src" / "services" / "adminAppService.ts",
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-commons" / "src" / "admin-category-options.ts",
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-console-user" / "src" / "userService.ts",
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-courses" / "src" / "courseService.ts",
         ]
         media_fields = (
             "avatar",
@@ -183,10 +183,10 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
 
     def test_display_media_strings_use_src_or_href_names(self) -> None:
         source_roots = [
-            PORTAL_PACKAGES / "sdkwork-claw-router-app-center" / "src",
-            PORTAL_PACKAGES / "sdkwork-claw-router-console-user" / "src",
-            PORTAL_PACKAGES / "sdkwork-claw-router-courses" / "src",
-            PORTAL_PACKAGES / "sdkwork-claw-router-playground" / "src",
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-app-center" / "src",
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-console-user" / "src",
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-courses" / "src",
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-playground" / "src",
         ]
         forbidden_patterns = [
             re.compile(
@@ -653,7 +653,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "(i.response_json #> '{media,0,asset,poster}')::text",
                 "media_resource_value_from_snapshot(asset_resource_snapshot)",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-playground" / "src" / "historyMapper.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-playground" / "src" / "historyMapper.ts": [
                 "asset: normalizeOptionalMediaResource(item.asset),",
                 "images: normalizeMediaResourceArray(item.images),",
                 "videos: normalizeMediaResourceArray(item.videos),",
@@ -693,12 +693,12 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 r"\bthumbnail_locator\b",
                 r"\bmedia_resource_from_locator\b",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-playground" / "src" / "historyMapper.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-playground" / "src" / "historyMapper.ts": [
                 r"\burl\s*:\s*normalizeOptionalString\(item\.url\)",
                 r"\bnormalizeStringArray\b",
                 r"\bnormalizeVideoArray\b",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-playground" / "src" / "playgroundGenerationService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-playground" / "src" / "playgroundGenerationService.ts": [
                 r"\breadFirstString\s*\(\s*value\s*,\s*\[[^\]]*(?:assetUrl|downloadUrl|fileUrl|mediaUrl)",
                 r"\breadFirstString\s*\(\s*record\s*,\s*\[[^\]]*(?:thumbnailUrl|posterUrl|coverUrl|previewUrl)",
                 r"\bcreateExternalUrlMediaResource\b",
@@ -739,21 +739,21 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
 
     def test_catalog_and_branding_media_models_preserve_media_resource_objects(self) -> None:
         source_expectations = {
-            PORTAL_PACKAGES / "sdkwork-claw-router-admin-catalog" / "src" / "ProductCreatePage.tsx": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-catalog" / "src" / "ProductCreatePage.tsx": [
                 r"\bimageUrl\s*:\s*string\b",
                 r"\bimageUrl\s*=",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-admin-catalog" / "src" / "SkuManagementPage.tsx": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-catalog" / "src" / "SkuManagementPage.tsx": [
                 r"\bimageUrl\b",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-admin-catalog" / "src" / "ProductListPage.tsx": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-catalog" / "src" / "ProductListPage.tsx": [
                 r"\breadProductString\s*\(\s*record\s*,\s*\[[^\]]*(?:coverUrl|imageUrl|thumbnailUrl)",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-admin-site" / "src" / "SiteSettingsService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-site" / "src" / "SiteSettingsService.ts": [
                 r"\b(?:logoUrl|iconUrl|faviconUrl)\s*:",
                 r"\breadString\s*\(\s*record\s*,\s*'(?:logoUrl|iconUrl|faviconUrl)'",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-commons" / "src" / "siteBranding.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-commons" / "src" / "siteBranding.ts": [
                 r"\b(?:logoUrl|iconUrl|faviconUrl)\s*:",
                 r"\breadConfiguredString\s*\(\s*record\s*,\s*'(?:logoUrl|iconUrl|faviconUrl)'",
             ],
@@ -776,7 +776,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         )
 
     def test_admin_product_list_cover_reader_returns_media_resource_object(self) -> None:
-        source = PORTAL_PACKAGES / "sdkwork-claw-router-admin-catalog" / "src" / "ProductListPage.tsx"
+        source = PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-catalog" / "src" / "ProductListPage.tsx"
         relative = source.relative_to(ROOT).as_posix()
         content = source.read_text(encoding="utf-8", errors="ignore")
         violations: list[str] = []
@@ -808,7 +808,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         )
 
     def test_admin_sku_management_form_preserves_image_media_resource_object(self) -> None:
-        source = PORTAL_PACKAGES / "sdkwork-claw-router-admin-catalog" / "src" / "SkuManagementPage.tsx"
+        source = PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-catalog" / "src" / "SkuManagementPage.tsx"
         relative = source.relative_to(ROOT).as_posix()
         content = source.read_text(encoding="utf-8", errors="ignore")
         violations: list[str] = []
@@ -841,50 +841,50 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
 
     def test_business_runtime_media_models_preserve_media_resource_objects(self) -> None:
         source_expectations = {
-            PORTAL_PACKAGES / "sdkwork-claw-router-app-center" / "src" / "appRuntime.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-app-center" / "src" / "appRuntime.ts": [
                 r"\bimage\s*:\s*string\b",
                 r"\bscreenshots\s*:\s*string\[\]",
                 r"\breadString\s*\(\s*item\s*,\s*'iconUrl'",
                 r"\breadString\s*\(\s*item\s*,\s*'artifactUrl'",
                 r"\breadString\s*\(\s*asset\s*,\s*'assetUrl'",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-skills-hub" / "src" / "skillRuntime.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-skills-hub" / "src" / "skillRuntime.ts": [
                 r"\bimage\s*:\s*string\b",
                 r"\bscreenshots\s*:\s*string\[\]",
                 r"\breadString\s*\(\s*item\s*,\s*'coverImage'",
                 r"\breadString\s*\(\s*item\s*,\s*'cover_image'",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-admin-memberships" / "src" / "membershipsService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-memberships" / "src" / "membershipsService.ts": [
                 r"\bicon\??\s*:\s*string\b",
                 r"\bicon\s*:\s*readMediaResourceUrl\s*\(",
                 r"\b(?:iconUrl|icon_url)\b",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-playground" / "src" / "components" / "views" / "AssetGalleryView.tsx": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-playground" / "src" / "components" / "views" / "AssetGalleryView.tsx": [
                 r"\bthumbnail\??\s*:\s*string\b",
                 r"\burl\??\s*:\s*string\b",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-playground" / "src" / "components" / "views" / "AssetView.tsx": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-playground" / "src" / "components" / "views" / "AssetView.tsx": [
                 r"\burl\s*:\s*string\s*\|\s*undefined\b",
                 r"\breadAssetThumbnail\s*\([^)]*,\s*url\s*\)",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-forum" / "src" / "forumCatalog.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-forum" / "src" / "forumCatalog.ts": [
                 r"\bavatar\s*:\s*string\b",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-forum" / "src" / "forumService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-forum" / "src" / "forumService.ts": [
                 r"\bimages\??\s*:\s*string\[\]",
                 r"\bavatar\s*:\s*readString\s*\(\s*record\s*,\s*'avatar'\s*\)",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-forum" / "src" / "components" / "ForumView.tsx": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-forum" / "src" / "components" / "ForumView.tsx": [
                 r"\bsrc=\{post\.author\.avatar\}",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-forum" / "src" / "components" / "ForumPostView.tsx": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-forum" / "src" / "components" / "ForumPostView.tsx": [
                 r"\bsrc=\{comment\.author\.avatar\}",
                 r"\bsrc=\{post\.author\.avatar\}",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-vip" / "src" / "vipService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-vip" / "src" / "vipService.ts": [
                 r"\bicon\??\s*:\s*string\b",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-courses" / "src" / "courseService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-courses" / "src" / "courseService.ts": [
                 r"\bicon\s*:\s*string\b",
                 r"\bicon\s*:\s*readString\s*\(\s*value\s*,\s*'icon'\s*\)",
             ],
@@ -1362,20 +1362,20 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
     def test_playground_reference_inputs_preserve_media_resource_objects(self) -> None:
         type_source = (
             PORTAL_PACKAGES
-            / "sdkwork-claw-router-playground"
+            / "sdkwork-clawrouter-pc-playground"
             / "src"
             / "playgroundTypes.ts"
         )
         panel_source = (
             PORTAL_PACKAGES
-            / "sdkwork-claw-router-playground"
+            / "sdkwork-clawrouter-pc-playground"
             / "src"
             / "components"
             / "AssetGenerationPanel.tsx"
         )
         service_source = (
             PORTAL_PACKAGES
-            / "sdkwork-claw-router-playground"
+            / "sdkwork-clawrouter-pc-playground"
             / "src"
             / "playgroundGenerationService.ts"
         )
@@ -1909,9 +1909,9 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         runtime_source = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-app-center"
+            / "sdkwork-clawrouter-pc-app-center"
             / "src"
             / "appRuntime.ts"
         )
@@ -1924,17 +1924,17 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         for source in [
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-app-center"
+            / "sdkwork-clawrouter-pc-app-center"
             / "src"
             / "pages"
             / "AppCenter.tsx",
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-app-center"
+            / "sdkwork-clawrouter-pc-app-center"
             / "src"
             / "components"
             / "AppCenterPreview.tsx",
@@ -1957,15 +1957,15 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
 
     def test_portal_remote_list_services_fail_closed_for_malformed_list_payloads(self) -> None:
         allowed_optional_sources = {
-            "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/appService.ts",
-            "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-skills-hub/src/services/skillService.ts",
+            "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/appService.ts",
+            "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-skills-hub/src/services/skillService.ts",
         }
         violations: list[str] = []
         list_reader = re.compile(r"\breadApiItems\s*\(")
 
         for source in self._portal_sources():
             relative = source.relative_to(ROOT).as_posix()
-            if "sdkwork-claw-router-commons" in source.parts:
+            if "sdkwork-clawrouter-pc-commons" in source.parts:
                 continue
             if relative in allowed_optional_sources:
                 continue
@@ -1984,8 +1984,8 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
 
     def test_portal_paginated_log_services_require_total_metadata(self) -> None:
         paginated_log_services = [
-            PORTAL_PACKAGES / "sdkwork-claw-router-console-usage" / "src" / "usageService.ts",
-            PORTAL_PACKAGES / "sdkwork-claw-router-admin-record" / "src" / "recordService.ts",
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-console-usage" / "src" / "usageService.ts",
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-record" / "src" / "recordService.ts",
         ]
         violations: list[str] = []
 
@@ -2011,10 +2011,10 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
 
     def test_portal_paginated_log_services_normalize_query_before_sdk_calls(self) -> None:
         usage_service_path = (
-            PORTAL_PACKAGES / "sdkwork-claw-router-console-usage" / "src" / "usageService.ts"
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-console-usage" / "src" / "usageService.ts"
         )
         record_service_path = (
-            PORTAL_PACKAGES / "sdkwork-claw-router-admin-record" / "src" / "recordService.ts"
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-record" / "src" / "recordService.ts"
         )
         usage_service = usage_service_path.read_text(encoding="utf-8", errors="ignore")
         record_service = record_service_path.read_text(encoding="utf-8", errors="ignore")
@@ -2037,7 +2037,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
     def test_portal_settlements_service_normalizes_year_query_before_sdk_call(self) -> None:
         settlement_service_path = (
             PORTAL_PACKAGES
-            / "sdkwork-claw-router-console-settlements"
+            / "sdkwork-clawrouter-pc-console-settlements"
             / "src"
             / "settlementsService.ts"
         )
@@ -2062,14 +2062,14 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
     def test_portal_catalog_services_normalize_filters_before_sdk_calls(self) -> None:
         app_service_path = (
             PORTAL_PACKAGES
-            / "sdkwork-claw-router-app-center"
+            / "sdkwork-clawrouter-pc-app-center"
             / "src"
             / "services"
             / "appService.ts"
         )
         skill_service_path = (
             PORTAL_PACKAGES
-            / "sdkwork-claw-router-skills-hub"
+            / "sdkwork-clawrouter-pc-skills-hub"
             / "src"
             / "services"
             / "skillService.ts"
@@ -2111,27 +2111,27 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
     def test_portal_catalog_services_fail_closed_for_remote_contract_drift(self) -> None:
         app_service = (
             PORTAL_PACKAGES
-            / "sdkwork-claw-router-app-center"
+            / "sdkwork-clawrouter-pc-app-center"
             / "src"
             / "services"
             / "appService.ts"
         ).read_text(encoding="utf-8", errors="ignore")
         app_runtime = (
             PORTAL_PACKAGES
-            / "sdkwork-claw-router-app-center"
+            / "sdkwork-clawrouter-pc-app-center"
             / "src"
             / "appRuntime.ts"
         ).read_text(encoding="utf-8", errors="ignore")
         skill_service = (
             PORTAL_PACKAGES
-            / "sdkwork-claw-router-skills-hub"
+            / "sdkwork-clawrouter-pc-skills-hub"
             / "src"
             / "services"
             / "skillService.ts"
         ).read_text(encoding="utf-8", errors="ignore")
         skill_runtime = (
             PORTAL_PACKAGES
-            / "sdkwork-claw-router-skills-hub"
+            / "sdkwork-clawrouter-pc-skills-hub"
             / "src"
             / "skillRuntime.ts"
         ).read_text(encoding="utf-8", errors="ignore")
@@ -2169,14 +2169,14 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
     def test_portal_catalog_detail_services_validate_sdk_path_ids(self) -> None:
         app_service_path = (
             PORTAL_PACKAGES
-            / "sdkwork-claw-router-app-center"
+            / "sdkwork-clawrouter-pc-app-center"
             / "src"
             / "services"
             / "appService.ts"
         )
         skill_service_path = (
             PORTAL_PACKAGES
-            / "sdkwork-claw-router-skills-hub"
+            / "sdkwork-clawrouter-pc-skills-hub"
             / "src"
             / "services"
             / "skillService.ts"
@@ -2202,7 +2202,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
     def test_portal_console_api_key_service_fails_closed_for_remote_contract_drift(self) -> None:
         service_path = (
             PORTAL_PACKAGES
-            / "sdkwork-claw-router-console-api-keys"
+            / "sdkwork-clawrouter-pc-console-api-keys"
             / "src"
             / "apiKeyService.ts"
         )
@@ -2226,7 +2226,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
 
     def test_portal_money_message_and_history_services_fail_closed_for_remote_contract_drift(self) -> None:
         guarded_services = {
-            PORTAL_PACKAGES / "sdkwork-claw-router-admin-model" / "src" / "modelService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-model" / "src" / "modelService.ts": [
                 "return readRequiredApiItems(result, 'Failed to fetch vendors')\n      .map(normalizeVendor)",
                 "const models = readRequiredApiItems(modelsResult, 'Failed to fetch models')\n      .map(normalizeModel)",
                 "models: readRequiredApiItems(data, 'Failed to sync vendors and models', ['models'])\n        .map(normalizeModel)",
@@ -2234,7 +2234,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "readRequiredRecord(value, 'Model record is required')",
                 "throw new Error(type ? `Unsupported model type: ${type}` : 'Model type is required')",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-admin-ratelimit" / "src" / "ratelimitService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-ratelimit" / "src" / "ratelimitService.ts": [
                 "return readRequiredApiItems(result, 'Failed to fetch IP limits')\n      .map(normalizeIpLimit)",
                 "return readRequiredApiItems(result, 'Failed to fetch token limits')\n      .map(normalizeTokenLimit)",
                 "return readRequiredApiItems(result, 'Failed to fetch model limits')\n      .map(normalizeModelLimit)",
@@ -2247,7 +2247,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "readRequiredNumber(item, 'rpd', 'Token limit rpd is required')",
                 "readRequiredString(item, 'value', 'Firewall rule value is required')",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-admin-marketing" / "src" / "marketingService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-marketing" / "src" / "marketingService.ts": [
                 "return readRequiredApiItems(result, 'Failed to fetch referral stats')\n      .map(normalizeReferralStat)",
                 "backendPromotionOffersList",
                 "backendPromotionCouponStocksList",
@@ -2269,7 +2269,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "readRequiredString(item, 'bonus_awarded', 'Referral bonus is required')",
                 "readRequiredString(item, 'link', 'Referral link is required')",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-admin-channel" / "src" / "channelService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-channel" / "src" / "channelService.ts": [
                 "return readRequiredApiItems(result, 'Failed to fetch channels')\n      .map(normalizeChannel)",
                 "return readRequiredApiItems(result, 'Failed to fetch provider credentials')\n      .map(normalizeProviderSecret)",
                 "readRequiredRecord(value, 'Channel record is required')",
@@ -2280,7 +2280,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "throw new Error(status ? `Unsupported channel status: ${status}` : 'Channel status is required')",
                 "throw new Error(status ? `Unsupported provider credential status: ${status}` : 'Provider credential status is required')",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-admin-user" / "src" / "userService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-user" / "src" / "userService.ts": [
                 "return readRequiredApiItems(result, 'admin.user.errors.fetchUsersFallback')\n      .map(normalizeUser)",
                 "readRequiredRecord(value, 'User record is required')",
                 "readRequiredRecord(value, 'API key record is required')",
@@ -2289,18 +2289,18 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "result[userId] = value.map(normalizeApiKey)",
                 "throw new Error(status ? `Unsupported user status: ${status}` : 'User status is required')",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-admin-finance" / "src" / "financeService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-finance" / "src" / "financeService.ts": [
                 "backendCommerceReportsPaymentReconciliationRetrieve",
                 "backendCommerceReportsOrderRevenueList",
                 "backendCommerceReportsRefundsList",
                 "backendAuditCommerceEventsList",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-admin-wallet" / "src" / "walletService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-wallet" / "src" / "walletService.ts": [
                 "backendRechargesOrdersList",
                 "readRequiredApiItems(result, listMessage)",
                 "readRequiredString(item, 'id', 'Recharge record id is required')",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-console-wallet" / "src" / "walletService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-console-wallet" / "src" / "walletService.ts": [
                 "RechargeService.fetchBillingHistory({ type: 'redeem' })",
                 "RechargeService.fetchBillingHistory({ type: 'recharge' })",
                 "code: item.referenceNo || item.relatedOrderNo || item.sourceId || item.historyNo",
@@ -2311,7 +2311,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "throw new Error(`Unsupported billing status: ${status}`)",
                 "readOptionalMoneyString(data, 'amount', 'Redeem amount must be a money string')",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-console-checkout" / "src" / "checkoutService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-console-checkout" / "src" / "checkoutService.ts": [
                 "const safeOrderNo = requiredText(orderNo, 'orderNo')",
                 "appRechargesOrdersRetrieve(safeOrderNo)",
                 "return normalizeCheckoutStatus(readCommerceResourceRecord(result, 'Checkout order record is required'), safeOrderNo)",
@@ -2333,7 +2333,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "function readCheckoutRequestPaymentPayload(item: ApiRecord): string | null | undefined",
                 "throw new Error(`Unsupported checkout status: ${status}`)",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-console-recharge" / "src" / "rechargeService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-console-recharge" / "src" / "rechargeService.ts": [
                 "readRequiredRecord(value, 'Recharge package record is required')",
                 "appBillingHistoryList({",
                 "...(type ? { type_: type } : {})",
@@ -2358,14 +2358,14 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "amount: moneyAmount(amount, 'amount')",
                 "method: requiredText(method, 'method')",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-admin-announcement" / "src" / "announcementService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-announcement" / "src" / "announcementService.ts": [
                 "readRequiredRecord(value, 'Announcement record is required')",
                 "readRequiredString(item, 'title', 'Announcement title is required')",
                 "target: readAnnouncementTarget(item)",
                 "throw new Error(target ? `Unsupported announcement target: ${target}` : 'Announcement target is required')",
                 "throw new Error(status ? `Unsupported announcement status: ${status}` : 'Announcement status is required')",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-admin-group" / "src" / "groupService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-group" / "src" / "groupService.ts": [
                 "readRequiredRecord(value, 'Group record is required')",
                 "readRequiredNestedRecord(item, 'capacity', 'Group capacity is required')",
                 "readRequiredString(item, 'groupCode', 'Group code is required')",
@@ -2374,7 +2374,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "throw new Error(type ? `Unsupported group type: ${type}` : 'Group type is required')",
                 "throw new Error(status ? `Unsupported group status: ${status}` : 'Group status is required')",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-admin-monitor" / "src" / "monitorService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-monitor" / "src" / "monitorService.ts": [
                 "readRequiredRecord(value, 'System node record is required')",
                 "readRequiredRecord(value, 'Alert record is required')",
                 "readRequiredRecord(value, 'Performance record is required')",
@@ -2385,7 +2385,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "throw new Error(status ? `Unsupported system node status: ${status}` : 'System node status is required')",
                 "throw new Error(severity ? `Unsupported alert severity: ${severity}` : 'Alert severity is required')",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-admin-dashboard" / "src" / "dashboardService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-dashboard" / "src" / "dashboardService.ts": [
                 "readRequiredRecordArray(data, 'userConsumption', 'Dashboard userConsumption is required', 'Dashboard pie chart record is required')",
                 "readRequiredRecordArray(data, 'traffic', 'Dashboard traffic is required', 'Dashboard traffic record is required')",
                 "readRequiredRecordArray(data, 'recentUsage', 'Dashboard recentUsage is required', 'Recent usage trace record is required')",
@@ -2397,7 +2397,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "readRequiredDecimalString(",
                 "'Recent usage trace cost must be a decimal string'",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-console-usage" / "src" / "usageService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-console-usage" / "src" / "usageService.ts": [
                 "readRequiredRecord(value, 'Usage log record is required')",
                 "readRequiredString(item, 'requestId', 'Usage log request id is required')",
                 "readRequiredNonNegativeNumber(item, 'inputTokens', 'Usage log input tokens are required')",
@@ -2405,7 +2405,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "'Usage log cost is required'",
                 "'Usage log cost must be a decimal string'",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-console-dashboard" / "src" / "dashboardService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-console-dashboard" / "src" / "dashboardService.ts": [
                 "readRequiredRecordArray(record, 'chartData', 'Dashboard overview chartData is required', 'Dashboard overview chart record is required')",
                 "readRequiredRecordArray(record, 'topModels', 'Dashboard overview topModels is required', 'Dashboard top model record is required')",
                 "readRequiredRecordArray(record, 'announcements', 'Dashboard overview announcements is required', 'Dashboard announcement record is required')",
@@ -2416,7 +2416,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "readRequiredFirstNumber(item, ['requests', 'requestCount', 'request_count'], 'Dashboard top model request count is required')",
                 "readRequiredFirstString(item, ['text', 'title', 'summary', 'content'], 'Dashboard announcement text is required')",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-console-account" / "src" / "accountService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-console-account" / "src" / "accountService.ts": [
                 "readRequiredRecordArray(value, 'consumptionByService', 'Account consumption record is required')",
                 "readRequiredRecordArray(value, 'loginLogs', 'Account login log record is required')",
                 "readRequiredRecord(value.invoiceSettings, 'Account invoice settings are required')",
@@ -2427,7 +2427,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "throw new Error(status ? `Unsupported account login status: ${status}` : 'Account login status is required')",
                 "readRequiredBoolean(value, 'isVerified', 'Account verification status is required')",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-console-user" / "src" / "userService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-console-user" / "src" / "userService.ts": [
                 "name: readRequiredString(data, 'displayName', 'User profile display name is required')",
                 "phone: readRequiredStringAllowEmpty(data, 'phone', 'User profile phone is required')",
                 "language: readRequiredString(data, 'language', 'User profile language is required')",
@@ -2436,7 +2436,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "twoFactorEnabled: readRequiredBoolean(data, 'twoFactorEnabled', 'User profile two-factor status is required')",
                 "thirdPartyBound: readRequiredStringAllowEmpty(data, 'thirdPartyBound', 'User profile third-party binding summary is required')",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-admin-record" / "src" / "recordService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-record" / "src" / "recordService.ts": [
                 "readRequiredRecord(value, 'Log record is required')",
                 "readRequiredString(item, 'requestId', 'Log request id is required')",
                 "readRequiredNonNegativeNumber(item, 'inputTokens', 'Log input tokens are required')",
@@ -2444,14 +2444,14 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "'Log cost is required'",
                 "'Log cost must be a decimal string'",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-console-gateway" / "src" / "gatewayService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-console-gateway" / "src" / "gatewayService.ts": [
                 "return readRequiredApiItems(result, 'console.gateway.states.loadErrorFallback').map(readGatewayTrace)",
                 "readRequiredRecord(value, 'Gateway trace record is required')",
                 "readRequiredString(item, 'id', 'Gateway trace id is required')",
                 "method: readHttpMethod(item.method)",
                 "readRequiredNumber(item, 'status', 'Gateway trace status is required')",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-commons" / "src" / "notificationService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-commons" / "src" / "notificationService.ts": [
                 "return readNotificationItems(result).map((item) => toSdkworkNotificationItem(readNotification(item)))",
                 "throw new Error('Notification list response missing items')",
                 "readRequiredString(value, 'id', 'Notification id is required')",
@@ -2459,7 +2459,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "readNotificationType(value.type)",
                 "readNotificationRead(value.read)",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-console-settlements" / "src" / "settlementsService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-console-settlements" / "src" / "settlementsService.ts": [
                 "readRequiredApiItems(ledgerResult, 'Settlement ledger entries are required')",
                 "readRequiredApiItems(invoiceResult, 'Settlement invoice records are required')",
                 "readRequiredRecord(item, 'Settlement ledger entry is required')",
@@ -2468,7 +2468,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "normalizeSettlementBill(invoice)",
                 "settlementBucket(entry)",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-playground" / "src" / "historyMapper.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-playground" / "src" / "historyMapper.ts": [
                 "return items.map(mapGenerationHistoryItem)",
                 "readRequiredRecord(value, 'Playground history record is required')",
                 "readRequiredString(item, 'id', 'Playground history id is required')",
@@ -2477,18 +2477,18 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
             ],
         }
         forbidden_fragments = {
-            PORTAL_PACKAGES / "sdkwork-claw-router-admin-model" / "src" / "modelService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-model" / "src" / "modelService.ts": [
                 ".filter(isRecord)",
                 "return 'Chat';",
                 "models: (Array.isArray(data.models) ? data.models : [])",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-admin-ratelimit" / "src" / "ratelimitService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-ratelimit" / "src" / "ratelimitService.ts": [
                 ".filter(isRecord)",
                 "rps: readNumber(item, 'rps')",
                 "rpd: readNumber(item, 'rpd')",
                 "value: readString(item, 'value')",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-admin-marketing" / "src" / "marketingService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-marketing" / "src" / "marketingService.ts": [
                 ".filter(isRecord)",
                 "data.codes.filter(isRecord)",
                 "value: readString(item, 'value')",
@@ -2497,26 +2497,26 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "total_invited: readNumber(item, 'total_invited')",
                 "return 'available';",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-admin-channel" / "src" / "channelService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-channel" / "src" / "channelService.ts": [
                 ".filter(isRecord)",
                 "models: readStringArray(item, 'models')",
                 "capabilities: readStringArray(item, 'capabilities')",
                 "return 'active';",
                 "return readString(item, 'status') === 'disabled' ? 'disabled' : 'active';",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-admin-user" / "src" / "userService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-user" / "src" / "userService.ts": [
                 ".filter(isRecord)",
                 "email: readString(item, 'email')",
                 "key: readString(item, 'key')",
                 "status: readString(item, 'status') === 'banned' ? 'banned' : 'active'",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-admin-finance" / "src" / "financeService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-finance" / "src" / "financeService.ts": [
                 ".filter(isRecord)",
                 "return 'consume';",
                 "return 'success';",
                 "return 'paid';",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-console-wallet" / "src" / "walletService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-console-wallet" / "src" / "walletService.ts": [
                 ".filter(isRecord)",
                 "code: readString(item, 'code')",
                 "orderNo: readString(item, 'orderNo')",
@@ -2524,7 +2524,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "date: readString(item, 'date')",
                 "status: readBillingStatus(item)",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-console-checkout" / "src" / "checkoutService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-console-checkout" / "src" / "checkoutService.ts": [
                 "fetchCheckoutStatus(orderNo);",
                 ".payment.fetchCheckoutStatus(orderNo)",
                 ".payment.fetchCheckoutStatus",
@@ -2534,26 +2534,26 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "points: readNumber(item, 'points')",
                 "paymentMethod: readString(item, 'paymentMethod')",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-console-recharge" / "src" / "rechargeService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-console-recharge" / "src" / "rechargeService.ts": [
                 ".filter(isRecord)",
                 "orderNo: readString(data, 'orderNo')",
                 "rmb: readMoneyString(item, 'rmb')",
                 "bonus: readNumber(item, 'bonus')",
                 "success: readBoolean(data, 'success', true)",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-admin-announcement" / "src" / "announcementService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-announcement" / "src" / "announcementService.ts": [
                 ".filter(isRecord)",
                 "title: readString(item, 'title')",
                 "status: readString(item, 'status') === 'draft' ? 'draft' : 'published'",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-admin-group" / "src" / "groupService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-group" / "src" / "groupService.ts": [
                 ".filter(isRecord)",
                 "name: readString(item, 'name')",
                 "rateMultiplier: readNumber(item, 'rateMultiplier', 1)",
                 "type: readString(item, 'type') === 'dedicated' ? 'dedicated' : 'public'",
                 "status: readString(item, 'status') === 'disabled' ? 'disabled' : 'active'",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-admin-monitor" / "src" / "monitorService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-monitor" / "src" / "monitorService.ts": [
                 ".filter(isRecord)",
                 "name: readString(item, 'name')",
                 "cpu: readNumber(item, 'cpu')",
@@ -2561,7 +2561,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "return 'online';",
                 "return 'info';",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-admin-dashboard" / "src" / "dashboardService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-dashboard" / "src" / "dashboardService.ts": [
                 ".filter(isRecord)",
                 "readRecordArray(data, 'userConsumption')",
                 "readRecordArray(data, 'traffic')",
@@ -2570,14 +2570,14 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "cost: readString(item, 'cost')",
                 "isApiUser: readBoolean(item, 'isApiUser')",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-console-usage" / "src" / "usageService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-console-usage" / "src" / "usageService.ts": [
                 ".filter(isRecord)",
                 "requestId: readString(item, 'requestId')",
                 "inputTokens: readNumber(item, 'inputTokens')",
                 "cost: readDecimalString(item, 'cost')",
                 "isStream: readBoolean(item, 'isStream')",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-console-dashboard" / "src" / "dashboardService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-console-dashboard" / "src" / "dashboardService.ts": [
                 ".filter(isRecord)",
                 "readRecordArray(record, 'chartData')",
                 "readRecordArray(record, 'topModels')",
@@ -2587,7 +2587,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "supplier: readFirstString(item, ['supplier', 'vendor', 'vendorCode'], '-')",
                 "normalizeAnnouncementType(readFirstString",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-console-account" / "src" / "accountService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-console-account" / "src" / "accountService.ts": [
                 ".filter(isRecord)",
                 "readRecordArray(data, 'consumptionByService')",
                 "readRecordArray(data, 'loginLogs')",
@@ -2595,29 +2595,29 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "const record = isRecord(value) ? value : {};",
                 "const status = readString(item, 'status') === 'warning' ? 'warning' : 'success';",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-console-user" / "src" / "userService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-console-user" / "src" / "userService.ts": [
                 "name: readString(data, 'name')",
                 "phone: readString(data, 'phone')",
                 "isVerified: readBoolean(data, 'isVerified')",
                 "twoFactorEnabled: readBoolean(data, 'twoFactorEnabled')",
                 "thirdPartyBound: readString(data, 'thirdPartyBound')",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-admin-record" / "src" / "recordService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-record" / "src" / "recordService.ts": [
                 ".filter(isRecord)",
                 "requestId: readString(item, 'requestId')",
                 "inputTokens: readNumber(item, 'inputTokens')",
                 "cost: readDecimalString(item, 'cost')",
                 "isStream: readBoolean(item, 'isStream')",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-console-gateway" / "src" / "gatewayService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-console-gateway" / "src" / "gatewayService.ts": [
                 ".filter(isGatewayTrace)",
                 "function isGatewayTrace(",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-commons" / "src" / "notificationService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-commons" / "src" / "notificationService.ts": [
                 ".filter(isMessage)",
                 "function isMessage(",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-console-settlements" / "src" / "settlementsService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-console-settlements" / "src" / "settlementsService.ts": [
                 ".filter(isRecord)",
                 "readRecordArray(data, 'chartData')",
                 "readRecordArray(data, 'bills')",
@@ -2626,7 +2626,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "readStringArray(item, 'models')",
                 "period: readString(item, 'period')",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-playground" / "src" / "historyMapper.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-playground" / "src" / "historyMapper.ts": [
                 "items.flatMap",
                 "return null",
                 "mapped ? [mapped] : []",
@@ -2643,49 +2643,49 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
 
     def test_portal_mutation_services_validate_sdk_path_ids(self) -> None:
         guarded_services = {
-            PORTAL_PACKAGES / "sdkwork-claw-router-admin-channel" / "src" / "channelService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-channel" / "src" / "channelService.ts": [
                 "requiredSafePathSegment(id, 'channelId')",
                 "requiredSafePathSegment(id, 'providerSecretId')",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-admin-announcement" / "src" / "announcementService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-announcement" / "src" / "announcementService.ts": [
                 "requiredSafePathSegment(id, 'announcementId')",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-admin-group" / "src" / "groupService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-group" / "src" / "groupService.ts": [
                 "requiredSafePathSegment(id, 'channelGroupId')",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-admin-model" / "src" / "modelService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-model" / "src" / "modelService.ts": [
                 "requiredSafePathSegment(id, 'modelId')",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-admin-user" / "src" / "userService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-user" / "src" / "userService.ts": [
                 "requiredSafePathSegment(keyId, 'apiKeyId')",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-admin-ratelimit" / "src" / "ratelimitService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-ratelimit" / "src" / "ratelimitService.ts": [
                 "requiredSafePathSegment(id, 'firewallRuleId')",
             ],
         }
         forbidden_fragments = {
-            PORTAL_PACKAGES / "sdkwork-claw-router-admin-channel" / "src" / "channelService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-channel" / "src" / "channelService.ts": [
                 ".channel.deleteChannel(id)",
                 ".channel.test(\n      id,",
                 "toUpdateChannelRequest(id, updates)",
                 "toUpdateProviderSecretRequest(id, updates)",
                 ".providerSecrets.deleteProviderSecret(id)",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-admin-announcement" / "src" / "announcementService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-announcement" / "src" / "announcementService.ts": [
                 ".announcements.updateAnnouncement(\n      id,",
                 ".announcements.deleteAnnouncement(id)",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-admin-group" / "src" / "groupService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-group" / "src" / "groupService.ts": [
                 ".access" + "Groups.updateGroup(\n      id,",
                 ".access" + "Groups.deleteGroup(id)",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-admin-model" / "src" / "modelService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-model" / "src" / "modelService.ts": [
                 ".model.deleteModel(id)",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-admin-user" / "src" / "userService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-user" / "src" / "userService.ts": [
                 ".apikey.deleteApiKey(keyId)",
             ],
-            PORTAL_PACKAGES / "sdkwork-claw-router-admin-ratelimit" / "src" / "ratelimitService.ts": [
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-ratelimit" / "src" / "ratelimitService.ts": [
                 ".firewall.remove(id)",
             ],
         }
@@ -2693,7 +2693,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         for service_path, required_fragments in guarded_services.items():
             relative = service_path.relative_to(ROOT).as_posix()
             source = service_path.read_text(encoding="utf-8", errors="ignore")
-            self.assertIn("sdkwork-claw-router-commons/runtime", source, relative)
+            self.assertIn("sdkwork-clawrouter-pc-commons/runtime", source, relative)
             self.assertIn("requiredSafePathSegment", source, relative)
             for fragment in required_fragments:
                 self.assertIn(fragment, source, f"{relative}: missing {fragment}")
@@ -2703,21 +2703,21 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
     def test_portal_sdk_request_boundary_is_shared_not_locally_reimplemented(self) -> None:
         runtime_entrypoint = (
             PORTAL_PACKAGES
-            / "sdkwork-claw-router-commons"
+            / "sdkwork-clawrouter-pc-commons"
             / "src"
             / "runtime.ts"
         )
         boundary = (
             PORTAL_PACKAGES
-            / "sdkwork-claw-router-commons"
+            / "sdkwork-clawrouter-pc-commons"
             / "src"
             / "sdk-request-boundary.ts"
         )
         guarded_services = [
-            PORTAL_PACKAGES / "sdkwork-claw-router-app-center" / "src" / "services" / "appService.ts",
-            PORTAL_PACKAGES / "sdkwork-claw-router-skills-hub" / "src" / "services" / "skillService.ts",
-            PORTAL_PACKAGES / "sdkwork-claw-router-console-usage" / "src" / "usageService.ts",
-            PORTAL_PACKAGES / "sdkwork-claw-router-admin-record" / "src" / "recordService.ts",
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-app-center" / "src" / "services" / "appService.ts",
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-skills-hub" / "src" / "services" / "skillService.ts",
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-console-usage" / "src" / "usageService.ts",
+            PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-record" / "src" / "recordService.ts",
         ]
 
         self.assertTrue(boundary.exists(), "Commons must own reusable SDK request boundary primitives.")
@@ -2726,7 +2726,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         for service_path in guarded_services:
             relative = service_path.relative_to(ROOT).as_posix()
             source = service_path.read_text(encoding="utf-8", errors="ignore")
-            self.assertIn("sdkwork-claw-router-commons/runtime", source, relative)
+            self.assertIn("sdkwork-clawrouter-pc-commons/runtime", source, relative)
             for forbidden in (
                 "function optionalBoundedPositiveInteger",
                 "function optionalPositiveInteger",
@@ -2741,7 +2741,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         violations: list[str] = []
         import_name = "createIdempotencyParams"
         import_block = re.compile(
-            r"import\s*\{(?P<body>[^}]*\bcreateIdempotencyParams\b[^}]*)\}\s*from\s*['\"]sdkwork-claw-router-commons/runtime['\"]",
+            r"import\s*\{(?P<body>[^}]*\bcreateIdempotencyParams\b[^}]*)\}\s*from\s*['\"]sdkwork-clawrouter-pc-commons/runtime['\"]",
             re.DOTALL,
         )
 
@@ -2905,7 +2905,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         )
 
         package_json = json.loads((PORTAL_ROOT / "package.json").read_text(encoding="utf-8"))
-        self.assertEqual("sdkwork-claw-router-portal", package_json.get("name"))
+        self.assertEqual("sdkwork-clawrouter-pc", package_json.get("name"))
         self.assertNotIn("@google/genai", package_json.get("dependencies", {}))
 
     def test_portal_workspace_runtime_dependencies_are_root_managed(self) -> None:
@@ -2923,7 +2923,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
             "@sdkwork/clawrouter-open-sdk",
         }
         root_managed_runtime_dependencies = singleton_runtime_dependencies | boundary_runtime_dependencies
-        sdk_boundary_package = "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/package.json"
+        sdk_boundary_package = "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/package.json"
         root_package = json.loads((PORTAL_ROOT / "package.json").read_text(encoding="utf-8"))
         root_dependencies = root_package.get("dependencies", {})
 

@@ -1,7 +1,7 @@
 fragment: operations/app-memory
 frontend_operations:
 - route: /playground
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/appRuntimeApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
   operation: listMemorySpaces
   operation_id: spaces.list
   kind: read
@@ -103,7 +103,7 @@ frontend_operations:
               minLength: 1
               maxLength: 64
 - route: /playground
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/appRuntimeApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
   operation: createMemorySpace
   operation_id: spaces.create
   kind: create
@@ -168,7 +168,7 @@ frontend_operations:
     properties:
       item: *id001
 - route: /playground
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/appRuntimeApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
   operation: retrieveMemorySpace
   operation_id: spaces.retrieve
   kind: read
@@ -186,7 +186,7 @@ frontend_operations:
   query_parameters: []
   response_schema: *id001
 - route: /playground
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/appRuntimeApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
   operation: listMemoryEntries
   operation_id: entries.list
   kind: read
@@ -318,7 +318,7 @@ frontend_operations:
               minLength: 1
               maxLength: 64
 - route: /playground
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/appRuntimeApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
   operation: createMemoryEntry
   operation_id: entries.create
   kind: create
@@ -404,7 +404,7 @@ frontend_operations:
     properties:
       item: *id002
 - route: /playground
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/appRuntimeApiOperations.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
   operation: retrieveMemoryEntry
   operation_id: entries.retrieve
   kind: read

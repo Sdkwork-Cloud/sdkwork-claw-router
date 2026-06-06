@@ -238,18 +238,18 @@ class ConsoleMessagesBackendRuntimeStandardTest(unittest.TestCase):
         compatibility_service = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-console-messages"
+            / "sdkwork-clawrouter-pc-console-messages"
             / "src"
             / "messagesService.ts"
         ).read_text(encoding="utf-8")
         notification_service = (
             ROOT
             / "apps"
-            / "sdkwork-claw-router-portal"
+            / "sdkwork-clawrouter-pc"
             / "packages"
-            / "sdkwork-claw-router-commons"
+            / "sdkwork-clawrouter-pc-commons"
             / "src"
             / "notificationService.ts"
         ).read_text(encoding="utf-8")

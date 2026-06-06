@@ -20,7 +20,7 @@ BACKEND_SDK_ROOT = (
     / "clawrouter-backend-sdk-typescript"
     / "src"
 )
-PORTAL_ROOT = ROOT / "apps" / "sdkwork-claw-router-portal"
+PORTAL_ROOT = ROOT / "apps" / "sdkwork-clawrouter-pc"
 
 
 class AdminPromptMcpRuntimeStandardTest(unittest.TestCase):
@@ -32,8 +32,8 @@ class AdminPromptMcpRuntimeStandardTest(unittest.TestCase):
             if isinstance(operation, dict)
             and operation.get("source")
             in {
-                "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-prompts/src/promptService.ts",
-                "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-mcp/src/mcpService.ts",
+                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-prompts/src/promptService.ts",
+                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-mcp/src/mcpService.ts",
             }
         }
 
@@ -179,7 +179,7 @@ class AdminPromptMcpRuntimeStandardTest(unittest.TestCase):
         navigation = (
             PORTAL_ROOT
             / "packages"
-            / "sdkwork-claw-router-i18n"
+            / "sdkwork-clawrouter-pc-i18n"
             / "src"
             / "resources"
             / "admin"
@@ -188,13 +188,13 @@ class AdminPromptMcpRuntimeStandardTest(unittest.TestCase):
 
         for package_name, service_file, sdk_marker, page_marker in [
             (
-                "sdkwork-claw-router-admin-prompts",
+                "sdkwork-clawrouter-pc-admin-prompts",
                 "promptService.ts",
                 "getClawRouterBackendSdkClient().prompts",
                 "data-admin-prompts",
             ),
             (
-                "sdkwork-claw-router-admin-mcp",
+                "sdkwork-clawrouter-pc-admin-mcp",
                 "mcpService.ts",
                 "getClawRouterBackendSdkClient().mcp",
                 "data-admin-mcp",
@@ -230,35 +230,35 @@ class AdminPromptMcpRuntimeStandardTest(unittest.TestCase):
         commons_category_options = (
             PORTAL_ROOT
             / "packages"
-            / "sdkwork-claw-router-commons"
+            / "sdkwork-clawrouter-pc-commons"
             / "src"
             / "admin-category-options.ts"
         ).read_text(encoding="utf-8")
         prompt_service = (
             PORTAL_ROOT
             / "packages"
-            / "sdkwork-claw-router-admin-prompts"
+            / "sdkwork-clawrouter-pc-admin-prompts"
             / "src"
             / "promptService.ts"
         ).read_text(encoding="utf-8")
         prompt_page = (
             PORTAL_ROOT
             / "packages"
-            / "sdkwork-claw-router-admin-prompts"
+            / "sdkwork-clawrouter-pc-admin-prompts"
             / "src"
             / "index.tsx"
         ).read_text(encoding="utf-8")
         mcp_service = (
             PORTAL_ROOT
             / "packages"
-            / "sdkwork-claw-router-admin-mcp"
+            / "sdkwork-clawrouter-pc-admin-mcp"
             / "src"
             / "mcpService.ts"
         ).read_text(encoding="utf-8")
         mcp_page = (
             PORTAL_ROOT
             / "packages"
-            / "sdkwork-claw-router-admin-mcp"
+            / "sdkwork-clawrouter-pc-admin-mcp"
             / "src"
             / "index.tsx"
         ).read_text(encoding="utf-8")
@@ -294,21 +294,21 @@ class AdminPromptMcpRuntimeStandardTest(unittest.TestCase):
         commons_resource_options = (
             PORTAL_ROOT
             / "packages"
-            / "sdkwork-claw-router-commons"
+            / "sdkwork-clawrouter-pc-commons"
             / "src"
             / "admin-resource-options.ts"
         ).read_text(encoding="utf-8")
         prompt_page = (
             PORTAL_ROOT
             / "packages"
-            / "sdkwork-claw-router-admin-prompts"
+            / "sdkwork-clawrouter-pc-admin-prompts"
             / "src"
             / "index.tsx"
         ).read_text(encoding="utf-8")
         mcp_page = (
             PORTAL_ROOT
             / "packages"
-            / "sdkwork-claw-router-admin-mcp"
+            / "sdkwork-clawrouter-pc-admin-mcp"
             / "src"
             / "index.tsx"
         ).read_text(encoding="utf-8")
@@ -338,7 +338,7 @@ class AdminPromptMcpRuntimeStandardTest(unittest.TestCase):
         resources_index = (
             PORTAL_ROOT
             / "packages"
-            / "sdkwork-claw-router-i18n"
+            / "sdkwork-clawrouter-pc-i18n"
             / "src"
             / "resources"
             / "index.ts"
@@ -346,7 +346,7 @@ class AdminPromptMcpRuntimeStandardTest(unittest.TestCase):
         prompt_bundle = (
             PORTAL_ROOT
             / "packages"
-            / "sdkwork-claw-router-i18n"
+            / "sdkwork-clawrouter-pc-i18n"
             / "src"
             / "resources"
             / "admin"
@@ -355,7 +355,7 @@ class AdminPromptMcpRuntimeStandardTest(unittest.TestCase):
         mcp_bundle = (
             PORTAL_ROOT
             / "packages"
-            / "sdkwork-claw-router-i18n"
+            / "sdkwork-clawrouter-pc-i18n"
             / "src"
             / "resources"
             / "admin"
@@ -380,7 +380,7 @@ class AdminPromptMcpRuntimeStandardTest(unittest.TestCase):
         resource_center = (
             PORTAL_ROOT
             / "packages"
-            / "sdkwork-claw-router-commons"
+            / "sdkwork-clawrouter-pc-commons"
             / "src"
             / "components"
             / "AdminResourceCenter.tsx"
@@ -388,21 +388,21 @@ class AdminPromptMcpRuntimeStandardTest(unittest.TestCase):
         prompt_page = (
             PORTAL_ROOT
             / "packages"
-            / "sdkwork-claw-router-admin-prompts"
+            / "sdkwork-clawrouter-pc-admin-prompts"
             / "src"
             / "index.tsx"
         ).read_text(encoding="utf-8")
         mcp_page = (
             PORTAL_ROOT
             / "packages"
-            / "sdkwork-claw-router-admin-mcp"
+            / "sdkwork-clawrouter-pc-admin-mcp"
             / "src"
             / "index.tsx"
         ).read_text(encoding="utf-8")
         prompt_bundle = (
             PORTAL_ROOT
             / "packages"
-            / "sdkwork-claw-router-i18n"
+            / "sdkwork-clawrouter-pc-i18n"
             / "src"
             / "resources"
             / "admin"
@@ -411,7 +411,7 @@ class AdminPromptMcpRuntimeStandardTest(unittest.TestCase):
         mcp_bundle = (
             PORTAL_ROOT
             / "packages"
-            / "sdkwork-claw-router-i18n"
+            / "sdkwork-clawrouter-pc-i18n"
             / "src"
             / "resources"
             / "admin"
@@ -442,7 +442,7 @@ class AdminPromptMcpRuntimeStandardTest(unittest.TestCase):
         prompt_bundle = (
             PORTAL_ROOT
             / "packages"
-            / "sdkwork-claw-router-i18n"
+            / "sdkwork-clawrouter-pc-i18n"
             / "src"
             / "resources"
             / "admin"
@@ -451,7 +451,7 @@ class AdminPromptMcpRuntimeStandardTest(unittest.TestCase):
         mcp_bundle = (
             PORTAL_ROOT
             / "packages"
-            / "sdkwork-claw-router-i18n"
+            / "sdkwork-clawrouter-pc-i18n"
             / "src"
             / "resources"
             / "admin"
@@ -510,21 +510,21 @@ class AdminPromptMcpRuntimeStandardTest(unittest.TestCase):
         prompt_page = (
             PORTAL_ROOT
             / "packages"
-            / "sdkwork-claw-router-admin-prompts"
+            / "sdkwork-clawrouter-pc-admin-prompts"
             / "src"
             / "index.tsx"
         ).read_text(encoding="utf-8")
         mcp_page = (
             PORTAL_ROOT
             / "packages"
-            / "sdkwork-claw-router-admin-mcp"
+            / "sdkwork-clawrouter-pc-admin-mcp"
             / "src"
             / "index.tsx"
         ).read_text(encoding="utf-8")
         prompt_bundle = (
             PORTAL_ROOT
             / "packages"
-            / "sdkwork-claw-router-i18n"
+            / "sdkwork-clawrouter-pc-i18n"
             / "src"
             / "resources"
             / "admin"
@@ -533,7 +533,7 @@ class AdminPromptMcpRuntimeStandardTest(unittest.TestCase):
         mcp_bundle = (
             PORTAL_ROOT
             / "packages"
-            / "sdkwork-claw-router-i18n"
+            / "sdkwork-clawrouter-pc-i18n"
             / "src"
             / "resources"
             / "admin"
@@ -610,7 +610,7 @@ class AdminPromptMcpRuntimeStandardTest(unittest.TestCase):
         resource_center = (
             PORTAL_ROOT
             / "packages"
-            / "sdkwork-claw-router-commons"
+            / "sdkwork-clawrouter-pc-commons"
             / "src"
             / "components"
             / "AdminResourceCenter.tsx"
@@ -618,21 +618,21 @@ class AdminPromptMcpRuntimeStandardTest(unittest.TestCase):
         prompt_page = (
             PORTAL_ROOT
             / "packages"
-            / "sdkwork-claw-router-admin-prompts"
+            / "sdkwork-clawrouter-pc-admin-prompts"
             / "src"
             / "index.tsx"
         ).read_text(encoding="utf-8")
         mcp_page = (
             PORTAL_ROOT
             / "packages"
-            / "sdkwork-claw-router-admin-mcp"
+            / "sdkwork-clawrouter-pc-admin-mcp"
             / "src"
             / "index.tsx"
         ).read_text(encoding="utf-8")
         prompt_bundle = (
             PORTAL_ROOT
             / "packages"
-            / "sdkwork-claw-router-i18n"
+            / "sdkwork-clawrouter-pc-i18n"
             / "src"
             / "resources"
             / "admin"
@@ -641,7 +641,7 @@ class AdminPromptMcpRuntimeStandardTest(unittest.TestCase):
         mcp_bundle = (
             PORTAL_ROOT
             / "packages"
-            / "sdkwork-claw-router-i18n"
+            / "sdkwork-clawrouter-pc-i18n"
             / "src"
             / "resources"
             / "admin"
