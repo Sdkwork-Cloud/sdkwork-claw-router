@@ -11,9 +11,9 @@ public class AdminAiResourceGroupItem {
     private String groupName;
     private String groupType;
     private String id;
-    private Integer resourceCount;
+    private String resourceCount;
     private String selectionMode;
-    private Integer sortOrder;
+    private String sortOrder;
     private String status;
     private List<String> vendorCodes;
 
@@ -81,11 +81,11 @@ public class AdminAiResourceGroupItem {
         this.id = id;
     }
 
-    public Integer getResourceCount() {
+    public String getResourceCount() {
         return this.resourceCount;
     }
 
-    public void setResourceCount(Integer resourceCount) {
+    public void setResourceCount(String resourceCount) {
         this.resourceCount = resourceCount;
     }
 
@@ -97,11 +97,11 @@ public class AdminAiResourceGroupItem {
         this.selectionMode = selectionMode;
     }
 
-    public Integer getSortOrder() {
+    public String getSortOrder() {
         return this.sortOrder;
     }
 
-    public void setSortOrder(Integer sortOrder) {
+    public void setSortOrder(String sortOrder) {
         this.sortOrder = sortOrder;
     }
 

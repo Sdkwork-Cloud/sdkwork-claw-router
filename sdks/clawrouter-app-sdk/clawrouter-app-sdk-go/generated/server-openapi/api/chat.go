@@ -18,7 +18,7 @@ func NewChatApi(client *sdkhttp.Client) *ChatApi {
 }
 
 // List product chat conversations
-func (a *ChatApi) ConversationsList(page *int, pageSize *int) (sdktypes.ConversationsListResult, error) {
+func (a *ChatApi) ConversationsList(page *string, pageSize *string) (sdktypes.ConversationsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
@@ -56,7 +56,7 @@ func (a *ChatApi) ConversationsRetrieve(conversationId string) (sdktypes.Convers
 }
 
 // List product chat messages
-func (a *ChatApi) ConversationMessagesList(conversationId string, limit *int, order *string) (sdktypes.ConversationMessagesListResult, error) {
+func (a *ChatApi) ConversationMessagesList(conversationId string, limit *string, order *string) (sdktypes.ConversationMessagesListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "limit", Value: func() interface{} { if limit == nil { return nil }; return *limit }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "order", Value: func() interface{} { if order == nil { return nil }; return *order }(), Style: "form", Explode: true, AllowReserved: false},

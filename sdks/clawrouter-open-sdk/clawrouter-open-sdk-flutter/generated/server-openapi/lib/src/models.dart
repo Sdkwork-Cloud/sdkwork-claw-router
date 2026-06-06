@@ -17,14 +17,14 @@ class AnthropicContentBlock {
   final Map<String, dynamic>? input;
   final String? name;
   final String? text;
-  final String? type;
+  final String type;
 
   AnthropicContentBlock({
     this.id,
     this.input,
     this.name,
     this.text,
-    this.type
+    required this.type
   });
 
   factory AnthropicContentBlock.fromJson(Map<String, dynamic> json) {
@@ -46,7 +46,13 @@ class AnthropicContentBlock {
       })(),
       name: json['name']?.toString(),
       text: json['text']?.toString(),
-      type: json['type']?.toString()
+      type: (() {
+        final value = json['type']?.toString();
+        if (value == null) {
+          throw FormatException('AnthropicContentBlock.type is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -69,7 +75,7 @@ class AnthropicContentBlockParam {
   final AnthropicContentSource? source;
   final String? text;
   final String? toolUseId;
-  final String? type;
+  final String type;
 
   AnthropicContentBlockParam({
     this.content,
@@ -79,7 +85,7 @@ class AnthropicContentBlockParam {
     this.source,
     this.text,
     this.toolUseId,
-    this.type
+    required this.type
   });
 
   factory AnthropicContentBlockParam.fromJson(Map<String, dynamic> json) {
@@ -107,7 +113,13 @@ class AnthropicContentBlockParam {
       })(),
       text: json['text']?.toString(),
       toolUseId: json['tool_use_id']?.toString(),
-      type: json['type']?.toString()
+      type: (() {
+        final value = json['type']?.toString();
+        if (value == null) {
+          throw FormatException('AnthropicContentBlockParam.type is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -129,14 +141,14 @@ class AnthropicContentSource {
   final String? data;
   final String? fileId;
   final String? mediaType;
-  final String? type;
+  final String type;
   final String? url;
 
   AnthropicContentSource({
     this.data,
     this.fileId,
     this.mediaType,
-    this.type,
+    required this.type,
     this.url
   });
 
@@ -145,7 +157,13 @@ class AnthropicContentSource {
       data: json['data']?.toString(),
       fileId: json['file_id']?.toString(),
       mediaType: json['media_type']?.toString(),
-      type: json['type']?.toString(),
+      type: (() {
+        final value = json['type']?.toString();
+        if (value == null) {
+          throw FormatException('AnthropicContentSource.type is required');
+        }
+        return value;
+      })(),
       url: json['url']?.toString()
     );
   }
@@ -163,9 +181,9 @@ class AnthropicContentSource {
 
 class AnthropicCountMessageTokensRequest {
   final int? maxTokens;
-  final List<AnthropicMessageParam>? messages;
+  final List<AnthropicMessageParam> messages;
   final Map<String, dynamic>? metadata;
-  final String? model;
+  final String model;
   final List<String>? stopSequences;
   final bool? stream;
   final dynamic system;
@@ -178,9 +196,9 @@ class AnthropicCountMessageTokensRequest {
 
   AnthropicCountMessageTokensRequest({
     this.maxTokens,
-    this.messages,
+    required this.messages,
     this.metadata,
-    this.model,
+    required this.model,
     this.stopSequences,
     this.stream,
     this.system,
@@ -198,7 +216,7 @@ class AnthropicCountMessageTokensRequest {
       messages: (() {
         final list = _sdkworkAsList(json['messages']);
         if (list == null) {
-          return null;
+          throw FormatException('AnthropicCountMessageTokensRequest.messages is required');
         }
         return list
             .map((item) => (() {
@@ -222,7 +240,13 @@ class AnthropicCountMessageTokensRequest {
         });
         return result;
       })(),
-      model: json['model']?.toString(),
+      model: (() {
+        final value = json['model']?.toString();
+        if (value == null) {
+          throw FormatException('AnthropicCountMessageTokensRequest.model is required');
+        }
+        return value;
+      })(),
       stopSequences: (() {
         final list = _sdkworkAsList(json['stop_sequences']);
         if (list == null) {
@@ -265,7 +289,7 @@ class AnthropicCountMessageTokensRequest {
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'max_tokens': maxTokens,
-      'messages': messages?.map((item) => item.toJson()).toList(),
+      'messages': messages.map((item) => item.toJson()).toList(),
       'metadata': metadata?.map((key, item) => MapEntry(key, item)),
       'model': model,
       'stop_sequences': stopSequences?.map((item) => item).toList(),
@@ -282,15 +306,21 @@ class AnthropicCountMessageTokensRequest {
 }
 
 class AnthropicCountMessageTokensResponse {
-  final int? inputTokens;
+  final int inputTokens;
 
   AnthropicCountMessageTokensResponse({
-    this.inputTokens
+    required this.inputTokens
   });
 
   factory AnthropicCountMessageTokensResponse.fromJson(Map<String, dynamic> json) {
     return AnthropicCountMessageTokensResponse(
-      inputTokens: json['input_tokens'] is int ? json['input_tokens'] : null
+      inputTokens: (() {
+        final value = json['input_tokens'];
+        if (value is! int) {
+          throw FormatException('AnthropicCountMessageTokensResponse.input_tokens is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -330,33 +360,69 @@ class AnthropicDeleteResponse {
 }
 
 class AnthropicFile {
-  final String? createdAt;
+  final String createdAt;
   final bool? downloadable;
-  final String? filename;
-  final String? id;
-  final String? mimeType;
-  final int? sizeBytes;
-  final String? type;
+  final String filename;
+  final String id;
+  final String mimeType;
+  final int sizeBytes;
+  final String type;
 
   AnthropicFile({
-    this.createdAt,
+    required this.createdAt,
     this.downloadable,
-    this.filename,
-    this.id,
-    this.mimeType,
-    this.sizeBytes,
-    this.type
+    required this.filename,
+    required this.id,
+    required this.mimeType,
+    required this.sizeBytes,
+    required this.type
   });
 
   factory AnthropicFile.fromJson(Map<String, dynamic> json) {
     return AnthropicFile(
-      createdAt: json['created_at']?.toString(),
+      createdAt: (() {
+        final value = json['created_at']?.toString();
+        if (value == null) {
+          throw FormatException('AnthropicFile.created_at is required');
+        }
+        return value;
+      })(),
       downloadable: json['downloadable'] is bool ? json['downloadable'] : null,
-      filename: json['filename']?.toString(),
-      id: json['id']?.toString(),
-      mimeType: json['mime_type']?.toString(),
-      sizeBytes: json['size_bytes'] is int ? json['size_bytes'] : null,
-      type: json['type']?.toString()
+      filename: (() {
+        final value = json['filename']?.toString();
+        if (value == null) {
+          throw FormatException('AnthropicFile.filename is required');
+        }
+        return value;
+      })(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('AnthropicFile.id is required');
+        }
+        return value;
+      })(),
+      mimeType: (() {
+        final value = json['mime_type']?.toString();
+        if (value == null) {
+          throw FormatException('AnthropicFile.mime_type is required');
+        }
+        return value;
+      })(),
+      sizeBytes: (() {
+        final value = json['size_bytes'];
+        if (value is! int) {
+          throw FormatException('AnthropicFile.size_bytes is required');
+        }
+        return value;
+      })(),
+      type: (() {
+        final value = json['type']?.toString();
+        if (value == null) {
+          throw FormatException('AnthropicFile.type is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -374,13 +440,13 @@ class AnthropicFile {
 }
 
 class AnthropicFileListResponse {
-  final List<AnthropicFile>? data;
+  final List<AnthropicFile> data;
   final String? firstId;
   final bool? hasMore;
   final String? lastId;
 
   AnthropicFileListResponse({
-    this.data,
+    required this.data,
     this.firstId,
     this.hasMore,
     this.lastId
@@ -391,7 +457,7 @@ class AnthropicFileListResponse {
       data: (() {
         final list = _sdkworkAsList(json['data']);
         if (list == null) {
-          return null;
+          throw FormatException('AnthropicFileListResponse.data is required');
         }
         return list
             .map((item) => (() {
@@ -409,7 +475,7 @@ class AnthropicFileListResponse {
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'data': data?.map((item) => item.toJson()).toList(),
+      'data': data.map((item) => item.toJson()).toList(),
       'first_id': firstId,
       'has_more': hasMore,
       'last_id': lastId,
@@ -418,15 +484,21 @@ class AnthropicFileListResponse {
 }
 
 class AnthropicFileUploadMultipartRequest {
-  final String? file;
+  final String file;
 
   AnthropicFileUploadMultipartRequest({
-    this.file
+    required this.file
   });
 
   factory AnthropicFileUploadMultipartRequest.fromJson(Map<String, dynamic> json) {
     return AnthropicFileUploadMultipartRequest(
-      file: json['file']?.toString()
+      file: (() {
+        final value = json['file']?.toString();
+        if (value == null) {
+          throw FormatException('AnthropicFileUploadMultipartRequest.file is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -438,24 +510,24 @@ class AnthropicFileUploadMultipartRequest {
 }
 
 class AnthropicMessage {
-  final List<AnthropicContentBlock>? content;
-  final String? id;
-  final String? model;
-  final String? role;
-  final String? stopReason;
+  final List<AnthropicContentBlock> content;
+  final String id;
+  final String model;
+  final String role;
+  final String stopReason;
   final String? stopSequence;
-  final String? type;
-  final AnthropicUsage? usage;
+  final String type;
+  final AnthropicUsage usage;
 
   AnthropicMessage({
-    this.content,
-    this.id,
-    this.model,
-    this.role,
-    this.stopReason,
+    required this.content,
+    required this.id,
+    required this.model,
+    required this.role,
+    required this.stopReason,
     this.stopSequence,
-    this.type,
-    this.usage
+    required this.type,
+    required this.usage
   });
 
   factory AnthropicMessage.fromJson(Map<String, dynamic> json) {
@@ -463,7 +535,7 @@ class AnthropicMessage {
       content: (() {
         final list = _sdkworkAsList(json['content']);
         if (list == null) {
-          return null;
+          throw FormatException('AnthropicMessage.content is required');
         }
         return list
             .map((item) => (() {
@@ -473,29 +545,62 @@ class AnthropicMessage {
             .whereType<AnthropicContentBlock>()
             .toList();
       })(),
-      id: json['id']?.toString(),
-      model: json['model']?.toString(),
-      role: json['role']?.toString(),
-      stopReason: json['stop_reason']?.toString(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('AnthropicMessage.id is required');
+        }
+        return value;
+      })(),
+      model: (() {
+        final value = json['model']?.toString();
+        if (value == null) {
+          throw FormatException('AnthropicMessage.model is required');
+        }
+        return value;
+      })(),
+      role: (() {
+        final value = json['role']?.toString();
+        if (value == null) {
+          throw FormatException('AnthropicMessage.role is required');
+        }
+        return value;
+      })(),
+      stopReason: (() {
+        final value = json['stop_reason']?.toString();
+        if (value == null) {
+          throw FormatException('AnthropicMessage.stop_reason is required');
+        }
+        return value;
+      })(),
       stopSequence: json['stop_sequence']?.toString(),
-      type: json['type']?.toString(),
+      type: (() {
+        final value = json['type']?.toString();
+        if (value == null) {
+          throw FormatException('AnthropicMessage.type is required');
+        }
+        return value;
+      })(),
       usage: (() {
         final map = _sdkworkAsMap(json['usage']);
-        return map == null ? null : AnthropicUsage.fromJson(map);
+        if (map == null) {
+          throw FormatException('AnthropicMessage.usage is required');
+        }
+        return AnthropicUsage.fromJson(map);
       })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'content': content?.map((item) => item.toJson()).toList(),
+      'content': content.map((item) => item.toJson()).toList(),
       'id': id,
       'model': model,
       'role': role,
       'stop_reason': stopReason,
       'stop_sequence': stopSequence,
       'type': type,
-      'usage': usage?.toJson(),
+      'usage': usage.toJson(),
     };
   }
 }
@@ -505,22 +610,22 @@ class AnthropicMessageBatch {
   final String? createdAt;
   final String? endedAt;
   final String? expiresAt;
-  final String? id;
-  final String? processingStatus;
-  final AnthropicMessageBatchRequestCounts? requestCounts;
+  final String id;
+  final String processingStatus;
+  final AnthropicMessageBatchRequestCounts requestCounts;
   final String? resultsUrl;
-  final String? type;
+  final String type;
 
   AnthropicMessageBatch({
     this.cancelInitiatedAt,
     this.createdAt,
     this.endedAt,
     this.expiresAt,
-    this.id,
-    this.processingStatus,
-    this.requestCounts,
+    required this.id,
+    required this.processingStatus,
+    required this.requestCounts,
     this.resultsUrl,
-    this.type
+    required this.type
   });
 
   factory AnthropicMessageBatch.fromJson(Map<String, dynamic> json) {
@@ -529,14 +634,35 @@ class AnthropicMessageBatch {
       createdAt: json['created_at']?.toString(),
       endedAt: json['ended_at']?.toString(),
       expiresAt: json['expires_at']?.toString(),
-      id: json['id']?.toString(),
-      processingStatus: json['processing_status']?.toString(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('AnthropicMessageBatch.id is required');
+        }
+        return value;
+      })(),
+      processingStatus: (() {
+        final value = json['processing_status']?.toString();
+        if (value == null) {
+          throw FormatException('AnthropicMessageBatch.processing_status is required');
+        }
+        return value;
+      })(),
       requestCounts: (() {
         final map = _sdkworkAsMap(json['request_counts']);
-        return map == null ? null : AnthropicMessageBatchRequestCounts.fromJson(map);
+        if (map == null) {
+          throw FormatException('AnthropicMessageBatch.request_counts is required');
+        }
+        return AnthropicMessageBatchRequestCounts.fromJson(map);
       })(),
       resultsUrl: json['results_url']?.toString(),
-      type: json['type']?.toString()
+      type: (() {
+        final value = json['type']?.toString();
+        if (value == null) {
+          throw FormatException('AnthropicMessageBatch.type is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -548,7 +674,7 @@ class AnthropicMessageBatch {
       'expires_at': expiresAt,
       'id': id,
       'processing_status': processingStatus,
-      'request_counts': requestCounts?.toJson(),
+      'request_counts': requestCounts.toJson(),
       'results_url': resultsUrl,
       'type': type,
     };
@@ -556,10 +682,10 @@ class AnthropicMessageBatch {
 }
 
 class AnthropicMessageBatchCreateRequest {
-  final List<AnthropicMessageBatchRequest>? requests;
+  final List<AnthropicMessageBatchRequest> requests;
 
   AnthropicMessageBatchCreateRequest({
-    this.requests
+    required this.requests
   });
 
   factory AnthropicMessageBatchCreateRequest.fromJson(Map<String, dynamic> json) {
@@ -567,7 +693,7 @@ class AnthropicMessageBatchCreateRequest {
       requests: (() {
         final list = _sdkworkAsList(json['requests']);
         if (list == null) {
-          return null;
+          throw FormatException('AnthropicMessageBatchCreateRequest.requests is required');
         }
         return list
             .map((item) => (() {
@@ -582,19 +708,19 @@ class AnthropicMessageBatchCreateRequest {
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'requests': requests?.map((item) => item.toJson()).toList(),
+      'requests': requests.map((item) => item.toJson()).toList(),
     };
   }
 }
 
 class AnthropicMessageBatchListResponse {
-  final List<AnthropicMessageBatch>? data;
+  final List<AnthropicMessageBatch> data;
   final String? firstId;
   final bool? hasMore;
   final String? lastId;
 
   AnthropicMessageBatchListResponse({
-    this.data,
+    required this.data,
     this.firstId,
     this.hasMore,
     this.lastId
@@ -605,7 +731,7 @@ class AnthropicMessageBatchListResponse {
       data: (() {
         final list = _sdkworkAsList(json['data']);
         if (list == null) {
-          return null;
+          throw FormatException('AnthropicMessageBatchListResponse.data is required');
         }
         return list
             .map((item) => (() {
@@ -623,7 +749,7 @@ class AnthropicMessageBatchListResponse {
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'data': data?.map((item) => item.toJson()).toList(),
+      'data': data.map((item) => item.toJson()).toList(),
       'first_id': firstId,
       'has_more': hasMore,
       'last_id': lastId,
@@ -632,20 +758,29 @@ class AnthropicMessageBatchListResponse {
 }
 
 class AnthropicMessageBatchRequest {
-  final String? customId;
-  final AnthropicMessageCreateRequest? params;
+  final String customId;
+  final AnthropicMessageCreateRequest params;
 
   AnthropicMessageBatchRequest({
-    this.customId,
-    this.params
+    required this.customId,
+    required this.params
   });
 
   factory AnthropicMessageBatchRequest.fromJson(Map<String, dynamic> json) {
     return AnthropicMessageBatchRequest(
-      customId: json['custom_id']?.toString(),
+      customId: (() {
+        final value = json['custom_id']?.toString();
+        if (value == null) {
+          throw FormatException('AnthropicMessageBatchRequest.custom_id is required');
+        }
+        return value;
+      })(),
       params: (() {
         final map = _sdkworkAsMap(json['params']);
-        return map == null ? null : AnthropicMessageCreateRequest.fromJson(map);
+        if (map == null) {
+          throw FormatException('AnthropicMessageBatchRequest.params is required');
+        }
+        return AnthropicMessageCreateRequest.fromJson(map);
       })()
     );
   }
@@ -653,7 +788,7 @@ class AnthropicMessageBatchRequest {
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'custom_id': customId,
-      'params': params?.toJson(),
+      'params': params.toJson(),
     };
   }
 }
@@ -695,10 +830,10 @@ class AnthropicMessageBatchRequestCounts {
 }
 
 class AnthropicMessageCreateRequest {
-  final int? maxTokens;
-  final List<AnthropicMessageParam>? messages;
+  final int maxTokens;
+  final List<AnthropicMessageParam> messages;
   final Map<String, dynamic>? metadata;
-  final String? model;
+  final String model;
   final List<String>? stopSequences;
   final bool? stream;
   final dynamic system;
@@ -710,10 +845,10 @@ class AnthropicMessageCreateRequest {
   final double? topP;
 
   AnthropicMessageCreateRequest({
-    this.maxTokens,
-    this.messages,
+    required this.maxTokens,
+    required this.messages,
     this.metadata,
-    this.model,
+    required this.model,
     this.stopSequences,
     this.stream,
     this.system,
@@ -727,11 +862,17 @@ class AnthropicMessageCreateRequest {
 
   factory AnthropicMessageCreateRequest.fromJson(Map<String, dynamic> json) {
     return AnthropicMessageCreateRequest(
-      maxTokens: json['max_tokens'] is int ? json['max_tokens'] : null,
+      maxTokens: (() {
+        final value = json['max_tokens'];
+        if (value is! int) {
+          throw FormatException('AnthropicMessageCreateRequest.max_tokens is required');
+        }
+        return value;
+      })(),
       messages: (() {
         final list = _sdkworkAsList(json['messages']);
         if (list == null) {
-          return null;
+          throw FormatException('AnthropicMessageCreateRequest.messages is required');
         }
         return list
             .map((item) => (() {
@@ -755,7 +896,13 @@ class AnthropicMessageCreateRequest {
         });
         return result;
       })(),
-      model: json['model']?.toString(),
+      model: (() {
+        final value = json['model']?.toString();
+        if (value == null) {
+          throw FormatException('AnthropicMessageCreateRequest.model is required');
+        }
+        return value;
+      })(),
       stopSequences: (() {
         final list = _sdkworkAsList(json['stop_sequences']);
         if (list == null) {
@@ -798,7 +945,7 @@ class AnthropicMessageCreateRequest {
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'max_tokens': maxTokens,
-      'messages': messages?.map((item) => item.toJson()).toList(),
+      'messages': messages.map((item) => item.toJson()).toList(),
       'metadata': metadata?.map((key, item) => MapEntry(key, item)),
       'model': model,
       'stop_sequences': stopSequences?.map((item) => item).toList(),
@@ -816,17 +963,29 @@ class AnthropicMessageCreateRequest {
 
 class AnthropicMessageParam {
   final dynamic content;
-  final String? role;
+  final String role;
 
   AnthropicMessageParam({
-    this.content,
-    this.role
+    required this.content,
+    required this.role
   });
 
   factory AnthropicMessageParam.fromJson(Map<String, dynamic> json) {
     return AnthropicMessageParam(
-      content: json['content']?.toString(),
-      role: json['role']?.toString()
+      content: (() {
+        final value = json['content']?.toString();
+        if (value == null) {
+          throw FormatException('AnthropicMessageParam.content is required');
+        }
+        return value;
+      })(),
+      role: (() {
+        final value = json['role']?.toString();
+        if (value == null) {
+          throw FormatException('AnthropicMessageParam.role is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -840,17 +999,23 @@ class AnthropicMessageParam {
 
 class AnthropicThinkingConfig {
   final int? budgetTokens;
-  final String? type;
+  final String type;
 
   AnthropicThinkingConfig({
     this.budgetTokens,
-    this.type
+    required this.type
   });
 
   factory AnthropicThinkingConfig.fromJson(Map<String, dynamic> json) {
     return AnthropicThinkingConfig(
       budgetTokens: json['budget_tokens'] is int ? json['budget_tokens'] : null,
-      type: json['type']?.toString()
+      type: (() {
+        final value = json['type']?.toString();
+        if (value == null) {
+          throw FormatException('AnthropicThinkingConfig.type is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -864,13 +1029,13 @@ class AnthropicThinkingConfig {
 
 class AnthropicTool {
   final String? description;
-  final ProviderJsonSchema? inputSchema;
-  final String? name;
+  final ProviderJsonSchema inputSchema;
+  final String name;
 
   AnthropicTool({
     this.description,
-    this.inputSchema,
-    this.name
+    required this.inputSchema,
+    required this.name
   });
 
   factory AnthropicTool.fromJson(Map<String, dynamic> json) {
@@ -878,16 +1043,25 @@ class AnthropicTool {
       description: json['description']?.toString(),
       inputSchema: (() {
         final map = _sdkworkAsMap(json['input_schema']);
-        return map == null ? null : ProviderJsonSchema.fromJson(map);
+        if (map == null) {
+          throw FormatException('AnthropicTool.input_schema is required');
+        }
+        return ProviderJsonSchema.fromJson(map);
       })(),
-      name: json['name']?.toString()
+      name: (() {
+        final value = json['name']?.toString();
+        if (value == null) {
+          throw FormatException('AnthropicTool.name is required');
+        }
+        return value;
+      })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'description': description,
-      'input_schema': inputSchema?.toJson(),
+      'input_schema': inputSchema.toJson(),
       'name': name,
     };
   }
@@ -895,17 +1069,23 @@ class AnthropicTool {
 
 class AnthropicToolChoice {
   final String? name;
-  final String? type;
+  final String type;
 
   AnthropicToolChoice({
     this.name,
-    this.type
+    required this.type
   });
 
   factory AnthropicToolChoice.fromJson(Map<String, dynamic> json) {
     return AnthropicToolChoice(
       name: json['name']?.toString(),
-      type: json['type']?.toString()
+      type: (() {
+        final value = json['type']?.toString();
+        if (value == null) {
+          throw FormatException('AnthropicToolChoice.type is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -1064,21 +1244,39 @@ class CreateCompletionLogprobs {
 }
 
 class DeleteResult {
-  final bool? deleted;
-  final String? id;
-  final String? object;
+  final bool deleted;
+  final String id;
+  final String object;
 
   DeleteResult({
-    this.deleted,
-    this.id,
-    this.object
+    required this.deleted,
+    required this.id,
+    required this.object
   });
 
   factory DeleteResult.fromJson(Map<String, dynamic> json) {
     return DeleteResult(
-      deleted: json['deleted'] is bool ? json['deleted'] : null,
-      id: json['id']?.toString(),
-      object: json['object']?.toString()
+      deleted: (() {
+        final value = json['deleted'];
+        if (value is! bool) {
+          throw FormatException('DeleteResult.deleted is required');
+        }
+        return value;
+      })(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('DeleteResult.id is required');
+        }
+        return value;
+      })(),
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('DeleteResult.object is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -1713,10 +1911,10 @@ class GetOrganizationVectorStoresUsageItem {
 }
 
 class GoogleBatchEmbedContentsRequest {
-  final List<GoogleEmbedContentRequest>? requests;
+  final List<GoogleEmbedContentRequest> requests;
 
   GoogleBatchEmbedContentsRequest({
-    this.requests
+    required this.requests
   });
 
   factory GoogleBatchEmbedContentsRequest.fromJson(Map<String, dynamic> json) {
@@ -1724,7 +1922,7 @@ class GoogleBatchEmbedContentsRequest {
       requests: (() {
         final list = _sdkworkAsList(json['requests']);
         if (list == null) {
-          return null;
+          throw FormatException('GoogleBatchEmbedContentsRequest.requests is required');
         }
         return list
             .map((item) => (() {
@@ -1739,7 +1937,7 @@ class GoogleBatchEmbedContentsRequest {
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'requests': requests?.map((item) => item.toJson()).toList(),
+      'requests': requests.map((item) => item.toJson()).toList(),
     };
   }
 }
@@ -2346,13 +2544,13 @@ class GoogleDynamicRetrievalConfig {
 }
 
 class GoogleEmbedContentRequest {
-  final GoogleContent? content;
+  final GoogleContent content;
   final int? outputDimensionality;
   final String? taskType;
   final String? title;
 
   GoogleEmbedContentRequest({
-    this.content,
+    required this.content,
     this.outputDimensionality,
     this.taskType,
     this.title
@@ -2362,7 +2560,10 @@ class GoogleEmbedContentRequest {
     return GoogleEmbedContentRequest(
       content: (() {
         final map = _sdkworkAsMap(json['content']);
-        return map == null ? null : GoogleContent.fromJson(map);
+        if (map == null) {
+          throw FormatException('GoogleEmbedContentRequest.content is required');
+        }
+        return GoogleContent.fromJson(map);
       })(),
       outputDimensionality: json['outputDimensionality'] is int ? json['outputDimensionality'] : null,
       taskType: json['taskType']?.toString(),
@@ -2372,7 +2573,7 @@ class GoogleEmbedContentRequest {
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'content': content?.toJson(),
+      'content': content.toJson(),
       'outputDimensionality': outputDimensionality,
       'taskType': taskType,
       'title': title,
@@ -2404,15 +2605,21 @@ class GoogleEmbedContentResponse {
 }
 
 class GoogleEmptyResponse {
-  final String? object;
+  final String object;
 
   GoogleEmptyResponse({
-    this.object
+    required this.object
   });
 
   factory GoogleEmptyResponse.fromJson(Map<String, dynamic> json) {
     return GoogleEmptyResponse(
-      object: json['object']?.toString()
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('GoogleEmptyResponse.object is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -2571,17 +2778,23 @@ class GoogleFileListResponse {
 }
 
 class GoogleFileUploadMultipartRequest {
-  final String? file;
+  final String file;
   final String? metadata;
 
   GoogleFileUploadMultipartRequest({
-    this.file,
+    required this.file,
     this.metadata
   });
 
   factory GoogleFileUploadMultipartRequest.fromJson(Map<String, dynamic> json) {
     return GoogleFileUploadMultipartRequest(
-      file: json['file']?.toString(),
+      file: (() {
+        final value = json['file']?.toString();
+        if (value == null) {
+          throw FormatException('GoogleFileUploadMultipartRequest.file is required');
+        }
+        return value;
+      })(),
       metadata: json['metadata']?.toString()
     );
   }
@@ -2664,13 +2877,13 @@ class GoogleFunctionCallingConfig {
 
 class GoogleFunctionDeclaration {
   final String? description;
-  final String? name;
+  final String name;
   final GoogleSchema? parameters;
   final GoogleSchema? response;
 
   GoogleFunctionDeclaration({
     this.description,
-    this.name,
+    required this.name,
     this.parameters,
     this.response
   });
@@ -2678,7 +2891,13 @@ class GoogleFunctionDeclaration {
   factory GoogleFunctionDeclaration.fromJson(Map<String, dynamic> json) {
     return GoogleFunctionDeclaration(
       description: json['description']?.toString(),
-      name: json['name']?.toString(),
+      name: (() {
+        final value = json['name']?.toString();
+        if (value == null) {
+          throw FormatException('GoogleFunctionDeclaration.name is required');
+        }
+        return value;
+      })(),
       parameters: (() {
         final map = _sdkworkAsMap(json['parameters']);
         return map == null ? null : GoogleSchema.fromJson(map);
@@ -2737,7 +2956,7 @@ class GoogleFunctionResponse {
 
 class GoogleGenerateContentRequest {
   final String? cachedContent;
-  final List<GoogleContent>? contents;
+  final List<GoogleContent> contents;
   final GoogleGenerationConfig? generationConfig;
   final List<GoogleSafetySetting>? safetySettings;
   final GoogleContent? systemInstruction;
@@ -2746,7 +2965,7 @@ class GoogleGenerateContentRequest {
 
   GoogleGenerateContentRequest({
     this.cachedContent,
-    this.contents,
+    required this.contents,
     this.generationConfig,
     this.safetySettings,
     this.systemInstruction,
@@ -2760,7 +2979,7 @@ class GoogleGenerateContentRequest {
       contents: (() {
         final list = _sdkworkAsList(json['contents']);
         if (list == null) {
-          return null;
+          throw FormatException('GoogleGenerateContentRequest.contents is required');
         }
         return list
             .map((item) => (() {
@@ -2814,7 +3033,7 @@ class GoogleGenerateContentRequest {
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'cachedContent': cachedContent,
-      'contents': contents?.map((item) => item.toJson()).toList(),
+      'contents': contents.map((item) => item.toJson()).toList(),
       'generationConfig': generationConfig?.toJson(),
       'safetySettings': safetySettings?.map((item) => item.toJson()).toList(),
       'systemInstruction': systemInstruction?.toJson(),
@@ -3370,7 +3589,7 @@ class KlingVideoGenerationRequest {
   final String? mode;
   final String? model;
   final String? negativePrompt;
-  final String? prompt;
+  final String prompt;
 
   KlingVideoGenerationRequest({
     this.aspectRatio,
@@ -3382,7 +3601,7 @@ class KlingVideoGenerationRequest {
     this.mode,
     this.model,
     this.negativePrompt,
-    this.prompt
+    required this.prompt
   });
 
   factory KlingVideoGenerationRequest.fromJson(Map<String, dynamic> json) {
@@ -3396,7 +3615,13 @@ class KlingVideoGenerationRequest {
       mode: json['mode']?.toString(),
       model: json['model']?.toString(),
       negativePrompt: json['negative_prompt']?.toString(),
-      prompt: json['prompt']?.toString()
+      prompt: (() {
+        final value = json['prompt']?.toString();
+        if (value == null) {
+          throw FormatException('KlingVideoGenerationRequest.prompt is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -6796,7 +7021,7 @@ class MidjourneyImageGenerationRequest {
   final String? aspectRatio;
   final String? callbackUrl;
   final String? model;
-  final String? prompt;
+  final String prompt;
   final int? seed;
   final String? style;
 
@@ -6804,7 +7029,7 @@ class MidjourneyImageGenerationRequest {
     this.aspectRatio,
     this.callbackUrl,
     this.model,
-    this.prompt,
+    required this.prompt,
     this.seed,
     this.style
   });
@@ -6814,7 +7039,13 @@ class MidjourneyImageGenerationRequest {
       aspectRatio: json['aspect_ratio']?.toString(),
       callbackUrl: json['callback_url']?.toString(),
       model: json['model']?.toString(),
-      prompt: json['prompt']?.toString(),
+      prompt: (() {
+        final value = json['prompt']?.toString();
+        if (value == null) {
+          throw FormatException('MidjourneyImageGenerationRequest.prompt is required');
+        }
+        return value;
+      })(),
       seed: json['seed'] is int ? json['seed'] : null,
       style: json['style']?.toString()
     );
@@ -6908,7 +7139,7 @@ class NanoBananaImageGenerationRequest {
   final String? callbackUrl;
   final List<String>? images;
   final String? model;
-  final String? prompt;
+  final String prompt;
   final int? seed;
   final String? size;
 
@@ -6917,7 +7148,7 @@ class NanoBananaImageGenerationRequest {
     this.callbackUrl,
     this.images,
     this.model,
-    this.prompt,
+    required this.prompt,
     this.seed,
     this.size
   });
@@ -6937,7 +7168,13 @@ class NanoBananaImageGenerationRequest {
             .toList();
       })(),
       model: json['model']?.toString(),
-      prompt: json['prompt']?.toString(),
+      prompt: (() {
+        final value = json['prompt']?.toString();
+        if (value == null) {
+          throw FormatException('NanoBananaImageGenerationRequest.prompt is required');
+        }
+        return value;
+      })(),
       seed: json['seed'] is int ? json['seed'] : null,
       size: json['size']?.toString()
     );
@@ -7034,7 +7271,7 @@ class OpenAiAnnotation {
   final int? index;
   final int? startIndex;
   final String? title;
-  final String? type;
+  final String type;
   final String? url;
 
   OpenAiAnnotation({
@@ -7044,7 +7281,7 @@ class OpenAiAnnotation {
     this.index,
     this.startIndex,
     this.title,
-    this.type,
+    required this.type,
     this.url
   });
 
@@ -7056,7 +7293,13 @@ class OpenAiAnnotation {
       index: json['index'] is int ? json['index'] : null,
       startIndex: json['start_index'] is int ? json['start_index'] : null,
       title: json['title']?.toString(),
-      type: json['type']?.toString(),
+      type: (() {
+        final value = json['type']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiAnnotation.type is required');
+        }
+        return value;
+      })(),
       url: json['url']?.toString()
     );
   }
@@ -7076,14 +7319,14 @@ class OpenAiAnnotation {
 }
 
 class OpenAiAssistant {
-  final int? createdAt;
+  final int createdAt;
   final String? description;
-  final String? id;
+  final String id;
   final String? instructions;
   final Map<String, dynamic>? metadata;
-  final String? model;
+  final String model;
   final String? name;
-  final String? object;
+  final String object;
   final dynamic responseFormat;
   final double? temperature;
   final dynamic toolResources;
@@ -7091,14 +7334,14 @@ class OpenAiAssistant {
   final double? topP;
 
   OpenAiAssistant({
-    this.createdAt,
+    required this.createdAt,
     this.description,
-    this.id,
+    required this.id,
     this.instructions,
     this.metadata,
-    this.model,
+    required this.model,
     this.name,
-    this.object,
+    required this.object,
     this.responseFormat,
     this.temperature,
     this.toolResources,
@@ -7108,9 +7351,21 @@ class OpenAiAssistant {
 
   factory OpenAiAssistant.fromJson(Map<String, dynamic> json) {
     return OpenAiAssistant(
-      createdAt: json['created_at'] is int ? json['created_at'] : null,
+      createdAt: (() {
+        final value = json['created_at'];
+        if (value is! int) {
+          throw FormatException('OpenAiAssistant.created_at is required');
+        }
+        return value;
+      })(),
       description: json['description']?.toString(),
-      id: json['id']?.toString(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiAssistant.id is required');
+        }
+        return value;
+      })(),
       instructions: json['instructions']?.toString(),
       metadata: (() {
         final map = _sdkworkAsMap(json['metadata']);
@@ -7126,9 +7381,21 @@ class OpenAiAssistant {
         });
         return result;
       })(),
-      model: json['model']?.toString(),
+      model: (() {
+        final value = json['model']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiAssistant.model is required');
+        }
+        return value;
+      })(),
       name: json['name']?.toString(),
-      object: json['object']?.toString(),
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiAssistant.object is required');
+        }
+        return value;
+      })(),
       responseFormat: json['response_format']?.toString(),
       temperature: json['temperature'] is num ? json['temperature'].toDouble() : null,
       toolResources: json['tool_resources']?.toString(),
@@ -7169,7 +7436,7 @@ class OpenAiAssistantCreateRequest {
   final String? description;
   final String? instructions;
   final Map<String, dynamic>? metadata;
-  final String? model;
+  final String model;
   final String? name;
   final dynamic responseFormat;
   final double? temperature;
@@ -7181,7 +7448,7 @@ class OpenAiAssistantCreateRequest {
     this.description,
     this.instructions,
     this.metadata,
-    this.model,
+    required this.model,
     this.name,
     this.responseFormat,
     this.temperature,
@@ -7208,7 +7475,13 @@ class OpenAiAssistantCreateRequest {
         });
         return result;
       })(),
-      model: json['model']?.toString(),
+      model: (() {
+        final value = json['model']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiAssistantCreateRequest.model is required');
+        }
+        return value;
+      })(),
       name: json['name']?.toString(),
       responseFormat: json['response_format']?.toString(),
       temperature: json['temperature'] is num ? json['temperature'].toDouble() : null,
@@ -7244,18 +7517,18 @@ class OpenAiAssistantCreateRequest {
 }
 
 class OpenAiAssistantList {
-  final List<OpenAiAssistant>? data;
+  final List<OpenAiAssistant> data;
   final String? firstId;
   final bool? hasMore;
   final String? lastId;
-  final String? object;
+  final String object;
 
   OpenAiAssistantList({
-    this.data,
+    required this.data,
     this.firstId,
     this.hasMore,
     this.lastId,
-    this.object
+    required this.object
   });
 
   factory OpenAiAssistantList.fromJson(Map<String, dynamic> json) {
@@ -7263,7 +7536,7 @@ class OpenAiAssistantList {
       data: (() {
         final list = _sdkworkAsList(json['data']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiAssistantList.data is required');
         }
         return list
             .map((item) => (() {
@@ -7276,13 +7549,19 @@ class OpenAiAssistantList {
       firstId: json['first_id']?.toString(),
       hasMore: json['has_more'] is bool ? json['has_more'] : null,
       lastId: json['last_id']?.toString(),
-      object: json['object']?.toString()
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiAssistantList.object is required');
+        }
+        return value;
+      })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'data': data?.map((item) => item.toJson()).toList(),
+      'data': data.map((item) => item.toJson()).toList(),
       'first_id': firstId,
       'has_more': hasMore,
       'last_id': lastId,
@@ -7373,14 +7652,14 @@ class OpenAiAudioTranscription {
   final double? duration;
   final String? language;
   final List<dynamic>? segments;
-  final String? text;
+  final String text;
   final List<dynamic>? words;
 
   OpenAiAudioTranscription({
     this.duration,
     this.language,
     this.segments,
-    this.text,
+    required this.text,
     this.words
   });
 
@@ -7398,7 +7677,13 @@ class OpenAiAudioTranscription {
             .whereType<dynamic>()
             .toList();
       })(),
-      text: json['text']?.toString(),
+      text: (() {
+        final value = json['text']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiAudioTranscription.text is required');
+        }
+        return value;
+      })(),
       words: (() {
         final list = _sdkworkAsList(json['words']);
         if (list == null) {
@@ -7424,25 +7709,37 @@ class OpenAiAudioTranscription {
 }
 
 class OpenAiAudioTranscriptionMultipartRequest {
-  final String? file;
+  final String file;
   final String? language;
-  final String? model;
+  final String model;
   final String? prompt;
   final String? responseFormat;
 
   OpenAiAudioTranscriptionMultipartRequest({
-    this.file,
+    required this.file,
     this.language,
-    this.model,
+    required this.model,
     this.prompt,
     this.responseFormat
   });
 
   factory OpenAiAudioTranscriptionMultipartRequest.fromJson(Map<String, dynamic> json) {
     return OpenAiAudioTranscriptionMultipartRequest(
-      file: json['file']?.toString(),
+      file: (() {
+        final value = json['file']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiAudioTranscriptionMultipartRequest.file is required');
+        }
+        return value;
+      })(),
       language: json['language']?.toString(),
-      model: json['model']?.toString(),
+      model: (() {
+        final value = json['model']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiAudioTranscriptionMultipartRequest.model is required');
+        }
+        return value;
+      })(),
       prompt: json['prompt']?.toString(),
       responseFormat: json['response_format']?.toString()
     );
@@ -7460,16 +7757,16 @@ class OpenAiAudioTranscriptionMultipartRequest {
 }
 
 class OpenAiAudioTranscriptionRequest {
-  final OpenAiFileReferenceInput? file;
+  final OpenAiFileReferenceInput file;
   final String? language;
-  final String? model;
+  final String model;
   final String? prompt;
   final String? responseFormat;
 
   OpenAiAudioTranscriptionRequest({
-    this.file,
+    required this.file,
     this.language,
-    this.model,
+    required this.model,
     this.prompt,
     this.responseFormat
   });
@@ -7478,10 +7775,19 @@ class OpenAiAudioTranscriptionRequest {
     return OpenAiAudioTranscriptionRequest(
       file: (() {
         final map = _sdkworkAsMap(json['file']);
-        return map == null ? null : OpenAiFileReferenceInput.fromJson(map);
+        if (map == null) {
+          throw FormatException('OpenAiAudioTranscriptionRequest.file is required');
+        }
+        return OpenAiFileReferenceInput.fromJson(map);
       })(),
       language: json['language']?.toString(),
-      model: json['model']?.toString(),
+      model: (() {
+        final value = json['model']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiAudioTranscriptionRequest.model is required');
+        }
+        return value;
+      })(),
       prompt: json['prompt']?.toString(),
       responseFormat: json['response_format']?.toString()
     );
@@ -7489,7 +7795,7 @@ class OpenAiAudioTranscriptionRequest {
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'file': file?.toJson(),
+      'file': file.toJson(),
       'language': language,
       'model': model,
       'prompt': prompt,
@@ -7501,12 +7807,12 @@ class OpenAiAudioTranscriptionRequest {
 class OpenAiAudioTranslation {
   final double? duration;
   final List<dynamic>? segments;
-  final String? text;
+  final String text;
 
   OpenAiAudioTranslation({
     this.duration,
     this.segments,
-    this.text
+    required this.text
   });
 
   factory OpenAiAudioTranslation.fromJson(Map<String, dynamic> json) {
@@ -7522,7 +7828,13 @@ class OpenAiAudioTranslation {
             .whereType<dynamic>()
             .toList();
       })(),
-      text: json['text']?.toString()
+      text: (() {
+        final value = json['text']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiAudioTranslation.text is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -7536,22 +7848,34 @@ class OpenAiAudioTranslation {
 }
 
 class OpenAiAudioTranslationMultipartRequest {
-  final String? file;
-  final String? model;
+  final String file;
+  final String model;
   final String? prompt;
   final String? responseFormat;
 
   OpenAiAudioTranslationMultipartRequest({
-    this.file,
-    this.model,
+    required this.file,
+    required this.model,
     this.prompt,
     this.responseFormat
   });
 
   factory OpenAiAudioTranslationMultipartRequest.fromJson(Map<String, dynamic> json) {
     return OpenAiAudioTranslationMultipartRequest(
-      file: json['file']?.toString(),
-      model: json['model']?.toString(),
+      file: (() {
+        final value = json['file']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiAudioTranslationMultipartRequest.file is required');
+        }
+        return value;
+      })(),
+      model: (() {
+        final value = json['model']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiAudioTranslationMultipartRequest.model is required');
+        }
+        return value;
+      })(),
       prompt: json['prompt']?.toString(),
       responseFormat: json['response_format']?.toString()
     );
@@ -7568,14 +7892,14 @@ class OpenAiAudioTranslationMultipartRequest {
 }
 
 class OpenAiAudioTranslationRequest {
-  final OpenAiFileReferenceInput? file;
-  final String? model;
+  final OpenAiFileReferenceInput file;
+  final String model;
   final String? prompt;
   final String? responseFormat;
 
   OpenAiAudioTranslationRequest({
-    this.file,
-    this.model,
+    required this.file,
+    required this.model,
     this.prompt,
     this.responseFormat
   });
@@ -7584,9 +7908,18 @@ class OpenAiAudioTranslationRequest {
     return OpenAiAudioTranslationRequest(
       file: (() {
         final map = _sdkworkAsMap(json['file']);
-        return map == null ? null : OpenAiFileReferenceInput.fromJson(map);
+        if (map == null) {
+          throw FormatException('OpenAiAudioTranslationRequest.file is required');
+        }
+        return OpenAiFileReferenceInput.fromJson(map);
       })(),
-      model: json['model']?.toString(),
+      model: (() {
+        final value = json['model']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiAudioTranslationRequest.model is required');
+        }
+        return value;
+      })(),
       prompt: json['prompt']?.toString(),
       responseFormat: json['response_format']?.toString()
     );
@@ -7594,7 +7927,7 @@ class OpenAiAudioTranslationRequest {
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'file': file?.toJson(),
+      'file': file.toJson(),
       'model': model,
       'prompt': prompt,
       'response_format': responseFormat,
@@ -7606,45 +7939,45 @@ class OpenAiBatch {
   final int? cancelledAt;
   final int? cancellingAt;
   final int? completedAt;
-  final String? completionWindow;
+  final String completionWindow;
   final int? createdAt;
-  final String? endpoint;
+  final String endpoint;
   final String? errorFileId;
   final dynamic errors;
   final int? expiredAt;
   final int? expiresAt;
   final int? failedAt;
   final int? finalizingAt;
-  final String? id;
+  final String id;
   final int? inProgressAt;
-  final String? inputFileId;
+  final String inputFileId;
   final Map<String, dynamic>? metadata;
-  final String? object;
+  final String object;
   final String? outputFileId;
   final OpenAiBatchRequestCounts? requestCounts;
-  final String? status;
+  final String status;
 
   OpenAiBatch({
     this.cancelledAt,
     this.cancellingAt,
     this.completedAt,
-    this.completionWindow,
+    required this.completionWindow,
     this.createdAt,
-    this.endpoint,
+    required this.endpoint,
     this.errorFileId,
     this.errors,
     this.expiredAt,
     this.expiresAt,
     this.failedAt,
     this.finalizingAt,
-    this.id,
+    required this.id,
     this.inProgressAt,
-    this.inputFileId,
+    required this.inputFileId,
     this.metadata,
-    this.object,
+    required this.object,
     this.outputFileId,
     this.requestCounts,
-    this.status
+    required this.status
   });
 
   factory OpenAiBatch.fromJson(Map<String, dynamic> json) {
@@ -7652,18 +7985,42 @@ class OpenAiBatch {
       cancelledAt: json['cancelled_at'] is int ? json['cancelled_at'] : null,
       cancellingAt: json['cancelling_at'] is int ? json['cancelling_at'] : null,
       completedAt: json['completed_at'] is int ? json['completed_at'] : null,
-      completionWindow: json['completion_window']?.toString(),
+      completionWindow: (() {
+        final value = json['completion_window']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiBatch.completion_window is required');
+        }
+        return value;
+      })(),
       createdAt: json['created_at'] is int ? json['created_at'] : null,
-      endpoint: json['endpoint']?.toString(),
+      endpoint: (() {
+        final value = json['endpoint']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiBatch.endpoint is required');
+        }
+        return value;
+      })(),
       errorFileId: json['error_file_id']?.toString(),
       errors: json['errors']?.toString(),
       expiredAt: json['expired_at'] is int ? json['expired_at'] : null,
       expiresAt: json['expires_at'] is int ? json['expires_at'] : null,
       failedAt: json['failed_at'] is int ? json['failed_at'] : null,
       finalizingAt: json['finalizing_at'] is int ? json['finalizing_at'] : null,
-      id: json['id']?.toString(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiBatch.id is required');
+        }
+        return value;
+      })(),
       inProgressAt: json['in_progress_at'] is int ? json['in_progress_at'] : null,
-      inputFileId: json['input_file_id']?.toString(),
+      inputFileId: (() {
+        final value = json['input_file_id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiBatch.input_file_id is required');
+        }
+        return value;
+      })(),
       metadata: (() {
         final map = _sdkworkAsMap(json['metadata']);
         if (map == null) {
@@ -7678,13 +8035,25 @@ class OpenAiBatch {
         });
         return result;
       })(),
-      object: json['object']?.toString(),
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiBatch.object is required');
+        }
+        return value;
+      })(),
       outputFileId: json['output_file_id']?.toString(),
       requestCounts: (() {
         final map = _sdkworkAsMap(json['request_counts']);
         return map == null ? null : OpenAiBatchRequestCounts.fromJson(map);
       })(),
-      status: json['status']?.toString()
+      status: (() {
+        final value = json['status']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiBatch.status is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -7715,23 +8084,41 @@ class OpenAiBatch {
 }
 
 class OpenAiBatchCreateRequest {
-  final String? completionWindow;
-  final String? endpoint;
-  final String? inputFileId;
+  final String completionWindow;
+  final String endpoint;
+  final String inputFileId;
   final Map<String, dynamic>? metadata;
 
   OpenAiBatchCreateRequest({
-    this.completionWindow,
-    this.endpoint,
-    this.inputFileId,
+    required this.completionWindow,
+    required this.endpoint,
+    required this.inputFileId,
     this.metadata
   });
 
   factory OpenAiBatchCreateRequest.fromJson(Map<String, dynamic> json) {
     return OpenAiBatchCreateRequest(
-      completionWindow: json['completion_window']?.toString(),
-      endpoint: json['endpoint']?.toString(),
-      inputFileId: json['input_file_id']?.toString(),
+      completionWindow: (() {
+        final value = json['completion_window']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiBatchCreateRequest.completion_window is required');
+        }
+        return value;
+      })(),
+      endpoint: (() {
+        final value = json['endpoint']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiBatchCreateRequest.endpoint is required');
+        }
+        return value;
+      })(),
+      inputFileId: (() {
+        final value = json['input_file_id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiBatchCreateRequest.input_file_id is required');
+        }
+        return value;
+      })(),
       metadata: (() {
         final map = _sdkworkAsMap(json['metadata']);
         if (map == null) {
@@ -7760,18 +8147,18 @@ class OpenAiBatchCreateRequest {
 }
 
 class OpenAiBatchList {
-  final List<OpenAiBatch>? data;
+  final List<OpenAiBatch> data;
   final String? firstId;
   final bool? hasMore;
   final String? lastId;
-  final String? object;
+  final String object;
 
   OpenAiBatchList({
-    this.data,
+    required this.data,
     this.firstId,
     this.hasMore,
     this.lastId,
-    this.object
+    required this.object
   });
 
   factory OpenAiBatchList.fromJson(Map<String, dynamic> json) {
@@ -7779,7 +8166,7 @@ class OpenAiBatchList {
       data: (() {
         final list = _sdkworkAsList(json['data']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiBatchList.data is required');
         }
         return list
             .map((item) => (() {
@@ -7792,13 +8179,19 @@ class OpenAiBatchList {
       firstId: json['first_id']?.toString(),
       hasMore: json['has_more'] is bool ? json['has_more'] : null,
       lastId: json['last_id']?.toString(),
-      object: json['object']?.toString()
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiBatchList.object is required');
+        }
+        return value;
+      })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'data': data?.map((item) => item.toJson()).toList(),
+      'data': data.map((item) => item.toJson()).toList(),
       'first_id': firstId,
       'has_more': hasMore,
       'last_id': lastId,
@@ -7840,18 +8233,18 @@ class OpenAiCertificate {
   final String? content;
   final int? createdAt;
   final int? expiresAt;
-  final String? id;
+  final String id;
   final String? name;
-  final String? object;
+  final String object;
 
   OpenAiCertificate({
     this.active,
     this.content,
     this.createdAt,
     this.expiresAt,
-    this.id,
+    required this.id,
     this.name,
-    this.object
+    required this.object
   });
 
   factory OpenAiCertificate.fromJson(Map<String, dynamic> json) {
@@ -7860,9 +8253,21 @@ class OpenAiCertificate {
       content: json['content']?.toString(),
       createdAt: json['created_at'] is int ? json['created_at'] : null,
       expiresAt: json['expires_at'] is int ? json['expires_at'] : null,
-      id: json['id']?.toString(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiCertificate.id is required');
+        }
+        return value;
+      })(),
       name: json['name']?.toString(),
-      object: json['object']?.toString()
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiCertificate.object is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -7880,10 +8285,10 @@ class OpenAiCertificate {
 }
 
 class OpenAiCertificateActivationRequest {
-  final List<String>? certificateIds;
+  final List<String> certificateIds;
 
   OpenAiCertificateActivationRequest({
-    this.certificateIds
+    required this.certificateIds
   });
 
   factory OpenAiCertificateActivationRequest.fromJson(Map<String, dynamic> json) {
@@ -7891,7 +8296,7 @@ class OpenAiCertificateActivationRequest {
       certificateIds: (() {
         final list = _sdkworkAsList(json['certificate_ids']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiCertificateActivationRequest.certificate_ids is required');
         }
         return list
             .map((item) => item?.toString())
@@ -7903,24 +8308,24 @@ class OpenAiCertificateActivationRequest {
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'certificate_ids': certificateIds?.map((item) => item).toList(),
+      'certificate_ids': certificateIds.map((item) => item).toList(),
     };
   }
 }
 
 class OpenAiCertificateList {
-  final List<OpenAiCertificate>? data;
+  final List<OpenAiCertificate> data;
   final String? firstId;
   final bool? hasMore;
   final String? lastId;
-  final String? object;
+  final String object;
 
   OpenAiCertificateList({
-    this.data,
+    required this.data,
     this.firstId,
     this.hasMore,
     this.lastId,
-    this.object
+    required this.object
   });
 
   factory OpenAiCertificateList.fromJson(Map<String, dynamic> json) {
@@ -7928,7 +8333,7 @@ class OpenAiCertificateList {
       data: (() {
         final list = _sdkworkAsList(json['data']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiCertificateList.data is required');
         }
         return list
             .map((item) => (() {
@@ -7941,13 +8346,19 @@ class OpenAiCertificateList {
       firstId: json['first_id']?.toString(),
       hasMore: json['has_more'] is bool ? json['has_more'] : null,
       lastId: json['last_id']?.toString(),
-      object: json['object']?.toString()
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiCertificateList.object is required');
+        }
+        return value;
+      })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'data': data?.map((item) => item.toJson()).toList(),
+      'data': data.map((item) => item.toJson()).toList(),
       'first_id': firstId,
       'has_more': hasMore,
       'last_id': lastId,
@@ -7958,13 +8369,13 @@ class OpenAiCertificateList {
 
 class OpenAiCertificateUploadMultipartRequest {
   final String? certificate;
-  final String? file;
+  final String file;
   final String? metadata;
   final String? name;
 
   OpenAiCertificateUploadMultipartRequest({
     this.certificate,
-    this.file,
+    required this.file,
     this.metadata,
     this.name
   });
@@ -7972,7 +8383,13 @@ class OpenAiCertificateUploadMultipartRequest {
   factory OpenAiCertificateUploadMultipartRequest.fromJson(Map<String, dynamic> json) {
     return OpenAiCertificateUploadMultipartRequest(
       certificate: json['certificate']?.toString(),
-      file: json['file']?.toString(),
+      file: (() {
+        final value = json['file']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiCertificateUploadMultipartRequest.file is required');
+        }
+        return value;
+      })(),
       metadata: json['metadata']?.toString(),
       name: json['name']?.toString()
     );
@@ -8013,22 +8430,22 @@ class OpenAiChatAudioConfig {
 }
 
 class OpenAiChatCompletion {
-  final List<OpenAiChatCompletionChoice>? choices;
-  final int? created;
-  final String? id;
-  final String? model;
-  final String? object;
+  final List<OpenAiChatCompletionChoice> choices;
+  final int created;
+  final String id;
+  final String model;
+  final String object;
   final String? requestId;
   final String? serviceTier;
   final String? systemFingerprint;
   final OpenAiTokenUsage? usage;
 
   OpenAiChatCompletion({
-    this.choices,
-    this.created,
-    this.id,
-    this.model,
-    this.object,
+    required this.choices,
+    required this.created,
+    required this.id,
+    required this.model,
+    required this.object,
     this.requestId,
     this.serviceTier,
     this.systemFingerprint,
@@ -8040,7 +8457,7 @@ class OpenAiChatCompletion {
       choices: (() {
         final list = _sdkworkAsList(json['choices']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiChatCompletion.choices is required');
         }
         return list
             .map((item) => (() {
@@ -8050,10 +8467,34 @@ class OpenAiChatCompletion {
             .whereType<OpenAiChatCompletionChoice>()
             .toList();
       })(),
-      created: json['created'] is int ? json['created'] : null,
-      id: json['id']?.toString(),
-      model: json['model']?.toString(),
-      object: json['object']?.toString(),
+      created: (() {
+        final value = json['created'];
+        if (value is! int) {
+          throw FormatException('OpenAiChatCompletion.created is required');
+        }
+        return value;
+      })(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiChatCompletion.id is required');
+        }
+        return value;
+      })(),
+      model: (() {
+        final value = json['model']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiChatCompletion.model is required');
+        }
+        return value;
+      })(),
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiChatCompletion.object is required');
+        }
+        return value;
+      })(),
       requestId: json['request_id']?.toString(),
       serviceTier: json['service_tier']?.toString(),
       systemFingerprint: json['system_fingerprint']?.toString(),
@@ -8066,7 +8507,7 @@ class OpenAiChatCompletion {
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'choices': choices?.map((item) => item.toJson()).toList(),
+      'choices': choices.map((item) => item.toJson()).toList(),
       'created': created,
       'id': id,
       'model': model,
@@ -8081,28 +8522,37 @@ class OpenAiChatCompletion {
 
 class OpenAiChatCompletionChoice {
   final String? finishReason;
-  final int? index;
+  final int index;
   final OpenAiChoiceLogprobs? logprobs;
-  final OpenAiChatMessage? message;
+  final OpenAiChatMessage message;
 
   OpenAiChatCompletionChoice({
     this.finishReason,
-    this.index,
+    required this.index,
     this.logprobs,
-    this.message
+    required this.message
   });
 
   factory OpenAiChatCompletionChoice.fromJson(Map<String, dynamic> json) {
     return OpenAiChatCompletionChoice(
       finishReason: json['finish_reason']?.toString(),
-      index: json['index'] is int ? json['index'] : null,
+      index: (() {
+        final value = json['index'];
+        if (value is! int) {
+          throw FormatException('OpenAiChatCompletionChoice.index is required');
+        }
+        return value;
+      })(),
       logprobs: (() {
         final map = _sdkworkAsMap(json['logprobs']);
         return map == null ? null : OpenAiChoiceLogprobs.fromJson(map);
       })(),
       message: (() {
         final map = _sdkworkAsMap(json['message']);
-        return map == null ? null : OpenAiChatMessage.fromJson(map);
+        if (map == null) {
+          throw FormatException('OpenAiChatCompletionChoice.message is required');
+        }
+        return OpenAiChatMessage.fromJson(map);
       })()
     );
   }
@@ -8112,24 +8562,24 @@ class OpenAiChatCompletionChoice {
       'finish_reason': finishReason,
       'index': index,
       'logprobs': logprobs?.toJson(),
-      'message': message?.toJson(),
+      'message': message.toJson(),
     };
   }
 }
 
 class OpenAiChatCompletionList {
-  final List<OpenAiChatCompletion>? data;
+  final List<OpenAiChatCompletion> data;
   final String? firstId;
   final bool? hasMore;
   final String? lastId;
-  final String? object;
+  final String object;
 
   OpenAiChatCompletionList({
-    this.data,
+    required this.data,
     this.firstId,
     this.hasMore,
     this.lastId,
-    this.object
+    required this.object
   });
 
   factory OpenAiChatCompletionList.fromJson(Map<String, dynamic> json) {
@@ -8137,7 +8587,7 @@ class OpenAiChatCompletionList {
       data: (() {
         final list = _sdkworkAsList(json['data']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiChatCompletionList.data is required');
         }
         return list
             .map((item) => (() {
@@ -8150,13 +8600,19 @@ class OpenAiChatCompletionList {
       firstId: json['first_id']?.toString(),
       hasMore: json['has_more'] is bool ? json['has_more'] : null,
       lastId: json['last_id']?.toString(),
-      object: json['object']?.toString()
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiChatCompletionList.object is required');
+        }
+        return value;
+      })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'data': data?.map((item) => item.toJson()).toList(),
+      'data': data.map((item) => item.toJson()).toList(),
       'first_id': firstId,
       'has_more': hasMore,
       'last_id': lastId,
@@ -8166,18 +8622,18 @@ class OpenAiChatCompletionList {
 }
 
 class OpenAiChatCompletionMessageList {
-  final List<OpenAiChatMessage>? data;
+  final List<OpenAiChatMessage> data;
   final String? firstId;
   final bool? hasMore;
   final String? lastId;
-  final String? object;
+  final String object;
 
   OpenAiChatCompletionMessageList({
-    this.data,
+    required this.data,
     this.firstId,
     this.hasMore,
     this.lastId,
-    this.object
+    required this.object
   });
 
   factory OpenAiChatCompletionMessageList.fromJson(Map<String, dynamic> json) {
@@ -8185,7 +8641,7 @@ class OpenAiChatCompletionMessageList {
       data: (() {
         final list = _sdkworkAsList(json['data']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiChatCompletionMessageList.data is required');
         }
         return list
             .map((item) => (() {
@@ -8198,13 +8654,19 @@ class OpenAiChatCompletionMessageList {
       firstId: json['first_id']?.toString(),
       hasMore: json['has_more'] is bool ? json['has_more'] : null,
       lastId: json['last_id']?.toString(),
-      object: json['object']?.toString()
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiChatCompletionMessageList.object is required');
+        }
+        return value;
+      })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'data': data?.map((item) => item.toJson()).toList(),
+      'data': data.map((item) => item.toJson()).toList(),
       'first_id': firstId,
       'has_more': hasMore,
       'last_id': lastId,
@@ -8222,10 +8684,10 @@ class OpenAiChatCompletionRequest {
   final bool? logprobs;
   final int? maxCompletionTokens;
   final int? maxTokens;
-  final List<OpenAiChatMessage>? messages;
+  final List<OpenAiChatMessage> messages;
   final Map<String, dynamic>? metadata;
   final List<String>? modalities;
-  final String? model;
+  final String model;
   final int? n;
   final bool? parallelToolCalls;
   final OpenAiPredictionConfig? prediction;
@@ -8254,10 +8716,10 @@ class OpenAiChatCompletionRequest {
     this.logprobs,
     this.maxCompletionTokens,
     this.maxTokens,
-    this.messages,
+    required this.messages,
     this.metadata,
     this.modalities,
-    this.model,
+    required this.model,
     this.n,
     this.parallelToolCalls,
     this.prediction,
@@ -8322,7 +8784,7 @@ class OpenAiChatCompletionRequest {
       messages: (() {
         final list = _sdkworkAsList(json['messages']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiChatCompletionRequest.messages is required');
         }
         return list
             .map((item) => (() {
@@ -8356,7 +8818,13 @@ class OpenAiChatCompletionRequest {
             .whereType<String>()
             .toList();
       })(),
-      model: json['model']?.toString(),
+      model: (() {
+        final value = json['model']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiChatCompletionRequest.model is required');
+        }
+        return value;
+      })(),
       n: json['n'] is int ? json['n'] : null,
       parallelToolCalls: json['parallel_tool_calls'] is bool ? json['parallel_tool_calls'] : null,
       prediction: (() {
@@ -8412,7 +8880,7 @@ class OpenAiChatCompletionRequest {
       'logprobs': logprobs,
       'max_completion_tokens': maxCompletionTokens,
       'max_tokens': maxTokens,
-      'messages': messages?.map((item) => item.toJson()).toList(),
+      'messages': messages.map((item) => item.toJson()).toList(),
       'metadata': metadata?.map((key, item) => MapEntry(key, item)),
       'modalities': modalities?.map((item) => item).toList(),
       'model': model,
@@ -8476,14 +8944,14 @@ class OpenAiChatContentPart {
   final OpenAiChatImageUrl? imageUrl;
   final OpenAiChatInputAudio? inputAudio;
   final String? text;
-  final String? type;
+  final String type;
 
   OpenAiChatContentPart({
     this.file,
     this.imageUrl,
     this.inputAudio,
     this.text,
-    this.type
+    required this.type
   });
 
   factory OpenAiChatContentPart.fromJson(Map<String, dynamic> json) {
@@ -8501,7 +8969,13 @@ class OpenAiChatContentPart {
         return map == null ? null : OpenAiChatInputAudio.fromJson(map);
       })(),
       text: json['text']?.toString(),
-      type: json['type']?.toString()
+      type: (() {
+        final value = json['type']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiChatContentPart.type is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -8546,17 +9020,23 @@ class OpenAiChatFile {
 
 class OpenAiChatImageUrl {
   final String? detail;
-  final String? url;
+  final String url;
 
   OpenAiChatImageUrl({
     this.detail,
-    this.url
+    required this.url
   });
 
   factory OpenAiChatImageUrl.fromJson(Map<String, dynamic> json) {
     return OpenAiChatImageUrl(
       detail: json['detail']?.toString(),
-      url: json['url']?.toString()
+      url: (() {
+        final value = json['url']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiChatImageUrl.url is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -8569,18 +9049,30 @@ class OpenAiChatImageUrl {
 }
 
 class OpenAiChatInputAudio {
-  final String? data;
-  final String? format;
+  final String data;
+  final String format;
 
   OpenAiChatInputAudio({
-    this.data,
-    this.format
+    required this.data,
+    required this.format
   });
 
   factory OpenAiChatInputAudio.fromJson(Map<String, dynamic> json) {
     return OpenAiChatInputAudio(
-      data: json['data']?.toString(),
-      format: json['format']?.toString()
+      data: (() {
+        final value = json['data']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiChatInputAudio.data is required');
+        }
+        return value;
+      })(),
+      format: (() {
+        final value = json['format']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiChatInputAudio.format is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -8597,7 +9089,7 @@ class OpenAiChatMessage {
   final OpenAiFunctionCall? functionCall;
   final String? name;
   final String? refusal;
-  final String? role;
+  final String role;
   final String? toolCallId;
   final List<OpenAiToolCall>? toolCalls;
 
@@ -8606,7 +9098,7 @@ class OpenAiChatMessage {
     this.functionCall,
     this.name,
     this.refusal,
-    this.role,
+    required this.role,
     this.toolCallId,
     this.toolCalls
   });
@@ -8620,7 +9112,13 @@ class OpenAiChatMessage {
       })(),
       name: json['name']?.toString(),
       refusal: json['refusal']?.toString(),
-      role: json['role']?.toString(),
+      role: (() {
+        final value = json['role']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiChatMessage.role is required');
+        }
+        return value;
+      })(),
       toolCallId: json['tool_call_id']?.toString(),
       toolCalls: (() {
         final list = _sdkworkAsList(json['tool_calls']);
@@ -8700,20 +9198,20 @@ class OpenAiChoiceLogprobs {
 }
 
 class OpenAiCompletion {
-  final List<CreateCompletionChoice>? choices;
-  final int? created;
-  final String? id;
-  final String? model;
-  final String? object;
+  final List<CreateCompletionChoice> choices;
+  final int created;
+  final String id;
+  final String model;
+  final String object;
   final String? systemFingerprint;
   final OpenAiTokenUsage? usage;
 
   OpenAiCompletion({
-    this.choices,
-    this.created,
-    this.id,
-    this.model,
-    this.object,
+    required this.choices,
+    required this.created,
+    required this.id,
+    required this.model,
+    required this.object,
     this.systemFingerprint,
     this.usage
   });
@@ -8723,7 +9221,7 @@ class OpenAiCompletion {
       choices: (() {
         final list = _sdkworkAsList(json['choices']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiCompletion.choices is required');
         }
         return list
             .map((item) => (() {
@@ -8733,10 +9231,34 @@ class OpenAiCompletion {
             .whereType<CreateCompletionChoice>()
             .toList();
       })(),
-      created: json['created'] is int ? json['created'] : null,
-      id: json['id']?.toString(),
-      model: json['model']?.toString(),
-      object: json['object']?.toString(),
+      created: (() {
+        final value = json['created'];
+        if (value is! int) {
+          throw FormatException('OpenAiCompletion.created is required');
+        }
+        return value;
+      })(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiCompletion.id is required');
+        }
+        return value;
+      })(),
+      model: (() {
+        final value = json['model']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiCompletion.model is required');
+        }
+        return value;
+      })(),
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiCompletion.object is required');
+        }
+        return value;
+      })(),
       systemFingerprint: json['system_fingerprint']?.toString(),
       usage: (() {
         final map = _sdkworkAsMap(json['usage']);
@@ -8747,7 +9269,7 @@ class OpenAiCompletion {
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'choices': choices?.map((item) => item.toJson()).toList(),
+      'choices': choices.map((item) => item.toJson()).toList(),
       'created': created,
       'id': id,
       'model': model,
@@ -8765,7 +9287,7 @@ class OpenAiCompletionCreateRequest {
   final Map<String, double>? logitBias;
   final int? logprobs;
   final int? maxTokens;
-  final String? model;
+  final String model;
   final int? n;
   final double? presencePenalty;
   final dynamic prompt;
@@ -8784,10 +9306,10 @@ class OpenAiCompletionCreateRequest {
     this.logitBias,
     this.logprobs,
     this.maxTokens,
-    this.model,
+    required this.model,
     this.n,
     this.presencePenalty,
-    this.prompt,
+    required this.prompt,
     this.seed,
     this.stop,
     this.stream,
@@ -8818,10 +9340,22 @@ class OpenAiCompletionCreateRequest {
       })(),
       logprobs: json['logprobs'] is int ? json['logprobs'] : null,
       maxTokens: json['max_tokens'] is int ? json['max_tokens'] : null,
-      model: json['model']?.toString(),
+      model: (() {
+        final value = json['model']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiCompletionCreateRequest.model is required');
+        }
+        return value;
+      })(),
       n: json['n'] is int ? json['n'] : null,
       presencePenalty: json['presence_penalty'] is num ? json['presence_penalty'].toDouble() : null,
-      prompt: json['prompt']?.toString(),
+      prompt: (() {
+        final value = json['prompt']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiCompletionCreateRequest.prompt is required');
+        }
+        return value;
+      })(),
       seed: json['seed'] is int ? json['seed'] : null,
       stop: json['stop']?.toString(),
       stream: json['stream'] is bool ? json['stream'] : null,
@@ -8888,33 +9422,45 @@ class OpenAiCompletionTokensDetails {
 }
 
 class OpenAiContainer {
-  final int? createdAt;
+  final int createdAt;
   final int? expiresAt;
-  final String? id;
+  final String id;
   final int? lastActiveAt;
   final String? memoryLimit;
   final Map<String, dynamic>? metadata;
   final String? name;
-  final String? object;
-  final String? status;
+  final String object;
+  final String status;
 
   OpenAiContainer({
-    this.createdAt,
+    required this.createdAt,
     this.expiresAt,
-    this.id,
+    required this.id,
     this.lastActiveAt,
     this.memoryLimit,
     this.metadata,
     this.name,
-    this.object,
-    this.status
+    required this.object,
+    required this.status
   });
 
   factory OpenAiContainer.fromJson(Map<String, dynamic> json) {
     return OpenAiContainer(
-      createdAt: json['created_at'] is int ? json['created_at'] : null,
+      createdAt: (() {
+        final value = json['created_at'];
+        if (value is! int) {
+          throw FormatException('OpenAiContainer.created_at is required');
+        }
+        return value;
+      })(),
       expiresAt: json['expires_at'] is int ? json['expires_at'] : null,
-      id: json['id']?.toString(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiContainer.id is required');
+        }
+        return value;
+      })(),
       lastActiveAt: json['last_active_at'] is int ? json['last_active_at'] : null,
       memoryLimit: json['memory_limit']?.toString(),
       metadata: (() {
@@ -8932,8 +9478,20 @@ class OpenAiContainer {
         return result;
       })(),
       name: json['name']?.toString(),
-      object: json['object']?.toString(),
-      status: json['status']?.toString()
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiContainer.object is required');
+        }
+        return value;
+      })(),
+      status: (() {
+        final value = json['status']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiContainer.status is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -9009,22 +9567,22 @@ class OpenAiContainerCreateRequest {
 class OpenAiContainerFile {
   final int? bytes;
   final String? containerId;
-  final int? createdAt;
+  final int createdAt;
   final String? filename;
-  final String? id;
+  final String id;
   final Map<String, dynamic>? metadata;
-  final String? object;
+  final String object;
   final String? path;
   final String? purpose;
 
   OpenAiContainerFile({
     this.bytes,
     this.containerId,
-    this.createdAt,
+    required this.createdAt,
     this.filename,
-    this.id,
+    required this.id,
     this.metadata,
-    this.object,
+    required this.object,
     this.path,
     this.purpose
   });
@@ -9033,9 +9591,21 @@ class OpenAiContainerFile {
     return OpenAiContainerFile(
       bytes: json['bytes'] is int ? json['bytes'] : null,
       containerId: json['container_id']?.toString(),
-      createdAt: json['created_at'] is int ? json['created_at'] : null,
+      createdAt: (() {
+        final value = json['created_at'];
+        if (value is! int) {
+          throw FormatException('OpenAiContainerFile.created_at is required');
+        }
+        return value;
+      })(),
       filename: json['filename']?.toString(),
-      id: json['id']?.toString(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiContainerFile.id is required');
+        }
+        return value;
+      })(),
       metadata: (() {
         final map = _sdkworkAsMap(json['metadata']);
         if (map == null) {
@@ -9050,7 +9620,13 @@ class OpenAiContainerFile {
         });
         return result;
       })(),
-      object: json['object']?.toString(),
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiContainerFile.object is required');
+        }
+        return value;
+      })(),
       path: json['path']?.toString(),
       purpose: json['purpose']?.toString()
     );
@@ -9072,19 +9648,25 @@ class OpenAiContainerFile {
 }
 
 class OpenAiContainerFileCreateMultipartRequest {
-  final String? file;
+  final String file;
   final String? metadata;
   final String? purpose;
 
   OpenAiContainerFileCreateMultipartRequest({
-    this.file,
+    required this.file,
     this.metadata,
     this.purpose
   });
 
   factory OpenAiContainerFileCreateMultipartRequest.fromJson(Map<String, dynamic> json) {
     return OpenAiContainerFileCreateMultipartRequest(
-      file: json['file']?.toString(),
+      file: (() {
+        final value = json['file']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiContainerFileCreateMultipartRequest.file is required');
+        }
+        return value;
+      })(),
       metadata: json['metadata']?.toString(),
       purpose: json['purpose']?.toString()
     );
@@ -9100,18 +9682,18 @@ class OpenAiContainerFileCreateMultipartRequest {
 }
 
 class OpenAiContainerFileList {
-  final List<OpenAiContainerFile>? data;
+  final List<OpenAiContainerFile> data;
   final String? firstId;
   final bool? hasMore;
   final String? lastId;
-  final String? object;
+  final String object;
 
   OpenAiContainerFileList({
-    this.data,
+    required this.data,
     this.firstId,
     this.hasMore,
     this.lastId,
-    this.object
+    required this.object
   });
 
   factory OpenAiContainerFileList.fromJson(Map<String, dynamic> json) {
@@ -9119,7 +9701,7 @@ class OpenAiContainerFileList {
       data: (() {
         final list = _sdkworkAsList(json['data']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiContainerFileList.data is required');
         }
         return list
             .map((item) => (() {
@@ -9132,13 +9714,19 @@ class OpenAiContainerFileList {
       firstId: json['first_id']?.toString(),
       hasMore: json['has_more'] is bool ? json['has_more'] : null,
       lastId: json['last_id']?.toString(),
-      object: json['object']?.toString()
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiContainerFileList.object is required');
+        }
+        return value;
+      })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'data': data?.map((item) => item.toJson()).toList(),
+      'data': data.map((item) => item.toJson()).toList(),
       'first_id': firstId,
       'has_more': hasMore,
       'last_id': lastId,
@@ -9148,18 +9736,18 @@ class OpenAiContainerFileList {
 }
 
 class OpenAiContainerList {
-  final List<OpenAiContainer>? data;
+  final List<OpenAiContainer> data;
   final String? firstId;
   final bool? hasMore;
   final String? lastId;
-  final String? object;
+  final String object;
 
   OpenAiContainerList({
-    this.data,
+    required this.data,
     this.firstId,
     this.hasMore,
     this.lastId,
-    this.object
+    required this.object
   });
 
   factory OpenAiContainerList.fromJson(Map<String, dynamic> json) {
@@ -9167,7 +9755,7 @@ class OpenAiContainerList {
       data: (() {
         final list = _sdkworkAsList(json['data']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiContainerList.data is required');
         }
         return list
             .map((item) => (() {
@@ -9180,13 +9768,19 @@ class OpenAiContainerList {
       firstId: json['first_id']?.toString(),
       hasMore: json['has_more'] is bool ? json['has_more'] : null,
       lastId: json['last_id']?.toString(),
-      object: json['object']?.toString()
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiContainerList.object is required');
+        }
+        return value;
+      })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'data': data?.map((item) => item.toJson()).toList(),
+      'data': data.map((item) => item.toJson()).toList(),
       'first_id': firstId,
       'has_more': hasMore,
       'last_id': lastId,
@@ -9196,22 +9790,34 @@ class OpenAiContainerList {
 }
 
 class OpenAiConversation {
-  final int? createdAt;
-  final String? id;
+  final int createdAt;
+  final String id;
   final Map<String, String>? metadata;
-  final String? object;
+  final String object;
 
   OpenAiConversation({
-    this.createdAt,
-    this.id,
+    required this.createdAt,
+    required this.id,
     this.metadata,
-    this.object
+    required this.object
   });
 
   factory OpenAiConversation.fromJson(Map<String, dynamic> json) {
     return OpenAiConversation(
-      createdAt: json['created_at'] is int ? json['created_at'] : null,
-      id: json['id']?.toString(),
+      createdAt: (() {
+        final value = json['created_at'];
+        if (value is! int) {
+          throw FormatException('OpenAiConversation.created_at is required');
+        }
+        return value;
+      })(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiConversation.id is required');
+        }
+        return value;
+      })(),
       metadata: (() {
         final map = _sdkworkAsMap(json['metadata']);
         if (map == null) {
@@ -9226,7 +9832,13 @@ class OpenAiConversation {
         });
         return result;
       })(),
-      object: json['object']?.toString()
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiConversation.object is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -9244,13 +9856,13 @@ class OpenAiConversationContentPart {
   final String? fileId;
   final String? imageUrl;
   final String? text;
-  final String? type;
+  final String type;
 
   OpenAiConversationContentPart({
     this.fileId,
     this.imageUrl,
     this.text,
-    this.type
+    required this.type
   });
 
   factory OpenAiConversationContentPart.fromJson(Map<String, dynamic> json) {
@@ -9258,7 +9870,13 @@ class OpenAiConversationContentPart {
       fileId: json['file_id']?.toString(),
       imageUrl: json['image_url']?.toString(),
       text: json['text']?.toString(),
-      type: json['type']?.toString()
+      type: (() {
+        final value = json['type']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiConversationContentPart.type is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -9324,22 +9942,22 @@ class OpenAiConversationCreateRequest {
 class OpenAiConversationItem {
   final List<OpenAiConversationContentPart>? content;
   final int? createdAt;
-  final String? id;
+  final String id;
   final Map<String, String>? metadata;
-  final String? object;
+  final String object;
   final String? role;
   final String? status;
-  final String? type;
+  final String type;
 
   OpenAiConversationItem({
     this.content,
     this.createdAt,
-    this.id,
+    required this.id,
     this.metadata,
-    this.object,
+    required this.object,
     this.role,
     this.status,
-    this.type
+    required this.type
   });
 
   factory OpenAiConversationItem.fromJson(Map<String, dynamic> json) {
@@ -9358,7 +9976,13 @@ class OpenAiConversationItem {
             .toList();
       })(),
       createdAt: json['created_at'] is int ? json['created_at'] : null,
-      id: json['id']?.toString(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiConversationItem.id is required');
+        }
+        return value;
+      })(),
       metadata: (() {
         final map = _sdkworkAsMap(json['metadata']);
         if (map == null) {
@@ -9373,10 +9997,22 @@ class OpenAiConversationItem {
         });
         return result;
       })(),
-      object: json['object']?.toString(),
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiConversationItem.object is required');
+        }
+        return value;
+      })(),
       role: json['role']?.toString(),
       status: json['status']?.toString(),
-      type: json['type']?.toString()
+      type: (() {
+        final value = json['type']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiConversationItem.type is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -9398,13 +10034,13 @@ class OpenAiConversationItemCreateRequest {
   final List<OpenAiConversationContentPart>? content;
   final Map<String, String>? metadata;
   final String? role;
-  final String? type;
+  final String type;
 
   OpenAiConversationItemCreateRequest({
     this.content,
     this.metadata,
     this.role,
-    this.type
+    required this.type
   });
 
   factory OpenAiConversationItemCreateRequest.fromJson(Map<String, dynamic> json) {
@@ -9437,7 +10073,13 @@ class OpenAiConversationItemCreateRequest {
         return result;
       })(),
       role: json['role']?.toString(),
-      type: json['type']?.toString()
+      type: (() {
+        final value = json['type']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiConversationItemCreateRequest.type is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -9452,18 +10094,18 @@ class OpenAiConversationItemCreateRequest {
 }
 
 class OpenAiConversationItemList {
-  final List<OpenAiConversationItem>? data;
+  final List<OpenAiConversationItem> data;
   final String? firstId;
   final bool? hasMore;
   final String? lastId;
-  final String? object;
+  final String object;
 
   OpenAiConversationItemList({
-    this.data,
+    required this.data,
     this.firstId,
     this.hasMore,
     this.lastId,
-    this.object
+    required this.object
   });
 
   factory OpenAiConversationItemList.fromJson(Map<String, dynamic> json) {
@@ -9471,7 +10113,7 @@ class OpenAiConversationItemList {
       data: (() {
         final list = _sdkworkAsList(json['data']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiConversationItemList.data is required');
         }
         return list
             .map((item) => (() {
@@ -9484,13 +10126,19 @@ class OpenAiConversationItemList {
       firstId: json['first_id']?.toString(),
       hasMore: json['has_more'] is bool ? json['has_more'] : null,
       lastId: json['last_id']?.toString(),
-      object: json['object']?.toString()
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiConversationItemList.object is required');
+        }
+        return value;
+      })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'data': data?.map((item) => item.toJson()).toList(),
+      'data': data.map((item) => item.toJson()).toList(),
       'first_id': firstId,
       'has_more': hasMore,
       'last_id': lastId,
@@ -9500,18 +10148,18 @@ class OpenAiConversationItemList {
 }
 
 class OpenAiConversationList {
-  final List<OpenAiConversation>? data;
+  final List<OpenAiConversation> data;
   final String? firstId;
   final bool? hasMore;
   final String? lastId;
-  final String? object;
+  final String object;
 
   OpenAiConversationList({
-    this.data,
+    required this.data,
     this.firstId,
     this.hasMore,
     this.lastId,
-    this.object
+    required this.object
   });
 
   factory OpenAiConversationList.fromJson(Map<String, dynamic> json) {
@@ -9519,7 +10167,7 @@ class OpenAiConversationList {
       data: (() {
         final list = _sdkworkAsList(json['data']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiConversationList.data is required');
         }
         return list
             .map((item) => (() {
@@ -9532,13 +10180,19 @@ class OpenAiConversationList {
       firstId: json['first_id']?.toString(),
       hasMore: json['has_more'] is bool ? json['has_more'] : null,
       lastId: json['last_id']?.toString(),
-      object: json['object']?.toString()
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiConversationList.object is required');
+        }
+        return value;
+      })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'data': data?.map((item) => item.toJson()).toList(),
+      'data': data.map((item) => item.toJson()).toList(),
       'first_id': firstId,
       'has_more': hasMore,
       'last_id': lastId,
@@ -9602,13 +10256,13 @@ class OpenAiConversationUpdateRequest {
 
 class OpenAiEmbedding {
   final dynamic embedding;
-  final int? index;
-  final String? object;
+  final int index;
+  final String object;
 
   OpenAiEmbedding({
-    this.embedding,
-    this.index,
-    this.object
+    required this.embedding,
+    required this.index,
+    required this.object
   });
 
   factory OpenAiEmbedding.fromJson(Map<String, dynamic> json) {
@@ -9616,21 +10270,33 @@ class OpenAiEmbedding {
       embedding: (() {
         final list = _sdkworkAsList(json['embedding']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiEmbedding.embedding is required');
         }
         return list
             .map((item) => item is num ? item.toDouble() : null)
             .whereType<double>()
             .toList();
       })(),
-      index: json['index'] is int ? json['index'] : null,
-      object: json['object']?.toString()
+      index: (() {
+        final value = json['index'];
+        if (value is! int) {
+          throw FormatException('OpenAiEmbedding.index is required');
+        }
+        return value;
+      })(),
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiEmbedding.object is required');
+        }
+        return value;
+      })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'embedding': embedding?.map((item) => item).toList(),
+      'embedding': embedding.map((item) => item).toList(),
       'index': index,
       'object': object,
     };
@@ -9638,16 +10304,16 @@ class OpenAiEmbedding {
 }
 
 class OpenAiEmbeddingList {
-  final List<OpenAiEmbedding>? data;
+  final List<OpenAiEmbedding> data;
   final String? model;
-  final String? object;
-  final OpenAiEmbeddingUsage? usage;
+  final String object;
+  final OpenAiEmbeddingUsage usage;
 
   OpenAiEmbeddingList({
-    this.data,
+    required this.data,
     this.model,
-    this.object,
-    this.usage
+    required this.object,
+    required this.usage
   });
 
   factory OpenAiEmbeddingList.fromJson(Map<String, dynamic> json) {
@@ -9655,7 +10321,7 @@ class OpenAiEmbeddingList {
       data: (() {
         final list = _sdkworkAsList(json['data']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiEmbeddingList.data is required');
         }
         return list
             .map((item) => (() {
@@ -9666,37 +10332,58 @@ class OpenAiEmbeddingList {
             .toList();
       })(),
       model: json['model']?.toString(),
-      object: json['object']?.toString(),
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiEmbeddingList.object is required');
+        }
+        return value;
+      })(),
       usage: (() {
         final map = _sdkworkAsMap(json['usage']);
-        return map == null ? null : OpenAiEmbeddingUsage.fromJson(map);
+        if (map == null) {
+          throw FormatException('OpenAiEmbeddingList.usage is required');
+        }
+        return OpenAiEmbeddingUsage.fromJson(map);
       })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'data': data?.map((item) => item.toJson()).toList(),
+      'data': data.map((item) => item.toJson()).toList(),
       'model': model,
       'object': object,
-      'usage': usage?.toJson(),
+      'usage': usage.toJson(),
     };
   }
 }
 
 class OpenAiEmbeddingUsage {
-  final int? promptTokens;
-  final int? totalTokens;
+  final int promptTokens;
+  final int totalTokens;
 
   OpenAiEmbeddingUsage({
-    this.promptTokens,
-    this.totalTokens
+    required this.promptTokens,
+    required this.totalTokens
   });
 
   factory OpenAiEmbeddingUsage.fromJson(Map<String, dynamic> json) {
     return OpenAiEmbeddingUsage(
-      promptTokens: json['prompt_tokens'] is int ? json['prompt_tokens'] : null,
-      totalTokens: json['total_tokens'] is int ? json['total_tokens'] : null
+      promptTokens: (() {
+        final value = json['prompt_tokens'];
+        if (value is! int) {
+          throw FormatException('OpenAiEmbeddingUsage.prompt_tokens is required');
+        }
+        return value;
+      })(),
+      totalTokens: (() {
+        final value = json['total_tokens'];
+        if (value is! int) {
+          throw FormatException('OpenAiEmbeddingUsage.total_tokens is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -9712,14 +10399,14 @@ class OpenAiEmbeddingsRequest {
   final int? dimensions;
   final String? encodingFormat;
   final dynamic input;
-  final String? model;
+  final String model;
   final String? user;
 
   OpenAiEmbeddingsRequest({
     this.dimensions,
     this.encodingFormat,
-    this.input,
-    this.model,
+    required this.input,
+    required this.model,
     this.user
   });
 
@@ -9727,8 +10414,20 @@ class OpenAiEmbeddingsRequest {
     return OpenAiEmbeddingsRequest(
       dimensions: json['dimensions'] is int ? json['dimensions'] : null,
       encodingFormat: json['encoding_format']?.toString(),
-      input: json['input']?.toString(),
-      model: json['model']?.toString(),
+      input: (() {
+        final value = json['input']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiEmbeddingsRequest.input is required');
+        }
+        return value;
+      })(),
+      model: (() {
+        final value = json['model']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiEmbeddingsRequest.model is required');
+        }
+        return value;
+      })(),
       user: json['user']?.toString()
     );
   }
@@ -9745,27 +10444,45 @@ class OpenAiEmbeddingsRequest {
 }
 
 class OpenAiError {
-  final String? code;
-  final String? message;
+  final String code;
+  final String message;
   final String? param;
   final String? path;
-  final String? type;
+  final String type;
 
   OpenAiError({
-    this.code,
-    this.message,
+    required this.code,
+    required this.message,
     this.param,
     this.path,
-    this.type
+    required this.type
   });
 
   factory OpenAiError.fromJson(Map<String, dynamic> json) {
     return OpenAiError(
-      code: json['code']?.toString(),
-      message: json['message']?.toString(),
+      code: (() {
+        final value = json['code']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiError.code is required');
+        }
+        return value;
+      })(),
+      message: (() {
+        final value = json['message']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiError.message is required');
+        }
+        return value;
+      })(),
       param: json['param']?.toString(),
       path: json['path']?.toString(),
-      type: json['type']?.toString()
+      type: (() {
+        final value = json['type']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiError.type is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -9781,52 +10498,67 @@ class OpenAiError {
 }
 
 class OpenAiErrorEnvelope {
-  final OpenAiError? error;
+  final OpenAiError error;
 
   OpenAiErrorEnvelope({
-    this.error
+    required this.error
   });
 
   factory OpenAiErrorEnvelope.fromJson(Map<String, dynamic> json) {
     return OpenAiErrorEnvelope(
       error: (() {
         final map = _sdkworkAsMap(json['error']);
-        return map == null ? null : OpenAiError.fromJson(map);
+        if (map == null) {
+          throw FormatException('OpenAiErrorEnvelope.error is required');
+        }
+        return OpenAiError.fromJson(map);
       })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'error': error?.toJson(),
+      'error': error.toJson(),
     };
   }
 }
 
 class OpenAiEval {
-  final int? createdAt;
+  final int createdAt;
   final dynamic dataSourceConfig;
-  final String? id;
+  final String id;
   final Map<String, dynamic>? metadata;
   final String? name;
-  final String? object;
+  final String object;
   final List<dynamic>? testingCriteria;
 
   OpenAiEval({
-    this.createdAt,
+    required this.createdAt,
     this.dataSourceConfig,
-    this.id,
+    required this.id,
     this.metadata,
     this.name,
-    this.object,
+    required this.object,
     this.testingCriteria
   });
 
   factory OpenAiEval.fromJson(Map<String, dynamic> json) {
     return OpenAiEval(
-      createdAt: json['created_at'] is int ? json['created_at'] : null,
+      createdAt: (() {
+        final value = json['created_at'];
+        if (value is! int) {
+          throw FormatException('OpenAiEval.created_at is required');
+        }
+        return value;
+      })(),
       dataSourceConfig: json['data_source_config']?.toString(),
-      id: json['id']?.toString(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiEval.id is required');
+        }
+        return value;
+      })(),
       metadata: (() {
         final map = _sdkworkAsMap(json['metadata']);
         if (map == null) {
@@ -9842,7 +10574,13 @@ class OpenAiEval {
         return result;
       })(),
       name: json['name']?.toString(),
-      object: json['object']?.toString(),
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiEval.object is required');
+        }
+        return value;
+      })(),
       testingCriteria: (() {
         final list = _sdkworkAsList(json['testing_criteria']);
         if (list == null) {
@@ -9873,21 +10611,27 @@ class OpenAiEvalCreateRequest {
   final dynamic dataSource;
   final dynamic dataSourceConfig;
   final Map<String, dynamic>? metadata;
-  final String? name;
-  final List<dynamic>? testingCriteria;
+  final String name;
+  final List<dynamic> testingCriteria;
 
   OpenAiEvalCreateRequest({
     this.dataSource,
-    this.dataSourceConfig,
+    required this.dataSourceConfig,
     this.metadata,
-    this.name,
-    this.testingCriteria
+    required this.name,
+    required this.testingCriteria
   });
 
   factory OpenAiEvalCreateRequest.fromJson(Map<String, dynamic> json) {
     return OpenAiEvalCreateRequest(
       dataSource: json['data_source']?.toString(),
-      dataSourceConfig: json['data_source_config']?.toString(),
+      dataSourceConfig: (() {
+        final value = json['data_source_config']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiEvalCreateRequest.data_source_config is required');
+        }
+        return value;
+      })(),
       metadata: (() {
         final map = _sdkworkAsMap(json['metadata']);
         if (map == null) {
@@ -9902,11 +10646,17 @@ class OpenAiEvalCreateRequest {
         });
         return result;
       })(),
-      name: json['name']?.toString(),
+      name: (() {
+        final value = json['name']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiEvalCreateRequest.name is required');
+        }
+        return value;
+      })(),
       testingCriteria: (() {
         final list = _sdkworkAsList(json['testing_criteria']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiEvalCreateRequest.testing_criteria is required');
         }
         return list
             .map((item) => item?.toString())
@@ -9922,24 +10672,24 @@ class OpenAiEvalCreateRequest {
       'data_source_config': dataSourceConfig,
       'metadata': metadata?.map((key, item) => MapEntry(key, item)),
       'name': name,
-      'testing_criteria': testingCriteria?.map((item) => item).toList(),
+      'testing_criteria': testingCriteria.map((item) => item).toList(),
     };
   }
 }
 
 class OpenAiEvalList {
-  final List<OpenAiEval>? data;
+  final List<OpenAiEval> data;
   final String? firstId;
   final bool? hasMore;
   final String? lastId;
-  final String? object;
+  final String object;
 
   OpenAiEvalList({
-    this.data,
+    required this.data,
     this.firstId,
     this.hasMore,
     this.lastId,
-    this.object
+    required this.object
   });
 
   factory OpenAiEvalList.fromJson(Map<String, dynamic> json) {
@@ -9947,7 +10697,7 @@ class OpenAiEvalList {
       data: (() {
         final list = _sdkworkAsList(json['data']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiEvalList.data is required');
         }
         return list
             .map((item) => (() {
@@ -9960,13 +10710,19 @@ class OpenAiEvalList {
       firstId: json['first_id']?.toString(),
       hasMore: json['has_more'] is bool ? json['has_more'] : null,
       lastId: json['last_id']?.toString(),
-      object: json['object']?.toString()
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiEvalList.object is required');
+        }
+        return value;
+      })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'data': data?.map((item) => item.toJson()).toList(),
+      'data': data.map((item) => item.toJson()).toList(),
       'first_id': firstId,
       'has_more': hasMore,
       'last_id': lastId,
@@ -9976,36 +10732,48 @@ class OpenAiEvalList {
 }
 
 class OpenAiEvalRun {
-  final int? createdAt;
+  final int createdAt;
   final dynamic dataSource;
   final String? evalId;
-  final String? id;
+  final String id;
   final Map<String, dynamic>? metadata;
   final String? name;
-  final String? object;
+  final String object;
   final String? reportUrl;
   final OpenAiEvalRunResultCounts? resultCounts;
-  final String? status;
+  final String status;
 
   OpenAiEvalRun({
-    this.createdAt,
+    required this.createdAt,
     this.dataSource,
     this.evalId,
-    this.id,
+    required this.id,
     this.metadata,
     this.name,
-    this.object,
+    required this.object,
     this.reportUrl,
     this.resultCounts,
-    this.status
+    required this.status
   });
 
   factory OpenAiEvalRun.fromJson(Map<String, dynamic> json) {
     return OpenAiEvalRun(
-      createdAt: json['created_at'] is int ? json['created_at'] : null,
+      createdAt: (() {
+        final value = json['created_at'];
+        if (value is! int) {
+          throw FormatException('OpenAiEvalRun.created_at is required');
+        }
+        return value;
+      })(),
       dataSource: json['data_source']?.toString(),
       evalId: json['eval_id']?.toString(),
-      id: json['id']?.toString(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiEvalRun.id is required');
+        }
+        return value;
+      })(),
       metadata: (() {
         final map = _sdkworkAsMap(json['metadata']);
         if (map == null) {
@@ -10021,13 +10789,25 @@ class OpenAiEvalRun {
         return result;
       })(),
       name: json['name']?.toString(),
-      object: json['object']?.toString(),
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiEvalRun.object is required');
+        }
+        return value;
+      })(),
       reportUrl: json['report_url']?.toString(),
       resultCounts: (() {
         final map = _sdkworkAsMap(json['result_counts']);
         return map == null ? null : OpenAiEvalRunResultCounts.fromJson(map);
       })(),
-      status: json['status']?.toString()
+      status: (() {
+        final value = json['status']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiEvalRun.status is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -10089,18 +10869,18 @@ class OpenAiEvalRunCreateRequest {
 }
 
 class OpenAiEvalRunList {
-  final List<OpenAiEvalRun>? data;
+  final List<OpenAiEvalRun> data;
   final String? firstId;
   final bool? hasMore;
   final String? lastId;
-  final String? object;
+  final String object;
 
   OpenAiEvalRunList({
-    this.data,
+    required this.data,
     this.firstId,
     this.hasMore,
     this.lastId,
-    this.object
+    required this.object
   });
 
   factory OpenAiEvalRunList.fromJson(Map<String, dynamic> json) {
@@ -10108,7 +10888,7 @@ class OpenAiEvalRunList {
       data: (() {
         final list = _sdkworkAsList(json['data']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiEvalRunList.data is required');
         }
         return list
             .map((item) => (() {
@@ -10121,13 +10901,19 @@ class OpenAiEvalRunList {
       firstId: json['first_id']?.toString(),
       hasMore: json['has_more'] is bool ? json['has_more'] : null,
       lastId: json['last_id']?.toString(),
-      object: json['object']?.toString()
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiEvalRunList.object is required');
+        }
+        return value;
+      })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'data': data?.map((item) => item.toJson()).toList(),
+      'data': data.map((item) => item.toJson()).toList(),
       'first_id': firstId,
       'has_more': hasMore,
       'last_id': lastId,
@@ -10139,9 +10925,9 @@ class OpenAiEvalRunList {
 class OpenAiEvalRunOutputItem {
   final int? createdAt;
   final String? evalId;
-  final String? id;
+  final String id;
   final Map<String, dynamic>? metadata;
-  final String? object;
+  final String object;
   final List<dynamic>? results;
   final String? runId;
   final dynamic sample;
@@ -10150,9 +10936,9 @@ class OpenAiEvalRunOutputItem {
   OpenAiEvalRunOutputItem({
     this.createdAt,
     this.evalId,
-    this.id,
+    required this.id,
     this.metadata,
-    this.object,
+    required this.object,
     this.results,
     this.runId,
     this.sample,
@@ -10163,7 +10949,13 @@ class OpenAiEvalRunOutputItem {
     return OpenAiEvalRunOutputItem(
       createdAt: json['created_at'] is int ? json['created_at'] : null,
       evalId: json['eval_id']?.toString(),
-      id: json['id']?.toString(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiEvalRunOutputItem.id is required');
+        }
+        return value;
+      })(),
       metadata: (() {
         final map = _sdkworkAsMap(json['metadata']);
         if (map == null) {
@@ -10178,7 +10970,13 @@ class OpenAiEvalRunOutputItem {
         });
         return result;
       })(),
-      object: json['object']?.toString(),
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiEvalRunOutputItem.object is required');
+        }
+        return value;
+      })(),
       results: (() {
         final list = _sdkworkAsList(json['results']);
         if (list == null) {
@@ -10211,18 +11009,18 @@ class OpenAiEvalRunOutputItem {
 }
 
 class OpenAiEvalRunOutputItemList {
-  final List<OpenAiEvalRunOutputItem>? data;
+  final List<OpenAiEvalRunOutputItem> data;
   final String? firstId;
   final bool? hasMore;
   final String? lastId;
-  final String? object;
+  final String object;
 
   OpenAiEvalRunOutputItemList({
-    this.data,
+    required this.data,
     this.firstId,
     this.hasMore,
     this.lastId,
-    this.object
+    required this.object
   });
 
   factory OpenAiEvalRunOutputItemList.fromJson(Map<String, dynamic> json) {
@@ -10230,7 +11028,7 @@ class OpenAiEvalRunOutputItemList {
       data: (() {
         final list = _sdkworkAsList(json['data']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiEvalRunOutputItemList.data is required');
         }
         return list
             .map((item) => (() {
@@ -10243,13 +11041,19 @@ class OpenAiEvalRunOutputItemList {
       firstId: json['first_id']?.toString(),
       hasMore: json['has_more'] is bool ? json['has_more'] : null,
       lastId: json['last_id']?.toString(),
-      object: json['object']?.toString()
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiEvalRunOutputItemList.object is required');
+        }
+        return value;
+      })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'data': data?.map((item) => item.toJson()).toList(),
+      'data': data.map((item) => item.toJson()).toList(),
       'first_id': firstId,
       'has_more': hasMore,
       'last_id': lastId,
@@ -10349,34 +11153,70 @@ class OpenAiEvalUpdateRequest {
 }
 
 class OpenAiFile {
-  final int? bytes;
-  final int? createdAt;
-  final String? filename;
-  final String? id;
-  final String? object;
-  final String? purpose;
+  final int bytes;
+  final int createdAt;
+  final String filename;
+  final String id;
+  final String object;
+  final String purpose;
   final String? status;
   final dynamic statusDetails;
 
   OpenAiFile({
-    this.bytes,
-    this.createdAt,
-    this.filename,
-    this.id,
-    this.object,
-    this.purpose,
+    required this.bytes,
+    required this.createdAt,
+    required this.filename,
+    required this.id,
+    required this.object,
+    required this.purpose,
     this.status,
     this.statusDetails
   });
 
   factory OpenAiFile.fromJson(Map<String, dynamic> json) {
     return OpenAiFile(
-      bytes: json['bytes'] is int ? json['bytes'] : null,
-      createdAt: json['created_at'] is int ? json['created_at'] : null,
-      filename: json['filename']?.toString(),
-      id: json['id']?.toString(),
-      object: json['object']?.toString(),
-      purpose: json['purpose']?.toString(),
+      bytes: (() {
+        final value = json['bytes'];
+        if (value is! int) {
+          throw FormatException('OpenAiFile.bytes is required');
+        }
+        return value;
+      })(),
+      createdAt: (() {
+        final value = json['created_at'];
+        if (value is! int) {
+          throw FormatException('OpenAiFile.created_at is required');
+        }
+        return value;
+      })(),
+      filename: (() {
+        final value = json['filename']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiFile.filename is required');
+        }
+        return value;
+      })(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiFile.id is required');
+        }
+        return value;
+      })(),
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiFile.object is required');
+        }
+        return value;
+      })(),
+      purpose: (() {
+        final value = json['purpose']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiFile.purpose is required');
+        }
+        return value;
+      })(),
       status: json['status']?.toString(),
       statusDetails: json['status_details']?.toString()
     );
@@ -10397,18 +11237,18 @@ class OpenAiFile {
 }
 
 class OpenAiFileList {
-  final List<OpenAiFile>? data;
+  final List<OpenAiFile> data;
   final String? firstId;
   final bool? hasMore;
   final String? lastId;
-  final String? object;
+  final String object;
 
   OpenAiFileList({
-    this.data,
+    required this.data,
     this.firstId,
     this.hasMore,
     this.lastId,
-    this.object
+    required this.object
   });
 
   factory OpenAiFileList.fromJson(Map<String, dynamic> json) {
@@ -10416,7 +11256,7 @@ class OpenAiFileList {
       data: (() {
         final list = _sdkworkAsList(json['data']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiFileList.data is required');
         }
         return list
             .map((item) => (() {
@@ -10429,13 +11269,19 @@ class OpenAiFileList {
       firstId: json['first_id']?.toString(),
       hasMore: json['has_more'] is bool ? json['has_more'] : null,
       lastId: json['last_id']?.toString(),
-      object: json['object']?.toString()
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiFileList.object is required');
+        }
+        return value;
+      })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'data': data?.map((item) => item.toJson()).toList(),
+      'data': data.map((item) => item.toJson()).toList(),
       'first_id': firstId,
       'has_more': hasMore,
       'last_id': lastId,
@@ -10495,18 +11341,30 @@ class OpenAiFileReferenceObject {
 }
 
 class OpenAiFileUploadRequest {
-  final String? file;
-  final String? purpose;
+  final String file;
+  final String purpose;
 
   OpenAiFileUploadRequest({
-    this.file,
-    this.purpose
+    required this.file,
+    required this.purpose
   });
 
   factory OpenAiFileUploadRequest.fromJson(Map<String, dynamic> json) {
     return OpenAiFileUploadRequest(
-      file: json['file']?.toString(),
-      purpose: json['purpose']?.toString()
+      file: (() {
+        final value = json['file']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiFileUploadRequest.file is required');
+        }
+        return value;
+      })(),
+      purpose: (() {
+        final value = json['purpose']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiFileUploadRequest.purpose is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -10519,24 +11377,48 @@ class OpenAiFileUploadRequest {
 }
 
 class OpenAiFineTuningCheckpointPermission {
-  final int? createdAt;
-  final String? id;
-  final String? object;
-  final String? projectId;
+  final int createdAt;
+  final String id;
+  final String object;
+  final String projectId;
 
   OpenAiFineTuningCheckpointPermission({
-    this.createdAt,
-    this.id,
-    this.object,
-    this.projectId
+    required this.createdAt,
+    required this.id,
+    required this.object,
+    required this.projectId
   });
 
   factory OpenAiFineTuningCheckpointPermission.fromJson(Map<String, dynamic> json) {
     return OpenAiFineTuningCheckpointPermission(
-      createdAt: json['created_at'] is int ? json['created_at'] : null,
-      id: json['id']?.toString(),
-      object: json['object']?.toString(),
-      projectId: json['project_id']?.toString()
+      createdAt: (() {
+        final value = json['created_at'];
+        if (value is! int) {
+          throw FormatException('OpenAiFineTuningCheckpointPermission.created_at is required');
+        }
+        return value;
+      })(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiFineTuningCheckpointPermission.id is required');
+        }
+        return value;
+      })(),
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiFineTuningCheckpointPermission.object is required');
+        }
+        return value;
+      })(),
+      projectId: (() {
+        final value = json['project_id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiFineTuningCheckpointPermission.project_id is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -10551,15 +11433,21 @@ class OpenAiFineTuningCheckpointPermission {
 }
 
 class OpenAiFineTuningCheckpointPermissionCreateRequest {
-  final String? projectId;
+  final String projectId;
 
   OpenAiFineTuningCheckpointPermissionCreateRequest({
-    this.projectId
+    required this.projectId
   });
 
   factory OpenAiFineTuningCheckpointPermissionCreateRequest.fromJson(Map<String, dynamic> json) {
     return OpenAiFineTuningCheckpointPermissionCreateRequest(
-      projectId: json['project_id']?.toString()
+      projectId: (() {
+        final value = json['project_id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiFineTuningCheckpointPermissionCreateRequest.project_id is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -10571,18 +11459,18 @@ class OpenAiFineTuningCheckpointPermissionCreateRequest {
 }
 
 class OpenAiFineTuningCheckpointPermissionList {
-  final List<OpenAiFineTuningCheckpointPermission>? data;
+  final List<OpenAiFineTuningCheckpointPermission> data;
   final String? firstId;
   final bool? hasMore;
   final String? lastId;
-  final String? object;
+  final String object;
 
   OpenAiFineTuningCheckpointPermissionList({
-    this.data,
+    required this.data,
     this.firstId,
     this.hasMore,
     this.lastId,
-    this.object
+    required this.object
   });
 
   factory OpenAiFineTuningCheckpointPermissionList.fromJson(Map<String, dynamic> json) {
@@ -10590,7 +11478,7 @@ class OpenAiFineTuningCheckpointPermissionList {
       data: (() {
         final list = _sdkworkAsList(json['data']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiFineTuningCheckpointPermissionList.data is required');
         }
         return list
             .map((item) => (() {
@@ -10603,13 +11491,19 @@ class OpenAiFineTuningCheckpointPermissionList {
       firstId: json['first_id']?.toString(),
       hasMore: json['has_more'] is bool ? json['has_more'] : null,
       lastId: json['last_id']?.toString(),
-      object: json['object']?.toString()
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiFineTuningCheckpointPermissionList.object is required');
+        }
+        return value;
+      })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'data': data?.map((item) => item.toJson()).toList(),
+      'data': data.map((item) => item.toJson()).toList(),
       'first_id': firstId,
       'has_more': hasMore,
       'last_id': lastId,
@@ -10625,16 +11519,28 @@ class OpenAiFineTuningGraderRunRequest {
   final String? referenceAnswer;
 
   OpenAiFineTuningGraderRunRequest({
-    this.grader,
-    this.input,
+    required this.grader,
+    required this.input,
     this.modelSample,
     this.referenceAnswer
   });
 
   factory OpenAiFineTuningGraderRunRequest.fromJson(Map<String, dynamic> json) {
     return OpenAiFineTuningGraderRunRequest(
-      grader: json['grader']?.toString(),
-      input: json['input']?.toString(),
+      grader: (() {
+        final value = json['grader']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiFineTuningGraderRunRequest.grader is required');
+        }
+        return value;
+      })(),
+      input: (() {
+        final value = json['input']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiFineTuningGraderRunRequest.input is required');
+        }
+        return value;
+      })(),
       modelSample: json['model_sample']?.toString(),
       referenceAnswer: json['reference_answer']?.toString()
     );
@@ -10686,12 +11592,18 @@ class OpenAiFineTuningGraderValidateRequest {
   final dynamic grader;
 
   OpenAiFineTuningGraderValidateRequest({
-    this.grader
+    required this.grader
   });
 
   factory OpenAiFineTuningGraderValidateRequest.fromJson(Map<String, dynamic> json) {
     return OpenAiFineTuningGraderValidateRequest(
-      grader: json['grader']?.toString()
+      grader: (() {
+        final value = json['grader']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiFineTuningGraderValidateRequest.grader is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -10749,35 +11661,35 @@ class OpenAiFineTuningGraderValidationResult {
 }
 
 class OpenAiFineTuningJob {
-  final int? createdAt;
+  final int createdAt;
   final dynamic error;
   final String? fineTunedModel;
   final int? finishedAt;
   final dynamic hyperparameters;
-  final String? id;
+  final String id;
   final Map<String, dynamic>? metadata;
-  final String? model;
-  final String? object;
+  final String model;
+  final String object;
   final String? organizationId;
   final List<String>? resultFiles;
-  final String? status;
+  final String status;
   final int? trainedTokens;
   final String? trainingFile;
   final String? validationFile;
 
   OpenAiFineTuningJob({
-    this.createdAt,
+    required this.createdAt,
     this.error,
     this.fineTunedModel,
     this.finishedAt,
     this.hyperparameters,
-    this.id,
+    required this.id,
     this.metadata,
-    this.model,
-    this.object,
+    required this.model,
+    required this.object,
     this.organizationId,
     this.resultFiles,
-    this.status,
+    required this.status,
     this.trainedTokens,
     this.trainingFile,
     this.validationFile
@@ -10785,12 +11697,24 @@ class OpenAiFineTuningJob {
 
   factory OpenAiFineTuningJob.fromJson(Map<String, dynamic> json) {
     return OpenAiFineTuningJob(
-      createdAt: json['created_at'] is int ? json['created_at'] : null,
+      createdAt: (() {
+        final value = json['created_at'];
+        if (value is! int) {
+          throw FormatException('OpenAiFineTuningJob.created_at is required');
+        }
+        return value;
+      })(),
       error: json['error']?.toString(),
       fineTunedModel: json['fine_tuned_model']?.toString(),
       finishedAt: json['finished_at'] is int ? json['finished_at'] : null,
       hyperparameters: json['hyperparameters']?.toString(),
-      id: json['id']?.toString(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiFineTuningJob.id is required');
+        }
+        return value;
+      })(),
       metadata: (() {
         final map = _sdkworkAsMap(json['metadata']);
         if (map == null) {
@@ -10805,8 +11729,20 @@ class OpenAiFineTuningJob {
         });
         return result;
       })(),
-      model: json['model']?.toString(),
-      object: json['object']?.toString(),
+      model: (() {
+        final value = json['model']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiFineTuningJob.model is required');
+        }
+        return value;
+      })(),
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiFineTuningJob.object is required');
+        }
+        return value;
+      })(),
       organizationId: json['organization_id']?.toString(),
       resultFiles: (() {
         final list = _sdkworkAsList(json['result_files']);
@@ -10818,7 +11754,13 @@ class OpenAiFineTuningJob {
             .whereType<String>()
             .toList();
       })(),
-      status: json['status']?.toString(),
+      status: (() {
+        final value = json['status']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiFineTuningJob.status is required');
+        }
+        return value;
+      })(),
       trainedTokens: json['trained_tokens'] is int ? json['trained_tokens'] : null,
       trainingFile: json['training_file']?.toString(),
       validationFile: json['validation_file']?.toString()
@@ -10847,32 +11789,50 @@ class OpenAiFineTuningJob {
 }
 
 class OpenAiFineTuningJobCheckpoint {
-  final int? createdAt;
+  final int createdAt;
   final String? fineTunedModelCheckpoint;
   final String? fineTuningJobId;
-  final String? id;
+  final String id;
   final dynamic metrics;
-  final String? object;
+  final String object;
   final int? stepNumber;
 
   OpenAiFineTuningJobCheckpoint({
-    this.createdAt,
+    required this.createdAt,
     this.fineTunedModelCheckpoint,
     this.fineTuningJobId,
-    this.id,
+    required this.id,
     this.metrics,
-    this.object,
+    required this.object,
     this.stepNumber
   });
 
   factory OpenAiFineTuningJobCheckpoint.fromJson(Map<String, dynamic> json) {
     return OpenAiFineTuningJobCheckpoint(
-      createdAt: json['created_at'] is int ? json['created_at'] : null,
+      createdAt: (() {
+        final value = json['created_at'];
+        if (value is! int) {
+          throw FormatException('OpenAiFineTuningJobCheckpoint.created_at is required');
+        }
+        return value;
+      })(),
       fineTunedModelCheckpoint: json['fine_tuned_model_checkpoint']?.toString(),
       fineTuningJobId: json['fine_tuning_job_id']?.toString(),
-      id: json['id']?.toString(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiFineTuningJobCheckpoint.id is required');
+        }
+        return value;
+      })(),
       metrics: json['metrics']?.toString(),
-      object: json['object']?.toString(),
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiFineTuningJobCheckpoint.object is required');
+        }
+        return value;
+      })(),
       stepNumber: json['step_number'] is int ? json['step_number'] : null
     );
   }
@@ -10891,18 +11851,18 @@ class OpenAiFineTuningJobCheckpoint {
 }
 
 class OpenAiFineTuningJobCheckpointList {
-  final List<OpenAiFineTuningJobCheckpoint>? data;
+  final List<OpenAiFineTuningJobCheckpoint> data;
   final String? firstId;
   final bool? hasMore;
   final String? lastId;
-  final String? object;
+  final String object;
 
   OpenAiFineTuningJobCheckpointList({
-    this.data,
+    required this.data,
     this.firstId,
     this.hasMore,
     this.lastId,
-    this.object
+    required this.object
   });
 
   factory OpenAiFineTuningJobCheckpointList.fromJson(Map<String, dynamic> json) {
@@ -10910,7 +11870,7 @@ class OpenAiFineTuningJobCheckpointList {
       data: (() {
         final list = _sdkworkAsList(json['data']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiFineTuningJobCheckpointList.data is required');
         }
         return list
             .map((item) => (() {
@@ -10923,13 +11883,19 @@ class OpenAiFineTuningJobCheckpointList {
       firstId: json['first_id']?.toString(),
       hasMore: json['has_more'] is bool ? json['has_more'] : null,
       lastId: json['last_id']?.toString(),
-      object: json['object']?.toString()
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiFineTuningJobCheckpointList.object is required');
+        }
+        return value;
+      })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'data': data?.map((item) => item.toJson()).toList(),
+      'data': data.map((item) => item.toJson()).toList(),
       'first_id': firstId,
       'has_more': hasMore,
       'last_id': lastId,
@@ -10942,20 +11908,20 @@ class OpenAiFineTuningJobCreateRequest {
   final dynamic hyperparameters;
   final List<dynamic>? integrations;
   final Map<String, dynamic>? metadata;
-  final String? model;
+  final String model;
   final int? seed;
   final String? suffix;
-  final String? trainingFile;
+  final String trainingFile;
   final String? validationFile;
 
   OpenAiFineTuningJobCreateRequest({
     this.hyperparameters,
     this.integrations,
     this.metadata,
-    this.model,
+    required this.model,
     this.seed,
     this.suffix,
-    this.trainingFile,
+    required this.trainingFile,
     this.validationFile
   });
 
@@ -10986,10 +11952,22 @@ class OpenAiFineTuningJobCreateRequest {
         });
         return result;
       })(),
-      model: json['model']?.toString(),
+      model: (() {
+        final value = json['model']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiFineTuningJobCreateRequest.model is required');
+        }
+        return value;
+      })(),
       seed: json['seed'] is int ? json['seed'] : null,
       suffix: json['suffix']?.toString(),
-      trainingFile: json['training_file']?.toString(),
+      trainingFile: (() {
+        final value = json['training_file']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiFineTuningJobCreateRequest.training_file is required');
+        }
+        return value;
+      })(),
       validationFile: json['validation_file']?.toString()
     );
   }
@@ -11009,32 +11987,56 @@ class OpenAiFineTuningJobCreateRequest {
 }
 
 class OpenAiFineTuningJobEvent {
-  final int? createdAt;
+  final int createdAt;
   final dynamic data;
-  final String? id;
+  final String id;
   final String? level;
-  final String? message;
-  final String? object;
+  final String message;
+  final String object;
   final String? type;
 
   OpenAiFineTuningJobEvent({
-    this.createdAt,
+    required this.createdAt,
     this.data,
-    this.id,
+    required this.id,
     this.level,
-    this.message,
-    this.object,
+    required this.message,
+    required this.object,
     this.type
   });
 
   factory OpenAiFineTuningJobEvent.fromJson(Map<String, dynamic> json) {
     return OpenAiFineTuningJobEvent(
-      createdAt: json['created_at'] is int ? json['created_at'] : null,
+      createdAt: (() {
+        final value = json['created_at'];
+        if (value is! int) {
+          throw FormatException('OpenAiFineTuningJobEvent.created_at is required');
+        }
+        return value;
+      })(),
       data: json['data']?.toString(),
-      id: json['id']?.toString(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiFineTuningJobEvent.id is required');
+        }
+        return value;
+      })(),
       level: json['level']?.toString(),
-      message: json['message']?.toString(),
-      object: json['object']?.toString(),
+      message: (() {
+        final value = json['message']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiFineTuningJobEvent.message is required');
+        }
+        return value;
+      })(),
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiFineTuningJobEvent.object is required');
+        }
+        return value;
+      })(),
       type: json['type']?.toString()
     );
   }
@@ -11053,18 +12055,18 @@ class OpenAiFineTuningJobEvent {
 }
 
 class OpenAiFineTuningJobEventList {
-  final List<OpenAiFineTuningJobEvent>? data;
+  final List<OpenAiFineTuningJobEvent> data;
   final String? firstId;
   final bool? hasMore;
   final String? lastId;
-  final String? object;
+  final String object;
 
   OpenAiFineTuningJobEventList({
-    this.data,
+    required this.data,
     this.firstId,
     this.hasMore,
     this.lastId,
-    this.object
+    required this.object
   });
 
   factory OpenAiFineTuningJobEventList.fromJson(Map<String, dynamic> json) {
@@ -11072,7 +12074,7 @@ class OpenAiFineTuningJobEventList {
       data: (() {
         final list = _sdkworkAsList(json['data']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiFineTuningJobEventList.data is required');
         }
         return list
             .map((item) => (() {
@@ -11085,13 +12087,19 @@ class OpenAiFineTuningJobEventList {
       firstId: json['first_id']?.toString(),
       hasMore: json['has_more'] is bool ? json['has_more'] : null,
       lastId: json['last_id']?.toString(),
-      object: json['object']?.toString()
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiFineTuningJobEventList.object is required');
+        }
+        return value;
+      })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'data': data?.map((item) => item.toJson()).toList(),
+      'data': data.map((item) => item.toJson()).toList(),
       'first_id': firstId,
       'has_more': hasMore,
       'last_id': lastId,
@@ -11101,18 +12109,18 @@ class OpenAiFineTuningJobEventList {
 }
 
 class OpenAiFineTuningJobList {
-  final List<OpenAiFineTuningJob>? data;
+  final List<OpenAiFineTuningJob> data;
   final String? firstId;
   final bool? hasMore;
   final String? lastId;
-  final String? object;
+  final String object;
 
   OpenAiFineTuningJobList({
-    this.data,
+    required this.data,
     this.firstId,
     this.hasMore,
     this.lastId,
-    this.object
+    required this.object
   });
 
   factory OpenAiFineTuningJobList.fromJson(Map<String, dynamic> json) {
@@ -11120,7 +12128,7 @@ class OpenAiFineTuningJobList {
       data: (() {
         final list = _sdkworkAsList(json['data']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiFineTuningJobList.data is required');
         }
         return list
             .map((item) => (() {
@@ -11133,13 +12141,19 @@ class OpenAiFineTuningJobList {
       firstId: json['first_id']?.toString(),
       hasMore: json['has_more'] is bool ? json['has_more'] : null,
       lastId: json['last_id']?.toString(),
-      object: json['object']?.toString()
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiFineTuningJobList.object is required');
+        }
+        return value;
+      })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'data': data?.map((item) => item.toJson()).toList(),
+      'data': data.map((item) => item.toJson()).toList(),
       'first_id': firstId,
       'has_more': hasMore,
       'last_id': lastId,
@@ -11149,18 +12163,30 @@ class OpenAiFineTuningJobList {
 }
 
 class OpenAiFunctionCall {
-  final String? arguments;
-  final String? name;
+  final String arguments;
+  final String name;
 
   OpenAiFunctionCall({
-    this.arguments,
-    this.name
+    required this.arguments,
+    required this.name
   });
 
   factory OpenAiFunctionCall.fromJson(Map<String, dynamic> json) {
     return OpenAiFunctionCall(
-      arguments: json['arguments']?.toString(),
-      name: json['name']?.toString()
+      arguments: (() {
+        final value = json['arguments']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiFunctionCall.arguments is required');
+        }
+        return value;
+      })(),
+      name: (() {
+        final value = json['name']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiFunctionCall.name is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -11188,13 +12214,13 @@ class OpenAiFunctionCallChoice {
 
 class OpenAiFunctionDefinition {
   final String? description;
-  final String? name;
+  final String name;
   final OpenAiJsonSchema? parameters;
   final bool? strict;
 
   OpenAiFunctionDefinition({
     this.description,
-    this.name,
+    required this.name,
     this.parameters,
     this.strict
   });
@@ -11202,7 +12228,13 @@ class OpenAiFunctionDefinition {
   factory OpenAiFunctionDefinition.fromJson(Map<String, dynamic> json) {
     return OpenAiFunctionDefinition(
       description: json['description']?.toString(),
-      name: json['name']?.toString(),
+      name: (() {
+        final value = json['name']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiFunctionDefinition.name is required');
+        }
+        return value;
+      })(),
       parameters: (() {
         final map = _sdkworkAsMap(json['parameters']);
         return map == null ? null : OpenAiJsonSchema.fromJson(map);
@@ -11254,24 +12286,42 @@ class OpenAiImage {
 }
 
 class OpenAiImageEditMultipartRequest {
-  final String? image;
+  final String image;
   final String? mask;
-  final String? model;
-  final String? prompt;
+  final String model;
+  final String prompt;
 
   OpenAiImageEditMultipartRequest({
-    this.image,
+    required this.image,
     this.mask,
-    this.model,
-    this.prompt
+    required this.model,
+    required this.prompt
   });
 
   factory OpenAiImageEditMultipartRequest.fromJson(Map<String, dynamic> json) {
     return OpenAiImageEditMultipartRequest(
-      image: json['image']?.toString(),
+      image: (() {
+        final value = json['image']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiImageEditMultipartRequest.image is required');
+        }
+        return value;
+      })(),
       mask: json['mask']?.toString(),
-      model: json['model']?.toString(),
-      prompt: json['prompt']?.toString()
+      model: (() {
+        final value = json['model']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiImageEditMultipartRequest.model is required');
+        }
+        return value;
+      })(),
+      prompt: (() {
+        final value = json['prompt']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiImageEditMultipartRequest.prompt is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -11288,14 +12338,14 @@ class OpenAiImageEditMultipartRequest {
 class OpenAiImageEditRequest {
   final OpenAiImageReferenceInputList? image;
   final OpenAiImageReferenceInput? mask;
-  final String? model;
-  final String? prompt;
+  final String model;
+  final String prompt;
 
   OpenAiImageEditRequest({
     this.image,
     this.mask,
-    this.model,
-    this.prompt
+    required this.model,
+    required this.prompt
   });
 
   factory OpenAiImageEditRequest.fromJson(Map<String, dynamic> json) {
@@ -11308,8 +12358,20 @@ class OpenAiImageEditRequest {
         final map = _sdkworkAsMap(json['mask']);
         return map == null ? null : OpenAiImageReferenceInput.fromJson(map);
       })(),
-      model: json['model']?.toString(),
-      prompt: json['prompt']?.toString()
+      model: (() {
+        final value = json['model']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiImageEditRequest.model is required');
+        }
+        return value;
+      })(),
+      prompt: (() {
+        final value = json['prompt']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiImageEditRequest.prompt is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -11324,15 +12386,15 @@ class OpenAiImageEditRequest {
 }
 
 class OpenAiImageGenerationRequest {
-  final String? model;
-  final String? prompt;
+  final String model;
+  final String prompt;
   final String? quality;
   final String? responseFormat;
   final String? size;
 
   OpenAiImageGenerationRequest({
-    this.model,
-    this.prompt,
+    required this.model,
+    required this.prompt,
     this.quality,
     this.responseFormat,
     this.size
@@ -11340,8 +12402,20 @@ class OpenAiImageGenerationRequest {
 
   factory OpenAiImageGenerationRequest.fromJson(Map<String, dynamic> json) {
     return OpenAiImageGenerationRequest(
-      model: json['model']?.toString(),
-      prompt: json['prompt']?.toString(),
+      model: (() {
+        final value = json['model']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiImageGenerationRequest.model is required');
+        }
+        return value;
+      })(),
+      prompt: (() {
+        final value = json['prompt']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiImageGenerationRequest.prompt is required');
+        }
+        return value;
+      })(),
       quality: json['quality']?.toString(),
       responseFormat: json['response_format']?.toString(),
       size: json['size']?.toString()
@@ -11360,23 +12434,29 @@ class OpenAiImageGenerationRequest {
 }
 
 class OpenAiImageList {
-  final int? created;
-  final List<OpenAiImage>? data;
+  final int created;
+  final List<OpenAiImage> data;
   final OpenAiTokenUsage? usage;
 
   OpenAiImageList({
-    this.created,
-    this.data,
+    required this.created,
+    required this.data,
     this.usage
   });
 
   factory OpenAiImageList.fromJson(Map<String, dynamic> json) {
     return OpenAiImageList(
-      created: json['created'] is int ? json['created'] : null,
+      created: (() {
+        final value = json['created'];
+        if (value is! int) {
+          throw FormatException('OpenAiImageList.created is required');
+        }
+        return value;
+      })(),
       data: (() {
         final list = _sdkworkAsList(json['data']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiImageList.data is required');
         }
         return list
             .map((item) => (() {
@@ -11396,7 +12476,7 @@ class OpenAiImageList {
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'created': created,
-      'data': data?.map((item) => item.toJson()).toList(),
+      'data': data.map((item) => item.toJson()).toList(),
       'usage': usage?.toJson(),
     };
   }
@@ -11467,20 +12547,32 @@ class OpenAiImageReferenceObject {
 }
 
 class OpenAiImageVariationMultipartRequest {
-  final String? image;
-  final String? model;
+  final String image;
+  final String model;
   final String? size;
 
   OpenAiImageVariationMultipartRequest({
-    this.image,
-    this.model,
+    required this.image,
+    required this.model,
     this.size
   });
 
   factory OpenAiImageVariationMultipartRequest.fromJson(Map<String, dynamic> json) {
     return OpenAiImageVariationMultipartRequest(
-      image: json['image']?.toString(),
-      model: json['model']?.toString(),
+      image: (() {
+        final value = json['image']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiImageVariationMultipartRequest.image is required');
+        }
+        return value;
+      })(),
+      model: (() {
+        final value = json['model']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiImageVariationMultipartRequest.model is required');
+        }
+        return value;
+      })(),
       size: json['size']?.toString()
     );
   }
@@ -11495,13 +12587,13 @@ class OpenAiImageVariationMultipartRequest {
 }
 
 class OpenAiImageVariationRequest {
-  final OpenAiImageReferenceInput? image;
-  final String? model;
+  final OpenAiImageReferenceInput image;
+  final String model;
   final String? size;
 
   OpenAiImageVariationRequest({
-    this.image,
-    this.model,
+    required this.image,
+    required this.model,
     this.size
   });
 
@@ -11509,16 +12601,25 @@ class OpenAiImageVariationRequest {
     return OpenAiImageVariationRequest(
       image: (() {
         final map = _sdkworkAsMap(json['image']);
-        return map == null ? null : OpenAiImageReferenceInput.fromJson(map);
+        if (map == null) {
+          throw FormatException('OpenAiImageVariationRequest.image is required');
+        }
+        return OpenAiImageReferenceInput.fromJson(map);
       })(),
-      model: json['model']?.toString(),
+      model: (() {
+        final value = json['model']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiImageVariationRequest.model is required');
+        }
+        return value;
+      })(),
       size: json['size']?.toString()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'image': image?.toJson(),
+      'image': image.toJson(),
       'model': model,
       'size': size,
     };
@@ -11526,15 +12627,21 @@ class OpenAiImageVariationRequest {
 }
 
 class OpenAiIncompleteDetails {
-  final String? reason;
+  final String reason;
 
   OpenAiIncompleteDetails({
-    this.reason
+    required this.reason
   });
 
   factory OpenAiIncompleteDetails.fromJson(Map<String, dynamic> json) {
     return OpenAiIncompleteDetails(
-      reason: json['reason']?.toString()
+      reason: (() {
+        final value = json['reason']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiIncompleteDetails.reason is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -11620,13 +12727,13 @@ class OpenAiJsonSchema {
 
 class OpenAiJsonSchemaFormat {
   final String? description;
-  final String? name;
+  final String name;
   final OpenAiJsonSchema? schema;
   final bool? strict;
 
   OpenAiJsonSchemaFormat({
     this.description,
-    this.name,
+    required this.name,
     this.schema,
     this.strict
   });
@@ -11634,7 +12741,13 @@ class OpenAiJsonSchemaFormat {
   factory OpenAiJsonSchemaFormat.fromJson(Map<String, dynamic> json) {
     return OpenAiJsonSchemaFormat(
       description: json['description']?.toString(),
-      name: json['name']?.toString(),
+      name: (() {
+        final value = json['name']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiJsonSchemaFormat.name is required');
+        }
+        return value;
+      })(),
       schema: (() {
         final map = _sdkworkAsMap(json['schema']);
         return map == null ? null : OpenAiJsonSchema.fromJson(map);
@@ -11655,23 +12768,41 @@ class OpenAiJsonSchemaFormat {
 
 class OpenAiModel {
   final int? created;
-  final String? id;
-  final String? object;
-  final String? ownedBy;
+  final String id;
+  final String object;
+  final String ownedBy;
 
   OpenAiModel({
     this.created,
-    this.id,
-    this.object,
-    this.ownedBy
+    required this.id,
+    required this.object,
+    required this.ownedBy
   });
 
   factory OpenAiModel.fromJson(Map<String, dynamic> json) {
     return OpenAiModel(
       created: json['created'] is int ? json['created'] : null,
-      id: json['id']?.toString(),
-      object: json['object']?.toString(),
-      ownedBy: json['owned_by']?.toString()
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiModel.id is required');
+        }
+        return value;
+      })(),
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiModel.object is required');
+        }
+        return value;
+      })(),
+      ownedBy: (() {
+        final value = json['owned_by']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiModel.owned_by is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -11686,12 +12817,12 @@ class OpenAiModel {
 }
 
 class OpenAiModelList {
-  final List<OpenAiModel>? data;
-  final String? object;
+  final List<OpenAiModel> data;
+  final String object;
 
   OpenAiModelList({
-    this.data,
-    this.object
+    required this.data,
+    required this.object
   });
 
   factory OpenAiModelList.fromJson(Map<String, dynamic> json) {
@@ -11699,7 +12830,7 @@ class OpenAiModelList {
       data: (() {
         final list = _sdkworkAsList(json['data']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiModelList.data is required');
         }
         return list
             .map((item) => (() {
@@ -11709,37 +12840,55 @@ class OpenAiModelList {
             .whereType<OpenAiModel>()
             .toList();
       })(),
-      object: json['object']?.toString()
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiModelList.object is required');
+        }
+        return value;
+      })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'data': data?.map((item) => item.toJson()).toList(),
+      'data': data.map((item) => item.toJson()).toList(),
       'object': object,
     };
   }
 }
 
 class OpenAiModeration {
-  final String? id;
-  final String? model;
-  final List<OpenAiModerationResult>? results;
+  final String id;
+  final String model;
+  final List<OpenAiModerationResult> results;
 
   OpenAiModeration({
-    this.id,
-    this.model,
-    this.results
+    required this.id,
+    required this.model,
+    required this.results
   });
 
   factory OpenAiModeration.fromJson(Map<String, dynamic> json) {
     return OpenAiModeration(
-      id: json['id']?.toString(),
-      model: json['model']?.toString(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiModeration.id is required');
+        }
+        return value;
+      })(),
+      model: (() {
+        final value = json['model']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiModeration.model is required');
+        }
+        return value;
+      })(),
       results: (() {
         final list = _sdkworkAsList(json['results']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiModeration.results is required');
         }
         return list
             .map((item) => (() {
@@ -11756,24 +12905,36 @@ class OpenAiModeration {
     return <String, dynamic>{
       'id': id,
       'model': model,
-      'results': results?.map((item) => item.toJson()).toList(),
+      'results': results.map((item) => item.toJson()).toList(),
     };
   }
 }
 
 class OpenAiModerationCreateRequest {
   final dynamic input;
-  final String? model;
+  final String model;
 
   OpenAiModerationCreateRequest({
-    this.input,
-    this.model
+    required this.input,
+    required this.model
   });
 
   factory OpenAiModerationCreateRequest.fromJson(Map<String, dynamic> json) {
     return OpenAiModerationCreateRequest(
-      input: json['input']?.toString(),
-      model: json['model']?.toString()
+      input: (() {
+        final value = json['input']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiModerationCreateRequest.input is required');
+        }
+        return value;
+      })(),
+      model: (() {
+        final value = json['model']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiModerationCreateRequest.model is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -11840,15 +13001,21 @@ class OpenAiModerationResult {
 }
 
 class OpenAiNamedFunctionChoice {
-  final String? name;
+  final String name;
 
   OpenAiNamedFunctionChoice({
-    this.name
+    required this.name
   });
 
   factory OpenAiNamedFunctionChoice.fromJson(Map<String, dynamic> json) {
     return OpenAiNamedFunctionChoice(
-      name: json['name']?.toString()
+      name: (() {
+        final value = json['name']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiNamedFunctionChoice.name is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -11860,42 +13027,57 @@ class OpenAiNamedFunctionChoice {
 }
 
 class OpenAiNamedToolChoice {
-  final OpenAiNamedToolChoiceFunction? function_;
-  final String? type;
+  final OpenAiNamedToolChoiceFunction function_;
+  final String type;
 
   OpenAiNamedToolChoice({
-    this.function_,
-    this.type
+    required this.function_,
+    required this.type
   });
 
   factory OpenAiNamedToolChoice.fromJson(Map<String, dynamic> json) {
     return OpenAiNamedToolChoice(
       function_: (() {
         final map = _sdkworkAsMap(json['function']);
-        return map == null ? null : OpenAiNamedToolChoiceFunction.fromJson(map);
+        if (map == null) {
+          throw FormatException('OpenAiNamedToolChoice.function is required');
+        }
+        return OpenAiNamedToolChoiceFunction.fromJson(map);
       })(),
-      type: json['type']?.toString()
+      type: (() {
+        final value = json['type']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiNamedToolChoice.type is required');
+        }
+        return value;
+      })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'function': function_?.toJson(),
+      'function': function_.toJson(),
       'type': type,
     };
   }
 }
 
 class OpenAiNamedToolChoiceFunction {
-  final String? name;
+  final String name;
 
   OpenAiNamedToolChoiceFunction({
-    this.name
+    required this.name
   });
 
   factory OpenAiNamedToolChoiceFunction.fromJson(Map<String, dynamic> json) {
     return OpenAiNamedToolChoiceFunction(
-      name: json['name']?.toString()
+      name: (() {
+        final value = json['name']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiNamedToolChoiceFunction.name is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -11908,20 +13090,20 @@ class OpenAiNamedToolChoiceFunction {
 
 class OpenAiOrganizationAdminApiKey {
   final int? createdAt;
-  final String? id;
+  final String id;
   final int? lastUsedAt;
-  final String? name;
-  final String? object;
+  final String name;
+  final String object;
   final dynamic owner;
   final String? redactedValue;
   final String? value;
 
   OpenAiOrganizationAdminApiKey({
     this.createdAt,
-    this.id,
+    required this.id,
     this.lastUsedAt,
-    this.name,
-    this.object,
+    required this.name,
+    required this.object,
     this.owner,
     this.redactedValue,
     this.value
@@ -11930,10 +13112,28 @@ class OpenAiOrganizationAdminApiKey {
   factory OpenAiOrganizationAdminApiKey.fromJson(Map<String, dynamic> json) {
     return OpenAiOrganizationAdminApiKey(
       createdAt: json['created_at'] is int ? json['created_at'] : null,
-      id: json['id']?.toString(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiOrganizationAdminApiKey.id is required');
+        }
+        return value;
+      })(),
       lastUsedAt: json['last_used_at'] is int ? json['last_used_at'] : null,
-      name: json['name']?.toString(),
-      object: json['object']?.toString(),
+      name: (() {
+        final value = json['name']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiOrganizationAdminApiKey.name is required');
+        }
+        return value;
+      })(),
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiOrganizationAdminApiKey.object is required');
+        }
+        return value;
+      })(),
       owner: json['owner']?.toString(),
       redactedValue: json['redacted_value']?.toString(),
       value: json['value']?.toString()
@@ -11955,15 +13155,21 @@ class OpenAiOrganizationAdminApiKey {
 }
 
 class OpenAiOrganizationAdminApiKeyCreateRequest {
-  final String? name;
+  final String name;
 
   OpenAiOrganizationAdminApiKeyCreateRequest({
-    this.name
+    required this.name
   });
 
   factory OpenAiOrganizationAdminApiKeyCreateRequest.fromJson(Map<String, dynamic> json) {
     return OpenAiOrganizationAdminApiKeyCreateRequest(
-      name: json['name']?.toString()
+      name: (() {
+        final value = json['name']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiOrganizationAdminApiKeyCreateRequest.name is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -11975,18 +13181,18 @@ class OpenAiOrganizationAdminApiKeyCreateRequest {
 }
 
 class OpenAiOrganizationAdminApiKeyList {
-  final List<OpenAiOrganizationAdminApiKey>? data;
+  final List<OpenAiOrganizationAdminApiKey> data;
   final String? firstId;
   final bool? hasMore;
   final String? lastId;
-  final String? object;
+  final String object;
 
   OpenAiOrganizationAdminApiKeyList({
-    this.data,
+    required this.data,
     this.firstId,
     this.hasMore,
     this.lastId,
-    this.object
+    required this.object
   });
 
   factory OpenAiOrganizationAdminApiKeyList.fromJson(Map<String, dynamic> json) {
@@ -11994,7 +13200,7 @@ class OpenAiOrganizationAdminApiKeyList {
       data: (() {
         final list = _sdkworkAsList(json['data']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiOrganizationAdminApiKeyList.data is required');
         }
         return list
             .map((item) => (() {
@@ -12007,13 +13213,19 @@ class OpenAiOrganizationAdminApiKeyList {
       firstId: json['first_id']?.toString(),
       hasMore: json['has_more'] is bool ? json['has_more'] : null,
       lastId: json['last_id']?.toString(),
-      object: json['object']?.toString()
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiOrganizationAdminApiKeyList.object is required');
+        }
+        return value;
+      })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'data': data?.map((item) => item.toJson()).toList(),
+      'data': data.map((item) => item.toJson()).toList(),
       'first_id': firstId,
       'has_more': hasMore,
       'last_id': lastId,
@@ -12026,23 +13238,23 @@ class OpenAiOrganizationAuditLog {
   final dynamic actor;
   final String? apiKeyId;
   final int? effectiveAt;
-  final String? id;
+  final String id;
   final Map<String, dynamic>? metadata;
-  final String? object;
+  final String object;
   final dynamic project;
   final dynamic request;
-  final String? type;
+  final String type;
 
   OpenAiOrganizationAuditLog({
     this.actor,
     this.apiKeyId,
     this.effectiveAt,
-    this.id,
+    required this.id,
     this.metadata,
-    this.object,
+    required this.object,
     this.project,
     this.request,
-    this.type
+    required this.type
   });
 
   factory OpenAiOrganizationAuditLog.fromJson(Map<String, dynamic> json) {
@@ -12050,7 +13262,13 @@ class OpenAiOrganizationAuditLog {
       actor: json['actor']?.toString(),
       apiKeyId: json['api_key_id']?.toString(),
       effectiveAt: json['effective_at'] is int ? json['effective_at'] : null,
-      id: json['id']?.toString(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiOrganizationAuditLog.id is required');
+        }
+        return value;
+      })(),
       metadata: (() {
         final map = _sdkworkAsMap(json['metadata']);
         if (map == null) {
@@ -12065,10 +13283,22 @@ class OpenAiOrganizationAuditLog {
         });
         return result;
       })(),
-      object: json['object']?.toString(),
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiOrganizationAuditLog.object is required');
+        }
+        return value;
+      })(),
       project: json['project']?.toString(),
       request: json['request']?.toString(),
-      type: json['type']?.toString()
+      type: (() {
+        final value = json['type']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiOrganizationAuditLog.type is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -12088,18 +13318,18 @@ class OpenAiOrganizationAuditLog {
 }
 
 class OpenAiOrganizationAuditLogList {
-  final List<OpenAiOrganizationAuditLog>? data;
+  final List<OpenAiOrganizationAuditLog> data;
   final String? firstId;
   final bool? hasMore;
   final String? lastId;
-  final String? object;
+  final String object;
 
   OpenAiOrganizationAuditLogList({
-    this.data,
+    required this.data,
     this.firstId,
     this.hasMore,
     this.lastId,
-    this.object
+    required this.object
   });
 
   factory OpenAiOrganizationAuditLogList.fromJson(Map<String, dynamic> json) {
@@ -12107,7 +13337,7 @@ class OpenAiOrganizationAuditLogList {
       data: (() {
         final list = _sdkworkAsList(json['data']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiOrganizationAuditLogList.data is required');
         }
         return list
             .map((item) => (() {
@@ -12120,13 +13350,19 @@ class OpenAiOrganizationAuditLogList {
       firstId: json['first_id']?.toString(),
       hasMore: json['has_more'] is bool ? json['has_more'] : null,
       lastId: json['last_id']?.toString(),
-      object: json['object']?.toString()
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiOrganizationAuditLogList.object is required');
+        }
+        return value;
+      })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'data': data?.map((item) => item.toJson()).toList(),
+      'data': data.map((item) => item.toJson()).toList(),
       'first_id': firstId,
       'has_more': hasMore,
       'last_id': lastId,
@@ -12185,18 +13421,18 @@ class OpenAiOrganizationCostBucket {
 }
 
 class OpenAiOrganizationCostList {
-  final List<OpenAiOrganizationCostBucket>? data;
+  final List<OpenAiOrganizationCostBucket> data;
   final String? firstId;
   final bool? hasMore;
   final String? lastId;
-  final String? object;
+  final String object;
 
   OpenAiOrganizationCostList({
-    this.data,
+    required this.data,
     this.firstId,
     this.hasMore,
     this.lastId,
-    this.object
+    required this.object
   });
 
   factory OpenAiOrganizationCostList.fromJson(Map<String, dynamic> json) {
@@ -12204,7 +13440,7 @@ class OpenAiOrganizationCostList {
       data: (() {
         final list = _sdkworkAsList(json['data']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiOrganizationCostList.data is required');
         }
         return list
             .map((item) => (() {
@@ -12217,13 +13453,19 @@ class OpenAiOrganizationCostList {
       firstId: json['first_id']?.toString(),
       hasMore: json['has_more'] is bool ? json['has_more'] : null,
       lastId: json['last_id']?.toString(),
-      object: json['object']?.toString()
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiOrganizationCostList.object is required');
+        }
+        return value;
+      })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'data': data?.map((item) => item.toJson()).toList(),
+      'data': data.map((item) => item.toJson()).toList(),
       'first_id': firstId,
       'has_more': hasMore,
       'last_id': lastId,
@@ -12235,25 +13477,31 @@ class OpenAiOrganizationCostList {
 class OpenAiOrganizationGroup {
   final int? createdAt;
   final String? description;
-  final String? id;
+  final String id;
   final Map<String, dynamic>? metadata;
-  final String? name;
-  final String? object;
+  final String name;
+  final String object;
 
   OpenAiOrganizationGroup({
     this.createdAt,
     this.description,
-    this.id,
+    required this.id,
     this.metadata,
-    this.name,
-    this.object
+    required this.name,
+    required this.object
   });
 
   factory OpenAiOrganizationGroup.fromJson(Map<String, dynamic> json) {
     return OpenAiOrganizationGroup(
       createdAt: json['created_at'] is int ? json['created_at'] : null,
       description: json['description']?.toString(),
-      id: json['id']?.toString(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiOrganizationGroup.id is required');
+        }
+        return value;
+      })(),
       metadata: (() {
         final map = _sdkworkAsMap(json['metadata']);
         if (map == null) {
@@ -12268,8 +13516,20 @@ class OpenAiOrganizationGroup {
         });
         return result;
       })(),
-      name: json['name']?.toString(),
-      object: json['object']?.toString()
+      name: (() {
+        final value = json['name']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiOrganizationGroup.name is required');
+        }
+        return value;
+      })(),
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiOrganizationGroup.object is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -12288,12 +13548,12 @@ class OpenAiOrganizationGroup {
 class OpenAiOrganizationGroupCreateRequest {
   final String? description;
   final Map<String, dynamic>? metadata;
-  final String? name;
+  final String name;
 
   OpenAiOrganizationGroupCreateRequest({
     this.description,
     this.metadata,
-    this.name
+    required this.name
   });
 
   factory OpenAiOrganizationGroupCreateRequest.fromJson(Map<String, dynamic> json) {
@@ -12313,7 +13573,13 @@ class OpenAiOrganizationGroupCreateRequest {
         });
         return result;
       })(),
-      name: json['name']?.toString()
+      name: (() {
+        final value = json['name']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiOrganizationGroupCreateRequest.name is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -12327,18 +13593,18 @@ class OpenAiOrganizationGroupCreateRequest {
 }
 
 class OpenAiOrganizationGroupList {
-  final List<OpenAiOrganizationGroup>? data;
+  final List<OpenAiOrganizationGroup> data;
   final String? firstId;
   final bool? hasMore;
   final String? lastId;
-  final String? object;
+  final String object;
 
   OpenAiOrganizationGroupList({
-    this.data,
+    required this.data,
     this.firstId,
     this.hasMore,
     this.lastId,
-    this.object
+    required this.object
   });
 
   factory OpenAiOrganizationGroupList.fromJson(Map<String, dynamic> json) {
@@ -12346,7 +13612,7 @@ class OpenAiOrganizationGroupList {
       data: (() {
         final list = _sdkworkAsList(json['data']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiOrganizationGroupList.data is required');
         }
         return list
             .map((item) => (() {
@@ -12359,13 +13625,19 @@ class OpenAiOrganizationGroupList {
       firstId: json['first_id']?.toString(),
       hasMore: json['has_more'] is bool ? json['has_more'] : null,
       lastId: json['last_id']?.toString(),
-      object: json['object']?.toString()
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiOrganizationGroupList.object is required');
+        }
+        return value;
+      })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'data': data?.map((item) => item.toJson()).toList(),
+      'data': data.map((item) => item.toJson()).toList(),
       'first_id': firstId,
       'has_more': hasMore,
       'last_id': lastId,
@@ -12416,15 +13688,21 @@ class OpenAiOrganizationGroupUpdateRequest {
 }
 
 class OpenAiOrganizationGroupUserCreateRequest {
-  final String? userId;
+  final String userId;
 
   OpenAiOrganizationGroupUserCreateRequest({
-    this.userId
+    required this.userId
   });
 
   factory OpenAiOrganizationGroupUserCreateRequest.fromJson(Map<String, dynamic> json) {
     return OpenAiOrganizationGroupUserCreateRequest(
-      userId: json['user_id']?.toString()
+      userId: (() {
+        final value = json['user_id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiOrganizationGroupUserCreateRequest.user_id is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -12437,20 +13715,20 @@ class OpenAiOrganizationGroupUserCreateRequest {
 
 class OpenAiOrganizationInvite {
   final int? createdAt;
-  final String? email;
+  final String email;
   final int? expiresAt;
-  final String? id;
-  final String? object;
+  final String id;
+  final String object;
   final List<dynamic>? projects;
   final String? role;
   final String? status;
 
   OpenAiOrganizationInvite({
     this.createdAt,
-    this.email,
+    required this.email,
     this.expiresAt,
-    this.id,
-    this.object,
+    required this.id,
+    required this.object,
     this.projects,
     this.role,
     this.status
@@ -12459,10 +13737,28 @@ class OpenAiOrganizationInvite {
   factory OpenAiOrganizationInvite.fromJson(Map<String, dynamic> json) {
     return OpenAiOrganizationInvite(
       createdAt: json['created_at'] is int ? json['created_at'] : null,
-      email: json['email']?.toString(),
+      email: (() {
+        final value = json['email']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiOrganizationInvite.email is required');
+        }
+        return value;
+      })(),
       expiresAt: json['expires_at'] is int ? json['expires_at'] : null,
-      id: json['id']?.toString(),
-      object: json['object']?.toString(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiOrganizationInvite.id is required');
+        }
+        return value;
+      })(),
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiOrganizationInvite.object is required');
+        }
+        return value;
+      })(),
       projects: (() {
         final list = _sdkworkAsList(json['projects']);
         if (list == null) {
@@ -12493,19 +13789,25 @@ class OpenAiOrganizationInvite {
 }
 
 class OpenAiOrganizationInviteCreateRequest {
-  final String? email;
+  final String email;
   final List<dynamic>? projects;
-  final String? role;
+  final String role;
 
   OpenAiOrganizationInviteCreateRequest({
-    this.email,
+    required this.email,
     this.projects,
-    this.role
+    required this.role
   });
 
   factory OpenAiOrganizationInviteCreateRequest.fromJson(Map<String, dynamic> json) {
     return OpenAiOrganizationInviteCreateRequest(
-      email: json['email']?.toString(),
+      email: (() {
+        final value = json['email']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiOrganizationInviteCreateRequest.email is required');
+        }
+        return value;
+      })(),
       projects: (() {
         final list = _sdkworkAsList(json['projects']);
         if (list == null) {
@@ -12516,7 +13818,13 @@ class OpenAiOrganizationInviteCreateRequest {
             .whereType<dynamic>()
             .toList();
       })(),
-      role: json['role']?.toString()
+      role: (() {
+        final value = json['role']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiOrganizationInviteCreateRequest.role is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -12530,18 +13838,18 @@ class OpenAiOrganizationInviteCreateRequest {
 }
 
 class OpenAiOrganizationInviteList {
-  final List<OpenAiOrganizationInvite>? data;
+  final List<OpenAiOrganizationInvite> data;
   final String? firstId;
   final bool? hasMore;
   final String? lastId;
-  final String? object;
+  final String object;
 
   OpenAiOrganizationInviteList({
-    this.data,
+    required this.data,
     this.firstId,
     this.hasMore,
     this.lastId,
-    this.object
+    required this.object
   });
 
   factory OpenAiOrganizationInviteList.fromJson(Map<String, dynamic> json) {
@@ -12549,7 +13857,7 @@ class OpenAiOrganizationInviteList {
       data: (() {
         final list = _sdkworkAsList(json['data']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiOrganizationInviteList.data is required');
         }
         return list
             .map((item) => (() {
@@ -12562,13 +13870,19 @@ class OpenAiOrganizationInviteList {
       firstId: json['first_id']?.toString(),
       hasMore: json['has_more'] is bool ? json['has_more'] : null,
       lastId: json['last_id']?.toString(),
-      object: json['object']?.toString()
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiOrganizationInviteList.object is required');
+        }
+        return value;
+      })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'data': data?.map((item) => item.toJson()).toList(),
+      'data': data.map((item) => item.toJson()).toList(),
       'first_id': firstId,
       'has_more': hasMore,
       'last_id': lastId,
@@ -12631,18 +13945,18 @@ class OpenAiOrganizationUsageBucket {
 }
 
 class OpenAiOrganizationUsageList {
-  final List<OpenAiOrganizationUsageBucket>? data;
+  final List<OpenAiOrganizationUsageBucket> data;
   final String? firstId;
   final bool? hasMore;
   final String? lastId;
-  final String? object;
+  final String object;
 
   OpenAiOrganizationUsageList({
-    this.data,
+    required this.data,
     this.firstId,
     this.hasMore,
     this.lastId,
-    this.object
+    required this.object
   });
 
   factory OpenAiOrganizationUsageList.fromJson(Map<String, dynamic> json) {
@@ -12650,7 +13964,7 @@ class OpenAiOrganizationUsageList {
       data: (() {
         final list = _sdkworkAsList(json['data']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiOrganizationUsageList.data is required');
         }
         return list
             .map((item) => (() {
@@ -12663,13 +13977,19 @@ class OpenAiOrganizationUsageList {
       firstId: json['first_id']?.toString(),
       hasMore: json['has_more'] is bool ? json['has_more'] : null,
       lastId: json['last_id']?.toString(),
-      object: json['object']?.toString()
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiOrganizationUsageList.object is required');
+        }
+        return value;
+      })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'data': data?.map((item) => item.toJson()).toList(),
+      'data': data.map((item) => item.toJson()).toList(),
       'first_id': firstId,
       'has_more': hasMore,
       'last_id': lastId,
@@ -12680,21 +14000,21 @@ class OpenAiOrganizationUsageList {
 
 class OpenAiOrganizationUser {
   final int? createdAt;
-  final String? email;
-  final String? id;
+  final String email;
+  final String id;
   final Map<String, dynamic>? metadata;
   final String? name;
-  final String? object;
+  final String object;
   final String? role;
   final String? status;
 
   OpenAiOrganizationUser({
     this.createdAt,
-    this.email,
-    this.id,
+    required this.email,
+    required this.id,
     this.metadata,
     this.name,
-    this.object,
+    required this.object,
     this.role,
     this.status
   });
@@ -12702,8 +14022,20 @@ class OpenAiOrganizationUser {
   factory OpenAiOrganizationUser.fromJson(Map<String, dynamic> json) {
     return OpenAiOrganizationUser(
       createdAt: json['created_at'] is int ? json['created_at'] : null,
-      email: json['email']?.toString(),
-      id: json['id']?.toString(),
+      email: (() {
+        final value = json['email']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiOrganizationUser.email is required');
+        }
+        return value;
+      })(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiOrganizationUser.id is required');
+        }
+        return value;
+      })(),
       metadata: (() {
         final map = _sdkworkAsMap(json['metadata']);
         if (map == null) {
@@ -12719,7 +14051,13 @@ class OpenAiOrganizationUser {
         return result;
       })(),
       name: json['name']?.toString(),
-      object: json['object']?.toString(),
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiOrganizationUser.object is required');
+        }
+        return value;
+      })(),
       role: json['role']?.toString(),
       status: json['status']?.toString()
     );
@@ -12740,18 +14078,18 @@ class OpenAiOrganizationUser {
 }
 
 class OpenAiOrganizationUserList {
-  final List<OpenAiOrganizationUser>? data;
+  final List<OpenAiOrganizationUser> data;
   final String? firstId;
   final bool? hasMore;
   final String? lastId;
-  final String? object;
+  final String object;
 
   OpenAiOrganizationUserList({
-    this.data,
+    required this.data,
     this.firstId,
     this.hasMore,
     this.lastId,
-    this.object
+    required this.object
   });
 
   factory OpenAiOrganizationUserList.fromJson(Map<String, dynamic> json) {
@@ -12759,7 +14097,7 @@ class OpenAiOrganizationUserList {
       data: (() {
         final list = _sdkworkAsList(json['data']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiOrganizationUserList.data is required');
         }
         return list
             .map((item) => (() {
@@ -12772,13 +14110,19 @@ class OpenAiOrganizationUserList {
       firstId: json['first_id']?.toString(),
       hasMore: json['has_more'] is bool ? json['has_more'] : null,
       lastId: json['last_id']?.toString(),
-      object: json['object']?.toString()
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiOrganizationUserList.object is required');
+        }
+        return value;
+      })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'data': data?.map((item) => item.toJson()).toList(),
+      'data': data.map((item) => item.toJson()).toList(),
       'first_id': firstId,
       'has_more': hasMore,
       'last_id': lastId,
@@ -12826,17 +14170,23 @@ class OpenAiOrganizationUserUpdateRequest {
 
 class OpenAiPredictionConfig {
   final dynamic content;
-  final String? type;
+  final String type;
 
   OpenAiPredictionConfig({
     this.content,
-    this.type
+    required this.type
   });
 
   factory OpenAiPredictionConfig.fromJson(Map<String, dynamic> json) {
     return OpenAiPredictionConfig(
       content: json['content']?.toString(),
-      type: json['type']?.toString()
+      type: (() {
+        final value = json['type']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiPredictionConfig.type is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -12851,19 +14201,19 @@ class OpenAiPredictionConfig {
 class OpenAiProject {
   final int? archivedAt;
   final int? createdAt;
-  final String? id;
+  final String id;
   final Map<String, dynamic>? metadata;
-  final String? name;
-  final String? object;
+  final String name;
+  final String object;
   final String? status;
 
   OpenAiProject({
     this.archivedAt,
     this.createdAt,
-    this.id,
+    required this.id,
     this.metadata,
-    this.name,
-    this.object,
+    required this.name,
+    required this.object,
     this.status
   });
 
@@ -12871,7 +14221,13 @@ class OpenAiProject {
     return OpenAiProject(
       archivedAt: json['archived_at'] is int ? json['archived_at'] : null,
       createdAt: json['created_at'] is int ? json['created_at'] : null,
-      id: json['id']?.toString(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiProject.id is required');
+        }
+        return value;
+      })(),
       metadata: (() {
         final map = _sdkworkAsMap(json['metadata']);
         if (map == null) {
@@ -12886,8 +14242,20 @@ class OpenAiProject {
         });
         return result;
       })(),
-      name: json['name']?.toString(),
-      object: json['object']?.toString(),
+      name: (() {
+        final value = json['name']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiProject.name is required');
+        }
+        return value;
+      })(),
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiProject.object is required');
+        }
+        return value;
+      })(),
       status: json['status']?.toString()
     );
   }
@@ -12907,19 +14275,19 @@ class OpenAiProject {
 
 class OpenAiProjectApiKey {
   final int? createdAt;
-  final String? id;
+  final String id;
   final int? lastUsedAt;
-  final String? name;
-  final String? object;
+  final String name;
+  final String object;
   final dynamic owner;
   final String? redactedValue;
 
   OpenAiProjectApiKey({
     this.createdAt,
-    this.id,
+    required this.id,
     this.lastUsedAt,
-    this.name,
-    this.object,
+    required this.name,
+    required this.object,
     this.owner,
     this.redactedValue
   });
@@ -12927,10 +14295,28 @@ class OpenAiProjectApiKey {
   factory OpenAiProjectApiKey.fromJson(Map<String, dynamic> json) {
     return OpenAiProjectApiKey(
       createdAt: json['created_at'] is int ? json['created_at'] : null,
-      id: json['id']?.toString(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiProjectApiKey.id is required');
+        }
+        return value;
+      })(),
       lastUsedAt: json['last_used_at'] is int ? json['last_used_at'] : null,
-      name: json['name']?.toString(),
-      object: json['object']?.toString(),
+      name: (() {
+        final value = json['name']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiProjectApiKey.name is required');
+        }
+        return value;
+      })(),
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiProjectApiKey.object is required');
+        }
+        return value;
+      })(),
       owner: json['owner']?.toString(),
       redactedValue: json['redacted_value']?.toString()
     );
@@ -12950,18 +14336,18 @@ class OpenAiProjectApiKey {
 }
 
 class OpenAiProjectApiKeyList {
-  final List<OpenAiProjectApiKey>? data;
+  final List<OpenAiProjectApiKey> data;
   final String? firstId;
   final bool? hasMore;
   final String? lastId;
-  final String? object;
+  final String object;
 
   OpenAiProjectApiKeyList({
-    this.data,
+    required this.data,
     this.firstId,
     this.hasMore,
     this.lastId,
-    this.object
+    required this.object
   });
 
   factory OpenAiProjectApiKeyList.fromJson(Map<String, dynamic> json) {
@@ -12969,7 +14355,7 @@ class OpenAiProjectApiKeyList {
       data: (() {
         final list = _sdkworkAsList(json['data']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiProjectApiKeyList.data is required');
         }
         return list
             .map((item) => (() {
@@ -12982,13 +14368,19 @@ class OpenAiProjectApiKeyList {
       firstId: json['first_id']?.toString(),
       hasMore: json['has_more'] is bool ? json['has_more'] : null,
       lastId: json['last_id']?.toString(),
-      object: json['object']?.toString()
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiProjectApiKeyList.object is required');
+        }
+        return value;
+      })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'data': data?.map((item) => item.toJson()).toList(),
+      'data': data.map((item) => item.toJson()).toList(),
       'first_id': firstId,
       'has_more': hasMore,
       'last_id': lastId,
@@ -12999,11 +14391,11 @@ class OpenAiProjectApiKeyList {
 
 class OpenAiProjectCreateRequest {
   final Map<String, dynamic>? metadata;
-  final String? name;
+  final String name;
 
   OpenAiProjectCreateRequest({
     this.metadata,
-    this.name
+    required this.name
   });
 
   factory OpenAiProjectCreateRequest.fromJson(Map<String, dynamic> json) {
@@ -13022,7 +14414,13 @@ class OpenAiProjectCreateRequest {
         });
         return result;
       })(),
-      name: json['name']?.toString()
+      name: (() {
+        final value = json['name']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiProjectCreateRequest.name is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -13035,15 +14433,21 @@ class OpenAiProjectCreateRequest {
 }
 
 class OpenAiProjectGroupCreateRequest {
-  final String? groupId;
+  final String groupId;
 
   OpenAiProjectGroupCreateRequest({
-    this.groupId
+    required this.groupId
   });
 
   factory OpenAiProjectGroupCreateRequest.fromJson(Map<String, dynamic> json) {
     return OpenAiProjectGroupCreateRequest(
-      groupId: json['group_id']?.toString()
+      groupId: (() {
+        final value = json['group_id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiProjectGroupCreateRequest.group_id is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -13055,18 +14459,18 @@ class OpenAiProjectGroupCreateRequest {
 }
 
 class OpenAiProjectList {
-  final List<OpenAiProject>? data;
+  final List<OpenAiProject> data;
   final String? firstId;
   final bool? hasMore;
   final String? lastId;
-  final String? object;
+  final String object;
 
   OpenAiProjectList({
-    this.data,
+    required this.data,
     this.firstId,
     this.hasMore,
     this.lastId,
-    this.object
+    required this.object
   });
 
   factory OpenAiProjectList.fromJson(Map<String, dynamic> json) {
@@ -13074,7 +14478,7 @@ class OpenAiProjectList {
       data: (() {
         final list = _sdkworkAsList(json['data']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiProjectList.data is required');
         }
         return list
             .map((item) => (() {
@@ -13087,13 +14491,19 @@ class OpenAiProjectList {
       firstId: json['first_id']?.toString(),
       hasMore: json['has_more'] is bool ? json['has_more'] : null,
       lastId: json['last_id']?.toString(),
-      object: json['object']?.toString()
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiProjectList.object is required');
+        }
+        return value;
+      })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'data': data?.map((item) => item.toJson()).toList(),
+      'data': data.map((item) => item.toJson()).toList(),
       'first_id': firstId,
       'has_more': hasMore,
       'last_id': lastId,
@@ -13104,32 +14514,44 @@ class OpenAiProjectList {
 
 class OpenAiProjectRateLimit {
   final int? batch1DayMaxInputTokens;
-  final String? id;
+  final String id;
   final int? maxImagesPer1Minute;
   final int? maxRequestsPer1Minute;
   final int? maxTokensPer1Minute;
   final String? model;
-  final String? object;
+  final String object;
 
   OpenAiProjectRateLimit({
     this.batch1DayMaxInputTokens,
-    this.id,
+    required this.id,
     this.maxImagesPer1Minute,
     this.maxRequestsPer1Minute,
     this.maxTokensPer1Minute,
     this.model,
-    this.object
+    required this.object
   });
 
   factory OpenAiProjectRateLimit.fromJson(Map<String, dynamic> json) {
     return OpenAiProjectRateLimit(
       batch1DayMaxInputTokens: json['batch_1_day_max_input_tokens'] is int ? json['batch_1_day_max_input_tokens'] : null,
-      id: json['id']?.toString(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiProjectRateLimit.id is required');
+        }
+        return value;
+      })(),
       maxImagesPer1Minute: json['max_images_per_1_minute'] is int ? json['max_images_per_1_minute'] : null,
       maxRequestsPer1Minute: json['max_requests_per_1_minute'] is int ? json['max_requests_per_1_minute'] : null,
       maxTokensPer1Minute: json['max_tokens_per_1_minute'] is int ? json['max_tokens_per_1_minute'] : null,
       model: json['model']?.toString(),
-      object: json['object']?.toString()
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiProjectRateLimit.object is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -13147,18 +14569,18 @@ class OpenAiProjectRateLimit {
 }
 
 class OpenAiProjectRateLimitList {
-  final List<OpenAiProjectRateLimit>? data;
+  final List<OpenAiProjectRateLimit> data;
   final String? firstId;
   final bool? hasMore;
   final String? lastId;
-  final String? object;
+  final String object;
 
   OpenAiProjectRateLimitList({
-    this.data,
+    required this.data,
     this.firstId,
     this.hasMore,
     this.lastId,
-    this.object
+    required this.object
   });
 
   factory OpenAiProjectRateLimitList.fromJson(Map<String, dynamic> json) {
@@ -13166,7 +14588,7 @@ class OpenAiProjectRateLimitList {
       data: (() {
         final list = _sdkworkAsList(json['data']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiProjectRateLimitList.data is required');
         }
         return list
             .map((item) => (() {
@@ -13179,13 +14601,19 @@ class OpenAiProjectRateLimitList {
       firstId: json['first_id']?.toString(),
       hasMore: json['has_more'] is bool ? json['has_more'] : null,
       lastId: json['last_id']?.toString(),
-      object: json['object']?.toString()
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiProjectRateLimitList.object is required');
+        }
+        return value;
+      })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'data': data?.map((item) => item.toJson()).toList(),
+      'data': data.map((item) => item.toJson()).toList(),
       'first_id': firstId,
       'has_more': hasMore,
       'last_id': lastId,
@@ -13229,17 +14657,17 @@ class OpenAiProjectRateLimitUpdateRequest {
 class OpenAiProjectServiceAccount {
   final OpenAiProjectApiKey? apiKey;
   final int? createdAt;
-  final String? id;
-  final String? name;
-  final String? object;
+  final String id;
+  final String name;
+  final String object;
   final String? role;
 
   OpenAiProjectServiceAccount({
     this.apiKey,
     this.createdAt,
-    this.id,
-    this.name,
-    this.object,
+    required this.id,
+    required this.name,
+    required this.object,
     this.role
   });
 
@@ -13250,9 +14678,27 @@ class OpenAiProjectServiceAccount {
         return map == null ? null : OpenAiProjectApiKey.fromJson(map);
       })(),
       createdAt: json['created_at'] is int ? json['created_at'] : null,
-      id: json['id']?.toString(),
-      name: json['name']?.toString(),
-      object: json['object']?.toString(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiProjectServiceAccount.id is required');
+        }
+        return value;
+      })(),
+      name: (() {
+        final value = json['name']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiProjectServiceAccount.name is required');
+        }
+        return value;
+      })(),
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiProjectServiceAccount.object is required');
+        }
+        return value;
+      })(),
       role: json['role']?.toString()
     );
   }
@@ -13270,17 +14716,23 @@ class OpenAiProjectServiceAccount {
 }
 
 class OpenAiProjectServiceAccountCreateRequest {
-  final String? name;
+  final String name;
   final String? role;
 
   OpenAiProjectServiceAccountCreateRequest({
-    this.name,
+    required this.name,
     this.role
   });
 
   factory OpenAiProjectServiceAccountCreateRequest.fromJson(Map<String, dynamic> json) {
     return OpenAiProjectServiceAccountCreateRequest(
-      name: json['name']?.toString(),
+      name: (() {
+        final value = json['name']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiProjectServiceAccountCreateRequest.name is required');
+        }
+        return value;
+      })(),
       role: json['role']?.toString()
     );
   }
@@ -13294,18 +14746,18 @@ class OpenAiProjectServiceAccountCreateRequest {
 }
 
 class OpenAiProjectServiceAccountList {
-  final List<OpenAiProjectServiceAccount>? data;
+  final List<OpenAiProjectServiceAccount> data;
   final String? firstId;
   final bool? hasMore;
   final String? lastId;
-  final String? object;
+  final String object;
 
   OpenAiProjectServiceAccountList({
-    this.data,
+    required this.data,
     this.firstId,
     this.hasMore,
     this.lastId,
-    this.object
+    required this.object
   });
 
   factory OpenAiProjectServiceAccountList.fromJson(Map<String, dynamic> json) {
@@ -13313,7 +14765,7 @@ class OpenAiProjectServiceAccountList {
       data: (() {
         final list = _sdkworkAsList(json['data']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiProjectServiceAccountList.data is required');
         }
         return list
             .map((item) => (() {
@@ -13326,13 +14778,19 @@ class OpenAiProjectServiceAccountList {
       firstId: json['first_id']?.toString(),
       hasMore: json['has_more'] is bool ? json['has_more'] : null,
       lastId: json['last_id']?.toString(),
-      object: json['object']?.toString()
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiProjectServiceAccountList.object is required');
+        }
+        return value;
+      })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'data': data?.map((item) => item.toJson()).toList(),
+      'data': data.map((item) => item.toJson()).toList(),
       'first_id': firstId,
       'has_more': hasMore,
       'last_id': lastId,
@@ -13380,28 +14838,46 @@ class OpenAiProjectUpdateRequest {
 
 class OpenAiProjectUser {
   final int? createdAt;
-  final String? email;
-  final String? id;
+  final String email;
+  final String id;
   final String? name;
-  final String? object;
+  final String object;
   final String? role;
 
   OpenAiProjectUser({
     this.createdAt,
-    this.email,
-    this.id,
+    required this.email,
+    required this.id,
     this.name,
-    this.object,
+    required this.object,
     this.role
   });
 
   factory OpenAiProjectUser.fromJson(Map<String, dynamic> json) {
     return OpenAiProjectUser(
       createdAt: json['created_at'] is int ? json['created_at'] : null,
-      email: json['email']?.toString(),
-      id: json['id']?.toString(),
+      email: (() {
+        final value = json['email']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiProjectUser.email is required');
+        }
+        return value;
+      })(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiProjectUser.id is required');
+        }
+        return value;
+      })(),
       name: json['name']?.toString(),
-      object: json['object']?.toString(),
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiProjectUser.object is required');
+        }
+        return value;
+      })(),
       role: json['role']?.toString()
     );
   }
@@ -13419,18 +14895,30 @@ class OpenAiProjectUser {
 }
 
 class OpenAiProjectUserCreateRequest {
-  final String? role;
-  final String? userId;
+  final String role;
+  final String userId;
 
   OpenAiProjectUserCreateRequest({
-    this.role,
-    this.userId
+    required this.role,
+    required this.userId
   });
 
   factory OpenAiProjectUserCreateRequest.fromJson(Map<String, dynamic> json) {
     return OpenAiProjectUserCreateRequest(
-      role: json['role']?.toString(),
-      userId: json['user_id']?.toString()
+      role: (() {
+        final value = json['role']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiProjectUserCreateRequest.role is required');
+        }
+        return value;
+      })(),
+      userId: (() {
+        final value = json['user_id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiProjectUserCreateRequest.user_id is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -13443,18 +14931,18 @@ class OpenAiProjectUserCreateRequest {
 }
 
 class OpenAiProjectUserList {
-  final List<OpenAiProjectUser>? data;
+  final List<OpenAiProjectUser> data;
   final String? firstId;
   final bool? hasMore;
   final String? lastId;
-  final String? object;
+  final String object;
 
   OpenAiProjectUserList({
-    this.data,
+    required this.data,
     this.firstId,
     this.hasMore,
     this.lastId,
-    this.object
+    required this.object
   });
 
   factory OpenAiProjectUserList.fromJson(Map<String, dynamic> json) {
@@ -13462,7 +14950,7 @@ class OpenAiProjectUserList {
       data: (() {
         final list = _sdkworkAsList(json['data']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiProjectUserList.data is required');
         }
         return list
             .map((item) => (() {
@@ -13475,13 +14963,19 @@ class OpenAiProjectUserList {
       firstId: json['first_id']?.toString(),
       hasMore: json['has_more'] is bool ? json['has_more'] : null,
       lastId: json['last_id']?.toString(),
-      object: json['object']?.toString()
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiProjectUserList.object is required');
+        }
+        return value;
+      })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'data': data?.map((item) => item.toJson()).toList(),
+      'data': data.map((item) => item.toJson()).toList(),
       'first_id': firstId,
       'has_more': hasMore,
       'last_id': lastId,
@@ -13577,27 +15071,33 @@ class OpenAiPromptTokensDetails {
 
 class OpenAiRealtimeCall {
   final int? createdAt;
-  final String? id;
+  final String id;
   final Map<String, dynamic>? metadata;
-  final String? object;
+  final String object;
   final String? sdp;
   final dynamic session;
-  final String? status;
+  final String status;
 
   OpenAiRealtimeCall({
     this.createdAt,
-    this.id,
+    required this.id,
     this.metadata,
-    this.object,
+    required this.object,
     this.sdp,
     this.session,
-    this.status
+    required this.status
   });
 
   factory OpenAiRealtimeCall.fromJson(Map<String, dynamic> json) {
     return OpenAiRealtimeCall(
       createdAt: json['created_at'] is int ? json['created_at'] : null,
-      id: json['id']?.toString(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiRealtimeCall.id is required');
+        }
+        return value;
+      })(),
       metadata: (() {
         final map = _sdkworkAsMap(json['metadata']);
         if (map == null) {
@@ -13612,10 +15112,22 @@ class OpenAiRealtimeCall {
         });
         return result;
       })(),
-      object: json['object']?.toString(),
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiRealtimeCall.object is required');
+        }
+        return value;
+      })(),
       sdp: json['sdp']?.toString(),
       session: json['session']?.toString(),
-      status: json['status']?.toString()
+      status: (() {
+        final value = json['status']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiRealtimeCall.status is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -13707,17 +15219,23 @@ class OpenAiRealtimeCallCreateRequest {
 }
 
 class OpenAiRealtimeCallMultipartRequest {
-  final String? sdp;
+  final String sdp;
   final String? session;
 
   OpenAiRealtimeCallMultipartRequest({
-    this.sdp,
+    required this.sdp,
     this.session
   });
 
   factory OpenAiRealtimeCallMultipartRequest.fromJson(Map<String, dynamic> json) {
     return OpenAiRealtimeCallMultipartRequest(
-      sdp: json['sdp']?.toString(),
+      sdp: (() {
+        final value = json['sdp']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiRealtimeCallMultipartRequest.sdp is required');
+        }
+        return value;
+      })(),
       session: json['session']?.toString()
     );
   }
@@ -13768,11 +15286,11 @@ class OpenAiRealtimeCallReferRequest {
 }
 
 class OpenAiRealtimeClientSecret {
-  final OpenAiRealtimeClientSecretValue? clientSecret;
+  final OpenAiRealtimeClientSecretValue clientSecret;
   final dynamic session;
 
   OpenAiRealtimeClientSecret({
-    this.clientSecret,
+    required this.clientSecret,
     this.session
   });
 
@@ -13780,7 +15298,10 @@ class OpenAiRealtimeClientSecret {
     return OpenAiRealtimeClientSecret(
       clientSecret: (() {
         final map = _sdkworkAsMap(json['client_secret']);
-        return map == null ? null : OpenAiRealtimeClientSecretValue.fromJson(map);
+        if (map == null) {
+          throw FormatException('OpenAiRealtimeClientSecret.client_secret is required');
+        }
+        return OpenAiRealtimeClientSecretValue.fromJson(map);
       })(),
       session: json['session']?.toString()
     );
@@ -13788,7 +15309,7 @@ class OpenAiRealtimeClientSecret {
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'client_secret': clientSecret?.toJson(),
+      'client_secret': clientSecret.toJson(),
       'session': session,
     };
   }
@@ -13854,17 +15375,23 @@ class OpenAiRealtimeClientSecretCreateRequest {
 
 class OpenAiRealtimeClientSecretValue {
   final int? expiresAt;
-  final String? value;
+  final String value;
 
   OpenAiRealtimeClientSecretValue({
     this.expiresAt,
-    this.value
+    required this.value
   });
 
   factory OpenAiRealtimeClientSecretValue.fromJson(Map<String, dynamic> json) {
     return OpenAiRealtimeClientSecretValue(
       expiresAt: json['expires_at'] is int ? json['expires_at'] : null,
-      value: json['value']?.toString()
+      value: (() {
+        final value = json['value']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiRealtimeClientSecretValue.value is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -13878,20 +15405,20 @@ class OpenAiRealtimeClientSecretValue {
 
 class OpenAiRealtimeSession {
   final OpenAiRealtimeClientSecretValue? clientSecret;
-  final String? id;
+  final String id;
   final String? instructions;
   final List<String>? modalities;
   final String? model;
-  final String? object;
+  final String object;
   final String? voice;
 
   OpenAiRealtimeSession({
     this.clientSecret,
-    this.id,
+    required this.id,
     this.instructions,
     this.modalities,
     this.model,
-    this.object,
+    required this.object,
     this.voice
   });
 
@@ -13901,7 +15428,13 @@ class OpenAiRealtimeSession {
         final map = _sdkworkAsMap(json['client_secret']);
         return map == null ? null : OpenAiRealtimeClientSecretValue.fromJson(map);
       })(),
-      id: json['id']?.toString(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiRealtimeSession.id is required');
+        }
+        return value;
+      })(),
       instructions: json['instructions']?.toString(),
       modalities: (() {
         final list = _sdkworkAsList(json['modalities']);
@@ -13914,7 +15447,13 @@ class OpenAiRealtimeSession {
             .toList();
       })(),
       model: json['model']?.toString(),
-      object: json['object']?.toString(),
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiRealtimeSession.object is required');
+        }
+        return value;
+      })(),
       voice: json['voice']?.toString()
     );
   }
@@ -13992,17 +15531,17 @@ class OpenAiRealtimeSessionCreateRequest {
 
 class OpenAiRealtimeTranscriptionSession {
   final OpenAiRealtimeClientSecretValue? clientSecret;
-  final String? id;
+  final String id;
   final String? inputAudioFormat;
   final dynamic inputAudioTranscription;
-  final String? object;
+  final String object;
 
   OpenAiRealtimeTranscriptionSession({
     this.clientSecret,
-    this.id,
+    required this.id,
     this.inputAudioFormat,
     this.inputAudioTranscription,
-    this.object
+    required this.object
   });
 
   factory OpenAiRealtimeTranscriptionSession.fromJson(Map<String, dynamic> json) {
@@ -14011,10 +15550,22 @@ class OpenAiRealtimeTranscriptionSession {
         final map = _sdkworkAsMap(json['client_secret']);
         return map == null ? null : OpenAiRealtimeClientSecretValue.fromJson(map);
       })(),
-      id: json['id']?.toString(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiRealtimeTranscriptionSession.id is required');
+        }
+        return value;
+      })(),
       inputAudioFormat: json['input_audio_format']?.toString(),
       inputAudioTranscription: json['input_audio_transcription']?.toString(),
-      object: json['object']?.toString()
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiRealtimeTranscriptionSession.object is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -14080,15 +15631,15 @@ class OpenAiRealtimeTranscriptionSessionCreateRequest {
 
 class OpenAiRealtimeTranslationSession {
   final OpenAiRealtimeClientSecretValue? clientSecret;
-  final String? id;
-  final String? object;
+  final String id;
+  final String object;
   final String? sourceLanguage;
   final String? targetLanguage;
 
   OpenAiRealtimeTranslationSession({
     this.clientSecret,
-    this.id,
-    this.object,
+    required this.id,
+    required this.object,
     this.sourceLanguage,
     this.targetLanguage
   });
@@ -14099,8 +15650,20 @@ class OpenAiRealtimeTranslationSession {
         final map = _sdkworkAsMap(json['client_secret']);
         return map == null ? null : OpenAiRealtimeClientSecretValue.fromJson(map);
       })(),
-      id: json['id']?.toString(),
-      object: json['object']?.toString(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiRealtimeTranslationSession.id is required');
+        }
+        return value;
+      })(),
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiRealtimeTranslationSession.object is required');
+        }
+        return value;
+      })(),
       sourceLanguage: json['source_language']?.toString(),
       targetLanguage: json['target_language']?.toString()
     );
@@ -14189,11 +15752,11 @@ class OpenAiReasoningConfig {
 class OpenAiResponse {
   final int? createdAt;
   final OpenAiResponseError? error;
-  final String? id;
+  final String id;
   final OpenAiIncompleteDetails? incompleteDetails;
-  final String? model;
-  final String? object;
-  final List<OpenAiResponseOutputItem>? output;
+  final String model;
+  final String object;
+  final List<OpenAiResponseOutputItem> output;
   final String? outputText;
   final String? status;
   final OpenAiResponseUsage? usage;
@@ -14201,11 +15764,11 @@ class OpenAiResponse {
   OpenAiResponse({
     this.createdAt,
     this.error,
-    this.id,
+    required this.id,
     this.incompleteDetails,
-    this.model,
-    this.object,
-    this.output,
+    required this.model,
+    required this.object,
+    required this.output,
     this.outputText,
     this.status,
     this.usage
@@ -14218,17 +15781,35 @@ class OpenAiResponse {
         final map = _sdkworkAsMap(json['error']);
         return map == null ? null : OpenAiResponseError.fromJson(map);
       })(),
-      id: json['id']?.toString(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiResponse.id is required');
+        }
+        return value;
+      })(),
       incompleteDetails: (() {
         final map = _sdkworkAsMap(json['incomplete_details']);
         return map == null ? null : OpenAiIncompleteDetails.fromJson(map);
       })(),
-      model: json['model']?.toString(),
-      object: json['object']?.toString(),
+      model: (() {
+        final value = json['model']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiResponse.model is required');
+        }
+        return value;
+      })(),
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiResponse.object is required');
+        }
+        return value;
+      })(),
       output: (() {
         final list = _sdkworkAsList(json['output']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiResponse.output is required');
         }
         return list
             .map((item) => (() {
@@ -14255,7 +15836,7 @@ class OpenAiResponse {
       'incomplete_details': incompleteDetails?.toJson(),
       'model': model,
       'object': object,
-      'output': output?.map((item) => item.toJson()).toList(),
+      'output': output.map((item) => item.toJson()).toList(),
       'output_text': outputText,
       'status': status,
       'usage': usage?.toJson(),
@@ -14342,11 +15923,11 @@ class OpenAiResponseError {
 
 class OpenAiResponseFormat {
   final OpenAiJsonSchemaFormat? jsonSchema;
-  final String? type;
+  final String type;
 
   OpenAiResponseFormat({
     this.jsonSchema,
-    this.type
+    required this.type
   });
 
   factory OpenAiResponseFormat.fromJson(Map<String, dynamic> json) {
@@ -14355,7 +15936,13 @@ class OpenAiResponseFormat {
         final map = _sdkworkAsMap(json['json_schema']);
         return map == null ? null : OpenAiJsonSchemaFormat.fromJson(map);
       })(),
-      type: json['type']?.toString()
+      type: (() {
+        final value = json['type']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiResponseFormat.type is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -14374,7 +15961,7 @@ class OpenAiResponseInputContentPart {
   final String? filename;
   final String? imageUrl;
   final String? text;
-  final String? type;
+  final String type;
 
   OpenAiResponseInputContentPart({
     this.detail,
@@ -14383,7 +15970,7 @@ class OpenAiResponseInputContentPart {
     this.filename,
     this.imageUrl,
     this.text,
-    this.type
+    required this.type
   });
 
   factory OpenAiResponseInputContentPart.fromJson(Map<String, dynamic> json) {
@@ -14394,7 +15981,13 @@ class OpenAiResponseInputContentPart {
       filename: json['filename']?.toString(),
       imageUrl: json['image_url']?.toString(),
       text: json['text']?.toString(),
-      type: json['type']?.toString()
+      type: (() {
+        final value = json['type']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiResponseInputContentPart.type is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -14448,18 +16041,18 @@ class OpenAiResponseInputItem {
 }
 
 class OpenAiResponseInputItemList {
-  final List<OpenAiResponseInputItem>? data;
+  final List<OpenAiResponseInputItem> data;
   final String? firstId;
   final bool? hasMore;
   final String? lastId;
-  final String? object;
+  final String object;
 
   OpenAiResponseInputItemList({
-    this.data,
+    required this.data,
     this.firstId,
     this.hasMore,
     this.lastId,
-    this.object
+    required this.object
   });
 
   factory OpenAiResponseInputItemList.fromJson(Map<String, dynamic> json) {
@@ -14467,7 +16060,7 @@ class OpenAiResponseInputItemList {
       data: (() {
         final list = _sdkworkAsList(json['data']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiResponseInputItemList.data is required');
         }
         return list
             .map((item) => (() {
@@ -14480,13 +16073,19 @@ class OpenAiResponseInputItemList {
       firstId: json['first_id']?.toString(),
       hasMore: json['has_more'] is bool ? json['has_more'] : null,
       lastId: json['last_id']?.toString(),
-      object: json['object']?.toString()
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiResponseInputItemList.object is required');
+        }
+        return value;
+      })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'data': data?.map((item) => item.toJson()).toList(),
+      'data': data.map((item) => item.toJson()).toList(),
       'first_id': firstId,
       'has_more': hasMore,
       'last_id': lastId,
@@ -14496,13 +16095,13 @@ class OpenAiResponseInputItemList {
 }
 
 class OpenAiResponseInputTokenCount {
-  final int? inputTokens;
+  final int inputTokens;
   final OpenAiResponseInputTokensDetails? inputTokensDetails;
   final String? model;
   final String? object;
 
   OpenAiResponseInputTokenCount({
-    this.inputTokens,
+    required this.inputTokens,
     this.inputTokensDetails,
     this.model,
     this.object
@@ -14510,7 +16109,13 @@ class OpenAiResponseInputTokenCount {
 
   factory OpenAiResponseInputTokenCount.fromJson(Map<String, dynamic> json) {
     return OpenAiResponseInputTokenCount(
-      inputTokens: json['input_tokens'] is int ? json['input_tokens'] : null,
+      inputTokens: (() {
+        final value = json['input_tokens'];
+        if (value is! int) {
+          throw FormatException('OpenAiResponseInputTokenCount.input_tokens is required');
+        }
+        return value;
+      })(),
       inputTokensDetails: (() {
         final map = _sdkworkAsMap(json['input_tokens_details']);
         return map == null ? null : OpenAiResponseInputTokensDetails.fromJson(map);
@@ -14533,21 +16138,33 @@ class OpenAiResponseInputTokenCount {
 class OpenAiResponseInputTokenCountRequest {
   final dynamic input;
   final String? instructions;
-  final String? model;
+  final String model;
   final List<dynamic>? tools;
 
   OpenAiResponseInputTokenCountRequest({
-    this.input,
+    required this.input,
     this.instructions,
-    this.model,
+    required this.model,
     this.tools
   });
 
   factory OpenAiResponseInputTokenCountRequest.fromJson(Map<String, dynamic> json) {
     return OpenAiResponseInputTokenCountRequest(
-      input: json['input']?.toString(),
+      input: (() {
+        final value = json['input']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiResponseInputTokenCountRequest.input is required');
+        }
+        return value;
+      })(),
       instructions: json['instructions']?.toString(),
-      model: json['model']?.toString(),
+      model: (() {
+        final value = json['model']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiResponseInputTokenCountRequest.model is required');
+        }
+        return value;
+      })(),
       tools: (() {
         final list = _sdkworkAsList(json['tools']);
         if (list == null) {
@@ -14595,13 +16212,13 @@ class OpenAiResponseOutputContent {
   final List<OpenAiAnnotation>? annotations;
   final String? refusal;
   final String? text;
-  final String? type;
+  final String type;
 
   OpenAiResponseOutputContent({
     this.annotations,
     this.refusal,
     this.text,
-    this.type
+    required this.type
   });
 
   factory OpenAiResponseOutputContent.fromJson(Map<String, dynamic> json) {
@@ -14621,7 +16238,13 @@ class OpenAiResponseOutputContent {
       })(),
       refusal: json['refusal']?.toString(),
       text: json['text']?.toString(),
-      type: json['type']?.toString()
+      type: (() {
+        final value = json['type']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiResponseOutputContent.type is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -14640,14 +16263,14 @@ class OpenAiResponseOutputItem {
   final String? id;
   final String? role;
   final String? status;
-  final String? type;
+  final String type;
 
   OpenAiResponseOutputItem({
     this.content,
     this.id,
     this.role,
     this.status,
-    this.type
+    required this.type
   });
 
   factory OpenAiResponseOutputItem.fromJson(Map<String, dynamic> json) {
@@ -14668,7 +16291,13 @@ class OpenAiResponseOutputItem {
       id: json['id']?.toString(),
       role: json['role']?.toString(),
       status: json['status']?.toString(),
-      type: json['type']?.toString()
+      type: (() {
+        final value = json['type']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiResponseOutputItem.type is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -14704,33 +16333,51 @@ class OpenAiResponseOutputTokensDetails {
 }
 
 class OpenAiResponseUsage {
-  final int? inputTokens;
+  final int inputTokens;
   final OpenAiResponseInputTokensDetails? inputTokensDetails;
-  final int? outputTokens;
+  final int outputTokens;
   final OpenAiResponseOutputTokensDetails? outputTokensDetails;
-  final int? totalTokens;
+  final int totalTokens;
 
   OpenAiResponseUsage({
-    this.inputTokens,
+    required this.inputTokens,
     this.inputTokensDetails,
-    this.outputTokens,
+    required this.outputTokens,
     this.outputTokensDetails,
-    this.totalTokens
+    required this.totalTokens
   });
 
   factory OpenAiResponseUsage.fromJson(Map<String, dynamic> json) {
     return OpenAiResponseUsage(
-      inputTokens: json['input_tokens'] is int ? json['input_tokens'] : null,
+      inputTokens: (() {
+        final value = json['input_tokens'];
+        if (value is! int) {
+          throw FormatException('OpenAiResponseUsage.input_tokens is required');
+        }
+        return value;
+      })(),
       inputTokensDetails: (() {
         final map = _sdkworkAsMap(json['input_tokens_details']);
         return map == null ? null : OpenAiResponseInputTokensDetails.fromJson(map);
       })(),
-      outputTokens: json['output_tokens'] is int ? json['output_tokens'] : null,
+      outputTokens: (() {
+        final value = json['output_tokens'];
+        if (value is! int) {
+          throw FormatException('OpenAiResponseUsage.output_tokens is required');
+        }
+        return value;
+      })(),
       outputTokensDetails: (() {
         final map = _sdkworkAsMap(json['output_tokens_details']);
         return map == null ? null : OpenAiResponseOutputTokensDetails.fromJson(map);
       })(),
-      totalTokens: json['total_tokens'] is int ? json['total_tokens'] : null
+      totalTokens: (() {
+        final value = json['total_tokens'];
+        if (value is! int) {
+          throw FormatException('OpenAiResponseUsage.total_tokens is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -14754,7 +16401,7 @@ class OpenAiResponsesRequest {
   final int? maxOutputTokens;
   final int? maxToolCalls;
   final Map<String, dynamic>? metadata;
-  final String? model;
+  final String model;
   final bool? parallelToolCalls;
   final String? previousResponseId;
   final OpenAiPromptReference? prompt;
@@ -14776,12 +16423,12 @@ class OpenAiResponsesRequest {
     this.background,
     this.conversation,
     this.include,
-    this.input,
+    required this.input,
     this.instructions,
     this.maxOutputTokens,
     this.maxToolCalls,
     this.metadata,
-    this.model,
+    required this.model,
     this.parallelToolCalls,
     this.previousResponseId,
     this.prompt,
@@ -14814,7 +16461,13 @@ class OpenAiResponsesRequest {
             .whereType<String>()
             .toList();
       })(),
-      input: json['input']?.toString(),
+      input: (() {
+        final value = json['input']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiResponsesRequest.input is required');
+        }
+        return value;
+      })(),
       instructions: json['instructions']?.toString(),
       maxOutputTokens: json['max_output_tokens'] is int ? json['max_output_tokens'] : null,
       maxToolCalls: json['max_tool_calls'] is int ? json['max_tool_calls'] : null,
@@ -14832,7 +16485,13 @@ class OpenAiResponsesRequest {
         });
         return result;
       })(),
-      model: json['model']?.toString(),
+      model: (() {
+        final value = json['model']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiResponsesRequest.model is required');
+        }
+        return value;
+      })(),
       parallelToolCalls: json['parallel_tool_calls'] is bool ? json['parallel_tool_calls'] : null,
       previousResponseId: json['previous_response_id']?.toString(),
       prompt: (() {
@@ -14910,17 +16569,17 @@ class OpenAiResponsesRequest {
 class OpenAiRole {
   final int? createdAt;
   final String? description;
-  final String? id;
-  final String? name;
-  final String? object;
+  final String id;
+  final String name;
+  final String object;
   final List<String>? permissions;
 
   OpenAiRole({
     this.createdAt,
     this.description,
-    this.id,
-    this.name,
-    this.object,
+    required this.id,
+    required this.name,
+    required this.object,
     this.permissions
   });
 
@@ -14928,9 +16587,27 @@ class OpenAiRole {
     return OpenAiRole(
       createdAt: json['created_at'] is int ? json['created_at'] : null,
       description: json['description']?.toString(),
-      id: json['id']?.toString(),
-      name: json['name']?.toString(),
-      object: json['object']?.toString(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiRole.id is required');
+        }
+        return value;
+      })(),
+      name: (() {
+        final value = json['name']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiRole.name is required');
+        }
+        return value;
+      })(),
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiRole.object is required');
+        }
+        return value;
+      })(),
       permissions: (() {
         final list = _sdkworkAsList(json['permissions']);
         if (list == null) {
@@ -14959,19 +16636,19 @@ class OpenAiRole {
 class OpenAiRoleAssignment {
   final int? createdAt;
   final String? groupId;
-  final String? id;
-  final String? object;
+  final String id;
+  final String object;
   final String? projectId;
-  final String? roleId;
+  final String roleId;
   final String? userId;
 
   OpenAiRoleAssignment({
     this.createdAt,
     this.groupId,
-    this.id,
-    this.object,
+    required this.id,
+    required this.object,
     this.projectId,
-    this.roleId,
+    required this.roleId,
     this.userId
   });
 
@@ -14979,10 +16656,28 @@ class OpenAiRoleAssignment {
     return OpenAiRoleAssignment(
       createdAt: json['created_at'] is int ? json['created_at'] : null,
       groupId: json['group_id']?.toString(),
-      id: json['id']?.toString(),
-      object: json['object']?.toString(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiRoleAssignment.id is required');
+        }
+        return value;
+      })(),
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiRoleAssignment.object is required');
+        }
+        return value;
+      })(),
       projectId: json['project_id']?.toString(),
-      roleId: json['role_id']?.toString(),
+      roleId: (() {
+        final value = json['role_id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiRoleAssignment.role_id is required');
+        }
+        return value;
+      })(),
       userId: json['user_id']?.toString()
     );
   }
@@ -15001,15 +16696,21 @@ class OpenAiRoleAssignment {
 }
 
 class OpenAiRoleAssignmentCreateRequest {
-  final String? roleId;
+  final String roleId;
 
   OpenAiRoleAssignmentCreateRequest({
-    this.roleId
+    required this.roleId
   });
 
   factory OpenAiRoleAssignmentCreateRequest.fromJson(Map<String, dynamic> json) {
     return OpenAiRoleAssignmentCreateRequest(
-      roleId: json['role_id']?.toString()
+      roleId: (() {
+        final value = json['role_id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiRoleAssignmentCreateRequest.role_id is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -15021,18 +16722,18 @@ class OpenAiRoleAssignmentCreateRequest {
 }
 
 class OpenAiRoleAssignmentList {
-  final List<OpenAiRoleAssignment>? data;
+  final List<OpenAiRoleAssignment> data;
   final String? firstId;
   final bool? hasMore;
   final String? lastId;
-  final String? object;
+  final String object;
 
   OpenAiRoleAssignmentList({
-    this.data,
+    required this.data,
     this.firstId,
     this.hasMore,
     this.lastId,
-    this.object
+    required this.object
   });
 
   factory OpenAiRoleAssignmentList.fromJson(Map<String, dynamic> json) {
@@ -15040,7 +16741,7 @@ class OpenAiRoleAssignmentList {
       data: (() {
         final list = _sdkworkAsList(json['data']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiRoleAssignmentList.data is required');
         }
         return list
             .map((item) => (() {
@@ -15053,13 +16754,19 @@ class OpenAiRoleAssignmentList {
       firstId: json['first_id']?.toString(),
       hasMore: json['has_more'] is bool ? json['has_more'] : null,
       lastId: json['last_id']?.toString(),
-      object: json['object']?.toString()
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiRoleAssignmentList.object is required');
+        }
+        return value;
+      })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'data': data?.map((item) => item.toJson()).toList(),
+      'data': data.map((item) => item.toJson()).toList(),
       'first_id': firstId,
       'has_more': hasMore,
       'last_id': lastId,
@@ -15070,19 +16777,25 @@ class OpenAiRoleAssignmentList {
 
 class OpenAiRoleCreateRequest {
   final String? description;
-  final String? name;
+  final String name;
   final List<String>? permissions;
 
   OpenAiRoleCreateRequest({
     this.description,
-    this.name,
+    required this.name,
     this.permissions
   });
 
   factory OpenAiRoleCreateRequest.fromJson(Map<String, dynamic> json) {
     return OpenAiRoleCreateRequest(
       description: json['description']?.toString(),
-      name: json['name']?.toString(),
+      name: (() {
+        final value = json['name']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiRoleCreateRequest.name is required');
+        }
+        return value;
+      })(),
       permissions: (() {
         final list = _sdkworkAsList(json['permissions']);
         if (list == null) {
@@ -15106,18 +16819,18 @@ class OpenAiRoleCreateRequest {
 }
 
 class OpenAiRoleList {
-  final List<OpenAiRole>? data;
+  final List<OpenAiRole> data;
   final String? firstId;
   final bool? hasMore;
   final String? lastId;
-  final String? object;
+  final String object;
 
   OpenAiRoleList({
-    this.data,
+    required this.data,
     this.firstId,
     this.hasMore,
     this.lastId,
-    this.object
+    required this.object
   });
 
   factory OpenAiRoleList.fromJson(Map<String, dynamic> json) {
@@ -15125,7 +16838,7 @@ class OpenAiRoleList {
       data: (() {
         final list = _sdkworkAsList(json['data']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiRoleList.data is required');
         }
         return list
             .map((item) => (() {
@@ -15138,13 +16851,19 @@ class OpenAiRoleList {
       firstId: json['first_id']?.toString(),
       hasMore: json['has_more'] is bool ? json['has_more'] : null,
       lastId: json['last_id']?.toString(),
-      object: json['object']?.toString()
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiRoleList.object is required');
+        }
+        return value;
+      })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'data': data?.map((item) => item.toJson()).toList(),
+      'data': data.map((item) => item.toJson()).toList(),
       'first_id': firstId,
       'has_more': hasMore,
       'last_id': lastId,
@@ -15191,55 +16910,73 @@ class OpenAiRoleUpdateRequest {
 }
 
 class OpenAiRun {
-  final String? assistantId;
+  final String assistantId;
   final int? cancelledAt;
   final int? completedAt;
-  final int? createdAt;
+  final int createdAt;
   final int? expiresAt;
   final int? failedAt;
-  final String? id;
+  final String id;
   final String? instructions;
   final dynamic lastError;
   final Map<String, dynamic>? metadata;
   final String? model;
-  final String? object;
+  final String object;
   final dynamic requiredAction;
   final int? startedAt;
-  final String? status;
-  final String? threadId;
+  final String status;
+  final String threadId;
   final List<dynamic>? tools;
   final OpenAiTokenUsage? usage;
 
   OpenAiRun({
-    this.assistantId,
+    required this.assistantId,
     this.cancelledAt,
     this.completedAt,
-    this.createdAt,
+    required this.createdAt,
     this.expiresAt,
     this.failedAt,
-    this.id,
+    required this.id,
     this.instructions,
     this.lastError,
     this.metadata,
     this.model,
-    this.object,
+    required this.object,
     this.requiredAction,
     this.startedAt,
-    this.status,
-    this.threadId,
+    required this.status,
+    required this.threadId,
     this.tools,
     this.usage
   });
 
   factory OpenAiRun.fromJson(Map<String, dynamic> json) {
     return OpenAiRun(
-      assistantId: json['assistant_id']?.toString(),
+      assistantId: (() {
+        final value = json['assistant_id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiRun.assistant_id is required');
+        }
+        return value;
+      })(),
       cancelledAt: json['cancelled_at'] is int ? json['cancelled_at'] : null,
       completedAt: json['completed_at'] is int ? json['completed_at'] : null,
-      createdAt: json['created_at'] is int ? json['created_at'] : null,
+      createdAt: (() {
+        final value = json['created_at'];
+        if (value is! int) {
+          throw FormatException('OpenAiRun.created_at is required');
+        }
+        return value;
+      })(),
       expiresAt: json['expires_at'] is int ? json['expires_at'] : null,
       failedAt: json['failed_at'] is int ? json['failed_at'] : null,
-      id: json['id']?.toString(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiRun.id is required');
+        }
+        return value;
+      })(),
       instructions: json['instructions']?.toString(),
       lastError: json['last_error']?.toString(),
       metadata: (() {
@@ -15257,11 +16994,29 @@ class OpenAiRun {
         return result;
       })(),
       model: json['model']?.toString(),
-      object: json['object']?.toString(),
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiRun.object is required');
+        }
+        return value;
+      })(),
       requiredAction: json['required_action']?.toString(),
       startedAt: json['started_at'] is int ? json['started_at'] : null,
-      status: json['status']?.toString(),
-      threadId: json['thread_id']?.toString(),
+      status: (() {
+        final value = json['status']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiRun.status is required');
+        }
+        return value;
+      })(),
+      threadId: (() {
+        final value = json['thread_id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiRun.thread_id is required');
+        }
+        return value;
+      })(),
       tools: (() {
         final list = _sdkworkAsList(json['tools']);
         if (list == null) {
@@ -15305,7 +17060,7 @@ class OpenAiRun {
 
 class OpenAiRunCreateRequest {
   final String? additionalInstructions;
-  final String? assistantId;
+  final String assistantId;
   final String? instructions;
   final Map<String, dynamic>? metadata;
   final String? model;
@@ -15314,7 +17069,7 @@ class OpenAiRunCreateRequest {
 
   OpenAiRunCreateRequest({
     this.additionalInstructions,
-    this.assistantId,
+    required this.assistantId,
     this.instructions,
     this.metadata,
     this.model,
@@ -15325,7 +17080,13 @@ class OpenAiRunCreateRequest {
   factory OpenAiRunCreateRequest.fromJson(Map<String, dynamic> json) {
     return OpenAiRunCreateRequest(
       additionalInstructions: json['additional_instructions']?.toString(),
-      assistantId: json['assistant_id']?.toString(),
+      assistantId: (() {
+        final value = json['assistant_id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiRunCreateRequest.assistant_id is required');
+        }
+        return value;
+      })(),
       instructions: json['instructions']?.toString(),
       metadata: (() {
         final map = _sdkworkAsMap(json['metadata']);
@@ -15370,18 +17131,18 @@ class OpenAiRunCreateRequest {
 }
 
 class OpenAiRunList {
-  final List<OpenAiRun>? data;
+  final List<OpenAiRun> data;
   final String? firstId;
   final bool? hasMore;
   final String? lastId;
-  final String? object;
+  final String object;
 
   OpenAiRunList({
-    this.data,
+    required this.data,
     this.firstId,
     this.hasMore,
     this.lastId,
-    this.object
+    required this.object
   });
 
   factory OpenAiRunList.fromJson(Map<String, dynamic> json) {
@@ -15389,7 +17150,7 @@ class OpenAiRunList {
       data: (() {
         final list = _sdkworkAsList(json['data']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiRunList.data is required');
         }
         return list
             .map((item) => (() {
@@ -15402,13 +17163,19 @@ class OpenAiRunList {
       firstId: json['first_id']?.toString(),
       hasMore: json['has_more'] is bool ? json['has_more'] : null,
       lastId: json['last_id']?.toString(),
-      object: json['object']?.toString()
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiRunList.object is required');
+        }
+        return value;
+      })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'data': data?.map((item) => item.toJson()).toList(),
+      'data': data.map((item) => item.toJson()).toList(),
       'first_id': firstId,
       'has_more': hasMore,
       'last_id': lastId,
@@ -15418,51 +17185,69 @@ class OpenAiRunList {
 }
 
 class OpenAiRunStep {
-  final String? assistantId;
+  final String assistantId;
   final int? cancelledAt;
   final int? completedAt;
-  final int? createdAt;
+  final int createdAt;
   final int? expiredAt;
   final int? failedAt;
-  final String? id;
+  final String id;
   final dynamic lastError;
   final Map<String, dynamic>? metadata;
-  final String? object;
-  final String? runId;
-  final String? status;
+  final String object;
+  final String runId;
+  final String status;
   final dynamic stepDetails;
-  final String? threadId;
-  final String? type;
+  final String threadId;
+  final String type;
   final OpenAiTokenUsage? usage;
 
   OpenAiRunStep({
-    this.assistantId,
+    required this.assistantId,
     this.cancelledAt,
     this.completedAt,
-    this.createdAt,
+    required this.createdAt,
     this.expiredAt,
     this.failedAt,
-    this.id,
+    required this.id,
     this.lastError,
     this.metadata,
-    this.object,
-    this.runId,
-    this.status,
+    required this.object,
+    required this.runId,
+    required this.status,
     this.stepDetails,
-    this.threadId,
-    this.type,
+    required this.threadId,
+    required this.type,
     this.usage
   });
 
   factory OpenAiRunStep.fromJson(Map<String, dynamic> json) {
     return OpenAiRunStep(
-      assistantId: json['assistant_id']?.toString(),
+      assistantId: (() {
+        final value = json['assistant_id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiRunStep.assistant_id is required');
+        }
+        return value;
+      })(),
       cancelledAt: json['cancelled_at'] is int ? json['cancelled_at'] : null,
       completedAt: json['completed_at'] is int ? json['completed_at'] : null,
-      createdAt: json['created_at'] is int ? json['created_at'] : null,
+      createdAt: (() {
+        final value = json['created_at'];
+        if (value is! int) {
+          throw FormatException('OpenAiRunStep.created_at is required');
+        }
+        return value;
+      })(),
       expiredAt: json['expired_at'] is int ? json['expired_at'] : null,
       failedAt: json['failed_at'] is int ? json['failed_at'] : null,
-      id: json['id']?.toString(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiRunStep.id is required');
+        }
+        return value;
+      })(),
       lastError: json['last_error']?.toString(),
       metadata: (() {
         final map = _sdkworkAsMap(json['metadata']);
@@ -15478,12 +17263,42 @@ class OpenAiRunStep {
         });
         return result;
       })(),
-      object: json['object']?.toString(),
-      runId: json['run_id']?.toString(),
-      status: json['status']?.toString(),
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiRunStep.object is required');
+        }
+        return value;
+      })(),
+      runId: (() {
+        final value = json['run_id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiRunStep.run_id is required');
+        }
+        return value;
+      })(),
+      status: (() {
+        final value = json['status']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiRunStep.status is required');
+        }
+        return value;
+      })(),
       stepDetails: json['step_details']?.toString(),
-      threadId: json['thread_id']?.toString(),
-      type: json['type']?.toString(),
+      threadId: (() {
+        final value = json['thread_id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiRunStep.thread_id is required');
+        }
+        return value;
+      })(),
+      type: (() {
+        final value = json['type']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiRunStep.type is required');
+        }
+        return value;
+      })(),
       usage: (() {
         final map = _sdkworkAsMap(json['usage']);
         return map == null ? null : OpenAiTokenUsage.fromJson(map);
@@ -15514,18 +17329,18 @@ class OpenAiRunStep {
 }
 
 class OpenAiRunStepList {
-  final List<OpenAiRunStep>? data;
+  final List<OpenAiRunStep> data;
   final String? firstId;
   final bool? hasMore;
   final String? lastId;
-  final String? object;
+  final String object;
 
   OpenAiRunStepList({
-    this.data,
+    required this.data,
     this.firstId,
     this.hasMore,
     this.lastId,
-    this.object
+    required this.object
   });
 
   factory OpenAiRunStepList.fromJson(Map<String, dynamic> json) {
@@ -15533,7 +17348,7 @@ class OpenAiRunStepList {
       data: (() {
         final list = _sdkworkAsList(json['data']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiRunStepList.data is required');
         }
         return list
             .map((item) => (() {
@@ -15546,13 +17361,19 @@ class OpenAiRunStepList {
       firstId: json['first_id']?.toString(),
       hasMore: json['has_more'] is bool ? json['has_more'] : null,
       lastId: json['last_id']?.toString(),
-      object: json['object']?.toString()
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiRunStepList.object is required');
+        }
+        return value;
+      })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'data': data?.map((item) => item.toJson()).toList(),
+      'data': data.map((item) => item.toJson()).toList(),
       'first_id': firstId,
       'has_more': hasMore,
       'last_id': lastId,
@@ -15563,11 +17384,11 @@ class OpenAiRunStepList {
 
 class OpenAiRunSubmitToolOutputsRequest {
   final bool? stream;
-  final List<dynamic>? toolOutputs;
+  final List<dynamic> toolOutputs;
 
   OpenAiRunSubmitToolOutputsRequest({
     this.stream,
-    this.toolOutputs
+    required this.toolOutputs
   });
 
   factory OpenAiRunSubmitToolOutputsRequest.fromJson(Map<String, dynamic> json) {
@@ -15576,7 +17397,7 @@ class OpenAiRunSubmitToolOutputsRequest {
       toolOutputs: (() {
         final list = _sdkworkAsList(json['tool_outputs']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiRunSubmitToolOutputsRequest.tool_outputs is required');
         }
         return list
             .map((item) => item?.toString())
@@ -15589,7 +17410,7 @@ class OpenAiRunSubmitToolOutputsRequest {
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'stream': stream,
-      'tool_outputs': toolOutputs?.map((item) => item).toList(),
+      'tool_outputs': toolOutputs.map((item) => item).toList(),
     };
   }
 }
@@ -15628,25 +17449,25 @@ class OpenAiRunUpdateRequest {
 }
 
 class OpenAiSkill {
-  final int? createdAt;
+  final int createdAt;
   final String? description;
-  final String? id;
+  final String id;
   final String? latestVersion;
   final Map<String, dynamic>? metadata;
-  final String? name;
-  final String? object;
+  final String name;
+  final String object;
   final String? status;
   final int? updatedAt;
   final List<OpenAiSkillVersion>? versions;
 
   OpenAiSkill({
-    this.createdAt,
+    required this.createdAt,
     this.description,
-    this.id,
+    required this.id,
     this.latestVersion,
     this.metadata,
-    this.name,
-    this.object,
+    required this.name,
+    required this.object,
     this.status,
     this.updatedAt,
     this.versions
@@ -15654,9 +17475,21 @@ class OpenAiSkill {
 
   factory OpenAiSkill.fromJson(Map<String, dynamic> json) {
     return OpenAiSkill(
-      createdAt: json['created_at'] is int ? json['created_at'] : null,
+      createdAt: (() {
+        final value = json['created_at'];
+        if (value is! int) {
+          throw FormatException('OpenAiSkill.created_at is required');
+        }
+        return value;
+      })(),
       description: json['description']?.toString(),
-      id: json['id']?.toString(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiSkill.id is required');
+        }
+        return value;
+      })(),
       latestVersion: json['latest_version']?.toString(),
       metadata: (() {
         final map = _sdkworkAsMap(json['metadata']);
@@ -15672,8 +17505,20 @@ class OpenAiSkill {
         });
         return result;
       })(),
-      name: json['name']?.toString(),
-      object: json['object']?.toString(),
+      name: (() {
+        final value = json['name']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiSkill.name is required');
+        }
+        return value;
+      })(),
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiSkill.object is required');
+        }
+        return value;
+      })(),
       status: json['status']?.toString(),
       updatedAt: json['updated_at'] is int ? json['updated_at'] : null,
       versions: (() {
@@ -15709,13 +17554,13 @@ class OpenAiSkill {
 }
 
 class OpenAiSkillCreateMultipartRequest {
-  final String? file;
+  final String file;
   final String? metadata;
   final String? name;
   final String? package;
 
   OpenAiSkillCreateMultipartRequest({
-    this.file,
+    required this.file,
     this.metadata,
     this.name,
     this.package
@@ -15723,7 +17568,13 @@ class OpenAiSkillCreateMultipartRequest {
 
   factory OpenAiSkillCreateMultipartRequest.fromJson(Map<String, dynamic> json) {
     return OpenAiSkillCreateMultipartRequest(
-      file: json['file']?.toString(),
+      file: (() {
+        final value = json['file']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiSkillCreateMultipartRequest.file is required');
+        }
+        return value;
+      })(),
       metadata: json['metadata']?.toString(),
       name: json['name']?.toString(),
       package: json['package']?.toString()
@@ -15741,18 +17592,18 @@ class OpenAiSkillCreateMultipartRequest {
 }
 
 class OpenAiSkillList {
-  final List<OpenAiSkill>? data;
+  final List<OpenAiSkill> data;
   final String? firstId;
   final bool? hasMore;
   final String? lastId;
-  final String? object;
+  final String object;
 
   OpenAiSkillList({
-    this.data,
+    required this.data,
     this.firstId,
     this.hasMore,
     this.lastId,
-    this.object
+    required this.object
   });
 
   factory OpenAiSkillList.fromJson(Map<String, dynamic> json) {
@@ -15760,7 +17611,7 @@ class OpenAiSkillList {
       data: (() {
         final list = _sdkworkAsList(json['data']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiSkillList.data is required');
         }
         return list
             .map((item) => (() {
@@ -15773,13 +17624,19 @@ class OpenAiSkillList {
       firstId: json['first_id']?.toString(),
       hasMore: json['has_more'] is bool ? json['has_more'] : null,
       lastId: json['last_id']?.toString(),
-      object: json['object']?.toString()
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiSkillList.object is required');
+        }
+        return value;
+      })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'data': data?.map((item) => item.toJson()).toList(),
+      'data': data.map((item) => item.toJson()).toList(),
       'first_id': firstId,
       'has_more': hasMore,
       'last_id': lastId,
@@ -15831,29 +17688,35 @@ class OpenAiSkillUpdateRequest {
 
 class OpenAiSkillVersion {
   final int? createdAt;
-  final String? id;
+  final String id;
   final Map<String, dynamic>? metadata;
-  final String? object;
+  final String object;
   final String? packageSha256;
   final String? skillId;
   final String? status;
-  final String? version;
+  final String version;
 
   OpenAiSkillVersion({
     this.createdAt,
-    this.id,
+    required this.id,
     this.metadata,
-    this.object,
+    required this.object,
     this.packageSha256,
     this.skillId,
     this.status,
-    this.version
+    required this.version
   });
 
   factory OpenAiSkillVersion.fromJson(Map<String, dynamic> json) {
     return OpenAiSkillVersion(
       createdAt: json['created_at'] is int ? json['created_at'] : null,
-      id: json['id']?.toString(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiSkillVersion.id is required');
+        }
+        return value;
+      })(),
       metadata: (() {
         final map = _sdkworkAsMap(json['metadata']);
         if (map == null) {
@@ -15868,11 +17731,23 @@ class OpenAiSkillVersion {
         });
         return result;
       })(),
-      object: json['object']?.toString(),
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiSkillVersion.object is required');
+        }
+        return value;
+      })(),
       packageSha256: json['package_sha256']?.toString(),
       skillId: json['skill_id']?.toString(),
       status: json['status']?.toString(),
-      version: json['version']?.toString()
+      version: (() {
+        final value = json['version']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiSkillVersion.version is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -15891,13 +17766,13 @@ class OpenAiSkillVersion {
 }
 
 class OpenAiSkillVersionCreateMultipartRequest {
-  final String? file;
+  final String file;
   final String? metadata;
   final String? name;
   final String? package;
 
   OpenAiSkillVersionCreateMultipartRequest({
-    this.file,
+    required this.file,
     this.metadata,
     this.name,
     this.package
@@ -15905,7 +17780,13 @@ class OpenAiSkillVersionCreateMultipartRequest {
 
   factory OpenAiSkillVersionCreateMultipartRequest.fromJson(Map<String, dynamic> json) {
     return OpenAiSkillVersionCreateMultipartRequest(
-      file: json['file']?.toString(),
+      file: (() {
+        final value = json['file']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiSkillVersionCreateMultipartRequest.file is required');
+        }
+        return value;
+      })(),
       metadata: json['metadata']?.toString(),
       name: json['name']?.toString(),
       package: json['package']?.toString()
@@ -15923,18 +17804,18 @@ class OpenAiSkillVersionCreateMultipartRequest {
 }
 
 class OpenAiSkillVersionList {
-  final List<OpenAiSkillVersion>? data;
+  final List<OpenAiSkillVersion> data;
   final String? firstId;
   final bool? hasMore;
   final String? lastId;
-  final String? object;
+  final String object;
 
   OpenAiSkillVersionList({
-    this.data,
+    required this.data,
     this.firstId,
     this.hasMore,
     this.lastId,
-    this.object
+    required this.object
   });
 
   factory OpenAiSkillVersionList.fromJson(Map<String, dynamic> json) {
@@ -15942,7 +17823,7 @@ class OpenAiSkillVersionList {
       data: (() {
         final list = _sdkworkAsList(json['data']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiSkillVersionList.data is required');
         }
         return list
             .map((item) => (() {
@@ -15955,13 +17836,19 @@ class OpenAiSkillVersionList {
       firstId: json['first_id']?.toString(),
       hasMore: json['has_more'] is bool ? json['has_more'] : null,
       lastId: json['last_id']?.toString(),
-      object: json['object']?.toString()
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiSkillVersionList.object is required');
+        }
+        return value;
+      })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'data': data?.map((item) => item.toJson()).toList(),
+      'data': data.map((item) => item.toJson()).toList(),
       'first_id': firstId,
       'has_more': hasMore,
       'last_id': lastId,
@@ -15973,23 +17860,29 @@ class OpenAiSkillVersionList {
 class OpenAiSpeechCreateRequest {
   final dynamic input;
   final Map<String, dynamic>? metadata;
-  final String? model;
+  final String model;
   final String? responseFormat;
   final double? speed;
-  final String? voice;
+  final String voice;
 
   OpenAiSpeechCreateRequest({
-    this.input,
+    required this.input,
     this.metadata,
-    this.model,
+    required this.model,
     this.responseFormat,
     this.speed,
-    this.voice
+    required this.voice
   });
 
   factory OpenAiSpeechCreateRequest.fromJson(Map<String, dynamic> json) {
     return OpenAiSpeechCreateRequest(
-      input: json['input']?.toString(),
+      input: (() {
+        final value = json['input']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiSpeechCreateRequest.input is required');
+        }
+        return value;
+      })(),
       metadata: (() {
         final map = _sdkworkAsMap(json['metadata']);
         if (map == null) {
@@ -16004,10 +17897,22 @@ class OpenAiSpeechCreateRequest {
         });
         return result;
       })(),
-      model: json['model']?.toString(),
+      model: (() {
+        final value = json['model']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiSpeechCreateRequest.model is required');
+        }
+        return value;
+      })(),
       responseFormat: json['response_format']?.toString(),
       speed: json['speed'] is num ? json['speed'].toDouble() : null,
-      voice: json['voice']?.toString()
+      voice: (() {
+        final value = json['voice']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiSpeechCreateRequest.voice is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -16067,24 +17972,36 @@ class OpenAiTextConfig {
 }
 
 class OpenAiThread {
-  final int? createdAt;
-  final String? id;
+  final int createdAt;
+  final String id;
   final Map<String, dynamic>? metadata;
-  final String? object;
+  final String object;
   final dynamic toolResources;
 
   OpenAiThread({
-    this.createdAt,
-    this.id,
+    required this.createdAt,
+    required this.id,
     this.metadata,
-    this.object,
+    required this.object,
     this.toolResources
   });
 
   factory OpenAiThread.fromJson(Map<String, dynamic> json) {
     return OpenAiThread(
-      createdAt: json['created_at'] is int ? json['created_at'] : null,
-      id: json['id']?.toString(),
+      createdAt: (() {
+        final value = json['created_at'];
+        if (value is! int) {
+          throw FormatException('OpenAiThread.created_at is required');
+        }
+        return value;
+      })(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiThread.id is required');
+        }
+        return value;
+      })(),
       metadata: (() {
         final map = _sdkworkAsMap(json['metadata']);
         if (map == null) {
@@ -16099,7 +18016,13 @@ class OpenAiThread {
         });
         return result;
       })(),
-      object: json['object']?.toString(),
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiThread.object is required');
+        }
+        return value;
+      })(),
       toolResources: json['tool_resources']?.toString()
     );
   }
@@ -16116,7 +18039,7 @@ class OpenAiThread {
 }
 
 class OpenAiThreadAndRunCreateRequest {
-  final String? assistantId;
+  final String assistantId;
   final String? instructions;
   final Map<String, dynamic>? metadata;
   final String? model;
@@ -16125,7 +18048,7 @@ class OpenAiThreadAndRunCreateRequest {
   final List<dynamic>? tools;
 
   OpenAiThreadAndRunCreateRequest({
-    this.assistantId,
+    required this.assistantId,
     this.instructions,
     this.metadata,
     this.model,
@@ -16136,7 +18059,13 @@ class OpenAiThreadAndRunCreateRequest {
 
   factory OpenAiThreadAndRunCreateRequest.fromJson(Map<String, dynamic> json) {
     return OpenAiThreadAndRunCreateRequest(
-      assistantId: json['assistant_id']?.toString(),
+      assistantId: (() {
+        final value = json['assistant_id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiThreadAndRunCreateRequest.assistant_id is required');
+        }
+        return value;
+      })(),
       instructions: json['instructions']?.toString(),
       metadata: (() {
         final map = _sdkworkAsMap(json['metadata']);
@@ -16241,33 +18170,33 @@ class OpenAiThreadMessage {
   final String? assistantId;
   final List<dynamic>? attachments;
   final int? completedAt;
-  final List<dynamic>? content;
-  final int? createdAt;
-  final String? id;
+  final List<dynamic> content;
+  final int createdAt;
+  final String id;
   final int? incompleteAt;
   final dynamic incompleteDetails;
   final Map<String, dynamic>? metadata;
-  final String? object;
-  final String? role;
+  final String object;
+  final String role;
   final String? runId;
   final String? status;
-  final String? threadId;
+  final String threadId;
 
   OpenAiThreadMessage({
     this.assistantId,
     this.attachments,
     this.completedAt,
-    this.content,
-    this.createdAt,
-    this.id,
+    required this.content,
+    required this.createdAt,
+    required this.id,
     this.incompleteAt,
     this.incompleteDetails,
     this.metadata,
-    this.object,
-    this.role,
+    required this.object,
+    required this.role,
     this.runId,
     this.status,
-    this.threadId
+    required this.threadId
   });
 
   factory OpenAiThreadMessage.fromJson(Map<String, dynamic> json) {
@@ -16287,15 +18216,27 @@ class OpenAiThreadMessage {
       content: (() {
         final list = _sdkworkAsList(json['content']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiThreadMessage.content is required');
         }
         return list
             .map((item) => item?.toString())
             .whereType<dynamic>()
             .toList();
       })(),
-      createdAt: json['created_at'] is int ? json['created_at'] : null,
-      id: json['id']?.toString(),
+      createdAt: (() {
+        final value = json['created_at'];
+        if (value is! int) {
+          throw FormatException('OpenAiThreadMessage.created_at is required');
+        }
+        return value;
+      })(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiThreadMessage.id is required');
+        }
+        return value;
+      })(),
       incompleteAt: json['incomplete_at'] is int ? json['incomplete_at'] : null,
       incompleteDetails: json['incomplete_details']?.toString(),
       metadata: (() {
@@ -16312,11 +18253,29 @@ class OpenAiThreadMessage {
         });
         return result;
       })(),
-      object: json['object']?.toString(),
-      role: json['role']?.toString(),
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiThreadMessage.object is required');
+        }
+        return value;
+      })(),
+      role: (() {
+        final value = json['role']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiThreadMessage.role is required');
+        }
+        return value;
+      })(),
       runId: json['run_id']?.toString(),
       status: json['status']?.toString(),
-      threadId: json['thread_id']?.toString()
+      threadId: (() {
+        final value = json['thread_id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiThreadMessage.thread_id is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -16325,7 +18284,7 @@ class OpenAiThreadMessage {
       'assistant_id': assistantId,
       'attachments': attachments?.map((item) => item).toList(),
       'completed_at': completedAt,
-      'content': content?.map((item) => item).toList(),
+      'content': content.map((item) => item).toList(),
       'created_at': createdAt,
       'id': id,
       'incomplete_at': incompleteAt,
@@ -16344,13 +18303,13 @@ class OpenAiThreadMessageCreateRequest {
   final List<dynamic>? attachments;
   final dynamic content;
   final Map<String, dynamic>? metadata;
-  final String? role;
+  final String role;
 
   OpenAiThreadMessageCreateRequest({
     this.attachments,
-    this.content,
+    required this.content,
     this.metadata,
-    this.role
+    required this.role
   });
 
   factory OpenAiThreadMessageCreateRequest.fromJson(Map<String, dynamic> json) {
@@ -16365,7 +18324,13 @@ class OpenAiThreadMessageCreateRequest {
             .whereType<dynamic>()
             .toList();
       })(),
-      content: json['content']?.toString(),
+      content: (() {
+        final value = json['content']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiThreadMessageCreateRequest.content is required');
+        }
+        return value;
+      })(),
       metadata: (() {
         final map = _sdkworkAsMap(json['metadata']);
         if (map == null) {
@@ -16380,7 +18345,13 @@ class OpenAiThreadMessageCreateRequest {
         });
         return result;
       })(),
-      role: json['role']?.toString()
+      role: (() {
+        final value = json['role']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiThreadMessageCreateRequest.role is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -16395,18 +18366,18 @@ class OpenAiThreadMessageCreateRequest {
 }
 
 class OpenAiThreadMessageList {
-  final List<OpenAiThreadMessage>? data;
+  final List<OpenAiThreadMessage> data;
   final String? firstId;
   final bool? hasMore;
   final String? lastId;
-  final String? object;
+  final String object;
 
   OpenAiThreadMessageList({
-    this.data,
+    required this.data,
     this.firstId,
     this.hasMore,
     this.lastId,
-    this.object
+    required this.object
   });
 
   factory OpenAiThreadMessageList.fromJson(Map<String, dynamic> json) {
@@ -16414,7 +18385,7 @@ class OpenAiThreadMessageList {
       data: (() {
         final list = _sdkworkAsList(json['data']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiThreadMessageList.data is required');
         }
         return list
             .map((item) => (() {
@@ -16427,13 +18398,19 @@ class OpenAiThreadMessageList {
       firstId: json['first_id']?.toString(),
       hasMore: json['has_more'] is bool ? json['has_more'] : null,
       lastId: json['last_id']?.toString(),
-      object: json['object']?.toString()
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiThreadMessageList.object is required');
+        }
+        return value;
+      })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'data': data?.map((item) => item.toJson()).toList(),
+      'data': data.map((item) => item.toJson()).toList(),
       'first_id': firstId,
       'has_more': hasMore,
       'last_id': lastId,
@@ -16514,14 +18491,14 @@ class OpenAiThreadUpdateRequest {
 
 class OpenAiTokenLogprob {
   final List<int>? bytes;
-  final double? logprob;
-  final String? token;
+  final double logprob;
+  final String token;
   final List<OpenAiTopLogprob>? topLogprobs;
 
   OpenAiTokenLogprob({
     this.bytes,
-    this.logprob,
-    this.token,
+    required this.logprob,
+    required this.token,
     this.topLogprobs
   });
 
@@ -16537,8 +18514,20 @@ class OpenAiTokenLogprob {
             .whereType<int>()
             .toList();
       })(),
-      logprob: json['logprob'] is num ? json['logprob'].toDouble() : null,
-      token: json['token']?.toString(),
+      logprob: (() {
+        final value = json['logprob'];
+        if (value is! num) {
+          throw FormatException('OpenAiTokenLogprob.logprob is required');
+        }
+        return value.toDouble();
+      })(),
+      token: (() {
+        final value = json['token']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiTokenLogprob.token is required');
+        }
+        return value;
+      })(),
       topLogprobs: (() {
         final list = _sdkworkAsList(json['top_logprobs']);
         if (list == null) {
@@ -16566,33 +18555,51 @@ class OpenAiTokenLogprob {
 }
 
 class OpenAiTokenUsage {
-  final int? completionTokens;
+  final int completionTokens;
   final OpenAiCompletionTokensDetails? completionTokensDetails;
-  final int? promptTokens;
+  final int promptTokens;
   final OpenAiPromptTokensDetails? promptTokensDetails;
-  final int? totalTokens;
+  final int totalTokens;
 
   OpenAiTokenUsage({
-    this.completionTokens,
+    required this.completionTokens,
     this.completionTokensDetails,
-    this.promptTokens,
+    required this.promptTokens,
     this.promptTokensDetails,
-    this.totalTokens
+    required this.totalTokens
   });
 
   factory OpenAiTokenUsage.fromJson(Map<String, dynamic> json) {
     return OpenAiTokenUsage(
-      completionTokens: json['completion_tokens'] is int ? json['completion_tokens'] : null,
+      completionTokens: (() {
+        final value = json['completion_tokens'];
+        if (value is! int) {
+          throw FormatException('OpenAiTokenUsage.completion_tokens is required');
+        }
+        return value;
+      })(),
       completionTokensDetails: (() {
         final map = _sdkworkAsMap(json['completion_tokens_details']);
         return map == null ? null : OpenAiCompletionTokensDetails.fromJson(map);
       })(),
-      promptTokens: json['prompt_tokens'] is int ? json['prompt_tokens'] : null,
+      promptTokens: (() {
+        final value = json['prompt_tokens'];
+        if (value is! int) {
+          throw FormatException('OpenAiTokenUsage.prompt_tokens is required');
+        }
+        return value;
+      })(),
       promptTokensDetails: (() {
         final map = _sdkworkAsMap(json['prompt_tokens_details']);
         return map == null ? null : OpenAiPromptTokensDetails.fromJson(map);
       })(),
-      totalTokens: json['total_tokens'] is int ? json['total_tokens'] : null
+      totalTokens: (() {
+        final value = json['total_tokens'];
+        if (value is! int) {
+          throw FormatException('OpenAiTokenUsage.total_tokens is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -16609,11 +18616,11 @@ class OpenAiTokenUsage {
 
 class OpenAiTool {
   final OpenAiFunctionDefinition? function_;
-  final String? type;
+  final String type;
 
   OpenAiTool({
     this.function_,
-    this.type
+    required this.type
   });
 
   factory OpenAiTool.fromJson(Map<String, dynamic> json) {
@@ -16622,7 +18629,13 @@ class OpenAiTool {
         final map = _sdkworkAsMap(json['function']);
         return map == null ? null : OpenAiFunctionDefinition.fromJson(map);
       })(),
-      type: json['type']?.toString()
+      type: (() {
+        final value = json['type']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiTool.type is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -16636,13 +18649,13 @@ class OpenAiTool {
 
 class OpenAiToolCall {
   final OpenAiFunctionCall? function_;
-  final String? id;
-  final String? type;
+  final String id;
+  final String type;
 
   OpenAiToolCall({
     this.function_,
-    this.id,
-    this.type
+    required this.id,
+    required this.type
   });
 
   factory OpenAiToolCall.fromJson(Map<String, dynamic> json) {
@@ -16651,8 +18664,20 @@ class OpenAiToolCall {
         final map = _sdkworkAsMap(json['function']);
         return map == null ? null : OpenAiFunctionCall.fromJson(map);
       })(),
-      id: json['id']?.toString(),
-      type: json['type']?.toString()
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiToolCall.id is required');
+        }
+        return value;
+      })(),
+      type: (() {
+        final value = json['type']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiToolCall.type is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -16681,13 +18706,13 @@ class OpenAiToolChoice {
 
 class OpenAiTopLogprob {
   final List<int>? bytes;
-  final double? logprob;
-  final String? token;
+  final double logprob;
+  final String token;
 
   OpenAiTopLogprob({
     this.bytes,
-    this.logprob,
-    this.token
+    required this.logprob,
+    required this.token
   });
 
   factory OpenAiTopLogprob.fromJson(Map<String, dynamic> json) {
@@ -16702,8 +18727,20 @@ class OpenAiTopLogprob {
             .whereType<int>()
             .toList();
       })(),
-      logprob: json['logprob'] is num ? json['logprob'].toDouble() : null,
-      token: json['token']?.toString()
+      logprob: (() {
+        final value = json['logprob'];
+        if (value is! num) {
+          throw FormatException('OpenAiTopLogprob.logprob is required');
+        }
+        return value.toDouble();
+      })(),
+      token: (() {
+        final value = json['token']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiTopLogprob.token is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -16717,42 +18754,84 @@ class OpenAiTopLogprob {
 }
 
 class OpenAiUpload {
-  final int? bytes;
-  final int? createdAt;
+  final int bytes;
+  final int createdAt;
   final int? expiresAt;
   final OpenAiFile? file;
-  final String? filename;
-  final String? id;
-  final String? object;
-  final String? purpose;
-  final String? status;
+  final String filename;
+  final String id;
+  final String object;
+  final String purpose;
+  final String status;
 
   OpenAiUpload({
-    this.bytes,
-    this.createdAt,
+    required this.bytes,
+    required this.createdAt,
     this.expiresAt,
     this.file,
-    this.filename,
-    this.id,
-    this.object,
-    this.purpose,
-    this.status
+    required this.filename,
+    required this.id,
+    required this.object,
+    required this.purpose,
+    required this.status
   });
 
   factory OpenAiUpload.fromJson(Map<String, dynamic> json) {
     return OpenAiUpload(
-      bytes: json['bytes'] is int ? json['bytes'] : null,
-      createdAt: json['created_at'] is int ? json['created_at'] : null,
+      bytes: (() {
+        final value = json['bytes'];
+        if (value is! int) {
+          throw FormatException('OpenAiUpload.bytes is required');
+        }
+        return value;
+      })(),
+      createdAt: (() {
+        final value = json['created_at'];
+        if (value is! int) {
+          throw FormatException('OpenAiUpload.created_at is required');
+        }
+        return value;
+      })(),
       expiresAt: json['expires_at'] is int ? json['expires_at'] : null,
       file: (() {
         final map = _sdkworkAsMap(json['file']);
         return map == null ? null : OpenAiFile.fromJson(map);
       })(),
-      filename: json['filename']?.toString(),
-      id: json['id']?.toString(),
-      object: json['object']?.toString(),
-      purpose: json['purpose']?.toString(),
-      status: json['status']?.toString()
+      filename: (() {
+        final value = json['filename']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiUpload.filename is required');
+        }
+        return value;
+      })(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiUpload.id is required');
+        }
+        return value;
+      })(),
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiUpload.object is required');
+        }
+        return value;
+      })(),
+      purpose: (() {
+        final value = json['purpose']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiUpload.purpose is required');
+        }
+        return value;
+      })(),
+      status: (() {
+        final value = json['status']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiUpload.status is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -16773,11 +18852,11 @@ class OpenAiUpload {
 
 class OpenAiUploadCompleteRequest {
   final String? md5;
-  final List<String>? partIds;
+  final List<String> partIds;
 
   OpenAiUploadCompleteRequest({
     this.md5,
-    this.partIds
+    required this.partIds
   });
 
   factory OpenAiUploadCompleteRequest.fromJson(Map<String, dynamic> json) {
@@ -16786,7 +18865,7 @@ class OpenAiUploadCompleteRequest {
       partIds: (() {
         final list = _sdkworkAsList(json['part_ids']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiUploadCompleteRequest.part_ids is required');
         }
         return list
             .map((item) => item?.toString())
@@ -16799,30 +18878,54 @@ class OpenAiUploadCompleteRequest {
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'md5': md5,
-      'part_ids': partIds?.map((item) => item).toList(),
+      'part_ids': partIds.map((item) => item).toList(),
     };
   }
 }
 
 class OpenAiUploadCreateRequest {
-  final int? bytes;
-  final String? filename;
-  final String? mimeType;
-  final String? purpose;
+  final int bytes;
+  final String filename;
+  final String mimeType;
+  final String purpose;
 
   OpenAiUploadCreateRequest({
-    this.bytes,
-    this.filename,
-    this.mimeType,
-    this.purpose
+    required this.bytes,
+    required this.filename,
+    required this.mimeType,
+    required this.purpose
   });
 
   factory OpenAiUploadCreateRequest.fromJson(Map<String, dynamic> json) {
     return OpenAiUploadCreateRequest(
-      bytes: json['bytes'] is int ? json['bytes'] : null,
-      filename: json['filename']?.toString(),
-      mimeType: json['mime_type']?.toString(),
-      purpose: json['purpose']?.toString()
+      bytes: (() {
+        final value = json['bytes'];
+        if (value is! int) {
+          throw FormatException('OpenAiUploadCreateRequest.bytes is required');
+        }
+        return value;
+      })(),
+      filename: (() {
+        final value = json['filename']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiUploadCreateRequest.filename is required');
+        }
+        return value;
+      })(),
+      mimeType: (() {
+        final value = json['mime_type']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiUploadCreateRequest.mime_type is required');
+        }
+        return value;
+      })(),
+      purpose: (() {
+        final value = json['purpose']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiUploadCreateRequest.purpose is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -16837,24 +18940,48 @@ class OpenAiUploadCreateRequest {
 }
 
 class OpenAiUploadPart {
-  final int? createdAt;
-  final String? id;
-  final String? object;
-  final String? uploadId;
+  final int createdAt;
+  final String id;
+  final String object;
+  final String uploadId;
 
   OpenAiUploadPart({
-    this.createdAt,
-    this.id,
-    this.object,
-    this.uploadId
+    required this.createdAt,
+    required this.id,
+    required this.object,
+    required this.uploadId
   });
 
   factory OpenAiUploadPart.fromJson(Map<String, dynamic> json) {
     return OpenAiUploadPart(
-      createdAt: json['created_at'] is int ? json['created_at'] : null,
-      id: json['id']?.toString(),
-      object: json['object']?.toString(),
-      uploadId: json['upload_id']?.toString()
+      createdAt: (() {
+        final value = json['created_at'];
+        if (value is! int) {
+          throw FormatException('OpenAiUploadPart.created_at is required');
+        }
+        return value;
+      })(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiUploadPart.id is required');
+        }
+        return value;
+      })(),
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiUploadPart.object is required');
+        }
+        return value;
+      })(),
+      uploadId: (() {
+        final value = json['upload_id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiUploadPart.upload_id is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -16869,15 +18996,21 @@ class OpenAiUploadPart {
 }
 
 class OpenAiUploadPartMultipartRequest {
-  final String? data;
+  final String data;
 
   OpenAiUploadPartMultipartRequest({
-    this.data
+    required this.data
   });
 
   factory OpenAiUploadPartMultipartRequest.fromJson(Map<String, dynamic> json) {
     return OpenAiUploadPartMultipartRequest(
-      data: json['data']?.toString()
+      data: (() {
+        final value = json['data']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiUploadPartMultipartRequest.data is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -16890,44 +19023,56 @@ class OpenAiUploadPartMultipartRequest {
 
 class OpenAiVectorStore {
   final int? bytes;
-  final int? createdAt;
+  final int createdAt;
   final dynamic expiresAfter;
   final int? expiresAt;
   final OpenAiVectorStoreFileCounts? fileCounts;
-  final String? id;
+  final String id;
   final int? lastActiveAt;
   final Map<String, dynamic>? metadata;
   final String? name;
-  final String? object;
-  final String? status;
+  final String object;
+  final String status;
   final int? usageBytes;
 
   OpenAiVectorStore({
     this.bytes,
-    this.createdAt,
+    required this.createdAt,
     this.expiresAfter,
     this.expiresAt,
     this.fileCounts,
-    this.id,
+    required this.id,
     this.lastActiveAt,
     this.metadata,
     this.name,
-    this.object,
-    this.status,
+    required this.object,
+    required this.status,
     this.usageBytes
   });
 
   factory OpenAiVectorStore.fromJson(Map<String, dynamic> json) {
     return OpenAiVectorStore(
       bytes: json['bytes'] is int ? json['bytes'] : null,
-      createdAt: json['created_at'] is int ? json['created_at'] : null,
+      createdAt: (() {
+        final value = json['created_at'];
+        if (value is! int) {
+          throw FormatException('OpenAiVectorStore.created_at is required');
+        }
+        return value;
+      })(),
       expiresAfter: json['expires_after']?.toString(),
       expiresAt: json['expires_at'] is int ? json['expires_at'] : null,
       fileCounts: (() {
         final map = _sdkworkAsMap(json['file_counts']);
         return map == null ? null : OpenAiVectorStoreFileCounts.fromJson(map);
       })(),
-      id: json['id']?.toString(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiVectorStore.id is required');
+        }
+        return value;
+      })(),
       lastActiveAt: json['last_active_at'] is int ? json['last_active_at'] : null,
       metadata: (() {
         final map = _sdkworkAsMap(json['metadata']);
@@ -16944,8 +19089,20 @@ class OpenAiVectorStore {
         return result;
       })(),
       name: json['name']?.toString(),
-      object: json['object']?.toString(),
-      status: json['status']?.toString(),
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiVectorStore.object is required');
+        }
+        return value;
+      })(),
+      status: (() {
+        final value = json['status']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiVectorStore.status is required');
+        }
+        return value;
+      })(),
       usageBytes: json['usage_bytes'] is int ? json['usage_bytes'] : null
     );
   }
@@ -17029,24 +19186,24 @@ class OpenAiVectorStoreCreateRequest {
 class OpenAiVectorStoreFile {
   final Map<String, dynamic>? attributes;
   final dynamic chunkingStrategy;
-  final int? createdAt;
-  final String? id;
+  final int createdAt;
+  final String id;
   final dynamic lastError;
-  final String? object;
-  final String? status;
+  final String object;
+  final String status;
   final int? usageBytes;
-  final String? vectorStoreId;
+  final String vectorStoreId;
 
   OpenAiVectorStoreFile({
     this.attributes,
     this.chunkingStrategy,
-    this.createdAt,
-    this.id,
+    required this.createdAt,
+    required this.id,
     this.lastError,
-    this.object,
-    this.status,
+    required this.object,
+    required this.status,
     this.usageBytes,
-    this.vectorStoreId
+    required this.vectorStoreId
   });
 
   factory OpenAiVectorStoreFile.fromJson(Map<String, dynamic> json) {
@@ -17066,13 +19223,43 @@ class OpenAiVectorStoreFile {
         return result;
       })(),
       chunkingStrategy: json['chunking_strategy']?.toString(),
-      createdAt: json['created_at'] is int ? json['created_at'] : null,
-      id: json['id']?.toString(),
+      createdAt: (() {
+        final value = json['created_at'];
+        if (value is! int) {
+          throw FormatException('OpenAiVectorStoreFile.created_at is required');
+        }
+        return value;
+      })(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiVectorStoreFile.id is required');
+        }
+        return value;
+      })(),
       lastError: json['last_error']?.toString(),
-      object: json['object']?.toString(),
-      status: json['status']?.toString(),
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiVectorStoreFile.object is required');
+        }
+        return value;
+      })(),
+      status: (() {
+        final value = json['status']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiVectorStoreFile.status is required');
+        }
+        return value;
+      })(),
       usageBytes: json['usage_bytes'] is int ? json['usage_bytes'] : null,
-      vectorStoreId: json['vector_store_id']?.toString()
+      vectorStoreId: (() {
+        final value = json['vector_store_id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiVectorStoreFile.vector_store_id is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -17092,33 +19279,63 @@ class OpenAiVectorStoreFile {
 }
 
 class OpenAiVectorStoreFileBatch {
-  final int? createdAt;
+  final int createdAt;
   final OpenAiVectorStoreFileCounts? fileCounts;
-  final String? id;
-  final String? object;
-  final String? status;
-  final String? vectorStoreId;
+  final String id;
+  final String object;
+  final String status;
+  final String vectorStoreId;
 
   OpenAiVectorStoreFileBatch({
-    this.createdAt,
+    required this.createdAt,
     this.fileCounts,
-    this.id,
-    this.object,
-    this.status,
-    this.vectorStoreId
+    required this.id,
+    required this.object,
+    required this.status,
+    required this.vectorStoreId
   });
 
   factory OpenAiVectorStoreFileBatch.fromJson(Map<String, dynamic> json) {
     return OpenAiVectorStoreFileBatch(
-      createdAt: json['created_at'] is int ? json['created_at'] : null,
+      createdAt: (() {
+        final value = json['created_at'];
+        if (value is! int) {
+          throw FormatException('OpenAiVectorStoreFileBatch.created_at is required');
+        }
+        return value;
+      })(),
       fileCounts: (() {
         final map = _sdkworkAsMap(json['file_counts']);
         return map == null ? null : OpenAiVectorStoreFileCounts.fromJson(map);
       })(),
-      id: json['id']?.toString(),
-      object: json['object']?.toString(),
-      status: json['status']?.toString(),
-      vectorStoreId: json['vector_store_id']?.toString()
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiVectorStoreFileBatch.id is required');
+        }
+        return value;
+      })(),
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiVectorStoreFileBatch.object is required');
+        }
+        return value;
+      })(),
+      status: (() {
+        final value = json['status']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiVectorStoreFileBatch.status is required');
+        }
+        return value;
+      })(),
+      vectorStoreId: (() {
+        final value = json['vector_store_id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiVectorStoreFileBatch.vector_store_id is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -17137,12 +19354,12 @@ class OpenAiVectorStoreFileBatch {
 class OpenAiVectorStoreFileBatchCreateRequest {
   final Map<String, dynamic>? attributes;
   final dynamic chunkingStrategy;
-  final List<String>? fileIds;
+  final List<String> fileIds;
 
   OpenAiVectorStoreFileBatchCreateRequest({
     this.attributes,
     this.chunkingStrategy,
-    this.fileIds
+    required this.fileIds
   });
 
   factory OpenAiVectorStoreFileBatchCreateRequest.fromJson(Map<String, dynamic> json) {
@@ -17165,7 +19382,7 @@ class OpenAiVectorStoreFileBatchCreateRequest {
       fileIds: (() {
         final list = _sdkworkAsList(json['file_ids']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiVectorStoreFileBatchCreateRequest.file_ids is required');
         }
         return list
             .map((item) => item?.toString())
@@ -17179,7 +19396,7 @@ class OpenAiVectorStoreFileBatchCreateRequest {
     return <String, dynamic>{
       'attributes': attributes?.map((key, item) => MapEntry(key, item)),
       'chunking_strategy': chunkingStrategy,
-      'file_ids': fileIds?.map((item) => item).toList(),
+      'file_ids': fileIds.map((item) => item).toList(),
     };
   }
 }
@@ -17223,12 +19440,12 @@ class OpenAiVectorStoreFileCounts {
 class OpenAiVectorStoreFileCreateRequest {
   final Map<String, dynamic>? attributes;
   final dynamic chunkingStrategy;
-  final String? fileId;
+  final String fileId;
 
   OpenAiVectorStoreFileCreateRequest({
     this.attributes,
     this.chunkingStrategy,
-    this.fileId
+    required this.fileId
   });
 
   factory OpenAiVectorStoreFileCreateRequest.fromJson(Map<String, dynamic> json) {
@@ -17248,7 +19465,13 @@ class OpenAiVectorStoreFileCreateRequest {
         return result;
       })(),
       chunkingStrategy: json['chunking_strategy']?.toString(),
-      fileId: json['file_id']?.toString()
+      fileId: (() {
+        final value = json['file_id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiVectorStoreFileCreateRequest.file_id is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -17262,18 +19485,18 @@ class OpenAiVectorStoreFileCreateRequest {
 }
 
 class OpenAiVectorStoreFileList {
-  final List<OpenAiVectorStoreFile>? data;
+  final List<OpenAiVectorStoreFile> data;
   final String? firstId;
   final bool? hasMore;
   final String? lastId;
-  final String? object;
+  final String object;
 
   OpenAiVectorStoreFileList({
-    this.data,
+    required this.data,
     this.firstId,
     this.hasMore,
     this.lastId,
-    this.object
+    required this.object
   });
 
   factory OpenAiVectorStoreFileList.fromJson(Map<String, dynamic> json) {
@@ -17281,7 +19504,7 @@ class OpenAiVectorStoreFileList {
       data: (() {
         final list = _sdkworkAsList(json['data']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiVectorStoreFileList.data is required');
         }
         return list
             .map((item) => (() {
@@ -17294,13 +19517,19 @@ class OpenAiVectorStoreFileList {
       firstId: json['first_id']?.toString(),
       hasMore: json['has_more'] is bool ? json['has_more'] : null,
       lastId: json['last_id']?.toString(),
-      object: json['object']?.toString()
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiVectorStoreFileList.object is required');
+        }
+        return value;
+      })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'data': data?.map((item) => item.toJson()).toList(),
+      'data': data.map((item) => item.toJson()).toList(),
       'first_id': firstId,
       'has_more': hasMore,
       'last_id': lastId,
@@ -17343,18 +19572,18 @@ class OpenAiVectorStoreFileUpdateRequest {
 }
 
 class OpenAiVectorStoreList {
-  final List<OpenAiVectorStore>? data;
+  final List<OpenAiVectorStore> data;
   final String? firstId;
   final bool? hasMore;
   final String? lastId;
-  final String? object;
+  final String object;
 
   OpenAiVectorStoreList({
-    this.data,
+    required this.data,
     this.firstId,
     this.hasMore,
     this.lastId,
-    this.object
+    required this.object
   });
 
   factory OpenAiVectorStoreList.fromJson(Map<String, dynamic> json) {
@@ -17362,7 +19591,7 @@ class OpenAiVectorStoreList {
       data: (() {
         final list = _sdkworkAsList(json['data']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiVectorStoreList.data is required');
         }
         return list
             .map((item) => (() {
@@ -17375,13 +19604,19 @@ class OpenAiVectorStoreList {
       firstId: json['first_id']?.toString(),
       hasMore: json['has_more'] is bool ? json['has_more'] : null,
       lastId: json['last_id']?.toString(),
-      object: json['object']?.toString()
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiVectorStoreList.object is required');
+        }
+        return value;
+      })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'data': data?.map((item) => item.toJson()).toList(),
+      'data': data.map((item) => item.toJson()).toList(),
       'first_id': firstId,
       'has_more': hasMore,
       'last_id': lastId,
@@ -17400,7 +19635,7 @@ class OpenAiVectorStoreSearchRequest {
   OpenAiVectorStoreSearchRequest({
     this.filters,
     this.maxNumResults,
-    this.query,
+    required this.query,
     this.rankingOptions,
     this.rewriteQuery
   });
@@ -17409,7 +19644,13 @@ class OpenAiVectorStoreSearchRequest {
     return OpenAiVectorStoreSearchRequest(
       filters: json['filters']?.toString(),
       maxNumResults: json['max_num_results'] is int ? json['max_num_results'] : null,
-      query: json['query']?.toString(),
+      query: (() {
+        final value = json['query']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiVectorStoreSearchRequest.query is required');
+        }
+        return value;
+      })(),
       rankingOptions: json['ranking_options']?.toString(),
       rewriteQuery: json['rewrite_query'] is bool ? json['rewrite_query'] : null
     );
@@ -17578,28 +19819,28 @@ class OpenAiVideo {
   final int? completedAt;
   final String? contentUrl;
   final int? createdAt;
-  final String? id;
+  final String id;
   final Map<String, dynamic>? metadata;
   final String? model;
-  final String? object;
+  final String object;
   final String? prompt;
   final int? seconds;
   final String? size;
-  final String? status;
+  final String status;
   final String? url;
 
   OpenAiVideo({
     this.completedAt,
     this.contentUrl,
     this.createdAt,
-    this.id,
+    required this.id,
     this.metadata,
     this.model,
-    this.object,
+    required this.object,
     this.prompt,
     this.seconds,
     this.size,
-    this.status,
+    required this.status,
     this.url
   });
 
@@ -17608,7 +19849,13 @@ class OpenAiVideo {
       completedAt: json['completed_at'] is int ? json['completed_at'] : null,
       contentUrl: json['content_url']?.toString(),
       createdAt: json['created_at'] is int ? json['created_at'] : null,
-      id: json['id']?.toString(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiVideo.id is required');
+        }
+        return value;
+      })(),
       metadata: (() {
         final map = _sdkworkAsMap(json['metadata']);
         if (map == null) {
@@ -17624,11 +19871,23 @@ class OpenAiVideo {
         return result;
       })(),
       model: json['model']?.toString(),
-      object: json['object']?.toString(),
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiVideo.object is required');
+        }
+        return value;
+      })(),
       prompt: json['prompt']?.toString(),
       seconds: json['seconds'] is int ? json['seconds'] : null,
       size: json['size']?.toString(),
-      status: json['status']?.toString(),
+      status: (() {
+        final value = json['status']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiVideo.status is required');
+        }
+        return value;
+      })(),
       url: json['url']?.toString()
     );
   }
@@ -17654,27 +19913,33 @@ class OpenAiVideo {
 class OpenAiVideoCharacter {
   final int? createdAt;
   final String? description;
-  final String? id;
+  final String id;
   final String? imageUrl;
   final Map<String, dynamic>? metadata;
   final String? name;
-  final String? object;
+  final String object;
 
   OpenAiVideoCharacter({
     this.createdAt,
     this.description,
-    this.id,
+    required this.id,
     this.imageUrl,
     this.metadata,
     this.name,
-    this.object
+    required this.object
   });
 
   factory OpenAiVideoCharacter.fromJson(Map<String, dynamic> json) {
     return OpenAiVideoCharacter(
       createdAt: json['created_at'] is int ? json['created_at'] : null,
       description: json['description']?.toString(),
-      id: json['id']?.toString(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiVideoCharacter.id is required');
+        }
+        return value;
+      })(),
       imageUrl: json['image_url']?.toString(),
       metadata: (() {
         final map = _sdkworkAsMap(json['metadata']);
@@ -17691,7 +19956,13 @@ class OpenAiVideoCharacter {
         return result;
       })(),
       name: json['name']?.toString(),
-      object: json['object']?.toString()
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiVideoCharacter.object is required');
+        }
+        return value;
+      })()
     );
   }
 
@@ -17792,8 +20063,8 @@ class OpenAiVideoCharacterMultipartRequest {
 class OpenAiVideoCreateRequest {
   final dynamic image;
   final Map<String, dynamic>? metadata;
-  final String? model;
-  final String? prompt;
+  final String model;
+  final String prompt;
   final int? seconds;
   final String? size;
   final dynamic video;
@@ -17801,8 +20072,8 @@ class OpenAiVideoCreateRequest {
   OpenAiVideoCreateRequest({
     this.image,
     this.metadata,
-    this.model,
-    this.prompt,
+    required this.model,
+    required this.prompt,
     this.seconds,
     this.size,
     this.video
@@ -17825,8 +20096,20 @@ class OpenAiVideoCreateRequest {
         });
         return result;
       })(),
-      model: json['model']?.toString(),
-      prompt: json['prompt']?.toString(),
+      model: (() {
+        final value = json['model']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiVideoCreateRequest.model is required');
+        }
+        return value;
+      })(),
+      prompt: (() {
+        final value = json['prompt']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiVideoCreateRequest.prompt is required');
+        }
+        return value;
+      })(),
       seconds: json['seconds'] is int ? json['seconds'] : null,
       size: json['size']?.toString(),
       video: json['video']?.toString()
@@ -17961,18 +20244,18 @@ class OpenAiVideoExtendRequest {
 }
 
 class OpenAiVideoList {
-  final List<OpenAiVideo>? data;
+  final List<OpenAiVideo> data;
   final String? firstId;
   final bool? hasMore;
   final String? lastId;
-  final String? object;
+  final String object;
 
   OpenAiVideoList({
-    this.data,
+    required this.data,
     this.firstId,
     this.hasMore,
     this.lastId,
-    this.object
+    required this.object
   });
 
   factory OpenAiVideoList.fromJson(Map<String, dynamic> json) {
@@ -17980,7 +20263,7 @@ class OpenAiVideoList {
       data: (() {
         final list = _sdkworkAsList(json['data']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiVideoList.data is required');
         }
         return list
             .map((item) => (() {
@@ -17993,13 +20276,19 @@ class OpenAiVideoList {
       firstId: json['first_id']?.toString(),
       hasMore: json['has_more'] is bool ? json['has_more'] : null,
       lastId: json['last_id']?.toString(),
-      object: json['object']?.toString()
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiVideoList.object is required');
+        }
+        return value;
+      })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'data': data?.map((item) => item.toJson()).toList(),
+      'data': data.map((item) => item.toJson()).toList(),
       'first_id': firstId,
       'has_more': hasMore,
       'last_id': lastId,
@@ -18068,19 +20357,19 @@ class OpenAiVideoRemixRequest {
 class OpenAiVoice {
   final int? createdAt;
   final String? description;
-  final String? id;
+  final String id;
   final Map<String, dynamic>? metadata;
   final String? name;
-  final String? object;
+  final String object;
   final String? status;
 
   OpenAiVoice({
     this.createdAt,
     this.description,
-    this.id,
+    required this.id,
     this.metadata,
     this.name,
-    this.object,
+    required this.object,
     this.status
   });
 
@@ -18088,7 +20377,13 @@ class OpenAiVoice {
     return OpenAiVoice(
       createdAt: json['created_at'] is int ? json['created_at'] : null,
       description: json['description']?.toString(),
-      id: json['id']?.toString(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiVoice.id is required');
+        }
+        return value;
+      })(),
       metadata: (() {
         final map = _sdkworkAsMap(json['metadata']);
         if (map == null) {
@@ -18104,7 +20399,13 @@ class OpenAiVoice {
         return result;
       })(),
       name: json['name']?.toString(),
-      object: json['object']?.toString(),
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiVoice.object is required');
+        }
+        return value;
+      })(),
       status: json['status']?.toString()
     );
   }
@@ -18125,19 +20426,19 @@ class OpenAiVoice {
 class OpenAiVoiceConsent {
   final dynamic consentDocument;
   final int? createdAt;
-  final String? id;
+  final String id;
   final Map<String, dynamic>? metadata;
   final String? name;
-  final String? object;
+  final String object;
   final String? status;
 
   OpenAiVoiceConsent({
     this.consentDocument,
     this.createdAt,
-    this.id,
+    required this.id,
     this.metadata,
     this.name,
-    this.object,
+    required this.object,
     this.status
   });
 
@@ -18145,7 +20446,13 @@ class OpenAiVoiceConsent {
     return OpenAiVoiceConsent(
       consentDocument: json['consent_document']?.toString(),
       createdAt: json['created_at'] is int ? json['created_at'] : null,
-      id: json['id']?.toString(),
+      id: (() {
+        final value = json['id']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiVoiceConsent.id is required');
+        }
+        return value;
+      })(),
       metadata: (() {
         final map = _sdkworkAsMap(json['metadata']);
         if (map == null) {
@@ -18161,7 +20468,13 @@ class OpenAiVoiceConsent {
         return result;
       })(),
       name: json['name']?.toString(),
-      object: json['object']?.toString(),
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiVoiceConsent.object is required');
+        }
+        return value;
+      })(),
       status: json['status']?.toString()
     );
   }
@@ -18221,18 +20534,18 @@ class OpenAiVoiceConsentCreateRequest {
 }
 
 class OpenAiVoiceConsentList {
-  final List<OpenAiVoiceConsent>? data;
+  final List<OpenAiVoiceConsent> data;
   final String? firstId;
   final bool? hasMore;
   final String? lastId;
-  final String? object;
+  final String object;
 
   OpenAiVoiceConsentList({
-    this.data,
+    required this.data,
     this.firstId,
     this.hasMore,
     this.lastId,
-    this.object
+    required this.object
   });
 
   factory OpenAiVoiceConsentList.fromJson(Map<String, dynamic> json) {
@@ -18240,7 +20553,7 @@ class OpenAiVoiceConsentList {
       data: (() {
         final list = _sdkworkAsList(json['data']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiVoiceConsentList.data is required');
         }
         return list
             .map((item) => (() {
@@ -18253,13 +20566,19 @@ class OpenAiVoiceConsentList {
       firstId: json['first_id']?.toString(),
       hasMore: json['has_more'] is bool ? json['has_more'] : null,
       lastId: json['last_id']?.toString(),
-      object: json['object']?.toString()
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiVoiceConsentList.object is required');
+        }
+        return value;
+      })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'data': data?.map((item) => item.toJson()).toList(),
+      'data': data.map((item) => item.toJson()).toList(),
       'first_id': firstId,
       'has_more': hasMore,
       'last_id': lastId,
@@ -18269,19 +20588,25 @@ class OpenAiVoiceConsentList {
 }
 
 class OpenAiVoiceConsentMultipartRequest {
-  final String? file;
+  final String file;
   final Map<String, dynamic>? metadata;
   final String? name;
 
   OpenAiVoiceConsentMultipartRequest({
-    this.file,
+    required this.file,
     this.metadata,
     this.name
   });
 
   factory OpenAiVoiceConsentMultipartRequest.fromJson(Map<String, dynamic> json) {
     return OpenAiVoiceConsentMultipartRequest(
-      file: json['file']?.toString(),
+      file: (() {
+        final value = json['file']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiVoiceConsentMultipartRequest.file is required');
+        }
+        return value;
+      })(),
       metadata: (() {
         final map = _sdkworkAsMap(json['metadata']);
         if (map == null) {
@@ -18420,18 +20745,18 @@ class OpenAiVoiceCreateRequest {
 }
 
 class OpenAiVoiceList {
-  final List<OpenAiVoice>? data;
+  final List<OpenAiVoice> data;
   final String? firstId;
   final bool? hasMore;
   final String? lastId;
-  final String? object;
+  final String object;
 
   OpenAiVoiceList({
-    this.data,
+    required this.data,
     this.firstId,
     this.hasMore,
     this.lastId,
-    this.object
+    required this.object
   });
 
   factory OpenAiVoiceList.fromJson(Map<String, dynamic> json) {
@@ -18439,7 +20764,7 @@ class OpenAiVoiceList {
       data: (() {
         final list = _sdkworkAsList(json['data']);
         if (list == null) {
-          return null;
+          throw FormatException('OpenAiVoiceList.data is required');
         }
         return list
             .map((item) => (() {
@@ -18452,13 +20777,19 @@ class OpenAiVoiceList {
       firstId: json['first_id']?.toString(),
       hasMore: json['has_more'] is bool ? json['has_more'] : null,
       lastId: json['last_id']?.toString(),
-      object: json['object']?.toString()
+      object: (() {
+        final value = json['object']?.toString();
+        if (value == null) {
+          throw FormatException('OpenAiVoiceList.object is required');
+        }
+        return value;
+      })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
-      'data': data?.map((item) => item.toJson()).toList(),
+      'data': data.map((item) => item.toJson()).toList(),
       'first_id': firstId,
       'has_more': hasMore,
       'last_id': lastId,
@@ -18743,7 +21074,7 @@ class SunoMusicGenerationRequest {
   final double? duration;
   final String? model;
   final String? negativeTags;
-  final String? prompt;
+  final String prompt;
   final String? tags;
   final String? title;
 
@@ -18752,7 +21083,7 @@ class SunoMusicGenerationRequest {
     this.duration,
     this.model,
     this.negativeTags,
-    this.prompt,
+    required this.prompt,
     this.tags,
     this.title
   });
@@ -18763,7 +21094,13 @@ class SunoMusicGenerationRequest {
       duration: json['duration'] is num ? json['duration'].toDouble() : null,
       model: json['model']?.toString(),
       negativeTags: json['negative_tags']?.toString(),
-      prompt: json['prompt']?.toString(),
+      prompt: (() {
+        final value = json['prompt']?.toString();
+        if (value == null) {
+          throw FormatException('SunoMusicGenerationRequest.prompt is required');
+        }
+        return value;
+      })(),
       tags: json['tags']?.toString(),
       title: json['title']?.toString()
     );
@@ -19054,8 +21391,8 @@ class ViduImageToVideoRequest {
   final String? aspectRatio;
   final String? callbackUrl;
   final int? duration;
-  final List<String>? images;
-  final String? model;
+  final List<String> images;
+  final String model;
   final String? movementAmplitude;
   final String? payload;
   final String? prompt;
@@ -19066,8 +21403,8 @@ class ViduImageToVideoRequest {
     this.aspectRatio,
     this.callbackUrl,
     this.duration,
-    this.images,
-    this.model,
+    required this.images,
+    required this.model,
     this.movementAmplitude,
     this.payload,
     this.prompt,
@@ -19083,14 +21420,20 @@ class ViduImageToVideoRequest {
       images: (() {
         final list = _sdkworkAsList(json['images']);
         if (list == null) {
-          return null;
+          throw FormatException('ViduImageToVideoRequest.images is required');
         }
         return list
             .map((item) => item?.toString())
             .whereType<String>()
             .toList();
       })(),
-      model: json['model']?.toString(),
+      model: (() {
+        final value = json['model']?.toString();
+        if (value == null) {
+          throw FormatException('ViduImageToVideoRequest.model is required');
+        }
+        return value;
+      })(),
       movementAmplitude: json['movement_amplitude']?.toString(),
       payload: json['payload']?.toString(),
       prompt: json['prompt']?.toString(),
@@ -19104,7 +21447,7 @@ class ViduImageToVideoRequest {
       'aspect_ratio': aspectRatio,
       'callback_url': callbackUrl,
       'duration': duration,
-      'images': images?.map((item) => item).toList(),
+      'images': images.map((item) => item).toList(),
       'model': model,
       'movement_amplitude': movementAmplitude,
       'payload': payload,
@@ -19118,20 +21461,20 @@ class ViduImageToVideoRequest {
 class ViduReferenceToImageRequest {
   final String? aspectRatio;
   final String? callbackUrl;
-  final List<String>? images;
-  final String? model;
+  final List<String> images;
+  final String model;
   final String? payload;
-  final String? prompt;
+  final String prompt;
   final int? seed;
   final String? style;
 
   ViduReferenceToImageRequest({
     this.aspectRatio,
     this.callbackUrl,
-    this.images,
-    this.model,
+    required this.images,
+    required this.model,
     this.payload,
-    this.prompt,
+    required this.prompt,
     this.seed,
     this.style
   });
@@ -19143,16 +21486,28 @@ class ViduReferenceToImageRequest {
       images: (() {
         final list = _sdkworkAsList(json['images']);
         if (list == null) {
-          return null;
+          throw FormatException('ViduReferenceToImageRequest.images is required');
         }
         return list
             .map((item) => item?.toString())
             .whereType<String>()
             .toList();
       })(),
-      model: json['model']?.toString(),
+      model: (() {
+        final value = json['model']?.toString();
+        if (value == null) {
+          throw FormatException('ViduReferenceToImageRequest.model is required');
+        }
+        return value;
+      })(),
       payload: json['payload']?.toString(),
-      prompt: json['prompt']?.toString(),
+      prompt: (() {
+        final value = json['prompt']?.toString();
+        if (value == null) {
+          throw FormatException('ViduReferenceToImageRequest.prompt is required');
+        }
+        return value;
+      })(),
       seed: json['seed'] is int ? json['seed'] : null,
       style: json['style']?.toString()
     );
@@ -19162,7 +21517,7 @@ class ViduReferenceToImageRequest {
     return <String, dynamic>{
       'aspect_ratio': aspectRatio,
       'callback_url': callbackUrl,
-      'images': images?.map((item) => item).toList(),
+      'images': images.map((item) => item).toList(),
       'model': model,
       'payload': payload,
       'prompt': prompt,
@@ -19176,8 +21531,8 @@ class ViduReferenceToVideoRequest {
   final String? aspectRatio;
   final String? callbackUrl;
   final int? duration;
-  final List<String>? images;
-  final String? model;
+  final List<String> images;
+  final String model;
   final String? movementAmplitude;
   final String? payload;
   final String? prompt;
@@ -19188,8 +21543,8 @@ class ViduReferenceToVideoRequest {
     this.aspectRatio,
     this.callbackUrl,
     this.duration,
-    this.images,
-    this.model,
+    required this.images,
+    required this.model,
     this.movementAmplitude,
     this.payload,
     this.prompt,
@@ -19205,14 +21560,20 @@ class ViduReferenceToVideoRequest {
       images: (() {
         final list = _sdkworkAsList(json['images']);
         if (list == null) {
-          return null;
+          throw FormatException('ViduReferenceToVideoRequest.images is required');
         }
         return list
             .map((item) => item?.toString())
             .whereType<String>()
             .toList();
       })(),
-      model: json['model']?.toString(),
+      model: (() {
+        final value = json['model']?.toString();
+        if (value == null) {
+          throw FormatException('ViduReferenceToVideoRequest.model is required');
+        }
+        return value;
+      })(),
       movementAmplitude: json['movement_amplitude']?.toString(),
       payload: json['payload']?.toString(),
       prompt: json['prompt']?.toString(),
@@ -19226,7 +21587,7 @@ class ViduReferenceToVideoRequest {
       'aspect_ratio': aspectRatio,
       'callback_url': callbackUrl,
       'duration': duration,
-      'images': images?.map((item) => item).toList(),
+      'images': images.map((item) => item).toList(),
       'model': model,
       'movement_amplitude': movementAmplitude,
       'payload': payload,
@@ -19241,8 +21602,8 @@ class ViduStartEndToVideoRequest {
   final String? aspectRatio;
   final String? callbackUrl;
   final int? duration;
-  final List<String>? images;
-  final String? model;
+  final List<String> images;
+  final String model;
   final String? movementAmplitude;
   final String? payload;
   final String? prompt;
@@ -19253,8 +21614,8 @@ class ViduStartEndToVideoRequest {
     this.aspectRatio,
     this.callbackUrl,
     this.duration,
-    this.images,
-    this.model,
+    required this.images,
+    required this.model,
     this.movementAmplitude,
     this.payload,
     this.prompt,
@@ -19270,14 +21631,20 @@ class ViduStartEndToVideoRequest {
       images: (() {
         final list = _sdkworkAsList(json['images']);
         if (list == null) {
-          return null;
+          throw FormatException('ViduStartEndToVideoRequest.images is required');
         }
         return list
             .map((item) => item?.toString())
             .whereType<String>()
             .toList();
       })(),
-      model: json['model']?.toString(),
+      model: (() {
+        final value = json['model']?.toString();
+        if (value == null) {
+          throw FormatException('ViduStartEndToVideoRequest.model is required');
+        }
+        return value;
+      })(),
       movementAmplitude: json['movement_amplitude']?.toString(),
       payload: json['payload']?.toString(),
       prompt: json['prompt']?.toString(),
@@ -19291,7 +21658,7 @@ class ViduStartEndToVideoRequest {
       'aspect_ratio': aspectRatio,
       'callback_url': callbackUrl,
       'duration': duration,
-      'images': images?.map((item) => item).toList(),
+      'images': images.map((item) => item).toList(),
       'model': model,
       'movement_amplitude': movementAmplitude,
       'payload': payload,
@@ -19354,10 +21721,10 @@ class ViduTextToVideoRequest {
   final String? aspectRatio;
   final String? callbackUrl;
   final int? duration;
-  final String? model;
+  final String model;
   final String? movementAmplitude;
   final String? payload;
-  final String? prompt;
+  final String prompt;
   final String? resolution;
   final int? seed;
 
@@ -19365,10 +21732,10 @@ class ViduTextToVideoRequest {
     this.aspectRatio,
     this.callbackUrl,
     this.duration,
-    this.model,
+    required this.model,
     this.movementAmplitude,
     this.payload,
-    this.prompt,
+    required this.prompt,
     this.resolution,
     this.seed
   });
@@ -19378,10 +21745,22 @@ class ViduTextToVideoRequest {
       aspectRatio: json['aspect_ratio']?.toString(),
       callbackUrl: json['callback_url']?.toString(),
       duration: json['duration'] is int ? json['duration'] : null,
-      model: json['model']?.toString(),
+      model: (() {
+        final value = json['model']?.toString();
+        if (value == null) {
+          throw FormatException('ViduTextToVideoRequest.model is required');
+        }
+        return value;
+      })(),
       movementAmplitude: json['movement_amplitude']?.toString(),
       payload: json['payload']?.toString(),
-      prompt: json['prompt']?.toString(),
+      prompt: (() {
+        final value = json['prompt']?.toString();
+        if (value == null) {
+          throw FormatException('ViduTextToVideoRequest.prompt is required');
+        }
+        return value;
+      })(),
       resolution: json['resolution']?.toString(),
       seed: json['seed'] is int ? json['seed'] : null
     );
@@ -19546,15 +21925,15 @@ class VolcengineContentGenerationTask {
 
 class VolcengineContentGenerationTaskCreateRequest {
   final String? callbackUrl;
-  final List<VolcengineContentPart>? content;
+  final List<VolcengineContentPart> content;
   final Map<String, dynamic>? metadata;
-  final String? model;
+  final String model;
 
   VolcengineContentGenerationTaskCreateRequest({
     this.callbackUrl,
-    this.content,
+    required this.content,
     this.metadata,
-    this.model
+    required this.model
   });
 
   factory VolcengineContentGenerationTaskCreateRequest.fromJson(Map<String, dynamic> json) {
@@ -19563,7 +21942,7 @@ class VolcengineContentGenerationTaskCreateRequest {
       content: (() {
         final list = _sdkworkAsList(json['content']);
         if (list == null) {
-          return null;
+          throw FormatException('VolcengineContentGenerationTaskCreateRequest.content is required');
         }
         return list
             .map((item) => (() {
@@ -19587,14 +21966,20 @@ class VolcengineContentGenerationTaskCreateRequest {
         });
         return result;
       })(),
-      model: json['model']?.toString()
+      model: (() {
+        final value = json['model']?.toString();
+        if (value == null) {
+          throw FormatException('VolcengineContentGenerationTaskCreateRequest.model is required');
+        }
+        return value;
+      })()
     );
   }
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'callback_url': callbackUrl,
-      'content': content?.map((item) => item.toJson()).toList(),
+      'content': content.map((item) => item.toJson()).toList(),
       'metadata': metadata?.map((key, item) => MapEntry(key, item)),
       'model': model,
     };
@@ -19637,14 +22022,14 @@ class VolcengineContentPart {
   final String? fileId;
   final String? imageUrl;
   final String? text;
-  final String? type;
+  final String type;
   final String? videoUrl;
 
   VolcengineContentPart({
     this.fileId,
     this.imageUrl,
     this.text,
-    this.type,
+    required this.type,
     this.videoUrl
   });
 
@@ -19653,7 +22038,13 @@ class VolcengineContentPart {
       fileId: json['file_id']?.toString(),
       imageUrl: json['image_url']?.toString(),
       text: json['text']?.toString(),
-      type: json['type']?.toString(),
+      type: (() {
+        final value = json['type']?.toString();
+        if (value == null) {
+          throw FormatException('VolcengineContentPart.type is required');
+        }
+        return value;
+      })(),
       videoUrl: json['video_url']?.toString()
     );
   }

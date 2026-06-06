@@ -101,6 +101,27 @@
     "events": [],
     "configKeys": [
       ".sdkwork-assembly.json"
+    ],
+    "sdkDependencies": [
+      {
+        "workspace": "sdkwork-appbase-app-sdk",
+        "role": "appbase-app-capability",
+        "required": true,
+        "dependencyMode": "consumer-sdk",
+        "apiPrefix": "/app/v3/api",
+        "generatedTransportImportPolicy": "forbidden",
+        "packageByLanguage": {
+          "typescript": "@sdkwork/appbase-app-sdk",
+          "flutter": "sdkwork_appbase_app_sdk",
+          "rust": "sdkwork-appbase-app-sdk",
+          "java": "com.sdkwork:sdkwork-appbase-app-sdk",
+          "csharp": "SDKWork.Appbase.AppSdk",
+          "swift": "sdkwork-appbase-app-sdk",
+          "kotlin": "com.sdkwork:sdkwork-appbase-app-sdk",
+          "go": "github.com/sdkwork/sdkwork-appbase-app-sdk",
+          "python": "sdkwork-appbase-app-sdk"
+        }
+      }
     ]
   },
   "integration": {

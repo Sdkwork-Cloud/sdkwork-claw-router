@@ -42,7 +42,7 @@ pub struct ChatConversationItem {
 
     /// Message count field on chat conversation item.
     #[serde(rename = "messageCount")]
-    pub message_count: i64,
+    pub message_count: String,
 
     /// Source surface field on chat conversation item.
     #[serde(rename = "sourceSurface")]
@@ -56,7 +56,7 @@ pub struct ChatConversationItem {
 
     /// Turn count field on chat conversation item.
     #[serde(rename = "turnCount")]
-    pub turn_count: i64,
+    pub turn_count: String,
 
     /// Updated at field on chat conversation item.
     #[serde(rename = "updatedAt")]

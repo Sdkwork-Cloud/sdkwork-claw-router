@@ -6,5 +6,5 @@ type AdminAiResourceMemberItem struct {
 	MemberRole string `json:"memberRole"`
 	ParentResourceCode string `json:"parentResourceCode"`
 	Required bool `json:"required"`
-	SortOrder int `json:"sortOrder"`
+	SortOrder string `json:"sortOrder"`
 }

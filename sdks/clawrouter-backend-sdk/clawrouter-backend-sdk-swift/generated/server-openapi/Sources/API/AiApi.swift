@@ -70,7 +70,7 @@ public class AiApi {
     }
 
     /// List model rankings
-    public func modelRankingsList(rankScope: String? = nil, vendorCode: String? = nil, modality: String? = nil, q: String? = nil, limit: Int? = nil) async throws -> ModelRankingsListResult? {
+    public func modelRankingsList(rankScope: String? = nil, vendorCode: String? = nil, modality: String? = nil, q: String? = nil, limit: String? = nil) async throws -> ModelRankingsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "rank_scope", value: rankScope, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "vendor_code", value: vendorCode, style: "form", explode: true, allowReserved: false, contentType: nil),
@@ -82,7 +82,7 @@ public class AiApi {
     }
 
     /// List model ranking refresh jobs
-    public func modelRankingsJobsList(rankScope: String? = nil, limit: Int? = nil) async throws -> ModelRankingsJobsListResult? {
+    public func modelRankingsJobsList(rankScope: String? = nil, limit: String? = nil) async throws -> ModelRankingsJobsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "rank_scope", value: rankScope, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "limit", value: limit, style: "form", explode: true, allowReserved: false, contentType: nil)

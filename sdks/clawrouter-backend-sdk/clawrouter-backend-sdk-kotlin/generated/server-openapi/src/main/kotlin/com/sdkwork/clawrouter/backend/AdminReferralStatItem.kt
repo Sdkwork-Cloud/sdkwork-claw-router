@@ -5,6 +5,6 @@ data class AdminReferralStatItem(
     val id: String? = null,
     val inviter: String? = null,
     val link: String? = null,
-    val totalInvited: Int? = null,
+    val totalInvited: String? = null,
     val totalRevenue: String? = null
 )

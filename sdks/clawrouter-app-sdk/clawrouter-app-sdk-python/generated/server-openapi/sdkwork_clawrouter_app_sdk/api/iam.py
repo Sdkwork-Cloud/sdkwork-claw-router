@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Optional
 from ..http_client import HttpClient
-from ..models import ApiKeysCreateResult, ApiKeysDeleteResult, ApiKeysListResult, ApiKeysUpdateResult, CreateApiKeyRequest, UpdateApiKeyRequest, UpdateSettingsRequest, UsersCurrentRetrieveResult, UsersSettingsRetrieveResult, UsersSettingsUpdateResult
+from ..models import ApiKeysCreateResult, ApiKeysDeleteResult, ApiKeysListResult, ApiKeysUpdateResult, CreateApiKeyRequest, UpdateApiKeyRequest, UpdateSettingsRequest, UsersSettingsRetrieveResult, UsersSettingsUpdateResult
 
 def _append_query_string(path: str, raw_query_string: str) -> str:
     query = raw_query_string.lstrip('?')
@@ -170,20 +170,8 @@ class IamUsersApi:
 
     def __init__(self, client: HttpClient):
         self._client = client
-        self.current = IamUsersCurrentApi(client)
         self.settings = IamUsersSettingsApi(client)
 
-
-class IamUsersCurrentApi:
-    """iam iam.users.current API client."""
-
-    def __init__(self, client: HttpClient):
-        self._client = client
-
-
-    def retrieve(self) -> UsersCurrentRetrieveResult:
-        """Retrieve current IAM user"""
-        return self._client.get(f"/app/v3/api/iam/users/current")
 
 class IamUsersSettingsApi:
     """iam iam.users.settings API client."""

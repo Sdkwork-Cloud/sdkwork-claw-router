@@ -6,7 +6,7 @@ pub struct CommerceInventoryStockUpdateRequest {
     /// Available quantity field on commerce inventory stock update request.
     #[serde(rename = "availableQuantity")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub available_quantity: Option<i64>,
+    pub available_quantity: Option<String>,
 
     /// Reason code field on commerce inventory stock update request.
     #[serde(rename = "reasonCode")]
@@ -16,12 +16,12 @@ pub struct CommerceInventoryStockUpdateRequest {
     /// Reserved quantity field on commerce inventory stock update request.
     #[serde(rename = "reservedQuantity")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub reserved_quantity: Option<i64>,
+    pub reserved_quantity: Option<String>,
 
     /// Status field on commerce inventory stock update request.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub status: Option<String>,
 
     /// Version field on commerce inventory stock update request.
-    pub version: i64,
+    pub version: String,
 }

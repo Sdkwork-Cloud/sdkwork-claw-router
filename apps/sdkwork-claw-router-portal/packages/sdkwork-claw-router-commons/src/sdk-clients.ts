@@ -2,6 +2,10 @@ import { SdkworkAppClient, type SdkworkAppConfig } from '@sdkwork/clawrouter-app
 import { SdkworkBackendClient, type SdkworkBackendConfig } from '@sdkwork/clawrouter-backend-sdk';
 import { SdkworkAiClient, type SdkworkAiConfig } from '@sdkwork/clawrouter-open-sdk';
 import {
+  SdkworkBackendClient as SdkworkAppbaseBackendClient,
+  type SdkworkBackendConfig as SdkworkAppbaseBackendConfig,
+} from '@sdkwork/appbase-backend-sdk';
+import {
   clearStoredAppSessionToken,
   getStoredAppSessionAccessToken,
   getStoredAppSessionAuthToken,
@@ -106,6 +110,14 @@ export interface ClawRouterBackendSdkClientOptions {
   timeout?: number;
 }
 
+export interface SdkworkAppbaseBackendSdkClientOptions {
+  accessToken?: string;
+  backendBaseUrl?: string;
+  authToken?: string;
+  platform?: string;
+  timeout?: number;
+}
+
 export interface ClawRouterAiSdkClientOptions {
   accessToken?: string;
   aiBaseUrl?: string;
@@ -117,11 +129,13 @@ export interface ClawRouterAiSdkClientOptions {
 
 export type ClawRouterAppSdkClient = SdkworkAppClient;
 export type ClawRouterBackendSdkClient = SdkworkBackendClient;
+export type SdkworkAppbaseBackendSdkClient = SdkworkAppbaseBackendClient;
 export type ClawRouterAiSdkClient = SdkworkAiClient;
 
 type ClawRouterSdkRuntimeHost = typeof globalThis & {
   __SDKWORK_CLAW_ROUTER_APP_SDK_CLIENT__?: ClawRouterAppSdkClient | null;
   __SDKWORK_CLAW_ROUTER_BACKEND_SDK_CLIENT__?: ClawRouterBackendSdkClient | null;
+  __SDKWORK_APPBASE_BACKEND_SDK_CLIENT__?: SdkworkAppbaseBackendSdkClient | null;
   __SDKWORK_CLAW_ROUTER_AI_SDK_CLIENT__?: ClawRouterAiSdkClient | null;
 };
 
@@ -162,6 +176,8 @@ let appClient: SdkworkAppClient | null = null;
 let appClientSessionKey: string | undefined;
 let backendClient: SdkworkBackendClient | null = null;
 let backendClientSessionKey: string | undefined;
+let appbaseBackendClient: SdkworkAppbaseBackendClient | null = null;
+let appbaseBackendClientSessionKey: string | undefined;
 let aiClient: SdkworkAiClient | null = null;
 let aiClientSessionKey: string | undefined;
 let portalSessionAuthRedirectTarget: string | null = null;
@@ -172,6 +188,12 @@ export function createClawRouterAppSdkClient(options: ClawRouterAppSdkClientOpti
 
 export function createClawRouterBackendSdkClient(options: ClawRouterBackendSdkClientOptions = {}): SdkworkBackendClient {
   return attachClawRouterSdkSessionAuthBoundary(new SdkworkBackendClient(buildBackendConfig(options)));
+}
+
+export function createSdkworkAppbaseBackendSdkClient(
+  options: SdkworkAppbaseBackendSdkClientOptions = {},
+): SdkworkAppbaseBackendClient {
+  return attachClawRouterSdkSessionAuthBoundary(new SdkworkAppbaseBackendClient(buildAppbaseBackendConfig(options)));
 }
 
 export function createClawRouterAiSdkClient(options: ClawRouterAiSdkClientOptions = {}): SdkworkAiClient {
@@ -214,6 +236,26 @@ export function getClawRouterBackendSdkClient(options: ClawRouterBackendSdkClien
   return backendClient;
 }
 
+export function getSdkworkAppbaseBackendSdkClient(
+  options: SdkworkAppbaseBackendSdkClientOptions = {},
+): SdkworkAppbaseBackendClient {
+  if (hasRuntimeOverrides(options)) {
+    return createSdkworkAppbaseBackendSdkClient(options);
+  }
+  const injected = readInjectedAppbaseBackendSdkClient();
+  if (injected) {
+    return injected;
+  }
+  const authToken = getStoredAppSessionAuthToken();
+  const accessToken = getStoredAppSessionAccessToken();
+  const sessionKey = createSessionKey(authToken, accessToken);
+  if (!appbaseBackendClient || appbaseBackendClientSessionKey !== sessionKey) {
+    appbaseBackendClient = createSdkworkAppbaseBackendSdkClient(authToken || accessToken ? { accessToken, authToken } : {});
+    appbaseBackendClientSessionKey = sessionKey;
+  }
+  return appbaseBackendClient;
+}
+
 export function getClawRouterAiSdkClient(options: ClawRouterAiSdkClientOptions = {}): SdkworkAiClient {
   if (hasRuntimeOverrides(options)) {
     return createClawRouterAiSdkClient(options);
@@ -235,6 +277,8 @@ export function resetClawRouterSdkClients(): void {
   appClientSessionKey = undefined;
   backendClient = null;
   backendClientSessionKey = undefined;
+  appbaseBackendClient = null;
+  appbaseBackendClientSessionKey = undefined;
   aiClient = null;
   aiClientSessionKey = undefined;
 }
@@ -448,6 +492,22 @@ function buildBackendConfig(options: ClawRouterBackendSdkClientOptions): Sdkwork
   };
 }
 
+function buildAppbaseBackendConfig(options: SdkworkAppbaseBackendSdkClientOptions): SdkworkAppbaseBackendConfig {
+  return {
+    baseUrl: normalizeGeneratedSdkBaseUrl(
+      options.backendBaseUrl
+      ?? readClawRouterRuntimeEnv('VITE_SDKWORK_APPBASE_BACKEND_API_BASE_URL')
+      ?? readClawRouterRuntimeEnv('VITE_CLAWROUTER_BACKEND_API_BASE_URL')
+      ?? BACKEND_API_PREFIX,
+      BACKEND_API_PREFIX,
+    ),
+    accessToken: options.accessToken ?? getStoredAppSessionAccessToken(),
+    authToken: options.authToken ?? getStoredAppSessionAuthToken(),
+    platform: options.platform ?? 'web-admin',
+    timeout: options.timeout,
+  };
+}
+
 function buildAiConfig(options: ClawRouterAiSdkClientOptions): SdkworkAiConfig {
   return {
     baseUrl: normalizeGeneratedSdkBaseUrl(
@@ -464,6 +524,7 @@ function hasRuntimeOverrides(
   options:
     | ClawRouterAppSdkClientOptions
     | ClawRouterBackendSdkClientOptions
+    | SdkworkAppbaseBackendSdkClientOptions
     | ClawRouterAiSdkClientOptions,
 ): boolean {
   return Object.keys(options).length > 0;
@@ -486,6 +547,10 @@ function readInjectedAppSdkClient(): ClawRouterAppSdkClient | undefined {
 
 function readInjectedBackendSdkClient(): ClawRouterBackendSdkClient | undefined {
   return (globalThis as ClawRouterSdkRuntimeHost).__SDKWORK_CLAW_ROUTER_BACKEND_SDK_CLIENT__ ?? undefined;
+}
+
+function readInjectedAppbaseBackendSdkClient(): SdkworkAppbaseBackendSdkClient | undefined {
+  return (globalThis as ClawRouterSdkRuntimeHost).__SDKWORK_APPBASE_BACKEND_SDK_CLIENT__ ?? undefined;
 }
 
 function readInjectedAiSdkClient(): ClawRouterAiSdkClient | undefined {

@@ -41,7 +41,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Messaging provider accounts list
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.ProviderAccountsListResult?> ProviderAccountsListAsync(int? page = null, int? pageSize = null, string? q = null, string? status = null, string? channel = null, string? providerCode = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.ProviderAccountsListResult?> ProviderAccountsListAsync(string? page = null, string? pageSize = null, string? q = null, string? status = null, string? channel = null, string? providerCode = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -73,7 +73,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Messaging rate limit buckets list
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.RateLimitBucketsListResult?> RateLimitBucketsListAsync(int? page = null, int? pageSize = null, string? sceneCode = null, string? channel = null, string? targetHash = null, string? ipHash = null, string? deviceHash = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.RateLimitBucketsListResult?> RateLimitBucketsListAsync(string? page = null, string? pageSize = null, string? sceneCode = null, string? channel = null, string? targetHash = null, string? ipHash = null, string? deviceHash = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -91,7 +91,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Messaging route rules list
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.RouteRulesListResult?> RouteRulesListAsync(int? page = null, int? pageSize = null, string? q = null, string? status = null, string? channel = null, string? providerCode = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.RouteRulesListResult?> RouteRulesListAsync(string? page = null, string? pageSize = null, string? q = null, string? status = null, string? channel = null, string? providerCode = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -123,7 +123,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Messaging send requests list
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.SendRequestsListResult?> SendRequestsListAsync(int? page = null, int? pageSize = null, string? status = null, string? channel = null, string? sceneCode = null, string? providerCode = null, string? targetHash = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.SendRequestsListResult?> SendRequestsListAsync(string? page = null, string? pageSize = null, string? status = null, string? channel = null, string? sceneCode = null, string? providerCode = null, string? targetHash = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -141,7 +141,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Messaging sender identities list
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.SenderIdentitiesListResult?> SenderIdentitiesListAsync(int? page = null, int? pageSize = null, string? q = null, string? status = null, string? channel = null, string? providerCode = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.SenderIdentitiesListResult?> SenderIdentitiesListAsync(string? page = null, string? pageSize = null, string? q = null, string? status = null, string? channel = null, string? providerCode = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -173,7 +173,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Messaging suppressions list
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.SuppressionsListResult?> SuppressionsListAsync(int? page = null, int? pageSize = null, string? status = null, string? channel = null, string? targetHash = null, string? reasonCode = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.SuppressionsListResult?> SuppressionsListAsync(string? page = null, string? pageSize = null, string? status = null, string? channel = null, string? targetHash = null, string? reasonCode = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -220,7 +220,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Messaging templates list
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.TemplatesListResult?> TemplatesListAsync(int? page = null, int? pageSize = null, string? q = null, string? status = null, string? channel = null, string? providerCode = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.TemplatesListResult?> TemplatesListAsync(string? page = null, string? pageSize = null, string? q = null, string? status = null, string? channel = null, string? providerCode = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -260,7 +260,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Verification policies list
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.VerificationPoliciesListResult?> VerificationPoliciesListAsync(int? page = null, int? pageSize = null, string? q = null, string? status = null, string? channel = null, string? providerCode = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.VerificationPoliciesListResult?> VerificationPoliciesListAsync(string? page = null, string? pageSize = null, string? q = null, string? status = null, string? channel = null, string? providerCode = null)
         {
             var queryString = BuildQueryString(new[]
             {

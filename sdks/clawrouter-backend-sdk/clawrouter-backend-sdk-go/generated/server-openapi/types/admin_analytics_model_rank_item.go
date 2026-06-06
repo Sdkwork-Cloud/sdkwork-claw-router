@@ -8,10 +8,10 @@ type AdminAnalyticsModelRankItem struct {
 	Modality string `json:"modality"`
 	Model string `json:"model"`
 	Points float64 `json:"points"`
-	Rank int `json:"rank"`
-	RequestCount int `json:"requestCount"`
+	Rank string `json:"rank"`
+	RequestCount string `json:"requestCount"`
 	TotalTokens float64 `json:"totalTokens"`
 	UpstreamCost float64 `json:"upstreamCost"`
-	UserCount int `json:"userCount"`
+	UserCount string `json:"userCount"`
 	Vendor string `json:"vendor"`
 }

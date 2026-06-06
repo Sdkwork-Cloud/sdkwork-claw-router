@@ -8,7 +8,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
     {
         public string? EndTime { get; set; }
         public List<AdminAnalyticsInsight>? Insights { get; set; }
-        public int? Limit { get; set; }
+        public string? Limit { get; set; }
         public List<AdminPieChartItem>? ModalityDistribution { get; set; }
         public List<AdminPieChartItem>? ModelDistribution { get; set; }
         public AdminAnalyticsModelRankings? ModelRankings { get; set; }

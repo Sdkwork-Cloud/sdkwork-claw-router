@@ -3,11 +3,11 @@ package com.sdkwork.clawrouter.backend.model;
 
 public class AdminCacheOperationResponse {
     private String cacheKey;
-    private Integer deletedEntries;
+    private String deletedEntries;
     private String instanceName;
     private String namespace;
     private String operation;
-    private Integer refreshedEntries;
+    private String refreshedEntries;
     private String status;
 
     public String getCacheKey() {
@@ -18,11 +18,11 @@ public class AdminCacheOperationResponse {
         this.cacheKey = cacheKey;
     }
 
-    public Integer getDeletedEntries() {
+    public String getDeletedEntries() {
         return this.deletedEntries;
     }
 
-    public void setDeletedEntries(Integer deletedEntries) {
+    public void setDeletedEntries(String deletedEntries) {
         this.deletedEntries = deletedEntries;
     }
 
@@ -50,11 +50,11 @@ public class AdminCacheOperationResponse {
         this.operation = operation;
     }
 
-    public Integer getRefreshedEntries() {
+    public String getRefreshedEntries() {
         return this.refreshedEntries;
     }
 
-    public void setRefreshedEntries(Integer refreshedEntries) {
+    public void setRefreshedEntries(String refreshedEntries) {
         this.refreshedEntries = refreshedEntries;
     }
 

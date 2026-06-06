@@ -1,8 +1,8 @@
 package com.sdkwork.clawrouter.app
 
 data class UsageSnapshot(
-    val cachedTokens: Int? = null,
-    val inputTokens: Int? = null,
-    val outputTokens: Int? = null,
-    val totalTokens: Int? = null
+    val cachedTokens: String? = null,
+    val inputTokens: String? = null,
+    val outputTokens: String? = null,
+    val totalTokens: String? = null
 )

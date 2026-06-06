@@ -12,7 +12,7 @@ pub struct AdminSiteItem {
     /// Consecutive error count field on admin site item.
     #[serde(rename = "consecutiveErrorCount")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub consecutive_error_count: Option<i64>,
+    pub consecutive_error_count: Option<String>,
 
     /// Description field on admin site item.
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -49,7 +49,7 @@ pub struct AdminSiteItem {
     /// Last latency ms field on admin site item.
     #[serde(rename = "lastLatencyMs")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub last_latency_ms: Option<i64>,
+    pub last_latency_ms: Option<String>,
 
     /// Last sync at field on admin site item.
     #[serde(rename = "lastSyncAt")]
@@ -85,7 +85,7 @@ pub struct AdminSiteItem {
     /// Sort order field on admin site item.
     #[serde(rename = "sortOrder")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub sort_order: Option<i64>,
+    pub sort_order: Option<String>,
 
     /// Status field on admin site item.
     pub status: String,

@@ -6,7 +6,7 @@ data class AdminSkillAssetUpdateRequest(
     val asset: MediaResource? = null,
     val assetType: Int? = null,
     val durationSeconds: String? = null,
-    val fileSize: Int? = null,
+    val fileSize: String? = null,
     val height: Int? = null,
     val mimeType: String? = null,
     val publishedAt: String? = null,

@@ -41,12 +41,6 @@ public class IamApi {
         return client.convertValue(raw, new TypeReference<ApiKeysUpdateResult>() {});
     }
 
-    /** Retrieve current IAM user */
-    public UsersCurrentRetrieveResult usersCurrentRetrieve() throws Exception {
-        Object raw = client.get(ApiPaths.appPath("/iam/users/current"));
-        return client.convertValue(raw, new TypeReference<UsersCurrentRetrieveResult>() {});
-    }
-
     /** List settings */
     public UsersSettingsRetrieveResult usersSettingsRetrieve() throws Exception {
         Object raw = client.get(ApiPaths.appPath("/iam/users/settings"));

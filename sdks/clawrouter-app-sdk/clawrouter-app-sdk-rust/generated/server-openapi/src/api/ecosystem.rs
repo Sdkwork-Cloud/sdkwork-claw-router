@@ -16,7 +16,7 @@ impl EcosystemApi {
     }
 
     /// Get skills
-    pub async fn skills_list(&self, q: Option<&str>, page: Option<i64>, page_size: Option<i64>, status: Option<&str>, start_time: Option<&str>, end_time: Option<&str>) -> Result<SkillsListResult, SdkworkError> {
+    pub async fn skills_list(&self, q: Option<&str>, page: Option<&str>, page_size: Option<&str>, status: Option<&str>, start_time: Option<&str>, end_time: Option<&str>) -> Result<SkillsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("q", q, "form", true, false, None),
             QueryParameterSpec::new("page", page, "form", true, false, None),

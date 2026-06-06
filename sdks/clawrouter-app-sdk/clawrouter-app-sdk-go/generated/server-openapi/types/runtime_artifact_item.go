@@ -11,6 +11,6 @@ type RuntimeArtifactItem struct {
 	Name string `json:"name"`
 	Resource MediaResource `json:"resource"`
 	Sha256 string `json:"sha256"`
-	SizeBytes int `json:"sizeBytes"`
+	SizeBytes string `json:"sizeBytes"`
 	StorageKey string `json:"storageKey"`
 }

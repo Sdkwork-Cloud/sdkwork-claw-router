@@ -6,12 +6,12 @@ public class AdminCacheKeyListResponse {
     private Boolean hasMore;
     private String instanceName;
     private List<AdminCacheKeyItem> items;
-    private Integer limit;
+    private String limit;
     private String namespace;
     private String nextCursor;
-    private Integer returnedItems;
+    private String returnedItems;
     private Boolean scanComplete;
-    private Integer scannedItems;
+    private String scannedItems;
 
     public Boolean getHasMore() {
         return this.hasMore;
@@ -37,11 +37,11 @@ public class AdminCacheKeyListResponse {
         this.items = items;
     }
 
-    public Integer getLimit() {
+    public String getLimit() {
         return this.limit;
     }
 
-    public void setLimit(Integer limit) {
+    public void setLimit(String limit) {
         this.limit = limit;
     }
 
@@ -61,11 +61,11 @@ public class AdminCacheKeyListResponse {
         this.nextCursor = nextCursor;
     }
 
-    public Integer getReturnedItems() {
+    public String getReturnedItems() {
         return this.returnedItems;
     }
 
-    public void setReturnedItems(Integer returnedItems) {
+    public void setReturnedItems(String returnedItems) {
         this.returnedItems = returnedItems;
     }
 
@@ -77,11 +77,11 @@ public class AdminCacheKeyListResponse {
         this.scanComplete = scanComplete;
     }
 
-    public Integer getScannedItems() {
+    public String getScannedItems() {
         return this.scannedItems;
     }
 
-    public void setScannedItems(Integer scannedItems) {
+    public void setScannedItems(String scannedItems) {
         this.scannedItems = scannedItems;
     }
 }

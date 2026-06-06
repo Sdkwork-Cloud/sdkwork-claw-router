@@ -16,7 +16,7 @@ public class AdminAiResourceItem {
     private String providerNativeModel;
     private String resourceCode;
     private String resourceType;
-    private Integer sortOrder;
+    private String sortOrder;
     private String status;
     private String vendorCode;
 
@@ -124,11 +124,11 @@ public class AdminAiResourceItem {
         this.resourceType = resourceType;
     }
 
-    public Integer getSortOrder() {
+    public String getSortOrder() {
         return this.sortOrder;
     }
 
-    public void setSortOrder(Integer sortOrder) {
+    public void setSortOrder(String sortOrder) {
         this.sortOrder = sortOrder;
     }
 

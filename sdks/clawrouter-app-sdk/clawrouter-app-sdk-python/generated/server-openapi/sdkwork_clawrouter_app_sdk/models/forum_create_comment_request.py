@@ -7,6 +7,6 @@ from typing import TYPE_CHECKING, Optional, List, Dict, Any
 class ForumCreateCommentRequest:
     """Forum create comment request schema exposed by Claw Router."""
     content: str
-    content_id: int
+    content_id: str
     content_type: str
     device_info: Optional[str] = None

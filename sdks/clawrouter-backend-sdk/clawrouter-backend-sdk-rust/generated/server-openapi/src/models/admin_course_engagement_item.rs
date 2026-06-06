@@ -5,7 +5,7 @@ use serde::{Deserialize, Serialize};
 pub struct AdminCourseEngagementItem {
     /// Count field on admin course engagement item.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub count: Option<i64>,
+    pub count: Option<String>,
 
     /// Course id field on admin course engagement item.
     #[serde(rename = "courseId")]

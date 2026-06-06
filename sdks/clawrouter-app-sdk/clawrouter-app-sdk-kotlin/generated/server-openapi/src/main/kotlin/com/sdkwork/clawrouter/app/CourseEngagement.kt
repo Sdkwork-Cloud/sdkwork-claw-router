@@ -1,10 +1,10 @@
 package com.sdkwork.clawrouter.app
 
 data class CourseEngagement(
-    val discussions: Int? = null,
-    val likes: Int? = null,
-    val saves: Int? = null,
-    val shares: Int? = null,
-    val studentsCount: Int? = null,
-    val views: Int? = null
+    val discussions: String? = null,
+    val likes: String? = null,
+    val saves: String? = null,
+    val shares: String? = null,
+    val studentsCount: String? = null,
+    val views: String? = null
 )

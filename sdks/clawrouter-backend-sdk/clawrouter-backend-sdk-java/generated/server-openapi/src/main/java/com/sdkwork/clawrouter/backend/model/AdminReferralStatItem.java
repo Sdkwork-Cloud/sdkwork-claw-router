@@ -6,7 +6,7 @@ public class AdminReferralStatItem {
     private String id;
     private String inviter;
     private String link;
-    private Integer totalInvited;
+    private String totalInvited;
     private String totalRevenue;
 
     public String getBonusAwarded() {
@@ -41,11 +41,11 @@ public class AdminReferralStatItem {
         this.link = link;
     }
 
-    public Integer getTotalInvited() {
+    public String getTotalInvited() {
         return this.totalInvited;
     }
 
-    public void setTotalInvited(Integer totalInvited) {
+    public void setTotalInvited(String totalInvited) {
         this.totalInvited = totalInvited;
     }
 

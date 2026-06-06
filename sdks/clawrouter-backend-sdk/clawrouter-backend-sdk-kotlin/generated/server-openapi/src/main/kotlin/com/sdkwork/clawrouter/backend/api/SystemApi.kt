@@ -17,19 +17,8 @@ class SystemApi(private val client: HttpClient) {
         return client.convertValue(raw, object : TypeReference<PromotionsBudgetLedgerEntriesListResult>() {})
     }
 
-    /** Promotion Coupon Codes List */
-    suspend fun promotionsCodesList(page: Int? = null, pageSize: Int? = null, status: String? = null): PromotionsCodesListResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("page", page, "form", true, false, null),
-            QueryParameterSpec("page_size", pageSize, "form", true, false, null),
-            QueryParameterSpec("status", status, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/promotions/codes"), query))
-        return client.convertValue(raw, object : TypeReference<PromotionsCodesListResult>() {})
-    }
-
     /** Promotion Coupon Code Redemptions List */
-    suspend fun promotionsCodesRedemptionsList(page: Int? = null, pageSize: Int? = null, codeStatus: String? = null): PromotionsCodesRedemptionsListResult? {
+    suspend fun promotionsCodesRedemptionsList(page: String? = null, pageSize: String? = null, codeStatus: String? = null): PromotionsCodesRedemptionsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -46,37 +35,6 @@ class SystemApi(private val client: HttpClient) {
         ))
         val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/promotions/coupon_ledger_entries"), query))
         return client.convertValue(raw, object : TypeReference<PromotionsCouponLedgerEntriesListResult>() {})
-    }
-
-    /** Promotion Coupon Stocks List */
-    suspend fun promotionsCouponStocksList(page: Int? = null, pageSize: Int? = null, status: String? = null): PromotionsCouponStocksListResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("page", page, "form", true, false, null),
-            QueryParameterSpec("page_size", pageSize, "form", true, false, null),
-            QueryParameterSpec("status", status, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/promotions/coupon_stocks"), query))
-        return client.convertValue(raw, object : TypeReference<PromotionsCouponStocksListResult>() {})
-    }
-
-    /** Promotion Discount Allocations List */
-    suspend fun promotionsDiscountAllocationsList(applicationId: String? = null): PromotionsDiscountAllocationsListResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("application_id", applicationId, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/promotions/discount_allocations"), query))
-        return client.convertValue(raw, object : TypeReference<PromotionsDiscountAllocationsListResult>() {})
-    }
-
-    /** Promotion Discount Applications List */
-    suspend fun promotionsDiscountApplicationsList(page: Int? = null, pageSize: Int? = null, status: String? = null): PromotionsDiscountApplicationsListResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("page", page, "form", true, false, null),
-            QueryParameterSpec("page_size", pageSize, "form", true, false, null),
-            QueryParameterSpec("status", status, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/promotions/discount_applications"), query))
-        return client.convertValue(raw, object : TypeReference<PromotionsDiscountApplicationsListResult>() {})
     }
 
     /** Promotion Events List */
@@ -97,30 +55,8 @@ class SystemApi(private val client: HttpClient) {
         return client.convertValue(raw, object : TypeReference<PromotionsExternalBindingsListResult>() {})
     }
 
-    /** Promotion Offers List */
-    suspend fun promotionsOffersManagementList(page: Int? = null, pageSize: Int? = null, status: String? = null): PromotionsOffersManagementListResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("page", page, "form", true, false, null),
-            QueryParameterSpec("page_size", pageSize, "form", true, false, null),
-            QueryParameterSpec("status", status, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/promotions/offers"), query))
-        return client.convertValue(raw, object : TypeReference<PromotionsOffersManagementListResult>() {})
-    }
-
-    /** Promotion User Coupons Management List */
-    suspend fun promotionsUserCouponsManagementList(page: Int? = null, pageSize: Int? = null, status: String? = null): PromotionsUserCouponsManagementListResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("page", page, "form", true, false, null),
-            QueryParameterSpec("page_size", pageSize, "form", true, false, null),
-            QueryParameterSpec("status", status, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/promotions/user_coupons"), query))
-        return client.convertValue(raw, object : TypeReference<PromotionsUserCouponsManagementListResult>() {})
-    }
-
     /** List overview */
-    suspend fun analyticsAdminOverviewRetrieve(timeRange: String? = null, startTime: String? = null, endTime: String? = null, limit: Int? = null): AnalyticsAdminOverviewRetrieveResult? {
+    suspend fun analyticsAdminOverviewRetrieve(timeRange: String? = null, startTime: String? = null, endTime: String? = null, limit: String? = null): AnalyticsAdminOverviewRetrieveResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("time_range", timeRange, "form", true, false, null),
             QueryParameterSpec("start_time", startTime, "form", true, false, null),
@@ -162,7 +98,7 @@ class SystemApi(private val client: HttpClient) {
     }
 
     /** List runtime cache keys in a namespace */
-    suspend fun cacheNamespacesKeysList(namespace: String, limit: Int? = null, cursor: String? = null): CacheNamespacesKeysListResult? {
+    suspend fun cacheNamespacesKeysList(namespace: String, limit: String? = null, cursor: String? = null): CacheNamespacesKeysListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("limit", limit, "form", true, false, null),
             QueryParameterSpec("cursor", cursor, "form", true, false, null)
@@ -286,7 +222,7 @@ class SystemApi(private val client: HttpClient) {
     }
 
     /** List logs */
-    suspend fun recordsList(page: Int? = null, pageSize: Int? = null, user: String? = null, token: String? = null, model: String? = null): RecordsListResult? {
+    suspend fun recordsList(page: String? = null, pageSize: String? = null, user: String? = null, token: String? = null, model: String? = null): RecordsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null),

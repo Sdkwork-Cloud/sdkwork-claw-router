@@ -4,7 +4,7 @@ use crate::api::base::{RequestHeaders};
 use crate::api::paths::app_path;
 use crate::api::paths::append_query_string;
 use crate::http::{SdkworkError, SdkworkHttpClient};
-use crate::models::{IamRuntimeRetrieveResult, IamVerificationPolicyRetrieveResult, PromotionCodeRedemptionRequest, PromotionCommandRequest, PromotionsCodesRedemptionsCreateResult, PromotionsDiscountApplicationsCreateResult, PromotionsDiscountApplicationsReleaseResult, PromotionsDiscountApplicationsReversalsCreateResult, PromotionsDiscountApplicationsSettleResult, PromotionsUserCouponsClaimsCreateResult, PromotionsUserCouponsWalletListResult, SiteRuntimeRetrieveResult};
+use crate::models::{PromotionCommandRequest, PromotionsDiscountApplicationsCreateResult, PromotionsDiscountApplicationsReleaseResult, PromotionsDiscountApplicationsReversalsCreateResult, PromotionsDiscountApplicationsSettleResult, SiteRuntimeRetrieveResult};
 
 #[derive(Clone)]
 pub struct SystemApi {
@@ -14,18 +14,6 @@ pub struct SystemApi {
 impl SystemApi {
     pub fn new(client: Arc<SdkworkHttpClient>) -> Self {
         Self { client }
-    }
-
-    /// Promotion Code Redemption Create
-    pub async fn promotions_codes_redemptions_create(&self, body: &PromotionCodeRedemptionRequest, idempotency_key: &str) -> Result<PromotionsCodesRedemptionsCreateResult, SdkworkError> {
-        let path = app_path(&"/promotions/codes/redemptions".to_string());
-        let headers = build_request_headers(
-            &[
-                ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
     }
 
     /// Promotion Discount Application Create
@@ -74,43 +62,6 @@ impl SystemApi {
             &[],
         );
         self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
-    }
-
-    /// Promotion User Coupon Claim Create
-    pub async fn promotions_user_coupons_claims_create(&self, body: &PromotionCommandRequest, idempotency_key: &str) -> Result<PromotionsUserCouponsClaimsCreateResult, SdkworkError> {
-        let path = app_path(&"/promotions/user_coupon_claims".to_string());
-        let headers = build_request_headers(
-            &[
-                ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
-    }
-
-    /// Promotion User Coupons Wallet List
-    pub async fn promotions_user_coupons_wallet_list(&self, status: Option<&str>) -> Result<PromotionsUserCouponsWalletListResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("status", status, "form", true, false, None),
-        ]);
-        let path = append_query_string(app_path(&"/promotions/user_coupons".to_string()), &query);
-        self.client.get(&path, None, None).await
-    }
-
-    /// Retrieve public IAM runtime settings
-    pub async fn iam_runtime_retrieve(&self, tenant_code: Option<&str>, organization_code: Option<&str>) -> Result<IamRuntimeRetrieveResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("tenant_code", tenant_code, "form", true, false, None),
-            QueryParameterSpec::new("organization_code", organization_code, "form", true, false, None),
-        ]);
-        let path = append_query_string(app_path(&"/system/iam/runtime".to_string()), &query);
-        self.client.get(&path, None, None).await
-    }
-
-    /// Retrieve public IAM verification policy
-    pub async fn iam_verification_policy_retrieve(&self) -> Result<IamVerificationPolicyRetrieveResult, SdkworkError> {
-        let path = app_path(&"/system/iam/verification_policy".to_string());
-        self.client.get(&path, None, None).await
     }
 
     /// Retrieve public site runtime branding settings

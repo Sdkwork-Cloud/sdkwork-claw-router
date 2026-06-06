@@ -30,7 +30,7 @@ public class MessagingApi {
     }
 
     /** Messaging provider accounts list */
-    public ProviderAccountsListResult providerAccountsList(Integer page, Integer pageSize, String q, String status, String channel, String providerCode) throws Exception {
+    public ProviderAccountsListResult providerAccountsList(String page, String pageSize, String q, String status, String channel, String providerCode) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -54,7 +54,7 @@ public class MessagingApi {
     }
 
     /** Messaging rate limit buckets list */
-    public RateLimitBucketsListResult rateLimitBucketsList(Integer page, Integer pageSize, String sceneCode, String channel, String targetHash, String ipHash, String deviceHash) throws Exception {
+    public RateLimitBucketsListResult rateLimitBucketsList(String page, String pageSize, String sceneCode, String channel, String targetHash, String ipHash, String deviceHash) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -69,7 +69,7 @@ public class MessagingApi {
     }
 
     /** Messaging route rules list */
-    public RouteRulesListResult routeRulesList(Integer page, Integer pageSize, String q, String status, String channel, String providerCode) throws Exception {
+    public RouteRulesListResult routeRulesList(String page, String pageSize, String q, String status, String channel, String providerCode) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -93,7 +93,7 @@ public class MessagingApi {
     }
 
     /** Messaging send requests list */
-    public SendRequestsListResult sendRequestsList(Integer page, Integer pageSize, String status, String channel, String sceneCode, String providerCode, String targetHash) throws Exception {
+    public SendRequestsListResult sendRequestsList(String page, String pageSize, String status, String channel, String sceneCode, String providerCode, String targetHash) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -108,7 +108,7 @@ public class MessagingApi {
     }
 
     /** Messaging sender identities list */
-    public SenderIdentitiesListResult senderIdentitiesList(Integer page, Integer pageSize, String q, String status, String channel, String providerCode) throws Exception {
+    public SenderIdentitiesListResult senderIdentitiesList(String page, String pageSize, String q, String status, String channel, String providerCode) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -132,7 +132,7 @@ public class MessagingApi {
     }
 
     /** Messaging suppressions list */
-    public SuppressionsListResult suppressionsList(Integer page, Integer pageSize, String status, String channel, String targetHash, String reasonCode) throws Exception {
+    public SuppressionsListResult suppressionsList(String page, String pageSize, String status, String channel, String targetHash, String reasonCode) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -166,7 +166,7 @@ public class MessagingApi {
     }
 
     /** Messaging templates list */
-    public TemplatesListResult templatesList(Integer page, Integer pageSize, String q, String status, String channel, String providerCode) throws Exception {
+    public TemplatesListResult templatesList(String page, String pageSize, String q, String status, String channel, String providerCode) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -196,7 +196,7 @@ public class MessagingApi {
     }
 
     /** Verification policies list */
-    public VerificationPoliciesListResult verificationPoliciesList(Integer page, Integer pageSize, String q, String status, String channel, String providerCode) throws Exception {
+    public VerificationPoliciesListResult verificationPoliciesList(String page, String pageSize, String q, String status, String channel, String providerCode) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null),

@@ -10,15 +10,15 @@ public class AdminAiModelCreateRequest {
     private String displayName;
     private List<String> inputModalities;
     private List<String> limitations;
-    private Integer maxOutputTokens;
+    private String maxOutputTokens;
     private List<String> modalities;
     private String model;
     private List<String> outputModalities;
     private List<AdminAiModelRegionPrice> regionPrices;
-    private Integer releaseStage;
+    private String releaseStage;
     private String replacementModel;
-    private Integer routingState;
-    private Integer shelfState;
+    private String routingState;
+    private String shelfState;
     private List<String> supportedLanguages;
     private Boolean supportsJsonSchema;
     private Boolean supportsStreaming;
@@ -84,11 +84,11 @@ public class AdminAiModelCreateRequest {
         this.limitations = limitations;
     }
 
-    public Integer getMaxOutputTokens() {
+    public String getMaxOutputTokens() {
         return this.maxOutputTokens;
     }
 
-    public void setMaxOutputTokens(Integer maxOutputTokens) {
+    public void setMaxOutputTokens(String maxOutputTokens) {
         this.maxOutputTokens = maxOutputTokens;
     }
 
@@ -124,11 +124,11 @@ public class AdminAiModelCreateRequest {
         this.regionPrices = regionPrices;
     }
 
-    public Integer getReleaseStage() {
+    public String getReleaseStage() {
         return this.releaseStage;
     }
 
-    public void setReleaseStage(Integer releaseStage) {
+    public void setReleaseStage(String releaseStage) {
         this.releaseStage = releaseStage;
     }
 
@@ -140,19 +140,19 @@ public class AdminAiModelCreateRequest {
         this.replacementModel = replacementModel;
     }
 
-    public Integer getRoutingState() {
+    public String getRoutingState() {
         return this.routingState;
     }
 
-    public void setRoutingState(Integer routingState) {
+    public void setRoutingState(String routingState) {
         this.routingState = routingState;
     }
 
-    public Integer getShelfState() {
+    public String getShelfState() {
         return this.shelfState;
     }
 
-    public void setShelfState(Integer shelfState) {
+    public void setShelfState(String shelfState) {
         this.shelfState = shelfState;
     }
 

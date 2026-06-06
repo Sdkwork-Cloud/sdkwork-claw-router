@@ -18,7 +18,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public bool? Required { get; set; }
         public string? Scope { get; set; }
         public bool? Searchable { get; set; }
-        public int? SortOrder { get; set; }
+        public string? SortOrder { get; set; }
         public string? Status { get; set; }
         public string? UpdatedAt { get; set; }
         public string? ValueType { get; set; }

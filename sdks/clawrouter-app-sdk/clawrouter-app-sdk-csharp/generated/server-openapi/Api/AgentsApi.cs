@@ -18,7 +18,7 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// List Playground agent definitions
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.AgentDefinitionsListResult?> AgentDefinitionsListAsync(int? page = null, int? pageSize = null, string? q = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.AgentDefinitionsListResult?> AgentDefinitionsListAsync(string? page = null, string? pageSize = null, string? q = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -70,7 +70,7 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// List Playground agent run steps
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.AgentRunStepsListResult?> AgentRunStepsListAsync(string runId, int? page = null, int? pageSize = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.AgentRunStepsListResult?> AgentRunStepsListAsync(string runId, string? page = null, string? pageSize = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -121,7 +121,7 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// List Playground agent runs
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.AgentRunsListResult?> AgentRunsListAsync(string sessionId, int? page = null, int? pageSize = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.AgentRunsListResult?> AgentRunsListAsync(string sessionId, string? page = null, string? pageSize = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -157,7 +157,7 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// List Playground agent sessions
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.AgentSessionsListResult?> AgentSessionsListAsync(string agentId, int? page = null, int? pageSize = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.AgentSessionsListResult?> AgentSessionsListAsync(string agentId, string? page = null, string? pageSize = null)
         {
             var queryString = BuildQueryString(new[]
             {

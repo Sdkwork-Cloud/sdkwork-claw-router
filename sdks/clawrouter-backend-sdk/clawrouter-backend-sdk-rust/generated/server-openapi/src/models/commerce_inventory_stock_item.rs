@@ -5,7 +5,7 @@ use serde::{Deserialize, Serialize};
 pub struct CommerceInventoryStockItem {
     /// Available quantity field on commerce inventory stock item.
     #[serde(rename = "availableQuantity")]
-    pub available_quantity: i64,
+    pub available_quantity: String,
 
     /// Created at field on commerce inventory stock item.
     #[serde(rename = "createdAt")]
@@ -16,7 +16,7 @@ pub struct CommerceInventoryStockItem {
 
     /// Reserved quantity field on commerce inventory stock item.
     #[serde(rename = "reservedQuantity")]
-    pub reserved_quantity: i64,
+    pub reserved_quantity: String,
 
     /// Sku id field on commerce inventory stock item.
     #[serde(rename = "skuId")]
@@ -24,7 +24,7 @@ pub struct CommerceInventoryStockItem {
 
     /// Sold quantity field on commerce inventory stock item.
     #[serde(rename = "soldQuantity")]
-    pub sold_quantity: i64,
+    pub sold_quantity: String,
 
     /// Status field on commerce inventory stock item.
     pub status: String,
@@ -34,7 +34,7 @@ pub struct CommerceInventoryStockItem {
     pub updated_at: String,
 
     /// Version field on commerce inventory stock item.
-    pub version: i64,
+    pub version: String,
 
     /// Warehouse id field on commerce inventory stock item.
     #[serde(rename = "warehouseId")]

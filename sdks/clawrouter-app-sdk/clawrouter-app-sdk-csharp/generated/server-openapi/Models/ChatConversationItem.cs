@@ -14,11 +14,11 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? Id { get; set; }
         public string? LastMessagePreview { get; set; }
         public string? MemorySpaceId { get; set; }
-        public int? MessageCount { get; set; }
+        public string? MessageCount { get; set; }
         public string? SourceSurface { get; set; }
         public string? Status { get; set; }
         public string? Title { get; set; }
-        public int? TurnCount { get; set; }
+        public string? TurnCount { get; set; }
         public string? UpdatedAt { get; set; }
     }
 }

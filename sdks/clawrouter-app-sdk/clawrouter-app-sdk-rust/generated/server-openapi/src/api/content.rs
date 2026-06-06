@@ -16,7 +16,7 @@ impl ContentApi {
     }
 
     /// List forum comments
-    pub async fn comments_list(&self, content_type: &str, content_id: i64, page: Option<i64>, page_size: Option<i64>) -> Result<CommentsListResult, SdkworkError> {
+    pub async fn comments_list(&self, content_type: &str, content_id: &str, page: Option<&str>, page_size: Option<&str>) -> Result<CommentsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("content_type", content_type, "form", true, false, None),
             QueryParameterSpec::new("content_id", content_id, "form", true, false, None),
@@ -34,7 +34,7 @@ impl ContentApi {
     }
 
     /// List forum comment statistics
-    pub async fn comments_statistics_list(&self, content_type: &str, content_id: i64) -> Result<CommentsStatisticsListResult, SdkworkError> {
+    pub async fn comments_statistics_list(&self, content_type: &str, content_id: &str) -> Result<CommentsStatisticsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("content_type", content_type, "form", true, false, None),
             QueryParameterSpec::new("content_id", content_id, "form", true, false, None),
@@ -80,7 +80,7 @@ impl ContentApi {
     }
 
     /// List forum comment replies
-    pub async fn comments_replies_list(&self, comment_id: &str, page: Option<i64>, page_size: Option<i64>) -> Result<CommentsRepliesListResult, SdkworkError> {
+    pub async fn comments_replies_list(&self, comment_id: &str, page: Option<&str>, page_size: Option<&str>) -> Result<CommentsRepliesListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
@@ -96,7 +96,7 @@ impl ContentApi {
     }
 
     /// List forum feeds
-    pub async fn feeds_list(&self, r#type: Option<&str>, content_type: Option<&str>, q: Option<&str>, author_id: Option<i64>, page: Option<i64>, page_size: Option<i64>) -> Result<FeedsListResult, SdkworkError> {
+    pub async fn feeds_list(&self, r#type: Option<&str>, content_type: Option<&str>, q: Option<&str>, author_id: Option<&str>, page: Option<&str>, page_size: Option<&str>) -> Result<FeedsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("type", r#type, "form", true, false, None),
             QueryParameterSpec::new("content_type", content_type, "form", true, false, None),
@@ -116,7 +116,7 @@ impl ContentApi {
     }
 
     /// List category forum feeds
-    pub async fn feeds_category_retrieve(&self, category_id: &str, page: Option<i64>, page_size: Option<i64>) -> Result<FeedsCategoryRetrieveResult, SdkworkError> {
+    pub async fn feeds_category_retrieve(&self, category_id: &str, page: Option<&str>, page_size: Option<&str>) -> Result<FeedsCategoryRetrieveResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
@@ -126,7 +126,7 @@ impl ContentApi {
     }
 
     /// List hot forum feeds
-    pub async fn feeds_hot_list(&self, limit: Option<i64>) -> Result<FeedsHotListResult, SdkworkError> {
+    pub async fn feeds_hot_list(&self, limit: Option<&str>) -> Result<FeedsHotListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("limit", limit, "form", true, false, None),
         ]);
@@ -135,7 +135,7 @@ impl ContentApi {
     }
 
     /// List most liked forum feeds
-    pub async fn feeds_most_liked_list(&self, limit: Option<i64>) -> Result<FeedsMostLikedListResult, SdkworkError> {
+    pub async fn feeds_most_liked_list(&self, limit: Option<&str>) -> Result<FeedsMostLikedListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("limit", limit, "form", true, false, None),
         ]);
@@ -144,7 +144,7 @@ impl ContentApi {
     }
 
     /// List most viewed forum feeds
-    pub async fn feeds_most_viewed_list(&self, limit: Option<i64>) -> Result<FeedsMostViewedListResult, SdkworkError> {
+    pub async fn feeds_most_viewed_list(&self, limit: Option<&str>) -> Result<FeedsMostViewedListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("limit", limit, "form", true, false, None),
         ]);
@@ -159,7 +159,7 @@ impl ContentApi {
     }
 
     /// List recommended forum feeds
-    pub async fn feeds_recommend_list(&self, limit: Option<i64>) -> Result<FeedsRecommendListResult, SdkworkError> {
+    pub async fn feeds_recommend_list(&self, limit: Option<&str>) -> Result<FeedsRecommendListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("limit", limit, "form", true, false, None),
         ]);
@@ -168,7 +168,7 @@ impl ContentApi {
     }
 
     /// List top forum feeds
-    pub async fn feeds_top_list(&self, limit: Option<i64>) -> Result<FeedsTopListResult, SdkworkError> {
+    pub async fn feeds_top_list(&self, limit: Option<&str>) -> Result<FeedsTopListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("limit", limit, "form", true, false, None),
         ]);
@@ -189,7 +189,7 @@ impl ContentApi {
     }
 
     /// Collect forum feed
-    pub async fn feeds_collections_create(&self, id: &str, folder_id: Option<i64>) -> Result<FeedsCollectionsCreateResult, SdkworkError> {
+    pub async fn feeds_collections_create(&self, id: &str, folder_id: Option<&str>) -> Result<FeedsCollectionsCreateResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("folder_id", folder_id, "form", true, false, None),
         ]);
@@ -228,7 +228,7 @@ impl ContentApi {
     }
 
     /// List my forum comments
-    pub async fn users_current_comments_list(&self, page: Option<i64>, page_size: Option<i64>) -> Result<UsersCurrentCommentsListResult, SdkworkError> {
+    pub async fn users_current_comments_list(&self, page: Option<&str>, page_size: Option<&str>) -> Result<UsersCurrentCommentsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
@@ -238,7 +238,7 @@ impl ContentApi {
     }
 
     /// List courses
-    pub async fn courses_list(&self, level: Option<i64>, category: Option<&str>, q: Option<&str>, page: Option<i64>, page_size: Option<i64>) -> Result<CoursesListResult, SdkworkError> {
+    pub async fn courses_list(&self, level: Option<&str>, category: Option<&str>, q: Option<&str>, page: Option<&str>, page_size: Option<&str>) -> Result<CoursesListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("level", level, "form", true, false, None),
             QueryParameterSpec::new("category", category, "form", true, false, None),

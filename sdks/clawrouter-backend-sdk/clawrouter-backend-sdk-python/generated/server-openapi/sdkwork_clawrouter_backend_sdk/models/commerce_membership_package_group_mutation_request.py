@@ -8,8 +8,8 @@ class CommerceMembershipPackageGroupMutationRequest:
     """Commerce membership package group mutation request schema exposed by Claw Router."""
     billing_cycle: str
     code: str
-    duration_days: int
+    duration_days: str
     name: str
     description: Optional[str] = None
-    sort_weight: Optional[int] = None
+    sort_weight: Optional[str] = None
     status: Optional[str] = None

@@ -8,12 +8,12 @@ class AdminChannelCredentialItem:
     """Admin channel credential item schema exposed by Claw Router."""
     base_url: str
     credential_id: str
-    errors: int
+    errors: str
     id: str
     masked_label: str
     name: str
-    priority: int
+    priority: str
     secret_ref: str
     status: str
-    weight: int
+    weight: str
     api_key: Optional[str] = None

@@ -5,9 +5,9 @@ import java.util.List;
 public class CourseItem {
     private String category;
     private String categoryLabel;
-    private Integer commentCount;
+    private String commentCount;
     private String content;
-    private Integer contentId;
+    private String contentId;
     private String courseCode;
     private String currency;
     private String description;
@@ -17,13 +17,13 @@ public class CourseItem {
     private String id;
     private CourseInstructor instructor;
     private Boolean isCollection;
-    private Integer lessonsCount;
-    private Integer level;
+    private String lessonsCount;
+    private String level;
     private String levelLabel;
     private String priceAmount;
     private String publishedAt;
     private Double ratingScore;
-    private Integer studentsCount;
+    private String studentsCount;
     private List<String> tags;
     private MediaResource thumbnail;
     private String title;
@@ -44,11 +44,11 @@ public class CourseItem {
         this.categoryLabel = categoryLabel;
     }
 
-    public Integer getCommentCount() {
+    public String getCommentCount() {
         return this.commentCount;
     }
 
-    public void setCommentCount(Integer commentCount) {
+    public void setCommentCount(String commentCount) {
         this.commentCount = commentCount;
     }
 
@@ -60,11 +60,11 @@ public class CourseItem {
         this.content = content;
     }
 
-    public Integer getContentId() {
+    public String getContentId() {
         return this.contentId;
     }
 
-    public void setContentId(Integer contentId) {
+    public void setContentId(String contentId) {
         this.contentId = contentId;
     }
 
@@ -140,19 +140,19 @@ public class CourseItem {
         this.isCollection = isCollection;
     }
 
-    public Integer getLessonsCount() {
+    public String getLessonsCount() {
         return this.lessonsCount;
     }
 
-    public void setLessonsCount(Integer lessonsCount) {
+    public void setLessonsCount(String lessonsCount) {
         this.lessonsCount = lessonsCount;
     }
 
-    public Integer getLevel() {
+    public String getLevel() {
         return this.level;
     }
 
-    public void setLevel(Integer level) {
+    public void setLevel(String level) {
         this.level = level;
     }
 
@@ -188,11 +188,11 @@ public class CourseItem {
         this.ratingScore = ratingScore;
     }
 
-    public Integer getStudentsCount() {
+    public String getStudentsCount() {
         return this.studentsCount;
     }
 
-    public void setStudentsCount(Integer studentsCount) {
+    public void setStudentsCount(String studentsCount) {
         this.studentsCount = studentsCount;
     }
 

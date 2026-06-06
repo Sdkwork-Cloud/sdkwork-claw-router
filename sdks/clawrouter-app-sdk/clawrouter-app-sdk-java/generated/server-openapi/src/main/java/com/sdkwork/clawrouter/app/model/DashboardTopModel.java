@@ -6,8 +6,8 @@ public class DashboardTopModel {
     private Boolean isUp;
     private String modality;
     private String name;
-    private Integer rank;
-    private Integer requests;
+    private String rank;
+    private String requests;
     private String supplier;
     private String trend;
 
@@ -43,19 +43,19 @@ public class DashboardTopModel {
         this.name = name;
     }
 
-    public Integer getRank() {
+    public String getRank() {
         return this.rank;
     }
 
-    public void setRank(Integer rank) {
+    public void setRank(String rank) {
         this.rank = rank;
     }
 
-    public Integer getRequests() {
+    public String getRequests() {
         return this.requests;
     }
 
-    public void setRequests(Integer requests) {
+    public void setRequests(String requests) {
         this.requests = requests;
     }
 

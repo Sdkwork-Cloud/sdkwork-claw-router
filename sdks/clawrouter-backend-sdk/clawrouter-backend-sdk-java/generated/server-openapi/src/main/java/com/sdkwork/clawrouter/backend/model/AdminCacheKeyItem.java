@@ -2,17 +2,17 @@ package com.sdkwork.clawrouter.backend.model;
 
 
 public class AdminCacheKeyItem {
-    private Integer expiresInSeconds;
+    private String expiresInSeconds;
     private String instanceName;
     private String key;
     private String namespace;
     private String status;
 
-    public Integer getExpiresInSeconds() {
+    public String getExpiresInSeconds() {
         return this.expiresInSeconds;
     }
 
-    public void setExpiresInSeconds(Integer expiresInSeconds) {
+    public void setExpiresInSeconds(String expiresInSeconds) {
         this.expiresInSeconds = expiresInSeconds;
     }
 

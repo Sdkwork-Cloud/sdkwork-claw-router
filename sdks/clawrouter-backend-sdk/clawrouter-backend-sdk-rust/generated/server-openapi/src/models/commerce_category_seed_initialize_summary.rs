@@ -15,15 +15,15 @@ pub struct CommerceCategorySeedInitializeSummary {
     pub install_default_enabled: bool,
 
     /// Requested field on commerce category seed initialize summary.
-    pub requested: i64,
+    pub requested: String,
 
     /// Skipped field on commerce category seed initialize summary.
-    pub skipped: i64,
+    pub skipped: String,
 
     /// Target table field on commerce category seed initialize summary.
     #[serde(rename = "targetTable")]
     pub target_table: String,
 
     /// Upserted field on commerce category seed initialize summary.
-    pub upserted: i64,
+    pub upserted: String,
 }

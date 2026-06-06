@@ -5,7 +5,7 @@ use serde::{Deserialize, Serialize};
 pub struct StorageUsageCounter {
     /// File count field on storage usage counter.
     #[serde(rename = "fileCount")]
-    pub file_count: i64,
+    pub file_count: String,
 
     /// Files field on storage usage counter.
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -20,7 +20,7 @@ pub struct StorageUsageCounter {
 
     /// Reserved bytes field on storage usage counter.
     #[serde(rename = "reservedBytes")]
-    pub reserved_bytes: i64,
+    pub reserved_bytes: String,
 
     /// Scope field on storage usage counter.
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -50,5 +50,5 @@ pub struct StorageUsageCounter {
 
     /// Used bytes field on storage usage counter.
     #[serde(rename = "usedBytes")]
-    pub used_bytes: i64,
+    pub used_bytes: String,
 }

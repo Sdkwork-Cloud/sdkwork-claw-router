@@ -9,12 +9,12 @@ pub struct CommerceProductCategoryAttributeListResponse {
     pub items: Vec<CommerceProductCategoryAttributeItem>,
 
     /// Page field on commerce product category attribute list response.
-    pub page: i64,
+    pub page: String,
 
     /// Page size field on commerce product category attribute list response.
     #[serde(rename = "pageSize")]
-    pub page_size: i64,
+    pub page_size: String,
 
     /// Total field on commerce product category attribute list response.
-    pub total: i64,
+    pub total: String,
 }

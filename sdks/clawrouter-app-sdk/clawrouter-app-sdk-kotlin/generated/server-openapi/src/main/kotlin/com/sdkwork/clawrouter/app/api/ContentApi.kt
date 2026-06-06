@@ -9,7 +9,7 @@ import com.sdkwork.clawrouter.app.http.HttpClient
 class ContentApi(private val client: HttpClient) {
 
     /** List forum comments */
-    suspend fun commentsList(contentType: String, contentId: Int, page: Int? = null, pageSize: Int? = null): CommentsListResult? {
+    suspend fun commentsList(contentType: String, contentId: String, page: String? = null, pageSize: String? = null): CommentsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("content_type", contentType, "form", true, false, null),
             QueryParameterSpec("content_id", contentId, "form", true, false, null),
@@ -27,7 +27,7 @@ class ContentApi(private val client: HttpClient) {
     }
 
     /** List forum comment statistics */
-    suspend fun commentsStatisticsList(contentType: String, contentId: Int): CommentsStatisticsListResult? {
+    suspend fun commentsStatisticsList(contentType: String, contentId: String): CommentsStatisticsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("content_type", contentType, "form", true, false, null),
             QueryParameterSpec("content_id", contentId, "form", true, false, null)
@@ -73,7 +73,7 @@ class ContentApi(private val client: HttpClient) {
     }
 
     /** List forum comment replies */
-    suspend fun commentsRepliesList(commentId: String, page: Int? = null, pageSize: Int? = null): CommentsRepliesListResult? {
+    suspend fun commentsRepliesList(commentId: String, page: String? = null, pageSize: String? = null): CommentsRepliesListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null)
@@ -89,7 +89,7 @@ class ContentApi(private val client: HttpClient) {
     }
 
     /** List forum feeds */
-    suspend fun feedsList(type: String? = null, contentType: String? = null, q: String? = null, authorId: Int? = null, page: Int? = null, pageSize: Int? = null): FeedsListResult? {
+    suspend fun feedsList(type: String? = null, contentType: String? = null, q: String? = null, authorId: String? = null, page: String? = null, pageSize: String? = null): FeedsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("type", type, "form", true, false, null),
             QueryParameterSpec("content_type", contentType, "form", true, false, null),
@@ -109,7 +109,7 @@ class ContentApi(private val client: HttpClient) {
     }
 
     /** List category forum feeds */
-    suspend fun feedsCategoryRetrieve(categoryId: String, page: Int? = null, pageSize: Int? = null): FeedsCategoryRetrieveResult? {
+    suspend fun feedsCategoryRetrieve(categoryId: String, page: String? = null, pageSize: String? = null): FeedsCategoryRetrieveResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null)
@@ -119,7 +119,7 @@ class ContentApi(private val client: HttpClient) {
     }
 
     /** List hot forum feeds */
-    suspend fun feedsHotList(limit: Int? = null): FeedsHotListResult? {
+    suspend fun feedsHotList(limit: String? = null): FeedsHotListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("limit", limit, "form", true, false, null)
         ))
@@ -128,7 +128,7 @@ class ContentApi(private val client: HttpClient) {
     }
 
     /** List most liked forum feeds */
-    suspend fun feedsMostLikedList(limit: Int? = null): FeedsMostLikedListResult? {
+    suspend fun feedsMostLikedList(limit: String? = null): FeedsMostLikedListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("limit", limit, "form", true, false, null)
         ))
@@ -137,7 +137,7 @@ class ContentApi(private val client: HttpClient) {
     }
 
     /** List most viewed forum feeds */
-    suspend fun feedsMostViewedList(limit: Int? = null): FeedsMostViewedListResult? {
+    suspend fun feedsMostViewedList(limit: String? = null): FeedsMostViewedListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("limit", limit, "form", true, false, null)
         ))
@@ -152,7 +152,7 @@ class ContentApi(private val client: HttpClient) {
     }
 
     /** List recommended forum feeds */
-    suspend fun feedsRecommendList(limit: Int? = null): FeedsRecommendListResult? {
+    suspend fun feedsRecommendList(limit: String? = null): FeedsRecommendListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("limit", limit, "form", true, false, null)
         ))
@@ -161,7 +161,7 @@ class ContentApi(private val client: HttpClient) {
     }
 
     /** List top forum feeds */
-    suspend fun feedsTopList(limit: Int? = null): FeedsTopListResult? {
+    suspend fun feedsTopList(limit: String? = null): FeedsTopListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("limit", limit, "form", true, false, null)
         ))
@@ -182,7 +182,7 @@ class ContentApi(private val client: HttpClient) {
     }
 
     /** Collect forum feed */
-    suspend fun feedsCollectionsCreate(id: String, folderId: Int? = null): FeedsCollectionsCreateResult? {
+    suspend fun feedsCollectionsCreate(id: String, folderId: String? = null): FeedsCollectionsCreateResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("folder_id", folderId, "form", true, false, null)
         ))
@@ -221,7 +221,7 @@ class ContentApi(private val client: HttpClient) {
     }
 
     /** List my forum comments */
-    suspend fun usersCurrentCommentsList(page: Int? = null, pageSize: Int? = null): UsersCurrentCommentsListResult? {
+    suspend fun usersCurrentCommentsList(page: String? = null, pageSize: String? = null): UsersCurrentCommentsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null)
@@ -231,7 +231,7 @@ class ContentApi(private val client: HttpClient) {
     }
 
     /** List courses */
-    suspend fun coursesList(level: Int? = null, category: String? = null, q: String? = null, page: Int? = null, pageSize: Int? = null): CoursesListResult? {
+    suspend fun coursesList(level: String? = null, category: String? = null, q: String? = null, page: String? = null, pageSize: String? = null): CoursesListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("level", level, "form", true, false, null),
             QueryParameterSpec("category", category, "form", true, false, null),

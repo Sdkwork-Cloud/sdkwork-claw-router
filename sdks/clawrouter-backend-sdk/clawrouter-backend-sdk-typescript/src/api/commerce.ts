@@ -1,124 +1,8 @@
 import { backendApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 
-import type { AuditCommerceEventsListResult, CatalogAttributesCreateResult, CatalogAttributesListResult, CatalogCategoriesCreateResult, CatalogCategoriesDeleteResult, CatalogCategoriesListResult, CatalogCategoriesUpdateResult, CatalogCategoryAttributesCreateResult, CatalogCategoryAttributesDeleteResult, CatalogCategoryAttributesListResult, CatalogCategoryAttributesUpdateResult, CatalogCategorySeedsCreateResult, CatalogPriceListsCreateResult, CatalogPriceListsListResult, CatalogProductsCreateResult, CatalogProductsDeleteResult, CatalogProductsListResult, CatalogProductsUpdateResult, CatalogSkusCreateResult, CatalogSkusDeleteResult, CatalogSkusListResult, CatalogSkusUpdateResult, CommerceCategorySeedInitializeRequest, CommerceInventoryStockUpdateRequest, CommerceMembershipMemberStatusRequest, CommerceMembershipPackageGroupMutationRequest, CommerceMembershipPackageMutationRequest, CommerceMembershipPlanMutationRequest, CommercePaymentProviderAccountMutationRequest, CommercePaymentProviderAccountStatusUpdateRequest, CommercePriceListMutationRequest, CommerceProductAttributeMutationRequest, CommerceProductCategoryAttributeMutationRequest, CommerceProductCategoryMutationRequest, CommerceProductSkuMutationRequest, CommerceProductSpuMutationRequest, CommerceRechargePackageMutationRequest, CommerceRechargeSettingsUpdateRequest, CommerceReportsOrderRevenueListResult, CommerceReportsPaymentReconciliationRetrieveResult, CommerceReportsRefundsListResult, CommerceStandardCommandRequest, FulfillmentsListResult, InventoryLedgerEntriesListResult, InventoryReservationsListResult, InventoryStocksListResult, InventoryStocksUpdateResult, InvoicesListResult, InvoicesRetrieveResult, InvoicesTitlesListResult, MembershipsEntitlementsListResult, MembershipsMembersListResult, MembershipsMembersStatusUpdateResult, MembershipsPackageGroupsCreateResult, MembershipsPackageGroupsDeleteResult, MembershipsPackageGroupsListResult, MembershipsPackageGroupsUpdateResult, MembershipsPackagesCreateResult, MembershipsPackagesDeleteResult, MembershipsPackagesListResult, MembershipsPackagesUpdateResult, MembershipsPlansCreateResult, MembershipsPlansDeleteResult, MembershipsPlansListResult, MembershipsPlansUpdateResult, OrdersEventsListResult, OrdersListResult, OrdersRetrieveResult, PaymentsAttemptsListResult, PaymentsChannelsListResult, PaymentsIntentsListResult, PaymentsMethodsListResult, PaymentsProviderAccountsCreateResult, PaymentsProviderAccountsDeleteResult, PaymentsProviderAccountsListResult, PaymentsProviderAccountsStatusUpdateResult, PaymentsProviderAccountsUpdateResult, PaymentsProvidersListResult, PaymentsReconciliationRunsListResult, PaymentsRouteRulesListResult, PaymentsRuntimeSnapshotRetrieveResult, PaymentsWebhookEventsListResult, RechargesOrdersListResult, RechargesPackagesCreateResult, RechargesPackagesDeleteResult, RechargesPackagesListResult, RechargesPackagesUpdateResult, RechargesSettingsRetrieveResult, RechargesSettingsUpdateResult, RefundsListResult, RefundsRetrieveResult, ShipmentsListResult, ShipmentsTrackingEventsListResult, WalletAccountsListResult, WalletAdjustmentsCreateResult, WalletExchangeRulesListResult, WalletLedgerEntriesListResult } from '../types';
+import type { CatalogCategoryAttributesCreateResult, CatalogCategoryAttributesDeleteResult, CatalogCategoryAttributesListResult, CatalogCategoryAttributesUpdateResult, CatalogCategorySeedsCreateResult, CatalogProductsDeleteResult, CatalogSkusDeleteResult, CommerceCategorySeedInitializeRequest, CommerceInventoryStockUpdateRequest, CommerceMembershipMemberStatusRequest, CommerceMembershipPackageGroupMutationRequest, CommerceMembershipPackageMutationRequest, CommerceMembershipPlanMutationRequest, CommercePaymentProviderAccountStatusUpdateRequest, CommerceProductCategoryAttributeMutationRequest, CommerceRechargeSettingsUpdateRequest, InventoryStocksUpdateResult, MembershipsMembersStatusUpdateResult, MembershipsPackageGroupsUpdateResult, MembershipsPackagesUpdateResult, MembershipsPlansUpdateResult, OrdersRetrieveResult, PaymentsProviderAccountsDeleteResult, PaymentsProviderAccountsStatusUpdateResult, PaymentsProvidersListResult, PaymentsRuntimeSnapshotRetrieveResult, RechargesPackagesDeleteResult, RechargesSettingsRetrieveResult, RechargesSettingsUpdateResult, ShipmentsTrackingEventsListResult } from '../types';
 
-
-export interface CommerceWalletLedgerEntriesListParams {
-  page?: string;
-  pageSize?: string;
-  status?: string;
-}
-
-export class CommerceWalletLedgerEntriesApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** Wallet Ledger Entries List */
-  async list(params?: CommerceWalletLedgerEntriesListParams): Promise<WalletLedgerEntriesListResult> {
-    const query = buildQueryString([
-      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
-      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
-      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<WalletLedgerEntriesListResult>(appendQueryString(backendApiPath(`/wallet/ledger_entries`), query));
-  }
-}
-
-export interface CommerceWalletExchangeRulesListParams {
-  page?: string;
-  pageSize?: string;
-  status?: string;
-}
-
-export class CommerceWalletExchangeRulesApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** Wallet Exchange Rules List */
-  async list(params?: CommerceWalletExchangeRulesListParams): Promise<WalletExchangeRulesListResult> {
-    const query = buildQueryString([
-      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
-      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
-      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<WalletExchangeRulesListResult>(appendQueryString(backendApiPath(`/wallet/exchange_rules`), query));
-  }
-}
-
-export interface CommerceWalletAdjustmentsCreateParams {
-  idempotencyKey: string;
-}
-
-export class CommerceWalletAdjustmentsApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** Wallet Adjustments Create */
-  async create(body: CommerceStandardCommandRequest, params: CommerceWalletAdjustmentsCreateParams): Promise<WalletAdjustmentsCreateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<WalletAdjustmentsCreateResult>(backendApiPath(`/wallet/adjustments`), body, undefined, requestHeaders, 'application/json');
-  }
-}
-
-export interface CommerceWalletAccountsListParams {
-  page?: string;
-  pageSize?: string;
-  status?: string;
-}
-
-export class CommerceWalletAccountsApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** Wallet Accounts List */
-  async list(params?: CommerceWalletAccountsListParams): Promise<WalletAccountsListResult> {
-    const query = buildQueryString([
-      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
-      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
-      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<WalletAccountsListResult>(appendQueryString(backendApiPath(`/wallet/accounts`), query));
-  }
-}
-
-export class CommerceWalletApi {
-  private client: HttpClient;
-  public readonly accounts: CommerceWalletAccountsApi;
-  public readonly adjustments: CommerceWalletAdjustmentsApi;
-  public readonly exchangeRules: CommerceWalletExchangeRulesApi;
-  public readonly ledgerEntries: CommerceWalletLedgerEntriesApi;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-    this.accounts = new CommerceWalletAccountsApi(client);
-    this.adjustments = new CommerceWalletAdjustmentsApi(client);
-    this.exchangeRules = new CommerceWalletExchangeRulesApi(client);
-    this.ledgerEntries = new CommerceWalletLedgerEntriesApi(client);
-  }
-
-}
 
 export interface CommerceShipmentsTrackingEventsListParams {
   page?: string;
@@ -145,12 +29,6 @@ export class CommerceShipmentsTrackingEventsApi {
   }
 }
 
-export interface CommerceShipmentsListParams {
-  page?: string;
-  pageSize?: string;
-  status?: string;
-}
-
 export class CommerceShipmentsApi {
   private client: HttpClient;
   public readonly trackingEvents: CommerceShipmentsTrackingEventsApi;
@@ -160,46 +38,6 @@ export class CommerceShipmentsApi {
     this.trackingEvents = new CommerceShipmentsTrackingEventsApi(client);
   }
 
-
-/** Shipments List */
-  async list(params?: CommerceShipmentsListParams): Promise<ShipmentsListResult> {
-    const query = buildQueryString([
-      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
-      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
-      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<ShipmentsListResult>(appendQueryString(backendApiPath(`/shipments`), query));
-  }
-}
-
-export interface CommerceRefundsListParams {
-  page?: string;
-  pageSize?: string;
-  status?: string;
-}
-
-export class CommerceRefundsApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** Refunds List */
-  async list(params?: CommerceRefundsListParams): Promise<RefundsListResult> {
-    const query = buildQueryString([
-      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
-      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
-      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<RefundsListResult>(appendQueryString(backendApiPath(`/refunds`), query));
-  }
-
-/** Refunds Retrieve */
-  async retrieve(refundId: string): Promise<RefundsRetrieveResult> {
-    return this.client.get<RefundsRetrieveResult>(backendApiPath(`/refunds/${serializePathParameter(refundId, { name: 'refundId', style: 'simple', explode: false })}`));
-  }
 }
 
 export class CommerceRechargesSettingsApi {
@@ -221,20 +59,6 @@ export class CommerceRechargesSettingsApi {
   }
 }
 
-export interface CommerceRechargesPackagesListParams {
-  page?: string;
-  pageSize?: string;
-  status?: string;
-}
-
-export interface CommerceRechargesPackagesCreateParams {
-  idempotencyKey: string;
-}
-
-export interface CommerceRechargesPackagesUpdateParams {
-  idempotencyKey: string;
-}
-
 export class CommerceRechargesPackagesApi {
   private client: HttpClient;
 
@@ -243,109 +67,23 @@ export class CommerceRechargesPackagesApi {
   }
 
 
-/** Recharges Packages List */
-  async list(params?: CommerceRechargesPackagesListParams): Promise<RechargesPackagesListResult> {
-    const query = buildQueryString([
-      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
-      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
-      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<RechargesPackagesListResult>(appendQueryString(backendApiPath(`/recharges/packages`), query));
-  }
-
-/** Recharges Packages Create */
-  async create(body: CommerceRechargePackageMutationRequest, params: CommerceRechargesPackagesCreateParams): Promise<RechargesPackagesCreateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<RechargesPackagesCreateResult>(backendApiPath(`/recharges/packages`), body, undefined, requestHeaders, 'application/json');
-  }
-
 /** Recharges Packages Delete */
   async delete(packageId: string): Promise<RechargesPackagesDeleteResult> {
     return this.client.delete<RechargesPackagesDeleteResult>(backendApiPath(`/recharges/packages/${serializePathParameter(packageId, { name: 'packageId', style: 'simple', explode: false })}`));
-  }
-
-/** Recharges Packages Update */
-  async update(packageId: string, body: CommerceRechargePackageMutationRequest, params: CommerceRechargesPackagesUpdateParams): Promise<RechargesPackagesUpdateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.patch<RechargesPackagesUpdateResult>(backendApiPath(`/recharges/packages/${serializePathParameter(packageId, { name: 'packageId', style: 'simple', explode: false })}`), body, undefined, requestHeaders, 'application/json');
-  }
-}
-
-export interface CommerceRechargesOrdersListParams {
-  page?: string;
-  pageSize?: string;
-  status?: string;
-}
-
-export class CommerceRechargesOrdersApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** Recharges Orders List */
-  async list(params?: CommerceRechargesOrdersListParams): Promise<RechargesOrdersListResult> {
-    const query = buildQueryString([
-      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
-      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
-      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<RechargesOrdersListResult>(appendQueryString(backendApiPath(`/recharges/orders`), query));
   }
 }
 
 export class CommerceRechargesApi {
   private client: HttpClient;
-  public readonly orders: CommerceRechargesOrdersApi;
   public readonly packages: CommerceRechargesPackagesApi;
   public readonly settings: CommerceRechargesSettingsApi;
 
   constructor(client: HttpClient) {
     this.client = client;
-    this.orders = new CommerceRechargesOrdersApi(client);
     this.packages = new CommerceRechargesPackagesApi(client);
     this.settings = new CommerceRechargesSettingsApi(client);
   }
 
-}
-
-export interface CommercePaymentsWebhookEventsListParams {
-  providerCode?: 'wechat_pay' | 'alipay' | 'paypal' | 'stripe' | 'apple_pay' | 'google_pay';
-  page?: string;
-  pageSize?: string;
-  status?: string;
-}
-
-export class CommercePaymentsWebhookEventsApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** Payments Webhook Events List */
-  async list(params?: CommercePaymentsWebhookEventsListParams): Promise<PaymentsWebhookEventsListResult> {
-    const query = buildQueryString([
-      { name: 'provider_code', value: params?.providerCode, style: 'form', explode: true, allowReserved: false },
-      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
-      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
-      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<PaymentsWebhookEventsListResult>(appendQueryString(backendApiPath(`/payments/webhook_events`), query));
-  }
 }
 
 export interface CommercePaymentsRuntimeSnapshotRetrieveParams {
@@ -378,66 +116,6 @@ export class CommercePaymentsRuntimeApi {
     this.snapshot = new CommercePaymentsRuntimeSnapshotApi(client);
   }
 
-}
-
-export interface CommercePaymentsRouteRulesListParams {
-  methodCode?: 'wechat_pay' | 'alipay' | 'paypal' | 'card' | 'apple_pay' | 'google_pay' | 'wallet_balance';
-  countryCode?: string;
-  currencyCode?: string;
-  page?: string;
-  pageSize?: string;
-  status?: string;
-}
-
-export class CommercePaymentsRouteRulesApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** Payments Route Rules List */
-  async list(params?: CommercePaymentsRouteRulesListParams): Promise<PaymentsRouteRulesListResult> {
-    const query = buildQueryString([
-      { name: 'method_code', value: params?.methodCode, style: 'form', explode: true, allowReserved: false },
-      { name: 'country_code', value: params?.countryCode, style: 'form', explode: true, allowReserved: false },
-      { name: 'currency_code', value: params?.currencyCode, style: 'form', explode: true, allowReserved: false },
-      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
-      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
-      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<PaymentsRouteRulesListResult>(appendQueryString(backendApiPath(`/payments/route_rules`), query));
-  }
-}
-
-export interface CommercePaymentsReconciliationRunsListParams {
-  providerCode?: 'wechat_pay' | 'alipay' | 'paypal' | 'stripe' | 'apple_pay' | 'google_pay';
-  businessDate?: string;
-  page?: string;
-  pageSize?: string;
-  status?: string;
-}
-
-export class CommercePaymentsReconciliationRunsApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** Payments Reconciliation Runs List */
-  async list(params?: CommercePaymentsReconciliationRunsListParams): Promise<PaymentsReconciliationRunsListResult> {
-    const query = buildQueryString([
-      { name: 'provider_code', value: params?.providerCode, style: 'form', explode: true, allowReserved: false },
-      { name: 'business_date', value: params?.businessDate, style: 'form', explode: true, allowReserved: false },
-      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
-      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
-      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<PaymentsReconciliationRunsListResult>(appendQueryString(backendApiPath(`/payments/reconciliation_runs`), query));
-  }
 }
 
 export interface CommercePaymentsProvidersListParams {
@@ -489,21 +167,6 @@ export class CommercePaymentsProviderAccountsStatusApi {
   }
 }
 
-export interface CommercePaymentsProviderAccountsListParams {
-  providerCode?: 'wechat_pay' | 'alipay' | 'paypal' | 'stripe' | 'apple_pay' | 'google_pay';
-  page?: string;
-  pageSize?: string;
-  status?: string;
-}
-
-export interface CommercePaymentsProviderAccountsCreateParams {
-  idempotencyKey: string;
-}
-
-export interface CommercePaymentsProviderAccountsUpdateParams {
-  idempotencyKey: string;
-}
-
 export class CommercePaymentsProviderAccountsApi {
   private client: HttpClient;
   public readonly status: CommercePaymentsProviderAccountsStatusApi;
@@ -514,251 +177,39 @@ export class CommercePaymentsProviderAccountsApi {
   }
 
 
-/** Payments Provider Accounts List */
-  async list(params?: CommercePaymentsProviderAccountsListParams): Promise<PaymentsProviderAccountsListResult> {
-    const query = buildQueryString([
-      { name: 'provider_code', value: params?.providerCode, style: 'form', explode: true, allowReserved: false },
-      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
-      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
-      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<PaymentsProviderAccountsListResult>(appendQueryString(backendApiPath(`/payments/provider_accounts`), query));
-  }
-
-/** Payments Provider Accounts Create */
-  async create(body: CommercePaymentProviderAccountMutationRequest, params: CommercePaymentsProviderAccountsCreateParams): Promise<PaymentsProviderAccountsCreateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<PaymentsProviderAccountsCreateResult>(backendApiPath(`/payments/provider_accounts`), body, undefined, requestHeaders, 'application/json');
-  }
-
 /** Payments Provider Accounts Delete */
   async delete(providerAccountId: string): Promise<PaymentsProviderAccountsDeleteResult> {
     return this.client.delete<PaymentsProviderAccountsDeleteResult>(backendApiPath(`/payments/provider_accounts/${serializePathParameter(providerAccountId, { name: 'providerAccountId', style: 'simple', explode: false })}`));
-  }
-
-/** Payments Provider Accounts Update */
-  async update(providerAccountId: string, body: CommercePaymentProviderAccountMutationRequest, params: CommercePaymentsProviderAccountsUpdateParams): Promise<PaymentsProviderAccountsUpdateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.patch<PaymentsProviderAccountsUpdateResult>(backendApiPath(`/payments/provider_accounts/${serializePathParameter(providerAccountId, { name: 'providerAccountId', style: 'simple', explode: false })}`), body, undefined, requestHeaders, 'application/json');
-  }
-}
-
-export interface CommercePaymentsMethodsListParams {
-  page?: string;
-  pageSize?: string;
-  status?: string;
-}
-
-export class CommercePaymentsMethodsApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** Payments Methods List */
-  async list(params?: CommercePaymentsMethodsListParams): Promise<PaymentsMethodsListResult> {
-    const query = buildQueryString([
-      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
-      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
-      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<PaymentsMethodsListResult>(appendQueryString(backendApiPath(`/payments/methods`), query));
-  }
-}
-
-export interface CommercePaymentsIntentsListParams {
-  orderId?: string;
-  providerCode?: 'wechat_pay' | 'alipay' | 'paypal' | 'stripe' | 'apple_pay' | 'google_pay';
-  page?: string;
-  pageSize?: string;
-  status?: string;
-}
-
-export class CommercePaymentsIntentsApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** Payments Intents List */
-  async list(params?: CommercePaymentsIntentsListParams): Promise<PaymentsIntentsListResult> {
-    const query = buildQueryString([
-      { name: 'order_id', value: params?.orderId, style: 'form', explode: true, allowReserved: false },
-      { name: 'provider_code', value: params?.providerCode, style: 'form', explode: true, allowReserved: false },
-      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
-      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
-      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<PaymentsIntentsListResult>(appendQueryString(backendApiPath(`/payments/intents`), query));
-  }
-}
-
-export interface CommercePaymentsChannelsListParams {
-  providerAccountId?: string;
-  methodCode?: 'wechat_pay' | 'alipay' | 'paypal' | 'card' | 'apple_pay' | 'google_pay' | 'wallet_balance';
-  page?: string;
-  pageSize?: string;
-  status?: string;
-}
-
-export class CommercePaymentsChannelsApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** Payments Channels List */
-  async list(params?: CommercePaymentsChannelsListParams): Promise<PaymentsChannelsListResult> {
-    const query = buildQueryString([
-      { name: 'provider_account_id', value: params?.providerAccountId, style: 'form', explode: true, allowReserved: false },
-      { name: 'method_code', value: params?.methodCode, style: 'form', explode: true, allowReserved: false },
-      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
-      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
-      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<PaymentsChannelsListResult>(appendQueryString(backendApiPath(`/payments/channels`), query));
-  }
-}
-
-export interface CommercePaymentsAttemptsListParams {
-  intentId?: string;
-  providerCode?: 'wechat_pay' | 'alipay' | 'paypal' | 'stripe' | 'apple_pay' | 'google_pay';
-  page?: string;
-  pageSize?: string;
-  status?: string;
-}
-
-export class CommercePaymentsAttemptsApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** Payments Attempts List */
-  async list(params?: CommercePaymentsAttemptsListParams): Promise<PaymentsAttemptsListResult> {
-    const query = buildQueryString([
-      { name: 'intent_id', value: params?.intentId, style: 'form', explode: true, allowReserved: false },
-      { name: 'provider_code', value: params?.providerCode, style: 'form', explode: true, allowReserved: false },
-      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
-      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
-      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<PaymentsAttemptsListResult>(appendQueryString(backendApiPath(`/payments/attempts`), query));
   }
 }
 
 export class CommercePaymentsApi {
   private client: HttpClient;
-  public readonly attempts: CommercePaymentsAttemptsApi;
-  public readonly channels: CommercePaymentsChannelsApi;
-  public readonly intents: CommercePaymentsIntentsApi;
-  public readonly methods: CommercePaymentsMethodsApi;
   public readonly providerAccounts: CommercePaymentsProviderAccountsApi;
   public readonly providers: CommercePaymentsProvidersApi;
-  public readonly reconciliationRuns: CommercePaymentsReconciliationRunsApi;
-  public readonly routeRules: CommercePaymentsRouteRulesApi;
   public readonly runtime: CommercePaymentsRuntimeApi;
-  public readonly webhookEvents: CommercePaymentsWebhookEventsApi;
 
   constructor(client: HttpClient) {
     this.client = client;
-    this.attempts = new CommercePaymentsAttemptsApi(client);
-    this.channels = new CommercePaymentsChannelsApi(client);
-    this.intents = new CommercePaymentsIntentsApi(client);
-    this.methods = new CommercePaymentsMethodsApi(client);
     this.providerAccounts = new CommercePaymentsProviderAccountsApi(client);
     this.providers = new CommercePaymentsProvidersApi(client);
-    this.reconciliationRuns = new CommercePaymentsReconciliationRunsApi(client);
-    this.routeRules = new CommercePaymentsRouteRulesApi(client);
     this.runtime = new CommercePaymentsRuntimeApi(client);
-    this.webhookEvents = new CommercePaymentsWebhookEventsApi(client);
   }
 
-}
-
-export interface CommerceOrdersEventsListParams {
-  page?: string;
-  pageSize?: string;
-  status?: string;
-}
-
-export class CommerceOrdersEventsApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** Orders Events List */
-  async list(orderId: string, params?: CommerceOrdersEventsListParams): Promise<OrdersEventsListResult> {
-    const query = buildQueryString([
-      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
-      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
-      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<OrdersEventsListResult>(appendQueryString(backendApiPath(`/orders/${serializePathParameter(orderId, { name: 'orderId', style: 'simple', explode: false })}/events`), query));
-  }
-}
-
-export interface CommerceOrdersListParams {
-  page?: string;
-  pageSize?: string;
-  status?: string;
 }
 
 export class CommerceOrdersApi {
   private client: HttpClient;
-  public readonly events: CommerceOrdersEventsApi;
 
   constructor(client: HttpClient) {
     this.client = client;
-    this.events = new CommerceOrdersEventsApi(client);
   }
 
-
-/** Orders List */
-  async list(params?: CommerceOrdersListParams): Promise<OrdersListResult> {
-    const query = buildQueryString([
-      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
-      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
-      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<OrdersListResult>(appendQueryString(backendApiPath(`/orders`), query));
-  }
 
 /** Orders Retrieve */
   async retrieve(orderId: string): Promise<OrdersRetrieveResult> {
     return this.client.get<OrdersRetrieveResult>(backendApiPath(`/orders/${serializePathParameter(orderId, { name: 'orderId', style: 'simple', explode: false })}`));
   }
-}
-
-export interface CommerceMembershipsPlansListParams {
-  page?: string;
-  pageSize?: string;
-  status?: string;
-}
-
-export interface CommerceMembershipsPlansCreateParams {
-  idempotencyKey: string;
 }
 
 export interface CommerceMembershipsPlansUpdateParams {
@@ -773,32 +224,6 @@ export class CommerceMembershipsPlansApi {
   }
 
 
-/** Memberships Plans List */
-  async list(params?: CommerceMembershipsPlansListParams): Promise<MembershipsPlansListResult> {
-    const query = buildQueryString([
-      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
-      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
-      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<MembershipsPlansListResult>(appendQueryString(backendApiPath(`/memberships/plans`), query));
-  }
-
-/** Memberships Plans Create */
-  async create(body: CommerceMembershipPlanMutationRequest, params: CommerceMembershipsPlansCreateParams): Promise<MembershipsPlansCreateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<MembershipsPlansCreateResult>(backendApiPath(`/memberships/plans`), body, undefined, requestHeaders, 'application/json');
-  }
-
-/** Memberships Plans Delete */
-  async delete(planId: string): Promise<MembershipsPlansDeleteResult> {
-    return this.client.delete<MembershipsPlansDeleteResult>(backendApiPath(`/memberships/plans/${serializePathParameter(planId, { name: 'planId', style: 'simple', explode: false })}`));
-  }
-
 /** Memberships Plans Update */
   async update(planId: string, body: CommerceMembershipPlanMutationRequest, params: CommerceMembershipsPlansUpdateParams): Promise<MembershipsPlansUpdateResult> {
     const requestHeaders = buildRequestHeaders(
@@ -809,18 +234,6 @@ export class CommerceMembershipsPlansApi {
     );
     return this.client.put<MembershipsPlansUpdateResult>(backendApiPath(`/memberships/plans/${serializePathParameter(planId, { name: 'planId', style: 'simple', explode: false })}`), body, undefined, requestHeaders, 'application/json');
   }
-}
-
-export interface CommerceMembershipsPackagesListParams {
-  page?: string;
-  pageSize?: string;
-  packageGroupId?: string;
-  planId?: string;
-  status?: string;
-}
-
-export interface CommerceMembershipsPackagesCreateParams {
-  idempotencyKey: string;
 }
 
 export interface CommerceMembershipsPackagesUpdateParams {
@@ -835,34 +248,6 @@ export class CommerceMembershipsPackagesApi {
   }
 
 
-/** Memberships Packages List */
-  async list(params?: CommerceMembershipsPackagesListParams): Promise<MembershipsPackagesListResult> {
-    const query = buildQueryString([
-      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
-      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
-      { name: 'package_group_id', value: params?.packageGroupId, style: 'form', explode: true, allowReserved: false },
-      { name: 'plan_id', value: params?.planId, style: 'form', explode: true, allowReserved: false },
-      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<MembershipsPackagesListResult>(appendQueryString(backendApiPath(`/memberships/packages`), query));
-  }
-
-/** Memberships Packages Create */
-  async create(body: CommerceMembershipPackageMutationRequest, params: CommerceMembershipsPackagesCreateParams): Promise<MembershipsPackagesCreateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<MembershipsPackagesCreateResult>(backendApiPath(`/memberships/packages`), body, undefined, requestHeaders, 'application/json');
-  }
-
-/** Memberships Packages Delete */
-  async delete(packageId: string): Promise<MembershipsPackagesDeleteResult> {
-    return this.client.delete<MembershipsPackagesDeleteResult>(backendApiPath(`/memberships/packages/${serializePathParameter(packageId, { name: 'packageId', style: 'simple', explode: false })}`));
-  }
-
 /** Memberships Packages Update */
   async update(packageId: string, body: CommerceMembershipPackageMutationRequest, params: CommerceMembershipsPackagesUpdateParams): Promise<MembershipsPackagesUpdateResult> {
     const requestHeaders = buildRequestHeaders(
@@ -873,16 +258,6 @@ export class CommerceMembershipsPackagesApi {
     );
     return this.client.put<MembershipsPackagesUpdateResult>(backendApiPath(`/memberships/packages/${serializePathParameter(packageId, { name: 'packageId', style: 'simple', explode: false })}`), body, undefined, requestHeaders, 'application/json');
   }
-}
-
-export interface CommerceMembershipsPackageGroupsListParams {
-  page?: string;
-  pageSize?: string;
-  status?: string;
-}
-
-export interface CommerceMembershipsPackageGroupsCreateParams {
-  idempotencyKey: string;
 }
 
 export interface CommerceMembershipsPackageGroupsUpdateParams {
@@ -896,32 +271,6 @@ export class CommerceMembershipsPackageGroupsApi {
     this.client = client;
   }
 
-
-/** Memberships Package Groups List */
-  async list(params?: CommerceMembershipsPackageGroupsListParams): Promise<MembershipsPackageGroupsListResult> {
-    const query = buildQueryString([
-      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
-      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
-      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<MembershipsPackageGroupsListResult>(appendQueryString(backendApiPath(`/memberships/package_groups`), query));
-  }
-
-/** Memberships Package Groups Create */
-  async create(body: CommerceMembershipPackageGroupMutationRequest, params: CommerceMembershipsPackageGroupsCreateParams): Promise<MembershipsPackageGroupsCreateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<MembershipsPackageGroupsCreateResult>(backendApiPath(`/memberships/package_groups`), body, undefined, requestHeaders, 'application/json');
-  }
-
-/** Memberships Package Groups Delete */
-  async delete(packageGroupId: string): Promise<MembershipsPackageGroupsDeleteResult> {
-    return this.client.delete<MembershipsPackageGroupsDeleteResult>(backendApiPath(`/memberships/package_groups/${serializePathParameter(packageGroupId, { name: 'packageGroupId', style: 'simple', explode: false })}`));
-  }
 
 /** Memberships Package Groups Update */
   async update(packageGroupId: string, body: CommerceMembershipPackageGroupMutationRequest, params: CommerceMembershipsPackageGroupsUpdateParams): Promise<MembershipsPackageGroupsUpdateResult> {
@@ -959,15 +308,6 @@ export class CommerceMembershipsMembersStatusApi {
   }
 }
 
-export interface CommerceMembershipsMembersListParams {
-  page?: string;
-  pageSize?: string;
-  cursor?: string;
-  userId?: string;
-  planId?: string;
-  status?: string;
-}
-
 export class CommerceMembershipsMembersApi {
   private client: HttpClient;
   public readonly status: CommerceMembershipsMembersStatusApi;
@@ -977,53 +317,10 @@ export class CommerceMembershipsMembersApi {
     this.status = new CommerceMembershipsMembersStatusApi(client);
   }
 
-
-/** Memberships Members List */
-  async list(params?: CommerceMembershipsMembersListParams): Promise<MembershipsMembersListResult> {
-    const query = buildQueryString([
-      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
-      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
-      { name: 'cursor', value: params?.cursor, style: 'form', explode: true, allowReserved: false },
-      { name: 'user_id', value: params?.userId, style: 'form', explode: true, allowReserved: false },
-      { name: 'plan_id', value: params?.planId, style: 'form', explode: true, allowReserved: false },
-      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<MembershipsMembersListResult>(appendQueryString(backendApiPath(`/memberships/members`), query));
-  }
-}
-
-export interface CommerceMembershipsEntitlementsListParams {
-  page?: string;
-  pageSize?: string;
-  planId?: string;
-  membershipId?: string;
-  status?: string;
-}
-
-export class CommerceMembershipsEntitlementsApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** Memberships Entitlements List */
-  async list(params?: CommerceMembershipsEntitlementsListParams): Promise<MembershipsEntitlementsListResult> {
-    const query = buildQueryString([
-      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
-      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
-      { name: 'plan_id', value: params?.planId, style: 'form', explode: true, allowReserved: false },
-      { name: 'membership_id', value: params?.membershipId, style: 'form', explode: true, allowReserved: false },
-      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<MembershipsEntitlementsListResult>(appendQueryString(backendApiPath(`/memberships/entitlements`), query));
-  }
 }
 
 export class CommerceMembershipsApi {
   private client: HttpClient;
-  public readonly entitlements: CommerceMembershipsEntitlementsApi;
   public readonly members: CommerceMembershipsMembersApi;
   public readonly packageGroups: CommerceMembershipsPackageGroupsApi;
   public readonly packages: CommerceMembershipsPackagesApi;
@@ -1031,78 +328,12 @@ export class CommerceMembershipsApi {
 
   constructor(client: HttpClient) {
     this.client = client;
-    this.entitlements = new CommerceMembershipsEntitlementsApi(client);
     this.members = new CommerceMembershipsMembersApi(client);
     this.packageGroups = new CommerceMembershipsPackageGroupsApi(client);
     this.packages = new CommerceMembershipsPackagesApi(client);
     this.plans = new CommerceMembershipsPlansApi(client);
   }
 
-}
-
-export interface CommerceInvoicesTitlesListParams {
-  page?: string;
-  pageSize?: string;
-  status?: string;
-}
-
-export class CommerceInvoicesTitlesApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** Invoices Titles List */
-  async list(params?: CommerceInvoicesTitlesListParams): Promise<InvoicesTitlesListResult> {
-    const query = buildQueryString([
-      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
-      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
-      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<InvoicesTitlesListResult>(appendQueryString(backendApiPath(`/invoices/titles`), query));
-  }
-}
-
-export interface CommerceInvoicesListParams {
-  page?: string;
-  pageSize?: string;
-  status?: string;
-}
-
-export class CommerceInvoicesApi {
-  private client: HttpClient;
-  public readonly titles: CommerceInvoicesTitlesApi;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-    this.titles = new CommerceInvoicesTitlesApi(client);
-  }
-
-
-/** Invoices List */
-  async list(params?: CommerceInvoicesListParams): Promise<InvoicesListResult> {
-    const query = buildQueryString([
-      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
-      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
-      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<InvoicesListResult>(appendQueryString(backendApiPath(`/invoices`), query));
-  }
-
-/** Invoices Retrieve */
-  async retrieve(invoiceId: string): Promise<InvoicesRetrieveResult> {
-    return this.client.get<InvoicesRetrieveResult>(backendApiPath(`/invoices/${serializePathParameter(invoiceId, { name: 'invoiceId', style: 'simple', explode: false })}`));
-  }
-}
-
-export interface CommerceInventoryStocksListParams {
-  skuId?: string;
-  warehouseId?: string;
-  status?: string;
-  page?: string;
-  pageSize?: string;
 }
 
 export interface CommerceInventoryStocksUpdateParams {
@@ -1117,18 +348,6 @@ export class CommerceInventoryStocksApi {
   }
 
 
-/** List inventory stock records */
-  async list(params?: CommerceInventoryStocksListParams): Promise<InventoryStocksListResult> {
-    const query = buildQueryString([
-      { name: 'sku_id', value: params?.skuId, style: 'form', explode: true, allowReserved: false },
-      { name: 'warehouse_id', value: params?.warehouseId, style: 'form', explode: true, allowReserved: false },
-      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
-      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
-      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<InventoryStocksListResult>(appendQueryString(backendApiPath(`/inventory/stocks`), query));
-  }
-
 /** Update inventory stock */
   async update(stockId: string, body: CommerceInventoryStockUpdateRequest, params: CommerceInventoryStocksUpdateParams): Promise<InventoryStocksUpdateResult> {
     const requestHeaders = buildRequestHeaders(
@@ -1141,201 +360,15 @@ export class CommerceInventoryStocksApi {
   }
 }
 
-export interface CommerceInventoryReservationsListParams {
-  skuId?: string;
-  orderId?: string;
-  checkoutSessionId?: string;
-  status?: string;
-  page?: string;
-  pageSize?: string;
-}
-
-export class CommerceInventoryReservationsApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** List inventory reservations */
-  async list(params?: CommerceInventoryReservationsListParams): Promise<InventoryReservationsListResult> {
-    const query = buildQueryString([
-      { name: 'sku_id', value: params?.skuId, style: 'form', explode: true, allowReserved: false },
-      { name: 'order_id', value: params?.orderId, style: 'form', explode: true, allowReserved: false },
-      { name: 'checkout_session_id', value: params?.checkoutSessionId, style: 'form', explode: true, allowReserved: false },
-      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
-      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
-      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<InventoryReservationsListResult>(appendQueryString(backendApiPath(`/inventory/reservations`), query));
-  }
-}
-
-export interface CommerceInventoryLedgerEntriesListParams {
-  skuId?: string;
-  warehouseId?: string;
-  sourceType?: string;
-  sourceId?: string;
-  page?: string;
-  pageSize?: string;
-}
-
-export class CommerceInventoryLedgerEntriesApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** List inventory ledger entries */
-  async list(params?: CommerceInventoryLedgerEntriesListParams): Promise<InventoryLedgerEntriesListResult> {
-    const query = buildQueryString([
-      { name: 'sku_id', value: params?.skuId, style: 'form', explode: true, allowReserved: false },
-      { name: 'warehouse_id', value: params?.warehouseId, style: 'form', explode: true, allowReserved: false },
-      { name: 'source_type', value: params?.sourceType, style: 'form', explode: true, allowReserved: false },
-      { name: 'source_id', value: params?.sourceId, style: 'form', explode: true, allowReserved: false },
-      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
-      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<InventoryLedgerEntriesListResult>(appendQueryString(backendApiPath(`/inventory/ledger_entries`), query));
-  }
-}
-
 export class CommerceInventoryApi {
   private client: HttpClient;
-  public readonly ledgerEntries: CommerceInventoryLedgerEntriesApi;
-  public readonly reservations: CommerceInventoryReservationsApi;
   public readonly stocks: CommerceInventoryStocksApi;
 
   constructor(client: HttpClient) {
     this.client = client;
-    this.ledgerEntries = new CommerceInventoryLedgerEntriesApi(client);
-    this.reservations = new CommerceInventoryReservationsApi(client);
     this.stocks = new CommerceInventoryStocksApi(client);
   }
 
-}
-
-export interface CommerceFulfillmentsListParams {
-  page?: string;
-  pageSize?: string;
-  status?: string;
-}
-
-export class CommerceFulfillmentsApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** Fulfillments List */
-  async list(params?: CommerceFulfillmentsListParams): Promise<FulfillmentsListResult> {
-    const query = buildQueryString([
-      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
-      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
-      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<FulfillmentsListResult>(appendQueryString(backendApiPath(`/fulfillments`), query));
-  }
-}
-
-export interface CommerceCommerceReportsRefundsListParams {
-  page?: string;
-  pageSize?: string;
-  status?: string;
-}
-
-export class CommerceCommerceReportsRefundsApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** Commerce Reports Refunds List */
-  async list(params?: CommerceCommerceReportsRefundsListParams): Promise<CommerceReportsRefundsListResult> {
-    const query = buildQueryString([
-      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
-      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
-      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<CommerceReportsRefundsListResult>(appendQueryString(backendApiPath(`/commerce_reports/refunds`), query));
-  }
-}
-
-export class CommerceCommerceReportsPaymentReconciliationApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** Commerce Reports Payment Reconciliation Retrieve */
-  async retrieve(): Promise<CommerceReportsPaymentReconciliationRetrieveResult> {
-    return this.client.get<CommerceReportsPaymentReconciliationRetrieveResult>(backendApiPath(`/commerce_reports/payment_reconciliation`));
-  }
-}
-
-export interface CommerceCommerceReportsOrderRevenueListParams {
-  page?: string;
-  pageSize?: string;
-  status?: string;
-}
-
-export class CommerceCommerceReportsOrderRevenueApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** Commerce Reports Order Revenue List */
-  async list(params?: CommerceCommerceReportsOrderRevenueListParams): Promise<CommerceReportsOrderRevenueListResult> {
-    const query = buildQueryString([
-      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
-      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
-      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<CommerceReportsOrderRevenueListResult>(appendQueryString(backendApiPath(`/commerce_reports/order_revenue`), query));
-  }
-}
-
-export class CommerceCommerceReportsApi {
-  private client: HttpClient;
-  public readonly orderRevenue: CommerceCommerceReportsOrderRevenueApi;
-  public readonly paymentReconciliation: CommerceCommerceReportsPaymentReconciliationApi;
-  public readonly refunds: CommerceCommerceReportsRefundsApi;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-    this.orderRevenue = new CommerceCommerceReportsOrderRevenueApi(client);
-    this.paymentReconciliation = new CommerceCommerceReportsPaymentReconciliationApi(client);
-    this.refunds = new CommerceCommerceReportsRefundsApi(client);
-  }
-
-}
-
-export interface CommerceCatalogSkusListParams {
-  productId?: string;
-  fulfillmentType?: string;
-  status?: string;
-  page?: string;
-  pageSize?: string;
-}
-
-export interface CommerceCatalogSkusCreateParams {
-  idempotencyKey: string;
-}
-
-export interface CommerceCatalogSkusUpdateParams {
-  idempotencyKey: string;
 }
 
 export class CommerceCatalogSkusApi {
@@ -1346,62 +379,10 @@ export class CommerceCatalogSkusApi {
   }
 
 
-/** List product SKUs for admin management */
-  async list(params?: CommerceCatalogSkusListParams): Promise<CatalogSkusListResult> {
-    const query = buildQueryString([
-      { name: 'product_id', value: params?.productId, style: 'form', explode: true, allowReserved: false },
-      { name: 'fulfillment_type', value: params?.fulfillmentType, style: 'form', explode: true, allowReserved: false },
-      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
-      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
-      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<CatalogSkusListResult>(appendQueryString(backendApiPath(`/catalog/skus`), query));
-  }
-
-/** Create product SKU */
-  async create(body: CommerceProductSkuMutationRequest, params: CommerceCatalogSkusCreateParams): Promise<CatalogSkusCreateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<CatalogSkusCreateResult>(backendApiPath(`/catalog/skus`), body, undefined, requestHeaders, 'application/json');
-  }
-
 /** Delete product SKU */
   async delete(skuId: string): Promise<CatalogSkusDeleteResult> {
     return this.client.delete<CatalogSkusDeleteResult>(backendApiPath(`/catalog/skus/${serializePathParameter(skuId, { name: 'skuId', style: 'simple', explode: false })}`));
   }
-
-/** Update product SKU */
-  async update(skuId: string, body: CommerceProductSkuMutationRequest, params: CommerceCatalogSkusUpdateParams): Promise<CatalogSkusUpdateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.patch<CatalogSkusUpdateResult>(backendApiPath(`/catalog/skus/${serializePathParameter(skuId, { name: 'skuId', style: 'simple', explode: false })}`), body, undefined, requestHeaders, 'application/json');
-  }
-}
-
-export interface CommerceCatalogProductsListParams {
-  q?: string;
-  categoryId?: string;
-  productType?: string;
-  status?: string;
-  page?: string;
-  pageSize?: string;
-  sort?: string;
-}
-
-export interface CommerceCatalogProductsCreateParams {
-  idempotencyKey: string;
-}
-
-export interface CommerceCatalogProductsUpdateParams {
-  idempotencyKey: string;
 }
 
 export class CommerceCatalogProductsApi {
@@ -1412,89 +393,9 @@ export class CommerceCatalogProductsApi {
   }
 
 
-/** List products for admin management */
-  async list(params?: CommerceCatalogProductsListParams): Promise<CatalogProductsListResult> {
-    const query = buildQueryString([
-      { name: 'q', value: params?.q, style: 'form', explode: true, allowReserved: false },
-      { name: 'category_id', value: params?.categoryId, style: 'form', explode: true, allowReserved: false },
-      { name: 'product_type', value: params?.productType, style: 'form', explode: true, allowReserved: false },
-      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
-      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
-      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
-      { name: 'sort', value: params?.sort, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<CatalogProductsListResult>(appendQueryString(backendApiPath(`/catalog/products`), query));
-  }
-
-/** Create product SPU */
-  async create(body: CommerceProductSpuMutationRequest, params: CommerceCatalogProductsCreateParams): Promise<CatalogProductsCreateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<CatalogProductsCreateResult>(backendApiPath(`/catalog/products`), body, undefined, requestHeaders, 'application/json');
-  }
-
 /** Delete product SPU */
   async delete(productId: string): Promise<CatalogProductsDeleteResult> {
     return this.client.delete<CatalogProductsDeleteResult>(backendApiPath(`/catalog/products/${serializePathParameter(productId, { name: 'productId', style: 'simple', explode: false })}`));
-  }
-
-/** Update product SPU */
-  async update(productId: string, body: CommerceProductSpuMutationRequest, params: CommerceCatalogProductsUpdateParams): Promise<CatalogProductsUpdateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.patch<CatalogProductsUpdateResult>(backendApiPath(`/catalog/products/${serializePathParameter(productId, { name: 'productId', style: 'simple', explode: false })}`), body, undefined, requestHeaders, 'application/json');
-  }
-}
-
-export interface CommerceCatalogPriceListsListParams {
-  currencyCode?: string;
-  marketCode?: string;
-  status?: string;
-  page?: string;
-  pageSize?: string;
-}
-
-export interface CommerceCatalogPriceListsCreateParams {
-  idempotencyKey: string;
-}
-
-export class CommerceCatalogPriceListsApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** List product price lists */
-  async list(params?: CommerceCatalogPriceListsListParams): Promise<CatalogPriceListsListResult> {
-    const query = buildQueryString([
-      { name: 'currency_code', value: params?.currencyCode, style: 'form', explode: true, allowReserved: false },
-      { name: 'market_code', value: params?.marketCode, style: 'form', explode: true, allowReserved: false },
-      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
-      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
-      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<CatalogPriceListsListResult>(appendQueryString(backendApiPath(`/catalog/price_lists`), query));
-  }
-
-/** Create product price list */
-  async create(body: CommercePriceListMutationRequest, params: CommerceCatalogPriceListsCreateParams): Promise<CatalogPriceListsCreateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<CatalogPriceListsCreateResult>(backendApiPath(`/catalog/price_lists`), body, undefined, requestHeaders, 'application/json');
   }
 }
 
@@ -1586,200 +487,42 @@ export class CommerceCatalogCategoryAttributesApi {
   }
 }
 
-export interface CommerceCatalogCategoriesListParams {
-  parentId?: string;
-  status?: string;
-  page?: string;
-  pageSize?: string;
-}
-
-export interface CommerceCatalogCategoriesCreateParams {
-  idempotencyKey: string;
-}
-
-export interface CommerceCatalogCategoriesUpdateParams {
-  idempotencyKey: string;
-}
-
-export class CommerceCatalogCategoriesApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** List product categories for admin management */
-  async list(params?: CommerceCatalogCategoriesListParams): Promise<CatalogCategoriesListResult> {
-    const query = buildQueryString([
-      { name: 'parent_id', value: params?.parentId, style: 'form', explode: true, allowReserved: false },
-      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
-      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
-      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<CatalogCategoriesListResult>(appendQueryString(backendApiPath(`/catalog/categories`), query));
-  }
-
-/** Create product category */
-  async create(body: CommerceProductCategoryMutationRequest, params: CommerceCatalogCategoriesCreateParams): Promise<CatalogCategoriesCreateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<CatalogCategoriesCreateResult>(backendApiPath(`/catalog/categories`), body, undefined, requestHeaders, 'application/json');
-  }
-
-/** Delete product category */
-  async delete(categoryId: string): Promise<CatalogCategoriesDeleteResult> {
-    return this.client.delete<CatalogCategoriesDeleteResult>(backendApiPath(`/catalog/categories/${serializePathParameter(categoryId, { name: 'categoryId', style: 'simple', explode: false })}`));
-  }
-
-/** Update product category */
-  async update(categoryId: string, body: CommerceProductCategoryMutationRequest, params: CommerceCatalogCategoriesUpdateParams): Promise<CatalogCategoriesUpdateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.patch<CatalogCategoriesUpdateResult>(backendApiPath(`/catalog/categories/${serializePathParameter(categoryId, { name: 'categoryId', style: 'simple', explode: false })}`), body, undefined, requestHeaders, 'application/json');
-  }
-}
-
-export interface CommerceCatalogAttributesListParams {
-  scope?: string;
-  status?: string;
-  page?: string;
-  pageSize?: string;
-}
-
-export interface CommerceCatalogAttributesCreateParams {
-  idempotencyKey: string;
-}
-
-export class CommerceCatalogAttributesApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** List product attributes */
-  async list(params?: CommerceCatalogAttributesListParams): Promise<CatalogAttributesListResult> {
-    const query = buildQueryString([
-      { name: 'scope', value: params?.scope, style: 'form', explode: true, allowReserved: false },
-      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
-      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
-      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<CatalogAttributesListResult>(appendQueryString(backendApiPath(`/catalog/attributes`), query));
-  }
-
-/** Create product attribute */
-  async create(body: CommerceProductAttributeMutationRequest, params: CommerceCatalogAttributesCreateParams): Promise<CatalogAttributesCreateResult> {
-    const requestHeaders = buildRequestHeaders(
-      {
-        'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
-      },
-      {}
-    );
-    return this.client.post<CatalogAttributesCreateResult>(backendApiPath(`/catalog/attributes`), body, undefined, requestHeaders, 'application/json');
-  }
-}
-
 export class CommerceCatalogApi {
   private client: HttpClient;
-  public readonly attributes: CommerceCatalogAttributesApi;
-  public readonly categories: CommerceCatalogCategoriesApi;
   public readonly categoryAttributes: CommerceCatalogCategoryAttributesApi;
   public readonly categorySeeds: CommerceCatalogCategorySeedsApi;
-  public readonly priceLists: CommerceCatalogPriceListsApi;
   public readonly products: CommerceCatalogProductsApi;
   public readonly skus: CommerceCatalogSkusApi;
 
   constructor(client: HttpClient) {
     this.client = client;
-    this.attributes = new CommerceCatalogAttributesApi(client);
-    this.categories = new CommerceCatalogCategoriesApi(client);
     this.categoryAttributes = new CommerceCatalogCategoryAttributesApi(client);
     this.categorySeeds = new CommerceCatalogCategorySeedsApi(client);
-    this.priceLists = new CommerceCatalogPriceListsApi(client);
     this.products = new CommerceCatalogProductsApi(client);
     this.skus = new CommerceCatalogSkusApi(client);
   }
 
 }
 
-export interface CommerceAuditCommerceEventsListParams {
-  page?: string;
-  pageSize?: string;
-  status?: string;
-}
-
-export class CommerceAuditCommerceEventsApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** Audit Commerce Events List */
-  async list(params?: CommerceAuditCommerceEventsListParams): Promise<AuditCommerceEventsListResult> {
-    const query = buildQueryString([
-      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
-      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
-      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<AuditCommerceEventsListResult>(appendQueryString(backendApiPath(`/audit/commerce_events`), query));
-  }
-}
-
-export class CommerceAuditApi {
-  private client: HttpClient;
-  public readonly commerceEvents: CommerceAuditCommerceEventsApi;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-    this.commerceEvents = new CommerceAuditCommerceEventsApi(client);
-  }
-
-}
-
 export class CommerceApi {
   private client: HttpClient;
-  public readonly audit: CommerceAuditApi;
   public readonly catalog: CommerceCatalogApi;
-  public readonly commerceReports: CommerceCommerceReportsApi;
-  public readonly fulfillments: CommerceFulfillmentsApi;
   public readonly inventory: CommerceInventoryApi;
-  public readonly invoices: CommerceInvoicesApi;
   public readonly memberships: CommerceMembershipsApi;
   public readonly orders: CommerceOrdersApi;
   public readonly payments: CommercePaymentsApi;
   public readonly recharges: CommerceRechargesApi;
-  public readonly refunds: CommerceRefundsApi;
   public readonly shipments: CommerceShipmentsApi;
-  public readonly wallet: CommerceWalletApi;
 
   constructor(client: HttpClient) {
     this.client = client;
-    this.audit = new CommerceAuditApi(client);
     this.catalog = new CommerceCatalogApi(client);
-    this.commerceReports = new CommerceCommerceReportsApi(client);
-    this.fulfillments = new CommerceFulfillmentsApi(client);
     this.inventory = new CommerceInventoryApi(client);
-    this.invoices = new CommerceInvoicesApi(client);
     this.memberships = new CommerceMembershipsApi(client);
     this.orders = new CommerceOrdersApi(client);
     this.payments = new CommercePaymentsApi(client);
     this.recharges = new CommerceRechargesApi(client);
-    this.refunds = new CommerceRefundsApi(client);
     this.shipments = new CommerceShipmentsApi(client);
-    this.wallet = new CommerceWalletApi(client);
   }
 
 }

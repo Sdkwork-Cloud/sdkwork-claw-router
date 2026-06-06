@@ -8,7 +8,7 @@ type MemoryEntryItem struct {
 	Id string `json:"id"`
 	ImportanceScore string `json:"importanceScore"`
 	MemoryType string `json:"memoryType"`
-	RecallCount int `json:"recallCount"`
+	RecallCount string `json:"recallCount"`
 	SensitivityLevel string `json:"sensitivityLevel"`
 	SourceConversationId string `json:"sourceConversationId"`
 	SourceInvocationId string `json:"sourceInvocationId"`

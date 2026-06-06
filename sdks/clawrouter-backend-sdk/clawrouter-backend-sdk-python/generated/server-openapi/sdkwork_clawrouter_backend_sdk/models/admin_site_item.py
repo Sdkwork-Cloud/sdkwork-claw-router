@@ -18,16 +18,16 @@ class AdminSiteItem:
     site_name: str
     site_type: str
     status: str
-    consecutive_error_count: Optional[int] = None
+    consecutive_error_count: Optional[str] = None
     description: Optional[str] = None
     docs_url: Optional[str] = None
     domains: Optional[List[str]] = None
     last_checked_at: Optional[str] = None
-    last_latency_ms: Optional[int] = None
+    last_latency_ms: Optional[str] = None
     last_sync_at: Optional[str] = None
     logo: Optional[MediaResource] = None
     owner_kind: Optional[str] = None
     region_code: Optional[str] = None
-    sort_order: Optional[int] = None
+    sort_order: Optional[str] = None
     vendor_codes: Optional[List[str]] = None
     website_url: Optional[str] = None

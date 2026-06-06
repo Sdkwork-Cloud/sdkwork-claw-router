@@ -10,7 +10,7 @@ if TYPE_CHECKING:
 class ForumCreateFeedRequest:
     """Forum create feed request schema exposed by Claw Router."""
     content: str
-    category_id: Optional[int] = None
+    category_id: Optional[str] = None
     images: Optional[List[MediaResource]] = None
     source: Optional[str] = None
     source_url: Optional[str] = None

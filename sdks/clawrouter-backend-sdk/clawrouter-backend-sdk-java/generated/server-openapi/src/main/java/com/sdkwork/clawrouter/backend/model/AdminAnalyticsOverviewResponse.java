@@ -5,7 +5,7 @@ import java.util.List;
 public class AdminAnalyticsOverviewResponse {
     private String endTime;
     private List<AdminAnalyticsInsight> insights;
-    private Integer limit;
+    private String limit;
     private List<AdminPieChartItem> modalityDistribution;
     private List<AdminPieChartItem> modelDistribution;
     private AdminAnalyticsModelRankings modelRankings;
@@ -31,11 +31,11 @@ public class AdminAnalyticsOverviewResponse {
         this.insights = insights;
     }
 
-    public Integer getLimit() {
+    public String getLimit() {
         return this.limit;
     }
 
-    public void setLimit(Integer limit) {
+    public void setLimit(String limit) {
         this.limit = limit;
     }
 

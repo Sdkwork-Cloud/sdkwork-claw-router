@@ -11,4 +11,4 @@ class ModelRankingHistoryPoint:
     """Model ranking history point schema exposed by Claw Router."""
     date: str
     entries: List[ModelRankingHistoryEntry]
-    index: int
+    index: str

@@ -5,5 +5,5 @@ use serde::{Deserialize, Serialize};
 pub struct RoutingCircuitBreakerPolicy {
     /// Failure threshold field on routing circuit breaker policy.
     #[serde(rename = "failureThreshold")]
-    pub failure_threshold: i64,
+    pub failure_threshold: String,
 }

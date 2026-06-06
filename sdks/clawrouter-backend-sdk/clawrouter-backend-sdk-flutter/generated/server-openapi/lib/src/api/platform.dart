@@ -12,7 +12,7 @@ class PlatformApi {
   PlatformApi(this._client);
 
   /// List apps
-  Future<AppsListResult?> appsList([String? q, String? status, String? marketStatus, String? appType, int? categoryId, int? page, int? pageSize]) async {
+  Future<AppsListResult?> appsList([String? q, String? status, String? marketStatus, String? appType, String? categoryId, String? page, String? pageSize]) async {
     final query = buildQueryString([
       QueryParameterSpec('q', q, 'form', true, false, null),
       QueryParameterSpec('status', status, 'form', true, false, null),
@@ -78,7 +78,7 @@ class PlatformApi {
   }
 
   /// List app templates
-  Future<AppsTemplatesListResult?> appsTemplatesList([String? q, String? publishStatus, String? templateType, String? runtime, int? categoryId, int? page, int? pageSize]) async {
+  Future<AppsTemplatesListResult?> appsTemplatesList([String? q, String? publishStatus, String? templateType, String? runtime, String? categoryId, String? page, String? pageSize]) async {
     final query = buildQueryString([
       QueryParameterSpec('q', q, 'form', true, false, null),
       QueryParameterSpec('publish_status', publishStatus, 'form', true, false, null),

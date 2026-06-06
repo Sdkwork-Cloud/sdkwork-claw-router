@@ -3,12 +3,21 @@ package com.sdkwork.clawrouter.backend.model;
 import java.util.List;
 
 public class AdminChannelGroupChannelBindingInput {
+    private List<String> apiScope;
     private List<String> capabilities;
     private String channelId;
-    private List<String> modelScope;
     private Integer priority;
+    private List<String> resourceCodes;
     private String status;
     private Integer weight;
+
+    public List<String> getApiScope() {
+        return this.apiScope;
+    }
+
+    public void setApiScope(List<String> apiScope) {
+        this.apiScope = apiScope;
+    }
 
     public List<String> getCapabilities() {
         return this.capabilities;
@@ -26,20 +35,20 @@ public class AdminChannelGroupChannelBindingInput {
         this.channelId = channelId;
     }
 
-    public List<String> getModelScope() {
-        return this.modelScope;
-    }
-
-    public void setModelScope(List<String> modelScope) {
-        this.modelScope = modelScope;
-    }
-
     public Integer getPriority() {
         return this.priority;
     }
 
     public void setPriority(Integer priority) {
         this.priority = priority;
+    }
+
+    public List<String> getResourceCodes() {
+        return this.resourceCodes;
+    }
+
+    public void setResourceCodes(List<String> resourceCodes) {
+        this.resourceCodes = resourceCodes;
     }
 
     public String getStatus() {

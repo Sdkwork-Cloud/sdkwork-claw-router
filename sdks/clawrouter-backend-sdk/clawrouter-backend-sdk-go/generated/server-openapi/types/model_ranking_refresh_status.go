@@ -2,20 +2,20 @@ package types
 
 // Model ranking refresh status schema exposed by Claw Router.
 type ModelRankingRefreshStatus struct {
-	CacheMaxAgeSeconds int `json:"cacheMaxAgeSeconds"`
+	CacheMaxAgeSeconds string `json:"cacheMaxAgeSeconds"`
 	GeneratedAt string `json:"generatedAt"`
-	GeneratedCount int `json:"generatedCount"`
+	GeneratedCount string `json:"generatedCount"`
 	LatestJob ModelRankingRefreshLatestJob `json:"latestJob"`
 	NextRefreshAt string `json:"nextRefreshAt"`
-	OrganizationId int `json:"organizationId"`
+	OrganizationId string `json:"organizationId"`
 	RankScope string `json:"rankScope"`
-	RefreshIntervalSeconds int `json:"refreshIntervalSeconds"`
+	RefreshIntervalSeconds string `json:"refreshIntervalSeconds"`
 	SnapshotDate string `json:"snapshotDate"`
 	SnapshotPeriod string `json:"snapshotPeriod"`
-	SourceCount int `json:"sourceCount"`
+	SourceCount string `json:"sourceCount"`
 	SourceTables []string `json:"sourceTables"`
 	Status string `json:"status"`
-	TenantId int `json:"tenantId"`
+	TenantId string `json:"tenantId"`
 	WindowEnd string `json:"windowEnd"`
 	WindowStart string `json:"windowStart"`
 }

@@ -13,7 +13,7 @@ pub struct CommerceMembershipPackageMutationRequest {
 
     /// Duration days field on commerce membership package mutation request.
     #[serde(rename = "durationDays")]
-    pub duration_days: i64,
+    pub duration_days: String,
 
     /// Name field on commerce membership package mutation request.
     pub name: String,

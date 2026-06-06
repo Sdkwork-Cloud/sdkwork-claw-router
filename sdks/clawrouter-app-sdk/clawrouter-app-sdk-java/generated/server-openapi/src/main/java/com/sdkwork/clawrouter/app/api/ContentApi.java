@@ -14,7 +14,7 @@ public class ContentApi {
     }
 
     /** List forum comments */
-    public CommentsListResult commentsList(String contentType, Integer contentId, Integer page, Integer pageSize) throws Exception {
+    public CommentsListResult commentsList(String contentType, String contentId, String page, String pageSize) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("content_type", contentType, "form", true, false, null),
             new QueryParameterSpec("content_id", contentId, "form", true, false, null),
@@ -32,7 +32,7 @@ public class ContentApi {
     }
 
     /** List forum comment statistics */
-    public CommentsStatisticsListResult commentsStatisticsList(String contentType, Integer contentId) throws Exception {
+    public CommentsStatisticsListResult commentsStatisticsList(String contentType, String contentId) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("content_type", contentType, "form", true, false, null),
             new QueryParameterSpec("content_id", contentId, "form", true, false, null)
@@ -78,7 +78,7 @@ public class ContentApi {
     }
 
     /** List forum comment replies */
-    public CommentsRepliesListResult commentsRepliesList(String commentId, Integer page, Integer pageSize) throws Exception {
+    public CommentsRepliesListResult commentsRepliesList(String commentId, String page, String pageSize) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null)
@@ -94,7 +94,7 @@ public class ContentApi {
     }
 
     /** List forum feeds */
-    public FeedsListResult feedsList(String type, String contentType, String q, Integer authorId, Integer page, Integer pageSize) throws Exception {
+    public FeedsListResult feedsList(String type, String contentType, String q, String authorId, String page, String pageSize) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("type", type, "form", true, false, null),
             new QueryParameterSpec("content_type", contentType, "form", true, false, null),
@@ -114,7 +114,7 @@ public class ContentApi {
     }
 
     /** List category forum feeds */
-    public FeedsCategoryRetrieveResult feedsCategoryRetrieve(String categoryId, Integer page, Integer pageSize) throws Exception {
+    public FeedsCategoryRetrieveResult feedsCategoryRetrieve(String categoryId, String page, String pageSize) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null)
@@ -124,7 +124,7 @@ public class ContentApi {
     }
 
     /** List hot forum feeds */
-    public FeedsHotListResult feedsHotList(Integer limit) throws Exception {
+    public FeedsHotListResult feedsHotList(String limit) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("limit", limit, "form", true, false, null)
         ));
@@ -133,7 +133,7 @@ public class ContentApi {
     }
 
     /** List most liked forum feeds */
-    public FeedsMostLikedListResult feedsMostLikedList(Integer limit) throws Exception {
+    public FeedsMostLikedListResult feedsMostLikedList(String limit) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("limit", limit, "form", true, false, null)
         ));
@@ -142,7 +142,7 @@ public class ContentApi {
     }
 
     /** List most viewed forum feeds */
-    public FeedsMostViewedListResult feedsMostViewedList(Integer limit) throws Exception {
+    public FeedsMostViewedListResult feedsMostViewedList(String limit) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("limit", limit, "form", true, false, null)
         ));
@@ -157,7 +157,7 @@ public class ContentApi {
     }
 
     /** List recommended forum feeds */
-    public FeedsRecommendListResult feedsRecommendList(Integer limit) throws Exception {
+    public FeedsRecommendListResult feedsRecommendList(String limit) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("limit", limit, "form", true, false, null)
         ));
@@ -166,7 +166,7 @@ public class ContentApi {
     }
 
     /** List top forum feeds */
-    public FeedsTopListResult feedsTopList(Integer limit) throws Exception {
+    public FeedsTopListResult feedsTopList(String limit) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("limit", limit, "form", true, false, null)
         ));
@@ -187,7 +187,7 @@ public class ContentApi {
     }
 
     /** Collect forum feed */
-    public FeedsCollectionsCreateResult feedsCollectionsCreate(String id, Integer folderId) throws Exception {
+    public FeedsCollectionsCreateResult feedsCollectionsCreate(String id, String folderId) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("folder_id", folderId, "form", true, false, null)
         ));
@@ -226,7 +226,7 @@ public class ContentApi {
     }
 
     /** List my forum comments */
-    public UsersCurrentCommentsListResult usersCurrentCommentsList(Integer page, Integer pageSize) throws Exception {
+    public UsersCurrentCommentsListResult usersCurrentCommentsList(String page, String pageSize) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null)
@@ -236,7 +236,7 @@ public class ContentApi {
     }
 
     /** List courses */
-    public CoursesListResult coursesList(Integer level, String category, String q, Integer page, Integer pageSize) throws Exception {
+    public CoursesListResult coursesList(String level, String category, String q, String page, String pageSize) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("level", level, "form", true, false, null),
             new QueryParameterSpec("category", category, "form", true, false, null),

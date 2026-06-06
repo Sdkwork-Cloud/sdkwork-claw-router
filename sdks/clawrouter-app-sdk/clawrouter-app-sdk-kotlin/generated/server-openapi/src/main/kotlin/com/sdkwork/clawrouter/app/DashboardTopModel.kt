@@ -5,8 +5,8 @@ data class DashboardTopModel(
     val isUp: Boolean? = null,
     val modality: String? = null,
     val name: String? = null,
-    val rank: Int? = null,
-    val requests: Int? = null,
+    val rank: String? = null,
+    val requests: String? = null,
     val supplier: String? = null,
     val trend: String? = null
 )

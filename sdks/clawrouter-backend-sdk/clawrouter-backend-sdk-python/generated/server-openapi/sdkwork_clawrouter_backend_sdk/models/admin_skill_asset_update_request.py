@@ -14,7 +14,7 @@ class AdminSkillAssetUpdateRequest:
     asset: Optional[MediaResource] = None
     asset_type: Optional[int] = None
     duration_seconds: Optional[str] = None
-    file_size: Optional[int] = None
+    file_size: Optional[str] = None
     height: Optional[int] = None
     mime_type: Optional[str] = None
     published_at: Optional[str] = None

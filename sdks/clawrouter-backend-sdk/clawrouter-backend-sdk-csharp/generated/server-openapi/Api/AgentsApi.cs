@@ -18,7 +18,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// List managed agents
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.AgentDefinitionsListResult?> AgentDefinitionsListAsync(string? q = null, int? ownerUserId = null, string? status = null, string? visibility = null, int? page = null, int? pageSize = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AgentDefinitionsListResult?> AgentDefinitionsListAsync(string? q = null, string? ownerUserId = null, string? status = null, string? visibility = null, string? page = null, string? pageSize = null)
         {
             var queryString = BuildQueryString(new[]
             {

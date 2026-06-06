@@ -2,22 +2,22 @@ package com.sdkwork.clawrouter.backend.model;
 
 
 public class CommerceInventoryStockItem {
-    private Integer availableQuantity;
+    private String availableQuantity;
     private String createdAt;
     private String id;
-    private Integer reservedQuantity;
+    private String reservedQuantity;
     private String skuId;
-    private Integer soldQuantity;
+    private String soldQuantity;
     private String status;
     private String updatedAt;
-    private Integer version;
+    private String version;
     private String warehouseId;
 
-    public Integer getAvailableQuantity() {
+    public String getAvailableQuantity() {
         return this.availableQuantity;
     }
 
-    public void setAvailableQuantity(Integer availableQuantity) {
+    public void setAvailableQuantity(String availableQuantity) {
         this.availableQuantity = availableQuantity;
     }
 
@@ -37,11 +37,11 @@ public class CommerceInventoryStockItem {
         this.id = id;
     }
 
-    public Integer getReservedQuantity() {
+    public String getReservedQuantity() {
         return this.reservedQuantity;
     }
 
-    public void setReservedQuantity(Integer reservedQuantity) {
+    public void setReservedQuantity(String reservedQuantity) {
         this.reservedQuantity = reservedQuantity;
     }
 
@@ -53,11 +53,11 @@ public class CommerceInventoryStockItem {
         this.skuId = skuId;
     }
 
-    public Integer getSoldQuantity() {
+    public String getSoldQuantity() {
         return this.soldQuantity;
     }
 
-    public void setSoldQuantity(Integer soldQuantity) {
+    public void setSoldQuantity(String soldQuantity) {
         this.soldQuantity = soldQuantity;
     }
 
@@ -77,11 +77,11 @@ public class CommerceInventoryStockItem {
         this.updatedAt = updatedAt;
     }
 
-    public Integer getVersion() {
+    public String getVersion() {
         return this.version;
     }
 
-    public void setVersion(Integer version) {
+    public void setVersion(String version) {
         this.version = version;
     }
 

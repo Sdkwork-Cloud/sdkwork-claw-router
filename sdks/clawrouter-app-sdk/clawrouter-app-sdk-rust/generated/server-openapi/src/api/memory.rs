@@ -23,7 +23,7 @@ impl MemoryApi {
     }
 
     /// List memory spaces
-    pub async fn spaces_list(&self, page: Option<i64>, page_size: Option<i64>) -> Result<SpacesListResult, SdkworkError> {
+    pub async fn spaces_list(&self, page: Option<&str>, page_size: Option<&str>) -> Result<SpacesListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
@@ -51,7 +51,7 @@ impl MemoryApi {
     }
 
     /// List memory entries
-    pub async fn entries_list(&self, space_id: &str, page: Option<i64>, page_size: Option<i64>) -> Result<EntriesListResult, SdkworkError> {
+    pub async fn entries_list(&self, space_id: &str, page: Option<&str>, page_size: Option<&str>) -> Result<EntriesListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),

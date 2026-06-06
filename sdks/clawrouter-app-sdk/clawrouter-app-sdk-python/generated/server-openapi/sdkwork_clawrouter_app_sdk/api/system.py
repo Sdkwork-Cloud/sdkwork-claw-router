@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Optional
 from ..http_client import HttpClient
-from ..models import IamRuntimeRetrieveResult, IamVerificationPolicyRetrieveResult, PromotionCodeRedemptionRequest, PromotionCommandRequest, PromotionsCodesRedemptionsCreateResult, PromotionsDiscountApplicationsCreateResult, PromotionsDiscountApplicationsReleaseResult, PromotionsDiscountApplicationsReversalsCreateResult, PromotionsDiscountApplicationsSettleResult, PromotionsUserCouponsClaimsCreateResult, PromotionsUserCouponsWalletListResult, SiteRuntimeRetrieveResult
+from ..models import PromotionCommandRequest, PromotionsDiscountApplicationsCreateResult, PromotionsDiscountApplicationsReleaseResult, PromotionsDiscountApplicationsReversalsCreateResult, PromotionsDiscountApplicationsSettleResult, SiteRuntimeRetrieveResult
 
 def _append_query_string(path: str, raw_query_string: str) -> str:
     query = raw_query_string.lstrip('?')
@@ -243,7 +243,6 @@ class SystemApi:
     def __init__(self, client: HttpClient):
         self._client = client
         self.promotions = SystemPromotionsApi(client)
-        self.iam = SystemIamApi(client)
         self.site = SystemSiteApi(client)
 
 
@@ -252,35 +251,8 @@ class SystemPromotionsApi:
 
     def __init__(self, client: HttpClient):
         self._client = client
-        self.codes = SystemPromotionsCodesApi(client)
         self.discount_applications = SystemPromotionsDiscountApplicationsApi(client)
-        self.user_coupons = SystemPromotionsUserCouponsApi(client)
 
-
-class SystemPromotionsCodesApi:
-    """system system.promotions.codes API client."""
-
-    def __init__(self, client: HttpClient):
-        self._client = client
-        self.redemptions = SystemPromotionsCodesRedemptionsApi(client)
-
-
-class SystemPromotionsCodesRedemptionsApi:
-    """system system.promotions.codes.redemptions API client."""
-
-    def __init__(self, client: HttpClient):
-        self._client = client
-
-
-    def create(self, body: PromotionCodeRedemptionRequest, idempotency_key: str) -> PromotionsCodesRedemptionsCreateResult:
-        """Promotion Code Redemption Create"""
-        request_headers = build_request_headers(
-            {
-                'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/app/v3/api/promotions/codes/redemptions", json=body, headers=request_headers)
 
 class SystemPromotionsDiscountApplicationsApi:
     """system system.promotions.discount_applications API client."""
@@ -336,81 +308,6 @@ class SystemPromotionsDiscountApplicationsReversalsApi:
             {}
         )
         return self._client.post(f"/app/v3/api/promotions/discount_applications/reversals", json=body, headers=request_headers)
-
-class SystemPromotionsUserCouponsApi:
-    """system system.promotions.user_coupons API client."""
-
-    def __init__(self, client: HttpClient):
-        self._client = client
-        self.claims = SystemPromotionsUserCouponsClaimsApi(client)
-        self.wallet = SystemPromotionsUserCouponsWalletApi(client)
-
-
-class SystemPromotionsUserCouponsClaimsApi:
-    """system system.promotions.user_coupons.claims API client."""
-
-    def __init__(self, client: HttpClient):
-        self._client = client
-
-
-    def create(self, body: PromotionCommandRequest, idempotency_key: str) -> PromotionsUserCouponsClaimsCreateResult:
-        """Promotion User Coupon Claim Create"""
-        request_headers = build_request_headers(
-            {
-                'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/app/v3/api/promotions/user_coupon_claims", json=body, headers=request_headers)
-
-class SystemPromotionsUserCouponsWalletApi:
-    """system system.promotions.user_coupons.wallet API client."""
-
-    def __init__(self, client: HttpClient):
-        self._client = client
-
-
-    def list(self, status: Optional[str] = None) -> PromotionsUserCouponsWalletListResult:
-        """Promotion User Coupons Wallet List"""
-        query = build_query_string([
-            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
-        ])
-        return self._client.get(_append_query_string(f"/app/v3/api/promotions/user_coupons", query))
-
-class SystemIamApi:
-    """system system.iam API client."""
-
-    def __init__(self, client: HttpClient):
-        self._client = client
-        self.runtime = SystemIamRuntimeApi(client)
-        self.verification_policy = SystemIamVerificationPolicyApi(client)
-
-
-class SystemIamRuntimeApi:
-    """system system.iam.runtime API client."""
-
-    def __init__(self, client: HttpClient):
-        self._client = client
-
-
-    def retrieve(self, tenant_code: Optional[str] = None, organization_code: Optional[str] = None) -> IamRuntimeRetrieveResult:
-        """Retrieve public IAM runtime settings"""
-        query = build_query_string([
-            {'name': 'tenant_code', 'value': tenant_code, 'style': 'form', 'explode': True, 'allow_reserved': False},
-            {'name': 'organization_code', 'value': organization_code, 'style': 'form', 'explode': True, 'allow_reserved': False},
-        ])
-        return self._client.get(_append_query_string(f"/app/v3/api/system/iam/runtime", query))
-
-class SystemIamVerificationPolicyApi:
-    """system system.iam.verification_policy API client."""
-
-    def __init__(self, client: HttpClient):
-        self._client = client
-
-
-    def retrieve(self) -> IamVerificationPolicyRetrieveResult:
-        """Retrieve public IAM verification policy"""
-        return self._client.get(f"/app/v3/api/system/iam/verification_policy")
 
 class SystemSiteApi:
     """system system.site API client."""

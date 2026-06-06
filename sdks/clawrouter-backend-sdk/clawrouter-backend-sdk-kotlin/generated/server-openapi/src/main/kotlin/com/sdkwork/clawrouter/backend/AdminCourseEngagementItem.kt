@@ -1,7 +1,7 @@
 package com.sdkwork.clawrouter.backend
 
 data class AdminCourseEngagementItem(
-    val count: Int? = null,
+    val count: String? = null,
     val courseId: String? = null,
     val id: String? = null,
     val reactionType: String? = null,

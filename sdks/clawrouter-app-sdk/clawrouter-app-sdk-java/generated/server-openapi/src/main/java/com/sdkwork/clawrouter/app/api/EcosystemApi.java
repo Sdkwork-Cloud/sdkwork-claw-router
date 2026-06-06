@@ -14,7 +14,7 @@ public class EcosystemApi {
     }
 
     /** Get skills */
-    public SkillsListResult skillsList(String q, Integer page, Integer pageSize, String status, String startTime, String endTime) throws Exception {
+    public SkillsListResult skillsList(String q, String page, String pageSize, String status, String startTime, String endTime) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("q", q, "form", true, false, null),
             new QueryParameterSpec("page", page, "form", true, false, null),

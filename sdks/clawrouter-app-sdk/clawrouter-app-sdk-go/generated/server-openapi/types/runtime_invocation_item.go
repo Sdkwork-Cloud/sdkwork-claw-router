@@ -6,7 +6,7 @@ type RuntimeInvocationItem struct {
 	AgentRunStepId string `json:"agentRunStepId"`
 	AgentSessionId string `json:"agentSessionId"`
 	ApprovalPolicy string `json:"approvalPolicy"`
-	AttemptNo int `json:"attemptNo"`
+	AttemptNo string `json:"attemptNo"`
 	ChatItemId string `json:"chatItemId"`
 	ChatTurnId string `json:"chatTurnId"`
 	CompletedAt string `json:"completedAt"`
@@ -17,12 +17,12 @@ type RuntimeInvocationItem struct {
 	ErrorCode string `json:"errorCode"`
 	ErrorMessageMasked string `json:"errorMessageMasked"`
 	ErrorType string `json:"errorType"`
-	ExitCode int `json:"exitCode"`
+	ExitCode string `json:"exitCode"`
 	FinishReason string `json:"finishReason"`
 	Id string `json:"id"`
-	InvocationNo int `json:"invocationNo"`
+	InvocationNo string `json:"invocationNo"`
 	InvocationType string `json:"invocationType"`
-	LatencyMs int `json:"latencyMs"`
+	LatencyMs string `json:"latencyMs"`
 	Model string `json:"model"`
 	PermissionMode string `json:"permissionMode"`
 	Provider string `json:"provider"`
@@ -39,5 +39,5 @@ type RuntimeInvocationItem struct {
 	ToolCallId string `json:"toolCallId"`
 	ToolName string `json:"toolName"`
 	TraceId string `json:"traceId"`
-	TtftMs int `json:"ttftMs"`
+	TtftMs string `json:"ttftMs"`
 }

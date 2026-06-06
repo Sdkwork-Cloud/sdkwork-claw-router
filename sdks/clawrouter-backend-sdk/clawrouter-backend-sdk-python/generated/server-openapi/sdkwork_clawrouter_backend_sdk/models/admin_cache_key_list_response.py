@@ -12,9 +12,9 @@ class AdminCacheKeyListResponse:
     has_more: bool
     instance_name: str
     items: List[AdminCacheKeyItem]
-    limit: Optional[int]
+    limit: Optional[str]
     namespace: str
     next_cursor: Optional[str]
-    returned_items: int
+    returned_items: str
     scan_complete: bool
-    scanned_items: int
+    scanned_items: str

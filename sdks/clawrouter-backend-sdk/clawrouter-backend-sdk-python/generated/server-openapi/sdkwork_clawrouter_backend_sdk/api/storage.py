@@ -266,7 +266,7 @@ class StorageOssBucketsApi:
         self._client = client
 
 
-    def list(self, cursor: Optional[str] = None, limit: Optional[int] = None, status: Optional[str] = None) -> OssBucketsListResult:
+    def list(self, cursor: Optional[str] = None, limit: Optional[str] = None, status: Optional[str] = None) -> OssBucketsListResult:
         """List storage buckets"""
         query = build_query_string([
             {'name': 'cursor', 'value': cursor, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -314,7 +314,7 @@ class StorageOssGcJobsApi:
         self._client = client
 
 
-    def list(self, cursor: Optional[str] = None, limit: Optional[int] = None, status: Optional[str] = None) -> OssGcJobsListResult:
+    def list(self, cursor: Optional[str] = None, limit: Optional[str] = None, status: Optional[str] = None) -> OssGcJobsListResult:
         """List storage garbage collection jobs"""
         query = build_query_string([
             {'name': 'cursor', 'value': cursor, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -398,7 +398,7 @@ class StorageOssReconciliationRunsApi:
         self._client = client
 
 
-    def list(self, cursor: Optional[str] = None, limit: Optional[int] = None, run_type: Optional[str] = None, status: Optional[str] = None) -> OssReconciliationRunsListResult:
+    def list(self, cursor: Optional[str] = None, limit: Optional[str] = None, run_type: Optional[str] = None, status: Optional[str] = None) -> OssReconciliationRunsListResult:
         """List storage reconciliation runs"""
         query = build_query_string([
             {'name': 'cursor', 'value': cursor, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -427,7 +427,7 @@ class StorageOssUsageApi:
         self.snapshots = StorageOssUsageSnapshotsApi(client)
 
 
-    def list(self, cursor: Optional[str] = None, limit: Optional[int] = None, scope_type: Optional[str] = None, scope_id: Optional[str] = None) -> OssUsageListResult:
+    def list(self, cursor: Optional[str] = None, limit: Optional[str] = None, scope_type: Optional[str] = None, scope_id: Optional[str] = None) -> OssUsageListResult:
         """List storage usage counters"""
         query = build_query_string([
             {'name': 'cursor', 'value': cursor, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -444,7 +444,7 @@ class StorageOssUsageLedgerApi:
         self._client = client
 
 
-    def list(self, cursor: Optional[str] = None, limit: Optional[int] = None, scope_type: Optional[str] = None, scope_id: Optional[str] = None) -> OssUsageLedgerListResult:
+    def list(self, cursor: Optional[str] = None, limit: Optional[str] = None, scope_type: Optional[str] = None, scope_id: Optional[str] = None) -> OssUsageLedgerListResult:
         """List storage usage ledger"""
         query = build_query_string([
             {'name': 'cursor', 'value': cursor, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -461,7 +461,7 @@ class StorageOssUsageSnapshotsApi:
         self._client = client
 
 
-    def list(self, cursor: Optional[str] = None, limit: Optional[int] = None, scope_type: Optional[str] = None, scope_id: Optional[str] = None) -> OssUsageSnapshotsListResult:
+    def list(self, cursor: Optional[str] = None, limit: Optional[str] = None, scope_type: Optional[str] = None, scope_id: Optional[str] = None) -> OssUsageSnapshotsListResult:
         """List storage usage snapshots"""
         query = build_query_string([
             {'name': 'cursor', 'value': cursor, 'style': 'form', 'explode': True, 'allow_reserved': False},

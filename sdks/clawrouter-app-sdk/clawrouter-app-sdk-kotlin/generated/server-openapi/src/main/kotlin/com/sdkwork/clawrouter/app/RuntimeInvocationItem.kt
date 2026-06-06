@@ -5,7 +5,7 @@ data class RuntimeInvocationItem(
     val agentRunStepId: String? = null,
     val agentSessionId: String? = null,
     val approvalPolicy: String? = null,
-    val attemptNo: Int? = null,
+    val attemptNo: String? = null,
     val chatItemId: String? = null,
     val chatTurnId: String? = null,
     val completedAt: String? = null,
@@ -16,12 +16,12 @@ data class RuntimeInvocationItem(
     val errorCode: String? = null,
     val errorMessageMasked: String? = null,
     val errorType: String? = null,
-    val exitCode: Int? = null,
+    val exitCode: String? = null,
     val finishReason: String? = null,
     val id: String? = null,
-    val invocationNo: Int? = null,
+    val invocationNo: String? = null,
     val invocationType: String? = null,
-    val latencyMs: Int? = null,
+    val latencyMs: String? = null,
     val model: String? = null,
     val permissionMode: String? = null,
     val provider: String? = null,
@@ -38,5 +38,5 @@ data class RuntimeInvocationItem(
     val toolCallId: String? = null,
     val toolName: String? = null,
     val traceId: String? = null,
-    val ttftMs: Int? = null
+    val ttftMs: String? = null
 )

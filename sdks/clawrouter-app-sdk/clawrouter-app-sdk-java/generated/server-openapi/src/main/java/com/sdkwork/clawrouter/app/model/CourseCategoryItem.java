@@ -3,13 +3,13 @@ package com.sdkwork.clawrouter.app.model;
 
 public class CourseCategoryItem {
     private String code;
-    private Integer courseCount;
+    private String courseCount;
     private String description;
     private String iconKey;
     private String id;
     private String label;
     private String name;
-    private Integer sortWeight;
+    private String sortWeight;
 
     public String getCode() {
         return this.code;
@@ -19,11 +19,11 @@ public class CourseCategoryItem {
         this.code = code;
     }
 
-    public Integer getCourseCount() {
+    public String getCourseCount() {
         return this.courseCount;
     }
 
-    public void setCourseCount(Integer courseCount) {
+    public void setCourseCount(String courseCount) {
         this.courseCount = courseCount;
     }
 
@@ -67,11 +67,11 @@ public class CourseCategoryItem {
         this.name = name;
     }
 
-    public Integer getSortWeight() {
+    public String getSortWeight() {
         return this.sortWeight;
     }
 
-    public void setSortWeight(Integer sortWeight) {
+    public void setSortWeight(String sortWeight) {
         this.sortWeight = sortWeight;
     }
 }

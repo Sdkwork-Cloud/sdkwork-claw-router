@@ -12,7 +12,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public int? AssetType { get; set; }
         public string? CreatedAt { get; set; }
         public string? DurationSeconds { get; set; }
-        public int? FileSize { get; set; }
+        public string? FileSize { get; set; }
         public int? Height { get; set; }
         public string? Id { get; set; }
         public string? MimeType { get; set; }

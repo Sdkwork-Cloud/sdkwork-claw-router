@@ -9,7 +9,7 @@ if TYPE_CHECKING:
 @dataclass
 class CourseApplicationCreateResponse:
     """Course application create response schema exposed by Claw Router."""
-    application_id: int
+    application_id: str
     category: str
     description: str
     id: str

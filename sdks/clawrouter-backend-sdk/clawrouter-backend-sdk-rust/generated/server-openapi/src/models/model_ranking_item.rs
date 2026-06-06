@@ -5,7 +5,7 @@ use serde::{Deserialize, Serialize};
 pub struct ModelRankingItem {
     /// Base volume field on model ranking item.
     #[serde(rename = "baseVolume")]
-    pub base_volume: i64,
+    pub base_volume: String,
 
     /// Color field on model ranking item.
     pub color: String,
@@ -20,7 +20,7 @@ pub struct ModelRankingItem {
 
     /// Cost indicator field on model ranking item.
     #[serde(rename = "costIndicator")]
-    pub cost_indicator: i64,
+    pub cost_indicator: String,
 
     /// Currency field on model ranking item.
     pub currency: String,
@@ -33,7 +33,7 @@ pub struct ModelRankingItem {
     pub is_new: bool,
 
     /// Latency field on model ranking item.
-    pub latency: i64,
+    pub latency: String,
 
     /// License field on model ranking item.
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -47,23 +47,23 @@ pub struct ModelRankingItem {
 
     /// Prev rank field on model ranking item.
     #[serde(rename = "prevRank")]
-    pub prev_rank: i64,
+    pub prev_rank: String,
 
     /// Pricing field on model ranking item.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub pricing: Option<String>,
 
     /// Rank field on model ranking item.
-    pub rank: i64,
+    pub rank: String,
 
     /// Requests field on model ranking item.
-    pub requests: i64,
+    pub requests: String,
 
     /// Strengths field on model ranking item.
     pub strengths: Vec<String>,
 
     /// Tokens field on model ranking item.
-    pub tokens: i64,
+    pub tokens: String,
 
     /// Trend score field on model ranking item.
     #[serde(rename = "trendScore")]

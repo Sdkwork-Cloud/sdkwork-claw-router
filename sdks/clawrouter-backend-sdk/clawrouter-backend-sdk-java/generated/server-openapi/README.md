@@ -104,11 +104,11 @@ client.getHttpClient().setHeader("X-Custom-Header", "value");
 // List managed agents
 Map<String, Object> params = new LinkedHashMap<>();
 params.put("q", "q");
-params.put("owner_user_id", 2);
+params.put("owner_user_id", "1");
 params.put("status", "active");
 params.put("visibility", "private");
-params.put("page", 5);
-params.put("page_size", 6);
+params.put("page", "page");
+params.put("page_size", "page-size");
 AgentDefinitionsListResult result = client.getAgents().agentDefinitionsList(params);
 System.out.println(result);
 ```
@@ -124,8 +124,8 @@ System.out.println(result);
 ### commerce
 
 ```java
-// Commerce Reports Payment Reconciliation Retrieve
-CommerceReportsPaymentReconciliationRetrieveResult result = client.getCommerce().reportsPaymentReconciliationRetrieve();
+// Recharges Settings Retrieve
+RechargesSettingsRetrieveResult result = client.getCommerce().rechargesSettingsRetrieve();
 System.out.println(result);
 ```
 
@@ -148,8 +148,13 @@ System.out.println(result);
 ### iam
 
 ```java
-// List API key map
-ApiKeysListResult result = client.getIam().apiKeysList();
+// Update user
+AdminUserUpdateRequest body = new AdminUserUpdateRequest();
+body.setGroup("group");
+body.setId("1");
+body.setStatus("active");
+body.setUsername("name");
+UsersUpdateResult result = client.getIam().usersUpdate(body);
 System.out.println(result);
 ```
 
@@ -166,8 +171,8 @@ System.out.println(result);
 ```java
 // List MCP servers
 Map<String, Object> params = new LinkedHashMap<>();
-params.put("page", 1);
-params.put("page_size", 2);
+params.put("page", "page");
+params.put("page_size", "page-size");
 params.put("q", "q");
 params.put("transport", "transport");
 params.put("visibility", "visibility");
@@ -182,8 +187,8 @@ System.out.println(result);
 ```java
 // Messaging provider accounts list
 Map<String, Object> params = new LinkedHashMap<>();
-params.put("page", 1);
-params.put("page_size", 2);
+params.put("page", "page");
+params.put("page_size", "page-size");
 params.put("q", "q");
 params.put("status", "status");
 params.put("channel", "sms");
@@ -223,8 +228,8 @@ System.out.println(result);
 ```java
 // List admin prompts
 Map<String, Object> params = new LinkedHashMap<>();
-params.put("page", 1);
-params.put("page_size", 2);
+params.put("page", "page");
+params.put("page_size", "page-size");
 params.put("q", "q");
 params.put("prompt_type", "prompt-type");
 params.put("visibility", "visibility");
@@ -239,8 +244,8 @@ System.out.println(result);
 ```java
 // Service Provider Adjustments List
 Map<String, Object> params = new LinkedHashMap<>();
-params.put("page", 1);
-params.put("page_size", 2);
+params.put("page", "page");
+params.put("page_size", "page-size");
 params.put("status", "status");
 params.put("provider_id", "1");
 params.put("seller_provider_id", "1");

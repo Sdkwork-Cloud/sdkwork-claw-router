@@ -17,16 +17,6 @@ func NewIamApi(client *sdkhttp.Client) *IamApi {
     return &IamApi{client: client}
 }
 
-// List API key map
-func (a *IamApi) ApiKeysList() (sdktypes.ApiKeysListResult, error) {
-    raw, err := a.client.Get(BackendApiPath("/iam/api_keys"), nil, nil)
-    if err != nil {
-        var zero sdktypes.ApiKeysListResult
-        return zero, err
-    }
-    return decodeResult[sdktypes.ApiKeysListResult](raw)
-}
-
 // Create API key
 func (a *IamApi) ApiKeysCreate(body sdktypes.AdminApiKeyCreateRequest, idempotencyKey string) (sdktypes.ApiKeysCreateResult, error) {
     headers := BuildRequestHeaders(
@@ -49,26 +39,6 @@ func (a *IamApi) ApiKeysDelete(apiKeyId string) (sdktypes.ApiKeysDeleteResult, e
         return zero, err
     }
     return decodeResult[sdktypes.ApiKeysDeleteResult](raw)
-}
-
-// List users
-func (a *IamApi) UsersList() (sdktypes.UsersListResult, error) {
-    raw, err := a.client.Get(BackendApiPath("/iam/users"), nil, nil)
-    if err != nil {
-        var zero sdktypes.UsersListResult
-        return zero, err
-    }
-    return decodeResult[sdktypes.UsersListResult](raw)
-}
-
-// Create user
-func (a *IamApi) UsersCreate(body sdktypes.AdminUserCreateRequest) (sdktypes.UsersCreateResult, error) {
-    raw, err := a.client.Post(BackendApiPath("/iam/users"), body, nil, nil, "application/json")
-    if err != nil {
-        var zero sdktypes.UsersCreateResult
-        return zero, err
-    }
-    return decodeResult[sdktypes.UsersCreateResult](raw)
 }
 
 // Update user

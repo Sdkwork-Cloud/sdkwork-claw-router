@@ -18,7 +18,7 @@ func NewRuntimeApi(client *sdkhttp.Client) *RuntimeApi {
 }
 
 // List runtime invocations
-func (a *RuntimeApi) InvocationsList(page *int, pageSize *int, conversationId *string, chatTurnId *string, agentSessionId *string, runtime *string, status *string) (sdktypes.InvocationsListResult, error) {
+func (a *RuntimeApi) InvocationsList(page *string, pageSize *string, conversationId *string, chatTurnId *string, agentSessionId *string, runtime *string, status *string) (sdktypes.InvocationsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
@@ -61,7 +61,7 @@ func (a *RuntimeApi) InvocationsRetrieve(invocationId string) (sdktypes.Invocati
 }
 
 // List runtime artifacts
-func (a *RuntimeApi) ArtifactsList(invocationId string, page *int, pageSize *int) (sdktypes.ArtifactsListResult, error) {
+func (a *RuntimeApi) ArtifactsList(invocationId string, page *string, pageSize *string) (sdktypes.ArtifactsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
@@ -103,7 +103,7 @@ func (a *RuntimeApi) InvocationsSubmit(invocationId string, body sdktypes.Runtim
 }
 
 // List runtime invocation events
-func (a *RuntimeApi) InvocationEventsList(invocationId string, page *int, pageSize *int) (sdktypes.InvocationEventsListResult, error) {
+func (a *RuntimeApi) InvocationEventsList(invocationId string, page *string, pageSize *string) (sdktypes.InvocationEventsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},

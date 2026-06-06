@@ -11,17 +11,17 @@ public class RoutingRequestTraceItem {
     private String id;
     private String model;
     private String providerErrorCode;
-    private Integer requestBytes;
+    private String requestBytes;
     private String requestId;
     private String requestPath;
     private String requestPayloadHash;
-    private Integer responseBytes;
+    private String responseBytes;
     private String responsePayloadHash;
     private String startedAt;
-    private Integer status;
+    private String status;
     private Boolean streaming;
     private String time;
-    private Integer tokens;
+    private String tokens;
     private String traceId;
 
     public String getChannel() {
@@ -96,11 +96,11 @@ public class RoutingRequestTraceItem {
         this.providerErrorCode = providerErrorCode;
     }
 
-    public Integer getRequestBytes() {
+    public String getRequestBytes() {
         return this.requestBytes;
     }
 
-    public void setRequestBytes(Integer requestBytes) {
+    public void setRequestBytes(String requestBytes) {
         this.requestBytes = requestBytes;
     }
 
@@ -128,11 +128,11 @@ public class RoutingRequestTraceItem {
         this.requestPayloadHash = requestPayloadHash;
     }
 
-    public Integer getResponseBytes() {
+    public String getResponseBytes() {
         return this.responseBytes;
     }
 
-    public void setResponseBytes(Integer responseBytes) {
+    public void setResponseBytes(String responseBytes) {
         this.responseBytes = responseBytes;
     }
 
@@ -152,11 +152,11 @@ public class RoutingRequestTraceItem {
         this.startedAt = startedAt;
     }
 
-    public Integer getStatus() {
+    public String getStatus() {
         return this.status;
     }
 
-    public void setStatus(Integer status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
@@ -176,11 +176,11 @@ public class RoutingRequestTraceItem {
         this.time = time;
     }
 
-    public Integer getTokens() {
+    public String getTokens() {
         return this.tokens;
     }
 
-    public void setTokens(Integer tokens) {
+    public void setTokens(String tokens) {
         this.tokens = tokens;
     }
 

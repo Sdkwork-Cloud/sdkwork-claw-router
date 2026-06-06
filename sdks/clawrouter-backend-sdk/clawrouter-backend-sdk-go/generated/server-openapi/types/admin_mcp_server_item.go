@@ -8,19 +8,19 @@ type AdminMcpServerItem struct {
 	DeprecatedAt string `json:"deprecatedAt"`
 	Description string `json:"description"`
 	HealthStatus string `json:"healthStatus"`
-	Id int `json:"id"`
+	Id string `json:"id"`
 	LastCheckedAt string `json:"lastCheckedAt"`
 	LastErrorMasked string `json:"lastErrorMasked"`
-	LatestRevisionId int `json:"latestRevisionId"`
+	LatestRevisionId string `json:"latestRevisionId"`
 	Name string `json:"name"`
-	OrganizationId int `json:"organizationId"`
-	OwnerUserId int `json:"ownerUserId"`
+	OrganizationId string `json:"organizationId"`
+	OwnerUserId string `json:"ownerUserId"`
 	PublishedAt string `json:"publishedAt"`
-	PublishedRevisionId int `json:"publishedRevisionId"`
+	PublishedRevisionId string `json:"publishedRevisionId"`
 	ServerKey string `json:"serverKey"`
 	Status string `json:"status"`
 	Tags []string `json:"tags"`
-	TenantId int `json:"tenantId"`
+	TenantId string `json:"tenantId"`
 	Transport string `json:"transport"`
 	UpdatedAt string `json:"updatedAt"`
 	Uuid string `json:"uuid"`

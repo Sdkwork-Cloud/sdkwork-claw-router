@@ -7,7 +7,7 @@ data class MemoryEntryItem(
     val id: String? = null,
     val importanceScore: String? = null,
     val memoryType: String? = null,
-    val recallCount: Int? = null,
+    val recallCount: String? = null,
     val sensitivityLevel: String? = null,
     val sourceConversationId: String? = null,
     val sourceInvocationId: String? = null,

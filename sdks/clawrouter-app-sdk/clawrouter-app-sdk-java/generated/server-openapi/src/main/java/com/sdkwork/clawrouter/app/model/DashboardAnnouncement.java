@@ -2,16 +2,16 @@ package com.sdkwork.clawrouter.app.model;
 
 
 public class DashboardAnnouncement {
-    private Integer id;
+    private String id;
     private String text;
     private String time;
     private String type;
 
-    public Integer getId() {
+    public String getId() {
         return this.id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 

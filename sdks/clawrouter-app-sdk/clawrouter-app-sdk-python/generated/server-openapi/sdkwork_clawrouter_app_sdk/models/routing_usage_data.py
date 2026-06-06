@@ -6,6 +6,6 @@ from typing import TYPE_CHECKING, Optional, List, Dict, Any
 @dataclass
 class RoutingUsageData:
     """Routing usage data schema exposed by Claw Router."""
-    latency: int
-    requests: int
+    latency: str
+    requests: str
     time: str

@@ -20,7 +20,7 @@ pub struct AdminMcpToolItem {
     pub enabled: bool,
 
     /// Id field on admin mcp tool item.
-    pub id: i64,
+    pub id: String,
 
     /// Input schema field on admin mcp tool item.
     #[serde(rename = "inputSchema")]
@@ -36,7 +36,7 @@ pub struct AdminMcpToolItem {
 
     /// Organization id field on admin mcp tool item.
     #[serde(rename = "organizationId")]
-    pub organization_id: i64,
+    pub organization_id: String,
 
     /// Output schema field on admin mcp tool item.
     #[serde(rename = "outputSchema")]
@@ -60,12 +60,12 @@ pub struct AdminMcpToolItem {
 
     /// Server id field on admin mcp tool item.
     #[serde(rename = "serverId")]
-    pub server_id: i64,
+    pub server_id: String,
 
     /// Server revision id field on admin mcp tool item.
     #[serde(rename = "serverRevisionId")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub server_revision_id: Option<i64>,
+    pub server_revision_id: Option<String>,
 
     /// Sort weight field on admin mcp tool item.
     #[serde(rename = "sortWeight")]
@@ -76,7 +76,7 @@ pub struct AdminMcpToolItem {
 
     /// Tenant id field on admin mcp tool item.
     #[serde(rename = "tenantId")]
-    pub tenant_id: i64,
+    pub tenant_id: String,
 
     /// Tool key field on admin mcp tool item.
     #[serde(rename = "toolKey")]

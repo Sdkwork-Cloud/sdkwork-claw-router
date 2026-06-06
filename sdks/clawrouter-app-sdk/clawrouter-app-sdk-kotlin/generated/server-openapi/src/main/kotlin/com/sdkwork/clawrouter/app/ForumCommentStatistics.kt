@@ -1,5 +1,5 @@
 package com.sdkwork.clawrouter.app
 
 data class ForumCommentStatistics(
-    val totalComments: Int? = null
+    val totalComments: String? = null
 )

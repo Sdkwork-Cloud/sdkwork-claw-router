@@ -29,6 +29,12 @@ SDK_TYPES = {
     "clawrouter-backend-sdk": "backend",
     "clawrouter-open-sdk": "ai",
 }
+SDK_OWNER = "sdkwork-claw-router"
+SDK_API_AUTHORITIES = {
+    "clawrouter-app-sdk": "sdkwork-claw-router.app",
+    "clawrouter-backend-sdk": "sdkwork-claw-router.backend",
+    "clawrouter-open-sdk": "sdkwork-claw-router.ai",
+}
 SDK_TYPESCRIPT_DIRECTORIES = {
     "clawrouter-app-sdk": "clawrouter-app-sdk-typescript",
     "clawrouter-backend-sdk": "clawrouter-backend-sdk-typescript",
@@ -121,6 +127,50 @@ SDK_GENERATED_OPENAPI_PATHS = {
     "clawrouter-app-sdk": Path("generated/openapi/clawrouter-app-openapi.json"),
     "clawrouter-backend-sdk": Path("generated/openapi/clawrouter-backend-openapi.json"),
     "clawrouter-open-sdk": Path("apps/sdkwork-claw-router-portal/public/openapi.json"),
+}
+SDK_DEPENDENCIES = {
+    "clawrouter-app-sdk": [
+        {
+            "workspace": "sdkwork-appbase-app-sdk",
+            "role": "appbase-app-capability",
+            "required": True,
+            "dependencyMode": "consumer-sdk",
+            "apiPrefix": "/app/v3/api",
+            "generatedTransportImportPolicy": "forbidden",
+            "packageByLanguage": {
+                "typescript": "@sdkwork/appbase-app-sdk",
+                "flutter": "sdkwork_appbase_app_sdk",
+                "rust": "sdkwork-appbase-app-sdk",
+                "java": "com.sdkwork:sdkwork-appbase-app-sdk",
+                "csharp": "SDKWork.Appbase.AppSdk",
+                "swift": "sdkwork-appbase-app-sdk",
+                "kotlin": "com.sdkwork:sdkwork-appbase-app-sdk",
+                "go": "github.com/sdkwork/sdkwork-appbase-app-sdk",
+                "python": "sdkwork-appbase-app-sdk",
+            },
+        }
+    ],
+    "clawrouter-backend-sdk": [
+        {
+            "workspace": "sdkwork-appbase-backend-sdk",
+            "role": "appbase-backend-management-capability",
+            "required": True,
+            "dependencyMode": "consumer-sdk",
+            "apiPrefix": "/backend/v3/api",
+            "generatedTransportImportPolicy": "forbidden",
+            "packageByLanguage": {
+                "typescript": "@sdkwork/appbase-backend-sdk",
+                "flutter": "sdkwork_appbase_backend_sdk",
+                "rust": "sdkwork-appbase-backend-sdk",
+                "java": "com.sdkwork:sdkwork-appbase-backend-sdk",
+                "csharp": "SDKWork.Appbase.BackendSdk",
+                "swift": "sdkwork-appbase-backend-sdk",
+                "kotlin": "com.sdkwork:sdkwork-appbase-backend-sdk",
+                "go": "github.com/sdkwork/sdkwork-appbase-backend-sdk",
+                "python": "sdkwork-appbase-backend-sdk",
+            },
+        }
+    ],
 }
 GENERATED_TEXT_FILE_EXTENSIONS = {
     ".bat",
@@ -442,6 +492,7 @@ class SdkRuntimeStandardizer:
             smoke_test_path.write_text(smoke_test, encoding="utf-8", newline="\n")
             updated.append(smoke_test_path)
 
+        updated.extend(self._standardize_component_spec(sdk_family, family))
         return updated
 
     def _sync_sdk_family_openapi_snapshots(self, sdk_family: str, family: Path) -> list[Path]:
@@ -454,8 +505,15 @@ class SdkRuntimeStandardizer:
         openapi_path = openapi_dir / f"{sdk_family}.openapi.json"
         sdkgen_path = openapi_dir / f"{sdk_family}.sdkgen.json"
         if source_spec is not None:
-            updated.extend(self._copy_spec_if_changed(source_spec, openapi_path))
-            updated.extend(self._write_sdkgen_spec_if_changed(sdk_family, source_spec, sdkgen_path))
+            source_payload = self._read_json_or_none(source_spec)
+            if source_payload is None:
+                updated.extend(self._copy_spec_if_changed(source_spec, openapi_path))
+                updated.extend(self._write_sdkgen_spec_if_changed(sdk_family, source_spec, sdkgen_path))
+                return updated
+
+            authority_payload = self._owner_only_openapi_payload(sdk_family, source_payload)
+            updated.extend(self._write_json_if_changed(openapi_path, authority_payload))
+            updated.extend(self._write_sdkgen_payload_if_changed(sdk_family, authority_payload, sdkgen_path))
             return updated
 
         placeholder = self._render_placeholder_openapi(sdk_family)
@@ -471,6 +529,185 @@ class SdkRuntimeStandardizer:
         candidate = self.root / SDK_GENERATED_OPENAPI_PATHS[sdk_family]
         return candidate if candidate.is_file() else None
 
+    def _owner_only_openapi_payload(self, sdk_family: str, source_payload: dict[str, Any]) -> dict[str, Any]:
+        payload = json.loads(json.dumps(source_payload))
+        self._annotate_owner_metadata(payload, sdk_family)
+        dependencies = SDK_DEPENDENCIES.get(sdk_family, [])
+        if not dependencies:
+            return payload
+
+        excluded_by_dependency: dict[str, list[str]] = {}
+        for dependency in dependencies:
+            dependency_routes = self._dependency_operation_keys(dependency)
+            if not dependency_routes:
+                continue
+            removed = self._remove_dependency_operations(
+                payload=payload,
+                prefix=str(dependency["apiPrefix"]),
+                dependency_operation_keys=dependency_routes,
+            )
+            if removed:
+                excluded_by_dependency[str(dependency["workspace"])] = removed
+
+        if excluded_by_dependency:
+            self._prune_unreachable_component_schemas(payload)
+            marker = payload.setdefault("x-sdkwork-dependency-exclusions", {})
+            if isinstance(marker, dict):
+                marker.update(
+                    {
+                        "mode": "owner-only-sdk-generation",
+                        "dependencies": excluded_by_dependency,
+                    }
+                )
+            info = payload.get("info")
+            if isinstance(info, dict):
+                description = str(info.get("description") or "").strip()
+                suffix = (
+                    "Owner-only SDK authority: dependency-owned appbase routes are consumed through "
+                    "declared sdkDependencies and are not regenerated here."
+                )
+                if suffix not in description:
+                    info["description"] = f"{description}\n{suffix}".strip()
+        return payload
+
+    def _annotate_owner_metadata(self, payload: dict[str, Any], sdk_family: str) -> None:
+        authority = SDK_API_AUTHORITIES[sdk_family]
+        payload["x-sdkwork-owner"] = SDK_OWNER
+        payload["x-sdkwork-api-authority"] = authority
+        paths = payload.get("paths")
+        if not isinstance(paths, dict):
+            return
+        for path_item in paths.values():
+            if not isinstance(path_item, dict):
+                continue
+            for method, operation in path_item.items():
+                if not self._is_openapi_method(str(method).lower()) or not isinstance(operation, dict):
+                    continue
+                operation["x-sdkwork-owner"] = SDK_OWNER
+                operation["x-sdkwork-api-authority"] = authority
+
+    def _dependency_operation_keys(self, dependency: dict[str, Any]) -> set[str]:
+        workspace = str(dependency.get("workspace") or "")
+        prefix = str(dependency.get("apiPrefix") or "")
+        if not workspace or not prefix:
+            return set()
+        authority_path = self._dependency_authority_path(workspace)
+        dependency_payload = self._read_json_or_none(authority_path)
+        if dependency_payload is None:
+            return set()
+        return self._operation_keys(dependency_payload, prefix)
+
+    def _dependency_authority_path(self, workspace: str) -> Path:
+        mapping = {
+            "sdkwork-appbase-app-sdk": self.root.parent
+            / "sdkwork-appbase"
+            / "sdks"
+            / "sdkwork-appbase-app-sdk"
+            / "openapi"
+            / "sdkwork-appbase-app-api.openapi.yaml",
+            "sdkwork-appbase-backend-sdk": self.root.parent
+            / "sdkwork-appbase"
+            / "sdks"
+            / "sdkwork-appbase-backend-sdk"
+            / "openapi"
+            / "sdkwork-appbase-backend-api.openapi.yaml",
+        }
+        return mapping.get(workspace, self.root.parent / workspace / "openapi.json")
+
+    def _operation_keys(self, payload: dict[str, Any], prefix: str) -> set[str]:
+        operation_keys: set[str] = set()
+        paths = payload.get("paths")
+        if not isinstance(paths, dict):
+            return operation_keys
+        for path_key, path_item in paths.items():
+            route = self._normalized_route(str(path_key), prefix)
+            if route is None or not isinstance(path_item, dict):
+                continue
+            for method in path_item:
+                normalized_method = str(method).lower()
+                if self._is_openapi_method(normalized_method):
+                    operation_keys.add(f"{normalized_method.upper()} {route}")
+        return operation_keys
+
+    def _remove_dependency_operations(
+        self,
+        *,
+        payload: dict[str, Any],
+        prefix: str,
+        dependency_operation_keys: set[str],
+    ) -> list[str]:
+        paths = payload.get("paths")
+        if not isinstance(paths, dict):
+            return []
+
+        removed: list[str] = []
+        for path_key in list(paths.keys()):
+            path_item = paths.get(path_key)
+            route = self._normalized_route(str(path_key), prefix)
+            if route is None or not isinstance(path_item, dict):
+                continue
+            for method in list(path_item.keys()):
+                normalized_method = str(method).lower()
+                if not self._is_openapi_method(normalized_method):
+                    continue
+                operation_key = f"{normalized_method.upper()} {route}"
+                if operation_key not in dependency_operation_keys:
+                    continue
+                del path_item[method]
+                removed.append(operation_key)
+            if not any(self._is_openapi_method(str(item).lower()) for item in path_item):
+                del paths[path_key]
+        return sorted(removed)
+
+    def _normalized_route(self, path_key: str, prefix: str) -> str | None:
+        if not path_key.startswith(f"{prefix}/"):
+            return None
+        return re.sub(r"\{[^}]+\}", "{}", path_key.removeprefix(f"{prefix}/"))
+
+    def _is_openapi_method(self, method: str) -> bool:
+        return method in {"get", "post", "put", "patch", "delete", "head", "options", "trace"}
+
+    def _prune_unreachable_component_schemas(self, payload: dict[str, Any]) -> None:
+        components = payload.get("components")
+        if not isinstance(components, dict):
+            return
+        schemas = components.get("schemas")
+        if not isinstance(schemas, dict):
+            return
+
+        reachable = self._collect_component_schema_refs(payload.get("paths"))
+        queue = list(reachable)
+        while queue:
+            schema_name = queue.pop()
+            schema = schemas.get(schema_name)
+            if not isinstance(schema, (dict, list)):
+                continue
+            for nested_ref in self._collect_component_schema_refs(schema):
+                if nested_ref in reachable:
+                    continue
+                reachable.add(nested_ref)
+                queue.append(nested_ref)
+
+        for schema_name in list(schemas.keys()):
+            if schema_name not in reachable:
+                del schemas[schema_name]
+
+    def _collect_component_schema_refs(self, value: Any) -> set[str]:
+        refs: set[str] = set()
+        if isinstance(value, list):
+            for item in value:
+                refs.update(self._collect_component_schema_refs(item))
+            return refs
+        if not isinstance(value, dict):
+            return refs
+
+        raw_ref = value.get("$ref")
+        if isinstance(raw_ref, str) and raw_ref.startswith("#/components/schemas/"):
+            refs.add(raw_ref.rsplit("/", 1)[-1])
+        for item in value.values():
+            refs.update(self._collect_component_schema_refs(item))
+        return refs
+
     def _copy_spec_if_changed(self, source: Path, target: Path) -> list[Path]:
         if target.is_file():
             try:
@@ -479,6 +716,13 @@ class SdkRuntimeStandardizer:
             except OSError:
                 pass
         shutil.copyfile(source, target)
+        return [target]
+
+    def _write_json_if_changed(self, target: Path, payload: dict[str, Any]) -> list[Path]:
+        serialized = json.dumps(payload, ensure_ascii=False, indent=2) + "\n"
+        if target.is_file() and target.read_text(encoding="utf-8") == serialized:
+            return []
+        target.write_text(serialized, encoding="utf-8", newline="\n")
         return [target]
 
     def _write_sdkgen_spec_if_changed(self, sdk_family: str, source: Path, target: Path) -> list[Path]:
@@ -497,6 +741,10 @@ class SdkRuntimeStandardizer:
             return []
         self._write_json(target, derived)
         return [target]
+
+    def _write_sdkgen_payload_if_changed(self, sdk_family: str, payload: dict[str, Any], target: Path) -> list[Path]:
+        derived = self._derive_sdkgen_openapi(payload) if sdk_family == "clawrouter-open-sdk" else payload
+        return self._write_json_if_changed(target, derived)
 
     def _derive_sdkgen_openapi(self, payload: dict[str, Any]) -> dict[str, Any]:
         derived = json.loads(json.dumps(payload))
@@ -696,6 +944,8 @@ class SdkRuntimeStandardizer:
             )
         return {
             "workspace": sdk_family,
+            "sdkOwner": SDK_OWNER,
+            "apiAuthority": SDK_API_AUTHORITIES[sdk_family],
             "title": SDK_DESCRIPTIONS[sdk_family],
             "apiVersion": version,
             "authoritySpec": f"openapi/{sdk_family}.openapi.json",
@@ -707,8 +957,27 @@ class SdkRuntimeStandardizer:
                 "generatedProtocols": ["http"],
                 "manualTransports": [],
             },
+            **({"sdkDependencies": SDK_DEPENDENCIES[sdk_family]} if sdk_family in SDK_DEPENDENCIES else {}),
             "languages": languages,
         }
+
+    def _standardize_component_spec(self, sdk_family: str, family: Path) -> list[Path]:
+        component_spec_path = family / "specs" / "component.spec.json"
+        if not component_spec_path.is_file():
+            return []
+        component_spec = self._read_json_or_none(component_spec_path)
+        if component_spec is None:
+            return []
+        contracts = component_spec.setdefault("contracts", {})
+        if not isinstance(contracts, dict):
+            contracts = {}
+            component_spec["contracts"] = contracts
+        if sdk_family in SDK_DEPENDENCIES:
+            contracts["sdkDependencies"] = SDK_DEPENDENCIES[sdk_family]
+        if self._read_json_or_none(component_spec_path) == component_spec:
+            return []
+        self._write_json(component_spec_path, component_spec)
+        return [component_spec_path]
 
     def _language_manifest_file(self, sdk_family: str, language: str) -> str:
         if language == "csharp":
@@ -719,6 +988,7 @@ class SdkRuntimeStandardizer:
         typescript_directory = SDK_TYPESCRIPT_DIRECTORIES[sdk_family]
         package_name = SDK_PACKAGE_NAMES[sdk_family]
         language_lines = "\n".join(f"- `{language}`" for language in OFFICIAL_SDK_LANGUAGES)
+        dependency_section = self._render_dependency_readme_section(sdk_family)
         generation_input = (
             f"`openapi/{sdk_family}.sdkgen.json` derived from the authority contract"
             if sdk_family == "clawrouter-open-sdk"
@@ -753,6 +1023,7 @@ class SdkRuntimeStandardizer:
             "TypeScript is the workspace dependency consumed by the portal. Other languages are "
             "generated under their own language workspace and use `generated/server-openapi` as the "
             "generator-owned transport boundary.\n\n"
+            f"{dependency_section}"
             "Regenerate this SDK family from the project root:\n\n"
             "```bash\n"
             f"node ./sdks/{sdk_family}/bin/generate-sdk.mjs\n"
@@ -766,6 +1037,34 @@ class SdkRuntimeStandardizer:
             f"node ./sdks/{sdk_family}/bin/verify-sdk.mjs\n"
             "```\n"
         )
+
+    def _render_dependency_readme_section(self, sdk_family: str) -> str:
+        dependencies = SDK_DEPENDENCIES.get(sdk_family, [])
+        if not dependencies:
+            return ""
+        lines = [
+            "## SDK Dependency Contract",
+            "",
+            "This SDK family is owner-only. Dependency-owned routes are consumed through declared",
+            "`sdkDependencies` and must not be regenerated into this transport SDK.",
+            "",
+            "| Workspace | Role | Mode | API prefix | Generated transport policy |",
+            "| --- | --- | --- | --- | --- |",
+        ]
+        for dependency in dependencies:
+            lines.append(
+                f"| `{dependency['workspace']}` | `{dependency['role']}` | "
+                f"`{dependency['dependencyMode']}` | `{dependency['apiPrefix']}` | "
+                f"`generatedTransportImportPolicy: {dependency['generatedTransportImportPolicy']}` |"
+            )
+        lines.extend(["", "Package names:", ""])
+        for dependency in dependencies:
+            lines.append(f"- `{dependency['workspace']}`")
+            for language in OFFICIAL_SDK_LANGUAGES:
+                package_name = dependency["packageByLanguage"][language]
+                lines.append(f"- `{language}`: `{package_name}`")
+        lines.append("")
+        return "\n".join(lines) + "\n"
 
     def _render_generate_script(self, sdk_family: str) -> str:
         typescript_directory = SDK_TYPESCRIPT_DIRECTORIES[sdk_family]

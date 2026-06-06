@@ -97,6 +97,7 @@ const DashboardAdmin = lazyRoute(() => import('sdkwork-claw-router-admin-dashboa
 const AnalyticsAdmin = lazyRoute(() => import('sdkwork-claw-router-admin-analytics'), 'AnalyticsAdmin');
 const CacheAdmin = lazyRoute(() => import('sdkwork-claw-router-admin-cache'), 'CacheAdmin');
 const UserAdmin = lazyRoute(() => import('sdkwork-claw-router-admin-user'), 'UserAdmin');
+const OrganizationAdmin = lazyRoute(() => import('sdkwork-claw-router-admin-organization'), 'OrganizationAdmin');
 const GroupAdmin = lazyRoute(() => import('sdkwork-claw-router-admin-group'), 'GroupAdmin');
 const ModelAdmin = lazyRoute(() => import('sdkwork-claw-router-admin-model'), 'ModelAdmin');
 const SiteAdmin = lazyRoute(() => import('sdkwork-claw-router-admin-model'), 'SiteAdmin');
@@ -283,6 +284,7 @@ export default function App() {
               <Route path="dashboard" element={<DashboardAdmin />} />
               <Route path="analytics" element={<AnalyticsAdmin />} />
               <Route path="user" element={<UserAdmin />} />
+              <Route path="organization" element={<OrganizationAdmin />} />
               <Route path="group" element={<GroupAdmin />} />
               <Route path="model" element={<ModelAdmin />} />
               <Route path="model/resources" element={<ResourceAdmin />} />

@@ -12,7 +12,7 @@ class ServiceProvidersApi {
   ServiceProvidersApi(this._client);
 
   /// Service Provider Adjustments List
-  Future<AdjustmentsListResult?> adjustmentsList([int? page, int? pageSize, String? status, String? providerId, String? sellerProviderId, String? buyerProviderId, String? edgeId]) async {
+  Future<AdjustmentsListResult?> adjustmentsList([String? page, String? pageSize, String? status, String? providerId, String? sellerProviderId, String? buyerProviderId, String? edgeId]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
@@ -30,7 +30,7 @@ class ServiceProvidersApi {
   }
 
   /// Service Provider Audit Events List
-  Future<AuditEventsListResult?> auditEventsList([int? page, int? pageSize, String? status, String? providerId, String? sellerProviderId, String? buyerProviderId, String? edgeId]) async {
+  Future<AuditEventsListResult?> auditEventsList([String? page, String? pageSize, String? status, String? providerId, String? sellerProviderId, String? buyerProviderId, String? edgeId]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
@@ -48,7 +48,7 @@ class ServiceProvidersApi {
   }
 
   /// Service Provider Bindings List
-  Future<BindingsListResult?> bindingsList([int? page, int? pageSize, String? status, String? providerId, String? sellerProviderId, String? buyerProviderId, String? edgeId]) async {
+  Future<BindingsListResult?> bindingsList([String? page, String? pageSize, String? status, String? providerId, String? sellerProviderId, String? buyerProviderId, String? edgeId]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
@@ -66,7 +66,7 @@ class ServiceProvidersApi {
   }
 
   /// Service Provider Contracts List
-  Future<ContractsListResult?> contractsList([int? page, int? pageSize, String? status, String? providerId, String? sellerProviderId, String? buyerProviderId, String? edgeId]) async {
+  Future<ContractsListResult?> contractsList([String? page, String? pageSize, String? status, String? providerId, String? sellerProviderId, String? buyerProviderId, String? edgeId]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
@@ -84,7 +84,7 @@ class ServiceProvidersApi {
   }
 
   /// Service Provider Dashboard Retrieve
-  Future<DashboardRetrieveResult?> dashboardRetrieve([int? page, int? pageSize, String? status, String? providerId, String? sellerProviderId, String? buyerProviderId, String? edgeId]) async {
+  Future<DashboardRetrieveResult?> dashboardRetrieve([String? page, String? pageSize, String? status, String? providerId, String? sellerProviderId, String? buyerProviderId, String? edgeId]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
@@ -102,7 +102,7 @@ class ServiceProvidersApi {
   }
 
   /// Service Provider Downstreams List
-  Future<DownstreamsListResult?> downstreamsList([int? page, int? pageSize, String? status, String? providerId, String? sellerProviderId, String? buyerProviderId, String? edgeId]) async {
+  Future<DownstreamsListResult?> downstreamsList([String? page, String? pageSize, String? status, String? providerId, String? sellerProviderId, String? buyerProviderId, String? edgeId]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
@@ -136,7 +136,7 @@ class ServiceProvidersApi {
   }
 
   /// Service Provider Members List
-  Future<MembersListResult?> membersList([int? page, int? pageSize, String? status, String? providerId, String? sellerProviderId, String? buyerProviderId, String? edgeId]) async {
+  Future<MembersListResult?> membersList([String? page, String? pageSize, String? status, String? providerId, String? sellerProviderId, String? buyerProviderId, String? edgeId]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
@@ -154,7 +154,7 @@ class ServiceProvidersApi {
   }
 
   /// Service Provider Pricing Rules List
-  Future<PricingRulesListResult?> pricingRulesList([int? page, int? pageSize, String? status, String? providerId, String? sellerProviderId, String? buyerProviderId, String? edgeId]) async {
+  Future<PricingRulesListResult?> pricingRulesList([String? page, String? pageSize, String? status, String? providerId, String? sellerProviderId, String? buyerProviderId, String? edgeId]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
@@ -220,7 +220,7 @@ class ServiceProvidersApi {
   }
 
   /// Service Providers List
-  Future<ProviderRegistryListResult?> providerRegistryList([int? page, int? pageSize, String? status, String? providerId, String? sellerProviderId, String? buyerProviderId, String? edgeId]) async {
+  Future<ProviderRegistryListResult?> providerRegistryList([String? page, String? pageSize, String? status, String? providerId, String? sellerProviderId, String? buyerProviderId, String? edgeId]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
@@ -238,7 +238,7 @@ class ServiceProvidersApi {
   }
 
   /// Service Provider Reconciliation Runs List
-  Future<ReconciliationRunsListResult?> reconciliationRunsList([int? page, int? pageSize, String? status, String? providerId, String? sellerProviderId, String? buyerProviderId, String? edgeId]) async {
+  Future<ReconciliationRunsListResult?> reconciliationRunsList([String? page, String? pageSize, String? status, String? providerId, String? sellerProviderId, String? buyerProviderId, String? edgeId]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
@@ -256,7 +256,7 @@ class ServiceProvidersApi {
   }
 
   /// Service Provider Relations List
-  Future<RelationsListResult?> relationsList([int? page, int? pageSize, String? status, String? providerId, String? sellerProviderId, String? buyerProviderId, String? edgeId]) async {
+  Future<RelationsListResult?> relationsList([String? page, String? pageSize, String? status, String? providerId, String? sellerProviderId, String? buyerProviderId, String? edgeId]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
@@ -274,7 +274,7 @@ class ServiceProvidersApi {
   }
 
   /// Service Provider Risk Events List
-  Future<RiskEventsListResult?> riskEventsList([int? page, int? pageSize, String? status, String? providerId, String? sellerProviderId, String? buyerProviderId, String? edgeId]) async {
+  Future<RiskEventsListResult?> riskEventsList([String? page, String? pageSize, String? status, String? providerId, String? sellerProviderId, String? buyerProviderId, String? edgeId]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
@@ -292,7 +292,7 @@ class ServiceProvidersApi {
   }
 
   /// Service Provider Statements List
-  Future<StatementsListResult?> statementsList([int? page, int? pageSize, String? status, String? providerId, String? sellerProviderId, String? buyerProviderId, String? edgeId]) async {
+  Future<StatementsListResult?> statementsList([String? page, String? pageSize, String? status, String? providerId, String? sellerProviderId, String? buyerProviderId, String? edgeId]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
@@ -310,7 +310,7 @@ class ServiceProvidersApi {
   }
 
   /// Service Provider Usage List
-  Future<UsageListResult?> usageList([int? page, int? pageSize, String? status, String? providerId, String? sellerProviderId, String? buyerProviderId, String? edgeId]) async {
+  Future<UsageListResult?> usageList([String? page, String? pageSize, String? status, String? providerId, String? sellerProviderId, String? buyerProviderId, String? edgeId]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
@@ -328,7 +328,7 @@ class ServiceProvidersApi {
   }
 
   /// Service Provider Wallet Accounts List
-  Future<ProviderWalletAccountsListResult?> providerWalletAccountsList([int? page, int? pageSize, String? status, String? providerId, String? sellerProviderId, String? buyerProviderId, String? edgeId]) async {
+  Future<ProviderWalletAccountsListResult?> providerWalletAccountsList([String? page, String? pageSize, String? status, String? providerId, String? sellerProviderId, String? buyerProviderId, String? edgeId]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null),

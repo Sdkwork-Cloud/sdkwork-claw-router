@@ -4,9 +4,9 @@ data class RuntimeInvocationCompleteRequest(
     val errorCode: String? = null,
     val errorMessageMasked: String? = null,
     val errorType: String? = null,
-    val exitCode: Int? = null,
+    val exitCode: String? = null,
     val finishReason: String? = null,
-    val latencyMs: Int? = null,
+    val latencyMs: String? = null,
     val metadata: Map<String, String>? = null,
     val providerConversationId: String? = null,
     val providerResponseId: String? = null,
@@ -14,6 +14,6 @@ data class RuntimeInvocationCompleteRequest(
     val providerStepId: String? = null,
     val responseJson: Map<String, String>? = null,
     val status: String? = null,
-    val ttftMs: Int? = null,
+    val ttftMs: String? = null,
     val usageJson: UsageSnapshot? = null
 )

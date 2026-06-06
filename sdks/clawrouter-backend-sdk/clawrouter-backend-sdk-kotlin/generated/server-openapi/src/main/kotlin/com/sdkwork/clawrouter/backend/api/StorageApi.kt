@@ -9,7 +9,7 @@ import com.sdkwork.clawrouter.backend.http.HttpClient
 class StorageApi(private val client: HttpClient) {
 
     /** List storage buckets */
-    suspend fun ossBucketsList(cursor: String? = null, limit: Int? = null, status: String? = null): OssBucketsListResult? {
+    suspend fun ossBucketsList(cursor: String? = null, limit: String? = null, status: String? = null): OssBucketsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("cursor", cursor, "form", true, false, null),
             QueryParameterSpec("limit", limit, "form", true, false, null),
@@ -53,7 +53,7 @@ class StorageApi(private val client: HttpClient) {
     }
 
     /** List storage garbage collection jobs */
-    suspend fun ossGcJobsList(cursor: String? = null, limit: Int? = null, status: String? = null): OssGcJobsListResult? {
+    suspend fun ossGcJobsList(cursor: String? = null, limit: String? = null, status: String? = null): OssGcJobsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("cursor", cursor, "form", true, false, null),
             QueryParameterSpec("limit", limit, "form", true, false, null),
@@ -124,7 +124,7 @@ class StorageApi(private val client: HttpClient) {
     }
 
     /** List storage reconciliation runs */
-    suspend fun ossReconciliationRunsList(cursor: String? = null, limit: Int? = null, runType: String? = null, status: String? = null): OssReconciliationRunsListResult? {
+    suspend fun ossReconciliationRunsList(cursor: String? = null, limit: String? = null, runType: String? = null, status: String? = null): OssReconciliationRunsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("cursor", cursor, "form", true, false, null),
             QueryParameterSpec("limit", limit, "form", true, false, null),
@@ -148,7 +148,7 @@ class StorageApi(private val client: HttpClient) {
     }
 
     /** List storage usage counters */
-    suspend fun ossUsageList(cursor: String? = null, limit: Int? = null, scopeType: String? = null, scopeId: String? = null): OssUsageListResult? {
+    suspend fun ossUsageList(cursor: String? = null, limit: String? = null, scopeType: String? = null, scopeId: String? = null): OssUsageListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("cursor", cursor, "form", true, false, null),
             QueryParameterSpec("limit", limit, "form", true, false, null),
@@ -160,7 +160,7 @@ class StorageApi(private val client: HttpClient) {
     }
 
     /** List storage usage ledger */
-    suspend fun ossUsageLedgerList(cursor: String? = null, limit: Int? = null, scopeType: String? = null, scopeId: String? = null): OssUsageLedgerListResult? {
+    suspend fun ossUsageLedgerList(cursor: String? = null, limit: String? = null, scopeType: String? = null, scopeId: String? = null): OssUsageLedgerListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("cursor", cursor, "form", true, false, null),
             QueryParameterSpec("limit", limit, "form", true, false, null),
@@ -172,7 +172,7 @@ class StorageApi(private val client: HttpClient) {
     }
 
     /** List storage usage snapshots */
-    suspend fun ossUsageSnapshotsList(cursor: String? = null, limit: Int? = null, scopeType: String? = null, scopeId: String? = null): OssUsageSnapshotsListResult? {
+    suspend fun ossUsageSnapshotsList(cursor: String? = null, limit: String? = null, scopeType: String? = null, scopeId: String? = null): OssUsageSnapshotsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("cursor", cursor, "form", true, false, null),
             QueryParameterSpec("limit", limit, "form", true, false, null),

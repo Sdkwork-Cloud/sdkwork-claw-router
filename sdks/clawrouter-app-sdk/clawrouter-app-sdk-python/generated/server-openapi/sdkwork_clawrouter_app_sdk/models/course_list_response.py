@@ -11,6 +11,6 @@ class CourseListResponse:
     """Course list response schema exposed by Claw Router."""
     content: List[CourseItem]
     items: List[CourseItem]
-    page: int
-    size: int
-    total_elements: int
+    page: str
+    size: str
+    total_elements: str

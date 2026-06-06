@@ -6,7 +6,7 @@ data class StorageReconciliationRun(
     val dryRun: Boolean? = null,
     val finishedAt: String? = null,
     val id: String? = null,
-    val issueCount: Int? = null,
+    val issueCount: String? = null,
     val issues: String? = null,
     val providerCode: String? = null,
     val providerId: String? = null,

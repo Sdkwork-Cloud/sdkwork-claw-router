@@ -3,7 +3,7 @@ use std::sync::Arc;
 use crate::api::base::{RequestHeaders};
 use crate::api::paths::app_path;
 use crate::http::{SdkworkError, SdkworkHttpClient};
-use crate::models::{ApiKeysCreateResult, ApiKeysDeleteResult, ApiKeysListResult, ApiKeysUpdateResult, CreateApiKeyRequest, UpdateApiKeyRequest, UpdateSettingsRequest, UsersCurrentRetrieveResult, UsersSettingsRetrieveResult, UsersSettingsUpdateResult};
+use crate::models::{ApiKeysCreateResult, ApiKeysDeleteResult, ApiKeysListResult, ApiKeysUpdateResult, CreateApiKeyRequest, UpdateApiKeyRequest, UpdateSettingsRequest, UsersSettingsRetrieveResult, UsersSettingsUpdateResult};
 
 #[derive(Clone)]
 pub struct IamApi {
@@ -43,12 +43,6 @@ impl IamApi {
     pub async fn api_keys_update(&self, api_key_id: &str, body: &UpdateApiKeyRequest) -> Result<ApiKeysUpdateResult, SdkworkError> {
         let path = app_path(&format!("/iam/api_keys/{}", serialize_path_parameter(api_key_id, PathParameterSpec::new("apiKeyId", "simple", false))));
         self.client.patch(&path, Some(body), None, None, Some("application/json")).await
-    }
-
-    /// Retrieve current IAM user
-    pub async fn users_current_retrieve(&self) -> Result<UsersCurrentRetrieveResult, SdkworkError> {
-        let path = app_path(&"/iam/users/current".to_string());
-        self.client.get(&path, None, None).await
     }
 
     /// List settings

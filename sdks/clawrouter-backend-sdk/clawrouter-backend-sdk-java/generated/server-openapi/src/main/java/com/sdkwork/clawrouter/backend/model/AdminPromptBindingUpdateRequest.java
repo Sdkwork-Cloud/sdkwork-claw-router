@@ -5,11 +5,11 @@ import java.util.Map;
 public class AdminPromptBindingUpdateRequest {
     private String bindingRole;
     private Boolean enabled;
-    private Integer ownerId;
+    private String ownerId;
     private String ownerType;
     private Map<String, String> policyJson;
     private Integer priority;
-    private Integer promptVersionId;
+    private String promptVersionId;
 
     public String getBindingRole() {
         return this.bindingRole;
@@ -27,11 +27,11 @@ public class AdminPromptBindingUpdateRequest {
         this.enabled = enabled;
     }
 
-    public Integer getOwnerId() {
+    public String getOwnerId() {
         return this.ownerId;
     }
 
-    public void setOwnerId(Integer ownerId) {
+    public void setOwnerId(String ownerId) {
         this.ownerId = ownerId;
     }
 
@@ -59,11 +59,11 @@ public class AdminPromptBindingUpdateRequest {
         this.priority = priority;
     }
 
-    public Integer getPromptVersionId() {
+    public String getPromptVersionId() {
         return this.promptVersionId;
     }
 
-    public void setPromptVersionId(Integer promptVersionId) {
+    public void setPromptVersionId(String promptVersionId) {
         this.promptVersionId = promptVersionId;
     }
 }

@@ -5,7 +5,7 @@ import java.util.List;
 public class AdminSkillArtifactUpdateRequest {
     private MediaResource artifact;
     private String artifactRef;
-    private Integer artifactSizeBytes;
+    private String artifactSizeBytes;
     private Integer artifactType;
     private String checksumHash;
     private String deprecatedAt;
@@ -35,11 +35,11 @@ public class AdminSkillArtifactUpdateRequest {
         this.artifactRef = artifactRef;
     }
 
-    public Integer getArtifactSizeBytes() {
+    public String getArtifactSizeBytes() {
         return this.artifactSizeBytes;
     }
 
-    public void setArtifactSizeBytes(Integer artifactSizeBytes) {
+    public void setArtifactSizeBytes(String artifactSizeBytes) {
         this.artifactSizeBytes = artifactSizeBytes;
     }
 

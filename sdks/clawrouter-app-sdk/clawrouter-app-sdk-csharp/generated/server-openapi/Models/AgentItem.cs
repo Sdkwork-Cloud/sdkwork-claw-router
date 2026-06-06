@@ -14,7 +14,7 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? Description { get; set; }
         public string? Id { get; set; }
         public string? Name { get; set; }
-        public int? OwnerUserId { get; set; }
+        public string? OwnerUserId { get; set; }
         public string? Status { get; set; }
         public string? TemplateSource { get; set; }
         public string? UpdatedAt { get; set; }

@@ -9,17 +9,17 @@ class AdminPromptVersionItem:
     checksum_hash: str
     content: str
     created_at: str
-    created_by: int
+    created_by: str
     examples_json: List[Dict[str, str]]
-    id: int
+    id: str
     lifecycle_status: str
     model_constraints: Dict[str, str]
-    organization_id: int
+    organization_id: str
     output_schema: Dict[str, str]
-    prompt_id: int
+    prompt_id: str
     review_status: str
     safety_policy: Dict[str, str]
-    tenant_id: int
+    tenant_id: str
     title: str
     updated_at: str
     uuid: str

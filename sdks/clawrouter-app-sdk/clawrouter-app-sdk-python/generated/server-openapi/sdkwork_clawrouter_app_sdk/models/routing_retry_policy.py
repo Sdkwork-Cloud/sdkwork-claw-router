@@ -6,6 +6,6 @@ from typing import TYPE_CHECKING, Optional, List, Dict, Any
 @dataclass
 class RoutingRetryPolicy:
     """Routing retry policy schema exposed by Claw Router."""
-    backoff_ms: int
-    max_attempts: int
-    retryable_status_codes: List[int]
+    backoff_ms: str
+    max_attempts: str
+    retryable_status_codes: List[str]

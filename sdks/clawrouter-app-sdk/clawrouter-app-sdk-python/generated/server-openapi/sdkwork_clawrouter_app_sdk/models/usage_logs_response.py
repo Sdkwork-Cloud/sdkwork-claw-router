@@ -10,6 +10,6 @@ if TYPE_CHECKING:
 class UsageLogsResponse:
     """Usage logs response schema exposed by Claw Router."""
     logs: List[UsageLogItem]
-    page: int
-    page_size: int
-    total: int
+    page: str
+    page_size: str
+    total: str

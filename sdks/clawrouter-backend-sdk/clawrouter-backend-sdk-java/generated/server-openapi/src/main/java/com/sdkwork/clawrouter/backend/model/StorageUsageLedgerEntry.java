@@ -2,17 +2,17 @@ package com.sdkwork.clawrouter.backend.model;
 
 
 public class StorageUsageLedgerEntry {
-    private Integer deltaBytes;
+    private String deltaBytes;
     private String id;
     private String occurredAt;
     private String scopeId;
     private String scopeType;
 
-    public Integer getDeltaBytes() {
+    public String getDeltaBytes() {
         return this.deltaBytes;
     }
 
-    public void setDeltaBytes(Integer deltaBytes) {
+    public void setDeltaBytes(String deltaBytes) {
         this.deltaBytes = deltaBytes;
     }
 

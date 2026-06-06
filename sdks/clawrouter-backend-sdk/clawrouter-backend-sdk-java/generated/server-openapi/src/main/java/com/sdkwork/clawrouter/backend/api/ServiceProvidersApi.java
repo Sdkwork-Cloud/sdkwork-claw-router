@@ -14,7 +14,7 @@ public class ServiceProvidersApi {
     }
 
     /** Service Provider Adjustments List */
-    public AdjustmentsListResult adjustmentsList(Integer page, Integer pageSize, String status, String providerId, String sellerProviderId, String buyerProviderId, String edgeId) throws Exception {
+    public AdjustmentsListResult adjustmentsList(String page, String pageSize, String status, String providerId, String sellerProviderId, String buyerProviderId, String edgeId) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -29,7 +29,7 @@ public class ServiceProvidersApi {
     }
 
     /** Service Provider Audit Events List */
-    public AuditEventsListResult auditEventsList(Integer page, Integer pageSize, String status, String providerId, String sellerProviderId, String buyerProviderId, String edgeId) throws Exception {
+    public AuditEventsListResult auditEventsList(String page, String pageSize, String status, String providerId, String sellerProviderId, String buyerProviderId, String edgeId) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -44,7 +44,7 @@ public class ServiceProvidersApi {
     }
 
     /** Service Provider Bindings List */
-    public BindingsListResult bindingsList(Integer page, Integer pageSize, String status, String providerId, String sellerProviderId, String buyerProviderId, String edgeId) throws Exception {
+    public BindingsListResult bindingsList(String page, String pageSize, String status, String providerId, String sellerProviderId, String buyerProviderId, String edgeId) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -59,7 +59,7 @@ public class ServiceProvidersApi {
     }
 
     /** Service Provider Contracts List */
-    public ContractsListResult contractsList(Integer page, Integer pageSize, String status, String providerId, String sellerProviderId, String buyerProviderId, String edgeId) throws Exception {
+    public ContractsListResult contractsList(String page, String pageSize, String status, String providerId, String sellerProviderId, String buyerProviderId, String edgeId) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -74,7 +74,7 @@ public class ServiceProvidersApi {
     }
 
     /** Service Provider Dashboard Retrieve */
-    public DashboardRetrieveResult dashboardRetrieve(Integer page, Integer pageSize, String status, String providerId, String sellerProviderId, String buyerProviderId, String edgeId) throws Exception {
+    public DashboardRetrieveResult dashboardRetrieve(String page, String pageSize, String status, String providerId, String sellerProviderId, String buyerProviderId, String edgeId) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -89,7 +89,7 @@ public class ServiceProvidersApi {
     }
 
     /** Service Provider Downstreams List */
-    public DownstreamsListResult downstreamsList(Integer page, Integer pageSize, String status, String providerId, String sellerProviderId, String buyerProviderId, String edgeId) throws Exception {
+    public DownstreamsListResult downstreamsList(String page, String pageSize, String status, String providerId, String sellerProviderId, String buyerProviderId, String edgeId) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -114,7 +114,7 @@ public class ServiceProvidersApi {
     }
 
     /** Service Provider Members List */
-    public MembersListResult membersList(Integer page, Integer pageSize, String status, String providerId, String sellerProviderId, String buyerProviderId, String edgeId) throws Exception {
+    public MembersListResult membersList(String page, String pageSize, String status, String providerId, String sellerProviderId, String buyerProviderId, String edgeId) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -129,7 +129,7 @@ public class ServiceProvidersApi {
     }
 
     /** Service Provider Pricing Rules List */
-    public PricingRulesListResult pricingRulesList(Integer page, Integer pageSize, String status, String providerId, String sellerProviderId, String buyerProviderId, String edgeId) throws Exception {
+    public PricingRulesListResult pricingRulesList(String page, String pageSize, String status, String providerId, String sellerProviderId, String buyerProviderId, String edgeId) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -174,7 +174,7 @@ public class ServiceProvidersApi {
     }
 
     /** Service Providers List */
-    public ProviderRegistryListResult providerRegistryList(Integer page, Integer pageSize, String status, String providerId, String sellerProviderId, String buyerProviderId, String edgeId) throws Exception {
+    public ProviderRegistryListResult providerRegistryList(String page, String pageSize, String status, String providerId, String sellerProviderId, String buyerProviderId, String edgeId) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -189,7 +189,7 @@ public class ServiceProvidersApi {
     }
 
     /** Service Provider Reconciliation Runs List */
-    public ReconciliationRunsListResult reconciliationRunsList(Integer page, Integer pageSize, String status, String providerId, String sellerProviderId, String buyerProviderId, String edgeId) throws Exception {
+    public ReconciliationRunsListResult reconciliationRunsList(String page, String pageSize, String status, String providerId, String sellerProviderId, String buyerProviderId, String edgeId) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -204,7 +204,7 @@ public class ServiceProvidersApi {
     }
 
     /** Service Provider Relations List */
-    public RelationsListResult relationsList(Integer page, Integer pageSize, String status, String providerId, String sellerProviderId, String buyerProviderId, String edgeId) throws Exception {
+    public RelationsListResult relationsList(String page, String pageSize, String status, String providerId, String sellerProviderId, String buyerProviderId, String edgeId) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -219,7 +219,7 @@ public class ServiceProvidersApi {
     }
 
     /** Service Provider Risk Events List */
-    public RiskEventsListResult riskEventsList(Integer page, Integer pageSize, String status, String providerId, String sellerProviderId, String buyerProviderId, String edgeId) throws Exception {
+    public RiskEventsListResult riskEventsList(String page, String pageSize, String status, String providerId, String sellerProviderId, String buyerProviderId, String edgeId) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -234,7 +234,7 @@ public class ServiceProvidersApi {
     }
 
     /** Service Provider Statements List */
-    public StatementsListResult statementsList(Integer page, Integer pageSize, String status, String providerId, String sellerProviderId, String buyerProviderId, String edgeId) throws Exception {
+    public StatementsListResult statementsList(String page, String pageSize, String status, String providerId, String sellerProviderId, String buyerProviderId, String edgeId) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -249,7 +249,7 @@ public class ServiceProvidersApi {
     }
 
     /** Service Provider Usage List */
-    public UsageListResult usageList(Integer page, Integer pageSize, String status, String providerId, String sellerProviderId, String buyerProviderId, String edgeId) throws Exception {
+    public UsageListResult usageList(String page, String pageSize, String status, String providerId, String sellerProviderId, String buyerProviderId, String edgeId) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -264,7 +264,7 @@ public class ServiceProvidersApi {
     }
 
     /** Service Provider Wallet Accounts List */
-    public ProviderWalletAccountsListResult providerWalletAccountsList(Integer page, Integer pageSize, String status, String providerId, String sellerProviderId, String buyerProviderId, String edgeId) throws Exception {
+    public ProviderWalletAccountsListResult providerWalletAccountsList(String page, String pageSize, String status, String providerId, String sellerProviderId, String buyerProviderId, String edgeId) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null),

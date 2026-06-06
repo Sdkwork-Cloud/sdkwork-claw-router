@@ -14,7 +14,7 @@ public class AgentsApi {
     }
 
     /** List Playground agent definitions */
-    public AgentDefinitionsListResult agentDefinitionsList(Integer page, Integer pageSize, String q) throws Exception {
+    public AgentDefinitionsListResult agentDefinitionsList(String page, String pageSize, String q) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -51,7 +51,7 @@ public class AgentsApi {
     }
 
     /** List Playground agent run steps */
-    public AgentRunStepsListResult agentRunStepsList(String runId, Integer page, Integer pageSize) throws Exception {
+    public AgentRunStepsListResult agentRunStepsList(String runId, String page, String pageSize) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null)
@@ -87,7 +87,7 @@ public class AgentsApi {
     }
 
     /** List Playground agent runs */
-    public AgentRunsListResult agentRunsList(String sessionId, Integer page, Integer pageSize) throws Exception {
+    public AgentRunsListResult agentRunsList(String sessionId, String page, String pageSize) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null)
@@ -113,7 +113,7 @@ public class AgentsApi {
     }
 
     /** List Playground agent sessions */
-    public AgentSessionsListResult agentSessionsList(String agentId, Integer page, Integer pageSize) throws Exception {
+    public AgentSessionsListResult agentSessionsList(String agentId, String page, String pageSize) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null)

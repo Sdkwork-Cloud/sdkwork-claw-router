@@ -6,8 +6,8 @@ public class AdminAnalyticsUserRankItem {
     private String email;
     private List<AdminPieChartItem> modelDistribution;
     private Double points;
-    private Integer rank;
-    private Integer requestCount;
+    private String rank;
+    private String requestCount;
     private Double totalTokens;
     private String userId;
     private String userName;
@@ -36,19 +36,19 @@ public class AdminAnalyticsUserRankItem {
         this.points = points;
     }
 
-    public Integer getRank() {
+    public String getRank() {
         return this.rank;
     }
 
-    public void setRank(Integer rank) {
+    public void setRank(String rank) {
         this.rank = rank;
     }
 
-    public Integer getRequestCount() {
+    public String getRequestCount() {
         return this.requestCount;
     }
 
-    public void setRequestCount(Integer requestCount) {
+    public void setRequestCount(String requestCount) {
         this.requestCount = requestCount;
     }
 

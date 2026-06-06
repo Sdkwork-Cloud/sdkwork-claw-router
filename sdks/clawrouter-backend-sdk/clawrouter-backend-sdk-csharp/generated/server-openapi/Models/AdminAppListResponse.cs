@@ -8,8 +8,8 @@ namespace Sdkwork.ClawRouter.Backend.Models
     {
         public bool? HasNextPage { get; set; }
         public List<AdminAppItemResponse>? Items { get; set; }
-        public int? Page { get; set; }
-        public int? PageSize { get; set; }
-        public int? Total { get; set; }
+        public string? Page { get; set; }
+        public string? PageSize { get; set; }
+        public string? Total { get; set; }
     }
 }

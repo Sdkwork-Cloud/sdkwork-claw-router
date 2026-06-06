@@ -17,5 +17,5 @@ class AdminAiResourceGroupResourceItem:
     modality_code: Optional[str] = None
     model: Optional[str] = None
     provider_native_model: Optional[str] = None
-    sort_order: Optional[int] = None
+    sort_order: Optional[str] = None
     vendor_code: Optional[str] = None

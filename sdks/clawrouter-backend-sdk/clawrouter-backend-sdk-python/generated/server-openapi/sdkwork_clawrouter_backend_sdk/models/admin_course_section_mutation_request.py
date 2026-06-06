@@ -9,6 +9,6 @@ class AdminCourseSectionMutationRequest:
     description: Optional[str] = None
     metadata: Optional[Dict[str, str]] = None
     section_no: Optional[str] = None
-    sort_order: Optional[int] = None
+    sort_order: Optional[str] = None
     status: Optional[str] = None
     title: Optional[str] = None

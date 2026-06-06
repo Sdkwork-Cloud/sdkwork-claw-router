@@ -11,8 +11,8 @@ class AdminAnalyticsUserRankItem:
     """Admin analytics user rank item schema exposed by Claw Router."""
     model_distribution: List[AdminPieChartItem]
     points: float
-    rank: int
-    request_count: int
+    rank: str
+    request_count: str
     total_tokens: float
     user_id: str
     user_name: str

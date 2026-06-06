@@ -2,7 +2,7 @@ package com.sdkwork.clawrouter.backend
 
 data class AdminSiteItem(
     val baseUrl: String? = null,
-    val consecutiveErrorCount: Int? = null,
+    val consecutiveErrorCount: String? = null,
     val description: String? = null,
     val displayName: String? = null,
     val docsUrl: String? = null,
@@ -11,7 +11,7 @@ data class AdminSiteItem(
     val healthStatus: String? = null,
     val id: String? = null,
     val lastCheckedAt: String? = null,
-    val lastLatencyMs: Int? = null,
+    val lastLatencyMs: String? = null,
     val lastSyncAt: String? = null,
     val logo: MediaResource? = null,
     val ownerKind: String? = null,
@@ -19,7 +19,7 @@ data class AdminSiteItem(
     val siteCode: String? = null,
     val siteName: String? = null,
     val siteType: String? = null,
-    val sortOrder: Int? = null,
+    val sortOrder: String? = null,
     val status: String? = null,
     val vendorCodes: List<String>? = null,
     val websiteUrl: String? = null

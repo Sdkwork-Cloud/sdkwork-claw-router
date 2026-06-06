@@ -124,7 +124,7 @@ class AiApi {
   }
 
   /// List model rankings
-  Future<ModelRankingsListResult?> modelRankingsList([String? rankScope, String? vendorCode, String? modality, String? q, int? limit]) async {
+  Future<ModelRankingsListResult?> modelRankingsList([String? rankScope, String? vendorCode, String? modality, String? q, String? limit]) async {
     final query = buildQueryString([
       QueryParameterSpec('rank_scope', rankScope, 'form', true, false, null),
       QueryParameterSpec('vendor_code', vendorCode, 'form', true, false, null),
@@ -140,7 +140,7 @@ class AiApi {
   }
 
   /// List model ranking refresh jobs
-  Future<ModelRankingsJobsListResult?> modelRankingsJobsList([String? rankScope, int? limit]) async {
+  Future<ModelRankingsJobsListResult?> modelRankingsJobsList([String? rankScope, String? limit]) async {
     final query = buildQueryString([
       QueryParameterSpec('rank_scope', rankScope, 'form', true, false, null),
       QueryParameterSpec('limit', limit, 'form', true, false, null)

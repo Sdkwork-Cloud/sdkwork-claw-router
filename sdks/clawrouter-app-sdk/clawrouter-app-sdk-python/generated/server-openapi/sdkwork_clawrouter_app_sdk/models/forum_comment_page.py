@@ -11,6 +11,6 @@ class ForumCommentPage:
     """Forum comment page schema exposed by Claw Router."""
     content: List[ForumCommentItem]
     items: List[ForumCommentItem]
-    page: int
-    size: int
-    total_elements: int
+    page: str
+    size: str
+    total_elements: str

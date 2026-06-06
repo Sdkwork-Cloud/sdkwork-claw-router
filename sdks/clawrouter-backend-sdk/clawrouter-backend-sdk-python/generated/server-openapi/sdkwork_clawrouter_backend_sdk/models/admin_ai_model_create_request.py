@@ -20,13 +20,13 @@ class AdminAiModelCreateRequest:
     display_name: Optional[str] = None
     input_modalities: Optional[List[str]] = None
     limitations: Optional[List[str]] = None
-    max_output_tokens: Optional[int] = None
+    max_output_tokens: Optional[str] = None
     modalities: Optional[List[str]] = None
     output_modalities: Optional[List[str]] = None
-    release_stage: Optional[int] = None
+    release_stage: Optional[str] = None
     replacement_model: Optional[str] = None
-    routing_state: Optional[int] = None
-    shelf_state: Optional[int] = None
+    routing_state: Optional[str] = None
+    shelf_state: Optional[str] = None
     supported_languages: Optional[List[str]] = None
     supports_json_schema: Optional[bool] = None
     supports_streaming: Optional[bool] = None

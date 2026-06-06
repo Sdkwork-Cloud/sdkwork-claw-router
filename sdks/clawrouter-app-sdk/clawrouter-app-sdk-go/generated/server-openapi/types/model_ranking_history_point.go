@@ -4,5 +4,5 @@ package types
 type ModelRankingHistoryPoint struct {
 	Date string `json:"date"`
 	Entries []ModelRankingHistoryEntry `json:"entries"`
-	Index int `json:"index"`
+	Index string `json:"index"`
 }

@@ -3,12 +3,12 @@ package com.sdkwork.clawrouter.app.model;
 import java.util.List;
 
 public class ModelRankingsSource {
-    private Integer cacheMaxAgeSeconds;
+    private String cacheMaxAgeSeconds;
     private String generatedAt;
     private String nextRefreshAt;
     private String observedAt;
     private String rankScope;
-    private Integer refreshIntervalSeconds;
+    private String refreshIntervalSeconds;
     private String snapshotDate;
     private String snapshotPeriod;
     private String sourceDescription;
@@ -17,11 +17,11 @@ public class ModelRankingsSource {
     private String windowEnd;
     private String windowStart;
 
-    public Integer getCacheMaxAgeSeconds() {
+    public String getCacheMaxAgeSeconds() {
         return this.cacheMaxAgeSeconds;
     }
 
-    public void setCacheMaxAgeSeconds(Integer cacheMaxAgeSeconds) {
+    public void setCacheMaxAgeSeconds(String cacheMaxAgeSeconds) {
         this.cacheMaxAgeSeconds = cacheMaxAgeSeconds;
     }
 
@@ -57,11 +57,11 @@ public class ModelRankingsSource {
         this.rankScope = rankScope;
     }
 
-    public Integer getRefreshIntervalSeconds() {
+    public String getRefreshIntervalSeconds() {
         return this.refreshIntervalSeconds;
     }
 
-    public void setRefreshIntervalSeconds(Integer refreshIntervalSeconds) {
+    public void setRefreshIntervalSeconds(String refreshIntervalSeconds) {
         this.refreshIntervalSeconds = refreshIntervalSeconds;
     }
 

@@ -5,8 +5,8 @@ type CommerceMembershipPackageGroupMutationRequest struct {
 	BillingCycle string `json:"billingCycle"`
 	Code string `json:"code"`
 	Description string `json:"description"`
-	DurationDays int `json:"durationDays"`
+	DurationDays string `json:"durationDays"`
 	Name string `json:"name"`
-	SortWeight int `json:"sortWeight"`
+	SortWeight string `json:"sortWeight"`
 	Status string `json:"status"`
 }

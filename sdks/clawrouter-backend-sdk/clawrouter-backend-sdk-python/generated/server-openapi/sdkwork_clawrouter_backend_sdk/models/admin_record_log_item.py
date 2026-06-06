@@ -9,21 +9,21 @@ class AdminRecordLogItem:
     base_input_price: str
     base_output_price: str
     cache_read_price: str
-    cache_read_tokens: int
+    cache_read_tokens: str
     cost: str
     error_code: str
     error_message: str
     error_type: str
     group: str
     http_method: str
-    http_status: int
+    http_status: str
     id: str
-    input_tokens: int
+    input_tokens: str
     ip: str
     is_stream: bool
     model: str
     multiplier: str
-    output_tokens: int
+    output_tokens: str
     path: str
     provider_native_model: str
     reasoning_effort: str

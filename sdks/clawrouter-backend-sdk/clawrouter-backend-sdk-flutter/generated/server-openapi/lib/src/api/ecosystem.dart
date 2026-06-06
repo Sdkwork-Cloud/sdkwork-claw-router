@@ -12,7 +12,7 @@ class EcosystemApi {
   EcosystemApi(this._client);
 
   /// List skills
-  Future<SkillsListResult?> skillsList([String? q, String? marketStatus, String? reviewStatus, String? visibility, bool? enabled, String? categoryId, int? page, int? pageSize]) async {
+  Future<SkillsListResult?> skillsList([String? q, String? marketStatus, String? reviewStatus, String? visibility, bool? enabled, String? categoryId, String? page, String? pageSize]) async {
     final query = buildQueryString([
       QueryParameterSpec('q', q, 'form', true, false, null),
       QueryParameterSpec('market_status', marketStatus, 'form', true, false, null),
@@ -79,7 +79,7 @@ class EcosystemApi {
   }
 
   /// List skill packages
-  Future<SkillsPackageListResult?> skillsPackageList([String? q, bool? enabled, String? categoryId, int? page, int? pageSize]) async {
+  Future<SkillsPackageListResult?> skillsPackageList([String? q, bool? enabled, String? categoryId, String? page, String? pageSize]) async {
     final query = buildQueryString([
       QueryParameterSpec('q', q, 'form', true, false, null),
       QueryParameterSpec('enabled', enabled, 'form', true, false, null),

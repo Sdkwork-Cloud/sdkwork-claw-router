@@ -11,7 +11,7 @@ class AdminSkillArtifactCreateRequest:
     """Admin skill artifact create request schema exposed by Claw Router."""
     artifact: Optional[MediaResource] = None
     artifact_ref: Optional[str] = None
-    artifact_size_bytes: Optional[int] = None
+    artifact_size_bytes: Optional[str] = None
     artifact_type: Optional[int] = None
     checksum_hash: Optional[str] = None
     deprecated_at: Optional[str] = None

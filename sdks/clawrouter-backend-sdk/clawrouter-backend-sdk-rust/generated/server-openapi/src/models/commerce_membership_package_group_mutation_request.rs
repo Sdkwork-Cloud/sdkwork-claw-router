@@ -16,7 +16,7 @@ pub struct CommerceMembershipPackageGroupMutationRequest {
 
     /// Duration days field on commerce membership package group mutation request.
     #[serde(rename = "durationDays")]
-    pub duration_days: i64,
+    pub duration_days: String,
 
     /// Name field on commerce membership package group mutation request.
     pub name: String,
@@ -24,7 +24,7 @@ pub struct CommerceMembershipPackageGroupMutationRequest {
     /// Sort weight field on commerce membership package group mutation request.
     #[serde(rename = "sortWeight")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub sort_weight: Option<i64>,
+    pub sort_weight: Option<String>,
 
     /// Status field on commerce membership package group mutation request.
     #[serde(default, skip_serializing_if = "Option::is_none")]

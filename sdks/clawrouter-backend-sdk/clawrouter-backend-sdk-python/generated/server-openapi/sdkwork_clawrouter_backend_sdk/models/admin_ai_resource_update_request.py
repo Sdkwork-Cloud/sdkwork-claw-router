@@ -19,6 +19,6 @@ class AdminAiResourceUpdateRequest:
     provider_native_model: Optional[str] = None
     resource_code: Optional[str] = None
     resource_type: Optional[str] = None
-    sort_order: Optional[int] = None
+    sort_order: Optional[str] = None
     status: Optional[str] = None
     vendor_code: Optional[str] = None

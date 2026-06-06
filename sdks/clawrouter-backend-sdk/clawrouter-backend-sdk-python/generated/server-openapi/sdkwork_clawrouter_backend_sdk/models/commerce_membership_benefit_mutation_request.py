@@ -14,7 +14,7 @@ class CommerceMembershipBenefitMutationRequest:
     claimed: Optional[bool] = None
     description: Optional[str] = None
     icon: Optional[MediaResource] = None
-    id: Optional[int] = None
+    id: Optional[str] = None
     type: Optional[str] = None
-    usage_limit: Optional[int] = None
-    used_count: Optional[int] = None
+    usage_limit: Optional[str] = None
+    used_count: Optional[str] = None

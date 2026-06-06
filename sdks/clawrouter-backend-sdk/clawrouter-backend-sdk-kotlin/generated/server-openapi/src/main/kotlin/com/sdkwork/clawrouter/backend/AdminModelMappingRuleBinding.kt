@@ -8,6 +8,6 @@ data class AdminModelMappingRuleBinding(
     val createdAt: String? = null,
     val enabled: Boolean? = null,
     val id: String? = null,
-    val sortOrder: Int? = null,
+    val sortOrder: String? = null,
     val updatedAt: String? = null
 )

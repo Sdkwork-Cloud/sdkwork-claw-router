@@ -9,15 +9,15 @@ type AdminAiModelUpdateRequest struct {
 	DisplayName string `json:"displayName"`
 	InputModalities []string `json:"inputModalities"`
 	Limitations []string `json:"limitations"`
-	MaxOutputTokens int `json:"maxOutputTokens"`
+	MaxOutputTokens string `json:"maxOutputTokens"`
 	Modalities []string `json:"modalities"`
 	Model string `json:"model"`
 	OutputModalities []string `json:"outputModalities"`
 	RegionPrices []AdminAiModelRegionPrice `json:"regionPrices"`
-	ReleaseStage int `json:"releaseStage"`
+	ReleaseStage string `json:"releaseStage"`
 	ReplacementModel string `json:"replacementModel"`
-	RoutingState int `json:"routingState"`
-	ShelfState int `json:"shelfState"`
+	RoutingState string `json:"routingState"`
+	ShelfState string `json:"shelfState"`
 	Status string `json:"status"`
 	SupportedLanguages []string `json:"supportedLanguages"`
 	SupportsJsonSchema bool `json:"supportsJsonSchema"`

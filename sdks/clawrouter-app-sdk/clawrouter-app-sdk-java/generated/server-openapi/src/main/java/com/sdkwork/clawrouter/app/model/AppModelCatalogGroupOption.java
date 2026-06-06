@@ -4,7 +4,7 @@ package com.sdkwork.clawrouter.app.model;
 public class AppModelCatalogGroupOption {
     private String key;
     private String label;
-    private Integer modelCount;
+    private String modelCount;
 
     public String getKey() {
         return this.key;
@@ -22,11 +22,11 @@ public class AppModelCatalogGroupOption {
         this.label = label;
     }
 
-    public Integer getModelCount() {
+    public String getModelCount() {
         return this.modelCount;
     }
 
-    public void setModelCount(Integer modelCount) {
+    public void setModelCount(String modelCount) {
         this.modelCount = modelCount;
     }
 }

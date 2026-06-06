@@ -3,34 +3,34 @@ package com.sdkwork.clawrouter.app.model;
 import java.util.List;
 
 public class ModelRankingItem {
-    private Integer baseVolume;
+    private String baseVolume;
     private String color;
     private String contextSize;
     private Double cost;
-    private Integer costIndicator;
+    private String costIndicator;
     private String currency;
     private String id;
     private Boolean isNew;
-    private Integer latency;
+    private String latency;
     private String license;
     private String modality;
     private String name;
-    private Integer prevRank;
+    private String prevRank;
     private String pricing;
-    private Integer rank;
-    private Integer requests;
+    private String rank;
+    private String requests;
     private List<String> strengths;
-    private Integer tokens;
+    private String tokens;
     private Double trendScore;
     private String vendor;
     private String vendorCode;
     private Double winRate;
 
-    public Integer getBaseVolume() {
+    public String getBaseVolume() {
         return this.baseVolume;
     }
 
-    public void setBaseVolume(Integer baseVolume) {
+    public void setBaseVolume(String baseVolume) {
         this.baseVolume = baseVolume;
     }
 
@@ -58,11 +58,11 @@ public class ModelRankingItem {
         this.cost = cost;
     }
 
-    public Integer getCostIndicator() {
+    public String getCostIndicator() {
         return this.costIndicator;
     }
 
-    public void setCostIndicator(Integer costIndicator) {
+    public void setCostIndicator(String costIndicator) {
         this.costIndicator = costIndicator;
     }
 
@@ -90,11 +90,11 @@ public class ModelRankingItem {
         this.isNew = isNew;
     }
 
-    public Integer getLatency() {
+    public String getLatency() {
         return this.latency;
     }
 
-    public void setLatency(Integer latency) {
+    public void setLatency(String latency) {
         this.latency = latency;
     }
 
@@ -122,11 +122,11 @@ public class ModelRankingItem {
         this.name = name;
     }
 
-    public Integer getPrevRank() {
+    public String getPrevRank() {
         return this.prevRank;
     }
 
-    public void setPrevRank(Integer prevRank) {
+    public void setPrevRank(String prevRank) {
         this.prevRank = prevRank;
     }
 
@@ -138,19 +138,19 @@ public class ModelRankingItem {
         this.pricing = pricing;
     }
 
-    public Integer getRank() {
+    public String getRank() {
         return this.rank;
     }
 
-    public void setRank(Integer rank) {
+    public void setRank(String rank) {
         this.rank = rank;
     }
 
-    public Integer getRequests() {
+    public String getRequests() {
         return this.requests;
     }
 
-    public void setRequests(Integer requests) {
+    public void setRequests(String requests) {
         this.requests = requests;
     }
 
@@ -162,11 +162,11 @@ public class ModelRankingItem {
         this.strengths = strengths;
     }
 
-    public Integer getTokens() {
+    public String getTokens() {
         return this.tokens;
     }
 
-    public void setTokens(Integer tokens) {
+    public void setTokens(String tokens) {
         this.tokens = tokens;
     }
 

@@ -8,23 +8,23 @@ public class AppModelCatalogItem {
     private String capabilityIntro;
     private String catalogKey;
     private List<String> categories;
-    private Integer contextTokens;
+    private String contextTokens;
     private String description;
     private String displayName;
     private List<String> groups;
     private List<String> inputModalities;
     private List<String> limitations;
-    private Integer maxOutputTokens;
+    private String maxOutputTokens;
     private List<String> modalities;
     private String model;
     private List<AppModelCatalogReferencePrice> officialReferencePrices;
     private List<String> outputModalities;
     private AppModelCatalogPriceAvailability priceAvailability;
     private List<String> providerCodes;
-    private Integer releaseStage;
+    private String releaseStage;
     private String replacementModel;
-    private Integer routingState;
-    private Integer shelfState;
+    private String routingState;
+    private String shelfState;
     private List<String> supportedLanguages;
     private Boolean supportsJsonSchema;
     private Boolean supportsStreaming;
@@ -74,11 +74,11 @@ public class AppModelCatalogItem {
         this.categories = categories;
     }
 
-    public Integer getContextTokens() {
+    public String getContextTokens() {
         return this.contextTokens;
     }
 
-    public void setContextTokens(Integer contextTokens) {
+    public void setContextTokens(String contextTokens) {
         this.contextTokens = contextTokens;
     }
 
@@ -122,11 +122,11 @@ public class AppModelCatalogItem {
         this.limitations = limitations;
     }
 
-    public Integer getMaxOutputTokens() {
+    public String getMaxOutputTokens() {
         return this.maxOutputTokens;
     }
 
-    public void setMaxOutputTokens(Integer maxOutputTokens) {
+    public void setMaxOutputTokens(String maxOutputTokens) {
         this.maxOutputTokens = maxOutputTokens;
     }
 
@@ -178,11 +178,11 @@ public class AppModelCatalogItem {
         this.providerCodes = providerCodes;
     }
 
-    public Integer getReleaseStage() {
+    public String getReleaseStage() {
         return this.releaseStage;
     }
 
-    public void setReleaseStage(Integer releaseStage) {
+    public void setReleaseStage(String releaseStage) {
         this.releaseStage = releaseStage;
     }
 
@@ -194,19 +194,19 @@ public class AppModelCatalogItem {
         this.replacementModel = replacementModel;
     }
 
-    public Integer getRoutingState() {
+    public String getRoutingState() {
         return this.routingState;
     }
 
-    public void setRoutingState(Integer routingState) {
+    public void setRoutingState(String routingState) {
         this.routingState = routingState;
     }
 
-    public Integer getShelfState() {
+    public String getShelfState() {
         return this.shelfState;
     }
 
-    public void setShelfState(Integer shelfState) {
+    public void setShelfState(String shelfState) {
         this.shelfState = shelfState;
     }
 

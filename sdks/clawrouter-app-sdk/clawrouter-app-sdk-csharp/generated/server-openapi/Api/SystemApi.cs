@@ -16,21 +16,6 @@ namespace Sdkwork.ClawRouter.App.Api
         }
 
         /// <summary>
-        /// Promotion Code Redemption Create
-        /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.PromotionsCodesRedemptionsCreateResult?> PromotionsCodesRedemptionsCreateAsync(Sdkwork.ClawRouter.App.Models.PromotionCodeRedemptionRequest body, string idempotencyKey)
-        {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.App.Models.PromotionsCodesRedemptionsCreateResult>(ApiPaths.AppPath("/promotions/codes/redemptions"), body, null, requestHeaders, "application/json");
-        }
-
-        /// <summary>
         /// Promotion Discount Application Create
         /// </summary>
         public async Task<Sdkwork.ClawRouter.App.Models.PromotionsDiscountApplicationsCreateResult?> PromotionsDiscountApplicationsCreateAsync(Sdkwork.ClawRouter.App.Models.PromotionCommandRequest body, string idempotencyKey)
@@ -88,54 +73,6 @@ namespace Sdkwork.ClawRouter.App.Api
                 new Dictionary<string, HeaderParameterSpec>()
             );
             return await _client.PostAsync<Sdkwork.ClawRouter.App.Models.PromotionsDiscountApplicationsSettleResult>(ApiPaths.AppPath($"/promotions/discount_applications/{SerializePathParameter(applicationId, new PathParameterSpec("applicationId", "simple", false))}/settlements"), body, null, requestHeaders, "application/json");
-        }
-
-        /// <summary>
-        /// Promotion User Coupon Claim Create
-        /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.PromotionsUserCouponsClaimsCreateResult?> PromotionsUserCouponsClaimsCreateAsync(Sdkwork.ClawRouter.App.Models.PromotionCommandRequest body, string idempotencyKey)
-        {
-            var requestHeaders = BuildRequestHeaders(
-                new Dictionary<string, HeaderParameterSpec>
-                {
-                    ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
-                },
-                new Dictionary<string, HeaderParameterSpec>()
-            );
-            return await _client.PostAsync<Sdkwork.ClawRouter.App.Models.PromotionsUserCouponsClaimsCreateResult>(ApiPaths.AppPath("/promotions/user_coupon_claims"), body, null, requestHeaders, "application/json");
-        }
-
-        /// <summary>
-        /// Promotion User Coupons Wallet List
-        /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.PromotionsUserCouponsWalletListResult?> PromotionsUserCouponsWalletListAsync(string? status = null)
-        {
-            var queryString = BuildQueryString(new[]
-            {
-                new QueryParameterSpec("status", status, "form", true, false, null),
-            });
-            return await _client.GetAsync<Sdkwork.ClawRouter.App.Models.PromotionsUserCouponsWalletListResult>(ApiPaths.AppendQueryString(ApiPaths.AppPath("/promotions/user_coupons"), queryString));
-        }
-
-        /// <summary>
-        /// Retrieve public IAM runtime settings
-        /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.IamRuntimeRetrieveResult?> IamRuntimeRetrieveAsync(string? tenantCode = null, string? organizationCode = null)
-        {
-            var queryString = BuildQueryString(new[]
-            {
-                new QueryParameterSpec("tenant_code", tenantCode, "form", true, false, null),
-                new QueryParameterSpec("organization_code", organizationCode, "form", true, false, null),
-            });
-            return await _client.GetAsync<Sdkwork.ClawRouter.App.Models.IamRuntimeRetrieveResult>(ApiPaths.AppendQueryString(ApiPaths.AppPath("/system/iam/runtime"), queryString));
-        }
-
-        /// <summary>
-        /// Retrieve public IAM verification policy
-        /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.IamVerificationPolicyRetrieveResult?> IamVerificationPolicyRetrieveAsync()
-        {
-            return await _client.GetAsync<Sdkwork.ClawRouter.App.Models.IamVerificationPolicyRetrieveResult>(ApiPaths.AppPath("/system/iam/verification_policy"));
         }
 
         /// <summary>

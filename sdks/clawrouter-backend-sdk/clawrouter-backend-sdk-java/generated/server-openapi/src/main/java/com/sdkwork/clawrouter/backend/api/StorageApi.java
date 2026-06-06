@@ -14,7 +14,7 @@ public class StorageApi {
     }
 
     /** List storage buckets */
-    public OssBucketsListResult ossBucketsList(String cursor, Integer limit, String status) throws Exception {
+    public OssBucketsListResult ossBucketsList(String cursor, String limit, String status) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("cursor", cursor, "form", true, false, null),
             new QueryParameterSpec("limit", limit, "form", true, false, null),
@@ -56,7 +56,7 @@ public class StorageApi {
     }
 
     /** List storage garbage collection jobs */
-    public OssGcJobsListResult ossGcJobsList(String cursor, Integer limit, String status) throws Exception {
+    public OssGcJobsListResult ossGcJobsList(String cursor, String limit, String status) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("cursor", cursor, "form", true, false, null),
             new QueryParameterSpec("limit", limit, "form", true, false, null),
@@ -121,7 +121,7 @@ public class StorageApi {
     }
 
     /** List storage reconciliation runs */
-    public OssReconciliationRunsListResult ossReconciliationRunsList(String cursor, Integer limit, String runType, String status) throws Exception {
+    public OssReconciliationRunsListResult ossReconciliationRunsList(String cursor, String limit, String runType, String status) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("cursor", cursor, "form", true, false, null),
             new QueryParameterSpec("limit", limit, "form", true, false, null),
@@ -143,7 +143,7 @@ public class StorageApi {
     }
 
     /** List storage usage counters */
-    public OssUsageListResult ossUsageList(String cursor, Integer limit, String scopeType, String scopeId) throws Exception {
+    public OssUsageListResult ossUsageList(String cursor, String limit, String scopeType, String scopeId) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("cursor", cursor, "form", true, false, null),
             new QueryParameterSpec("limit", limit, "form", true, false, null),
@@ -155,7 +155,7 @@ public class StorageApi {
     }
 
     /** List storage usage ledger */
-    public OssUsageLedgerListResult ossUsageLedgerList(String cursor, Integer limit, String scopeType, String scopeId) throws Exception {
+    public OssUsageLedgerListResult ossUsageLedgerList(String cursor, String limit, String scopeType, String scopeId) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("cursor", cursor, "form", true, false, null),
             new QueryParameterSpec("limit", limit, "form", true, false, null),
@@ -167,7 +167,7 @@ public class StorageApi {
     }
 
     /** List storage usage snapshots */
-    public OssUsageSnapshotsListResult ossUsageSnapshotsList(String cursor, Integer limit, String scopeType, String scopeId) throws Exception {
+    public OssUsageSnapshotsListResult ossUsageSnapshotsList(String cursor, String limit, String scopeType, String scopeId) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("cursor", cursor, "form", true, false, null),
             new QueryParameterSpec("limit", limit, "form", true, false, null),

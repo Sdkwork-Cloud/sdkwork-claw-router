@@ -26,7 +26,7 @@ func main() {
     client.SetApiKey("your-api-key")
 
     // Use the SDK
-    result, err := client.Auth.SessionsCurrentRetrieve()
+    result, err := client.Ai.ChannelGroupsList()
     if err != nil {
         panic(err)
     }
@@ -73,42 +73,29 @@ client.SetHeader("X-Custom-Header", "value")
 
 ## API Modules
 
-- `client.Commerce` - commerce API
 - `client.Agents` - agents API
 - `client.Ai` - ai API
-- `client.Auth` - auth API
 - `client.Chat` - chat API
 - `client.Content` - content API
 - `client.Ecosystem` - ecosystem API
 - `client.Iam` - iam API
 - `client.Memory` - memory API
 - `client.Notification` - notification API
-- `client.OpenPlatform` - open_platform API
 - `client.Platform` - platform API
 - `client.System` - system API
+- `client.Commerce` - commerce API
 - `client.Runtime` - runtime API
 - `client.SdkReference` - sdk_reference API
 
 ## Usage Examples
-
-### commerce
-
-```go
-// Accounts Current Summary Retrieve
-result, err := client.Commerce.AccountsCurrentSummaryRetrieve()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
 
 ### agents
 
 ```go
 // List Playground agent definitions
 params := map[string]interface{}{
-    "page": 1,
-    "page_size": 2,
+    "page": "page",
+    "page_size": "page_size",
     "q": "q",
 }
 result, err := client.Agents.AgentDefinitionsList(params)
@@ -129,24 +116,13 @@ if err != nil {
 fmt.Println(result)
 ```
 
-### auth
-
-```go
-// Retrieve current IAM session
-result, err := client.Auth.SessionsCurrentRetrieve()
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
 ### chat
 
 ```go
 // List product chat conversations
 params := map[string]interface{}{
-    "page": 1,
-    "page_size": 2,
+    "page": "page",
+    "page_size": "page_size",
 }
 result, err := client.Chat.ConversationsList(params)
 if err != nil {
@@ -193,8 +169,8 @@ fmt.Println(result)
 ```go
 // List memory spaces
 params := map[string]interface{}{
-    "page": 1,
-    "page_size": 2,
+    "page": "page",
+    "page_size": "page_size",
 }
 result, err := client.Memory.SpacesList(params)
 if err != nil {
@@ -220,20 +196,6 @@ if err != nil {
 fmt.Println(result)
 ```
 
-### open_platform
-
-```go
-// Create open platform QR auth session
-body := sdktypes.OpenPlatformQrAuthSessionCreateRequest{
-    Purpose: "login",
-}
-result, err := client.OpenPlatform.QrAuthSessionsCreate(body)
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
 ### platform
 
 ```go
@@ -248,8 +210,23 @@ fmt.Println(result)
 ### system
 
 ```go
-// Retrieve public IAM verification policy
-result, err := client.System.IamVerificationPolicyRetrieve()
+// Retrieve public site runtime branding settings
+params := map[string]interface{}{
+    "tenant_code": "tenant_code",
+    "organization_code": "organization_code",
+}
+result, err := client.System.SiteRuntimeRetrieve(params)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
+
+### commerce
+
+```go
+// Recharges Settings Retrieve
+result, err := client.Commerce.RechargesSettingsRetrieve()
 if err != nil {
     panic(err)
 }
@@ -261,8 +238,8 @@ fmt.Println(result)
 ```go
 // List runtime invocations
 params := map[string]interface{}{
-    "page": 1,
-    "page_size": 2,
+    "page": "page",
+    "page_size": "page_size",
     "conversation_id": "conversation_id",
     "chat_turn_id": "chat_turn_id",
     "agent_session_id": "agent_session_id",
@@ -310,7 +287,7 @@ fmt.Println(result)
 ## Error Handling
 
 ```go
-_, err := client.Auth.SessionsCurrentRetrieve()
+_, err := client.Ai.ChannelGroupsList()
 if err != nil {
     // Handle error
     fmt.Println("Error:", err)

@@ -12,7 +12,7 @@ type AdminAiResourceGroupResourceItem struct {
 	ProviderNativeModel string `json:"providerNativeModel"`
 	ResourceCode string `json:"resourceCode"`
 	ResourceType string `json:"resourceType"`
-	SortOrder int `json:"sortOrder"`
+	SortOrder string `json:"sortOrder"`
 	Status string `json:"status"`
 	VendorCode string `json:"vendorCode"`
 }

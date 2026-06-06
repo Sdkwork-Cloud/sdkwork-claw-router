@@ -16,9 +16,9 @@ class CourseDetail:
     """Course detail schema exposed by Claw Router."""
     category: str
     category_label: str
-    comment_count: int
+    comment_count: str
     content: str
-    content_id: int
+    content_id: str
     course_code: str
     currency: str
     description: str
@@ -28,15 +28,15 @@ class CourseDetail:
     id: str
     instructor: CourseInstructor
     is_collection: bool
-    lessons_count: int
-    level: int
+    lessons_count: str
+    level: str
     level_label: str
     published_at: str
     rating_score: float
     related_courses: List[CourseItem]
     sections: List[CourseSectionItem]
     source: CourseOverviewSource
-    students_count: int
+    students_count: str
     tags: List[str]
     thumbnail: MediaResource
     title: str

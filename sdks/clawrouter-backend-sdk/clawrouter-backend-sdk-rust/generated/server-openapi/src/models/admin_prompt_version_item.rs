@@ -16,14 +16,14 @@ pub struct AdminPromptVersionItem {
 
     /// Created by field on admin prompt version item.
     #[serde(rename = "createdBy")]
-    pub created_by: i64,
+    pub created_by: String,
 
     /// Examples json field on admin prompt version item.
     #[serde(rename = "examplesJson")]
     pub examples_json: Vec<std::collections::HashMap<String, String>>,
 
     /// Id field on admin prompt version item.
-    pub id: i64,
+    pub id: String,
 
     /// Lifecycle status field on admin prompt version item.
     #[serde(rename = "lifecycleStatus")]
@@ -35,7 +35,7 @@ pub struct AdminPromptVersionItem {
 
     /// Organization id field on admin prompt version item.
     #[serde(rename = "organizationId")]
-    pub organization_id: i64,
+    pub organization_id: String,
 
     /// Output schema field on admin prompt version item.
     #[serde(rename = "outputSchema")]
@@ -43,7 +43,7 @@ pub struct AdminPromptVersionItem {
 
     /// Prompt id field on admin prompt version item.
     #[serde(rename = "promptId")]
-    pub prompt_id: i64,
+    pub prompt_id: String,
 
     /// Published at field on admin prompt version item.
     #[serde(rename = "publishedAt")]
@@ -65,7 +65,7 @@ pub struct AdminPromptVersionItem {
 
     /// Tenant id field on admin prompt version item.
     #[serde(rename = "tenantId")]
-    pub tenant_id: i64,
+    pub tenant_id: String,
 
     /// Title field on admin prompt version item.
     pub title: String,

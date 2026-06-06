@@ -15,7 +15,7 @@ pub struct AdminPromptBindingUpdateRequest {
     /// Owner id field on admin prompt binding update request.
     #[serde(rename = "ownerId")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub owner_id: Option<i64>,
+    pub owner_id: Option<String>,
 
     /// Owner type field on admin prompt binding update request.
     #[serde(rename = "ownerType")]
@@ -34,5 +34,5 @@ pub struct AdminPromptBindingUpdateRequest {
     /// Prompt version id field on admin prompt binding update request.
     #[serde(rename = "promptVersionId")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub prompt_version_id: Option<i64>,
+    pub prompt_version_id: Option<String>,
 }

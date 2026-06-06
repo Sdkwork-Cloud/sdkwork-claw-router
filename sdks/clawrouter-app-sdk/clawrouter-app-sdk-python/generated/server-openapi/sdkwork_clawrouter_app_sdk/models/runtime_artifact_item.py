@@ -18,5 +18,5 @@ class RuntimeArtifactItem:
     name: Optional[str] = None
     resource: Optional[MediaResource] = None
     sha256: Optional[str] = None
-    size_bytes: Optional[int] = None
+    size_bytes: Optional[str] = None
     storage_key: Optional[str] = None

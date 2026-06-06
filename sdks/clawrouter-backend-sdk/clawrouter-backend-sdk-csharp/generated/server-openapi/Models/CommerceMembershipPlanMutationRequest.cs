@@ -9,7 +9,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public List<CommerceMembershipBenefitMutationRequest>? Benefits { get; set; }
         public string? Code { get; set; }
         public string? Name { get; set; }
-        public int? Rank { get; set; }
+        public string? Rank { get; set; }
         public string? Status { get; set; }
     }
 }

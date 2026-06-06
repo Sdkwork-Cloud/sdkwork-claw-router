@@ -10,6 +10,6 @@ if TYPE_CHECKING:
 class AdminMcpDiscoveryResponse:
     """Admin mcp discovery response schema exposed by Claw Router."""
     checked_at: str
-    discovered_count: int
-    server_id: int
+    discovered_count: str
+    server_id: str
     tools: List[AdminMcpToolItem]

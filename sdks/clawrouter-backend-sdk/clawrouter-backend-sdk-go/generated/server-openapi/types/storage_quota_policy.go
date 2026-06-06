@@ -5,13 +5,13 @@ type StorageQuotaPolicy struct {
 	CreatedAt string `json:"createdAt"`
 	Enforcement string `json:"enforcement"`
 	Id string `json:"id"`
-	Limit int `json:"limit"`
-	QuotaLimitBytes int `json:"quotaLimitBytes"`
+	Limit string `json:"limit"`
+	QuotaLimitBytes string `json:"quotaLimitBytes"`
 	ScopeId string `json:"scopeId"`
 	ScopeType string `json:"scopeType"`
-	SingleFileLimitBytes int `json:"singleFileLimitBytes"`
+	SingleFileLimitBytes string `json:"singleFileLimitBytes"`
 	Status string `json:"status"`
 	UpdatedAt string `json:"updatedAt"`
-	Used int `json:"used"`
-	UsedBytes int `json:"usedBytes"`
+	Used string `json:"used"`
+	UsedBytes string `json:"usedBytes"`
 }

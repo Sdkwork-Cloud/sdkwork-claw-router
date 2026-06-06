@@ -27,7 +27,7 @@ class MessagingApi(private val client: HttpClient) {
     }
 
     /** Messaging provider accounts list */
-    suspend fun providerAccountsList(page: Int? = null, pageSize: Int? = null, q: String? = null, status: String? = null, channel: String? = null, providerCode: String? = null): ProviderAccountsListResult? {
+    suspend fun providerAccountsList(page: String? = null, pageSize: String? = null, q: String? = null, status: String? = null, channel: String? = null, providerCode: String? = null): ProviderAccountsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -53,7 +53,7 @@ class MessagingApi(private val client: HttpClient) {
     }
 
     /** Messaging rate limit buckets list */
-    suspend fun rateLimitBucketsList(page: Int? = null, pageSize: Int? = null, sceneCode: String? = null, channel: String? = null, targetHash: String? = null, ipHash: String? = null, deviceHash: String? = null): RateLimitBucketsListResult? {
+    suspend fun rateLimitBucketsList(page: String? = null, pageSize: String? = null, sceneCode: String? = null, channel: String? = null, targetHash: String? = null, ipHash: String? = null, deviceHash: String? = null): RateLimitBucketsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -68,7 +68,7 @@ class MessagingApi(private val client: HttpClient) {
     }
 
     /** Messaging route rules list */
-    suspend fun routeRulesList(page: Int? = null, pageSize: Int? = null, q: String? = null, status: String? = null, channel: String? = null, providerCode: String? = null): RouteRulesListResult? {
+    suspend fun routeRulesList(page: String? = null, pageSize: String? = null, q: String? = null, status: String? = null, channel: String? = null, providerCode: String? = null): RouteRulesListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -94,7 +94,7 @@ class MessagingApi(private val client: HttpClient) {
     }
 
     /** Messaging send requests list */
-    suspend fun sendRequestsList(page: Int? = null, pageSize: Int? = null, status: String? = null, channel: String? = null, sceneCode: String? = null, providerCode: String? = null, targetHash: String? = null): SendRequestsListResult? {
+    suspend fun sendRequestsList(page: String? = null, pageSize: String? = null, status: String? = null, channel: String? = null, sceneCode: String? = null, providerCode: String? = null, targetHash: String? = null): SendRequestsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -109,7 +109,7 @@ class MessagingApi(private val client: HttpClient) {
     }
 
     /** Messaging sender identities list */
-    suspend fun senderIdentitiesList(page: Int? = null, pageSize: Int? = null, q: String? = null, status: String? = null, channel: String? = null, providerCode: String? = null): SenderIdentitiesListResult? {
+    suspend fun senderIdentitiesList(page: String? = null, pageSize: String? = null, q: String? = null, status: String? = null, channel: String? = null, providerCode: String? = null): SenderIdentitiesListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -135,7 +135,7 @@ class MessagingApi(private val client: HttpClient) {
     }
 
     /** Messaging suppressions list */
-    suspend fun suppressionsList(page: Int? = null, pageSize: Int? = null, status: String? = null, channel: String? = null, targetHash: String? = null, reasonCode: String? = null): SuppressionsListResult? {
+    suspend fun suppressionsList(page: String? = null, pageSize: String? = null, status: String? = null, channel: String? = null, targetHash: String? = null, reasonCode: String? = null): SuppressionsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -173,7 +173,7 @@ class MessagingApi(private val client: HttpClient) {
     }
 
     /** Messaging templates list */
-    suspend fun templatesList(page: Int? = null, pageSize: Int? = null, q: String? = null, status: String? = null, channel: String? = null, providerCode: String? = null): TemplatesListResult? {
+    suspend fun templatesList(page: String? = null, pageSize: String? = null, q: String? = null, status: String? = null, channel: String? = null, providerCode: String? = null): TemplatesListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -205,7 +205,7 @@ class MessagingApi(private val client: HttpClient) {
     }
 
     /** Verification policies list */
-    suspend fun verificationPoliciesList(page: Int? = null, pageSize: Int? = null, q: String? = null, status: String? = null, channel: String? = null, providerCode: String? = null): VerificationPoliciesListResult? {
+    suspend fun verificationPoliciesList(page: String? = null, pageSize: String? = null, q: String? = null, status: String? = null, channel: String? = null, providerCode: String? = null): VerificationPoliciesListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null),

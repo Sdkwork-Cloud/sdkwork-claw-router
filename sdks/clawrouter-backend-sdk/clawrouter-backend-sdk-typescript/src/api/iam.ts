@@ -1,7 +1,7 @@
 import { backendApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 
-import type { AdminApiKeyCreateRequest, AdminUserCreateRequest, AdminUserUpdateRequest, ApiKeysCreateResult, ApiKeysDeleteResult, ApiKeysListResult, UsersCreateResult, UsersListResult, UsersUpdateResult } from '../types';
+import type { AdminApiKeyCreateRequest, AdminUserUpdateRequest, ApiKeysCreateResult, ApiKeysDeleteResult, UsersUpdateResult } from '../types';
 
 
 export class IamUsersApi {
@@ -11,16 +11,6 @@ export class IamUsersApi {
     this.client = client;
   }
 
-
-/** List users */
-  async list(): Promise<UsersListResult> {
-    return this.client.get<UsersListResult>(backendApiPath(`/iam/users`));
-  }
-
-/** Create user */
-  async create(body: AdminUserCreateRequest): Promise<UsersCreateResult> {
-    return this.client.post<UsersCreateResult>(backendApiPath(`/iam/users`), body, undefined, undefined, 'application/json');
-  }
 
 /** Update user */
   async update(body: AdminUserUpdateRequest): Promise<UsersUpdateResult> {
@@ -39,11 +29,6 @@ export class IamApiKeysApi {
     this.client = client;
   }
 
-
-/** List API key map */
-  async list(): Promise<ApiKeysListResult> {
-    return this.client.get<ApiKeysListResult>(backendApiPath(`/iam/api_keys`));
-  }
 
 /** Create API key */
   async create(body: AdminApiKeyCreateRequest, params: IamApiKeysCreateParams): Promise<ApiKeysCreateResult> {

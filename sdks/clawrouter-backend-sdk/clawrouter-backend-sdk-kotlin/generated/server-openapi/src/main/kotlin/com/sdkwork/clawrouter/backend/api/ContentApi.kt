@@ -33,7 +33,7 @@ class ContentApi(private val client: HttpClient) {
     }
 
     /** Admin Course Applications List */
-    suspend fun courseApplicationsList(page: Int? = null, pageSize: Int? = null, q: String? = null, status: String? = null): CourseApplicationsListResult? {
+    suspend fun courseApplicationsList(page: String? = null, pageSize: String? = null, q: String? = null, status: String? = null): CourseApplicationsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -75,7 +75,7 @@ class ContentApi(private val client: HttpClient) {
     }
 
     /** Admin Courses List */
-    suspend fun coursesList(page: Int? = null, pageSize: Int? = null, q: String? = null, status: String? = null): CoursesListResult? {
+    suspend fun coursesList(page: String? = null, pageSize: String? = null, q: String? = null, status: String? = null): CoursesListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -93,7 +93,7 @@ class ContentApi(private val client: HttpClient) {
     }
 
     /** Admin Course Comments List */
-    suspend fun courseCommentsList(page: Int? = null, pageSize: Int? = null, q: String? = null, status: String? = null): CourseCommentsListResult? {
+    suspend fun courseCommentsList(page: String? = null, pageSize: String? = null, q: String? = null, status: String? = null): CourseCommentsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -117,7 +117,7 @@ class ContentApi(private val client: HttpClient) {
     }
 
     /** Admin Course Engagement List */
-    suspend fun courseEngagementList(page: Int? = null, pageSize: Int? = null, q: String? = null, status: String? = null): CourseEngagementListResult? {
+    suspend fun courseEngagementList(page: String? = null, pageSize: String? = null, q: String? = null, status: String? = null): CourseEngagementListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -141,7 +141,7 @@ class ContentApi(private val client: HttpClient) {
     }
 
     /** Admin Course Lessons List */
-    suspend fun coursesLessonsList(courseId: String, page: Int? = null, pageSize: Int? = null, q: String? = null, status: String? = null): CoursesLessonsListResult? {
+    suspend fun coursesLessonsList(courseId: String, page: String? = null, pageSize: String? = null, q: String? = null, status: String? = null): CoursesLessonsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -159,7 +159,7 @@ class ContentApi(private val client: HttpClient) {
     }
 
     /** Admin Course Relations List */
-    suspend fun coursesRelationsList(courseId: String, page: Int? = null, pageSize: Int? = null, q: String? = null, status: String? = null): CoursesRelationsListResult? {
+    suspend fun coursesRelationsList(courseId: String, page: String? = null, pageSize: String? = null, q: String? = null, status: String? = null): CoursesRelationsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -177,7 +177,7 @@ class ContentApi(private val client: HttpClient) {
     }
 
     /** Admin Course Sections List */
-    suspend fun coursesSectionsList(courseId: String, page: Int? = null, pageSize: Int? = null, q: String? = null, status: String? = null): CoursesSectionsListResult? {
+    suspend fun coursesSectionsList(courseId: String, page: String? = null, pageSize: String? = null, q: String? = null, status: String? = null): CoursesSectionsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null),

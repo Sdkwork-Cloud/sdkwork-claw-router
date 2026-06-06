@@ -12,7 +12,7 @@ class ChatApi {
   ChatApi(this._client);
 
   /// List product chat conversations
-  Future<ConversationsListResult?> conversationsList([int? page, int? pageSize]) async {
+  Future<ConversationsListResult?> conversationsList([String? page, String? pageSize]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null)
@@ -50,7 +50,7 @@ class ChatApi {
   }
 
   /// List product chat messages
-  Future<ConversationMessagesListResult?> conversationMessagesList(String conversationId, [int? limit, String? order]) async {
+  Future<ConversationMessagesListResult?> conversationMessagesList(String conversationId, [String? limit, String? order]) async {
     final query = buildQueryString([
       QueryParameterSpec('limit', limit, 'form', true, false, null),
       QueryParameterSpec('order', order, 'form', true, false, null)

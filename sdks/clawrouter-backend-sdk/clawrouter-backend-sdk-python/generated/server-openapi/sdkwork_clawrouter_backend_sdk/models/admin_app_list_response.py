@@ -11,6 +11,6 @@ class AdminAppListResponse:
     """Admin app list response schema exposed by Claw Router."""
     has_next_page: bool
     items: List[AdminAppItemResponse]
-    page: int
-    page_size: int
-    total: int
+    page: str
+    page_size: str
+    total: str

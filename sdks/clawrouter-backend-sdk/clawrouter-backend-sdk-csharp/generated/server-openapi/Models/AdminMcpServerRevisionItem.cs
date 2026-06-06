@@ -11,20 +11,20 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? Command { get; set; }
         public string? ConfigHash { get; set; }
         public string? CreatedAt { get; set; }
-        public int? CreatedBy { get; set; }
+        public string? CreatedBy { get; set; }
         public string? DeprecatedAt { get; set; }
         public string? EndpointUrl { get; set; }
         public Dictionary<string, string>? EnvSchema { get; set; }
-        public int? Id { get; set; }
+        public string? Id { get; set; }
         public string? LifecycleStatus { get; set; }
-        public int? OrganizationId { get; set; }
+        public string? OrganizationId { get; set; }
         public string? PublishedAt { get; set; }
         public Dictionary<string, string>? RetryPolicy { get; set; }
         public string? RevisionNo { get; set; }
         public string? SecretRef { get; set; }
-        public int? ServerId { get; set; }
+        public string? ServerId { get; set; }
         public string? Status { get; set; }
-        public int? TenantId { get; set; }
+        public string? TenantId { get; set; }
         public int? TimeoutMs { get; set; }
         public string? Transport { get; set; }
         public string? UpdatedAt { get; set; }

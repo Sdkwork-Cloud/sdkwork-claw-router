@@ -4,5 +4,5 @@ package types
 type AppModelCatalogGroupOption struct {
 	Key string `json:"key"`
 	Label string `json:"label"`
-	ModelCount int `json:"modelCount"`
+	ModelCount string `json:"modelCount"`
 }

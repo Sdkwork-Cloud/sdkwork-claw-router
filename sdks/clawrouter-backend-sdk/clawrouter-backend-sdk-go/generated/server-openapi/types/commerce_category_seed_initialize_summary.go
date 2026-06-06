@@ -5,8 +5,8 @@ type CommerceCategorySeedInitializeSummary struct {
 	ConfigKey string `json:"configKey"`
 	Dataset string `json:"dataset"`
 	InstallDefaultEnabled bool `json:"installDefaultEnabled"`
-	Requested int `json:"requested"`
-	Skipped int `json:"skipped"`
+	Requested string `json:"requested"`
+	Skipped string `json:"skipped"`
 	TargetTable string `json:"targetTable"`
-	Upserted int `json:"upserted"`
+	Upserted string `json:"upserted"`
 }

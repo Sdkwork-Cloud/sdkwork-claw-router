@@ -10,7 +10,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? ErrorMasked { get; set; }
         public string? HealthStatus { get; set; }
         public bool? Healthy { get; set; }
-        public int? LatencyMs { get; set; }
-        public int? ServerId { get; set; }
+        public string? LatencyMs { get; set; }
+        public string? ServerId { get; set; }
     }
 }

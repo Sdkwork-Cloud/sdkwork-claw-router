@@ -3,7 +3,7 @@ package types
 // Usage logs response schema exposed by Claw Router.
 type UsageLogsResponse struct {
 	Logs []UsageLogItem `json:"logs"`
-	Page int `json:"page"`
-	PageSize int `json:"pageSize"`
-	Total int `json:"total"`
+	Page string `json:"page"`
+	PageSize string `json:"pageSize"`
+	Total string `json:"total"`
 }

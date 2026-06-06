@@ -5,7 +5,7 @@ import java.util.List;
 public class AdminSkillArtifactItem {
     private MediaResource artifact;
     private String artifactRef;
-    private Integer artifactSizeBytes;
+    private String artifactSizeBytes;
     private Integer artifactType;
     private String checksumHash;
     private String createdAt;
@@ -41,11 +41,11 @@ public class AdminSkillArtifactItem {
         this.artifactRef = artifactRef;
     }
 
-    public Integer getArtifactSizeBytes() {
+    public String getArtifactSizeBytes() {
         return this.artifactSizeBytes;
     }
 
-    public void setArtifactSizeBytes(Integer artifactSizeBytes) {
+    public void setArtifactSizeBytes(String artifactSizeBytes) {
         this.artifactSizeBytes = artifactSizeBytes;
     }
 

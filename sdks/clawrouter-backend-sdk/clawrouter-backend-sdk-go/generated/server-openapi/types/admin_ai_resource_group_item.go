@@ -10,9 +10,9 @@ type AdminAiResourceGroupItem struct {
 	GroupName string `json:"groupName"`
 	GroupType string `json:"groupType"`
 	Id string `json:"id"`
-	ResourceCount int `json:"resourceCount"`
+	ResourceCount string `json:"resourceCount"`
 	SelectionMode string `json:"selectionMode"`
-	SortOrder int `json:"sortOrder"`
+	SortOrder string `json:"sortOrder"`
 	Status string `json:"status"`
 	VendorCodes []string `json:"vendorCodes"`
 }

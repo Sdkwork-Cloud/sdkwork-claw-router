@@ -17,7 +17,7 @@ impl PromptsApi {
     }
 
     /// List admin prompts
-    pub async fn definitions_list(&self, page: Option<i64>, page_size: Option<i64>, q: Option<&str>, prompt_type: Option<&str>, visibility: Option<&str>, status: Option<&str>, category_id: Option<&str>) -> Result<DefinitionsListResult, SdkworkError> {
+    pub async fn definitions_list(&self, page: Option<&str>, page_size: Option<&str>, q: Option<&str>, prompt_type: Option<&str>, visibility: Option<&str>, status: Option<&str>, category_id: Option<&str>) -> Result<DefinitionsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),

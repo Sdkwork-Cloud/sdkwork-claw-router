@@ -2,7 +2,7 @@ package types
 
 // Routing usage data schema exposed by Claw Router.
 type RoutingUsageData struct {
-	Latency int `json:"latency"`
-	Requests int `json:"requests"`
+	Latency string `json:"latency"`
+	Requests string `json:"requests"`
 	Time string `json:"time"`
 }

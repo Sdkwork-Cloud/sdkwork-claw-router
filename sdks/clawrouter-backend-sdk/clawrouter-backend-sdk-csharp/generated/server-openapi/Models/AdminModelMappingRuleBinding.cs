@@ -13,7 +13,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? CreatedAt { get; set; }
         public bool? Enabled { get; set; }
         public string? Id { get; set; }
-        public int? SortOrder { get; set; }
+        public string? SortOrder { get; set; }
         public string? UpdatedAt { get; set; }
     }
 }

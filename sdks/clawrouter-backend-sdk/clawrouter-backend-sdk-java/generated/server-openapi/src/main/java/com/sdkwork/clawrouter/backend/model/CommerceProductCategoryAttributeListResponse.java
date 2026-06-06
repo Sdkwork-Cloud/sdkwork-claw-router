@@ -4,9 +4,9 @@ import java.util.List;
 
 public class CommerceProductCategoryAttributeListResponse {
     private List<CommerceProductCategoryAttributeItem> items;
-    private Integer page;
-    private Integer pageSize;
-    private Integer total;
+    private String page;
+    private String pageSize;
+    private String total;
 
     public List<CommerceProductCategoryAttributeItem> getItems() {
         return this.items;
@@ -16,27 +16,27 @@ public class CommerceProductCategoryAttributeListResponse {
         this.items = items;
     }
 
-    public Integer getPage() {
+    public String getPage() {
         return this.page;
     }
 
-    public void setPage(Integer page) {
+    public void setPage(String page) {
         this.page = page;
     }
 
-    public Integer getPageSize() {
+    public String getPageSize() {
         return this.pageSize;
     }
 
-    public void setPageSize(Integer pageSize) {
+    public void setPageSize(String pageSize) {
         this.pageSize = pageSize;
     }
 
-    public Integer getTotal() {
+    public String getTotal() {
         return this.total;
     }
 
-    public void setTotal(Integer total) {
+    public void setTotal(String total) {
         this.total = total;
     }
 }

@@ -29,7 +29,7 @@ pub struct StorageReconciliationRun {
     /// Issue count field on storage reconciliation run.
     #[serde(rename = "issueCount")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub issue_count: Option<i64>,
+    pub issue_count: Option<String>,
 
     /// Issues field on storage reconciliation run.
     #[serde(default, skip_serializing_if = "Option::is_none")]

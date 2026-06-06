@@ -17,7 +17,7 @@ pub struct ForumCommentDetail {
 
     /// Content id field on forum comment detail.
     #[serde(rename = "contentId")]
-    pub content_id: i64,
+    pub content_id: String,
 
     /// Content type field on forum comment detail.
     #[serde(rename = "contentType")]
@@ -40,19 +40,19 @@ pub struct ForumCommentDetail {
     pub is_top: bool,
 
     /// Likes field on forum comment detail.
-    pub likes: i64,
+    pub likes: String,
 
     /// Parent id field on forum comment detail.
     #[serde(rename = "parentId")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub parent_id: Option<i64>,
+    pub parent_id: Option<String>,
 
     /// Replies field on forum comment detail.
     pub replies: Vec<ForumCommentItem>,
 
     /// Reply count field on forum comment detail.
     #[serde(rename = "replyCount")]
-    pub reply_count: i64,
+    pub reply_count: String,
 
     /// Status field on forum comment detail.
     pub status: String,
@@ -63,5 +63,5 @@ pub struct ForumCommentDetail {
 
     /// User id field on forum comment detail.
     #[serde(rename = "userId")]
-    pub user_id: i64,
+    pub user_id: String,
 }

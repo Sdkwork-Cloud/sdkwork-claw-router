@@ -6,7 +6,7 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class ForumCreateFeedRequest
     {
-        public int? CategoryId { get; set; }
+        public string? CategoryId { get; set; }
         public string? Content { get; set; }
         public List<MediaResource>? Images { get; set; }
         public string? Source { get; set; }

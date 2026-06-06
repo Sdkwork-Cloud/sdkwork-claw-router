@@ -8,7 +8,7 @@ public class ChatApi {
     }
 
     /// List product chat conversations
-    public func conversationsList(page: Int? = nil, pageSize: Int? = nil) async throws -> ConversationsListResult? {
+    public func conversationsList(page: String? = nil, pageSize: String? = nil) async throws -> ConversationsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil)
@@ -33,7 +33,7 @@ public class ChatApi {
     }
 
     /// List product chat messages
-    public func conversationMessagesList(conversationId: String, limit: Int? = nil, order: String? = nil) async throws -> ConversationMessagesListResult? {
+    public func conversationMessagesList(conversationId: String, limit: String? = nil, order: String? = nil) async throws -> ConversationMessagesListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "limit", value: limit, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "order", value: order, style: "form", explode: true, allowReserved: false, contentType: nil)

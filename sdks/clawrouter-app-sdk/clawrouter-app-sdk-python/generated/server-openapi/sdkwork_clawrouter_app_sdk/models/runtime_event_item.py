@@ -7,7 +7,7 @@ from typing import TYPE_CHECKING, Optional, List, Dict, Any
 class RuntimeEventItem:
     """Runtime event item schema exposed by Claw Router."""
     created_at: str
-    event_no: int
+    event_no: str
     event_source: str
     event_type: str
     id: str

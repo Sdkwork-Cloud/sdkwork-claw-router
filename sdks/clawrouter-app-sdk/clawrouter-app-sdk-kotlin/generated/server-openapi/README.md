@@ -30,7 +30,7 @@ fun main() = runBlocking {
     client.setApiKey("your-api-key")
 
     // Use the SDK
-    val result = client.auth.sessionsCurrentRetrieve()
+    val result = client.ai.channelGroupsList()
     println(result)
 }
 ```
@@ -71,39 +71,29 @@ val client = SdkworkAppClient(config)
 
 ## API Modules
 
-- `client.commerce` - commerce API
 - `client.agents` - agents API
 - `client.ai` - ai API
-- `client.auth` - auth API
 - `client.chat` - chat API
 - `client.content` - content API
 - `client.ecosystem` - ecosystem API
 - `client.iam` - iam API
 - `client.memory` - memory API
 - `client.notification` - notification API
-- `client.openPlatform` - open_platform API
 - `client.platform` - platform API
 - `client.system` - system API
+- `client.commerce` - commerce API
 - `client.runtime` - runtime API
 - `client.sdkReference` - sdk_reference API
 
 ## Usage Examples
-
-### commerce
-
-```kotlin
-// Accounts Current Summary Retrieve
-val result = client.commerce.accountsCurrentSummaryRetrieve()
-println(result)
-```
 
 ### agents
 
 ```kotlin
 // List Playground agent definitions
 val params = linkedMapOf<String, Any>(
-    "page" to 1,
-    "page_size" to 2,
+    "page" to "page",
+    "page_size" to "page-size",
     "q" to "q"
 )
 val result = client.agents.agentDefinitionsList(params)
@@ -118,21 +108,13 @@ val result = client.ai.channelGroupsList()
 println(result)
 ```
 
-### auth
-
-```kotlin
-// Retrieve current IAM session
-val result = client.auth.sessionsCurrentRetrieve()
-println(result)
-```
-
 ### chat
 
 ```kotlin
 // List product chat conversations
 val params = linkedMapOf<String, Any>(
-    "page" to 1,
-    "page_size" to 2
+    "page" to "page",
+    "page_size" to "page-size"
 )
 val result = client.chat.conversationsList(params)
 println(result)
@@ -167,8 +149,8 @@ println(result)
 ```kotlin
 // List memory spaces
 val params = linkedMapOf<String, Any>(
-    "page" to 1,
-    "page_size" to 2
+    "page" to "page",
+    "page_size" to "page-size"
 )
 val result = client.memory.spacesList(params)
 println(result)
@@ -188,17 +170,6 @@ val result = client.notification.notificationsList(params)
 println(result)
 ```
 
-### open_platform
-
-```kotlin
-// Create open platform QR auth session
-val body = OpenPlatformQrAuthSessionCreateRequest(
-    purpose = "login"
-)
-val result = client.openPlatform.qrAuthSessionsCreate(body)
-println(result)
-```
-
 ### platform
 
 ```kotlin
@@ -210,8 +181,20 @@ println(result)
 ### system
 
 ```kotlin
-// Retrieve public IAM verification policy
-val result = client.system.iamVerificationPolicyRetrieve()
+// Retrieve public site runtime branding settings
+val params = linkedMapOf<String, Any>(
+    "tenant_code" to "ok",
+    "organization_code" to "ok"
+)
+val result = client.system.siteRuntimeRetrieve(params)
+println(result)
+```
+
+### commerce
+
+```kotlin
+// Recharges Settings Retrieve
+val result = client.commerce.rechargesSettingsRetrieve()
 println(result)
 ```
 
@@ -220,8 +203,8 @@ println(result)
 ```kotlin
 // List runtime invocations
 val params = linkedMapOf<String, Any>(
-    "page" to 1,
-    "page_size" to 2,
+    "page" to "page",
+    "page_size" to "page-size",
     "conversation_id" to "1",
     "chat_turn_id" to "1",
     "agent_session_id" to "1",
@@ -267,7 +250,7 @@ import kotlinx.coroutines.runBlocking
 
 fun main() = runBlocking {
     try {
-        val result = client.auth.sessionsCurrentRetrieve()
+        val result = client.ai.channelGroupsList()
         println(result)
     } catch (e: Exception) {
         println("Error: ${e.message}")

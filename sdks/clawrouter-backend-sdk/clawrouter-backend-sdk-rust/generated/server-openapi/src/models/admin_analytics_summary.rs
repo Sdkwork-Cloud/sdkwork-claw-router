@@ -5,11 +5,11 @@ use serde::{Deserialize, Serialize};
 pub struct AdminAnalyticsSummary {
     /// Active models field on admin analytics summary.
     #[serde(rename = "activeModels")]
-    pub active_models: i64,
+    pub active_models: String,
 
     /// Active users field on admin analytics summary.
     #[serde(rename = "activeUsers")]
-    pub active_users: i64,
+    pub active_users: String,
 
     /// Average points per request field on admin analytics summary.
     #[serde(rename = "averagePointsPerRequest")]
@@ -25,11 +25,11 @@ pub struct AdminAnalyticsSummary {
 
     /// Failed requests field on admin analytics summary.
     #[serde(rename = "failedRequests")]
-    pub failed_requests: i64,
+    pub failed_requests: String,
 
     /// Successful requests field on admin analytics summary.
     #[serde(rename = "successfulRequests")]
-    pub successful_requests: i64,
+    pub successful_requests: String,
 
     /// Total points field on admin analytics summary.
     #[serde(rename = "totalPoints")]
@@ -37,7 +37,7 @@ pub struct AdminAnalyticsSummary {
 
     /// Total requests field on admin analytics summary.
     #[serde(rename = "totalRequests")]
-    pub total_requests: i64,
+    pub total_requests: String,
 
     /// Total tokens field on admin analytics summary.
     #[serde(rename = "totalTokens")]
@@ -45,7 +45,7 @@ pub struct AdminAnalyticsSummary {
 
     /// Total users field on admin analytics summary.
     #[serde(rename = "totalUsers")]
-    pub total_users: i64,
+    pub total_users: String,
 
     /// Upstream cost field on admin analytics summary.
     #[serde(rename = "upstreamCost")]

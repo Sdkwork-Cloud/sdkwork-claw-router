@@ -10,7 +10,7 @@ class DashboardTopModel:
     is_up: bool
     modality: str
     name: str
-    rank: int
-    requests: int
+    rank: str
+    requests: str
     supplier: str
     trend: str

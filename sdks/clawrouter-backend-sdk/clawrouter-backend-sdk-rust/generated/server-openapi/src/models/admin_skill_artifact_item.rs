@@ -16,7 +16,7 @@ pub struct AdminSkillArtifactItem {
 
     /// Artifact size bytes field on admin skill artifact item.
     #[serde(rename = "artifactSizeBytes")]
-    pub artifact_size_bytes: i64,
+    pub artifact_size_bytes: String,
 
     /// Artifact type field on admin skill artifact item.
     #[serde(rename = "artifactType")]

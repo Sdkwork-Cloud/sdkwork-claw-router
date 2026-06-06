@@ -17,7 +17,7 @@ impl ChatApi {
     }
 
     /// List product chat conversations
-    pub async fn conversations_list(&self, page: Option<i64>, page_size: Option<i64>) -> Result<ConversationsListResult, SdkworkError> {
+    pub async fn conversations_list(&self, page: Option<&str>, page_size: Option<&str>) -> Result<ConversationsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
@@ -45,7 +45,7 @@ impl ChatApi {
     }
 
     /// List product chat messages
-    pub async fn conversation_messages_list(&self, conversation_id: &str, limit: Option<i64>, order: Option<&str>) -> Result<ConversationMessagesListResult, SdkworkError> {
+    pub async fn conversation_messages_list(&self, conversation_id: &str, limit: Option<&str>, order: Option<&str>) -> Result<ConversationMessagesListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("limit", limit, "form", true, false, None),
             QueryParameterSpec::new("order", order, "form", true, false, None),

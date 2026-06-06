@@ -211,7 +211,7 @@ class AiModelRankingsApi:
         self._client = client
 
 
-    def list(self, rank_scope: Optional[str] = None, vendor_code: Optional[str] = None, modality: Optional[str] = None, q: Optional[str] = None, limit: Optional[int] = None) -> ModelRankingsListResult:
+    def list(self, rank_scope: Optional[str] = None, vendor_code: Optional[str] = None, modality: Optional[str] = None, q: Optional[str] = None, limit: Optional[str] = None) -> ModelRankingsListResult:
         """List model rankings"""
         query = build_query_string([
             {'name': 'rank_scope', 'value': rank_scope, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -240,7 +240,7 @@ class AiModelsApi:
         self._client = client
 
 
-    def list(self, billing_meter: Optional[str] = None, vendor_code: Optional[str] = None, vendor_codes: Optional[List[str]] = None, modalities: Optional[List[str]] = None, capabilities: Optional[List[str]] = None, categories: Optional[List[str]] = None, groups: Optional[List[str]] = None, q: Optional[str] = None, limit: Optional[int] = None) -> ModelsListResult:
+    def list(self, billing_meter: Optional[str] = None, vendor_code: Optional[str] = None, vendor_codes: Optional[List[str]] = None, modalities: Optional[List[str]] = None, capabilities: Optional[List[str]] = None, categories: Optional[List[str]] = None, groups: Optional[List[str]] = None, q: Optional[str] = None, limit: Optional[str] = None) -> ModelsListResult:
         """List models"""
         query = build_query_string([
             {'name': 'billing_meter', 'value': billing_meter, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -325,7 +325,7 @@ class AiUsageLogsApi:
         self._client = client
 
 
-    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, q: Optional[str] = None, status: Optional[str] = None, start_time: Optional[str] = None, end_time: Optional[str] = None) -> UsageLogsListResult:
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, q: Optional[str] = None, status: Optional[str] = None, start_time: Optional[str] = None, end_time: Optional[str] = None) -> UsageLogsListResult:
         """List logs"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},

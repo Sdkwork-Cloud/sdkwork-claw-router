@@ -58,7 +58,7 @@ func (a *ContentApi) AnnouncementsUpdate(announcementId string, body sdktypes.Ad
 }
 
 // Admin Course Applications List
-func (a *ContentApi) CourseApplicationsList(page *int, pageSize *int, q *string, status *string) (sdktypes.CourseApplicationsListResult, error) {
+func (a *ContentApi) CourseApplicationsList(page *string, pageSize *string, q *string, status *string) (sdktypes.CourseApplicationsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
@@ -124,7 +124,7 @@ func (a *ContentApi) CourseSectionsUpdate(sectionId string, body sdktypes.AdminC
 }
 
 // Admin Courses List
-func (a *ContentApi) CoursesList(page *int, pageSize *int, q *string, status *string) (sdktypes.CoursesListResult, error) {
+func (a *ContentApi) CoursesList(page *string, pageSize *string, q *string, status *string) (sdktypes.CoursesListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
@@ -150,7 +150,7 @@ func (a *ContentApi) CoursesCreate(body sdktypes.AdminCourseMutationRequest) (sd
 }
 
 // Admin Course Comments List
-func (a *ContentApi) CourseCommentsList(page *int, pageSize *int, q *string, status *string) (sdktypes.CourseCommentsListResult, error) {
+func (a *ContentApi) CourseCommentsList(page *string, pageSize *string, q *string, status *string) (sdktypes.CourseCommentsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
@@ -186,7 +186,7 @@ func (a *ContentApi) CoursesDashboardRetrieve() (sdktypes.CoursesDashboardRetrie
 }
 
 // Admin Course Engagement List
-func (a *ContentApi) CourseEngagementList(page *int, pageSize *int, q *string, status *string) (sdktypes.CourseEngagementListResult, error) {
+func (a *ContentApi) CourseEngagementList(page *string, pageSize *string, q *string, status *string) (sdktypes.CourseEngagementListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
@@ -222,7 +222,7 @@ func (a *ContentApi) CoursesUpdate(courseId string, body sdktypes.AdminCourseMut
 }
 
 // Admin Course Lessons List
-func (a *ContentApi) CoursesLessonsList(courseId string, page *int, pageSize *int, q *string, status *string) (sdktypes.CoursesLessonsListResult, error) {
+func (a *ContentApi) CoursesLessonsList(courseId string, page *string, pageSize *string, q *string, status *string) (sdktypes.CoursesLessonsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
@@ -248,7 +248,7 @@ func (a *ContentApi) CoursesLessonsCreate(courseId string, body sdktypes.AdminCo
 }
 
 // Admin Course Relations List
-func (a *ContentApi) CoursesRelationsList(courseId string, page *int, pageSize *int, q *string, status *string) (sdktypes.CoursesRelationsListResult, error) {
+func (a *ContentApi) CoursesRelationsList(courseId string, page *string, pageSize *string, q *string, status *string) (sdktypes.CoursesRelationsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
@@ -274,7 +274,7 @@ func (a *ContentApi) CoursesRelationsReplace(courseId string, body sdktypes.Admi
 }
 
 // Admin Course Sections List
-func (a *ContentApi) CoursesSectionsList(courseId string, page *int, pageSize *int, q *string, status *string) (sdktypes.CoursesSectionsListResult, error) {
+func (a *ContentApi) CoursesSectionsList(courseId string, page *string, pageSize *string, q *string, status *string) (sdktypes.CoursesSectionsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},

@@ -2,34 +2,34 @@ package com.sdkwork.clawrouter.backend.model;
 
 
 public class ModelRankingRefreshTriggerRequest {
-    private Integer cacheMaxAgeSeconds;
-    private Integer limit;
-    private Integer lookbackDays;
+    private String cacheMaxAgeSeconds;
+    private String limit;
+    private String lookbackDays;
     private String rankScope;
-    private Integer refreshIntervalSeconds;
+    private String refreshIntervalSeconds;
     private String snapshotPeriod;
 
-    public Integer getCacheMaxAgeSeconds() {
+    public String getCacheMaxAgeSeconds() {
         return this.cacheMaxAgeSeconds;
     }
 
-    public void setCacheMaxAgeSeconds(Integer cacheMaxAgeSeconds) {
+    public void setCacheMaxAgeSeconds(String cacheMaxAgeSeconds) {
         this.cacheMaxAgeSeconds = cacheMaxAgeSeconds;
     }
 
-    public Integer getLimit() {
+    public String getLimit() {
         return this.limit;
     }
 
-    public void setLimit(Integer limit) {
+    public void setLimit(String limit) {
         this.limit = limit;
     }
 
-    public Integer getLookbackDays() {
+    public String getLookbackDays() {
         return this.lookbackDays;
     }
 
-    public void setLookbackDays(Integer lookbackDays) {
+    public void setLookbackDays(String lookbackDays) {
         this.lookbackDays = lookbackDays;
     }
 
@@ -41,11 +41,11 @@ public class ModelRankingRefreshTriggerRequest {
         this.rankScope = rankScope;
     }
 
-    public Integer getRefreshIntervalSeconds() {
+    public String getRefreshIntervalSeconds() {
         return this.refreshIntervalSeconds;
     }
 
-    public void setRefreshIntervalSeconds(Integer refreshIntervalSeconds) {
+    public void setRefreshIntervalSeconds(String refreshIntervalSeconds) {
         this.refreshIntervalSeconds = refreshIntervalSeconds;
     }
 

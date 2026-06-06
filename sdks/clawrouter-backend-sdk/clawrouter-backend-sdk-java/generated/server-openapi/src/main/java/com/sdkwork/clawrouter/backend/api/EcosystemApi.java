@@ -14,7 +14,7 @@ public class EcosystemApi {
     }
 
     /** List skills */
-    public SkillsListResult skillsList(String q, String marketStatus, String reviewStatus, String visibility, Boolean enabled, String categoryId, Integer page, Integer pageSize) throws Exception {
+    public SkillsListResult skillsList(String q, String marketStatus, String reviewStatus, String visibility, Boolean enabled, String categoryId, String page, String pageSize) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("q", q, "form", true, false, null),
             new QueryParameterSpec("market_status", marketStatus, "form", true, false, null),
@@ -60,7 +60,7 @@ public class EcosystemApi {
     }
 
     /** List skill packages */
-    public SkillsPackageListResult skillsPackageList(String q, Boolean enabled, String categoryId, Integer page, Integer pageSize) throws Exception {
+    public SkillsPackageListResult skillsPackageList(String q, Boolean enabled, String categoryId, String page, String pageSize) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("q", q, "form", true, false, null),
             new QueryParameterSpec("enabled", enabled, "form", true, false, null),

@@ -17,7 +17,7 @@ impl ServiceProvidersApi {
     }
 
     /// Service Provider Adjustments List
-    pub async fn adjustments_list(&self, page: Option<i64>, page_size: Option<i64>, status: Option<&str>, provider_id: Option<&str>, seller_provider_id: Option<&str>, buyer_provider_id: Option<&str>, edge_id: Option<&str>) -> Result<AdjustmentsListResult, SdkworkError> {
+    pub async fn adjustments_list(&self, page: Option<&str>, page_size: Option<&str>, status: Option<&str>, provider_id: Option<&str>, seller_provider_id: Option<&str>, buyer_provider_id: Option<&str>, edge_id: Option<&str>) -> Result<AdjustmentsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
@@ -32,7 +32,7 @@ impl ServiceProvidersApi {
     }
 
     /// Service Provider Audit Events List
-    pub async fn audit_events_list(&self, page: Option<i64>, page_size: Option<i64>, status: Option<&str>, provider_id: Option<&str>, seller_provider_id: Option<&str>, buyer_provider_id: Option<&str>, edge_id: Option<&str>) -> Result<AuditEventsListResult, SdkworkError> {
+    pub async fn audit_events_list(&self, page: Option<&str>, page_size: Option<&str>, status: Option<&str>, provider_id: Option<&str>, seller_provider_id: Option<&str>, buyer_provider_id: Option<&str>, edge_id: Option<&str>) -> Result<AuditEventsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
@@ -47,7 +47,7 @@ impl ServiceProvidersApi {
     }
 
     /// Service Provider Bindings List
-    pub async fn bindings_list(&self, page: Option<i64>, page_size: Option<i64>, status: Option<&str>, provider_id: Option<&str>, seller_provider_id: Option<&str>, buyer_provider_id: Option<&str>, edge_id: Option<&str>) -> Result<BindingsListResult, SdkworkError> {
+    pub async fn bindings_list(&self, page: Option<&str>, page_size: Option<&str>, status: Option<&str>, provider_id: Option<&str>, seller_provider_id: Option<&str>, buyer_provider_id: Option<&str>, edge_id: Option<&str>) -> Result<BindingsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
@@ -62,7 +62,7 @@ impl ServiceProvidersApi {
     }
 
     /// Service Provider Contracts List
-    pub async fn contracts_list(&self, page: Option<i64>, page_size: Option<i64>, status: Option<&str>, provider_id: Option<&str>, seller_provider_id: Option<&str>, buyer_provider_id: Option<&str>, edge_id: Option<&str>) -> Result<ContractsListResult, SdkworkError> {
+    pub async fn contracts_list(&self, page: Option<&str>, page_size: Option<&str>, status: Option<&str>, provider_id: Option<&str>, seller_provider_id: Option<&str>, buyer_provider_id: Option<&str>, edge_id: Option<&str>) -> Result<ContractsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
@@ -77,7 +77,7 @@ impl ServiceProvidersApi {
     }
 
     /// Service Provider Dashboard Retrieve
-    pub async fn dashboard_retrieve(&self, page: Option<i64>, page_size: Option<i64>, status: Option<&str>, provider_id: Option<&str>, seller_provider_id: Option<&str>, buyer_provider_id: Option<&str>, edge_id: Option<&str>) -> Result<DashboardRetrieveResult, SdkworkError> {
+    pub async fn dashboard_retrieve(&self, page: Option<&str>, page_size: Option<&str>, status: Option<&str>, provider_id: Option<&str>, seller_provider_id: Option<&str>, buyer_provider_id: Option<&str>, edge_id: Option<&str>) -> Result<DashboardRetrieveResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
@@ -92,7 +92,7 @@ impl ServiceProvidersApi {
     }
 
     /// Service Provider Downstreams List
-    pub async fn downstreams_list(&self, page: Option<i64>, page_size: Option<i64>, status: Option<&str>, provider_id: Option<&str>, seller_provider_id: Option<&str>, buyer_provider_id: Option<&str>, edge_id: Option<&str>) -> Result<DownstreamsListResult, SdkworkError> {
+    pub async fn downstreams_list(&self, page: Option<&str>, page_size: Option<&str>, status: Option<&str>, provider_id: Option<&str>, seller_provider_id: Option<&str>, buyer_provider_id: Option<&str>, edge_id: Option<&str>) -> Result<DownstreamsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
@@ -119,7 +119,7 @@ impl ServiceProvidersApi {
     }
 
     /// Service Provider Members List
-    pub async fn members_list(&self, page: Option<i64>, page_size: Option<i64>, status: Option<&str>, provider_id: Option<&str>, seller_provider_id: Option<&str>, buyer_provider_id: Option<&str>, edge_id: Option<&str>) -> Result<MembersListResult, SdkworkError> {
+    pub async fn members_list(&self, page: Option<&str>, page_size: Option<&str>, status: Option<&str>, provider_id: Option<&str>, seller_provider_id: Option<&str>, buyer_provider_id: Option<&str>, edge_id: Option<&str>) -> Result<MembersListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
@@ -134,7 +134,7 @@ impl ServiceProvidersApi {
     }
 
     /// Service Provider Pricing Rules List
-    pub async fn pricing_rules_list(&self, page: Option<i64>, page_size: Option<i64>, status: Option<&str>, provider_id: Option<&str>, seller_provider_id: Option<&str>, buyer_provider_id: Option<&str>, edge_id: Option<&str>) -> Result<PricingRulesListResult, SdkworkError> {
+    pub async fn pricing_rules_list(&self, page: Option<&str>, page_size: Option<&str>, status: Option<&str>, provider_id: Option<&str>, seller_provider_id: Option<&str>, buyer_provider_id: Option<&str>, edge_id: Option<&str>) -> Result<PricingRulesListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
@@ -185,7 +185,7 @@ impl ServiceProvidersApi {
     }
 
     /// Service Providers List
-    pub async fn provider_registry_list(&self, page: Option<i64>, page_size: Option<i64>, status: Option<&str>, provider_id: Option<&str>, seller_provider_id: Option<&str>, buyer_provider_id: Option<&str>, edge_id: Option<&str>) -> Result<ProviderRegistryListResult, SdkworkError> {
+    pub async fn provider_registry_list(&self, page: Option<&str>, page_size: Option<&str>, status: Option<&str>, provider_id: Option<&str>, seller_provider_id: Option<&str>, buyer_provider_id: Option<&str>, edge_id: Option<&str>) -> Result<ProviderRegistryListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
@@ -200,7 +200,7 @@ impl ServiceProvidersApi {
     }
 
     /// Service Provider Reconciliation Runs List
-    pub async fn reconciliation_runs_list(&self, page: Option<i64>, page_size: Option<i64>, status: Option<&str>, provider_id: Option<&str>, seller_provider_id: Option<&str>, buyer_provider_id: Option<&str>, edge_id: Option<&str>) -> Result<ReconciliationRunsListResult, SdkworkError> {
+    pub async fn reconciliation_runs_list(&self, page: Option<&str>, page_size: Option<&str>, status: Option<&str>, provider_id: Option<&str>, seller_provider_id: Option<&str>, buyer_provider_id: Option<&str>, edge_id: Option<&str>) -> Result<ReconciliationRunsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
@@ -215,7 +215,7 @@ impl ServiceProvidersApi {
     }
 
     /// Service Provider Relations List
-    pub async fn relations_list(&self, page: Option<i64>, page_size: Option<i64>, status: Option<&str>, provider_id: Option<&str>, seller_provider_id: Option<&str>, buyer_provider_id: Option<&str>, edge_id: Option<&str>) -> Result<RelationsListResult, SdkworkError> {
+    pub async fn relations_list(&self, page: Option<&str>, page_size: Option<&str>, status: Option<&str>, provider_id: Option<&str>, seller_provider_id: Option<&str>, buyer_provider_id: Option<&str>, edge_id: Option<&str>) -> Result<RelationsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
@@ -230,7 +230,7 @@ impl ServiceProvidersApi {
     }
 
     /// Service Provider Risk Events List
-    pub async fn risk_events_list(&self, page: Option<i64>, page_size: Option<i64>, status: Option<&str>, provider_id: Option<&str>, seller_provider_id: Option<&str>, buyer_provider_id: Option<&str>, edge_id: Option<&str>) -> Result<RiskEventsListResult, SdkworkError> {
+    pub async fn risk_events_list(&self, page: Option<&str>, page_size: Option<&str>, status: Option<&str>, provider_id: Option<&str>, seller_provider_id: Option<&str>, buyer_provider_id: Option<&str>, edge_id: Option<&str>) -> Result<RiskEventsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
@@ -245,7 +245,7 @@ impl ServiceProvidersApi {
     }
 
     /// Service Provider Statements List
-    pub async fn statements_list(&self, page: Option<i64>, page_size: Option<i64>, status: Option<&str>, provider_id: Option<&str>, seller_provider_id: Option<&str>, buyer_provider_id: Option<&str>, edge_id: Option<&str>) -> Result<StatementsListResult, SdkworkError> {
+    pub async fn statements_list(&self, page: Option<&str>, page_size: Option<&str>, status: Option<&str>, provider_id: Option<&str>, seller_provider_id: Option<&str>, buyer_provider_id: Option<&str>, edge_id: Option<&str>) -> Result<StatementsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
@@ -260,7 +260,7 @@ impl ServiceProvidersApi {
     }
 
     /// Service Provider Usage List
-    pub async fn usage_list(&self, page: Option<i64>, page_size: Option<i64>, status: Option<&str>, provider_id: Option<&str>, seller_provider_id: Option<&str>, buyer_provider_id: Option<&str>, edge_id: Option<&str>) -> Result<UsageListResult, SdkworkError> {
+    pub async fn usage_list(&self, page: Option<&str>, page_size: Option<&str>, status: Option<&str>, provider_id: Option<&str>, seller_provider_id: Option<&str>, buyer_provider_id: Option<&str>, edge_id: Option<&str>) -> Result<UsageListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
@@ -275,7 +275,7 @@ impl ServiceProvidersApi {
     }
 
     /// Service Provider Wallet Accounts List
-    pub async fn provider_wallet_accounts_list(&self, page: Option<i64>, page_size: Option<i64>, status: Option<&str>, provider_id: Option<&str>, seller_provider_id: Option<&str>, buyer_provider_id: Option<&str>, edge_id: Option<&str>) -> Result<ProviderWalletAccountsListResult, SdkworkError> {
+    pub async fn provider_wallet_accounts_list(&self, page: Option<&str>, page_size: Option<&str>, status: Option<&str>, provider_id: Option<&str>, seller_provider_id: Option<&str>, buyer_provider_id: Option<&str>, edge_id: Option<&str>) -> Result<ProviderWalletAccountsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),

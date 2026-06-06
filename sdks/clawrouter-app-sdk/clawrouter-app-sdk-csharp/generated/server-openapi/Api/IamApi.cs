@@ -55,14 +55,6 @@ namespace Sdkwork.ClawRouter.App.Api
         }
 
         /// <summary>
-        /// Retrieve current IAM user
-        /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.UsersCurrentRetrieveResult?> UsersCurrentRetrieveAsync()
-        {
-            return await _client.GetAsync<Sdkwork.ClawRouter.App.Models.UsersCurrentRetrieveResult>(ApiPaths.AppPath("/iam/users/current"));
-        }
-
-        /// <summary>
         /// List settings
         /// </summary>
         public async Task<Sdkwork.ClawRouter.App.Models.UsersSettingsRetrieveResult?> UsersSettingsRetrieveAsync()

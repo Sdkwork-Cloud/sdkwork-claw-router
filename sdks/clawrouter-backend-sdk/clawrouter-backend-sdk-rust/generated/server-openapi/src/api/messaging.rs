@@ -35,7 +35,7 @@ impl MessagingApi {
     }
 
     /// Messaging provider accounts list
-    pub async fn provider_accounts_list(&self, page: Option<i64>, page_size: Option<i64>, q: Option<&str>, status: Option<&str>, channel: Option<&str>, provider_code: Option<&str>) -> Result<ProviderAccountsListResult, SdkworkError> {
+    pub async fn provider_accounts_list(&self, page: Option<&str>, page_size: Option<&str>, q: Option<&str>, status: Option<&str>, channel: Option<&str>, provider_code: Option<&str>) -> Result<ProviderAccountsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
@@ -61,7 +61,7 @@ impl MessagingApi {
     }
 
     /// Messaging rate limit buckets list
-    pub async fn rate_limit_buckets_list(&self, page: Option<i64>, page_size: Option<i64>, scene_code: Option<&str>, channel: Option<&str>, target_hash: Option<&str>, ip_hash: Option<&str>, device_hash: Option<&str>) -> Result<RateLimitBucketsListResult, SdkworkError> {
+    pub async fn rate_limit_buckets_list(&self, page: Option<&str>, page_size: Option<&str>, scene_code: Option<&str>, channel: Option<&str>, target_hash: Option<&str>, ip_hash: Option<&str>, device_hash: Option<&str>) -> Result<RateLimitBucketsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
@@ -76,7 +76,7 @@ impl MessagingApi {
     }
 
     /// Messaging route rules list
-    pub async fn route_rules_list(&self, page: Option<i64>, page_size: Option<i64>, q: Option<&str>, status: Option<&str>, channel: Option<&str>, provider_code: Option<&str>) -> Result<RouteRulesListResult, SdkworkError> {
+    pub async fn route_rules_list(&self, page: Option<&str>, page_size: Option<&str>, q: Option<&str>, status: Option<&str>, channel: Option<&str>, provider_code: Option<&str>) -> Result<RouteRulesListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
@@ -102,7 +102,7 @@ impl MessagingApi {
     }
 
     /// Messaging send requests list
-    pub async fn send_requests_list(&self, page: Option<i64>, page_size: Option<i64>, status: Option<&str>, channel: Option<&str>, scene_code: Option<&str>, provider_code: Option<&str>, target_hash: Option<&str>) -> Result<SendRequestsListResult, SdkworkError> {
+    pub async fn send_requests_list(&self, page: Option<&str>, page_size: Option<&str>, status: Option<&str>, channel: Option<&str>, scene_code: Option<&str>, provider_code: Option<&str>, target_hash: Option<&str>) -> Result<SendRequestsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
@@ -117,7 +117,7 @@ impl MessagingApi {
     }
 
     /// Messaging sender identities list
-    pub async fn sender_identities_list(&self, page: Option<i64>, page_size: Option<i64>, q: Option<&str>, status: Option<&str>, channel: Option<&str>, provider_code: Option<&str>) -> Result<SenderIdentitiesListResult, SdkworkError> {
+    pub async fn sender_identities_list(&self, page: Option<&str>, page_size: Option<&str>, q: Option<&str>, status: Option<&str>, channel: Option<&str>, provider_code: Option<&str>) -> Result<SenderIdentitiesListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
@@ -143,7 +143,7 @@ impl MessagingApi {
     }
 
     /// Messaging suppressions list
-    pub async fn suppressions_list(&self, page: Option<i64>, page_size: Option<i64>, status: Option<&str>, channel: Option<&str>, target_hash: Option<&str>, reason_code: Option<&str>) -> Result<SuppressionsListResult, SdkworkError> {
+    pub async fn suppressions_list(&self, page: Option<&str>, page_size: Option<&str>, status: Option<&str>, channel: Option<&str>, target_hash: Option<&str>, reason_code: Option<&str>) -> Result<SuppressionsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
@@ -181,7 +181,7 @@ impl MessagingApi {
     }
 
     /// Messaging templates list
-    pub async fn templates_list(&self, page: Option<i64>, page_size: Option<i64>, q: Option<&str>, status: Option<&str>, channel: Option<&str>, provider_code: Option<&str>) -> Result<TemplatesListResult, SdkworkError> {
+    pub async fn templates_list(&self, page: Option<&str>, page_size: Option<&str>, q: Option<&str>, status: Option<&str>, channel: Option<&str>, provider_code: Option<&str>) -> Result<TemplatesListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
@@ -213,7 +213,7 @@ impl MessagingApi {
     }
 
     /// Verification policies list
-    pub async fn verification_policies_list(&self, page: Option<i64>, page_size: Option<i64>, q: Option<&str>, status: Option<&str>, channel: Option<&str>, provider_code: Option<&str>) -> Result<VerificationPoliciesListResult, SdkworkError> {
+    pub async fn verification_policies_list(&self, page: Option<&str>, page_size: Option<&str>, q: Option<&str>, status: Option<&str>, channel: Option<&str>, provider_code: Option<&str>) -> Result<VerificationPoliciesListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),

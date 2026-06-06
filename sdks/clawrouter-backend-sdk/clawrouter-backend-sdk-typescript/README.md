@@ -114,8 +114,8 @@ const result = await client.ai.channelGroups.list();
 ### commerce
 
 ```typescript
-// Commerce Reports Payment Reconciliation Retrieve
-const result = await client.commerce.commerceReports.paymentReconciliation.retrieve();
+// Recharges Settings Retrieve
+const result = await client.commerce.recharges.settings.retrieve();
 ```
 
 ### content
@@ -135,8 +135,14 @@ const result = await client.ecosystem.skills.categories.list();
 ### iam
 
 ```typescript
-// List API key map
-const result = await client.iam.apiKeys.list();
+// Update user
+const body = {
+  group: 'group',
+  id: 'id',
+  status: 'active',
+  username: 'username',
+};
+const result = await client.iam.users.update(body);
 ```
 
 ### integration

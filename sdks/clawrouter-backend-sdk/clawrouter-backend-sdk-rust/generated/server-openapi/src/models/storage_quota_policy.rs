@@ -17,11 +17,11 @@ pub struct StorageQuotaPolicy {
 
     /// Limit field on storage quota policy.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub limit: Option<i64>,
+    pub limit: Option<String>,
 
     /// Quota limit bytes field on storage quota policy.
     #[serde(rename = "quotaLimitBytes")]
-    pub quota_limit_bytes: i64,
+    pub quota_limit_bytes: String,
 
     /// Scope id field on storage quota policy.
     #[serde(rename = "scopeId")]
@@ -34,7 +34,7 @@ pub struct StorageQuotaPolicy {
     /// Single file limit bytes field on storage quota policy.
     #[serde(rename = "singleFileLimitBytes")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub single_file_limit_bytes: Option<i64>,
+    pub single_file_limit_bytes: Option<String>,
 
     /// Status field on storage quota policy.
     pub status: String,
@@ -46,9 +46,9 @@ pub struct StorageQuotaPolicy {
 
     /// Used field on storage quota policy.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub used: Option<i64>,
+    pub used: Option<String>,
 
     /// Used bytes field on storage quota policy.
     #[serde(rename = "usedBytes")]
-    pub used_bytes: i64,
+    pub used_bytes: String,
 }

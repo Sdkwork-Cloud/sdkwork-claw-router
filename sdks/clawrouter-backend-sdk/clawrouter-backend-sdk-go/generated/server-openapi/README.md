@@ -98,11 +98,11 @@ client.SetHeader("X-Custom-Header", "value")
 // List managed agents
 params := map[string]interface{}{
     "q": "q",
-    "owner_user_id": 2,
+    "owner_user_id": "owner_user_id",
     "status": "active",
     "visibility": "private",
-    "page": 5,
-    "page_size": 6,
+    "page": "page",
+    "page_size": "page_size",
 }
 result, err := client.Agents.AgentDefinitionsList(params)
 if err != nil {
@@ -125,8 +125,8 @@ fmt.Println(result)
 ### commerce
 
 ```go
-// Commerce Reports Payment Reconciliation Retrieve
-result, err := client.Commerce.ReportsPaymentReconciliationRetrieve()
+// Recharges Settings Retrieve
+result, err := client.Commerce.RechargesSettingsRetrieve()
 if err != nil {
     panic(err)
 }
@@ -158,8 +158,14 @@ fmt.Println(result)
 ### iam
 
 ```go
-// List API key map
-result, err := client.Iam.ApiKeysList()
+// Update user
+body := sdktypes.AdminUserUpdateRequest{
+    Group: "group",
+    Id: "id",
+    Status: "active",
+    Username: "username",
+}
+result, err := client.Iam.UsersUpdate(body)
 if err != nil {
     panic(err)
 }
@@ -182,8 +188,8 @@ fmt.Println(result)
 ```go
 // List MCP servers
 params := map[string]interface{}{
-    "page": 1,
-    "page_size": 2,
+    "page": "page",
+    "page_size": "page_size",
     "q": "q",
     "transport": "transport",
     "visibility": "visibility",
@@ -202,8 +208,8 @@ fmt.Println(result)
 ```go
 // Messaging provider accounts list
 params := map[string]interface{}{
-    "page": 1,
-    "page_size": 2,
+    "page": "page",
+    "page_size": "page_size",
     "q": "q",
     "status": "status",
     "channel": "sms",
@@ -257,8 +263,8 @@ fmt.Println(result)
 ```go
 // List admin prompts
 params := map[string]interface{}{
-    "page": 1,
-    "page_size": 2,
+    "page": "page",
+    "page_size": "page_size",
     "q": "q",
     "prompt_type": "prompt_type",
     "visibility": "visibility",
@@ -277,8 +283,8 @@ fmt.Println(result)
 ```go
 // Service Provider Adjustments List
 params := map[string]interface{}{
-    "page": 1,
-    "page_size": 2,
+    "page": "page",
+    "page_size": "page_size",
     "status": "status",
     "provider_id": "provider_id",
     "seller_provider_id": "seller_provider_id",

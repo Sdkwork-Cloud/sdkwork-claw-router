@@ -10,120 +10,37 @@
   },
   "status": "ok",
   "mode": "apply",
-  "hasChanges": true,
+  "hasChanges": false,
   "hasDestructiveChanges": false,
-  "changeFingerprint": "2597de40bb5afc9858dcf0f2ea8cf1b78d5b42c63835320fd09f2d3f08c60ab3",
+  "changeFingerprint": "fe77f5ef42eb8e4bc102d07a3b398735703992834237a081b47697770d990230",
   "changeImpact": {
     "schemaVersion": 1,
-    "areas": [
-      "models"
-    ],
-    "details": [
-      {
-        "area": "models",
-        "paths": [
-          "src/types/gateway-trace.ts"
-        ]
-      }
-    ],
-    "requiresVerification": true,
-    "summary": "Detected impact areas: models. Verification is required."
+    "areas": [],
+    "details": [],
+    "requiresVerification": false,
+    "summary": "No generated, scaffold, or backup changes detected. Verification can be skipped."
   },
   "executionDecision": {
     "schemaVersion": 1,
-    "riskLevel": "medium",
-    "nextAction": "verify",
+    "riskLevel": "low",
+    "nextAction": "skip",
     "requiresManualReview": false,
     "applyRequiresExpectedFingerprint": false,
-    "summary": "Changes have been applied. Run the required verification plan now.",
+    "summary": "No actionable changes were detected. No apply or verification step is required.",
     "reasons": [
-      "verification-required"
+      "no-actionable-changes"
     ]
   },
   "executionHandoff": {
     "schemaVersion": 1,
-    "summary": "Run the required verification commands now.",
-    "steps": [
-      {
-        "id": "verify-check",
-        "title": "Unified package check",
-        "required": true,
-        "rationale": "Validate the generated package with the unified publish helper. Triggered by: models.",
-        "workingDirectory": "D:\\javasource\\spring-ai-plus\\spring-ai-plus-business\\apps\\sdkwork-claw-router\\sdks\\clawrouter-app-sdk\\clawrouter-app-sdk-typescript",
-        "command": "node",
-        "args": [
-          "./bin/publish-core.mjs",
-          "--language",
-          "typescript",
-          "--project-dir",
-          ".",
-          "--action",
-          "check"
-        ],
-        "displayCommand": "node ./bin/publish-core.mjs --language typescript --project-dir . --action check"
-      },
-      {
-        "id": "verify-build",
-        "title": "Unified package build",
-        "required": true,
-        "rationale": "Run the full package build because this language uses a lighter check path than the final build. Triggered by: models.",
-        "workingDirectory": "D:\\javasource\\spring-ai-plus\\spring-ai-plus-business\\apps\\sdkwork-claw-router\\sdks\\clawrouter-app-sdk\\clawrouter-app-sdk-typescript",
-        "command": "node",
-        "args": [
-          "./bin/publish-core.mjs",
-          "--language",
-          "typescript",
-          "--project-dir",
-          ".",
-          "--action",
-          "build"
-        ],
-        "displayCommand": "node ./bin/publish-core.mjs --language typescript --project-dir . --action build"
-      }
-    ]
+    "summary": "No further commands are required.",
+    "steps": []
   },
   "verificationPlan": {
-    "shouldRun": true,
-    "runPhase": "now",
-    "summary": "Detected impact areas: models. Verification is required. Run the required verification commands now against the generated SDK output.",
-    "steps": [
-      {
-        "id": "check",
-        "title": "Unified package check",
-        "required": true,
-        "rationale": "Validate the generated package with the unified publish helper. Triggered by: models.",
-        "workingDirectory": "D:\\javasource\\spring-ai-plus\\spring-ai-plus-business\\apps\\sdkwork-claw-router\\sdks\\clawrouter-app-sdk\\clawrouter-app-sdk-typescript",
-        "command": "node",
-        "args": [
-          "./bin/publish-core.mjs",
-          "--language",
-          "typescript",
-          "--project-dir",
-          ".",
-          "--action",
-          "check"
-        ],
-        "displayCommand": "node ./bin/publish-core.mjs --language typescript --project-dir . --action check"
-      },
-      {
-        "id": "build",
-        "title": "Unified package build",
-        "required": true,
-        "rationale": "Run the full package build because this language uses a lighter check path than the final build. Triggered by: models.",
-        "workingDirectory": "D:\\javasource\\spring-ai-plus\\spring-ai-plus-business\\apps\\sdkwork-claw-router\\sdks\\clawrouter-app-sdk\\clawrouter-app-sdk-typescript",
-        "command": "node",
-        "args": [
-          "./bin/publish-core.mjs",
-          "--language",
-          "typescript",
-          "--project-dir",
-          ".",
-          "--action",
-          "build"
-        ],
-        "displayCommand": "node ./bin/publish-core.mjs --language typescript --project-dir . --action build"
-      }
-    ]
+    "shouldRun": false,
+    "runPhase": "skip",
+    "summary": "No generated, scaffold, or backup changes detected. Verification can be skipped.",
+    "steps": []
   },
   "sdk": {
     "name": "clawrouter-app-sdk",
@@ -138,10 +55,10 @@
     "localVersions": []
   },
   "stats": {
-    "totalFiles": 489,
-    "models": 450,
-    "apis": 16,
-    "types": 452
+    "totalFiles": 314,
+    "models": 277,
+    "apis": 14,
+    "types": 279
   },
   "warnings": [
     {
@@ -154,31 +71,7 @@
     },
     {
       "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
-      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/memberships-points-daily-rewards-create-request.ts"
-    },
-    {
-      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
-      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/memberships-privileges-speed-ups-create-request.ts"
-    },
-    {
-      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
-      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/password-resets-create-result.ts"
-    },
-    {
-      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
-      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/plus-api-result.ts"
-    },
-    {
-      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
-      "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/sessions-current-delete-result.ts"
-    },
-    {
-      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
       "message": "Applied ClawRouter strict TypeScript contract normalization to src/types/index.ts"
-    },
-    {
-      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
-      "message": "Applied ClawRouter strict TypeScript contract normalization to src/api/commerce.ts"
     },
     {
       "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
@@ -187,10 +80,6 @@
     {
       "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
       "message": "Applied ClawRouter strict TypeScript contract normalization to src/api/ai.ts"
-    },
-    {
-      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
-      "message": "Applied ClawRouter strict TypeScript contract normalization to src/api/auth.ts"
     },
     {
       "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
@@ -218,15 +107,15 @@
     },
     {
       "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
-      "message": "Applied ClawRouter strict TypeScript contract normalization to src/api/open-platform.ts"
-    },
-    {
-      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
       "message": "Applied ClawRouter strict TypeScript contract normalization to src/api/platform.ts"
     },
     {
       "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
       "message": "Applied ClawRouter strict TypeScript contract normalization to src/api/system.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/api/commerce.ts"
     },
     {
       "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
@@ -271,17 +160,15 @@
   ],
   "syncSummary": {
     "dryRun": false,
-    "writtenFiles": 1,
+    "writtenFiles": 0,
     "skippedScaffoldFiles": 2,
-    "skippedUnchangedGeneratedFiles": 485,
+    "skippedUnchangedGeneratedFiles": 311,
     "deletedGeneratedFiles": 0,
     "changeSummaryPath": ".sdkwork/sdkwork-generator-changes.json",
-    "changeFingerprint": "2597de40bb5afc9858dcf0f2ea8cf1b78d5b42c63835320fd09f2d3f08c60ab3",
+    "changeFingerprint": "fe77f5ef42eb8e4bc102d07a3b398735703992834237a081b47697770d990230",
     "changes": {
       "createdGeneratedFiles": [],
-      "updatedGeneratedFiles": [
-        "src/types/gateway-trace.ts"
-      ],
+      "updatedGeneratedFiles": [],
       "unchangedGeneratedFiles": [
         "bin/publish-core.mjs",
         "bin/publish.ps1",
@@ -295,7 +182,6 @@
         "sdkwork-sdk.json",
         "src/api/agents.ts",
         "src/api/ai.ts",
-        "src/api/auth.ts",
         "src/api/base.ts",
         "src/api/chat.ts",
         "src/api/commerce.ts",
@@ -305,7 +191,6 @@
         "src/api/index.ts",
         "src/api/memory.ts",
         "src/api/notification.ts",
-        "src/api/open-platform.ts",
         "src/api/paths.ts",
         "src/api/platform.ts",
         "src/api/runtime.ts",
@@ -317,12 +202,6 @@
         "src/http/index.ts",
         "src/index.ts",
         "src/sdk.ts",
-        "src/types/accounts-current-summary-retrieve-result.ts",
-        "src/types/addresses-create-result.ts",
-        "src/types/addresses-default-selection-create-result.ts",
-        "src/types/addresses-delete-result.ts",
-        "src/types/addresses-list-result.ts",
-        "src/types/addresses-update-result.ts",
         "src/types/agent-capabilities.ts",
         "src/types/agent-create-request.ts",
         "src/types/agent-definitions-create-result.ts",
@@ -386,18 +265,6 @@
         "src/types/archives-create-result.ts",
         "src/types/artifacts-create-result.ts",
         "src/types/artifacts-list-result.ts",
-        "src/types/auth-runtime-settings-response.ts",
-        "src/types/auth-verification-policy.ts",
-        "src/types/billing-history-collection-response.ts",
-        "src/types/billing-history-list-result.ts",
-        "src/types/cart-current-retrieve-result.ts",
-        "src/types/cart-items-create-result.ts",
-        "src/types/cart-items-delete-result.ts",
-        "src/types/cart-items-update-result.ts",
-        "src/types/catalog-categories-list-result.ts",
-        "src/types/catalog-products-list-result.ts",
-        "src/types/catalog-products-retrieve-result.ts",
-        "src/types/catalog-skus-retrieve-result.ts",
         "src/types/channel-groups-list-result.ts",
         "src/types/chat-conversation-create-request.ts",
         "src/types/chat-conversation-item.ts",
@@ -409,10 +276,6 @@
         "src/types/chat-turn-create-response.ts",
         "src/types/chat-turn-item.ts",
         "src/types/chat-turn-response-request.ts",
-        "src/types/checkout-sessions-create-result.ts",
-        "src/types/checkout-sessions-orders-create-result.ts",
-        "src/types/checkout-sessions-quotes-create-result.ts",
-        "src/types/checkout-sessions-retrieve-result.ts",
         "src/types/comments-create-result.ts",
         "src/types/comments-delete-result.ts",
         "src/types/comments-likes-create-result.ts",
@@ -424,34 +287,7 @@
         "src/types/comments-reply-create-result.ts",
         "src/types/comments-retrieve-result.ts",
         "src/types/comments-statistics-list-result.ts",
-        "src/types/commerce-membership-purchase-request.ts",
-        "src/types/commerce-operation-response.ts",
-        "src/types/commerce-payment-attempt-create-request.ts",
-        "src/types/commerce-payment-attempt-item.ts",
-        "src/types/commerce-payment-attempt-response.ts",
-        "src/types/commerce-payment-intent-create-request.ts",
-        "src/types/commerce-payment-intent-item.ts",
-        "src/types/commerce-payment-intent-response.ts",
-        "src/types/commerce-payment-method-item.ts",
-        "src/types/commerce-payment-method-list-response.ts",
-        "src/types/commerce-product-category-item.ts",
-        "src/types/commerce-product-category-list-response.ts",
-        "src/types/commerce-product-media-item.ts",
-        "src/types/commerce-product-sku-attribute-item.ts",
-        "src/types/commerce-product-sku-item.ts",
-        "src/types/commerce-product-sku-response.ts",
-        "src/types/commerce-product-spu-detail-response.ts",
-        "src/types/commerce-product-spu-item.ts",
-        "src/types/commerce-product-spu-list-response.ts",
-        "src/types/commerce-recharge-checkout-status-response.ts",
-        "src/types/commerce-recharge-order-create-request.ts",
-        "src/types/commerce-recharge-order-create-response.ts",
-        "src/types/commerce-recharge-package-item.ts",
-        "src/types/commerce-recharge-package-list-response.ts",
         "src/types/commerce-recharge-settings-response.ts",
-        "src/types/commerce-standard-collection-response.ts",
-        "src/types/commerce-standard-command-request.ts",
-        "src/types/commerce-standard-resource-response.ts",
         "src/types/common.ts",
         "src/types/conversation-messages-list-result.ts",
         "src/types/conversations-create-result.ts",
@@ -488,9 +324,6 @@
         "src/types/dashboard-sparkline-point.ts",
         "src/types/dashboard-top-model.ts",
         "src/types/delete-api-key-response.ts",
-        "src/types/department-assignments-list-result.ts",
-        "src/types/departments-list-result.ts",
-        "src/types/departments-tree-retrieve-result.ts",
         "src/types/documentation-create-result.ts",
         "src/types/entries-create-result.ts",
         "src/types/entries-list-result.ts",
@@ -528,49 +361,12 @@
         "src/types/forum-overview-source.ts",
         "src/types/forum-overview-stats.ts",
         "src/types/forum-reply-comment-request.ts",
-        "src/types/fulfillments-list-result.ts",
-        "src/types/fulfillments-retrieve-result.ts",
+        "src/types/gateway-trace.ts",
         "src/types/gateway-traces-list-result.ts",
         "src/types/gateway-traces-response.ts",
         "src/types/generation-history-item.ts",
         "src/types/generation-history-response.ts",
         "src/types/generation-list-result.ts",
-        "src/types/iam-app-context.ts",
-        "src/types/iam-current-session-update-request.ts",
-        "src/types/iam-department-assignment-item.ts",
-        "src/types/iam-department-assignment-list-response.ts",
-        "src/types/iam-department-item.ts",
-        "src/types/iam-department-list-response.ts",
-        "src/types/iam-department-tree-item.ts",
-        "src/types/iam-department-tree-response.ts",
-        "src/types/iam-oauth-authorization-url-response.ts",
-        "src/types/iam-oauth-session-create-request.ts",
-        "src/types/iam-organization-item.ts",
-        "src/types/iam-organization-list-response.ts",
-        "src/types/iam-organization-membership-item.ts",
-        "src/types/iam-organization-membership-list-response.ts",
-        "src/types/iam-organization-tree-item.ts",
-        "src/types/iam-organization-tree-response.ts",
-        "src/types/iam-password-reset-create-request.ts",
-        "src/types/iam-password-reset-request-create-request.ts",
-        "src/types/iam-password-reset-request-response.ts",
-        "src/types/iam-position-assignment-item.ts",
-        "src/types/iam-position-assignment-list-response.ts",
-        "src/types/iam-position-item.ts",
-        "src/types/iam-position-list-response.ts",
-        "src/types/iam-registration-create-request.ts",
-        "src/types/iam-role-binding-item.ts",
-        "src/types/iam-role-binding-list-response.ts",
-        "src/types/iam-runtime-retrieve-result.ts",
-        "src/types/iam-session-create-request.ts",
-        "src/types/iam-session-refresh-request.ts",
-        "src/types/iam-session-response.ts",
-        "src/types/iam-user-response.ts",
-        "src/types/iam-verification-code-create-request.ts",
-        "src/types/iam-verification-code-response.ts",
-        "src/types/iam-verification-code-verify-request.ts",
-        "src/types/iam-verification-code-verify-response.ts",
-        "src/types/iam-verification-policy-retrieve-result.ts",
         "src/types/index.ts",
         "src/types/invocation-event-streams-list-result.ts",
         "src/types/invocation-events-create-result.ts",
@@ -579,9 +375,6 @@
         "src/types/invocations-list-result.ts",
         "src/types/invocations-retrieve-result.ts",
         "src/types/invocations-submit-result.ts",
-        "src/types/invoices-create-result.ts",
-        "src/types/invoices-list-result.ts",
-        "src/types/invoices-retrieve-result.ts",
         "src/types/json-null.ts",
         "src/types/json-object.ts",
         "src/types/json-value.ts",
@@ -591,26 +384,6 @@
         "src/types/media-kind.ts",
         "src/types/media-resource.ts",
         "src/types/media-source.ts",
-        "src/types/memberships-benefits-list-result.ts",
-        "src/types/memberships-current-retrieve-result.ts",
-        "src/types/memberships-current-status-retrieve-result.ts",
-        "src/types/memberships-package-groups-list-result.ts",
-        "src/types/memberships-package-groups-packages-list-result.ts",
-        "src/types/memberships-package-groups-retrieve-result.ts",
-        "src/types/memberships-packages-list-result.ts",
-        "src/types/memberships-packages-retrieve-result.ts",
-        "src/types/memberships-plans-list-result.ts",
-        "src/types/memberships-points-balance-retrieve-result.ts",
-        "src/types/memberships-points-daily-rewards-create-request.ts",
-        "src/types/memberships-points-daily-rewards-create-result.ts",
-        "src/types/memberships-points-daily-rewards-status-retrieve-result.ts",
-        "src/types/memberships-points-history-list-result.ts",
-        "src/types/memberships-privileges-speed-ups-create-request.ts",
-        "src/types/memberships-privileges-speed-ups-create-result.ts",
-        "src/types/memberships-privileges-usage-retrieve-result.ts",
-        "src/types/memberships-purchases-create-result.ts",
-        "src/types/memberships-purchases-renew-result.ts",
-        "src/types/memberships-purchases-upgrade-result.ts",
         "src/types/memory-entry-create-request.ts",
         "src/types/memory-entry-item.ts",
         "src/types/memory-entry-list-response.ts",
@@ -633,61 +406,16 @@
         "src/types/notifications-list-result.ts",
         "src/types/notifications-popup-seen-create-result.ts",
         "src/types/notifications-response.ts",
-        "src/types/oauth-authorization-urls-retrieve-result.ts",
-        "src/types/oauth-sessions-create-result.ts",
-        "src/types/open-platform-qr-auth-password-create-request.ts",
-        "src/types/open-platform-qr-auth-scan-create-request.ts",
-        "src/types/open-platform-qr-auth-scan-response.ts",
-        "src/types/open-platform-qr-auth-session-create-request.ts",
-        "src/types/open-platform-qr-auth-session-response.ts",
-        "src/types/orders-cancellations-create-result.ts",
-        "src/types/orders-events-list-result.ts",
-        "src/types/orders-list-result.ts",
-        "src/types/orders-retrieve-result.ts",
-        "src/types/organization-memberships-list-result.ts",
-        "src/types/organizations-list-result.ts",
-        "src/types/organizations-tree-retrieve-result.ts",
-        "src/types/password-reset-requests-create-result.ts",
-        "src/types/password-resets-create-result.ts",
-        "src/types/payments-attempts-retrieve-result.ts",
-        "src/types/payments-intents-attempts-create-result.ts",
-        "src/types/payments-intents-create-result.ts",
-        "src/types/payments-intents-retrieve-result.ts",
-        "src/types/payments-methods-list-result.ts",
-        "src/types/plus-agent-skill-package-record.ts",
-        "src/types/plus-agent-skill-record.ts",
-        "src/types/plus-api-result.ts",
-        "src/types/plus-category-record.ts",
-        "src/types/position-assignments-list-result.ts",
-        "src/types/positions-list-result.ts",
         "src/types/problem-detail.ts",
-        "src/types/promotion-code-redemption-request.ts",
         "src/types/promotion-command-request.ts",
-        "src/types/promotion-coupon-wallet-item.ts",
         "src/types/promotion-operation-response.ts",
-        "src/types/promotion-user-coupon-wallet-list-response.ts",
-        "src/types/promotions-codes-redemptions-create-result.ts",
         "src/types/promotions-discount-applications-create-result.ts",
         "src/types/promotions-discount-applications-release-result.ts",
         "src/types/promotions-discount-applications-reversals-create-result.ts",
         "src/types/promotions-discount-applications-settle-result.ts",
-        "src/types/promotions-user-coupons-claims-create-result.ts",
-        "src/types/promotions-user-coupons-wallet-list-result.ts",
-        "src/types/qr-auth-sessions-create-result.ts",
-        "src/types/qr-auth-sessions-passwords-create-result.ts",
-        "src/types/qr-auth-sessions-retrieve-result.ts",
-        "src/types/qr-auth-sessions-scans-create-result.ts",
         "src/types/ranking-vendor-option.ts",
         "src/types/ranking-vendor-options-response.ts",
-        "src/types/recharges-orders-create-result.ts",
-        "src/types/recharges-orders-retrieve-result.ts",
-        "src/types/recharges-packages-list-result.ts",
         "src/types/recharges-settings-retrieve-result.ts",
-        "src/types/refunds-create-result.ts",
-        "src/types/refunds-list-result.ts",
-        "src/types/refunds-retrieve-result.ts",
-        "src/types/registrations-create-result.ts",
-        "src/types/role-bindings-list-result.ts",
         "src/types/routing-api-key-item.ts",
         "src/types/routing-api-keys-list-result.ts",
         "src/types/routing-api-keys-response.ts",
@@ -720,14 +448,8 @@
         "src/types/sdk-reference-archive-response.ts",
         "src/types/sdk-reference-documentation-generate-request.ts",
         "src/types/sdk-reference-documentation-response.ts",
-        "src/types/sessions-create-result.ts",
-        "src/types/sessions-current-delete-result.ts",
-        "src/types/sessions-current-retrieve-result.ts",
-        "src/types/sessions-current-update-result.ts",
-        "src/types/sessions-refresh-result.ts",
         "src/types/settings-data-response.ts",
         "src/types/settings-notifications.ts",
-        "src/types/shipments-retrieve-result.ts",
         "src/types/site-runtime-retrieve-result.ts",
         "src/types/site-runtime-settings-response.ts",
         "src/types/skill-catalog-item.ts",
@@ -755,18 +477,9 @@
         "src/types/usage-logs-response.ts",
         "src/types/usage-snapshot.ts",
         "src/types/users-current-comments-list-result.ts",
-        "src/types/users-current-retrieve-result.ts",
         "src/types/users-current-skills-list-result.ts",
         "src/types/users-settings-retrieve-result.ts",
         "src/types/users-settings-update-result.ts",
-        "src/types/verification-codes-create-result.ts",
-        "src/types/verification-codes-verify-result.ts",
-        "src/types/wallet-accounts-list-result.ts",
-        "src/types/wallet-exchange-rate-retrieve-result.ts",
-        "src/types/wallet-ledger-entries-list-result.ts",
-        "src/types/wallet-overview-retrieve-result.ts",
-        "src/types/wallet-points-exchange-rules-list-result.ts",
-        "src/types/wallet-tokens-retrieve-result.ts",
         "tsconfig.json"
       ],
       "deletedGeneratedFiles": [],
@@ -779,72 +492,26 @@
     },
     "impact": {
       "schemaVersion": 1,
-      "areas": [
-        "models"
-      ],
-      "details": [
-        {
-          "area": "models",
-          "paths": [
-            "src/types/gateway-trace.ts"
-          ]
-        }
-      ],
-      "requiresVerification": true,
-      "summary": "Detected impact areas: models. Verification is required."
+      "areas": [],
+      "details": [],
+      "requiresVerification": false,
+      "summary": "No generated, scaffold, or backup changes detected. Verification can be skipped."
     },
     "verificationPlan": {
-      "shouldRun": true,
-      "runPhase": "now",
-      "summary": "Detected impact areas: models. Verification is required. Run the required verification commands now against the generated SDK output.",
-      "steps": [
-        {
-          "id": "check",
-          "title": "Unified package check",
-          "required": true,
-          "rationale": "Validate the generated package with the unified publish helper. Triggered by: models.",
-          "workingDirectory": "D:\\javasource\\spring-ai-plus\\spring-ai-plus-business\\apps\\sdkwork-claw-router\\sdks\\clawrouter-app-sdk\\clawrouter-app-sdk-typescript",
-          "command": "node",
-          "args": [
-            "./bin/publish-core.mjs",
-            "--language",
-            "typescript",
-            "--project-dir",
-            ".",
-            "--action",
-            "check"
-          ],
-          "displayCommand": "node ./bin/publish-core.mjs --language typescript --project-dir . --action check"
-        },
-        {
-          "id": "build",
-          "title": "Unified package build",
-          "required": true,
-          "rationale": "Run the full package build because this language uses a lighter check path than the final build. Triggered by: models.",
-          "workingDirectory": "D:\\javasource\\spring-ai-plus\\spring-ai-plus-business\\apps\\sdkwork-claw-router\\sdks\\clawrouter-app-sdk\\clawrouter-app-sdk-typescript",
-          "command": "node",
-          "args": [
-            "./bin/publish-core.mjs",
-            "--language",
-            "typescript",
-            "--project-dir",
-            ".",
-            "--action",
-            "build"
-          ],
-          "displayCommand": "node ./bin/publish-core.mjs --language typescript --project-dir . --action build"
-        }
-      ]
+      "shouldRun": false,
+      "runPhase": "skip",
+      "summary": "No generated, scaffold, or backup changes detected. Verification can be skipped.",
+      "steps": []
     },
     "executionDecision": {
       "schemaVersion": 1,
-      "riskLevel": "medium",
-      "nextAction": "verify",
+      "riskLevel": "low",
+      "nextAction": "skip",
       "requiresManualReview": false,
       "applyRequiresExpectedFingerprint": false,
-      "summary": "Changes have been applied. Run the required verification plan now.",
+      "summary": "No actionable changes were detected. No apply or verification step is required.",
       "reasons": [
-        "verification-required"
+        "no-actionable-changes"
       ]
     },
     "backedUpFiles": [],

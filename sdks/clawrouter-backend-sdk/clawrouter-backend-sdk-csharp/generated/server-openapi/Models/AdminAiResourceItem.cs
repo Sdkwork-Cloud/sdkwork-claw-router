@@ -19,7 +19,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? ProviderNativeModel { get; set; }
         public string? ResourceCode { get; set; }
         public string? ResourceType { get; set; }
-        public int? SortOrder { get; set; }
+        public string? SortOrder { get; set; }
         public string? Status { get; set; }
         public string? VendorCode { get; set; }
     }

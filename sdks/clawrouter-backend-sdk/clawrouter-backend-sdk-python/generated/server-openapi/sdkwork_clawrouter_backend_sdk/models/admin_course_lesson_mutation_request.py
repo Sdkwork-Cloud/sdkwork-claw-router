@@ -10,7 +10,7 @@ if TYPE_CHECKING:
 class AdminCourseLessonMutationRequest:
     """Admin course lesson mutation request schema exposed by Claw Router."""
     description: Optional[str] = None
-    duration_seconds: Optional[int] = None
+    duration_seconds: Optional[str] = None
     external_bvid: Optional[str] = None
     free_preview: Optional[bool] = None
     lesson_no: Optional[str] = None

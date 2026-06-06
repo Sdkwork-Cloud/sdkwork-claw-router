@@ -6,11 +6,11 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class CourseEngagement
     {
-        public int? Discussions { get; set; }
-        public int? Likes { get; set; }
-        public int? Saves { get; set; }
-        public int? Shares { get; set; }
-        public int? StudentsCount { get; set; }
-        public int? Views { get; set; }
+        public string? Discussions { get; set; }
+        public string? Likes { get; set; }
+        public string? Saves { get; set; }
+        public string? Shares { get; set; }
+        public string? StudentsCount { get; set; }
+        public string? Views { get; set; }
     }
 }

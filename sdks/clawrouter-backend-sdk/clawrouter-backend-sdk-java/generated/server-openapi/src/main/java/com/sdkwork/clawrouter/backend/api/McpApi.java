@@ -26,7 +26,7 @@ public class McpApi {
     }
 
     /** List MCP servers */
-    public ServersListResult serversList(Integer page, Integer pageSize, String q, String transport, String visibility, String status, String categoryId) throws Exception {
+    public ServersListResult serversList(String page, String pageSize, String q, String transport, String visibility, String status, String categoryId) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null),

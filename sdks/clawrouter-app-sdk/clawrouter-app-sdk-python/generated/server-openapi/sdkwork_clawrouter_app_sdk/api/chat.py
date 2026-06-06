@@ -255,7 +255,7 @@ class ChatConversationsApi:
         self._client = client
 
 
-    def list(self, page: Optional[int] = None, page_size: Optional[int] = None) -> ConversationsListResult:
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None) -> ConversationsListResult:
         """List product chat conversations"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -284,7 +284,7 @@ class ChatConversationMessagesApi:
         self._client = client
 
 
-    def list(self, conversation_id: str, limit: Optional[int] = None, order: Optional[str] = None) -> ConversationMessagesListResult:
+    def list(self, conversation_id: str, limit: Optional[str] = None, order: Optional[str] = None) -> ConversationMessagesListResult:
         """List product chat messages"""
         query = build_query_string([
             {'name': 'limit', 'value': limit, 'style': 'form', 'explode': True, 'allow_reserved': False},

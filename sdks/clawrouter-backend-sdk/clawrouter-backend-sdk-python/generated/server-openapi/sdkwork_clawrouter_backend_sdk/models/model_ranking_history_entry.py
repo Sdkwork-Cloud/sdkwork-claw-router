@@ -9,5 +9,5 @@ class ModelRankingHistoryEntry:
     catalog_key: str
     color: str
     model: str
-    rank: int
-    volume: int
+    rank: str
+    volume: str

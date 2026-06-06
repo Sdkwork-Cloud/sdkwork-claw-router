@@ -38,7 +38,7 @@ class AiApi(private val client: HttpClient) {
     }
 
     /** List model rankings */
-    suspend fun modelRankingsList(rankScope: String? = null, vendorCode: String? = null, modality: String? = null, q: String? = null, limit: Int? = null): ModelRankingsListResult? {
+    suspend fun modelRankingsList(rankScope: String? = null, vendorCode: String? = null, modality: String? = null, q: String? = null, limit: String? = null): ModelRankingsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("rank_scope", rankScope, "form", true, false, null),
             QueryParameterSpec("vendor_code", vendorCode, "form", true, false, null),
@@ -57,7 +57,7 @@ class AiApi(private val client: HttpClient) {
     }
 
     /** List models */
-    suspend fun modelsList(billingMeter: String? = null, vendorCode: String? = null, vendorCodes: List<String>? = null, modalities: List<String>? = null, capabilities: List<String>? = null, categories: List<String>? = null, groups: List<String>? = null, q: String? = null, limit: Int? = null): ModelsListResult? {
+    suspend fun modelsList(billingMeter: String? = null, vendorCode: String? = null, vendorCodes: List<String>? = null, modalities: List<String>? = null, capabilities: List<String>? = null, categories: List<String>? = null, groups: List<String>? = null, q: String? = null, limit: String? = null): ModelsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("billing_meter", billingMeter, "form", true, false, null),
             QueryParameterSpec("vendor_code", vendorCode, "form", true, false, null),
@@ -98,7 +98,7 @@ class AiApi(private val client: HttpClient) {
     }
 
     /** List logs */
-    suspend fun usageLogsList(page: Int? = null, pageSize: Int? = null, q: String? = null, status: String? = null, startTime: String? = null, endTime: String? = null): UsageLogsListResult? {
+    suspend fun usageLogsList(page: String? = null, pageSize: String? = null, q: String? = null, status: String? = null, startTime: String? = null, endTime: String? = null): UsageLogsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null),

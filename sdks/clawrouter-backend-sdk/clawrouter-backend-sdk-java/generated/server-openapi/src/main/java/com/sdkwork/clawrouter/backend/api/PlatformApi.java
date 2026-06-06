@@ -14,7 +14,7 @@ public class PlatformApi {
     }
 
     /** List apps */
-    public AppsListResult appsList(String q, String status, String marketStatus, String appType, Integer categoryId, Integer page, Integer pageSize) throws Exception {
+    public AppsListResult appsList(String q, String status, String marketStatus, String appType, String categoryId, String page, String pageSize) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("q", q, "form", true, false, null),
             new QueryParameterSpec("status", status, "form", true, false, null),
@@ -59,7 +59,7 @@ public class PlatformApi {
     }
 
     /** List app templates */
-    public AppsTemplatesListResult appsTemplatesList(String q, String publishStatus, String templateType, String runtime, Integer categoryId, Integer page, Integer pageSize) throws Exception {
+    public AppsTemplatesListResult appsTemplatesList(String q, String publishStatus, String templateType, String runtime, String categoryId, String page, String pageSize) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("q", q, "form", true, false, null),
             new QueryParameterSpec("publish_status", publishStatus, "form", true, false, null),

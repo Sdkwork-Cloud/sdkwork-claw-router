@@ -114,7 +114,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// List model rankings
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.ModelRankingsListResult?> ModelRankingsListAsync(string? rankScope = null, string? vendorCode = null, string? modality = null, string? q = null, int? limit = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.ModelRankingsListResult?> ModelRankingsListAsync(string? rankScope = null, string? vendorCode = null, string? modality = null, string? q = null, string? limit = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -130,7 +130,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// List model ranking refresh jobs
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.ModelRankingsJobsListResult?> ModelRankingsJobsListAsync(string? rankScope = null, int? limit = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.ModelRankingsJobsListResult?> ModelRankingsJobsListAsync(string? rankScope = null, string? limit = null)
         {
             var queryString = BuildQueryString(new[]
             {

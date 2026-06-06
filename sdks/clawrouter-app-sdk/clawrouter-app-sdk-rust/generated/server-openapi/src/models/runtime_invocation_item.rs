@@ -25,7 +25,7 @@ pub struct RuntimeInvocationItem {
 
     /// Attempt no field on runtime invocation item.
     #[serde(rename = "attemptNo")]
-    pub attempt_no: i64,
+    pub attempt_no: String,
 
     /// Chat item id field on runtime invocation item.
     #[serde(rename = "chatItemId")]
@@ -77,7 +77,7 @@ pub struct RuntimeInvocationItem {
     /// Exit code field on runtime invocation item.
     #[serde(rename = "exitCode")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub exit_code: Option<i64>,
+    pub exit_code: Option<String>,
 
     /// Finish reason field on runtime invocation item.
     #[serde(rename = "finishReason")]
@@ -89,7 +89,7 @@ pub struct RuntimeInvocationItem {
 
     /// Invocation no field on runtime invocation item.
     #[serde(rename = "invocationNo")]
-    pub invocation_no: i64,
+    pub invocation_no: String,
 
     /// Invocation type field on runtime invocation item.
     #[serde(rename = "invocationType")]
@@ -98,7 +98,7 @@ pub struct RuntimeInvocationItem {
     /// Latency ms field on runtime invocation item.
     #[serde(rename = "latencyMs")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub latency_ms: Option<i64>,
+    pub latency_ms: Option<String>,
 
     /// Model field on runtime invocation item.
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -175,5 +175,5 @@ pub struct RuntimeInvocationItem {
     /// Ttft ms field on runtime invocation item.
     #[serde(rename = "ttftMs")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub ttft_ms: Option<i64>,
+    pub ttft_ms: Option<String>,
 }

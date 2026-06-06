@@ -18,7 +18,7 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Get skills
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.SkillsListResult?> SkillsListAsync(string? q = null, int? page = null, int? pageSize = null, string? status = null, string? startTime = null, string? endTime = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.SkillsListResult?> SkillsListAsync(string? q = null, string? page = null, string? pageSize = null, string? status = null, string? startTime = null, string? endTime = null)
         {
             var queryString = BuildQueryString(new[]
             {

@@ -28,7 +28,7 @@ public class ContentApi {
     }
 
     /// Admin Course Applications List
-    public func courseApplicationsList(page: Int? = nil, pageSize: Int? = nil, q: String? = nil, status: String? = nil) async throws -> CourseApplicationsListResult? {
+    public func courseApplicationsList(page: String? = nil, pageSize: String? = nil, q: String? = nil, status: String? = nil) async throws -> CourseApplicationsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
@@ -64,7 +64,7 @@ public class ContentApi {
     }
 
     /// Admin Courses List
-    public func coursesList(page: Int? = nil, pageSize: Int? = nil, q: String? = nil, status: String? = nil) async throws -> CoursesListResult? {
+    public func coursesList(page: String? = nil, pageSize: String? = nil, q: String? = nil, status: String? = nil) async throws -> CoursesListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
@@ -80,7 +80,7 @@ public class ContentApi {
     }
 
     /// Admin Course Comments List
-    public func courseCommentsList(page: Int? = nil, pageSize: Int? = nil, q: String? = nil, status: String? = nil) async throws -> CourseCommentsListResult? {
+    public func courseCommentsList(page: String? = nil, pageSize: String? = nil, q: String? = nil, status: String? = nil) async throws -> CourseCommentsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
@@ -101,7 +101,7 @@ public class ContentApi {
     }
 
     /// Admin Course Engagement List
-    public func courseEngagementList(page: Int? = nil, pageSize: Int? = nil, q: String? = nil, status: String? = nil) async throws -> CourseEngagementListResult? {
+    public func courseEngagementList(page: String? = nil, pageSize: String? = nil, q: String? = nil, status: String? = nil) async throws -> CourseEngagementListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
@@ -122,7 +122,7 @@ public class ContentApi {
     }
 
     /// Admin Course Lessons List
-    public func coursesLessonsList(courseId: String, page: Int? = nil, pageSize: Int? = nil, q: String? = nil, status: String? = nil) async throws -> CoursesLessonsListResult? {
+    public func coursesLessonsList(courseId: String, page: String? = nil, pageSize: String? = nil, q: String? = nil, status: String? = nil) async throws -> CoursesLessonsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
@@ -138,7 +138,7 @@ public class ContentApi {
     }
 
     /// Admin Course Relations List
-    public func coursesRelationsList(courseId: String, page: Int? = nil, pageSize: Int? = nil, q: String? = nil, status: String? = nil) async throws -> CoursesRelationsListResult? {
+    public func coursesRelationsList(courseId: String, page: String? = nil, pageSize: String? = nil, q: String? = nil, status: String? = nil) async throws -> CoursesRelationsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
@@ -154,7 +154,7 @@ public class ContentApi {
     }
 
     /// Admin Course Sections List
-    public func coursesSectionsList(courseId: String, page: Int? = nil, pageSize: Int? = nil, q: String? = nil, status: String? = nil) async throws -> CoursesSectionsListResult? {
+    public func coursesSectionsList(courseId: String, page: String? = nil, pageSize: String? = nil, q: String? = nil, status: String? = nil) async throws -> CoursesSectionsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),

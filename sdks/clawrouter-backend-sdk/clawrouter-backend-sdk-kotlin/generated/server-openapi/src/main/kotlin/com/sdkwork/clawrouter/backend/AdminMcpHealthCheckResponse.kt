@@ -5,6 +5,6 @@ data class AdminMcpHealthCheckResponse(
     val errorMasked: String? = null,
     val healthStatus: String? = null,
     val healthy: Boolean? = null,
-    val latencyMs: Int? = null,
-    val serverId: Int? = null
+    val latencyMs: String? = null,
+    val serverId: String? = null
 )

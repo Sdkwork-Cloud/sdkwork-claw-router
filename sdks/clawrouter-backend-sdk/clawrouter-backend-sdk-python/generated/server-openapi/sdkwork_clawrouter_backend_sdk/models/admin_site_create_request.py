@@ -11,7 +11,6 @@ class AdminSiteCreateRequest:
     """Admin site create request schema exposed by Claw Router."""
     base_url: str
     display_name: str
-    site_code: str
     site_name: str
     credential_ref: Optional[str] = None
     description: Optional[str] = None
@@ -22,6 +21,7 @@ class AdminSiteCreateRequest:
     masked_label: Optional[str] = None
     owner_kind: Optional[str] = None
     region_code: Optional[str] = None
+    site_code: Optional[str] = None
     site_type: Optional[str] = None
     status: Optional[str] = None
     vendor_codes: Optional[List[str]] = None

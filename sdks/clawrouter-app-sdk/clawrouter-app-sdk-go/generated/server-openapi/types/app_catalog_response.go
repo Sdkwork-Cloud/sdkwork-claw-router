@@ -6,5 +6,5 @@ type AppCatalogResponse struct {
 	Items []AppCatalogItem `json:"items"`
 	Page int `json:"page"`
 	PageSize int `json:"pageSize"`
-	Total int `json:"total"`
+	Total string `json:"total"`
 }

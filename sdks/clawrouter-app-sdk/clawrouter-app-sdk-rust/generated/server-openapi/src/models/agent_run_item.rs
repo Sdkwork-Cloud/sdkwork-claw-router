@@ -14,7 +14,7 @@ pub struct AgentRunItem {
     /// Cached tokens field on agent run item.
     #[serde(rename = "cachedTokens")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub cached_tokens: Option<i64>,
+    pub cached_tokens: Option<String>,
 
     /// Completed at field on agent run item.
     #[serde(rename = "completedAt")]
@@ -45,7 +45,7 @@ pub struct AgentRunItem {
     /// Input tokens field on agent run item.
     #[serde(rename = "inputTokens")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub input_tokens: Option<i64>,
+    pub input_tokens: Option<String>,
 
     /// Memory space id field on agent run item.
     #[serde(rename = "memorySpaceId")]
@@ -64,7 +64,7 @@ pub struct AgentRunItem {
     /// Output tokens field on agent run item.
     #[serde(rename = "outputTokens")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub output_tokens: Option<i64>,
+    pub output_tokens: Option<String>,
 
     /// Request id field on agent run item.
     #[serde(rename = "requestId")]
@@ -93,12 +93,12 @@ pub struct AgentRunItem {
 
     /// Total steps field on agent run item.
     #[serde(rename = "totalSteps")]
-    pub total_steps: i64,
+    pub total_steps: String,
 
     /// Total tokens field on agent run item.
     #[serde(rename = "totalTokens")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub total_tokens: Option<i64>,
+    pub total_tokens: Option<String>,
 
     /// Trace id field on agent run item.
     #[serde(rename = "traceId")]

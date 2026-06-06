@@ -61,16 +61,6 @@ func (a *IamApi) ApiKeysUpdate(apiKeyId string, body sdktypes.UpdateApiKeyReques
     return decodeResult[sdktypes.ApiKeysUpdateResult](raw)
 }
 
-// Retrieve current IAM user
-func (a *IamApi) UsersCurrentRetrieve() (sdktypes.UsersCurrentRetrieveResult, error) {
-    raw, err := a.client.Get(AppApiPath("/iam/users/current"), nil, nil)
-    if err != nil {
-        var zero sdktypes.UsersCurrentRetrieveResult
-        return zero, err
-    }
-    return decodeResult[sdktypes.UsersCurrentRetrieveResult](raw)
-}
-
 // List settings
 func (a *IamApi) UsersSettingsRetrieve() (sdktypes.UsersSettingsRetrieveResult, error) {
     raw, err := a.client.Get(AppApiPath("/iam/users/settings"), nil, nil)

@@ -50,7 +50,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Admin Course Applications List
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.CourseApplicationsListResult?> CourseApplicationsListAsync(int? page = null, int? pageSize = null, string? q = null, string? status = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.CourseApplicationsListResult?> CourseApplicationsListAsync(string? page = null, string? pageSize = null, string? q = null, string? status = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -105,7 +105,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Admin Courses List
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.CoursesListResult?> CoursesListAsync(int? page = null, int? pageSize = null, string? q = null, string? status = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.CoursesListResult?> CoursesListAsync(string? page = null, string? pageSize = null, string? q = null, string? status = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -128,7 +128,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Admin Course Comments List
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.CourseCommentsListResult?> CourseCommentsListAsync(int? page = null, int? pageSize = null, string? q = null, string? status = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.CourseCommentsListResult?> CourseCommentsListAsync(string? page = null, string? pageSize = null, string? q = null, string? status = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -159,7 +159,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Admin Course Engagement List
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.CourseEngagementListResult?> CourseEngagementListAsync(int? page = null, int? pageSize = null, string? q = null, string? status = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.CourseEngagementListResult?> CourseEngagementListAsync(string? page = null, string? pageSize = null, string? q = null, string? status = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -190,7 +190,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Admin Course Lessons List
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.CoursesLessonsListResult?> CoursesLessonsListAsync(string courseId, int? page = null, int? pageSize = null, string? q = null, string? status = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.CoursesLessonsListResult?> CoursesLessonsListAsync(string courseId, string? page = null, string? pageSize = null, string? q = null, string? status = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -213,7 +213,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Admin Course Relations List
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.CoursesRelationsListResult?> CoursesRelationsListAsync(string courseId, int? page = null, int? pageSize = null, string? q = null, string? status = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.CoursesRelationsListResult?> CoursesRelationsListAsync(string courseId, string? page = null, string? pageSize = null, string? q = null, string? status = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -236,7 +236,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Admin Course Sections List
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.CoursesSectionsListResult?> CoursesSectionsListAsync(string courseId, int? page = null, int? pageSize = null, string? q = null, string? status = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.CoursesSectionsListResult?> CoursesSectionsListAsync(string courseId, string? page = null, string? pageSize = null, string? q = null, string? status = null)
         {
             var queryString = BuildQueryString(new[]
             {

@@ -10,5 +10,5 @@ class AdminCourseRelationItem:
     course_id: Optional[str] = None
     related_course_id: Optional[str] = None
     relation_type: Optional[str] = None
-    sort_order: Optional[int] = None
+    sort_order: Optional[str] = None
     status: Optional[str] = None

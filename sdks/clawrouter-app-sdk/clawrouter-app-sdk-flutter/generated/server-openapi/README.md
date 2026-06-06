@@ -20,7 +20,7 @@ final client = SdkworkAppClient.withBaseUrl(baseUrl: 'http://localhost:18082');
 client.setApiKey('your-api-key');
 
 // Use the SDK
-final result = await client.auth.sessionsCurrentRetrieve();
+final result = await client.ai.channelGroupsList();
 print(result);
 ```
 
@@ -60,37 +60,28 @@ client.setHeader('X-Custom-Header', 'value');
 
 ## API Modules
 
-- `client.commerce` - commerce API
 - `client.agents` - agents API
 - `client.ai` - ai API
-- `client.auth` - auth API
 - `client.chat` - chat API
 - `client.content` - content API
 - `client.ecosystem` - ecosystem API
 - `client.iam` - iam API
 - `client.memory` - memory API
 - `client.notification` - notification API
-- `client.openPlatform` - open_platform API
 - `client.platform` - platform API
 - `client.system` - system API
+- `client.commerce` - commerce API
 - `client.runtime` - runtime API
 - `client.sdkReference` - sdk_reference API
 
 ## Usage Examples
 
-### commerce
-```dart
-// Accounts Current Summary Retrieve
-final result = await client.commerce.accountsCurrentSummaryRetrieve();
-print(result);
-```
-
 ### agents
 ```dart
 // List Playground agent definitions
 final params = <String, dynamic>{
-  'page': 1,
-  'page_size': 2,
+  'page': 'page',
+  'page_size': 'page-size',
   'q': 'q',
 };
 final result = await client.agents.agentDefinitionsList(params);
@@ -104,19 +95,12 @@ final result = await client.ai.channelGroupsList();
 print(result);
 ```
 
-### auth
-```dart
-// Retrieve current IAM session
-final result = await client.auth.sessionsCurrentRetrieve();
-print(result);
-```
-
 ### chat
 ```dart
 // List product chat conversations
 final params = <String, dynamic>{
-  'page': 1,
-  'page_size': 2,
+  'page': 'page',
+  'page_size': 'page-size',
 };
 final result = await client.chat.conversationsList(params);
 print(result);
@@ -147,8 +131,8 @@ print(result);
 ```dart
 // List memory spaces
 final params = <String, dynamic>{
-  'page': 1,
-  'page_size': 2,
+  'page': 'page',
+  'page_size': 'page-size',
 };
 final result = await client.memory.spacesList(params);
 print(result);
@@ -167,16 +151,6 @@ final result = await client.notification.notificationsList(params);
 print(result);
 ```
 
-### open_platform
-```dart
-// Create open platform QR auth session
-final body = OpenPlatformQrAuthSessionCreateRequest(
-  purpose: 'login',
-);
-final result = await client.openPlatform.qrAuthSessionsCreate(body);
-print(result);
-```
-
 ### platform
 ```dart
 // Get categories
@@ -186,8 +160,19 @@ print(result);
 
 ### system
 ```dart
-// Retrieve public IAM verification policy
-final result = await client.system.iamVerificationPolicyRetrieve();
+// Retrieve public site runtime branding settings
+final params = <String, dynamic>{
+  'tenant_code': 'ok',
+  'organization_code': 'ok',
+};
+final result = await client.system.siteRuntimeRetrieve(params);
+print(result);
+```
+
+### commerce
+```dart
+// Recharges Settings Retrieve
+final result = await client.commerce.rechargesSettingsRetrieve();
 print(result);
 ```
 
@@ -195,8 +180,8 @@ print(result);
 ```dart
 // List runtime invocations
 final params = <String, dynamic>{
-  'page': 1,
-  'page_size': 2,
+  'page': 'page',
+  'page_size': 'page-size',
   'conversation_id': '1',
   'chat_turn_id': '1',
   'agent_session_id': '1',
@@ -223,7 +208,7 @@ print(result);
 
 ```dart
 try {
-  final result = await client.auth.sessionsCurrentRetrieve();
+  final result = await client.ai.channelGroupsList();
   print(result);
 } catch (e) {
   print('Error: $e');

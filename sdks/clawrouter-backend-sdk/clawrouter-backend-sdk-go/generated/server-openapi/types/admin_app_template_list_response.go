@@ -4,7 +4,7 @@ package types
 type AdminAppTemplateListResponse struct {
 	HasNextPage bool `json:"hasNextPage"`
 	Items []AdminAppTemplateItemResponse `json:"items"`
-	Page int `json:"page"`
-	PageSize int `json:"pageSize"`
-	Total int `json:"total"`
+	Page string `json:"page"`
+	PageSize string `json:"pageSize"`
+	Total string `json:"total"`
 }

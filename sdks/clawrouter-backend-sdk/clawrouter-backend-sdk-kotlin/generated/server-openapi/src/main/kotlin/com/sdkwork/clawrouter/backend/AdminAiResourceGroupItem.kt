@@ -9,9 +9,9 @@ data class AdminAiResourceGroupItem(
     val groupName: String? = null,
     val groupType: String? = null,
     val id: String? = null,
-    val resourceCount: Int? = null,
+    val resourceCount: String? = null,
     val selectionMode: String? = null,
-    val sortOrder: Int? = null,
+    val sortOrder: String? = null,
     val status: String? = null,
     val vendorCodes: List<String>? = null
 )

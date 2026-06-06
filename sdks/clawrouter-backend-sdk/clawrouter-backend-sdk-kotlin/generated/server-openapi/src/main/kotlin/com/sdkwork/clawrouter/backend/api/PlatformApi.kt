@@ -9,7 +9,7 @@ import com.sdkwork.clawrouter.backend.http.HttpClient
 class PlatformApi(private val client: HttpClient) {
 
     /** List apps */
-    suspend fun appsList(q: String? = null, status: String? = null, marketStatus: String? = null, appType: String? = null, categoryId: Int? = null, page: Int? = null, pageSize: Int? = null): AppsListResult? {
+    suspend fun appsList(q: String? = null, status: String? = null, marketStatus: String? = null, appType: String? = null, categoryId: String? = null, page: String? = null, pageSize: String? = null): AppsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("q", q, "form", true, false, null),
             QueryParameterSpec("status", status, "form", true, false, null),
@@ -54,7 +54,7 @@ class PlatformApi(private val client: HttpClient) {
     }
 
     /** List app templates */
-    suspend fun appsTemplatesList(q: String? = null, publishStatus: String? = null, templateType: String? = null, runtime: String? = null, categoryId: Int? = null, page: Int? = null, pageSize: Int? = null): AppsTemplatesListResult? {
+    suspend fun appsTemplatesList(q: String? = null, publishStatus: String? = null, templateType: String? = null, runtime: String? = null, categoryId: String? = null, page: String? = null, pageSize: String? = null): AppsTemplatesListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("q", q, "form", true, false, null),
             QueryParameterSpec("publish_status", publishStatus, "form", true, false, null),

@@ -5,17 +5,17 @@ use serde::{Deserialize, Serialize};
 pub struct CourseOverviewStats {
     /// Total categories field on course overview stats.
     #[serde(rename = "totalCategories")]
-    pub total_categories: i64,
+    pub total_categories: String,
 
     /// Total courses field on course overview stats.
     #[serde(rename = "totalCourses")]
-    pub total_courses: i64,
+    pub total_courses: String,
 
     /// Total lessons field on course overview stats.
     #[serde(rename = "totalLessons")]
-    pub total_lessons: i64,
+    pub total_lessons: String,
 
     /// Total students field on course overview stats.
     #[serde(rename = "totalStudents")]
-    pub total_students: i64,
+    pub total_students: String,
 }

@@ -5,7 +5,7 @@ type AdminCourseSectionMutationRequest struct {
 	Description string `json:"description"`
 	Metadata map[string]JsonValue `json:"metadata"`
 	SectionNo string `json:"sectionNo"`
-	SortOrder int `json:"sortOrder"`
+	SortOrder string `json:"sortOrder"`
 	Status string `json:"status"`
 	Title string `json:"title"`
 }

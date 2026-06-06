@@ -1,7 +1,7 @@
 package com.sdkwork.clawrouter.app
 
 data class RoutingRetryPolicy(
-    val backoffMs: Int? = null,
-    val maxAttempts: Int? = null,
-    val retryableStatusCodes: List<Int>? = null
+    val backoffMs: String? = null,
+    val maxAttempts: String? = null,
+    val retryableStatusCodes: List<String>? = null
 )

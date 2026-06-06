@@ -13,5 +13,5 @@ type AdminAgentVersionItem struct {
 	SystemPrompt string `json:"systemPrompt"`
 	ToolPolicy map[string]JsonValue `json:"toolPolicy"`
 	UpdatedAt string `json:"updatedAt"`
-	VersionNo int `json:"versionNo"`
+	VersionNo string `json:"versionNo"`
 }

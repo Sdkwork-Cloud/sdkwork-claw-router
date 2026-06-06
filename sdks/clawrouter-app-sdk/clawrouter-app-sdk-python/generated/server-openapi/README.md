@@ -21,7 +21,7 @@ client = SdkworkAppClient(config)
 client.set_api_key("your-api-key")
 
 # Use the SDK
-result = client.auth.sessions.current.retrieve()
+result = client.ai.channel_groups.list()
 ```
 
 ## Authentication Modes (Mutually Exclusive)
@@ -66,39 +66,29 @@ client.set_header('X-Custom-Header', 'value')
 
 ## API Modules
 
-- `client.commerce` - commerce API
 - `client.agents` - agents API
 - `client.ai` - ai API
-- `client.auth` - auth API
 - `client.chat` - chat API
 - `client.content` - content API
 - `client.ecosystem` - ecosystem API
 - `client.iam` - iam API
 - `client.memory` - memory API
 - `client.notification` - notification API
-- `client.open_platform` - open_platform API
 - `client.platform` - platform API
 - `client.system` - system API
+- `client.commerce` - commerce API
 - `client.runtime` - runtime API
 - `client.sdk_reference` - sdk_reference API
 
 ## Usage Examples
-
-### commerce
-
-```python
-# Accounts Current Summary Retrieve
-result = client.commerce.accounts.current.summary.retrieve()
-print(result)
-```
 
 ### agents
 
 ```python
 # List Playground agent definitions
 params = {
-    'page': 1,
-    'page_size': 2,
+    'page': 'page',
+    'page_size': 'page_size',
     'q': 'q',
 }
 result = client.agents.agent_definitions.list(params)
@@ -113,21 +103,13 @@ result = client.ai.channel_groups.list()
 print(result)
 ```
 
-### auth
-
-```python
-# Retrieve current IAM session
-result = client.auth.sessions.current.retrieve()
-print(result)
-```
-
 ### chat
 
 ```python
 # List product chat conversations
 params = {
-    'page': 1,
-    'page_size': 2,
+    'page': 'page',
+    'page_size': 'page_size',
 }
 result = client.chat.conversations.list(params)
 print(result)
@@ -162,8 +144,8 @@ print(result)
 ```python
 # List memory spaces
 params = {
-    'page': 1,
-    'page_size': 2,
+    'page': 'page',
+    'page_size': 'page_size',
 }
 result = client.memory.spaces.list(params)
 print(result)
@@ -183,17 +165,6 @@ result = client.notification.list_notifications(params)
 print(result)
 ```
 
-### open_platform
-
-```python
-# Create open platform QR auth session
-body = {
-    'purpose': 'login',
-}
-result = client.open_platform.qr_auth.sessions.create(body)
-print(result)
-```
-
 ### platform
 
 ```python
@@ -205,8 +176,20 @@ print(result)
 ### system
 
 ```python
-# Retrieve public IAM verification policy
-result = client.system.iam.verification_policy.retrieve()
+# Retrieve public site runtime branding settings
+params = {
+    'tenant_code': 'tenant_code',
+    'organization_code': 'organization_code',
+}
+result = client.system.site.runtime.retrieve(params)
+print(result)
+```
+
+### commerce
+
+```python
+# Recharges Settings Retrieve
+result = client.commerce.recharges.settings.retrieve()
 print(result)
 ```
 
@@ -215,8 +198,8 @@ print(result)
 ```python
 # List runtime invocations
 params = {
-    'page': 1,
-    'page_size': 2,
+    'page': 'page',
+    'page_size': 'page_size',
     'conversation_id': 'conversation_id',
     'chat_turn_id': 'chat_turn_id',
     'agent_session_id': 'agent_session_id',
@@ -259,7 +242,7 @@ print(result)
 
 ```python
 try:
-    client.auth.sessions.current.retrieve()
+    client.ai.channel_groups.list()
 except Exception as error:
     print(f"Error: {error}")
 ```

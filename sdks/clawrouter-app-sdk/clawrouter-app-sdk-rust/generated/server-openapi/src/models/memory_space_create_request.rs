@@ -16,7 +16,7 @@ pub struct MemorySpaceCreateRequest {
     /// Max injected tokens field on memory space create request.
     #[serde(rename = "maxInjectedTokens")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub max_injected_tokens: Option<i64>,
+    pub max_injected_tokens: Option<String>,
 
     /// Memory enabled field on memory space create request.
     #[serde(rename = "memoryEnabled")]

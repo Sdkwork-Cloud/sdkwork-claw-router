@@ -5,6 +5,6 @@ type CommerceMembershipPlanMutationRequest struct {
 	Benefits []CommerceMembershipBenefitMutationRequest `json:"benefits"`
 	Code string `json:"code"`
 	Name string `json:"name"`
-	Rank int `json:"rank"`
+	Rank string `json:"rank"`
 	Status string `json:"status"`
 }

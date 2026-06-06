@@ -5,6 +5,7 @@ export interface ConfirmDialogProps {
   title: string;
   description: string;
   confirmLabel?: string;
+  confirmDisabled?: boolean;
   cancelLabel?: string;
   isBusy?: boolean;
   tone?: 'danger' | 'default';
@@ -17,6 +18,7 @@ export function ConfirmDialog({
   title,
   description,
   confirmLabel = 'Confirm',
+  confirmDisabled = false,
   cancelLabel = 'Cancel',
   isBusy = false,
   tone = 'default',
@@ -66,7 +68,7 @@ export function ConfirmDialog({
           <button
             type="button"
             onClick={onConfirm}
-            disabled={isBusy}
+            disabled={isBusy || confirmDisabled}
             aria-busy={isBusy}
             className={`rounded-lg px-4 py-2 text-sm font-bold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60 dark:focus:ring-offset-[#1a1a1a] ${confirmClass}`}
           >

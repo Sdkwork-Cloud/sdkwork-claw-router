@@ -5,9 +5,9 @@ public class CommerceMembershipPackageGroupMutationRequest {
     private String billingCycle;
     private String code;
     private String description;
-    private Integer durationDays;
+    private String durationDays;
     private String name;
-    private Integer sortWeight;
+    private String sortWeight;
     private String status;
 
     public String getBillingCycle() {
@@ -34,11 +34,11 @@ public class CommerceMembershipPackageGroupMutationRequest {
         this.description = description;
     }
 
-    public Integer getDurationDays() {
+    public String getDurationDays() {
         return this.durationDays;
     }
 
-    public void setDurationDays(Integer durationDays) {
+    public void setDurationDays(String durationDays) {
         this.durationDays = durationDays;
     }
 
@@ -50,11 +50,11 @@ public class CommerceMembershipPackageGroupMutationRequest {
         this.name = name;
     }
 
-    public Integer getSortWeight() {
+    public String getSortWeight() {
         return this.sortWeight;
     }
 
-    public void setSortWeight(Integer sortWeight) {
+    public void setSortWeight(String sortWeight) {
         this.sortWeight = sortWeight;
     }
 

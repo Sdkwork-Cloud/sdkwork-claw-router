@@ -15,15 +15,15 @@ pub struct AdminPromptBindingItem {
     pub enabled: bool,
 
     /// Id field on admin prompt binding item.
-    pub id: i64,
+    pub id: String,
 
     /// Organization id field on admin prompt binding item.
     #[serde(rename = "organizationId")]
-    pub organization_id: i64,
+    pub organization_id: String,
 
     /// Owner id field on admin prompt binding item.
     #[serde(rename = "ownerId")]
-    pub owner_id: i64,
+    pub owner_id: String,
 
     /// Owner type field on admin prompt binding item.
     #[serde(rename = "ownerType")]
@@ -38,12 +38,12 @@ pub struct AdminPromptBindingItem {
 
     /// Prompt id field on admin prompt binding item.
     #[serde(rename = "promptId")]
-    pub prompt_id: i64,
+    pub prompt_id: String,
 
     /// Prompt version id field on admin prompt binding item.
     #[serde(rename = "promptVersionId")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub prompt_version_id: Option<i64>,
+    pub prompt_version_id: Option<String>,
 
     /// Snapshot json field on admin prompt binding item.
     #[serde(rename = "snapshotJson")]
@@ -51,7 +51,7 @@ pub struct AdminPromptBindingItem {
 
     /// Tenant id field on admin prompt binding item.
     #[serde(rename = "tenantId")]
-    pub tenant_id: i64,
+    pub tenant_id: String,
 
     /// Updated at field on admin prompt binding item.
     #[serde(rename = "updatedAt")]

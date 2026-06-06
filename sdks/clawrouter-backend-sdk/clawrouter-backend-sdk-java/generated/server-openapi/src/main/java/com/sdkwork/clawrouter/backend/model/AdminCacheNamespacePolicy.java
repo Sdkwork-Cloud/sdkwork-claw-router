@@ -7,13 +7,13 @@ public class AdminCacheNamespacePolicy {
     private Boolean enabled;
     private String failureMode;
     private String instanceName;
-    private Integer jitterPercent;
+    private String jitterPercent;
     private String namespace;
     private String scope;
     private String sensitivity;
-    private Integer staleWhileRevalidateSeconds;
+    private String staleWhileRevalidateSeconds;
     private List<String> tags;
-    private Integer ttlSeconds;
+    private String ttlSeconds;
 
     public String getConsistency() {
         return this.consistency;
@@ -47,11 +47,11 @@ public class AdminCacheNamespacePolicy {
         this.instanceName = instanceName;
     }
 
-    public Integer getJitterPercent() {
+    public String getJitterPercent() {
         return this.jitterPercent;
     }
 
-    public void setJitterPercent(Integer jitterPercent) {
+    public void setJitterPercent(String jitterPercent) {
         this.jitterPercent = jitterPercent;
     }
 
@@ -79,11 +79,11 @@ public class AdminCacheNamespacePolicy {
         this.sensitivity = sensitivity;
     }
 
-    public Integer getStaleWhileRevalidateSeconds() {
+    public String getStaleWhileRevalidateSeconds() {
         return this.staleWhileRevalidateSeconds;
     }
 
-    public void setStaleWhileRevalidateSeconds(Integer staleWhileRevalidateSeconds) {
+    public void setStaleWhileRevalidateSeconds(String staleWhileRevalidateSeconds) {
         this.staleWhileRevalidateSeconds = staleWhileRevalidateSeconds;
     }
 
@@ -95,11 +95,11 @@ public class AdminCacheNamespacePolicy {
         this.tags = tags;
     }
 
-    public Integer getTtlSeconds() {
+    public String getTtlSeconds() {
         return this.ttlSeconds;
     }
 
-    public void setTtlSeconds(Integer ttlSeconds) {
+    public void setTtlSeconds(String ttlSeconds) {
         this.ttlSeconds = ttlSeconds;
     }
 }

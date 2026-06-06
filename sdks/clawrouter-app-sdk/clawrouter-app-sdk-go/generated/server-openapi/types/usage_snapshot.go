@@ -2,8 +2,8 @@ package types
 
 // Usage snapshot schema exposed by Claw Router.
 type UsageSnapshot struct {
-	CachedTokens int `json:"cachedTokens"`
-	InputTokens int `json:"inputTokens"`
-	OutputTokens int `json:"outputTokens"`
-	TotalTokens int `json:"totalTokens"`
+	CachedTokens string `json:"cachedTokens"`
+	InputTokens string `json:"inputTokens"`
+	OutputTokens string `json:"outputTokens"`
+	TotalTokens string `json:"totalTokens"`
 }

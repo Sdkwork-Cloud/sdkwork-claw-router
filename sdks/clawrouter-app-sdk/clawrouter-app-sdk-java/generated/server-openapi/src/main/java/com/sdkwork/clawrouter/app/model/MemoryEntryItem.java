@@ -8,7 +8,7 @@ public class MemoryEntryItem {
     private String id;
     private String importanceScore;
     private String memoryType;
-    private Integer recallCount;
+    private String recallCount;
     private String sensitivityLevel;
     private String sourceConversationId;
     private String sourceInvocationId;
@@ -70,11 +70,11 @@ public class MemoryEntryItem {
         this.memoryType = memoryType;
     }
 
-    public Integer getRecallCount() {
+    public String getRecallCount() {
         return this.recallCount;
     }
 
-    public void setRecallCount(Integer recallCount) {
+    public void setRecallCount(String recallCount) {
         this.recallCount = recallCount;
     }
 

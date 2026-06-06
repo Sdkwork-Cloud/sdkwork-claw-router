@@ -18,7 +18,7 @@ func NewPromptsApi(client *sdkhttp.Client) *PromptsApi {
 }
 
 // List admin prompts
-func (a *PromptsApi) DefinitionsList(page *int, pageSize *int, q *string, promptType *string, visibility *string, status *string, categoryId *string) (sdktypes.DefinitionsListResult, error) {
+func (a *PromptsApi) DefinitionsList(page *string, pageSize *string, q *string, promptType *string, visibility *string, status *string, categoryId *string) (sdktypes.DefinitionsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},

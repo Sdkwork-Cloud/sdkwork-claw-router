@@ -101,6 +101,27 @@
     "events": [],
     "configKeys": [
       ".sdkwork-assembly.json"
+    ],
+    "sdkDependencies": [
+      {
+        "workspace": "sdkwork-appbase-backend-sdk",
+        "role": "appbase-backend-management-capability",
+        "required": true,
+        "dependencyMode": "consumer-sdk",
+        "apiPrefix": "/backend/v3/api",
+        "generatedTransportImportPolicy": "forbidden",
+        "packageByLanguage": {
+          "typescript": "@sdkwork/appbase-backend-sdk",
+          "flutter": "sdkwork_appbase_backend_sdk",
+          "rust": "sdkwork-appbase-backend-sdk",
+          "java": "com.sdkwork:sdkwork-appbase-backend-sdk",
+          "csharp": "SDKWork.Appbase.BackendSdk",
+          "swift": "sdkwork-appbase-backend-sdk",
+          "kotlin": "com.sdkwork:sdkwork-appbase-backend-sdk",
+          "go": "github.com/sdkwork/sdkwork-appbase-backend-sdk",
+          "python": "sdkwork-appbase-backend-sdk"
+        }
+      }
     ]
   },
   "integration": {

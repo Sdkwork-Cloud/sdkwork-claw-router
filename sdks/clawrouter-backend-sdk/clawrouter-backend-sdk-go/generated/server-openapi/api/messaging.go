@@ -42,7 +42,7 @@ func (a *MessagingApi) DiagnosticsTestSendsCreate(body sdktypes.MessagingTestSen
 }
 
 // Messaging provider accounts list
-func (a *MessagingApi) ProviderAccountsList(page *int, pageSize *int, q *string, status *string, channel *string, providerCode *string) (sdktypes.ProviderAccountsListResult, error) {
+func (a *MessagingApi) ProviderAccountsList(page *string, pageSize *string, q *string, status *string, channel *string, providerCode *string) (sdktypes.ProviderAccountsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
@@ -74,7 +74,7 @@ func (a *MessagingApi) ProviderAccountsCreate(body sdktypes.MessagingProviderAcc
 }
 
 // Messaging rate limit buckets list
-func (a *MessagingApi) RateLimitBucketsList(page *int, pageSize *int, sceneCode *string, channel *string, targetHash *string, ipHash *string, deviceHash *string) (sdktypes.RateLimitBucketsListResult, error) {
+func (a *MessagingApi) RateLimitBucketsList(page *string, pageSize *string, sceneCode *string, channel *string, targetHash *string, ipHash *string, deviceHash *string) (sdktypes.RateLimitBucketsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
@@ -93,7 +93,7 @@ func (a *MessagingApi) RateLimitBucketsList(page *int, pageSize *int, sceneCode 
 }
 
 // Messaging route rules list
-func (a *MessagingApi) RouteRulesList(page *int, pageSize *int, q *string, status *string, channel *string, providerCode *string) (sdktypes.RouteRulesListResult, error) {
+func (a *MessagingApi) RouteRulesList(page *string, pageSize *string, q *string, status *string, channel *string, providerCode *string) (sdktypes.RouteRulesListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
@@ -125,7 +125,7 @@ func (a *MessagingApi) RouteRulesCreate(body sdktypes.MessagingRouteRuleCreateRe
 }
 
 // Messaging send requests list
-func (a *MessagingApi) SendRequestsList(page *int, pageSize *int, status *string, channel *string, sceneCode *string, providerCode *string, targetHash *string) (sdktypes.SendRequestsListResult, error) {
+func (a *MessagingApi) SendRequestsList(page *string, pageSize *string, status *string, channel *string, sceneCode *string, providerCode *string, targetHash *string) (sdktypes.SendRequestsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
@@ -144,7 +144,7 @@ func (a *MessagingApi) SendRequestsList(page *int, pageSize *int, status *string
 }
 
 // Messaging sender identities list
-func (a *MessagingApi) SenderIdentitiesList(page *int, pageSize *int, q *string, status *string, channel *string, providerCode *string) (sdktypes.SenderIdentitiesListResult, error) {
+func (a *MessagingApi) SenderIdentitiesList(page *string, pageSize *string, q *string, status *string, channel *string, providerCode *string) (sdktypes.SenderIdentitiesListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
@@ -176,7 +176,7 @@ func (a *MessagingApi) SenderIdentitiesCreate(body sdktypes.MessagingSenderIdent
 }
 
 // Messaging suppressions list
-func (a *MessagingApi) SuppressionsList(page *int, pageSize *int, status *string, channel *string, targetHash *string, reasonCode *string) (sdktypes.SuppressionsListResult, error) {
+func (a *MessagingApi) SuppressionsList(page *string, pageSize *string, status *string, channel *string, targetHash *string, reasonCode *string) (sdktypes.SuppressionsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
@@ -222,7 +222,7 @@ func (a *MessagingApi) TemplateSendsCreate(body sdktypes.MessagingTemplateSendRe
 }
 
 // Messaging templates list
-func (a *MessagingApi) TemplatesList(page *int, pageSize *int, q *string, status *string, channel *string, providerCode *string) (sdktypes.TemplatesListResult, error) {
+func (a *MessagingApi) TemplatesList(page *string, pageSize *string, q *string, status *string, channel *string, providerCode *string) (sdktypes.TemplatesListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
@@ -264,7 +264,7 @@ func (a *MessagingApi) TemplatesVersionsPublish(templateId string, versionId str
 }
 
 // Verification policies list
-func (a *MessagingApi) VerificationPoliciesList(page *int, pageSize *int, q *string, status *string, channel *string, providerCode *string) (sdktypes.VerificationPoliciesListResult, error) {
+func (a *MessagingApi) VerificationPoliciesList(page *string, pageSize *string, q *string, status *string, channel *string, providerCode *string) (sdktypes.VerificationPoliciesListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},

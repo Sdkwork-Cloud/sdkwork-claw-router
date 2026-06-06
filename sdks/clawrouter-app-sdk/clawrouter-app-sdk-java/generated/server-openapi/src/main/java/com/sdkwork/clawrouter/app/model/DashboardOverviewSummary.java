@@ -2,24 +2,24 @@ package com.sdkwork.clawrouter.app.model;
 
 
 public class DashboardOverviewSummary {
-    private Integer audioRequests;
+    private String audioRequests;
     private Double availableCredits;
-    private Integer errorCount;
-    private Integer imageRequests;
-    private Integer musicRequests;
-    private Integer requestCount;
+    private String errorCount;
+    private String imageRequests;
+    private String musicRequests;
+    private String requestCount;
     private Double rpm;
-    private Integer totalRequestCount;
+    private String totalRequestCount;
     private Double totalUsedCredits;
     private Double tpm;
     private Double usedCredits;
-    private Integer videoRequests;
+    private String videoRequests;
 
-    public Integer getAudioRequests() {
+    public String getAudioRequests() {
         return this.audioRequests;
     }
 
-    public void setAudioRequests(Integer audioRequests) {
+    public void setAudioRequests(String audioRequests) {
         this.audioRequests = audioRequests;
     }
 
@@ -31,35 +31,35 @@ public class DashboardOverviewSummary {
         this.availableCredits = availableCredits;
     }
 
-    public Integer getErrorCount() {
+    public String getErrorCount() {
         return this.errorCount;
     }
 
-    public void setErrorCount(Integer errorCount) {
+    public void setErrorCount(String errorCount) {
         this.errorCount = errorCount;
     }
 
-    public Integer getImageRequests() {
+    public String getImageRequests() {
         return this.imageRequests;
     }
 
-    public void setImageRequests(Integer imageRequests) {
+    public void setImageRequests(String imageRequests) {
         this.imageRequests = imageRequests;
     }
 
-    public Integer getMusicRequests() {
+    public String getMusicRequests() {
         return this.musicRequests;
     }
 
-    public void setMusicRequests(Integer musicRequests) {
+    public void setMusicRequests(String musicRequests) {
         this.musicRequests = musicRequests;
     }
 
-    public Integer getRequestCount() {
+    public String getRequestCount() {
         return this.requestCount;
     }
 
-    public void setRequestCount(Integer requestCount) {
+    public void setRequestCount(String requestCount) {
         this.requestCount = requestCount;
     }
 
@@ -71,11 +71,11 @@ public class DashboardOverviewSummary {
         this.rpm = rpm;
     }
 
-    public Integer getTotalRequestCount() {
+    public String getTotalRequestCount() {
         return this.totalRequestCount;
     }
 
-    public void setTotalRequestCount(Integer totalRequestCount) {
+    public void setTotalRequestCount(String totalRequestCount) {
         this.totalRequestCount = totalRequestCount;
     }
 
@@ -103,11 +103,11 @@ public class DashboardOverviewSummary {
         this.usedCredits = usedCredits;
     }
 
-    public Integer getVideoRequests() {
+    public String getVideoRequests() {
         return this.videoRequests;
     }
 
-    public void setVideoRequests(Integer videoRequests) {
+    public void setVideoRequests(String videoRequests) {
         this.videoRequests = videoRequests;
     }
 }

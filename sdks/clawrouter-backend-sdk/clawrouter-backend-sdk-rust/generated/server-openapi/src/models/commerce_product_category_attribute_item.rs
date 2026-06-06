@@ -48,7 +48,7 @@ pub struct CommerceProductCategoryAttributeItem {
 
     /// Sort order field on commerce product category attribute item.
     #[serde(rename = "sortOrder")]
-    pub sort_order: i64,
+    pub sort_order: String,
 
     /// Status field on commerce product category attribute item.
     pub status: String,

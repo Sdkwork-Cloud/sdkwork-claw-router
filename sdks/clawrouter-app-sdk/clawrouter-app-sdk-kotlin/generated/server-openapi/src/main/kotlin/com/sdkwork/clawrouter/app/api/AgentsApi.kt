@@ -9,7 +9,7 @@ import com.sdkwork.clawrouter.app.http.HttpClient
 class AgentsApi(private val client: HttpClient) {
 
     /** List Playground agent definitions */
-    suspend fun agentDefinitionsList(page: Int? = null, pageSize: Int? = null, q: String? = null): AgentDefinitionsListResult? {
+    suspend fun agentDefinitionsList(page: String? = null, pageSize: String? = null, q: String? = null): AgentDefinitionsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -50,7 +50,7 @@ class AgentsApi(private val client: HttpClient) {
     }
 
     /** List Playground agent run steps */
-    suspend fun agentRunStepsList(runId: String, page: Int? = null, pageSize: Int? = null): AgentRunStepsListResult? {
+    suspend fun agentRunStepsList(runId: String, page: String? = null, pageSize: String? = null): AgentRunStepsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null)
@@ -90,7 +90,7 @@ class AgentsApi(private val client: HttpClient) {
     }
 
     /** List Playground agent runs */
-    suspend fun agentRunsList(sessionId: String, page: Int? = null, pageSize: Int? = null): AgentRunsListResult? {
+    suspend fun agentRunsList(sessionId: String, page: String? = null, pageSize: String? = null): AgentRunsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null)
@@ -118,7 +118,7 @@ class AgentsApi(private val client: HttpClient) {
     }
 
     /** List Playground agent sessions */
-    suspend fun agentSessionsList(agentId: String, page: Int? = null, pageSize: Int? = null): AgentSessionsListResult? {
+    suspend fun agentSessionsList(agentId: String, page: String? = null, pageSize: String? = null): AgentSessionsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null)

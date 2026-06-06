@@ -2,32 +2,32 @@ package com.sdkwork.clawrouter.backend.model;
 
 
 public class AdminAnalyticsSummary {
-    private Integer activeModels;
-    private Integer activeUsers;
+    private String activeModels;
+    private String activeUsers;
     private Double averagePointsPerRequest;
     private Double averageTokensPerRequest;
     private Double errorRate;
-    private Integer failedRequests;
-    private Integer successfulRequests;
+    private String failedRequests;
+    private String successfulRequests;
     private Double totalPoints;
-    private Integer totalRequests;
+    private String totalRequests;
     private Double totalTokens;
-    private Integer totalUsers;
+    private String totalUsers;
     private Double upstreamCost;
 
-    public Integer getActiveModels() {
+    public String getActiveModels() {
         return this.activeModels;
     }
 
-    public void setActiveModels(Integer activeModels) {
+    public void setActiveModels(String activeModels) {
         this.activeModels = activeModels;
     }
 
-    public Integer getActiveUsers() {
+    public String getActiveUsers() {
         return this.activeUsers;
     }
 
-    public void setActiveUsers(Integer activeUsers) {
+    public void setActiveUsers(String activeUsers) {
         this.activeUsers = activeUsers;
     }
 
@@ -55,19 +55,19 @@ public class AdminAnalyticsSummary {
         this.errorRate = errorRate;
     }
 
-    public Integer getFailedRequests() {
+    public String getFailedRequests() {
         return this.failedRequests;
     }
 
-    public void setFailedRequests(Integer failedRequests) {
+    public void setFailedRequests(String failedRequests) {
         this.failedRequests = failedRequests;
     }
 
-    public Integer getSuccessfulRequests() {
+    public String getSuccessfulRequests() {
         return this.successfulRequests;
     }
 
-    public void setSuccessfulRequests(Integer successfulRequests) {
+    public void setSuccessfulRequests(String successfulRequests) {
         this.successfulRequests = successfulRequests;
     }
 
@@ -79,11 +79,11 @@ public class AdminAnalyticsSummary {
         this.totalPoints = totalPoints;
     }
 
-    public Integer getTotalRequests() {
+    public String getTotalRequests() {
         return this.totalRequests;
     }
 
-    public void setTotalRequests(Integer totalRequests) {
+    public void setTotalRequests(String totalRequests) {
         this.totalRequests = totalRequests;
     }
 
@@ -95,11 +95,11 @@ public class AdminAnalyticsSummary {
         this.totalTokens = totalTokens;
     }
 
-    public Integer getTotalUsers() {
+    public String getTotalUsers() {
         return this.totalUsers;
     }
 
-    public void setTotalUsers(Integer totalUsers) {
+    public void setTotalUsers(String totalUsers) {
         this.totalUsers = totalUsers;
     }
 

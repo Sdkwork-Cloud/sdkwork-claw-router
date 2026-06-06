@@ -10,7 +10,7 @@ type AgentItem struct {
 	Description string `json:"description"`
 	Id string `json:"id"`
 	Name string `json:"name"`
-	OwnerUserId int `json:"ownerUserId"`
+	OwnerUserId string `json:"ownerUserId"`
 	Status string `json:"status"`
 	TemplateSource string `json:"templateSource"`
 	UpdatedAt string `json:"updatedAt"`

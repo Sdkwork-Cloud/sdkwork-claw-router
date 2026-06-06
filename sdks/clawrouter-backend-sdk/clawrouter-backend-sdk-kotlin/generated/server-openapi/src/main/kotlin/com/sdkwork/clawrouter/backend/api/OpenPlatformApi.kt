@@ -9,7 +9,7 @@ import com.sdkwork.clawrouter.backend.http.HttpClient
 class OpenPlatformApi(private val client: HttpClient) {
 
     /** List open platform accounts */
-    suspend fun accountsList(provider: String? = null, type: String? = null, status: String? = null, page: Int? = null, pageSize: Int? = null): AccountsListResult? {
+    suspend fun accountsList(provider: String? = null, type: String? = null, status: String? = null, page: String? = null, pageSize: String? = null): AccountsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("provider", provider, "form", true, false, null),
             QueryParameterSpec("type", type, "form", true, false, null),

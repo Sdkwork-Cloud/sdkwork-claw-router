@@ -10,4 +10,4 @@ class AdminAnalyticsTrendPoint:
     requests: float
     time: str
     tokens: float
-    users: int
+    users: str

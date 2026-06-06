@@ -6,7 +6,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class StorageUsageLedgerEntry
     {
-        public int? DeltaBytes { get; set; }
+        public string? DeltaBytes { get; set; }
         public string? Id { get; set; }
         public string? OccurredAt { get; set; }
         public string? ScopeId { get; set; }

@@ -228,7 +228,7 @@ class ContentCourseApplicationsApi:
         self._client = client
 
 
-    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, q: Optional[str] = None, status: Optional[str] = None) -> CourseApplicationsListResult:
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, q: Optional[str] = None, status: Optional[str] = None) -> CourseApplicationsListResult:
         """Admin Course Applications List"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -283,7 +283,7 @@ class ContentCoursesApi:
         self.sections = ContentCoursesSectionsApi(client)
 
 
-    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, q: Optional[str] = None, status: Optional[str] = None) -> CoursesListResult:
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, q: Optional[str] = None, status: Optional[str] = None) -> CoursesListResult:
         """Admin Courses List"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -323,7 +323,7 @@ class ContentCoursesLessonsApi:
         self._client = client
 
 
-    def list(self, course_id: str, page: Optional[int] = None, page_size: Optional[int] = None, q: Optional[str] = None, status: Optional[str] = None) -> CoursesLessonsListResult:
+    def list(self, course_id: str, page: Optional[str] = None, page_size: Optional[str] = None, q: Optional[str] = None, status: Optional[str] = None) -> CoursesLessonsListResult:
         """Admin Course Lessons List"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -344,7 +344,7 @@ class ContentCoursesRelationsApi:
         self._client = client
 
 
-    def list(self, course_id: str, page: Optional[int] = None, page_size: Optional[int] = None, q: Optional[str] = None, status: Optional[str] = None) -> CoursesRelationsListResult:
+    def list(self, course_id: str, page: Optional[str] = None, page_size: Optional[str] = None, q: Optional[str] = None, status: Optional[str] = None) -> CoursesRelationsListResult:
         """Admin Course Relations List"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -365,7 +365,7 @@ class ContentCoursesSectionsApi:
         self._client = client
 
 
-    def list(self, course_id: str, page: Optional[int] = None, page_size: Optional[int] = None, q: Optional[str] = None, status: Optional[str] = None) -> CoursesSectionsListResult:
+    def list(self, course_id: str, page: Optional[str] = None, page_size: Optional[str] = None, q: Optional[str] = None, status: Optional[str] = None) -> CoursesSectionsListResult:
         """Admin Course Sections List"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -386,7 +386,7 @@ class ContentCourseCommentsApi:
         self._client = client
 
 
-    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, q: Optional[str] = None, status: Optional[str] = None) -> CourseCommentsListResult:
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, q: Optional[str] = None, status: Optional[str] = None) -> CourseCommentsListResult:
         """Admin Course Comments List"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -407,7 +407,7 @@ class ContentCourseEngagementApi:
         self._client = client
 
 
-    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, q: Optional[str] = None, status: Optional[str] = None) -> CourseEngagementListResult:
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, q: Optional[str] = None, status: Optional[str] = None) -> CourseEngagementListResult:
         """Admin Course Engagement List"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},

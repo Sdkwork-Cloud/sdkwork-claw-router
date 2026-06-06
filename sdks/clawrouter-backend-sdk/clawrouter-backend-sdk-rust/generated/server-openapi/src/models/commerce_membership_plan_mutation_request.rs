@@ -17,7 +17,7 @@ pub struct CommerceMembershipPlanMutationRequest {
 
     /// Rank field on commerce membership plan mutation request.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub rank: Option<i64>,
+    pub rank: Option<String>,
 
     /// Status field on commerce membership plan mutation request.
     #[serde(default, skip_serializing_if = "Option::is_none")]

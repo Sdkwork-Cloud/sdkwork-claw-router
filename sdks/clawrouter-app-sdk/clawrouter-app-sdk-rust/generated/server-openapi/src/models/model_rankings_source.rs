@@ -5,7 +5,7 @@ use serde::{Deserialize, Serialize};
 pub struct ModelRankingsSource {
     /// Cache max age seconds field on model rankings source.
     #[serde(rename = "cacheMaxAgeSeconds")]
-    pub cache_max_age_seconds: i64,
+    pub cache_max_age_seconds: String,
 
     /// Generated at field on model rankings source.
     #[serde(rename = "generatedAt")]
@@ -25,7 +25,7 @@ pub struct ModelRankingsSource {
 
     /// Refresh interval seconds field on model rankings source.
     #[serde(rename = "refreshIntervalSeconds")]
-    pub refresh_interval_seconds: i64,
+    pub refresh_interval_seconds: String,
 
     /// Snapshot date field on model rankings source.
     #[serde(rename = "snapshotDate")]

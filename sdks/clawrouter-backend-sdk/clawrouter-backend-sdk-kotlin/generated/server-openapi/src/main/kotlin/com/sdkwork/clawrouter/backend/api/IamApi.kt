@@ -8,12 +8,6 @@ import com.sdkwork.clawrouter.backend.http.HttpClient
 
 class IamApi(private val client: HttpClient) {
 
-    /** List API key map */
-    suspend fun apiKeysList(): ApiKeysListResult? {
-        val raw = client.get(ApiPaths.backendPath("/iam/api_keys"))
-        return client.convertValue(raw, object : TypeReference<ApiKeysListResult>() {})
-    }
-
     /** Create API key */
     suspend fun apiKeysCreate(body: AdminApiKeyCreateRequest, idempotencyKey: String): ApiKeysCreateResult? {
         val requestHeaders = buildRequestHeaders(
@@ -30,18 +24,6 @@ class IamApi(private val client: HttpClient) {
     suspend fun apiKeysDelete(apiKeyId: String): ApiKeysDeleteResult? {
         val raw = client.delete(ApiPaths.backendPath("/iam/api_keys/${serializePathParameter(apiKeyId, PathParameterSpec("apiKeyId", "simple", false))}"))
         return client.convertValue(raw, object : TypeReference<ApiKeysDeleteResult>() {})
-    }
-
-    /** List users */
-    suspend fun usersList(): UsersListResult? {
-        val raw = client.get(ApiPaths.backendPath("/iam/users"))
-        return client.convertValue(raw, object : TypeReference<UsersListResult>() {})
-    }
-
-    /** Create user */
-    suspend fun usersCreate(body: AdminUserCreateRequest): UsersCreateResult? {
-        val raw = client.post(ApiPaths.backendPath("/iam/users"), body, null, null, "application/json")
-        return client.convertValue(raw, object : TypeReference<UsersCreateResult>() {})
     }
 
     /** Update user */

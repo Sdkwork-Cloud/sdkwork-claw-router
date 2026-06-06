@@ -9,12 +9,12 @@ pub struct AdminRecordLogsResponse {
     pub logs: Vec<AdminRecordLogItem>,
 
     /// Page field on admin record logs response.
-    pub page: i64,
+    pub page: String,
 
     /// Page size field on admin record logs response.
     #[serde(rename = "pageSize")]
-    pub page_size: i64,
+    pub page_size: String,
 
     /// Total field on admin record logs response.
-    pub total: i64,
+    pub total: String,
 }

@@ -3,18 +3,18 @@ package com.sdkwork.clawrouter.backend.model;
 import java.util.List;
 
 public class AdminModelCatalogSyncResponse {
-    private Integer acceptedCount;
-    private Integer capabilityCount;
+    private String acceptedCount;
+    private String capabilityCount;
     private String catalogRoot;
     private String catalogVersion;
     private Boolean dryRun;
-    private Integer familyCount;
-    private Integer meterCount;
+    private String familyCount;
+    private String meterCount;
     private String mode;
-    private Integer modelCount;
+    private String modelCount;
     private List<AdminAiModelItem> models;
-    private Integer priceCount;
-    private Integer rankingCount;
+    private String priceCount;
+    private String rankingCount;
     private String requestedCatalogVersion;
     private String snapshotId;
     private String source;
@@ -22,22 +22,22 @@ public class AdminModelCatalogSyncResponse {
     private String syncRunId;
     private Boolean synced;
     private List<String> vendorCodes;
-    private Integer vendorCount;
+    private String vendorCount;
     private List<AdminModelVendorItem> vendors;
 
-    public Integer getAcceptedCount() {
+    public String getAcceptedCount() {
         return this.acceptedCount;
     }
 
-    public void setAcceptedCount(Integer acceptedCount) {
+    public void setAcceptedCount(String acceptedCount) {
         this.acceptedCount = acceptedCount;
     }
 
-    public Integer getCapabilityCount() {
+    public String getCapabilityCount() {
         return this.capabilityCount;
     }
 
-    public void setCapabilityCount(Integer capabilityCount) {
+    public void setCapabilityCount(String capabilityCount) {
         this.capabilityCount = capabilityCount;
     }
 
@@ -65,19 +65,19 @@ public class AdminModelCatalogSyncResponse {
         this.dryRun = dryRun;
     }
 
-    public Integer getFamilyCount() {
+    public String getFamilyCount() {
         return this.familyCount;
     }
 
-    public void setFamilyCount(Integer familyCount) {
+    public void setFamilyCount(String familyCount) {
         this.familyCount = familyCount;
     }
 
-    public Integer getMeterCount() {
+    public String getMeterCount() {
         return this.meterCount;
     }
 
-    public void setMeterCount(Integer meterCount) {
+    public void setMeterCount(String meterCount) {
         this.meterCount = meterCount;
     }
 
@@ -89,11 +89,11 @@ public class AdminModelCatalogSyncResponse {
         this.mode = mode;
     }
 
-    public Integer getModelCount() {
+    public String getModelCount() {
         return this.modelCount;
     }
 
-    public void setModelCount(Integer modelCount) {
+    public void setModelCount(String modelCount) {
         this.modelCount = modelCount;
     }
 
@@ -105,19 +105,19 @@ public class AdminModelCatalogSyncResponse {
         this.models = models;
     }
 
-    public Integer getPriceCount() {
+    public String getPriceCount() {
         return this.priceCount;
     }
 
-    public void setPriceCount(Integer priceCount) {
+    public void setPriceCount(String priceCount) {
         this.priceCount = priceCount;
     }
 
-    public Integer getRankingCount() {
+    public String getRankingCount() {
         return this.rankingCount;
     }
 
-    public void setRankingCount(Integer rankingCount) {
+    public void setRankingCount(String rankingCount) {
         this.rankingCount = rankingCount;
     }
 
@@ -177,11 +177,11 @@ public class AdminModelCatalogSyncResponse {
         this.vendorCodes = vendorCodes;
     }
 
-    public Integer getVendorCount() {
+    public String getVendorCount() {
         return this.vendorCount;
     }
 
-    public void setVendorCount(Integer vendorCount) {
+    public void setVendorCount(String vendorCount) {
         this.vendorCount = vendorCount;
     }
 

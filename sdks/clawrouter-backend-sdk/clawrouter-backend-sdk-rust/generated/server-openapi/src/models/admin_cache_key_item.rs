@@ -6,7 +6,7 @@ pub struct AdminCacheKeyItem {
     /// Expires in seconds field on admin cache key item.
     #[serde(rename = "expiresInSeconds")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub expires_in_seconds: Option<i64>,
+    pub expires_in_seconds: Option<String>,
 
     /// Instance name field on admin cache key item.
     #[serde(rename = "instanceName")]

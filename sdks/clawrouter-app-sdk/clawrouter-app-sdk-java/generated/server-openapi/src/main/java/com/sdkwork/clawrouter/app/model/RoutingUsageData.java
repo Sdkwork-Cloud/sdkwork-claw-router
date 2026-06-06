@@ -2,23 +2,23 @@ package com.sdkwork.clawrouter.app.model;
 
 
 public class RoutingUsageData {
-    private Integer latency;
-    private Integer requests;
+    private String latency;
+    private String requests;
     private String time;
 
-    public Integer getLatency() {
+    public String getLatency() {
         return this.latency;
     }
 
-    public void setLatency(Integer latency) {
+    public void setLatency(String latency) {
         this.latency = latency;
     }
 
-    public Integer getRequests() {
+    public String getRequests() {
         return this.requests;
     }
 
-    public void setRequests(Integer requests) {
+    public void setRequests(String requests) {
         this.requests = requests;
     }
 

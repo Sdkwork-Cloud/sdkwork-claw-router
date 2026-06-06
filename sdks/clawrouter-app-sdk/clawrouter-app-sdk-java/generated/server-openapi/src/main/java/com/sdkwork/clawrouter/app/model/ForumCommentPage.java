@@ -5,9 +5,9 @@ import java.util.List;
 public class ForumCommentPage {
     private List<ForumCommentItem> content;
     private List<ForumCommentItem> items;
-    private Integer page;
-    private Integer size;
-    private Integer totalElements;
+    private String page;
+    private String size;
+    private String totalElements;
 
     public List<ForumCommentItem> getContent() {
         return this.content;
@@ -25,27 +25,27 @@ public class ForumCommentPage {
         this.items = items;
     }
 
-    public Integer getPage() {
+    public String getPage() {
         return this.page;
     }
 
-    public void setPage(Integer page) {
+    public void setPage(String page) {
         this.page = page;
     }
 
-    public Integer getSize() {
+    public String getSize() {
         return this.size;
     }
 
-    public void setSize(Integer size) {
+    public void setSize(String size) {
         this.size = size;
     }
 
-    public Integer getTotalElements() {
+    public String getTotalElements() {
         return this.totalElements;
     }
 
-    public void setTotalElements(Integer totalElements) {
+    public void setTotalElements(String totalElements) {
         this.totalElements = totalElements;
     }
 }

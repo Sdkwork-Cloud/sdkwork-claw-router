@@ -17,7 +17,7 @@ pub struct MemorySpaceItem {
 
     /// Entry count field on memory space item.
     #[serde(rename = "entryCount")]
-    pub entry_count: i64,
+    pub entry_count: String,
 
     /// Id field on memory space item.
     pub id: String,
@@ -25,7 +25,7 @@ pub struct MemorySpaceItem {
     /// Max injected tokens field on memory space item.
     #[serde(rename = "maxInjectedTokens")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub max_injected_tokens: Option<i64>,
+    pub max_injected_tokens: Option<String>,
 
     /// Memory enabled field on memory space item.
     #[serde(rename = "memoryEnabled")]

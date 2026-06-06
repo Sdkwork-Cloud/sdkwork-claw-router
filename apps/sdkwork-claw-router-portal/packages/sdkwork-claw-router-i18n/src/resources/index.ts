@@ -26,6 +26,7 @@ import { adminMiscMessages } from './admin/misc';
 import { adminModelMessages } from './admin/model';
 import { adminMcpMessages } from './admin/mcp';
 import { adminOpenPlatformMessages } from './admin/open-platform';
+import { adminOrganizationMessages } from './admin/organization';
 import { adminPromptsMessages } from './admin/prompts';
 import { adminRateLimitMessages } from './admin/rate-limit';
 import { adminRuntimeRegionMessages } from './admin/runtime-region';
@@ -93,6 +94,7 @@ export const resources = mergeI18nBundles([
   adminModelMessages,
   adminMcpMessages,
   adminOpenPlatformMessages,
+  adminOrganizationMessages,
   adminPromptsMessages,
   adminRateLimitMessages,
   adminRuntimeRegionMessages,

@@ -5,11 +5,11 @@ use serde::{Deserialize, Serialize};
 pub struct ModelRankingRefreshTriggerResponse {
     /// Cache max age seconds field on model ranking refresh trigger response.
     #[serde(rename = "cacheMaxAgeSeconds")]
-    pub cache_max_age_seconds: i64,
+    pub cache_max_age_seconds: String,
 
     /// Generated count field on model ranking refresh trigger response.
     #[serde(rename = "generatedCount")]
-    pub generated_count: i64,
+    pub generated_count: String,
 
     /// Next refresh at field on model ranking refresh trigger response.
     #[serde(rename = "nextRefreshAt")]
@@ -17,7 +17,7 @@ pub struct ModelRankingRefreshTriggerResponse {
 
     /// Organization id field on model ranking refresh trigger response.
     #[serde(rename = "organizationId")]
-    pub organization_id: i64,
+    pub organization_id: String,
 
     /// Rank scope field on model ranking refresh trigger response.
     #[serde(rename = "rankScope")]
@@ -25,7 +25,7 @@ pub struct ModelRankingRefreshTriggerResponse {
 
     /// Refresh interval seconds field on model ranking refresh trigger response.
     #[serde(rename = "refreshIntervalSeconds")]
-    pub refresh_interval_seconds: i64,
+    pub refresh_interval_seconds: String,
 
     /// Snapshot date field on model ranking refresh trigger response.
     #[serde(rename = "snapshotDate")]
@@ -37,14 +37,14 @@ pub struct ModelRankingRefreshTriggerResponse {
 
     /// Source count field on model ranking refresh trigger response.
     #[serde(rename = "sourceCount")]
-    pub source_count: i64,
+    pub source_count: String,
 
     /// Result of the manual ranking worker run.
     pub status: String,
 
     /// Tenant id field on model ranking refresh trigger response.
     #[serde(rename = "tenantId")]
-    pub tenant_id: i64,
+    pub tenant_id: String,
 
     /// Whether a manual refresh worker run was started.
     pub triggered: bool,

@@ -6,9 +6,9 @@ from typing import TYPE_CHECKING, Optional, List, Dict, Any
 @dataclass
 class AdminCacheOperationResponse:
     """Admin cache operation response schema exposed by Claw Router."""
-    deleted_entries: int
+    deleted_entries: str
     operation: str
-    refreshed_entries: int
+    refreshed_entries: str
     status: str
     cache_key: Optional[str] = None
     instance_name: Optional[str] = None

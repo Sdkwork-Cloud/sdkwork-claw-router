@@ -13,16 +13,6 @@ public class SystemApi {
         this.client = client;
     }
 
-    /** Promotion Code Redemption Create */
-    public PromotionsCodesRedemptionsCreateResult promotionsCodesRedemptionsCreate(PromotionCodeRedemptionRequest body, String idempotencyKey) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.appPath("/promotions/codes/redemptions"), body, null, requestHeaders, "application/json");
-        return client.convertValue(raw, new TypeReference<PromotionsCodesRedemptionsCreateResult>() {});
-    }
-
     /** Promotion Discount Application Create */
     public PromotionsDiscountApplicationsCreateResult promotionsDiscountApplicationsCreate(PromotionCommandRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
@@ -61,41 +51,6 @@ public class SystemApi {
         );
         Object raw = client.post(ApiPaths.appPath("/promotions/discount_applications/" + serializePathParameter(applicationId, new PathParameterSpec("applicationId", "simple", false)) + "/settlements"), body, null, requestHeaders, "application/json");
         return client.convertValue(raw, new TypeReference<PromotionsDiscountApplicationsSettleResult>() {});
-    }
-
-    /** Promotion User Coupon Claim Create */
-    public PromotionsUserCouponsClaimsCreateResult promotionsUserCouponsClaimsCreate(PromotionCommandRequest body, String idempotencyKey) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.appPath("/promotions/user_coupon_claims"), body, null, requestHeaders, "application/json");
-        return client.convertValue(raw, new TypeReference<PromotionsUserCouponsClaimsCreateResult>() {});
-    }
-
-    /** Promotion User Coupons Wallet List */
-    public PromotionsUserCouponsWalletListResult promotionsUserCouponsWalletList(String status) throws Exception {
-        String query = buildQueryString(List.of(
-            new QueryParameterSpec("status", status, "form", true, false, null)
-        ));
-        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/promotions/user_coupons"), query));
-        return client.convertValue(raw, new TypeReference<PromotionsUserCouponsWalletListResult>() {});
-    }
-
-    /** Retrieve public IAM runtime settings */
-    public IamRuntimeRetrieveResult iamRuntimeRetrieve(String tenantCode, String organizationCode) throws Exception {
-        String query = buildQueryString(List.of(
-            new QueryParameterSpec("tenant_code", tenantCode, "form", true, false, null),
-            new QueryParameterSpec("organization_code", organizationCode, "form", true, false, null)
-        ));
-        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/system/iam/runtime"), query));
-        return client.convertValue(raw, new TypeReference<IamRuntimeRetrieveResult>() {});
-    }
-
-    /** Retrieve public IAM verification policy */
-    public IamVerificationPolicyRetrieveResult iamVerificationPolicyRetrieve() throws Exception {
-        Object raw = client.get(ApiPaths.appPath("/system/iam/verification_policy"));
-        return client.convertValue(raw, new TypeReference<IamVerificationPolicyRetrieveResult>() {});
     }
 
     /** Retrieve public site runtime branding settings */

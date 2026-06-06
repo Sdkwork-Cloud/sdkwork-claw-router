@@ -17,7 +17,7 @@ impl AgentsApi {
     }
 
     /// List Playground agent definitions
-    pub async fn agent_definitions_list(&self, page: Option<i64>, page_size: Option<i64>, q: Option<&str>) -> Result<AgentDefinitionsListResult, SdkworkError> {
+    pub async fn agent_definitions_list(&self, page: Option<&str>, page_size: Option<&str>, q: Option<&str>) -> Result<AgentDefinitionsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
@@ -58,7 +58,7 @@ impl AgentsApi {
     }
 
     /// List Playground agent run steps
-    pub async fn agent_run_steps_list(&self, run_id: &str, page: Option<i64>, page_size: Option<i64>) -> Result<AgentRunStepsListResult, SdkworkError> {
+    pub async fn agent_run_steps_list(&self, run_id: &str, page: Option<&str>, page_size: Option<&str>) -> Result<AgentRunStepsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
@@ -98,7 +98,7 @@ impl AgentsApi {
     }
 
     /// List Playground agent runs
-    pub async fn agent_runs_list(&self, session_id: &str, page: Option<i64>, page_size: Option<i64>) -> Result<AgentRunsListResult, SdkworkError> {
+    pub async fn agent_runs_list(&self, session_id: &str, page: Option<&str>, page_size: Option<&str>) -> Result<AgentRunsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
@@ -126,7 +126,7 @@ impl AgentsApi {
     }
 
     /// List Playground agent sessions
-    pub async fn agent_sessions_list(&self, agent_id: &str, page: Option<i64>, page_size: Option<i64>) -> Result<AgentSessionsListResult, SdkworkError> {
+    pub async fn agent_sessions_list(&self, agent_id: &str, page: Option<&str>, page_size: Option<&str>) -> Result<AgentSessionsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),

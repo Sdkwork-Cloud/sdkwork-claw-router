@@ -10,22 +10,22 @@ if TYPE_CHECKING:
 @dataclass
 class AdminModelCatalogSyncResponse:
     """Admin model catalog sync response schema exposed by Claw Router."""
-    accepted_count: int
-    capability_count: int
+    accepted_count: str
+    capability_count: str
     catalog_version: str
     dry_run: bool
-    family_count: int
-    meter_count: int
+    family_count: str
+    meter_count: str
     mode: str
-    model_count: int
+    model_count: str
     models: List[AdminAiModelItem]
-    price_count: int
-    ranking_count: int
+    price_count: str
+    ranking_count: str
     source: str
     source_hash: str
     synced: bool
     vendor_codes: List[str]
-    vendor_count: int
+    vendor_count: str
     vendors: List[AdminModelVendorItem]
     catalog_root: Optional[str] = None
     requested_catalog_version: Optional[str] = None

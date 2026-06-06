@@ -31,7 +31,7 @@ class McpApi {
   }
 
   /// List MCP servers
-  Future<ServersListResult?> serversList([int? page, int? pageSize, String? q, String? transport, String? visibility, String? status, String? categoryId]) async {
+  Future<ServersListResult?> serversList([String? page, String? pageSize, String? q, String? transport, String? visibility, String? status, String? categoryId]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null),

@@ -267,7 +267,7 @@ class ServiceProvidersAdjustmentsApi:
         self._client = client
 
 
-    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, status: Optional[str] = None, provider_id: Optional[str] = None, seller_provider_id: Optional[str] = None, buyer_provider_id: Optional[str] = None, edge_id: Optional[str] = None) -> AdjustmentsListResult:
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, status: Optional[str] = None, provider_id: Optional[str] = None, seller_provider_id: Optional[str] = None, buyer_provider_id: Optional[str] = None, edge_id: Optional[str] = None) -> AdjustmentsListResult:
         """Service Provider Adjustments List"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -287,7 +287,7 @@ class ServiceProvidersAuditEventsApi:
         self._client = client
 
 
-    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, status: Optional[str] = None, provider_id: Optional[str] = None, seller_provider_id: Optional[str] = None, buyer_provider_id: Optional[str] = None, edge_id: Optional[str] = None) -> AuditEventsListResult:
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, status: Optional[str] = None, provider_id: Optional[str] = None, seller_provider_id: Optional[str] = None, buyer_provider_id: Optional[str] = None, edge_id: Optional[str] = None) -> AuditEventsListResult:
         """Service Provider Audit Events List"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -307,7 +307,7 @@ class ServiceProvidersBindingsApi:
         self._client = client
 
 
-    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, status: Optional[str] = None, provider_id: Optional[str] = None, seller_provider_id: Optional[str] = None, buyer_provider_id: Optional[str] = None, edge_id: Optional[str] = None) -> BindingsListResult:
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, status: Optional[str] = None, provider_id: Optional[str] = None, seller_provider_id: Optional[str] = None, buyer_provider_id: Optional[str] = None, edge_id: Optional[str] = None) -> BindingsListResult:
         """Service Provider Bindings List"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -327,7 +327,7 @@ class ServiceProvidersContractsApi:
         self._client = client
 
 
-    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, status: Optional[str] = None, provider_id: Optional[str] = None, seller_provider_id: Optional[str] = None, buyer_provider_id: Optional[str] = None, edge_id: Optional[str] = None) -> ContractsListResult:
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, status: Optional[str] = None, provider_id: Optional[str] = None, seller_provider_id: Optional[str] = None, buyer_provider_id: Optional[str] = None, edge_id: Optional[str] = None) -> ContractsListResult:
         """Service Provider Contracts List"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -347,7 +347,7 @@ class ServiceProvidersDashboardApi:
         self._client = client
 
 
-    def retrieve(self, page: Optional[int] = None, page_size: Optional[int] = None, status: Optional[str] = None, provider_id: Optional[str] = None, seller_provider_id: Optional[str] = None, buyer_provider_id: Optional[str] = None, edge_id: Optional[str] = None) -> DashboardRetrieveResult:
+    def retrieve(self, page: Optional[str] = None, page_size: Optional[str] = None, status: Optional[str] = None, provider_id: Optional[str] = None, seller_provider_id: Optional[str] = None, buyer_provider_id: Optional[str] = None, edge_id: Optional[str] = None) -> DashboardRetrieveResult:
         """Service Provider Dashboard Retrieve"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -367,7 +367,7 @@ class ServiceProvidersDownstreamsApi:
         self._client = client
 
 
-    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, status: Optional[str] = None, provider_id: Optional[str] = None, seller_provider_id: Optional[str] = None, buyer_provider_id: Optional[str] = None, edge_id: Optional[str] = None) -> DownstreamsListResult:
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, status: Optional[str] = None, provider_id: Optional[str] = None, seller_provider_id: Optional[str] = None, buyer_provider_id: Optional[str] = None, edge_id: Optional[str] = None) -> DownstreamsListResult:
         """Service Provider Downstreams List"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -397,7 +397,7 @@ class ServiceProvidersMembersApi:
         self._client = client
 
 
-    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, status: Optional[str] = None, provider_id: Optional[str] = None, seller_provider_id: Optional[str] = None, buyer_provider_id: Optional[str] = None, edge_id: Optional[str] = None) -> MembersListResult:
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, status: Optional[str] = None, provider_id: Optional[str] = None, seller_provider_id: Optional[str] = None, buyer_provider_id: Optional[str] = None, edge_id: Optional[str] = None) -> MembersListResult:
         """Service Provider Members List"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -417,7 +417,7 @@ class ServiceProvidersPricingRulesApi:
         self._client = client
 
 
-    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, status: Optional[str] = None, provider_id: Optional[str] = None, seller_provider_id: Optional[str] = None, buyer_provider_id: Optional[str] = None, edge_id: Optional[str] = None) -> PricingRulesListResult:
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, status: Optional[str] = None, provider_id: Optional[str] = None, seller_provider_id: Optional[str] = None, buyer_provider_id: Optional[str] = None, edge_id: Optional[str] = None) -> PricingRulesListResult:
         """Service Provider Pricing Rules List"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -474,7 +474,7 @@ class ServiceProvidersProviderRegistryApi:
         self._client = client
 
 
-    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, status: Optional[str] = None, provider_id: Optional[str] = None, seller_provider_id: Optional[str] = None, buyer_provider_id: Optional[str] = None, edge_id: Optional[str] = None) -> ProviderRegistryListResult:
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, status: Optional[str] = None, provider_id: Optional[str] = None, seller_provider_id: Optional[str] = None, buyer_provider_id: Optional[str] = None, edge_id: Optional[str] = None) -> ProviderRegistryListResult:
         """Service Providers List"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -494,7 +494,7 @@ class ServiceProvidersReconciliationRunsApi:
         self._client = client
 
 
-    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, status: Optional[str] = None, provider_id: Optional[str] = None, seller_provider_id: Optional[str] = None, buyer_provider_id: Optional[str] = None, edge_id: Optional[str] = None) -> ReconciliationRunsListResult:
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, status: Optional[str] = None, provider_id: Optional[str] = None, seller_provider_id: Optional[str] = None, buyer_provider_id: Optional[str] = None, edge_id: Optional[str] = None) -> ReconciliationRunsListResult:
         """Service Provider Reconciliation Runs List"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -514,7 +514,7 @@ class ServiceProvidersRelationsApi:
         self._client = client
 
 
-    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, status: Optional[str] = None, provider_id: Optional[str] = None, seller_provider_id: Optional[str] = None, buyer_provider_id: Optional[str] = None, edge_id: Optional[str] = None) -> RelationsListResult:
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, status: Optional[str] = None, provider_id: Optional[str] = None, seller_provider_id: Optional[str] = None, buyer_provider_id: Optional[str] = None, edge_id: Optional[str] = None) -> RelationsListResult:
         """Service Provider Relations List"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -534,7 +534,7 @@ class ServiceProvidersRiskEventsApi:
         self._client = client
 
 
-    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, status: Optional[str] = None, provider_id: Optional[str] = None, seller_provider_id: Optional[str] = None, buyer_provider_id: Optional[str] = None, edge_id: Optional[str] = None) -> RiskEventsListResult:
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, status: Optional[str] = None, provider_id: Optional[str] = None, seller_provider_id: Optional[str] = None, buyer_provider_id: Optional[str] = None, edge_id: Optional[str] = None) -> RiskEventsListResult:
         """Service Provider Risk Events List"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -554,7 +554,7 @@ class ServiceProvidersStatementsApi:
         self._client = client
 
 
-    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, status: Optional[str] = None, provider_id: Optional[str] = None, seller_provider_id: Optional[str] = None, buyer_provider_id: Optional[str] = None, edge_id: Optional[str] = None) -> StatementsListResult:
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, status: Optional[str] = None, provider_id: Optional[str] = None, seller_provider_id: Optional[str] = None, buyer_provider_id: Optional[str] = None, edge_id: Optional[str] = None) -> StatementsListResult:
         """Service Provider Statements List"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -574,7 +574,7 @@ class ServiceProvidersUsageApi:
         self._client = client
 
 
-    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, status: Optional[str] = None, provider_id: Optional[str] = None, seller_provider_id: Optional[str] = None, buyer_provider_id: Optional[str] = None, edge_id: Optional[str] = None) -> UsageListResult:
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, status: Optional[str] = None, provider_id: Optional[str] = None, seller_provider_id: Optional[str] = None, buyer_provider_id: Optional[str] = None, edge_id: Optional[str] = None) -> UsageListResult:
         """Service Provider Usage List"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -594,7 +594,7 @@ class ServiceProvidersProviderWalletAccountsApi:
         self._client = client
 
 
-    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, status: Optional[str] = None, provider_id: Optional[str] = None, seller_provider_id: Optional[str] = None, buyer_provider_id: Optional[str] = None, edge_id: Optional[str] = None) -> ProviderWalletAccountsListResult:
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, status: Optional[str] = None, provider_id: Optional[str] = None, seller_provider_id: Optional[str] = None, buyer_provider_id: Optional[str] = None, edge_id: Optional[str] = None) -> ProviderWalletAccountsListResult:
         """Service Provider Wallet Accounts List"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},

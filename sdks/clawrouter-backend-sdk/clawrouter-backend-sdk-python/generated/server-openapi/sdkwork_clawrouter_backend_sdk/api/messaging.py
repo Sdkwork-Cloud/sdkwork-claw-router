@@ -298,7 +298,7 @@ class MessagingProviderAccountsApi:
         self._client = client
 
 
-    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, q: Optional[str] = None, status: Optional[str] = None, channel: Optional[str] = None, provider_code: Optional[str] = None) -> ProviderAccountsListResult:
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, q: Optional[str] = None, status: Optional[str] = None, channel: Optional[str] = None, provider_code: Optional[str] = None) -> ProviderAccountsListResult:
         """Messaging provider accounts list"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -327,7 +327,7 @@ class MessagingRateLimitBucketsApi:
         self._client = client
 
 
-    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, scene_code: Optional[str] = None, channel: Optional[str] = None, target_hash: Optional[str] = None, ip_hash: Optional[str] = None, device_hash: Optional[str] = None) -> RateLimitBucketsListResult:
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, scene_code: Optional[str] = None, channel: Optional[str] = None, target_hash: Optional[str] = None, ip_hash: Optional[str] = None, device_hash: Optional[str] = None) -> RateLimitBucketsListResult:
         """Messaging rate limit buckets list"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -347,7 +347,7 @@ class MessagingRouteRulesApi:
         self._client = client
 
 
-    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, q: Optional[str] = None, status: Optional[str] = None, channel: Optional[str] = None, provider_code: Optional[str] = None) -> RouteRulesListResult:
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, q: Optional[str] = None, status: Optional[str] = None, channel: Optional[str] = None, provider_code: Optional[str] = None) -> RouteRulesListResult:
         """Messaging route rules list"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -376,7 +376,7 @@ class MessagingSendRequestsApi:
         self._client = client
 
 
-    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, status: Optional[str] = None, channel: Optional[str] = None, scene_code: Optional[str] = None, provider_code: Optional[str] = None, target_hash: Optional[str] = None) -> SendRequestsListResult:
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, status: Optional[str] = None, channel: Optional[str] = None, scene_code: Optional[str] = None, provider_code: Optional[str] = None, target_hash: Optional[str] = None) -> SendRequestsListResult:
         """Messaging send requests list"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -396,7 +396,7 @@ class MessagingSenderIdentitiesApi:
         self._client = client
 
 
-    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, q: Optional[str] = None, status: Optional[str] = None, channel: Optional[str] = None, provider_code: Optional[str] = None) -> SenderIdentitiesListResult:
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, q: Optional[str] = None, status: Optional[str] = None, channel: Optional[str] = None, provider_code: Optional[str] = None) -> SenderIdentitiesListResult:
         """Messaging sender identities list"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -425,7 +425,7 @@ class MessagingSuppressionsApi:
         self._client = client
 
 
-    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, status: Optional[str] = None, channel: Optional[str] = None, target_hash: Optional[str] = None, reason_code: Optional[str] = None) -> SuppressionsListResult:
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, status: Optional[str] = None, channel: Optional[str] = None, target_hash: Optional[str] = None, reason_code: Optional[str] = None) -> SuppressionsListResult:
         """Messaging suppressions list"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -472,7 +472,7 @@ class MessagingTemplatesApi:
         self.versions = MessagingTemplatesVersionsApi(client)
 
 
-    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, q: Optional[str] = None, status: Optional[str] = None, channel: Optional[str] = None, provider_code: Optional[str] = None) -> TemplatesListResult:
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, q: Optional[str] = None, status: Optional[str] = None, channel: Optional[str] = None, provider_code: Optional[str] = None) -> TemplatesListResult:
         """Messaging templates list"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -512,7 +512,7 @@ class MessagingVerificationPoliciesApi:
         self._client = client
 
 
-    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, q: Optional[str] = None, status: Optional[str] = None, channel: Optional[str] = None, provider_code: Optional[str] = None) -> VerificationPoliciesListResult:
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, q: Optional[str] = None, status: Optional[str] = None, channel: Optional[str] = None, provider_code: Optional[str] = None) -> VerificationPoliciesListResult:
         """Verification policies list"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},

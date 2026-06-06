@@ -6,21 +6,21 @@ type AdminMcpToolItem struct {
 	Description string `json:"description"`
 	DiscoveredAt string `json:"discoveredAt"`
 	Enabled bool `json:"enabled"`
-	Id int `json:"id"`
+	Id string `json:"id"`
 	InputSchema map[string]JsonValue `json:"inputSchema"`
 	LastInvokedAt string `json:"lastInvokedAt"`
 	Name string `json:"name"`
-	OrganizationId int `json:"organizationId"`
+	OrganizationId string `json:"organizationId"`
 	OutputSchema map[string]JsonValue `json:"outputSchema"`
 	RateLimitPolicy map[string]JsonValue `json:"rateLimitPolicy"`
 	RequiresApproval bool `json:"requiresApproval"`
 	RiskLevel string `json:"riskLevel"`
 	SchemaHash string `json:"schemaHash"`
-	ServerId int `json:"serverId"`
-	ServerRevisionId int `json:"serverRevisionId"`
+	ServerId string `json:"serverId"`
+	ServerRevisionId string `json:"serverRevisionId"`
 	SortWeight int `json:"sortWeight"`
 	Status string `json:"status"`
-	TenantId int `json:"tenantId"`
+	TenantId string `json:"tenantId"`
 	ToolKey string `json:"toolKey"`
 	UpdatedAt string `json:"updatedAt"`
 	Uuid string `json:"uuid"`

@@ -6,7 +6,7 @@ public class AdminCourseRelationItem {
     private String id;
     private String relatedCourseId;
     private String relationType;
-    private Integer sortOrder;
+    private String sortOrder;
     private String status;
 
     public String getCourseId() {
@@ -41,11 +41,11 @@ public class AdminCourseRelationItem {
         this.relationType = relationType;
     }
 
-    public Integer getSortOrder() {
+    public String getSortOrder() {
         return this.sortOrder;
     }
 
-    public void setSortOrder(Integer sortOrder) {
+    public void setSortOrder(String sortOrder) {
         this.sortOrder = sortOrder;
     }
 

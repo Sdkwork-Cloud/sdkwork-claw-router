@@ -10,15 +10,14 @@ public class AdminChannelCreateRequest {
     private String credentialRotation;
     private List<AdminChannelCredentialInput> credentials;
     private String expiresAt;
-    private List<String> models;
     private String name;
     private String protocol;
     private List<String> resourceCodes;
     private ProviderRetryPolicy retryPolicy;
     private String status;
-    private Integer timeoutMs;
+    private String timeoutMs;
     private String vendor;
-    private Integer weight;
+    private String weight;
 
     public String getAccessType() {
         return this.accessType;
@@ -76,14 +75,6 @@ public class AdminChannelCreateRequest {
         this.expiresAt = expiresAt;
     }
 
-    public List<String> getModels() {
-        return this.models;
-    }
-
-    public void setModels(List<String> models) {
-        this.models = models;
-    }
-
     public String getName() {
         return this.name;
     }
@@ -124,11 +115,11 @@ public class AdminChannelCreateRequest {
         this.status = status;
     }
 
-    public Integer getTimeoutMs() {
+    public String getTimeoutMs() {
         return this.timeoutMs;
     }
 
-    public void setTimeoutMs(Integer timeoutMs) {
+    public void setTimeoutMs(String timeoutMs) {
         this.timeoutMs = timeoutMs;
     }
 
@@ -140,11 +131,11 @@ public class AdminChannelCreateRequest {
         this.vendor = vendor;
     }
 
-    public Integer getWeight() {
+    public String getWeight() {
         return this.weight;
     }
 
-    public void setWeight(Integer weight) {
+    public void setWeight(String weight) {
         this.weight = weight;
     }
 }

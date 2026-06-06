@@ -255,7 +255,7 @@ class RuntimeInvocationsApi:
         self._client = client
 
 
-    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, conversation_id: Optional[str] = None, chat_turn_id: Optional[str] = None, agent_session_id: Optional[str] = None, runtime: Optional[str] = None, status: Optional[str] = None) -> InvocationsListResult:
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, conversation_id: Optional[str] = None, chat_turn_id: Optional[str] = None, agent_session_id: Optional[str] = None, runtime: Optional[str] = None, status: Optional[str] = None) -> InvocationsListResult:
         """List runtime invocations"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -299,7 +299,7 @@ class RuntimeArtifactsApi:
         self._client = client
 
 
-    def list(self, invocation_id: str, page: Optional[int] = None, page_size: Optional[int] = None) -> ArtifactsListResult:
+    def list(self, invocation_id: str, page: Optional[str] = None, page_size: Optional[str] = None) -> ArtifactsListResult:
         """List runtime artifacts"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -324,7 +324,7 @@ class RuntimeInvocationEventsApi:
         self._client = client
 
 
-    def list(self, invocation_id: str, page: Optional[int] = None, page_size: Optional[int] = None) -> InvocationEventsListResult:
+    def list(self, invocation_id: str, page: Optional[str] = None, page_size: Optional[str] = None) -> InvocationEventsListResult:
         """List runtime invocation events"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},

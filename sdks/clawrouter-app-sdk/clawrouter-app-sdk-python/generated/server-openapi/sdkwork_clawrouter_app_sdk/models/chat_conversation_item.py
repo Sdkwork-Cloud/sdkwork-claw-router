@@ -8,11 +8,11 @@ class ChatConversationItem:
     """Chat conversation item schema exposed by Claw Router."""
     created_at: str
     id: str
-    message_count: int
+    message_count: str
     source_surface: str
     status: str
     title: str
-    turn_count: int
+    turn_count: str
     updated_at: str
     agent_id: Optional[str] = None
     agent_session_id: Optional[str] = None

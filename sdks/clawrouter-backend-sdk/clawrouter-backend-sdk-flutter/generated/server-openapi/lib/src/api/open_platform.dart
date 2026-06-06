@@ -12,7 +12,7 @@ class OpenPlatformApi {
   OpenPlatformApi(this._client);
 
   /// List open platform accounts
-  Future<AccountsListResult?> accountsList([String? provider, String? type, String? status, int? page, int? pageSize]) async {
+  Future<AccountsListResult?> accountsList([String? provider, String? type, String? status, String? page, String? pageSize]) async {
     final query = buildQueryString([
       QueryParameterSpec('provider', provider, 'form', true, false, null),
       QueryParameterSpec('type', type, 'form', true, false, null),

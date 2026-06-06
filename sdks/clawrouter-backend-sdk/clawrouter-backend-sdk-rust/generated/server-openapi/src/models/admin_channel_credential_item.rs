@@ -17,7 +17,7 @@ pub struct AdminChannelCredentialItem {
     pub credential_id: String,
 
     /// Errors field on admin channel credential item.
-    pub errors: i64,
+    pub errors: String,
 
     /// Id field on admin channel credential item.
     pub id: String,
@@ -30,7 +30,7 @@ pub struct AdminChannelCredentialItem {
     pub name: String,
 
     /// Priority field on admin channel credential item.
-    pub priority: i64,
+    pub priority: String,
 
     /// Secret ref field on admin channel credential item.
     #[serde(rename = "secretRef")]
@@ -40,5 +40,5 @@ pub struct AdminChannelCredentialItem {
     pub status: String,
 
     /// Weight field on admin channel credential item.
-    pub weight: i64,
+    pub weight: String,
 }

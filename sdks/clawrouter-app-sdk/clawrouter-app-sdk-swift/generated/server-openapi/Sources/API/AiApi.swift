@@ -33,7 +33,7 @@ public class AiApi {
     }
 
     /// List model rankings
-    public func modelRankingsList(rankScope: String? = nil, vendorCode: String? = nil, modality: String? = nil, q: String? = nil, limit: Int? = nil) async throws -> ModelRankingsListResult? {
+    public func modelRankingsList(rankScope: String? = nil, vendorCode: String? = nil, modality: String? = nil, q: String? = nil, limit: String? = nil) async throws -> ModelRankingsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "rank_scope", value: rankScope, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "vendor_code", value: vendorCode, style: "form", explode: true, allowReserved: false, contentType: nil),
@@ -50,7 +50,7 @@ public class AiApi {
     }
 
     /// List models
-    public func modelsList(billingMeter: String? = nil, vendorCode: String? = nil, vendorCodes: [String]? = nil, modalities: [String]? = nil, capabilities: [String]? = nil, categories: [String]? = nil, groups: [String]? = nil, q: String? = nil, limit: Int? = nil) async throws -> ModelsListResult? {
+    public func modelsList(billingMeter: String? = nil, vendorCode: String? = nil, vendorCodes: [String]? = nil, modalities: [String]? = nil, capabilities: [String]? = nil, categories: [String]? = nil, groups: [String]? = nil, q: String? = nil, limit: String? = nil) async throws -> ModelsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "billing_meter", value: billingMeter, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "vendor_code", value: vendorCode, style: "form", explode: true, allowReserved: false, contentType: nil),
@@ -86,7 +86,7 @@ public class AiApi {
     }
 
     /// List logs
-    public func usageLogsList(page: Int? = nil, pageSize: Int? = nil, q: String? = nil, status: String? = nil, startTime: String? = nil, endTime: String? = nil) async throws -> UsageLogsListResult? {
+    public func usageLogsList(page: String? = nil, pageSize: String? = nil, q: String? = nil, status: String? = nil, startTime: String? = nil, endTime: String? = nil) async throws -> UsageLogsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),

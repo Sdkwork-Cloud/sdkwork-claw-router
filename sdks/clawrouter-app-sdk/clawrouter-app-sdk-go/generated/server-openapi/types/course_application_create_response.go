@@ -2,7 +2,7 @@ package types
 
 // Course application create response schema exposed by Claw Router.
 type CourseApplicationCreateResponse struct {
-	ApplicationId int `json:"applicationId"`
+	ApplicationId string `json:"applicationId"`
 	Category string `json:"category"`
 	ContactEmail string `json:"contactEmail"`
 	ContactName string `json:"contactName"`

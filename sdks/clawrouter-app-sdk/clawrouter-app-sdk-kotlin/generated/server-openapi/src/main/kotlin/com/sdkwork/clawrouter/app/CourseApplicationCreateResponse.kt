@@ -1,7 +1,7 @@
 package com.sdkwork.clawrouter.app
 
 data class CourseApplicationCreateResponse(
-    val applicationId: Int? = null,
+    val applicationId: String? = null,
     val category: String? = null,
     val contactEmail: String? = null,
     val contactName: String? = null,

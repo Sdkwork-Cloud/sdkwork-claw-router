@@ -11,7 +11,7 @@ data class AdminAiResourceUpdateRequest(
     val providerNativeModel: String? = null,
     val resourceCode: String? = null,
     val resourceType: String? = null,
-    val sortOrder: Int? = null,
+    val sortOrder: String? = null,
     val status: String? = null,
     val vendorCode: String? = null
 )

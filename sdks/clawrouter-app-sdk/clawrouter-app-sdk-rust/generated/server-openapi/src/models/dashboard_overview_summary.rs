@@ -5,7 +5,7 @@ use serde::{Deserialize, Serialize};
 pub struct DashboardOverviewSummary {
     /// Audio requests field on dashboard overview summary.
     #[serde(rename = "audioRequests")]
-    pub audio_requests: i64,
+    pub audio_requests: String,
 
     /// Available credits field on dashboard overview summary.
     #[serde(rename = "availableCredits")]
@@ -13,26 +13,26 @@ pub struct DashboardOverviewSummary {
 
     /// Error count field on dashboard overview summary.
     #[serde(rename = "errorCount")]
-    pub error_count: i64,
+    pub error_count: String,
 
     /// Image requests field on dashboard overview summary.
     #[serde(rename = "imageRequests")]
-    pub image_requests: i64,
+    pub image_requests: String,
 
     /// Music requests field on dashboard overview summary.
     #[serde(rename = "musicRequests")]
-    pub music_requests: i64,
+    pub music_requests: String,
 
     /// Request count field on dashboard overview summary.
     #[serde(rename = "requestCount")]
-    pub request_count: i64,
+    pub request_count: String,
 
     /// Rpm field on dashboard overview summary.
     pub rpm: f64,
 
     /// Total request count field on dashboard overview summary.
     #[serde(rename = "totalRequestCount")]
-    pub total_request_count: i64,
+    pub total_request_count: String,
 
     /// Total used credits field on dashboard overview summary.
     #[serde(rename = "totalUsedCredits")]
@@ -47,5 +47,5 @@ pub struct DashboardOverviewSummary {
 
     /// Video requests field on dashboard overview summary.
     #[serde(rename = "videoRequests")]
-    pub video_requests: i64,
+    pub video_requests: String,
 }

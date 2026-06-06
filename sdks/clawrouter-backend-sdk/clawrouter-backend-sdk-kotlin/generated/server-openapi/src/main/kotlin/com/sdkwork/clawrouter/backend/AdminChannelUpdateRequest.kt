@@ -9,13 +9,12 @@ data class AdminChannelUpdateRequest(
     val credentials: List<AdminChannelCredentialInput>? = null,
     val expiresAt: String? = null,
     val id: String? = null,
-    val models: List<String>? = null,
     val name: String? = null,
     val protocol: String? = null,
     val resourceCodes: List<String>? = null,
     val retryPolicy: ProviderRetryPolicy? = null,
     val status: String? = null,
-    val timeoutMs: Int? = null,
+    val timeoutMs: String? = null,
     val vendor: String? = null,
-    val weight: Int? = null
+    val weight: String? = null
 )

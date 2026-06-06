@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Optional
 from ..http_client import HttpClient
-from ..models import AdminApiKeyCreateRequest, AdminUserCreateRequest, AdminUserUpdateRequest, ApiKeysCreateResult, ApiKeysDeleteResult, ApiKeysListResult, UsersCreateResult, UsersListResult, UsersUpdateResult
+from ..models import AdminApiKeyCreateRequest, AdminUserUpdateRequest, ApiKeysCreateResult, ApiKeysDeleteResult, UsersUpdateResult
 
 def _append_query_string(path: str, raw_query_string: str) -> str:
     query = raw_query_string.lstrip('?')
@@ -143,10 +143,6 @@ class IamApiKeysApi:
         self._client = client
 
 
-    def list(self) -> ApiKeysListResult:
-        """List API key map"""
-        return self._client.get(f"/backend/v3/api/iam/api_keys")
-
     def create(self, body: AdminApiKeyCreateRequest, idempotency_key: str) -> ApiKeysCreateResult:
         """Create API key"""
         request_headers = build_request_headers(
@@ -167,14 +163,6 @@ class IamUsersApi:
     def __init__(self, client: HttpClient):
         self._client = client
 
-
-    def list(self) -> UsersListResult:
-        """List users"""
-        return self._client.get(f"/backend/v3/api/iam/users")
-
-    def create(self, body: AdminUserCreateRequest) -> UsersCreateResult:
-        """Create user"""
-        return self._client.post(f"/backend/v3/api/iam/users", json=body)
 
     def update(self, body: AdminUserUpdateRequest) -> UsersUpdateResult:
         """Update user"""

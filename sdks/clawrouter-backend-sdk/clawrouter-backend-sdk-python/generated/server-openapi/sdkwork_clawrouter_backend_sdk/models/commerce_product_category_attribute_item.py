@@ -18,7 +18,7 @@ class CommerceProductCategoryAttributeItem:
     required: bool
     scope: str
     searchable: bool
-    sort_order: int
+    sort_order: str
     status: str
     updated_at: str
     value_type: str

@@ -18,7 +18,7 @@ pub struct CourseApplicationVideoUploadResponse {
 
     /// Size bytes field on course application video upload response.
     #[serde(rename = "sizeBytes")]
-    pub size_bytes: i64,
+    pub size_bytes: String,
 
     /// Uploaded at field on course application video upload response.
     #[serde(rename = "uploadedAt")]

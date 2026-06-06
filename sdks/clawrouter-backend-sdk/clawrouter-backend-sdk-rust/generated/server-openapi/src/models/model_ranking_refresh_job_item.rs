@@ -5,7 +5,7 @@ use serde::{Deserialize, Serialize};
 pub struct ModelRankingRefreshJobItem {
     /// Duration ms field on model ranking refresh job item.
     #[serde(rename = "durationMs")]
-    pub duration_ms: i64,
+    pub duration_ms: String,
 
     /// Ended at field on model ranking refresh job item.
     #[serde(rename = "endedAt")]
@@ -13,7 +13,7 @@ pub struct ModelRankingRefreshJobItem {
 
     /// Failure count field on model ranking refresh job item.
     #[serde(rename = "failureCount")]
-    pub failure_count: i64,
+    pub failure_count: String,
 
     /// Failure reason field on model ranking refresh job item.
     #[serde(rename = "failureReason")]
@@ -21,7 +21,7 @@ pub struct ModelRankingRefreshJobItem {
 
     /// Generated count field on model ranking refresh job item.
     #[serde(rename = "generatedCount")]
-    pub generated_count: i64,
+    pub generated_count: String,
 
     /// Stable job execution identifier from ops_job_execution.
     pub id: String,
@@ -36,7 +36,7 @@ pub struct ModelRankingRefreshJobItem {
 
     /// Organization id field on model ranking refresh job item.
     #[serde(rename = "organizationId")]
-    pub organization_id: i64,
+    pub organization_id: String,
 
     /// Rank scope field on model ranking refresh job item.
     #[serde(rename = "rankScope")]
@@ -52,7 +52,7 @@ pub struct ModelRankingRefreshJobItem {
 
     /// Source count field on model ranking refresh job item.
     #[serde(rename = "sourceCount")]
-    pub source_count: i64,
+    pub source_count: String,
 
     /// Started at field on model ranking refresh job item.
     #[serde(rename = "startedAt")]
@@ -63,11 +63,11 @@ pub struct ModelRankingRefreshJobItem {
 
     /// Success count field on model ranking refresh job item.
     #[serde(rename = "successCount")]
-    pub success_count: i64,
+    pub success_count: String,
 
     /// Tenant id field on model ranking refresh job item.
     #[serde(rename = "tenantId")]
-    pub tenant_id: i64,
+    pub tenant_id: String,
 
     /// Window end field on model ranking refresh job item.
     #[serde(rename = "windowEnd")]

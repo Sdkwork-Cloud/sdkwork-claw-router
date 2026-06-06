@@ -10,11 +10,11 @@ if TYPE_CHECKING:
 class CourseSectionItem:
     """Course section item schema exposed by Claw Router."""
     description: str
-    duration_seconds: int
+    duration_seconds: str
     id: str
-    lesson_count: int
+    lesson_count: str
     lessons: List[CourseLessonItem]
-    section_id: int
-    section_no: int
-    sort_order: int
+    section_id: str
+    section_no: str
+    sort_order: str
     title: str

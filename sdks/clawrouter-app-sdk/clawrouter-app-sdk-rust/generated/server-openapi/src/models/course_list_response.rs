@@ -12,12 +12,12 @@ pub struct CourseListResponse {
     pub items: Vec<CourseItem>,
 
     /// Page field on course list response.
-    pub page: i64,
+    pub page: String,
 
     /// Size field on course list response.
-    pub size: i64,
+    pub size: String,
 
     /// Total elements field on course list response.
     #[serde(rename = "totalElements")]
-    pub total_elements: i64,
+    pub total_elements: String,
 }

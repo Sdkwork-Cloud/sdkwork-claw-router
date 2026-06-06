@@ -40,7 +40,7 @@ pub struct AdminChannelItem {
     pub credentials: Vec<AdminChannelCredentialItem>,
 
     /// Errors field on admin channel item.
-    pub errors: i64,
+    pub errors: String,
 
     /// Expires at field on admin channel item.
     #[serde(rename = "expiresAt")]
@@ -53,9 +53,6 @@ pub struct AdminChannelItem {
     /// Is multimodal field on admin channel item.
     #[serde(rename = "isMultimodal")]
     pub is_multimodal: bool,
-
-    /// Models field on admin channel item.
-    pub models: Vec<String>,
 
     /// Name field on admin channel item.
     pub name: String,
@@ -78,11 +75,11 @@ pub struct AdminChannelItem {
     /// Timeout ms field on admin channel item.
     #[serde(rename = "timeoutMs")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub timeout_ms: Option<i64>,
+    pub timeout_ms: Option<String>,
 
     /// Vendor field on admin channel item.
     pub vendor: String,
 
     /// Weight field on admin channel item.
-    pub weight: i64,
+    pub weight: String,
 }

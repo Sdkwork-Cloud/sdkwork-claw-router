@@ -16,7 +16,7 @@ impl AgentsApi {
     }
 
     /// List managed agents
-    pub async fn agent_definitions_list(&self, q: Option<&str>, owner_user_id: Option<i64>, status: Option<&str>, visibility: Option<&str>, page: Option<i64>, page_size: Option<i64>) -> Result<AgentDefinitionsListResult, SdkworkError> {
+    pub async fn agent_definitions_list(&self, q: Option<&str>, owner_user_id: Option<&str>, status: Option<&str>, visibility: Option<&str>, page: Option<&str>, page_size: Option<&str>) -> Result<AgentDefinitionsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("q", q, "form", true, false, None),
             QueryParameterSpec::new("owner_user_id", owner_user_id, "form", true, false, None),

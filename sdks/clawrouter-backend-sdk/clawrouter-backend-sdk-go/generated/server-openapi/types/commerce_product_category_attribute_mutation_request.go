@@ -7,6 +7,6 @@ type CommerceProductCategoryAttributeMutationRequest struct {
 	Filterable bool `json:"filterable"`
 	Required bool `json:"required"`
 	Searchable bool `json:"searchable"`
-	SortOrder int `json:"sortOrder"`
+	SortOrder string `json:"sortOrder"`
 	Status string `json:"status"`
 }

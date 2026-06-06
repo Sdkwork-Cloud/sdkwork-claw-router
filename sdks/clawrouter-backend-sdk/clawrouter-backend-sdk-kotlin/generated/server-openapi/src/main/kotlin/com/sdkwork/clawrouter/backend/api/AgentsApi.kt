@@ -9,7 +9,7 @@ import com.sdkwork.clawrouter.backend.http.HttpClient
 class AgentsApi(private val client: HttpClient) {
 
     /** List managed agents */
-    suspend fun agentDefinitionsList(q: String? = null, ownerUserId: Int? = null, status: String? = null, visibility: String? = null, page: Int? = null, pageSize: Int? = null): AgentDefinitionsListResult? {
+    suspend fun agentDefinitionsList(q: String? = null, ownerUserId: String? = null, status: String? = null, visibility: String? = null, page: String? = null, pageSize: String? = null): AgentDefinitionsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("q", q, "form", true, false, null),
             QueryParameterSpec("owner_user_id", ownerUserId, "form", true, false, null),

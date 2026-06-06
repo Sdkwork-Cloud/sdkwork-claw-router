@@ -10,11 +10,11 @@ pub struct ForumFeedItem {
 
     /// Category id field on forum feed item.
     #[serde(rename = "categoryId")]
-    pub category_id: i64,
+    pub category_id: String,
 
     /// Comment count field on forum feed item.
     #[serde(rename = "commentCount")]
-    pub comment_count: i64,
+    pub comment_count: String,
 
     /// Content field on forum feed item.
     pub content: String,
@@ -31,7 +31,7 @@ pub struct ForumFeedItem {
     pub created_at: String,
 
     /// Id field on forum feed item.
-    pub id: i64,
+    pub id: String,
 
     /// Is collected field on forum feed item.
     #[serde(rename = "isCollected")]
@@ -55,11 +55,11 @@ pub struct ForumFeedItem {
 
     /// Like count field on forum feed item.
     #[serde(rename = "likeCount")]
-    pub like_count: i64,
+    pub like_count: String,
 
     /// Share count field on forum feed item.
     #[serde(rename = "shareCount")]
-    pub share_count: i64,
+    pub share_count: String,
 
     /// Summary field on forum feed item.
     pub summary: String,
@@ -76,5 +76,5 @@ pub struct ForumFeedItem {
 
     /// View count field on forum feed item.
     #[serde(rename = "viewCount")]
-    pub view_count: i64,
+    pub view_count: String,
 }

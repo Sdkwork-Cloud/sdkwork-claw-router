@@ -17,7 +17,7 @@ pub struct UsageLogItem {
 
     /// Cache read tokens field on usage log item.
     #[serde(rename = "cacheReadTokens")]
-    pub cache_read_tokens: i64,
+    pub cache_read_tokens: String,
 
     /// Customer-facing spend amount for the request, normalized to 9 decimal places for console display. Uses customer_charge_amount from the usage ledger and never exposes upstream cost fields.
     pub cost: String,
@@ -39,14 +39,14 @@ pub struct UsageLogItem {
 
     /// Http status field on usage log item.
     #[serde(rename = "httpStatus")]
-    pub http_status: i64,
+    pub http_status: String,
 
     /// Id field on usage log item.
     pub id: String,
 
     /// Input tokens field on usage log item.
     #[serde(rename = "inputTokens")]
-    pub input_tokens: i64,
+    pub input_tokens: String,
 
     /// Ip field on usage log item.
     pub ip: String,
@@ -63,7 +63,7 @@ pub struct UsageLogItem {
 
     /// Output tokens field on usage log item.
     #[serde(rename = "outputTokens")]
-    pub output_tokens: i64,
+    pub output_tokens: String,
 
     /// Path field on usage log item.
     pub path: String,

@@ -4,8 +4,8 @@ import java.util.List;
 
 public class AdminMcpDiscoveryResponse {
     private String checkedAt;
-    private Integer discoveredCount;
-    private Integer serverId;
+    private String discoveredCount;
+    private String serverId;
     private List<AdminMcpToolItem> tools;
 
     public String getCheckedAt() {
@@ -16,19 +16,19 @@ public class AdminMcpDiscoveryResponse {
         this.checkedAt = checkedAt;
     }
 
-    public Integer getDiscoveredCount() {
+    public String getDiscoveredCount() {
         return this.discoveredCount;
     }
 
-    public void setDiscoveredCount(Integer discoveredCount) {
+    public void setDiscoveredCount(String discoveredCount) {
         this.discoveredCount = discoveredCount;
     }
 
-    public Integer getServerId() {
+    public String getServerId() {
         return this.serverId;
     }
 
-    public void setServerId(Integer serverId) {
+    public void setServerId(String serverId) {
         this.serverId = serverId;
     }
 

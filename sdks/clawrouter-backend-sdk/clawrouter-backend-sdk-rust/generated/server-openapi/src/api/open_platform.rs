@@ -16,7 +16,7 @@ impl OpenPlatformApi {
     }
 
     /// List open platform accounts
-    pub async fn accounts_list(&self, provider: Option<&str>, r#type: Option<&str>, status: Option<&str>, page: Option<i64>, page_size: Option<i64>) -> Result<AccountsListResult, SdkworkError> {
+    pub async fn accounts_list(&self, provider: Option<&str>, r#type: Option<&str>, status: Option<&str>, page: Option<&str>, page_size: Option<&str>) -> Result<AccountsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("provider", provider, "form", true, false, None),
             QueryParameterSpec::new("type", r#type, "form", true, false, None),

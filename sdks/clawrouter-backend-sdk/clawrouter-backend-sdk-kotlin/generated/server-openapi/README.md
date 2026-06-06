@@ -96,11 +96,11 @@ val client = SdkworkBackendClient(config)
 // List managed agents
 val params = linkedMapOf<String, Any>(
     "q" to "q",
-    "owner_user_id" to 2,
+    "owner_user_id" to "1",
     "status" to "active",
     "visibility" to "private",
-    "page" to 5,
-    "page_size" to 6
+    "page" to "page",
+    "page_size" to "page-size"
 )
 val result = client.agents.agentDefinitionsList(params)
 println(result)
@@ -117,8 +117,8 @@ println(result)
 ### commerce
 
 ```kotlin
-// Commerce Reports Payment Reconciliation Retrieve
-val result = client.commerce.reportsPaymentReconciliationRetrieve()
+// Recharges Settings Retrieve
+val result = client.commerce.rechargesSettingsRetrieve()
 println(result)
 ```
 
@@ -141,8 +141,14 @@ println(result)
 ### iam
 
 ```kotlin
-// List API key map
-val result = client.iam.apiKeysList()
+// Update user
+val body = AdminUserUpdateRequest(
+    group = "group",
+    id = "1",
+    status = "active",
+    username = "name"
+)
+val result = client.iam.usersUpdate(body)
 println(result)
 ```
 
@@ -159,8 +165,8 @@ println(result)
 ```kotlin
 // List MCP servers
 val params = linkedMapOf<String, Any>(
-    "page" to 1,
-    "page_size" to 2,
+    "page" to "page",
+    "page_size" to "page-size",
     "q" to "q",
     "transport" to "transport",
     "visibility" to "visibility",
@@ -176,8 +182,8 @@ println(result)
 ```kotlin
 // Messaging provider accounts list
 val params = linkedMapOf<String, Any>(
-    "page" to 1,
-    "page_size" to 2,
+    "page" to "page",
+    "page_size" to "page-size",
     "q" to "q",
     "status" to "status",
     "channel" to "sms",
@@ -219,8 +225,8 @@ println(result)
 ```kotlin
 // List admin prompts
 val params = linkedMapOf<String, Any>(
-    "page" to 1,
-    "page_size" to 2,
+    "page" to "page",
+    "page_size" to "page-size",
     "q" to "q",
     "prompt_type" to "prompt-type",
     "visibility" to "visibility",
@@ -236,8 +242,8 @@ println(result)
 ```kotlin
 // Service Provider Adjustments List
 val params = linkedMapOf<String, Any>(
-    "page" to 1,
-    "page_size" to 2,
+    "page" to "page",
+    "page_size" to "page-size",
     "status" to "status",
     "provider_id" to "1",
     "seller_provider_id" to "1",

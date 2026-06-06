@@ -25,7 +25,7 @@ pub struct AppModelCatalogItem {
 
     /// Context tokens field on app model catalog item.
     #[serde(rename = "contextTokens")]
-    pub context_tokens: i64,
+    pub context_tokens: String,
 
     /// Description field on app model catalog item.
     pub description: String,
@@ -46,7 +46,7 @@ pub struct AppModelCatalogItem {
 
     /// Max output tokens field on app model catalog item.
     #[serde(rename = "maxOutputTokens")]
-    pub max_output_tokens: i64,
+    pub max_output_tokens: String,
 
     /// Modalities field on app model catalog item.
     pub modalities: Vec<String>,
@@ -72,7 +72,7 @@ pub struct AppModelCatalogItem {
 
     /// Release stage field on app model catalog item.
     #[serde(rename = "releaseStage")]
-    pub release_stage: i64,
+    pub release_stage: String,
 
     /// Replacement model field on app model catalog item.
     #[serde(rename = "replacementModel")]
@@ -80,11 +80,11 @@ pub struct AppModelCatalogItem {
 
     /// Routing state field on app model catalog item.
     #[serde(rename = "routingState")]
-    pub routing_state: i64,
+    pub routing_state: String,
 
     /// Shelf state field on app model catalog item.
     #[serde(rename = "shelfState")]
-    pub shelf_state: i64,
+    pub shelf_state: String,
 
     /// Supported languages field on app model catalog item.
     #[serde(rename = "supportedLanguages")]

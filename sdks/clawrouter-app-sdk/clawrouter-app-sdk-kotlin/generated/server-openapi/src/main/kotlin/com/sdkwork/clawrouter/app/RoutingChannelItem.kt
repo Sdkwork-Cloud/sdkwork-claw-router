@@ -7,7 +7,7 @@ data class RoutingChannelItem(
     val baseUrl: String? = null,
     val capabilities: List<String>? = null,
     val circuitBreakerPolicy: RoutingCircuitBreakerPolicy? = null,
-    val errors: Int? = null,
+    val errors: String? = null,
     val id: String? = null,
     val isMultimodal: Boolean? = null,
     val latency: String? = null,
@@ -17,9 +17,9 @@ data class RoutingChannelItem(
     val provider: String? = null,
     val providerCode: String? = null,
     val retryPolicy: RoutingRetryPolicy? = null,
-    val rpm: Int? = null,
+    val rpm: String? = null,
     val status: String? = null,
-    val timeoutMs: Int? = null,
+    val timeoutMs: String? = null,
     val vendor: String? = null,
-    val weight: Int? = null
+    val weight: String? = null
 )

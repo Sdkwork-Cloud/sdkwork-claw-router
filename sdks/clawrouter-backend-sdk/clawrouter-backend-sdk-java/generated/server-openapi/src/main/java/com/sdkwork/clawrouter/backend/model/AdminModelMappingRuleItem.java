@@ -5,7 +5,7 @@ public class AdminModelMappingRuleItem {
     private String createdAt;
     private Boolean enabled;
     private String id;
-    private Integer sortOrder;
+    private String sortOrder;
     private String sourceCatalogKey;
     private String sourceModel;
     private String targetCatalogKey;
@@ -38,11 +38,11 @@ public class AdminModelMappingRuleItem {
         this.id = id;
     }
 
-    public Integer getSortOrder() {
+    public String getSortOrder() {
         return this.sortOrder;
     }
 
-    public void setSortOrder(Integer sortOrder) {
+    public void setSortOrder(String sortOrder) {
         this.sortOrder = sortOrder;
     }
 

@@ -5,9 +5,9 @@ public class MemorySpaceItem {
     private Boolean autoExtractEnabled;
     private Boolean autoRecallEnabled;
     private String createdAt;
-    private Integer entryCount;
+    private String entryCount;
     private String id;
-    private Integer maxInjectedTokens;
+    private String maxInjectedTokens;
     private Boolean memoryEnabled;
     private String ownerId;
     private String ownerType;
@@ -41,11 +41,11 @@ public class MemorySpaceItem {
         this.createdAt = createdAt;
     }
 
-    public Integer getEntryCount() {
+    public String getEntryCount() {
         return this.entryCount;
     }
 
-    public void setEntryCount(Integer entryCount) {
+    public void setEntryCount(String entryCount) {
         this.entryCount = entryCount;
     }
 
@@ -57,11 +57,11 @@ public class MemorySpaceItem {
         this.id = id;
     }
 
-    public Integer getMaxInjectedTokens() {
+    public String getMaxInjectedTokens() {
         return this.maxInjectedTokens;
     }
 
-    public void setMaxInjectedTokens(Integer maxInjectedTokens) {
+    public void setMaxInjectedTokens(String maxInjectedTokens) {
         this.maxInjectedTokens = maxInjectedTokens;
     }
 

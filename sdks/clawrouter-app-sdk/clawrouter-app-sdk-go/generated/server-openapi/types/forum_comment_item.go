@@ -5,13 +5,13 @@ type ForumCommentItem struct {
 	Author ForumAuthor `json:"author"`
 	CommentId string `json:"commentId"`
 	Content string `json:"content"`
-	ContentId int `json:"contentId"`
+	ContentId string `json:"contentId"`
 	ContentType string `json:"contentType"`
 	CreatedAt string `json:"createdAt"`
 	IsTop bool `json:"isTop"`
-	Likes int `json:"likes"`
-	ParentId int `json:"parentId"`
-	ReplyCount int `json:"replyCount"`
+	Likes string `json:"likes"`
+	ParentId string `json:"parentId"`
+	ReplyCount string `json:"replyCount"`
 	Status string `json:"status"`
-	UserId int `json:"userId"`
+	UserId string `json:"userId"`
 }

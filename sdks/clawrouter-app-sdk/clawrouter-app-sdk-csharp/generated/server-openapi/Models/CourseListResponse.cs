@@ -8,8 +8,8 @@ namespace Sdkwork.ClawRouter.App.Models
     {
         public List<CourseItem>? Content { get; set; }
         public List<CourseItem>? Items { get; set; }
-        public int? Page { get; set; }
-        public int? Size { get; set; }
-        public int? TotalElements { get; set; }
+        public string? Page { get; set; }
+        public string? Size { get; set; }
+        public string? TotalElements { get; set; }
     }
 }

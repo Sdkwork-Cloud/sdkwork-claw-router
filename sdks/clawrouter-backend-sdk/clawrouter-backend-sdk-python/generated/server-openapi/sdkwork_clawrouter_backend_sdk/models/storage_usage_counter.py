@@ -6,12 +6,12 @@ from typing import TYPE_CHECKING, Optional, List, Dict, Any
 @dataclass
 class StorageUsageCounter:
     """Storage usage counter schema exposed by Claw Router."""
-    file_count: int
+    file_count: str
     id: str
-    reserved_bytes: int
+    reserved_bytes: str
     scope_id: str
     scope_type: str
-    used_bytes: int
+    used_bytes: str
     files: Optional[str] = None
     reserved: Optional[str] = None
     scope: Optional[str] = None

@@ -5,20 +5,20 @@ type UsageLogItem struct {
 	BaseInputPrice string `json:"baseInputPrice"`
 	BaseOutputPrice string `json:"baseOutputPrice"`
 	CacheReadPrice string `json:"cacheReadPrice"`
-	CacheReadTokens int `json:"cacheReadTokens"`
+	CacheReadTokens string `json:"cacheReadTokens"`
 	Cost string `json:"cost"`
 	ErrorCode string `json:"errorCode"`
 	ErrorMessage string `json:"errorMessage"`
 	ErrorType string `json:"errorType"`
 	Group string `json:"group"`
-	HttpStatus int `json:"httpStatus"`
+	HttpStatus string `json:"httpStatus"`
 	Id string `json:"id"`
-	InputTokens int `json:"inputTokens"`
+	InputTokens string `json:"inputTokens"`
 	Ip string `json:"ip"`
 	IsStream bool `json:"isStream"`
 	Model string `json:"model"`
 	Multiplier string `json:"multiplier"`
-	OutputTokens int `json:"outputTokens"`
+	OutputTokens string `json:"outputTokens"`
 	Path string `json:"path"`
 	ProviderNativeModel string `json:"providerNativeModel"`
 	ReasoningEffort string `json:"reasoningEffort"`

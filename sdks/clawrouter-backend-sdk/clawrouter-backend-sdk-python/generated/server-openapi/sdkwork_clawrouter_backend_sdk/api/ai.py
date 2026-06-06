@@ -288,7 +288,7 @@ class AiModelRankingsApi:
         self.status = AiModelRankingsStatusApi(client)
 
 
-    def list(self, rank_scope: Optional[str] = None, vendor_code: Optional[str] = None, modality: Optional[str] = None, q: Optional[str] = None, limit: Optional[int] = None) -> ModelRankingsListResult:
+    def list(self, rank_scope: Optional[str] = None, vendor_code: Optional[str] = None, modality: Optional[str] = None, q: Optional[str] = None, limit: Optional[str] = None) -> ModelRankingsListResult:
         """List model rankings"""
         query = build_query_string([
             {'name': 'rank_scope', 'value': rank_scope, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -310,7 +310,7 @@ class AiModelRankingsJobsApi:
         self._client = client
 
 
-    def list(self, rank_scope: Optional[str] = None, limit: Optional[int] = None) -> ModelRankingsJobsListResult:
+    def list(self, rank_scope: Optional[str] = None, limit: Optional[str] = None) -> ModelRankingsJobsListResult:
         """List model ranking refresh jobs"""
         query = build_query_string([
             {'name': 'rank_scope', 'value': rank_scope, 'style': 'form', 'explode': True, 'allow_reserved': False},

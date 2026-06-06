@@ -8,18 +8,18 @@ public class AdminMcpBindingItem {
     private String createdAt;
     private List<String> deniedTools;
     private Boolean enabled;
-    private Integer id;
-    private Integer organizationId;
-    private Integer ownerId;
+    private String id;
+    private String organizationId;
+    private String ownerId;
     private String ownerType;
     private Map<String, String> policyJson;
     private Integer priority;
-    private Integer serverId;
-    private Integer serverRevisionId;
+    private String serverId;
+    private String serverRevisionId;
     private Map<String, String> snapshotJson;
     private String status;
-    private Integer tenantId;
-    private Integer toolId;
+    private String tenantId;
+    private String toolId;
     private String updatedAt;
     private String uuid;
 
@@ -55,27 +55,27 @@ public class AdminMcpBindingItem {
         this.enabled = enabled;
     }
 
-    public Integer getId() {
+    public String getId() {
         return this.id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public Integer getOrganizationId() {
+    public String getOrganizationId() {
         return this.organizationId;
     }
 
-    public void setOrganizationId(Integer organizationId) {
+    public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
 
-    public Integer getOwnerId() {
+    public String getOwnerId() {
         return this.ownerId;
     }
 
-    public void setOwnerId(Integer ownerId) {
+    public void setOwnerId(String ownerId) {
         this.ownerId = ownerId;
     }
 
@@ -103,19 +103,19 @@ public class AdminMcpBindingItem {
         this.priority = priority;
     }
 
-    public Integer getServerId() {
+    public String getServerId() {
         return this.serverId;
     }
 
-    public void setServerId(Integer serverId) {
+    public void setServerId(String serverId) {
         this.serverId = serverId;
     }
 
-    public Integer getServerRevisionId() {
+    public String getServerRevisionId() {
         return this.serverRevisionId;
     }
 
-    public void setServerRevisionId(Integer serverRevisionId) {
+    public void setServerRevisionId(String serverRevisionId) {
         this.serverRevisionId = serverRevisionId;
     }
 
@@ -135,19 +135,19 @@ public class AdminMcpBindingItem {
         this.status = status;
     }
 
-    public Integer getTenantId() {
+    public String getTenantId() {
         return this.tenantId;
     }
 
-    public void setTenantId(Integer tenantId) {
+    public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
 
-    public Integer getToolId() {
+    public String getToolId() {
         return this.toolId;
     }
 
-    public void setToolId(Integer toolId) {
+    public void setToolId(String toolId) {
         this.toolId = toolId;
     }
 

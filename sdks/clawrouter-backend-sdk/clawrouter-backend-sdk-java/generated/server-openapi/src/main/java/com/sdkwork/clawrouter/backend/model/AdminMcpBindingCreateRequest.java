@@ -7,13 +7,13 @@ public class AdminMcpBindingCreateRequest {
     private List<String> allowedTools;
     private List<String> deniedTools;
     private Boolean enabled;
-    private Integer ownerId;
+    private String ownerId;
     private String ownerType;
     private Map<String, String> policyJson;
     private Integer priority;
-    private Integer serverRevisionId;
+    private String serverRevisionId;
     private String status;
-    private Integer toolId;
+    private String toolId;
 
     public List<String> getAllowedTools() {
         return this.allowedTools;
@@ -39,11 +39,11 @@ public class AdminMcpBindingCreateRequest {
         this.enabled = enabled;
     }
 
-    public Integer getOwnerId() {
+    public String getOwnerId() {
         return this.ownerId;
     }
 
-    public void setOwnerId(Integer ownerId) {
+    public void setOwnerId(String ownerId) {
         this.ownerId = ownerId;
     }
 
@@ -71,11 +71,11 @@ public class AdminMcpBindingCreateRequest {
         this.priority = priority;
     }
 
-    public Integer getServerRevisionId() {
+    public String getServerRevisionId() {
         return this.serverRevisionId;
     }
 
-    public void setServerRevisionId(Integer serverRevisionId) {
+    public void setServerRevisionId(String serverRevisionId) {
         this.serverRevisionId = serverRevisionId;
     }
 
@@ -87,11 +87,11 @@ public class AdminMcpBindingCreateRequest {
         this.status = status;
     }
 
-    public Integer getToolId() {
+    public String getToolId() {
         return this.toolId;
     }
 
-    public void setToolId(Integer toolId) {
+    public void setToolId(String toolId) {
         this.toolId = toolId;
     }
 }

@@ -43,7 +43,7 @@ public class AiApi {
     }
 
     /** List model rankings */
-    public ModelRankingsListResult modelRankingsList(String rankScope, String vendorCode, String modality, String q, Integer limit) throws Exception {
+    public ModelRankingsListResult modelRankingsList(String rankScope, String vendorCode, String modality, String q, String limit) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("rank_scope", rankScope, "form", true, false, null),
             new QueryParameterSpec("vendor_code", vendorCode, "form", true, false, null),
@@ -62,7 +62,7 @@ public class AiApi {
     }
 
     /** List models */
-    public ModelsListResult modelsList(String billingMeter, String vendorCode, List<String> vendorCodes, List<String> modalities, List<String> capabilities, List<String> categories, List<String> groups, String q, Integer limit) throws Exception {
+    public ModelsListResult modelsList(String billingMeter, String vendorCode, List<String> vendorCodes, List<String> modalities, List<String> capabilities, List<String> categories, List<String> groups, String q, String limit) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("billing_meter", billingMeter, "form", true, false, null),
             new QueryParameterSpec("vendor_code", vendorCode, "form", true, false, null),
@@ -103,7 +103,7 @@ public class AiApi {
     }
 
     /** List logs */
-    public UsageLogsListResult usageLogsList(Integer page, Integer pageSize, String q, String status, String startTime, String endTime) throws Exception {
+    public UsageLogsListResult usageLogsList(String page, String pageSize, String q, String status, String startTime, String endTime) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null),

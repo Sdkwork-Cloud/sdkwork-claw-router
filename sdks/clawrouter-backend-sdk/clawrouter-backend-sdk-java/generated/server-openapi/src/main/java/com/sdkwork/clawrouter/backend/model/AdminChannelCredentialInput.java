@@ -5,10 +5,10 @@ public class AdminChannelCredentialInput {
     private String apiKey;
     private String baseUrl;
     private String name;
-    private Integer priority;
+    private String priority;
     private String secretRef;
     private String status;
-    private Integer weight;
+    private String weight;
 
     public String getApiKey() {
         return this.apiKey;
@@ -34,11 +34,11 @@ public class AdminChannelCredentialInput {
         this.name = name;
     }
 
-    public Integer getPriority() {
+    public String getPriority() {
         return this.priority;
     }
 
-    public void setPriority(Integer priority) {
+    public void setPriority(String priority) {
         this.priority = priority;
     }
 
@@ -58,11 +58,11 @@ public class AdminChannelCredentialInput {
         this.status = status;
     }
 
-    public Integer getWeight() {
+    public String getWeight() {
         return this.weight;
     }
 
-    public void setWeight(Integer weight) {
+    public void setWeight(String weight) {
         this.weight = weight;
     }
 }

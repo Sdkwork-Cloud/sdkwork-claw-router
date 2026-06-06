@@ -2,7 +2,7 @@ package com.sdkwork.clawrouter.backend
 
 data class AdminCourseLessonMutationRequest(
     val description: String? = null,
-    val durationSeconds: Int? = null,
+    val durationSeconds: String? = null,
     val externalBvid: String? = null,
     val freePreview: Boolean? = null,
     val lessonNo: String? = null,

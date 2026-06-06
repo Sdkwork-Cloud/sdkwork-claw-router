@@ -8,4 +8,4 @@ class AppModelCatalogGroupOption:
     """App model catalog group option schema exposed by Claw Router."""
     key: str
     label: str
-    model_count: int
+    model_count: str

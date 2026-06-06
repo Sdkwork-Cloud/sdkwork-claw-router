@@ -16,7 +16,7 @@ pub struct AdminModelMappingRuleItem {
 
     /// Sort order field on admin model mapping rule item.
     #[serde(rename = "sortOrder")]
-    pub sort_order: i64,
+    pub sort_order: String,
 
     /// Source catalog key field on admin model mapping rule item.
     #[serde(rename = "sourceCatalogKey")]

@@ -8,7 +8,7 @@ pub struct AdminUserUpdateRequest {
     pub group: Option<String>,
 
     /// User identifier.
-    pub id: i64,
+    pub id: String,
 
     /// Status field on admin user update request.
     #[serde(default, skip_serializing_if = "Option::is_none")]

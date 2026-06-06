@@ -41,10 +41,6 @@ pub struct AdminChannelUpdateRequest {
     /// Id field on admin channel update request.
     pub id: String,
 
-    /// Optional replacement model resource bindings. Omit to keep existing bindings; send an empty list only when explicitly clearing model resource bindings.
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub models: Option<Vec<String>>,
-
     /// Name field on admin channel update request.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
@@ -70,7 +66,7 @@ pub struct AdminChannelUpdateRequest {
     /// Timeout ms field on admin channel update request.
     #[serde(rename = "timeoutMs")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub timeout_ms: Option<i64>,
+    pub timeout_ms: Option<String>,
 
     /// Vendor field on admin channel update request.
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -78,5 +74,5 @@ pub struct AdminChannelUpdateRequest {
 
     /// Weight field on admin channel update request.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub weight: Option<i64>,
+    pub weight: Option<String>,
 }

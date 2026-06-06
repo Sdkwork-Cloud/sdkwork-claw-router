@@ -8,7 +8,7 @@ pub struct ForumCreateCommentRequest {
 
     /// Content id field on forum create comment request.
     #[serde(rename = "contentId")]
-    pub content_id: i64,
+    pub content_id: String,
 
     /// Content type field on forum create comment request.
     #[serde(rename = "contentType")]

@@ -18,7 +18,7 @@ func NewEcosystemApi(client *sdkhttp.Client) *EcosystemApi {
 }
 
 // Get skills
-func (a *EcosystemApi) SkillsList(q *string, page *int, pageSize *int, status *string, startTime *string, endTime *string) (sdktypes.SkillsListResult, error) {
+func (a *EcosystemApi) SkillsList(q *string, page *string, pageSize *string, status *string, startTime *string, endTime *string) (sdktypes.SkillsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "q", Value: func() interface{} { if q == nil { return nil }; return *q }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},

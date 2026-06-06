@@ -2,18 +2,18 @@ package com.sdkwork.clawrouter.backend.model;
 
 
 public class AdminCourseEngagementItem {
-    private Integer count;
+    private String count;
     private String courseId;
     private String id;
     private String reactionType;
     private String reactionValue;
     private String status;
 
-    public Integer getCount() {
+    public String getCount() {
         return this.count;
     }
 
-    public void setCount(Integer count) {
+    public void setCount(String count) {
         this.count = count;
     }
 

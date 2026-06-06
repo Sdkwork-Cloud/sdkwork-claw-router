@@ -5,7 +5,7 @@ data class AdminUserItem(
     val createdAt: String? = null,
     val email: String? = null,
     val group: String? = null,
-    val id: Int? = null,
+    val id: String? = null,
     val lastActive: String? = null,
     val lastUsed: String? = null,
     val role: String? = null,

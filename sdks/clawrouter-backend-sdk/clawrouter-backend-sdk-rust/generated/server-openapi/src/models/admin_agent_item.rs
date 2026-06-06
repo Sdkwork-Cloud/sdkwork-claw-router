@@ -34,7 +34,7 @@ pub struct AdminAgentItem {
 
     /// Owner user id field on admin agent item.
     #[serde(rename = "ownerUserId")]
-    pub owner_user_id: i64,
+    pub owner_user_id: String,
 
     /// Status field on admin agent item.
     pub status: String,

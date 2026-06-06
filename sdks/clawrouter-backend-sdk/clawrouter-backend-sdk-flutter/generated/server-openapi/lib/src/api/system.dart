@@ -23,22 +23,8 @@ class SystemApi {
     })();
   }
 
-  /// Promotion Coupon Codes List
-  Future<PromotionsCodesListResult?> promotionsCodesList([int? page, int? pageSize, String? status]) async {
-    final query = buildQueryString([
-      QueryParameterSpec('page', page, 'form', true, false, null),
-      QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
-      QueryParameterSpec('status', status, 'form', true, false, null)
-    ]);
-    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.backendPath('/promotions/codes'), query));
-    return (() {
-      final map = sdkworkResponseAsMap(response);
-      return map == null ? null : PromotionsCodesListResult.fromJson(map);
-    })();
-  }
-
   /// Promotion Coupon Code Redemptions List
-  Future<PromotionsCodesRedemptionsListResult?> promotionsCodesRedemptionsList([int? page, int? pageSize, String? codeStatus]) async {
+  Future<PromotionsCodesRedemptionsListResult?> promotionsCodesRedemptionsList([String? page, String? pageSize, String? codeStatus]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
@@ -60,46 +46,6 @@ class SystemApi {
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : PromotionsCouponLedgerEntriesListResult.fromJson(map);
-    })();
-  }
-
-  /// Promotion Coupon Stocks List
-  Future<PromotionsCouponStocksListResult?> promotionsCouponStocksList([int? page, int? pageSize, String? status]) async {
-    final query = buildQueryString([
-      QueryParameterSpec('page', page, 'form', true, false, null),
-      QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
-      QueryParameterSpec('status', status, 'form', true, false, null)
-    ]);
-    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.backendPath('/promotions/coupon_stocks'), query));
-    return (() {
-      final map = sdkworkResponseAsMap(response);
-      return map == null ? null : PromotionsCouponStocksListResult.fromJson(map);
-    })();
-  }
-
-  /// Promotion Discount Allocations List
-  Future<PromotionsDiscountAllocationsListResult?> promotionsDiscountAllocationsList([String? applicationId]) async {
-    final query = buildQueryString([
-      QueryParameterSpec('application_id', applicationId, 'form', true, false, null)
-    ]);
-    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.backendPath('/promotions/discount_allocations'), query));
-    return (() {
-      final map = sdkworkResponseAsMap(response);
-      return map == null ? null : PromotionsDiscountAllocationsListResult.fromJson(map);
-    })();
-  }
-
-  /// Promotion Discount Applications List
-  Future<PromotionsDiscountApplicationsListResult?> promotionsDiscountApplicationsList([int? page, int? pageSize, String? status]) async {
-    final query = buildQueryString([
-      QueryParameterSpec('page', page, 'form', true, false, null),
-      QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
-      QueryParameterSpec('status', status, 'form', true, false, null)
-    ]);
-    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.backendPath('/promotions/discount_applications'), query));
-    return (() {
-      final map = sdkworkResponseAsMap(response);
-      return map == null ? null : PromotionsDiscountApplicationsListResult.fromJson(map);
     })();
   }
 
@@ -127,36 +73,8 @@ class SystemApi {
     })();
   }
 
-  /// Promotion Offers List
-  Future<PromotionsOffersManagementListResult?> promotionsOffersManagementList([int? page, int? pageSize, String? status]) async {
-    final query = buildQueryString([
-      QueryParameterSpec('page', page, 'form', true, false, null),
-      QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
-      QueryParameterSpec('status', status, 'form', true, false, null)
-    ]);
-    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.backendPath('/promotions/offers'), query));
-    return (() {
-      final map = sdkworkResponseAsMap(response);
-      return map == null ? null : PromotionsOffersManagementListResult.fromJson(map);
-    })();
-  }
-
-  /// Promotion User Coupons Management List
-  Future<PromotionsUserCouponsManagementListResult?> promotionsUserCouponsManagementList([int? page, int? pageSize, String? status]) async {
-    final query = buildQueryString([
-      QueryParameterSpec('page', page, 'form', true, false, null),
-      QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
-      QueryParameterSpec('status', status, 'form', true, false, null)
-    ]);
-    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.backendPath('/promotions/user_coupons'), query));
-    return (() {
-      final map = sdkworkResponseAsMap(response);
-      return map == null ? null : PromotionsUserCouponsManagementListResult.fromJson(map);
-    })();
-  }
-
   /// List overview
-  Future<AnalyticsAdminOverviewRetrieveResult?> analyticsAdminOverviewRetrieve([String? timeRange, String? startTime, String? endTime, int? limit]) async {
+  Future<AnalyticsAdminOverviewRetrieveResult?> analyticsAdminOverviewRetrieve([String? timeRange, String? startTime, String? endTime, String? limit]) async {
     final query = buildQueryString([
       QueryParameterSpec('time_range', timeRange, 'form', true, false, null),
       QueryParameterSpec('start_time', startTime, 'form', true, false, null),
@@ -217,7 +135,7 @@ class SystemApi {
   }
 
   /// List runtime cache keys in a namespace
-  Future<CacheNamespacesKeysListResult?> cacheNamespacesKeysList(String namespace, [int? limit, String? cursor]) async {
+  Future<CacheNamespacesKeysListResult?> cacheNamespacesKeysList(String namespace, [String? limit, String? cursor]) async {
     final query = buildQueryString([
       QueryParameterSpec('limit', limit, 'form', true, false, null),
       QueryParameterSpec('cursor', cursor, 'form', true, false, null)
@@ -405,7 +323,7 @@ class SystemApi {
   }
 
   /// List logs
-  Future<RecordsListResult?> recordsList([int? page, int? pageSize, String? user, String? token, String? model]) async {
+  Future<RecordsListResult?> recordsList([String? page, String? pageSize, String? user, String? token, String? model]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null),

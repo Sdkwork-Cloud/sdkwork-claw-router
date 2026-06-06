@@ -40,7 +40,7 @@ impl ContentApi {
     }
 
     /// Admin Course Applications List
-    pub async fn course_applications_list(&self, page: Option<i64>, page_size: Option<i64>, q: Option<&str>, status: Option<&str>) -> Result<CourseApplicationsListResult, SdkworkError> {
+    pub async fn course_applications_list(&self, page: Option<&str>, page_size: Option<&str>, q: Option<&str>, status: Option<&str>) -> Result<CourseApplicationsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
@@ -82,7 +82,7 @@ impl ContentApi {
     }
 
     /// Admin Courses List
-    pub async fn courses_list(&self, page: Option<i64>, page_size: Option<i64>, q: Option<&str>, status: Option<&str>) -> Result<CoursesListResult, SdkworkError> {
+    pub async fn courses_list(&self, page: Option<&str>, page_size: Option<&str>, q: Option<&str>, status: Option<&str>) -> Result<CoursesListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
@@ -100,7 +100,7 @@ impl ContentApi {
     }
 
     /// Admin Course Comments List
-    pub async fn course_comments_list(&self, page: Option<i64>, page_size: Option<i64>, q: Option<&str>, status: Option<&str>) -> Result<CourseCommentsListResult, SdkworkError> {
+    pub async fn course_comments_list(&self, page: Option<&str>, page_size: Option<&str>, q: Option<&str>, status: Option<&str>) -> Result<CourseCommentsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
@@ -124,7 +124,7 @@ impl ContentApi {
     }
 
     /// Admin Course Engagement List
-    pub async fn course_engagement_list(&self, page: Option<i64>, page_size: Option<i64>, q: Option<&str>, status: Option<&str>) -> Result<CourseEngagementListResult, SdkworkError> {
+    pub async fn course_engagement_list(&self, page: Option<&str>, page_size: Option<&str>, q: Option<&str>, status: Option<&str>) -> Result<CourseEngagementListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
@@ -148,7 +148,7 @@ impl ContentApi {
     }
 
     /// Admin Course Lessons List
-    pub async fn courses_lessons_list(&self, course_id: &str, page: Option<i64>, page_size: Option<i64>, q: Option<&str>, status: Option<&str>) -> Result<CoursesLessonsListResult, SdkworkError> {
+    pub async fn courses_lessons_list(&self, course_id: &str, page: Option<&str>, page_size: Option<&str>, q: Option<&str>, status: Option<&str>) -> Result<CoursesLessonsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
@@ -166,7 +166,7 @@ impl ContentApi {
     }
 
     /// Admin Course Relations List
-    pub async fn courses_relations_list(&self, course_id: &str, page: Option<i64>, page_size: Option<i64>, q: Option<&str>, status: Option<&str>) -> Result<CoursesRelationsListResult, SdkworkError> {
+    pub async fn courses_relations_list(&self, course_id: &str, page: Option<&str>, page_size: Option<&str>, q: Option<&str>, status: Option<&str>) -> Result<CoursesRelationsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
@@ -184,7 +184,7 @@ impl ContentApi {
     }
 
     /// Admin Course Sections List
-    pub async fn courses_sections_list(&self, course_id: &str, page: Option<i64>, page_size: Option<i64>, q: Option<&str>, status: Option<&str>) -> Result<CoursesSectionsListResult, SdkworkError> {
+    pub async fn courses_sections_list(&self, course_id: &str, page: Option<&str>, page_size: Option<&str>, q: Option<&str>, status: Option<&str>) -> Result<CoursesSectionsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),

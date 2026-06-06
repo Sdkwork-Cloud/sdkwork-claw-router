@@ -18,7 +18,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// List skills
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.SkillsListResult?> SkillsListAsync(string? q = null, string? marketStatus = null, string? reviewStatus = null, string? visibility = null, bool? enabled = null, string? categoryId = null, int? page = null, int? pageSize = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.SkillsListResult?> SkillsListAsync(string? q = null, string? marketStatus = null, string? reviewStatus = null, string? visibility = null, bool? enabled = null, string? categoryId = null, string? page = null, string? pageSize = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -77,7 +77,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// List skill packages
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.SkillsPackageListResult?> SkillsPackageListAsync(string? q = null, bool? enabled = null, string? categoryId = null, int? page = null, int? pageSize = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.SkillsPackageListResult?> SkillsPackageListAsync(string? q = null, bool? enabled = null, string? categoryId = null, string? page = null, string? pageSize = null)
         {
             var queryString = BuildQueryString(new[]
             {

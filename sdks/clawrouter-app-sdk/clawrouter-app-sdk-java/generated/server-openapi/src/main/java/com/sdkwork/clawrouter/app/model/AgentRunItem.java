@@ -4,26 +4,26 @@ package com.sdkwork.clawrouter.app.model;
 public class AgentRunItem {
     private String agentId;
     private String agentVersionId;
-    private Integer cachedTokens;
+    private String cachedTokens;
     private String completedAt;
     private String createdAt;
     private String errorMessageMasked;
     private String executionMode;
     private String id;
     private String inputMessage;
-    private Integer inputTokens;
+    private String inputTokens;
     private String memorySpaceId;
     private String model;
     private String outputMessage;
-    private Integer outputTokens;
+    private String outputTokens;
     private String requestId;
     private String runtime;
     private String sessionId;
     private String sourceSurface;
     private String startedAt;
     private String status;
-    private Integer totalSteps;
-    private Integer totalTokens;
+    private String totalSteps;
+    private String totalTokens;
     private String traceId;
 
     public String getAgentId() {
@@ -42,11 +42,11 @@ public class AgentRunItem {
         this.agentVersionId = agentVersionId;
     }
 
-    public Integer getCachedTokens() {
+    public String getCachedTokens() {
         return this.cachedTokens;
     }
 
-    public void setCachedTokens(Integer cachedTokens) {
+    public void setCachedTokens(String cachedTokens) {
         this.cachedTokens = cachedTokens;
     }
 
@@ -98,11 +98,11 @@ public class AgentRunItem {
         this.inputMessage = inputMessage;
     }
 
-    public Integer getInputTokens() {
+    public String getInputTokens() {
         return this.inputTokens;
     }
 
-    public void setInputTokens(Integer inputTokens) {
+    public void setInputTokens(String inputTokens) {
         this.inputTokens = inputTokens;
     }
 
@@ -130,11 +130,11 @@ public class AgentRunItem {
         this.outputMessage = outputMessage;
     }
 
-    public Integer getOutputTokens() {
+    public String getOutputTokens() {
         return this.outputTokens;
     }
 
-    public void setOutputTokens(Integer outputTokens) {
+    public void setOutputTokens(String outputTokens) {
         this.outputTokens = outputTokens;
     }
 
@@ -186,19 +186,19 @@ public class AgentRunItem {
         this.status = status;
     }
 
-    public Integer getTotalSteps() {
+    public String getTotalSteps() {
         return this.totalSteps;
     }
 
-    public void setTotalSteps(Integer totalSteps) {
+    public void setTotalSteps(String totalSteps) {
         this.totalSteps = totalSteps;
     }
 
-    public Integer getTotalTokens() {
+    public String getTotalTokens() {
         return this.totalTokens;
     }
 
-    public void setTotalTokens(Integer totalTokens) {
+    public void setTotalTokens(String totalTokens) {
         this.totalTokens = totalTokens;
     }
 

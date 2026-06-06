@@ -9,21 +9,21 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? BaseInputPrice { get; set; }
         public string? BaseOutputPrice { get; set; }
         public string? CacheReadPrice { get; set; }
-        public int? CacheReadTokens { get; set; }
+        public string? CacheReadTokens { get; set; }
         public string? Cost { get; set; }
         public string? ErrorCode { get; set; }
         public string? ErrorMessage { get; set; }
         public string? ErrorType { get; set; }
         public string? Group { get; set; }
         public string? HttpMethod { get; set; }
-        public int? HttpStatus { get; set; }
+        public string? HttpStatus { get; set; }
         public string? Id { get; set; }
-        public int? InputTokens { get; set; }
+        public string? InputTokens { get; set; }
         public string? Ip { get; set; }
         public bool? IsStream { get; set; }
         public string? Model { get; set; }
         public string? Multiplier { get; set; }
-        public int? OutputTokens { get; set; }
+        public string? OutputTokens { get; set; }
         public string? Path { get; set; }
         public string? ProviderNativeModel { get; set; }
         public string? ReasoningEffort { get; set; }

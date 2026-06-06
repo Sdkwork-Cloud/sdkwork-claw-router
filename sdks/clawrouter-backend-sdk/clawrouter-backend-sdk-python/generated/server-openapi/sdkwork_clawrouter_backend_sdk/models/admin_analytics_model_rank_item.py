@@ -12,9 +12,9 @@ class AdminAnalyticsModelRankItem:
     modality: str
     model: str
     points: float
-    rank: int
-    request_count: int
+    rank: str
+    request_count: str
     total_tokens: float
     upstream_cost: float
-    user_count: int
+    user_count: str
     vendor: str

@@ -8,6 +8,6 @@ namespace Sdkwork.ClawRouter.Backend.Models
     {
         public string? Date { get; set; }
         public List<ModelRankingHistoryEntry>? Entries { get; set; }
-        public int? Index { get; set; }
+        public string? Index { get; set; }
     }
 }

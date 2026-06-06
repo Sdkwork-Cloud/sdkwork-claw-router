@@ -4,10 +4,10 @@ package com.sdkwork.clawrouter.backend.model;
 public class CreateStorageQuotaPolicyRequest {
     private String enforcement;
     private String quotaLimit;
-    private Integer quotaLimitBytes;
+    private String quotaLimitBytes;
     private String scopeId;
     private String scopeType;
-    private Integer singleFileLimitBytes;
+    private String singleFileLimitBytes;
 
     public String getEnforcement() {
         return this.enforcement;
@@ -25,11 +25,11 @@ public class CreateStorageQuotaPolicyRequest {
         this.quotaLimit = quotaLimit;
     }
 
-    public Integer getQuotaLimitBytes() {
+    public String getQuotaLimitBytes() {
         return this.quotaLimitBytes;
     }
 
-    public void setQuotaLimitBytes(Integer quotaLimitBytes) {
+    public void setQuotaLimitBytes(String quotaLimitBytes) {
         this.quotaLimitBytes = quotaLimitBytes;
     }
 
@@ -49,11 +49,11 @@ public class CreateStorageQuotaPolicyRequest {
         this.scopeType = scopeType;
     }
 
-    public Integer getSingleFileLimitBytes() {
+    public String getSingleFileLimitBytes() {
         return this.singleFileLimitBytes;
     }
 
-    public void setSingleFileLimitBytes(Integer singleFileLimitBytes) {
+    public void setSingleFileLimitBytes(String singleFileLimitBytes) {
         this.singleFileLimitBytes = singleFileLimitBytes;
     }
 }

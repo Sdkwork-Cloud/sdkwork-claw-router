@@ -8,7 +8,7 @@ public class EcosystemApi {
     }
 
     /// List skills
-    public func skillsList(q: String? = nil, marketStatus: String? = nil, reviewStatus: String? = nil, visibility: String? = nil, enabled: Bool? = nil, categoryId: String? = nil, page: Int? = nil, pageSize: Int? = nil) async throws -> SkillsListResult? {
+    public func skillsList(q: String? = nil, marketStatus: String? = nil, reviewStatus: String? = nil, visibility: String? = nil, enabled: Bool? = nil, categoryId: String? = nil, page: String? = nil, pageSize: String? = nil) async throws -> SkillsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "q", value: q, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "market_status", value: marketStatus, style: "form", explode: true, allowReserved: false, contentType: nil),
@@ -48,7 +48,7 @@ public class EcosystemApi {
     }
 
     /// List skill packages
-    public func skillsPackageList(q: String? = nil, enabled: Bool? = nil, categoryId: String? = nil, page: Int? = nil, pageSize: Int? = nil) async throws -> SkillsPackageListResult? {
+    public func skillsPackageList(q: String? = nil, enabled: Bool? = nil, categoryId: String? = nil, page: String? = nil, pageSize: String? = nil) async throws -> SkillsPackageListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "q", value: q, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "enabled", value: enabled, style: "form", explode: true, allowReserved: false, contentType: nil),

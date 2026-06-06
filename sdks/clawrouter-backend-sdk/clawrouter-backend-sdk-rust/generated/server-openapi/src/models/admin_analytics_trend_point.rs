@@ -16,5 +16,5 @@ pub struct AdminAnalyticsTrendPoint {
     pub tokens: f64,
 
     /// Users field on admin analytics trend point.
-    pub users: i64,
+    pub users: String,
 }

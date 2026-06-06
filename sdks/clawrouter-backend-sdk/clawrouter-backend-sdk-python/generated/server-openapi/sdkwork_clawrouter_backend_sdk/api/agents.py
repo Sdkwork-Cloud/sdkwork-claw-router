@@ -199,7 +199,7 @@ class AgentsAgentDefinitionsApi:
         self._client = client
 
 
-    def list(self, q: Optional[str] = None, owner_user_id: Optional[int] = None, status: Optional[str] = None, visibility: Optional[str] = None, page: Optional[int] = None, page_size: Optional[int] = None) -> AgentDefinitionsListResult:
+    def list(self, q: Optional[str] = None, owner_user_id: Optional[str] = None, status: Optional[str] = None, visibility: Optional[str] = None, page: Optional[str] = None, page_size: Optional[str] = None) -> AgentDefinitionsListResult:
         """List managed agents"""
         query = build_query_string([
             {'name': 'q', 'value': q, 'style': 'form', 'explode': True, 'allow_reserved': False},

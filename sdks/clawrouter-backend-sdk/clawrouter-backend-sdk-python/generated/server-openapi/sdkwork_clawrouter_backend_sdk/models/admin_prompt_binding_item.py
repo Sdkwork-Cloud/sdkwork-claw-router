@@ -9,15 +9,15 @@ class AdminPromptBindingItem:
     binding_role: str
     created_at: str
     enabled: bool
-    id: int
-    organization_id: int
-    owner_id: int
+    id: str
+    organization_id: str
+    owner_id: str
     owner_type: str
     policy_json: Dict[str, str]
     priority: int
-    prompt_id: int
+    prompt_id: str
     snapshot_json: Dict[str, str]
-    tenant_id: int
+    tenant_id: str
     updated_at: str
     uuid: str
-    prompt_version_id: Optional[int] = None
+    prompt_version_id: Optional[str] = None

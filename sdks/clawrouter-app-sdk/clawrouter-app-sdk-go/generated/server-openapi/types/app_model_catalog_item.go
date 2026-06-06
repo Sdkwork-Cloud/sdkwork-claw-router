@@ -7,23 +7,23 @@ type AppModelCatalogItem struct {
 	CapabilityIntro string `json:"capabilityIntro"`
 	CatalogKey string `json:"catalogKey"`
 	Categories []string `json:"categories"`
-	ContextTokens int `json:"contextTokens"`
+	ContextTokens string `json:"contextTokens"`
 	Description string `json:"description"`
 	DisplayName string `json:"displayName"`
 	Groups []string `json:"groups"`
 	InputModalities []string `json:"inputModalities"`
 	Limitations []string `json:"limitations"`
-	MaxOutputTokens int `json:"maxOutputTokens"`
+	MaxOutputTokens string `json:"maxOutputTokens"`
 	Modalities []string `json:"modalities"`
 	Model string `json:"model"`
 	OfficialReferencePrices []AppModelCatalogReferencePrice `json:"officialReferencePrices"`
 	OutputModalities []string `json:"outputModalities"`
 	PriceAvailability AppModelCatalogPriceAvailability `json:"priceAvailability"`
 	ProviderCodes []string `json:"providerCodes"`
-	ReleaseStage int `json:"releaseStage"`
+	ReleaseStage string `json:"releaseStage"`
 	ReplacementModel string `json:"replacementModel"`
-	RoutingState int `json:"routingState"`
-	ShelfState int `json:"shelfState"`
+	RoutingState string `json:"routingState"`
+	ShelfState string `json:"shelfState"`
 	SupportedLanguages []string `json:"supportedLanguages"`
 	SupportsJsonSchema bool `json:"supportsJsonSchema"`
 	SupportsStreaming bool `json:"supportsStreaming"`

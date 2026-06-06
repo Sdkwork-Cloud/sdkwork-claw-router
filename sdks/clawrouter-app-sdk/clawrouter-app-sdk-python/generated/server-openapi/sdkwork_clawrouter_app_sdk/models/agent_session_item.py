@@ -9,11 +9,11 @@ class AgentSessionItem:
     agent_id: str
     created_at: str
     id: str
-    run_count: int
+    run_count: str
     session_kind: str
     source_surface: str
     status: str
-    step_count: int
+    step_count: str
     title: str
     updated_at: str
     agent_version_id: Optional[str] = None
@@ -23,9 +23,9 @@ class AgentSessionItem:
     default_model: Optional[str] = None
     last_active_at: Optional[str] = None
     last_run_id: Optional[str] = None
-    last_step_id: Optional[int] = None
+    last_step_id: Optional[str] = None
     memory_space_id: Optional[str] = None
     permission_mode: Optional[str] = None
     runtime: Optional[str] = None
     sandbox_policy: Optional[str] = None
-    tool_call_count: Optional[int] = None
+    tool_call_count: Optional[str] = None

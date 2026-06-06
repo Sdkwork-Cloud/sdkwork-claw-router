@@ -4,7 +4,7 @@ import java.util.Map;
 
 public class RuntimeEventItem {
     private String createdAt;
-    private Integer eventNo;
+    private String eventNo;
     private String eventSource;
     private String eventType;
     private String id;
@@ -20,11 +20,11 @@ public class RuntimeEventItem {
         this.createdAt = createdAt;
     }
 
-    public Integer getEventNo() {
+    public String getEventNo() {
         return this.eventNo;
     }
 
-    public void setEventNo(Integer eventNo) {
+    public void setEventNo(String eventNo) {
         this.eventNo = eventNo;
     }
 

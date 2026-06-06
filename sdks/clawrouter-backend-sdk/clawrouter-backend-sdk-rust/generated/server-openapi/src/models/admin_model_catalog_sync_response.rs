@@ -7,11 +7,11 @@ use crate::models::{AdminAiModelItem, AdminModelVendorItem};
 pub struct AdminModelCatalogSyncResponse {
     /// Total accepted standard fact count across meters, vendors, families, models, capabilities, prices, and rankings.
     #[serde(rename = "acceptedCount")]
-    pub accepted_count: i64,
+    pub accepted_count: String,
 
     /// Generated model capability fact count considered by the sync.
     #[serde(rename = "capabilityCount")]
-    pub capability_count: i64,
+    pub capability_count: String,
 
     /// Catalog root field on admin model catalog sync response.
     #[serde(rename = "catalogRoot")]
@@ -28,29 +28,29 @@ pub struct AdminModelCatalogSyncResponse {
 
     /// Selected model family fact count considered by the sync.
     #[serde(rename = "familyCount")]
-    pub family_count: i64,
+    pub family_count: String,
 
     /// Shared sdkwork-models billing meter fact count considered by the sync.
     #[serde(rename = "meterCount")]
-    pub meter_count: i64,
+    pub meter_count: String,
 
     /// Normalized sync mode executed by the backend.
     pub mode: String,
 
     /// Selected model definition fact count considered by the sync.
     #[serde(rename = "modelCount")]
-    pub model_count: i64,
+    pub model_count: String,
 
     /// Current ai model snapshots after sync.
     pub models: Vec<AdminAiModelItem>,
 
     /// Expanded pricing fact count considered by the sync.
     #[serde(rename = "priceCount")]
-    pub price_count: i64,
+    pub price_count: String,
 
     /// Selected ranking snapshot item count considered by the sync.
     #[serde(rename = "rankingCount")]
-    pub ranking_count: i64,
+    pub ranking_count: String,
 
     /// Requested catalog version field on admin model catalog sync response.
     #[serde(rename = "requestedCatalogVersion")]
@@ -83,7 +83,7 @@ pub struct AdminModelCatalogSyncResponse {
 
     /// Selected vendor directory count considered by the sync.
     #[serde(rename = "vendorCount")]
-    pub vendor_count: i64,
+    pub vendor_count: String,
 
     /// Current model vendor snapshots after sync.
     pub vendors: Vec<AdminModelVendorItem>,

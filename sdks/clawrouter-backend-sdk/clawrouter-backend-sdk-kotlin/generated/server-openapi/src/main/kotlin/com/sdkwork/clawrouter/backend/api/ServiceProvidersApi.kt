@@ -9,7 +9,7 @@ import com.sdkwork.clawrouter.backend.http.HttpClient
 class ServiceProvidersApi(private val client: HttpClient) {
 
     /** Service Provider Adjustments List */
-    suspend fun adjustmentsList(page: Int? = null, pageSize: Int? = null, status: String? = null, providerId: String? = null, sellerProviderId: String? = null, buyerProviderId: String? = null, edgeId: String? = null): AdjustmentsListResult? {
+    suspend fun adjustmentsList(page: String? = null, pageSize: String? = null, status: String? = null, providerId: String? = null, sellerProviderId: String? = null, buyerProviderId: String? = null, edgeId: String? = null): AdjustmentsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -24,7 +24,7 @@ class ServiceProvidersApi(private val client: HttpClient) {
     }
 
     /** Service Provider Audit Events List */
-    suspend fun auditEventsList(page: Int? = null, pageSize: Int? = null, status: String? = null, providerId: String? = null, sellerProviderId: String? = null, buyerProviderId: String? = null, edgeId: String? = null): AuditEventsListResult? {
+    suspend fun auditEventsList(page: String? = null, pageSize: String? = null, status: String? = null, providerId: String? = null, sellerProviderId: String? = null, buyerProviderId: String? = null, edgeId: String? = null): AuditEventsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -39,7 +39,7 @@ class ServiceProvidersApi(private val client: HttpClient) {
     }
 
     /** Service Provider Bindings List */
-    suspend fun bindingsList(page: Int? = null, pageSize: Int? = null, status: String? = null, providerId: String? = null, sellerProviderId: String? = null, buyerProviderId: String? = null, edgeId: String? = null): BindingsListResult? {
+    suspend fun bindingsList(page: String? = null, pageSize: String? = null, status: String? = null, providerId: String? = null, sellerProviderId: String? = null, buyerProviderId: String? = null, edgeId: String? = null): BindingsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -54,7 +54,7 @@ class ServiceProvidersApi(private val client: HttpClient) {
     }
 
     /** Service Provider Contracts List */
-    suspend fun contractsList(page: Int? = null, pageSize: Int? = null, status: String? = null, providerId: String? = null, sellerProviderId: String? = null, buyerProviderId: String? = null, edgeId: String? = null): ContractsListResult? {
+    suspend fun contractsList(page: String? = null, pageSize: String? = null, status: String? = null, providerId: String? = null, sellerProviderId: String? = null, buyerProviderId: String? = null, edgeId: String? = null): ContractsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -69,7 +69,7 @@ class ServiceProvidersApi(private val client: HttpClient) {
     }
 
     /** Service Provider Dashboard Retrieve */
-    suspend fun dashboardRetrieve(page: Int? = null, pageSize: Int? = null, status: String? = null, providerId: String? = null, sellerProviderId: String? = null, buyerProviderId: String? = null, edgeId: String? = null): DashboardRetrieveResult? {
+    suspend fun dashboardRetrieve(page: String? = null, pageSize: String? = null, status: String? = null, providerId: String? = null, sellerProviderId: String? = null, buyerProviderId: String? = null, edgeId: String? = null): DashboardRetrieveResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -84,7 +84,7 @@ class ServiceProvidersApi(private val client: HttpClient) {
     }
 
     /** Service Provider Downstreams List */
-    suspend fun downstreamsList(page: Int? = null, pageSize: Int? = null, status: String? = null, providerId: String? = null, sellerProviderId: String? = null, buyerProviderId: String? = null, edgeId: String? = null): DownstreamsListResult? {
+    suspend fun downstreamsList(page: String? = null, pageSize: String? = null, status: String? = null, providerId: String? = null, sellerProviderId: String? = null, buyerProviderId: String? = null, edgeId: String? = null): DownstreamsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -111,7 +111,7 @@ class ServiceProvidersApi(private val client: HttpClient) {
     }
 
     /** Service Provider Members List */
-    suspend fun membersList(page: Int? = null, pageSize: Int? = null, status: String? = null, providerId: String? = null, sellerProviderId: String? = null, buyerProviderId: String? = null, edgeId: String? = null): MembersListResult? {
+    suspend fun membersList(page: String? = null, pageSize: String? = null, status: String? = null, providerId: String? = null, sellerProviderId: String? = null, buyerProviderId: String? = null, edgeId: String? = null): MembersListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -126,7 +126,7 @@ class ServiceProvidersApi(private val client: HttpClient) {
     }
 
     /** Service Provider Pricing Rules List */
-    suspend fun pricingRulesList(page: Int? = null, pageSize: Int? = null, status: String? = null, providerId: String? = null, sellerProviderId: String? = null, buyerProviderId: String? = null, edgeId: String? = null): PricingRulesListResult? {
+    suspend fun pricingRulesList(page: String? = null, pageSize: String? = null, status: String? = null, providerId: String? = null, sellerProviderId: String? = null, buyerProviderId: String? = null, edgeId: String? = null): PricingRulesListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -177,7 +177,7 @@ class ServiceProvidersApi(private val client: HttpClient) {
     }
 
     /** Service Providers List */
-    suspend fun providerRegistryList(page: Int? = null, pageSize: Int? = null, status: String? = null, providerId: String? = null, sellerProviderId: String? = null, buyerProviderId: String? = null, edgeId: String? = null): ProviderRegistryListResult? {
+    suspend fun providerRegistryList(page: String? = null, pageSize: String? = null, status: String? = null, providerId: String? = null, sellerProviderId: String? = null, buyerProviderId: String? = null, edgeId: String? = null): ProviderRegistryListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -192,7 +192,7 @@ class ServiceProvidersApi(private val client: HttpClient) {
     }
 
     /** Service Provider Reconciliation Runs List */
-    suspend fun reconciliationRunsList(page: Int? = null, pageSize: Int? = null, status: String? = null, providerId: String? = null, sellerProviderId: String? = null, buyerProviderId: String? = null, edgeId: String? = null): ReconciliationRunsListResult? {
+    suspend fun reconciliationRunsList(page: String? = null, pageSize: String? = null, status: String? = null, providerId: String? = null, sellerProviderId: String? = null, buyerProviderId: String? = null, edgeId: String? = null): ReconciliationRunsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -207,7 +207,7 @@ class ServiceProvidersApi(private val client: HttpClient) {
     }
 
     /** Service Provider Relations List */
-    suspend fun relationsList(page: Int? = null, pageSize: Int? = null, status: String? = null, providerId: String? = null, sellerProviderId: String? = null, buyerProviderId: String? = null, edgeId: String? = null): RelationsListResult? {
+    suspend fun relationsList(page: String? = null, pageSize: String? = null, status: String? = null, providerId: String? = null, sellerProviderId: String? = null, buyerProviderId: String? = null, edgeId: String? = null): RelationsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -222,7 +222,7 @@ class ServiceProvidersApi(private val client: HttpClient) {
     }
 
     /** Service Provider Risk Events List */
-    suspend fun riskEventsList(page: Int? = null, pageSize: Int? = null, status: String? = null, providerId: String? = null, sellerProviderId: String? = null, buyerProviderId: String? = null, edgeId: String? = null): RiskEventsListResult? {
+    suspend fun riskEventsList(page: String? = null, pageSize: String? = null, status: String? = null, providerId: String? = null, sellerProviderId: String? = null, buyerProviderId: String? = null, edgeId: String? = null): RiskEventsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -237,7 +237,7 @@ class ServiceProvidersApi(private val client: HttpClient) {
     }
 
     /** Service Provider Statements List */
-    suspend fun statementsList(page: Int? = null, pageSize: Int? = null, status: String? = null, providerId: String? = null, sellerProviderId: String? = null, buyerProviderId: String? = null, edgeId: String? = null): StatementsListResult? {
+    suspend fun statementsList(page: String? = null, pageSize: String? = null, status: String? = null, providerId: String? = null, sellerProviderId: String? = null, buyerProviderId: String? = null, edgeId: String? = null): StatementsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -252,7 +252,7 @@ class ServiceProvidersApi(private val client: HttpClient) {
     }
 
     /** Service Provider Usage List */
-    suspend fun usageList(page: Int? = null, pageSize: Int? = null, status: String? = null, providerId: String? = null, sellerProviderId: String? = null, buyerProviderId: String? = null, edgeId: String? = null): UsageListResult? {
+    suspend fun usageList(page: String? = null, pageSize: String? = null, status: String? = null, providerId: String? = null, sellerProviderId: String? = null, buyerProviderId: String? = null, edgeId: String? = null): UsageListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -267,7 +267,7 @@ class ServiceProvidersApi(private val client: HttpClient) {
     }
 
     /** Service Provider Wallet Accounts List */
-    suspend fun providerWalletAccountsList(page: Int? = null, pageSize: Int? = null, status: String? = null, providerId: String? = null, sellerProviderId: String? = null, buyerProviderId: String? = null, edgeId: String? = null): ProviderWalletAccountsListResult? {
+    suspend fun providerWalletAccountsList(page: String? = null, pageSize: String? = null, status: String? = null, providerId: String? = null, sellerProviderId: String? = null, buyerProviderId: String? = null, edgeId: String? = null): ProviderWalletAccountsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null),

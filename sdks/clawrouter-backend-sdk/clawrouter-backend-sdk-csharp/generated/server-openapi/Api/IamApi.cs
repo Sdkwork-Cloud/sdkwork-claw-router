@@ -16,14 +16,6 @@ namespace Sdkwork.ClawRouter.Backend.Api
         }
 
         /// <summary>
-        /// List API key map
-        /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.ApiKeysListResult?> ApiKeysListAsync()
-        {
-            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.ApiKeysListResult>(ApiPaths.BackendPath("/iam/api_keys"));
-        }
-
-        /// <summary>
         /// Create API key
         /// </summary>
         public async Task<Sdkwork.ClawRouter.Backend.Models.ApiKeysCreateResult?> ApiKeysCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminApiKeyCreateRequest body, string idempotencyKey)
@@ -44,22 +36,6 @@ namespace Sdkwork.ClawRouter.Backend.Api
         public async Task<Sdkwork.ClawRouter.Backend.Models.ApiKeysDeleteResult?> ApiKeysDeleteAsync(string apiKeyId)
         {
             return await _client.DeleteAsync<Sdkwork.ClawRouter.Backend.Models.ApiKeysDeleteResult>(ApiPaths.BackendPath($"/iam/api_keys/{SerializePathParameter(apiKeyId, new PathParameterSpec("apiKeyId", "simple", false))}"));
-        }
-
-        /// <summary>
-        /// List users
-        /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.UsersListResult?> UsersListAsync()
-        {
-            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.UsersListResult>(ApiPaths.BackendPath("/iam/users"));
-        }
-
-        /// <summary>
-        /// Create user
-        /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.UsersCreateResult?> UsersCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminUserCreateRequest body)
-        {
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.UsersCreateResult>(ApiPaths.BackendPath("/iam/users"), body, null, null, "application/json");
         }
 
         /// <summary>

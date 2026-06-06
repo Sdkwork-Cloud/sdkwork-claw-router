@@ -2,10 +2,10 @@ package types
 
 // Model ranking refresh trigger request schema exposed by Claw Router.
 type ModelRankingRefreshTriggerRequest struct {
-	CacheMaxAgeSeconds int `json:"cacheMaxAgeSeconds"`
-	Limit int `json:"limit"`
-	LookbackDays int `json:"lookbackDays"`
+	CacheMaxAgeSeconds string `json:"cacheMaxAgeSeconds"`
+	Limit string `json:"limit"`
+	LookbackDays string `json:"lookbackDays"`
 	RankScope string `json:"rankScope"`
-	RefreshIntervalSeconds int `json:"refreshIntervalSeconds"`
+	RefreshIntervalSeconds string `json:"refreshIntervalSeconds"`
 	SnapshotPeriod string `json:"snapshotPeriod"`
 }

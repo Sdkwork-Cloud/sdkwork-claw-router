@@ -12,7 +12,7 @@ class StorageApi {
   StorageApi(this._client);
 
   /// List storage buckets
-  Future<OssBucketsListResult?> ossBucketsList([String? cursor, int? limit, String? status]) async {
+  Future<OssBucketsListResult?> ossBucketsList([String? cursor, String? limit, String? status]) async {
     final query = buildQueryString([
       QueryParameterSpec('cursor', cursor, 'form', true, false, null),
       QueryParameterSpec('limit', limit, 'form', true, false, null),
@@ -74,7 +74,7 @@ class StorageApi {
   }
 
   /// List storage garbage collection jobs
-  Future<OssGcJobsListResult?> ossGcJobsList([String? cursor, int? limit, String? status]) async {
+  Future<OssGcJobsListResult?> ossGcJobsList([String? cursor, String? limit, String? status]) async {
     final query = buildQueryString([
       QueryParameterSpec('cursor', cursor, 'form', true, false, null),
       QueryParameterSpec('limit', limit, 'form', true, false, null),
@@ -173,7 +173,7 @@ class StorageApi {
   }
 
   /// List storage reconciliation runs
-  Future<OssReconciliationRunsListResult?> ossReconciliationRunsList([String? cursor, int? limit, String? runType, String? status]) async {
+  Future<OssReconciliationRunsListResult?> ossReconciliationRunsList([String? cursor, String? limit, String? runType, String? status]) async {
     final query = buildQueryString([
       QueryParameterSpec('cursor', cursor, 'form', true, false, null),
       QueryParameterSpec('limit', limit, 'form', true, false, null),
@@ -204,7 +204,7 @@ class StorageApi {
   }
 
   /// List storage usage counters
-  Future<OssUsageListResult?> ossUsageList([String? cursor, int? limit, String? scopeType, String? scopeId]) async {
+  Future<OssUsageListResult?> ossUsageList([String? cursor, String? limit, String? scopeType, String? scopeId]) async {
     final query = buildQueryString([
       QueryParameterSpec('cursor', cursor, 'form', true, false, null),
       QueryParameterSpec('limit', limit, 'form', true, false, null),
@@ -219,7 +219,7 @@ class StorageApi {
   }
 
   /// List storage usage ledger
-  Future<OssUsageLedgerListResult?> ossUsageLedgerList([String? cursor, int? limit, String? scopeType, String? scopeId]) async {
+  Future<OssUsageLedgerListResult?> ossUsageLedgerList([String? cursor, String? limit, String? scopeType, String? scopeId]) async {
     final query = buildQueryString([
       QueryParameterSpec('cursor', cursor, 'form', true, false, null),
       QueryParameterSpec('limit', limit, 'form', true, false, null),
@@ -234,7 +234,7 @@ class StorageApi {
   }
 
   /// List storage usage snapshots
-  Future<OssUsageSnapshotsListResult?> ossUsageSnapshotsList([String? cursor, int? limit, String? scopeType, String? scopeId]) async {
+  Future<OssUsageSnapshotsListResult?> ossUsageSnapshotsList([String? cursor, String? limit, String? scopeType, String? scopeId]) async {
     final query = buildQueryString([
       QueryParameterSpec('cursor', cursor, 'form', true, false, null),
       QueryParameterSpec('limit', limit, 'form', true, false, null),

@@ -6,11 +6,11 @@ public class CommerceMembershipBenefitMutationRequest {
     private Boolean claimed;
     private String description;
     private MediaResource icon;
-    private Integer id;
+    private String id;
     private String name;
     private String type;
-    private Integer usageLimit;
-    private Integer usedCount;
+    private String usageLimit;
+    private String usedCount;
 
     public String getBenefitKey() {
         return this.benefitKey;
@@ -44,11 +44,11 @@ public class CommerceMembershipBenefitMutationRequest {
         this.icon = icon;
     }
 
-    public Integer getId() {
+    public String getId() {
         return this.id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -68,19 +68,19 @@ public class CommerceMembershipBenefitMutationRequest {
         this.type = type;
     }
 
-    public Integer getUsageLimit() {
+    public String getUsageLimit() {
         return this.usageLimit;
     }
 
-    public void setUsageLimit(Integer usageLimit) {
+    public void setUsageLimit(String usageLimit) {
         this.usageLimit = usageLimit;
     }
 
-    public Integer getUsedCount() {
+    public String getUsedCount() {
         return this.usedCount;
     }
 
-    public void setUsedCount(Integer usedCount) {
+    public void setUsedCount(String usedCount) {
         this.usedCount = usedCount;
     }
 }

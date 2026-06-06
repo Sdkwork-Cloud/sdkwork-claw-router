@@ -9,7 +9,7 @@ pub struct SkillPackageItem {
 
     /// Artifact size bytes field on skill package item.
     #[serde(rename = "artifactSizeBytes")]
-    pub artifact_size_bytes: i64,
+    pub artifact_size_bytes: String,
 
     /// Frameworks field on skill package item.
     pub frameworks: Vec<String>,

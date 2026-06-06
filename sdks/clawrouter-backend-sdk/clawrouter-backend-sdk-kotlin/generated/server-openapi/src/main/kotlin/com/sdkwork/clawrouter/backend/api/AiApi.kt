@@ -82,7 +82,7 @@ class AiApi(private val client: HttpClient) {
     }
 
     /** List model rankings */
-    suspend fun modelRankingsList(rankScope: String? = null, vendorCode: String? = null, modality: String? = null, q: String? = null, limit: Int? = null): ModelRankingsListResult? {
+    suspend fun modelRankingsList(rankScope: String? = null, vendorCode: String? = null, modality: String? = null, q: String? = null, limit: String? = null): ModelRankingsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("rank_scope", rankScope, "form", true, false, null),
             QueryParameterSpec("vendor_code", vendorCode, "form", true, false, null),
@@ -95,7 +95,7 @@ class AiApi(private val client: HttpClient) {
     }
 
     /** List model ranking refresh jobs */
-    suspend fun modelRankingsJobsList(rankScope: String? = null, limit: Int? = null): ModelRankingsJobsListResult? {
+    suspend fun modelRankingsJobsList(rankScope: String? = null, limit: String? = null): ModelRankingsJobsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("rank_scope", rankScope, "form", true, false, null),
             QueryParameterSpec("limit", limit, "form", true, false, null)

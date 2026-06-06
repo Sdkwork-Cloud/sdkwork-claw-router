@@ -7,7 +7,7 @@ from typing import TYPE_CHECKING, Optional, List, Dict, Any
 class CommerceMembershipPackageMutationRequest:
     """Commerce membership package mutation request schema exposed by Claw Router."""
     code: str
-    duration_days: int
+    duration_days: str
     name: str
     package_group_id: str
     plan_id: str

@@ -91,11 +91,11 @@ client.set_header('X-Custom-Header', 'value')
 # List managed agents
 params = {
     'q': 'q',
-    'owner_user_id': 2,
+    'owner_user_id': 'owner_user_id',
     'status': 'active',
     'visibility': 'private',
-    'page': 5,
-    'page_size': 6,
+    'page': 'page',
+    'page_size': 'page_size',
 }
 result = client.agents.agent_definitions.list(params)
 print(result)
@@ -112,8 +112,8 @@ print(result)
 ### commerce
 
 ```python
-# Commerce Reports Payment Reconciliation Retrieve
-result = client.commerce.commerce_reports.payment_reconciliation.retrieve()
+# Recharges Settings Retrieve
+result = client.commerce.recharges.settings.retrieve()
 print(result)
 ```
 
@@ -136,8 +136,14 @@ print(result)
 ### iam
 
 ```python
-# List API key map
-result = client.iam.api_keys.list()
+# Update user
+body = {
+    'group': 'group',
+    'id': 'id',
+    'status': 'active',
+    'username': 'username',
+}
+result = client.iam.users.update(body)
 print(result)
 ```
 
@@ -154,8 +160,8 @@ print(result)
 ```python
 # List MCP servers
 params = {
-    'page': 1,
-    'page_size': 2,
+    'page': 'page',
+    'page_size': 'page_size',
     'q': 'q',
     'transport': 'transport',
     'visibility': 'visibility',
@@ -171,8 +177,8 @@ print(result)
 ```python
 # Messaging provider accounts list
 params = {
-    'page': 1,
-    'page_size': 2,
+    'page': 'page',
+    'page_size': 'page_size',
     'q': 'q',
     'status': 'status',
     'channel': 'sms',
@@ -214,8 +220,8 @@ print(result)
 ```python
 # List admin prompts
 params = {
-    'page': 1,
-    'page_size': 2,
+    'page': 'page',
+    'page_size': 'page_size',
     'q': 'q',
     'prompt_type': 'prompt_type',
     'visibility': 'visibility',
@@ -231,8 +237,8 @@ print(result)
 ```python
 # Service Provider Adjustments List
 params = {
-    'page': 1,
-    'page_size': 2,
+    'page': 'page',
+    'page_size': 'page_size',
     'status': 'status',
     'provider_id': 'provider_id',
     'seller_provider_id': 'seller_provider_id',

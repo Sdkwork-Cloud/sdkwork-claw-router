@@ -14,14 +14,14 @@ pub struct CourseItem {
 
     /// Comment count field on course item.
     #[serde(rename = "commentCount")]
-    pub comment_count: i64,
+    pub comment_count: String,
 
     /// Content field on course item.
     pub content: String,
 
     /// Content id field on course item.
     #[serde(rename = "contentId")]
-    pub content_id: i64,
+    pub content_id: String,
 
     /// Course code field on course item.
     #[serde(rename = "courseCode")]
@@ -56,10 +56,10 @@ pub struct CourseItem {
 
     /// Lessons count field on course item.
     #[serde(rename = "lessonsCount")]
-    pub lessons_count: i64,
+    pub lessons_count: String,
 
     /// Level field on course item.
-    pub level: i64,
+    pub level: String,
 
     /// Level label field on course item.
     #[serde(rename = "levelLabel")]
@@ -80,7 +80,7 @@ pub struct CourseItem {
 
     /// Students count field on course item.
     #[serde(rename = "studentsCount")]
-    pub students_count: i64,
+    pub students_count: String,
 
     /// Tags field on course item.
     pub tags: Vec<String>,

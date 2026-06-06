@@ -37,7 +37,7 @@ pub struct RoutingRequestTraceItem {
 
     /// Request bytes field on routing request trace item.
     #[serde(rename = "requestBytes")]
-    pub request_bytes: i64,
+    pub request_bytes: String,
 
     /// Request id field on routing request trace item.
     #[serde(rename = "requestId")]
@@ -53,7 +53,7 @@ pub struct RoutingRequestTraceItem {
 
     /// Response bytes field on routing request trace item.
     #[serde(rename = "responseBytes")]
-    pub response_bytes: i64,
+    pub response_bytes: String,
 
     /// Response payload hash field on routing request trace item.
     #[serde(rename = "responsePayloadHash")]
@@ -64,7 +64,7 @@ pub struct RoutingRequestTraceItem {
     pub started_at: String,
 
     /// Status field on routing request trace item.
-    pub status: i64,
+    pub status: String,
 
     /// Streaming field on routing request trace item.
     pub streaming: bool,
@@ -73,7 +73,7 @@ pub struct RoutingRequestTraceItem {
     pub time: String,
 
     /// Tokens field on routing request trace item.
-    pub tokens: i64,
+    pub tokens: String,
 
     /// Trace id field on routing request trace item.
     #[serde(rename = "traceId")]

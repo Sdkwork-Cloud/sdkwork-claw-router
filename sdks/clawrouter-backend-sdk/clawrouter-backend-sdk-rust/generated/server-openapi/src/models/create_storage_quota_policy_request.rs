@@ -14,7 +14,7 @@ pub struct CreateStorageQuotaPolicyRequest {
 
     /// Quota limit bytes field on create storage quota policy request.
     #[serde(rename = "quotaLimitBytes")]
-    pub quota_limit_bytes: i64,
+    pub quota_limit_bytes: String,
 
     /// Scope id field on create storage quota policy request.
     #[serde(rename = "scopeId")]
@@ -27,5 +27,5 @@ pub struct CreateStorageQuotaPolicyRequest {
     /// Single file limit bytes field on create storage quota policy request.
     #[serde(rename = "singleFileLimitBytes")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub single_file_limit_bytes: Option<i64>,
+    pub single_file_limit_bytes: Option<String>,
 }

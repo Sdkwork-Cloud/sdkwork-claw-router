@@ -6,9 +6,9 @@ from typing import TYPE_CHECKING, Optional, List, Dict, Any
 @dataclass
 class ModelRankingRefreshTriggerRequest:
     """Model ranking refresh trigger request schema exposed by Claw Router."""
-    cache_max_age_seconds: Optional[int] = None
-    limit: Optional[int] = None
-    lookback_days: Optional[int] = None
+    cache_max_age_seconds: Optional[str] = None
+    limit: Optional[str] = None
+    lookback_days: Optional[str] = None
     rank_scope: Optional[str] = None
-    refresh_interval_seconds: Optional[int] = None
+    refresh_interval_seconds: Optional[str] = None
     snapshot_period: Optional[str] = None

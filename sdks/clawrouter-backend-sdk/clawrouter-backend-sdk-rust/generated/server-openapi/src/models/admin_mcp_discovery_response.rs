@@ -11,11 +11,11 @@ pub struct AdminMcpDiscoveryResponse {
 
     /// Discovered count field on admin mcp discovery response.
     #[serde(rename = "discoveredCount")]
-    pub discovered_count: i64,
+    pub discovered_count: String,
 
     /// Server id field on admin mcp discovery response.
     #[serde(rename = "serverId")]
-    pub server_id: i64,
+    pub server_id: String,
 
     /// Tools field on admin mcp discovery response.
     pub tools: Vec<AdminMcpToolItem>,

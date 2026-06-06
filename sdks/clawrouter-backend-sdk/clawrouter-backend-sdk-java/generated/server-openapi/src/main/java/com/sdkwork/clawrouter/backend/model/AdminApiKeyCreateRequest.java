@@ -3,7 +3,7 @@ package com.sdkwork.clawrouter.backend.model;
 
 public class AdminApiKeyCreateRequest {
     private String name;
-    private Integer userId;
+    private String userId;
 
     public String getName() {
         return this.name;
@@ -13,11 +13,11 @@ public class AdminApiKeyCreateRequest {
         this.name = name;
     }
 
-    public Integer getUserId() {
+    public String getUserId() {
         return this.userId;
     }
 
-    public void setUserId(Integer userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 }

@@ -15,15 +15,15 @@ class RoutingRequestTraceItem:
     id: str
     model: str
     provider_error_code: str
-    request_bytes: int
+    request_bytes: str
     request_id: str
     request_path: str
     request_payload_hash: str
-    response_bytes: int
+    response_bytes: str
     response_payload_hash: str
     started_at: str
-    status: int
+    status: str
     streaming: bool
     time: str
-    tokens: int
+    tokens: str
     trace_id: str

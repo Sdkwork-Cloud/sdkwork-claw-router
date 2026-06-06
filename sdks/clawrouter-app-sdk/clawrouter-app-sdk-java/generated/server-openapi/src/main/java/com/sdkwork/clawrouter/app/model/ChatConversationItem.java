@@ -10,11 +10,11 @@ public class ChatConversationItem {
     private String id;
     private String lastMessagePreview;
     private String memorySpaceId;
-    private Integer messageCount;
+    private String messageCount;
     private String sourceSurface;
     private String status;
     private String title;
-    private Integer turnCount;
+    private String turnCount;
     private String updatedAt;
 
     public String getAgentId() {
@@ -81,11 +81,11 @@ public class ChatConversationItem {
         this.memorySpaceId = memorySpaceId;
     }
 
-    public Integer getMessageCount() {
+    public String getMessageCount() {
         return this.messageCount;
     }
 
-    public void setMessageCount(Integer messageCount) {
+    public void setMessageCount(String messageCount) {
         this.messageCount = messageCount;
     }
 
@@ -113,11 +113,11 @@ public class ChatConversationItem {
         this.title = title;
     }
 
-    public Integer getTurnCount() {
+    public String getTurnCount() {
         return this.turnCount;
     }
 
-    public void setTurnCount(Integer turnCount) {
+    public void setTurnCount(String turnCount) {
         this.turnCount = turnCount;
     }
 

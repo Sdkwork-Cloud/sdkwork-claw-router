@@ -13,15 +13,15 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? DisplayName { get; set; }
         public List<string>? InputModalities { get; set; }
         public List<string>? Limitations { get; set; }
-        public int? MaxOutputTokens { get; set; }
+        public string? MaxOutputTokens { get; set; }
         public List<string>? Modalities { get; set; }
         public string? Model { get; set; }
         public List<string>? OutputModalities { get; set; }
         public List<AdminAiModelRegionPrice>? RegionPrices { get; set; }
-        public int? ReleaseStage { get; set; }
+        public string? ReleaseStage { get; set; }
         public string? ReplacementModel { get; set; }
-        public int? RoutingState { get; set; }
-        public int? ShelfState { get; set; }
+        public string? RoutingState { get; set; }
+        public string? ShelfState { get; set; }
         public string? Status { get; set; }
         public List<string>? SupportedLanguages { get; set; }
         public bool? SupportsJsonSchema { get; set; }

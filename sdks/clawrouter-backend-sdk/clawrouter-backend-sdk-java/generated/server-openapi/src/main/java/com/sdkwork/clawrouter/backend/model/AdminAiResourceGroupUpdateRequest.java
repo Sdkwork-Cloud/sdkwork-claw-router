@@ -9,7 +9,7 @@ public class AdminAiResourceGroupUpdateRequest {
     private String groupType;
     private List<AdminAiResourceGroupMemberInput> members;
     private String selectionMode;
-    private Integer sortOrder;
+    private String sortOrder;
     private String status;
 
     public String getDescription() {
@@ -60,11 +60,11 @@ public class AdminAiResourceGroupUpdateRequest {
         this.selectionMode = selectionMode;
     }
 
-    public Integer getSortOrder() {
+    public String getSortOrder() {
         return this.sortOrder;
     }
 
-    public void setSortOrder(Integer sortOrder) {
+    public void setSortOrder(String sortOrder) {
         this.sortOrder = sortOrder;
     }
 

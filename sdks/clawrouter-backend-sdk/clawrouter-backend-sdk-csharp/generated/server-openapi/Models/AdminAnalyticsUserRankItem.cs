@@ -9,8 +9,8 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? Email { get; set; }
         public List<AdminPieChartItem>? ModelDistribution { get; set; }
         public double? Points { get; set; }
-        public int? Rank { get; set; }
-        public int? RequestCount { get; set; }
+        public string? Rank { get; set; }
+        public string? RequestCount { get; set; }
         public double? TotalTokens { get; set; }
         public string? UserId { get; set; }
         public string? UserName { get; set; }

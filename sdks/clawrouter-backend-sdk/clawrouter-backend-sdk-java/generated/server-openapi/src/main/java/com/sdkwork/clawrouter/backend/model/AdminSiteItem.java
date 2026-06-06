@@ -4,7 +4,7 @@ import java.util.List;
 
 public class AdminSiteItem {
     private String baseUrl;
-    private Integer consecutiveErrorCount;
+    private String consecutiveErrorCount;
     private String description;
     private String displayName;
     private String docsUrl;
@@ -13,7 +13,7 @@ public class AdminSiteItem {
     private String healthStatus;
     private String id;
     private String lastCheckedAt;
-    private Integer lastLatencyMs;
+    private String lastLatencyMs;
     private String lastSyncAt;
     private MediaResource logo;
     private String ownerKind;
@@ -21,7 +21,7 @@ public class AdminSiteItem {
     private String siteCode;
     private String siteName;
     private String siteType;
-    private Integer sortOrder;
+    private String sortOrder;
     private String status;
     private List<String> vendorCodes;
     private String websiteUrl;
@@ -34,11 +34,11 @@ public class AdminSiteItem {
         this.baseUrl = baseUrl;
     }
 
-    public Integer getConsecutiveErrorCount() {
+    public String getConsecutiveErrorCount() {
         return this.consecutiveErrorCount;
     }
 
-    public void setConsecutiveErrorCount(Integer consecutiveErrorCount) {
+    public void setConsecutiveErrorCount(String consecutiveErrorCount) {
         this.consecutiveErrorCount = consecutiveErrorCount;
     }
 
@@ -106,11 +106,11 @@ public class AdminSiteItem {
         this.lastCheckedAt = lastCheckedAt;
     }
 
-    public Integer getLastLatencyMs() {
+    public String getLastLatencyMs() {
         return this.lastLatencyMs;
     }
 
-    public void setLastLatencyMs(Integer lastLatencyMs) {
+    public void setLastLatencyMs(String lastLatencyMs) {
         this.lastLatencyMs = lastLatencyMs;
     }
 
@@ -170,11 +170,11 @@ public class AdminSiteItem {
         this.siteType = siteType;
     }
 
-    public Integer getSortOrder() {
+    public String getSortOrder() {
         return this.sortOrder;
     }
 
-    public void setSortOrder(Integer sortOrder) {
+    public void setSortOrder(String sortOrder) {
         this.sortOrder = sortOrder;
     }
 

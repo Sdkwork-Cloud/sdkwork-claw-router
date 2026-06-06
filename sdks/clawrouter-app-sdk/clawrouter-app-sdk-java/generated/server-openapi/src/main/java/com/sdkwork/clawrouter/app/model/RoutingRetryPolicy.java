@@ -3,31 +3,31 @@ package com.sdkwork.clawrouter.app.model;
 import java.util.List;
 
 public class RoutingRetryPolicy {
-    private Integer backoffMs;
-    private Integer maxAttempts;
-    private List<Integer> retryableStatusCodes;
+    private String backoffMs;
+    private String maxAttempts;
+    private List<String> retryableStatusCodes;
 
-    public Integer getBackoffMs() {
+    public String getBackoffMs() {
         return this.backoffMs;
     }
 
-    public void setBackoffMs(Integer backoffMs) {
+    public void setBackoffMs(String backoffMs) {
         this.backoffMs = backoffMs;
     }
 
-    public Integer getMaxAttempts() {
+    public String getMaxAttempts() {
         return this.maxAttempts;
     }
 
-    public void setMaxAttempts(Integer maxAttempts) {
+    public void setMaxAttempts(String maxAttempts) {
         this.maxAttempts = maxAttempts;
     }
 
-    public List<Integer> getRetryableStatusCodes() {
+    public List<String> getRetryableStatusCodes() {
         return this.retryableStatusCodes;
     }
 
-    public void setRetryableStatusCodes(List<Integer> retryableStatusCodes) {
+    public void setRetryableStatusCodes(List<String> retryableStatusCodes) {
         this.retryableStatusCodes = retryableStatusCodes;
     }
 }

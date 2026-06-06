@@ -38,12 +38,6 @@ class IamApi(private val client: HttpClient) {
         return client.convertValue(raw, object : TypeReference<ApiKeysUpdateResult>() {})
     }
 
-    /** Retrieve current IAM user */
-    suspend fun usersCurrentRetrieve(): UsersCurrentRetrieveResult? {
-        val raw = client.get(ApiPaths.appPath("/iam/users/current"))
-        return client.convertValue(raw, object : TypeReference<UsersCurrentRetrieveResult>() {})
-    }
-
     /** List settings */
     suspend fun usersSettingsRetrieve(): UsersSettingsRetrieveResult? {
         val raw = client.get(ApiPaths.appPath("/iam/users/settings"))

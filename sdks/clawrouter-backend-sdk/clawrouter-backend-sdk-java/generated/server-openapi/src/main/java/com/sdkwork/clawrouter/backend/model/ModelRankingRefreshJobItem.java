@@ -2,31 +2,31 @@ package com.sdkwork.clawrouter.backend.model;
 
 
 public class ModelRankingRefreshJobItem {
-    private Integer durationMs;
+    private String durationMs;
     private String endedAt;
-    private Integer failureCount;
+    private String failureCount;
     private String failureReason;
-    private Integer generatedCount;
+    private String generatedCount;
     private String id;
     private String jobName;
     private String nextRefreshAt;
-    private Integer organizationId;
+    private String organizationId;
     private String rankScope;
     private String snapshotDate;
     private String snapshotPeriod;
-    private Integer sourceCount;
+    private String sourceCount;
     private String startedAt;
     private String status;
-    private Integer successCount;
-    private Integer tenantId;
+    private String successCount;
+    private String tenantId;
     private String windowEnd;
     private String windowStart;
 
-    public Integer getDurationMs() {
+    public String getDurationMs() {
         return this.durationMs;
     }
 
-    public void setDurationMs(Integer durationMs) {
+    public void setDurationMs(String durationMs) {
         this.durationMs = durationMs;
     }
 
@@ -38,11 +38,11 @@ public class ModelRankingRefreshJobItem {
         this.endedAt = endedAt;
     }
 
-    public Integer getFailureCount() {
+    public String getFailureCount() {
         return this.failureCount;
     }
 
-    public void setFailureCount(Integer failureCount) {
+    public void setFailureCount(String failureCount) {
         this.failureCount = failureCount;
     }
 
@@ -54,11 +54,11 @@ public class ModelRankingRefreshJobItem {
         this.failureReason = failureReason;
     }
 
-    public Integer getGeneratedCount() {
+    public String getGeneratedCount() {
         return this.generatedCount;
     }
 
-    public void setGeneratedCount(Integer generatedCount) {
+    public void setGeneratedCount(String generatedCount) {
         this.generatedCount = generatedCount;
     }
 
@@ -86,11 +86,11 @@ public class ModelRankingRefreshJobItem {
         this.nextRefreshAt = nextRefreshAt;
     }
 
-    public Integer getOrganizationId() {
+    public String getOrganizationId() {
         return this.organizationId;
     }
 
-    public void setOrganizationId(Integer organizationId) {
+    public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
 
@@ -118,11 +118,11 @@ public class ModelRankingRefreshJobItem {
         this.snapshotPeriod = snapshotPeriod;
     }
 
-    public Integer getSourceCount() {
+    public String getSourceCount() {
         return this.sourceCount;
     }
 
-    public void setSourceCount(Integer sourceCount) {
+    public void setSourceCount(String sourceCount) {
         this.sourceCount = sourceCount;
     }
 
@@ -142,19 +142,19 @@ public class ModelRankingRefreshJobItem {
         this.status = status;
     }
 
-    public Integer getSuccessCount() {
+    public String getSuccessCount() {
         return this.successCount;
     }
 
-    public void setSuccessCount(Integer successCount) {
+    public void setSuccessCount(String successCount) {
         this.successCount = successCount;
     }
 
-    public Integer getTenantId() {
+    public String getTenantId() {
         return this.tenantId;
     }
 
-    public void setTenantId(Integer tenantId) {
+    public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
 

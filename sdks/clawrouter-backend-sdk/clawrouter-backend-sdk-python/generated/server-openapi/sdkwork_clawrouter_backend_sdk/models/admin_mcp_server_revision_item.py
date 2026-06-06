@@ -10,16 +10,16 @@ class AdminMcpServerRevisionItem:
     auth_type: str
     config_hash: str
     created_at: str
-    created_by: int
+    created_by: str
     env_schema: Dict[str, str]
-    id: int
+    id: str
     lifecycle_status: str
-    organization_id: int
+    organization_id: str
     retry_policy: Dict[str, str]
     revision_no: str
-    server_id: int
+    server_id: str
     status: str
-    tenant_id: int
+    tenant_id: str
     timeout_ms: int
     transport: str
     updated_at: str

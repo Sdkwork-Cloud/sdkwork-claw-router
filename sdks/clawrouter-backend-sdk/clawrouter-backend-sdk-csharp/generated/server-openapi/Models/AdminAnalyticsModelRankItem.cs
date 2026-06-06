@@ -12,11 +12,11 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? Modality { get; set; }
         public string? Model { get; set; }
         public double? Points { get; set; }
-        public int? Rank { get; set; }
-        public int? RequestCount { get; set; }
+        public string? Rank { get; set; }
+        public string? RequestCount { get; set; }
         public double? TotalTokens { get; set; }
         public double? UpstreamCost { get; set; }
-        public int? UserCount { get; set; }
+        public string? UserCount { get; set; }
         public string? Vendor { get; set; }
     }
 }

@@ -1,11 +1,11 @@
 package com.sdkwork.clawrouter.backend
 
 data class CommercePaymentRuntimeAssemblySummary(
-    val failed: Int? = null,
+    val failed: String? = null,
     val failedProviderCodes: List<String>? = null,
-    val registered: Int? = null,
+    val registered: String? = null,
     val registeredProviderCodes: List<String>? = null,
-    val skipped: Int? = null,
+    val skipped: String? = null,
     val skippedProviderCodes: List<String>? = null,
-    val total: Int? = null
+    val total: String? = null
 )

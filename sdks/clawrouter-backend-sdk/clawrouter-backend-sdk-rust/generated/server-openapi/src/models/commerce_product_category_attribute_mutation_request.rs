@@ -23,7 +23,7 @@ pub struct CommerceProductCategoryAttributeMutationRequest {
     /// Sort order field on commerce product category attribute mutation request.
     #[serde(rename = "sortOrder")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub sort_order: Option<i64>,
+    pub sort_order: Option<String>,
 
     /// Status field on commerce product category attribute mutation request.
     pub status: String,

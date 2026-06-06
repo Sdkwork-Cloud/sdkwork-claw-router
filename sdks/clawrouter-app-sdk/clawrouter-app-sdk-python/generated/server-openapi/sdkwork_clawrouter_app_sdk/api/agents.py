@@ -255,7 +255,7 @@ class AgentsAgentDefinitionsApi:
         self._client = client
 
 
-    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, q: Optional[str] = None) -> AgentDefinitionsListResult:
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, q: Optional[str] = None) -> AgentDefinitionsListResult:
         """List Playground agent definitions"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -299,7 +299,7 @@ class AgentsAgentRunsApi:
         )
         return self._client.post(f"/app/v3/api/agents/runs/{serialize_path_parameter(run_id, {'name': 'runId', 'style': 'simple', 'explode': False})}/complete", json=body, headers=request_headers)
 
-    def list(self, session_id: str, page: Optional[int] = None, page_size: Optional[int] = None) -> AgentRunsListResult:
+    def list(self, session_id: str, page: Optional[str] = None, page_size: Optional[str] = None) -> AgentRunsListResult:
         """List Playground agent runs"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -324,7 +324,7 @@ class AgentsAgentRunStepsApi:
         self._client = client
 
 
-    def list(self, run_id: str, page: Optional[int] = None, page_size: Optional[int] = None) -> AgentRunStepsListResult:
+    def list(self, run_id: str, page: Optional[str] = None, page_size: Optional[str] = None) -> AgentRunStepsListResult:
         """List Playground agent run steps"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -363,7 +363,7 @@ class AgentsAgentSessionsApi:
         """Retrieve Playground agent session"""
         return self._client.get(f"/app/v3/api/agents/sessions/{serialize_path_parameter(session_id, {'name': 'sessionId', 'style': 'simple', 'explode': False})}")
 
-    def list(self, agent_id: str, page: Optional[int] = None, page_size: Optional[int] = None) -> AgentSessionsListResult:
+    def list(self, agent_id: str, page: Optional[str] = None, page_size: Optional[str] = None) -> AgentSessionsListResult:
         """List Playground agent sessions"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},

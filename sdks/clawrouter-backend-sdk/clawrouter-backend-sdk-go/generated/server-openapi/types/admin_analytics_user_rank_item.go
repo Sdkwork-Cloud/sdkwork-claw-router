@@ -5,8 +5,8 @@ type AdminAnalyticsUserRankItem struct {
 	Email string `json:"email"`
 	ModelDistribution []AdminPieChartItem `json:"modelDistribution"`
 	Points float64 `json:"points"`
-	Rank int `json:"rank"`
-	RequestCount int `json:"requestCount"`
+	Rank string `json:"rank"`
+	RequestCount string `json:"requestCount"`
 	TotalTokens float64 `json:"totalTokens"`
 	UserId string `json:"userId"`
 	UserName string `json:"userName"`

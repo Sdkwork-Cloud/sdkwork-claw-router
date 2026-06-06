@@ -11,5 +11,5 @@ pub struct RankingVendorOption {
 
     /// Model count field on ranking vendor option.
     #[serde(rename = "modelCount")]
-    pub model_count: i64,
+    pub model_count: String,
 }

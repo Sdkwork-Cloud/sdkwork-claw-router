@@ -9,9 +9,9 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? BillingCycle { get; set; }
         public string? Code { get; set; }
         public string? Description { get; set; }
-        public int? DurationDays { get; set; }
+        public string? DurationDays { get; set; }
         public string? Name { get; set; }
-        public int? SortWeight { get; set; }
+        public string? SortWeight { get; set; }
         public string? Status { get; set; }
     }
 }

@@ -5,5 +5,5 @@ data class AppCatalogResponse(
     val items: List<AppCatalogItem>? = null,
     val page: Int? = null,
     val pageSize: Int? = null,
-    val total: Int? = null
+    val total: String? = null
 )

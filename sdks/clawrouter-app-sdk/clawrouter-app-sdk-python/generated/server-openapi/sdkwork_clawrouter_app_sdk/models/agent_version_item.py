@@ -16,5 +16,5 @@ class AgentVersionItem:
     system_prompt: str
     tool_policy: Dict[str, str]
     updated_at: str
-    version_no: int
+    version_no: str
     model: Optional[str] = None

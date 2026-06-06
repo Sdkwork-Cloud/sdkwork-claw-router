@@ -18,7 +18,7 @@ pub struct AdminAiModelItem {
 
     /// Context tokens field on admin ai model item.
     #[serde(rename = "contextTokens")]
-    pub context_tokens: i64,
+    pub context_tokens: String,
 
     /// Description field on admin ai model item.
     pub description: String,
@@ -39,7 +39,7 @@ pub struct AdminAiModelItem {
 
     /// Max output tokens field on admin ai model item.
     #[serde(rename = "maxOutputTokens")]
-    pub max_output_tokens: i64,
+    pub max_output_tokens: String,
 
     /// Modalities field on admin ai model item.
     pub modalities: Vec<String>,
@@ -60,7 +60,7 @@ pub struct AdminAiModelItem {
 
     /// Release stage field on admin ai model item.
     #[serde(rename = "releaseStage")]
-    pub release_stage: i64,
+    pub release_stage: String,
 
     /// Replacement model field on admin ai model item.
     #[serde(rename = "replacementModel")]
@@ -68,11 +68,11 @@ pub struct AdminAiModelItem {
 
     /// Routing state field on admin ai model item.
     #[serde(rename = "routingState")]
-    pub routing_state: i64,
+    pub routing_state: String,
 
     /// Shelf state field on admin ai model item.
     #[serde(rename = "shelfState")]
-    pub shelf_state: i64,
+    pub shelf_state: String,
 
     /// Status field on admin ai model item.
     pub status: String,

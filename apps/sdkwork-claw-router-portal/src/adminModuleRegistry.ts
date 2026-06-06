@@ -5,6 +5,7 @@ import {
   BarChart3,
   Bot,
   Boxes,
+  Building2,
   CircleDollarSign,
   ClipboardList,
   CreditCard,
@@ -101,7 +102,7 @@ export const ADMIN_MODULES: AdminModuleDef[] = [
     nameKey: 'admin.header.home',
     icon: Home,
     defaultPath: '/admin/dashboard',
-    pathPrefixes: ['/admin/dashboard', '/admin/user', '/admin/group', '/admin/model', '/admin/agents', '/admin/skill', '/admin/prompts', '/admin/mcp', '/admin/channel', '/admin/record', '/admin/analytics', '/admin/announcement'],
+    pathPrefixes: ['/admin/dashboard', '/admin/user', '/admin/organization', '/admin/group', '/admin/model', '/admin/agents', '/admin/skill', '/admin/prompts', '/admin/mcp', '/admin/channel', '/admin/record', '/admin/analytics', '/admin/announcement'],
   }),
   moduleBlock({
     id: 'appCenter',
@@ -198,6 +199,7 @@ export const ADMIN_MODULE_MENUS: AdminModuleMenu[] = [
     groups: [
       groupBlock('admin.menu.home.userManagement', [
         itemBlock({ path: '/admin/user', labelKey: 'admin.menu.users', icon: Users }),
+        itemBlock({ path: '/admin/organization', labelKey: 'admin.menu.organization', icon: Building2, iconColor: 'text-blue-500' }),
       ]),
       groupBlock('admin.menu.home.modelManagement', [
         itemBlock({ path: '/admin/model', labelKey: 'admin.menu.models', icon: Database }),

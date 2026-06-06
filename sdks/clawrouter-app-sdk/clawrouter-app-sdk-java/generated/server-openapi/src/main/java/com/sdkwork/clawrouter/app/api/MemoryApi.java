@@ -20,7 +20,7 @@ public class MemoryApi {
     }
 
     /** List memory spaces */
-    public SpacesListResult spacesList(Integer page, Integer pageSize) throws Exception {
+    public SpacesListResult spacesList(String page, String pageSize) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null)
@@ -46,7 +46,7 @@ public class MemoryApi {
     }
 
     /** List memory entries */
-    public EntriesListResult entriesList(String spaceId, Integer page, Integer pageSize) throws Exception {
+    public EntriesListResult entriesList(String spaceId, String page, String pageSize) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null)

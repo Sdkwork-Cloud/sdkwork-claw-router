@@ -3,7 +3,7 @@ package com.sdkwork.clawrouter.backend
 data class AdminSkillArtifactItem(
     val artifact: MediaResource? = null,
     val artifactRef: String? = null,
-    val artifactSizeBytes: Int? = null,
+    val artifactSizeBytes: String? = null,
     val artifactType: Int? = null,
     val checksumHash: String? = null,
     val createdAt: String? = null,

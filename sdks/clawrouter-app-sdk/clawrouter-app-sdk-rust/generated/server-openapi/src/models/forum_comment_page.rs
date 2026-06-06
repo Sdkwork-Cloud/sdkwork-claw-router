@@ -12,12 +12,12 @@ pub struct ForumCommentPage {
     pub items: Vec<ForumCommentItem>,
 
     /// Page field on forum comment page.
-    pub page: i64,
+    pub page: String,
 
     /// Size field on forum comment page.
-    pub size: i64,
+    pub size: String,
 
     /// Total elements field on forum comment page.
     #[serde(rename = "totalElements")]
-    pub total_elements: i64,
+    pub total_elements: String,
 }

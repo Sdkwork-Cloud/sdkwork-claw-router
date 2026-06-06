@@ -2,13 +2,13 @@ package com.sdkwork.clawrouter.app.model;
 
 
 public class RoutingCircuitBreakerPolicy {
-    private Integer failureThreshold;
+    private String failureThreshold;
 
-    public Integer getFailureThreshold() {
+    public String getFailureThreshold() {
         return this.failureThreshold;
     }
 
-    public void setFailureThreshold(Integer failureThreshold) {
+    public void setFailureThreshold(String failureThreshold) {
         this.failureThreshold = failureThreshold;
     }
 }

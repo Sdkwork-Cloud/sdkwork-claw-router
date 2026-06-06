@@ -8,7 +8,7 @@ public class OpenPlatformApi {
     }
 
     /// List open platform accounts
-    public func accountsList(provider: String? = nil, type: String? = nil, status: String? = nil, page: Int? = nil, pageSize: Int? = nil) async throws -> AccountsListResult? {
+    public func accountsList(provider: String? = nil, type: String? = nil, status: String? = nil, page: String? = nil, pageSize: String? = nil) async throws -> AccountsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "provider", value: provider, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "type", value: type, style: "form", explode: true, allowReserved: false, contentType: nil),

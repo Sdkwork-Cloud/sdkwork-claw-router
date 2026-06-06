@@ -18,7 +18,7 @@ func NewContentApi(client *sdkhttp.Client) *ContentApi {
 }
 
 // List forum comments
-func (a *ContentApi) CommentsList(contentType string, contentId int, page *int, pageSize *int) (sdktypes.CommentsListResult, error) {
+func (a *ContentApi) CommentsList(contentType string, contentId string, page *string, pageSize *string) (sdktypes.CommentsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "content_type", Value: contentType, Style: "form", Explode: true, AllowReserved: false},
         {Name: "content_id", Value: contentId, Style: "form", Explode: true, AllowReserved: false},
@@ -44,7 +44,7 @@ func (a *ContentApi) CommentsCreate(body sdktypes.ForumCreateCommentRequest) (sd
 }
 
 // List forum comment statistics
-func (a *ContentApi) CommentsStatisticsList(contentType string, contentId int) (sdktypes.CommentsStatisticsListResult, error) {
+func (a *ContentApi) CommentsStatisticsList(contentType string, contentId string) (sdktypes.CommentsStatisticsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "content_type", Value: contentType, Style: "form", Explode: true, AllowReserved: false},
         {Name: "content_id", Value: contentId, Style: "form", Explode: true, AllowReserved: false},
@@ -118,7 +118,7 @@ func (a *ContentApi) CommentsPinsCurrentDelete(commentId string) (sdktypes.Comme
 }
 
 // List forum comment replies
-func (a *ContentApi) CommentsRepliesList(commentId string, page *int, pageSize *int) (sdktypes.CommentsRepliesListResult, error) {
+func (a *ContentApi) CommentsRepliesList(commentId string, page *string, pageSize *string) (sdktypes.CommentsRepliesListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
@@ -142,7 +142,7 @@ func (a *ContentApi) CommentsReplyCreate(commentId string, body sdktypes.ForumRe
 }
 
 // List forum feeds
-func (a *ContentApi) FeedsList(type_ *string, contentType *string, q *string, authorId *int, page *int, pageSize *int) (sdktypes.FeedsListResult, error) {
+func (a *ContentApi) FeedsList(type_ *string, contentType *string, q *string, authorId *string, page *string, pageSize *string) (sdktypes.FeedsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "type", Value: func() interface{} { if type_ == nil { return nil }; return *type_ }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "content_type", Value: func() interface{} { if contentType == nil { return nil }; return *contentType }(), Style: "form", Explode: true, AllowReserved: false},
@@ -170,7 +170,7 @@ func (a *ContentApi) FeedsCreate(body sdktypes.ForumCreateFeedRequest) (sdktypes
 }
 
 // List category forum feeds
-func (a *ContentApi) FeedsCategoryRetrieve(categoryId string, page *int, pageSize *int) (sdktypes.FeedsCategoryRetrieveResult, error) {
+func (a *ContentApi) FeedsCategoryRetrieve(categoryId string, page *string, pageSize *string) (sdktypes.FeedsCategoryRetrieveResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
@@ -184,7 +184,7 @@ func (a *ContentApi) FeedsCategoryRetrieve(categoryId string, page *int, pageSiz
 }
 
 // List hot forum feeds
-func (a *ContentApi) FeedsHotList(limit *int) (sdktypes.FeedsHotListResult, error) {
+func (a *ContentApi) FeedsHotList(limit *string) (sdktypes.FeedsHotListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "limit", Value: func() interface{} { if limit == nil { return nil }; return *limit }(), Style: "form", Explode: true, AllowReserved: false},
     })
@@ -197,7 +197,7 @@ func (a *ContentApi) FeedsHotList(limit *int) (sdktypes.FeedsHotListResult, erro
 }
 
 // List most liked forum feeds
-func (a *ContentApi) FeedsMostLikedList(limit *int) (sdktypes.FeedsMostLikedListResult, error) {
+func (a *ContentApi) FeedsMostLikedList(limit *string) (sdktypes.FeedsMostLikedListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "limit", Value: func() interface{} { if limit == nil { return nil }; return *limit }(), Style: "form", Explode: true, AllowReserved: false},
     })
@@ -210,7 +210,7 @@ func (a *ContentApi) FeedsMostLikedList(limit *int) (sdktypes.FeedsMostLikedList
 }
 
 // List most viewed forum feeds
-func (a *ContentApi) FeedsMostViewedList(limit *int) (sdktypes.FeedsMostViewedListResult, error) {
+func (a *ContentApi) FeedsMostViewedList(limit *string) (sdktypes.FeedsMostViewedListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "limit", Value: func() interface{} { if limit == nil { return nil }; return *limit }(), Style: "form", Explode: true, AllowReserved: false},
     })
@@ -233,7 +233,7 @@ func (a *ContentApi) FeedsOverviewRetrieve() (sdktypes.FeedsOverviewRetrieveResu
 }
 
 // List recommended forum feeds
-func (a *ContentApi) FeedsRecommendList(limit *int) (sdktypes.FeedsRecommendListResult, error) {
+func (a *ContentApi) FeedsRecommendList(limit *string) (sdktypes.FeedsRecommendListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "limit", Value: func() interface{} { if limit == nil { return nil }; return *limit }(), Style: "form", Explode: true, AllowReserved: false},
     })
@@ -246,7 +246,7 @@ func (a *ContentApi) FeedsRecommendList(limit *int) (sdktypes.FeedsRecommendList
 }
 
 // List top forum feeds
-func (a *ContentApi) FeedsTopList(limit *int) (sdktypes.FeedsTopListResult, error) {
+func (a *ContentApi) FeedsTopList(limit *string) (sdktypes.FeedsTopListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "limit", Value: func() interface{} { if limit == nil { return nil }; return *limit }(), Style: "form", Explode: true, AllowReserved: false},
     })
@@ -279,7 +279,7 @@ func (a *ContentApi) FeedsRetrieve(id string) (sdktypes.FeedsRetrieveResult, err
 }
 
 // Collect forum feed
-func (a *ContentApi) FeedsCollectionsCreate(id string, folderId *int) (sdktypes.FeedsCollectionsCreateResult, error) {
+func (a *ContentApi) FeedsCollectionsCreate(id string, folderId *string) (sdktypes.FeedsCollectionsCreateResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "folder_id", Value: func() interface{} { if folderId == nil { return nil }; return *folderId }(), Style: "form", Explode: true, AllowReserved: false},
     })
@@ -342,7 +342,7 @@ func (a *ContentApi) FeedsSharesCreate(id string) (sdktypes.FeedsSharesCreateRes
 }
 
 // List my forum comments
-func (a *ContentApi) UsersCurrentCommentsList(page *int, pageSize *int) (sdktypes.UsersCurrentCommentsListResult, error) {
+func (a *ContentApi) UsersCurrentCommentsList(page *string, pageSize *string) (sdktypes.UsersCurrentCommentsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
@@ -356,7 +356,7 @@ func (a *ContentApi) UsersCurrentCommentsList(page *int, pageSize *int) (sdktype
 }
 
 // List courses
-func (a *ContentApi) CoursesList(level *int, category *string, q *string, page *int, pageSize *int) (sdktypes.CoursesListResult, error) {
+func (a *ContentApi) CoursesList(level *string, category *string, q *string, page *string, pageSize *string) (sdktypes.CoursesListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "level", Value: func() interface{} { if level == nil { return nil }; return *level }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "category", Value: func() interface{} { if category == nil { return nil }; return *category }(), Style: "form", Explode: true, AllowReserved: false},

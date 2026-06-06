@@ -6,6 +6,6 @@ type AdminCourseRelationItem struct {
 	Id string `json:"id"`
 	RelatedCourseId string `json:"relatedCourseId"`
 	RelationType string `json:"relationType"`
-	SortOrder int `json:"sortOrder"`
+	SortOrder string `json:"sortOrder"`
 	Status string `json:"status"`
 }

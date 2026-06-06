@@ -6,8 +6,8 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class RoutingRetryPolicy
     {
-        public int? BackoffMs { get; set; }
-        public int? MaxAttempts { get; set; }
-        public List<int>? RetryableStatusCodes { get; set; }
+        public string? BackoffMs { get; set; }
+        public string? MaxAttempts { get; set; }
+        public List<string>? RetryableStatusCodes { get; set; }
     }
 }

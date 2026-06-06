@@ -20,7 +20,7 @@ pub struct AdminMcpBindingUpdateRequest {
     /// Owner id field on admin mcp binding update request.
     #[serde(rename = "ownerId")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub owner_id: Option<i64>,
+    pub owner_id: Option<String>,
 
     /// Owner type field on admin mcp binding update request.
     #[serde(rename = "ownerType")]
@@ -39,7 +39,7 @@ pub struct AdminMcpBindingUpdateRequest {
     /// Server revision id field on admin mcp binding update request.
     #[serde(rename = "serverRevisionId")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub server_revision_id: Option<i64>,
+    pub server_revision_id: Option<String>,
 
     /// Status field on admin mcp binding update request.
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -48,5 +48,5 @@ pub struct AdminMcpBindingUpdateRequest {
     /// Tool id field on admin mcp binding update request.
     #[serde(rename = "toolId")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub tool_id: Option<i64>,
+    pub tool_id: Option<String>,
 }

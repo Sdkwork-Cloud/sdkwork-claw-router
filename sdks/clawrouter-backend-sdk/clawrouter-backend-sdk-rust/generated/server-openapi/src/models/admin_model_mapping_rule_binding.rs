@@ -35,7 +35,7 @@ pub struct AdminModelMappingRuleBinding {
 
     /// Sort order field on admin model mapping rule binding.
     #[serde(rename = "sortOrder")]
-    pub sort_order: i64,
+    pub sort_order: String,
 
     /// Updated at field on admin model mapping rule binding.
     #[serde(rename = "updatedAt")]

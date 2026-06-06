@@ -4,7 +4,7 @@ package com.sdkwork.clawrouter.backend.model;
 public class CommerceMembershipPackageMutationRequest {
     private String code;
     private String currencyCode;
-    private Integer durationDays;
+    private String durationDays;
     private String name;
     private String packageGroupId;
     private String planId;
@@ -27,11 +27,11 @@ public class CommerceMembershipPackageMutationRequest {
         this.currencyCode = currencyCode;
     }
 
-    public Integer getDurationDays() {
+    public String getDurationDays() {
         return this.durationDays;
     }
 
-    public void setDurationDays(Integer durationDays) {
+    public void setDurationDays(String durationDays) {
         this.durationDays = durationDays;
     }
 

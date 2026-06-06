@@ -18,7 +18,7 @@ func NewServiceProvidersApi(client *sdkhttp.Client) *ServiceProvidersApi {
 }
 
 // Service Provider Adjustments List
-func (a *ServiceProvidersApi) AdjustmentsList(page *int, pageSize *int, status *string, providerId *string, sellerProviderId *string, buyerProviderId *string, edgeId *string) (sdktypes.AdjustmentsListResult, error) {
+func (a *ServiceProvidersApi) AdjustmentsList(page *string, pageSize *string, status *string, providerId *string, sellerProviderId *string, buyerProviderId *string, edgeId *string) (sdktypes.AdjustmentsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
@@ -37,7 +37,7 @@ func (a *ServiceProvidersApi) AdjustmentsList(page *int, pageSize *int, status *
 }
 
 // Service Provider Audit Events List
-func (a *ServiceProvidersApi) AuditEventsList(page *int, pageSize *int, status *string, providerId *string, sellerProviderId *string, buyerProviderId *string, edgeId *string) (sdktypes.AuditEventsListResult, error) {
+func (a *ServiceProvidersApi) AuditEventsList(page *string, pageSize *string, status *string, providerId *string, sellerProviderId *string, buyerProviderId *string, edgeId *string) (sdktypes.AuditEventsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
@@ -56,7 +56,7 @@ func (a *ServiceProvidersApi) AuditEventsList(page *int, pageSize *int, status *
 }
 
 // Service Provider Bindings List
-func (a *ServiceProvidersApi) BindingsList(page *int, pageSize *int, status *string, providerId *string, sellerProviderId *string, buyerProviderId *string, edgeId *string) (sdktypes.BindingsListResult, error) {
+func (a *ServiceProvidersApi) BindingsList(page *string, pageSize *string, status *string, providerId *string, sellerProviderId *string, buyerProviderId *string, edgeId *string) (sdktypes.BindingsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
@@ -75,7 +75,7 @@ func (a *ServiceProvidersApi) BindingsList(page *int, pageSize *int, status *str
 }
 
 // Service Provider Contracts List
-func (a *ServiceProvidersApi) ContractsList(page *int, pageSize *int, status *string, providerId *string, sellerProviderId *string, buyerProviderId *string, edgeId *string) (sdktypes.ContractsListResult, error) {
+func (a *ServiceProvidersApi) ContractsList(page *string, pageSize *string, status *string, providerId *string, sellerProviderId *string, buyerProviderId *string, edgeId *string) (sdktypes.ContractsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
@@ -94,7 +94,7 @@ func (a *ServiceProvidersApi) ContractsList(page *int, pageSize *int, status *st
 }
 
 // Service Provider Dashboard Retrieve
-func (a *ServiceProvidersApi) DashboardRetrieve(page *int, pageSize *int, status *string, providerId *string, sellerProviderId *string, buyerProviderId *string, edgeId *string) (sdktypes.DashboardRetrieveResult, error) {
+func (a *ServiceProvidersApi) DashboardRetrieve(page *string, pageSize *string, status *string, providerId *string, sellerProviderId *string, buyerProviderId *string, edgeId *string) (sdktypes.DashboardRetrieveResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
@@ -113,7 +113,7 @@ func (a *ServiceProvidersApi) DashboardRetrieve(page *int, pageSize *int, status
 }
 
 // Service Provider Downstreams List
-func (a *ServiceProvidersApi) DownstreamsList(page *int, pageSize *int, status *string, providerId *string, sellerProviderId *string, buyerProviderId *string, edgeId *string) (sdktypes.DownstreamsListResult, error) {
+func (a *ServiceProvidersApi) DownstreamsList(page *string, pageSize *string, status *string, providerId *string, sellerProviderId *string, buyerProviderId *string, edgeId *string) (sdktypes.DownstreamsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
@@ -146,7 +146,7 @@ func (a *ServiceProvidersApi) DownstreamsCreate(body sdktypes.ServiceProviderDow
 }
 
 // Service Provider Members List
-func (a *ServiceProvidersApi) MembersList(page *int, pageSize *int, status *string, providerId *string, sellerProviderId *string, buyerProviderId *string, edgeId *string) (sdktypes.MembersListResult, error) {
+func (a *ServiceProvidersApi) MembersList(page *string, pageSize *string, status *string, providerId *string, sellerProviderId *string, buyerProviderId *string, edgeId *string) (sdktypes.MembersListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
@@ -165,7 +165,7 @@ func (a *ServiceProvidersApi) MembersList(page *int, pageSize *int, status *stri
 }
 
 // Service Provider Pricing Rules List
-func (a *ServiceProvidersApi) PricingRulesList(page *int, pageSize *int, status *string, providerId *string, sellerProviderId *string, buyerProviderId *string, edgeId *string) (sdktypes.PricingRulesListResult, error) {
+func (a *ServiceProvidersApi) PricingRulesList(page *string, pageSize *string, status *string, providerId *string, sellerProviderId *string, buyerProviderId *string, edgeId *string) (sdktypes.PricingRulesListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
@@ -226,7 +226,7 @@ func (a *ServiceProvidersApi) PriceSimulationCreate(body sdktypes.ServiceProvide
 }
 
 // Service Providers List
-func (a *ServiceProvidersApi) ProviderRegistryList(page *int, pageSize *int, status *string, providerId *string, sellerProviderId *string, buyerProviderId *string, edgeId *string) (sdktypes.ProviderRegistryListResult, error) {
+func (a *ServiceProvidersApi) ProviderRegistryList(page *string, pageSize *string, status *string, providerId *string, sellerProviderId *string, buyerProviderId *string, edgeId *string) (sdktypes.ProviderRegistryListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
@@ -245,7 +245,7 @@ func (a *ServiceProvidersApi) ProviderRegistryList(page *int, pageSize *int, sta
 }
 
 // Service Provider Reconciliation Runs List
-func (a *ServiceProvidersApi) ReconciliationRunsList(page *int, pageSize *int, status *string, providerId *string, sellerProviderId *string, buyerProviderId *string, edgeId *string) (sdktypes.ReconciliationRunsListResult, error) {
+func (a *ServiceProvidersApi) ReconciliationRunsList(page *string, pageSize *string, status *string, providerId *string, sellerProviderId *string, buyerProviderId *string, edgeId *string) (sdktypes.ReconciliationRunsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
@@ -264,7 +264,7 @@ func (a *ServiceProvidersApi) ReconciliationRunsList(page *int, pageSize *int, s
 }
 
 // Service Provider Relations List
-func (a *ServiceProvidersApi) RelationsList(page *int, pageSize *int, status *string, providerId *string, sellerProviderId *string, buyerProviderId *string, edgeId *string) (sdktypes.RelationsListResult, error) {
+func (a *ServiceProvidersApi) RelationsList(page *string, pageSize *string, status *string, providerId *string, sellerProviderId *string, buyerProviderId *string, edgeId *string) (sdktypes.RelationsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
@@ -283,7 +283,7 @@ func (a *ServiceProvidersApi) RelationsList(page *int, pageSize *int, status *st
 }
 
 // Service Provider Risk Events List
-func (a *ServiceProvidersApi) RiskEventsList(page *int, pageSize *int, status *string, providerId *string, sellerProviderId *string, buyerProviderId *string, edgeId *string) (sdktypes.RiskEventsListResult, error) {
+func (a *ServiceProvidersApi) RiskEventsList(page *string, pageSize *string, status *string, providerId *string, sellerProviderId *string, buyerProviderId *string, edgeId *string) (sdktypes.RiskEventsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
@@ -302,7 +302,7 @@ func (a *ServiceProvidersApi) RiskEventsList(page *int, pageSize *int, status *s
 }
 
 // Service Provider Statements List
-func (a *ServiceProvidersApi) StatementsList(page *int, pageSize *int, status *string, providerId *string, sellerProviderId *string, buyerProviderId *string, edgeId *string) (sdktypes.StatementsListResult, error) {
+func (a *ServiceProvidersApi) StatementsList(page *string, pageSize *string, status *string, providerId *string, sellerProviderId *string, buyerProviderId *string, edgeId *string) (sdktypes.StatementsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
@@ -321,7 +321,7 @@ func (a *ServiceProvidersApi) StatementsList(page *int, pageSize *int, status *s
 }
 
 // Service Provider Usage List
-func (a *ServiceProvidersApi) UsageList(page *int, pageSize *int, status *string, providerId *string, sellerProviderId *string, buyerProviderId *string, edgeId *string) (sdktypes.UsageListResult, error) {
+func (a *ServiceProvidersApi) UsageList(page *string, pageSize *string, status *string, providerId *string, sellerProviderId *string, buyerProviderId *string, edgeId *string) (sdktypes.UsageListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
@@ -340,7 +340,7 @@ func (a *ServiceProvidersApi) UsageList(page *int, pageSize *int, status *string
 }
 
 // Service Provider Wallet Accounts List
-func (a *ServiceProvidersApi) ProviderWalletAccountsList(page *int, pageSize *int, status *string, providerId *string, sellerProviderId *string, buyerProviderId *string, edgeId *string) (sdktypes.ProviderWalletAccountsListResult, error) {
+func (a *ServiceProvidersApi) ProviderWalletAccountsList(page *string, pageSize *string, status *string, providerId *string, sellerProviderId *string, buyerProviderId *string, edgeId *string) (sdktypes.ProviderWalletAccountsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},

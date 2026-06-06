@@ -48,5 +48,5 @@ pub struct AgentVersionItem {
 
     /// Version no field on agent version item.
     #[serde(rename = "versionNo")]
-    pub version_no: i64,
+    pub version_no: String,
 }

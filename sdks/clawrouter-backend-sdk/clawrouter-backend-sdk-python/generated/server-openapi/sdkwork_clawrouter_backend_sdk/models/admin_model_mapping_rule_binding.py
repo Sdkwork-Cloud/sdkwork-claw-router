@@ -9,7 +9,7 @@ class AdminModelMappingRuleBinding:
     binding_type: str
     enabled: bool
     id: str
-    sort_order: int
+    sort_order: str
     binding_code: Optional[str] = None
     binding_id: Optional[str] = None
     binding_name: Optional[str] = None

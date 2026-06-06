@@ -7,8 +7,8 @@ namespace Sdkwork.ClawRouter.App.Models
     public class UsageLogsResponse
     {
         public List<UsageLogItem>? Logs { get; set; }
-        public int? Page { get; set; }
-        public int? PageSize { get; set; }
-        public int? Total { get; set; }
+        public string? Page { get; set; }
+        public string? PageSize { get; set; }
+        public string? Total { get; set; }
     }
 }

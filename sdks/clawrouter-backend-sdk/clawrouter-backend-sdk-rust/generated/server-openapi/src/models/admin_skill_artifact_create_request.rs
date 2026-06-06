@@ -17,7 +17,7 @@ pub struct AdminSkillArtifactCreateRequest {
     /// Artifact size bytes field on admin skill artifact create request.
     #[serde(rename = "artifactSizeBytes")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub artifact_size_bytes: Option<i64>,
+    pub artifact_size_bytes: Option<String>,
 
     /// Artifact type field on admin skill artifact create request.
     #[serde(rename = "artifactType")]

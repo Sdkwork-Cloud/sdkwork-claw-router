@@ -8,18 +8,6 @@ import com.sdkwork.clawrouter.app.http.HttpClient
 
 class SystemApi(private val client: HttpClient) {
 
-    /** Promotion Code Redemption Create */
-    suspend fun promotionsCodesRedemptionsCreate(body: PromotionCodeRedemptionRequest, idempotencyKey: String): PromotionsCodesRedemptionsCreateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.appPath("/promotions/codes/redemptions"), body, null, requestHeaders, "application/json")
-        return client.convertValue(raw, object : TypeReference<PromotionsCodesRedemptionsCreateResult>() {})
-    }
-
     /** Promotion Discount Application Create */
     suspend fun promotionsDiscountApplicationsCreate(body: PromotionCommandRequest, idempotencyKey: String): PromotionsDiscountApplicationsCreateResult? {
         val requestHeaders = buildRequestHeaders(
@@ -66,43 +54,6 @@ class SystemApi(private val client: HttpClient) {
         )
         val raw = client.post(ApiPaths.appPath("/promotions/discount_applications/${serializePathParameter(applicationId, PathParameterSpec("applicationId", "simple", false))}/settlements"), body, null, requestHeaders, "application/json")
         return client.convertValue(raw, object : TypeReference<PromotionsDiscountApplicationsSettleResult>() {})
-    }
-
-    /** Promotion User Coupon Claim Create */
-    suspend fun promotionsUserCouponsClaimsCreate(body: PromotionCommandRequest, idempotencyKey: String): PromotionsUserCouponsClaimsCreateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.appPath("/promotions/user_coupon_claims"), body, null, requestHeaders, "application/json")
-        return client.convertValue(raw, object : TypeReference<PromotionsUserCouponsClaimsCreateResult>() {})
-    }
-
-    /** Promotion User Coupons Wallet List */
-    suspend fun promotionsUserCouponsWalletList(status: String? = null): PromotionsUserCouponsWalletListResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("status", status, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/promotions/user_coupons"), query))
-        return client.convertValue(raw, object : TypeReference<PromotionsUserCouponsWalletListResult>() {})
-    }
-
-    /** Retrieve public IAM runtime settings */
-    suspend fun iamRuntimeRetrieve(tenantCode: String? = null, organizationCode: String? = null): IamRuntimeRetrieveResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("tenant_code", tenantCode, "form", true, false, null),
-            QueryParameterSpec("organization_code", organizationCode, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/system/iam/runtime"), query))
-        return client.convertValue(raw, object : TypeReference<IamRuntimeRetrieveResult>() {})
-    }
-
-    /** Retrieve public IAM verification policy */
-    suspend fun iamVerificationPolicyRetrieve(): IamVerificationPolicyRetrieveResult? {
-        val raw = client.get(ApiPaths.appPath("/system/iam/verification_policy"))
-        return client.convertValue(raw, object : TypeReference<IamVerificationPolicyRetrieveResult>() {})
     }
 
     /** Retrieve public site runtime branding settings */

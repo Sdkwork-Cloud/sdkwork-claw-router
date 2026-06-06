@@ -4,7 +4,7 @@ package com.sdkwork.clawrouter.backend.model;
 public class AdminSiteConnectionCheckResponse {
     private String checkedAt;
     private String healthStatus;
-    private Integer latencyMs;
+    private String latencyMs;
     private String message;
     private String siteId;
     private String status;
@@ -25,11 +25,11 @@ public class AdminSiteConnectionCheckResponse {
         this.healthStatus = healthStatus;
     }
 
-    public Integer getLatencyMs() {
+    public String getLatencyMs() {
         return this.latencyMs;
     }
 
-    public void setLatencyMs(Integer latencyMs) {
+    public void setLatencyMs(String latencyMs) {
         this.latencyMs = latencyMs;
     }
 

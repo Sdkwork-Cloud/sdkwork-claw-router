@@ -1,5 +1,7 @@
 {
   "workspace": "clawrouter-backend-sdk",
+  "sdkOwner": "sdkwork-claw-router",
+  "apiAuthority": "sdkwork-claw-router.backend",
   "title": "SDKWork Claw Router backend API SDK",
   "apiVersion": "0.1.0",
   "authoritySpec": "openapi/clawrouter-backend-sdk.openapi.json",
@@ -13,6 +15,27 @@
     ],
     "manualTransports": []
   },
+  "sdkDependencies": [
+    {
+      "workspace": "sdkwork-appbase-backend-sdk",
+      "role": "appbase-backend-management-capability",
+      "required": true,
+      "dependencyMode": "consumer-sdk",
+      "apiPrefix": "/backend/v3/api",
+      "generatedTransportImportPolicy": "forbidden",
+      "packageByLanguage": {
+        "typescript": "@sdkwork/appbase-backend-sdk",
+        "flutter": "sdkwork_appbase_backend_sdk",
+        "rust": "sdkwork-appbase-backend-sdk",
+        "java": "com.sdkwork:sdkwork-appbase-backend-sdk",
+        "csharp": "SDKWork.Appbase.BackendSdk",
+        "swift": "sdkwork-appbase-backend-sdk",
+        "kotlin": "com.sdkwork:sdkwork-appbase-backend-sdk",
+        "go": "github.com/sdkwork/sdkwork-appbase-backend-sdk",
+        "python": "sdkwork-appbase-backend-sdk"
+      }
+    }
+  ],
   "languages": [
     {
       "language": "typescript",

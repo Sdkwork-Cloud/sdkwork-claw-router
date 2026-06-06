@@ -11,7 +11,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public bool? DryRun { get; set; }
         public string? FinishedAt { get; set; }
         public string? Id { get; set; }
-        public int? IssueCount { get; set; }
+        public string? IssueCount { get; set; }
         public string? Issues { get; set; }
         public string? ProviderCode { get; set; }
         public string? ProviderId { get; set; }

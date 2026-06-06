@@ -5,5 +5,5 @@ data class AdminAnalyticsTrendPoint(
     val requests: Double? = null,
     val time: String? = null,
     val tokens: Double? = null,
-    val users: Int? = null
+    val users: String? = null
 )

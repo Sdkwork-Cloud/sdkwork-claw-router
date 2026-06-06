@@ -8,9 +8,9 @@ namespace Sdkwork.ClawRouter.App.Models
     {
         public string? Category { get; set; }
         public string? CategoryLabel { get; set; }
-        public int? CommentCount { get; set; }
+        public string? CommentCount { get; set; }
         public string? Content { get; set; }
-        public int? ContentId { get; set; }
+        public string? ContentId { get; set; }
         public string? CourseCode { get; set; }
         public string? Currency { get; set; }
         public string? Description { get; set; }
@@ -20,8 +20,8 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? Id { get; set; }
         public CourseInstructor? Instructor { get; set; }
         public bool? IsCollection { get; set; }
-        public int? LessonsCount { get; set; }
-        public int? Level { get; set; }
+        public string? LessonsCount { get; set; }
+        public string? Level { get; set; }
         public string? LevelLabel { get; set; }
         public string? PriceAmount { get; set; }
         public string? PublishedAt { get; set; }
@@ -29,7 +29,7 @@ namespace Sdkwork.ClawRouter.App.Models
         public List<CourseItem>? RelatedCourses { get; set; }
         public List<CourseSectionItem>? Sections { get; set; }
         public CourseOverviewSource? Source { get; set; }
-        public int? StudentsCount { get; set; }
+        public string? StudentsCount { get; set; }
         public List<string>? Tags { get; set; }
         public MediaResource? Thumbnail { get; set; }
         public string? Title { get; set; }

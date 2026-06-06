@@ -4,5 +4,5 @@ package types
 type AdminAiResourceGroupMemberInput struct {
 	ItemRole string `json:"itemRole"`
 	ResourceCode string `json:"resourceCode"`
-	SortOrder int `json:"sortOrder"`
+	SortOrder string `json:"sortOrder"`
 }

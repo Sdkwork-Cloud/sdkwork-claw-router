@@ -38,7 +38,7 @@ public class ContentApi {
     }
 
     /** Admin Course Applications List */
-    public CourseApplicationsListResult courseApplicationsList(Integer page, Integer pageSize, String q, String status) throws Exception {
+    public CourseApplicationsListResult courseApplicationsList(String page, String pageSize, String q, String status) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -80,7 +80,7 @@ public class ContentApi {
     }
 
     /** Admin Courses List */
-    public CoursesListResult coursesList(Integer page, Integer pageSize, String q, String status) throws Exception {
+    public CoursesListResult coursesList(String page, String pageSize, String q, String status) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -98,7 +98,7 @@ public class ContentApi {
     }
 
     /** Admin Course Comments List */
-    public CourseCommentsListResult courseCommentsList(Integer page, Integer pageSize, String q, String status) throws Exception {
+    public CourseCommentsListResult courseCommentsList(String page, String pageSize, String q, String status) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -122,7 +122,7 @@ public class ContentApi {
     }
 
     /** Admin Course Engagement List */
-    public CourseEngagementListResult courseEngagementList(Integer page, Integer pageSize, String q, String status) throws Exception {
+    public CourseEngagementListResult courseEngagementList(String page, String pageSize, String q, String status) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -146,7 +146,7 @@ public class ContentApi {
     }
 
     /** Admin Course Lessons List */
-    public CoursesLessonsListResult coursesLessonsList(String courseId, Integer page, Integer pageSize, String q, String status) throws Exception {
+    public CoursesLessonsListResult coursesLessonsList(String courseId, String page, String pageSize, String q, String status) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -164,7 +164,7 @@ public class ContentApi {
     }
 
     /** Admin Course Relations List */
-    public CoursesRelationsListResult coursesRelationsList(String courseId, Integer page, Integer pageSize, String q, String status) throws Exception {
+    public CoursesRelationsListResult coursesRelationsList(String courseId, String page, String pageSize, String q, String status) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -182,7 +182,7 @@ public class ContentApi {
     }
 
     /** Admin Course Sections List */
-    public CoursesSectionsListResult coursesSectionsList(String courseId, Integer page, Integer pageSize, String q, String status) throws Exception {
+    public CoursesSectionsListResult coursesSectionsList(String courseId, String page, String pageSize, String q, String status) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null),

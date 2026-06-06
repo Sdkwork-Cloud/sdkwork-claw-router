@@ -10,5 +10,5 @@ class AdminSiteConnectionCheckResponse:
     health_status: str
     site_id: str
     status: str
-    latency_ms: Optional[int] = None
+    latency_ms: Optional[str] = None
     message: Optional[str] = None

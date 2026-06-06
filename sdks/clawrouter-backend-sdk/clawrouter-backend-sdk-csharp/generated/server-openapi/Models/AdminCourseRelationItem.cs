@@ -10,7 +10,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? Id { get; set; }
         public string? RelatedCourseId { get; set; }
         public string? RelationType { get; set; }
-        public int? SortOrder { get; set; }
+        public string? SortOrder { get; set; }
         public string? Status { get; set; }
     }
 }

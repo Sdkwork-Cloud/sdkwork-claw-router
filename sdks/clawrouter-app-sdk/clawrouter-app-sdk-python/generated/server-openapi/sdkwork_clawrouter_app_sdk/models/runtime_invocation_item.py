@@ -6,10 +6,10 @@ from typing import TYPE_CHECKING, Optional, List, Dict, Any
 @dataclass
 class RuntimeInvocationItem:
     """Runtime invocation item schema exposed by Claw Router."""
-    attempt_no: int
+    attempt_no: str
     created_at: str
     id: str
-    invocation_no: int
+    invocation_no: str
     invocation_type: str
     runtime: str
     status: str
@@ -27,9 +27,9 @@ class RuntimeInvocationItem:
     error_code: Optional[str] = None
     error_message_masked: Optional[str] = None
     error_type: Optional[str] = None
-    exit_code: Optional[int] = None
+    exit_code: Optional[str] = None
     finish_reason: Optional[str] = None
-    latency_ms: Optional[int] = None
+    latency_ms: Optional[str] = None
     model: Optional[str] = None
     permission_mode: Optional[str] = None
     provider: Optional[str] = None
@@ -43,4 +43,4 @@ class RuntimeInvocationItem:
     tool_call_id: Optional[str] = None
     tool_name: Optional[str] = None
     trace_id: Optional[str] = None
-    ttft_ms: Optional[int] = None
+    ttft_ms: Optional[str] = None

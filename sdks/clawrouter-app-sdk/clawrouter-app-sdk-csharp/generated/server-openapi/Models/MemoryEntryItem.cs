@@ -12,7 +12,7 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? Id { get; set; }
         public string? ImportanceScore { get; set; }
         public string? MemoryType { get; set; }
-        public int? RecallCount { get; set; }
+        public string? RecallCount { get; set; }
         public string? SensitivityLevel { get; set; }
         public string? SourceConversationId { get; set; }
         public string? SourceInvocationId { get; set; }

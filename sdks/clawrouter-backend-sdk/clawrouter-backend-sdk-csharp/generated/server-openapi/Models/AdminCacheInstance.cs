@@ -6,19 +6,19 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class AdminCacheInstance
     {
-        public int? CacheDeletes { get; set; }
-        public int? CacheErrors { get; set; }
-        public int? CacheHits { get; set; }
-        public int? CacheInspections { get; set; }
-        public int? CacheMisses { get; set; }
-        public int? CacheRefreshes { get; set; }
-        public int? CacheWrites { get; set; }
+        public string? CacheDeletes { get; set; }
+        public string? CacheErrors { get; set; }
+        public string? CacheHits { get; set; }
+        public string? CacheInspections { get; set; }
+        public string? CacheMisses { get; set; }
+        public string? CacheRefreshes { get; set; }
+        public string? CacheWrites { get; set; }
         public string? ConnectionProfileName { get; set; }
-        public int? DefaultTtlSeconds { get; set; }
-        public int? EntryCount { get; set; }
-        public int? ExpiredEntryCount { get; set; }
+        public string? DefaultTtlSeconds { get; set; }
+        public string? EntryCount { get; set; }
+        public string? ExpiredEntryCount { get; set; }
         public string? KeyPrefix { get; set; }
-        public int? MaxEntries { get; set; }
+        public string? MaxEntries { get; set; }
         public string? Name { get; set; }
         public string? ProviderKind { get; set; }
         public string? Purpose { get; set; }

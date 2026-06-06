@@ -7,19 +7,19 @@ public class AdminPromptVersionItem {
     private String checksumHash;
     private String content;
     private String createdAt;
-    private Integer createdBy;
+    private String createdBy;
     private List<Map<String, String>> examplesJson;
-    private Integer id;
+    private String id;
     private String lifecycleStatus;
     private Map<String, String> modelConstraints;
-    private Integer organizationId;
+    private String organizationId;
     private Map<String, String> outputSchema;
-    private Integer promptId;
+    private String promptId;
     private String publishedAt;
     private String reviewComment;
     private String reviewStatus;
     private Map<String, String> safetyPolicy;
-    private Integer tenantId;
+    private String tenantId;
     private String title;
     private String updatedAt;
     private String uuid;
@@ -50,11 +50,11 @@ public class AdminPromptVersionItem {
         this.createdAt = createdAt;
     }
 
-    public Integer getCreatedBy() {
+    public String getCreatedBy() {
         return this.createdBy;
     }
 
-    public void setCreatedBy(Integer createdBy) {
+    public void setCreatedBy(String createdBy) {
         this.createdBy = createdBy;
     }
 
@@ -66,11 +66,11 @@ public class AdminPromptVersionItem {
         this.examplesJson = examplesJson;
     }
 
-    public Integer getId() {
+    public String getId() {
         return this.id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -90,11 +90,11 @@ public class AdminPromptVersionItem {
         this.modelConstraints = modelConstraints;
     }
 
-    public Integer getOrganizationId() {
+    public String getOrganizationId() {
         return this.organizationId;
     }
 
-    public void setOrganizationId(Integer organizationId) {
+    public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
 
@@ -106,11 +106,11 @@ public class AdminPromptVersionItem {
         this.outputSchema = outputSchema;
     }
 
-    public Integer getPromptId() {
+    public String getPromptId() {
         return this.promptId;
     }
 
-    public void setPromptId(Integer promptId) {
+    public void setPromptId(String promptId) {
         this.promptId = promptId;
     }
 
@@ -146,11 +146,11 @@ public class AdminPromptVersionItem {
         this.safetyPolicy = safetyPolicy;
     }
 
-    public Integer getTenantId() {
+    public String getTenantId() {
         return this.tenantId;
     }
 
-    public void setTenantId(Integer tenantId) {
+    public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
 

@@ -6,4 +6,4 @@ from typing import TYPE_CHECKING, Optional, List, Dict, Any
 @dataclass
 class ForumCommentStatistics:
     """Forum comment statistics schema exposed by Claw Router."""
-    total_comments: int
+    total_comments: str

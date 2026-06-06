@@ -11,15 +11,15 @@ class CourseLessonItem:
     """Course lesson item schema exposed by Claw Router."""
     content: str
     description: str
-    duration_seconds: int
+    duration_seconds: str
     duration_text: str
     external_bvid: str
     free_preview: bool
     id: str
-    lesson_id: int
-    lesson_no: int
-    number: int
-    sort_order: int
+    lesson_id: str
+    lesson_no: str
+    number: str
+    sort_order: str
     source_provider: str
     title: str
     video: MediaResource

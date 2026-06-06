@@ -5,7 +5,7 @@ use serde::{Deserialize, Serialize};
 pub struct AdminAgentCapabilities {
     /// Mcp server count field on admin agent capabilities.
     #[serde(rename = "mcpServerCount")]
-    pub mcp_server_count: i64,
+    pub mcp_server_count: String,
 
     /// Memory enabled field on admin agent capabilities.
     #[serde(rename = "memoryEnabled")]
@@ -13,5 +13,5 @@ pub struct AdminAgentCapabilities {
 
     /// Skill binding count field on admin agent capabilities.
     #[serde(rename = "skillBindingCount")]
-    pub skill_binding_count: i64,
+    pub skill_binding_count: String,
 }

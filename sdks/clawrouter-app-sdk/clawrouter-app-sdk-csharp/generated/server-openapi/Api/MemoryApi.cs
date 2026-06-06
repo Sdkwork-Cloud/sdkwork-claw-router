@@ -26,7 +26,7 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// List memory spaces
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.SpacesListResult?> SpacesListAsync(int? page = null, int? pageSize = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.SpacesListResult?> SpacesListAsync(string? page = null, string? pageSize = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -62,7 +62,7 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// List memory entries
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.EntriesListResult?> EntriesListAsync(string spaceId, int? page = null, int? pageSize = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.EntriesListResult?> EntriesListAsync(string spaceId, string? page = null, string? pageSize = null)
         {
             var queryString = BuildQueryString(new[]
             {

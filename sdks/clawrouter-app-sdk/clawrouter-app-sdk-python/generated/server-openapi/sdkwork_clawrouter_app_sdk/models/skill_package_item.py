@@ -7,7 +7,7 @@ from typing import TYPE_CHECKING, Optional, List, Dict, Any
 class SkillPackageItem:
     """Skill package item schema exposed by Claw Router."""
     artifact_ref: str
-    artifact_size_bytes: int
+    artifact_size_bytes: str
     frameworks: List[str]
     id: str
     license_name: str

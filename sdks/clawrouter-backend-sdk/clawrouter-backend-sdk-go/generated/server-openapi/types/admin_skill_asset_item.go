@@ -8,7 +8,7 @@ type AdminSkillAssetItem struct {
 	AssetType int `json:"assetType"`
 	CreatedAt string `json:"createdAt"`
 	DurationSeconds string `json:"durationSeconds"`
-	FileSize int `json:"fileSize"`
+	FileSize string `json:"fileSize"`
 	Height int `json:"height"`
 	Id string `json:"id"`
 	MimeType string `json:"mimeType"`

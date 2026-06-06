@@ -18,7 +18,7 @@ func NewEcosystemApi(client *sdkhttp.Client) *EcosystemApi {
 }
 
 // List skills
-func (a *EcosystemApi) SkillsList(q *string, marketStatus *string, reviewStatus *string, visibility *string, enabled *bool, categoryId *string, page *int, pageSize *int) (sdktypes.SkillsListResult, error) {
+func (a *EcosystemApi) SkillsList(q *string, marketStatus *string, reviewStatus *string, visibility *string, enabled *bool, categoryId *string, page *string, pageSize *string) (sdktypes.SkillsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "q", Value: func() interface{} { if q == nil { return nil }; return *q }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "market_status", Value: func() interface{} { if marketStatus == nil { return nil }; return *marketStatus }(), Style: "form", Explode: true, AllowReserved: false},
@@ -88,7 +88,7 @@ func (a *EcosystemApi) SkillsCategoriesUpdate(categoryId string, body sdktypes.A
 }
 
 // List skill packages
-func (a *EcosystemApi) SkillsPackageList(q *string, enabled *bool, categoryId *string, page *int, pageSize *int) (sdktypes.SkillsPackageListResult, error) {
+func (a *EcosystemApi) SkillsPackageList(q *string, enabled *bool, categoryId *string, page *string, pageSize *string) (sdktypes.SkillsPackageListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "q", Value: func() interface{} { if q == nil { return nil }; return *q }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "enabled", Value: func() interface{} { if enabled == nil { return nil }; return *enabled }(), Style: "form", Explode: true, AllowReserved: false},

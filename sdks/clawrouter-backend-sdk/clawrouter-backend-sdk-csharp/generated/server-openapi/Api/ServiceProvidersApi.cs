@@ -18,7 +18,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Service Provider Adjustments List
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.AdjustmentsListResult?> AdjustmentsListAsync(int? page = null, int? pageSize = null, string? status = null, string? providerId = null, string? sellerProviderId = null, string? buyerProviderId = null, string? edgeId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AdjustmentsListResult?> AdjustmentsListAsync(string? page = null, string? pageSize = null, string? status = null, string? providerId = null, string? sellerProviderId = null, string? buyerProviderId = null, string? edgeId = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -36,7 +36,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Service Provider Audit Events List
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.AuditEventsListResult?> AuditEventsListAsync(int? page = null, int? pageSize = null, string? status = null, string? providerId = null, string? sellerProviderId = null, string? buyerProviderId = null, string? edgeId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AuditEventsListResult?> AuditEventsListAsync(string? page = null, string? pageSize = null, string? status = null, string? providerId = null, string? sellerProviderId = null, string? buyerProviderId = null, string? edgeId = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -54,7 +54,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Service Provider Bindings List
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.BindingsListResult?> BindingsListAsync(int? page = null, int? pageSize = null, string? status = null, string? providerId = null, string? sellerProviderId = null, string? buyerProviderId = null, string? edgeId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.BindingsListResult?> BindingsListAsync(string? page = null, string? pageSize = null, string? status = null, string? providerId = null, string? sellerProviderId = null, string? buyerProviderId = null, string? edgeId = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -72,7 +72,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Service Provider Contracts List
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.ContractsListResult?> ContractsListAsync(int? page = null, int? pageSize = null, string? status = null, string? providerId = null, string? sellerProviderId = null, string? buyerProviderId = null, string? edgeId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.ContractsListResult?> ContractsListAsync(string? page = null, string? pageSize = null, string? status = null, string? providerId = null, string? sellerProviderId = null, string? buyerProviderId = null, string? edgeId = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -90,7 +90,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Service Provider Dashboard Retrieve
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.DashboardRetrieveResult?> DashboardRetrieveAsync(int? page = null, int? pageSize = null, string? status = null, string? providerId = null, string? sellerProviderId = null, string? buyerProviderId = null, string? edgeId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.DashboardRetrieveResult?> DashboardRetrieveAsync(string? page = null, string? pageSize = null, string? status = null, string? providerId = null, string? sellerProviderId = null, string? buyerProviderId = null, string? edgeId = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -108,7 +108,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Service Provider Downstreams List
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.DownstreamsListResult?> DownstreamsListAsync(int? page = null, int? pageSize = null, string? status = null, string? providerId = null, string? sellerProviderId = null, string? buyerProviderId = null, string? edgeId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.DownstreamsListResult?> DownstreamsListAsync(string? page = null, string? pageSize = null, string? status = null, string? providerId = null, string? sellerProviderId = null, string? buyerProviderId = null, string? edgeId = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -141,7 +141,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Service Provider Members List
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.MembersListResult?> MembersListAsync(int? page = null, int? pageSize = null, string? status = null, string? providerId = null, string? sellerProviderId = null, string? buyerProviderId = null, string? edgeId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.MembersListResult?> MembersListAsync(string? page = null, string? pageSize = null, string? status = null, string? providerId = null, string? sellerProviderId = null, string? buyerProviderId = null, string? edgeId = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -159,7 +159,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Service Provider Pricing Rules List
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.PricingRulesListResult?> PricingRulesListAsync(int? page = null, int? pageSize = null, string? status = null, string? providerId = null, string? sellerProviderId = null, string? buyerProviderId = null, string? edgeId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.PricingRulesListResult?> PricingRulesListAsync(string? page = null, string? pageSize = null, string? status = null, string? providerId = null, string? sellerProviderId = null, string? buyerProviderId = null, string? edgeId = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -222,7 +222,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Service Providers List
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.ProviderRegistryListResult?> ProviderRegistryListAsync(int? page = null, int? pageSize = null, string? status = null, string? providerId = null, string? sellerProviderId = null, string? buyerProviderId = null, string? edgeId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.ProviderRegistryListResult?> ProviderRegistryListAsync(string? page = null, string? pageSize = null, string? status = null, string? providerId = null, string? sellerProviderId = null, string? buyerProviderId = null, string? edgeId = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -240,7 +240,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Service Provider Reconciliation Runs List
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.ReconciliationRunsListResult?> ReconciliationRunsListAsync(int? page = null, int? pageSize = null, string? status = null, string? providerId = null, string? sellerProviderId = null, string? buyerProviderId = null, string? edgeId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.ReconciliationRunsListResult?> ReconciliationRunsListAsync(string? page = null, string? pageSize = null, string? status = null, string? providerId = null, string? sellerProviderId = null, string? buyerProviderId = null, string? edgeId = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -258,7 +258,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Service Provider Relations List
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.RelationsListResult?> RelationsListAsync(int? page = null, int? pageSize = null, string? status = null, string? providerId = null, string? sellerProviderId = null, string? buyerProviderId = null, string? edgeId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.RelationsListResult?> RelationsListAsync(string? page = null, string? pageSize = null, string? status = null, string? providerId = null, string? sellerProviderId = null, string? buyerProviderId = null, string? edgeId = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -276,7 +276,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Service Provider Risk Events List
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.RiskEventsListResult?> RiskEventsListAsync(int? page = null, int? pageSize = null, string? status = null, string? providerId = null, string? sellerProviderId = null, string? buyerProviderId = null, string? edgeId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.RiskEventsListResult?> RiskEventsListAsync(string? page = null, string? pageSize = null, string? status = null, string? providerId = null, string? sellerProviderId = null, string? buyerProviderId = null, string? edgeId = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -294,7 +294,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Service Provider Statements List
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.StatementsListResult?> StatementsListAsync(int? page = null, int? pageSize = null, string? status = null, string? providerId = null, string? sellerProviderId = null, string? buyerProviderId = null, string? edgeId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.StatementsListResult?> StatementsListAsync(string? page = null, string? pageSize = null, string? status = null, string? providerId = null, string? sellerProviderId = null, string? buyerProviderId = null, string? edgeId = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -312,7 +312,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Service Provider Usage List
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.UsageListResult?> UsageListAsync(int? page = null, int? pageSize = null, string? status = null, string? providerId = null, string? sellerProviderId = null, string? buyerProviderId = null, string? edgeId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.UsageListResult?> UsageListAsync(string? page = null, string? pageSize = null, string? status = null, string? providerId = null, string? sellerProviderId = null, string? buyerProviderId = null, string? edgeId = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -330,7 +330,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// Service Provider Wallet Accounts List
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.ProviderWalletAccountsListResult?> ProviderWalletAccountsListAsync(int? page = null, int? pageSize = null, string? status = null, string? providerId = null, string? sellerProviderId = null, string? buyerProviderId = null, string? edgeId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.ProviderWalletAccountsListResult?> ProviderWalletAccountsListAsync(string? page = null, string? pageSize = null, string? status = null, string? providerId = null, string? sellerProviderId = null, string? buyerProviderId = null, string? edgeId = null)
         {
             var queryString = BuildQueryString(new[]
             {

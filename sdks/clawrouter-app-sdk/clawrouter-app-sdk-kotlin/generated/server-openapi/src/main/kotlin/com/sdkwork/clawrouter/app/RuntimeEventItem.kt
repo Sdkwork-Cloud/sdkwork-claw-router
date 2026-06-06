@@ -2,7 +2,7 @@ package com.sdkwork.clawrouter.app
 
 data class RuntimeEventItem(
     val createdAt: String? = null,
-    val eventNo: Int? = null,
+    val eventNo: String? = null,
     val eventSource: String? = null,
     val eventType: String? = null,
     val id: String? = null,

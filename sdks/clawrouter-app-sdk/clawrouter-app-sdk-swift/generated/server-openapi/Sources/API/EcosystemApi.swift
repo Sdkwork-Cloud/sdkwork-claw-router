@@ -8,7 +8,7 @@ public class EcosystemApi {
     }
 
     /// Get skills
-    public func skillsList(q: String? = nil, page: Int? = nil, pageSize: Int? = nil, status: String? = nil, startTime: String? = nil, endTime: String? = nil) async throws -> SkillsListResult? {
+    public func skillsList(q: String? = nil, page: String? = nil, pageSize: String? = nil, status: String? = nil, startTime: String? = nil, endTime: String? = nil) async throws -> SkillsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "q", value: q, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),

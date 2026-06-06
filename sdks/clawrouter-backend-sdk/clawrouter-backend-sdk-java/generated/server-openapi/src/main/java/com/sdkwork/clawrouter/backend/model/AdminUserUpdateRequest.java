@@ -3,7 +3,7 @@ package com.sdkwork.clawrouter.backend.model;
 
 public class AdminUserUpdateRequest {
     private String group;
-    private Integer id;
+    private String id;
     private String status;
     private String username;
 
@@ -15,11 +15,11 @@ public class AdminUserUpdateRequest {
         this.group = group;
     }
 
-    public Integer getId() {
+    public String getId() {
         return this.id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 

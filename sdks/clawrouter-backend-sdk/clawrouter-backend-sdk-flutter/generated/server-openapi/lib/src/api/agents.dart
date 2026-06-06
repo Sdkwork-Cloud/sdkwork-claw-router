@@ -12,7 +12,7 @@ class AgentsApi {
   AgentsApi(this._client);
 
   /// List managed agents
-  Future<AgentDefinitionsListResult?> agentDefinitionsList([String? q, int? ownerUserId, String? status, String? visibility, int? page, int? pageSize]) async {
+  Future<AgentDefinitionsListResult?> agentDefinitionsList([String? q, String? ownerUserId, String? status, String? visibility, String? page, String? pageSize]) async {
     final query = buildQueryString([
       QueryParameterSpec('q', q, 'form', true, false, null),
       QueryParameterSpec('owner_user_id', ownerUserId, 'form', true, false, null),

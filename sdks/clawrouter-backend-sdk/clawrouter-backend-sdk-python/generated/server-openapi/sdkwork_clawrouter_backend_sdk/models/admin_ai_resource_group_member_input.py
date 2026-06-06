@@ -8,4 +8,4 @@ class AdminAiResourceGroupMemberInput:
     """Admin ai resource group member input schema exposed by Claw Router."""
     resource_code: str
     item_role: Optional[str] = None
-    sort_order: Optional[int] = None
+    sort_order: Optional[str] = None

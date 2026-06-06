@@ -203,7 +203,7 @@ class OpenPlatformAccountsApi:
         self.pay_bindings = OpenPlatformAccountsPayBindingsApi(client)
 
 
-    def list(self, provider: Optional[str] = None, type: Optional[str] = None, status: Optional[str] = None, page: Optional[int] = None, page_size: Optional[int] = None) -> AccountsListResult:
+    def list(self, provider: Optional[str] = None, type: Optional[str] = None, status: Optional[str] = None, page: Optional[str] = None, page_size: Optional[str] = None) -> AccountsListResult:
         """List open platform accounts"""
         query = build_query_string([
             {'name': 'provider', 'value': provider, 'style': 'form', 'explode': True, 'allow_reserved': False},

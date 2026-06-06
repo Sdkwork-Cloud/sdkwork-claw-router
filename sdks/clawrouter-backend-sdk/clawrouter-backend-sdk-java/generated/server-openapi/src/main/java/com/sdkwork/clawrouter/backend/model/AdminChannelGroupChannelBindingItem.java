@@ -3,6 +3,7 @@ package com.sdkwork.clawrouter.backend.model;
 import java.util.List;
 
 public class AdminChannelGroupChannelBindingItem {
+    private List<String> apiScope;
     private List<String> capabilities;
     private String channelCode;
     private String channelGroupId;
@@ -10,13 +11,20 @@ public class AdminChannelGroupChannelBindingItem {
     private String channelName;
     private String healthStatus;
     private String id;
-    private List<String> modelScope;
-    private List<String> models;
     private Integer priority;
     private String providerCode;
     private String providerName;
+    private List<String> resourceCodes;
     private String status;
     private Integer weight;
+
+    public List<String> getApiScope() {
+        return this.apiScope;
+    }
+
+    public void setApiScope(List<String> apiScope) {
+        this.apiScope = apiScope;
+    }
 
     public List<String> getCapabilities() {
         return this.capabilities;
@@ -74,22 +82,6 @@ public class AdminChannelGroupChannelBindingItem {
         this.id = id;
     }
 
-    public List<String> getModelScope() {
-        return this.modelScope;
-    }
-
-    public void setModelScope(List<String> modelScope) {
-        this.modelScope = modelScope;
-    }
-
-    public List<String> getModels() {
-        return this.models;
-    }
-
-    public void setModels(List<String> models) {
-        this.models = models;
-    }
-
     public Integer getPriority() {
         return this.priority;
     }
@@ -112,6 +104,14 @@ public class AdminChannelGroupChannelBindingItem {
 
     public void setProviderName(String providerName) {
         this.providerName = providerName;
+    }
+
+    public List<String> getResourceCodes() {
+        return this.resourceCodes;
+    }
+
+    public void setResourceCodes(List<String> resourceCodes) {
+        this.resourceCodes = resourceCodes;
     }
 
     public String getStatus() {

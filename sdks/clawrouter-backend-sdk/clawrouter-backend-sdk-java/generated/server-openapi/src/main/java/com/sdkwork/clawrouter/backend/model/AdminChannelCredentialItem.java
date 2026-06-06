@@ -5,14 +5,14 @@ public class AdminChannelCredentialItem {
     private String apiKey;
     private String baseUrl;
     private String credentialId;
-    private Integer errors;
+    private String errors;
     private String id;
     private String maskedLabel;
     private String name;
-    private Integer priority;
+    private String priority;
     private String secretRef;
     private String status;
-    private Integer weight;
+    private String weight;
 
     public String getApiKey() {
         return this.apiKey;
@@ -38,11 +38,11 @@ public class AdminChannelCredentialItem {
         this.credentialId = credentialId;
     }
 
-    public Integer getErrors() {
+    public String getErrors() {
         return this.errors;
     }
 
-    public void setErrors(Integer errors) {
+    public void setErrors(String errors) {
         this.errors = errors;
     }
 
@@ -70,11 +70,11 @@ public class AdminChannelCredentialItem {
         this.name = name;
     }
 
-    public Integer getPriority() {
+    public String getPriority() {
         return this.priority;
     }
 
-    public void setPriority(Integer priority) {
+    public void setPriority(String priority) {
         this.priority = priority;
     }
 
@@ -94,11 +94,11 @@ public class AdminChannelCredentialItem {
         this.status = status;
     }
 
-    public Integer getWeight() {
+    public String getWeight() {
         return this.weight;
     }
 
-    public void setWeight(Integer weight) {
+    public void setWeight(String weight) {
         this.weight = weight;
     }
 }

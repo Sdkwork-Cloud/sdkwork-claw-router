@@ -8,6 +8,6 @@ namespace Sdkwork.ClawRouter.Backend.Models
     {
         public string? ItemRole { get; set; }
         public string? ResourceCode { get; set; }
-        public int? SortOrder { get; set; }
+        public string? SortOrder { get; set; }
     }
 }

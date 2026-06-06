@@ -5,16 +5,16 @@ type AdminPromptBindingItem struct {
 	BindingRole string `json:"bindingRole"`
 	CreatedAt string `json:"createdAt"`
 	Enabled bool `json:"enabled"`
-	Id int `json:"id"`
-	OrganizationId int `json:"organizationId"`
-	OwnerId int `json:"ownerId"`
+	Id string `json:"id"`
+	OrganizationId string `json:"organizationId"`
+	OwnerId string `json:"ownerId"`
 	OwnerType string `json:"ownerType"`
 	PolicyJson map[string]JsonValue `json:"policyJson"`
 	Priority int `json:"priority"`
-	PromptId int `json:"promptId"`
-	PromptVersionId int `json:"promptVersionId"`
+	PromptId string `json:"promptId"`
+	PromptVersionId string `json:"promptVersionId"`
 	SnapshotJson map[string]JsonValue `json:"snapshotJson"`
-	TenantId int `json:"tenantId"`
+	TenantId string `json:"tenantId"`
 	UpdatedAt string `json:"updatedAt"`
 	Uuid string `json:"uuid"`
 }

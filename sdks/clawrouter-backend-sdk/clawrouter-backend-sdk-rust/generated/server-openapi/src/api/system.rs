@@ -3,7 +3,7 @@ use std::sync::Arc;
 use crate::api::paths::backend_path;
 use crate::api::paths::append_query_string;
 use crate::http::{SdkworkError, SdkworkHttpClient};
-use crate::models::{AdminAuthSettingsUpdateRequest, AdminFirewallRuleCreateRequest, AdminIpLimitCreateRequest, AdminModelLimitCreateRequest, AdminRuntimeRegionSettingsUpdateRequest, AdminServiceNodeCreateRequest, AdminServiceNodeStatusUpdateRequest, AdminServiceNodeUpdateRequest, AdminSiteSettingsUpdateRequest, AdminTokenLimitCreateRequest, AnalyticsAdminOverviewRetrieveResult, AuthSettingsRetrieveResult, AuthSettingsUpdateResult, CacheInstancesDeleteResult, CacheInstancesRefreshCreateResult, CacheNamespacesDeleteResult, CacheNamespacesKeysDeleteResult, CacheNamespacesKeysListResult, CacheNamespacesRefreshCreateResult, CacheOverviewRetrieveResult, CacheRefreshCreateResult, DashboardAdminOverviewRetrieveResult, FirewallsRulesCreateResult, FirewallsRulesDeleteResult, FirewallsRulesListResult, InstallationStatusRetrieveResult, MarketingReferralStatsListResult, MonitorAlertsListResult, MonitorNodesListResult, MonitorPerformanceListResult, PromotionsBudgetLedgerEntriesListResult, PromotionsCodesListResult, PromotionsCodesRedemptionsListResult, PromotionsCouponLedgerEntriesListResult, PromotionsCouponStocksListResult, PromotionsDiscountAllocationsListResult, PromotionsDiscountApplicationsListResult, PromotionsEventsListResult, PromotionsExternalBindingsListResult, PromotionsOffersManagementListResult, PromotionsUserCouponsManagementListResult, RateLimitsApiKeysCreateResult, RateLimitsApiKeysListResult, RateLimitsIpCreateResult, RateLimitsIpListResult, RateLimitsModelsCreateResult, RateLimitsModelsListResult, RecordsListResult, RuntimeRegionSettingsRetrieveResult, RuntimeRegionSettingsUpdateResult, ServiceNodesCreateResult, ServiceNodesDeleteResult, ServiceNodesListResult, ServiceNodesStatusUpdateResult, ServiceNodesUpdateResult, SiteSettingsRetrieveResult, SiteSettingsUpdateResult};
+use crate::models::{AdminAuthSettingsUpdateRequest, AdminFirewallRuleCreateRequest, AdminIpLimitCreateRequest, AdminModelLimitCreateRequest, AdminRuntimeRegionSettingsUpdateRequest, AdminServiceNodeCreateRequest, AdminServiceNodeStatusUpdateRequest, AdminServiceNodeUpdateRequest, AdminSiteSettingsUpdateRequest, AdminTokenLimitCreateRequest, AnalyticsAdminOverviewRetrieveResult, AuthSettingsRetrieveResult, AuthSettingsUpdateResult, CacheInstancesDeleteResult, CacheInstancesRefreshCreateResult, CacheNamespacesDeleteResult, CacheNamespacesKeysDeleteResult, CacheNamespacesKeysListResult, CacheNamespacesRefreshCreateResult, CacheOverviewRetrieveResult, CacheRefreshCreateResult, DashboardAdminOverviewRetrieveResult, FirewallsRulesCreateResult, FirewallsRulesDeleteResult, FirewallsRulesListResult, InstallationStatusRetrieveResult, MarketingReferralStatsListResult, MonitorAlertsListResult, MonitorNodesListResult, MonitorPerformanceListResult, PromotionsBudgetLedgerEntriesListResult, PromotionsCodesRedemptionsListResult, PromotionsCouponLedgerEntriesListResult, PromotionsEventsListResult, PromotionsExternalBindingsListResult, RateLimitsApiKeysCreateResult, RateLimitsApiKeysListResult, RateLimitsIpCreateResult, RateLimitsIpListResult, RateLimitsModelsCreateResult, RateLimitsModelsListResult, RecordsListResult, RuntimeRegionSettingsRetrieveResult, RuntimeRegionSettingsUpdateResult, ServiceNodesCreateResult, ServiceNodesDeleteResult, ServiceNodesListResult, ServiceNodesStatusUpdateResult, ServiceNodesUpdateResult, SiteSettingsRetrieveResult, SiteSettingsUpdateResult};
 
 #[derive(Clone)]
 pub struct SystemApi {
@@ -24,19 +24,8 @@ impl SystemApi {
         self.client.get(&path, None, None).await
     }
 
-    /// Promotion Coupon Codes List
-    pub async fn promotions_codes_list(&self, page: Option<i64>, page_size: Option<i64>, status: Option<&str>) -> Result<PromotionsCodesListResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("page", page, "form", true, false, None),
-            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
-            QueryParameterSpec::new("status", status, "form", true, false, None),
-        ]);
-        let path = append_query_string(backend_path(&"/promotions/codes".to_string()), &query);
-        self.client.get(&path, None, None).await
-    }
-
     /// Promotion Coupon Code Redemptions List
-    pub async fn promotions_codes_redemptions_list(&self, page: Option<i64>, page_size: Option<i64>, code_status: Option<&str>) -> Result<PromotionsCodesRedemptionsListResult, SdkworkError> {
+    pub async fn promotions_codes_redemptions_list(&self, page: Option<&str>, page_size: Option<&str>, code_status: Option<&str>) -> Result<PromotionsCodesRedemptionsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
@@ -52,37 +41,6 @@ impl SystemApi {
             QueryParameterSpec::new("stock_id", stock_id, "form", true, false, None),
         ]);
         let path = append_query_string(backend_path(&"/promotions/coupon_ledger_entries".to_string()), &query);
-        self.client.get(&path, None, None).await
-    }
-
-    /// Promotion Coupon Stocks List
-    pub async fn promotions_coupon_stocks_list(&self, page: Option<i64>, page_size: Option<i64>, status: Option<&str>) -> Result<PromotionsCouponStocksListResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("page", page, "form", true, false, None),
-            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
-            QueryParameterSpec::new("status", status, "form", true, false, None),
-        ]);
-        let path = append_query_string(backend_path(&"/promotions/coupon_stocks".to_string()), &query);
-        self.client.get(&path, None, None).await
-    }
-
-    /// Promotion Discount Allocations List
-    pub async fn promotions_discount_allocations_list(&self, application_id: Option<&str>) -> Result<PromotionsDiscountAllocationsListResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("application_id", application_id, "form", true, false, None),
-        ]);
-        let path = append_query_string(backend_path(&"/promotions/discount_allocations".to_string()), &query);
-        self.client.get(&path, None, None).await
-    }
-
-    /// Promotion Discount Applications List
-    pub async fn promotions_discount_applications_list(&self, page: Option<i64>, page_size: Option<i64>, status: Option<&str>) -> Result<PromotionsDiscountApplicationsListResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("page", page, "form", true, false, None),
-            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
-            QueryParameterSpec::new("status", status, "form", true, false, None),
-        ]);
-        let path = append_query_string(backend_path(&"/promotions/discount_applications".to_string()), &query);
         self.client.get(&path, None, None).await
     }
 
@@ -104,30 +62,8 @@ impl SystemApi {
         self.client.get(&path, None, None).await
     }
 
-    /// Promotion Offers List
-    pub async fn promotions_offers_management_list(&self, page: Option<i64>, page_size: Option<i64>, status: Option<&str>) -> Result<PromotionsOffersManagementListResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("page", page, "form", true, false, None),
-            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
-            QueryParameterSpec::new("status", status, "form", true, false, None),
-        ]);
-        let path = append_query_string(backend_path(&"/promotions/offers".to_string()), &query);
-        self.client.get(&path, None, None).await
-    }
-
-    /// Promotion User Coupons Management List
-    pub async fn promotions_user_coupons_management_list(&self, page: Option<i64>, page_size: Option<i64>, status: Option<&str>) -> Result<PromotionsUserCouponsManagementListResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("page", page, "form", true, false, None),
-            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
-            QueryParameterSpec::new("status", status, "form", true, false, None),
-        ]);
-        let path = append_query_string(backend_path(&"/promotions/user_coupons".to_string()), &query);
-        self.client.get(&path, None, None).await
-    }
-
     /// List overview
-    pub async fn analytics_admin_overview_retrieve(&self, time_range: Option<&str>, start_time: Option<&str>, end_time: Option<&str>, limit: Option<i64>) -> Result<AnalyticsAdminOverviewRetrieveResult, SdkworkError> {
+    pub async fn analytics_admin_overview_retrieve(&self, time_range: Option<&str>, start_time: Option<&str>, end_time: Option<&str>, limit: Option<&str>) -> Result<AnalyticsAdminOverviewRetrieveResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("time_range", time_range, "form", true, false, None),
             QueryParameterSpec::new("start_time", start_time, "form", true, false, None),
@@ -169,7 +105,7 @@ impl SystemApi {
     }
 
     /// List runtime cache keys in a namespace
-    pub async fn cache_namespaces_keys_list(&self, namespace: &str, limit: Option<i64>, cursor: Option<&str>) -> Result<CacheNamespacesKeysListResult, SdkworkError> {
+    pub async fn cache_namespaces_keys_list(&self, namespace: &str, limit: Option<&str>, cursor: Option<&str>) -> Result<CacheNamespacesKeysListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("limit", limit, "form", true, false, None),
             QueryParameterSpec::new("cursor", cursor, "form", true, false, None),
@@ -293,7 +229,7 @@ impl SystemApi {
     }
 
     /// List logs
-    pub async fn records_list(&self, page: Option<i64>, page_size: Option<i64>, user: Option<&str>, token: Option<&str>, model: Option<&str>) -> Result<RecordsListResult, SdkworkError> {
+    pub async fn records_list(&self, page: Option<&str>, page_size: Option<&str>, user: Option<&str>, token: Option<&str>, model: Option<&str>) -> Result<RecordsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),

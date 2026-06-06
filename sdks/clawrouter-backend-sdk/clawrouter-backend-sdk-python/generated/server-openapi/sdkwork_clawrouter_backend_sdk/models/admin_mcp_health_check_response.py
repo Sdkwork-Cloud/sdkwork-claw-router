@@ -9,6 +9,6 @@ class AdminMcpHealthCheckResponse:
     checked_at: str
     health_status: str
     healthy: bool
-    server_id: int
+    server_id: str
     error_masked: Optional[str] = None
-    latency_ms: Optional[int] = None
+    latency_ms: Optional[str] = None

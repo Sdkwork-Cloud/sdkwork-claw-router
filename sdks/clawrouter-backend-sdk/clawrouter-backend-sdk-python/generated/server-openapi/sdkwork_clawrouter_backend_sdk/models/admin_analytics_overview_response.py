@@ -15,7 +15,7 @@ if TYPE_CHECKING:
 class AdminAnalyticsOverviewResponse:
     """Admin analytics overview response schema exposed by Claw Router."""
     insights: List[AdminAnalyticsInsight]
-    limit: int
+    limit: str
     modality_distribution: List[AdminPieChartItem]
     model_distribution: List[AdminPieChartItem]
     model_rankings: AdminAnalyticsModelRankings

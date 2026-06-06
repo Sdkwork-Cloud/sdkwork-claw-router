@@ -7,12 +7,12 @@ pub struct PromotionCollectionResponse {
     pub items: Vec<serde_json::Value>,
 
     /// Page field on promotion collection response.
-    pub page: i64,
+    pub page: String,
 
     /// Page size field on promotion collection response.
     #[serde(rename = "pageSize")]
-    pub page_size: i64,
+    pub page_size: String,
 
     /// Total field on promotion collection response.
-    pub total: i64,
+    pub total: String,
 }

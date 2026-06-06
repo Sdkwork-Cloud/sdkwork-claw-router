@@ -6,8 +6,8 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class AgentCapabilities
     {
-        public int? McpServerCount { get; set; }
+        public string? McpServerCount { get; set; }
         public bool? MemoryEnabled { get; set; }
-        public int? SkillBindingCount { get; set; }
+        public string? SkillBindingCount { get; set; }
     }
 }

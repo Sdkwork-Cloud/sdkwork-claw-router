@@ -9,7 +9,7 @@ public class RoutingChannelItem {
     private String baseUrl;
     private List<String> capabilities;
     private RoutingCircuitBreakerPolicy circuitBreakerPolicy;
-    private Integer errors;
+    private String errors;
     private String id;
     private Boolean isMultimodal;
     private String latency;
@@ -19,11 +19,11 @@ public class RoutingChannelItem {
     private String provider;
     private String providerCode;
     private RoutingRetryPolicy retryPolicy;
-    private Integer rpm;
+    private String rpm;
     private String status;
-    private Integer timeoutMs;
+    private String timeoutMs;
     private String vendor;
-    private Integer weight;
+    private String weight;
 
     public String getAccessType() {
         return this.accessType;
@@ -73,11 +73,11 @@ public class RoutingChannelItem {
         this.circuitBreakerPolicy = circuitBreakerPolicy;
     }
 
-    public Integer getErrors() {
+    public String getErrors() {
         return this.errors;
     }
 
-    public void setErrors(Integer errors) {
+    public void setErrors(String errors) {
         this.errors = errors;
     }
 
@@ -153,11 +153,11 @@ public class RoutingChannelItem {
         this.retryPolicy = retryPolicy;
     }
 
-    public Integer getRpm() {
+    public String getRpm() {
         return this.rpm;
     }
 
-    public void setRpm(Integer rpm) {
+    public void setRpm(String rpm) {
         this.rpm = rpm;
     }
 
@@ -169,11 +169,11 @@ public class RoutingChannelItem {
         this.status = status;
     }
 
-    public Integer getTimeoutMs() {
+    public String getTimeoutMs() {
         return this.timeoutMs;
     }
 
-    public void setTimeoutMs(Integer timeoutMs) {
+    public void setTimeoutMs(String timeoutMs) {
         this.timeoutMs = timeoutMs;
     }
 
@@ -185,11 +185,11 @@ public class RoutingChannelItem {
         this.vendor = vendor;
     }
 
-    public Integer getWeight() {
+    public String getWeight() {
         return this.weight;
     }
 
-    public void setWeight(Integer weight) {
+    public void setWeight(String weight) {
         this.weight = weight;
     }
 }

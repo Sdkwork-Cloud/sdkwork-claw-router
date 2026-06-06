@@ -23,6 +23,7 @@ const portalPackageModuleCache = new Map<string, string | null>();
 const PORTAL_RUNTIME_URL_ENV = [
   ['PORTAL_PUBLIC_APP_API_BASE_URL', 'VITE_CLAWROUTER_APP_API_BASE_URL'],
   ['PORTAL_PUBLIC_BACKEND_API_BASE_URL', 'VITE_CLAWROUTER_BACKEND_API_BASE_URL'],
+  ['PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL', 'VITE_SDKWORK_APPBASE_BACKEND_API_BASE_URL'],
   ['PORTAL_PUBLIC_DOWNLOAD_BASE_URL', 'VITE_CLAWROUTER_DOWNLOAD_BASE_URL'],
 ] as const;
 
@@ -411,6 +412,7 @@ export default defineConfig(({mode}) => {
         { find: '@sdkwork/auth-pc-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/iam/sdkwork-auth-pc-react/src/index.ts') },
         { find: '@sdkwork/auth-runtime-pc-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/iam/sdkwork-auth-runtime-pc-react/src/index.ts') },
         { find: '@sdkwork/app-sdk', replacement: path.resolve(appApiSdkRoot, 'src/index.ts') },
+        { find: '@sdkwork/appbase-backend-sdk', replacement: path.resolve(appbaseRoot, 'sdks/sdkwork-appbase-backend-sdk/sdkwork-appbase-backend-sdk-typescript/src/index.ts') },
         { find: '@sdkwork/clawrouter-app-sdk', replacement: path.resolve(configDir, '../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/index.ts') },
         { find: '@sdkwork/clawrouter-backend-sdk', replacement: path.resolve(configDir, '../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/src/index.ts') },
         { find: '@sdkwork/conversation', replacement: path.resolve(appbaseRoot, 'packages/common/conversation/sdkwork-conversation/src/index.ts') },

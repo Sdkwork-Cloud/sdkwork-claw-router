@@ -8,7 +8,7 @@ type RoutingChannelItem struct {
 	BaseUrl string `json:"baseUrl"`
 	Capabilities []string `json:"capabilities"`
 	CircuitBreakerPolicy RoutingCircuitBreakerPolicy `json:"circuitBreakerPolicy"`
-	Errors int `json:"errors"`
+	Errors string `json:"errors"`
 	Id string `json:"id"`
 	IsMultimodal bool `json:"isMultimodal"`
 	Latency string `json:"latency"`
@@ -18,9 +18,9 @@ type RoutingChannelItem struct {
 	Provider string `json:"provider"`
 	ProviderCode string `json:"providerCode"`
 	RetryPolicy RoutingRetryPolicy `json:"retryPolicy"`
-	Rpm int `json:"rpm"`
+	Rpm string `json:"rpm"`
 	Status string `json:"status"`
-	TimeoutMs int `json:"timeoutMs"`
+	TimeoutMs string `json:"timeoutMs"`
 	Vendor string `json:"vendor"`
-	Weight int `json:"weight"`
+	Weight string `json:"weight"`
 }

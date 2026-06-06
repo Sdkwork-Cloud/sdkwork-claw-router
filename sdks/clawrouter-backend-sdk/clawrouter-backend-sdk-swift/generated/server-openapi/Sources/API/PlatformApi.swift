@@ -8,7 +8,7 @@ public class PlatformApi {
     }
 
     /// List apps
-    public func appsList(q: String? = nil, status: String? = nil, marketStatus: String? = nil, appType: String? = nil, categoryId: Int? = nil, page: Int? = nil, pageSize: Int? = nil) async throws -> AppsListResult? {
+    public func appsList(q: String? = nil, status: String? = nil, marketStatus: String? = nil, appType: String? = nil, categoryId: String? = nil, page: String? = nil, pageSize: String? = nil) async throws -> AppsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "q", value: q, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil),
@@ -47,7 +47,7 @@ public class PlatformApi {
     }
 
     /// List app templates
-    public func appsTemplatesList(q: String? = nil, publishStatus: String? = nil, templateType: String? = nil, runtime: String? = nil, categoryId: Int? = nil, page: Int? = nil, pageSize: Int? = nil) async throws -> AppsTemplatesListResult? {
+    public func appsTemplatesList(q: String? = nil, publishStatus: String? = nil, templateType: String? = nil, runtime: String? = nil, categoryId: String? = nil, page: String? = nil, pageSize: String? = nil) async throws -> AppsTemplatesListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "q", value: q, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "publish_status", value: publishStatus, style: "form", explode: true, allowReserved: false, contentType: nil),

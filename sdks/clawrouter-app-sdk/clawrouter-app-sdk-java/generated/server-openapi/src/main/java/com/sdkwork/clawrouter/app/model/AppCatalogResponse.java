@@ -7,7 +7,7 @@ public class AppCatalogResponse {
     private List<AppCatalogItem> items;
     private Integer page;
     private Integer pageSize;
-    private Integer total;
+    private String total;
 
     public Boolean getHasNextPage() {
         return this.hasNextPage;
@@ -41,11 +41,11 @@ public class AppCatalogResponse {
         this.pageSize = pageSize;
     }
 
-    public Integer getTotal() {
+    public String getTotal() {
         return this.total;
     }
 
-    public void setTotal(Integer total) {
+    public void setTotal(String total) {
         this.total = total;
     }
 }

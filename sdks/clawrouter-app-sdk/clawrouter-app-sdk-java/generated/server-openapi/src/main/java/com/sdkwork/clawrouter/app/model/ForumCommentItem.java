@@ -5,15 +5,15 @@ public class ForumCommentItem {
     private ForumAuthor author;
     private String commentId;
     private String content;
-    private Integer contentId;
+    private String contentId;
     private String contentType;
     private String createdAt;
     private Boolean isTop;
-    private Integer likes;
-    private Integer parentId;
-    private Integer replyCount;
+    private String likes;
+    private String parentId;
+    private String replyCount;
     private String status;
-    private Integer userId;
+    private String userId;
 
     public ForumAuthor getAuthor() {
         return this.author;
@@ -39,11 +39,11 @@ public class ForumCommentItem {
         this.content = content;
     }
 
-    public Integer getContentId() {
+    public String getContentId() {
         return this.contentId;
     }
 
-    public void setContentId(Integer contentId) {
+    public void setContentId(String contentId) {
         this.contentId = contentId;
     }
 
@@ -71,27 +71,27 @@ public class ForumCommentItem {
         this.isTop = isTop;
     }
 
-    public Integer getLikes() {
+    public String getLikes() {
         return this.likes;
     }
 
-    public void setLikes(Integer likes) {
+    public void setLikes(String likes) {
         this.likes = likes;
     }
 
-    public Integer getParentId() {
+    public String getParentId() {
         return this.parentId;
     }
 
-    public void setParentId(Integer parentId) {
+    public void setParentId(String parentId) {
         this.parentId = parentId;
     }
 
-    public Integer getReplyCount() {
+    public String getReplyCount() {
         return this.replyCount;
     }
 
-    public void setReplyCount(Integer replyCount) {
+    public void setReplyCount(String replyCount) {
         this.replyCount = replyCount;
     }
 
@@ -103,11 +103,11 @@ public class ForumCommentItem {
         this.status = status;
     }
 
-    public Integer getUserId() {
+    public String getUserId() {
         return this.userId;
     }
 
-    public void setUserId(Integer userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 }

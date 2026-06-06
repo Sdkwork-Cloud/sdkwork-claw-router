@@ -2,17 +2,17 @@ package types
 
 // Model ranking refresh trigger response schema exposed by Claw Router.
 type ModelRankingRefreshTriggerResponse struct {
-	CacheMaxAgeSeconds int `json:"cacheMaxAgeSeconds"`
-	GeneratedCount int `json:"generatedCount"`
+	CacheMaxAgeSeconds string `json:"cacheMaxAgeSeconds"`
+	GeneratedCount string `json:"generatedCount"`
 	NextRefreshAt string `json:"nextRefreshAt"`
-	OrganizationId int `json:"organizationId"`
+	OrganizationId string `json:"organizationId"`
 	RankScope string `json:"rankScope"`
-	RefreshIntervalSeconds int `json:"refreshIntervalSeconds"`
+	RefreshIntervalSeconds string `json:"refreshIntervalSeconds"`
 	SnapshotDate string `json:"snapshotDate"`
 	SnapshotPeriod string `json:"snapshotPeriod"`
-	SourceCount int `json:"sourceCount"`
+	SourceCount string `json:"sourceCount"`
 	Status string `json:"status"`
-	TenantId int `json:"tenantId"`
+	TenantId string `json:"tenantId"`
 	Triggered bool `json:"triggered"`
 	WindowEnd string `json:"windowEnd"`
 	WindowStart string `json:"windowStart"`

@@ -2,21 +2,21 @@ package com.sdkwork.clawrouter.backend.model;
 
 
 public class AdminCourseDashboard {
-    private Integer draftCourses;
+    private String draftCourses;
     private String id;
-    private Integer publishedCourses;
-    private Integer reviewQueue;
-    private Integer totalComments;
-    private Integer totalCourses;
-    private Integer totalEngagement;
-    private Integer totalLessons;
-    private Integer totalStudents;
+    private String publishedCourses;
+    private String reviewQueue;
+    private String totalComments;
+    private String totalCourses;
+    private String totalEngagement;
+    private String totalLessons;
+    private String totalStudents;
 
-    public Integer getDraftCourses() {
+    public String getDraftCourses() {
         return this.draftCourses;
     }
 
-    public void setDraftCourses(Integer draftCourses) {
+    public void setDraftCourses(String draftCourses) {
         this.draftCourses = draftCourses;
     }
 
@@ -28,59 +28,59 @@ public class AdminCourseDashboard {
         this.id = id;
     }
 
-    public Integer getPublishedCourses() {
+    public String getPublishedCourses() {
         return this.publishedCourses;
     }
 
-    public void setPublishedCourses(Integer publishedCourses) {
+    public void setPublishedCourses(String publishedCourses) {
         this.publishedCourses = publishedCourses;
     }
 
-    public Integer getReviewQueue() {
+    public String getReviewQueue() {
         return this.reviewQueue;
     }
 
-    public void setReviewQueue(Integer reviewQueue) {
+    public void setReviewQueue(String reviewQueue) {
         this.reviewQueue = reviewQueue;
     }
 
-    public Integer getTotalComments() {
+    public String getTotalComments() {
         return this.totalComments;
     }
 
-    public void setTotalComments(Integer totalComments) {
+    public void setTotalComments(String totalComments) {
         this.totalComments = totalComments;
     }
 
-    public Integer getTotalCourses() {
+    public String getTotalCourses() {
         return this.totalCourses;
     }
 
-    public void setTotalCourses(Integer totalCourses) {
+    public void setTotalCourses(String totalCourses) {
         this.totalCourses = totalCourses;
     }
 
-    public Integer getTotalEngagement() {
+    public String getTotalEngagement() {
         return this.totalEngagement;
     }
 
-    public void setTotalEngagement(Integer totalEngagement) {
+    public void setTotalEngagement(String totalEngagement) {
         this.totalEngagement = totalEngagement;
     }
 
-    public Integer getTotalLessons() {
+    public String getTotalLessons() {
         return this.totalLessons;
     }
 
-    public void setTotalLessons(Integer totalLessons) {
+    public void setTotalLessons(String totalLessons) {
         this.totalLessons = totalLessons;
     }
 
-    public Integer getTotalStudents() {
+    public String getTotalStudents() {
         return this.totalStudents;
     }
 
-    public void setTotalStudents(Integer totalStudents) {
+    public void setTotalStudents(String totalStudents) {
         this.totalStudents = totalStudents;
     }
 }

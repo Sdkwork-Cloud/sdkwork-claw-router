@@ -12,7 +12,7 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? BaseUrl { get; set; }
         public List<string>? Capabilities { get; set; }
         public RoutingCircuitBreakerPolicy? CircuitBreakerPolicy { get; set; }
-        public int? Errors { get; set; }
+        public string? Errors { get; set; }
         public string? Id { get; set; }
         public bool? IsMultimodal { get; set; }
         public string? Latency { get; set; }
@@ -22,10 +22,10 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? Provider { get; set; }
         public string? ProviderCode { get; set; }
         public RoutingRetryPolicy? RetryPolicy { get; set; }
-        public int? Rpm { get; set; }
+        public string? Rpm { get; set; }
         public string? Status { get; set; }
-        public int? TimeoutMs { get; set; }
+        public string? TimeoutMs { get; set; }
         public string? Vendor { get; set; }
-        public int? Weight { get; set; }
+        public string? Weight { get; set; }
     }
 }

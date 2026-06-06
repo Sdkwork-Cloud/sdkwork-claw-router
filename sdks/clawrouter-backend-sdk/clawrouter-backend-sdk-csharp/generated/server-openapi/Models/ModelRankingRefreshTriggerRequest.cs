@@ -6,11 +6,11 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class ModelRankingRefreshTriggerRequest
     {
-        public int? CacheMaxAgeSeconds { get; set; }
-        public int? Limit { get; set; }
-        public int? LookbackDays { get; set; }
+        public string? CacheMaxAgeSeconds { get; set; }
+        public string? Limit { get; set; }
+        public string? LookbackDays { get; set; }
         public string? RankScope { get; set; }
-        public int? RefreshIntervalSeconds { get; set; }
+        public string? RefreshIntervalSeconds { get; set; }
         public string? SnapshotPeriod { get; set; }
     }
 }

@@ -9,7 +9,7 @@ if TYPE_CHECKING:
 @dataclass
 class AdminSkillArtifactItem:
     """Updated skill catalog artifact snapshot returned by the backend."""
-    artifact_size_bytes: int
+    artifact_size_bytes: str
     artifact_type: int
     created_at: str
     frameworks: List[str]

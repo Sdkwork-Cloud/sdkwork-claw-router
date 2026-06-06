@@ -38,7 +38,7 @@ func (a *McpApi) RevisionsPublish(revisionId string) (sdktypes.RevisionsPublishR
 }
 
 // List MCP servers
-func (a *McpApi) ServersList(page *int, pageSize *int, q *string, transport *string, visibility *string, status *string, categoryId *string) (sdktypes.ServersListResult, error) {
+func (a *McpApi) ServersList(page *string, pageSize *string, q *string, transport *string, visibility *string, status *string, categoryId *string) (sdktypes.ServersListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},

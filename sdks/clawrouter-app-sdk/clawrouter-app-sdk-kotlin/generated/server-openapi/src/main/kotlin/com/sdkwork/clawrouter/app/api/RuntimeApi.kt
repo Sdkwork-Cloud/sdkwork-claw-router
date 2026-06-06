@@ -9,7 +9,7 @@ import com.sdkwork.clawrouter.app.http.HttpClient
 class RuntimeApi(private val client: HttpClient) {
 
     /** List runtime invocations */
-    suspend fun invocationsList(page: Int? = null, pageSize: Int? = null, conversationId: String? = null, chatTurnId: String? = null, agentSessionId: String? = null, runtime: String? = null, status: String? = null): InvocationsListResult? {
+    suspend fun invocationsList(page: String? = null, pageSize: String? = null, conversationId: String? = null, chatTurnId: String? = null, agentSessionId: String? = null, runtime: String? = null, status: String? = null): InvocationsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -42,7 +42,7 @@ class RuntimeApi(private val client: HttpClient) {
     }
 
     /** List runtime artifacts */
-    suspend fun artifactsList(invocationId: String, page: Int? = null, pageSize: Int? = null): ArtifactsListResult? {
+    suspend fun artifactsList(invocationId: String, page: String? = null, pageSize: String? = null): ArtifactsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null)
@@ -76,7 +76,7 @@ class RuntimeApi(private val client: HttpClient) {
     }
 
     /** List runtime invocation events */
-    suspend fun invocationEventsList(invocationId: String, page: Int? = null, pageSize: Int? = null): InvocationEventsListResult? {
+    suspend fun invocationEventsList(invocationId: String, page: String? = null, pageSize: String? = null): InvocationEventsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null)

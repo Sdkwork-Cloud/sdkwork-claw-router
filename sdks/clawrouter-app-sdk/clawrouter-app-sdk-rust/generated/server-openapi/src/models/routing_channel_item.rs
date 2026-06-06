@@ -29,7 +29,7 @@ pub struct RoutingChannelItem {
     pub circuit_breaker_policy: Option<RoutingCircuitBreakerPolicy>,
 
     /// Errors field on routing channel item.
-    pub errors: i64,
+    pub errors: String,
 
     /// Id field on routing channel item.
     pub id: String,
@@ -63,7 +63,7 @@ pub struct RoutingChannelItem {
     pub retry_policy: Option<RoutingRetryPolicy>,
 
     /// Rpm field on routing channel item.
-    pub rpm: i64,
+    pub rpm: String,
 
     /// Status field on routing channel item.
     pub status: String,
@@ -71,11 +71,11 @@ pub struct RoutingChannelItem {
     /// Timeout ms field on routing channel item.
     #[serde(rename = "timeoutMs")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub timeout_ms: Option<i64>,
+    pub timeout_ms: Option<String>,
 
     /// Vendor field on routing channel item.
     pub vendor: String,
 
     /// Weight field on routing channel item.
-    pub weight: i64,
+    pub weight: String,
 }

@@ -8,7 +8,7 @@ namespace Sdkwork.ClawRouter.App.Models
     {
         public bool? AutoExtractEnabled { get; set; }
         public bool? AutoRecallEnabled { get; set; }
-        public int? MaxInjectedTokens { get; set; }
+        public string? MaxInjectedTokens { get; set; }
         public bool? MemoryEnabled { get; set; }
         public Dictionary<string, string>? Metadata { get; set; }
         public string? OwnerId { get; set; }

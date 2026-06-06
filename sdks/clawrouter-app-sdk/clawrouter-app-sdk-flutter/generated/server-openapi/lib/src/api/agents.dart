@@ -12,7 +12,7 @@ class AgentsApi {
   AgentsApi(this._client);
 
   /// List Playground agent definitions
-  Future<AgentDefinitionsListResult?> agentDefinitionsList([int? page, int? pageSize, String? q]) async {
+  Future<AgentDefinitionsListResult?> agentDefinitionsList([String? page, String? pageSize, String? q]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
@@ -67,7 +67,7 @@ class AgentsApi {
   }
 
   /// List Playground agent run steps
-  Future<AgentRunStepsListResult?> agentRunStepsList(String runId, [int? page, int? pageSize]) async {
+  Future<AgentRunStepsListResult?> agentRunStepsList(String runId, [String? page, String? pageSize]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null)
@@ -121,7 +121,7 @@ class AgentsApi {
   }
 
   /// List Playground agent runs
-  Future<AgentRunsListResult?> agentRunsList(String sessionId, [int? page, int? pageSize]) async {
+  Future<AgentRunsListResult?> agentRunsList(String sessionId, [String? page, String? pageSize]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null)
@@ -159,7 +159,7 @@ class AgentsApi {
   }
 
   /// List Playground agent sessions
-  Future<AgentSessionsListResult?> agentSessionsList(String agentId, [int? page, int? pageSize]) async {
+  Future<AgentSessionsListResult?> agentSessionsList(String agentId, [String? page, String? pageSize]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null)

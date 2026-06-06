@@ -17,7 +17,7 @@ pub struct AdminUserItem {
     pub group: String,
 
     /// Id field on admin user item.
-    pub id: i64,
+    pub id: String,
 
     /// Last active field on admin user item.
     #[serde(rename = "lastActive")]

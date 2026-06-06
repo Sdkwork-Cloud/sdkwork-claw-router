@@ -1,12 +1,12 @@
 package com.sdkwork.clawrouter.backend
 
 data class ModelRankingsSource(
-    val cacheMaxAgeSeconds: Int? = null,
+    val cacheMaxAgeSeconds: String? = null,
     val generatedAt: String? = null,
     val nextRefreshAt: String? = null,
     val observedAt: String? = null,
     val rankScope: String? = null,
-    val refreshIntervalSeconds: Int? = null,
+    val refreshIntervalSeconds: String? = null,
     val snapshotDate: String? = null,
     val snapshotPeriod: String? = null,
     val sourceDescription: String? = null,

@@ -13,4 +13,4 @@ class AppCatalogResponse:
     items: List[AppCatalogItem]
     page: int
     page_size: int
-    total: int
+    total: str

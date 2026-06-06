@@ -2,15 +2,15 @@ package com.sdkwork.clawrouter.app.model;
 
 
 public class AgentCapabilities {
-    private Integer mcpServerCount;
+    private String mcpServerCount;
     private Boolean memoryEnabled;
-    private Integer skillBindingCount;
+    private String skillBindingCount;
 
-    public Integer getMcpServerCount() {
+    public String getMcpServerCount() {
         return this.mcpServerCount;
     }
 
-    public void setMcpServerCount(Integer mcpServerCount) {
+    public void setMcpServerCount(String mcpServerCount) {
         this.mcpServerCount = mcpServerCount;
     }
 
@@ -22,11 +22,11 @@ public class AgentCapabilities {
         this.memoryEnabled = memoryEnabled;
     }
 
-    public Integer getSkillBindingCount() {
+    public String getSkillBindingCount() {
         return this.skillBindingCount;
     }
 
-    public void setSkillBindingCount(Integer skillBindingCount) {
+    public void setSkillBindingCount(String skillBindingCount) {
         this.skillBindingCount = skillBindingCount;
     }
 }

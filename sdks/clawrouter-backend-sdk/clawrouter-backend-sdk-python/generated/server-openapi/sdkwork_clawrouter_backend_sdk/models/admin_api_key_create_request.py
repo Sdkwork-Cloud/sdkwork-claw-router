@@ -7,4 +7,4 @@ from typing import TYPE_CHECKING, Optional, List, Dict, Any
 class AdminApiKeyCreateRequest:
     """Admin api key create request schema exposed by Claw Router."""
     name: str
-    user_id: int
+    user_id: str

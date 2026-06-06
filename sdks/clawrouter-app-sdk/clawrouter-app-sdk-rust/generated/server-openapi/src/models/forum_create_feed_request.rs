@@ -8,7 +8,7 @@ pub struct ForumCreateFeedRequest {
     /// Category id field on forum create feed request.
     #[serde(rename = "categoryId")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub category_id: Option<i64>,
+    pub category_id: Option<String>,
 
     /// Content field on forum create feed request.
     pub content: String,

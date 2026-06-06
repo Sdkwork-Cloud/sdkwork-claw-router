@@ -14,7 +14,7 @@ type CommerceProductCategoryAttributeItem struct {
 	Required bool `json:"required"`
 	Scope string `json:"scope"`
 	Searchable bool `json:"searchable"`
-	SortOrder int `json:"sortOrder"`
+	SortOrder string `json:"sortOrder"`
 	Status string `json:"status"`
 	UpdatedAt string `json:"updatedAt"`
 	ValueType string `json:"valueType"`

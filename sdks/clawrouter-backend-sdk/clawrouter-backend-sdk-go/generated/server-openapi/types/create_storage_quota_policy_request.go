@@ -4,8 +4,8 @@ package types
 type CreateStorageQuotaPolicyRequest struct {
 	Enforcement string `json:"enforcement"`
 	QuotaLimit string `json:"quotaLimit"`
-	QuotaLimitBytes int `json:"quotaLimitBytes"`
+	QuotaLimitBytes string `json:"quotaLimitBytes"`
 	ScopeId string `json:"scopeId"`
 	ScopeType string `json:"scopeType"`
-	SingleFileLimitBytes int `json:"singleFileLimitBytes"`
+	SingleFileLimitBytes string `json:"singleFileLimitBytes"`
 }

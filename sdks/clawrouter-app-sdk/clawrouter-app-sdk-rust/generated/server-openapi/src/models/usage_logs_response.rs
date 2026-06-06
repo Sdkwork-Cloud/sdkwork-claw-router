@@ -9,12 +9,12 @@ pub struct UsageLogsResponse {
     pub logs: Vec<UsageLogItem>,
 
     /// Page field on usage logs response.
-    pub page: i64,
+    pub page: String,
 
     /// Page size field on usage logs response.
     #[serde(rename = "pageSize")]
-    pub page_size: i64,
+    pub page_size: String,
 
     /// Total field on usage logs response.
-    pub total: i64,
+    pub total: String,
 }

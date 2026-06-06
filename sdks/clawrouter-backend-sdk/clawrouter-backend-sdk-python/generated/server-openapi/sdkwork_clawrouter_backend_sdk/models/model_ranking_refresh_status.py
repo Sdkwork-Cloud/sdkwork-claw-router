@@ -9,19 +9,19 @@ if TYPE_CHECKING:
 @dataclass
 class ModelRankingRefreshStatus:
     """Model ranking refresh status schema exposed by Claw Router."""
-    cache_max_age_seconds: int
+    cache_max_age_seconds: str
     generated_at: str
-    generated_count: int
+    generated_count: str
     latest_job: ModelRankingRefreshLatestJob
     next_refresh_at: str
-    organization_id: int
+    organization_id: str
     rank_scope: str
-    refresh_interval_seconds: int
+    refresh_interval_seconds: str
     snapshot_date: str
     snapshot_period: str
-    source_count: int
+    source_count: str
     source_tables: List[str]
     status: str
-    tenant_id: int
+    tenant_id: str
     window_end: str
     window_start: str

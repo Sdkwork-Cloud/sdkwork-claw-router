@@ -4,5 +4,5 @@ package types
 type RankingVendorOption struct {
 	Code string `json:"code"`
 	Label string `json:"label"`
-	ModelCount int `json:"modelCount"`
+	ModelCount string `json:"modelCount"`
 }

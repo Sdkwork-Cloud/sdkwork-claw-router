@@ -207,7 +207,7 @@ class ContentCommentsApi:
         self.replies = ContentCommentsRepliesApi(client)
 
 
-    def list(self, content_type: str, content_id: int, page: Optional[int] = None, page_size: Optional[int] = None) -> CommentsListResult:
+    def list(self, content_type: str, content_id: str, page: Optional[str] = None, page_size: Optional[str] = None) -> CommentsListResult:
         """List forum comments"""
         query = build_query_string([
             {'name': 'content_type', 'value': content_type, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -236,7 +236,7 @@ class ContentCommentsStatisticsApi:
         self._client = client
 
 
-    def list(self, content_type: str, content_id: int) -> CommentsStatisticsListResult:
+    def list(self, content_type: str, content_id: str) -> CommentsStatisticsListResult:
         """List forum comment statistics"""
         query = build_query_string([
             {'name': 'content_type', 'value': content_type, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -297,7 +297,7 @@ class ContentCommentsRepliesApi:
         self._client = client
 
 
-    def list(self, comment_id: str, page: Optional[int] = None, page_size: Optional[int] = None) -> CommentsRepliesListResult:
+    def list(self, comment_id: str, page: Optional[str] = None, page_size: Optional[str] = None) -> CommentsRepliesListResult:
         """List forum comment replies"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -326,7 +326,7 @@ class ContentFeedsApi:
         self.shares = ContentFeedsSharesApi(client)
 
 
-    def list(self, type: Optional[str] = None, content_type: Optional[str] = None, q: Optional[str] = None, author_id: Optional[int] = None, page: Optional[int] = None, page_size: Optional[int] = None) -> FeedsListResult:
+    def list(self, type: Optional[str] = None, content_type: Optional[str] = None, q: Optional[str] = None, author_id: Optional[str] = None, page: Optional[str] = None, page_size: Optional[str] = None) -> FeedsListResult:
         """List forum feeds"""
         query = build_query_string([
             {'name': 'type', 'value': type, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -357,7 +357,7 @@ class ContentFeedsCategoryApi:
         self._client = client
 
 
-    def retrieve(self, category_id: str, page: Optional[int] = None, page_size: Optional[int] = None) -> FeedsCategoryRetrieveResult:
+    def retrieve(self, category_id: str, page: Optional[str] = None, page_size: Optional[str] = None) -> FeedsCategoryRetrieveResult:
         """List category forum feeds"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -372,7 +372,7 @@ class ContentFeedsHotApi:
         self._client = client
 
 
-    def list(self, limit: Optional[int] = None) -> FeedsHotListResult:
+    def list(self, limit: Optional[str] = None) -> FeedsHotListResult:
         """List hot forum feeds"""
         query = build_query_string([
             {'name': 'limit', 'value': limit, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -386,7 +386,7 @@ class ContentFeedsMostLikedApi:
         self._client = client
 
 
-    def list(self, limit: Optional[int] = None) -> FeedsMostLikedListResult:
+    def list(self, limit: Optional[str] = None) -> FeedsMostLikedListResult:
         """List most liked forum feeds"""
         query = build_query_string([
             {'name': 'limit', 'value': limit, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -400,7 +400,7 @@ class ContentFeedsMostViewedApi:
         self._client = client
 
 
-    def list(self, limit: Optional[int] = None) -> FeedsMostViewedListResult:
+    def list(self, limit: Optional[str] = None) -> FeedsMostViewedListResult:
         """List most viewed forum feeds"""
         query = build_query_string([
             {'name': 'limit', 'value': limit, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -425,7 +425,7 @@ class ContentFeedsRecommendApi:
         self._client = client
 
 
-    def list(self, limit: Optional[int] = None) -> FeedsRecommendListResult:
+    def list(self, limit: Optional[str] = None) -> FeedsRecommendListResult:
         """List recommended forum feeds"""
         query = build_query_string([
             {'name': 'limit', 'value': limit, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -439,7 +439,7 @@ class ContentFeedsTopApi:
         self._client = client
 
 
-    def list(self, limit: Optional[int] = None) -> FeedsTopListResult:
+    def list(self, limit: Optional[str] = None) -> FeedsTopListResult:
         """List top forum feeds"""
         query = build_query_string([
             {'name': 'limit', 'value': limit, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -454,7 +454,7 @@ class ContentFeedsCollectionsApi:
         self.current = ContentFeedsCollectionsCurrentApi(client)
 
 
-    def create(self, id: str, folder_id: Optional[int] = None) -> FeedsCollectionsCreateResult:
+    def create(self, id: str, folder_id: Optional[str] = None) -> FeedsCollectionsCreateResult:
         """Collect forum feed"""
         query = build_query_string([
             {'name': 'folder_id', 'value': folder_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -533,7 +533,7 @@ class ContentUsersCurrentCommentsApi:
         self._client = client
 
 
-    def list(self, page: Optional[int] = None, page_size: Optional[int] = None) -> UsersCurrentCommentsListResult:
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None) -> UsersCurrentCommentsListResult:
         """List my forum comments"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -550,7 +550,7 @@ class ContentCoursesApi:
         self.overview = ContentCoursesOverviewApi(client)
 
 
-    def list(self, level: Optional[int] = None, category: Optional[str] = None, q: Optional[str] = None, page: Optional[int] = None, page_size: Optional[int] = None) -> CoursesListResult:
+    def list(self, level: Optional[str] = None, category: Optional[str] = None, q: Optional[str] = None, page: Optional[str] = None, page_size: Optional[str] = None) -> CoursesListResult:
         """List courses"""
         query = build_query_string([
             {'name': 'level', 'value': level, 'style': 'form', 'explode': True, 'allow_reserved': False},

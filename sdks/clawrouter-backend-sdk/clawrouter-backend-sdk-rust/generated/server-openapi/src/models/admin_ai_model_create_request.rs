@@ -40,7 +40,7 @@ pub struct AdminAiModelCreateRequest {
     /// Max output tokens field on admin ai model create request.
     #[serde(rename = "maxOutputTokens")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub max_output_tokens: Option<i64>,
+    pub max_output_tokens: Option<String>,
 
     /// Modalities field on admin ai model create request.
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -61,7 +61,7 @@ pub struct AdminAiModelCreateRequest {
     /// Release stage field on admin ai model create request.
     #[serde(rename = "releaseStage")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub release_stage: Option<i64>,
+    pub release_stage: Option<String>,
 
     /// Replacement model field on admin ai model create request.
     #[serde(rename = "replacementModel")]
@@ -71,12 +71,12 @@ pub struct AdminAiModelCreateRequest {
     /// Routing state field on admin ai model create request.
     #[serde(rename = "routingState")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub routing_state: Option<i64>,
+    pub routing_state: Option<String>,
 
     /// Shelf state field on admin ai model create request.
     #[serde(rename = "shelfState")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub shelf_state: Option<i64>,
+    pub shelf_state: Option<String>,
 
     /// Supported languages field on admin ai model create request.
     #[serde(rename = "supportedLanguages")]

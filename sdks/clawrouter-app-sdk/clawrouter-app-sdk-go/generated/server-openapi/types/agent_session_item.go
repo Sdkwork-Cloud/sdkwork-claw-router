@@ -12,17 +12,17 @@ type AgentSessionItem struct {
 	Id string `json:"id"`
 	LastActiveAt string `json:"lastActiveAt"`
 	LastRunId string `json:"lastRunId"`
-	LastStepId int `json:"lastStepId"`
+	LastStepId string `json:"lastStepId"`
 	MemorySpaceId string `json:"memorySpaceId"`
 	PermissionMode string `json:"permissionMode"`
-	RunCount int `json:"runCount"`
+	RunCount string `json:"runCount"`
 	Runtime string `json:"runtime"`
 	SandboxPolicy string `json:"sandboxPolicy"`
 	SessionKind string `json:"sessionKind"`
 	SourceSurface string `json:"sourceSurface"`
 	Status string `json:"status"`
-	StepCount int `json:"stepCount"`
+	StepCount string `json:"stepCount"`
 	Title string `json:"title"`
-	ToolCallCount int `json:"toolCallCount"`
+	ToolCallCount string `json:"toolCallCount"`
 	UpdatedAt string `json:"updatedAt"`
 }

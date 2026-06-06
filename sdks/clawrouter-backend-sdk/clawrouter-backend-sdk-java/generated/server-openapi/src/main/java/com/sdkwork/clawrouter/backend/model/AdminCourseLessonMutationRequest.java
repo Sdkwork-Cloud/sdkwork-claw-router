@@ -4,7 +4,7 @@ import java.util.Map;
 
 public class AdminCourseLessonMutationRequest {
     private String description;
-    private Integer durationSeconds;
+    private String durationSeconds;
     private String externalBvid;
     private Boolean freePreview;
     private String lessonNo;
@@ -22,11 +22,11 @@ public class AdminCourseLessonMutationRequest {
         this.description = description;
     }
 
-    public Integer getDurationSeconds() {
+    public String getDurationSeconds() {
         return this.durationSeconds;
     }
 
-    public void setDurationSeconds(Integer durationSeconds) {
+    public void setDurationSeconds(String durationSeconds) {
         this.durationSeconds = durationSeconds;
     }
 

@@ -14,8 +14,8 @@ pub struct ModelRankingHistoryEntry {
     pub model: String,
 
     /// Rank field on model ranking history entry.
-    pub rank: i64,
+    pub rank: String,
 
     /// Volume field on model ranking history entry.
-    pub volume: i64,
+    pub volume: String,
 }

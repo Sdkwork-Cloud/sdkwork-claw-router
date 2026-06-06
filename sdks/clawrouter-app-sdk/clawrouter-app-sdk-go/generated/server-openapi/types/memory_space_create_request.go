@@ -4,7 +4,7 @@ package types
 type MemorySpaceCreateRequest struct {
 	AutoExtractEnabled bool `json:"autoExtractEnabled"`
 	AutoRecallEnabled bool `json:"autoRecallEnabled"`
-	MaxInjectedTokens int `json:"maxInjectedTokens"`
+	MaxInjectedTokens string `json:"maxInjectedTokens"`
 	MemoryEnabled bool `json:"memoryEnabled"`
 	Metadata map[string]JsonValue `json:"metadata"`
 	OwnerId string `json:"ownerId"`

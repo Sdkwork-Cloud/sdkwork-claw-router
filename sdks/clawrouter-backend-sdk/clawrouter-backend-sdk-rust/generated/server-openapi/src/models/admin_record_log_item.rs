@@ -17,7 +17,7 @@ pub struct AdminRecordLogItem {
 
     /// Cache read tokens field on admin record log item.
     #[serde(rename = "cacheReadTokens")]
-    pub cache_read_tokens: i64,
+    pub cache_read_tokens: String,
 
     /// Cost field on admin record log item.
     pub cost: String,
@@ -43,14 +43,14 @@ pub struct AdminRecordLogItem {
 
     /// Http status field on admin record log item.
     #[serde(rename = "httpStatus")]
-    pub http_status: i64,
+    pub http_status: String,
 
     /// Id field on admin record log item.
     pub id: String,
 
     /// Input tokens field on admin record log item.
     #[serde(rename = "inputTokens")]
-    pub input_tokens: i64,
+    pub input_tokens: String,
 
     /// Ip field on admin record log item.
     pub ip: String,
@@ -67,7 +67,7 @@ pub struct AdminRecordLogItem {
 
     /// Output tokens field on admin record log item.
     #[serde(rename = "outputTokens")]
-    pub output_tokens: i64,
+    pub output_tokens: String,
 
     /// Path field on admin record log item.
     pub path: String,

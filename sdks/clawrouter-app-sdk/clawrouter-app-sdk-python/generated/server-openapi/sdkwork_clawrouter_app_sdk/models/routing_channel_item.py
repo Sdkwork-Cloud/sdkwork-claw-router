@@ -15,7 +15,7 @@ class RoutingChannelItem:
     balance: str
     base_url: str
     capabilities: List[str]
-    errors: int
+    errors: str
     id: str
     is_multimodal: bool
     latency: str
@@ -24,10 +24,10 @@ class RoutingChannelItem:
     protocol: str
     provider: str
     provider_code: str
-    rpm: int
+    rpm: str
     status: str
     vendor: str
-    weight: int
+    weight: str
     circuit_breaker_policy: Optional[RoutingCircuitBreakerPolicy] = None
     retry_policy: Optional[RoutingRetryPolicy] = None
-    timeout_ms: Optional[int] = None
+    timeout_ms: Optional[str] = None

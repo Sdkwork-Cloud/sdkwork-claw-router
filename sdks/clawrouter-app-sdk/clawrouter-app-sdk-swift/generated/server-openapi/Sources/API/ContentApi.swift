@@ -8,7 +8,7 @@ public class ContentApi {
     }
 
     /// List forum comments
-    public func commentsList(contentType: String, contentId: Int, page: Int? = nil, pageSize: Int? = nil) async throws -> CommentsListResult? {
+    public func commentsList(contentType: String, contentId: String, page: String? = nil, pageSize: String? = nil) async throws -> CommentsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "content_type", value: contentType, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "content_id", value: contentId, style: "form", explode: true, allowReserved: false, contentType: nil),
@@ -24,7 +24,7 @@ public class ContentApi {
     }
 
     /// List forum comment statistics
-    public func commentsStatisticsList(contentType: String, contentId: Int) async throws -> CommentsStatisticsListResult? {
+    public func commentsStatisticsList(contentType: String, contentId: String) async throws -> CommentsStatisticsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "content_type", value: contentType, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "content_id", value: contentId, style: "form", explode: true, allowReserved: false, contentType: nil)
@@ -63,7 +63,7 @@ public class ContentApi {
     }
 
     /// List forum comment replies
-    public func commentsRepliesList(commentId: String, page: Int? = nil, pageSize: Int? = nil) async throws -> CommentsRepliesListResult? {
+    public func commentsRepliesList(commentId: String, page: String? = nil, pageSize: String? = nil) async throws -> CommentsRepliesListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil)
@@ -77,7 +77,7 @@ public class ContentApi {
     }
 
     /// List forum feeds
-    public func feedsList(type: String? = nil, contentType: String? = nil, q: String? = nil, authorId: Int? = nil, page: Int? = nil, pageSize: Int? = nil) async throws -> FeedsListResult? {
+    public func feedsList(type: String? = nil, contentType: String? = nil, q: String? = nil, authorId: String? = nil, page: String? = nil, pageSize: String? = nil) async throws -> FeedsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "type", value: type, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "content_type", value: contentType, style: "form", explode: true, allowReserved: false, contentType: nil),
@@ -95,7 +95,7 @@ public class ContentApi {
     }
 
     /// List category forum feeds
-    public func feedsCategoryRetrieve(categoryId: String, page: Int? = nil, pageSize: Int? = nil) async throws -> FeedsCategoryRetrieveResult? {
+    public func feedsCategoryRetrieve(categoryId: String, page: String? = nil, pageSize: String? = nil) async throws -> FeedsCategoryRetrieveResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil)
@@ -104,7 +104,7 @@ public class ContentApi {
     }
 
     /// List hot forum feeds
-    public func feedsHotList(limit: Int? = nil) async throws -> FeedsHotListResult? {
+    public func feedsHotList(limit: String? = nil) async throws -> FeedsHotListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "limit", value: limit, style: "form", explode: true, allowReserved: false, contentType: nil)
         ])
@@ -112,7 +112,7 @@ public class ContentApi {
     }
 
     /// List most liked forum feeds
-    public func feedsMostLikedList(limit: Int? = nil) async throws -> FeedsMostLikedListResult? {
+    public func feedsMostLikedList(limit: String? = nil) async throws -> FeedsMostLikedListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "limit", value: limit, style: "form", explode: true, allowReserved: false, contentType: nil)
         ])
@@ -120,7 +120,7 @@ public class ContentApi {
     }
 
     /// List most viewed forum feeds
-    public func feedsMostViewedList(limit: Int? = nil) async throws -> FeedsMostViewedListResult? {
+    public func feedsMostViewedList(limit: String? = nil) async throws -> FeedsMostViewedListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "limit", value: limit, style: "form", explode: true, allowReserved: false, contentType: nil)
         ])
@@ -133,7 +133,7 @@ public class ContentApi {
     }
 
     /// List recommended forum feeds
-    public func feedsRecommendList(limit: Int? = nil) async throws -> FeedsRecommendListResult? {
+    public func feedsRecommendList(limit: String? = nil) async throws -> FeedsRecommendListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "limit", value: limit, style: "form", explode: true, allowReserved: false, contentType: nil)
         ])
@@ -141,7 +141,7 @@ public class ContentApi {
     }
 
     /// List top forum feeds
-    public func feedsTopList(limit: Int? = nil) async throws -> FeedsTopListResult? {
+    public func feedsTopList(limit: String? = nil) async throws -> FeedsTopListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "limit", value: limit, style: "form", explode: true, allowReserved: false, contentType: nil)
         ])
@@ -159,7 +159,7 @@ public class ContentApi {
     }
 
     /// Collect forum feed
-    public func feedsCollectionsCreate(id: String, folderId: Int? = nil) async throws -> FeedsCollectionsCreateResult? {
+    public func feedsCollectionsCreate(id: String, folderId: String? = nil) async throws -> FeedsCollectionsCreateResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "folder_id", value: folderId, style: "form", explode: true, allowReserved: false, contentType: nil)
         ])
@@ -192,7 +192,7 @@ public class ContentApi {
     }
 
     /// List my forum comments
-    public func usersCurrentCommentsList(page: Int? = nil, pageSize: Int? = nil) async throws -> UsersCurrentCommentsListResult? {
+    public func usersCurrentCommentsList(page: String? = nil, pageSize: String? = nil) async throws -> UsersCurrentCommentsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil)
@@ -201,7 +201,7 @@ public class ContentApi {
     }
 
     /// List courses
-    public func coursesList(level: Int? = nil, category: String? = nil, q: String? = nil, page: Int? = nil, pageSize: Int? = nil) async throws -> CoursesListResult? {
+    public func coursesList(level: String? = nil, category: String? = nil, q: String? = nil, page: String? = nil, pageSize: String? = nil) async throws -> CoursesListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "level", value: level, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "category", value: category, style: "form", explode: true, allowReserved: false, contentType: nil),

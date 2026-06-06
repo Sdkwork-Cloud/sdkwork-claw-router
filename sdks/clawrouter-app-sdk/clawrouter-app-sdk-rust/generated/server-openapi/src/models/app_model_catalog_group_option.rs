@@ -11,5 +11,5 @@ pub struct AppModelCatalogGroupOption {
 
     /// Model count field on app model catalog group option.
     #[serde(rename = "modelCount")]
-    pub model_count: i64,
+    pub model_count: String,
 }

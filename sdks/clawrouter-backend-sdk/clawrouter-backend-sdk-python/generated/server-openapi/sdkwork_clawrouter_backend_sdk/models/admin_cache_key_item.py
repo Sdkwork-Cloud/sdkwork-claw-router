@@ -10,4 +10,4 @@ class AdminCacheKeyItem:
     key: str
     namespace: str
     status: str
-    expires_in_seconds: Optional[int] = None
+    expires_in_seconds: Optional[str] = None

@@ -4,6 +4,6 @@ data class CommerceMembershipPlanMutationRequest(
     val benefits: List<CommerceMembershipBenefitMutationRequest>? = null,
     val code: String? = null,
     val name: String? = null,
-    val rank: Int? = null,
+    val rank: String? = null,
     val status: String? = null
 )

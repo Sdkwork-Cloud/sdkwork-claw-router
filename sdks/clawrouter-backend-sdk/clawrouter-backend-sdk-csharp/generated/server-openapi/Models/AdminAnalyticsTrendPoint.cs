@@ -10,6 +10,6 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public double? Requests { get; set; }
         public string? Time { get; set; }
         public double? Tokens { get; set; }
-        public int? Users { get; set; }
+        public string? Users { get; set; }
     }
 }

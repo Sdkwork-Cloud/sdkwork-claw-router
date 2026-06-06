@@ -21,7 +21,7 @@ class McpApi(private val client: HttpClient) {
     }
 
     /** List MCP servers */
-    suspend fun serversList(page: Int? = null, pageSize: Int? = null, q: String? = null, transport: String? = null, visibility: String? = null, status: String? = null, categoryId: String? = null): ServersListResult? {
+    suspend fun serversList(page: String? = null, pageSize: String? = null, q: String? = null, transport: String? = null, visibility: String? = null, status: String? = null, categoryId: String? = null): ServersListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null),

@@ -9,7 +9,7 @@ import com.sdkwork.clawrouter.app.http.HttpClient
 class ChatApi(private val client: HttpClient) {
 
     /** List product chat conversations */
-    suspend fun conversationsList(page: Int? = null, pageSize: Int? = null): ConversationsListResult? {
+    suspend fun conversationsList(page: String? = null, pageSize: String? = null): ConversationsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null)
@@ -37,7 +37,7 @@ class ChatApi(private val client: HttpClient) {
     }
 
     /** List product chat messages */
-    suspend fun conversationMessagesList(conversationId: String, limit: Int? = null, order: String? = null): ConversationMessagesListResult? {
+    suspend fun conversationMessagesList(conversationId: String, limit: String? = null, order: String? = null): ConversationMessagesListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("limit", limit, "form", true, false, null),
             QueryParameterSpec("order", order, "form", true, false, null)

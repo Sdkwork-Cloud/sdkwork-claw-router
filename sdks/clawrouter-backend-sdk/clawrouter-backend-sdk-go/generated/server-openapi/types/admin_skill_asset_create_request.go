@@ -7,7 +7,7 @@ type AdminSkillAssetCreateRequest struct {
 	Asset MediaResource `json:"asset"`
 	AssetType int `json:"assetType"`
 	DurationSeconds string `json:"durationSeconds"`
-	FileSize int `json:"fileSize"`
+	FileSize string `json:"fileSize"`
 	Height int `json:"height"`
 	MimeType string `json:"mimeType"`
 	PublishedAt string `json:"publishedAt"`

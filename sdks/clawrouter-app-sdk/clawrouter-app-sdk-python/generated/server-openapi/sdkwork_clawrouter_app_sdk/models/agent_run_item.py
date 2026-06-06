@@ -14,18 +14,18 @@ class AgentRunItem:
     request_id: str
     source_surface: str
     status: str
-    total_steps: int
-    cached_tokens: Optional[int] = None
+    total_steps: str
+    cached_tokens: Optional[str] = None
     completed_at: Optional[str] = None
     error_message_masked: Optional[str] = None
     input_message: Optional[str] = None
-    input_tokens: Optional[int] = None
+    input_tokens: Optional[str] = None
     memory_space_id: Optional[str] = None
     model: Optional[str] = None
     output_message: Optional[str] = None
-    output_tokens: Optional[int] = None
+    output_tokens: Optional[str] = None
     runtime: Optional[str] = None
     session_id: Optional[str] = None
     started_at: Optional[str] = None
-    total_tokens: Optional[int] = None
+    total_tokens: Optional[str] = None
     trace_id: Optional[str] = None

@@ -1,8 +1,8 @@
 package com.sdkwork.clawrouter.app
 
 data class CourseOverviewStats(
-    val totalCategories: Int? = null,
-    val totalCourses: Int? = null,
-    val totalLessons: Int? = null,
-    val totalStudents: Int? = null
+    val totalCategories: String? = null,
+    val totalCourses: String? = null,
+    val totalLessons: String? = null,
+    val totalStudents: String? = null
 )

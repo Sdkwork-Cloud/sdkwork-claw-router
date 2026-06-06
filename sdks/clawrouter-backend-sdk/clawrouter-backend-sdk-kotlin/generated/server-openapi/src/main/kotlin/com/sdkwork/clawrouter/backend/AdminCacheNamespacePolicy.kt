@@ -5,11 +5,11 @@ data class AdminCacheNamespacePolicy(
     val enabled: Boolean? = null,
     val failureMode: String? = null,
     val instanceName: String? = null,
-    val jitterPercent: Int? = null,
+    val jitterPercent: String? = null,
     val namespace: String? = null,
     val scope: String? = null,
     val sensitivity: String? = null,
-    val staleWhileRevalidateSeconds: Int? = null,
+    val staleWhileRevalidateSeconds: String? = null,
     val tags: List<String>? = null,
-    val ttlSeconds: Int? = null
+    val ttlSeconds: String? = null
 )

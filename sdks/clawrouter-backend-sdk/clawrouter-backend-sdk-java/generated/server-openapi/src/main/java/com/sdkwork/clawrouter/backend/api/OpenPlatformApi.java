@@ -14,7 +14,7 @@ public class OpenPlatformApi {
     }
 
     /** List open platform accounts */
-    public AccountsListResult accountsList(String provider, String type, String status, Integer page, Integer pageSize) throws Exception {
+    public AccountsListResult accountsList(String provider, String type, String status, String page, String pageSize) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("provider", provider, "form", true, false, null),
             new QueryParameterSpec("type", type, "form", true, false, null),

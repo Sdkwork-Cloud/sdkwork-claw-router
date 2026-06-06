@@ -21,7 +21,7 @@ class MemoryApi {
   }
 
   /// List memory spaces
-  Future<SpacesListResult?> spacesList([int? page, int? pageSize]) async {
+  Future<SpacesListResult?> spacesList([String? page, String? pageSize]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null)
@@ -59,7 +59,7 @@ class MemoryApi {
   }
 
   /// List memory entries
-  Future<EntriesListResult?> entriesList(String spaceId, [int? page, int? pageSize]) async {
+  Future<EntriesListResult?> entriesList(String spaceId, [String? page, String? pageSize]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null)

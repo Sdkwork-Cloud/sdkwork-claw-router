@@ -18,7 +18,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// List admin prompts
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.DefinitionsListResult?> DefinitionsListAsync(int? page = null, int? pageSize = null, string? q = null, string? promptType = null, string? visibility = null, string? status = null, string? categoryId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.DefinitionsListResult?> DefinitionsListAsync(string? page = null, string? pageSize = null, string? q = null, string? promptType = null, string? visibility = null, string? status = null, string? categoryId = null)
         {
             var queryString = BuildQueryString(new[]
             {

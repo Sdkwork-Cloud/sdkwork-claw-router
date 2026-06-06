@@ -45,7 +45,7 @@ impl AiApi {
     }
 
     /// List model rankings
-    pub async fn model_rankings_list(&self, rank_scope: Option<&str>, vendor_code: Option<&str>, modality: Option<&str>, q: Option<&str>, limit: Option<i64>) -> Result<ModelRankingsListResult, SdkworkError> {
+    pub async fn model_rankings_list(&self, rank_scope: Option<&str>, vendor_code: Option<&str>, modality: Option<&str>, q: Option<&str>, limit: Option<&str>) -> Result<ModelRankingsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("rank_scope", rank_scope, "form", true, false, None),
             QueryParameterSpec::new("vendor_code", vendor_code, "form", true, false, None),
@@ -64,7 +64,7 @@ impl AiApi {
     }
 
     /// List models
-    pub async fn models_list(&self, billing_meter: Option<&str>, vendor_code: Option<&str>, vendor_codes: Option<&[String]>, modalities: Option<&[String]>, capabilities: Option<&[String]>, categories: Option<&[String]>, groups: Option<&[String]>, q: Option<&str>, limit: Option<i64>) -> Result<ModelsListResult, SdkworkError> {
+    pub async fn models_list(&self, billing_meter: Option<&str>, vendor_code: Option<&str>, vendor_codes: Option<&[String]>, modalities: Option<&[String]>, capabilities: Option<&[String]>, categories: Option<&[String]>, groups: Option<&[String]>, q: Option<&str>, limit: Option<&str>) -> Result<ModelsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("billing_meter", billing_meter, "form", true, false, None),
             QueryParameterSpec::new("vendor_code", vendor_code, "form", true, false, None),
@@ -105,7 +105,7 @@ impl AiApi {
     }
 
     /// List logs
-    pub async fn usage_logs_list(&self, page: Option<i64>, page_size: Option<i64>, q: Option<&str>, status: Option<&str>, start_time: Option<&str>, end_time: Option<&str>) -> Result<UsageLogsListResult, SdkworkError> {
+    pub async fn usage_logs_list(&self, page: Option<&str>, page_size: Option<&str>, q: Option<&str>, status: Option<&str>, start_time: Option<&str>, end_time: Option<&str>) -> Result<UsageLogsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),

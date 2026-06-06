@@ -22,9 +22,9 @@ pub struct AdminMcpHealthCheckResponse {
     /// Latency ms field on admin mcp health check response.
     #[serde(rename = "latencyMs")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub latency_ms: Option<i64>,
+    pub latency_ms: Option<String>,
 
     /// Server id field on admin mcp health check response.
     #[serde(rename = "serverId")]
-    pub server_id: i64,
+    pub server_id: String,
 }

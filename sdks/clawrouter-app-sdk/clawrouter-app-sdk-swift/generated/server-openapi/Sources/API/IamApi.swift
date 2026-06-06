@@ -33,11 +33,6 @@ public class IamApi {
         return try await client.patch(ApiPaths.appPath("/iam/api_keys/\(serializePathParameter(apiKeyId, PathParameterSpec(name: "apiKeyId", style: "simple", explode: false)))"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: ApiKeysUpdateResult.self)
     }
 
-    /// Retrieve current IAM user
-    public func usersCurrentRetrieve() async throws -> UsersCurrentRetrieveResult? {
-        return try await client.get(ApiPaths.appPath("/iam/users/current"), responseType: UsersCurrentRetrieveResult.self)
-    }
-
     /// List settings
     public func usersSettingsRetrieve() async throws -> UsersSettingsRetrieveResult? {
         return try await client.get(ApiPaths.appPath("/iam/users/settings"), responseType: UsersSettingsRetrieveResult.self)

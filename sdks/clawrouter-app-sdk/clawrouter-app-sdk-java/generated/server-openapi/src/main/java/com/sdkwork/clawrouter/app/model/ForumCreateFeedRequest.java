@@ -3,7 +3,7 @@ package com.sdkwork.clawrouter.app.model;
 import java.util.List;
 
 public class ForumCreateFeedRequest {
-    private Integer categoryId;
+    private String categoryId;
     private String content;
     private List<MediaResource> images;
     private String source;
@@ -11,11 +11,11 @@ public class ForumCreateFeedRequest {
     private List<String> tags;
     private String title;
 
-    public Integer getCategoryId() {
+    public String getCategoryId() {
         return this.categoryId;
     }
 
-    public void setCategoryId(Integer categoryId) {
+    public void setCategoryId(String categoryId) {
         this.categoryId = categoryId;
     }
 

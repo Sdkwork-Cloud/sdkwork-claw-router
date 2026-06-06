@@ -24,7 +24,7 @@ public class MessagingApi {
     }
 
     /// Messaging provider accounts list
-    public func providerAccountsList(page: Int? = nil, pageSize: Int? = nil, q: String? = nil, status: String? = nil, channel: String? = nil, providerCode: String? = nil) async throws -> ProviderAccountsListResult? {
+    public func providerAccountsList(page: String? = nil, pageSize: String? = nil, q: String? = nil, status: String? = nil, channel: String? = nil, providerCode: String? = nil) async throws -> ProviderAccountsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
@@ -48,7 +48,7 @@ public class MessagingApi {
     }
 
     /// Messaging rate limit buckets list
-    public func rateLimitBucketsList(page: Int? = nil, pageSize: Int? = nil, sceneCode: String? = nil, channel: String? = nil, targetHash: String? = nil, ipHash: String? = nil, deviceHash: String? = nil) async throws -> RateLimitBucketsListResult? {
+    public func rateLimitBucketsList(page: String? = nil, pageSize: String? = nil, sceneCode: String? = nil, channel: String? = nil, targetHash: String? = nil, ipHash: String? = nil, deviceHash: String? = nil) async throws -> RateLimitBucketsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
@@ -62,7 +62,7 @@ public class MessagingApi {
     }
 
     /// Messaging route rules list
-    public func routeRulesList(page: Int? = nil, pageSize: Int? = nil, q: String? = nil, status: String? = nil, channel: String? = nil, providerCode: String? = nil) async throws -> RouteRulesListResult? {
+    public func routeRulesList(page: String? = nil, pageSize: String? = nil, q: String? = nil, status: String? = nil, channel: String? = nil, providerCode: String? = nil) async throws -> RouteRulesListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
@@ -86,7 +86,7 @@ public class MessagingApi {
     }
 
     /// Messaging send requests list
-    public func sendRequestsList(page: Int? = nil, pageSize: Int? = nil, status: String? = nil, channel: String? = nil, sceneCode: String? = nil, providerCode: String? = nil, targetHash: String? = nil) async throws -> SendRequestsListResult? {
+    public func sendRequestsList(page: String? = nil, pageSize: String? = nil, status: String? = nil, channel: String? = nil, sceneCode: String? = nil, providerCode: String? = nil, targetHash: String? = nil) async throws -> SendRequestsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
@@ -100,7 +100,7 @@ public class MessagingApi {
     }
 
     /// Messaging sender identities list
-    public func senderIdentitiesList(page: Int? = nil, pageSize: Int? = nil, q: String? = nil, status: String? = nil, channel: String? = nil, providerCode: String? = nil) async throws -> SenderIdentitiesListResult? {
+    public func senderIdentitiesList(page: String? = nil, pageSize: String? = nil, q: String? = nil, status: String? = nil, channel: String? = nil, providerCode: String? = nil) async throws -> SenderIdentitiesListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
@@ -124,7 +124,7 @@ public class MessagingApi {
     }
 
     /// Messaging suppressions list
-    public func suppressionsList(page: Int? = nil, pageSize: Int? = nil, status: String? = nil, channel: String? = nil, targetHash: String? = nil, reasonCode: String? = nil) async throws -> SuppressionsListResult? {
+    public func suppressionsList(page: String? = nil, pageSize: String? = nil, status: String? = nil, channel: String? = nil, targetHash: String? = nil, reasonCode: String? = nil) async throws -> SuppressionsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
@@ -159,7 +159,7 @@ public class MessagingApi {
     }
 
     /// Messaging templates list
-    public func templatesList(page: Int? = nil, pageSize: Int? = nil, q: String? = nil, status: String? = nil, channel: String? = nil, providerCode: String? = nil) async throws -> TemplatesListResult? {
+    public func templatesList(page: String? = nil, pageSize: String? = nil, q: String? = nil, status: String? = nil, channel: String? = nil, providerCode: String? = nil) async throws -> TemplatesListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
@@ -188,7 +188,7 @@ public class MessagingApi {
     }
 
     /// Verification policies list
-    public func verificationPoliciesList(page: Int? = nil, pageSize: Int? = nil, q: String? = nil, status: String? = nil, channel: String? = nil, providerCode: String? = nil) async throws -> VerificationPoliciesListResult? {
+    public func verificationPoliciesList(page: String? = nil, pageSize: String? = nil, q: String? = nil, status: String? = nil, channel: String? = nil, providerCode: String? = nil) async throws -> VerificationPoliciesListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),

@@ -10,5 +10,5 @@ class AdminReferralStatItem:
     id: str
     inviter: str
     link: str
-    total_invited: int
+    total_invited: str
     total_revenue: str

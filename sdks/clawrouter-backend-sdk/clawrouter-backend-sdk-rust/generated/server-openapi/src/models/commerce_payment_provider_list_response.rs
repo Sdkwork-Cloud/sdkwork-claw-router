@@ -9,12 +9,12 @@ pub struct CommercePaymentProviderListResponse {
     pub items: Vec<CommercePaymentProviderItem>,
 
     /// Page field on commerce payment provider list response.
-    pub page: i64,
+    pub page: String,
 
     /// Page size field on commerce payment provider list response.
     #[serde(rename = "pageSize")]
-    pub page_size: i64,
+    pub page_size: String,
 
     /// Total field on commerce payment provider list response.
-    pub total: i64,
+    pub total: String,
 }

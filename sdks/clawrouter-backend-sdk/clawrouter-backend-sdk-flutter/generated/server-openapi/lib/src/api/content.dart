@@ -50,7 +50,7 @@ class ContentApi {
   }
 
   /// Admin Course Applications List
-  Future<CourseApplicationsListResult?> courseApplicationsList([int? page, int? pageSize, String? q, String? status]) async {
+  Future<CourseApplicationsListResult?> courseApplicationsList([String? page, String? pageSize, String? q, String? status]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
@@ -113,7 +113,7 @@ class ContentApi {
   }
 
   /// Admin Courses List
-  Future<CoursesListResult?> coursesList([int? page, int? pageSize, String? q, String? status]) async {
+  Future<CoursesListResult?> coursesList([String? page, String? pageSize, String? q, String? status]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
@@ -138,7 +138,7 @@ class ContentApi {
   }
 
   /// Admin Course Comments List
-  Future<CourseCommentsListResult?> courseCommentsList([int? page, int? pageSize, String? q, String? status]) async {
+  Future<CourseCommentsListResult?> courseCommentsList([String? page, String? pageSize, String? q, String? status]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
@@ -172,7 +172,7 @@ class ContentApi {
   }
 
   /// Admin Course Engagement List
-  Future<CourseEngagementListResult?> courseEngagementList([int? page, int? pageSize, String? q, String? status]) async {
+  Future<CourseEngagementListResult?> courseEngagementList([String? page, String? pageSize, String? q, String? status]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
@@ -206,7 +206,7 @@ class ContentApi {
   }
 
   /// Admin Course Lessons List
-  Future<CoursesLessonsListResult?> coursesLessonsList(String courseId, [int? page, int? pageSize, String? q, String? status]) async {
+  Future<CoursesLessonsListResult?> coursesLessonsList(String courseId, [String? page, String? pageSize, String? q, String? status]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
@@ -231,7 +231,7 @@ class ContentApi {
   }
 
   /// Admin Course Relations List
-  Future<CoursesRelationsListResult?> coursesRelationsList(String courseId, [int? page, int? pageSize, String? q, String? status]) async {
+  Future<CoursesRelationsListResult?> coursesRelationsList(String courseId, [String? page, String? pageSize, String? q, String? status]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
@@ -256,7 +256,7 @@ class ContentApi {
   }
 
   /// Admin Course Sections List
-  Future<CoursesSectionsListResult?> coursesSectionsList(String courseId, [int? page, int? pageSize, String? q, String? status]) async {
+  Future<CoursesSectionsListResult?> coursesSectionsList(String courseId, [String? page, String? pageSize, String? q, String? status]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null),

@@ -55,15 +55,6 @@ class IamApi {
     })();
   }
 
-  /// Retrieve current IAM user
-  Future<UsersCurrentRetrieveResult?> usersCurrentRetrieve() async {
-    final response = await _client.get(ApiPaths.appPath('/iam/users/current'));
-    return (() {
-      final map = sdkworkResponseAsMap(response);
-      return map == null ? null : UsersCurrentRetrieveResult.fromJson(map);
-    })();
-  }
-
   /// List settings
   Future<UsersSettingsRetrieveResult?> usersSettingsRetrieve() async {
     final response = await _client.get(ApiPaths.appPath('/iam/users/settings'));

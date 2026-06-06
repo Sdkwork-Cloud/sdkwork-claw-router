@@ -9,7 +9,7 @@ data class AdminAgentItem(
     val description: String? = null,
     val id: String? = null,
     val name: String? = null,
-    val ownerUserId: Int? = null,
+    val ownerUserId: String? = null,
     val status: String? = null,
     val templateSource: String? = null,
     val updatedAt: String? = null,

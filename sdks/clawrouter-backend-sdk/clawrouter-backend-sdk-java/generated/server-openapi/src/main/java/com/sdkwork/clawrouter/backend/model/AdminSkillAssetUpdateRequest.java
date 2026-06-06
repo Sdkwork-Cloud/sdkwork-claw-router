@@ -7,7 +7,7 @@ public class AdminSkillAssetUpdateRequest {
     private MediaResource asset;
     private Integer assetType;
     private String durationSeconds;
-    private Integer fileSize;
+    private String fileSize;
     private Integer height;
     private String mimeType;
     private String publishedAt;
@@ -57,11 +57,11 @@ public class AdminSkillAssetUpdateRequest {
         this.durationSeconds = durationSeconds;
     }
 
-    public Integer getFileSize() {
+    public String getFileSize() {
         return this.fileSize;
     }
 
-    public void setFileSize(Integer fileSize) {
+    public void setFileSize(String fileSize) {
         this.fileSize = fileSize;
     }
 

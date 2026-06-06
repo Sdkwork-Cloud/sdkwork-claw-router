@@ -6,9 +6,9 @@ public class RuntimeInvocationCompleteRequest {
     private String errorCode;
     private String errorMessageMasked;
     private String errorType;
-    private Integer exitCode;
+    private String exitCode;
     private String finishReason;
-    private Integer latencyMs;
+    private String latencyMs;
     private Map<String, String> metadata;
     private String providerConversationId;
     private String providerResponseId;
@@ -16,7 +16,7 @@ public class RuntimeInvocationCompleteRequest {
     private String providerStepId;
     private Map<String, String> responseJson;
     private String status;
-    private Integer ttftMs;
+    private String ttftMs;
     private UsageSnapshot usageJson;
 
     public String getErrorCode() {
@@ -43,11 +43,11 @@ public class RuntimeInvocationCompleteRequest {
         this.errorType = errorType;
     }
 
-    public Integer getExitCode() {
+    public String getExitCode() {
         return this.exitCode;
     }
 
-    public void setExitCode(Integer exitCode) {
+    public void setExitCode(String exitCode) {
         this.exitCode = exitCode;
     }
 
@@ -59,11 +59,11 @@ public class RuntimeInvocationCompleteRequest {
         this.finishReason = finishReason;
     }
 
-    public Integer getLatencyMs() {
+    public String getLatencyMs() {
         return this.latencyMs;
     }
 
-    public void setLatencyMs(Integer latencyMs) {
+    public void setLatencyMs(String latencyMs) {
         this.latencyMs = latencyMs;
     }
 
@@ -123,11 +123,11 @@ public class RuntimeInvocationCompleteRequest {
         this.status = status;
     }
 
-    public Integer getTtftMs() {
+    public String getTtftMs() {
         return this.ttftMs;
     }
 
-    public void setTtftMs(Integer ttftMs) {
+    public void setTtftMs(String ttftMs) {
         this.ttftMs = ttftMs;
     }
 

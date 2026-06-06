@@ -22,19 +22,8 @@ public class SystemApi {
         return client.convertValue(raw, new TypeReference<PromotionsBudgetLedgerEntriesListResult>() {});
     }
 
-    /** Promotion Coupon Codes List */
-    public PromotionsCodesListResult promotionsCodesList(Integer page, Integer pageSize, String status) throws Exception {
-        String query = buildQueryString(List.of(
-            new QueryParameterSpec("page", page, "form", true, false, null),
-            new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
-            new QueryParameterSpec("status", status, "form", true, false, null)
-        ));
-        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/promotions/codes"), query));
-        return client.convertValue(raw, new TypeReference<PromotionsCodesListResult>() {});
-    }
-
     /** Promotion Coupon Code Redemptions List */
-    public PromotionsCodesRedemptionsListResult promotionsCodesRedemptionsList(Integer page, Integer pageSize, String codeStatus) throws Exception {
+    public PromotionsCodesRedemptionsListResult promotionsCodesRedemptionsList(String page, String pageSize, String codeStatus) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -51,37 +40,6 @@ public class SystemApi {
         ));
         Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/promotions/coupon_ledger_entries"), query));
         return client.convertValue(raw, new TypeReference<PromotionsCouponLedgerEntriesListResult>() {});
-    }
-
-    /** Promotion Coupon Stocks List */
-    public PromotionsCouponStocksListResult promotionsCouponStocksList(Integer page, Integer pageSize, String status) throws Exception {
-        String query = buildQueryString(List.of(
-            new QueryParameterSpec("page", page, "form", true, false, null),
-            new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
-            new QueryParameterSpec("status", status, "form", true, false, null)
-        ));
-        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/promotions/coupon_stocks"), query));
-        return client.convertValue(raw, new TypeReference<PromotionsCouponStocksListResult>() {});
-    }
-
-    /** Promotion Discount Allocations List */
-    public PromotionsDiscountAllocationsListResult promotionsDiscountAllocationsList(String applicationId) throws Exception {
-        String query = buildQueryString(List.of(
-            new QueryParameterSpec("application_id", applicationId, "form", true, false, null)
-        ));
-        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/promotions/discount_allocations"), query));
-        return client.convertValue(raw, new TypeReference<PromotionsDiscountAllocationsListResult>() {});
-    }
-
-    /** Promotion Discount Applications List */
-    public PromotionsDiscountApplicationsListResult promotionsDiscountApplicationsList(Integer page, Integer pageSize, String status) throws Exception {
-        String query = buildQueryString(List.of(
-            new QueryParameterSpec("page", page, "form", true, false, null),
-            new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
-            new QueryParameterSpec("status", status, "form", true, false, null)
-        ));
-        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/promotions/discount_applications"), query));
-        return client.convertValue(raw, new TypeReference<PromotionsDiscountApplicationsListResult>() {});
     }
 
     /** Promotion Events List */
@@ -102,30 +60,8 @@ public class SystemApi {
         return client.convertValue(raw, new TypeReference<PromotionsExternalBindingsListResult>() {});
     }
 
-    /** Promotion Offers List */
-    public PromotionsOffersManagementListResult promotionsOffersManagementList(Integer page, Integer pageSize, String status) throws Exception {
-        String query = buildQueryString(List.of(
-            new QueryParameterSpec("page", page, "form", true, false, null),
-            new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
-            new QueryParameterSpec("status", status, "form", true, false, null)
-        ));
-        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/promotions/offers"), query));
-        return client.convertValue(raw, new TypeReference<PromotionsOffersManagementListResult>() {});
-    }
-
-    /** Promotion User Coupons Management List */
-    public PromotionsUserCouponsManagementListResult promotionsUserCouponsManagementList(Integer page, Integer pageSize, String status) throws Exception {
-        String query = buildQueryString(List.of(
-            new QueryParameterSpec("page", page, "form", true, false, null),
-            new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
-            new QueryParameterSpec("status", status, "form", true, false, null)
-        ));
-        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/promotions/user_coupons"), query));
-        return client.convertValue(raw, new TypeReference<PromotionsUserCouponsManagementListResult>() {});
-    }
-
     /** List overview */
-    public AnalyticsAdminOverviewRetrieveResult analyticsAdminOverviewRetrieve(String timeRange, String startTime, String endTime, Integer limit) throws Exception {
+    public AnalyticsAdminOverviewRetrieveResult analyticsAdminOverviewRetrieve(String timeRange, String startTime, String endTime, String limit) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("time_range", timeRange, "form", true, false, null),
             new QueryParameterSpec("start_time", startTime, "form", true, false, null),
@@ -167,7 +103,7 @@ public class SystemApi {
     }
 
     /** List runtime cache keys in a namespace */
-    public CacheNamespacesKeysListResult cacheNamespacesKeysList(String namespace, Integer limit, String cursor) throws Exception {
+    public CacheNamespacesKeysListResult cacheNamespacesKeysList(String namespace, String limit, String cursor) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("limit", limit, "form", true, false, null),
             new QueryParameterSpec("cursor", cursor, "form", true, false, null)
@@ -291,7 +227,7 @@ public class SystemApi {
     }
 
     /** List logs */
-    public RecordsListResult recordsList(Integer page, Integer pageSize, String user, String token, String model) throws Exception {
+    public RecordsListResult recordsList(String page, String pageSize, String user, String token, String model) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null),

@@ -257,7 +257,7 @@ class MemoryEntriesApi:
         """Retrieve memory entry"""
         return self._client.get(f"/app/v3/api/memory/entries/{serialize_path_parameter(entry_id, {'name': 'entryId', 'style': 'simple', 'explode': False})}")
 
-    def list(self, space_id: str, page: Optional[int] = None, page_size: Optional[int] = None) -> EntriesListResult:
+    def list(self, space_id: str, page: Optional[str] = None, page_size: Optional[str] = None) -> EntriesListResult:
         """List memory entries"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -282,7 +282,7 @@ class MemorySpacesApi:
         self._client = client
 
 
-    def list(self, page: Optional[int] = None, page_size: Optional[int] = None) -> SpacesListResult:
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None) -> SpacesListResult:
         """List memory spaces"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},

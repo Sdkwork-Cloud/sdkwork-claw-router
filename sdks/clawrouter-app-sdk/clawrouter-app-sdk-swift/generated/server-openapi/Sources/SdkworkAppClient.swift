@@ -3,56 +3,50 @@ import SDKworkCommon
 
 public class SdkworkAppClient {
     private let httpClient: HttpClient
-    public let commerce: CommerceApi
     public let agents: AgentsApi
     public let ai: AiApi
-    public let auth: AuthApi
     public let chat: ChatApi
     public let content: ContentApi
     public let ecosystem: EcosystemApi
     public let iam: IamApi
     public let memory: MemoryApi
     public let notification: NotificationApi
-    public let openPlatform: OpenPlatformApi
     public let platform: PlatformApi
     public let system: SystemApi
+    public let commerce: CommerceApi
     public let runtime: RuntimeApi
     public let sdkReference: SdkReferenceApi
 
     public init(baseURL: String) {
         self.httpClient = HttpClient(baseURL: baseURL)
-        self.commerce = CommerceApi(client: httpClient)
         self.agents = AgentsApi(client: httpClient)
         self.ai = AiApi(client: httpClient)
-        self.auth = AuthApi(client: httpClient)
         self.chat = ChatApi(client: httpClient)
         self.content = ContentApi(client: httpClient)
         self.ecosystem = EcosystemApi(client: httpClient)
         self.iam = IamApi(client: httpClient)
         self.memory = MemoryApi(client: httpClient)
         self.notification = NotificationApi(client: httpClient)
-        self.openPlatform = OpenPlatformApi(client: httpClient)
         self.platform = PlatformApi(client: httpClient)
         self.system = SystemApi(client: httpClient)
+        self.commerce = CommerceApi(client: httpClient)
         self.runtime = RuntimeApi(client: httpClient)
         self.sdkReference = SdkReferenceApi(client: httpClient)
     }
 
     public init(config: SdkConfig) {
         self.httpClient = HttpClient(config: config)
-        self.commerce = CommerceApi(client: httpClient)
         self.agents = AgentsApi(client: httpClient)
         self.ai = AiApi(client: httpClient)
-        self.auth = AuthApi(client: httpClient)
         self.chat = ChatApi(client: httpClient)
         self.content = ContentApi(client: httpClient)
         self.ecosystem = EcosystemApi(client: httpClient)
         self.iam = IamApi(client: httpClient)
         self.memory = MemoryApi(client: httpClient)
         self.notification = NotificationApi(client: httpClient)
-        self.openPlatform = OpenPlatformApi(client: httpClient)
         self.platform = PlatformApi(client: httpClient)
         self.system = SystemApi(client: httpClient)
+        self.commerce = CommerceApi(client: httpClient)
         self.runtime = RuntimeApi(client: httpClient)
         self.sdkReference = SdkReferenceApi(client: httpClient)
     }

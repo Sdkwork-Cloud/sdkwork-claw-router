@@ -6,6 +6,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class AdminChannelGroupChannelBindingItem
     {
+        public List<string>? ApiScope { get; set; }
         public List<string>? Capabilities { get; set; }
         public string? ChannelCode { get; set; }
         public string? ChannelGroupId { get; set; }
@@ -13,11 +14,10 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? ChannelName { get; set; }
         public string? HealthStatus { get; set; }
         public string? Id { get; set; }
-        public List<string>? ModelScope { get; set; }
-        public List<string>? Models { get; set; }
         public int? Priority { get; set; }
         public string? ProviderCode { get; set; }
         public string? ProviderName { get; set; }
+        public List<string>? ResourceCodes { get; set; }
         public string? Status { get; set; }
         public int? Weight { get; set; }
     }

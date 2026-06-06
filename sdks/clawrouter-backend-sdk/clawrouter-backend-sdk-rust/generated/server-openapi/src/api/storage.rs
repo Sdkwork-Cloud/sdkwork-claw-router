@@ -17,7 +17,7 @@ impl StorageApi {
     }
 
     /// List storage buckets
-    pub async fn oss_buckets_list(&self, cursor: Option<&str>, limit: Option<i64>, status: Option<&str>) -> Result<OssBucketsListResult, SdkworkError> {
+    pub async fn oss_buckets_list(&self, cursor: Option<&str>, limit: Option<&str>, status: Option<&str>) -> Result<OssBucketsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("cursor", cursor, "form", true, false, None),
             QueryParameterSpec::new("limit", limit, "form", true, false, None),
@@ -61,7 +61,7 @@ impl StorageApi {
     }
 
     /// List storage garbage collection jobs
-    pub async fn oss_gc_jobs_list(&self, cursor: Option<&str>, limit: Option<i64>, status: Option<&str>) -> Result<OssGcJobsListResult, SdkworkError> {
+    pub async fn oss_gc_jobs_list(&self, cursor: Option<&str>, limit: Option<&str>, status: Option<&str>) -> Result<OssGcJobsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("cursor", cursor, "form", true, false, None),
             QueryParameterSpec::new("limit", limit, "form", true, false, None),
@@ -132,7 +132,7 @@ impl StorageApi {
     }
 
     /// List storage reconciliation runs
-    pub async fn oss_reconciliation_runs_list(&self, cursor: Option<&str>, limit: Option<i64>, run_type: Option<&str>, status: Option<&str>) -> Result<OssReconciliationRunsListResult, SdkworkError> {
+    pub async fn oss_reconciliation_runs_list(&self, cursor: Option<&str>, limit: Option<&str>, run_type: Option<&str>, status: Option<&str>) -> Result<OssReconciliationRunsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("cursor", cursor, "form", true, false, None),
             QueryParameterSpec::new("limit", limit, "form", true, false, None),
@@ -156,7 +156,7 @@ impl StorageApi {
     }
 
     /// List storage usage counters
-    pub async fn oss_usage_list(&self, cursor: Option<&str>, limit: Option<i64>, scope_type: Option<&str>, scope_id: Option<&str>) -> Result<OssUsageListResult, SdkworkError> {
+    pub async fn oss_usage_list(&self, cursor: Option<&str>, limit: Option<&str>, scope_type: Option<&str>, scope_id: Option<&str>) -> Result<OssUsageListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("cursor", cursor, "form", true, false, None),
             QueryParameterSpec::new("limit", limit, "form", true, false, None),
@@ -168,7 +168,7 @@ impl StorageApi {
     }
 
     /// List storage usage ledger
-    pub async fn oss_usage_ledger_list(&self, cursor: Option<&str>, limit: Option<i64>, scope_type: Option<&str>, scope_id: Option<&str>) -> Result<OssUsageLedgerListResult, SdkworkError> {
+    pub async fn oss_usage_ledger_list(&self, cursor: Option<&str>, limit: Option<&str>, scope_type: Option<&str>, scope_id: Option<&str>) -> Result<OssUsageLedgerListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("cursor", cursor, "form", true, false, None),
             QueryParameterSpec::new("limit", limit, "form", true, false, None),
@@ -180,7 +180,7 @@ impl StorageApi {
     }
 
     /// List storage usage snapshots
-    pub async fn oss_usage_snapshots_list(&self, cursor: Option<&str>, limit: Option<i64>, scope_type: Option<&str>, scope_id: Option<&str>) -> Result<OssUsageSnapshotsListResult, SdkworkError> {
+    pub async fn oss_usage_snapshots_list(&self, cursor: Option<&str>, limit: Option<&str>, scope_type: Option<&str>, scope_id: Option<&str>) -> Result<OssUsageSnapshotsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("cursor", cursor, "form", true, false, None),
             QueryParameterSpec::new("limit", limit, "form", true, false, None),

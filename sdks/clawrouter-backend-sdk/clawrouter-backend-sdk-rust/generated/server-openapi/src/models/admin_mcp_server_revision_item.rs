@@ -25,7 +25,7 @@ pub struct AdminMcpServerRevisionItem {
 
     /// Created by field on admin mcp server revision item.
     #[serde(rename = "createdBy")]
-    pub created_by: i64,
+    pub created_by: String,
 
     /// Deprecated at field on admin mcp server revision item.
     #[serde(rename = "deprecatedAt")]
@@ -42,7 +42,7 @@ pub struct AdminMcpServerRevisionItem {
     pub env_schema: std::collections::HashMap<String, String>,
 
     /// Id field on admin mcp server revision item.
-    pub id: i64,
+    pub id: String,
 
     /// Lifecycle status field on admin mcp server revision item.
     #[serde(rename = "lifecycleStatus")]
@@ -50,7 +50,7 @@ pub struct AdminMcpServerRevisionItem {
 
     /// Organization id field on admin mcp server revision item.
     #[serde(rename = "organizationId")]
-    pub organization_id: i64,
+    pub organization_id: String,
 
     /// Published at field on admin mcp server revision item.
     #[serde(rename = "publishedAt")]
@@ -72,14 +72,14 @@ pub struct AdminMcpServerRevisionItem {
 
     /// Server id field on admin mcp server revision item.
     #[serde(rename = "serverId")]
-    pub server_id: i64,
+    pub server_id: String,
 
     /// Status field on admin mcp server revision item.
     pub status: String,
 
     /// Tenant id field on admin mcp server revision item.
     #[serde(rename = "tenantId")]
-    pub tenant_id: i64,
+    pub tenant_id: String,
 
     /// Timeout ms field on admin mcp server revision item.
     #[serde(rename = "timeoutMs")]

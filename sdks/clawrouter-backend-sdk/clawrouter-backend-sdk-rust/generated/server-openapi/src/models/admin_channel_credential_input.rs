@@ -18,7 +18,7 @@ pub struct AdminChannelCredentialInput {
 
     /// Priority field on admin channel credential input.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub priority: Option<i64>,
+    pub priority: Option<String>,
 
     /// Secret ref field on admin channel credential input.
     #[serde(rename = "secretRef")]
@@ -31,5 +31,5 @@ pub struct AdminChannelCredentialInput {
 
     /// Weight field on admin channel credential input.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub weight: Option<i64>,
+    pub weight: Option<String>,
 }

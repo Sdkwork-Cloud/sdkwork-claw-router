@@ -6,7 +6,7 @@ public class AdminUserItem {
     private String createdAt;
     private String email;
     private String group;
-    private Integer id;
+    private String id;
     private String lastActive;
     private String lastUsed;
     private String role;
@@ -45,11 +45,11 @@ public class AdminUserItem {
         this.group = group;
     }
 
-    public Integer getId() {
+    public String getId() {
         return this.id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 

@@ -12,7 +12,7 @@ class ContentApi {
   ContentApi(this._client);
 
   /// List forum comments
-  Future<CommentsListResult?> commentsList(String contentType, int contentId, [int? page, int? pageSize]) async {
+  Future<CommentsListResult?> commentsList(String contentType, String contentId, [String? page, String? pageSize]) async {
     final query = buildQueryString([
       QueryParameterSpec('content_type', contentType, 'form', true, false, null),
       QueryParameterSpec('content_id', contentId, 'form', true, false, null),
@@ -37,7 +37,7 @@ class ContentApi {
   }
 
   /// List forum comment statistics
-  Future<CommentsStatisticsListResult?> commentsStatisticsList(String contentType, int contentId) async {
+  Future<CommentsStatisticsListResult?> commentsStatisticsList(String contentType, String contentId) async {
     final query = buildQueryString([
       QueryParameterSpec('content_type', contentType, 'form', true, false, null),
       QueryParameterSpec('content_id', contentId, 'form', true, false, null)
@@ -104,7 +104,7 @@ class ContentApi {
   }
 
   /// List forum comment replies
-  Future<CommentsRepliesListResult?> commentsRepliesList(String commentId, [int? page, int? pageSize]) async {
+  Future<CommentsRepliesListResult?> commentsRepliesList(String commentId, [String? page, String? pageSize]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null)
@@ -127,7 +127,7 @@ class ContentApi {
   }
 
   /// List forum feeds
-  Future<FeedsListResult?> feedsList([String? type, String? contentType, String? q, int? authorId, int? page, int? pageSize]) async {
+  Future<FeedsListResult?> feedsList([String? type, String? contentType, String? q, String? authorId, String? page, String? pageSize]) async {
     final query = buildQueryString([
       QueryParameterSpec('type', type, 'form', true, false, null),
       QueryParameterSpec('content_type', contentType, 'form', true, false, null),
@@ -154,7 +154,7 @@ class ContentApi {
   }
 
   /// List category forum feeds
-  Future<FeedsCategoryRetrieveResult?> feedsCategoryRetrieve(String categoryId, [int? page, int? pageSize]) async {
+  Future<FeedsCategoryRetrieveResult?> feedsCategoryRetrieve(String categoryId, [String? page, String? pageSize]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null)
@@ -167,7 +167,7 @@ class ContentApi {
   }
 
   /// List hot forum feeds
-  Future<FeedsHotListResult?> feedsHotList([int? limit]) async {
+  Future<FeedsHotListResult?> feedsHotList([String? limit]) async {
     final query = buildQueryString([
       QueryParameterSpec('limit', limit, 'form', true, false, null)
     ]);
@@ -179,7 +179,7 @@ class ContentApi {
   }
 
   /// List most liked forum feeds
-  Future<FeedsMostLikedListResult?> feedsMostLikedList([int? limit]) async {
+  Future<FeedsMostLikedListResult?> feedsMostLikedList([String? limit]) async {
     final query = buildQueryString([
       QueryParameterSpec('limit', limit, 'form', true, false, null)
     ]);
@@ -191,7 +191,7 @@ class ContentApi {
   }
 
   /// List most viewed forum feeds
-  Future<FeedsMostViewedListResult?> feedsMostViewedList([int? limit]) async {
+  Future<FeedsMostViewedListResult?> feedsMostViewedList([String? limit]) async {
     final query = buildQueryString([
       QueryParameterSpec('limit', limit, 'form', true, false, null)
     ]);
@@ -212,7 +212,7 @@ class ContentApi {
   }
 
   /// List recommended forum feeds
-  Future<FeedsRecommendListResult?> feedsRecommendList([int? limit]) async {
+  Future<FeedsRecommendListResult?> feedsRecommendList([String? limit]) async {
     final query = buildQueryString([
       QueryParameterSpec('limit', limit, 'form', true, false, null)
     ]);
@@ -224,7 +224,7 @@ class ContentApi {
   }
 
   /// List top forum feeds
-  Future<FeedsTopListResult?> feedsTopList([int? limit]) async {
+  Future<FeedsTopListResult?> feedsTopList([String? limit]) async {
     final query = buildQueryString([
       QueryParameterSpec('limit', limit, 'form', true, false, null)
     ]);
@@ -254,7 +254,7 @@ class ContentApi {
   }
 
   /// Collect forum feed
-  Future<FeedsCollectionsCreateResult?> feedsCollectionsCreate(String id, [int? folderId]) async {
+  Future<FeedsCollectionsCreateResult?> feedsCollectionsCreate(String id, [String? folderId]) async {
     final query = buildQueryString([
       QueryParameterSpec('folder_id', folderId, 'form', true, false, null)
     ]);
@@ -311,7 +311,7 @@ class ContentApi {
   }
 
   /// List my forum comments
-  Future<UsersCurrentCommentsListResult?> usersCurrentCommentsList([int? page, int? pageSize]) async {
+  Future<UsersCurrentCommentsListResult?> usersCurrentCommentsList([String? page, String? pageSize]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null)
@@ -324,7 +324,7 @@ class ContentApi {
   }
 
   /// List courses
-  Future<CoursesListResult?> coursesList([int? level, String? category, String? q, int? page, int? pageSize]) async {
+  Future<CoursesListResult?> coursesList([String? level, String? category, String? q, String? page, String? pageSize]) async {
     final query = buildQueryString([
       QueryParameterSpec('level', level, 'form', true, false, null),
       QueryParameterSpec('category', category, 'form', true, false, null),

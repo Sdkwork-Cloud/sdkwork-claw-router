@@ -10,7 +10,7 @@ public class AdminAgentItem {
     private String description;
     private String id;
     private String name;
-    private Integer ownerUserId;
+    private String ownerUserId;
     private String status;
     private String templateSource;
     private String updatedAt;
@@ -80,11 +80,11 @@ public class AdminAgentItem {
         this.name = name;
     }
 
-    public Integer getOwnerUserId() {
+    public String getOwnerUserId() {
         return this.ownerUserId;
     }
 
-    public void setOwnerUserId(Integer ownerUserId) {
+    public void setOwnerUserId(String ownerUserId) {
         this.ownerUserId = ownerUserId;
     }
 

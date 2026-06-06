@@ -19,12 +19,11 @@ class AdminChannelUpdateRequest:
     credential_rotation: Optional[str] = None
     credentials: Optional[List[AdminChannelCredentialInput]] = None
     expires_at: Optional[str] = None
-    models: Optional[List[str]] = None
     name: Optional[str] = None
     protocol: Optional[str] = None
     resource_codes: Optional[List[str]] = None
     retry_policy: Optional[ProviderRetryPolicy] = None
     status: Optional[str] = None
-    timeout_ms: Optional[int] = None
+    timeout_ms: Optional[str] = None
     vendor: Optional[str] = None
-    weight: Optional[int] = None
+    weight: Optional[str] = None

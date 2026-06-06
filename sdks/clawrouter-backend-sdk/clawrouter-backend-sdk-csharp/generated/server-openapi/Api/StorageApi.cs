@@ -18,7 +18,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// List storage buckets
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.OssBucketsListResult?> OssBucketsListAsync(string? cursor = null, int? limit = null, string? status = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.OssBucketsListResult?> OssBucketsListAsync(string? cursor = null, string? limit = null, string? status = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -75,7 +75,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// List storage garbage collection jobs
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.OssGcJobsListResult?> OssGcJobsListAsync(string? cursor = null, int? limit = null, string? status = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.OssGcJobsListResult?> OssGcJobsListAsync(string? cursor = null, string? limit = null, string? status = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -166,7 +166,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// List storage reconciliation runs
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.OssReconciliationRunsListResult?> OssReconciliationRunsListAsync(string? cursor = null, int? limit = null, string? runType = null, string? status = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.OssReconciliationRunsListResult?> OssReconciliationRunsListAsync(string? cursor = null, string? limit = null, string? runType = null, string? status = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -196,7 +196,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// List storage usage counters
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.OssUsageListResult?> OssUsageListAsync(string? cursor = null, int? limit = null, string? scopeType = null, string? scopeId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.OssUsageListResult?> OssUsageListAsync(string? cursor = null, string? limit = null, string? scopeType = null, string? scopeId = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -211,7 +211,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// List storage usage ledger
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.OssUsageLedgerListResult?> OssUsageLedgerListAsync(string? cursor = null, int? limit = null, string? scopeType = null, string? scopeId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.OssUsageLedgerListResult?> OssUsageLedgerListAsync(string? cursor = null, string? limit = null, string? scopeType = null, string? scopeId = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -226,7 +226,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// List storage usage snapshots
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.OssUsageSnapshotsListResult?> OssUsageSnapshotsListAsync(string? cursor = null, int? limit = null, string? scopeType = null, string? scopeId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.OssUsageSnapshotsListResult?> OssUsageSnapshotsListAsync(string? cursor = null, string? limit = null, string? scopeType = null, string? scopeId = null)
         {
             var queryString = BuildQueryString(new[]
             {

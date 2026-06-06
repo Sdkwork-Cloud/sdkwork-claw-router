@@ -5,7 +5,7 @@ use serde::{Deserialize, Serialize};
 pub struct StorageUsageSnapshot {
     /// File count field on storage usage snapshot.
     #[serde(rename = "fileCount")]
-    pub file_count: i64,
+    pub file_count: String,
 
     /// Id field on storage usage snapshot.
     pub id: String,
@@ -13,7 +13,7 @@ pub struct StorageUsageSnapshot {
     /// Reserved bytes field on storage usage snapshot.
     #[serde(rename = "reservedBytes")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub reserved_bytes: Option<i64>,
+    pub reserved_bytes: Option<String>,
 
     /// Scope field on storage usage snapshot.
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -38,5 +38,5 @@ pub struct StorageUsageSnapshot {
 
     /// Used bytes field on storage usage snapshot.
     #[serde(rename = "usedBytes")]
-    pub used_bytes: i64,
+    pub used_bytes: String,
 }

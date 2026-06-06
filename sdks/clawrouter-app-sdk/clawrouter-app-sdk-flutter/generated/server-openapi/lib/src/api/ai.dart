@@ -53,7 +53,7 @@ class AiApi {
   }
 
   /// List model rankings
-  Future<ModelRankingsListResult?> modelRankingsList([String? rankScope, String? vendorCode, String? modality, String? q, int? limit]) async {
+  Future<ModelRankingsListResult?> modelRankingsList([String? rankScope, String? vendorCode, String? modality, String? q, String? limit]) async {
     final query = buildQueryString([
       QueryParameterSpec('rank_scope', rankScope, 'form', true, false, null),
       QueryParameterSpec('vendor_code', vendorCode, 'form', true, false, null),
@@ -78,7 +78,7 @@ class AiApi {
   }
 
   /// List models
-  Future<ModelsListResult?> modelsList([String? billingMeter, String? vendorCode, List<String>? vendorCodes, List<String>? modalities, List<String>? capabilities, List<String>? categories, List<String>? groups, String? q, int? limit]) async {
+  Future<ModelsListResult?> modelsList([String? billingMeter, String? vendorCode, List<String>? vendorCodes, List<String>? modalities, List<String>? capabilities, List<String>? categories, List<String>? groups, String? q, String? limit]) async {
     final query = buildQueryString([
       QueryParameterSpec('billing_meter', billingMeter, 'form', true, false, null),
       QueryParameterSpec('vendor_code', vendorCode, 'form', true, false, null),
@@ -134,7 +134,7 @@ class AiApi {
   }
 
   /// List logs
-  Future<UsageLogsListResult?> usageLogsList([int? page, int? pageSize, String? q, String? status, String? startTime, String? endTime]) async {
+  Future<UsageLogsListResult?> usageLogsList([String? page, String? pageSize, String? q, String? status, String? startTime, String? endTime]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null),

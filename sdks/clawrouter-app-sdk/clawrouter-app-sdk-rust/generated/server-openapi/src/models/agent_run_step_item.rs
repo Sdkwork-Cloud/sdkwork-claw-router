@@ -6,7 +6,7 @@ pub struct AgentRunStepItem {
     /// Cached tokens field on agent run step item.
     #[serde(rename = "cachedTokens")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub cached_tokens: Option<i64>,
+    pub cached_tokens: Option<String>,
 
     /// Completed at field on agent run step item.
     #[serde(rename = "completedAt")]
@@ -23,12 +23,12 @@ pub struct AgentRunStepItem {
     /// Input tokens field on agent run step item.
     #[serde(rename = "inputTokens")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub input_tokens: Option<i64>,
+    pub input_tokens: Option<String>,
 
     /// Latency ms field on agent run step item.
     #[serde(rename = "latencyMs")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub latency_ms: Option<i64>,
+    pub latency_ms: Option<String>,
 
     /// Model field on agent run step item.
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -37,7 +37,7 @@ pub struct AgentRunStepItem {
     /// Output tokens field on agent run step item.
     #[serde(rename = "outputTokens")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub output_tokens: Option<i64>,
+    pub output_tokens: Option<String>,
 
     /// Run id field on agent run step item.
     #[serde(rename = "runId")]
@@ -58,7 +58,7 @@ pub struct AgentRunStepItem {
 
     /// Step index field on agent run step item.
     #[serde(rename = "stepIndex")]
-    pub step_index: i64,
+    pub step_index: String,
 
     /// Step type field on agent run step item.
     #[serde(rename = "stepType")]
@@ -76,5 +76,5 @@ pub struct AgentRunStepItem {
     /// Total tokens field on agent run step item.
     #[serde(rename = "totalTokens")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub total_tokens: Option<i64>,
+    pub total_tokens: Option<String>,
 }

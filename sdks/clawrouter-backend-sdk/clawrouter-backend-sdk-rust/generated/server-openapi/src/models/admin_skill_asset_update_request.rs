@@ -32,7 +32,7 @@ pub struct AdminSkillAssetUpdateRequest {
     /// File size field on admin skill asset update request.
     #[serde(rename = "fileSize")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub file_size: Option<i64>,
+    pub file_size: Option<String>,
 
     /// Height field on admin skill asset update request.
     #[serde(default, skip_serializing_if = "Option::is_none")]

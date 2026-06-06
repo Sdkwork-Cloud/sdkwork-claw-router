@@ -19,15 +19,15 @@ pub struct AdminMcpBindingItem {
     pub enabled: bool,
 
     /// Id field on admin mcp binding item.
-    pub id: i64,
+    pub id: String,
 
     /// Organization id field on admin mcp binding item.
     #[serde(rename = "organizationId")]
-    pub organization_id: i64,
+    pub organization_id: String,
 
     /// Owner id field on admin mcp binding item.
     #[serde(rename = "ownerId")]
-    pub owner_id: i64,
+    pub owner_id: String,
 
     /// Owner type field on admin mcp binding item.
     #[serde(rename = "ownerType")]
@@ -42,12 +42,12 @@ pub struct AdminMcpBindingItem {
 
     /// Server id field on admin mcp binding item.
     #[serde(rename = "serverId")]
-    pub server_id: i64,
+    pub server_id: String,
 
     /// Server revision id field on admin mcp binding item.
     #[serde(rename = "serverRevisionId")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub server_revision_id: Option<i64>,
+    pub server_revision_id: Option<String>,
 
     /// Snapshot json field on admin mcp binding item.
     #[serde(rename = "snapshotJson")]
@@ -58,12 +58,12 @@ pub struct AdminMcpBindingItem {
 
     /// Tenant id field on admin mcp binding item.
     #[serde(rename = "tenantId")]
-    pub tenant_id: i64,
+    pub tenant_id: String,
 
     /// Tool id field on admin mcp binding item.
     #[serde(rename = "toolId")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub tool_id: Option<i64>,
+    pub tool_id: Option<String>,
 
     /// Updated at field on admin mcp binding item.
     #[serde(rename = "updatedAt")]

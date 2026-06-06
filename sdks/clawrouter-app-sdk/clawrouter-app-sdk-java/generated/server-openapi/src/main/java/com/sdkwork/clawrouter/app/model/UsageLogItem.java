@@ -5,20 +5,20 @@ public class UsageLogItem {
     private String baseInputPrice;
     private String baseOutputPrice;
     private String cacheReadPrice;
-    private Integer cacheReadTokens;
+    private String cacheReadTokens;
     private String cost;
     private String errorCode;
     private String errorMessage;
     private String errorType;
     private String group;
-    private Integer httpStatus;
+    private String httpStatus;
     private String id;
-    private Integer inputTokens;
+    private String inputTokens;
     private String ip;
     private Boolean isStream;
     private String model;
     private String multiplier;
-    private Integer outputTokens;
+    private String outputTokens;
     private String path;
     private String providerNativeModel;
     private String reasoningEffort;
@@ -57,11 +57,11 @@ public class UsageLogItem {
         this.cacheReadPrice = cacheReadPrice;
     }
 
-    public Integer getCacheReadTokens() {
+    public String getCacheReadTokens() {
         return this.cacheReadTokens;
     }
 
-    public void setCacheReadTokens(Integer cacheReadTokens) {
+    public void setCacheReadTokens(String cacheReadTokens) {
         this.cacheReadTokens = cacheReadTokens;
     }
 
@@ -105,11 +105,11 @@ public class UsageLogItem {
         this.group = group;
     }
 
-    public Integer getHttpStatus() {
+    public String getHttpStatus() {
         return this.httpStatus;
     }
 
-    public void setHttpStatus(Integer httpStatus) {
+    public void setHttpStatus(String httpStatus) {
         this.httpStatus = httpStatus;
     }
 
@@ -121,11 +121,11 @@ public class UsageLogItem {
         this.id = id;
     }
 
-    public Integer getInputTokens() {
+    public String getInputTokens() {
         return this.inputTokens;
     }
 
-    public void setInputTokens(Integer inputTokens) {
+    public void setInputTokens(String inputTokens) {
         this.inputTokens = inputTokens;
     }
 
@@ -161,11 +161,11 @@ public class UsageLogItem {
         this.multiplier = multiplier;
     }
 
-    public Integer getOutputTokens() {
+    public String getOutputTokens() {
         return this.outputTokens;
     }
 
-    public void setOutputTokens(Integer outputTokens) {
+    public void setOutputTokens(String outputTokens) {
         this.outputTokens = outputTokens;
     }
 

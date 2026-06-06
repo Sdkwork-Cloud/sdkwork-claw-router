@@ -4,10 +4,10 @@ use serde::{Deserialize, Serialize};
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct RoutingUsageData {
     /// Latency field on routing usage data.
-    pub latency: i64,
+    pub latency: String,
 
     /// Requests field on routing usage data.
-    pub requests: i64,
+    pub requests: String,
 
     /// Time field on routing usage data.
     pub time: String,

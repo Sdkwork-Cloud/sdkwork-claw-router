@@ -17,6 +17,6 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? SystemPrompt { get; set; }
         public Dictionary<string, string>? ToolPolicy { get; set; }
         public string? UpdatedAt { get; set; }
-        public int? VersionNo { get; set; }
+        public string? VersionNo { get; set; }
     }
 }

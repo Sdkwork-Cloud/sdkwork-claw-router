@@ -5,10 +5,10 @@ public class CommerceCategorySeedInitializeSummary {
     private String configKey;
     private String dataset;
     private Boolean installDefaultEnabled;
-    private Integer requested;
-    private Integer skipped;
+    private String requested;
+    private String skipped;
     private String targetTable;
-    private Integer upserted;
+    private String upserted;
 
     public String getConfigKey() {
         return this.configKey;
@@ -34,19 +34,19 @@ public class CommerceCategorySeedInitializeSummary {
         this.installDefaultEnabled = installDefaultEnabled;
     }
 
-    public Integer getRequested() {
+    public String getRequested() {
         return this.requested;
     }
 
-    public void setRequested(Integer requested) {
+    public void setRequested(String requested) {
         this.requested = requested;
     }
 
-    public Integer getSkipped() {
+    public String getSkipped() {
         return this.skipped;
     }
 
-    public void setSkipped(Integer skipped) {
+    public void setSkipped(String skipped) {
         this.skipped = skipped;
     }
 
@@ -58,11 +58,11 @@ public class CommerceCategorySeedInitializeSummary {
         this.targetTable = targetTable;
     }
 
-    public Integer getUpserted() {
+    public String getUpserted() {
         return this.upserted;
     }
 
-    public void setUpserted(Integer upserted) {
+    public void setUpserted(String upserted) {
         this.upserted = upserted;
     }
 }

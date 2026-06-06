@@ -2,34 +2,34 @@ package com.sdkwork.clawrouter.backend.model;
 
 
 public class ModelRankingRefreshTriggerResponse {
-    private Integer cacheMaxAgeSeconds;
-    private Integer generatedCount;
+    private String cacheMaxAgeSeconds;
+    private String generatedCount;
     private String nextRefreshAt;
-    private Integer organizationId;
+    private String organizationId;
     private String rankScope;
-    private Integer refreshIntervalSeconds;
+    private String refreshIntervalSeconds;
     private String snapshotDate;
     private String snapshotPeriod;
-    private Integer sourceCount;
+    private String sourceCount;
     private String status;
-    private Integer tenantId;
+    private String tenantId;
     private Boolean triggered;
     private String windowEnd;
     private String windowStart;
 
-    public Integer getCacheMaxAgeSeconds() {
+    public String getCacheMaxAgeSeconds() {
         return this.cacheMaxAgeSeconds;
     }
 
-    public void setCacheMaxAgeSeconds(Integer cacheMaxAgeSeconds) {
+    public void setCacheMaxAgeSeconds(String cacheMaxAgeSeconds) {
         this.cacheMaxAgeSeconds = cacheMaxAgeSeconds;
     }
 
-    public Integer getGeneratedCount() {
+    public String getGeneratedCount() {
         return this.generatedCount;
     }
 
-    public void setGeneratedCount(Integer generatedCount) {
+    public void setGeneratedCount(String generatedCount) {
         this.generatedCount = generatedCount;
     }
 
@@ -41,11 +41,11 @@ public class ModelRankingRefreshTriggerResponse {
         this.nextRefreshAt = nextRefreshAt;
     }
 
-    public Integer getOrganizationId() {
+    public String getOrganizationId() {
         return this.organizationId;
     }
 
-    public void setOrganizationId(Integer organizationId) {
+    public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
 
@@ -57,11 +57,11 @@ public class ModelRankingRefreshTriggerResponse {
         this.rankScope = rankScope;
     }
 
-    public Integer getRefreshIntervalSeconds() {
+    public String getRefreshIntervalSeconds() {
         return this.refreshIntervalSeconds;
     }
 
-    public void setRefreshIntervalSeconds(Integer refreshIntervalSeconds) {
+    public void setRefreshIntervalSeconds(String refreshIntervalSeconds) {
         this.refreshIntervalSeconds = refreshIntervalSeconds;
     }
 
@@ -81,11 +81,11 @@ public class ModelRankingRefreshTriggerResponse {
         this.snapshotPeriod = snapshotPeriod;
     }
 
-    public Integer getSourceCount() {
+    public String getSourceCount() {
         return this.sourceCount;
     }
 
-    public void setSourceCount(Integer sourceCount) {
+    public void setSourceCount(String sourceCount) {
         this.sourceCount = sourceCount;
     }
 
@@ -97,11 +97,11 @@ public class ModelRankingRefreshTriggerResponse {
         this.status = status;
     }
 
-    public Integer getTenantId() {
+    public String getTenantId() {
         return this.tenantId;
     }
 
-    public void setTenantId(Integer tenantId) {
+    public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
 

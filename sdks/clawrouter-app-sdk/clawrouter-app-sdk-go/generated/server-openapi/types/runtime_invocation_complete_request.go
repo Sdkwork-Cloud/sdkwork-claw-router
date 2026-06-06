@@ -5,9 +5,9 @@ type RuntimeInvocationCompleteRequest struct {
 	ErrorCode string `json:"errorCode"`
 	ErrorMessageMasked string `json:"errorMessageMasked"`
 	ErrorType string `json:"errorType"`
-	ExitCode int `json:"exitCode"`
+	ExitCode string `json:"exitCode"`
 	FinishReason string `json:"finishReason"`
-	LatencyMs int `json:"latencyMs"`
+	LatencyMs string `json:"latencyMs"`
 	Metadata map[string]JsonValue `json:"metadata"`
 	ProviderConversationId string `json:"providerConversationId"`
 	ProviderResponseId string `json:"providerResponseId"`
@@ -15,6 +15,6 @@ type RuntimeInvocationCompleteRequest struct {
 	ProviderStepId string `json:"providerStepId"`
 	ResponseJson map[string]JsonValue `json:"responseJson"`
 	Status string `json:"status"`
-	TtftMs int `json:"ttftMs"`
+	TtftMs string `json:"ttftMs"`
 	UsageJson UsageSnapshot `json:"usageJson"`
 }

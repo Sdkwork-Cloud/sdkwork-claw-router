@@ -2,19 +2,19 @@ package types
 
 // Admin cache instance schema exposed by Claw Router.
 type AdminCacheInstance struct {
-	CacheDeletes int `json:"cacheDeletes"`
-	CacheErrors int `json:"cacheErrors"`
-	CacheHits int `json:"cacheHits"`
-	CacheInspections int `json:"cacheInspections"`
-	CacheMisses int `json:"cacheMisses"`
-	CacheRefreshes int `json:"cacheRefreshes"`
-	CacheWrites int `json:"cacheWrites"`
+	CacheDeletes string `json:"cacheDeletes"`
+	CacheErrors string `json:"cacheErrors"`
+	CacheHits string `json:"cacheHits"`
+	CacheInspections string `json:"cacheInspections"`
+	CacheMisses string `json:"cacheMisses"`
+	CacheRefreshes string `json:"cacheRefreshes"`
+	CacheWrites string `json:"cacheWrites"`
 	ConnectionProfileName string `json:"connectionProfileName"`
-	DefaultTtlSeconds int `json:"defaultTtlSeconds"`
-	EntryCount int `json:"entryCount"`
-	ExpiredEntryCount int `json:"expiredEntryCount"`
+	DefaultTtlSeconds string `json:"defaultTtlSeconds"`
+	EntryCount string `json:"entryCount"`
+	ExpiredEntryCount string `json:"expiredEntryCount"`
 	KeyPrefix string `json:"keyPrefix"`
-	MaxEntries int `json:"maxEntries"`
+	MaxEntries string `json:"maxEntries"`
 	Name string `json:"name"`
 	ProviderKind string `json:"providerKind"`
 	Purpose string `json:"purpose"`

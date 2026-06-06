@@ -2,16 +2,16 @@ package types
 
 // Dashboard overview summary schema exposed by Claw Router.
 type DashboardOverviewSummary struct {
-	AudioRequests int `json:"audioRequests"`
+	AudioRequests string `json:"audioRequests"`
 	AvailableCredits float64 `json:"availableCredits"`
-	ErrorCount int `json:"errorCount"`
-	ImageRequests int `json:"imageRequests"`
-	MusicRequests int `json:"musicRequests"`
-	RequestCount int `json:"requestCount"`
+	ErrorCount string `json:"errorCount"`
+	ImageRequests string `json:"imageRequests"`
+	MusicRequests string `json:"musicRequests"`
+	RequestCount string `json:"requestCount"`
 	Rpm float64 `json:"rpm"`
-	TotalRequestCount int `json:"totalRequestCount"`
+	TotalRequestCount string `json:"totalRequestCount"`
 	TotalUsedCredits float64 `json:"totalUsedCredits"`
 	Tpm float64 `json:"tpm"`
 	UsedCredits float64 `json:"usedCredits"`
-	VideoRequests int `json:"videoRequests"`
+	VideoRequests string `json:"videoRequests"`
 }

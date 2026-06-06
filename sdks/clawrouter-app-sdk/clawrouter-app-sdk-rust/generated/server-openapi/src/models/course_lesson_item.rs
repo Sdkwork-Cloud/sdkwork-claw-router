@@ -13,7 +13,7 @@ pub struct CourseLessonItem {
 
     /// Duration seconds field on course lesson item.
     #[serde(rename = "durationSeconds")]
-    pub duration_seconds: i64,
+    pub duration_seconds: String,
 
     /// Duration text field on course lesson item.
     #[serde(rename = "durationText")]
@@ -32,18 +32,18 @@ pub struct CourseLessonItem {
 
     /// Lesson id field on course lesson item.
     #[serde(rename = "lessonId")]
-    pub lesson_id: i64,
+    pub lesson_id: String,
 
     /// Lesson no field on course lesson item.
     #[serde(rename = "lessonNo")]
-    pub lesson_no: i64,
+    pub lesson_no: String,
 
     /// Number field on course lesson item.
-    pub number: i64,
+    pub number: String,
 
     /// Sort order field on course lesson item.
     #[serde(rename = "sortOrder")]
-    pub sort_order: i64,
+    pub sort_order: String,
 
     /// Source provider field on course lesson item.
     #[serde(rename = "sourceProvider")]

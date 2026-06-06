@@ -18,7 +18,7 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// List product chat conversations
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.ConversationsListResult?> ConversationsListAsync(int? page = null, int? pageSize = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.ConversationsListResult?> ConversationsListAsync(string? page = null, string? pageSize = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -54,7 +54,7 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// List product chat messages
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.ConversationMessagesListResult?> ConversationMessagesListAsync(string conversationId, int? limit = null, string? order = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.ConversationMessagesListResult?> ConversationMessagesListAsync(string conversationId, string? limit = null, string? order = null)
         {
             var queryString = BuildQueryString(new[]
             {

@@ -51,7 +51,7 @@ pub struct AgentSessionItem {
     /// Last step id field on agent session item.
     #[serde(rename = "lastStepId")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub last_step_id: Option<i64>,
+    pub last_step_id: Option<String>,
 
     /// Memory space id field on agent session item.
     #[serde(rename = "memorySpaceId")]
@@ -65,7 +65,7 @@ pub struct AgentSessionItem {
 
     /// Run count field on agent session item.
     #[serde(rename = "runCount")]
-    pub run_count: i64,
+    pub run_count: String,
 
     /// Runtime field on agent session item.
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -89,7 +89,7 @@ pub struct AgentSessionItem {
 
     /// Step count field on agent session item.
     #[serde(rename = "stepCount")]
-    pub step_count: i64,
+    pub step_count: String,
 
     /// Title field on agent session item.
     pub title: String,
@@ -97,7 +97,7 @@ pub struct AgentSessionItem {
     /// Tool call count field on agent session item.
     #[serde(rename = "toolCallCount")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub tool_call_count: Option<i64>,
+    pub tool_call_count: Option<String>,
 
     /// Updated at field on agent session item.
     #[serde(rename = "updatedAt")]

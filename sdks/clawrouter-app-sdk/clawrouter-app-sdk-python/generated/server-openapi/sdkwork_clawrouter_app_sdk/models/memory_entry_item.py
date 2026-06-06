@@ -10,7 +10,7 @@ class MemoryEntryItem:
     created_at: str
     id: str
     memory_type: str
-    recall_count: int
+    recall_count: str
     sensitivity_level: str
     source_kind: str
     space_id: str

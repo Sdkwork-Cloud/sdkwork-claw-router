@@ -9,7 +9,7 @@ public class AdminModelMappingRuleBinding {
     private String createdAt;
     private Boolean enabled;
     private String id;
-    private Integer sortOrder;
+    private String sortOrder;
     private String updatedAt;
 
     public String getBindingCode() {
@@ -68,11 +68,11 @@ public class AdminModelMappingRuleBinding {
         this.id = id;
     }
 
-    public Integer getSortOrder() {
+    public String getSortOrder() {
         return this.sortOrder;
     }
 
-    public void setSortOrder(Integer sortOrder) {
+    public void setSortOrder(String sortOrder) {
         this.sortOrder = sortOrder;
     }
 

@@ -3,19 +3,19 @@ package com.sdkwork.clawrouter.backend.model;
 import java.util.List;
 
 public class CommercePaymentRuntimeAssemblySummary {
-    private Integer failed;
+    private String failed;
     private List<String> failedProviderCodes;
-    private Integer registered;
+    private String registered;
     private List<String> registeredProviderCodes;
-    private Integer skipped;
+    private String skipped;
     private List<String> skippedProviderCodes;
-    private Integer total;
+    private String total;
 
-    public Integer getFailed() {
+    public String getFailed() {
         return this.failed;
     }
 
-    public void setFailed(Integer failed) {
+    public void setFailed(String failed) {
         this.failed = failed;
     }
 
@@ -27,11 +27,11 @@ public class CommercePaymentRuntimeAssemblySummary {
         this.failedProviderCodes = failedProviderCodes;
     }
 
-    public Integer getRegistered() {
+    public String getRegistered() {
         return this.registered;
     }
 
-    public void setRegistered(Integer registered) {
+    public void setRegistered(String registered) {
         this.registered = registered;
     }
 
@@ -43,11 +43,11 @@ public class CommercePaymentRuntimeAssemblySummary {
         this.registeredProviderCodes = registeredProviderCodes;
     }
 
-    public Integer getSkipped() {
+    public String getSkipped() {
         return this.skipped;
     }
 
-    public void setSkipped(Integer skipped) {
+    public void setSkipped(String skipped) {
         this.skipped = skipped;
     }
 
@@ -59,11 +59,11 @@ public class CommercePaymentRuntimeAssemblySummary {
         this.skippedProviderCodes = skippedProviderCodes;
     }
 
-    public Integer getTotal() {
+    public String getTotal() {
         return this.total;
     }
 
-    public void setTotal(Integer total) {
+    public void setTotal(String total) {
         this.total = total;
     }
 }

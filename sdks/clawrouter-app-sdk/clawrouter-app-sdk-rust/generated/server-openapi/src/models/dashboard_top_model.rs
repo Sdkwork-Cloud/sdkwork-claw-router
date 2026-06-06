@@ -17,10 +17,10 @@ pub struct DashboardTopModel {
     pub name: String,
 
     /// Rank field on dashboard top model.
-    pub rank: i64,
+    pub rank: String,
 
     /// Requests field on dashboard top model.
-    pub requests: i64,
+    pub requests: String,
 
     /// Supplier field on dashboard top model.
     pub supplier: String,

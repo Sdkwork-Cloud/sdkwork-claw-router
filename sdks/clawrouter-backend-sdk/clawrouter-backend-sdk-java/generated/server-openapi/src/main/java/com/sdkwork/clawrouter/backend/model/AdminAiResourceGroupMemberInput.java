@@ -4,7 +4,7 @@ package com.sdkwork.clawrouter.backend.model;
 public class AdminAiResourceGroupMemberInput {
     private String itemRole;
     private String resourceCode;
-    private Integer sortOrder;
+    private String sortOrder;
 
     public String getItemRole() {
         return this.itemRole;
@@ -22,11 +22,11 @@ public class AdminAiResourceGroupMemberInput {
         this.resourceCode = resourceCode;
     }
 
-    public Integer getSortOrder() {
+    public String getSortOrder() {
         return this.sortOrder;
     }
 
-    public void setSortOrder(Integer sortOrder) {
+    public void setSortOrder(String sortOrder) {
         this.sortOrder = sortOrder;
     }
 }

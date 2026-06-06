@@ -1,7 +1,7 @@
 package com.sdkwork.clawrouter.backend
 
 data class StorageUsageLedgerEntry(
-    val deltaBytes: Int? = null,
+    val deltaBytes: String? = null,
     val id: String? = null,
     val occurredAt: String? = null,
     val scopeId: String? = null,

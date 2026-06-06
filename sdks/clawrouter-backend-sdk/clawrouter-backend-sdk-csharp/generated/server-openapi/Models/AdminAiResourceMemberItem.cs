@@ -10,6 +10,6 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? MemberRole { get; set; }
         public string? ParentResourceCode { get; set; }
         public bool? Required { get; set; }
-        public int? SortOrder { get; set; }
+        public string? SortOrder { get; set; }
     }
 }

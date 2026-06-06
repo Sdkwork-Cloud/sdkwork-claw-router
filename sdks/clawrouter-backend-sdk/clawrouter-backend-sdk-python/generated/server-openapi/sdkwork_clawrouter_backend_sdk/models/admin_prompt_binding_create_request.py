@@ -7,9 +7,9 @@ from typing import TYPE_CHECKING, Optional, List, Dict, Any
 class AdminPromptBindingCreateRequest:
     """Admin prompt binding create request schema exposed by Claw Router."""
     binding_role: str
-    owner_id: int
+    owner_id: str
     owner_type: str
     enabled: Optional[bool] = None
     policy_json: Optional[Dict[str, str]] = None
     priority: Optional[int] = None
-    prompt_version_id: Optional[int] = None
+    prompt_version_id: Optional[str] = None

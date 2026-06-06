@@ -6,19 +6,19 @@ public class ForumCommentDetail {
     private ForumAuthor author;
     private String commentId;
     private String content;
-    private Integer contentId;
+    private String contentId;
     private String contentType;
     private String createdAt;
     private String deviceInfo;
     private String ipAddress;
     private Boolean isTop;
-    private Integer likes;
-    private Integer parentId;
+    private String likes;
+    private String parentId;
     private List<ForumCommentItem> replies;
-    private Integer replyCount;
+    private String replyCount;
     private String status;
     private String updatedAt;
-    private Integer userId;
+    private String userId;
 
     public ForumAuthor getAuthor() {
         return this.author;
@@ -44,11 +44,11 @@ public class ForumCommentDetail {
         this.content = content;
     }
 
-    public Integer getContentId() {
+    public String getContentId() {
         return this.contentId;
     }
 
-    public void setContentId(Integer contentId) {
+    public void setContentId(String contentId) {
         this.contentId = contentId;
     }
 
@@ -92,19 +92,19 @@ public class ForumCommentDetail {
         this.isTop = isTop;
     }
 
-    public Integer getLikes() {
+    public String getLikes() {
         return this.likes;
     }
 
-    public void setLikes(Integer likes) {
+    public void setLikes(String likes) {
         this.likes = likes;
     }
 
-    public Integer getParentId() {
+    public String getParentId() {
         return this.parentId;
     }
 
-    public void setParentId(Integer parentId) {
+    public void setParentId(String parentId) {
         this.parentId = parentId;
     }
 
@@ -116,11 +116,11 @@ public class ForumCommentDetail {
         this.replies = replies;
     }
 
-    public Integer getReplyCount() {
+    public String getReplyCount() {
         return this.replyCount;
     }
 
-    public void setReplyCount(Integer replyCount) {
+    public void setReplyCount(String replyCount) {
         this.replyCount = replyCount;
     }
 
@@ -140,11 +140,11 @@ public class ForumCommentDetail {
         this.updatedAt = updatedAt;
     }
 
-    public Integer getUserId() {
+    public String getUserId() {
         return this.userId;
     }
 
-    public void setUserId(Integer userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 }

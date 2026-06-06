@@ -9,6 +9,6 @@ type AdminModelMappingRuleBinding struct {
 	CreatedAt string `json:"createdAt"`
 	Enabled bool `json:"enabled"`
 	Id string `json:"id"`
-	SortOrder int `json:"sortOrder"`
+	SortOrder string `json:"sortOrder"`
 	UpdatedAt string `json:"updatedAt"`
 }

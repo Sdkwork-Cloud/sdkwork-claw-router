@@ -6,11 +6,11 @@ type AdminCacheNamespacePolicy struct {
 	Enabled bool `json:"enabled"`
 	FailureMode string `json:"failureMode"`
 	InstanceName string `json:"instanceName"`
-	JitterPercent int `json:"jitterPercent"`
+	JitterPercent string `json:"jitterPercent"`
 	Namespace string `json:"namespace"`
 	Scope string `json:"scope"`
 	Sensitivity string `json:"sensitivity"`
-	StaleWhileRevalidateSeconds int `json:"staleWhileRevalidateSeconds"`
+	StaleWhileRevalidateSeconds string `json:"staleWhileRevalidateSeconds"`
 	Tags []string `json:"tags"`
-	TtlSeconds int `json:"ttlSeconds"`
+	TtlSeconds string `json:"ttlSeconds"`
 }

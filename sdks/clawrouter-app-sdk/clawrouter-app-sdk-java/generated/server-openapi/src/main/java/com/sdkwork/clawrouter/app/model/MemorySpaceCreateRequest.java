@@ -5,7 +5,7 @@ import java.util.Map;
 public class MemorySpaceCreateRequest {
     private Boolean autoExtractEnabled;
     private Boolean autoRecallEnabled;
-    private Integer maxInjectedTokens;
+    private String maxInjectedTokens;
     private Boolean memoryEnabled;
     private Map<String, String> metadata;
     private String ownerId;
@@ -32,11 +32,11 @@ public class MemorySpaceCreateRequest {
         this.autoRecallEnabled = autoRecallEnabled;
     }
 
-    public Integer getMaxInjectedTokens() {
+    public String getMaxInjectedTokens() {
         return this.maxInjectedTokens;
     }
 
-    public void setMaxInjectedTokens(Integer maxInjectedTokens) {
+    public void setMaxInjectedTokens(String maxInjectedTokens) {
         this.maxInjectedTokens = maxInjectedTokens;
     }
 

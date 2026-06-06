@@ -3,6 +3,10 @@ use serde::{Deserialize, Serialize};
 /// Admin channel group channel binding item schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct AdminChannelGroupChannelBindingItem {
+    /// Api scope field on admin channel group channel binding item.
+    #[serde(rename = "apiScope")]
+    pub api_scope: Vec<String>,
+
     /// Capabilities field on admin channel group channel binding item.
     pub capabilities: Vec<String>,
 
@@ -29,13 +33,6 @@ pub struct AdminChannelGroupChannelBindingItem {
     /// Id field on admin channel group channel binding item.
     pub id: String,
 
-    /// Model scope field on admin channel group channel binding item.
-    #[serde(rename = "modelScope")]
-    pub model_scope: Vec<String>,
-
-    /// Models field on admin channel group channel binding item.
-    pub models: Vec<String>,
-
     /// Priority field on admin channel group channel binding item.
     pub priority: i64,
 
@@ -46,6 +43,10 @@ pub struct AdminChannelGroupChannelBindingItem {
     /// Provider name field on admin channel group channel binding item.
     #[serde(rename = "providerName")]
     pub provider_name: String,
+
+    /// Resource codes field on admin channel group channel binding item.
+    #[serde(rename = "resourceCodes")]
+    pub resource_codes: Vec<String>,
 
     /// Status field on admin channel group channel binding item.
     pub status: String,

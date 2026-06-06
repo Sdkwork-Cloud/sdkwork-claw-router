@@ -5,9 +5,9 @@ type MemorySpaceItem struct {
 	AutoExtractEnabled bool `json:"autoExtractEnabled"`
 	AutoRecallEnabled bool `json:"autoRecallEnabled"`
 	CreatedAt string `json:"createdAt"`
-	EntryCount int `json:"entryCount"`
+	EntryCount string `json:"entryCount"`
 	Id string `json:"id"`
-	MaxInjectedTokens int `json:"maxInjectedTokens"`
+	MaxInjectedTokens string `json:"maxInjectedTokens"`
 	MemoryEnabled bool `json:"memoryEnabled"`
 	OwnerId string `json:"ownerId"`
 	OwnerType string `json:"ownerType"`

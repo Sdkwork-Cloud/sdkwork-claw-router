@@ -9,9 +9,9 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? ErrorCode { get; set; }
         public string? ErrorMessageMasked { get; set; }
         public string? ErrorType { get; set; }
-        public int? ExitCode { get; set; }
+        public string? ExitCode { get; set; }
         public string? FinishReason { get; set; }
-        public int? LatencyMs { get; set; }
+        public string? LatencyMs { get; set; }
         public Dictionary<string, string>? Metadata { get; set; }
         public string? ProviderConversationId { get; set; }
         public string? ProviderResponseId { get; set; }
@@ -19,7 +19,7 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? ProviderStepId { get; set; }
         public Dictionary<string, string>? ResponseJson { get; set; }
         public string? Status { get; set; }
-        public int? TtftMs { get; set; }
+        public string? TtftMs { get; set; }
         public UsageSnapshot? UsageJson { get; set; }
     }
 }

@@ -12,7 +12,7 @@ class PromptsApi {
   PromptsApi(this._client);
 
   /// List admin prompts
-  Future<DefinitionsListResult?> definitionsList([int? page, int? pageSize, String? q, String? promptType, String? visibility, String? status, String? categoryId]) async {
+  Future<DefinitionsListResult?> definitionsList([String? page, String? pageSize, String? q, String? promptType, String? visibility, String? status, String? categoryId]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null),

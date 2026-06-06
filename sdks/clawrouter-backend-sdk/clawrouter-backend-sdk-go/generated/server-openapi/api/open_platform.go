@@ -18,7 +18,7 @@ func NewOpenPlatformApi(client *sdkhttp.Client) *OpenPlatformApi {
 }
 
 // List open platform accounts
-func (a *OpenPlatformApi) AccountsList(provider *string, type_ *string, status *string, page *int, pageSize *int) (sdktypes.AccountsListResult, error) {
+func (a *OpenPlatformApi) AccountsList(provider *string, type_ *string, status *string, page *string, pageSize *string) (sdktypes.AccountsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "provider", Value: func() interface{} { if provider == nil { return nil }; return *provider }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "type", Value: func() interface{} { if type_ == nil { return nil }; return *type_ }(), Style: "form", Explode: true, AllowReserved: false},

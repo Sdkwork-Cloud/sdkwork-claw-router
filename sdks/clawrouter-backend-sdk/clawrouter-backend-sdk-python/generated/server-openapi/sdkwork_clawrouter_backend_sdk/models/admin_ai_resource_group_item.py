@@ -11,11 +11,11 @@ class AdminAiResourceGroupItem:
     group_name: str
     group_type: str
     id: str
-    resource_count: int
+    resource_count: str
     selection_mode: str
     status: str
     capabilities: Optional[List[str]] = None
     capability: Optional[str] = None
     description: Optional[str] = None
-    sort_order: Optional[int] = None
+    sort_order: Optional[str] = None
     vendor_codes: Optional[List[str]] = None

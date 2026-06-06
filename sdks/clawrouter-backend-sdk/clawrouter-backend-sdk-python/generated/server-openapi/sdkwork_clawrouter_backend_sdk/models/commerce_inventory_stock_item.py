@@ -6,13 +6,13 @@ from typing import TYPE_CHECKING, Optional, List, Dict, Any
 @dataclass
 class CommerceInventoryStockItem:
     """Commerce inventory stock item schema exposed by Claw Router."""
-    available_quantity: int
+    available_quantity: str
     created_at: str
     id: str
-    reserved_quantity: int
+    reserved_quantity: str
     sku_id: str
-    sold_quantity: int
+    sold_quantity: str
     status: str
     updated_at: str
-    version: int
+    version: str
     warehouse_id: Optional[str] = None

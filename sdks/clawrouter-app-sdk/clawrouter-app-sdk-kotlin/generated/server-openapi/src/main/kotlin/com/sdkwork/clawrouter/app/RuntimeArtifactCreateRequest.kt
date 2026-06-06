@@ -9,6 +9,6 @@ data class RuntimeArtifactCreateRequest(
     val name: String? = null,
     val resource: MediaResource? = null,
     val sha256: String? = null,
-    val sizeBytes: Int? = null,
+    val sizeBytes: String? = null,
     val storageKey: String? = null
 )

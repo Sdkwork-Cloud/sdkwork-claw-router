@@ -5,22 +5,22 @@ type AdminAiModelItem struct {
 	ApiFormat string `json:"apiFormat"`
 	Calls string `json:"calls"`
 	CapabilityIntro string `json:"capabilityIntro"`
-	ContextTokens int `json:"contextTokens"`
+	ContextTokens string `json:"contextTokens"`
 	Description string `json:"description"`
 	DisplayName string `json:"displayName"`
 	Id string `json:"id"`
 	InputModalities []string `json:"inputModalities"`
 	Limitations []string `json:"limitations"`
-	MaxOutputTokens int `json:"maxOutputTokens"`
+	MaxOutputTokens string `json:"maxOutputTokens"`
 	Modalities []string `json:"modalities"`
 	Model string `json:"model"`
 	Name string `json:"name"`
 	OutputModalities []string `json:"outputModalities"`
 	RegionPrices []AdminAiModelRegionPrice `json:"regionPrices"`
-	ReleaseStage int `json:"releaseStage"`
+	ReleaseStage string `json:"releaseStage"`
 	ReplacementModel string `json:"replacementModel"`
-	RoutingState int `json:"routingState"`
-	ShelfState int `json:"shelfState"`
+	RoutingState string `json:"routingState"`
+	ShelfState string `json:"shelfState"`
 	Status string `json:"status"`
 	SupportedLanguages []string `json:"supportedLanguages"`
 	SupportsJsonSchema bool `json:"supportsJsonSchema"`

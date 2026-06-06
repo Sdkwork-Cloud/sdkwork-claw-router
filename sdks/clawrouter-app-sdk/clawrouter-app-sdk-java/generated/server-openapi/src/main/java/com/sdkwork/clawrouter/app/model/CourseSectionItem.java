@@ -4,13 +4,13 @@ import java.util.List;
 
 public class CourseSectionItem {
     private String description;
-    private Integer durationSeconds;
+    private String durationSeconds;
     private String id;
-    private Integer lessonCount;
+    private String lessonCount;
     private List<CourseLessonItem> lessons;
-    private Integer sectionId;
-    private Integer sectionNo;
-    private Integer sortOrder;
+    private String sectionId;
+    private String sectionNo;
+    private String sortOrder;
     private String title;
 
     public String getDescription() {
@@ -21,11 +21,11 @@ public class CourseSectionItem {
         this.description = description;
     }
 
-    public Integer getDurationSeconds() {
+    public String getDurationSeconds() {
         return this.durationSeconds;
     }
 
-    public void setDurationSeconds(Integer durationSeconds) {
+    public void setDurationSeconds(String durationSeconds) {
         this.durationSeconds = durationSeconds;
     }
 
@@ -37,11 +37,11 @@ public class CourseSectionItem {
         this.id = id;
     }
 
-    public Integer getLessonCount() {
+    public String getLessonCount() {
         return this.lessonCount;
     }
 
-    public void setLessonCount(Integer lessonCount) {
+    public void setLessonCount(String lessonCount) {
         this.lessonCount = lessonCount;
     }
 
@@ -53,27 +53,27 @@ public class CourseSectionItem {
         this.lessons = lessons;
     }
 
-    public Integer getSectionId() {
+    public String getSectionId() {
         return this.sectionId;
     }
 
-    public void setSectionId(Integer sectionId) {
+    public void setSectionId(String sectionId) {
         this.sectionId = sectionId;
     }
 
-    public Integer getSectionNo() {
+    public String getSectionNo() {
         return this.sectionNo;
     }
 
-    public void setSectionNo(Integer sectionNo) {
+    public void setSectionNo(String sectionNo) {
         this.sectionNo = sectionNo;
     }
 
-    public Integer getSortOrder() {
+    public String getSortOrder() {
         return this.sortOrder;
     }
 
-    public void setSortOrder(Integer sortOrder) {
+    public void setSortOrder(String sortOrder) {
         this.sortOrder = sortOrder;
     }
 

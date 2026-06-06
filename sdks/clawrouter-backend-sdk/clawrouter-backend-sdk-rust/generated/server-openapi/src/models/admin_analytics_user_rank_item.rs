@@ -17,11 +17,11 @@ pub struct AdminAnalyticsUserRankItem {
     pub points: f64,
 
     /// Rank field on admin analytics user rank item.
-    pub rank: i64,
+    pub rank: String,
 
     /// Request count field on admin analytics user rank item.
     #[serde(rename = "requestCount")]
-    pub request_count: i64,
+    pub request_count: String,
 
     /// Total tokens field on admin analytics user rank item.
     #[serde(rename = "totalTokens")]

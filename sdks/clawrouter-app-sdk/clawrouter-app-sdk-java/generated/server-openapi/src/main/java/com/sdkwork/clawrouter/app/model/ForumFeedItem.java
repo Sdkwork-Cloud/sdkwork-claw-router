@@ -4,25 +4,25 @@ import java.util.List;
 
 public class ForumFeedItem {
     private ForumAuthor author;
-    private Integer categoryId;
-    private Integer commentCount;
+    private String categoryId;
+    private String commentCount;
     private String content;
     private String contentType;
     private MediaResource cover;
     private String createdAt;
-    private Integer id;
+    private String id;
     private Boolean isCollected;
     private Boolean isHot;
     private Boolean isLiked;
     private Boolean isRecommended;
     private Boolean isTop;
-    private Integer likeCount;
-    private Integer shareCount;
+    private String likeCount;
+    private String shareCount;
     private String summary;
     private List<String> tags;
     private String title;
     private String updatedAt;
-    private Integer viewCount;
+    private String viewCount;
 
     public ForumAuthor getAuthor() {
         return this.author;
@@ -32,19 +32,19 @@ public class ForumFeedItem {
         this.author = author;
     }
 
-    public Integer getCategoryId() {
+    public String getCategoryId() {
         return this.categoryId;
     }
 
-    public void setCategoryId(Integer categoryId) {
+    public void setCategoryId(String categoryId) {
         this.categoryId = categoryId;
     }
 
-    public Integer getCommentCount() {
+    public String getCommentCount() {
         return this.commentCount;
     }
 
-    public void setCommentCount(Integer commentCount) {
+    public void setCommentCount(String commentCount) {
         this.commentCount = commentCount;
     }
 
@@ -80,11 +80,11 @@ public class ForumFeedItem {
         this.createdAt = createdAt;
     }
 
-    public Integer getId() {
+    public String getId() {
         return this.id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -128,19 +128,19 @@ public class ForumFeedItem {
         this.isTop = isTop;
     }
 
-    public Integer getLikeCount() {
+    public String getLikeCount() {
         return this.likeCount;
     }
 
-    public void setLikeCount(Integer likeCount) {
+    public void setLikeCount(String likeCount) {
         this.likeCount = likeCount;
     }
 
-    public Integer getShareCount() {
+    public String getShareCount() {
         return this.shareCount;
     }
 
-    public void setShareCount(Integer shareCount) {
+    public void setShareCount(String shareCount) {
         this.shareCount = shareCount;
     }
 
@@ -176,11 +176,11 @@ public class ForumFeedItem {
         this.updatedAt = updatedAt;
     }
 
-    public Integer getViewCount() {
+    public String getViewCount() {
         return this.viewCount;
     }
 
-    public void setViewCount(Integer viewCount) {
+    public void setViewCount(String viewCount) {
         this.viewCount = viewCount;
     }
 }

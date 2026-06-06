@@ -14,7 +14,7 @@ public class ChatApi {
     }
 
     /** List product chat conversations */
-    public ConversationsListResult conversationsList(Integer page, Integer pageSize) throws Exception {
+    public ConversationsListResult conversationsList(String page, String pageSize) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null)
@@ -40,7 +40,7 @@ public class ChatApi {
     }
 
     /** List product chat messages */
-    public ConversationMessagesListResult conversationMessagesList(String conversationId, Integer limit, String order) throws Exception {
+    public ConversationMessagesListResult conversationMessagesList(String conversationId, String limit, String order) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("limit", limit, "form", true, false, null),
             new QueryParameterSpec("order", order, "form", true, false, null)

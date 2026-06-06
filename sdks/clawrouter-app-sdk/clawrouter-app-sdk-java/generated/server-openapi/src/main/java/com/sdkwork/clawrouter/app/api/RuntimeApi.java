@@ -14,7 +14,7 @@ public class RuntimeApi {
     }
 
     /** List runtime invocations */
-    public InvocationsListResult invocationsList(Integer page, Integer pageSize, String conversationId, String chatTurnId, String agentSessionId, String runtime, String status) throws Exception {
+    public InvocationsListResult invocationsList(String page, String pageSize, String conversationId, String chatTurnId, String agentSessionId, String runtime, String status) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -45,7 +45,7 @@ public class RuntimeApi {
     }
 
     /** List runtime artifacts */
-    public ArtifactsListResult artifactsList(String invocationId, Integer page, Integer pageSize) throws Exception {
+    public ArtifactsListResult artifactsList(String invocationId, String page, String pageSize) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null)
@@ -75,7 +75,7 @@ public class RuntimeApi {
     }
 
     /** List runtime invocation events */
-    public InvocationEventsListResult invocationEventsList(String invocationId, Integer page, Integer pageSize) throws Exception {
+    public InvocationEventsListResult invocationEventsList(String invocationId, String page, String pageSize) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null)

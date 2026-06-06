@@ -2,13 +2,13 @@ package types
 
 // Admin course dashboard schema exposed by Claw Router.
 type AdminCourseDashboard struct {
-	DraftCourses int `json:"draftCourses"`
+	DraftCourses string `json:"draftCourses"`
 	Id string `json:"id"`
-	PublishedCourses int `json:"publishedCourses"`
-	ReviewQueue int `json:"reviewQueue"`
-	TotalComments int `json:"totalComments"`
-	TotalCourses int `json:"totalCourses"`
-	TotalEngagement int `json:"totalEngagement"`
-	TotalLessons int `json:"totalLessons"`
-	TotalStudents int `json:"totalStudents"`
+	PublishedCourses string `json:"publishedCourses"`
+	ReviewQueue string `json:"reviewQueue"`
+	TotalComments string `json:"totalComments"`
+	TotalCourses string `json:"totalCourses"`
+	TotalEngagement string `json:"totalEngagement"`
+	TotalLessons string `json:"totalLessons"`
+	TotalStudents string `json:"totalStudents"`
 }

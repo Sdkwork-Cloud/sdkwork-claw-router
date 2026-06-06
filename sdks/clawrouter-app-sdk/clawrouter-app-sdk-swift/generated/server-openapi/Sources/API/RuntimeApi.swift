@@ -8,7 +8,7 @@ public class RuntimeApi {
     }
 
     /// List runtime invocations
-    public func invocationsList(page: Int? = nil, pageSize: Int? = nil, conversationId: String? = nil, chatTurnId: String? = nil, agentSessionId: String? = nil, runtime: String? = nil, status: String? = nil) async throws -> InvocationsListResult? {
+    public func invocationsList(page: String? = nil, pageSize: String? = nil, conversationId: String? = nil, chatTurnId: String? = nil, agentSessionId: String? = nil, runtime: String? = nil, status: String? = nil) async throws -> InvocationsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
@@ -38,7 +38,7 @@ public class RuntimeApi {
     }
 
     /// List runtime artifacts
-    public func artifactsList(invocationId: String, page: Int? = nil, pageSize: Int? = nil) async throws -> ArtifactsListResult? {
+    public func artifactsList(invocationId: String, page: String? = nil, pageSize: String? = nil) async throws -> ArtifactsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil)
@@ -69,7 +69,7 @@ public class RuntimeApi {
     }
 
     /// List runtime invocation events
-    public func invocationEventsList(invocationId: String, page: Int? = nil, pageSize: Int? = nil) async throws -> InvocationEventsListResult? {
+    public func invocationEventsList(invocationId: String, page: String? = nil, pageSize: String? = nil) async throws -> InvocationEventsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil)

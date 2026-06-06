@@ -89,7 +89,7 @@ impl AiApi {
     }
 
     /// List model rankings
-    pub async fn model_rankings_list(&self, rank_scope: Option<&str>, vendor_code: Option<&str>, modality: Option<&str>, q: Option<&str>, limit: Option<i64>) -> Result<ModelRankingsListResult, SdkworkError> {
+    pub async fn model_rankings_list(&self, rank_scope: Option<&str>, vendor_code: Option<&str>, modality: Option<&str>, q: Option<&str>, limit: Option<&str>) -> Result<ModelRankingsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("rank_scope", rank_scope, "form", true, false, None),
             QueryParameterSpec::new("vendor_code", vendor_code, "form", true, false, None),
@@ -102,7 +102,7 @@ impl AiApi {
     }
 
     /// List model ranking refresh jobs
-    pub async fn model_rankings_jobs_list(&self, rank_scope: Option<&str>, limit: Option<i64>) -> Result<ModelRankingsJobsListResult, SdkworkError> {
+    pub async fn model_rankings_jobs_list(&self, rank_scope: Option<&str>, limit: Option<&str>) -> Result<ModelRankingsJobsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("rank_scope", rank_scope, "form", true, false, None),
             QueryParameterSpec::new("limit", limit, "form", true, false, None),

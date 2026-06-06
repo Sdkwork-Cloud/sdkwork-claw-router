@@ -7,11 +7,6 @@ public class IamApi {
         self.client = client
     }
 
-    /// List API key map
-    public func apiKeysList() async throws -> ApiKeysListResult? {
-        return try await client.get(ApiPaths.backendPath("/iam/api_keys"), responseType: ApiKeysListResult.self)
-    }
-
     /// Create API key
     public func apiKeysCreate(body: AdminApiKeyCreateRequest, idempotencyKey: String) async throws -> ApiKeysCreateResult? {
         let requestHeaders = buildRequestHeaders(
@@ -26,16 +21,6 @@ public class IamApi {
     /// Delete API key
     public func apiKeysDelete(apiKeyId: String) async throws -> ApiKeysDeleteResult? {
         return try await client.delete(ApiPaths.backendPath("/iam/api_keys/\(serializePathParameter(apiKeyId, PathParameterSpec(name: "apiKeyId", style: "simple", explode: false)))"), responseType: ApiKeysDeleteResult.self)
-    }
-
-    /// List users
-    public func usersList() async throws -> UsersListResult? {
-        return try await client.get(ApiPaths.backendPath("/iam/users"), responseType: UsersListResult.self)
-    }
-
-    /// Create user
-    public func usersCreate(body: AdminUserCreateRequest) async throws -> UsersCreateResult? {
-        return try await client.post(ApiPaths.backendPath("/iam/users"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: UsersCreateResult.self)
     }
 
     /// Update user

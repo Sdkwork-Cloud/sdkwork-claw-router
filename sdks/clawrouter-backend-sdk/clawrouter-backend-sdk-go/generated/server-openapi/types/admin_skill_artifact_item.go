@@ -4,7 +4,7 @@ package types
 type AdminSkillArtifactItem struct {
 	Artifact MediaResource `json:"artifact"`
 	ArtifactRef string `json:"artifactRef"`
-	ArtifactSizeBytes int `json:"artifactSizeBytes"`
+	ArtifactSizeBytes string `json:"artifactSizeBytes"`
 	ArtifactType int `json:"artifactType"`
 	ChecksumHash string `json:"checksumHash"`
 	CreatedAt string `json:"createdAt"`

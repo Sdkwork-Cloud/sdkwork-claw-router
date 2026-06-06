@@ -13,16 +13,16 @@ class ForumCommentDetail:
     author: ForumAuthor
     comment_id: str
     content: str
-    content_id: int
+    content_id: str
     content_type: str
     created_at: str
     device_info: str
     ip_address: str
     is_top: bool
-    likes: int
+    likes: str
     replies: List[ForumCommentItem]
-    reply_count: int
+    reply_count: str
     status: str
     updated_at: str
-    user_id: int
-    parent_id: Optional[int] = None
+    user_id: str
+    parent_id: Optional[str] = None

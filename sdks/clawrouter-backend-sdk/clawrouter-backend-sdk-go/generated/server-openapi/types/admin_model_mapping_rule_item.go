@@ -5,7 +5,7 @@ type AdminModelMappingRuleItem struct {
 	CreatedAt string `json:"createdAt"`
 	Enabled bool `json:"enabled"`
 	Id string `json:"id"`
-	SortOrder int `json:"sortOrder"`
+	SortOrder string `json:"sortOrder"`
 	SourceCatalogKey string `json:"sourceCatalogKey"`
 	SourceModel string `json:"sourceModel"`
 	TargetCatalogKey string `json:"targetCatalogKey"`

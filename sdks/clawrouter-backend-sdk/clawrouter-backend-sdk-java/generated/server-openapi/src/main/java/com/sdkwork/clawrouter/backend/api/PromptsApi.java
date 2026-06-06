@@ -14,7 +14,7 @@ public class PromptsApi {
     }
 
     /** List admin prompts */
-    public DefinitionsListResult definitionsList(Integer page, Integer pageSize, String q, String promptType, String visibility, String status, String categoryId) throws Exception {
+    public DefinitionsListResult definitionsList(String page, String pageSize, String q, String promptType, String visibility, String status, String categoryId) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null),

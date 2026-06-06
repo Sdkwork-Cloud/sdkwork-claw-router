@@ -5,6 +5,7 @@ mod api_key_authenticator;
 mod api_key_secret_generator;
 mod cache_runtime;
 mod category_seed;
+mod invocation;
 mod model_catalog_query;
 mod model_ranking_refresh_worker;
 mod model_rankings_service;
@@ -58,6 +59,14 @@ pub use cache_runtime::{
     ROUTING_PROVIDER_OBJECT_ROUTE_CACHE_NAMESPACE, ROUTING_SNAPSHOT_CACHE_NAMESPACE,
 };
 pub use category_seed::{load_admin_category_seed_bundles, DEFAULT_ADMIN_CATEGORY_SEED_DATASETS};
+pub use invocation::{
+    BillingMode, BillingQuantitySource, DispatchMode, Invocation, InvocationAccount,
+    InvocationAuthType, InvocationBilling, InvocationBody, InvocationDispatch, InvocationId,
+    InvocationRequest, InvocationResource, InvocationRouting, InvocationShape, InvocationSubject,
+    InvocationSurface, InvocationTelemetry, InvocationUsage, ResourceType, StickyMode,
+    StickyRouting, StickyScope, InvocationError, InvocationErrorKind, InvocationFuture,
+    InvocationInterceptor, InvocationPipeline,
+};
 pub use model_catalog_query::{
     ListModelCatalogQuery, ModelCatalogGroup, ModelCatalogItem, ModelCatalogPage,
     ModelCatalogPriceView, ModelCatalogQueryService, ModelCatalogReferencePriceView,

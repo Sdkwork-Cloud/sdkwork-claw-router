@@ -5,31 +5,31 @@ use serde::{Deserialize, Serialize};
 pub struct AdminCacheInstance {
     /// Cache deletes field on admin cache instance.
     #[serde(rename = "cacheDeletes")]
-    pub cache_deletes: i64,
+    pub cache_deletes: String,
 
     /// Cache errors field on admin cache instance.
     #[serde(rename = "cacheErrors")]
-    pub cache_errors: i64,
+    pub cache_errors: String,
 
     /// Cache hits field on admin cache instance.
     #[serde(rename = "cacheHits")]
-    pub cache_hits: i64,
+    pub cache_hits: String,
 
     /// Cache inspections field on admin cache instance.
     #[serde(rename = "cacheInspections")]
-    pub cache_inspections: i64,
+    pub cache_inspections: String,
 
     /// Cache misses field on admin cache instance.
     #[serde(rename = "cacheMisses")]
-    pub cache_misses: i64,
+    pub cache_misses: String,
 
     /// Cache refreshes field on admin cache instance.
     #[serde(rename = "cacheRefreshes")]
-    pub cache_refreshes: i64,
+    pub cache_refreshes: String,
 
     /// Cache writes field on admin cache instance.
     #[serde(rename = "cacheWrites")]
-    pub cache_writes: i64,
+    pub cache_writes: String,
 
     /// Connection profile name field on admin cache instance.
     #[serde(rename = "connectionProfileName")]
@@ -38,15 +38,15 @@ pub struct AdminCacheInstance {
 
     /// Default ttl seconds field on admin cache instance.
     #[serde(rename = "defaultTtlSeconds")]
-    pub default_ttl_seconds: i64,
+    pub default_ttl_seconds: String,
 
     /// Entry count field on admin cache instance.
     #[serde(rename = "entryCount")]
-    pub entry_count: i64,
+    pub entry_count: String,
 
     /// Expired entry count field on admin cache instance.
     #[serde(rename = "expiredEntryCount")]
-    pub expired_entry_count: i64,
+    pub expired_entry_count: String,
 
     /// Key prefix field on admin cache instance.
     #[serde(rename = "keyPrefix")]
@@ -55,7 +55,7 @@ pub struct AdminCacheInstance {
     /// Max entries field on admin cache instance.
     #[serde(rename = "maxEntries")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub max_entries: Option<i64>,
+    pub max_entries: Option<String>,
 
     /// Name field on admin cache instance.
     pub name: String,

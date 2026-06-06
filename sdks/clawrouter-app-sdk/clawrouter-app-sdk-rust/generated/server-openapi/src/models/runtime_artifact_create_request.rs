@@ -43,7 +43,7 @@ pub struct RuntimeArtifactCreateRequest {
     /// Size bytes field on runtime artifact create request.
     #[serde(rename = "sizeBytes")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub size_bytes: Option<i64>,
+    pub size_bytes: Option<String>,
 
     /// Storage key field on runtime artifact create request.
     #[serde(rename = "storageKey")]

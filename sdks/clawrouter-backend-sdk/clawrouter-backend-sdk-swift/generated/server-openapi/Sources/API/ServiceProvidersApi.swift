@@ -8,7 +8,7 @@ public class ServiceProvidersApi {
     }
 
     /// Service Provider Adjustments List
-    public func adjustmentsList(page: Int? = nil, pageSize: Int? = nil, status: String? = nil, providerId: String? = nil, sellerProviderId: String? = nil, buyerProviderId: String? = nil, edgeId: String? = nil) async throws -> AdjustmentsListResult? {
+    public func adjustmentsList(page: String? = nil, pageSize: String? = nil, status: String? = nil, providerId: String? = nil, sellerProviderId: String? = nil, buyerProviderId: String? = nil, edgeId: String? = nil) async throws -> AdjustmentsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
@@ -22,7 +22,7 @@ public class ServiceProvidersApi {
     }
 
     /// Service Provider Audit Events List
-    public func auditEventsList(page: Int? = nil, pageSize: Int? = nil, status: String? = nil, providerId: String? = nil, sellerProviderId: String? = nil, buyerProviderId: String? = nil, edgeId: String? = nil) async throws -> AuditEventsListResult? {
+    public func auditEventsList(page: String? = nil, pageSize: String? = nil, status: String? = nil, providerId: String? = nil, sellerProviderId: String? = nil, buyerProviderId: String? = nil, edgeId: String? = nil) async throws -> AuditEventsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
@@ -36,7 +36,7 @@ public class ServiceProvidersApi {
     }
 
     /// Service Provider Bindings List
-    public func bindingsList(page: Int? = nil, pageSize: Int? = nil, status: String? = nil, providerId: String? = nil, sellerProviderId: String? = nil, buyerProviderId: String? = nil, edgeId: String? = nil) async throws -> BindingsListResult? {
+    public func bindingsList(page: String? = nil, pageSize: String? = nil, status: String? = nil, providerId: String? = nil, sellerProviderId: String? = nil, buyerProviderId: String? = nil, edgeId: String? = nil) async throws -> BindingsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
@@ -50,7 +50,7 @@ public class ServiceProvidersApi {
     }
 
     /// Service Provider Contracts List
-    public func contractsList(page: Int? = nil, pageSize: Int? = nil, status: String? = nil, providerId: String? = nil, sellerProviderId: String? = nil, buyerProviderId: String? = nil, edgeId: String? = nil) async throws -> ContractsListResult? {
+    public func contractsList(page: String? = nil, pageSize: String? = nil, status: String? = nil, providerId: String? = nil, sellerProviderId: String? = nil, buyerProviderId: String? = nil, edgeId: String? = nil) async throws -> ContractsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
@@ -64,7 +64,7 @@ public class ServiceProvidersApi {
     }
 
     /// Service Provider Dashboard Retrieve
-    public func dashboardRetrieve(page: Int? = nil, pageSize: Int? = nil, status: String? = nil, providerId: String? = nil, sellerProviderId: String? = nil, buyerProviderId: String? = nil, edgeId: String? = nil) async throws -> DashboardRetrieveResult? {
+    public func dashboardRetrieve(page: String? = nil, pageSize: String? = nil, status: String? = nil, providerId: String? = nil, sellerProviderId: String? = nil, buyerProviderId: String? = nil, edgeId: String? = nil) async throws -> DashboardRetrieveResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
@@ -78,7 +78,7 @@ public class ServiceProvidersApi {
     }
 
     /// Service Provider Downstreams List
-    public func downstreamsList(page: Int? = nil, pageSize: Int? = nil, status: String? = nil, providerId: String? = nil, sellerProviderId: String? = nil, buyerProviderId: String? = nil, edgeId: String? = nil) async throws -> DownstreamsListResult? {
+    public func downstreamsList(page: String? = nil, pageSize: String? = nil, status: String? = nil, providerId: String? = nil, sellerProviderId: String? = nil, buyerProviderId: String? = nil, edgeId: String? = nil) async throws -> DownstreamsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
@@ -103,7 +103,7 @@ public class ServiceProvidersApi {
     }
 
     /// Service Provider Members List
-    public func membersList(page: Int? = nil, pageSize: Int? = nil, status: String? = nil, providerId: String? = nil, sellerProviderId: String? = nil, buyerProviderId: String? = nil, edgeId: String? = nil) async throws -> MembersListResult? {
+    public func membersList(page: String? = nil, pageSize: String? = nil, status: String? = nil, providerId: String? = nil, sellerProviderId: String? = nil, buyerProviderId: String? = nil, edgeId: String? = nil) async throws -> MembersListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
@@ -117,7 +117,7 @@ public class ServiceProvidersApi {
     }
 
     /// Service Provider Pricing Rules List
-    public func pricingRulesList(page: Int? = nil, pageSize: Int? = nil, status: String? = nil, providerId: String? = nil, sellerProviderId: String? = nil, buyerProviderId: String? = nil, edgeId: String? = nil) async throws -> PricingRulesListResult? {
+    public func pricingRulesList(page: String? = nil, pageSize: String? = nil, status: String? = nil, providerId: String? = nil, sellerProviderId: String? = nil, buyerProviderId: String? = nil, edgeId: String? = nil) async throws -> PricingRulesListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
@@ -164,7 +164,7 @@ public class ServiceProvidersApi {
     }
 
     /// Service Providers List
-    public func providerRegistryList(page: Int? = nil, pageSize: Int? = nil, status: String? = nil, providerId: String? = nil, sellerProviderId: String? = nil, buyerProviderId: String? = nil, edgeId: String? = nil) async throws -> ProviderRegistryListResult? {
+    public func providerRegistryList(page: String? = nil, pageSize: String? = nil, status: String? = nil, providerId: String? = nil, sellerProviderId: String? = nil, buyerProviderId: String? = nil, edgeId: String? = nil) async throws -> ProviderRegistryListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
@@ -178,7 +178,7 @@ public class ServiceProvidersApi {
     }
 
     /// Service Provider Reconciliation Runs List
-    public func reconciliationRunsList(page: Int? = nil, pageSize: Int? = nil, status: String? = nil, providerId: String? = nil, sellerProviderId: String? = nil, buyerProviderId: String? = nil, edgeId: String? = nil) async throws -> ReconciliationRunsListResult? {
+    public func reconciliationRunsList(page: String? = nil, pageSize: String? = nil, status: String? = nil, providerId: String? = nil, sellerProviderId: String? = nil, buyerProviderId: String? = nil, edgeId: String? = nil) async throws -> ReconciliationRunsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
@@ -192,7 +192,7 @@ public class ServiceProvidersApi {
     }
 
     /// Service Provider Relations List
-    public func relationsList(page: Int? = nil, pageSize: Int? = nil, status: String? = nil, providerId: String? = nil, sellerProviderId: String? = nil, buyerProviderId: String? = nil, edgeId: String? = nil) async throws -> RelationsListResult? {
+    public func relationsList(page: String? = nil, pageSize: String? = nil, status: String? = nil, providerId: String? = nil, sellerProviderId: String? = nil, buyerProviderId: String? = nil, edgeId: String? = nil) async throws -> RelationsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
@@ -206,7 +206,7 @@ public class ServiceProvidersApi {
     }
 
     /// Service Provider Risk Events List
-    public func riskEventsList(page: Int? = nil, pageSize: Int? = nil, status: String? = nil, providerId: String? = nil, sellerProviderId: String? = nil, buyerProviderId: String? = nil, edgeId: String? = nil) async throws -> RiskEventsListResult? {
+    public func riskEventsList(page: String? = nil, pageSize: String? = nil, status: String? = nil, providerId: String? = nil, sellerProviderId: String? = nil, buyerProviderId: String? = nil, edgeId: String? = nil) async throws -> RiskEventsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
@@ -220,7 +220,7 @@ public class ServiceProvidersApi {
     }
 
     /// Service Provider Statements List
-    public func statementsList(page: Int? = nil, pageSize: Int? = nil, status: String? = nil, providerId: String? = nil, sellerProviderId: String? = nil, buyerProviderId: String? = nil, edgeId: String? = nil) async throws -> StatementsListResult? {
+    public func statementsList(page: String? = nil, pageSize: String? = nil, status: String? = nil, providerId: String? = nil, sellerProviderId: String? = nil, buyerProviderId: String? = nil, edgeId: String? = nil) async throws -> StatementsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
@@ -234,7 +234,7 @@ public class ServiceProvidersApi {
     }
 
     /// Service Provider Usage List
-    public func usageList(page: Int? = nil, pageSize: Int? = nil, status: String? = nil, providerId: String? = nil, sellerProviderId: String? = nil, buyerProviderId: String? = nil, edgeId: String? = nil) async throws -> UsageListResult? {
+    public func usageList(page: String? = nil, pageSize: String? = nil, status: String? = nil, providerId: String? = nil, sellerProviderId: String? = nil, buyerProviderId: String? = nil, edgeId: String? = nil) async throws -> UsageListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
@@ -248,7 +248,7 @@ public class ServiceProvidersApi {
     }
 
     /// Service Provider Wallet Accounts List
-    public func providerWalletAccountsList(page: Int? = nil, pageSize: Int? = nil, status: String? = nil, providerId: String? = nil, sellerProviderId: String? = nil, buyerProviderId: String? = nil, edgeId: String? = nil) async throws -> ProviderWalletAccountsListResult? {
+    public func providerWalletAccountsList(page: String? = nil, pageSize: String? = nil, status: String? = nil, providerId: String? = nil, sellerProviderId: String? = nil, buyerProviderId: String? = nil, edgeId: String? = nil) async throws -> ProviderWalletAccountsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),

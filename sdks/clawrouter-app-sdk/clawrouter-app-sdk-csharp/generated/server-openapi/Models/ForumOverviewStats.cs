@@ -6,9 +6,9 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class ForumOverviewStats
     {
-        public int? MemberCount { get; set; }
-        public int? OnlineMembers { get; set; }
-        public int? TotalComments { get; set; }
-        public int? TotalPosts { get; set; }
+        public string? MemberCount { get; set; }
+        public string? OnlineMembers { get; set; }
+        public string? TotalComments { get; set; }
+        public string? TotalPosts { get; set; }
     }
 }

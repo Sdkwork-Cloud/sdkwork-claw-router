@@ -16,7 +16,7 @@ impl EcosystemApi {
     }
 
     /// List skills
-    pub async fn skills_list(&self, q: Option<&str>, market_status: Option<&str>, review_status: Option<&str>, visibility: Option<&str>, enabled: Option<bool>, category_id: Option<&str>, page: Option<i64>, page_size: Option<i64>) -> Result<SkillsListResult, SdkworkError> {
+    pub async fn skills_list(&self, q: Option<&str>, market_status: Option<&str>, review_status: Option<&str>, visibility: Option<&str>, enabled: Option<bool>, category_id: Option<&str>, page: Option<&str>, page_size: Option<&str>) -> Result<SkillsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("q", q, "form", true, false, None),
             QueryParameterSpec::new("market_status", market_status, "form", true, false, None),
@@ -62,7 +62,7 @@ impl EcosystemApi {
     }
 
     /// List skill packages
-    pub async fn skills_package_list(&self, q: Option<&str>, enabled: Option<bool>, category_id: Option<&str>, page: Option<i64>, page_size: Option<i64>) -> Result<SkillsPackageListResult, SdkworkError> {
+    pub async fn skills_package_list(&self, q: Option<&str>, enabled: Option<bool>, category_id: Option<&str>, page: Option<&str>, page_size: Option<&str>) -> Result<SkillsPackageListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("q", q, "form", true, false, None),
             QueryParameterSpec::new("enabled", enabled, "form", true, false, None),

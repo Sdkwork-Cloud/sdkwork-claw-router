@@ -9,7 +9,7 @@ import com.sdkwork.clawrouter.backend.http.HttpClient
 class EcosystemApi(private val client: HttpClient) {
 
     /** List skills */
-    suspend fun skillsList(q: String? = null, marketStatus: String? = null, reviewStatus: String? = null, visibility: String? = null, enabled: Boolean? = null, categoryId: String? = null, page: Int? = null, pageSize: Int? = null): SkillsListResult? {
+    suspend fun skillsList(q: String? = null, marketStatus: String? = null, reviewStatus: String? = null, visibility: String? = null, enabled: Boolean? = null, categoryId: String? = null, page: String? = null, pageSize: String? = null): SkillsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("q", q, "form", true, false, null),
             QueryParameterSpec("market_status", marketStatus, "form", true, false, null),
@@ -55,7 +55,7 @@ class EcosystemApi(private val client: HttpClient) {
     }
 
     /** List skill packages */
-    suspend fun skillsPackageList(q: String? = null, enabled: Boolean? = null, categoryId: String? = null, page: Int? = null, pageSize: Int? = null): SkillsPackageListResult? {
+    suspend fun skillsPackageList(q: String? = null, enabled: Boolean? = null, categoryId: String? = null, page: String? = null, pageSize: String? = null): SkillsPackageListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("q", q, "form", true, false, null),
             QueryParameterSpec("enabled", enabled, "form", true, false, null),

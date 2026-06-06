@@ -8,11 +8,11 @@ public class AdminAnalyticsModelRankItem {
     private String modality;
     private String model;
     private Double points;
-    private Integer rank;
-    private Integer requestCount;
+    private String rank;
+    private String requestCount;
     private Double totalTokens;
     private Double upstreamCost;
-    private Integer userCount;
+    private String userCount;
     private String vendor;
 
     public Double getAverageTokensPerRequest() {
@@ -63,19 +63,19 @@ public class AdminAnalyticsModelRankItem {
         this.points = points;
     }
 
-    public Integer getRank() {
+    public String getRank() {
         return this.rank;
     }
 
-    public void setRank(Integer rank) {
+    public void setRank(String rank) {
         this.rank = rank;
     }
 
-    public Integer getRequestCount() {
+    public String getRequestCount() {
         return this.requestCount;
     }
 
-    public void setRequestCount(Integer requestCount) {
+    public void setRequestCount(String requestCount) {
         this.requestCount = requestCount;
     }
 
@@ -95,11 +95,11 @@ public class AdminAnalyticsModelRankItem {
         this.upstreamCost = upstreamCost;
     }
 
-    public Integer getUserCount() {
+    public String getUserCount() {
         return this.userCount;
     }
 
-    public void setUserCount(Integer userCount) {
+    public void setUserCount(String userCount) {
         this.userCount = userCount;
     }
 

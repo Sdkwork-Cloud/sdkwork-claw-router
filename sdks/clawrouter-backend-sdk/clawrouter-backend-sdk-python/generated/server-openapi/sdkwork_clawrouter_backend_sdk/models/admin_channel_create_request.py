@@ -20,10 +20,9 @@ class AdminChannelCreateRequest:
     circuit_breaker_policy: Optional[ProviderCircuitBreakerPolicy] = None
     credential_rotation: Optional[str] = None
     expires_at: Optional[str] = None
-    models: Optional[List[str]] = None
     protocol: Optional[str] = None
     resource_codes: Optional[List[str]] = None
     retry_policy: Optional[ProviderRetryPolicy] = None
     status: Optional[str] = None
-    timeout_ms: Optional[int] = None
-    weight: Optional[int] = None
+    timeout_ms: Optional[str] = None
+    weight: Optional[str] = None

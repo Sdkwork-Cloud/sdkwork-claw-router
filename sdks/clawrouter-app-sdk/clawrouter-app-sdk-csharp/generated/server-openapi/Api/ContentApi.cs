@@ -18,7 +18,7 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// List forum comments
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.CommentsListResult?> CommentsListAsync(string contentType, int contentId, int? page = null, int? pageSize = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.CommentsListResult?> CommentsListAsync(string contentType, string contentId, string? page = null, string? pageSize = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -41,7 +41,7 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// List forum comment statistics
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.CommentsStatisticsListResult?> CommentsStatisticsListAsync(string contentType, int contentId)
+        public async Task<Sdkwork.ClawRouter.App.Models.CommentsStatisticsListResult?> CommentsStatisticsListAsync(string contentType, string contentId)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -102,7 +102,7 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// List forum comment replies
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.CommentsRepliesListResult?> CommentsRepliesListAsync(string commentId, int? page = null, int? pageSize = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.CommentsRepliesListResult?> CommentsRepliesListAsync(string commentId, string? page = null, string? pageSize = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -123,7 +123,7 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// List forum feeds
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.FeedsListResult?> FeedsListAsync(string? type = null, string? contentType = null, string? q = null, int? authorId = null, int? page = null, int? pageSize = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.FeedsListResult?> FeedsListAsync(string? type = null, string? contentType = null, string? q = null, string? authorId = null, string? page = null, string? pageSize = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -148,7 +148,7 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// List category forum feeds
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.FeedsCategoryRetrieveResult?> FeedsCategoryRetrieveAsync(string categoryId, int? page = null, int? pageSize = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.FeedsCategoryRetrieveResult?> FeedsCategoryRetrieveAsync(string categoryId, string? page = null, string? pageSize = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -161,7 +161,7 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// List hot forum feeds
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.FeedsHotListResult?> FeedsHotListAsync(int? limit = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.FeedsHotListResult?> FeedsHotListAsync(string? limit = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -173,7 +173,7 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// List most liked forum feeds
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.FeedsMostLikedListResult?> FeedsMostLikedListAsync(int? limit = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.FeedsMostLikedListResult?> FeedsMostLikedListAsync(string? limit = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -185,7 +185,7 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// List most viewed forum feeds
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.FeedsMostViewedListResult?> FeedsMostViewedListAsync(int? limit = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.FeedsMostViewedListResult?> FeedsMostViewedListAsync(string? limit = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -205,7 +205,7 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// List recommended forum feeds
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.FeedsRecommendListResult?> FeedsRecommendListAsync(int? limit = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.FeedsRecommendListResult?> FeedsRecommendListAsync(string? limit = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -217,7 +217,7 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// List top forum feeds
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.FeedsTopListResult?> FeedsTopListAsync(int? limit = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.FeedsTopListResult?> FeedsTopListAsync(string? limit = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -245,7 +245,7 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Collect forum feed
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.FeedsCollectionsCreateResult?> FeedsCollectionsCreateAsync(string id, int? folderId = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.FeedsCollectionsCreateResult?> FeedsCollectionsCreateAsync(string id, string? folderId = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -297,7 +297,7 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// List my forum comments
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.UsersCurrentCommentsListResult?> UsersCurrentCommentsListAsync(int? page = null, int? pageSize = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.UsersCurrentCommentsListResult?> UsersCurrentCommentsListAsync(string? page = null, string? pageSize = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -310,7 +310,7 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// List courses
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.CoursesListResult?> CoursesListAsync(int? level = null, string? category = null, string? q = null, int? page = null, int? pageSize = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.CoursesListResult?> CoursesListAsync(string? level = null, string? category = null, string? q = null, string? page = null, string? pageSize = null)
         {
             var queryString = BuildQueryString(new[]
             {

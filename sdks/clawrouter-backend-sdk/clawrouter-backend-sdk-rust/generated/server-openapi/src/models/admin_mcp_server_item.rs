@@ -31,7 +31,7 @@ pub struct AdminMcpServerItem {
     pub health_status: String,
 
     /// Id field on admin mcp server item.
-    pub id: i64,
+    pub id: String,
 
     /// Last checked at field on admin mcp server item.
     #[serde(rename = "lastCheckedAt")]
@@ -46,19 +46,19 @@ pub struct AdminMcpServerItem {
     /// Latest revision id field on admin mcp server item.
     #[serde(rename = "latestRevisionId")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub latest_revision_id: Option<i64>,
+    pub latest_revision_id: Option<String>,
 
     /// Name field on admin mcp server item.
     pub name: String,
 
     /// Organization id field on admin mcp server item.
     #[serde(rename = "organizationId")]
-    pub organization_id: i64,
+    pub organization_id: String,
 
     /// Owner user id field on admin mcp server item.
     #[serde(rename = "ownerUserId")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub owner_user_id: Option<i64>,
+    pub owner_user_id: Option<String>,
 
     /// Published at field on admin mcp server item.
     #[serde(rename = "publishedAt")]
@@ -68,7 +68,7 @@ pub struct AdminMcpServerItem {
     /// Published revision id field on admin mcp server item.
     #[serde(rename = "publishedRevisionId")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub published_revision_id: Option<i64>,
+    pub published_revision_id: Option<String>,
 
     /// Server key field on admin mcp server item.
     #[serde(rename = "serverKey")]
@@ -82,7 +82,7 @@ pub struct AdminMcpServerItem {
 
     /// Tenant id field on admin mcp server item.
     #[serde(rename = "tenantId")]
-    pub tenant_id: i64,
+    pub tenant_id: String,
 
     /// Transport field on admin mcp server item.
     pub transport: String,

@@ -7,7 +7,7 @@ type StorageReconciliationRun struct {
 	DryRun bool `json:"dryRun"`
 	FinishedAt string `json:"finishedAt"`
 	Id string `json:"id"`
-	IssueCount int `json:"issueCount"`
+	IssueCount string `json:"issueCount"`
 	Issues string `json:"issues"`
 	ProviderCode string `json:"providerCode"`
 	ProviderId string `json:"providerId"`

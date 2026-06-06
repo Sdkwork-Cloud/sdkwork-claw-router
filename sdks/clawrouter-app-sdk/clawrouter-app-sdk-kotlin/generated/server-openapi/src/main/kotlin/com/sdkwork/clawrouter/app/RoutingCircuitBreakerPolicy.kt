@@ -1,5 +1,5 @@
 package com.sdkwork.clawrouter.app
 
 data class RoutingCircuitBreakerPolicy(
-    val failureThreshold: Int? = null
+    val failureThreshold: String? = null
 )

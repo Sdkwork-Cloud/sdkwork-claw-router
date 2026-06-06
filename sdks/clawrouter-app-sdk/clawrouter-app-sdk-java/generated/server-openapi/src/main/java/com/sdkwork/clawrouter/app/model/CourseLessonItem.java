@@ -4,15 +4,15 @@ package com.sdkwork.clawrouter.app.model;
 public class CourseLessonItem {
     private String content;
     private String description;
-    private Integer durationSeconds;
+    private String durationSeconds;
     private String durationText;
     private String externalBvid;
     private Boolean freePreview;
     private String id;
-    private Integer lessonId;
-    private Integer lessonNo;
-    private Integer number;
-    private Integer sortOrder;
+    private String lessonId;
+    private String lessonNo;
+    private String number;
+    private String sortOrder;
     private String sourceProvider;
     private String title;
     private MediaResource video;
@@ -33,11 +33,11 @@ public class CourseLessonItem {
         this.description = description;
     }
 
-    public Integer getDurationSeconds() {
+    public String getDurationSeconds() {
         return this.durationSeconds;
     }
 
-    public void setDurationSeconds(Integer durationSeconds) {
+    public void setDurationSeconds(String durationSeconds) {
         this.durationSeconds = durationSeconds;
     }
 
@@ -73,35 +73,35 @@ public class CourseLessonItem {
         this.id = id;
     }
 
-    public Integer getLessonId() {
+    public String getLessonId() {
         return this.lessonId;
     }
 
-    public void setLessonId(Integer lessonId) {
+    public void setLessonId(String lessonId) {
         this.lessonId = lessonId;
     }
 
-    public Integer getLessonNo() {
+    public String getLessonNo() {
         return this.lessonNo;
     }
 
-    public void setLessonNo(Integer lessonNo) {
+    public void setLessonNo(String lessonNo) {
         this.lessonNo = lessonNo;
     }
 
-    public Integer getNumber() {
+    public String getNumber() {
         return this.number;
     }
 
-    public void setNumber(Integer number) {
+    public void setNumber(String number) {
         this.number = number;
     }
 
-    public Integer getSortOrder() {
+    public String getSortOrder() {
         return this.sortOrder;
     }
 
-    public void setSortOrder(Integer sortOrder) {
+    public void setSortOrder(String sortOrder) {
         this.sortOrder = sortOrder;
     }
 

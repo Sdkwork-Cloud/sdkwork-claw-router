@@ -135,7 +135,7 @@ func (a *AiApi) ModelMappingsUpdate(mappingId string, body sdktypes.AdminModelMa
 }
 
 // List model rankings
-func (a *AiApi) ModelRankingsList(rankScope *string, vendorCode *string, modality *string, q *string, limit *int) (sdktypes.ModelRankingsListResult, error) {
+func (a *AiApi) ModelRankingsList(rankScope *string, vendorCode *string, modality *string, q *string, limit *string) (sdktypes.ModelRankingsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "rank_scope", Value: func() interface{} { if rankScope == nil { return nil }; return *rankScope }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "vendor_code", Value: func() interface{} { if vendorCode == nil { return nil }; return *vendorCode }(), Style: "form", Explode: true, AllowReserved: false},
@@ -152,7 +152,7 @@ func (a *AiApi) ModelRankingsList(rankScope *string, vendorCode *string, modalit
 }
 
 // List model ranking refresh jobs
-func (a *AiApi) ModelRankingsJobsList(rankScope *string, limit *int) (sdktypes.ModelRankingsJobsListResult, error) {
+func (a *AiApi) ModelRankingsJobsList(rankScope *string, limit *string) (sdktypes.ModelRankingsJobsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "rank_scope", Value: func() interface{} { if rankScope == nil { return nil }; return *rankScope }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "limit", Value: func() interface{} { if limit == nil { return nil }; return *limit }(), Style: "form", Explode: true, AllowReserved: false},

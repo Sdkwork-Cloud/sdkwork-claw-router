@@ -10,7 +10,7 @@ pub struct AdminCacheOperationResponse {
 
     /// Deleted entries field on admin cache operation response.
     #[serde(rename = "deletedEntries")]
-    pub deleted_entries: i64,
+    pub deleted_entries: String,
 
     /// Instance name field on admin cache operation response.
     #[serde(rename = "instanceName")]
@@ -26,7 +26,7 @@ pub struct AdminCacheOperationResponse {
 
     /// Refreshed entries field on admin cache operation response.
     #[serde(rename = "refreshedEntries")]
-    pub refreshed_entries: i64,
+    pub refreshed_entries: String,
 
     /// Status field on admin cache operation response.
     pub status: String,

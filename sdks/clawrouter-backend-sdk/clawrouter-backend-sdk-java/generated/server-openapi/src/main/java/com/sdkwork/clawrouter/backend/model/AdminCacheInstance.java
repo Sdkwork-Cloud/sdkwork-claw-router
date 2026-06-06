@@ -2,19 +2,19 @@ package com.sdkwork.clawrouter.backend.model;
 
 
 public class AdminCacheInstance {
-    private Integer cacheDeletes;
-    private Integer cacheErrors;
-    private Integer cacheHits;
-    private Integer cacheInspections;
-    private Integer cacheMisses;
-    private Integer cacheRefreshes;
-    private Integer cacheWrites;
+    private String cacheDeletes;
+    private String cacheErrors;
+    private String cacheHits;
+    private String cacheInspections;
+    private String cacheMisses;
+    private String cacheRefreshes;
+    private String cacheWrites;
     private String connectionProfileName;
-    private Integer defaultTtlSeconds;
-    private Integer entryCount;
-    private Integer expiredEntryCount;
+    private String defaultTtlSeconds;
+    private String entryCount;
+    private String expiredEntryCount;
     private String keyPrefix;
-    private Integer maxEntries;
+    private String maxEntries;
     private String name;
     private String providerKind;
     private String purpose;
@@ -23,59 +23,59 @@ public class AdminCacheInstance {
     private Boolean supportsInspect;
     private Boolean supportsRefresh;
 
-    public Integer getCacheDeletes() {
+    public String getCacheDeletes() {
         return this.cacheDeletes;
     }
 
-    public void setCacheDeletes(Integer cacheDeletes) {
+    public void setCacheDeletes(String cacheDeletes) {
         this.cacheDeletes = cacheDeletes;
     }
 
-    public Integer getCacheErrors() {
+    public String getCacheErrors() {
         return this.cacheErrors;
     }
 
-    public void setCacheErrors(Integer cacheErrors) {
+    public void setCacheErrors(String cacheErrors) {
         this.cacheErrors = cacheErrors;
     }
 
-    public Integer getCacheHits() {
+    public String getCacheHits() {
         return this.cacheHits;
     }
 
-    public void setCacheHits(Integer cacheHits) {
+    public void setCacheHits(String cacheHits) {
         this.cacheHits = cacheHits;
     }
 
-    public Integer getCacheInspections() {
+    public String getCacheInspections() {
         return this.cacheInspections;
     }
 
-    public void setCacheInspections(Integer cacheInspections) {
+    public void setCacheInspections(String cacheInspections) {
         this.cacheInspections = cacheInspections;
     }
 
-    public Integer getCacheMisses() {
+    public String getCacheMisses() {
         return this.cacheMisses;
     }
 
-    public void setCacheMisses(Integer cacheMisses) {
+    public void setCacheMisses(String cacheMisses) {
         this.cacheMisses = cacheMisses;
     }
 
-    public Integer getCacheRefreshes() {
+    public String getCacheRefreshes() {
         return this.cacheRefreshes;
     }
 
-    public void setCacheRefreshes(Integer cacheRefreshes) {
+    public void setCacheRefreshes(String cacheRefreshes) {
         this.cacheRefreshes = cacheRefreshes;
     }
 
-    public Integer getCacheWrites() {
+    public String getCacheWrites() {
         return this.cacheWrites;
     }
 
-    public void setCacheWrites(Integer cacheWrites) {
+    public void setCacheWrites(String cacheWrites) {
         this.cacheWrites = cacheWrites;
     }
 
@@ -87,27 +87,27 @@ public class AdminCacheInstance {
         this.connectionProfileName = connectionProfileName;
     }
 
-    public Integer getDefaultTtlSeconds() {
+    public String getDefaultTtlSeconds() {
         return this.defaultTtlSeconds;
     }
 
-    public void setDefaultTtlSeconds(Integer defaultTtlSeconds) {
+    public void setDefaultTtlSeconds(String defaultTtlSeconds) {
         this.defaultTtlSeconds = defaultTtlSeconds;
     }
 
-    public Integer getEntryCount() {
+    public String getEntryCount() {
         return this.entryCount;
     }
 
-    public void setEntryCount(Integer entryCount) {
+    public void setEntryCount(String entryCount) {
         this.entryCount = entryCount;
     }
 
-    public Integer getExpiredEntryCount() {
+    public String getExpiredEntryCount() {
         return this.expiredEntryCount;
     }
 
-    public void setExpiredEntryCount(Integer expiredEntryCount) {
+    public void setExpiredEntryCount(String expiredEntryCount) {
         this.expiredEntryCount = expiredEntryCount;
     }
 
@@ -119,11 +119,11 @@ public class AdminCacheInstance {
         this.keyPrefix = keyPrefix;
     }
 
-    public Integer getMaxEntries() {
+    public String getMaxEntries() {
         return this.maxEntries;
     }
 
-    public void setMaxEntries(Integer maxEntries) {
+    public void setMaxEntries(String maxEntries) {
         this.maxEntries = maxEntries;
     }
 

@@ -56,7 +56,8 @@ pub struct AdminSiteCreateRequest {
 
     /// Site code field on admin site create request.
     #[serde(rename = "siteCode")]
-    pub site_code: String,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub site_code: Option<String>,
 
     /// Site name field on admin site create request.
     #[serde(rename = "siteName")]

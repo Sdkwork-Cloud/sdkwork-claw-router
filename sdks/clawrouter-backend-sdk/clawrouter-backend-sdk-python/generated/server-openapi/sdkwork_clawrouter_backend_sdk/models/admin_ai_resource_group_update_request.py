@@ -15,5 +15,5 @@ class AdminAiResourceGroupUpdateRequest:
     group_type: Optional[str] = None
     members: Optional[List[AdminAiResourceGroupMemberInput]] = None
     selection_mode: Optional[str] = None
-    sort_order: Optional[int] = None
+    sort_order: Optional[str] = None
     status: Optional[str] = None

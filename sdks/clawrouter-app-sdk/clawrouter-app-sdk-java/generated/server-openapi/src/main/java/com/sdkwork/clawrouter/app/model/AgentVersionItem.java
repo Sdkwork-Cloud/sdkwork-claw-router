@@ -14,7 +14,7 @@ public class AgentVersionItem {
     private String systemPrompt;
     private Map<String, String> toolPolicy;
     private String updatedAt;
-    private Integer versionNo;
+    private String versionNo;
 
     public String getCreatedAt() {
         return this.createdAt;
@@ -104,11 +104,11 @@ public class AgentVersionItem {
         this.updatedAt = updatedAt;
     }
 
-    public Integer getVersionNo() {
+    public String getVersionNo() {
         return this.versionNo;
     }
 
-    public void setVersionNo(Integer versionNo) {
+    public void setVersionNo(String versionNo) {
         this.versionNo = versionNo;
     }
 }

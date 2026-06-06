@@ -15,23 +15,23 @@ class AppModelCatalogItem:
     capability_intro: Optional[str]
     catalog_key: str
     categories: List[str]
-    context_tokens: Optional[int]
+    context_tokens: Optional[str]
     description: Optional[str]
     display_name: str
     groups: List[str]
     input_modalities: List[str]
     limitations: List[str]
-    max_output_tokens: Optional[int]
+    max_output_tokens: Optional[str]
     modalities: List[str]
     model: str
     official_reference_prices: List[AppModelCatalogReferencePrice]
     output_modalities: List[str]
     price_availability: AppModelCatalogPriceAvailability
     provider_codes: List[str]
-    release_stage: Optional[int]
+    release_stage: Optional[str]
     replacement_model: Optional[str]
-    routing_state: Optional[int]
-    shelf_state: Optional[int]
+    routing_state: Optional[str]
+    shelf_state: Optional[str]
     supported_languages: List[str]
     supports_json_schema: bool
     supports_streaming: bool

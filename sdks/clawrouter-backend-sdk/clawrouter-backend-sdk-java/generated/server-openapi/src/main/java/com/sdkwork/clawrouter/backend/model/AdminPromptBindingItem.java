@@ -6,16 +6,16 @@ public class AdminPromptBindingItem {
     private String bindingRole;
     private String createdAt;
     private Boolean enabled;
-    private Integer id;
-    private Integer organizationId;
-    private Integer ownerId;
+    private String id;
+    private String organizationId;
+    private String ownerId;
     private String ownerType;
     private Map<String, String> policyJson;
     private Integer priority;
-    private Integer promptId;
-    private Integer promptVersionId;
+    private String promptId;
+    private String promptVersionId;
     private Map<String, String> snapshotJson;
-    private Integer tenantId;
+    private String tenantId;
     private String updatedAt;
     private String uuid;
 
@@ -43,27 +43,27 @@ public class AdminPromptBindingItem {
         this.enabled = enabled;
     }
 
-    public Integer getId() {
+    public String getId() {
         return this.id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public Integer getOrganizationId() {
+    public String getOrganizationId() {
         return this.organizationId;
     }
 
-    public void setOrganizationId(Integer organizationId) {
+    public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
 
-    public Integer getOwnerId() {
+    public String getOwnerId() {
         return this.ownerId;
     }
 
-    public void setOwnerId(Integer ownerId) {
+    public void setOwnerId(String ownerId) {
         this.ownerId = ownerId;
     }
 
@@ -91,19 +91,19 @@ public class AdminPromptBindingItem {
         this.priority = priority;
     }
 
-    public Integer getPromptId() {
+    public String getPromptId() {
         return this.promptId;
     }
 
-    public void setPromptId(Integer promptId) {
+    public void setPromptId(String promptId) {
         this.promptId = promptId;
     }
 
-    public Integer getPromptVersionId() {
+    public String getPromptVersionId() {
         return this.promptVersionId;
     }
 
-    public void setPromptVersionId(Integer promptVersionId) {
+    public void setPromptVersionId(String promptVersionId) {
         this.promptVersionId = promptVersionId;
     }
 
@@ -115,11 +115,11 @@ public class AdminPromptBindingItem {
         this.snapshotJson = snapshotJson;
     }
 
-    public Integer getTenantId() {
+    public String getTenantId() {
         return this.tenantId;
     }
 
-    public void setTenantId(Integer tenantId) {
+    public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
 

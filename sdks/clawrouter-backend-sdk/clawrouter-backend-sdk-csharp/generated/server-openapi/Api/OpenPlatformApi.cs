@@ -18,7 +18,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// List open platform accounts
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.AccountsListResult?> AccountsListAsync(string? provider = null, string? type = null, string? status = null, int? page = null, int? pageSize = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AccountsListResult?> AccountsListAsync(string? provider = null, string? type = null, string? status = null, string? page = null, string? pageSize = null)
         {
             var queryString = BuildQueryString(new[]
             {

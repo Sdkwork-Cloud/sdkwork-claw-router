@@ -8,7 +8,7 @@ public class AdminSkillAssetItem {
     private Integer assetType;
     private String createdAt;
     private String durationSeconds;
-    private Integer fileSize;
+    private String fileSize;
     private Integer height;
     private String id;
     private String mimeType;
@@ -71,11 +71,11 @@ public class AdminSkillAssetItem {
         this.durationSeconds = durationSeconds;
     }
 
-    public Integer getFileSize() {
+    public String getFileSize() {
         return this.fileSize;
     }
 
-    public void setFileSize(Integer fileSize) {
+    public void setFileSize(String fileSize) {
         this.fileSize = fileSize;
     }
 

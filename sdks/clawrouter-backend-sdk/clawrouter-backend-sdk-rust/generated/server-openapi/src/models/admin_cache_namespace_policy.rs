@@ -19,7 +19,7 @@ pub struct AdminCacheNamespacePolicy {
 
     /// Jitter percent field on admin cache namespace policy.
     #[serde(rename = "jitterPercent")]
-    pub jitter_percent: i64,
+    pub jitter_percent: String,
 
     /// Namespace field on admin cache namespace policy.
     pub namespace: String,
@@ -32,12 +32,12 @@ pub struct AdminCacheNamespacePolicy {
 
     /// Stale while revalidate seconds field on admin cache namespace policy.
     #[serde(rename = "staleWhileRevalidateSeconds")]
-    pub stale_while_revalidate_seconds: i64,
+    pub stale_while_revalidate_seconds: String,
 
     /// Tags field on admin cache namespace policy.
     pub tags: Vec<String>,
 
     /// Ttl seconds field on admin cache namespace policy.
     #[serde(rename = "ttlSeconds")]
-    pub ttl_seconds: i64,
+    pub ttl_seconds: String,
 }

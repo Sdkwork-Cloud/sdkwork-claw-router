@@ -3,7 +3,7 @@ package com.sdkwork.clawrouter.app
 data class MemorySpaceCreateRequest(
     val autoExtractEnabled: Boolean? = null,
     val autoRecallEnabled: Boolean? = null,
-    val maxInjectedTokens: Int? = null,
+    val maxInjectedTokens: String? = null,
     val memoryEnabled: Boolean? = null,
     val metadata: Map<String, String>? = null,
     val ownerId: String? = null,

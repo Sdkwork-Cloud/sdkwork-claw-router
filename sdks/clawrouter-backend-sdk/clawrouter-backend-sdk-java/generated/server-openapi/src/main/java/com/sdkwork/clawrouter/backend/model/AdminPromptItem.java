@@ -7,17 +7,17 @@ public class AdminPromptItem {
     private String categoryId;
     private String createdAt;
     private String description;
-    private Integer id;
-    private Integer latestVersionId;
+    private String id;
+    private String latestVersionId;
     private String name;
-    private Integer organizationId;
-    private Integer ownerUserId;
+    private String organizationId;
+    private String ownerUserId;
     private String promptKey;
     private String promptType;
-    private Integer publishedVersionId;
+    private String publishedVersionId;
     private String status;
     private List<String> tags;
-    private Integer tenantId;
+    private String tenantId;
     private String updatedAt;
     private String uuid;
     private String visibility;
@@ -54,19 +54,19 @@ public class AdminPromptItem {
         this.description = description;
     }
 
-    public Integer getId() {
+    public String getId() {
         return this.id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public Integer getLatestVersionId() {
+    public String getLatestVersionId() {
         return this.latestVersionId;
     }
 
-    public void setLatestVersionId(Integer latestVersionId) {
+    public void setLatestVersionId(String latestVersionId) {
         this.latestVersionId = latestVersionId;
     }
 
@@ -78,19 +78,19 @@ public class AdminPromptItem {
         this.name = name;
     }
 
-    public Integer getOrganizationId() {
+    public String getOrganizationId() {
         return this.organizationId;
     }
 
-    public void setOrganizationId(Integer organizationId) {
+    public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
 
-    public Integer getOwnerUserId() {
+    public String getOwnerUserId() {
         return this.ownerUserId;
     }
 
-    public void setOwnerUserId(Integer ownerUserId) {
+    public void setOwnerUserId(String ownerUserId) {
         this.ownerUserId = ownerUserId;
     }
 
@@ -110,11 +110,11 @@ public class AdminPromptItem {
         this.promptType = promptType;
     }
 
-    public Integer getPublishedVersionId() {
+    public String getPublishedVersionId() {
         return this.publishedVersionId;
     }
 
-    public void setPublishedVersionId(Integer publishedVersionId) {
+    public void setPublishedVersionId(String publishedVersionId) {
         this.publishedVersionId = publishedVersionId;
     }
 
@@ -134,11 +134,11 @@ public class AdminPromptItem {
         this.tags = tags;
     }
 
-    public Integer getTenantId() {
+    public String getTenantId() {
         return this.tenantId;
     }
 
-    public void setTenantId(Integer tenantId) {
+    public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
 

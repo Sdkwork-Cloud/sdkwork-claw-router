@@ -16,7 +16,7 @@ impl PlatformApi {
     }
 
     /// List apps
-    pub async fn apps_list(&self, q: Option<&str>, status: Option<&str>, market_status: Option<&str>, app_type: Option<&str>, category_id: Option<i64>, page: Option<i64>, page_size: Option<i64>) -> Result<AppsListResult, SdkworkError> {
+    pub async fn apps_list(&self, q: Option<&str>, status: Option<&str>, market_status: Option<&str>, app_type: Option<&str>, category_id: Option<&str>, page: Option<&str>, page_size: Option<&str>) -> Result<AppsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("q", q, "form", true, false, None),
             QueryParameterSpec::new("status", status, "form", true, false, None),
@@ -61,7 +61,7 @@ impl PlatformApi {
     }
 
     /// List app templates
-    pub async fn apps_templates_list(&self, q: Option<&str>, publish_status: Option<&str>, template_type: Option<&str>, runtime: Option<&str>, category_id: Option<i64>, page: Option<i64>, page_size: Option<i64>) -> Result<AppsTemplatesListResult, SdkworkError> {
+    pub async fn apps_templates_list(&self, q: Option<&str>, publish_status: Option<&str>, template_type: Option<&str>, runtime: Option<&str>, category_id: Option<&str>, page: Option<&str>, page_size: Option<&str>) -> Result<AppsTemplatesListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("q", q, "form", true, false, None),
             QueryParameterSpec::new("publish_status", publish_status, "form", true, false, None),

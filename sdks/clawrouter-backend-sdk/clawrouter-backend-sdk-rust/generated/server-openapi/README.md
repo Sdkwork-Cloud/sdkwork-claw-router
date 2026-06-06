@@ -85,11 +85,11 @@ use std::collections::HashMap;
 // List managed agents
 let mut query = HashMap::new();
 query.insert("q".to_string(), serde_json::json!("q"));
-query.insert("owner_user_id".to_string(), serde_json::json!(2));
+query.insert("owner_user_id".to_string(), serde_json::json!("1"));
 query.insert("status".to_string(), serde_json::json!("active"));
 query.insert("visibility".to_string(), serde_json::json!("private"));
-query.insert("page".to_string(), serde_json::json!(5));
-query.insert("page_size".to_string(), serde_json::json!(6));
+query.insert("page".to_string(), serde_json::json!("page"));
+query.insert("page_size".to_string(), serde_json::json!("page-size"));
 let result = client.agents().agent_definitions_list(Some(&query)).await?;
 println!("{result:?}");
 ```
@@ -105,8 +105,8 @@ println!("{result:?}");
 ### commerce
 
 ```rust
-// Commerce Reports Payment Reconciliation Retrieve
-let result = client.commerce().reports_payment_reconciliation_retrieve().await?;
+// Recharges Settings Retrieve
+let result = client.commerce().recharges_settings_retrieve().await?;
 println!("{result:?}");
 ```
 
@@ -129,8 +129,16 @@ println!("{result:?}");
 ### iam
 
 ```rust
-// List API key map
-let result = client.iam().api_keys_list().await?;
+use clawrouter_backend_sdk::*;
+// Update user
+let body = AdminUserUpdateRequest {
+    group: Some("group".to_string()),
+    id: "1".to_string(),
+    status: Some("active".to_string()),
+    username: Some("name".to_string()),
+    ..Default::default()
+};
+let result = client.iam().users_update(&body).await?;
 println!("{result:?}");
 ```
 
@@ -148,8 +156,8 @@ println!("{result:?}");
 use std::collections::HashMap;
 // List MCP servers
 let mut query = HashMap::new();
-query.insert("page".to_string(), serde_json::json!(1));
-query.insert("page_size".to_string(), serde_json::json!(2));
+query.insert("page".to_string(), serde_json::json!("page"));
+query.insert("page_size".to_string(), serde_json::json!("page-size"));
 query.insert("q".to_string(), serde_json::json!("q"));
 query.insert("transport".to_string(), serde_json::json!("transport"));
 query.insert("visibility".to_string(), serde_json::json!("visibility"));
@@ -165,8 +173,8 @@ println!("{result:?}");
 use std::collections::HashMap;
 // Messaging provider accounts list
 let mut query = HashMap::new();
-query.insert("page".to_string(), serde_json::json!(1));
-query.insert("page_size".to_string(), serde_json::json!(2));
+query.insert("page".to_string(), serde_json::json!("page"));
+query.insert("page_size".to_string(), serde_json::json!("page-size"));
 query.insert("q".to_string(), serde_json::json!("q"));
 query.insert("status".to_string(), serde_json::json!("status"));
 query.insert("channel".to_string(), serde_json::json!("sms"));
@@ -208,8 +216,8 @@ println!("{result:?}");
 use std::collections::HashMap;
 // List admin prompts
 let mut query = HashMap::new();
-query.insert("page".to_string(), serde_json::json!(1));
-query.insert("page_size".to_string(), serde_json::json!(2));
+query.insert("page".to_string(), serde_json::json!("page"));
+query.insert("page_size".to_string(), serde_json::json!("page-size"));
 query.insert("q".to_string(), serde_json::json!("q"));
 query.insert("prompt_type".to_string(), serde_json::json!("prompt-type"));
 query.insert("visibility".to_string(), serde_json::json!("visibility"));
@@ -225,8 +233,8 @@ println!("{result:?}");
 use std::collections::HashMap;
 // Service Provider Adjustments List
 let mut query = HashMap::new();
-query.insert("page".to_string(), serde_json::json!(1));
-query.insert("page_size".to_string(), serde_json::json!(2));
+query.insert("page".to_string(), serde_json::json!("page"));
+query.insert("page_size".to_string(), serde_json::json!("page-size"));
 query.insert("status".to_string(), serde_json::json!("status"));
 query.insert("provider_id".to_string(), serde_json::json!("1"));
 query.insert("seller_provider_id".to_string(), serde_json::json!("1"));

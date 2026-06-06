@@ -26,22 +26,7 @@ const client = new SdkworkAppClient({
 client.setApiKey('your-api-key');
 
 // Use the SDK
-const body = {
-  code: 'code',
-  deviceId: 'deviceId',
-  deviceName: 'deviceName',
-  deviceType: 'deviceType',
-  email: 'email',
-  grantType: 'password',
-  name: 'name',
-  organizationCode: 'organizationCode',
-  password: 'password',
-  phone: 'phone',
-  subject: 'subject',
-  tenantCode: 'tenantCode',
-  username: 'username',
-};
-const result = await client.auth.sessions.create(body);
+const result = await client.ai.channelGroups.list();
 ```
 
 ## Authentication Modes (Mutually Exclusive)
@@ -85,31 +70,22 @@ const client = new SdkworkAppClient({
 
 ## API Modules
 
-- `client.commerce` - commerce API
 - `client.agents` - agents API
 - `client.ai` - ai API
-- `client.auth` - auth API
 - `client.chat` - chat API
 - `client.content` - content API
 - `client.ecosystem` - ecosystem API
 - `client.iam` - iam API
 - `client.memory` - memory API
 - `client.notification` - notification API
-- `client.openPlatform` - open_platform API
 - `client.platform` - platform API
 - `client.system` - system API
+- `client.commerce` - commerce API
 - `client.runtime` - runtime API
 - `client.sdkReference` - sdk_reference API
 - `client.sites` - sites API
 
 ## Usage Examples
-
-### commerce
-
-```typescript
-// Accounts Current Summary Retrieve
-const result = await client.commerce.accounts.current.summary.retrieve();
-```
 
 ### agents
 
@@ -128,28 +104,6 @@ const result = await client.agents.agentDefinitions.list(params);
 ```typescript
 // List groups
 const result = await client.ai.channelGroups.list();
-```
-
-### auth
-
-```typescript
-// Create IAM session
-const body = {
-  code: 'code',
-  deviceId: 'deviceId',
-  deviceName: 'deviceName',
-  deviceType: 'deviceType',
-  email: 'email',
-  grantType: 'password',
-  name: 'name',
-  organizationCode: 'organizationCode',
-  password: 'password',
-  phone: 'phone',
-  subject: 'subject',
-  tenantCode: 'tenantCode',
-  username: 'username',
-};
-const result = await client.auth.sessions.create(body);
 ```
 
 ### chat
@@ -208,16 +162,6 @@ const params = {
 const result = await client.notification.list(params);
 ```
 
-### open_platform
-
-```typescript
-// Create open platform QR auth session
-const body = {
-  purpose: 'login',
-};
-const result = await client.openPlatform.qrAuth.sessions.create(body);
-```
-
 ### platform
 
 ```typescript
@@ -228,8 +172,26 @@ const result = await client.platform.apps.store.categories.list();
 ### system
 
 ```typescript
-// Retrieve public IAM verification policy
-const result = await client.system.iam.verificationPolicy.retrieve();
+// Promotion Discount Application Create
+const body = {
+  clientRequestNo: 'clientRequestNo',
+  metadata: {
+    value: 'value',
+  },
+  note: 'note',
+};
+const idempotencyKey = 'Idempotency-Key';
+const params = {
+  idempotencyKey,
+};
+const result = await client.system.promotions.discountApplications.create(body, params);
+```
+
+### commerce
+
+```typescript
+// Recharges Settings Retrieve
+const result = await client.commerce.recharges.settings.retrieve();
 ```
 
 ### runtime
@@ -292,22 +254,7 @@ const result = await client.sites.runtime.retrieve(params);
 import { SdkworkAppClient, NetworkError, TimeoutError, AuthenticationError } from '@sdkwork/clawrouter-app-sdk';
 
 try {
-  const body = {
-    code: 'code',
-    deviceId: 'deviceId',
-    deviceName: 'deviceName',
-    deviceType: 'deviceType',
-    email: 'email',
-    grantType: 'password',
-    name: 'name',
-    organizationCode: 'organizationCode',
-    password: 'password',
-    phone: 'phone',
-    subject: 'subject',
-    tenantCode: 'tenantCode',
-    username: 'username',
-  };
-  const result = await client.auth.sessions.create(body);
+  const result = await client.ai.channelGroups.list();
 } catch (error) {
   if (error instanceof AuthenticationError) {
     console.error('Authentication failed:', error.message);

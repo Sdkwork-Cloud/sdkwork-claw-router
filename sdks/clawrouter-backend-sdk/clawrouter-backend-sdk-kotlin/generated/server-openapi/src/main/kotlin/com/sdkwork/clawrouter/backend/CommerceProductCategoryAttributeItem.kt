@@ -13,7 +13,7 @@ data class CommerceProductCategoryAttributeItem(
     val required: Boolean? = null,
     val scope: String? = null,
     val searchable: Boolean? = null,
-    val sortOrder: Int? = null,
+    val sortOrder: String? = null,
     val status: String? = null,
     val updatedAt: String? = null,
     val valueType: String? = null

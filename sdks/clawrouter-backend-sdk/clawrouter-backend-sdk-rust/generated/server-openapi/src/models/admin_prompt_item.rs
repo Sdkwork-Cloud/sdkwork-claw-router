@@ -22,24 +22,24 @@ pub struct AdminPromptItem {
     pub description: Option<String>,
 
     /// Id field on admin prompt item.
-    pub id: i64,
+    pub id: String,
 
     /// Latest version id field on admin prompt item.
     #[serde(rename = "latestVersionId")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub latest_version_id: Option<i64>,
+    pub latest_version_id: Option<String>,
 
     /// Name field on admin prompt item.
     pub name: String,
 
     /// Organization id field on admin prompt item.
     #[serde(rename = "organizationId")]
-    pub organization_id: i64,
+    pub organization_id: String,
 
     /// Owner user id field on admin prompt item.
     #[serde(rename = "ownerUserId")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub owner_user_id: Option<i64>,
+    pub owner_user_id: Option<String>,
 
     /// Prompt key field on admin prompt item.
     #[serde(rename = "promptKey")]
@@ -52,7 +52,7 @@ pub struct AdminPromptItem {
     /// Published version id field on admin prompt item.
     #[serde(rename = "publishedVersionId")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub published_version_id: Option<i64>,
+    pub published_version_id: Option<String>,
 
     /// Status field on admin prompt item.
     pub status: String,
@@ -62,7 +62,7 @@ pub struct AdminPromptItem {
 
     /// Tenant id field on admin prompt item.
     #[serde(rename = "tenantId")]
-    pub tenant_id: i64,
+    pub tenant_id: String,
 
     /// Updated at field on admin prompt item.
     #[serde(rename = "updatedAt")]

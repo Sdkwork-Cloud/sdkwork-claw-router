@@ -9,7 +9,7 @@ class CommerceCategorySeedInitializeSummary:
     config_key: str
     dataset: str
     install_default_enabled: bool
-    requested: int
-    skipped: int
+    requested: str
+    skipped: str
     target_table: str
-    upserted: int
+    upserted: str

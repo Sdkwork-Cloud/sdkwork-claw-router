@@ -3,7 +3,7 @@ package types
 // Admin site item schema exposed by Claw Router.
 type AdminSiteItem struct {
 	BaseUrl string `json:"baseUrl"`
-	ConsecutiveErrorCount int `json:"consecutiveErrorCount"`
+	ConsecutiveErrorCount string `json:"consecutiveErrorCount"`
 	Description string `json:"description"`
 	DisplayName string `json:"displayName"`
 	DocsUrl string `json:"docsUrl"`
@@ -12,7 +12,7 @@ type AdminSiteItem struct {
 	HealthStatus string `json:"healthStatus"`
 	Id string `json:"id"`
 	LastCheckedAt string `json:"lastCheckedAt"`
-	LastLatencyMs int `json:"lastLatencyMs"`
+	LastLatencyMs string `json:"lastLatencyMs"`
 	LastSyncAt string `json:"lastSyncAt"`
 	Logo MediaResource `json:"logo"`
 	OwnerKind string `json:"ownerKind"`
@@ -20,7 +20,7 @@ type AdminSiteItem struct {
 	SiteCode string `json:"siteCode"`
 	SiteName string `json:"siteName"`
 	SiteType string `json:"siteType"`
-	SortOrder int `json:"sortOrder"`
+	SortOrder string `json:"sortOrder"`
 	Status string `json:"status"`
 	VendorCodes []string `json:"vendorCodes"`
 	WebsiteUrl string `json:"websiteUrl"`

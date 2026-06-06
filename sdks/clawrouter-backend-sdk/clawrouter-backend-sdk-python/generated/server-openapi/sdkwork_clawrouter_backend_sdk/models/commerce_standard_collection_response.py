@@ -7,6 +7,6 @@ from typing import TYPE_CHECKING, Optional, List, Dict, Any
 class CommerceStandardCollectionResponse:
     """Commerce standard collection response schema exposed by Claw Router."""
     items: List[Dict[str, Any]]
-    page: int
-    page_size: int
-    total: int
+    page: str
+    page_size: str
+    total: str

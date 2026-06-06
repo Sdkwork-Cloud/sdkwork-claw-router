@@ -12,5 +12,5 @@ class CommerceMembershipPlanMutationRequest:
     code: str
     name: str
     benefits: Optional[List[CommerceMembershipBenefitMutationRequest]] = None
-    rank: Optional[int] = None
+    rank: Optional[str] = None
     status: Optional[str] = None

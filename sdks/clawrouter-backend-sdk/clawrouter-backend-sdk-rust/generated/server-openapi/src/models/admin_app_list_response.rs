@@ -13,12 +13,12 @@ pub struct AdminAppListResponse {
     pub items: Vec<AdminAppItemResponse>,
 
     /// Page field on admin app list response.
-    pub page: i64,
+    pub page: String,
 
     /// Page size field on admin app list response.
     #[serde(rename = "pageSize")]
-    pub page_size: i64,
+    pub page_size: String,
 
     /// Total field on admin app list response.
-    pub total: i64,
+    pub total: String,
 }

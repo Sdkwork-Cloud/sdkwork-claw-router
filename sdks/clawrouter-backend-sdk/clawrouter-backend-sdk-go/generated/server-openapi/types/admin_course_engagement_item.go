@@ -2,7 +2,7 @@ package types
 
 // Admin course engagement item schema exposed by Claw Router.
 type AdminCourseEngagementItem struct {
-	Count int `json:"count"`
+	Count string `json:"count"`
 	CourseId string `json:"courseId"`
 	Id string `json:"id"`
 	ReactionType string `json:"reactionType"`

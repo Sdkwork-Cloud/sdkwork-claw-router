@@ -36,7 +36,7 @@ pub struct AdminAiResourceGroupUpdateRequest {
     /// Sort order field on admin ai resource group update request.
     #[serde(rename = "sortOrder")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub sort_order: Option<i64>,
+    pub sort_order: Option<String>,
 
     /// Status field on admin ai resource group update request.
     #[serde(default, skip_serializing_if = "Option::is_none")]

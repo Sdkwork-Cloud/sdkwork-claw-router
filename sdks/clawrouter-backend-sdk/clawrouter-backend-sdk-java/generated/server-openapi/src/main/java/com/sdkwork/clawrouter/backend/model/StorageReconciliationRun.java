@@ -7,7 +7,7 @@ public class StorageReconciliationRun {
     private Boolean dryRun;
     private String finishedAt;
     private String id;
-    private Integer issueCount;
+    private String issueCount;
     private String issues;
     private String providerCode;
     private String providerId;
@@ -57,11 +57,11 @@ public class StorageReconciliationRun {
         this.id = id;
     }
 
-    public Integer getIssueCount() {
+    public String getIssueCount() {
         return this.issueCount;
     }
 
-    public void setIssueCount(Integer issueCount) {
+    public void setIssueCount(String issueCount) {
         this.issueCount = issueCount;
     }
 

@@ -18,7 +18,7 @@ class AdminAgentItem:
     description: str
     id: str
     name: str
-    owner_user_id: int
+    owner_user_id: str
     status: str
     updated_at: str
     visibility: str

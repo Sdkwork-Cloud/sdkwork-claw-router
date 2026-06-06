@@ -5,6 +5,6 @@ data class AdminCourseRelationItem(
     val id: String? = null,
     val relatedCourseId: String? = null,
     val relationType: String? = null,
-    val sortOrder: Int? = null,
+    val sortOrder: String? = null,
     val status: String? = null
 )

@@ -9,4 +9,4 @@ class AdminAiResourceMemberInput:
     member_resource_code: str
     member_role: Optional[str] = None
     required: Optional[bool] = None
-    sort_order: Optional[int] = None
+    sort_order: Optional[str] = None

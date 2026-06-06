@@ -7,7 +7,7 @@ use crate::models::{ModelRankingRefreshLatestJob};
 pub struct ModelRankingRefreshStatus {
     /// Maximum cache age clients and services should use for this status snapshot.
     #[serde(rename = "cacheMaxAgeSeconds")]
-    pub cache_max_age_seconds: i64,
+    pub cache_max_age_seconds: String,
 
     /// Time when the ranking snapshot was generated.
     #[serde(rename = "generatedAt")]
@@ -15,7 +15,7 @@ pub struct ModelRankingRefreshStatus {
 
     /// Number of ranking rows generated in the selected snapshot.
     #[serde(rename = "generatedCount")]
-    pub generated_count: i64,
+    pub generated_count: String,
 
     /// Latest job field on model ranking refresh status.
     #[serde(rename = "latestJob")]
@@ -27,7 +27,7 @@ pub struct ModelRankingRefreshStatus {
 
     /// Organization scope used by the selected ranking snapshot.
     #[serde(rename = "organizationId")]
-    pub organization_id: i64,
+    pub organization_id: String,
 
     /// Ranking scope, for example commercial-default.
     #[serde(rename = "rankScope")]
@@ -35,7 +35,7 @@ pub struct ModelRankingRefreshStatus {
 
     /// Planned refresh interval used by the ranking task.
     #[serde(rename = "refreshIntervalSeconds")]
-    pub refresh_interval_seconds: i64,
+    pub refresh_interval_seconds: String,
 
     /// Snapshot business date for the latest visible ranking.
     #[serde(rename = "snapshotDate")]
@@ -47,7 +47,7 @@ pub struct ModelRankingRefreshStatus {
 
     /// Number of source usage rows represented by the selected snapshot.
     #[serde(rename = "sourceCount")]
-    pub source_count: i64,
+    pub source_count: String,
 
     /// Source tables field on model ranking refresh status.
     #[serde(rename = "sourceTables")]
@@ -58,7 +58,7 @@ pub struct ModelRankingRefreshStatus {
 
     /// Tenant scope used by the selected ranking snapshot.
     #[serde(rename = "tenantId")]
-    pub tenant_id: i64,
+    pub tenant_id: String,
 
     /// Exclusive source aggregation window end.
     #[serde(rename = "windowEnd")]

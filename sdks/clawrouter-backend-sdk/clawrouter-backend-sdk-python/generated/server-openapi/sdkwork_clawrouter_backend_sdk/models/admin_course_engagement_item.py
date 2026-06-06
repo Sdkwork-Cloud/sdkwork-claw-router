@@ -7,7 +7,7 @@ from typing import TYPE_CHECKING, Optional, List, Dict, Any
 class AdminCourseEngagementItem:
     """Admin course engagement item schema exposed by Claw Router."""
     id: str
-    count: Optional[int] = None
+    count: Optional[str] = None
     course_id: Optional[str] = None
     reaction_type: Optional[str] = None
     reaction_value: Optional[str] = None

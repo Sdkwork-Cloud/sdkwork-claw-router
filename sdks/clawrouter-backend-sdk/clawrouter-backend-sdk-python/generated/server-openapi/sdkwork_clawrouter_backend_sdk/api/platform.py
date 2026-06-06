@@ -201,7 +201,7 @@ class PlatformAppsApi:
         self.templates = PlatformAppsTemplatesApi(client)
 
 
-    def list(self, q: Optional[str] = None, status: Optional[str] = None, market_status: Optional[str] = None, app_type: Optional[str] = None, category_id: Optional[int] = None, page: Optional[int] = None, page_size: Optional[int] = None) -> AppsListResult:
+    def list(self, q: Optional[str] = None, status: Optional[str] = None, market_status: Optional[str] = None, app_type: Optional[str] = None, category_id: Optional[str] = None, page: Optional[str] = None, page_size: Optional[str] = None) -> AppsListResult:
         """List apps"""
         query = build_query_string([
             {'name': 'q', 'value': q, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -276,7 +276,7 @@ class PlatformAppsTemplatesApi:
         self._client = client
 
 
-    def list(self, q: Optional[str] = None, publish_status: Optional[str] = None, template_type: Optional[str] = None, runtime: Optional[str] = None, category_id: Optional[int] = None, page: Optional[int] = None, page_size: Optional[int] = None) -> AppsTemplatesListResult:
+    def list(self, q: Optional[str] = None, publish_status: Optional[str] = None, template_type: Optional[str] = None, runtime: Optional[str] = None, category_id: Optional[str] = None, page: Optional[str] = None, page_size: Optional[str] = None) -> AppsTemplatesListResult:
         """List app templates"""
         query = build_query_string([
             {'name': 'q', 'value': q, 'style': 'form', 'explode': True, 'allow_reserved': False},

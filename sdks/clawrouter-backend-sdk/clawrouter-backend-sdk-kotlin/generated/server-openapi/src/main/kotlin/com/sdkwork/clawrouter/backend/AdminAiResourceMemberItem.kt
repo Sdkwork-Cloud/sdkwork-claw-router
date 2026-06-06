@@ -5,5 +5,5 @@ data class AdminAiResourceMemberItem(
     val memberRole: String? = null,
     val parentResourceCode: String? = null,
     val required: Boolean? = null,
-    val sortOrder: Int? = null
+    val sortOrder: String? = null
 )

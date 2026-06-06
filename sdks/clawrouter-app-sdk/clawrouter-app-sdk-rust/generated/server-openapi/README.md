@@ -19,7 +19,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = SdkworkAppClient::new(SdkworkConfig::new("http://localhost:18082"))?;
     client.set_api_key("your-api-key");
 
-    let result = client.auth().sessions_current_retrieve().await?;
+    let result = client.ai().channel_groups_list().await?;
     println!("{result:?}");
     Ok(())
 }
@@ -59,31 +59,21 @@ client.set_header("X-Custom-Header", "value");
 
 ## API Modules
 
-- `client.commerce()` - commerce API
 - `client.agents()` - agents API
 - `client.ai()` - ai API
-- `client.auth()` - auth API
 - `client.chat()` - chat API
 - `client.content()` - content API
 - `client.ecosystem()` - ecosystem API
 - `client.iam()` - iam API
 - `client.memory()` - memory API
 - `client.notification()` - notification API
-- `client.open_platform()` - open_platform API
 - `client.platform()` - platform API
 - `client.system()` - system API
+- `client.commerce()` - commerce API
 - `client.runtime()` - runtime API
 - `client.sdk_reference()` - sdk_reference API
 
 ## Usage Examples
-
-### commerce
-
-```rust
-// Accounts Current Summary Retrieve
-let result = client.commerce().accounts_current_summary_retrieve().await?;
-println!("{result:?}");
-```
 
 ### agents
 
@@ -91,8 +81,8 @@ println!("{result:?}");
 use std::collections::HashMap;
 // List Playground agent definitions
 let mut query = HashMap::new();
-query.insert("page".to_string(), serde_json::json!(1));
-query.insert("page_size".to_string(), serde_json::json!(2));
+query.insert("page".to_string(), serde_json::json!("page"));
+query.insert("page_size".to_string(), serde_json::json!("page-size"));
 query.insert("q".to_string(), serde_json::json!("q"));
 let result = client.agents().agent_definitions_list(Some(&query)).await?;
 println!("{result:?}");
@@ -106,22 +96,14 @@ let result = client.ai().channel_groups_list().await?;
 println!("{result:?}");
 ```
 
-### auth
-
-```rust
-// Retrieve current IAM session
-let result = client.auth().sessions_current_retrieve().await?;
-println!("{result:?}");
-```
-
 ### chat
 
 ```rust
 use std::collections::HashMap;
 // List product chat conversations
 let mut query = HashMap::new();
-query.insert("page".to_string(), serde_json::json!(1));
-query.insert("page_size".to_string(), serde_json::json!(2));
+query.insert("page".to_string(), serde_json::json!("page"));
+query.insert("page_size".to_string(), serde_json::json!("page-size"));
 let result = client.chat().conversations_list(Some(&query)).await?;
 println!("{result:?}");
 ```
@@ -156,8 +138,8 @@ println!("{result:?}");
 use std::collections::HashMap;
 // List memory spaces
 let mut query = HashMap::new();
-query.insert("page".to_string(), serde_json::json!(1));
-query.insert("page_size".to_string(), serde_json::json!(2));
+query.insert("page".to_string(), serde_json::json!("page"));
+query.insert("page_size".to_string(), serde_json::json!("page-size"));
 let result = client.memory().spaces_list(Some(&query)).await?;
 println!("{result:?}");
 ```
@@ -176,19 +158,6 @@ let result = client.notification().notifications_list(Some(&query)).await?;
 println!("{result:?}");
 ```
 
-### open_platform
-
-```rust
-use clawrouter_app_sdk::*;
-// Create open platform QR auth session
-let body = OpenPlatformQrAuthSessionCreateRequest {
-    purpose: "login".to_string(),
-    ..Default::default()
-};
-let result = client.open_platform().qr_auth_sessions_create(&body).await?;
-println!("{result:?}");
-```
-
 ### platform
 
 ```rust
@@ -200,8 +169,20 @@ println!("{result:?}");
 ### system
 
 ```rust
-// Retrieve public IAM verification policy
-let result = client.system().iam_verification_policy_retrieve().await?;
+use std::collections::HashMap;
+// Retrieve public site runtime branding settings
+let mut query = HashMap::new();
+query.insert("tenant_code".to_string(), serde_json::json!("ok"));
+query.insert("organization_code".to_string(), serde_json::json!("ok"));
+let result = client.system().site_runtime_retrieve(Some(&query)).await?;
+println!("{result:?}");
+```
+
+### commerce
+
+```rust
+// Recharges Settings Retrieve
+let result = client.commerce().recharges_settings_retrieve().await?;
 println!("{result:?}");
 ```
 
@@ -211,8 +192,8 @@ println!("{result:?}");
 use std::collections::HashMap;
 // List runtime invocations
 let mut query = HashMap::new();
-query.insert("page".to_string(), serde_json::json!(1));
-query.insert("page_size".to_string(), serde_json::json!(2));
+query.insert("page".to_string(), serde_json::json!("page"));
+query.insert("page_size".to_string(), serde_json::json!("page-size"));
 query.insert("conversation_id".to_string(), serde_json::json!("1"));
 query.insert("chat_turn_id".to_string(), serde_json::json!("1"));
 query.insert("agent_session_id".to_string(), serde_json::json!("1"));
@@ -246,7 +227,7 @@ use clawrouter_app_sdk::{SdkworkAppClient, SdkworkConfig};
 let client = SdkworkAppClient::new(SdkworkConfig::new("http://localhost:18082"))?;
 
 let outcome: Result<(), _> = async {
-    client.auth().sessions_current_retrieve().await?;
+    client.ai().channel_groups_list().await?;
     Ok(())
 }.await;
 

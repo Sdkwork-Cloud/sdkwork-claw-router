@@ -20,5 +20,5 @@ pub struct AppCatalogResponse {
     pub page_size: i64,
 
     /// Total field on app catalog response.
-    pub total: i64,
+    pub total: String,
 }

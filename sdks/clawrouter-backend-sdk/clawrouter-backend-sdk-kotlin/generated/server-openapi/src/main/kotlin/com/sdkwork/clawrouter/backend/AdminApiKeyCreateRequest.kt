@@ -2,5 +2,5 @@ package com.sdkwork.clawrouter.backend
 
 data class AdminApiKeyCreateRequest(
     val name: String? = null,
-    val userId: Int? = null
+    val userId: String? = null
 )

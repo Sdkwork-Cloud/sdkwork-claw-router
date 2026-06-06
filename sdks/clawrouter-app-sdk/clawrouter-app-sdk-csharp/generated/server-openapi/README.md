@@ -25,7 +25,7 @@ var config = new SdkConfig("http://localhost:18082");
 var client = new SdkworkAppClient(config);
 client.SetApiKey("your-api-key");
 
-var result = await client.Auth.SessionsCurrentRetrieveAsync();
+var result = await client.Ai.ChannelGroupsListAsync();
 Console.WriteLine(result);
 ```
 
@@ -68,31 +68,21 @@ client.SetHeader("X-Custom-Header", "value");
 
 ## API Modules
 
-- `client.Commerce` - commerce API
 - `client.Agents` - agents API
 - `client.Ai` - ai API
-- `client.Auth` - auth API
 - `client.Chat` - chat API
 - `client.Content` - content API
 - `client.Ecosystem` - ecosystem API
 - `client.Iam` - iam API
 - `client.Memory` - memory API
 - `client.Notification` - notification API
-- `client.OpenPlatform` - open_platform API
 - `client.Platform` - platform API
 - `client.System` - system API
+- `client.Commerce` - commerce API
 - `client.Runtime` - runtime API
 - `client.SdkReference` - sdk_reference API
 
 ## Usage Examples
-
-### commerce
-
-```csharp
-// Accounts Current Summary Retrieve
-var result = await client.Commerce.AccountsCurrentSummaryRetrieveAsync();
-Console.WriteLine(result);
-```
 
 ### agents
 
@@ -100,8 +90,8 @@ Console.WriteLine(result);
 // List Playground agent definitions
 var query = new Dictionary<string, object>
 {
-    ["page"] = 1,
-    ["page_size"] = 2,
+    ["page"] = "page",
+    ["page_size"] = "page-size",
     ["q"] = "q",
 };
 var result = await client.Agents.AgentDefinitionsListAsync(query);
@@ -116,22 +106,14 @@ var result = await client.Ai.ChannelGroupsListAsync();
 Console.WriteLine(result);
 ```
 
-### auth
-
-```csharp
-// Retrieve current IAM session
-var result = await client.Auth.SessionsCurrentRetrieveAsync();
-Console.WriteLine(result);
-```
-
 ### chat
 
 ```csharp
 // List product chat conversations
 var query = new Dictionary<string, object>
 {
-    ["page"] = 1,
-    ["page_size"] = 2,
+    ["page"] = "page",
+    ["page_size"] = "page-size",
 };
 var result = await client.Chat.ConversationsListAsync(query);
 Console.WriteLine(result);
@@ -167,8 +149,8 @@ Console.WriteLine(result);
 // List memory spaces
 var query = new Dictionary<string, object>
 {
-    ["page"] = 1,
-    ["page_size"] = 2,
+    ["page"] = "page",
+    ["page_size"] = "page-size",
 };
 var result = await client.Memory.SpacesListAsync(query);
 Console.WriteLine(result);
@@ -189,18 +171,6 @@ var result = await client.Notification.NotificationsListAsync(query);
 Console.WriteLine(result);
 ```
 
-### open_platform
-
-```csharp
-// Create open platform QR auth session
-var body = new OpenPlatformQrAuthSessionCreateRequest
-{
-    Purpose = "login",
-};
-var result = await client.OpenPlatform.QrAuthSessionsCreateAsync(body);
-Console.WriteLine(result);
-```
-
 ### platform
 
 ```csharp
@@ -212,8 +182,21 @@ Console.WriteLine(result);
 ### system
 
 ```csharp
-// Retrieve public IAM verification policy
-var result = await client.System.IamVerificationPolicyRetrieveAsync();
+// Retrieve public site runtime branding settings
+var query = new Dictionary<string, object>
+{
+    ["tenant_code"] = "ok",
+    ["organization_code"] = "ok",
+};
+var result = await client.System.SiteRuntimeRetrieveAsync(query);
+Console.WriteLine(result);
+```
+
+### commerce
+
+```csharp
+// Recharges Settings Retrieve
+var result = await client.Commerce.RechargesSettingsRetrieveAsync();
 Console.WriteLine(result);
 ```
 
@@ -223,8 +206,8 @@ Console.WriteLine(result);
 // List runtime invocations
 var query = new Dictionary<string, object>
 {
-    ["page"] = 1,
-    ["page_size"] = 2,
+    ["page"] = "page",
+    ["page_size"] = "page-size",
     ["conversation_id"] = "1",
     ["chat_turn_id"] = "1",
     ["agent_session_id"] = "1",
@@ -254,7 +237,7 @@ Console.WriteLine(result);
 ```csharp
 try
 {
-    await client.Auth.SessionsCurrentRetrieveAsync();
+    await client.Ai.ChannelGroupsListAsync();
 }
 catch (HttpRequestException ex)
 {

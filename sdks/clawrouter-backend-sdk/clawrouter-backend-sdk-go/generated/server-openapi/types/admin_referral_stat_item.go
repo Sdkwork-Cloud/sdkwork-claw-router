@@ -6,6 +6,6 @@ type AdminReferralStatItem struct {
 	Id string `json:"id"`
 	Inviter string `json:"inviter"`
 	Link string `json:"link"`
-	TotalInvited int `json:"total_invited"`
+	TotalInvited string `json:"total_invited"`
 	TotalRevenue string `json:"total_revenue"`
 }

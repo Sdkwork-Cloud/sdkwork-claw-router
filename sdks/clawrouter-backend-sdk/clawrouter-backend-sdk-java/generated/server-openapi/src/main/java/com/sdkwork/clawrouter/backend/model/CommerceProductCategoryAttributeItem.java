@@ -14,7 +14,7 @@ public class CommerceProductCategoryAttributeItem {
     private Boolean required;
     private String scope;
     private Boolean searchable;
-    private Integer sortOrder;
+    private String sortOrder;
     private String status;
     private String updatedAt;
     private String valueType;
@@ -115,11 +115,11 @@ public class CommerceProductCategoryAttributeItem {
         this.searchable = searchable;
     }
 
-    public Integer getSortOrder() {
+    public String getSortOrder() {
         return this.sortOrder;
     }
 
-    public void setSortOrder(Integer sortOrder) {
+    public void setSortOrder(String sortOrder) {
         this.sortOrder = sortOrder;
     }
 

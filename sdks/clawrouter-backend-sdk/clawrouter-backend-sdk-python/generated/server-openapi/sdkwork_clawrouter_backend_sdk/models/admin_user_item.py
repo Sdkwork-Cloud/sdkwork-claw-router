@@ -10,7 +10,7 @@ class AdminUserItem:
     created_at: str
     email: str
     group: str
-    id: int
+    id: str
     last_active: str
     last_used: str
     role: str

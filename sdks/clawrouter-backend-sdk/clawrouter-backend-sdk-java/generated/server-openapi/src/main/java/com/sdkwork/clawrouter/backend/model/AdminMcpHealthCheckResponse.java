@@ -6,8 +6,8 @@ public class AdminMcpHealthCheckResponse {
     private String errorMasked;
     private String healthStatus;
     private Boolean healthy;
-    private Integer latencyMs;
-    private Integer serverId;
+    private String latencyMs;
+    private String serverId;
 
     public String getCheckedAt() {
         return this.checkedAt;
@@ -41,19 +41,19 @@ public class AdminMcpHealthCheckResponse {
         this.healthy = healthy;
     }
 
-    public Integer getLatencyMs() {
+    public String getLatencyMs() {
         return this.latencyMs;
     }
 
-    public void setLatencyMs(Integer latencyMs) {
+    public void setLatencyMs(String latencyMs) {
         this.latencyMs = latencyMs;
     }
 
-    public Integer getServerId() {
+    public String getServerId() {
         return this.serverId;
     }
 
-    public void setServerId(Integer serverId) {
+    public void setServerId(String serverId) {
         this.serverId = serverId;
     }
 }

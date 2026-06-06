@@ -5,12 +5,12 @@ type AdminChannelCredentialItem struct {
 	ApiKey string `json:"apiKey"`
 	BaseUrl string `json:"baseUrl"`
 	CredentialId string `json:"credentialId"`
-	Errors int `json:"errors"`
+	Errors string `json:"errors"`
 	Id string `json:"id"`
 	MaskedLabel string `json:"maskedLabel"`
 	Name string `json:"name"`
-	Priority int `json:"priority"`
+	Priority string `json:"priority"`
 	SecretRef string `json:"secretRef"`
 	Status string `json:"status"`
-	Weight int `json:"weight"`
+	Weight string `json:"weight"`
 }

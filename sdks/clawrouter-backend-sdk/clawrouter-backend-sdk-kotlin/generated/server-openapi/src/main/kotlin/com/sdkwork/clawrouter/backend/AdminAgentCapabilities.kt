@@ -1,7 +1,7 @@
 package com.sdkwork.clawrouter.backend
 
 data class AdminAgentCapabilities(
-    val mcpServerCount: Int? = null,
+    val mcpServerCount: String? = null,
     val memoryEnabled: Boolean? = null,
-    val skillBindingCount: Int? = null
+    val skillBindingCount: String? = null
 )

@@ -12,7 +12,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? GroupType { get; set; }
         public List<AdminAiResourceGroupMemberInput>? Members { get; set; }
         public string? SelectionMode { get; set; }
-        public int? SortOrder { get; set; }
+        public string? SortOrder { get; set; }
         public string? Status { get; set; }
     }
 }

@@ -4,7 +4,7 @@ import java.util.List;
 
 public class SkillPackageItem {
     private String artifactRef;
-    private Integer artifactSizeBytes;
+    private String artifactSizeBytes;
     private List<String> frameworks;
     private String id;
     private String licenseName;
@@ -19,11 +19,11 @@ public class SkillPackageItem {
         this.artifactRef = artifactRef;
     }
 
-    public Integer getArtifactSizeBytes() {
+    public String getArtifactSizeBytes() {
         return this.artifactSizeBytes;
     }
 
-    public void setArtifactSizeBytes(Integer artifactSizeBytes) {
+    public void setArtifactSizeBytes(String artifactSizeBytes) {
         this.artifactSizeBytes = artifactSizeBytes;
     }
 

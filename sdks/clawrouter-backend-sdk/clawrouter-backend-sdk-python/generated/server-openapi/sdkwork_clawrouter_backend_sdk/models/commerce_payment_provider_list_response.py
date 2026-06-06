@@ -10,6 +10,6 @@ if TYPE_CHECKING:
 class CommercePaymentProviderListResponse:
     """Commerce payment provider list response schema exposed by Claw Router."""
     items: List[CommercePaymentProviderItem]
-    page: int
-    page_size: int
-    total: int
+    page: str
+    page_size: str
+    total: str

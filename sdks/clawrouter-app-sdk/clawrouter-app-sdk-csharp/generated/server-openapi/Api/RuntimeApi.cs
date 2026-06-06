@@ -18,7 +18,7 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// List runtime invocations
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.InvocationsListResult?> InvocationsListAsync(int? page = null, int? pageSize = null, string? conversationId = null, string? chatTurnId = null, string? agentSessionId = null, string? runtime = null, string? status = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.InvocationsListResult?> InvocationsListAsync(string? page = null, string? pageSize = null, string? conversationId = null, string? chatTurnId = null, string? agentSessionId = null, string? runtime = null, string? status = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -59,7 +59,7 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// List runtime artifacts
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.ArtifactsListResult?> ArtifactsListAsync(string invocationId, int? page = null, int? pageSize = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.ArtifactsListResult?> ArtifactsListAsync(string invocationId, string? page = null, string? pageSize = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -102,7 +102,7 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// List runtime invocation events
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.InvocationEventsListResult?> InvocationEventsListAsync(string invocationId, int? page = null, int? pageSize = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.InvocationEventsListResult?> InvocationEventsListAsync(string invocationId, string? page = null, string? pageSize = null)
         {
             var queryString = BuildQueryString(new[]
             {

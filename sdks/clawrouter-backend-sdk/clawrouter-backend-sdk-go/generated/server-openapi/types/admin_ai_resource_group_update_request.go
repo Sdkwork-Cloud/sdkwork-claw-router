@@ -8,6 +8,6 @@ type AdminAiResourceGroupUpdateRequest struct {
 	GroupType string `json:"groupType"`
 	Members []AdminAiResourceGroupMemberInput `json:"members"`
 	SelectionMode string `json:"selectionMode"`
-	SortOrder int `json:"sortOrder"`
+	SortOrder string `json:"sortOrder"`
 	Status string `json:"status"`
 }

@@ -6,9 +6,9 @@ type CommerceMembershipBenefitMutationRequest struct {
 	Claimed bool `json:"claimed"`
 	Description string `json:"description"`
 	Icon MediaResource `json:"icon"`
-	Id int `json:"id"`
+	Id string `json:"id"`
 	Name string `json:"name"`
 	Type string `json:"type"`
-	UsageLimit int `json:"usageLimit"`
-	UsedCount int `json:"usedCount"`
+	UsageLimit string `json:"usageLimit"`
+	UsedCount string `json:"usedCount"`
 }

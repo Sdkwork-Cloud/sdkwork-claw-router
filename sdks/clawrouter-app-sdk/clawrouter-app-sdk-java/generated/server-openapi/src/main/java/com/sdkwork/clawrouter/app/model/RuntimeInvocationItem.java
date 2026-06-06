@@ -6,7 +6,7 @@ public class RuntimeInvocationItem {
     private String agentRunStepId;
     private String agentSessionId;
     private String approvalPolicy;
-    private Integer attemptNo;
+    private String attemptNo;
     private String chatItemId;
     private String chatTurnId;
     private String completedAt;
@@ -17,12 +17,12 @@ public class RuntimeInvocationItem {
     private String errorCode;
     private String errorMessageMasked;
     private String errorType;
-    private Integer exitCode;
+    private String exitCode;
     private String finishReason;
     private String id;
-    private Integer invocationNo;
+    private String invocationNo;
     private String invocationType;
-    private Integer latencyMs;
+    private String latencyMs;
     private String model;
     private String permissionMode;
     private String provider;
@@ -39,7 +39,7 @@ public class RuntimeInvocationItem {
     private String toolCallId;
     private String toolName;
     private String traceId;
-    private Integer ttftMs;
+    private String ttftMs;
 
     public String getAgentRunId() {
         return this.agentRunId;
@@ -73,11 +73,11 @@ public class RuntimeInvocationItem {
         this.approvalPolicy = approvalPolicy;
     }
 
-    public Integer getAttemptNo() {
+    public String getAttemptNo() {
         return this.attemptNo;
     }
 
-    public void setAttemptNo(Integer attemptNo) {
+    public void setAttemptNo(String attemptNo) {
         this.attemptNo = attemptNo;
     }
 
@@ -161,11 +161,11 @@ public class RuntimeInvocationItem {
         this.errorType = errorType;
     }
 
-    public Integer getExitCode() {
+    public String getExitCode() {
         return this.exitCode;
     }
 
-    public void setExitCode(Integer exitCode) {
+    public void setExitCode(String exitCode) {
         this.exitCode = exitCode;
     }
 
@@ -185,11 +185,11 @@ public class RuntimeInvocationItem {
         this.id = id;
     }
 
-    public Integer getInvocationNo() {
+    public String getInvocationNo() {
         return this.invocationNo;
     }
 
-    public void setInvocationNo(Integer invocationNo) {
+    public void setInvocationNo(String invocationNo) {
         this.invocationNo = invocationNo;
     }
 
@@ -201,11 +201,11 @@ public class RuntimeInvocationItem {
         this.invocationType = invocationType;
     }
 
-    public Integer getLatencyMs() {
+    public String getLatencyMs() {
         return this.latencyMs;
     }
 
-    public void setLatencyMs(Integer latencyMs) {
+    public void setLatencyMs(String latencyMs) {
         this.latencyMs = latencyMs;
     }
 
@@ -337,11 +337,11 @@ public class RuntimeInvocationItem {
         this.traceId = traceId;
     }
 
-    public Integer getTtftMs() {
+    public String getTtftMs() {
         return this.ttftMs;
     }
 
-    public void setTtftMs(Integer ttftMs) {
+    public void setTtftMs(String ttftMs) {
         this.ttftMs = ttftMs;
     }
 }

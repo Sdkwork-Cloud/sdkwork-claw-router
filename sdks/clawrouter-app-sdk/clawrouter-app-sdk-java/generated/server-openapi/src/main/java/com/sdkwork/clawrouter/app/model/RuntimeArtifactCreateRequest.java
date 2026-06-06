@@ -11,7 +11,7 @@ public class RuntimeArtifactCreateRequest {
     private String name;
     private MediaResource resource;
     private String sha256;
-    private Integer sizeBytes;
+    private String sizeBytes;
     private String storageKey;
 
     public String getArtifactType() {
@@ -78,11 +78,11 @@ public class RuntimeArtifactCreateRequest {
         this.sha256 = sha256;
     }
 
-    public Integer getSizeBytes() {
+    public String getSizeBytes() {
         return this.sizeBytes;
     }
 
-    public void setSizeBytes(Integer sizeBytes) {
+    public void setSizeBytes(String sizeBytes) {
         this.sizeBytes = sizeBytes;
     }
 

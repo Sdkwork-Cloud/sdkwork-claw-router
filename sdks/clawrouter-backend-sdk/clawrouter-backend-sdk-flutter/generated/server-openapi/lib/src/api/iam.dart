@@ -11,15 +11,6 @@ class IamApi {
 
   IamApi(this._client);
 
-  /// List API key map
-  Future<ApiKeysListResult?> apiKeysList() async {
-    final response = await _client.get(ApiPaths.backendPath('/iam/api_keys'));
-    return (() {
-      final map = sdkworkResponseAsMap(response);
-      return map == null ? null : ApiKeysListResult.fromJson(map);
-    })();
-  }
-
   /// Create API key
   Future<ApiKeysCreateResult?> apiKeysCreate(AdminApiKeyCreateRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
@@ -42,25 +33,6 @@ class IamApi {
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : ApiKeysDeleteResult.fromJson(map);
-    })();
-  }
-
-  /// List users
-  Future<UsersListResult?> usersList() async {
-    final response = await _client.get(ApiPaths.backendPath('/iam/users'));
-    return (() {
-      final map = sdkworkResponseAsMap(response);
-      return map == null ? null : UsersListResult.fromJson(map);
-    })();
-  }
-
-  /// Create user
-  Future<UsersCreateResult?> usersCreate(AdminUserCreateRequest body) async {
-    final payload = body.toJson();
-    final response = await _client.post(ApiPaths.backendPath('/iam/users'), body: payload, contentType: 'application/json');
-    return (() {
-      final map = sdkworkResponseAsMap(response);
-      return map == null ? null : UsersCreateResult.fromJson(map);
     })();
   }
 

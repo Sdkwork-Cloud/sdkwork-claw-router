@@ -8,5 +8,5 @@ pub struct AdminApiKeyCreateRequest {
 
     /// User identifier that owns the API key.
     #[serde(rename = "userId")]
-    pub user_id: i64,
+    pub user_id: String,
 }

@@ -9,7 +9,7 @@ class MemorySpaceItem:
     auto_extract_enabled: bool
     auto_recall_enabled: bool
     created_at: str
-    entry_count: int
+    entry_count: str
     id: str
     memory_enabled: bool
     review_required: bool
@@ -17,6 +17,6 @@ class MemorySpaceItem:
     status: str
     title: str
     updated_at: str
-    max_injected_tokens: Optional[int] = None
+    max_injected_tokens: Optional[str] = None
     owner_id: Optional[str] = None
     owner_type: Optional[str] = None

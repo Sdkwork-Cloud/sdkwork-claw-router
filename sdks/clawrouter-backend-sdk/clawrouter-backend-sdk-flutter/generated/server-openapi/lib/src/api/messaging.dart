@@ -38,7 +38,7 @@ class MessagingApi {
   }
 
   /// Messaging provider accounts list
-  Future<ProviderAccountsListResult?> providerAccountsList([int? page, int? pageSize, String? q, String? status, String? channel, String? providerCode]) async {
+  Future<ProviderAccountsListResult?> providerAccountsList([String? page, String? pageSize, String? q, String? status, String? channel, String? providerCode]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
@@ -71,7 +71,7 @@ class MessagingApi {
   }
 
   /// Messaging rate limit buckets list
-  Future<RateLimitBucketsListResult?> rateLimitBucketsList([int? page, int? pageSize, String? sceneCode, String? channel, String? targetHash, String? ipHash, String? deviceHash]) async {
+  Future<RateLimitBucketsListResult?> rateLimitBucketsList([String? page, String? pageSize, String? sceneCode, String? channel, String? targetHash, String? ipHash, String? deviceHash]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
@@ -89,7 +89,7 @@ class MessagingApi {
   }
 
   /// Messaging route rules list
-  Future<RouteRulesListResult?> routeRulesList([int? page, int? pageSize, String? q, String? status, String? channel, String? providerCode]) async {
+  Future<RouteRulesListResult?> routeRulesList([String? page, String? pageSize, String? q, String? status, String? channel, String? providerCode]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
@@ -122,7 +122,7 @@ class MessagingApi {
   }
 
   /// Messaging send requests list
-  Future<SendRequestsListResult?> sendRequestsList([int? page, int? pageSize, String? status, String? channel, String? sceneCode, String? providerCode, String? targetHash]) async {
+  Future<SendRequestsListResult?> sendRequestsList([String? page, String? pageSize, String? status, String? channel, String? sceneCode, String? providerCode, String? targetHash]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
@@ -140,7 +140,7 @@ class MessagingApi {
   }
 
   /// Messaging sender identities list
-  Future<SenderIdentitiesListResult?> senderIdentitiesList([int? page, int? pageSize, String? q, String? status, String? channel, String? providerCode]) async {
+  Future<SenderIdentitiesListResult?> senderIdentitiesList([String? page, String? pageSize, String? q, String? status, String? channel, String? providerCode]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
@@ -173,7 +173,7 @@ class MessagingApi {
   }
 
   /// Messaging suppressions list
-  Future<SuppressionsListResult?> suppressionsList([int? page, int? pageSize, String? status, String? channel, String? targetHash, String? reasonCode]) async {
+  Future<SuppressionsListResult?> suppressionsList([String? page, String? pageSize, String? status, String? channel, String? targetHash, String? reasonCode]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
@@ -222,7 +222,7 @@ class MessagingApi {
   }
 
   /// Messaging templates list
-  Future<TemplatesListResult?> templatesList([int? page, int? pageSize, String? q, String? status, String? channel, String? providerCode]) async {
+  Future<TemplatesListResult?> templatesList([String? page, String? pageSize, String? q, String? status, String? channel, String? providerCode]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
@@ -264,7 +264,7 @@ class MessagingApi {
   }
 
   /// Verification policies list
-  Future<VerificationPoliciesListResult?> verificationPoliciesList([int? page, int? pageSize, String? q, String? status, String? channel, String? providerCode]) async {
+  Future<VerificationPoliciesListResult?> verificationPoliciesList([String? page, String? pageSize, String? q, String? status, String? channel, String? providerCode]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null),

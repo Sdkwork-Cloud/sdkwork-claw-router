@@ -15,7 +15,7 @@ class MemoryApi(private val client: HttpClient) {
     }
 
     /** List memory spaces */
-    suspend fun spacesList(page: Int? = null, pageSize: Int? = null): SpacesListResult? {
+    suspend fun spacesList(page: String? = null, pageSize: String? = null): SpacesListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null)
@@ -43,7 +43,7 @@ class MemoryApi(private val client: HttpClient) {
     }
 
     /** List memory entries */
-    suspend fun entriesList(spaceId: String, page: Int? = null, pageSize: Int? = null): EntriesListResult? {
+    suspend fun entriesList(spaceId: String, page: String? = null, pageSize: String? = null): EntriesListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null)

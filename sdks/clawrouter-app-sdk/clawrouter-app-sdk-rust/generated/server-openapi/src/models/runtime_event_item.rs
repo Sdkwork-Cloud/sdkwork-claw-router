@@ -9,7 +9,7 @@ pub struct RuntimeEventItem {
 
     /// Event no field on runtime event item.
     #[serde(rename = "eventNo")]
-    pub event_no: i64,
+    pub event_no: String,
 
     /// Event source field on runtime event item.
     #[serde(rename = "eventSource")]

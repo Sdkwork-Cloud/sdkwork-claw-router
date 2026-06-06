@@ -12,5 +12,5 @@ pub struct ModelRankingHistoryPoint {
     pub entries: Vec<ModelRankingHistoryEntry>,
 
     /// Index field on model ranking history point.
-    pub index: i64,
+    pub index: String,
 }

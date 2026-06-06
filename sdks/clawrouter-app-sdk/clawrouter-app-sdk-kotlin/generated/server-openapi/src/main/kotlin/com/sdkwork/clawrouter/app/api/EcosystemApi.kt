@@ -9,7 +9,7 @@ import com.sdkwork.clawrouter.app.http.HttpClient
 class EcosystemApi(private val client: HttpClient) {
 
     /** Get skills */
-    suspend fun skillsList(q: String? = null, page: Int? = null, pageSize: Int? = null, status: String? = null, startTime: String? = null, endTime: String? = null): SkillsListResult? {
+    suspend fun skillsList(q: String? = null, page: String? = null, pageSize: String? = null, status: String? = null, startTime: String? = null, endTime: String? = null): SkillsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("q", q, "form", true, false, null),
             QueryParameterSpec("page", page, "form", true, false, null),

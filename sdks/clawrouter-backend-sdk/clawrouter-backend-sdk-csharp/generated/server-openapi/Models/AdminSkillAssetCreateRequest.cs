@@ -11,7 +11,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public MediaResource? Asset { get; set; }
         public int? AssetType { get; set; }
         public string? DurationSeconds { get; set; }
-        public int? FileSize { get; set; }
+        public string? FileSize { get; set; }
         public int? Height { get; set; }
         public string? MimeType { get; set; }
         public string? PublishedAt { get; set; }

@@ -9,7 +9,7 @@ class MemorySpaceCreateRequest:
     title: str
     auto_extract_enabled: Optional[bool] = None
     auto_recall_enabled: Optional[bool] = None
-    max_injected_tokens: Optional[int] = None
+    max_injected_tokens: Optional[str] = None
     memory_enabled: Optional[bool] = None
     metadata: Optional[Dict[str, str]] = None
     owner_id: Optional[str] = None

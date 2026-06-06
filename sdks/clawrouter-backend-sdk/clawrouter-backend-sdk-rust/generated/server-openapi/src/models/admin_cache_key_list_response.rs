@@ -17,7 +17,7 @@ pub struct AdminCacheKeyListResponse {
     pub items: Vec<AdminCacheKeyItem>,
 
     /// Limit field on admin cache key list response.
-    pub limit: i64,
+    pub limit: String,
 
     /// Namespace field on admin cache key list response.
     pub namespace: String,
@@ -28,7 +28,7 @@ pub struct AdminCacheKeyListResponse {
 
     /// Returned items field on admin cache key list response.
     #[serde(rename = "returnedItems")]
-    pub returned_items: i64,
+    pub returned_items: String,
 
     /// Scan complete field on admin cache key list response.
     #[serde(rename = "scanComplete")]
@@ -36,5 +36,5 @@ pub struct AdminCacheKeyListResponse {
 
     /// Scanned items field on admin cache key list response.
     #[serde(rename = "scannedItems")]
-    pub scanned_items: i64,
+    pub scanned_items: String,
 }

@@ -12,7 +12,7 @@ pub struct AdminCourseLessonMutationRequest {
     /// Duration seconds field on admin course lesson mutation request.
     #[serde(rename = "durationSeconds")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub duration_seconds: Option<i64>,
+    pub duration_seconds: Option<String>,
 
     /// External bvid field on admin course lesson mutation request.
     #[serde(rename = "externalBvid")]

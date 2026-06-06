@@ -9,10 +9,10 @@ data class ChatConversationItem(
     val id: String? = null,
     val lastMessagePreview: String? = null,
     val memorySpaceId: String? = null,
-    val messageCount: Int? = null,
+    val messageCount: String? = null,
     val sourceSurface: String? = null,
     val status: String? = null,
     val title: String? = null,
-    val turnCount: Int? = null,
+    val turnCount: String? = null,
     val updatedAt: String? = null
 )

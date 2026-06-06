@@ -12,7 +12,7 @@ class RuntimeApi {
   RuntimeApi(this._client);
 
   /// List runtime invocations
-  Future<InvocationsListResult?> invocationsList([int? page, int? pageSize, String? conversationId, String? chatTurnId, String? agentSessionId, String? runtime, String? status]) async {
+  Future<InvocationsListResult?> invocationsList([String? page, String? pageSize, String? conversationId, String? chatTurnId, String? agentSessionId, String? runtime, String? status]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
@@ -55,7 +55,7 @@ class RuntimeApi {
   }
 
   /// List runtime artifacts
-  Future<ArtifactsListResult?> artifactsList(String invocationId, [int? page, int? pageSize]) async {
+  Future<ArtifactsListResult?> artifactsList(String invocationId, [String? page, String? pageSize]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null)
@@ -100,7 +100,7 @@ class RuntimeApi {
   }
 
   /// List runtime invocation events
-  Future<InvocationEventsListResult?> invocationEventsList(String invocationId, [int? page, int? pageSize]) async {
+  Future<InvocationEventsListResult?> invocationEventsList(String invocationId, [String? page, String? pageSize]) async {
     final query = buildQueryString([
       QueryParameterSpec('page', page, 'form', true, false, null),
       QueryParameterSpec('page_size', pageSize, 'form', true, false, null)

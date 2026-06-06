@@ -14,7 +14,7 @@ pub struct AdminSiteConnectionCheckResponse {
     /// Latency ms field on admin site connection check response.
     #[serde(rename = "latencyMs")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub latency_ms: Option<i64>,
+    pub latency_ms: Option<String>,
 
     /// Message field on admin site connection check response.
     #[serde(default, skip_serializing_if = "Option::is_none")]

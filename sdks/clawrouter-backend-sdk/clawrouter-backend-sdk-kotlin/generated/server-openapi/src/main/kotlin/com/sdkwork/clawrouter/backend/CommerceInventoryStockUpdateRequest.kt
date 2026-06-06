@@ -1,9 +1,9 @@
 package com.sdkwork.clawrouter.backend
 
 data class CommerceInventoryStockUpdateRequest(
-    val availableQuantity: Int? = null,
+    val availableQuantity: String? = null,
     val reasonCode: String? = null,
-    val reservedQuantity: Int? = null,
+    val reservedQuantity: String? = null,
     val status: String? = null,
-    val version: Int? = null
+    val version: String? = null
 )

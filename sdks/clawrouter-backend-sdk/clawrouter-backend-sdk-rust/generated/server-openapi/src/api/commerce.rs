@@ -4,7 +4,7 @@ use crate::api::base::{RequestHeaders};
 use crate::api::paths::backend_path;
 use crate::api::paths::append_query_string;
 use crate::http::{SdkworkError, SdkworkHttpClient};
-use crate::models::{AuditCommerceEventsListResult, CatalogAttributesCreateResult, CatalogAttributesListResult, CatalogCategoriesCreateResult, CatalogCategoriesDeleteResult, CatalogCategoriesListResult, CatalogCategoriesUpdateResult, CatalogCategoryAttributesCreateResult, CatalogCategoryAttributesDeleteResult, CatalogCategoryAttributesListResult, CatalogCategoryAttributesUpdateResult, CatalogCategorySeedsCreateResult, CatalogPriceListsCreateResult, CatalogPriceListsListResult, CatalogProductsCreateResult, CatalogProductsDeleteResult, CatalogProductsListResult, CatalogProductsUpdateResult, CatalogSkusCreateResult, CatalogSkusDeleteResult, CatalogSkusListResult, CatalogSkusUpdateResult, CommerceCategorySeedInitializeRequest, CommerceInventoryStockUpdateRequest, CommerceMembershipMemberStatusRequest, CommerceMembershipPackageGroupMutationRequest, CommerceMembershipPackageMutationRequest, CommerceMembershipPlanMutationRequest, CommercePaymentProviderAccountMutationRequest, CommercePaymentProviderAccountStatusUpdateRequest, CommercePriceListMutationRequest, CommerceProductAttributeMutationRequest, CommerceProductCategoryAttributeMutationRequest, CommerceProductCategoryMutationRequest, CommerceProductSkuMutationRequest, CommerceProductSpuMutationRequest, CommerceRechargePackageMutationRequest, CommerceRechargeSettingsUpdateRequest, CommerceReportsOrderRevenueListResult, CommerceReportsPaymentReconciliationRetrieveResult, CommerceReportsRefundsListResult, CommerceStandardCommandRequest, FulfillmentsListResult, InventoryLedgerEntriesListResult, InventoryReservationsListResult, InventoryStocksListResult, InventoryStocksUpdateResult, InvoicesListResult, InvoicesRetrieveResult, InvoicesTitlesListResult, MembershipsEntitlementsListResult, MembershipsMembersListResult, MembershipsMembersStatusUpdateResult, MembershipsPackageGroupsCreateResult, MembershipsPackageGroupsDeleteResult, MembershipsPackageGroupsListResult, MembershipsPackageGroupsUpdateResult, MembershipsPackagesCreateResult, MembershipsPackagesDeleteResult, MembershipsPackagesListResult, MembershipsPackagesUpdateResult, MembershipsPlansCreateResult, MembershipsPlansDeleteResult, MembershipsPlansListResult, MembershipsPlansUpdateResult, OrdersEventsListResult, OrdersListResult, OrdersRetrieveResult, PaymentsAttemptsListResult, PaymentsChannelsListResult, PaymentsIntentsListResult, PaymentsMethodsListResult, PaymentsProviderAccountsCreateResult, PaymentsProviderAccountsDeleteResult, PaymentsProviderAccountsListResult, PaymentsProviderAccountsStatusUpdateResult, PaymentsProviderAccountsUpdateResult, PaymentsProvidersListResult, PaymentsReconciliationRunsListResult, PaymentsRouteRulesListResult, PaymentsRuntimeSnapshotRetrieveResult, PaymentsWebhookEventsListResult, RechargesOrdersListResult, RechargesPackagesCreateResult, RechargesPackagesDeleteResult, RechargesPackagesListResult, RechargesPackagesUpdateResult, RechargesSettingsRetrieveResult, RechargesSettingsUpdateResult, RefundsListResult, RefundsRetrieveResult, ShipmentsListResult, ShipmentsTrackingEventsListResult, WalletAccountsListResult, WalletAdjustmentsCreateResult, WalletExchangeRulesListResult, WalletLedgerEntriesListResult};
+use crate::models::{CatalogCategoryAttributesCreateResult, CatalogCategoryAttributesDeleteResult, CatalogCategoryAttributesListResult, CatalogCategoryAttributesUpdateResult, CatalogCategorySeedsCreateResult, CatalogProductsDeleteResult, CatalogSkusDeleteResult, CommerceCategorySeedInitializeRequest, CommerceInventoryStockUpdateRequest, CommerceMembershipMemberStatusRequest, CommerceMembershipPackageGroupMutationRequest, CommerceMembershipPackageMutationRequest, CommerceMembershipPlanMutationRequest, CommercePaymentProviderAccountStatusUpdateRequest, CommerceProductCategoryAttributeMutationRequest, CommerceRechargeSettingsUpdateRequest, InventoryStocksUpdateResult, MembershipsMembersStatusUpdateResult, MembershipsPackageGroupsUpdateResult, MembershipsPackagesUpdateResult, MembershipsPlansUpdateResult, OrdersRetrieveResult, PaymentsProviderAccountsDeleteResult, PaymentsProviderAccountsStatusUpdateResult, PaymentsProvidersListResult, PaymentsRuntimeSnapshotRetrieveResult, RechargesPackagesDeleteResult, RechargesSettingsRetrieveResult, RechargesSettingsUpdateResult, ShipmentsTrackingEventsListResult};
 
 #[derive(Clone)]
 pub struct CommerceApi {
@@ -16,85 +16,8 @@ impl CommerceApi {
         Self { client }
     }
 
-    /// Audit Commerce Events List
-    pub async fn audit_commerce_events_list(&self, page: Option<i64>, page_size: Option<i64>, status: Option<&str>) -> Result<AuditCommerceEventsListResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("page", page, "form", true, false, None),
-            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
-            QueryParameterSpec::new("status", status, "form", true, false, None),
-        ]);
-        let path = append_query_string(backend_path(&"/audit/commerce_events".to_string()), &query);
-        self.client.get(&path, None, None).await
-    }
-
-    /// List product attributes
-    pub async fn catalog_attributes_list(&self, scope: Option<&str>, status: Option<&str>, page: Option<i64>, page_size: Option<i64>) -> Result<CatalogAttributesListResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("scope", scope, "form", true, false, None),
-            QueryParameterSpec::new("status", status, "form", true, false, None),
-            QueryParameterSpec::new("page", page, "form", true, false, None),
-            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
-        ]);
-        let path = append_query_string(backend_path(&"/catalog/attributes".to_string()), &query);
-        self.client.get(&path, None, None).await
-    }
-
-    /// Create product attribute
-    pub async fn catalog_attributes_create(&self, body: &CommerceProductAttributeMutationRequest, idempotency_key: &str) -> Result<CatalogAttributesCreateResult, SdkworkError> {
-        let path = backend_path(&"/catalog/attributes".to_string());
-        let headers = build_request_headers(
-            &[
-                ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
-    }
-
-    /// List product categories for admin management
-    pub async fn catalog_categories_list(&self, parent_id: Option<&str>, status: Option<&str>, page: Option<i64>, page_size: Option<i64>) -> Result<CatalogCategoriesListResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("parent_id", parent_id, "form", true, false, None),
-            QueryParameterSpec::new("status", status, "form", true, false, None),
-            QueryParameterSpec::new("page", page, "form", true, false, None),
-            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
-        ]);
-        let path = append_query_string(backend_path(&"/catalog/categories".to_string()), &query);
-        self.client.get(&path, None, None).await
-    }
-
-    /// Create product category
-    pub async fn catalog_categories_create(&self, body: &CommerceProductCategoryMutationRequest, idempotency_key: &str) -> Result<CatalogCategoriesCreateResult, SdkworkError> {
-        let path = backend_path(&"/catalog/categories".to_string());
-        let headers = build_request_headers(
-            &[
-                ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
-    }
-
-    /// Delete product category
-    pub async fn catalog_categories_delete(&self, category_id: &str) -> Result<CatalogCategoriesDeleteResult, SdkworkError> {
-        let path = backend_path(&format!("/catalog/categories/{}", serialize_path_parameter(category_id, PathParameterSpec::new("categoryId", "simple", false))));
-        self.client.delete(&path, None, None).await
-    }
-
-    /// Update product category
-    pub async fn catalog_categories_update(&self, category_id: &str, body: &CommerceProductCategoryMutationRequest, idempotency_key: &str) -> Result<CatalogCategoriesUpdateResult, SdkworkError> {
-        let path = backend_path(&format!("/catalog/categories/{}", serialize_path_parameter(category_id, PathParameterSpec::new("categoryId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.patch(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
-    }
-
     /// List category attribute bindings
-    pub async fn catalog_category_attributes_list(&self, category_id: Option<&str>, attribute_id: Option<&str>, status: Option<&str>, page: Option<i64>, page_size: Option<i64>) -> Result<CatalogCategoryAttributesListResult, SdkworkError> {
+    pub async fn catalog_category_attributes_list(&self, category_id: Option<&str>, attribute_id: Option<&str>, status: Option<&str>, page: Option<&str>, page_size: Option<&str>) -> Result<CatalogCategoryAttributesListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("category_id", category_id, "form", true, false, None),
             QueryParameterSpec::new("attribute_id", attribute_id, "form", true, false, None),
@@ -148,197 +71,16 @@ impl CommerceApi {
         self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
     }
 
-    /// List product price lists
-    pub async fn catalog_price_lists(&self, currency_code: Option<&str>, market_code: Option<&str>, status: Option<&str>, page: Option<i64>, page_size: Option<i64>) -> Result<CatalogPriceListsListResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("currency_code", currency_code, "form", true, false, None),
-            QueryParameterSpec::new("market_code", market_code, "form", true, false, None),
-            QueryParameterSpec::new("status", status, "form", true, false, None),
-            QueryParameterSpec::new("page", page, "form", true, false, None),
-            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
-        ]);
-        let path = append_query_string(backend_path(&"/catalog/price_lists".to_string()), &query);
-        self.client.get(&path, None, None).await
-    }
-
-    /// Create product price list
-    pub async fn catalog_price_lists_create(&self, body: &CommercePriceListMutationRequest, idempotency_key: &str) -> Result<CatalogPriceListsCreateResult, SdkworkError> {
-        let path = backend_path(&"/catalog/price_lists".to_string());
-        let headers = build_request_headers(
-            &[
-                ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
-    }
-
-    /// List products for admin management
-    pub async fn catalog_products_list(&self, q: Option<&str>, category_id: Option<&str>, product_type: Option<&str>, status: Option<&str>, page: Option<i64>, page_size: Option<i64>, sort: Option<&str>) -> Result<CatalogProductsListResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("q", q, "form", true, false, None),
-            QueryParameterSpec::new("category_id", category_id, "form", true, false, None),
-            QueryParameterSpec::new("product_type", product_type, "form", true, false, None),
-            QueryParameterSpec::new("status", status, "form", true, false, None),
-            QueryParameterSpec::new("page", page, "form", true, false, None),
-            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
-            QueryParameterSpec::new("sort", sort, "form", true, false, None),
-        ]);
-        let path = append_query_string(backend_path(&"/catalog/products".to_string()), &query);
-        self.client.get(&path, None, None).await
-    }
-
-    /// Create product SPU
-    pub async fn catalog_products_create(&self, body: &CommerceProductSpuMutationRequest, idempotency_key: &str) -> Result<CatalogProductsCreateResult, SdkworkError> {
-        let path = backend_path(&"/catalog/products".to_string());
-        let headers = build_request_headers(
-            &[
-                ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
-    }
-
     /// Delete product SPU
     pub async fn catalog_products_delete(&self, product_id: &str) -> Result<CatalogProductsDeleteResult, SdkworkError> {
         let path = backend_path(&format!("/catalog/products/{}", serialize_path_parameter(product_id, PathParameterSpec::new("productId", "simple", false))));
         self.client.delete(&path, None, None).await
     }
 
-    /// Update product SPU
-    pub async fn catalog_products_update(&self, product_id: &str, body: &CommerceProductSpuMutationRequest, idempotency_key: &str) -> Result<CatalogProductsUpdateResult, SdkworkError> {
-        let path = backend_path(&format!("/catalog/products/{}", serialize_path_parameter(product_id, PathParameterSpec::new("productId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.patch(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
-    }
-
-    /// List product SKUs for admin management
-    pub async fn catalog_skus_list(&self, product_id: Option<&str>, fulfillment_type: Option<&str>, status: Option<&str>, page: Option<i64>, page_size: Option<i64>) -> Result<CatalogSkusListResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("product_id", product_id, "form", true, false, None),
-            QueryParameterSpec::new("fulfillment_type", fulfillment_type, "form", true, false, None),
-            QueryParameterSpec::new("status", status, "form", true, false, None),
-            QueryParameterSpec::new("page", page, "form", true, false, None),
-            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
-        ]);
-        let path = append_query_string(backend_path(&"/catalog/skus".to_string()), &query);
-        self.client.get(&path, None, None).await
-    }
-
-    /// Create product SKU
-    pub async fn catalog_skus_create(&self, body: &CommerceProductSkuMutationRequest, idempotency_key: &str) -> Result<CatalogSkusCreateResult, SdkworkError> {
-        let path = backend_path(&"/catalog/skus".to_string());
-        let headers = build_request_headers(
-            &[
-                ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
-    }
-
     /// Delete product SKU
     pub async fn catalog_skus_delete(&self, sku_id: &str) -> Result<CatalogSkusDeleteResult, SdkworkError> {
         let path = backend_path(&format!("/catalog/skus/{}", serialize_path_parameter(sku_id, PathParameterSpec::new("skuId", "simple", false))));
         self.client.delete(&path, None, None).await
-    }
-
-    /// Update product SKU
-    pub async fn catalog_skus_update(&self, sku_id: &str, body: &CommerceProductSkuMutationRequest, idempotency_key: &str) -> Result<CatalogSkusUpdateResult, SdkworkError> {
-        let path = backend_path(&format!("/catalog/skus/{}", serialize_path_parameter(sku_id, PathParameterSpec::new("skuId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.patch(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
-    }
-
-    /// Commerce Reports Order Revenue List
-    pub async fn reports_order_revenue_list(&self, page: Option<i64>, page_size: Option<i64>, status: Option<&str>) -> Result<CommerceReportsOrderRevenueListResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("page", page, "form", true, false, None),
-            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
-            QueryParameterSpec::new("status", status, "form", true, false, None),
-        ]);
-        let path = append_query_string(backend_path(&"/commerce_reports/order_revenue".to_string()), &query);
-        self.client.get(&path, None, None).await
-    }
-
-    /// Commerce Reports Payment Reconciliation Retrieve
-    pub async fn reports_payment_reconciliation_retrieve(&self) -> Result<CommerceReportsPaymentReconciliationRetrieveResult, SdkworkError> {
-        let path = backend_path(&"/commerce_reports/payment_reconciliation".to_string());
-        self.client.get(&path, None, None).await
-    }
-
-    /// Commerce Reports Refunds List
-    pub async fn reports_refunds_list(&self, page: Option<i64>, page_size: Option<i64>, status: Option<&str>) -> Result<CommerceReportsRefundsListResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("page", page, "form", true, false, None),
-            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
-            QueryParameterSpec::new("status", status, "form", true, false, None),
-        ]);
-        let path = append_query_string(backend_path(&"/commerce_reports/refunds".to_string()), &query);
-        self.client.get(&path, None, None).await
-    }
-
-    /// Fulfillments List
-    pub async fn fulfillments_list(&self, page: Option<i64>, page_size: Option<i64>, status: Option<&str>) -> Result<FulfillmentsListResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("page", page, "form", true, false, None),
-            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
-            QueryParameterSpec::new("status", status, "form", true, false, None),
-        ]);
-        let path = append_query_string(backend_path(&"/fulfillments".to_string()), &query);
-        self.client.get(&path, None, None).await
-    }
-
-    /// List inventory ledger entries
-    pub async fn inventory_ledger_entries_list(&self, sku_id: Option<&str>, warehouse_id: Option<&str>, source_type: Option<&str>, source_id: Option<&str>, page: Option<i64>, page_size: Option<i64>) -> Result<InventoryLedgerEntriesListResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("sku_id", sku_id, "form", true, false, None),
-            QueryParameterSpec::new("warehouse_id", warehouse_id, "form", true, false, None),
-            QueryParameterSpec::new("source_type", source_type, "form", true, false, None),
-            QueryParameterSpec::new("source_id", source_id, "form", true, false, None),
-            QueryParameterSpec::new("page", page, "form", true, false, None),
-            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
-        ]);
-        let path = append_query_string(backend_path(&"/inventory/ledger_entries".to_string()), &query);
-        self.client.get(&path, None, None).await
-    }
-
-    /// List inventory reservations
-    pub async fn inventory_reservations_list(&self, sku_id: Option<&str>, order_id: Option<&str>, checkout_session_id: Option<&str>, status: Option<&str>, page: Option<i64>, page_size: Option<i64>) -> Result<InventoryReservationsListResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("sku_id", sku_id, "form", true, false, None),
-            QueryParameterSpec::new("order_id", order_id, "form", true, false, None),
-            QueryParameterSpec::new("checkout_session_id", checkout_session_id, "form", true, false, None),
-            QueryParameterSpec::new("status", status, "form", true, false, None),
-            QueryParameterSpec::new("page", page, "form", true, false, None),
-            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
-        ]);
-        let path = append_query_string(backend_path(&"/inventory/reservations".to_string()), &query);
-        self.client.get(&path, None, None).await
-    }
-
-    /// List inventory stock records
-    pub async fn inventory_stocks_list(&self, sku_id: Option<&str>, warehouse_id: Option<&str>, status: Option<&str>, page: Option<i64>, page_size: Option<i64>) -> Result<InventoryStocksListResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("sku_id", sku_id, "form", true, false, None),
-            QueryParameterSpec::new("warehouse_id", warehouse_id, "form", true, false, None),
-            QueryParameterSpec::new("status", status, "form", true, false, None),
-            QueryParameterSpec::new("page", page, "form", true, false, None),
-            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
-        ]);
-        let path = append_query_string(backend_path(&"/inventory/stocks".to_string()), &query);
-        self.client.get(&path, None, None).await
     }
 
     /// Update inventory stock
@@ -353,61 +95,6 @@ impl CommerceApi {
         self.client.patch(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
     }
 
-    /// Invoices List
-    pub async fn invoices_list(&self, page: Option<i64>, page_size: Option<i64>, status: Option<&str>) -> Result<InvoicesListResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("page", page, "form", true, false, None),
-            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
-            QueryParameterSpec::new("status", status, "form", true, false, None),
-        ]);
-        let path = append_query_string(backend_path(&"/invoices".to_string()), &query);
-        self.client.get(&path, None, None).await
-    }
-
-    /// Invoices Titles List
-    pub async fn invoices_titles_list(&self, page: Option<i64>, page_size: Option<i64>, status: Option<&str>) -> Result<InvoicesTitlesListResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("page", page, "form", true, false, None),
-            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
-            QueryParameterSpec::new("status", status, "form", true, false, None),
-        ]);
-        let path = append_query_string(backend_path(&"/invoices/titles".to_string()), &query);
-        self.client.get(&path, None, None).await
-    }
-
-    /// Invoices Retrieve
-    pub async fn invoices_retrieve(&self, invoice_id: &str) -> Result<InvoicesRetrieveResult, SdkworkError> {
-        let path = backend_path(&format!("/invoices/{}", serialize_path_parameter(invoice_id, PathParameterSpec::new("invoiceId", "simple", false))));
-        self.client.get(&path, None, None).await
-    }
-
-    /// Memberships Entitlements List
-    pub async fn memberships_entitlements_list(&self, page: Option<i64>, page_size: Option<i64>, plan_id: Option<&str>, membership_id: Option<&str>, status: Option<&str>) -> Result<MembershipsEntitlementsListResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("page", page, "form", true, false, None),
-            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
-            QueryParameterSpec::new("plan_id", plan_id, "form", true, false, None),
-            QueryParameterSpec::new("membership_id", membership_id, "form", true, false, None),
-            QueryParameterSpec::new("status", status, "form", true, false, None),
-        ]);
-        let path = append_query_string(backend_path(&"/memberships/entitlements".to_string()), &query);
-        self.client.get(&path, None, None).await
-    }
-
-    /// Memberships Members List
-    pub async fn memberships_members_list(&self, page: Option<i64>, page_size: Option<i64>, cursor: Option<&str>, user_id: Option<&str>, plan_id: Option<&str>, status: Option<&str>) -> Result<MembershipsMembersListResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("page", page, "form", true, false, None),
-            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
-            QueryParameterSpec::new("cursor", cursor, "form", true, false, None),
-            QueryParameterSpec::new("user_id", user_id, "form", true, false, None),
-            QueryParameterSpec::new("plan_id", plan_id, "form", true, false, None),
-            QueryParameterSpec::new("status", status, "form", true, false, None),
-        ]);
-        let path = append_query_string(backend_path(&"/memberships/members".to_string()), &query);
-        self.client.get(&path, None, None).await
-    }
-
     /// Memberships Members Status Update
     pub async fn memberships_members_status_update(&self, membership_id: &str, body: &CommerceMembershipMemberStatusRequest, idempotency_key: &str) -> Result<MembershipsMembersStatusUpdateResult, SdkworkError> {
         let path = backend_path(&format!("/memberships/members/{}/status", serialize_path_parameter(membership_id, PathParameterSpec::new("membershipId", "simple", false))));
@@ -418,35 +105,6 @@ impl CommerceApi {
             &[],
         );
         self.client.patch(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
-    }
-
-    /// Memberships Package Groups List
-    pub async fn memberships_package_groups_list(&self, page: Option<i64>, page_size: Option<i64>, status: Option<&str>) -> Result<MembershipsPackageGroupsListResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("page", page, "form", true, false, None),
-            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
-            QueryParameterSpec::new("status", status, "form", true, false, None),
-        ]);
-        let path = append_query_string(backend_path(&"/memberships/package_groups".to_string()), &query);
-        self.client.get(&path, None, None).await
-    }
-
-    /// Memberships Package Groups Create
-    pub async fn memberships_package_groups_create(&self, body: &CommerceMembershipPackageGroupMutationRequest, idempotency_key: &str) -> Result<MembershipsPackageGroupsCreateResult, SdkworkError> {
-        let path = backend_path(&"/memberships/package_groups".to_string());
-        let headers = build_request_headers(
-            &[
-                ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
-    }
-
-    /// Memberships Package Groups Delete
-    pub async fn memberships_package_groups_delete(&self, package_group_id: &str) -> Result<MembershipsPackageGroupsDeleteResult, SdkworkError> {
-        let path = backend_path(&format!("/memberships/package_groups/{}", serialize_path_parameter(package_group_id, PathParameterSpec::new("packageGroupId", "simple", false))));
-        self.client.delete(&path, None, None).await
     }
 
     /// Memberships Package Groups Update
@@ -461,37 +119,6 @@ impl CommerceApi {
         self.client.put(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
     }
 
-    /// Memberships Packages List
-    pub async fn memberships_packages_list(&self, page: Option<i64>, page_size: Option<i64>, package_group_id: Option<&str>, plan_id: Option<&str>, status: Option<&str>) -> Result<MembershipsPackagesListResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("page", page, "form", true, false, None),
-            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
-            QueryParameterSpec::new("package_group_id", package_group_id, "form", true, false, None),
-            QueryParameterSpec::new("plan_id", plan_id, "form", true, false, None),
-            QueryParameterSpec::new("status", status, "form", true, false, None),
-        ]);
-        let path = append_query_string(backend_path(&"/memberships/packages".to_string()), &query);
-        self.client.get(&path, None, None).await
-    }
-
-    /// Memberships Packages Create
-    pub async fn memberships_packages_create(&self, body: &CommerceMembershipPackageMutationRequest, idempotency_key: &str) -> Result<MembershipsPackagesCreateResult, SdkworkError> {
-        let path = backend_path(&"/memberships/packages".to_string());
-        let headers = build_request_headers(
-            &[
-                ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
-    }
-
-    /// Memberships Packages Delete
-    pub async fn memberships_packages_delete(&self, package_id: &str) -> Result<MembershipsPackagesDeleteResult, SdkworkError> {
-        let path = backend_path(&format!("/memberships/packages/{}", serialize_path_parameter(package_id, PathParameterSpec::new("packageId", "simple", false))));
-        self.client.delete(&path, None, None).await
-    }
-
     /// Memberships Packages Update
     pub async fn memberships_packages_update(&self, package_id: &str, body: &CommerceMembershipPackageMutationRequest, idempotency_key: &str) -> Result<MembershipsPackagesUpdateResult, SdkworkError> {
         let path = backend_path(&format!("/memberships/packages/{}", serialize_path_parameter(package_id, PathParameterSpec::new("packageId", "simple", false))));
@@ -502,35 +129,6 @@ impl CommerceApi {
             &[],
         );
         self.client.put(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
-    }
-
-    /// Memberships Plans List
-    pub async fn memberships_plans_list(&self, page: Option<i64>, page_size: Option<i64>, status: Option<&str>) -> Result<MembershipsPlansListResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("page", page, "form", true, false, None),
-            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
-            QueryParameterSpec::new("status", status, "form", true, false, None),
-        ]);
-        let path = append_query_string(backend_path(&"/memberships/plans".to_string()), &query);
-        self.client.get(&path, None, None).await
-    }
-
-    /// Memberships Plans Create
-    pub async fn memberships_plans_create(&self, body: &CommerceMembershipPlanMutationRequest, idempotency_key: &str) -> Result<MembershipsPlansCreateResult, SdkworkError> {
-        let path = backend_path(&"/memberships/plans".to_string());
-        let headers = build_request_headers(
-            &[
-                ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
-    }
-
-    /// Memberships Plans Delete
-    pub async fn memberships_plans_delete(&self, plan_id: &str) -> Result<MembershipsPlansDeleteResult, SdkworkError> {
-        let path = backend_path(&format!("/memberships/plans/{}", serialize_path_parameter(plan_id, PathParameterSpec::new("planId", "simple", false))));
-        self.client.delete(&path, None, None).await
     }
 
     /// Memberships Plans Update
@@ -545,124 +143,16 @@ impl CommerceApi {
         self.client.put(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
     }
 
-    /// Orders List
-    pub async fn orders_list(&self, page: Option<i64>, page_size: Option<i64>, status: Option<&str>) -> Result<OrdersListResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("page", page, "form", true, false, None),
-            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
-            QueryParameterSpec::new("status", status, "form", true, false, None),
-        ]);
-        let path = append_query_string(backend_path(&"/orders".to_string()), &query);
-        self.client.get(&path, None, None).await
-    }
-
     /// Orders Retrieve
     pub async fn orders_retrieve(&self, order_id: &str) -> Result<OrdersRetrieveResult, SdkworkError> {
         let path = backend_path(&format!("/orders/{}", serialize_path_parameter(order_id, PathParameterSpec::new("orderId", "simple", false))));
         self.client.get(&path, None, None).await
     }
 
-    /// Orders Events List
-    pub async fn orders_events_list(&self, order_id: &str, page: Option<i64>, page_size: Option<i64>, status: Option<&str>) -> Result<OrdersEventsListResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("page", page, "form", true, false, None),
-            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
-            QueryParameterSpec::new("status", status, "form", true, false, None),
-        ]);
-        let path = append_query_string(backend_path(&format!("/orders/{}/events", serialize_path_parameter(order_id, PathParameterSpec::new("orderId", "simple", false)))), &query);
-        self.client.get(&path, None, None).await
-    }
-
-    /// Payments Attempts List
-    pub async fn payments_attempts_list(&self, intent_id: Option<&str>, provider_code: Option<&str>, page: Option<i64>, page_size: Option<i64>, status: Option<&str>) -> Result<PaymentsAttemptsListResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("intent_id", intent_id, "form", true, false, None),
-            QueryParameterSpec::new("provider_code", provider_code, "form", true, false, None),
-            QueryParameterSpec::new("page", page, "form", true, false, None),
-            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
-            QueryParameterSpec::new("status", status, "form", true, false, None),
-        ]);
-        let path = append_query_string(backend_path(&"/payments/attempts".to_string()), &query);
-        self.client.get(&path, None, None).await
-    }
-
-    /// Payments Channels List
-    pub async fn payments_channels_list(&self, provider_account_id: Option<&str>, method_code: Option<&str>, page: Option<i64>, page_size: Option<i64>, status: Option<&str>) -> Result<PaymentsChannelsListResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("provider_account_id", provider_account_id, "form", true, false, None),
-            QueryParameterSpec::new("method_code", method_code, "form", true, false, None),
-            QueryParameterSpec::new("page", page, "form", true, false, None),
-            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
-            QueryParameterSpec::new("status", status, "form", true, false, None),
-        ]);
-        let path = append_query_string(backend_path(&"/payments/channels".to_string()), &query);
-        self.client.get(&path, None, None).await
-    }
-
-    /// Payments Intents List
-    pub async fn payments_intents_list(&self, order_id: Option<&str>, provider_code: Option<&str>, page: Option<i64>, page_size: Option<i64>, status: Option<&str>) -> Result<PaymentsIntentsListResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("order_id", order_id, "form", true, false, None),
-            QueryParameterSpec::new("provider_code", provider_code, "form", true, false, None),
-            QueryParameterSpec::new("page", page, "form", true, false, None),
-            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
-            QueryParameterSpec::new("status", status, "form", true, false, None),
-        ]);
-        let path = append_query_string(backend_path(&"/payments/intents".to_string()), &query);
-        self.client.get(&path, None, None).await
-    }
-
-    /// Payments Methods List
-    pub async fn payments_methods_list(&self, page: Option<i64>, page_size: Option<i64>, status: Option<&str>) -> Result<PaymentsMethodsListResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("page", page, "form", true, false, None),
-            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
-            QueryParameterSpec::new("status", status, "form", true, false, None),
-        ]);
-        let path = append_query_string(backend_path(&"/payments/methods".to_string()), &query);
-        self.client.get(&path, None, None).await
-    }
-
-    /// Payments Provider Accounts List
-    pub async fn payments_provider_accounts_list(&self, provider_code: Option<&str>, page: Option<i64>, page_size: Option<i64>, status: Option<&str>) -> Result<PaymentsProviderAccountsListResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("provider_code", provider_code, "form", true, false, None),
-            QueryParameterSpec::new("page", page, "form", true, false, None),
-            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
-            QueryParameterSpec::new("status", status, "form", true, false, None),
-        ]);
-        let path = append_query_string(backend_path(&"/payments/provider_accounts".to_string()), &query);
-        self.client.get(&path, None, None).await
-    }
-
-    /// Payments Provider Accounts Create
-    pub async fn payments_provider_accounts_create(&self, body: &CommercePaymentProviderAccountMutationRequest, idempotency_key: &str) -> Result<PaymentsProviderAccountsCreateResult, SdkworkError> {
-        let path = backend_path(&"/payments/provider_accounts".to_string());
-        let headers = build_request_headers(
-            &[
-                ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
-    }
-
     /// Payments Provider Accounts Delete
     pub async fn payments_provider_accounts_delete(&self, provider_account_id: &str) -> Result<PaymentsProviderAccountsDeleteResult, SdkworkError> {
         let path = backend_path(&format!("/payments/provider_accounts/{}", serialize_path_parameter(provider_account_id, PathParameterSpec::new("providerAccountId", "simple", false))));
         self.client.delete(&path, None, None).await
-    }
-
-    /// Payments Provider Accounts Update
-    pub async fn payments_provider_accounts_update(&self, provider_account_id: &str, body: &CommercePaymentProviderAccountMutationRequest, idempotency_key: &str) -> Result<PaymentsProviderAccountsUpdateResult, SdkworkError> {
-        let path = backend_path(&format!("/payments/provider_accounts/{}", serialize_path_parameter(provider_account_id, PathParameterSpec::new("providerAccountId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.patch(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
     }
 
     /// Payments Provider Accounts Status Update
@@ -678,40 +168,13 @@ impl CommerceApi {
     }
 
     /// Payments Providers List
-    pub async fn payments_providers_list(&self, page: Option<i64>, page_size: Option<i64>, status: Option<&str>) -> Result<PaymentsProvidersListResult, SdkworkError> {
+    pub async fn payments_providers_list(&self, page: Option<&str>, page_size: Option<&str>, status: Option<&str>) -> Result<PaymentsProvidersListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
             QueryParameterSpec::new("status", status, "form", true, false, None),
         ]);
         let path = append_query_string(backend_path(&"/payments/providers".to_string()), &query);
-        self.client.get(&path, None, None).await
-    }
-
-    /// Payments Reconciliation Runs List
-    pub async fn payments_reconciliation_runs_list(&self, provider_code: Option<&str>, business_date: Option<&str>, page: Option<i64>, page_size: Option<i64>, status: Option<&str>) -> Result<PaymentsReconciliationRunsListResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("provider_code", provider_code, "form", true, false, None),
-            QueryParameterSpec::new("business_date", business_date, "form", true, false, None),
-            QueryParameterSpec::new("page", page, "form", true, false, None),
-            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
-            QueryParameterSpec::new("status", status, "form", true, false, None),
-        ]);
-        let path = append_query_string(backend_path(&"/payments/reconciliation_runs".to_string()), &query);
-        self.client.get(&path, None, None).await
-    }
-
-    /// Payments Route Rules List
-    pub async fn payments_route_rules_list(&self, method_code: Option<&str>, country_code: Option<&str>, currency_code: Option<&str>, page: Option<i64>, page_size: Option<i64>, status: Option<&str>) -> Result<PaymentsRouteRulesListResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("method_code", method_code, "form", true, false, None),
-            QueryParameterSpec::new("country_code", country_code, "form", true, false, None),
-            QueryParameterSpec::new("currency_code", currency_code, "form", true, false, None),
-            QueryParameterSpec::new("page", page, "form", true, false, None),
-            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
-            QueryParameterSpec::new("status", status, "form", true, false, None),
-        ]);
-        let path = append_query_string(backend_path(&"/payments/route_rules".to_string()), &query);
         self.client.get(&path, None, None).await
     }
 
@@ -724,68 +187,10 @@ impl CommerceApi {
         self.client.get(&path, None, None).await
     }
 
-    /// Payments Webhook Events List
-    pub async fn payments_webhook_events_list(&self, provider_code: Option<&str>, page: Option<i64>, page_size: Option<i64>, status: Option<&str>) -> Result<PaymentsWebhookEventsListResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("provider_code", provider_code, "form", true, false, None),
-            QueryParameterSpec::new("page", page, "form", true, false, None),
-            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
-            QueryParameterSpec::new("status", status, "form", true, false, None),
-        ]);
-        let path = append_query_string(backend_path(&"/payments/webhook_events".to_string()), &query);
-        self.client.get(&path, None, None).await
-    }
-
-    /// Recharges Orders List
-    pub async fn recharges_orders_list(&self, page: Option<i64>, page_size: Option<i64>, status: Option<&str>) -> Result<RechargesOrdersListResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("page", page, "form", true, false, None),
-            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
-            QueryParameterSpec::new("status", status, "form", true, false, None),
-        ]);
-        let path = append_query_string(backend_path(&"/recharges/orders".to_string()), &query);
-        self.client.get(&path, None, None).await
-    }
-
-    /// Recharges Packages List
-    pub async fn recharges_packages_list(&self, page: Option<i64>, page_size: Option<i64>, status: Option<&str>) -> Result<RechargesPackagesListResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("page", page, "form", true, false, None),
-            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
-            QueryParameterSpec::new("status", status, "form", true, false, None),
-        ]);
-        let path = append_query_string(backend_path(&"/recharges/packages".to_string()), &query);
-        self.client.get(&path, None, None).await
-    }
-
-    /// Recharges Packages Create
-    pub async fn recharges_packages_create(&self, body: &CommerceRechargePackageMutationRequest, idempotency_key: &str) -> Result<RechargesPackagesCreateResult, SdkworkError> {
-        let path = backend_path(&"/recharges/packages".to_string());
-        let headers = build_request_headers(
-            &[
-                ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
-    }
-
     /// Recharges Packages Delete
     pub async fn recharges_packages_delete(&self, package_id: &str) -> Result<RechargesPackagesDeleteResult, SdkworkError> {
         let path = backend_path(&format!("/recharges/packages/{}", serialize_path_parameter(package_id, PathParameterSpec::new("packageId", "simple", false))));
         self.client.delete(&path, None, None).await
-    }
-
-    /// Recharges Packages Update
-    pub async fn recharges_packages_update(&self, package_id: &str, body: &CommerceRechargePackageMutationRequest, idempotency_key: &str) -> Result<RechargesPackagesUpdateResult, SdkworkError> {
-        let path = backend_path(&format!("/recharges/packages/{}", serialize_path_parameter(package_id, PathParameterSpec::new("packageId", "simple", false))));
-        let headers = build_request_headers(
-            &[
-                ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.patch(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
     }
 
     /// Recharges Settings Retrieve
@@ -800,87 +205,14 @@ impl CommerceApi {
         self.client.put(&path, Some(body), None, None, Some("application/json")).await
     }
 
-    /// Refunds List
-    pub async fn refunds_list(&self, page: Option<i64>, page_size: Option<i64>, status: Option<&str>) -> Result<RefundsListResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("page", page, "form", true, false, None),
-            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
-            QueryParameterSpec::new("status", status, "form", true, false, None),
-        ]);
-        let path = append_query_string(backend_path(&"/refunds".to_string()), &query);
-        self.client.get(&path, None, None).await
-    }
-
-    /// Refunds Retrieve
-    pub async fn refunds_retrieve(&self, refund_id: &str) -> Result<RefundsRetrieveResult, SdkworkError> {
-        let path = backend_path(&format!("/refunds/{}", serialize_path_parameter(refund_id, PathParameterSpec::new("refundId", "simple", false))));
-        self.client.get(&path, None, None).await
-    }
-
-    /// Shipments List
-    pub async fn shipments_list(&self, page: Option<i64>, page_size: Option<i64>, status: Option<&str>) -> Result<ShipmentsListResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("page", page, "form", true, false, None),
-            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
-            QueryParameterSpec::new("status", status, "form", true, false, None),
-        ]);
-        let path = append_query_string(backend_path(&"/shipments".to_string()), &query);
-        self.client.get(&path, None, None).await
-    }
-
     /// Shipments Tracking Events List
-    pub async fn shipments_tracking_events_list(&self, shipment_id: &str, page: Option<i64>, page_size: Option<i64>, status: Option<&str>) -> Result<ShipmentsTrackingEventsListResult, SdkworkError> {
+    pub async fn shipments_tracking_events_list(&self, shipment_id: &str, page: Option<&str>, page_size: Option<&str>, status: Option<&str>) -> Result<ShipmentsTrackingEventsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
             QueryParameterSpec::new("status", status, "form", true, false, None),
         ]);
         let path = append_query_string(backend_path(&format!("/shipments/{}/tracking_events", serialize_path_parameter(shipment_id, PathParameterSpec::new("shipmentId", "simple", false)))), &query);
-        self.client.get(&path, None, None).await
-    }
-
-    /// Wallet Accounts List
-    pub async fn wallet_accounts_list(&self, page: Option<i64>, page_size: Option<i64>, status: Option<&str>) -> Result<WalletAccountsListResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("page", page, "form", true, false, None),
-            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
-            QueryParameterSpec::new("status", status, "form", true, false, None),
-        ]);
-        let path = append_query_string(backend_path(&"/wallet/accounts".to_string()), &query);
-        self.client.get(&path, None, None).await
-    }
-
-    /// Wallet Adjustments Create
-    pub async fn wallet_adjustments_create(&self, body: &CommerceStandardCommandRequest, idempotency_key: &str) -> Result<WalletAdjustmentsCreateResult, SdkworkError> {
-        let path = backend_path(&"/wallet/adjustments".to_string());
-        let headers = build_request_headers(
-            &[
-                ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
-            ],
-            &[],
-        );
-        self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
-    }
-
-    /// Wallet Exchange Rules List
-    pub async fn wallet_exchange_rules_list(&self, page: Option<i64>, page_size: Option<i64>, status: Option<&str>) -> Result<WalletExchangeRulesListResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("page", page, "form", true, false, None),
-            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
-            QueryParameterSpec::new("status", status, "form", true, false, None),
-        ]);
-        let path = append_query_string(backend_path(&"/wallet/exchange_rules".to_string()), &query);
-        self.client.get(&path, None, None).await
-    }
-
-    /// Wallet Ledger Entries List
-    pub async fn wallet_ledger_entries_list(&self, page: Option<i64>, page_size: Option<i64>, status: Option<&str>) -> Result<WalletLedgerEntriesListResult, SdkworkError> {
-        let query = build_query_string(&[
-            QueryParameterSpec::new("page", page, "form", true, false, None),
-            QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
-            QueryParameterSpec::new("status", status, "form", true, false, None),
-        ]);
-        let path = append_query_string(backend_path(&"/wallet/ledger_entries".to_string()), &query);
         self.client.get(&path, None, None).await
     }
 

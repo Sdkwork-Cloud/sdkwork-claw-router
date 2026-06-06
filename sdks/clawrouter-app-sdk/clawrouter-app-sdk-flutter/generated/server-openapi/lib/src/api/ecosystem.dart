@@ -12,7 +12,7 @@ class EcosystemApi {
   EcosystemApi(this._client);
 
   /// Get skills
-  Future<SkillsListResult?> skillsList([String? q, int? page, int? pageSize, String? status, String? startTime, String? endTime]) async {
+  Future<SkillsListResult?> skillsList([String? q, String? page, String? pageSize, String? status, String? startTime, String? endTime]) async {
     final query = buildQueryString([
       QueryParameterSpec('q', q, 'form', true, false, null),
       QueryParameterSpec('page', page, 'form', true, false, null),

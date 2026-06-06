@@ -11,7 +11,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public bool? Filterable { get; set; }
         public bool? Required { get; set; }
         public bool? Searchable { get; set; }
-        public int? SortOrder { get; set; }
+        public string? SortOrder { get; set; }
         public string? Status { get; set; }
     }
 }

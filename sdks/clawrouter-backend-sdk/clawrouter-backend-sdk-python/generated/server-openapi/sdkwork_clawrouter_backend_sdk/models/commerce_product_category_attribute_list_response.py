@@ -10,6 +10,6 @@ if TYPE_CHECKING:
 class CommerceProductCategoryAttributeListResponse:
     """Commerce product category attribute list response schema exposed by Claw Router."""
     items: List[CommerceProductCategoryAttributeItem]
-    page: int
-    page_size: int
-    total: int
+    page: str
+    page_size: str
+    total: str

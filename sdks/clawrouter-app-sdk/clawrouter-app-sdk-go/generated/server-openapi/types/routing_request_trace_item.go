@@ -11,16 +11,16 @@ type RoutingRequestTraceItem struct {
 	Id string `json:"id"`
 	Model string `json:"model"`
 	ProviderErrorCode string `json:"providerErrorCode"`
-	RequestBytes int `json:"requestBytes"`
+	RequestBytes string `json:"requestBytes"`
 	RequestId string `json:"requestId"`
 	RequestPath string `json:"requestPath"`
 	RequestPayloadHash string `json:"requestPayloadHash"`
-	ResponseBytes int `json:"responseBytes"`
+	ResponseBytes string `json:"responseBytes"`
 	ResponsePayloadHash string `json:"responsePayloadHash"`
 	StartedAt string `json:"startedAt"`
-	Status int `json:"status"`
+	Status string `json:"status"`
 	Streaming bool `json:"streaming"`
 	Time string `json:"time"`
-	Tokens int `json:"tokens"`
+	Tokens string `json:"tokens"`
 	TraceId string `json:"traceId"`
 }

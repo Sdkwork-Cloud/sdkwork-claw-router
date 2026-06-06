@@ -18,7 +18,7 @@ public class McpApi {
     }
 
     /// List MCP servers
-    public func serversList(page: Int? = nil, pageSize: Int? = nil, q: String? = nil, transport: String? = nil, visibility: String? = nil, status: String? = nil, categoryId: String? = nil) async throws -> ServersListResult? {
+    public func serversList(page: String? = nil, pageSize: String? = nil, q: String? = nil, transport: String? = nil, visibility: String? = nil, status: String? = nil, categoryId: String? = nil) async throws -> ServersListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),

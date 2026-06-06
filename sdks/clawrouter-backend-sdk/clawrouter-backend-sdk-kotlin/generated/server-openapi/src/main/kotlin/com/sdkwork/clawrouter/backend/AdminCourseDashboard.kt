@@ -1,13 +1,13 @@
 package com.sdkwork.clawrouter.backend
 
 data class AdminCourseDashboard(
-    val draftCourses: Int? = null,
+    val draftCourses: String? = null,
     val id: String? = null,
-    val publishedCourses: Int? = null,
-    val reviewQueue: Int? = null,
-    val totalComments: Int? = null,
-    val totalCourses: Int? = null,
-    val totalEngagement: Int? = null,
-    val totalLessons: Int? = null,
-    val totalStudents: Int? = null
+    val publishedCourses: String? = null,
+    val reviewQueue: String? = null,
+    val totalComments: String? = null,
+    val totalCourses: String? = null,
+    val totalEngagement: String? = null,
+    val totalLessons: String? = null,
+    val totalStudents: String? = null
 )

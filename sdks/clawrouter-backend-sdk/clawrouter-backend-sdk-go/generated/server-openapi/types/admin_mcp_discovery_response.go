@@ -3,7 +3,7 @@ package types
 // Admin mcp discovery response schema exposed by Claw Router.
 type AdminMcpDiscoveryResponse struct {
 	CheckedAt string `json:"checkedAt"`
-	DiscoveredCount int `json:"discoveredCount"`
-	ServerId int `json:"serverId"`
+	DiscoveredCount string `json:"discoveredCount"`
+	ServerId string `json:"serverId"`
 	Tools []AdminMcpToolItem `json:"tools"`
 }

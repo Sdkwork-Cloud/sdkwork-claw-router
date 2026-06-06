@@ -63,7 +63,7 @@ func (a *AiApi) GenerationList() (sdktypes.GenerationListResult, error) {
 }
 
 // List model rankings
-func (a *AiApi) ModelRankingsList(rankScope *string, vendorCode *string, modality *string, q *string, limit *int) (sdktypes.ModelRankingsListResult, error) {
+func (a *AiApi) ModelRankingsList(rankScope *string, vendorCode *string, modality *string, q *string, limit *string) (sdktypes.ModelRankingsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "rank_scope", Value: func() interface{} { if rankScope == nil { return nil }; return *rankScope }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "vendor_code", Value: func() interface{} { if vendorCode == nil { return nil }; return *vendorCode }(), Style: "form", Explode: true, AllowReserved: false},
@@ -90,7 +90,7 @@ func (a *AiApi) ModelVendorsList() (sdktypes.ModelVendorsListResult, error) {
 }
 
 // List models
-func (a *AiApi) ModelsList(billingMeter *string, vendorCode *string, vendorCodes []string, modalities []string, capabilities []string, categories []string, groups []string, q *string, limit *int) (sdktypes.ModelsListResult, error) {
+func (a *AiApi) ModelsList(billingMeter *string, vendorCode *string, vendorCodes []string, modalities []string, capabilities []string, categories []string, groups []string, q *string, limit *string) (sdktypes.ModelsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "billing_meter", Value: func() interface{} { if billingMeter == nil { return nil }; return *billingMeter }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "vendor_code", Value: func() interface{} { if vendorCode == nil { return nil }; return *vendorCode }(), Style: "form", Explode: true, AllowReserved: false},
@@ -151,7 +151,7 @@ func (a *AiApi) RoutingUsageList() (sdktypes.RoutingUsageListResult, error) {
 }
 
 // List logs
-func (a *AiApi) UsageLogsList(page *int, pageSize *int, q *string, status *string, startTime *string, endTime *string) (sdktypes.UsageLogsListResult, error) {
+func (a *AiApi) UsageLogsList(page *string, pageSize *string, q *string, status *string, startTime *string, endTime *string) (sdktypes.UsageLogsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},

@@ -19,17 +19,16 @@ class AdminChannelItem:
     created_at: str
     credential_rotation: str
     credentials: List[AdminChannelCredentialItem]
-    errors: int
+    errors: str
     id: str
     is_multimodal: bool
-    models: List[str]
     name: str
     protocol: str
     resource_codes: List[str]
     status: str
     vendor: str
-    weight: int
+    weight: str
     circuit_breaker_policy: Optional[ProviderCircuitBreakerPolicy] = None
     expires_at: Optional[str] = None
     retry_policy: Optional[ProviderRetryPolicy] = None
-    timeout_ms: Optional[int] = None
+    timeout_ms: Optional[str] = None

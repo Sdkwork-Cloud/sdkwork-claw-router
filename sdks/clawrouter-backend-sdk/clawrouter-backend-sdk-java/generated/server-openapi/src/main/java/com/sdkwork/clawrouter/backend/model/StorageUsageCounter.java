@@ -2,24 +2,24 @@ package com.sdkwork.clawrouter.backend.model;
 
 
 public class StorageUsageCounter {
-    private Integer fileCount;
+    private String fileCount;
     private String files;
     private String id;
     private String reserved;
-    private Integer reservedBytes;
+    private String reservedBytes;
     private String scope;
     private String scopeId;
     private String scopeType;
     private String snapshotAt;
     private String updatedAt;
     private String used;
-    private Integer usedBytes;
+    private String usedBytes;
 
-    public Integer getFileCount() {
+    public String getFileCount() {
         return this.fileCount;
     }
 
-    public void setFileCount(Integer fileCount) {
+    public void setFileCount(String fileCount) {
         this.fileCount = fileCount;
     }
 
@@ -47,11 +47,11 @@ public class StorageUsageCounter {
         this.reserved = reserved;
     }
 
-    public Integer getReservedBytes() {
+    public String getReservedBytes() {
         return this.reservedBytes;
     }
 
-    public void setReservedBytes(Integer reservedBytes) {
+    public void setReservedBytes(String reservedBytes) {
         this.reservedBytes = reservedBytes;
     }
 
@@ -103,11 +103,11 @@ public class StorageUsageCounter {
         this.used = used;
     }
 
-    public Integer getUsedBytes() {
+    public String getUsedBytes() {
         return this.usedBytes;
     }
 
-    public void setUsedBytes(Integer usedBytes) {
+    public void setUsedBytes(String usedBytes) {
         this.usedBytes = usedBytes;
     }
 }

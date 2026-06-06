@@ -14,7 +14,7 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? Name { get; set; }
         public MediaResource? Resource { get; set; }
         public string? Sha256 { get; set; }
-        public int? SizeBytes { get; set; }
+        public string? SizeBytes { get; set; }
         public string? StorageKey { get; set; }
     }
 }

@@ -1,7 +1,7 @@
 package com.sdkwork.clawrouter.app
 
 data class RoutingUsageData(
-    val latency: Int? = null,
-    val requests: Int? = null,
+    val latency: String? = null,
+    val requests: String? = null,
     val time: String? = null
 )

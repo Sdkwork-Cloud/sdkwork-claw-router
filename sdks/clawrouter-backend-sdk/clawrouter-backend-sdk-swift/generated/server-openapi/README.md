@@ -91,11 +91,11 @@ client.setHeader("X-Custom-Header", value: "value")
 // List managed agents
 let params: [String: Any] = [
     "q": "q",
-    "owner_user_id": 2,
+    "owner_user_id": "1",
     "status": "active",
     "visibility": "private",
-    "page": 5,
-    "page_size": 6
+    "page": "page",
+    "page_size": "page-size"
 ]
 let result = try await client.agents.agentDefinitionsList(params: params)
 print(result)
@@ -112,8 +112,8 @@ print(result)
 ### commerce
 
 ```swift
-// Commerce Reports Payment Reconciliation Retrieve
-let result = try await client.commerce.reportsPaymentReconciliationRetrieve()
+// Recharges Settings Retrieve
+let result = try await client.commerce.rechargesSettingsRetrieve()
 print(result)
 ```
 
@@ -136,8 +136,14 @@ print(result)
 ### iam
 
 ```swift
-// List API key map
-let result = try await client.iam.apiKeysList()
+// Update user
+let body = AdminUserUpdateRequest(
+    group: "group",
+    id: "1",
+    status: "active",
+    username: "name"
+)
+let result = try await client.iam.usersUpdate(body: body)
 print(result)
 ```
 
@@ -154,8 +160,8 @@ print(result)
 ```swift
 // List MCP servers
 let params: [String: Any] = [
-    "page": 1,
-    "page_size": 2,
+    "page": "page",
+    "page_size": "page-size",
     "q": "q",
     "transport": "transport",
     "visibility": "visibility",
@@ -171,8 +177,8 @@ print(result)
 ```swift
 // Messaging provider accounts list
 let params: [String: Any] = [
-    "page": 1,
-    "page_size": 2,
+    "page": "page",
+    "page_size": "page-size",
     "q": "q",
     "status": "status",
     "channel": "sms",
@@ -214,8 +220,8 @@ print(result)
 ```swift
 // List admin prompts
 let params: [String: Any] = [
-    "page": 1,
-    "page_size": 2,
+    "page": "page",
+    "page_size": "page-size",
     "q": "q",
     "prompt_type": "prompt-type",
     "visibility": "visibility",
@@ -231,8 +237,8 @@ print(result)
 ```swift
 // Service Provider Adjustments List
 let params: [String: Any] = [
-    "page": 1,
-    "page_size": 2,
+    "page": "page",
+    "page_size": "page-size",
     "status": "status",
     "provider_id": "1",
     "seller_provider_id": "1",

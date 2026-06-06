@@ -9,7 +9,7 @@ if TYPE_CHECKING:
 @dataclass
 class ForumAuthor:
     """Forum author schema exposed by Claw Router."""
-    id: int
+    id: str
     is_following: bool
     name: str
     avatar: Optional[MediaResource] = None

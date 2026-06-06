@@ -3,28 +3,28 @@ package com.sdkwork.clawrouter.backend.model;
 import java.util.List;
 
 public class ModelRankingRefreshStatus {
-    private Integer cacheMaxAgeSeconds;
+    private String cacheMaxAgeSeconds;
     private String generatedAt;
-    private Integer generatedCount;
+    private String generatedCount;
     private ModelRankingRefreshLatestJob latestJob;
     private String nextRefreshAt;
-    private Integer organizationId;
+    private String organizationId;
     private String rankScope;
-    private Integer refreshIntervalSeconds;
+    private String refreshIntervalSeconds;
     private String snapshotDate;
     private String snapshotPeriod;
-    private Integer sourceCount;
+    private String sourceCount;
     private List<String> sourceTables;
     private String status;
-    private Integer tenantId;
+    private String tenantId;
     private String windowEnd;
     private String windowStart;
 
-    public Integer getCacheMaxAgeSeconds() {
+    public String getCacheMaxAgeSeconds() {
         return this.cacheMaxAgeSeconds;
     }
 
-    public void setCacheMaxAgeSeconds(Integer cacheMaxAgeSeconds) {
+    public void setCacheMaxAgeSeconds(String cacheMaxAgeSeconds) {
         this.cacheMaxAgeSeconds = cacheMaxAgeSeconds;
     }
 
@@ -36,11 +36,11 @@ public class ModelRankingRefreshStatus {
         this.generatedAt = generatedAt;
     }
 
-    public Integer getGeneratedCount() {
+    public String getGeneratedCount() {
         return this.generatedCount;
     }
 
-    public void setGeneratedCount(Integer generatedCount) {
+    public void setGeneratedCount(String generatedCount) {
         this.generatedCount = generatedCount;
     }
 
@@ -60,11 +60,11 @@ public class ModelRankingRefreshStatus {
         this.nextRefreshAt = nextRefreshAt;
     }
 
-    public Integer getOrganizationId() {
+    public String getOrganizationId() {
         return this.organizationId;
     }
 
-    public void setOrganizationId(Integer organizationId) {
+    public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
 
@@ -76,11 +76,11 @@ public class ModelRankingRefreshStatus {
         this.rankScope = rankScope;
     }
 
-    public Integer getRefreshIntervalSeconds() {
+    public String getRefreshIntervalSeconds() {
         return this.refreshIntervalSeconds;
     }
 
-    public void setRefreshIntervalSeconds(Integer refreshIntervalSeconds) {
+    public void setRefreshIntervalSeconds(String refreshIntervalSeconds) {
         this.refreshIntervalSeconds = refreshIntervalSeconds;
     }
 
@@ -100,11 +100,11 @@ public class ModelRankingRefreshStatus {
         this.snapshotPeriod = snapshotPeriod;
     }
 
-    public Integer getSourceCount() {
+    public String getSourceCount() {
         return this.sourceCount;
     }
 
-    public void setSourceCount(Integer sourceCount) {
+    public void setSourceCount(String sourceCount) {
         this.sourceCount = sourceCount;
     }
 
@@ -124,11 +124,11 @@ public class ModelRankingRefreshStatus {
         this.status = status;
     }
 
-    public Integer getTenantId() {
+    public String getTenantId() {
         return this.tenantId;
     }
 
-    public void setTenantId(Integer tenantId) {
+    public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
 

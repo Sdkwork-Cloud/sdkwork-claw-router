@@ -18,7 +18,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// List apps
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsListResult?> AppsListAsync(string? q = null, string? status = null, string? marketStatus = null, string? appType = null, int? categoryId = null, int? page = null, int? pageSize = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsListResult?> AppsListAsync(string? q = null, string? status = null, string? marketStatus = null, string? appType = null, string? categoryId = null, string? page = null, string? pageSize = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -76,7 +76,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// List app templates
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsTemplatesListResult?> AppsTemplatesListAsync(string? q = null, string? publishStatus = null, string? templateType = null, string? runtime = null, int? categoryId = null, int? page = null, int? pageSize = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.AppsTemplatesListResult?> AppsTemplatesListAsync(string? q = null, string? publishStatus = null, string? templateType = null, string? runtime = null, string? categoryId = null, string? page = null, string? pageSize = null)
         {
             var queryString = BuildQueryString(new[]
             {

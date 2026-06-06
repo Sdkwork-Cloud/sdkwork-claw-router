@@ -4,7 +4,7 @@ package types
 type CommerceMembershipPackageMutationRequest struct {
 	Code string `json:"code"`
 	CurrencyCode string `json:"currencyCode"`
-	DurationDays int `json:"durationDays"`
+	DurationDays string `json:"durationDays"`
 	Name string `json:"name"`
 	PackageGroupId string `json:"packageGroupId"`
 	PlanId string `json:"planId"`

@@ -8,6 +8,6 @@ namespace Sdkwork.ClawRouter.App.Models
     {
         public string? Code { get; set; }
         public string? Label { get; set; }
-        public int? ModelCount { get; set; }
+        public string? ModelCount { get; set; }
     }
 }

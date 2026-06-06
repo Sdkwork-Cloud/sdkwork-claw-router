@@ -9,7 +9,7 @@ import com.sdkwork.clawrouter.backend.http.HttpClient
 class PromptsApi(private val client: HttpClient) {
 
     /** List admin prompts */
-    suspend fun definitionsList(page: Int? = null, pageSize: Int? = null, q: String? = null, promptType: String? = null, visibility: String? = null, status: String? = null, categoryId: String? = null): DefinitionsListResult? {
+    suspend fun definitionsList(page: String? = null, pageSize: String? = null, q: String? = null, promptType: String? = null, visibility: String? = null, status: String? = null, categoryId: String? = null): DefinitionsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null),

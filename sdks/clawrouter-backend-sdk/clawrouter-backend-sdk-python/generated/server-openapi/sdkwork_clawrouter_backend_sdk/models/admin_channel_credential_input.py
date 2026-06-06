@@ -9,7 +9,7 @@ class AdminChannelCredentialInput:
     base_url: str
     api_key: Optional[str] = None
     name: Optional[str] = None
-    priority: Optional[int] = None
+    priority: Optional[str] = None
     secret_ref: Optional[str] = None
     status: Optional[str] = None
-    weight: Optional[int] = None
+    weight: Optional[str] = None

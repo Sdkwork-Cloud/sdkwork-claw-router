@@ -8,7 +8,7 @@ public class AgentsApi {
     }
 
     /// List managed agents
-    public func agentDefinitionsList(q: String? = nil, ownerUserId: Int? = nil, status: String? = nil, visibility: String? = nil, page: Int? = nil, pageSize: Int? = nil) async throws -> AgentDefinitionsListResult? {
+    public func agentDefinitionsList(q: String? = nil, ownerUserId: String? = nil, status: String? = nil, visibility: String? = nil, page: String? = nil, pageSize: String? = nil) async throws -> AgentDefinitionsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "q", value: q, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "owner_user_id", value: ownerUserId, style: "form", explode: true, allowReserved: false, contentType: nil),

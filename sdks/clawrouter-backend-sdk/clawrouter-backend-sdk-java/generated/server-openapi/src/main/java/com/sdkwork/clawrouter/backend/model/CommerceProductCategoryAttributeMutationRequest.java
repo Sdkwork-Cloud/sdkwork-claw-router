@@ -7,7 +7,7 @@ public class CommerceProductCategoryAttributeMutationRequest {
     private Boolean filterable;
     private Boolean required;
     private Boolean searchable;
-    private Integer sortOrder;
+    private String sortOrder;
     private String status;
 
     public String getAttributeId() {
@@ -50,11 +50,11 @@ public class CommerceProductCategoryAttributeMutationRequest {
         this.searchable = searchable;
     }
 
-    public Integer getSortOrder() {
+    public String getSortOrder() {
         return this.sortOrder;
     }
 
-    public void setSortOrder(Integer sortOrder) {
+    public void setSortOrder(String sortOrder) {
         this.sortOrder = sortOrder;
     }
 

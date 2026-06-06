@@ -28,7 +28,7 @@ func (a *MemoryApi) EntriesRetrieve(entryId string) (sdktypes.EntriesRetrieveRes
 }
 
 // List memory spaces
-func (a *MemoryApi) SpacesList(page *int, pageSize *int) (sdktypes.SpacesListResult, error) {
+func (a *MemoryApi) SpacesList(page *string, pageSize *string) (sdktypes.SpacesListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
@@ -66,7 +66,7 @@ func (a *MemoryApi) SpacesRetrieve(spaceId string) (sdktypes.SpacesRetrieveResul
 }
 
 // List memory entries
-func (a *MemoryApi) EntriesList(spaceId string, page *int, pageSize *int) (sdktypes.EntriesListResult, error) {
+func (a *MemoryApi) EntriesList(spaceId string, page *string, pageSize *string) (sdktypes.EntriesListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},

@@ -9,10 +9,10 @@ class AdminMcpBindingUpdateRequest:
     allowed_tools: Optional[List[str]] = None
     denied_tools: Optional[List[str]] = None
     enabled: Optional[bool] = None
-    owner_id: Optional[int] = None
+    owner_id: Optional[str] = None
     owner_type: Optional[str] = None
     policy_json: Optional[Dict[str, str]] = None
     priority: Optional[int] = None
-    server_revision_id: Optional[int] = None
+    server_revision_id: Optional[str] = None
     status: Optional[str] = None
-    tool_id: Optional[int] = None
+    tool_id: Optional[str] = None

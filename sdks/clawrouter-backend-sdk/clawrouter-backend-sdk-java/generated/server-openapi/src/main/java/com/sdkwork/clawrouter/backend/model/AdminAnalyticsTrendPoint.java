@@ -6,7 +6,7 @@ public class AdminAnalyticsTrendPoint {
     private Double requests;
     private String time;
     private Double tokens;
-    private Integer users;
+    private String users;
 
     public Double getPoints() {
         return this.points;
@@ -40,11 +40,11 @@ public class AdminAnalyticsTrendPoint {
         this.tokens = tokens;
     }
 
-    public Integer getUsers() {
+    public String getUsers() {
         return this.users;
     }
 
-    public void setUsers(Integer users) {
+    public void setUsers(String users) {
         this.users = users;
     }
 }

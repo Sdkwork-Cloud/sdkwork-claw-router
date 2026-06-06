@@ -7,12 +7,12 @@ pub struct CommerceStandardCollectionResponse {
     pub items: Vec<serde_json::Value>,
 
     /// Page field on commerce standard collection response.
-    pub page: i64,
+    pub page: String,
 
     /// Page size field on commerce standard collection response.
     #[serde(rename = "pageSize")]
-    pub page_size: i64,
+    pub page_size: String,
 
     /// Total field on commerce standard collection response.
-    pub total: i64,
+    pub total: String,
 }

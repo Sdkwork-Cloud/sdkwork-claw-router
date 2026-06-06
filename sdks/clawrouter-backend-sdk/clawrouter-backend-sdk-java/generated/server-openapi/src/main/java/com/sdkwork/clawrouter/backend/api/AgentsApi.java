@@ -14,7 +14,7 @@ public class AgentsApi {
     }
 
     /** List managed agents */
-    public AgentDefinitionsListResult agentDefinitionsList(String q, Integer ownerUserId, String status, String visibility, Integer page, Integer pageSize) throws Exception {
+    public AgentDefinitionsListResult agentDefinitionsList(String q, String ownerUserId, String status, String visibility, String page, String pageSize) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("q", q, "form", true, false, null),
             new QueryParameterSpec("owner_user_id", ownerUserId, "form", true, false, null),

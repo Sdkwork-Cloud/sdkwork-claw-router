@@ -10,4 +10,4 @@ class AdminAiResourceMemberItem:
     member_role: str
     parent_resource_code: str
     required: bool
-    sort_order: Optional[int] = None
+    sort_order: Optional[str] = None

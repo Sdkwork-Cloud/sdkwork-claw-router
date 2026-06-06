@@ -17,20 +17,6 @@ func NewSystemApi(client *sdkhttp.Client) *SystemApi {
     return &SystemApi{client: client}
 }
 
-// Promotion Code Redemption Create
-func (a *SystemApi) PromotionsCodesRedemptionsCreate(body sdktypes.PromotionCodeRedemptionRequest, idempotencyKey string) (sdktypes.PromotionsCodesRedemptionsCreateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(AppApiPath("/promotions/codes/redemptions"), body, nil, headers, "application/json")
-    if err != nil {
-        var zero sdktypes.PromotionsCodesRedemptionsCreateResult
-        return zero, err
-    }
-    return decodeResult[sdktypes.PromotionsCodesRedemptionsCreateResult](raw)
-}
-
 // Promotion Discount Application Create
 func (a *SystemApi) PromotionsDiscountApplicationsCreate(body sdktypes.PromotionCommandRequest, idempotencyKey string) (sdktypes.PromotionsDiscountApplicationsCreateResult, error) {
     headers := BuildRequestHeaders(
@@ -85,57 +71,6 @@ func (a *SystemApi) PromotionsDiscountApplicationsSettle(applicationId string, b
         return zero, err
     }
     return decodeResult[sdktypes.PromotionsDiscountApplicationsSettleResult](raw)
-}
-
-// Promotion User Coupon Claim Create
-func (a *SystemApi) PromotionsUserCouponsClaimsCreate(body sdktypes.PromotionCommandRequest, idempotencyKey string) (sdktypes.PromotionsUserCouponsClaimsCreateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(AppApiPath("/promotions/user_coupon_claims"), body, nil, headers, "application/json")
-    if err != nil {
-        var zero sdktypes.PromotionsUserCouponsClaimsCreateResult
-        return zero, err
-    }
-    return decodeResult[sdktypes.PromotionsUserCouponsClaimsCreateResult](raw)
-}
-
-// Promotion User Coupons Wallet List
-func (a *SystemApi) PromotionsUserCouponsWalletList(status *string) (sdktypes.PromotionsUserCouponsWalletListResult, error) {
-    query := BuildQueryString([]QueryParameterSpec{
-        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
-    })
-    raw, err := a.client.Get(AppendQueryString(AppApiPath("/promotions/user_coupons"), query), nil, nil)
-    if err != nil {
-        var zero sdktypes.PromotionsUserCouponsWalletListResult
-        return zero, err
-    }
-    return decodeResult[sdktypes.PromotionsUserCouponsWalletListResult](raw)
-}
-
-// Retrieve public IAM runtime settings
-func (a *SystemApi) IamRuntimeRetrieve(tenantCode *string, organizationCode *string) (sdktypes.IamRuntimeRetrieveResult, error) {
-    query := BuildQueryString([]QueryParameterSpec{
-        {Name: "tenant_code", Value: func() interface{} { if tenantCode == nil { return nil }; return *tenantCode }(), Style: "form", Explode: true, AllowReserved: false},
-        {Name: "organization_code", Value: func() interface{} { if organizationCode == nil { return nil }; return *organizationCode }(), Style: "form", Explode: true, AllowReserved: false},
-    })
-    raw, err := a.client.Get(AppendQueryString(AppApiPath("/system/iam/runtime"), query), nil, nil)
-    if err != nil {
-        var zero sdktypes.IamRuntimeRetrieveResult
-        return zero, err
-    }
-    return decodeResult[sdktypes.IamRuntimeRetrieveResult](raw)
-}
-
-// Retrieve public IAM verification policy
-func (a *SystemApi) IamVerificationPolicyRetrieve() (sdktypes.IamVerificationPolicyRetrieveResult, error) {
-    raw, err := a.client.Get(AppApiPath("/system/iam/verification_policy"), nil, nil)
-    if err != nil {
-        var zero sdktypes.IamVerificationPolicyRetrieveResult
-        return zero, err
-    }
-    return decodeResult[sdktypes.IamVerificationPolicyRetrieveResult](raw)
 }
 
 // Retrieve public site runtime branding settings

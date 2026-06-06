@@ -5,5 +5,5 @@ use serde::{Deserialize, Serialize};
 pub struct ForumCommentStatistics {
     /// Total comments field on forum comment statistics.
     #[serde(rename = "totalComments")]
-    pub total_comments: i64,
+    pub total_comments: String,
 }

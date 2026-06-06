@@ -2,80 +2,80 @@ package com.sdkwork.clawrouter.backend.model;
 
 
 public class AdminCacheSummary {
-    private Integer cacheDeletes;
-    private Integer cacheErrors;
-    private Integer cacheHits;
-    private Integer cacheInspections;
-    private Integer cacheMisses;
-    private Integer cacheRefreshes;
-    private Integer cacheWrites;
-    private Integer expiredEntries;
+    private String cacheDeletes;
+    private String cacheErrors;
+    private String cacheHits;
+    private String cacheInspections;
+    private String cacheMisses;
+    private String cacheRefreshes;
+    private String cacheWrites;
+    private String expiredEntries;
     private String runtimeTarget;
-    private Integer totalEntries;
-    private Integer totalInstances;
-    private Integer totalNamespaces;
+    private String totalEntries;
+    private String totalInstances;
+    private String totalNamespaces;
 
-    public Integer getCacheDeletes() {
+    public String getCacheDeletes() {
         return this.cacheDeletes;
     }
 
-    public void setCacheDeletes(Integer cacheDeletes) {
+    public void setCacheDeletes(String cacheDeletes) {
         this.cacheDeletes = cacheDeletes;
     }
 
-    public Integer getCacheErrors() {
+    public String getCacheErrors() {
         return this.cacheErrors;
     }
 
-    public void setCacheErrors(Integer cacheErrors) {
+    public void setCacheErrors(String cacheErrors) {
         this.cacheErrors = cacheErrors;
     }
 
-    public Integer getCacheHits() {
+    public String getCacheHits() {
         return this.cacheHits;
     }
 
-    public void setCacheHits(Integer cacheHits) {
+    public void setCacheHits(String cacheHits) {
         this.cacheHits = cacheHits;
     }
 
-    public Integer getCacheInspections() {
+    public String getCacheInspections() {
         return this.cacheInspections;
     }
 
-    public void setCacheInspections(Integer cacheInspections) {
+    public void setCacheInspections(String cacheInspections) {
         this.cacheInspections = cacheInspections;
     }
 
-    public Integer getCacheMisses() {
+    public String getCacheMisses() {
         return this.cacheMisses;
     }
 
-    public void setCacheMisses(Integer cacheMisses) {
+    public void setCacheMisses(String cacheMisses) {
         this.cacheMisses = cacheMisses;
     }
 
-    public Integer getCacheRefreshes() {
+    public String getCacheRefreshes() {
         return this.cacheRefreshes;
     }
 
-    public void setCacheRefreshes(Integer cacheRefreshes) {
+    public void setCacheRefreshes(String cacheRefreshes) {
         this.cacheRefreshes = cacheRefreshes;
     }
 
-    public Integer getCacheWrites() {
+    public String getCacheWrites() {
         return this.cacheWrites;
     }
 
-    public void setCacheWrites(Integer cacheWrites) {
+    public void setCacheWrites(String cacheWrites) {
         this.cacheWrites = cacheWrites;
     }
 
-    public Integer getExpiredEntries() {
+    public String getExpiredEntries() {
         return this.expiredEntries;
     }
 
-    public void setExpiredEntries(Integer expiredEntries) {
+    public void setExpiredEntries(String expiredEntries) {
         this.expiredEntries = expiredEntries;
     }
 
@@ -87,27 +87,27 @@ public class AdminCacheSummary {
         this.runtimeTarget = runtimeTarget;
     }
 
-    public Integer getTotalEntries() {
+    public String getTotalEntries() {
         return this.totalEntries;
     }
 
-    public void setTotalEntries(Integer totalEntries) {
+    public void setTotalEntries(String totalEntries) {
         this.totalEntries = totalEntries;
     }
 
-    public Integer getTotalInstances() {
+    public String getTotalInstances() {
         return this.totalInstances;
     }
 
-    public void setTotalInstances(Integer totalInstances) {
+    public void setTotalInstances(String totalInstances) {
         this.totalInstances = totalInstances;
     }
 
-    public Integer getTotalNamespaces() {
+    public String getTotalNamespaces() {
         return this.totalNamespaces;
     }
 
-    public void setTotalNamespaces(Integer totalNamespaces) {
+    public void setTotalNamespaces(String totalNamespaces) {
         this.totalNamespaces = totalNamespaces;
     }
 }

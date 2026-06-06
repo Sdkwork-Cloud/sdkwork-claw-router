@@ -12,19 +12,18 @@ public class AdminChannelItem {
     private String createdAt;
     private String credentialRotation;
     private List<AdminChannelCredentialItem> credentials;
-    private Integer errors;
+    private String errors;
     private String expiresAt;
     private String id;
     private Boolean isMultimodal;
-    private List<String> models;
     private String name;
     private String protocol;
     private List<String> resourceCodes;
     private ProviderRetryPolicy retryPolicy;
     private String status;
-    private Integer timeoutMs;
+    private String timeoutMs;
     private String vendor;
-    private Integer weight;
+    private String weight;
 
     public String getAccessType() {
         return this.accessType;
@@ -98,11 +97,11 @@ public class AdminChannelItem {
         this.credentials = credentials;
     }
 
-    public Integer getErrors() {
+    public String getErrors() {
         return this.errors;
     }
 
-    public void setErrors(Integer errors) {
+    public void setErrors(String errors) {
         this.errors = errors;
     }
 
@@ -128,14 +127,6 @@ public class AdminChannelItem {
 
     public void setIsMultimodal(Boolean isMultimodal) {
         this.isMultimodal = isMultimodal;
-    }
-
-    public List<String> getModels() {
-        return this.models;
-    }
-
-    public void setModels(List<String> models) {
-        this.models = models;
     }
 
     public String getName() {
@@ -178,11 +169,11 @@ public class AdminChannelItem {
         this.status = status;
     }
 
-    public Integer getTimeoutMs() {
+    public String getTimeoutMs() {
         return this.timeoutMs;
     }
 
-    public void setTimeoutMs(Integer timeoutMs) {
+    public void setTimeoutMs(String timeoutMs) {
         this.timeoutMs = timeoutMs;
     }
 
@@ -194,11 +185,11 @@ public class AdminChannelItem {
         this.vendor = vendor;
     }
 
-    public Integer getWeight() {
+    public String getWeight() {
         return this.weight;
     }
 
-    public void setWeight(Integer weight) {
+    public void setWeight(String weight) {
         this.weight = weight;
     }
 }

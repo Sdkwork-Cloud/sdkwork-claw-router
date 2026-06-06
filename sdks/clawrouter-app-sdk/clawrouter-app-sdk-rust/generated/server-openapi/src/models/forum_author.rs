@@ -14,7 +14,7 @@ pub struct ForumAuthor {
     pub bio: Option<String>,
 
     /// Id field on forum author.
-    pub id: i64,
+    pub id: String,
 
     /// Is following field on forum author.
     #[serde(rename = "isFollowing")]

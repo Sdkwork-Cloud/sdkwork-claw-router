@@ -6,21 +6,21 @@ from typing import TYPE_CHECKING, Optional, List, Dict, Any
 @dataclass
 class ModelRankingItem:
     """Model ranking item schema exposed by Claw Router."""
-    base_volume: int
+    base_volume: str
     color: str
     cost: float
-    cost_indicator: int
+    cost_indicator: str
     currency: str
     id: str
     is_new: bool
-    latency: int
+    latency: str
     modality: str
     name: str
-    prev_rank: int
-    rank: int
-    requests: int
+    prev_rank: str
+    rank: str
+    requests: str
     strengths: List[str]
-    tokens: int
+    tokens: str
     vendor: str
     vendor_code: str
     context_size: Optional[str] = None

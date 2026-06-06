@@ -10,29 +10,29 @@ pub struct CourseSectionItem {
 
     /// Duration seconds field on course section item.
     #[serde(rename = "durationSeconds")]
-    pub duration_seconds: i64,
+    pub duration_seconds: String,
 
     /// Id field on course section item.
     pub id: String,
 
     /// Lesson count field on course section item.
     #[serde(rename = "lessonCount")]
-    pub lesson_count: i64,
+    pub lesson_count: String,
 
     /// Lessons field on course section item.
     pub lessons: Vec<CourseLessonItem>,
 
     /// Section id field on course section item.
     #[serde(rename = "sectionId")]
-    pub section_id: i64,
+    pub section_id: String,
 
     /// Section no field on course section item.
     #[serde(rename = "sectionNo")]
-    pub section_no: i64,
+    pub section_no: String,
 
     /// Sort order field on course section item.
     #[serde(rename = "sortOrder")]
-    pub sort_order: i64,
+    pub sort_order: String,
 
     /// Title field on course section item.
     pub title: String,

@@ -9,7 +9,7 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? CatalogKey { get; set; }
         public string? Color { get; set; }
         public string? Model { get; set; }
-        public int? Rank { get; set; }
-        public int? Volume { get; set; }
+        public string? Rank { get; set; }
+        public string? Volume { get; set; }
     }
 }

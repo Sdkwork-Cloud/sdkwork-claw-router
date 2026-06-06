@@ -18,7 +18,7 @@ func NewAgentsApi(client *sdkhttp.Client) *AgentsApi {
 }
 
 // List managed agents
-func (a *AgentsApi) AgentDefinitionsList(q *string, ownerUserId *int, status *string, visibility *string, page *int, pageSize *int) (sdktypes.AgentDefinitionsListResult, error) {
+func (a *AgentsApi) AgentDefinitionsList(q *string, ownerUserId *string, status *string, visibility *string, page *string, pageSize *string) (sdktypes.AgentDefinitionsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "q", Value: func() interface{} { if q == nil { return nil }; return *q }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "owner_user_id", Value: func() interface{} { if ownerUserId == nil { return nil }; return *ownerUserId }(), Style: "form", Explode: true, AllowReserved: false},

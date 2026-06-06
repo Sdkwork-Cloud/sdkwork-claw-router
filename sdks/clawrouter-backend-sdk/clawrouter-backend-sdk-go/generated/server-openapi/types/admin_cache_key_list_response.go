@@ -5,10 +5,10 @@ type AdminCacheKeyListResponse struct {
 	HasMore bool `json:"hasMore"`
 	InstanceName string `json:"instanceName"`
 	Items []AdminCacheKeyItem `json:"items"`
-	Limit int `json:"limit"`
+	Limit string `json:"limit"`
 	Namespace string `json:"namespace"`
 	NextCursor string `json:"nextCursor"`
-	ReturnedItems int `json:"returnedItems"`
+	ReturnedItems string `json:"returnedItems"`
 	ScanComplete bool `json:"scanComplete"`
-	ScannedItems int `json:"scannedItems"`
+	ScannedItems string `json:"scannedItems"`
 }

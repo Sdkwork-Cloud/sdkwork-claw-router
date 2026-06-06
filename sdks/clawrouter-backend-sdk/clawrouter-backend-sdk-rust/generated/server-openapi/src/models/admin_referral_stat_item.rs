@@ -16,7 +16,7 @@ pub struct AdminReferralStatItem {
     pub link: String,
 
     /// Total invited field on admin referral stat item.
-    pub total_invited: i64,
+    pub total_invited: String,
 
     /// Total revenue field on admin referral stat item.
     pub total_revenue: String,

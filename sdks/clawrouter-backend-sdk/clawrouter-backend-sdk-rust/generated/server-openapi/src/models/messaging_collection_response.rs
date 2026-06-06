@@ -7,12 +7,12 @@ pub struct MessagingCollectionResponse {
     pub items: Vec<std::collections::HashMap<String, String>>,
 
     /// Page field on messaging collection response.
-    pub page: i64,
+    pub page: String,
 
     /// Page size field on messaging collection response.
     #[serde(rename = "pageSize")]
-    pub page_size: i64,
+    pub page_size: String,
 
     /// Total field on messaging collection response.
-    pub total: i64,
+    pub total: String,
 }

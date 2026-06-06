@@ -8,7 +8,7 @@ public class AgentsApi {
     }
 
     /// List Playground agent definitions
-    public func agentDefinitionsList(page: Int? = nil, pageSize: Int? = nil, q: String? = nil) async throws -> AgentDefinitionsListResult? {
+    public func agentDefinitionsList(page: String? = nil, pageSize: String? = nil, q: String? = nil) async throws -> AgentDefinitionsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
@@ -45,7 +45,7 @@ public class AgentsApi {
     }
 
     /// List Playground agent run steps
-    public func agentRunStepsList(runId: String, page: Int? = nil, pageSize: Int? = nil) async throws -> AgentRunStepsListResult? {
+    public func agentRunStepsList(runId: String, page: String? = nil, pageSize: String? = nil) async throws -> AgentRunStepsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil)
@@ -81,7 +81,7 @@ public class AgentsApi {
     }
 
     /// List Playground agent runs
-    public func agentRunsList(sessionId: String, page: Int? = nil, pageSize: Int? = nil) async throws -> AgentRunsListResult? {
+    public func agentRunsList(sessionId: String, page: String? = nil, pageSize: String? = nil) async throws -> AgentRunsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil)
@@ -106,7 +106,7 @@ public class AgentsApi {
     }
 
     /// List Playground agent sessions
-    public func agentSessionsList(agentId: String, page: Int? = nil, pageSize: Int? = nil) async throws -> AgentSessionsListResult? {
+    public func agentSessionsList(agentId: String, page: String? = nil, pageSize: String? = nil) async throws -> AgentSessionsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil)

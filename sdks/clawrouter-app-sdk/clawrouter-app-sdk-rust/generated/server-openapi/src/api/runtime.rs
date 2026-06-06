@@ -17,7 +17,7 @@ impl RuntimeApi {
     }
 
     /// List runtime invocations
-    pub async fn invocations_list(&self, page: Option<i64>, page_size: Option<i64>, conversation_id: Option<&str>, chat_turn_id: Option<&str>, agent_session_id: Option<&str>, runtime: Option<&str>, status: Option<&str>) -> Result<InvocationsListResult, SdkworkError> {
+    pub async fn invocations_list(&self, page: Option<&str>, page_size: Option<&str>, conversation_id: Option<&str>, chat_turn_id: Option<&str>, agent_session_id: Option<&str>, runtime: Option<&str>, status: Option<&str>) -> Result<InvocationsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
@@ -50,7 +50,7 @@ impl RuntimeApi {
     }
 
     /// List runtime artifacts
-    pub async fn artifacts_list(&self, invocation_id: &str, page: Option<i64>, page_size: Option<i64>) -> Result<ArtifactsListResult, SdkworkError> {
+    pub async fn artifacts_list(&self, invocation_id: &str, page: Option<&str>, page_size: Option<&str>) -> Result<ArtifactsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),
@@ -84,7 +84,7 @@ impl RuntimeApi {
     }
 
     /// List runtime invocation events
-    pub async fn invocation_events_list(&self, invocation_id: &str, page: Option<i64>, page_size: Option<i64>) -> Result<InvocationEventsListResult, SdkworkError> {
+    pub async fn invocation_events_list(&self, invocation_id: &str, page: Option<&str>, page_size: Option<&str>) -> Result<InvocationEventsListResult, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("page", page, "form", true, false, None),
             QueryParameterSpec::new("page_size", page_size, "form", true, false, None),

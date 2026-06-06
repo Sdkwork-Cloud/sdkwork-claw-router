@@ -6,7 +6,7 @@ public class CommerceMembershipPlanMutationRequest {
     private List<CommerceMembershipBenefitMutationRequest> benefits;
     private String code;
     private String name;
-    private Integer rank;
+    private String rank;
     private String status;
 
     public List<CommerceMembershipBenefitMutationRequest> getBenefits() {
@@ -33,11 +33,11 @@ public class CommerceMembershipPlanMutationRequest {
         this.name = name;
     }
 
-    public Integer getRank() {
+    public String getRank() {
         return this.rank;
     }
 
-    public void setRank(Integer rank) {
+    public void setRank(String rank) {
         this.rank = rank;
     }
 

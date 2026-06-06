@@ -3,7 +3,7 @@ package com.sdkwork.clawrouter.app.model;
 
 public class ForumCreateCommentRequest {
     private String content;
-    private Integer contentId;
+    private String contentId;
     private String contentType;
     private String deviceInfo;
 
@@ -15,11 +15,11 @@ public class ForumCreateCommentRequest {
         this.content = content;
     }
 
-    public Integer getContentId() {
+    public String getContentId() {
         return this.contentId;
     }
 
-    public void setContentId(Integer contentId) {
+    public void setContentId(String contentId) {
         this.contentId = contentId;
     }
 

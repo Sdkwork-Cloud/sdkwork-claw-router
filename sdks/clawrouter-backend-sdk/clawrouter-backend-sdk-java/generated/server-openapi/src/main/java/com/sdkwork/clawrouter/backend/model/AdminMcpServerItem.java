@@ -9,19 +9,19 @@ public class AdminMcpServerItem {
     private String deprecatedAt;
     private String description;
     private String healthStatus;
-    private Integer id;
+    private String id;
     private String lastCheckedAt;
     private String lastErrorMasked;
-    private Integer latestRevisionId;
+    private String latestRevisionId;
     private String name;
-    private Integer organizationId;
-    private Integer ownerUserId;
+    private String organizationId;
+    private String ownerUserId;
     private String publishedAt;
-    private Integer publishedRevisionId;
+    private String publishedRevisionId;
     private String serverKey;
     private String status;
     private List<String> tags;
-    private Integer tenantId;
+    private String tenantId;
     private String transport;
     private String updatedAt;
     private String uuid;
@@ -75,11 +75,11 @@ public class AdminMcpServerItem {
         this.healthStatus = healthStatus;
     }
 
-    public Integer getId() {
+    public String getId() {
         return this.id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -99,11 +99,11 @@ public class AdminMcpServerItem {
         this.lastErrorMasked = lastErrorMasked;
     }
 
-    public Integer getLatestRevisionId() {
+    public String getLatestRevisionId() {
         return this.latestRevisionId;
     }
 
-    public void setLatestRevisionId(Integer latestRevisionId) {
+    public void setLatestRevisionId(String latestRevisionId) {
         this.latestRevisionId = latestRevisionId;
     }
 
@@ -115,19 +115,19 @@ public class AdminMcpServerItem {
         this.name = name;
     }
 
-    public Integer getOrganizationId() {
+    public String getOrganizationId() {
         return this.organizationId;
     }
 
-    public void setOrganizationId(Integer organizationId) {
+    public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
 
-    public Integer getOwnerUserId() {
+    public String getOwnerUserId() {
         return this.ownerUserId;
     }
 
-    public void setOwnerUserId(Integer ownerUserId) {
+    public void setOwnerUserId(String ownerUserId) {
         this.ownerUserId = ownerUserId;
     }
 
@@ -139,11 +139,11 @@ public class AdminMcpServerItem {
         this.publishedAt = publishedAt;
     }
 
-    public Integer getPublishedRevisionId() {
+    public String getPublishedRevisionId() {
         return this.publishedRevisionId;
     }
 
-    public void setPublishedRevisionId(Integer publishedRevisionId) {
+    public void setPublishedRevisionId(String publishedRevisionId) {
         this.publishedRevisionId = publishedRevisionId;
     }
 
@@ -171,11 +171,11 @@ public class AdminMcpServerItem {
         this.tags = tags;
     }
 
-    public Integer getTenantId() {
+    public String getTenantId() {
         return this.tenantId;
     }
 
-    public void setTenantId(Integer tenantId) {
+    public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
 

@@ -5,8 +5,8 @@ public class ModelRankingHistoryEntry {
     private String catalogKey;
     private String color;
     private String model;
-    private Integer rank;
-    private Integer volume;
+    private String rank;
+    private String volume;
 
     public String getCatalogKey() {
         return this.catalogKey;
@@ -32,19 +32,19 @@ public class ModelRankingHistoryEntry {
         this.model = model;
     }
 
-    public Integer getRank() {
+    public String getRank() {
         return this.rank;
     }
 
-    public void setRank(Integer rank) {
+    public void setRank(String rank) {
         this.rank = rank;
     }
 
-    public Integer getVolume() {
+    public String getVolume() {
         return this.volume;
     }
 
-    public void setVolume(Integer volume) {
+    public void setVolume(String volume) {
         this.volume = volume;
     }
 }

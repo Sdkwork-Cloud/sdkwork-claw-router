@@ -9,20 +9,20 @@ public class AdminMcpServerRevisionItem {
     private String command;
     private String configHash;
     private String createdAt;
-    private Integer createdBy;
+    private String createdBy;
     private String deprecatedAt;
     private String endpointUrl;
     private Map<String, String> envSchema;
-    private Integer id;
+    private String id;
     private String lifecycleStatus;
-    private Integer organizationId;
+    private String organizationId;
     private String publishedAt;
     private Map<String, String> retryPolicy;
     private String revisionNo;
     private String secretRef;
-    private Integer serverId;
+    private String serverId;
     private String status;
-    private Integer tenantId;
+    private String tenantId;
     private Integer timeoutMs;
     private String transport;
     private String updatedAt;
@@ -68,11 +68,11 @@ public class AdminMcpServerRevisionItem {
         this.createdAt = createdAt;
     }
 
-    public Integer getCreatedBy() {
+    public String getCreatedBy() {
         return this.createdBy;
     }
 
-    public void setCreatedBy(Integer createdBy) {
+    public void setCreatedBy(String createdBy) {
         this.createdBy = createdBy;
     }
 
@@ -100,11 +100,11 @@ public class AdminMcpServerRevisionItem {
         this.envSchema = envSchema;
     }
 
-    public Integer getId() {
+    public String getId() {
         return this.id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -116,11 +116,11 @@ public class AdminMcpServerRevisionItem {
         this.lifecycleStatus = lifecycleStatus;
     }
 
-    public Integer getOrganizationId() {
+    public String getOrganizationId() {
         return this.organizationId;
     }
 
-    public void setOrganizationId(Integer organizationId) {
+    public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
     }
 
@@ -156,11 +156,11 @@ public class AdminMcpServerRevisionItem {
         this.secretRef = secretRef;
     }
 
-    public Integer getServerId() {
+    public String getServerId() {
         return this.serverId;
     }
 
-    public void setServerId(Integer serverId) {
+    public void setServerId(String serverId) {
         this.serverId = serverId;
     }
 
@@ -172,11 +172,11 @@ public class AdminMcpServerRevisionItem {
         this.status = status;
     }
 
-    public Integer getTenantId() {
+    public String getTenantId() {
         return this.tenantId;
     }
 
-    public void setTenantId(Integer tenantId) {
+    public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
 

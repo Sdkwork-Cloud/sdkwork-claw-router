@@ -6,7 +6,7 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class CourseApplicationCreateResponse
     {
-        public int? ApplicationId { get; set; }
+        public string? ApplicationId { get; set; }
         public string? Category { get; set; }
         public string? ContactEmail { get; set; }
         public string? ContactName { get; set; }

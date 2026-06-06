@@ -6,7 +6,7 @@ public class AdminAiResourceMemberItem {
     private String memberRole;
     private String parentResourceCode;
     private Boolean required;
-    private Integer sortOrder;
+    private String sortOrder;
 
     public String getMemberResourceCode() {
         return this.memberResourceCode;
@@ -40,11 +40,11 @@ public class AdminAiResourceMemberItem {
         this.required = required;
     }
 
-    public Integer getSortOrder() {
+    public String getSortOrder() {
         return this.sortOrder;
     }
 
-    public void setSortOrder(Integer sortOrder) {
+    public void setSortOrder(String sortOrder) {
         this.sortOrder = sortOrder;
     }
 }

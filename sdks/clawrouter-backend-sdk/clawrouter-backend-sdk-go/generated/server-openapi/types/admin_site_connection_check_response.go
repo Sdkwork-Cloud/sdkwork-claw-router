@@ -4,7 +4,7 @@ package types
 type AdminSiteConnectionCheckResponse struct {
 	CheckedAt string `json:"checkedAt"`
 	HealthStatus string `json:"healthStatus"`
-	LatencyMs int `json:"latencyMs"`
+	LatencyMs string `json:"latencyMs"`
 	Message string `json:"message"`
 	SiteId string `json:"siteId"`
 	Status string `json:"status"`

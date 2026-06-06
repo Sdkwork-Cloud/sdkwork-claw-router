@@ -2,7 +2,7 @@ package com.sdkwork.clawrouter.app.model;
 
 
 public class CourseApplicationCreateResponse {
-    private Integer applicationId;
+    private String applicationId;
     private String category;
     private String contactEmail;
     private String contactName;
@@ -15,11 +15,11 @@ public class CourseApplicationCreateResponse {
     private String title;
     private MediaResource video;
 
-    public Integer getApplicationId() {
+    public String getApplicationId() {
         return this.applicationId;
     }
 
-    public void setApplicationId(Integer applicationId) {
+    public void setApplicationId(String applicationId) {
         this.applicationId = applicationId;
     }
 

@@ -258,7 +258,7 @@ class McpServersApi:
         self.revisions = McpServersRevisionsApi(client)
 
 
-    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, q: Optional[str] = None, transport: Optional[str] = None, visibility: Optional[str] = None, status: Optional[str] = None, category_id: Optional[str] = None) -> ServersListResult:
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, q: Optional[str] = None, transport: Optional[str] = None, visibility: Optional[str] = None, status: Optional[str] = None, category_id: Optional[str] = None) -> ServersListResult:
         """List MCP servers"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},

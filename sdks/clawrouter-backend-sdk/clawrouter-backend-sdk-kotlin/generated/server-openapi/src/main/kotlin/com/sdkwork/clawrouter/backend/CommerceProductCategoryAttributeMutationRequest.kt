@@ -6,6 +6,6 @@ data class CommerceProductCategoryAttributeMutationRequest(
     val filterable: Boolean? = null,
     val required: Boolean? = null,
     val searchable: Boolean? = null,
-    val sortOrder: Int? = null,
+    val sortOrder: String? = null,
     val status: String? = null
 )

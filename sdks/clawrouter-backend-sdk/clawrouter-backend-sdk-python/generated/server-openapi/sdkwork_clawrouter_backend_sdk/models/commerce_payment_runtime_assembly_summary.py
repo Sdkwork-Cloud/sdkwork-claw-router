@@ -6,10 +6,10 @@ from typing import TYPE_CHECKING, Optional, List, Dict, Any
 @dataclass
 class CommercePaymentRuntimeAssemblySummary:
     """Commerce payment runtime assembly summary schema exposed by Claw Router."""
-    failed: int
+    failed: str
     failed_provider_codes: List[str]
-    registered: int
+    registered: str
     registered_provider_codes: List[str]
-    skipped: int
+    skipped: str
     skipped_provider_codes: List[str]
-    total: int
+    total: str

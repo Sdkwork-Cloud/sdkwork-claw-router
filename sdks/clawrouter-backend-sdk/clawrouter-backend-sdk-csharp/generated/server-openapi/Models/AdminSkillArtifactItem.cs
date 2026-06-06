@@ -8,7 +8,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
     {
         public MediaResource? Artifact { get; set; }
         public string? ArtifactRef { get; set; }
-        public int? ArtifactSizeBytes { get; set; }
+        public string? ArtifactSizeBytes { get; set; }
         public int? ArtifactType { get; set; }
         public string? ChecksumHash { get; set; }
         public string? CreatedAt { get; set; }

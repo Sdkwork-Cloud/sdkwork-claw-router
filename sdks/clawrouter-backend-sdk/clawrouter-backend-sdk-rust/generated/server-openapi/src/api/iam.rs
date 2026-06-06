@@ -3,7 +3,7 @@ use std::sync::Arc;
 use crate::api::base::{RequestHeaders};
 use crate::api::paths::backend_path;
 use crate::http::{SdkworkError, SdkworkHttpClient};
-use crate::models::{AdminApiKeyCreateRequest, AdminUserCreateRequest, AdminUserUpdateRequest, ApiKeysCreateResult, ApiKeysDeleteResult, ApiKeysListResult, UsersCreateResult, UsersListResult, UsersUpdateResult};
+use crate::models::{AdminApiKeyCreateRequest, AdminUserUpdateRequest, ApiKeysCreateResult, ApiKeysDeleteResult, UsersUpdateResult};
 
 #[derive(Clone)]
 pub struct IamApi {
@@ -13,12 +13,6 @@ pub struct IamApi {
 impl IamApi {
     pub fn new(client: Arc<SdkworkHttpClient>) -> Self {
         Self { client }
-    }
-
-    /// List API key map
-    pub async fn api_keys_list(&self) -> Result<ApiKeysListResult, SdkworkError> {
-        let path = backend_path(&"/iam/api_keys".to_string());
-        self.client.get(&path, None, None).await
     }
 
     /// Create API key
@@ -37,18 +31,6 @@ impl IamApi {
     pub async fn api_keys_delete(&self, api_key_id: &str) -> Result<ApiKeysDeleteResult, SdkworkError> {
         let path = backend_path(&format!("/iam/api_keys/{}", serialize_path_parameter(api_key_id, PathParameterSpec::new("apiKeyId", "simple", false))));
         self.client.delete(&path, None, None).await
-    }
-
-    /// List users
-    pub async fn users_list(&self) -> Result<UsersListResult, SdkworkError> {
-        let path = backend_path(&"/iam/users".to_string());
-        self.client.get(&path, None, None).await
-    }
-
-    /// Create user
-    pub async fn users_create(&self, body: &AdminUserCreateRequest) -> Result<UsersCreateResult, SdkworkError> {
-        let path = backend_path(&"/iam/users".to_string());
-        self.client.post(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// Update user

@@ -29,7 +29,7 @@ pub struct MemoryEntryItem {
 
     /// Recall count field on memory entry item.
     #[serde(rename = "recallCount")]
-    pub recall_count: i64,
+    pub recall_count: String,
 
     /// Sensitivity level field on memory entry item.
     #[serde(rename = "sensitivityLevel")]

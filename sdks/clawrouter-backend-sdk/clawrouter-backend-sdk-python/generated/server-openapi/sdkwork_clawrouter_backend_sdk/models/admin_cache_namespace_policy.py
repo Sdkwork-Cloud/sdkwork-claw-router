@@ -10,10 +10,10 @@ class AdminCacheNamespacePolicy:
     enabled: bool
     failure_mode: str
     instance_name: str
-    jitter_percent: int
+    jitter_percent: str
     namespace: str
     scope: str
     sensitivity: str
-    stale_while_revalidate_seconds: int
+    stale_while_revalidate_seconds: str
     tags: List[str]
-    ttl_seconds: int
+    ttl_seconds: str

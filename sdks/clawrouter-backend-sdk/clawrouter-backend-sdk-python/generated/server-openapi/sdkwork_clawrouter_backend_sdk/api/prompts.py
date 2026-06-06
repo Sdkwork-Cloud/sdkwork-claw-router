@@ -255,7 +255,7 @@ class PromptsDefinitionsApi:
         self._client = client
 
 
-    def list(self, page: Optional[int] = None, page_size: Optional[int] = None, q: Optional[str] = None, prompt_type: Optional[str] = None, visibility: Optional[str] = None, status: Optional[str] = None, category_id: Optional[str] = None) -> DefinitionsListResult:
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, q: Optional[str] = None, prompt_type: Optional[str] = None, visibility: Optional[str] = None, status: Optional[str] = None, category_id: Optional[str] = None) -> DefinitionsListResult:
         """List admin prompts"""
         query = build_query_string([
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},

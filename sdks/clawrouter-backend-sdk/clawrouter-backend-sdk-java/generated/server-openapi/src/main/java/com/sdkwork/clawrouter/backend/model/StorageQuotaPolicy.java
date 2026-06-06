@@ -5,15 +5,15 @@ public class StorageQuotaPolicy {
     private String createdAt;
     private String enforcement;
     private String id;
-    private Integer limit;
-    private Integer quotaLimitBytes;
+    private String limit;
+    private String quotaLimitBytes;
     private String scopeId;
     private String scopeType;
-    private Integer singleFileLimitBytes;
+    private String singleFileLimitBytes;
     private String status;
     private String updatedAt;
-    private Integer used;
-    private Integer usedBytes;
+    private String used;
+    private String usedBytes;
 
     public String getCreatedAt() {
         return this.createdAt;
@@ -39,19 +39,19 @@ public class StorageQuotaPolicy {
         this.id = id;
     }
 
-    public Integer getLimit() {
+    public String getLimit() {
         return this.limit;
     }
 
-    public void setLimit(Integer limit) {
+    public void setLimit(String limit) {
         this.limit = limit;
     }
 
-    public Integer getQuotaLimitBytes() {
+    public String getQuotaLimitBytes() {
         return this.quotaLimitBytes;
     }
 
-    public void setQuotaLimitBytes(Integer quotaLimitBytes) {
+    public void setQuotaLimitBytes(String quotaLimitBytes) {
         this.quotaLimitBytes = quotaLimitBytes;
     }
 
@@ -71,11 +71,11 @@ public class StorageQuotaPolicy {
         this.scopeType = scopeType;
     }
 
-    public Integer getSingleFileLimitBytes() {
+    public String getSingleFileLimitBytes() {
         return this.singleFileLimitBytes;
     }
 
-    public void setSingleFileLimitBytes(Integer singleFileLimitBytes) {
+    public void setSingleFileLimitBytes(String singleFileLimitBytes) {
         this.singleFileLimitBytes = singleFileLimitBytes;
     }
 
@@ -95,19 +95,19 @@ public class StorageQuotaPolicy {
         this.updatedAt = updatedAt;
     }
 
-    public Integer getUsed() {
+    public String getUsed() {
         return this.used;
     }
 
-    public void setUsed(Integer used) {
+    public void setUsed(String used) {
         this.used = used;
     }
 
-    public Integer getUsedBytes() {
+    public String getUsedBytes() {
         return this.usedBytes;
     }
 
-    public void setUsedBytes(Integer usedBytes) {
+    public void setUsedBytes(String usedBytes) {
         this.usedBytes = usedBytes;
     }
 }

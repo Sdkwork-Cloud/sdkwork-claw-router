@@ -6,8 +6,8 @@ type DashboardTopModel struct {
 	IsUp bool `json:"isUp"`
 	Modality string `json:"modality"`
 	Name string `json:"name"`
-	Rank int `json:"rank"`
-	Requests int `json:"requests"`
+	Rank string `json:"rank"`
+	Requests string `json:"requests"`
 	Supplier string `json:"supplier"`
 	Trend string `json:"trend"`
 }

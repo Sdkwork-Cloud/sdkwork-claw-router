@@ -4,7 +4,7 @@ package types
 type ForumAuthor struct {
 	Avatar MediaResource `json:"avatar"`
 	Bio string `json:"bio"`
-	Id int `json:"id"`
+	Id string `json:"id"`
 	IsFollowing bool `json:"isFollowing"`
 	Name string `json:"name"`
 }

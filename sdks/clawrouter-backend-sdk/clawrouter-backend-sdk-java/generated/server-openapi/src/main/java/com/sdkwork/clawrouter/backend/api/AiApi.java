@@ -87,7 +87,7 @@ public class AiApi {
     }
 
     /** List model rankings */
-    public ModelRankingsListResult modelRankingsList(String rankScope, String vendorCode, String modality, String q, Integer limit) throws Exception {
+    public ModelRankingsListResult modelRankingsList(String rankScope, String vendorCode, String modality, String q, String limit) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("rank_scope", rankScope, "form", true, false, null),
             new QueryParameterSpec("vendor_code", vendorCode, "form", true, false, null),
@@ -100,7 +100,7 @@ public class AiApi {
     }
 
     /** List model ranking refresh jobs */
-    public ModelRankingsJobsListResult modelRankingsJobsList(String rankScope, Integer limit) throws Exception {
+    public ModelRankingsJobsListResult modelRankingsJobsList(String rankScope, String limit) throws Exception {
         String query = buildQueryString(List.of(
             new QueryParameterSpec("rank_scope", rankScope, "form", true, false, null),
             new QueryParameterSpec("limit", limit, "form", true, false, null)

@@ -6,9 +6,9 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class CourseOverviewStats
     {
-        public int? TotalCategories { get; set; }
-        public int? TotalCourses { get; set; }
-        public int? TotalLessons { get; set; }
-        public int? TotalStudents { get; set; }
+        public string? TotalCategories { get; set; }
+        public string? TotalCourses { get; set; }
+        public string? TotalLessons { get; set; }
+        public string? TotalStudents { get; set; }
     }
 }

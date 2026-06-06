@@ -7,6 +7,6 @@ data class AdminAiResourceGroupCreateRequest(
     val groupType: String? = null,
     val members: List<AdminAiResourceGroupMemberInput>? = null,
     val selectionMode: String? = null,
-    val sortOrder: Int? = null,
+    val sortOrder: String? = null,
     val status: String? = null
 )

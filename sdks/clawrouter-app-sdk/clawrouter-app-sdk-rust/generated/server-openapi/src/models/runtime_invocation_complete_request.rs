@@ -23,7 +23,7 @@ pub struct RuntimeInvocationCompleteRequest {
     /// Exit code field on runtime invocation complete request.
     #[serde(rename = "exitCode")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub exit_code: Option<i64>,
+    pub exit_code: Option<String>,
 
     /// Finish reason field on runtime invocation complete request.
     #[serde(rename = "finishReason")]
@@ -33,7 +33,7 @@ pub struct RuntimeInvocationCompleteRequest {
     /// Latency ms field on runtime invocation complete request.
     #[serde(rename = "latencyMs")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub latency_ms: Option<i64>,
+    pub latency_ms: Option<String>,
 
     /// Metadata field on runtime invocation complete request.
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -71,7 +71,7 @@ pub struct RuntimeInvocationCompleteRequest {
     /// Ttft ms field on runtime invocation complete request.
     #[serde(rename = "ttftMs")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub ttft_ms: Option<i64>,
+    pub ttft_ms: Option<String>,
 
     /// Usage json field on runtime invocation complete request.
     #[serde(rename = "usageJson")]

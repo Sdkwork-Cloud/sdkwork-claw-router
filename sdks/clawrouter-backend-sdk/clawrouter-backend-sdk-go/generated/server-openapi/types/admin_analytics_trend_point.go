@@ -6,5 +6,5 @@ type AdminAnalyticsTrendPoint struct {
 	Requests float64 `json:"requests"`
 	Time string `json:"time"`
 	Tokens float64 `json:"tokens"`
-	Users int `json:"users"`
+	Users string `json:"users"`
 }

@@ -84,11 +84,11 @@ client.setHeader('X-Custom-Header', 'value');
 // List managed agents
 final params = <String, dynamic>{
   'q': 'q',
-  'owner_user_id': 2,
+  'owner_user_id': '1',
   'status': 'active',
   'visibility': 'private',
-  'page': 5,
-  'page_size': 6,
+  'page': 'page',
+  'page_size': 'page-size',
 };
 final result = await client.agents.agentDefinitionsList(params);
 print(result);
@@ -103,8 +103,8 @@ print(result);
 
 ### commerce
 ```dart
-// Commerce Reports Payment Reconciliation Retrieve
-final result = await client.commerce.reportsPaymentReconciliationRetrieve();
+// Recharges Settings Retrieve
+final result = await client.commerce.rechargesSettingsRetrieve();
 print(result);
 ```
 
@@ -124,8 +124,14 @@ print(result);
 
 ### iam
 ```dart
-// List API key map
-final result = await client.iam.apiKeysList();
+// Update user
+final body = AdminUserUpdateRequest(
+  group: 'group',
+  id: '1',
+  status: 'active',
+  username: 'name',
+);
+final result = await client.iam.usersUpdate(body);
 print(result);
 ```
 
@@ -140,8 +146,8 @@ print(result);
 ```dart
 // List MCP servers
 final params = <String, dynamic>{
-  'page': 1,
-  'page_size': 2,
+  'page': 'page',
+  'page_size': 'page-size',
   'q': 'q',
   'transport': 'transport',
   'visibility': 'visibility',
@@ -156,8 +162,8 @@ print(result);
 ```dart
 // Messaging provider accounts list
 final params = <String, dynamic>{
-  'page': 1,
-  'page_size': 2,
+  'page': 'page',
+  'page_size': 'page-size',
   'q': 'q',
   'status': 'status',
   'channel': 'sms',
@@ -195,8 +201,8 @@ print(result);
 ```dart
 // List admin prompts
 final params = <String, dynamic>{
-  'page': 1,
-  'page_size': 2,
+  'page': 'page',
+  'page_size': 'page-size',
   'q': 'q',
   'prompt_type': 'prompt-type',
   'visibility': 'visibility',
@@ -211,8 +217,8 @@ print(result);
 ```dart
 // Service Provider Adjustments List
 final params = <String, dynamic>{
-  'page': 1,
-  'page_size': 2,
+  'page': 'page',
+  'page_size': 'page-size',
   'status': 'status',
   'provider_id': '1',
   'seller_provider_id': '1',

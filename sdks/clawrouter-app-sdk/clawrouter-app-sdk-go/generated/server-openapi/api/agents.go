@@ -18,7 +18,7 @@ func NewAgentsApi(client *sdkhttp.Client) *AgentsApi {
 }
 
 // List Playground agent definitions
-func (a *AgentsApi) AgentDefinitionsList(page *int, pageSize *int, q *string) (sdktypes.AgentDefinitionsListResult, error) {
+func (a *AgentsApi) AgentDefinitionsList(page *string, pageSize *string, q *string) (sdktypes.AgentDefinitionsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
@@ -71,7 +71,7 @@ func (a *AgentsApi) AgentRunsSubmit(runId string, body sdktypes.AgentRunComplete
 }
 
 // List Playground agent run steps
-func (a *AgentsApi) AgentRunStepsList(runId string, page *int, pageSize *int) (sdktypes.AgentRunStepsListResult, error) {
+func (a *AgentsApi) AgentRunStepsList(runId string, page *string, pageSize *string) (sdktypes.AgentRunStepsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
@@ -123,7 +123,7 @@ func (a *AgentsApi) AgentSessionsRetrieve(sessionId string) (sdktypes.AgentSessi
 }
 
 // List Playground agent runs
-func (a *AgentsApi) AgentRunsList(sessionId string, page *int, pageSize *int) (sdktypes.AgentRunsListResult, error) {
+func (a *AgentsApi) AgentRunsList(sessionId string, page *string, pageSize *string) (sdktypes.AgentRunsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
@@ -161,7 +161,7 @@ func (a *AgentsApi) AgentDefinitionsRetrieve(agentId string) (sdktypes.AgentDefi
 }
 
 // List Playground agent sessions
-func (a *AgentsApi) AgentSessionsList(agentId string, page *int, pageSize *int) (sdktypes.AgentSessionsListResult, error) {
+func (a *AgentsApi) AgentSessionsList(agentId string, page *string, pageSize *string) (sdktypes.AgentSessionsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},

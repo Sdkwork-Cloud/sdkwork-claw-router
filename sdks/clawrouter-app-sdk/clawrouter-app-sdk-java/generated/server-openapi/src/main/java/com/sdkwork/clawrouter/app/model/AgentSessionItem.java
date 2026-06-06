@@ -12,18 +12,18 @@ public class AgentSessionItem {
     private String id;
     private String lastActiveAt;
     private String lastRunId;
-    private Integer lastStepId;
+    private String lastStepId;
     private String memorySpaceId;
     private String permissionMode;
-    private Integer runCount;
+    private String runCount;
     private String runtime;
     private String sandboxPolicy;
     private String sessionKind;
     private String sourceSurface;
     private String status;
-    private Integer stepCount;
+    private String stepCount;
     private String title;
-    private Integer toolCallCount;
+    private String toolCallCount;
     private String updatedAt;
 
     public String getAgentId() {
@@ -106,11 +106,11 @@ public class AgentSessionItem {
         this.lastRunId = lastRunId;
     }
 
-    public Integer getLastStepId() {
+    public String getLastStepId() {
         return this.lastStepId;
     }
 
-    public void setLastStepId(Integer lastStepId) {
+    public void setLastStepId(String lastStepId) {
         this.lastStepId = lastStepId;
     }
 
@@ -130,11 +130,11 @@ public class AgentSessionItem {
         this.permissionMode = permissionMode;
     }
 
-    public Integer getRunCount() {
+    public String getRunCount() {
         return this.runCount;
     }
 
-    public void setRunCount(Integer runCount) {
+    public void setRunCount(String runCount) {
         this.runCount = runCount;
     }
 
@@ -178,11 +178,11 @@ public class AgentSessionItem {
         this.status = status;
     }
 
-    public Integer getStepCount() {
+    public String getStepCount() {
         return this.stepCount;
     }
 
-    public void setStepCount(Integer stepCount) {
+    public void setStepCount(String stepCount) {
         this.stepCount = stepCount;
     }
 
@@ -194,11 +194,11 @@ public class AgentSessionItem {
         this.title = title;
     }
 
-    public Integer getToolCallCount() {
+    public String getToolCallCount() {
         return this.toolCallCount;
     }
 
-    public void setToolCallCount(Integer toolCallCount) {
+    public void setToolCallCount(String toolCallCount) {
         this.toolCallCount = toolCallCount;
     }
 

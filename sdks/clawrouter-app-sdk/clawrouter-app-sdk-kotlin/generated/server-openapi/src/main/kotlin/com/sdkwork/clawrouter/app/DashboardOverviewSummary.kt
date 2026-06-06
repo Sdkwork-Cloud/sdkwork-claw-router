@@ -1,16 +1,16 @@
 package com.sdkwork.clawrouter.app
 
 data class DashboardOverviewSummary(
-    val audioRequests: Int? = null,
+    val audioRequests: String? = null,
     val availableCredits: Double? = null,
-    val errorCount: Int? = null,
-    val imageRequests: Int? = null,
-    val musicRequests: Int? = null,
-    val requestCount: Int? = null,
+    val errorCount: String? = null,
+    val imageRequests: String? = null,
+    val musicRequests: String? = null,
+    val requestCount: String? = null,
     val rpm: Double? = null,
-    val totalRequestCount: Int? = null,
+    val totalRequestCount: String? = null,
     val totalUsedCredits: Double? = null,
     val tpm: Double? = null,
     val usedCredits: Double? = null,
-    val videoRequests: Int? = null
+    val videoRequests: String? = null
 )

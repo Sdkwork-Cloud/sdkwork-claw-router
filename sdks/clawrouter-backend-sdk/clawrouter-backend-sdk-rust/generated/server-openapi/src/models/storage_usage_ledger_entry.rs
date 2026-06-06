@@ -6,7 +6,7 @@ pub struct StorageUsageLedgerEntry {
     /// Delta bytes field on storage usage ledger entry.
     #[serde(rename = "deltaBytes")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub delta_bytes: Option<i64>,
+    pub delta_bytes: Option<String>,
 
     /// Id field on storage usage ledger entry.
     pub id: String,

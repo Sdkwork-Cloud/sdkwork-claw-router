@@ -14,7 +14,7 @@ pub struct AdminAnalyticsOverviewResponse {
     pub insights: Vec<AdminAnalyticsInsight>,
 
     /// Limit field on admin analytics overview response.
-    pub limit: i64,
+    pub limit: String,
 
     /// Modality distribution field on admin analytics overview response.
     #[serde(rename = "modalityDistribution")]

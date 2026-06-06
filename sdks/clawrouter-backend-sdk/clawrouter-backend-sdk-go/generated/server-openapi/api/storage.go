@@ -18,7 +18,7 @@ func NewStorageApi(client *sdkhttp.Client) *StorageApi {
 }
 
 // List storage buckets
-func (a *StorageApi) OssBucketsList(cursor *string, limit *int, status *string) (sdktypes.OssBucketsListResult, error) {
+func (a *StorageApi) OssBucketsList(cursor *string, limit *string, status *string) (sdktypes.OssBucketsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "cursor", Value: func() interface{} { if cursor == nil { return nil }; return *cursor }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "limit", Value: func() interface{} { if limit == nil { return nil }; return *limit }(), Style: "form", Explode: true, AllowReserved: false},
@@ -80,7 +80,7 @@ func (a *StorageApi) OssDefaultBucketsUpdate(logicalScope string, body sdktypes.
 }
 
 // List storage garbage collection jobs
-func (a *StorageApi) OssGcJobsList(cursor *string, limit *int, status *string) (sdktypes.OssGcJobsListResult, error) {
+func (a *StorageApi) OssGcJobsList(cursor *string, limit *string, status *string) (sdktypes.OssGcJobsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "cursor", Value: func() interface{} { if cursor == nil { return nil }; return *cursor }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "limit", Value: func() interface{} { if limit == nil { return nil }; return *limit }(), Style: "form", Explode: true, AllowReserved: false},
@@ -177,7 +177,7 @@ func (a *StorageApi) OssQuotasCreate(body sdktypes.CreateStorageQuotaPolicyReque
 }
 
 // List storage reconciliation runs
-func (a *StorageApi) OssReconciliationRunsList(cursor *string, limit *int, runType *string, status *string) (sdktypes.OssReconciliationRunsListResult, error) {
+func (a *StorageApi) OssReconciliationRunsList(cursor *string, limit *string, runType *string, status *string) (sdktypes.OssReconciliationRunsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "cursor", Value: func() interface{} { if cursor == nil { return nil }; return *cursor }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "limit", Value: func() interface{} { if limit == nil { return nil }; return *limit }(), Style: "form", Explode: true, AllowReserved: false},
@@ -207,7 +207,7 @@ func (a *StorageApi) OssReconciliationRunsCreate(body sdktypes.CreateStorageReco
 }
 
 // List storage usage counters
-func (a *StorageApi) OssUsageList(cursor *string, limit *int, scopeType *string, scopeId *string) (sdktypes.OssUsageListResult, error) {
+func (a *StorageApi) OssUsageList(cursor *string, limit *string, scopeType *string, scopeId *string) (sdktypes.OssUsageListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "cursor", Value: func() interface{} { if cursor == nil { return nil }; return *cursor }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "limit", Value: func() interface{} { if limit == nil { return nil }; return *limit }(), Style: "form", Explode: true, AllowReserved: false},
@@ -223,7 +223,7 @@ func (a *StorageApi) OssUsageList(cursor *string, limit *int, scopeType *string,
 }
 
 // List storage usage ledger
-func (a *StorageApi) OssUsageLedgerList(cursor *string, limit *int, scopeType *string, scopeId *string) (sdktypes.OssUsageLedgerListResult, error) {
+func (a *StorageApi) OssUsageLedgerList(cursor *string, limit *string, scopeType *string, scopeId *string) (sdktypes.OssUsageLedgerListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "cursor", Value: func() interface{} { if cursor == nil { return nil }; return *cursor }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "limit", Value: func() interface{} { if limit == nil { return nil }; return *limit }(), Style: "form", Explode: true, AllowReserved: false},
@@ -239,7 +239,7 @@ func (a *StorageApi) OssUsageLedgerList(cursor *string, limit *int, scopeType *s
 }
 
 // List storage usage snapshots
-func (a *StorageApi) OssUsageSnapshotsList(cursor *string, limit *int, scopeType *string, scopeId *string) (sdktypes.OssUsageSnapshotsListResult, error) {
+func (a *StorageApi) OssUsageSnapshotsList(cursor *string, limit *string, scopeType *string, scopeId *string) (sdktypes.OssUsageSnapshotsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "cursor", Value: func() interface{} { if cursor == nil { return nil }; return *cursor }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "limit", Value: func() interface{} { if limit == nil { return nil }; return *limit }(), Style: "form", Explode: true, AllowReserved: false},

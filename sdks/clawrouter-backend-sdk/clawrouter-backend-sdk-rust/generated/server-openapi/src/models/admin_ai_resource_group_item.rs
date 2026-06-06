@@ -35,7 +35,7 @@ pub struct AdminAiResourceGroupItem {
 
     /// Resource count field on admin ai resource group item.
     #[serde(rename = "resourceCount")]
-    pub resource_count: i64,
+    pub resource_count: String,
 
     /// Selection mode field on admin ai resource group item.
     #[serde(rename = "selectionMode")]
@@ -44,7 +44,7 @@ pub struct AdminAiResourceGroupItem {
     /// Sort order field on admin ai resource group item.
     #[serde(rename = "sortOrder")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub sort_order: Option<i64>,
+    pub sort_order: Option<String>,
 
     /// Status field on admin ai resource group item.
     pub status: String,

@@ -33,6 +33,28 @@ The materialized TypeScript package is `@sdkwork/clawrouter-app-sdk` and lives u
 
 TypeScript is the workspace dependency consumed by the portal. Other languages are generated under their own language workspace and use `generated/server-openapi` as the generator-owned transport boundary.
 
+## SDK Dependency Contract
+
+This SDK family is owner-only. Dependency-owned routes are consumed through declared
+`sdkDependencies` and must not be regenerated into this transport SDK.
+
+| Workspace | Role | Mode | API prefix | Generated transport policy |
+| --- | --- | --- | --- | --- |
+| `sdkwork-appbase-app-sdk` | `appbase-app-capability` | `consumer-sdk` | `/app/v3/api` | `generatedTransportImportPolicy: forbidden` |
+
+Package names:
+
+- `sdkwork-appbase-app-sdk`
+- `typescript`: `@sdkwork/appbase-app-sdk`
+- `flutter`: `sdkwork_appbase_app_sdk`
+- `rust`: `sdkwork-appbase-app-sdk`
+- `java`: `com.sdkwork:sdkwork-appbase-app-sdk`
+- `csharp`: `SDKWork.Appbase.AppSdk`
+- `swift`: `sdkwork-appbase-app-sdk`
+- `kotlin`: `com.sdkwork:sdkwork-appbase-app-sdk`
+- `go`: `github.com/sdkwork/sdkwork-appbase-app-sdk`
+- `python`: `sdkwork-appbase-app-sdk`
+
 Regenerate this SDK family from the project root:
 
 ```bash

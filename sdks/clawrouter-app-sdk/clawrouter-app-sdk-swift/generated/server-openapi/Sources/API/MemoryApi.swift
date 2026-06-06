@@ -13,7 +13,7 @@ public class MemoryApi {
     }
 
     /// List memory spaces
-    public func spacesList(page: Int? = nil, pageSize: Int? = nil) async throws -> SpacesListResult? {
+    public func spacesList(page: String? = nil, pageSize: String? = nil) async throws -> SpacesListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil)
@@ -38,7 +38,7 @@ public class MemoryApi {
     }
 
     /// List memory entries
-    public func entriesList(spaceId: String, page: Int? = nil, pageSize: Int? = nil) async throws -> EntriesListResult? {
+    public func entriesList(spaceId: String, page: String? = nil, pageSize: String? = nil) async throws -> EntriesListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil)

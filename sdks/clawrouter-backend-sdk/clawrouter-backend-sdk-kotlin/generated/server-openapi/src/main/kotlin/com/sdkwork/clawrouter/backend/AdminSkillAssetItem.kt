@@ -7,7 +7,7 @@ data class AdminSkillAssetItem(
     val assetType: Int? = null,
     val createdAt: String? = null,
     val durationSeconds: String? = null,
-    val fileSize: Int? = null,
+    val fileSize: String? = null,
     val height: Int? = null,
     val id: String? = null,
     val mimeType: String? = null,

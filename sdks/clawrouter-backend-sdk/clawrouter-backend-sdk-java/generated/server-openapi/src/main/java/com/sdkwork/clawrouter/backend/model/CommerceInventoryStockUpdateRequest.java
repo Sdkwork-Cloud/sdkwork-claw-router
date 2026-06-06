@@ -2,17 +2,17 @@ package com.sdkwork.clawrouter.backend.model;
 
 
 public class CommerceInventoryStockUpdateRequest {
-    private Integer availableQuantity;
+    private String availableQuantity;
     private String reasonCode;
-    private Integer reservedQuantity;
+    private String reservedQuantity;
     private String status;
-    private Integer version;
+    private String version;
 
-    public Integer getAvailableQuantity() {
+    public String getAvailableQuantity() {
         return this.availableQuantity;
     }
 
-    public void setAvailableQuantity(Integer availableQuantity) {
+    public void setAvailableQuantity(String availableQuantity) {
         this.availableQuantity = availableQuantity;
     }
 
@@ -24,11 +24,11 @@ public class CommerceInventoryStockUpdateRequest {
         this.reasonCode = reasonCode;
     }
 
-    public Integer getReservedQuantity() {
+    public String getReservedQuantity() {
         return this.reservedQuantity;
     }
 
-    public void setReservedQuantity(Integer reservedQuantity) {
+    public void setReservedQuantity(String reservedQuantity) {
         this.reservedQuantity = reservedQuantity;
     }
 
@@ -40,11 +40,11 @@ public class CommerceInventoryStockUpdateRequest {
         this.status = status;
     }
 
-    public Integer getVersion() {
+    public String getVersion() {
         return this.version;
     }
 
-    public void setVersion(Integer version) {
+    public void setVersion(String version) {
         this.version = version;
     }
 }

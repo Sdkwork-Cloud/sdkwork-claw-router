@@ -4,7 +4,7 @@ package types
 type AdminAnalyticsOverviewResponse struct {
 	EndTime string `json:"endTime"`
 	Insights []AdminAnalyticsInsight `json:"insights"`
-	Limit int `json:"limit"`
+	Limit string `json:"limit"`
 	ModalityDistribution []AdminPieChartItem `json:"modalityDistribution"`
 	ModelDistribution []AdminPieChartItem `json:"modelDistribution"`
 	ModelRankings AdminAnalyticsModelRankings `json:"modelRankings"`

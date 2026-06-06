@@ -13,7 +13,7 @@ class StorageReconciliationRun:
     bucket_name: Optional[str] = None
     dry_run: Optional[bool] = None
     finished_at: Optional[str] = None
-    issue_count: Optional[int] = None
+    issue_count: Optional[str] = None
     issues: Optional[str] = None
     provider_code: Optional[str] = None
     provider_id: Optional[str] = None

@@ -6,7 +6,7 @@ public class AdminCourseSectionMutationRequest {
     private String description;
     private Map<String, String> metadata;
     private String sectionNo;
-    private Integer sortOrder;
+    private String sortOrder;
     private String status;
     private String title;
 
@@ -34,11 +34,11 @@ public class AdminCourseSectionMutationRequest {
         this.sectionNo = sectionNo;
     }
 
-    public Integer getSortOrder() {
+    public String getSortOrder() {
         return this.sortOrder;
     }
 
-    public void setSortOrder(Integer sortOrder) {
+    public void setSortOrder(String sortOrder) {
         this.sortOrder = sortOrder;
     }
 

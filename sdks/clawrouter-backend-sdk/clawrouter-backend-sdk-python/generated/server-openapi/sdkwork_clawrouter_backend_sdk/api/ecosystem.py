@@ -204,7 +204,7 @@ class EcosystemSkillsApi:
         self.review = EcosystemSkillsReviewApi(client)
 
 
-    def list(self, q: Optional[str] = None, market_status: Optional[str] = None, review_status: Optional[str] = None, visibility: Optional[str] = None, enabled: Optional[bool] = None, category_id: Optional[str] = None, page: Optional[int] = None, page_size: Optional[int] = None) -> SkillsListResult:
+    def list(self, q: Optional[str] = None, market_status: Optional[str] = None, review_status: Optional[str] = None, visibility: Optional[str] = None, enabled: Optional[bool] = None, category_id: Optional[str] = None, page: Optional[str] = None, page_size: Optional[str] = None) -> SkillsListResult:
         """List skills"""
         query = build_query_string([
             {'name': 'q', 'value': q, 'style': 'form', 'explode': True, 'allow_reserved': False},
@@ -280,7 +280,7 @@ class EcosystemSkillsPackageApi:
         self._client = client
 
 
-    def list(self, q: Optional[str] = None, enabled: Optional[bool] = None, category_id: Optional[str] = None, page: Optional[int] = None, page_size: Optional[int] = None) -> SkillsPackageListResult:
+    def list(self, q: Optional[str] = None, enabled: Optional[bool] = None, category_id: Optional[str] = None, page: Optional[str] = None, page_size: Optional[str] = None) -> SkillsPackageListResult:
         """List skill packages"""
         query = build_query_string([
             {'name': 'q', 'value': q, 'style': 'form', 'explode': True, 'allow_reserved': False},

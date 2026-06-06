@@ -12,5 +12,5 @@ data class AdminAgentVersionItem(
     val systemPrompt: String? = null,
     val toolPolicy: Map<String, String>? = null,
     val updatedAt: String? = null,
-    val versionNo: Int? = null
+    val versionNo: String? = null
 )

@@ -5,7 +5,7 @@ import java.util.List;
 public class ModelRankingHistoryPoint {
     private String date;
     private List<ModelRankingHistoryEntry> entries;
-    private Integer index;
+    private String index;
 
     public String getDate() {
         return this.date;
@@ -23,11 +23,11 @@ public class ModelRankingHistoryPoint {
         this.entries = entries;
     }
 
-    public Integer getIndex() {
+    public String getIndex() {
         return this.index;
     }
 
-    public void setIndex(Integer index) {
+    public void setIndex(String index) {
         this.index = index;
     }
 }

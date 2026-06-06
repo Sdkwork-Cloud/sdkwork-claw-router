@@ -37,10 +37,6 @@ pub struct AdminChannelCreateRequest {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub expires_at: Option<String>,
 
-    /// Optional model resource bindings. Omit or leave empty to route by vendor, AI resource, API path, and capability only; model-specific upstream translation is handled by account, vendor, or global mapping rules.
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub models: Option<Vec<String>>,
-
     /// Name field on admin channel create request.
     pub name: String,
 
@@ -65,12 +61,12 @@ pub struct AdminChannelCreateRequest {
     /// Per-channel upstream response timeout in milliseconds.
     #[serde(rename = "timeoutMs")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub timeout_ms: Option<i64>,
+    pub timeout_ms: Option<String>,
 
     /// Vendor field on admin channel create request.
     pub vendor: String,
 
     /// Weight field on admin channel create request.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub weight: Option<i64>,
+    pub weight: Option<String>,
 }

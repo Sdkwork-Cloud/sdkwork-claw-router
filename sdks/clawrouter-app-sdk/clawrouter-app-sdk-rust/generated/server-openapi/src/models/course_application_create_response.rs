@@ -7,7 +7,7 @@ use crate::models::{MediaResource};
 pub struct CourseApplicationCreateResponse {
     /// Application id field on course application create response.
     #[serde(rename = "applicationId")]
-    pub application_id: i64,
+    pub application_id: String,
 
     /// Category field on course application create response.
     pub category: String,

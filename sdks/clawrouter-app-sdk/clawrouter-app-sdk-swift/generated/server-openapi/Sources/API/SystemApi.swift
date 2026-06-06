@@ -7,17 +7,6 @@ public class SystemApi {
         self.client = client
     }
 
-    /// Promotion Code Redemption Create
-    public func promotionsCodesRedemptionsCreate(body: PromotionCodeRedemptionRequest, idempotencyKey: String) async throws -> PromotionsCodesRedemptionsCreateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.appPath("/promotions/codes/redemptions"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: PromotionsCodesRedemptionsCreateResult.self)
-    }
-
     /// Promotion Discount Application Create
     public func promotionsDiscountApplicationsCreate(body: PromotionCommandRequest, idempotencyKey: String) async throws -> PromotionsDiscountApplicationsCreateResult? {
         let requestHeaders = buildRequestHeaders(
@@ -60,39 +49,6 @@ public class SystemApi {
             [:]
         )
         return try await client.post(ApiPaths.appPath("/promotions/discount_applications/\(serializePathParameter(applicationId, PathParameterSpec(name: "applicationId", style: "simple", explode: false)))/settlements"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: PromotionsDiscountApplicationsSettleResult.self)
-    }
-
-    /// Promotion User Coupon Claim Create
-    public func promotionsUserCouponsClaimsCreate(body: PromotionCommandRequest, idempotencyKey: String) async throws -> PromotionsUserCouponsClaimsCreateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.appPath("/promotions/user_coupon_claims"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: PromotionsUserCouponsClaimsCreateResult.self)
-    }
-
-    /// Promotion User Coupons Wallet List
-    public func promotionsUserCouponsWalletList(status: String? = nil) async throws -> PromotionsUserCouponsWalletListResult? {
-        let query = buildQueryString([
-            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil)
-        ])
-        return try await client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/promotions/user_coupons"), query), responseType: PromotionsUserCouponsWalletListResult.self)
-    }
-
-    /// Retrieve public IAM runtime settings
-    public func iamRuntimeRetrieve(tenantCode: String? = nil, organizationCode: String? = nil) async throws -> IamRuntimeRetrieveResult? {
-        let query = buildQueryString([
-            QueryParameterSpec(name: "tenant_code", value: tenantCode, style: "form", explode: true, allowReserved: false, contentType: nil),
-            QueryParameterSpec(name: "organization_code", value: organizationCode, style: "form", explode: true, allowReserved: false, contentType: nil)
-        ])
-        return try await client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/system/iam/runtime"), query), responseType: IamRuntimeRetrieveResult.self)
-    }
-
-    /// Retrieve public IAM verification policy
-    public func iamVerificationPolicyRetrieve() async throws -> IamVerificationPolicyRetrieveResult? {
-        return try await client.get(ApiPaths.appPath("/system/iam/verification_policy"), responseType: IamVerificationPolicyRetrieveResult.self)
     }
 
     /// Retrieve public site runtime branding settings

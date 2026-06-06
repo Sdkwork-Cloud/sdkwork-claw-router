@@ -12,4 +12,4 @@ class CommerceProductCategoryAttributeMutationRequest:
     required: bool
     searchable: bool
     status: str
-    sort_order: Optional[int] = None
+    sort_order: Optional[str] = None

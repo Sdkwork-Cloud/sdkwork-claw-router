@@ -94,11 +94,11 @@ client.SetHeader("X-Custom-Header", "value");
 var query = new Dictionary<string, object>
 {
     ["q"] = "q",
-    ["owner_user_id"] = 2,
+    ["owner_user_id"] = "1",
     ["status"] = "active",
     ["visibility"] = "private",
-    ["page"] = 5,
-    ["page_size"] = 6,
+    ["page"] = "page",
+    ["page_size"] = "page-size",
 };
 var result = await client.Agents.AgentDefinitionsListAsync(query);
 Console.WriteLine(result);
@@ -115,8 +115,8 @@ Console.WriteLine(result);
 ### commerce
 
 ```csharp
-// Commerce Reports Payment Reconciliation Retrieve
-var result = await client.Commerce.ReportsPaymentReconciliationRetrieveAsync();
+// Recharges Settings Retrieve
+var result = await client.Commerce.RechargesSettingsRetrieveAsync();
 Console.WriteLine(result);
 ```
 
@@ -139,8 +139,15 @@ Console.WriteLine(result);
 ### iam
 
 ```csharp
-// List API key map
-var result = await client.Iam.ApiKeysListAsync();
+// Update user
+var body = new AdminUserUpdateRequest
+{
+    Group = "group",
+    Id = "1",
+    Status = "active",
+    Username = "name",
+};
+var result = await client.Iam.UsersUpdateAsync(body);
 Console.WriteLine(result);
 ```
 
@@ -158,8 +165,8 @@ Console.WriteLine(result);
 // List MCP servers
 var query = new Dictionary<string, object>
 {
-    ["page"] = 1,
-    ["page_size"] = 2,
+    ["page"] = "page",
+    ["page_size"] = "page-size",
     ["q"] = "q",
     ["transport"] = "transport",
     ["visibility"] = "visibility",
@@ -176,8 +183,8 @@ Console.WriteLine(result);
 // Messaging provider accounts list
 var query = new Dictionary<string, object>
 {
-    ["page"] = 1,
-    ["page_size"] = 2,
+    ["page"] = "page",
+    ["page_size"] = "page-size",
     ["q"] = "q",
     ["status"] = "status",
     ["channel"] = "sms",
@@ -221,8 +228,8 @@ Console.WriteLine(result);
 // List admin prompts
 var query = new Dictionary<string, object>
 {
-    ["page"] = 1,
-    ["page_size"] = 2,
+    ["page"] = "page",
+    ["page_size"] = "page-size",
     ["q"] = "q",
     ["prompt_type"] = "prompt-type",
     ["visibility"] = "visibility",
@@ -239,8 +246,8 @@ Console.WriteLine(result);
 // Service Provider Adjustments List
 var query = new Dictionary<string, object>
 {
-    ["page"] = 1,
-    ["page_size"] = 2,
+    ["page"] = "page",
+    ["page_size"] = "page-size",
     ["status"] = "status",
     ["provider_id"] = "1",
     ["seller_provider_id"] = "1",

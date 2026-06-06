@@ -8,85 +8,8 @@ import com.sdkwork.clawrouter.backend.http.HttpClient
 
 class CommerceApi(private val client: HttpClient) {
 
-    /** Audit Commerce Events List */
-    suspend fun auditCommerceEventsList(page: Int? = null, pageSize: Int? = null, status: String? = null): AuditCommerceEventsListResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("page", page, "form", true, false, null),
-            QueryParameterSpec("page_size", pageSize, "form", true, false, null),
-            QueryParameterSpec("status", status, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/audit/commerce_events"), query))
-        return client.convertValue(raw, object : TypeReference<AuditCommerceEventsListResult>() {})
-    }
-
-    /** List product attributes */
-    suspend fun catalogAttributesList(scope: String? = null, status: String? = null, page: Int? = null, pageSize: Int? = null): CatalogAttributesListResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("scope", scope, "form", true, false, null),
-            QueryParameterSpec("status", status, "form", true, false, null),
-            QueryParameterSpec("page", page, "form", true, false, null),
-            QueryParameterSpec("page_size", pageSize, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/catalog/attributes"), query))
-        return client.convertValue(raw, object : TypeReference<CatalogAttributesListResult>() {})
-    }
-
-    /** Create product attribute */
-    suspend fun catalogAttributesCreate(body: CommerceProductAttributeMutationRequest, idempotencyKey: String): CatalogAttributesCreateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/catalog/attributes"), body, null, requestHeaders, "application/json")
-        return client.convertValue(raw, object : TypeReference<CatalogAttributesCreateResult>() {})
-    }
-
-    /** List product categories for admin management */
-    suspend fun catalogCategoriesList(parentId: String? = null, status: String? = null, page: Int? = null, pageSize: Int? = null): CatalogCategoriesListResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("parent_id", parentId, "form", true, false, null),
-            QueryParameterSpec("status", status, "form", true, false, null),
-            QueryParameterSpec("page", page, "form", true, false, null),
-            QueryParameterSpec("page_size", pageSize, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/catalog/categories"), query))
-        return client.convertValue(raw, object : TypeReference<CatalogCategoriesListResult>() {})
-    }
-
-    /** Create product category */
-    suspend fun catalogCategoriesCreate(body: CommerceProductCategoryMutationRequest, idempotencyKey: String): CatalogCategoriesCreateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/catalog/categories"), body, null, requestHeaders, "application/json")
-        return client.convertValue(raw, object : TypeReference<CatalogCategoriesCreateResult>() {})
-    }
-
-    /** Delete product category */
-    suspend fun catalogCategoriesDelete(categoryId: String): CatalogCategoriesDeleteResult? {
-        val raw = client.delete(ApiPaths.backendPath("/catalog/categories/${serializePathParameter(categoryId, PathParameterSpec("categoryId", "simple", false))}"))
-        return client.convertValue(raw, object : TypeReference<CatalogCategoriesDeleteResult>() {})
-    }
-
-    /** Update product category */
-    suspend fun catalogCategoriesUpdate(categoryId: String, body: CommerceProductCategoryMutationRequest, idempotencyKey: String): CatalogCategoriesUpdateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.patch(ApiPaths.backendPath("/catalog/categories/${serializePathParameter(categoryId, PathParameterSpec("categoryId", "simple", false))}"), body, null, requestHeaders, "application/json")
-        return client.convertValue(raw, object : TypeReference<CatalogCategoriesUpdateResult>() {})
-    }
-
     /** List category attribute bindings */
-    suspend fun catalogCategoryAttributesList(categoryId: String? = null, attributeId: String? = null, status: String? = null, page: Int? = null, pageSize: Int? = null): CatalogCategoryAttributesListResult? {
+    suspend fun catalogCategoryAttributesList(categoryId: String? = null, attributeId: String? = null, status: String? = null, page: String? = null, pageSize: String? = null): CatalogCategoryAttributesListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("category_id", categoryId, "form", true, false, null),
             QueryParameterSpec("attribute_id", attributeId, "form", true, false, null),
@@ -140,197 +63,16 @@ class CommerceApi(private val client: HttpClient) {
         return client.convertValue(raw, object : TypeReference<CatalogCategorySeedsCreateResult>() {})
     }
 
-    /** List product price lists */
-    suspend fun catalogPriceLists(currencyCode: String? = null, marketCode: String? = null, status: String? = null, page: Int? = null, pageSize: Int? = null): CatalogPriceListsListResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("currency_code", currencyCode, "form", true, false, null),
-            QueryParameterSpec("market_code", marketCode, "form", true, false, null),
-            QueryParameterSpec("status", status, "form", true, false, null),
-            QueryParameterSpec("page", page, "form", true, false, null),
-            QueryParameterSpec("page_size", pageSize, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/catalog/price_lists"), query))
-        return client.convertValue(raw, object : TypeReference<CatalogPriceListsListResult>() {})
-    }
-
-    /** Create product price list */
-    suspend fun catalogPriceListsCreate(body: CommercePriceListMutationRequest, idempotencyKey: String): CatalogPriceListsCreateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/catalog/price_lists"), body, null, requestHeaders, "application/json")
-        return client.convertValue(raw, object : TypeReference<CatalogPriceListsCreateResult>() {})
-    }
-
-    /** List products for admin management */
-    suspend fun catalogProductsList(q: String? = null, categoryId: String? = null, productType: String? = null, status: String? = null, page: Int? = null, pageSize: Int? = null, sort: String? = null): CatalogProductsListResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("q", q, "form", true, false, null),
-            QueryParameterSpec("category_id", categoryId, "form", true, false, null),
-            QueryParameterSpec("product_type", productType, "form", true, false, null),
-            QueryParameterSpec("status", status, "form", true, false, null),
-            QueryParameterSpec("page", page, "form", true, false, null),
-            QueryParameterSpec("page_size", pageSize, "form", true, false, null),
-            QueryParameterSpec("sort", sort, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/catalog/products"), query))
-        return client.convertValue(raw, object : TypeReference<CatalogProductsListResult>() {})
-    }
-
-    /** Create product SPU */
-    suspend fun catalogProductsCreate(body: CommerceProductSpuMutationRequest, idempotencyKey: String): CatalogProductsCreateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/catalog/products"), body, null, requestHeaders, "application/json")
-        return client.convertValue(raw, object : TypeReference<CatalogProductsCreateResult>() {})
-    }
-
     /** Delete product SPU */
     suspend fun catalogProductsDelete(productId: String): CatalogProductsDeleteResult? {
         val raw = client.delete(ApiPaths.backendPath("/catalog/products/${serializePathParameter(productId, PathParameterSpec("productId", "simple", false))}"))
         return client.convertValue(raw, object : TypeReference<CatalogProductsDeleteResult>() {})
     }
 
-    /** Update product SPU */
-    suspend fun catalogProductsUpdate(productId: String, body: CommerceProductSpuMutationRequest, idempotencyKey: String): CatalogProductsUpdateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.patch(ApiPaths.backendPath("/catalog/products/${serializePathParameter(productId, PathParameterSpec("productId", "simple", false))}"), body, null, requestHeaders, "application/json")
-        return client.convertValue(raw, object : TypeReference<CatalogProductsUpdateResult>() {})
-    }
-
-    /** List product SKUs for admin management */
-    suspend fun catalogSkusList(productId: String? = null, fulfillmentType: String? = null, status: String? = null, page: Int? = null, pageSize: Int? = null): CatalogSkusListResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("product_id", productId, "form", true, false, null),
-            QueryParameterSpec("fulfillment_type", fulfillmentType, "form", true, false, null),
-            QueryParameterSpec("status", status, "form", true, false, null),
-            QueryParameterSpec("page", page, "form", true, false, null),
-            QueryParameterSpec("page_size", pageSize, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/catalog/skus"), query))
-        return client.convertValue(raw, object : TypeReference<CatalogSkusListResult>() {})
-    }
-
-    /** Create product SKU */
-    suspend fun catalogSkusCreate(body: CommerceProductSkuMutationRequest, idempotencyKey: String): CatalogSkusCreateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/catalog/skus"), body, null, requestHeaders, "application/json")
-        return client.convertValue(raw, object : TypeReference<CatalogSkusCreateResult>() {})
-    }
-
     /** Delete product SKU */
     suspend fun catalogSkusDelete(skuId: String): CatalogSkusDeleteResult? {
         val raw = client.delete(ApiPaths.backendPath("/catalog/skus/${serializePathParameter(skuId, PathParameterSpec("skuId", "simple", false))}"))
         return client.convertValue(raw, object : TypeReference<CatalogSkusDeleteResult>() {})
-    }
-
-    /** Update product SKU */
-    suspend fun catalogSkusUpdate(skuId: String, body: CommerceProductSkuMutationRequest, idempotencyKey: String): CatalogSkusUpdateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.patch(ApiPaths.backendPath("/catalog/skus/${serializePathParameter(skuId, PathParameterSpec("skuId", "simple", false))}"), body, null, requestHeaders, "application/json")
-        return client.convertValue(raw, object : TypeReference<CatalogSkusUpdateResult>() {})
-    }
-
-    /** Commerce Reports Order Revenue List */
-    suspend fun reportsOrderRevenueList(page: Int? = null, pageSize: Int? = null, status: String? = null): CommerceReportsOrderRevenueListResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("page", page, "form", true, false, null),
-            QueryParameterSpec("page_size", pageSize, "form", true, false, null),
-            QueryParameterSpec("status", status, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/commerce_reports/order_revenue"), query))
-        return client.convertValue(raw, object : TypeReference<CommerceReportsOrderRevenueListResult>() {})
-    }
-
-    /** Commerce Reports Payment Reconciliation Retrieve */
-    suspend fun reportsPaymentReconciliationRetrieve(): CommerceReportsPaymentReconciliationRetrieveResult? {
-        val raw = client.get(ApiPaths.backendPath("/commerce_reports/payment_reconciliation"))
-        return client.convertValue(raw, object : TypeReference<CommerceReportsPaymentReconciliationRetrieveResult>() {})
-    }
-
-    /** Commerce Reports Refunds List */
-    suspend fun reportsRefundsList(page: Int? = null, pageSize: Int? = null, status: String? = null): CommerceReportsRefundsListResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("page", page, "form", true, false, null),
-            QueryParameterSpec("page_size", pageSize, "form", true, false, null),
-            QueryParameterSpec("status", status, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/commerce_reports/refunds"), query))
-        return client.convertValue(raw, object : TypeReference<CommerceReportsRefundsListResult>() {})
-    }
-
-    /** Fulfillments List */
-    suspend fun fulfillmentsList(page: Int? = null, pageSize: Int? = null, status: String? = null): FulfillmentsListResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("page", page, "form", true, false, null),
-            QueryParameterSpec("page_size", pageSize, "form", true, false, null),
-            QueryParameterSpec("status", status, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/fulfillments"), query))
-        return client.convertValue(raw, object : TypeReference<FulfillmentsListResult>() {})
-    }
-
-    /** List inventory ledger entries */
-    suspend fun inventoryLedgerEntriesList(skuId: String? = null, warehouseId: String? = null, sourceType: String? = null, sourceId: String? = null, page: Int? = null, pageSize: Int? = null): InventoryLedgerEntriesListResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("sku_id", skuId, "form", true, false, null),
-            QueryParameterSpec("warehouse_id", warehouseId, "form", true, false, null),
-            QueryParameterSpec("source_type", sourceType, "form", true, false, null),
-            QueryParameterSpec("source_id", sourceId, "form", true, false, null),
-            QueryParameterSpec("page", page, "form", true, false, null),
-            QueryParameterSpec("page_size", pageSize, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/inventory/ledger_entries"), query))
-        return client.convertValue(raw, object : TypeReference<InventoryLedgerEntriesListResult>() {})
-    }
-
-    /** List inventory reservations */
-    suspend fun inventoryReservationsList(skuId: String? = null, orderId: String? = null, checkoutSessionId: String? = null, status: String? = null, page: Int? = null, pageSize: Int? = null): InventoryReservationsListResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("sku_id", skuId, "form", true, false, null),
-            QueryParameterSpec("order_id", orderId, "form", true, false, null),
-            QueryParameterSpec("checkout_session_id", checkoutSessionId, "form", true, false, null),
-            QueryParameterSpec("status", status, "form", true, false, null),
-            QueryParameterSpec("page", page, "form", true, false, null),
-            QueryParameterSpec("page_size", pageSize, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/inventory/reservations"), query))
-        return client.convertValue(raw, object : TypeReference<InventoryReservationsListResult>() {})
-    }
-
-    /** List inventory stock records */
-    suspend fun inventoryStocksList(skuId: String? = null, warehouseId: String? = null, status: String? = null, page: Int? = null, pageSize: Int? = null): InventoryStocksListResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("sku_id", skuId, "form", true, false, null),
-            QueryParameterSpec("warehouse_id", warehouseId, "form", true, false, null),
-            QueryParameterSpec("status", status, "form", true, false, null),
-            QueryParameterSpec("page", page, "form", true, false, null),
-            QueryParameterSpec("page_size", pageSize, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/inventory/stocks"), query))
-        return client.convertValue(raw, object : TypeReference<InventoryStocksListResult>() {})
     }
 
     /** Update inventory stock */
@@ -345,61 +87,6 @@ class CommerceApi(private val client: HttpClient) {
         return client.convertValue(raw, object : TypeReference<InventoryStocksUpdateResult>() {})
     }
 
-    /** Invoices List */
-    suspend fun invoicesList(page: Int? = null, pageSize: Int? = null, status: String? = null): InvoicesListResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("page", page, "form", true, false, null),
-            QueryParameterSpec("page_size", pageSize, "form", true, false, null),
-            QueryParameterSpec("status", status, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/invoices"), query))
-        return client.convertValue(raw, object : TypeReference<InvoicesListResult>() {})
-    }
-
-    /** Invoices Titles List */
-    suspend fun invoicesTitlesList(page: Int? = null, pageSize: Int? = null, status: String? = null): InvoicesTitlesListResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("page", page, "form", true, false, null),
-            QueryParameterSpec("page_size", pageSize, "form", true, false, null),
-            QueryParameterSpec("status", status, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/invoices/titles"), query))
-        return client.convertValue(raw, object : TypeReference<InvoicesTitlesListResult>() {})
-    }
-
-    /** Invoices Retrieve */
-    suspend fun invoicesRetrieve(invoiceId: String): InvoicesRetrieveResult? {
-        val raw = client.get(ApiPaths.backendPath("/invoices/${serializePathParameter(invoiceId, PathParameterSpec("invoiceId", "simple", false))}"))
-        return client.convertValue(raw, object : TypeReference<InvoicesRetrieveResult>() {})
-    }
-
-    /** Memberships Entitlements List */
-    suspend fun membershipsEntitlementsList(page: Int? = null, pageSize: Int? = null, planId: String? = null, membershipId: String? = null, status: String? = null): MembershipsEntitlementsListResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("page", page, "form", true, false, null),
-            QueryParameterSpec("page_size", pageSize, "form", true, false, null),
-            QueryParameterSpec("plan_id", planId, "form", true, false, null),
-            QueryParameterSpec("membership_id", membershipId, "form", true, false, null),
-            QueryParameterSpec("status", status, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/memberships/entitlements"), query))
-        return client.convertValue(raw, object : TypeReference<MembershipsEntitlementsListResult>() {})
-    }
-
-    /** Memberships Members List */
-    suspend fun membershipsMembersList(page: Int? = null, pageSize: Int? = null, cursor: String? = null, userId: String? = null, planId: String? = null, status: String? = null): MembershipsMembersListResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("page", page, "form", true, false, null),
-            QueryParameterSpec("page_size", pageSize, "form", true, false, null),
-            QueryParameterSpec("cursor", cursor, "form", true, false, null),
-            QueryParameterSpec("user_id", userId, "form", true, false, null),
-            QueryParameterSpec("plan_id", planId, "form", true, false, null),
-            QueryParameterSpec("status", status, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/memberships/members"), query))
-        return client.convertValue(raw, object : TypeReference<MembershipsMembersListResult>() {})
-    }
-
     /** Memberships Members Status Update */
     suspend fun membershipsMembersStatusUpdate(membershipId: String, body: CommerceMembershipMemberStatusRequest, idempotencyKey: String): MembershipsMembersStatusUpdateResult? {
         val requestHeaders = buildRequestHeaders(
@@ -410,35 +97,6 @@ class CommerceApi(private val client: HttpClient) {
         )
         val raw = client.patch(ApiPaths.backendPath("/memberships/members/${serializePathParameter(membershipId, PathParameterSpec("membershipId", "simple", false))}/status"), body, null, requestHeaders, "application/json")
         return client.convertValue(raw, object : TypeReference<MembershipsMembersStatusUpdateResult>() {})
-    }
-
-    /** Memberships Package Groups List */
-    suspend fun membershipsPackageGroupsList(page: Int? = null, pageSize: Int? = null, status: String? = null): MembershipsPackageGroupsListResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("page", page, "form", true, false, null),
-            QueryParameterSpec("page_size", pageSize, "form", true, false, null),
-            QueryParameterSpec("status", status, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/memberships/package_groups"), query))
-        return client.convertValue(raw, object : TypeReference<MembershipsPackageGroupsListResult>() {})
-    }
-
-    /** Memberships Package Groups Create */
-    suspend fun membershipsPackageGroupsCreate(body: CommerceMembershipPackageGroupMutationRequest, idempotencyKey: String): MembershipsPackageGroupsCreateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/memberships/package_groups"), body, null, requestHeaders, "application/json")
-        return client.convertValue(raw, object : TypeReference<MembershipsPackageGroupsCreateResult>() {})
-    }
-
-    /** Memberships Package Groups Delete */
-    suspend fun membershipsPackageGroupsDelete(packageGroupId: String): MembershipsPackageGroupsDeleteResult? {
-        val raw = client.delete(ApiPaths.backendPath("/memberships/package_groups/${serializePathParameter(packageGroupId, PathParameterSpec("packageGroupId", "simple", false))}"))
-        return client.convertValue(raw, object : TypeReference<MembershipsPackageGroupsDeleteResult>() {})
     }
 
     /** Memberships Package Groups Update */
@@ -453,37 +111,6 @@ class CommerceApi(private val client: HttpClient) {
         return client.convertValue(raw, object : TypeReference<MembershipsPackageGroupsUpdateResult>() {})
     }
 
-    /** Memberships Packages List */
-    suspend fun membershipsPackagesList(page: Int? = null, pageSize: Int? = null, packageGroupId: String? = null, planId: String? = null, status: String? = null): MembershipsPackagesListResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("page", page, "form", true, false, null),
-            QueryParameterSpec("page_size", pageSize, "form", true, false, null),
-            QueryParameterSpec("package_group_id", packageGroupId, "form", true, false, null),
-            QueryParameterSpec("plan_id", planId, "form", true, false, null),
-            QueryParameterSpec("status", status, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/memberships/packages"), query))
-        return client.convertValue(raw, object : TypeReference<MembershipsPackagesListResult>() {})
-    }
-
-    /** Memberships Packages Create */
-    suspend fun membershipsPackagesCreate(body: CommerceMembershipPackageMutationRequest, idempotencyKey: String): MembershipsPackagesCreateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/memberships/packages"), body, null, requestHeaders, "application/json")
-        return client.convertValue(raw, object : TypeReference<MembershipsPackagesCreateResult>() {})
-    }
-
-    /** Memberships Packages Delete */
-    suspend fun membershipsPackagesDelete(packageId: String): MembershipsPackagesDeleteResult? {
-        val raw = client.delete(ApiPaths.backendPath("/memberships/packages/${serializePathParameter(packageId, PathParameterSpec("packageId", "simple", false))}"))
-        return client.convertValue(raw, object : TypeReference<MembershipsPackagesDeleteResult>() {})
-    }
-
     /** Memberships Packages Update */
     suspend fun membershipsPackagesUpdate(packageId: String, body: CommerceMembershipPackageMutationRequest, idempotencyKey: String): MembershipsPackagesUpdateResult? {
         val requestHeaders = buildRequestHeaders(
@@ -494,35 +121,6 @@ class CommerceApi(private val client: HttpClient) {
         )
         val raw = client.put(ApiPaths.backendPath("/memberships/packages/${serializePathParameter(packageId, PathParameterSpec("packageId", "simple", false))}"), body, null, requestHeaders, "application/json")
         return client.convertValue(raw, object : TypeReference<MembershipsPackagesUpdateResult>() {})
-    }
-
-    /** Memberships Plans List */
-    suspend fun membershipsPlansList(page: Int? = null, pageSize: Int? = null, status: String? = null): MembershipsPlansListResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("page", page, "form", true, false, null),
-            QueryParameterSpec("page_size", pageSize, "form", true, false, null),
-            QueryParameterSpec("status", status, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/memberships/plans"), query))
-        return client.convertValue(raw, object : TypeReference<MembershipsPlansListResult>() {})
-    }
-
-    /** Memberships Plans Create */
-    suspend fun membershipsPlansCreate(body: CommerceMembershipPlanMutationRequest, idempotencyKey: String): MembershipsPlansCreateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/memberships/plans"), body, null, requestHeaders, "application/json")
-        return client.convertValue(raw, object : TypeReference<MembershipsPlansCreateResult>() {})
-    }
-
-    /** Memberships Plans Delete */
-    suspend fun membershipsPlansDelete(planId: String): MembershipsPlansDeleteResult? {
-        val raw = client.delete(ApiPaths.backendPath("/memberships/plans/${serializePathParameter(planId, PathParameterSpec("planId", "simple", false))}"))
-        return client.convertValue(raw, object : TypeReference<MembershipsPlansDeleteResult>() {})
     }
 
     /** Memberships Plans Update */
@@ -537,124 +135,16 @@ class CommerceApi(private val client: HttpClient) {
         return client.convertValue(raw, object : TypeReference<MembershipsPlansUpdateResult>() {})
     }
 
-    /** Orders List */
-    suspend fun ordersList(page: Int? = null, pageSize: Int? = null, status: String? = null): OrdersListResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("page", page, "form", true, false, null),
-            QueryParameterSpec("page_size", pageSize, "form", true, false, null),
-            QueryParameterSpec("status", status, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/orders"), query))
-        return client.convertValue(raw, object : TypeReference<OrdersListResult>() {})
-    }
-
     /** Orders Retrieve */
     suspend fun ordersRetrieve(orderId: String): OrdersRetrieveResult? {
         val raw = client.get(ApiPaths.backendPath("/orders/${serializePathParameter(orderId, PathParameterSpec("orderId", "simple", false))}"))
         return client.convertValue(raw, object : TypeReference<OrdersRetrieveResult>() {})
     }
 
-    /** Orders Events List */
-    suspend fun ordersEventsList(orderId: String, page: Int? = null, pageSize: Int? = null, status: String? = null): OrdersEventsListResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("page", page, "form", true, false, null),
-            QueryParameterSpec("page_size", pageSize, "form", true, false, null),
-            QueryParameterSpec("status", status, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/orders/${serializePathParameter(orderId, PathParameterSpec("orderId", "simple", false))}/events"), query))
-        return client.convertValue(raw, object : TypeReference<OrdersEventsListResult>() {})
-    }
-
-    /** Payments Attempts List */
-    suspend fun paymentsAttemptsList(intentId: String? = null, providerCode: String? = null, page: Int? = null, pageSize: Int? = null, status: String? = null): PaymentsAttemptsListResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("intent_id", intentId, "form", true, false, null),
-            QueryParameterSpec("provider_code", providerCode, "form", true, false, null),
-            QueryParameterSpec("page", page, "form", true, false, null),
-            QueryParameterSpec("page_size", pageSize, "form", true, false, null),
-            QueryParameterSpec("status", status, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/payments/attempts"), query))
-        return client.convertValue(raw, object : TypeReference<PaymentsAttemptsListResult>() {})
-    }
-
-    /** Payments Channels List */
-    suspend fun paymentsChannelsList(providerAccountId: String? = null, methodCode: String? = null, page: Int? = null, pageSize: Int? = null, status: String? = null): PaymentsChannelsListResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("provider_account_id", providerAccountId, "form", true, false, null),
-            QueryParameterSpec("method_code", methodCode, "form", true, false, null),
-            QueryParameterSpec("page", page, "form", true, false, null),
-            QueryParameterSpec("page_size", pageSize, "form", true, false, null),
-            QueryParameterSpec("status", status, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/payments/channels"), query))
-        return client.convertValue(raw, object : TypeReference<PaymentsChannelsListResult>() {})
-    }
-
-    /** Payments Intents List */
-    suspend fun paymentsIntentsList(orderId: String? = null, providerCode: String? = null, page: Int? = null, pageSize: Int? = null, status: String? = null): PaymentsIntentsListResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("order_id", orderId, "form", true, false, null),
-            QueryParameterSpec("provider_code", providerCode, "form", true, false, null),
-            QueryParameterSpec("page", page, "form", true, false, null),
-            QueryParameterSpec("page_size", pageSize, "form", true, false, null),
-            QueryParameterSpec("status", status, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/payments/intents"), query))
-        return client.convertValue(raw, object : TypeReference<PaymentsIntentsListResult>() {})
-    }
-
-    /** Payments Methods List */
-    suspend fun paymentsMethodsList(page: Int? = null, pageSize: Int? = null, status: String? = null): PaymentsMethodsListResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("page", page, "form", true, false, null),
-            QueryParameterSpec("page_size", pageSize, "form", true, false, null),
-            QueryParameterSpec("status", status, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/payments/methods"), query))
-        return client.convertValue(raw, object : TypeReference<PaymentsMethodsListResult>() {})
-    }
-
-    /** Payments Provider Accounts List */
-    suspend fun paymentsProviderAccountsList(providerCode: String? = null, page: Int? = null, pageSize: Int? = null, status: String? = null): PaymentsProviderAccountsListResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("provider_code", providerCode, "form", true, false, null),
-            QueryParameterSpec("page", page, "form", true, false, null),
-            QueryParameterSpec("page_size", pageSize, "form", true, false, null),
-            QueryParameterSpec("status", status, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/payments/provider_accounts"), query))
-        return client.convertValue(raw, object : TypeReference<PaymentsProviderAccountsListResult>() {})
-    }
-
-    /** Payments Provider Accounts Create */
-    suspend fun paymentsProviderAccountsCreate(body: CommercePaymentProviderAccountMutationRequest, idempotencyKey: String): PaymentsProviderAccountsCreateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/payments/provider_accounts"), body, null, requestHeaders, "application/json")
-        return client.convertValue(raw, object : TypeReference<PaymentsProviderAccountsCreateResult>() {})
-    }
-
     /** Payments Provider Accounts Delete */
     suspend fun paymentsProviderAccountsDelete(providerAccountId: String): PaymentsProviderAccountsDeleteResult? {
         val raw = client.delete(ApiPaths.backendPath("/payments/provider_accounts/${serializePathParameter(providerAccountId, PathParameterSpec("providerAccountId", "simple", false))}"))
         return client.convertValue(raw, object : TypeReference<PaymentsProviderAccountsDeleteResult>() {})
-    }
-
-    /** Payments Provider Accounts Update */
-    suspend fun paymentsProviderAccountsUpdate(providerAccountId: String, body: CommercePaymentProviderAccountMutationRequest, idempotencyKey: String): PaymentsProviderAccountsUpdateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.patch(ApiPaths.backendPath("/payments/provider_accounts/${serializePathParameter(providerAccountId, PathParameterSpec("providerAccountId", "simple", false))}"), body, null, requestHeaders, "application/json")
-        return client.convertValue(raw, object : TypeReference<PaymentsProviderAccountsUpdateResult>() {})
     }
 
     /** Payments Provider Accounts Status Update */
@@ -670,7 +160,7 @@ class CommerceApi(private val client: HttpClient) {
     }
 
     /** Payments Providers List */
-    suspend fun paymentsProvidersList(page: Int? = null, pageSize: Int? = null, status: String? = null): PaymentsProvidersListResult? {
+    suspend fun paymentsProvidersList(page: String? = null, pageSize: String? = null, status: String? = null): PaymentsProvidersListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -678,33 +168,6 @@ class CommerceApi(private val client: HttpClient) {
         ))
         val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/payments/providers"), query))
         return client.convertValue(raw, object : TypeReference<PaymentsProvidersListResult>() {})
-    }
-
-    /** Payments Reconciliation Runs List */
-    suspend fun paymentsReconciliationRunsList(providerCode: String? = null, businessDate: String? = null, page: Int? = null, pageSize: Int? = null, status: String? = null): PaymentsReconciliationRunsListResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("provider_code", providerCode, "form", true, false, null),
-            QueryParameterSpec("business_date", businessDate, "form", true, false, null),
-            QueryParameterSpec("page", page, "form", true, false, null),
-            QueryParameterSpec("page_size", pageSize, "form", true, false, null),
-            QueryParameterSpec("status", status, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/payments/reconciliation_runs"), query))
-        return client.convertValue(raw, object : TypeReference<PaymentsReconciliationRunsListResult>() {})
-    }
-
-    /** Payments Route Rules List */
-    suspend fun paymentsRouteRulesList(methodCode: String? = null, countryCode: String? = null, currencyCode: String? = null, page: Int? = null, pageSize: Int? = null, status: String? = null): PaymentsRouteRulesListResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("method_code", methodCode, "form", true, false, null),
-            QueryParameterSpec("country_code", countryCode, "form", true, false, null),
-            QueryParameterSpec("currency_code", currencyCode, "form", true, false, null),
-            QueryParameterSpec("page", page, "form", true, false, null),
-            QueryParameterSpec("page_size", pageSize, "form", true, false, null),
-            QueryParameterSpec("status", status, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/payments/route_rules"), query))
-        return client.convertValue(raw, object : TypeReference<PaymentsRouteRulesListResult>() {})
     }
 
     /** Payments Runtime Snapshot Retrieve */
@@ -716,68 +179,10 @@ class CommerceApi(private val client: HttpClient) {
         return client.convertValue(raw, object : TypeReference<PaymentsRuntimeSnapshotRetrieveResult>() {})
     }
 
-    /** Payments Webhook Events List */
-    suspend fun paymentsWebhookEventsList(providerCode: String? = null, page: Int? = null, pageSize: Int? = null, status: String? = null): PaymentsWebhookEventsListResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("provider_code", providerCode, "form", true, false, null),
-            QueryParameterSpec("page", page, "form", true, false, null),
-            QueryParameterSpec("page_size", pageSize, "form", true, false, null),
-            QueryParameterSpec("status", status, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/payments/webhook_events"), query))
-        return client.convertValue(raw, object : TypeReference<PaymentsWebhookEventsListResult>() {})
-    }
-
-    /** Recharges Orders List */
-    suspend fun rechargesOrdersList(page: Int? = null, pageSize: Int? = null, status: String? = null): RechargesOrdersListResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("page", page, "form", true, false, null),
-            QueryParameterSpec("page_size", pageSize, "form", true, false, null),
-            QueryParameterSpec("status", status, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/recharges/orders"), query))
-        return client.convertValue(raw, object : TypeReference<RechargesOrdersListResult>() {})
-    }
-
-    /** Recharges Packages List */
-    suspend fun rechargesPackagesList(page: Int? = null, pageSize: Int? = null, status: String? = null): RechargesPackagesListResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("page", page, "form", true, false, null),
-            QueryParameterSpec("page_size", pageSize, "form", true, false, null),
-            QueryParameterSpec("status", status, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/recharges/packages"), query))
-        return client.convertValue(raw, object : TypeReference<RechargesPackagesListResult>() {})
-    }
-
-    /** Recharges Packages Create */
-    suspend fun rechargesPackagesCreate(body: CommerceRechargePackageMutationRequest, idempotencyKey: String): RechargesPackagesCreateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/recharges/packages"), body, null, requestHeaders, "application/json")
-        return client.convertValue(raw, object : TypeReference<RechargesPackagesCreateResult>() {})
-    }
-
     /** Recharges Packages Delete */
     suspend fun rechargesPackagesDelete(packageId: String): RechargesPackagesDeleteResult? {
         val raw = client.delete(ApiPaths.backendPath("/recharges/packages/${serializePathParameter(packageId, PathParameterSpec("packageId", "simple", false))}"))
         return client.convertValue(raw, object : TypeReference<RechargesPackagesDeleteResult>() {})
-    }
-
-    /** Recharges Packages Update */
-    suspend fun rechargesPackagesUpdate(packageId: String, body: CommerceRechargePackageMutationRequest, idempotencyKey: String): RechargesPackagesUpdateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.patch(ApiPaths.backendPath("/recharges/packages/${serializePathParameter(packageId, PathParameterSpec("packageId", "simple", false))}"), body, null, requestHeaders, "application/json")
-        return client.convertValue(raw, object : TypeReference<RechargesPackagesUpdateResult>() {})
     }
 
     /** Recharges Settings Retrieve */
@@ -792,36 +197,8 @@ class CommerceApi(private val client: HttpClient) {
         return client.convertValue(raw, object : TypeReference<RechargesSettingsUpdateResult>() {})
     }
 
-    /** Refunds List */
-    suspend fun refundsList(page: Int? = null, pageSize: Int? = null, status: String? = null): RefundsListResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("page", page, "form", true, false, null),
-            QueryParameterSpec("page_size", pageSize, "form", true, false, null),
-            QueryParameterSpec("status", status, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/refunds"), query))
-        return client.convertValue(raw, object : TypeReference<RefundsListResult>() {})
-    }
-
-    /** Refunds Retrieve */
-    suspend fun refundsRetrieve(refundId: String): RefundsRetrieveResult? {
-        val raw = client.get(ApiPaths.backendPath("/refunds/${serializePathParameter(refundId, PathParameterSpec("refundId", "simple", false))}"))
-        return client.convertValue(raw, object : TypeReference<RefundsRetrieveResult>() {})
-    }
-
-    /** Shipments List */
-    suspend fun shipmentsList(page: Int? = null, pageSize: Int? = null, status: String? = null): ShipmentsListResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("page", page, "form", true, false, null),
-            QueryParameterSpec("page_size", pageSize, "form", true, false, null),
-            QueryParameterSpec("status", status, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/shipments"), query))
-        return client.convertValue(raw, object : TypeReference<ShipmentsListResult>() {})
-    }
-
     /** Shipments Tracking Events List */
-    suspend fun shipmentsTrackingEventsList(shipmentId: String, page: Int? = null, pageSize: Int? = null, status: String? = null): ShipmentsTrackingEventsListResult? {
+    suspend fun shipmentsTrackingEventsList(shipmentId: String, page: String? = null, pageSize: String? = null, status: String? = null): ShipmentsTrackingEventsListResult? {
         val query = buildQueryString(listOf(
             QueryParameterSpec("page", page, "form", true, false, null),
             QueryParameterSpec("page_size", pageSize, "form", true, false, null),
@@ -829,51 +206,6 @@ class CommerceApi(private val client: HttpClient) {
         ))
         val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/shipments/${serializePathParameter(shipmentId, PathParameterSpec("shipmentId", "simple", false))}/tracking_events"), query))
         return client.convertValue(raw, object : TypeReference<ShipmentsTrackingEventsListResult>() {})
-    }
-
-    /** Wallet Accounts List */
-    suspend fun walletAccountsList(page: Int? = null, pageSize: Int? = null, status: String? = null): WalletAccountsListResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("page", page, "form", true, false, null),
-            QueryParameterSpec("page_size", pageSize, "form", true, false, null),
-            QueryParameterSpec("status", status, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/wallet/accounts"), query))
-        return client.convertValue(raw, object : TypeReference<WalletAccountsListResult>() {})
-    }
-
-    /** Wallet Adjustments Create */
-    suspend fun walletAdjustmentsCreate(body: CommerceStandardCommandRequest, idempotencyKey: String): WalletAdjustmentsCreateResult? {
-        val requestHeaders = buildRequestHeaders(
-            mapOf(
-                "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
-            ),
-            emptyMap()
-        )
-        val raw = client.post(ApiPaths.backendPath("/wallet/adjustments"), body, null, requestHeaders, "application/json")
-        return client.convertValue(raw, object : TypeReference<WalletAdjustmentsCreateResult>() {})
-    }
-
-    /** Wallet Exchange Rules List */
-    suspend fun walletExchangeRulesList(page: Int? = null, pageSize: Int? = null, status: String? = null): WalletExchangeRulesListResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("page", page, "form", true, false, null),
-            QueryParameterSpec("page_size", pageSize, "form", true, false, null),
-            QueryParameterSpec("status", status, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/wallet/exchange_rules"), query))
-        return client.convertValue(raw, object : TypeReference<WalletExchangeRulesListResult>() {})
-    }
-
-    /** Wallet Ledger Entries List */
-    suspend fun walletLedgerEntriesList(page: Int? = null, pageSize: Int? = null, status: String? = null): WalletLedgerEntriesListResult? {
-        val query = buildQueryString(listOf(
-            QueryParameterSpec("page", page, "form", true, false, null),
-            QueryParameterSpec("page_size", pageSize, "form", true, false, null),
-            QueryParameterSpec("status", status, "form", true, false, null)
-        ))
-        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/wallet/ledger_entries"), query))
-        return client.convertValue(raw, object : TypeReference<WalletLedgerEntriesListResult>() {})
     }
 
     private data class PathParameterSpec(val name: String, val style: String, val explode: Boolean)

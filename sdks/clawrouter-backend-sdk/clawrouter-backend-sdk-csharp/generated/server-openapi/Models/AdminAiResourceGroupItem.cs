@@ -14,9 +14,9 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? GroupName { get; set; }
         public string? GroupType { get; set; }
         public string? Id { get; set; }
-        public int? ResourceCount { get; set; }
+        public string? ResourceCount { get; set; }
         public string? SelectionMode { get; set; }
-        public int? SortOrder { get; set; }
+        public string? SortOrder { get; set; }
         public string? Status { get; set; }
         public List<string>? VendorCodes { get; set; }
     }

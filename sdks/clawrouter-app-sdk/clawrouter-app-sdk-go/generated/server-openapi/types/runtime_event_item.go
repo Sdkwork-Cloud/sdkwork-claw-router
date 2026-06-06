@@ -3,7 +3,7 @@ package types
 // Runtime event item schema exposed by Claw Router.
 type RuntimeEventItem struct {
 	CreatedAt string `json:"createdAt"`
-	EventNo int `json:"eventNo"`
+	EventNo string `json:"eventNo"`
 	EventSource string `json:"eventSource"`
 	EventType string `json:"eventType"`
 	Id string `json:"id"`

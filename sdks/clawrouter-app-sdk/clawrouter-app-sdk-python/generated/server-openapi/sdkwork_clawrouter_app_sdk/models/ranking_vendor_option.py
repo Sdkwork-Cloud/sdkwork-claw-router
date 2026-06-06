@@ -8,4 +8,4 @@ class RankingVendorOption:
     """Ranking vendor option schema exposed by Claw Router."""
     code: str
     label: str
-    model_count: int
+    model_count: str

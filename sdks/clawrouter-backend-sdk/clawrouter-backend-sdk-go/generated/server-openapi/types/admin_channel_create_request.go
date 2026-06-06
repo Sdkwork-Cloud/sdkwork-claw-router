@@ -9,13 +9,12 @@ type AdminChannelCreateRequest struct {
 	CredentialRotation string `json:"credentialRotation"`
 	Credentials []AdminChannelCredentialInput `json:"credentials"`
 	ExpiresAt string `json:"expiresAt"`
-	Models []string `json:"models"`
 	Name string `json:"name"`
 	Protocol string `json:"protocol"`
 	ResourceCodes []string `json:"resourceCodes"`
 	RetryPolicy ProviderRetryPolicy `json:"retryPolicy"`
 	Status string `json:"status"`
-	TimeoutMs int `json:"timeoutMs"`
+	TimeoutMs string `json:"timeoutMs"`
 	Vendor string `json:"vendor"`
-	Weight int `json:"weight"`
+	Weight string `json:"weight"`
 }

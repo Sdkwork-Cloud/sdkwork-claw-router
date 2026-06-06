@@ -12,6 +12,6 @@ class CourseApplicationVideoUploadResponse:
     content_type: str
     file_name: str
     sha256: str
-    size_bytes: int
+    size_bytes: str
     uploaded_at: str
     video: MediaResource

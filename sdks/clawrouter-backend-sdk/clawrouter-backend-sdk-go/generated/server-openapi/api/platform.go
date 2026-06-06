@@ -18,7 +18,7 @@ func NewPlatformApi(client *sdkhttp.Client) *PlatformApi {
 }
 
 // List apps
-func (a *PlatformApi) AppsList(q *string, status *string, marketStatus *string, appType *string, categoryId *int, page *int, pageSize *int) (sdktypes.AppsListResult, error) {
+func (a *PlatformApi) AppsList(q *string, status *string, marketStatus *string, appType *string, categoryId *string, page *string, pageSize *string) (sdktypes.AppsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "q", Value: func() interface{} { if q == nil { return nil }; return *q }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
@@ -87,7 +87,7 @@ func (a *PlatformApi) AppsCategoriesUpdate(categoryId string, body sdktypes.Admi
 }
 
 // List app templates
-func (a *PlatformApi) AppsTemplatesList(q *string, publishStatus *string, templateType *string, runtime *string, categoryId *int, page *int, pageSize *int) (sdktypes.AppsTemplatesListResult, error) {
+func (a *PlatformApi) AppsTemplatesList(q *string, publishStatus *string, templateType *string, runtime *string, categoryId *string, page *string, pageSize *string) (sdktypes.AppsTemplatesListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
         {Name: "q", Value: func() interface{} { if q == nil { return nil }; return *q }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "publish_status", Value: func() interface{} { if publishStatus == nil { return nil }; return *publishStatus }(), Style: "form", Explode: true, AllowReserved: false},

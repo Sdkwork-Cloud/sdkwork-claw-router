@@ -25,11 +25,11 @@ pub struct AdminAnalyticsModelRankItem {
     pub points: f64,
 
     /// Rank field on admin analytics model rank item.
-    pub rank: i64,
+    pub rank: String,
 
     /// Request count field on admin analytics model rank item.
     #[serde(rename = "requestCount")]
-    pub request_count: i64,
+    pub request_count: String,
 
     /// Total tokens field on admin analytics model rank item.
     #[serde(rename = "totalTokens")]
@@ -41,7 +41,7 @@ pub struct AdminAnalyticsModelRankItem {
 
     /// User count field on admin analytics model rank item.
     #[serde(rename = "userCount")]
-    pub user_count: i64,
+    pub user_count: String,
 
     /// Vendor field on admin analytics model rank item.
     pub vendor: String,

@@ -4,7 +4,7 @@ use serde::{Deserialize, Serialize};
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct DashboardAnnouncement {
     /// Id field on dashboard announcement.
-    pub id: i64,
+    pub id: String,
 
     /// Text field on dashboard announcement.
     pub text: String,

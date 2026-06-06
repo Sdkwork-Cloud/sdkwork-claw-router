@@ -34,7 +34,7 @@ public class Main {
         client.setApiKey("your-api-key");
 
         // Use the SDK
-        SessionsCurrentRetrieveResult result = client.getAuth().sessionsCurrentRetrieve();
+        ChannelGroupsListResult result = client.getAi().channelGroupsList();
         System.out.println(result);
     }
 }
@@ -79,39 +79,29 @@ client.getHttpClient().setHeader("X-Custom-Header", "value");
 
 ## API Modules
 
-- `client.getCommerce()` - commerce API
 - `client.getAgents()` - agents API
 - `client.getAi()` - ai API
-- `client.getAuth()` - auth API
 - `client.getChat()` - chat API
 - `client.getContent()` - content API
 - `client.getEcosystem()` - ecosystem API
 - `client.getIam()` - iam API
 - `client.getMemory()` - memory API
 - `client.getNotification()` - notification API
-- `client.getOpenPlatform()` - open_platform API
 - `client.getPlatform()` - platform API
 - `client.getSystem()` - system API
+- `client.getCommerce()` - commerce API
 - `client.getRuntime()` - runtime API
 - `client.getSdkReference()` - sdk_reference API
 
 ## Usage Examples
-
-### commerce
-
-```java
-// Accounts Current Summary Retrieve
-AccountsCurrentSummaryRetrieveResult result = client.getCommerce().accountsCurrentSummaryRetrieve();
-System.out.println(result);
-```
 
 ### agents
 
 ```java
 // List Playground agent definitions
 Map<String, Object> params = new LinkedHashMap<>();
-params.put("page", 1);
-params.put("page_size", 2);
+params.put("page", "page");
+params.put("page_size", "page-size");
 params.put("q", "q");
 AgentDefinitionsListResult result = client.getAgents().agentDefinitionsList(params);
 System.out.println(result);
@@ -125,21 +115,13 @@ ChannelGroupsListResult result = client.getAi().channelGroupsList();
 System.out.println(result);
 ```
 
-### auth
-
-```java
-// Retrieve current IAM session
-SessionsCurrentRetrieveResult result = client.getAuth().sessionsCurrentRetrieve();
-System.out.println(result);
-```
-
 ### chat
 
 ```java
 // List product chat conversations
 Map<String, Object> params = new LinkedHashMap<>();
-params.put("page", 1);
-params.put("page_size", 2);
+params.put("page", "page");
+params.put("page_size", "page-size");
 ConversationsListResult result = client.getChat().conversationsList(params);
 System.out.println(result);
 ```
@@ -173,8 +155,8 @@ System.out.println(result);
 ```java
 // List memory spaces
 Map<String, Object> params = new LinkedHashMap<>();
-params.put("page", 1);
-params.put("page_size", 2);
+params.put("page", "page");
+params.put("page_size", "page-size");
 SpacesListResult result = client.getMemory().spacesList(params);
 System.out.println(result);
 ```
@@ -192,16 +174,6 @@ NotificationsListResult result = client.getNotification().notificationsList(para
 System.out.println(result);
 ```
 
-### open_platform
-
-```java
-// Create open platform QR auth session
-OpenPlatformQrAuthSessionCreateRequest body = new OpenPlatformQrAuthSessionCreateRequest();
-body.setPurpose("login");
-QrAuthSessionsCreateResult result = client.getOpenPlatform().qrAuthSessionsCreate(body);
-System.out.println(result);
-```
-
 ### platform
 
 ```java
@@ -213,8 +185,19 @@ System.out.println(result);
 ### system
 
 ```java
-// Retrieve public IAM verification policy
-IamVerificationPolicyRetrieveResult result = client.getSystem().iamVerificationPolicyRetrieve();
+// Retrieve public site runtime branding settings
+Map<String, Object> params = new LinkedHashMap<>();
+params.put("tenant_code", "ok");
+params.put("organization_code", "ok");
+SiteRuntimeRetrieveResult result = client.getSystem().siteRuntimeRetrieve(params);
+System.out.println(result);
+```
+
+### commerce
+
+```java
+// Recharges Settings Retrieve
+RechargesSettingsRetrieveResult result = client.getCommerce().rechargesSettingsRetrieve();
 System.out.println(result);
 ```
 
@@ -223,8 +206,8 @@ System.out.println(result);
 ```java
 // List runtime invocations
 Map<String, Object> params = new LinkedHashMap<>();
-params.put("page", 1);
-params.put("page_size", 2);
+params.put("page", "page");
+params.put("page_size", "page-size");
 params.put("conversation_id", "1");
 params.put("chat_turn_id", "1");
 params.put("agent_session_id", "1");
@@ -250,7 +233,7 @@ System.out.println(result);
 
 ```java
 try {
-    SessionsCurrentRetrieveResult result = client.getAuth().sessionsCurrentRetrieve();
+    ChannelGroupsListResult result = client.getAi().channelGroupsList();
     System.out.println(result);
 } catch (Exception e) {
     System.err.println("Error: " + e.getMessage());

@@ -13,12 +13,6 @@ public class IamApi {
         this.client = client;
     }
 
-    /** List API key map */
-    public ApiKeysListResult apiKeysList() throws Exception {
-        Object raw = client.get(ApiPaths.backendPath("/iam/api_keys"));
-        return client.convertValue(raw, new TypeReference<ApiKeysListResult>() {});
-    }
-
     /** Create API key */
     public ApiKeysCreateResult apiKeysCreate(AdminApiKeyCreateRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
@@ -33,18 +27,6 @@ public class IamApi {
     public ApiKeysDeleteResult apiKeysDelete(String apiKeyId) throws Exception {
         Object raw = client.delete(ApiPaths.backendPath("/iam/api_keys/" + serializePathParameter(apiKeyId, new PathParameterSpec("apiKeyId", "simple", false)) + ""));
         return client.convertValue(raw, new TypeReference<ApiKeysDeleteResult>() {});
-    }
-
-    /** List users */
-    public UsersListResult usersList() throws Exception {
-        Object raw = client.get(ApiPaths.backendPath("/iam/users"));
-        return client.convertValue(raw, new TypeReference<UsersListResult>() {});
-    }
-
-    /** Create user */
-    public UsersCreateResult usersCreate(AdminUserCreateRequest body) throws Exception {
-        Object raw = client.post(ApiPaths.backendPath("/iam/users"), body, null, null, "application/json");
-        return client.convertValue(raw, new TypeReference<UsersCreateResult>() {});
     }
 
     /** Update user */

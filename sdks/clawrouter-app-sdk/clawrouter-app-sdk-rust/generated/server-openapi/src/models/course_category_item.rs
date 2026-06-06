@@ -8,7 +8,7 @@ pub struct CourseCategoryItem {
 
     /// Course count field on course category item.
     #[serde(rename = "courseCount")]
-    pub course_count: i64,
+    pub course_count: String,
 
     /// Description field on course category item.
     pub description: String,
@@ -28,5 +28,5 @@ pub struct CourseCategoryItem {
 
     /// Sort weight field on course category item.
     #[serde(rename = "sortWeight")]
-    pub sort_weight: i64,
+    pub sort_weight: String,
 }

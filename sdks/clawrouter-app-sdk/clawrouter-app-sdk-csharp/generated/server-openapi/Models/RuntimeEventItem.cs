@@ -7,7 +7,7 @@ namespace Sdkwork.ClawRouter.App.Models
     public class RuntimeEventItem
     {
         public string? CreatedAt { get; set; }
-        public int? EventNo { get; set; }
+        public string? EventNo { get; set; }
         public string? EventSource { get; set; }
         public string? EventType { get; set; }
         public string? Id { get; set; }

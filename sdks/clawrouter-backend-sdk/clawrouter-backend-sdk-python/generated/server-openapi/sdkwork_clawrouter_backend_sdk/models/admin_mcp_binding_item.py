@@ -10,17 +10,17 @@ class AdminMcpBindingItem:
     created_at: str
     denied_tools: List[str]
     enabled: bool
-    id: int
-    organization_id: int
-    owner_id: int
+    id: str
+    organization_id: str
+    owner_id: str
     owner_type: str
     policy_json: Dict[str, str]
     priority: int
-    server_id: int
+    server_id: str
     snapshot_json: Dict[str, str]
     status: str
-    tenant_id: int
+    tenant_id: str
     updated_at: str
     uuid: str
-    server_revision_id: Optional[int] = None
-    tool_id: Optional[int] = None
+    server_revision_id: Optional[str] = None
+    tool_id: Optional[str] = None

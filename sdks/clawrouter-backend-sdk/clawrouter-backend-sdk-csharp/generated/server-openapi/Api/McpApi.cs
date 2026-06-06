@@ -34,7 +34,7 @@ namespace Sdkwork.ClawRouter.Backend.Api
         /// <summary>
         /// List MCP servers
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.ServersListResult?> ServersListAsync(int? page = null, int? pageSize = null, string? q = null, string? transport = null, string? visibility = null, string? status = null, string? categoryId = null)
+        public async Task<Sdkwork.ClawRouter.Backend.Models.ServersListResult?> ServersListAsync(string? page = null, string? pageSize = null, string? q = null, string? transport = null, string? visibility = null, string? status = null, string? categoryId = null)
         {
             var queryString = BuildQueryString(new[]
             {

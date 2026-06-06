@@ -56,7 +56,7 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// List model rankings
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.ModelRankingsListResult?> ModelRankingsListAsync(string? rankScope = null, string? vendorCode = null, string? modality = null, string? q = null, int? limit = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.ModelRankingsListResult?> ModelRankingsListAsync(string? rankScope = null, string? vendorCode = null, string? modality = null, string? q = null, string? limit = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -80,7 +80,7 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// List models
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.ModelsListResult?> ModelsListAsync(string? billingMeter = null, string? vendorCode = null, List<string>? vendorCodes = null, List<string>? modalities = null, List<string>? capabilities = null, List<string>? categories = null, List<string>? groups = null, string? q = null, int? limit = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.ModelsListResult?> ModelsListAsync(string? billingMeter = null, string? vendorCode = null, List<string>? vendorCodes = null, List<string>? modalities = null, List<string>? capabilities = null, List<string>? categories = null, List<string>? groups = null, string? q = null, string? limit = null)
         {
             var queryString = BuildQueryString(new[]
             {
@@ -132,7 +132,7 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// List logs
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.UsageLogsListResult?> UsageLogsListAsync(int? page = null, int? pageSize = null, string? q = null, string? status = null, string? startTime = null, string? endTime = null)
+        public async Task<Sdkwork.ClawRouter.App.Models.UsageLogsListResult?> UsageLogsListAsync(string? page = null, string? pageSize = null, string? q = null, string? status = null, string? startTime = null, string? endTime = null)
         {
             var queryString = BuildQueryString(new[]
             {

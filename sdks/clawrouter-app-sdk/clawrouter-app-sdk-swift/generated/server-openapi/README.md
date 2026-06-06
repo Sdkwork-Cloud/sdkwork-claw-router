@@ -23,7 +23,7 @@ let client = SdkworkAppClient(config: config)
 client.setApiKey("your-api-key")
 
 // Use the SDK
-let result = try await client.auth.sessionsCurrentRetrieve()
+let result = try await client.ai.channelGroupsList()
 print(result)
 ```
 
@@ -66,39 +66,29 @@ client.setHeader("X-Custom-Header", value: "value")
 
 ## API Modules
 
-- `client.commerce` - commerce API
 - `client.agents` - agents API
 - `client.ai` - ai API
-- `client.auth` - auth API
 - `client.chat` - chat API
 - `client.content` - content API
 - `client.ecosystem` - ecosystem API
 - `client.iam` - iam API
 - `client.memory` - memory API
 - `client.notification` - notification API
-- `client.openPlatform` - open_platform API
 - `client.platform` - platform API
 - `client.system` - system API
+- `client.commerce` - commerce API
 - `client.runtime` - runtime API
 - `client.sdkReference` - sdk_reference API
 
 ## Usage Examples
-
-### commerce
-
-```swift
-// Accounts Current Summary Retrieve
-let result = try await client.commerce.accountsCurrentSummaryRetrieve()
-print(result)
-```
 
 ### agents
 
 ```swift
 // List Playground agent definitions
 let params: [String: Any] = [
-    "page": 1,
-    "page_size": 2,
+    "page": "page",
+    "page_size": "page-size",
     "q": "q"
 ]
 let result = try await client.agents.agentDefinitionsList(params: params)
@@ -113,21 +103,13 @@ let result = try await client.ai.channelGroupsList()
 print(result)
 ```
 
-### auth
-
-```swift
-// Retrieve current IAM session
-let result = try await client.auth.sessionsCurrentRetrieve()
-print(result)
-```
-
 ### chat
 
 ```swift
 // List product chat conversations
 let params: [String: Any] = [
-    "page": 1,
-    "page_size": 2
+    "page": "page",
+    "page_size": "page-size"
 ]
 let result = try await client.chat.conversationsList(params: params)
 print(result)
@@ -162,8 +144,8 @@ print(result)
 ```swift
 // List memory spaces
 let params: [String: Any] = [
-    "page": 1,
-    "page_size": 2
+    "page": "page",
+    "page_size": "page-size"
 ]
 let result = try await client.memory.spacesList(params: params)
 print(result)
@@ -183,15 +165,6 @@ let result = try await client.notification.notificationsList(params: params)
 print(result)
 ```
 
-### open_platform
-
-```swift
-// Create open platform QR auth session
-let body = OpenPlatformQrAuthSessionCreateRequest(purpose: "login")
-let result = try await client.openPlatform.qrAuthSessionsCreate(body: body)
-print(result)
-```
-
 ### platform
 
 ```swift
@@ -203,8 +176,20 @@ print(result)
 ### system
 
 ```swift
-// Retrieve public IAM verification policy
-let result = try await client.system.iamVerificationPolicyRetrieve()
+// Retrieve public site runtime branding settings
+let params: [String: Any] = [
+    "tenant_code": "ok",
+    "organization_code": "ok"
+]
+let result = try await client.system.siteRuntimeRetrieve(params: params)
+print(result)
+```
+
+### commerce
+
+```swift
+// Recharges Settings Retrieve
+let result = try await client.commerce.rechargesSettingsRetrieve()
 print(result)
 ```
 
@@ -213,8 +198,8 @@ print(result)
 ```swift
 // List runtime invocations
 let params: [String: Any] = [
-    "page": 1,
-    "page_size": 2,
+    "page": "page",
+    "page_size": "page-size",
     "conversation_id": "1",
     "chat_turn_id": "1",
     "agent_session_id": "1",
@@ -242,7 +227,7 @@ print(result)
 
 ```swift
 do {
-    try await client.auth.sessionsCurrentRetrieve()
+    try await client.ai.channelGroupsList()
 } catch {
     print("Error: \(error)")
 }

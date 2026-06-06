@@ -1,16 +1,16 @@
 package com.sdkwork.clawrouter.backend
 
 data class AdminCacheSummary(
-    val cacheDeletes: Int? = null,
-    val cacheErrors: Int? = null,
-    val cacheHits: Int? = null,
-    val cacheInspections: Int? = null,
-    val cacheMisses: Int? = null,
-    val cacheRefreshes: Int? = null,
-    val cacheWrites: Int? = null,
-    val expiredEntries: Int? = null,
+    val cacheDeletes: String? = null,
+    val cacheErrors: String? = null,
+    val cacheHits: String? = null,
+    val cacheInspections: String? = null,
+    val cacheMisses: String? = null,
+    val cacheRefreshes: String? = null,
+    val cacheWrites: String? = null,
+    val expiredEntries: String? = null,
     val runtimeTarget: String? = null,
-    val totalEntries: Int? = null,
-    val totalInstances: Int? = null,
-    val totalNamespaces: Int? = null
+    val totalEntries: String? = null,
+    val totalInstances: String? = null,
+    val totalNamespaces: String? = null
 )

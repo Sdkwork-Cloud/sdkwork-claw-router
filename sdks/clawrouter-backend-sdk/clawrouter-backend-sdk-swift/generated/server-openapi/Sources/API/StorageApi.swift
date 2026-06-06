@@ -8,7 +8,7 @@ public class StorageApi {
     }
 
     /// List storage buckets
-    public func ossBucketsList(cursor: String? = nil, limit: Int? = nil, status: String? = nil) async throws -> OssBucketsListResult? {
+    public func ossBucketsList(cursor: String? = nil, limit: String? = nil, status: String? = nil) async throws -> OssBucketsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "cursor", value: cursor, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "limit", value: limit, style: "form", explode: true, allowReserved: false, contentType: nil),
@@ -47,7 +47,7 @@ public class StorageApi {
     }
 
     /// List storage garbage collection jobs
-    public func ossGcJobsList(cursor: String? = nil, limit: Int? = nil, status: String? = nil) async throws -> OssGcJobsListResult? {
+    public func ossGcJobsList(cursor: String? = nil, limit: String? = nil, status: String? = nil) async throws -> OssGcJobsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "cursor", value: cursor, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "limit", value: limit, style: "form", explode: true, allowReserved: false, contentType: nil),
@@ -110,7 +110,7 @@ public class StorageApi {
     }
 
     /// List storage reconciliation runs
-    public func ossReconciliationRunsList(cursor: String? = nil, limit: Int? = nil, runType: String? = nil, status: String? = nil) async throws -> OssReconciliationRunsListResult? {
+    public func ossReconciliationRunsList(cursor: String? = nil, limit: String? = nil, runType: String? = nil, status: String? = nil) async throws -> OssReconciliationRunsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "cursor", value: cursor, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "limit", value: limit, style: "form", explode: true, allowReserved: false, contentType: nil),
@@ -132,7 +132,7 @@ public class StorageApi {
     }
 
     /// List storage usage counters
-    public func ossUsageList(cursor: String? = nil, limit: Int? = nil, scopeType: String? = nil, scopeId: String? = nil) async throws -> OssUsageListResult? {
+    public func ossUsageList(cursor: String? = nil, limit: String? = nil, scopeType: String? = nil, scopeId: String? = nil) async throws -> OssUsageListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "cursor", value: cursor, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "limit", value: limit, style: "form", explode: true, allowReserved: false, contentType: nil),
@@ -143,7 +143,7 @@ public class StorageApi {
     }
 
     /// List storage usage ledger
-    public func ossUsageLedgerList(cursor: String? = nil, limit: Int? = nil, scopeType: String? = nil, scopeId: String? = nil) async throws -> OssUsageLedgerListResult? {
+    public func ossUsageLedgerList(cursor: String? = nil, limit: String? = nil, scopeType: String? = nil, scopeId: String? = nil) async throws -> OssUsageLedgerListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "cursor", value: cursor, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "limit", value: limit, style: "form", explode: true, allowReserved: false, contentType: nil),
@@ -154,7 +154,7 @@ public class StorageApi {
     }
 
     /// List storage usage snapshots
-    public func ossUsageSnapshotsList(cursor: String? = nil, limit: Int? = nil, scopeType: String? = nil, scopeId: String? = nil) async throws -> OssUsageSnapshotsListResult? {
+    public func ossUsageSnapshotsList(cursor: String? = nil, limit: String? = nil, scopeType: String? = nil, scopeId: String? = nil) async throws -> OssUsageSnapshotsListResult? {
         let query = buildQueryString([
             QueryParameterSpec(name: "cursor", value: cursor, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "limit", value: limit, style: "form", explode: true, allowReserved: false, contentType: nil),

@@ -11,22 +11,22 @@ if TYPE_CHECKING:
 class ForumFeedItem:
     """Forum feed item schema exposed by Claw Router."""
     author: ForumAuthor
-    category_id: int
-    comment_count: int
+    category_id: str
+    comment_count: str
     content: str
     content_type: str
     cover: MediaResource
     created_at: str
-    id: int
+    id: str
     is_collected: bool
     is_hot: bool
     is_liked: bool
     is_recommended: bool
     is_top: bool
-    like_count: int
-    share_count: int
+    like_count: str
+    share_count: str
     summary: str
     tags: List[str]
     title: str
     updated_at: str
-    view_count: int
+    view_count: str

@@ -12,12 +12,12 @@ class ForumCommentItem:
     author: ForumAuthor
     comment_id: str
     content: str
-    content_id: int
+    content_id: str
     content_type: str
     created_at: str
     is_top: bool
-    likes: int
-    reply_count: int
+    likes: str
+    reply_count: str
     status: str
-    user_id: int
-    parent_id: Optional[int] = None
+    user_id: str
+    parent_id: Optional[str] = None

@@ -6,6 +6,6 @@ type AdminMcpHealthCheckResponse struct {
 	ErrorMasked string `json:"errorMasked"`
 	HealthStatus string `json:"healthStatus"`
 	Healthy bool `json:"healthy"`
-	LatencyMs int `json:"latencyMs"`
-	ServerId int `json:"serverId"`
+	LatencyMs string `json:"latencyMs"`
+	ServerId string `json:"serverId"`
 }

@@ -11,17 +11,16 @@ type AdminChannelItem struct {
 	CreatedAt string `json:"createdAt"`
 	CredentialRotation string `json:"credentialRotation"`
 	Credentials []AdminChannelCredentialItem `json:"credentials"`
-	Errors int `json:"errors"`
+	Errors string `json:"errors"`
 	ExpiresAt string `json:"expiresAt"`
 	Id string `json:"id"`
 	IsMultimodal bool `json:"isMultimodal"`
-	Models []string `json:"models"`
 	Name string `json:"name"`
 	Protocol string `json:"protocol"`
 	ResourceCodes []string `json:"resourceCodes"`
 	RetryPolicy ProviderRetryPolicy `json:"retryPolicy"`
 	Status string `json:"status"`
-	TimeoutMs int `json:"timeoutMs"`
+	TimeoutMs string `json:"timeoutMs"`
 	Vendor string `json:"vendor"`
-	Weight int `json:"weight"`
+	Weight string `json:"weight"`
 }

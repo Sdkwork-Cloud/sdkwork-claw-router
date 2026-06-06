@@ -24,7 +24,7 @@ pub struct CommerceMembershipBenefitMutationRequest {
 
     /// Id field on commerce membership benefit mutation request.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub id: Option<i64>,
+    pub id: Option<String>,
 
     /// Name field on commerce membership benefit mutation request.
     pub name: String,
@@ -36,10 +36,10 @@ pub struct CommerceMembershipBenefitMutationRequest {
     /// Usage limit field on commerce membership benefit mutation request.
     #[serde(rename = "usageLimit")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub usage_limit: Option<i64>,
+    pub usage_limit: Option<String>,
 
     /// Used count field on commerce membership benefit mutation request.
     #[serde(rename = "usedCount")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub used_count: Option<i64>,
+    pub used_count: Option<String>,
 }
