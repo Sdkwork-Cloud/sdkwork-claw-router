@@ -54,9 +54,13 @@ impl InvocationPipeline {
         error: &InvocationError,
     ) {
         for index in started.iter().rev() {
-            let _ = self.interceptors[*index]
-                .on_error(invocation, error)
-                .await;
+            let _ = self.interceptors[*index].on_error(invocation, error).await;
+        }
+        for (index, interceptor) in self.interceptors.iter().enumerate().rev() {
+            if started.contains(&index) || !interceptor.observe_pipeline_errors() {
+                continue;
+            }
+            let _ = interceptor.on_error(invocation, error).await;
         }
     }
 }

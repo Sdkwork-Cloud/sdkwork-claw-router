@@ -9,6 +9,10 @@ pub type InvocationFuture<'a, T> =
 pub trait InvocationInterceptor: Send + Sync + 'static {
     fn name(&self) -> &str;
 
+    fn observe_pipeline_errors(&self) -> bool {
+        false
+    }
+
     fn before<'a>(&'a self, _invocation: &'a mut Invocation) -> InvocationFuture<'a, ()> {
         Box::pin(async { Ok(()) })
     }

@@ -43,9 +43,18 @@ fn constructs_token_model_invocation() {
 
     assert_eq!("req-chat", invocation.request.request_id);
     assert_eq!("/v1/chat/completions", invocation.request.path);
-    assert_eq!(Some("gpt-4o-mini"), invocation.resource.requested_model.as_deref());
-    assert_eq!(AiRouteStrategy::StatelessFailover, invocation.routing.strategy);
-    assert_eq!(AiRouteFailureStrategy::Failover, invocation.routing.failure_strategy);
+    assert_eq!(
+        Some("gpt-4o-mini"),
+        invocation.resource.requested_model.as_deref()
+    );
+    assert_eq!(
+        AiRouteStrategy::StatelessFailover,
+        invocation.routing.strategy
+    );
+    assert_eq!(
+        AiRouteFailureStrategy::Failover,
+        invocation.routing.failure_strategy
+    );
     assert!(invocation.billing.pricing_required);
     assert!(invocation.billing.settlement_required);
 }
@@ -63,8 +72,14 @@ fn constructs_api_request_invocation() {
 
     let invocation = Invocation::new(request, test_subject(), resource, billing);
 
-    assert_eq!(AiRouteStrategy::CreateThenSticky, invocation.routing.strategy);
-    assert_eq!(AiRouteFailureStrategy::FailClosed, invocation.routing.failure_strategy);
+    assert_eq!(
+        AiRouteStrategy::CreateThenSticky,
+        invocation.routing.strategy
+    );
+    assert_eq!(
+        AiRouteFailureStrategy::FailClosed,
+        invocation.routing.failure_strategy
+    );
     assert_eq!(
         Some("file"),
         invocation
@@ -78,8 +93,7 @@ fn constructs_api_request_invocation() {
 
 #[test]
 fn constructs_free_invocation_without_settlement() {
-    let request =
-        InvocationRequest::new(Method::GET, "/v1/models").with_request_id("req-models");
+    let request = InvocationRequest::new(Method::GET, "/v1/models").with_request_id("req-models");
     let subject = InvocationSubject::anonymous_free(10, 20);
     let resource = InvocationResource::free_endpoint(
         "openai/management/models",
@@ -110,7 +124,10 @@ fn constructs_lookup_sticky_resource_invocation() {
     let invocation = Invocation::new(request, test_subject(), resource, billing);
 
     assert_eq!(AiRouteStrategy::LookupSticky, invocation.routing.strategy);
-    assert_eq!(AiRouteFailureStrategy::FailClosed, invocation.routing.failure_strategy);
+    assert_eq!(
+        AiRouteFailureStrategy::FailClosed,
+        invocation.routing.failure_strategy
+    );
     let sticky = invocation.routing.sticky.expect("sticky routing");
     assert_eq!("file", sticky.object_type);
     assert_eq!(Some("file_123"), sticky.object_id.as_deref());

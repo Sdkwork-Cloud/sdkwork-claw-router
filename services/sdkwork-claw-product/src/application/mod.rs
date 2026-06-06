@@ -60,12 +60,23 @@ pub use cache_runtime::{
 };
 pub use category_seed::{load_admin_category_seed_bundles, DEFAULT_ADMIN_CATEGORY_SEED_DATASETS};
 pub use invocation::{
-    BillingMode, BillingQuantitySource, DispatchMode, Invocation, InvocationAccount,
-    InvocationAuthType, InvocationBilling, InvocationBody, InvocationDispatch, InvocationId,
-    InvocationRequest, InvocationResource, InvocationRouting, InvocationShape, InvocationSubject,
-    InvocationSurface, InvocationTelemetry, InvocationUsage, ResourceType, StickyMode,
-    StickyRouting, StickyScope, InvocationError, InvocationErrorKind, InvocationFuture,
-    InvocationInterceptor, InvocationPipeline,
+    AccountResolutionInterceptor, BillingMode, BillingPolicyInterceptor, BillingQuantitySource,
+    DispatchExecutor, DispatchMode, Invocation, InvocationAccount, InvocationAdapterTarget,
+    InvocationAuthType, InvocationBilling, InvocationBody, InvocationClassification,
+    InvocationClassificationRequest, InvocationDispatch, InvocationDispatchResponse,
+    InvocationError, InvocationErrorKind, InvocationFuture, InvocationId, InvocationInterceptor,
+    InvocationNormalizedResponse, InvocationPipeline, InvocationPricingQuote,
+    InvocationProviderRequest, InvocationRequest, InvocationResource, InvocationResourceClassifier,
+    InvocationRouteAttempt, InvocationRouteCandidate, InvocationRouteCandidateKind,
+    InvocationRoutePlan, InvocationRouting, InvocationShape, InvocationSubject, InvocationSurface,
+    InvocationTelemetry, InvocationUsage, InvocationUsageLine, InvocationUsageLineRole,
+    OpenAiResourceClassifier, PayloadExtractionInterceptor, PricingFinalizationInterceptor,
+    PricingPreflightInterceptor, PricingSettlementInterceptor, ProviderAdapterDispatchInterceptor,
+    ProviderNativeResourceClassifier, RequestTransformInterceptor, ResolvedProviderSecret,
+    ResourceType, ResponseNormalizationInterceptor, RoutePlanningInterceptor,
+    SecretResolutionInterceptor, StickyCommitInterceptor, StickyMode, StickyResolutionInterceptor,
+    StickyRouteConstraint, StickyRouting, StickyScope, TraceTelemetryInterceptor,
+    UsageExtractionInterceptor, UsageRecordingInterceptor,
 };
 pub use model_catalog_query::{
     ListModelCatalogQuery, ModelCatalogGroup, ModelCatalogItem, ModelCatalogPage,

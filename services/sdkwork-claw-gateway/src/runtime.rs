@@ -38,18 +38,18 @@ use sdkwork_claw_product::infrastructure::sql::installer::{
     log_bootstrap_admin_report, DatabaseInstallError, DatabaseInstaller,
 };
 use sdkwork_claw_product::infrastructure::sql::postgres::{
-    PostgresCatalogLoadError, PostgresGatewayUsageRecorder,
-    PostgresOpenAiInvocationTelemetryPlugin, PostgresPricingCatalogLoader,
+    PostgresCatalogLoadError, PostgresGatewayUsageRecorder, PostgresPricingCatalogLoader,
     PostgresUsageSettlementStore,
 };
 use sdkwork_claw_product::infrastructure::sql::sqlite::{
-    SqlCatalogLoadError, SqliteGatewayUsageRecorder, SqliteOpenAiInvocationTelemetryPlugin,
-    SqlitePricingCatalogLoader, SqliteUsageSettlementStore,
+    SqlCatalogLoadError, SqliteGatewayUsageRecorder, SqlitePricingCatalogLoader,
+    SqliteUsageSettlementStore,
 };
 use sdkwork_claw_product::ports::{
     ChatCompletionRelay, ChatCompletionStreamRelay, EmbeddingsRelay, GatewayRequestTraceCommand,
     GatewayUsageRecordCommand, GatewayUsageRecordFuture, GatewayUsageRecorder, PricingCatalog,
-    ProviderHealthProbe, ProviderSecretResolver, ResponsesRelay, UsageSettlementStore,
+    ProviderHealthProbe, ProviderSecretResolver, ResponsesRelay, StickyRouteStore,
+    UsageSettlementStore,
 };
 use sdkwork_claw_provider_adapter_contract::AdapterRouteStatus;
 use sdkwork_claw_provider_adapter_http::ProviderAdapterHttpClient;
@@ -61,9 +61,11 @@ use tokio::sync::Notify;
 use tokio::time::{sleep, Duration};
 
 use crate::edge_server::EdgeInProcessUpstreams;
-use crate::route_scoped_openai_passthrough::StickyObjectRouteStore;
+use crate::invocation_router::invocation_router_with_full_pipeline_and_provider_adapter_config;
+use crate::invocation_sticky_store::InvocationStickyObjectRouteStore;
 use crate::router;
 use crate::router_with_database_status_and_passthrough_placeholder;
+use crate::InvocationHttpDispatcher;
 
 type ApiKeyHasher = Arc<dyn ApiKeySecretHasher + Send + Sync>;
 type ApiKeyCodec = Arc<dyn ApiKeySecretCodec + Send + Sync>;
@@ -73,6 +75,59 @@ type EmbeddingRelay = Arc<dyn EmbeddingsRelay + Send + Sync>;
 type ResponseRelay = Arc<dyn ResponsesRelay + Send + Sync>;
 type UsageRecorder = Arc<dyn GatewayUsageRecorder + Send + Sync>;
 type SettlementStore = Arc<dyn UsageSettlementStore + Send + Sync>;
+
+fn router_with_invocation_runtime_routes<C>(
+    base_router: Router,
+    catalog: Arc<C>,
+    api_key_hasher: ApiKeyHasher,
+    provider_secret_resolver: Option<Arc<RefreshableProviderSecretMapResolver>>,
+    sticky_store: Option<Arc<dyn StickyRouteStore>>,
+    usage_recorder: Option<UsageRecorder>,
+    provider_adapter_config: Option<ProviderAdapterConfig>,
+) -> Router
+where
+    C: PricingCatalog + Send + Sync + 'static,
+{
+    let secret_resolver = provider_secret_resolver.map(|resolver| {
+        let resolver: Arc<dyn ProviderSecretResolver + Send + Sync> = resolver;
+        resolver
+    });
+    base_router.merge(
+        invocation_router_with_full_pipeline_and_provider_adapter_config(
+            catalog,
+            api_key_hasher,
+            Arc::new(InvocationHttpDispatcher::new()),
+            secret_resolver,
+            sticky_store,
+            usage_recorder,
+            provider_adapter_config,
+        ),
+    )
+}
+
+fn router_with_invocation_runtime_and_provider_native_routes<C>(
+    base_router: Router,
+    catalog: Arc<C>,
+    api_key_hasher: ApiKeyHasher,
+    provider_secret_resolver: Option<Arc<RefreshableProviderSecretMapResolver>>,
+    sticky_store: Option<Arc<dyn StickyRouteStore>>,
+    usage_recorder: Option<UsageRecorder>,
+    _provider_passthrough_config: Option<ProviderRelayConfig>,
+    provider_adapter_config: Option<ProviderAdapterConfig>,
+) -> Router
+where
+    C: PricingCatalog + Send + Sync + 'static,
+{
+    router_with_invocation_runtime_routes(
+        base_router,
+        catalog,
+        api_key_hasher,
+        provider_secret_resolver,
+        sticky_store,
+        usage_recorder,
+        provider_adapter_config,
+    )
+}
 
 #[derive(Clone)]
 struct NotifyingGatewayUsageRecorder {
@@ -177,9 +232,7 @@ struct AllInOneRuntimeContext {
     api_key_security_config: ApiKeySecurityConfig,
     provider_relay_config: Option<ProviderRelayConfig>,
     provider_adapter_config: Option<ProviderAdapterConfig>,
-    provider_runtime: ProviderRelayRuntimeConfig,
     provider_secret_resolver: Option<Arc<RefreshableProviderSecretMapResolver>>,
-    prefer_secret_ref_openai_runtime: bool,
     trusted_subject_config: TrustedSubjectConfig,
     app_session_config: AppSessionConfig,
     payment_webhook_config: PaymentWebhookConfig,
@@ -361,26 +414,35 @@ fn router_with_openai_runtime_routes<C>(
     provider_adapter_config: Option<ProviderAdapterConfig>,
     provider_secret_resolver: Option<Arc<RefreshableProviderSecretMapResolver>>,
     _prefer_secret_ref_openai_runtime: bool,
-    sticky_store: Option<StickyObjectRouteStore>,
+    sticky_store: Option<Arc<dyn StickyRouteStore>>,
 ) -> Router
 where
     C: PricingCatalog + Send + Sync + 'static,
 {
-    let has_route_scoped_openai_passthrough = provider_secret_resolver.is_some();
-    let base_router = if !has_route_scoped_openai_passthrough {
-        match provider_passthrough_config.clone() {
-            Some(config) => base_router.merge(
-                crate::passthrough::authenticated_stored_chat_completion_passthrough_router(
-                    config,
-                    Arc::clone(&catalog),
-                    Arc::clone(&api_key_hasher),
-                ),
+    let base_router = match provider_passthrough_config.clone() {
+        Some(config) if provider_secret_resolver.is_none() => base_router.merge(
+            crate::passthrough::authenticated_stored_chat_completion_passthrough_router(
+                config,
+                Arc::clone(&catalog),
+                Arc::clone(&api_key_hasher),
             ),
-            None => base_router,
-        }
-    } else {
-        base_router
+        ),
+        _ => base_router,
     };
+
+    if provider_secret_resolver.is_some() {
+        return router_with_invocation_runtime_and_provider_native_routes(
+            base_router,
+            Arc::clone(&catalog),
+            Arc::clone(&api_key_hasher),
+            provider_secret_resolver.clone(),
+            sticky_store,
+            usage_recorder.clone(),
+            provider_passthrough_config,
+            provider_adapter_config,
+        );
+    }
+
     let chat_router = match (relays.chat, relays.chat_stream) {
         (Some(relay), Some(stream_relay)) => {
             if let Some(usage_recorder) = usage_recorder.clone() {
@@ -502,34 +564,8 @@ where
         .merge(responses_router)
         .merge(chat_router);
 
-    let router = if has_route_scoped_openai_passthrough {
-        let secret_resolver = provider_secret_resolver
-            .clone()
-            .expect("route scoped OpenAI passthrough requires a secret resolver");
-        router.merge(crate::passthrough::route_scoped_openai_passthrough_router(
-            Arc::clone(&catalog),
-            Arc::clone(&api_key_hasher),
-            secret_resolver,
-            usage_recorder.clone(),
-            sticky_store,
-        ))
-    } else {
-        router
-    };
-
-    match (provider_passthrough_config, has_route_scoped_openai_passthrough) {
-        (Some(config), true) => router.merge(
-            crate::passthrough::authenticated_provider_native_passthrough_router_with_adapter_config(
-                Some(config),
-                catalog,
-                api_key_hasher,
-                provider_adapter_config,
-                provider_secret_resolver
-                    .map(|resolver| resolver as Arc<dyn ProviderSecretResolver + Send + Sync>),
-                usage_recorder.clone(),
-            ),
-        ),
-        (Some(config), false) => router.merge(
+    match provider_passthrough_config {
+        Some(config) => router.merge(
             crate::passthrough::authenticated_gateway_passthrough_router_with_adapter_config(
                 config,
                 catalog,
@@ -538,18 +574,7 @@ where
                 usage_recorder.clone(),
             ),
         ),
-        (None, true) => router.merge(
-            crate::passthrough::authenticated_provider_native_passthrough_router_with_adapter_config(
-                None,
-                catalog,
-                api_key_hasher,
-                provider_adapter_config,
-                provider_secret_resolver
-                    .map(|resolver| resolver as Arc<dyn ProviderSecretResolver + Send + Sync>),
-                usage_recorder.clone(),
-            ),
-        ),
-        _ => router,
+        None => router,
     }
 }
 
@@ -717,20 +742,6 @@ async fn router_with_database_api_key_provider_configs_usage_settlement_worker_c
                 provider_secret_map_config.clone(),
                 snapshot.managed_provider_secrets(),
             );
-            let prefer_secret_ref_openai_runtime = provider_secret_resolver.is_some();
-            let relays = apply_provider_adapter_config(
-                build_openai_runtime_relays(
-                    provider_relay_config.clone(),
-                    provider_secret_resolver.clone(),
-                    provider_runtime.clone(),
-                    prefer_secret_ref_openai_runtime,
-                )?,
-                provider_adapter_config.clone(),
-                provider_secret_resolver.clone().map(|resolver| {
-                    let resolver: Arc<dyn ProviderSecretResolver + Send + Sync> = resolver;
-                    resolver
-                }),
-            )?;
             let catalog = Arc::new(RefreshableSqlPricingCatalog::new(snapshot));
             let usage_settlement_wakeup =
                 maybe_spawn_sqlite_usage_settlement_worker(&pool, usage_settlement_worker_config)
@@ -739,11 +750,6 @@ async fn router_with_database_api_key_provider_configs_usage_settlement_worker_c
                 Arc::new(SqliteGatewayUsageRecorder::new(pool.clone())),
                 usage_settlement_wakeup,
             );
-            let invocation_plugins =
-                vec![
-                    Arc::new(SqliteOpenAiInvocationTelemetryPlugin::new(pool.clone()))
-                        as OpenAiInvocationPluginRef,
-                ];
             spawn_sqlite_catalog_refresh_worker(
                 &pool,
                 Arc::clone(&catalog),
@@ -752,23 +758,17 @@ async fn router_with_database_api_key_provider_configs_usage_settlement_worker_c
                 provider_runtime.catalog_refresh_interval,
                 provider_runtime.circuit_breaker_recovery_window_seconds,
             );
-            Ok(router_with_openai_runtime_routes(
-                router_with_database_status_and_passthrough_placeholder(
-                    Some(&config),
-                    provider_passthrough_config.is_none() && provider_secret_resolver.is_none(),
-                ),
+            Ok(router_with_invocation_runtime_and_provider_native_routes(
+                router_with_database_status_and_passthrough_placeholder(Some(&config), false),
                 catalog,
                 api_key_hasher,
-                relays,
+                provider_secret_resolver.clone(),
+                Some(Arc::new(InvocationStickyObjectRouteStore::sqlite(
+                    pool.clone(),
+                ))),
                 Some(usage_recorder),
-                invocation_plugins,
-                provider_runtime.failure_strategy,
-                provider_runtime.default_retry_policy.clone(),
                 provider_passthrough_config,
                 provider_adapter_config.clone(),
-                provider_secret_resolver.clone(),
-                prefer_secret_ref_openai_runtime,
-                Some(StickyObjectRouteStore::sqlite(pool.clone())),
             ))
         }
         DatabaseEngine::Postgres => {
@@ -800,20 +800,6 @@ async fn router_with_database_api_key_provider_configs_usage_settlement_worker_c
                 provider_secret_map_config.clone(),
                 snapshot.managed_provider_secrets(),
             );
-            let prefer_secret_ref_openai_runtime = provider_secret_resolver.is_some();
-            let relays = apply_provider_adapter_config(
-                build_openai_runtime_relays(
-                    provider_relay_config.clone(),
-                    provider_secret_resolver.clone(),
-                    provider_runtime.clone(),
-                    prefer_secret_ref_openai_runtime,
-                )?,
-                provider_adapter_config.clone(),
-                provider_secret_resolver.clone().map(|resolver| {
-                    let resolver: Arc<dyn ProviderSecretResolver + Send + Sync> = resolver;
-                    resolver
-                }),
-            )?;
             let catalog = Arc::new(RefreshableSqlPricingCatalog::new(snapshot));
             let usage_settlement_wakeup =
                 maybe_spawn_postgres_usage_settlement_worker(&pool, usage_settlement_worker_config)
@@ -822,11 +808,6 @@ async fn router_with_database_api_key_provider_configs_usage_settlement_worker_c
                 Arc::new(PostgresGatewayUsageRecorder::new(pool.clone())),
                 usage_settlement_wakeup,
             );
-            let invocation_plugins =
-                vec![
-                    Arc::new(PostgresOpenAiInvocationTelemetryPlugin::new(pool.clone()))
-                        as OpenAiInvocationPluginRef,
-                ];
             spawn_postgres_catalog_refresh_worker(
                 &pool,
                 Arc::clone(&catalog),
@@ -835,23 +816,17 @@ async fn router_with_database_api_key_provider_configs_usage_settlement_worker_c
                 provider_runtime.catalog_refresh_interval,
                 provider_runtime.circuit_breaker_recovery_window_seconds,
             );
-            Ok(router_with_openai_runtime_routes(
-                router_with_database_status_and_passthrough_placeholder(
-                    Some(&config),
-                    provider_passthrough_config.is_none() && provider_secret_resolver.is_none(),
-                ),
+            Ok(router_with_invocation_runtime_and_provider_native_routes(
+                router_with_database_status_and_passthrough_placeholder(Some(&config), false),
                 catalog,
                 api_key_hasher,
-                relays,
+                provider_secret_resolver.clone(),
+                Some(Arc::new(InvocationStickyObjectRouteStore::postgres(
+                    pool.clone(),
+                ))),
                 Some(usage_recorder),
-                invocation_plugins,
-                provider_runtime.failure_strategy,
-                provider_runtime.default_retry_policy.clone(),
                 provider_passthrough_config,
                 provider_adapter_config.clone(),
-                provider_secret_resolver.clone(),
-                prefer_secret_ref_openai_runtime,
-                Some(StickyObjectRouteStore::postgres(pool.clone())),
             ))
         }
     }
@@ -1172,7 +1147,6 @@ async fn all_in_one_runtime_context_from_env() -> anyhow::Result<AllInOneRuntime
                 provider_secret_map_config.clone(),
                 snapshot.managed_provider_secrets(),
             );
-            let prefer_secret_ref_openai_runtime = provider_secret_resolver.is_some();
             let catalog = Arc::new(RefreshableSqlPricingCatalog::new(snapshot));
             let usage_settlement_wakeup =
                 maybe_spawn_sqlite_usage_settlement_worker(&pool, usage_settlement_worker_config)
@@ -1194,9 +1168,7 @@ async fn all_in_one_runtime_context_from_env() -> anyhow::Result<AllInOneRuntime
                 api_key_security_config,
                 provider_relay_config,
                 provider_adapter_config,
-                provider_runtime,
                 provider_secret_resolver,
-                prefer_secret_ref_openai_runtime,
                 trusted_subject_config,
                 app_session_config,
                 payment_webhook_config,
@@ -1248,7 +1220,6 @@ async fn all_in_one_runtime_context_from_env() -> anyhow::Result<AllInOneRuntime
                 provider_secret_map_config.clone(),
                 snapshot.managed_provider_secrets(),
             );
-            let prefer_secret_ref_openai_runtime = provider_secret_resolver.is_some();
             let catalog = Arc::new(RefreshableSqlPricingCatalog::new(snapshot));
             let usage_settlement_wakeup =
                 maybe_spawn_postgres_usage_settlement_worker(&pool, usage_settlement_worker_config)
@@ -1270,9 +1241,7 @@ async fn all_in_one_runtime_context_from_env() -> anyhow::Result<AllInOneRuntime
                 api_key_security_config,
                 provider_relay_config,
                 provider_adapter_config,
-                provider_runtime,
                 provider_secret_resolver,
-                prefer_secret_ref_openai_runtime,
                 trusted_subject_config,
                 app_session_config,
                 payment_webhook_config,
@@ -1295,65 +1264,43 @@ fn build_gateway_router_from_all_in_one_context(
 ) -> anyhow::Result<Router> {
     let api_key_hasher =
         build_api_key_hasher(&context.api_key_security_config).map_err(anyhow::Error::new)?;
-    let relays = apply_provider_adapter_config(
-        build_openai_runtime_relays(
-            context.provider_relay_config.clone(),
-            context.provider_secret_resolver.clone(),
-            context.provider_runtime.clone(),
-            context.prefer_secret_ref_openai_runtime,
-        )
-        .map_err(anyhow::Error::new)?,
-        context.provider_adapter_config.clone(),
-        context.provider_secret_resolver.clone().map(|resolver| {
-            let resolver: Arc<dyn ProviderSecretResolver + Send + Sync> = resolver;
-            resolver
-        }),
-    )
-    .map_err(anyhow::Error::new)?;
-
-    let (usage_recorder, invocation_plugins): (UsageRecorder, Vec<OpenAiInvocationPluginRef>) =
-        match &context.database_pool {
-            SharedDatabasePool::Sqlite(pool) => (
-                Arc::new(SqliteGatewayUsageRecorder::new(pool.clone())),
-                vec![
-                    Arc::new(SqliteOpenAiInvocationTelemetryPlugin::new(pool.clone()))
-                        as OpenAiInvocationPluginRef,
-                ],
-            ),
-            SharedDatabasePool::Postgres(pool) => (
-                Arc::new(PostgresGatewayUsageRecorder::new(pool.clone())),
-                vec![
-                    Arc::new(PostgresOpenAiInvocationTelemetryPlugin::new(pool.clone()))
-                        as OpenAiInvocationPluginRef,
-                ],
-            ),
-        };
+    let usage_recorder: UsageRecorder = match &context.database_pool {
+        SharedDatabasePool::Sqlite(pool) => Arc::new(SqliteGatewayUsageRecorder::new(pool.clone())),
+        SharedDatabasePool::Postgres(pool) => {
+            Arc::new(PostgresGatewayUsageRecorder::new(pool.clone()))
+        }
+    };
     let usage_recorder = wrap_usage_recorder_with_settlement_wakeup(
         usage_recorder,
         context.usage_settlement_wakeup.clone(),
     );
 
-    Ok(router_with_openai_runtime_routes(
+    Ok(router_with_invocation_runtime_and_provider_native_routes(
         router_with_database_status_and_passthrough_placeholder(
             Some(&context.database_config),
-            context.provider_relay_config.is_none() && context.provider_secret_resolver.is_none(),
+            false,
         ),
         Arc::clone(&context.catalog),
         api_key_hasher,
-        relays,
+        context.provider_secret_resolver.clone(),
+        Some(sticky_store_from_shared_database_pool(
+            &context.database_pool,
+        )),
         Some(usage_recorder),
-        invocation_plugins,
-        context.provider_runtime.failure_strategy,
-        context.provider_runtime.default_retry_policy.clone(),
         context.provider_relay_config.clone(),
         context.provider_adapter_config.clone(),
-        context.provider_secret_resolver.clone(),
-        context.prefer_secret_ref_openai_runtime,
-        Some(match &context.database_pool {
-            SharedDatabasePool::Sqlite(pool) => StickyObjectRouteStore::sqlite(pool.clone()),
-            SharedDatabasePool::Postgres(pool) => StickyObjectRouteStore::postgres(pool.clone()),
-        }),
     ))
+}
+
+fn sticky_store_from_shared_database_pool(pool: &SharedDatabasePool) -> Arc<dyn StickyRouteStore> {
+    match pool {
+        SharedDatabasePool::Sqlite(pool) => {
+            Arc::new(InvocationStickyObjectRouteStore::sqlite(pool.clone()))
+        }
+        SharedDatabasePool::Postgres(pool) => {
+            Arc::new(InvocationStickyObjectRouteStore::postgres(pool.clone()))
+        }
+    }
 }
 
 fn database_config_from_env_for_startup(

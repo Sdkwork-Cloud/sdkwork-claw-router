@@ -39,7 +39,10 @@ use sdkwork_claw_product::domain::{
 };
 use sdkwork_claw_product::ports::{
     GatewayUsageQuantity, GatewayUsageRecordCommand, GatewayUsageRecorder, PricingCatalog,
-    ProviderSecretResolver,
+    ProviderSecretResolver, StickyObjectRouteBinding as ProductStickyObjectRouteBinding,
+    StickyObjectRouteLookup as ProductStickyObjectRouteLookup,
+    StickyObjectRouteUpsert as ProductStickyObjectRouteUpsert, StickyRouteStore,
+    StickyRouteStoreFuture,
 };
 use serde_json::{json, Value};
 use sha2::{Digest, Sha256};
@@ -103,6 +106,201 @@ impl std::fmt::Debug for StickyObjectRouteStore {
             Self::Sqlite(_) => formatter.write_str("StickyObjectRouteStore::Sqlite"),
             Self::Postgres(_) => formatter.write_str("StickyObjectRouteStore::Postgres"),
         }
+    }
+}
+
+impl StickyRouteStore for StickyObjectRouteStore {
+    fn find_binding<'a>(
+        &'a self,
+        query: ProductStickyObjectRouteLookup,
+    ) -> StickyRouteStoreFuture<'a, Option<ProductStickyObjectRouteBinding>> {
+        Box::pin(async move {
+            let object_key_hash = sticky_object_key_hash(
+                query.tenant_id,
+                query.organization_id,
+                &query.object_type,
+                &query.object_id,
+            );
+            let binding = match self {
+                StickyObjectRouteStore::Sqlite(pool) => sqlx::query(
+                    r#"
+                    SELECT tenant_id, organization_id, object_type, object_id,
+                           parent_object_type, parent_object_id, provider_code, channel_id,
+                           channel_group_id, vendor_code, api_code, catalog_key,
+                           provider_model, region_code, sticky_scope
+                    FROM ai_provider_object_route
+                    WHERE tenant_id = ?
+                      AND organization_id = ?
+                      AND object_type = ?
+                      AND object_id = ?
+                      AND object_key_hash = ?
+                      AND status = 1
+                    ORDER BY id DESC
+                    LIMIT 1
+                    "#,
+                )
+                .bind(query.tenant_id)
+                .bind(query.organization_id)
+                .bind(&query.object_type)
+                .bind(&query.object_id)
+                .bind(object_key_hash)
+                .fetch_optional(pool)
+                .await
+                .map_err(product_sticky_store_error)?
+                .map(product_sticky_binding_from_row),
+                StickyObjectRouteStore::Postgres(pool) => sqlx::query(
+                    r#"
+                    SELECT tenant_id, organization_id, object_type, object_id,
+                           parent_object_type, parent_object_id, provider_code, channel_id,
+                           channel_group_id, vendor_code, api_code, catalog_key,
+                           provider_model, region_code, sticky_scope
+                    FROM ai_provider_object_route
+                    WHERE tenant_id = $1
+                      AND organization_id = $2
+                      AND object_type = $3
+                      AND object_id = $4
+                      AND object_key_hash = $5
+                      AND status = 1
+                    ORDER BY id DESC
+                    LIMIT 1
+                    "#,
+                )
+                .bind(query.tenant_id)
+                .bind(query.organization_id)
+                .bind(&query.object_type)
+                .bind(&query.object_id)
+                .bind(object_key_hash)
+                .fetch_optional(pool)
+                .await
+                .map_err(product_sticky_store_error)?
+                .map(product_sticky_binding_from_pg_row),
+            };
+            Ok(binding)
+        })
+    }
+
+    fn upsert_binding<'a>(
+        &'a self,
+        command: ProductStickyObjectRouteUpsert,
+    ) -> StickyRouteStoreFuture<'a, ()> {
+        Box::pin(async move {
+            let object_key_hash = sticky_object_key_hash(
+                command.tenant_id,
+                command.organization_id,
+                &command.object_type,
+                &command.object_id,
+            );
+            match self {
+                StickyObjectRouteStore::Sqlite(pool) => {
+                    sqlx::query(
+                        r#"
+                        INSERT INTO ai_provider_object_route
+                            (uuid, tenant_id, organization_id, status, api_key_id, channel_group_id,
+                             object_type, object_id, object_key_hash, parent_object_type,
+                             parent_object_id, provider_code, channel_id, vendor_code, api_code,
+                             catalog_key, provider_model, region_code, sticky_scope, last_seen_at)
+                        VALUES
+                            (?, ?, ?, 1, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
+                        ON CONFLICT(tenant_id, organization_id, object_type, object_id)
+                        DO UPDATE SET
+                            status = 1,
+                            api_key_id = excluded.api_key_id,
+                            channel_group_id = excluded.channel_group_id,
+                            object_key_hash = excluded.object_key_hash,
+                            parent_object_type = excluded.parent_object_type,
+                            parent_object_id = excluded.parent_object_id,
+                            provider_code = excluded.provider_code,
+                            channel_id = excluded.channel_id,
+                            vendor_code = excluded.vendor_code,
+                            api_code = excluded.api_code,
+                            catalog_key = excluded.catalog_key,
+                            provider_model = excluded.provider_model,
+                            region_code = excluded.region_code,
+                            sticky_scope = excluded.sticky_scope,
+                            last_seen_at = CURRENT_TIMESTAMP,
+                            updated_at = CURRENT_TIMESTAMP,
+                            version = ai_provider_object_route.version + 1
+                        "#,
+                    )
+                    .bind(&command.request_id)
+                    .bind(command.tenant_id)
+                    .bind(command.organization_id)
+                    .bind(command.api_key_id)
+                    .bind(command.channel_group_id)
+                    .bind(&command.object_type)
+                    .bind(&command.object_id)
+                    .bind(&object_key_hash)
+                    .bind(&command.parent_object_type)
+                    .bind(&command.parent_object_id)
+                    .bind(&command.provider_code)
+                    .bind(command.channel_id)
+                    .bind(&command.vendor_code)
+                    .bind(&command.api_code)
+                    .bind(&command.catalog_key)
+                    .bind(&command.provider_model)
+                    .bind(&command.region_code)
+                    .bind(&command.sticky_scope)
+                    .execute(pool)
+                    .await
+                    .map_err(product_sticky_store_error)?;
+                }
+                StickyObjectRouteStore::Postgres(pool) => {
+                    sqlx::query(
+                        r#"
+                        INSERT INTO ai_provider_object_route
+                            (uuid, tenant_id, organization_id, status, api_key_id, channel_group_id,
+                             object_type, object_id, object_key_hash, parent_object_type,
+                             parent_object_id, provider_code, channel_id, vendor_code, api_code,
+                             catalog_key, provider_model, region_code, sticky_scope, last_seen_at)
+                        VALUES
+                            ($1, $2, $3, 1, $4, $5, $6, $7, $8, $9, $10,
+                             $11, $12, $13, $14, $15, $16, $17, $18, CURRENT_TIMESTAMP)
+                        ON CONFLICT(tenant_id, organization_id, object_type, object_id)
+                        DO UPDATE SET
+                            status = 1,
+                            api_key_id = EXCLUDED.api_key_id,
+                            channel_group_id = EXCLUDED.channel_group_id,
+                            object_key_hash = EXCLUDED.object_key_hash,
+                            parent_object_type = EXCLUDED.parent_object_type,
+                            parent_object_id = EXCLUDED.parent_object_id,
+                            provider_code = EXCLUDED.provider_code,
+                            channel_id = EXCLUDED.channel_id,
+                            vendor_code = EXCLUDED.vendor_code,
+                            api_code = EXCLUDED.api_code,
+                            catalog_key = EXCLUDED.catalog_key,
+                            provider_model = EXCLUDED.provider_model,
+                            region_code = EXCLUDED.region_code,
+                            sticky_scope = EXCLUDED.sticky_scope,
+                            last_seen_at = CURRENT_TIMESTAMP,
+                            updated_at = CURRENT_TIMESTAMP,
+                            version = ai_provider_object_route.version + 1
+                        "#,
+                    )
+                    .bind(&command.request_id)
+                    .bind(command.tenant_id)
+                    .bind(command.organization_id)
+                    .bind(command.api_key_id)
+                    .bind(command.channel_group_id)
+                    .bind(&command.object_type)
+                    .bind(&command.object_id)
+                    .bind(&object_key_hash)
+                    .bind(&command.parent_object_type)
+                    .bind(&command.parent_object_id)
+                    .bind(&command.provider_code)
+                    .bind(command.channel_id)
+                    .bind(&command.vendor_code)
+                    .bind(&command.api_code)
+                    .bind(&command.catalog_key)
+                    .bind(&command.provider_model)
+                    .bind(&command.region_code)
+                    .bind(&command.sticky_scope)
+                    .execute(pool)
+                    .await
+                    .map_err(product_sticky_store_error)?;
+                }
+            }
+            Ok(())
+        })
     }
 }
 
@@ -1362,9 +1560,59 @@ fn sticky_binding_from_pg_row(row: sqlx::postgres::PgRow) -> StickyObjectRouteBi
     }
 }
 
+fn product_sticky_binding_from_row(
+    row: sqlx::sqlite::SqliteRow,
+) -> ProductStickyObjectRouteBinding {
+    ProductStickyObjectRouteBinding {
+        tenant_id: row.get("tenant_id"),
+        organization_id: row.get("organization_id"),
+        object_type: row.get("object_type"),
+        object_id: row.get("object_id"),
+        parent_object_type: row.get("parent_object_type"),
+        parent_object_id: row.get("parent_object_id"),
+        provider_code: row.get("provider_code"),
+        channel_id: row.get("channel_id"),
+        channel_group_id: row.get("channel_group_id"),
+        vendor_code: row.get("vendor_code"),
+        api_code: row.get("api_code"),
+        catalog_key: row.get("catalog_key"),
+        provider_model: row.get("provider_model"),
+        region_code: row.get("region_code"),
+        sticky_scope: row.get("sticky_scope"),
+    }
+}
+
+fn product_sticky_binding_from_pg_row(
+    row: sqlx::postgres::PgRow,
+) -> ProductStickyObjectRouteBinding {
+    ProductStickyObjectRouteBinding {
+        tenant_id: row.get("tenant_id"),
+        organization_id: row.get("organization_id"),
+        object_type: row.get("object_type"),
+        object_id: row.get("object_id"),
+        parent_object_type: row.get("parent_object_type"),
+        parent_object_id: row.get("parent_object_id"),
+        provider_code: row.get("provider_code"),
+        channel_id: row.get("channel_id"),
+        channel_group_id: row.get("channel_group_id"),
+        vendor_code: row.get("vendor_code"),
+        api_code: row.get("api_code"),
+        catalog_key: row.get("catalog_key"),
+        provider_model: row.get("provider_model"),
+        region_code: row.get("region_code"),
+        sticky_scope: row.get("sticky_scope"),
+    }
+}
+
 fn sticky_store_error(error: sqlx::Error) -> RouteScopedOpenAiPassthroughError {
     RouteScopedOpenAiPassthroughError::usage_record_failed(format!(
         "failed to persist route-scoped OpenAI sticky object route: {error}"
+    ))
+}
+
+fn product_sticky_store_error(error: sqlx::Error) -> DomainError {
+    DomainError::new(format!(
+        "failed to persist invocation sticky object route: {error}"
     ))
 }
 

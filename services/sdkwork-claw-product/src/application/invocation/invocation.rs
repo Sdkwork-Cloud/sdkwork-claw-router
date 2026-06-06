@@ -26,10 +26,11 @@ pub struct InvocationRequest {
 
 impl InvocationRequest {
     pub fn new(method: Method, path: impl Into<String>) -> Self {
+        let (path, query) = split_path_query(&path.into());
         Self {
             method,
-            path: path.into(),
-            query: None,
+            path,
+            query,
             headers: HeaderMap::new(),
             body: InvocationBody::Empty,
             content_type: None,
@@ -50,6 +51,12 @@ impl InvocationRequest {
         self.body = body;
         self
     }
+
+    pub fn with_query(mut self, query: impl Into<String>) -> Self {
+        let query = query.into();
+        self.query = (!query.trim().is_empty()).then_some(query);
+        self
+    }
 }
 
 #[derive(Debug, Clone, PartialEq)]
@@ -64,6 +71,25 @@ pub struct Invocation {
     pub dispatch: InvocationDispatch,
     pub usage: InvocationUsage,
     pub telemetry: InvocationTelemetry,
+}
+
+fn split_path_query(value: &str) -> (String, Option<String>) {
+    let (path, query) = value
+        .split_once('?')
+        .map(|(path, query)| (path, Some(query.to_owned())))
+        .unwrap_or((value, None));
+    (
+        normalize_path(path),
+        query.filter(|query| !query.trim().is_empty()),
+    )
+}
+
+fn normalize_path(value: &str) -> String {
+    let value = value.trim();
+    if value.is_empty() || value == "/" {
+        return "/".to_owned();
+    }
+    format!("/{}", value.trim_matches('/'))
 }
 
 impl Invocation {
@@ -86,7 +112,10 @@ impl Invocation {
             account: None,
             dispatch: InvocationDispatch::pending(),
             usage: InvocationUsage::default(),
-            telemetry: InvocationTelemetry { trace_id },
+            telemetry: InvocationTelemetry {
+                trace_id,
+                ..InvocationTelemetry::default()
+            },
         }
     }
 }

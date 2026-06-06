@@ -59,10 +59,12 @@ mod dashboard_overview_read_store;
 mod embeddings_relay;
 mod forum_store;
 mod gateway_usage_recorder;
+mod invocation_dispatcher;
 mod model_ranking_refresh_store;
 mod model_rankings_read_store;
 mod payment_callback_store;
 mod pricing_catalog;
+mod provider_adapter_route_resolver;
 mod provider_health_probe;
 mod provider_secret_resolver;
 mod responses_relay;
@@ -70,6 +72,7 @@ mod runtime_region_settings_store;
 mod settings_store;
 mod settlements_dashboard_read_store;
 mod site_settings_store;
+mod sticky_route_store;
 mod usage_logs_read_store;
 mod usage_settlement_store;
 mod verification_code_sender;
@@ -443,6 +446,9 @@ pub use gateway_usage_recorder::{
     GatewayRequestTraceCommand, GatewayUsageQuantity, GatewayUsageRecordCommand,
     GatewayUsageRecordFuture, GatewayUsageRecorder,
 };
+pub use invocation_dispatcher::{
+    InvocationDispatchError, InvocationDispatcher, InvocationDispatcherFuture,
+};
 pub use model_ranking_refresh_store::{
     ModelRankingRefreshAuditCommand, ModelRankingRefreshAuditFuture, ModelRankingRefreshCommand,
     ModelRankingRefreshFuture, ModelRankingRefreshOutcome, ModelRankingRefreshRunStatus,
@@ -466,6 +472,7 @@ pub use payment_callback_store::{
     PaymentCallbackStore,
 };
 pub use pricing_catalog::PricingCatalog;
+pub use provider_adapter_route_resolver::ProviderAdapterRouteResolver;
 pub use provider_health_probe::{
     ProviderHealthProbe, ProviderHealthProbeFuture, ProviderHealthProbeOutcome,
     ProviderHealthProbeRequest, UnconfiguredProviderHealthProbe,
@@ -491,6 +498,10 @@ pub use settlements_dashboard_read_store::{
 pub use site_settings_store::{
     GetSiteSettingsQuery, GetSiteSettingsScopeQuery, SiteSettings, SiteSettingsFuture,
     SiteSettingsStore, SiteSettingsSubject, UpdateSiteSettingsCommand,
+};
+pub use sticky_route_store::{
+    StickyObjectRouteBinding, StickyObjectRouteLookup, StickyObjectRouteUpsert, StickyRouteStore,
+    StickyRouteStoreFuture,
 };
 pub use usage_logs_read_store::{
     UsageLogItem, UsageLogsPage, UsageLogsQuery, UsageLogsReadFuture, UsageLogsReadStore,

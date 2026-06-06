@@ -4,9 +4,7 @@ use sdkwork_claw_product::application::{
     InvocationErrorKind, InvocationInterceptor, InvocationPipeline, InvocationRequest,
     InvocationResource, InvocationSubject,
 };
-use sdkwork_claw_product::domain::{
-    AiRouteModelRequirement, BillingMeter, RoutingCapability,
-};
+use sdkwork_claw_product::domain::{AiRouteModelRequirement, BillingMeter, RoutingCapability};
 use std::sync::{Arc, Mutex};
 
 fn test_invocation() -> Invocation {
@@ -101,10 +99,11 @@ impl InvocationInterceptor for RecordingInterceptor {
         error: &'a InvocationError,
     ) -> sdkwork_claw_product::application::InvocationFuture<'a, ()> {
         Box::pin(async move {
-            self.events
-                .lock()
-                .expect("events")
-                .push(format!("error:{}:{}", self.name, error.kind.code()));
+            self.events.lock().expect("events").push(format!(
+                "error:{}:{}",
+                self.name,
+                error.kind.code()
+            ));
             Ok(())
         })
     }
@@ -152,6 +151,64 @@ async fn pipeline_short_circuits_on_before_error_and_notifies_started_intercepto
             "before:route",
             "error:route:invalid_request",
             "error:auth:invalid_request",
+        ],
+        *events.lock().expect("events")
+    );
+}
+
+#[derive(Clone)]
+struct ErrorObserverInterceptor {
+    name: &'static str,
+    events: Arc<Mutex<Vec<String>>>,
+}
+
+impl InvocationInterceptor for ErrorObserverInterceptor {
+    fn name(&self) -> &str {
+        self.name
+    }
+
+    fn observe_pipeline_errors(&self) -> bool {
+        true
+    }
+
+    fn on_error<'a>(
+        &'a self,
+        _invocation: &'a mut Invocation,
+        error: &'a InvocationError,
+    ) -> sdkwork_claw_product::application::InvocationFuture<'a, ()> {
+        Box::pin(async move {
+            self.events.lock().expect("events").push(format!(
+                "observer:{}:{}",
+                self.name,
+                error.kind.code()
+            ));
+            Ok(())
+        })
+    }
+}
+
+#[tokio::test]
+async fn pipeline_notifies_error_observers_that_have_not_started() {
+    let events = Arc::new(Mutex::new(Vec::new()));
+    let pipeline = InvocationPipeline::new()
+        .with_interceptor(RecordingInterceptor::new("payload", Arc::clone(&events)))
+        .with_interceptor(RecordingInterceptor::failing("route", Arc::clone(&events)))
+        .with_interceptor(ErrorObserverInterceptor {
+            name: "trace",
+            events: Arc::clone(&events),
+        });
+    let mut invocation = test_invocation();
+
+    let error = pipeline.execute(&mut invocation).await.unwrap_err();
+
+    assert_eq!(InvocationErrorKind::InvalidRequest, error.kind);
+    assert_eq!(
+        vec![
+            "before:payload",
+            "before:route",
+            "error:route:invalid_request",
+            "error:payload:invalid_request",
+            "observer:trace:invalid_request",
         ],
         *events.lock().expect("events")
     );

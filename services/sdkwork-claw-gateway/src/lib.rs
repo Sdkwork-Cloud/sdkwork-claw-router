@@ -1,5 +1,10 @@
 pub mod edge_server;
 mod gateway_api_key_auth;
+mod invocation_dispatcher;
+mod invocation_http;
+mod invocation_provider_adapter;
+mod invocation_router;
+mod invocation_sticky_store;
 mod openai_passthrough_payload;
 mod openai_passthrough_routes;
 mod openai_route_taxonomy;
@@ -17,6 +22,14 @@ pub use edge_server::{
     serve_all_in_one_edge_server_with_runtime_config, serve_edge_server,
     serve_edge_server_with_runtime_config, serve_with_runtime_config, EdgeInProcessUpstreams,
     EdgeServerConfig,
+};
+pub use invocation_dispatcher::InvocationHttpDispatcher;
+pub use invocation_router::{
+    invocation_router_with_catalog_api_key_hasher_and_dispatcher,
+    invocation_router_with_catalog_api_key_hasher_dispatcher_and_secret_resolver,
+    invocation_router_with_catalog_api_key_hasher_dispatcher_secret_resolver_and_sticky_store,
+    invocation_router_with_full_pipeline,
+    invocation_router_with_full_pipeline_and_provider_adapter_config,
 };
 #[rustfmt::skip]
 pub use openai_passthrough_routes::{openai_compatible_passthrough_paths, openai_method_passthrough_paths, stored_chat_completion_passthrough_paths};
