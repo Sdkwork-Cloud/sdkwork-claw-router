@@ -1,4 +1,4 @@
-import assert from "node:assert/strict";
+﻿import assert from "node:assert/strict";
 import { existsSync, readFileSync } from "node:fs";
 import test from "node:test";
 
@@ -256,7 +256,7 @@ test("VIP page localizes public tab, package, and feature copy", () => {
   ]) {
     assert.match(viewSource, new RegExp(escapeRegExp(marker)));
   }
-  assert.doesNotMatch(viewSource, /路/u);
+  assert.doesNotMatch(viewSource, /璺?u);
 
   for (const marker of [
     "vip.title",
@@ -421,9 +421,9 @@ test("VIP points purchase modal uses current user avatar with localized fallback
 
   for (const staleCopy of [
     "Click a package to refresh the payment code",
-    "点击套餐刷新支付码",
+    "鐐瑰嚮濂楅鍒锋柊鏀粯鐮?,
     "Credit rules",
-    " 积分规则",
+    " 绉垎瑙勫垯",
   ]) {
     assert.doesNotMatch(i18nSource, new RegExp(escapeRegExp(staleCopy)));
   }
@@ -444,14 +444,14 @@ test("VIP points purchase agreement copy uses configurable site branding instead
 
   for (const marker of [
     '"vip.pointsPurchase.agreement": "{{brandName}} Paid Service Agreement (including auto-renewal terms)"',
-    '"vip.pointsPurchase.agreement": "《{{brandName}}付费服务协议（含自动续费条款）》"',
+    '"vip.pointsPurchase.agreement": "銆妠{brandName}}浠樿垂鏈嶅姟鍗忚锛堝惈鑷姩缁垂鏉℃锛夈€?',
   ]) {
     assert.match(i18nSource, new RegExp(escapeRegExp(marker)));
   }
 
   for (const retiredBrandName of [
     "Bangzhao",
-    "榜招",
+    "姒滄嫑",
     "vip.pointsPurchase.brand",
   ]) {
     assert.doesNotMatch(i18nSource, new RegExp(escapeRegExp(retiredBrandName)));
@@ -1108,8 +1108,8 @@ test("membership service fails closed for malformed packages and blank purchase 
 test("OpenAPI and generated SDK expose standard membership APIs and reject billing VIP aliases", () => {
   const appOpenapi = readPortalFile("../../generated/openapi/clawrouter-app-openapi.json");
   const backendOpenapi = readPortalFile("../../generated/openapi/clawrouter-backend-openapi.json");
-  const appCommerceSdk = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/api/commerce.ts");
-  const backendCommerceSdk = readPortalFile("../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/src/api/commerce.ts");
+  const appCommerceSdk = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/api/commerce.ts");
+  const backendCommerceSdk = readPortalFile("../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/generated/server-openapi/src/api/commerce.ts");
 
   for (const path of [
     "/app/v3/api/memberships/current",
@@ -1156,7 +1156,7 @@ test("OpenAPI and generated SDK expose standard membership APIs and reject billi
   assert.doesNotMatch(appOpenapi, /"qrCodeContent"/);
   assert.doesNotMatch(appOpenapi, /"paymentUrl"/);
 
-  const commerceOperationResponseSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/types/commerce-operation-response.ts");
+  const commerceOperationResponseSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/types/commerce-operation-response.ts");
   for (const marker of [
     "import type { MediaResource } from './media-resource';",
     "paymentId?: string | null",

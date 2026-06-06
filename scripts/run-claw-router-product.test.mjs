@@ -1,4 +1,4 @@
-import assert from 'node:assert/strict';
+﻿import assert from 'node:assert/strict';
 import { execFile } from 'node:child_process';
 import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
@@ -1180,11 +1180,11 @@ test('installation documentation covers release, source, initialization, usage, 
   assert.ok(enRelease.includes('./bin/clawrouterctl ensure'));
   assert.ok(zhSource.includes('pnpm release:env:write -- --check'));
   assert.ok(enSource.includes('pnpm release:env:write -- --check'));
-  assert.ok(zhSource.includes('目标机器后，不要求安装 `pnpm`'));
+  assert.ok(zhSource.includes('鐩爣鏈哄櫒鍚庯紝涓嶈姹傚畨瑁?`pnpm`'));
   assert.ok(enSource.includes('the host does not need `pnpm`'));
-  assert.ok(zhUsage.includes('注册是否需要验证码由 IAM 运行时策略控制'));
+  assert.ok(zhUsage.includes('娉ㄥ唽鏄惁闇€瑕侀獙璇佺爜鐢?IAM 杩愯鏃剁瓥鐣ユ帶鍒?));
   assert.ok(enUsage.includes('Whether registration requires verification code is controlled by IAM runtime policy'));
-  assert.ok(zhUsage.includes('SDK 包版本独立于 Claw Router release 版本'));
+  assert.ok(zhUsage.includes('SDK 鍖呯増鏈嫭绔嬩簬 Claw Router release 鐗堟湰'));
   assert.ok(enUsage.includes('SDK package versions are independent from Claw Router release versions'));
   assert.ok(rootReadme.includes('Workspace development commands use PostgreSQL for integration testing.'));
   assert.ok(rootReadme.includes('Desktop packages and first-run local user data use SQLite under `~/.sdkwork/router/data`.'));
@@ -3477,9 +3477,9 @@ test('production build creates portal assets and Rust edge release artifact', as
   ]);
   assert.equal(plan[0].command, 'python');
   assert.deepEqual(plan[0].args, ['-B', '-m', 'tools.clawrouter_gateway_openapi_generator']);
-  assert.deepEqual(plan[1].args, ['--dir', 'sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript', 'build']);
-  assert.deepEqual(plan[2].args, ['--dir', 'sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript', 'build']);
-  assert.deepEqual(plan[3].args, ['--dir', 'sdks/clawrouter-open-sdk/clawrouter-open-sdk-typescript', 'build']);
+  assert.deepEqual(plan[1].args, ['--dir', 'sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi', 'build']);
+  assert.deepEqual(plan[2].args, ['--dir', 'sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/generated/server-openapi', 'build']);
+  assert.deepEqual(plan[3].args, ['--dir', 'sdks/clawrouter-open-sdk/clawrouter-open-sdk-typescript/generated/server-openapi', 'build']);
   assert.equal(plan[1].attempts, 2);
   assert.equal(plan[2].attempts, 2);
   assert.equal(plan[3].attempts, 2);
@@ -6179,9 +6179,9 @@ test('fast verification plan refreshes SDK dist before low-cost Codex iteration 
     'pnpm.cmd skills:seed:check',
     'python -B -m tools.repository_delivery_guardian',
     'node scripts/run-claw-router-product.test.mjs',
-    'pnpm.cmd --dir sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript build',
-    'pnpm.cmd --dir sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript build',
-    'pnpm.cmd --dir sdks/clawrouter-open-sdk/clawrouter-open-sdk-typescript build',
+    'pnpm.cmd --dir sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi build',
+    'pnpm.cmd --dir sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/generated/server-openapi build',
+    'pnpm.cmd --dir sdks/clawrouter-open-sdk/clawrouter-open-sdk-typescript/generated/server-openapi build',
     'pnpm.cmd --dir apps/sdkwork-claw-router-portal exec tsx auth-runtime.test.ts',
     'python -B -m unittest tests.test_frontend_source_hygiene_standard',
   ]);
@@ -7874,9 +7874,9 @@ test('verification plan includes portal frontend typecheck', async () => {
 
   const portalTypecheck = plan.find((step) => step.label === 'portal frontend typecheck');
   const sdkBuilds = [
-    ['app SDK runtime build', ['--dir', 'sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript', 'build']],
-    ['backend SDK runtime build', ['--dir', 'sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript', 'build']],
-    ['open SDK runtime build', ['--dir', 'sdks/clawrouter-open-sdk/clawrouter-open-sdk-typescript', 'build']],
+    ['app SDK runtime build', ['--dir', 'sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi', 'build']],
+    ['backend SDK runtime build', ['--dir', 'sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/generated/server-openapi', 'build']],
+    ['open SDK runtime build', ['--dir', 'sdks/clawrouter-open-sdk/clawrouter-open-sdk-typescript/generated/server-openapi', 'build']],
   ];
   assert.ok(portalTypecheck);
   const portalTypecheckIndex = plan.indexOf(portalTypecheck);
@@ -8356,17 +8356,17 @@ test('verification plan refreshes generated SDK runtimes after production smoke 
 
   assert.deepEqual(plan[runtimeAppSdkRefreshIndex].args, [
     '--dir',
-    'sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript',
+    'sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi',
     'build',
   ]);
   assert.deepEqual(plan[runtimeBackendSdkRefreshIndex].args, [
     '--dir',
-    'sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript',
+    'sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/generated/server-openapi',
     'build',
   ]);
   assert.deepEqual(plan[runtimeOpenSdkRefreshIndex].args, [
     '--dir',
-    'sdks/clawrouter-open-sdk/clawrouter-open-sdk-typescript',
+    'sdks/clawrouter-open-sdk/clawrouter-open-sdk-typescript/generated/server-openapi',
     'build',
   ]);
 });

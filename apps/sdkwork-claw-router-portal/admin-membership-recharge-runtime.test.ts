@@ -1,4 +1,4 @@
-import assert from "node:assert/strict";
+﻿import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 
@@ -18,7 +18,7 @@ test("admin member center exposes recharge package and recharge settings mainten
   ].join("\n");
   const backendMarketingSource = readPortalFile("../../services/sdkwork-claw-product/src/api/admin_marketing.rs");
   const backendContractSource = readPortalFile("../../docs/schema-registry/frontend-field-contracts/operations/backend-commerce-recharges.yaml");
-  const backendCommerceSdk = readPortalFile("../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/src/api/commerce.ts");
+  const backendCommerceSdk = readPortalFile("../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/generated/server-openapi/src/api/commerce.ts");
 
   assert.match(appSource, /<Route path="memberships\/recharge-packages" element=\{<MembershipsAdmin sectionId="rechargePackages" \/>} \/>/);
   assert.match(adminModuleRegistrySource, /path:\s*'\/admin\/memberships\/recharge-packages',\s*labelKey:\s*'admin\.menu\.membershipRechargePackages'/);

@@ -1,4 +1,4 @@
-import assert from "node:assert/strict";
+﻿import assert from "node:assert/strict";
 import { existsSync, readFileSync } from "node:fs";
 import test from "node:test";
 
@@ -535,7 +535,7 @@ test("admin catalog category management uses compact cascade columns and modal e
   assert.match(categorySource, /applyCategoryMoveLocally/);
   assert.match(handleMoveSource, /setState\(/);
   assert.doesNotMatch(handleMoveSource, /loadCategories\(\)/);
-  assert.doesNotMatch(handleMoveSource, /分类排序已更新。/);
+  assert.doesNotMatch(handleMoveSource, /鍒嗙被鎺掑簭宸叉洿鏂般€?);
   assert.match(categorySource, /updateCommerceCategory\(record\.id/);
   assert.match(categorySource, /buildCategoryColumns/);
   assert.match(categorySource, /activePathIds/);
@@ -561,7 +561,7 @@ test("admin catalog category management uses compact cascade columns and modal e
   assert.doesNotMatch(categorySource, /Catalog Taxonomy/);
   assert.doesNotMatch(categorySource, /\u7c7b\u76ee\u521d\u59cb\u5316\u4e0e\u7ef4\u62a4/u);
   assert.doesNotMatch(categorySource, /\u6309\u4e1a\u52a1\u57df\u521d\u59cb\u5316\u6807\u51c6\u5206\u7c7b/u);
-  assert.doesNotMatch(categorySource, /<CategoryInput label="分类编号"/);
+  assert.doesNotMatch(categorySource, /<CategoryInput label="鍒嗙被缂栧彿"/);
   assert.doesNotMatch(categorySource, /<select[\s\S]*value=\{form\.parentId\}/);
   assert.doesNotMatch(categorySource, /data-admin-category-editor-panel/);
   assert.doesNotMatch(categorySource, /data-admin-category-detail-panel/);
@@ -574,7 +574,7 @@ test("admin catalog category management uses compact cascade columns and modal e
   assert.doesNotMatch(categorySource, /categorySeedDatasetLabel/);
   assert.doesNotMatch(categorySource, /'courses'|'agents'|'agent-skills'|'mcp'|'apps'/);
   assert.doesNotMatch(categorySource, /pageSize:\s*500/);
-  assert.doesNotMatch(categorySource, /选择一个分类/);
+  assert.doesNotMatch(categorySource, /閫夋嫨涓€涓垎绫?);
 });
 
 test("admin catalog product edit reuses product create flow and updates existing skus", () => {
@@ -617,7 +617,7 @@ test("admin catalog sku management supports list create edit view and archive op
 
 test("admin catalog contract and backend sdk expose product and sku delete operations", () => {
   const contractSource = readFileSync(new URL("../../docs/schema-registry/frontend-field-contracts/operations/backend-commerce-catalog.yaml", import.meta.url), "utf8");
-  const backendCommerceSdk = readPortalFile("../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/src/api/commerce.ts");
+  const backendCommerceSdk = readPortalFile("../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/generated/server-openapi/src/api/commerce.ts");
 
   assert.match(contractSource, /operation_id: catalog\.products\.delete/);
   assert.match(contractSource, /operation_id: catalog\.skus\.delete/);
@@ -629,8 +629,8 @@ test("admin payments center exposes complete payment modules and aligned provide
   const viewSource = readPortalFile("./packages/sdkwork-claw-router-admin-payments/src/index.tsx");
   const serviceSource = readPortalFile("./packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts");
   const adminResourceCenterSource = readPortalFile("./packages/sdkwork-claw-router-commons/src/components/AdminResourceCenter.tsx");
-  const backendCommerceSdk = readPortalFile("../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/src/api/commerce.ts");
-  const providerAccountMutationSdkType = readPortalFile("../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/src/types/commerce-payment-provider-account-mutation-request.ts");
+  const backendCommerceSdk = readPortalFile("../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/generated/server-openapi/src/api/commerce.ts");
+  const providerAccountMutationSdkType = readPortalFile("../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/generated/server-openapi/src/types/commerce-payment-provider-account-mutation-request.ts");
   const i18nSource = [
     readPortalFile("./packages/sdkwork-claw-router-i18n/src/resources/admin-commerce/payments.ts"),
     readPortalFile("./packages/sdkwork-claw-router-i18n/src/resources/admin/core-columns.ts"),

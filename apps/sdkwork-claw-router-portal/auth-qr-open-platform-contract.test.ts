@@ -1,4 +1,4 @@
-import assert from "node:assert/strict";
+﻿import assert from "node:assert/strict";
 import { existsSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import test from "node:test";
@@ -17,9 +17,9 @@ test("login QR auth is exposed only through openPlatform.qrAuth sessions", () =>
     paths?: Record<string, Record<string, { operationId?: string; tags?: string[]; ["x-sdkwork-domain"]?: string }>>;
     components?: { schemas?: Record<string, unknown> };
   };
-  const appSdkSource = readRepoFile("sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/sdk.ts");
-  const authSdkSource = readRepoFile("sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/api/auth.ts");
-  const openPlatformSdkSource = readRepoFile("sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/api/open-platform.ts");
+  const appSdkSource = readRepoFile("sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/sdk.ts");
+  const authSdkSource = readRepoFile("sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/api/auth.ts");
+  const openPlatformSdkSource = readRepoFile("sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/api/open-platform.ts");
   const authServiceSource = readRepoFile("sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-pc-react/src/auth-service.ts");
   const iamPortsSource = readRepoFile("sdkwork-appbase/packages/common/iam/sdkwork-iam-sdk-ports/src/index.ts");
 

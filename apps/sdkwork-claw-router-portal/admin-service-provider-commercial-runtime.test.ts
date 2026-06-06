@@ -1,4 +1,4 @@
-import assert from "node:assert/strict";
+﻿import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 
@@ -133,8 +133,8 @@ test("service provider commercial schema, contract, OpenAPI, and SDK are registe
   const openapi = JSON.parse(readWorkspaceFile("generated/openapi/clawrouter-backend-openapi.json")) as {
     paths: Record<string, unknown>;
   };
-  const sdkSource = readWorkspaceFile("sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/src/sdk.ts");
-  const sdkApiSource = readWorkspaceFile("sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/src/api/service-providers.ts");
+  const sdkSource = readWorkspaceFile("sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/generated/server-openapi/src/sdk.ts");
+  const sdkApiSource = readWorkspaceFile("sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/generated/server-openapi/src/api/service-providers.ts");
 
   for (const table of [
     "integration_service_provider",

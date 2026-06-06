@@ -10904,6 +10904,12 @@
             "description": "Image model id or Claw Router catalog key.",
             "type": "string"
           },
+          "n": {
+            "description": "Number of images to generate when supported.",
+            "maximum": 16,
+            "minimum": 1,
+            "type": "integer"
+          },
           "prompt": {
             "description": "Text prompt describing the image to generate.",
             "type": "string"

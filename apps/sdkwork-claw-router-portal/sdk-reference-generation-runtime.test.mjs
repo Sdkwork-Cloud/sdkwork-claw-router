@@ -1,4 +1,4 @@
-import assert from "node:assert/strict";
+﻿import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 
@@ -16,7 +16,7 @@ test("sdk reference generation calls generated app SDK routes", () => {
     "./packages/sdkwork-claw-router-sdk-reference/src/sdkReferenceGenerationService.ts",
   );
   const appSdkSource = readWorkspaceFile(
-    "sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/api/sdk-reference.ts",
+    "sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/api/sdk-reference.ts",
   );
 
   for (const source of [pageSource, serviceSource]) {

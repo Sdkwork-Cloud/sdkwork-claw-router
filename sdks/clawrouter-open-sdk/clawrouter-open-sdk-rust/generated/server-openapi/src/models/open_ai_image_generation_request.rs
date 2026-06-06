@@ -6,6 +6,10 @@ pub struct OpenAiImageGenerationRequest {
     /// Image model id or Claw Router catalog key.
     pub model: String,
 
+    /// Number of images to generate when supported.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub n: Option<i64>,
+
     /// Text prompt describing the image to generate.
     pub prompt: String,
 

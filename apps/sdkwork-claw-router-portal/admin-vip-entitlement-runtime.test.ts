@@ -1,4 +1,4 @@
-import assert from "node:assert/strict";
+﻿import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 
@@ -21,7 +21,7 @@ test("admin membership entitlements are owned by the standard memberships busine
   const drawerSource = readPortalFile("./packages/sdkwork-claw-router-admin-memberships/src/components/MembershipDrawer.tsx");
   const routeClassification = readPortalFile("../../docs/schema-registry/frontend-route-classification.yaml");
   const backendOpenapi = readPortalFile("../../generated/openapi/clawrouter-backend-openapi.json");
-  const backendCommerceSdk = readPortalFile("../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/src/api/commerce.ts");
+  const backendCommerceSdk = readPortalFile("../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/generated/server-openapi/src/api/commerce.ts");
 
   assert.match(appSource, /const MembershipsAdmin = lazyRoute(?:<AdminSectionRouteProps>)?\(\(\) => import\('sdkwork-claw-router-admin-memberships'\), 'MembershipsAdmin'\)/);
   assert.match(appSource, /<Route path="memberships" element=\{<Navigate to="\/admin\/memberships\/packages" replace \/>} \/>/);

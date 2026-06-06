@@ -11,7 +11,8 @@ This directory is the SDK family workspace for one OpenAPI surface. Language SDK
 - SDK generation input: `openapi/clawrouter-backend-sdk.openapi.json`
 - Assembly snapshot: `.sdkwork-assembly.json`
 - TypeScript workspace: `clawrouter-backend-sdk-typescript`
-- Other language workspaces: `<family>-<language>/generated/server-openapi`
+- TypeScript generated output: `clawrouter-backend-sdk-typescript/generated/server-openapi`
+- Other generated outputs: `<family>-<language>/generated/server-openapi`
 - Family generator: `bin/generate-sdk.mjs`
 - Family verifier: `bin/verify-sdk.mjs`
 
@@ -29,7 +30,7 @@ This directory is the SDK family workspace for one OpenAPI surface. Language SDK
 
 ## TypeScript
 
-The materialized TypeScript package is `@sdkwork/clawrouter-backend-sdk` and lives under `clawrouter-backend-sdk-typescript`. Hand-written extensions stay inside `clawrouter-backend-sdk-typescript/custom`.
+The materialized TypeScript package is `@sdkwork/clawrouter-backend-sdk` and lives under `clawrouter-backend-sdk-typescript/generated/server-openapi`. The `clawrouter-backend-sdk-typescript` directory is the language workspace boundary.
 
 TypeScript is the workspace dependency consumed by the portal. Other languages are generated under their own language workspace and use `generated/server-openapi` as the generator-owned transport boundary.
 

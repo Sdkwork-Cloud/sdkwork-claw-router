@@ -9,9 +9,9 @@ const required = [
   '.sdkwork-assembly.json',
   'openapi/clawrouter-open-sdk.openapi.json',
   'openapi/clawrouter-open-sdk.sdkgen.json',
-  'clawrouter-open-sdk-typescript/package.json',
-  'clawrouter-open-sdk-typescript/sdkwork-sdk.json',
-  'clawrouter-open-sdk-typescript/src/index.ts',
+  'clawrouter-open-sdk-typescript/generated/server-openapi/package.json',
+  'clawrouter-open-sdk-typescript/generated/server-openapi/sdkwork-sdk.json',
+  'clawrouter-open-sdk-typescript/generated/server-openapi/src/index.ts',
 ];
 const missing = required.filter((entry) => !existsSync(path.join(workspaceRoot, entry)));
 if (missing.length > 0) {

@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+﻿#!/usr/bin/env node
 
 import { spawn } from 'node:child_process';
 import process from 'node:process';
@@ -74,7 +74,7 @@ function createProductionBuildPlan(
     {
       label: 'app SDK runtime build',
       command: pnpmCommand(platform),
-      args: ['--dir', 'sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript', 'build'],
+      args: ['--dir', 'sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi', 'build'],
       env,
       cwd: root,
       attempts: 2,
@@ -82,7 +82,7 @@ function createProductionBuildPlan(
     {
       label: 'backend SDK runtime build',
       command: pnpmCommand(platform),
-      args: ['--dir', 'sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript', 'build'],
+      args: ['--dir', 'sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/generated/server-openapi', 'build'],
       env,
       cwd: root,
       attempts: 2,
@@ -90,7 +90,7 @@ function createProductionBuildPlan(
     {
       label: 'open SDK runtime build',
       command: pnpmCommand(platform),
-      args: ['--dir', 'sdks/clawrouter-open-sdk/clawrouter-open-sdk-typescript', 'build'],
+      args: ['--dir', 'sdks/clawrouter-open-sdk/clawrouter-open-sdk-typescript/generated/server-openapi', 'build'],
       env,
       cwd: root,
       attempts: 2,

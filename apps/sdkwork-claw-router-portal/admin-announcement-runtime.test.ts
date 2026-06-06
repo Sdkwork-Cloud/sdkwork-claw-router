@@ -1,4 +1,4 @@
-import assert from "node:assert/strict";
+﻿import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 
@@ -372,11 +372,11 @@ test("admin announcement popup display flag is preserved in create, update, and 
 
 test("admin announcement backend SDK request contracts expose popup display flag", () => {
   const createTypeSource = readFileSync(
-    new URL("../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/src/types/admin-announcement-create-request.ts", import.meta.url),
+    new URL("../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/generated/server-openapi/src/types/admin-announcement-create-request.ts", import.meta.url),
     "utf8",
   );
   const updateTypeSource = readFileSync(
-    new URL("../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/src/types/admin-announcement-update-request.ts", import.meta.url),
+    new URL("../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/generated/server-openapi/src/types/admin-announcement-update-request.ts", import.meta.url),
     "utf8",
   );
 

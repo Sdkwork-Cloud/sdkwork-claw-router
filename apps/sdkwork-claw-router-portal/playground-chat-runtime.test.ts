@@ -1,4 +1,4 @@
-import assert from "node:assert/strict";
+﻿import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 import i18next from "i18next";
@@ -656,8 +656,8 @@ test("simple chat input explains why the send button is disabled", () => {
 test("console API keys expose backend runtime default selection", () => {
   const serviceSource = readPortalFile("./packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts");
   const viewSource = readPortalFile("./packages/sdkwork-claw-router-console-api-keys/src/ApiKeysView.tsx");
-  const appSdkItem = readWorkspaceFile("sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/types/app-api-key-item.ts");
-  const appSdkUpdate = readWorkspaceFile("sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/types/update-api-key-request.ts");
+  const appSdkItem = readWorkspaceFile("sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/types/app-api-key-item.ts");
+  const appSdkUpdate = readWorkspaceFile("sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/types/update-api-key-request.ts");
 
   assert.match(appSdkItem, /defaultForRuntime: boolean;/);
   assert.match(appSdkUpdate, /defaultForRuntime\?: boolean;/);
@@ -672,7 +672,7 @@ test("console API keys expose backend runtime default selection", () => {
 
 test("runtime SSE event type comes directly from the generated app SDK contract", () => {
   const commonsRuntimeSource = readPortalFile("./packages/sdkwork-claw-router-commons/src/runtime.ts");
-  const runtimeEventItemSource = readWorkspaceFile("sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/types/runtime-event-item.ts");
+  const runtimeEventItemSource = readWorkspaceFile("sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/types/runtime-event-item.ts");
 
   assert.match(runtimeEventItemSource, /payloadJson: Record<string, JsonValue>;/);
   assert.match(commonsRuntimeSource, /export type RuntimeStreamEvent = RuntimeEventItem;/);
@@ -796,7 +796,7 @@ test("user chat messages use a muted modern send bubble without an avatar", () =
       id: "user-modern-bubble",
       conversationId: "conversation-1",
       role: "user",
-      content: "请用 TypeScript 写一个解析器。",
+      content: "璇风敤 TypeScript 鍐欎竴涓В鏋愬櫒銆?,
       status: "completed",
       createdAt: "2026-05-26T00:00:00.000Z",
     },
@@ -877,12 +877,12 @@ test("chat markdown renders language-less fenced code as a real code block", () 
 test("chat markdown repairs inline fenced code emitted by compact provider streams", () => {
   const html = renderToStaticMarkup(React.createElement(ChatMarkdownMessage, {
     content: [
-      "下面是示例：```java",
+      "涓嬮潰鏄ず渚嬶細```java",
       "public class Demo {}",
-      "```输出示例：```text",
+      "```杈撳嚭绀轰緥锛歚``text",
       "ok",
-      "```复杂度：```text",
-      "O(n²)",
+      "```澶嶆潅搴︼細```text",
+      "O(n虏)",
       "```",
     ].join("\n"),
     tone: "assistant",
@@ -891,9 +891,9 @@ test("chat markdown repairs inline fenced code emitted by compact provider strea
   assert.equal((html.match(/<figure/g) || []).length, 3);
   assert.match(html, /Copy code/);
   assert.match(html, /public[\s\S]*class[\s\S]*Demo/);
-  assert.match(html, /O[\s\S]*n²/);
-  assert.doesNotMatch(html, /示例：```java/);
-  assert.doesNotMatch(html, /```输出示例/);
+  assert.match(html, /O[\s\S]*n虏/);
+  assert.doesNotMatch(html, /绀轰緥锛歚``java/);
+  assert.doesNotMatch(html, /```杈撳嚭绀轰緥/);
 });
 
 test("chat markdown repairs compact fenced code with code on the opening line", () => {
@@ -944,13 +944,13 @@ test("chat markdown repairs compact unlabeled fenced code with code on the openi
 
 test("chat markdown repairs compact ordered lists before rendering", () => {
   const html = renderToStaticMarkup(React.createElement(ChatMarkdownMessage, {
-    content: "请确认：1.**提醒你什么事？**  \n2.**什么时候提醒？**比如今天下午3点",
+    content: "璇风‘璁わ細1.**鎻愰啋浣犱粈涔堜簨锛?*  \n2.**浠€涔堟椂鍊欐彁閱掞紵**姣斿浠婂ぉ涓嬪崍3鐐?,
     tone: "assistant",
   }));
 
   assert.match(html, /<ol/);
-  assert.match(html, /<strong>提醒你什么事？<\/strong>/);
-  assert.match(html, /<strong>什么时候提醒？<\/strong>/);
+  assert.match(html, /<strong>鎻愰啋浣犱粈涔堜簨锛?\/strong>/);
+  assert.match(html, /<strong>浠€涔堟椂鍊欐彁閱掞紵<\/strong>/);
   assert.doesNotMatch(html, /1\.&lt;strong/);
 });
 
@@ -1989,7 +1989,7 @@ test("playground asset history views reuse appbase history media helpers", () =>
 
 test("app OpenAPI and SDK expose AgentRunStep terminal submit", () => {
   const openapi = JSON.parse(readWorkspaceFile("generated/openapi/clawrouter-app-openapi.json"));
-  const agentSdkSource = readWorkspaceFile("sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/api/agents.ts");
+  const agentSdkSource = readWorkspaceFile("sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/api/agents.ts");
 
   assert(openapi.paths["/app/v3/api/agents/runs/{runId}/steps/{stepId}/complete"]);
   assert.equal(
@@ -2002,7 +2002,7 @@ test("app OpenAPI and SDK expose AgentRunStep terminal submit", () => {
 
 test("generation history contract preserves runtime output text after reload", () => {
   const openapi = JSON.parse(readWorkspaceFile("generated/openapi/clawrouter-app-openapi.json"));
-  const generationHistoryItemSource = readWorkspaceFile("sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/types/generation-history-item.ts");
+  const generationHistoryItemSource = readWorkspaceFile("sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/types/generation-history-item.ts");
   const historyMapperSource = readPortalFile("./packages/sdkwork-claw-router-playground/src/historyMapper.ts");
 
   assert.equal(openapi.components.schemas.GenerationHistoryItem.properties.outputText.type, "string");
@@ -2066,9 +2066,9 @@ test("app OpenAPI exposes product Chat Memory Runtime routes without legacy ai p
 });
 
 test("app SDK sends JSON bodies for product Memory and Runtime mutations", () => {
-  const memorySource = readWorkspaceFile("sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/api/memory.ts");
-  const runtimeSource = readWorkspaceFile("sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/api/runtime.ts");
-  const runtimeEventItemSource = readWorkspaceFile("sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/types/runtime-event-item.ts");
+  const memorySource = readWorkspaceFile("sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/api/memory.ts");
+  const runtimeSource = readWorkspaceFile("sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/api/runtime.ts");
+  const runtimeEventItemSource = readWorkspaceFile("sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/types/runtime-event-item.ts");
   const openapi = JSON.parse(readWorkspaceFile("generated/openapi/clawrouter-app-openapi.json"));
 
   assert.match(memorySource, /async create\(body: MemorySpaceCreateRequest, params: MemorySpacesCreateParams\)/);

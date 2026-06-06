@@ -1,4 +1,4 @@
-import { SdkworkAppClient, type SdkworkAppConfig } from '@sdkwork/clawrouter-app-sdk';
+﻿import { SdkworkAppClient, type SdkworkAppConfig } from '@sdkwork/clawrouter-app-sdk';
 import { SdkworkBackendClient, type SdkworkBackendConfig } from '@sdkwork/clawrouter-backend-sdk';
 import { SdkworkAiClient, type SdkworkAiConfig } from '@sdkwork/clawrouter-open-sdk';
 import {
@@ -42,7 +42,7 @@ export const CLAWROUTER_APP_SDK_REFERENCE_METADATA: ClawRouterGeneratedSdkMetada
   sdkType: 'app',
   apiPrefix: APP_API_PREFIX,
   runtimeEnvName: 'VITE_CLAWROUTER_APP_API_BASE_URL',
-  sourceDir: 'sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript',
+  sourceDir: 'sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi',
   archiveLanguage: 'typescript',
   archiveName: 'sdkwork-clawrouter-app-sdk-typescript-0.1.0.zip',
   description: 'SDKWork Claw Router app API SDK',
@@ -55,7 +55,7 @@ export const CLAWROUTER_BACKEND_SDK_REFERENCE_METADATA: ClawRouterGeneratedSdkMe
   sdkType: 'backend',
   apiPrefix: BACKEND_API_PREFIX,
   runtimeEnvName: 'VITE_CLAWROUTER_BACKEND_API_BASE_URL',
-  sourceDir: 'sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript',
+  sourceDir: 'sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/generated/server-openapi',
   archiveLanguage: 'typescript',
   archiveName: 'sdkwork-clawrouter-backend-sdk-typescript-0.1.0.zip',
   description: 'SDKWork Claw Router backend API SDK',
@@ -68,7 +68,7 @@ export const CLAWROUTER_AI_SDK_REFERENCE_METADATA: ClawRouterGeneratedSdkMetadat
   sdkType: 'ai',
   apiPrefix: OPEN_API_PREFIX,
   runtimeEnvName: 'VITE_CLAWROUTER_OPEN_API_BASE_URL',
-  sourceDir: 'sdks/clawrouter-open-sdk/clawrouter-open-sdk-typescript',
+  sourceDir: 'sdks/clawrouter-open-sdk/clawrouter-open-sdk-typescript/generated/server-openapi',
   archiveLanguage: 'typescript',
   archiveName: 'sdkwork-clawrouter-open-sdk-typescript-0.1.0.zip',
   description: 'SDKWork OpenAI-compatible AI API SDK',

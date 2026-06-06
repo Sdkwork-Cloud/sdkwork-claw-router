@@ -339,8 +339,19 @@ function runProjectRuntimeStandardizer(outputPath, config) {
 }
 
 function resolveProjectSdkWorkspace(resolvedOutputPath) {
-  const typescriptDirectory = path.basename(resolvedOutputPath);
-  const sdkFamilyRoot = path.dirname(resolvedOutputPath);
+  const normalizedOutputPath = path.normalize(resolvedOutputPath);
+  const pathParts = normalizedOutputPath.split(path.sep);
+  let typescriptDirectory = path.basename(normalizedOutputPath);
+  let sdkFamilyRoot = path.dirname(normalizedOutputPath);
+  if (
+    pathParts.length >= 3
+    && pathParts.at(-1) === 'server-openapi'
+    && pathParts.at(-2) === 'generated'
+  ) {
+    const languageWorkspaceRoot = path.dirname(path.dirname(normalizedOutputPath));
+    typescriptDirectory = path.basename(languageWorkspaceRoot);
+    sdkFamilyRoot = path.dirname(languageWorkspaceRoot);
+  }
   const sdkFamilyName = path.basename(sdkFamilyRoot);
   const sdksRoot = path.dirname(sdkFamilyRoot);
   if (path.basename(sdksRoot) !== 'sdks') {

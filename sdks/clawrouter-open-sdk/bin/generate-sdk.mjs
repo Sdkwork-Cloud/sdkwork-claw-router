@@ -99,9 +99,7 @@ Official languages: ${OFFICIAL_LANGUAGES.join(', ')}`);
 }
 
 function runLanguage(language) {
-  if (language !== 'typescript') {
-    rmSync(path.join(workspaceRoot, `sdks/${sdkFamily}/${sdkFamily}-${language}/generated/server-openapi`), { recursive: true, force: true });
-  }
+  rmSync(path.join(workspaceRoot, generatedOutputPath(language)), { recursive: true, force: true });
   const args = language === 'typescript'
     ? strictTypeScriptArgs()
     : generatorArgs(language);
@@ -120,7 +118,7 @@ function strictTypeScriptArgs() {
     'tools/clawrouter_strict_sdk_generate.mjs',
     'generate',
     '-i', sdkgenInputPath,
-    '-o', 'sdks/clawrouter-open-sdk/clawrouter-open-sdk-typescript',
+    '-o', 'sdks/clawrouter-open-sdk/clawrouter-open-sdk-typescript/generated/server-openapi',
     '-n', sdkFamily,
     '-t', sdkType,
     '-l', 'typescript',
@@ -158,11 +156,15 @@ function generatorArgs(language) {
   return args;
 }
 
-function cleanGeneratedOutput(language) {
+function generatedOutputPath(language) {
   if (language === 'typescript') {
-    return;
+    return 'sdks/clawrouter-open-sdk/clawrouter-open-sdk-typescript/generated/server-openapi';
   }
-  const outputRoot = path.join(workspaceRoot, `sdks/${sdkFamily}/${sdkFamily}-${language}/generated/server-openapi`);
+  return `sdks/${sdkFamily}/${sdkFamily}-${language}/generated/server-openapi`;
+}
+
+function cleanGeneratedOutput(language) {
+  const outputRoot = path.join(workspaceRoot, generatedOutputPath(language));
   if (!existsSync(outputRoot)) {
     return;
   }

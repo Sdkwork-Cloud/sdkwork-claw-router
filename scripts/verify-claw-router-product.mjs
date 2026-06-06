@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+﻿#!/usr/bin/env node
 
 import { spawn } from 'node:child_process';
 import process from 'node:process';
@@ -196,19 +196,19 @@ function buildSdkRuntimeBuildPlan(env = process.env) {
     {
       label: 'app SDK runtime build',
       command: pnpmCommand(),
-      args: ['--dir', 'sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript', 'build'],
+      args: ['--dir', 'sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi', 'build'],
       env,
     },
     {
       label: 'backend SDK runtime build',
       command: pnpmCommand(),
-      args: ['--dir', 'sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript', 'build'],
+      args: ['--dir', 'sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/generated/server-openapi', 'build'],
       env,
     },
     {
       label: 'open SDK runtime build',
       command: pnpmCommand(),
-      args: ['--dir', 'sdks/clawrouter-open-sdk/clawrouter-open-sdk-typescript', 'build'],
+      args: ['--dir', 'sdks/clawrouter-open-sdk/clawrouter-open-sdk-typescript/generated/server-openapi', 'build'],
       env,
     },
   ];
@@ -424,19 +424,19 @@ function buildVerificationPlan(settings, env = process.env) {
   plan.push({
     label: 'portal runtime app SDK refresh',
     command: pnpmCommand(),
-    args: ['--dir', 'sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript', 'build'],
+    args: ['--dir', 'sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi', 'build'],
     env,
   });
   plan.push({
     label: 'portal runtime backend SDK refresh',
     command: pnpmCommand(),
-    args: ['--dir', 'sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript', 'build'],
+    args: ['--dir', 'sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/generated/server-openapi', 'build'],
     env,
   });
   plan.push({
     label: 'portal runtime open SDK refresh',
     command: pnpmCommand(),
-    args: ['--dir', 'sdks/clawrouter-open-sdk/clawrouter-open-sdk-typescript', 'build'],
+    args: ['--dir', 'sdks/clawrouter-open-sdk/clawrouter-open-sdk-typescript/generated/server-openapi', 'build'],
     env,
   });
   plan.push({

@@ -435,7 +435,7 @@ class SdkRuntimeStandardizer:
         updated: list[Path] = []
         for sdk_family in self.sdk_directories:
             family = self.root / "sdks" / sdk_family
-            base = family / SDK_TYPESCRIPT_DIRECTORIES[sdk_family]
+            base = family / SDK_TYPESCRIPT_DIRECTORIES[sdk_family] / "generated" / "server-openapi"
             if not base.is_dir():
                 raise FileNotFoundError(f"generated SDK directory is missing: {base}")
             updated.extend(self._standardize_sdk_family(sdk_family, family, base))
@@ -862,6 +862,7 @@ class SdkRuntimeStandardizer:
 
     def _build_assembly(self, sdk_family: str, family: Path, package: dict[str, Any]) -> dict[str, Any]:
         typescript_directory = SDK_TYPESCRIPT_DIRECTORIES[sdk_family]
+        typescript_generated_path = f"{typescript_directory}/generated/server-openapi"
         package_name = str(package.get("name") or SDK_PACKAGE_NAMES[sdk_family])
         version = str(package.get("version") or "0.1.0")
         languages: list[dict[str, Any]] = [
@@ -870,8 +871,9 @@ class SdkRuntimeStandardizer:
                 "workspace": typescript_directory,
                 "generationState": "materialized",
                 "releaseState": "not_published",
-                "packagePath": typescript_directory,
-                "manifestPath": f"{typescript_directory}/package.json",
+                "generatedPath": typescript_generated_path,
+                "packagePath": typescript_generated_path,
+                "manifestPath": f"{typescript_generated_path}/package.json",
                 "name": package_name,
                 "version": version,
                 "description": SDK_DESCRIPTIONS[sdk_family],
@@ -886,9 +888,9 @@ class SdkRuntimeStandardizer:
                 },
                 "packages": [
                     {
-                        "layer": "root",
-                        "packagePath": typescript_directory,
-                        "manifestPath": f"{typescript_directory}/package.json",
+                        "layer": "generated",
+                        "packagePath": typescript_generated_path,
+                        "manifestPath": f"{typescript_generated_path}/package.json",
                         "name": package_name,
                         "version": version,
                         "description": SDK_DESCRIPTIONS[sdk_family],
@@ -1011,15 +1013,16 @@ class SdkRuntimeStandardizer:
             f"- SDK generation input: {generation_input}\n"
             "- Assembly snapshot: `.sdkwork-assembly.json`\n"
             f"- TypeScript workspace: `{typescript_directory}`\n"
-            "- Other language workspaces: `<family>-<language>/generated/server-openapi`\n"
+            f"- TypeScript generated output: `{typescript_directory}/generated/server-openapi`\n"
+            "- Other generated outputs: `<family>-<language>/generated/server-openapi`\n"
             "- Family generator: `bin/generate-sdk.mjs`\n"
             "- Family verifier: `bin/verify-sdk.mjs`\n\n"
             "## Official Languages\n\n"
             f"{language_lines}\n\n"
             "## TypeScript\n\n"
             f"The materialized TypeScript package is `{package_name}` and lives under "
-            f"`{typescript_directory}`. Hand-written extensions stay inside "
-            f"`{typescript_directory}/custom`.\n\n"
+            f"`{typescript_directory}/generated/server-openapi`. The `{typescript_directory}` "
+            "directory is the language workspace boundary.\n\n"
             "TypeScript is the workspace dependency consumed by the portal. Other languages are "
             "generated under their own language workspace and use `generated/server-openapi` as the "
             "generator-owned transport boundary.\n\n"
@@ -1183,9 +1186,7 @@ class SdkRuntimeStandardizer:
             "Official languages: ${OFFICIAL_LANGUAGES.join(', ')}`);\n"
             "}\n\n"
             "function runLanguage(language) {\n"
-            "  if (language !== 'typescript') {\n"
-            "    rmSync(path.join(workspaceRoot, `sdks/${sdkFamily}/${sdkFamily}-${language}/generated/server-openapi`), { recursive: true, force: true });\n"
-            "  }\n"
+            "  rmSync(path.join(workspaceRoot, generatedOutputPath(language)), { recursive: true, force: true });\n"
             "  const args = language === 'typescript'\n"
             "    ? strictTypeScriptArgs()\n"
             "    : generatorArgs(language);\n"
@@ -1203,7 +1204,7 @@ class SdkRuntimeStandardizer:
             "    'tools/clawrouter_strict_sdk_generate.mjs',\n"
             "    'generate',\n"
             f"    '-i', {sdk_generator_input_path},\n"
-            f"    '-o', 'sdks/{sdk_family}/{typescript_directory}',\n"
+            f"    '-o', 'sdks/{sdk_family}/{typescript_directory}/generated/server-openapi',\n"
             "    '-n', sdkFamily,\n"
             "    '-t', sdkType,\n"
             "    '-l', 'typescript',\n"
@@ -1241,11 +1242,14 @@ class SdkRuntimeStandardizer:
             "  }\n"
             "  return args;\n"
             "}\n\n"
-            "function cleanGeneratedOutput(language) {\n"
+            "function generatedOutputPath(language) {\n"
             "  if (language === 'typescript') {\n"
-            "    return;\n"
+            f"    return 'sdks/{sdk_family}/{typescript_directory}/generated/server-openapi';\n"
             "  }\n"
-            "  const outputRoot = path.join(workspaceRoot, `sdks/${sdkFamily}/${sdkFamily}-${language}/generated/server-openapi`);\n"
+            "  return `sdks/${sdkFamily}/${sdkFamily}-${language}/generated/server-openapi`;\n"
+            "}\n\n"
+            "function cleanGeneratedOutput(language) {\n"
+            "  const outputRoot = path.join(workspaceRoot, generatedOutputPath(language));\n"
             "  if (!existsSync(outputRoot)) {\n"
             "    return;\n"
             "  }\n"
@@ -1293,9 +1297,9 @@ class SdkRuntimeStandardizer:
             "  '.sdkwork-assembly.json',\n"
             f"  'openapi/{sdk_family}.openapi.json',\n"
             f"  'openapi/{sdk_family}.sdkgen.json',\n"
-            f"  '{typescript_directory}/package.json',\n"
-            f"  '{typescript_directory}/sdkwork-sdk.json',\n"
-            f"  '{typescript_directory}/src/index.ts',\n"
+            f"  '{typescript_directory}/generated/server-openapi/package.json',\n"
+            f"  '{typescript_directory}/generated/server-openapi/sdkwork-sdk.json',\n"
+            f"  '{typescript_directory}/generated/server-openapi/src/index.ts',\n"
             "];\n"
             "const missing = required.filter((entry) => !existsSync(path.join(workspaceRoot, entry)));\n"
             "if (missing.length > 0) {\n"
@@ -1331,7 +1335,7 @@ class SdkRuntimeStandardizer:
             "import path from 'node:path';\n\n"
             "const workspaceRoot = path.resolve(import.meta.dirname, '..');\n\n"
             f"test('{sdk_family} family layout is materialized', () => {{\n"
-            f"  assert.equal(existsSync(path.join(workspaceRoot, '{typescript_directory}', 'package.json')), true);\n"
+            f"  assert.equal(existsSync(path.join(workspaceRoot, '{typescript_directory}', 'generated', 'server-openapi', 'package.json')), true);\n"
             f"  assert.equal(existsSync(path.join(workspaceRoot, 'openapi', '{sdk_family}.openapi.json')), true);\n"
             "  assert.equal(existsSync(path.join(workspaceRoot, '.sdkwork-assembly.json')), true);\n"
             "});\n"

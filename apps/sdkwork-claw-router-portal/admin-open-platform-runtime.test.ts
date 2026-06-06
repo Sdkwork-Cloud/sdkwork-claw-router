@@ -1,4 +1,4 @@
-import assert from "node:assert/strict";
+﻿import assert from "node:assert/strict";
 import { existsSync, readFileSync } from "node:fs";
 import test from "node:test";
 
@@ -107,8 +107,8 @@ test("backend contract and generated SDK expose open platform account management
   const openapi = JSON.parse(readWorkspaceFile("generated/openapi/clawrouter-backend-openapi.json")) as {
     paths: Record<string, unknown>;
   };
-  const sdkSource = readWorkspaceFile("sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/src/sdk.ts");
-  const sdkApiSource = readWorkspaceFile("sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/src/api/open-platform.ts");
+  const sdkSource = readWorkspaceFile("sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/generated/server-openapi/src/sdk.ts");
+  const sdkApiSource = readWorkspaceFile("sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/generated/server-openapi/src/api/open-platform.ts");
 
   const operationIds = new Set(
     manifest.operations

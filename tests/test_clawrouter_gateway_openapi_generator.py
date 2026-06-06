@@ -2004,6 +2004,14 @@ class ClawRouterGatewayOpenApiGeneratorTest(unittest.TestCase):
                 self.assertIn(schema_name, component_names)
 
             schemas = spec["components"]["schemas"]
+            image_generation_request = schemas["OpenAiImageGenerationRequest"]
+            self.assertIn("n", image_generation_request["properties"])
+            self.assertEqual(
+                "integer",
+                image_generation_request["properties"]["n"]["type"],
+            )
+            self.assertEqual(1, image_generation_request["properties"]["n"]["minimum"])
+            self.assertEqual(16, image_generation_request["properties"]["n"]["maximum"])
             self.assertDescribedSchemaRef(
                 schemas["OpenAiChatContentPart"]["properties"]["image_url"],
                 "#/components/schemas/OpenAiChatImageUrl",

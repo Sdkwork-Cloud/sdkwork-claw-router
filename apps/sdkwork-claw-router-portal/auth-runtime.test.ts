@@ -1,4 +1,4 @@
-import assert from "node:assert/strict";
+﻿import assert from "node:assert/strict";
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 import test from "node:test";
 
@@ -511,23 +511,23 @@ test("claw router app auth is declared through appbase IAM standard contract and
   const contractSource = readPortalFile("../../docs/schema-registry/frontend-field-contracts.yaml");
   const appOpenApiSource = readPortalFile("../../generated/openapi/clawrouter-app-openapi.json");
   const backendOpenApiSource = readPortalFile("../../generated/openapi/clawrouter-backend-openapi.json");
-  const appSdkSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/sdk.ts");
-  const appSdkAuthSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/api/auth.ts");
-  const appSdkIamSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/api/iam.ts");
-  const appSdkSystemSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/api/system.ts");
-  const appSdkOpenPlatformSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/api/open-platform.ts");
-  const appSdkQrSessionCreateRequestSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/types/open-platform-qr-auth-session-create-request.ts");
-  const appSdkQrScanCreateRequestSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/types/open-platform-qr-auth-scan-create-request.ts");
-  const appSdkQrPasswordCreateRequestSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/types/open-platform-qr-auth-password-create-request.ts");
-  const appSdkRuntimeSettingsResponseSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/types/auth-runtime-settings-response.ts");
-  const appSdkSessionRequestSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/types/iam-session-create-request.ts");
-  const appSdkRegistrationRequestSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/types/iam-registration-create-request.ts");
-  const backendSdkSystemSource = readPortalFile("../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/src/api/system.ts");
-  const backendSdkIndexSource = readPortalFile("../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/src/sdk.ts");
-  const backendSdkAuthSettingsUpdateSource = readPortalFile("../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/src/types/admin-auth-settings-update-request.ts");
-  const appSdkRuntimeSettingsResultSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/types/iam-runtime-retrieve-result.ts");
-  const appSdkTypesSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/types/index.ts");
-  const backendSdkTypesSource = readPortalFile("../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/src/types/index.ts");
+  const appSdkSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/sdk.ts");
+  const appSdkAuthSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/api/auth.ts");
+  const appSdkIamSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/api/iam.ts");
+  const appSdkSystemSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/api/system.ts");
+  const appSdkOpenPlatformSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/api/open-platform.ts");
+  const appSdkQrSessionCreateRequestSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/types/open-platform-qr-auth-session-create-request.ts");
+  const appSdkQrScanCreateRequestSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/types/open-platform-qr-auth-scan-create-request.ts");
+  const appSdkQrPasswordCreateRequestSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/types/open-platform-qr-auth-password-create-request.ts");
+  const appSdkRuntimeSettingsResponseSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/types/auth-runtime-settings-response.ts");
+  const appSdkSessionRequestSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/types/iam-session-create-request.ts");
+  const appSdkRegistrationRequestSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/types/iam-registration-create-request.ts");
+  const backendSdkSystemSource = readPortalFile("../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/generated/server-openapi/src/api/system.ts");
+  const backendSdkIndexSource = readPortalFile("../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/generated/server-openapi/src/sdk.ts");
+  const backendSdkAuthSettingsUpdateSource = readPortalFile("../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/generated/server-openapi/src/types/admin-auth-settings-update-request.ts");
+  const appSdkRuntimeSettingsResultSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/types/iam-runtime-retrieve-result.ts");
+  const appSdkTypesSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/types/index.ts");
+  const backendSdkTypesSource = readPortalFile("../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/generated/server-openapi/src/types/index.ts");
 
   for (const operationId of [
     "qrAuth.sessions.create",
@@ -953,11 +953,11 @@ test("admin auth settings form preserves flexible OAuth providers and validates 
 });
 
 test("generated claw router app SDK surface satisfies appbase IAM SDK port contract", () => {
-  const sdkSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/sdk.ts");
-  const appSdkAuthSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/api/auth.ts");
-  const appSdkIamSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/api/iam.ts");
-  const appSdkSystemSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/api/system.ts");
-  const appSdkOpenPlatformSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/api/open-platform.ts");
+  const sdkSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/sdk.ts");
+  const appSdkAuthSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/api/auth.ts");
+  const appSdkIamSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/api/iam.ts");
+  const appSdkSystemSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/api/system.ts");
+  const appSdkOpenPlatformSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/api/open-platform.ts");
   const iamSdkPortsSource = readPortalFile("../../../sdkwork-appbase/packages/common/iam/sdkwork-iam-sdk-ports/src/index.ts");
   const authServiceSource = readPortalFile("../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-pc-react/src/auth-service.ts");
   const appbaseAuthPageSource = readPortalFile("../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-pc-react/src/pages/AuthPage.tsx");
@@ -1779,12 +1779,12 @@ test("admin model vendor item is grouped under model management", () => {
   const agentsAndSkillsGroup = findAdminMenuGroupSource(adminRegistrySource, "admin.menu.home.agentSkills");
   assert.doesNotMatch(agentsAndSkillsGroup, /path:\s*'\/admin\/model'/);
   assert.match(i18nSource, /"admin\.menu\.home\.modelManagement":\s*"Model Management"/);
-  assert.match(i18nSource, /"admin\.menu\.home\.modelManagement":\s*"模型管理"/);
+  assert.match(i18nSource, /"admin\.menu\.home\.modelManagement":\s*"妯″瀷绠＄悊"/);
   assert.match(i18nSource, /"admin\.layout\.links\.models":\s*"Model Vendors"/);
   assert.match(i18nSource, /"admin\.menu\.models":\s*"Model Vendors"/);
-  assert.match(i18nSource, /"admin\.layout\.links\.models":\s*"模型厂商管理"/);
-  assert.match(i18nSource, /"admin\.menu\.models":\s*"模型厂商管理"/);
-  assert.doesNotMatch(i18nSource, /模型平台管理/);
+  assert.match(i18nSource, /"admin\.layout\.links\.models":\s*"妯″瀷鍘傚晢绠＄悊"/);
+  assert.match(i18nSource, /"admin\.menu\.models":\s*"妯″瀷鍘傚晢绠＄悊"/);
+  assert.doesNotMatch(i18nSource, /妯″瀷骞冲彴绠＄悊/);
 });
 
 test("admin group and AI channels are grouped under AI channel management", () => {
@@ -1807,7 +1807,7 @@ test("admin group and AI channels are grouped under AI channel management", () =
   assert.doesNotMatch(agentsAndSkillsGroup, /path:\s*'\/admin\/group'/);
   assert.doesNotMatch(agentsAndSkillsGroup, /path:\s*'\/admin\/channel'/);
   assert.match(i18nSource, /"admin\.menu\.home\.accountPoolManagement":\s*"AI Channel Management"/);
-  assert.match(i18nSource, /"admin\.menu\.home\.accountPoolManagement":\s*"AI 渠道管理"/);
+  assert.match(i18nSource, /"admin\.menu\.home\.accountPoolManagement":\s*"AI 娓犻亾绠＄悊"/);
 });
 
 test("admin channel credential details expose API key copy without leaking hidden values in the table", () => {
@@ -1879,7 +1879,7 @@ test("admin app center module owns app store and split open platform modules", (
   assert.doesNotMatch(homeMenu, /path:\s*'\/admin\/app'/);
   assert.doesNotMatch(homeMenu, /path:\s*'\/admin\/open-platform'/);
   assert.match(i18nSource, /"admin\.header\.appCenter":\s*"App Center"/);
-  assert.match(i18nSource, /"admin\.header\.appCenter":\s*"应用中心"/);
+  assert.match(i18nSource, /"admin\.header\.appCenter":\s*"搴旂敤涓績"/);
 });
 
 test("admin commerce module is split into product transaction member marketing and finance centers", () => {
@@ -1924,13 +1924,13 @@ test("admin commerce module is split into product transaction member marketing a
   assert.match(i18nSource, /"admin\.header\.productCenter":\s*"Product Center"/);
   assert.match(i18nSource, /"admin\.header\.transactionCenter":\s*"Transaction Center"/);
   assert.match(i18nSource, /"admin\.header\.memberCenter":\s*"Member Center"/);
-  assert.match(i18nSource, /"admin\.header\.memberCenter":\s*"会员中心"/);
+  assert.match(i18nSource, /"admin\.header\.memberCenter":\s*"浼氬憳涓績"/);
   assert.match(i18nSource, /"admin\.header\.marketingCenter":\s*"Marketing Center"/);
   assert.match(i18nSource, /"admin\.header\.financeCenter":\s*"Finance Center"/);
-  assert.match(i18nSource, /"admin\.header\.productCenter":\s*"商品中心"/);
-  assert.match(i18nSource, /"admin\.header\.transactionCenter":\s*"交易中心"/);
-  assert.match(i18nSource, /"admin\.header\.marketingCenter":\s*"营销中心"/);
-  assert.match(i18nSource, /"admin\.header\.financeCenter":\s*"财务中心"/);
+  assert.match(i18nSource, /"admin\.header\.productCenter":\s*"鍟嗗搧涓績"/);
+  assert.match(i18nSource, /"admin\.header\.transactionCenter":\s*"浜ゆ槗涓績"/);
+  assert.match(i18nSource, /"admin\.header\.marketingCenter":\s*"钀ラ攢涓績"/);
+  assert.match(i18nSource, /"admin\.header\.financeCenter":\s*"璐㈠姟涓績"/);
 });
 
 test("admin commerce second-level sections are promoted into the left sidebar", () => {
@@ -2296,8 +2296,8 @@ test("admin app center splits WeChat official account and mini program into inde
   assert.match(i18nSource, /"admin\.menu\.openPlatformMiniPrograms":\s*"WeChat Mini Programs"/);
   assert.match(i18nSource, /"admin\.menu\.openPlatformMiniProgramAccounts":\s*"Mini Program Accounts"/);
   assert.match(i18nSource, /"admin\.menu\.openPlatformMiniProgramUrls":\s*"Mini Program URLs"/);
-  assert.match(i18nSource, /"admin\.menu\.openPlatformOfficialAccounts":\s*"微信公众号"/);
-  assert.match(i18nSource, /"admin\.menu\.openPlatformMiniPrograms":\s*"小程序"/);
+  assert.match(i18nSource, /"admin\.menu\.openPlatformOfficialAccounts":\s*"寰俊鍏紬鍙?/);
+  assert.match(i18nSource, /"admin\.menu\.openPlatformMiniPrograms":\s*"灏忕▼搴?/);
 
   assert.match(officialSource, /export function WechatOfficialAccountAdmin/);
   assert.match(officialSource, /sectionId\?: string/);
@@ -2309,7 +2309,7 @@ test("admin app center splits WeChat official account and mini program into inde
   assert.match(officialSource, /data-admin-open-platform-wechat-official-menus-table/);
   assert.match(officialSource, /className="m-5 mt-4 min-h-0 flex-1 rounded-xl"/);
   assert.match(officialSource, /viewportClassName="min-h-0 flex-1"/);
-  assert.match(officialSource, /公众号/);
+  assert.match(officialSource, /鍏紬鍙?);
   assert.doesNotMatch(officialSource, /from 'react-router-dom'/);
   assert.doesNotMatch(officialSource, /OFFICIAL_SECTION_ROUTES/);
   assert.doesNotMatch(officialSource, /to=\{OFFICIAL_SECTION_ROUTES\[item\]\}/);
@@ -2368,7 +2368,7 @@ test("admin app center splits WeChat official account and mini program into inde
   assert.match(miniSource, /data-admin-open-platform-wechat-mini-urls-table/);
   assert.match(miniSource, /className="m-5 mt-4 min-h-0 flex-1 rounded-xl"/);
   assert.match(miniSource, /viewportClassName="min-h-0 flex-1"/);
-  assert.match(miniSource, /小程序/);
+  assert.match(miniSource, /灏忕▼搴?);
   assert.match(miniSource, /const OPEN_PLATFORM_KEY_PATTERN = \/\^\[a-z0-9\]\[a-z0-9\._:-\]\*\$\/;/);
   assert.match(miniSource, /function isValidOpenPlatformKey\(value: string\): boolean/);
   assert.match(miniSource, /!isValidOpenPlatformKey\(key\)[\s\S]*admin\.openPlatform\.wechatMini\.validation\.entryKeyInvalid/);
@@ -2546,7 +2546,7 @@ test("admin home product platform group is renamed to agents and skills", () => 
   assert.doesNotMatch(agentsAndSkillsGroup, /path:\s*'\/admin\/app'/);
   assert.doesNotMatch(agentsAndSkillsGroup, /path:\s*'\/admin\/open-platform'/);
   assert.match(i18nSource, /"admin\.menu\.home\.agentSkills":\s*"Agents & Skills"/);
-  assert.match(i18nSource, /"admin\.menu\.home\.agentSkills":\s*"智能体和技能"/);
+  assert.match(i18nSource, /"admin\.menu\.home\.agentSkills":\s*"鏅鸿兘浣撳拰鎶€鑳?/);
 });
 
 test("admin usage records and analytics are grouped under home data management", () => {
@@ -2573,7 +2573,7 @@ test("admin usage records and analytics are grouped under home data management",
   assert.doesNotMatch(operationsHeaderModule, /'\/admin\/record'/);
   assert.doesNotMatch(operationsHeaderModule, /'\/admin\/analytics'/);
   assert.match(i18nSource, /"admin\.menu\.home\.dataManagement":\s*"Data Management"/);
-  assert.match(i18nSource, /"admin\.menu\.home\.dataManagement":\s*"数据管理"/);
+  assert.match(i18nSource, /"admin\.menu\.home\.dataManagement":\s*"鏁版嵁绠＄悊"/);
 });
 
 test("admin sidebar menu groups are expanded by default", () => {
