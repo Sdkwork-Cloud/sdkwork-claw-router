@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Optional
 from ..http_client import HttpClient
-from ..models import AdminAuthSettingsUpdateRequest, AdminFirewallRuleCreateRequest, AdminIpLimitCreateRequest, AdminModelLimitCreateRequest, AdminRuntimeRegionSettingsUpdateRequest, AdminServiceNodeCreateRequest, AdminServiceNodeStatusUpdateRequest, AdminServiceNodeUpdateRequest, AdminSiteSettingsUpdateRequest, AdminTokenLimitCreateRequest, AnalyticsAdminOverviewRetrieveResult, AuthSettingsRetrieveResult, AuthSettingsUpdateResult, CacheInstancesDeleteResult, CacheInstancesRefreshCreateResult, CacheNamespacesDeleteResult, CacheNamespacesKeysDeleteResult, CacheNamespacesKeysListResult, CacheNamespacesRefreshCreateResult, CacheOverviewRetrieveResult, CacheRefreshCreateResult, DashboardAdminOverviewRetrieveResult, FirewallsRulesCreateResult, FirewallsRulesDeleteResult, FirewallsRulesListResult, InstallationStatusRetrieveResult, MarketingReferralStatsListResult, MonitorAlertsListResult, MonitorNodesListResult, MonitorPerformanceListResult, PromotionsBudgetLedgerEntriesListResult, PromotionsCodesRedemptionsListResult, PromotionsCouponLedgerEntriesListResult, PromotionsEventsListResult, PromotionsExternalBindingsListResult, RateLimitsApiKeysCreateResult, RateLimitsApiKeysListResult, RateLimitsIpCreateResult, RateLimitsIpListResult, RateLimitsModelsCreateResult, RateLimitsModelsListResult, RecordsListResult, RuntimeRegionSettingsRetrieveResult, RuntimeRegionSettingsUpdateResult, ServiceNodesCreateResult, ServiceNodesDeleteResult, ServiceNodesListResult, ServiceNodesStatusUpdateResult, ServiceNodesUpdateResult, SiteSettingsRetrieveResult, SiteSettingsUpdateResult
+from ..models import AdminAuthSettingsUpdateRequest, AdminFirewallRuleCreateRequest, AdminIpLimitCreateRequest, AdminModelLimitCreateRequest, AdminRuntimeRegionSettingsUpdateRequest, AdminServiceNodeCreateRequest, AdminServiceNodeStatusUpdateRequest, AdminServiceNodeUpdateRequest, AdminSiteSettingsUpdateRequest, AdminTokenLimitCreateRequest, AnalyticsAdminOverviewRetrieveResult, AuthSettingsRetrieveResult, AuthSettingsUpdateResult, CacheInstancesDeleteResult, CacheInstancesRefreshCreateResult, CacheNamespacesDeleteResult, CacheNamespacesKeysDeleteResult, CacheNamespacesKeysListResult, CacheNamespacesRefreshCreateResult, CacheOverviewRetrieveResult, CacheRefreshCreateResult, DashboardAdminOverviewRetrieveResult, FirewallsRulesCreateResult, FirewallsRulesDeleteResult, FirewallsRulesListResult, InstallationStatusRetrieveResult, MarketingReferralStatsListResult, MonitorAlertsListResult, MonitorNodesListResult, MonitorPerformanceListResult, PromotionsBudgetLedgerEntriesListResult, PromotionsCodesListResult, PromotionsCodesRedemptionsListResult, PromotionsCouponLedgerEntriesListResult, PromotionsCouponStocksListResult, PromotionsDiscountAllocationsListResult, PromotionsDiscountApplicationsListResult, PromotionsEventsListResult, PromotionsExternalBindingsListResult, PromotionsOffersManagementListResult, PromotionsUserCouponsManagementListResult, RateLimitsApiKeysCreateResult, RateLimitsApiKeysListResult, RateLimitsIpCreateResult, RateLimitsIpListResult, RateLimitsModelsCreateResult, RateLimitsModelsListResult, RecordsListResult, RuntimeRegionSettingsRetrieveResult, RuntimeRegionSettingsUpdateResult, ServiceNodesCreateResult, ServiceNodesDeleteResult, ServiceNodesListResult, ServiceNodesStatusUpdateResult, ServiceNodesUpdateResult, SiteSettingsRetrieveResult, SiteSettingsUpdateResult
 
 def _append_query_string(path: str, raw_query_string: str) -> str:
     query = raw_query_string.lstrip('?')
@@ -213,8 +213,13 @@ class SystemPromotionsApi:
         self.budget_ledger_entries = SystemPromotionsBudgetLedgerEntriesApi(client)
         self.codes = SystemPromotionsCodesApi(client)
         self.coupon_ledger_entries = SystemPromotionsCouponLedgerEntriesApi(client)
+        self.coupon_stocks = SystemPromotionsCouponStocksApi(client)
+        self.discount_allocations = SystemPromotionsDiscountAllocationsApi(client)
+        self.discount_applications = SystemPromotionsDiscountApplicationsApi(client)
         self.events = SystemPromotionsEventsApi(client)
         self.external_bindings = SystemPromotionsExternalBindingsApi(client)
+        self.offers = SystemPromotionsOffersApi(client)
+        self.user_coupons = SystemPromotionsUserCouponsApi(client)
 
 
 class SystemPromotionsBudgetLedgerEntriesApi:
@@ -238,6 +243,15 @@ class SystemPromotionsCodesApi:
         self._client = client
         self.redemptions = SystemPromotionsCodesRedemptionsApi(client)
 
+
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, status: Optional[str] = None) -> PromotionsCodesListResult:
+        """Promotion Coupon Codes List"""
+        query = build_query_string([
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/promotions/codes", query))
 
 class SystemPromotionsCodesRedemptionsApi:
     """system system.promotions.codes.redemptions API client."""
@@ -269,6 +283,52 @@ class SystemPromotionsCouponLedgerEntriesApi:
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/promotions/coupon_ledger_entries", query))
 
+class SystemPromotionsCouponStocksApi:
+    """system system.promotions.coupon_stocks API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, status: Optional[str] = None) -> PromotionsCouponStocksListResult:
+        """Promotion Coupon Stocks List"""
+        query = build_query_string([
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/promotions/coupon_stocks", query))
+
+class SystemPromotionsDiscountAllocationsApi:
+    """system system.promotions.discount_allocations API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, application_id: Optional[str] = None) -> PromotionsDiscountAllocationsListResult:
+        """Promotion Discount Allocations List"""
+        query = build_query_string([
+            {'name': 'application_id', 'value': application_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/promotions/discount_allocations", query))
+
+class SystemPromotionsDiscountApplicationsApi:
+    """system system.promotions.discount_applications API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, status: Optional[str] = None) -> PromotionsDiscountApplicationsListResult:
+        """Promotion Discount Applications List"""
+        query = build_query_string([
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/promotions/discount_applications", query))
+
 class SystemPromotionsEventsApi:
     """system system.promotions.events API client."""
 
@@ -296,6 +356,54 @@ class SystemPromotionsExternalBindingsApi:
             {'name': 'platform', 'value': platform, 'style': 'form', 'explode': True, 'allow_reserved': False},
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/promotions/external_bindings", query))
+
+class SystemPromotionsOffersApi:
+    """system system.promotions.offers API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+        self.management = SystemPromotionsOffersManagementApi(client)
+
+
+class SystemPromotionsOffersManagementApi:
+    """system system.promotions.offers.management API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, status: Optional[str] = None) -> PromotionsOffersManagementListResult:
+        """Promotion Offers List"""
+        query = build_query_string([
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/promotions/offers", query))
+
+class SystemPromotionsUserCouponsApi:
+    """system system.promotions.user_coupons API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+        self.management = SystemPromotionsUserCouponsManagementApi(client)
+
+
+class SystemPromotionsUserCouponsManagementApi:
+    """system system.promotions.user_coupons.management API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, status: Optional[str] = None) -> PromotionsUserCouponsManagementListResult:
+        """Promotion User Coupons Management List"""
+        query = build_query_string([
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/promotions/user_coupons", query))
 
 class SystemAnalyticsApi:
     """system system.analytics API client."""

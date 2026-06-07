@@ -1,0 +1,11 @@
+import type { OpenPlatformEntryResponse } from './open-platform-entry-response';
+
+/** Accounts entries create result schema exposed by Claw Router. */
+export interface AccountsEntriesCreateResult {
+  /** Business response code. */
+  code: string;
+  /** Data field on accounts entries create result. */
+  data?: OpenPlatformEntryResponse;
+  /** Human-readable response message. */
+  msg?: string;
+}

@@ -31,7 +31,8 @@ public class Main {
     public static void main(String[] args) throws Exception {
         Types.SdkConfig config = new Types.SdkConfig("http://localhost:18081");
         SdkworkBackendClient client = new SdkworkBackendClient(config);
-        client.setApiKey("your-api-key");
+        client.setAuthToken("your-auth-token");
+client.setAccessToken("your-access-token");
 
         // Use the SDK
         ChannelGroupsListResult result = client.getAi().channelGroupsList();
@@ -40,32 +41,13 @@ public class Main {
 }
 ```
 
-## Authentication Modes (Mutually Exclusive)
+## Authentication
 
-Choose exactly one mode for the same client instance.
-
-### Mode A: API Key
-
-```java
-Types.SdkConfig config = new Types.SdkConfig("http://localhost:18081");
-SdkworkBackendClient client = new SdkworkBackendClient(config);
-client.setApiKey("your-api-key");
-// Sends: Access-Token: <apiKey>
+```text
+Authorization: Bearer <authToken>
+Access-Token: <accessToken>
 ```
 
-### Mode B: Dual Token
-
-```java
-Types.SdkConfig config = new Types.SdkConfig("http://localhost:18081");
-SdkworkBackendClient client = new SdkworkBackendClient(config);
-client.setAuthToken("your-auth-token");
-client.setAccessToken("your-access-token");
-// Sends:
-// Authorization: Bearer <authToken>
-// Access-Token: <accessToken>
-```
-
-> Do not call `setApiKey(...)` together with `setAuthToken(...)` + `setAccessToken(...)` on the same client.
 
 ## Configuration (Non-Auth)
 
@@ -124,8 +106,8 @@ System.out.println(result);
 ### commerce
 
 ```java
-// Recharges Settings Retrieve
-RechargesSettingsRetrieveResult result = client.getCommerce().rechargesSettingsRetrieve();
+// Commerce Reports Payment Reconciliation Retrieve
+CommerceReportsPaymentReconciliationRetrieveResult result = client.getCommerce().reportsPaymentReconciliationRetrieve();
 System.out.println(result);
 ```
 
@@ -148,13 +130,9 @@ System.out.println(result);
 ### iam
 
 ```java
-// Update user
-AdminUserUpdateRequest body = new AdminUserUpdateRequest();
-body.setGroup("group");
-body.setId("1");
-body.setStatus("active");
-body.setUsername("name");
-UsersUpdateResult result = client.getIam().usersUpdate(body);
+// Delete API key
+String apiKeyId = "1";
+ApiKeysDeleteResult result = client.getIam().apiKeysDelete(apiKeyId);
 System.out.println(result);
 ```
 

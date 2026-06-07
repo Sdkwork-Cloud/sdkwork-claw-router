@@ -22,6 +22,17 @@ public class SystemApi {
         return client.convertValue(raw, new TypeReference<PromotionsBudgetLedgerEntriesListResult>() {});
     }
 
+    /** Promotion Coupon Codes List */
+    public PromotionsCodesListResult promotionsCodesList(String page, String pageSize, String status) throws Exception {
+        String query = buildQueryString(List.of(
+            new QueryParameterSpec("page", page, "form", true, false, null),
+            new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+            new QueryParameterSpec("status", status, "form", true, false, null)
+        ));
+        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/promotions/codes"), query));
+        return client.convertValue(raw, new TypeReference<PromotionsCodesListResult>() {});
+    }
+
     /** Promotion Coupon Code Redemptions List */
     public PromotionsCodesRedemptionsListResult promotionsCodesRedemptionsList(String page, String pageSize, String codeStatus) throws Exception {
         String query = buildQueryString(List.of(
@@ -42,6 +53,37 @@ public class SystemApi {
         return client.convertValue(raw, new TypeReference<PromotionsCouponLedgerEntriesListResult>() {});
     }
 
+    /** Promotion Coupon Stocks List */
+    public PromotionsCouponStocksListResult promotionsCouponStocksList(String page, String pageSize, String status) throws Exception {
+        String query = buildQueryString(List.of(
+            new QueryParameterSpec("page", page, "form", true, false, null),
+            new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+            new QueryParameterSpec("status", status, "form", true, false, null)
+        ));
+        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/promotions/coupon_stocks"), query));
+        return client.convertValue(raw, new TypeReference<PromotionsCouponStocksListResult>() {});
+    }
+
+    /** Promotion Discount Allocations List */
+    public PromotionsDiscountAllocationsListResult promotionsDiscountAllocationsList(String applicationId) throws Exception {
+        String query = buildQueryString(List.of(
+            new QueryParameterSpec("application_id", applicationId, "form", true, false, null)
+        ));
+        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/promotions/discount_allocations"), query));
+        return client.convertValue(raw, new TypeReference<PromotionsDiscountAllocationsListResult>() {});
+    }
+
+    /** Promotion Discount Applications List */
+    public PromotionsDiscountApplicationsListResult promotionsDiscountApplicationsList(String page, String pageSize, String status) throws Exception {
+        String query = buildQueryString(List.of(
+            new QueryParameterSpec("page", page, "form", true, false, null),
+            new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+            new QueryParameterSpec("status", status, "form", true, false, null)
+        ));
+        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/promotions/discount_applications"), query));
+        return client.convertValue(raw, new TypeReference<PromotionsDiscountApplicationsListResult>() {});
+    }
+
     /** Promotion Events List */
     public PromotionsEventsListResult promotionsEventsList(String status) throws Exception {
         String query = buildQueryString(List.of(
@@ -58,6 +100,28 @@ public class SystemApi {
         ));
         Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/promotions/external_bindings"), query));
         return client.convertValue(raw, new TypeReference<PromotionsExternalBindingsListResult>() {});
+    }
+
+    /** Promotion Offers List */
+    public PromotionsOffersManagementListResult promotionsOffersManagementList(String page, String pageSize, String status) throws Exception {
+        String query = buildQueryString(List.of(
+            new QueryParameterSpec("page", page, "form", true, false, null),
+            new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+            new QueryParameterSpec("status", status, "form", true, false, null)
+        ));
+        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/promotions/offers"), query));
+        return client.convertValue(raw, new TypeReference<PromotionsOffersManagementListResult>() {});
+    }
+
+    /** Promotion User Coupons Management List */
+    public PromotionsUserCouponsManagementListResult promotionsUserCouponsManagementList(String page, String pageSize, String status) throws Exception {
+        String query = buildQueryString(List.of(
+            new QueryParameterSpec("page", page, "form", true, false, null),
+            new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+            new QueryParameterSpec("status", status, "form", true, false, null)
+        ));
+        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/promotions/user_coupons"), query));
+        return client.convertValue(raw, new TypeReference<PromotionsUserCouponsManagementListResult>() {});
     }
 
     /** List overview */

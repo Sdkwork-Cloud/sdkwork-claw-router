@@ -15,6 +15,13 @@ SDK_CLIENTS = (
     / "src"
     / "sdk-clients.ts"
 )
+IAM_RUNTIME = (
+    PORTAL_ROOT
+    / "packages"
+    / "sdkwork-clawrouter-pc-commons"
+    / "src"
+    / "iam-runtime.ts"
+)
 DEPENDENCY_API_SURFACES = ROOT / "specs" / "dependency-api-surfaces.json"
 PC_COMPONENT_SPEC = PORTAL_ROOT / "specs" / "component.spec.json"
 COMMONS_COMPONENT_SPEC = (
@@ -317,6 +324,27 @@ class DependencyApiSurfaceStandardTest(unittest.TestCase):
         self.assertNotIn("VITE_CLAWROUTER_BACKEND_API_BASE_URL", resolver)
         self.assertNotIn("BACKEND_API_PREFIX", resolver)
         self.assertNotIn("?? '/backend/v3/api'", resolver)
+
+    def test_iam_runtime_appbase_backend_base_url_uses_dependency_external_service_config(self) -> None:
+        manifest = read_json(DEPENDENCY_API_SURFACES)
+        backend_entry = entries_by_sdk_dependency(manifest)[
+            ("clawrouter-backend-sdk", "sdkwork-appbase-backend-sdk")
+        ]
+        runtime = backend_entry["runtimeIntegration"]
+        self.assertFalse(runtime["sameOriginAllowed"])
+
+        source = read_text(IAM_RUNTIME)
+        resolver = extract_function(source, "resolveAppbaseBackendApiBaseUrl")
+        self.assertIn("resolveRequiredAppbaseBackendBaseUrl", resolver)
+        self.assertNotIn("VITE_CLAWROUTER_BACKEND_API_BASE_URL", resolver)
+        self.assertNotIn("?? BACKEND_API_PREFIX", resolver)
+        self.assertNotIn("?? '/backend/v3/api'", resolver)
+
+        sdk_clients = read_text(SDK_CLIENTS)
+        required_resolver = extract_function(sdk_clients, "resolveRequiredAppbaseBackendBaseUrl")
+        self.assertIn(runtime["requiredBaseUrlEnv"], required_resolver)
+        self.assertIn("throw new Error", required_resolver)
+        self.assertNotIn("VITE_CLAWROUTER_BACKEND_API_BASE_URL", required_resolver)
 
     def test_same_origin_dependency_surfaces_have_mount_coverage_evidence(self) -> None:
         manifest = read_json(DEPENDENCY_API_SURFACES)

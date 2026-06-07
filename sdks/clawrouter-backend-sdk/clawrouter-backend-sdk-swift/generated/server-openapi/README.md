@@ -8,7 +8,7 @@ Add to `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/sdkwork/backend-sdk-swift", from: "0.1.0")
+    .package(url: "https://github.com/sdkwork/ClawRouterBackendSdk", from: "0.1.0")
 ]
 ```
 
@@ -20,39 +20,21 @@ import SDKworkCommon
 
 let config = SdkConfig(baseUrl: "http://localhost:18081")
 let client = SdkworkBackendClient(config: config)
-client.setApiKey("your-api-key")
+client.setAuthToken("your-auth-token")
+client.setAccessToken("your-access-token")
 
 // Use the SDK
 let result = try await client.ai.channelGroupsList()
 print(result)
 ```
 
-## Authentication Modes (Mutually Exclusive)
+## Authentication
 
-Choose exactly one mode for the same client instance.
-
-### Mode A: API Key
-
-```swift
-let config = SdkConfig(baseUrl: "http://localhost:18081")
-let client = SdkworkBackendClient(config: config)
-client.setApiKey("your-api-key")
-// Sends: Access-Token: <apiKey>
+```text
+Authorization: Bearer <authToken>
+Access-Token: <accessToken>
 ```
 
-### Mode B: Dual Token
-
-```swift
-let config = SdkConfig(baseUrl: "http://localhost:18081")
-let client = SdkworkBackendClient(config: config)
-client.setAuthToken("your-auth-token")
-client.setAccessToken("your-access-token")
-// Sends:
-// Authorization: Bearer <authToken>
-// Access-Token: <accessToken>
-```
-
-> Do not call `setApiKey(...)` together with `setAuthToken(...)` + `setAccessToken(...)` on the same client.
 
 ## Configuration (Non-Auth)
 
@@ -112,8 +94,8 @@ print(result)
 ### commerce
 
 ```swift
-// Recharges Settings Retrieve
-let result = try await client.commerce.rechargesSettingsRetrieve()
+// Commerce Reports Payment Reconciliation Retrieve
+let result = try await client.commerce.reportsPaymentReconciliationRetrieve()
 print(result)
 ```
 
@@ -136,14 +118,9 @@ print(result)
 ### iam
 
 ```swift
-// Update user
-let body = AdminUserUpdateRequest(
-    group: "group",
-    id: "1",
-    status: "active",
-    username: "name"
-)
-let result = try await client.iam.usersUpdate(body: body)
+// Delete API key
+let apiKeyId = "1"
+let result = try await client.iam.apiKeysDelete(apiKeyId: apiKeyId)
 print(result)
 ```
 

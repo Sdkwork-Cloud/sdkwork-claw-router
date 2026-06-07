@@ -11,6 +11,22 @@ class SystemApi {
 
   SystemApi(this._client);
 
+  /// Promotion Code Redemption Create
+  Future<PromotionsCodesRedemptionsCreateResult?> promotionsCodesRedemptionsCreate(PromotionCodeRedemptionRequest body, String idempotencyKey) async {
+    final requestHeaders = buildRequestHeaders(
+      <String, HeaderParameterSpec>{
+        'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
+      },
+      <String, HeaderParameterSpec>{},
+    );
+    final payload = body.toJson();
+    final response = await _client.post(ApiPaths.appPath('/promotions/codes/redemptions'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : PromotionsCodesRedemptionsCreateResult.fromJson(map);
+    })();
+  }
+
   /// Promotion Discount Application Create
   Future<PromotionsDiscountApplicationsCreateResult?> promotionsDiscountApplicationsCreate(PromotionCommandRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
@@ -72,6 +88,34 @@ class SystemApi {
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : PromotionsDiscountApplicationsSettleResult.fromJson(map);
+    })();
+  }
+
+  /// Promotion User Coupon Claim Create
+  Future<PromotionsUserCouponsClaimsCreateResult?> promotionsUserCouponsClaimsCreate(PromotionCommandRequest body, String idempotencyKey) async {
+    final requestHeaders = buildRequestHeaders(
+      <String, HeaderParameterSpec>{
+        'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
+      },
+      <String, HeaderParameterSpec>{},
+    );
+    final payload = body.toJson();
+    final response = await _client.post(ApiPaths.appPath('/promotions/user_coupon_claims'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : PromotionsUserCouponsClaimsCreateResult.fromJson(map);
+    })();
+  }
+
+  /// Promotion User Coupons Wallet List
+  Future<PromotionsUserCouponsWalletListResult?> promotionsUserCouponsWalletList([String? status]) async {
+    final query = buildQueryString([
+      QueryParameterSpec('status', status, 'form', true, false, null)
+    ]);
+    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.appPath('/promotions/user_coupons'), query));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : PromotionsUserCouponsWalletListResult.fromJson(map);
     })();
   }
 

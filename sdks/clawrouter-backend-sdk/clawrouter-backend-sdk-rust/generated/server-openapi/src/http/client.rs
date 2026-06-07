@@ -13,8 +13,6 @@ use thiserror::Error;
 pub type QueryParams = HashMap<String, Value>;
 pub type RequestHeaders = HashMap<String, String>;
 
-const DEFAULT_API_KEY_HEADER: &str = "Access-Token";
-const DEFAULT_API_KEY_USE_BEARER: bool = false;
 
 #[derive(Debug, Clone)]
 pub struct SdkworkConfig {
@@ -78,36 +76,12 @@ impl SdkworkHttpClient {
             headers: Arc::new(RwLock::new(config.headers)),
         })
     }
-
-    pub fn set_api_key(&self, api_key: impl Into<String>) {
-        let value = api_key.into();
-        let mut headers = self.headers.write().expect("sdk headers poisoned");
-        if DEFAULT_API_KEY_USE_BEARER {
-            headers.insert(DEFAULT_API_KEY_HEADER.to_string(), format!("Bearer {}", value));
-        } else {
-            headers.insert(DEFAULT_API_KEY_HEADER.to_string(), value);
-        }
-        if DEFAULT_API_KEY_HEADER != "Authorization" {
-            headers.remove("Authorization");
-        }
-        if DEFAULT_API_KEY_HEADER != "Access-Token" {
-            headers.remove("Access-Token");
-        }
-    }
-
     pub fn set_auth_token(&self, token: impl Into<String>) {
         let mut headers = self.headers.write().expect("sdk headers poisoned");
-        if DEFAULT_API_KEY_HEADER != "Authorization" {
-            headers.remove(DEFAULT_API_KEY_HEADER);
-        }
         headers.insert("Authorization".to_string(), format!("Bearer {}", token.into()));
     }
-
     pub fn set_access_token(&self, token: impl Into<String>) {
         let mut headers = self.headers.write().expect("sdk headers poisoned");
-        if DEFAULT_API_KEY_HEADER != "Access-Token" {
-            headers.remove(DEFAULT_API_KEY_HEADER);
-        }
         headers.insert("Access-Token".to_string(), token.into());
     }
 

@@ -41,16 +41,6 @@ func (a *IamApi) ApiKeysDelete(apiKeyId string) (sdktypes.ApiKeysDeleteResult, e
     return decodeResult[sdktypes.ApiKeysDeleteResult](raw)
 }
 
-// Update user
-func (a *IamApi) UsersUpdate(body sdktypes.AdminUserUpdateRequest) (sdktypes.UsersUpdateResult, error) {
-    raw, err := a.client.Put(BackendApiPath("/iam/users"), body, nil, nil, "application/json")
-    if err != nil {
-        var zero sdktypes.UsersUpdateResult
-        return zero, err
-    }
-    return decodeResult[sdktypes.UsersUpdateResult](raw)
-}
-
 type PathParameterSpec struct {
     Name    string
     Style   string

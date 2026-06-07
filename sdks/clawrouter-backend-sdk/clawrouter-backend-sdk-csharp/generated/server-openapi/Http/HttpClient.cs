@@ -15,8 +15,6 @@ namespace Sdkwork.ClawRouter.Backend.Http
 {
     public class HttpClient
     {
-        private const string ApiKeyHeader = "Access-Token";
-        private static readonly bool ApiKeyUseBearer = false;
 
         private readonly System.Net.Http.HttpClient _client;
         private readonly string _baseUrl;
@@ -42,62 +40,13 @@ namespace Sdkwork.ClawRouter.Backend.Http
                 }
             }
         }
-
-        public void SetApiKey(string apiKey)
-        {
-            if (ApiKeyHeader.Equals("Authorization", StringComparison.OrdinalIgnoreCase))
-            {
-                if (ApiKeyUseBearer)
-                {
-                    _client.DefaultRequestHeaders.Authorization =
-                        new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", apiKey);
-                }
-                else
-                {
-                    _client.DefaultRequestHeaders.Authorization = null;
-                    if (_client.DefaultRequestHeaders.Contains("Authorization"))
-                    {
-                        _client.DefaultRequestHeaders.Remove("Authorization");
-                    }
-                    _client.DefaultRequestHeaders.TryAddWithoutValidation("Authorization", apiKey);
-                }
-            }
-            else
-            {
-                if (_client.DefaultRequestHeaders.Contains(ApiKeyHeader))
-                {
-                    _client.DefaultRequestHeaders.Remove(ApiKeyHeader);
-                }
-                var headerValue = ApiKeyUseBearer ? "Bearer " + apiKey : apiKey;
-                _client.DefaultRequestHeaders.TryAddWithoutValidation(ApiKeyHeader, headerValue);
-                _client.DefaultRequestHeaders.Authorization = null;
-            }
-
-            if (!ApiKeyHeader.Equals("Access-Token", StringComparison.OrdinalIgnoreCase)
-                && _client.DefaultRequestHeaders.Contains("Access-Token"))
-            {
-                _client.DefaultRequestHeaders.Remove("Access-Token");
-            }
-        }
-
         public void SetAuthToken(string token)
         {
-            if (!ApiKeyHeader.Equals("Authorization", StringComparison.OrdinalIgnoreCase)
-                && _client.DefaultRequestHeaders.Contains(ApiKeyHeader))
-            {
-                _client.DefaultRequestHeaders.Remove(ApiKeyHeader);
-            }
             _client.DefaultRequestHeaders.Authorization =
                 new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
         }
-
         public void SetAccessToken(string token)
         {
-            if (!ApiKeyHeader.Equals("Access-Token", StringComparison.OrdinalIgnoreCase)
-                && _client.DefaultRequestHeaders.Contains(ApiKeyHeader))
-            {
-                _client.DefaultRequestHeaders.Remove(ApiKeyHeader);
-            }
             if (_client.DefaultRequestHeaders.Contains("Access-Token"))
             {
                 _client.DefaultRequestHeaders.Remove("Access-Token");

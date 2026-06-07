@@ -29,12 +29,6 @@ public class IamApi {
         return client.convertValue(raw, new TypeReference<ApiKeysDeleteResult>() {});
     }
 
-    /** Update user */
-    public UsersUpdateResult usersUpdate(AdminUserUpdateRequest body) throws Exception {
-        Object raw = client.put(ApiPaths.backendPath("/iam/users"), body, null, null, "application/json");
-        return client.convertValue(raw, new TypeReference<UsersUpdateResult>() {});
-    }
-
     private record PathParameterSpec(String name, String style, boolean explode) {}
 
     private static String serializePathParameter(Object value, PathParameterSpec spec) {

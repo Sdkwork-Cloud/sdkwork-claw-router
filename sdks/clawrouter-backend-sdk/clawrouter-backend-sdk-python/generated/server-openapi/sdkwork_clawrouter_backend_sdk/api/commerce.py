@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Optional
 from ..http_client import HttpClient
-from ..models import CatalogCategoryAttributesCreateResult, CatalogCategoryAttributesDeleteResult, CatalogCategoryAttributesListResult, CatalogCategoryAttributesUpdateResult, CatalogCategorySeedsCreateResult, CatalogProductsDeleteResult, CatalogSkusDeleteResult, CommerceCategorySeedInitializeRequest, CommerceInventoryStockUpdateRequest, CommerceMembershipMemberStatusRequest, CommerceMembershipPackageGroupMutationRequest, CommerceMembershipPackageMutationRequest, CommerceMembershipPlanMutationRequest, CommercePaymentProviderAccountStatusUpdateRequest, CommerceProductCategoryAttributeMutationRequest, CommerceRechargeSettingsUpdateRequest, InventoryStocksUpdateResult, MembershipsMembersStatusUpdateResult, MembershipsPackageGroupsUpdateResult, MembershipsPackagesUpdateResult, MembershipsPlansUpdateResult, OrdersRetrieveResult, PaymentsProviderAccountsDeleteResult, PaymentsProviderAccountsStatusUpdateResult, PaymentsProvidersListResult, PaymentsRuntimeSnapshotRetrieveResult, RechargesPackagesDeleteResult, RechargesSettingsRetrieveResult, RechargesSettingsUpdateResult, ShipmentsTrackingEventsListResult
+from ..models import AuditCommerceEventsListResult, CommerceInventoryStockUpdateRequest, CommerceMembershipMemberStatusRequest, CommerceMembershipPackageGroupMutationRequest, CommerceMembershipPackageMutationRequest, CommerceMembershipPlanMutationRequest, CommercePaymentProviderAccountMutationRequest, CommercePaymentProviderAccountStatusUpdateRequest, CommerceRechargePackageMutationRequest, CommerceRechargeSettingsUpdateRequest, CommerceReportsOrderRevenueListResult, CommerceReportsPaymentReconciliationRetrieveResult, CommerceReportsRefundsListResult, CommerceStandardCommandRequest, FulfillmentsListResult, InventoryLedgerEntriesListResult, InventoryReservationsListResult, InventoryStocksListResult, InventoryStocksUpdateResult, InvoicesListResult, InvoicesRetrieveResult, InvoicesTitlesListResult, MembershipsEntitlementsListResult, MembershipsMembersListResult, MembershipsMembersStatusUpdateResult, MembershipsPackageGroupsCreateResult, MembershipsPackageGroupsDeleteResult, MembershipsPackageGroupsListResult, MembershipsPackageGroupsUpdateResult, MembershipsPackagesCreateResult, MembershipsPackagesDeleteResult, MembershipsPackagesListResult, MembershipsPackagesUpdateResult, MembershipsPlansCreateResult, MembershipsPlansDeleteResult, MembershipsPlansListResult, MembershipsPlansUpdateResult, OrdersEventsListResult, OrdersListResult, OrdersRetrieveResult, PaymentsAttemptsListResult, PaymentsChannelsListResult, PaymentsIntentsListResult, PaymentsMethodsListResult, PaymentsProviderAccountsCreateResult, PaymentsProviderAccountsDeleteResult, PaymentsProviderAccountsListResult, PaymentsProviderAccountsStatusUpdateResult, PaymentsProviderAccountsUpdateResult, PaymentsProvidersListResult, PaymentsReconciliationRunsListResult, PaymentsRouteRulesListResult, PaymentsRuntimeSnapshotRetrieveResult, PaymentsWebhookEventsListResult, RechargesOrdersListResult, RechargesPackagesCreateResult, RechargesPackagesDeleteResult, RechargesPackagesListResult, RechargesPackagesUpdateResult, RechargesSettingsRetrieveResult, RechargesSettingsUpdateResult, RefundsListResult, RefundsRetrieveResult, ShipmentsListResult, ShipmentsTrackingEventsListResult, WalletAccountsListResult, WalletAdjustmentsCreateResult, WalletExchangeRulesListResult, WalletLedgerEntriesListResult
 
 def _append_query_string(path: str, raw_query_string: str) -> str:
     query = raw_query_string.lstrip('?')
@@ -242,114 +242,160 @@ class CommerceApi:
 
     def __init__(self, client: HttpClient):
         self._client = client
-        self.catalog = CommerceCatalogApi(client)
+        self.audit = CommerceAuditApi(client)
+        self.commerce_reports = CommerceCommerceReportsApi(client)
+        self.fulfillments = CommerceFulfillmentsApi(client)
         self.inventory = CommerceInventoryApi(client)
+        self.invoices = CommerceInvoicesApi(client)
         self.memberships = CommerceMembershipsApi(client)
         self.orders = CommerceOrdersApi(client)
         self.payments = CommercePaymentsApi(client)
         self.recharges = CommerceRechargesApi(client)
+        self.refunds = CommerceRefundsApi(client)
         self.shipments = CommerceShipmentsApi(client)
+        self.wallet = CommerceWalletApi(client)
 
 
-class CommerceCatalogApi:
-    """commerce commerce.catalog API client."""
-
-    def __init__(self, client: HttpClient):
-        self._client = client
-        self.category_attributes = CommerceCatalogCategoryAttributesApi(client)
-        self.category_seeds = CommerceCatalogCategorySeedsApi(client)
-        self.products = CommerceCatalogProductsApi(client)
-        self.skus = CommerceCatalogSkusApi(client)
-
-
-class CommerceCatalogCategoryAttributesApi:
-    """commerce commerce.catalog.category_attributes API client."""
+class CommerceAuditApi:
+    """commerce commerce.audit API client."""
 
     def __init__(self, client: HttpClient):
         self._client = client
+        self.commerce_events = CommerceAuditCommerceEventsApi(client)
 
 
-    def list(self, category_id: Optional[str] = None, attribute_id: Optional[str] = None, status: Optional[str] = None, page: Optional[str] = None, page_size: Optional[str] = None) -> CatalogCategoryAttributesListResult:
-        """List category attribute bindings"""
+class CommerceAuditCommerceEventsApi:
+    """commerce commerce.audit.commerce_events API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, status: Optional[str] = None) -> AuditCommerceEventsListResult:
+        """Audit Commerce Events List"""
         query = build_query_string([
-            {'name': 'category_id', 'value': category_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
-            {'name': 'attribute_id', 'value': attribute_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
-            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
             {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
             {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
         ])
-        return self._client.get(_append_query_string(f"/backend/v3/api/catalog/category_attributes", query))
+        return self._client.get(_append_query_string(f"/backend/v3/api/audit/commerce_events", query))
 
-    def create(self, body: CommerceProductCategoryAttributeMutationRequest, idempotency_key: str) -> CatalogCategoryAttributesCreateResult:
-        """Create category attribute binding"""
-        request_headers = build_request_headers(
-            {
-                'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/catalog/category_attributes", json=body, headers=request_headers)
+class CommerceCommerceReportsApi:
+    """commerce commerce.commerce_reports API client."""
 
-    def delete(self, binding_id: str) -> CatalogCategoryAttributesDeleteResult:
-        """Delete category attribute binding"""
-        return self._client.delete(f"/backend/v3/api/catalog/category_attributes/{serialize_path_parameter(binding_id, {'name': 'bindingId', 'style': 'simple', 'explode': False})}")
+    def __init__(self, client: HttpClient):
+        self._client = client
+        self.order_revenue = CommerceCommerceReportsOrderRevenueApi(client)
+        self.payment_reconciliation = CommerceCommerceReportsPaymentReconciliationApi(client)
+        self.refunds = CommerceCommerceReportsRefundsApi(client)
 
-    def update(self, binding_id: str, body: CommerceProductCategoryAttributeMutationRequest, idempotency_key: str) -> CatalogCategoryAttributesUpdateResult:
-        """Update category attribute binding"""
-        request_headers = build_request_headers(
-            {
-                'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.patch(f"/backend/v3/api/catalog/category_attributes/{serialize_path_parameter(binding_id, {'name': 'bindingId', 'style': 'simple', 'explode': False})}", json=body, headers=request_headers)
 
-class CommerceCatalogCategorySeedsApi:
-    """commerce commerce.catalog.category_seeds API client."""
+class CommerceCommerceReportsOrderRevenueApi:
+    """commerce commerce.commerce_reports.order_revenue API client."""
 
     def __init__(self, client: HttpClient):
         self._client = client
 
 
-    def create(self, body: CommerceCategorySeedInitializeRequest, idempotency_key: str) -> CatalogCategorySeedsCreateResult:
-        """Initialize admin category seed datasets"""
-        request_headers = build_request_headers(
-            {
-                'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
-            },
-            {}
-        )
-        return self._client.post(f"/backend/v3/api/catalog/category_seeds/initialize", json=body, headers=request_headers)
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, status: Optional[str] = None) -> CommerceReportsOrderRevenueListResult:
+        """Commerce Reports Order Revenue List"""
+        query = build_query_string([
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/commerce_reports/order_revenue", query))
 
-class CommerceCatalogProductsApi:
-    """commerce commerce.catalog.products API client."""
-
-    def __init__(self, client: HttpClient):
-        self._client = client
-
-
-    def delete(self, product_id: str) -> CatalogProductsDeleteResult:
-        """Delete product SPU"""
-        return self._client.delete(f"/backend/v3/api/catalog/products/{serialize_path_parameter(product_id, {'name': 'productId', 'style': 'simple', 'explode': False})}")
-
-class CommerceCatalogSkusApi:
-    """commerce commerce.catalog.skus API client."""
+class CommerceCommerceReportsPaymentReconciliationApi:
+    """commerce commerce.commerce_reports.payment_reconciliation API client."""
 
     def __init__(self, client: HttpClient):
         self._client = client
 
 
-    def delete(self, sku_id: str) -> CatalogSkusDeleteResult:
-        """Delete product SKU"""
-        return self._client.delete(f"/backend/v3/api/catalog/skus/{serialize_path_parameter(sku_id, {'name': 'skuId', 'style': 'simple', 'explode': False})}")
+    def retrieve(self) -> CommerceReportsPaymentReconciliationRetrieveResult:
+        """Commerce Reports Payment Reconciliation Retrieve"""
+        return self._client.get(f"/backend/v3/api/commerce_reports/payment_reconciliation")
+
+class CommerceCommerceReportsRefundsApi:
+    """commerce commerce.commerce_reports.refunds API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, status: Optional[str] = None) -> CommerceReportsRefundsListResult:
+        """Commerce Reports Refunds List"""
+        query = build_query_string([
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/commerce_reports/refunds", query))
+
+class CommerceFulfillmentsApi:
+    """commerce commerce.fulfillments API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, status: Optional[str] = None) -> FulfillmentsListResult:
+        """Fulfillments List"""
+        query = build_query_string([
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/fulfillments", query))
 
 class CommerceInventoryApi:
     """commerce commerce.inventory API client."""
 
     def __init__(self, client: HttpClient):
         self._client = client
+        self.ledger_entries = CommerceInventoryLedgerEntriesApi(client)
+        self.reservations = CommerceInventoryReservationsApi(client)
         self.stocks = CommerceInventoryStocksApi(client)
 
+
+class CommerceInventoryLedgerEntriesApi:
+    """commerce commerce.inventory.ledger_entries API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, sku_id: Optional[str] = None, warehouse_id: Optional[str] = None, source_type: Optional[str] = None, source_id: Optional[str] = None, page: Optional[str] = None, page_size: Optional[str] = None) -> InventoryLedgerEntriesListResult:
+        """List inventory ledger entries"""
+        query = build_query_string([
+            {'name': 'sku_id', 'value': sku_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'warehouse_id', 'value': warehouse_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'source_type', 'value': source_type, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'source_id', 'value': source_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/inventory/ledger_entries", query))
+
+class CommerceInventoryReservationsApi:
+    """commerce commerce.inventory.reservations API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, sku_id: Optional[str] = None, order_id: Optional[str] = None, checkout_session_id: Optional[str] = None, status: Optional[str] = None, page: Optional[str] = None, page_size: Optional[str] = None) -> InventoryReservationsListResult:
+        """List inventory reservations"""
+        query = build_query_string([
+            {'name': 'sku_id', 'value': sku_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'order_id', 'value': order_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'checkout_session_id', 'value': checkout_session_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/inventory/reservations", query))
 
 class CommerceInventoryStocksApi:
     """commerce commerce.inventory.stocks API client."""
@@ -357,6 +403,17 @@ class CommerceInventoryStocksApi:
     def __init__(self, client: HttpClient):
         self._client = client
 
+
+    def list(self, sku_id: Optional[str] = None, warehouse_id: Optional[str] = None, status: Optional[str] = None, page: Optional[str] = None, page_size: Optional[str] = None) -> InventoryStocksListResult:
+        """List inventory stock records"""
+        query = build_query_string([
+            {'name': 'sku_id', 'value': sku_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'warehouse_id', 'value': warehouse_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/inventory/stocks", query))
 
     def update(self, stock_id: str, body: CommerceInventoryStockUpdateRequest, idempotency_key: str) -> InventoryStocksUpdateResult:
         """Update inventory stock"""
@@ -368,16 +425,72 @@ class CommerceInventoryStocksApi:
         )
         return self._client.patch(f"/backend/v3/api/inventory/stocks/{serialize_path_parameter(stock_id, {'name': 'stockId', 'style': 'simple', 'explode': False})}", json=body, headers=request_headers)
 
+class CommerceInvoicesApi:
+    """commerce commerce.invoices API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+        self.titles = CommerceInvoicesTitlesApi(client)
+
+
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, status: Optional[str] = None) -> InvoicesListResult:
+        """Invoices List"""
+        query = build_query_string([
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/invoices", query))
+
+    def retrieve(self, invoice_id: str) -> InvoicesRetrieveResult:
+        """Invoices Retrieve"""
+        return self._client.get(f"/backend/v3/api/invoices/{serialize_path_parameter(invoice_id, {'name': 'invoiceId', 'style': 'simple', 'explode': False})}")
+
+class CommerceInvoicesTitlesApi:
+    """commerce commerce.invoices.titles API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, status: Optional[str] = None) -> InvoicesTitlesListResult:
+        """Invoices Titles List"""
+        query = build_query_string([
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/invoices/titles", query))
+
 class CommerceMembershipsApi:
     """commerce commerce.memberships API client."""
 
     def __init__(self, client: HttpClient):
         self._client = client
+        self.entitlements = CommerceMembershipsEntitlementsApi(client)
         self.members = CommerceMembershipsMembersApi(client)
         self.package_groups = CommerceMembershipsPackageGroupsApi(client)
         self.packages = CommerceMembershipsPackagesApi(client)
         self.plans = CommerceMembershipsPlansApi(client)
 
+
+class CommerceMembershipsEntitlementsApi:
+    """commerce commerce.memberships.entitlements API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, plan_id: Optional[str] = None, membership_id: Optional[str] = None, status: Optional[str] = None) -> MembershipsEntitlementsListResult:
+        """Memberships Entitlements List"""
+        query = build_query_string([
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'plan_id', 'value': plan_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'membership_id', 'value': membership_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/memberships/entitlements", query))
 
 class CommerceMembershipsMembersApi:
     """commerce commerce.memberships.members API client."""
@@ -386,6 +499,18 @@ class CommerceMembershipsMembersApi:
         self._client = client
         self.status = CommerceMembershipsMembersStatusApi(client)
 
+
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, cursor: Optional[str] = None, user_id: Optional[str] = None, plan_id: Optional[str] = None, status: Optional[str] = None) -> MembershipsMembersListResult:
+        """Memberships Members List"""
+        query = build_query_string([
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'cursor', 'value': cursor, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'user_id', 'value': user_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'plan_id', 'value': plan_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/memberships/members", query))
 
 class CommerceMembershipsMembersStatusApi:
     """commerce commerce.memberships.members.status API client."""
@@ -411,6 +536,29 @@ class CommerceMembershipsPackageGroupsApi:
         self._client = client
 
 
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, status: Optional[str] = None) -> MembershipsPackageGroupsListResult:
+        """Memberships Package Groups List"""
+        query = build_query_string([
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/memberships/package_groups", query))
+
+    def create(self, body: CommerceMembershipPackageGroupMutationRequest, idempotency_key: str) -> MembershipsPackageGroupsCreateResult:
+        """Memberships Package Groups Create"""
+        request_headers = build_request_headers(
+            {
+                'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
+            },
+            {}
+        )
+        return self._client.post(f"/backend/v3/api/memberships/package_groups", json=body, headers=request_headers)
+
+    def delete(self, package_group_id: str) -> MembershipsPackageGroupsDeleteResult:
+        """Memberships Package Groups Delete"""
+        return self._client.delete(f"/backend/v3/api/memberships/package_groups/{serialize_path_parameter(package_group_id, {'name': 'packageGroupId', 'style': 'simple', 'explode': False})}")
+
     def update(self, package_group_id: str, body: CommerceMembershipPackageGroupMutationRequest, idempotency_key: str) -> MembershipsPackageGroupsUpdateResult:
         """Memberships Package Groups Update"""
         request_headers = build_request_headers(
@@ -427,6 +575,31 @@ class CommerceMembershipsPackagesApi:
     def __init__(self, client: HttpClient):
         self._client = client
 
+
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, package_group_id: Optional[str] = None, plan_id: Optional[str] = None, status: Optional[str] = None) -> MembershipsPackagesListResult:
+        """Memberships Packages List"""
+        query = build_query_string([
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'package_group_id', 'value': package_group_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'plan_id', 'value': plan_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/memberships/packages", query))
+
+    def create(self, body: CommerceMembershipPackageMutationRequest, idempotency_key: str) -> MembershipsPackagesCreateResult:
+        """Memberships Packages Create"""
+        request_headers = build_request_headers(
+            {
+                'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
+            },
+            {}
+        )
+        return self._client.post(f"/backend/v3/api/memberships/packages", json=body, headers=request_headers)
+
+    def delete(self, package_id: str) -> MembershipsPackagesDeleteResult:
+        """Memberships Packages Delete"""
+        return self._client.delete(f"/backend/v3/api/memberships/packages/{serialize_path_parameter(package_id, {'name': 'packageId', 'style': 'simple', 'explode': False})}")
 
     def update(self, package_id: str, body: CommerceMembershipPackageMutationRequest, idempotency_key: str) -> MembershipsPackagesUpdateResult:
         """Memberships Packages Update"""
@@ -445,6 +618,29 @@ class CommerceMembershipsPlansApi:
         self._client = client
 
 
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, status: Optional[str] = None) -> MembershipsPlansListResult:
+        """Memberships Plans List"""
+        query = build_query_string([
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/memberships/plans", query))
+
+    def create(self, body: CommerceMembershipPlanMutationRequest, idempotency_key: str) -> MembershipsPlansCreateResult:
+        """Memberships Plans Create"""
+        request_headers = build_request_headers(
+            {
+                'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
+            },
+            {}
+        )
+        return self._client.post(f"/backend/v3/api/memberships/plans", json=body, headers=request_headers)
+
+    def delete(self, plan_id: str) -> MembershipsPlansDeleteResult:
+        """Memberships Plans Delete"""
+        return self._client.delete(f"/backend/v3/api/memberships/plans/{serialize_path_parameter(plan_id, {'name': 'planId', 'style': 'simple', 'explode': False})}")
+
     def update(self, plan_id: str, body: CommerceMembershipPlanMutationRequest, idempotency_key: str) -> MembershipsPlansUpdateResult:
         """Memberships Plans Update"""
         request_headers = build_request_headers(
@@ -460,21 +656,124 @@ class CommerceOrdersApi:
 
     def __init__(self, client: HttpClient):
         self._client = client
+        self.events = CommerceOrdersEventsApi(client)
 
+
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, status: Optional[str] = None) -> OrdersListResult:
+        """Orders List"""
+        query = build_query_string([
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/orders", query))
 
     def retrieve(self, order_id: str) -> OrdersRetrieveResult:
         """Orders Retrieve"""
         return self._client.get(f"/backend/v3/api/orders/{serialize_path_parameter(order_id, {'name': 'orderId', 'style': 'simple', 'explode': False})}")
+
+class CommerceOrdersEventsApi:
+    """commerce commerce.orders.events API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, order_id: str, page: Optional[str] = None, page_size: Optional[str] = None, status: Optional[str] = None) -> OrdersEventsListResult:
+        """Orders Events List"""
+        query = build_query_string([
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/orders/{serialize_path_parameter(order_id, {'name': 'orderId', 'style': 'simple', 'explode': False})}/events", query))
 
 class CommercePaymentsApi:
     """commerce commerce.payments API client."""
 
     def __init__(self, client: HttpClient):
         self._client = client
+        self.attempts = CommercePaymentsAttemptsApi(client)
+        self.channels = CommercePaymentsChannelsApi(client)
+        self.intents = CommercePaymentsIntentsApi(client)
+        self.methods = CommercePaymentsMethodsApi(client)
         self.provider_accounts = CommercePaymentsProviderAccountsApi(client)
         self.providers = CommercePaymentsProvidersApi(client)
+        self.reconciliation_runs = CommercePaymentsReconciliationRunsApi(client)
+        self.route_rules = CommercePaymentsRouteRulesApi(client)
         self.runtime = CommercePaymentsRuntimeApi(client)
+        self.webhook_events = CommercePaymentsWebhookEventsApi(client)
 
+
+class CommercePaymentsAttemptsApi:
+    """commerce commerce.payments.attempts API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, intent_id: Optional[str] = None, provider_code: Optional[str] = None, page: Optional[str] = None, page_size: Optional[str] = None, status: Optional[str] = None) -> PaymentsAttemptsListResult:
+        """Payments Attempts List"""
+        query = build_query_string([
+            {'name': 'intent_id', 'value': intent_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'provider_code', 'value': provider_code, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/payments/attempts", query))
+
+class CommercePaymentsChannelsApi:
+    """commerce commerce.payments.channels API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, provider_account_id: Optional[str] = None, method_code: Optional[str] = None, page: Optional[str] = None, page_size: Optional[str] = None, status: Optional[str] = None) -> PaymentsChannelsListResult:
+        """Payments Channels List"""
+        query = build_query_string([
+            {'name': 'provider_account_id', 'value': provider_account_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'method_code', 'value': method_code, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/payments/channels", query))
+
+class CommercePaymentsIntentsApi:
+    """commerce commerce.payments.intents API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, order_id: Optional[str] = None, provider_code: Optional[str] = None, page: Optional[str] = None, page_size: Optional[str] = None, status: Optional[str] = None) -> PaymentsIntentsListResult:
+        """Payments Intents List"""
+        query = build_query_string([
+            {'name': 'order_id', 'value': order_id, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'provider_code', 'value': provider_code, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/payments/intents", query))
+
+class CommercePaymentsMethodsApi:
+    """commerce commerce.payments.methods API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, status: Optional[str] = None) -> PaymentsMethodsListResult:
+        """Payments Methods List"""
+        query = build_query_string([
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/payments/methods", query))
 
 class CommercePaymentsProviderAccountsApi:
     """commerce commerce.payments.provider_accounts API client."""
@@ -484,9 +783,39 @@ class CommercePaymentsProviderAccountsApi:
         self.status = CommercePaymentsProviderAccountsStatusApi(client)
 
 
+    def list(self, provider_code: Optional[str] = None, page: Optional[str] = None, page_size: Optional[str] = None, status: Optional[str] = None) -> PaymentsProviderAccountsListResult:
+        """Payments Provider Accounts List"""
+        query = build_query_string([
+            {'name': 'provider_code', 'value': provider_code, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/payments/provider_accounts", query))
+
+    def create(self, body: CommercePaymentProviderAccountMutationRequest, idempotency_key: str) -> PaymentsProviderAccountsCreateResult:
+        """Payments Provider Accounts Create"""
+        request_headers = build_request_headers(
+            {
+                'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
+            },
+            {}
+        )
+        return self._client.post(f"/backend/v3/api/payments/provider_accounts", json=body, headers=request_headers)
+
     def delete(self, provider_account_id: str) -> PaymentsProviderAccountsDeleteResult:
         """Payments Provider Accounts Delete"""
         return self._client.delete(f"/backend/v3/api/payments/provider_accounts/{serialize_path_parameter(provider_account_id, {'name': 'providerAccountId', 'style': 'simple', 'explode': False})}")
+
+    def update(self, provider_account_id: str, body: CommercePaymentProviderAccountMutationRequest, idempotency_key: str) -> PaymentsProviderAccountsUpdateResult:
+        """Payments Provider Accounts Update"""
+        request_headers = build_request_headers(
+            {
+                'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
+            },
+            {}
+        )
+        return self._client.patch(f"/backend/v3/api/payments/provider_accounts/{serialize_path_parameter(provider_account_id, {'name': 'providerAccountId', 'style': 'simple', 'explode': False})}", json=body, headers=request_headers)
 
 class CommercePaymentsProviderAccountsStatusApi:
     """commerce commerce.payments.provider_accounts.status API client."""
@@ -521,6 +850,43 @@ class CommercePaymentsProvidersApi:
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/payments/providers", query))
 
+class CommercePaymentsReconciliationRunsApi:
+    """commerce commerce.payments.reconciliation_runs API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, provider_code: Optional[str] = None, business_date: Optional[str] = None, page: Optional[str] = None, page_size: Optional[str] = None, status: Optional[str] = None) -> PaymentsReconciliationRunsListResult:
+        """Payments Reconciliation Runs List"""
+        query = build_query_string([
+            {'name': 'provider_code', 'value': provider_code, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'business_date', 'value': business_date, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/payments/reconciliation_runs", query))
+
+class CommercePaymentsRouteRulesApi:
+    """commerce commerce.payments.route_rules API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, method_code: Optional[str] = None, country_code: Optional[str] = None, currency_code: Optional[str] = None, page: Optional[str] = None, page_size: Optional[str] = None, status: Optional[str] = None) -> PaymentsRouteRulesListResult:
+        """Payments Route Rules List"""
+        query = build_query_string([
+            {'name': 'method_code', 'value': method_code, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'country_code', 'value': country_code, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'currency_code', 'value': currency_code, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/payments/route_rules", query))
+
 class CommercePaymentsRuntimeApi:
     """commerce commerce.payments.runtime API client."""
 
@@ -543,14 +909,48 @@ class CommercePaymentsRuntimeSnapshotApi:
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/payments/runtime/snapshot", query))
 
+class CommercePaymentsWebhookEventsApi:
+    """commerce commerce.payments.webhook_events API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, provider_code: Optional[str] = None, page: Optional[str] = None, page_size: Optional[str] = None, status: Optional[str] = None) -> PaymentsWebhookEventsListResult:
+        """Payments Webhook Events List"""
+        query = build_query_string([
+            {'name': 'provider_code', 'value': provider_code, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/payments/webhook_events", query))
+
 class CommerceRechargesApi:
     """commerce commerce.recharges API client."""
 
     def __init__(self, client: HttpClient):
         self._client = client
+        self.orders = CommerceRechargesOrdersApi(client)
         self.packages = CommerceRechargesPackagesApi(client)
         self.settings = CommerceRechargesSettingsApi(client)
 
+
+class CommerceRechargesOrdersApi:
+    """commerce commerce.recharges.orders API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, status: Optional[str] = None) -> RechargesOrdersListResult:
+        """Recharges Orders List"""
+        query = build_query_string([
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/recharges/orders", query))
 
 class CommerceRechargesPackagesApi:
     """commerce commerce.recharges.packages API client."""
@@ -559,9 +959,38 @@ class CommerceRechargesPackagesApi:
         self._client = client
 
 
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, status: Optional[str] = None) -> RechargesPackagesListResult:
+        """Recharges Packages List"""
+        query = build_query_string([
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/recharges/packages", query))
+
+    def create(self, body: CommerceRechargePackageMutationRequest, idempotency_key: str) -> RechargesPackagesCreateResult:
+        """Recharges Packages Create"""
+        request_headers = build_request_headers(
+            {
+                'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
+            },
+            {}
+        )
+        return self._client.post(f"/backend/v3/api/recharges/packages", json=body, headers=request_headers)
+
     def delete(self, package_id: str) -> RechargesPackagesDeleteResult:
         """Recharges Packages Delete"""
         return self._client.delete(f"/backend/v3/api/recharges/packages/{serialize_path_parameter(package_id, {'name': 'packageId', 'style': 'simple', 'explode': False})}")
+
+    def update(self, package_id: str, body: CommerceRechargePackageMutationRequest, idempotency_key: str) -> RechargesPackagesUpdateResult:
+        """Recharges Packages Update"""
+        request_headers = build_request_headers(
+            {
+                'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
+            },
+            {}
+        )
+        return self._client.patch(f"/backend/v3/api/recharges/packages/{serialize_path_parameter(package_id, {'name': 'packageId', 'style': 'simple', 'explode': False})}", json=body, headers=request_headers)
 
 class CommerceRechargesSettingsApi:
     """commerce commerce.recharges.settings API client."""
@@ -578,6 +1007,26 @@ class CommerceRechargesSettingsApi:
         """Recharges Settings Update"""
         return self._client.put(f"/backend/v3/api/recharges/settings", json=body)
 
+class CommerceRefundsApi:
+    """commerce commerce.refunds API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, status: Optional[str] = None) -> RefundsListResult:
+        """Refunds List"""
+        query = build_query_string([
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/refunds", query))
+
+    def retrieve(self, refund_id: str) -> RefundsRetrieveResult:
+        """Refunds Retrieve"""
+        return self._client.get(f"/backend/v3/api/refunds/{serialize_path_parameter(refund_id, {'name': 'refundId', 'style': 'simple', 'explode': False})}")
+
 class CommerceShipmentsApi:
     """commerce commerce.shipments API client."""
 
@@ -585,6 +1034,15 @@ class CommerceShipmentsApi:
         self._client = client
         self.tracking_events = CommerceShipmentsTrackingEventsApi(client)
 
+
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, status: Optional[str] = None) -> ShipmentsListResult:
+        """Shipments List"""
+        query = build_query_string([
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/shipments", query))
 
 class CommerceShipmentsTrackingEventsApi:
     """commerce commerce.shipments.tracking_events API client."""
@@ -601,3 +1059,79 @@ class CommerceShipmentsTrackingEventsApi:
             {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/shipments/{serialize_path_parameter(shipment_id, {'name': 'shipmentId', 'style': 'simple', 'explode': False})}/tracking_events", query))
+
+class CommerceWalletApi:
+    """commerce commerce.wallet API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+        self.accounts = CommerceWalletAccountsApi(client)
+        self.adjustments = CommerceWalletAdjustmentsApi(client)
+        self.exchange_rules = CommerceWalletExchangeRulesApi(client)
+        self.ledger_entries = CommerceWalletLedgerEntriesApi(client)
+
+
+class CommerceWalletAccountsApi:
+    """commerce commerce.wallet.accounts API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, status: Optional[str] = None) -> WalletAccountsListResult:
+        """Wallet Accounts List"""
+        query = build_query_string([
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/wallet/accounts", query))
+
+class CommerceWalletAdjustmentsApi:
+    """commerce commerce.wallet.adjustments API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def create(self, body: CommerceStandardCommandRequest, idempotency_key: str) -> WalletAdjustmentsCreateResult:
+        """Wallet Adjustments Create"""
+        request_headers = build_request_headers(
+            {
+                'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
+            },
+            {}
+        )
+        return self._client.post(f"/backend/v3/api/wallet/adjustments", json=body, headers=request_headers)
+
+class CommerceWalletExchangeRulesApi:
+    """commerce commerce.wallet.exchange_rules API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, status: Optional[str] = None) -> WalletExchangeRulesListResult:
+        """Wallet Exchange Rules List"""
+        query = build_query_string([
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/wallet/exchange_rules", query))
+
+class CommerceWalletLedgerEntriesApi:
+    """commerce commerce.wallet.ledger_entries API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, page: Optional[str] = None, page_size: Optional[str] = None, status: Optional[str] = None) -> WalletLedgerEntriesListResult:
+        """Wallet Ledger Entries List"""
+        query = build_query_string([
+            {'name': 'page', 'value': page, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'page_size', 'value': page_size, 'style': 'form', 'explode': True, 'allow_reserved': False},
+            {'name': 'status', 'value': status, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/wallet/ledger_entries", query))

@@ -13,65 +13,95 @@ public class CommerceApi {
         this.client = client;
     }
 
-    /** List category attribute bindings */
-    public CatalogCategoryAttributesListResult catalogCategoryAttributesList(String categoryId, String attributeId, String status, String page, String pageSize) throws Exception {
+    /** Audit Commerce Events List */
+    public AuditCommerceEventsListResult auditCommerceEventsList(String page, String pageSize, String status) throws Exception {
         String query = buildQueryString(List.of(
-            new QueryParameterSpec("category_id", categoryId, "form", true, false, null),
-            new QueryParameterSpec("attribute_id", attributeId, "form", true, false, null),
+            new QueryParameterSpec("page", page, "form", true, false, null),
+            new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+            new QueryParameterSpec("status", status, "form", true, false, null)
+        ));
+        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/audit/commerce_events"), query));
+        return client.convertValue(raw, new TypeReference<AuditCommerceEventsListResult>() {});
+    }
+
+    /** Commerce Reports Order Revenue List */
+    public CommerceReportsOrderRevenueListResult reportsOrderRevenueList(String page, String pageSize, String status) throws Exception {
+        String query = buildQueryString(List.of(
+            new QueryParameterSpec("page", page, "form", true, false, null),
+            new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+            new QueryParameterSpec("status", status, "form", true, false, null)
+        ));
+        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/commerce_reports/order_revenue"), query));
+        return client.convertValue(raw, new TypeReference<CommerceReportsOrderRevenueListResult>() {});
+    }
+
+    /** Commerce Reports Payment Reconciliation Retrieve */
+    public CommerceReportsPaymentReconciliationRetrieveResult reportsPaymentReconciliationRetrieve() throws Exception {
+        Object raw = client.get(ApiPaths.backendPath("/commerce_reports/payment_reconciliation"));
+        return client.convertValue(raw, new TypeReference<CommerceReportsPaymentReconciliationRetrieveResult>() {});
+    }
+
+    /** Commerce Reports Refunds List */
+    public CommerceReportsRefundsListResult reportsRefundsList(String page, String pageSize, String status) throws Exception {
+        String query = buildQueryString(List.of(
+            new QueryParameterSpec("page", page, "form", true, false, null),
+            new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+            new QueryParameterSpec("status", status, "form", true, false, null)
+        ));
+        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/commerce_reports/refunds"), query));
+        return client.convertValue(raw, new TypeReference<CommerceReportsRefundsListResult>() {});
+    }
+
+    /** Fulfillments List */
+    public FulfillmentsListResult fulfillmentsList(String page, String pageSize, String status) throws Exception {
+        String query = buildQueryString(List.of(
+            new QueryParameterSpec("page", page, "form", true, false, null),
+            new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+            new QueryParameterSpec("status", status, "form", true, false, null)
+        ));
+        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/fulfillments"), query));
+        return client.convertValue(raw, new TypeReference<FulfillmentsListResult>() {});
+    }
+
+    /** List inventory ledger entries */
+    public InventoryLedgerEntriesListResult inventoryLedgerEntriesList(String skuId, String warehouseId, String sourceType, String sourceId, String page, String pageSize) throws Exception {
+        String query = buildQueryString(List.of(
+            new QueryParameterSpec("sku_id", skuId, "form", true, false, null),
+            new QueryParameterSpec("warehouse_id", warehouseId, "form", true, false, null),
+            new QueryParameterSpec("source_type", sourceType, "form", true, false, null),
+            new QueryParameterSpec("source_id", sourceId, "form", true, false, null),
+            new QueryParameterSpec("page", page, "form", true, false, null),
+            new QueryParameterSpec("page_size", pageSize, "form", true, false, null)
+        ));
+        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/inventory/ledger_entries"), query));
+        return client.convertValue(raw, new TypeReference<InventoryLedgerEntriesListResult>() {});
+    }
+
+    /** List inventory reservations */
+    public InventoryReservationsListResult inventoryReservationsList(String skuId, String orderId, String checkoutSessionId, String status, String page, String pageSize) throws Exception {
+        String query = buildQueryString(List.of(
+            new QueryParameterSpec("sku_id", skuId, "form", true, false, null),
+            new QueryParameterSpec("order_id", orderId, "form", true, false, null),
+            new QueryParameterSpec("checkout_session_id", checkoutSessionId, "form", true, false, null),
             new QueryParameterSpec("status", status, "form", true, false, null),
             new QueryParameterSpec("page", page, "form", true, false, null),
             new QueryParameterSpec("page_size", pageSize, "form", true, false, null)
         ));
-        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/catalog/category_attributes"), query));
-        return client.convertValue(raw, new TypeReference<CatalogCategoryAttributesListResult>() {});
+        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/inventory/reservations"), query));
+        return client.convertValue(raw, new TypeReference<InventoryReservationsListResult>() {});
     }
 
-    /** Create category attribute binding */
-    public CatalogCategoryAttributesCreateResult catalogCategoryAttributesCreate(CommerceProductCategoryAttributeMutationRequest body, String idempotencyKey) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.backendPath("/catalog/category_attributes"), body, null, requestHeaders, "application/json");
-        return client.convertValue(raw, new TypeReference<CatalogCategoryAttributesCreateResult>() {});
-    }
-
-    /** Delete category attribute binding */
-    public CatalogCategoryAttributesDeleteResult catalogCategoryAttributesDelete(String bindingId) throws Exception {
-        Object raw = client.delete(ApiPaths.backendPath("/catalog/category_attributes/" + serializePathParameter(bindingId, new PathParameterSpec("bindingId", "simple", false)) + ""));
-        return client.convertValue(raw, new TypeReference<CatalogCategoryAttributesDeleteResult>() {});
-    }
-
-    /** Update category attribute binding */
-    public CatalogCategoryAttributesUpdateResult catalogCategoryAttributesUpdate(String bindingId, CommerceProductCategoryAttributeMutationRequest body, String idempotencyKey) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.patch(ApiPaths.backendPath("/catalog/category_attributes/" + serializePathParameter(bindingId, new PathParameterSpec("bindingId", "simple", false)) + ""), body, null, requestHeaders, "application/json");
-        return client.convertValue(raw, new TypeReference<CatalogCategoryAttributesUpdateResult>() {});
-    }
-
-    /** Initialize admin category seed datasets */
-    public CatalogCategorySeedsCreateResult catalogCategorySeedsCreate(CommerceCategorySeedInitializeRequest body, String idempotencyKey) throws Exception {
-        Map<String, String> requestHeaders = buildRequestHeaders(
-                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
-                Map.of()
-        );
-        Object raw = client.post(ApiPaths.backendPath("/catalog/category_seeds/initialize"), body, null, requestHeaders, "application/json");
-        return client.convertValue(raw, new TypeReference<CatalogCategorySeedsCreateResult>() {});
-    }
-
-    /** Delete product SPU */
-    public CatalogProductsDeleteResult catalogProductsDelete(String productId) throws Exception {
-        Object raw = client.delete(ApiPaths.backendPath("/catalog/products/" + serializePathParameter(productId, new PathParameterSpec("productId", "simple", false)) + ""));
-        return client.convertValue(raw, new TypeReference<CatalogProductsDeleteResult>() {});
-    }
-
-    /** Delete product SKU */
-    public CatalogSkusDeleteResult catalogSkusDelete(String skuId) throws Exception {
-        Object raw = client.delete(ApiPaths.backendPath("/catalog/skus/" + serializePathParameter(skuId, new PathParameterSpec("skuId", "simple", false)) + ""));
-        return client.convertValue(raw, new TypeReference<CatalogSkusDeleteResult>() {});
+    /** List inventory stock records */
+    public InventoryStocksListResult inventoryStocksList(String skuId, String warehouseId, String status, String page, String pageSize) throws Exception {
+        String query = buildQueryString(List.of(
+            new QueryParameterSpec("sku_id", skuId, "form", true, false, null),
+            new QueryParameterSpec("warehouse_id", warehouseId, "form", true, false, null),
+            new QueryParameterSpec("status", status, "form", true, false, null),
+            new QueryParameterSpec("page", page, "form", true, false, null),
+            new QueryParameterSpec("page_size", pageSize, "form", true, false, null)
+        ));
+        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/inventory/stocks"), query));
+        return client.convertValue(raw, new TypeReference<InventoryStocksListResult>() {});
     }
 
     /** Update inventory stock */
@@ -84,6 +114,61 @@ public class CommerceApi {
         return client.convertValue(raw, new TypeReference<InventoryStocksUpdateResult>() {});
     }
 
+    /** Invoices List */
+    public InvoicesListResult invoicesList(String page, String pageSize, String status) throws Exception {
+        String query = buildQueryString(List.of(
+            new QueryParameterSpec("page", page, "form", true, false, null),
+            new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+            new QueryParameterSpec("status", status, "form", true, false, null)
+        ));
+        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/invoices"), query));
+        return client.convertValue(raw, new TypeReference<InvoicesListResult>() {});
+    }
+
+    /** Invoices Titles List */
+    public InvoicesTitlesListResult invoicesTitlesList(String page, String pageSize, String status) throws Exception {
+        String query = buildQueryString(List.of(
+            new QueryParameterSpec("page", page, "form", true, false, null),
+            new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+            new QueryParameterSpec("status", status, "form", true, false, null)
+        ));
+        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/invoices/titles"), query));
+        return client.convertValue(raw, new TypeReference<InvoicesTitlesListResult>() {});
+    }
+
+    /** Invoices Retrieve */
+    public InvoicesRetrieveResult invoicesRetrieve(String invoiceId) throws Exception {
+        Object raw = client.get(ApiPaths.backendPath("/invoices/" + serializePathParameter(invoiceId, new PathParameterSpec("invoiceId", "simple", false)) + ""));
+        return client.convertValue(raw, new TypeReference<InvoicesRetrieveResult>() {});
+    }
+
+    /** Memberships Entitlements List */
+    public MembershipsEntitlementsListResult membershipsEntitlementsList(String page, String pageSize, String planId, String membershipId, String status) throws Exception {
+        String query = buildQueryString(List.of(
+            new QueryParameterSpec("page", page, "form", true, false, null),
+            new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+            new QueryParameterSpec("plan_id", planId, "form", true, false, null),
+            new QueryParameterSpec("membership_id", membershipId, "form", true, false, null),
+            new QueryParameterSpec("status", status, "form", true, false, null)
+        ));
+        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/memberships/entitlements"), query));
+        return client.convertValue(raw, new TypeReference<MembershipsEntitlementsListResult>() {});
+    }
+
+    /** Memberships Members List */
+    public MembershipsMembersListResult membershipsMembersList(String page, String pageSize, String cursor, String userId, String planId, String status) throws Exception {
+        String query = buildQueryString(List.of(
+            new QueryParameterSpec("page", page, "form", true, false, null),
+            new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+            new QueryParameterSpec("cursor", cursor, "form", true, false, null),
+            new QueryParameterSpec("user_id", userId, "form", true, false, null),
+            new QueryParameterSpec("plan_id", planId, "form", true, false, null),
+            new QueryParameterSpec("status", status, "form", true, false, null)
+        ));
+        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/memberships/members"), query));
+        return client.convertValue(raw, new TypeReference<MembershipsMembersListResult>() {});
+    }
+
     /** Memberships Members Status Update */
     public MembershipsMembersStatusUpdateResult membershipsMembersStatusUpdate(String membershipId, CommerceMembershipMemberStatusRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
@@ -92,6 +177,33 @@ public class CommerceApi {
         );
         Object raw = client.patch(ApiPaths.backendPath("/memberships/members/" + serializePathParameter(membershipId, new PathParameterSpec("membershipId", "simple", false)) + "/status"), body, null, requestHeaders, "application/json");
         return client.convertValue(raw, new TypeReference<MembershipsMembersStatusUpdateResult>() {});
+    }
+
+    /** Memberships Package Groups List */
+    public MembershipsPackageGroupsListResult membershipsPackageGroupsList(String page, String pageSize, String status) throws Exception {
+        String query = buildQueryString(List.of(
+            new QueryParameterSpec("page", page, "form", true, false, null),
+            new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+            new QueryParameterSpec("status", status, "form", true, false, null)
+        ));
+        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/memberships/package_groups"), query));
+        return client.convertValue(raw, new TypeReference<MembershipsPackageGroupsListResult>() {});
+    }
+
+    /** Memberships Package Groups Create */
+    public MembershipsPackageGroupsCreateResult membershipsPackageGroupsCreate(CommerceMembershipPackageGroupMutationRequest body, String idempotencyKey) throws Exception {
+        Map<String, String> requestHeaders = buildRequestHeaders(
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
+                Map.of()
+        );
+        Object raw = client.post(ApiPaths.backendPath("/memberships/package_groups"), body, null, requestHeaders, "application/json");
+        return client.convertValue(raw, new TypeReference<MembershipsPackageGroupsCreateResult>() {});
+    }
+
+    /** Memberships Package Groups Delete */
+    public MembershipsPackageGroupsDeleteResult membershipsPackageGroupsDelete(String packageGroupId) throws Exception {
+        Object raw = client.delete(ApiPaths.backendPath("/memberships/package_groups/" + serializePathParameter(packageGroupId, new PathParameterSpec("packageGroupId", "simple", false)) + ""));
+        return client.convertValue(raw, new TypeReference<MembershipsPackageGroupsDeleteResult>() {});
     }
 
     /** Memberships Package Groups Update */
@@ -104,6 +216,35 @@ public class CommerceApi {
         return client.convertValue(raw, new TypeReference<MembershipsPackageGroupsUpdateResult>() {});
     }
 
+    /** Memberships Packages List */
+    public MembershipsPackagesListResult membershipsPackagesList(String page, String pageSize, String packageGroupId, String planId, String status) throws Exception {
+        String query = buildQueryString(List.of(
+            new QueryParameterSpec("page", page, "form", true, false, null),
+            new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+            new QueryParameterSpec("package_group_id", packageGroupId, "form", true, false, null),
+            new QueryParameterSpec("plan_id", planId, "form", true, false, null),
+            new QueryParameterSpec("status", status, "form", true, false, null)
+        ));
+        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/memberships/packages"), query));
+        return client.convertValue(raw, new TypeReference<MembershipsPackagesListResult>() {});
+    }
+
+    /** Memberships Packages Create */
+    public MembershipsPackagesCreateResult membershipsPackagesCreate(CommerceMembershipPackageMutationRequest body, String idempotencyKey) throws Exception {
+        Map<String, String> requestHeaders = buildRequestHeaders(
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
+                Map.of()
+        );
+        Object raw = client.post(ApiPaths.backendPath("/memberships/packages"), body, null, requestHeaders, "application/json");
+        return client.convertValue(raw, new TypeReference<MembershipsPackagesCreateResult>() {});
+    }
+
+    /** Memberships Packages Delete */
+    public MembershipsPackagesDeleteResult membershipsPackagesDelete(String packageId) throws Exception {
+        Object raw = client.delete(ApiPaths.backendPath("/memberships/packages/" + serializePathParameter(packageId, new PathParameterSpec("packageId", "simple", false)) + ""));
+        return client.convertValue(raw, new TypeReference<MembershipsPackagesDeleteResult>() {});
+    }
+
     /** Memberships Packages Update */
     public MembershipsPackagesUpdateResult membershipsPackagesUpdate(String packageId, CommerceMembershipPackageMutationRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
@@ -112,6 +253,33 @@ public class CommerceApi {
         );
         Object raw = client.put(ApiPaths.backendPath("/memberships/packages/" + serializePathParameter(packageId, new PathParameterSpec("packageId", "simple", false)) + ""), body, null, requestHeaders, "application/json");
         return client.convertValue(raw, new TypeReference<MembershipsPackagesUpdateResult>() {});
+    }
+
+    /** Memberships Plans List */
+    public MembershipsPlansListResult membershipsPlansList(String page, String pageSize, String status) throws Exception {
+        String query = buildQueryString(List.of(
+            new QueryParameterSpec("page", page, "form", true, false, null),
+            new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+            new QueryParameterSpec("status", status, "form", true, false, null)
+        ));
+        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/memberships/plans"), query));
+        return client.convertValue(raw, new TypeReference<MembershipsPlansListResult>() {});
+    }
+
+    /** Memberships Plans Create */
+    public MembershipsPlansCreateResult membershipsPlansCreate(CommerceMembershipPlanMutationRequest body, String idempotencyKey) throws Exception {
+        Map<String, String> requestHeaders = buildRequestHeaders(
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
+                Map.of()
+        );
+        Object raw = client.post(ApiPaths.backendPath("/memberships/plans"), body, null, requestHeaders, "application/json");
+        return client.convertValue(raw, new TypeReference<MembershipsPlansCreateResult>() {});
+    }
+
+    /** Memberships Plans Delete */
+    public MembershipsPlansDeleteResult membershipsPlansDelete(String planId) throws Exception {
+        Object raw = client.delete(ApiPaths.backendPath("/memberships/plans/" + serializePathParameter(planId, new PathParameterSpec("planId", "simple", false)) + ""));
+        return client.convertValue(raw, new TypeReference<MembershipsPlansDeleteResult>() {});
     }
 
     /** Memberships Plans Update */
@@ -124,16 +292,120 @@ public class CommerceApi {
         return client.convertValue(raw, new TypeReference<MembershipsPlansUpdateResult>() {});
     }
 
+    /** Orders List */
+    public OrdersListResult ordersList(String page, String pageSize, String status) throws Exception {
+        String query = buildQueryString(List.of(
+            new QueryParameterSpec("page", page, "form", true, false, null),
+            new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+            new QueryParameterSpec("status", status, "form", true, false, null)
+        ));
+        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/orders"), query));
+        return client.convertValue(raw, new TypeReference<OrdersListResult>() {});
+    }
+
     /** Orders Retrieve */
     public OrdersRetrieveResult ordersRetrieve(String orderId) throws Exception {
         Object raw = client.get(ApiPaths.backendPath("/orders/" + serializePathParameter(orderId, new PathParameterSpec("orderId", "simple", false)) + ""));
         return client.convertValue(raw, new TypeReference<OrdersRetrieveResult>() {});
     }
 
+    /** Orders Events List */
+    public OrdersEventsListResult ordersEventsList(String orderId, String page, String pageSize, String status) throws Exception {
+        String query = buildQueryString(List.of(
+            new QueryParameterSpec("page", page, "form", true, false, null),
+            new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+            new QueryParameterSpec("status", status, "form", true, false, null)
+        ));
+        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/orders/" + serializePathParameter(orderId, new PathParameterSpec("orderId", "simple", false)) + "/events"), query));
+        return client.convertValue(raw, new TypeReference<OrdersEventsListResult>() {});
+    }
+
+    /** Payments Attempts List */
+    public PaymentsAttemptsListResult paymentsAttemptsList(String intentId, String providerCode, String page, String pageSize, String status) throws Exception {
+        String query = buildQueryString(List.of(
+            new QueryParameterSpec("intent_id", intentId, "form", true, false, null),
+            new QueryParameterSpec("provider_code", providerCode, "form", true, false, null),
+            new QueryParameterSpec("page", page, "form", true, false, null),
+            new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+            new QueryParameterSpec("status", status, "form", true, false, null)
+        ));
+        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/payments/attempts"), query));
+        return client.convertValue(raw, new TypeReference<PaymentsAttemptsListResult>() {});
+    }
+
+    /** Payments Channels List */
+    public PaymentsChannelsListResult paymentsChannelsList(String providerAccountId, String methodCode, String page, String pageSize, String status) throws Exception {
+        String query = buildQueryString(List.of(
+            new QueryParameterSpec("provider_account_id", providerAccountId, "form", true, false, null),
+            new QueryParameterSpec("method_code", methodCode, "form", true, false, null),
+            new QueryParameterSpec("page", page, "form", true, false, null),
+            new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+            new QueryParameterSpec("status", status, "form", true, false, null)
+        ));
+        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/payments/channels"), query));
+        return client.convertValue(raw, new TypeReference<PaymentsChannelsListResult>() {});
+    }
+
+    /** Payments Intents List */
+    public PaymentsIntentsListResult paymentsIntentsList(String orderId, String providerCode, String page, String pageSize, String status) throws Exception {
+        String query = buildQueryString(List.of(
+            new QueryParameterSpec("order_id", orderId, "form", true, false, null),
+            new QueryParameterSpec("provider_code", providerCode, "form", true, false, null),
+            new QueryParameterSpec("page", page, "form", true, false, null),
+            new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+            new QueryParameterSpec("status", status, "form", true, false, null)
+        ));
+        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/payments/intents"), query));
+        return client.convertValue(raw, new TypeReference<PaymentsIntentsListResult>() {});
+    }
+
+    /** Payments Methods List */
+    public PaymentsMethodsListResult paymentsMethodsList(String page, String pageSize, String status) throws Exception {
+        String query = buildQueryString(List.of(
+            new QueryParameterSpec("page", page, "form", true, false, null),
+            new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+            new QueryParameterSpec("status", status, "form", true, false, null)
+        ));
+        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/payments/methods"), query));
+        return client.convertValue(raw, new TypeReference<PaymentsMethodsListResult>() {});
+    }
+
+    /** Payments Provider Accounts List */
+    public PaymentsProviderAccountsListResult paymentsProviderAccountsList(String providerCode, String page, String pageSize, String status) throws Exception {
+        String query = buildQueryString(List.of(
+            new QueryParameterSpec("provider_code", providerCode, "form", true, false, null),
+            new QueryParameterSpec("page", page, "form", true, false, null),
+            new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+            new QueryParameterSpec("status", status, "form", true, false, null)
+        ));
+        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/payments/provider_accounts"), query));
+        return client.convertValue(raw, new TypeReference<PaymentsProviderAccountsListResult>() {});
+    }
+
+    /** Payments Provider Accounts Create */
+    public PaymentsProviderAccountsCreateResult paymentsProviderAccountsCreate(CommercePaymentProviderAccountMutationRequest body, String idempotencyKey) throws Exception {
+        Map<String, String> requestHeaders = buildRequestHeaders(
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
+                Map.of()
+        );
+        Object raw = client.post(ApiPaths.backendPath("/payments/provider_accounts"), body, null, requestHeaders, "application/json");
+        return client.convertValue(raw, new TypeReference<PaymentsProviderAccountsCreateResult>() {});
+    }
+
     /** Payments Provider Accounts Delete */
     public PaymentsProviderAccountsDeleteResult paymentsProviderAccountsDelete(String providerAccountId) throws Exception {
         Object raw = client.delete(ApiPaths.backendPath("/payments/provider_accounts/" + serializePathParameter(providerAccountId, new PathParameterSpec("providerAccountId", "simple", false)) + ""));
         return client.convertValue(raw, new TypeReference<PaymentsProviderAccountsDeleteResult>() {});
+    }
+
+    /** Payments Provider Accounts Update */
+    public PaymentsProviderAccountsUpdateResult paymentsProviderAccountsUpdate(String providerAccountId, CommercePaymentProviderAccountMutationRequest body, String idempotencyKey) throws Exception {
+        Map<String, String> requestHeaders = buildRequestHeaders(
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
+                Map.of()
+        );
+        Object raw = client.patch(ApiPaths.backendPath("/payments/provider_accounts/" + serializePathParameter(providerAccountId, new PathParameterSpec("providerAccountId", "simple", false)) + ""), body, null, requestHeaders, "application/json");
+        return client.convertValue(raw, new TypeReference<PaymentsProviderAccountsUpdateResult>() {});
     }
 
     /** Payments Provider Accounts Status Update */
@@ -157,6 +429,33 @@ public class CommerceApi {
         return client.convertValue(raw, new TypeReference<PaymentsProvidersListResult>() {});
     }
 
+    /** Payments Reconciliation Runs List */
+    public PaymentsReconciliationRunsListResult paymentsReconciliationRunsList(String providerCode, String businessDate, String page, String pageSize, String status) throws Exception {
+        String query = buildQueryString(List.of(
+            new QueryParameterSpec("provider_code", providerCode, "form", true, false, null),
+            new QueryParameterSpec("business_date", businessDate, "form", true, false, null),
+            new QueryParameterSpec("page", page, "form", true, false, null),
+            new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+            new QueryParameterSpec("status", status, "form", true, false, null)
+        ));
+        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/payments/reconciliation_runs"), query));
+        return client.convertValue(raw, new TypeReference<PaymentsReconciliationRunsListResult>() {});
+    }
+
+    /** Payments Route Rules List */
+    public PaymentsRouteRulesListResult paymentsRouteRulesList(String methodCode, String countryCode, String currencyCode, String page, String pageSize, String status) throws Exception {
+        String query = buildQueryString(List.of(
+            new QueryParameterSpec("method_code", methodCode, "form", true, false, null),
+            new QueryParameterSpec("country_code", countryCode, "form", true, false, null),
+            new QueryParameterSpec("currency_code", currencyCode, "form", true, false, null),
+            new QueryParameterSpec("page", page, "form", true, false, null),
+            new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+            new QueryParameterSpec("status", status, "form", true, false, null)
+        ));
+        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/payments/route_rules"), query));
+        return client.convertValue(raw, new TypeReference<PaymentsRouteRulesListResult>() {});
+    }
+
     /** Payments Runtime Snapshot Retrieve */
     public PaymentsRuntimeSnapshotRetrieveResult paymentsRuntimeSnapshotRetrieve(String environment) throws Exception {
         String query = buildQueryString(List.of(
@@ -166,10 +465,64 @@ public class CommerceApi {
         return client.convertValue(raw, new TypeReference<PaymentsRuntimeSnapshotRetrieveResult>() {});
     }
 
+    /** Payments Webhook Events List */
+    public PaymentsWebhookEventsListResult paymentsWebhookEventsList(String providerCode, String page, String pageSize, String status) throws Exception {
+        String query = buildQueryString(List.of(
+            new QueryParameterSpec("provider_code", providerCode, "form", true, false, null),
+            new QueryParameterSpec("page", page, "form", true, false, null),
+            new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+            new QueryParameterSpec("status", status, "form", true, false, null)
+        ));
+        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/payments/webhook_events"), query));
+        return client.convertValue(raw, new TypeReference<PaymentsWebhookEventsListResult>() {});
+    }
+
+    /** Recharges Orders List */
+    public RechargesOrdersListResult rechargesOrdersList(String page, String pageSize, String status) throws Exception {
+        String query = buildQueryString(List.of(
+            new QueryParameterSpec("page", page, "form", true, false, null),
+            new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+            new QueryParameterSpec("status", status, "form", true, false, null)
+        ));
+        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/recharges/orders"), query));
+        return client.convertValue(raw, new TypeReference<RechargesOrdersListResult>() {});
+    }
+
+    /** Recharges Packages List */
+    public RechargesPackagesListResult rechargesPackagesList(String page, String pageSize, String status) throws Exception {
+        String query = buildQueryString(List.of(
+            new QueryParameterSpec("page", page, "form", true, false, null),
+            new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+            new QueryParameterSpec("status", status, "form", true, false, null)
+        ));
+        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/recharges/packages"), query));
+        return client.convertValue(raw, new TypeReference<RechargesPackagesListResult>() {});
+    }
+
+    /** Recharges Packages Create */
+    public RechargesPackagesCreateResult rechargesPackagesCreate(CommerceRechargePackageMutationRequest body, String idempotencyKey) throws Exception {
+        Map<String, String> requestHeaders = buildRequestHeaders(
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
+                Map.of()
+        );
+        Object raw = client.post(ApiPaths.backendPath("/recharges/packages"), body, null, requestHeaders, "application/json");
+        return client.convertValue(raw, new TypeReference<RechargesPackagesCreateResult>() {});
+    }
+
     /** Recharges Packages Delete */
     public RechargesPackagesDeleteResult rechargesPackagesDelete(String packageId) throws Exception {
         Object raw = client.delete(ApiPaths.backendPath("/recharges/packages/" + serializePathParameter(packageId, new PathParameterSpec("packageId", "simple", false)) + ""));
         return client.convertValue(raw, new TypeReference<RechargesPackagesDeleteResult>() {});
+    }
+
+    /** Recharges Packages Update */
+    public RechargesPackagesUpdateResult rechargesPackagesUpdate(String packageId, CommerceRechargePackageMutationRequest body, String idempotencyKey) throws Exception {
+        Map<String, String> requestHeaders = buildRequestHeaders(
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
+                Map.of()
+        );
+        Object raw = client.patch(ApiPaths.backendPath("/recharges/packages/" + serializePathParameter(packageId, new PathParameterSpec("packageId", "simple", false)) + ""), body, null, requestHeaders, "application/json");
+        return client.convertValue(raw, new TypeReference<RechargesPackagesUpdateResult>() {});
     }
 
     /** Recharges Settings Retrieve */
@@ -184,6 +537,34 @@ public class CommerceApi {
         return client.convertValue(raw, new TypeReference<RechargesSettingsUpdateResult>() {});
     }
 
+    /** Refunds List */
+    public RefundsListResult refundsList(String page, String pageSize, String status) throws Exception {
+        String query = buildQueryString(List.of(
+            new QueryParameterSpec("page", page, "form", true, false, null),
+            new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+            new QueryParameterSpec("status", status, "form", true, false, null)
+        ));
+        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/refunds"), query));
+        return client.convertValue(raw, new TypeReference<RefundsListResult>() {});
+    }
+
+    /** Refunds Retrieve */
+    public RefundsRetrieveResult refundsRetrieve(String refundId) throws Exception {
+        Object raw = client.get(ApiPaths.backendPath("/refunds/" + serializePathParameter(refundId, new PathParameterSpec("refundId", "simple", false)) + ""));
+        return client.convertValue(raw, new TypeReference<RefundsRetrieveResult>() {});
+    }
+
+    /** Shipments List */
+    public ShipmentsListResult shipmentsList(String page, String pageSize, String status) throws Exception {
+        String query = buildQueryString(List.of(
+            new QueryParameterSpec("page", page, "form", true, false, null),
+            new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+            new QueryParameterSpec("status", status, "form", true, false, null)
+        ));
+        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/shipments"), query));
+        return client.convertValue(raw, new TypeReference<ShipmentsListResult>() {});
+    }
+
     /** Shipments Tracking Events List */
     public ShipmentsTrackingEventsListResult shipmentsTrackingEventsList(String shipmentId, String page, String pageSize, String status) throws Exception {
         String query = buildQueryString(List.of(
@@ -193,6 +574,49 @@ public class CommerceApi {
         ));
         Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/shipments/" + serializePathParameter(shipmentId, new PathParameterSpec("shipmentId", "simple", false)) + "/tracking_events"), query));
         return client.convertValue(raw, new TypeReference<ShipmentsTrackingEventsListResult>() {});
+    }
+
+    /** Wallet Accounts List */
+    public WalletAccountsListResult walletAccountsList(String page, String pageSize, String status) throws Exception {
+        String query = buildQueryString(List.of(
+            new QueryParameterSpec("page", page, "form", true, false, null),
+            new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+            new QueryParameterSpec("status", status, "form", true, false, null)
+        ));
+        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/wallet/accounts"), query));
+        return client.convertValue(raw, new TypeReference<WalletAccountsListResult>() {});
+    }
+
+    /** Wallet Adjustments Create */
+    public WalletAdjustmentsCreateResult walletAdjustmentsCreate(CommerceStandardCommandRequest body, String idempotencyKey) throws Exception {
+        Map<String, String> requestHeaders = buildRequestHeaders(
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
+                Map.of()
+        );
+        Object raw = client.post(ApiPaths.backendPath("/wallet/adjustments"), body, null, requestHeaders, "application/json");
+        return client.convertValue(raw, new TypeReference<WalletAdjustmentsCreateResult>() {});
+    }
+
+    /** Wallet Exchange Rules List */
+    public WalletExchangeRulesListResult walletExchangeRulesList(String page, String pageSize, String status) throws Exception {
+        String query = buildQueryString(List.of(
+            new QueryParameterSpec("page", page, "form", true, false, null),
+            new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+            new QueryParameterSpec("status", status, "form", true, false, null)
+        ));
+        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/wallet/exchange_rules"), query));
+        return client.convertValue(raw, new TypeReference<WalletExchangeRulesListResult>() {});
+    }
+
+    /** Wallet Ledger Entries List */
+    public WalletLedgerEntriesListResult walletLedgerEntriesList(String page, String pageSize, String status) throws Exception {
+        String query = buildQueryString(List.of(
+            new QueryParameterSpec("page", page, "form", true, false, null),
+            new QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+            new QueryParameterSpec("status", status, "form", true, false, null)
+        ));
+        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/wallet/ledger_entries"), query));
+        return client.convertValue(raw, new TypeReference<WalletLedgerEntriesListResult>() {});
     }
 
     private record PathParameterSpec(String name, String style, boolean explode) {}

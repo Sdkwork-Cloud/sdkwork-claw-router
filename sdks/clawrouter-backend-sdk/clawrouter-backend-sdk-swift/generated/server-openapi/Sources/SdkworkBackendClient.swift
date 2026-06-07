@@ -59,12 +59,6 @@ public class SdkworkBackendClient {
         self.sites = SitesApi(client: httpClient)
         self.storage = StorageApi(client: httpClient)
     }
-
-    public func setApiKey(_ apiKey: String) -> SdkworkBackendClient {
-        httpClient.setApiKey(apiKey)
-        return self
-    }
-
     public func setAuthToken(_ token: String) -> SdkworkBackendClient {
         httpClient.setAuthToken(token)
         return self

@@ -23,6 +23,20 @@ class SystemApi {
     })();
   }
 
+  /// Promotion Coupon Codes List
+  Future<PromotionsCodesListResult?> promotionsCodesList([String? page, String? pageSize, String? status]) async {
+    final query = buildQueryString([
+      QueryParameterSpec('page', page, 'form', true, false, null),
+      QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
+      QueryParameterSpec('status', status, 'form', true, false, null)
+    ]);
+    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.backendPath('/promotions/codes'), query));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : PromotionsCodesListResult.fromJson(map);
+    })();
+  }
+
   /// Promotion Coupon Code Redemptions List
   Future<PromotionsCodesRedemptionsListResult?> promotionsCodesRedemptionsList([String? page, String? pageSize, String? codeStatus]) async {
     final query = buildQueryString([
@@ -49,6 +63,46 @@ class SystemApi {
     })();
   }
 
+  /// Promotion Coupon Stocks List
+  Future<PromotionsCouponStocksListResult?> promotionsCouponStocksList([String? page, String? pageSize, String? status]) async {
+    final query = buildQueryString([
+      QueryParameterSpec('page', page, 'form', true, false, null),
+      QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
+      QueryParameterSpec('status', status, 'form', true, false, null)
+    ]);
+    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.backendPath('/promotions/coupon_stocks'), query));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : PromotionsCouponStocksListResult.fromJson(map);
+    })();
+  }
+
+  /// Promotion Discount Allocations List
+  Future<PromotionsDiscountAllocationsListResult?> promotionsDiscountAllocationsList([String? applicationId]) async {
+    final query = buildQueryString([
+      QueryParameterSpec('application_id', applicationId, 'form', true, false, null)
+    ]);
+    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.backendPath('/promotions/discount_allocations'), query));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : PromotionsDiscountAllocationsListResult.fromJson(map);
+    })();
+  }
+
+  /// Promotion Discount Applications List
+  Future<PromotionsDiscountApplicationsListResult?> promotionsDiscountApplicationsList([String? page, String? pageSize, String? status]) async {
+    final query = buildQueryString([
+      QueryParameterSpec('page', page, 'form', true, false, null),
+      QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
+      QueryParameterSpec('status', status, 'form', true, false, null)
+    ]);
+    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.backendPath('/promotions/discount_applications'), query));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : PromotionsDiscountApplicationsListResult.fromJson(map);
+    })();
+  }
+
   /// Promotion Events List
   Future<PromotionsEventsListResult?> promotionsEventsList([String? status]) async {
     final query = buildQueryString([
@@ -70,6 +124,34 @@ class SystemApi {
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : PromotionsExternalBindingsListResult.fromJson(map);
+    })();
+  }
+
+  /// Promotion Offers List
+  Future<PromotionsOffersManagementListResult?> promotionsOffersManagementList([String? page, String? pageSize, String? status]) async {
+    final query = buildQueryString([
+      QueryParameterSpec('page', page, 'form', true, false, null),
+      QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
+      QueryParameterSpec('status', status, 'form', true, false, null)
+    ]);
+    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.backendPath('/promotions/offers'), query));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : PromotionsOffersManagementListResult.fromJson(map);
+    })();
+  }
+
+  /// Promotion User Coupons Management List
+  Future<PromotionsUserCouponsManagementListResult?> promotionsUserCouponsManagementList([String? page, String? pageSize, String? status]) async {
+    final query = buildQueryString([
+      QueryParameterSpec('page', page, 'form', true, false, null),
+      QueryParameterSpec('page_size', pageSize, 'form', true, false, null),
+      QueryParameterSpec('status', status, 'form', true, false, null)
+    ]);
+    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.backendPath('/promotions/user_coupons'), query));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : PromotionsUserCouponsManagementListResult.fromJson(map);
     })();
   }
 

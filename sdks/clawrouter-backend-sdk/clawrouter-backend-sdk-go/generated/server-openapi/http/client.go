@@ -15,15 +15,10 @@ import (
     common "github.com/sdkwork/sdk-common-go/common"
 )
 
-const (
-    defaultApiKeyHeader = "Access-Token"
-    defaultApiKeyUseBearer = false
-)
 
 // Config wraps sdk-common Go config and adds SDK auth fields.
 type Config struct {
     common.SdkConfig
-    ApiKey      string
     AuthToken   string
     AccessToken string
 }
@@ -65,10 +60,6 @@ func NewClient(config Config) *Client {
         },
         headers: headers,
     }
-
-    if config.ApiKey != "" {
-        client.SetApiKey(config.ApiKey)
-    }
     if config.AuthToken != "" {
         client.SetAuthToken(config.AuthToken)
     }
@@ -79,31 +70,11 @@ func NewClient(config Config) *Client {
     return client
 }
 
-func (c *Client) SetApiKey(apiKey string) {
-    if defaultApiKeyUseBearer {
-        c.headers[defaultApiKeyHeader] = "Bearer " + apiKey
-    } else {
-        c.headers[defaultApiKeyHeader] = apiKey
-    }
-    if defaultApiKeyHeader != "Authorization" {
-        delete(c.headers, "Authorization")
-    }
-    if defaultApiKeyHeader != "Access-Token" {
-        delete(c.headers, "Access-Token")
-    }
-}
-
 func (c *Client) SetAuthToken(token string) {
-    if defaultApiKeyHeader != "Authorization" {
-        delete(c.headers, defaultApiKeyHeader)
-    }
     c.headers["Authorization"] = "Bearer " + token
 }
 
 func (c *Client) SetAccessToken(token string) {
-    if defaultApiKeyHeader != "Access-Token" {
-        delete(c.headers, defaultApiKeyHeader)
-    }
     c.headers["Access-Token"] = token
 }
 

@@ -2,8 +2,6 @@ import Foundation
 import SDKworkCommon
 
 public class HttpClient {
-    private static let apiKeyHeader = "Access-Token"
-    private static let apiKeyUseBearer = false
 
     private struct AnyEncodable: Encodable {
         private let encodeClosure: (Encoder) throws -> Void
@@ -38,28 +36,10 @@ public class HttpClient {
             headers: config.headers ?? [:]
         )
     }
-
-    public func setApiKey(_ apiKey: String) {
-        headers[Self.apiKeyHeader] = Self.apiKeyUseBearer ? "Bearer \(apiKey)" : apiKey
-        if Self.apiKeyHeader.lowercased() != "authorization" {
-            headers.removeValue(forKey: "Authorization")
-        }
-        if Self.apiKeyHeader.lowercased() != "access-token" {
-            headers.removeValue(forKey: "Access-Token")
-        }
-    }
-
     public func setAuthToken(_ token: String) {
-        if Self.apiKeyHeader.lowercased() != "authorization" {
-            headers.removeValue(forKey: Self.apiKeyHeader)
-        }
         headers["Authorization"] = "Bearer \(token)"
     }
-
     public func setAccessToken(_ token: String) {
-        if Self.apiKeyHeader.lowercased() != "access-token" {
-            headers.removeValue(forKey: Self.apiKeyHeader)
-        }
         headers["Access-Token"] = token
     }
 

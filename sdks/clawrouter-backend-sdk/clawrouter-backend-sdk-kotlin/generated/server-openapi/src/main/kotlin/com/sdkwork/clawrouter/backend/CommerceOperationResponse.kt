@@ -1,0 +1,10 @@
+package com.sdkwork.clawrouter.backend
+
+data class CommerceOperationResponse(
+    val paymentId: String? = null,
+    val qrCode: MediaResource? = null,
+    val qrCodePayload: String? = null,
+    val requestNo: String? = null,
+    val status: String? = null,
+    val success: Boolean? = null
+)

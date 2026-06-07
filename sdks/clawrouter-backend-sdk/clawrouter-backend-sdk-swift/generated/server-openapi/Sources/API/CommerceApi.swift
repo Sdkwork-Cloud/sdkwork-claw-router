@@ -7,64 +7,87 @@ public class CommerceApi {
         self.client = client
     }
 
-    /// List category attribute bindings
-    public func catalogCategoryAttributesList(categoryId: String? = nil, attributeId: String? = nil, status: String? = nil, page: String? = nil, pageSize: String? = nil) async throws -> CatalogCategoryAttributesListResult? {
+    /// Audit Commerce Events List
+    public func auditCommerceEventsList(page: String? = nil, pageSize: String? = nil, status: String? = nil) async throws -> AuditCommerceEventsListResult? {
         let query = buildQueryString([
-            QueryParameterSpec(name: "category_id", value: categoryId, style: "form", explode: true, allowReserved: false, contentType: nil),
-            QueryParameterSpec(name: "attribute_id", value: attributeId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/audit/commerce_events"), query), responseType: AuditCommerceEventsListResult.self)
+    }
+
+    /// Commerce Reports Order Revenue List
+    public func reportsOrderRevenueList(page: String? = nil, pageSize: String? = nil, status: String? = nil) async throws -> CommerceReportsOrderRevenueListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/commerce_reports/order_revenue"), query), responseType: CommerceReportsOrderRevenueListResult.self)
+    }
+
+    /// Commerce Reports Payment Reconciliation Retrieve
+    public func reportsPaymentReconciliationRetrieve() async throws -> CommerceReportsPaymentReconciliationRetrieveResult? {
+        return try await client.get(ApiPaths.backendPath("/commerce_reports/payment_reconciliation"), responseType: CommerceReportsPaymentReconciliationRetrieveResult.self)
+    }
+
+    /// Commerce Reports Refunds List
+    public func reportsRefundsList(page: String? = nil, pageSize: String? = nil, status: String? = nil) async throws -> CommerceReportsRefundsListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/commerce_reports/refunds"), query), responseType: CommerceReportsRefundsListResult.self)
+    }
+
+    /// Fulfillments List
+    public func fulfillmentsList(page: String? = nil, pageSize: String? = nil, status: String? = nil) async throws -> FulfillmentsListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/fulfillments"), query), responseType: FulfillmentsListResult.self)
+    }
+
+    /// List inventory ledger entries
+    public func inventoryLedgerEntriesList(skuId: String? = nil, warehouseId: String? = nil, sourceType: String? = nil, sourceId: String? = nil, page: String? = nil, pageSize: String? = nil) async throws -> InventoryLedgerEntriesListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "sku_id", value: skuId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "warehouse_id", value: warehouseId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "source_type", value: sourceType, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "source_id", value: sourceId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/inventory/ledger_entries"), query), responseType: InventoryLedgerEntriesListResult.self)
+    }
+
+    /// List inventory reservations
+    public func inventoryReservationsList(skuId: String? = nil, orderId: String? = nil, checkoutSessionId: String? = nil, status: String? = nil, page: String? = nil, pageSize: String? = nil) async throws -> InventoryReservationsListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "sku_id", value: skuId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "order_id", value: orderId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "checkout_session_id", value: checkoutSessionId, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
             QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil)
         ])
-        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/catalog/category_attributes"), query), responseType: CatalogCategoryAttributesListResult.self)
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/inventory/reservations"), query), responseType: InventoryReservationsListResult.self)
     }
 
-    /// Create category attribute binding
-    public func catalogCategoryAttributesCreate(body: CommerceProductCategoryAttributeMutationRequest, idempotencyKey: String) async throws -> CatalogCategoryAttributesCreateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/catalog/category_attributes"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: CatalogCategoryAttributesCreateResult.self)
-    }
-
-    /// Delete category attribute binding
-    public func catalogCategoryAttributesDelete(bindingId: String) async throws -> CatalogCategoryAttributesDeleteResult? {
-        return try await client.delete(ApiPaths.backendPath("/catalog/category_attributes/\(serializePathParameter(bindingId, PathParameterSpec(name: "bindingId", style: "simple", explode: false)))"), responseType: CatalogCategoryAttributesDeleteResult.self)
-    }
-
-    /// Update category attribute binding
-    public func catalogCategoryAttributesUpdate(bindingId: String, body: CommerceProductCategoryAttributeMutationRequest, idempotencyKey: String) async throws -> CatalogCategoryAttributesUpdateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.patch(ApiPaths.backendPath("/catalog/category_attributes/\(serializePathParameter(bindingId, PathParameterSpec(name: "bindingId", style: "simple", explode: false)))"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: CatalogCategoryAttributesUpdateResult.self)
-    }
-
-    /// Initialize admin category seed datasets
-    public func catalogCategorySeedsCreate(body: CommerceCategorySeedInitializeRequest, idempotencyKey: String) async throws -> CatalogCategorySeedsCreateResult? {
-        let requestHeaders = buildRequestHeaders(
-            [
-                "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
-            ],
-            [:]
-        )
-        return try await client.post(ApiPaths.backendPath("/catalog/category_seeds/initialize"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: CatalogCategorySeedsCreateResult.self)
-    }
-
-    /// Delete product SPU
-    public func catalogProductsDelete(productId: String) async throws -> CatalogProductsDeleteResult? {
-        return try await client.delete(ApiPaths.backendPath("/catalog/products/\(serializePathParameter(productId, PathParameterSpec(name: "productId", style: "simple", explode: false)))"), responseType: CatalogProductsDeleteResult.self)
-    }
-
-    /// Delete product SKU
-    public func catalogSkusDelete(skuId: String) async throws -> CatalogSkusDeleteResult? {
-        return try await client.delete(ApiPaths.backendPath("/catalog/skus/\(serializePathParameter(skuId, PathParameterSpec(name: "skuId", style: "simple", explode: false)))"), responseType: CatalogSkusDeleteResult.self)
+    /// List inventory stock records
+    public func inventoryStocksList(skuId: String? = nil, warehouseId: String? = nil, status: String? = nil, page: String? = nil, pageSize: String? = nil) async throws -> InventoryStocksListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "sku_id", value: skuId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "warehouse_id", value: warehouseId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/inventory/stocks"), query), responseType: InventoryStocksListResult.self)
     }
 
     /// Update inventory stock
@@ -78,6 +101,56 @@ public class CommerceApi {
         return try await client.patch(ApiPaths.backendPath("/inventory/stocks/\(serializePathParameter(stockId, PathParameterSpec(name: "stockId", style: "simple", explode: false)))"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: InventoryStocksUpdateResult.self)
     }
 
+    /// Invoices List
+    public func invoicesList(page: String? = nil, pageSize: String? = nil, status: String? = nil) async throws -> InvoicesListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/invoices"), query), responseType: InvoicesListResult.self)
+    }
+
+    /// Invoices Titles List
+    public func invoicesTitlesList(page: String? = nil, pageSize: String? = nil, status: String? = nil) async throws -> InvoicesTitlesListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/invoices/titles"), query), responseType: InvoicesTitlesListResult.self)
+    }
+
+    /// Invoices Retrieve
+    public func invoicesRetrieve(invoiceId: String) async throws -> InvoicesRetrieveResult? {
+        return try await client.get(ApiPaths.backendPath("/invoices/\(serializePathParameter(invoiceId, PathParameterSpec(name: "invoiceId", style: "simple", explode: false)))"), responseType: InvoicesRetrieveResult.self)
+    }
+
+    /// Memberships Entitlements List
+    public func membershipsEntitlementsList(page: String? = nil, pageSize: String? = nil, planId: String? = nil, membershipId: String? = nil, status: String? = nil) async throws -> MembershipsEntitlementsListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "plan_id", value: planId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "membership_id", value: membershipId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/memberships/entitlements"), query), responseType: MembershipsEntitlementsListResult.self)
+    }
+
+    /// Memberships Members List
+    public func membershipsMembersList(page: String? = nil, pageSize: String? = nil, cursor: String? = nil, userId: String? = nil, planId: String? = nil, status: String? = nil) async throws -> MembershipsMembersListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "cursor", value: cursor, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "user_id", value: userId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "plan_id", value: planId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/memberships/members"), query), responseType: MembershipsMembersListResult.self)
+    }
+
     /// Memberships Members Status Update
     public func membershipsMembersStatusUpdate(membershipId: String, body: CommerceMembershipMemberStatusRequest, idempotencyKey: String) async throws -> MembershipsMembersStatusUpdateResult? {
         let requestHeaders = buildRequestHeaders(
@@ -87,6 +160,32 @@ public class CommerceApi {
             [:]
         )
         return try await client.patch(ApiPaths.backendPath("/memberships/members/\(serializePathParameter(membershipId, PathParameterSpec(name: "membershipId", style: "simple", explode: false)))/status"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: MembershipsMembersStatusUpdateResult.self)
+    }
+
+    /// Memberships Package Groups List
+    public func membershipsPackageGroupsList(page: String? = nil, pageSize: String? = nil, status: String? = nil) async throws -> MembershipsPackageGroupsListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/memberships/package_groups"), query), responseType: MembershipsPackageGroupsListResult.self)
+    }
+
+    /// Memberships Package Groups Create
+    public func membershipsPackageGroupsCreate(body: CommerceMembershipPackageGroupMutationRequest, idempotencyKey: String) async throws -> MembershipsPackageGroupsCreateResult? {
+        let requestHeaders = buildRequestHeaders(
+            [
+                "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
+            ],
+            [:]
+        )
+        return try await client.post(ApiPaths.backendPath("/memberships/package_groups"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: MembershipsPackageGroupsCreateResult.self)
+    }
+
+    /// Memberships Package Groups Delete
+    public func membershipsPackageGroupsDelete(packageGroupId: String) async throws -> MembershipsPackageGroupsDeleteResult? {
+        return try await client.delete(ApiPaths.backendPath("/memberships/package_groups/\(serializePathParameter(packageGroupId, PathParameterSpec(name: "packageGroupId", style: "simple", explode: false)))"), responseType: MembershipsPackageGroupsDeleteResult.self)
     }
 
     /// Memberships Package Groups Update
@@ -100,6 +199,34 @@ public class CommerceApi {
         return try await client.put(ApiPaths.backendPath("/memberships/package_groups/\(serializePathParameter(packageGroupId, PathParameterSpec(name: "packageGroupId", style: "simple", explode: false)))"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: MembershipsPackageGroupsUpdateResult.self)
     }
 
+    /// Memberships Packages List
+    public func membershipsPackagesList(page: String? = nil, pageSize: String? = nil, packageGroupId: String? = nil, planId: String? = nil, status: String? = nil) async throws -> MembershipsPackagesListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "package_group_id", value: packageGroupId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "plan_id", value: planId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/memberships/packages"), query), responseType: MembershipsPackagesListResult.self)
+    }
+
+    /// Memberships Packages Create
+    public func membershipsPackagesCreate(body: CommerceMembershipPackageMutationRequest, idempotencyKey: String) async throws -> MembershipsPackagesCreateResult? {
+        let requestHeaders = buildRequestHeaders(
+            [
+                "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
+            ],
+            [:]
+        )
+        return try await client.post(ApiPaths.backendPath("/memberships/packages"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: MembershipsPackagesCreateResult.self)
+    }
+
+    /// Memberships Packages Delete
+    public func membershipsPackagesDelete(packageId: String) async throws -> MembershipsPackagesDeleteResult? {
+        return try await client.delete(ApiPaths.backendPath("/memberships/packages/\(serializePathParameter(packageId, PathParameterSpec(name: "packageId", style: "simple", explode: false)))"), responseType: MembershipsPackagesDeleteResult.self)
+    }
+
     /// Memberships Packages Update
     public func membershipsPackagesUpdate(packageId: String, body: CommerceMembershipPackageMutationRequest, idempotencyKey: String) async throws -> MembershipsPackagesUpdateResult? {
         let requestHeaders = buildRequestHeaders(
@@ -109,6 +236,32 @@ public class CommerceApi {
             [:]
         )
         return try await client.put(ApiPaths.backendPath("/memberships/packages/\(serializePathParameter(packageId, PathParameterSpec(name: "packageId", style: "simple", explode: false)))"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: MembershipsPackagesUpdateResult.self)
+    }
+
+    /// Memberships Plans List
+    public func membershipsPlansList(page: String? = nil, pageSize: String? = nil, status: String? = nil) async throws -> MembershipsPlansListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/memberships/plans"), query), responseType: MembershipsPlansListResult.self)
+    }
+
+    /// Memberships Plans Create
+    public func membershipsPlansCreate(body: CommerceMembershipPlanMutationRequest, idempotencyKey: String) async throws -> MembershipsPlansCreateResult? {
+        let requestHeaders = buildRequestHeaders(
+            [
+                "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
+            ],
+            [:]
+        )
+        return try await client.post(ApiPaths.backendPath("/memberships/plans"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: MembershipsPlansCreateResult.self)
+    }
+
+    /// Memberships Plans Delete
+    public func membershipsPlansDelete(planId: String) async throws -> MembershipsPlansDeleteResult? {
+        return try await client.delete(ApiPaths.backendPath("/memberships/plans/\(serializePathParameter(planId, PathParameterSpec(name: "planId", style: "simple", explode: false)))"), responseType: MembershipsPlansDeleteResult.self)
     }
 
     /// Memberships Plans Update
@@ -122,14 +275,113 @@ public class CommerceApi {
         return try await client.put(ApiPaths.backendPath("/memberships/plans/\(serializePathParameter(planId, PathParameterSpec(name: "planId", style: "simple", explode: false)))"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: MembershipsPlansUpdateResult.self)
     }
 
+    /// Orders List
+    public func ordersList(page: String? = nil, pageSize: String? = nil, status: String? = nil) async throws -> OrdersListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/orders"), query), responseType: OrdersListResult.self)
+    }
+
     /// Orders Retrieve
     public func ordersRetrieve(orderId: String) async throws -> OrdersRetrieveResult? {
         return try await client.get(ApiPaths.backendPath("/orders/\(serializePathParameter(orderId, PathParameterSpec(name: "orderId", style: "simple", explode: false)))"), responseType: OrdersRetrieveResult.self)
     }
 
+    /// Orders Events List
+    public func ordersEventsList(orderId: String, page: String? = nil, pageSize: String? = nil, status: String? = nil) async throws -> OrdersEventsListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/orders/\(serializePathParameter(orderId, PathParameterSpec(name: "orderId", style: "simple", explode: false)))/events"), query), responseType: OrdersEventsListResult.self)
+    }
+
+    /// Payments Attempts List
+    public func paymentsAttemptsList(intentId: String? = nil, providerCode: String? = nil, page: String? = nil, pageSize: String? = nil, status: String? = nil) async throws -> PaymentsAttemptsListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "intent_id", value: intentId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "provider_code", value: providerCode, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/payments/attempts"), query), responseType: PaymentsAttemptsListResult.self)
+    }
+
+    /// Payments Channels List
+    public func paymentsChannelsList(providerAccountId: String? = nil, methodCode: String? = nil, page: String? = nil, pageSize: String? = nil, status: String? = nil) async throws -> PaymentsChannelsListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "provider_account_id", value: providerAccountId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "method_code", value: methodCode, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/payments/channels"), query), responseType: PaymentsChannelsListResult.self)
+    }
+
+    /// Payments Intents List
+    public func paymentsIntentsList(orderId: String? = nil, providerCode: String? = nil, page: String? = nil, pageSize: String? = nil, status: String? = nil) async throws -> PaymentsIntentsListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "order_id", value: orderId, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "provider_code", value: providerCode, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/payments/intents"), query), responseType: PaymentsIntentsListResult.self)
+    }
+
+    /// Payments Methods List
+    public func paymentsMethodsList(page: String? = nil, pageSize: String? = nil, status: String? = nil) async throws -> PaymentsMethodsListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/payments/methods"), query), responseType: PaymentsMethodsListResult.self)
+    }
+
+    /// Payments Provider Accounts List
+    public func paymentsProviderAccountsList(providerCode: String? = nil, page: String? = nil, pageSize: String? = nil, status: String? = nil) async throws -> PaymentsProviderAccountsListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "provider_code", value: providerCode, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/payments/provider_accounts"), query), responseType: PaymentsProviderAccountsListResult.self)
+    }
+
+    /// Payments Provider Accounts Create
+    public func paymentsProviderAccountsCreate(body: CommercePaymentProviderAccountMutationRequest, idempotencyKey: String) async throws -> PaymentsProviderAccountsCreateResult? {
+        let requestHeaders = buildRequestHeaders(
+            [
+                "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
+            ],
+            [:]
+        )
+        return try await client.post(ApiPaths.backendPath("/payments/provider_accounts"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: PaymentsProviderAccountsCreateResult.self)
+    }
+
     /// Payments Provider Accounts Delete
     public func paymentsProviderAccountsDelete(providerAccountId: String) async throws -> PaymentsProviderAccountsDeleteResult? {
         return try await client.delete(ApiPaths.backendPath("/payments/provider_accounts/\(serializePathParameter(providerAccountId, PathParameterSpec(name: "providerAccountId", style: "simple", explode: false)))"), responseType: PaymentsProviderAccountsDeleteResult.self)
+    }
+
+    /// Payments Provider Accounts Update
+    public func paymentsProviderAccountsUpdate(providerAccountId: String, body: CommercePaymentProviderAccountMutationRequest, idempotencyKey: String) async throws -> PaymentsProviderAccountsUpdateResult? {
+        let requestHeaders = buildRequestHeaders(
+            [
+                "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
+            ],
+            [:]
+        )
+        return try await client.patch(ApiPaths.backendPath("/payments/provider_accounts/\(serializePathParameter(providerAccountId, PathParameterSpec(name: "providerAccountId", style: "simple", explode: false)))"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: PaymentsProviderAccountsUpdateResult.self)
     }
 
     /// Payments Provider Accounts Status Update
@@ -153,6 +405,31 @@ public class CommerceApi {
         return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/payments/providers"), query), responseType: PaymentsProvidersListResult.self)
     }
 
+    /// Payments Reconciliation Runs List
+    public func paymentsReconciliationRunsList(providerCode: String? = nil, businessDate: String? = nil, page: String? = nil, pageSize: String? = nil, status: String? = nil) async throws -> PaymentsReconciliationRunsListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "provider_code", value: providerCode, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "business_date", value: businessDate, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/payments/reconciliation_runs"), query), responseType: PaymentsReconciliationRunsListResult.self)
+    }
+
+    /// Payments Route Rules List
+    public func paymentsRouteRulesList(methodCode: String? = nil, countryCode: String? = nil, currencyCode: String? = nil, page: String? = nil, pageSize: String? = nil, status: String? = nil) async throws -> PaymentsRouteRulesListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "method_code", value: methodCode, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "country_code", value: countryCode, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "currency_code", value: currencyCode, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/payments/route_rules"), query), responseType: PaymentsRouteRulesListResult.self)
+    }
+
     /// Payments Runtime Snapshot Retrieve
     public func paymentsRuntimeSnapshotRetrieve(environment: String? = nil) async throws -> PaymentsRuntimeSnapshotRetrieveResult? {
         let query = buildQueryString([
@@ -161,9 +438,62 @@ public class CommerceApi {
         return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/payments/runtime/snapshot"), query), responseType: PaymentsRuntimeSnapshotRetrieveResult.self)
     }
 
+    /// Payments Webhook Events List
+    public func paymentsWebhookEventsList(providerCode: String? = nil, page: String? = nil, pageSize: String? = nil, status: String? = nil) async throws -> PaymentsWebhookEventsListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "provider_code", value: providerCode, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/payments/webhook_events"), query), responseType: PaymentsWebhookEventsListResult.self)
+    }
+
+    /// Recharges Orders List
+    public func rechargesOrdersList(page: String? = nil, pageSize: String? = nil, status: String? = nil) async throws -> RechargesOrdersListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/recharges/orders"), query), responseType: RechargesOrdersListResult.self)
+    }
+
+    /// Recharges Packages List
+    public func rechargesPackagesList(page: String? = nil, pageSize: String? = nil, status: String? = nil) async throws -> RechargesPackagesListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/recharges/packages"), query), responseType: RechargesPackagesListResult.self)
+    }
+
+    /// Recharges Packages Create
+    public func rechargesPackagesCreate(body: CommerceRechargePackageMutationRequest, idempotencyKey: String) async throws -> RechargesPackagesCreateResult? {
+        let requestHeaders = buildRequestHeaders(
+            [
+                "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
+            ],
+            [:]
+        )
+        return try await client.post(ApiPaths.backendPath("/recharges/packages"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: RechargesPackagesCreateResult.self)
+    }
+
     /// Recharges Packages Delete
     public func rechargesPackagesDelete(packageId: String) async throws -> RechargesPackagesDeleteResult? {
         return try await client.delete(ApiPaths.backendPath("/recharges/packages/\(serializePathParameter(packageId, PathParameterSpec(name: "packageId", style: "simple", explode: false)))"), responseType: RechargesPackagesDeleteResult.self)
+    }
+
+    /// Recharges Packages Update
+    public func rechargesPackagesUpdate(packageId: String, body: CommerceRechargePackageMutationRequest, idempotencyKey: String) async throws -> RechargesPackagesUpdateResult? {
+        let requestHeaders = buildRequestHeaders(
+            [
+                "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
+            ],
+            [:]
+        )
+        return try await client.patch(ApiPaths.backendPath("/recharges/packages/\(serializePathParameter(packageId, PathParameterSpec(name: "packageId", style: "simple", explode: false)))"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: RechargesPackagesUpdateResult.self)
     }
 
     /// Recharges Settings Retrieve
@@ -176,6 +506,31 @@ public class CommerceApi {
         return try await client.put(ApiPaths.backendPath("/recharges/settings"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: RechargesSettingsUpdateResult.self)
     }
 
+    /// Refunds List
+    public func refundsList(page: String? = nil, pageSize: String? = nil, status: String? = nil) async throws -> RefundsListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/refunds"), query), responseType: RefundsListResult.self)
+    }
+
+    /// Refunds Retrieve
+    public func refundsRetrieve(refundId: String) async throws -> RefundsRetrieveResult? {
+        return try await client.get(ApiPaths.backendPath("/refunds/\(serializePathParameter(refundId, PathParameterSpec(name: "refundId", style: "simple", explode: false)))"), responseType: RefundsRetrieveResult.self)
+    }
+
+    /// Shipments List
+    public func shipmentsList(page: String? = nil, pageSize: String? = nil, status: String? = nil) async throws -> ShipmentsListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/shipments"), query), responseType: ShipmentsListResult.self)
+    }
+
     /// Shipments Tracking Events List
     public func shipmentsTrackingEventsList(shipmentId: String, page: String? = nil, pageSize: String? = nil, status: String? = nil) async throws -> ShipmentsTrackingEventsListResult? {
         let query = buildQueryString([
@@ -184,6 +539,47 @@ public class CommerceApi {
             QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil)
         ])
         return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/shipments/\(serializePathParameter(shipmentId, PathParameterSpec(name: "shipmentId", style: "simple", explode: false)))/tracking_events"), query), responseType: ShipmentsTrackingEventsListResult.self)
+    }
+
+    /// Wallet Accounts List
+    public func walletAccountsList(page: String? = nil, pageSize: String? = nil, status: String? = nil) async throws -> WalletAccountsListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/wallet/accounts"), query), responseType: WalletAccountsListResult.self)
+    }
+
+    /// Wallet Adjustments Create
+    public func walletAdjustmentsCreate(body: CommerceStandardCommandRequest, idempotencyKey: String) async throws -> WalletAdjustmentsCreateResult? {
+        let requestHeaders = buildRequestHeaders(
+            [
+                "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
+            ],
+            [:]
+        )
+        return try await client.post(ApiPaths.backendPath("/wallet/adjustments"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: WalletAdjustmentsCreateResult.self)
+    }
+
+    /// Wallet Exchange Rules List
+    public func walletExchangeRulesList(page: String? = nil, pageSize: String? = nil, status: String? = nil) async throws -> WalletExchangeRulesListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/wallet/exchange_rules"), query), responseType: WalletExchangeRulesListResult.self)
+    }
+
+    /// Wallet Ledger Entries List
+    public func walletLedgerEntriesList(page: String? = nil, pageSize: String? = nil, status: String? = nil) async throws -> WalletLedgerEntriesListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/wallet/ledger_entries"), query), responseType: WalletLedgerEntriesListResult.self)
     }
 
     private struct PathParameterSpec {

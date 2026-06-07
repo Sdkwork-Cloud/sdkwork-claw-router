@@ -23,11 +23,6 @@ public class IamApi {
         return try await client.delete(ApiPaths.backendPath("/iam/api_keys/\(serializePathParameter(apiKeyId, PathParameterSpec(name: "apiKeyId", style: "simple", explode: false)))"), responseType: ApiKeysDeleteResult.self)
     }
 
-    /// Update user
-    public func usersUpdate(body: AdminUserUpdateRequest) async throws -> UsersUpdateResult? {
-        return try await client.put(ApiPaths.backendPath("/iam/users"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: UsersUpdateResult.self)
-    }
-
     private struct PathParameterSpec {
         let name: String
         let style: String

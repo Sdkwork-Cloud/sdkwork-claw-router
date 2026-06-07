@@ -22,10 +22,6 @@ class HttpClient(
     timeoutMs: Int = 30000,
     defaultHeaders: Map<String, String> = emptyMap()
 ) {
-    companion object {
-        private const val API_KEY_HEADER = "Access-Token"
-        private const val API_KEY_USE_BEARER = false
-    }
 
     private val client: OkHttpClient = OkHttpClient.Builder()
         .connectTimeout(timeoutMs.toLong(), TimeUnit.MILLISECONDS)
@@ -44,28 +40,10 @@ class HttpClient(
     init {
         headers.putAll(defaultHeaders)
     }
-
-    fun setApiKey(apiKey: String) {
-        headers[API_KEY_HEADER] = if (API_KEY_USE_BEARER) "Bearer $apiKey" else apiKey
-        if (!API_KEY_HEADER.equals("Authorization", ignoreCase = true)) {
-            headers.remove("Authorization")
-        }
-        if (!API_KEY_HEADER.equals("Access-Token", ignoreCase = true)) {
-            headers.remove("Access-Token")
-        }
-    }
-
     fun setAuthToken(token: String) {
-        if (!API_KEY_HEADER.equals("Authorization", ignoreCase = true)) {
-            headers.remove(API_KEY_HEADER)
-        }
         headers["Authorization"] = "Bearer $token"
     }
-
     fun setAccessToken(token: String) {
-        if (!API_KEY_HEADER.equals("Access-Token", ignoreCase = true)) {
-            headers.remove(API_KEY_HEADER)
-        }
         headers["Access-Token"] = token
     }
 

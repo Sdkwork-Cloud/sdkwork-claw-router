@@ -17,93 +17,127 @@ func NewCommerceApi(client *sdkhttp.Client) *CommerceApi {
     return &CommerceApi{client: client}
 }
 
-// List category attribute bindings
-func (a *CommerceApi) CatalogCategoryAttributesList(categoryId *string, attributeId *string, status *string, page *string, pageSize *string) (sdktypes.CatalogCategoryAttributesListResult, error) {
+// Audit Commerce Events List
+func (a *CommerceApi) AuditCommerceEventsList(page *string, pageSize *string, status *string) (sdktypes.AuditCommerceEventsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
-        {Name: "category_id", Value: func() interface{} { if categoryId == nil { return nil }; return *categoryId }(), Style: "form", Explode: true, AllowReserved: false},
-        {Name: "attribute_id", Value: func() interface{} { if attributeId == nil { return nil }; return *attributeId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/audit/commerce_events"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.AuditCommerceEventsListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.AuditCommerceEventsListResult](raw)
+}
+
+// Commerce Reports Order Revenue List
+func (a *CommerceApi) ReportsOrderRevenueList(page *string, pageSize *string, status *string) (sdktypes.CommerceReportsOrderRevenueListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/commerce_reports/order_revenue"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.CommerceReportsOrderRevenueListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.CommerceReportsOrderRevenueListResult](raw)
+}
+
+// Commerce Reports Payment Reconciliation Retrieve
+func (a *CommerceApi) ReportsPaymentReconciliationRetrieve() (sdktypes.CommerceReportsPaymentReconciliationRetrieveResult, error) {
+    raw, err := a.client.Get(BackendApiPath("/commerce_reports/payment_reconciliation"), nil, nil)
+    if err != nil {
+        var zero sdktypes.CommerceReportsPaymentReconciliationRetrieveResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.CommerceReportsPaymentReconciliationRetrieveResult](raw)
+}
+
+// Commerce Reports Refunds List
+func (a *CommerceApi) ReportsRefundsList(page *string, pageSize *string, status *string) (sdktypes.CommerceReportsRefundsListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/commerce_reports/refunds"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.CommerceReportsRefundsListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.CommerceReportsRefundsListResult](raw)
+}
+
+// Fulfillments List
+func (a *CommerceApi) FulfillmentsList(page *string, pageSize *string, status *string) (sdktypes.FulfillmentsListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/fulfillments"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.FulfillmentsListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.FulfillmentsListResult](raw)
+}
+
+// List inventory ledger entries
+func (a *CommerceApi) InventoryLedgerEntriesList(skuId *string, warehouseId *string, sourceType *string, sourceId *string, page *string, pageSize *string) (sdktypes.InventoryLedgerEntriesListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "sku_id", Value: func() interface{} { if skuId == nil { return nil }; return *skuId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "warehouse_id", Value: func() interface{} { if warehouseId == nil { return nil }; return *warehouseId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "source_type", Value: func() interface{} { if sourceType == nil { return nil }; return *sourceType }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "source_id", Value: func() interface{} { if sourceId == nil { return nil }; return *sourceId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/inventory/ledger_entries"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.InventoryLedgerEntriesListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.InventoryLedgerEntriesListResult](raw)
+}
+
+// List inventory reservations
+func (a *CommerceApi) InventoryReservationsList(skuId *string, orderId *string, checkoutSessionId *string, status *string, page *string, pageSize *string) (sdktypes.InventoryReservationsListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "sku_id", Value: func() interface{} { if skuId == nil { return nil }; return *skuId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "order_id", Value: func() interface{} { if orderId == nil { return nil }; return *orderId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "checkout_session_id", Value: func() interface{} { if checkoutSessionId == nil { return nil }; return *checkoutSessionId }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
         {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
     })
-    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/catalog/category_attributes"), query), nil, nil)
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/inventory/reservations"), query), nil, nil)
     if err != nil {
-        var zero sdktypes.CatalogCategoryAttributesListResult
+        var zero sdktypes.InventoryReservationsListResult
         return zero, err
     }
-    return decodeResult[sdktypes.CatalogCategoryAttributesListResult](raw)
+    return decodeResult[sdktypes.InventoryReservationsListResult](raw)
 }
 
-// Create category attribute binding
-func (a *CommerceApi) CatalogCategoryAttributesCreate(body sdktypes.CommerceProductCategoryAttributeMutationRequest, idempotencyKey string) (sdktypes.CatalogCategoryAttributesCreateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath("/catalog/category_attributes"), body, nil, headers, "application/json")
+// List inventory stock records
+func (a *CommerceApi) InventoryStocksList(skuId *string, warehouseId *string, status *string, page *string, pageSize *string) (sdktypes.InventoryStocksListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "sku_id", Value: func() interface{} { if skuId == nil { return nil }; return *skuId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "warehouse_id", Value: func() interface{} { if warehouseId == nil { return nil }; return *warehouseId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/inventory/stocks"), query), nil, nil)
     if err != nil {
-        var zero sdktypes.CatalogCategoryAttributesCreateResult
+        var zero sdktypes.InventoryStocksListResult
         return zero, err
     }
-    return decodeResult[sdktypes.CatalogCategoryAttributesCreateResult](raw)
-}
-
-// Delete category attribute binding
-func (a *CommerceApi) CatalogCategoryAttributesDelete(bindingId string) (sdktypes.CatalogCategoryAttributesDeleteResult, error) {
-    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/catalog/category_attributes/%s", SerializePathParameter(bindingId, PathParameterSpec{Name: "bindingId", Style: "simple", Explode: false}))), nil, nil)
-    if err != nil {
-        var zero sdktypes.CatalogCategoryAttributesDeleteResult
-        return zero, err
-    }
-    return decodeResult[sdktypes.CatalogCategoryAttributesDeleteResult](raw)
-}
-
-// Update category attribute binding
-func (a *CommerceApi) CatalogCategoryAttributesUpdate(bindingId string, body sdktypes.CommerceProductCategoryAttributeMutationRequest, idempotencyKey string) (sdktypes.CatalogCategoryAttributesUpdateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Patch(BackendApiPath(fmt.Sprintf("/catalog/category_attributes/%s", SerializePathParameter(bindingId, PathParameterSpec{Name: "bindingId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
-    if err != nil {
-        var zero sdktypes.CatalogCategoryAttributesUpdateResult
-        return zero, err
-    }
-    return decodeResult[sdktypes.CatalogCategoryAttributesUpdateResult](raw)
-}
-
-// Initialize admin category seed datasets
-func (a *CommerceApi) CatalogCategorySeedsCreate(body sdktypes.CommerceCategorySeedInitializeRequest, idempotencyKey string) (sdktypes.CatalogCategorySeedsCreateResult, error) {
-    headers := BuildRequestHeaders(
-        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
-        map[string]ParameterSpec{},
-    )
-    raw, err := a.client.Post(BackendApiPath("/catalog/category_seeds/initialize"), body, nil, headers, "application/json")
-    if err != nil {
-        var zero sdktypes.CatalogCategorySeedsCreateResult
-        return zero, err
-    }
-    return decodeResult[sdktypes.CatalogCategorySeedsCreateResult](raw)
-}
-
-// Delete product SPU
-func (a *CommerceApi) CatalogProductsDelete(productId string) (sdktypes.CatalogProductsDeleteResult, error) {
-    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/catalog/products/%s", SerializePathParameter(productId, PathParameterSpec{Name: "productId", Style: "simple", Explode: false}))), nil, nil)
-    if err != nil {
-        var zero sdktypes.CatalogProductsDeleteResult
-        return zero, err
-    }
-    return decodeResult[sdktypes.CatalogProductsDeleteResult](raw)
-}
-
-// Delete product SKU
-func (a *CommerceApi) CatalogSkusDelete(skuId string) (sdktypes.CatalogSkusDeleteResult, error) {
-    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/catalog/skus/%s", SerializePathParameter(skuId, PathParameterSpec{Name: "skuId", Style: "simple", Explode: false}))), nil, nil)
-    if err != nil {
-        var zero sdktypes.CatalogSkusDeleteResult
-        return zero, err
-    }
-    return decodeResult[sdktypes.CatalogSkusDeleteResult](raw)
+    return decodeResult[sdktypes.InventoryStocksListResult](raw)
 }
 
 // Update inventory stock
@@ -120,6 +154,81 @@ func (a *CommerceApi) InventoryStocksUpdate(stockId string, body sdktypes.Commer
     return decodeResult[sdktypes.InventoryStocksUpdateResult](raw)
 }
 
+// Invoices List
+func (a *CommerceApi) InvoicesList(page *string, pageSize *string, status *string) (sdktypes.InvoicesListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/invoices"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.InvoicesListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.InvoicesListResult](raw)
+}
+
+// Invoices Titles List
+func (a *CommerceApi) InvoicesTitlesList(page *string, pageSize *string, status *string) (sdktypes.InvoicesTitlesListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/invoices/titles"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.InvoicesTitlesListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.InvoicesTitlesListResult](raw)
+}
+
+// Invoices Retrieve
+func (a *CommerceApi) InvoicesRetrieve(invoiceId string) (sdktypes.InvoicesRetrieveResult, error) {
+    raw, err := a.client.Get(BackendApiPath(fmt.Sprintf("/invoices/%s", SerializePathParameter(invoiceId, PathParameterSpec{Name: "invoiceId", Style: "simple", Explode: false}))), nil, nil)
+    if err != nil {
+        var zero sdktypes.InvoicesRetrieveResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.InvoicesRetrieveResult](raw)
+}
+
+// Memberships Entitlements List
+func (a *CommerceApi) MembershipsEntitlementsList(page *string, pageSize *string, planId *string, membershipId *string, status *string) (sdktypes.MembershipsEntitlementsListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "plan_id", Value: func() interface{} { if planId == nil { return nil }; return *planId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "membership_id", Value: func() interface{} { if membershipId == nil { return nil }; return *membershipId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/memberships/entitlements"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.MembershipsEntitlementsListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.MembershipsEntitlementsListResult](raw)
+}
+
+// Memberships Members List
+func (a *CommerceApi) MembershipsMembersList(page *string, pageSize *string, cursor *string, userId *string, planId *string, status *string) (sdktypes.MembershipsMembersListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "cursor", Value: func() interface{} { if cursor == nil { return nil }; return *cursor }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "user_id", Value: func() interface{} { if userId == nil { return nil }; return *userId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "plan_id", Value: func() interface{} { if planId == nil { return nil }; return *planId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/memberships/members"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.MembershipsMembersListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.MembershipsMembersListResult](raw)
+}
+
 // Memberships Members Status Update
 func (a *CommerceApi) MembershipsMembersStatusUpdate(membershipId string, body sdktypes.CommerceMembershipMemberStatusRequest, idempotencyKey string) (sdktypes.MembershipsMembersStatusUpdateResult, error) {
     headers := BuildRequestHeaders(
@@ -132,6 +241,45 @@ func (a *CommerceApi) MembershipsMembersStatusUpdate(membershipId string, body s
         return zero, err
     }
     return decodeResult[sdktypes.MembershipsMembersStatusUpdateResult](raw)
+}
+
+// Memberships Package Groups List
+func (a *CommerceApi) MembershipsPackageGroupsList(page *string, pageSize *string, status *string) (sdktypes.MembershipsPackageGroupsListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/memberships/package_groups"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.MembershipsPackageGroupsListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.MembershipsPackageGroupsListResult](raw)
+}
+
+// Memberships Package Groups Create
+func (a *CommerceApi) MembershipsPackageGroupsCreate(body sdktypes.CommerceMembershipPackageGroupMutationRequest, idempotencyKey string) (sdktypes.MembershipsPackageGroupsCreateResult, error) {
+    headers := BuildRequestHeaders(
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
+        map[string]ParameterSpec{},
+    )
+    raw, err := a.client.Post(BackendApiPath("/memberships/package_groups"), body, nil, headers, "application/json")
+    if err != nil {
+        var zero sdktypes.MembershipsPackageGroupsCreateResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.MembershipsPackageGroupsCreateResult](raw)
+}
+
+// Memberships Package Groups Delete
+func (a *CommerceApi) MembershipsPackageGroupsDelete(packageGroupId string) (sdktypes.MembershipsPackageGroupsDeleteResult, error) {
+    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/memberships/package_groups/%s", SerializePathParameter(packageGroupId, PathParameterSpec{Name: "packageGroupId", Style: "simple", Explode: false}))), nil, nil)
+    if err != nil {
+        var zero sdktypes.MembershipsPackageGroupsDeleteResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.MembershipsPackageGroupsDeleteResult](raw)
 }
 
 // Memberships Package Groups Update
@@ -148,6 +296,47 @@ func (a *CommerceApi) MembershipsPackageGroupsUpdate(packageGroupId string, body
     return decodeResult[sdktypes.MembershipsPackageGroupsUpdateResult](raw)
 }
 
+// Memberships Packages List
+func (a *CommerceApi) MembershipsPackagesList(page *string, pageSize *string, packageGroupId *string, planId *string, status *string) (sdktypes.MembershipsPackagesListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "package_group_id", Value: func() interface{} { if packageGroupId == nil { return nil }; return *packageGroupId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "plan_id", Value: func() interface{} { if planId == nil { return nil }; return *planId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/memberships/packages"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.MembershipsPackagesListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.MembershipsPackagesListResult](raw)
+}
+
+// Memberships Packages Create
+func (a *CommerceApi) MembershipsPackagesCreate(body sdktypes.CommerceMembershipPackageMutationRequest, idempotencyKey string) (sdktypes.MembershipsPackagesCreateResult, error) {
+    headers := BuildRequestHeaders(
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
+        map[string]ParameterSpec{},
+    )
+    raw, err := a.client.Post(BackendApiPath("/memberships/packages"), body, nil, headers, "application/json")
+    if err != nil {
+        var zero sdktypes.MembershipsPackagesCreateResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.MembershipsPackagesCreateResult](raw)
+}
+
+// Memberships Packages Delete
+func (a *CommerceApi) MembershipsPackagesDelete(packageId string) (sdktypes.MembershipsPackagesDeleteResult, error) {
+    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/memberships/packages/%s", SerializePathParameter(packageId, PathParameterSpec{Name: "packageId", Style: "simple", Explode: false}))), nil, nil)
+    if err != nil {
+        var zero sdktypes.MembershipsPackagesDeleteResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.MembershipsPackagesDeleteResult](raw)
+}
+
 // Memberships Packages Update
 func (a *CommerceApi) MembershipsPackagesUpdate(packageId string, body sdktypes.CommerceMembershipPackageMutationRequest, idempotencyKey string) (sdktypes.MembershipsPackagesUpdateResult, error) {
     headers := BuildRequestHeaders(
@@ -160,6 +349,45 @@ func (a *CommerceApi) MembershipsPackagesUpdate(packageId string, body sdktypes.
         return zero, err
     }
     return decodeResult[sdktypes.MembershipsPackagesUpdateResult](raw)
+}
+
+// Memberships Plans List
+func (a *CommerceApi) MembershipsPlansList(page *string, pageSize *string, status *string) (sdktypes.MembershipsPlansListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/memberships/plans"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.MembershipsPlansListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.MembershipsPlansListResult](raw)
+}
+
+// Memberships Plans Create
+func (a *CommerceApi) MembershipsPlansCreate(body sdktypes.CommerceMembershipPlanMutationRequest, idempotencyKey string) (sdktypes.MembershipsPlansCreateResult, error) {
+    headers := BuildRequestHeaders(
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
+        map[string]ParameterSpec{},
+    )
+    raw, err := a.client.Post(BackendApiPath("/memberships/plans"), body, nil, headers, "application/json")
+    if err != nil {
+        var zero sdktypes.MembershipsPlansCreateResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.MembershipsPlansCreateResult](raw)
+}
+
+// Memberships Plans Delete
+func (a *CommerceApi) MembershipsPlansDelete(planId string) (sdktypes.MembershipsPlansDeleteResult, error) {
+    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/memberships/plans/%s", SerializePathParameter(planId, PathParameterSpec{Name: "planId", Style: "simple", Explode: false}))), nil, nil)
+    if err != nil {
+        var zero sdktypes.MembershipsPlansDeleteResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.MembershipsPlansDeleteResult](raw)
 }
 
 // Memberships Plans Update
@@ -176,6 +404,21 @@ func (a *CommerceApi) MembershipsPlansUpdate(planId string, body sdktypes.Commer
     return decodeResult[sdktypes.MembershipsPlansUpdateResult](raw)
 }
 
+// Orders List
+func (a *CommerceApi) OrdersList(page *string, pageSize *string, status *string) (sdktypes.OrdersListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/orders"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.OrdersListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.OrdersListResult](raw)
+}
+
 // Orders Retrieve
 func (a *CommerceApi) OrdersRetrieve(orderId string) (sdktypes.OrdersRetrieveResult, error) {
     raw, err := a.client.Get(BackendApiPath(fmt.Sprintf("/orders/%s", SerializePathParameter(orderId, PathParameterSpec{Name: "orderId", Style: "simple", Explode: false}))), nil, nil)
@@ -186,6 +429,117 @@ func (a *CommerceApi) OrdersRetrieve(orderId string) (sdktypes.OrdersRetrieveRes
     return decodeResult[sdktypes.OrdersRetrieveResult](raw)
 }
 
+// Orders Events List
+func (a *CommerceApi) OrdersEventsList(orderId string, page *string, pageSize *string, status *string) (sdktypes.OrdersEventsListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath(fmt.Sprintf("/orders/%s/events", SerializePathParameter(orderId, PathParameterSpec{Name: "orderId", Style: "simple", Explode: false}))), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.OrdersEventsListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.OrdersEventsListResult](raw)
+}
+
+// Payments Attempts List
+func (a *CommerceApi) PaymentsAttemptsList(intentId *string, providerCode *string, page *string, pageSize *string, status *string) (sdktypes.PaymentsAttemptsListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "intent_id", Value: func() interface{} { if intentId == nil { return nil }; return *intentId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "provider_code", Value: func() interface{} { if providerCode == nil { return nil }; return *providerCode }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/payments/attempts"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.PaymentsAttemptsListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.PaymentsAttemptsListResult](raw)
+}
+
+// Payments Channels List
+func (a *CommerceApi) PaymentsChannelsList(providerAccountId *string, methodCode *string, page *string, pageSize *string, status *string) (sdktypes.PaymentsChannelsListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "provider_account_id", Value: func() interface{} { if providerAccountId == nil { return nil }; return *providerAccountId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "method_code", Value: func() interface{} { if methodCode == nil { return nil }; return *methodCode }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/payments/channels"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.PaymentsChannelsListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.PaymentsChannelsListResult](raw)
+}
+
+// Payments Intents List
+func (a *CommerceApi) PaymentsIntentsList(orderId *string, providerCode *string, page *string, pageSize *string, status *string) (sdktypes.PaymentsIntentsListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "order_id", Value: func() interface{} { if orderId == nil { return nil }; return *orderId }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "provider_code", Value: func() interface{} { if providerCode == nil { return nil }; return *providerCode }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/payments/intents"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.PaymentsIntentsListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.PaymentsIntentsListResult](raw)
+}
+
+// Payments Methods List
+func (a *CommerceApi) PaymentsMethodsList(page *string, pageSize *string, status *string) (sdktypes.PaymentsMethodsListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/payments/methods"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.PaymentsMethodsListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.PaymentsMethodsListResult](raw)
+}
+
+// Payments Provider Accounts List
+func (a *CommerceApi) PaymentsProviderAccountsList(providerCode *string, page *string, pageSize *string, status *string) (sdktypes.PaymentsProviderAccountsListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "provider_code", Value: func() interface{} { if providerCode == nil { return nil }; return *providerCode }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/payments/provider_accounts"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.PaymentsProviderAccountsListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.PaymentsProviderAccountsListResult](raw)
+}
+
+// Payments Provider Accounts Create
+func (a *CommerceApi) PaymentsProviderAccountsCreate(body sdktypes.CommercePaymentProviderAccountMutationRequest, idempotencyKey string) (sdktypes.PaymentsProviderAccountsCreateResult, error) {
+    headers := BuildRequestHeaders(
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
+        map[string]ParameterSpec{},
+    )
+    raw, err := a.client.Post(BackendApiPath("/payments/provider_accounts"), body, nil, headers, "application/json")
+    if err != nil {
+        var zero sdktypes.PaymentsProviderAccountsCreateResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.PaymentsProviderAccountsCreateResult](raw)
+}
+
 // Payments Provider Accounts Delete
 func (a *CommerceApi) PaymentsProviderAccountsDelete(providerAccountId string) (sdktypes.PaymentsProviderAccountsDeleteResult, error) {
     raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/payments/provider_accounts/%s", SerializePathParameter(providerAccountId, PathParameterSpec{Name: "providerAccountId", Style: "simple", Explode: false}))), nil, nil)
@@ -194,6 +548,20 @@ func (a *CommerceApi) PaymentsProviderAccountsDelete(providerAccountId string) (
         return zero, err
     }
     return decodeResult[sdktypes.PaymentsProviderAccountsDeleteResult](raw)
+}
+
+// Payments Provider Accounts Update
+func (a *CommerceApi) PaymentsProviderAccountsUpdate(providerAccountId string, body sdktypes.CommercePaymentProviderAccountMutationRequest, idempotencyKey string) (sdktypes.PaymentsProviderAccountsUpdateResult, error) {
+    headers := BuildRequestHeaders(
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
+        map[string]ParameterSpec{},
+    )
+    raw, err := a.client.Patch(BackendApiPath(fmt.Sprintf("/payments/provider_accounts/%s", SerializePathParameter(providerAccountId, PathParameterSpec{Name: "providerAccountId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+    if err != nil {
+        var zero sdktypes.PaymentsProviderAccountsUpdateResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.PaymentsProviderAccountsUpdateResult](raw)
 }
 
 // Payments Provider Accounts Status Update
@@ -225,6 +593,41 @@ func (a *CommerceApi) PaymentsProvidersList(page *string, pageSize *string, stat
     return decodeResult[sdktypes.PaymentsProvidersListResult](raw)
 }
 
+// Payments Reconciliation Runs List
+func (a *CommerceApi) PaymentsReconciliationRunsList(providerCode *string, businessDate *string, page *string, pageSize *string, status *string) (sdktypes.PaymentsReconciliationRunsListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "provider_code", Value: func() interface{} { if providerCode == nil { return nil }; return *providerCode }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "business_date", Value: func() interface{} { if businessDate == nil { return nil }; return *businessDate }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/payments/reconciliation_runs"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.PaymentsReconciliationRunsListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.PaymentsReconciliationRunsListResult](raw)
+}
+
+// Payments Route Rules List
+func (a *CommerceApi) PaymentsRouteRulesList(methodCode *string, countryCode *string, currencyCode *string, page *string, pageSize *string, status *string) (sdktypes.PaymentsRouteRulesListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "method_code", Value: func() interface{} { if methodCode == nil { return nil }; return *methodCode }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "country_code", Value: func() interface{} { if countryCode == nil { return nil }; return *countryCode }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "currency_code", Value: func() interface{} { if currencyCode == nil { return nil }; return *currencyCode }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/payments/route_rules"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.PaymentsRouteRulesListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.PaymentsRouteRulesListResult](raw)
+}
+
 // Payments Runtime Snapshot Retrieve
 func (a *CommerceApi) PaymentsRuntimeSnapshotRetrieve(environment *string) (sdktypes.PaymentsRuntimeSnapshotRetrieveResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
@@ -238,6 +641,66 @@ func (a *CommerceApi) PaymentsRuntimeSnapshotRetrieve(environment *string) (sdkt
     return decodeResult[sdktypes.PaymentsRuntimeSnapshotRetrieveResult](raw)
 }
 
+// Payments Webhook Events List
+func (a *CommerceApi) PaymentsWebhookEventsList(providerCode *string, page *string, pageSize *string, status *string) (sdktypes.PaymentsWebhookEventsListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "provider_code", Value: func() interface{} { if providerCode == nil { return nil }; return *providerCode }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/payments/webhook_events"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.PaymentsWebhookEventsListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.PaymentsWebhookEventsListResult](raw)
+}
+
+// Recharges Orders List
+func (a *CommerceApi) RechargesOrdersList(page *string, pageSize *string, status *string) (sdktypes.RechargesOrdersListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/recharges/orders"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.RechargesOrdersListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.RechargesOrdersListResult](raw)
+}
+
+// Recharges Packages List
+func (a *CommerceApi) RechargesPackagesList(page *string, pageSize *string, status *string) (sdktypes.RechargesPackagesListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/recharges/packages"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.RechargesPackagesListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.RechargesPackagesListResult](raw)
+}
+
+// Recharges Packages Create
+func (a *CommerceApi) RechargesPackagesCreate(body sdktypes.CommerceRechargePackageMutationRequest, idempotencyKey string) (sdktypes.RechargesPackagesCreateResult, error) {
+    headers := BuildRequestHeaders(
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
+        map[string]ParameterSpec{},
+    )
+    raw, err := a.client.Post(BackendApiPath("/recharges/packages"), body, nil, headers, "application/json")
+    if err != nil {
+        var zero sdktypes.RechargesPackagesCreateResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.RechargesPackagesCreateResult](raw)
+}
+
 // Recharges Packages Delete
 func (a *CommerceApi) RechargesPackagesDelete(packageId string) (sdktypes.RechargesPackagesDeleteResult, error) {
     raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/recharges/packages/%s", SerializePathParameter(packageId, PathParameterSpec{Name: "packageId", Style: "simple", Explode: false}))), nil, nil)
@@ -246,6 +709,20 @@ func (a *CommerceApi) RechargesPackagesDelete(packageId string) (sdktypes.Rechar
         return zero, err
     }
     return decodeResult[sdktypes.RechargesPackagesDeleteResult](raw)
+}
+
+// Recharges Packages Update
+func (a *CommerceApi) RechargesPackagesUpdate(packageId string, body sdktypes.CommerceRechargePackageMutationRequest, idempotencyKey string) (sdktypes.RechargesPackagesUpdateResult, error) {
+    headers := BuildRequestHeaders(
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
+        map[string]ParameterSpec{},
+    )
+    raw, err := a.client.Patch(BackendApiPath(fmt.Sprintf("/recharges/packages/%s", SerializePathParameter(packageId, PathParameterSpec{Name: "packageId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+    if err != nil {
+        var zero sdktypes.RechargesPackagesUpdateResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.RechargesPackagesUpdateResult](raw)
 }
 
 // Recharges Settings Retrieve
@@ -268,6 +745,46 @@ func (a *CommerceApi) RechargesSettingsUpdate(body sdktypes.CommerceRechargeSett
     return decodeResult[sdktypes.RechargesSettingsUpdateResult](raw)
 }
 
+// Refunds List
+func (a *CommerceApi) RefundsList(page *string, pageSize *string, status *string) (sdktypes.RefundsListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/refunds"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.RefundsListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.RefundsListResult](raw)
+}
+
+// Refunds Retrieve
+func (a *CommerceApi) RefundsRetrieve(refundId string) (sdktypes.RefundsRetrieveResult, error) {
+    raw, err := a.client.Get(BackendApiPath(fmt.Sprintf("/refunds/%s", SerializePathParameter(refundId, PathParameterSpec{Name: "refundId", Style: "simple", Explode: false}))), nil, nil)
+    if err != nil {
+        var zero sdktypes.RefundsRetrieveResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.RefundsRetrieveResult](raw)
+}
+
+// Shipments List
+func (a *CommerceApi) ShipmentsList(page *string, pageSize *string, status *string) (sdktypes.ShipmentsListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/shipments"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.ShipmentsListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.ShipmentsListResult](raw)
+}
+
 // Shipments Tracking Events List
 func (a *CommerceApi) ShipmentsTrackingEventsList(shipmentId string, page *string, pageSize *string, status *string) (sdktypes.ShipmentsTrackingEventsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
@@ -281,6 +798,65 @@ func (a *CommerceApi) ShipmentsTrackingEventsList(shipmentId string, page *strin
         return zero, err
     }
     return decodeResult[sdktypes.ShipmentsTrackingEventsListResult](raw)
+}
+
+// Wallet Accounts List
+func (a *CommerceApi) WalletAccountsList(page *string, pageSize *string, status *string) (sdktypes.WalletAccountsListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/wallet/accounts"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.WalletAccountsListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.WalletAccountsListResult](raw)
+}
+
+// Wallet Adjustments Create
+func (a *CommerceApi) WalletAdjustmentsCreate(body sdktypes.CommerceStandardCommandRequest, idempotencyKey string) (sdktypes.WalletAdjustmentsCreateResult, error) {
+    headers := BuildRequestHeaders(
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
+        map[string]ParameterSpec{},
+    )
+    raw, err := a.client.Post(BackendApiPath("/wallet/adjustments"), body, nil, headers, "application/json")
+    if err != nil {
+        var zero sdktypes.WalletAdjustmentsCreateResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.WalletAdjustmentsCreateResult](raw)
+}
+
+// Wallet Exchange Rules List
+func (a *CommerceApi) WalletExchangeRulesList(page *string, pageSize *string, status *string) (sdktypes.WalletExchangeRulesListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/wallet/exchange_rules"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.WalletExchangeRulesListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.WalletExchangeRulesListResult](raw)
+}
+
+// Wallet Ledger Entries List
+func (a *CommerceApi) WalletLedgerEntriesList(page *string, pageSize *string, status *string) (sdktypes.WalletLedgerEntriesListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/wallet/ledger_entries"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.WalletLedgerEntriesListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.WalletLedgerEntriesListResult](raw)
 }
 
 type PathParameterSpec struct {

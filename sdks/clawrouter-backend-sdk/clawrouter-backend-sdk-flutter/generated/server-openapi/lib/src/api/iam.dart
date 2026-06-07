@@ -35,16 +35,6 @@ class IamApi {
       return map == null ? null : ApiKeysDeleteResult.fromJson(map);
     })();
   }
-
-  /// Update user
-  Future<UsersUpdateResult?> usersUpdate(AdminUserUpdateRequest body) async {
-    final payload = body.toJson();
-    final response = await _client.put(ApiPaths.backendPath('/iam/users'), body: payload, contentType: 'application/json');
-    return (() {
-      final map = sdkworkResponseAsMap(response);
-      return map == null ? null : UsersUpdateResult.fromJson(map);
-    })();
-  }
 }
 
 class PathParameterSpec {

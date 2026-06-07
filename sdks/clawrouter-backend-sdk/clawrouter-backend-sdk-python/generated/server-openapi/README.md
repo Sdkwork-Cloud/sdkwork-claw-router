@@ -18,38 +18,20 @@ config = SdkConfig(
 )
 
 client = SdkworkBackendClient(config)
-client.set_api_key("your-api-key")
+client.set_auth_token("your-auth-token")
+client.set_access_token("your-access-token")
 
 # Use the SDK
 result = client.ai.channel_groups.list()
 ```
 
-## Authentication Modes (Mutually Exclusive)
+## Authentication
 
-Choose exactly one mode for the same client instance.
-
-### Mode A: API Key
-
-```python
-config = SdkConfig(base_url="http://localhost:18081")
-client = SdkworkBackendClient(config)
-client.set_api_key("your-api-key")
-# Sends: Access-Token: <apiKey>
+```text
+Authorization: Bearer <authToken>
+Access-Token: <accessToken>
 ```
 
-### Mode B: Dual Token
-
-```python
-config = SdkConfig(base_url="http://localhost:18081")
-client = SdkworkBackendClient(config)
-client.set_auth_token("your-auth-token")
-client.set_access_token("your-access-token")
-# Sends:
-# Authorization: Bearer <authToken>
-# Access-Token: <accessToken>
-```
-
-> Do not call `set_api_key(...)` together with `set_auth_token(...)` + `set_access_token(...)` on the same client.
 
 ## Configuration (Non-Auth)
 
@@ -112,8 +94,8 @@ print(result)
 ### commerce
 
 ```python
-# Recharges Settings Retrieve
-result = client.commerce.recharges.settings.retrieve()
+# Commerce Reports Payment Reconciliation Retrieve
+result = client.commerce.commerce_reports.payment_reconciliation.retrieve()
 print(result)
 ```
 
@@ -136,14 +118,9 @@ print(result)
 ### iam
 
 ```python
-# Update user
-body = {
-    'group': 'group',
-    'id': 'id',
-    'status': 'active',
-    'username': 'username',
-}
-result = client.iam.users.update(body)
+# Delete API key
+api_key_id = '1'
+result = client.iam.api_keys.delete(api_key_id)
 print(result)
 ```
 
@@ -300,7 +277,7 @@ This SDK includes cross-platform publish scripts in `bin/`:
 .\bin\publish.ps1 --action publish --channel test --dry-run
 ```
 
-> Set `PYPI_TOKEN` for release (or `TEST_PYPI_TOKEN` for test channel).
+> Configure Python package registry credentials before release publish.
 
 ## License
 

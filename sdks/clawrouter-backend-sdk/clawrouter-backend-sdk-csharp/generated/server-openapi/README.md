@@ -23,38 +23,20 @@ using SDKwork.Common.Core;
 
 var config = new SdkConfig("http://localhost:18081");
 var client = new SdkworkBackendClient(config);
-client.SetApiKey("your-api-key");
+client.SetAuthToken("your-auth-token");
+client.SetAccessToken("your-access-token");
 
 var result = await client.Ai.ChannelGroupsListAsync();
 Console.WriteLine(result);
 ```
 
-## Authentication Modes (Mutually Exclusive)
+## Authentication
 
-Choose exactly one mode for the same client instance.
-
-### Mode A: API Key
-
-```csharp
-var config = new SdkConfig("http://localhost:18081");
-var client = new SdkworkBackendClient(config);
-client.SetApiKey("your-api-key");
-// Sends: Access-Token: <apiKey>
+```text
+Authorization: Bearer <authToken>
+Access-Token: <accessToken>
 ```
 
-### Mode B: Dual Token
-
-```csharp
-var config = new SdkConfig("http://localhost:18081");
-var client = new SdkworkBackendClient(config);
-client.SetAuthToken("your-auth-token");
-client.SetAccessToken("your-access-token");
-// Sends:
-// Authorization: Bearer <authToken>
-// Access-Token: <accessToken>
-```
-
-> Do not call `SetApiKey(...)` together with `SetAuthToken(...)` + `SetAccessToken(...)` on the same client.
 
 ## Configuration (Non-Auth)
 
@@ -115,8 +97,8 @@ Console.WriteLine(result);
 ### commerce
 
 ```csharp
-// Recharges Settings Retrieve
-var result = await client.Commerce.RechargesSettingsRetrieveAsync();
+// Commerce Reports Payment Reconciliation Retrieve
+var result = await client.Commerce.ReportsPaymentReconciliationRetrieveAsync();
 Console.WriteLine(result);
 ```
 
@@ -139,15 +121,9 @@ Console.WriteLine(result);
 ### iam
 
 ```csharp
-// Update user
-var body = new AdminUserUpdateRequest
-{
-    Group = "group",
-    Id = "1",
-    Status = "active",
-    Username = "name",
-};
-var result = await client.Iam.UsersUpdateAsync(body);
+// Delete API key
+var apiKeyId = "1";
+var result = await client.Iam.ApiKeysDeleteAsync(apiKeyId);
 Console.WriteLine(result);
 ```
 
@@ -314,7 +290,7 @@ This SDK includes cross-platform publish scripts in `bin/`:
 .\bin\publish.ps1 --action publish --channel test --dry-run
 ```
 
-> Set `NUGET_API_KEY` for release (or `NUGET_TEST_API_KEY` for test channel).
+> Configure NuGet registry credentials before release publish.
 
 ## License
 

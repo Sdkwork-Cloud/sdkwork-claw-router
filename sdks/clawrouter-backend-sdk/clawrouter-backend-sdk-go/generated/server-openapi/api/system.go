@@ -30,6 +30,21 @@ func (a *SystemApi) PromotionsBudgetLedgerEntriesList(budgetAccountId *string) (
     return decodeResult[sdktypes.PromotionsBudgetLedgerEntriesListResult](raw)
 }
 
+// Promotion Coupon Codes List
+func (a *SystemApi) PromotionsCodesList(page *string, pageSize *string, status *string) (sdktypes.PromotionsCodesListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/promotions/codes"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.PromotionsCodesListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.PromotionsCodesListResult](raw)
+}
+
 // Promotion Coupon Code Redemptions List
 func (a *SystemApi) PromotionsCodesRedemptionsList(page *string, pageSize *string, codeStatus *string) (sdktypes.PromotionsCodesRedemptionsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
@@ -58,6 +73,49 @@ func (a *SystemApi) PromotionsCouponLedgerEntriesList(stockId *string) (sdktypes
     return decodeResult[sdktypes.PromotionsCouponLedgerEntriesListResult](raw)
 }
 
+// Promotion Coupon Stocks List
+func (a *SystemApi) PromotionsCouponStocksList(page *string, pageSize *string, status *string) (sdktypes.PromotionsCouponStocksListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/promotions/coupon_stocks"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.PromotionsCouponStocksListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.PromotionsCouponStocksListResult](raw)
+}
+
+// Promotion Discount Allocations List
+func (a *SystemApi) PromotionsDiscountAllocationsList(applicationId *string) (sdktypes.PromotionsDiscountAllocationsListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "application_id", Value: func() interface{} { if applicationId == nil { return nil }; return *applicationId }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/promotions/discount_allocations"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.PromotionsDiscountAllocationsListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.PromotionsDiscountAllocationsListResult](raw)
+}
+
+// Promotion Discount Applications List
+func (a *SystemApi) PromotionsDiscountApplicationsList(page *string, pageSize *string, status *string) (sdktypes.PromotionsDiscountApplicationsListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/promotions/discount_applications"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.PromotionsDiscountApplicationsListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.PromotionsDiscountApplicationsListResult](raw)
+}
+
 // Promotion Events List
 func (a *SystemApi) PromotionsEventsList(status *string) (sdktypes.PromotionsEventsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
@@ -82,6 +140,36 @@ func (a *SystemApi) PromotionsExternalBindingsList(platform *string) (sdktypes.P
         return zero, err
     }
     return decodeResult[sdktypes.PromotionsExternalBindingsListResult](raw)
+}
+
+// Promotion Offers List
+func (a *SystemApi) PromotionsOffersManagementList(page *string, pageSize *string, status *string) (sdktypes.PromotionsOffersManagementListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/promotions/offers"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.PromotionsOffersManagementListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.PromotionsOffersManagementListResult](raw)
+}
+
+// Promotion User Coupons Management List
+func (a *SystemApi) PromotionsUserCouponsManagementList(page *string, pageSize *string, status *string) (sdktypes.PromotionsUserCouponsManagementListResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "page", Value: func() interface{} { if page == nil { return nil }; return *page }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "page_size", Value: func() interface{} { if pageSize == nil { return nil }; return *pageSize }(), Style: "form", Explode: true, AllowReserved: false},
+        {Name: "status", Value: func() interface{} { if status == nil { return nil }; return *status }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/promotions/user_coupons"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.PromotionsUserCouponsManagementListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.PromotionsUserCouponsManagementListResult](raw)
 }
 
 // List overview

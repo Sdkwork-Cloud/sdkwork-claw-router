@@ -15,6 +15,16 @@ public class SystemApi {
         return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/promotions/budget_ledger_entries"), query), responseType: PromotionsBudgetLedgerEntriesListResult.self)
     }
 
+    /// Promotion Coupon Codes List
+    public func promotionsCodesList(page: String? = nil, pageSize: String? = nil, status: String? = nil) async throws -> PromotionsCodesListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/promotions/codes"), query), responseType: PromotionsCodesListResult.self)
+    }
+
     /// Promotion Coupon Code Redemptions List
     public func promotionsCodesRedemptionsList(page: String? = nil, pageSize: String? = nil, codeStatus: String? = nil) async throws -> PromotionsCodesRedemptionsListResult? {
         let query = buildQueryString([
@@ -33,6 +43,34 @@ public class SystemApi {
         return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/promotions/coupon_ledger_entries"), query), responseType: PromotionsCouponLedgerEntriesListResult.self)
     }
 
+    /// Promotion Coupon Stocks List
+    public func promotionsCouponStocksList(page: String? = nil, pageSize: String? = nil, status: String? = nil) async throws -> PromotionsCouponStocksListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/promotions/coupon_stocks"), query), responseType: PromotionsCouponStocksListResult.self)
+    }
+
+    /// Promotion Discount Allocations List
+    public func promotionsDiscountAllocationsList(applicationId: String? = nil) async throws -> PromotionsDiscountAllocationsListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "application_id", value: applicationId, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/promotions/discount_allocations"), query), responseType: PromotionsDiscountAllocationsListResult.self)
+    }
+
+    /// Promotion Discount Applications List
+    public func promotionsDiscountApplicationsList(page: String? = nil, pageSize: String? = nil, status: String? = nil) async throws -> PromotionsDiscountApplicationsListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/promotions/discount_applications"), query), responseType: PromotionsDiscountApplicationsListResult.self)
+    }
+
     /// Promotion Events List
     public func promotionsEventsList(status: String? = nil) async throws -> PromotionsEventsListResult? {
         let query = buildQueryString([
@@ -47,6 +85,26 @@ public class SystemApi {
             QueryParameterSpec(name: "platform", value: platform, style: "form", explode: true, allowReserved: false, contentType: nil)
         ])
         return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/promotions/external_bindings"), query), responseType: PromotionsExternalBindingsListResult.self)
+    }
+
+    /// Promotion Offers List
+    public func promotionsOffersManagementList(page: String? = nil, pageSize: String? = nil, status: String? = nil) async throws -> PromotionsOffersManagementListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/promotions/offers"), query), responseType: PromotionsOffersManagementListResult.self)
+    }
+
+    /// Promotion User Coupons Management List
+    public func promotionsUserCouponsManagementList(page: String? = nil, pageSize: String? = nil, status: String? = nil) async throws -> PromotionsUserCouponsManagementListResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "page", value: page, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "page_size", value: pageSize, style: "form", explode: true, allowReserved: false, contentType: nil),
+            QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/promotions/user_coupons"), query), responseType: PromotionsUserCouponsManagementListResult.self)
     }
 
     /// List overview

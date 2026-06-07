@@ -17,6 +17,17 @@ class SystemApi(private val client: HttpClient) {
         return client.convertValue(raw, object : TypeReference<PromotionsBudgetLedgerEntriesListResult>() {})
     }
 
+    /** Promotion Coupon Codes List */
+    suspend fun promotionsCodesList(page: String? = null, pageSize: String? = null, status: String? = null): PromotionsCodesListResult? {
+        val query = buildQueryString(listOf(
+            QueryParameterSpec("page", page, "form", true, false, null),
+            QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+            QueryParameterSpec("status", status, "form", true, false, null)
+        ))
+        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/promotions/codes"), query))
+        return client.convertValue(raw, object : TypeReference<PromotionsCodesListResult>() {})
+    }
+
     /** Promotion Coupon Code Redemptions List */
     suspend fun promotionsCodesRedemptionsList(page: String? = null, pageSize: String? = null, codeStatus: String? = null): PromotionsCodesRedemptionsListResult? {
         val query = buildQueryString(listOf(
@@ -37,6 +48,37 @@ class SystemApi(private val client: HttpClient) {
         return client.convertValue(raw, object : TypeReference<PromotionsCouponLedgerEntriesListResult>() {})
     }
 
+    /** Promotion Coupon Stocks List */
+    suspend fun promotionsCouponStocksList(page: String? = null, pageSize: String? = null, status: String? = null): PromotionsCouponStocksListResult? {
+        val query = buildQueryString(listOf(
+            QueryParameterSpec("page", page, "form", true, false, null),
+            QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+            QueryParameterSpec("status", status, "form", true, false, null)
+        ))
+        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/promotions/coupon_stocks"), query))
+        return client.convertValue(raw, object : TypeReference<PromotionsCouponStocksListResult>() {})
+    }
+
+    /** Promotion Discount Allocations List */
+    suspend fun promotionsDiscountAllocationsList(applicationId: String? = null): PromotionsDiscountAllocationsListResult? {
+        val query = buildQueryString(listOf(
+            QueryParameterSpec("application_id", applicationId, "form", true, false, null)
+        ))
+        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/promotions/discount_allocations"), query))
+        return client.convertValue(raw, object : TypeReference<PromotionsDiscountAllocationsListResult>() {})
+    }
+
+    /** Promotion Discount Applications List */
+    suspend fun promotionsDiscountApplicationsList(page: String? = null, pageSize: String? = null, status: String? = null): PromotionsDiscountApplicationsListResult? {
+        val query = buildQueryString(listOf(
+            QueryParameterSpec("page", page, "form", true, false, null),
+            QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+            QueryParameterSpec("status", status, "form", true, false, null)
+        ))
+        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/promotions/discount_applications"), query))
+        return client.convertValue(raw, object : TypeReference<PromotionsDiscountApplicationsListResult>() {})
+    }
+
     /** Promotion Events List */
     suspend fun promotionsEventsList(status: String? = null): PromotionsEventsListResult? {
         val query = buildQueryString(listOf(
@@ -53,6 +95,28 @@ class SystemApi(private val client: HttpClient) {
         ))
         val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/promotions/external_bindings"), query))
         return client.convertValue(raw, object : TypeReference<PromotionsExternalBindingsListResult>() {})
+    }
+
+    /** Promotion Offers List */
+    suspend fun promotionsOffersManagementList(page: String? = null, pageSize: String? = null, status: String? = null): PromotionsOffersManagementListResult? {
+        val query = buildQueryString(listOf(
+            QueryParameterSpec("page", page, "form", true, false, null),
+            QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+            QueryParameterSpec("status", status, "form", true, false, null)
+        ))
+        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/promotions/offers"), query))
+        return client.convertValue(raw, object : TypeReference<PromotionsOffersManagementListResult>() {})
+    }
+
+    /** Promotion User Coupons Management List */
+    suspend fun promotionsUserCouponsManagementList(page: String? = null, pageSize: String? = null, status: String? = null): PromotionsUserCouponsManagementListResult? {
+        val query = buildQueryString(listOf(
+            QueryParameterSpec("page", page, "form", true, false, null),
+            QueryParameterSpec("page_size", pageSize, "form", true, false, null),
+            QueryParameterSpec("status", status, "form", true, false, null)
+        ))
+        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/promotions/user_coupons"), query))
+        return client.convertValue(raw, object : TypeReference<PromotionsUserCouponsManagementListResult>() {})
     }
 
     /** List overview */

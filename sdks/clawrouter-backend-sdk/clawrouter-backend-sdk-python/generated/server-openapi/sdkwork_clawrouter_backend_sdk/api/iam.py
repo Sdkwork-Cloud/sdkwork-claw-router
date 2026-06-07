@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Optional
 from ..http_client import HttpClient
-from ..models import AdminApiKeyCreateRequest, AdminUserUpdateRequest, ApiKeysCreateResult, ApiKeysDeleteResult, UsersUpdateResult
+from ..models import AdminApiKeyCreateRequest, ApiKeysCreateResult, ApiKeysDeleteResult
 
 def _append_query_string(path: str, raw_query_string: str) -> str:
     query = raw_query_string.lstrip('?')
@@ -133,7 +133,6 @@ class IamApi:
     def __init__(self, client: HttpClient):
         self._client = client
         self.api_keys = IamApiKeysApi(client)
-        self.users = IamUsersApi(client)
 
 
 class IamApiKeysApi:
@@ -156,14 +155,3 @@ class IamApiKeysApi:
     def delete(self, api_key_id: str) -> ApiKeysDeleteResult:
         """Delete API key"""
         return self._client.delete(f"/backend/v3/api/iam/api_keys/{serialize_path_parameter(api_key_id, {'name': 'apiKeyId', 'style': 'simple', 'explode': False})}")
-
-class IamUsersApi:
-    """iam iam.users API client."""
-
-    def __init__(self, client: HttpClient):
-        self._client = client
-
-
-    def update(self, body: AdminUserUpdateRequest) -> UsersUpdateResult:
-        """Update user"""
-        return self._client.put(f"/backend/v3/api/iam/users", json=body)

@@ -60,11 +60,8 @@ class SdkworkBackendClient {
 
   factory SdkworkBackendClient.withBaseUrl({
     required String baseUrl,
-    String? apiKey,
     String? authToken,
     String? accessToken,
-    String apiKeyHeader = 'Access-Token',
-    bool apiKeyAsBearer = false,
     Map<String, String>? headers,
     int timeout = 30000,
   }) {
@@ -73,17 +70,10 @@ class SdkworkBackendClient {
         baseUrl: baseUrl,
         timeout: timeout,
         headers: headers ?? const {},
-        apiKey: apiKey,
-        apiKeyHeader: apiKeyHeader,
-        apiKeyAsBearer: apiKeyAsBearer,
         authToken: authToken,
         accessToken: accessToken,
       ),
     );
-  }
-
-  void setApiKey(String apiKey) {
-    _httpClient.setApiKey(apiKey);
   }
 
   void setAuthToken(String token) {

@@ -16,8 +16,6 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 public class HttpClient {
-    private static final String API_KEY_HEADER = "Access-Token";
-    private static final boolean API_KEY_USE_BEARER = false;
 
     private final OkHttpClient client;
     private final ObjectMapper mapper;
@@ -47,28 +45,10 @@ public class HttpClient {
             .writeTimeout(timeoutSeconds, TimeUnit.SECONDS)
             .build();
     }
-
-    public void setApiKey(String apiKey) {
-        headers.put(API_KEY_HEADER, API_KEY_USE_BEARER ? "Bearer " + apiKey : apiKey);
-        if (!"Authorization".equalsIgnoreCase(API_KEY_HEADER)) {
-            headers.remove("Authorization");
-        }
-        if (!"Access-Token".equalsIgnoreCase(API_KEY_HEADER)) {
-            headers.remove("Access-Token");
-        }
-    }
-
     public void setAuthToken(String token) {
-        if (!"Authorization".equalsIgnoreCase(API_KEY_HEADER)) {
-            headers.remove(API_KEY_HEADER);
-        }
         headers.put("Authorization", "Bearer " + token);
     }
-
     public void setAccessToken(String token) {
-        if (!"Access-Token".equalsIgnoreCase(API_KEY_HEADER)) {
-            headers.remove(API_KEY_HEADER);
-        }
         headers.put("Access-Token", token);
     }
 

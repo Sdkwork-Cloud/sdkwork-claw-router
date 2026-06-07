@@ -26,12 +26,6 @@ class IamApi(private val client: HttpClient) {
         return client.convertValue(raw, object : TypeReference<ApiKeysDeleteResult>() {})
     }
 
-    /** Update user */
-    suspend fun usersUpdate(body: AdminUserUpdateRequest): UsersUpdateResult? {
-        val raw = client.put(ApiPaths.backendPath("/iam/users"), body, null, null, "application/json")
-        return client.convertValue(raw, object : TypeReference<UsersUpdateResult>() {})
-    }
-
     private data class PathParameterSpec(val name: String, val style: String, val explode: Boolean)
 
     private fun serializePathParameter(value: Any?, spec: PathParameterSpec): String {

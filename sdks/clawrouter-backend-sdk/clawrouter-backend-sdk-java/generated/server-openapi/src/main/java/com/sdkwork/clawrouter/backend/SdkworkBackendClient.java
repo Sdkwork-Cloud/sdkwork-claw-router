@@ -141,12 +141,6 @@ public class SdkworkBackendClient {
     public StorageApi getStorage() {
         return this.storage;
     }
-
-    public SdkworkBackendClient setApiKey(String apiKey) {
-        httpClient.setApiKey(apiKey);
-        return this;
-    }
-
     public SdkworkBackendClient setAuthToken(String token) {
         httpClient.setAuthToken(token);
         return this;

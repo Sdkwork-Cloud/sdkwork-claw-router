@@ -1,5 +1,6 @@
 import {
   clearStoredAppSessionToken,
+  loadStoredAppSessionToken,
   storeAppSessionFromResult,
   type StoredAppSessionToken,
 } from './app-session-token.ts';
@@ -12,16 +13,16 @@ import {
 
 export async function createAppSession(
   options: SdkworkAppbaseAppSdkClientOptions = {},
-): Promise<StoredAppSessionToken> {
-  const result = await getSdkworkAppbaseAppSdkClient(options).auth.sessions.create(
-    {
-      grantType: 'session_bridge',
-    },
-  );
+): Promise<StoredAppSessionToken | null> {
+  const result = await getSdkworkAppbaseAppSdkClient(options).auth.sessions.current.retrieve();
   const stored = storeAppSessionFromResult(result);
   resetClawRouterSdkClients();
   resetClawRouterIamRuntime();
   return stored;
+}
+
+export function getCurrentAppSession(): StoredAppSessionToken | null {
+  return loadStoredAppSessionToken();
 }
 
 export function clearAppSession(): void {

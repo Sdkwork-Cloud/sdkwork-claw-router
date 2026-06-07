@@ -624,7 +624,7 @@ function buildAppbaseBackendConfig(options: SdkworkAppbaseBackendSdkClientOption
   };
 }
 
-function resolveRequiredAppbaseBackendBaseUrl(options: SdkworkAppbaseBackendSdkClientOptions): string {
+export function resolveRequiredAppbaseBackendBaseUrl(options: SdkworkAppbaseBackendSdkClientOptions): string {
   const baseUrl = options.backendBaseUrl ?? readClawRouterRuntimeEnv('VITE_SDKWORK_APPBASE_BACKEND_API_BASE_URL');
   if (!baseUrl) {
     throw new Error(

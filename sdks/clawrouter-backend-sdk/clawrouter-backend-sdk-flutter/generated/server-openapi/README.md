@@ -17,37 +17,21 @@ dependencies:
 import 'package:clawrouter_backend_sdk/clawrouter_backend_sdk.dart';
 
 final client = SdkworkBackendClient.withBaseUrl(baseUrl: 'http://localhost:18081');
-client.setApiKey('your-api-key');
+client.setAuthToken('your-auth-token');
+client.setAccessToken('your-access-token');
 
 // Use the SDK
 final result = await client.ai.channelGroupsList();
 print(result);
 ```
 
-## Authentication Modes (Mutually Exclusive)
+## Authentication
 
-Choose exactly one mode for the same client instance.
-
-### Mode A: API Key
-
-```dart
-final client = SdkworkBackendClient.withBaseUrl(baseUrl: 'http://localhost:18081');
-client.setApiKey('your-api-key');
-// Sends: Access-Token: <apiKey>
+```text
+Authorization: Bearer <authToken>
+Access-Token: <accessToken>
 ```
 
-### Mode B: Dual Token
-
-```dart
-final client = SdkworkBackendClient.withBaseUrl(baseUrl: 'http://localhost:18081');
-client.setAuthToken('your-auth-token');
-client.setAccessToken('your-access-token');
-// Sends:
-// Authorization: Bearer <authToken>
-// Access-Token: <accessToken>
-```
-
-> Do not call `setApiKey(...)` together with `setAuthToken(...)` + `setAccessToken(...)` on the same client.
 
 ## Configuration (Non-Auth)
 
@@ -103,8 +87,8 @@ print(result);
 
 ### commerce
 ```dart
-// Recharges Settings Retrieve
-final result = await client.commerce.rechargesSettingsRetrieve();
+// Commerce Reports Payment Reconciliation Retrieve
+final result = await client.commerce.reportsPaymentReconciliationRetrieve();
 print(result);
 ```
 
@@ -124,14 +108,9 @@ print(result);
 
 ### iam
 ```dart
-// Update user
-final body = AdminUserUpdateRequest(
-  group: 'group',
-  id: '1',
-  status: 'active',
-  username: 'name',
-);
-final result = await client.iam.usersUpdate(body);
+// Delete API key
+final apiKeyId = '1';
+final result = await client.iam.apiKeysDelete(apiKeyId);
 print(result);
 ```
 

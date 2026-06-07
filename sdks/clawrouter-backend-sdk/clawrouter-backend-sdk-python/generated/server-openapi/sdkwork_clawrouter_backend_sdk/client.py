@@ -56,12 +56,6 @@ class SdkworkBackendClient:
         self.service_providers = ServiceProvidersApi(self._client)
         self.sites = SitesApi(self._client)
         self.storage = StorageApi(self._client)
-
-    def set_api_key(self, api_key: str) -> 'SdkworkBackendClient':
-        """Set API key for authentication."""
-        self._client.set_api_key(api_key)
-        return self
-
     def set_auth_token(self, token: str) -> 'SdkworkBackendClient':
         """Set auth token for authentication."""
         self._client.set_auth_token(token)

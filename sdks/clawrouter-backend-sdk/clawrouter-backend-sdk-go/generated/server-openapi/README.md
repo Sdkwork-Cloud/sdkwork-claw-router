@@ -23,7 +23,8 @@ import (
 func main() {
     cfg := sdkhttp.NewDefaultConfig("http://localhost:18081")
     client := github.com/sdkwork/clawrouter-backend-sdk.NewSdkworkBackendClientWithConfig(cfg)
-    client.SetApiKey("your-api-key")
+    client.SetAuthToken("your-auth-token")
+client.SetAccessToken("your-access-token")
 
     // Use the SDK
     result, err := client.Ai.ChannelGroupsList()
@@ -34,32 +35,13 @@ func main() {
 }
 ```
 
-## Authentication Modes (Mutually Exclusive)
+## Authentication
 
-Choose exactly one mode for the same client instance.
-
-### Mode A: API Key
-
-```go
-cfg := sdkhttp.NewDefaultConfig("http://localhost:18081")
-client := github.com/sdkwork/clawrouter-backend-sdk.NewSdkworkBackendClientWithConfig(cfg)
-client.SetApiKey("your-api-key")
-// Sends: Access-Token: <apiKey>
+```text
+Authorization: Bearer <authToken>
+Access-Token: <accessToken>
 ```
 
-### Mode B: Dual Token
-
-```go
-cfg := sdkhttp.NewDefaultConfig("http://localhost:18081")
-client := github.com/sdkwork/clawrouter-backend-sdk.NewSdkworkBackendClientWithConfig(cfg)
-client.SetAuthToken("your-auth-token")
-client.SetAccessToken("your-access-token")
-// Sends:
-// Authorization: Bearer <authToken>
-// Access-Token: <accessToken>
-```
-
-> Do not call `SetApiKey(...)` together with `SetAuthToken(...)` + `SetAccessToken(...)` on the same client.
 
 ## Configuration (Non-Auth)
 
@@ -125,8 +107,8 @@ fmt.Println(result)
 ### commerce
 
 ```go
-// Recharges Settings Retrieve
-result, err := client.Commerce.RechargesSettingsRetrieve()
+// Commerce Reports Payment Reconciliation Retrieve
+result, err := client.Commerce.ReportsPaymentReconciliationRetrieve()
 if err != nil {
     panic(err)
 }
@@ -158,14 +140,9 @@ fmt.Println(result)
 ### iam
 
 ```go
-// Update user
-body := sdktypes.AdminUserUpdateRequest{
-    Group: "group",
-    Id: "id",
-    Status: "active",
-    Username: "username",
-}
-result, err := client.Iam.UsersUpdate(body)
+// Delete API key
+apiKeyId := "1"
+result, err := client.Iam.ApiKeysDelete(apiKeyId)
 if err != nil {
     panic(err)
 }

@@ -19,7 +19,7 @@ import com.sdkwork.clawrouter.backend.api.ServiceProvidersApi
 import com.sdkwork.clawrouter.backend.api.SitesApi
 import com.sdkwork.clawrouter.backend.api.StorageApi
 
-class SdkworkBackendClient {
+open class SdkworkBackendClient {
     private val httpClient: HttpClient
 
     lateinit var agents: AgentsApi
@@ -78,12 +78,6 @@ class SdkworkBackendClient {
         sites = SitesApi(httpClient)
         storage = StorageApi(httpClient)
     }
-
-    fun setApiKey(apiKey: String): SdkworkBackendClient {
-        httpClient.setApiKey(apiKey)
-        return this
-    }
-
     fun setAuthToken(token: String): SdkworkBackendClient {
         httpClient.setAuthToken(token)
         return this

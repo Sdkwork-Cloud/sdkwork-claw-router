@@ -27,7 +27,8 @@ import kotlinx.coroutines.runBlocking
 fun main() = runBlocking {
     val config = SdkConfig(baseUrl = "http://localhost:18081")
     val client = SdkworkBackendClient(config)
-    client.setApiKey("your-api-key")
+    client.setAuthToken("your-auth-token")
+client.setAccessToken("your-access-token")
 
     // Use the SDK
     val result = client.ai.channelGroupsList()
@@ -35,32 +36,13 @@ fun main() = runBlocking {
 }
 ```
 
-## Authentication Modes (Mutually Exclusive)
+## Authentication
 
-Choose exactly one mode for the same client instance.
-
-### Mode A: API Key
-
-```kotlin
-val config = SdkConfig(baseUrl = "http://localhost:18081")
-val client = SdkworkBackendClient(config)
-client.setApiKey("your-api-key")
-// Sends: Access-Token: <apiKey>
+```text
+Authorization: Bearer <authToken>
+Access-Token: <accessToken>
 ```
 
-### Mode B: Dual Token
-
-```kotlin
-val config = SdkConfig(baseUrl = "http://localhost:18081")
-val client = SdkworkBackendClient(config)
-client.setAuthToken("your-auth-token")
-client.setAccessToken("your-access-token")
-// Sends:
-// Authorization: Bearer <authToken>
-// Access-Token: <accessToken>
-```
-
-> Do not call `setApiKey(...)` together with `setAuthToken(...)` + `setAccessToken(...)` on the same client.
 
 ## Configuration (Non-Auth)
 
@@ -117,8 +99,8 @@ println(result)
 ### commerce
 
 ```kotlin
-// Recharges Settings Retrieve
-val result = client.commerce.rechargesSettingsRetrieve()
+// Commerce Reports Payment Reconciliation Retrieve
+val result = client.commerce.reportsPaymentReconciliationRetrieve()
 println(result)
 ```
 
@@ -141,14 +123,9 @@ println(result)
 ### iam
 
 ```kotlin
-// Update user
-val body = AdminUserUpdateRequest(
-    group = "group",
-    id = "1",
-    status = "active",
-    username = "name"
-)
-val result = client.iam.usersUpdate(body)
+// Delete API key
+val apiKeyId = "1"
+val result = client.iam.apiKeysDelete(apiKeyId)
 println(result)
 ```
 

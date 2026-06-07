@@ -1516,8 +1516,43 @@ declare module '@sdkwork/host-tauri-pc-react' {
 }
 
 declare module '@sdkwork/auth-runtime-pc-react' {
-  const authRuntimePcReact: unknown;
-  export default authRuntimePcReact;
+  import type { IamRuntime } from '@sdkwork/iam-runtime';
+
+  export interface SdkworkAppbasePcAuthRuntimeComposition {
+    runtime: IamRuntime;
+    tokenStore: unknown;
+    tokenManager: unknown;
+    contextStore: unknown;
+  }
+
+  export type SdkworkAppbasePcAuthRuntimeSdkClient = Partial<{
+    setTokenManager(manager: unknown): unknown;
+  }>;
+
+  export function createSdkworkAppbasePcAuthRuntime(options: {
+    app: {
+      appId: string;
+      deploymentMode: 'local' | 'private' | 'saas';
+      environment: 'dev' | 'prod' | 'test';
+      platform?: string;
+    };
+    baseUrls: {
+      appbaseAppApiBaseUrl: string;
+      appbaseBackendApiBaseUrl?: string;
+    };
+    createAppbaseAppClient?: (config: unknown) => unknown;
+    createAppbaseBackendClient?: (config: unknown) => unknown;
+    hooks?: {
+      onSessionChanged?: (session: unknown) => Promise<unknown> | unknown;
+    };
+    sdkClients?: readonly SdkworkAppbasePcAuthRuntimeSdkClient[];
+    sessionBridge?: {
+      clearSession(): Promise<void> | void;
+      commitSession(session: unknown): Promise<unknown> | unknown;
+      readSession(): Promise<unknown> | unknown;
+    };
+    tokenManager?: unknown;
+  }): SdkworkAppbasePcAuthRuntimeComposition;
 }
 
 declare module '@sdkwork/host-pc-react' {
@@ -1624,11 +1659,6 @@ declare module '@sdkwork/iam-core-pc-react' {
 declare module '@sdkwork/iam-react' {
   const iamReact: unknown;
   export default iamReact;
-}
-
-declare module '@sdkwork/iam-sdk-adapter' {
-  export function createIamBackendSdkAdapter(client: unknown): unknown;
-  export function createIamAppSdkAdapter(client: unknown): unknown;
 }
 
 declare module '@sdkwork/iam-sdk-ports' {

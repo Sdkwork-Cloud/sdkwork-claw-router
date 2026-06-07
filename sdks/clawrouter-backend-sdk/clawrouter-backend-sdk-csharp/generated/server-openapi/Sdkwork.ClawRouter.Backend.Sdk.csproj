@@ -14,11 +14,7 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
-  <ItemGroup Condition="Exists('../../../../../../../sdk/sdkwork-sdk-commons/sdkwork-sdk-common-csharp/SDKwork.Common.csproj')">
-    <ProjectReference Include="../../../../../../../sdk/sdkwork-sdk-commons/sdkwork-sdk-common-csharp/SDKwork.Common.csproj" />
-  </ItemGroup>
-
-  <ItemGroup Condition="!Exists('../../../../../../../sdk/sdkwork-sdk-commons/sdkwork-sdk-common-csharp/SDKwork.Common.csproj')">
+  <ItemGroup>
     <PackageReference Include="SDKwork.Common" Version="1.0.0" />
   </ItemGroup>
 

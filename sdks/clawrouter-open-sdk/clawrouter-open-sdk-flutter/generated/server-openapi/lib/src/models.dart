@@ -12387,6 +12387,7 @@ class OpenAiImageEditRequest {
 
 class OpenAiImageGenerationRequest {
   final String model;
+  final int? n;
   final String prompt;
   final String? quality;
   final String? responseFormat;
@@ -12394,6 +12395,7 @@ class OpenAiImageGenerationRequest {
 
   OpenAiImageGenerationRequest({
     required this.model,
+    this.n,
     required this.prompt,
     this.quality,
     this.responseFormat,
@@ -12409,6 +12411,7 @@ class OpenAiImageGenerationRequest {
         }
         return value;
       })(),
+      n: json['n'] is int ? json['n'] : null,
       prompt: (() {
         final value = json['prompt']?.toString();
         if (value == null) {
@@ -12425,6 +12428,7 @@ class OpenAiImageGenerationRequest {
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'model': model,
+      'n': n,
       'prompt': prompt,
       'quality': quality,
       'response_format': responseFormat,

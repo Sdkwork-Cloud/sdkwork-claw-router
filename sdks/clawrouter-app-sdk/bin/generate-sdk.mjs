@@ -7,6 +7,7 @@ import { fileURLToPath } from 'node:url';
 const __filename = fileURLToPath(import.meta.url);
 const workspaceRoot = path.resolve(path.dirname(__filename), '..', '..', '..');
 const command = process.platform === 'win32' ? 'node.exe' : 'node';
+const sdkGeneratorCli = path.resolve(workspaceRoot, '.sdkwork/dependencies/sdkwork-sdk-generator/bin/sdkgen.js');
 const sdkFamily = 'clawrouter-app-sdk';
 const sdkType = 'app';
 const authorityInputPath = `sdks/${sdkFamily}/openapi/${sdkFamily}.openapi.json`;
@@ -133,7 +134,7 @@ function strictTypeScriptArgs() {
 
 function generatorArgs(language) {
   const args = [
-    path.resolve(workspaceRoot, '..', '..', 'sdk', 'sdkwork-sdk-generator', 'bin', 'sdkgen.js'),
+    sdkGeneratorCli,
     'generate',
     '-i', authorityInputPath,
     '-o', `sdks/${sdkFamily}/${sdkFamily}-${language}/generated/server-openapi`,

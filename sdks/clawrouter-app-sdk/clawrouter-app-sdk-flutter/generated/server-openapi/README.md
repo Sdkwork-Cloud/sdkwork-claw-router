@@ -17,37 +17,26 @@ dependencies:
 import 'package:clawrouter_app_sdk/clawrouter_app_sdk.dart';
 
 final client = SdkworkAppClient.withBaseUrl(baseUrl: 'http://localhost:18082');
-client.setApiKey('your-api-key');
+client.setAuthToken('your-auth-token');
+client.setAccessToken('your-access-token');
 
 // Use the SDK
-final result = await client.ai.channelGroupsList();
+final body = IamVerificationCodeCreateRequest(
+  scene: 'LOGIN',
+  target: 'target',
+  verifyType: 'EMAIL',
+);
+final result = await client.auth.verificationCodesCreate(body);
 print(result);
 ```
 
-## Authentication Modes (Mutually Exclusive)
+## Authentication
 
-Choose exactly one mode for the same client instance.
-
-### Mode A: API Key
-
-```dart
-final client = SdkworkAppClient.withBaseUrl(baseUrl: 'http://localhost:18082');
-client.setApiKey('your-api-key');
-// Sends: Access-Token: <apiKey>
+```text
+Authorization: Bearer <authToken>
+Access-Token: <accessToken>
 ```
 
-### Mode B: Dual Token
-
-```dart
-final client = SdkworkAppClient.withBaseUrl(baseUrl: 'http://localhost:18082');
-client.setAuthToken('your-auth-token');
-client.setAccessToken('your-access-token');
-// Sends:
-// Authorization: Bearer <authToken>
-// Access-Token: <accessToken>
-```
-
-> Do not call `setApiKey(...)` together with `setAuthToken(...)` + `setAccessToken(...)` on the same client.
 
 ## Configuration (Non-Auth)
 
@@ -60,8 +49,10 @@ client.setHeader('X-Custom-Header', 'value');
 
 ## API Modules
 
+- `client.commerce` - commerce API
 - `client.agents` - agents API
 - `client.ai` - ai API
+- `client.auth` - auth API
 - `client.chat` - chat API
 - `client.content` - content API
 - `client.ecosystem` - ecosystem API
@@ -70,11 +61,17 @@ client.setHeader('X-Custom-Header', 'value');
 - `client.notification` - notification API
 - `client.platform` - platform API
 - `client.system` - system API
-- `client.commerce` - commerce API
 - `client.runtime` - runtime API
 - `client.sdkReference` - sdk_reference API
 
 ## Usage Examples
+
+### commerce
+```dart
+// Accounts Current Summary Retrieve
+final result = await client.commerce.accountsCurrentSummaryRetrieve();
+print(result);
+```
 
 ### agents
 ```dart
@@ -92,6 +89,18 @@ print(result);
 ```dart
 // List groups
 final result = await client.ai.channelGroupsList();
+print(result);
+```
+
+### auth
+```dart
+// Create verification code
+final body = IamVerificationCodeCreateRequest(
+  scene: 'LOGIN',
+  target: 'target',
+  verifyType: 'EMAIL',
+);
+final result = await client.auth.verificationCodesCreate(body);
 print(result);
 ```
 
@@ -160,19 +169,11 @@ print(result);
 
 ### system
 ```dart
-// Retrieve public site runtime branding settings
+// Promotion User Coupons Wallet List
 final params = <String, dynamic>{
-  'tenant_code': 'ok',
-  'organization_code': 'ok',
+  'status': 'status',
 };
-final result = await client.system.siteRuntimeRetrieve(params);
-print(result);
-```
-
-### commerce
-```dart
-// Recharges Settings Retrieve
-final result = await client.commerce.rechargesSettingsRetrieve();
+final result = await client.system.promotionsUserCouponsWalletList(params);
 print(result);
 ```
 
@@ -208,7 +209,12 @@ print(result);
 
 ```dart
 try {
-  final result = await client.ai.channelGroupsList();
+  final body = IamVerificationCodeCreateRequest(
+    scene: 'LOGIN',
+    target: 'target',
+    verifyType: 'EMAIL',
+  );
+  final result = await client.auth.verificationCodesCreate(body);
   print(result);
 } catch (e) {
   print('Error: $e');

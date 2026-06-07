@@ -3,7 +3,7 @@ use std::sync::Arc;
 use crate::api::base::{RequestHeaders};
 use crate::api::paths::backend_path;
 use crate::http::{SdkworkError, SdkworkHttpClient};
-use crate::models::{AdminApiKeyCreateRequest, AdminUserUpdateRequest, ApiKeysCreateResult, ApiKeysDeleteResult, UsersUpdateResult};
+use crate::models::{AdminApiKeyCreateRequest, ApiKeysCreateResult, ApiKeysDeleteResult};
 
 #[derive(Clone)]
 pub struct IamApi {
@@ -31,12 +31,6 @@ impl IamApi {
     pub async fn api_keys_delete(&self, api_key_id: &str) -> Result<ApiKeysDeleteResult, SdkworkError> {
         let path = backend_path(&format!("/iam/api_keys/{}", serialize_path_parameter(api_key_id, PathParameterSpec::new("apiKeyId", "simple", false))));
         self.client.delete(&path, None, None).await
-    }
-
-    /// Update user
-    pub async fn users_update(&self, body: &AdminUserUpdateRequest) -> Result<UsersUpdateResult, SdkworkError> {
-        let path = backend_path(&"/iam/users".to_string());
-        self.client.put(&path, Some(body), None, None, Some("application/json")).await
     }
 
 }

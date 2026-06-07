@@ -67,13 +67,6 @@ namespace Sdkwork.ClawRouter.Backend
             Sites = new SitesApi(_httpClient);
             Storage = new StorageApi(_httpClient);
         }
-
-        public SdkworkBackendClient SetApiKey(string apiKey)
-        {
-            _httpClient.SetApiKey(apiKey);
-            return this;
-        }
-
         public SdkworkBackendClient SetAuthToken(string token)
         {
             _httpClient.SetAuthToken(token);

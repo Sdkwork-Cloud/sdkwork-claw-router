@@ -38,14 +38,6 @@ namespace Sdkwork.ClawRouter.Backend.Api
             return await _client.DeleteAsync<Sdkwork.ClawRouter.Backend.Models.ApiKeysDeleteResult>(ApiPaths.BackendPath($"/iam/api_keys/{SerializePathParameter(apiKeyId, new PathParameterSpec("apiKeyId", "simple", false))}"));
         }
 
-        /// <summary>
-        /// Update user
-        /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.UsersUpdateResult?> UsersUpdateAsync(Sdkwork.ClawRouter.Backend.Models.AdminUserUpdateRequest body)
-        {
-            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.UsersUpdateResult>(ApiPaths.BackendPath("/iam/users"), body, null, null, "application/json");
-        }
-
         private sealed record PathParameterSpec(string Name, string Style, bool Explode);
 
         private static string SerializePathParameter(object? value, PathParameterSpec spec)

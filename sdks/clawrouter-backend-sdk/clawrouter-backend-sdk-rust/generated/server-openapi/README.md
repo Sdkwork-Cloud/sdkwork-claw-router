@@ -17,7 +17,8 @@ use clawrouter_backend_sdk::{SdkworkBackendClient, SdkworkConfig};
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = SdkworkBackendClient::new(SdkworkConfig::new("http://localhost:18081"))?;
-    client.set_api_key("your-api-key");
+    client.set_auth_token("your-auth-token");
+client.set_access_token("your-access-token");
 
     let result = client.ai().channel_groups_list().await?;
     println!("{result:?}");
@@ -25,30 +26,13 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 }
 ```
 
-## Authentication Modes (Mutually Exclusive)
+## Authentication
 
-Choose exactly one mode for the same client instance.
-
-### Mode A: API Key
-
-```rust
-let client = SdkworkBackendClient::new(SdkworkConfig::new("http://localhost:18081"))?;
-client.set_api_key("your-api-key");
-// Sends: Access-Token: <apiKey>
+```text
+Authorization: Bearer <authToken>
+Access-Token: <accessToken>
 ```
 
-### Mode B: Dual Token
-
-```rust
-let client = SdkworkBackendClient::new(SdkworkConfig::new("http://localhost:18081"))?;
-client.set_auth_token("your-auth-token");
-client.set_access_token("your-access-token");
-// Sends:
-// Authorization: Bearer <authToken>
-// Access-Token: <accessToken>
-```
-
-> Do not call `set_api_key(...)` together with `set_auth_token(...)` + `set_access_token(...)` on the same client.
 
 ## Configuration (Non-Auth)
 
@@ -105,8 +89,8 @@ println!("{result:?}");
 ### commerce
 
 ```rust
-// Recharges Settings Retrieve
-let result = client.commerce().recharges_settings_retrieve().await?;
+// Commerce Reports Payment Reconciliation Retrieve
+let result = client.commerce().reports_payment_reconciliation_retrieve().await?;
 println!("{result:?}");
 ```
 
@@ -129,16 +113,9 @@ println!("{result:?}");
 ### iam
 
 ```rust
-use clawrouter_backend_sdk::*;
-// Update user
-let body = AdminUserUpdateRequest {
-    group: Some("group".to_string()),
-    id: "1".to_string(),
-    status: Some("active".to_string()),
-    username: Some("name".to_string()),
-    ..Default::default()
-};
-let result = client.iam().users_update(&body).await?;
+// Delete API key
+let api_key_id = "1";
+let result = client.iam().api_keys_delete(api_key_id).await?;
 println!("{result:?}");
 ```
 
