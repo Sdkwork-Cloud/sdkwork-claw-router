@@ -17,7 +17,7 @@ import {
   type SdkworkGenerationCreditEstimate,
   type SdkworkGenerationSfxModeConfig,
   type SdkworkGenerationSpeechModeConfig,
-} from '@sdkwork/generation-pc-react/react';
+} from '@sdkwork/generations-pc-workspace/generation-asset-config';
 import { toExternalUrlMediaResource, type ClawRouterMediaResource } from 'sdkwork-clawrouter-pc-commons/runtime';
 import type {
   PlaygroundGenerationSubmitInput,

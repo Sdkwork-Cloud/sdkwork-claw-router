@@ -23,23 +23,35 @@
       "sdkwork-clawrouter-pc-admin-analytics": [
         "./packages/sdkwork-clawrouter-pc-admin-analytics/src/index.tsx"
       ],
+      "sdkwork-clawrouter-pc-admin-app": [
+        "./packages/sdkwork-clawrouter-pc-admin-app/src/index.tsx"
+      ],
       "sdkwork-clawrouter-pc-admin-cache": [
         "./packages/sdkwork-clawrouter-pc-admin-cache/src/index.tsx"
       ],
       "sdkwork-clawrouter-pc-admin-catalog": [
         "./packages/sdkwork-clawrouter-pc-admin-catalog/src/index.tsx"
       ],
+      "sdkwork-clawrouter-pc-admin-core": [
+        "./packages/sdkwork-clawrouter-pc-admin-core/src/index.ts"
+      ],
       "sdkwork-commerce-pc-admin-product": [
         "./src/typecheck-shims.d.ts"
       ],
       "@sdkwork/commerce-service": [
-        "../../.sdkwork/dependencies/sdkwork-commerce/packages/common/commerce/sdkwork-commerce-service/src/index.ts"
+        "../../../sdkwork-commerce/packages/common/commerce/sdkwork-commerce-service/src/index.ts"
       ],
       "@sdkwork/commerce-sdk-ports": [
-        "../../.sdkwork/dependencies/sdkwork-commerce/packages/common/commerce/sdkwork-commerce-sdk-ports/src/index.ts"
+        "../../../sdkwork-commerce/packages/common/commerce/sdkwork-commerce-sdk-ports/src/index.ts"
       ],
       "@sdkwork/commerce-contracts": [
-        "../../.sdkwork/dependencies/sdkwork-commerce/packages/common/commerce/sdkwork-commerce-contracts/src/index.ts"
+        "../../../sdkwork-commerce/packages/common/commerce/sdkwork-commerce-contracts/src/index.ts"
+      ],
+      "sdkwork-commerce-app-sdk-generated-typescript": [
+        "../../../sdkwork-commerce/sdks/sdkwork-commerce-app-sdk/sdkwork-commerce-app-sdk-typescript/generated/server-openapi/src/index.ts"
+      ],
+      "sdkwork-commerce-backend-sdk-generated-typescript": [
+        "../../../sdkwork-commerce/sdks/sdkwork-commerce-backend-sdk/sdkwork-commerce-backend-sdk-typescript/generated/server-openapi/src/index.ts"
       ],
       "sdkwork-clawrouter-pc-admin-courses": [
         "./packages/sdkwork-clawrouter-pc-admin-courses/src/index.tsx"
@@ -170,6 +182,12 @@
       "@sdkwork/generations-pc-workspace": [
         "./src/typecheck-shims.d.ts"
       ],
+      "@sdkwork/generations-pc-workspace/generation-asset-config": [
+        "./src/typecheck-shims.d.ts"
+      ],
+      "@sdkwork/generations-pc-workspace/generation-history": [
+        "./src/typecheck-shims.d.ts"
+      ],
       "@sdkwork/generations-pc-workspace/generation-service": [
         "./src/typecheck-shims.d.ts"
       ],
@@ -248,7 +266,7 @@
     "dist/**",
     "node_modules/**",
     "packages/*/dist/**",
-    "../../.sdkwork/dependencies/sdkwork-appbase/**",
-    "../../.sdkwork/dependencies/sdkwork-ui/**"
+    "../../../sdkwork-appbase/**",
+    "../../../sdkwork-ui/**"
   ]
 }

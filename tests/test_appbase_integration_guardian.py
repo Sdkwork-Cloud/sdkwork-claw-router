@@ -6,7 +6,7 @@ import textwrap
 import unittest
 from pathlib import Path
 
-from tests.test_commerce_standard import CANONICAL_COMMERCE_API_OPERATIONS
+from tests.test_commerce_standard import CANONICAL_COMMERCE_API_OPERATIONS, MIGRATED_COMMERCE_PRODUCT_CENTER_API_OPERATIONS
 from tools.appbase_integration_guardian import AppbaseIntegrationGuardian
 
 
@@ -181,7 +181,12 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
 
     def standard_commerce_operations_schema(self, extra_operations: str = "") -> str:
         lines = ["frontend_operations:"]
-        for surface, method, api_path, operation_id in CANONICAL_COMMERCE_API_OPERATIONS:
+        for surface, method, api_path, operation_id in dict.fromkeys(
+            (
+                *MIGRATED_COMMERCE_PRODUCT_CENTER_API_OPERATIONS,
+                *CANONICAL_COMMERCE_API_OPERATIONS,
+            )
+        ):
             lines.extend(
                 [
                     f"  - api_surface: {surface}",
@@ -209,8 +214,8 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
             "services/sdkwork-claw-app-api/Cargo.toml",
             """
             [dependencies]
-            sdkwork_commerce_http = { path = "../../.sdkwork/dependencies/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-http-rust" }
-            sdkwork_commerce_membership_sqlx = { path = "../../.sdkwork/dependencies/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-membership-sqlx-rust" }
+            sdkwork_commerce_http = { path = "../../sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-http-rust" }
+            sdkwork_commerce_membership_sqlx = { path = "../../sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-membership-sqlx-rust" }
             """,
         )
         self.write_cargo(
@@ -218,7 +223,7 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
             "services/sdkwork-claw-admin-api/Cargo.toml",
             """
             [dependencies]
-            sdkwork_commerce_membership_sqlx = { path = "../../.sdkwork/dependencies/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-membership-sqlx-rust" }
+            sdkwork_commerce_membership_sqlx = { path = "../../sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-membership-sqlx-rust" }
             """,
         )
         self.write_runtime_adapter(root, "services/sdkwork-claw-app-api/tests/contract_routes.rs")
@@ -249,6 +254,48 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             self.write_valid_files(root)
+
+            result = AppbaseIntegrationGuardian(root=root).run()
+
+            self.assertTrue(result.ok, result.messages)
+
+    def test_skips_commerce_schema_registry_when_commerce_is_not_appbase_integrated(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_appbase_catalog(root)
+            self.write_integration_manifest(
+                root,
+                """
+                schemaVersion: 1
+                kind: sdkwork.appbase.integration
+                app:
+                  key: sdkwork-claw-router
+                integrations:
+                  - capability: notification
+                    requiredMaturity: L1
+                    surfaces: [portal]
+                    verification:
+                      - python -B -m unittest tests.test_notification_runtime_standard
+                    forbiddenProductForks: []
+                    sdkBoundary: generated-sdk-through-ports
+                """,
+            )
+            self.write_runtime_adapter(root, "tests/test_notification_runtime_standard.py")
+            schema = root / "docs" / "schema-registry" / "frontend-field-contracts.yaml"
+            schema.parent.mkdir(parents=True, exist_ok=True)
+            schema.write_text(
+                textwrap.dedent(
+                    """
+                    frontend_operations:
+                      - api_surface: backend
+                        api_method: GET
+                        api_path: /backend/v3/api/catalog/products
+                        operation_id: backend.catalog.products.list
+                    """
+                ).strip()
+                + "\n",
+                encoding="utf-8",
+            )
 
             result = AppbaseIntegrationGuardian(root=root).run()
 

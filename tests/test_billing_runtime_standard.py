@@ -7,13 +7,13 @@ APPBASE_ROOT = ROOT / ".sdkwork" / "dependencies" / "sdkwork-appbase"
 
 
 APPBASE_PAYMENT_STORES = [
-    ".sdkwork/dependencies/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust/src/sqlite_payment.rs",
-    ".sdkwork/dependencies/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust/src/postgres_payment.rs",
+    "../../sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust/src/sqlite_payment.rs",
+    "../../sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust/src/postgres_payment.rs",
 ]
 
 APPBASE_PROMOTION_STORES = [
-    ".sdkwork/dependencies/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust/src/sqlite_promotion.rs",
-    ".sdkwork/dependencies/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust/src/postgres_promotion.rs",
+    "../../sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust/src/sqlite_promotion.rs",
+    "../../sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust/src/postgres_promotion.rs",
 ]
 
 CONSOLE_COMMERCE = (

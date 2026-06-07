@@ -42,6 +42,7 @@ This SDK family is owner-only. Dependency-owned routes are consumed through decl
 | Workspace | Role | Mode | API prefix | Generated transport policy |
 | --- | --- | --- | --- | --- |
 | `sdkwork-appbase-app-sdk` | `appbase-app-capability` | `consumer-sdk` | `/app/v3/api` | `generatedTransportImportPolicy: forbidden` |
+| `sdkwork-commerce-app-sdk` | `commerce-app-capability` | `consumer-sdk` | `/app/v3/api` | `generatedTransportImportPolicy: forbidden` |
 
 Package names:
 
@@ -55,6 +56,16 @@ Package names:
 - `kotlin`: `com.sdkwork:sdkwork-appbase-app-sdk`
 - `go`: `github.com/sdkwork/sdkwork-appbase-app-sdk`
 - `python`: `sdkwork-appbase-app-sdk`
+- `sdkwork-commerce-app-sdk`
+- `typescript`: `sdkwork-commerce-app-sdk-generated-typescript`
+- `flutter`: `sdkwork_commerce_app_sdk`
+- `rust`: `sdkwork-commerce-app-sdk`
+- `java`: `com.sdkwork:sdkwork-commerce-app-sdk`
+- `csharp`: `SDKWork.Commerce.AppSdk`
+- `swift`: `sdkwork-commerce-app-sdk`
+- `kotlin`: `com.sdkwork:sdkwork-commerce-app-sdk`
+- `go`: `github.com/sdkwork/sdkwork-commerce-app-sdk`
+- `python`: `sdkwork-commerce-app-sdk`
 
 Regenerate this SDK family from the project root:
 
@@ -73,42 +84,3 @@ Verify this SDK family from the project root:
 ```bash
 node ./sdks/clawrouter-app-sdk/bin/verify-sdk.mjs
 ```
-
-## SDKWork Documentation Contract
-
-Domain: platform
-Capability: router
-Package type: sdk-family
-Status: standardizing
-
-### Public API
-
-Public exports are declared in `specs/component.spec.json` under `contracts.publicExports`.
-
-### Required SDK Surface
-
-- `SdkworkAppClient`
-
-### Configuration
-
-Configuration keys and runtime entrypoints are declared in `specs/component.spec.json`.
-
-### SaaS/Private/Local Behavior
-
-This module follows the canonical standards linked from `specs/component.spec.json`, including deployment and runtime configuration rules where applicable.
-
-### Security
-
-Do not add secrets, live tokens, manual auth headers, or app-local credential handling to this module.
-
-### Extension Points
-
-Extension points are limited to declared public exports, runtime entrypoints, SDK clients, events, and config keys.
-
-### Verification
-
-- `node apps/scripts/validate-component-specs.mjs --apps-root apps --json`
-
-### Owner And Status
-
-Owner and lifecycle status are tracked in `specs/component.spec.json`.

@@ -2,6 +2,7 @@ use sha2::{Digest, Sha256};
 use sqlx::{Row, Sqlite, SqlitePool, Transaction};
 
 use crate::domain::{DomainError, DomainResult};
+use crate::infrastructure::sql::runtime_id::next_claw_runtime_id;
 use crate::ports::{
     AdminApiKeyRateLimitCommandFuture, AdminApiKeyRateLimitItem, AdminApiKeyRateLimitStore,
     CreateAdminApiKeyRateLimitCommand, ListAdminApiKeyRateLimitsQuery,
@@ -224,12 +225,13 @@ async fn insert_quota_policy(
     command: &CreateAdminApiKeyRateLimitCommand,
     api_key: &ApiKeyIdentity,
 ) -> DomainResult<i64> {
+    let id = next_claw_runtime_id("ai_quota_policy")?;
     sqlx::query(
         r#"
         INSERT INTO ai_quota_policy
-            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, policy_code, name, subject_type, subject_id, subject_ref_hash, subject_ref_masked, quota_period, quota_unit, quota_limit, requests_per_second, requests_per_day, burst_limit, effective_from)
+            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, policy_code, name, subject_type, subject_id, subject_ref_hash, subject_ref_masked, quota_period, quota_unit, quota_limit, requests_per_second, requests_per_day, burst_limit, effective_from, id)
         VALUES
-            (?, ?, ?, 1, 1, ?, ?, 0, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            (?, ?, ?, 1, 1, ?, ?, 0, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         "#,
     )
     .bind(&command.policy_uuid)
@@ -251,14 +253,12 @@ async fn insert_quota_policy(
     .bind(command.rpd)
     .bind(command.burst.to_string())
     .bind(&command.requested_at)
+    .bind(id)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to create api key rate limit", error))?;
 
-    sqlx::query_scalar("SELECT last_insert_rowid()")
-        .fetch_one(&mut **tx)
-        .await
-        .map_err(|error| store_error("failed to read api key rate limit id", error))
+    Ok(id)
 }
 
 async fn update_quota_policy(
@@ -383,12 +383,13 @@ async fn insert_config_snapshot(
 ) -> DomainResult<()> {
     let payload = payload.to_string();
     let snapshot_no = format!("api-key-rate-limit-{target_id}-save-{snapshot_uuid}");
+    let id = next_claw_runtime_id("ops_config_snapshot")?;
     sqlx::query(
         r#"
         INSERT INTO ops_config_snapshot
-            (uuid, tenant_id, organization_id, user_id, request_id, status, snapshot_no, config_scope, config_type, source_table, source_ids, config_payload, config_hash, published_at, published_by)
+            (uuid, tenant_id, organization_id, user_id, request_id, status, snapshot_no, config_scope, config_type, source_table, source_ids, config_payload, config_hash, published_at, published_by, id)
         VALUES
-            (?, ?, ?, ?, ?, 1, ?, ?, ?, 'ai_quota_policy', ?, ?, ?, ?, ?)
+            (?, ?, ?, ?, ?, 1, ?, ?, ?, 'ai_quota_policy', ?, ?, ?, ?, ?, ?)
         "#,
     )
     .bind(snapshot_uuid)
@@ -404,6 +405,7 @@ async fn insert_config_snapshot(
     .bind(digest_hex(&payload))
     .bind(requested_at)
     .bind(operator_id)
+    .bind(id)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to write api key rate limit config snapshot", error))?;
@@ -421,12 +423,13 @@ async fn insert_audit_log(
     target_id: i64,
     change_summary: serde_json::Value,
 ) -> DomainResult<()> {
+    let id = next_claw_runtime_id("ops_audit_log")?;
     sqlx::query(
         r#"
         INSERT INTO ops_audit_log
-            (uuid, tenant_id, organization_id, action, target_type, target_id, request_id, operator_id, operator_type, change_summary)
+            (uuid, tenant_id, organization_id, action, target_type, target_id, request_id, operator_id, operator_type, change_summary, id)
         VALUES
-            (?, ?, ?, 'create_api_key_rate_limit', ?, ?, ?, ?, ?, ?)
+            (?, ?, ?, 'create_api_key_rate_limit', ?, ?, ?, ?, ?, ?, ?)
         "#,
     )
     .bind(audit_log_uuid)
@@ -438,6 +441,7 @@ async fn insert_audit_log(
     .bind(operator_id)
     .bind(operator_type)
     .bind(change_summary.to_string())
+    .bind(id)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to write api key rate limit audit log", error))?;

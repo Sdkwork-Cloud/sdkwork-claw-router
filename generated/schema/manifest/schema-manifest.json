@@ -2220,6 +2220,7 @@
         "commerce_order_item",
         "commerce_payment_attempt",
         "commerce_payment_intent",
+        "commerce_product_sku",
         "commerce_refund",
         "commerce_refund_attempt",
         "commerce_refund_event",
@@ -2249,6 +2250,7 @@
         "commerce_order_item",
         "commerce_payment_attempt",
         "commerce_payment_intent",
+        "commerce_product_sku",
         "commerce_refund",
         "commerce_refund_attempt",
         "commerce_refund_event",
@@ -2278,6 +2280,7 @@
         "commerce_order_item",
         "commerce_payment_attempt",
         "commerce_payment_intent",
+        "commerce_product_sku",
         "commerce_refund",
         "commerce_refund_attempt",
         "commerce_refund_event",
@@ -2307,6 +2310,7 @@
         "commerce_order_item",
         "commerce_payment_attempt",
         "commerce_payment_intent",
+        "commerce_product_sku",
         "commerce_refund",
         "commerce_refund_attempt",
         "commerce_refund_event",
@@ -2336,12 +2340,32 @@
         "commerce_order_item",
         "commerce_payment_attempt",
         "commerce_payment_intent",
+        "commerce_product_sku",
         "commerce_refund",
         "commerce_refund_attempt",
         "commerce_refund_event",
         "commerce_refund_item",
         "commerce_shipment",
         "commerce_shipment_tracking_event",
+        "ops_audit_log"
+      ]
+    },
+    "/admin/organization": {
+      "api_surfaces": [
+        "app",
+        "backend",
+        "worker"
+      ],
+      "required_api_surface": "backend",
+      "route_scope": "admin",
+      "tables": [
+        "iam_organization",
+        "iam_organization_member",
+        "iam_permission",
+        "iam_role",
+        "iam_role_permission",
+        "iam_user",
+        "iam_user_role",
         "ops_audit_log"
       ]
     },
@@ -4180,7 +4204,7 @@
       "worker": 249
     },
     "external_legacy_table_count": 15,
-    "frontend_route_count": 188,
+    "frontend_route_count": 189,
     "generated_table_count": 216,
     "legacy_table_count": 24,
     "table_count": 324
@@ -40310,6 +40334,7 @@
         "/vip",
         "/admin/catalog",
         "/admin/inventory",
+        "/admin/orders",
         "/admin/memberships",
         "/admin/wallet",
         "/admin/catalog/categories",
@@ -40322,6 +40347,10 @@
         "/admin/inventory/stocks",
         "/admin/inventory/reservations",
         "/admin/inventory/ledger",
+        "/admin/orders/orders",
+        "/admin/orders/refunds",
+        "/admin/orders/fulfillments",
+        "/admin/orders/shipments",
         "/admin/memberships/packages",
         "/admin/memberships/vip-packages",
         "/admin/memberships/plans",
@@ -49678,7 +49707,8 @@
       "domain": "iam",
       "foreign_keys": [],
       "frontend_routes": [
-        "/console/account"
+        "/console/account",
+        "/admin/organization"
       ],
       "generated_by_this_project": true,
       "indexes": [
@@ -49781,7 +49811,8 @@
       "domain": "iam",
       "foreign_keys": [],
       "frontend_routes": [
-        "/console/notifications"
+        "/console/notifications",
+        "/admin/organization"
       ],
       "generated_by_this_project": true,
       "indexes": [
@@ -49869,7 +49900,8 @@
       "domain": "iam",
       "foreign_keys": [],
       "frontend_routes": [
-        "/admin/user"
+        "/admin/user",
+        "/admin/organization"
       ],
       "generated_by_this_project": true,
       "indexes": [],
@@ -50019,7 +50051,8 @@
       "domain": "iam",
       "foreign_keys": [],
       "frontend_routes": [
-        "/admin/user"
+        "/admin/user",
+        "/admin/organization"
       ],
       "generated_by_this_project": true,
       "indexes": [
@@ -50092,7 +50125,8 @@
       "domain": "iam",
       "foreign_keys": [],
       "frontend_routes": [
-        "/admin/user"
+        "/admin/user",
+        "/admin/organization"
       ],
       "generated_by_this_project": true,
       "indexes": [
@@ -50548,7 +50582,8 @@
         "/admin/drive/nodes",
         "/admin/drive/permissions",
         "/admin/drive/share-links",
-        "/admin/drive/audit"
+        "/admin/drive/audit",
+        "/admin/organization"
       ],
       "generated_by_this_project": true,
       "indexes": [
@@ -51257,7 +51292,8 @@
       "domain": "iam",
       "foreign_keys": [],
       "frontend_routes": [
-        "/admin/user"
+        "/admin/user",
+        "/admin/organization"
       ],
       "generated_by_this_project": true,
       "indexes": [
@@ -63799,6 +63835,7 @@
         "/console/api-keys",
         "/admin/cache",
         "/admin/user",
+        "/admin/organization",
         "/admin/settings",
         "/admin/runtime-region",
         "/admin/site",
@@ -67785,7 +67822,7 @@
       "system_of_record": true,
       "table": "plus_agent_skill",
       "unique_constraints": [],
-      "write_owner": "legacy-java-plus-entity"
+      "write_owner": null
     },
     {
       "api_surfaces": [
@@ -68011,7 +68048,7 @@
       "system_of_record": true,
       "table": "plus_agent_skill_package",
       "unique_constraints": [],
-      "write_owner": "legacy-java-plus-entity"
+      "write_owner": null
     },
     {
       "api_surfaces": [
@@ -68289,7 +68326,7 @@
       "system_of_record": true,
       "table": "plus_card",
       "unique_constraints": [],
-      "write_owner": "legacy-java-plus-entity"
+      "write_owner": null
     },
     {
       "api_surfaces": [
@@ -68319,7 +68356,7 @@
       "system_of_record": true,
       "table": "plus_card_template",
       "unique_constraints": [],
-      "write_owner": "legacy-java-plus-entity"
+      "write_owner": null
     },
     {
       "api_surfaces": [
@@ -68519,7 +68556,7 @@
       "system_of_record": true,
       "table": "plus_category",
       "unique_constraints": [],
-      "write_owner": "legacy-java-plus-entity"
+      "write_owner": null
     },
     {
       "api_surfaces": [
@@ -68549,7 +68586,7 @@
       "system_of_record": true,
       "table": "plus_channel",
       "unique_constraints": [],
-      "write_owner": "legacy-java-plus-entity"
+      "write_owner": null
     },
     {
       "api_surfaces": [
@@ -68579,7 +68616,7 @@
       "system_of_record": true,
       "table": "plus_channel_account",
       "unique_constraints": [],
-      "write_owner": "legacy-java-plus-entity"
+      "write_owner": null
     },
     {
       "api_surfaces": [
@@ -68610,7 +68647,7 @@
       "system_of_record": true,
       "table": "plus_channel_proxy",
       "unique_constraints": [],
-      "write_owner": "legacy-java-plus-entity"
+      "write_owner": null
     },
     {
       "api_surfaces": [
@@ -68800,7 +68837,7 @@
       "system_of_record": true,
       "table": "plus_comments",
       "unique_constraints": [],
-      "write_owner": "legacy-java-plus-entity"
+      "write_owner": null
     },
     {
       "api_surfaces": [
@@ -68954,7 +68991,7 @@
       "system_of_record": true,
       "table": "plus_content_vote",
       "unique_constraints": [],
-      "write_owner": "legacy-java-plus-entity"
+      "write_owner": null
     },
     {
       "api_surfaces": [
@@ -68982,7 +69019,7 @@
       "system_of_record": true,
       "table": "plus_department",
       "unique_constraints": [],
-      "write_owner": "legacy-java-plus-entity"
+      "write_owner": null
     },
     {
       "api_surfaces": [
@@ -69173,7 +69210,7 @@
       "system_of_record": true,
       "table": "plus_favorite",
       "unique_constraints": [],
-      "write_owner": "legacy-java-plus-entity"
+      "write_owner": null
     },
     {
       "api_surfaces": [
@@ -69429,7 +69466,7 @@
       "system_of_record": true,
       "table": "plus_feeds",
       "unique_constraints": [],
-      "write_owner": "legacy-java-plus-entity"
+      "write_owner": null
     },
     {
       "api_surfaces": [
@@ -69458,7 +69495,7 @@
       "system_of_record": true,
       "table": "plus_invitation_code",
       "unique_constraints": [],
-      "write_owner": "legacy-java-plus-entity"
+      "write_owner": null
     },
     {
       "api_surfaces": [
@@ -69487,7 +69524,7 @@
       "system_of_record": true,
       "table": "plus_invitation_relation",
       "unique_constraints": [],
-      "write_owner": "legacy-java-plus-entity"
+      "write_owner": null
     },
     {
       "api_surfaces": [
@@ -69518,7 +69555,7 @@
       "system_of_record": true,
       "table": "plus_member_card",
       "unique_constraints": [],
-      "write_owner": "legacy-java-plus-entity"
+      "write_owner": null
     },
     {
       "api_surfaces": [
@@ -69549,7 +69586,7 @@
       "system_of_record": true,
       "table": "plus_member_level",
       "unique_constraints": [],
-      "write_owner": "legacy-java-plus-entity"
+      "write_owner": null
     },
     {
       "api_surfaces": [
@@ -69578,7 +69615,7 @@
       "system_of_record": true,
       "table": "plus_partner",
       "unique_constraints": [],
-      "write_owner": "legacy-java-plus-entity"
+      "write_owner": null
     },
     {
       "api_surfaces": [
@@ -69606,7 +69643,7 @@
       "system_of_record": true,
       "table": "plus_position",
       "unique_constraints": [],
-      "write_owner": "legacy-java-plus-entity"
+      "write_owner": null
     },
     {
       "api_surfaces": [
@@ -69636,7 +69673,7 @@
       "system_of_record": true,
       "table": "plus_usage_record",
       "unique_constraints": [],
-      "write_owner": "legacy-java-plus-entity"
+      "write_owner": null
     },
     {
       "api_surfaces": [
@@ -69666,7 +69703,7 @@
       "system_of_record": true,
       "table": "plus_user_address",
       "unique_constraints": [],
-      "write_owner": "legacy-java-plus-entity"
+      "write_owner": null
     },
     {
       "api_surfaces": [
@@ -69851,7 +69888,7 @@
       "system_of_record": true,
       "table": "plus_user_card",
       "unique_constraints": [],
-      "write_owner": "legacy-java-plus-entity"
+      "write_owner": null
     },
     {
       "api_surfaces": [

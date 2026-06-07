@@ -148,7 +148,26 @@ SDK_DEPENDENCIES = {
                 "go": "github.com/sdkwork/sdkwork-appbase-app-sdk",
                 "python": "sdkwork-appbase-app-sdk",
             },
-        }
+        },
+        {
+            "workspace": "sdkwork-commerce-app-sdk",
+            "role": "commerce-app-capability",
+            "required": True,
+            "dependencyMode": "consumer-sdk",
+            "apiPrefix": "/app/v3/api",
+            "generatedTransportImportPolicy": "forbidden",
+            "packageByLanguage": {
+                "typescript": "sdkwork-commerce-app-sdk-generated-typescript",
+                "flutter": "sdkwork_commerce_app_sdk",
+                "rust": "sdkwork-commerce-app-sdk",
+                "java": "com.sdkwork:sdkwork-commerce-app-sdk",
+                "csharp": "SDKWork.Commerce.AppSdk",
+                "swift": "sdkwork-commerce-app-sdk",
+                "kotlin": "com.sdkwork:sdkwork-commerce-app-sdk",
+                "go": "github.com/sdkwork/sdkwork-commerce-app-sdk",
+                "python": "sdkwork-commerce-app-sdk",
+            },
+        },
     ],
     "clawrouter-backend-sdk": [
         {
@@ -169,7 +188,26 @@ SDK_DEPENDENCIES = {
                 "go": "github.com/sdkwork/sdkwork-appbase-backend-sdk",
                 "python": "sdkwork-appbase-backend-sdk",
             },
-        }
+        },
+        {
+            "workspace": "sdkwork-commerce-backend-sdk",
+            "role": "commerce-backend-management-capability",
+            "required": True,
+            "dependencyMode": "consumer-sdk",
+            "apiPrefix": "/backend/v3/api",
+            "generatedTransportImportPolicy": "forbidden",
+            "packageByLanguage": {
+                "typescript": "sdkwork-commerce-backend-sdk-generated-typescript",
+                "flutter": "sdkwork_commerce_backend_sdk",
+                "rust": "sdkwork-commerce-backend-sdk",
+                "java": "com.sdkwork:sdkwork-commerce-backend-sdk",
+                "csharp": "SDKWork.Commerce.BackendSdk",
+                "swift": "sdkwork-commerce-backend-sdk",
+                "kotlin": "com.sdkwork:sdkwork-commerce-backend-sdk",
+                "go": "github.com/sdkwork/sdkwork-commerce-backend-sdk",
+                "python": "sdkwork-commerce-backend-sdk",
+            },
+        },
     ],
 }
 GENERATED_TEXT_FILE_EXTENSIONS = {
@@ -563,7 +601,7 @@ class SdkRuntimeStandardizer:
             if isinstance(info, dict):
                 description = str(info.get("description") or "").strip()
                 suffix = (
-                    "Owner-only SDK authority: dependency-owned appbase routes are consumed through "
+                    "Owner-only SDK authority: dependency-owned routes are consumed through "
                     "declared sdkDependencies and are not regenerated here."
                 )
                 if suffix not in description:
@@ -599,6 +637,7 @@ class SdkRuntimeStandardizer:
 
     def _dependency_authority_path(self, workspace: str) -> Path:
         appbase_root = self.root / ".sdkwork" / "dependencies" / "sdkwork-appbase"
+        commerce_root = self.root.parent / "sdkwork-commerce"
         mapping = {
             "sdkwork-appbase-app-sdk": appbase_root
             / "sdks"
@@ -610,6 +649,14 @@ class SdkRuntimeStandardizer:
             / "sdkwork-appbase-backend-sdk"
             / "openapi"
             / "sdkwork-appbase-backend-api.openapi.yaml",
+            "sdkwork-commerce-app-sdk": commerce_root
+            / "generated"
+            / "openapi"
+            / "commerce-app-api.openapi.json",
+            "sdkwork-commerce-backend-sdk": commerce_root
+            / "generated"
+            / "openapi"
+            / "commerce-backend-api.openapi.json",
         }
         return mapping.get(
             workspace,
@@ -1103,7 +1150,7 @@ class SdkRuntimeStandardizer:
             "const __filename = fileURLToPath(import.meta.url);\n"
             "const workspaceRoot = path.resolve(path.dirname(__filename), '..', '..', '..');\n"
             "const command = process.platform === 'win32' ? 'node.exe' : 'node';\n"
-            "const sdkGeneratorCli = path.resolve(workspaceRoot, '.sdkwork/dependencies/sdkwork-sdk-generator/bin/sdkgen.js');\n"
+            "const sdkGeneratorCli = path.resolve(workspaceRoot, '../sdkwork-sdk-generator/bin/sdkgen.js');\n"
             f"const sdkFamily = '{sdk_family}';\n"
             f"const sdkType = '{sdk_type}';\n"
             "const authorityInputPath = `sdks/${sdkFamily}/openapi/${sdkFamily}.openapi.json`;\n"
@@ -1409,7 +1456,7 @@ class SdkRuntimeStandardizer:
         generator_manifest = self._read_json_or_none(manifest_path)
         if not self._is_sdk_generator_manifest(generator_manifest):
             manifest = {
-                "generator": ".sdkwork/dependencies/sdkwork-sdk-generator",
+                "generator": "../sdkwork-sdk-generator",
                 "language": "typescript",
                 "sdkType": SDK_TYPES[sdk_family],
                 "packageName": package.get("name"),

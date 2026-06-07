@@ -8,6 +8,10 @@ import { fileURLToPath } from 'node:url';
 import { createRuntimeConfigTemplate } from './build-claw-router-install-package.mjs';
 import { productionGatewayBinaryPath } from './claw-router-production-artifacts.mjs';
 import {
+  mergePortalPublicRuntimeEnv,
+  portalPublicRuntimeEnvLineValue,
+} from './portal-public-runtime-env.mjs';
+import {
   LINUX_SERVICE_CONFIG_ROOT,
   LINUX_SERVICE_DATA_ROOT,
   redisPolicyFor,
@@ -915,7 +919,7 @@ function resolveStartProductionEnv(
   const edgeBaseUrl = edgeAccessBaseUrl({ SDKWORK_CLAW_SERVER_BIND: serverBind });
   const allInOne = !settings.distributed;
   return {
-    ...baseEnv,
+    ...mergePortalPublicRuntimeEnv(baseEnv),
     SDKWORK_CLAW_EDGE_SERVER: '1',
     SDKWORK_CLAW_ALL_IN_ONE_RUNTIME: allInOne ? '1' : '0',
     SDKWORK_CLAW_EDGE_PORTAL_STATIC_DIST: distRoot,
@@ -946,15 +950,6 @@ function resolveStartProductionEnv(
       settings.trustForwardedHeaders
         ? '1'
         : baseEnv.SDKWORK_CLAW_EDGE_TRUST_FORWARDED_HEADERS ?? '0',
-    PORTAL_PUBLIC_API_BASE_URL: baseEnv.PORTAL_PUBLIC_API_BASE_URL ?? '/v1',
-    PORTAL_PUBLIC_OPEN_API_BASE_URL:
-      baseEnv.PORTAL_PUBLIC_OPEN_API_BASE_URL
-      ?? baseEnv.PORTAL_PUBLIC_API_BASE_URL
-      ?? '/v1',
-    PORTAL_PUBLIC_APP_API_BASE_URL: baseEnv.PORTAL_PUBLIC_APP_API_BASE_URL ?? '/app/v3/api',
-    PORTAL_PUBLIC_BACKEND_API_BASE_URL:
-      baseEnv.PORTAL_PUBLIC_BACKEND_API_BASE_URL ?? '/backend/v3/api',
-    PORTAL_PUBLIC_TOOL_API_ENABLED: baseEnv.PORTAL_PUBLIC_TOOL_API_ENABLED ?? 'false',
     PORTAL_TOOL_API_RATE_LIMIT_REQUESTS:
       baseEnv.PORTAL_TOOL_API_RATE_LIMIT_REQUESTS ?? '120',
     PORTAL_TOOL_API_RATE_LIMIT_WINDOW_SECONDS:
@@ -1008,10 +1003,12 @@ function buildStartProductionAccessLines(env) {
     );
   }
   lines.push(
-    `[start-production]   PORTAL_PUBLIC_API_BASE_URL=${env.PORTAL_PUBLIC_API_BASE_URL}`,
-    `[start-production]   PORTAL_PUBLIC_OPEN_API_BASE_URL=${env.PORTAL_PUBLIC_OPEN_API_BASE_URL}`,
-    `[start-production]   PORTAL_PUBLIC_BACKEND_API_BASE_URL=${env.PORTAL_PUBLIC_BACKEND_API_BASE_URL}`,
-    `[start-production]   PORTAL_PUBLIC_APP_API_BASE_URL=${env.PORTAL_PUBLIC_APP_API_BASE_URL}`,
+    `[start-production]   PORTAL_PUBLIC_SDK_BASE_URL=${env.PORTAL_PUBLIC_SDK_BASE_URL || '(not configured)'}`,
+    `[start-production]   PORTAL_PUBLIC_API_BASE_URL=${portalPublicRuntimeEnvLineValue(env, 'PORTAL_PUBLIC_API_BASE_URL')}`,
+    `[start-production]   PORTAL_PUBLIC_OPEN_API_BASE_URL=${portalPublicRuntimeEnvLineValue(env, 'PORTAL_PUBLIC_OPEN_API_BASE_URL')}`,
+    `[start-production]   PORTAL_PUBLIC_BACKEND_API_BASE_URL=${portalPublicRuntimeEnvLineValue(env, 'PORTAL_PUBLIC_BACKEND_API_BASE_URL')}`,
+    `[start-production]   PORTAL_PUBLIC_APP_API_BASE_URL=${portalPublicRuntimeEnvLineValue(env, 'PORTAL_PUBLIC_APP_API_BASE_URL')}`,
+    `[start-production]   PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL=${env.PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL || '(not configured)'}`,
     `[start-production]   PORTAL_PUBLIC_TOOL_API_ENABLED=${env.PORTAL_PUBLIC_TOOL_API_ENABLED}`,
     `[start-production]   PORTAL_TOOL_API_RATE_LIMIT_REQUESTS=${env.PORTAL_TOOL_API_RATE_LIMIT_REQUESTS}`,
     `[start-production]   PORTAL_TOOL_API_RATE_LIMIT_WINDOW_SECONDS=${env.PORTAL_TOOL_API_RATE_LIMIT_WINDOW_SECONDS}`,

@@ -210,7 +210,7 @@ frontend_operations:
   operation_id: memberships.plans.update
   kind: update
   api_surface: backend
-  api_method: PUT
+  api_method: PATCH
   api_path: /backend/v3/api/memberships/plans/{planId}
   sdk_domain: commerce
   summary: Memberships Plans Update
@@ -438,7 +438,7 @@ frontend_operations:
   operation_id: memberships.packages.update
   kind: update
   api_surface: backend
-  api_method: PUT
+  api_method: PATCH
   api_path: /backend/v3/api/memberships/packages/{packageId}
   sdk_domain: commerce
   summary: Memberships Packages Update
@@ -575,7 +575,7 @@ frontend_operations:
   operation_id: memberships.packageGroups.update
   kind: update
   api_surface: backend
-  api_method: PUT
+  api_method: PATCH
   api_path: /backend/v3/api/memberships/package_groups/{packageGroupId}
   sdk_domain: commerce
   summary: Memberships Package Groups Update
@@ -662,14 +662,14 @@ frontend_operations:
 - route: /admin/memberships
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
   operation: backendMembershipsMembersStatusUpdate
-  operation_id: memberships.members.status.update
+  operation_id: memberships.members.update
   kind: update
   api_surface: backend
   api_method: PATCH
-  api_path: /backend/v3/api/memberships/members/{membershipId}/status
+  api_path: /backend/v3/api/memberships/members/{membershipId}
   sdk_domain: commerce
-  summary: Memberships Members Status Update
-  description: Standard appbase commerce API for memberships.members.status.update; no legacy billing compatibility route is exposed.
+  summary: Memberships Members Update
+  description: Standard appbase commerce API for memberships.members.update; no legacy billing compatibility route is exposed.
   read_sources:
   - commerce_membership
   - commerce_membership_plan

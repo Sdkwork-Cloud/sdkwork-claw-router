@@ -7,8 +7,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 
-CI_DEPENDENCY_ROOT = ".sdkwork/dependencies"
-PORTAL_DEPENDENCY_PREFIX = f"../../{CI_DEPENDENCY_ROOT}/"
+RETIRED_DEPENDENCY_ROOT = "/".join([".sdkwork", "dependencies"])
+RETIRED_DEPS_LOCAL_LINK = ":".join(["deps", "local", "link"])
+RETIRED_DEPS_LOCAL_CHECK = ":".join(["deps", "local", "check"])
+RETIRED_LOCAL_SCRIPT = "-".join(["prepare-local", "dependencies.mjs"])
+PORTAL_DEPENDENCY_PREFIX = "../../../"
 OLD_APPLICATION_ROOT = re.compile(r"(?<!/)apps/sdkwork-claw-router(?:[\\/]|$)")
 MACHINE_ABSOLUTE_PATH = re.compile(
     "|".join(
@@ -47,7 +50,7 @@ class DependencyManagementStandardTest(unittest.TestCase):
         self.assertEqual(".", portal_manifest["artifacts"]["installConfig"]["metadata"]["workspaceRoot"])
         self.assertEqual(".", portal_manifest["devApp"]["sourceRoot"])
 
-    def test_release_dependencies_checkout_under_sdkwork_dependencies(self) -> None:
+    def test_release_dependencies_are_declared_without_source_checkout_paths(self) -> None:
         workflow = json.loads((ROOT / "sdkwork.workflow.json").read_text(encoding="utf-8"))
 
         dependency_ids = [dependency["id"] for dependency in workflow["dependencies"]]
@@ -62,7 +65,7 @@ class DependencyManagementStandardTest(unittest.TestCase):
                 self.assertNotIn(
                     "path",
                     dependency,
-                    "default release checkout path is .sdkwork/dependencies/<id>; per-dependency path overrides are stale config",
+                    "release dependency checkout paths are workflow implementation details; source dependency paths belong to native workspace files",
                 )
 
     def test_external_portal_workspace_dependencies_are_declared_for_release(self) -> None:
@@ -86,7 +89,7 @@ class DependencyManagementStandardTest(unittest.TestCase):
         self.assertGreater(len(external_dependency_ids), 0)
         self.assertLessEqual(external_dependency_ids, workflow_dependency_ids)
 
-    def test_portal_workspace_uses_single_materialized_dependency_root(self) -> None:
+    def test_portal_workspace_uses_native_sibling_dependency_paths(self) -> None:
         workspace = (
             ROOT / "apps" / "sdkwork-clawrouter-pc" / "pnpm-workspace.yaml"
         ).read_text(encoding="utf-8")
@@ -97,33 +100,23 @@ class DependencyManagementStandardTest(unittest.TestCase):
         workflow_dependency_ids = {dependency["id"] for dependency in workflow["dependencies"]}
 
         self.assertLessEqual(PORTAL_RELEASE_DEPENDENCIES, workflow_dependency_ids)
-        self.assertNotIn("../../../sdkwork-", workspace)
         for workspace_path in package_json["workspaces"]:
             self.assertIsNone(MACHINE_ABSOLUTE_PATH.search(workspace_path))
-            self.assertNotRegex(workspace_path, r"^\.\./\.\./\.\./sdkwork-")
+            self.assertNotIn(RETIRED_DEPENDENCY_ROOT, workspace_path)
 
         for dependency_id in PORTAL_RELEASE_DEPENDENCIES:
             with self.subTest(dependency=dependency_id):
                 self.assertIn(f"{PORTAL_DEPENDENCY_PREFIX}{dependency_id}/", workspace)
 
-    def test_local_dependency_materializer_is_declared(self) -> None:
+    def test_retired_local_dependency_materializer_is_absent(self) -> None:
         root_package = json.loads((ROOT / "package.json").read_text(encoding="utf-8"))
-        script = (ROOT / "scripts" / "prepare-local-dependencies.mjs").read_text(encoding="utf-8")
         gitignore = (ROOT / ".gitignore").read_text(encoding="utf-8")
 
-        self.assertEqual(
-            "node scripts/prepare-local-dependencies.mjs --apply",
-            root_package["scripts"]["deps:local:link"],
-        )
-        self.assertEqual(
-            "node scripts/prepare-local-dependencies.mjs --check",
-            root_package["scripts"]["deps:local:check"],
-        )
-        self.assertIn(CI_DEPENDENCY_ROOT, script)
-        self.assertIn("sdkwork.workflow.json", script)
-        self.assertNotIn("const dependencyIds = [", script)
-        self.assertIn("--json", script)
-        self.assertIn(".sdkwork/dependencies/", gitignore)
+        self.assertNotIn(RETIRED_DEPS_LOCAL_LINK, root_package["scripts"])
+        self.assertNotIn(RETIRED_DEPS_LOCAL_CHECK, root_package["scripts"])
+        self.assertFalse((ROOT / "scripts" / RETIRED_LOCAL_SCRIPT).exists())
+        self.assertFalse((ROOT / ".sdkwork" / "dependencies").exists())
+        self.assertNotIn(RETIRED_DEPENDENCY_ROOT, gitignore)
 
     def test_source_controlled_dependency_docs_do_not_use_machine_paths_or_old_root(self) -> None:
         checked_paths = [

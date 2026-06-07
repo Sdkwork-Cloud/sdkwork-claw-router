@@ -22,19 +22,19 @@ test("login QR auth is exposed only through openPlatform.qrAuth sessions", () =>
   };
   const appSdkSource = readRepoFile("sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/sdk.ts");
   const appbaseSdkSource = readRepoFile(
-    ".sdkwork/dependencies/sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/sdk.ts",
+    "../../../sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/sdk.ts",
   );
   const appbaseAuthSdkSource = readRepoFile(
-    ".sdkwork/dependencies/sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/api/auth.ts",
+    "../../../sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/api/auth.ts",
   );
   const appbaseOpenPlatformSdkSource = readRepoFile(
-    ".sdkwork/dependencies/sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/api/open-platform.ts",
+    "../../../sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/api/open-platform.ts",
   );
   const authServiceSource = readRepoFile(
-    ".sdkwork/dependencies/sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-pc-react/src/auth-service.ts",
+    "../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-pc-react/src/auth-service.ts",
   );
   const iamPortsSource = readRepoFile(
-    ".sdkwork/dependencies/sdkwork-appbase/packages/common/iam/sdkwork-iam-sdk-ports/src/index.ts",
+    "../../../sdkwork-appbase/packages/common/iam/sdkwork-iam-sdk-ports/src/index.ts",
   );
 
   for (const [path, method, operationId] of [

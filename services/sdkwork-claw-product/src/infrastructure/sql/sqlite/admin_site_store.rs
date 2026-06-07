@@ -4,6 +4,7 @@ use crate::domain::{DomainError, DomainResult};
 use crate::infrastructure::sql::sql_admin_product_center::{
     media_resource_object_blob_id, media_resource_stable_id,
 };
+use crate::infrastructure::sql::runtime_id::next_claw_runtime_id;
 use crate::infrastructure::sql::sql_admin_site::{
     default_site_service_code, health_status_label, site_environment_code, site_environment_label,
     site_status_code, site_status_label,
@@ -110,14 +111,16 @@ async fn create_site(
     let logo_object_blob_id = logo.and_then(media_resource_object_blob_id);
     let logo_resource_snapshot = logo.map(serde_json::Value::to_string);
     let metadata = site_metadata_json(&command.domains, &command.vendor_codes)?;
-    let site_id = sqlx::query(
+    let site_id = next_claw_runtime_id("ai_site")?;
+    let site_service_id = next_claw_runtime_id("ai_site_service")?;
+    sqlx::query(
         r#"
         INSERT INTO ai_site (
             uuid, tenant_id, organization_id, status, site_code, site_name, display_name,
             description, base_url, website_url, docs_url, logo_media_resource_id,
             logo_object_blob_id, logo_resource_snapshot, metadata, site_type, owner_kind,
-            region_code, environment, health_status
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1)
+            region_code, environment, health_status, id
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?)
         "#,
     )
     .bind(&command.site_uuid)
@@ -139,17 +142,17 @@ async fn create_site(
     .bind(&command.owner_kind)
     .bind(&command.region_code)
     .bind(environment)
+    .bind(site_id)
     .execute(&mut *tx)
     .await
-    .map_err(conflict_or_store_error)?
-    .last_insert_rowid();
+    .map_err(conflict_or_store_error)?;
     sqlx::query(
         r#"
         INSERT INTO ai_site_service (
             uuid, tenant_id, organization_id, status, site_id, site_code, service_code, service_name,
             service_type, protocol_code, base_url, credential_ref, masked_label, region_code,
-            environment, health_status
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'ai_model_relay', 'openai_compatible', ?, ?, ?, ?, ?, 1)
+            environment, health_status, id
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'ai_model_relay', 'openai_compatible', ?, ?, ?, ?, ?, 1, ?)
         "#,
     )
     .bind(&command.service_uuid)
@@ -165,6 +168,7 @@ async fn create_site(
     .bind(&command.masked_label)
     .bind(&command.region_code)
     .bind(environment)
+    .bind(site_service_id)
     .execute(&mut *tx)
     .await
     .map_err(conflict_or_store_error)?;
@@ -557,7 +561,8 @@ async fn insert_audit(
     target_id: i64,
     requested_at: &str,
 ) -> DomainResult<()> {
-    sqlx::query("INSERT INTO ops_audit_log (uuid, tenant_id, organization_id, request_id, operator_id, operator_type, action, target_type, target_id, created_at, metadata, change_summary) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, ?, ?)")
+    let id = next_claw_runtime_id("ops_audit_log")?;
+    sqlx::query("INSERT INTO ops_audit_log (uuid, tenant_id, organization_id, request_id, operator_id, operator_type, action, target_type, target_id, created_at, metadata, change_summary, id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, ?, ?, ?)")
         .bind(uuid)
         .bind(tenant_id)
         .bind(organization_id)
@@ -569,6 +574,7 @@ async fn insert_audit(
         .bind(target_id)
         .bind(format!(r#"{{"requestedAt":"{requested_at}"}}"#))
         .bind(format!(r#"{{"action":"{action}","targetId":{target_id}}}"#))
+        .bind(id)
         .execute(&mut **tx)
         .await
         .map_err(store_error)?;
@@ -587,7 +593,8 @@ async fn insert_audit_pool(
     target_id: i64,
     requested_at: &str,
 ) -> DomainResult<()> {
-    sqlx::query("INSERT INTO ops_audit_log (uuid, tenant_id, organization_id, request_id, operator_id, operator_type, action, target_type, target_id, created_at, metadata, change_summary) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, ?, ?)")
+    let id = next_claw_runtime_id("ops_audit_log")?;
+    sqlx::query("INSERT INTO ops_audit_log (uuid, tenant_id, organization_id, request_id, operator_id, operator_type, action, target_type, target_id, created_at, metadata, change_summary, id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, ?, ?, ?)")
         .bind(uuid)
         .bind(tenant_id)
         .bind(organization_id)
@@ -599,6 +606,7 @@ async fn insert_audit_pool(
         .bind(target_id)
         .bind(format!(r#"{{"requestedAt":"{requested_at}"}}"#))
         .bind(format!(r#"{{"action":"{action}","targetId":{target_id}}}"#))
+        .bind(id)
         .execute(pool)
         .await
         .map_err(store_error)?;

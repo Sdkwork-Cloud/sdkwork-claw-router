@@ -12,13 +12,15 @@ import {
   createAdminAiCategory,
   deleteAdminAiCategory,
   formatAdminCategoryOptionLabel,
-  formatAdminResourceOptionLabel,
   listAdminAiCategoryOptions,
-  readAdminResourceOptions,
   updateAdminAiCategory,
   type AdminCategoryOption,
   type AdminAiCategoryCreateInput,
   type AdminAiCategoryUpdateInput,
+} from 'sdkwork-clawrouter-pc-admin-core';
+import {
+  formatAdminResourceOptionLabel,
+  readAdminResourceOptions,
   type AdminResourceOption,
 } from 'sdkwork-clawrouter-pc-commons/runtime';
 import {

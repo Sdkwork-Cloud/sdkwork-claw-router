@@ -312,9 +312,11 @@ Rules:
   permissions, organizations, departments, role bindings, API key list, or API key revoke must use
   `@sdkwork/appbase-backend-sdk` through `getSdkworkAppbaseBackendSdkClient()`.
 - When a dependency backend surface is marked `external-service`, SDK bootstrap must require
-  `VITE_SDKWORK_APPBASE_BACKEND_API_BASE_URL`, expose it through
-  `PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL`, and must not fall back to
-  `VITE_CLAWROUTER_BACKEND_API_BASE_URL`, `BACKEND_API_PREFIX`, or `/backend/v3/api`.
+  `VITE_SDKWORK_APPBASE_BACKEND_API_BASE_URL` from either a common
+  `PORTAL_PUBLIC_SDK_BASE_URL` that is explicitly a gateway for appbase backend IAM or the
+  dependency override `PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL`. It must not fall back to
+  `VITE_CLAWROUTER_BACKEND_API_BASE_URL`, `BACKEND_API_PREFIX`, or `/backend/v3/api` merely because
+  the product backend surface is configured.
 - Method-level ownership is allowed only when it is explicit. For example, appbase owns
   `GET /backend/v3/api/iam/api_keys` and
   `POST /backend/v3/api/iam/api_keys/{apiKeyId}/revoke`, while Claw Router owns

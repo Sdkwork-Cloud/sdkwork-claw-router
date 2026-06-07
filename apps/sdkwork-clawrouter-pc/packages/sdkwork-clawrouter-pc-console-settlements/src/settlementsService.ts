@@ -1,5 +1,4 @@
 import {
-  getClawRouterAppSdkClient,
   createIdempotencyParams,
   createClientOperationToken,
   isRecord,
@@ -7,6 +6,7 @@ import {
   readString,
   type ApiRecord,
 } from 'sdkwork-clawrouter-pc-commons/runtime';
+import { getSdkworkCommerceService } from '@sdkwork/commerce-service';
 
 export interface SettlementChartData {
   day: string;
@@ -85,22 +85,22 @@ function boundedSettlementYear(value: number): number {
   return Math.min(MAX_SETTLEMENT_DASHBOARD_YEAR, Math.max(MIN_SETTLEMENT_DASHBOARD_YEAR, year));
 }
 
-type AppCommerce = ReturnType<typeof getClawRouterAppSdkClient>['commerce'];
+type AppCommerceService = ReturnType<typeof getSdkworkCommerceService>;
 
-export async function appInvoicesList(params?: Parameters<AppCommerce['invoices']['list']>[0]) {
-  return getClawRouterAppSdkClient().commerce.invoices.list(params);
+export async function appInvoicesList(params?: Parameters<AppCommerceService['invoices']['list']>[0]) {
+  return getSdkworkCommerceService().invoices.list(params);
 }
 
 export async function appInvoicesRetrieve(invoiceId: string) {
-  return getClawRouterAppSdkClient().commerce.invoices.retrieve(invoiceId);
+  return getSdkworkCommerceService().invoices.retrieve(invoiceId);
 }
 
-export async function appInvoicesCreate(body: Parameters<AppCommerce['invoices']['create']>[0]) {
-  return getClawRouterAppSdkClient().commerce.invoices.create(body, createIdempotencyParams('app-invoice-create'));
+export async function appInvoicesCreate(body: Parameters<AppCommerceService['invoices']['create']>[0]) {
+  return getSdkworkCommerceService().invoices.create(body, createIdempotencyParams('app-invoice-create'));
 }
 
-export async function appWalletLedgerEntriesList(params?: Parameters<AppCommerce['wallet']['ledgerEntries']['list']>[0]) {
-  return getClawRouterAppSdkClient().commerce.wallet.ledgerEntries.list(params);
+export async function appWalletLedgerEntriesList(params?: Parameters<AppCommerceService['wallet']['ledgerEntries']['list']>[0]) {
+  return getSdkworkCommerceService().wallet.ledgerEntries.list(params);
 }
 
 export async function fetchSettlementDashboard(params?: { year?: string | number }) {

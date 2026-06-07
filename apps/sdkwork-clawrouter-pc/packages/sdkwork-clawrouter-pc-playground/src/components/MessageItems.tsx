@@ -3,7 +3,7 @@ import { AlertCircle, Clock, Loader2, PlaySquare, Play } from 'lucide-react';
 import {
   readSdkworkGenerationMediaThumb,
   readSdkworkGenerationMediaUrl,
-} from '@sdkwork/generation-pc-react/react';
+} from '@sdkwork/generations-pc-workspace/generation-history';
 import { getDeterministicWaveBarStyle } from './waveform';
 import type { PlaygroundHistoryItem, PlaygroundMedia, PlaygroundPreviewSetter } from '../playgroundTypes';
 

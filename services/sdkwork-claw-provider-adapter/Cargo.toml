@@ -12,13 +12,13 @@ path = "src/main.rs"
 anyhow.workspace = true
 axum.workspace = true
 serde_json.workspace = true
-sdkwork-claw-config = { path = "../../crates/sdkwork-claw-config" }
-sdkwork-claw-provider-adapter-core = { path = "../../crates/sdkwork-claw-provider-adapter-core" }
-sdkwork-claw-provider-adapter-http = { path = "../../crates/sdkwork-claw-provider-adapter-http" }
-sdkwork-provider-adapter-alicloud = { path = "../../crates/provider-adapters/alicloud" }
-sdkwork-provider-adapter-tencent-cloud = { path = "../../crates/provider-adapters/tencent-cloud" }
+sdkwork-claw-config.workspace = true
+sdkwork-claw-provider-adapter-core.workspace = true
+sdkwork-claw-provider-adapter-http.workspace = true
+sdkwork-provider-adapter-alicloud.workspace = true
+sdkwork-provider-adapter-tencent-cloud.workspace = true
 tokio.workspace = true
 
 [dev-dependencies]
-sdkwork-claw-provider-adapter-contract = { path = "../../crates/sdkwork-claw-provider-adapter-contract" }
+sdkwork-claw-provider-adapter-contract.workspace = true
 tower.workspace = true

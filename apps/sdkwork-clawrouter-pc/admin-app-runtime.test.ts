@@ -13,7 +13,7 @@ import {
   updateAdminAppInputFromForm,
   updateAdminAppTemplateInputFromForm,
   updateAppCategoryInputFromForm,
-} from "./packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts";
+} from "./packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts";
 
 function mediaResource(url: string, kind: "image" | "video" | "archive" = "image") {
   return {
@@ -363,7 +363,7 @@ test("admin app template form helpers create normalized backend DTOs", () => {
 });
 
 test("admin app management page localizes visible copy", () => {
-  const pageSource = readPortalFile("./packages/sdkwork-clawrouter-pc-app-center/src/pages/AppAdmin.tsx");
+  const pageSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-app/src/pages/AppAdmin.tsx");
   const i18nSource = readPortalFile("./packages/sdkwork-clawrouter-pc-i18n/src/resources/admin/app-center.ts");
 
   for (const key of [
@@ -520,7 +520,7 @@ test("admin app management page localizes visible copy", () => {
 });
 
 test("admin app management page renders a category tree beside the app list", () => {
-  const pageSource = readPortalFile("./packages/sdkwork-clawrouter-pc-app-center/src/pages/AppAdmin.tsx");
+  const pageSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-app/src/pages/AppAdmin.tsx");
 
   for (const expected of [
     "data-admin-app-layout",
@@ -541,8 +541,8 @@ test("admin app management page renders a category tree beside the app list", ()
 });
 
 test("admin app management page exposes app template management", () => {
-  const pageSource = readPortalFile("./packages/sdkwork-clawrouter-pc-app-center/src/pages/AppAdmin.tsx");
-  const serviceSource = readPortalFile("./packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts");
+  const pageSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-app/src/pages/AppAdmin.tsx");
+  const serviceSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts");
   const i18nSource = readPortalFile("./packages/sdkwork-clawrouter-pc-i18n/src/resources/admin/app-center.ts");
 
   for (const expected of [
@@ -592,7 +592,7 @@ test("admin app management page exposes app template management", () => {
 });
 
 test("admin app management page uses bottom pagination instead of a fixed first-page fetch", () => {
-  const pageSource = readPortalFile("./packages/sdkwork-clawrouter-pc-app-center/src/pages/AppAdmin.tsx");
+  const pageSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-app/src/pages/AppAdmin.tsx");
   const i18nSource = readPortalFile("./packages/sdkwork-clawrouter-pc-i18n/src/resources/admin/app-center.ts");
 
   for (const expected of [
@@ -632,7 +632,7 @@ test("admin app management page uses bottom pagination instead of a fixed first-
 });
 
 test("admin app management table fills the available admin viewport", () => {
-  const pageSource = readPortalFile("./packages/sdkwork-clawrouter-pc-app-center/src/pages/AppAdmin.tsx");
+  const pageSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-app/src/pages/AppAdmin.tsx");
 
   for (const expected of [
     "AdminTableShell",

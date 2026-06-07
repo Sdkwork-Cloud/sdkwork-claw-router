@@ -262,6 +262,42 @@ class FrontendFieldAuditTest(unittest.TestCase):
                 audit["interfaces"][0]["fields"],
             )
 
+    def test_generations_workspace_imported_type_alias_can_satisfy_frontend_model_contract(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_file(
+                root,
+                "apps/sdkwork-clawrouter-pc/packages/demo/src/playgroundTypes.ts",
+                """
+                import type { SdkworkGenerationHistoryItem } from '@sdkwork/generations-pc-workspace/generation-history';
+
+                export type PlaygroundHistoryItem = SdkworkGenerationHistoryItem;
+                """,
+            )
+            self.write_contract(
+                root,
+                """
+                frontend_models:
+                  - route: /playground
+                    source: apps/sdkwork-clawrouter-pc/packages/demo/src/playgroundTypes.ts
+                    interface: PlaygroundHistoryItem
+                    fields: [id, prompt, status]
+                    data_sources: [ai_generation_job]
+                routes:
+                  - route: /playground
+                    required_tables: [ai_generation_job]
+                """,
+            )
+
+            audit = FrontendFieldAudit(root=root).generate()
+            result = FrontendFieldAudit(root=root).validate()
+
+            self.assertTrue(result.ok, result.messages)
+            self.assertEqual(
+                ["id", "prompt", "status"],
+                audit["interfaces"][0]["fields"],
+            )
+
     def test_default_scanned_source_expands_local_interface_references(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

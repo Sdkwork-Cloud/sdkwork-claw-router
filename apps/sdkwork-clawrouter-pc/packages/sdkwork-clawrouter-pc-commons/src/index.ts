@@ -10,7 +10,7 @@ export * from './components/AiResourceSelectorModal';
 export * from './components/BottomPagination';
 export * from './components/ConfirmDialog';
 export * from './components/CopyButton';
-export * from './admin-category-options';
+export * from './admin-category-types';
 export * from './admin-resource-options';
 export * from './clipboard';
 export * from './api-request-url';

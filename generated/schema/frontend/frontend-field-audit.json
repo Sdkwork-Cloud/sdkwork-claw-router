@@ -347,6 +347,417 @@
     },
     {
       "data_sources": [
+        "plus_app",
+        "plus_category",
+        "studio_catalog_asset",
+        "studio_catalog_artifact"
+      ],
+      "fields": [
+        "id",
+        "uuid",
+        "userId",
+        "name",
+        "description",
+        "version",
+        "icon",
+        "resourceList",
+        "projectId",
+        "accessUrl",
+        "config",
+        "appKey",
+        "status",
+        "marketStatus",
+        "appType",
+        "platforms",
+        "installPlatforms",
+        "installSkill",
+        "installConfig",
+        "releaseNotes",
+        "packageName",
+        "bundleId",
+        "storeUrl",
+        "artifact",
+        "createdAt",
+        "updatedAt"
+      ],
+      "file_targets": [],
+      "interface": "AdminApp",
+      "route": "/admin/app",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts"
+    },
+    {
+      "data_sources": [
+        "plus_category"
+      ],
+      "fields": [
+        "id",
+        "name",
+        "description",
+        "code",
+        "icon",
+        "sortWeight",
+        "parentId",
+        "path",
+        "visible",
+        "status",
+        "type"
+      ],
+      "file_targets": [],
+      "interface": "AdminAppCategory",
+      "route": "/admin/app",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts"
+    },
+    {
+      "data_sources": [
+        "plus_category"
+      ],
+      "fields": [
+        "name",
+        "description",
+        "code",
+        "icon",
+        "sortWeight",
+        "parentId",
+        "path",
+        "visible",
+        "status"
+      ],
+      "file_targets": [],
+      "interface": "AdminAppCategoryCreateInput",
+      "route": "/admin/app",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts"
+    },
+    {
+      "data_sources": [
+        "plus_category"
+      ],
+      "fields": [
+        "name",
+        "description",
+        "code",
+        "icon",
+        "sortWeight",
+        "parentId",
+        "path",
+        "visible",
+        "status"
+      ],
+      "file_targets": [],
+      "interface": "AdminAppCategoryUpdateInput",
+      "route": "/admin/app",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts"
+    },
+    {
+      "data_sources": [
+        "plus_app",
+        "plus_category",
+        "studio_catalog_asset",
+        "studio_catalog_artifact"
+      ],
+      "fields": [
+        "userId",
+        "name",
+        "description",
+        "version",
+        "icon",
+        "resourceList",
+        "projectId",
+        "accessUrl",
+        "config",
+        "status",
+        "marketStatus",
+        "appType",
+        "platforms",
+        "installPlatforms",
+        "installSkill",
+        "installConfig",
+        "releaseNotes",
+        "packageName",
+        "bundleId",
+        "storeUrl",
+        "artifact"
+      ],
+      "file_targets": [],
+      "interface": "AdminAppCreateInput",
+      "route": "/admin/app",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts"
+    },
+    {
+      "data_sources": [
+        "plus_app",
+        "plus_category",
+        "studio_catalog_asset",
+        "studio_catalog_artifact"
+      ],
+      "fields": [
+        "searchQuery",
+        "status",
+        "marketStatus",
+        "appType",
+        "categoryId",
+        "page",
+        "pageSize"
+      ],
+      "file_targets": [],
+      "interface": "AdminAppListInput",
+      "route": "/admin/app",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts"
+    },
+    {
+      "data_sources": [
+        "plus_app",
+        "plus_category",
+        "studio_catalog_asset",
+        "studio_catalog_artifact"
+      ],
+      "fields": [
+        "items",
+        "items.id",
+        "items.uuid",
+        "items.userId",
+        "items.name",
+        "items.description",
+        "items.version",
+        "items.icon",
+        "items.resourceList",
+        "items.projectId",
+        "items.accessUrl",
+        "items.config",
+        "items.appKey",
+        "items.status",
+        "items.marketStatus",
+        "items.appType",
+        "items.platforms",
+        "items.installPlatforms",
+        "items.installSkill",
+        "items.installConfig",
+        "items.releaseNotes",
+        "items.packageName",
+        "items.bundleId",
+        "items.storeUrl",
+        "items.artifact",
+        "items.createdAt",
+        "items.updatedAt",
+        "total",
+        "page",
+        "pageSize",
+        "hasNextPage"
+      ],
+      "file_targets": [],
+      "interface": "AdminAppPage",
+      "route": "/admin/app",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts"
+    },
+    {
+      "data_sources": [
+        "studio_app_template"
+      ],
+      "fields": [
+        "id",
+        "uuid",
+        "templateNo",
+        "templateCode",
+        "templateName",
+        "description",
+        "categoryId",
+        "categoryCode",
+        "templateType",
+        "runtime",
+        "framework",
+        "language",
+        "icon",
+        "cover",
+        "visibility",
+        "publishStatus",
+        "featured",
+        "sortWeight",
+        "sourceAppId",
+        "gitRepoUrl",
+        "gitRef",
+        "gitSubPath",
+        "currentVersionId",
+        "appConfigSchema",
+        "defaultAppConfig",
+        "variableSchema",
+        "dependencyManifest",
+        "capabilityManifest",
+        "createdAt",
+        "updatedAt"
+      ],
+      "file_targets": [],
+      "interface": "AdminAppTemplate",
+      "route": "/admin/app",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts"
+    },
+    {
+      "data_sources": [
+        "studio_app_template"
+      ],
+      "fields": [
+        "templateNo",
+        "templateCode",
+        "templateName",
+        "description",
+        "categoryId",
+        "categoryCode",
+        "templateType",
+        "runtime",
+        "framework",
+        "language",
+        "icon",
+        "cover",
+        "visibility",
+        "publishStatus",
+        "featured",
+        "sortWeight",
+        "sourceAppId",
+        "gitRepoUrl",
+        "gitRef",
+        "gitSubPath",
+        "appConfigSchema",
+        "defaultAppConfig",
+        "variableSchema",
+        "dependencyManifest",
+        "capabilityManifest"
+      ],
+      "file_targets": [],
+      "interface": "AdminAppTemplateCreateInput",
+      "route": "/admin/app",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts"
+    },
+    {
+      "data_sources": [
+        "studio_app_template"
+      ],
+      "fields": [
+        "searchQuery",
+        "publishStatus",
+        "templateType",
+        "runtime",
+        "categoryId",
+        "page",
+        "pageSize"
+      ],
+      "file_targets": [],
+      "interface": "AdminAppTemplateListInput",
+      "route": "/admin/app",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts"
+    },
+    {
+      "data_sources": [
+        "studio_app_template"
+      ],
+      "fields": [
+        "items",
+        "items.id",
+        "items.uuid",
+        "items.templateNo",
+        "items.templateCode",
+        "items.templateName",
+        "items.description",
+        "items.categoryId",
+        "items.categoryCode",
+        "items.templateType",
+        "items.runtime",
+        "items.framework",
+        "items.language",
+        "items.icon",
+        "items.cover",
+        "items.visibility",
+        "items.publishStatus",
+        "items.featured",
+        "items.sortWeight",
+        "items.sourceAppId",
+        "items.gitRepoUrl",
+        "items.gitRef",
+        "items.gitSubPath",
+        "items.currentVersionId",
+        "items.appConfigSchema",
+        "items.defaultAppConfig",
+        "items.variableSchema",
+        "items.dependencyManifest",
+        "items.capabilityManifest",
+        "items.createdAt",
+        "items.updatedAt",
+        "total",
+        "page",
+        "pageSize",
+        "hasNextPage"
+      ],
+      "file_targets": [],
+      "interface": "AdminAppTemplatePage",
+      "route": "/admin/app",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts"
+    },
+    {
+      "data_sources": [
+        "studio_app_template"
+      ],
+      "fields": [
+        "templateName",
+        "description",
+        "categoryId",
+        "categoryCode",
+        "templateType",
+        "runtime",
+        "framework",
+        "language",
+        "icon",
+        "cover",
+        "visibility",
+        "publishStatus",
+        "featured",
+        "sortWeight",
+        "sourceAppId",
+        "gitRepoUrl",
+        "gitRef",
+        "gitSubPath",
+        "appConfigSchema",
+        "defaultAppConfig",
+        "variableSchema",
+        "dependencyManifest",
+        "capabilityManifest"
+      ],
+      "file_targets": [],
+      "interface": "AdminAppTemplateUpdateInput",
+      "route": "/admin/app",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts"
+    },
+    {
+      "data_sources": [
+        "plus_app",
+        "plus_category",
+        "studio_catalog_asset",
+        "studio_catalog_artifact"
+      ],
+      "fields": [
+        "userId",
+        "name",
+        "description",
+        "version",
+        "icon",
+        "resourceList",
+        "projectId",
+        "accessUrl",
+        "config",
+        "appType",
+        "platforms",
+        "installPlatforms",
+        "installSkill",
+        "installConfig",
+        "releaseNotes",
+        "packageName",
+        "bundleId",
+        "storeUrl",
+        "artifact"
+      ],
+      "file_targets": [],
+      "interface": "AdminAppUpdateInput",
+      "route": "/admin/app",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts"
+    },
+    {
+      "data_sources": [
         "ops_config_snapshot",
         "ops_audit_log"
       ],
@@ -2629,6 +3040,575 @@
     },
     {
       "data_sources": [
+        "iam_user",
+        "iam_organization_member"
+      ],
+      "fields": [
+        "departmentId",
+        "membershipId",
+        "userId",
+        "role",
+        "status",
+        "isPrimary"
+      ],
+      "file_targets": [],
+      "interface": "DepartmentAssignmentCommand",
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts"
+    },
+    {
+      "data_sources": [
+        "iam_user",
+        "iam_organization_member"
+      ],
+      "fields": [
+        "id",
+        "departmentId",
+        "membershipId",
+        "userId",
+        "role",
+        "status",
+        "isPrimary",
+        "createdAt"
+      ],
+      "file_targets": [],
+      "interface": "DepartmentAssignmentRecord",
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts"
+    },
+    {
+      "data_sources": [
+        "iam_organization",
+        "iam_organization_member"
+      ],
+      "fields": [
+        "organizationId",
+        "parentDepartmentId",
+        "code",
+        "name",
+        "managerUserId",
+        "status",
+        "sortWeight"
+      ],
+      "file_targets": [],
+      "interface": "DepartmentCommand",
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts"
+    },
+    {
+      "data_sources": [
+        "iam_organization",
+        "iam_organization_member"
+      ],
+      "fields": [
+        "id",
+        "code",
+        "name",
+        "organizationId",
+        "parentDepartmentId",
+        "status",
+        "managerUserId",
+        "memberCount",
+        "sortWeight",
+        "createdAt",
+        "updatedAt"
+      ],
+      "file_targets": [],
+      "interface": "DepartmentRecord",
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts"
+    },
+    {
+      "data_sources": [
+        "iam_organization"
+      ],
+      "fields": [
+        "id",
+        "code",
+        "name",
+        "organizationId",
+        "parentId",
+        "status",
+        "children"
+      ],
+      "file_targets": [],
+      "interface": "DepartmentTreeNode",
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts"
+    },
+    {
+      "data_sources": [
+        "iam_user",
+        "iam_organization"
+      ],
+      "fields": [
+        "pageSize",
+        "q"
+      ],
+      "file_targets": [],
+      "interface": "DirectoryLoadParams",
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts"
+    },
+    {
+      "data_sources": [
+        "iam_user",
+        "iam_organization",
+        "iam_organization_member"
+      ],
+      "fields": [
+        "organizationId",
+        "userId",
+        "displayName",
+        "username",
+        "email",
+        "mobile",
+        "memberKind",
+        "status"
+      ],
+      "file_targets": [],
+      "interface": "MembershipCommand",
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts"
+    },
+    {
+      "data_sources": [
+        "iam_organization"
+      ],
+      "fields": [
+        "code",
+        "name",
+        "organizationKind",
+        "parentOrganizationId",
+        "ownerUserId",
+        "status",
+        "sortWeight"
+      ],
+      "file_targets": [],
+      "interface": "OrganizationCommand",
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts"
+    },
+    {
+      "data_sources": [
+        "iam_user",
+        "iam_organization",
+        "iam_organization_member",
+        "iam_role",
+        "iam_permission",
+        "iam_role_permission",
+        "iam_user_role"
+      ],
+      "fields": [
+        "organizationTree",
+        "organizationTree.id",
+        "organizationTree.code",
+        "organizationTree.name",
+        "organizationTree.parentId",
+        "organizationTree.status",
+        "organizationTree.kind",
+        "organizationTree.children",
+        "users",
+        "users.id",
+        "users.username",
+        "users.displayName",
+        "users.email",
+        "users.mobile",
+        "users.status",
+        "users.createdAt",
+        "users.updatedAt",
+        "organizations",
+        "organizations.id",
+        "organizations.code",
+        "organizations.name",
+        "organizations.organizationKind",
+        "organizations.parentOrganizationId",
+        "organizations.status",
+        "organizations.ownerUserId",
+        "organizations.memberCount",
+        "organizations.departmentCount",
+        "organizations.sortWeight",
+        "organizations.createdAt",
+        "organizations.updatedAt",
+        "departmentTree",
+        "departmentTree.id",
+        "departmentTree.code",
+        "departmentTree.name",
+        "departmentTree.organizationId",
+        "departmentTree.parentId",
+        "departmentTree.status",
+        "departmentTree.children",
+        "departments",
+        "departments.id",
+        "departments.code",
+        "departments.name",
+        "departments.organizationId",
+        "departments.parentDepartmentId",
+        "departments.status",
+        "departments.managerUserId",
+        "departments.memberCount",
+        "departments.sortWeight",
+        "departments.createdAt",
+        "departments.updatedAt",
+        "memberships",
+        "memberships.id",
+        "memberships.organizationId",
+        "memberships.userId",
+        "memberships.displayName",
+        "memberships.username",
+        "memberships.email",
+        "memberships.mobile",
+        "memberships.memberKind",
+        "memberships.status",
+        "memberships.joinedAt",
+        "memberships.createdAt",
+        "departmentAssignments",
+        "departmentAssignments.id",
+        "departmentAssignments.departmentId",
+        "departmentAssignments.membershipId",
+        "departmentAssignments.userId",
+        "departmentAssignments.role",
+        "departmentAssignments.status",
+        "departmentAssignments.isPrimary",
+        "departmentAssignments.createdAt",
+        "positions",
+        "positions.id",
+        "positions.code",
+        "positions.name",
+        "positions.organizationId",
+        "positions.departmentId",
+        "positions.status",
+        "positions.rankLevel",
+        "positions.description",
+        "positions.createdAt",
+        "positions.updatedAt",
+        "positionAssignments",
+        "positionAssignments.id",
+        "positionAssignments.positionId",
+        "positionAssignments.membershipId",
+        "positionAssignments.userId",
+        "positionAssignments.status",
+        "positionAssignments.startedAt",
+        "positionAssignments.endedAt",
+        "positionAssignments.createdAt",
+        "roles",
+        "roles.id",
+        "roles.code",
+        "roles.name",
+        "roles.status",
+        "roles.description",
+        "roles.createdAt",
+        "roles.updatedAt",
+        "roleBindings",
+        "roleBindings.id",
+        "roleBindings.roleId",
+        "roleBindings.principalKind",
+        "roleBindings.principalId",
+        "roleBindings.organizationId",
+        "roleBindings.departmentId",
+        "roleBindings.scopeKind",
+        "roleBindings.scopeId",
+        "roleBindings.status",
+        "roleBindings.createdAt",
+        "permissions",
+        "permissions.id",
+        "permissions.code",
+        "permissions.name",
+        "permissions.resource",
+        "permissions.action",
+        "permissions.status",
+        "permissions.description",
+        "permissions.createdAt",
+        "permissions.updatedAt"
+      ],
+      "file_targets": [],
+      "interface": "OrganizationDirectoryData",
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts"
+    },
+    {
+      "data_sources": [
+        "iam_user",
+        "iam_organization",
+        "iam_organization_member"
+      ],
+      "fields": [
+        "id",
+        "organizationId",
+        "userId",
+        "displayName",
+        "username",
+        "email",
+        "mobile",
+        "memberKind",
+        "status",
+        "joinedAt",
+        "createdAt"
+      ],
+      "file_targets": [],
+      "interface": "OrganizationMemberRecord",
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts"
+    },
+    {
+      "data_sources": [
+        "iam_organization",
+        "iam_organization_member"
+      ],
+      "fields": [
+        "id",
+        "code",
+        "name",
+        "organizationKind",
+        "parentOrganizationId",
+        "status",
+        "ownerUserId",
+        "memberCount",
+        "departmentCount",
+        "sortWeight",
+        "createdAt",
+        "updatedAt"
+      ],
+      "file_targets": [],
+      "interface": "OrganizationRecord",
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts"
+    },
+    {
+      "data_sources": [
+        "iam_organization"
+      ],
+      "fields": [
+        "id",
+        "code",
+        "name",
+        "parentId",
+        "status",
+        "kind",
+        "children"
+      ],
+      "file_targets": [],
+      "interface": "OrganizationTreeNode",
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts"
+    },
+    {
+      "data_sources": [
+        "iam_permission"
+      ],
+      "fields": [
+        "code",
+        "name",
+        "resource",
+        "action",
+        "description",
+        "status"
+      ],
+      "file_targets": [],
+      "interface": "PermissionCommand",
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts"
+    },
+    {
+      "data_sources": [
+        "iam_permission",
+        "iam_role_permission"
+      ],
+      "fields": [
+        "id",
+        "code",
+        "name",
+        "resource",
+        "action",
+        "status",
+        "description",
+        "createdAt",
+        "updatedAt"
+      ],
+      "file_targets": [],
+      "interface": "PermissionRecord",
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts"
+    },
+    {
+      "data_sources": [
+        "iam_user",
+        "iam_organization_member"
+      ],
+      "fields": [
+        "positionId",
+        "membershipId",
+        "userId",
+        "status",
+        "startedAt",
+        "endedAt"
+      ],
+      "file_targets": [],
+      "interface": "PositionAssignmentCommand",
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts"
+    },
+    {
+      "data_sources": [
+        "iam_user",
+        "iam_organization_member"
+      ],
+      "fields": [
+        "id",
+        "positionId",
+        "membershipId",
+        "userId",
+        "status",
+        "startedAt",
+        "endedAt",
+        "createdAt"
+      ],
+      "file_targets": [],
+      "interface": "PositionAssignmentRecord",
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts"
+    },
+    {
+      "data_sources": [
+        "iam_organization",
+        "iam_organization_member"
+      ],
+      "fields": [
+        "organizationId",
+        "departmentId",
+        "code",
+        "name",
+        "rankLevel",
+        "description",
+        "status"
+      ],
+      "file_targets": [],
+      "interface": "PositionCommand",
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts"
+    },
+    {
+      "data_sources": [
+        "iam_organization",
+        "iam_organization_member"
+      ],
+      "fields": [
+        "id",
+        "code",
+        "name",
+        "organizationId",
+        "departmentId",
+        "status",
+        "rankLevel",
+        "description",
+        "createdAt",
+        "updatedAt"
+      ],
+      "file_targets": [],
+      "interface": "PositionRecord",
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts"
+    },
+    {
+      "data_sources": [
+        "iam_role",
+        "iam_user_role",
+        "iam_organization",
+        "iam_organization_member"
+      ],
+      "fields": [
+        "roleId",
+        "principalKind",
+        "principalId",
+        "organizationId",
+        "departmentId",
+        "scopeKind",
+        "scopeId",
+        "status"
+      ],
+      "file_targets": [],
+      "interface": "RoleBindingCommand",
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts"
+    },
+    {
+      "data_sources": [
+        "iam_role",
+        "iam_user_role",
+        "iam_organization",
+        "iam_organization_member"
+      ],
+      "fields": [
+        "id",
+        "roleId",
+        "principalKind",
+        "principalId",
+        "organizationId",
+        "departmentId",
+        "scopeKind",
+        "scopeId",
+        "status",
+        "createdAt"
+      ],
+      "file_targets": [],
+      "interface": "RoleBindingRecord",
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts"
+    },
+    {
+      "data_sources": [
+        "iam_role"
+      ],
+      "fields": [
+        "code",
+        "name",
+        "description",
+        "status"
+      ],
+      "file_targets": [],
+      "interface": "RoleCommand",
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts"
+    },
+    {
+      "data_sources": [
+        "iam_role"
+      ],
+      "fields": [
+        "id",
+        "code",
+        "name",
+        "status",
+        "description",
+        "createdAt",
+        "updatedAt"
+      ],
+      "file_targets": [],
+      "interface": "RoleRecord",
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts"
+    },
+    {
+      "data_sources": [
+        "iam_user"
+      ],
+      "fields": [
+        "id",
+        "username",
+        "displayName",
+        "email",
+        "mobile",
+        "status",
+        "createdAt",
+        "updatedAt"
+      ],
+      "file_targets": [],
+      "interface": "UserRecord",
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts"
+    },
+    {
+      "data_sources": [
         "ai_prompt",
         "plus_category"
       ],
@@ -3951,417 +4931,6 @@
       "interface": "AppRelease",
       "route": "/apps",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/appRuntime.ts"
-    },
-    {
-      "data_sources": [
-        "plus_app",
-        "plus_category",
-        "studio_catalog_asset",
-        "studio_catalog_artifact"
-      ],
-      "fields": [
-        "id",
-        "uuid",
-        "userId",
-        "name",
-        "description",
-        "version",
-        "icon",
-        "resourceList",
-        "projectId",
-        "accessUrl",
-        "config",
-        "appKey",
-        "status",
-        "marketStatus",
-        "appType",
-        "platforms",
-        "installPlatforms",
-        "installSkill",
-        "installConfig",
-        "releaseNotes",
-        "packageName",
-        "bundleId",
-        "storeUrl",
-        "artifact",
-        "createdAt",
-        "updatedAt"
-      ],
-      "file_targets": [],
-      "interface": "AdminApp",
-      "route": "/admin/app",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts"
-    },
-    {
-      "data_sources": [
-        "plus_category"
-      ],
-      "fields": [
-        "id",
-        "name",
-        "description",
-        "code",
-        "icon",
-        "sortWeight",
-        "parentId",
-        "path",
-        "visible",
-        "status",
-        "type"
-      ],
-      "file_targets": [],
-      "interface": "AdminAppCategory",
-      "route": "/admin/app",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts"
-    },
-    {
-      "data_sources": [
-        "plus_category"
-      ],
-      "fields": [
-        "name",
-        "description",
-        "code",
-        "icon",
-        "sortWeight",
-        "parentId",
-        "path",
-        "visible",
-        "status"
-      ],
-      "file_targets": [],
-      "interface": "AdminAppCategoryCreateInput",
-      "route": "/admin/app",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts"
-    },
-    {
-      "data_sources": [
-        "plus_category"
-      ],
-      "fields": [
-        "name",
-        "description",
-        "code",
-        "icon",
-        "sortWeight",
-        "parentId",
-        "path",
-        "visible",
-        "status"
-      ],
-      "file_targets": [],
-      "interface": "AdminAppCategoryUpdateInput",
-      "route": "/admin/app",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts"
-    },
-    {
-      "data_sources": [
-        "plus_app",
-        "plus_category",
-        "studio_catalog_asset",
-        "studio_catalog_artifact"
-      ],
-      "fields": [
-        "userId",
-        "name",
-        "description",
-        "version",
-        "icon",
-        "resourceList",
-        "projectId",
-        "accessUrl",
-        "config",
-        "status",
-        "marketStatus",
-        "appType",
-        "platforms",
-        "installPlatforms",
-        "installSkill",
-        "installConfig",
-        "releaseNotes",
-        "packageName",
-        "bundleId",
-        "storeUrl",
-        "artifact"
-      ],
-      "file_targets": [],
-      "interface": "AdminAppCreateInput",
-      "route": "/admin/app",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts"
-    },
-    {
-      "data_sources": [
-        "plus_app",
-        "plus_category",
-        "studio_catalog_asset",
-        "studio_catalog_artifact"
-      ],
-      "fields": [
-        "searchQuery",
-        "status",
-        "marketStatus",
-        "appType",
-        "categoryId",
-        "page",
-        "pageSize"
-      ],
-      "file_targets": [],
-      "interface": "AdminAppListInput",
-      "route": "/admin/app",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts"
-    },
-    {
-      "data_sources": [
-        "plus_app",
-        "plus_category",
-        "studio_catalog_asset",
-        "studio_catalog_artifact"
-      ],
-      "fields": [
-        "items",
-        "items.id",
-        "items.uuid",
-        "items.userId",
-        "items.name",
-        "items.description",
-        "items.version",
-        "items.icon",
-        "items.resourceList",
-        "items.projectId",
-        "items.accessUrl",
-        "items.config",
-        "items.appKey",
-        "items.status",
-        "items.marketStatus",
-        "items.appType",
-        "items.platforms",
-        "items.installPlatforms",
-        "items.installSkill",
-        "items.installConfig",
-        "items.releaseNotes",
-        "items.packageName",
-        "items.bundleId",
-        "items.storeUrl",
-        "items.artifact",
-        "items.createdAt",
-        "items.updatedAt",
-        "total",
-        "page",
-        "pageSize",
-        "hasNextPage"
-      ],
-      "file_targets": [],
-      "interface": "AdminAppPage",
-      "route": "/admin/app",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts"
-    },
-    {
-      "data_sources": [
-        "studio_app_template"
-      ],
-      "fields": [
-        "id",
-        "uuid",
-        "templateNo",
-        "templateCode",
-        "templateName",
-        "description",
-        "categoryId",
-        "categoryCode",
-        "templateType",
-        "runtime",
-        "framework",
-        "language",
-        "icon",
-        "cover",
-        "visibility",
-        "publishStatus",
-        "featured",
-        "sortWeight",
-        "sourceAppId",
-        "gitRepoUrl",
-        "gitRef",
-        "gitSubPath",
-        "currentVersionId",
-        "appConfigSchema",
-        "defaultAppConfig",
-        "variableSchema",
-        "dependencyManifest",
-        "capabilityManifest",
-        "createdAt",
-        "updatedAt"
-      ],
-      "file_targets": [],
-      "interface": "AdminAppTemplate",
-      "route": "/admin/app",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts"
-    },
-    {
-      "data_sources": [
-        "studio_app_template"
-      ],
-      "fields": [
-        "templateNo",
-        "templateCode",
-        "templateName",
-        "description",
-        "categoryId",
-        "categoryCode",
-        "templateType",
-        "runtime",
-        "framework",
-        "language",
-        "icon",
-        "cover",
-        "visibility",
-        "publishStatus",
-        "featured",
-        "sortWeight",
-        "sourceAppId",
-        "gitRepoUrl",
-        "gitRef",
-        "gitSubPath",
-        "appConfigSchema",
-        "defaultAppConfig",
-        "variableSchema",
-        "dependencyManifest",
-        "capabilityManifest"
-      ],
-      "file_targets": [],
-      "interface": "AdminAppTemplateCreateInput",
-      "route": "/admin/app",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts"
-    },
-    {
-      "data_sources": [
-        "studio_app_template"
-      ],
-      "fields": [
-        "searchQuery",
-        "publishStatus",
-        "templateType",
-        "runtime",
-        "categoryId",
-        "page",
-        "pageSize"
-      ],
-      "file_targets": [],
-      "interface": "AdminAppTemplateListInput",
-      "route": "/admin/app",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts"
-    },
-    {
-      "data_sources": [
-        "studio_app_template"
-      ],
-      "fields": [
-        "items",
-        "items.id",
-        "items.uuid",
-        "items.templateNo",
-        "items.templateCode",
-        "items.templateName",
-        "items.description",
-        "items.categoryId",
-        "items.categoryCode",
-        "items.templateType",
-        "items.runtime",
-        "items.framework",
-        "items.language",
-        "items.icon",
-        "items.cover",
-        "items.visibility",
-        "items.publishStatus",
-        "items.featured",
-        "items.sortWeight",
-        "items.sourceAppId",
-        "items.gitRepoUrl",
-        "items.gitRef",
-        "items.gitSubPath",
-        "items.currentVersionId",
-        "items.appConfigSchema",
-        "items.defaultAppConfig",
-        "items.variableSchema",
-        "items.dependencyManifest",
-        "items.capabilityManifest",
-        "items.createdAt",
-        "items.updatedAt",
-        "total",
-        "page",
-        "pageSize",
-        "hasNextPage"
-      ],
-      "file_targets": [],
-      "interface": "AdminAppTemplatePage",
-      "route": "/admin/app",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts"
-    },
-    {
-      "data_sources": [
-        "studio_app_template"
-      ],
-      "fields": [
-        "templateName",
-        "description",
-        "categoryId",
-        "categoryCode",
-        "templateType",
-        "runtime",
-        "framework",
-        "language",
-        "icon",
-        "cover",
-        "visibility",
-        "publishStatus",
-        "featured",
-        "sortWeight",
-        "sourceAppId",
-        "gitRepoUrl",
-        "gitRef",
-        "gitSubPath",
-        "appConfigSchema",
-        "defaultAppConfig",
-        "variableSchema",
-        "dependencyManifest",
-        "capabilityManifest"
-      ],
-      "file_targets": [],
-      "interface": "AdminAppTemplateUpdateInput",
-      "route": "/admin/app",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts"
-    },
-    {
-      "data_sources": [
-        "plus_app",
-        "plus_category",
-        "studio_catalog_asset",
-        "studio_catalog_artifact"
-      ],
-      "fields": [
-        "userId",
-        "name",
-        "description",
-        "version",
-        "icon",
-        "resourceList",
-        "projectId",
-        "accessUrl",
-        "config",
-        "appType",
-        "platforms",
-        "installPlatforms",
-        "installSkill",
-        "installConfig",
-        "releaseNotes",
-        "packageName",
-        "bundleId",
-        "storeUrl",
-        "artifact"
-      ],
-      "file_targets": [],
-      "interface": "AdminAppUpdateInput",
-      "route": "/admin/app",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts"
     },
     {
       "data_sources": [
@@ -6241,7 +6810,7 @@
     }
   ],
   "summary": {
-    "interface_count": 257,
-    "source_file_count": 50
+    "interface_count": 280,
+    "source_file_count": 51
   }
 }

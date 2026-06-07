@@ -42,6 +42,7 @@ This SDK family is owner-only. Dependency-owned routes are consumed through decl
 | Workspace | Role | Mode | API prefix | Generated transport policy |
 | --- | --- | --- | --- | --- |
 | `sdkwork-appbase-backend-sdk` | `appbase-backend-management-capability` | `consumer-sdk` | `/backend/v3/api` | `generatedTransportImportPolicy: forbidden` |
+| `sdkwork-commerce-backend-sdk` | `commerce-backend-management-capability` | `consumer-sdk` | `/backend/v3/api` | `generatedTransportImportPolicy: forbidden` |
 
 Package names:
 
@@ -55,6 +56,16 @@ Package names:
 - `kotlin`: `com.sdkwork:sdkwork-appbase-backend-sdk`
 - `go`: `github.com/sdkwork/sdkwork-appbase-backend-sdk`
 - `python`: `sdkwork-appbase-backend-sdk`
+- `sdkwork-commerce-backend-sdk`
+- `typescript`: `sdkwork-commerce-backend-sdk-generated-typescript`
+- `flutter`: `sdkwork_commerce_backend_sdk`
+- `rust`: `sdkwork-commerce-backend-sdk`
+- `java`: `com.sdkwork:sdkwork-commerce-backend-sdk`
+- `csharp`: `SDKWork.Commerce.BackendSdk`
+- `swift`: `sdkwork-commerce-backend-sdk`
+- `kotlin`: `com.sdkwork:sdkwork-commerce-backend-sdk`
+- `go`: `github.com/sdkwork/sdkwork-commerce-backend-sdk`
+- `python`: `sdkwork-commerce-backend-sdk`
 
 Regenerate this SDK family from the project root:
 

@@ -44,7 +44,7 @@ class SchemaCompileCheckResult:
 
 
 COMMON_COLUMN_DEFINITIONS: dict[str, ColumnDefinition] = {
-    "id": ColumnDefinition("id", "BIGSERIAL", "PRIMARY KEY"),
+    "id": ColumnDefinition("id", "BIGINT", "NOT NULL PRIMARY KEY"),
     "uuid": ColumnDefinition("uuid", "VARCHAR(64)", "NOT NULL"),
     "tenant_id": ColumnDefinition("tenant_id", "BIGINT", "NOT NULL DEFAULT 0"),
     "organization_id": ColumnDefinition("organization_id", "BIGINT", "NOT NULL DEFAULT 0"),
@@ -248,6 +248,12 @@ class SchemaCompiler:
         constraints = constraints.strip()
         if ";" in constraints or "--" in constraints or "/*" in constraints or "*/" in constraints:
             raise SchemaCompileError(f"{table_name}.{column_name}.constraints contains unsafe SQL")
+        if re.search(r"\bPRIMARY\s+KEY\b", constraints, flags=re.IGNORECASE) and not re.search(
+            r"\bNOT\s+NULL\b",
+            constraints,
+            flags=re.IGNORECASE,
+        ):
+            constraints = f"NOT NULL {constraints}"
         return constraints
 
     def _map_type(self, table_name: str, column_name: str, registry_type: str) -> str:
@@ -303,8 +309,8 @@ class SchemaCompiler:
     def _with_primary_key(self, column: ColumnDefinition) -> ColumnDefinition:
         constraints_upper = column.constraints.upper()
         if "PRIMARY KEY" in constraints_upper:
-            return column
-        constraints = re.sub(r"\bNOT\s+NULL\b", "", column.constraints, flags=re.IGNORECASE)
+            return self._with_not_null(column)
+        constraints = self._with_not_null(column).constraints
         updated_constraints = f"{constraints} PRIMARY KEY".strip()
         updated_constraints = re.sub(r"\s+", " ", updated_constraints)
         return ColumnDefinition(column.name, column.sql_type, updated_constraints)

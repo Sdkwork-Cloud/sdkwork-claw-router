@@ -13,7 +13,7 @@ const CONTRACT_VARIABLES = [
   ...RELEASE_ENVIRONMENT_CONTRACT.requiredPortalPublicEnv,
 ];
 const OPTIONAL_CONTRACT_VARIABLES = [
-  'PORTAL_PUBLIC_OPEN_API_BASE_URL',
+  ...(RELEASE_ENVIRONMENT_CONTRACT.optionalPortalPublicEnv ?? []),
 ];
 
 function printHelp() {

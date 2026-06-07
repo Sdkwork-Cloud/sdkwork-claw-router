@@ -17,12 +17,6 @@ workspace. It combines a Rust gateway and product API layer with a React portal
 so operators, developers, and administrators can manage AI traffic through a
 single browser entrypoint.
 
-## 浜у搧姒傝
-
-SDKWork Claw Router 鏄潰鍚戝晢涓氬寲浜や粯鐨?AI 缃戝叧涓庢帶鍒跺彴浜у搧锛岀敤浜庣粺涓€绠＄悊
-OpenAI 鍏煎鎺ュ彛銆佹ā鍨嬩緵搴斿晢璺敱銆佹ā鍨嬬洰褰曘€佷环鏍间笌鐢ㄩ噺銆丄PI Key銆佺敤鎴蜂笌鍚庡彴
-杩愯惀鑳藉姏銆備骇鍝佺敱 Rust 缃戝叧鍜屼笟鍔?API銆丷eact Portal銆佺敓鎴愬紡 SDK銆丼chema/OpenAPI
-濂戠害涓庝氦浠樻牎楠岀粍鎴愶紝閫傚悎绉佹湁鍖栭儴缃层€佹湇鍔″寲閮ㄧ讲鍜屼簩娆￠泦鎴愬満鏅€?
 Core product surfaces:
 
 - **OpenAI-compatible Gateway**: exposes `/v1/*` APIs for OpenAI-compatible
@@ -42,8 +36,6 @@ Core product surfaces:
   OpenAPI payloads, generated SDKs, Rust handlers, and verification gates to
   schema registry evidence.
 
-鏍稿績浜у搧鑳藉姏锛?
-- **OpenAI 鍏煎缃戝叧**锛氭彁渚?`/v1/*` 鍏煎鎺ュ彛锛屽苟閫氳繃鍙楁帶鐨勪緵搴斿晢鍜岃矾鐢辩瓥鐣ヨ浆鍙戞祦閲忋€?- **Portal 涓庣敤鎴锋帶鍒跺彴**锛氶潰鍚戞渶缁堢敤鎴锋彁渚?API Key銆佽处鍗曘€佺敤閲忋€佽矾鐢便€佹ā鍨嬪彂鐜般€?  Playground 鍜岃处鎴锋搷浣溿€?- **绠＄悊鍚庡彴**锛氶潰鍚戣繍钀ュ拰绠＄悊鍛樻彁渚涚敤鎴枫€佷緵搴斿晢銆侀€氶亾銆佸叕鍛娿€佸垎鏋愩€侀檺娴併€佺紦瀛樹笌鍟嗕笟鍖栫鐞嗐€?- **妯″瀷鐩綍涓庝环鏍间綋绯?*锛氱鐞嗘ā鍨嬩簨瀹炪€佷緵搴斿晢鍖哄煙銆佷环鏍兼暟鎹拰瀹夎鏈熺洰褰曞埛鏂般€?- **鐢熸垚寮?SDK**锛氬熀浜?OpenAPI 濂戠害鐢熸垚 app銆乥ackend 鍜?OpenAI 鍏煎 SDK銆?- **濂戠害椹卞姩浜や粯**锛氱敤 schema registry 璇佹嵁涓茶仈鍓嶇璺敱銆佹暟鎹簱琛ㄣ€丱penAPI銆?  SDK銆丷ust handler 鍜屼氦浠橀獙璇併€?
 ## Product Screenshots
 
 The images below are placeholder PNG files stored in
@@ -53,11 +45,11 @@ customer-facing documentation.
 
 | Product area | Screenshot |
 | --- | --- |
-| Portal home / 浜у搧棣栭〉 | ![SDKWork Claw Router portal home placeholder](./docs/assets/product-screenshots/portal-home.png) |
-| Console dashboard / 鐢ㄦ埛鎺у埗鍙?| ![SDKWork Claw Router console dashboard placeholder](./docs/assets/product-screenshots/console-dashboard.png) |
-| Model catalog and routing / 妯″瀷涓庤矾鐢?| ![SDKWork Claw Router model routing placeholder](./docs/assets/product-screenshots/model-routing.png) |
-| API playground / API 璋冭瘯鍙?| ![SDKWork Claw Router playground placeholder](./docs/assets/product-screenshots/playground.png) |
-| Admin console / 绠＄悊鍚庡彴 | ![SDKWork Claw Router admin console placeholder](./docs/assets/product-screenshots/admin-console.png) |
+| Portal home | ![SDKWork Claw Router portal home placeholder](./docs/assets/product-screenshots/portal-home.png) |
+| Console dashboard | ![SDKWork Claw Router console dashboard placeholder](./docs/assets/product-screenshots/console-dashboard.png) |
+| Model catalog and routing | ![SDKWork Claw Router model routing placeholder](./docs/assets/product-screenshots/model-routing.png) |
+| API playground | ![SDKWork Claw Router playground placeholder](./docs/assets/product-screenshots/playground.png) |
+| Admin console | ![SDKWork Claw Router admin console placeholder](./docs/assets/product-screenshots/admin-console.png) |
 
 ## Installation And Usage
 
@@ -67,19 +59,19 @@ Current release: `0.3.0` (`2026-05-17`). Release records live under
 Primary installation and usage guides:
 
 - [Installation index](./docs/installation/README.md)
-- 涓枃: [瀹夎涓庝娇鐢ㄦ寚鍗梋(./docs/installation/zh-CN/README.md)
+- Chinese: [Installation And Usage Guide](./docs/installation/zh-CN/README.md)
 - English: [Installation And Usage Guide](./docs/installation/en-US/README.md)
 
 Use the release guides when installing a published package for a specific
 version:
 
-- 涓枃: [鎸?Release 鐗堟湰瀹夎](./docs/installation/zh-CN/release-install.md)
+- Chinese: [Install By Release Version](./docs/installation/zh-CN/release-install.md)
 - English: [Install By Release Version](./docs/installation/en-US/release-install.md)
 
 Use the source guides when cloning this repository, running a development
 workspace, building production artifacts, or producing private release packages:
 
-- 涓枃: [婧愮爜瀹夎涓庨儴缃瞉(./docs/installation/zh-CN/source-install.md)
+- Chinese: [Source Installation And Deployment](./docs/installation/zh-CN/source-install.md)
 - English: [Source Installation And Deployment](./docs/installation/en-US/source-install.md)
 
 Quick source start:
@@ -232,7 +224,7 @@ Quick portable package initialization on Linux and macOS:
 Run commands from this directory:
 
 ```bash
-pnpm deps:local:link
+pnpm install --no-frozen-lockfile
 pnpm dev
 pnpm test
 pnpm build
@@ -252,16 +244,26 @@ pnpm nginx:plan -- --domain api.sdkwork.com
 pnpm nginx:render -- --domain api.sdkwork.com --output-root target/nginx
 ```
 
-Local development uses `sdkwork.workflow.json` as the dependency manifest and
-materializes source dependencies under `.sdkwork/dependencies/<dependency-id>`.
-Run `pnpm deps:local:link` when the required sibling repositories exist in the
-same multi-repository workspace; the script links them into
-`.sdkwork/dependencies/<dependency-id>`. CI and release packaging use the same
-`.sdkwork/dependencies/<dependency-id>` paths, but the reusable GitHub workflow
-checks out the pinned Git refs declared in `sdkwork.workflow.json` instead of
-creating local links. Use
-`pnpm deps:local:check` before local portal install/build when dependencies are
-already materialized.
+PowerShell and POSIX shells use the same extensionless `pnpm` commands:
+
+```powershell
+pnpm verify
+pnpm test:postgres
+pnpm test:postgres:required
+pnpm test:postgres:docker
+pnpm release:env:write
+pnpm install:packages:plan
+pnpm install:packages:check
+pnpm install:package:build
+pnpm install:package:check
+pnpm install:init:smoke
+```
+
+Local development consumes SDKWork dependencies through native workspace files,
+including `pnpm-workspace.yaml`, `package.json`, and Cargo manifests. Required
+SDKWork repositories are expected as siblings in the same multi-repository
+workspace, while `sdkwork.workflow.json` records pinned Git refs for CI and
+release checkout.
 
 Validate the standalone model catalog before installer or release work:
 
@@ -468,20 +470,22 @@ pnpm dev:distributed -- --gateway-bind 0.0.0.0:19080 --server-bind 0.0.0.0:12900
 ```
 
 Forwarding URLs must be HTTP/HTTPS origins only. The Rust edge server uses
-those origins for internal service-to-service proxying. The browser runtime API
-bases stay same-origin in server mode:
+those origins for internal service-to-service proxying. Browser SDK bases
+default to one same-origin public SDK root in server mode:
 
-- `PORTAL_PUBLIC_API_BASE_URL=/v1`
-- `PORTAL_PUBLIC_OPEN_API_BASE_URL=/v1`
-- `PORTAL_PUBLIC_BACKEND_API_BASE_URL=/backend/v3/api`
-- `PORTAL_PUBLIC_APP_API_BASE_URL=/app/v3/api`
+- `PORTAL_PUBLIC_SDK_BASE_URL=/`
+- Derived open/API reference URL: `/v1`
+- Derived app SDK URL: `/app/v3/api`
+- Derived backend SDK URL: `/backend/v3/api`
 
 This avoids publishing loopback addresses such as `127.0.0.1` into browser
 configuration and keeps remote deployments reachable through the same edge host
 that served the portal. Direct `3901` portal dev requests proxy the same
 same-origin API paths to the edge server in all-in-one mode, so opening the
 Vite dev server directly exercises the same SDK base URLs as the unified edge
-entrypoint.
+entrypoint. `PORTAL_PUBLIC_API_BASE_URL`, `PORTAL_PUBLIC_OPEN_API_BASE_URL`,
+`PORTAL_PUBLIC_APP_API_BASE_URL`, and `PORTAL_PUBLIC_BACKEND_API_BASE_URL`
+remain available as per-surface overrides for split deployments.
 
 Production `pnpm start` defaults to one all-in-one Rust edge/API process
 after `pnpm build` has created the release artifact. Use `--distributed`,
@@ -721,16 +725,18 @@ SDKWORK_CLAW_POSTGRES_TEST_DATABASE_URL
 Required browser-visible portal runtime variables:
 
 ```text
-PORTAL_PUBLIC_API_BASE_URL
-PORTAL_PUBLIC_APP_API_BASE_URL
-PORTAL_PUBLIC_BACKEND_API_BASE_URL
 PORTAL_PUBLIC_TOOL_API_ENABLED
 ```
 
-Optional browser-visible SDK runtime override:
+Configure either one common browser-visible SDK root or per-surface overrides:
 
 ```text
+PORTAL_PUBLIC_SDK_BASE_URL
+PORTAL_PUBLIC_API_BASE_URL
 PORTAL_PUBLIC_OPEN_API_BASE_URL
+PORTAL_PUBLIC_APP_API_BASE_URL
+PORTAL_PUBLIC_BACKEND_API_BASE_URL
+PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL
 ```
 
 Run strict preflight against the local release env file before packaging:
@@ -1338,10 +1344,11 @@ assets. Use only `PORTAL_PUBLIC_*` variables for values that are intended to be
 visible in the browser:
 
 ```powershell
-$env:PORTAL_PUBLIC_API_BASE_URL="https://tenant-api.example.com/api"
-$env:PORTAL_PUBLIC_OPEN_API_BASE_URL="https://tenant-api.example.com/api"
-$env:PORTAL_PUBLIC_APP_API_BASE_URL="/app/v3/api"
-$env:PORTAL_PUBLIC_BACKEND_API_BASE_URL="/backend/v3/api"
+$env:PORTAL_PUBLIC_SDK_BASE_URL="https://tenant.example.com/router"
+$env:PORTAL_PUBLIC_API_BASE_URL=""
+$env:PORTAL_PUBLIC_OPEN_API_BASE_URL=""
+$env:PORTAL_PUBLIC_APP_API_BASE_URL=""
+$env:PORTAL_PUBLIC_BACKEND_API_BASE_URL=""
 $env:PORTAL_PUBLIC_TOOL_API_ENABLED="false"
 $env:PORTAL_TOOL_API_RATE_LIMIT_REQUESTS="120"
 $env:PORTAL_TOOL_API_RATE_LIMIT_WINDOW_SECONDS="60"
@@ -1350,16 +1357,15 @@ $env:PORTAL_TOOL_API_SDK_GENERATOR_API_KEY=""
 $env:PORTAL_TOOL_API_SDK_ARCHIVE_ROOT = Join-Path (Get-Location) "apps/sdkwork-clawrouter-pc/dist/sdk-archives"
 ```
 
-`PORTAL_PUBLIC_API_BASE_URL`, `PORTAL_PUBLIC_OPEN_API_BASE_URL`,
-`PORTAL_PUBLIC_APP_API_BASE_URL`, and `PORTAL_PUBLIC_BACKEND_API_BASE_URL`
-accept HTTP/HTTPS URLs or root-relative paths. Query strings, fragments,
+`PORTAL_PUBLIC_SDK_BASE_URL` is the default public SDK root. Runtime bootstrap
+derives `/v1`, `/app/v3/api`, and `/backend/v3/api` from it. The per-surface
+variables accept HTTP/HTTPS URLs or root-relative paths and override the
+derived values when a deployment splits SDK surfaces. Query strings, fragments,
 protocol-relative URLs, control characters, and non-HTTP schemes fail startup.
-`PORTAL_PUBLIC_OPEN_API_BASE_URL` is the generated
-`@sdkwork/clawrouter-open-sdk` base URL and defaults to
-`PORTAL_PUBLIC_API_BASE_URL` when unset. Absolute runtime API origins are added to
-the production CSP `connect-src` automatically. `/runtime-env.js` is served with
-`Cache-Control: no-store` and is referenced before the hashed portal bundle so
-SDK clients read deployment values before they are constructed.
+Absolute runtime API origins are added to the production CSP `connect-src`
+automatically. `/runtime-env.js` is served with `Cache-Control: no-store` and is
+referenced before the hashed portal bundle so SDK clients read deployment
+values before they are constructed.
 
 When `PORTAL_PUBLIC_TOOL_API_ENABLED=true`, the Rust edge server serves the
 local portal tool API under `/api/code-snippet`, `/api/sdk-readme`, and
@@ -1448,7 +1454,6 @@ SaaS or managed-service operation, commercial integration, resale, white-label
 delivery, paid implementation services, and commercial production use are
 prohibited.
 
-鏈粡 SDKWork 涔﹂潰鎺堟潈锛岀姝㈠晢涓氫娇鐢ㄣ€佸晢涓氶儴缃层€佸晢涓氶泦鎴愩€佽浆鍞€佹墭绠℃湇鍔°€?SaaS 鏈嶅姟銆佺櫧鏍囦氦浠樸€佷粯璐瑰挩璇㈠疄鏂芥湇鍔★紝浠ュ強浠讳綍钀ュ埄鎬ф垨鍟嗕笟缁勭粐鐢熶骇鐜浣跨敤銆?
 Generated SDK packages, standalone data packages, vendored artifacts, and
 third-party dependencies may include their own license files. Those package or
 artifact license files govern the corresponding generated, standalone,

@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { ChevronRight, Edit2, Folder, FolderPlus, FolderTree, Loader2, Trash2 } from 'lucide-react';
-import type { AdminCategoryOption } from '../admin-category-options';
+import type { AdminCategoryOption } from '../admin-category-types';
 
 export type AdminCategoryTreeNode = AdminCategoryOption & {
   children: AdminCategoryTreeNode[];

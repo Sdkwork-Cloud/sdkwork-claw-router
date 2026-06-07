@@ -740,6 +740,8 @@ function TreeNodeButton({
   onEdit?: () => void;
   status: string;
 }) {
+  const { t } = useTranslation();
+
   return (
     <div
       className={`group flex w-full items-center gap-2 rounded-md px-2 py-2 text-left transition-colors ${active ? 'bg-blue-50 text-blue-700 dark:bg-blue-500/15 dark:text-blue-200' : 'text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-white/5'}`}
@@ -751,8 +753,8 @@ function TreeNodeButton({
         {meta ? <span className="max-w-20 truncate rounded bg-slate-100 px-1.5 py-0.5 text-[11px] text-slate-500 dark:bg-white/10 dark:text-slate-400">{meta}</span> : null}
         <StatusPill status={status} />
       </button>
-      {onEdit ? <RowIconButton label="Edit" onClick={onEdit}><Edit className="h-3.5 w-3.5" /></RowIconButton> : null}
-      {onDelete ? <RowIconButton label="Delete" onClick={onDelete} danger><Trash2 className="h-3.5 w-3.5" /></RowIconButton> : null}
+      {onEdit ? <RowIconButton label={t('common.actions.edit', 'Edit')} onClick={onEdit}><Edit className="h-3.5 w-3.5" /></RowIconButton> : null}
+      {onDelete ? <RowIconButton label={t('common.actions.delete', 'Delete')} onClick={onDelete} danger><Trash2 className="h-3.5 w-3.5" /></RowIconButton> : null}
     </div>
   );
 }
@@ -770,14 +772,16 @@ function OrganizationListItem({
   onEdit: () => void;
   onSelect: () => void;
 }) {
+  const { t } = useTranslation();
+
   return (
     <div className={`group flex items-center gap-2 rounded-md px-2 py-2 ${active ? 'bg-blue-50 dark:bg-blue-500/15' : 'hover:bg-slate-50 dark:hover:bg-white/5'}`}>
       <button type="button" onClick={onSelect} className="min-w-0 flex-1 text-left">
         <div className="truncate text-sm font-medium text-slate-900 dark:text-white">{item.name}</div>
         <div className="truncate text-xs text-slate-500 dark:text-slate-400">{item.code || item.organizationKind}</div>
       </button>
-      <RowIconButton label="Edit" onClick={onEdit}><Edit className="h-3.5 w-3.5" /></RowIconButton>
-      <RowIconButton label="Delete" onClick={onDelete} danger><Trash2 className="h-3.5 w-3.5" /></RowIconButton>
+      <RowIconButton label={t('common.actions.edit', 'Edit')} onClick={onEdit}><Edit className="h-3.5 w-3.5" /></RowIconButton>
+      <RowIconButton label={t('common.actions.delete', 'Delete')} onClick={onDelete} danger><Trash2 className="h-3.5 w-3.5" /></RowIconButton>
     </div>
   );
 }
@@ -795,14 +799,16 @@ function DepartmentListItem({
   onEdit: () => void;
   onSelect: () => void;
 }) {
+  const { t } = useTranslation();
+
   return (
     <div className={`group flex items-center gap-2 rounded-md px-2 py-2 ${active ? 'bg-blue-50 dark:bg-blue-500/15' : 'hover:bg-slate-50 dark:hover:bg-white/5'}`}>
       <button type="button" onClick={onSelect} className="min-w-0 flex-1 text-left">
         <div className="truncate text-sm font-medium text-slate-900 dark:text-white">{item.name}</div>
         <div className="truncate text-xs text-slate-500 dark:text-slate-400">{item.code || item.id}</div>
       </button>
-      <RowIconButton label="Edit" onClick={onEdit}><Edit className="h-3.5 w-3.5" /></RowIconButton>
-      <RowIconButton label="Delete" onClick={onDelete} danger><Trash2 className="h-3.5 w-3.5" /></RowIconButton>
+      <RowIconButton label={t('common.actions.edit', 'Edit')} onClick={onEdit}><Edit className="h-3.5 w-3.5" /></RowIconButton>
+      <RowIconButton label={t('common.actions.delete', 'Delete')} onClick={onDelete} danger><Trash2 className="h-3.5 w-3.5" /></RowIconButton>
     </div>
   );
 }

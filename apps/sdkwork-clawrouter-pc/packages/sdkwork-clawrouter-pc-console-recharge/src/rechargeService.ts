@@ -1,7 +1,6 @@
 import {
   createClientOperationToken,
   createIdempotencyParams,
-  getClawRouterAppSdkClient,
   isRecord,
   normalizeRechargeSettings,
   readApiRecord,
@@ -10,6 +9,7 @@ import {
   readString,
   type ApiRecord,
 } from 'sdkwork-clawrouter-pc-commons/runtime';
+import { getSdkworkCommerceService } from '@sdkwork/commerce-service';
 
 export interface RechargePackage {
   id: string;
@@ -144,44 +144,44 @@ export class RechargeService {
   }
 }
 
-type AppCommerce = ReturnType<typeof getClawRouterAppSdkClient>['commerce'];
+type AppCommerceService = ReturnType<typeof getSdkworkCommerceService>;
 
-export async function listCatalogCategories(params?: Parameters<AppCommerce['catalog']['categories']['list']>[0]) {
-  return getClawRouterAppSdkClient().commerce.catalog.categories.list(params);
+export async function listCatalogCategories(params?: Parameters<AppCommerceService['catalog']['categories']['list']>[0]) {
+  return getSdkworkCommerceService().catalog.categories.list(params);
 }
 
-export async function listCatalogProducts(params?: Parameters<AppCommerce['catalog']['products']['list']>[0]) {
-  return getClawRouterAppSdkClient().commerce.catalog.products.list(params);
+export async function listCatalogProducts(params?: Parameters<AppCommerceService['catalog']['products']['list']>[0]) {
+  return getSdkworkCommerceService().catalog.products.list(params);
 }
 
 export async function retrieveCatalogProduct(productId: string) {
-  return getClawRouterAppSdkClient().commerce.catalog.products.retrieve(productId);
+  return getSdkworkCommerceService().catalog.products.retrieve(productId);
 }
 
 export async function retrieveCatalogSku(skuId: string) {
-  return getClawRouterAppSdkClient().commerce.catalog.skus.retrieve(skuId);
+  return getSdkworkCommerceService().catalog.skus.retrieve(skuId);
 }
 
-export async function appRechargesPackagesList(params?: Parameters<AppCommerce['recharges']['packages']['list']>[0]) {
-  return getClawRouterAppSdkClient().commerce.recharges.packages.list(params);
+export async function appRechargesPackagesList(params?: Parameters<AppCommerceService['recharges']['packages']['list']>[0]) {
+  return getSdkworkCommerceService().recharges.packages.list(params);
 }
 
 export async function appRechargesSettingsRetrieve() {
-  return getClawRouterAppSdkClient().commerce.recharges.settings.retrieve();
+  return getSdkworkCommerceService().recharges.settings.retrieve();
 }
 
-export async function appRechargesOrdersCreate(body: Parameters<AppCommerce['recharges']['orders']['create']>[0]) {
-  return getClawRouterAppSdkClient().commerce.recharges.orders.create(
+export async function appRechargesOrdersCreate(body: Parameters<AppCommerceService['recharges']['orders']['create']>[0]) {
+  return getSdkworkCommerceService().recharges.orders.create(
     body,
     createIdempotencyParams('app-recharge-order-create'),
   );
 }
 
-type BillingHistorySdkParams = Parameters<AppCommerce['billing']['history']['list']>[0];
+type BillingHistorySdkParams = Parameters<AppCommerceService['billing']['history']['list']>[0];
 
 export async function appBillingHistoryList(params?: BillingHistorySdkParams & { type?: BillingHistoryType }) {
   const { type, ...rest } = params ?? {};
-  return getClawRouterAppSdkClient().commerce.billing.history.list({
+  return getSdkworkCommerceService().billing.history.list({
     ...rest,
     ...(type ? { type_: type } : {}),
   });

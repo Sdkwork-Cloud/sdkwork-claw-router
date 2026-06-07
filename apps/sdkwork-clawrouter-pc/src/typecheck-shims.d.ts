@@ -772,7 +772,245 @@ declare module '@sdkwork/generations-pc-workspace/generation-service' {
 }
 
 declare module '@sdkwork/generations-pc-workspace' {
+  export * from '@sdkwork/generations-pc-workspace/generation-asset-config';
   export * from '@sdkwork/generations-pc-workspace/generation-service';
+  export * from '@sdkwork/generations-pc-workspace/generation-history';
+}
+
+declare module '@sdkwork/generations-pc-workspace/generation-asset-config' {
+  export type SdkworkGenerationAssetModality = 'audio' | 'image' | 'music' | 'sfx' | 'video';
+  export type SdkworkGenerationAssetAspectRatio = '1:1' | '16:9' | '9:16';
+  export type SdkworkGenerationAssetQuality = 'high' | 'standard';
+  export type SdkworkGenerationModelBucket = 'llms' | 'images' | 'videos' | 'audios' | 'music' | 'sfx';
+
+  export interface SdkworkGenerationImageModeConfig {
+    aspectRatio: 'auto' | '1:1' | '16:9' | '21:9' | '2:3' | '3:2' | '3:4' | '4:3' | '9:16';
+    count: number;
+    quality: '1k' | '2k';
+  }
+
+  export interface SdkworkGenerationVideoModeConfig {
+    aspectRatio: SdkworkGenerationAssetAspectRatio;
+    count: number;
+    duration: number;
+    resolution: '4k' | '720p' | '1080p';
+    syncAudioVideo: boolean;
+  }
+
+  export interface SdkworkGenerationSpeechModeConfig {
+    responseFormat?: 'aac' | 'flac' | 'mp3' | 'opus' | 'pcm' | 'wav';
+    speed?: number;
+    voice?: string;
+  }
+
+  export interface SdkworkGenerationSfxModeConfig {
+    loop: boolean;
+    promptInfluence: number;
+    responseFormat?: 'mp3' | 'wav';
+  }
+
+  export interface SdkworkGenerationAssetConfig {
+    aspectRatio: SdkworkGenerationAssetAspectRatio;
+    durationSeconds: number;
+    imageCount: number;
+    imageMode?: SdkworkGenerationImageModeConfig;
+    quality: SdkworkGenerationAssetQuality;
+    sfxMode?: SdkworkGenerationSfxModeConfig;
+    speechMode?: SdkworkGenerationSpeechModeConfig;
+    videoMode?: SdkworkGenerationVideoModeConfig;
+  }
+
+  export interface SdkworkGenerationSerializedAssetConfig {
+    aspectRatio?: SdkworkGenerationAssetAspectRatio;
+    durationSeconds?: number;
+    imageCount?: number;
+    imageMode?: SdkworkGenerationImageModeConfig;
+    loop?: boolean;
+    promptInfluence?: number;
+    quality?: SdkworkGenerationAssetQuality;
+    responseFormat?: SdkworkGenerationSpeechModeConfig['responseFormat'] | SdkworkGenerationSfxModeConfig['responseFormat'];
+    resolution?: SdkworkGenerationVideoModeConfig['resolution'];
+    sfxMode?: SdkworkGenerationSfxModeConfig;
+    speechMode?: SdkworkGenerationSpeechModeConfig;
+    speed?: number;
+    syncAudioVideo?: boolean;
+    videoMode?: SdkworkGenerationVideoModeConfig;
+    voice?: string;
+  }
+
+  export interface SdkworkGenerationReferencePrice {
+    billingMeter?: string;
+    currency: string;
+    unitPrice: string;
+    usageMeter?: string;
+  }
+
+  export interface SdkworkGenerationPriceAvailability {
+    status: 'reference' | 'unavailable';
+    reason?: string | null;
+  }
+
+  export interface SdkworkGenerationPricedModel {
+    officialReferenceCurrency?: string | null;
+    officialReferencePrices: readonly SdkworkGenerationReferencePrice[];
+    officialReferenceUnitPrice?: string | null;
+    priceAvailability: SdkworkGenerationPriceAvailability;
+  }
+
+  export type SdkworkGenerationModelBuckets<TModel> = {
+    [Bucket in SdkworkGenerationModelBucket]: readonly TModel[];
+  };
+
+  export interface SdkworkGenerationCreditEstimate {
+    detail: string;
+    points: number | null;
+    reference: boolean;
+  }
+
+  export interface EstimateSdkworkGenerationCreditsInput<TModel extends SdkworkGenerationPricedModel> {
+    config: SdkworkGenerationAssetConfig;
+    modality: SdkworkGenerationAssetModality;
+    model: TModel | null | undefined;
+    pointsPerUsd?: number;
+    unavailableDetail?: string;
+  }
+
+  export const DEFAULT_SDKWORK_GENERATION_IMAGE_MODE_CONFIG: SdkworkGenerationImageModeConfig;
+  export const DEFAULT_SDKWORK_GENERATION_SFX_MODE_CONFIG: SdkworkGenerationSfxModeConfig;
+  export const DEFAULT_SDKWORK_GENERATION_SPEECH_MODE_CONFIG: SdkworkGenerationSpeechModeConfig;
+  export const DEFAULT_SDKWORK_GENERATION_VIDEO_MODE_CONFIG: SdkworkGenerationVideoModeConfig;
+  export function createDefaultSdkworkGenerationAssetConfig(
+    modality: SdkworkGenerationAssetModality,
+  ): SdkworkGenerationAssetConfig;
+  export function createSdkworkGenerationAssetConfigFromSerialized(
+    serialized: SdkworkGenerationSerializedAssetConfig | undefined,
+    modality: SdkworkGenerationAssetModality,
+  ): SdkworkGenerationAssetConfig;
+  export function estimateSdkworkGenerationCredits<TModel extends SdkworkGenerationPricedModel>(
+    input: EstimateSdkworkGenerationCreditsInput<TModel>,
+  ): SdkworkGenerationCreditEstimate;
+  export function findFirstSdkworkGenerationModelForModality<TModel>(
+    groups: readonly SdkworkGenerationModelBuckets<TModel>[],
+    modality: SdkworkGenerationAssetModality,
+  ): TModel | null;
+  export function findSdkworkGenerationModelById<TModel extends { id: string }>(
+    groups: readonly SdkworkGenerationModelBuckets<TModel>[],
+    modelId: string,
+  ): TModel | null;
+  export function getDefaultSdkworkGenerationDurationSeconds(
+    modality: SdkworkGenerationAssetModality,
+  ): number;
+  export function getSdkworkGenerationDurationOptions(
+    modality: SdkworkGenerationAssetModality,
+  ): number[];
+  export function getSdkworkGenerationModelBucket(
+    modality: SdkworkGenerationAssetModality,
+  ): Exclude<SdkworkGenerationModelBucket, 'llms'>;
+  export function reconcileSdkworkGenerationAssetConfig(
+    config: SdkworkGenerationAssetConfig,
+    modality: SdkworkGenerationAssetModality,
+  ): SdkworkGenerationAssetConfig;
+  export function serializeSdkworkGenerationAssetConfig(
+    config: SdkworkGenerationAssetConfig,
+    modality: SdkworkGenerationAssetModality,
+  ): SdkworkGenerationSerializedAssetConfig;
+  export function updateSdkworkGenerationImageModeConfig(
+    config: SdkworkGenerationAssetConfig,
+    imageMode: SdkworkGenerationImageModeConfig,
+  ): SdkworkGenerationAssetConfig;
+  export function updateSdkworkGenerationSpeechModeConfig(
+    config: SdkworkGenerationAssetConfig,
+    speechMode: SdkworkGenerationSpeechModeConfig,
+  ): SdkworkGenerationAssetConfig;
+  export function updateSdkworkGenerationSfxModeConfig(
+    config: SdkworkGenerationAssetConfig,
+    sfxMode: SdkworkGenerationSfxModeConfig,
+  ): SdkworkGenerationAssetConfig;
+  export function updateSdkworkGenerationVideoModeConfig(
+    config: SdkworkGenerationAssetConfig,
+    videoMode: SdkworkGenerationVideoModeConfig,
+  ): SdkworkGenerationAssetConfig;
+}
+
+declare module '@sdkwork/generations-pc-workspace/generation-history' {
+  import type { SdkworkMediaResource } from '@sdkwork/appbase-pc-react';
+  import type {
+    SdkworkGenerationAssetModality,
+    SdkworkGenerationSerializedAssetConfig,
+  } from '@sdkwork/generations-pc-workspace/generation-asset-config';
+
+  export type {
+    SdkworkGenerationAssetModality,
+    SdkworkGenerationSerializedAssetConfig,
+  } from '@sdkwork/generations-pc-workspace/generation-asset-config';
+
+  export type SdkworkGenerationHistoryType = 'text' | 'image' | 'images' | 'video' | 'music' | 'audio' | 'sfx';
+  export type SdkworkGenerationPreviewKind = 'audio' | 'image' | 'text' | 'video';
+  export type SdkworkGenerationMediaResource = SdkworkMediaResource;
+  export type SdkworkGenerationMedia = SdkworkGenerationMediaResource;
+
+  export interface SdkworkGenerationArtifact {
+    asset: SdkworkGenerationMediaResource;
+    modality: SdkworkGenerationAssetModality;
+  }
+
+  export interface SdkworkGenerationHistoryItem {
+    activeIndex?: number;
+    aspectRatio?: SdkworkGenerationSerializedAssetConfig['aspectRatio'];
+    createdAt?: string;
+    date: string;
+    durationSeconds?: number;
+    generationConfig?: SdkworkGenerationSerializedAssetConfig;
+    id: string;
+    asset?: SdkworkGenerationMediaResource;
+    images?: SdkworkGenerationMediaResource[];
+    modelCatalogKey?: string;
+    modelInfo?: string;
+    outputText?: string;
+    prompt: string;
+    status?: string;
+    type: SdkworkGenerationHistoryType;
+    updatedAt?: string;
+    videos?: SdkworkGenerationMediaResource[];
+  }
+
+  export function appendSdkworkGenerationArtifactToHistoryItem<TItem extends SdkworkGenerationHistoryItem>(
+    item: TItem,
+    artifact: SdkworkGenerationArtifact,
+    options?: { updatedAt?: string },
+  ): TItem;
+  export function createSdkworkGenerationPendingHistoryItem(input: {
+    createdAt?: string;
+    generationConfig?: SdkworkGenerationSerializedAssetConfig;
+    id: string;
+    prompt: string;
+    selectedModel?: string;
+    status?: string;
+    targetType?: SdkworkGenerationAssetModality;
+  }): SdkworkGenerationHistoryItem;
+  export function getSdkworkGenerationPreviewKind(historyType: SdkworkGenerationHistoryType): SdkworkGenerationPreviewKind;
+  export function isSdkworkGenerationImageHistoryType(historyType: SdkworkGenerationHistoryType): boolean;
+  export function mapSdkworkGenerationArtifactsToHistoryMedia(
+    artifacts: readonly SdkworkGenerationArtifact[],
+    targetType?: SdkworkGenerationAssetModality,
+  ): {
+    asset?: SdkworkGenerationMediaResource;
+    durationSeconds?: number;
+    images: SdkworkGenerationMediaResource[];
+    videos: SdkworkGenerationMediaResource[];
+  };
+  export function mapSdkworkGenerationHistoryTypeToModality(
+    historyType: SdkworkGenerationHistoryType,
+  ): SdkworkGenerationAssetModality | undefined;
+  export function mapSdkworkGenerationModalityToHistoryType(
+    modality: SdkworkGenerationAssetModality | undefined,
+  ): SdkworkGenerationHistoryType;
+  export function normalizeSdkworkGenerationHistoryType(value: unknown): SdkworkGenerationHistoryType;
+  export function readSdkworkGenerationMediaThumb(media: SdkworkGenerationMedia | undefined): string | undefined;
+  export function readSdkworkGenerationMediaUrl(media: SdkworkGenerationMedia | undefined): string | undefined;
+  export function restoreSdkworkGenerationSerializedConfigFromHistoryItem(
+    item: SdkworkGenerationHistoryItem,
+  ): SdkworkGenerationSerializedAssetConfig | undefined;
 }
 
 declare module 'sdkwork-generations-app-sdk-generated-typescript' {

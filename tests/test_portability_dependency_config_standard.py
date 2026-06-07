@@ -7,8 +7,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 PORTAL_ROOT = ROOT / "apps" / "sdkwork-clawrouter-pc"
 
+RETIRED_DEPENDENCY_ROOT = "/".join([".sdkwork", "dependencies"])
 APPBASE_DEPENDENCY_ID = "sdkwork-" + "appbase"
-APPBASE_MATERIALIZED_ROOT = f".sdkwork/dependencies/{APPBASE_DEPENDENCY_ID}"
 WORKFLOW_DEPENDENCIES = {
     "sdkwork-appbase",
     "sdkwork-core",
@@ -30,7 +30,6 @@ PORTAL_DEPENDENCIES = {
     "sdkwork-image",
 }
 
-OLD_SIBLING_WORKSPACE_PREFIX = "../" * 3 + "sdkwork-"
 OLD_VITE_SIBLING_ROOT_IDENTIFIER = "local" + "SiblingRoot"
 
 WORKFLOW_REF_INPUTS = {
@@ -44,33 +43,33 @@ WORKFLOW_REF_INPUTS = {
     "sdkwork-sdk-generator": "SDKWORK_SDK_GENERATOR_REF",
 }
 
-RELEASE_WORKSPACE_PACKAGES = {
+NATIVE_WORKSPACE_PACKAGES = {
     "sdkwork-appbase": [
-        "../../.sdkwork/dependencies/sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/*-typescript/generated/server-openapi",
-        "../../.sdkwork/dependencies/sdkwork-appbase/sdks/sdkwork-appbase-backend-sdk/*-typescript/generated/server-openapi",
-        "../../.sdkwork/dependencies/sdkwork-appbase/packages/pc-react/foundation/sdkwork-appbase-pc-react",
-        "../../.sdkwork/dependencies/sdkwork-appbase/packages/common/iam/*",
+        "../../../sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/*-typescript/generated/server-openapi",
+        "../../../sdkwork-appbase/sdks/sdkwork-appbase-backend-sdk/*-typescript/generated/server-openapi",
+        "../../../sdkwork-appbase/packages/pc-react/foundation/sdkwork-appbase-pc-react",
+        "../../../sdkwork-appbase/packages/common/iam/*",
     ],
     "sdkwork-core": [
-        "../../.sdkwork/dependencies/sdkwork-core/sdkwork-core-pc-react",
+        "../../../sdkwork-core/sdkwork-core-pc-react",
     ],
     "sdkwork-ui": [
-        "../../.sdkwork/dependencies/sdkwork-ui/sdkwork-ui-pc-react",
+        "../../../sdkwork-ui/sdkwork-ui-pc-react",
     ],
     "sdkwork-drive": [
-        "../../.sdkwork/dependencies/sdkwork-drive/sdks/sdkwork-drive-app-sdk/sdkwork-drive-app-sdk-typescript",
+        "../../../sdkwork-drive/sdks/sdkwork-drive-app-sdk/sdkwork-drive-app-sdk-typescript",
     ],
     "sdkwork-commerce": [
-        "../../.sdkwork/dependencies/sdkwork-commerce/packages/common/commerce/*",
-        "../../.sdkwork/dependencies/sdkwork-commerce/apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-admin-product",
+        "../../../sdkwork-commerce/packages/common/commerce/*",
+        "../../../sdkwork-commerce/apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-admin-product",
     ],
     "sdkwork-generations": [
-        "../../.sdkwork/dependencies/sdkwork-generations/apps/sdkwork-generations-pc/packages/sdkwork-generations-pc-workspace",
-        "../../.sdkwork/dependencies/sdkwork-generations/sdks/sdkwork-generations-app-sdk/sdkwork-generations-app-sdk-typescript/generated/server-openapi",
+        "../../../sdkwork-generations/apps/sdkwork-generations-pc/packages/sdkwork-generations-pc-workspace",
+        "../../../sdkwork-generations/sdks/sdkwork-generations-app-sdk/sdkwork-generations-app-sdk-typescript/generated/server-openapi",
     ],
     "sdkwork-image": [
-        "../../.sdkwork/dependencies/sdkwork-image/packages/common/image/sdkwork-image-contracts",
-        "../../.sdkwork/dependencies/sdkwork-image/packages/pc-react/content/sdkwork-generation-pc-react",
+        "../../../sdkwork-image/packages/common/image/sdkwork-image-contracts",
+        "../../../sdkwork-image/packages/pc-react/content/sdkwork-generation-pc-react",
     ],
 }
 
@@ -109,7 +108,7 @@ class PortabilityDependencyConfigStandardTest(unittest.TestCase):
             self.assertNotIn(
                 "path",
                 dependency,
-                "release dependencies should use the SDKWork framework default .sdkwork/dependencies/<id> checkout",
+                "release dependency checkout paths are workflow implementation details; source dependency paths belong to native workspace files",
             )
 
         install_steps = workflow["lifecycle"]["install"]
@@ -126,19 +125,19 @@ class PortabilityDependencyConfigStandardTest(unittest.TestCase):
             self.assertRegex(workflow, rf"\b{workflow_input}\b", dependency_id)
             self.assertIn(f'"{ref_input}":', workflow, dependency_id)
 
-    def test_portal_workspace_uses_materialized_dependency_roots_without_sibling_paths(self) -> None:
+    def test_portal_workspace_uses_native_sibling_dependency_paths(self) -> None:
         workspace = read_text(PORTAL_ROOT / "pnpm-workspace.yaml")
         package_json = read_json(PORTAL_ROOT / "package.json")
 
-        for dependency_id, release_patterns in RELEASE_WORKSPACE_PACKAGES.items():
+        for dependency_id, release_patterns in NATIVE_WORKSPACE_PACKAGES.items():
             for release_pattern in release_patterns:
                 self.assertIn(release_pattern, workspace, dependency_id)
                 self.assertIn(release_pattern, package_json["workspaces"], dependency_id)
-        self.assertNotIn(OLD_SIBLING_WORKSPACE_PREFIX, workspace)
+        self.assertNotIn(RETIRED_DEPENDENCY_ROOT, workspace)
         for workspace_path in package_json["workspaces"]:
-            self.assertNotRegex(workspace_path, r"^\.\./\.\./\.\./sdkwork-")
+            self.assertNotIn(RETIRED_DEPENDENCY_ROOT, workspace_path)
 
-    def test_portal_typescript_and_vite_use_materialized_dependency_roots(self) -> None:
+    def test_portal_typescript_and_vite_use_native_sibling_dependency_roots(self) -> None:
         vite_config = read_text(PORTAL_ROOT / "vite.config.ts")
         tsconfig = read_text(PORTAL_ROOT / "tsconfig.json")
         typecheck_config = read_text(PORTAL_ROOT / "tsconfig.typecheck.json")
@@ -147,14 +146,14 @@ class PortabilityDependencyConfigStandardTest(unittest.TestCase):
         self.assertIn("resolvePortalWorkspaceDependencyRoot", vite_config)
         self.assertNotIn(OLD_VITE_SIBLING_ROOT_IDENTIFIER, vite_config)
         self.assertNotIn(f"fs.existsSync({OLD_VITE_SIBLING_ROOT_IDENTIFIER})", vite_config)
-        self.assertIn(".sdkwork/dependencies", vite_config)
-        self.assertIn("../../.sdkwork/dependencies", tsconfig)
+        self.assertIn("'../../..'", vite_config)
+        self.assertIn("../../../sdkwork-appbase", tsconfig)
 
         for dependency_id in PORTAL_DEPENDENCIES:
-            self.assertIn(f"../../.sdkwork/dependencies/{dependency_id}", tsconfig)
-        self.assertIn("../../.sdkwork/dependencies/sdkwork-commerce", typecheck_config)
+            self.assertIn(f"../../../{dependency_id}", tsconfig)
+        self.assertIn("../../sdkwork-commerce", typecheck_config)
         for config_text in [tsconfig, typecheck_config, package_tsconfig]:
-            self.assertNotIn(OLD_SIBLING_WORKSPACE_PREFIX, config_text)
+            self.assertNotIn(RETIRED_DEPENDENCY_ROOT, config_text)
 
     def test_active_docs_and_scripts_do_not_use_machine_specific_example_paths(self) -> None:
         checked_paths = [
@@ -216,7 +215,7 @@ class PortabilityDependencyConfigStandardTest(unittest.TestCase):
 
         self.assertEqual([], violations)
 
-    def test_active_sources_use_materialized_appbase_dependency_root(self) -> None:
+    def test_active_sources_use_native_appbase_dependency_paths(self) -> None:
         checked_roots = [
             ROOT / "README.md",
             ROOT / ".github",
@@ -253,23 +252,19 @@ class PortabilityDependencyConfigStandardTest(unittest.TestCase):
             ".yaml",
             ".yml",
         }
-        bare_appbase_path = re.compile(
-            rf"(?<!{re.escape('.sdkwork/dependencies/')})"
-            rf"{re.escape(APPBASE_DEPENDENCY_ID)}/(?:packages|specs|sdks)"
-            rf"|(?:^|[\"'`\s])(?:\.\./)+{re.escape(APPBASE_DEPENDENCY_ID)}(?:/|\\)"
-        )
+        forbidden_appbase_path = re.compile(rf"{re.escape(RETIRED_DEPENDENCY_ROOT)}/{re.escape(APPBASE_DEPENDENCY_ID)}")
         violations = []
 
         for path in self._iter_source_controlled_files(checked_roots, checked_suffixes, ignored_directories):
             relative_path = path.relative_to(ROOT).as_posix()
             text = path.read_text(encoding="utf-8", errors="ignore")
             for line_number, line in enumerate(text.splitlines(), start=1):
-                if bare_appbase_path.search(line):
+                if forbidden_appbase_path.search(line):
                     violations.append(f"{relative_path}:{line_number}: {line.strip()}")
 
         self.assertEqual([], violations)
 
-    def test_active_sdk_generator_sources_use_materialized_dependency_root(self) -> None:
+    def test_active_sdk_generator_sources_use_native_dependency_root(self) -> None:
         sdk_generator_dependency_id = "sdkwork-" + "sdk-generator"
         old_sdk_generator_path = f"sdk/{sdk_generator_dependency_id}"
         checked_paths = [
@@ -282,8 +277,9 @@ class PortabilityDependencyConfigStandardTest(unittest.TestCase):
             f"../..', 'sdk', '{sdk_generator_dependency_id}",
             f'"{old_sdk_generator_path}"',
             f'ROOT.parents[1] / "sdk" / "{sdk_generator_dependency_id}"',
+            f"{RETIRED_DEPENDENCY_ROOT}/{sdk_generator_dependency_id}",
         ]
-        required_token = f".sdkwork/dependencies/{sdk_generator_dependency_id}"
+        required_token = f"../{sdk_generator_dependency_id}"
         violations = []
 
         for path in checked_paths:
@@ -295,7 +291,7 @@ class PortabilityDependencyConfigStandardTest(unittest.TestCase):
 
         generator_script = read_text(ROOT / "tools" / "clawrouter_strict_sdk_generate.mjs")
         standardizer = read_text(ROOT / "tools" / "clawrouter_sdk_runtime_standardizer.py")
-        self.assertIn(required_token, generator_script)
+        self.assertIn(f"../{sdk_generator_dependency_id}/tmp-js", generator_script)
         self.assertIn(required_token, standardizer)
         self.assertEqual([], violations)
 
@@ -315,8 +311,6 @@ class PortabilityDependencyConfigStandardTest(unittest.TestCase):
             stack = [root]
             while stack:
                 current = stack.pop()
-                if current == ROOT / ".sdkwork" / "dependencies":
-                    continue
                 if current.is_dir():
                     if current.name in ignored_directories:
                         continue

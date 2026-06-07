@@ -320,7 +320,7 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
 
         self.assertIn('"@sdkwork/generation-pc-react": "workspace:*"', playground_package_source)
         self.assertIn(
-            "../../.sdkwork/dependencies/sdkwork-image/packages/pc-react/content/sdkwork-generation-pc-react",
+            "../../sdkwork-image/packages/pc-react/content/sdkwork-generation-pc-react",
             portal_workspace_source,
         )
         self.assertIn('"./react"', appbase_generation_package_source)
@@ -346,9 +346,20 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("runs.length === 0 && workspace.runs.length > 0", service_source)
         self.assertNotIn("createGenerationWorkspaceData", service_source)
 
-    def test_playground_generation_appbase_capability_is_declared_in_integration_manifest(self) -> None:
+    def test_playground_generation_dependency_is_not_appbase_integration_capability(self) -> None:
+        appbase_root = ROOT / ".sdkwork" / "dependencies" / "sdkwork-appbase"
+        image_generation_package = (
+            ROOT
+            / ".sdkwork"
+            / "dependencies"
+            / "sdkwork-image"
+            / "packages"
+            / "pc-react"
+            / "content"
+            / "sdkwork-generation-pc-react"
+        )
         appbase_catalog_source = (
-            ROOT / "sdkwork-appbase" / "specs" / "appbase-capabilities.yaml"
+            appbase_root / "specs" / "appbase-capabilities.yaml"
         ).read_text(encoding="utf-8")
         integration_source = (ROOT / "specs" / "appbase-integration.yaml").read_text(encoding="utf-8")
         portal_package_source = (
@@ -363,13 +374,17 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
             / "package.json"
         ).read_text(encoding="utf-8")
 
-        self.assertIn("id: generation", appbase_catalog_source)
-        self.assertIn("path: packages/pc-react/content/sdkwork-generation-pc-react", appbase_catalog_source)
-        self.assertIn("capability: generation", integration_source)
-        self.assertIn('- "@sdkwork/generation-pc-react"', integration_source)
-        self.assertIn("apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/playgroundService.ts", integration_source)
-        self.assertIn("apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts", integration_source)
-        self.assertIn("tests.test_playground_runtime_standard", integration_source)
+        self.assertFalse(
+            (appbase_root / "packages" / "pc-react" / "content" / "sdkwork-generation-pc-react").exists()
+        )
+        self.assertTrue(image_generation_package.exists())
+        self.assertNotIn("id: generation", appbase_catalog_source)
+        self.assertIn("sdkwork-image/packages/pc-react/content/sdkwork-generation-pc-react", image_generation_package.as_posix())
+        self.assertNotIn("capability: generation", integration_source)
+        self.assertNotIn('- "@sdkwork/generation-pc-react"', integration_source)
+        self.assertNotIn("apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/playgroundService.ts", integration_source)
+        self.assertNotIn("apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts", integration_source)
+        self.assertNotIn("tests.test_playground_runtime_standard", integration_source)
         self.assertIn('"@sdkwork/generation-pc-react": "workspace:*"', portal_package_source)
         self.assertIn('"@sdkwork/generation-pc-react": "workspace:*"', playground_package_source)
 

@@ -1,5 +1,4 @@
 import {
-  getClawRouterAppSdkClient,
   createIdempotencyParams,
   ensureSdkworkApiSuccess,
   isRecord,
@@ -10,6 +9,7 @@ import {
   readString,
   type ApiRecord,
 } from 'sdkwork-clawrouter-pc-commons/runtime';
+import { getSdkworkCommerceService } from '@sdkwork/commerce-service';
 
 export interface MembershipSummary {
   membershipNo: string;
@@ -220,92 +220,92 @@ export class MembershipService {
   }
 }
 
-type AppCommerce = ReturnType<typeof getClawRouterAppSdkClient>['commerce'];
+type AppCommerceService = ReturnType<typeof getSdkworkCommerceService>;
 
 export async function appMembershipsCurrentRetrieve() {
-  return getClawRouterAppSdkClient().commerce.memberships.current.retrieve();
+  return getSdkworkCommerceService().memberships.current.retrieve();
 }
 
 export async function appMembershipsCurrentStatusRetrieve() {
-  return getClawRouterAppSdkClient().commerce.memberships.current.status.retrieve();
+  return getSdkworkCommerceService().memberships.current.status.retrieve();
 }
 
 export async function appMembershipsPlansList() {
-  return getClawRouterAppSdkClient().commerce.memberships.plans.list();
+  return getSdkworkCommerceService().memberships.plans.list();
 }
 
-export async function appMembershipsBenefitsList(params?: Parameters<AppCommerce['memberships']['benefits']['list']>[0]) {
-  return getClawRouterAppSdkClient().commerce.memberships.benefits.list(params);
+export async function appMembershipsBenefitsList(params?: Parameters<AppCommerceService['memberships']['benefits']['list']>[0]) {
+  return getSdkworkCommerceService().memberships.benefits.list(params);
 }
 
-export async function appMembershipsPackageGroupsList(params?: Parameters<AppCommerce['memberships']['packageGroups']['list']>[0]) {
-  return getClawRouterAppSdkClient().commerce.memberships.packageGroups.list(params);
+export async function appMembershipsPackageGroupsList(params?: Parameters<AppCommerceService['memberships']['packageGroups']['list']>[0]) {
+  return getSdkworkCommerceService().memberships.packageGroups.list(params);
 }
 
 export async function appMembershipsPackageGroupsRetrieve(packageGroupId: string) {
-  return getClawRouterAppSdkClient().commerce.memberships.packageGroups.retrieve(packageGroupId);
+  return getSdkworkCommerceService().memberships.packageGroups.retrieve(packageGroupId);
 }
 
 export async function appMembershipsPackageGroupsPackagesList(
   packageGroupId: string,
-  params?: Parameters<AppCommerce['memberships']['packageGroups']['packages']['list']>[1],
+  params?: Parameters<AppCommerceService['memberships']['packageGroups']['packages']['list']>[1],
 ) {
-  return getClawRouterAppSdkClient().commerce.memberships.packageGroups.packages.list(packageGroupId, params);
+  return getSdkworkCommerceService().memberships.packageGroups.packages.list(packageGroupId, params);
 }
 
-export async function appMembershipsPackagesList(params?: Parameters<AppCommerce['memberships']['packages']['list']>[0]) {
-  return getClawRouterAppSdkClient().commerce.memberships.packages.list(params);
+export async function appMembershipsPackagesList(params?: Parameters<AppCommerceService['memberships']['packages']['list']>[0]) {
+  return getSdkworkCommerceService().memberships.packages.list(params);
 }
 
 export async function appMembershipsPackagesRetrieve(packageId: string) {
-  return getClawRouterAppSdkClient().commerce.memberships.packages.retrieve(packageId);
+  return getSdkworkCommerceService().memberships.packages.retrieve(packageId);
 }
 
-export async function appMembershipsPurchasesCreate(body: Parameters<AppCommerce['memberships']['purchases']['create']>[0]) {
-  return getClawRouterAppSdkClient().commerce.memberships.purchases.create(
+export async function appMembershipsPurchasesCreate(body: Parameters<AppCommerceService['memberships']['purchases']['create']>[0]) {
+  return getSdkworkCommerceService().memberships.purchases.create(
     body,
     createIdempotencyParams('app-membership-purchase-create'),
   );
 }
 
-export async function appMembershipsPurchasesRenew(body: Parameters<AppCommerce['memberships']['purchases']['renew']>[0]) {
-  return getClawRouterAppSdkClient().commerce.memberships.purchases.renew(
+export async function appMembershipsPurchasesRenew(body: Parameters<AppCommerceService['memberships']['purchases']['renew']>[0]) {
+  return getSdkworkCommerceService().memberships.purchases.renew(
     body,
     createIdempotencyParams('app-membership-purchase-renew'),
   );
 }
 
-export async function appMembershipsPurchasesUpgrade(body: Parameters<AppCommerce['memberships']['purchases']['upgrade']>[0]) {
-  return getClawRouterAppSdkClient().commerce.memberships.purchases.upgrade(
+export async function appMembershipsPurchasesUpgrade(body: Parameters<AppCommerceService['memberships']['purchases']['upgrade']>[0]) {
+  return getSdkworkCommerceService().memberships.purchases.upgrade(
     body,
     createIdempotencyParams('app-membership-purchase-upgrade'),
   );
 }
 
 export async function appMembershipsPointsBalanceRetrieve() {
-  return getClawRouterAppSdkClient().commerce.memberships.points.balance.retrieve();
+  return getSdkworkCommerceService().memberships.points.balance.retrieve();
 }
 
-export async function appMembershipsPointsHistoryList(params?: Parameters<AppCommerce['memberships']['points']['history']['list']>[0]) {
-  return getClawRouterAppSdkClient().commerce.memberships.points.history.list(params);
+export async function appMembershipsPointsHistoryList(params?: Parameters<AppCommerceService['memberships']['points']['history']['list']>[0]) {
+  return getSdkworkCommerceService().memberships.points.history.list(params);
 }
 
 export async function appMembershipsPointsDailyRewardsCreate() {
-  return getClawRouterAppSdkClient().commerce.memberships.points.dailyRewards.create(
+  return getSdkworkCommerceService().memberships.points.dailyRewards.create(
     undefined,
   );
 }
 
 export async function appMembershipsPointsDailyRewardsStatusRetrieve() {
-  return getClawRouterAppSdkClient().commerce.memberships.points.dailyRewards.status.retrieve();
+  return getSdkworkCommerceService().memberships.points.dailyRewards.status.retrieve();
 }
 
 export async function appMembershipsPrivilegesUsageRetrieve() {
-  return getClawRouterAppSdkClient().commerce.memberships.privileges.usage.retrieve();
+  return getSdkworkCommerceService().memberships.privileges.usage.retrieve();
 }
 
 export async function appMembershipsPrivilegesSpeedUpsCreate() {
-  return getClawRouterAppSdkClient().commerce.memberships.privileges.speedUps.create(
+  return getSdkworkCommerceService().memberships.privileges.speedUps.create(
     undefined,
   );
 }
@@ -708,7 +708,7 @@ function isMembershipPrivilegeUsageItem(value: MembershipPrivilegeUsageItem | nu
 
 async function createMembershipPackageAction(
   packageId: string,
-  action: (body: Parameters<AppCommerce['memberships']['purchases']['create']>[0]) => Promise<unknown>,
+  action: (body: Parameters<AppCommerceService['memberships']['purchases']['create']>[0]) => Promise<unknown>,
 ): Promise<MembershipActionResult> {
   const result = await action({
     packageId: String(requiredPositiveIntegerId(packageId, 'packageId')),

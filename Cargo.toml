@@ -83,3 +83,39 @@ tower = { version = "0.5", features = ["util"] }
 tower-http = { version = "0.6", features = ["cors", "trace"] }
 tracing = "0.1"
 tracing-subscriber = { version = "0.3", features = ["env-filter", "fmt", "json"] }
+
+# SDKWork workspace members - declared once at workspace root
+sdkwork-claw-contract = { path = "crates/sdkwork-claw-contract" }
+sdkwork-claw-config = { path = "crates/sdkwork-claw-config" }
+sdkwork-claw-core = { path = "crates/sdkwork-claw-core" }
+sdkwork-claw-paas-api = { path = "crates/sdkwork-claw-paas-api" }
+sdkwork-claw-security = { path = "crates/sdkwork-claw-security" }
+sdkwork-claw-http = { path = "crates/sdkwork-claw-http" }
+sdkwork-claw-observability = { path = "crates/sdkwork-claw-observability" }
+sdkwork-claw-product-test-support = { path = "crates/sdkwork-claw-product-test-support" }
+sdkwork-claw-test-support = { path = "crates/sdkwork-claw-test-support" }
+sdkwork-claw-product = { path = "services/sdkwork-claw-product" }
+sdkwork-claw-app-api = { path = "services/sdkwork-claw-app-api" }
+sdkwork-claw-admin-api = { path = "services/sdkwork-claw-admin-api" }
+sdkwork-claw-installer = { path = "services/sdkwork-claw-installer" }
+sdkwork-claw-gateway = { path = "services/sdkwork-claw-gateway" }
+sdkwork-claw-provider-adapter-contract = { path = "crates/sdkwork-claw-provider-adapter-contract" }
+sdkwork-claw-provider-adapter-core = { path = "crates/sdkwork-claw-provider-adapter-core" }
+sdkwork-claw-provider-adapter-http = { path = "crates/sdkwork-claw-provider-adapter-http" }
+sdkwork-claw-provider-adapter-registry = { path = "crates/sdkwork-claw-provider-adapter-registry" }
+sdkwork-claw-provider-adapter = { path = "services/sdkwork-claw-provider-adapter" }
+sdkwork-provider-adapter-alicloud = { path = "crates/provider-adapters/alicloud" }
+sdkwork-provider-adapter-tencent-cloud = { path = "crates/provider-adapters/tencent-cloud" }
+sdkwork-models = { path = "data/sdkwork-models/sdkwork-models-rust" }
+sdkwork_id = { path = "../sdkwork-appbase/packages/native-rust/foundation/sdkwork-id-rust" }
+sdkwork_iam_core = { path = "../sdkwork-appbase/packages/native-rust/iam/sdkwork-iam-core-rust" }
+sdkwork_iam_storage_sqlx = { path = "../sdkwork-appbase/packages/native-rust/iam/sdkwork-iam-storage-sqlx-rust" }
+sdkwork_commerce_core = { path = "../sdkwork-commerce/crates/sdkwork-commerce-core-rust" }
+sdkwork_commerce_storage_sqlx = { path = "../sdkwork-commerce/crates/sdkwork-commerce-storage-sqlx-rust" }
+sdkwork_commerce_bootstrap = { path = "../sdkwork-commerce/crates/sdkwork-commerce-bootstrap-rust" }
+sdkwork_commerce_membership_sqlx = { path = "../sdkwork-commerce/crates/sdkwork-commerce-membership-sqlx-rust" }
+sdkwork_commerce_payment = { path = "../sdkwork-commerce/crates/sdkwork-commerce-payment-rust" }
+sdkwork_commerce_invoice = { path = "../sdkwork-commerce/crates/sdkwork-commerce-invoice-rust" }
+sdkwork_commerce_account = { path = "../sdkwork-commerce/crates/sdkwork-commerce-account-rust" }
+sdkwork_commerce_http = { path = "../sdkwork-commerce/crates/sdkwork-commerce-http-rust" }
+sdkwork-sdk-generator-client = { path = "../sdkwork-sdk-generator/rust" }

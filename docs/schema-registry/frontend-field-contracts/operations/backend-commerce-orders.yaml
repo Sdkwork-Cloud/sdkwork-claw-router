@@ -3,14 +3,15 @@ frontend_operations:
 - route: /admin/orders
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
   operation: backendOrdersList
-  operation_id: orders.list
+  operation_id: orders.management.list
   kind: read
   api_surface: backend
+  openapi_exposed: false
   api_method: GET
-  api_path: /backend/v3/api/orders
+  api_path: /backend/v3/api/orders/management
   sdk_domain: commerce
-  summary: Orders List
-  description: Standard appbase commerce API for orders.list; no legacy billing compatibility route is exposed.
+  summary: Orders Management List
+  description: Standard appbase commerce API for orders.management.list; no legacy billing compatibility route is exposed.
   read_sources:
   - commerce_order
   - commerce_order_item
@@ -38,6 +39,18 @@ frontend_operations:
     schema:
       type: string
       maxLength: 32
+  - name: cursor
+    schema:
+      type: string
+      maxLength: 256
+  - name: sort
+    schema:
+      type: string
+      maxLength: 128
+  - name: q
+    schema:
+      type: string
+      maxLength: 256
   response_schema: &id001
     name: CommerceStandardCollectionResponse
     type: object
@@ -88,14 +101,15 @@ frontend_operations:
 - route: /admin/orders
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
   operation: backendOrdersRetrieve
-  operation_id: orders.retrieve
+  operation_id: orders.management.retrieve
   kind: read
   api_surface: backend
+  openapi_exposed: false
   api_method: GET
-  api_path: /backend/v3/api/orders/{orderId}
+  api_path: /backend/v3/api/orders/management/{orderId}
   sdk_domain: commerce
-  summary: Orders Retrieve
-  description: Standard appbase commerce API for orders.retrieve; no legacy billing compatibility route is exposed.
+  summary: Orders Management Retrieve
+  description: Standard appbase commerce API for orders.management.retrieve; no legacy billing compatibility route is exposed.
   read_sources:
   - commerce_order
   - commerce_order_item
@@ -139,10 +153,95 @@ frontend_operations:
             maxLength: 64
 - route: /admin/orders
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
+  operation: backendOrdersManagementCancel
+  operation_id: orders.management.cancel
+  kind: action
+  api_surface: backend
+  openapi_exposed: false
+  api_method: POST
+  api_path: /backend/v3/api/orders/management/{orderId}/cancel
+  sdk_domain: commerce
+  summary: Orders Management Cancel
+  description: Cancels an unpaid pending order through the Commerce backend management API.
+  read_sources:
+  - commerce_order
+  - commerce_order_item
+  - commerce_payment_intent
+  - commerce_payment_attempt
+  idempotency_required: true
+  write_tables:
+  - commerce_order
+  - commerce_order_cancellation
+  - commerce_order_event
+  - ops_audit_log
+  request_schema: &commerceOperationCommand
+    name: CommerceOperationCommand
+    type: object
+    additionalProperties: true
+    properties:
+      reason:
+        type: string
+        nullable: true
+        maxLength: 256
+      source:
+        type: string
+        nullable: true
+        maxLength: 64
+      note:
+        type: string
+        nullable: true
+        maxLength: 1024
+  response_schema: &commerceOperationResponse
+    name: CommerceOperationResponse
+    type: object
+    additionalProperties: true
+    properties:
+      id:
+        type: string
+        nullable: true
+        maxLength: 128
+      status:
+        type: string
+        nullable: true
+        maxLength: 64
+      success:
+        type: boolean
+        nullable: true
+      message:
+        type: string
+        nullable: true
+        maxLength: 1024
+- route: /admin/orders
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
+  operation: backendOrdersManagementClose
+  operation_id: orders.management.close
+  kind: action
+  api_surface: backend
+  openapi_exposed: false
+  api_method: POST
+  api_path: /backend/v3/api/orders/management/{orderId}/close
+  sdk_domain: commerce
+  summary: Orders Management Close
+  description: Closes an open unpaid order through the Commerce backend management API.
+  read_sources:
+  - commerce_order
+  - commerce_order_item
+  - commerce_payment_intent
+  - commerce_payment_attempt
+  idempotency_required: true
+  write_tables:
+  - commerce_order
+  - commerce_order_event
+  - ops_audit_log
+  request_schema: *commerceOperationCommand
+  response_schema: *commerceOperationResponse
+- route: /admin/orders
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
   operation: backendOrdersEventsList
   operation_id: orders.events.list
   kind: read
   api_surface: backend
+  openapi_exposed: false
   api_method: GET
   api_path: /backend/v3/api/orders/{orderId}/events
   sdk_domain: commerce

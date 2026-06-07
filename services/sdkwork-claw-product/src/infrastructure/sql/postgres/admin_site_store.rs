@@ -4,6 +4,7 @@ use crate::domain::{DomainError, DomainResult};
 use crate::infrastructure::sql::sql_admin_product_center::{
     media_resource_object_blob_id, media_resource_stable_id,
 };
+use crate::infrastructure::sql::runtime_id::next_claw_runtime_id;
 use crate::infrastructure::sql::sql_admin_site::{
     default_site_service_code, health_status_label, site_environment_code, site_environment_label,
     site_status_code, site_status_label,
@@ -111,15 +112,16 @@ async fn create_site(
     let logo_object_blob_id = logo.and_then(media_resource_object_blob_id);
     let logo_resource_snapshot = logo.map(serde_json::Value::to_string);
     let metadata = site_metadata_json(&command.domains, &command.vendor_codes)?;
-    let site_id: i64 = sqlx::query_scalar(
+    let site_id = next_claw_runtime_id("ai_site")?;
+    let site_service_id = next_claw_runtime_id("ai_site_service")?;
+    sqlx::query(
         r#"
         INSERT INTO ai_site (
             uuid, tenant_id, organization_id, status, site_code, site_name, display_name,
             description, base_url, website_url, docs_url, logo_media_resource_id,
             logo_object_blob_id, logo_resource_snapshot, metadata, site_type, owner_kind,
-            region_code, environment, health_status
-        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14::jsonb, $15::jsonb, $16, $17, $18, $19, 1)
-        RETURNING id
+            region_code, environment, health_status, id
+        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14::jsonb, $15::jsonb, $16, $17, $18, $19, 1, $20)
         "#,
     )
     .bind(&command.site_uuid)
@@ -141,7 +143,8 @@ async fn create_site(
     .bind(&command.owner_kind)
     .bind(&command.region_code)
     .bind(environment)
-    .fetch_one(&mut *tx)
+    .bind(site_id)
+    .execute(&mut *tx)
     .await
     .map_err(|error| conflict_or_store_error("failed to create site", error))?;
     sqlx::query(
@@ -149,8 +152,8 @@ async fn create_site(
         INSERT INTO ai_site_service (
             uuid, tenant_id, organization_id, status, site_id, site_code, service_code, service_name,
             service_type, protocol_code, base_url, credential_ref, masked_label, region_code,
-            environment, health_status
-        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, 'ai_model_relay', 'openai_compatible', $9, $10, $11, $12, $13, 1)
+            environment, health_status, id
+        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, 'ai_model_relay', 'openai_compatible', $9, $10, $11, $12, $13, 1, $14)
         "#,
     )
     .bind(&command.service_uuid)
@@ -166,6 +169,7 @@ async fn create_site(
     .bind(&command.masked_label)
     .bind(&command.region_code)
     .bind(environment)
+    .bind(site_service_id)
     .execute(&mut *tx)
     .await
     .map_err(|error| conflict_or_store_error("failed to create site service", error))?;
@@ -631,14 +635,15 @@ async fn insert_audit(
     target_id: i64,
     requested_at: &str,
 ) -> DomainResult<()> {
+    let id = next_claw_runtime_id("ops_audit_log")?;
     let metadata = serde_json::json!({ "requestedAt": requested_at }).to_string();
     let change_summary = serde_json::json!({ "action": action, "targetId": target_id }).to_string();
     sqlx::query(
         r#"
         INSERT INTO ops_audit_log
-            (uuid, tenant_id, organization_id, request_id, operator_id, operator_type, action, target_type, target_id, created_at, metadata, change_summary)
+            (uuid, tenant_id, organization_id, request_id, operator_id, operator_type, action, target_type, target_id, created_at, metadata, change_summary, id)
         VALUES
-            ($1, $2, $3, $4, $5, $6, $7, $8, $9, CURRENT_TIMESTAMP, $10::jsonb, $11::jsonb)
+            ($1, $2, $3, $4, $5, $6, $7, $8, $9, CURRENT_TIMESTAMP, $10::jsonb, $11::jsonb, $12)
         "#,
     )
     .bind(uuid)
@@ -652,6 +657,7 @@ async fn insert_audit(
     .bind(target_id)
     .bind(metadata)
     .bind(change_summary)
+    .bind(id)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to write site audit log", error))?;
@@ -670,14 +676,15 @@ async fn insert_audit_pool(
     target_id: i64,
     requested_at: &str,
 ) -> DomainResult<()> {
+    let id = next_claw_runtime_id("ops_audit_log")?;
     let metadata = serde_json::json!({ "requestedAt": requested_at }).to_string();
     let change_summary = serde_json::json!({ "action": action, "targetId": target_id }).to_string();
     sqlx::query(
         r#"
         INSERT INTO ops_audit_log
-            (uuid, tenant_id, organization_id, request_id, operator_id, operator_type, action, target_type, target_id, created_at, metadata, change_summary)
+            (uuid, tenant_id, organization_id, request_id, operator_id, operator_type, action, target_type, target_id, created_at, metadata, change_summary, id)
         VALUES
-            ($1, $2, $3, $4, $5, $6, $7, $8, $9, CURRENT_TIMESTAMP, $10::jsonb, $11::jsonb)
+            ($1, $2, $3, $4, $5, $6, $7, $8, $9, CURRENT_TIMESTAMP, $10::jsonb, $11::jsonb, $12)
         "#,
     )
     .bind(uuid)
@@ -691,6 +698,7 @@ async fn insert_audit_pool(
     .bind(target_id)
     .bind(metadata)
     .bind(change_summary)
+    .bind(id)
     .execute(pool)
     .await
     .map_err(|error| store_error("failed to write site audit log", error))?;

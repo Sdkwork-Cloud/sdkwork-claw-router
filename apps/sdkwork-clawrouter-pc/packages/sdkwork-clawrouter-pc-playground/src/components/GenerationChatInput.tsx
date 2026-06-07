@@ -5,7 +5,7 @@ import {
   createDefaultSdkworkGenerationAssetConfig,
   getSdkworkGenerationModelBucket,
   serializeSdkworkGenerationAssetConfig,
-} from '@sdkwork/generation-pc-react/react';
+} from '@sdkwork/generations-pc-workspace/generation-asset-config';
 import { PlaygroundModelPicker, createFallbackModel } from './PlaygroundModelPicker';
 import type { GenerationModality, Modality } from '../pages/Playground';
 import type {

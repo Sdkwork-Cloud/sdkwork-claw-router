@@ -155,7 +155,8 @@
           "mode": "same-origin-mounted",
           "sameOriginAllowed": true,
           "baseUrlEnv": "VITE_CLAWROUTER_APP_API_BASE_URL",
-          "publicBaseUrlEnv": "PORTAL_PUBLIC_APP_API_BASE_URL"
+          "publicBaseUrlEnv": "PORTAL_PUBLIC_APP_API_BASE_URL",
+          "commonBaseUrlEnv": "PORTAL_PUBLIC_SDK_BASE_URL"
         }
       },
       {
@@ -168,7 +169,8 @@
           "mode": "same-origin-mounted",
           "sameOriginAllowed": true,
           "baseUrlEnv": "VITE_CLAWROUTER_BACKEND_API_BASE_URL",
-          "publicBaseUrlEnv": "PORTAL_PUBLIC_BACKEND_API_BASE_URL"
+          "publicBaseUrlEnv": "PORTAL_PUBLIC_BACKEND_API_BASE_URL",
+          "commonBaseUrlEnv": "PORTAL_PUBLIC_SDK_BASE_URL"
         }
       },
       {
@@ -181,7 +183,8 @@
           "mode": "same-origin-mounted",
           "sameOriginAllowed": true,
           "baseUrlEnv": "VITE_CLAWROUTER_OPEN_API_BASE_URL",
-          "publicBaseUrlEnv": "PORTAL_PUBLIC_OPEN_API_BASE_URL"
+          "publicBaseUrlEnv": "PORTAL_PUBLIC_OPEN_API_BASE_URL",
+          "commonBaseUrlEnv": "PORTAL_PUBLIC_SDK_BASE_URL"
         }
       },
       {
@@ -196,7 +199,8 @@
           "sameOriginAllowed": true,
           "baseUrlEnv": "VITE_SDKWORK_APPBASE_APP_API_BASE_URL",
           "fallbackBaseUrlEnv": "VITE_CLAWROUTER_APP_API_BASE_URL",
-          "publicBaseUrlEnv": "PORTAL_PUBLIC_APP_API_BASE_URL"
+          "publicBaseUrlEnv": "PORTAL_PUBLIC_APP_API_BASE_URL",
+          "commonBaseUrlEnv": "PORTAL_PUBLIC_SDK_BASE_URL"
         }
       },
       {
@@ -210,7 +214,38 @@
           "mode": "external-service",
           "sameOriginAllowed": false,
           "requiredBaseUrlEnv": "VITE_SDKWORK_APPBASE_BACKEND_API_BASE_URL",
-          "publicBaseUrlEnv": "PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL"
+          "publicBaseUrlEnv": "PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL",
+          "commonBaseUrlEnv": "PORTAL_PUBLIC_SDK_BASE_URL"
+        }
+      },
+      {
+        "sdkFamily": "sdkwork-commerce-app-sdk",
+        "packageName": "sdkwork-commerce-app-sdk-generated-typescript",
+        "surface": "app-api",
+        "apiPrefix": "/app/v3/api",
+        "providedBy": "sdkwork-clawrouter-pc-commons/runtime",
+        "dependencyApiSurface": "sdkwork-commerce-app-sdk",
+        "runtimeIntegration": {
+          "mode": "external-service",
+          "sameOriginAllowed": false,
+          "requiredBaseUrlEnv": "VITE_SDKWORK_COMMERCE_APP_API_BASE_URL",
+          "publicBaseUrlEnv": "PORTAL_PUBLIC_COMMERCE_APP_API_BASE_URL",
+          "commonBaseUrlEnv": "PORTAL_PUBLIC_SDK_BASE_URL"
+        }
+      },
+      {
+        "sdkFamily": "sdkwork-commerce-backend-sdk",
+        "packageName": "sdkwork-commerce-backend-sdk-generated-typescript",
+        "surface": "backend-api",
+        "apiPrefix": "/backend/v3/api",
+        "providedBy": "sdkwork-clawrouter-pc-commons/runtime",
+        "dependencyApiSurface": "sdkwork-commerce-backend-sdk",
+        "runtimeIntegration": {
+          "mode": "external-service",
+          "sameOriginAllowed": false,
+          "requiredBaseUrlEnv": "VITE_SDKWORK_COMMERCE_BACKEND_API_BASE_URL",
+          "publicBaseUrlEnv": "PORTAL_PUBLIC_COMMERCE_BACKEND_API_BASE_URL",
+          "commonBaseUrlEnv": "PORTAL_PUBLIC_SDK_BASE_URL"
         }
       }
     ],

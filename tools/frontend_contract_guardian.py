@@ -94,6 +94,7 @@ class FrontendContractGuardian:
     BROWSER_FETCH_CALL_PATTERN = re.compile(r"\bfetch\s*\(\s*([^,\)\n]+)")
     NODE_ONLY_BROWSER_PACKAGES = frozenset({"sdkwork-code-generator"})
     ROUTE_PACKAGE_PREFIX = "sdkwork-claw-router-"
+    ROUTE_PACKAGE_PREFIXES = ("sdkwork-claw-router-", "sdkwork-clawrouter-")
     STATIC_ROUTE_IMPORT_ALLOWLIST = frozenset({"sdkwork-clawrouter-pc-commons"})
     BROWSER_SOURCE_EXTENSIONS = frozenset({".ts", ".tsx", ".js", ".jsx"})
     BROWSER_SOURCE_EXCLUDED_DIRECTORIES = frozenset(
@@ -182,6 +183,47 @@ class FrontendContractGuardian:
     LOCAL_RUNTIME_ADAPTER_IMPORT_PATTERN = re.compile(
         r"(?:from\s+|import\s*\(\s*)['\"](\.{1,2}/[^'\"]*RuntimeApiOperations(?:\.[cm]?[tj]sx?)?)['\"]"
     )
+    DEPENDENCY_SDK_BOUNDARY_TOKENS = {
+        "commerce": {
+            "getSdkworkCommerceService",
+            "getSdkworkCommerceAppSdkClient",
+            "getSdkworkCommerceBackendSdkClient",
+            "@sdkwork/commerce-service",
+            "sdkwork-commerce-pc-admin-product",
+        },
+        "iam": {
+            "getSdkworkAppbaseAppSdkClient",
+            "getSdkworkAppbaseBackendSdkClient",
+            "getClawRouterIamRuntime",
+            "createSdkworkAppbasePcAuthRuntime",
+            "createSdkworkIamRuntimeAuthController",
+            "@sdkwork/auth-runtime-pc-react",
+            "@sdkwork/auth-pc-react",
+        },
+        "auth": {
+            "getSdkworkAppbaseAppSdkClient",
+            "getClawRouterIamRuntime",
+            "createSdkworkAppbasePcAuthRuntime",
+            "createSdkworkIamRuntimeAuthController",
+            "@sdkwork/auth-runtime-pc-react",
+            "@sdkwork/auth-pc-react",
+        },
+        "appbase": {
+            "getSdkworkAppbaseAppSdkClient",
+            "getSdkworkAppbaseBackendSdkClient",
+            "getClawRouterIamRuntime",
+            "createSdkworkAppbasePcAuthRuntime",
+            "createSdkworkIamRuntimeAuthController",
+        },
+        "generations": {
+            "getSdkworkGenerationsAppSdkClient",
+            "createSdkworkGenerationService",
+            "SdkworkGenerationService",
+            "@sdkwork/generation-pc-react",
+            "@sdkwork/generations-pc-react",
+            "@sdkwork/generations-pc-workspace",
+        },
+    }
     BUSINESS_API_PREFIXES = ("/app/v3/api", "/backend/v3/api")
     SDK_CLIENT_BOUNDARY_FILE = (
         "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts"
@@ -332,6 +374,18 @@ class FrontendContractGuardian:
     )
     SOURCE_HASH_PATTERN = re.compile(r"^sha256:[0-9a-f]{64}$")
     STATIC_SOURCE_MANIFEST_SCHEMA = "sdkwork-claw-router-frontend-static-source-manifest"
+    DEPENDENCY_OPERATION_FRAGMENTS = (
+        Path("docs")
+        / "schema-registry"
+        / "frontend-field-contracts"
+        / "operations"
+        / "app-commerce-catalog.yaml",
+        Path("docs")
+        / "schema-registry"
+        / "frontend-field-contracts"
+        / "operations"
+        / "backend-commerce-catalog.yaml",
+    )
     STATIC_SOURCE_METADATA_LABELS = {
         "curated_seed_content": "curated seed",
         "generated_reference_snapshot": "generated reference",
@@ -457,7 +511,7 @@ class FrontendContractGuardian:
         messages.extend(self._check_commons_runtime_import_boundary())
         messages.extend(self._check_business_sdk_call_boundary())
         messages.extend(self._check_frontend_model_source_boundaries(contract))
-        frontend_operations = contract.get("frontend_operations", [])
+        frontend_operations = self._frontend_operations_with_dependency_fragments(contract)
         if not isinstance(frontend_operations, list):
             frontend_operations = []
         operation_items = [operation for operation in frontend_operations if isinstance(operation, dict)]
@@ -537,6 +591,41 @@ class FrontendContractGuardian:
         if not isinstance(classification, dict):
             raise ValueError("frontend route classification root must be a mapping")
         return classification
+
+    def _frontend_operations_with_dependency_fragments(self, contract: dict[str, Any]) -> list[Any]:
+        entries = contract.get("frontend_operations", [])
+        merged_entries = list(entries) if isinstance(entries, list) else []
+        existing_keys = {
+            f"{entry.get('source')}#{entry.get('operation')}"
+            for entry in merged_entries
+            if isinstance(entry, dict)
+            and isinstance(entry.get("source"), str)
+            and isinstance(entry.get("operation"), str)
+        }
+
+        for relative_fragment in self.DEPENDENCY_OPERATION_FRAGMENTS:
+            fragment_path = self.root / relative_fragment
+            if not fragment_path.is_file():
+                continue
+            fragment = yaml.safe_load(fragment_path.read_text(encoding="utf-8")) if yaml is not None else None
+            if not isinstance(fragment, dict):
+                continue
+            fragment_entries = fragment.get("frontend_operations", [])
+            if not isinstance(fragment_entries, list):
+                continue
+            for entry in fragment_entries:
+                if not isinstance(entry, dict):
+                    continue
+                source = entry.get("source")
+                operation = entry.get("operation")
+                if not isinstance(source, str) or not isinstance(operation, str):
+                    continue
+                key = f"{source}#{operation}"
+                if key in existing_keys:
+                    continue
+                merged_entries.append(entry)
+                existing_keys.add(key)
+        return merged_entries
 
     def _load_static_source_manifest(self) -> dict[str, Any]:
         if not self.static_source_manifest_path.exists():
@@ -666,7 +755,7 @@ class FrontendContractGuardian:
 
         messages: list[str] = []
         for module_name in self._static_imports(source):
-            if not module_name.startswith(self.ROUTE_PACKAGE_PREFIX):
+            if not module_name.startswith(self.ROUTE_PACKAGE_PREFIXES):
                 continue
             root_package = self._root_package_name(module_name)
             if root_package in self.STATIC_ROUTE_IMPORT_ALLOWLIST:
@@ -986,7 +1075,7 @@ class FrontendContractGuardian:
         for route in sorted(classified_route_set - actual_routes):
             messages.append(f"frontend route classification is not in portal App.tsx: {route}")
 
-        frontend_operations = contract.get("frontend_operations", [])
+        frontend_operations = self._frontend_operations_with_dependency_fragments(contract)
         if not isinstance(frontend_operations, list):
             frontend_operations = []
         operation_items = [operation for operation in frontend_operations if isinstance(operation, dict)]
@@ -1062,25 +1151,38 @@ class FrontendContractGuardian:
             return messages
 
         expected_client = "getClawRouterAppSdkClient" if api_surface == "app" else "getClawRouterBackendSdkClient"
-        operation_sources = {
-            operation["source"]
+        if not any(
+            self._operation_uses_allowed_sdk_client_boundary(operation, expected_client)
             for operation in matching_operations
             if isinstance(operation.get("source"), str)
-        }
-        if not any(
-            self._source_uses_standard_sdk_client_boundary(source, expected_client)
-            for source in operation_sources
         ):
             messages.append(f"sdk-backed route {route} must use {expected_client}")
         return messages
 
-    def _source_uses_standard_sdk_client_boundary(self, source: str, expected_client: str) -> bool:
+    def _operation_uses_allowed_sdk_client_boundary(self, operation: dict[str, Any], expected_client: str) -> bool:
+        source = operation.get("source")
+        if not isinstance(source, str):
+            return False
+        sdk_domain = operation.get("sdk_domain")
+        return self._source_uses_standard_sdk_client_boundary(
+            source,
+            expected_client,
+            sdk_domain=sdk_domain if isinstance(sdk_domain, str) else None,
+        )
+
+    def _source_uses_standard_sdk_client_boundary(
+        self,
+        source: str,
+        expected_client: str,
+        sdk_domain: str | None = None,
+    ) -> bool:
         source_path = (self.root / source).resolve()
         source_text = self._safe_read_text(source_path) or ""
         return (
             expected_client in source_text
             or self._uses_standard_foundation_sdk_client(source_text, expected_client)
             or self._uses_local_runtime_adapter_sdk_client(source_path, source_text, expected_client)
+            or self._uses_dependency_sdk_client_boundary(source_path, source_text, sdk_domain)
         )
 
     def _uses_standard_foundation_sdk_client(self, source_text: str, expected_client: str) -> bool:
@@ -1116,6 +1218,53 @@ class FrontendContractGuardian:
             if adapter_source is not None and expected_client in adapter_source:
                 return True
         return False
+
+    def _uses_dependency_sdk_client_boundary(
+        self,
+        source_path: Path,
+        source_text: str,
+        sdk_domain: str | None,
+    ) -> bool:
+        if self._source_text_uses_dependency_sdk_client_boundary(source_text, sdk_domain):
+            return True
+
+        for match in self.LOCAL_RUNTIME_ADAPTER_IMPORT_PATTERN.finditer(source_text):
+            adapter_path = self._resolve_relative_import(source_path, match.group(1))
+            if adapter_path is None:
+                continue
+            adapter_source = self._safe_read_text(adapter_path)
+            if adapter_source is not None and self._source_text_uses_dependency_sdk_client_boundary(
+                adapter_source,
+                sdk_domain,
+            ):
+                return True
+        return False
+
+    def _source_text_uses_dependency_sdk_client_boundary(
+        self,
+        source_text: str,
+        sdk_domain: str | None,
+    ) -> bool:
+        domain = self._normalize_dependency_sdk_domain(sdk_domain)
+        if domain:
+            return any(token in source_text for token in self.DEPENDENCY_SDK_BOUNDARY_TOKENS.get(domain, ()))
+        return any(
+            token in source_text
+            for tokens in self.DEPENDENCY_SDK_BOUNDARY_TOKENS.values()
+            for token in tokens
+        )
+
+    def _normalize_dependency_sdk_domain(self, sdk_domain: str | None) -> str:
+        if not isinstance(sdk_domain, str):
+            return ""
+        normalized = re.sub(r"[^a-z0-9]", "", sdk_domain.lower())
+        if normalized in {"commerce", "billing", "wallet", "membership", "memberships", "recharge", "orders"}:
+            return "commerce"
+        if normalized in {"iam", "auth", "appbase"}:
+            return normalized
+        if normalized in {"generation", "generations"}:
+            return "generations"
+        return ""
 
     def _resolve_relative_import(self, source_path: Path, import_spec: str) -> Path | None:
         candidate = (source_path.parent / import_spec).resolve()
@@ -1177,7 +1326,7 @@ class FrontendContractGuardian:
                 continue
 
             expected_client = "getClawRouterAppSdkClient" if api_surface == "app" else "getClawRouterBackendSdkClient"
-            if not self._source_uses_standard_sdk_client_boundary(source, expected_client):
+            if not self._operation_uses_allowed_sdk_client_boundary(operation, expected_client):
                 messages.append(
                     f"app-shell frontend operation {operation_name} must use {expected_client}"
                 )

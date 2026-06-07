@@ -20,12 +20,13 @@ test("admin membership entitlements are owned by the standard memberships busine
   const rechargePackagesPageSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-memberships/src/pages/MembershipRechargePackagesPage.tsx");
   const drawerSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-memberships/src/components/MembershipDrawer.tsx");
   const routeClassification = readPortalFile("../../docs/schema-registry/frontend-route-classification.yaml");
-  const backendOpenapi = readPortalFile("../../generated/openapi/clawrouter-backend-openapi.json");
-  const backendCommerceSdk = readPortalFile("../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/generated/server-openapi/src/api/commerce.ts");
+  const commerceBackendOpenapi = readPortalFile("../../../sdkwork-commerce/generated/openapi/commerce-backend-api.openapi.json");
+  const commerceBackendMembershipsSdk = readPortalFile("../../../sdkwork-commerce/sdks/sdkwork-commerce-backend-sdk/sdkwork-commerce-backend-sdk-typescript/generated/server-openapi/src/api/memberships.ts");
 
   assert.match(appSource, /const MembershipsAdmin = lazyRoute(?:<AdminSectionRouteProps>)?\(\(\) => import\('sdkwork-clawrouter-pc-admin-memberships'\), 'MembershipsAdmin'\)/);
   assert.match(appSource, /<Route path="memberships" element=\{<Navigate to="\/admin\/memberships\/packages" replace \/>} \/>/);
   assert.match(appSource, /<Route path="memberships\/packages" element=\{<MembershipsAdmin sectionId="packages" \/>} \/>/);
+  assert.match(appSource, /<Route path="memberships\/vip-packages" element=\{<MembershipsAdmin sectionId="vipPackages" \/>} \/>/);
   assert.match(appSource, /<Route path="memberships\/plans" element=\{<MembershipsAdmin sectionId="plans" \/>} \/>/);
   assert.match(appSource, /<Route path="memberships\/members" element=\{<MembershipsAdmin sectionId="members" \/>} \/>/);
   assert.match(appSource, /<Route path="memberships\/entitlements" element=\{<MembershipsAdmin sectionId="entitlements" \/>} \/>/);
@@ -35,19 +36,27 @@ test("admin membership entitlements are owned by the standard memberships busine
 
   for (const marker of [
     "MembershipsAdmin",
-    "Membership Levels",
-    "Package Groups",
+    "MembershipPlansPage",
+    "MembershipPackageGroupsPage",
+    "MembershipVipPackagesPage",
     "MembersTab",
     "EntitlementsTab",
     "fetchMembershipAdminEntitlements",
   ]) {
     assert.match(viewSource, new RegExp(escapeRegExp(marker)));
   }
+  assert.match(plansPageSource, /Membership levels/i);
+  assert.match(packageGroupsPageSource, /Package groups/i);
 
-  assert.match(serviceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.memberships\.entitlements\.list/);
-  assert.match(backendOpenapi, /"\/backend\/v3\/api\/memberships\/entitlements"/);
-  assert.match(backendCommerceSdk, /class CommerceMembershipsEntitlementsApi/);
-  assert.match(backendCommerceSdk, /backendApiPath\(`\/memberships\/entitlements`\)/);
+  assert.match(serviceSource, /getSdkworkCommerceService\(\)\.admin\.memberships\.entitlements\.list/);
+  assert.doesNotMatch(serviceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.memberships/);
+  assert.match(commerceBackendOpenapi, /"\/backend\/v3\/api\/memberships\/entitlements"/);
+  assert.match(commerceBackendOpenapi, /"operationId": "memberships\.entitlements\.list"/);
+  assert.doesNotMatch(commerceBackendOpenapi, /"operationId": "memberships\.entitlements\.management\.list"/);
+  assert.match(commerceBackendMembershipsSdk, /class MembershipsEntitlementsApi/);
+  assert.match(commerceBackendMembershipsSdk, /backendApiPath\(`\/memberships\/entitlements`\)/);
+  assert.match(commerceBackendMembershipsSdk, /async list\(params\?: MembershipsEntitlementsListParams/);
+  assert.doesNotMatch(commerceBackendMembershipsSdk, /MembershipsEntitlementsManagementApi/);
 
   for (const pageName of [
     "MembershipPackagesPage",
@@ -86,15 +95,15 @@ test("admin membership entitlements are owned by the standard memberships busine
   }
 
   for (const sdkCall of [
-    "getClawRouterBackendSdkClient().commerce.memberships.packageGroups.create",
-    "getClawRouterBackendSdkClient().commerce.memberships.packageGroups.update",
-    "getClawRouterBackendSdkClient().commerce.memberships.packageGroups.delete",
-    "getClawRouterBackendSdkClient().commerce.memberships.packages.create",
-    "getClawRouterBackendSdkClient().commerce.memberships.packages.update",
-    "getClawRouterBackendSdkClient().commerce.memberships.packages.delete",
-    "getClawRouterBackendSdkClient().commerce.memberships.plans.update",
-    "getClawRouterBackendSdkClient().commerce.memberships.plans.delete",
-    "getClawRouterBackendSdkClient().commerce.memberships.members.status.update",
+    "getSdkworkCommerceService().admin.memberships.packageGroups.create",
+    "getSdkworkCommerceService().admin.memberships.packageGroups.update",
+    "getSdkworkCommerceService().admin.memberships.packageGroups.delete",
+    "getSdkworkCommerceService().admin.memberships.packages.create",
+    "getSdkworkCommerceService().admin.memberships.packages.update",
+    "getSdkworkCommerceService().admin.memberships.packages.delete",
+    "getSdkworkCommerceService().admin.memberships.plans.update",
+    "getSdkworkCommerceService().admin.memberships.plans.delete",
+    "getSdkworkCommerceService().admin.memberships.members.update",
   ]) {
     assert.match(serviceSource, new RegExp(escapeRegExp(sdkCall)), `${sdkCall} must be used instead of handwritten HTTP`);
   }

@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 const __filename = fileURLToPath(import.meta.url);
 const workspaceRoot = path.resolve(path.dirname(__filename), '..', '..', '..');
 const command = process.platform === 'win32' ? 'node.exe' : 'node';
-const sdkGeneratorCli = path.resolve(workspaceRoot, '.sdkwork/dependencies/sdkwork-sdk-generator/bin/sdkgen.js');
+const sdkGeneratorCli = path.resolve(workspaceRoot, '../sdkwork-sdk-generator/bin/sdkgen.js');
 const sdkFamily = 'clawrouter-open-sdk';
 const sdkType = 'ai';
 const authorityInputPath = `sdks/${sdkFamily}/openapi/${sdkFamily}.openapi.json`;

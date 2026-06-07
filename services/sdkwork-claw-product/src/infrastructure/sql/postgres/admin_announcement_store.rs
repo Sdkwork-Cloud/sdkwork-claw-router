@@ -1,6 +1,7 @@
 use sqlx::{PgPool, Postgres, Row, Transaction};
 
 use crate::domain::{DomainError, DomainResult};
+use crate::infrastructure::sql::runtime_id::next_claw_runtime_id;
 use crate::ports::{
     AdminAnnouncementCommandFuture, AdminAnnouncementItem, AdminAnnouncementStore,
     CreateAdminAnnouncementCommand, DeleteAdminAnnouncementCommand, ListAdminAnnouncementsQuery,
@@ -222,13 +223,13 @@ async fn insert_notification_message(
 ) -> DomainResult<i64> {
     let status = status_code(&command.status);
     let published_at = published_at_for_status(&command.status, &command.requested_at);
-    let id: i64 = sqlx::query_scalar(
+    let id = next_claw_runtime_id("ops_notification_message")?;
+    sqlx::query(
         r#"
         INSERT INTO ops_notification_message
-            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, app_id, scope_type, message_code, message_type, title, summary, content, severity, priority, show_as_popup, published_at)
+            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, app_id, scope_type, message_code, message_type, title, summary, content, severity, priority, show_as_popup, published_at, id)
         VALUES
-            ($1, $2, $3, 1, $4, $5::timestamptz, $6::timestamptz, 0, NULL, $7, NULL, $8, $9, $10, $11, $12, $13, $14, $15::timestamptz)
-        RETURNING id
+            ($1, $2, $3, 1, $4, $5::timestamptz, $6::timestamptz, 0, NULL, $7, NULL, $8, $9, $10, $11, $12, $13, $14, $15::timestamptz, $16)
         "#,
     )
     .bind(&command.announcement_uuid)
@@ -246,7 +247,8 @@ async fn insert_notification_message(
     .bind(ANNOUNCEMENT_PRIORITY)
     .bind(command.show_as_popup)
     .bind(published_at)
-    .fetch_one(&mut **tx)
+    .bind(id)
+    .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to create announcement notification", error))?;
 
@@ -397,12 +399,13 @@ async fn insert_recipient(
     requested_at: &str,
 ) -> DomainResult<()> {
     let (recipient_type, recipient_value, recipient_role_code) = recipient_fields(target);
+    let id = next_claw_runtime_id("ops_notification_recipient")?;
     sqlx::query(
         r#"
         INSERT INTO ops_notification_recipient
-            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, message_id, app_id, recipient_type, recipient_value, recipient_user_id, recipient_role_code)
+            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, message_id, app_id, recipient_type, recipient_value, recipient_user_id, recipient_role_code, id)
         VALUES
-            ($1, $2, $3, 1, 1, $4::timestamptz, $5::timestamptz, 0, $6, NULL, $7, $8, NULL, $9)
+            ($1, $2, $3, 1, 1, $4::timestamptz, $5::timestamptz, 0, $6, NULL, $7, $8, NULL, $9, $10)
         "#,
     )
     .bind(format!("{uuid_seed}:recipient:{message_id}"))
@@ -414,6 +417,7 @@ async fn insert_recipient(
     .bind(recipient_type)
     .bind(recipient_value)
     .bind(recipient_role_code)
+    .bind(id)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to create announcement recipient", error))?;
@@ -542,12 +546,13 @@ async fn insert_audit_log(
     target_id: i64,
     change_summary: serde_json::Value,
 ) -> DomainResult<()> {
+    let id = next_claw_runtime_id("ops_audit_log")?;
     sqlx::query(
         r#"
         INSERT INTO ops_audit_log
-            (uuid, tenant_id, organization_id, action, target_type, target_id, request_id, operator_id, operator_type, change_summary)
+            (uuid, tenant_id, organization_id, action, target_type, target_id, request_id, operator_id, operator_type, change_summary, id)
         VALUES
-            ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10::jsonb)
+            ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10::jsonb, $11)
         "#,
     )
     .bind(audit_log_uuid)
@@ -560,6 +565,7 @@ async fn insert_audit_log(
     .bind(operator_id)
     .bind(operator_type)
     .bind(change_summary.to_string())
+    .bind(id)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to write announcement audit log", error))?;

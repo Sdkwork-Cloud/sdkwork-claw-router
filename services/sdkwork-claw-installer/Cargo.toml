@@ -12,10 +12,10 @@ path = "src/main.rs"
 anyhow.workspace = true
 serde.workspace = true
 serde_json.workspace = true
-sdkwork-claw-config = { path = "../../crates/sdkwork-claw-config" }
-sdkwork-claw-product = { path = "../sdkwork-claw-product" }
+sdkwork-claw-config.workspace = true
+sdkwork-claw-product.workspace = true
 sqlx.workspace = true
 tokio.workspace = true
 
 [dev-dependencies]
-sdkwork_commerce_core = { path = "../../.sdkwork/dependencies/sdkwork-commerce/crates/sdkwork-commerce-core-rust" }
+sdkwork_commerce_core.workspace = true

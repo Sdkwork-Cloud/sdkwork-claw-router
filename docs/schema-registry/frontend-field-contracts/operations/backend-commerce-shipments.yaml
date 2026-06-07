@@ -6,6 +6,7 @@ frontend_operations:
   operation_id: shipments.list
   kind: read
   api_surface: backend
+  openapi_exposed: false
   api_method: GET
   api_path: /backend/v3/api/shipments
   sdk_domain: commerce
@@ -81,10 +82,58 @@ frontend_operations:
         maximum: 200
 - route: /admin/orders
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
+  operation: backendShipmentsRetrieve
+  operation_id: shipments.retrieve
+  kind: read
+  api_surface: backend
+  openapi_exposed: false
+  api_method: GET
+  api_path: /backend/v3/api/shipments/{shipmentId}
+  sdk_domain: commerce
+  summary: Shipments Retrieve
+  description: Standard appbase commerce API for shipments.retrieve; no legacy billing compatibility route is exposed.
+  read_sources:
+  - commerce_shipment
+  - commerce_shipment_tracking_event
+  - commerce_fulfillment_order
+  - commerce_order
+  query_parameters: []
+  response_schema:
+    name: CommerceStandardResourceResponse
+    type: object
+    additionalProperties: false
+    required:
+    - item
+    properties:
+      item:
+        type: object
+        additionalProperties: false
+        required:
+        - id
+        properties:
+          id:
+            type: string
+            minLength: 1
+            maxLength: 128
+          status:
+            type: string
+            nullable: true
+            maxLength: 64
+          createdAt:
+            type: string
+            nullable: true
+            maxLength: 64
+          updatedAt:
+            type: string
+            nullable: true
+            maxLength: 64
+- route: /admin/orders
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
   operation: backendShipmentsTrackingEventsList
   operation_id: shipments.trackingEvents.list
   kind: read
   api_surface: backend
+  openapi_exposed: false
   api_method: GET
   api_path: /backend/v3/api/shipments/{shipmentId}/tracking_events
   sdk_domain: commerce

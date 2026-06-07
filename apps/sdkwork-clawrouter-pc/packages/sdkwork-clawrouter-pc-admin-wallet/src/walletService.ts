@@ -1,33 +1,33 @@
 import {
   createIdempotencyParams,
-  getClawRouterBackendSdkClient,
   isRecord,
   readRequiredApiItems,
   readRequiredString,
   type ApiRecord,
 } from 'sdkwork-clawrouter-pc-commons/runtime';
+import { getSdkworkCommerceService } from '@sdkwork/commerce-service';
 
-type BackendCommerce = ReturnType<typeof getClawRouterBackendSdkClient>['commerce'];
+type BackendCommerceService = ReturnType<typeof getSdkworkCommerceService>['admin'];
 
-export async function backendRechargesOrdersList(params?: Parameters<BackendCommerce['recharges']['orders']['list']>[0]) {
-  const result = await getClawRouterBackendSdkClient().commerce.recharges.orders.list(params);
+export async function backendRechargesOrdersList(params?: Parameters<BackendCommerceService['recharges']['orders']['list']>[0]) {
+  const result = await getSdkworkCommerceService().admin.recharges.orders.list(params);
   return readRequiredRechargeItems(result, 'Recharge order records are required');
 }
 
-export async function backendWalletAccountsList(params?: Parameters<BackendCommerce['wallet']['accounts']['list']>[0]) {
-  return getClawRouterBackendSdkClient().commerce.wallet.accounts.list(params);
+export async function backendWalletAccountsList(params?: Parameters<BackendCommerceService['wallet']['accounts']['list']>[0]) {
+  return getSdkworkCommerceService().admin.wallet.accounts.list(params);
 }
 
-export async function backendWalletLedgerEntriesList(params?: Parameters<BackendCommerce['wallet']['ledgerEntries']['list']>[0]) {
-  return getClawRouterBackendSdkClient().commerce.wallet.ledgerEntries.list(params);
+export async function backendWalletLedgerEntriesList(params?: Parameters<BackendCommerceService['wallet']['ledgerEntries']['list']>[0]) {
+  return getSdkworkCommerceService().admin.wallet.ledgerEntries.list(params);
 }
 
-export async function backendWalletExchangeRulesList(params?: Parameters<BackendCommerce['wallet']['exchangeRules']['list']>[0]) {
-  return getClawRouterBackendSdkClient().commerce.wallet.exchangeRules.list(params);
+export async function backendWalletExchangeRulesList(params?: Parameters<BackendCommerceService['wallet']['exchangeRules']['list']>[0]) {
+  return getSdkworkCommerceService().admin.wallet.exchangeRules.list(params);
 }
 
-export async function backendWalletAdjustmentsCreate(body: Parameters<BackendCommerce['wallet']['adjustments']['create']>[0]) {
-  return getClawRouterBackendSdkClient().commerce.wallet.adjustments.create(
+export async function backendWalletAdjustmentsCreate(body: Parameters<BackendCommerceService['wallet']['adjustments']['create']>[0]) {
+  return getSdkworkCommerceService().admin.wallet.adjustments.create(
     body,
     createIdempotencyParams('backend-wallet-adjustment-create'),
   );

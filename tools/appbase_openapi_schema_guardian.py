@@ -27,6 +27,24 @@ class AppbaseOpenApiSchemaGuardian:
         "app": Path("sdks") / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript",
         "backend": Path("sdks") / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript",
     }
+    DEPENDENCY_SDK_DIRECTORIES = {
+        "app": (
+            Path("sdkwork-commerce")
+            / "sdks"
+            / "sdkwork-commerce-app-sdk"
+            / "sdkwork-commerce-app-sdk-typescript"
+            / "generated"
+            / "server-openapi"
+        ),
+        "backend": (
+            Path("sdkwork-commerce")
+            / "sdks"
+            / "sdkwork-commerce-backend-sdk"
+            / "sdkwork-commerce-backend-sdk-typescript"
+            / "generated"
+            / "server-openapi"
+        ),
+    }
     BODY_METHODS = {"POST", "PUT", "PATCH"}
     JSON_EXTENSION_COMPONENTS = {"JsonNull", "JsonObject", "JsonValue"}
 
@@ -441,7 +459,8 @@ class AppbaseOpenApiSchemaGuardian:
 
     def _validate_sdk_method(self, label: str, surface: str, operation_id: str) -> list[str]:
         method_name = operation_id.rsplit(".", 1)[-1]
-        api_dir = self.sdk_root / self.SDK_DIRECTORIES[surface] / "src" / "api"
+        package_dir = self._sdk_package_dir(surface)
+        api_dir = package_dir / "src" / "api"
         if not api_dir.is_dir():
             return [f"{label} generated SDK api directory is missing: {self._display_path(api_dir)}"]
         for source_path in sorted(api_dir.glob("*.ts")):
@@ -466,12 +485,19 @@ class AppbaseOpenApiSchemaGuardian:
         component_names = self._operation_component_names(operation, schemas)
         if not component_names:
             return []
-        package_dir = self.sdk_root / self.SDK_DIRECTORIES[surface]
+        package_dir = self._sdk_package_dir(surface)
         types_dir = package_dir / "src" / "types"
         if not types_dir.is_dir():
             return [f"{label} generated SDK types directory is missing: {self._display_path(types_dir)}"]
         index_path = types_dir / "index.ts"
         index_source = index_path.read_text(encoding="utf-8", errors="ignore") if index_path.is_file() else ""
+        generic_type_messages = self._validate_generic_commerce_sdk_types(
+            package_dir=package_dir,
+            operation=operation,
+            index_source=index_source,
+        )
+        if generic_type_messages is not None:
+            return generic_type_messages
         messages: list[str] = []
         for component_name in sorted(component_names):
             module_name = self._typescript_module_name(component_name)
@@ -487,6 +513,56 @@ class AppbaseOpenApiSchemaGuardian:
                     f"{label} generated SDK type export is missing for component {component_name} in src/types/index.ts"
                 )
         return messages
+
+    def _validate_generic_commerce_sdk_types(
+        self,
+        *,
+        package_dir: Path,
+        operation: dict[str, Any],
+        index_source: str,
+    ) -> list[str] | None:
+        operation_id = self._string(operation.get("operationId"))
+        method_name = operation_id.rsplit(".", 1)[-1]
+        api_dir = package_dir / "src" / "api"
+        if not method_name or not api_dir.is_dir():
+            return None
+        generic_method_declared = False
+        for source_path in sorted(api_dir.glob("*.ts")):
+            source = source_path.read_text(encoding="utf-8", errors="ignore")
+            if re.search(
+                rf"\basync\s+{re.escape(method_name)}\s*\([^)]*\)\s*:\s*Promise\s*<\s*CommerceApiResult\s*>",
+                source,
+                flags=re.DOTALL,
+            ):
+                generic_method_declared = True
+                break
+        if not generic_method_declared:
+            return None
+
+        required_types = ["CommerceApiResult"]
+        if isinstance(operation.get("requestBody"), dict):
+            required_types.append("CommerceOperationCommand")
+        messages = []
+        for required_type in required_types:
+            module_name = self._typescript_module_name(required_type)
+            if not self._source_exports_type(index_source, required_type, module_name):
+                messages.append(f"generated SDK generic type export is missing for {required_type}")
+        return messages
+
+    def _sdk_package_dir(self, surface: str) -> Path:
+        candidates = self._sdk_package_dir_candidates(surface)
+        for candidate in candidates:
+            if (candidate / "src" / "api").is_dir() or (candidate / "src" / "types").is_dir():
+                return candidate
+        return candidates[0]
+
+    def _sdk_package_dir_candidates(self, surface: str) -> list[Path]:
+        dependency = self.DEPENDENCY_SDK_DIRECTORIES[surface]
+        return [
+            self.sdk_root / dependency,
+            self.sdk_root.parent / dependency,
+            self.sdk_root / self.SDK_DIRECTORIES[surface],
+        ]
 
     def _operation_component_names(self, operation: dict[str, Any], schemas: dict[str, Any]) -> set[str]:
         component_names: set[str] = set()

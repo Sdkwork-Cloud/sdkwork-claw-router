@@ -105,10 +105,12 @@ upstream_request_timeout_millis = 45000
 upstream_ready_timeout_millis = 3500
 
 [portal.public]
+sdk_base_url = "https://public-sdk.example.com/router"
 api_base_url = "/v1"
 open_api_base_url = "/v1"
 app_api_base_url = "/app/v3/api"
 backend_api_base_url = "/backend/v3/api"
+appbase_backend_api_base_url = "https://appbase.internal/backend/v3/api"
 tool_api_enabled = false
 
 [portal.static]
@@ -305,8 +307,16 @@ password_file = "/etc/sdkwork/router/bootstrap-admin.secret"
     assert_eq!(Some(3500), config.edge.upstream_ready_timeout_millis);
     assert_eq!(Some("/v1"), config.portal.public.api_base_url.as_deref());
     assert_eq!(
+        Some("https://public-sdk.example.com/router"),
+        config.portal.public.sdk_base_url.as_deref()
+    );
+    assert_eq!(
         Some("/backend/v3/api"),
         config.portal.public.backend_api_base_url.as_deref()
+    );
+    assert_eq!(
+        Some("https://appbase.internal/backend/v3/api"),
+        config.portal.public.appbase_backend_api_base_url.as_deref()
     );
     assert_eq!(Some(false), config.portal.public.tool_api_enabled);
     assert_eq!(

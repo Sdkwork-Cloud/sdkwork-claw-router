@@ -124,6 +124,377 @@
       ]
     },
     {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/platform/apps",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "createApp",
+      "operation_scope": null,
+      "read_sources": [
+        "plus_app",
+        "plus_category",
+        "studio_catalog_asset",
+        "studio_catalog_artifact"
+      ],
+      "route": "/admin/app",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
+      "write_tables": [
+        "plus_app",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/platform/apps/categories",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "createAppCategory",
+      "operation_scope": null,
+      "read_sources": [
+        "plus_category"
+      ],
+      "route": "/admin/app",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
+      "write_tables": [
+        "plus_category",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/platform/apps/templates",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "createAppTemplate",
+      "operation_scope": null,
+      "read_sources": [
+        "studio_app_template"
+      ],
+      "route": "/admin/app",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
+      "write_tables": [
+        "studio_app_template",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "DELETE",
+      "api_path": "/backend/v3/api/platform/apps/{appId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "delete",
+      "operation": "deleteApp",
+      "operation_scope": null,
+      "read_sources": [
+        "plus_app",
+        "studio_catalog_action",
+        "studio_catalog_asset",
+        "studio_catalog_artifact"
+      ],
+      "route": "/admin/app",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
+      "write_tables": [
+        "plus_app",
+        "studio_catalog_action",
+        "studio_catalog_asset",
+        "studio_catalog_artifact",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "DELETE",
+      "api_path": "/backend/v3/api/platform/apps/categories/{categoryId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "delete",
+      "operation": "deleteAppCategory",
+      "operation_scope": null,
+      "read_sources": [
+        "plus_category"
+      ],
+      "route": "/admin/app",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
+      "write_tables": [
+        "plus_category",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "DELETE",
+      "api_path": "/backend/v3/api/platform/apps/templates/{templateId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "delete",
+      "operation": "deleteAppTemplate",
+      "operation_scope": null,
+      "read_sources": [
+        "studio_app_template",
+        "studio_catalog_action",
+        "studio_catalog_asset",
+        "studio_catalog_artifact"
+      ],
+      "route": "/admin/app",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
+      "write_tables": [
+        "studio_app_template",
+        "studio_catalog_action",
+        "studio_catalog_asset",
+        "studio_catalog_artifact",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/platform/apps/{appId}/disable",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "action",
+      "operation": "disableApp",
+      "operation_scope": null,
+      "read_sources": [
+        "plus_app"
+      ],
+      "route": "/admin/app",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
+      "write_tables": [
+        "plus_app",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/platform/apps/{appId}/enable",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "action",
+      "operation": "enableApp",
+      "operation_scope": null,
+      "read_sources": [
+        "plus_app"
+      ],
+      "route": "/admin/app",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
+      "write_tables": [
+        "plus_app",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/platform/apps/{appId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "fetchApp",
+      "operation_scope": null,
+      "read_sources": [
+        "plus_app",
+        "plus_category",
+        "studio_catalog_asset",
+        "studio_catalog_artifact"
+      ],
+      "route": "/admin/app",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/platform/apps/categories",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "fetchAppCategories",
+      "operation_scope": null,
+      "read_sources": [
+        "plus_category"
+      ],
+      "route": "/admin/app",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/platform/apps/templates/{templateId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "fetchAppTemplate",
+      "operation_scope": null,
+      "read_sources": [
+        "studio_app_template"
+      ],
+      "route": "/admin/app",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/platform/apps/templates",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "fetchAppTemplates",
+      "operation_scope": null,
+      "read_sources": [
+        "studio_app_template",
+        "studio_catalog_asset",
+        "studio_catalog_artifact"
+      ],
+      "route": "/admin/app",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/platform/apps",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "fetchApps",
+      "operation_scope": null,
+      "read_sources": [
+        "plus_app",
+        "plus_category",
+        "studio_catalog_asset",
+        "studio_catalog_artifact"
+      ],
+      "route": "/admin/app",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/platform/apps/{appId}/unpublish",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "action",
+      "operation": "offlineApp",
+      "operation_scope": null,
+      "read_sources": [
+        "plus_app"
+      ],
+      "route": "/admin/app",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
+      "write_tables": [
+        "plus_app",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/platform/apps/templates/{templateId}/unpublish",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "action",
+      "operation": "offlineAppTemplate",
+      "operation_scope": null,
+      "read_sources": [
+        "studio_app_template"
+      ],
+      "route": "/admin/app",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
+      "write_tables": [
+        "studio_app_template",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/platform/apps/{appId}/publish",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "action",
+      "operation": "publishApp",
+      "operation_scope": null,
+      "read_sources": [
+        "plus_app"
+      ],
+      "route": "/admin/app",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
+      "write_tables": [
+        "plus_app",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/platform/apps/templates/{templateId}/publish",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "action",
+      "operation": "publishAppTemplate",
+      "operation_scope": null,
+      "read_sources": [
+        "studio_app_template"
+      ],
+      "route": "/admin/app",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
+      "write_tables": [
+        "studio_app_template",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "PUT",
+      "api_path": "/backend/v3/api/platform/apps/{appId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "update",
+      "operation": "updateApp",
+      "operation_scope": null,
+      "read_sources": [
+        "plus_app",
+        "plus_category",
+        "studio_catalog_asset",
+        "studio_catalog_artifact"
+      ],
+      "route": "/admin/app",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
+      "write_tables": [
+        "plus_app",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "PUT",
+      "api_path": "/backend/v3/api/platform/apps/categories/{categoryId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "update",
+      "operation": "updateAppCategory",
+      "operation_scope": null,
+      "read_sources": [
+        "plus_category"
+      ],
+      "route": "/admin/app",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
+      "write_tables": [
+        "plus_category",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "PUT",
+      "api_path": "/backend/v3/api/platform/apps/templates/{templateId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "update",
+      "operation": "updateAppTemplate",
+      "operation_scope": null,
+      "read_sources": [
+        "studio_app_template"
+      ],
+      "route": "/admin/app",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
+      "write_tables": [
+        "studio_app_template",
+        "ops_audit_log"
+      ]
+    },
+    {
       "api_method": "DELETE",
       "api_path": "/backend/v3/api/system/cache/instances/{instance_name}",
       "api_surface": "backend",
@@ -260,411 +631,6 @@
       "route": "/admin/cache",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-cache/src/cacheService.ts",
       "write_tables": [
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/catalog/attributes",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "create",
-      "operation": "createCommerceAttribute",
-      "operation_scope": null,
-      "read_sources": [
-        "commerce_product_attribute"
-      ],
-      "route": "/admin/catalog",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts",
-      "write_tables": [
-        "commerce_product_attribute",
-        "commerce_product_attribute_value",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/catalog/categories",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "create",
-      "operation": "createCommerceCategory",
-      "operation_scope": null,
-      "read_sources": [
-        "commerce_product_category"
-      ],
-      "route": "/admin/catalog",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts",
-      "write_tables": [
-        "commerce_product_category",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/catalog/category_attributes",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "create",
-      "operation": "createCommerceCategoryAttribute",
-      "operation_scope": null,
-      "read_sources": [
-        "commerce_product_category_attribute",
-        "commerce_product_category",
-        "commerce_product_attribute"
-      ],
-      "route": "/admin/catalog",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts",
-      "write_tables": [
-        "commerce_product_category_attribute",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/catalog/price_lists",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "create",
-      "operation": "createCommercePriceList",
-      "operation_scope": null,
-      "read_sources": [
-        "commerce_price_list"
-      ],
-      "route": "/admin/catalog",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts",
-      "write_tables": [
-        "commerce_price_list",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/catalog/products",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "create",
-      "operation": "createCommerceProduct",
-      "operation_scope": null,
-      "read_sources": [
-        "commerce_product_spu",
-        "commerce_product_category"
-      ],
-      "route": "/admin/catalog",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts",
-      "write_tables": [
-        "commerce_product_spu",
-        "commerce_product_spu_category",
-        "commerce_product_media",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/catalog/skus",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "create",
-      "operation": "createCommerceSku",
-      "operation_scope": null,
-      "read_sources": [
-        "commerce_product_sku",
-        "commerce_product_spu",
-        "commerce_product_attribute",
-        "commerce_product_attribute_value",
-        "commerce_product_media"
-      ],
-      "route": "/admin/catalog",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts",
-      "write_tables": [
-        "commerce_product_sku",
-        "commerce_product_sku_attribute",
-        "commerce_product_media",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "DELETE",
-      "api_path": "/backend/v3/api/catalog/categories/{categoryId}",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "delete",
-      "operation": "deleteCommerceCategory",
-      "operation_scope": null,
-      "read_sources": [
-        "commerce_product_category",
-        "commerce_product_spu_category"
-      ],
-      "route": "/admin/catalog",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts",
-      "write_tables": [
-        "commerce_product_category",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "DELETE",
-      "api_path": "/backend/v3/api/catalog/category_attributes/{bindingId}",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "delete",
-      "operation": "deleteCommerceCategoryAttribute",
-      "operation_scope": null,
-      "read_sources": [
-        "commerce_product_category_attribute"
-      ],
-      "route": "/admin/catalog",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts",
-      "write_tables": [
-        "commerce_product_category_attribute",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "DELETE",
-      "api_path": "/backend/v3/api/catalog/products/{productId}",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "delete",
-      "operation": "deleteCommerceProduct",
-      "operation_scope": null,
-      "read_sources": [
-        "commerce_product_spu",
-        "commerce_product_sku"
-      ],
-      "route": "/admin/catalog",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts",
-      "write_tables": [
-        "commerce_product_spu",
-        "commerce_product_sku",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "DELETE",
-      "api_path": "/backend/v3/api/catalog/skus/{skuId}",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "delete",
-      "operation": "deleteCommerceSku",
-      "operation_scope": null,
-      "read_sources": [
-        "commerce_product_sku"
-      ],
-      "route": "/admin/catalog",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts",
-      "write_tables": [
-        "commerce_product_sku",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/catalog/category_seeds/initialize",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "create",
-      "operation": "initializeCommerceCategorySeeds",
-      "operation_scope": null,
-      "read_sources": [
-        "commerce_product_category",
-        "plus_category"
-      ],
-      "route": "/admin/catalog",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts",
-      "write_tables": [
-        "commerce_product_category",
-        "plus_category",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "GET",
-      "api_path": "/backend/v3/api/catalog/attributes",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "read",
-      "operation": "listCommerceAttributes",
-      "operation_scope": null,
-      "read_sources": [
-        "commerce_product_attribute",
-        "commerce_product_attribute_value"
-      ],
-      "route": "/admin/catalog",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts",
-      "write_tables": []
-    },
-    {
-      "api_method": "GET",
-      "api_path": "/backend/v3/api/catalog/categories",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "read",
-      "operation": "listCommerceCategories",
-      "operation_scope": null,
-      "read_sources": [
-        "commerce_product_category"
-      ],
-      "route": "/admin/catalog",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts",
-      "write_tables": []
-    },
-    {
-      "api_method": "GET",
-      "api_path": "/backend/v3/api/catalog/category_attributes",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "read",
-      "operation": "listCommerceCategoryAttributes",
-      "operation_scope": null,
-      "read_sources": [
-        "commerce_product_category_attribute",
-        "commerce_product_category",
-        "commerce_product_attribute"
-      ],
-      "route": "/admin/catalog",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts",
-      "write_tables": []
-    },
-    {
-      "api_method": "GET",
-      "api_path": "/backend/v3/api/catalog/price_lists",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "read",
-      "operation": "listCommercePriceLists",
-      "operation_scope": null,
-      "read_sources": [
-        "commerce_price_list",
-        "commerce_price_list_item"
-      ],
-      "route": "/admin/catalog",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts",
-      "write_tables": []
-    },
-    {
-      "api_method": "GET",
-      "api_path": "/backend/v3/api/catalog/products",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "read",
-      "operation": "listCommerceProducts",
-      "operation_scope": null,
-      "read_sources": [
-        "commerce_product_spu",
-        "commerce_product_spu_category",
-        "commerce_product_sku",
-        "commerce_product_category",
-        "commerce_product_media",
-        "commerce_price_list",
-        "commerce_price_list_item"
-      ],
-      "route": "/admin/catalog",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts",
-      "write_tables": []
-    },
-    {
-      "api_method": "GET",
-      "api_path": "/backend/v3/api/catalog/skus",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "read",
-      "operation": "listCommerceSkus",
-      "operation_scope": null,
-      "read_sources": [
-        "commerce_product_sku",
-        "commerce_product_spu",
-        "commerce_product_attribute",
-        "commerce_product_attribute_value",
-        "commerce_product_media",
-        "commerce_product_sku_attribute",
-        "commerce_price_list",
-        "commerce_price_list_item"
-      ],
-      "route": "/admin/catalog",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts",
-      "write_tables": []
-    },
-    {
-      "api_method": "PATCH",
-      "api_path": "/backend/v3/api/catalog/categories/{categoryId}",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "update",
-      "operation": "updateCommerceCategory",
-      "operation_scope": null,
-      "read_sources": [
-        "commerce_product_category"
-      ],
-      "route": "/admin/catalog",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts",
-      "write_tables": [
-        "commerce_product_category",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "PATCH",
-      "api_path": "/backend/v3/api/catalog/category_attributes/{bindingId}",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "update",
-      "operation": "updateCommerceCategoryAttribute",
-      "operation_scope": null,
-      "read_sources": [
-        "commerce_product_category_attribute",
-        "commerce_product_category",
-        "commerce_product_attribute"
-      ],
-      "route": "/admin/catalog",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts",
-      "write_tables": [
-        "commerce_product_category_attribute",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "PATCH",
-      "api_path": "/backend/v3/api/catalog/products/{productId}",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "update",
-      "operation": "updateCommerceProduct",
-      "operation_scope": null,
-      "read_sources": [
-        "commerce_product_spu",
-        "commerce_product_category"
-      ],
-      "route": "/admin/catalog",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts",
-      "write_tables": [
-        "commerce_product_spu",
-        "commerce_product_spu_category",
-        "commerce_product_media",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "PATCH",
-      "api_path": "/backend/v3/api/catalog/skus/{skuId}",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "update",
-      "operation": "updateCommerceSku",
-      "operation_scope": null,
-      "read_sources": [
-        "commerce_product_sku",
-        "commerce_product_spu",
-        "commerce_product_attribute",
-        "commerce_product_attribute_value",
-        "commerce_product_media"
-      ],
-      "route": "/admin/catalog",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts",
-      "write_tables": [
-        "commerce_product_sku",
-        "commerce_product_sku_attribute",
-        "commerce_product_media",
         "ops_audit_log"
       ]
     },
@@ -2593,7 +2559,7 @@
     },
     {
       "api_method": "PATCH",
-      "api_path": "/backend/v3/api/memberships/members/{membershipId}/status",
+      "api_path": "/backend/v3/api/memberships/members/{membershipId}",
       "api_surface": "backend",
       "file_targets": [],
       "kind": "update",
@@ -2667,7 +2633,7 @@
       "write_tables": []
     },
     {
-      "api_method": "PUT",
+      "api_method": "PATCH",
       "api_path": "/backend/v3/api/memberships/package_groups/{packageGroupId}",
       "api_surface": "backend",
       "file_targets": [],
@@ -2755,7 +2721,7 @@
       "write_tables": []
     },
     {
-      "api_method": "PUT",
+      "api_method": "PATCH",
       "api_path": "/backend/v3/api/memberships/packages/{packageId}",
       "api_surface": "backend",
       "file_targets": [],
@@ -2843,7 +2809,7 @@
       "write_tables": []
     },
     {
-      "api_method": "PUT",
+      "api_method": "PATCH",
       "api_path": "/backend/v3/api/memberships/plans/{planId}",
       "api_surface": "backend",
       "file_targets": [],
@@ -4641,6 +4607,112 @@
       ]
     },
     {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/fulfillments",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "backendFulfillmentCreate",
+      "operation_scope": null,
+      "read_sources": [
+        "commerce_order",
+        "commerce_order_item",
+        "commerce_product_sku"
+      ],
+      "route": "/admin/orders",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts",
+      "write_tables": [
+        "commerce_fulfillment_order",
+        "commerce_fulfillment_item",
+        "commerce_order_event",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/fulfillments/{fulfillmentId}/shipments",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "backendFulfillmentShipmentCreate",
+      "operation_scope": null,
+      "read_sources": [
+        "commerce_fulfillment_order",
+        "commerce_order"
+      ],
+      "route": "/admin/orders",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts",
+      "write_tables": [
+        "commerce_shipment",
+        "commerce_order_event",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "PATCH",
+      "api_path": "/backend/v3/api/fulfillments/{fulfillmentId}/shipments/{shipmentId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "update",
+      "operation": "backendFulfillmentShipmentUpdate",
+      "operation_scope": null,
+      "read_sources": [
+        "commerce_fulfillment_order",
+        "commerce_shipment",
+        "commerce_order"
+      ],
+      "route": "/admin/orders",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts",
+      "write_tables": [
+        "commerce_shipment",
+        "commerce_order_event",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/fulfillments/{fulfillmentId}/shipments/{shipmentId}/tracking_events",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "backendFulfillmentTrackingEventCreate",
+      "operation_scope": null,
+      "read_sources": [
+        "commerce_fulfillment_order",
+        "commerce_shipment",
+        "commerce_order"
+      ],
+      "route": "/admin/orders",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts",
+      "write_tables": [
+        "commerce_shipment_tracking_event",
+        "commerce_shipment",
+        "commerce_order_event",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "PATCH",
+      "api_path": "/backend/v3/api/fulfillments/{fulfillmentId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "update",
+      "operation": "backendFulfillmentUpdate",
+      "operation_scope": null,
+      "read_sources": [
+        "commerce_fulfillment_order",
+        "commerce_fulfillment_item",
+        "commerce_order"
+      ],
+      "route": "/admin/orders",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts",
+      "write_tables": [
+        "commerce_fulfillment_order",
+        "commerce_order_event",
+        "ops_audit_log"
+      ]
+    },
+    {
       "api_method": "GET",
       "api_path": "/backend/v3/api/fulfillments",
       "api_surface": "backend",
@@ -4686,7 +4758,7 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/backend/v3/api/orders",
+      "api_path": "/backend/v3/api/orders/management",
       "api_surface": "backend",
       "file_targets": [],
       "kind": "read",
@@ -4709,8 +4781,53 @@
       "write_tables": []
     },
     {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/orders/management/{orderId}/cancel",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "action",
+      "operation": "backendOrdersManagementCancel",
+      "operation_scope": null,
+      "read_sources": [
+        "commerce_order",
+        "commerce_order_item",
+        "commerce_payment_intent",
+        "commerce_payment_attempt"
+      ],
+      "route": "/admin/orders",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts",
+      "write_tables": [
+        "commerce_order",
+        "commerce_order_cancellation",
+        "commerce_order_event",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/orders/management/{orderId}/close",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "action",
+      "operation": "backendOrdersManagementClose",
+      "operation_scope": null,
+      "read_sources": [
+        "commerce_order",
+        "commerce_order_item",
+        "commerce_payment_intent",
+        "commerce_payment_attempt"
+      ],
+      "route": "/admin/orders",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts",
+      "write_tables": [
+        "commerce_order",
+        "commerce_order_event",
+        "ops_audit_log"
+      ]
+    },
+    {
       "api_method": "GET",
-      "api_path": "/backend/v3/api/orders/{orderId}",
+      "api_path": "/backend/v3/api/orders/management/{orderId}",
       "api_surface": "backend",
       "file_targets": [],
       "kind": "read",
@@ -4733,8 +4850,54 @@
       "write_tables": []
     },
     {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/refunds/{refundId}/approvals",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "action",
+      "operation": "backendRefundApprovalCreate",
+      "operation_scope": null,
+      "read_sources": [
+        "commerce_refund",
+        "commerce_refund_item",
+        "commerce_order",
+        "commerce_payment_attempt"
+      ],
+      "route": "/admin/orders",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts",
+      "write_tables": [
+        "commerce_refund",
+        "commerce_refund_attempt",
+        "commerce_order_event",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/refunds/{refundId}/attempts",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "backendRefundAttemptCreate",
+      "operation_scope": null,
+      "read_sources": [
+        "commerce_refund",
+        "commerce_refund_item",
+        "commerce_order",
+        "commerce_payment_attempt"
+      ],
+      "route": "/admin/orders",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts",
+      "write_tables": [
+        "commerce_refund_attempt",
+        "commerce_refund",
+        "commerce_order_event",
+        "ops_audit_log"
+      ]
+    },
+    {
       "api_method": "GET",
-      "api_path": "/backend/v3/api/refunds",
+      "api_path": "/backend/v3/api/refunds/management",
       "api_surface": "backend",
       "file_targets": [],
       "kind": "read",
@@ -4754,7 +4917,7 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/backend/v3/api/refunds/{refundId}",
+      "api_path": "/backend/v3/api/refunds/management/{refundId}",
       "api_surface": "backend",
       "file_targets": [],
       "kind": "read",
@@ -4792,6 +4955,24 @@
     },
     {
       "api_method": "GET",
+      "api_path": "/backend/v3/api/shipments/{shipmentId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "backendShipmentsRetrieve",
+      "operation_scope": null,
+      "read_sources": [
+        "commerce_shipment",
+        "commerce_shipment_tracking_event",
+        "commerce_fulfillment_order",
+        "commerce_order"
+      ],
+      "route": "/admin/orders",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
       "api_path": "/backend/v3/api/shipments/{shipmentId}/tracking_events",
       "api_surface": "backend",
       "file_targets": [],
@@ -4807,6 +4988,569 @@
       "route": "/admin/orders",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts",
       "write_tables": []
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/iam/role_bindings",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "bindRole",
+      "operation_scope": null,
+      "read_sources": [
+        "iam_role",
+        "iam_organization_member"
+      ],
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts",
+      "write_tables": [
+        "iam_user_role",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/iam/departments",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "createDepartment",
+      "operation_scope": null,
+      "read_sources": [
+        "iam_organization"
+      ],
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts",
+      "write_tables": [
+        "iam_organization",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/iam/department_assignments",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "createDepartmentAssignment",
+      "operation_scope": null,
+      "read_sources": [
+        "iam_organization",
+        "iam_organization_member"
+      ],
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts",
+      "write_tables": [
+        "iam_organization_member",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/iam/organization_memberships",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "createMembership",
+      "operation_scope": null,
+      "read_sources": [
+        "iam_user",
+        "iam_organization"
+      ],
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts",
+      "write_tables": [
+        "iam_organization_member",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/iam/organizations",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "createOrganization",
+      "operation_scope": null,
+      "read_sources": [
+        "iam_organization"
+      ],
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts",
+      "write_tables": [
+        "iam_organization",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/iam/permissions",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "createPermission",
+      "operation_scope": null,
+      "read_sources": [
+        "iam_permission"
+      ],
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts",
+      "write_tables": [
+        "iam_permission",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/iam/positions",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "createPosition",
+      "operation_scope": null,
+      "read_sources": [
+        "iam_organization"
+      ],
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts",
+      "write_tables": [
+        "iam_organization",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/iam/position_assignments",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "createPositionAssignment",
+      "operation_scope": null,
+      "read_sources": [
+        "iam_organization",
+        "iam_organization_member"
+      ],
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts",
+      "write_tables": [
+        "iam_organization_member",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/iam/roles",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "createRole",
+      "operation_scope": null,
+      "read_sources": [
+        "iam_role"
+      ],
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts",
+      "write_tables": [
+        "iam_role",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "PATCH",
+      "api_path": "/backend/v3/api/iam/department_assignments/{assignmentId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "update",
+      "operation": "deactivateDepartmentAssignment",
+      "operation_scope": null,
+      "read_sources": [
+        "iam_organization_member"
+      ],
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts",
+      "write_tables": [
+        "iam_organization_member",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "PATCH",
+      "api_path": "/backend/v3/api/iam/organization_memberships/{membershipId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "update",
+      "operation": "deactivateMembership",
+      "operation_scope": null,
+      "read_sources": [
+        "iam_organization_member"
+      ],
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts",
+      "write_tables": [
+        "iam_organization_member",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "PATCH",
+      "api_path": "/backend/v3/api/iam/position_assignments/{assignmentId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "update",
+      "operation": "deactivatePositionAssignment",
+      "operation_scope": null,
+      "read_sources": [
+        "iam_organization_member"
+      ],
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts",
+      "write_tables": [
+        "iam_organization_member",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "DELETE",
+      "api_path": "/backend/v3/api/iam/departments/{departmentId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "delete",
+      "operation": "deleteDepartment",
+      "operation_scope": null,
+      "read_sources": [
+        "iam_organization"
+      ],
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts",
+      "write_tables": [
+        "iam_organization",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "DELETE",
+      "api_path": "/backend/v3/api/iam/organizations/{organizationId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "delete",
+      "operation": "deleteOrganization",
+      "operation_scope": null,
+      "read_sources": [
+        "iam_organization"
+      ],
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts",
+      "write_tables": [
+        "iam_organization",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "DELETE",
+      "api_path": "/backend/v3/api/iam/permissions/{permissionId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "delete",
+      "operation": "deletePermission",
+      "operation_scope": null,
+      "read_sources": [
+        "iam_permission"
+      ],
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts",
+      "write_tables": [
+        "iam_permission",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "DELETE",
+      "api_path": "/backend/v3/api/iam/positions/{positionId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "delete",
+      "operation": "deletePosition",
+      "operation_scope": null,
+      "read_sources": [
+        "iam_organization"
+      ],
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts",
+      "write_tables": [
+        "iam_organization",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "DELETE",
+      "api_path": "/backend/v3/api/iam/roles/{roleId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "delete",
+      "operation": "deleteRole",
+      "operation_scope": null,
+      "read_sources": [
+        "iam_role"
+      ],
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts",
+      "write_tables": [
+        "iam_role",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "DELETE",
+      "api_path": "/backend/v3/api/iam/role_bindings/{roleBindingId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "delete",
+      "operation": "deleteRoleBinding",
+      "operation_scope": null,
+      "read_sources": [
+        "iam_user_role"
+      ],
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts",
+      "write_tables": [
+        "iam_user_role",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/iam/roles/{roleId}/permissions",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "grantRolePermission",
+      "operation_scope": null,
+      "read_sources": [
+        "iam_role",
+        "iam_permission"
+      ],
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts",
+      "write_tables": [
+        "iam_role_permission",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/iam/departments",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "listDepartments",
+      "operation_scope": null,
+      "read_sources": [
+        "iam_organization",
+        "iam_organization_member"
+      ],
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/iam/roles/{roleId}/permissions",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "listRolePermissions",
+      "operation_scope": null,
+      "read_sources": [
+        "iam_role",
+        "iam_permission",
+        "iam_role_permission"
+      ],
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/iam/users",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "loadDirectory",
+      "operation_scope": "app_shell",
+      "read_sources": [
+        "iam_user",
+        "iam_organization",
+        "iam_organization_member",
+        "iam_role",
+        "iam_permission",
+        "iam_role_permission",
+        "iam_user_role"
+      ],
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "DELETE",
+      "api_path": "/backend/v3/api/iam/roles/{roleId}/permissions/{permissionId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "delete",
+      "operation": "revokeRolePermission",
+      "operation_scope": null,
+      "read_sources": [
+        "iam_role_permission"
+      ],
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts",
+      "write_tables": [
+        "iam_role_permission",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "PATCH",
+      "api_path": "/backend/v3/api/iam/departments/{departmentId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "update",
+      "operation": "updateDepartment",
+      "operation_scope": null,
+      "read_sources": [
+        "iam_organization"
+      ],
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts",
+      "write_tables": [
+        "iam_organization",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "PATCH",
+      "api_path": "/backend/v3/api/iam/department_assignments/{assignmentId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "update",
+      "operation": "updateDepartmentAssignment",
+      "operation_scope": null,
+      "read_sources": [
+        "iam_organization_member"
+      ],
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts",
+      "write_tables": [
+        "iam_organization_member",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "PATCH",
+      "api_path": "/backend/v3/api/iam/organization_memberships/{membershipId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "update",
+      "operation": "updateMembership",
+      "operation_scope": null,
+      "read_sources": [
+        "iam_organization_member"
+      ],
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts",
+      "write_tables": [
+        "iam_organization_member",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "PATCH",
+      "api_path": "/backend/v3/api/iam/organizations/{organizationId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "update",
+      "operation": "updateOrganization",
+      "operation_scope": null,
+      "read_sources": [
+        "iam_organization"
+      ],
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts",
+      "write_tables": [
+        "iam_organization",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "PATCH",
+      "api_path": "/backend/v3/api/iam/permissions/{permissionId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "update",
+      "operation": "updatePermission",
+      "operation_scope": null,
+      "read_sources": [
+        "iam_permission"
+      ],
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts",
+      "write_tables": [
+        "iam_permission",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "PATCH",
+      "api_path": "/backend/v3/api/iam/positions/{positionId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "update",
+      "operation": "updatePosition",
+      "operation_scope": null,
+      "read_sources": [
+        "iam_organization"
+      ],
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts",
+      "write_tables": [
+        "iam_organization",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "PATCH",
+      "api_path": "/backend/v3/api/iam/position_assignments/{assignmentId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "update",
+      "operation": "updatePositionAssignment",
+      "operation_scope": null,
+      "read_sources": [
+        "iam_organization_member"
+      ],
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts",
+      "write_tables": [
+        "iam_organization_member",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "PATCH",
+      "api_path": "/backend/v3/api/iam/roles/{roleId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "update",
+      "operation": "updateRole",
+      "operation_scope": null,
+      "read_sources": [
+        "iam_role"
+      ],
+      "route": "/admin/organization",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts",
+      "write_tables": [
+        "iam_role",
+        "ops_audit_log"
+      ]
     },
     {
       "api_method": "GET",
@@ -5905,6 +6649,39 @@
     },
     {
       "api_method": "GET",
+      "api_path": "/backend/v3/api/system/auth/settings",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "fetchClawRouterAuthSettings",
+      "operation_scope": null,
+      "read_sources": [
+        "ops_config_snapshot"
+      ],
+      "route": "/admin/settings",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-site/src/AuthSettingsService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "PATCH",
+      "api_path": "/backend/v3/api/system/auth/settings",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "update",
+      "operation": "updateClawRouterAuthSettings",
+      "operation_scope": null,
+      "read_sources": [
+        "ops_config_snapshot"
+      ],
+      "route": "/admin/settings",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-site/src/AuthSettingsService.ts",
+      "write_tables": [
+        "ops_config_snapshot",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "GET",
       "api_path": "/backend/v3/api/system/site/settings",
       "api_surface": "backend",
       "file_targets": [],
@@ -6527,7 +7304,7 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/backend/v3/api/user",
+      "api_path": "/backend/v3/api/iam/users",
       "api_surface": "backend",
       "file_targets": [],
       "kind": "create",
@@ -6620,8 +7397,8 @@
       "write_tables": []
     },
     {
-      "api_method": "PUT",
-      "api_path": "/backend/v3/api/user",
+      "api_method": "PATCH",
+      "api_path": "/backend/v3/api/iam/users/{userId}",
       "api_surface": "backend",
       "file_targets": [],
       "kind": "update",
@@ -6996,377 +7773,6 @@
       "write_tables": [
         "open_platform_entry",
         "open_platform_account",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/platform/apps",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "create",
-      "operation": "createApp",
-      "operation_scope": null,
-      "read_sources": [
-        "plus_app",
-        "plus_category",
-        "studio_catalog_asset",
-        "studio_catalog_artifact"
-      ],
-      "route": "/admin/app",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts",
-      "write_tables": [
-        "plus_app",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/platform/apps/categories",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "create",
-      "operation": "createAppCategory",
-      "operation_scope": null,
-      "read_sources": [
-        "plus_category"
-      ],
-      "route": "/admin/app",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts",
-      "write_tables": [
-        "plus_category",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/platform/apps/templates",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "create",
-      "operation": "createAppTemplate",
-      "operation_scope": null,
-      "read_sources": [
-        "studio_app_template"
-      ],
-      "route": "/admin/app",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts",
-      "write_tables": [
-        "studio_app_template",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "DELETE",
-      "api_path": "/backend/v3/api/platform/apps/{appId}",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "delete",
-      "operation": "deleteApp",
-      "operation_scope": null,
-      "read_sources": [
-        "plus_app",
-        "studio_catalog_action",
-        "studio_catalog_asset",
-        "studio_catalog_artifact"
-      ],
-      "route": "/admin/app",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts",
-      "write_tables": [
-        "plus_app",
-        "studio_catalog_action",
-        "studio_catalog_asset",
-        "studio_catalog_artifact",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "DELETE",
-      "api_path": "/backend/v3/api/platform/apps/categories/{categoryId}",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "delete",
-      "operation": "deleteAppCategory",
-      "operation_scope": null,
-      "read_sources": [
-        "plus_category"
-      ],
-      "route": "/admin/app",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts",
-      "write_tables": [
-        "plus_category",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "DELETE",
-      "api_path": "/backend/v3/api/platform/apps/templates/{templateId}",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "delete",
-      "operation": "deleteAppTemplate",
-      "operation_scope": null,
-      "read_sources": [
-        "studio_app_template",
-        "studio_catalog_action",
-        "studio_catalog_asset",
-        "studio_catalog_artifact"
-      ],
-      "route": "/admin/app",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts",
-      "write_tables": [
-        "studio_app_template",
-        "studio_catalog_action",
-        "studio_catalog_asset",
-        "studio_catalog_artifact",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/platform/apps/{appId}/disable",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "action",
-      "operation": "disableApp",
-      "operation_scope": null,
-      "read_sources": [
-        "plus_app"
-      ],
-      "route": "/admin/app",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts",
-      "write_tables": [
-        "plus_app",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/platform/apps/{appId}/enable",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "action",
-      "operation": "enableApp",
-      "operation_scope": null,
-      "read_sources": [
-        "plus_app"
-      ],
-      "route": "/admin/app",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts",
-      "write_tables": [
-        "plus_app",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "GET",
-      "api_path": "/backend/v3/api/platform/apps/{appId}",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "read",
-      "operation": "fetchApp",
-      "operation_scope": null,
-      "read_sources": [
-        "plus_app",
-        "plus_category",
-        "studio_catalog_asset",
-        "studio_catalog_artifact"
-      ],
-      "route": "/admin/app",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts",
-      "write_tables": []
-    },
-    {
-      "api_method": "GET",
-      "api_path": "/backend/v3/api/platform/apps/categories",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "read",
-      "operation": "fetchAppCategories",
-      "operation_scope": null,
-      "read_sources": [
-        "plus_category"
-      ],
-      "route": "/admin/app",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts",
-      "write_tables": []
-    },
-    {
-      "api_method": "GET",
-      "api_path": "/backend/v3/api/platform/apps/templates/{templateId}",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "read",
-      "operation": "fetchAppTemplate",
-      "operation_scope": null,
-      "read_sources": [
-        "studio_app_template"
-      ],
-      "route": "/admin/app",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts",
-      "write_tables": []
-    },
-    {
-      "api_method": "GET",
-      "api_path": "/backend/v3/api/platform/apps/templates",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "read",
-      "operation": "fetchAppTemplates",
-      "operation_scope": null,
-      "read_sources": [
-        "studio_app_template",
-        "studio_catalog_asset",
-        "studio_catalog_artifact"
-      ],
-      "route": "/admin/app",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts",
-      "write_tables": []
-    },
-    {
-      "api_method": "GET",
-      "api_path": "/backend/v3/api/platform/apps",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "read",
-      "operation": "fetchApps",
-      "operation_scope": null,
-      "read_sources": [
-        "plus_app",
-        "plus_category",
-        "studio_catalog_asset",
-        "studio_catalog_artifact"
-      ],
-      "route": "/admin/app",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts",
-      "write_tables": []
-    },
-    {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/platform/apps/{appId}/unpublish",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "action",
-      "operation": "offlineApp",
-      "operation_scope": null,
-      "read_sources": [
-        "plus_app"
-      ],
-      "route": "/admin/app",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts",
-      "write_tables": [
-        "plus_app",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/platform/apps/templates/{templateId}/unpublish",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "action",
-      "operation": "offlineAppTemplate",
-      "operation_scope": null,
-      "read_sources": [
-        "studio_app_template"
-      ],
-      "route": "/admin/app",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts",
-      "write_tables": [
-        "studio_app_template",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/platform/apps/{appId}/publish",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "action",
-      "operation": "publishApp",
-      "operation_scope": null,
-      "read_sources": [
-        "plus_app"
-      ],
-      "route": "/admin/app",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts",
-      "write_tables": [
-        "plus_app",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/platform/apps/templates/{templateId}/publish",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "action",
-      "operation": "publishAppTemplate",
-      "operation_scope": null,
-      "read_sources": [
-        "studio_app_template"
-      ],
-      "route": "/admin/app",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts",
-      "write_tables": [
-        "studio_app_template",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "PUT",
-      "api_path": "/backend/v3/api/platform/apps/{appId}",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "update",
-      "operation": "updateApp",
-      "operation_scope": null,
-      "read_sources": [
-        "plus_app",
-        "plus_category",
-        "studio_catalog_asset",
-        "studio_catalog_artifact"
-      ],
-      "route": "/admin/app",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts",
-      "write_tables": [
-        "plus_app",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "PUT",
-      "api_path": "/backend/v3/api/platform/apps/categories/{categoryId}",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "update",
-      "operation": "updateAppCategory",
-      "operation_scope": null,
-      "read_sources": [
-        "plus_category"
-      ],
-      "route": "/admin/app",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts",
-      "write_tables": [
-        "plus_category",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "PUT",
-      "api_path": "/backend/v3/api/platform/apps/templates/{templateId}",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "update",
-      "operation": "updateAppTemplate",
-      "operation_scope": null,
-      "read_sources": [
-        "studio_app_template"
-      ],
-      "route": "/admin/app",
-      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts",
-      "write_tables": [
-        "studio_app_template",
         "ops_audit_log"
       ]
     },
@@ -11341,6 +11747,29 @@
       ]
     },
     {
+      "api_method": "POST",
+      "api_path": "/app/v3/api/generations/images/text_to_image",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "runPlaygroundAssetGeneration",
+      "operation_scope": "app_shell",
+      "read_sources": [
+        "ai_model",
+        "ai_model_capability",
+        "ai_generation_job",
+        "ai_generation_asset"
+      ],
+      "route": "/playground",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/playgroundGenerationsService.ts",
+      "write_tables": [
+        "ai_generation_session",
+        "ai_generation_job",
+        "ai_generation_asset",
+        "ai_usage_fact"
+      ]
+    },
+    {
       "api_method": "GET",
       "api_path": "/app/v3/api/ai/generations",
       "api_surface": "app",
@@ -11404,6 +11833,29 @@
         "ai_agent_run_step",
         "ai_runtime_invocation",
         "ai_runtime_usage_link"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/app/v3/api/generations/images/text_to_image",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "runGeneration",
+      "operation_scope": "app_shell",
+      "read_sources": [
+        "ai_model",
+        "ai_model_capability",
+        "ai_generation_job",
+        "ai_generation_asset"
+      ],
+      "route": "/playground",
+      "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/playgroundService.ts",
+      "write_tables": [
+        "ai_generation_session",
+        "ai_generation_job",
+        "ai_generation_asset",
+        "ai_usage_fact"
       ]
     },
     {
@@ -12066,21 +12518,6 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/backend/v3/api/system/auth/settings",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "read",
-      "operation": "fetchClawRouterAuthSettings",
-      "operation_scope": null,
-      "read_sources": [
-        "ops_config_snapshot"
-      ],
-      "route": "/admin/settings",
-      "source": "apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthSettingsService.ts",
-      "write_tables": []
-    },
-    {
-      "api_method": "GET",
       "api_path": "/app/v3/api/system/iam/verification_policy",
       "api_surface": "app",
       "file_targets": [],
@@ -12093,29 +12530,11 @@
       "route": "/auth/login",
       "source": "apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthSettingsService.ts",
       "write_tables": []
-    },
-    {
-      "api_method": "PATCH",
-      "api_path": "/backend/v3/api/system/auth/settings",
-      "api_surface": "backend",
-      "file_targets": [],
-      "kind": "update",
-      "operation": "updateClawRouterAuthSettings",
-      "operation_scope": null,
-      "read_sources": [
-        "ops_config_snapshot"
-      ],
-      "route": "/admin/settings",
-      "source": "apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthSettingsService.ts",
-      "write_tables": [
-        "ops_config_snapshot",
-        "ops_audit_log"
-      ]
     }
   ],
   "summary": {
-    "operation_count": 638,
-    "source_file_count": 65,
-    "write_operation_count": 314
+    "operation_count": 660,
+    "source_file_count": 67,
+    "write_operation_count": 338
   }
 }

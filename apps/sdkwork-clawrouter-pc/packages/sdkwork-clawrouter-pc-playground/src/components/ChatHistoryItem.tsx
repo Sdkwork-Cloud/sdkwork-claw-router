@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { Bot, Image as ImageIcon, Video, Music, Headphones, FileAudio } from 'lucide-react';
-import { getSdkworkGenerationPreviewKind } from '@sdkwork/generation-pc-react/react';
+import { getSdkworkGenerationPreviewKind } from '@sdkwork/generations-pc-workspace/generation-history';
 import { VideoMessageItem, MusicMessageItem, ImagesMessageItem, AudioMessageItem } from './MessageItems';
 import { ChatMarkdownMessage } from './chat/ChatMarkdownMessage';
 import type { PlaygroundHistoryItem, PlaygroundPreviewSetter } from '../playgroundTypes';

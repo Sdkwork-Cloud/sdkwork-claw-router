@@ -109,6 +109,9 @@ const DEFAULT_SDK_README_VERSION: &str = "0.1.0";
 const DEFAULT_SDK_README_BASE_URL: &str = "/app/v3/api";
 const DEFAULT_SDK_README_PACKAGE_NAME: &str = "@sdkwork/clawrouter-app-sdk";
 const DEFAULT_SDK_README_DESCRIPTION: &str = "SDKWork Claw Router app API SDK";
+const OPEN_API_PREFIX: &str = "/v1";
+const APP_API_PREFIX: &str = "/app/v3/api";
+const BACKEND_API_PREFIX: &str = "/backend/v3/api";
 
 #[derive(Clone, Debug)]
 pub struct EdgeServerConfig {
@@ -241,6 +244,7 @@ struct PortalRuntimeEnv {
     open_api_base_url: String,
     app_api_base_url: String,
     backend_api_base_url: String,
+    appbase_backend_api_base_url: Option<String>,
     tool_api_enabled: bool,
 }
 
@@ -251,6 +255,7 @@ impl Default for PortalRuntimeEnv {
             open_api_base_url: "/v1".to_owned(),
             app_api_base_url: "/app/v3/api".to_owned(),
             backend_api_base_url: "/backend/v3/api".to_owned(),
+            appbase_backend_api_base_url: None,
             tool_api_enabled: false,
         }
     }
@@ -369,6 +374,25 @@ impl EdgeServerConfig {
         Ok(self)
     }
 
+    pub fn with_portal_public_sdk_base_url(
+        mut self,
+        value: impl AsRef<str>,
+    ) -> Result<Self, String> {
+        let normalized = normalize_portal_public_url(value.as_ref(), "PORTAL_PUBLIC_SDK_BASE_URL")?;
+        self.portal_runtime_env.api_base_url =
+            append_portal_public_sdk_base_url(&normalized, OPEN_API_PREFIX);
+        self.portal_runtime_env.open_api_base_url = self.portal_runtime_env.api_base_url.clone();
+        self.portal_runtime_env.app_api_base_url =
+            append_portal_public_sdk_base_url(&normalized, APP_API_PREFIX);
+        self.portal_runtime_env.backend_api_base_url =
+            append_portal_public_sdk_base_url(&normalized, BACKEND_API_PREFIX);
+        self.portal_runtime_env.appbase_backend_api_base_url = Some(
+            append_portal_public_sdk_base_url(&normalized, BACKEND_API_PREFIX),
+        );
+        self.refresh_portal_content_security_policy()?;
+        Ok(self)
+    }
+
     pub fn with_portal_public_open_api_base_url(
         mut self,
         value: impl AsRef<str>,
@@ -395,6 +419,18 @@ impl EdgeServerConfig {
     ) -> Result<Self, String> {
         self.portal_runtime_env.backend_api_base_url =
             normalize_portal_public_url(value.as_ref(), "PORTAL_PUBLIC_BACKEND_API_BASE_URL")?;
+        self.refresh_portal_content_security_policy()?;
+        Ok(self)
+    }
+
+    pub fn with_portal_public_appbase_backend_api_base_url(
+        mut self,
+        value: impl AsRef<str>,
+    ) -> Result<Self, String> {
+        self.portal_runtime_env.appbase_backend_api_base_url = Some(normalize_portal_public_url(
+            value.as_ref(),
+            "PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL",
+        )?);
         self.refresh_portal_content_security_policy()?;
         Ok(self)
     }
@@ -2384,19 +2420,25 @@ fn find_module_script_index(html: &str) -> Option<usize> {
 }
 
 fn build_portal_runtime_env_script(runtime_env: &PortalRuntimeEnv) -> String {
-    let serialized = json!({
+    let mut runtime_env_json = json!({
         "VITE_API_BASE_URL": runtime_env.api_base_url,
         "VITE_CLAWROUTER_OPEN_API_BASE_URL": runtime_env.open_api_base_url,
         "VITE_CLAWROUTER_APP_API_BASE_URL": runtime_env.app_api_base_url,
         "VITE_CLAWROUTER_BACKEND_API_BASE_URL": runtime_env.backend_api_base_url,
         "VITE_TOOL_API_ENABLED": if runtime_env.tool_api_enabled { "true" } else { "false" },
-    })
-    .to_string()
-    .replace('<', "\\u003C")
-    .replace('>', "\\u003E")
-    .replace('&', "\\u0026")
-    .replace('\u{2028}', "\\u2028")
-    .replace('\u{2029}', "\\u2029");
+    });
+    if let Some(appbase_backend_api_base_url) = &runtime_env.appbase_backend_api_base_url {
+        runtime_env_json["VITE_SDKWORK_APPBASE_BACKEND_API_BASE_URL"] =
+            json!(appbase_backend_api_base_url);
+    }
+
+    let serialized = runtime_env_json
+        .to_string()
+        .replace('<', "\\u003C")
+        .replace('>', "\\u003E")
+        .replace('&', "\\u0026")
+        .replace('\u{2028}', "\\u2028")
+        .replace('\u{2029}', "\\u2029");
 
     format!("window.__CLAWROUTER_ENV__ = Object.freeze({serialized});\n")
 }
@@ -2714,6 +2756,19 @@ fn normalize_portal_public_url(value: &str, label: &str) -> Result<String, Strin
     Ok(trimmed.trim_end_matches('/').to_owned())
 }
 
+fn append_portal_public_sdk_base_url(value: &str, api_prefix: &str) -> String {
+    let prefix = if api_prefix.starts_with('/') {
+        api_prefix.to_owned()
+    } else {
+        format!("/{api_prefix}")
+    };
+    let base = value.trim_end_matches('/');
+    if base.is_empty() {
+        return prefix;
+    }
+    format!("{base}{prefix}")
+}
+
 fn normalize_portal_csp_connect_src(value: &str) -> Result<Vec<String>, String> {
     let mut origins = Vec::new();
     for token in value
@@ -2829,6 +2884,11 @@ fn build_portal_content_security_policy(config: &EdgeServerConfig) -> Result<Hea
         &config.portal_runtime_env.app_api_base_url,
         &config.portal_runtime_env.backend_api_base_url,
     ] {
+        if let Some(origin) = portal_public_url_origin(public_url)? {
+            push_unique(&mut connect_src, origin);
+        }
+    }
+    if let Some(public_url) = &config.portal_runtime_env.appbase_backend_api_base_url {
         if let Some(origin) = portal_public_url_origin(public_url)? {
             push_unique(&mut connect_src, origin);
         }

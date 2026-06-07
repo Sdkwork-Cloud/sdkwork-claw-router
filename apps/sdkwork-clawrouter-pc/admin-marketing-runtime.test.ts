@@ -6,7 +6,11 @@ import { clearStoredAppSessionToken } from "./packages/sdkwork-clawrouter-pc-com
 import { resetClawRouterSdkClients } from "./packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts";
 import {
   MarketingService,
+  backendPromotionBudgetLedgerEntriesList,
   backendPromotionCodeRedemptionsList,
+  backendPromotionCouponLedgerEntriesList,
+  backendPromotionEventsList,
+  backendPromotionExternalBindingsList,
   backendPromotionOffersList,
 } from "./packages/sdkwork-clawrouter-pc-admin-marketing/src/marketingService.ts";
 
@@ -96,8 +100,22 @@ test("admin marketing package owns standardized promotion lifecycle and referral
   assert.match(packageSource, /backendPromotionOffersList/);
   assert.match(packageSource, /backendPromotionCodeRedemptionsList/);
   assert.match(packageSource, /MarketingService\.fetchReferralStats/);
-  assert.match(serviceSource, /getClawRouterBackendSdkClient\(\)\.system\.promotions\.offers\.management\.list/);
-  assert.match(serviceSource, /getClawRouterBackendSdkClient\(\)\.system\.promotions\.codes\.redemptions\.list/);
+  for (const expected of [
+    /getSdkworkCommerceService\(\)\.admin\.promotions\.offers\.management\.list/,
+    /getSdkworkCommerceService\(\)\.admin\.promotions\.couponStocks\.list/,
+    /getSdkworkCommerceService\(\)\.admin\.promotions\.codes\.list/,
+    /getSdkworkCommerceService\(\)\.admin\.promotions\.codes\.redemptions\.list/,
+    /getSdkworkCommerceService\(\)\.admin\.promotions\.userCoupons\.management\.list/,
+    /getSdkworkCommerceService\(\)\.admin\.promotions\.discountApplications\.list/,
+    /getSdkworkCommerceService\(\)\.admin\.promotions\.discountAllocations\.list/,
+    /getSdkworkCommerceService\(\)\.admin\.promotions\.couponLedgerEntries\.list/,
+    /getSdkworkCommerceService\(\)\.admin\.promotions\.budgetLedgerEntries\.list/,
+    /getSdkworkCommerceService\(\)\.admin\.promotions\.externalBindings\.list/,
+    /getSdkworkCommerceService\(\)\.admin\.promotions\.events\.list/,
+  ]) {
+    assert.match(serviceSource, expected);
+  }
+  assert.doesNotMatch(serviceSource, /getClawRouterBackendSdkClient\(\)\.system\.promotions/);
   assert.match(serviceSource, /getClawRouterBackendSdkClient\(\)\.system\.marketing\.referralStats\.list\(\)/);
   assert.equal(legacyMarketingFormExists, false, "admin marketing must not keep legacy coupon form helpers");
   assert.match(backendPromotionContract, /summary:\s*Promotion Coupon Codes List/);
@@ -315,6 +333,47 @@ test("admin marketing service reads promotion lifecycle records through generate
       assert.match(captured[0]?.url ?? "", /code_status=redeemed/);
     },
   );
+
+  for (const [action, expectedPath, expectedQuery] of [
+    [
+      () => backendPromotionCouponLedgerEntriesList({ stockId: "stock-1" }),
+      "/backend/v3/api/promotions/coupon_ledger_entries",
+      /stock_id=stock-1/,
+    ],
+    [
+      () => backendPromotionBudgetLedgerEntriesList({ budgetAccountId: "budget-1" }),
+      "/backend/v3/api/promotions/budget_ledger_entries",
+      /budget_account_id=budget-1/,
+    ],
+    [
+      () => backendPromotionExternalBindingsList({ platform: "wechat" }),
+      "/backend/v3/api/promotions/external_bindings",
+      /platform=wechat/,
+    ],
+    [
+      () => backendPromotionEventsList({ status: "pending" }),
+      "/backend/v3/api/promotions/events",
+      /status=pending/,
+    ],
+  ] as const) {
+    await withBackendSdkResponse(
+      {
+        code: "2000",
+        data: {
+          items: [{ id: "promotion-record-1", status: "ok" }],
+        },
+      },
+      async (captured) => {
+        const records = await action();
+
+        assert.deepEqual(records, [{ id: "promotion-record-1", status: "ok" }]);
+        assert.equal(captured.length, 1);
+        assert.equal(captured[0]?.method, "GET");
+        assert.equal(requestPath(captured[0]?.url), expectedPath);
+        assert.match(captured[0]?.url ?? "", expectedQuery);
+      },
+    );
+  }
 });
 
 test("admin marketing service reads referral stats through the generated backend SDK", async () => {

@@ -12,6 +12,11 @@ const execFileAsync = promisify(execFile);
 
 const REQUIRED_RELEASE_ENV = RELEASE_ENVIRONMENT_CONTRACT.requiredReleaseEnv;
 const REQUIRED_PORTAL_PUBLIC_ENV = RELEASE_ENVIRONMENT_CONTRACT.requiredPortalPublicEnv;
+const PORTAL_PUBLIC_SURFACE_BASE_URL_ENV = [
+  'PORTAL_PUBLIC_API_BASE_URL',
+  'PORTAL_PUBLIC_APP_API_BASE_URL',
+  'PORTAL_PUBLIC_BACKEND_API_BASE_URL',
+];
 
 const REQUIRED_COMMANDS = [
   ['git', 'git', ['--version']],
@@ -133,11 +138,22 @@ function releaseEnvironmentIssues(env) {
     issues.push('SDKWORK_CLAW_POSTGRES_TEST_DATABASE_URL must be a postgres:// or postgresql:// URL');
   }
 
+  const sdkBaseUrl = String(env.PORTAL_PUBLIC_SDK_BASE_URL ?? '').trim();
+  const missingSurfaceBaseUrls = missingEnv(env, PORTAL_PUBLIC_SURFACE_BASE_URL_ENV);
+  if (!sdkBaseUrl && missingSurfaceBaseUrls.length > 0) {
+    issues.push(
+      'PORTAL_PUBLIC_SDK_BASE_URL is missing; set it once as the common public SDK root, '
+      + `or configure surface overrides: ${missingSurfaceBaseUrls.join(', ')}`,
+    );
+  }
+
   for (const name of [
+    'PORTAL_PUBLIC_SDK_BASE_URL',
     'PORTAL_PUBLIC_API_BASE_URL',
     'PORTAL_PUBLIC_OPEN_API_BASE_URL',
     'PORTAL_PUBLIC_APP_API_BASE_URL',
     'PORTAL_PUBLIC_BACKEND_API_BASE_URL',
+    'PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL',
   ]) {
     const value = String(env[name] ?? '').trim();
     if (value && !isHttpOrRootRelativeRuntimePath(value)) {
@@ -583,15 +599,25 @@ function buildReleasePreflightReport({
     'Set SDKWORK_CLAW_POSTGRES_TEST_DATABASE_URL or run pnpm.cmd test:postgres:docker on a Docker-enabled host.',
   ));
 
-  const missingPortalEnv = missingEnv(env, REQUIRED_PORTAL_PUBLIC_ENV);
+  const missingPortalRequiredEnv = missingEnv(env, REQUIRED_PORTAL_PUBLIC_ENV);
+  const portalSdkBaseUrl = String(env.PORTAL_PUBLIC_SDK_BASE_URL ?? '').trim();
+  const missingPortalSurfaceBaseUrls = missingEnv(env, PORTAL_PUBLIC_SURFACE_BASE_URL_ENV);
+  const portalPublicIssues = [
+    ...missingPortalRequiredEnv,
+    ...(!portalSdkBaseUrl && missingPortalSurfaceBaseUrls.length > 0
+      ? [`missing common SDK root or surface overrides: ${missingPortalSurfaceBaseUrls.join(', ')}`]
+      : []),
+  ];
   checks.push(createCheck(
     'env.portalPublic',
     'Portal public runtime environment',
-    missingPortalEnv.length === 0 ? 'PASS' : settings.strict ? 'FAIL' : 'WARN',
-    missingPortalEnv.length === 0
-      ? 'all public portal runtime variables are configured'
-      : `missing: ${missingPortalEnv.join(', ')}`,
-    'Set public API base URLs and local tool API flag for staging smoke tests.',
+    portalPublicIssues.length === 0 ? 'PASS' : settings.strict ? 'FAIL' : 'WARN',
+    portalPublicIssues.length === 0
+      ? portalSdkBaseUrl
+        ? 'common public SDK base URL and portal public flags are configured'
+        : 'public SDK surface override base URLs and portal public flags are configured'
+      : `missing: ${portalPublicIssues.join('; ')}`,
+    'Set PORTAL_PUBLIC_SDK_BASE_URL as the common SDK root, or set the per-surface public API base URL overrides.',
   ));
 
   const codexSessionStats = probes.codexSessionStats ?? { count: 0, totalBytes: 0 };

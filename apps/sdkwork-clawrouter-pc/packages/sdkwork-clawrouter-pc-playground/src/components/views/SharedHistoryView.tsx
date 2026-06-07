@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { isSdkworkGenerationImageHistoryType } from '@sdkwork/generation-pc-react/react';
+import { isSdkworkGenerationImageHistoryType } from '@sdkwork/generations-pc-workspace/generation-history';
 import { ChatHistoryItem } from '../ChatHistoryItem';
 import type { PlaygroundHistoryItem, PlaygroundPreviewSetter } from '../../playgroundTypes';
 

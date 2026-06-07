@@ -692,7 +692,7 @@ frontend_operations:
   request_body_required: false
   response_schema: *id012
 - route: /admin/app
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
   operation: fetchApps
   kind: read
   api_surface: backend
@@ -921,7 +921,7 @@ frontend_operations:
       hasNextPage:
         type: boolean
 - route: /admin/app
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
   operation: fetchAppCategories
   operation_id: apps.categories.list
   kind: read
@@ -992,7 +992,7 @@ frontend_operations:
               - 999999
         description: App store category snapshots returned by the backend.
 - route: /admin/app
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
   operation: createAppCategory
   operation_id: apps.categories.create
   kind: create
@@ -1057,7 +1057,7 @@ frontend_operations:
         properties: *id014
         description: Persisted app store category snapshot returned by the backend.
 - route: /admin/app
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
   operation: updateAppCategory
   operation_id: apps.categories.update
   kind: update
@@ -1125,7 +1125,7 @@ frontend_operations:
         properties: *id014
         description: Updated app store category snapshot returned by the backend.
 - route: /admin/app
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
   operation: deleteAppCategory
   operation_id: apps.categories.delete
   kind: delete
@@ -1147,7 +1147,7 @@ frontend_operations:
         type: boolean
         description: Whether the app store category was deleted.
 - route: /admin/app
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
   operation: fetchAppTemplates
   operation_id: apps.templates.list
   kind: read
@@ -1378,7 +1378,7 @@ frontend_operations:
       hasNextPage:
         type: boolean
 - route: /admin/app
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
   operation: createAppTemplate
   operation_id: apps.templates.create
   kind: create
@@ -1515,7 +1515,7 @@ frontend_operations:
         properties: *id016
         description: Persisted app template snapshot returned by the backend.
 - route: /admin/app
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
   operation: fetchAppTemplate
   operation_id: apps.templates.retrieve
   kind: read
@@ -1527,7 +1527,7 @@ frontend_operations:
   query_parameters: []
   response_schema: *id017
 - route: /admin/app
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
   operation: updateAppTemplate
   operation_id: apps.templates.update
   kind: update
@@ -1649,7 +1649,7 @@ frontend_operations:
           additionalProperties: true
   response_schema: *id017
 - route: /admin/app
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
   operation: deleteAppTemplate
   operation_id: apps.templates.delete
   kind: delete
@@ -1677,7 +1677,7 @@ frontend_operations:
         type: boolean
         description: Whether the app template was soft-deleted and detached from catalog projections.
 - route: /admin/app
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
   operation: publishAppTemplate
   operation_id: apps.templates.publish
   kind: action
@@ -1693,7 +1693,7 @@ frontend_operations:
   request_body_required: false
   response_schema: *id017
 - route: /admin/app
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
   operation: offlineAppTemplate
   operation_id: apps.templates.unpublish
   kind: action
@@ -1709,7 +1709,7 @@ frontend_operations:
   request_body_required: false
   response_schema: *id017
 - route: /admin/app
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
   operation: createApp
   kind: create
   api_surface: backend
@@ -1821,7 +1821,7 @@ frontend_operations:
         properties: *id021
         description: Persisted PlusApp snapshot returned by the backend.
 - route: /admin/app
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
   operation: fetchApp
   kind: read
   api_surface: backend
@@ -1846,7 +1846,7 @@ frontend_operations:
         properties: *id021
         description: PlusApp detail snapshot returned by the backend.
 - route: /admin/app
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
   operation: updateApp
   kind: update
   api_surface: backend
@@ -1953,7 +1953,7 @@ frontend_operations:
         properties: *id021
         description: Updated PlusApp snapshot returned by the backend.
 - route: /admin/app
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
   operation: deleteApp
   kind: delete
   api_surface: backend
@@ -1979,7 +1979,7 @@ frontend_operations:
         type: boolean
         description: Whether the PlusApp row and attached catalog records were deleted.
 - route: /admin/app
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
   operation: enableApp
   kind: action
   api_surface: backend
@@ -2005,7 +2005,7 @@ frontend_operations:
         properties: *id021
         description: Enabled PlusApp snapshot returned by the backend.
 - route: /admin/app
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
   operation: disableApp
   kind: action
   api_surface: backend
@@ -2031,7 +2031,7 @@ frontend_operations:
         properties: *id021
         description: Disabled PlusApp snapshot returned by the backend.
 - route: /admin/app
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
   operation: publishApp
   kind: action
   api_surface: backend
@@ -2057,7 +2057,7 @@ frontend_operations:
         properties: *id021
         description: Published PlusApp snapshot returned by the backend.
 - route: /admin/app
-  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
   operation: offlineApp
   kind: action
   api_surface: backend

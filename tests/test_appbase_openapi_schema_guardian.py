@@ -51,6 +51,49 @@ class AppbaseOpenApiSchemaGuardianTest(unittest.TestCase):
         for component_name in component_names:
             self.write_sdk_type(root, surface, component_name)
 
+    def write_dependency_sdk(self, root: Path, surface: str, source: str) -> None:
+        package = "sdkwork-commerce-app-sdk" if surface == "app" else "sdkwork-commerce-backend-sdk"
+        api_dir = (
+            root
+            / "sdkwork-commerce"
+            / "sdks"
+            / package
+            / f"{package}-typescript"
+            / "generated"
+            / "server-openapi"
+            / "src"
+            / "api"
+        )
+        api_dir.mkdir(parents=True, exist_ok=True)
+        (api_dir / "commerce.ts").write_text(source, encoding="utf-8")
+
+    def write_dependency_sdk_type(self, root: Path, surface: str, component_name: str) -> None:
+        package = "sdkwork-commerce-app-sdk" if surface == "app" else "sdkwork-commerce-backend-sdk"
+        types_dir = (
+            root
+            / "sdkwork-commerce"
+            / "sdks"
+            / package
+            / f"{package}-typescript"
+            / "generated"
+            / "server-openapi"
+            / "src"
+            / "types"
+        )
+        types_dir.mkdir(parents=True, exist_ok=True)
+        module_name = self.component_module_name(component_name)
+        (types_dir / f"{module_name}.ts").write_text(
+            f"export interface {component_name} {{}}\n",
+            encoding="utf-8",
+        )
+        index_path = types_dir / "index.ts"
+        with index_path.open("a", encoding="utf-8") as handle:
+            handle.write(f"export type {{ {component_name} }} from './{module_name}';\n")
+
+    def write_dependency_sdk_types(self, root: Path, surface: str, component_names: list[str]) -> None:
+        for component_name in component_names:
+            self.write_dependency_sdk_type(root, surface, component_name)
+
     def component_module_name(self, component_name: str) -> str:
         result = []
         for index, char in enumerate(component_name):
@@ -291,6 +334,108 @@ class AppbaseOpenApiSchemaGuardianTest(unittest.TestCase):
 
             result = AppbaseOpenApiSchemaGuardian(
                 root=root,
+                canonical_operations=(("app", "GET", "/app/v3/api/catalog/products/{productId}", "catalog.products.retrieve"),),
+            ).run()
+
+            self.assertTrue(result.ok, result.messages)
+
+    def test_accepts_dependency_commerce_sdk_generated_server_openapi_layout(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            operation = {
+                "api_surface": "app",
+                "api_method": "GET",
+                "api_path": "/app/v3/api/catalog/products/{productId}",
+                "operation_id": "catalog.products.retrieve",
+                "sdk_domain": "commerce",
+                "path_params": ["productId"],
+                "query_parameters": [],
+                "openapi_exposed": True,
+            }
+            self.write_manifest(root, [operation])
+            self.write_openapi(root, "app", self.valid_spec("app"))
+            self.write_openapi(root, "backend", {"paths": {}, "components": {"schemas": {}}})
+            self.write_dependency_sdk(
+                root,
+                "app",
+                "export class CommerceCatalogProductsApi {\n"
+                "  async retrieve(productId: string): Promise<CatalogProductsRetrieveResult> {}\n"
+                "}\n",
+            )
+            self.write_dependency_sdk_types(
+                root,
+                "app",
+                [
+                    "CatalogProductsRetrieveResult",
+                    "CommerceProductSpuDetailResponse",
+                    "CommerceProductSpuItem",
+                ],
+            )
+            self.write_dependency_sdk(root, "backend", "")
+
+            result = AppbaseOpenApiSchemaGuardian(
+                root=root,
+                sdk_root=root,
+                canonical_operations=(("app", "GET", "/app/v3/api/catalog/products/{productId}", "catalog.products.retrieve"),),
+            ).run()
+
+            self.assertTrue(result.ok, result.messages)
+
+    def test_accepts_dependency_commerce_sdk_generic_result_output(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            operation = {
+                "api_surface": "app",
+                "api_method": "GET",
+                "api_path": "/app/v3/api/catalog/products/{productId}",
+                "operation_id": "catalog.products.retrieve",
+                "sdk_domain": "commerce",
+                "path_params": ["productId"],
+                "query_parameters": [],
+                "openapi_exposed": True,
+            }
+            self.write_manifest(root, [operation])
+            self.write_openapi(root, "app", self.valid_spec("app"))
+            self.write_openapi(root, "backend", {"paths": {}, "components": {"schemas": {}}})
+            self.write_dependency_sdk(
+                root,
+                "app",
+                "import type { CommerceApiResult } from '../types';\n"
+                "export class CommerceCatalogProductsApi {\n"
+                "  async retrieve(productId: string): Promise<CommerceApiResult> {}\n"
+                "}\n",
+            )
+            package = "sdkwork-commerce-app-sdk"
+            types_dir = (
+                root
+                / "sdkwork-commerce"
+                / "sdks"
+                / package
+                / f"{package}-typescript"
+                / "generated"
+                / "server-openapi"
+                / "src"
+                / "types"
+            )
+            types_dir.mkdir(parents=True, exist_ok=True)
+            (types_dir / "commerce-api-result.ts").write_text(
+                "export interface CommerceApiResult {}\n",
+                encoding="utf-8",
+            )
+            (types_dir / "commerce-operation-command.ts").write_text(
+                "export interface CommerceOperationCommand {}\n",
+                encoding="utf-8",
+            )
+            (types_dir / "index.ts").write_text(
+                "export type { CommerceApiResult } from './commerce-api-result';\n"
+                "export type { CommerceOperationCommand } from './commerce-operation-command';\n",
+                encoding="utf-8",
+            )
+            self.write_dependency_sdk(root, "backend", "")
+
+            result = AppbaseOpenApiSchemaGuardian(
+                root=root,
+                sdk_root=root,
                 canonical_operations=(("app", "GET", "/app/v3/api/catalog/products/{productId}", "catalog.products.retrieve"),),
             ).run()
 

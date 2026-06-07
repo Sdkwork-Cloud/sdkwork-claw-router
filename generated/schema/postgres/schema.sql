@@ -2,7 +2,7 @@
 -- Do not edit by hand; update Schema Registry and regenerate.
 
 CREATE TABLE IF NOT EXISTS system_installation_state (
-    id BIGINT PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     installation_id VARCHAR(64) NOT NULL,
     environment VARCHAR(64) NOT NULL,
     database_engine VARCHAR(32) NOT NULL,
@@ -20,7 +20,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_system_installation_state_installation_id O
 CREATE INDEX IF NOT EXISTS idx_system_installation_state_env_status ON system_installation_state (environment, status, last_checked_at);
 
 CREATE TABLE IF NOT EXISTS system_schema_migration (
-    id BIGINT PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     migration_key VARCHAR(128) NOT NULL,
     migration_version VARCHAR(128) NOT NULL,
     checksum VARCHAR(128) NOT NULL,
@@ -34,7 +34,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_system_schema_migration_key ON system_schem
 CREATE INDEX IF NOT EXISTS idx_system_schema_migration_status_started ON system_schema_migration (status, started_at, id);
 
 CREATE TABLE IF NOT EXISTS iam_tenant (
-    id VARCHAR(128) PRIMARY KEY,
+    id VARCHAR(128) NOT NULL PRIMARY KEY,
     code VARCHAR(128) NOT NULL,
     name VARCHAR(256) NOT NULL,
     status VARCHAR(32) NOT NULL,
@@ -46,7 +46,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_iam_tenant_code ON iam_tenant (code);
 CREATE INDEX IF NOT EXISTS idx_iam_tenant_status_created_at ON iam_tenant (status, created_at);
 
 CREATE TABLE IF NOT EXISTS iam_organization (
-    id VARCHAR(128) PRIMARY KEY,
+    id VARCHAR(128) NOT NULL PRIMARY KEY,
     tenant_id VARCHAR(128) NOT NULL,
     parent_id VARCHAR(128),
     code VARCHAR(128) NOT NULL,
@@ -62,7 +62,7 @@ CREATE INDEX IF NOT EXISTS idx_iam_organization_tenant_parent ON iam_organizatio
 CREATE INDEX IF NOT EXISTS idx_iam_organization_tenant_path ON iam_organization (tenant_id, path, status);
 
 CREATE TABLE IF NOT EXISTS iam_organization_member (
-    id VARCHAR(128) PRIMARY KEY,
+    id VARCHAR(128) NOT NULL PRIMARY KEY,
     tenant_id VARCHAR(128) NOT NULL,
     organization_id VARCHAR(128) NOT NULL,
     user_id VARCHAR(128) NOT NULL,
@@ -78,7 +78,7 @@ CREATE INDEX IF NOT EXISTS idx_iam_organization_member_tenant_user ON iam_organi
 CREATE INDEX IF NOT EXISTS idx_iam_organization_member_tenant_org ON iam_organization_member (tenant_id, organization_id, status);
 
 CREATE TABLE IF NOT EXISTS iam_user (
-    id VARCHAR(128) PRIMARY KEY,
+    id VARCHAR(128) NOT NULL PRIMARY KEY,
     tenant_id VARCHAR(128) NOT NULL,
     username VARCHAR(128) NOT NULL,
     display_name VARCHAR(128) NOT NULL,
@@ -96,7 +96,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_iam_user_tenant_username ON iam_user (tenan
 CREATE INDEX IF NOT EXISTS idx_iam_user_tenant_status ON iam_user (tenant_id, status, created_at);
 
 CREATE TABLE IF NOT EXISTS iam_user_identity (
-    id VARCHAR(128) PRIMARY KEY,
+    id VARCHAR(128) NOT NULL PRIMARY KEY,
     tenant_id VARCHAR(128) NOT NULL,
     user_id VARCHAR(128) NOT NULL,
     provider VARCHAR(64) NOT NULL,
@@ -109,7 +109,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_iam_user_identity_tenant_provider_subject O
 CREATE INDEX IF NOT EXISTS idx_iam_user_identity_tenant_user ON iam_user_identity (tenant_id, user_id, provider);
 
 CREATE TABLE IF NOT EXISTS iam_credential (
-    id VARCHAR(128) PRIMARY KEY,
+    id VARCHAR(128) NOT NULL PRIMARY KEY,
     tenant_id VARCHAR(128) NOT NULL,
     user_id VARCHAR(128) NOT NULL,
     credential_type VARCHAR(32) NOT NULL,
@@ -123,7 +123,7 @@ CREATE TABLE IF NOT EXISTS iam_credential (
 CREATE INDEX IF NOT EXISTS idx_iam_credential_tenant_user_type ON iam_credential (tenant_id, user_id, credential_type, status);
 
 CREATE TABLE IF NOT EXISTS iam_session (
-    id VARCHAR(128) PRIMARY KEY,
+    id VARCHAR(128) NOT NULL PRIMARY KEY,
     tenant_id VARCHAR(128) NOT NULL,
     organization_id VARCHAR(128),
     user_id VARCHAR(128) NOT NULL,
@@ -150,7 +150,7 @@ CREATE INDEX IF NOT EXISTS idx_iam_session_access_token_hash ON iam_session (acc
 CREATE INDEX IF NOT EXISTS idx_iam_session_refresh_token_hash ON iam_session (refresh_token_hash);
 
 CREATE TABLE IF NOT EXISTS iam_mfa_factor (
-    id VARCHAR(128) PRIMARY KEY,
+    id VARCHAR(128) NOT NULL PRIMARY KEY,
     tenant_id VARCHAR(128) NOT NULL,
     user_id VARCHAR(128) NOT NULL,
     factor_type VARCHAR(32) NOT NULL,
@@ -161,7 +161,7 @@ CREATE TABLE IF NOT EXISTS iam_mfa_factor (
 );
 
 CREATE TABLE IF NOT EXISTS iam_device (
-    id VARCHAR(128) PRIMARY KEY,
+    id VARCHAR(128) NOT NULL PRIMARY KEY,
     tenant_id VARCHAR(128) NOT NULL,
     user_id VARCHAR(128) NOT NULL,
     device_fingerprint VARCHAR(256) NOT NULL,
@@ -174,7 +174,7 @@ CREATE TABLE IF NOT EXISTS iam_device (
 CREATE UNIQUE INDEX IF NOT EXISTS uk_iam_device_tenant_user_fingerprint ON iam_device (tenant_id, user_id, device_fingerprint);
 
 CREATE TABLE IF NOT EXISTS iam_role (
-    id VARCHAR(128) PRIMARY KEY,
+    id VARCHAR(128) NOT NULL PRIMARY KEY,
     tenant_id VARCHAR(128) NOT NULL,
     code VARCHAR(128) NOT NULL,
     name VARCHAR(256) NOT NULL,
@@ -187,7 +187,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_iam_role_tenant_code ON iam_role (tenant_id
 CREATE INDEX IF NOT EXISTS idx_iam_role_tenant_status ON iam_role (tenant_id, status, code);
 
 CREATE TABLE IF NOT EXISTS iam_permission (
-    id VARCHAR(128) PRIMARY KEY,
+    id VARCHAR(128) NOT NULL PRIMARY KEY,
     code VARCHAR(128) NOT NULL,
     name VARCHAR(256) NOT NULL,
     resource VARCHAR(128) NOT NULL,
@@ -198,7 +198,7 @@ CREATE TABLE IF NOT EXISTS iam_permission (
 CREATE UNIQUE INDEX IF NOT EXISTS uk_iam_permission_code ON iam_permission (code);
 
 CREATE TABLE IF NOT EXISTS iam_policy (
-    id VARCHAR(128) PRIMARY KEY,
+    id VARCHAR(128) NOT NULL PRIMARY KEY,
     tenant_id VARCHAR(128) NOT NULL,
     code VARCHAR(128) NOT NULL,
     name VARCHAR(256) NOT NULL,
@@ -211,7 +211,7 @@ CREATE TABLE IF NOT EXISTS iam_policy (
 CREATE UNIQUE INDEX IF NOT EXISTS uk_iam_policy_tenant_code ON iam_policy (tenant_id, code);
 
 CREATE TABLE IF NOT EXISTS iam_role_permission (
-    id VARCHAR(128) PRIMARY KEY,
+    id VARCHAR(128) NOT NULL PRIMARY KEY,
     tenant_id VARCHAR(128) NOT NULL,
     role_id VARCHAR(128) NOT NULL,
     permission_id VARCHAR(128) NOT NULL,
@@ -222,7 +222,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_iam_role_permission_tenant_role_permission 
 CREATE INDEX IF NOT EXISTS idx_iam_role_permission_tenant_permission ON iam_role_permission (tenant_id, permission_id, role_id);
 
 CREATE TABLE IF NOT EXISTS iam_user_role (
-    id VARCHAR(128) PRIMARY KEY,
+    id VARCHAR(128) NOT NULL PRIMARY KEY,
     tenant_id VARCHAR(128) NOT NULL,
     user_id VARCHAR(128) NOT NULL,
     role_id VARCHAR(128) NOT NULL,
@@ -234,7 +234,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_iam_user_role_tenant_user_role_org ON iam_u
 CREATE INDEX IF NOT EXISTS idx_iam_user_role_tenant_user ON iam_user_role (tenant_id, user_id, organization_id, role_id);
 
 CREATE TABLE IF NOT EXISTS iam_api_key (
-    id VARCHAR(128) PRIMARY KEY,
+    id VARCHAR(128) NOT NULL PRIMARY KEY,
     tenant_id VARCHAR(128) NOT NULL,
     user_id VARCHAR(128) NOT NULL,
     name VARCHAR(128) NOT NULL,
@@ -249,7 +249,7 @@ CREATE TABLE IF NOT EXISTS iam_api_key (
 CREATE INDEX IF NOT EXISTS idx_iam_api_key_tenant_user_status ON iam_api_key (tenant_id, user_id, status);
 
 CREATE TABLE IF NOT EXISTS iam_security_event (
-    id VARCHAR(128) PRIMARY KEY,
+    id VARCHAR(128) NOT NULL PRIMARY KEY,
     tenant_id VARCHAR(128) NOT NULL,
     user_id VARCHAR(128),
     session_id VARCHAR(128),
@@ -262,7 +262,7 @@ CREATE TABLE IF NOT EXISTS iam_security_event (
 CREATE INDEX IF NOT EXISTS idx_iam_security_event_tenant_created_at ON iam_security_event (tenant_id, created_at, severity);
 
 CREATE TABLE IF NOT EXISTS iam_audit_event (
-    id VARCHAR(128) PRIMARY KEY,
+    id VARCHAR(128) NOT NULL PRIMARY KEY,
     tenant_id VARCHAR(128) NOT NULL,
     organization_id VARCHAR(128),
     actor_user_id VARCHAR(128),
@@ -281,7 +281,7 @@ CREATE INDEX IF NOT EXISTS idx_iam_audit_event_tenant_created_at ON iam_audit_ev
 CREATE INDEX IF NOT EXISTS idx_iam_audit_event_request_id ON iam_audit_event (request_id);
 
 CREATE TABLE IF NOT EXISTS plus_app (
-    id BIGINT PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(255) NOT NULL UNIQUE,
     created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -321,7 +321,7 @@ CREATE INDEX IF NOT EXISTS idx_app_project_id ON plus_app (project_id);
 CREATE INDEX IF NOT EXISTS idx_app_status ON plus_app (status);
 
 CREATE TABLE IF NOT EXISTS plus_category (
-    id BIGINT PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(255) NOT NULL UNIQUE,
     created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -350,7 +350,7 @@ CREATE INDEX IF NOT EXISTS idx_category_shop_id ON plus_category (shop_id);
 CREATE INDEX IF NOT EXISTS idx_category_type_shop ON plus_category (type, shop_id);
 
 CREATE TABLE IF NOT EXISTS plus_agent_skill_package (
-    id BIGINT PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(255) NOT NULL UNIQUE,
     created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -384,7 +384,7 @@ CREATE INDEX IF NOT EXISTS idx_plus_agent_skill_package_market ON plus_agent_ski
 CREATE INDEX IF NOT EXISTS idx_plus_agent_skill_package_seed_scope ON plus_agent_skill_package (tenant_id, organization_id, data_scope, id, uuid, package_key, name, sort_weight, enabled, featured);
 
 CREATE TABLE IF NOT EXISTS plus_agent_skill (
-    id BIGINT PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(255) NOT NULL UNIQUE,
     created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -449,7 +449,7 @@ CREATE INDEX IF NOT EXISTS idx_plus_agent_skill_seed_scope ON plus_agent_skill (
 CREATE INDEX IF NOT EXISTS idx_plus_agent_skill_official_seed ON plus_agent_skill (tenant_id, organization_id, data_scope, source_type, provider, market_status, visibility, review_status, builtin, is_builtin, enabled);
 
 CREATE TABLE IF NOT EXISTS plus_user_agent_skill (
-    id BIGINT PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(255) NOT NULL UNIQUE,
     created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -473,7 +473,7 @@ CREATE INDEX IF NOT EXISTS idx_plus_user_agent_skill_skill ON plus_user_agent_sk
 CREATE INDEX IF NOT EXISTS idx_plus_user_agent_skill_enabled ON plus_user_agent_skill (enabled);
 
 CREATE TABLE IF NOT EXISTS plus_feeds (
-    id BIGINT PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(255) NOT NULL UNIQUE,
     created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -514,7 +514,7 @@ CREATE INDEX IF NOT EXISTS idx_feeds_publish_time ON plus_feeds (publish_time);
 CREATE INDEX IF NOT EXISTS idx_feeds_status_publish_time ON plus_feeds (status, publish_time);
 
 CREATE TABLE IF NOT EXISTS plus_comments (
-    id BIGINT PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(255) NOT NULL UNIQUE,
     created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -544,7 +544,7 @@ CREATE INDEX IF NOT EXISTS idx_comment_status ON plus_comments (status);
 CREATE INDEX IF NOT EXISTS idx_comment_parent_id ON plus_comments (parent_id);
 
 CREATE TABLE IF NOT EXISTS plus_content_vote (
-    id BIGINT PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(255) NOT NULL UNIQUE,
     created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -568,7 +568,7 @@ CREATE INDEX IF NOT EXISTS idx_vote_rating ON plus_content_vote (rating);
 CREATE INDEX IF NOT EXISTS idx_vote_created_at ON plus_content_vote (created_at);
 
 CREATE TABLE IF NOT EXISTS plus_favorite (
-    id BIGINT PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(255) NOT NULL UNIQUE,
     created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -598,7 +598,7 @@ CREATE INDEX IF NOT EXISTS idx_favorite_folder_id ON plus_favorite (folder_id);
 CREATE INDEX IF NOT EXISTS idx_favorite_created_at ON plus_favorite (created_at);
 
 CREATE TABLE IF NOT EXISTS ops_referral_stat_snapshot (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -635,7 +635,7 @@ CREATE INDEX IF NOT EXISTS idx_ops_referral_stat_snapshot_period ON ops_referral
 CREATE INDEX IF NOT EXISTS idx_ops_referral_stat_snapshot_code ON ops_referral_stat_snapshot (tenant_id, organization_id, invitation_code);
 
 CREATE TABLE IF NOT EXISTS iam_gateway_api_key (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -681,7 +681,7 @@ CREATE INDEX IF NOT EXISTS idx_iam_gateway_api_key_tenant_user_status ON iam_gat
 CREATE INDEX IF NOT EXISTS idx_iam_gateway_api_key_ai_channel_group_status ON iam_gateway_api_key (tenant_id, organization_id, channel_group_id, status, updated_at, id);
 
 CREATE TABLE IF NOT EXISTS iam_gateway_api_key_channel_group (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -713,7 +713,7 @@ CREATE INDEX IF NOT EXISTS idx_iam_gateway_api_key_channel_group_active ON iam_g
 CREATE INDEX IF NOT EXISTS idx_iam_gateway_api_key_channel_group_group ON iam_gateway_api_key_channel_group (tenant_id, organization_id, channel_group_id, status, priority, id);
 
 CREATE TABLE IF NOT EXISTS ai_channel_group (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -751,7 +751,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_channel_group_tenant_status_updated ON ai_chan
 CREATE INDEX IF NOT EXISTS idx_ai_channel_group_pricing ON ai_channel_group (tenant_id, organization_id, pricing_plan_id, status, updated_at, id);
 
 CREATE TABLE IF NOT EXISTS ai_channel_group_member (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -779,7 +779,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_channel_group_member_group ON ai_channel_group
 CREATE INDEX IF NOT EXISTS idx_ai_channel_group_member_channel ON ai_channel_group_member (tenant_id, organization_id, channel_id, status, id);
 
 CREATE TABLE IF NOT EXISTS ai_channel_group_resource (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -808,7 +808,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_channel_group_resource ON ai_channel_gro
 CREATE INDEX IF NOT EXISTS idx_ai_channel_group_resource_lookup ON ai_channel_group_resource (tenant_id, organization_id, channel_group_id, status, grant_type, priority, id);
 
 CREATE TABLE IF NOT EXISTS ai_channel_group_metric_snapshot (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -841,7 +841,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_channel_group_metric_snapshot ON ai_chan
 CREATE INDEX IF NOT EXISTS idx_ai_channel_group_metric_status ON ai_channel_group_metric_snapshot (tenant_id, organization_id, provider_code, health_status, snapshot_at, id);
 
 CREATE TABLE IF NOT EXISTS iam_gateway_access_policy (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -878,7 +878,7 @@ CREATE INDEX IF NOT EXISTS idx_iam_gateway_access_policy_tenant_subject_status O
 CREATE INDEX IF NOT EXISTS idx_iam_gateway_access_policy_subject_ref ON iam_gateway_access_policy (tenant_id, organization_id, subject_type, subject_ref_hash, status);
 
 CREATE TABLE IF NOT EXISTS iam_gateway_risk_rule (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -921,7 +921,7 @@ CREATE INDEX IF NOT EXISTS idx_iam_gateway_risk_rule_scope_priority ON iam_gatew
 CREATE INDEX IF NOT EXISTS idx_iam_gateway_risk_rule_target_hash ON iam_gateway_risk_rule (tenant_id, organization_id, target_type, target_value_hash, status);
 
 CREATE TABLE IF NOT EXISTS iam_user_preference (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -947,7 +947,7 @@ CREATE TABLE IF NOT EXISTS iam_user_preference (
 CREATE UNIQUE INDEX IF NOT EXISTS uk_iam_user_preference_user ON iam_user_preference (tenant_id, organization_id, user_id);
 
 CREATE TABLE IF NOT EXISTS iam_user_security_setting (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -975,7 +975,7 @@ CREATE TABLE IF NOT EXISTS iam_user_security_setting (
 CREATE UNIQUE INDEX IF NOT EXISTS uk_iam_user_security_setting_user ON iam_user_security_setting (tenant_id, organization_id, user_id);
 
 CREATE TABLE IF NOT EXISTS iam_user_login_event (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -1008,7 +1008,7 @@ CREATE INDEX IF NOT EXISTS idx_iam_user_login_event_user_occurred ON iam_user_lo
 CREATE INDEX IF NOT EXISTS idx_iam_user_login_event_result_occurred ON iam_user_login_event (tenant_id, organization_id, login_result, occurred_at, id);
 
 CREATE TABLE IF NOT EXISTS iam_verification_scene_policy (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -1040,7 +1040,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_iam_verification_scene_policy_scene ON iam_
 CREATE INDEX IF NOT EXISTS idx_iam_verification_scene_policy_status ON iam_verification_scene_policy (tenant_id, organization_id, status, scene_code);
 
 CREATE TABLE IF NOT EXISTS iam_verification_challenge (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -1078,7 +1078,7 @@ CREATE INDEX IF NOT EXISTS idx_iam_verification_challenge_delivery ON iam_verifi
 CREATE INDEX IF NOT EXISTS idx_iam_verification_challenge_expiry ON iam_verification_challenge (tenant_id, organization_id, challenge_status, expires_at);
 
 CREATE TABLE IF NOT EXISTS iam_verification_attempt (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -1107,7 +1107,7 @@ CREATE INDEX IF NOT EXISTS idx_iam_verification_attempt_challenge ON iam_verific
 CREATE INDEX IF NOT EXISTS idx_iam_verification_attempt_target ON iam_verification_attempt (tenant_id, organization_id, target_type, target_hash, occurred_at);
 
 CREATE TABLE IF NOT EXISTS integration_provider_account (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -1153,7 +1153,7 @@ CREATE INDEX IF NOT EXISTS idx_integration_provider_account_secret ON integratio
 CREATE INDEX IF NOT EXISTS idx_integration_provider_account_health ON integration_provider_account (tenant_id, organization_id, status, health_status, risk_level, id);
 
 CREATE TABLE IF NOT EXISTS ai_provider (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -1189,7 +1189,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_provider_tenant_code ON ai_provider (ten
 CREATE INDEX IF NOT EXISTS idx_ai_provider_status_sort ON ai_provider (tenant_id, organization_id, status, sort_order, id);
 
 CREATE TABLE IF NOT EXISTS ai_site (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -1230,7 +1230,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_site_status_sort ON ai_site (tenant_id, organi
 CREATE INDEX IF NOT EXISTS idx_ai_site_health_status ON ai_site (tenant_id, organization_id, status, health_status, id);
 
 CREATE TABLE IF NOT EXISTS ai_site_service (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -1273,7 +1273,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_site_service_type_status ON ai_site_service (t
 CREATE INDEX IF NOT EXISTS idx_ai_site_service_health_status ON ai_site_service (tenant_id, organization_id, status, health_status, id);
 
 CREATE TABLE IF NOT EXISTS ai_channel (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -1341,7 +1341,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_channel_site_service_status ON ai_channel (ten
 CREATE INDEX IF NOT EXISTS idx_ai_channel_site_code ON ai_channel (tenant_id, organization_id, site_code, site_service_code, status, id);
 
 CREATE TABLE IF NOT EXISTS ai_channel_credential (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -1376,7 +1376,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_channel_credential_channel ON ai_channel_crede
 CREATE INDEX IF NOT EXISTS idx_ai_channel_credential_ref ON ai_channel_credential (tenant_id, organization_id, credential_ref);
 
 CREATE TABLE IF NOT EXISTS messaging_provider (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -1405,7 +1405,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_messaging_provider_code ON messaging_provid
 CREATE INDEX IF NOT EXISTS idx_messaging_provider_status_sort ON messaging_provider (tenant_id, organization_id, status, sort_order, id);
 
 CREATE TABLE IF NOT EXISTS messaging_provider_account (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -1438,7 +1438,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_messaging_provider_account_code ON messagin
 CREATE INDEX IF NOT EXISTS idx_messaging_provider_account_provider ON messaging_provider_account (tenant_id, organization_id, provider_code, channel, status, id);
 
 CREATE TABLE IF NOT EXISTS messaging_provider_capability (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -1472,7 +1472,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_messaging_provider_capability_scope ON mess
 CREATE INDEX IF NOT EXISTS idx_messaging_provider_capability_channel ON messaging_provider_capability (tenant_id, organization_id, channel, delivery_purpose, status);
 
 CREATE TABLE IF NOT EXISTS messaging_sender_identity (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -1506,7 +1506,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_messaging_sender_identity_code ON messaging
 CREATE INDEX IF NOT EXISTS idx_messaging_sender_identity_channel_status ON messaging_sender_identity (tenant_id, organization_id, channel, approval_status, status);
 
 CREATE TABLE IF NOT EXISTS messaging_template (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -1534,7 +1534,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_messaging_template_code ON messaging_templa
 CREATE INDEX IF NOT EXISTS idx_messaging_template_scene_channel ON messaging_template (tenant_id, organization_id, scene_code, channel, delivery_purpose, status);
 
 CREATE TABLE IF NOT EXISTS messaging_template_version (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -1563,7 +1563,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_messaging_template_version_no ON messaging_
 CREATE INDEX IF NOT EXISTS idx_messaging_template_version_status ON messaging_template_version (tenant_id, organization_id, template_id, review_status, published_at);
 
 CREATE TABLE IF NOT EXISTS messaging_template_variant (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -1589,7 +1589,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_messaging_template_variant_locale ON messag
 CREATE INDEX IF NOT EXISTS idx_messaging_template_variant_channel ON messaging_template_variant (tenant_id, organization_id, channel, locale, status);
 
 CREATE TABLE IF NOT EXISTS messaging_template_binding (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -1617,7 +1617,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_messaging_template_binding_provider ON mess
 CREATE INDEX IF NOT EXISTS idx_messaging_template_binding_code ON messaging_template_binding (tenant_id, organization_id, provider_code, provider_template_code, approval_status);
 
 CREATE TABLE IF NOT EXISTS messaging_route_rule (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -1649,7 +1649,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_messaging_route_rule_code ON messaging_rout
 CREATE INDEX IF NOT EXISTS idx_messaging_route_rule_lookup ON messaging_route_rule (tenant_id, organization_id, scene_code, channel, delivery_purpose, country_code, locale, user_segment, priority, status);
 
 CREATE TABLE IF NOT EXISTS messaging_route_rule_target (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -1675,7 +1675,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_messaging_route_rule_target_order ON messag
 CREATE INDEX IF NOT EXISTS idx_messaging_route_rule_target_provider ON messaging_route_rule_target (tenant_id, organization_id, provider_account_id, status);
 
 CREATE TABLE IF NOT EXISTS messaging_send_request (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -1720,7 +1720,7 @@ CREATE INDEX IF NOT EXISTS idx_messaging_send_request_scene_status ON messaging_
 CREATE INDEX IF NOT EXISTS idx_messaging_send_request_target ON messaging_send_request (tenant_id, organization_id, target_type, target_hash, created_at);
 
 CREATE TABLE IF NOT EXISTS messaging_send_attempt (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -1753,7 +1753,7 @@ CREATE INDEX IF NOT EXISTS idx_messaging_send_attempt_provider_message ON messag
 CREATE INDEX IF NOT EXISTS idx_messaging_send_attempt_status ON messaging_send_attempt (tenant_id, organization_id, provider_status, attempted_at);
 
 CREATE TABLE IF NOT EXISTS messaging_delivery_event (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -1781,7 +1781,7 @@ CREATE INDEX IF NOT EXISTS idx_messaging_delivery_event_request ON messaging_del
 CREATE INDEX IF NOT EXISTS idx_messaging_delivery_event_message ON messaging_delivery_event (tenant_id, organization_id, provider_message_id, event_type);
 
 CREATE TABLE IF NOT EXISTS messaging_suppression (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -1809,7 +1809,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_messaging_suppression_scope_target ON messa
 CREATE INDEX IF NOT EXISTS idx_messaging_suppression_active ON messaging_suppression (tenant_id, organization_id, channel, status, starts_at, ends_at);
 
 CREATE TABLE IF NOT EXISTS messaging_rate_limit_bucket (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -1838,7 +1838,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_messaging_rate_limit_bucket_scope ON messag
 CREATE INDEX IF NOT EXISTS idx_messaging_rate_limit_bucket_window ON messaging_rate_limit_bucket (tenant_id, organization_id, scene_code, channel, window_start);
 
 CREATE TABLE IF NOT EXISTS open_platform_provider (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -1865,7 +1865,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_open_platform_provider_tenant_provider ON o
 CREATE INDEX IF NOT EXISTS idx_open_platform_provider_status_sort ON open_platform_provider (tenant_id, organization_id, status, sort_order, id);
 
 CREATE TABLE IF NOT EXISTS open_platform_manifest (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -1890,7 +1890,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_open_platform_manifest_tenant_key ON open_p
 CREATE INDEX IF NOT EXISTS idx_open_platform_manifest_provider_type ON open_platform_manifest (tenant_id, organization_id, provider, account_type, status, sort_order, id);
 
 CREATE TABLE IF NOT EXISTS open_platform_account (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -1918,7 +1918,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_open_platform_account_tenant_key ON open_pl
 CREATE INDEX IF NOT EXISTS idx_open_platform_account_provider_type_status ON open_platform_account (tenant_id, organization_id, provider, account_type, status, id);
 
 CREATE TABLE IF NOT EXISTS open_platform_entry (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -1940,7 +1940,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_open_platform_entry_account_key ON open_pla
 CREATE INDEX IF NOT EXISTS idx_open_platform_entry_account_status ON open_platform_entry (tenant_id, organization_id, account_id, status, id);
 
 CREATE TABLE IF NOT EXISTS open_platform_pay_binding (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -1963,7 +1963,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_open_platform_pay_binding_account_scene ON 
 CREATE INDEX IF NOT EXISTS idx_open_platform_pay_binding_account_status ON open_platform_pay_binding (tenant_id, organization_id, account_id, status, id);
 
 CREATE TABLE IF NOT EXISTS integration_proxy (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -1989,7 +1989,7 @@ CREATE TABLE IF NOT EXISTS integration_proxy (
 CREATE UNIQUE INDEX IF NOT EXISTS uk_integration_proxy_tenant_code ON integration_proxy (tenant_id, organization_id, proxy_code);
 
 CREATE TABLE IF NOT EXISTS integration_webhook_endpoint (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -2021,7 +2021,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_integration_webhook_endpoint_tenant_code ON
 CREATE INDEX IF NOT EXISTS idx_integration_webhook_endpoint_tenant_status ON integration_webhook_endpoint (tenant_id, organization_id, status, updated_at, id);
 
 CREATE TABLE IF NOT EXISTS integration_provider_health_snapshot (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -2051,7 +2051,7 @@ CREATE INDEX IF NOT EXISTS idx_integration_provider_health_provider_time ON inte
 CREATE INDEX IF NOT EXISTS idx_integration_provider_health_channel_time ON integration_provider_health_snapshot (channel_id, checked_at, id);
 
 CREATE TABLE IF NOT EXISTS ai_model_vendor (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -2091,7 +2091,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_model_vendor_tenant_code ON ai_model_ven
 CREATE INDEX IF NOT EXISTS idx_ai_model_vendor_tenant_status_sort ON ai_model_vendor (tenant_id, organization_id, status, sort_order, id);
 
 CREATE TABLE IF NOT EXISTS ai_modality (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -2117,7 +2117,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_modality_tenant_code ON ai_modality (ten
 CREATE INDEX IF NOT EXISTS idx_ai_modality_status_sort ON ai_modality (tenant_id, organization_id, status, sort_order, id);
 
 CREATE TABLE IF NOT EXISTS ai_api_endpoint (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -2146,7 +2146,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_api_endpoint_status_sort ON ai_api_endpoint (t
 CREATE INDEX IF NOT EXISTS idx_ai_api_endpoint_protocol_status ON ai_api_endpoint (tenant_id, organization_id, protocol_code, status, sort_order, id);
 
 CREATE TABLE IF NOT EXISTS ai_vendor_modality (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -2171,7 +2171,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_vendor_modality ON ai_vendor_modality (t
 CREATE INDEX IF NOT EXISTS idx_ai_vendor_modality_status_sort ON ai_vendor_modality (tenant_id, organization_id, status, sort_order, id);
 
 CREATE TABLE IF NOT EXISTS ai_vendor_api_endpoint (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -2196,7 +2196,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_vendor_api_endpoint ON ai_vendor_api_end
 CREATE INDEX IF NOT EXISTS idx_ai_vendor_api_endpoint_status_sort ON ai_vendor_api_endpoint (tenant_id, organization_id, status, sort_order, id);
 
 CREATE TABLE IF NOT EXISTS ai_modality_api_endpoint (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -2221,7 +2221,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_modality_api_endpoint ON ai_modality_api
 CREATE INDEX IF NOT EXISTS idx_ai_modality_api_endpoint_status_sort ON ai_modality_api_endpoint (tenant_id, organization_id, status, sort_order, id);
 
 CREATE TABLE IF NOT EXISTS ai_model_modality (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -2249,7 +2249,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_model_modality ON ai_model_modality (ten
 CREATE INDEX IF NOT EXISTS idx_ai_model_modality_status_sort ON ai_model_modality (tenant_id, organization_id, status, sort_order, id);
 
 CREATE TABLE IF NOT EXISTS ai_model_api_endpoint (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -2279,7 +2279,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_model_api_endpoint ON ai_model_api_endpo
 CREATE INDEX IF NOT EXISTS idx_ai_model_api_endpoint_status_sort ON ai_model_api_endpoint (tenant_id, organization_id, status, sort_order, id);
 
 CREATE TABLE IF NOT EXISTS ai_resource (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -2318,7 +2318,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_resource_type_status ON ai_resource (tenant_id
 CREATE INDEX IF NOT EXISTS idx_ai_resource_vendor_model ON ai_resource (tenant_id, organization_id, vendor_code, catalog_key, status, id);
 
 CREATE TABLE IF NOT EXISTS ai_resource_group (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -2343,7 +2343,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_resource_group_tenant_code ON ai_resourc
 CREATE INDEX IF NOT EXISTS idx_ai_resource_group_status_sort ON ai_resource_group (tenant_id, organization_id, status, sort_order, id);
 
 CREATE TABLE IF NOT EXISTS ai_resource_group_item (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -2371,7 +2371,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_resource_group_item ON ai_resource_group
 CREATE INDEX IF NOT EXISTS idx_ai_resource_group_item_status_sort ON ai_resource_group_item (tenant_id, organization_id, status, resource_group_id, sort_order, id);
 
 CREATE TABLE IF NOT EXISTS ai_channel_resource (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -2402,7 +2402,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_channel_resource ON ai_channel_resource 
 CREATE INDEX IF NOT EXISTS idx_ai_channel_resource_lookup ON ai_channel_resource (tenant_id, organization_id, status, channel_id, grant_type, priority, id);
 
 CREATE TABLE IF NOT EXISTS ai_provider_object_route (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -2441,7 +2441,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_provider_object_route_channel ON ai_provider_o
 CREATE INDEX IF NOT EXISTS idx_ai_provider_object_route_expiry ON ai_provider_object_route (tenant_id, organization_id, expires_at, status, id);
 
 CREATE TABLE IF NOT EXISTS ai_config_version (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -2466,7 +2466,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_config_version_scope_updated ON ai_config_vers
 CREATE INDEX IF NOT EXISTS idx_ai_config_version_scope_status ON ai_config_version (config_scope, status, deleted_at, id);
 
 CREATE TABLE IF NOT EXISTS ai_config_change_event (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -2495,7 +2495,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_config_change_event_pending ON ai_config_chang
 CREATE INDEX IF NOT EXISTS idx_ai_config_change_event_scope_version ON ai_config_change_event (tenant_id, organization_id, config_scope, config_version, id);
 
 CREATE TABLE IF NOT EXISTS ai_model_family (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -2531,7 +2531,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_model_family_tenant_status_sort ON ai_model_fa
 CREATE INDEX IF NOT EXISTS idx_ai_model_family_vendor_status_sort ON ai_model_family (tenant_id, organization_id, vendor_code, status, sort_order, id);
 
 CREATE TABLE IF NOT EXISTS ai_model (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -2603,7 +2603,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_model_public_rank_desc ON ai_model (tenant_id,
 CREATE INDEX IF NOT EXISTS idx_ai_model_catalog_search ON ai_model (tenant_id, organization_id, status, vendor_code, capability, routing_state, shelf_state, display_name, id);
 
 CREATE TABLE IF NOT EXISTS ai_model_capability (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -2641,7 +2641,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_model_capability_tenant_status ON ai_model_cap
 CREATE INDEX IF NOT EXISTS idx_ai_model_capability_vendor_capability ON ai_model_capability (tenant_id, organization_id, vendor_code, capability, supported, id);
 
 CREATE TABLE IF NOT EXISTS ai_model_catalog_source (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -2680,7 +2680,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_model_catalog_source_vendor_region_status ON a
 CREATE INDEX IF NOT EXISTS idx_ai_model_catalog_source_refresh ON ai_model_catalog_source (tenant_id, organization_id, status, refresh_interval_seconds, last_success_at, id);
 
 CREATE TABLE IF NOT EXISTS ai_model_catalog_sync_run (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -2723,7 +2723,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_model_catalog_sync_run_source_latest ON ai_mod
 CREATE INDEX IF NOT EXISTS idx_ai_model_catalog_sync_run_vendor_region_latest ON ai_model_catalog_sync_run (tenant_id, organization_id, vendor_code, region_code, run_status, started_at, id);
 
 CREATE TABLE IF NOT EXISTS ai_billing_meter (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -2760,7 +2760,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_billing_meter_tenant_status_sort ON ai_billing
 CREATE INDEX IF NOT EXISTS idx_ai_billing_meter_modality_mode ON ai_billing_meter (tenant_id, organization_id, modality, billing_mode, status, sort_order, id);
 
 CREATE TABLE IF NOT EXISTS ai_model_pricing (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -2832,7 +2832,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_model_pricing_plan_effective ON ai_model_prici
 CREATE INDEX IF NOT EXISTS idx_ai_model_pricing_meter_effective ON ai_model_pricing (tenant_id, organization_id, billing_meter_code, price_side, status, effective_from, id);
 
 CREATE TABLE IF NOT EXISTS ai_pricing_plan (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -2870,7 +2870,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_pricing_plan_scope_status ON ai_pricing_plan (
 CREATE INDEX IF NOT EXISTS idx_ai_pricing_plan_effective ON ai_pricing_plan (tenant_id, organization_id, status, effective_from, effective_to, id);
 
 CREATE TABLE IF NOT EXISTS ai_pricing_plan_binding (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -2904,7 +2904,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_pricing_plan_binding_subject_effective ON ai_p
 CREATE INDEX IF NOT EXISTS idx_ai_pricing_plan_binding_plan ON ai_pricing_plan_binding (tenant_id, organization_id, pricing_plan_id, status, priority, id);
 
 CREATE TABLE IF NOT EXISTS ai_pricing_rule (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -2970,7 +2970,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_pricing_rule_meter_lookup ON ai_pricing_rule (
 CREATE INDEX IF NOT EXISTS idx_ai_pricing_rule_reference ON ai_pricing_rule (tenant_id, organization_id, reference_price_side, reference_pricing_id, status, id);
 
 CREATE TABLE IF NOT EXISTS ai_pricing_tier (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -3018,7 +3018,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_pricing_tier_rule_range ON ai_pricing_tier (te
 CREATE INDEX IF NOT EXISTS idx_ai_pricing_tier_model_pricing ON ai_pricing_tier (tenant_id, organization_id, model_pricing_id, price_item_type, sort_order, id);
 
 CREATE TABLE IF NOT EXISTS ai_pricing_import_snapshot (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -3055,7 +3055,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_pricing_import_snapshot_hash ON ai_prici
 CREATE INDEX IF NOT EXISTS idx_ai_pricing_import_snapshot_tenant_latest ON ai_pricing_import_snapshot (tenant_id, organization_id, status, import_source, observed_at, id);
 
 CREATE TABLE IF NOT EXISTS ai_model_rank_snapshot (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -3108,7 +3108,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_model_rank_snapshot_latest_scope ON ai_model_r
 CREATE INDEX IF NOT EXISTS idx_ai_model_rank_snapshot_filter_rank ON ai_model_rank_snapshot (tenant_id, organization_id, status, snapshot_date, snapshot_period, rank_scope, vendor_code, region_code, modality, rank_no);
 
 CREATE TABLE IF NOT EXISTS ai_routing_policy (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -3136,7 +3136,7 @@ CREATE TABLE IF NOT EXISTS ai_routing_policy (
 CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_routing_policy_tenant_code ON ai_routing_policy (tenant_id, organization_id, policy_code);
 
 CREATE TABLE IF NOT EXISTS ai_routing_profile (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -3162,7 +3162,7 @@ CREATE TABLE IF NOT EXISTS ai_routing_profile (
 CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_routing_profile_policy_version ON ai_routing_profile (policy_id, profile_version);
 
 CREATE TABLE IF NOT EXISTS ai_routing_rule (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -3191,7 +3191,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_routing_rule_profile_code ON ai_routing_
 CREATE INDEX IF NOT EXISTS idx_ai_routing_rule_tenant_profile_priority ON ai_routing_rule (tenant_id, organization_id, profile_id, priority, status);
 
 CREATE TABLE IF NOT EXISTS ai_routing_decision_log (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -3226,7 +3226,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_routing_decision_log_request ON ai_routi
 CREATE INDEX IF NOT EXISTS idx_ai_routing_decision_tenant_model_created ON ai_routing_decision_log (tenant_id, organization_id, requested_model, created_at, id);
 
 CREATE TABLE IF NOT EXISTS ai_request_trace (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -3291,7 +3291,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_request_trace_model_started ON ai_request_trac
 CREATE INDEX IF NOT EXISTS idx_ai_request_trace_tenant_status_started ON ai_request_trace (tenant_id, organization_id, status, started_at, id);
 
 CREATE TABLE IF NOT EXISTS ai_usage_fact (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -3374,7 +3374,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_usage_fact_meter_occurred ON ai_usage_fact (te
 CREATE INDEX IF NOT EXISTS idx_ai_usage_fact_settlement_status ON ai_usage_fact (tenant_id, organization_id, settlement_status, occurred_at, id);
 
 CREATE TABLE IF NOT EXISTS ai_quota_policy (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -3416,7 +3416,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_quota_policy_subject_ref ON ai_quota_policy (t
 CREATE INDEX IF NOT EXISTS idx_ai_quota_policy_model_channel_group ON ai_quota_policy (tenant_id, organization_id, model, channel_group_id, status);
 
 CREATE TABLE IF NOT EXISTS ai_prompt (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -3448,7 +3448,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_prompt_category ON ai_prompt (tenant_id, organ
 CREATE INDEX IF NOT EXISTS idx_ai_prompt_type ON ai_prompt (tenant_id, organization_id, prompt_type, status, updated_at, id);
 
 CREATE TABLE IF NOT EXISTS ai_prompt_version (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -3482,7 +3482,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_prompt_version_no ON ai_prompt_version (
 CREATE INDEX IF NOT EXISTS idx_ai_prompt_version_prompt ON ai_prompt_version (tenant_id, organization_id, prompt_id, lifecycle_status, created_at, id);
 
 CREATE TABLE IF NOT EXISTS ai_prompt_binding (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -3509,7 +3509,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_prompt_binding_owner ON ai_prompt_binding (ten
 CREATE INDEX IF NOT EXISTS idx_ai_prompt_binding_prompt ON ai_prompt_binding (tenant_id, organization_id, prompt_id, prompt_version_id, enabled, id);
 
 CREATE TABLE IF NOT EXISTS ai_mcp_server (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -3544,7 +3544,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_mcp_server_category ON ai_mcp_server (tenant_i
 CREATE INDEX IF NOT EXISTS idx_ai_mcp_server_health ON ai_mcp_server (tenant_id, organization_id, health_status, status, updated_at, id);
 
 CREATE TABLE IF NOT EXISTS ai_mcp_server_revision (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -3578,7 +3578,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_mcp_server_revision_no ON ai_mcp_server_
 CREATE INDEX IF NOT EXISTS idx_ai_mcp_server_revision_server ON ai_mcp_server_revision (tenant_id, organization_id, server_id, lifecycle_status, created_at, id);
 
 CREATE TABLE IF NOT EXISTS ai_mcp_tool (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -3612,7 +3612,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_mcp_tool_server ON ai_mcp_tool (tenant_id, org
 CREATE INDEX IF NOT EXISTS idx_ai_mcp_tool_risk ON ai_mcp_tool (tenant_id, organization_id, risk_level, requires_approval, enabled, id);
 
 CREATE TABLE IF NOT EXISTS ai_mcp_binding (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -3641,7 +3641,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_mcp_binding_owner ON ai_mcp_binding (tenant_id
 CREATE INDEX IF NOT EXISTS idx_ai_mcp_binding_server ON ai_mcp_binding (tenant_id, organization_id, server_id, server_revision_id, enabled, id);
 
 CREATE TABLE IF NOT EXISTS ai_agent (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -3673,7 +3673,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_agent_owner_status_updated ON ai_agent (tenant
 CREATE INDEX IF NOT EXISTS idx_ai_agent_governance_status ON ai_agent (tenant_id, organization_id, governance_status, updated_at, id);
 
 CREATE TABLE IF NOT EXISTS ai_agent_version (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -3705,7 +3705,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_agent_version_release_status ON ai_agent_versi
 CREATE INDEX IF NOT EXISTS idx_ai_agent_version_config_hash ON ai_agent_version (tenant_id, organization_id, config_hash);
 
 CREATE TABLE IF NOT EXISTS ai_agent_run (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -3758,7 +3758,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_agent_run_status_created ON ai_agent_run (tena
 CREATE INDEX IF NOT EXISTS idx_ai_agent_run_usage_fact ON ai_agent_run (tenant_id, organization_id, usage_fact_id);
 
 CREATE TABLE IF NOT EXISTS ai_agent_run_step (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -3808,7 +3808,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_agent_run_step_runtime_invocation ON ai_agent_
 CREATE INDEX IF NOT EXISTS idx_ai_agent_run_step_usage_fact ON ai_agent_run_step (tenant_id, organization_id, usage_fact_id);
 
 CREATE TABLE IF NOT EXISTS ai_agent_memory (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -3840,7 +3840,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_agent_memory_agent_scope ON ai_agent_memory (t
 CREATE INDEX IF NOT EXISTS idx_ai_agent_memory_retention ON ai_agent_memory (tenant_id, organization_id, status, expires_at, id);
 
 CREATE TABLE IF NOT EXISTS ai_chat_conversation (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -3886,7 +3886,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_chat_conversation_agent_session ON ai_chat_con
 CREATE INDEX IF NOT EXISTS idx_ai_chat_conversation_memory_space ON ai_chat_conversation (tenant_id, organization_id, memory_space_id);
 
 CREATE TABLE IF NOT EXISTS ai_chat_turn (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -3932,7 +3932,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_chat_turn_conversation_created ON ai_chat_turn
 CREATE INDEX IF NOT EXISTS idx_ai_chat_turn_agent_session ON ai_chat_turn (tenant_id, organization_id, agent_session_id, created_at, id);
 
 CREATE TABLE IF NOT EXISTS ai_chat_item (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -3970,7 +3970,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_chat_item_turn ON ai_chat_item (tenant_id, org
 CREATE INDEX IF NOT EXISTS idx_ai_chat_item_provider_response ON ai_chat_item (tenant_id, organization_id, provider_response_id);
 
 CREATE TABLE IF NOT EXISTS ai_chat_message (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -4007,7 +4007,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_chat_message_no ON ai_chat_message (tena
 CREATE INDEX IF NOT EXISTS idx_ai_chat_message_turn ON ai_chat_message (tenant_id, organization_id, turn_id, message_no, id);
 
 CREATE TABLE IF NOT EXISTS ai_chat_message_part (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -4041,7 +4041,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_chat_message_part_no ON ai_chat_message_
 CREATE INDEX IF NOT EXISTS idx_ai_chat_message_part_item ON ai_chat_message_part (tenant_id, organization_id, item_id, part_no);
 
 CREATE TABLE IF NOT EXISTS ai_chat_context_snapshot (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -4076,7 +4076,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_chat_context_snapshot_turn ON ai_chat_context_
 CREATE INDEX IF NOT EXISTS idx_ai_chat_context_snapshot_invocation ON ai_chat_context_snapshot (tenant_id, organization_id, runtime_invocation_id);
 
 CREATE TABLE IF NOT EXISTS ai_agent_session (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -4134,7 +4134,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_agent_session_provider ON ai_agent_session (te
 CREATE INDEX IF NOT EXISTS idx_ai_agent_session_status_updated ON ai_agent_session (tenant_id, organization_id, status, updated_at, id);
 
 CREATE TABLE IF NOT EXISTS ai_memory_space (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -4165,7 +4165,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_memory_space_owner ON ai_memory_space (tenant_
 CREATE INDEX IF NOT EXISTS idx_ai_memory_space_user_updated ON ai_memory_space (tenant_id, organization_id, user_id, updated_at, id);
 
 CREATE TABLE IF NOT EXISTS ai_memory_space_binding (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -4188,7 +4188,7 @@ CREATE TABLE IF NOT EXISTS ai_memory_space_binding (
 CREATE INDEX IF NOT EXISTS idx_ai_memory_space_binding_subject ON ai_memory_space_binding (tenant_id, organization_id, binding_type, binding_id, enabled, priority);
 
 CREATE TABLE IF NOT EXISTS ai_memory_entry (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -4235,7 +4235,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_memory_entry_subject ON ai_memory_entry (tenan
 CREATE INDEX IF NOT EXISTS idx_ai_memory_entry_user_status ON ai_memory_entry (tenant_id, organization_id, user_id, status, updated_at, id);
 
 CREATE TABLE IF NOT EXISTS ai_memory_embedding (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -4260,7 +4260,7 @@ CREATE TABLE IF NOT EXISTS ai_memory_embedding (
 CREATE INDEX IF NOT EXISTS idx_ai_memory_embedding_memory ON ai_memory_embedding (tenant_id, organization_id, memory_id, status);
 
 CREATE TABLE IF NOT EXISTS ai_memory_event (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -4291,7 +4291,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_memory_event_conversation ON ai_memory_event (
 CREATE INDEX IF NOT EXISTS idx_ai_memory_event_user_created ON ai_memory_event (tenant_id, organization_id, user_id, created_at, id);
 
 CREATE TABLE IF NOT EXISTS ai_memory_link (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -4329,7 +4329,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_memory_link_agent ON ai_memory_link (tenant_id
 CREATE INDEX IF NOT EXISTS idx_ai_memory_link_user_created ON ai_memory_link (tenant_id, organization_id, user_id, created_at, id);
 
 CREATE TABLE IF NOT EXISTS ai_runtime_invocation (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -4386,7 +4386,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_runtime_invocation_request ON ai_runtime_invoc
 CREATE INDEX IF NOT EXISTS idx_ai_runtime_invocation_user_created ON ai_runtime_invocation (tenant_id, organization_id, user_id, created_at, id);
 
 CREATE TABLE IF NOT EXISTS ai_runtime_invocation_event (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -4418,7 +4418,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_runtime_invocation_event_chat ON ai_runtime_in
 CREATE INDEX IF NOT EXISTS idx_ai_runtime_invocation_event_agent ON ai_runtime_invocation_event (tenant_id, organization_id, agent_session_id, agent_run_id, created_at, id);
 
 CREATE TABLE IF NOT EXISTS ai_runtime_usage_link (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -4460,7 +4460,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_runtime_usage_link_agent ON ai_runtime_usage_l
 CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_runtime_usage_link_agent_scope ON ai_runtime_usage_link (tenant_id, organization_id, user_id, agent_run_id, usage_type, agent_run_step_id_key);
 
 CREATE TABLE IF NOT EXISTS ai_runtime_artifact (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -4498,7 +4498,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_runtime_artifact_user_created ON ai_runtime_ar
 CREATE INDEX IF NOT EXISTS idx_ai_runtime_artifact_agent ON ai_runtime_artifact (tenant_id, organization_id, agent_session_id, agent_run_id, created_at, id);
 
 CREATE TABLE IF NOT EXISTS ai_agent_tool_binding (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -4531,7 +4531,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_agent_tool_binding_skill ON ai_agent_tool_bind
 CREATE INDEX IF NOT EXISTS idx_ai_agent_tool_binding_mcp ON ai_agent_tool_binding (tenant_id, organization_id, mcp_server_id, status);
 
 CREATE TABLE IF NOT EXISTS ai_agent_mcp_server (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -4562,7 +4562,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_agent_mcp_server_code ON ai_agent_mcp_se
 CREATE INDEX IF NOT EXISTS idx_ai_agent_mcp_server_status_health ON ai_agent_mcp_server (tenant_id, organization_id, status, health_status, updated_at, id);
 
 CREATE TABLE IF NOT EXISTS ai_generation_session (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -4590,7 +4590,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_generation_session_user_code ON ai_gener
 CREATE INDEX IF NOT EXISTS idx_ai_generation_session_user_updated ON ai_generation_session (tenant_id, organization_id, user_id, updated_at, id);
 
 CREATE TABLE IF NOT EXISTS ai_generation_job (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -4626,7 +4626,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_generation_job_user_modality_created ON ai_gen
 CREATE INDEX IF NOT EXISTS idx_ai_generation_job_status_created ON ai_generation_job (tenant_id, organization_id, status, created_at, id);
 
 CREATE TABLE IF NOT EXISTS ai_generation_asset (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -4674,7 +4674,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_generation_asset_job ON ai_generation_asset (j
 CREATE INDEX IF NOT EXISTS idx_ai_generation_asset_favorite ON ai_generation_asset (tenant_id, organization_id, user_id, favorite, updated_at, id);
 
 CREATE TABLE IF NOT EXISTS ai_generation_asset_action (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -4703,7 +4703,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_generation_asset_action_asset_created ON ai_ge
 CREATE INDEX IF NOT EXISTS idx_ai_generation_asset_action_user_type ON ai_generation_asset_action (tenant_id, organization_id, user_id, action_type, created_at, id);
 
 CREATE TABLE IF NOT EXISTS commerce_usage_settlement (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -4739,7 +4739,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_commerce_usage_settlement_usage ON commerce
 CREATE INDEX IF NOT EXISTS idx_commerce_usage_settlement_tenant_status ON commerce_usage_settlement (tenant_id, organization_id, settlement_status, created_at, id);
 
 CREATE TABLE IF NOT EXISTS commerce_usage_pricing_plan (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -4767,7 +4767,7 @@ CREATE TABLE IF NOT EXISTS commerce_usage_pricing_plan (
 CREATE UNIQUE INDEX IF NOT EXISTS uk_commerce_usage_pricing_plan_tenant_code ON commerce_usage_pricing_plan (tenant_id, organization_id, plan_code);
 
 CREATE TABLE IF NOT EXISTS commerce_usage_statement (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -4802,7 +4802,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_commerce_usage_statement_owner_period ON co
 CREATE INDEX IF NOT EXISTS idx_commerce_usage_statement_tenant_status ON commerce_usage_statement (tenant_id, organization_id, statement_status, period_end, id);
 
 CREATE TABLE IF NOT EXISTS commerce_usage_statement_item (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -4834,7 +4834,7 @@ CREATE TABLE IF NOT EXISTS commerce_usage_statement_item (
 CREATE INDEX IF NOT EXISTS idx_commerce_usage_statement_item_statement ON commerce_usage_statement_item (statement_id, item_type, model);
 
 CREATE TABLE IF NOT EXISTS commerce_settlement_export (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -4865,7 +4865,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_commerce_settlement_export_no ON commerce_s
 CREATE INDEX IF NOT EXISTS idx_commerce_settlement_export_tenant_period ON commerce_settlement_export (tenant_id, organization_id, period_start, period_end, created_at, id);
 
 CREATE TABLE IF NOT EXISTS studio_catalog_action (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -4893,7 +4893,7 @@ CREATE INDEX IF NOT EXISTS idx_studio_catalog_action_target_type ON studio_catal
 CREATE INDEX IF NOT EXISTS idx_studio_catalog_action_user ON studio_catalog_action (tenant_id, organization_id, user_id, action_type, created_at, id);
 
 CREATE TABLE IF NOT EXISTS studio_catalog_asset (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -4933,7 +4933,7 @@ CREATE INDEX IF NOT EXISTS idx_studio_catalog_asset_seed_source ON studio_catalo
 CREATE INDEX IF NOT EXISTS idx_studio_catalog_asset_seed_kind ON studio_catalog_asset (tenant_id, organization_id, target_type);
 
 CREATE TABLE IF NOT EXISTS studio_catalog_artifact (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -4971,7 +4971,7 @@ CREATE INDEX IF NOT EXISTS idx_studio_catalog_artifact_seed_source ON studio_cat
 CREATE INDEX IF NOT EXISTS idx_studio_catalog_artifact_seed_kind ON studio_catalog_artifact (tenant_id, organization_id, target_type);
 
 CREATE TABLE IF NOT EXISTS studio_app_template (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -5027,7 +5027,7 @@ CREATE INDEX IF NOT EXISTS idx_studio_app_template_git_source ON studio_app_temp
 CREATE INDEX IF NOT EXISTS idx_studio_app_template_featured ON studio_app_template (tenant_id, organization_id, featured, sort_weight, id);
 
 CREATE TABLE IF NOT EXISTS studio_app_template_version (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -5059,7 +5059,7 @@ CREATE INDEX IF NOT EXISTS idx_studio_app_template_version_template ON studio_ap
 CREATE INDEX IF NOT EXISTS idx_studio_app_template_version_artifact ON studio_app_template_version (tenant_id, organization_id, artifact_id, status, id);
 
 CREATE TABLE IF NOT EXISTS studio_app_template_usage (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -5087,7 +5087,7 @@ CREATE INDEX IF NOT EXISTS idx_studio_app_template_usage_user ON studio_app_temp
 CREATE INDEX IF NOT EXISTS idx_studio_app_template_usage_request ON studio_app_template_usage (tenant_id, organization_id, request_id, id);
 
 CREATE TABLE IF NOT EXISTS content_announcement (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -5113,7 +5113,7 @@ CREATE TABLE IF NOT EXISTS content_announcement (
 CREATE INDEX IF NOT EXISTS idx_content_announcement_target_status ON content_announcement (tenant_id, organization_id, target_scope, status, published_at, id);
 
 CREATE TABLE IF NOT EXISTS content_doc_page (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -5141,7 +5141,7 @@ CREATE TABLE IF NOT EXISTS content_doc_page (
 CREATE UNIQUE INDEX IF NOT EXISTS uk_content_doc_page_type_slug ON content_doc_page (doc_type, slug);
 
 CREATE TABLE IF NOT EXISTS content_openapi_snapshot (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -5169,7 +5169,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_content_openapi_snapshot_system_version ON 
 CREATE INDEX IF NOT EXISTS idx_content_openapi_snapshot_system_published ON content_openapi_snapshot (api_system, published_at, id);
 
 CREATE TABLE IF NOT EXISTS content_sdk_release (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -5205,7 +5205,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_content_sdk_release_system_lang_version ON 
 CREATE INDEX IF NOT EXISTS idx_content_sdk_release_system_lang_published ON content_sdk_release (api_system, language, published_at, id);
 
 CREATE TABLE IF NOT EXISTS content_reaction (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -5231,7 +5231,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_content_reaction_user_target_type ON conten
 CREATE INDEX IF NOT EXISTS idx_content_reaction_target_type ON content_reaction (target_type, target_id, reaction_type, created_at, id);
 
 CREATE TABLE IF NOT EXISTS content_course (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -5269,7 +5269,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_content_course_code ON content_course (cour
 CREATE INDEX IF NOT EXISTS idx_content_course_category_status ON content_course (category, status, published_at, id);
 
 CREATE TABLE IF NOT EXISTS content_course_section (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -5294,7 +5294,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_content_course_section_no ON content_course
 CREATE INDEX IF NOT EXISTS idx_content_course_section_course ON content_course_section (course_id, sort_order, id);
 
 CREATE TABLE IF NOT EXISTS content_course_lesson (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -5327,7 +5327,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_content_course_lesson_no ON content_course_
 CREATE INDEX IF NOT EXISTS idx_content_course_lesson_section ON content_course_lesson (section_id, sort_order, id);
 
 CREATE TABLE IF NOT EXISTS content_course_relation (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -5348,7 +5348,7 @@ CREATE TABLE IF NOT EXISTS content_course_relation (
 CREATE UNIQUE INDEX IF NOT EXISTS uk_content_course_relation ON content_course_relation (course_id, related_course_id, relation_type);
 
 CREATE TABLE IF NOT EXISTS content_course_application (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -5383,7 +5383,7 @@ CREATE INDEX IF NOT EXISTS idx_content_course_application_status ON content_cour
 CREATE INDEX IF NOT EXISTS idx_content_course_application_user ON content_course_application (tenant_id, organization_id, user_id, created_at, id);
 
 CREATE TABLE IF NOT EXISTS ops_gateway_instance (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -5419,7 +5419,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_ops_gateway_instance_code ON ops_gateway_in
 CREATE INDEX IF NOT EXISTS idx_ops_gateway_instance_region_status ON ops_gateway_instance (region, cell, health_status, last_heartbeat_at);
 
 CREATE TABLE IF NOT EXISTS ops_gateway_heartbeat (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -5449,7 +5449,7 @@ CREATE TABLE IF NOT EXISTS ops_gateway_heartbeat (
 CREATE INDEX IF NOT EXISTS idx_ops_gateway_heartbeat_instance_time ON ops_gateway_heartbeat (instance_id, heartbeat_at, id);
 
 CREATE TABLE IF NOT EXISTS ops_config_snapshot (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -5478,7 +5478,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_ops_config_snapshot_no ON ops_config_snapsh
 CREATE INDEX IF NOT EXISTS idx_ops_config_snapshot_tenant_scope ON ops_config_snapshot (tenant_id, organization_id, config_scope, config_type, created_at, id);
 
 CREATE TABLE IF NOT EXISTS ops_audit_log (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -5509,7 +5509,7 @@ CREATE INDEX IF NOT EXISTS idx_ops_audit_log_tenant_target_created ON ops_audit_
 CREATE INDEX IF NOT EXISTS idx_ops_audit_log_request ON ops_audit_log (tenant_id, organization_id, request_id);
 
 CREATE TABLE IF NOT EXISTS ops_outbox_event (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -5542,7 +5542,7 @@ CREATE INDEX IF NOT EXISTS idx_ops_outbox_event_status_retry ON ops_outbox_event
 CREATE INDEX IF NOT EXISTS idx_ops_outbox_event_aggregate ON ops_outbox_event (aggregate_type, aggregate_id, created_at, id);
 
 CREATE TABLE IF NOT EXISTS ops_inbox_event (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -5570,7 +5570,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_ops_inbox_event_message ON ops_inbox_event 
 CREATE INDEX IF NOT EXISTS idx_ops_inbox_event_status_retry ON ops_inbox_event (process_status, created_at, id);
 
 CREATE TABLE IF NOT EXISTS ops_job_execution (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -5602,7 +5602,7 @@ CREATE INDEX IF NOT EXISTS idx_ops_job_execution_status_started ON ops_job_execu
 CREATE INDEX IF NOT EXISTS idx_ops_job_execution_model_ranking_scope_started ON ops_job_execution (tenant_id, organization_id, status, job_type, job_name, started_at, id);
 
 CREATE TABLE IF NOT EXISTS ops_alert_event (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -5631,7 +5631,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_ops_alert_event_no ON ops_alert_event (aler
 CREATE INDEX IF NOT EXISTS idx_ops_alert_event_status_severity ON ops_alert_event (alert_status, severity, last_seen_at, id);
 
 CREATE TABLE IF NOT EXISTS ops_notification_message (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -5662,7 +5662,7 @@ CREATE INDEX IF NOT EXISTS idx_ops_notification_message_scope ON ops_notificatio
 CREATE INDEX IF NOT EXISTS idx_ops_notification_message_popup ON ops_notification_message (tenant_id, organization_id, show_as_popup, published_at, id);
 
 CREATE TABLE IF NOT EXISTS ops_notification_recipient (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -5687,7 +5687,7 @@ CREATE INDEX IF NOT EXISTS idx_ops_notification_recipient_user ON ops_notificati
 CREATE INDEX IF NOT EXISTS idx_ops_notification_recipient_role ON ops_notification_recipient (tenant_id, organization_id, recipient_type, recipient_role_code, status, id);
 
 CREATE TABLE IF NOT EXISTS ops_notification_delivery (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -5719,7 +5719,7 @@ CREATE INDEX IF NOT EXISTS idx_ops_notification_delivery_user_read ON ops_notifi
 CREATE INDEX IF NOT EXISTS idx_ops_notification_delivery_popup_seen ON ops_notification_delivery (tenant_id, organization_id, user_id, app_id, popup_seen_at, id);
 
 CREATE TABLE IF NOT EXISTS ops_notification_preference (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -5745,7 +5745,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_ops_notification_preference_user_app_type_c
 CREATE INDEX IF NOT EXISTS idx_ops_notification_preference_user ON ops_notification_preference (tenant_id, organization_id, user_id, app_id, status, id);
 
 CREATE TABLE IF NOT EXISTS ops_metric_snapshot (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -5772,7 +5772,7 @@ CREATE TABLE IF NOT EXISTS ops_metric_snapshot (
 CREATE UNIQUE INDEX IF NOT EXISTS uk_ops_metric_snapshot ON ops_metric_snapshot (metric_scope, metric_name, metric_period, period_start, dimension_key, dimension_value);
 
 CREATE TABLE IF NOT EXISTS integration_service_provider (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -5802,7 +5802,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_integration_service_provider_no ON integrat
 CREATE INDEX IF NOT EXISTS idx_integration_service_provider_status ON integration_service_provider (tenant_id, organization_id, status, risk_level, id);
 
 CREATE TABLE IF NOT EXISTS integration_service_provider_edge (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -5830,7 +5830,7 @@ CREATE INDEX IF NOT EXISTS idx_integration_service_provider_edge_seller ON integ
 CREATE INDEX IF NOT EXISTS idx_integration_service_provider_edge_buyer ON integration_service_provider_edge (tenant_id, organization_id, buyer_provider_id, status, effective_from, id);
 
 CREATE TABLE IF NOT EXISTS integration_service_provider_closure (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -5855,7 +5855,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_integration_service_provider_closure_pair O
 CREATE INDEX IF NOT EXISTS idx_integration_service_provider_closure_desc ON integration_service_provider_closure (tenant_id, organization_id, descendant_provider_id, depth, status, id);
 
 CREATE TABLE IF NOT EXISTS integration_service_provider_member (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -5879,7 +5879,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_integration_service_provider_member_user ON
 CREATE INDEX IF NOT EXISTS idx_integration_service_provider_member_user ON integration_service_provider_member (tenant_id, organization_id, member_user_id, status, id);
 
 CREATE TABLE IF NOT EXISTS integration_service_provider_subject_binding (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -5904,7 +5904,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_integration_service_provider_subject_bindin
 CREATE INDEX IF NOT EXISTS idx_integration_service_provider_subject_provider ON integration_service_provider_subject_binding (tenant_id, organization_id, service_provider_id, status, binding_priority, id);
 
 CREATE TABLE IF NOT EXISTS integration_service_provider_contract (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -5932,7 +5932,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_integration_service_provider_contract_no ON
 CREATE INDEX IF NOT EXISTS idx_integration_service_provider_contract_edge ON integration_service_provider_contract (tenant_id, organization_id, edge_id, status, id);
 
 CREATE TABLE IF NOT EXISTS integration_service_provider_finance_profile (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -5960,7 +5960,7 @@ CREATE TABLE IF NOT EXISTS integration_service_provider_finance_profile (
 CREATE UNIQUE INDEX IF NOT EXISTS uk_integration_service_provider_finance_profile ON integration_service_provider_finance_profile (tenant_id, organization_id, service_provider_id);
 
 CREATE TABLE IF NOT EXISTS integration_service_provider_price_plan (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -5991,7 +5991,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_integration_service_provider_price_plan_edg
 CREATE INDEX IF NOT EXISTS idx_integration_service_provider_price_plan_buyer ON integration_service_provider_price_plan (tenant_id, organization_id, buyer_provider_id, status, effective_from, id);
 
 CREATE TABLE IF NOT EXISTS integration_service_provider_price_rule (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -6026,7 +6026,7 @@ CREATE INDEX IF NOT EXISTS idx_integration_service_provider_price_rule_lookup ON
 CREATE INDEX IF NOT EXISTS idx_integration_service_provider_price_rule_model ON integration_service_provider_price_rule (tenant_id, organization_id, buyer_provider_id, model, billing_meter_code, token_kind, status);
 
 CREATE TABLE IF NOT EXISTS object_provider (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -6058,7 +6058,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_object_provider_idempotency ON object_provi
 CREATE INDEX IF NOT EXISTS idx_object_provider_tenant_status ON object_provider (tenant_id, organization_id, status, id);
 
 CREATE TABLE IF NOT EXISTS object_bucket (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -6092,7 +6092,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_object_bucket_idempotency ON object_bucket 
 CREATE INDEX IF NOT EXISTS idx_object_bucket_scope_status ON object_bucket (tenant_id, organization_id, logical_scope, status, id);
 
 CREATE TABLE IF NOT EXISTS storage_default_bucket_policy (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -6116,7 +6116,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_storage_default_bucket_policy_scope ON stor
 CREATE INDEX IF NOT EXISTS idx_storage_default_bucket_policy_bucket ON storage_default_bucket_policy (tenant_id, organization_id, bucket_id, status, id);
 
 CREATE TABLE IF NOT EXISTS storage_quota_policy (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -6142,7 +6142,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_storage_quota_policy_idempotency ON storage
 CREATE INDEX IF NOT EXISTS idx_storage_quota_policy_tenant_status ON storage_quota_policy (tenant_id, organization_id, status, id);
 
 CREATE TABLE IF NOT EXISTS storage_quota_reservation (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -6168,7 +6168,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_storage_quota_reservation_no ON storage_quo
 CREATE INDEX IF NOT EXISTS idx_storage_quota_reservation_scope_status ON storage_quota_reservation (tenant_id, organization_id, scope_type, scope_id, status, id);
 
 CREATE TABLE IF NOT EXISTS storage_usage_counter (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -6201,7 +6201,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_storage_usage_counter_scope ON storage_usag
 CREATE INDEX IF NOT EXISTS idx_storage_usage_counter_tenant_updated ON storage_usage_counter (tenant_id, organization_id, updated_at, id);
 
 CREATE TABLE IF NOT EXISTS storage_usage_ledger (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -6233,7 +6233,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_storage_usage_ledger_idempotency ON storage
 CREATE INDEX IF NOT EXISTS idx_storage_usage_ledger_scope_time ON storage_usage_ledger (tenant_id, organization_id, scope_type, scope_id, occurred_at, id);
 
 CREATE TABLE IF NOT EXISTS storage_usage_snapshot (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -6265,7 +6265,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_storage_usage_snapshot_scope_time ON storag
 CREATE INDEX IF NOT EXISTS idx_storage_usage_snapshot_scope ON storage_usage_snapshot (tenant_id, organization_id, scope_type, scope_id, id);
 
 CREATE TABLE IF NOT EXISTS storage_reconciliation_run (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -6298,7 +6298,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_storage_reconciliation_run_idempotency ON s
 CREATE INDEX IF NOT EXISTS idx_storage_reconciliation_run_status ON storage_reconciliation_run (tenant_id, organization_id, status, started_at, id);
 
 CREATE TABLE IF NOT EXISTS storage_reconciliation_item (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -6327,7 +6327,7 @@ CREATE TABLE IF NOT EXISTS storage_reconciliation_item (
 CREATE INDEX IF NOT EXISTS idx_storage_reconciliation_item_run ON storage_reconciliation_item (tenant_id, organization_id, run_id, issue_type, id);
 
 CREATE TABLE IF NOT EXISTS storage_gc_job (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -6358,7 +6358,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_storage_gc_job_idempotency ON storage_gc_jo
 CREATE INDEX IF NOT EXISTS idx_storage_gc_job_status ON storage_gc_job (tenant_id, organization_id, status, created_at, id);
 
 CREATE TABLE IF NOT EXISTS object_blob (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -6396,7 +6396,7 @@ CREATE INDEX IF NOT EXISTS idx_object_blob_owner_status ON object_blob (tenant_i
 CREATE INDEX IF NOT EXISTS idx_object_blob_bucket_status ON object_blob (tenant_id, organization_id, bucket_id, status, id);
 
 CREATE TABLE IF NOT EXISTS media_resource (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -6438,7 +6438,7 @@ CREATE INDEX IF NOT EXISTS idx_media_resource_blob ON media_resource (tenant_id,
 CREATE INDEX IF NOT EXISTS idx_media_resource_kind_status ON media_resource (tenant_id, organization_id, kind, status, id);
 
 CREATE TABLE IF NOT EXISTS object_tag (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -6459,7 +6459,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_object_tag_blob_key ON object_tag (tenant_i
 CREATE INDEX IF NOT EXISTS idx_object_tag_key_value ON object_tag (tenant_id, organization_id, tag_key, tag_value, id);
 
 CREATE TABLE IF NOT EXISTS upload_session (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -6501,7 +6501,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_upload_session_idempotency ON upload_sessio
 CREATE INDEX IF NOT EXISTS idx_upload_session_owner_status ON upload_session (tenant_id, organization_id, owner_type, owner_id, status, id);
 
 CREATE TABLE IF NOT EXISTS upload_part (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -6525,7 +6525,7 @@ CREATE TABLE IF NOT EXISTS upload_part (
 CREATE UNIQUE INDEX IF NOT EXISTS uk_upload_part_session_part ON upload_part (tenant_id, organization_id, upload_session_id, part_number);
 
 CREATE TABLE IF NOT EXISTS upload_presign_grant (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -6553,7 +6553,7 @@ CREATE TABLE IF NOT EXISTS upload_presign_grant (
 CREATE INDEX IF NOT EXISTS idx_upload_presign_grant_session ON upload_presign_grant (tenant_id, organization_id, upload_session_id, created_at, id);
 
 CREATE TABLE IF NOT EXISTS upload_completion_attempt (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -6578,7 +6578,7 @@ CREATE TABLE IF NOT EXISTS upload_completion_attempt (
 CREATE UNIQUE INDEX IF NOT EXISTS uk_upload_completion_attempt_no ON upload_completion_attempt (tenant_id, organization_id, upload_session_id, attempt_no);
 
 CREATE TABLE IF NOT EXISTS ai_model_mapping_rule (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -6605,7 +6605,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_model_mapping_rule_target_vendor ON ai_model_m
 CREATE INDEX IF NOT EXISTS idx_ai_model_mapping_rule_enabled ON ai_model_mapping_rule (tenant_id, organization_id, status, enabled, id);
 
 CREATE TABLE IF NOT EXISTS ai_model_mapping_rule_item (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -6635,7 +6635,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_model_mapping_rule_item_source_lookup ON ai_mo
 CREATE INDEX IF NOT EXISTS idx_ai_model_mapping_rule_item_target_lookup ON ai_model_mapping_rule_item (tenant_id, organization_id, target_catalog_key, target_model, status, id);
 
 CREATE TABLE IF NOT EXISTS ai_model_mapping_rule_binding (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -6666,7 +6666,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_model_mapping_rule_binding_vendor_lookup ON ai
 CREATE INDEX IF NOT EXISTS idx_ai_model_mapping_rule_binding_global_lookup ON ai_model_mapping_rule_binding (tenant_id, organization_id, binding_type, status, enabled, id);
 
 CREATE TABLE IF NOT EXISTS ai_usage_service_provider_edge (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -6709,7 +6709,7 @@ CREATE INDEX IF NOT EXISTS idx_ai_usage_service_provider_edge_seller_time ON ai_
 CREATE INDEX IF NOT EXISTS idx_ai_usage_service_provider_edge_buyer_time ON ai_usage_service_provider_edge (tenant_id, organization_id, buyer_provider_id, occurred_at, id);
 
 CREATE TABLE IF NOT EXISTS commerce_usage_service_provider_statement (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -6744,7 +6744,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_commerce_usage_service_provider_statement_e
 CREATE INDEX IF NOT EXISTS idx_commerce_usage_service_provider_statement_status ON commerce_usage_service_provider_statement (tenant_id, organization_id, statement_status, period_end, id);
 
 CREATE TABLE IF NOT EXISTS commerce_usage_service_provider_adjustment (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -6776,7 +6776,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_commerce_usage_service_provider_adjustment_
 CREATE INDEX IF NOT EXISTS idx_commerce_usage_service_provider_adjustment_edge ON commerce_usage_service_provider_adjustment (tenant_id, organization_id, usage_edge_id, status, id);
 
 CREATE TABLE IF NOT EXISTS integration_provider_invoice_import (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -6805,7 +6805,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_integration_provider_invoice_import_no ON i
 CREATE INDEX IF NOT EXISTS idx_integration_provider_invoice_import_provider_period ON integration_provider_invoice_import (tenant_id, organization_id, provider_code, period_start, period_end, id);
 
 CREATE TABLE IF NOT EXISTS integration_provider_invoice_item (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -6834,7 +6834,7 @@ CREATE INDEX IF NOT EXISTS idx_integration_provider_invoice_item_import ON integ
 CREATE INDEX IF NOT EXISTS idx_integration_provider_invoice_item_request ON integration_provider_invoice_item (tenant_id, organization_id, provider_request_id, id);
 
 CREATE TABLE IF NOT EXISTS commerce_usage_service_provider_reconciliation_run (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -6865,7 +6865,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_commerce_usage_service_provider_reconciliat
 CREATE INDEX IF NOT EXISTS idx_commerce_usage_service_provider_reconciliation_run_period ON commerce_usage_service_provider_reconciliation_run (tenant_id, organization_id, scope_type, period_start, period_end, id);
 
 CREATE TABLE IF NOT EXISTS commerce_usage_service_provider_reconciliation_item (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -6894,7 +6894,7 @@ CREATE TABLE IF NOT EXISTS commerce_usage_service_provider_reconciliation_item (
 CREATE INDEX IF NOT EXISTS idx_commerce_usage_service_provider_reconciliation_item_run ON commerce_usage_service_provider_reconciliation_item (tenant_id, organization_id, run_id, match_status, id);
 
 CREATE TABLE IF NOT EXISTS commerce_service_provider_exposure_snapshot (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -6922,7 +6922,7 @@ CREATE TABLE IF NOT EXISTS commerce_service_provider_exposure_snapshot (
 CREATE UNIQUE INDEX IF NOT EXISTS uk_commerce_service_provider_exposure_snapshot_provider ON commerce_service_provider_exposure_snapshot (tenant_id, organization_id, service_provider_id, currency);
 
 CREATE TABLE IF NOT EXISTS analytics_service_provider_daily (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,
@@ -6951,7 +6951,7 @@ CREATE TABLE IF NOT EXISTS analytics_service_provider_daily (
 CREATE UNIQUE INDEX IF NOT EXISTS uk_analytics_service_provider_daily ON analytics_service_provider_daily (tenant_id, organization_id, provider_id, ancestor_provider_id, report_date, currency);
 
 CREATE TABLE IF NOT EXISTS analytics_service_provider_edge_daily (
-    id BIGSERIAL PRIMARY KEY,
+    id BIGINT NOT NULL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
     tenant_id BIGINT NOT NULL DEFAULT 0,
     organization_id BIGINT NOT NULL DEFAULT 0,

@@ -70,7 +70,7 @@ python -B -m unittest tests.test_schema_compiler
 
 `common_columns` 会按 `schema_registry.common_column_groups` 展开，并使用编译器内置的物理列定义，例如：
 
-- `id BIGSERIAL PRIMARY KEY`
+- `id BIGINT NOT NULL PRIMARY KEY`
 - `uuid VARCHAR(64) NOT NULL`
 - `status INTEGER NOT NULL DEFAULT 1`
 - `created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP`

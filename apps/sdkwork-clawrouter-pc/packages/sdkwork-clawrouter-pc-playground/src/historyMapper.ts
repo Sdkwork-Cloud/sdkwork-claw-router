@@ -7,7 +7,7 @@ import {
   readMediaResource,
   type ClawRouterMediaResource,
 } from 'sdkwork-clawrouter-pc-commons/runtime';
-import { normalizeSdkworkGenerationHistoryType } from '@sdkwork/generation-pc-react/generation-history';
+import { normalizeSdkworkGenerationHistoryType } from '@sdkwork/generations-pc-workspace/generation-history';
 import type { PlaygroundHistoryItem, PlaygroundMedia } from './playgroundTypes.ts';
 
 export function mapGenerationHistoryItems(

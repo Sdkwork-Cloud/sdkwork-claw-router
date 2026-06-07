@@ -6,6 +6,7 @@ frontend_operations:
   operation_id: fulfillments.list
   kind: read
   api_surface: backend
+  openapi_exposed: false
   api_method: GET
   api_path: /backend/v3/api/fulfillments
   sdk_domain: commerce
@@ -34,7 +35,7 @@ frontend_operations:
     schema:
       type: string
       maxLength: 32
-  response_schema:
+  response_schema: &commerceStandardCollectionResponse
     name: CommerceStandardCollectionResponse
     type: object
     additionalProperties: false
@@ -81,3 +82,170 @@ frontend_operations:
         format: int64
         minimum: 1
         maximum: 200
+- route: /admin/orders
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
+  operation: backendFulfillmentCreate
+  operation_id: fulfillments.create
+  kind: create
+  api_surface: backend
+  openapi_exposed: false
+  api_method: POST
+  api_path: /backend/v3/api/fulfillments
+  sdk_domain: commerce
+  summary: Fulfillments Create
+  description: Creates a fulfillment order through the Commerce backend management API.
+  read_sources:
+  - commerce_order
+  - commerce_order_item
+  - commerce_product_sku
+  idempotency_required: true
+  write_tables:
+  - commerce_fulfillment_order
+  - commerce_fulfillment_item
+  - commerce_order_event
+  - ops_audit_log
+  request_schema: &commerceOperationCommand
+    name: CommerceOperationCommand
+    type: object
+    additionalProperties: true
+    properties:
+      orderId:
+        type: string
+        nullable: true
+        maxLength: 128
+      fulfillmentType:
+        type: string
+        nullable: true
+        maxLength: 64
+      carrierCode:
+        type: string
+        nullable: true
+        maxLength: 64
+      trackingNo:
+        type: string
+        nullable: true
+        maxLength: 128
+      status:
+        type: string
+        nullable: true
+        maxLength: 64
+      source:
+        type: string
+        nullable: true
+        maxLength: 64
+      note:
+        type: string
+        nullable: true
+        maxLength: 1024
+  response_schema: &commerceOperationResponse
+    name: CommerceOperationResponse
+    type: object
+    additionalProperties: true
+    properties:
+      id:
+        type: string
+        nullable: true
+        maxLength: 128
+      status:
+        type: string
+        nullable: true
+        maxLength: 64
+      success:
+        type: boolean
+        nullable: true
+      message:
+        type: string
+        nullable: true
+        maxLength: 1024
+- route: /admin/orders
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
+  operation: backendFulfillmentUpdate
+  operation_id: fulfillments.update
+  kind: update
+  api_surface: backend
+  openapi_exposed: false
+  api_method: PATCH
+  api_path: /backend/v3/api/fulfillments/{fulfillmentId}
+  sdk_domain: commerce
+  summary: Fulfillments Update
+  description: Updates fulfillment lifecycle state through the Commerce backend management API.
+  read_sources:
+  - commerce_fulfillment_order
+  - commerce_fulfillment_item
+  - commerce_order
+  idempotency_required: true
+  write_tables:
+  - commerce_fulfillment_order
+  - commerce_order_event
+  - ops_audit_log
+  request_schema: *commerceOperationCommand
+  response_schema: *commerceOperationResponse
+- route: /admin/orders
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
+  operation: backendFulfillmentShipmentCreate
+  operation_id: fulfillments.shipments.create
+  kind: create
+  api_surface: backend
+  openapi_exposed: false
+  api_method: POST
+  api_path: /backend/v3/api/fulfillments/{fulfillmentId}/shipments
+  sdk_domain: commerce
+  summary: Fulfillments Shipments Create
+  description: Creates a physical shipment record under a fulfillment order.
+  read_sources:
+  - commerce_fulfillment_order
+  - commerce_order
+  idempotency_required: true
+  write_tables:
+  - commerce_shipment
+  - commerce_order_event
+  - ops_audit_log
+  request_schema: *commerceOperationCommand
+  response_schema: *commerceOperationResponse
+- route: /admin/orders
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
+  operation: backendFulfillmentShipmentUpdate
+  operation_id: fulfillments.shipments.update
+  kind: update
+  api_surface: backend
+  openapi_exposed: false
+  api_method: PATCH
+  api_path: /backend/v3/api/fulfillments/{fulfillmentId}/shipments/{shipmentId}
+  sdk_domain: commerce
+  summary: Fulfillments Shipments Update
+  description: Updates shipment carrier, tracking number, or lifecycle status.
+  read_sources:
+  - commerce_fulfillment_order
+  - commerce_shipment
+  - commerce_order
+  idempotency_required: true
+  write_tables:
+  - commerce_shipment
+  - commerce_order_event
+  - ops_audit_log
+  request_schema: *commerceOperationCommand
+  response_schema: *commerceOperationResponse
+- route: /admin/orders
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
+  operation: backendFulfillmentTrackingEventCreate
+  operation_id: fulfillments.trackingEvents.create
+  kind: create
+  api_surface: backend
+  openapi_exposed: false
+  api_method: POST
+  api_path: /backend/v3/api/fulfillments/{fulfillmentId}/shipments/{shipmentId}/tracking_events
+  sdk_domain: commerce
+  summary: Fulfillments Tracking Events Create
+  description: Appends a shipment tracking event through the Commerce backend management API.
+  read_sources:
+  - commerce_fulfillment_order
+  - commerce_shipment
+  - commerce_order
+  idempotency_required: true
+  write_tables:
+  - commerce_shipment_tracking_event
+  - commerce_shipment
+  - commerce_order_event
+  - ops_audit_log
+  request_schema: *commerceOperationCommand
+  response_schema: *commerceOperationResponse

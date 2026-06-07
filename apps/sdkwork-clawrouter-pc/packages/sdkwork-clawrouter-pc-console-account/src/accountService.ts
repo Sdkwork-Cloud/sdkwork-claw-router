@@ -1,5 +1,4 @@
 import {
-  getClawRouterAppSdkClient,
   isRecord,
   readRequiredApiItem,
   readRequiredNonNegativeNumber,
@@ -7,6 +6,7 @@ import {
   readString,
   type ApiRecord,
 } from 'sdkwork-clawrouter-pc-commons/runtime';
+import { getSdkworkCommerceService } from '@sdkwork/commerce-service';
 
 export interface AccountStats {
   id: string;
@@ -52,7 +52,7 @@ export class AccountService {
 }
 
 export async function appAccountsCurrentSummaryRetrieve() {
-  return getClawRouterAppSdkClient().commerce.accounts.current.summary.retrieve();
+  return getSdkworkCommerceService().accounts.current.summary.retrieve();
 }
 
 function normalizeAccountStats(value: ApiRecord): AccountStats {

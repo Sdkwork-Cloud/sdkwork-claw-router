@@ -653,6 +653,7 @@ tables:
   generated_by_this_project: true
   frontend_routes:
   - /console/account
+  - /admin/organization
   api_surfaces:
   - app
   - backend
@@ -702,6 +703,7 @@ tables:
   generated_by_this_project: true
   frontend_routes:
   - /console/notifications
+  - /admin/organization
   api_surfaces:
   - app
   - backend
@@ -772,6 +774,7 @@ tables:
   - /admin/drive/permissions
   - /admin/drive/share-links
   - /admin/drive/audit
+  - /admin/organization
   api_surfaces:
   - app
   - backend
@@ -1045,6 +1048,7 @@ tables:
   generated_by_this_project: true
   frontend_routes:
   - /admin/user
+  - /admin/organization
   api_surfaces:
   - backend
   primary_key: id
@@ -1085,6 +1089,7 @@ tables:
   generated_by_this_project: true
   frontend_routes:
   - /admin/user
+  - /admin/organization
   api_surfaces:
   - backend
   primary_key: id
@@ -1152,6 +1157,7 @@ tables:
   generated_by_this_project: true
   frontend_routes:
   - /admin/user
+  - /admin/organization
   api_surfaces:
   - backend
   primary_key: id
@@ -1189,6 +1195,7 @@ tables:
   generated_by_this_project: true
   frontend_routes:
   - /admin/user
+  - /admin/organization
   api_surfaces:
   - backend
   primary_key: id
@@ -1348,7 +1355,6 @@ tables:
   profile: legacy_compatible
   compliance_level: L0
   system_of_record: true
-  
   generated_by_this_project: false
   frontend_routes:
   - /console/account
@@ -1490,7 +1496,6 @@ tables:
   profile: java_compatible_owned
   compliance_level: L0
   system_of_record: true
-  
   generated_by_this_project: true
   frontend_routes:
   - /apps
@@ -1633,7 +1638,6 @@ tables:
   profile: java_compatible_owned
   compliance_level: L0
   system_of_record: true
-  
   generated_by_this_project: true
   frontend_routes:
   - /skills-hub
@@ -1785,7 +1789,6 @@ tables:
   profile: java_compatible_owned
   compliance_level: L0
   system_of_record: true
-  
   generated_by_this_project: true
   frontend_routes:
   - /skills-hub
@@ -2174,7 +2177,6 @@ tables:
   profile: java_compatible_owned
   compliance_level: L0
   system_of_record: true
-  
   generated_by_this_project: true
   frontend_routes:
   - /forum
@@ -2358,7 +2360,6 @@ tables:
   profile: java_compatible_owned
   compliance_level: L0
   system_of_record: true
-  
   generated_by_this_project: true
   frontend_routes:
   - /forum
@@ -2502,7 +2503,6 @@ tables:
   profile: java_compatible_owned
   compliance_level: L0
   system_of_record: true
-  
   generated_by_this_project: true
   frontend_routes:
   - /forum
@@ -2601,7 +2601,6 @@ tables:
   profile: java_compatible_owned
   compliance_level: L0
   system_of_record: true
-  
   generated_by_this_project: true
   frontend_routes:
   - /forum
@@ -2714,7 +2713,6 @@ tables:
   profile: legacy_compatible
   compliance_level: L0
   system_of_record: true
-  
   generated_by_this_project: false
   frontend_routes:
   - /admin/user
@@ -2726,7 +2724,6 @@ tables:
   profile: legacy_compatible
   compliance_level: L0
   system_of_record: true
-  
   generated_by_this_project: false
   frontend_routes:
   - /admin/user
@@ -5018,6 +5015,7 @@ tables:
   - /vip
   - /admin/catalog
   - /admin/inventory
+  - /admin/orders
   - /admin/memberships
   - /admin/wallet
   - /admin/catalog/categories
@@ -5030,6 +5028,10 @@ tables:
   - /admin/inventory/stocks
   - /admin/inventory/reservations
   - /admin/inventory/ledger
+  - /admin/orders/orders
+  - /admin/orders/refunds
+  - /admin/orders/fulfillments
+  - /admin/orders/shipments
   - /admin/memberships/packages
   - /admin/memberships/vip-packages
   - /admin/memberships/plans
@@ -8982,7 +8984,6 @@ tables:
   profile: legacy_compatible
   compliance_level: L0
   system_of_record: true
-  
   generated_by_this_project: false
   frontend_routes:
   - /console/account
@@ -8997,7 +8998,6 @@ tables:
   profile: legacy_compatible
   compliance_level: L0
   system_of_record: true
-  
   generated_by_this_project: false
   frontend_routes:
   - /console/account
@@ -9012,7 +9012,6 @@ tables:
   profile: legacy_compatible
   compliance_level: L0
   system_of_record: true
-  
   generated_by_this_project: false
   frontend_routes:
   - /admin/marketing
@@ -9026,7 +9025,6 @@ tables:
   profile: legacy_compatible
   compliance_level: L0
   system_of_record: true
-  
   generated_by_this_project: false
   frontend_routes:
   - /admin/marketing
@@ -9040,7 +9038,6 @@ tables:
   profile: legacy_compatible
   compliance_level: L0
   system_of_record: true
-  
   generated_by_this_project: false
   frontend_routes:
   - /admin/marketing
@@ -9054,7 +9051,6 @@ tables:
   profile: legacy_compatible
   compliance_level: L0
   system_of_record: true
-  
   generated_by_this_project: false
   frontend_routes:
   - /admin/marketing
@@ -9067,7 +9063,6 @@ tables:
   profile: legacy_compatible
   compliance_level: L0
   system_of_record: true
-  
   generated_by_this_project: false
   frontend_routes:
   - /admin/marketing
@@ -9080,7 +9075,6 @@ tables:
   profile: legacy_compatible
   compliance_level: L0
   system_of_record: true
-  
   generated_by_this_project: false
   frontend_routes:
   - /admin/marketing
@@ -9158,7 +9152,6 @@ tables:
   profile: legacy_compatible
   compliance_level: L0
   system_of_record: true
-  
   generated_by_this_project: false
   frontend_routes:
   - /console/usage
@@ -9172,7 +9165,6 @@ tables:
   profile: legacy_compatible
   compliance_level: L0
   system_of_record: true
-  
   generated_by_this_project: false
   frontend_routes:
   - /console/routing
@@ -9186,7 +9178,6 @@ tables:
   profile: legacy_compatible
   compliance_level: L0
   system_of_record: true
-  
   generated_by_this_project: false
   frontend_routes:
   - /console/routing
@@ -9200,7 +9191,6 @@ tables:
   profile: legacy_compatible
   compliance_level: L0
   system_of_record: true
-  
   generated_by_this_project: false
   frontend_routes:
   - /console/routing
@@ -18693,6 +18683,7 @@ tables:
   - /console/api-keys
   - /admin/cache
   - /admin/user
+  - /admin/organization
   - /admin/settings
   - /admin/runtime-region
   - /admin/site

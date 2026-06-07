@@ -6,7 +6,7 @@ function readPortalFile(relativePath: string): string {
   return readFileSync(new URL(relativePath, import.meta.url), "utf8");
 }
 
-test("admin member center exposes recharge package and recharge settings maintenance through backend SDK", () => {
+test("admin member center exposes recharge package and recharge settings maintenance through commerce backend service facade", () => {
   const appSource = readPortalFile("./src/App.tsx");
   const adminModuleRegistrySource = readPortalFile("./src/adminModuleRegistry.ts");
   const membershipsSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-memberships/src/index.tsx");
@@ -18,7 +18,7 @@ test("admin member center exposes recharge package and recharge settings mainten
   ].join("\n");
   const backendMarketingSource = readPortalFile("../../services/sdkwork-claw-product/src/api/admin_marketing.rs");
   const backendContractSource = readPortalFile("../../docs/schema-registry/frontend-field-contracts/operations/backend-commerce-recharges.yaml");
-  const backendCommerceSdk = readPortalFile("../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/generated/server-openapi/src/api/commerce.ts");
+  const commerceBackendRechargesSdk = readPortalFile("../../../sdkwork-commerce/sdks/sdkwork-commerce-backend-sdk/sdkwork-commerce-backend-sdk-typescript/generated/server-openapi/src/api/recharges.ts");
 
   assert.match(appSource, /<Route path="memberships\/recharge-packages" element=\{<MembershipsAdmin sectionId="rechargePackages" \/>} \/>/);
   assert.match(adminModuleRegistrySource, /path:\s*'\/admin\/memberships\/recharge-packages',\s*labelKey:\s*'admin\.menu\.membershipRechargePackages'/);
@@ -69,12 +69,14 @@ test("admin member center exposes recharge package and recharge settings mainten
   assert.match(membershipsServiceSource, /deleteMembershipAdminRechargePackage/);
   assert.match(membershipsServiceSource, /fetchMembershipAdminRechargeSettings/);
   assert.match(membershipsServiceSource, /updateMembershipAdminRechargeSettings/);
-  assert.match(membershipsServiceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.recharges\.packages\.list/);
-  assert.match(membershipsServiceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.recharges\.packages\.create/);
-  assert.match(membershipsServiceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.recharges\.packages\.update/);
-  assert.match(membershipsServiceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.recharges\.packages\.delete/);
-  assert.match(membershipsServiceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.recharges\.settings\.retrieve/);
-  assert.match(membershipsServiceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.recharges\.settings\.update/);
+  assert.match(membershipsServiceSource, /import \{ getSdkworkCommerceService \} from '@sdkwork\/commerce-service'/);
+  assert.match(membershipsServiceSource, /getSdkworkCommerceService\(\)\.admin\.recharges\.packages\.list/);
+  assert.match(membershipsServiceSource, /getSdkworkCommerceService\(\)\.admin\.recharges\.packages\.create/);
+  assert.match(membershipsServiceSource, /getSdkworkCommerceService\(\)\.admin\.recharges\.packages\.update/);
+  assert.match(membershipsServiceSource, /getSdkworkCommerceService\(\)\.admin\.recharges\.packages\.delete/);
+  assert.match(membershipsServiceSource, /getSdkworkCommerceService\(\)\.admin\.recharges\.settings\.retrieve/);
+  assert.match(membershipsServiceSource, /getSdkworkCommerceService\(\)\.admin\.recharges\.settings\.update/);
+  assert.doesNotMatch(membershipsServiceSource, /getClawRouterBackendSdkClient\(\)\.commerce/);
   assert.match(membershipsServiceSource, /priceAmount/);
   assert.match(membershipsServiceSource, /currencyCode/);
   assert.match(membershipsServiceSource, /bonusPoints/);
@@ -93,15 +95,17 @@ test("admin member center exposes recharge package and recharge settings mainten
   assert.match(backendContractSource, /operation_id:\s*recharges\.settings\.retrieve/);
   assert.match(backendContractSource, /operation_id:\s*recharges\.settings\.update/);
 
-  assert.match(backendCommerceSdk, /class CommerceRechargesPackagesApi/);
-  assert.match(backendCommerceSdk, /class CommerceRechargesSettingsApi/);
-  assert.match(backendCommerceSdk, /backendApiPath\(`\/recharges\/packages`\)/);
-  assert.match(backendCommerceSdk, /backendApiPath\(`\/recharges\/settings`\)/);
-  assert.match(backendCommerceSdk, /async create\(body: CommerceRechargePackageMutationRequest/);
-  assert.match(backendCommerceSdk, /async update\(packageId: string, body: CommerceRechargePackageMutationRequest/);
-  assert.match(backendCommerceSdk, /async delete\(packageId: string/);
-  assert.match(backendCommerceSdk, /async retrieve\(/);
-  assert.match(backendCommerceSdk, /async update\(body: CommerceRechargeSettingsUpdateRequest/);
+  assert.match(commerceBackendRechargesSdk, /class RechargesPackagesApi/);
+  assert.match(commerceBackendRechargesSdk, /class RechargesSettingsApi/);
+  assert.doesNotMatch(commerceBackendRechargesSdk, /class RechargesPackagesManagementApi/);
+  assert.match(commerceBackendRechargesSdk, /backendApiPath\(`\/recharges\/packages`\)/);
+  assert.match(commerceBackendRechargesSdk, /backendApiPath\(`\/recharges\/settings`\)/);
+  assert.match(commerceBackendRechargesSdk, /async list\(params\?: RechargesPackagesListParams/);
+  assert.match(commerceBackendRechargesSdk, /async create\(body: CommerceOperationCommand/);
+  assert.match(commerceBackendRechargesSdk, /async update\(packageId: string, body\?: CommerceOperationCommand/);
+  assert.match(commerceBackendRechargesSdk, /async delete\(packageId: string/);
+  assert.match(commerceBackendRechargesSdk, /async retrieve\(\)/);
+  assert.match(commerceBackendRechargesSdk, /async update\(body: CommerceOperationCommand/);
 
   for (const key of [
     "admin.menu.membershipRechargePackages",

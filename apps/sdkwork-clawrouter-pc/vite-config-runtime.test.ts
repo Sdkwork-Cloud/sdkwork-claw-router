@@ -165,7 +165,7 @@ test("portal dev server may serve workspace SDK sources resolved by aliases", as
   assert.ok(config.server?.fs?.allow?.includes(workspaceRoot));
 });
 
-test("portal dependency roots resolve to the materialized dependency checkout path", () => {
+test("portal dependency roots resolve to the sibling workspace repository path", () => {
   const fakeConfigDir = path.resolve(
     import.meta.dirname,
     "../../target/test/portal-portability/apps/sdkwork-clawrouter-pc",
@@ -173,7 +173,7 @@ test("portal dependency roots resolve to the materialized dependency checkout pa
 
   assert.equal(
     resolvePortalWorkspaceDependencyRoot(fakeConfigDir, "sdkwork-ui"),
-    path.resolve(fakeConfigDir, "../..", ".sdkwork/dependencies/sdkwork-ui"),
+    path.resolve(fakeConfigDir, "../../..", "sdkwork-ui"),
   );
 });
 
@@ -223,6 +223,27 @@ test("portal resolves runtime bootstrap workspace imports to the appbase foundat
     existsSync(expectedRuntimeBootstrapEntry),
     "@sdkwork/runtime-bootstrap alias must point to a real source file",
   );
+});
+
+test("portal resolves SDK common imports for generated SDKs served from sibling workspaces", async () => {
+  const config = await resolvePortalViteConfig();
+  const aliases = config.resolve?.alias;
+  const expectedSdkCommonEntry = path.resolve(
+    import.meta.dirname,
+    "node_modules/@sdkwork/sdk-common/dist/index.js",
+  );
+
+  assert.ok(Array.isArray(aliases));
+  assert.equal(
+    aliases.find((alias) => (
+      typeof alias === "object"
+      && alias !== null
+      && "find" in alias
+      && alias.find === "@sdkwork/sdk-common"
+    ))?.replacement,
+    expectedSdkCommonEntry,
+  );
+  assert.ok(existsSync(expectedSdkCommonEntry), "@sdkwork/sdk-common alias must point to an installed SDK common entrypoint");
 });
 
 test("workspace package imports resolve to one React and router runtime instance", async () => {
@@ -466,6 +487,94 @@ test("portal runtime env allows the open SDK base URL to differ from the public 
   assert.match(script, /"VITE_CLAWROUTER_OPEN_API_BASE_URL":"https:\/\/open\.example\.com\/v1"/u);
 });
 
+test("portal runtime env derives SDK surface base URLs from one public SDK base URL", () => {
+  const runtimeEnv = resolvePortalRuntimeEnv({
+    PORTAL_PUBLIC_SDK_BASE_URL: "https://tenant.example.com/router",
+    PORTAL_PUBLIC_API_BASE_URL: "",
+    PORTAL_PUBLIC_OPEN_API_BASE_URL: "",
+    PORTAL_PUBLIC_APP_API_BASE_URL: "",
+    PORTAL_PUBLIC_BACKEND_API_BASE_URL: "",
+  });
+
+  assert.equal(runtimeEnv.VITE_API_BASE_URL, "https://tenant.example.com/router/v1");
+  assert.equal(runtimeEnv.VITE_CLAWROUTER_OPEN_API_BASE_URL, "https://tenant.example.com/router/v1");
+  assert.equal(runtimeEnv.VITE_CLAWROUTER_APP_API_BASE_URL, "https://tenant.example.com/router/app/v3/api");
+  assert.equal(
+    runtimeEnv.VITE_CLAWROUTER_BACKEND_API_BASE_URL,
+    "https://tenant.example.com/router/backend/v3/api",
+  );
+  assert.equal(
+    runtimeEnv.VITE_SDKWORK_APPBASE_BACKEND_API_BASE_URL,
+    "https://tenant.example.com/router/backend/v3/api",
+  );
+});
+
+test("portal runtime env derives Commerce dependency SDK base URLs from one public SDK base URL", () => {
+  const runtimeEnv = resolvePortalRuntimeEnv({
+    PORTAL_PUBLIC_SDK_BASE_URL: "https://tenant.example.com/router",
+    PORTAL_PUBLIC_COMMERCE_APP_API_BASE_URL: "",
+    PORTAL_PUBLIC_COMMERCE_BACKEND_API_BASE_URL: "",
+  });
+
+  assert.equal(
+    runtimeEnv.VITE_SDKWORK_COMMERCE_APP_API_BASE_URL,
+    "https://tenant.example.com/router/app/v3/api",
+  );
+  assert.equal(
+    runtimeEnv.VITE_SDKWORK_COMMERCE_BACKEND_API_BASE_URL,
+    "https://tenant.example.com/router/backend/v3/api",
+  );
+});
+
+test("portal runtime env lets Commerce dependency SDK base URLs override the shared SDK base URL", () => {
+  const runtimeEnv = resolvePortalRuntimeEnv({
+    PORTAL_PUBLIC_SDK_BASE_URL: "https://tenant.example.com/router",
+    PORTAL_PUBLIC_COMMERCE_APP_API_BASE_URL: "https://commerce-app.example.com/app/v3/api",
+    PORTAL_PUBLIC_COMMERCE_BACKEND_API_BASE_URL: "https://commerce-admin.example.com/backend/v3/api",
+  });
+
+  assert.equal(
+    runtimeEnv.VITE_SDKWORK_COMMERCE_APP_API_BASE_URL,
+    "https://commerce-app.example.com/app/v3/api",
+  );
+  assert.equal(
+    runtimeEnv.VITE_SDKWORK_COMMERCE_BACKEND_API_BASE_URL,
+    "https://commerce-admin.example.com/backend/v3/api",
+  );
+  assert.equal(runtimeEnv.VITE_CLAWROUTER_APP_API_BASE_URL, "https://tenant.example.com/router/app/v3/api");
+  assert.equal(
+    runtimeEnv.VITE_CLAWROUTER_BACKEND_API_BASE_URL,
+    "https://tenant.example.com/router/backend/v3/api",
+  );
+});
+
+test("production start env lets one public SDK base URL drive portal surfaces unless explicitly overridden", async () => {
+  const { resolveStartProductionEnv } = await import("../../scripts/start-claw-router-production.mjs");
+  const runtimeEnv = resolveStartProductionEnv({
+    PORTAL_PUBLIC_SDK_BASE_URL: "https://tenant.example.com/router",
+    PORTAL_PUBLIC_API_BASE_URL: "",
+    PORTAL_PUBLIC_OPEN_API_BASE_URL: "",
+    PORTAL_PUBLIC_APP_API_BASE_URL: "",
+    PORTAL_PUBLIC_BACKEND_API_BASE_URL: "",
+  });
+
+  assert.equal(runtimeEnv.PORTAL_PUBLIC_SDK_BASE_URL, "https://tenant.example.com/router");
+  assert.equal(runtimeEnv.PORTAL_PUBLIC_API_BASE_URL, undefined);
+  assert.equal(runtimeEnv.PORTAL_PUBLIC_OPEN_API_BASE_URL, undefined);
+  assert.equal(runtimeEnv.PORTAL_PUBLIC_APP_API_BASE_URL, undefined);
+  assert.equal(runtimeEnv.PORTAL_PUBLIC_BACKEND_API_BASE_URL, undefined);
+
+  const runtimeEnvWithOverride = resolveStartProductionEnv({
+    PORTAL_PUBLIC_SDK_BASE_URL: "https://tenant.example.com/router",
+    PORTAL_PUBLIC_BACKEND_API_BASE_URL: "https://admin.example.com/backend/v3/api",
+  });
+  assert.equal(
+    runtimeEnvWithOverride.PORTAL_PUBLIC_BACKEND_API_BASE_URL,
+    "https://admin.example.com/backend/v3/api",
+  );
+  assert.equal(runtimeEnvWithOverride.PORTAL_PUBLIC_APP_API_BASE_URL, undefined);
+});
+
 test("portal runtime env keeps appbase backend SDK base URL independent from claw-router backend", () => {
   const runtimeEnv = resolvePortalRuntimeEnv({
     PORTAL_PUBLIC_BACKEND_API_BASE_URL: "/backend/v3/api",
@@ -473,6 +582,18 @@ test("portal runtime env keeps appbase backend SDK base URL independent from cla
   });
   const envExample = readFileSync(new URL("./.env.example", import.meta.url), "utf8");
   const releaseEnvExample = readFileSync(new URL("../../.env.release.example", import.meta.url), "utf8");
+  const startProductionSource = readFileSync(
+    new URL("../../scripts/start-claw-router-production.mjs", import.meta.url),
+    "utf8",
+  );
+  const startWorkspaceSource = readFileSync(
+    new URL("../../scripts/dev/start-workspace.mjs", import.meta.url),
+    "utf8",
+  );
+  const releasePreflightSource = readFileSync(
+    new URL("../../scripts/release-preflight.mjs", import.meta.url),
+    "utf8",
+  );
 
   assert.equal(runtimeEnv.VITE_CLAWROUTER_BACKEND_API_BASE_URL, "/backend/v3/api");
   assert.equal(
@@ -484,4 +605,7 @@ test("portal runtime env keeps appbase backend SDK base URL independent from cla
   assert.match(releaseEnvExample, /PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL=""/);
   assert.doesNotMatch(envExample, /PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL="\/backend\/v3\/api"/);
   assert.doesNotMatch(releaseEnvExample, /PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL="\/backend\/v3\/api"/);
+  assert.match(startProductionSource, /PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL/);
+  assert.match(startWorkspaceSource, /PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL/);
+  assert.match(releasePreflightSource, /PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL/);
 });

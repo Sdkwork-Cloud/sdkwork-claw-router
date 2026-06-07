@@ -267,11 +267,11 @@ class ConsoleAccountBackendRuntimeStandardTest(unittest.TestCase):
     def test_console_account_sql_read_stores_use_scope_and_do_not_expose_raw_bank_details(self) -> None:
         for relative, store_name in [
             (
-                ".sdkwork/dependencies/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust/src/sqlite_account.rs",
+                "../../sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust/src/sqlite_account.rs",
                 "SqliteCommerceAccountStore",
             ),
             (
-                ".sdkwork/dependencies/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust/src/postgres_account.rs",
+                "../../sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust/src/postgres_account.rs",
                 "PostgresCommerceAccountStore",
             ),
         ]:
@@ -326,8 +326,8 @@ class ConsoleAccountBackendRuntimeStandardTest(unittest.TestCase):
 
     def test_console_account_consumption_modality_preserves_unknown_values(self) -> None:
         for relative in [
-            ".sdkwork/dependencies/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust/src/sqlite_account.rs",
-            ".sdkwork/dependencies/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust/src/postgres_account.rs",
+            "../../sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust/src/sqlite_account.rs",
+            "../../sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust/src/postgres_account.rs",
         ]:
             store = (ROOT / relative).read_text(encoding="utf-8")
             compact_store = " ".join(store.split())
@@ -343,8 +343,8 @@ class ConsoleAccountBackendRuntimeStandardTest(unittest.TestCase):
 
     def test_console_account_login_status_fails_closed_for_missing_or_unknown_values(self) -> None:
         for relative in [
-            ".sdkwork/dependencies/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust/src/sqlite_account.rs",
-            ".sdkwork/dependencies/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust/src/postgres_account.rs",
+            "../../sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust/src/sqlite_account.rs",
+            "../../sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust/src/postgres_account.rs",
         ]:
             store = (ROOT / relative).read_text(encoding="utf-8")
             compact_store = " ".join(store.split())

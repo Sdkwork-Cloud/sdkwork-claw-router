@@ -4,7 +4,13 @@ import test from "node:test";
 
 import { clearStoredAppSessionToken } from "./packages/sdkwork-clawrouter-pc-commons/src/app-session-token.ts";
 import { resetClawRouterSdkClients } from "./packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts";
-import { CheckoutService } from "./packages/sdkwork-clawrouter-pc-console-checkout/src/checkoutService.ts";
+import {
+  CheckoutService,
+  appPromotionDiscountApplicationReversalsCreate,
+  appPromotionDiscountApplicationsCreate,
+  appPromotionDiscountApplicationsRelease,
+  appPromotionDiscountApplicationsSettle,
+} from "./packages/sdkwork-clawrouter-pc-console-checkout/src/checkoutService.ts";
 import { MembershipService } from "./packages/sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts";
 import { RechargeService } from "./packages/sdkwork-clawrouter-pc-console-recharge/src/rechargeService.ts";
 import { SettlementsService } from "./packages/sdkwork-clawrouter-pc-console-settlements/src/settlementsService.ts";
@@ -56,7 +62,7 @@ function readPortalFile(relativePath: string): string {
 function readCommerceProductAdminFile(relativePath: string): string {
   return readFileSync(
     new URL(
-      `../../.sdkwork/dependencies/sdkwork-commerce/apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-admin-product/src/${relativePath}`,
+      `../../../sdkwork-commerce/apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-admin-product/src/${relativePath}`,
       import.meta.url,
     ),
     "utf8",
@@ -180,6 +186,44 @@ test("console business services live in business packages instead of commons", (
   }
 });
 
+test("commerce business services consume the Commerce service facade instead of ClawRouter commerce SDK trees", () => {
+  const servicePaths = [
+    "sdkwork-clawrouter-pc-console-account/src/accountService.ts",
+    "sdkwork-clawrouter-pc-console-recharge/src/rechargeService.ts",
+    "sdkwork-clawrouter-pc-console-checkout/src/checkoutService.ts",
+    "sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts",
+    "sdkwork-clawrouter-pc-console-wallet/src/walletService.ts",
+    "sdkwork-clawrouter-pc-console-settlements/src/settlementsService.ts",
+    "sdkwork-clawrouter-pc-vip/src/vipService.ts",
+    "sdkwork-clawrouter-pc-admin-inventory/src/inventoryService.ts",
+    "sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts",
+    "sdkwork-clawrouter-pc-admin-payments/src/paymentsService.ts",
+    "sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts",
+    "sdkwork-clawrouter-pc-admin-wallet/src/walletService.ts",
+    "sdkwork-clawrouter-pc-admin-finance/src/financeService.ts",
+  ] as const;
+
+  for (const servicePath of servicePaths) {
+    const serviceSource = readPortalFile(`./packages/${servicePath}`);
+    assert.match(serviceSource, /getSdkworkCommerceService/, `${servicePath} must use Commerce service facade`);
+    assert.doesNotMatch(
+      serviceSource,
+      /getClawRouterAppSdkClient\(\)\.commerce|getClawRouterBackendSdkClient\(\)\.commerce/,
+      `${servicePath} must not consume ClawRouter generated commerce trees`,
+    );
+    assert.doesNotMatch(
+      serviceSource,
+      /getClawRouterAppSdkClient\(\)\.system\.promotions|getClawRouterBackendSdkClient\(\)\.system\.promotions/,
+      `${servicePath} must not consume ClawRouter promotion SDK trees for Commerce-owned promotion resources`,
+    );
+    assert.doesNotMatch(
+      serviceSource,
+      /type\s+(?:AppCommerce|BackendCommerce)\s*=\s*ReturnType<typeof getClawRouter(?:App|Backend)SdkClient>\['commerce'\]/,
+      `${servicePath} must not type against ClawRouter generated commerce trees`,
+    );
+  }
+});
+
 test("console business services use standard membership, recharge, checkout, wallet, and coupon API paths", async () => {
   await withCommerceSdkResponse(
     {
@@ -203,6 +247,31 @@ test("console business services use standard membership, recharge, checkout, wal
       assert.equal(packages[0]?.id, "pkg-100");
       assert.equal(requestPath(captured[0]?.url), "/app/v3/api/recharges/packages");
       assert.equal(captured[0]?.method, "GET");
+    },
+  );
+
+  await withCommerceSdkResponse(
+    {
+      code: "2000",
+      data: {
+        applicationId: "discount-application-1",
+      },
+    },
+    async (captured) => {
+      await appPromotionDiscountApplicationsCreate({ orderId: "order-1" });
+      await appPromotionDiscountApplicationsSettle("discount-application-1", { orderId: "order-1" });
+      await appPromotionDiscountApplicationsRelease("discount-application-1", { reason: "checkout-timeout" });
+      await appPromotionDiscountApplicationReversalsCreate({ applicationId: "discount-application-1" });
+
+      assert.deepEqual(
+        captured.map((request) => [request.method, requestPath(request.url)]),
+        [
+          ["POST", "/app/v3/api/promotions/discount_applications"],
+          ["POST", "/app/v3/api/promotions/discount_applications/discount-application-1/settlements"],
+          ["POST", "/app/v3/api/promotions/discount_applications/discount-application-1/releases"],
+          ["POST", "/app/v3/api/promotions/discount_applications/reversals"],
+        ],
+      );
     },
   );
 
@@ -390,50 +459,60 @@ test("admin commerce packages are split by product, inventory, order, payment, m
     ],
     "sdkwork-clawrouter-pc-admin-inventory": [
       "InventoryAdmin",
-      "getClawRouterBackendSdkClient().commerce.inventory.stocks.list",
-      "getClawRouterBackendSdkClient().commerce.inventory.reservations.list",
-      "getClawRouterBackendSdkClient().commerce.inventory.ledgerEntries.list",
+      "getSdkworkCommerceService().admin.inventory.stocks.list",
+      "getSdkworkCommerceService().admin.inventory.reservations.list",
+      "getSdkworkCommerceService().admin.inventory.ledgerEntries.list",
     ],
     "sdkwork-clawrouter-pc-admin-orders": [
       "OrdersAdmin",
-      "getClawRouterBackendSdkClient().commerce.orders.list",
-      "getClawRouterBackendSdkClient().commerce.refunds.list",
-      "getClawRouterBackendSdkClient().commerce.fulfillments.list",
-      "getClawRouterBackendSdkClient().commerce.shipments.list",
+      "getSdkworkCommerceService().admin.orders.management.list",
+      "getSdkworkCommerceService().admin.orders.management.cancel",
+      "getSdkworkCommerceService().admin.orders.management.close",
+      "getSdkworkCommerceService().admin.refunds.management.list",
+      "getSdkworkCommerceService().admin.refunds.approvals.create",
+      "getSdkworkCommerceService().admin.refunds.attempts.create",
+      "getSdkworkCommerceService().admin.fulfillments.list",
+      "getSdkworkCommerceService().admin.fulfillments.create",
+      "getSdkworkCommerceService().admin.fulfillments.update",
+      "getSdkworkCommerceService().admin.fulfillments.shipments.create",
+      "getSdkworkCommerceService().admin.fulfillments.shipments.update",
+      "getSdkworkCommerceService().admin.fulfillments.trackingEvents.create",
+      "getSdkworkCommerceService().admin.shipments.list",
     ],
     "sdkwork-clawrouter-pc-admin-payments": [
       "PaymentsAdmin",
-      "getClawRouterBackendSdkClient().commerce.payments.providers.list",
-      "getClawRouterBackendSdkClient().commerce.payments.providerAccounts.list",
-      "getClawRouterBackendSdkClient().commerce.payments.providerAccounts.create",
-      "getClawRouterBackendSdkClient().commerce.payments.methods.list",
-      "getClawRouterBackendSdkClient().commerce.payments.channels.list",
-      "getClawRouterBackendSdkClient().commerce.payments.routeRules.list",
-      "getClawRouterBackendSdkClient().commerce.payments.intents.list",
-      "getClawRouterBackendSdkClient().commerce.payments.attempts.list",
-      "getClawRouterBackendSdkClient().commerce.payments.webhookEvents.list",
-      "getClawRouterBackendSdkClient().commerce.payments.reconciliationRuns.list",
+      "getSdkworkCommerceService().admin.payments.providers.list",
+      "getSdkworkCommerceService().admin.payments.providerAccounts.list",
+      "getSdkworkCommerceService().admin.payments.providerAccounts.create",
+      "getSdkworkCommerceService().admin.payments.methods.list",
+      "getSdkworkCommerceService().admin.payments.channels.list",
+      "getSdkworkCommerceService().admin.payments.routeRules.list",
+      "getSdkworkCommerceService().admin.payments.runtime.snapshot.retrieve",
+      "getSdkworkCommerceService().admin.payments.intents.list",
+      "getSdkworkCommerceService().admin.payments.attempts.list",
+      "getSdkworkCommerceService().admin.payments.webhookEvents.list",
+      "getSdkworkCommerceService().admin.payments.reconciliationRuns.list",
     ],
     "sdkwork-clawrouter-pc-admin-memberships": [
       "MembershipsAdmin",
-      "getClawRouterBackendSdkClient().commerce.memberships.plans.list",
-      "getClawRouterBackendSdkClient().commerce.memberships.packages.list",
-      "getClawRouterBackendSdkClient().commerce.memberships.entitlements.list",
-      "getClawRouterBackendSdkClient().commerce.recharges.packages.list",
-      "getClawRouterBackendSdkClient().commerce.recharges.packages.create",
-      "getClawRouterBackendSdkClient().commerce.recharges.packages.update",
-      "getClawRouterBackendSdkClient().commerce.recharges.packages.delete",
+      "getSdkworkCommerceService().admin.memberships.plans.list",
+      "getSdkworkCommerceService().admin.memberships.packages.list",
+      "getSdkworkCommerceService().admin.memberships.entitlements.list",
+      "getSdkworkCommerceService().admin.recharges.packages.list",
+      "getSdkworkCommerceService().admin.recharges.packages.create",
+      "getSdkworkCommerceService().admin.recharges.packages.update",
+      "getSdkworkCommerceService().admin.recharges.packages.delete",
     ],
     "sdkwork-clawrouter-pc-admin-wallet": [
       "WalletAdmin",
-      "getClawRouterBackendSdkClient().commerce.wallet.accounts.list",
-      "getClawRouterBackendSdkClient().commerce.wallet.ledgerEntries.list",
+      "getSdkworkCommerceService().admin.wallet.accounts.list",
+      "getSdkworkCommerceService().admin.wallet.ledgerEntries.list",
     ],
     "sdkwork-clawrouter-pc-admin-finance": [
       "FinanceAdmin",
-      "getClawRouterBackendSdkClient().commerce.invoices.list",
-      "getClawRouterBackendSdkClient().commerce.commerceReports.paymentReconciliation.retrieve",
-      "getClawRouterBackendSdkClient().commerce.audit.commerceEvents.list",
+      "getSdkworkCommerceService().admin.invoices.list",
+      "getSdkworkCommerceService().admin.commerceReports.paymentReconciliation.retrieve",
+      "getSdkworkCommerceService().admin.audit.commerceEvents.list",
     ],
   };
 
@@ -454,7 +533,11 @@ test("admin commerce packages are split by product, inventory, order, payment, m
       }
     }
     assert.doesNotMatch(viewSource, /sdkwork-clawrouter-pc-commons\/runtime/);
-    if (packageName === "sdkwork-clawrouter-pc-admin-catalog") {
+    if (
+      packageName === "sdkwork-clawrouter-pc-admin-catalog"
+      || packageName === "sdkwork-clawrouter-pc-admin-orders"
+      || packageName === "sdkwork-clawrouter-pc-admin-finance"
+    ) {
       assert.doesNotMatch(serviceSource, /sdkwork-clawrouter-pc-commons\/runtime/);
       assert.doesNotMatch(serviceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.catalog/);
       assert.doesNotMatch(serviceSource, /\bfetch\s*\(|axios|XMLHttpRequest/);
@@ -494,20 +577,30 @@ test("admin orders center uses server pagination and exposes common row actions"
   assert.match(resourceCenterSource, /className="m-5 mt-4 min-h-0 flex-1 rounded-xl"/);
   assert.match(resourceCenterSource, /disabled=\{actionDisabled\}/);
 
-  assert.match(serviceSource, /backendOrdersList\(params\?: Parameters<BackendCommerce\['orders'\]\['list'\]>\[0\]\)/);
+  assert.match(serviceSource, /backendOrdersList\(params\?: Parameters<OrderManagementService\['list'\]>\[0\]\)/);
+  assert.match(serviceSource, /backendRefundsList\(params\?: Parameters<RefundManagementService\['list'\]>\[0\]\)/);
   assert.match(serviceSource, /toSdkListParams\(params\)/);
   assert.doesNotMatch(serviceSource, /\bfetch\s*\(|axios|XMLHttpRequest/);
 
   for (const key of [
     "admin.commerce.orders.actions.view",
     "admin.commerce.orders.actions.cancel",
+    "admin.commerce.orders.actions.cancelReady",
     "admin.commerce.orders.actions.cancelUnavailable",
+    "admin.commerce.orders.actions.close",
+    "admin.commerce.orders.actions.approveRefund",
+    "admin.commerce.orders.actions.rejectRefund",
+    "admin.commerce.orders.actions.executeRefund",
+    "admin.commerce.orders.actions.createShipment",
+    "admin.commerce.orders.actions.markShipped",
+    "admin.commerce.orders.actions.addTracking",
     "admin.commerce.orders.pagination.showing",
     "admin.commerce.orders.pagination.page",
     "admin.commerce.orders.pagination.pageSize",
   ]) {
     assert.match(i18nSource, new RegExp(`"${escapeRegExp(key)}"`));
   }
+  assert.doesNotMatch(i18nSource, /cancelPendingBackend/);
 });
 
 test("admin catalog product center exposes product edit route and dedicated sku management", () => {
@@ -633,7 +726,7 @@ test("admin catalog contract and backend sdk ownership moved to Commerce", () =>
   const localContractIndex = readPortalFile("../../docs/schema-registry/frontend-field-contracts/index.yaml");
   const localBackendOpenApi = readPortalFile("../../generated/openapi/clawrouter-backend-openapi.json");
   const commerceBackendOpenApi = readFileSync(
-    new URL("../../.sdkwork/dependencies/sdkwork-commerce/generated/openapi/commerce-backend-api.openapi.json", import.meta.url),
+    new URL("../../../sdkwork-commerce/generated/openapi/commerce-backend-api.openapi.json", import.meta.url),
     "utf8",
   );
 
@@ -651,8 +744,13 @@ test("admin payments center exposes complete payment modules and aligned provide
   const viewSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-payments/src/index.tsx");
   const serviceSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-payments/src/paymentsService.ts");
   const adminResourceCenterSource = readPortalFile("./packages/sdkwork-clawrouter-pc-commons/src/components/AdminResourceCenter.tsx");
-  const backendCommerceSdk = readPortalFile("../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/generated/server-openapi/src/api/commerce.ts");
-  const providerAccountMutationSdkType = readPortalFile("../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/generated/server-openapi/src/types/commerce-payment-provider-account-mutation-request.ts");
+  const backendCommerceSdk = readFileSync(
+    new URL(
+      "../../../sdkwork-commerce/sdks/sdkwork-commerce-backend-sdk/sdkwork-commerce-backend-sdk-typescript/generated/server-openapi/src/api/payments.ts",
+      import.meta.url,
+    ),
+    "utf8",
+  );
   const i18nSource = [
     readPortalFile("./packages/sdkwork-clawrouter-pc-i18n/src/resources/admin-commerce/payments.ts"),
     readPortalFile("./packages/sdkwork-clawrouter-pc-i18n/src/resources/admin/core-columns.ts"),
@@ -892,14 +990,15 @@ test("admin payments center exposes complete payment modules and aligned provide
   assert.match(serviceSource, /backendPaymentsProviderAccountsUpdate/);
   assert.match(serviceSource, /backendPaymentsProviderAccountsDelete/);
   assert.match(serviceSource, /backendPaymentsProviderAccountsStatusUpdate/);
-  assert.match(serviceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.payments\.providerAccounts\.update/);
-  assert.match(serviceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.payments\.providerAccounts\.delete/);
-  assert.match(serviceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.payments\.providerAccounts\.status\.update/);
-  assert.match(backendCommerceSdk, /class CommercePaymentsProviderAccountsStatusApi/);
+  assert.match(serviceSource, /getSdkworkCommerceService\(\)\.admin\.payments\.providerAccounts\.update/);
+  assert.match(serviceSource, /getSdkworkCommerceService\(\)\.admin\.payments\.providerAccounts\.delete/);
+  assert.match(serviceSource, /getSdkworkCommerceService\(\)\.admin\.payments\.providerAccounts\.status\.update/);
+  assert.match(backendCommerceSdk, /class PaymentsProviderAccountsStatusApi/);
   assert.match(backendCommerceSdk, /async update\(providerAccountId: string/);
   assert.match(backendCommerceSdk, /async delete\(providerAccountId: string/);
-  assert.match(backendCommerceSdk, /public readonly status: CommercePaymentsProviderAccountsStatusApi/);
-  assert.doesNotMatch(providerAccountMutationSdkType, /\baccountNo:/);
+  assert.match(backendCommerceSdk, /public readonly status: PaymentsProviderAccountsStatusApi/);
+  assert.match(backendCommerceSdk, /class PaymentsRuntimeSnapshotApi/);
+  assert.match(backendCommerceSdk, /public readonly snapshot: PaymentsRuntimeSnapshotApi/);
   assert.doesNotMatch(serviceSource, /\bfetch\s*\(|axios|XMLHttpRequest/);
 });
 

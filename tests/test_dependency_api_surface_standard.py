@@ -46,9 +46,7 @@ ADMIN_USER_COMPONENT_SPEC = (
     / "component.spec.json"
 )
 APPBASE_IAM_HTTP = (
-    ROOT
-    / ".sdkwork"
-    / "dependencies"
+    ROOT.parent
     / "sdkwork-appbase"
     / "packages"
     / "native-rust"
@@ -56,9 +54,7 @@ APPBASE_IAM_HTTP = (
     / "sdkwork-iam-http-rust"
 )
 APPBASE_BACKEND_OPENAPI = (
-    ROOT
-    / ".sdkwork"
-    / "dependencies"
+    ROOT.parent
     / "sdkwork-appbase"
     / "sdks"
     / "sdkwork-appbase-backend-sdk"
@@ -236,14 +232,15 @@ class DependencyApiSurfaceStandardTest(unittest.TestCase):
         self.assertEqual(["backend_routes"], route_contract["routeMetadataExports"])
         self.assertIsNone(route_contract["executableRouterExport"])
 
-        route_contract_root = ROOT / route_contract["path"]
-        self.assertEqual(APPBASE_IAM_HTTP, route_contract_root)
-        route_source = read_text(route_contract_root / "src" / "lib.rs")
+        route_contract_root = (ROOT / route_contract["path"]).resolve()
+        self.assertEqual(APPBASE_IAM_HTTP.resolve(), route_contract_root)
+        route_source = read_text(route_contract_root / "src" / "sdkwork_appbase_backend_api.rs")
         self.assertIn("pub fn backend_routes()", route_source)
         self.assertIn('"/backend/v3/api/iam/organizations/tree"', route_source)
         self.assertIn('"/backend/v3/api/iam/roles"', route_source)
-        self.assertNotIn("axum::Router", route_source)
-        self.assertNotIn("Router::new", route_source)
+        self.assertIn("pub fn build_sdkwork_appbase_backend_api_router()", route_source)
+        self.assertIn("Router::new()", route_source)
+        self.assertNotIn(".route(", route_source)
 
     def test_backend_iam_method_level_ownership_is_declared_and_consumed_by_the_right_sdk(self) -> None:
         manifest = read_json(DEPENDENCY_API_SURFACES)
@@ -325,7 +322,19 @@ class DependencyApiSurfaceStandardTest(unittest.TestCase):
         self.assertNotIn("BACKEND_API_PREFIX", resolver)
         self.assertNotIn("?? '/backend/v3/api'", resolver)
 
-    def test_iam_runtime_appbase_backend_base_url_uses_dependency_external_service_config(self) -> None:
+    def test_external_dependency_surfaces_declare_common_sdk_base_url_default(self) -> None:
+        manifest = read_json(DEPENDENCY_API_SURFACES)
+        for entry in manifest["dependencies"]:
+            runtime = entry["runtimeIntegration"]
+            if runtime["sameOriginAllowed"]:
+                continue
+            with self.subTest(workspace=entry["workspace"]):
+                self.assertEqual("external-service", runtime["mode"])
+                self.assertEqual("PORTAL_PUBLIC_SDK_BASE_URL", runtime.get("commonBaseUrlEnv"))
+                self.assertIn("requiredBaseUrlEnv", runtime)
+                self.assertIn("publicBaseUrlEnv", runtime)
+
+    def test_iam_runtime_does_not_require_appbase_backend_dependency_config(self) -> None:
         manifest = read_json(DEPENDENCY_API_SURFACES)
         backend_entry = entries_by_sdk_dependency(manifest)[
             ("clawrouter-backend-sdk", "sdkwork-appbase-backend-sdk")
@@ -334,15 +343,15 @@ class DependencyApiSurfaceStandardTest(unittest.TestCase):
         self.assertFalse(runtime["sameOriginAllowed"])
 
         source = read_text(IAM_RUNTIME)
-        resolver = extract_function(source, "resolveAppbaseBackendApiBaseUrl")
-        self.assertIn("resolveRequiredAppbaseBackendBaseUrl", resolver)
-        self.assertNotIn("VITE_CLAWROUTER_BACKEND_API_BASE_URL", resolver)
-        self.assertNotIn("?? BACKEND_API_PREFIX", resolver)
-        self.assertNotIn("?? '/backend/v3/api'", resolver)
+        self.assertNotIn("resolveRequiredAppbaseBackendBaseUrl", source)
+        self.assertNotIn("getSdkworkAppbaseBackendSdkClient", source)
+        self.assertNotIn("createAppbaseBackendClient", source)
+        self.assertNotIn("appbaseBackendApiBaseUrl", source)
 
         sdk_clients = read_text(SDK_CLIENTS)
         required_resolver = extract_function(sdk_clients, "resolveRequiredAppbaseBackendBaseUrl")
         self.assertIn(runtime["requiredBaseUrlEnv"], required_resolver)
+        self.assertIn("PORTAL_PUBLIC_SDK_BASE_URL", required_resolver)
         self.assertIn("throw new Error", required_resolver)
         self.assertNotIn("VITE_CLAWROUTER_BACKEND_API_BASE_URL", required_resolver)
 
@@ -399,6 +408,8 @@ class DependencyApiSurfaceStandardTest(unittest.TestCase):
             "clawrouter-open-sdk",
             "sdkwork-appbase-app-sdk",
             "sdkwork-appbase-backend-sdk",
+            "sdkwork-commerce-app-sdk",
+            "sdkwork-commerce-backend-sdk",
         }
         self.assertTrue(expected_pc_client_families.issubset(pc_clients))
 
@@ -410,6 +421,8 @@ class DependencyApiSurfaceStandardTest(unittest.TestCase):
             "sdkwork-appbase-backend-sdk",
             "sdkwork-drive-app-sdk",
             "sdkwork-generations-app-sdk",
+            "sdkwork-commerce-app-sdk",
+            "sdkwork-commerce-backend-sdk",
         }
         self.assertTrue(expected_commons_client_families.issubset(commons_clients))
         self.assertEqual("./sdk-clients", commons_clients["sdkwork-appbase-backend-sdk"]["sourceExport"])
@@ -417,6 +430,8 @@ class DependencyApiSurfaceStandardTest(unittest.TestCase):
         for key in [
             ("clawrouter-app-sdk", "sdkwork-appbase-app-sdk"),
             ("clawrouter-backend-sdk", "sdkwork-appbase-backend-sdk"),
+            ("clawrouter-app-sdk", "sdkwork-commerce-app-sdk"),
+            ("clawrouter-backend-sdk", "sdkwork-commerce-backend-sdk"),
         ]:
             dependency_entry = manifest_entries[key]
             client = commons_clients[dependency_entry["workspace"]]
@@ -520,6 +535,29 @@ class DependencyApiSurfaceStandardTest(unittest.TestCase):
                             "VITE_CLAWROUTER_BACKEND_API_BASE_URL",
                             client_runtime["requiredBaseUrlEnv"],
                         )
+                    if "commonBaseUrlEnv" in manifest_runtime:
+                        self.assertEqual(
+                            manifest_runtime["commonBaseUrlEnv"],
+                            client_runtime.get("commonBaseUrlEnv"),
+                        )
+
+    def test_component_sdk_clients_declare_common_sdk_base_url_default(self) -> None:
+        for component_path in [
+            PC_COMPONENT_SPEC,
+            COMMONS_COMPONENT_SPEC,
+            ADMIN_ORGANIZATION_COMPONENT_SPEC,
+            ADMIN_USER_COMPONENT_SPEC,
+        ]:
+            component_spec = read_json(component_path)
+            for client in component_spec.get("contracts", {}).get("sdkClients", []):
+                with self.subTest(
+                    component=component_path.relative_to(ROOT).as_posix(),
+                    sdkFamily=client["sdkFamily"],
+                ):
+                    self.assertEqual(
+                        "PORTAL_PUBLIC_SDK_BASE_URL",
+                        client["runtimeIntegration"].get("commonBaseUrlEnv"),
+                    )
 
 
 if __name__ == "__main__":

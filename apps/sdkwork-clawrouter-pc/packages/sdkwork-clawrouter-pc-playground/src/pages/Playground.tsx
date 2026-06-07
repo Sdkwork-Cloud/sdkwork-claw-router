@@ -3,15 +3,17 @@ import { useTranslation } from 'react-i18next';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { createClientOperationToken } from 'sdkwork-clawrouter-pc-commons/runtime';
 import {
+  getSdkworkGenerationModelBucket,
+} from '@sdkwork/generations-pc-workspace/generation-asset-config';
+import {
   appendSdkworkGenerationArtifactToHistoryItem,
   createSdkworkGenerationPendingHistoryItem,
   getSdkworkGenerationPreviewKind,
-  getSdkworkGenerationModelBucket,
   mapSdkworkGenerationHistoryTypeToModality,
   readSdkworkGenerationMediaThumb,
   readSdkworkGenerationMediaUrl,
   restoreSdkworkGenerationSerializedConfigFromHistoryItem,
-} from '@sdkwork/generation-pc-react/react';
+} from '@sdkwork/generations-pc-workspace/generation-history';
 import {
   Activity,
   Bot,

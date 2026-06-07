@@ -3,14 +3,15 @@ frontend_operations:
 - route: /admin/orders
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
   operation: backendRefundsList
-  operation_id: refunds.list
+  operation_id: refunds.management.list
   kind: read
   api_surface: backend
+  openapi_exposed: false
   api_method: GET
-  api_path: /backend/v3/api/refunds
+  api_path: /backend/v3/api/refunds/management
   sdk_domain: commerce
-  summary: Refunds List
-  description: Standard appbase commerce API for refunds.list; no legacy billing compatibility route is exposed.
+  summary: Refunds Management List
+  description: Standard appbase commerce API for refunds.management.list; no legacy billing compatibility route is exposed.
   read_sources:
   - commerce_refund
   - commerce_refund_item
@@ -34,7 +35,19 @@ frontend_operations:
     schema:
       type: string
       maxLength: 32
-  response_schema:
+  - name: cursor
+    schema:
+      type: string
+      maxLength: 256
+  - name: sort
+    schema:
+      type: string
+      maxLength: 128
+  - name: q
+    schema:
+      type: string
+      maxLength: 256
+  response_schema: &commerceStandardCollectionResponse
     name: CommerceStandardCollectionResponse
     type: object
     additionalProperties: false
@@ -84,14 +97,15 @@ frontend_operations:
 - route: /admin/orders
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
   operation: backendRefundsRetrieve
-  operation_id: refunds.retrieve
+  operation_id: refunds.management.retrieve
   kind: read
   api_surface: backend
+  openapi_exposed: false
   api_method: GET
-  api_path: /backend/v3/api/refunds/{refundId}
+  api_path: /backend/v3/api/refunds/management/{refundId}
   sdk_domain: commerce
-  summary: Refunds Retrieve
-  description: Standard appbase commerce API for refunds.retrieve; no legacy billing compatibility route is exposed.
+  summary: Refunds Management Retrieve
+  description: Standard appbase commerce API for refunds.management.retrieve; no legacy billing compatibility route is exposed.
   read_sources:
   - commerce_refund
   - commerce_refund_item
@@ -100,7 +114,7 @@ frontend_operations:
   - commerce_order_item
   - commerce_payment_attempt
   query_parameters: []
-  response_schema:
+  response_schema: &commerceStandardResourceResponse
     name: CommerceStandardResourceResponse
     type: object
     additionalProperties: false
@@ -129,3 +143,94 @@ frontend_operations:
             type: string
             nullable: true
             maxLength: 64
+- route: /admin/orders
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
+  operation: backendRefundApprovalCreate
+  operation_id: refunds.approvals.create
+  kind: action
+  api_surface: backend
+  openapi_exposed: false
+  api_method: POST
+  api_path: /backend/v3/api/refunds/{refundId}/approvals
+  sdk_domain: commerce
+  summary: Refunds Approvals Create
+  description: Approves or rejects a refund request through the Commerce backend management API.
+  read_sources:
+  - commerce_refund
+  - commerce_refund_item
+  - commerce_order
+  - commerce_payment_attempt
+  idempotency_required: true
+  write_tables:
+  - commerce_refund
+  - commerce_refund_attempt
+  - commerce_order_event
+  - ops_audit_log
+  request_schema: &commerceOperationCommand
+    name: CommerceOperationCommand
+    type: object
+    additionalProperties: true
+    properties:
+      action:
+        type: string
+        nullable: true
+        enum:
+        - approve
+        - reject
+      reason:
+        type: string
+        nullable: true
+        maxLength: 256
+      source:
+        type: string
+        nullable: true
+        maxLength: 64
+      note:
+        type: string
+        nullable: true
+        maxLength: 1024
+  response_schema: &commerceOperationResponse
+    name: CommerceOperationResponse
+    type: object
+    additionalProperties: true
+    properties:
+      id:
+        type: string
+        nullable: true
+        maxLength: 128
+      status:
+        type: string
+        nullable: true
+        maxLength: 64
+      success:
+        type: boolean
+        nullable: true
+      message:
+        type: string
+        nullable: true
+        maxLength: 1024
+- route: /admin/orders
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
+  operation: backendRefundAttemptCreate
+  operation_id: refunds.attempts.create
+  kind: create
+  api_surface: backend
+  openapi_exposed: false
+  api_method: POST
+  api_path: /backend/v3/api/refunds/{refundId}/attempts
+  sdk_domain: commerce
+  summary: Refunds Attempts Create
+  description: Starts a provider refund attempt for an approved refund request.
+  read_sources:
+  - commerce_refund
+  - commerce_refund_item
+  - commerce_order
+  - commerce_payment_attempt
+  idempotency_required: true
+  write_tables:
+  - commerce_refund_attempt
+  - commerce_refund
+  - commerce_order_event
+  - ops_audit_log
+  request_schema: *commerceOperationCommand
+  response_schema: *commerceOperationResponse

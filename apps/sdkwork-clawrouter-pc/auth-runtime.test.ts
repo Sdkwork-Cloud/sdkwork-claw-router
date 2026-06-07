@@ -11,7 +11,7 @@ import {
   parseOAuthProviderText,
   toAuthSettingsForm,
   toAuthSettingsRequest,
-} from "./src/auth/ClawRouterAuthSettingsPage.tsx";
+} from "./packages/sdkwork-clawrouter-pc-admin-site/src/ClawRouterAuthSettingsPage.tsx";
 import {
   PROTECTED_PORTAL_ROUTE_PREFIXES,
   buildProtectedPortalLoginRedirect,
@@ -31,11 +31,11 @@ import {
 } from "./packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts";
 import {
   createSdkworkIamRuntimeAuthService,
-} from "../../.sdkwork/dependencies/sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-pc-react/src/auth-iam-runtime.ts";
+} from "../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-pc-react/src/auth-iam-runtime.ts";
 import {
   createIamRuntime,
   createMemoryIamTokenStore,
-} from "../../.sdkwork/dependencies/sdkwork-appbase/packages/common/iam/sdkwork-iam-runtime/src/index.ts";
+} from "../../../sdkwork-appbase/packages/common/iam/sdkwork-iam-runtime/src/index.ts";
 
 function readPortalFile(relativePath: string): string {
   return readFileSync(new URL(relativePath, import.meta.url), "utf8");
@@ -332,17 +332,16 @@ test("claw router auth controller reuses appbase runtime while preserving app SD
   const routeSource = readPortalFile("./src/auth/ClawRouterAuthRoutes.tsx");
   const configSource = readPortalFile("./src/auth/clawRouterAuthConfig.ts");
   const settingsServiceSource = readPortalFile("./src/auth/clawRouterAuthSettingsService.ts");
+  const adminSettingsServiceSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-site/src/AuthSettingsService.ts");
   const iamRuntimeSource = readPortalFile("./packages/sdkwork-clawrouter-pc-commons/src/iam-runtime.ts");
   const sdkClientsSource = readPortalFile("./packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts");
 
   assert.match(controllerSource, /createSdkworkIamRuntimeAuthController/);
   assert.match(controllerSource, /getClawRouterIamRuntime/);
-  assert.match(iamRuntimeSource, /from '@sdkwork\/iam-sdk-adapter'/);
-  assert.match(iamRuntimeSource, /createIamAppSdkAdapter\(getSdkworkAppbaseAppSdkClient\(\)\)/);
-  assert.match(iamRuntimeSource, /createIamBackendSdkAdapter\(getSdkworkAppbaseBackendSdkClient\(\)\)/);
+  assert.match(iamRuntimeSource, /createSdkworkAppbasePcAuthRuntime/);
+  assert.match(iamRuntimeSource, /createAppbaseAppClient:\s*\(\)\s*=>\s*getSdkworkAppbaseAppSdkClient\(\)/);
   assert.match(iamRuntimeSource, /sdkClients:\s*\[/);
   assert.match(iamRuntimeSource, /getClawRouterAppSdkClient\(\)/);
-  assert.match(iamRuntimeSource, /getClawRouterBackendSdkClient\(\)/);
   assert.match(iamRuntimeSource, /getSdkworkDriveAppSdkClient\(\)/);
   assert.match(iamRuntimeSource, /getSdkworkGenerationsAppSdkClient\(\)/);
   assert.match(sdkClientsSource, /from '@sdkwork\/drive-app-sdk'/);
@@ -350,6 +349,11 @@ test("claw router auth controller reuses appbase runtime while preserving app SD
   assert.match(sdkClientsSource, /VITE_SDKWORK_DRIVE_APP_API_BASE_URL/);
   assert.match(iamRuntimeSource, /tokenManager:\s*getClawRouterGlobalTokenManager\(\)/);
   assert.doesNotMatch(iamRuntimeSource, /getClawRouterAiSdkClient\(\)/);
+  assert.doesNotMatch(iamRuntimeSource, /getClawRouterBackendSdkClient\(\)/);
+  assert.doesNotMatch(iamRuntimeSource, /getSdkworkAppbaseBackendSdkClient\(\)/);
+  assert.doesNotMatch(iamRuntimeSource, /createIamAppSdkAdapter/);
+  assert.doesNotMatch(iamRuntimeSource, /createIamBackendSdkAdapter/);
+  assert.doesNotMatch(iamRuntimeSource, /from '@sdkwork\/iam-sdk-adapter'/);
   assert.doesNotMatch(iamRuntimeSource, /app:\s*createIamAppSdkAdapter/);
   assert.doesNotMatch(iamRuntimeSource, /app:\s*getClawRouterAppSdkClient\(\)/);
   assert.doesNotMatch(controllerSource, /createSdkworkAuthController/);
@@ -401,13 +405,14 @@ test("claw router auth controller reuses appbase runtime while preserving app SD
   assert.doesNotMatch(configSource, /fetchClawRouterAuthSettings/);
   assert.match(settingsServiceSource, /getSdkworkAppbaseAppSdkClient/);
   assert.doesNotMatch(settingsServiceSource, /getClawRouterAppSdkClient/);
+  assert.doesNotMatch(settingsServiceSource, /getClawRouterBackendSdkClient/);
   assert.match(settingsServiceSource, /\.system\.iam\.runtime\.retrieve\(\)/);
   assert.match(settingsServiceSource, /\.system\.iam\.verificationPolicy\.retrieve\(\)/);
   assert.doesNotMatch(settingsServiceSource, /\.auth\.runtimeSettings/);
   assert.doesNotMatch(settingsServiceSource, /\.auth\.verificationPolicy/);
-  assert.match(settingsServiceSource, /getClawRouterBackendSdkClient/);
-  assert.match(settingsServiceSource, /\.system\.auth\.settings\.retrieve\(\)/);
-  assert.match(settingsServiceSource, /\.system\.auth\.settings\.update\(input/);
+  assert.match(adminSettingsServiceSource, /getClawRouterBackendSdkClient/);
+  assert.match(adminSettingsServiceSource, /\.system\.auth\.settings\.retrieve\(\)/);
+  assert.match(adminSettingsServiceSource, /\.system\.auth\.settings\.update\(input/);
   assert.match(configSource, /emailRegistrationVerificationRequired:\s*false/);
   assert.match(configSource, /phoneRegistrationVerificationRequired:\s*false/);
   assert.doesNotMatch(configSource, /\bfetch\s*\(/);
@@ -416,6 +421,9 @@ test("claw router auth controller reuses appbase runtime while preserving app SD
   assert.doesNotMatch(settingsServiceSource, /\bfetch\s*\(/);
   assert.doesNotMatch(settingsServiceSource, /\baxios\b/);
   assert.doesNotMatch(settingsServiceSource, /\/backend\/v3\/api\/system\/auth\/settings/);
+  assert.doesNotMatch(adminSettingsServiceSource, /\bfetch\s*\(/);
+  assert.doesNotMatch(adminSettingsServiceSource, /\baxios\b/);
+  assert.doesNotMatch(adminSettingsServiceSource, /\/backend\/v3\/api\/system\/auth\/settings/);
   assert.match(routeSource, /AUTH_METHOD_UNAVAILABLE_MESSAGE/);
   assert.match(routeSource, /methodUnavailableMessage=\{AUTH_METHOD_UNAVAILABLE_MESSAGE\}/);
   assert.doesNotMatch(routeSource, /appearance=/);
@@ -531,12 +539,12 @@ test("claw router app auth composes the appbase IAM dependency SDK without regen
   const appSdkSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/sdk.ts");
   const appSdkIamSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/api/iam.ts");
   const appSdkSystemSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/api/system.ts");
-  const appbaseOpenApiSource = readPortalFile("../../.sdkwork/dependencies/sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/openapi/sdkwork-appbase-app-api.sdkgen.yaml");
-  const appbaseSdkSource = readPortalFile("../../.sdkwork/dependencies/sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/sdk.ts");
-  const appbaseAuthSource = readPortalFile("../../.sdkwork/dependencies/sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/api/auth.ts");
-  const appbaseIamSource = readPortalFile("../../.sdkwork/dependencies/sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/api/iam.ts");
-  const appbaseSystemSource = readPortalFile("../../.sdkwork/dependencies/sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/api/system.ts");
-  const appbaseOpenPlatformSource = readPortalFile("../../.sdkwork/dependencies/sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/api/open-platform.ts");
+  const appbaseOpenApiSource = readPortalFile("../../../sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/openapi/sdkwork-appbase-app-api.sdkgen.yaml");
+  const appbaseSdkSource = readPortalFile("../../../sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/sdk.ts");
+  const appbaseAuthSource = readPortalFile("../../../sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/api/auth.ts");
+  const appbaseIamSource = readPortalFile("../../../sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/api/iam.ts");
+  const appbaseSystemSource = readPortalFile("../../../sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/api/system.ts");
+  const appbaseOpenPlatformSource = readPortalFile("../../../sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/api/open-platform.ts");
   const backendSdkSystemSource = readPortalFile("../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/generated/server-openapi/src/api/system.ts");
   const backendSdkIndexSource = readPortalFile("../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/generated/server-openapi/src/sdk.ts");
   const backendSdkAuthSettingsUpdateSource = readPortalFile("../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/generated/server-openapi/src/types/admin-auth-settings-update-request.ts");
@@ -742,8 +750,8 @@ test("claw router app auth composes the appbase IAM dependency SDK without regen
 });
 
 test("appbase QR auth runtime keeps browser scan callback on the canonical callback resource", () => {
-  const authServiceSource = readPortalFile("../../.sdkwork/dependencies/sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-pc-react/src/auth-service.ts");
-  const iamRuntimeSource = readPortalFile("../../.sdkwork/dependencies/sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-pc-react/src/auth-iam-runtime.ts");
+  const authServiceSource = readPortalFile("../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-pc-react/src/auth-service.ts");
+  const iamRuntimeSource = readPortalFile("../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-pc-react/src/auth-iam-runtime.ts");
 
   assert.match(authServiceSource, /client\.openPlatform\?\.qrAuth\?\.sessions\?\.scans\?\.create/);
   assert.match(authServiceSource, /client\.openPlatform\?\.qrAuth\?\.sessions\?\.passwords\?\.create/);
@@ -759,11 +767,11 @@ test("appbase QR auth runtime keeps browser scan callback on the canonical callb
 test("portal exposes backend-backed admin auth settings configuration", () => {
   const appSource = readPortalFile("./src/App.tsx");
   const adminRegistrySource = readAdminRegistrySource();
-  const settingsPageSource = readPortalFile("./src/auth/ClawRouterAuthSettingsPage.tsx");
-  const settingsServiceSource = readPortalFile("./src/auth/clawRouterAuthSettingsService.ts");
+  const settingsPageSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-site/src/ClawRouterAuthSettingsPage.tsx");
+  const settingsServiceSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-site/src/AuthSettingsService.ts");
   const routeClassificationSource = readPortalFile("../../docs/schema-registry/frontend-route-classification.yaml");
 
-  assert.match(appSource, /lazyRoute\(\(\) => import\('\.\/auth\/ClawRouterAuthSettingsPage'\), 'ClawRouterAuthSettingsPage'\)/);
+  assert.match(appSource, /lazyRoute\(\(\) => import\('sdkwork-clawrouter-pc-admin-site'\), 'ClawRouterAuthSettingsPage'\)/);
   assert.match(appSource, /<Route path="settings" element=\{<ClawRouterAuthSettingsPage \/>} \/>/);
   assert.match(adminRegistrySource, /path:\s*'\/admin\/settings'/);
   assert.match(adminRegistrySource, /ShieldCheck/);
@@ -783,11 +791,11 @@ test("portal exposes backend-backed admin auth settings configuration", () => {
   assert.doesNotMatch(settingsServiceSource, /\/backend\/v3\/api\/system\/auth\/settings/);
   assert.match(routeClassificationSource, /route:\s*\/admin\/settings/);
   assert.match(routeClassificationSource, /api_surface:\s*backend/);
-  assert.match(routeClassificationSource, /apps\/sdkwork-clawrouter-pc\/src\/auth\/ClawRouterAuthSettingsPage\.tsx/);
+  assert.match(routeClassificationSource, /apps\/sdkwork-clawrouter-pc\/packages\/sdkwork-clawrouter-pc-admin-site\/src\/ClawRouterAuthSettingsPage\.tsx/);
 });
 
 test("admin auth settings page localizes visible copy and uses the available content width", () => {
-  const settingsPageSource = readPortalFile("./src/auth/ClawRouterAuthSettingsPage.tsx");
+  const settingsPageSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-site/src/ClawRouterAuthSettingsPage.tsx");
   const i18nSource = readI18nResourceSource();
 
   for (const key of [
@@ -972,15 +980,15 @@ test("generated appbase app SDK surface satisfies the IAM SDK port contract", ()
   const productSdkSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/sdk.ts");
   const productSdkIamSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/api/iam.ts");
   const productSdkSystemSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/api/system.ts");
-  const sdkSource = readPortalFile("../../.sdkwork/dependencies/sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/sdk.ts");
-  const appSdkAuthSource = readPortalFile("../../.sdkwork/dependencies/sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/api/auth.ts");
-  const appSdkIamSource = readPortalFile("../../.sdkwork/dependencies/sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/api/iam.ts");
-  const appSdkSystemSource = readPortalFile("../../.sdkwork/dependencies/sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/api/system.ts");
-  const appSdkOpenPlatformSource = readPortalFile("../../.sdkwork/dependencies/sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/api/open-platform.ts");
-  const iamSdkPortsSource = readPortalFile("../../.sdkwork/dependencies/sdkwork-appbase/packages/common/iam/sdkwork-iam-sdk-ports/src/index.ts");
-  const authServiceSource = readPortalFile("../../.sdkwork/dependencies/sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-pc-react/src/auth-service.ts");
-  const appbaseAuthPageSource = readPortalFile("../../.sdkwork/dependencies/sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-pc-react/src/pages/AuthPage.tsx");
-  const appbaseAuthQrRouteSource = readPortalFile("../../.sdkwork/dependencies/sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-pc-react/src/auth-qr-route.ts");
+  const sdkSource = readPortalFile("../../../sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/sdk.ts");
+  const appSdkAuthSource = readPortalFile("../../../sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/api/auth.ts");
+  const appSdkIamSource = readPortalFile("../../../sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/api/iam.ts");
+  const appSdkSystemSource = readPortalFile("../../../sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/api/system.ts");
+  const appSdkOpenPlatformSource = readPortalFile("../../../sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/api/open-platform.ts");
+  const iamSdkPortsSource = readPortalFile("../../../sdkwork-appbase/packages/common/iam/sdkwork-iam-sdk-ports/src/index.ts");
+  const authServiceSource = readPortalFile("../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-pc-react/src/auth-service.ts");
+  const appbaseAuthPageSource = readPortalFile("../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-pc-react/src/pages/AuthPage.tsx");
+  const appbaseAuthQrRouteSource = readPortalFile("../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-pc-react/src/auth-qr-route.ts");
 
   for (const portContractFragment of [
     "oauthAuthorizationUrls?:",
@@ -1269,7 +1277,11 @@ test("appbase IAM runtime auth service persists sessions before portal redirects
     ["password login", () => service.signIn({ username: "ada@example.test", password: "secret" })],
     ["email code login", () => service.signInWithEmailCode({ email: "ada@example.test", code: "123456" })],
     ["phone code login", () => service.signInWithPhoneCode({ phone: "+15555550123", code: "123456" })],
-    ["session bridge login", () => service.signInWithSessionBridge({ email: "ada@example.test", name: "Ada" })],
+    ["session bridge login", () => service.signInWithSessionBridge({
+      bridgeToken: "session-bridge-token",
+      email: "ada@example.test",
+      name: "Ada",
+    })],
     ["registration", () => service.register({ username: "ada", email: "ada@example.test", password: "secret" })],
     ["OAuth login", () => service.signInWithOAuth({ code: "oauth-code", deviceType: "desktop", provider: "github" })],
     ["refresh", () => service.refreshSession()],
@@ -2463,7 +2475,7 @@ test("admin app center splits WeChat official account and mini program into inde
 test("admin commerce pages no longer render nested second-level sidebars", () => {
   const adminResourceCenterSource = readPortalFile("./packages/sdkwork-clawrouter-pc-commons/src/components/AdminResourceCenter.tsx");
   const catalogWrapperSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-catalog/src/index.tsx");
-  const catalogSource = readPortalFile("../../.sdkwork/dependencies/sdkwork-commerce/apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-admin-product/src/index.tsx");
+  const catalogSource = readPortalFile("../../../sdkwork-commerce/apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-admin-product/src/index.tsx");
   const inventorySource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-inventory/src/index.tsx");
   const ordersSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-orders/src/index.tsx");
   const paymentsSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-payments/src/index.tsx");

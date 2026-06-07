@@ -1,6 +1,5 @@
 import {
   createIdempotencyParams,
-  getClawRouterBackendSdkClient,
   isRecord,
   normalizeRechargeSettings,
   normalizeCurrencyCode,
@@ -11,8 +10,9 @@ import {
   type ClawRouterMediaResource,
   type ApiRecord,
 } from 'sdkwork-clawrouter-pc-commons/runtime';
+import { getSdkworkCommerceService } from '@sdkwork/commerce-service';
 
-type BackendCommerce = ReturnType<typeof getClawRouterBackendSdkClient>['commerce'];
+type BackendCommerceService = ReturnType<typeof getSdkworkCommerceService>['admin'];
 
 export type MembershipsAdminRecord = ApiRecord;
 
@@ -196,15 +196,15 @@ export function moveMembershipAdminPackageGroup(
   }));
 }
 
-export async function backendMembershipsPlansList(params?: Parameters<BackendCommerce['memberships']['plans']['list']>[0]) {
-  return getClawRouterBackendSdkClient().commerce.memberships.plans.list(params);
+export async function backendMembershipsPlansList(params?: Parameters<BackendCommerceService['memberships']['plans']['list']>[0]) {
+  return getSdkworkCommerceService().admin.memberships.plans.list(params);
 }
 
 export async function backendMembershipsPlansCreate(
-  body: Parameters<BackendCommerce['memberships']['plans']['create']>[0],
-  params: Parameters<BackendCommerce['memberships']['plans']['create']>[1],
+  body: Parameters<BackendCommerceService['memberships']['plans']['create']>[0],
+  params: Parameters<BackendCommerceService['memberships']['plans']['create']>[1],
 ) {
-  return getClawRouterBackendSdkClient().commerce.memberships.plans.create(
+  return getSdkworkCommerceService().admin.memberships.plans.create(
     body,
     params,
   );
@@ -212,10 +212,10 @@ export async function backendMembershipsPlansCreate(
 
 export async function backendMembershipsPlansUpdate(
   planId: string,
-  body: Parameters<BackendCommerce['memberships']['plans']['update']>[1],
-  params: Parameters<BackendCommerce['memberships']['plans']['update']>[2],
+  body: Parameters<BackendCommerceService['memberships']['plans']['update']>[1],
+  params: Parameters<BackendCommerceService['memberships']['plans']['update']>[2],
 ) {
-  return getClawRouterBackendSdkClient().commerce.memberships.plans.update(
+  return getSdkworkCommerceService().admin.memberships.plans.update(
     planId,
     body,
     params,
@@ -225,20 +225,20 @@ export async function backendMembershipsPlansUpdate(
 export async function backendMembershipsPlansDelete(
   planId: string,
 ) {
-  return getClawRouterBackendSdkClient().commerce.memberships.plans.delete(
+  return getSdkworkCommerceService().admin.memberships.plans.delete(
     planId,
   );
 }
 
-export async function backendMembershipsPackageGroupsList(params?: Parameters<BackendCommerce['memberships']['packageGroups']['list']>[0]) {
-  return getClawRouterBackendSdkClient().commerce.memberships.packageGroups.list(params);
+export async function backendMembershipsPackageGroupsList(params?: Parameters<BackendCommerceService['memberships']['packageGroups']['list']>[0]) {
+  return getSdkworkCommerceService().admin.memberships.packageGroups.list(params);
 }
 
 export async function backendMembershipsPackageGroupsCreate(
-  body: Parameters<BackendCommerce['memberships']['packageGroups']['create']>[0],
-  params: Parameters<BackendCommerce['memberships']['packageGroups']['create']>[1],
+  body: Parameters<BackendCommerceService['memberships']['packageGroups']['create']>[0],
+  params: Parameters<BackendCommerceService['memberships']['packageGroups']['create']>[1],
 ) {
-  return getClawRouterBackendSdkClient().commerce.memberships.packageGroups.create(
+  return getSdkworkCommerceService().admin.memberships.packageGroups.create(
     body,
     params,
   );
@@ -246,10 +246,10 @@ export async function backendMembershipsPackageGroupsCreate(
 
 export async function backendMembershipsPackageGroupsUpdate(
   packageGroupId: string,
-  body: Parameters<BackendCommerce['memberships']['packageGroups']['update']>[1],
-  params: Parameters<BackendCommerce['memberships']['packageGroups']['update']>[2],
+  body: Parameters<BackendCommerceService['memberships']['packageGroups']['update']>[1],
+  params: Parameters<BackendCommerceService['memberships']['packageGroups']['update']>[2],
 ) {
-  return getClawRouterBackendSdkClient().commerce.memberships.packageGroups.update(
+  return getSdkworkCommerceService().admin.memberships.packageGroups.update(
     packageGroupId,
     body,
     params,
@@ -259,20 +259,20 @@ export async function backendMembershipsPackageGroupsUpdate(
 export async function backendMembershipsPackageGroupsDelete(
   packageGroupId: string,
 ) {
-  return getClawRouterBackendSdkClient().commerce.memberships.packageGroups.delete(
+  return getSdkworkCommerceService().admin.memberships.packageGroups.delete(
     packageGroupId,
   );
 }
 
-export async function backendMembershipsPackagesList(params?: Parameters<BackendCommerce['memberships']['packages']['list']>[0]) {
-  return getClawRouterBackendSdkClient().commerce.memberships.packages.list(params);
+export async function backendMembershipsPackagesList(params?: Parameters<BackendCommerceService['memberships']['packages']['list']>[0]) {
+  return getSdkworkCommerceService().admin.memberships.packages.list(params);
 }
 
 export async function backendMembershipsPackagesCreate(
-  body: Parameters<BackendCommerce['memberships']['packages']['create']>[0],
-  params: Parameters<BackendCommerce['memberships']['packages']['create']>[1],
+  body: Parameters<BackendCommerceService['memberships']['packages']['create']>[0],
+  params: Parameters<BackendCommerceService['memberships']['packages']['create']>[1],
 ) {
-  return getClawRouterBackendSdkClient().commerce.memberships.packages.create(
+  return getSdkworkCommerceService().admin.memberships.packages.create(
     body,
     params,
   );
@@ -280,10 +280,10 @@ export async function backendMembershipsPackagesCreate(
 
 export async function backendMembershipsPackagesUpdate(
   packageId: string,
-  body: Parameters<BackendCommerce['memberships']['packages']['update']>[1],
-  params: Parameters<BackendCommerce['memberships']['packages']['update']>[2],
+  body: Parameters<BackendCommerceService['memberships']['packages']['update']>[1],
+  params: Parameters<BackendCommerceService['memberships']['packages']['update']>[2],
 ) {
-  return getClawRouterBackendSdkClient().commerce.memberships.packages.update(
+  return getSdkworkCommerceService().admin.memberships.packages.update(
     packageId,
     body,
     params,
@@ -293,40 +293,40 @@ export async function backendMembershipsPackagesUpdate(
 export async function backendMembershipsPackagesDelete(
   packageId: string,
 ) {
-  return getClawRouterBackendSdkClient().commerce.memberships.packages.delete(
+  return getSdkworkCommerceService().admin.memberships.packages.delete(
     packageId,
   );
 }
 
-export async function backendMembershipsMembersList(params?: Parameters<BackendCommerce['memberships']['members']['list']>[0]) {
-  return getClawRouterBackendSdkClient().commerce.memberships.members.list(params);
+export async function backendMembershipsMembersList(params?: Parameters<BackendCommerceService['memberships']['members']['list']>[0]) {
+  return getSdkworkCommerceService().admin.memberships.members.list(params);
 }
 
 export async function backendMembershipsMembersStatusUpdate(
   membershipId: string,
-  body: Parameters<BackendCommerce['memberships']['members']['status']['update']>[1],
-  params: Parameters<BackendCommerce['memberships']['members']['status']['update']>[2],
+  body: Parameters<BackendCommerceService['memberships']['members']['update']>[1],
+  params: Parameters<BackendCommerceService['memberships']['members']['update']>[2],
 ) {
-  return getClawRouterBackendSdkClient().commerce.memberships.members.status.update(
+  return getSdkworkCommerceService().admin.memberships.members.update(
     membershipId,
     body,
     params,
   );
 }
 
-export async function backendMembershipsEntitlementsList(params?: Parameters<BackendCommerce['memberships']['entitlements']['list']>[0]) {
-  return getClawRouterBackendSdkClient().commerce.memberships.entitlements.list(params);
+export async function backendMembershipsEntitlementsList(params?: Parameters<BackendCommerceService['memberships']['entitlements']['list']>[0]) {
+  return getSdkworkCommerceService().admin.memberships.entitlements.list(params);
 }
 
-export async function backendMembershipsRechargePackagesList(params?: Parameters<BackendCommerce['recharges']['packages']['list']>[0]) {
-  return getClawRouterBackendSdkClient().commerce.recharges.packages.list(params);
+export async function backendMembershipsRechargePackagesList(params?: Parameters<BackendCommerceService['recharges']['packages']['list']>[0]) {
+  return getSdkworkCommerceService().admin.recharges.packages.list(params);
 }
 
 export async function backendMembershipsRechargePackagesCreate(
-  body: Parameters<BackendCommerce['recharges']['packages']['create']>[0],
-  params: Parameters<BackendCommerce['recharges']['packages']['create']>[1],
+  body: Parameters<BackendCommerceService['recharges']['packages']['create']>[0],
+  params: Parameters<BackendCommerceService['recharges']['packages']['create']>[1],
 ) {
-  return getClawRouterBackendSdkClient().commerce.recharges.packages.create(
+  return getSdkworkCommerceService().admin.recharges.packages.create(
     body,
     params,
   );
@@ -334,10 +334,10 @@ export async function backendMembershipsRechargePackagesCreate(
 
 export async function backendMembershipsRechargePackagesUpdate(
   packageId: string,
-  body: Parameters<BackendCommerce['recharges']['packages']['update']>[1],
-  params: Parameters<BackendCommerce['recharges']['packages']['update']>[2],
+  body: Parameters<BackendCommerceService['recharges']['packages']['update']>[1],
+  params: Parameters<BackendCommerceService['recharges']['packages']['update']>[2],
 ) {
-  return getClawRouterBackendSdkClient().commerce.recharges.packages.update(
+  return getSdkworkCommerceService().admin.recharges.packages.update(
     packageId,
     body,
     params,
@@ -347,19 +347,19 @@ export async function backendMembershipsRechargePackagesUpdate(
 export async function backendMembershipsRechargePackagesDelete(
   packageId: string,
 ) {
-  return getClawRouterBackendSdkClient().commerce.recharges.packages.delete(
+  return getSdkworkCommerceService().admin.recharges.packages.delete(
     packageId,
   );
 }
 
 export async function backendMembershipsRechargeSettingsRetrieve() {
-  return getClawRouterBackendSdkClient().commerce.recharges.settings.retrieve();
+  return getSdkworkCommerceService().admin.recharges.settings.retrieve();
 }
 
 export async function backendMembershipsRechargeSettingsUpdate(
-  body: Parameters<BackendCommerce['recharges']['settings']['update']>[0],
+  body: Parameters<BackendCommerceService['recharges']['settings']['update']>[0],
 ) {
-  return getClawRouterBackendSdkClient().commerce.recharges.settings.update(body);
+  return getSdkworkCommerceService().admin.recharges.settings.update(body);
 }
 
 export async function fetchMembershipAdminPackageCatalog(): Promise<MembershipsAdminPackageCatalog> {
@@ -852,7 +852,7 @@ function buildPackageMutationRequest(input: MembershipsAdminPackageMutationInput
 
 function buildRechargePackageMutationRequest(
   input: MembershipsAdminRechargePackageMutationInput,
-): Parameters<BackendCommerce['recharges']['packages']['create']>[0] {
+): Parameters<BackendCommerceService['recharges']['packages']['create']>[0] {
   return {
     priceAmount: requiredMoneyAmount(input.priceAmount, 'priceAmount'),
     currencyCode: normalizeCurrencyCode(input.currencyCode),

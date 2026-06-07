@@ -7,19 +7,19 @@ license-file.workspace = true
 [dependencies]
 anyhow.workspace = true
 axum.workspace = true
-sdkwork-claw-config = { path = "../../crates/sdkwork-claw-config" }
-sdkwork-claw-http = { path = "../../crates/sdkwork-claw-http" }
-sdkwork-claw-observability = { path = "../../crates/sdkwork-claw-observability" }
-sdkwork-claw-product = { path = "../sdkwork-claw-product" }
-sdkwork_commerce_account = { path = "../../.sdkwork/dependencies/sdkwork-commerce/crates/sdkwork-commerce-account-rust" }
-sdkwork_commerce_http = { path = "../../.sdkwork/dependencies/sdkwork-commerce/crates/sdkwork-commerce-http-rust" }
-sdkwork_commerce_membership_sqlx = { path = "../../.sdkwork/dependencies/sdkwork-commerce/crates/sdkwork-commerce-membership-sqlx-rust" }
+sdkwork-claw-config.workspace = true
+sdkwork-claw-http.workspace = true
+sdkwork-claw-observability.workspace = true
+sdkwork-claw-product.workspace = true
+sdkwork_commerce_account.workspace = true
+sdkwork_commerce_http.workspace = true
+sdkwork_commerce_membership_sqlx.workspace = true
 sqlx.workspace = true
 tokio.workspace = true
 tracing.workspace = true
 
 [dev-dependencies]
-sdkwork-claw-test-support = { path = "../../crates/sdkwork-claw-test-support" }
-sdkwork-models = { path = "../../data/sdkwork-models/sdkwork-models-rust" }
+sdkwork-claw-test-support.workspace = true
+sdkwork-models.workspace = true
 serde_json.workspace = true
 tower.workspace = true

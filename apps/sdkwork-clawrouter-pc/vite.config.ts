@@ -16,6 +16,9 @@ const LOCAL_ROUTE_PACKAGE_PATTERN = /(?:^|\/)node_modules\/(?:\.pnpm\/[^/]+\/nod
 const HTML_MODULE_SCRIPT_PATTERN = /<script\b(?=[^>]*\btype=["']module["'])(?=[^>]*\bsrc=["'][^"']+["'])[^>]*><\/script>/i;
 const RUNTIME_ENV_SCRIPT_PATH = '/runtime-env.js';
 const DEFAULT_PORTAL_DEV_PORT = 3901;
+const OPEN_API_PREFIX = '/v1';
+const APP_API_PREFIX = '/app/v3/api';
+const BACKEND_API_PREFIX = '/backend/v3/api';
 const require = createRequire(import.meta.url);
 const localPortalPackageModuleCache = new Map<string, string | null>();
 const portalPackageModuleCache = new Map<string, string | null>();
@@ -47,6 +50,8 @@ const PORTAL_RUNTIME_URL_ENV = [
   ['PORTAL_PUBLIC_APP_API_BASE_URL', 'VITE_CLAWROUTER_APP_API_BASE_URL'],
   ['PORTAL_PUBLIC_BACKEND_API_BASE_URL', 'VITE_CLAWROUTER_BACKEND_API_BASE_URL'],
   ['PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL', 'VITE_SDKWORK_APPBASE_BACKEND_API_BASE_URL'],
+  ['PORTAL_PUBLIC_COMMERCE_APP_API_BASE_URL', 'VITE_SDKWORK_COMMERCE_APP_API_BASE_URL'],
+  ['PORTAL_PUBLIC_COMMERCE_BACKEND_API_BASE_URL', 'VITE_SDKWORK_COMMERCE_BACKEND_API_BASE_URL'],
   ['PORTAL_PUBLIC_DOWNLOAD_BASE_URL', 'VITE_CLAWROUTER_DOWNLOAD_BASE_URL'],
 ] as const;
 
@@ -310,7 +315,7 @@ function resolvePortalWorkspaceDependencyRoot(
   configDir: string,
   dependencyId: string,
 ): string {
-  return path.resolve(configDir, '../..', '.sdkwork/dependencies', dependencyId);
+  return path.resolve(configDir, '../../..', dependencyId);
 }
 
 function resolvePortalPackageModule(specifier: string, configDir: string): string | null {
@@ -477,6 +482,8 @@ export default defineConfig(({mode}) => {
         { find: '@sdkwork/commerce-contracts', replacement: path.resolve(sdkworkCommerceRoot, 'packages/common/commerce/sdkwork-commerce-contracts/src/index.ts') },
         { find: '@sdkwork/commerce-sdk-ports', replacement: path.resolve(sdkworkCommerceRoot, 'packages/common/commerce/sdkwork-commerce-sdk-ports/src/index.ts') },
         { find: '@sdkwork/commerce-service', replacement: path.resolve(sdkworkCommerceRoot, 'packages/common/commerce/sdkwork-commerce-service/src/index.ts') },
+        { find: 'sdkwork-commerce-app-sdk-generated-typescript', replacement: path.resolve(sdkworkCommerceRoot, 'sdks/sdkwork-commerce-app-sdk/sdkwork-commerce-app-sdk-typescript/generated/server-openapi/src/index.ts') },
+        { find: 'sdkwork-commerce-backend-sdk-generated-typescript', replacement: path.resolve(sdkworkCommerceRoot, 'sdks/sdkwork-commerce-backend-sdk/sdkwork-commerce-backend-sdk-typescript/generated/server-openapi/src/index.ts') },
         { find: '@sdkwork/core-pc-react', replacement: path.resolve(sdkworkCoreRoot, 'sdkwork-core-pc-react/src/index.ts') },
         { find: '@sdkwork/distribution-pc-react/downloads', replacement: path.resolve(appbaseRoot, 'packages/pc-react/device/sdkwork-distribution-pc-react/src/downloads/index.ts') },
         { find: '@sdkwork/distribution-pc-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/device/sdkwork-distribution-pc-react/src/index.ts') },
@@ -486,6 +493,8 @@ export default defineConfig(({mode}) => {
         { find: '@sdkwork/file-sdk-adapter', replacement: path.resolve(workspaceRoot, 'packages/common/file/sdkwork-file-sdk-adapter/src/index.ts') },
         { find: '@sdkwork/file-sdk-ports', replacement: path.resolve(workspaceRoot, 'packages/common/file/sdkwork-file-sdk-ports/src/index.ts') },
         { find: '@sdkwork/file-service', replacement: path.resolve(workspaceRoot, 'packages/common/file/sdkwork-file-service/src/index.ts') },
+        { find: '@sdkwork/generations-pc-workspace/generation-asset-config', replacement: path.resolve(sdkworkGenerationsRoot, 'apps/sdkwork-generations-pc/packages/sdkwork-generations-pc-workspace/src/generation-asset-config.ts') },
+        { find: '@sdkwork/generations-pc-workspace/generation-history', replacement: path.resolve(sdkworkGenerationsRoot, 'apps/sdkwork-generations-pc/packages/sdkwork-generations-pc-workspace/src/generation-history.ts') },
         { find: '@sdkwork/generations-pc-workspace/generation-service', replacement: path.resolve(sdkworkGenerationsRoot, 'apps/sdkwork-generations-pc/packages/sdkwork-generations-pc-workspace/src/generation-service.ts') },
         { find: '@sdkwork/generations-pc-workspace/react', replacement: path.resolve(sdkworkGenerationsRoot, 'apps/sdkwork-generations-pc/packages/sdkwork-generations-pc-workspace/src/react.ts') },
         { find: '@sdkwork/generations-pc-workspace', replacement: path.resolve(sdkworkGenerationsRoot, 'apps/sdkwork-generations-pc/packages/sdkwork-generations-pc-workspace/src/index.ts') },
@@ -509,6 +518,7 @@ export default defineConfig(({mode}) => {
         { find: '@sdkwork/iam-sdk-ports', replacement: path.resolve(appbaseRoot, 'packages/common/iam/sdkwork-iam-sdk-ports/src/index.ts') },
         { find: '@sdkwork/iam-service', replacement: path.resolve(appbaseRoot, 'packages/common/iam/sdkwork-iam-service/src/index.ts') },
         { find: '@sdkwork/runtime-bootstrap', replacement: path.resolve(appbaseRoot, 'packages/common/foundation/sdkwork-runtime-bootstrap/src/index.ts') },
+        { find: '@sdkwork/sdk-common', replacement: path.resolve(configDir, 'node_modules/@sdkwork/sdk-common/dist/index.js') },
         { find: '@sdkwork/ui-pc-react/components/ui/button', replacement: path.resolve(sdkworkUiRoot, 'sdkwork-ui-pc-react/src/components/ui/button.tsx') },
         { find: '@sdkwork/ui-pc-react/components/ui/feedback/states', replacement: path.resolve(sdkworkUiRoot, 'sdkwork-ui-pc-react/src/components/ui/feedback/states.tsx') },
         { find: '@sdkwork/ui-pc-react/theme', replacement: path.resolve(sdkworkUiRoot, 'sdkwork-ui-pc-react/src/theme/index.ts') },
@@ -812,8 +822,13 @@ function resolvePortalDevProxyTarget(value: string | undefined, name: string): s
 
 function resolvePortalRuntimeEnv(env: NodeJS.ProcessEnv = process.env): Record<string, string> {
   const runtimeEnv: Record<string, string> = {};
+  const sdkBaseUrl = resolvePortalPublicUrl(
+    env.PORTAL_PUBLIC_SDK_BASE_URL,
+    'PORTAL_PUBLIC_SDK_BASE_URL',
+  );
+  const publicApiBaseUrlOverride = readConfiguredPortalPublicEnv(env.PORTAL_PUBLIC_API_BASE_URL);
   const publicApiBaseUrl = resolvePortalPublicUrl(
-    env.PORTAL_PUBLIC_API_BASE_URL,
+    publicApiBaseUrlOverride ?? appendPortalPublicSdkBaseUrl(sdkBaseUrl, OPEN_API_PREFIX),
     'PORTAL_PUBLIC_API_BASE_URL',
   );
   if (publicApiBaseUrl !== undefined) {
@@ -821,7 +836,9 @@ function resolvePortalRuntimeEnv(env: NodeJS.ProcessEnv = process.env): Record<s
   }
 
   const openApiBaseUrl = resolvePortalPublicUrl(
-    env.PORTAL_PUBLIC_OPEN_API_BASE_URL ?? env.PORTAL_PUBLIC_API_BASE_URL,
+    readConfiguredPortalPublicEnv(env.PORTAL_PUBLIC_OPEN_API_BASE_URL)
+    ?? publicApiBaseUrlOverride
+    ?? appendPortalPublicSdkBaseUrl(sdkBaseUrl, OPEN_API_PREFIX),
     'PORTAL_PUBLIC_OPEN_API_BASE_URL',
   );
   if (openApiBaseUrl !== undefined) {
@@ -829,7 +846,11 @@ function resolvePortalRuntimeEnv(env: NodeJS.ProcessEnv = process.env): Record<s
   }
 
   for (const [sourceName, targetName] of PORTAL_RUNTIME_URL_ENV) {
-    const value = resolvePortalPublicUrl(env[sourceName], sourceName);
+    const value = resolvePortalPublicUrl(
+      readConfiguredPortalPublicEnv(env[sourceName])
+      ?? resolvePortalRuntimeUrlFromSdkBaseUrl(sourceName, sdkBaseUrl),
+      sourceName,
+    );
     if (value !== undefined) {
       runtimeEnv[targetName] = value;
     }
@@ -843,6 +864,40 @@ function resolvePortalRuntimeEnv(env: NodeJS.ProcessEnv = process.env): Record<s
   }
 
   return runtimeEnv;
+}
+
+function readConfiguredPortalPublicEnv(value: string | undefined): string | undefined {
+  const trimmed = value?.trim();
+  return trimmed ? trimmed : undefined;
+}
+
+function resolvePortalRuntimeUrlFromSdkBaseUrl(
+  sourceName: (typeof PORTAL_RUNTIME_URL_ENV)[number][0],
+  sdkBaseUrl: string | undefined,
+): string | undefined {
+  switch (sourceName) {
+    case 'PORTAL_PUBLIC_APP_API_BASE_URL':
+    case 'PORTAL_PUBLIC_COMMERCE_APP_API_BASE_URL':
+      return appendPortalPublicSdkBaseUrl(sdkBaseUrl, APP_API_PREFIX);
+    case 'PORTAL_PUBLIC_BACKEND_API_BASE_URL':
+    case 'PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL':
+    case 'PORTAL_PUBLIC_COMMERCE_BACKEND_API_BASE_URL':
+      return appendPortalPublicSdkBaseUrl(sdkBaseUrl, BACKEND_API_PREFIX);
+    default:
+      return undefined;
+  }
+}
+
+function appendPortalPublicSdkBaseUrl(
+  sdkBaseUrl: string | undefined,
+  apiPrefix: string,
+): string | undefined {
+  if (!sdkBaseUrl) {
+    return undefined;
+  }
+  const normalizedPrefix = apiPrefix.startsWith('/') ? apiPrefix : `/${apiPrefix}`;
+  const base = sdkBaseUrl.replace(/\/+$/u, '');
+  return base ? `${base}${normalizedPrefix}` : normalizedPrefix;
 }
 
 function buildPortalRuntimeEnvScript(runtimeEnv = resolvePortalRuntimeEnv()): string {

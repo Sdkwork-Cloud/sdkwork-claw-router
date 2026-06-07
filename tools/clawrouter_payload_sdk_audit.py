@@ -26,6 +26,10 @@ class ClawRouterPayloadSdkAudit:
         "app": "clawrouter-app-sdk/clawrouter-app-sdk-typescript",
         "backend": "clawrouter-backend-sdk/clawrouter-backend-sdk-typescript",
     }
+    SDK_FAMILIES = {
+        "app": "clawrouter-app-sdk",
+        "backend": "clawrouter-backend-sdk",
+    }
     METHODS_WITH_JSON_BODY = {"POST", "PUT", "PATCH"}
     METHOD_VERB_PARTS = {"get", "fetch", "list", "create", "update", "patch", "delete", "enable", "disable", "publish", "offline", "head", "options", "trace"}
     REMOVABLE_TAG_SUFFIXES = {"management", "controller", "module", "service", "api"}
@@ -49,6 +53,7 @@ class ClawRouterPayloadSdkAudit:
         )
         self.openapi_dir = Path(openapi_dir).resolve() if openapi_dir is not None else self.root / "generated" / "openapi"
         self.sdk_root = Path(sdk_root).resolve() if sdk_root is not None else self.root / "sdks"
+        self._dependency_exclusion_cache: dict[str, set[str]] = {}
 
     def run(self) -> ClawRouterPayloadSdkAuditResult:
         messages: list[str] = []
@@ -103,11 +108,12 @@ class ClawRouterPayloadSdkAudit:
         sdk_method_names = self._sdk_method_names(operation_id, operation)
         operation_spec = self._operation_spec(spec, operation)
         schemas = self._spec_schemas(spec)
-        sdk_method_records = self._sdk_method_records(surface, sdk_method_names, operation)
-        sdk_types_dir = self.sdk_root / self.SDK_DIRECTORIES[surface] / "src" / "types"
+        owner_sdk_operation = not self._is_dependency_owned_operation(surface, operation)
+        sdk_method_records = self._sdk_method_records(surface, sdk_method_names, operation) if owner_sdk_operation else []
+        sdk_types_dir = self._sdk_source_root(surface) / "types"
         sdk_type_index = self._safe_read_text(sdk_types_dir / "index.ts")
 
-        if operation_spec is not None and sdk_method_records:
+        if owner_sdk_operation and operation_spec is not None and sdk_method_records:
             messages.extend(
                 self._check_sdk_query_serialization(surface, operation_id, operation_spec, sdk_method_records)
             )
@@ -117,7 +123,7 @@ class ClawRouterPayloadSdkAudit:
         if explicit_no_body:
             if operation_spec is not None and "requestBody" in operation_spec:
                 messages.append(f"{surface} {operation_id} OpenAPI operation must not declare requestBody for explicit no-body operation")
-            if sdk_method_records:
+            if owner_sdk_operation and sdk_method_records:
                 if any(self._signature_has_body_parameter(signature) for signature, _ in sdk_method_records):
                     messages.append(f"{surface} {operation_id} SDK method must not accept body parameter for explicit no-body operation")
                 if any(self._method_passes_body_argument(body) for _, body in sdk_method_records):
@@ -140,16 +146,17 @@ class ClawRouterPayloadSdkAudit:
                     messages.append(
                         f"{surface} {operation_id} requestBody.required must be {str(expected_required).lower()} for explicit request schema"
                     )
-            messages.extend(
-                self._check_sdk_type(
-                    surface,
-                    operation_id,
-                    request_schema,
-                    sdk_types_dir,
-                    sdk_type_index,
-                    schemas.get(request_schema),
+            if owner_sdk_operation:
+                messages.extend(
+                    self._check_sdk_type(
+                        surface,
+                        operation_id,
+                        request_schema,
+                        sdk_types_dir,
+                        sdk_type_index,
+                        schemas.get(request_schema),
+                    )
                 )
-            )
             messages.extend(
                 self._check_request_schema_search_text_names(
                     surface,
@@ -158,24 +165,25 @@ class ClawRouterPayloadSdkAudit:
                     schemas.get(request_schema),
                 )
             )
-            messages.extend(
-                self._check_sdk_request_type_search_text_names(
-                    surface,
-                    operation_id,
-                    request_schema,
-                    sdk_types_dir,
+            if owner_sdk_operation:
+                messages.extend(
+                    self._check_sdk_request_type_search_text_names(
+                        surface,
+                        operation_id,
+                        request_schema,
+                        sdk_types_dir,
+                    )
                 )
-            )
-            if not sdk_method_records:
-                messages.append(f"{surface} {operation_id} SDK method is missing")
-            else:
-                expected_body = (
-                    f"body: {request_schema}"
-                    if self._expected_request_body_required(operation)
-                    else f"body?: {request_schema}"
-                )
-                if not any(expected_body in signature for signature, _ in sdk_method_records):
-                    messages.append(f"{surface} {operation_id} SDK method must accept {expected_body}")
+                if not sdk_method_records:
+                    messages.append(f"{surface} {operation_id} SDK method is missing")
+                else:
+                    expected_body = (
+                        f"body: {request_schema}"
+                        if self._expected_request_body_required(operation)
+                        else f"body?: {request_schema}"
+                    )
+                    if not any(expected_body in signature for signature, _ in sdk_method_records):
+                        messages.append(f"{surface} {operation_id} SDK method must accept {expected_body}")
 
         response_schema = self._payload_schema_name(operation.get("response_schema"))
         if response_schema is not None:
@@ -206,7 +214,7 @@ class ClawRouterPayloadSdkAudit:
                 messages.append(f"{surface} {operation_id} is missing from OpenAPI path {self._string(operation.get('api_path'))} {method}")
             elif self._success_response_schema_ref(operation_spec) != result_ref:
                 messages.append(f"{surface} {operation_id} 200 response must reference {result_ref}")
-            if response_schema != "NoData":
+            if owner_sdk_operation and response_schema != "NoData":
                 messages.extend(
                     self._check_sdk_type(
                         surface,
@@ -217,33 +225,34 @@ class ClawRouterPayloadSdkAudit:
                         response_component,
                     )
                 )
-            messages.extend(
-                self._check_sdk_type(
-                    surface,
-                    operation_id,
-                    result_schema,
-                    sdk_types_dir,
-                    sdk_type_index,
-                    result_component,
+            if owner_sdk_operation:
+                messages.extend(
+                    self._check_sdk_type(
+                        surface,
+                        operation_id,
+                        result_schema,
+                        sdk_types_dir,
+                        sdk_type_index,
+                        result_component,
+                    )
                 )
-            )
-            messages.extend(
-                self._check_sdk_response_entity_types(
-                    surface,
-                    operation_id,
-                    response_schema,
-                    response_component,
-                    schemas,
-                    sdk_types_dir,
+                messages.extend(
+                    self._check_sdk_response_entity_types(
+                        surface,
+                        operation_id,
+                        response_schema,
+                        response_component,
+                        schemas,
+                        sdk_types_dir,
+                    )
                 )
-            )
-            if not sdk_method_records:
-                messages.append(f"{surface} {operation_id} SDK method is missing")
-            else:
-                if not any(f"Promise<{result_schema}>" in signature for signature, _ in sdk_method_records):
-                    messages.append(f"{surface} {operation_id} SDK method must return Promise<{result_schema}>")
-                if not any(f"<{result_schema}>" in body for _, body in sdk_method_records):
-                    messages.append(f"{surface} {operation_id} SDK client call must use {result_schema}")
+                if not sdk_method_records:
+                    messages.append(f"{surface} {operation_id} SDK method is missing")
+                else:
+                    if not any(f"Promise<{result_schema}>" in signature for signature, _ in sdk_method_records):
+                        messages.append(f"{surface} {operation_id} SDK method must return Promise<{result_schema}>")
+                    if not any(f"<{result_schema}>" in body for _, body in sdk_method_records):
+                        messages.append(f"{surface} {operation_id} SDK client call must use {result_schema}")
 
         return messages
 
@@ -438,6 +447,14 @@ class ClawRouterPayloadSdkAudit:
             raise ValueError(f"required JSON file must contain an object: {path}")
         return payload
 
+    def _load_json_if_exists(self, path: Path) -> dict[str, Any]:
+        if not path.exists():
+            return {}
+        try:
+            return self._load_json(path)
+        except (OSError, ValueError, json.JSONDecodeError):
+            return {}
+
     def _operation_spec(self, spec: dict[str, Any], operation: dict[str, Any]) -> dict[str, Any] | None:
         paths = spec.get("paths", {})
         if not isinstance(paths, dict):
@@ -612,7 +629,7 @@ class ClawRouterPayloadSdkAudit:
         method_names: list[str],
         operation: dict[str, Any],
     ) -> list[tuple[str, str]]:
-        api_dir = self.sdk_root / self.SDK_DIRECTORIES[surface] / "src" / "api"
+        api_dir = self._sdk_source_root(surface) / "api"
         if not api_dir.is_dir():
             return []
         records: list[tuple[str, str]] = []
@@ -631,6 +648,45 @@ class ClawRouterPayloadSdkAudit:
                     if self._method_body_matches_path(body, operation):
                         path_records.append((signature, body))
         return path_records or records
+
+    def _sdk_source_root(self, surface: str) -> Path:
+        family_root = self.sdk_root / self.SDK_DIRECTORIES[surface]
+        generated_root = family_root / "generated" / "server-openapi" / "src"
+        if generated_root.is_dir():
+            return generated_root
+        return family_root / "src"
+
+    def _is_dependency_owned_operation(self, surface: str, operation: dict[str, Any]) -> bool:
+        return self._dependency_operation_key(operation) in self._dependency_exclusion_keys(surface)
+
+    def _dependency_exclusion_keys(self, surface: str) -> set[str]:
+        cached = self._dependency_exclusion_cache.get(surface)
+        if cached is not None:
+            return cached
+
+        sdk_family = self.SDK_FAMILIES[surface]
+        path = self.sdk_root / sdk_family / "openapi" / f"{sdk_family}.openapi.json"
+        payload = self._load_json_if_exists(path)
+        keys: set[str] = set()
+        marker = payload.get("x-sdkwork-dependency-exclusions") if isinstance(payload, dict) else None
+        dependencies = marker.get("dependencies") if isinstance(marker, dict) else None
+        if isinstance(dependencies, dict):
+            for values in dependencies.values():
+                if not isinstance(values, list):
+                    continue
+                keys.update(value for value in values if isinstance(value, str) and value)
+        self._dependency_exclusion_cache[surface] = keys
+        return keys
+
+    def _dependency_operation_key(self, operation: dict[str, Any]) -> str:
+        method = self._string(operation.get("api_method")).upper()
+        surface = self._string(operation.get("api_surface"))
+        prefix = "/app/v3/api" if surface == "app" else "/backend/v3/api"
+        route = self._string(operation.get("api_path"))
+        if route.startswith(prefix):
+            route = route[len(prefix) :]
+        route = re.sub(r"\{[^}]+\}", "{}", route).strip("/")
+        return f"{method} {route}"
 
     def _method_records(self, source: str, method_name: str) -> list[tuple[str, str]]:
         pattern = re.compile(

@@ -39,7 +39,7 @@ Lower levels are SDKWork-managed operational directories derived from common sto
 Run the focused route test after changes:
 
 ```powershell
-$env:CARGO_TARGET_DIR='E:\codex-target\sdkwork-claw-router'
+$env:CARGO_TARGET_DIR = Join-Path $PWD 'target/product-category-seed'
 cargo test -p sdkwork-claw-admin-api --test product_center_routes -- product_center_category_seed_initializer_imports_data_directories_idempotently
 ```
 

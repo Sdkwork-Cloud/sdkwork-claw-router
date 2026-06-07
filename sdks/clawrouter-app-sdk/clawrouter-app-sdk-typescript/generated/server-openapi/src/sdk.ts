@@ -4,17 +4,18 @@ import type { AuthTokenManager } from '@sdkwork/sdk-common';
 
 import { AgentsApi, createAgentsApi } from './api/agents';
 import { AiApi, createAiApi } from './api/ai';
+import { AuthApi, createAuthApi } from './api/auth';
 import { ChatApi, createChatApi } from './api/chat';
 import { ContentApi, createContentApi } from './api/content';
 import { EcosystemApi, createEcosystemApi } from './api/ecosystem';
 import { IamApi, createIamApi } from './api/iam';
 import { MemoryApi, createMemoryApi } from './api/memory';
 import { NotificationApi, createNotificationApi } from './api/notification';
+import { OpenPlatformApi, createOpenPlatformApi } from './api/open-platform';
 import { PlatformApi, createPlatformApi } from './api/platform';
-import { SystemApi, createSystemApi } from './api/system';
-import { CommerceApi, createCommerceApi } from './api/commerce';
 import { RuntimeApi, createRuntimeApi } from './api/runtime';
 import { SdkReferenceApi, createSdkReferenceApi } from './api/sdk-reference';
+import { SystemApi, createSystemApi } from './api/system';
 import { SitesApi, createSitesApi } from './api/sites';
 
 export class SdkworkAppClient {
@@ -22,17 +23,18 @@ export class SdkworkAppClient {
 
   public readonly agents: AgentsApi;
   public readonly ai: AiApi;
+  public readonly auth: AuthApi;
   public readonly chat: ChatApi;
   public readonly content: ContentApi;
   public readonly ecosystem: EcosystemApi;
   public readonly iam: IamApi;
   public readonly memory: MemoryApi;
   public readonly notification: NotificationApi;
+  public readonly openPlatform: OpenPlatformApi;
   public readonly platform: PlatformApi;
-  public readonly system: SystemApi;
-  public readonly commerce: CommerceApi;
   public readonly runtime: RuntimeApi;
   public readonly sdkReference: SdkReferenceApi;
+  public readonly system: SystemApi;
   public readonly sites: SitesApi;
 
   constructor(config: SdkworkAppConfig) {
@@ -40,6 +42,8 @@ export class SdkworkAppClient {
     this.agents = createAgentsApi(this.httpClient);
 
     this.ai = createAiApi(this.httpClient);
+
+    this.auth = createAuthApi(this.httpClient);
 
     this.chat = createChatApi(this.httpClient);
 
@@ -53,24 +57,18 @@ export class SdkworkAppClient {
 
     this.notification = createNotificationApi(this.httpClient);
 
+    this.openPlatform = createOpenPlatformApi(this.httpClient);
+
     this.platform = createPlatformApi(this.httpClient);
-
-    this.system = createSystemApi(this.httpClient);
-
-    this.commerce = createCommerceApi(this.httpClient);
 
     this.runtime = createRuntimeApi(this.httpClient);
 
     this.sdkReference = createSdkReferenceApi(this.httpClient);
 
+    this.system = createSystemApi(this.httpClient);
+
     this.sites = createSitesApi(this.httpClient);
   }
-
-  setApiKey(apiKey: string): this {
-    this.httpClient.setApiKey(apiKey);
-    return this;
-  }
-
   setAuthToken(token: string): this {
     this.httpClient.setAuthToken(token);
     return this;

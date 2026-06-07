@@ -103,6 +103,48 @@ frontend_operations:
               type: string
               maxLength: 64
 - route: /playground
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/playgroundService.ts
+  operation: runGeneration
+  operation_scope: app_shell
+  operation_id: playground.generations.run
+  kind: create
+  api_surface: app
+  api_method: POST
+  api_path: /app/v3/api/generations/images/text_to_image
+  sdk_domain: generations
+  openapi_exposed: false
+  summary: Run Playground asset generation through sdkwork-generations
+  description: Creates a modality-specific sdkwork-generations command and reads generated results through the generated generations app SDK facade.
+  read_sources:
+  - ai_model
+  - ai_model_capability
+  - ai_generation_job
+  - ai_generation_asset
+  write_tables: &playgroundGenerationsWriteTables
+  - ai_generation_session
+  - ai_generation_job
+  - ai_generation_asset
+  - ai_usage_fact
+- route: /playground
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/playgroundGenerationsService.ts
+  operation: runPlaygroundAssetGeneration
+  operation_scope: app_shell
+  operation_id: playground.generations.asset.run
+  kind: create
+  api_surface: app
+  api_method: POST
+  api_path: /app/v3/api/generations/images/text_to_image
+  sdk_domain: generations
+  openapi_exposed: false
+  summary: Run non-agent Playground asset generation
+  description: Uses an injected sdkwork-generations service facade to create image, video, music, voice, or sound effect commands and map returned results to Playground artifacts.
+  read_sources:
+  - ai_model
+  - ai_model_capability
+  - ai_generation_job
+  - ai_generation_asset
+  write_tables: *playgroundGenerationsWriteTables
+- route: /playground
   source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
   operation: listGenerationHistory
   operation_id: generation.list

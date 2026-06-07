@@ -1,33 +1,33 @@
-import { getClawRouterBackendSdkClient } from 'sdkwork-clawrouter-pc-commons/runtime';
+import { getSdkworkCommerceService } from '@sdkwork/commerce-service';
 
-type BackendCommerce = ReturnType<typeof getClawRouterBackendSdkClient>['commerce'];
+type BackendCommerceService = ReturnType<typeof getSdkworkCommerceService>['admin'];
 
-export async function backendInvoicesTitlesList(params?: Parameters<BackendCommerce['invoices']['titles']['list']>[0]) {
-  return getClawRouterBackendSdkClient().commerce.invoices.titles.list(params);
+export async function backendInvoicesTitlesList(params?: Parameters<BackendCommerceService['invoices']['titles']['list']>[0]) {
+  return getSdkworkCommerceService().admin.invoices.titles.list(params);
 }
 
-export async function backendInvoicesList(params?: Parameters<BackendCommerce['invoices']['list']>[0]) {
-  return getClawRouterBackendSdkClient().commerce.invoices.list(params);
+export async function backendInvoicesList(params?: Parameters<BackendCommerceService['invoices']['list']>[0]) {
+  return getSdkworkCommerceService().admin.invoices.list(params);
 }
 
 export async function backendInvoicesRetrieve(invoiceId: string) {
-  return getClawRouterBackendSdkClient().commerce.invoices.retrieve(invoiceId);
+  return getSdkworkCommerceService().admin.invoices.retrieve(invoiceId);
 }
 
 export async function backendCommerceReportsPaymentReconciliationRetrieve() {
-  return getClawRouterBackendSdkClient().commerce.commerceReports.paymentReconciliation.retrieve();
+  return getSdkworkCommerceService().admin.commerceReports.paymentReconciliation.retrieve();
 }
 
 export async function backendCommerceReportsOrderRevenueList(
-  params?: Parameters<BackendCommerce['commerceReports']['orderRevenue']['list']>[0],
+  params?: Parameters<BackendCommerceService['commerceReports']['orderRevenue']['list']>[0],
 ) {
-  return getClawRouterBackendSdkClient().commerce.commerceReports.orderRevenue.list(params);
+  return getSdkworkCommerceService().admin.commerceReports.orderRevenue.list(params);
 }
 
-export async function backendCommerceReportsRefundsList(params?: Parameters<BackendCommerce['commerceReports']['refunds']['list']>[0]) {
-  return getClawRouterBackendSdkClient().commerce.commerceReports.refunds.list(params);
+export async function backendCommerceReportsRefundsList(params?: Parameters<BackendCommerceService['commerceReports']['refunds']['list']>[0]) {
+  return getSdkworkCommerceService().admin.commerceReports.refunds.list(params);
 }
 
-export async function backendAuditCommerceEventsList(params?: Parameters<BackendCommerce['audit']['commerceEvents']['list']>[0]) {
-  return getClawRouterBackendSdkClient().commerce.audit.commerceEvents.list(params);
+export async function backendAuditCommerceEventsList(params?: Parameters<BackendCommerceService['audit']['commerceEvents']['list']>[0]) {
+  return getSdkworkCommerceService().admin.audit.commerceEvents.list(params);
 }

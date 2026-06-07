@@ -57,6 +57,7 @@ class FrontendFieldAudit:
         "@sdkwork/clawrouter-backend-sdk",
         "@sdkwork/clawrouter-open-sdk",
         "@sdkwork/generation-pc-react/react",
+        "@sdkwork/generations-pc-workspace/generation-history",
     })
 
     def __init__(

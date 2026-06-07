@@ -1,7 +1,7 @@
-version: 0.1.0
-schema: sdkwork-claw-router-frontend-field-contracts
-source: apps/sdkwork-clawrouter-pc/src/App.tsx
 rule: every actual portal route must be backed by explicit schema tables; page-critical fields must map to generated columns or Java-owned physical columns.
+version: 0.1.0
+source: apps/sdkwork-clawrouter-pc/src/App.tsx
+schema: sdkwork-claw-router-frontend-field-contracts
 x_response_entities:
   admin_announcement_item:
     name: AdminAnnouncementItem
@@ -7186,6 +7186,460 @@ frontend_models:
       - status
     data_sources:
       - open_platform_entry
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    interface: OrganizationTreeNode
+    fields:
+      - id
+      - code
+      - name
+      - parentId
+      - status
+      - kind
+      - children
+    data_sources:
+      - iam_organization
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    interface: OrganizationRecord
+    fields:
+      - id
+      - code
+      - name
+      - organizationKind
+      - parentOrganizationId
+      - status
+      - ownerUserId
+      - memberCount
+      - departmentCount
+      - sortWeight
+      - createdAt
+      - updatedAt
+    data_sources:
+      - iam_organization
+      - iam_organization_member
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    interface: DepartmentTreeNode
+    fields:
+      - id
+      - code
+      - name
+      - organizationId
+      - parentId
+      - status
+      - children
+    data_sources:
+      - iam_organization
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    interface: DepartmentRecord
+    fields:
+      - id
+      - code
+      - name
+      - organizationId
+      - parentDepartmentId
+      - status
+      - managerUserId
+      - memberCount
+      - sortWeight
+      - createdAt
+      - updatedAt
+    data_sources:
+      - iam_organization
+      - iam_organization_member
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    interface: OrganizationMemberRecord
+    fields:
+      - id
+      - organizationId
+      - userId
+      - displayName
+      - username
+      - email
+      - mobile
+      - memberKind
+      - status
+      - joinedAt
+      - createdAt
+    data_sources:
+      - iam_user
+      - iam_organization
+      - iam_organization_member
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    interface: UserRecord
+    fields:
+      - id
+      - username
+      - displayName
+      - email
+      - mobile
+      - status
+      - createdAt
+      - updatedAt
+    data_sources:
+      - iam_user
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    interface: DepartmentAssignmentRecord
+    fields:
+      - id
+      - departmentId
+      - membershipId
+      - userId
+      - role
+      - status
+      - isPrimary
+      - createdAt
+    data_sources:
+      - iam_user
+      - iam_organization_member
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    interface: PositionRecord
+    fields:
+      - id
+      - code
+      - name
+      - organizationId
+      - departmentId
+      - status
+      - rankLevel
+      - description
+      - createdAt
+      - updatedAt
+    data_sources:
+      - iam_organization
+      - iam_organization_member
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    interface: PositionAssignmentRecord
+    fields:
+      - id
+      - positionId
+      - membershipId
+      - userId
+      - status
+      - startedAt
+      - endedAt
+      - createdAt
+    data_sources:
+      - iam_user
+      - iam_organization_member
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    interface: RoleRecord
+    fields:
+      - id
+      - code
+      - name
+      - status
+      - description
+      - createdAt
+      - updatedAt
+    data_sources:
+      - iam_role
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    interface: RoleBindingRecord
+    fields:
+      - id
+      - roleId
+      - principalKind
+      - principalId
+      - organizationId
+      - departmentId
+      - scopeKind
+      - scopeId
+      - status
+      - createdAt
+    data_sources:
+      - iam_role
+      - iam_user_role
+      - iam_organization
+      - iam_organization_member
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    interface: PermissionRecord
+    fields:
+      - id
+      - code
+      - name
+      - resource
+      - action
+      - status
+      - description
+      - createdAt
+      - updatedAt
+    data_sources:
+      - iam_permission
+      - iam_role_permission
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    interface: OrganizationDirectoryData
+    fields:
+      - organizationTree
+      - organizationTree.id
+      - organizationTree.code
+      - organizationTree.name
+      - organizationTree.parentId
+      - organizationTree.status
+      - organizationTree.kind
+      - organizationTree.children
+      - users
+      - users.id
+      - users.username
+      - users.displayName
+      - users.email
+      - users.mobile
+      - users.status
+      - users.createdAt
+      - users.updatedAt
+      - organizations
+      - organizations.id
+      - organizations.code
+      - organizations.name
+      - organizations.organizationKind
+      - organizations.parentOrganizationId
+      - organizations.status
+      - organizations.ownerUserId
+      - organizations.memberCount
+      - organizations.departmentCount
+      - organizations.sortWeight
+      - organizations.createdAt
+      - organizations.updatedAt
+      - departmentTree
+      - departmentTree.id
+      - departmentTree.code
+      - departmentTree.name
+      - departmentTree.organizationId
+      - departmentTree.parentId
+      - departmentTree.status
+      - departmentTree.children
+      - departments
+      - departments.id
+      - departments.code
+      - departments.name
+      - departments.organizationId
+      - departments.parentDepartmentId
+      - departments.status
+      - departments.managerUserId
+      - departments.memberCount
+      - departments.sortWeight
+      - departments.createdAt
+      - departments.updatedAt
+      - memberships
+      - memberships.id
+      - memberships.organizationId
+      - memberships.userId
+      - memberships.displayName
+      - memberships.username
+      - memberships.email
+      - memberships.mobile
+      - memberships.memberKind
+      - memberships.status
+      - memberships.joinedAt
+      - memberships.createdAt
+      - departmentAssignments
+      - departmentAssignments.id
+      - departmentAssignments.departmentId
+      - departmentAssignments.membershipId
+      - departmentAssignments.userId
+      - departmentAssignments.role
+      - departmentAssignments.status
+      - departmentAssignments.isPrimary
+      - departmentAssignments.createdAt
+      - positions
+      - positions.id
+      - positions.code
+      - positions.name
+      - positions.organizationId
+      - positions.departmentId
+      - positions.status
+      - positions.rankLevel
+      - positions.description
+      - positions.createdAt
+      - positions.updatedAt
+      - positionAssignments
+      - positionAssignments.id
+      - positionAssignments.positionId
+      - positionAssignments.membershipId
+      - positionAssignments.userId
+      - positionAssignments.status
+      - positionAssignments.startedAt
+      - positionAssignments.endedAt
+      - positionAssignments.createdAt
+      - roles
+      - roles.id
+      - roles.code
+      - roles.name
+      - roles.status
+      - roles.description
+      - roles.createdAt
+      - roles.updatedAt
+      - roleBindings
+      - roleBindings.id
+      - roleBindings.roleId
+      - roleBindings.principalKind
+      - roleBindings.principalId
+      - roleBindings.organizationId
+      - roleBindings.departmentId
+      - roleBindings.scopeKind
+      - roleBindings.scopeId
+      - roleBindings.status
+      - roleBindings.createdAt
+      - permissions
+      - permissions.id
+      - permissions.code
+      - permissions.name
+      - permissions.resource
+      - permissions.action
+      - permissions.status
+      - permissions.description
+      - permissions.createdAt
+      - permissions.updatedAt
+    data_sources:
+      - iam_user
+      - iam_organization
+      - iam_organization_member
+      - iam_role
+      - iam_permission
+      - iam_role_permission
+      - iam_user_role
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    interface: DirectoryLoadParams
+    fields:
+      - pageSize
+      - q
+    data_sources:
+      - iam_user
+      - iam_organization
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    interface: OrganizationCommand
+    fields:
+      - code
+      - name
+      - organizationKind
+      - parentOrganizationId
+      - ownerUserId
+      - status
+      - sortWeight
+    data_sources:
+      - iam_organization
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    interface: DepartmentCommand
+    fields:
+      - organizationId
+      - parentDepartmentId
+      - code
+      - name
+      - managerUserId
+      - status
+      - sortWeight
+    data_sources:
+      - iam_organization
+      - iam_organization_member
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    interface: MembershipCommand
+    fields:
+      - organizationId
+      - userId
+      - displayName
+      - username
+      - email
+      - mobile
+      - memberKind
+      - status
+    data_sources:
+      - iam_user
+      - iam_organization
+      - iam_organization_member
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    interface: DepartmentAssignmentCommand
+    fields:
+      - departmentId
+      - membershipId
+      - userId
+      - role
+      - status
+      - isPrimary
+    data_sources:
+      - iam_user
+      - iam_organization_member
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    interface: PositionCommand
+    fields:
+      - organizationId
+      - departmentId
+      - code
+      - name
+      - rankLevel
+      - description
+      - status
+    data_sources:
+      - iam_organization
+      - iam_organization_member
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    interface: PositionAssignmentCommand
+    fields:
+      - positionId
+      - membershipId
+      - userId
+      - status
+      - startedAt
+      - endedAt
+    data_sources:
+      - iam_user
+      - iam_organization_member
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    interface: RoleCommand
+    fields:
+      - code
+      - name
+      - description
+      - status
+    data_sources:
+      - iam_role
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    interface: RoleBindingCommand
+    fields:
+      - roleId
+      - principalKind
+      - principalId
+      - organizationId
+      - departmentId
+      - scopeKind
+      - scopeId
+      - status
+    data_sources:
+      - iam_role
+      - iam_user_role
+      - iam_organization
+      - iam_organization_member
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    interface: PermissionCommand
+    fields:
+      - code
+      - name
+      - resource
+      - action
+      - description
+      - status
+    data_sources:
+      - iam_permission
   - route: /admin/prompts
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-prompts/src/promptService.ts
     interface: AdminPrompt
@@ -8140,7 +8594,7 @@ frontend_models:
       - iam_user
       - iam_user_role
   - route: /admin/app
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
     interface: AdminApp
     fields:
       - id
@@ -8175,7 +8629,7 @@ frontend_models:
       - studio_catalog_asset
       - studio_catalog_artifact
   - route: /admin/app
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
     interface: AdminAppCategory
     fields:
       - id
@@ -8192,7 +8646,7 @@ frontend_models:
     data_sources:
       - plus_category
   - route: /admin/app
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
     interface: AdminAppCategoryCreateInput
     fields:
       - name
@@ -8207,7 +8661,7 @@ frontend_models:
     data_sources:
       - plus_category
   - route: /admin/app
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
     interface: AdminAppCategoryUpdateInput
     fields:
       - name
@@ -8222,7 +8676,7 @@ frontend_models:
     data_sources:
       - plus_category
   - route: /admin/app
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
     interface: AdminAppListInput
     fields:
       - searchQuery
@@ -8238,7 +8692,7 @@ frontend_models:
       - studio_catalog_asset
       - studio_catalog_artifact
   - route: /admin/app
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
     interface: AdminAppPage
     fields:
       - items
@@ -8278,7 +8732,7 @@ frontend_models:
       - studio_catalog_asset
       - studio_catalog_artifact
   - route: /admin/app
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
     interface: AdminAppCreateInput
     fields:
       - userId
@@ -8308,7 +8762,7 @@ frontend_models:
       - studio_catalog_asset
       - studio_catalog_artifact
   - route: /admin/app
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
     interface: AdminAppUpdateInput
     fields:
       - userId
@@ -8336,7 +8790,7 @@ frontend_models:
       - studio_catalog_asset
       - studio_catalog_artifact
   - route: /admin/app
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
     interface: AdminAppTemplate
     fields:
       - id
@@ -8372,7 +8826,7 @@ frontend_models:
     data_sources:
       - studio_app_template
   - route: /admin/app
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
     interface: AdminAppTemplateCreateInput
     fields:
       - templateNo
@@ -8403,7 +8857,7 @@ frontend_models:
     data_sources:
       - studio_app_template
   - route: /admin/app
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
     interface: AdminAppTemplateUpdateInput
     fields:
       - templateName
@@ -8432,7 +8886,7 @@ frontend_models:
     data_sources:
       - studio_app_template
   - route: /admin/app
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
     interface: AdminAppTemplateListInput
     fields:
       - searchQuery
@@ -8445,7 +8899,7 @@ frontend_models:
     data_sources:
       - studio_app_template
   - route: /admin/app
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
     interface: AdminAppTemplatePage
     fields:
       - items
@@ -20117,6 +20571,52 @@ frontend_operations:
               createdAt: { type: string, maxLength: 64 }
               updatedAt: { type: string, maxLength: 64 }
   - route: /playground
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/playgroundService.ts
+    operation: runGeneration
+    operation_scope: app_shell
+    operation_id: playground.generations.run
+    kind: create
+    api_surface: app
+    api_method: POST
+    api_path: /app/v3/api/generations/images/text_to_image
+    sdk_domain: generations
+    openapi_exposed: false
+    summary: Run Playground asset generation through sdkwork-generations
+    description: Creates a modality-specific sdkwork-generations command and reads generated results through the generated generations app SDK facade.
+    read_sources:
+      - ai_model
+      - ai_model_capability
+      - ai_generation_job
+      - ai_generation_asset
+    write_tables:
+      - ai_generation_session
+      - ai_generation_job
+      - ai_generation_asset
+      - ai_usage_fact
+  - route: /playground
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/playgroundGenerationsService.ts
+    operation: runPlaygroundAssetGeneration
+    operation_scope: app_shell
+    operation_id: playground.generations.asset.run
+    kind: create
+    api_surface: app
+    api_method: POST
+    api_path: /app/v3/api/generations/images/text_to_image
+    sdk_domain: generations
+    openapi_exposed: false
+    summary: Run non-agent Playground asset generation
+    description: Uses an injected sdkwork-generations service facade to create image, video, music, voice, or sound effect commands and map returned results to Playground artifacts.
+    read_sources:
+      - ai_model
+      - ai_model_capability
+      - ai_generation_job
+      - ai_generation_asset
+    write_tables:
+      - ai_generation_session
+      - ai_generation_job
+      - ai_generation_asset
+      - ai_usage_fact
+  - route: /playground
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/appRuntimeApiOperations.ts
     operation: listGenerationHistory
     operation_id: generation.list
@@ -26538,6 +27038,7 @@ frontend_operations:
     operation_id: fulfillments.list
     kind: read
     api_surface: backend
+    openapi_exposed: false
     api_method: GET
     api_path: /backend/v3/api/fulfillments
     sdk_domain: commerce
@@ -26577,6 +27078,217 @@ frontend_operations:
         total: { type: integer, format: int64, minimum: 0 }
         page: { type: integer, format: int64, minimum: 1 }
         pageSize: { type: integer, format: int64, minimum: 1, maximum: 200 }
+  - route: /admin/orders
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
+    operation: backendFulfillmentCreate
+    operation_id: fulfillments.create
+    kind: create
+    api_surface: backend
+    openapi_exposed: false
+    api_method: POST
+    api_path: /backend/v3/api/fulfillments
+    sdk_domain: commerce
+    summary: Fulfillments Create
+    description: Creates a fulfillment order through the Commerce backend management API.
+    read_sources:
+      - commerce_order
+      - commerce_order_item
+      - commerce_product_sku
+    idempotency_required: true
+    write_tables:
+      - commerce_fulfillment_order
+      - commerce_fulfillment_item
+      - commerce_order_event
+      - ops_audit_log
+    request_schema:
+      name: CommerceOperationCommand
+      type: object
+      additionalProperties: true
+      properties:
+        orderId: { type: string, nullable: true, maxLength: 128 }
+        fulfillmentType: { type: string, nullable: true, maxLength: 64 }
+        carrierCode: { type: string, nullable: true, maxLength: 64 }
+        trackingNo: { type: string, nullable: true, maxLength: 128 }
+        status: { type: string, nullable: true, maxLength: 64 }
+        source: { type: string, nullable: true, maxLength: 64 }
+        note: { type: string, nullable: true, maxLength: 1024 }
+    response_schema:
+      name: CommerceOperationResponse
+      type: object
+      additionalProperties: true
+      properties:
+        id: { type: string, nullable: true, maxLength: 128 }
+        status: { type: string, nullable: true, maxLength: 64 }
+        success: { type: boolean, nullable: true }
+        message: { type: string, nullable: true, maxLength: 1024 }
+  - route: /admin/orders
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
+    operation: backendFulfillmentUpdate
+    operation_id: fulfillments.update
+    kind: update
+    api_surface: backend
+    openapi_exposed: false
+    api_method: PATCH
+    api_path: /backend/v3/api/fulfillments/{fulfillmentId}
+    sdk_domain: commerce
+    summary: Fulfillments Update
+    description: Updates fulfillment lifecycle state through the Commerce backend management API.
+    read_sources:
+      - commerce_fulfillment_order
+      - commerce_fulfillment_item
+      - commerce_order
+    idempotency_required: true
+    write_tables:
+      - commerce_fulfillment_order
+      - commerce_order_event
+      - ops_audit_log
+    request_schema:
+      name: CommerceOperationCommand
+      type: object
+      additionalProperties: true
+      properties:
+        orderId: { type: string, nullable: true, maxLength: 128 }
+        fulfillmentType: { type: string, nullable: true, maxLength: 64 }
+        carrierCode: { type: string, nullable: true, maxLength: 64 }
+        trackingNo: { type: string, nullable: true, maxLength: 128 }
+        status: { type: string, nullable: true, maxLength: 64 }
+        source: { type: string, nullable: true, maxLength: 64 }
+        note: { type: string, nullable: true, maxLength: 1024 }
+    response_schema:
+      name: CommerceOperationResponse
+      type: object
+      additionalProperties: true
+      properties:
+        id: { type: string, nullable: true, maxLength: 128 }
+        status: { type: string, nullable: true, maxLength: 64 }
+        success: { type: boolean, nullable: true }
+        message: { type: string, nullable: true, maxLength: 1024 }
+  - route: /admin/orders
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
+    operation: backendFulfillmentShipmentCreate
+    operation_id: fulfillments.shipments.create
+    kind: create
+    api_surface: backend
+    openapi_exposed: false
+    api_method: POST
+    api_path: /backend/v3/api/fulfillments/{fulfillmentId}/shipments
+    sdk_domain: commerce
+    summary: Fulfillments Shipments Create
+    description: Creates a physical shipment record under a fulfillment order.
+    read_sources:
+      - commerce_fulfillment_order
+      - commerce_order
+    idempotency_required: true
+    write_tables:
+      - commerce_shipment
+      - commerce_order_event
+      - ops_audit_log
+    request_schema:
+      name: CommerceOperationCommand
+      type: object
+      additionalProperties: true
+      properties:
+        orderId: { type: string, nullable: true, maxLength: 128 }
+        fulfillmentType: { type: string, nullable: true, maxLength: 64 }
+        carrierCode: { type: string, nullable: true, maxLength: 64 }
+        trackingNo: { type: string, nullable: true, maxLength: 128 }
+        status: { type: string, nullable: true, maxLength: 64 }
+        source: { type: string, nullable: true, maxLength: 64 }
+        note: { type: string, nullable: true, maxLength: 1024 }
+    response_schema:
+      name: CommerceOperationResponse
+      type: object
+      additionalProperties: true
+      properties:
+        id: { type: string, nullable: true, maxLength: 128 }
+        status: { type: string, nullable: true, maxLength: 64 }
+        success: { type: boolean, nullable: true }
+        message: { type: string, nullable: true, maxLength: 1024 }
+  - route: /admin/orders
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
+    operation: backendFulfillmentShipmentUpdate
+    operation_id: fulfillments.shipments.update
+    kind: update
+    api_surface: backend
+    openapi_exposed: false
+    api_method: PATCH
+    api_path: /backend/v3/api/fulfillments/{fulfillmentId}/shipments/{shipmentId}
+    sdk_domain: commerce
+    summary: Fulfillments Shipments Update
+    description: Updates shipment carrier, tracking number, or lifecycle status.
+    read_sources:
+      - commerce_fulfillment_order
+      - commerce_shipment
+      - commerce_order
+    idempotency_required: true
+    write_tables:
+      - commerce_shipment
+      - commerce_order_event
+      - ops_audit_log
+    request_schema:
+      name: CommerceOperationCommand
+      type: object
+      additionalProperties: true
+      properties:
+        orderId: { type: string, nullable: true, maxLength: 128 }
+        fulfillmentType: { type: string, nullable: true, maxLength: 64 }
+        carrierCode: { type: string, nullable: true, maxLength: 64 }
+        trackingNo: { type: string, nullable: true, maxLength: 128 }
+        status: { type: string, nullable: true, maxLength: 64 }
+        source: { type: string, nullable: true, maxLength: 64 }
+        note: { type: string, nullable: true, maxLength: 1024 }
+    response_schema:
+      name: CommerceOperationResponse
+      type: object
+      additionalProperties: true
+      properties:
+        id: { type: string, nullable: true, maxLength: 128 }
+        status: { type: string, nullable: true, maxLength: 64 }
+        success: { type: boolean, nullable: true }
+        message: { type: string, nullable: true, maxLength: 1024 }
+  - route: /admin/orders
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
+    operation: backendFulfillmentTrackingEventCreate
+    operation_id: fulfillments.trackingEvents.create
+    kind: create
+    api_surface: backend
+    openapi_exposed: false
+    api_method: POST
+    api_path: /backend/v3/api/fulfillments/{fulfillmentId}/shipments/{shipmentId}/tracking_events
+    sdk_domain: commerce
+    summary: Fulfillments Tracking Events Create
+    description: Appends a shipment tracking event through the Commerce backend management API.
+    read_sources:
+      - commerce_fulfillment_order
+      - commerce_shipment
+      - commerce_order
+    idempotency_required: true
+    write_tables:
+      - commerce_shipment_tracking_event
+      - commerce_shipment
+      - commerce_order_event
+      - ops_audit_log
+    request_schema:
+      name: CommerceOperationCommand
+      type: object
+      additionalProperties: true
+      properties:
+        orderId: { type: string, nullable: true, maxLength: 128 }
+        fulfillmentType: { type: string, nullable: true, maxLength: 64 }
+        carrierCode: { type: string, nullable: true, maxLength: 64 }
+        trackingNo: { type: string, nullable: true, maxLength: 128 }
+        status: { type: string, nullable: true, maxLength: 64 }
+        source: { type: string, nullable: true, maxLength: 64 }
+        note: { type: string, nullable: true, maxLength: 1024 }
+    response_schema:
+      name: CommerceOperationResponse
+      type: object
+      additionalProperties: true
+      properties:
+        id: { type: string, nullable: true, maxLength: 128 }
+        status: { type: string, nullable: true, maxLength: 64 }
+        success: { type: boolean, nullable: true }
+        message: { type: string, nullable: true, maxLength: 1024 }
   - route: /admin/inventory
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-inventory/src/inventoryService.ts
     operation: listInventoryStocks
@@ -27035,7 +27747,7 @@ frontend_operations:
     operation_id: memberships.plans.update
     kind: update
     api_surface: backend
-    api_method: PUT
+    api_method: PATCH
     api_path: /backend/v3/api/memberships/plans/{planId}
     sdk_domain: commerce
     summary: Memberships Plans Update
@@ -27290,7 +28002,7 @@ frontend_operations:
     operation_id: memberships.packages.update
     kind: update
     api_surface: backend
-    api_method: PUT
+    api_method: PATCH
     api_path: /backend/v3/api/memberships/packages/{packageId}
     sdk_domain: commerce
     summary: Memberships Packages Update
@@ -27456,7 +28168,7 @@ frontend_operations:
     operation_id: memberships.packageGroups.update
     kind: update
     api_surface: backend
-    api_method: PUT
+    api_method: PATCH
     api_path: /backend/v3/api/memberships/package_groups/{packageGroupId}
     sdk_domain: commerce
     summary: Memberships Package Groups Update
@@ -27579,14 +28291,14 @@ frontend_operations:
   - route: /admin/memberships
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts
     operation: backendMembershipsMembersStatusUpdate
-    operation_id: memberships.members.status.update
+    operation_id: memberships.members.update
     kind: update
     api_surface: backend
     api_method: PATCH
-    api_path: /backend/v3/api/memberships/members/{membershipId}/status
+    api_path: /backend/v3/api/memberships/members/{membershipId}
     sdk_domain: commerce
-    summary: Memberships Members Status Update
-    description: Standard appbase commerce API for memberships.members.status.update; no legacy billing compatibility route is exposed.
+    summary: Memberships Members Update
+    description: Standard appbase commerce API for memberships.members.update; no legacy billing compatibility route is exposed.
     read_sources:
       - commerce_membership
       - commerce_membership_plan
@@ -28086,14 +28798,15 @@ frontend_operations:
   - route: /admin/orders
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
     operation: backendOrdersList
-    operation_id: orders.list
+    operation_id: orders.management.list
     kind: read
     api_surface: backend
+    openapi_exposed: false
     api_method: GET
-    api_path: /backend/v3/api/orders
+    api_path: /backend/v3/api/orders/management
     sdk_domain: commerce
-    summary: Orders List
-    description: Standard appbase commerce API for orders.list; no legacy billing compatibility route is exposed.
+    summary: Orders Management List
+    description: Standard appbase commerce API for orders.management.list; no legacy billing compatibility route is exposed.
     read_sources:
       - commerce_order
       - commerce_order_item
@@ -28112,6 +28825,12 @@ frontend_operations:
         schema: { type: integer, format: int64, minimum: 1, maximum: 200 }
       - name: status
         schema: { type: string, maxLength: 32 }
+      - name: cursor
+        schema: { type: string, maxLength: 256 }
+      - name: sort
+        schema: { type: string, maxLength: 128 }
+      - name: q
+        schema: { type: string, maxLength: 256 }
     response_schema:
       name: CommerceStandardCollectionResponse
       type: object
@@ -28135,14 +28854,15 @@ frontend_operations:
   - route: /admin/orders
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
     operation: backendOrdersRetrieve
-    operation_id: orders.retrieve
+    operation_id: orders.management.retrieve
     kind: read
     api_surface: backend
+    openapi_exposed: false
     api_method: GET
-    api_path: /backend/v3/api/orders/{orderId}
+    api_path: /backend/v3/api/orders/management/{orderId}
     sdk_domain: commerce
-    summary: Orders Retrieve
-    description: Standard appbase commerce API for orders.retrieve; no legacy billing compatibility route is exposed.
+    summary: Orders Management Retrieve
+    description: Standard appbase commerce API for orders.management.retrieve; no legacy billing compatibility route is exposed.
     read_sources:
       - commerce_order
       - commerce_order_item
@@ -28172,10 +28892,90 @@ frontend_operations:
             updatedAt: { type: string, nullable: true, maxLength: 64 }
   - route: /admin/orders
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
+    operation: backendOrdersManagementCancel
+    operation_id: orders.management.cancel
+    kind: action
+    api_surface: backend
+    openapi_exposed: false
+    api_method: POST
+    api_path: /backend/v3/api/orders/management/{orderId}/cancel
+    sdk_domain: commerce
+    summary: Orders Management Cancel
+    description: Cancels an unpaid pending order through the Commerce backend management API.
+    read_sources:
+      - commerce_order
+      - commerce_order_item
+      - commerce_payment_intent
+      - commerce_payment_attempt
+    idempotency_required: true
+    write_tables:
+      - commerce_order
+      - commerce_order_cancellation
+      - commerce_order_event
+      - ops_audit_log
+    request_schema:
+      name: CommerceOperationCommand
+      type: object
+      additionalProperties: true
+      properties:
+        reason: { type: string, nullable: true, maxLength: 256 }
+        source: { type: string, nullable: true, maxLength: 64 }
+        note: { type: string, nullable: true, maxLength: 1024 }
+    response_schema:
+      name: CommerceOperationResponse
+      type: object
+      additionalProperties: true
+      properties:
+        id: { type: string, nullable: true, maxLength: 128 }
+        status: { type: string, nullable: true, maxLength: 64 }
+        success: { type: boolean, nullable: true }
+        message: { type: string, nullable: true, maxLength: 1024 }
+  - route: /admin/orders
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
+    operation: backendOrdersManagementClose
+    operation_id: orders.management.close
+    kind: action
+    api_surface: backend
+    openapi_exposed: false
+    api_method: POST
+    api_path: /backend/v3/api/orders/management/{orderId}/close
+    sdk_domain: commerce
+    summary: Orders Management Close
+    description: Closes an open unpaid order through the Commerce backend management API.
+    read_sources:
+      - commerce_order
+      - commerce_order_item
+      - commerce_payment_intent
+      - commerce_payment_attempt
+    idempotency_required: true
+    write_tables:
+      - commerce_order
+      - commerce_order_event
+      - ops_audit_log
+    request_schema:
+      name: CommerceOperationCommand
+      type: object
+      additionalProperties: true
+      properties:
+        reason: { type: string, nullable: true, maxLength: 256 }
+        source: { type: string, nullable: true, maxLength: 64 }
+        note: { type: string, nullable: true, maxLength: 1024 }
+    response_schema:
+      name: CommerceOperationResponse
+      type: object
+      additionalProperties: true
+      properties:
+        id: { type: string, nullable: true, maxLength: 128 }
+        status: { type: string, nullable: true, maxLength: 64 }
+        success: { type: boolean, nullable: true }
+        message: { type: string, nullable: true, maxLength: 1024 }
+  - route: /admin/orders
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
     operation: backendOrdersEventsList
     operation_id: orders.events.list
     kind: read
     api_surface: backend
+    openapi_exposed: false
     api_method: GET
     api_path: /backend/v3/api/orders/{orderId}/events
     sdk_domain: commerce
@@ -29554,14 +30354,15 @@ frontend_operations:
   - route: /admin/orders
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
     operation: backendRefundsList
-    operation_id: refunds.list
+    operation_id: refunds.management.list
     kind: read
     api_surface: backend
+    openapi_exposed: false
     api_method: GET
-    api_path: /backend/v3/api/refunds
+    api_path: /backend/v3/api/refunds/management
     sdk_domain: commerce
-    summary: Refunds List
-    description: Standard appbase commerce API for refunds.list; no legacy billing compatibility route is exposed.
+    summary: Refunds Management List
+    description: Standard appbase commerce API for refunds.management.list; no legacy billing compatibility route is exposed.
     read_sources:
       - commerce_refund
       - commerce_refund_item
@@ -29576,6 +30377,12 @@ frontend_operations:
         schema: { type: integer, format: int64, minimum: 1, maximum: 200 }
       - name: status
         schema: { type: string, maxLength: 32 }
+      - name: cursor
+        schema: { type: string, maxLength: 256 }
+      - name: sort
+        schema: { type: string, maxLength: 128 }
+      - name: q
+        schema: { type: string, maxLength: 256 }
     response_schema:
       name: CommerceStandardCollectionResponse
       type: object
@@ -29599,14 +30406,15 @@ frontend_operations:
   - route: /admin/orders
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
     operation: backendRefundsRetrieve
-    operation_id: refunds.retrieve
+    operation_id: refunds.management.retrieve
     kind: read
     api_surface: backend
+    openapi_exposed: false
     api_method: GET
-    api_path: /backend/v3/api/refunds/{refundId}
+    api_path: /backend/v3/api/refunds/management/{refundId}
     sdk_domain: commerce
-    summary: Refunds Retrieve
-    description: Standard appbase commerce API for refunds.retrieve; no legacy billing compatibility route is exposed.
+    summary: Refunds Management Retrieve
+    description: Standard appbase commerce API for refunds.management.retrieve; no legacy billing compatibility route is exposed.
     read_sources:
       - commerce_refund
       - commerce_refund_item
@@ -29630,6 +30438,88 @@ frontend_operations:
             status: { type: string, nullable: true, maxLength: 64 }
             createdAt: { type: string, nullable: true, maxLength: 64 }
             updatedAt: { type: string, nullable: true, maxLength: 64 }
+  - route: /admin/orders
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
+    operation: backendRefundApprovalCreate
+    operation_id: refunds.approvals.create
+    kind: action
+    api_surface: backend
+    openapi_exposed: false
+    api_method: POST
+    api_path: /backend/v3/api/refunds/{refundId}/approvals
+    sdk_domain: commerce
+    summary: Refunds Approvals Create
+    description: Approves or rejects a refund request through the Commerce backend management API.
+    read_sources:
+      - commerce_refund
+      - commerce_refund_item
+      - commerce_order
+      - commerce_payment_attempt
+    idempotency_required: true
+    write_tables:
+      - commerce_refund
+      - commerce_refund_attempt
+      - commerce_order_event
+      - ops_audit_log
+    request_schema:
+      name: CommerceOperationCommand
+      type: object
+      additionalProperties: true
+      properties:
+        action: { type: string, nullable: true, enum: [approve, reject] }
+        reason: { type: string, nullable: true, maxLength: 256 }
+        source: { type: string, nullable: true, maxLength: 64 }
+        note: { type: string, nullable: true, maxLength: 1024 }
+    response_schema:
+      name: CommerceOperationResponse
+      type: object
+      additionalProperties: true
+      properties:
+        id: { type: string, nullable: true, maxLength: 128 }
+        status: { type: string, nullable: true, maxLength: 64 }
+        success: { type: boolean, nullable: true }
+        message: { type: string, nullable: true, maxLength: 1024 }
+  - route: /admin/orders
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
+    operation: backendRefundAttemptCreate
+    operation_id: refunds.attempts.create
+    kind: create
+    api_surface: backend
+    openapi_exposed: false
+    api_method: POST
+    api_path: /backend/v3/api/refunds/{refundId}/attempts
+    sdk_domain: commerce
+    summary: Refunds Attempts Create
+    description: Starts a provider refund attempt for an approved refund request.
+    read_sources:
+      - commerce_refund
+      - commerce_refund_item
+      - commerce_order
+      - commerce_payment_attempt
+    idempotency_required: true
+    write_tables:
+      - commerce_refund_attempt
+      - commerce_refund
+      - commerce_order_event
+      - ops_audit_log
+    request_schema:
+      name: CommerceOperationCommand
+      type: object
+      additionalProperties: true
+      properties:
+        action: { type: string, nullable: true, enum: [approve, reject] }
+        reason: { type: string, nullable: true, maxLength: 256 }
+        source: { type: string, nullable: true, maxLength: 64 }
+        note: { type: string, nullable: true, maxLength: 1024 }
+    response_schema:
+      name: CommerceOperationResponse
+      type: object
+      additionalProperties: true
+      properties:
+        id: { type: string, nullable: true, maxLength: 128 }
+        status: { type: string, nullable: true, maxLength: 64 }
+        success: { type: boolean, nullable: true }
+        message: { type: string, nullable: true, maxLength: 1024 }
   - route: /admin/finance
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-finance/src/financeService.ts
     operation: backendCommerceReportsPaymentReconciliationRetrieve
@@ -29766,6 +30656,7 @@ frontend_operations:
     operation_id: shipments.list
     kind: read
     api_surface: backend
+    openapi_exposed: false
     api_method: GET
     api_path: /backend/v3/api/shipments
     sdk_domain: commerce
@@ -29805,10 +30696,44 @@ frontend_operations:
         pageSize: { type: integer, format: int64, minimum: 1, maximum: 200 }
   - route: /admin/orders
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
+    operation: backendShipmentsRetrieve
+    operation_id: shipments.retrieve
+    kind: read
+    api_surface: backend
+    openapi_exposed: false
+    api_method: GET
+    api_path: /backend/v3/api/shipments/{shipmentId}
+    sdk_domain: commerce
+    summary: Shipments Retrieve
+    description: Standard appbase commerce API for shipments.retrieve; no legacy billing compatibility route is exposed.
+    read_sources:
+      - commerce_shipment
+      - commerce_shipment_tracking_event
+      - commerce_fulfillment_order
+      - commerce_order
+    query_parameters: []
+    response_schema:
+      name: CommerceStandardResourceResponse
+      type: object
+      additionalProperties: false
+      required: [item]
+      properties:
+        item:
+          type: object
+          additionalProperties: false
+          required: [id]
+          properties:
+            id: { type: string, minLength: 1, maxLength: 128 }
+            status: { type: string, nullable: true, maxLength: 64 }
+            createdAt: { type: string, nullable: true, maxLength: 64 }
+            updatedAt: { type: string, nullable: true, maxLength: 64 }
+  - route: /admin/orders
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
     operation: backendShipmentsTrackingEventsList
     operation_id: shipments.trackingEvents.list
     kind: read
     api_surface: backend
+    openapi_exposed: false
     api_method: GET
     api_path: /backend/v3/api/shipments/{shipmentId}/tracking_events
     sdk_domain: commerce
@@ -33111,6 +34036,477 @@ frontend_operations:
             used: { type: string, maxLength: 64 }
             status: { type: string, maxLength: 64 }
       properties: {}
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    operation: loadDirectory
+    operation_scope: app_shell
+    operation_id: admin.organization.directory.load
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/iam/users
+    sdk_domain: iam
+    openapi_exposed: false
+    read_sources:
+      - iam_user
+      - iam_organization
+      - iam_organization_member
+      - iam_role
+      - iam_permission
+      - iam_role_permission
+      - iam_user_role
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    operation: createOrganization
+    operation_id: organizations.create
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/iam/organizations
+    sdk_domain: iam
+    openapi_exposed: false
+    read_sources:
+      - iam_organization
+    write_tables:
+      - iam_organization
+      - ops_audit_log
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    operation: updateOrganization
+    operation_id: organizations.update
+    kind: update
+    api_surface: backend
+    api_method: PATCH
+    api_path: /backend/v3/api/iam/organizations/{organizationId}
+    sdk_domain: iam
+    openapi_exposed: false
+    read_sources:
+      - iam_organization
+    write_tables:
+      - iam_organization
+      - ops_audit_log
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    operation: deleteOrganization
+    operation_id: organizations.delete
+    kind: delete
+    api_surface: backend
+    api_method: DELETE
+    api_path: /backend/v3/api/iam/organizations/{organizationId}
+    sdk_domain: iam
+    openapi_exposed: false
+    read_sources:
+      - iam_organization
+    write_tables:
+      - iam_organization
+      - ops_audit_log
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    operation: createDepartment
+    operation_id: departments.create
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/iam/departments
+    sdk_domain: iam
+    openapi_exposed: false
+    read_sources:
+      - iam_organization
+    write_tables:
+      - iam_organization
+      - ops_audit_log
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    operation: updateDepartment
+    operation_id: departments.update
+    kind: update
+    api_surface: backend
+    api_method: PATCH
+    api_path: /backend/v3/api/iam/departments/{departmentId}
+    sdk_domain: iam
+    openapi_exposed: false
+    read_sources:
+      - iam_organization
+    write_tables:
+      - iam_organization
+      - ops_audit_log
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    operation: deleteDepartment
+    operation_id: departments.delete
+    kind: delete
+    api_surface: backend
+    api_method: DELETE
+    api_path: /backend/v3/api/iam/departments/{departmentId}
+    sdk_domain: iam
+    openapi_exposed: false
+    read_sources:
+      - iam_organization
+    write_tables:
+      - iam_organization
+      - ops_audit_log
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    operation: listDepartments
+    operation_id: departments.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/iam/departments
+    sdk_domain: iam
+    openapi_exposed: false
+    read_sources:
+      - iam_organization
+      - iam_organization_member
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    operation: createMembership
+    operation_id: organizationMemberships.create
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/iam/organization_memberships
+    sdk_domain: iam
+    openapi_exposed: false
+    read_sources:
+      - iam_user
+      - iam_organization
+    write_tables:
+      - iam_organization_member
+      - ops_audit_log
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    operation: updateMembership
+    operation_id: organizationMemberships.update
+    kind: update
+    api_surface: backend
+    api_method: PATCH
+    api_path: /backend/v3/api/iam/organization_memberships/{membershipId}
+    sdk_domain: iam
+    openapi_exposed: false
+    read_sources:
+      - iam_organization_member
+    write_tables:
+      - iam_organization_member
+      - ops_audit_log
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    operation: deactivateMembership
+    operation_id: organizationMemberships.update
+    kind: update
+    api_surface: backend
+    api_method: PATCH
+    api_path: /backend/v3/api/iam/organization_memberships/{membershipId}
+    sdk_domain: iam
+    openapi_exposed: false
+    read_sources:
+      - iam_organization_member
+    write_tables:
+      - iam_organization_member
+      - ops_audit_log
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    operation: createDepartmentAssignment
+    operation_id: departmentAssignments.create
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/iam/department_assignments
+    sdk_domain: iam
+    openapi_exposed: false
+    read_sources:
+      - iam_organization
+      - iam_organization_member
+    write_tables:
+      - iam_organization_member
+      - ops_audit_log
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    operation: updateDepartmentAssignment
+    operation_id: departmentAssignments.update
+    kind: update
+    api_surface: backend
+    api_method: PATCH
+    api_path: /backend/v3/api/iam/department_assignments/{assignmentId}
+    sdk_domain: iam
+    openapi_exposed: false
+    read_sources:
+      - iam_organization_member
+    write_tables:
+      - iam_organization_member
+      - ops_audit_log
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    operation: deactivateDepartmentAssignment
+    operation_id: departmentAssignments.update
+    kind: update
+    api_surface: backend
+    api_method: PATCH
+    api_path: /backend/v3/api/iam/department_assignments/{assignmentId}
+    sdk_domain: iam
+    openapi_exposed: false
+    read_sources:
+      - iam_organization_member
+    write_tables:
+      - iam_organization_member
+      - ops_audit_log
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    operation: createPosition
+    operation_id: positions.create
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/iam/positions
+    sdk_domain: iam
+    openapi_exposed: false
+    read_sources:
+      - iam_organization
+    write_tables:
+      - iam_organization
+      - ops_audit_log
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    operation: updatePosition
+    operation_id: positions.update
+    kind: update
+    api_surface: backend
+    api_method: PATCH
+    api_path: /backend/v3/api/iam/positions/{positionId}
+    sdk_domain: iam
+    openapi_exposed: false
+    read_sources:
+      - iam_organization
+    write_tables:
+      - iam_organization
+      - ops_audit_log
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    operation: deletePosition
+    operation_id: positions.delete
+    kind: delete
+    api_surface: backend
+    api_method: DELETE
+    api_path: /backend/v3/api/iam/positions/{positionId}
+    sdk_domain: iam
+    openapi_exposed: false
+    read_sources:
+      - iam_organization
+    write_tables:
+      - iam_organization
+      - ops_audit_log
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    operation: createPositionAssignment
+    operation_id: positionAssignments.create
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/iam/position_assignments
+    sdk_domain: iam
+    openapi_exposed: false
+    read_sources:
+      - iam_organization
+      - iam_organization_member
+    write_tables:
+      - iam_organization_member
+      - ops_audit_log
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    operation: updatePositionAssignment
+    operation_id: positionAssignments.update
+    kind: update
+    api_surface: backend
+    api_method: PATCH
+    api_path: /backend/v3/api/iam/position_assignments/{assignmentId}
+    sdk_domain: iam
+    openapi_exposed: false
+    read_sources:
+      - iam_organization_member
+    write_tables:
+      - iam_organization_member
+      - ops_audit_log
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    operation: deactivatePositionAssignment
+    operation_id: positionAssignments.update
+    kind: update
+    api_surface: backend
+    api_method: PATCH
+    api_path: /backend/v3/api/iam/position_assignments/{assignmentId}
+    sdk_domain: iam
+    openapi_exposed: false
+    read_sources:
+      - iam_organization_member
+    write_tables:
+      - iam_organization_member
+      - ops_audit_log
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    operation: createRole
+    operation_id: roles.create
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/iam/roles
+    sdk_domain: iam
+    openapi_exposed: false
+    read_sources:
+      - iam_role
+    write_tables:
+      - iam_role
+      - ops_audit_log
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    operation: updateRole
+    operation_id: roles.update
+    kind: update
+    api_surface: backend
+    api_method: PATCH
+    api_path: /backend/v3/api/iam/roles/{roleId}
+    sdk_domain: iam
+    openapi_exposed: false
+    read_sources:
+      - iam_role
+    write_tables:
+      - iam_role
+      - ops_audit_log
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    operation: deleteRole
+    operation_id: roles.delete
+    kind: delete
+    api_surface: backend
+    api_method: DELETE
+    api_path: /backend/v3/api/iam/roles/{roleId}
+    sdk_domain: iam
+    openapi_exposed: false
+    read_sources:
+      - iam_role
+    write_tables:
+      - iam_role
+      - ops_audit_log
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    operation: bindRole
+    operation_id: roleBindings.create
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/iam/role_bindings
+    sdk_domain: iam
+    openapi_exposed: false
+    read_sources:
+      - iam_role
+      - iam_organization_member
+    write_tables:
+      - iam_user_role
+      - ops_audit_log
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    operation: deleteRoleBinding
+    operation_id: roleBindings.delete
+    kind: delete
+    api_surface: backend
+    api_method: DELETE
+    api_path: /backend/v3/api/iam/role_bindings/{roleBindingId}
+    sdk_domain: iam
+    openapi_exposed: false
+    read_sources:
+      - iam_user_role
+    write_tables:
+      - iam_user_role
+      - ops_audit_log
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    operation: createPermission
+    operation_id: permissions.create
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/iam/permissions
+    sdk_domain: iam
+    openapi_exposed: false
+    read_sources:
+      - iam_permission
+    write_tables:
+      - iam_permission
+      - ops_audit_log
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    operation: updatePermission
+    operation_id: permissions.update
+    kind: update
+    api_surface: backend
+    api_method: PATCH
+    api_path: /backend/v3/api/iam/permissions/{permissionId}
+    sdk_domain: iam
+    openapi_exposed: false
+    read_sources:
+      - iam_permission
+    write_tables:
+      - iam_permission
+      - ops_audit_log
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    operation: deletePermission
+    operation_id: permissions.delete
+    kind: delete
+    api_surface: backend
+    api_method: DELETE
+    api_path: /backend/v3/api/iam/permissions/{permissionId}
+    sdk_domain: iam
+    openapi_exposed: false
+    read_sources:
+      - iam_permission
+    write_tables:
+      - iam_permission
+      - ops_audit_log
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    operation: listRolePermissions
+    operation_id: roles.permissions.list
+    kind: read
+    api_surface: backend
+    api_method: GET
+    api_path: /backend/v3/api/iam/roles/{roleId}/permissions
+    sdk_domain: iam
+    openapi_exposed: false
+    read_sources:
+      - iam_role
+      - iam_permission
+      - iam_role_permission
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    operation: grantRolePermission
+    operation_id: roles.permissions.create
+    kind: create
+    api_surface: backend
+    api_method: POST
+    api_path: /backend/v3/api/iam/roles/{roleId}/permissions
+    sdk_domain: iam
+    openapi_exposed: false
+    read_sources:
+      - iam_role
+      - iam_permission
+    write_tables:
+      - iam_role_permission
+      - ops_audit_log
+  - route: /admin/organization
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+    operation: revokeRolePermission
+    operation_id: roles.permissions.delete
+    kind: delete
+    api_surface: backend
+    api_method: DELETE
+    api_path: /backend/v3/api/iam/roles/{roleId}/permissions/{permissionId}
+    sdk_domain: iam
+    openapi_exposed: false
+    read_sources:
+      - iam_role_permission
+    write_tables:
+      - iam_role_permission
+      - ops_audit_log
   - route: /admin/channel
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-channel/src/channelService.ts
     operation: fetchChannels
@@ -36701,7 +38097,7 @@ frontend_operations:
             createdAt: { type: string, maxLength: 64 }
             updatedAt: { type: string, maxLength: 64 }
   - route: /admin/app
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
     operation: fetchApps
     kind: read
     api_surface: backend
@@ -36800,7 +38196,7 @@ frontend_operations:
         pageSize: { type: integer, format: int64, minimum: 1, maximum: 200 }
         hasNextPage: { type: boolean }
   - route: /admin/app
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
     operation: fetchAppCategories
     operation_id: apps.categories.list
     kind: read
@@ -36836,7 +38232,7 @@ frontend_operations:
               type: { type: integer, format: int32, enum: [999999] }
           description: App store category snapshots returned by the backend.
   - route: /admin/app
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
     operation: createAppCategory
     operation_id: apps.categories.create
     kind: create
@@ -36898,7 +38294,7 @@ frontend_operations:
             type: { type: integer, format: int32, enum: [999999] }
           description: Persisted app store category snapshot returned by the backend.
   - route: /admin/app
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
     operation: updateAppCategory
     operation_id: apps.categories.update
     kind: update
@@ -36963,7 +38359,7 @@ frontend_operations:
             type: { type: integer, format: int32, enum: [999999] }
           description: Updated app store category snapshot returned by the backend.
   - route: /admin/app
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
     operation: deleteAppCategory
     operation_id: apps.categories.delete
     kind: delete
@@ -36984,7 +38380,7 @@ frontend_operations:
           type: boolean
           description: Whether the app store category was deleted.
   - route: /admin/app
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
     operation: fetchAppTemplates
     operation_id: apps.templates.list
     kind: read
@@ -37081,7 +38477,7 @@ frontend_operations:
         pageSize: { type: integer, format: int64, minimum: 1, maximum: 200 }
         hasNextPage: { type: boolean }
   - route: /admin/app
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
     operation: createAppTemplate
     operation_id: apps.templates.create
     kind: create
@@ -37206,7 +38602,7 @@ frontend_operations:
             updatedAt: { type: string, minLength: 1, maxLength: 64 }
           description: Persisted app template snapshot returned by the backend.
   - route: /admin/app
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
     operation: fetchAppTemplate
     operation_id: apps.templates.retrieve
     kind: read
@@ -37280,7 +38676,7 @@ frontend_operations:
             updatedAt: { type: string, minLength: 1, maxLength: 64 }
           description: Persisted app template snapshot returned by the backend.
   - route: /admin/app
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
     operation: updateAppTemplate
     operation_id: apps.templates.update
     kind: update
@@ -37405,7 +38801,7 @@ frontend_operations:
             updatedAt: { type: string, minLength: 1, maxLength: 64 }
           description: Persisted app template snapshot returned by the backend.
   - route: /admin/app
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
     operation: deleteAppTemplate
     operation_id: apps.templates.delete
     kind: delete
@@ -37432,7 +38828,7 @@ frontend_operations:
           type: boolean
           description: Whether the app template was soft-deleted and detached from catalog projections.
   - route: /admin/app
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
     operation: publishAppTemplate
     operation_id: apps.templates.publish
     kind: action
@@ -37510,7 +38906,7 @@ frontend_operations:
             updatedAt: { type: string, minLength: 1, maxLength: 64 }
           description: Persisted app template snapshot returned by the backend.
   - route: /admin/app
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
     operation: offlineAppTemplate
     operation_id: apps.templates.unpublish
     kind: action
@@ -37588,7 +38984,7 @@ frontend_operations:
             updatedAt: { type: string, minLength: 1, maxLength: 64 }
           description: Persisted app template snapshot returned by the backend.
   - route: /admin/app
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
     operation: createApp
     kind: create
     api_surface: backend
@@ -37722,7 +39118,7 @@ frontend_operations:
             updatedAt: { type: string, minLength: 1, maxLength: 64 }
           description: Persisted PlusApp snapshot returned by the backend.
   - route: /admin/app
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
     operation: fetchApp
     kind: read
     api_surface: backend
@@ -37800,7 +39196,7 @@ frontend_operations:
             updatedAt: { type: string, minLength: 1, maxLength: 64 }
           description: PlusApp detail snapshot returned by the backend.
   - route: /admin/app
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
     operation: updateApp
     kind: update
     api_surface: backend
@@ -37933,7 +39329,7 @@ frontend_operations:
             updatedAt: { type: string, minLength: 1, maxLength: 64 }
           description: Updated PlusApp snapshot returned by the backend.
   - route: /admin/app
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
     operation: deleteApp
     kind: delete
     api_surface: backend
@@ -37958,7 +39354,7 @@ frontend_operations:
           type: boolean
           description: Whether the PlusApp row and attached catalog records were deleted.
   - route: /admin/app
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
     operation: enableApp
     kind: action
     api_surface: backend
@@ -38037,7 +39433,7 @@ frontend_operations:
             updatedAt: { type: string, minLength: 1, maxLength: 64 }
           description: Enabled PlusApp snapshot returned by the backend.
   - route: /admin/app
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
     operation: disableApp
     kind: action
     api_surface: backend
@@ -38116,7 +39512,7 @@ frontend_operations:
             updatedAt: { type: string, minLength: 1, maxLength: 64 }
           description: Disabled PlusApp snapshot returned by the backend.
   - route: /admin/app
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
     operation: publishApp
     kind: action
     api_surface: backend
@@ -38195,7 +39591,7 @@ frontend_operations:
             updatedAt: { type: string, minLength: 1, maxLength: 64 }
           description: Published PlusApp snapshot returned by the backend.
   - route: /admin/app
-    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
     operation: offlineApp
     kind: action
     api_surface: backend
@@ -40993,7 +42389,7 @@ frontend_operations:
             status: { type: string, enum: [active, inactive, exhausted] }
           description: Persisted rate limit rule snapshot returned by the backend.
   - route: /admin/settings
-    source: apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthSettingsService.ts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-site/src/AuthSettingsService.ts
     operation: fetchClawRouterAuthSettings
     operation_id: auth.settings.retrieve
     kind: read
@@ -41095,7 +42491,7 @@ frontend_operations:
                   path: { type: string, minLength: 1, maxLength: 128, pattern: '^[^/?#][^?#]*$' }
                   env: { type: string, enum: [release, trial, develop] }
   - route: /admin/settings
-    source: apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthSettingsService.ts
+    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-site/src/AuthSettingsService.ts
     operation: updateClawRouterAuthSettings
     operation_id: auth.settings.update
     kind: update
@@ -43651,6 +45047,16 @@ routes:
       - iam_gateway_api_key
       - iam_user_login_event
       - ops_audit_log
+  - route: /admin/organization
+    required_tables:
+      - iam_user
+      - iam_organization
+      - iam_organization_member
+      - iam_role
+      - iam_permission
+      - iam_role_permission
+      - iam_user_role
+      - ops_audit_log
   - route: /admin/agents
     required_tables:
       - ai_agent
@@ -44920,6 +46326,7 @@ routes:
       - commerce_refund_event
       - commerce_fulfillment_order
       - commerce_fulfillment_item
+      - commerce_product_sku
       - commerce_shipment
       - commerce_shipment_tracking_event
       - commerce_digital_delivery
@@ -45123,6 +46530,7 @@ routes:
       - commerce_refund_event
       - commerce_fulfillment_order
       - commerce_fulfillment_item
+      - commerce_product_sku
       - commerce_shipment
       - commerce_shipment_tracking_event
       - commerce_digital_delivery
@@ -45143,6 +46551,7 @@ routes:
       - commerce_refund_event
       - commerce_fulfillment_order
       - commerce_fulfillment_item
+      - commerce_product_sku
       - commerce_shipment
       - commerce_shipment_tracking_event
       - commerce_digital_delivery
@@ -45163,6 +46572,7 @@ routes:
       - commerce_refund_event
       - commerce_fulfillment_order
       - commerce_fulfillment_item
+      - commerce_product_sku
       - commerce_shipment
       - commerce_shipment_tracking_event
       - commerce_digital_delivery
@@ -45183,6 +46593,7 @@ routes:
       - commerce_refund_event
       - commerce_fulfillment_order
       - commerce_fulfillment_item
+      - commerce_product_sku
       - commerce_shipment
       - commerce_shipment_tracking_event
       - commerce_digital_delivery

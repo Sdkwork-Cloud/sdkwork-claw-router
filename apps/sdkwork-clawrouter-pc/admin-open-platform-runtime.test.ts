@@ -37,10 +37,10 @@ test("admin open platform wrapper delegates to appbase standard package through 
   const source = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-open-platform/src/index.tsx");
   const serviceSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-open-platform/src/openPlatformAdminService.ts");
   const appbaseServiceSource = readWorkspaceFile(
-    ".sdkwork/dependencies/sdkwork-appbase/packages/pc-react/integration/sdkwork-open-platform-admin-pc-react/src/open-platform-admin-service.ts",
+    "../sdkwork-appbase/packages/pc-react/integration/sdkwork-open-platform-admin-pc-react/src/open-platform-admin-service.ts",
   );
   const appbasePageSource = readWorkspaceFile(
-    ".sdkwork/dependencies/sdkwork-appbase/packages/pc-react/integration/sdkwork-open-platform-admin-pc-react/src/pages/OpenPlatformAdminPage.tsx",
+    "../sdkwork-appbase/packages/pc-react/integration/sdkwork-open-platform-admin-pc-react/src/pages/OpenPlatformAdminPage.tsx",
   );
 
   assert.equal(packageJson.dependencies["@sdkwork/open-platform-admin-pc-react"], "workspace:*");

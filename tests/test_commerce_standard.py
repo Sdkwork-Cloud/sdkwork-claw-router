@@ -26,6 +26,16 @@ APP_OPENAPI_PATH = ROOT / "generated" / "openapi" / "clawrouter-app-openapi.json
 BACKEND_OPENAPI_PATH = ROOT / "generated" / "openapi" / "clawrouter-backend-openapi.json"
 APP_SDK_TYPES_PATH = ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types"
 BACKEND_SDK_TYPES_PATH = ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "types"
+COMMERCE_ROOT = ROOT.parent / "sdkwork-commerce"
+COMMERCE_APP_OPENAPI_PATH = COMMERCE_ROOT / "generated" / "openapi" / "commerce-app-api.openapi.json"
+COMMERCE_BACKEND_OPENAPI_PATH = COMMERCE_ROOT / "generated" / "openapi" / "commerce-backend-api.openapi.json"
+COMMERCE_PRODUCT_ADMIN_PATH = (
+    COMMERCE_ROOT
+    / "apps"
+    / "sdkwork-commerce-pc"
+    / "packages"
+    / "sdkwork-commerce-pc-admin-product"
+)
 
 STANDARD_PAYMENT_PROVIDER_CODES = {
     "wechat_pay",
@@ -46,8 +56,10 @@ STANDARD_PAYMENT_METHOD_CODES = {
 }
 
 
-CANONICAL_COMMERCE_PRODUCT_CENTER_API_OPERATIONS: tuple[tuple[str, str, str, str], ...] = (
+MIGRATED_COMMERCE_PRODUCT_CENTER_API_OPERATIONS: tuple[tuple[str, str, str, str], ...] = (
+    ("backend", "GET", "/backend/v3/api/catalog/attributes", "catalog.attributes.management.list"),
     ("backend", "POST", "/backend/v3/api/catalog/attributes", "catalog.attributes.create"),
+    ("backend", "GET", "/backend/v3/api/catalog/categories", "catalog.categories.management.list"),
     ("backend", "POST", "/backend/v3/api/catalog/categories", "catalog.categories.create"),
     ("backend", "POST", "/backend/v3/api/catalog/price_lists", "catalog.priceLists.create"),
     ("backend", "POST", "/backend/v3/api/catalog/products", "catalog.products.create"),
@@ -55,8 +67,6 @@ CANONICAL_COMMERCE_PRODUCT_CENTER_API_OPERATIONS: tuple[tuple[str, str, str, str
     ("backend", "DELETE", "/backend/v3/api/catalog/categories/{categoryId}", "catalog.categories.delete"),
     ("app", "GET", "/app/v3/api/catalog/categories", "catalog.categories.list"),
     ("app", "GET", "/app/v3/api/catalog/products", "catalog.products.list"),
-    ("backend", "GET", "/backend/v3/api/catalog/attributes", "catalog.attributes.list"),
-    ("backend", "GET", "/backend/v3/api/catalog/categories", "catalog.categories.list"),
     ("backend", "GET", "/backend/v3/api/catalog/price_lists", "catalog.priceLists.list"),
     ("backend", "GET", "/backend/v3/api/catalog/products", "catalog.products.list"),
     ("backend", "GET", "/backend/v3/api/catalog/skus", "catalog.skus.list"),
@@ -68,6 +78,28 @@ CANONICAL_COMMERCE_PRODUCT_CENTER_API_OPERATIONS: tuple[tuple[str, str, str, str
     ("backend", "PATCH", "/backend/v3/api/catalog/categories/{categoryId}", "catalog.categories.update"),
     ("backend", "PATCH", "/backend/v3/api/catalog/products/{productId}", "catalog.products.update"),
     ("backend", "PATCH", "/backend/v3/api/catalog/skus/{skuId}", "catalog.skus.update"),
+    ("backend", "DELETE", "/backend/v3/api/catalog/products/{productId}", "catalog.products.delete"),
+    ("backend", "DELETE", "/backend/v3/api/catalog/skus/{skuId}", "catalog.skus.delete"),
+    ("backend", "GET", "/backend/v3/api/catalog/category_attributes", "catalog.categoryAttributes.list"),
+    ("backend", "POST", "/backend/v3/api/catalog/category_attributes", "catalog.categoryAttributes.create"),
+    (
+        "backend",
+        "PATCH",
+        "/backend/v3/api/catalog/category_attributes/{bindingId}",
+        "catalog.categoryAttributes.update",
+    ),
+    (
+        "backend",
+        "DELETE",
+        "/backend/v3/api/catalog/category_attributes/{bindingId}",
+        "catalog.categoryAttributes.delete",
+    ),
+)
+
+CANONICAL_COMMERCE_INVENTORY_API_OPERATIONS: tuple[tuple[str, str, str, str], ...] = (
+    ("backend", "GET", "/backend/v3/api/inventory/ledger_entries", "inventory.ledgerEntries.list"),
+    ("backend", "GET", "/backend/v3/api/inventory/reservations", "inventory.reservations.list"),
+    ("backend", "GET", "/backend/v3/api/inventory/stocks", "inventory.stocks.list"),
     ("backend", "PATCH", "/backend/v3/api/inventory/stocks/{stockId}", "inventory.stocks.update"),
 )
 
@@ -159,18 +191,18 @@ CANONICAL_COMMERCE_TRANSACTION_API_OPERATIONS: tuple[tuple[str, str, str, str], 
     ("backend", "GET", "/backend/v3/api/shipments/{shipmentId}/tracking_events", "shipments.trackingEvents.list"),
     ("backend", "GET", "/backend/v3/api/memberships/plans", "memberships.plans.list"),
     ("backend", "POST", "/backend/v3/api/memberships/plans", "memberships.plans.create"),
-    ("backend", "PUT", "/backend/v3/api/memberships/plans/{planId}", "memberships.plans.update"),
+    ("backend", "PATCH", "/backend/v3/api/memberships/plans/{planId}", "memberships.plans.update"),
     ("backend", "DELETE", "/backend/v3/api/memberships/plans/{planId}", "memberships.plans.delete"),
     ("backend", "GET", "/backend/v3/api/memberships/packages", "memberships.packages.list"),
     ("backend", "POST", "/backend/v3/api/memberships/packages", "memberships.packages.create"),
-    ("backend", "PUT", "/backend/v3/api/memberships/packages/{packageId}", "memberships.packages.update"),
+    ("backend", "PATCH", "/backend/v3/api/memberships/packages/{packageId}", "memberships.packages.update"),
     ("backend", "DELETE", "/backend/v3/api/memberships/packages/{packageId}", "memberships.packages.delete"),
     ("backend", "GET", "/backend/v3/api/memberships/package_groups", "memberships.packageGroups.list"),
     ("backend", "POST", "/backend/v3/api/memberships/package_groups", "memberships.packageGroups.create"),
-    ("backend", "PUT", "/backend/v3/api/memberships/package_groups/{packageGroupId}", "memberships.packageGroups.update"),
+    ("backend", "PATCH", "/backend/v3/api/memberships/package_groups/{packageGroupId}", "memberships.packageGroups.update"),
     ("backend", "DELETE", "/backend/v3/api/memberships/package_groups/{packageGroupId}", "memberships.packageGroups.delete"),
     ("backend", "GET", "/backend/v3/api/memberships/members", "memberships.members.list"),
-    ("backend", "PATCH", "/backend/v3/api/memberships/members/{membershipId}/status", "memberships.members.status.update"),
+    ("backend", "PATCH", "/backend/v3/api/memberships/members/{membershipId}", "memberships.members.update"),
     ("backend", "GET", "/backend/v3/api/memberships/entitlements", "memberships.entitlements.list"),
     ("backend", "GET", "/backend/v3/api/recharges/packages", "recharges.packages.list"),
     ("backend", "GET", "/backend/v3/api/recharges/orders", "recharges.orders.list"),
@@ -199,7 +231,7 @@ CANONICAL_COMMERCE_TRANSACTION_API_OPERATIONS: tuple[tuple[str, str, str, str], 
 )
 
 CANONICAL_COMMERCE_API_OPERATIONS = (
-    *CANONICAL_COMMERCE_PRODUCT_CENTER_API_OPERATIONS,
+    *CANONICAL_COMMERCE_INVENTORY_API_OPERATIONS,
     *CANONICAL_COMMERCE_TRANSACTION_API_OPERATIONS,
 )
 
@@ -252,7 +284,7 @@ class CommerceStandardTest(unittest.TestCase):
             "/admin/commerce",
             "/admin/vip",
             "/console/commerce",
-            ".sdkwork/dependencies/sdkwork-appbase/packages/pc-react/commerce/sdkwork-vip",
+            "../../sdkwork-appbase/packages/pc-react/commerce/sdkwork-vip",
         ]
         checked_files = [
             PORTAL_PATH / "package.json",
@@ -318,8 +350,9 @@ class CommerceStandardTest(unittest.TestCase):
     def test_appbase_integration_verification_uses_standard_commerce_module(self) -> None:
         manifest = (ROOT / "specs" / "appbase-integration.yaml").read_text(encoding="utf-8")
 
-        self.assertIn("tests.test_commerce_standard", manifest)
-        self.assertIn("tests.test_payment_callback_runtime_standard", manifest)
+        self.assertNotIn("capability: commerce", manifest)
+        self.assertNotIn("tests.test_commerce_standard", manifest)
+        self.assertNotIn("tests.test_payment_callback_runtime_standard", manifest)
         self.assertNotIn("tests.test_commerce_billing_standard", manifest)
         self.assertNotIn("tests.test_billing_runtime_standard", manifest)
 
@@ -341,9 +374,20 @@ class CommerceStandardTest(unittest.TestCase):
         for forbidden_pattern in retired_exact_path_patterns:
             self.assertNotRegex(field_contracts, forbidden_pattern)
 
+        for migrated_catalog_token in [
+            "operations/app-commerce-catalog.yaml",
+            "operations/backend-commerce-catalog.yaml",
+            "/app/v3/api/catalog/",
+            "/backend/v3/api/catalog/",
+        ]:
+            self.assertNotIn(
+                migrated_catalog_token,
+                field_contracts,
+                "claw-router schema registry must not keep product catalog contracts after sdkwork-commerce migration",
+            )
+
         for standard_path in [
             "/app/v3/api/accounts/current/summary",
-            "/app/v3/api/catalog/products",
             "/app/v3/api/cart/current",
             "/app/v3/api/checkout/sessions",
             "/app/v3/api/orders",
@@ -362,7 +406,6 @@ class CommerceStandardTest(unittest.TestCase):
             "/app/v3/api/wallet/points/exchanges/rules",
             "/app/v3/api/promotions/user_coupon_claims",
             "/app/v3/api/promotions/codes/redemptions",
-            "/backend/v3/api/catalog/products",
             "/backend/v3/api/inventory/stocks",
             "/backend/v3/api/payments/provider_accounts",
             "/backend/v3/api/payments/runtime/snapshot",
@@ -380,6 +423,8 @@ class CommerceStandardTest(unittest.TestCase):
         retired_path_patterns = (
             re.compile(r"^/app/v3/api/billing(?!/history(?:/|$))(?:/|$)"),
             re.compile(r"^/backend/v3/api/billing(?:/|$)"),
+            re.compile(r"^/app/v3/api/catalog(?:/|$)"),
+            re.compile(r"^/backend/v3/api/catalog(?:/|$)"),
             re.compile(r"^/app/v3/api/payments/checkout(?:/|$)"),
             re.compile(r"^/app/v3/api/coupons(?:/|$)"),
             re.compile(r"^/backend/v3/api/coupons(?:/|$)"),
@@ -405,7 +450,6 @@ class CommerceStandardTest(unittest.TestCase):
         operations = load_frontend_operations()
         commerce_prefixes = (
             "/app/v3/api/accounts/",
-            "/app/v3/api/catalog/",
             "/app/v3/api/cart",
             "/app/v3/api/addresses",
             "/app/v3/api/checkout",
@@ -420,7 +464,6 @@ class CommerceStandardTest(unittest.TestCase):
             "/app/v3/api/wallet",
             "/app/v3/api/promotions",
             "/app/v3/api/invoices",
-            "/backend/v3/api/catalog/",
             "/backend/v3/api/inventory/",
             "/backend/v3/api/orders",
             "/backend/v3/api/payments/",
@@ -700,7 +743,7 @@ class CommerceStandardTest(unittest.TestCase):
         ]:
             self.assertNotIn(f"'{retired_wire_field}'", view)
 
-    def test_product_and_inventory_operations_are_integrated_with_standard_tables(self) -> None:
+    def test_inventory_operations_remain_integrated_with_standard_tables(self) -> None:
         operations = {
             (
                 operation.get("api_surface"),
@@ -711,26 +754,6 @@ class CommerceStandardTest(unittest.TestCase):
             for operation in load_frontend_operations()
             if operation.get("openapi_exposed", True) is not False
         }
-
-        product_list = operations[("app", "GET", "/app/v3/api/catalog/products", "catalog.products.list")]
-        self.assertGreaterEqual(
-            set(product_list.get("read_sources", [])),
-            {
-                "commerce_product_spu",
-                "commerce_product_sku",
-                "commerce_product_category",
-                "commerce_product_media",
-                "commerce_price_list",
-                "commerce_price_list_item",
-            },
-        )
-
-        sku_create = operations[("backend", "POST", "/backend/v3/api/catalog/skus", "catalog.skus.create")]
-        self.assertTrue(sku_create.get("idempotency_required"))
-        self.assertGreaterEqual(
-            set(sku_create.get("write_tables", [])),
-            {"commerce_product_sku", "commerce_product_sku_attribute", "ops_audit_log"},
-        )
 
         stock_update = operations[
             ("backend", "PATCH", "/backend/v3/api/inventory/stocks/{stockId}", "inventory.stocks.update")
@@ -755,28 +778,120 @@ class CommerceStandardTest(unittest.TestCase):
             },
         )
 
-    def test_product_center_multi_category_and_attribute_binding_contract_is_canonical(self) -> None:
+    def test_product_center_contract_is_migrated_to_sdkwork_commerce(self) -> None:
+        clawrouter_contracts = FIELD_CONTRACTS_PATH.read_text(encoding="utf-8")
+        clawrouter_manifest = (ROOT / "generated" / "api" / "api-contract-manifest.json").read_text(
+            encoding="utf-8"
+        )
+        clawrouter_app_openapi = APP_OPENAPI_PATH.read_text(encoding="utf-8")
+        clawrouter_backend_openapi = BACKEND_OPENAPI_PATH.read_text(encoding="utf-8")
+        product_admin_service = (COMMERCE_PRODUCT_ADMIN_PATH / "src" / "catalogService.ts").read_text(
+            encoding="utf-8"
+        )
+        product_create_page = (COMMERCE_PRODUCT_ADMIN_PATH / "src" / "ProductCreatePage.tsx").read_text(
+            encoding="utf-8"
+        )
+        clawrouter_catalog_service = (
+            PORTAL_PATH
+            / "packages"
+            / "sdkwork-clawrouter-pc-admin-catalog"
+            / "src"
+            / "catalogService.ts"
+        ).read_text(encoding="utf-8")
+        commerce_contracts = (
+            COMMERCE_ROOT
+            / "packages"
+            / "common"
+            / "commerce"
+            / "sdkwork-commerce-contracts"
+            / "src"
+            / "index.ts"
+        ).read_text(encoding="utf-8")
+
+        for migrated_catalog_token in [
+            "operations/app-commerce-catalog.yaml",
+            "operations/backend-commerce-catalog.yaml",
+            "/app/v3/api/catalog/",
+            "/backend/v3/api/catalog/",
+            "catalog.products.list",
+            "catalog.products.create",
+            "catalog.skus.create",
+            "catalog.categoryAttributes.create",
+        ]:
+            self.assertNotIn(migrated_catalog_token, clawrouter_contracts)
+            self.assertNotIn(migrated_catalog_token, clawrouter_manifest)
+            self.assertNotIn(migrated_catalog_token, clawrouter_app_openapi)
+            self.assertNotIn(migrated_catalog_token, clawrouter_backend_openapi)
+
+        commerce_app_openapi = json.loads(COMMERCE_APP_OPENAPI_PATH.read_text(encoding="utf-8"))
+        commerce_backend_openapi = json.loads(COMMERCE_BACKEND_OPENAPI_PATH.read_text(encoding="utf-8"))
+        commerce_operations = {}
+        for surface, spec in [("app", commerce_app_openapi), ("backend", commerce_backend_openapi)]:
+            for path, path_item in spec.get("paths", {}).items():
+                for method, operation in path_item.items():
+                    if method not in {"get", "post", "patch", "delete"}:
+                        continue
+                    commerce_operations[(surface, method.upper(), path, operation.get("operationId"))] = operation
+
+        missing = set(MIGRATED_COMMERCE_PRODUCT_CENTER_API_OPERATIONS) - set(commerce_operations)
+        self.assertEqual(set(), missing)
+        for operation in commerce_operations.values():
+            operation_id = str(operation.get("operationId") or "")
+            if operation_id.startswith("catalog."):
+                self.assertEqual("sdkwork-commerce", operation.get("x-sdkwork-owner"))
+
+        for required_token in [
+            "getSdkworkCommerceService",
+            "createCommerceProductAdminService",
+            "catalog.products.list(params)",
+            "catalog.products.create(body)",
+            "catalog.products.update(productId, body)",
+            "catalog.products.delete(productId)",
+            "catalog.skus.list(params)",
+            "catalog.skus.create(body)",
+            "catalog.skus.update(skuId, body)",
+            "catalog.skus.delete(skuId)",
+            "catalog.categoryAttributes.list(params)",
+            "catalog.categoryAttributes.create(body)",
+            "catalog.categoryAttributes.update(bindingId, body)",
+            "catalog.categoryAttributes.delete(bindingId)",
+            "catalog.categorySeeds.create(body)",
+        ]:
+            self.assertIn(required_token, product_admin_service)
+
+        for required_token in [
+            'from "@sdkwork/commerce-service"',
+            "categoryIds: normalizeSelectedCategoryIds(draft.selectedCategoryIds)",
+            "buildSkuMutationPayloads",
+            "image: sku.image",
+            "barcode: sku.barcode || null",
+        ]:
+            self.assertIn(required_token, product_admin_service + product_create_page)
+
+        self.assertIn('from "sdkwork-commerce-pc-admin-product"', clawrouter_catalog_service)
+        self.assertIn("createCommerceProductAdminService", clawrouter_catalog_service)
+        self.assertNotIn("getClawRouterBackendSdkClient().commerce.catalog", clawrouter_catalog_service)
+        self.assertNotRegex(clawrouter_catalog_service, r"\bfetch\s*\(|axios|XMLHttpRequest")
+
+        for required_token in [
+            'list: operation("GET", `${app}/catalog/products`, "catalog.products.list"',
+            'retrieve: operation("GET", `${app}/catalog/products/{productId}`, "catalog.products.retrieve")',
+            'create: operation("POST", `${backend}/catalog/products`, "catalog.products.create")',
+            'delete: operation("DELETE", `${backend}/catalog/products/{productId}`, "catalog.products.delete")',
+            'delete: operation("DELETE", `${backend}/catalog/skus/{skuId}`, "catalog.skus.delete")',
+            'create: operation("POST", `${backend}/catalog/category_attributes`, "catalog.categoryAttributes.create")',
+        ]:
+            self.assertIn(required_token, commerce_contracts)
+
+    def test_product_center_multi_category_and_attribute_binding_ui_is_canonical(self) -> None:
         registry = load_table_registry()
         tables = {
             table.get("table"): table
             for table in registry.get("tables", [])
             if isinstance(table, dict) and isinstance(table.get("table"), str)
         }
-        operations = {
-            (
-                operation.get("api_surface"),
-                operation.get("api_method"),
-                operation.get("api_path"),
-                operation.get("operation_id"),
-            ): operation
-            for operation in load_frontend_operations()
-            if operation.get("openapi_exposed", True) is not False
-        }
-        backend_schemas = json.loads(BACKEND_OPENAPI_PATH.read_text(encoding="utf-8"))["components"]["schemas"]
         product_create_page = (
-            PORTAL_PATH
-            / "packages"
-            / "sdkwork-clawrouter-pc-admin-catalog"
+            COMMERCE_PRODUCT_ADMIN_PATH
             / "src"
             / "ProductCreatePage.tsx"
         ).read_text(encoding="utf-8")
@@ -818,44 +933,10 @@ class CommerceStandardTest(unittest.TestCase):
         ]:
             self.assertIn(column, tables["commerce_product_category_attribute"].get("columns", {}))
 
-        product_create = operations[
-            ("backend", "POST", "/backend/v3/api/catalog/products", "catalog.products.create")
-        ]
-        product_update = operations[
-            ("backend", "PATCH", "/backend/v3/api/catalog/products/{productId}", "catalog.products.update")
-        ]
-        product_list = operations[
-            ("backend", "GET", "/backend/v3/api/catalog/products", "catalog.products.list")
-        ]
-        app_product_list = operations[("app", "GET", "/app/v3/api/catalog/products", "catalog.products.list")]
-
-        for operation in [product_create, product_update]:
-            self.assertIn("commerce_product_spu_category", operation.get("write_tables", []))
-            properties = operation.get("request_schema", {}).get("properties", {})
-            self.assertIn("categoryIds", properties)
-            self.assertNotIn("categoryId", properties)
-            self.assertEqual("array", properties["categoryIds"].get("type"))
-            self.assertEqual(3, properties["categoryIds"].get("maxItems"))
-
-        for operation in [product_list, app_product_list]:
-            self.assertIn("commerce_product_spu_category", operation.get("read_sources", []))
-
-        for schema_name in ["CommerceProductSpuMutationRequest", "CommerceProductSpuItem"]:
-            properties = backend_schemas.get(schema_name, {}).get("properties", {})
-            self.assertIn("categoryIds", properties)
-            self.assertNotIn("categoryId", properties)
-
-        mutation_source = (BACKEND_SDK_TYPES_PATH / "commerce-product-spu-mutation-request.ts").read_text(
-            encoding="utf-8"
-        )
-        item_source = (BACKEND_SDK_TYPES_PATH / "commerce-product-spu-item.ts").read_text(encoding="utf-8")
-        self.assertIn("categoryIds?: string[]", mutation_source)
-        self.assertIn("categoryIds?: string[]", item_source)
-        self.assertNotIn("categoryId?: string | null", mutation_source)
-        self.assertNotIn("categoryId?: string | null", item_source)
-
         self.assertIn("categoryIds: normalizeSelectedCategoryIds(draft.selectedCategoryIds)", product_create_page)
         self.assertNotIn("categoryId: draft.selectedCategoryIds[0]", product_create_page)
+        self.assertIn("MAX_SELECTED_CATEGORY_COUNT", product_create_page)
+        self.assertIn("buildSkuMutationPayloads", product_create_page)
 
         rust_sources = {
             "api": ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "admin_catalog.rs",
@@ -876,13 +957,12 @@ class CommerceStandardTest(unittest.TestCase):
             / "sql"
             / "postgres"
             / "admin_catalog_store.rs",
-            "routes_test": ROOT / "services" / "sdkwork-claw-admin-api" / "tests" / "product_center_routes.rs",
         }
         for source_path in rust_sources.values():
             source = source_path.read_text(encoding="utf-8")
             self.assertNotIn("commerce_product_sku_attribute_value", source)
 
-        for source_name in ["sqlite", "postgres", "routes_test"]:
+        for source_name in ["sqlite", "postgres"]:
             source = rust_sources[source_name].read_text(encoding="utf-8")
             self.assertIn("commerce_product_sku_attribute", source)
             self.assertIn("commerce_product_spu_category", source)
@@ -1373,7 +1453,6 @@ class CommerceStandardTest(unittest.TestCase):
             "sdkwork-clawrouter-pc-console-memberships/src/membershipService.ts": "getClawRouterAppSdkClient().commerce.memberships.purchases.create",
             "sdkwork-clawrouter-pc-console-wallet/src/walletService.ts": "getClawRouterAppSdkClient().commerce.wallet.overview.retrieve",
             "sdkwork-clawrouter-pc-console-settlements/src/settlementsService.ts": "getClawRouterAppSdkClient().commerce.invoices.list",
-            "sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts": "getClawRouterBackendSdkClient().commerce.catalog.products.list",
             "sdkwork-clawrouter-pc-admin-inventory/src/inventoryService.ts": "getClawRouterBackendSdkClient().commerce.inventory.stocks.list",
             "sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts": "getClawRouterBackendSdkClient().commerce.orders.list",
             "sdkwork-clawrouter-pc-admin-payments/src/paymentsService.ts": "getClawRouterBackendSdkClient().commerce.payments.providers.list",
@@ -1388,6 +1467,18 @@ class CommerceStandardTest(unittest.TestCase):
             content = service.read_text(encoding="utf-8")
             self.assertIn(required_token, content, f"{relative_path} should call its SDK surface directly")
             self.assertNotIn("getClawRouterCommerceService", content)
+
+        catalog_service = (
+            PORTAL_PATH
+            / "packages"
+            / "sdkwork-clawrouter-pc-admin-catalog"
+            / "src"
+            / "catalogService.ts"
+        ).read_text(encoding="utf-8")
+        self.assertIn("sdkwork-commerce-pc-admin-product", catalog_service)
+        self.assertIn("createCommerceProductAdminService", catalog_service)
+        self.assertNotIn("getClawRouterBackendSdkClient().commerce.catalog", catalog_service)
+        self.assertNotRegex(catalog_service, r"\bfetch\s*\(|axios|XMLHttpRequest")
 
     def test_console_business_packages_move_existing_pages_without_legacy_billing_route(self) -> None:
         migrated_files = {

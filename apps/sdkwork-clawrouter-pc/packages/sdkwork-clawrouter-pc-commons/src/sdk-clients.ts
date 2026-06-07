@@ -20,6 +20,21 @@ import {
   type SdkworkDriveAppClient,
 } from '@sdkwork/drive-app-sdk';
 import {
+  configureSdkworkCommerceServiceProvider,
+  configureSdkworkCommerceSessionTokenProvider,
+  createSdkworkCommerceService,
+  type CommerceAppSdkClient,
+  type CommerceBackendSdkClient,
+} from '@sdkwork/commerce-service';
+import {
+  SdkworkAppClient as SdkworkCommerceAppClient,
+  type SdkworkAppConfig as SdkworkCommerceAppConfig,
+} from 'sdkwork-commerce-app-sdk-generated-typescript';
+import {
+  SdkworkBackendClient as SdkworkCommerceGeneratedBackendClient,
+  type SdkworkBackendConfig as SdkworkCommerceBackendConfig,
+} from 'sdkwork-commerce-backend-sdk-generated-typescript';
+import {
   clearStoredAppSessionToken,
   loadStoredAppSessionToken,
 } from './app-session-token.ts';
@@ -142,6 +157,20 @@ export interface SdkworkDriveAppSdkClientOptions {
   timeout?: number;
 }
 
+export interface SdkworkCommerceAppSdkClientOptions {
+  appBaseUrl?: string;
+  platform?: string;
+  tokenManager?: AuthTokenManager;
+  timeout?: number;
+}
+
+export interface SdkworkCommerceBackendSdkClientOptions {
+  backendBaseUrl?: string;
+  platform?: string;
+  tokenManager?: AuthTokenManager;
+  timeout?: number;
+}
+
 export interface SdkworkAppbaseBackendSdkClientOptions {
   backendBaseUrl?: string;
   platform?: string;
@@ -164,6 +193,8 @@ export type SdkworkAppbaseAppSdkClient = SdkworkAppbaseAppClient;
 export type SdkworkAppbaseBackendSdkClient = SdkworkAppbaseBackendClient;
 export type SdkworkGenerationsAppSdkClient = SdkworkGenerationsAppClient;
 export type SdkworkDriveAppSdkClient = SdkworkDriveAppClient;
+export type SdkworkCommerceAppSdkClient = SdkworkCommerceAppClient;
+export type SdkworkCommerceBackendSdkClient = SdkworkCommerceGeneratedBackendClient;
 export type ClawRouterAiSdkClient = SdkworkAiClient;
 
 type ClawRouterSdkRuntimeHost = typeof globalThis & {
@@ -173,6 +204,8 @@ type ClawRouterSdkRuntimeHost = typeof globalThis & {
   __SDKWORK_APPBASE_BACKEND_SDK_CLIENT__?: SdkworkAppbaseBackendSdkClient | null;
   __SDKWORK_GENERATIONS_APP_SDK_CLIENT__?: SdkworkGenerationsAppSdkClient | null;
   __SDKWORK_DRIVE_APP_SDK_CLIENT__?: SdkworkDriveAppSdkClient | null;
+  __SDKWORK_COMMERCE_APP_SDK_CLIENT__?: SdkworkCommerceAppSdkClient | null;
+  __SDKWORK_COMMERCE_BACKEND_SDK_CLIENT__?: SdkworkCommerceBackendSdkClient | null;
   __SDKWORK_CLAW_ROUTER_AI_SDK_CLIENT__?: ClawRouterAiSdkClient | null;
 };
 
@@ -215,6 +248,8 @@ let appbaseAppClient: SdkworkAppbaseAppClient | null = null;
 let appbaseBackendClient: SdkworkAppbaseBackendClient | null = null;
 let generationsAppClient: SdkworkGenerationsAppClient | null = null;
 let driveAppClient: SdkworkDriveAppClient | null = null;
+let commerceAppClient: SdkworkCommerceAppClient | null = null;
+let commerceBackendClient: SdkworkCommerceGeneratedBackendClient | null = null;
 let aiClient: SdkworkAiClient | null = null;
 let aiClientSessionKey: string | undefined;
 let clawRouterGlobalTokenManager: AuthTokenManager | null = null;
@@ -250,6 +285,20 @@ export function createSdkworkDriveAppSdkClient(
   options: SdkworkDriveAppSdkClientOptions = {},
 ): SdkworkDriveAppClient {
   return attachClawRouterSdkSessionAuthBoundary(createDriveAppClient(buildDriveAppConfig(options)));
+}
+
+export function createSdkworkCommerceAppSdkClient(
+  options: SdkworkCommerceAppSdkClientOptions = {},
+): SdkworkCommerceAppClient {
+  return attachClawRouterSdkSessionAuthBoundary(new SdkworkCommerceAppClient(buildCommerceAppConfig(options)));
+}
+
+export function createSdkworkCommerceBackendSdkClient(
+  options: SdkworkCommerceBackendSdkClientOptions = {},
+): SdkworkCommerceGeneratedBackendClient {
+  return attachClawRouterSdkSessionAuthBoundary(
+    new SdkworkCommerceGeneratedBackendClient(buildCommerceBackendConfig(options)),
+  );
 }
 
 export function createClawRouterAiSdkClient(options: ClawRouterAiSdkClientOptions = {}): SdkworkAiClient {
@@ -348,6 +397,38 @@ export function getSdkworkDriveAppSdkClient(
   return driveAppClient;
 }
 
+export function getSdkworkCommerceAppSdkClient(
+  options: SdkworkCommerceAppSdkClientOptions = {},
+): SdkworkCommerceAppClient {
+  if (hasRuntimeOverrides(options)) {
+    return createSdkworkCommerceAppSdkClient(options);
+  }
+  const injected = readInjectedCommerceAppSdkClient();
+  if (injected) {
+    return injected;
+  }
+  if (!commerceAppClient) {
+    commerceAppClient = createSdkworkCommerceAppSdkClient();
+  }
+  return commerceAppClient;
+}
+
+export function getSdkworkCommerceBackendSdkClient(
+  options: SdkworkCommerceBackendSdkClientOptions = {},
+): SdkworkCommerceGeneratedBackendClient {
+  if (hasRuntimeOverrides(options)) {
+    return createSdkworkCommerceBackendSdkClient(options);
+  }
+  const injected = readInjectedCommerceBackendSdkClient();
+  if (injected) {
+    return injected;
+  }
+  if (!commerceBackendClient) {
+    commerceBackendClient = createSdkworkCommerceBackendSdkClient();
+  }
+  return commerceBackendClient;
+}
+
 export function getClawRouterAiSdkClient(options: ClawRouterAiSdkClientOptions = {}): SdkworkAiClient {
   if (hasRuntimeOverrides(options)) {
     return createClawRouterAiSdkClient(options);
@@ -371,6 +452,8 @@ export function resetClawRouterSdkClients(): void {
   appbaseBackendClient = null;
   generationsAppClient = null;
   driveAppClient = null;
+  commerceAppClient = null;
+  commerceBackendClient = null;
   aiClient = null;
   aiClientSessionKey = undefined;
   syncClawRouterGlobalTokenManagerFromStoredSession();
@@ -629,7 +712,8 @@ export function resolveRequiredAppbaseBackendBaseUrl(options: SdkworkAppbaseBack
   if (!baseUrl) {
     throw new Error(
       'VITE_SDKWORK_APPBASE_BACKEND_API_BASE_URL is required for @sdkwork/appbase-backend-sdk. '
-      + 'Set PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL to an appbase backend that serves /backend/v3/api/iam/*, '
+      + 'Set PORTAL_PUBLIC_SDK_BASE_URL to a gateway that serves /backend/v3/api/iam/*, '
+      + 'set PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL to an appbase backend that serves /backend/v3/api/iam/*, '
       + 'or mount the appbase backend IAM routes in the claw-router backend runtime.',
     );
   }
@@ -667,6 +751,38 @@ function buildDriveAppConfig(options: SdkworkDriveAppSdkClientOptions): SdkworkD
   };
 }
 
+function buildCommerceAppConfig(options: SdkworkCommerceAppSdkClientOptions): SdkworkCommerceAppConfig {
+  return {
+    baseUrl: normalizeGeneratedSdkBaseUrl(
+      options.appBaseUrl
+      ?? readClawRouterRuntimeEnv('VITE_SDKWORK_COMMERCE_APP_API_BASE_URL')
+      ?? readClawRouterRuntimeEnv('VITE_CLAWROUTER_APP_API_BASE_URL')
+      ?? APP_API_PREFIX,
+      APP_API_PREFIX,
+    ),
+    platform: options.platform ?? 'web',
+    tokenManager: resolveClawRouterSdkTokenManager(options.tokenManager),
+    timeout: options.timeout,
+  };
+}
+
+function buildCommerceBackendConfig(
+  options: SdkworkCommerceBackendSdkClientOptions,
+): SdkworkCommerceBackendConfig {
+  return {
+    baseUrl: normalizeGeneratedSdkBaseUrl(
+      options.backendBaseUrl
+      ?? readClawRouterRuntimeEnv('VITE_SDKWORK_COMMERCE_BACKEND_API_BASE_URL')
+      ?? readClawRouterRuntimeEnv('VITE_CLAWROUTER_BACKEND_API_BASE_URL')
+      ?? BACKEND_API_PREFIX,
+      BACKEND_API_PREFIX,
+    ),
+    platform: options.platform ?? 'web-admin',
+    tokenManager: resolveClawRouterSdkTokenManager(options.tokenManager),
+    timeout: options.timeout,
+  };
+}
+
 function buildAiConfig(options: ClawRouterAiSdkClientOptions): SdkworkAiConfig {
   return {
     baseUrl: normalizeGeneratedSdkBaseUrl(
@@ -687,6 +803,8 @@ function hasRuntimeOverrides(
     | SdkworkAppbaseBackendSdkClientOptions
     | SdkworkGenerationsAppSdkClientOptions
     | SdkworkDriveAppSdkClientOptions
+    | SdkworkCommerceAppSdkClientOptions
+    | SdkworkCommerceBackendSdkClientOptions
     | ClawRouterAiSdkClientOptions,
 ): boolean {
   return Object.keys(options).length > 0;
@@ -745,6 +863,81 @@ function readInjectedDriveAppSdkClient(): SdkworkDriveAppSdkClient | undefined {
   return (globalThis as ClawRouterSdkRuntimeHost).__SDKWORK_DRIVE_APP_SDK_CLIENT__ ?? undefined;
 }
 
+function readInjectedCommerceAppSdkClient(): SdkworkCommerceAppSdkClient | undefined {
+  return (globalThis as ClawRouterSdkRuntimeHost).__SDKWORK_COMMERCE_APP_SDK_CLIENT__ ?? undefined;
+}
+
+function readInjectedCommerceBackendSdkClient(): SdkworkCommerceBackendSdkClient | undefined {
+  return (globalThis as ClawRouterSdkRuntimeHost).__SDKWORK_COMMERCE_BACKEND_SDK_CLIENT__ ?? undefined;
+}
+
 function readInjectedAiSdkClient(): ClawRouterAiSdkClient | undefined {
   return (globalThis as ClawRouterSdkRuntimeHost).__SDKWORK_CLAW_ROUTER_AI_SDK_CLIENT__ ?? undefined;
 }
+
+export function wrapCommerceBackendSdkClient(
+  client: SdkworkCommerceGeneratedBackendClient,
+): CommerceBackendSdkClient {
+  return {
+    commerce: client,
+  } as unknown as CommerceBackendSdkClient;
+}
+
+export function wrapCommerceAppSdkClient(client: SdkworkCommerceAppClient): CommerceAppSdkClient {
+  return {
+    commerce: createCommerceResourceOverlay(client.commerce, {
+      payments: client.payments,
+      promotions: client.promotions,
+      wallet: client.wallet,
+    }),
+  } as unknown as CommerceAppSdkClient;
+}
+
+function createCommerceResourceOverlay(primary: unknown, fallback: unknown): unknown {
+  if (!isCommerceObjectResource(primary) || !isCommerceObjectResource(fallback)) {
+    return primary ?? fallback;
+  }
+
+  const cache = new Map<PropertyKey, unknown>();
+  return new Proxy(Object.create(null) as Record<PropertyKey, unknown>, {
+    get(_target, property) {
+      if (cache.has(property)) {
+        return cache.get(property);
+      }
+
+      const primaryValue = readCommerceResourceProperty(primary, property);
+      const fallbackValue = readCommerceResourceProperty(fallback, property);
+      const value = primaryValue === fallbackValue
+        ? primaryValue
+        : isCommerceObjectResource(primaryValue) && isCommerceObjectResource(fallbackValue)
+        ? createCommerceResourceOverlay(primaryValue, fallbackValue)
+        : primaryValue ?? fallbackValue;
+      cache.set(property, value);
+      return value;
+    },
+    has(_target, property) {
+      return hasCommerceResourceProperty(primary, property) || hasCommerceResourceProperty(fallback, property);
+    },
+  });
+}
+
+function isCommerceObjectResource(value: unknown): value is object {
+  return Boolean(value) && typeof value === 'object';
+}
+
+function readCommerceResourceProperty(value: object, property: PropertyKey): unknown {
+  return (value as Record<PropertyKey, unknown>)[property];
+}
+
+function hasCommerceResourceProperty(value: object, property: PropertyKey): boolean {
+  return property in value;
+}
+
+configureSdkworkCommerceServiceProvider(() =>
+  createSdkworkCommerceService({
+    appClient: wrapCommerceAppSdkClient(getSdkworkCommerceAppSdkClient()),
+    backendClient: wrapCommerceBackendSdkClient(getSdkworkCommerceBackendSdkClient()),
+  }),
+);
+
+configureSdkworkCommerceSessionTokenProvider(readStoredAuthTokens);

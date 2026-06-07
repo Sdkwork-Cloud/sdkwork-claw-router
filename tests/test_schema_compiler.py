@@ -1,6 +1,7 @@
 import tempfile
 import textwrap
 import unittest
+import re
 from pathlib import Path
 
 from tools.schema_compiler import SchemaCompileError, SchemaCompiler
@@ -41,7 +42,11 @@ class SchemaCompilerTest(unittest.TestCase):
             sql = SchemaCompiler(root=root, registry_path=registry).compile_postgres()
 
             self.assertIn("CREATE TABLE IF NOT EXISTS ai_model_vendor (", sql)
-            self.assertIn("    id BIGSERIAL PRIMARY KEY,", sql)
+            self.assertIn("    id BIGINT NOT NULL PRIMARY KEY,", sql)
+            self.assertNotIn("BIGSERIAL", sql)
+            self.assertNotIn("AUTOINCREMENT", sql.upper())
+            self.assertIsNone(re.search(r"\bGENERATED\s+(ALWAYS|BY\s+DEFAULT)\b", sql, re.IGNORECASE))
+            self.assertNotIn(" AS IDENTITY", sql.upper())
             self.assertIn("    uuid VARCHAR(64) NOT NULL,", sql)
             self.assertIn("    tenant_id BIGINT NOT NULL DEFAULT 0,", sql)
             self.assertIn("    organization_id BIGINT NOT NULL DEFAULT 0,", sql)
@@ -144,7 +149,7 @@ class SchemaCompilerTest(unittest.TestCase):
 
             sql = SchemaCompiler(root=root, registry_path=registry).compile_postgres()
 
-            self.assertIn("    id BIGINT PRIMARY KEY,", sql)
+            self.assertIn("    id BIGINT NOT NULL PRIMARY KEY,", sql)
             self.assertIn("    installation_id VARCHAR(64) NOT NULL", sql)
 
     def test_compiles_not_null_columns_as_required_database_constraints(self) -> None:
@@ -229,7 +234,7 @@ class SchemaCompilerTest(unittest.TestCase):
             sql = SchemaCompiler(root=root, registry_path=registry).compile_postgres()
 
             self.assertIn("CREATE TABLE IF NOT EXISTS plus_agent_skill (", sql)
-            self.assertIn("    id BIGINT PRIMARY KEY,", sql)
+            self.assertIn("    id BIGINT NOT NULL PRIMARY KEY,", sql)
             self.assertIn("    uuid VARCHAR(255) NOT NULL UNIQUE,", sql)
             self.assertIn("    skill_key VARCHAR(128) NOT NULL,", sql)
             self.assertIn("    enabled BOOLEAN NOT NULL DEFAULT TRUE,", sql)

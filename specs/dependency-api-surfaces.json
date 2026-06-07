@@ -19,7 +19,7 @@
         "publicBaseUrlEnv": "PORTAL_PUBLIC_APP_API_BASE_URL",
         "rustRouteContractCrate": {
           "package": "sdkwork_iam_http",
-          "path": ".sdkwork/dependencies/sdkwork-appbase/packages/native-rust/iam/sdkwork-iam-http-rust",
+          "path": "../sdkwork-appbase/packages/native-rust/iam/sdkwork-iam-http-rust",
           "routeMetadataExports": [
             "app_routes"
           ],
@@ -46,6 +46,29 @@
             "services/sdkwork-claw-product/src/api/app_user_profile.rs declares /app/v3/api/iam/users/current.",
             "services/sdkwork-claw-product/src/api/app_iam_directory.rs declares appbase IAM directory read routes under /app/v3/api/iam/*.",
             "sdks/clawrouter-app-sdk/openapi/clawrouter-app-sdk.openapi.json records sdkwork-appbase-app-sdk exclusions so generated Claw Router app SDK stays owner-only."
+          ]
+        }
+      }
+    },
+    {
+      "workspace": "sdkwork-commerce-app-sdk",
+      "consumerSdkFamily": "clawrouter-app-sdk",
+      "role": "commerce-app-capability",
+      "dependencyMode": "consumer-sdk",
+      "surface": "app-api",
+      "apiPrefix": "/app/v3/api",
+      "runtimeIntegration": {
+        "mode": "external-service",
+        "sameOriginAllowed": false,
+        "requiredBaseUrlEnv": "VITE_SDKWORK_COMMERCE_APP_API_BASE_URL",
+        "publicBaseUrlEnv": "PORTAL_PUBLIC_COMMERCE_APP_API_BASE_URL",
+        "commonBaseUrlEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
+        "mountCoverage": {
+          "status": "not-mounted",
+          "evidence": [
+            "Commerce app API routes are owned by sdkwork-commerce and consumed through sdkwork-commerce-app-sdk.",
+            "Claw Router portal bootstrap derives VITE_SDKWORK_COMMERCE_APP_API_BASE_URL from PORTAL_PUBLIC_SDK_BASE_URL + /app/v3/api when no Commerce-specific override is configured.",
+            "No Claw Router runtime mount coverage is declared for Commerce app API handlers."
           ]
         }
       }
@@ -124,9 +147,10 @@
         "sameOriginAllowed": false,
         "requiredBaseUrlEnv": "VITE_SDKWORK_APPBASE_BACKEND_API_BASE_URL",
         "publicBaseUrlEnv": "PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL",
+        "commonBaseUrlEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
         "rustRouteContractCrate": {
           "package": "sdkwork_iam_http",
-          "path": ".sdkwork/dependencies/sdkwork-appbase/packages/native-rust/iam/sdkwork-iam-http-rust",
+          "path": "../sdkwork-appbase/packages/native-rust/iam/sdkwork-iam-http-rust",
           "routeMetadataExports": [
             "backend_routes"
           ],
@@ -137,8 +161,31 @@
           "status": "not-mounted",
           "evidence": [
             "sdkwork_iam_http exports backend_routes() route metadata including /backend/v3/api/iam/organizations/tree and /backend/v3/api/iam/roles.",
-            "sdkwork_iam_http does not export an axum Router or executable backend IAM handler adapter.",
+            "sdkwork_iam_http exposes build_sdkwork_appbase_backend_api_router(), but the current backend router builder returns an empty Router::new() and does not provide backend IAM handler coverage.",
             "Claw Router backend/admin Rust runtime has no verified appbase backend IAM router merge for roles, permissions, organization tree, users, tenants, policies, api keys, security events, or audit events."
+          ]
+        }
+      }
+    },
+    {
+      "workspace": "sdkwork-commerce-backend-sdk",
+      "consumerSdkFamily": "clawrouter-backend-sdk",
+      "role": "commerce-backend-management-capability",
+      "dependencyMode": "consumer-sdk",
+      "surface": "backend-api",
+      "apiPrefix": "/backend/v3/api",
+      "runtimeIntegration": {
+        "mode": "external-service",
+        "sameOriginAllowed": false,
+        "requiredBaseUrlEnv": "VITE_SDKWORK_COMMERCE_BACKEND_API_BASE_URL",
+        "publicBaseUrlEnv": "PORTAL_PUBLIC_COMMERCE_BACKEND_API_BASE_URL",
+        "commonBaseUrlEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
+        "mountCoverage": {
+          "status": "not-mounted",
+          "evidence": [
+            "Commerce backend API routes are owned by sdkwork-commerce and consumed through sdkwork-commerce-backend-sdk plus @sdkwork/commerce-service.",
+            "Claw Router portal bootstrap derives VITE_SDKWORK_COMMERCE_BACKEND_API_BASE_URL from PORTAL_PUBLIC_SDK_BASE_URL + /backend/v3/api when no Commerce-specific override is configured.",
+            "No Claw Router runtime mount coverage is declared for Commerce backend API handlers."
           ]
         }
       }

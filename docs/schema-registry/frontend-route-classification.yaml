@@ -348,13 +348,13 @@ routes:
   - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-model/src/modelService.ts
   - docs/schema-registry/frontend-field-contracts.yaml
 - route: /admin/app
-  package: sdkwork-clawrouter-pc-app-center
+  package: sdkwork-clawrouter-pc-admin-app
   owner: admin-control-plane
   route_scope: admin
   delivery_kind: sdk_backed_business_runtime
   api_surface: backend
   evidence:
-  - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts
+  - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts
   - docs/schema-registry/frontend-field-contracts.yaml
 - route: /admin/open-platform
   package: sdkwork-clawrouter-pc-admin-open-platform
@@ -428,15 +428,34 @@ routes:
   evidence:
   - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-user/src/userService.ts
   - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/organization
+  package: sdkwork-clawrouter-pc-admin-organization
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  required_tables:
+  - iam_user
+  - iam_organization
+  - iam_organization_member
+  - iam_role
+  - iam_permission
+  - iam_role_permission
+  - iam_user_role
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/index.tsx
+  - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
 - route: /admin/settings
-  package: portal-root
+  package: sdkwork-clawrouter-pc-admin-site
   owner: admin-control-plane
   route_scope: admin
   delivery_kind: sdk_backed_business_runtime
   api_surface: backend
   evidence:
-  - apps/sdkwork-clawrouter-pc/src/auth/ClawRouterAuthSettingsPage.tsx
-  - apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthSettingsService.ts
+  - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-site/src/ClawRouterAuthSettingsPage.tsx
+  - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-site/src/AuthSettingsService.ts
   - docs/schema-registry/frontend-field-contracts.yaml
 - route: /admin/runtime-region
   package: sdkwork-clawrouter-pc-admin-runtime-region

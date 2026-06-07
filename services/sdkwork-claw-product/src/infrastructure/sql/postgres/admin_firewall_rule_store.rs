@@ -2,6 +2,7 @@ use sha2::{Digest, Sha256};
 use sqlx::{PgPool, Postgres, Row, Transaction};
 
 use crate::domain::{DomainError, DomainResult};
+use crate::infrastructure::sql::runtime_id::next_claw_runtime_id;
 use crate::ports::{
     AdminFirewallRuleCommandFuture, AdminFirewallRuleItem, AdminFirewallRuleStore,
     CreateAdminFirewallRuleCommand, DeleteAdminFirewallRuleCommand, ListAdminFirewallRulesQuery,
@@ -232,13 +233,13 @@ async fn insert_firewall_rule(
     command: &CreateAdminFirewallRuleCommand,
 ) -> DomainResult<i64> {
     let metadata = firewall_rule_metadata(command);
-    sqlx::query_scalar(
+    let id = next_claw_runtime_id("iam_gateway_risk_rule")?;
+    sqlx::query(
         r#"
         INSERT INTO iam_gateway_risk_rule
-            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, rule_name, rule_category, rule_type, scope_type, scope_id, target_type, target_value, target_value_hash, target_value_masked, match_mode, reason, action, priority, effective_from, hit_count)
+            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, rule_name, rule_category, rule_type, scope_type, scope_id, target_type, target_value, target_value_hash, target_value_masked, match_mode, reason, action, priority, effective_from, hit_count, id)
         VALUES
-            ($1, $2, $3, 1, 1, $4::timestamptz, $5::timestamptz, 0, $6::jsonb, $7, $8, $9, $10, 0, $11, $12, $13, $14, $15, $16, $17, $18, $19::timestamptz, 0)
-        RETURNING id
+            ($1, $2, $3, 1, 1, $4::timestamptz, $5::timestamptz, 0, $6::jsonb, $7, $8, $9, $10, 0, $11, $12, $13, $14, $15, $16, $17, $18, $19::timestamptz, 0, $20)
         "#,
     )
     .bind(&command.rule_uuid)
@@ -260,9 +261,11 @@ async fn insert_firewall_rule(
     .bind(command.action_code)
     .bind(priority_for_action(command.action_code))
     .bind(&command.requested_at)
-    .fetch_one(&mut **tx)
+    .bind(id)
+    .execute(&mut **tx)
     .await
-    .map_err(|error| store_error("failed to create firewall rule", error))
+    .map_err(|error| store_error("failed to create firewall rule", error))?;
+    Ok(id)
 }
 
 async fn update_firewall_rule(
@@ -398,12 +401,13 @@ async fn insert_config_snapshot(
 ) -> DomainResult<()> {
     let payload = payload.to_string();
     let snapshot_no = format!("firewall-rule-{target_id}-{action}-{snapshot_uuid}");
+    let id = next_claw_runtime_id("ops_config_snapshot")?;
     sqlx::query(
         r#"
         INSERT INTO ops_config_snapshot
-            (uuid, tenant_id, organization_id, user_id, request_id, status, snapshot_no, config_scope, config_type, source_table, source_ids, config_payload, config_hash, published_at, published_by)
+            (uuid, tenant_id, organization_id, user_id, request_id, status, snapshot_no, config_scope, config_type, source_table, source_ids, config_payload, config_hash, published_at, published_by, id)
         VALUES
-            ($1, $2, $3, $4, $5, 1, $6, $7, $8, 'iam_gateway_risk_rule', $9::jsonb, $10::jsonb, $11, $12::timestamptz, $13)
+            ($1, $2, $3, $4, $5, 1, $6, $7, $8, 'iam_gateway_risk_rule', $9::jsonb, $10::jsonb, $11, $12::timestamptz, $13, $14)
         "#,
     )
     .bind(snapshot_uuid)
@@ -419,6 +423,7 @@ async fn insert_config_snapshot(
     .bind(digest_hex(&payload))
     .bind(requested_at)
     .bind(operator_id)
+    .bind(id)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to write firewall rule config snapshot", error))?;
@@ -437,12 +442,13 @@ async fn insert_audit_log(
     target_id: i64,
     change_summary: serde_json::Value,
 ) -> DomainResult<()> {
+    let id = next_claw_runtime_id("ops_audit_log")?;
     sqlx::query(
         r#"
         INSERT INTO ops_audit_log
-            (uuid, tenant_id, organization_id, action, target_type, target_id, request_id, operator_id, operator_type, change_summary)
+            (uuid, tenant_id, organization_id, action, target_type, target_id, request_id, operator_id, operator_type, change_summary, id)
         VALUES
-            ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10::jsonb)
+            ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10::jsonb, $11)
         "#,
     )
     .bind(audit_log_uuid)
@@ -455,6 +461,7 @@ async fn insert_audit_log(
     .bind(operator_id)
     .bind(operator_type)
     .bind(change_summary.to_string())
+    .bind(id)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to write firewall rule audit log", error))?;

@@ -1782,6 +1782,7 @@ test("generation mode popups reuse appbase popup and mode config primitives", ()
   assert.doesNotMatch(baseSource, /function ConfigSectionRenderer/);
   assert.match(imageSource, /SdkworkGenerationImageModeConfig/);
   assert.match(imageSource, /DEFAULT_SDKWORK_GENERATION_IMAGE_MODE_CONFIG/);
+  assert.match(videoSource, /@sdkwork\/generations-pc-workspace\/generation-asset-config/);
   assert.match(videoSource, /SdkworkGenerationVideoModeConfig/);
   assert.match(videoSource, /DEFAULT_SDKWORK_GENERATION_VIDEO_MODE_CONFIG/);
   assert.doesNotMatch(imageSource, /as ImageGenerationConfig/);
@@ -1792,7 +1793,7 @@ test("asset generation panel serializes appbase asset config for runtime payload
   const panelSource = readPortalFile("./packages/sdkwork-clawrouter-pc-playground/src/components/AssetGenerationPanel.tsx");
   const typeSource = readPortalFile("./packages/sdkwork-clawrouter-pc-playground/src/playgroundTypes.ts");
 
-  assert.match(panelSource, /@sdkwork\/generation-pc-react\/react/);
+  assert.match(panelSource, /@sdkwork\/generations-pc-workspace\/generation-asset-config/);
   assert.match(panelSource, /createDefaultSdkworkGenerationAssetConfig/);
   assert.match(panelSource, /reconcileSdkworkGenerationAssetConfig/);
   assert.match(panelSource, /serializeSdkworkGenerationAssetConfig\(config, modality\)/);
@@ -1896,6 +1897,8 @@ test("playground model bucket routing reuses appbase asset modality mapping", ()
   const pageSource = readPortalFile("./packages/sdkwork-clawrouter-pc-playground/src/pages/Playground.tsx");
   const inputSource = readPortalFile("./packages/sdkwork-clawrouter-pc-playground/src/components/GenerationChatInput.tsx");
 
+  assert.match(pageSource, /@sdkwork\/generations-pc-workspace\/generation-asset-config/);
+  assert.match(inputSource, /@sdkwork\/generations-pc-workspace\/generation-asset-config/);
   assert.match(pageSource, /getSdkworkGenerationModelBucket/);
   assert.match(inputSource, /getSdkworkGenerationModelBucket/);
   assert.doesNotMatch(pageSource, /case 'image':\s*return 'images'/);
@@ -1910,7 +1913,7 @@ test("agent generation input sends appbase default config for selected asset mod
   const inputSource = readPortalFile("./packages/sdkwork-clawrouter-pc-playground/src/components/GenerationChatInput.tsx");
   const agentViewSource = readPortalFile("./packages/sdkwork-clawrouter-pc-playground/src/components/views/AgentView.tsx");
 
-  assert.match(inputSource, /@sdkwork\/generation-pc-react\/react/);
+  assert.match(inputSource, /@sdkwork\/generations-pc-workspace\/generation-asset-config/);
   assert.match(inputSource, /createDefaultSdkworkGenerationAssetConfig/);
   assert.match(inputSource, /serializeSdkworkGenerationAssetConfig/);
   assert.match(inputSource, /isPlaygroundGenerationTargetType\(selectedModality\)/);
@@ -1941,7 +1944,7 @@ test("playground regeneration preserves appbase generation config from history i
   const generationServiceSource = readPortalFile("./packages/sdkwork-clawrouter-pc-playground/src/playgroundGenerationService.ts");
 
   assert.match(typeSource, /generationConfig\?: PlaygroundGenerationConfig;/);
-  assert.match(pageSource, /@sdkwork\/generation-pc-react\/react/);
+  assert.match(pageSource, /@sdkwork\/generations-pc-workspace\/generation-history/);
   assert.match(pageSource, /restoreSdkworkGenerationSerializedConfigFromHistoryItem/);
   assert.match(pageSource, /createSdkworkGenerationPendingHistoryItem\(\{[\s\S]*generationConfig,/);
   assert.match(pageSource, /generationConfig,\s*referenceImages,/);
@@ -1955,6 +1958,11 @@ test("playground history and preview mapping reuse appbase generation history he
   const pageSource = readPortalFile("./packages/sdkwork-clawrouter-pc-playground/src/pages/Playground.tsx");
   const historyMapperSource = readPortalFile("./packages/sdkwork-clawrouter-pc-playground/src/historyMapper.ts");
   const generationServiceSource = readPortalFile("./packages/sdkwork-clawrouter-pc-playground/src/playgroundGenerationService.ts");
+  const generationsServiceSource = readPortalFile("./packages/sdkwork-clawrouter-pc-playground/src/playgroundGenerationsService.ts");
+  const assetPanelSource = readPortalFile("./packages/sdkwork-clawrouter-pc-playground/src/components/AssetGenerationPanel.tsx");
+  const viteConfigSource = readPortalFile("./vite.config.ts");
+  const tsconfigSource = readPortalFile("./tsconfig.json");
+  const tsconfigTypecheckSource = readPortalFile("./tsconfig.typecheck.json");
   const appbaseSource = readWorkspaceFile("../sdkwork-generations/apps/sdkwork-generations-pc/packages/sdkwork-generations-pc-workspace/src/generation-history.ts");
 
   assert.match(pageSource, /appendSdkworkGenerationArtifactToHistoryItem/);
@@ -1974,6 +1982,14 @@ test("playground history and preview mapping reuse appbase generation history he
   assert.match(generationServiceSource, /mapSdkworkGenerationModalityToHistoryType/);
   assert.doesNotMatch(generationServiceSource, /function mapArtifactsToHistoryMedia/);
   assert.doesNotMatch(generationServiceSource, /function mapHistoryType/);
+  assert.match(generationsServiceSource, /@sdkwork\/generations-pc-workspace\/generation-history/);
+  assert.match(assetPanelSource, /@sdkwork\/generations-pc-workspace\/generation-asset-config/);
+  assert.match(viteConfigSource, /@sdkwork\/generations-pc-workspace\/generation-history/);
+  assert.match(viteConfigSource, /@sdkwork\/generations-pc-workspace\/generation-asset-config/);
+  assert.match(tsconfigSource, /"@sdkwork\/generations-pc-workspace\/generation-history"/);
+  assert.match(tsconfigSource, /"@sdkwork\/generations-pc-workspace\/generation-asset-config"/);
+  assert.match(tsconfigTypecheckSource, /"@sdkwork\/generations-pc-workspace\/generation-history"/);
+  assert.match(tsconfigTypecheckSource, /"@sdkwork\/generations-pc-workspace\/generation-asset-config"/);
 
   assert.match(appbaseSource, /export function appendSdkworkGenerationArtifactToHistoryItem/);
   assert.match(appbaseSource, /export function restoreSdkworkGenerationSerializedConfigFromHistoryItem/);

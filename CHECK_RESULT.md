@@ -15,6 +15,12 @@ gate.
 
 The main improvements made in this pass are:
 
+- cross-platform verification and delivery commands are extensionless:
+  `pnpm verify`, `pnpm test:postgres`, `pnpm test:postgres:required`,
+  `pnpm test:postgres:docker`, `pnpm release:env:write`,
+  `pnpm install:packages:plan`, `pnpm install:packages:check`,
+  `pnpm install:package:build`, `pnpm install:package:check`, and
+  `pnpm install:init:smoke`
 - install package planning is now executable: `pnpm.cmd install:packages:plan`
   and `pnpm.cmd install:packages:check` are backed by
   `scripts/plan-claw-router-install-packages.mjs`

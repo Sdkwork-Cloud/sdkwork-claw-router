@@ -1,21 +1,22 @@
-import { createIdempotencyParams, getClawRouterBackendSdkClient } from 'sdkwork-clawrouter-pc-commons/runtime';
+import { getSdkworkCommerceService } from '@sdkwork/commerce-service';
+import { createIdempotencyParams } from 'sdkwork-clawrouter-pc-commons/runtime';
 
-type BackendCommerce = ReturnType<typeof getClawRouterBackendSdkClient>['commerce'];
+type BackendCommerceService = ReturnType<typeof getSdkworkCommerceService>['admin'];
 
-export async function listInventoryStocks(params?: Parameters<BackendCommerce['inventory']['stocks']['list']>[0]) {
-  return getClawRouterBackendSdkClient().commerce.inventory.stocks.list(params);
+export async function listInventoryStocks(params?: Parameters<BackendCommerceService['inventory']['stocks']['list']>[0]) {
+  return getSdkworkCommerceService().admin.inventory.stocks.list(params);
 }
 
-export async function listInventoryReservations(params?: Parameters<BackendCommerce['inventory']['reservations']['list']>[0]) {
-  return getClawRouterBackendSdkClient().commerce.inventory.reservations.list(params);
+export async function listInventoryReservations(params?: Parameters<BackendCommerceService['inventory']['reservations']['list']>[0]) {
+  return getSdkworkCommerceService().admin.inventory.reservations.list(params);
 }
 
-export async function listInventoryLedgerEntries(params?: Parameters<BackendCommerce['inventory']['ledgerEntries']['list']>[0]) {
-  return getClawRouterBackendSdkClient().commerce.inventory.ledgerEntries.list(params);
+export async function listInventoryLedgerEntries(params?: Parameters<BackendCommerceService['inventory']['ledgerEntries']['list']>[0]) {
+  return getSdkworkCommerceService().admin.inventory.ledgerEntries.list(params);
 }
 
-export async function updateInventoryStock(stockId: string, body: Parameters<BackendCommerce['inventory']['stocks']['update']>[1]) {
-  return getClawRouterBackendSdkClient().commerce.inventory.stocks.update(
+export async function updateInventoryStock(stockId: string, body: Parameters<BackendCommerceService['inventory']['stocks']['update']>[1]) {
+  return getSdkworkCommerceService().admin.inventory.stocks.update(
     stockId,
     body,
     createIdempotencyParams('backend-inventory-stock-update'),

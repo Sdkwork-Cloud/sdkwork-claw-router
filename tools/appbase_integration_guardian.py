@@ -9,7 +9,7 @@ from typing import Any
 
 from tests.test_commerce_standard import (
     CANONICAL_COMMERCE_API_OPERATIONS,
-    CANONICAL_COMMERCE_PRODUCT_CENTER_API_OPERATIONS,
+    MIGRATED_COMMERCE_PRODUCT_CENTER_API_OPERATIONS,
 )
 from tools.frontend_contract_loader import (
     DEFAULT_CONTRACT_INDEX,
@@ -157,8 +157,15 @@ COMMERCE_REQUIRED_PRODUCT_CENTER_TABLES: tuple[str, ...] = (
     "commerce_inventory_reservation",
     "commerce_inventory_ledger",
 )
-COMMERCE_REQUIRED_PRODUCT_CENTER_API_OPERATIONS = CANONICAL_COMMERCE_PRODUCT_CENTER_API_OPERATIONS
-COMMERCE_REQUIRED_API_OPERATIONS = CANONICAL_COMMERCE_API_OPERATIONS
+COMMERCE_REQUIRED_PRODUCT_CENTER_API_OPERATIONS = MIGRATED_COMMERCE_PRODUCT_CENTER_API_OPERATIONS
+COMMERCE_REQUIRED_API_OPERATIONS = tuple(
+    dict.fromkeys(
+        (
+            *COMMERCE_REQUIRED_PRODUCT_CENTER_API_OPERATIONS,
+            *CANONICAL_COMMERCE_API_OPERATIONS,
+        )
+    )
+)
 COMMERCE_SURFACE_PREFIXED_OPERATION_ID_RE = re.compile(
     r"(?m)^\s*operation_id:\s*['\"]?((?:app|backend)\.[A-Za-z0-9_.-]+)['\"]?"
 )
@@ -217,7 +224,8 @@ class AppbaseIntegrationGuardian:
 
         capabilities = self._capability_index(appbase_catalog, messages)
         messages.extend(self._validate_integration_manifest(integration_manifest, capabilities))
-        messages.extend(self._validate_commerce_schema_registry())
+        if self._declares_capability(integration_manifest, "commerce"):
+            messages.extend(self._validate_commerce_schema_registry())
         messages.extend(self._validate_builtin_forbidden_product_forks())
         messages.extend(self._validate_root_level_appbase_shadow_paths())
         return AppbaseIntegrationGuardianResult(ok=not messages, messages=messages)
@@ -251,6 +259,15 @@ class AppbaseIntegrationGuardian:
                 continue
             indexed[capability_id.strip()] = capability
         return indexed
+
+    def _declares_capability(self, manifest: dict[str, Any], capability_id: str) -> bool:
+        integrations = manifest.get("integrations")
+        if not isinstance(integrations, list):
+            return False
+        for integration in integrations:
+            if isinstance(integration, dict) and integration.get("capability") == capability_id:
+                return True
+        return False
 
     def _validate_integration_manifest(
         self,

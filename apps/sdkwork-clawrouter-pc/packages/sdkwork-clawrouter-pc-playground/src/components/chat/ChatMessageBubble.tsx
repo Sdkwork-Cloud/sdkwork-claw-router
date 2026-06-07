@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import { AlertTriangle, Check, Copy } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { ChatMarkdownMessage } from './ChatMarkdownMessage';
 import type { ChatMessage } from './chatTypes';
 
 const COPY_RESET_MS = 1400;
 
 export function ChatMessageBubble({ message }: { message: ChatMessage }) {
+  const { t } = useTranslation();
   const [copied, setCopied] = useState(false);
   const isUser = message.role === 'user';
   const timestamp = formatChatTime(message.createdAt);
@@ -91,8 +93,8 @@ export function ChatMessageBubble({ message }: { message: ChatMessage }) {
           {copyText && (
             <button
               type="button"
-              title={copied ? 'Copied message' : 'Copy message'}
-              aria-label={copied ? 'Copied message' : 'Copy message'}
+              title={copied ? t('playground.chat.message.copied', 'Copied message') : t('playground.chat.message.copy', 'Copy message')}
+              aria-label={copied ? t('playground.chat.message.copied', 'Copied message') : t('playground.chat.message.copy', 'Copy message')}
               onClick={() => {
                 void handleCopy();
               }}

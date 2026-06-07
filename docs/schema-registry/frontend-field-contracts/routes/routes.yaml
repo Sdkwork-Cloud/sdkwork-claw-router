@@ -1077,6 +1077,16 @@ routes:
   - iam_gateway_api_key
   - iam_user_login_event
   - ops_audit_log
+- route: /admin/organization
+  required_tables:
+  - iam_user
+  - iam_organization
+  - iam_organization_member
+  - iam_role
+  - iam_permission
+  - iam_role_permission
+  - iam_user_role
+  - ops_audit_log
 - route: /admin/agents
   required_tables:
   - ai_agent
@@ -2210,6 +2220,7 @@ routes:
   - commerce_refund_event
   - commerce_fulfillment_order
   - commerce_fulfillment_item
+  - commerce_product_sku
   - commerce_shipment
   - commerce_shipment_tracking_event
   - commerce_digital_delivery
@@ -2413,6 +2424,7 @@ routes:
   - commerce_refund_event
   - commerce_fulfillment_order
   - commerce_fulfillment_item
+  - commerce_product_sku
   - commerce_shipment
   - commerce_shipment_tracking_event
   - commerce_digital_delivery
@@ -2433,6 +2445,7 @@ routes:
   - commerce_refund_event
   - commerce_fulfillment_order
   - commerce_fulfillment_item
+  - commerce_product_sku
   - commerce_shipment
   - commerce_shipment_tracking_event
   - commerce_digital_delivery
@@ -2453,6 +2466,7 @@ routes:
   - commerce_refund_event
   - commerce_fulfillment_order
   - commerce_fulfillment_item
+  - commerce_product_sku
   - commerce_shipment
   - commerce_shipment_tracking_event
   - commerce_digital_delivery
@@ -2473,6 +2487,7 @@ routes:
   - commerce_refund_event
   - commerce_fulfillment_order
   - commerce_fulfillment_item
+  - commerce_product_sku
   - commerce_shipment
   - commerce_shipment_tracking_event
   - commerce_digital_delivery

@@ -1,5 +1,4 @@
 import {
-  getClawRouterAppSdkClient,
   createIdempotencyParams,
   createClientOperationToken,
   hasStoredPortalSession,
@@ -12,6 +11,7 @@ import {
   type ApiRecord,
   type ClawRouterMediaResource,
 } from 'sdkwork-clawrouter-pc-commons/runtime';
+import { getSdkworkCommerceService } from '@sdkwork/commerce-service';
 
 export interface VipPackageGroup {
   id: string;
@@ -197,33 +197,32 @@ export class VipService {
   }
 }
 
-type AppCommerce = ReturnType<typeof getClawRouterAppSdkClient>['commerce'];
-type AppSystem = ReturnType<typeof getClawRouterAppSdkClient>['system'];
+type AppCommerceService = ReturnType<typeof getSdkworkCommerceService>;
 
-async function appMembershipsPackageGroupsList(params?: Parameters<AppCommerce['memberships']['packageGroups']['list']>[0]) {
-  return getClawRouterAppSdkClient().commerce.memberships.packageGroups.list(params);
+async function appMembershipsPackageGroupsList(params?: Parameters<AppCommerceService['memberships']['packageGroups']['list']>[0]) {
+  return getSdkworkCommerceService().memberships.packageGroups.list(params);
 }
 
 async function appMembershipsPackageGroupsPackagesList(
   packageGroupId: string,
-  params?: Parameters<AppCommerce['memberships']['packageGroups']['packages']['list']>[1],
+  params?: Parameters<AppCommerceService['memberships']['packageGroups']['packages']['list']>[1],
 ) {
-  return getClawRouterAppSdkClient().commerce.memberships.packageGroups.packages.list(packageGroupId, params);
+  return getSdkworkCommerceService().memberships.packageGroups.packages.list(packageGroupId, params);
 }
 
 async function appMembershipsCurrentRetrieve() {
-  return getClawRouterAppSdkClient().commerce.memberships.current.retrieve();
+  return getSdkworkCommerceService().memberships.current.retrieve();
 }
 
-async function appMembershipsPurchasesCreate(body: Parameters<AppCommerce['memberships']['purchases']['create']>[0]) {
-  return getClawRouterAppSdkClient().commerce.memberships.purchases.create(
+async function appMembershipsPurchasesCreate(body: Parameters<AppCommerceService['memberships']['purchases']['create']>[0]) {
+  return getSdkworkCommerceService().memberships.purchases.create(
     body,
     createIdempotencyParams('app-vip-purchase-create'),
   );
 }
 
-async function appPromotionCodeRedemptionsCreate(body: Parameters<AppSystem['promotions']['codes']['redemptions']['create']>[0]) {
-  return getClawRouterAppSdkClient().system.promotions.codes.redemptions.create(
+async function appPromotionCodeRedemptionsCreate(body: Parameters<AppCommerceService['promotions']['codes']['redemptions']['create']>[0]) {
+  return getSdkworkCommerceService().promotions.codes.redemptions.create(
     body,
     createIdempotencyParams('app-vip-membership-redemption-create'),
   );

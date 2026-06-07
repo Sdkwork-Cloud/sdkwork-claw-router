@@ -92,10 +92,12 @@ pub struct PortalSectionConfig {
 #[derive(Debug, Clone, Default, PartialEq, Eq, Deserialize)]
 #[serde(default)]
 pub struct PortalPublicSectionConfig {
+    pub sdk_base_url: Option<String>,
     pub api_base_url: Option<String>,
     pub open_api_base_url: Option<String>,
     pub app_api_base_url: Option<String>,
     pub backend_api_base_url: Option<String>,
+    pub appbase_backend_api_base_url: Option<String>,
     pub tool_api_enabled: Option<bool>,
 }
 

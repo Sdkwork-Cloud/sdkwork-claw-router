@@ -56,7 +56,6 @@ const client = new SdkworkBackendClient({
 
 - `client.agents` - agents API
 - `client.ai` - ai API
-- `client.commerce` - commerce API
 - `client.content` - content API
 - `client.ecosystem` - ecosystem API
 - `client.iam` - iam API
@@ -65,11 +64,11 @@ const client = new SdkworkBackendClient({
 - `client.messaging` - messaging API
 - `client.openPlatform` - open_platform API
 - `client.platform` - platform API
-- `client.system` - system API
 - `client.prompts` - prompts API
 - `client.serviceProviders` - service_providers API
 - `client.sites` - sites API
 - `client.oss` - oss API
+- `client.system` - system API
 
 ## Usage Examples
 
@@ -93,13 +92,6 @@ const result = await client.agents.agentDefinitions.list(params);
 ```typescript
 // List groups
 const result = await client.ai.channelGroups.list();
-```
-
-### commerce
-
-```typescript
-// Commerce Reports Payment Reconciliation Retrieve
-const result = await client.commerce.commerceReports.paymentReconciliation.retrieve();
 ```
 
 ### content
@@ -179,13 +171,6 @@ const result = await client.openPlatform.providers.list(params);
 const result = await client.platform.apps.categories.list();
 ```
 
-### system
-
-```typescript
-// Retrieve IAM auth runtime settings
-const result = await client.system.auth.settings.retrieve();
-```
-
 ### prompts
 
 ```typescript
@@ -233,6 +218,13 @@ const result = await client.sites.siteCatalog.list(params);
 ```typescript
 // List storage providers
 const result = await client.oss.providers.list();
+```
+
+### system
+
+```typescript
+// Retrieve IAM auth runtime settings
+const result = await client.system.auth.settings.retrieve();
 ```
 
 ## Error Handling

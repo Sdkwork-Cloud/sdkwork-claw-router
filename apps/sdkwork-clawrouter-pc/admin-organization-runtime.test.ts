@@ -66,11 +66,11 @@ test("admin organization route and package are wired into the portal", () => {
     "workspace:*",
   );
   assert.ok(
-    packageJson.workspaces?.includes("../../.sdkwork/dependencies/sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/*-typescript/generated/server-openapi"),
+    packageJson.workspaces?.includes("../../../sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/*-typescript/generated/server-openapi"),
     "portal workspace must include the materialized appbase app SDK package path",
   );
   assert.ok(
-    packageJson.workspaces?.includes("../../.sdkwork/dependencies/sdkwork-appbase/sdks/sdkwork-appbase-backend-sdk/*-typescript/generated/server-openapi"),
+    packageJson.workspaces?.includes("../../../sdkwork-appbase/sdks/sdkwork-appbase-backend-sdk/*-typescript/generated/server-openapi"),
     "portal workspace must include the materialized appbase backend SDK package path",
   );
   assert.match(
@@ -104,7 +104,7 @@ test("admin organization page translations are registered", () => {
   assert.match(organizationMessages, /"admin\.organization\.actions\.revoke": "撤销"/);
 });
 
-test("admin organization service uses appbase app directory reads and backend mutations", () => {
+test("admin organization service uses appbase backend directory reads and mutations", () => {
   const service = source("packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts");
   const packageJson = JSON.parse(
     source("packages/sdkwork-clawrouter-pc-commons/package.json"),
@@ -117,8 +117,8 @@ test("admin organization service uses appbase app directory reads and backend mu
   assert.match(sdkBoundary, /@sdkwork\/appbase-backend-sdk/);
   assert.match(sdkBoundary, /getSdkworkAppbaseAppSdkClient/);
   assert.match(sdkBoundary, /getSdkworkAppbaseBackendSdkClient/);
-  assert.match(service, /getSdkworkAppbaseAppSdkClient/);
   assert.match(service, /getSdkworkAppbaseBackendSdkClient/);
+  assert.doesNotMatch(service, /getSdkworkAppbaseAppSdkClient/);
   assert.doesNotMatch(service, /getClawRouterAppSdkClient/);
   assert.doesNotMatch(service, /iamDirectoryApiOperations/);
   assert.doesNotMatch(service, /\bfetch\s*\(/);
@@ -957,7 +957,7 @@ test("admin organization member table and search are enriched from appbase users
   );
 });
 
-test("admin organization service calls appbase app directory reads and backend write methods", async () => {
+test("admin organization service calls appbase backend directory reads and write methods", async () => {
   const { clearStoredAppSessionToken } = await import("./packages/sdkwork-clawrouter-pc-commons/src/app-session-token.ts");
   const { resetClawRouterSdkClients } = await import("./packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts");
   const { OrganizationService } = await import(
@@ -1017,23 +1017,23 @@ test("admin organization service calls appbase app directory reads and backend w
 
     assert.equal(captured[0].url, "https://appbase.example.com/backend/v3/api/iam/users?page_size=200");
     assert.equal(captured[0].method, "GET");
-    assert.equal(captured[1].url, "/app/v3/api/iam/organizations/tree");
+    assert.equal(captured[1].url, "https://appbase.example.com/backend/v3/api/iam/organizations/tree");
     assert.equal(captured[1].method, "GET");
-    assert.equal(captured[2].url, "/app/v3/api/iam/organizations?page_size=200");
+    assert.equal(captured[2].url, "https://appbase.example.com/backend/v3/api/iam/organizations?page_size=200");
     assert.equal(captured[2].method, "GET");
-    assert.equal(captured[3].url, "/app/v3/api/iam/departments/tree");
+    assert.equal(captured[3].url, "https://appbase.example.com/backend/v3/api/iam/departments/tree");
     assert.equal(captured[3].method, "GET");
-    assert.equal(captured[4].url, "/app/v3/api/iam/departments?page_size=200");
+    assert.equal(captured[4].url, "https://appbase.example.com/backend/v3/api/iam/departments?page_size=200");
     assert.equal(captured[4].method, "GET");
-    assert.equal(captured[5].url, "/app/v3/api/iam/organization_memberships?page_size=200");
+    assert.equal(captured[5].url, "https://appbase.example.com/backend/v3/api/iam/organization_memberships?page_size=200");
     assert.equal(captured[5].method, "GET");
-    assert.equal(captured[6].url, "/app/v3/api/iam/department_assignments?page_size=200");
+    assert.equal(captured[6].url, "https://appbase.example.com/backend/v3/api/iam/department_assignments?page_size=200");
     assert.equal(captured[6].method, "GET");
-    assert.equal(captured[7].url, "/app/v3/api/iam/positions?page_size=200");
+    assert.equal(captured[7].url, "https://appbase.example.com/backend/v3/api/iam/positions?page_size=200");
     assert.equal(captured[7].method, "GET");
-    assert.equal(captured[8].url, "/app/v3/api/iam/position_assignments?page_size=200");
+    assert.equal(captured[8].url, "https://appbase.example.com/backend/v3/api/iam/position_assignments?page_size=200");
     assert.equal(captured[8].method, "GET");
-    assert.equal(captured[9].url, "/app/v3/api/iam/role_bindings?page_size=200");
+    assert.equal(captured[9].url, "https://appbase.example.com/backend/v3/api/iam/role_bindings?page_size=200");
     assert.equal(captured[9].method, "GET");
     assert.equal(captured[10].url, "https://appbase.example.com/backend/v3/api/iam/roles?page_size=200");
     assert.equal(captured[10].method, "GET");

@@ -1,6 +1,5 @@
 import {
   APP_API_PREFIX,
-  BACKEND_API_PREFIX,
   ensureSdkworkApiSuccess,
   getClawRouterAppSdkClient,
   isRecord,
@@ -280,14 +279,6 @@ function createInitialConfigurationDomains(): ConfigurationDomain[] {
       ip: '',
       status: 'unknown',
       remark: 'Product console API base for user-facing operations.',
-    },
-    {
-      id: 'backend-admin-api',
-      name: 'Backend Admin API',
-      domain: normalizeConfigurationDomainUrl(readClawRouterRuntimeEnv('VITE_CLAWROUTER_BACKEND_API_BASE_URL') ?? BACKEND_API_PREFIX),
-      ip: '',
-      status: 'unknown',
-      remark: 'Admin console API base for management operations.',
     },
   ]);
 }

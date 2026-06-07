@@ -173,10 +173,7 @@ async fn admin_app_route_manages_plus_apps_and_market_state() {
     assert_eq!(1, list_payload["data"]["page"]);
     assert_eq!(100, list_payload["data"]["pageSize"]);
     assert_eq!(false, list_payload["data"]["hasNextPage"]);
-    assert_eq!(
-        "ClawRouter PC",
-        list_payload["data"]["items"][0]["name"]
-    );
+    assert_eq!("ClawRouter PC", list_payload["data"]["items"][0]["name"]);
 
     let delete_response = router
         .clone()

@@ -118,6 +118,14 @@ pub fn build_edge_server_config(
             .map_err(anyhow::Error::msg)?;
     }
     if let Some(value) = config_optional(
+        "PORTAL_PUBLIC_SDK_BASE_URL",
+        runtime_toml.and_then(|config| config.portal.public.sdk_base_url.as_deref()),
+    ) {
+        edge_config = edge_config
+            .with_portal_public_sdk_base_url(value)
+            .map_err(anyhow::Error::msg)?;
+    }
+    if let Some(value) = config_optional(
         "PORTAL_PUBLIC_API_BASE_URL",
         runtime_toml.and_then(|config| config.portal.public.api_base_url.as_deref()),
     ) {
@@ -147,6 +155,15 @@ pub fn build_edge_server_config(
     ) {
         edge_config = edge_config
             .with_portal_public_backend_api_base_url(value)
+            .map_err(anyhow::Error::msg)?;
+    }
+    if let Some(value) = config_optional(
+        "PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL",
+        runtime_toml
+            .and_then(|config| config.portal.public.appbase_backend_api_base_url.as_deref()),
+    ) {
+        edge_config = edge_config
+            .with_portal_public_appbase_backend_api_base_url(value)
             .map_err(anyhow::Error::msg)?;
     }
     if let Some(value) = config_optional(

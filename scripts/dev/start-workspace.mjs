@@ -11,6 +11,11 @@ import {
   defaultClawRouterDevPostgresMaxConnections,
   resolveClawRouterDevDatabaseEnv,
 } from './claw-router-dev-database-env.mjs';
+import {
+  mergePortalPublicRuntimeEnv,
+  portalPublicRuntimeEnvLineValue,
+  resolvePortalPublicRuntimeEnv,
+} from '../portal-public-runtime-env.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -346,18 +351,12 @@ function serviceEnv(settings, bindEnvName, bindValue, {
 function portalEnv(settings) {
   const { host, port } = splitBind(settings.portalBind, '--portal-bind');
   return {
-    ...process.env,
+    ...mergePortalPublicRuntimeEnv(process.env),
     HOST: host,
     PORT: port,
     OPENAPI_DEV_URL: appendPath(settings.gatewayForwardUrl, '/openapi.json'),
     SDKWORK_CLAW_DEPLOYMENT_MODE: 'server',
     SDKWORK_CLAW_PORTAL_BIND: settings.portalBind,
-    PORTAL_PUBLIC_API_BASE_URL: GATEWAY_API_PREFIX,
-    PORTAL_PUBLIC_OPEN_API_BASE_URL: process.env.PORTAL_PUBLIC_OPEN_API_BASE_URL
-      ?? process.env.PORTAL_PUBLIC_API_BASE_URL
-      ?? GATEWAY_API_PREFIX,
-    PORTAL_PUBLIC_BACKEND_API_BASE_URL: BACKEND_API_PREFIX,
-    PORTAL_PUBLIC_APP_API_BASE_URL: APP_API_PREFIX,
     PORTAL_DEV_PROXY_GATEWAY_TARGET: settings.gatewayForwardUrl,
     PORTAL_DEV_PROXY_BACKEND_API_TARGET: settings.backendApiForwardUrl,
     PORTAL_DEV_PROXY_APP_API_TARGET: settings.appApiForwardUrl,
@@ -367,9 +366,9 @@ function portalEnv(settings) {
 function edgeServerEnv(settings) {
   const allInOne = settings.runtimeMode === 'all-in-one';
   return {
-    ...serviceEnv(settings, 'SDKWORK_CLAW_SERVER_BIND', settings.serverBind, {
+    ...mergePortalPublicRuntimeEnv(serviceEnv(settings, 'SDKWORK_CLAW_SERVER_BIND', settings.serverBind, {
       startupInstallMode: 'skip',
-    }),
+    })),
     SDKWORK_CLAW_EDGE_SERVER: '1',
     SDKWORK_CLAW_ALL_IN_ONE_RUNTIME: allInOne ? '1' : '0',
     SDKWORK_CLAW_EDGE_GATEWAY_BASE_URL: settings.gatewayForwardUrl,
@@ -382,7 +381,6 @@ function edgeServerEnv(settings) {
     ),
     SDKWORK_CLAW_EDGE_EXTERNAL_SCHEME: settings.externalScheme,
     SDKWORK_CLAW_EDGE_TRUST_FORWARDED_HEADERS: settings.trustForwardedHeaders ? '1' : '0',
-    PORTAL_PUBLIC_TOOL_API_ENABLED: process.env.PORTAL_PUBLIC_TOOL_API_ENABLED ?? 'false',
     PORTAL_TOOL_API_RATE_LIMIT_REQUESTS: process.env.PORTAL_TOOL_API_RATE_LIMIT_REQUESTS ?? '120',
     PORTAL_TOOL_API_RATE_LIMIT_WINDOW_SECONDS:
       process.env.PORTAL_TOOL_API_RATE_LIMIT_WINDOW_SECONDS ?? '60',
@@ -668,6 +666,7 @@ function formatCommand(step) {
 }
 
 export function renderWorkspaceDryRun(settings, plan) {
+  const portalRuntimeEnv = resolvePortalPublicRuntimeEnv(process.env);
   if (settings.planFormat === 'json') {
     return [JSON.stringify({
       mode: 'server',
@@ -704,14 +703,16 @@ export function renderWorkspaceDryRun(settings, plan) {
     `  SDKWORK_CLAW_APP_API_BIND=${settings.appApiBind}`,
     `  SDKWORK_CLAW_SERVER_BIND=${settings.serverBind}`,
     `  SDKWORK_CLAW_PORTAL_BIND=${settings.portalBind}`,
-    `  PORTAL_PUBLIC_API_BASE_URL=${GATEWAY_API_PREFIX}`,
-    `  PORTAL_PUBLIC_OPEN_API_BASE_URL=${process.env.PORTAL_PUBLIC_OPEN_API_BASE_URL ?? process.env.PORTAL_PUBLIC_API_BASE_URL ?? GATEWAY_API_PREFIX}`,
-    `  PORTAL_PUBLIC_BACKEND_API_BASE_URL=${BACKEND_API_PREFIX}`,
-    `  PORTAL_PUBLIC_APP_API_BASE_URL=${APP_API_PREFIX}`,
+    `  PORTAL_PUBLIC_SDK_BASE_URL=${portalRuntimeEnv.PORTAL_PUBLIC_SDK_BASE_URL ?? '(not configured)'}`,
+    `  PORTAL_PUBLIC_API_BASE_URL=${portalPublicRuntimeEnvLineValue(portalRuntimeEnv, 'PORTAL_PUBLIC_API_BASE_URL')}`,
+    `  PORTAL_PUBLIC_OPEN_API_BASE_URL=${portalPublicRuntimeEnvLineValue(portalRuntimeEnv, 'PORTAL_PUBLIC_OPEN_API_BASE_URL')}`,
+    `  PORTAL_PUBLIC_BACKEND_API_BASE_URL=${portalPublicRuntimeEnvLineValue(portalRuntimeEnv, 'PORTAL_PUBLIC_BACKEND_API_BASE_URL')}`,
+    `  PORTAL_PUBLIC_APP_API_BASE_URL=${portalPublicRuntimeEnvLineValue(portalRuntimeEnv, 'PORTAL_PUBLIC_APP_API_BASE_URL')}`,
+    `  PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL=${portalRuntimeEnv.PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL ?? '(not configured)'}`,
     `  PORTAL_DEV_PROXY_GATEWAY_TARGET=${settings.gatewayForwardUrl}`,
     `  PORTAL_DEV_PROXY_BACKEND_API_TARGET=${settings.backendApiForwardUrl}`,
     `  PORTAL_DEV_PROXY_APP_API_TARGET=${settings.appApiForwardUrl}`,
-    `  PORTAL_PUBLIC_TOOL_API_ENABLED=${process.env.PORTAL_PUBLIC_TOOL_API_ENABLED ?? 'false'}`,
+    `  PORTAL_PUBLIC_TOOL_API_ENABLED=${portalRuntimeEnv.PORTAL_PUBLIC_TOOL_API_ENABLED}`,
     `  PORTAL_TOOL_API_RATE_LIMIT_REQUESTS=${process.env.PORTAL_TOOL_API_RATE_LIMIT_REQUESTS ?? '120'}`,
     `  PORTAL_TOOL_API_RATE_LIMIT_WINDOW_SECONDS=${process.env.PORTAL_TOOL_API_RATE_LIMIT_WINDOW_SECONDS ?? '60'}`,
     `  PORTAL_TOOL_API_SDK_ARCHIVE_ROOT=${process.env.PORTAL_TOOL_API_SDK_ARCHIVE_ROOT ?? '(not configured)'}`,

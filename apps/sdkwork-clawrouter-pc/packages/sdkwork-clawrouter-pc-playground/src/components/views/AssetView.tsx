@@ -1,7 +1,7 @@
 import { AssetGalleryView, type AssetType } from './AssetGalleryView';
 import {
   isSdkworkGenerationImageHistoryType,
-} from '@sdkwork/generation-pc-react/react';
+} from '@sdkwork/generations-pc-workspace/generation-history';
 import { type ClawRouterMediaResource } from 'sdkwork-clawrouter-pc-commons/runtime';
 import type { PlaygroundHistoryItem, PlaygroundPreviewSetter } from '../../playgroundTypes';
 

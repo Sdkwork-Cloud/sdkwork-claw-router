@@ -251,7 +251,7 @@ function isRuntimeRecord(value: unknown): value is Record<string, unknown> {
 
 export * from './api-result.ts';
 export * from './api-request-url.ts';
-export * from './admin-category-options.ts';
+export * from './admin-category-types.ts';
 export * from './admin-resource-options.ts';
 export * from './app-session-token.ts';
 export * from './decimal.ts';

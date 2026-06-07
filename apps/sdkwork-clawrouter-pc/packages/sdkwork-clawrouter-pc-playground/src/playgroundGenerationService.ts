@@ -18,7 +18,7 @@ import {
 import {
   mapSdkworkGenerationArtifactsToHistoryMedia,
   mapSdkworkGenerationModalityToHistoryType,
-} from '@sdkwork/generation-pc-react/generation-history';
+} from '@sdkwork/generations-pc-workspace/generation-history';
 import {
   completeAgentRun as completeAgentRunOperation,
   completeAgentRunStep as completeAgentRunStepOperation,

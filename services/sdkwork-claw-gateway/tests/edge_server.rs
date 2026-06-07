@@ -1082,6 +1082,8 @@ async fn edge_server_can_serve_portal_dist_without_node_server() {
     .unwrap()
     .with_portal_public_backend_api_base_url("/backend/v3/api")
     .unwrap()
+    .with_portal_public_appbase_backend_api_base_url("https://appbase.example.com/backend/v3/api")
+    .unwrap()
     .with_portal_static_cache_control("private, no-cache", "public, max-age=86400, immutable")
     .unwrap()
     .with_portal_public_tool_api_enabled(false);
@@ -1125,6 +1127,7 @@ async fn edge_server_can_serve_portal_dist_without_node_server() {
         .unwrap();
     assert!(content_security_policy.contains("connect-src 'self' https://api.sdkwork.com"));
     assert!(content_security_policy.contains("https://tenant-api.example.com"));
+    assert!(content_security_policy.contains("https://appbase.example.com"));
     assert_eq!(
         "private, no-cache",
         root_response
@@ -1176,6 +1179,9 @@ async fn edge_server_can_serve_portal_dist_without_node_server() {
         .contains(r#""VITE_CLAWROUTER_OPEN_API_BASE_URL":"https://tenant-api.example.com/api""#));
     assert!(runtime_env.contains(r#""VITE_CLAWROUTER_APP_API_BASE_URL":"/app/v3/api""#));
     assert!(runtime_env.contains(r#""VITE_CLAWROUTER_BACKEND_API_BASE_URL":"/backend/v3/api""#));
+    assert!(runtime_env.contains(
+        r#""VITE_SDKWORK_APPBASE_BACKEND_API_BASE_URL":"https://appbase.example.com/backend/v3/api""#
+    ));
     assert!(runtime_env.contains(r#""VITE_TOOL_API_ENABLED":"false""#));
 
     let (tool_status, tool_payload) =
@@ -2233,6 +2239,10 @@ async fn edge_server_portal_csp_allows_explicit_private_api_origins() {
     .unwrap()
     .with_portal_public_backend_api_base_url("https://admin-api.example.com/backend/v3/api")
     .unwrap()
+    .with_portal_public_appbase_backend_api_base_url(
+        "https://appbase-admin.example.com/backend/v3/api",
+    )
+    .unwrap()
     .with_portal_csp_connect_src("https://analytics.example.com https://audit.example.com")
     .unwrap();
     let router = sdkwork_claw_gateway::edge_server_router(config);
@@ -2260,6 +2270,7 @@ async fn edge_server_portal_csp_allows_explicit_private_api_origins() {
     assert!(csp.contains("https://open-sdk.example.com"));
     assert!(csp.contains("https://app-api.example.com"));
     assert!(csp.contains("https://admin-api.example.com"));
+    assert!(csp.contains("https://appbase-admin.example.com"));
     assert!(csp.contains("https://analytics.example.com"));
     assert!(csp.contains("https://audit.example.com"));
     assert!(!csp.contains("/app/v3/api"));

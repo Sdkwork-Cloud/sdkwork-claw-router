@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import { X } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 interface MembershipDialogProps {
   title: string;
@@ -16,6 +17,8 @@ export function MembershipDialog({
   onClose,
   children,
 }: MembershipDialogProps) {
+  const { t } = useTranslation();
+
   if (!isOpen) {
     return null;
   }
@@ -39,7 +42,7 @@ export function MembershipDialog({
           <button
             type="button"
             onClick={onClose}
-            aria-label="Close"
+            aria-label={t('common.actions.close', 'Close')}
             className="inline-flex h-9 w-9 items-center justify-center rounded-md text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-700 dark:hover:bg-white/10 dark:hover:text-white"
           >
             <X className="h-5 w-5" />

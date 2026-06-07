@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import {
   DEFAULT_SDKWORK_GENERATION_VIDEO_MODE_CONFIG,
   type SdkworkGenerationVideoModeConfig,
-} from '@sdkwork/generation-pc-react/react';
+} from '@sdkwork/generations-pc-workspace/generation-asset-config';
 import { GenerationModePopupBase, type ConfigSection } from './GenerationModePopupBase';
 
 export type VideoGenerationConfig = SdkworkGenerationVideoModeConfig;

@@ -1537,6 +1537,311 @@ class FrontendContractGuardianTest(unittest.TestCase):
 
             self.assertTrue(result.ok, result.messages)
 
+    def test_accepts_app_shell_operations_through_dependency_sdk_boundaries(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_app(
+                root,
+                """
+                <Route path="/console/account" element={<Account />} />
+                <Route path="/admin/organization" element={<Organization />} />
+                <Route path="/playground" element={<Playground />} />
+                """,
+            )
+            self.write_manifest(
+                root,
+                {
+                    "routes": {
+                        "/console/account": {
+                            "required_api_surface": "app",
+                            "route_scope": "console",
+                            "tables": ["commerce_account"],
+                        },
+                        "/admin/organization": {
+                            "required_api_surface": "backend",
+                            "route_scope": "admin",
+                            "tables": ["iam_user"],
+                        },
+                        "/playground": {
+                            "required_api_surface": "app",
+                            "route_scope": "public",
+                            "tables": ["ai_generation_job"],
+                        },
+                    },
+                    "tables": [
+                        {"table": "commerce_account", "columns": [{"name": "id"}]},
+                        {"table": "iam_user", "columns": [{"name": "id"}]},
+                        {"table": "ai_generation_job", "columns": [{"name": "id"}]},
+                    ],
+                },
+            )
+            self.write_contract(
+                root,
+                """
+                frontend_operations:
+                  - route: /console/account
+                    operation_scope: app_shell
+                    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-account/src/accountService.ts
+                    operation: fetchAccountDetails
+                    operation_id: accounts.current.summary.retrieve
+                    api_surface: app
+                    sdk_domain: commerce
+                  - route: /admin/organization
+                    operation_scope: app_shell
+                    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
+                    operation: loadDirectory
+                    operation_id: admin.organization.directory.load
+                    api_surface: backend
+                    sdk_domain: iam
+                  - route: /playground
+                    operation_scope: app_shell
+                    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/playgroundService.ts
+                    operation: runPlaygroundAssetGeneration
+                    operation_id: playground.assets.generate
+                    api_surface: app
+                    sdk_domain: generations
+                routes:
+                  - route: /console/account
+                    required_tables: [commerce_account]
+                  - route: /admin/organization
+                    required_tables: [iam_user]
+                  - route: /playground
+                    required_tables: [ai_generation_job]
+                """,
+            )
+            self.write_portal_source(
+                root,
+                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-console-account/src/accountService.ts",
+                """
+                import { getSdkworkCommerceService } from '@sdkwork/commerce-service';
+
+                export async function fetchAccountDetails() {
+                  return getSdkworkCommerceService().accounts.current.summary.retrieve();
+                }
+                """,
+            )
+            self.write_portal_source(
+                root,
+                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts",
+                """
+                import { getSdkworkAppbaseBackendSdkClient } from 'sdkwork-clawrouter-pc-commons/runtime';
+
+                export async function loadDirectory() {
+                  return getSdkworkAppbaseBackendSdkClient().iam.users.list();
+                }
+                """,
+            )
+            self.write_portal_source(
+                root,
+                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground/src/playgroundService.ts",
+                """
+                import { createSdkworkGenerationService } from '@sdkwork/generations-pc-react';
+                import { getSdkworkGenerationsAppSdkClient } from 'sdkwork-clawrouter-pc-commons/runtime';
+
+                export async function runPlaygroundAssetGeneration() {
+                  return createSdkworkGenerationService({
+                    clients: { generationsApp: getSdkworkGenerationsAppSdkClient() },
+                  });
+                }
+                """,
+            )
+
+            result = FrontendContractGuardian(root=root).run()
+
+            self.assertTrue(result.ok, result.messages)
+
+    def test_accepts_sdk_runtime_classification_through_dependency_sdk_boundaries(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_app(
+                root,
+                """
+                <Route path="/admin/orders" element={<Orders />} />
+                <Route path="/auth/login" element={<Login />} />
+                """,
+            )
+            self.write_manifest(
+                root,
+                {
+                    "routes": {
+                        "/admin/orders": {
+                            "required_api_surface": "backend",
+                            "route_scope": "admin",
+                            "tables": ["commerce_order"],
+                        },
+                        "/auth/login": {
+                            "required_api_surface": "app",
+                            "route_scope": "public",
+                            "tables": ["iam_user"],
+                        },
+                    },
+                    "tables": [
+                        {"table": "commerce_order", "columns": [{"name": "id"}]},
+                        {"table": "iam_user", "columns": [{"name": "id"}]},
+                    ],
+                },
+            )
+            self.write_contract(
+                root,
+                """
+                frontend_operations:
+                  - route: /admin/orders
+                    source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
+                    operation: backendOrdersList
+                    operation_id: orders.list
+                    api_surface: backend
+                    sdk_domain: commerce
+                  - route: /auth/login
+                    source: apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts
+                    operation: signIn
+                    operation_id: sessions.create
+                    api_surface: app
+                    sdk_domain: auth
+                routes:
+                  - route: /admin/orders
+                    required_tables: [commerce_order]
+                  - route: /auth/login
+                    required_tables: [iam_user]
+                """,
+            )
+            self.write_route_classification(
+                root,
+                """
+                schema: sdkwork-claw-router-frontend-route-classification
+                source: apps/sdkwork-clawrouter-pc/src/App.tsx
+                routes:
+                  - route: /admin/orders
+                    package: sdkwork-clawrouter-pc-admin-orders
+                    owner: commerce-admin
+                    route_scope: admin
+                    delivery_kind: sdk_backed_business_runtime
+                    api_surface: backend
+                    evidence:
+                      - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts
+                  - route: /auth/login
+                    package: sdkwork-clawrouter-pc-auth
+                    owner: identity-access
+                    route_scope: public
+                    delivery_kind: sdk_backed_business_runtime
+                    api_surface: app
+                    evidence:
+                      - apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts
+                """,
+            )
+            self.write_portal_source(
+                root,
+                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts",
+                """
+                import { getSdkworkCommerceService } from '@sdkwork/commerce-service';
+
+                export async function backendOrdersList() {
+                  return getSdkworkCommerceService().admin.orders.list();
+                }
+                """,
+            )
+            self.write_portal_source(
+                root,
+                "apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthController.ts",
+                """
+                import { createSdkworkIamRuntimeAuthController } from '@sdkwork/auth-pc-react';
+                import { getClawRouterIamRuntime } from 'sdkwork-clawrouter-pc-commons/runtime';
+
+                export const clawRouterAuthController = createSdkworkIamRuntimeAuthController({
+                  getRuntime: getClawRouterIamRuntime,
+                });
+                export const signIn = clawRouterAuthController.signIn;
+                """,
+            )
+
+            result = FrontendContractGuardian(root=root).run()
+
+            self.assertTrue(result.ok, result.messages)
+
+    def test_accepts_sdk_runtime_classification_from_dependency_only_operation_fragment(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_app(root, '<Route path="/admin/catalog/products" element={<Products />} />')
+            self.write_manifest(
+                root,
+                {
+                    "routes": {
+                        "/admin/catalog/products": {
+                            "required_api_surface": "backend",
+                            "route_scope": "admin",
+                            "tables": ["commerce_product_spu"],
+                        },
+                    },
+                    "tables": [{"table": "commerce_product_spu", "columns": [{"name": "id"}]}],
+                },
+            )
+            self.write_contract(
+                root,
+                """
+                frontend_operations: []
+                routes:
+                  - route: /admin/catalog/products
+                    required_tables: [commerce_product_spu]
+                """,
+            )
+            self.write_route_classification(
+                root,
+                """
+                schema: sdkwork-claw-router-frontend-route-classification
+                source: apps/sdkwork-clawrouter-pc/src/App.tsx
+                routes:
+                  - route: /admin/catalog/products
+                    package: sdkwork-clawrouter-pc-admin-catalog
+                    owner: commerce-admin
+                    route_scope: admin
+                    delivery_kind: sdk_backed_business_runtime
+                    api_surface: backend
+                    operation_routes:
+                      - /admin/catalog
+                    evidence:
+                      - apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts
+                """,
+            )
+            dependency_fragment = (
+                root
+                / "docs"
+                / "schema-registry"
+                / "frontend-field-contracts"
+                / "operations"
+                / "backend-commerce-catalog.yaml"
+            )
+            dependency_fragment.parent.mkdir(parents=True, exist_ok=True)
+            dependency_fragment.write_text(
+                textwrap.dedent(
+                    """
+                    fragment: operations/backend-commerce-catalog
+                    frontend_operations:
+                      - route: /admin/catalog
+                        source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts
+                        operation: listCommerceProducts
+                        operation_id: catalog.products.list
+                        kind: read
+                        api_surface: backend
+                        api_method: GET
+                        api_path: /backend/v3/api/catalog/products
+                        sdk_domain: commerce
+                        read_sources: [commerce_product_spu]
+                    """
+                ).strip()
+                + "\n",
+                encoding="utf-8",
+            )
+            self.write_portal_source(
+                root,
+                "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts",
+                """
+                export { listCommerceProducts } from 'sdkwork-commerce-pc-admin-product';
+                """,
+            )
+
+            result = FrontendContractGuardian(root=root).run()
+
+            self.assertTrue(result.ok, result.messages)
+
     def test_default_contract_path_prefers_modular_index_over_stale_snapshot(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

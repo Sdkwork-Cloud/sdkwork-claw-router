@@ -1,6 +1,5 @@
 import {
   ensureSdkworkApiSuccess,
-  getSdkworkAppbaseAppSdkClient,
   getSdkworkAppbaseBackendSdkClient,
   isRecord,
   readApiData,
@@ -274,38 +273,37 @@ export type PermissionCommand = {
 
 export class OrganizationService {
   static async loadDirectory(params: DirectoryLoadParams = {}): Promise<OrganizationDirectoryData> {
-    const appClient = getSdkworkAppbaseAppSdkClient();
     const backendClient = getSdkworkAppbaseBackendSdkClient();
     const listParams = toListParams(params);
 
     const usersResult = await backendClient.iam.users.list(listParams);
     ensureSdkworkApiSuccess(usersResult, 'admin.organization.errors.loadUsers');
 
-    const organizationTreeResult = await appClient.iam.organizations.tree.retrieve();
+    const organizationTreeResult = await backendClient.iam.organizations.tree.retrieve();
     ensureSdkworkApiSuccess(organizationTreeResult, 'admin.organization.errors.loadOrganizationTree');
 
-    const organizationsResult = await appClient.iam.organizations.list(listParams);
+    const organizationsResult = await backendClient.iam.organizations.list(listParams);
     ensureSdkworkApiSuccess(organizationsResult, 'admin.organization.errors.loadOrganizations');
 
-    const departmentTreeResult = await appClient.iam.departments.tree.retrieve();
+    const departmentTreeResult = await backendClient.iam.departments.tree.retrieve();
     ensureSdkworkApiSuccess(departmentTreeResult, 'admin.organization.errors.loadDepartmentTree');
 
-    const departmentsResult = await appClient.iam.departments.list(listParams);
+    const departmentsResult = await backendClient.iam.departments.list(listParams);
     ensureSdkworkApiSuccess(departmentsResult, 'admin.organization.errors.loadDepartments');
 
-    const membershipsResult = await appClient.iam.organizationMemberships.list(listParams);
+    const membershipsResult = await backendClient.iam.organizationMemberships.list(listParams);
     ensureSdkworkApiSuccess(membershipsResult, 'admin.organization.errors.loadMemberships');
 
-    const departmentAssignmentsResult = await appClient.iam.departmentAssignments.list(listParams);
+    const departmentAssignmentsResult = await backendClient.iam.departmentAssignments.list(listParams);
     ensureSdkworkApiSuccess(departmentAssignmentsResult, 'admin.organization.errors.loadDepartmentAssignments');
 
-    const positionsResult = await appClient.iam.positions.list(listParams);
+    const positionsResult = await backendClient.iam.positions.list(listParams);
     ensureSdkworkApiSuccess(positionsResult, 'admin.organization.errors.loadPositions');
 
-    const positionAssignmentsResult = await appClient.iam.positionAssignments.list(listParams);
+    const positionAssignmentsResult = await backendClient.iam.positionAssignments.list(listParams);
     ensureSdkworkApiSuccess(positionAssignmentsResult, 'admin.organization.errors.loadPositionAssignments');
 
-    const roleBindingsResult = await appClient.iam.roleBindings.list(listParams);
+    const roleBindingsResult = await backendClient.iam.roleBindings.list(listParams);
     ensureSdkworkApiSuccess(roleBindingsResult, 'admin.organization.errors.loadRoleBindings');
 
     const rolesResult = await backendClient.iam.roles.list(listParams);
@@ -392,7 +390,7 @@ export class OrganizationService {
   }
 
   static async listDepartments(params: DirectoryLoadParams = {}): Promise<DepartmentRecord[]> {
-    const result = await getSdkworkAppbaseAppSdkClient().iam.departments.list(
+    const result = await getSdkworkAppbaseBackendSdkClient().iam.departments.list(
       toListParams(params),
     );
     ensureSdkworkApiSuccess(result, 'admin.organization.errors.loadDepartments');

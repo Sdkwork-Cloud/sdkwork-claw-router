@@ -14,6 +14,17 @@ import {
 
 export { DEFAULT_SITE_SETTINGS, SiteSettingsService, toSiteSettings } from './SiteSettingsService';
 export type { SiteSettingsForm } from './SiteSettingsService';
+export {
+  ClawRouterAuthSettingsPage,
+  formatOAuthProviders,
+  parseOAuthProviderText,
+  toAuthSettingsForm,
+  toAuthSettingsRequest,
+} from './ClawRouterAuthSettingsPage';
+export {
+  fetchClawRouterAuthSettings,
+  updateClawRouterAuthSettings,
+} from './AuthSettingsService';
 
 export function ClawRouterSiteSettingsPage() {
   const { t } = useTranslation();

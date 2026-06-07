@@ -1,11 +1,13 @@
 import type {
   SdkworkGenerationArtifact,
-  SdkworkGenerationAssetModality,
   SdkworkGenerationHistoryItem,
   SdkworkGenerationMedia,
+} from '@sdkwork/generations-pc-workspace/generation-history';
+import type {
+  SdkworkGenerationAssetModality,
   SdkworkGenerationModelBucket,
   SdkworkGenerationSerializedAssetConfig,
-} from '@sdkwork/generation-pc-react/react';
+} from '@sdkwork/generations-pc-workspace/generation-asset-config';
 import type { ClawRouterMediaResource } from 'sdkwork-clawrouter-pc-commons/runtime';
 
 export type PlaygroundMedia = SdkworkGenerationMedia;

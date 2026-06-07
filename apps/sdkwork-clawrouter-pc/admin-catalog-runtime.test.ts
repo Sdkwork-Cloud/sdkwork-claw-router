@@ -9,7 +9,7 @@ function readPortalFile(relativePath: string): string {
 function readCommerceProductAdminFile(relativePath: string): string {
   return readFileSync(
     new URL(
-      `../../.sdkwork/dependencies/sdkwork-commerce/apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-admin-product/src/${relativePath}`,
+      `../../../sdkwork-commerce/apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-admin-product/src/${relativePath}`,
       import.meta.url,
     ),
     "utf8",

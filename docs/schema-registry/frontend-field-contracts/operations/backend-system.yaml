@@ -306,7 +306,7 @@ frontend_operations:
         properties: *adminRateLimitItemProperties
         description: Persisted rate limit rule snapshot returned by the backend.
 - route: /admin/settings
-  source: apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthSettingsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-site/src/AuthSettingsService.ts
   operation: fetchClawRouterAuthSettings
   operation_id: auth.settings.retrieve
   kind: read
@@ -538,7 +538,7 @@ frontend_operations:
                   - trial
                   - develop
 - route: /admin/settings
-  source: apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthSettingsService.ts
+  source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-site/src/AuthSettingsService.ts
   operation: updateClawRouterAuthSettings
   operation_id: auth.settings.update
   kind: update

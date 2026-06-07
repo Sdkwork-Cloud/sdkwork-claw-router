@@ -1031,7 +1031,7 @@ test("shared notification service reads notification items returned by the gener
 
 test("navbar delegates popup queue and persisted acknowledgement state to the appbase notification component", () => {
   const navbarSource = readPortalFile("./packages/sdkwork-clawrouter-pc-commons/src/components/Navbar.tsx");
-  const appbaseNotificationSource = readPortalFile("../../.sdkwork/dependencies/sdkwork-appbase/packages/pc-react/notification/sdkwork-notification-pc-react/src/NotificationBell.tsx");
+  const appbaseNotificationSource = readPortalFile("../../../sdkwork-appbase/packages/pc-react/notification/sdkwork-notification-pc-react/src/NotificationBell.tsx");
 
   assert.match(navbarSource, /SdkworkNotificationBell/, "Navbar must render the shared appbase notification component");
   assert.match(navbarSource, /getPortalNotificationClient\(\)/, "Navbar must inject the generated Claw Router app SDK client");

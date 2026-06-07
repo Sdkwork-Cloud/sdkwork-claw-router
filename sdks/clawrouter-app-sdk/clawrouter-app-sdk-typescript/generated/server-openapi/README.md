@@ -22,37 +22,36 @@ const client = new SdkworkAppClient({
   timeout: 30000,
 });
 
-// Mode A: API Key (recommended for server-to-server calls)
-client.setApiKey('your-api-key');
-
-// Use the SDK
-const result = await client.ai.channelGroups.list();
-```
-
-## Authentication Modes (Mutually Exclusive)
-
-Choose exactly one mode for the same client instance.
-
-### Mode A: API Key
-
-```typescript
-const client = new SdkworkAppClient({ baseUrl: 'http://localhost:18082' });
-client.setApiKey('your-api-key');
-// Sends: Access-Token: <apiKey>
-```
-
-### Mode B: Dual Token
-
-```typescript
-const client = new SdkworkAppClient({ baseUrl: 'http://localhost:18082' });
+// Authentication
 client.setAuthToken('your-auth-token');
 client.setAccessToken('your-access-token');
-// Sends:
-// Authorization: Bearer <authToken>
-// Access-Token: <accessToken>
+
+// Use the SDK
+const body = {
+  code: 'code',
+  deviceId: 'deviceId',
+  deviceName: 'deviceName',
+  deviceType: 'deviceType',
+  email: 'email',
+  grantType: 'password',
+  name: 'name',
+  organizationCode: 'organizationCode',
+  password: 'password',
+  phone: 'phone',
+  subject: 'subject',
+  tenantCode: 'tenantCode',
+  username: 'username',
+};
+const result = await client.auth.sessions.create(body);
 ```
 
-> Do not call `setApiKey(...)` together with `setAuthToken(...)` + `setAccessToken(...)` on the same client.
+## Authentication
+
+```text
+Authorization: Bearer <authToken>
+Access-Token: <accessToken>
+```
+
 
 ## Configuration (Non-Auth)
 
@@ -72,17 +71,18 @@ const client = new SdkworkAppClient({
 
 - `client.agents` - agents API
 - `client.ai` - ai API
+- `client.auth` - auth API
 - `client.chat` - chat API
 - `client.content` - content API
 - `client.ecosystem` - ecosystem API
 - `client.iam` - iam API
 - `client.memory` - memory API
 - `client.notification` - notification API
+- `client.openPlatform` - open_platform API
 - `client.platform` - platform API
-- `client.system` - system API
-- `client.commerce` - commerce API
 - `client.runtime` - runtime API
 - `client.sdkReference` - sdk_reference API
+- `client.system` - system API
 - `client.sites` - sites API
 
 ## Usage Examples
@@ -104,6 +104,28 @@ const result = await client.agents.agentDefinitions.list(params);
 ```typescript
 // List groups
 const result = await client.ai.channelGroups.list();
+```
+
+### auth
+
+```typescript
+// Create IAM session
+const body = {
+  code: 'code',
+  deviceId: 'deviceId',
+  deviceName: 'deviceName',
+  deviceType: 'deviceType',
+  email: 'email',
+  grantType: 'password',
+  name: 'name',
+  organizationCode: 'organizationCode',
+  password: 'password',
+  phone: 'phone',
+  subject: 'subject',
+  tenantCode: 'tenantCode',
+  username: 'username',
+};
+const result = await client.auth.sessions.create(body);
 ```
 
 ### chat
@@ -162,36 +184,21 @@ const params = {
 const result = await client.notification.list(params);
 ```
 
+### open_platform
+
+```typescript
+// Create open platform QR auth session
+const body = {
+  purpose: 'login',
+};
+const result = await client.openPlatform.qrAuth.sessions.create(body);
+```
+
 ### platform
 
 ```typescript
 // Get categories
 const result = await client.platform.apps.store.categories.list();
-```
-
-### system
-
-```typescript
-// Promotion Discount Application Create
-const body = {
-  clientRequestNo: 'clientRequestNo',
-  metadata: {
-    value: 'value',
-  },
-  note: 'note',
-};
-const idempotencyKey = 'Idempotency-Key';
-const params = {
-  idempotencyKey,
-};
-const result = await client.system.promotions.discountApplications.create(body, params);
-```
-
-### commerce
-
-```typescript
-// Recharges Settings Retrieve
-const result = await client.commerce.recharges.settings.retrieve();
 ```
 
 ### runtime
@@ -237,6 +244,13 @@ const body = {
 const result = await client.sdkReference.archives.create(body);
 ```
 
+### system
+
+```typescript
+// Retrieve public IAM verification policy
+const result = await client.system.iam.verificationPolicy.retrieve();
+```
+
 ### sites
 
 ```typescript
@@ -254,7 +268,22 @@ const result = await client.sites.runtime.retrieve(params);
 import { SdkworkAppClient, NetworkError, TimeoutError, AuthenticationError } from '@sdkwork/clawrouter-app-sdk';
 
 try {
-  const result = await client.ai.channelGroups.list();
+  const body = {
+    code: 'code',
+    deviceId: 'deviceId',
+    deviceName: 'deviceName',
+    deviceType: 'deviceType',
+    email: 'email',
+    grantType: 'password',
+    name: 'name',
+    organizationCode: 'organizationCode',
+    password: 'password',
+    phone: 'phone',
+    subject: 'subject',
+    tenantCode: 'tenantCode',
+    username: 'username',
+  };
+  const result = await client.auth.sessions.create(body);
 } catch (error) {
   if (error instanceof AuthenticationError) {
     console.error('Authentication failed:', error.message);
@@ -291,7 +320,7 @@ This SDK includes cross-platform publish scripts in `bin/`:
 .\bin\publish.ps1 --action publish --channel test --dry-run
 ```
 
-> Set `NPM_TOKEN` (and optional `NPM_REGISTRY_URL`) before release publish.
+> Configure npm registry credentials before release publish.
 
 ## License
 

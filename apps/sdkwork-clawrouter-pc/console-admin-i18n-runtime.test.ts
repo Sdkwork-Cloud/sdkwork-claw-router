@@ -4,6 +4,8 @@ import path from "node:path";
 import test from "node:test";
 import ts from "typescript";
 
+import { resources } from "./packages/sdkwork-clawrouter-pc-i18n/src/resources";
+
 const PORTAL_ROOT = path.dirname(new URL(import.meta.url).pathname).replace(/^\/([A-Za-z]:)/, "$1");
 const PACKAGES_ROOT = path.join(PORTAL_ROOT, "packages");
 const HAN_TEXT = /[\u3400-\u9fff]/u;
@@ -474,29 +476,13 @@ function isI18nFallbackLiteral(node: ts.StringLiteral | ts.NoSubstitutionTemplat
 }
 
 function collectI18nResourceTranslations(language: "en" | "zh"): Map<string, string> {
-  const i18nFile = path.join(PACKAGES_ROOT, "sdkwork-clawrouter-pc-i18n", "src", "index.ts");
-  const sourceText = readFileSync(i18nFile, "utf8");
-  const sourceFile = ts.createSourceFile(i18nFile, sourceText, ts.ScriptTarget.Latest, true, ts.ScriptKind.TS);
-  let translations: Map<string, string> | undefined;
-
-  const visit = (node: ts.Node) => {
-    if (
-      ts.isVariableDeclaration(node)
-      && ts.isIdentifier(node.name)
-      && node.name.text === "resources"
-      && node.initializer
-      && ts.isObjectLiteralExpression(node.initializer)
-    ) {
-      const languageObject = findObjectProperty(node.initializer, language);
-      const translationObject = languageObject ? findObjectProperty(languageObject, "translation") : undefined;
-      translations = translationObject ? collectStringObjectProperties(translationObject) : new Map();
-      return;
+  const result = new Map<string, string>();
+  for (const [key, value] of Object.entries(resources[language]?.translation ?? {})) {
+    if (typeof value === "string") {
+      result.set(key, value);
     }
-    ts.forEachChild(node, visit);
-  };
-
-  visit(sourceFile);
-  return translations ?? new Map();
+  }
+  return result;
 }
 
 function findObjectProperty(object: ts.ObjectLiteralExpression, propertyName: string): ts.ObjectLiteralExpression | undefined {

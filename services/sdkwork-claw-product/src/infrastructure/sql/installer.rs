@@ -60,6 +60,7 @@ use crate::infrastructure::sql::skills_seed::{
 use crate::infrastructure::sql::sql_admin_product_center::{
     media_resource_object_blob_id, media_resource_stable_id, provider_asset_media_resource,
 };
+use crate::infrastructure::sql::runtime_id::next_claw_runtime_id;
 use crate::ports::{AdminModelStore, AdminModelSubject, SyncAdminModelCatalogCommand};
 
 const GENERATED_POSTGRES_SCHEMA: &str =
@@ -5663,7 +5664,7 @@ async fn create_sqlite_system_tables(pool: &SqlitePool) -> Result<(), sqlx::Erro
     for statement in [
         r#"
         CREATE TABLE IF NOT EXISTS system_installation_state (
-            id INTEGER PRIMARY KEY,
+            id BIGINT NOT NULL PRIMARY KEY,
             installation_id TEXT NOT NULL,
             environment TEXT NOT NULL,
             database_engine TEXT NOT NULL,
@@ -5679,7 +5680,7 @@ async fn create_sqlite_system_tables(pool: &SqlitePool) -> Result<(), sqlx::Erro
         "#,
         r#"
         CREATE TABLE IF NOT EXISTS system_schema_migration (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            id BIGINT NOT NULL PRIMARY KEY,
             migration_key TEXT NOT NULL,
             migration_version TEXT NOT NULL,
             checksum TEXT NOT NULL,
@@ -5703,7 +5704,7 @@ async fn create_postgres_system_tables(pool: &PgPool) -> Result<(), sqlx::Error>
     for statement in [
         r#"
         CREATE TABLE IF NOT EXISTS system_installation_state (
-            id BIGINT PRIMARY KEY,
+            id BIGINT NOT NULL PRIMARY KEY,
             installation_id VARCHAR(64) NOT NULL,
             environment VARCHAR(64) NOT NULL,
             database_engine VARCHAR(32) NOT NULL,
@@ -5719,7 +5720,7 @@ async fn create_postgres_system_tables(pool: &PgPool) -> Result<(), sqlx::Error>
         "#,
         r#"
         CREATE TABLE IF NOT EXISTS system_schema_migration (
-            id BIGSERIAL PRIMARY KEY,
+            id BIGINT NOT NULL PRIMARY KEY,
             migration_key VARCHAR(128) NOT NULL,
             migration_version VARCHAR(128) NOT NULL,
             checksum VARCHAR(128) NOT NULL,
@@ -5998,12 +5999,13 @@ async fn record_sqlite_migration_started(
 ) -> Result<(), sqlx::Error> {
     let migration_key = migration_key(key_prefix, version);
     let checksum = sha256_hex(payload);
+    let id = next_install_runtime_id("system schema migration")?;
     sqlx::query(
         r#"
         INSERT INTO system_schema_migration
-            (migration_key, migration_version, checksum, status, started_at)
+            (id, migration_key, migration_version, checksum, status, started_at)
         VALUES
-            (?, ?, ?, 'running', CURRENT_TIMESTAMP)
+            (?, ?, ?, ?, 'running', CURRENT_TIMESTAMP)
         ON CONFLICT(migration_key) DO UPDATE SET
             migration_version = excluded.migration_version,
             checksum = excluded.checksum,
@@ -6013,6 +6015,7 @@ async fn record_sqlite_migration_started(
             error_message = NULL
         "#,
     )
+    .bind(id)
     .bind(migration_key)
     .bind(version)
     .bind(checksum)
@@ -6029,12 +6032,13 @@ async fn record_postgres_migration_started(
 ) -> Result<(), sqlx::Error> {
     let migration_key = migration_key(key_prefix, version);
     let checksum = sha256_hex(payload);
+    let id = next_install_runtime_id("system schema migration")?;
     sqlx::query(
         r#"
         INSERT INTO system_schema_migration
-            (migration_key, migration_version, checksum, status, started_at)
+            (id, migration_key, migration_version, checksum, status, started_at)
         VALUES
-            ($1, $2, $3, 'running', CURRENT_TIMESTAMP)
+            ($1, $2, $3, $4, 'running', CURRENT_TIMESTAMP)
         ON CONFLICT(migration_key) DO UPDATE SET
             migration_version = excluded.migration_version,
             checksum = excluded.checksum,
@@ -6044,6 +6048,7 @@ async fn record_postgres_migration_started(
             error_message = NULL
         "#,
     )
+    .bind(id)
     .bind(migration_key)
     .bind(version)
     .bind(checksum)
@@ -6305,8 +6310,10 @@ fn strip_line_comments(sql: &str) -> String {
 }
 
 fn postgres_statement_to_sqlite(statement: &str) -> String {
-    let mut sqlite =
-        statement.replace("BIGSERIAL PRIMARY KEY", "INTEGER PRIMARY KEY AUTOINCREMENT");
+    let mut sqlite = statement.replace(
+        "id BIGINT NOT NULL PRIMARY KEY",
+        "id __SDKWORK_SQLITE_ID_PRIMARY_KEY__",
+    );
     sqlite = sqlite.replace(
         "    agent_run_step_id_key VARCHAR(128) GENERATED ALWAYS AS (COALESCE(agent_run_step_id, '')) STORED,\n",
         "",
@@ -6319,12 +6326,20 @@ fn postgres_statement_to_sqlite(statement: &str) -> String {
     sqlite = sqlite.replace("JSONB", "TEXT");
     sqlite = sqlite.replace("BOOLEAN", "INTEGER");
     sqlite = sqlite.replace("BIGINT", "INTEGER");
+    sqlite = sqlite.replace(
+        "id __SDKWORK_SQLITE_ID_PRIMARY_KEY__",
+        "id BIGINT NOT NULL PRIMARY KEY",
+    );
     sqlite = sqlite.replace("DEFAULT '{}'::jsonb", "DEFAULT '{}'");
     sqlite = sqlite.replace("'{}'::jsonb", "'{}'");
     sqlite = sqlite.replace("'[]'::jsonb", "'[]'");
     sqlite = sqlite.replace("DEFAULT FALSE", "DEFAULT 0");
     sqlite = sqlite.replace("DEFAULT TRUE", "DEFAULT 1");
     sqlite
+}
+
+fn next_install_runtime_id(context: &str) -> Result<i64, sqlx::Error> {
+    next_claw_runtime_id(context).map_err(|error| sqlx::Error::InvalidArgument(error.to_string()))
 }
 
 async fn execute_sqlite_statement(pool: &SqlitePool, statement: &str) -> Result<(), sqlx::Error> {
@@ -6881,7 +6896,7 @@ mod tests {
         let column = create_table_columns(
             r#"
             CREATE TABLE IF NOT EXISTS ai_model_pricing (
-                id BIGSERIAL PRIMARY KEY,
+                id BIGINT NOT NULL PRIMARY KEY,
                 region_code VARCHAR(64) NOT NULL
             )
             "#,
@@ -6902,7 +6917,7 @@ mod tests {
         let columns = create_table_columns(
             r#"
             CREATE TABLE IF NOT EXISTS ai_channel_credential (
-                id BIGSERIAL PRIMARY KEY,
+                id BIGINT NOT NULL PRIMARY KEY,
                 credential_type VARCHAR(32) NOT NULL,
                 auth_type VARCHAR(64) NOT NULL,
                 priority INTEGER NOT NULL DEFAULT 100,
@@ -6930,6 +6945,35 @@ mod tests {
             columns["priority"]
         );
         assert_eq!("\"weight\" INTEGER NOT NULL DEFAULT 100", columns["weight"]);
+    }
+
+    #[test]
+    fn postgres_statement_to_sqlite_preserves_explicit_snowflake_primary_key() {
+        let sqlite = postgres_statement_to_sqlite(
+            r#"
+            CREATE TABLE IF NOT EXISTS ai_model_pricing (
+                id BIGINT NOT NULL PRIMARY KEY,
+                tenant_id BIGINT NOT NULL,
+                region_code VARCHAR(64) NOT NULL
+            )
+            "#,
+        );
+
+        assert!(
+            sqlite.contains("id BIGINT NOT NULL PRIMARY KEY"),
+            "SQLite DDL must preserve explicit Snowflake primary keys"
+        );
+        let database_auto_id_keyword = ["AUTO", "INCREMENT"].join("");
+        assert!(
+            !sqlite
+                .to_ascii_uppercase()
+                .contains(database_auto_id_keyword.as_str()),
+            "SQLite DDL must keep runtime id allocation outside the database"
+        );
+        assert!(
+            !sqlite.contains("id INTEGER NOT NULL PRIMARY KEY"),
+            "SQLite DDL must not turn Snowflake ids into rowid aliases"
+        );
     }
 
     #[test]

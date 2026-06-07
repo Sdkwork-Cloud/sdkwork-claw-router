@@ -6,8 +6,6 @@
   "packageManager": "pnpm@10.33.0",
   "scripts": {
     "dev": "node scripts/run-claw-router-product.mjs server --dev-env-file .env.postgres",
-    "deps:local:link": "node scripts/prepare-local-dependencies.mjs --apply",
-    "deps:local:check": "node scripts/prepare-local-dependencies.mjs --check",
     "dev:sqlite": "node scripts/run-claw-router-product.mjs server -- --database-url sqlite://target/dev/clawrouter.sqlite",
     "dev:postgres": "node scripts/run-claw-router-product.mjs server --dev-env-file .env.postgres",
     "dev:distributed": "node scripts/run-claw-router-product.mjs server -- --distributed",

@@ -192,12 +192,16 @@ class AppbaseCapabilityGuardian:
                 )
         if status == "standard" and maturity != "L3":
             messages.append(f"capability {capability_id or index} status standard requires maturity L3")
+        is_externalized = status == "externalized"
 
-        layers = capability.get("requiredLayers")
-        if not isinstance(layers, list) or not layers:
-            messages.append(f"capability {capability_id or index} must declare requiredLayers")
-            layers = []
-        layer_kinds = self._validate_layers(capability_id or str(index), domain, layers, messages)
+        if is_externalized:
+            layer_kinds = self._validate_externalized_capability(capability, capability_id or str(index), messages)
+        else:
+            layers = capability.get("requiredLayers")
+            if not isinstance(layers, list) or not layers:
+                messages.append(f"capability {capability_id or index} must declare requiredLayers")
+                layers = []
+            layer_kinds = self._validate_layers(capability_id or str(index), domain, layers, messages)
 
         quality_gates = capability.get("qualityGates")
         if not isinstance(quality_gates, list) or not quality_gates:
@@ -209,8 +213,11 @@ class AppbaseCapabilityGuardian:
         if not isinstance(integration, dict):
             messages.append(f"capability {capability_id or index} must declare integration policy")
         else:
-            if integration.get("productForksForbidden") is not True:
-                messages.append(f"capability {capability_id or index} must set integration.productForksForbidden to true")
+            if not self._forks_forbidden(integration):
+                messages.append(
+                    f"capability {capability_id or index} must set integration.productForksForbidden "
+                    "or integration.domainForksForbidden to true"
+                )
             if integration.get("sdkBoundary") != "generated-sdk-through-ports":
                 messages.append(
                     f"capability {capability_id or index} must use integration.sdkBoundary generated-sdk-through-ports"
@@ -219,7 +226,7 @@ class AppbaseCapabilityGuardian:
         if capability_id == "commerce":
             messages.extend(self._validate_commerce_standard_capability(capability))
 
-        if maturity == "L3":
+        if maturity == "L3" and not is_externalized:
             for kind in L3_REQUIRED_LAYER_KINDS:
                 if kind not in layer_kinds:
                     messages.append(f"capability {capability_id or index} declares L3 but is missing required layer kind: {kind}")
@@ -229,6 +236,58 @@ class AppbaseCapabilityGuardian:
                         f"capability {capability_id or index} declares L3 but is missing required quality gate category: {category}"
                     )
         return messages
+
+    def _forks_forbidden(self, integration: dict[str, Any]) -> bool:
+        return integration.get("productForksForbidden") is True or integration.get("domainForksForbidden") is True
+
+    def _validate_externalized_capability(
+        self,
+        capability: dict[str, Any],
+        capability_id: str,
+        messages: list[str],
+    ) -> set[str]:
+        external_repository = self._required_string(
+            capability,
+            "externalRepository",
+            f"capability {capability_id}",
+            messages,
+        )
+        if external_repository:
+            external_path = Path(external_repository)
+            if external_path.is_absolute() or ".." not in external_path.parts:
+                messages.append(
+                    f"capability {capability_id} externalRepository must use a relative sibling repository path"
+                )
+
+        external_layers = capability.get("externalLayers")
+        if not isinstance(external_layers, list) or not external_layers:
+            messages.append(f"capability {capability_id} externalized status must declare externalLayers")
+            return set()
+
+        layer_kinds: set[str] = set()
+        for index, layer in enumerate(external_layers):
+            if not isinstance(layer, dict):
+                messages.append(f"capability {capability_id} external layer at index {index} must be a mapping")
+                continue
+            kind = self._required_string(
+                layer,
+                "kind",
+                f"capability {capability_id} external layer at index {index}",
+                messages,
+            )
+            relative_path = self._required_string(
+                layer,
+                "path",
+                f"capability {capability_id} external layer {kind or index}",
+                messages,
+            )
+            if kind:
+                layer_kinds.add(kind)
+            if relative_path and Path(relative_path).is_absolute():
+                messages.append(
+                    f"capability {capability_id} external layer {kind or index} path must be relative: {relative_path}"
+                )
+        return layer_kinds
 
     def _validate_commerce_standard_capability(self, capability: dict[str, Any]) -> list[str]:
         messages: list[str] = []
@@ -325,11 +384,19 @@ class AppbaseCapabilityGuardian:
             )
             if category:
                 categories.add(category)
-            if command and (" --filter " not in f" {command} " and "cargo " not in command and "python " not in command):
+            if command and (
+                " --filter " not in f" {command} "
+                and "cargo " not in command
+                and "python " not in command
+                and not self._is_external_pnpm_dir_command(command)
+            ):
                 messages.append(f"capability {capability_id} quality gate {category or index} command must be directly runnable: {command}")
             if category and command:
                 messages.extend(self._validate_quality_gate_command(capability_id, category, command))
         return categories
+
+    def _is_external_pnpm_dir_command(self, command: str) -> bool:
+        return re.search(r"\bpnpm\s+--dir\s+\.\./[A-Za-z0-9_.-]+\s+\S+", command) is not None
 
     def _validate_quality_gate_command(self, capability_id: str, category: str, command: str) -> list[str]:
         messages: list[str] = []

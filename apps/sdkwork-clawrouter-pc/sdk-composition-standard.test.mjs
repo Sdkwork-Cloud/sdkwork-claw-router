@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import test from 'node:test';
 
 const portalRoot = new URL('./', import.meta.url);
@@ -26,8 +26,8 @@ test('portal workspace declares appbase app and backend generated SDK packages',
   assert.equal(commonsPackageJson.dependencies['@sdkwork/appbase-backend-sdk'], 'workspace:*');
 
   for (const workspacePattern of [
-    '../../.sdkwork/dependencies/sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/*-typescript/generated/server-openapi',
-    '../../.sdkwork/dependencies/sdkwork-appbase/sdks/sdkwork-appbase-backend-sdk/*-typescript/generated/server-openapi',
+    '../../../sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/*-typescript/generated/server-openapi',
+    '../../../sdkwork-appbase/sdks/sdkwork-appbase-backend-sdk/*-typescript/generated/server-openapi',
   ]) {
     assert.ok(packageJson.workspaces.includes(workspacePattern), `package workspaces must include ${workspacePattern}`);
     assert.ok(workspaceSource.includes(workspacePattern), `pnpm workspace must include ${workspacePattern}`);
@@ -37,7 +37,7 @@ test('portal workspace declares appbase app and backend generated SDK packages',
     ['@sdkwork/appbase-app-sdk', 'sdkwork-appbase-app-sdk'],
     ['@sdkwork/appbase-backend-sdk', 'sdkwork-appbase-backend-sdk'],
   ]) {
-    const generatedPath = `../../.sdkwork/dependencies/sdkwork-appbase/sdks/${sdkFamily}/${sdkFamily}-typescript/generated/server-openapi/src/index.ts`;
+    const generatedPath = `../../../sdkwork-appbase/sdks/${sdkFamily}/${sdkFamily}-typescript/generated/server-openapi/src/index.ts`;
     assert.ok(tsconfigSource.includes(`"${packageName}"`), `${packageName} must be present in tsconfig paths`);
     assert.ok(typecheckSource.includes(`"${packageName}"`), `${packageName} must be present in typecheck paths`);
     assert.ok(tsconfigSource.includes(generatedPath), `${packageName} tsconfig path must point at generated server-openapi`);
@@ -49,6 +49,92 @@ test('portal workspace declares appbase app and backend generated SDK packages',
     typecheckSource,
     /sdkwork-appbase-backend-sdk-typescript\/src\/index\.ts/,
     'typecheck must not point at the stale appbase backend SDK source root',
+  );
+});
+
+test('portal workspace declares Commerce app and backend generated SDK packages', () => {
+  const packageJson = json('package.json');
+  const commonsPackageJson = json('packages/sdkwork-clawrouter-pc-commons/package.json');
+  const workspaceSource = source('pnpm-workspace.yaml');
+  const tsconfigSource = source('tsconfig.json');
+  const typecheckSource = source('tsconfig.typecheck.json');
+  const viteConfigSource = source('vite.config.ts');
+
+  assert.equal(packageJson.dependencies['sdkwork-commerce-app-sdk-generated-typescript'], 'workspace:*');
+  assert.equal(packageJson.dependencies['sdkwork-commerce-backend-sdk-generated-typescript'], 'workspace:*');
+  assert.equal(commonsPackageJson.dependencies['sdkwork-commerce-app-sdk-generated-typescript'], 'workspace:*');
+  assert.equal(commonsPackageJson.dependencies['sdkwork-commerce-backend-sdk-generated-typescript'], 'workspace:*');
+
+  for (const workspacePattern of [
+    '../../../sdkwork-commerce/sdks/sdkwork-commerce-app-sdk/sdkwork-commerce-app-sdk-typescript/generated/server-openapi',
+    '../../../sdkwork-commerce/sdks/sdkwork-commerce-backend-sdk/sdkwork-commerce-backend-sdk-typescript/generated/server-openapi',
+  ]) {
+    assert.ok(packageJson.workspaces.includes(workspacePattern), `package workspaces must include ${workspacePattern}`);
+    assert.ok(workspaceSource.includes(workspacePattern), `pnpm workspace must include ${workspacePattern}`);
+  }
+
+  for (const [packageName, sdkFamily] of [
+    ['sdkwork-commerce-app-sdk-generated-typescript', 'sdkwork-commerce-app-sdk'],
+    ['sdkwork-commerce-backend-sdk-generated-typescript', 'sdkwork-commerce-backend-sdk'],
+  ]) {
+    const generatedPath = `../../../sdkwork-commerce/sdks/${sdkFamily}/${sdkFamily}-typescript/generated/server-openapi/src/index.ts`;
+    assert.ok(tsconfigSource.includes(`"${packageName}"`), `${packageName} must be present in tsconfig paths`);
+    assert.ok(typecheckSource.includes(`"${packageName}"`), `${packageName} must be present in typecheck paths`);
+    assert.ok(tsconfigSource.includes(generatedPath), `${packageName} tsconfig path must point at generated server-openapi`);
+    assert.ok(viteConfigSource.includes(`find: '${packageName}'`), `${packageName} must be present in Vite aliases`);
+    assert.ok(viteConfigSource.includes(`sdks/${sdkFamily}/${sdkFamily}-typescript/generated/server-openapi/src/index.ts`));
+  }
+});
+
+test('clawrouter SDK families declare Commerce dependencies and exclude Commerce-owned generated transport', () => {
+  const appAssembly = json('../../sdks/clawrouter-app-sdk/.sdkwork-assembly.json');
+  const backendAssembly = json('../../sdks/clawrouter-backend-sdk/.sdkwork-assembly.json');
+  const appOpenapi = json('../../sdks/clawrouter-app-sdk/openapi/clawrouter-app-sdk.openapi.json');
+  const backendOpenapi = json('../../sdks/clawrouter-backend-sdk/openapi/clawrouter-backend-sdk.openapi.json');
+
+  assert.ok(
+    appAssembly.sdkDependencies.some((dependency) => dependency.workspace === 'sdkwork-commerce-app-sdk'),
+    'ClawRouter app SDK must declare Commerce app SDK as a dependency instead of regenerating Commerce app paths',
+  );
+  assert.ok(
+    backendAssembly.sdkDependencies.some((dependency) => dependency.workspace === 'sdkwork-commerce-backend-sdk'),
+    'ClawRouter backend SDK must declare Commerce backend SDK as a dependency instead of regenerating Commerce backend paths',
+  );
+
+  for (const path of [
+    '/app/v3/api/catalog/products',
+    '/app/v3/api/orders',
+    '/app/v3/api/payments/intents',
+    '/app/v3/api/promotions/discount_applications',
+  ]) {
+    assert.equal(appOpenapi.paths[path], undefined, `${path} belongs to Commerce app SDK`);
+  }
+
+  for (const path of [
+    '/backend/v3/api/catalog/products',
+    '/backend/v3/api/payments/providers',
+    '/backend/v3/api/memberships/entitlements',
+    '/backend/v3/api/promotions/coupon_stocks',
+  ]) {
+    assert.equal(backendOpenapi.paths[path], undefined, `${path} belongs to Commerce backend SDK`);
+  }
+
+  assert.equal(
+    existsSync(new URL('../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/api/commerce.ts', portalRoot)),
+    false,
+    'ClawRouter app generated SDK must not contain a Commerce API module',
+  );
+  assert.equal(
+    existsSync(new URL('../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/generated/server-openapi/src/api/commerce.ts', portalRoot)),
+    false,
+    'ClawRouter backend generated SDK must not contain a Commerce API module',
+  );
+
+  const backendSystemApi = source('../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/generated/server-openapi/src/api/system.ts');
+  assert.doesNotMatch(
+    backendSystemApi,
+    /SystemPromotions(?:Offers|CouponStocks|UserCoupons|DiscountApplications|DiscountAllocations|CouponLedgerEntries)/,
+    'Commerce promotion resources must stay in Commerce backend SDK, not ClawRouter system SDK',
   );
 });
 
@@ -75,17 +161,44 @@ test('commons SDK client bootstrap composes appbase, product and open SDKs throu
   assert.doesNotMatch(sdkClientsSource, /createSessionKey/);
 });
 
-test('IAM runtime uses the high-level appbase auth runtime while binding product and dependency SDK clients to the shared token manager', () => {
+test('commons SDK client bootstrap composes Commerce dependency SDKs through the Commerce service provider', () => {
+  const sdkClientsSource = source('packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts');
+
+  assert.match(sdkClientsSource, /from '@sdkwork\/commerce-service'/);
+  assert.match(sdkClientsSource, /from 'sdkwork-commerce-app-sdk-generated-typescript'/);
+  assert.match(sdkClientsSource, /from 'sdkwork-commerce-backend-sdk-generated-typescript'/);
+  assert.match(sdkClientsSource, /configureSdkworkCommerceServiceProvider/);
+  assert.match(sdkClientsSource, /createSdkworkCommerceService/);
+  assert.match(sdkClientsSource, /createSdkworkCommerceAppSdkClient/);
+  assert.match(sdkClientsSource, /getSdkworkCommerceAppSdkClient/);
+  assert.match(sdkClientsSource, /createSdkworkCommerceBackendSdkClient/);
+  assert.match(sdkClientsSource, /getSdkworkCommerceBackendSdkClient/);
+  assert.match(sdkClientsSource, /__SDKWORK_COMMERCE_APP_SDK_CLIENT__/);
+  assert.match(sdkClientsSource, /__SDKWORK_COMMERCE_BACKEND_SDK_CLIENT__/);
+  assert.match(sdkClientsSource, /VITE_SDKWORK_COMMERCE_APP_API_BASE_URL/);
+  assert.match(sdkClientsSource, /VITE_SDKWORK_COMMERCE_BACKEND_API_BASE_URL/);
+  assert.match(sdkClientsSource, /tokenManager:\s*resolveClawRouterSdkTokenManager\(options\.tokenManager\)/);
+  assert.match(sdkClientsSource, /wrapCommerceAppSdkClient/);
+  assert.match(sdkClientsSource, /wrapCommerceBackendSdkClient/);
+});
+
+test('IAM runtime uses the high-level appbase auth runtime while binding app SDK clients to the shared token manager', () => {
   const iamRuntimeSource = source('packages/sdkwork-clawrouter-pc-commons/src/iam-runtime.ts');
 
   assert.match(iamRuntimeSource, /createSdkworkAppbasePcAuthRuntime/);
   assert.match(iamRuntimeSource, /createAppbaseAppClient:\s*\(\)\s*=>\s*getSdkworkAppbaseAppSdkClient\(\)/);
-  assert.match(iamRuntimeSource, /createAppbaseBackendClient:\s*\(\)\s*=>\s*getSdkworkAppbaseBackendSdkClient\(\)/);
   assert.match(iamRuntimeSource, /sdkClients:\s*\[/);
   assert.match(iamRuntimeSource, /getClawRouterAppSdkClient\(\)/);
-  assert.match(iamRuntimeSource, /getClawRouterBackendSdkClient\(\)/);
+  assert.match(iamRuntimeSource, /getSdkworkDriveAppSdkClient\(\)/);
+  assert.match(iamRuntimeSource, /getSdkworkGenerationsAppSdkClient\(\)/);
+  assert.match(iamRuntimeSource, /getSdkworkCommerceAppSdkClient\(\)/);
   assert.match(iamRuntimeSource, /tokenManager:\s*getClawRouterGlobalTokenManager\(\)/);
   assert.match(iamRuntimeSource, /sessionBridge:/);
+  assert.doesNotMatch(iamRuntimeSource, /createAppbaseBackendClient/);
+  assert.doesNotMatch(iamRuntimeSource, /appbaseBackendApiBaseUrl/);
+  assert.doesNotMatch(iamRuntimeSource, /getSdkworkAppbaseBackendSdkClient/);
+  assert.doesNotMatch(iamRuntimeSource, /getClawRouterBackendSdkClient/);
+  assert.doesNotMatch(iamRuntimeSource, /resolveRequiredAppbaseBackendBaseUrl/);
   assert.doesNotMatch(iamRuntimeSource, /@sdkwork\/iam-sdk-adapter/);
   assert.doesNotMatch(iamRuntimeSource, /createIamAppSdkAdapter/);
   assert.doesNotMatch(iamRuntimeSource, /createIamBackendSdkAdapter/);

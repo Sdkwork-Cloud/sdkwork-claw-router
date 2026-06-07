@@ -238,7 +238,7 @@ where
         announcement_store,
         app_store,
         auth_settings_store,
-        catalog_store,
+        catalog_store: _catalog_store,
         inventory_store,
         site_settings_store,
         runtime_region_settings_store,
@@ -397,18 +397,6 @@ where
         }
         None => router.merge(payment_runtime_router),
     };
-    if let Some(store) = catalog_store {
-        let catalog_router = sdkwork_claw_product::api::admin_catalog_router_with_store(store);
-        router = match admin_subject_boundary_config.clone() {
-            Some(admin_subject_boundary_config) => {
-                router.merge(catalog_router.layer(from_fn_with_state(
-                    admin_subject_boundary_config,
-                    admin_request_subject_boundary,
-                )))
-            }
-            None => router.merge(catalog_router),
-        };
-    }
     if let Some(store) = inventory_store {
         let inventory_router = sdkwork_claw_product::api::admin_inventory_router_with_store(store);
         router = match admin_subject_boundary_config.clone() {

@@ -21,7 +21,7 @@ const ModelDetails = lazyRoute(() => import('sdkwork-clawrouter-pc-models/detail
 const Rankings = lazyRoute(() => import('sdkwork-clawrouter-pc-rankings'), 'Rankings');
 const AppCenter = lazyRoute(() => import('sdkwork-clawrouter-pc-app-center'), 'AppCenter');
 const AppDetails = lazyRoute(() => import('sdkwork-clawrouter-pc-app-center'), 'AppDetails');
-const AppAdmin = lazyRoute(() => import('sdkwork-clawrouter-pc-app-center'), 'AppAdmin');
+const AppAdmin = lazyRoute(() => import('sdkwork-clawrouter-pc-admin-app'), 'AppAdmin');
 const SkillsHub = lazyRoute(() => import('sdkwork-clawrouter-pc-skills-hub'), 'SkillsHub');
 const SkillDetails = lazyRoute(() => import('sdkwork-clawrouter-pc-skills-hub'), 'SkillDetails');
 const Docs = lazyRoute(() => import('sdkwork-clawrouter-pc-api-reference'), 'Docs');
@@ -34,7 +34,7 @@ const ForumPostView = lazyRoute(() => import('sdkwork-clawrouter-pc-forum'), 'Fo
 const CoursesView = lazyRoute(() => import('sdkwork-clawrouter-pc-courses'), 'CoursesView');
 const CourseDetailView = lazyRoute(() => import('sdkwork-clawrouter-pc-courses'), 'CourseDetailView');
 const ClawRouterAuthRoutes = lazyRoute(() => import('./auth/ClawRouterAuthRoutes'), 'ClawRouterAuthRoutes');
-const ClawRouterAuthSettingsPage = lazyRoute(() => import('./auth/ClawRouterAuthSettingsPage'), 'ClawRouterAuthSettingsPage');
+const ClawRouterAuthSettingsPage = lazyRoute(() => import('sdkwork-clawrouter-pc-admin-site'), 'ClawRouterAuthSettingsPage');
 
 const CONSOLE_BUSINESS_ROUTE_PATHS = {
   account: '/console/account',

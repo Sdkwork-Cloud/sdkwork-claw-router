@@ -1,5 +1,6 @@
 import { useEffect, useState, type FormEvent, type ReactNode } from 'react';
 import { Loader2 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 function useIsDark(): boolean {
   const [isDark, setIsDark] = useState(
@@ -175,6 +176,8 @@ export function StorageFormShell({
   children,
   tone = 'primary',
 }: StorageFormShellProps) {
+  const { t } = useTranslation();
+
   return (
     <form className="flex flex-col gap-4" onSubmit={onSubmit}>
       {error ? <StorageFormError message={error} /> : null}
@@ -185,7 +188,7 @@ export function StorageFormShell({
           onClick={onCancel}
           className="rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 dark:border-white/20 dark:text-slate-300 dark:hover:bg-white/5"
         >
-          Cancel
+          {t('common.actions.cancel', 'Cancel')}
         </button>
         <button
           type="submit"

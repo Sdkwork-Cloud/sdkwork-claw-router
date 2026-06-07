@@ -14,13 +14,11 @@ import {
 import {
   APP_API_PREFIX,
   getClawRouterAppSdkClient,
-  getClawRouterBackendSdkClient,
   getClawRouterGlobalTokenManager,
   getSdkworkAppbaseAppSdkClient,
-  getSdkworkAppbaseBackendSdkClient,
+  getSdkworkCommerceAppSdkClient,
   getSdkworkDriveAppSdkClient,
   getSdkworkGenerationsAppSdkClient,
-  resolveRequiredAppbaseBackendBaseUrl,
   resetClawRouterSdkClients,
 } from './sdk-clients.ts';
 import { normalizeGeneratedSdkBaseUrl } from './sdk-base-url.ts';
@@ -42,10 +40,8 @@ export function createClawRouterIamRuntimeComposition(): SdkworkAppbasePcAuthRun
     },
     baseUrls: {
       appbaseAppApiBaseUrl: resolveAppbaseAppApiBaseUrl(),
-      appbaseBackendApiBaseUrl: resolveAppbaseBackendApiBaseUrl(),
     },
     createAppbaseAppClient: () => getSdkworkAppbaseAppSdkClient(),
-    createAppbaseBackendClient: () => getSdkworkAppbaseBackendSdkClient(),
     hooks: {
       onSessionChanged: () => {
         resetClawRouterSdkClients();
@@ -53,9 +49,9 @@ export function createClawRouterIamRuntimeComposition(): SdkworkAppbasePcAuthRun
     },
     sdkClients: [
       getClawRouterAppSdkClient(),
-      getClawRouterBackendSdkClient(),
       getSdkworkDriveAppSdkClient(),
       getSdkworkGenerationsAppSdkClient(),
+      getSdkworkCommerceAppSdkClient(),
     ] as SdkworkAppbasePcAuthRuntimeSdkClient[],
     sessionBridge: {
       clearSession: clearClawRouterIamRuntimeSession,
@@ -94,13 +90,6 @@ function resolveAppbaseAppApiBaseUrl(): string {
     ?? readClawRouterRuntimeEnv('VITE_CLAWROUTER_APP_API_BASE_URL')
     ?? APP_API_PREFIX,
     APP_API_PREFIX,
-  );
-}
-
-function resolveAppbaseBackendApiBaseUrl(): string {
-  return normalizeGeneratedSdkBaseUrl(
-    resolveRequiredAppbaseBackendBaseUrl({}),
-    '/backend/v3/api',
   );
 }
 

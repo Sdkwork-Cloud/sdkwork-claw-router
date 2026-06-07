@@ -97,7 +97,9 @@ test("admin prompt page keeps versions and bindings inside prompt detail", () =>
 });
 
 test("admin prompt and mcp category management uses generated backend SDK category CRUD", () => {
-  const categorySource = readPortalFile("packages/sdkwork-clawrouter-pc-commons/src/admin-category-options.ts");
+  const categorySource = readPortalFile("packages/sdkwork-clawrouter-pc-admin-core/src/admin-category-options.ts");
+  const promptSource = readPortalFile("packages/sdkwork-clawrouter-pc-admin-prompts/src/index.tsx");
+  const mcpSource = readPortalFile("packages/sdkwork-clawrouter-pc-admin-mcp/src/index.tsx");
   const promptServiceSource = readPortalFile("packages/sdkwork-clawrouter-pc-admin-prompts/src/promptService.ts");
   const mcpServiceSource = readPortalFile("packages/sdkwork-clawrouter-pc-admin-mcp/src/mcpService.ts");
   const tsconfig = JSON.parse(readPortalFile("tsconfig.json"));
@@ -116,9 +118,15 @@ test("admin prompt and mcp category management uses generated backend SDK catego
   assert.match(promptServiceSource, /categoryId:\s*optionalPromptListCategoryId/);
   assert.match(mcpServiceSource, /normalizeMcpServerListParams/);
   assert.match(mcpServiceSource, /categoryId:\s*optionalMcpListCategoryId/);
+  assert.match(promptSource, /from 'sdkwork-clawrouter-pc-admin-core'/);
+  assert.match(mcpSource, /from 'sdkwork-clawrouter-pc-admin-core'/);
   assert.deepEqual(
     tsconfig.compilerOptions.paths["sdkwork-clawrouter-pc-admin-prompts"],
     ["./packages/sdkwork-clawrouter-pc-admin-prompts/src/index.tsx"],
+  );
+  assert.deepEqual(
+    tsconfig.compilerOptions.paths["sdkwork-clawrouter-pc-admin-core"],
+    ["./packages/sdkwork-clawrouter-pc-admin-core/src/index.ts"],
   );
   assert.deepEqual(
     tsconfig.compilerOptions.paths["sdkwork-clawrouter-pc-admin-mcp"],

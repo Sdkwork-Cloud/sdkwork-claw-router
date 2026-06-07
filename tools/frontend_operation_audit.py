@@ -62,7 +62,66 @@ class FrontendOperationAudit:
         "backend": "getClawRouterBackendSdkClient",
         "openai_v1": "getClawRouterAiSdkClient",
     }
-    COMMERCE_SERVICE_PATTERN = re.compile(r"\bgetClawRouterCommerceService\s*\(")
+    COMMERCE_DEPENDENCY_DOMAINS = frozenset({"commerce", "promotion"})
+    COMMERCE_SERVICE_CLIENT = "getSdkworkCommerceService"
+    COMMERCE_SERVICE_PATTERN = re.compile(r"\bgetSdkworkCommerceService\s*\(")
+    COMMERCE_API_PATH_PREFIXES = (
+        "/app/v3/api/accounts",
+        "/app/v3/api/addresses",
+        "/app/v3/api/billing",
+        "/app/v3/api/cart",
+        "/app/v3/api/catalog",
+        "/app/v3/api/checkout",
+        "/app/v3/api/fulfillments",
+        "/app/v3/api/invoices",
+        "/app/v3/api/memberships",
+        "/app/v3/api/orders",
+        "/app/v3/api/payments",
+        "/app/v3/api/promotions",
+        "/app/v3/api/recharges",
+        "/app/v3/api/refunds",
+        "/app/v3/api/shipments",
+        "/app/v3/api/wallet",
+        "/backend/v3/api/audit/commerce_events",
+        "/backend/v3/api/catalog",
+        "/backend/v3/api/commerce_reports",
+        "/backend/v3/api/fulfillments",
+        "/backend/v3/api/inventory",
+        "/backend/v3/api/invoices",
+        "/backend/v3/api/memberships",
+        "/backend/v3/api/orders",
+        "/backend/v3/api/payments",
+        "/backend/v3/api/promotions",
+        "/backend/v3/api/recharges",
+        "/backend/v3/api/refunds",
+        "/backend/v3/api/shipments",
+        "/backend/v3/api/wallet",
+    )
+    GENERATIONS_DEPENDENCY_DOMAINS = frozenset({"generations", "generation"})
+    GENERATIONS_APP_SDK_CLIENT = "getSdkworkGenerationsAppSdkClient"
+    GENERATIONS_SERVICE_CLIENT = "createSdkworkGenerationService"
+    GENERATIONS_APP_SDK_PATTERN = re.compile(r"\bgetSdkworkGenerationsAppSdkClient\s*\(")
+    GENERATIONS_SERVICE_PATTERN = re.compile(r"\bcreateSdkworkGenerationService\s*\(")
+    GENERATIONS_INJECTED_SERVICE_PATTERN = re.compile(
+        r"\bSdkworkGenerationService\b[\s\S]*\bservice\s*\.\s*createGenerationCommand\s*\("
+    )
+    GENERATIONS_API_PATH_PREFIXES = (
+        "/app/v3/api/generations",
+    )
+    APPBASE_APP_DEPENDENCY_DOMAINS = frozenset({"auth", "iam"})
+    APPBASE_APP_SERVICE_CLIENT = "getSdkworkAppbaseAppSdkClient"
+    APPBASE_BACKEND_SERVICE_CLIENT = "getSdkworkAppbaseBackendSdkClient"
+    APPBASE_APP_SERVICE_PATTERN = re.compile(r"\bgetSdkworkAppbaseAppSdkClient\s*\(")
+    APPBASE_BACKEND_SERVICE_PATTERN = re.compile(r"\bgetSdkworkAppbaseBackendSdkClient\s*\(")
+    APPBASE_BACKEND_DEPENDENCY_OPERATIONS = frozenset(
+        {
+            ("GET", "/backend/v3/api/iam/api_keys"),
+            ("POST", "/backend/v3/api/iam/api_keys/{apiKeyId}/revoke"),
+            ("GET", "/backend/v3/api/iam/users"),
+            ("POST", "/backend/v3/api/iam/users"),
+            ("PATCH", "/backend/v3/api/iam/users/{userId}"),
+        }
+    )
     COMMERCE_RUNTIME_IMPORT_PATTERN = re.compile(
         r"from\s+['\"](?:\./)?commerce-runtime(?:\.ts)?['\"]"
     )
@@ -103,6 +162,13 @@ class FrontendOperationAudit:
         ("Promise.resolve", re.compile(r"\bPromise\.resolve\s*\(")),
         ("mock data", re.compile(r"\bmock\s+data\b", re.IGNORECASE)),
         ("local mock", re.compile(r"\blocal\s+mock\b", re.IGNORECASE)),
+    )
+    DEPENDENCY_OPERATION_FRAGMENTS = (
+        Path("docs")
+        / "schema-registry"
+        / "frontend-field-contracts"
+        / "operations"
+        / "app-commerce-catalog.yaml",
     )
 
     def __init__(
@@ -215,6 +281,7 @@ class FrontendOperationAudit:
             api_method = entry.get("api_method")
             api_path = entry.get("api_path")
             operation_scope = entry.get("operation_scope")
+            sdk_domain = entry.get("sdk_domain")
             is_app_shell_operation = operation_scope == "app_shell"
             if not isinstance(source, str) or not isinstance(operation, str):
                 messages.append("frontend_operations entries must include source and operation")
@@ -248,17 +315,18 @@ class FrontendOperationAudit:
                     messages.append(f"frontend operation {key} route {route} must not use backend api_surface")
             if isinstance(api_surface, str) and api_surface in self.SDK_CLIENTS:
                 source_text = self._source_text(source, source_text_cache)
-                sdk_client = self.SDK_CLIENTS[api_surface]
                 if (
                     source_text is not None
                     and not self._source_uses_generated_sdk_boundary(
                         api_surface=api_surface,
+                        sdk_domain=sdk_domain,
+                        source_operation=entry,
                         source=source,
                         source_text=source_text,
                         source_text_cache=source_text_cache,
                     )
                 ):
-                    messages.append(f"frontend operation {key} must use {sdk_client} for {api_surface} api_surface")
+                    messages.append(self._sdk_boundary_error_message(key, api_surface, sdk_domain, entry))
                 for label in self._mock_data_pattern_labels(source_text):
                     messages.append(f"frontend operation {key} must not use mock async data pattern: {label}")
 
@@ -415,7 +483,47 @@ class FrontendOperationAudit:
         contract = load_frontend_field_contract(self.root, self.contract_path)
         if not isinstance(contract, dict):
             raise ValueError("frontend field contract root must be a mapping")
+        contract = self._append_dependency_operation_fragments(contract)
         return contract
+
+    def _append_dependency_operation_fragments(self, contract: dict[str, Any]) -> dict[str, Any]:
+        entries = contract.get("frontend_operations", [])
+        if not isinstance(entries, list):
+            return contract
+
+        merged = dict(contract)
+        merged_entries = list(entries)
+        existing_keys = {
+            f"{entry.get('source')}#{entry.get('operation')}"
+            for entry in merged_entries
+            if isinstance(entry, dict)
+            and isinstance(entry.get("source"), str)
+            and isinstance(entry.get("operation"), str)
+        }
+        for relative_fragment in self.DEPENDENCY_OPERATION_FRAGMENTS:
+            fragment_path = self.root / relative_fragment
+            if not fragment_path.is_file():
+                continue
+            fragment = yaml.safe_load(fragment_path.read_text(encoding="utf-8"))
+            if not isinstance(fragment, dict):
+                continue
+            fragment_entries = fragment.get("frontend_operations", [])
+            if not isinstance(fragment_entries, list):
+                continue
+            for entry in fragment_entries:
+                if not isinstance(entry, dict):
+                    continue
+                source = entry.get("source")
+                operation = entry.get("operation")
+                if not isinstance(source, str) or not isinstance(operation, str):
+                    continue
+                key = f"{source}#{operation}"
+                if key in existing_keys:
+                    continue
+                merged_entries.append(entry)
+                existing_keys.add(key)
+        merged["frontend_operations"] = merged_entries
+        return merged
 
     def _frontend_operation_contract_index(self) -> dict[str, dict[str, Any]]:
         contract = self._load_contract()
@@ -469,10 +577,30 @@ class FrontendOperationAudit:
         self,
         *,
         api_surface: str,
+        sdk_domain: Any,
+        source_operation: dict[str, Any] | None,
         source: str,
         source_text: str,
         source_text_cache: dict[str, str | None],
     ) -> bool:
+        if self._is_appbase_dependency_operation(
+            api_surface=api_surface,
+            sdk_domain=sdk_domain,
+            source_operation=source_operation,
+        ):
+            return self._source_uses_appbase_dependency_boundary(
+                api_surface=api_surface,
+                source_text=source_text,
+            )
+        if self._is_commerce_dependency_operation(sdk_domain=sdk_domain, source_operation=source_operation):
+            return self.COMMERCE_SERVICE_PATTERN.search(source_text) is not None
+        if self._is_generations_dependency_operation(sdk_domain=sdk_domain, source_operation=source_operation):
+            return (
+                self.GENERATIONS_SERVICE_PATTERN.search(source_text) is not None
+                or self.GENERATIONS_APP_SDK_PATTERN.search(source_text) is not None
+                or self.GENERATIONS_INJECTED_SERVICE_PATTERN.search(source_text) is not None
+            )
+
         sdk_client = self.SDK_CLIENTS[api_surface]
         if re.search(rf"\b{re.escape(sdk_client)}\s*\(", source_text):
             return True
@@ -504,6 +632,113 @@ class FrontendOperationAudit:
             rf"\b{re.escape(sdk_client)}\s*\(",
             commerce_runtime,
         ) is not None
+
+    def _source_uses_appbase_dependency_boundary(self, *, api_surface: str, source_text: str) -> bool:
+        if api_surface == "app" and self.APPBASE_APP_SERVICE_PATTERN.search(source_text):
+            return True
+        if api_surface == "backend" and self.APPBASE_BACKEND_SERVICE_PATTERN.search(source_text):
+            return True
+        return (
+            api_surface == "app"
+            and (
+                self.APPBASE_IAM_RUNTIME_PATTERN.search(source_text)
+                or self.APPBASE_IAM_CONTROLLER_PATTERN.search(source_text)
+            )
+        )
+
+    def _is_commerce_dependency_domain(self, sdk_domain: Any) -> bool:
+        return isinstance(sdk_domain, str) and sdk_domain in self.COMMERCE_DEPENDENCY_DOMAINS
+
+    def _is_commerce_dependency_operation(self, *, sdk_domain: Any, source_operation: dict[str, Any] | None) -> bool:
+        if self._is_commerce_dependency_domain(sdk_domain):
+            return True
+        if isinstance(sdk_domain, str) and sdk_domain:
+            return False
+        if not isinstance(source_operation, dict):
+            return False
+        api_path = source_operation.get("api_path")
+        if isinstance(api_path, str) and api_path.startswith(self.COMMERCE_API_PATH_PREFIXES):
+            return True
+        dependency_tables = [
+            *self._string_list(source_operation.get("read_sources")),
+            *self._string_list(source_operation.get("write_tables")),
+        ]
+        return any(table.startswith(("commerce_", "promotion_")) for table in dependency_tables)
+
+    def _is_generations_dependency_domain(self, sdk_domain: Any) -> bool:
+        return isinstance(sdk_domain, str) and sdk_domain in self.GENERATIONS_DEPENDENCY_DOMAINS
+
+    def _is_generations_dependency_operation(self, *, sdk_domain: Any, source_operation: dict[str, Any] | None) -> bool:
+        if self._is_generations_dependency_domain(sdk_domain):
+            return True
+        if isinstance(sdk_domain, str) and sdk_domain:
+            return False
+        if not isinstance(source_operation, dict):
+            return False
+        api_path = source_operation.get("api_path")
+        if isinstance(api_path, str) and api_path.startswith(self.GENERATIONS_API_PATH_PREFIXES):
+            return True
+        dependency_tables = [
+            *self._string_list(source_operation.get("read_sources")),
+            *self._string_list(source_operation.get("write_tables")),
+        ]
+        return any(table.startswith("generation_") for table in dependency_tables)
+
+    def _is_appbase_dependency_operation(
+        self,
+        *,
+        api_surface: str,
+        sdk_domain: Any,
+        source_operation: dict[str, Any] | None,
+    ) -> bool:
+        if api_surface not in {"app", "backend"}:
+            return False
+        if isinstance(sdk_domain, str) and sdk_domain in self.APPBASE_APP_DEPENDENCY_DOMAINS:
+            return True
+        if not isinstance(source_operation, dict):
+            return False
+        api_path = source_operation.get("api_path")
+        api_method = source_operation.get("api_method")
+        if not isinstance(api_path, str) or not isinstance(api_method, str):
+            return False
+        return (
+            api_surface == "backend"
+            and (api_method.upper(), api_path) in self.APPBASE_BACKEND_DEPENDENCY_OPERATIONS
+        )
+
+    def _sdk_boundary_error_message(
+        self,
+        key: str,
+        api_surface: str,
+        sdk_domain: Any,
+        source_operation: dict[str, Any] | None,
+    ) -> str:
+        if self._is_commerce_dependency_operation(sdk_domain=sdk_domain, source_operation=source_operation):
+            if self._is_commerce_dependency_domain(sdk_domain):
+                return (
+                    f"frontend operation {key} must use {self.COMMERCE_SERVICE_CLIENT} "
+                    f"for {sdk_domain} dependency {api_surface} api_surface"
+                )
+            return f"frontend operation {key} must use {self.COMMERCE_SERVICE_CLIENT} for {api_surface} api_surface"
+        if self._is_generations_dependency_operation(sdk_domain=sdk_domain, source_operation=source_operation):
+            return (
+                f"frontend operation {key} must use {self.GENERATIONS_SERVICE_CLIENT} "
+                f"or {self.GENERATIONS_APP_SDK_CLIENT} for generations dependency {api_surface} api_surface"
+            )
+        if isinstance(sdk_domain, str) and sdk_domain in self.APPBASE_APP_DEPENDENCY_DOMAINS:
+            sdk_client = (
+                self.APPBASE_BACKEND_SERVICE_CLIENT
+                if api_surface == "backend"
+                else self.APPBASE_APP_SERVICE_CLIENT
+            )
+            return f"frontend operation {key} must use {sdk_client} for {sdk_domain} dependency {api_surface} api_surface"
+        sdk_client = self.SDK_CLIENTS[api_surface]
+        return f"frontend operation {key} must use {sdk_client} for {api_surface} api_surface"
+
+    def _string_list(self, value: Any) -> list[str]:
+        if not isinstance(value, list):
+            return []
+        return [item for item in value if isinstance(item, str)]
 
     def _source_uses_local_runtime_adapter(
         self,

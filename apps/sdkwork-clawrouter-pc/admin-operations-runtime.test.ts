@@ -109,7 +109,10 @@ function readAdminWalletSource(): string {
 
 function readAdminCatalogSource(): string {
   return readFileSync(
-    new URL("./packages/sdkwork-clawrouter-pc-admin-catalog/src/index.tsx", import.meta.url),
+    new URL(
+      "../../../sdkwork-commerce/apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-admin-product/src/index.tsx",
+      import.meta.url,
+    ),
     "utf8",
   );
 }
@@ -242,7 +245,11 @@ function readAdminMembershipPageShellSource(): string {
 }
 
 function readAdminAuthSettingsSource(): string {
-  return readFileSync(new URL("./src/auth/ClawRouterAuthSettingsPage.tsx", import.meta.url), "utf8");
+  return readFileSync(new URL("./packages/sdkwork-clawrouter-pc-admin-site/src/ClawRouterAuthSettingsPage.tsx", import.meta.url), "utf8");
+}
+
+function escapeRegExp(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
 function readAdminDriveSource(): string {
@@ -274,7 +281,7 @@ function readAdminWechatMiniSource(): string {
 }
 
 function readAdminAppCenterSource(): string {
-  return readFileSync(new URL("./packages/sdkwork-clawrouter-pc-app-center/src/pages/AppAdmin.tsx", import.meta.url), "utf8");
+  return readFileSync(new URL("./packages/sdkwork-clawrouter-pc-admin-app/src/pages/AppAdmin.tsx", import.meta.url), "utf8");
 }
 
 function readAppSource(): string {
@@ -1358,10 +1365,11 @@ test("admin finance uses standard commerce management resources without legacy b
   assert.match(source, /AdminResourceCenter/);
   assert.match(source, /backendInvoicesTitlesList\(DEFAULT_PAGE_PARAMS\)/);
   assert.match(source, /backendCommerceReportsOrderRevenueList\(DEFAULT_PAGE_PARAMS\)/);
-  assert.match(serviceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.invoices\.titles\.list/);
-  assert.match(serviceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.commerceReports\.orderRevenue\.list/);
-  assert.match(serviceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.commerceReports\.refunds\.list/);
-  assert.match(serviceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.audit\.commerceEvents\.list/);
+  assert.match(serviceSource, /getSdkworkCommerceService\(\)\.admin\.invoices\.titles\.list/);
+  assert.match(serviceSource, /getSdkworkCommerceService\(\)\.admin\.commerceReports\.orderRevenue\.list/);
+  assert.match(serviceSource, /getSdkworkCommerceService\(\)\.admin\.commerceReports\.refunds\.list/);
+  assert.match(serviceSource, /getSdkworkCommerceService\(\)\.admin\.audit\.commerceEvents\.list/);
+  assert.doesNotMatch(serviceSource, /getClawRouterBackendSdkClient\(\)\.commerce/);
   assert.doesNotMatch(serviceSource, /billing\/finance/);
 
   await withBackendSdkFetch(
@@ -1384,6 +1392,76 @@ test("admin finance uses standard commerce management resources without legacy b
       ]);
     },
   );
+});
+
+test("admin orders exposes real order, refund, fulfillment, and shipment management actions", () => {
+  const source = readAdminOrdersSource();
+  const serviceSource = readFileSync(
+    new URL("./packages/sdkwork-clawrouter-pc-admin-orders/src/ordersService.ts", import.meta.url),
+    "utf8",
+  );
+
+  for (const expected of [
+    "backendOrdersManagementCancel",
+    "backendOrdersManagementClose",
+    "backendRefundApprovalCreate",
+    "backendRefundAttemptCreate",
+    "backendFulfillmentCreate",
+    "backendFulfillmentUpdate",
+    "backendFulfillmentShipmentCreate",
+    "backendFulfillmentShipmentUpdate",
+    "backendFulfillmentTrackingEventCreate",
+    "getSdkworkCommerceService().admin.orders.management.cancel",
+    "getSdkworkCommerceService().admin.orders.management.close",
+    "getSdkworkCommerceService().admin.refunds.approvals.create",
+    "getSdkworkCommerceService().admin.refunds.attempts.create",
+    "getSdkworkCommerceService().admin.fulfillments.shipments.create",
+    "getSdkworkCommerceService().admin.fulfillments.shipments.update",
+    "getSdkworkCommerceService().admin.fulfillments.trackingEvents.create",
+  ]) {
+    assert.match(serviceSource, new RegExp(escapeRegExp(expected)));
+  }
+
+  for (const expected of [
+    "handleOrderManagementCancel",
+    "handleOrderManagementClose",
+    "handleRefundApproval",
+    "handleRefundAttempt",
+    "handleFulfillmentShipmentCreate",
+    "handleFulfillmentShipmentUpdate",
+    "handleShipmentTrackingEventCreate",
+    "Cancel order",
+    "Close order",
+    "Approve refund",
+    "Reject refund",
+    "Execute refund",
+    "Create shipment",
+    "Mark shipped",
+    "Add tracking",
+  ]) {
+    assert.match(source, new RegExp(escapeRegExp(expected)));
+  }
+
+  for (const expected of [
+    "ConfirmDialog",
+    "orderActionConfirmation",
+    "executeConfirmedOrderAction",
+    "data-admin-orders-layout",
+    "data-admin-order-action-feedback",
+    "data-admin-order-shipment-form",
+    "data-admin-order-tracking-form",
+    "submitOrderShipmentForm",
+    "submitOrderTrackingForm",
+  ]) {
+    assert.match(source, new RegExp(escapeRegExp(expected)));
+  }
+
+  assert.doesNotMatch(source + serviceSource, /noopOrderAction/);
+  assert.doesNotMatch(source + serviceSource, /Backend cancellation API is not available yet/);
+  assert.doesNotMatch(source, /window\.(?:confirm|prompt|alert)/);
+  assert.doesNotMatch(source, /confirmOrderAction|readPromptValue|reportOrderActionError/);
+  assert.doesNotMatch(source + serviceSource, /\bfetch\s*\(|axios|XMLHttpRequest/);
+  assert.doesNotMatch(source + serviceSource, /getClawRouterBackendSdkClient/);
 });
 
 test("admin dashboard live traces link to full records and render backend status", () => {

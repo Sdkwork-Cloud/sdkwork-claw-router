@@ -168,6 +168,59 @@ class AppbaseCapabilityGuardianTest(unittest.TestCase):
 
             self.assertTrue(result.ok, result.messages)
 
+    def test_accepts_externalized_l3_capability_with_external_layers(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_manifest(
+                root,
+                """
+                schemaVersion: 1
+                kind: sdkwork.appbase.capability.catalog
+                capabilities:
+                  - id: messaging
+                    domain: messaging
+                    status: externalized
+                    maturity: L3
+                    targetMaturity: L3
+                    priority: P0
+                    owner: sdkwork-messaging
+                    externalRepository: ../sdkwork-messaging
+                    externalLayers:
+                      - kind: contracts
+                        package: "@sdkwork/messaging-contracts"
+                        path: ../sdkwork-messaging/packages/common/messaging/sdkwork-messaging-contracts
+                      - kind: sdk_ports
+                        package: "@sdkwork/messaging-sdk-ports"
+                        path: ../sdkwork-messaging/packages/common/messaging/sdkwork-messaging-sdk-ports
+                      - kind: service
+                        package: "@sdkwork/messaging-service"
+                        path: ../sdkwork-messaging/packages/common/messaging/sdkwork-messaging-service
+                      - kind: runtime
+                        package: "@sdkwork/messaging-runtime"
+                        path: ../sdkwork-messaging/packages/common/messaging/sdkwork-messaging-runtime
+                      - kind: native_rust_core
+                        crate: sdkwork_messaging_core
+                        path: ../sdkwork-messaging/packages/native-rust/messaging/sdkwork-messaging-core-rust
+                      - kind: native_rust_storage_sqlx
+                        crate: sdkwork_messaging_storage_sqlx
+                        path: ../sdkwork-messaging/packages/native-rust/messaging/sdkwork-messaging-storage-sqlx-rust
+                    qualityGates:
+                      - category: contract
+                        command: pnpm --dir ../sdkwork-messaging --filter @sdkwork/messaging-contracts test
+                      - category: runtime
+                        command: pnpm --dir ../sdkwork-messaging --filter @sdkwork/messaging-runtime test
+                      - category: storage
+                        command: cargo test --manifest-path ../sdkwork-messaging/packages/native-rust/messaging/sdkwork-messaging-storage-sqlx-rust/Cargo.toml
+                    integration:
+                      domainForksForbidden: true
+                      sdkBoundary: generated-sdk-through-ports
+                """,
+            )
+
+            result = AppbaseCapabilityGuardian(root=root).run()
+
+            self.assertTrue(result.ok, result.messages)
+
     def test_rejects_l3_capability_missing_storage_and_frontend_layers(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

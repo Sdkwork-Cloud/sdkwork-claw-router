@@ -23416,9 +23416,9 @@
         "type": "object",
         "x-operation-id": "memberships.members.list"
       },
-      "MembershipsMembersStatusUpdateResult": {
+      "MembershipsMembersUpdateResult": {
         "additionalProperties": false,
-        "description": "Memberships members status update result schema exposed by Claw Router.",
+        "description": "Memberships members update result schema exposed by Claw Router.",
         "properties": {
           "code": {
             "description": "Business response code.",
@@ -23430,7 +23430,7 @@
                 "$ref": "#/components/schemas/CommerceStandardResourceResponse"
               }
             ],
-            "description": "Data field on memberships members status update result."
+            "description": "Data field on memberships members update result."
           },
           "msg": {
             "description": "Human-readable response message.",
@@ -23441,7 +23441,7 @@
           "code"
         ],
         "type": "object",
-        "x-operation-id": "memberships.members.status.update"
+        "x-operation-id": "memberships.members.update"
       },
       "MembershipsPackageGroupsCreateResult": {
         "additionalProperties": false,
@@ -47854,10 +47854,10 @@
         "x-write-tables": []
       }
     },
-    "/backend/v3/api/memberships/members/{membershipId}/status": {
+    "/backend/v3/api/memberships/members/{membershipId}": {
       "patch": {
-        "description": "Standard appbase commerce API for memberships.members.status.update; no legacy billing compatibility route is exposed. Reads commerce_membership, commerce_membership_plan. Writes commerce_membership, ops_audit_log. File targets none.",
-        "operationId": "memberships.members.status.update",
+        "description": "Standard appbase commerce API for memberships.members.update; no legacy billing compatibility route is exposed. Reads commerce_membership, commerce_membership_plan. Writes commerce_membership, ops_audit_log. File targets none.",
+        "operationId": "memberships.members.update",
         "parameters": [
           {
             "description": "Membership id path parameter.",
@@ -47887,7 +47887,7 @@
               }
             }
           },
-          "description": "Typed request payload for memberships members status update.",
+          "description": "Typed request payload for memberships members update.",
           "required": true
         },
         "responses": {
@@ -47895,7 +47895,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/MembershipsMembersStatusUpdateResult"
+                  "$ref": "#/components/schemas/MembershipsMembersUpdateResult"
                 }
               }
             },
@@ -47948,7 +47948,7 @@
             "AuthToken": []
           }
         ],
-        "summary": "Memberships Members Status Update",
+        "summary": "Memberships Members Update",
         "tags": [
           "commerce"
         ],
@@ -47961,7 +47961,7 @@
         "x-route-scope": "admin",
         "x-sdk-domain": "commerce",
         "x-sdkwork-domain": "commerce",
-        "x-sdkwork-resource": "memberships.members.status",
+        "x-sdkwork-resource": "memberships.members",
         "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-memberships/src/membershipsService.ts",
         "x-write-tables": [
           "commerce_membership",
@@ -48286,7 +48286,7 @@
           "ops_audit_log"
         ]
       },
-      "put": {
+      "patch": {
         "description": "Standard appbase commerce API for memberships.packageGroups.update; no legacy billing compatibility route is exposed. Reads commerce_membership_package_group, commerce_membership_package, commerce_membership_plan. Writes commerce_membership_package_group, ops_audit_log. File targets none.",
         "operationId": "memberships.packageGroups.update",
         "parameters": [
@@ -48750,7 +48750,7 @@
           "ops_audit_log"
         ]
       },
-      "put": {
+      "patch": {
         "description": "Standard appbase commerce API for memberships.packages.update; no legacy billing compatibility route is exposed. Reads commerce_membership_plan, commerce_membership_package, commerce_membership_package_group, commerce_product_spu, commerce_product_sku. Writes commerce_membership_package, commerce_product_spu, commerce_product_sku, ops_audit_log. File targets none.",
         "operationId": "memberships.packages.update",
         "parameters": [
@@ -49194,7 +49194,7 @@
           "ops_audit_log"
         ]
       },
-      "put": {
+      "patch": {
         "description": "Standard appbase commerce API for memberships.plans.update; no legacy billing compatibility route is exposed. Reads commerce_membership_plan, commerce_membership_entitlement. Writes commerce_membership_plan, commerce_membership_entitlement, ops_audit_log. File targets none.",
         "operationId": "memberships.plans.update",
         "parameters": [
@@ -55408,7 +55408,7 @@
         "x-sdk-domain": "platform",
         "x-sdkwork-domain": "platform",
         "x-sdkwork-resource": "apps",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts",
+        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": []
       },
       "post": {
@@ -55500,7 +55500,7 @@
         "x-sdk-domain": "platform",
         "x-sdkwork-domain": "platform",
         "x-sdkwork-resource": "apps",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts",
+        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": [
           "plus_app",
           "ops_audit_log"
@@ -55583,7 +55583,7 @@
         "x-sdk-domain": "platform",
         "x-sdkwork-domain": "platform",
         "x-sdkwork-resource": "apps.categories",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts",
+        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": []
       },
       "post": {
@@ -55672,7 +55672,7 @@
         "x-sdk-domain": "platform",
         "x-sdkwork-domain": "platform",
         "x-sdkwork-resource": "apps.categories",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts",
+        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": [
           "plus_category",
           "ops_audit_log"
@@ -55765,7 +55765,7 @@
         "x-sdk-domain": "platform",
         "x-sdkwork-domain": "platform",
         "x-sdkwork-resource": "apps.categories",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts",
+        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": [
           "plus_category",
           "ops_audit_log"
@@ -55867,7 +55867,7 @@
         "x-sdk-domain": "platform",
         "x-sdkwork-domain": "platform",
         "x-sdkwork-resource": "apps.categories",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts",
+        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": [
           "plus_category",
           "ops_audit_log"
@@ -56038,7 +56038,7 @@
         "x-sdk-domain": "platform",
         "x-sdkwork-domain": "platform",
         "x-sdkwork-resource": "apps.templates",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts",
+        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": []
       },
       "post": {
@@ -56127,7 +56127,7 @@
         "x-sdk-domain": "platform",
         "x-sdkwork-domain": "platform",
         "x-sdkwork-resource": "apps.templates",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts",
+        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": [
           "studio_app_template",
           "ops_audit_log"
@@ -56223,7 +56223,7 @@
         "x-sdk-domain": "platform",
         "x-sdkwork-domain": "platform",
         "x-sdkwork-resource": "apps.templates",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts",
+        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": [
           "studio_app_template",
           "studio_catalog_action",
@@ -56317,7 +56317,7 @@
         "x-sdk-domain": "platform",
         "x-sdkwork-domain": "platform",
         "x-sdkwork-resource": "apps.templates",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts",
+        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": []
       },
       "put": {
@@ -56416,7 +56416,7 @@
         "x-sdk-domain": "platform",
         "x-sdkwork-domain": "platform",
         "x-sdkwork-resource": "apps.templates",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts",
+        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": [
           "studio_app_template",
           "ops_audit_log"
@@ -56509,7 +56509,7 @@
         "x-sdk-domain": "platform",
         "x-sdkwork-domain": "platform",
         "x-sdkwork-resource": "apps.templates",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts",
+        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": [
           "studio_app_template",
           "ops_audit_log"
@@ -56602,7 +56602,7 @@
         "x-sdk-domain": "platform",
         "x-sdkwork-domain": "platform",
         "x-sdkwork-resource": "apps.templates",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts",
+        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": [
           "studio_app_template",
           "ops_audit_log"
@@ -56698,7 +56698,7 @@
         "x-sdk-domain": "platform",
         "x-sdkwork-domain": "platform",
         "x-sdkwork-resource": "apps",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts",
+        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": [
           "plus_app",
           "studio_catalog_action",
@@ -56795,7 +56795,7 @@
         "x-sdk-domain": "platform",
         "x-sdkwork-domain": "platform",
         "x-sdkwork-resource": "apps",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts",
+        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": []
       },
       "put": {
@@ -56897,7 +56897,7 @@
         "x-sdk-domain": "platform",
         "x-sdkwork-domain": "platform",
         "x-sdkwork-resource": "apps",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts",
+        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": [
           "plus_app",
           "ops_audit_log"
@@ -56990,7 +56990,7 @@
         "x-sdk-domain": "platform",
         "x-sdkwork-domain": "platform",
         "x-sdkwork-resource": "apps",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts",
+        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": [
           "plus_app",
           "ops_audit_log"
@@ -57083,7 +57083,7 @@
         "x-sdk-domain": "platform",
         "x-sdkwork-domain": "platform",
         "x-sdkwork-resource": "apps",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts",
+        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": [
           "plus_app",
           "ops_audit_log"
@@ -57176,7 +57176,7 @@
         "x-sdk-domain": "platform",
         "x-sdkwork-domain": "platform",
         "x-sdkwork-resource": "apps",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts",
+        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": [
           "plus_app",
           "ops_audit_log"
@@ -57269,7 +57269,7 @@
         "x-sdk-domain": "platform",
         "x-sdkwork-domain": "platform",
         "x-sdkwork-resource": "apps",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-app-center/src/services/adminAppService.ts",
+        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-app/src/services/adminAppService.ts",
         "x-write-tables": [
           "plus_app",
           "ops_audit_log"
@@ -66327,7 +66327,7 @@
         "x-sdk-domain": "system",
         "x-sdkwork-domain": "system",
         "x-sdkwork-resource": "auth.settings",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthSettingsService.ts",
+        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-site/src/AuthSettingsService.ts",
         "x-write-tables": []
       },
       "patch": {
@@ -66416,7 +66416,7 @@
         "x-sdk-domain": "system",
         "x-sdkwork-domain": "system",
         "x-sdkwork-resource": "auth.settings",
-        "x-source-file": "apps/sdkwork-clawrouter-pc/src/auth/clawRouterAuthSettingsService.ts",
+        "x-source-file": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-site/src/AuthSettingsService.ts",
         "x-write-tables": [
           "ops_config_snapshot",
           "ops_audit_log"
