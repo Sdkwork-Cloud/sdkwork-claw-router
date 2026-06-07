@@ -266,13 +266,14 @@ msiexec /i .\clawrouter-windows-x64-desktop-0.3.0.msi
 默认安装目录：
 
 ```text
-C:\Program Files\sdkwork\router
+<install-root>
 ```
 
 初始化并启动。server/service 模式建议使用管理员 PowerShell，desktop 模式可使用普通 PowerShell：
 
 ```powershell
-Set-Location "C:\Program Files\sdkwork\router"
+$installRoot = Join-Path $env:USERPROFILE "sdkwork\router"
+Set-Location $installRoot
 .\bin\clawrouterctl.exe ensure
 .\bin\clawrouterctl.exe refresh-catalog --force
 .\bin\clawrouter.exe
@@ -337,8 +338,9 @@ editor .env.release.local
 Windows：
 
 ```powershell
-Expand-Archive .\clawrouter-windows-x64-archive-0.3.0.zip -DestinationPath C:\sdkwork\router
-Set-Location C:\sdkwork\router
+$installRoot = Join-Path $env:USERPROFILE "sdkwork\router"
+Expand-Archive .\clawrouter-windows-x64-archive-0.3.0.zip -DestinationPath $installRoot
+Set-Location $installRoot
 Copy-Item .env.release.example .env.release.local
 notepad .env.release.local
 .\bin\clawrouterctl.exe ensure

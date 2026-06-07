@@ -3,6 +3,10 @@ import { SdkworkAppClient, type SdkworkAppConfig } from '@sdkwork/clawrouter-app
 import { SdkworkBackendClient, type SdkworkBackendConfig } from '@sdkwork/clawrouter-backend-sdk';
 import { SdkworkAiClient, type SdkworkAiConfig } from '@sdkwork/clawrouter-open-sdk';
 import {
+  SdkworkAppClient as SdkworkGenerationsAppClient,
+  type SdkworkAppConfig as SdkworkGenerationsAppConfig,
+} from 'sdkwork-generations-app-sdk-generated-typescript';
+import {
   SdkworkAppClient as SdkworkAppbaseAppClient,
   type SdkworkAppConfig as SdkworkAppbaseAppConfig,
 } from '@sdkwork/appbase-app-sdk';
@@ -10,6 +14,11 @@ import {
   SdkworkBackendClient as SdkworkAppbaseBackendClient,
   type SdkworkBackendConfig as SdkworkAppbaseBackendConfig,
 } from '@sdkwork/appbase-backend-sdk';
+import {
+  createDriveAppClient,
+  type SdkworkAppConfig as SdkworkDriveAppConfig,
+  type SdkworkDriveAppClient,
+} from '@sdkwork/drive-app-sdk';
 import {
   clearStoredAppSessionToken,
   loadStoredAppSessionToken,
@@ -119,6 +128,20 @@ export interface SdkworkAppbaseAppSdkClientOptions {
   timeout?: number;
 }
 
+export interface SdkworkGenerationsAppSdkClientOptions {
+  appBaseUrl?: string;
+  platform?: string;
+  tokenManager?: AuthTokenManager;
+  timeout?: number;
+}
+
+export interface SdkworkDriveAppSdkClientOptions {
+  appBaseUrl?: string;
+  platform?: string;
+  tokenManager?: AuthTokenManager;
+  timeout?: number;
+}
+
 export interface SdkworkAppbaseBackendSdkClientOptions {
   backendBaseUrl?: string;
   platform?: string;
@@ -139,6 +162,8 @@ export type ClawRouterAppSdkClient = SdkworkAppClient;
 export type ClawRouterBackendSdkClient = SdkworkBackendClient;
 export type SdkworkAppbaseAppSdkClient = SdkworkAppbaseAppClient;
 export type SdkworkAppbaseBackendSdkClient = SdkworkAppbaseBackendClient;
+export type SdkworkGenerationsAppSdkClient = SdkworkGenerationsAppClient;
+export type SdkworkDriveAppSdkClient = SdkworkDriveAppClient;
 export type ClawRouterAiSdkClient = SdkworkAiClient;
 
 type ClawRouterSdkRuntimeHost = typeof globalThis & {
@@ -146,6 +171,8 @@ type ClawRouterSdkRuntimeHost = typeof globalThis & {
   __SDKWORK_CLAW_ROUTER_BACKEND_SDK_CLIENT__?: ClawRouterBackendSdkClient | null;
   __SDKWORK_APPBASE_APP_SDK_CLIENT__?: SdkworkAppbaseAppSdkClient | null;
   __SDKWORK_APPBASE_BACKEND_SDK_CLIENT__?: SdkworkAppbaseBackendSdkClient | null;
+  __SDKWORK_GENERATIONS_APP_SDK_CLIENT__?: SdkworkGenerationsAppSdkClient | null;
+  __SDKWORK_DRIVE_APP_SDK_CLIENT__?: SdkworkDriveAppSdkClient | null;
   __SDKWORK_CLAW_ROUTER_AI_SDK_CLIENT__?: ClawRouterAiSdkClient | null;
 };
 
@@ -186,6 +213,8 @@ let appClient: SdkworkAppClient | null = null;
 let backendClient: SdkworkBackendClient | null = null;
 let appbaseAppClient: SdkworkAppbaseAppClient | null = null;
 let appbaseBackendClient: SdkworkAppbaseBackendClient | null = null;
+let generationsAppClient: SdkworkGenerationsAppClient | null = null;
+let driveAppClient: SdkworkDriveAppClient | null = null;
 let aiClient: SdkworkAiClient | null = null;
 let aiClientSessionKey: string | undefined;
 let clawRouterGlobalTokenManager: AuthTokenManager | null = null;
@@ -209,6 +238,18 @@ export function createSdkworkAppbaseBackendSdkClient(
   options: SdkworkAppbaseBackendSdkClientOptions = {},
 ): SdkworkAppbaseBackendClient {
   return attachClawRouterSdkSessionAuthBoundary(new SdkworkAppbaseBackendClient(buildAppbaseBackendConfig(options)));
+}
+
+export function createSdkworkGenerationsAppSdkClient(
+  options: SdkworkGenerationsAppSdkClientOptions = {},
+): SdkworkGenerationsAppClient {
+  return attachClawRouterSdkSessionAuthBoundary(new SdkworkGenerationsAppClient(buildGenerationsAppConfig(options)));
+}
+
+export function createSdkworkDriveAppSdkClient(
+  options: SdkworkDriveAppSdkClientOptions = {},
+): SdkworkDriveAppClient {
+  return attachClawRouterSdkSessionAuthBoundary(createDriveAppClient(buildDriveAppConfig(options)));
 }
 
 export function createClawRouterAiSdkClient(options: ClawRouterAiSdkClientOptions = {}): SdkworkAiClient {
@@ -275,6 +316,38 @@ export function getSdkworkAppbaseBackendSdkClient(
   return appbaseBackendClient;
 }
 
+export function getSdkworkGenerationsAppSdkClient(
+  options: SdkworkGenerationsAppSdkClientOptions = {},
+): SdkworkGenerationsAppClient {
+  if (hasRuntimeOverrides(options)) {
+    return createSdkworkGenerationsAppSdkClient(options);
+  }
+  const injected = readInjectedGenerationsAppSdkClient();
+  if (injected) {
+    return injected;
+  }
+  if (!generationsAppClient) {
+    generationsAppClient = createSdkworkGenerationsAppSdkClient();
+  }
+  return generationsAppClient;
+}
+
+export function getSdkworkDriveAppSdkClient(
+  options: SdkworkDriveAppSdkClientOptions = {},
+): SdkworkDriveAppClient {
+  if (hasRuntimeOverrides(options)) {
+    return createSdkworkDriveAppSdkClient(options);
+  }
+  const injected = readInjectedDriveAppSdkClient();
+  if (injected) {
+    return injected;
+  }
+  if (!driveAppClient) {
+    driveAppClient = createSdkworkDriveAppSdkClient();
+  }
+  return driveAppClient;
+}
+
 export function getClawRouterAiSdkClient(options: ClawRouterAiSdkClientOptions = {}): SdkworkAiClient {
   if (hasRuntimeOverrides(options)) {
     return createClawRouterAiSdkClient(options);
@@ -296,6 +369,8 @@ export function resetClawRouterSdkClients(): void {
   backendClient = null;
   appbaseAppClient = null;
   appbaseBackendClient = null;
+  generationsAppClient = null;
+  driveAppClient = null;
   aiClient = null;
   aiClientSessionKey = undefined;
   syncClawRouterGlobalTokenManagerFromStoredSession();
@@ -540,13 +615,53 @@ function buildAppbaseAppConfig(options: SdkworkAppbaseAppSdkClientOptions): Sdkw
 function buildAppbaseBackendConfig(options: SdkworkAppbaseBackendSdkClientOptions): SdkworkAppbaseBackendConfig {
   return {
     baseUrl: normalizeGeneratedSdkBaseUrl(
-      options.backendBaseUrl
-      ?? readClawRouterRuntimeEnv('VITE_SDKWORK_APPBASE_BACKEND_API_BASE_URL')
-      ?? readClawRouterRuntimeEnv('VITE_CLAWROUTER_BACKEND_API_BASE_URL')
-      ?? BACKEND_API_PREFIX,
+      resolveRequiredAppbaseBackendBaseUrl(options),
       BACKEND_API_PREFIX,
     ),
     platform: options.platform ?? 'web-admin',
+    tokenManager: resolveClawRouterSdkTokenManager(options.tokenManager),
+    timeout: options.timeout,
+  };
+}
+
+function resolveRequiredAppbaseBackendBaseUrl(options: SdkworkAppbaseBackendSdkClientOptions): string {
+  const baseUrl = options.backendBaseUrl ?? readClawRouterRuntimeEnv('VITE_SDKWORK_APPBASE_BACKEND_API_BASE_URL');
+  if (!baseUrl) {
+    throw new Error(
+      'VITE_SDKWORK_APPBASE_BACKEND_API_BASE_URL is required for @sdkwork/appbase-backend-sdk. '
+      + 'Set PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL to an appbase backend that serves /backend/v3/api/iam/*, '
+      + 'or mount the appbase backend IAM routes in the claw-router backend runtime.',
+    );
+  }
+  return baseUrl;
+}
+
+function buildGenerationsAppConfig(options: SdkworkGenerationsAppSdkClientOptions): SdkworkGenerationsAppConfig {
+  return {
+    baseUrl: normalizeGeneratedSdkBaseUrl(
+      options.appBaseUrl
+      ?? readClawRouterRuntimeEnv('VITE_SDKWORK_GENERATIONS_APP_API_BASE_URL')
+      ?? readClawRouterRuntimeEnv('VITE_SDKWORK_GENERATIONS_PC_APP_API_BASE_URL')
+      ?? readClawRouterRuntimeEnv('VITE_CLAWROUTER_APP_API_BASE_URL')
+      ?? APP_API_PREFIX,
+      APP_API_PREFIX,
+    ),
+    platform: options.platform ?? 'web',
+    tokenManager: resolveClawRouterSdkTokenManager(options.tokenManager),
+    timeout: options.timeout,
+  };
+}
+
+function buildDriveAppConfig(options: SdkworkDriveAppSdkClientOptions): SdkworkDriveAppConfig {
+  return {
+    baseUrl: normalizeGeneratedSdkBaseUrl(
+      options.appBaseUrl
+      ?? readClawRouterRuntimeEnv('VITE_SDKWORK_DRIVE_APP_API_BASE_URL')
+      ?? readClawRouterRuntimeEnv('VITE_CLAWROUTER_APP_API_BASE_URL')
+      ?? APP_API_PREFIX,
+      APP_API_PREFIX,
+    ),
+    platform: options.platform ?? 'web',
     tokenManager: resolveClawRouterSdkTokenManager(options.tokenManager),
     timeout: options.timeout,
   };
@@ -570,6 +685,8 @@ function hasRuntimeOverrides(
     | ClawRouterBackendSdkClientOptions
     | SdkworkAppbaseAppSdkClientOptions
     | SdkworkAppbaseBackendSdkClientOptions
+    | SdkworkGenerationsAppSdkClientOptions
+    | SdkworkDriveAppSdkClientOptions
     | ClawRouterAiSdkClientOptions,
 ): boolean {
   return Object.keys(options).length > 0;
@@ -618,6 +735,14 @@ function readInjectedAppbaseAppSdkClient(): SdkworkAppbaseAppSdkClient | undefin
 
 function readInjectedAppbaseBackendSdkClient(): SdkworkAppbaseBackendSdkClient | undefined {
   return (globalThis as ClawRouterSdkRuntimeHost).__SDKWORK_APPBASE_BACKEND_SDK_CLIENT__ ?? undefined;
+}
+
+function readInjectedGenerationsAppSdkClient(): SdkworkGenerationsAppSdkClient | undefined {
+  return (globalThis as ClawRouterSdkRuntimeHost).__SDKWORK_GENERATIONS_APP_SDK_CLIENT__ ?? undefined;
+}
+
+function readInjectedDriveAppSdkClient(): SdkworkDriveAppSdkClient | undefined {
+  return (globalThis as ClawRouterSdkRuntimeHost).__SDKWORK_DRIVE_APP_SDK_CLIENT__ ?? undefined;
 }
 
 function readInjectedAiSdkClient(): ClawRouterAiSdkClient | undefined {

@@ -1,8 +1,6 @@
 import {
   SDKWORK_FILE_API_ROUTES,
   SDKWORK_FILE_SLOT_STATUSES,
-  SDKWORK_FILE_UPLOAD_STATUSES,
-  SDKWORK_FILE_UPLOAD_MODES,
   SDKWORK_FILE_VISIBILITIES,
   SDKWORK_FILE_OPERATION_IDS,
   SDKWORK_FILE_STANDARD,
@@ -102,41 +100,6 @@ const FORBIDDEN_DURABLE_STORAGE_FIELDS = [
 const STORAGE_QUOTA_POLICY_SCOPE_TYPES = SDKWORK_STORAGE_USAGE_SCOPE_TYPES.filter((scopeType) => scopeType !== "business_domain");
 
 const REQUIRED_SCHEMA_ENUM_CONTRACTS = [
-  {
-    propertyName: "status",
-    schemaName: "AbortUploadResponse",
-    values: SDKWORK_FILE_UPLOAD_STATUSES,
-  },
-  {
-    propertyName: "status",
-    schemaName: "CompleteUploadResponse",
-    values: SDKWORK_FILE_UPLOAD_STATUSES,
-  },
-  {
-    propertyName: "status",
-    schemaName: "PresignUploadSessionResponse",
-    values: SDKWORK_FILE_UPLOAD_STATUSES,
-  },
-  {
-    propertyName: "status",
-    schemaName: "UploadSession",
-    values: SDKWORK_FILE_UPLOAD_STATUSES,
-  },
-  {
-    propertyName: "uploadMode",
-    schemaName: "UploadSession",
-    values: SDKWORK_FILE_UPLOAD_MODES,
-  },
-  {
-    propertyName: "status",
-    schemaName: "UploadSessionDetailResponse",
-    values: SDKWORK_FILE_UPLOAD_STATUSES,
-  },
-  {
-    propertyName: "uploadMode",
-    schemaName: "UploadSessionDetailResponse",
-    values: SDKWORK_FILE_UPLOAD_MODES,
-  },
   {
     propertyName: "nodeType",
     schemaName: "DriveNode",
@@ -309,33 +272,6 @@ const BACKEND_STORAGE_GOVERNANCE_COMMANDS = [
   },
 ] as const;
 
-const APP_UPLOAD_COMMANDS = [
-  {
-    method: "post",
-    path: SDKWORK_FILE_API_ROUTES.app.upload.createSession,
-    responseSchemaName: "UploadSession",
-    schemaName: "CreateUploadSessionRequest",
-  },
-  {
-    method: "post",
-    path: SDKWORK_FILE_API_ROUTES.app.upload.completeSession,
-    responseSchemaName: "CompleteUploadResponse",
-    schemaName: "CompleteUploadRequest",
-  },
-  {
-    method: "post",
-    path: SDKWORK_FILE_API_ROUTES.app.upload.abortSession,
-    responseSchemaName: "AbortUploadResponse",
-    schemaName: "AbortUploadRequest",
-  },
-  {
-    method: "post",
-    path: SDKWORK_FILE_API_ROUTES.app.upload.presignPart,
-    responseSchemaName: "PresignUploadPartResponse",
-    schemaName: "PresignUploadPartRequest",
-  },
-] as const;
-
 const APP_FILE_COMMANDS = [
   {
     method: "post",
@@ -364,12 +300,6 @@ const APP_FILE_COMMANDS = [
 ] as const;
 
 const APP_FOUNDATION_COMMANDS = [
-  {
-    method: "post",
-    path: SDKWORK_FILE_API_ROUTES.app.upload.presignSession,
-    responseSchemaName: "PresignUploadSessionResponse",
-    schemaName: "PresignUploadSessionRequest",
-  },
   {
     method: "patch",
     path: SDKWORK_FILE_API_ROUTES.app.files.update,
@@ -427,11 +357,6 @@ const APP_FOUNDATION_COMMANDS = [
 ] as const;
 
 const FOUNDATION_READ_RESPONSE_CONTRACTS = [
-  {
-    operationId: "upload.sessions.retrieve",
-    responseSchemaName: "UploadSessionDetailResponse",
-    surface: "app",
-  },
   {
     operationId: "files.list",
     responseSchemaName: "FileListResponse",
@@ -525,11 +450,6 @@ const FOUNDATION_READ_RESPONSE_CONTRACTS = [
 ] as const;
 
 const FOUNDATION_QUERY_PARAMETER_CONTRACTS = [
-  {
-    operationId: "upload.sessions.retrieve",
-    parameters: [requestIdQueryParameter()],
-    surface: "app",
-  },
   {
     operationId: "files.list",
     parameters: [
@@ -897,19 +817,6 @@ export function validateFileApiContractStandard(
       violations.push(`backend_storage_governance_command_shape:${command.schemaName}`);
     }
   }
-  for (const command of APP_UPLOAD_COMMANDS) {
-    const operation = bundle.app.paths[command.path]?.[command.method];
-    if (!operation) {
-      violations.push(`missing_app_upload_command:${command.path}:${command.method}`);
-      continue;
-    }
-    if (!isJsonRequestBodyRef(operation.requestBody, command.schemaName)) {
-      violations.push(`app_upload_command_request_body:${operation.operationId}`);
-    }
-    if (!isJsonResponseRef(operation.responses["200"], command.responseSchemaName)) {
-      violations.push(`app_upload_command_response_body:${operation.operationId}`);
-    }
-  }
   for (const command of APP_FILE_COMMANDS) {
     const operation = bundle.app.paths[command.path]?.[command.method];
     if (!operation) {
@@ -1169,41 +1076,6 @@ function createAppPaths(): Record<string, OpenApiPathItem> {
   const routes = SDKWORK_FILE_API_ROUTES.app;
 
   return {
-    [routes.upload.createSession]: {
-      post: appOperation("upload.sessions.create", "upload", "Create upload session", "Create a policy-checked upload session and return the direct-upload grant required by the selected upload mode.", {
-        requestSchemaName: "CreateUploadSessionRequest",
-        responseSchemaName: "UploadSession",
-      }),
-    },
-    [routes.upload.presignSession]: {
-      post: appOperation("upload.sessions.presign", "upload", "Presign upload session", "Issue a short-lived upload grant for a created session.", {
-        requestSchemaName: "PresignUploadSessionRequest",
-        responseSchemaName: "PresignUploadSessionResponse",
-      }),
-    },
-    [routes.upload.getSession]: {
-      get: appOperation("upload.sessions.retrieve", "upload", "Get upload session", "Read upload session status without exposing object storage internals.", {
-        responseSchemaName: "UploadSessionDetailResponse",
-      }),
-    },
-    [routes.upload.completeSession]: {
-      post: appOperation("upload.sessions.complete", "upload", "Complete upload session", "Complete upload verification and return the stable file reference.", {
-        requestSchemaName: "CompleteUploadRequest",
-        responseSchemaName: "CompleteUploadResponse",
-      }),
-    },
-    [routes.upload.abortSession]: {
-      post: appOperation("upload.sessions.abort", "upload", "Abort upload session", "Abort upload and release any quota reservation.", {
-        requestSchemaName: "AbortUploadRequest",
-        responseSchemaName: "AbortUploadResponse",
-      }),
-    },
-    [routes.upload.presignPart]: {
-      post: appOperation("upload.parts.presign", "upload", "Presign multipart upload part", "Issue a short-lived grant for one multipart upload part.", {
-        requestSchemaName: "PresignUploadPartRequest",
-        responseSchemaName: "PresignUploadPartResponse",
-      }),
-    },
     [routes.files.collection]: {
       get: appOperation("files.list", "files", "List files", "List stable file references visible to the caller.", {
         responseSchemaName: "FileListResponse",
@@ -1605,14 +1477,6 @@ function standardResponses(responseSchemaName?: string): Record<string, unknown>
 
 function createSchemas(): Record<string, JsonSchema> {
   return {
-    AbortUploadRequest: objectSchema(["requestId"], {
-      requestId: stringSchema("Client request id for idempotency and tracing."),
-    }),
-    AbortUploadResponse: objectSchema(["requestId", "sessionId", "status"], {
-      requestId: stringSchema("Client request id for tracing."),
-      sessionId: stringSchema("Upload session id."),
-      status: enumStringSchema("Upload status after abort.", SDKWORK_FILE_UPLOAD_STATUSES),
-    }),
     AdminDeleteFileRequest: objectSchema(["requestId"], {
       deleteMode: stringSchema("Delete mode, such as trash, purge pending, or purge when policy allows it."),
       dryRun: booleanSchema("Whether to validate the delete without applying it."),
@@ -1639,33 +1503,6 @@ function createSchemas(): Record<string, JsonSchema> {
       sizeBytes: integerSchema("Logical file size in bytes.", 0),
       status: stringSchema("File lifecycle status."),
       visibility: enumStringSchema("File visibility.", SDKWORK_FILE_VISIBILITIES),
-    }),
-    CompleteUploadRequest: objectSchema(["idempotencyKey", "purpose", "requestId", "sessionId"], {
-      checksum: refSchema("FileChecksum"),
-      idempotencyKey: stringSchema("Idempotency key for upload completion."),
-      purpose: stringSchema("File slot code."),
-      requestId: stringSchema("Client request id for tracing."),
-      sessionId: stringSchema("Upload session id."),
-    }),
-    CompleteUploadResponse: objectSchema(["fileRef", "requestId", "sessionId", "status"], {
-      fileRef: refSchema("FileRef"),
-      requestId: stringSchema("Client request id for tracing."),
-      sessionId: stringSchema("Upload session id."),
-      status: enumStringSchema("Upload status after completion.", SDKWORK_FILE_UPLOAD_STATUSES),
-    }),
-    CreateUploadSessionRequest: objectSchema(["contentType", "filename", "idempotencyKey", "purpose", "requestId", "sizeBytes", "target"], {
-      checksum: refSchema("FileChecksum"),
-      contentType: stringSchema("Claimed MIME type."),
-      filename: stringSchema("Original filename."),
-      idempotencyKey: stringSchema("Idempotency key for upload session creation."),
-      organizationId: stringSchema("Organization id when the upload is organization scoped."),
-      parentNodeId: stringSchema("Drive parent node id when uploading into a drive folder."),
-      purpose: stringSchema("File slot code."),
-      requestId: stringSchema("Client request id for tracing."),
-      sizeBytes: integerSchema("Claimed file size in bytes.", 0),
-      spaceId: stringSchema("Drive space id when uploading into a drive."),
-      target: refSchema("FileUploadTarget"),
-      userId: stringSchema("Owner user id."),
     }),
     CopyDriveNodeRequest: objectSchema(["idempotencyKey", "requestId"], {
       idempotencyKey: stringSchema("Idempotency key for drive node copy."),
@@ -1957,36 +1794,6 @@ function createSchemas(): Record<string, JsonSchema> {
       targetParentNodeId: stringSchema("Target parent drive node id."),
       targetSpaceId: stringSchema("Target drive space id when moving across spaces."),
     }),
-    PresignUploadPartRequest: objectSchema(["partNumber", "requestId", "sessionId"], {
-      partNumber: integerSchema("Multipart upload part number.", 1, 10000),
-      requestId: stringSchema("Request id."),
-      sessionId: stringSchema("Upload session id."),
-    }),
-    PresignUploadPartResponse: objectSchema(["partNumber", "presigned", "requestId", "sessionId"], {
-      partNumber: integerSchema("Multipart upload part number.", 1, 10000),
-      presigned: refSchema("PresignedUploadGrant"),
-      requestId: stringSchema("Request id."),
-      sessionId: stringSchema("Upload session id."),
-    }),
-    PresignUploadSessionRequest: objectSchema(["requestId"], {
-      requestId: stringSchema("Client request id for tracing."),
-    }),
-    PresignUploadSessionResponse: objectSchema(["presigned", "requestId", "sessionId"], {
-      presigned: refSchema("PresignedUploadGrant"),
-      requestId: stringSchema("Client request id for tracing."),
-      sessionId: stringSchema("Upload session id."),
-      status: enumStringSchema("Upload status after grant issuance.", SDKWORK_FILE_UPLOAD_STATUSES),
-    }),
-    PresignedUploadGrant: objectSchema(["expiresAt", "headers", "method", "url"], {
-      expiresAt: dateTimeSchema("Short-lived grant expiration time."),
-      headers: {
-        additionalProperties: stringSchema("HTTP header value."),
-        description: "Headers the client must send with the short-lived upload request.",
-        type: "object",
-      },
-      method: stringSchema("HTTP method for the short-lived upload request."),
-      url: stringSchema("The short-lived URL for direct object upload. Clients must not persist it as business data."),
-    }),
     RestoreDriveNodeRequest: objectSchema(["requestId"], {
       requestId: stringSchema("Client request id for tracing."),
     }),
@@ -2243,27 +2050,6 @@ function createSchemas(): Record<string, JsonSchema> {
       displayName: stringSchema("File display name."),
       requestId: stringSchema("Client request id for tracing."),
       visibility: enumStringSchema("File visibility.", SDKWORK_FILE_VISIBILITIES),
-    }),
-    UploadSession: objectSchema(["requestId", "sessionId", "status", "uploadMode"], {
-      partSizeBytes: integerSchema("Multipart part size in bytes.", 1),
-      presigned: refSchema("PresignedUploadGrant"),
-      requestId: stringSchema("Request id."),
-      sessionId: stringSchema("Upload session id."),
-      status: enumStringSchema("Upload status.", SDKWORK_FILE_UPLOAD_STATUSES),
-      totalParts: integerSchema("Multipart part count.", 1, 10000),
-      uploadMode: enumStringSchema("Upload mode.", SDKWORK_FILE_UPLOAD_MODES),
-    }),
-    UploadSessionDetailResponse: objectSchema(["requestId", "sessionId", "status", "uploadMode"], {
-      expiresAt: dateTimeSchema("Upload session expiration time."),
-      fileRef: refSchema("FileRef"),
-      partSizeBytes: integerSchema("Multipart part size in bytes.", 1),
-      requestId: stringSchema("Request id."),
-      sessionId: stringSchema("Upload session id."),
-      status: enumStringSchema("Upload status.", SDKWORK_FILE_UPLOAD_STATUSES),
-      totalParts: integerSchema("Multipart part count.", 1, 10000),
-      uploadedBytes: integerSchema("Bytes uploaded so far.", 0),
-      uploadedParts: integerSchema("Multipart parts uploaded so far.", 0),
-      uploadMode: enumStringSchema("Upload mode.", SDKWORK_FILE_UPLOAD_MODES),
     }),
   };
 }

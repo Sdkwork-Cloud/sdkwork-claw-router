@@ -608,7 +608,7 @@ function buildReleasePreflightReport({
     dryRun
       ? 'dry-run: Codex session IO footprint was not probed'
       : `${codexSessionStats.count} session files, ${formatBytes(codexSessionStats.totalBytes)}`,
-    'Archive old session jsonl files outside C:\\Users\\admin\\.codex\\sessions when command input becomes sluggish.',
+    'Archive old Codex session jsonl files outside the active Codex sessions directory when command input becomes sluggish.',
   ));
 
   const gitObjectHealth = probes.gitObjectHealth ?? { count: 0, size: 'unknown', inPack: 0, sizePack: 'unknown' };

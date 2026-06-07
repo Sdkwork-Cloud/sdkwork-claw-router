@@ -3,7 +3,14 @@ use std::sync::Arc;
 use crate::api::paths::ai_path;
 use crate::api::paths::append_query_string;
 use crate::http::{SdkworkError, SdkworkHttpClient};
-use crate::models::{DeleteResult, OpenAiFineTuningCheckpointPermission, OpenAiFineTuningCheckpointPermissionCreateRequest, OpenAiFineTuningCheckpointPermissionList, OpenAiFineTuningGraderRunRequest, OpenAiFineTuningGraderRunResult, OpenAiFineTuningGraderValidateRequest, OpenAiFineTuningGraderValidationResult, OpenAiFineTuningJob, OpenAiFineTuningJobCheckpointList, OpenAiFineTuningJobCreateRequest, OpenAiFineTuningJobEventList, OpenAiFineTuningJobList};
+use crate::models::{
+    DeleteResult, OpenAiFineTuningCheckpointPermission,
+    OpenAiFineTuningCheckpointPermissionCreateRequest, OpenAiFineTuningCheckpointPermissionList,
+    OpenAiFineTuningGraderRunRequest, OpenAiFineTuningGraderRunResult,
+    OpenAiFineTuningGraderValidateRequest, OpenAiFineTuningGraderValidationResult,
+    OpenAiFineTuningJob, OpenAiFineTuningJobCheckpointList, OpenAiFineTuningJobCreateRequest,
+    OpenAiFineTuningJobEventList, OpenAiFineTuningJobList,
+};
 
 #[derive(Clone)]
 pub struct FineTuningApi {
@@ -16,19 +23,37 @@ impl FineTuningApi {
     }
 
     /// Run fine-tuning grader
-    pub async fn create_run(&self, body: &OpenAiFineTuningGraderRunRequest) -> Result<OpenAiFineTuningGraderRunResult, SdkworkError> {
+    pub async fn create_run(
+        &self,
+        body: &OpenAiFineTuningGraderRunRequest,
+    ) -> Result<OpenAiFineTuningGraderRunResult, SdkworkError> {
         let path = ai_path(&"/fine_tuning/alpha/graders/run".to_string());
-        self.client.post(&path, Some(body), None, None, Some("application/json")).await
+        self.client
+            .post(&path, Some(body), None, None, Some("application/json"))
+            .await
     }
 
     /// Validate fine-tuning grader
-    pub async fn create_validate(&self, body: &OpenAiFineTuningGraderValidateRequest) -> Result<OpenAiFineTuningGraderValidationResult, SdkworkError> {
+    pub async fn create_validate(
+        &self,
+        body: &OpenAiFineTuningGraderValidateRequest,
+    ) -> Result<OpenAiFineTuningGraderValidationResult, SdkworkError> {
         let path = ai_path(&"/fine_tuning/alpha/graders/validate".to_string());
-        self.client.post(&path, Some(body), None, None, Some("application/json")).await
+        self.client
+            .post(&path, Some(body), None, None, Some("application/json"))
+            .await
     }
 
     /// List fine-tuning checkpoint permissions
-    pub async fn retrieve_permissions(&self, fine_tuned_model_checkpoint: &str, limit: Option<i64>, order: Option<&str>, after: Option<&str>, before: Option<&str>, project_id: Option<&str>) -> Result<OpenAiFineTuningCheckpointPermissionList, SdkworkError> {
+    pub async fn retrieve_permissions(
+        &self,
+        fine_tuned_model_checkpoint: &str,
+        limit: Option<i64>,
+        order: Option<&str>,
+        after: Option<&str>,
+        before: Option<&str>,
+        project_id: Option<&str>,
+    ) -> Result<OpenAiFineTuningCheckpointPermissionList, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("limit", limit, "form", true, false, None),
             QueryParameterSpec::new("order", order, "form", true, false, None),
@@ -36,24 +61,65 @@ impl FineTuningApi {
             QueryParameterSpec::new("before", before, "form", true, false, None),
             QueryParameterSpec::new("project_id", project_id, "form", true, false, None),
         ]);
-        let path = append_query_string(ai_path(&format!("/fine_tuning/checkpoints/{}/permissions", serialize_path_parameter(fine_tuned_model_checkpoint, PathParameterSpec::new("fine_tuned_model_checkpoint", "simple", false)))), &query);
+        let path = append_query_string(
+            ai_path(&format!(
+                "/fine_tuning/checkpoints/{}/permissions",
+                serialize_path_parameter(
+                    fine_tuned_model_checkpoint,
+                    PathParameterSpec::new("fine_tuned_model_checkpoint", "simple", false)
+                )
+            )),
+            &query,
+        );
         self.client.get(&path, None, None).await
     }
 
     /// Create fine-tuning checkpoint permission
-    pub async fn create_permissions(&self, fine_tuned_model_checkpoint: &str, body: &OpenAiFineTuningCheckpointPermissionCreateRequest) -> Result<OpenAiFineTuningCheckpointPermission, SdkworkError> {
-        let path = ai_path(&format!("/fine_tuning/checkpoints/{}/permissions", serialize_path_parameter(fine_tuned_model_checkpoint, PathParameterSpec::new("fine_tuned_model_checkpoint", "simple", false))));
-        self.client.post(&path, Some(body), None, None, Some("application/json")).await
+    pub async fn create_permissions(
+        &self,
+        fine_tuned_model_checkpoint: &str,
+        body: &OpenAiFineTuningCheckpointPermissionCreateRequest,
+    ) -> Result<OpenAiFineTuningCheckpointPermission, SdkworkError> {
+        let path = ai_path(&format!(
+            "/fine_tuning/checkpoints/{}/permissions",
+            serialize_path_parameter(
+                fine_tuned_model_checkpoint,
+                PathParameterSpec::new("fine_tuned_model_checkpoint", "simple", false)
+            )
+        ));
+        self.client
+            .post(&path, Some(body), None, None, Some("application/json"))
+            .await
     }
 
     /// Delete fine-tuning checkpoint permission
-    pub async fn delete_permissions(&self, fine_tuned_model_checkpoint: &str, permission_id: &str) -> Result<DeleteResult, SdkworkError> {
-        let path = ai_path(&format!("/fine_tuning/checkpoints/{}/permissions/{}", serialize_path_parameter(fine_tuned_model_checkpoint, PathParameterSpec::new("fine_tuned_model_checkpoint", "simple", false)), serialize_path_parameter(permission_id, PathParameterSpec::new("permission_id", "simple", false))));
+    pub async fn delete_permissions(
+        &self,
+        fine_tuned_model_checkpoint: &str,
+        permission_id: &str,
+    ) -> Result<DeleteResult, SdkworkError> {
+        let path = ai_path(&format!(
+            "/fine_tuning/checkpoints/{}/permissions/{}",
+            serialize_path_parameter(
+                fine_tuned_model_checkpoint,
+                PathParameterSpec::new("fine_tuned_model_checkpoint", "simple", false)
+            ),
+            serialize_path_parameter(
+                permission_id,
+                PathParameterSpec::new("permission_id", "simple", false)
+            )
+        ));
         self.client.delete(&path, None, None).await
     }
 
     /// List fine-tuning jobs
-    pub async fn list_jobs(&self, limit: Option<i64>, order: Option<&str>, after: Option<&str>, before: Option<&str>) -> Result<OpenAiFineTuningJobList, SdkworkError> {
+    pub async fn list_jobs(
+        &self,
+        limit: Option<i64>,
+        order: Option<&str>,
+        after: Option<&str>,
+        before: Option<&str>,
+    ) -> Result<OpenAiFineTuningJobList, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("limit", limit, "form", true, false, None),
             QueryParameterSpec::new("order", order, "form", true, false, None),
@@ -65,59 +131,137 @@ impl FineTuningApi {
     }
 
     /// Create fine-tuning job
-    pub async fn create_jobs(&self, body: &OpenAiFineTuningJobCreateRequest) -> Result<OpenAiFineTuningJob, SdkworkError> {
+    pub async fn create_jobs(
+        &self,
+        body: &OpenAiFineTuningJobCreateRequest,
+    ) -> Result<OpenAiFineTuningJob, SdkworkError> {
         let path = ai_path(&"/fine_tuning/jobs".to_string());
-        self.client.post(&path, Some(body), None, None, Some("application/json")).await
+        self.client
+            .post(&path, Some(body), None, None, Some("application/json"))
+            .await
     }
 
     /// Retrieve fine-tuning job
-    pub async fn retrieve_jobs(&self, fine_tuning_job_id: &str) -> Result<OpenAiFineTuningJob, SdkworkError> {
-        let path = ai_path(&format!("/fine_tuning/jobs/{}", serialize_path_parameter(fine_tuning_job_id, PathParameterSpec::new("fine_tuning_job_id", "simple", false))));
+    pub async fn retrieve_jobs(
+        &self,
+        fine_tuning_job_id: &str,
+    ) -> Result<OpenAiFineTuningJob, SdkworkError> {
+        let path = ai_path(&format!(
+            "/fine_tuning/jobs/{}",
+            serialize_path_parameter(
+                fine_tuning_job_id,
+                PathParameterSpec::new("fine_tuning_job_id", "simple", false)
+            )
+        ));
         self.client.get(&path, None, None).await
     }
 
     /// Cancel fine-tuning job
-    pub async fn create_cancel(&self, fine_tuning_job_id: &str) -> Result<OpenAiFineTuningJob, SdkworkError> {
-        let path = ai_path(&format!("/fine_tuning/jobs/{}/cancel", serialize_path_parameter(fine_tuning_job_id, PathParameterSpec::new("fine_tuning_job_id", "simple", false))));
-        self.client.post(&path, Option::<&serde_json::Value>::None, None, None, None).await
+    pub async fn create_cancel(
+        &self,
+        fine_tuning_job_id: &str,
+    ) -> Result<OpenAiFineTuningJob, SdkworkError> {
+        let path = ai_path(&format!(
+            "/fine_tuning/jobs/{}/cancel",
+            serialize_path_parameter(
+                fine_tuning_job_id,
+                PathParameterSpec::new("fine_tuning_job_id", "simple", false)
+            )
+        ));
+        self.client
+            .post(&path, Option::<&serde_json::Value>::None, None, None, None)
+            .await
     }
 
     /// List fine-tuning checkpoints
-    pub async fn retrieve_checkpoints(&self, fine_tuning_job_id: &str, limit: Option<i64>, order: Option<&str>, after: Option<&str>, before: Option<&str>) -> Result<OpenAiFineTuningJobCheckpointList, SdkworkError> {
+    pub async fn retrieve_checkpoints(
+        &self,
+        fine_tuning_job_id: &str,
+        limit: Option<i64>,
+        order: Option<&str>,
+        after: Option<&str>,
+        before: Option<&str>,
+    ) -> Result<OpenAiFineTuningJobCheckpointList, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("limit", limit, "form", true, false, None),
             QueryParameterSpec::new("order", order, "form", true, false, None),
             QueryParameterSpec::new("after", after, "form", true, false, None),
             QueryParameterSpec::new("before", before, "form", true, false, None),
         ]);
-        let path = append_query_string(ai_path(&format!("/fine_tuning/jobs/{}/checkpoints", serialize_path_parameter(fine_tuning_job_id, PathParameterSpec::new("fine_tuning_job_id", "simple", false)))), &query);
+        let path = append_query_string(
+            ai_path(&format!(
+                "/fine_tuning/jobs/{}/checkpoints",
+                serialize_path_parameter(
+                    fine_tuning_job_id,
+                    PathParameterSpec::new("fine_tuning_job_id", "simple", false)
+                )
+            )),
+            &query,
+        );
         self.client.get(&path, None, None).await
     }
 
     /// List fine-tuning events
-    pub async fn retrieve_events(&self, fine_tuning_job_id: &str, limit: Option<i64>, order: Option<&str>, after: Option<&str>, before: Option<&str>) -> Result<OpenAiFineTuningJobEventList, SdkworkError> {
+    pub async fn retrieve_events(
+        &self,
+        fine_tuning_job_id: &str,
+        limit: Option<i64>,
+        order: Option<&str>,
+        after: Option<&str>,
+        before: Option<&str>,
+    ) -> Result<OpenAiFineTuningJobEventList, SdkworkError> {
         let query = build_query_string(&[
             QueryParameterSpec::new("limit", limit, "form", true, false, None),
             QueryParameterSpec::new("order", order, "form", true, false, None),
             QueryParameterSpec::new("after", after, "form", true, false, None),
             QueryParameterSpec::new("before", before, "form", true, false, None),
         ]);
-        let path = append_query_string(ai_path(&format!("/fine_tuning/jobs/{}/events", serialize_path_parameter(fine_tuning_job_id, PathParameterSpec::new("fine_tuning_job_id", "simple", false)))), &query);
+        let path = append_query_string(
+            ai_path(&format!(
+                "/fine_tuning/jobs/{}/events",
+                serialize_path_parameter(
+                    fine_tuning_job_id,
+                    PathParameterSpec::new("fine_tuning_job_id", "simple", false)
+                )
+            )),
+            &query,
+        );
         self.client.get(&path, None, None).await
     }
 
     /// Pause fine-tuning job
-    pub async fn create_pause(&self, fine_tuning_job_id: &str) -> Result<OpenAiFineTuningJob, SdkworkError> {
-        let path = ai_path(&format!("/fine_tuning/jobs/{}/pause", serialize_path_parameter(fine_tuning_job_id, PathParameterSpec::new("fine_tuning_job_id", "simple", false))));
-        self.client.post(&path, Option::<&serde_json::Value>::None, None, None, None).await
+    pub async fn create_pause(
+        &self,
+        fine_tuning_job_id: &str,
+    ) -> Result<OpenAiFineTuningJob, SdkworkError> {
+        let path = ai_path(&format!(
+            "/fine_tuning/jobs/{}/pause",
+            serialize_path_parameter(
+                fine_tuning_job_id,
+                PathParameterSpec::new("fine_tuning_job_id", "simple", false)
+            )
+        ));
+        self.client
+            .post(&path, Option::<&serde_json::Value>::None, None, None, None)
+            .await
     }
 
     /// Resume fine-tuning job
-    pub async fn create_resume(&self, fine_tuning_job_id: &str) -> Result<OpenAiFineTuningJob, SdkworkError> {
-        let path = ai_path(&format!("/fine_tuning/jobs/{}/resume", serialize_path_parameter(fine_tuning_job_id, PathParameterSpec::new("fine_tuning_job_id", "simple", false))));
-        self.client.post(&path, Option::<&serde_json::Value>::None, None, None, None).await
+    pub async fn create_resume(
+        &self,
+        fine_tuning_job_id: &str,
+    ) -> Result<OpenAiFineTuningJob, SdkworkError> {
+        let path = ai_path(&format!(
+            "/fine_tuning/jobs/{}/resume",
+            serialize_path_parameter(
+                fine_tuning_job_id,
+                PathParameterSpec::new("fine_tuning_job_id", "simple", false)
+            )
+        ));
+        self.client
+            .post(&path, Option::<&serde_json::Value>::None, None, None, None)
+            .await
     }
-
 }
 
 struct PathParameterSpec<'a> {
@@ -128,7 +272,11 @@ struct PathParameterSpec<'a> {
 
 impl<'a> PathParameterSpec<'a> {
     fn new(name: &'a str, style: &'a str, explode: bool) -> Self {
-        Self { name, style, explode }
+        Self {
+            name,
+            style,
+            explode,
+        }
     }
 }
 
@@ -137,15 +285,32 @@ fn serialize_path_parameter<T: serde::Serialize>(value: T, spec: PathParameterSp
     if value.is_null() {
         return String::new();
     }
-    let style = if spec.style.is_empty() { "simple" } else { spec.style };
+    let style = if spec.style.is_empty() {
+        "simple"
+    } else {
+        spec.style
+    };
     match value {
-        serde_json::Value::Array(values) => serialize_path_array(spec.name, &values, style, spec.explode),
-        serde_json::Value::Object(values) => serialize_path_object(spec.name, &values, style, spec.explode),
-        value => format!("{}{}", path_primitive_prefix(spec.name, style), percent_encode(&primitive_to_string(&value))),
+        serde_json::Value::Array(values) => {
+            serialize_path_array(spec.name, &values, style, spec.explode)
+        }
+        serde_json::Value::Object(values) => {
+            serialize_path_object(spec.name, &values, style, spec.explode)
+        }
+        value => format!(
+            "{}{}",
+            path_primitive_prefix(spec.name, style),
+            percent_encode(&primitive_to_string(&value))
+        ),
     }
 }
 
-fn serialize_path_array(name: &str, values: &[serde_json::Value], style: &str, explode: bool) -> String {
+fn serialize_path_array(
+    name: &str,
+    values: &[serde_json::Value],
+    style: &str,
+    explode: bool,
+) -> String {
     let serialized = values
         .iter()
         .filter(|value| !value.is_null())
@@ -156,7 +321,11 @@ fn serialize_path_array(name: &str, values: &[serde_json::Value], style: &str, e
     }
     if style == "matrix" {
         if explode {
-            return serialized.iter().map(|item| format!(";{}={}", name, item)).collect::<Vec<_>>().join("");
+            return serialized
+                .iter()
+                .map(|item| format!(";{}={}", name, item))
+                .collect::<Vec<_>>()
+                .join("");
         }
         return format!(";{}={}", name, serialized.join(","));
     }
@@ -218,7 +387,6 @@ fn path_primitive_prefix(name: &str, style: &str) -> String {
     }
 }
 
-
 struct QueryParameterSpec<'a> {
     name: &'a str,
     value: serde_json::Value,
@@ -269,12 +437,36 @@ fn append_serialized_parameter(pairs: &mut Vec<String>, parameter: &QueryParamet
         return;
     }
 
-    let style = if parameter.style.is_empty() { "form" } else { parameter.style };
+    let style = if parameter.style.is_empty() {
+        "form"
+    } else {
+        parameter.style
+    };
     match &parameter.value {
-        serde_json::Value::Array(values) => append_array_parameter(pairs, parameter.name, values, style, parameter.explode, parameter.allow_reserved),
-        serde_json::Value::Object(values) if style == "deepObject" => append_deep_object_parameter(pairs, parameter.name, values, parameter.allow_reserved),
-        serde_json::Value::Object(values) => append_object_parameter(pairs, parameter.name, values, style, parameter.explode, parameter.allow_reserved),
-        value => pairs.push(format!("{}={}", percent_encode(parameter.name), encode_query_value(&primitive_to_string(value), parameter.allow_reserved))),
+        serde_json::Value::Array(values) => append_array_parameter(
+            pairs,
+            parameter.name,
+            values,
+            style,
+            parameter.explode,
+            parameter.allow_reserved,
+        ),
+        serde_json::Value::Object(values) if style == "deepObject" => {
+            append_deep_object_parameter(pairs, parameter.name, values, parameter.allow_reserved)
+        }
+        serde_json::Value::Object(values) => append_object_parameter(
+            pairs,
+            parameter.name,
+            values,
+            style,
+            parameter.explode,
+            parameter.allow_reserved,
+        ),
+        value => pairs.push(format!(
+            "{}={}",
+            percent_encode(parameter.name),
+            encode_query_value(&primitive_to_string(value), parameter.allow_reserved)
+        )),
     }
 }
 
@@ -286,17 +478,29 @@ fn append_array_parameter(
     explode: bool,
     allow_reserved: bool,
 ) {
-    let serialized = values.iter().filter(|value| !value.is_null()).map(primitive_to_string).collect::<Vec<_>>();
+    let serialized = values
+        .iter()
+        .filter(|value| !value.is_null())
+        .map(primitive_to_string)
+        .collect::<Vec<_>>();
     if serialized.is_empty() {
         return;
     }
     if style == "form" && explode {
         for item in serialized {
-            pairs.push(format!("{}={}", percent_encode(name), encode_query_value(&item, allow_reserved)));
+            pairs.push(format!(
+                "{}={}",
+                percent_encode(name),
+                encode_query_value(&item, allow_reserved)
+            ));
         }
         return;
     }
-    pairs.push(format!("{}={}", percent_encode(name), encode_query_value(&serialized.join(","), allow_reserved)));
+    pairs.push(format!(
+        "{}={}",
+        percent_encode(name),
+        encode_query_value(&serialized.join(","), allow_reserved)
+    ));
 }
 
 fn append_object_parameter(
@@ -313,14 +517,22 @@ fn append_object_parameter(
             continue;
         }
         if style == "form" && explode {
-            pairs.push(format!("{}={}", percent_encode(key), encode_query_value(&primitive_to_string(value), allow_reserved)));
+            pairs.push(format!(
+                "{}={}",
+                percent_encode(key),
+                encode_query_value(&primitive_to_string(value), allow_reserved)
+            ));
         } else {
             serialized.push(key.clone());
             serialized.push(primitive_to_string(value));
         }
     }
     if !serialized.is_empty() {
-        pairs.push(format!("{}={}", percent_encode(name), encode_query_value(&serialized.join(","), allow_reserved)));
+        pairs.push(format!(
+            "{}={}",
+            percent_encode(name),
+            encode_query_value(&serialized.join(","), allow_reserved)
+        ));
     }
 }
 
@@ -332,7 +544,11 @@ fn append_deep_object_parameter(
 ) {
     for (key, value) in values {
         if !value.is_null() {
-            pairs.push(format!("{}={}", percent_encode(&format!("{}[{}]", name, key)), encode_query_value(&primitive_to_string(value), allow_reserved)));
+            pairs.push(format!(
+                "{}={}",
+                percent_encode(&format!("{}[{}]", name, key)),
+                encode_query_value(&primitive_to_string(value), allow_reserved)
+            ));
         }
     }
 }
@@ -343,11 +559,24 @@ fn encode_query_value(value: &str, allow_reserved: bool) -> String {
         return encoded;
     }
     for (escaped, reserved) in [
-        ("%3A", ":"), ("%2F", "/"), ("%3F", "?"), ("%23", "#"),
-        ("%5B", "["), ("%5D", "]"), ("%40", "@"), ("%21", "!"),
-        ("%24", "$"), ("%26", "&"), ("%27", "'"), ("%28", "("),
-        ("%29", ")"), ("%2A", "*"), ("%2B", "+"), ("%2C", ","),
-        ("%3B", ";"), ("%3D", "="),
+        ("%3A", ":"),
+        ("%2F", "/"),
+        ("%3F", "?"),
+        ("%23", "#"),
+        ("%5B", "["),
+        ("%5D", "]"),
+        ("%40", "@"),
+        ("%21", "!"),
+        ("%24", "$"),
+        ("%26", "&"),
+        ("%27", "'"),
+        ("%28", "("),
+        ("%29", ")"),
+        ("%2A", "*"),
+        ("%2B", "+"),
+        ("%2C", ","),
+        ("%3B", ";"),
+        ("%3D", "="),
     ] {
         encoded = encoded.replace(escaped, reserved);
     }

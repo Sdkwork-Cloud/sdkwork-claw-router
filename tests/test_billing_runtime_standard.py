@@ -3,16 +3,17 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+APPBASE_ROOT = ROOT / ".sdkwork" / "dependencies" / "sdkwork-appbase"
 
 
 APPBASE_PAYMENT_STORES = [
-    "sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust/src/sqlite_payment.rs",
-    "sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust/src/postgres_payment.rs",
+    ".sdkwork/dependencies/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust/src/sqlite_payment.rs",
+    ".sdkwork/dependencies/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust/src/postgres_payment.rs",
 ]
 
 APPBASE_PROMOTION_STORES = [
-    "sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust/src/sqlite_promotion.rs",
-    "sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust/src/postgres_promotion.rs",
+    ".sdkwork/dependencies/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust/src/sqlite_promotion.rs",
+    ".sdkwork/dependencies/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust/src/postgres_promotion.rs",
 ]
 
 CONSOLE_COMMERCE = (
@@ -37,8 +38,7 @@ CONSOLE_WALLET = (
 class BillingRuntimeStandardTest(unittest.TestCase):
     def test_billing_backend_money_uses_exact_decimal_strings(self) -> None:
         payment_domain = (
-            ROOT
-            / "sdkwork-appbase"
+            APPBASE_ROOT
             / "packages"
             / "native-rust"
             / "commerce"
@@ -66,8 +66,7 @@ class BillingRuntimeStandardTest(unittest.TestCase):
             self.assertNotIn("parse::<f64>()", store)
 
         promotion_domain = (
-            ROOT
-            / "sdkwork-appbase"
+            APPBASE_ROOT
             / "packages"
             / "native-rust"
             / "commerce"

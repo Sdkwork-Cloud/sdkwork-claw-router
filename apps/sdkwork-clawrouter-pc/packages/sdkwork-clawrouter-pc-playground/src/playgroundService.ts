@@ -1,6 +1,8 @@
 import {
   ensureSdkworkApiSuccess,
   getStoredAppSessionAuthToken,
+  getClawRouterGlobalTokenManager,
+  getSdkworkGenerationsAppSdkClient,
   hasStoredPortalSession,
   isRecord,
   readBoolean,
@@ -16,17 +18,19 @@ import {
   type SdkworkGenerationRun,
   type SdkworkGenerationStatus,
   type SdkworkGenerationWorkspaceData,
-} from '@sdkwork/generation-pc-react/generation-service';
+} from '@sdkwork/generations-pc-workspace/generation-service';
 import {
   listGenerationHistory,
   listModelCatalog,
 } from './appRuntimeApiOperations.ts';
 import { mapGenerationHistoryItems } from './historyMapper.ts';
 import { runPlaygroundGeneration } from './playgroundGenerationService.ts';
+import { runPlaygroundAssetGeneration } from './playgroundGenerationsService.ts';
 export type { PlaygroundHistoryItem, PlaygroundMedia, PlaygroundModelGroup, PlaygroundModelOption } from './playgroundTypes.ts';
 import type {
   GenerationAgentRunCreateInput,
   GenerationAgentRunCreateResult,
+  PlaygroundGenerationSubmitInput,
   PlaygroundHistoryItem,
   PlaygroundModelBucket,
   PlaygroundModelGroup,
@@ -52,6 +56,34 @@ export class PlaygroundService {
     return runPlaygroundGeneration(input);
   }
 
+  static async runGeneration(input: PlaygroundGenerationSubmitInput): Promise<GenerationAgentRunCreateResult> {
+    if (input.selectedModality === 'agent') {
+      return runPlaygroundGeneration(input);
+    }
+    const service = createSdkworkGenerationService({
+      getSessionTokens: readGenerationSessionTokens,
+      includeSampleRuns: false,
+      sdkClients: {
+        generationsApp: getSdkworkGenerationsAppSdkClient(),
+        tokenManager: getClawRouterGlobalTokenManager(),
+      },
+    });
+    return runPlaygroundAssetGeneration(
+      {
+        prompt: input.prompt,
+        targetType: input.targetType ?? input.selectedModality,
+        selectedModel: input.selectedModel,
+        generationConfig: input.generationConfig,
+        referenceAssets: input.referenceAssets,
+        referenceImages: input.referenceImages,
+        referenceMode: input.referenceMode,
+        onDelta: input.onDelta,
+        onArtifact: input.onArtifact,
+      },
+      service,
+    );
+  }
+
   static fetchGenerationWorkspace(): Promise<SdkworkGenerationWorkspaceData> {
     return fetchGenerationWorkspaceData();
   }
@@ -70,6 +102,10 @@ async function fetchGenerationWorkspaceData(): Promise<SdkworkGenerationWorkspac
     getSessionTokens: readGenerationSessionTokens,
     includeSampleRuns: false,
     listRuns: async () => runs,
+    sdkClients: {
+      generationsApp: getSdkworkGenerationsAppSdkClient(),
+      tokenManager: getClawRouterGlobalTokenManager(),
+    },
   });
   return service.getWorkspace();
 }

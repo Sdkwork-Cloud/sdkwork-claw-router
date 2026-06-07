@@ -7,8 +7,8 @@
 | 接口面 | 前缀 | 标准 | 返回 |
 | --- | --- | --- | --- |
 | Gateway API | `/v1/*` | OpenAI compatible 和其它兼容协议 | 原协议响应，不包装 |
-| App API | `/app/v3/api/{resource-path}` | `spring-ai-plus-app-api` Java `ApiPaths` + OpenAPI + generated SDK | `PlusApiResult<T>` |
-| Backend API | `/backend/v3/api/{resource-path}` | `spring-ai-plus-backend-api` Java `ApiPaths` + OpenAPI + generated SDK | `PlusApiResult<T>` |
+| App API | `/app/v3/api/{resource-path}` | `legacy-java-plus-app-api` Java `ApiPaths` + OpenAPI + generated SDK | `PlusApiResult<T>` |
+| Backend API | `/backend/v3/api/{resource-path}` | `legacy-java-plus-backend-api` Java `ApiPaths` + OpenAPI + generated SDK | `PlusApiResult<T>` |
 
 内部接口包括 worker、runtime、event、snapshot，不作为外部长期公共契约。
 
@@ -82,7 +82,7 @@ API Key 明文只在请求入口出现，服务端只使用 hash 匹配，不在
 /app/v3/api/{resource-path}
 ```
 
-Java API path 必须以 `com.sdkwork.app.api.ApiPaths.API_PREFIX` 为唯一前缀，也就是 `/app/v3/api`。推荐使用 `com.sdkwork.app.api.ApiPaths.appPath(...)` 或同等标准生成，不手写散落字符串。`{resource-path}` 必须来自 `spring-ai-plus-app-api` 的 controller/OpenAPI/SDK 契约。
+Java API path 必须以 `com.sdkwork.app.api.ApiPaths.API_PREFIX` 为唯一前缀，也就是 `/app/v3/api`。推荐使用 `com.sdkwork.app.api.ApiPaths.appPath(...)` 或同等标准生成，不手写散落字符串。`{resource-path}` 必须来自 `legacy-java-plus-app-api` 的 controller/OpenAPI/SDK 契约。
 
 App API 典型分组：
 
@@ -117,7 +117,7 @@ App API 权限标准：
 /backend/v3/api/{resource-path}
 ```
 
-Java API path 必须以 `com.sdkwork.backend.api.ApiPaths.API_PREFIX` 为唯一前缀，也就是 `/backend/v3/api`。推荐使用 `com.sdkwork.backend.api.ApiPaths.backendPath(...)` 或同等标准生成。`{resource-path}` 必须来自 `spring-ai-plus-backend-api` 的 controller/OpenAPI/SDK 契约。
+Java API path 必须以 `com.sdkwork.backend.api.ApiPaths.API_PREFIX` 为唯一前缀，也就是 `/backend/v3/api`。推荐使用 `com.sdkwork.backend.api.ApiPaths.backendPath(...)` 或同等标准生成。`{resource-path}` 必须来自 `legacy-java-plus-backend-api` 的 controller/OpenAPI/SDK 契约。
 
 Backend API 典型分组：
 
@@ -145,8 +145,8 @@ Backend API 权限标准：
 
 ## 5. SDK 生成标准
 
-1. Backend API 进入 `spring-ai-plus-backend-api` 生成 SDK，SDK 以 `/backend/v3/api` 作为 Java 标准前缀。
-2. App API 进入 `spring-ai-plus-app-api` 生成 SDK，SDK 以 `/app/v3/api` 作为 Java 标准前缀。
+1. Backend API 进入 `legacy-java-plus-backend-api` 生成 SDK，SDK 以 `/backend/v3/api` 作为 Java 标准前缀。
+2. App API 进入 `legacy-java-plus-app-api` 生成 SDK，SDK 以 `/app/v3/api` 作为 Java 标准前缀。
 3. 前端 `admin-*` 包依赖 backend SDK。
 4. 前端 `console-*` 和 public 用户态包依赖 app SDK。
 5. Gateway `/v1/*` 可以提供 OpenAPI/兼容文档，但不走 `PlusApiResult<T>` SDK。

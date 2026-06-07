@@ -21,7 +21,7 @@ The installer resolves the catalog in this order:
 `models/` directory:
 
 ```powershell
-$env:SDKWORK_MODELS_CATALOG_ROOT="D:\release\sdkwork-models"
+$env:SDKWORK_MODELS_CATALOG_ROOT = Join-Path (Get-Location) "data/sdkwork-models"
 ```
 
 The target directory must contain:
@@ -125,7 +125,7 @@ If the stored catalog version differs from the selected catalog root, startup
 status becomes `UpgradeRequired` and the next `ensure_installed()` refreshes
 the catalog rows.
 
-For local development, `pnpm.cmd dev` and `pnpm.cmd server:dev` must not stop at
+For local development, `pnpm dev` and `pnpm server:dev` must not stop at
 `ensure_installed()`. The workspace launcher sets `SDKWORK_MODELS_CATALOG_ROOT`
 to the checkout-local `data/sdkwork-models` directory when the variable is not
 already set, then runs a blocking `sdkwork-claw-installer refresh-catalog
@@ -159,7 +159,7 @@ CLI examples:
 ```powershell
 sdkwork-claw-installer refresh-catalog
 sdkwork-claw-installer refresh-catalog --vendor openai
-sdkwork-claw-installer refresh-catalog --catalog-root D:\release\sdkwork-models --catalog-version 2026.05.08.1
+sdkwork-claw-installer refresh-catalog --catalog-root "$env:SDKWORK_MODELS_CATALOG_ROOT" --catalog-version 2026.05.08.1
 sdkwork-claw-installer refresh-catalog --vendor alibaba --dry-run
 ```
 
@@ -218,7 +218,7 @@ Admin API example:
   "mode": "vendor_refresh",
   "vendorCodes": ["openai"],
   "force": true,
-  "catalogRoot": "D:/release/sdkwork-models",
+  "catalogRoot": "./data/sdkwork-models",
   "catalogVersion": "2026.05.08.1"
 }
 ```
@@ -299,12 +299,12 @@ should run network operations after local validation passes.
 Every catalog update must run:
 
 ```powershell
-pnpm.cmd models:check
-node data\sdkwork-models\tools\build-index.mjs --check
-node data\sdkwork-models\tools\validate-catalog.mjs
-node data\sdkwork-models\tools\freshness-report.mjs --max-age-policy catalog-freshness-policy.json --as-of 2026-05-08
-node data\sdkwork-models\tools\catalog-audit.mjs --as-of 2026-05-08
-node data\sdkwork-models\tools\release-catalog.mjs --check --as-of 2026-05-08
+pnpm models:check
+node data/sdkwork-models/tools/build-index.mjs --check
+node data/sdkwork-models/tools/validate-catalog.mjs
+node data/sdkwork-models/tools/freshness-report.mjs --max-age-policy catalog-freshness-policy.json --as-of 2026-05-08
+node data/sdkwork-models/tools/catalog-audit.mjs --as-of 2026-05-08
+node data/sdkwork-models/tools/release-catalog.mjs --check --as-of 2026-05-08
 cargo test -p sdkwork-models --offline
 cargo test -p sdkwork-claw-product --test database_installer --offline
 cargo test -p sdkwork-claw-product --test admin_model_store --offline

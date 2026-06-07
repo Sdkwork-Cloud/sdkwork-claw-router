@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::models::{OpenAiOrganizationAdminApiKey};
+use crate::models::OpenAiOrganizationAdminApiKey;
 
 /// OpenAI-compatible paginated list of organization admin API keys.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]

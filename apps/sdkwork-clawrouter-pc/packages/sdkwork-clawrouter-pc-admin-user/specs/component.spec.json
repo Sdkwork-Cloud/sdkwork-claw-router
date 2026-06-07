@@ -82,6 +82,11 @@
       "purpose": "SDK generation and SDK integration rules."
     },
     {
+      "file": "SDK_WORKSPACE_GENERATION_SPEC.md",
+      "path": "../../../../../sdkwork-specs/SDK_WORKSPACE_GENERATION_SPEC.md",
+      "purpose": "Application-root SDK workspace and dependency SDK generation boundary rules."
+    },
+    {
       "file": "SECURITY_SPEC.md",
       "path": "../../../../../sdkwork-specs/SECURITY_SPEC.md",
       "purpose": "Secure auth, token, secrets, CORS, validation, and logging rules."
@@ -112,6 +117,11 @@
       "purpose": "Application shell and module composition rules."
     },
     {
+      "file": "APP_SDK_INTEGRATION_SPEC.md",
+      "path": "../../../../../sdkwork-specs/APP_SDK_INTEGRATION_SPEC.md",
+      "purpose": "App SDK dependency composition and runtime SDK wiring rules."
+    },
+    {
       "file": "APP_MANIFEST_SPEC.md",
       "path": "../../../../../sdkwork-specs/APP_MANIFEST_SPEC.md",
       "purpose": "SDKWork app manifest and release metadata rules."
@@ -129,7 +139,35 @@
     "runtimeEntrypoints": [
       "package.json#scripts.typecheck"
     ],
-    "sdkClients": [],
+    "sdkClients": [
+      {
+        "sdkFamily": "clawrouter-backend-sdk",
+        "packageName": "@sdkwork/clawrouter-backend-sdk",
+        "surface": "backend-api",
+        "apiPrefix": "/backend/v3/api",
+        "providedBy": "sdkwork-clawrouter-pc-commons/runtime",
+        "runtimeIntegration": {
+          "mode": "same-origin-mounted",
+          "sameOriginAllowed": true,
+          "baseUrlEnv": "VITE_CLAWROUTER_BACKEND_API_BASE_URL",
+          "publicBaseUrlEnv": "PORTAL_PUBLIC_BACKEND_API_BASE_URL"
+        }
+      },
+      {
+        "sdkFamily": "sdkwork-appbase-backend-sdk",
+        "packageName": "@sdkwork/appbase-backend-sdk",
+        "surface": "backend-api",
+        "apiPrefix": "/backend/v3/api",
+        "providedBy": "sdkwork-clawrouter-pc-commons/runtime",
+        "dependencyApiSurface": "sdkwork-appbase-backend-sdk",
+        "runtimeIntegration": {
+          "mode": "external-service",
+          "sameOriginAllowed": false,
+          "requiredBaseUrlEnv": "VITE_SDKWORK_APPBASE_BACKEND_API_BASE_URL",
+          "publicBaseUrlEnv": "PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL"
+        }
+      }
+    ],
     "events": [],
     "configKeys": [],
     "routeManifest": null

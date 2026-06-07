@@ -151,7 +151,8 @@ Portable release package root on Linux/macOS:
 Windows MSI install root:
 
 ```powershell
-Set-Location "C:\Program Files\ClawRouter"
+$installRoot = Join-Path $env:USERPROFILE "sdkwork\router"
+Set-Location $installRoot
 .\bin\clawrouterctl.exe ensure
 .\bin\clawrouterctl.exe refresh-catalog --force
 .\bin\clawrouter.exe

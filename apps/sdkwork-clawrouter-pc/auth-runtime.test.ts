@@ -31,11 +31,11 @@ import {
 } from "./packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts";
 import {
   createSdkworkIamRuntimeAuthService,
-} from "../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-pc-react/src/auth-iam-runtime.ts";
+} from "../../.sdkwork/dependencies/sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-pc-react/src/auth-iam-runtime.ts";
 import {
   createIamRuntime,
   createMemoryIamTokenStore,
-} from "../../../sdkwork-appbase/packages/common/iam/sdkwork-iam-runtime/src/index.ts";
+} from "../../.sdkwork/dependencies/sdkwork-appbase/packages/common/iam/sdkwork-iam-runtime/src/index.ts";
 
 function readPortalFile(relativePath: string): string {
   return readFileSync(new URL(relativePath, import.meta.url), "utf8");
@@ -333,6 +333,7 @@ test("claw router auth controller reuses appbase runtime while preserving app SD
   const configSource = readPortalFile("./src/auth/clawRouterAuthConfig.ts");
   const settingsServiceSource = readPortalFile("./src/auth/clawRouterAuthSettingsService.ts");
   const iamRuntimeSource = readPortalFile("./packages/sdkwork-clawrouter-pc-commons/src/iam-runtime.ts");
+  const sdkClientsSource = readPortalFile("./packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts");
 
   assert.match(controllerSource, /createSdkworkIamRuntimeAuthController/);
   assert.match(controllerSource, /getClawRouterIamRuntime/);
@@ -340,7 +341,15 @@ test("claw router auth controller reuses appbase runtime while preserving app SD
   assert.match(iamRuntimeSource, /createIamAppSdkAdapter\(getSdkworkAppbaseAppSdkClient\(\)\)/);
   assert.match(iamRuntimeSource, /createIamBackendSdkAdapter\(getSdkworkAppbaseBackendSdkClient\(\)\)/);
   assert.match(iamRuntimeSource, /sdkClients:\s*\[/);
+  assert.match(iamRuntimeSource, /getClawRouterAppSdkClient\(\)/);
+  assert.match(iamRuntimeSource, /getClawRouterBackendSdkClient\(\)/);
+  assert.match(iamRuntimeSource, /getSdkworkDriveAppSdkClient\(\)/);
+  assert.match(iamRuntimeSource, /getSdkworkGenerationsAppSdkClient\(\)/);
+  assert.match(sdkClientsSource, /from '@sdkwork\/drive-app-sdk'/);
+  assert.match(sdkClientsSource, /createDriveAppClient/);
+  assert.match(sdkClientsSource, /VITE_SDKWORK_DRIVE_APP_API_BASE_URL/);
   assert.match(iamRuntimeSource, /tokenManager:\s*getClawRouterGlobalTokenManager\(\)/);
+  assert.doesNotMatch(iamRuntimeSource, /getClawRouterAiSdkClient\(\)/);
   assert.doesNotMatch(iamRuntimeSource, /app:\s*createIamAppSdkAdapter/);
   assert.doesNotMatch(iamRuntimeSource, /app:\s*getClawRouterAppSdkClient\(\)/);
   assert.doesNotMatch(controllerSource, /createSdkworkAuthController/);
@@ -512,25 +521,25 @@ test("auth runtime config fails closed when backend omits verification policy fl
   }
 });
 
-test("claw router app auth is declared through appbase IAM standard contract and generated SDK", () => {
+test("claw router app auth composes the appbase IAM dependency SDK without regenerating dependency transport", () => {
   const contractSource = readPortalFile("../../docs/schema-registry/frontend-field-contracts.yaml");
   const appOpenApiSource = readPortalFile("../../generated/openapi/clawrouter-app-openapi.json");
   const backendOpenApiSource = readPortalFile("../../generated/openapi/clawrouter-backend-openapi.json");
+  const appSdkInputSource = readPortalFile("../../sdks/clawrouter-app-sdk/openapi/clawrouter-app-sdk.sdkgen.json");
+  const appSdkAssemblySource = readPortalFile("../../sdks/clawrouter-app-sdk/.sdkwork-assembly.json");
+  const appSdkComponentSource = readPortalFile("../../sdks/clawrouter-app-sdk/specs/component.spec.json");
   const appSdkSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/sdk.ts");
-  const appSdkAuthSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/api/auth.ts");
   const appSdkIamSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/api/iam.ts");
   const appSdkSystemSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/api/system.ts");
-  const appSdkOpenPlatformSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/api/open-platform.ts");
-  const appSdkQrSessionCreateRequestSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/types/open-platform-qr-auth-session-create-request.ts");
-  const appSdkQrScanCreateRequestSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/types/open-platform-qr-auth-scan-create-request.ts");
-  const appSdkQrPasswordCreateRequestSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/types/open-platform-qr-auth-password-create-request.ts");
-  const appSdkRuntimeSettingsResponseSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/types/auth-runtime-settings-response.ts");
-  const appSdkSessionRequestSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/types/iam-session-create-request.ts");
-  const appSdkRegistrationRequestSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/types/iam-registration-create-request.ts");
+  const appbaseOpenApiSource = readPortalFile("../../.sdkwork/dependencies/sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/openapi/sdkwork-appbase-app-api.sdkgen.yaml");
+  const appbaseSdkSource = readPortalFile("../../.sdkwork/dependencies/sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/sdk.ts");
+  const appbaseAuthSource = readPortalFile("../../.sdkwork/dependencies/sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/api/auth.ts");
+  const appbaseIamSource = readPortalFile("../../.sdkwork/dependencies/sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/api/iam.ts");
+  const appbaseSystemSource = readPortalFile("../../.sdkwork/dependencies/sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/api/system.ts");
+  const appbaseOpenPlatformSource = readPortalFile("../../.sdkwork/dependencies/sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/api/open-platform.ts");
   const backendSdkSystemSource = readPortalFile("../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/generated/server-openapi/src/api/system.ts");
   const backendSdkIndexSource = readPortalFile("../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/generated/server-openapi/src/sdk.ts");
   const backendSdkAuthSettingsUpdateSource = readPortalFile("../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/generated/server-openapi/src/types/admin-auth-settings-update-request.ts");
-  const appSdkRuntimeSettingsResultSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/types/iam-runtime-retrieve-result.ts");
   const appSdkTypesSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/types/index.ts");
   const backendSdkTypesSource = readPortalFile("../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/generated/server-openapi/src/types/index.ts");
 
@@ -546,8 +555,6 @@ test("claw router app auth is declared through appbase IAM standard contract and
     "sessions.refresh",
     "passwordResetRequests.create",
     "passwordResets.create",
-    "verificationCodes.create",
-    "verificationCodes.verify",
     "oauthAuthorizationUrls.retrieve",
     "oauthSessions.create",
     "registrations.create",
@@ -573,14 +580,13 @@ test("claw router app auth is declared through appbase IAM standard contract and
   assert.match(contractSource, /api_path:\s*\/app\/v3\/api\/system\/iam\/verification_policy/);
   assert.doesNotMatch(contractSource, /api_path:\s*\/app\/v3\/api\/auth\/runtime_settings/);
   assert.doesNotMatch(contractSource, /api_path:\s*\/app\/v3\/api\/auth\/verification_policy/);
-  assert.match(contractSource, /emailRegistrationVerificationRequired:\s*\r?\n\s*type:\s*boolean/);
-  assert.match(contractSource, /phoneRegistrationVerificationRequired:\s*\r?\n\s*type:\s*boolean/);
+  assert.match(contractSource, /emailRegistrationVerificationRequired:\s*(?:\r?\n\s*)?\{?\s*type:\s*boolean/);
+  assert.match(contractSource, /phoneRegistrationVerificationRequired:\s*(?:\r?\n\s*)?\{?\s*type:\s*boolean/);
   assert.match(contractSource, /qrLoginType/);
   assert.match(contractSource, /wechat/);
   assert.match(contractSource, /admin_auth_wechat_official/);
   assert.match(contractSource, /admin_auth_wechat_mini/);
   assert.match(contractSource, /api_path:\s*\/app\/v3\/api\/auth\/password_reset_requests/);
-  assert.match(contractSource, /api_path:\s*\/app\/v3\/api\/auth\/verification_codes\/verify/);
   assert.match(contractSource, /api_path:\s*\/app\/v3\/api\/iam\/users\/current/);
   assert.doesNotMatch(contractSource, /api_path:\s*\/app\/v3\/api\/auth\/login/);
   assert.doesNotMatch(contractSource, /api_path:\s*\/app\/v3\/api\/auth\/session\b/);
@@ -593,31 +599,95 @@ test("claw router app auth is declared through appbase IAM standard contract and
     paths?: Record<string, Record<string, { operationId?: string }>>;
     components?: { schemas?: Record<string, { properties?: Record<string, unknown>; required?: string[] }> };
   };
-  assert.equal(appOpenApi.paths?.["/app/v3/api/auth/sessions"]?.post?.operationId, "sessions.create");
-  assert.equal(appOpenApi.paths?.["/app/v3/api/open_platform/qr_auth/sessions"]?.post?.operationId, "qrAuth.sessions.create");
-  assert.equal(appOpenApi.paths?.["/app/v3/api/open_platform/qr_auth/sessions/{sessionKey}"]?.get?.operationId, "qrAuth.sessions.retrieve");
-  assert.equal(appOpenApi.paths?.["/app/v3/api/open_platform/qr_auth/sessions/{sessionKey}/scans"]?.post?.operationId, "qrAuth.sessions.scans.create");
-  assert.equal(appOpenApi.paths?.["/app/v3/api/open_platform/qr_auth/sessions/{sessionKey}/passwords"]?.post?.operationId, "qrAuth.sessions.passwords.create");
-  assert.ok(!appOpenApi.paths?.["/app/v3/api/auth/qr_login_codes"]);
-  assert.ok(!appOpenApi.paths?.["/app/v3/api/auth/qr_login_codes/{qrKey}"]);
-  assert.ok(!appOpenApi.paths?.["/app/v3/api/auth/qr_login_codes/{qrKey}/callback"]);
-  assert.ok(!appOpenApi.paths?.["/app/v3/api/auth/qr_login_codes/confirm"]);
-  assert.equal(appOpenApi.paths?.["/app/v3/api/auth/sessions/current"]?.get?.operationId, "sessions.current.retrieve");
-  assert.equal(appOpenApi.paths?.["/app/v3/api/auth/sessions/current"]?.patch?.operationId, "sessions.current.update");
-  assert.equal(appOpenApi.paths?.["/app/v3/api/auth/sessions/current"]?.delete?.operationId, "sessions.current.delete");
-  assert.equal(appOpenApi.paths?.["/app/v3/api/auth/sessions/refresh"]?.post?.operationId, "sessions.refresh");
-  assert.equal(appOpenApi.paths?.["/app/v3/api/auth/password_reset_requests"]?.post?.operationId, "passwordResetRequests.create");
-  assert.equal(appOpenApi.paths?.["/app/v3/api/auth/password_resets"]?.post?.operationId, "passwordResets.create");
-  assert.equal(appOpenApi.paths?.["/app/v3/api/auth/verification_codes"]?.post?.operationId, "verificationCodes.create");
-  assert.equal(appOpenApi.paths?.["/app/v3/api/auth/verification_codes/verify"]?.post?.operationId, "verificationCodes.verify");
-  assert.equal(appOpenApi.paths?.["/app/v3/api/auth/oauth_authorization_urls"]?.get?.operationId, "oauthAuthorizationUrls.retrieve");
-  assert.equal(appOpenApi.paths?.["/app/v3/api/auth/oauth_sessions"]?.post?.operationId, "oauthSessions.create");
-  assert.equal(appOpenApi.paths?.["/app/v3/api/auth/registrations"]?.post?.operationId, "registrations.create");
-  assert.equal(appOpenApi.paths?.["/app/v3/api/system/iam/runtime"]?.get?.operationId, "iam.runtime.retrieve");
-  assert.equal(appOpenApi.paths?.["/app/v3/api/system/iam/verification_policy"]?.get?.operationId, "iam.verificationPolicy.retrieve");
-  assert.equal(appOpenApi.paths?.["/app/v3/api/auth/runtime_settings"], undefined);
-  assert.equal(appOpenApi.paths?.["/app/v3/api/auth/verification_policy"], undefined);
-  assert.equal(appOpenApi.paths?.["/app/v3/api/iam/users/current"]?.get?.operationId, "users.current.retrieve");
+  const appSdkInput = JSON.parse(appSdkInputSource) as {
+    paths?: Record<string, Record<string, { operationId?: string }>>;
+  };
+  const appbaseOpenApi = JSON.parse(appbaseOpenApiSource) as {
+    paths?: Record<string, Record<string, { operationId?: string; "x-sdkwork-owner"?: string }>>;
+  };
+  const appSdkAssembly = JSON.parse(appSdkAssemblySource) as {
+    sdkDependencies?: Array<{
+      workspace?: string;
+      generatedTransportImportPolicy?: string;
+      packageByLanguage?: Record<string, string>;
+    }>;
+  };
+  const appSdkComponent = JSON.parse(appSdkComponentSource) as {
+    contracts?: {
+      sdkDependencies?: Array<{
+        workspace?: string;
+        generatedTransportImportPolicy?: string;
+        packageByLanguage?: Record<string, string>;
+      }>;
+    };
+  };
+  const appbaseOwnedAppRoutes = [
+    ["/app/v3/api/auth/oauth_authorization_urls", "get", "oauthAuthorizationUrls.retrieve"],
+    ["/app/v3/api/auth/oauth_sessions", "post", "oauthSessions.create"],
+    ["/app/v3/api/auth/password_reset_requests", "post", "passwordResetRequests.create"],
+    ["/app/v3/api/auth/password_resets", "post", "passwordResets.create"],
+    ["/app/v3/api/auth/registrations", "post", "registrations.create"],
+    ["/app/v3/api/auth/sessions", "post", "sessions.create"],
+    ["/app/v3/api/auth/sessions/current", "delete", "sessions.current.delete"],
+    ["/app/v3/api/auth/sessions/current", "get", "sessions.current.retrieve"],
+    ["/app/v3/api/auth/sessions/current", "patch", "sessions.current.update"],
+    ["/app/v3/api/auth/sessions/refresh", "post", "sessions.refresh"],
+    ["/app/v3/api/iam/users/current", "get", "users.current.retrieve"],
+    ["/app/v3/api/open_platform/qr_auth/sessions", "post", "qrAuth.sessions.create"],
+    ["/app/v3/api/open_platform/qr_auth/sessions/{sessionKey}", "get", "qrAuth.sessions.retrieve"],
+    ["/app/v3/api/open_platform/qr_auth/sessions/{sessionKey}/passwords", "post", "qrAuth.sessions.passwords.create"],
+    ["/app/v3/api/open_platform/qr_auth/sessions/{sessionKey}/scans", "post", "qrAuth.sessions.scans.create"],
+    ["/app/v3/api/system/iam/runtime", "get", "iam.runtime.retrieve"],
+    ["/app/v3/api/system/iam/verification_policy", "get", "iam.verificationPolicy.retrieve"],
+  ] as const;
+
+  for (const [path, method, operationId] of appbaseOwnedAppRoutes) {
+    assert.equal(appOpenApi.paths?.[path]?.[method]?.operationId, operationId);
+    assert.equal(appbaseOpenApi.paths?.[path]?.[method]?.operationId, operationId);
+    assert.equal(appbaseOpenApi.paths?.[path]?.[method]?.["x-sdkwork-owner"], "sdkwork-appbase");
+    assert.equal(appSdkInput.paths?.[path], undefined, `clawrouter app SDK input must not regenerate ${method.toUpperCase()} ${path}`);
+  }
+
+  for (const dependency of [appSdkAssembly.sdkDependencies?.[0], appSdkComponent.contracts?.sdkDependencies?.[0]]) {
+    assert.equal(dependency?.workspace, "sdkwork-appbase-app-sdk");
+    assert.equal(dependency?.generatedTransportImportPolicy, "forbidden");
+    assert.equal(dependency?.packageByLanguage?.typescript, "@sdkwork/appbase-app-sdk");
+  }
+
+  assert.equal(existsSync(new URL("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/api/auth.ts", import.meta.url)), false);
+  assert.equal(existsSync(new URL("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/api/open-platform.ts", import.meta.url)), false);
+  assert.doesNotMatch(appSdkSource, /public readonly auth: AuthApi/);
+  assert.doesNotMatch(appSdkSource, /public readonly openPlatform: OpenPlatformApi/);
+  assert.doesNotMatch(appSdkSource, /@sdkwork\/appbase-app-sdk/);
+  assert.doesNotMatch(appSdkSystemSource, /public readonly iam: SystemIamApi/);
+  assert.doesNotMatch(appSdkIamSource, /public readonly current: IamUsersCurrentApi/);
+  assert.doesNotMatch(appSdkTypesSource, /auth-runtime-settings-response/);
+  assert.doesNotMatch(appSdkTypesSource, /iam-session-create-request/);
+  assert.doesNotMatch(appSdkTypesSource, /iam-registration-create-request/);
+  assert.doesNotMatch(appSdkTypesSource, /open-platform-qr-auth/);
+  assert.doesNotMatch(appSdkTypesSource, /iam-verification-code/);
+
+  assert.match(appbaseSdkSource, /public readonly auth: AuthApi/);
+  assert.match(appbaseSdkSource, /public readonly iam: IamApi/);
+  assert.match(appbaseSdkSource, /public readonly openPlatform: OpenPlatformApi/);
+  assert.match(appbaseSdkSource, /public readonly system: SystemApi/);
+  assert.match(appbaseAuthSource, /public readonly oauthAuthorizationUrls: AuthOauthAuthorizationUrlsApi/);
+  assert.match(appbaseAuthSource, /public readonly oauthSessions: AuthOauthSessionsApi/);
+  assert.match(appbaseAuthSource, /public readonly passwordResetRequests: AuthPasswordResetRequestsApi/);
+  assert.match(appbaseAuthSource, /public readonly passwordResets: AuthPasswordResetsApi/);
+  assert.match(appbaseAuthSource, /public readonly registrations: AuthRegistrationsApi/);
+  assert.match(appbaseAuthSource, /public readonly sessions: AuthSessionsApi/);
+  assert.match(appbaseAuthSource, /public readonly current: AuthSessionsCurrentApi/);
+  assert.doesNotMatch(appbaseAuthSource, /verificationCodes/);
+  assert.match(appbaseOpenPlatformSource, /public readonly qrAuth: OpenPlatformQrAuthApi/);
+  assert.match(appbaseOpenPlatformSource, /public readonly sessions: OpenPlatformQrAuthSessionsApi/);
+  assert.match(appbaseOpenPlatformSource, /public readonly scans: OpenPlatformQrAuthSessionsScansApi/);
+  assert.match(appbaseOpenPlatformSource, /public readonly passwords: OpenPlatformQrAuthSessionsPasswordsApi/);
+  assert.match(appbaseSystemSource, /public readonly iam: SystemIamApi/);
+  assert.match(appbaseSystemSource, /public readonly runtime: SystemIamRuntimeApi/);
+  assert.match(appbaseSystemSource, /public readonly verificationPolicy: SystemIamVerificationPolicyApi/);
+  assert.match(appbaseIamSource, /public readonly users: IamUsersApi/);
+  assert.match(appbaseIamSource, /public readonly current: IamUsersCurrentApi/);
   assert.ok(appOpenApi.components?.schemas?.AuthRuntimeSettingsResponse, "app runtime settings must use public auth schema");
   assert.ok(appOpenApi.components?.schemas?.AuthVerificationPolicy, "app runtime settings must use public verification policy schema");
   assert.ok(!appOpenApi.components?.schemas?.AdminAuthSettingsResponse, "app SDK must not expose admin settings schema");
@@ -655,58 +725,6 @@ test("claw router app auth is declared through appbase IAM standard contract and
   assert.equal(backendOpenApi.components?.schemas?.AdminAuthSettingsUpdateRequest?.properties?.loginMethods?.minItems, 1);
   assert.equal(backendOpenApi.components?.schemas?.AdminAuthSettingsUpdateRequest?.properties?.registerMethods?.minItems, 1);
   assert.equal(backendOpenApi.components?.schemas?.AdminAuthSettingsUpdateRequest?.properties?.recoveryMethods?.minItems, 1);
-
-  assert.match(appSdkSource, /public readonly openPlatform: OpenPlatformApi/);
-  assert.match(appSdkOpenPlatformSource, /public readonly qrAuth: OpenPlatformQrAuthApi/);
-  assert.match(appSdkOpenPlatformSource, /public readonly sessions: OpenPlatformQrAuthSessionsApi/);
-  assert.match(appSdkOpenPlatformSource, /public readonly scans: OpenPlatformQrAuthSessionsScansApi/);
-  assert.match(appSdkOpenPlatformSource, /public readonly passwords: OpenPlatformQrAuthSessionsPasswordsApi/);
-  assert.match(appSdkOpenPlatformSource, /async create\(body: OpenPlatformQrAuthSessionCreateRequest\): Promise<QrAuthSessionsCreateResult>/);
-  assert.match(appSdkOpenPlatformSource, /async retrieve\(sessionKey: string\): Promise<QrAuthSessionsRetrieveResult>/);
-  assert.match(appSdkOpenPlatformSource, /async create\(sessionKey: string, body: OpenPlatformQrAuthScanCreateRequest\): Promise<QrAuthSessionsScansCreateResult>/);
-  assert.match(appSdkOpenPlatformSource, /async create\(sessionKey: string, body: OpenPlatformQrAuthPasswordCreateRequest\): Promise<QrAuthSessionsPasswordsCreateResult>/);
-  assert.doesNotMatch(appSdkAuthSource, /loginQrCodes/);
-  assert.doesNotMatch(appSdkAuthSource, /loginQrCodeCallbacks/);
-  assert.match(appSdkAuthSource, /public readonly sessions: AuthSessionsApi/);
-  assert.match(appSdkAuthSource, /public readonly passwordResetRequests: AuthPasswordResetRequestsApi/);
-  assert.match(appSdkAuthSource, /public readonly passwordResets: AuthPasswordResetsApi/);
-  assert.match(appSdkAuthSource, /public readonly verificationCodes: AuthVerificationCodesApi/);
-  assert.match(appSdkAuthSource, /public readonly oauthAuthorizationUrls: AuthOauthAuthorizationUrlsApi/);
-  assert.match(appSdkAuthSource, /public readonly oauthSessions: AuthOauthSessionsApi/);
-  assert.match(appSdkAuthSource, /public readonly registrations: AuthRegistrationsApi/);
-  assert.doesNotMatch(appSdkAuthSource, /public readonly runtimeSettings: AuthRuntimeSettingsApi/);
-  assert.doesNotMatch(appSdkAuthSource, /public readonly verificationPolicy: AuthVerificationPolicyApi/);
-  assert.match(appSdkSystemSource, /public readonly iam: SystemIamApi/);
-  assert.match(appSdkSystemSource, /public readonly runtime: SystemIamRuntimeApi/);
-  assert.match(appSdkSystemSource, /public readonly verificationPolicy: SystemIamVerificationPolicyApi/);
-  assert.match(appSdkQrSessionCreateRequestSource, /purpose: 'login' \| 'register'/);
-  assert.match(appSdkQrScanCreateRequestSource, /scanSource: 'app' \| 'browser' \| 'mini_app' \| 'official_account' \| 'webhook'/);
-  assert.match(appSdkQrScanCreateRequestSource, /externalUserId\?: string/);
-  assert.match(appSdkQrScanCreateRequestSource, /ipHash\?: string/);
-  assert.match(appSdkQrPasswordCreateRequestSource, /username: string/);
-  assert.match(appSdkQrPasswordCreateRequestSource, /password: string/);
-  assert.match(appSdkRuntimeSettingsResponseSource, /qrLoginType: 'web' \| 'official' \| 'mini'/);
-  assert.match(appSdkAuthSource, /async create\(body: IamSessionCreateRequest/);
-  assert.match(appSdkSessionRequestSource, /tenantCode\?: string/);
-  assert.match(appSdkSessionRequestSource, /organizationCode\?: string/);
-  assert.match(appSdkRegistrationRequestSource, /verificationCode\?: string/);
-  assert.match(appSdkRegistrationRequestSource, /tenantCode\?: string/);
-  assert.match(appSdkRegistrationRequestSource, /organizationCode\?: string/);
-  assert.match(appSdkAuthSource, /async retrieve\(\): Promise<SessionsCurrentRetrieveResult>/);
-  assert.match(appSdkAuthSource, /async delete\(\): Promise<SessionsCurrentDeleteResult>/);
-  assert.match(appSdkAuthSource, /async refresh\(body: IamSessionRefreshRequest\): Promise<SessionsRefreshResult>/);
-  assert.match(appSdkAuthSource, /async verify\(body: IamVerificationCodeVerifyRequest\): Promise<VerificationCodesVerifyResult>/);
-  assert.match(appSdkSystemSource, /async retrieve\(params\?: SystemIamRuntimeRetrieveParams\): Promise<IamRuntimeRetrieveResult>/);
-  assert.match(appSdkSystemSource, /async retrieve\(\): Promise<IamVerificationPolicyRetrieveResult>/);
-  assert.match(appSdkRuntimeSettingsResultSource, /AuthRuntimeSettingsResponse/);
-  assert.doesNotMatch(appSdkRuntimeSettingsResultSource, /AdminAuthSettingsResponse/);
-  assert.doesNotMatch(appSdkAuthSource, /AuthSessionsRefreshApi/);
-  assert.doesNotMatch(appSdkAuthSource, /AuthVerificationCodesVerifyApi/);
-  assert.doesNotMatch(appSdkAuthSource, /async login\(/);
-  assert.doesNotMatch(appSdkAuthSource, /createAppSession/);
-  assert.match(appSdkIamSource, /public readonly users: IamUsersApi/);
-  assert.match(appSdkIamSource, /public readonly current: IamUsersCurrentApi/);
-  assert.match(appSdkIamSource, /async retrieve\(\): Promise<UsersCurrentRetrieveResult>/);
   assert.doesNotMatch(backendSdkIndexSource, /public readonly auth:/);
   assert.match(backendSdkSystemSource, /public readonly auth: SystemAuthApi/);
   assert.match(backendSdkSystemSource, /public readonly settings: SystemAuthSettingsApi/);
@@ -714,13 +732,6 @@ test("claw router app auth is declared through appbase IAM standard contract and
   assert.match(backendSdkSystemSource, /async update\(body: AdminAuthSettingsUpdateRequest/);
   assert.match(backendSdkAuthSettingsUpdateSource, /qrLoginType\?: 'web' \| 'official' \| 'mini'/);
   assert.match(backendSdkAuthSettingsUpdateSource, /wechat\?: AdminAuthWechatSettingsUpdate/);
-  assert.match(appSdkTypesSource, /from '\.\/iam-session-create-request'/);
-  assert.match(appSdkTypesSource, /from '\.\/open-platform-qr-auth-session-create-request'/);
-  assert.match(appSdkTypesSource, /from '\.\/open-platform-qr-auth-scan-create-request'/);
-  assert.match(appSdkTypesSource, /from '\.\/open-platform-qr-auth-password-create-request'/);
-  assert.doesNotMatch(appSdkTypesSource, /iam-login-qr-code/);
-  assert.match(appSdkTypesSource, /from '\.\/auth-runtime-settings-response'/);
-  assert.match(appSdkTypesSource, /from '\.\/iam-session-response'/);
   assert.doesNotMatch(appSdkTypesSource, /admin-auth-settings-response/);
   assert.doesNotMatch(appSdkTypesSource, /admin-auth-verification-policy/);
   assert.match(backendSdkTypesSource, /from '\.\/admin-auth-settings-response'/);
@@ -731,8 +742,8 @@ test("claw router app auth is declared through appbase IAM standard contract and
 });
 
 test("appbase QR auth runtime keeps browser scan callback on the canonical callback resource", () => {
-  const authServiceSource = readPortalFile("../../sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-pc-react/src/auth-service.ts");
-  const iamRuntimeSource = readPortalFile("../../sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-pc-react/src/auth-iam-runtime.ts");
+  const authServiceSource = readPortalFile("../../.sdkwork/dependencies/sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-pc-react/src/auth-service.ts");
+  const iamRuntimeSource = readPortalFile("../../.sdkwork/dependencies/sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-pc-react/src/auth-iam-runtime.ts");
 
   assert.match(authServiceSource, /client\.openPlatform\?\.qrAuth\?\.sessions\?\.scans\?\.create/);
   assert.match(authServiceSource, /client\.openPlatform\?\.qrAuth\?\.sessions\?\.passwords\?\.create/);
@@ -957,16 +968,19 @@ test("admin auth settings form preserves flexible OAuth providers and validates 
   );
 });
 
-test("generated claw router app SDK surface satisfies appbase IAM SDK port contract", () => {
-  const sdkSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/sdk.ts");
-  const appSdkAuthSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/api/auth.ts");
-  const appSdkIamSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/api/iam.ts");
-  const appSdkSystemSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/api/system.ts");
-  const appSdkOpenPlatformSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/api/open-platform.ts");
-  const iamSdkPortsSource = readPortalFile("../../../sdkwork-appbase/packages/common/iam/sdkwork-iam-sdk-ports/src/index.ts");
-  const authServiceSource = readPortalFile("../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-pc-react/src/auth-service.ts");
-  const appbaseAuthPageSource = readPortalFile("../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-pc-react/src/pages/AuthPage.tsx");
-  const appbaseAuthQrRouteSource = readPortalFile("../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-pc-react/src/auth-qr-route.ts");
+test("generated appbase app SDK surface satisfies the IAM SDK port contract", () => {
+  const productSdkSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/sdk.ts");
+  const productSdkIamSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/api/iam.ts");
+  const productSdkSystemSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/api/system.ts");
+  const sdkSource = readPortalFile("../../.sdkwork/dependencies/sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/sdk.ts");
+  const appSdkAuthSource = readPortalFile("../../.sdkwork/dependencies/sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/api/auth.ts");
+  const appSdkIamSource = readPortalFile("../../.sdkwork/dependencies/sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/api/iam.ts");
+  const appSdkSystemSource = readPortalFile("../../.sdkwork/dependencies/sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/api/system.ts");
+  const appSdkOpenPlatformSource = readPortalFile("../../.sdkwork/dependencies/sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/api/open-platform.ts");
+  const iamSdkPortsSource = readPortalFile("../../.sdkwork/dependencies/sdkwork-appbase/packages/common/iam/sdkwork-iam-sdk-ports/src/index.ts");
+  const authServiceSource = readPortalFile("../../.sdkwork/dependencies/sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-pc-react/src/auth-service.ts");
+  const appbaseAuthPageSource = readPortalFile("../../.sdkwork/dependencies/sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-pc-react/src/pages/AuthPage.tsx");
+  const appbaseAuthQrRouteSource = readPortalFile("../../.sdkwork/dependencies/sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-pc-react/src/auth-qr-route.ts");
 
   for (const portContractFragment of [
     "oauthAuthorizationUrls?:",
@@ -975,12 +989,15 @@ test("generated claw router app SDK surface satisfies appbase IAM SDK port contr
     "passwordResets?:",
     "registrations?:",
     "sessions?:",
-    "verificationCodes?:",
     "users?:",
     "current?:",
   ]) {
     assert.match(iamSdkPortsSource, new RegExp(portContractFragment.replaceAll("?", "\\?")));
   }
+  assert.match(authServiceSource, /messaging\?: \{/);
+  assert.match(authServiceSource, /verificationCodes\?: \{/);
+  assert.match(authServiceSource, /client\.messaging\?\.verificationCodes\?\.create/);
+  assert.match(authServiceSource, /client\.messaging\?\.verificationCodes\?\.verify/);
 
   for (const sdkSurfaceFragment of [
     "public readonly auth: AuthApi",
@@ -1000,7 +1017,6 @@ test("generated claw router app SDK surface satisfies appbase IAM SDK port contr
     "public readonly iam: SystemIamApi",
     "public readonly runtime: SystemIamRuntimeApi",
     "public readonly verificationPolicy: SystemIamVerificationPolicyApi",
-    "public readonly verificationCodes: AuthVerificationCodesApi",
     "public readonly current: AuthSessionsCurrentApi",
     "public readonly users: IamUsersApi",
     "public readonly current: IamUsersCurrentApi",
@@ -1008,31 +1024,32 @@ test("generated claw router app SDK surface satisfies appbase IAM SDK port contr
     assert.match(`${sdkSource}\n${appSdkAuthSource}\n${appSdkIamSource}\n${appSdkSystemSource}\n${appSdkOpenPlatformSource}`, new RegExp(sdkSurfaceFragment));
   }
 
-  for (const methodSignature of [
-    /async create\(body: OpenPlatformQrAuthSessionCreateRequest\): Promise<QrAuthSessionsCreateResult>/,
-    /async retrieve\(sessionKey: string\): Promise<QrAuthSessionsRetrieveResult>/,
-    /async create\(sessionKey: string, body: OpenPlatformQrAuthScanCreateRequest\): Promise<QrAuthSessionsScansCreateResult>/,
-    /async create\(sessionKey: string, body: OpenPlatformQrAuthPasswordCreateRequest\): Promise<QrAuthSessionsPasswordsCreateResult>/,
-    /async retrieve\(params: AuthOauthAuthorizationUrlsRetrieveParams\): Promise<OauthAuthorizationUrlsRetrieveResult>/,
-    /async create\(body: IamOauthSessionCreateRequest\): Promise<OauthSessionsCreateResult>/,
-    /async create\(body: IamPasswordResetRequestCreateRequest\): Promise<PasswordResetRequestsCreateResult>/,
-    /async create\(body: IamPasswordResetCreateRequest\): Promise<PasswordResetsCreateResult>/,
-    /async create\(body: IamRegistrationCreateRequest\): Promise<RegistrationsCreateResult>/,
-    /async create\(body: IamSessionCreateRequest\): Promise<SessionsCreateResult>/,
-    /async delete\(\): Promise<SessionsCurrentDeleteResult>/,
-    /async retrieve\(\): Promise<SessionsCurrentRetrieveResult>/,
-    /async update\(body: IamCurrentSessionUpdateRequest\): Promise<SessionsCurrentUpdateResult>/,
-    /async refresh\(body: IamSessionRefreshRequest\): Promise<SessionsRefreshResult>/,
-    /async create\(body: IamVerificationCodeCreateRequest\): Promise<VerificationCodesCreateResult>/,
-    /async verify\(body: IamVerificationCodeVerifyRequest\): Promise<VerificationCodesVerifyResult>/,
-    /async retrieve\(params\?: SystemIamRuntimeRetrieveParams\): Promise<IamRuntimeRetrieveResult>/,
-    /async retrieve\(\): Promise<IamVerificationPolicyRetrieveResult>/,
-    /async retrieve\(\): Promise<UsersCurrentRetrieveResult>/,
+  for (const generatedPathFragment of [
+    /appApiPath\(`\/auth\/oauth_authorization_urls`\)/,
+    /appApiPath\(`\/auth\/oauth_sessions`\)/,
+    /appApiPath\(`\/auth\/password_reset_requests`\)/,
+    /appApiPath\(`\/auth\/password_resets`\)/,
+    /appApiPath\(`\/auth\/registrations`\)/,
+    /appApiPath\(`\/auth\/sessions`\)/,
+    /appApiPath\(`\/auth\/sessions\/current`\)/,
+    /appApiPath\(`\/auth\/sessions\/refresh`\)/,
+    /appApiPath\(`\/iam\/users\/current`\)/,
+    /appApiPath\(`\/open_platform\/qr_auth\/sessions`\)/,
+    /\/open_platform\/qr_auth\/sessions\/\$\{serializePathParameter\(sessionKey,/,
+    /\/passwords`\)/,
+    /\/scans`\)/,
+    /appApiPath\(`\/system\/iam\/runtime`\)/,
+    /appApiPath\(`\/system\/iam\/verification_policy`\)/,
   ]) {
-    assert.match(`${appSdkAuthSource}\n${appSdkIamSource}\n${appSdkSystemSource}\n${appSdkOpenPlatformSource}`, methodSignature);
+    assert.match(`${appSdkAuthSource}\n${appSdkIamSource}\n${appSdkSystemSource}\n${appSdkOpenPlatformSource}`, generatedPathFragment);
   }
   assert.doesNotMatch(appSdkAuthSource, /loginQrCodes/);
   assert.doesNotMatch(appSdkAuthSource, /loginQrCodeCallbacks/);
+  assert.doesNotMatch(appSdkAuthSource, /verificationCodes/);
+  assert.doesNotMatch(productSdkSource, /public readonly auth: AuthApi/);
+  assert.doesNotMatch(productSdkSource, /public readonly openPlatform: OpenPlatformApi/);
+  assert.doesNotMatch(productSdkSystemSource, /public readonly iam: SystemIamApi/);
+  assert.doesNotMatch(productSdkIamSource, /public readonly current: IamUsersCurrentApi/);
 
   assert.match(authServiceSource, /verificationCode\?: string/);
   assert.match(authServiceSource, /client\.openPlatform\?\.qrAuth\?\.sessions\?\.create/);
@@ -1221,6 +1238,8 @@ test("appbase IAM runtime auth service persists sessions before portal redirects
             refreshToken: "refreshed-refresh",
           }),
         },
+      },
+      messaging: {
         verificationCodes: {
           create: async () => ({}),
           verify: async () => ({ verified: true }),
@@ -1350,6 +1369,8 @@ test("appbase IAM runtime exposes generated open platform QR auth SDK methods to
         },
         refresh: async () => ({ data: { accessToken: "refresh-access", authToken: "refresh-auth" } }),
       },
+    },
+    messaging: {
       verificationCodes: {
         create: async () => ({ data: {} }),
         verify: async () => ({ data: { verified: true } }),
@@ -1430,7 +1451,7 @@ test("appbase IAM runtime exposes generated open platform QR auth SDK methods to
   };
   const runtime = createIamRuntime({
     clients: {
-      app: appClient,
+      appbaseApp: appClient,
     },
     config: {
       appId: "sdkwork-claw-router",
@@ -1784,12 +1805,12 @@ test("admin model vendor item is grouped under model management", () => {
   const agentsAndSkillsGroup = findAdminMenuGroupSource(adminRegistrySource, "admin.menu.home.agentSkills");
   assert.doesNotMatch(agentsAndSkillsGroup, /path:\s*'\/admin\/model'/);
   assert.match(i18nSource, /"admin\.menu\.home\.modelManagement":\s*"Model Management"/);
-  assert.match(i18nSource, /"admin\.menu\.home\.modelManagement":\s*"妯″瀷绠＄悊"/);
+  assert.match(i18nSource, /"admin\.menu\.home\.modelManagement":\s*"\u6a21\u578b\u7ba1\u7406"/);
   assert.match(i18nSource, /"admin\.layout\.links\.models":\s*"Model Vendors"/);
   assert.match(i18nSource, /"admin\.menu\.models":\s*"Model Vendors"/);
-  assert.match(i18nSource, /"admin\.layout\.links\.models":\s*"妯″瀷鍘傚晢绠＄悊"/);
-  assert.match(i18nSource, /"admin\.menu\.models":\s*"妯″瀷鍘傚晢绠＄悊"/);
-  assert.doesNotMatch(i18nSource, /妯″瀷骞冲彴绠＄悊/);
+  assert.match(i18nSource, /"admin\.layout\.links\.models":\s*"\u6a21\u578b\u5382\u5546\u7ba1\u7406"/);
+  assert.match(i18nSource, /"admin\.menu\.models":\s*"\u6a21\u578b\u5382\u5546\u7ba1\u7406"/);
+  assert.doesNotMatch(i18nSource, /\u6a21\u578b\u5e73\u53f0\u7ba1\u7406/);
 });
 
 test("admin group and AI channels are grouped under AI channel management", () => {
@@ -1812,7 +1833,7 @@ test("admin group and AI channels are grouped under AI channel management", () =
   assert.doesNotMatch(agentsAndSkillsGroup, /path:\s*'\/admin\/group'/);
   assert.doesNotMatch(agentsAndSkillsGroup, /path:\s*'\/admin\/channel'/);
   assert.match(i18nSource, /"admin\.menu\.home\.accountPoolManagement":\s*"AI Channel Management"/);
-  assert.match(i18nSource, /"admin\.menu\.home\.accountPoolManagement":\s*"AI 娓犻亾绠＄悊"/);
+  assert.match(i18nSource, /"admin\.menu\.home\.accountPoolManagement":\s*"AI \u6e20\u9053\u7ba1\u7406"/);
 });
 
 test("admin channel credential details expose API key copy without leaking hidden values in the table", () => {
@@ -1884,7 +1905,7 @@ test("admin app center module owns app store and split open platform modules", (
   assert.doesNotMatch(homeMenu, /path:\s*'\/admin\/app'/);
   assert.doesNotMatch(homeMenu, /path:\s*'\/admin\/open-platform'/);
   assert.match(i18nSource, /"admin\.header\.appCenter":\s*"App Center"/);
-  assert.match(i18nSource, /"admin\.header\.appCenter":\s*"搴旂敤涓績"/);
+  assert.match(i18nSource, /"admin\.header\.appCenter":\s*"\u5e94\u7528\u4e2d\u5fc3"/);
 });
 
 test("admin commerce module is split into product transaction member marketing and finance centers", () => {
@@ -1929,13 +1950,13 @@ test("admin commerce module is split into product transaction member marketing a
   assert.match(i18nSource, /"admin\.header\.productCenter":\s*"Product Center"/);
   assert.match(i18nSource, /"admin\.header\.transactionCenter":\s*"Transaction Center"/);
   assert.match(i18nSource, /"admin\.header\.memberCenter":\s*"Member Center"/);
-  assert.match(i18nSource, /"admin\.header\.memberCenter":\s*"浼氬憳涓績"/);
+  assert.match(i18nSource, /"admin\.header\.memberCenter":\s*"\u4f1a\u5458\u4e2d\u5fc3"/);
   assert.match(i18nSource, /"admin\.header\.marketingCenter":\s*"Marketing Center"/);
   assert.match(i18nSource, /"admin\.header\.financeCenter":\s*"Finance Center"/);
-  assert.match(i18nSource, /"admin\.header\.productCenter":\s*"鍟嗗搧涓績"/);
-  assert.match(i18nSource, /"admin\.header\.transactionCenter":\s*"浜ゆ槗涓績"/);
-  assert.match(i18nSource, /"admin\.header\.marketingCenter":\s*"钀ラ攢涓績"/);
-  assert.match(i18nSource, /"admin\.header\.financeCenter":\s*"璐㈠姟涓績"/);
+  assert.match(i18nSource, /"admin\.header\.productCenter":\s*"\u5546\u54c1\u4e2d\u5fc3"/);
+  assert.match(i18nSource, /"admin\.header\.transactionCenter":\s*"\u4ea4\u6613\u4e2d\u5fc3"/);
+  assert.match(i18nSource, /"admin\.header\.marketingCenter":\s*"\u8425\u9500\u4e2d\u5fc3"/);
+  assert.match(i18nSource, /"admin\.header\.financeCenter":\s*"\u8d22\u52a1\u4e2d\u5fc3"/);
 });
 
 test("admin commerce second-level sections are promoted into the left sidebar", () => {
@@ -2301,8 +2322,8 @@ test("admin app center splits WeChat official account and mini program into inde
   assert.match(i18nSource, /"admin\.menu\.openPlatformMiniPrograms":\s*"WeChat Mini Programs"/);
   assert.match(i18nSource, /"admin\.menu\.openPlatformMiniProgramAccounts":\s*"Mini Program Accounts"/);
   assert.match(i18nSource, /"admin\.menu\.openPlatformMiniProgramUrls":\s*"Mini Program URLs"/);
-  assert.match(i18nSource, /"admin\.menu\.openPlatformOfficialAccounts":\s*"寰俊鍏紬鍙?/);
-  assert.match(i18nSource, /"admin\.menu\.openPlatformMiniPrograms":\s*"灏忕▼搴?/);
+  assert.match(i18nSource, /"admin\.menu\.openPlatformOfficialAccounts":\s*"\u5fae\u4fe1\u516c\u4f17\u53f7"/);
+  assert.match(i18nSource, /"admin\.menu\.openPlatformMiniPrograms":\s*"\u5c0f\u7a0b\u5e8f"/);
 
   assert.match(officialSource, /export function WechatOfficialAccountAdmin/);
   assert.match(officialSource, /sectionId\?: string/);
@@ -2314,7 +2335,7 @@ test("admin app center splits WeChat official account and mini program into inde
   assert.match(officialSource, /data-admin-open-platform-wechat-official-menus-table/);
   assert.match(officialSource, /className="m-5 mt-4 min-h-0 flex-1 rounded-xl"/);
   assert.match(officialSource, /viewportClassName="min-h-0 flex-1"/);
-  assert.match(officialSource, /鍏紬鍙?/);
+  assert.match(officialSource, /\u516c\u4f17\u53f7/);
   assert.doesNotMatch(officialSource, /from 'react-router-dom'/);
   assert.doesNotMatch(officialSource, /OFFICIAL_SECTION_ROUTES/);
   assert.doesNotMatch(officialSource, /to=\{OFFICIAL_SECTION_ROUTES\[item\]\}/);
@@ -2373,7 +2394,7 @@ test("admin app center splits WeChat official account and mini program into inde
   assert.match(miniSource, /data-admin-open-platform-wechat-mini-urls-table/);
   assert.match(miniSource, /className="m-5 mt-4 min-h-0 flex-1 rounded-xl"/);
   assert.match(miniSource, /viewportClassName="min-h-0 flex-1"/);
-  assert.match(miniSource, /灏忕▼搴?/);
+  assert.match(miniSource, /\u5c0f\u7a0b\u5e8f/);
   assert.match(miniSource, /const OPEN_PLATFORM_KEY_PATTERN = \/\^\[a-z0-9\]\[a-z0-9\._:-\]\*\$\/;/);
   assert.match(miniSource, /function isValidOpenPlatformKey\(value: string\): boolean/);
   assert.match(miniSource, /!isValidOpenPlatformKey\(key\)[\s\S]*admin\.openPlatform\.wechatMini\.validation\.entryKeyInvalid/);
@@ -2441,7 +2462,8 @@ test("admin app center splits WeChat official account and mini program into inde
 
 test("admin commerce pages no longer render nested second-level sidebars", () => {
   const adminResourceCenterSource = readPortalFile("./packages/sdkwork-clawrouter-pc-commons/src/components/AdminResourceCenter.tsx");
-  const catalogSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-catalog/src/index.tsx");
+  const catalogWrapperSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-catalog/src/index.tsx");
+  const catalogSource = readPortalFile("../../.sdkwork/dependencies/sdkwork-commerce/apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-admin-product/src/index.tsx");
   const inventorySource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-inventory/src/index.tsx");
   const ordersSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-orders/src/index.tsx");
   const paymentsSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-payments/src/index.tsx");
@@ -2453,6 +2475,7 @@ test("admin commerce pages no longer render nested second-level sidebars", () =>
   assert.match(adminResourceCenterSource, /activeSectionId\?: TSectionId/);
   assert.match(adminResourceCenterSource, /showSectionNavigation\?: boolean/);
   assert.match(adminResourceCenterSource, /showSectionNavigation && \(/);
+  assert.match(catalogWrapperSource, /from "sdkwork-commerce-pc-admin-product"/);
 
   for (const source of [catalogSource, inventorySource, ordersSource, paymentsSource, walletSource, financeSource]) {
     assert.match(source, /activeSectionId=\{activeSectionId\}/);
@@ -2551,7 +2574,7 @@ test("admin home product platform group is renamed to agents and skills", () => 
   assert.doesNotMatch(agentsAndSkillsGroup, /path:\s*'\/admin\/app'/);
   assert.doesNotMatch(agentsAndSkillsGroup, /path:\s*'\/admin\/open-platform'/);
   assert.match(i18nSource, /"admin\.menu\.home\.agentSkills":\s*"Agents & Skills"/);
-  assert.match(i18nSource, /"admin\.menu\.home\.agentSkills":\s*"鏅鸿兘浣撳拰鎶€鑳?/);
+  assert.match(i18nSource, /"admin\.menu\.home\.agentSkills":\s*"\u667a\u80fd\u4f53\u548c\u6280\u80fd"/);
 });
 
 test("admin usage records and analytics are grouped under home data management", () => {
@@ -2578,7 +2601,7 @@ test("admin usage records and analytics are grouped under home data management",
   assert.doesNotMatch(operationsHeaderModule, /'\/admin\/record'/);
   assert.doesNotMatch(operationsHeaderModule, /'\/admin\/analytics'/);
   assert.match(i18nSource, /"admin\.menu\.home\.dataManagement":\s*"Data Management"/);
-  assert.match(i18nSource, /"admin\.menu\.home\.dataManagement":\s*"鏁版嵁绠＄悊"/);
+  assert.match(i18nSource, /"admin\.menu\.home\.dataManagement":\s*"\u6570\u636e\u7ba1\u7406"/);
 });
 
 test("admin sidebar menu groups are expanded by default", () => {
@@ -2667,15 +2690,43 @@ test("portal consumes sdkwork UI from source so Vite does not ship the UI dist r
   assert.match(viteConfigSource, /sdkwork-ui-pc-react\/src\/theme\/index\.ts/);
   assert.match(
     viteConfigSource,
-    /clawrouterPortalWorkspaceDependencyResolver\(configDir, \[appbaseRoot, sdkworkCoreRoot, sdkworkUiRoot\]\)/,
+    /clawrouterPortalWorkspaceDependencyResolver\(configDir,\s*\[\s*appbaseRoot,\s*sdkworkDriveRoot,\s*sdkworkGenerationsRoot,\s*sdkworkImageRoot,\s*sdkworkCoreRoot,\s*sdkworkUiRoot,\s*sdkworkCommerceRoot,\s*\]\)/,
   );
   assert.match(viteConfigSource, /workspaceDependencyRoots\.some/);
+  assert.match(viteConfigSource, /function isPortalWorkspaceDependencyImporter/);
+  assert.match(viteConfigSource, /isPortalWorkspaceDependencyImporter\(importer, workspaceDependencyRoots\)/);
   assert.match(viteConfigSource, /readPackageImportEntry/);
   assert.doesNotMatch(viteConfigSource, /sdkwork-ui-pc-react\/dist\/index\.js/);
   assert.doesNotMatch(viteConfigSource, /sdkwork-ui-pc-react\/dist\/theme\.js/);
   assert.match(tsconfigSource, /sdkwork-ui-pc-react\/src\/index\.ts/);
   assert.match(tsconfigSource, /sdkwork-ui-pc-react\/src\/theme\/index\.ts/);
   assert.doesNotMatch(tsconfigSource, /sdkwork-ui-pc-react\/dist\/index\.d\.ts/);
+});
+
+test("portal resolves Commerce workspace modules and their peer dependencies from source", () => {
+  const packageJson = JSON.parse(readPortalFile("./package.json")) as { dependencies: Record<string, string> };
+  const tsconfigSource = readPortalFile("./tsconfig.json");
+  const viteConfigSource = readPortalFile("./vite.config.ts");
+  const workspaceSource = readPortalFile("./pnpm-workspace.yaml");
+
+  assert.equal(packageJson.dependencies["sdkwork-commerce-pc-admin-product"], "workspace:*");
+  assert.equal(packageJson.dependencies["@sdkwork/commerce-service"], "workspace:*");
+  assert.match(tsconfigSource, /sdkwork-commerce-pc-admin-product\/src\/index\.tsx/);
+  assert.match(tsconfigSource, /sdkwork-commerce-service\/src\/index\.ts/);
+  assert.match(tsconfigSource, /sdkwork-commerce-sdk-ports\/src\/index\.ts/);
+  assert.match(tsconfigSource, /sdkwork-commerce-contracts\/src\/index\.ts/);
+  assert.match(viteConfigSource, /find: 'sdkwork-commerce-pc-admin-product'/);
+  assert.match(viteConfigSource, /find: '@sdkwork\/commerce-service'/);
+  assert.match(viteConfigSource, /find: '@sdkwork\/commerce-sdk-ports'/);
+  assert.match(viteConfigSource, /find: '@sdkwork\/commerce-contracts'/);
+  assert.match(viteConfigSource, /sdkworkCommerceRoot/);
+  assert.match(viteConfigSource, /return isPortalWorkspaceDependencyImporter\(importer, workspaceDependencyRoots\)\s*&& !isSdkworkWorkspaceDependency\(source\)/);
+  assert.match(viteConfigSource, /rootDefaultExport/);
+  assert.match(workspaceSource, /sdkwork-commerce\/apps\/sdkwork-commerce-pc\/packages\/sdkwork-commerce-pc-admin-product/);
+  assert.match(workspaceSource, /sdkwork-commerce\/packages\/common\/commerce\/\*/);
+  assert.doesNotMatch(viteConfigSource, /find: 'react-i18next'/);
+  assert.doesNotMatch(viteConfigSource, /find: 'react-router-dom'/);
+  assert.doesNotMatch(viteConfigSource, /find: 'lucide-react'/);
 });
 
 test("portal serves the React external-store shim through an ESM compat module in Vite dev", () => {

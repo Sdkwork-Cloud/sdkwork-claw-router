@@ -10,6 +10,7 @@ from tools.appbase_capability_guardian import AppbaseCapabilityGuardian
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
+APPBASE_ROOT = Path(".sdkwork") / "dependencies" / "sdkwork-appbase"
 
 
 def retired_appbase_sdk_clients_module() -> str:
@@ -18,13 +19,13 @@ def retired_appbase_sdk_clients_module() -> str:
 
 class AppbaseCapabilityGuardianTest(unittest.TestCase):
     def write_manifest(self, root: Path, content: str) -> Path:
-        manifest = root / "sdkwork-appbase" / "specs" / "appbase-capabilities.yaml"
+        manifest = root / APPBASE_ROOT / "specs" / "appbase-capabilities.yaml"
         manifest.parent.mkdir(parents=True, exist_ok=True)
         manifest.write_text(textwrap.dedent(content).strip() + "\n", encoding="utf-8")
         return manifest
 
     def write_package(self, root: Path, relative_path: str, package_type: str) -> None:
-        package = root / "sdkwork-appbase" / relative_path
+        package = root / APPBASE_ROOT / relative_path
         package.mkdir(parents=True, exist_ok=True)
         npm_name = package.name.removeprefix("sdkwork-")
         package.joinpath("package.json").write_text(
@@ -51,7 +52,7 @@ class AppbaseCapabilityGuardianTest(unittest.TestCase):
         )
 
     def write_crate(self, root: Path, relative_path: str) -> None:
-        crate = root / "sdkwork-appbase" / relative_path
+        crate = root / APPBASE_ROOT / relative_path
         crate.mkdir(parents=True, exist_ok=True)
         crate_name = crate.name.removeprefix("sdkwork-").removesuffix("-rust").replace("-", "_")
         crate.joinpath("Cargo.toml").write_text(
@@ -236,11 +237,11 @@ class AppbaseCapabilityGuardianTest(unittest.TestCase):
             root = Path(tmp)
             self.write_manifest(root, self.complete_l3_manifest())
             self.write_complete_l3_files(root)
-            debt_package = root / "sdkwork-appbase" / "packages" / "common" / "commerce" / retired_appbase_sdk_clients_module()
+            debt_package = root / APPBASE_ROOT / "packages" / "common" / "commerce" / retired_appbase_sdk_clients_module()
             debt_package.mkdir(parents=True, exist_ok=True)
             service_file = (
                 root
-                / "sdkwork-appbase"
+                / APPBASE_ROOT
                 / "packages"
                 / "common"
                 / "commerce"

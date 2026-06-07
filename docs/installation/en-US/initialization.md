@@ -30,7 +30,7 @@ If you installed a native macOS `.pkg`, desktop binaries are under `/opt/sdkwork
 If you installed the Windows MSI, the default install root is:
 
 ```text
-C:\Program Files\sdkwork\router
+<install-root>
 ```
 
 ## Initialization Order
@@ -83,7 +83,7 @@ export SDKWORK_CLAW_CONFIG_FILE="/etc/sdkwork/router/clawrouter.toml"
 PowerShell:
 
 ```powershell
-$env:SDKWORK_CLAW_CONFIG_FILE="C:\ProgramData\sdkwork\router\clawrouter.toml"
+$env:SDKWORK_CLAW_CONFIG_FILE = Join-Path $env:ProgramData "sdkwork/router/clawrouter.toml"
 ```
 
 Native package install locations:
@@ -91,7 +91,7 @@ Native package install locations:
 | Platform | Binaries | Notes |
 | --- | --- | --- |
 | Linux `.deb` | `/usr/bin` public commands, `/usr/lib/sdkwork/router/bin` private binaries | `service` packages also install `/lib/systemd/system/clawrouter.service`, `/etc/sdkwork/router`, `/var/lib/sdkwork/router`, and `/var/log/sdkwork/router`. |
-| Windows `.msi` | `C:\Program Files\sdkwork\router\bin` | Shared config templates use `%ProgramData%/sdkwork/router`; desktop runtime config is created under `%USERPROFILE%/.sdkwork/router/config` during user initialization. |
+| Windows `.msi` | `<install-root>/bin` | Shared config templates use `%ProgramData%/sdkwork/router`; desktop runtime config is created under `%USERPROFILE%/.sdkwork/router/config` during user initialization. |
 | macOS `.pkg` | `/opt/sdkwork/router/bin` for desktop, `/Library/Application Support/sdkwork/router/bin` for service | `service` packages also install `/Library/LaunchDaemons/com.sdkwork.clawrouter.plist`. |
 
 Every package includes `install-manifest.json` with `installConfiguration`. Native installers also include `nativeInstall`, which describes the final install paths, service metadata, permissions, and operator commands.
@@ -330,7 +330,7 @@ Desktop SQLite example:
 ```toml
 [database]
 engine = "sqlite"
-url = "sqlite:///home/sdkwork/.local/share/clawrouter/clawrouter.sqlite"
+file = "~/.sdkwork/router/data/router.sqlite"
 max_connections = 1
 
 [runtime]
@@ -360,7 +360,8 @@ From native macOS `.pkg` desktop packages, use:
 From the default Windows MSI install directory, use:
 
 ```powershell
-Set-Location "C:\Program Files\sdkwork\router"
+$installRoot = Join-Path $env:USERPROFILE "sdkwork\router"
+Set-Location $installRoot
 .\bin\clawrouterctl.exe status
 .\bin\clawrouterctl.exe ensure
 .\bin\clawrouterctl.exe refresh-catalog --force

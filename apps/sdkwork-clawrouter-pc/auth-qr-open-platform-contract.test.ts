@@ -17,11 +17,25 @@ test("login QR auth is exposed only through openPlatform.qrAuth sessions", () =>
     paths?: Record<string, Record<string, { operationId?: string; tags?: string[]; ["x-sdkwork-domain"]?: string }>>;
     components?: { schemas?: Record<string, unknown> };
   };
+  const appSdkInput = JSON.parse(readRepoFile("sdks/clawrouter-app-sdk/openapi/clawrouter-app-sdk.sdkgen.json")) as {
+    paths?: Record<string, Record<string, { operationId?: string }>>;
+  };
   const appSdkSource = readRepoFile("sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/sdk.ts");
-  const authSdkSource = readRepoFile("sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/api/auth.ts");
-  const openPlatformSdkSource = readRepoFile("sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/api/open-platform.ts");
-  const authServiceSource = readRepoFile("sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-pc-react/src/auth-service.ts");
-  const iamPortsSource = readRepoFile("sdkwork-appbase/packages/common/iam/sdkwork-iam-sdk-ports/src/index.ts");
+  const appbaseSdkSource = readRepoFile(
+    ".sdkwork/dependencies/sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/sdk.ts",
+  );
+  const appbaseAuthSdkSource = readRepoFile(
+    ".sdkwork/dependencies/sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/api/auth.ts",
+  );
+  const appbaseOpenPlatformSdkSource = readRepoFile(
+    ".sdkwork/dependencies/sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/api/open-platform.ts",
+  );
+  const authServiceSource = readRepoFile(
+    ".sdkwork/dependencies/sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-pc-react/src/auth-service.ts",
+  );
+  const iamPortsSource = readRepoFile(
+    ".sdkwork/dependencies/sdkwork-appbase/packages/common/iam/sdkwork-iam-sdk-ports/src/index.ts",
+  );
 
   for (const [path, method, operationId] of [
     ["/app/v3/api/open_platform/qr_auth/sessions", "post", "qrAuth.sessions.create"],
@@ -33,19 +47,29 @@ test("login QR auth is exposed only through openPlatform.qrAuth sessions", () =>
     assert.equal(operation?.operationId, operationId);
     assert.equal(operation?.tags?.[0], "openPlatform");
     assert.equal(operation?.["x-sdkwork-domain"], "platform");
+    assert.equal(appSdkInput.paths?.[path], undefined, `clawrouter app SDK input must not regenerate ${method.toUpperCase()} ${path}`);
     assert.match(contractSource, new RegExp(`operation_id:\\s*${operationId.replaceAll(".", "\\.")}`));
     assert.match(contractSource, new RegExp(`api_path:\\s*${path.replace(/[{}]/g, "\\$&").replaceAll("/", "\\/")}`));
   }
 
-  assert.match(appSdkSource, /public readonly openPlatform: OpenPlatformApi/);
-  assert.match(openPlatformSdkSource, /public readonly qrAuth: OpenPlatformQrAuthApi/);
-  assert.match(openPlatformSdkSource, /public readonly sessions: OpenPlatformQrAuthSessionsApi/);
-  assert.match(openPlatformSdkSource, /public readonly scans: OpenPlatformQrAuthSessionsScansApi/);
-  assert.match(openPlatformSdkSource, /public readonly passwords: OpenPlatformQrAuthSessionsPasswordsApi/);
-  assert.match(openPlatformSdkSource, /async create\(body: OpenPlatformQrAuthSessionCreateRequest\): Promise<QrAuthSessionsCreateResult>/);
-  assert.match(openPlatformSdkSource, /async retrieve\(sessionKey: string\): Promise<QrAuthSessionsRetrieveResult>/);
-  assert.match(openPlatformSdkSource, /async create\(sessionKey: string, body: OpenPlatformQrAuthScanCreateRequest\): Promise<QrAuthSessionsScansCreateResult>/);
-  assert.match(openPlatformSdkSource, /async create\(sessionKey: string, body: OpenPlatformQrAuthPasswordCreateRequest\): Promise<QrAuthSessionsPasswordsCreateResult>/);
+  assert.doesNotMatch(appSdkSource, /public readonly auth: AuthApi/);
+  assert.doesNotMatch(appSdkSource, /public readonly openPlatform: OpenPlatformApi/);
+  assert.equal(
+    existsSync(resolve(ROOT, "sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/api/auth.ts")),
+    false,
+  );
+  assert.equal(
+    existsSync(resolve(ROOT, "sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/api/open-platform.ts")),
+    false,
+  );
+  assert.match(appbaseSdkSource, /public readonly openPlatform: OpenPlatformApi/);
+  assert.match(appbaseOpenPlatformSdkSource, /public readonly qrAuth: OpenPlatformQrAuthApi/);
+  assert.match(appbaseOpenPlatformSdkSource, /public readonly sessions: OpenPlatformQrAuthSessionsApi/);
+  assert.match(appbaseOpenPlatformSdkSource, /public readonly scans: OpenPlatformQrAuthSessionsScansApi/);
+  assert.match(appbaseOpenPlatformSdkSource, /public readonly passwords: OpenPlatformQrAuthSessionsPasswordsApi/);
+  assert.match(appbaseOpenPlatformSdkSource, /async create\(body: AppbaseOperationCommand\): Promise<AppbaseApiResult>/);
+  assert.match(appbaseOpenPlatformSdkSource, /async retrieve\(sessionKey: string\): Promise<AppbaseApiResult>/);
+  assert.match(appbaseOpenPlatformSdkSource, /async create\(sessionKey: string, body: AppbaseOperationCommand\): Promise<AppbaseApiResult>/);
 
   assert.match(authServiceSource, /client\.openPlatform\?\.qrAuth\?\.sessions\?\.create/);
   assert.match(authServiceSource, /client\.openPlatform\?\.qrAuth\?\.sessions\?\.retrieve/);
@@ -59,6 +83,6 @@ test("login QR auth is exposed only through openPlatform.qrAuth sessions", () =>
   assert.ok(!appOpenApi.paths?.["/app/v3/api/auth/qr_login_codes/{qrKey}"]);
   assert.ok(!appOpenApi.paths?.["/app/v3/api/auth/qr_login_codes/{qrKey}/callback"]);
   assert.ok(!appOpenApi.paths?.["/app/v3/api/auth/qr_login_codes/confirm"]);
-  assert.doesNotMatch(authSdkSource, /loginQrCodes/);
-  assert.doesNotMatch(authSdkSource, /loginQrCodeCallbacks/);
+  assert.doesNotMatch(appbaseAuthSdkSource, /loginQrCodes/);
+  assert.doesNotMatch(appbaseAuthSdkSource, /loginQrCodeCallbacks/);
 });

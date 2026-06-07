@@ -4,15 +4,20 @@ import {
   type SdkworkFileOpenApiDocument,
 } from "../../sdkwork-file-api-contracts/src/index";
 import type {
-  SdkworkDriveNode,
-  SdkworkDriveSpace,
-  SdkworkFileRef,
-  SdkworkFileSlotDefinition,
-  SdkworkStorageUsageScopeType,
-  SdkworkStorageUsageSnapshot,
+  DriveUploaderClient,
+  DriveUploaderProfile,
+  DriveUploaderUploadResult,
+} from "@sdkwork/drive-app-sdk";
+import {
+  createFileRef,
+  type SdkworkDriveNode,
+  type SdkworkDriveSpace,
+  type SdkworkFileRef,
+  type SdkworkFileSlotDefinition,
+  type SdkworkStorageUsageScopeType,
+  type SdkworkStorageUsageSnapshot,
 } from "../../sdkwork-file-contracts/src/index";
 import type {
-  AbortUploadResult,
   AdminStorageBucketQuery,
   AdminStorageCreateBucketInput,
   AdminStorageCreateGarbageCollectionJobInput,
@@ -31,11 +36,7 @@ import type {
   AdminStorageUsageQuery,
   AdminStorageUsageSnapshotQuery,
   AdminStoragePort,
-  CompleteUploadResult,
-  FileChecksum,
   FileUploadTarget,
-  PresignUploadPartResult,
-  PresignedUploadGrant,
 } from "../../sdkwork-file-sdk-ports/src/index";
 import type {
   AbortManagedUploadInput,
@@ -46,9 +47,8 @@ import type {
   GetManagedFileInput,
   IssueManagedFileUrlInput,
   ListManagedBindingsInput,
-  ManagedUploadSessionResult,
-  PresignManagedUploadPartInput,
-  CreateManagedUploadSessionInput,
+  ManagedDriveUploadInput,
+  ManagedDriveUploadResult,
 } from "../../sdkwork-file-service/src/index";
 
 export type SdkworkFileSdkAdapterSurface = "app" | "backend";
@@ -58,41 +58,6 @@ export interface SdkworkFileSdkAdapterMethod {
   operationId: string;
   serviceMethod: string;
   surface: SdkworkFileSdkAdapterSurface;
-}
-
-export interface SdkworkFileAppCreateUploadSessionInput {
-  checksum?: FileChecksum;
-  contentType: string;
-  filename: string;
-  idempotencyKey: string;
-  organizationId?: string;
-  parentNodeId?: string;
-  purpose: string;
-  requestId: string;
-  sizeBytes: number;
-  spaceId?: string;
-  target: FileUploadTarget;
-  tenantId?: string;
-  userId?: string;
-}
-
-export interface SdkworkFileAppCompleteUploadInput {
-  checksum?: FileChecksum;
-  idempotencyKey: string;
-  purpose: string;
-  requestId: string;
-  sessionId: string;
-}
-
-export interface SdkworkFileAppAbortUploadInput {
-  requestId: string;
-  sessionId: string;
-}
-
-export interface SdkworkFileAppPresignUploadPartInput {
-  partNumber: number;
-  requestId: string;
-  sessionId: string;
 }
 
 export interface SdkworkFileAppListFilesInput {
@@ -153,18 +118,10 @@ export interface SdkworkFileAppSdkClient {
   filesPreviewUrlCreate(input: SdkworkFileAppFileInput): Promise<{ expiresAt: string; requestId: string; url: string }>;
   filesRetrieve(input: GetManagedFileInput): Promise<{ fileRef: SdkworkFileRef; requestId: string }>;
   storageUsageRetrieve(input: SdkworkFileAppStorageUsageInput): Promise<SdkworkStorageUsageSnapshot>;
-  uploadPartsPresign(input: SdkworkFileAppPresignUploadPartInput): Promise<PresignUploadPartResult>;
-  uploadSessionsAbort(input: SdkworkFileAppAbortUploadInput): Promise<AbortUploadResult>;
-  uploadSessionsComplete(input: SdkworkFileAppCompleteUploadInput): Promise<CompleteUploadResult>;
-  uploadSessionsCreate(input: SdkworkFileAppCreateUploadSessionInput): Promise<{
-    partSizeBytes?: number;
-    presigned?: PresignedUploadGrant;
-    requestId: string;
-    sessionId: string;
-    status: string;
-    totalParts?: number;
-    uploadMode: string;
-  }>;
+}
+
+export interface SdkworkFileDriveUploaderClient {
+  uploader: Pick<DriveUploaderClient, "uploadByProfile">;
 }
 
 export interface SdkworkFileBackendSdkClient {
@@ -284,6 +241,7 @@ export type SdkworkFileBackendSdkResult<TData> = TData | {
 
 export interface CreateFilePlatformServiceFromSdkClientOptions {
   app: SdkworkFileAppSdkClient;
+  drive?: SdkworkFileDriveUploaderClient;
   slots?: readonly SdkworkFileSlotDefinition[];
 }
 
@@ -302,10 +260,6 @@ export class FileSdkAdapterError extends Error {
 }
 
 export const SDKWORK_FILE_SDK_ADAPTER_METHODS: readonly SdkworkFileSdkAdapterMethod[] = [
-  method("app", "createUploadSession", "uploadSessionsCreate", "upload.sessions.create"),
-  method("app", "completeUpload", "uploadSessionsComplete", "upload.sessions.complete"),
-  method("app", "abortUpload", "uploadSessionsAbort", "upload.sessions.abort"),
-  method("app", "presignUploadPart", "uploadPartsPresign", "upload.parts.presign"),
   method("app", "listFiles", "filesList", "files.list"),
   method("app", "getFile", "filesRetrieve", "files.retrieve"),
   method("app", "issueDownloadUrl", "filesDownloadUrlCreate", "files.downloadUrl.create"),
@@ -337,16 +291,14 @@ export const SDKWORK_FILE_SDK_ADAPTER_METHODS: readonly SdkworkFileSdkAdapterMet
 
 export function createFilePlatformServiceFromSdkClient({
   app,
+  drive,
   slots = [],
 }: CreateFilePlatformServiceFromSdkClientOptions): FilePlatformService {
   const slotRegistry = new Map(slots.map((slot) => [slot.slotCode, slot]));
 
   return {
     async abortUpload(input: AbortManagedUploadInput) {
-      return invokeSdkOperation("upload.sessions.abort", () => app.uploadSessionsAbort({
-        requestId: input.requestId,
-        sessionId: input.sessionId,
-      }));
+      throw new FileSdkAdapterError("drive.uploader.uploadByProfile", new Error(`Drive upload abort is not exposed by this file facade: ${input.sessionId}`));
     },
 
     async bindFile(input: BindManagedFileInput) {
@@ -369,42 +321,7 @@ export function createFilePlatformServiceFromSdkClient({
     },
 
     async completeUpload(input: CompleteManagedUploadInput) {
-      return invokeSdkOperation("upload.sessions.complete", () => app.uploadSessionsComplete({
-        ...(input.checksum ? { checksum: input.checksum } : {}),
-        idempotencyKey: input.idempotencyKey,
-        purpose: input.slotCode,
-        requestId: input.requestId,
-        sessionId: input.sessionId,
-      }));
-    },
-
-    async createUploadSession(input: CreateManagedUploadSessionInput): Promise<ManagedUploadSessionResult> {
-      const result = await invokeSdkOperation("upload.sessions.create", () => app.uploadSessionsCreate({
-        ...(input.checksum ? { checksum: input.checksum } : {}),
-        contentType: input.contentType,
-        filename: input.filename,
-        idempotencyKey: input.idempotencyKey,
-        ...(input.organizationId ? { organizationId: input.organizationId } : {}),
-        ...(input.parentNodeId ? { parentNodeId: input.parentNodeId } : {}),
-        purpose: input.slotCode,
-        requestId: input.requestId,
-        sizeBytes: input.sizeBytes,
-        ...(input.spaceId ? { spaceId: input.spaceId } : {}),
-        target: input.target,
-        ...(input.tenantId ? { tenantId: input.tenantId } : {}),
-        ...(input.userId ? { userId: input.userId } : {}),
-      }));
-
-      return {
-        ...(result.partSizeBytes ? { partSizeBytes: result.partSizeBytes } : {}),
-        ...(result.presigned ? { presigned: result.presigned } : {}),
-        requestId: result.requestId,
-        sessionId: result.sessionId,
-        slotCode: input.slotCode,
-        status: result.status,
-        ...(result.totalParts ? { totalParts: result.totalParts } : {}),
-        uploadMode: result.uploadMode,
-      };
+      throw new FileSdkAdapterError("drive.uploader.uploadByProfile", new Error(`Drive uploader completes inside uploadFile: ${input.slotCode}`));
     },
 
     async deleteBinding(input: DeleteManagedBindingInput) {
@@ -451,8 +368,36 @@ export function createFilePlatformServiceFromSdkClient({
       return invokeSdkOperation("files.list", () => app.filesList(input));
     },
 
-    async presignUploadPart(input: PresignManagedUploadPartInput) {
-      return invokeSdkOperation("upload.parts.presign", () => app.uploadPartsPresign(input));
+    async uploadFile(input: ManagedDriveUploadInput): Promise<ManagedDriveUploadResult> {
+      if (!drive?.uploader || typeof drive.uploader.uploadByProfile !== "function") {
+        throw new FileSdkAdapterError("drive.uploader.uploadByProfile", new Error("Drive app SDK uploader is not configured."));
+      }
+      const slot = slotRegistry.get(input.slotCode);
+      const profile = input.uploadProfileCode ?? inferDriveUploaderProfile(input.contentType, input.filename);
+      const result = await invokeSdkOperation("drive.uploader.uploadByProfile", () => drive.uploader.uploadByProfile(profile, {
+        file: input.file,
+        tenantId: requiredText(input.tenantId, "tenantId"),
+        organizationId: input.organizationId,
+        userId: input.userId,
+        anonymousId: input.anonymousId,
+        operatorId: input.operatorId || input.userId || input.anonymousId || "sdkwork-claw-router-file-uploader",
+        appId: slot?.appId || "sdkwork-claw-router",
+        appResourceType: input.target.type,
+        appResourceId: input.target.id,
+        scene: input.scene || normalizeUsageLabel(input.slotCode),
+        source: input.source || `${slot?.appId || "sdkwork-claw-router"}-file-upload`,
+        uploadProfileCode: profile,
+        originalFileName: input.filename,
+        contentType: input.contentType,
+        spaceId: input.spaceId,
+        parentNodeId: input.parentNodeId,
+        retention: input.retention ?? { mode: "long_term" },
+        onProgress: input.onProgress,
+      }));
+      return {
+        ...mapDriveUploadResult(result, input),
+        slotCode: input.slotCode,
+      };
     },
   };
 }
@@ -543,6 +488,61 @@ export function createFileAdminStoragePortFromBackendSdkClient(
       ));
     },
   };
+}
+
+function mapDriveUploadResult(
+  result: DriveUploaderUploadResult,
+  input: ManagedDriveUploadInput,
+): Omit<ManagedDriveUploadResult, "slotCode"> {
+  const uploadItem = result.uploadItem;
+  const uploadSession = result.uploadSession;
+  const driveSpaceId = uploadSession.spaceId || uploadItem.spaceId;
+  const driveNodeId = uploadSession.nodeId || uploadItem.nodeId;
+  if (!driveSpaceId || !driveNodeId) {
+    throw new FileSdkAdapterError("drive.uploader.uploadByProfile", new Error("Drive uploader did not return a Drive space/node identity."));
+  }
+  return {
+    driveNodeId,
+    driveSpaceId,
+    driveUri: `drive://spaces/${driveSpaceId}/nodes/${driveNodeId}`,
+    fileRef: createFileRef({
+      displayName: uploadItem.originalFileName?.trim() || input.filename,
+      fileId: driveNodeId,
+      purpose: input.slotCode,
+      visibility: "private",
+    }),
+    requestId: input.requestId,
+    status: "active",
+    uploadId: uploadItem.id,
+  };
+}
+
+function inferDriveUploaderProfile(contentType: string, filename: string): DriveUploaderProfile {
+  const normalizedContentType = contentType.trim().toLowerCase();
+  const normalizedName = filename.trim().toLowerCase();
+  if (normalizedContentType.startsWith("image/")) return "image";
+  if (normalizedContentType.startsWith("video/")) return "video";
+  if (normalizedContentType.startsWith("audio/")) return "audio";
+  if (normalizedContentType.startsWith("text/")) return "text";
+  if (normalizedContentType.includes("pdf") || /\.(doc|docx|pdf|xls|xlsx)$/i.test(normalizedName)) return "document";
+  if (normalizedContentType.includes("zip") || /\.(7z|rar|zip)$/i.test(normalizedName)) return "archive";
+  return "attachment";
+}
+
+function normalizeUsageLabel(value: string): string {
+  return value
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "_")
+    .replace(/^_+|_+$/g, "") || "file_upload";
+}
+
+function requiredText(value: string | undefined, fieldName: string): string {
+  const trimmed = value?.trim();
+  if (!trimmed) {
+    throw new FileSdkAdapterError("drive.uploader.uploadByProfile", new Error(`Drive uploader requires ${fieldName}.`));
+  }
+  return trimmed;
 }
 
 export function isFileSdkAdapterError(value: unknown): value is FileSdkAdapterError {

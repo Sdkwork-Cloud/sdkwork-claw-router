@@ -392,9 +392,9 @@ class PaymentCallbackRuntimeStandardTest(unittest.TestCase):
         self.assertIn('assert_eq!(Some("12.34".to_owned()), captured[0].amount)', route_test)
 
     def test_payment_callback_semantics_match_java_trade_webhook_and_vip_entities(self) -> None:
-        entity_root = ROOT.parent.parent / "spring-ai-plus-business-entity" / "src/main/java"
-        service_root = ROOT.parent.parent / "spring-ai-plus-business-service" / "src/main/java"
-        app_api_root = ROOT.parent.parent / "spring-ai-plus-app-api" / "src/main/java"
+        entity_root = ROOT.parent.parent / "legacy-java-plus-entity" / "src/main/java"
+        service_root = ROOT.parent.parent / "legacy-java-plus-service" / "src/main/java"
+        app_api_root = ROOT.parent.parent / "legacy-java-plus-app-api" / "src/main/java"
 
         webhook_entity = (
             entity_root

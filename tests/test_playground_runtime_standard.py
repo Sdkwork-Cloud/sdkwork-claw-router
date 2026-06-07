@@ -272,7 +272,9 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
         service_source = (PLAYGROUND_ROOT / "playgroundService.ts").read_text(encoding="utf-8")
         appbase_generation_package_source = (
             ROOT
-            / "sdkwork-appbase"
+            / ".sdkwork"
+            / "dependencies"
+            / "sdkwork-image"
             / "packages"
             / "pc-react"
             / "content"
@@ -281,7 +283,9 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
         ).read_text(encoding="utf-8")
         appbase_generation_index_source = (
             ROOT
-            / "sdkwork-appbase"
+            / ".sdkwork"
+            / "dependencies"
+            / "sdkwork-image"
             / "packages"
             / "pc-react"
             / "content"
@@ -291,7 +295,9 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
         ).read_text(encoding="utf-8")
         appbase_generation_react_source = (
             ROOT
-            / "sdkwork-appbase"
+            / ".sdkwork"
+            / "dependencies"
+            / "sdkwork-image"
             / "packages"
             / "pc-react"
             / "content"
@@ -301,7 +307,9 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
         ).read_text(encoding="utf-8")
         appbase_generation_service_source = (
             ROOT
-            / "sdkwork-appbase"
+            / ".sdkwork"
+            / "dependencies"
+            / "sdkwork-image"
             / "packages"
             / "pc-react"
             / "content"
@@ -311,7 +319,10 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
         ).read_text(encoding="utf-8")
 
         self.assertIn('"@sdkwork/generation-pc-react": "workspace:*"', playground_package_source)
-        self.assertIn("../../../sdkwork-appbase/packages/pc-react/content/sdkwork-generation-pc-react", portal_workspace_source)
+        self.assertIn(
+            "../../.sdkwork/dependencies/sdkwork-image/packages/pc-react/content/sdkwork-generation-pc-react",
+            portal_workspace_source,
+        )
         self.assertIn('"./react"', appbase_generation_package_source)
         self.assertIn('export * from "./generation-service.ts";', appbase_generation_index_source)
         self.assertNotIn("generation-intl.tsx", appbase_generation_index_source)
@@ -320,7 +331,7 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
         self.assertIn('export * from "./pages/GenerationPage.tsx";', appbase_generation_react_source)
         self.assertNotIn("@sdkwork/core-pc-react", appbase_generation_service_source)
 
-        self.assertIn("from '@sdkwork/generation-pc-react/generation-service'", service_source)
+        self.assertIn("from '@sdkwork/generations-pc-workspace/generation-service'", service_source)
         self.assertIn("createSdkworkGenerationService", service_source)
         self.assertIn("type SdkworkGenerationRun", service_source)
         self.assertIn("type SdkworkGenerationWorkspaceData", service_source)

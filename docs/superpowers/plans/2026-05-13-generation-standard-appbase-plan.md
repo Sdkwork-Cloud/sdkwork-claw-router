@@ -13,12 +13,12 @@
 ### Task 1: Java Legacy Content Removal
 
 **Files:**
-- Delete or detach: `spring-ai-plus-business/spring-ai-plus-business-entity/src/main/java/com/sdkwork/spring/ai/plus/entity/generation/PlusAiGenerationContent.java`
-- Delete or detach: `spring-ai-plus-business/spring-ai-plus-business-repository/src/main/java/com/sdkwork/spring/ai/plus/repository/generation/PlusAiGenerationContentRepository.java`
-- Delete or detach: `spring-ai-plus-business/spring-ai-plus-business-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/PlusAiGenerationContentService.java`
-- Delete or detach: `spring-ai-plus-business/spring-ai-plus-business-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/impl/PlusAiGenerationContentServiceImpl.java`
-- Modify legacy generation services under `spring-ai-plus-business/spring-ai-plus-business-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/impl`
-- Modify asset service reads under `spring-ai-plus-business/spring-ai-plus-business-service/src/main/java/com/sdkwork/spring/ai/plus/service/assets/impl/AssetServiceImpl.java`
+- Delete or detach: `legacy-java-plus-workspace/legacy-java-plus-entity/src/main/java/com/sdkwork/spring/ai/plus/entity/generation/PlusAiGenerationContent.java`
+- Delete or detach: `legacy-java-plus-workspace/legacy-java-plus-repository/src/main/java/com/sdkwork/spring/ai/plus/repository/generation/PlusAiGenerationContentRepository.java`
+- Delete or detach: `legacy-java-plus-workspace/legacy-java-plus-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/PlusAiGenerationContentService.java`
+- Delete or detach: `legacy-java-plus-workspace/legacy-java-plus-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/impl/PlusAiGenerationContentServiceImpl.java`
+- Modify legacy generation services under `legacy-java-plus-workspace/legacy-java-plus-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/impl`
+- Modify asset service reads under `legacy-java-plus-workspace/legacy-java-plus-service/src/main/java/com/sdkwork/spring/ai/plus/service/assets/impl/AssetServiceImpl.java`
 - Modify tests that import `PlusAiGenerationContent`
 
 - [ ] Write focused compile/contract checks that fail if `PlusAiGenerationContent` is referenced from production code.
@@ -30,9 +30,9 @@
 ### Task 2: Java Standard Generation API
 
 **Files:**
-- Create: `spring-ai-plus-business/spring-ai-plus-app-api/src/main/java/com/sdkwork/ai/gateway/api/app/v3/generation/GenerationAppApiController.java`
-- Create forms/VOs under `spring-ai-plus-business/spring-ai-plus-app-api/src/main/java/com/sdkwork/ai/gateway/api/app/v3/generation/form` and `vo`
-- Create converter under `spring-ai-plus-business/spring-ai-plus-app-api/src/main/java/com/sdkwork/ai/gateway/api/app/v3/generation/converter`
+- Create: `legacy-java-plus-app-api/src/main/java/com/sdkwork/ai/gateway/api/app/v3/generation/GenerationAppApiController.java`
+- Create forms/VOs under `legacy-java-plus-app-api/src/main/java/com/sdkwork/ai/gateway/api/app/v3/generation/form` and `vo`
+- Create converter under `legacy-java-plus-app-api/src/main/java/com/sdkwork/ai/gateway/api/app/v3/generation/converter`
 - Modify security policy if endpoint registration is required.
 
 - [ ] Write controller/converter tests for submit/detail/resources/provider-result shape.
@@ -45,9 +45,9 @@
 ### Task 3: Java Polling, Capture, and Billing Hardening
 
 **Files:**
-- Modify: `spring-ai-plus-business/spring-ai-plus-business-service/src/main/java/com/sdkwork/spring/ai/plus/task/generation/GenerationResultQueryTask.java`
-- Modify: `spring-ai-plus-business/spring-ai-plus-business-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/support/GenerationOrchestrationServiceImpl.java`
-- Modify tests under `spring-ai-plus-business/spring-ai-plus-business-service/src/test/java/com/sdkwork/spring/ai/plus`
+- Modify: `legacy-java-plus-workspace/legacy-java-plus-service/src/main/java/com/sdkwork/spring/ai/plus/task/generation/GenerationResultQueryTask.java`
+- Modify: `legacy-java-plus-workspace/legacy-java-plus-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/support/GenerationOrchestrationServiceImpl.java`
+- Modify tests under `legacy-java-plus-workspace/legacy-java-plus-service/src/test/java/com/sdkwork/spring/ai/plus`
 
 - [ ] Add tests for terminal idempotency, max polling, timeout failure, transient retrieve failure, and callback duplicate event.
 - [ ] Add retry/backoff fields usage through existing provider task columns without schema churn.
@@ -57,10 +57,7 @@
 
 ### Task 4: Appbase TypeScript Contracts
 
-**Files:**
-- Create: `spring-ai-plus-business/apps/sdkwork-appbase/packages/common/content/sdkwork-generation-contracts`
-- Create: `spring-ai-plus-business/apps/sdkwork-appbase/packages/common/content/sdkwork-playground-contracts`
-- Modify: `spring-ai-plus-business/apps/sdkwork-appbase/pnpm-workspace.yaml` only if package pattern is insufficient.
+**Files:** 
 - Add tests under each package.
 
 - [ ] Define TS contracts matching Java standard API DTOs.
@@ -71,11 +68,7 @@
 
 ### Task 5: Appbase Rust Generation
 
-**Files:**
-- Create: `spring-ai-plus-business/apps/sdkwork-appbase/packages/native-rust/content/sdkwork-generation-core-rust`
-- Create: `spring-ai-plus-business/apps/sdkwork-appbase/packages/native-rust/content/sdkwork-generation-http-rust`
-- Create: `spring-ai-plus-business/apps/sdkwork-appbase/packages/native-rust/content/sdkwork-generation-storage-sqlx-rust`
-- Create: `spring-ai-plus-business/apps/sdkwork-appbase/packages/native-rust/content/sdkwork-generation-tauri-rust`
+**Files:** 
 
 - [ ] Mirror appbase existing native-rust package conventions.
 - [ ] Add core Rust structs/enums for generation ledger, MediaResource, model route, storage policy, billing status.
@@ -87,9 +80,7 @@
 
 ### Task 6: Appbase Public Playground
 
-**Files:**
-- Create: `spring-ai-plus-business/apps/sdkwork-appbase/packages/pc-react/content/sdkwork-playground-pc-react`
-- Modify: `spring-ai-plus-business/apps/sdkwork-claw-router/apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-playground`
+**Files:** 
 
 - [ ] Move generic Playground types/components/service interfaces into appbase.
 - [ ] Keep claw-router-specific SDK calls in a host adapter.

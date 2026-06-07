@@ -16,7 +16,7 @@ else:
     _YAML_IMPORT_ERROR = None
 
 
-APPBASE_ROOT = "sdkwork-appbase"
+APPBASE_ROOT = Path(".sdkwork") / "dependencies" / "sdkwork-appbase"
 DEFAULT_MANIFEST = Path(APPBASE_ROOT) / "specs" / "appbase-capabilities.yaml"
 
 L3_REQUIRED_LAYER_KINDS: tuple[str, ...] = (

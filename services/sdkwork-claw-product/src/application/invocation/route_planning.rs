@@ -9,9 +9,7 @@ use crate::application::{
     AuthenticatedApiKeyContext, ProviderRouteSelector, SelectProviderChannelRouteQuery,
     SelectProviderRouteQuery, SelectedProviderChannelRoute, SelectedProviderRoute,
 };
-use crate::domain::{
-    AiModel, BillingMeter, ModelProviderRoute, ProviderAuthProfile, ProviderChannelRoute,
-};
+use crate::domain::{AiModel, BillingMeter, ProviderAuthProfile, ProviderChannelRoute};
 use crate::ports::PricingCatalog;
 
 #[derive(Clone)]

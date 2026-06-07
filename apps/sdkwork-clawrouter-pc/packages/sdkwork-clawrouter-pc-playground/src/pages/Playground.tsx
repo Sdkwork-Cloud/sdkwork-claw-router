@@ -361,7 +361,8 @@ export function Playground() {
     }) as PlaygroundHistoryItem;
     setAgentHistory((current) => [pendingItem, ...current]);
     try {
-      const result = await PlaygroundService.runAgentGeneration({
+      const result = await PlaygroundService.runGeneration({
+        selectedModality: inputModality,
         prompt,
         targetType,
         selectedModel: modelId,

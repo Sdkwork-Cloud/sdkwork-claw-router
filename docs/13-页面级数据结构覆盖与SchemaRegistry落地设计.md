@@ -213,7 +213,7 @@ schema-registry YAML
 1. 从 Registry 生成 P0/P1 PostgreSQL DDL 草案。
 2. 为 SQLite 本地桌面部署生成兼容 DDL 草案。
 3. 生成 Java Entity/Repository 草案，但不改 `plus_*` 表。
-4. 在 `spring-ai-plus-app-api` 和 `spring-ai-plus-backend-api` 中补标准路径和 OpenAPI。
+4. 在 `legacy-java-plus-app-api` 和 `legacy-java-plus-backend-api` 中补标准路径和 OpenAPI。
 5. 生成 SDK 后替换 portal 中的 mock service。
 6. 增加 CI：schema registry drift、禁用前缀、int64/decimal 序列化、L3 安全字段、替代表阻断。
 

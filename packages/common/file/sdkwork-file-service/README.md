@@ -6,9 +6,10 @@ The service validates business file slots, reserves quota, delegates upload and
 binding work through SDK ports, and returns stable file references. It does not
 perform raw HTTP requests or object-storage operations directly.
 
-Multipart uploads request per-part presigned grants through `presignUploadPart`.
-The HTTP transfer itself belongs to `@sdkwork/file-upload-client` or a host
-provided transport.
+Uploads are delegated through the Drive app SDK uploader facade. The service
+coordinates slot policy and quota, then returns stable Drive space/node
+identities and `FileRef` metadata without exposing upload sessions, buckets,
+object keys, provider internals, or presigned URLs to business callers.
 
 It also exposes file listing, file binding management, short-lived file access
 URL issuance, drive browsing, and scoped storage usage reads for UI building

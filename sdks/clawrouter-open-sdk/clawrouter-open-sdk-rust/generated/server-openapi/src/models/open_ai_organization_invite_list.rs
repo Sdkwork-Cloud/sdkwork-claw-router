@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::models::{OpenAiOrganizationInvite};
+use crate::models::OpenAiOrganizationInvite;
 
 /// OpenAI-compatible paginated list of organization invites.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]

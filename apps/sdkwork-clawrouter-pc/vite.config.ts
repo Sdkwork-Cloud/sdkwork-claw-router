@@ -19,6 +19,29 @@ const DEFAULT_PORTAL_DEV_PORT = 3901;
 const require = createRequire(import.meta.url);
 const localPortalPackageModuleCache = new Map<string, string | null>();
 const portalPackageModuleCache = new Map<string, string | null>();
+const LOCAL_PORTAL_PACKAGE_PREFIXES = [
+  'sdkwork-clawrouter-pc-',
+  'sdkwork-claw-router-',
+];
+const PORTAL_OPTIMIZED_BARE_DEPENDENCIES = new Set([
+  'react',
+  'react/jsx-runtime',
+  'react/jsx-dev-runtime',
+  'react-dom',
+  'react-dom/client',
+  'react-router',
+  'react-router/dom',
+  'react-router-dom',
+  'cookie',
+  'set-cookie-parser',
+  'motion/react',
+  'react-i18next',
+  'html-parse-stringify',
+  'void-elements',
+  'framer-motion',
+  'i18next',
+  'recharts',
+]);
 
 const PORTAL_RUNTIME_URL_ENV = [
   ['PORTAL_PUBLIC_APP_API_BASE_URL', 'VITE_CLAWROUTER_APP_API_BASE_URL'],
@@ -182,7 +205,8 @@ function shouldResolvePortalLocalPackage(source: string): boolean {
     return false;
   }
 
-  return parsePackageSpecifier(source).packageName.startsWith('sdkwork-claw-router-');
+  const {packageName} = parsePackageSpecifier(source);
+  return LOCAL_PORTAL_PACKAGE_PREFIXES.some((prefix) => packageName.startsWith(prefix));
 }
 
 function shouldResolvePortalWorkspaceDependency(
@@ -199,19 +223,31 @@ function shouldResolvePortalWorkspaceDependency(
     return false;
   }
 
-  if (isPortalOwnedBareDependency(source)) {
+  if (PORTAL_OPTIMIZED_BARE_DEPENDENCIES.has(source)) {
     return false;
   }
 
-  const normalizedImporter = normalizePath(importer?.split('?', 1)[0] ?? '');
-  if (
-    normalizedImporter
-    && workspaceDependencyRoots.some((root) => normalizedImporter.startsWith(`${normalizePath(root)}/`))
-  ) {
-    return true;
+  if (isPortalOwnedBareDependency(source)) {
+    return isPortalWorkspaceDependencyImporter(importer, workspaceDependencyRoots)
+      && !isSdkworkWorkspaceDependency(source);
   }
 
-  return false;
+  return isPortalWorkspaceDependencyImporter(importer, workspaceDependencyRoots);
+}
+
+function isPortalWorkspaceDependencyImporter(
+  importer: string | undefined,
+  workspaceDependencyRoots: string[],
+): boolean {
+  const normalizedImporter = normalizePath(importer?.split('?', 1)[0] ?? '');
+  return Boolean(
+    normalizedImporter
+    && workspaceDependencyRoots.some((root) => normalizedImporter.startsWith(`${normalizePath(root)}/`)),
+  );
+}
+
+function isSdkworkWorkspaceDependency(source: string): boolean {
+  return source.startsWith('@sdkwork/') || source.startsWith('sdkwork-');
 }
 
 function resolvePortalLocalPackageModule(specifier: string, configDir: string): string | null {
@@ -268,6 +304,13 @@ function isPortalOwnedBareDependency(source: string): boolean {
 
 function normalizePath(value: string): string {
   return value.replaceAll('\\', '/').replace(/\/+$/, '');
+}
+
+function resolvePortalWorkspaceDependencyRoot(
+  configDir: string,
+  dependencyId: string,
+): string {
+  return path.resolve(configDir, '../..', '.sdkwork/dependencies', dependencyId);
 }
 
 function resolvePortalPackageModule(specifier: string, configDir: string): string | null {
@@ -367,15 +410,23 @@ function readPackageImportEntry(exportsField: unknown, subpath = '.'): string | 
       return defaultExport;
     }
   }
+  const rootDefaultExport = (rootExport as Record<string, unknown>).default;
+  if (typeof rootDefaultExport === 'string') {
+    return rootDefaultExport;
+  }
   return undefined;
 }
 
 export default defineConfig(({mode}) => {
   const configDir = import.meta.dirname;
   const workspaceRoot = path.resolve(configDir, '../..');
-  const appbaseRoot = path.resolve(configDir, '../../../sdkwork-appbase');
-  const sdkworkCoreRoot = path.resolve(configDir, '../../../sdkwork-core');
-  const sdkworkUiRoot = path.resolve(configDir, '../../../sdkwork-ui');
+  const appbaseRoot = resolvePortalWorkspaceDependencyRoot(configDir, 'sdkwork-appbase');
+  const sdkworkDriveRoot = resolvePortalWorkspaceDependencyRoot(configDir, 'sdkwork-drive');
+  const sdkworkGenerationsRoot = resolvePortalWorkspaceDependencyRoot(configDir, 'sdkwork-generations');
+  const sdkworkImageRoot = resolvePortalWorkspaceDependencyRoot(configDir, 'sdkwork-image');
+  const sdkworkCoreRoot = resolvePortalWorkspaceDependencyRoot(configDir, 'sdkwork-core');
+  const sdkworkUiRoot = resolvePortalWorkspaceDependencyRoot(configDir, 'sdkwork-ui');
+  const sdkworkCommerceRoot = resolvePortalWorkspaceDependencyRoot(configDir, 'sdkwork-commerce');
   loadEnv(mode, configDir, '');
   return {
     plugins: [
@@ -385,7 +436,15 @@ export default defineConfig(({mode}) => {
       clawrouterImportMetaHotTransform(),
       clawrouterTypeScriptTransform(),
       clawrouterPortalLocalPackageResolver(configDir),
-      clawrouterPortalWorkspaceDependencyResolver(configDir, [appbaseRoot, sdkworkCoreRoot, sdkworkUiRoot]),
+      clawrouterPortalWorkspaceDependencyResolver(configDir, [
+        appbaseRoot,
+        sdkworkDriveRoot,
+        sdkworkGenerationsRoot,
+        sdkworkImageRoot,
+        sdkworkCoreRoot,
+        sdkworkUiRoot,
+        sdkworkCommerceRoot,
+      ]),
       tailwindcss(),
     ],
     esbuild: false,
@@ -414,18 +473,27 @@ export default defineConfig(({mode}) => {
         { find: '@sdkwork/appbase-backend-sdk', replacement: path.resolve(appbaseRoot, 'sdks/sdkwork-appbase-backend-sdk/sdkwork-appbase-backend-sdk-typescript/generated/server-openapi/src/index.ts') },
         { find: '@sdkwork/clawrouter-app-sdk', replacement: path.resolve(configDir, '../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src/index.ts') },
         { find: '@sdkwork/clawrouter-backend-sdk', replacement: path.resolve(configDir, '../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/generated/server-openapi/src/index.ts') },
-        { find: '@sdkwork/conversation', replacement: path.resolve(appbaseRoot, 'packages/common/conversation/sdkwork-conversation/src/index.ts') },
+        { find: 'sdkwork-commerce-pc-admin-product', replacement: path.resolve(sdkworkCommerceRoot, 'apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-admin-product/src/index.tsx') },
+        { find: '@sdkwork/commerce-contracts', replacement: path.resolve(sdkworkCommerceRoot, 'packages/common/commerce/sdkwork-commerce-contracts/src/index.ts') },
+        { find: '@sdkwork/commerce-sdk-ports', replacement: path.resolve(sdkworkCommerceRoot, 'packages/common/commerce/sdkwork-commerce-sdk-ports/src/index.ts') },
+        { find: '@sdkwork/commerce-service', replacement: path.resolve(sdkworkCommerceRoot, 'packages/common/commerce/sdkwork-commerce-service/src/index.ts') },
         { find: '@sdkwork/core-pc-react', replacement: path.resolve(sdkworkCoreRoot, 'sdkwork-core-pc-react/src/index.ts') },
         { find: '@sdkwork/distribution-pc-react/downloads', replacement: path.resolve(appbaseRoot, 'packages/pc-react/device/sdkwork-distribution-pc-react/src/downloads/index.ts') },
         { find: '@sdkwork/distribution-pc-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/device/sdkwork-distribution-pc-react/src/index.ts') },
+        { find: '@sdkwork/drive-app-sdk', replacement: path.resolve(sdkworkDriveRoot, 'sdks/sdkwork-drive-app-sdk/sdkwork-drive-app-sdk-typescript/src/index.ts') },
         { find: '@sdkwork/file-contracts', replacement: path.resolve(workspaceRoot, 'packages/common/file/sdkwork-file-contracts/src/index.ts') },
         { find: '@sdkwork/file-platform-pc-react', replacement: path.resolve(workspaceRoot, 'packages/pc-react/file/sdkwork-file-platform-pc-react/src/index.ts') },
+        { find: '@sdkwork/file-sdk-adapter', replacement: path.resolve(workspaceRoot, 'packages/common/file/sdkwork-file-sdk-adapter/src/index.ts') },
         { find: '@sdkwork/file-sdk-ports', replacement: path.resolve(workspaceRoot, 'packages/common/file/sdkwork-file-sdk-ports/src/index.ts') },
         { find: '@sdkwork/file-service', replacement: path.resolve(workspaceRoot, 'packages/common/file/sdkwork-file-service/src/index.ts') },
-        { find: '@sdkwork/generation-pc-react/react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/content/sdkwork-generation-pc-react/src/react.ts') },
-        { find: '@sdkwork/generation-pc-react/generation-service', replacement: path.resolve(appbaseRoot, 'packages/pc-react/content/sdkwork-generation-pc-react/src/generation-service.ts') },
-        { find: '@sdkwork/generation-pc-react/generation-history', replacement: path.resolve(appbaseRoot, 'packages/pc-react/content/sdkwork-generation-pc-react/src/generation-history.ts') },
-        { find: '@sdkwork/generation-pc-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/content/sdkwork-generation-pc-react/src/index.ts') },
+        { find: '@sdkwork/generations-pc-workspace/generation-service', replacement: path.resolve(sdkworkGenerationsRoot, 'apps/sdkwork-generations-pc/packages/sdkwork-generations-pc-workspace/src/generation-service.ts') },
+        { find: '@sdkwork/generations-pc-workspace/react', replacement: path.resolve(sdkworkGenerationsRoot, 'apps/sdkwork-generations-pc/packages/sdkwork-generations-pc-workspace/src/react.ts') },
+        { find: '@sdkwork/generations-pc-workspace', replacement: path.resolve(sdkworkGenerationsRoot, 'apps/sdkwork-generations-pc/packages/sdkwork-generations-pc-workspace/src/index.ts') },
+        { find: '@sdkwork/generation-pc-react/react', replacement: path.resolve(sdkworkImageRoot, 'packages/pc-react/content/sdkwork-generation-pc-react/src/react.ts') },
+        { find: '@sdkwork/generation-pc-react/generation-service', replacement: path.resolve(sdkworkImageRoot, 'packages/pc-react/content/sdkwork-generation-pc-react/src/generation-service.ts') },
+        { find: '@sdkwork/generation-pc-react/generation-history', replacement: path.resolve(sdkworkImageRoot, 'packages/pc-react/content/sdkwork-generation-pc-react/src/generation-history.ts') },
+        { find: '@sdkwork/generation-pc-react', replacement: path.resolve(sdkworkImageRoot, 'packages/pc-react/content/sdkwork-generation-pc-react/src/index.ts') },
+        { find: 'sdkwork-generations-app-sdk-generated-typescript', replacement: path.resolve(sdkworkGenerationsRoot, 'sdks/sdkwork-generations-app-sdk/sdkwork-generations-app-sdk-typescript/generated/server-openapi/src/index.ts') },
         { find: '@sdkwork/host-pc-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/host/sdkwork-host-pc-react/src/index.ts') },
         { find: '@sdkwork/host-tauri-pc-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/host/sdkwork-host-tauri-pc-react/src/index.ts') },
         { find: '@sdkwork/i18n-pc-react', replacement: path.resolve(appbaseRoot, 'packages/pc-react/foundation/sdkwork-i18n-pc-react/src/index.ts') },
@@ -461,7 +529,11 @@ export default defineConfig(({mode}) => {
           workspaceRoot,
           appbaseRoot,
           sdkworkCoreRoot,
+          sdkworkDriveRoot,
+          sdkworkGenerationsRoot,
+          sdkworkImageRoot,
           sdkworkUiRoot,
+          sdkworkCommerceRoot,
         ],
       },
       proxy: resolvePortalDevProxy(process.env),
@@ -526,10 +598,7 @@ export default defineConfig(({mode}) => {
             ) {
               return 'vendor-ui';
             }
-            if (
-              normalizedId.startsWith(`${normalizedAppbaseRoot}/packages/pc-react/content/`)
-              || normalizedId.startsWith(`${normalizedAppbaseRoot}/packages/common/conversation/`)
-            ) {
+            if (normalizedId.startsWith(`${normalizedAppbaseRoot}/packages/pc-react/content/`)) {
               return 'vendor-generation';
             }
             if (
@@ -617,8 +686,14 @@ export default defineConfig(({mode}) => {
       include: [
         'react',
         'react/jsx-runtime',
+        'react/jsx-dev-runtime',
         'react-dom',
         'react-dom/client',
+        'react-router',
+        'react-router/dom',
+        'react-router-dom',
+        'cookie',
+        'set-cookie-parser',
         'motion/react',
         'react-i18next',
         'html-parse-stringify',
@@ -629,7 +704,11 @@ export default defineConfig(({mode}) => {
       ],
       needsInterop: [
         'react',
+        'react/jsx-runtime',
+        'react/jsx-dev-runtime',
         'react-dom',
+        'cookie',
+        'set-cookie-parser',
       ],
       esbuildOptions: {
         target: 'esnext',
@@ -845,5 +924,6 @@ function resolveBooleanEnv(value: string | undefined, name: string): boolean | u
 export {
   buildPortalRuntimeEnvScript,
   injectPortalRuntimeEnvScript,
+  resolvePortalWorkspaceDependencyRoot,
   resolvePortalRuntimeEnv,
 };

@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::models::{OpenAiEvalRunResultCounts};
+use crate::models::OpenAiEvalRunResultCounts;
 
 /// OpenAI-compatible eval run object.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]

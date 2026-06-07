@@ -21,41 +21,57 @@
     {
       "id": "sdkwork-appbase",
       "repository": "Sdkwork-Cloud/sdkwork-appbase",
-      "ref": "3280447a2166a86b7e20bcfa394611effa0c9ec3",
+      "ref": "4e287906b0d712213f8b6ede39b505aac3a67722",
       "refInput": "SDKWORK_APPBASE_REF",
-      "path": "apps/sdkwork-appbase",
       "tokenSecret": "SDKWORK_RELEASE_TOKEN"
     },
     {
       "id": "sdkwork-core",
       "repository": "Sdkwork-Cloud/sdkwork-core",
-      "ref": "339ab3e063671e0f97db92bf098c9e9d8768d8dd",
+      "ref": "fd64773e8f73ce38f6995ded0ee63c00d6c5e675",
       "refInput": "SDKWORK_CORE_REF",
-      "path": "apps/sdkwork-core",
       "tokenSecret": "SDKWORK_RELEASE_TOKEN"
     },
     {
       "id": "sdkwork-ui",
       "repository": "Sdkwork-Cloud/sdkwork-ui",
-      "ref": "a4c90948ab5e43241a8e06303891bdc370702fad",
+      "ref": "672b9a990cdd077422f60651fbc9413b44343ab2",
       "refInput": "SDKWORK_UI_REF",
-      "path": "apps/sdkwork-ui",
       "tokenSecret": "SDKWORK_RELEASE_TOKEN"
     },
     {
-      "id": "sdkwork-im-sdk",
-      "repository": "Sdkwork-Cloud/sdkwork-im-sdk",
-      "ref": "8245ff9095f7d11c70aa062e16a9e42a715604b1",
-      "refInput": "SDKWORK_IM_SDK_REF",
-      "path": "apps/craw-chat/sdks/sdkwork-im-sdk",
+      "id": "sdkwork-drive",
+      "repository": "Sdkwork-Cloud/sdkwork-drive",
+      "ref": "1f56e3597a57153e9578f6f4c9645b90bc2a8cde",
+      "refInput": "SDKWORK_DRIVE_REF",
+      "tokenSecret": "SDKWORK_RELEASE_TOKEN"
+    },
+    {
+      "id": "sdkwork-commerce",
+      "repository": "Sdkwork-Cloud/sdkwork-commerce",
+      "ref": "4232f5dec1db363622132c2afc98ab49057d1f2e",
+      "refInput": "SDKWORK_COMMERCE_REF",
+      "tokenSecret": "SDKWORK_RELEASE_TOKEN"
+    },
+    {
+      "id": "sdkwork-generations",
+      "repository": "Sdkwork-Cloud/sdkwork-generations",
+      "ref": "70795260d3caa66a894271a145ec596c06487593",
+      "refInput": "SDKWORK_GENERATIONS_REF",
+      "tokenSecret": "SDKWORK_RELEASE_TOKEN"
+    },
+    {
+      "id": "sdkwork-image",
+      "repository": "Sdkwork-Cloud/sdkwork-image",
+      "ref": "08b16ab2b1096a8488f160f52e695d11b283c950",
+      "refInput": "SDKWORK_IMAGE_REF",
       "tokenSecret": "SDKWORK_RELEASE_TOKEN"
     },
     {
       "id": "sdkwork-sdk-generator",
       "repository": "Sdkwork-Cloud/sdkwork-sdk-generator",
-      "ref": "c20c147b69453a64535e25fc18032597e8af9e75",
+      "ref": "715562e30be876661a1c78f4a84b058e75aba937",
       "refInput": "SDKWORK_SDK_GENERATOR_REF",
-      "path": "sdk/sdkwork-sdk-generator",
       "tokenSecret": "SDKWORK_RELEASE_TOKEN"
     }
   ],
@@ -72,7 +88,7 @@
         "name": "Install portal workspace dependencies",
         "shell": "pwsh",
         "workingDirectory": ".",
-        "run": "pnpm --dir apps/sdkwork-clawrouter-pc install --frozen-lockfile"
+        "run": "pnpm --dir apps/sdkwork-clawrouter-pc install --no-frozen-lockfile"
       }
     ],
     "build": [

@@ -1,7 +1,7 @@
 # sdkwork-claw-router Check Result
 
 Last verified: 2026-05-03 Asia/Shanghai
-Workspace: `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-claw-router`
+Workspace: `<workspace-root>\sdkwork-claw-router`
 
 ## Summary
 

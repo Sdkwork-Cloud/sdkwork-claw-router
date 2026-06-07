@@ -13,7 +13,14 @@ ROOT = Path(__file__).resolve().parents[1]
 FIELD_CONTRACTS_PATH = ROOT / "docs" / "schema-registry" / "frontend-field-contracts.yaml"
 ROUTE_CLASSIFICATION_PATH = ROOT / "docs" / "schema-registry" / "frontend-route-classification.yaml"
 TABLE_REGISTRY_PATH = ROOT / "docs" / "schema-registry" / "sdkwork-claw-router.tables.yaml"
-APPBASE_CAPABILITY_PATH = ROOT / "sdkwork-appbase" / "specs" / "appbase-capabilities.yaml"
+APPBASE_CAPABILITY_PATH = (
+    ROOT
+    / ".sdkwork"
+    / "dependencies"
+    / "sdkwork-appbase"
+    / "specs"
+    / "appbase-capabilities.yaml"
+)
 PORTAL_PATH = ROOT / "apps" / "sdkwork-clawrouter-pc"
 APP_OPENAPI_PATH = ROOT / "generated" / "openapi" / "clawrouter-app-openapi.json"
 BACKEND_OPENAPI_PATH = ROOT / "generated" / "openapi" / "clawrouter-backend-openapi.json"
@@ -245,7 +252,7 @@ class CommerceStandardTest(unittest.TestCase):
             "/admin/commerce",
             "/admin/vip",
             "/console/commerce",
-            "sdkwork-appbase/packages/pc-react/commerce/sdkwork-vip",
+            ".sdkwork/dependencies/sdkwork-appbase/packages/pc-react/commerce/sdkwork-vip",
         ]
         checked_files = [
             PORTAL_PATH / "package.json",

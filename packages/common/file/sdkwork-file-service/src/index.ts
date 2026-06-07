@@ -12,7 +12,11 @@ import type {
   FileChecksum,
   FilePlatformPorts,
   FileUploadTarget,
-  PresignUploadPartResult,
+  FileUploadProgress,
+  FileUploadProfile,
+  FileUploadRetention,
+  UploadFileResult,
+  FileUploadBlobLike,
 } from "../../sdkwork-file-sdk-ports/src/index";
 
 export interface CreateFilePlatformServiceOptions {
@@ -20,37 +24,33 @@ export interface CreateFilePlatformServiceOptions {
   slots: readonly SdkworkFileSlotDefinition[];
 }
 
-export interface CreateManagedUploadSessionInput {
+export interface ManagedDriveUploadInput {
+  anonymousId?: string;
   checksum?: FileChecksum;
   contentType: string;
+  file: FileUploadBlobLike;
   filename: string;
   idempotencyKey: string;
+  onProgress?: (progress: FileUploadProgress) => void;
   organizationId?: string;
+  operatorId?: string;
   parentNodeId?: string;
   requestId: string;
+  retention?: FileUploadRetention;
+  scene?: string;
   sizeBytes: number;
   slotCode: string;
   spaceId?: string;
+  source?: string;
   target: FileUploadTarget;
   tenantId?: string;
+  uploadProfileCode?: FileUploadProfile;
   userId?: string;
 }
 
-export interface ManagedUploadSessionResult {
-  partSizeBytes?: number;
-  presigned?: {
-    expiresAt: string;
-    headers: Record<string, string>;
-    method: "POST" | "PUT";
-    url: string;
-  };
+export interface ManagedDriveUploadResult extends UploadFileResult {
   quotaReservationId?: string;
-  requestId: string;
-  sessionId: string;
   slotCode: string;
-  status: string;
-  totalParts?: number;
-  uploadMode: string;
 }
 
 export interface CompleteManagedUploadInput {
@@ -59,12 +59,6 @@ export interface CompleteManagedUploadInput {
   requestId: string;
   sessionId: string;
   slotCode: string;
-}
-
-export interface PresignManagedUploadPartInput {
-  partNumber: number;
-  requestId: string;
-  sessionId: string;
 }
 
 export interface BindManagedFileInput {
@@ -107,7 +101,6 @@ export interface FilePlatformService {
   abortUpload(input: AbortManagedUploadInput): Promise<{ requestId: string; sessionId: string; status: string }>;
   bindFile(input: BindManagedFileInput): Promise<{ fileRef: SdkworkFileRef; requestId: string }>;
   completeUpload(input: CompleteManagedUploadInput): Promise<CompleteUploadResult>;
-  createUploadSession(input: CreateManagedUploadSessionInput): Promise<ManagedUploadSessionResult>;
   deleteBinding(input: DeleteManagedBindingInput): Promise<{ bindingId: string; requestId: string }>;
   getFile(input: GetManagedFileInput): Promise<{ fileRef: SdkworkFileRef; requestId: string }>;
   getStorageUsage(input: { requestId: string; scopeId: string; scopeType: SdkworkStorageUsageScopeType }): Promise<SdkworkStorageUsageSnapshot>;
@@ -130,7 +123,7 @@ export interface FilePlatformService {
     requestId: string;
     target?: FileUploadTarget;
   }): Promise<{ items: SdkworkFileRef[]; nextCursor?: string; requestId: string }>;
-  presignUploadPart(input: PresignManagedUploadPartInput): Promise<PresignUploadPartResult>;
+  uploadFile(input: ManagedDriveUploadInput): Promise<ManagedDriveUploadResult>;
 }
 
 export class FilePlatformServiceError extends Error {
@@ -231,7 +224,7 @@ export function createFilePlatformService({
       });
     },
 
-    async createUploadSession(input) {
+    async uploadFile(input) {
       const slot = getRequiredSlot(input.slotCode);
       validateUploadInput(slot, input);
       const quotaScope = resolveQuotaScope(slot, input);
@@ -246,32 +239,43 @@ export function createFilePlatformService({
       });
 
       try {
-        const upload = await ports.upload.createUploadSession({
+        const upload = await ports.upload.uploadFile({
+          anonymousId: input.anonymousId,
+          appId: slot.appId,
+          appResourceId: input.target.id,
+          appResourceType: input.target.type,
           ...(input.checksum ? { checksum: input.checksum } : {}),
           contentType: normalizeMime(input.contentType),
+          file: input.file,
           filename: input.filename,
           idempotencyKey: input.idempotencyKey,
+          onProgress: input.onProgress,
           ...(input.organizationId ? { organizationId: input.organizationId } : {}),
+          operatorId: resolveOperatorId(slot, input),
           ...(input.parentNodeId ? { parentNodeId: input.parentNodeId } : {}),
           purpose: slot.slotCode,
           requestId: input.requestId,
+          retention: input.retention ?? { mode: "long_term" },
+          scene: input.scene ?? normalizeUsageLabel(slot.slotCode),
           sizeBytes: input.sizeBytes,
           ...(input.spaceId ? { spaceId: input.spaceId } : {}),
+          source: input.source ?? `${slot.appId}-file-upload`,
           target: input.target,
           ...(input.tenantId ? { tenantId: input.tenantId } : {}),
+          uploadProfileCode: input.uploadProfileCode ?? inferUploadProfile(input.contentType, input.filename),
           ...(input.userId ? { userId: input.userId } : {}),
         });
 
         return {
-          ...(upload.partSizeBytes ? { partSizeBytes: upload.partSizeBytes } : {}),
-          ...(upload.presigned ? { presigned: upload.presigned } : {}),
+          driveNodeId: upload.driveNodeId,
+          driveSpaceId: upload.driveSpaceId,
+          driveUri: upload.driveUri,
+          fileRef: upload.fileRef,
           quotaReservationId: reservation.reservationId,
           requestId: upload.requestId,
-          sessionId: upload.sessionId,
           slotCode: slot.slotCode,
           status: upload.status,
-          ...(upload.totalParts ? { totalParts: upload.totalParts } : {}),
-          uploadMode: upload.uploadMode,
+          uploadId: upload.uploadId,
         };
       } catch (error) {
         await ports.usage.releaseUploadQuota({
@@ -326,16 +330,12 @@ export function createFilePlatformService({
     async listFiles(input) {
       return ports.access.listFiles(input);
     },
-
-    async presignUploadPart(input) {
-      return ports.upload.presignUploadPart(input);
-    },
   };
 }
 
 function validateUploadInput(
   slot: SdkworkFileSlotDefinition,
-  input: CreateManagedUploadSessionInput,
+  input: ManagedDriveUploadInput,
 ): void {
   const contentType = normalizeMime(input.contentType);
   if (!slot.allowedMimeTypes.includes(contentType)) {
@@ -368,7 +368,7 @@ function validateUploadInput(
 
 function resolveQuotaScope(
   slot: SdkworkFileSlotDefinition,
-  input: CreateManagedUploadSessionInput,
+  input: ManagedDriveUploadInput,
 ): { scopeId: string; scopeType: "app" | "organization" | "space" | "tenant" | "user" } {
   switch (slot.quotaAccountScope) {
     case "app":
@@ -396,4 +396,31 @@ function requiredScopeValue(value: string | undefined, scopeType: string, slotCo
 
 function normalizeMime(value: string): string {
   return value.trim().toLowerCase();
+}
+
+function inferUploadProfile(contentType: string, filename: string): FileUploadProfile {
+  const normalizedContentType = normalizeMime(contentType);
+  const normalizedName = filename.trim().toLowerCase();
+  if (normalizedContentType.startsWith("image/")) return "image";
+  if (normalizedContentType.startsWith("video/")) return "video";
+  if (normalizedContentType.startsWith("audio/")) return "audio";
+  if (normalizedContentType.startsWith("text/")) return "text";
+  if (normalizedContentType.includes("pdf") || /\.(doc|docx|pdf|xls|xlsx)$/i.test(normalizedName)) return "document";
+  if (normalizedContentType.includes("zip") || /\.(7z|rar|zip)$/i.test(normalizedName)) return "archive";
+  return "attachment";
+}
+
+function normalizeUsageLabel(value: string): string {
+  return value
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "_")
+    .replace(/^_+|_+$/g, "") || "file_upload";
+}
+
+function resolveOperatorId(slot: SdkworkFileSlotDefinition, input: ManagedDriveUploadInput): string {
+  return input.operatorId?.trim()
+    || input.userId?.trim()
+    || input.anonymousId?.trim()
+    || `${slot.appId}-uploader`;
 }

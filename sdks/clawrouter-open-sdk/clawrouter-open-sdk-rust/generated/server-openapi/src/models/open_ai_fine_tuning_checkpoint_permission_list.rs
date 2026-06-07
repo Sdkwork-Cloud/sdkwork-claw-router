@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::models::{OpenAiFineTuningCheckpointPermission};
+use crate::models::OpenAiFineTuningCheckpointPermission;
 
 /// OpenAI-compatible paginated list of fine-tuning checkpoint permissions.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]

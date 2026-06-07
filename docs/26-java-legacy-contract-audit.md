@@ -6,7 +6,7 @@ machine-readable audit artifact without generating DDL for those tables.
 ## Purpose
 
 - Keep user, account, VIP, coupon, order, payment, refund, invoice, AppCenter,
-  SkillsHub, and category tables aligned with `spring-ai-plus-business-entity`.
+  SkillsHub, and category tables aligned with `legacy-java-plus-entity`.
 - Prove that registered Java entities still map to the expected physical table
   names through `@Table(name = "...")`.
 - Extract declared own columns from `@Column` and `@JoinColumn` so downstream

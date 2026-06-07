@@ -81,7 +81,7 @@ use sdkwork_commerce_account::{
     WalletOperation, WalletOperationQuery, WalletOverview, WalletTransactionDetailQuery,
     WalletTransactionItem, WalletTransactionListQuery,
 };
-use sdkwork_commerce_http::{account_router::AppbaseWalletFuture, AppbaseAccountWalletStore};
+use sdkwork_commerce_http::{CommerceAccountWalletStore, CommerceWalletFuture};
 use sdkwork_commerce_membership_sqlx::{
     AppMembershipStore, PostgresCommerceMembershipStore, SqliteCommerceMembershipStore,
     TimestampMembershipEntityIdGenerator,
@@ -149,13 +149,13 @@ type ModelRankingRefreshRuntimeStore = Arc<dyn ModelRankingRefreshStore + Send +
 type ModelRankingsRuntimeStore = Arc<dyn ModelRankingsReadModelStore + Send + Sync>;
 
 #[derive(Clone)]
-struct EmptyAppbaseAccountWalletStore;
+struct EmptyCommerceAccountWalletStore;
 
-impl AppbaseAccountWalletStore for EmptyAppbaseAccountWalletStore {
+impl CommerceAccountWalletStore for EmptyCommerceAccountWalletStore {
     fn retrieve_account_summary<'a>(
         &'a self,
         query: AccountSummaryQuery,
-    ) -> AppbaseWalletFuture<'a, AccountSummarySnapshot> {
+    ) -> CommerceWalletFuture<'a, AccountSummarySnapshot> {
         Box::pin(async move {
             let mut summary = AccountSummarySnapshot::default();
             summary.id = query.owner_user_id;
@@ -166,35 +166,35 @@ impl AppbaseAccountWalletStore for EmptyAppbaseAccountWalletStore {
     fn retrieve_wallet_overview<'a>(
         &'a self,
         _query: WalletAccountListQuery,
-    ) -> AppbaseWalletFuture<'a, WalletOverview> {
+    ) -> CommerceWalletFuture<'a, WalletOverview> {
         Box::pin(async { Ok(WalletOverview::new(Vec::new())) })
     }
 
     fn list_wallet_accounts<'a>(
         &'a self,
         _query: WalletAccountListQuery,
-    ) -> AppbaseWalletFuture<'a, Vec<WalletAccountItem>> {
+    ) -> CommerceWalletFuture<'a, Vec<WalletAccountItem>> {
         Box::pin(async { Ok(Vec::new()) })
     }
 
     fn list_wallet_transactions<'a>(
         &'a self,
         _query: WalletTransactionListQuery,
-    ) -> AppbaseWalletFuture<'a, Vec<WalletTransactionItem>> {
+    ) -> CommerceWalletFuture<'a, Vec<WalletTransactionItem>> {
         Box::pin(async { Ok(Vec::new()) })
     }
 
     fn retrieve_wallet_transaction<'a>(
         &'a self,
         _query: WalletTransactionDetailQuery,
-    ) -> AppbaseWalletFuture<'a, Option<WalletTransactionItem>> {
+    ) -> CommerceWalletFuture<'a, Option<WalletTransactionItem>> {
         Box::pin(async { Ok(None) })
     }
 
     fn retrieve_wallet_operation<'a>(
         &'a self,
         _query: WalletOperationQuery,
-    ) -> AppbaseWalletFuture<'a, Option<WalletOperation>> {
+    ) -> CommerceWalletFuture<'a, Option<WalletOperation>> {
         Box::pin(async { Ok(None) })
     }
 }
@@ -549,7 +549,7 @@ fn router_with_api_key_management_store_and_database_status(
             )),
         (None, None) => sdkwork_commerce_http::app_commerce_foundation_router().merge(
             sdkwork_commerce_http::app_account_wallet_router_with_store(Arc::new(
-                EmptyAppbaseAccountWalletStore,
+                EmptyCommerceAccountWalletStore,
             )),
         ),
     };

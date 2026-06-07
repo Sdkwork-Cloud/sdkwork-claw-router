@@ -3,7 +3,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-APPBASE = ROOT.parent / "sdkwork-appbase"
+APPBASE = ROOT / ".sdkwork" / "dependencies" / "sdkwork-appbase"
 
 
 class CheckoutRuntimeStandardTest(unittest.TestCase):

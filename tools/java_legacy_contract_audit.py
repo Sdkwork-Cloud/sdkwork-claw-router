@@ -165,7 +165,7 @@ class JavaLegacyContractAudit:
         return None
 
     def _java_source_roots(self) -> list[Path]:
-        module_source = Path("spring-ai-plus-business-entity") / "src" / "main" / "java"
+        module_source = Path("legacy-java-plus-entity") / "src" / "main" / "java"
         candidates = [
             self.root / module_source,
             self.root.parent / module_source,

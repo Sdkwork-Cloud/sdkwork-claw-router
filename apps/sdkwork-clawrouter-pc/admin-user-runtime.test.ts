@@ -31,7 +31,13 @@ async function withBackendSdkResponse<T>(
   Object.defineProperty(globalThis, "window", {
     configurable: true,
     enumerable: true,
-    value: { dispatchEvent: () => true },
+    value: {
+      __CLAWROUTER_ENV__: {
+        VITE_CLAWROUTER_BACKEND_API_BASE_URL: "/backend/v3/api",
+        VITE_SDKWORK_APPBASE_BACKEND_API_BASE_URL: "https://appbase.example.com/backend/v3/api",
+      },
+      dispatchEvent: () => true,
+    },
   });
   globalThis.fetch = (async (input: RequestInfo | URL, init?: RequestInit) => {
     const url = typeof input === "string" ? input : input instanceof URL ? input.toString() : input.url;
@@ -373,7 +379,7 @@ test("admin user initial table load still fails when the users request fails", a
   );
 });
 
-test("admin user create and update use generated IAM users SDK commands", async () => {
+test("admin user create and update use appbase backend IAM users SDK commands", async () => {
   await withBackendSdkResponse(
     {
       code: "2000",
@@ -396,16 +402,15 @@ test("admin user create and update use generated IAM users SDK commands", async 
       await UserService.addUser({ email: " admin@example.com ", username: " Admin " });
       await UserService.updateUser("9007199254740993", { username: " Owner ", group: " vip " });
 
-      assert.equal(captured[0].url, "/backend/v3/api/iam/users");
+      assert.equal(captured[0].url, "https://appbase.example.com/backend/v3/api/iam/users");
       assert.equal(captured[0].method, "POST");
       assert.deepEqual(JSON.parse(captured[0].body), {
         email: "admin@example.com",
         username: "Admin",
       });
-      assert.equal(captured[1].url, "/backend/v3/api/iam/users");
-      assert.equal(captured[1].method, "PUT");
+      assert.equal(captured[1].url, "https://appbase.example.com/backend/v3/api/iam/users/9007199254740993");
+      assert.equal(captured[1].method, "PATCH");
       assert.deepEqual(JSON.parse(captured[1].body), {
-        id: "9007199254740993",
         username: "Owner",
         group: "vip",
       });
@@ -417,7 +422,7 @@ test("admin user create and update use generated IAM users SDK commands", async 
   );
 });
 
-test("admin user service rejects unsafe API key path ids before calling generated backend SDK", async () => {
+test("admin user service rejects unsafe API key path ids before calling claw-router backend SDK", async () => {
   await withBackendSdkResponse(
     {
       code: "2000",
@@ -433,21 +438,36 @@ test("admin user service rejects unsafe API key path ids before calling generate
   );
 });
 
-test("admin API key delete fails closed unless backend confirms deletion", async () => {
-  for (const response of [{}, { deleted: false }]) {
-    await withBackendSdkResponse(
-      {
-        code: "2000",
-        data: response,
-      },
-      async () => {
-        await assert.rejects(
-          () => UserService.deleteApiKey("9007199254740993", "admin-key-1"),
-          /admin\.user\.errors\.deleteApiKeyFallback/,
-        );
-      },
-    );
-  }
+test("admin API key delete uses claw-router backend IAM api key SDK", async () => {
+  await withBackendSdkResponse(
+    {
+      code: "2000",
+      data: { deleted: true },
+    },
+    async (captured) => {
+      await UserService.deleteApiKey("9007199254740993", "admin-key-1");
+
+      assert.equal(captured[0].url, "/backend/v3/api/iam/api_keys/admin-key-1");
+      assert.equal(captured[0].method, "DELETE");
+      assert.equal(captured[0].body, "");
+    },
+  );
+});
+
+test("admin API key delete fails closed when claw-router backend reports failure", async () => {
+  await withBackendSdkResponse(
+    {
+      code: "4000",
+      message: "delete failed",
+      data: {},
+    },
+    async () => {
+      await assert.rejects(
+        () => UserService.deleteApiKey("9007199254740993", "admin-key-1"),
+        /delete failed/,
+      );
+    },
+  );
 });
 
 test("admin user list fails closed when backend omits stable user ids", async () => {

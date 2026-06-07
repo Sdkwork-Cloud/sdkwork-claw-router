@@ -598,21 +598,23 @@ class SdkRuntimeStandardizer:
         return self._operation_keys(dependency_payload, prefix)
 
     def _dependency_authority_path(self, workspace: str) -> Path:
+        appbase_root = self.root / ".sdkwork" / "dependencies" / "sdkwork-appbase"
         mapping = {
-            "sdkwork-appbase-app-sdk": self.root.parent
-            / "sdkwork-appbase"
+            "sdkwork-appbase-app-sdk": appbase_root
             / "sdks"
             / "sdkwork-appbase-app-sdk"
             / "openapi"
             / "sdkwork-appbase-app-api.openapi.yaml",
-            "sdkwork-appbase-backend-sdk": self.root.parent
-            / "sdkwork-appbase"
+            "sdkwork-appbase-backend-sdk": appbase_root
             / "sdks"
             / "sdkwork-appbase-backend-sdk"
             / "openapi"
             / "sdkwork-appbase-backend-api.openapi.yaml",
         }
-        return mapping.get(workspace, self.root.parent / workspace / "openapi.json")
+        return mapping.get(
+            workspace,
+            self.root / ".sdkwork" / "dependencies" / workspace / "openapi.json",
+        )
 
     def _operation_keys(self, payload: dict[str, Any], prefix: str) -> set[str]:
         operation_keys: set[str] = set()
@@ -1101,6 +1103,7 @@ class SdkRuntimeStandardizer:
             "const __filename = fileURLToPath(import.meta.url);\n"
             "const workspaceRoot = path.resolve(path.dirname(__filename), '..', '..', '..');\n"
             "const command = process.platform === 'win32' ? 'node.exe' : 'node';\n"
+            "const sdkGeneratorCli = path.resolve(workspaceRoot, '.sdkwork/dependencies/sdkwork-sdk-generator/bin/sdkgen.js');\n"
             f"const sdkFamily = '{sdk_family}';\n"
             f"const sdkType = '{sdk_type}';\n"
             "const authorityInputPath = `sdks/${sdkFamily}/openapi/${sdkFamily}.openapi.json`;\n"
@@ -1219,7 +1222,7 @@ class SdkRuntimeStandardizer:
             "}\n\n"
             "function generatorArgs(language) {\n"
             "  const args = [\n"
-            "    path.resolve(workspaceRoot, '..', '..', 'sdk', 'sdkwork-sdk-generator', 'bin', 'sdkgen.js'),\n"
+            "    sdkGeneratorCli,\n"
             "    'generate',\n"
             f"    '-i', {sdk_generator_input_path},\n"
             "    '-o', `sdks/${sdkFamily}/${sdkFamily}-${language}/generated/server-openapi`,\n"
@@ -1406,7 +1409,7 @@ class SdkRuntimeStandardizer:
         generator_manifest = self._read_json_or_none(manifest_path)
         if not self._is_sdk_generator_manifest(generator_manifest):
             manifest = {
-                "generator": "sdk/sdkwork-sdk-generator",
+                "generator": ".sdkwork/dependencies/sdkwork-sdk-generator",
                 "language": "typescript",
                 "sdkType": SDK_TYPES[sdk_family],
                 "packageName": package.get("name"),

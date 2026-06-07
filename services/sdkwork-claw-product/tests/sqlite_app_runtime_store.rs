@@ -48,7 +48,7 @@ async fn sqlite_app_runtime_store_records_invocations_events_and_artifacts() {
             provider: Some("anthropic".to_owned()),
             tool_name: None,
             tool_call_id: None,
-            cwd: Some("D:/javasource/spring-ai-plus".to_owned()),
+            cwd: Some("..".to_owned()),
             sandbox_policy: Some("workspace-write".to_owned()),
             approval_policy: Some("on-request".to_owned()),
             permission_mode: Some("default".to_owned()),

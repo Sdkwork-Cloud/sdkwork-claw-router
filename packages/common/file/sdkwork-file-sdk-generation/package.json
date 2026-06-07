@@ -18,8 +18,8 @@
   "scripts": {
     "artifacts:check": "node ../../../../scripts/materialize-file-sdk-artifacts.mjs --check",
     "artifacts:write": "node ../../../../scripts/materialize-file-sdk-artifacts.mjs --apply",
-    "typecheck": "node ../../../../sdkwork-appbase/node_modules/typescript/bin/tsc -p tsconfig.json --noEmit",
-    "test": "node ../../../../sdkwork-appbase/node_modules/vitest/vitest.mjs run tests --pool vmThreads"
+    "typecheck": "node ../../../../apps/sdkwork-clawrouter-pc/node_modules/typescript/bin/tsc -p tsconfig.json --noEmit",
+    "test": "node ../../../../apps/sdkwork-clawrouter-pc/node_modules/vitest/vitest.mjs run tests --pool vmThreads"
   },
   "dependencies": {
     "@sdkwork/file-api-contracts": "workspace:*",

@@ -48,7 +48,6 @@ describe("SDKWork file platform contracts", () => {
     expect(SDKWORK_FILE_STANDARD.api.appPrefix).toBe("/app/v3/api");
     expect(SDKWORK_FILE_STANDARD.api.backendPrefix).toBe("/backend/v3/api");
     expect(SDKWORK_FILE_STANDARD.sdkNamespaces).toEqual([
-      "upload",
       "files",
       "drive",
       "fileBindings",
@@ -59,7 +58,7 @@ describe("SDKWork file platform contracts", () => {
       "audit",
     ]);
 
-    expect(SDKWORK_FILE_API_ROUTES.app.upload.createSession).toBe("/app/v3/api/upload/sessions");
+    expect(SDKWORK_FILE_API_ROUTES.app).not.toHaveProperty("upload");
     expect(SDKWORK_FILE_API_ROUTES.app.files.issueDownloadUrl).toBe(
       "/app/v3/api/files/{fileId}/download_url",
     );
@@ -124,8 +123,6 @@ describe("SDKWork file platform contracts", () => {
         objectBucket: "object_bucket",
         storageDefaultBucketPolicy: "storage_default_bucket_policy",
         objectBlob: "object_blob",
-        uploadSession: "upload_session",
-        uploadPresignGrant: "upload_presign_grant",
         fileNode: "file_node",
         fileVersion: "file_version",
         driveSpace: "drive_space",
@@ -145,10 +142,11 @@ describe("SDKWork file platform contracts", () => {
     );
 
     for (const tableName of Object.values(SDKWORK_FILE_TABLES)) {
-      expect(tableName).toMatch(/^(object|upload|file|drive|storage)_[a-z0-9_]+$/);
+      expect(tableName).toMatch(/^(object|file|drive|storage)_[a-z0-9_]+$/);
       expect(tableName).not.toContain("plus");
       expect(tableName).not.toContain("s3_url");
     }
+    expect(Object.values(SDKWORK_FILE_TABLES).some((tableName) => tableName.startsWith("upload_"))).toBe(false);
   });
 
   it("validates supported upload modes and terminal upload states", () => {
@@ -167,7 +165,6 @@ describe("SDKWork file platform contracts", () => {
       "expired",
       "orphaned",
       "policy_rejected",
-      "presigned",
       "processing",
       "quota_rejected",
       "scan_failed",

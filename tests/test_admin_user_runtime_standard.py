@@ -8,45 +8,12 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class AdminUserRuntimeStandardTest(unittest.TestCase):
-    def test_admin_user_write_contracts_use_operation_specific_payloads(self) -> None:
+    def test_product_owned_admin_api_key_create_contract_uses_operation_specific_payloads(self) -> None:
         manifest = ApiContractManifestGenerator(root=ROOT).generate()
         operations = {operation["key"]: operation for operation in manifest["operations"]}
         source = "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-user/src/userService.ts"
 
-        add_user = operations[f"{source}#addUser"]
-        update_user = operations[f"{source}#updateUser"]
         create_api_key = operations[f"{source}#createApiKey"]
-
-        self.assertEqual("AdminUserCreateRequest", add_user["request_schema"]["name"])
-        self.assertEqual(["email"], add_user["request_schema"]["schema"]["required"])
-        self.assertEqual("AdminUserMutationResponse", add_user["response_schema"]["name"])
-        self.assertFalse(add_user["request_id_header"])
-
-        self.assertEqual("AdminUserUpdateRequest", update_user["request_schema"]["name"])
-        self.assertEqual(["id"], update_user["request_schema"]["schema"]["required"])
-        self.assertEqual(
-            {
-                "type": "string",
-                "format": "int64",
-                "pattern": "^[1-9][0-9]*$",
-                "x-sdkwork-int64-string": True,
-                "x-sdkwork-rust-type": "i64",
-                "description": "User identifier.",
-            },
-            update_user["request_schema"]["schema"]["properties"]["id"],
-        )
-        self.assertEqual("AdminUserMutationResponse", update_user["response_schema"]["name"])
-        self.assertEqual(
-            {
-                "type": "string",
-                "format": "int64",
-                "pattern": "^[1-9][0-9]*$",
-                "x-sdkwork-int64-string": True,
-                "x-sdkwork-rust-type": "i64",
-            },
-            update_user["response_schema"]["schema"]["properties"]["item"]["properties"]["id"],
-        )
-        self.assertFalse(update_user["request_id_header"])
 
         self.assertEqual("AdminApiKeyCreateRequest", create_api_key["request_schema"]["name"])
         self.assertEqual(["userId", "name"], create_api_key["request_schema"]["schema"]["required"])
@@ -63,8 +30,11 @@ class AdminUserRuntimeStandardTest(unittest.TestCase):
         )
         self.assertEqual("AdminApiKeyCreateResponse", create_api_key["response_schema"]["name"])
         self.assertTrue(create_api_key["idempotency_required"])
+        self.assertEqual("/backend/v3/api/iam/api_keys", create_api_key["api_path"])
+        self.assertEqual("POST", create_api_key["api_method"])
+        self.assertTrue(create_api_key["openapi_exposed"])
 
-    def test_admin_user_frontend_and_backend_sdk_do_not_use_generic_write_payloads(self) -> None:
+    def test_admin_user_service_splits_appbase_iam_and_product_api_key_sdk_surfaces(self) -> None:
         service = (
             ROOT
             / "apps"
@@ -74,23 +44,14 @@ class AdminUserRuntimeStandardTest(unittest.TestCase):
             / "src"
             / "userService.ts"
         ).read_text(encoding="utf-8")
-        system_api = (ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "api" / "system.ts").read_text(
-            encoding="utf-8"
-        )
-        billing_api_path = ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "api" / "billing.ts"
-        commerce_api = (ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "api" / "commerce.ts").read_text(
-            encoding="utf-8"
-        )
-        iam_api = (ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "api" / "iam.ts").read_text(
+        iam_api = (ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "generated" / "server-openapi" / "src" / "api" / "iam.ts").read_text(
             encoding="utf-8"
         )
         type_exports = (
-            ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "types" / "index.ts"
+            ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "generated" / "server-openapi" / "src" / "types" / "index.ts"
         ).read_text(encoding="utf-8")
 
         for token in [
-            "AdminUserCreateRequest",
-            "AdminUserUpdateRequest",
             "AdminApiKeyCreateRequest",
             "toCreateUserRequest",
             "toUpdateUserRequest",
@@ -107,51 +68,130 @@ class AdminUserRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("updateBalance", service)
         self.assertNotIn("toBalanceAdjustmentRequest", service)
         self.assertNotIn("UserBalanceAdjustmentInput", service)
-        self.assertIn("getClawRouterBackendSdkClient().iam.users.create", service)
-        self.assertIn("getClawRouterBackendSdkClient().iam.users.update", service)
+        self.assertIn("getSdkworkAppbaseBackendSdkClient().iam.users.list", service)
+        self.assertIn("getSdkworkAppbaseBackendSdkClient().iam.users.create", service)
+        self.assertIn("getSdkworkAppbaseBackendSdkClient().iam.users.update", service)
+        self.assertIn("getSdkworkAppbaseBackendSdkClient().iam.apiKeys.list", service)
+        self.assertIn("getClawRouterBackendSdkClient().iam.apiKeys.create", service)
+        self.assertIn("getClawRouterBackendSdkClient().iam.apiKeys.delete", service)
+        self.assertNotIn("getClawRouterBackendSdkClient().iam.users.list", service)
+        self.assertNotIn("getClawRouterBackendSdkClient().iam.users.create", service)
+        self.assertNotIn("getClawRouterBackendSdkClient().iam.users.update", service)
+        self.assertNotIn("getClawRouterBackendSdkClient().iam.apiKeys.list", service)
+        self.assertNotIn("getClawRouterBackendSdkClient().iam.apiKeys.revoke", service)
+        self.assertNotIn("getSdkworkAppbaseBackendSdkClient().iam.apiKeys.create", service)
+        self.assertNotIn("getSdkworkAppbaseBackendSdkClient().iam.apiKeys.delete", service)
+        self.assertNotIn("getSdkworkAppbaseBackendSdkClient().iam.apiKeys.revoke", service)
         self.assertNotIn("getClawRouterBackendSdkClient().system.users.create", service)
         self.assertNotIn("getClawRouterBackendSdkClient().system.users.update", service)
 
-        self.assertIn(
-            "async create(body: AdminUserCreateRequest): Promise<UsersCreateResult>",
-            iam_api,
-        )
-        self.assertIn(
-            "async update(body: AdminUserUpdateRequest): Promise<UsersUpdateResult>",
-            iam_api,
-        )
-        self.assertNotIn("async create(body?: OperationRequest): Promise<PlusApiResult>", system_api)
-        self.assertNotIn("async update(body?: OperationRequest): Promise<PlusApiResult>", system_api)
         self.assertNotIn("async create(body?: OperationRequest): Promise<PlusApiResult>", iam_api)
         self.assertNotIn("async update(body?: OperationRequest): Promise<PlusApiResult>", iam_api)
-
-        self.assertFalse(billing_api_path.exists())
-        self.assertIn(
-            "async create(body: CommerceStandardCommandRequest, params: CommerceWalletAdjustmentsCreateParams): Promise<WalletAdjustmentsCreateResult>",
-            commerce_api,
-        )
-        self.assertNotIn("async updateBalance", commerce_api)
 
         self.assertIn(
             "async create(body: AdminApiKeyCreateRequest, params: IamApiKeysCreateParams): Promise<ApiKeysCreateResult>",
             iam_api,
         )
+        self.assertIn(
+            "async delete(apiKeyId: string): Promise<ApiKeysDeleteResult>",
+            iam_api,
+        )
         self.assertNotIn("async createApiKey(body?: OperationRequest): Promise<PlusApiResult>", iam_api)
-        self.assertNotIn("headers?: Record<string, string>", system_api)
-        self.assertNotIn("headers?: Record<string, string>", commerce_api)
+        self.assertNotIn("async revoke", iam_api)
         self.assertNotIn("headers?: Record<string, string>", iam_api)
 
         for token in [
-            "AdminUserCreateRequest",
-            "AdminUserUpdateRequest",
-            "AdminUserMutationResponse",
             "AdminApiKeyCreateRequest",
             "AdminApiKeyCreateResponse",
-            "UsersCreateResult",
-            "UsersUpdateResult",
             "ApiKeysCreateResult",
+            "ApiKeysDeleteResult",
         ]:
             self.assertIn(f"export type {{ {token} }}", type_exports)
+
+    def test_clawrouter_backend_sdk_does_not_export_appbase_owned_admin_user_operations(self) -> None:
+        manifest = ApiContractManifestGenerator(root=ROOT).generate()
+        operations = {operation["key"]: operation for operation in manifest["operations"]}
+        source = "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-user/src/userService.ts"
+        generated_openapi = __import__("json").loads(
+            (
+                ROOT
+                / "generated"
+                / "openapi"
+                / "clawrouter-backend-openapi.json"
+            ).read_text(encoding="utf-8")
+        )
+        sdk_openapi = __import__("json").loads(
+            (
+                ROOT
+                / "sdks"
+                / "clawrouter-backend-sdk"
+                / "openapi"
+                / "clawrouter-backend-sdk.openapi.json"
+            ).read_text(encoding="utf-8")
+        )
+        sdkgen_openapi = __import__("json").loads(
+            (
+                ROOT
+                / "sdks"
+                / "clawrouter-backend-sdk"
+                / "openapi"
+                / "clawrouter-backend-sdk.sdkgen.json"
+            ).read_text(encoding="utf-8")
+        )
+        iam_api = (
+            ROOT
+            / "sdks"
+            / "clawrouter-backend-sdk"
+            / "clawrouter-backend-sdk-typescript"
+            / "generated"
+            / "server-openapi"
+            / "src"
+            / "api"
+            / "iam.ts"
+        ).read_text(encoding="utf-8")
+        type_exports = (
+            ROOT
+            / "sdks"
+            / "clawrouter-backend-sdk"
+            / "clawrouter-backend-sdk-typescript"
+            / "generated"
+            / "server-openapi"
+            / "src"
+            / "types"
+            / "index.ts"
+        ).read_text(encoding="utf-8")
+
+        add_user = operations[f"{source}#addUser"]
+        update_user = operations[f"{source}#updateUser"]
+        self.assertEqual("/backend/v3/api/iam/users", add_user["api_path"])
+        self.assertEqual("POST", add_user["api_method"])
+        self.assertFalse(add_user["openapi_exposed"])
+        self.assertEqual("/backend/v3/api/iam/users/{userId}", update_user["api_path"])
+        self.assertEqual("PATCH", update_user["api_method"])
+        self.assertEqual(["userId"], update_user["path_params"])
+        self.assertFalse(update_user["openapi_exposed"])
+
+        for document_name, document in [
+            ("generated backend OpenAPI", generated_openapi),
+            ("backend SDK authority OpenAPI", sdk_openapi),
+            ("backend SDK sdkgen input", sdkgen_openapi),
+        ]:
+            with self.subTest(document=document_name):
+                self.assertNotIn("/backend/v3/api/user", document["paths"])
+                self.assertNotIn("AdminUserCreateRequest", document["components"]["schemas"])
+                self.assertNotIn("AdminUserUpdateRequest", document["components"]["schemas"])
+                serialized = __import__("json").dumps(document, sort_keys=True)
+                self.assertNotIn('"operationId": "users.update"', serialized)
+                self.assertNotIn('"operationId": "users.create"', serialized)
+
+        self.assertNotIn("AdminUserCreateRequest", iam_api)
+        self.assertNotIn("AdminUserUpdateRequest", iam_api)
+        self.assertNotIn("UsersUpdateResult", iam_api)
+        self.assertNotIn("users.update", iam_api)
+        self.assertNotIn("async update(", iam_api)
+        self.assertNotIn("export type { AdminUserCreateRequest }", type_exports)
+        self.assertNotIn("export type { AdminUserUpdateRequest }", type_exports)
+        self.assertNotIn("export type { UsersUpdateResult }", type_exports)
 
     def test_admin_user_create_forms_use_dedicated_inputs_without_clock_defaults(self) -> None:
         package_root = (
@@ -177,7 +217,7 @@ class AdminUserRuntimeStandardTest(unittest.TestCase):
         self.assertIn("readRequiredApiItem(result, 'admin.user.errors.updateUserMissingData')", service)
         self.assertIn("static async createApiKey(input: ApiKeyCreateInput): Promise<{ key: ApiKeyItem; rawKey: string }>", service)
         self.assertIn("function toCreateUserRequest(user: UserCreateInput)", service)
-        self.assertIn("function toUpdateUserRequest(id: string, updates: UserUpdateInput)", service)
+        self.assertIn("function toUpdateUserRequest(updates: UserUpdateInput)", service)
         self.assertIn("function toCreateApiKeyRequest(input: ApiKeyCreateInput)", service)
         self.assertIn("readRequiredPositiveInt64String(item, 'id', 'User id is required')", service)
         self.assertIn("requiredPositiveInt64String(input.userId, 'userId')", service)

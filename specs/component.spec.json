@@ -46,6 +46,11 @@
       "purpose": "Runtime configuration, environment, SDK bootstrap, and feature flag rules."
     },
     {
+      "file": "DEPENDENCY_MANAGEMENT_SPEC.md",
+      "path": "../sdkwork-specs/DEPENDENCY_MANAGEMENT_SPEC.md",
+      "purpose": "Source/build dependency path, local dev materialization, release Git checkout, and cross-platform dependency rules."
+    },
+    {
       "file": "DEPLOYMENT_SPEC.md",
       "path": "../sdkwork-specs/DEPLOYMENT_SPEC.md",
       "purpose": "SaaS/private/local runtime parity and deployment rules."
@@ -120,6 +125,7 @@
     "publicExports": [],
     "runtimeEntrypoints": [
       "sdkwork.app.config.json",
+      "specs/dependency-api-surfaces.json",
       "package.json#scripts.dev",
       "package.json#scripts.build",
       "package.json#scripts.start",
@@ -129,9 +135,11 @@
     "sdkClients": [],
     "events": [],
     "configKeys": [
-      "sdkwork.app.config.json"
+      "sdkwork.app.config.json",
+      "specs/dependency-api-surfaces.json"
     ],
-    "routeManifest": null
+    "routeManifest": null,
+    "dependencyApiSurfaces": "specs/dependency-api-surfaces.json"
   },
   "integration": {
     "authority": "Root SDKWork specs remain authoritative. Local specs may extend but must not contradict them.",
@@ -141,7 +149,7 @@
   },
   "verification": {
     "commands": [
-      "cargo test --manifest-path apps/sdkwork-claw-router/Cargo.toml",
+      "cargo test --workspace",
       "pnpm --filter sdkwork-claw-router-workspace test"
     ]
   },

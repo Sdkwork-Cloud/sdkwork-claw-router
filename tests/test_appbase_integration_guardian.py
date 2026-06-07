@@ -67,7 +67,14 @@ def retired_appbase_sdk_clients_path() -> str:
 
 class AppbaseIntegrationGuardianTest(unittest.TestCase):
     def write_appbase_catalog(self, root: Path) -> None:
-        catalog = root / "sdkwork-appbase" / "specs" / "appbase-capabilities.yaml"
+        catalog = (
+            root
+            / ".sdkwork"
+            / "dependencies"
+            / "sdkwork-appbase"
+            / "specs"
+            / "appbase-capabilities.yaml"
+        )
         catalog.parent.mkdir(parents=True, exist_ok=True)
         catalog.write_text(
             textwrap.dedent(
@@ -202,8 +209,8 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
             "services/sdkwork-claw-app-api/Cargo.toml",
             """
             [dependencies]
-            sdkwork_commerce_http = { path = "../../../sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-http-rust" }
-            sdkwork_commerce_membership_sqlx = { path = "../../../sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-membership-sqlx-rust" }
+            sdkwork_commerce_http = { path = "../../.sdkwork/dependencies/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-http-rust" }
+            sdkwork_commerce_membership_sqlx = { path = "../../.sdkwork/dependencies/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-membership-sqlx-rust" }
             """,
         )
         self.write_cargo(
@@ -211,7 +218,7 @@ class AppbaseIntegrationGuardianTest(unittest.TestCase):
             "services/sdkwork-claw-admin-api/Cargo.toml",
             """
             [dependencies]
-            sdkwork_commerce_membership_sqlx = { path = "../../../sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-membership-sqlx-rust" }
+            sdkwork_commerce_membership_sqlx = { path = "../../.sdkwork/dependencies/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-membership-sqlx-rust" }
             """,
         )
         self.write_runtime_adapter(root, "services/sdkwork-claw-app-api/tests/contract_routes.rs")

@@ -6,14 +6,40 @@ function readPortalFile(relativePath: string): string {
   return readFileSync(new URL(relativePath, import.meta.url), "utf8");
 }
 
+function readCommerceProductAdminFile(relativePath: string): string {
+  return readFileSync(
+    new URL(
+      `../../.sdkwork/dependencies/sdkwork-commerce/apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-admin-product/src/${relativePath}`,
+      import.meta.url,
+    ),
+    "utf8",
+  );
+}
+
 function escapeRegExp(value: string): string {
   return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
-test("admin catalog products route uses a dedicated Weixin-style product list page", () => {
+test("admin catalog adapter re-exports Commerce product admin without Claw Router catalog SDK calls", () => {
   const indexSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-catalog/src/index.tsx");
-  const productListSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-catalog/src/ProductListPage.tsx");
-  const serviceSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts");
+  const productListAdapterSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-catalog/src/ProductListPage.tsx");
+  const serviceAdapterSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts");
+
+  assert.match(indexSource, /from "sdkwork-commerce-pc-admin-product"/);
+  assert.match(productListAdapterSource, /from "sdkwork-commerce-pc-admin-product"/);
+  assert.match(serviceAdapterSource, /from "sdkwork-commerce-pc-admin-product"/);
+  assert.match(indexSource, /CatalogAdmin/);
+  assert.match(indexSource, /CommerceProductAdmin/);
+  assert.match(serviceAdapterSource, /createCommerceProductAdminService/);
+  assert.doesNotMatch(indexSource + productListAdapterSource + serviceAdapterSource, /getClawRouterBackendSdkClient/);
+  assert.doesNotMatch(indexSource + productListAdapterSource + serviceAdapterSource, /createIdempotencyParams/);
+  assert.doesNotMatch(indexSource + productListAdapterSource + serviceAdapterSource, /\bfetch\s*\(|axios|XMLHttpRequest/);
+});
+
+test("admin catalog products route uses a Commerce-owned Weixin-style product list page", () => {
+  const indexSource = readCommerceProductAdminFile("index.tsx");
+  const productListSource = readCommerceProductAdminFile("ProductListPage.tsx");
+  const serviceSource = readCommerceProductAdminFile("catalogService.ts");
 
   assert.match(indexSource, /import \{ ProductListPage \} from '\.\/ProductListPage'/);
   assert.match(indexSource, /activeSectionId === 'products'/);
@@ -87,19 +113,22 @@ test("admin catalog products route uses a dedicated Weixin-style product list pa
     assert.match(productListSource, new RegExp(escapeRegExp(marker)));
   }
 
-  assert.match(productListSource, /listCommerceProducts\(\{[\s\S]*page:\s*pagination\.page,[\s\S]*pageSize:\s*pagination\.pageSize/);
+  assert.match(productListSource, /listCommerceProducts\(\{[\s\S]*page:\s*(?:String\()?pagination\.page/);
+  assert.match(productListSource, /pageSize:\s*(?:String\()?pagination\.pageSize/);
   assert.match(productListSource, /q:\s*queryText\s*\|\|\s*undefined/);
   assert.match(productListSource, /status:\s*activeTab\.status/);
   assert.match(productListSource, /buildProductQueryText\(appliedFilters\)/);
-  assert.match(serviceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.catalog\.products\.list\(params\)/);
+  assert.match(serviceSource, /createCommerceProductAdminService/);
+  assert.match(serviceSource, /catalog\.products\.list\(params\)/);
+  assert.doesNotMatch(serviceSource, /getClawRouterBackendSdkClient/);
   assert.doesNotMatch(productListSource, /\bfetch\s*\(|axios|XMLHttpRequest/);
   assert.doesNotMatch(serviceSource, /\bfetch\s*\(|axios|XMLHttpRequest/);
 });
 
 test("admin catalog product create flow exposes the two-step publish experience", () => {
   const appSource = readPortalFile("./src/App.tsx");
-  const indexSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-catalog/src/index.tsx");
-  const createSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-catalog/src/ProductCreatePage.tsx");
+  const indexSource = readCommerceProductAdminFile("index.tsx");
+  const createSource = readCommerceProductAdminFile("ProductCreatePage.tsx");
 
   assert.match(appSource, /path="catalog\/products\/new"/);
   assert.match(appSource, /<CatalogAdmin sectionId="productCreate" \/>/);
@@ -195,9 +224,9 @@ test("admin catalog product create flow exposes the two-step publish experience"
 });
 
 test("admin catalog categories route uses a dedicated category CRUD and seed initialization page", () => {
-  const indexSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-catalog/src/index.tsx");
-  const categorySource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-catalog/src/CategoryManagementPage.tsx");
-  const serviceSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts");
+  const indexSource = readCommerceProductAdminFile("index.tsx");
+  const categorySource = readCommerceProductAdminFile("CategoryManagementPage.tsx");
+  const serviceSource = readCommerceProductAdminFile("catalogService.ts");
 
   assert.match(indexSource, /import \{ CategoryManagementPage \} from '\.\/CategoryManagementPage'/);
   assert.match(indexSource, /activeSectionId === 'categories'/);
@@ -208,17 +237,27 @@ test("admin catalog categories route uses a dedicated category CRUD and seed ini
     "CATEGORY_SEED_DATASETS",
     "CategorySeedInitializePanel",
     "CategoryTreeTable",
-    "CategoryEditorPanel",
+    "CategoryCascadeColumns",
+    "CategoryMutationModal",
+    "CategoryParentCascader",
     "buildCategoryRows",
-    "categorySeedDatasetLabel",
+    "buildCategoryColumns",
+    "buildCategoryParentColumns",
+    "findCategoryPathIds",
+    "generateCategoryNo",
     "data-admin-category-management-page",
     "data-admin-category-initialize-button",
     "data-admin-category-create-button",
-    "data-admin-category-edit",
-    "data-admin-category-delete",
+    "data-admin-category-action-edit",
+    "data-admin-category-action-delete",
     "data-admin-category-refresh",
-    "data-admin-category-seed-dataset",
     "data-admin-category-seed-summary",
+    "data-admin-category-cascade-manager",
+    "data-admin-category-cascade-column",
+    "data-admin-category-create-modal",
+    "data-admin-category-parent-cascader",
+    "data-admin-category-context-menu",
+    "data-admin-category-action-create-child",
     "initializeCommerceCategorySeeds",
     "createCommerceCategory",
     "updateCommerceCategory",
@@ -229,14 +268,19 @@ test("admin catalog categories route uses a dedicated category CRUD and seed ini
   }
 
   assert.match(serviceSource, /export async function initializeCommerceCategorySeeds/);
-  assert.match(serviceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.catalog\.categorySeeds\.create\(/);
-  assert.match(serviceSource, /createIdempotencyParams\('backend-catalog-category-seeds-initialize'\)/);
-  assert.match(categorySource, /datasets:\s*selectedDatasets/);
+  assert.match(serviceSource, /categorySeeds\.create\(body\)/);
+  assert.doesNotMatch(serviceSource, /getClawRouterBackendSdkClient/);
+  assert.doesNotMatch(serviceSource, /createIdempotencyParams/);
+  assert.match(categorySource, /datasets:\s*\[\.\.\.CATEGORY_SEED_DATASETS\]/);
   assert.match(categorySource, /mode:\s*'admin_button'/);
-  assert.match(categorySource, /await listCommerceCategories\(\{ page:\s*1,\s*pageSize:\s*200 \}\)/);
+  assert.match(categorySource, /await listCommerceCategories\(\{ page:\s*['"]1['"],\s*pageSize:\s*String\(CATEGORY_LIST_PAGE_SIZE\) \}\)/);
   assert.match(categorySource, /await createCommerceCategory\(/);
   assert.match(categorySource, /await updateCommerceCategory\(/);
   assert.match(categorySource, /await deleteCommerceCategory\(/);
+  assert.doesNotMatch(categorySource, /CategoryEditorPanel/);
+  assert.doesNotMatch(categorySource, /categorySeedDatasetLabel/);
+  assert.doesNotMatch(categorySource, /selectedDatasets/);
+  assert.doesNotMatch(categorySource, /data-admin-category-seed-dataset/);
   assert.doesNotMatch(categorySource, /\bfetch\s*\(|axios|XMLHttpRequest/);
   assert.doesNotMatch(serviceSource, /\bfetch\s*\(|axios|XMLHttpRequest/);
 });
@@ -286,9 +330,9 @@ test("admin catalog category readers handle generated SDK unwrapped responses", 
 });
 
 test("admin catalog attributes route manages category attribute bindings", () => {
-  const indexSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-catalog/src/index.tsx");
-  const attributeSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-catalog/src/AttributeManagementPage.tsx");
-  const serviceSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts");
+  const indexSource = readCommerceProductAdminFile("index.tsx");
+  const attributeSource = readCommerceProductAdminFile("AttributeManagementPage.tsx");
+  const serviceSource = readCommerceProductAdminFile("catalogService.ts");
 
   assert.match(indexSource, /import \{ AttributeManagementPage \} from '\.\/AttributeManagementPage'/);
   assert.match(indexSource, /activeSectionId === 'attributes'/);
@@ -314,12 +358,12 @@ test("admin catalog attributes route manages category attribute bindings", () =>
     assert.match(attributeSource + serviceSource, new RegExp(escapeRegExp(marker)));
   }
 
-  assert.match(serviceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.catalog\.categoryAttributes\.list\(/);
-  assert.match(serviceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.catalog\.categoryAttributes\.create\(/);
-  assert.match(serviceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.catalog\.categoryAttributes\.update\(/);
-  assert.match(serviceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.catalog\.categoryAttributes\.delete\(/);
-  assert.match(serviceSource, /createIdempotencyParams\('backend-catalog-category-attribute-create'\)/);
-  assert.match(serviceSource, /createIdempotencyParams\('backend-catalog-category-attribute-update'\)/);
+  assert.match(serviceSource, /categoryAttributes\.list\(params\)/);
+  assert.match(serviceSource, /categoryAttributes\.create\(body\)/);
+  assert.match(serviceSource, /categoryAttributes\.update\(bindingId, body\)/);
+  assert.match(serviceSource, /categoryAttributes\.delete\(bindingId\)/);
+  assert.doesNotMatch(serviceSource, /getClawRouterBackendSdkClient/);
+  assert.doesNotMatch(serviceSource, /createIdempotencyParams/);
   assert.match(attributeSource, /searchable:\s*form\.searchable/);
   assert.match(attributeSource, /filterable:\s*form\.filterable/);
   assert.doesNotMatch(attributeSource, /鍟|鎬|�/);
@@ -340,7 +384,7 @@ test("admin catalog product create category helpers support multiple deep leaf p
 });
 
 test("admin catalog product create category modal supports usable category selection interactions", async () => {
-  const createSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-catalog/src/ProductCreatePage.tsx");
+  const createSource = readCommerceProductAdminFile("ProductCreatePage.tsx");
   const createPage = await import("./packages/sdkwork-clawrouter-pc-admin-catalog/src/ProductCreatePage.tsx");
 
   for (const marker of [
@@ -405,7 +449,7 @@ test("admin catalog product create category modal supports usable category selec
 });
 
 test("admin catalog product create flow adapts to dark mode and app theme color palettes", () => {
-  const createSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-catalog/src/ProductCreatePage.tsx");
+  const createSource = readCommerceProductAdminFile("ProductCreatePage.tsx");
 
   for (const marker of [
     "bg-slate-50 dark:bg-[#0a0a0a]",
@@ -435,8 +479,8 @@ test("admin catalog product create flow adapts to dark mode and app theme color 
 });
 
 test("admin catalog product create flow models a complete create draft and SDK submit pipeline", async () => {
-  const createSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-catalog/src/ProductCreatePage.tsx");
-  const serviceSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts");
+  const createSource = readCommerceProductAdminFile("ProductCreatePage.tsx");
+  const serviceSource = readCommerceProductAdminFile("catalogService.ts");
   const createPage = await import("./packages/sdkwork-clawrouter-pc-admin-catalog/src/ProductCreatePage.tsx");
 
   for (const marker of [
@@ -481,7 +525,7 @@ test("admin catalog product create flow models a complete create draft and SDK s
   assert.match(createSource, /image:\s*sku\.image/);
   assert.match(createSource, /商品条形码/);
   assert.match(createSource, /SKU 配图/);
-  assert.match(createSource, /import \{[\s\S]*readMediaResource[\s\S]*\} from 'sdkwork-clawrouter-pc-commons\/runtime'/);
+  assert.match(createSource, /import \{[\s\S]*readMediaResource[\s\S]*\} from '\.\/commerce-media-resource'/);
   assert.match(createSource, /readMediaResource\(value\)/);
   assert.doesNotMatch(createSource, /return value as unknown as ClawRouterMediaResource/);
   assert.match(createSource, /库存创建接口待补齐/);
@@ -608,7 +652,7 @@ test("admin catalog product create flow models a complete create draft and SDK s
 });
 
 test("admin catalog product list keeps the screenshot-matched operational layout", () => {
-  const productListSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-catalog/src/ProductListPage.tsx");
+  const productListSource = readCommerceProductAdminFile("ProductListPage.tsx");
 
   for (const marker of [
     "bg-slate-50 dark:bg-[#0a0a0a]",
@@ -646,7 +690,7 @@ test("admin catalog product list keeps the screenshot-matched operational layout
 });
 
 test("admin catalog product list adapts to dark mode and app theme color palettes", () => {
-  const productListSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-catalog/src/ProductListPage.tsx");
+  const productListSource = readCommerceProductAdminFile("ProductListPage.tsx");
   const themePreferenceSource = readPortalFile("./src/themePreference.ts");
 
   for (const marker of [
@@ -742,7 +786,7 @@ test("admin catalog product list computes resilient server-side pagination state
 });
 
 test("admin catalog non-product sections keep the shared resource center", () => {
-  const indexSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-catalog/src/index.tsx");
+  const indexSource = readCommerceProductAdminFile("index.tsx");
 
   assert.match(indexSource, /<AdminResourceCenter/);
   assert.match(indexSource, /tableViewportDataAttribute="admin-catalog-table-viewport"/);
@@ -750,10 +794,10 @@ test("admin catalog non-product sections keep the shared resource center", () =>
 });
 
 test("admin catalog table-heavy custom pages stay inside the admin viewport", () => {
-  const productListSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-catalog/src/ProductListPage.tsx");
-  const skuSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-catalog/src/SkuManagementPage.tsx");
-  const categorySource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-catalog/src/CategoryManagementPage.tsx");
-  const attributeSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-catalog/src/AttributeManagementPage.tsx");
+  const productListSource = readCommerceProductAdminFile("ProductListPage.tsx");
+  const skuSource = readCommerceProductAdminFile("SkuManagementPage.tsx");
+  const categorySource = readCommerceProductAdminFile("CategoryManagementPage.tsx");
+  const attributeSource = readCommerceProductAdminFile("AttributeManagementPage.tsx");
 
   assert.match(productListSource, /data-admin-product-list-table-viewport/);
   assert.match(productListSource, /className="min-h-0 flex-1 overflow-auto"/);

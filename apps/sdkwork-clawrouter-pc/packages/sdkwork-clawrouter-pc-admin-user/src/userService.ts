@@ -2,10 +2,10 @@ import {
   createIdempotencyParams,
   ensureSdkworkApiSuccess,
   getClawRouterBackendSdkClient,
+  getSdkworkAppbaseBackendSdkClient,
   isRecord,
   readApiData,
   readApiRecord,
-  readBoolean,
   readRequiredApiItems,
   readRequiredApiItem,
   readRequiredPositiveInt64String,
@@ -17,8 +17,6 @@ import {
 } from 'sdkwork-clawrouter-pc-commons/runtime';
 import type {
   AdminApiKeyCreateRequest,
-  AdminUserCreateRequest,
-  AdminUserUpdateRequest,
 } from '@sdkwork/clawrouter-backend-sdk';
 
 export interface UserListItem {
@@ -70,22 +68,24 @@ type UserAdminTableDataLoaders = {
   fetchApiKeysMap?: typeof UserService.fetchApiKeysMap;
 };
 
+type AppbaseOperationCommand = Record<string, unknown>;
+
 export class UserService {
   static async fetchUsers(): Promise<UserListItem[]> {
-    const result = await getClawRouterBackendSdkClient().iam.users.list();
+    const result = await getSdkworkAppbaseBackendSdkClient().iam.users.list();
     ensureSdkworkApiSuccess(result, 'admin.user.errors.fetchUsersFallback');
     return readRequiredApiItems(result, 'admin.user.errors.fetchUsersFallback')
       .map(normalizeUser);
   }
 
   static async fetchApiKeysMap(): Promise<Record<string, ApiKeyItem[]>> {
-    const result = await getClawRouterBackendSdkClient().iam.apiKeys.list();
+    const result = await getSdkworkAppbaseBackendSdkClient().iam.apiKeys.list();
     ensureSdkworkApiSuccess(result, 'admin.user.errors.fetchApiKeysFallback');
     return normalizeApiKeysMap(readApiData(result));
   }
 
   static async addUser(user: UserCreateInput): Promise<UserListItem> {
-    const result = await getClawRouterBackendSdkClient().iam.users.create(
+    const result = await getSdkworkAppbaseBackendSdkClient().iam.users.create(
       toCreateUserRequest(user),
     );
     ensureSdkworkApiSuccess(result, 'admin.user.errors.addUserFallback');
@@ -93,8 +93,10 @@ export class UserService {
   }
 
   static async updateUser(id: string, updates: UserUpdateInput): Promise<UserListItem> {
-    const result = await getClawRouterBackendSdkClient().iam.users.update(
-      toUpdateUserRequest(id, updates),
+    const userId = requiredPositiveInt64String(id, 'id');
+    const result = await getSdkworkAppbaseBackendSdkClient().iam.users.update(
+      userId,
+      toUpdateUserRequest(updates),
     );
     ensureSdkworkApiSuccess(result, 'admin.user.errors.updateUserFallback');
     return normalizeUser(readRequiredApiItem(result, 'admin.user.errors.updateUserMissingData'));
@@ -126,7 +128,7 @@ export class UserService {
     const result = await getClawRouterBackendSdkClient().iam.apiKeys.delete(
       requiredSafePathSegment(keyId, 'apiKeyId'),
     );
-    ensureDeleteResult(result, 'admin.user.errors.deleteApiKeyFallback');
+    ensureSdkworkApiSuccess(result, 'admin.user.errors.deleteApiKeyFallback');
     void userId;
   }
 
@@ -155,7 +157,7 @@ export class UserService {
   }
 }
 
-function toCreateUserRequest(user: UserCreateInput): AdminUserCreateRequest {
+function toCreateUserRequest(user: UserCreateInput): AppbaseOperationCommand {
   return pruneUndefined({
     email: requiredText(user.email, 'email'),
     username: optionalText(user.username),
@@ -163,9 +165,8 @@ function toCreateUserRequest(user: UserCreateInput): AdminUserCreateRequest {
   });
 }
 
-function toUpdateUserRequest(id: string, updates: UserUpdateInput): AdminUserUpdateRequest {
+function toUpdateUserRequest(updates: UserUpdateInput): AppbaseOperationCommand {
   return pruneUndefined({
-    id: requiredPositiveInt64String(id, 'id'),
     username: optionalText(updates.username),
     group: optionalText(updates.group),
     status: updates.status,
@@ -194,13 +195,6 @@ function optionalText(value: string | undefined): string | undefined {
 
 function pruneUndefined<T extends object>(value: T): T {
   return Object.fromEntries(Object.entries(value).filter(([, item]) => item !== undefined)) as T;
-}
-
-function ensureDeleteResult(result: unknown, message: string): void {
-  ensureSdkworkApiSuccess(result, message);
-  if (readBoolean(readApiRecord(result), 'deleted') !== true) {
-    throw new Error(message);
-  }
 }
 
 function asError(error: unknown): Error {

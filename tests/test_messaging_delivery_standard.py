@@ -237,7 +237,7 @@ class MessagingDeliveryStandardTest(unittest.TestCase):
         self.assertIn("form.channel === 'sms' ? 'text' : form.contentFormat", admin_source)
 
     def test_appbase_declares_messaging_as_first_class_l3_capability(self) -> None:
-        catalog_path = ROOT / "sdkwork-appbase" / "specs" / "appbase-capabilities.yaml"
+        catalog_path = ROOT / ".sdkwork" / "dependencies" / "sdkwork-appbase" / "specs" / "appbase-capabilities.yaml"
         catalog = yaml.safe_load(catalog_path.read_text(encoding="utf-8"))
         capabilities = {
             item.get("id"): item

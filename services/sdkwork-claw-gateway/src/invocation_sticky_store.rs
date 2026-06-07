@@ -1,4 +1,4 @@
-use sdkwork_claw_product::domain::{DomainError, DomainResult};
+use sdkwork_claw_product::domain::DomainError;
 use sdkwork_claw_product::ports::{
     StickyObjectRouteBinding, StickyObjectRouteLookup, StickyObjectRouteUpsert, StickyRouteStore,
     StickyRouteStoreFuture,

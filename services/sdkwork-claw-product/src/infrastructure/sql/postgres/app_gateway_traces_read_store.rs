@@ -177,10 +177,6 @@ fn required_integer_cell(row: &sqlx::postgres::PgRow, column: &str) -> DomainRes
     optional_integer_cell(row, column).ok_or_else(|| missing_integer_cell_error(column))
 }
 
-fn integer_cell(row: &sqlx::postgres::PgRow, column: &str) -> i64 {
-    optional_integer_cell(row, column).unwrap_or(0)
-}
-
 fn optional_integer_cell(row: &sqlx::postgres::PgRow, column: &str) -> Option<i64> {
     row.try_get::<Option<i64>, _>(column)
         .ok()

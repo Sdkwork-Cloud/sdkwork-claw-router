@@ -3,8 +3,7 @@
 `sdkwork-apps.json` is the install-time PlusApp seed bundle for SDKWork Claw Router.
 `sdkwork-app-categories.json` is the matching install-time `PlusCategory` seed manifest for the
 App Center categories derived from `plusApp.config.portal.category`.
-
-The source of truth is each app's `sdkwork.app.config.json` under `spring-ai-plus-business/apps`.
+ 
 Generate this file from the app standard exporter instead of editing individual app projections by
 hand:
 
@@ -12,8 +11,7 @@ hand:
 pnpm app-store:seed:update
 pnpm app-store:seed:check
 ```
-
-The update script scans all registerable apps under `spring-ai-plus-business/apps`, initializes
+ 
 missing `sdkwork.app.config.json` manifests, exports `sdkwork-apps.json`, and regenerates the
 matching category manifest with `python -B -m tools.app_seed_category_manifest`. Use
 `pnpm app-store:seed:update -- --sync-db` only when the refreshed seed should be imported into the

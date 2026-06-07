@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::models::{OpenAiSkillVersion};
+use crate::models::OpenAiSkillVersion;
 
 /// OpenAI-compatible skill object exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]

@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::models::{OpenAiProjectServiceAccount};
+use crate::models::OpenAiProjectServiceAccount;
 
 /// OpenAI-compatible paginated list of project service accounts.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]

@@ -1,15 +1,12 @@
 export {
   FileUploadButton,
   FileUploadQueue,
-  defaultUploadTransport,
   type FileUploadButtonCompletedResult,
   type FileUploadButtonProps,
   type FileUploadButtonStatus,
   type FileUploadQueueItem,
   type FileUploadQueueItemStatus,
   type FileUploadQueueProps,
-  type FileUploadTransport,
-  type FileUploadTransportInput,
 } from "../../sdkwork-file-upload-pc-react/src/index";
 
 export {

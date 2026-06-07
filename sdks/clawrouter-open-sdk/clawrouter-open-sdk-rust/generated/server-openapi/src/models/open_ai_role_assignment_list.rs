@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::models::{OpenAiRoleAssignment};
+use crate::models::OpenAiRoleAssignment;
 
 /// OpenAI-compatible paginated list of role assignments.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]

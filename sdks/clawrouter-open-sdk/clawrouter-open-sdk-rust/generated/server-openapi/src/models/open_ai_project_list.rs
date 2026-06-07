@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::models::{OpenAiProject};
+use crate::models::OpenAiProject;
 
 /// OpenAI-compatible paginated list of projects.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]

@@ -2,7 +2,7 @@
 
 > 版本：0.1
 > 日期：2026-04-28
-> 范围：`apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-skills-hub`、`spring-ai-plus-app-api`、`spring-ai-plus-backend-api`、`spring-ai-plus-business-entity`
+> 范围：`apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-skills-hub`、`legacy-java-plus-app-api`、`legacy-java-plus-backend-api`、`legacy-java-plus-entity`
 
 ## 1. 结论
 
@@ -17,7 +17,7 @@ SkillsHub 不再设计独立的技能主数据表。技能、技能包、用户�
 
 ## 2. API 契约
 
-app 端 API 固定走 Java `spring-ai-plus-app-api` 已有路径，返回 `PlusApiResult<T>`：
+app 端 API 固定走 Java `legacy-java-plus-app-api` 已有路径，返回 `PlusApiResult<T>`：
 
 | 能力 | 路径 |
 | --- | --- |
@@ -37,7 +37,7 @@ app 端 API 固定走 Java `spring-ai-plus-app-api` 已有路径，返回 `PlusA
 | 禁用技能 | `POST /app/v3/api/skills/{skillId}/disable` |
 | 用户配置 | `PUT /app/v3/api/skills/{skillId}/config` |
 
-backend 管理端 API 固定走 Java `spring-ai-plus-backend-api` 已有路径，返回 `PlusApiResult<T>`：
+backend 管理端 API 固定走 Java `legacy-java-plus-backend-api` 已有路径，返回 `PlusApiResult<T>`：
 
 | 能力 | 路径 |
 | --- | --- |

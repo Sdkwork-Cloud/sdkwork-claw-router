@@ -26,13 +26,14 @@ const iconSlot = createFileSlotDefinition({
 });
 
 describe("SDKWork file service", () => {
-  it("creates upload sessions only after slot validation and quota reservation", async () => {
+  it("uploads files only after slot validation and quota reservation", async () => {
     const events: string[] = [];
     const ports = createRecordingPorts(events);
     const service = createFilePlatformService({ ports, slots: [iconSlot] });
 
-    const result = await service.createUploadSession({
+    const result = await service.uploadFile({
       contentType: "image/png",
+      file: createTestFile("icon.png", "image/png", 1024),
       filename: "icon.png",
       idempotencyKey: "idem-create",
       organizationId: "org_1",
@@ -46,22 +47,52 @@ describe("SDKWork file service", () => {
 
     expect(events).toEqual([
       "usage.reserveUploadQuota:organization:org_1:1024:idem-create",
-      "upload.createUploadSession:app.icon:icon.png",
+      "upload.uploadFile:app.icon:icon.png:image",
     ]);
     expect(result).toEqual({
-      presigned: {
-        expiresAt: "2026-05-23T08:10:00.000Z",
-        headers: { "Content-Type": "image/png" },
-        method: "PUT",
-        url: "memory://upload/upl_1",
+      driveNodeId: "node_upload_1",
+      driveSpaceId: "space_org",
+      driveUri: "drive://spaces/space_org/nodes/node_upload_1",
+      fileRef: {
+        displayName: "icon.png",
+        fileId: "node_upload_1",
+        purpose: "app.icon",
+        visibility: "private",
       },
       quotaReservationId: "quota_1",
       requestId: "req-create",
-      sessionId: "upl_1",
       slotCode: "app.icon",
-      status: "presigned",
-      uploadMode: "single_put",
+      status: "active",
+      uploadId: "upload_1",
     });
+  });
+
+  it("releases reserved quota when Drive upload fails", async () => {
+    const events: string[] = [];
+    const ports = createRecordingPorts(events, { failUpload: true });
+    const service = createFilePlatformService({ ports, slots: [iconSlot] });
+
+    await expect(
+      service.uploadFile({
+        contentType: "image/png",
+        file: createTestFile("icon.png", "image/png", 1024),
+        filename: "icon.png",
+        idempotencyKey: "idem-fail",
+        organizationId: "org_1",
+        requestId: "req-fail",
+        sizeBytes: 1024,
+        slotCode: "app.icon",
+        target: { id: "app_1", type: "app" },
+        tenantId: "tenant_1",
+        userId: "user_1",
+      }),
+    ).rejects.toThrow("Drive upload failed");
+
+    expect(events).toEqual([
+      "usage.reserveUploadQuota:organization:org_1:1024:idem-fail",
+      "upload.uploadFile:app.icon:icon.png:image",
+      "usage.releaseUploadQuota:quota_1",
+    ]);
   });
 
   it("rejects uploads that violate slot MIME and size policy before reserving quota", async () => {
@@ -69,8 +100,9 @@ describe("SDKWork file service", () => {
     const service = createFilePlatformService({ ports: createRecordingPorts(events), slots: [iconSlot] });
 
     await expect(
-      service.createUploadSession({
+      service.uploadFile({
         contentType: "image/gif",
+        file: createTestFile("icon.gif", "image/gif", 1024),
         filename: "icon.gif",
         idempotencyKey: "idem-gif",
         organizationId: "org_1",
@@ -82,8 +114,9 @@ describe("SDKWork file service", () => {
     ).rejects.toMatchObject({ code: "file.slot_mime_not_allowed" });
 
     await expect(
-      service.createUploadSession({
+      service.uploadFile({
         contentType: "image/png",
+        file: createTestFile("huge.png", "image/png", 6 * 1024 * 1024),
         filename: "huge.png",
         idempotencyKey: "idem-huge",
         organizationId: "org_1",
@@ -97,7 +130,7 @@ describe("SDKWork file service", () => {
     expect(events).toEqual([]);
   });
 
-  it("completes uploads with the slot code as purpose and returns stable file refs", async () => {
+  it("completes legacy uploads with the slot code as purpose and returns stable file refs", async () => {
     const events: string[] = [];
     const service = createFilePlatformService({ ports: createRecordingPorts(events), slots: [iconSlot] });
 
@@ -115,30 +148,6 @@ describe("SDKWork file service", () => {
       purpose: "app.icon",
       visibility: "private",
     });
-  });
-
-  it("issues multipart upload part presigned grants through the upload port", async () => {
-    const events: string[] = [];
-    const service = createFilePlatformService({ ports: createRecordingPorts(events), slots: [iconSlot] });
-
-    const result = await service.presignUploadPart({
-      partNumber: 3,
-      requestId: "req-part",
-      sessionId: "upl_1",
-    });
-
-    expect(result).toEqual({
-      partNumber: 3,
-      presigned: {
-        expiresAt: "2026-05-23T08:10:00.000Z",
-        headers: { "x-amz-checksum-sha256": "part-checksum" },
-        method: "PUT",
-        url: "memory://upload/upl_1/parts/3",
-      },
-      requestId: "req-part",
-      sessionId: "upl_1",
-    });
-    expect(events).toEqual(["upload.presignUploadPart:upl_1:3"]);
   });
 
   it("creates bindings through the binding port without exposing object storage internals", async () => {
@@ -391,7 +400,10 @@ describe("SDKWork file service", () => {
 
 function createRecordingPorts(
   events: string[],
-  options: { bindings?: Array<{ bindingId?: string; displayName?: string; fileId: string; purpose: string; visibility: "private" | "restricted" | "shared" }> } = {},
+  options: {
+    bindings?: Array<{ bindingId?: string; displayName?: string; fileId: string; purpose: string; visibility: "private" | "restricted" | "shared" }>;
+    failUpload?: boolean;
+  } = {},
 ): FilePlatformPorts {
   const ports = createUnsupportedFilePlatformPorts();
   return {
@@ -524,33 +536,24 @@ function createRecordingPorts(
           status: "active",
         };
       },
-      async createUploadSession(input) {
-        events.push(`upload.createUploadSession:${input.purpose}:${input.filename}`);
+      async uploadFile(input) {
+        events.push(`upload.uploadFile:${input.purpose}:${input.filename}:${input.uploadProfileCode}`);
+        if (options.failUpload) {
+          throw new Error("Drive upload failed");
+        }
         return {
-          presigned: {
-            expiresAt: "2026-05-23T08:10:00.000Z",
-            headers: { "Content-Type": input.contentType },
-            method: "PUT",
-            url: "memory://upload/upl_1",
+          driveNodeId: "node_upload_1",
+          driveSpaceId: input.spaceId ?? "space_org",
+          driveUri: `drive://spaces/${input.spaceId ?? "space_org"}/nodes/node_upload_1`,
+          fileRef: {
+            displayName: input.filename,
+            fileId: "node_upload_1",
+            purpose: input.purpose,
+            visibility: "private",
           },
           requestId: input.requestId,
-          sessionId: "upl_1",
-          status: "presigned",
-          uploadMode: "single_put",
-        };
-      },
-      async presignUploadPart(input) {
-        events.push(`upload.presignUploadPart:${input.sessionId}:${input.partNumber}`);
-        return {
-          partNumber: input.partNumber,
-          presigned: {
-            expiresAt: "2026-05-23T08:10:00.000Z",
-            headers: { "x-amz-checksum-sha256": "part-checksum" },
-            method: "PUT",
-            url: `memory://upload/${input.sessionId}/parts/${input.partNumber}`,
-          },
-          requestId: input.requestId,
-          sessionId: input.sessionId,
+          status: "active",
+          uploadId: "upload_1",
         };
       },
     },
@@ -588,4 +591,8 @@ function createRecordingPorts(
       },
     },
   };
+}
+
+function createTestFile(name: string, type: string, size: number): Blob & { name: string } {
+  return Object.assign(new Blob([new Uint8Array(size)], { type }), { name });
 }

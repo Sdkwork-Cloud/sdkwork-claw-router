@@ -28,7 +28,7 @@ class SchemaManifestGeneratorTest(unittest.TestCase):
                 tables:
                   - table: plus_order
                     domain: legacy
-                    write_owner: spring-ai-plus-business-entity
+                    
                     generated_by_this_project: false
                     frontend_routes: [/console/orders, /admin/order]
                     api_surfaces: [app, backend]

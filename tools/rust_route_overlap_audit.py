@@ -26,7 +26,7 @@ class RustRouteOverlapAudit:
 
     SOURCE_ROOTS: tuple[str, ...] = (
         "services",
-        "sdkwork-appbase/packages/native-rust",
+        ".sdkwork/dependencies/sdkwork-appbase/packages/native-rust",
     )
     ROUTE_MARKER = ".route("
     METHOD_NAMES: tuple[str, ...] = ("delete", "get", "patch", "post", "put")

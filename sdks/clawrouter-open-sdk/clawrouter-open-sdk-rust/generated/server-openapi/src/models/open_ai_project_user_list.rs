@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::models::{OpenAiProjectUser};
+use crate::models::OpenAiProjectUser;
 
 /// OpenAI-compatible paginated list of project users.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]

@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 1,
+  "kind": "sdkwork.dependency-api-surfaces",
+  "application": "sdkwork-claw-router",
+  "description": "Runtime dependency API surface declarations for dependency SDKs consumed by SDKWork Claw Router. sdkDependencies owns generation boundaries; this manifest owns runtime mount/base-url decisions.",
+  "dependencies": [
+    {
+      "workspace": "sdkwork-appbase-app-sdk",
+      "consumerSdkFamily": "clawrouter-app-sdk",
+      "role": "appbase-app-capability",
+      "dependencyMode": "consumer-sdk",
+      "surface": "app-api",
+      "apiPrefix": "/app/v3/api",
+      "runtimeIntegration": {
+        "mode": "same-origin-mounted",
+        "sameOriginAllowed": true,
+        "baseUrlEnv": "VITE_SDKWORK_APPBASE_APP_API_BASE_URL",
+        "fallbackBaseUrlEnv": "VITE_CLAWROUTER_APP_API_BASE_URL",
+        "publicBaseUrlEnv": "PORTAL_PUBLIC_APP_API_BASE_URL",
+        "rustRouteContractCrate": {
+          "package": "sdkwork_iam_http",
+          "path": ".sdkwork/dependencies/sdkwork-appbase/packages/native-rust/iam/sdkwork-iam-http-rust",
+          "routeMetadataExports": [
+            "app_routes"
+          ],
+          "executableRouterExport": null
+        },
+        "handlerAdapterExports": [
+          {
+            "package": "sdkwork_claw_product::api",
+            "exports": [
+              "app_sessions_router_with_store",
+              "app_sessions_router_with_store_and_verification_sender",
+              "app_user_profile_router",
+              "app_user_profile_router_with_read_store",
+              "app_iam_directory_router",
+              "app_iam_directory_router_with_read_store"
+            ]
+          }
+        ],
+        "mountCoverage": {
+          "status": "verified",
+          "evidence": [
+            "services/sdkwork-claw-app-api/src/lib.rs merges app_sessions_router, app_user_profile_router, and app_iam_directory_router in database-backed runtime paths.",
+            "services/sdkwork-claw-product/src/api/app_auth.rs declares /app/v3/api/auth/*, /app/v3/api/open_platform/qr_auth/*, and /app/v3/api/system/iam/* handler adapters.",
+            "services/sdkwork-claw-product/src/api/app_user_profile.rs declares /app/v3/api/iam/users/current.",
+            "services/sdkwork-claw-product/src/api/app_iam_directory.rs declares appbase IAM directory read routes under /app/v3/api/iam/*.",
+            "sdks/clawrouter-app-sdk/openapi/clawrouter-app-sdk.openapi.json records sdkwork-appbase-app-sdk exclusions so generated Claw Router app SDK stays owner-only."
+          ]
+        }
+      }
+    },
+    {
+      "workspace": "sdkwork-appbase-backend-sdk",
+      "consumerSdkFamily": "clawrouter-backend-sdk",
+      "role": "appbase-backend-management-capability",
+      "dependencyMode": "consumer-sdk",
+      "surface": "backend-api",
+      "apiPrefix": "/backend/v3/api",
+      "dependencyOwnedOperations": [
+        {
+          "method": "GET",
+          "path": "/backend/v3/api/iam/api_keys",
+          "operationId": "apiKeys.list",
+          "owner": "sdkwork-appbase",
+          "sdkClient": "getSdkworkAppbaseBackendSdkClient().iam.apiKeys.list",
+          "consumerRequired": true
+        },
+        {
+          "method": "POST",
+          "path": "/backend/v3/api/iam/api_keys/{apiKeyId}/revoke",
+          "operationId": "apiKeys.revoke",
+          "owner": "sdkwork-appbase",
+          "sdkClient": "getSdkworkAppbaseBackendSdkClient().iam.apiKeys.revoke",
+          "consumerRequired": false
+        },
+        {
+          "method": "GET",
+          "path": "/backend/v3/api/iam/users",
+          "operationId": "users.list",
+          "owner": "sdkwork-appbase",
+          "sdkClient": "getSdkworkAppbaseBackendSdkClient().iam.users.list",
+          "consumerRequired": true
+        },
+        {
+          "method": "POST",
+          "path": "/backend/v3/api/iam/users",
+          "operationId": "users.create",
+          "owner": "sdkwork-appbase",
+          "sdkClient": "getSdkworkAppbaseBackendSdkClient().iam.users.create",
+          "consumerRequired": true
+        },
+        {
+          "method": "PATCH",
+          "path": "/backend/v3/api/iam/users/{userId}",
+          "operationId": "users.update",
+          "owner": "sdkwork-appbase",
+          "sdkClient": "getSdkworkAppbaseBackendSdkClient().iam.users.update",
+          "consumerRequired": true
+        }
+      ],
+      "productOwnedOperationOverrides": [
+        {
+          "method": "POST",
+          "path": "/backend/v3/api/iam/api_keys",
+          "operationId": "apiKeys.create",
+          "owner": "sdkwork-claw-router",
+          "sdkClient": "getClawRouterBackendSdkClient().iam.apiKeys.create",
+          "consumerRequired": true,
+          "evidence": "services/sdkwork-claw-product/src/api/admin_user.rs create_api_key builds Claw Router gateway API key secrets, hashes, audit records, and idempotency."
+        },
+        {
+          "method": "DELETE",
+          "path": "/backend/v3/api/iam/api_keys/{apiKeyId}",
+          "operationId": "apiKeys.delete",
+          "owner": "sdkwork-claw-router",
+          "sdkClient": "getClawRouterBackendSdkClient().iam.apiKeys.delete",
+          "consumerRequired": true,
+          "evidence": "services/sdkwork-claw-product/src/api/admin_user.rs delete_api_key deletes Claw Router gateway API keys through the product AdminUserStore."
+        }
+      ],
+      "runtimeIntegration": {
+        "mode": "external-service",
+        "sameOriginAllowed": false,
+        "requiredBaseUrlEnv": "VITE_SDKWORK_APPBASE_BACKEND_API_BASE_URL",
+        "publicBaseUrlEnv": "PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL",
+        "rustRouteContractCrate": {
+          "package": "sdkwork_iam_http",
+          "path": ".sdkwork/dependencies/sdkwork-appbase/packages/native-rust/iam/sdkwork-iam-http-rust",
+          "routeMetadataExports": [
+            "backend_routes"
+          ],
+          "executableRouterExport": null
+        },
+        "handlerAdapterExports": [],
+        "mountCoverage": {
+          "status": "not-mounted",
+          "evidence": [
+            "sdkwork_iam_http exports backend_routes() route metadata including /backend/v3/api/iam/organizations/tree and /backend/v3/api/iam/roles.",
+            "sdkwork_iam_http does not export an axum Router or executable backend IAM handler adapter.",
+            "Claw Router backend/admin Rust runtime has no verified appbase backend IAM router merge for roles, permissions, organization tree, users, tenants, policies, api keys, security events, or audit events."
+          ]
+        }
+      }
+    }
+  ]
+}

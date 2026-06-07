@@ -34,7 +34,7 @@ class ApiContractManifestGenerator:
             "sdk_client": "SdkworkAppClient",
             "openapi_source": "generated/openapi/clawrouter-app-openapi.json",
             "generated_sdk_home": "sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript",
-            "generator": "sdk/sdkwork-sdk-generator",
+            "generator": ".sdkwork/dependencies/sdkwork-sdk-generator",
         },
         "backend": {
             "api_prefix": "/backend/v3/api",
@@ -42,7 +42,7 @@ class ApiContractManifestGenerator:
             "sdk_client": "SdkworkBackendClient",
             "openapi_source": "generated/openapi/clawrouter-backend-openapi.json",
             "generated_sdk_home": "sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript",
-            "generator": "sdk/sdkwork-sdk-generator",
+            "generator": ".sdkwork/dependencies/sdkwork-sdk-generator",
         },
         "openai_v1": {
             "api_prefix": "/v1",
@@ -50,7 +50,7 @@ class ApiContractManifestGenerator:
             "sdk_client": "SdkworkAiClient",
             "openapi_source": "apps/sdkwork-clawrouter-pc/public/openapi.json",
             "generated_sdk_home": "sdks/clawrouter-open-sdk/clawrouter-open-sdk-typescript",
-            "generator": "sdk/sdkwork-sdk-generator",
+            "generator": ".sdkwork/dependencies/sdkwork-sdk-generator",
         },
     }
     VALID_KINDS = {"read", "create", "update", "delete", "action"}

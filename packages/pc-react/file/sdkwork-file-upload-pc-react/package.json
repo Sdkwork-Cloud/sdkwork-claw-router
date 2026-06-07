@@ -16,12 +16,11 @@
     "README.md"
   ],
   "scripts": {
-    "typecheck": "node ../../../../sdkwork-appbase/node_modules/typescript/bin/tsc -p tsconfig.json --noEmit",
-    "test": "node ../../../../sdkwork-appbase/node_modules/vitest/vitest.mjs run tests --config vitest.config.ts --pool vmThreads"
+    "typecheck": "node ../../../../apps/sdkwork-clawrouter-pc/node_modules/typescript/bin/tsc -p tsconfig.json --noEmit",
+    "test": "node ../../../../apps/sdkwork-clawrouter-pc/node_modules/vitest/vitest.mjs run tests --config vitest.config.ts --pool vmThreads"
   },
   "dependencies": {
     "@sdkwork/file-contracts": "workspace:*",
-    "@sdkwork/file-upload-client": "workspace:*",
     "@sdkwork/file-service": "workspace:*",
     "react": "catalog:"
   },

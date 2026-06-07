@@ -46,7 +46,7 @@ Examples:
   pnpm nginx:plan -- --domain api.sdkwork.com
   pnpm nginx:render -- --domain api.sdkwork.com --output-root target/nginx
   sudo pnpm nginx:deploy -- --domain api.sdkwork.com --cert-name sdkwork.com
-  pnpm nginx:deploy -- --platform windows --domain www.sdkwork.com --output-root C:/nginx/conf
+  pnpm nginx:deploy -- --platform windows --domain www.sdkwork.com --output-root target/nginx
 `);
 }
 

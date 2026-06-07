@@ -6,7 +6,8 @@ frontend_operations:
   kind: create
   api_surface: backend
   api_method: POST
-  api_path: /backend/v3/api/user
+  api_path: /backend/v3/api/iam/users
+  openapi_exposed: false
   read_sources:
   - iam_user
   - iam_role
@@ -99,8 +100,9 @@ frontend_operations:
   operation: updateUser
   kind: update
   api_surface: backend
-  api_method: PUT
-  api_path: /backend/v3/api/user
+  api_method: PATCH
+  api_path: /backend/v3/api/iam/users/{userId}
+  openapi_exposed: false
   read_sources:
   - iam_user
   - iam_role
@@ -111,14 +113,7 @@ frontend_operations:
   - ops_audit_log
   request_schema:
     name: AdminUserUpdateRequest
-    required:
-    - id
     properties:
-      id:
-        type: integer
-        format: int64
-        minimum: 1
-        description: User identifier.
       username:
         type: string
         minLength: 1

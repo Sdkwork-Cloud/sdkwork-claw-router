@@ -11,6 +11,7 @@ import {
   validateFileSdkAdapterStandard,
   type SdkworkFileAppSdkClient,
   type SdkworkFileBackendSdkClient,
+  type SdkworkFileDriveUploaderClient,
 } from "../src/index";
 
 const iconSlot = createFileSlotDefinition({
@@ -34,9 +35,6 @@ describe("SDKWork file SDK adapter", () => {
 
     expect(SDKWORK_FILE_SDK_ADAPTER_METHODS.map((entry) => entry.serviceMethod)).toEqual(
       expect.arrayContaining([
-        "createUploadSession",
-        "completeUpload",
-        "presignUploadPart",
         "listFiles",
         "bindFile",
         "listDriveSpaces",
@@ -57,6 +55,13 @@ describe("SDKWork file SDK adapter", () => {
         "listUsageSnapshots",
       ]),
     );
+    expect(SDKWORK_FILE_SDK_ADAPTER_METHODS.map((entry) => entry.serviceMethod)).not.toEqual(
+      expect.arrayContaining([
+        `create${"UploadSession"}`,
+        "completeUpload",
+        `presign${"UploadPart"}`,
+      ]),
+    );
     for (const entry of SDKWORK_FILE_SDK_ADAPTER_METHODS) {
       expect(openApiOperationIds.has(entry.operationId)).toBe(true);
       expect(entry).not.toHaveProperty("path");
@@ -70,22 +75,22 @@ describe("SDKWork file SDK adapter", () => {
   });
 
   it("reports adapter command mappings whose OpenAPI operation lacks a JSON request body", () => {
-    const withoutUploadRequestBody = {
+    const withoutBindingRequestBody = {
       ...SDKWORK_FILE_APP_OPENAPI,
       paths: {
         ...SDKWORK_FILE_APP_OPENAPI.paths,
-        "/app/v3/api/upload/sessions": {
-          ...SDKWORK_FILE_APP_OPENAPI.paths["/app/v3/api/upload/sessions"],
+        "/app/v3/api/file_bindings": {
+          ...SDKWORK_FILE_APP_OPENAPI.paths["/app/v3/api/file_bindings"],
           post: {
-            ...SDKWORK_FILE_APP_OPENAPI.paths["/app/v3/api/upload/sessions"].post,
+            ...SDKWORK_FILE_APP_OPENAPI.paths["/app/v3/api/file_bindings"].post,
             requestBody: undefined,
           },
         },
       },
     };
 
-    expect(validateFileSdkAdapterStandard(withoutUploadRequestBody, SDKWORK_FILE_BACKEND_OPENAPI)).toContain(
-      "missing_command_request_body:app:createUploadSession",
+    expect(validateFileSdkAdapterStandard(withoutBindingRequestBody, SDKWORK_FILE_BACKEND_OPENAPI)).toContain(
+      "missing_command_request_body:app:bindFile",
     );
   });
 
@@ -118,26 +123,24 @@ describe("SDKWork file SDK adapter", () => {
     const events: string[] = [];
     const service = createFilePlatformServiceFromSdkClient({
       app: createRecordingAppSdk(events),
+      drive: createRecordingDriveSdk(events),
       slots: [iconSlot],
     });
 
     expect(service.getSlot("app.icon")).toEqual(iconSlot);
 
-    const session = await service.createUploadSession({
+    const uploaded = await service.uploadFile({
       contentType: "image/png",
+      file: createTestFile("icon.png", "image/png", 1024),
       filename: "icon.png",
       idempotencyKey: "idem-create",
+      organizationId: "org_1",
       requestId: "req-create",
       sizeBytes: 1024,
       slotCode: "app.icon",
       target: { id: "app_1", type: "app" },
-    });
-    const part = await service.presignUploadPart({ partNumber: 2, requestId: "req-part", sessionId: session.sessionId });
-    const completed = await service.completeUpload({
-      idempotencyKey: "idem-complete",
-      requestId: "req-complete",
-      sessionId: session.sessionId,
-      slotCode: "app.icon",
+      tenantId: "tenant_1",
+      userId: "user_1",
     });
     const files = await service.listFiles({
       purpose: "app.icon",
@@ -156,33 +159,27 @@ describe("SDKWork file SDK adapter", () => {
       scopeType: "organization",
     });
 
-    expect(session).toEqual({
-      presigned: {
-        expiresAt: "2026-05-23T08:10:00.000Z",
-        headers: { "Content-Type": "image/png" },
-        method: "PUT",
-        url: "https://upload.example.test/object",
+    expect(uploaded).toEqual({
+      driveNodeId: "node_drive_1",
+      driveSpaceId: "space_drive_1",
+      driveUri: "drive://spaces/space_drive_1/nodes/node_drive_1",
+      fileRef: {
+        displayName: "icon.png",
+        fileId: "node_drive_1",
+        purpose: "app.icon",
+        visibility: "private",
       },
       requestId: "req-create",
-      sessionId: "upl_1",
       slotCode: "app.icon",
-      status: "presigned",
-      uploadMode: "single_put",
+      status: "active",
+      uploadId: "upload_item_1",
     });
-    expect(session).not.toHaveProperty("quotaReservationId");
-    expect(part.partNumber).toBe(2);
-    expect(completed.fileRef).toEqual({
-      fileId: "file_1",
-      purpose: "app.icon",
-      visibility: "private",
-    });
+    expect(uploaded).not.toHaveProperty("quotaReservationId");
     expect(files.items[0]).not.toHaveProperty("objectKey");
     expect(binding.fileRef).not.toHaveProperty("bucket");
     expect(usage.usedLogicalBytes).toBe(1024);
     expect(events).toEqual([
-      "uploadSessionsCreate:app.icon:icon.png",
-      "uploadPartsPresign:upl_1:2",
-      "uploadSessionsComplete:app.icon:upl_1",
+      "driveUploader.uploadByProfile:image:app-center:app:app_1:icon.png:tenant_1",
       "filesList:app.icon:app_1",
       "fileBindingsList:app.icon:app_1",
       "fileBindingsCreate:app.icon:app_1",
@@ -600,57 +597,73 @@ function createRecordingAppSdk(events: string[]): SdkworkFileAppSdkClient {
         versionCount: 1,
       };
     },
-    async uploadPartsPresign(input) {
-      events.push(`uploadPartsPresign:${input.sessionId}:${input.partNumber}`);
-      return {
-        partNumber: input.partNumber,
-        presigned: {
-          expiresAt: "2026-05-23T08:10:00.000Z",
-          headers: {},
-          method: "PUT",
-          url: `https://upload.example.test/parts/${input.partNumber}`,
-        },
-        requestId: input.requestId,
-        sessionId: input.sessionId,
-      };
-    },
-    async uploadSessionsAbort(input) {
-      events.push(`uploadSessionsAbort:${input.sessionId}`);
-      return {
-        requestId: input.requestId,
-        sessionId: input.sessionId,
-        status: "aborted",
-      };
-    },
-    async uploadSessionsComplete(input) {
-      events.push(`uploadSessionsComplete:${input.purpose}:${input.sessionId}`);
-      return {
-        fileRef: {
-          fileId: "file_1",
-          purpose: input.purpose,
-          visibility: "private",
-        },
-        requestId: input.requestId,
-        sessionId: input.sessionId,
-        status: "active",
-      };
-    },
-    async uploadSessionsCreate(input) {
-      events.push(`uploadSessionsCreate:${input.purpose}:${input.filename}`);
-      return {
-        presigned: {
-          expiresAt: "2026-05-23T08:10:00.000Z",
-          headers: { "Content-Type": input.contentType },
-          method: "PUT",
-          url: "https://upload.example.test/object",
-        },
-        requestId: input.requestId,
-        sessionId: "upl_1",
-        status: "presigned",
-        uploadMode: "single_put",
-      };
+  };
+}
+
+function createRecordingDriveSdk(events: string[]): SdkworkFileDriveUploaderClient {
+  return {
+    uploader: {
+      async uploadByProfile(profile, input) {
+        events.push(
+          `driveUploader.uploadByProfile:${profile}:${input.appId}:${input.appResourceType}:${input.appResourceId}:${input.originalFileName}:${input.tenantId}`,
+        );
+        return {
+          parts: [
+            {
+              etag: "etag-1",
+              offsetBytes: 0,
+              partNo: 1,
+              sizeBytes: Number(input.file.size),
+            },
+          ],
+          uploadItem: {
+            actorId: input.operatorId ?? "user_1",
+            actorType: "user",
+            appId: input.appId ?? "app-center",
+            appResourceId: input.appResourceId ?? "app_1",
+            appResourceType: input.appResourceType ?? "app",
+            chunkSizeBytes: String(input.file.size),
+            cleanupStatus: "none",
+            contentLength: String(input.file.size),
+            contentType: input.contentType ?? "image/png",
+            contentTypeGroup: "image",
+            fileFingerprint: "sha256:icon",
+            id: "upload_item_1",
+            nodeId: "node_drive_1",
+            originalFileName: input.originalFileName ?? "icon.png",
+            postProcessStatus: "completed",
+            retentionMode: "long_term",
+            spaceId: "space_drive_1",
+            status: "completed",
+            taskId: input.taskId ?? "task_1",
+            tenantId: input.tenantId,
+            totalParts: "1",
+            uploadProfileCode: profile,
+            uploadedBytes: String(input.file.size),
+            uploadedPartsCount: "1",
+            uploadSessionId: "upload_session_1",
+          },
+          uploadSession: {
+            bucket: "redacted-drive-owned-bucket",
+            expiresAtEpochMs: "1770000000000",
+            id: "upload_session_1",
+            nodeId: "node_drive_1",
+            objectKey: "redacted-drive-owned-object",
+            spaceId: "space_drive_1",
+            state: "completed",
+            storageProviderId: "provider_1",
+            storageUploadId: "storage_upload_1",
+            tenantId: input.tenantId,
+            version: "1",
+          },
+        };
+      },
     },
   };
+}
+
+function createTestFile(name: string, type: string, size: number): Blob & { name: string } {
+  return Object.assign(new Blob([new Uint8Array(size)], { type }), { name });
 }
 
 function createRecordingBackendSdk(events: string[]): SdkworkFileBackendSdkClient {

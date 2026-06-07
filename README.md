@@ -17,13 +17,12 @@ workspace. It combines a Rust gateway and product API layer with a React portal
 so operators, developers, and administrators can manage AI traffic through a
 single browser entrypoint.
 
-## 产品概览
+## 浜у搧姒傝
 
-SDKWork Claw Router 是面向商业化交付的 AI 网关与控制台产品，用于统一管理
-OpenAI 兼容接口、模型供应商路由、模型目录、价格与用量、API Key、用户与后台
-运营能力。产品由 Rust 网关和业务 API、React Portal、生成式 SDK、Schema/OpenAPI
-契约与交付校验组成，适合私有化部署、服务化部署和二次集成场景。
-
+SDKWork Claw Router 鏄潰鍚戝晢涓氬寲浜や粯鐨?AI 缃戝叧涓庢帶鍒跺彴浜у搧锛岀敤浜庣粺涓€绠＄悊
+OpenAI 鍏煎鎺ュ彛銆佹ā鍨嬩緵搴斿晢璺敱銆佹ā鍨嬬洰褰曘€佷环鏍间笌鐢ㄩ噺銆丄PI Key銆佺敤鎴蜂笌鍚庡彴
+杩愯惀鑳藉姏銆備骇鍝佺敱 Rust 缃戝叧鍜屼笟鍔?API銆丷eact Portal銆佺敓鎴愬紡 SDK銆丼chema/OpenAPI
+濂戠害涓庝氦浠樻牎楠岀粍鎴愶紝閫傚悎绉佹湁鍖栭儴缃层€佹湇鍔″寲閮ㄧ讲鍜屼簩娆￠泦鎴愬満鏅€?
 Core product surfaces:
 
 - **OpenAI-compatible Gateway**: exposes `/v1/*` APIs for OpenAI-compatible
@@ -43,17 +42,8 @@ Core product surfaces:
   OpenAPI payloads, generated SDKs, Rust handlers, and verification gates to
   schema registry evidence.
 
-核心产品能力：
-
-- **OpenAI 兼容网关**：提供 `/v1/*` 兼容接口，并通过受控的供应商和路由策略转发流量。
-- **Portal 与用户控制台**：面向最终用户提供 API Key、账单、用量、路由、模型发现、
-  Playground 和账户操作。
-- **管理后台**：面向运营和管理员提供用户、供应商、通道、公告、分析、限流、缓存与商业化管理。
-- **模型目录与价格体系**：管理模型事实、供应商区域、价格数据和安装期目录刷新。
-- **生成式 SDK**：基于 OpenAPI 契约生成 app、backend 和 OpenAI 兼容 SDK。
-- **契约驱动交付**：用 schema registry 证据串联前端路由、数据库表、OpenAPI、
-  SDK、Rust handler 和交付验证。
-
+鏍稿績浜у搧鑳藉姏锛?
+- **OpenAI 鍏煎缃戝叧**锛氭彁渚?`/v1/*` 鍏煎鎺ュ彛锛屽苟閫氳繃鍙楁帶鐨勪緵搴斿晢鍜岃矾鐢辩瓥鐣ヨ浆鍙戞祦閲忋€?- **Portal 涓庣敤鎴锋帶鍒跺彴**锛氶潰鍚戞渶缁堢敤鎴锋彁渚?API Key銆佽处鍗曘€佺敤閲忋€佽矾鐢便€佹ā鍨嬪彂鐜般€?  Playground 鍜岃处鎴锋搷浣溿€?- **绠＄悊鍚庡彴**锛氶潰鍚戣繍钀ュ拰绠＄悊鍛樻彁渚涚敤鎴枫€佷緵搴斿晢銆侀€氶亾銆佸叕鍛娿€佸垎鏋愩€侀檺娴併€佺紦瀛樹笌鍟嗕笟鍖栫鐞嗐€?- **妯″瀷鐩綍涓庝环鏍间綋绯?*锛氱鐞嗘ā鍨嬩簨瀹炪€佷緵搴斿晢鍖哄煙銆佷环鏍兼暟鎹拰瀹夎鏈熺洰褰曞埛鏂般€?- **鐢熸垚寮?SDK**锛氬熀浜?OpenAPI 濂戠害鐢熸垚 app銆乥ackend 鍜?OpenAI 鍏煎 SDK銆?- **濂戠害椹卞姩浜や粯**锛氱敤 schema registry 璇佹嵁涓茶仈鍓嶇璺敱銆佹暟鎹簱琛ㄣ€丱penAPI銆?  SDK銆丷ust handler 鍜屼氦浠橀獙璇併€?
 ## Product Screenshots
 
 The images below are placeholder PNG files stored in
@@ -63,11 +53,11 @@ customer-facing documentation.
 
 | Product area | Screenshot |
 | --- | --- |
-| Portal home / 产品首页 | ![SDKWork Claw Router portal home placeholder](./docs/assets/product-screenshots/portal-home.png) |
-| Console dashboard / 用户控制台 | ![SDKWork Claw Router console dashboard placeholder](./docs/assets/product-screenshots/console-dashboard.png) |
-| Model catalog and routing / 模型与路由 | ![SDKWork Claw Router model routing placeholder](./docs/assets/product-screenshots/model-routing.png) |
-| API playground / API 调试台 | ![SDKWork Claw Router playground placeholder](./docs/assets/product-screenshots/playground.png) |
-| Admin console / 管理后台 | ![SDKWork Claw Router admin console placeholder](./docs/assets/product-screenshots/admin-console.png) |
+| Portal home / 浜у搧棣栭〉 | ![SDKWork Claw Router portal home placeholder](./docs/assets/product-screenshots/portal-home.png) |
+| Console dashboard / 鐢ㄦ埛鎺у埗鍙?| ![SDKWork Claw Router console dashboard placeholder](./docs/assets/product-screenshots/console-dashboard.png) |
+| Model catalog and routing / 妯″瀷涓庤矾鐢?| ![SDKWork Claw Router model routing placeholder](./docs/assets/product-screenshots/model-routing.png) |
+| API playground / API 璋冭瘯鍙?| ![SDKWork Claw Router playground placeholder](./docs/assets/product-screenshots/playground.png) |
+| Admin console / 绠＄悊鍚庡彴 | ![SDKWork Claw Router admin console placeholder](./docs/assets/product-screenshots/admin-console.png) |
 
 ## Installation And Usage
 
@@ -77,25 +67,25 @@ Current release: `0.3.0` (`2026-05-17`). Release records live under
 Primary installation and usage guides:
 
 - [Installation index](./docs/installation/README.md)
-- 中文: [安装与使用指南](./docs/installation/zh-CN/README.md)
+- 涓枃: [瀹夎涓庝娇鐢ㄦ寚鍗梋(./docs/installation/zh-CN/README.md)
 - English: [Installation And Usage Guide](./docs/installation/en-US/README.md)
 
 Use the release guides when installing a published package for a specific
 version:
 
-- 中文: [按 Release 版本安装](./docs/installation/zh-CN/release-install.md)
+- 涓枃: [鎸?Release 鐗堟湰瀹夎](./docs/installation/zh-CN/release-install.md)
 - English: [Install By Release Version](./docs/installation/en-US/release-install.md)
 
 Use the source guides when cloning this repository, running a development
 workspace, building production artifacts, or producing private release packages:
 
-- 中文: [源码安装与部署](./docs/installation/zh-CN/source-install.md)
+- 涓枃: [婧愮爜瀹夎涓庨儴缃瞉(./docs/installation/zh-CN/source-install.md)
 - English: [Source Installation And Deployment](./docs/installation/en-US/source-install.md)
 
 Quick source start:
 
 ```powershell
-pnpm.cmd dev -- --install
+pnpm dev -- --install
 ```
 
 Quick Ubuntu/Debian service install from a release asset:
@@ -152,7 +142,7 @@ it after first login.
 Quick MSI install root initialization on Windows:
 
 ```powershell
-Set-Location "C:\Program Files\sdkwork\router"
+Set-Location ".\clawrouter"
 .\bin\clawrouterctl.exe ensure
 .\bin\clawrouterctl.exe refresh-catalog --force
 .\bin\clawrouter.exe
@@ -241,35 +231,47 @@ Quick portable package initialization on Linux and macOS:
 
 Run commands from this directory:
 
-```powershell
-pnpm.cmd dev
-pnpm.cmd test
-pnpm.cmd build
-pnpm.cmd start
-pnpm.cmd release
-pnpm.cmd portal:dev
-pnpm.cmd desktop:dev
-pnpm.cmd service:dev
-pnpm.cmd server:dev
-pnpm.cmd smoke:dev
-pnpm.cmd product:check
-pnpm.cmd install:packages:plan
-pnpm.cmd install:packages:check
-pnpm.cmd install:package:check
-pnpm.cmd install:init:smoke
-pnpm.cmd nginx:plan -- --domain api.sdkwork.com
-pnpm.cmd nginx:render -- --domain api.sdkwork.com --output-root target/nginx
+```bash
+pnpm deps:local:link
+pnpm dev
+pnpm test
+pnpm build
+pnpm start
+pnpm release
+pnpm portal:dev
+pnpm desktop:dev
+pnpm service:dev
+pnpm server:dev
+pnpm smoke:dev
+pnpm product:check
+pnpm install:packages:plan
+pnpm install:packages:check
+pnpm install:package:check
+pnpm install:init:smoke
+pnpm nginx:plan -- --domain api.sdkwork.com
+pnpm nginx:render -- --domain api.sdkwork.com --output-root target/nginx
 ```
+
+Local development uses `sdkwork.workflow.json` as the dependency manifest and
+materializes source dependencies under `.sdkwork/dependencies/<dependency-id>`.
+Run `pnpm deps:local:link` when the required sibling repositories exist in the
+same multi-repository workspace; the script links them into
+`.sdkwork/dependencies/<dependency-id>`. CI and release packaging use the same
+`.sdkwork/dependencies/<dependency-id>` paths, but the reusable GitHub workflow
+checks out the pinned Git refs declared in `sdkwork.workflow.json` instead of
+creating local links. Use
+`pnpm deps:local:check` before local portal install/build when dependencies are
+already materialized.
 
 Validate the standalone model catalog before installer or release work:
 
-```powershell
-pnpm.cmd models:check
-node data\sdkwork-models\tools\build-index.mjs --check
-node data\sdkwork-models\tools\validate-catalog.mjs
-node data\sdkwork-models\tools\freshness-report.mjs --max-age-policy catalog-freshness-policy.json --as-of 2026-05-08
-node data\sdkwork-models\tools\catalog-audit.mjs --as-of 2026-05-08
-node data\sdkwork-models\tools\release-catalog.mjs --check --as-of 2026-05-08
+```bash
+pnpm models:check
+node data/sdkwork-models/tools/build-index.mjs --check
+node data/sdkwork-models/tools/validate-catalog.mjs
+node data/sdkwork-models/tools/freshness-report.mjs --max-age-policy catalog-freshness-policy.json --as-of 2026-05-08
+node data/sdkwork-models/tools/catalog-audit.mjs --as-of 2026-05-08
+node data/sdkwork-models/tools/release-catalog.mjs --check --as-of 2026-05-08
 cargo test -p sdkwork-models --offline
 cargo test -p sdkwork-claw-product --test database_installer --offline
 ```
@@ -294,7 +296,7 @@ catalog artifact or updated submodule checkout instead of the bundled local
 catalog:
 
 ```powershell
-$env:SDKWORK_MODELS_CATALOG_ROOT="D:\release\sdkwork-models"
+$env:SDKWORK_MODELS_CATALOG_ROOT = Join-Path (Get-Location) "data/sdkwork-models"
 ```
 
 Refresh installed catalog rows without reinstalling the database:
@@ -302,7 +304,7 @@ Refresh installed catalog rows without reinstalling the database:
 ```powershell
 clawrouterctl refresh-catalog
 clawrouterctl refresh-catalog --vendor openai
-clawrouterctl refresh-catalog --catalog-root D:\release\sdkwork-models --catalog-version 2026.05.08.1
+clawrouterctl refresh-catalog --catalog-root "$env:SDKWORK_MODELS_CATALOG_ROOT" --catalog-version 2026.05.08.1
 clawrouterctl refresh-catalog --vendor alibaba --dry-run
 ```
 
@@ -340,7 +342,7 @@ as `AdminModelCatalogSyncResponse`. Frontend or application service wrappers
 should preserve the full report, including counts, `snapshotId`, and
 `syncRunId`, instead of collapsing the response to only `vendors` and `models`.
 
-`pnpm.cmd dev` / `pnpm.cmd server:dev` use the workspace-local
+`pnpm dev` / `pnpm server:dev` use the workspace-local
 `data/sdkwork-models` directory as `SDKWORK_MODELS_CATALOG_ROOT` by default and
 run a blocking `refresh-catalog --catalog-root data/sdkwork-models --force`
 step after `ensure`. Local JSON model or pricing edits are therefore imported
@@ -348,53 +350,55 @@ into the dev database on every server-mode startup.
 
 Command intent:
 
-- `pnpm.cmd dev` starts the default all-in-one edge development workspace:
+- `pnpm dev` starts the default all-in-one edge development workspace:
   one Rust edge/API process plus the portal dev server, after ensuring schema
   installation and refreshing model catalog data from `data/sdkwork-models`.
-- `pnpm.cmd dev:distributed` starts the explicit distributed development
+- `pnpm dev:distributed` starts the explicit distributed development
   workspace with separate gateway, admin API, app API, edge, and portal
   processes.
-- `pnpm.cmd test` runs the launcher/tooling contract tests.
-- `pnpm.cmd build` builds production portal assets, builds the generated app
+- `pnpm test` runs the launcher/tooling contract tests.
+- `pnpm build` builds production portal assets, builds the generated app
   and backend SDK runtime packages, creates SDK ZIP archives under
   `apps/sdkwork-clawrouter-pc/dist/sdk-archives`, and builds the Rust edge
   server release binary.
-- `pnpm.cmd start` serves the built production portal from
+- `pnpm start` serves the built production portal from
   `apps/sdkwork-clawrouter-pc/dist` through a single all-in-one Rust edge
   process by default, using the release binary when it exists.
-- `pnpm.cmd release` validates the release environment, regenerates
+- `pnpm release` validates the release environment, regenerates
   `.env.release.local` from the release host process environment, runs strict
   `release:preflight`, and then runs the full `verify` gate.
-- `pnpm.cmd portal:dev` starts the browser portal only.
-- `pnpm.cmd desktop:dev` starts the full install-checked workspace with
+- `pnpm portal:dev` starts the browser portal only.
+- `pnpm desktop:dev` starts the full install-checked workspace with
   desktop environment flags. It still uses the workspace PostgreSQL integration
   profile by default.
-- `pnpm.cmd service:dev` starts the full install-checked workspace with
+- `pnpm service:dev` starts the full install-checked workspace with
   service-mode environment flags.
-- `pnpm.cmd server:dev` starts the all-in-one Rust edge/API process plus the
+- `pnpm server:dev` starts the all-in-one Rust edge/API process plus the
   portal dev server.
-- `pnpm.cmd server:dev:distributed` starts the legacy multi-process Rust
+- `pnpm server:dev:distributed` starts the legacy multi-process Rust
   service topology behind the edge server.
-- `pnpm.cmd smoke:dev` starts the root `pnpm dev` entrypoint on isolated
+- `pnpm smoke:dev` starts the root `pnpm dev` entrypoint on isolated
   random local ports, verifies the edge and portal OpenAPI/runtime URLs, and
   stops the spawned process tree.
-- `pnpm.cmd product:check` runs portal typecheck and production build.
-- `pnpm.cmd install:packages:plan` prints the deterministic cross-platform
+- `pnpm product:check` runs portal typecheck and production build.
+- `pnpm install:packages:plan` prints the deterministic cross-platform
   install package matrix without building packages or starting services.
-- `pnpm.cmd install:packages:check` validates the same matrix for release and
+- `pnpm install:packages:check` validates the same matrix for release and
   CI package-builder integration.
-- `pnpm.cmd install:package:check` validates the install package builder in
+- `pnpm install:package:check` validates the install package builder in
   dry-run mode without requiring staged production artifacts.
-- `pnpm.cmd install:init:smoke` validates the fast install initialization
+- `pnpm install:init:smoke` validates the fast install initialization
   contract in dry-run mode without starting services or requiring built
   binaries.
 
-Use `pnpm.cmd`, not `pnpm.ps1`, on Windows shells that block PowerShell scripts.
+Use the extensionless `pnpm` command in cross-platform examples. On Windows
+shells that block `pnpm.ps1`, call the package-manager shim through your shell
+or adjust the execution policy instead of changing committed scripts.
 
 Workspace development commands use PostgreSQL for integration testing.
 Desktop packages and first-run local user data use SQLite under `~/.sdkwork/router/data`.
 On Windows, the equivalent path is `%USERPROFILE%/.sdkwork/router/data`.
-Use `pnpm.cmd desktop:dev:sqlite` or `pnpm.cmd tauri:dev:sqlite` when validating
+Use `pnpm desktop:dev:sqlite` or `pnpm tauri:dev:sqlite` when validating
 desktop local-data behavior from the workspace.
 
 Edge startup prints the browser and API access matrix before launching
@@ -445,12 +449,12 @@ for debugging and external reverse proxy setups:
 - Backend/Admin API: `http://127.0.0.1:18081/backend/v3/api`
 - App API: `http://127.0.0.1:18082/app/v3/api`
 
-Use `pnpm.cmd server:plan` to print the same URLs and command plan without
+Use `pnpm server:plan` to print the same URLs and command plan without
 starting processes. Forward bind overrides through `--`, for example:
 
 ```powershell
-pnpm.cmd dev -- --server-bind 0.0.0.0:12900 --portal-bind 0.0.0.0:13900
-pnpm.cmd dev:distributed -- --gateway-bind 0.0.0.0:19080 --server-bind 0.0.0.0:12900 --portal-bind 0.0.0.0:13900
+pnpm dev -- --server-bind 0.0.0.0:12900 --portal-bind 0.0.0.0:13900
+pnpm dev:distributed -- --gateway-bind 0.0.0.0:19080 --server-bind 0.0.0.0:12900 --portal-bind 0.0.0.0:13900
 ```
 
 The Rust edge server forwarding targets default to the edge server itself in
@@ -459,8 +463,8 @@ when the edge server should forward to another host, container network, or
 separate local service process:
 
 ```powershell
-pnpm.cmd dev -- --gateway-forward-url http://gateway.internal:18080 --backend-api-forward-url http://admin.internal:18081 --app-api-forward-url http://app.internal:18082
-pnpm.cmd dev:distributed -- --gateway-bind 0.0.0.0:19080 --server-bind 0.0.0.0:12900 --portal-bind 0.0.0.0:13900
+pnpm dev -- --gateway-forward-url http://gateway.internal:18080 --backend-api-forward-url http://admin.internal:18081 --app-api-forward-url http://app.internal:18082
+pnpm dev:distributed -- --gateway-bind 0.0.0.0:19080 --server-bind 0.0.0.0:12900 --portal-bind 0.0.0.0:13900
 ```
 
 Forwarding URLs must be HTTP/HTTPS origins only. The Rust edge server uses
@@ -479,14 +483,14 @@ same-origin API paths to the edge server in all-in-one mode, so opening the
 Vite dev server directly exercises the same SDK base URLs as the unified edge
 entrypoint.
 
-Production `pnpm.cmd start` defaults to one all-in-one Rust edge/API process
-after `pnpm.cmd build` has created the release artifact. Use `--distributed`,
+Production `pnpm start` defaults to one all-in-one Rust edge/API process
+after `pnpm build` has created the release artifact. Use `--distributed`,
 or provide upstream target controls, when forwarding to separately deployed
 gateway/admin/app services:
 
 ```powershell
-pnpm.cmd start -- --server-bind 0.0.0.0:12900 --gateway-forward-url http://gateway.internal:18080 --backend-api-forward-url http://admin.internal:18081 --app-api-forward-url http://app.internal:18082
-pnpm.cmd start -- --distributed --server-bind 0.0.0.0:12900
+pnpm start -- --server-bind 0.0.0.0:12900 --gateway-forward-url http://gateway.internal:18080 --backend-api-forward-url http://admin.internal:18081 --app-api-forward-url http://app.internal:18082
+pnpm start -- --distributed --server-bind 0.0.0.0:12900
 ```
 
 Its startup output includes the runtime mode, edge URLs, public browser API
@@ -498,16 +502,16 @@ When the edge server is deployed behind a controlled HTTPS reverse proxy,
 set the reported external scheme explicitly:
 
 ```powershell
-pnpm.cmd dev -- --external-scheme https
-pnpm.cmd start -- --external-scheme https
+pnpm dev -- --external-scheme https
+pnpm start -- --external-scheme https
 ```
 
 Only enable trusted forwarded headers when the edge server is not directly
 reachable by clients and every inbound request comes from that controlled proxy:
 
 ```powershell
-pnpm.cmd dev -- --external-scheme https --trust-forwarded-headers
-pnpm.cmd start -- --external-scheme https --trust-forwarded-headers
+pnpm dev -- --external-scheme https --trust-forwarded-headers
+pnpm start -- --external-scheme https --trust-forwarded-headers
 ```
 
 By default, the edge server ignores inbound `x-forwarded-host`,
@@ -520,10 +524,10 @@ through the HTTP `Connection` header on both request and response proxy paths.
 Run the full commercial gate before delivery:
 
 ```powershell
-pnpm.cmd verify
+pnpm verify
 ```
 
-`pnpm.cmd verify` runs the static, build, production-smoke, and broad test gates
+`pnpm verify` runs the static, build, production-smoke, and broad test gates
 without starting the live `pnpm dev` workspace by default:
 
 - `cargo fmt --check`
@@ -566,13 +570,13 @@ the root `pnpm dev` entrypoint, installer/catalog startup, Rust services, and
 the portal dev server. Run it directly when you need that coverage:
 
 ```powershell
-pnpm.cmd smoke:dev
+pnpm smoke:dev
 ```
 
 To include the same live dev smoke inside `verify`, opt in explicitly:
 
 ```powershell
-pnpm.cmd verify -- --with-edge-dev-smoke
+pnpm verify -- --with-edge-dev-smoke
 ```
 
 If the local shell sandbox blocks `child_process.spawn`, the smoke prints a
@@ -581,7 +585,7 @@ coverage should make the smoke mandatory:
 
 ```powershell
 $env:CLAWROUTER_EDGE_DEV_SMOKE_REQUIRED="1"
-pnpm.cmd verify -- --with-edge-dev-smoke
+pnpm verify -- --with-edge-dev-smoke
 ```
 
 `CLAWROUTER_VERIFY_EDGE_DEV_SMOKE=1` also opts `verify` into the live dev smoke.
@@ -593,27 +597,27 @@ override an environment that would otherwise enable it.
 Use the fast gate during Codex or developer edit loops:
 
 ```powershell
-pnpm.cmd verify:fast
+pnpm verify:fast
 ```
 
-`pnpm.cmd verify:fast` runs only the low-cost checks that catch common tooling
+`pnpm verify:fast` runs only the low-cost checks that catch common tooling
 and source-standard regressions:
 
 - `python -B -m tools.repository_delivery_guardian`
 - `node scripts/run-claw-router-product.test.mjs`
-- `pnpm.cmd --dir apps/sdkwork-clawrouter-pc exec tsx auth-runtime.test.ts`
+- `pnpm --dir apps/sdkwork-clawrouter-pc exec tsx auth-runtime.test.ts`
 - `python -B -m unittest tests.test_frontend_source_hygiene_standard`
 
 For Rust edits during local development, use the scoped Rust entrypoints instead
 of jumping straight to `cargo test --workspace`:
 
 ```powershell
-pnpm.cmd test:rust:auto
-pnpm.cmd test:rust:smoke
-pnpm.cmd test:rust:quick
+pnpm test:rust:auto
+pnpm test:rust:smoke
+pnpm test:rust:quick
 ```
 
-`pnpm.cmd test:rust:auto` inspects the current changed files and tries to pick
+`pnpm test:rust:auto` inspects the current changed files and tries to pick
 the smallest useful Rust surface automatically:
 
 - exact `services/*/tests/*.rs` edits run only that integration-test target
@@ -624,9 +628,9 @@ the smallest useful Rust surface automatically:
 When the worktree is noisy, choose one narrowing mode:
 
 ```powershell
-pnpm.cmd test:rust:auto -- --changed-file services/sdkwork-claw-product/src/api/app_runtime.rs
-pnpm.cmd test:rust:auto -- --staged
-pnpm.cmd test:rust:auto -- --base-ref main
+pnpm test:rust:auto -- --changed-file services/sdkwork-claw-product/src/api/app_runtime.rs
+pnpm test:rust:auto -- --staged
+pnpm test:rust:auto -- --base-ref main
 ```
 
 - `--changed-file <path>`: manual deterministic narrowing
@@ -635,25 +639,25 @@ pnpm.cmd test:rust:auto -- --base-ref main
 
 Use only one of `--changed-file`, `--staged`, or `--base-ref` per run.
 
-The main `pnpm.cmd verify` gate now also clears inherited `CARGO_BUILD_JOBS`
+The main `pnpm verify` gate now also clears inherited `CARGO_BUILD_JOBS`
 for its Rust steps so a shell-level `$env:CARGO_BUILD_JOBS='1'` does not
 silently serialize local verification. When throttling is intentional, pass it
 explicitly:
 
 ```powershell
-pnpm.cmd verify -- --build-jobs 4
+pnpm verify -- --build-jobs 4
 ```
 
 It intentionally skips Rust compile/tests, SDK and architecture guardians,
 portal typecheck/build, production smoke tests, broad Python tests, and schema
 quality gate. This makes it suitable for frequent local iteration, not final
-delivery. Always run `pnpm.cmd verify` before release or handoff.
+delivery. Always run `pnpm verify` before release or handoff.
 
 Clean rebuildable local artifacts when Codex or local tools slow down because
 of stale temporary output:
 
 ```powershell
-pnpm.cmd clean:fast
+pnpm clean:fast
 ```
 
 The default cleanup removes only rebuildable local output such as `.tmp`,
@@ -672,7 +676,7 @@ node scripts/clean-claw-router-workspace.mjs --rust-target --node-modules
 Run the lightweight preflight before the full commercial gate:
 
 ```powershell
-pnpm.cmd release:preflight
+pnpm release:preflight
 ```
 
 The preflight is read-only. It checks that the current branch is `main`,
@@ -697,7 +701,7 @@ packaging a commercial release.
 Use strict mode on CI, staging, or release packaging hosts:
 
 ```powershell
-pnpm.cmd release:preflight -- --strict --env-file .env.release.local --strict-root-clean
+pnpm release:preflight -- --strict --env-file .env.release.local --strict-root-clean
 ```
 
 ## Release Environment Contract
@@ -732,15 +736,15 @@ PORTAL_PUBLIC_OPEN_API_BASE_URL
 Run strict preflight against the local release env file before packaging:
 
 ```powershell
-pnpm.cmd release:env:write -- --check
-pnpm.cmd release:env:write
-pnpm.cmd release:preflight -- --strict --env-file .env.release.local --strict-root-clean
+pnpm release:env:write -- --check
+pnpm release:env:write
+pnpm release:preflight -- --strict --env-file .env.release.local --strict-root-clean
 ```
 
 `PORTAL_PUBLIC_*` values are intentionally visible to the browser through
 `/runtime-env.js`; do not place secrets in them. The Postgres URL is used only
 for release verification and Postgres contract tests.
-`pnpm.cmd release:env:write` reads the contract variables from the release
+`pnpm release:env:write` reads the contract variables from the release
 host process environment, refuses to overwrite `.env.release.local` unless
 `--force` is passed, refuses to write the checked-in `.env.release.example`
 template, and prints only a safe summary without variable values.
@@ -766,11 +770,11 @@ configuration delivery cannot drift.
 Run the planner before wiring package builders:
 
 ```powershell
-pnpm.cmd install:packages:plan
-pnpm.cmd install:packages:check
-pnpm.cmd install:package:check
-pnpm.cmd install:native:check
-pnpm.cmd install:init:smoke
+pnpm install:packages:plan
+pnpm install:packages:check
+pnpm install:package:check
+pnpm install:native:check
+pnpm install:init:smoke
 node scripts/plan-claw-router-install-packages.mjs --json --check
 ```
 
@@ -1018,15 +1022,16 @@ Fast initialization is standardized around host-local environment generation
 and installer commands:
 
 ```powershell
-pnpm.cmd release:env:write -- --check
-pnpm.cmd release:env:write -- --force
+pnpm release:env:write -- --check
+pnpm release:env:write -- --force
 clawrouterctl ensure
 clawrouterctl refresh-catalog --force
 ```
 
-On Linux and macOS, the same package contract uses `pnpm` instead of
-`pnpm.cmd` and extensionless binaries. Health and readiness checks are always
-`/healthz` and `/readyz`.
+The same package contract works across Windows, Linux, and macOS through
+extensionless `pnpm` commands and extensionless binaries where the target
+platform supports them. Health and readiness checks are always `/healthz` and
+`/readyz`.
 
 Security defaults are part of the matrix: packages must not include secrets,
 must not include `.env.release.local`, must generate local env files on the
@@ -1037,13 +1042,13 @@ header trust only when a controlled reverse proxy is the sole inbound client.
 `scripts/build-claw-router-install-package.mjs` consumes the same matrix to
 create portable archive and container-context packages from a staged production
 directory. The default
-`pnpm.cmd install:package:check` command is dry-run only, so it validates the
-full 24-package builder matrix without requiring `pnpm.cmd build` output. To
+`pnpm install:package:check` command is dry-run only, so it validates the
+full 24-package builder matrix without requiring `pnpm build` output. To
 build a real package, stage the package contents under a directory shaped like
 the package plan and pass it explicitly:
 
 ```powershell
-pnpm.cmd install:package:build -- --package-id windows-x64-archive --staging-root dist\install-package-staging --output-dir dist\install-packages
+pnpm install:package:build -- --package-id windows-x64-archive --staging-root dist\install-package-staging --output-dir dist\install-packages
 ```
 
 The builder writes the package archive, a per-package manifest, and
@@ -1123,7 +1128,7 @@ actions, and confirms `/healthz` plus `/readyz` remain the readiness contract.
 It never starts `pnpm dev`, the live edge dev smoke, or production services.
 
 ```powershell
-pnpm.cmd install:init:smoke
+pnpm install:init:smoke
 node scripts/smoke-install-package-init.mjs --package-id linux-arm64-container --check --dry-run --json
 ```
 
@@ -1142,7 +1147,7 @@ package directory.
 
 ## Production Browser Smoke
 
-`pnpm.cmd verify` runs
+`pnpm verify` runs
 `node apps/sdkwork-clawrouter-pc/scripts/smoke-production-browser.mjs`
 after the production edge smoke and before portal runtime tests. The script runs
 the built portal through the Rust edge server in a real Chromium-family browser through Chrome
@@ -1222,7 +1227,7 @@ must make the check mandatory:
 
 ```powershell
 $env:CLAWROUTER_BROWSER_SMOKE_REQUIRED="1"
-pnpm.cmd verify
+pnpm verify
 ```
 
 Use `CLAWROUTER_BROWSER_EXECUTABLE` to point at a specific Chrome, Edge, or
@@ -1230,7 +1235,8 @@ Chromium executable. If the process cannot spawn a browser, start one outside
 the Node process and provide its DevTools port:
 
 ```powershell
-& "C:\Program Files\Google\Chrome\Application\chrome.exe" --headless=new --remote-debugging-address=127.0.0.1 --remote-debugging-port=9222 --user-data-dir="$env:TEMP\clawrouter-browser-smoke" about:blank
+$env:CLAWROUTER_BROWSER_EXECUTABLE="<absolute path to Chrome, Edge, or Chromium>"
+& $env:CLAWROUTER_BROWSER_EXECUTABLE --headless=new --remote-debugging-address=127.0.0.1 --remote-debugging-port=9222 --user-data-dir="$(Join-Path ([System.IO.Path]::GetTempPath()) 'clawrouter-browser-smoke')" about:blank
 $env:CLAWROUTER_BROWSER_DEBUG_PORT="9222"
 $env:CLAWROUTER_BROWSER_SMOKE_REQUIRED="1"
 node apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs
@@ -1241,20 +1247,20 @@ node apps\sdkwork-clawrouter-pc\scripts\smoke-production-browser.mjs
 Optional Postgres contract tests:
 
 ```powershell
-pnpm.cmd test:postgres
+pnpm test:postgres
 ```
 
 Required Postgres contract tests with an existing database:
 
 ```powershell
 $env:SDKWORK_CLAW_POSTGRES_TEST_DATABASE_URL="postgres://user:password@127.0.0.1:5432/dbname"
-pnpm.cmd test:postgres:required
+pnpm test:postgres:required
 ```
 
 Ephemeral Docker-backed Postgres contract tests:
 
 ```powershell
-pnpm.cmd test:postgres:docker
+pnpm test:postgres:docker
 ```
 
 Docker mode uses `docker-compose.postgres-test.yml`, Postgres 16, a tmpfs data
@@ -1341,7 +1347,7 @@ $env:PORTAL_TOOL_API_RATE_LIMIT_REQUESTS="120"
 $env:PORTAL_TOOL_API_RATE_LIMIT_WINDOW_SECONDS="60"
 $env:PORTAL_TOOL_API_SDK_GENERATOR_BASE_URL=""
 $env:PORTAL_TOOL_API_SDK_GENERATOR_API_KEY=""
-$env:PORTAL_TOOL_API_SDK_ARCHIVE_ROOT="D:\release\clawrouter-sdk-archives"
+$env:PORTAL_TOOL_API_SDK_ARCHIVE_ROOT = Join-Path (Get-Location) "apps/sdkwork-clawrouter-pc/dist/sdk-archives"
 ```
 
 `PORTAL_PUBLIC_API_BASE_URL`, `PORTAL_PUBLIC_OPEN_API_BASE_URL`,
@@ -1370,9 +1376,9 @@ generated ZIP archive directly. `PORTAL_TOOL_API_SDK_GENERATOR_BASE_URL` may be
 set to an explicit generator origin; when it is empty, the edge server defaults
 to the current web page origin derived from the incoming request host and
 scheme. Configure `PORTAL_TOOL_API_SDK_GENERATOR_API_KEY` when the generator
-requires a bearer token. Standard `pnpm.cmd build` also creates generated
+requires a bearer token. Standard `pnpm build` also creates generated
 TypeScript app and backend SDK runtime packages and writes prebuilt SDK ZIP archives
-into `apps/sdkwork-clawrouter-pc/dist/sdk-archives`; `pnpm.cmd start`
+into `apps/sdkwork-clawrouter-pc/dist/sdk-archives`; `pnpm start`
 uses that directory as `PORTAL_TOOL_API_SDK_ARCHIVE_ROOT` by default. When a
 live generator request fails and `PORTAL_TOOL_API_SDK_ARCHIVE_ROOT` is
 configured, the edge server falls back to a matching prebuilt ZIP.
@@ -1404,19 +1410,19 @@ configured but the normalized archive is missing, it returns
 
 ## Recommended Delivery Sequence
 
-1. On CI or a release host, run `pnpm.cmd release`. The root release script
-   runs `pnpm.cmd release:env:write -- --check`, regenerates
+1. On CI or a release host, run `pnpm release`. The root release script
+   runs `pnpm release:env:write -- --check`, regenerates
    `.env.release.local` with `--force`, runs strict release preflight, and then
-   runs `pnpm.cmd verify`.
+   runs `pnpm verify`.
 2. For local handoff without real release secrets, run
-   `pnpm.cmd release:preflight` and `pnpm.cmd verify:fast`.
+   `pnpm release:preflight` and `pnpm verify:fast`.
 3. In CI or release packaging, opt into the live dev edge smoke when required
-   with `pnpm.cmd verify -- --with-edge-dev-smoke` and
+   with `pnpm verify -- --with-edge-dev-smoke` and
    `CLAWROUTER_EDGE_DEV_SMOKE_REQUIRED=1`.
 4. In CI or release packaging, run the same gate with
    `CLAWROUTER_BROWSER_SMOKE_REQUIRED=1` and a working Chrome/Edge/Chromium
    DevTools target.
-5. Run `pnpm.cmd test:postgres:docker` when Docker Desktop is available.
+5. Run `pnpm test:postgres:docker` when Docker Desktop is available.
 6. Review generated audits under `generated/schema/frontend/`.
 7. Review `docs/schema-registry/frontend-route-classification.yaml` for any
    added or touched route, including evidence files, package binding, and
@@ -1442,9 +1448,7 @@ SaaS or managed-service operation, commercial integration, resale, white-label
 delivery, paid implementation services, and commercial production use are
 prohibited.
 
-未经 SDKWork 书面授权，禁止商业使用、商业部署、商业集成、转售、托管服务、
-SaaS 服务、白标交付、付费咨询实施服务，以及任何营利性或商业组织生产环境使用。
-
+鏈粡 SDKWork 涔﹂潰鎺堟潈锛岀姝㈠晢涓氫娇鐢ㄣ€佸晢涓氶儴缃层€佸晢涓氶泦鎴愩€佽浆鍞€佹墭绠℃湇鍔°€?SaaS 鏈嶅姟銆佺櫧鏍囦氦浠樸€佷粯璐瑰挩璇㈠疄鏂芥湇鍔★紝浠ュ強浠讳綍钀ュ埄鎬ф垨鍟嗕笟缁勭粐鐢熶骇鐜浣跨敤銆?
 Generated SDK packages, standalone data packages, vendored artifacts, and
 third-party dependencies may include their own license files. Those package or
 artifact license files govern the corresponding generated, standalone,
@@ -1484,7 +1488,7 @@ Extension points are limited to declared public exports, runtime entrypoints, SD
 
 ### Verification
 
-- `cargo test --manifest-path apps/sdkwork-claw-router/Cargo.toml`
+- `cargo test --workspace`
 - `pnpm --filter sdkwork-claw-router-workspace test`
 
 ### Owner And Status

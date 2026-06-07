@@ -620,8 +620,6 @@ function ReferenceImageFileInput({
               metadata: {
                 name: file.name,
                 mimeType: file.type,
-                dataUrl: referenceImageDataUrl,
-                url: referenceImageDataUrl,
                 resource: createUploadedReferenceMediaResource(referenceImageDataUrl, 'image', file.name, file.type, file.size),
                 sizeBytes: file.size,
               },
@@ -892,8 +890,6 @@ function VideoReferenceAssetFileInput({
                 role: resolveVideoReferenceAssetRole(mode, kind, kindIndex),
                 name: file.name,
                 mimeType: file.type,
-                dataUrl: encodedReference,
-                url: encodedReference,
                 resource: createUploadedReferenceMediaResource(encodedReference, kind, file.name, file.type, file.size),
                 sizeBytes: file.size,
               },

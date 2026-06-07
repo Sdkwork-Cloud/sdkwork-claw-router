@@ -1,33 +1,22 @@
 import React, { useId, useRef, useState } from "react";
 import type { SdkworkFileRef } from "../../../../common/file/sdkwork-file-contracts/src/index";
-import { createPresignedUploadTransport } from "../../../../common/file/sdkwork-file-upload-client/src/index";
 import type {
   FilePlatformService,
-  ManagedUploadSessionResult,
 } from "../../../../common/file/sdkwork-file-service/src/index";
-import type { FileUploadTarget } from "../../../../common/file/sdkwork-file-sdk-ports/src/index";
+import type { FileUploadProgress, FileUploadTarget } from "../../../../common/file/sdkwork-file-sdk-ports/src/index";
 
 export type FileUploadButtonStatus =
   | "completed"
-  | "completing"
-  | "creating"
   | "failed"
   | "idle"
   | "uploading";
 
-export interface FileUploadTransportInput {
-  file: File;
-  service: FilePlatformService;
-  session: ManagedUploadSessionResult;
-}
-
-export interface FileUploadTransport {
-  uploadFile(input: FileUploadTransportInput): Promise<void>;
-}
-
 export interface FileUploadButtonCompletedResult {
+  driveNodeId: string;
+  driveSpaceId: string;
+  driveUri: string;
   fileRef: SdkworkFileRef;
-  sessionId: string;
+  uploadId: string;
 }
 
 export interface FileUploadButtonProps {
@@ -37,11 +26,11 @@ export interface FileUploadButtonProps {
   label?: string;
   onCompleted?: (result: FileUploadButtonCompletedResult) => void;
   onError?: (error: Error) => void;
-  requestIdFactory?: (phase: "complete" | "create", file: File) => string;
+  onProgress?: (progress: FileUploadProgress) => void;
+  requestIdFactory?: (phase: "upload", file: File) => string;
   service: FilePlatformService;
   slotCode: string;
   target: FileUploadTarget;
-  uploadTransport?: FileUploadTransport;
 }
 
 export type FileUploadQueueItemStatus =
@@ -69,11 +58,11 @@ export function FileUploadButton({
   label = "Upload file",
   onCompleted,
   onError,
+  onProgress,
   requestIdFactory = defaultRequestId,
   service,
   slotCode,
   target,
-  uploadTransport = defaultUploadTransport,
 }: FileUploadButtonProps): React.ReactElement {
   const inputId = useId();
   const inputRef = useRef<HTMLInputElement | null>(null);
@@ -81,32 +70,26 @@ export function FileUploadButton({
 
   async function handleFile(file: File): Promise<void> {
     try {
-      setStatus("creating");
-      const session = await service.createUploadSession({
+      setStatus("uploading");
+      const uploaded = await service.uploadFile({
         contentType: file.type || "application/octet-stream",
+        file,
         filename: file.name,
         idempotencyKey: idempotencyKeyFactory(file),
-        requestId: requestIdFactory("create", file),
+        onProgress,
+        requestId: requestIdFactory("upload", file),
         sizeBytes: file.size,
         slotCode,
         target,
       });
 
-      setStatus("uploading");
-      await uploadTransport.uploadFile({ file, service, session });
-
-      setStatus("completing");
-      const completed = await service.completeUpload({
-        idempotencyKey: `${idempotencyKeyFactory(file)}:complete`,
-        requestId: requestIdFactory("complete", file),
-        sessionId: session.sessionId,
-        slotCode,
-      });
-
       setStatus("completed");
       onCompleted?.({
-        fileRef: completed.fileRef,
-        sessionId: session.sessionId,
+        driveNodeId: uploaded.driveNodeId,
+        driveSpaceId: uploaded.driveSpaceId,
+        driveUri: uploaded.driveUri,
+        fileRef: uploaded.fileRef,
+        uploadId: uploaded.uploadId,
       });
     } catch (error) {
       const normalized = normalizeError(error);
@@ -127,7 +110,7 @@ export function FileUploadButton({
     <>
       <button
         data-upload-status={status}
-        disabled={disabled || status === "creating" || status === "uploading" || status === "completing"}
+        disabled={disabled || status === "uploading"}
         onClick={() => inputRef.current?.click()}
         type="button"
       >
@@ -165,26 +148,11 @@ export function FileUploadQueue({
   );
 }
 
-export const defaultUploadTransport: FileUploadTransport = {
-  async uploadFile({ file, service, session }) {
-    const transport = createPresignedUploadTransport();
-    await transport.uploadFile({
-      file,
-      presignPart: async ({ partNumber, sessionId }) => service.presignUploadPart({
-        partNumber,
-        requestId: `file-upload:part:${sessionId}:${partNumber}`,
-        sessionId,
-      }),
-      session,
-    });
-  },
-};
-
 function defaultIdempotencyKey(file: File): string {
   return `upload:${file.name}:${file.size}:${file.lastModified}`;
 }
 
-function defaultRequestId(phase: "complete" | "create", file: File): string {
+function defaultRequestId(phase: "upload", file: File): string {
   return `file-upload:${phase}:${file.name}:${file.size}:${file.lastModified}`;
 }
 

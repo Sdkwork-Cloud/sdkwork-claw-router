@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::models::{OpenAiOrganizationUser};
+use crate::models::OpenAiOrganizationUser;
 
 /// OpenAI-compatible paginated list of organization users.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]

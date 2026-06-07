@@ -81,7 +81,7 @@ function createAttachmentService(events: string[]): FilePlatformService {
     async completeUpload() {
       throw new Error("not used");
     },
-    async createUploadSession() {
+    async uploadFile() {
       throw new Error("not used");
     },
     async deleteBinding(input) {

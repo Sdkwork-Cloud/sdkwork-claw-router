@@ -21,7 +21,6 @@ use sdkwork_claw_product::ports::{
 use crate::invocation_http::handle_invocation;
 use crate::invocation_provider_adapter::InvocationProviderAdapterResolver;
 
-#[derive(Clone)]
 pub(crate) struct InvocationRouterState<C>
 where
     C: PricingCatalog + Send + Sync + 'static,
@@ -29,6 +28,19 @@ where
     pub(crate) catalog: Arc<C>,
     pub(crate) api_key_hasher: Arc<dyn ApiKeySecretHasher + Send + Sync>,
     pub(crate) pipeline: InvocationPipeline,
+}
+
+impl<C> Clone for InvocationRouterState<C>
+where
+    C: PricingCatalog + Send + Sync + 'static,
+{
+    fn clone(&self) -> Self {
+        Self {
+            catalog: Arc::clone(&self.catalog),
+            api_key_hasher: Arc::clone(&self.api_key_hasher),
+            pipeline: self.pipeline.clone(),
+        }
+    }
 }
 
 pub fn invocation_router_with_catalog_api_key_hasher_dispatcher_and_secret_resolver<C>(

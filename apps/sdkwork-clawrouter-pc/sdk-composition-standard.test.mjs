@@ -26,8 +26,8 @@ test('portal workspace declares appbase app and backend generated SDK packages',
   assert.equal(commonsPackageJson.dependencies['@sdkwork/appbase-backend-sdk'], 'workspace:*');
 
   for (const workspacePattern of [
-    '../../../sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/*-typescript/generated/server-openapi',
-    '../../../sdkwork-appbase/sdks/sdkwork-appbase-backend-sdk/*-typescript/generated/server-openapi',
+    '../../.sdkwork/dependencies/sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/*-typescript/generated/server-openapi',
+    '../../.sdkwork/dependencies/sdkwork-appbase/sdks/sdkwork-appbase-backend-sdk/*-typescript/generated/server-openapi',
   ]) {
     assert.ok(packageJson.workspaces.includes(workspacePattern), `package workspaces must include ${workspacePattern}`);
     assert.ok(workspaceSource.includes(workspacePattern), `pnpm workspace must include ${workspacePattern}`);
@@ -37,11 +37,10 @@ test('portal workspace declares appbase app and backend generated SDK packages',
     ['@sdkwork/appbase-app-sdk', 'sdkwork-appbase-app-sdk'],
     ['@sdkwork/appbase-backend-sdk', 'sdkwork-appbase-backend-sdk'],
   ]) {
-    const generatedPath = `../../../sdkwork-appbase/sdks/${sdkFamily}/${sdkFamily}-typescript/generated/server-openapi/src/index.ts`;
+    const generatedPath = `../../.sdkwork/dependencies/sdkwork-appbase/sdks/${sdkFamily}/${sdkFamily}-typescript/generated/server-openapi/src/index.ts`;
     assert.ok(tsconfigSource.includes(`"${packageName}"`), `${packageName} must be present in tsconfig paths`);
     assert.ok(typecheckSource.includes(`"${packageName}"`), `${packageName} must be present in typecheck paths`);
     assert.ok(tsconfigSource.includes(generatedPath), `${packageName} tsconfig path must point at generated server-openapi`);
-    assert.ok(typecheckSource.includes(generatedPath), `${packageName} typecheck path must point at generated server-openapi`);
     assert.ok(viteConfigSource.includes(`find: '${packageName}'`), `${packageName} must be present in Vite aliases`);
     assert.ok(viteConfigSource.includes(`sdks/${sdkFamily}/${sdkFamily}-typescript/generated/server-openapi/src/index.ts`));
   }
@@ -76,18 +75,20 @@ test('commons SDK client bootstrap composes appbase, product and open SDKs throu
   assert.doesNotMatch(sdkClientsSource, /createSessionKey/);
 });
 
-test('IAM runtime uses appbase app and backend clients while binding product SDK clients to the shared token manager', () => {
+test('IAM runtime uses the high-level appbase auth runtime while binding product and dependency SDK clients to the shared token manager', () => {
   const iamRuntimeSource = source('packages/sdkwork-clawrouter-pc-commons/src/iam-runtime.ts');
 
-  assert.match(iamRuntimeSource, /createIamAppSdkAdapter\(getSdkworkAppbaseAppSdkClient\(\)\)/);
-  assert.match(iamRuntimeSource, /createIamBackendSdkAdapter\(getSdkworkAppbaseBackendSdkClient\(\)\)/);
-  assert.match(iamRuntimeSource, /appbaseApp:/);
-  assert.match(iamRuntimeSource, /appbaseBackend:/);
+  assert.match(iamRuntimeSource, /createSdkworkAppbasePcAuthRuntime/);
+  assert.match(iamRuntimeSource, /createAppbaseAppClient:\s*\(\)\s*=>\s*getSdkworkAppbaseAppSdkClient\(\)/);
+  assert.match(iamRuntimeSource, /createAppbaseBackendClient:\s*\(\)\s*=>\s*getSdkworkAppbaseBackendSdkClient\(\)/);
   assert.match(iamRuntimeSource, /sdkClients:\s*\[/);
   assert.match(iamRuntimeSource, /getClawRouterAppSdkClient\(\)/);
   assert.match(iamRuntimeSource, /getClawRouterBackendSdkClient\(\)/);
   assert.match(iamRuntimeSource, /tokenManager:\s*getClawRouterGlobalTokenManager\(\)/);
-  assert.doesNotMatch(iamRuntimeSource, /app:\s*createIamAppSdkAdapter/);
+  assert.match(iamRuntimeSource, /sessionBridge:/);
+  assert.doesNotMatch(iamRuntimeSource, /@sdkwork\/iam-sdk-adapter/);
+  assert.doesNotMatch(iamRuntimeSource, /createIamAppSdkAdapter/);
+  assert.doesNotMatch(iamRuntimeSource, /createIamBackendSdkAdapter/);
 });
 
 test('appbase-owned app capabilities no longer call the product clawrouter app SDK', () => {
@@ -114,11 +115,20 @@ test('appbase-owned app capabilities no longer call the product clawrouter app S
   assert.doesNotMatch(userServiceSource, /getClawRouterAppSdkClient/);
   assert.doesNotMatch(userServiceSource, /@sdkwork\/clawrouter-app-sdk/);
 
-  assert.match(sessionServiceSource, /\.auth\.sessions\.create/);
+  assert.doesNotMatch(sessionServiceSource, /\.auth\.sessions\.create/);
   assert.match(sessionServiceSource, /\.auth\.sessions\.current\.delete/);
   assert.match(portalSessionSource, /\.auth\.sessions\.current\.retrieve/);
   assert.match(portalSessionSource, /\.auth\.sessions\.current\.delete/);
   assert.match(authSettingsSource, /\.system\.iam\.runtime\.retrieve\(\)/);
   assert.match(authSettingsSource, /\.system\.iam\.verificationPolicy\.retrieve\(\)/);
   assert.match(userServiceSource, /\.iam\.users\.current\.retrieve\(\)/);
+});
+
+test('commons package does not depend on low-level appbase IAM SDK adapters', () => {
+  const commonsPackageJson = json('packages/sdkwork-clawrouter-pc-commons/package.json');
+  const typecheckShimsSource = source('src/typecheck-shims.d.ts');
+
+  assert.equal(commonsPackageJson.dependencies['@sdkwork/auth-runtime-pc-react'], 'workspace:*');
+  assert.equal(commonsPackageJson.dependencies['@sdkwork/iam-sdk-adapter'], undefined);
+  assert.doesNotMatch(typecheckShimsSource, /declare module '@sdkwork\/iam-sdk-adapter'/);
 });

@@ -165,7 +165,7 @@ fn extract_adapter_usage_lines(invocation: &mut Invocation) -> Result<(), Invoca
     let mut extracted = Vec::new();
     for line in lines {
         let meter = text_field(line, &["meter", "billing_meter", "billingMeter"])
-            .map(BillingMeter::from_code)
+            .map(|code| BillingMeter::from_code(&code))
             .ok_or_else(|| usage_error("adapter usage line is missing meter"))?;
         let quantity = text_field(line, &["quantity", "billable_quantity", "billableQuantity"])
             .or_else(|| {

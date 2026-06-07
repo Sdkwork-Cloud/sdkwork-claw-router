@@ -3,9 +3,7 @@ import { describe, expect, it } from "vitest";
 import {
   SDKWORK_FILE_BINDING_STATES,
   SDKWORK_FILE_SLOT_STATUSES,
-  SDKWORK_FILE_UPLOAD_STATUSES,
   SDKWORK_FILE_VISIBILITIES,
-  SDKWORK_FILE_UPLOAD_MODES,
   SDKWORK_FILE_TABLES,
   SDKWORK_DRIVE_NODE_TYPES,
   SDKWORK_DRIVE_SPACE_STATUSES,
@@ -46,8 +44,6 @@ describe("SDKWork file platform database schema", () => {
     expect(sql).toContain("CREATE EXTENSION IF NOT EXISTS pgcrypto;");
     expect(sql).toContain("CREATE TABLE IF NOT EXISTS object_blob");
     expect(sql).toContain("CONSTRAINT uq_object_blob_provider_bucket_key_version UNIQUE (tenant_id, provider_id, bucket_id, object_key, object_version_id)");
-    expect(sql).toContain("CREATE UNIQUE INDEX IF NOT EXISTS uq_upload_session_tenant_idempotency");
-    expect(sql).toContain("CONSTRAINT ck_upload_part_number CHECK (part_number >= 1 AND part_number <= 10000)");
     expect(sql).toContain("CREATE UNIQUE INDEX IF NOT EXISTS uq_drive_node_active_name");
     expect(sql).toContain("CREATE UNIQUE INDEX IF NOT EXISTS uq_file_version_current");
     expect(sql).toContain("CREATE UNIQUE INDEX IF NOT EXISTS uq_storage_usage_ledger_idempotency");
@@ -67,7 +63,6 @@ describe("SDKWork file platform database schema", () => {
     const provider = getFileSchemaTable("object_provider");
     const bucket = getFileSchemaTable("object_bucket");
     const defaultBucketPolicy = getFileSchemaTable("storage_default_bucket_policy");
-    const uploadSession = getFileSchemaTable("upload_session");
     const driveSpace = getFileSchemaTable("drive_space");
     const driveNode = getFileSchemaTable("drive_node");
     const quota = getFileSchemaTable("storage_quota_policy");
@@ -93,10 +88,6 @@ describe("SDKWork file platform database schema", () => {
     expect(defaultBucketPolicy.checks).toContainEqual({
       expression: enumExpression("logical_scope", SDKWORK_STORAGE_BUCKET_LOGICAL_SCOPES),
       name: "ck_storage_default_bucket_policy_logical_scope",
-    });
-    expect(uploadSession.checks).toContainEqual({
-      expression: enumExpression("upload_mode", SDKWORK_FILE_UPLOAD_MODES),
-      name: "ck_upload_session_upload_mode",
     });
     expect(driveSpace.checks).toContainEqual({
       expression: enumExpression("space_type", SDKWORK_DRIVE_SPACE_TYPES),
@@ -125,7 +116,6 @@ describe("SDKWork file platform database schema", () => {
     expect(sql).toContain("CONSTRAINT ck_object_bucket_default_storage_class CHECK");
     expect(sql).toContain("CONSTRAINT ck_object_bucket_default_encryption_mode CHECK");
     expect(sql).toContain("CONSTRAINT ck_storage_default_bucket_policy_logical_scope CHECK");
-    expect(sql).toContain("CONSTRAINT ck_upload_session_upload_mode CHECK");
     expect(sql).toContain("CONSTRAINT ck_drive_space_type CHECK");
     expect(sql).toContain("CONSTRAINT ck_drive_node_type CHECK");
     expect(sql).toContain("CONSTRAINT ck_storage_quota_policy_scope_type CHECK");
@@ -147,11 +137,6 @@ describe("SDKWork file platform database schema", () => {
     expect(getFileSchemaTable("storage_default_bucket_policy").checks).toEqual(
       expect.arrayContaining([
         enumCheck("status", SDKWORK_STORAGE_RESOURCE_STATUSES, "ck_storage_default_bucket_policy_status"),
-      ]),
-    );
-    expect(getFileSchemaTable("upload_session").checks).toEqual(
-      expect.arrayContaining([
-        enumCheck("status", SDKWORK_FILE_UPLOAD_STATUSES, "ck_upload_session_status"),
       ]),
     );
     expect(getFileSchemaTable("drive_space").checks).toEqual(
@@ -196,7 +181,6 @@ describe("SDKWork file platform database schema", () => {
     );
 
     const sql = createPostgresFileSchemaMigration();
-    expect(sql).toContain("CONSTRAINT ck_upload_session_status CHECK");
     expect(sql).toContain("CONSTRAINT ck_file_node_visibility CHECK");
     expect(sql).toContain("CONSTRAINT ck_storage_gc_job_status CHECK");
   });
@@ -501,15 +485,12 @@ describe("SDKWork file platform database schema", () => {
     expect(quotaReservation.columns.map((column) => column.name)).toEqual(
       expect.arrayContaining(["idempotency_key", "reserved_bytes", "expires_at", "status", "released_at", "converted_at"]),
     );
-    expect(quotaReservation.columns).toContainEqual({
-      name: "upload_session_id",
-      type: "bigint",
-    });
-    expect(quotaReservation.foreignKeys).toContainEqual({
-      columns: ["tenant_id", "upload_session_id"],
-      name: "fk_storage_quota_reservation_upload_session_tenant",
-      references: "upload_session(tenant_id, id)",
-    });
+    expect(quotaReservation.columns.map((column) => column.name)).not.toContain("upload_session_id");
+    expect(quotaReservation.foreignKeys ?? []).not.toContainEqual(
+      expect.objectContaining({
+        name: "fk_storage_quota_reservation_upload_session_tenant",
+      }),
+    );
     expect(quotaReservation.checks).toContain("reserved_bytes >= 0");
     expect(quotaReservation.indexes).toContainEqual(
       expect.objectContaining({
@@ -593,6 +574,13 @@ describe("SDKWork file platform database schema", () => {
     expect(sql).not.toContain("signed_url");
     expect(sql).not.toContain("public_url");
     expect(sql).not.toContain("s3_url");
+    expect(sql).not.toContain("create table if not exists upload_session");
+    expect(sql).not.toContain("create table if not exists upload_presign_grant");
+    expect(sql).not.toContain("create table if not exists upload_part");
+    expect(sql).not.toContain("create table if not exists upload_completion_attempt");
+    expect(sql).not.toContain("upload_session_id");
+    expect(sql).not.toContain("idx_upload_session");
+    expect(sql).not.toContain("idx_upload_part");
 
     const violations = validateFileSchemaStandard();
     expect(violations).toEqual([]);
@@ -701,13 +689,13 @@ describe("SDKWork file platform database schema", () => {
 
   it("reports missing required schema checks during standard validation", () => {
     const driftedTables = SDKWORK_FILE_SCHEMA_TABLES.map((table) => (
-      table.name === "upload_session"
+      table.name === "storage_quota_reservation"
         ? { ...table, checks: [] }
         : table
     ));
 
     expect(validateFileSchemaStandard(driftedTables)).toContain(
-      "missing_required_check:upload_session.ck_upload_session_status",
+      "missing_required_check:storage_quota_reservation.ck_storage_quota_reservation_status",
     );
   });
 
@@ -814,16 +802,17 @@ describe("SDKWork file platform database schema", () => {
     expect(unsupportedForeignKeys).toEqual([]);
 
     const driftedTables = SDKWORK_FILE_SCHEMA_TABLES.map((table) => (
-      table.name === "storage_quota_reservation"
+      table.name === "file_metadata_common"
         ? {
             ...table,
-            indexes: table.indexes?.filter((index) => index.name !== "idx_storage_quota_reservation_upload"),
+            indexes: table.indexes?.filter((index) => index.name !== "idx_file_metadata_common_tenant_file"),
+            uniques: table.uniques?.filter((unique) => unique.name !== "uq_file_metadata_common_file"),
           }
         : table
     ));
 
     expect(validateFileSchemaStandard(driftedTables)).toContain(
-      "missing_foreign_key_supporting_index:storage_quota_reservation.fk_storage_quota_reservation_upload_session_tenant",
+      "missing_foreign_key_supporting_index:file_metadata_common.fk_file_metadata_common_file_tenant",
     );
   });
 
@@ -910,13 +899,12 @@ describe("SDKWork file platform database schema", () => {
     );
   });
 
-  it("denormalizes tenant id onto upload and file child tables for direct row-level security", () => {
+  it("denormalizes tenant id onto file child tables for direct row-level security", () => {
     const requiredTenantScopedTables = [
-      "upload_presign_grant",
-      "upload_part",
-      "upload_completion_attempt",
+      "object_tag",
       "file_version",
       "file_metadata_common",
+      "file_binding",
     ];
 
     for (const tableName of requiredTenantScopedTables) {
@@ -936,7 +924,7 @@ describe("SDKWork file platform database schema", () => {
     }
 
     const sql = createPostgresFileSchemaMigration();
-    expect(sql).toContain("ALTER TABLE upload_part ENABLE ROW LEVEL SECURITY;");
+    expect(sql).toContain("ALTER TABLE object_tag ENABLE ROW LEVEL SECURITY;");
     expect(sql).toContain("ALTER TABLE file_version ENABLE ROW LEVEL SECURITY;");
   });
 
@@ -961,10 +949,6 @@ describe("SDKWork file platform database schema", () => {
     expect(getFileSchemaTable("object_blob").uniques).toContainEqual({
       columns: ["tenant_id", "id"],
       name: "uq_object_blob_tenant_id",
-    });
-    expect(getFileSchemaTable("upload_session").uniques).toContainEqual({
-      columns: ["tenant_id", "id"],
-      name: "uq_upload_session_tenant_id",
     });
     expect(getFileSchemaTable("file_node").uniques).toContainEqual({
       columns: ["tenant_id", "id"],
@@ -1006,31 +990,6 @@ describe("SDKWork file platform database schema", () => {
       columns: ["tenant_id", "object_blob_id"],
       name: "fk_object_tag_blob_tenant",
       references: "object_blob(tenant_id, id)",
-    });
-    expect(getFileSchemaTable("upload_session").foreignKeys).toContainEqual({
-      columns: ["tenant_id", "provider_id"],
-      name: "fk_upload_session_provider_tenant",
-      references: "object_provider(tenant_id, id)",
-    });
-    expect(getFileSchemaTable("upload_session").foreignKeys).toContainEqual({
-      columns: ["tenant_id", "bucket_id"],
-      name: "fk_upload_session_bucket_tenant",
-      references: "object_bucket(tenant_id, id)",
-    });
-    expect(getFileSchemaTable("upload_presign_grant").foreignKeys).toContainEqual({
-      columns: ["tenant_id", "session_id"],
-      name: "fk_upload_presign_grant_session_tenant",
-      references: "upload_session(tenant_id, id)",
-    });
-    expect(getFileSchemaTable("upload_part").foreignKeys).toContainEqual({
-      columns: ["tenant_id", "session_id"],
-      name: "fk_upload_part_session_tenant",
-      references: "upload_session(tenant_id, id)",
-    });
-    expect(getFileSchemaTable("upload_completion_attempt").foreignKeys).toContainEqual({
-      columns: ["tenant_id", "session_id"],
-      name: "fk_upload_completion_attempt_session_tenant",
-      references: "upload_session(tenant_id, id)",
     });
     expect(getFileSchemaTable("file_version").foreignKeys).toContainEqual({
       columns: ["tenant_id", "file_id"],
@@ -1115,16 +1074,16 @@ describe("SDKWork file platform database schema", () => {
     });
 
     const driftedTables = SDKWORK_FILE_SCHEMA_TABLES.map((table) => (
-      table.name === "upload_part"
+      table.name === "file_metadata_common"
         ? {
             ...table,
-            foreignKeys: table.foreignKeys?.filter((foreignKey) => foreignKey.name !== "fk_upload_part_session_tenant"),
+            foreignKeys: table.foreignKeys?.filter((foreignKey) => foreignKey.name !== "fk_file_metadata_common_file_tenant"),
           }
         : table
     ));
 
     expect(validateFileSchemaStandard(driftedTables)).toContain(
-      "missing_tenant_consistent_foreign_key:upload_part.fk_upload_part_session_tenant",
+      "missing_tenant_consistent_foreign_key:file_metadata_common.fk_file_metadata_common_file_tenant",
     );
 
     const wrongReferenceTables = SDKWORK_FILE_SCHEMA_TABLES.map((table) => (

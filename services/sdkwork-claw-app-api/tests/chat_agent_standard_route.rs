@@ -289,7 +289,7 @@ async fn app_api_exposes_standard_chat_and_agent_session_routes_with_sqlite_stor
             "chatConversationId": conversation_id,
             "memorySpaceId": memory_space_id,
             "runtime": "codex",
-            "cwd": "D:/javasource/spring-ai-plus",
+            "cwd": "..",
             "sandboxPolicy": "workspace-write",
             "approvalPolicy": "on-request",
             "permissionMode": "default",

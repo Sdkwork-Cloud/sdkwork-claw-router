@@ -1,8 +1,17 @@
 import React, { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { DriveBrowser } from '@sdkwork/file-platform-pc-react';
+import { createFilePlatformServiceFromSdkClient } from '@sdkwork/file-sdk-adapter';
 import type { FilePlatformService } from '@sdkwork/file-service';
-import type { StorageAdminSectionId } from './storageSectionDefinitions';
+import type {
+  DriveNode,
+  DriveSpace,
+  SdkworkDriveAppClient,
+} from '@sdkwork/drive-app-sdk';
+import {
+  getSdkworkDriveAppSdkClient,
+} from 'sdkwork-clawrouter-pc-commons/sdk-clients';
+import { readClawRouterRuntimeEnv } from 'sdkwork-clawrouter-pc-commons/utils/env';
 
 export type DriveAdminSectionId =
   | 'audit'
@@ -29,7 +38,7 @@ export function DriveAdmin({ sectionId }: FilePlatformAdminRouteProps) {
   const { t } = useTranslation();
   const activeSectionId = resolveDriveSectionId(sectionId);
   const [lastError, setLastError] = useState<string | null>(null);
-  const driveService = useMemo(() => createEmptyDriveService(), []);
+  const driveService = useMemo(() => createDriveAdminService(), []);
 
   return (
     <section
@@ -64,22 +73,123 @@ function driveMenuKey(sectionId: DriveAdminSectionId): string {
   return sectionId === 'shareLinks' ? 'shareLinks' : sectionId;
 }
 
-function createEmptyDriveService(): FilePlatformService {
+function createDriveAdminService(): FilePlatformService {
+  const client = getSdkworkDriveAppSdkClient();
+  return createFilePlatformServiceFromSdkClient({
+    app: createDriveFilePlatformAppClient(client),
+    drive: client,
+  });
+}
+
+function createDriveFilePlatformAppClient(client: SdkworkDriveAppClient) {
   return {
-    async abortUpload() { throw new Error('Drive admin does not own upload sessions.'); },
-    async bindFile() { throw new Error('Drive admin does not own file bindings.'); },
-    async completeUpload() { throw new Error('Drive admin does not own upload sessions.'); },
-    async createUploadSession() { throw new Error('Drive admin does not own upload sessions.'); },
-    async deleteBinding() { throw new Error('Drive admin does not own file bindings.'); },
-    async getFile() { throw new Error('Drive admin file retrieval service is not configured.'); },
-    async getStorageUsage() { throw new Error('Drive admin usage service is not configured.'); },
-    getSlot() { return undefined; },
-    async issueDownloadUrl() { throw new Error('Drive admin download URL service is not configured.'); },
-    async issuePreviewUrl() { throw new Error('Drive admin preview URL service is not configured.'); },
-    async listBindings() { throw new Error('Drive admin does not own file bindings.'); },
-    async listDriveNodes() { return { items: [] }; },
-    async listDriveSpaces() { return { items: [] }; },
-    async listFiles() { return { items: [] }; },
-    async presignUploadPart() { throw new Error('Drive admin does not own upload sessions.'); },
+    async driveNodesList(input: {
+      cursor?: string;
+      limit?: number;
+      parentNodeId?: string;
+      requestId: string;
+      spaceId: string;
+    }) {
+      const result = await client.drive.nodes.list(input.spaceId, {
+        pageSize: input.limit === undefined ? undefined : String(input.limit),
+        pageToken: input.cursor,
+        parentNodeId: input.parentNodeId,
+        tenantId: resolveDriveTenantId(),
+      });
+      return {
+        items: result.items.map(mapDriveNode),
+        nextCursor: result.nextPageToken,
+        requestId: input.requestId,
+      };
+    },
+    async driveSpacesList(input: { requestId: string }) {
+      const result = await client.drive.spaces.list({
+        tenantId: resolveDriveTenantId(),
+      });
+      return {
+        items: result.items.map(mapDriveSpace),
+        requestId: input.requestId,
+      };
+    },
+    async fileBindingsCreate() {
+      throw unsupportedDriveAdminCapability('fileBindings.create');
+    },
+    async fileBindingsDelete() {
+      throw unsupportedDriveAdminCapability('fileBindings.delete');
+    },
+    async fileBindingsList() {
+      throw unsupportedDriveAdminCapability('fileBindings.list');
+    },
+    async filesDownloadUrlCreate() {
+      throw unsupportedDriveAdminCapability('files.downloadUrl.create');
+    },
+    async filesList() {
+      throw unsupportedDriveAdminCapability('files.list');
+    },
+    async filesPreviewUrlCreate() {
+      throw unsupportedDriveAdminCapability('files.previewUrl.create');
+    },
+    async filesRetrieve() {
+      throw unsupportedDriveAdminCapability('files.retrieve');
+    },
+    async storageUsageRetrieve() {
+      throw unsupportedDriveAdminCapability('storage.usage.retrieve');
+    },
   };
+}
+
+function resolveDriveTenantId(): string {
+  return readClawRouterRuntimeEnv('VITE_SDKWORK_TENANT_ID')
+    ?? readClawRouterRuntimeEnv('VITE_CLAWROUTER_TENANT_ID')
+    ?? '20001';
+}
+
+function mapDriveSpace(space: DriveSpace) {
+  return {
+    name: space.displayName,
+    spaceId: space.id,
+    status: mapDriveSpaceStatus(space.lifecycleStatus),
+    type: mapDriveSpaceType(space.spaceType),
+  };
+}
+
+function mapDriveNode(node: DriveNode) {
+  return {
+    depth: 0,
+    fileId: node.nodeType === 'file' ? node.id : undefined,
+    name: node.nodeName,
+    nodeId: node.id,
+    nodeType: mapDriveNodeType(node.nodeType),
+    parentNodeId: node.parentNodeId,
+    pathSegment: node.nodeName,
+    spaceId: node.spaceId,
+    trashed: node.lifecycleStatus === 'trashed',
+  };
+}
+
+function mapDriveSpaceStatus(status: string) {
+  return status === 'archived' || status === 'disabled' ? status : 'active';
+}
+
+function mapDriveSpaceType(type: DriveSpace['spaceType']) {
+  switch (type) {
+    case 'personal':
+      return 'user_drive';
+    case 'team':
+      return 'team_drive';
+    case 'knowledge_base':
+    case 'ai_generated':
+      return 'system_library';
+    case 'app':
+    case 'app_upload':
+      return 'app_drive';
+  }
+}
+
+function mapDriveNodeType(type: DriveNode['nodeType']) {
+  return type === 'virtual_reference' ? 'shortcut' : type;
+}
+
+function unsupportedDriveAdminCapability(operationId: string): Error {
+  return new Error(`Drive admin service does not expose ${operationId}.`);
 }

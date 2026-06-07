@@ -6,6 +6,7 @@ import path from 'node:path';
 import process from 'node:process';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import {
+  resolveClawRouterAppStandardToolsRoot,
   resolveClawRouterBusinessAppsRoot,
 } from './claw-router-layout.mjs';
 
@@ -13,6 +14,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const DEFAULT_WORKSPACE_ROOT = path.resolve(__dirname, '..');
 const DEFAULT_APPS_ROOT = resolveClawRouterBusinessAppsRoot(DEFAULT_WORKSPACE_ROOT);
+const DEFAULT_APP_STANDARD_TOOLS_ROOT = resolveClawRouterAppStandardToolsRoot(DEFAULT_WORKSPACE_ROOT);
 const DEFAULT_ENVIRONMENT = 'production';
 const DEFAULT_CHANNEL = 'STABLE';
 const FIELD_ICON = 'icon';
@@ -267,10 +269,10 @@ function canonicalAppSeedBundle(bundle) {
 function printHelp() {
   console.log(`Usage: node scripts/update-app-store-seed.mjs [options]
 
-Refresh SDKWork App Store install-time seed data from all apps under spring-ai-plus-business/apps.
+Refresh SDKWork App Store install-time seed data from app repositories under the current SDKWork workspace.
 
 Options:
-  --apps-root <path>       Apps root to scan, default the nearest spring-ai-plus-business/apps sibling.
+  --apps-root <path>       Workspace root to scan, default the nearest SDKWork workspace root.
   --environment <name>     PlusApp projection environment, default production.
   --channel <name>         PlusApp release channel, default STABLE.
   --platform <name>        Optional package platform selector.
@@ -439,7 +441,7 @@ export function buildAppStoreSeedCommandPlan(settings, { workspaceRoot = DEFAULT
 }
 
 async function loadAppStandardInitModule() {
-  const modulePath = path.join(DEFAULT_APPS_ROOT, 'scripts', 'lib', 'sdkwork-app-standard-init-all.mjs');
+  const modulePath = path.join(DEFAULT_APP_STANDARD_TOOLS_ROOT, 'scripts', 'lib', 'sdkwork-app-standard-init-all.mjs');
   return import(pathToFileURL(modulePath).href);
 }
 

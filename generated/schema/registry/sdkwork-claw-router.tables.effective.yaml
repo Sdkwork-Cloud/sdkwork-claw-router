@@ -169,7 +169,7 @@ domains:
     owner: platform-ops
     bounded_context: operations-observability
   legacy:
-    owner: spring-ai-plus-business-entity
+    owner: legacy-java-plus-entity
     bounded_context: legacy-compatible
 domain_names:
   model_vendor:
@@ -1348,7 +1348,7 @@ tables:
   profile: legacy_compatible
   compliance_level: L0
   system_of_record: true
-  write_owner: spring-ai-plus-business-entity
+  
   generated_by_this_project: false
   frontend_routes:
   - /console/account
@@ -1490,7 +1490,7 @@ tables:
   profile: java_compatible_owned
   compliance_level: L0
   system_of_record: true
-  write_owner: spring-ai-plus-business-entity
+  
   generated_by_this_project: true
   frontend_routes:
   - /apps
@@ -1633,7 +1633,7 @@ tables:
   profile: java_compatible_owned
   compliance_level: L0
   system_of_record: true
-  write_owner: spring-ai-plus-business-entity
+  
   generated_by_this_project: true
   frontend_routes:
   - /skills-hub
@@ -1785,7 +1785,7 @@ tables:
   profile: java_compatible_owned
   compliance_level: L0
   system_of_record: true
-  write_owner: spring-ai-plus-business-entity
+  
   generated_by_this_project: true
   frontend_routes:
   - /skills-hub
@@ -2174,7 +2174,7 @@ tables:
   profile: java_compatible_owned
   compliance_level: L0
   system_of_record: true
-  write_owner: spring-ai-plus-business-entity
+  
   generated_by_this_project: true
   frontend_routes:
   - /forum
@@ -2358,7 +2358,7 @@ tables:
   profile: java_compatible_owned
   compliance_level: L0
   system_of_record: true
-  write_owner: spring-ai-plus-business-entity
+  
   generated_by_this_project: true
   frontend_routes:
   - /forum
@@ -2502,7 +2502,7 @@ tables:
   profile: java_compatible_owned
   compliance_level: L0
   system_of_record: true
-  write_owner: spring-ai-plus-business-entity
+  
   generated_by_this_project: true
   frontend_routes:
   - /forum
@@ -2601,7 +2601,7 @@ tables:
   profile: java_compatible_owned
   compliance_level: L0
   system_of_record: true
-  write_owner: spring-ai-plus-business-entity
+  
   generated_by_this_project: true
   frontend_routes:
   - /forum
@@ -2714,7 +2714,7 @@ tables:
   profile: legacy_compatible
   compliance_level: L0
   system_of_record: true
-  write_owner: spring-ai-plus-business-entity
+  
   generated_by_this_project: false
   frontend_routes:
   - /admin/user
@@ -2726,7 +2726,7 @@ tables:
   profile: legacy_compatible
   compliance_level: L0
   system_of_record: true
-  write_owner: spring-ai-plus-business-entity
+  
   generated_by_this_project: false
   frontend_routes:
   - /admin/user
@@ -8982,7 +8982,7 @@ tables:
   profile: legacy_compatible
   compliance_level: L0
   system_of_record: true
-  write_owner: spring-ai-plus-business-entity
+  
   generated_by_this_project: false
   frontend_routes:
   - /console/account
@@ -8997,7 +8997,7 @@ tables:
   profile: legacy_compatible
   compliance_level: L0
   system_of_record: true
-  write_owner: spring-ai-plus-business-entity
+  
   generated_by_this_project: false
   frontend_routes:
   - /console/account
@@ -9012,7 +9012,7 @@ tables:
   profile: legacy_compatible
   compliance_level: L0
   system_of_record: true
-  write_owner: spring-ai-plus-business-entity
+  
   generated_by_this_project: false
   frontend_routes:
   - /admin/marketing
@@ -9026,7 +9026,7 @@ tables:
   profile: legacy_compatible
   compliance_level: L0
   system_of_record: true
-  write_owner: spring-ai-plus-business-entity
+  
   generated_by_this_project: false
   frontend_routes:
   - /admin/marketing
@@ -9040,7 +9040,7 @@ tables:
   profile: legacy_compatible
   compliance_level: L0
   system_of_record: true
-  write_owner: spring-ai-plus-business-entity
+  
   generated_by_this_project: false
   frontend_routes:
   - /admin/marketing
@@ -9054,7 +9054,7 @@ tables:
   profile: legacy_compatible
   compliance_level: L0
   system_of_record: true
-  write_owner: spring-ai-plus-business-entity
+  
   generated_by_this_project: false
   frontend_routes:
   - /admin/marketing
@@ -9067,7 +9067,7 @@ tables:
   profile: legacy_compatible
   compliance_level: L0
   system_of_record: true
-  write_owner: spring-ai-plus-business-entity
+  
   generated_by_this_project: false
   frontend_routes:
   - /admin/marketing
@@ -9080,7 +9080,7 @@ tables:
   profile: legacy_compatible
   compliance_level: L0
   system_of_record: true
-  write_owner: spring-ai-plus-business-entity
+  
   generated_by_this_project: false
   frontend_routes:
   - /admin/marketing
@@ -9158,7 +9158,7 @@ tables:
   profile: legacy_compatible
   compliance_level: L0
   system_of_record: true
-  write_owner: spring-ai-plus-business-entity
+  
   generated_by_this_project: false
   frontend_routes:
   - /console/usage
@@ -9172,7 +9172,7 @@ tables:
   profile: legacy_compatible
   compliance_level: L0
   system_of_record: true
-  write_owner: spring-ai-plus-business-entity
+  
   generated_by_this_project: false
   frontend_routes:
   - /console/routing
@@ -9186,7 +9186,7 @@ tables:
   profile: legacy_compatible
   compliance_level: L0
   system_of_record: true
-  write_owner: spring-ai-plus-business-entity
+  
   generated_by_this_project: false
   frontend_routes:
   - /console/routing
@@ -9200,7 +9200,7 @@ tables:
   profile: legacy_compatible
   compliance_level: L0
   system_of_record: true
-  write_owner: spring-ai-plus-business-entity
+  
   generated_by_this_project: false
   frontend_routes:
   - /console/routing
@@ -18138,8 +18138,8 @@ tables:
   common_columns: projection
   source_refs:
   - spring-ai-plus-open-api
-  - spring-ai-plus-app-api
-  - spring-ai-plus-backend-api
+  - legacy-java-plus-app-api
+  - legacy-java-plus-backend-api
   - generated-openapi-json
   frontend_routes:
   - /product-docs

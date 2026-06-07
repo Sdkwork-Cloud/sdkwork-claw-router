@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::models::{OpenAiEvalRun};
+use crate::models::OpenAiEvalRun;
 
 /// OpenAI-compatible paginated list of eval runs.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]

@@ -181,6 +181,11 @@ class AppSeedCatalogStandardTest(unittest.TestCase):
         self.assertEqual("sdkwork-claw-router", seed.get("source", {}).get("rootAppKey"))
         self.assertIsInstance(seed.get("apps"), list)
         self.assertGreater(len(seed["apps"]), 0)
+        self.assertEqual(
+            len(seed["apps"]),
+            seed.get("count"),
+            "sdkwork-apps.json count must match the actual apps length",
+        )
 
         app_keys = [item.get("appKey") for item in seed["apps"]]
         self.assertEqual(len(app_keys), len(set(app_keys)), "appKey values must be unique")
@@ -325,7 +330,7 @@ class AppSeedCatalogStandardTest(unittest.TestCase):
         mismatch = first_json_mismatch(exported, committed)
         self.assertIsNone(
             mismatch,
-            "data/app/sdkwork-apps.json must be regenerated from all spring-ai-plus-business/apps "
+            "data/app/sdkwork-apps.json must be regenerated from all workspace sibling app repositories "
             f"sdkwork.app.config.json files; first mismatch: {mismatch}",
         )
 
@@ -381,7 +386,7 @@ class AppSeedCatalogStandardTest(unittest.TestCase):
         self.assertEqual(1, category_seed.get("schemaVersion"))
         self.assertEqual("sdkwork.plus_category.app_seed", category_seed.get("kind"))
         self.assertEqual("sdkwork.plus_app.seed", category_seed.get("source", {}).get("appSeedKind"))
-        self.assertEqual(seed["count"], category_seed.get("source", {}).get("appCount"))
+        self.assertEqual(len(seed["apps"]), category_seed.get("source", {}).get("appCount"))
         self.assertEqual(
             seed["source"],
             category_seed.get("source", {}).get("appSeedSource"),

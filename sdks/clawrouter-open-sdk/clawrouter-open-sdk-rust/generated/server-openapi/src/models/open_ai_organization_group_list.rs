@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::models::{OpenAiOrganizationGroup};
+use crate::models::OpenAiOrganizationGroup;
 
 /// OpenAI-compatible paginated list of organization groups.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]

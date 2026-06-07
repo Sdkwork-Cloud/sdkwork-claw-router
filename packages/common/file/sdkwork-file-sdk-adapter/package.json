@@ -16,10 +16,11 @@
     "README.md"
   ],
   "scripts": {
-    "typecheck": "node ../../../../sdkwork-appbase/node_modules/typescript/bin/tsc -p tsconfig.json --noEmit",
-    "test": "node ../../../../sdkwork-appbase/node_modules/vitest/vitest.mjs run tests --pool vmThreads"
+    "typecheck": "node ../../../../apps/sdkwork-clawrouter-pc/node_modules/typescript/bin/tsc -p tsconfig.json --noEmit",
+    "test": "node ../../../../apps/sdkwork-clawrouter-pc/node_modules/vitest/vitest.mjs run tests --pool vmThreads"
   },
   "dependencies": {
+    "@sdkwork/drive-app-sdk": "workspace:*",
     "@sdkwork/file-api-contracts": "workspace:*",
     "@sdkwork/file-contracts": "workspace:*",
     "@sdkwork/file-sdk-ports": "workspace:*",

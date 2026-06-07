@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::models::{OpenAiProjectApiKey};
+use crate::models::OpenAiProjectApiKey;
 
 /// OpenAI-compatible project service account object.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]

@@ -6,6 +6,117 @@ declare module '@sdkwork/iam-service' {
   }
 }
 
+declare module '@sdkwork/appbase-app-sdk' {
+  export type SdkworkAppbaseSdkResponse = unknown;
+
+  export interface SdkworkAppbaseListResource {
+    list(params?: Record<string, unknown>): Promise<SdkworkAppbaseSdkResponse>;
+  }
+
+  export interface SdkworkAppbaseTreeResource {
+    retrieve(): Promise<SdkworkAppbaseSdkResponse>;
+  }
+
+  export interface SdkworkAppbaseCurrentResource {
+    delete(): Promise<SdkworkAppbaseSdkResponse>;
+    retrieve(): Promise<SdkworkAppbaseSdkResponse>;
+  }
+
+  export interface SdkworkAppConfig {
+    baseUrl?: string;
+    platform?: string;
+    timeout?: number;
+    tokenManager?: unknown;
+  }
+
+  export class SdkworkAppClient {
+    auth: {
+      sessions: {
+        create(input?: Record<string, unknown>): Promise<SdkworkAppbaseSdkResponse>;
+        current: SdkworkAppbaseCurrentResource;
+      };
+    };
+    http: unknown;
+    iam: {
+      departmentAssignments: SdkworkAppbaseListResource;
+      departments: SdkworkAppbaseListResource & { tree: SdkworkAppbaseTreeResource };
+      organizationMemberships: SdkworkAppbaseListResource;
+      organizations: SdkworkAppbaseListResource & { tree: SdkworkAppbaseTreeResource };
+      positionAssignments: SdkworkAppbaseListResource;
+      positions: SdkworkAppbaseListResource;
+      roleBindings: SdkworkAppbaseListResource;
+      users: {
+        current: SdkworkAppbaseTreeResource;
+      };
+    };
+    system: {
+      iam: {
+        runtime: SdkworkAppbaseTreeResource;
+        verificationPolicy: SdkworkAppbaseTreeResource;
+      };
+    };
+
+    constructor(config?: SdkworkAppConfig);
+  }
+}
+
+declare module '@sdkwork/appbase-backend-sdk' {
+  export type SdkworkAppbaseBackendSdkResponse = unknown;
+
+  export interface SdkworkAppbaseBackendListResource {
+    list(params?: Record<string, unknown>): Promise<SdkworkAppbaseBackendSdkResponse>;
+  }
+
+  export interface SdkworkAppbaseBackendTreeResource {
+    retrieve(): Promise<SdkworkAppbaseBackendSdkResponse>;
+  }
+
+  export interface SdkworkAppbaseBackendCrudResource extends SdkworkAppbaseBackendListResource {
+    create(input?: Record<string, unknown>): Promise<SdkworkAppbaseBackendSdkResponse>;
+    delete(id: string): Promise<SdkworkAppbaseBackendSdkResponse>;
+    update(id: string, input?: Record<string, unknown>): Promise<SdkworkAppbaseBackendSdkResponse>;
+  }
+
+  export interface SdkworkAppbaseBackendApiKeysResource extends SdkworkAppbaseBackendListResource {
+    revoke(id: string, input?: Record<string, unknown>): Promise<SdkworkAppbaseBackendSdkResponse>;
+  }
+
+  export interface SdkworkBackendConfig {
+    baseUrl?: string;
+    platform?: string;
+    timeout?: number;
+    tokenManager?: unknown;
+  }
+
+  export class SdkworkBackendClient {
+    http: unknown;
+    iam: {
+      departmentAssignments: Omit<SdkworkAppbaseBackendCrudResource, 'delete'>;
+      departments: SdkworkAppbaseBackendCrudResource & { tree: SdkworkAppbaseBackendTreeResource };
+      organizationMemberships: Omit<SdkworkAppbaseBackendCrudResource, 'delete'>;
+      organizations: SdkworkAppbaseBackendCrudResource & { tree: SdkworkAppbaseBackendTreeResource };
+      permissions: SdkworkAppbaseBackendCrudResource;
+      positionAssignments: Omit<SdkworkAppbaseBackendCrudResource, 'delete'>;
+      positions: SdkworkAppbaseBackendCrudResource;
+      roleBindings: SdkworkAppbaseBackendListResource & {
+        create(input?: Record<string, unknown>): Promise<SdkworkAppbaseBackendSdkResponse>;
+        delete(id: string): Promise<SdkworkAppbaseBackendSdkResponse>;
+      };
+      roles: SdkworkAppbaseBackendCrudResource & {
+        permissions: {
+          create(roleId: string, input?: Record<string, unknown>): Promise<SdkworkAppbaseBackendSdkResponse>;
+          delete(roleId: string, permissionId: string): Promise<SdkworkAppbaseBackendSdkResponse>;
+          list(roleId: string, params?: Record<string, unknown>): Promise<SdkworkAppbaseBackendSdkResponse>;
+        };
+      };
+      apiKeys: SdkworkAppbaseBackendApiKeysResource;
+      users: SdkworkAppbaseBackendCrudResource;
+    };
+
+    constructor(config?: SdkworkBackendConfig);
+  }
+}
+
 declare module '@sdkwork/file-sdk-ports' {
   export type SdkworkStorageBucketLogicalScope =
     | 'migration_import'
@@ -184,7 +295,6 @@ declare module '@sdkwork/file-service' {
     abortUpload(input: unknown): Promise<unknown>;
     bindFile(input: unknown): Promise<unknown>;
     completeUpload(input: unknown): Promise<unknown>;
-    createUploadSession(input: unknown): Promise<unknown>;
     deleteBinding(input: unknown): Promise<unknown>;
     getFile(input: unknown): Promise<unknown>;
     getStorageUsage(input: unknown): Promise<unknown>;
@@ -195,8 +305,72 @@ declare module '@sdkwork/file-service' {
     listDriveNodes(input: { parentNodeId?: string; spaceId: string }): Promise<{ items: unknown[]; requestId?: string }>;
     listDriveSpaces(input?: Record<string, unknown>): Promise<{ items: unknown[]; requestId?: string }>;
     listFiles(input?: Record<string, unknown>): Promise<{ items: unknown[]; requestId?: string }>;
-    presignUploadPart(input: unknown): Promise<unknown>;
+    uploadFile(input: unknown): Promise<unknown>;
   }
+}
+
+declare module '@sdkwork/drive-app-sdk' {
+  export interface DriveSpace {
+    displayName: string;
+    id: string;
+    lifecycleStatus: string;
+    ownerSubjectId: string;
+    ownerSubjectType: string;
+    spaceType: 'ai_generated' | 'app' | 'app_upload' | 'knowledge_base' | 'personal' | 'team';
+    tenantId: string;
+    version: string;
+  }
+
+  export interface DriveNode {
+    id: string;
+    lifecycleStatus: 'active' | 'deleted' | 'trashed';
+    nodeName: string;
+    nodeType: 'file' | 'folder' | 'shortcut' | 'virtual_reference';
+    parentNodeId?: string;
+    spaceId: string;
+    tenantId: string;
+    version: string;
+  }
+
+  export interface SdkworkDriveAppClient {
+    drive: {
+      nodes: {
+        list(spaceId: string, params: {
+          pageSize?: string;
+          pageToken?: string;
+          parentNodeId?: string;
+          tenantId: string;
+        }): Promise<{ items: DriveNode[]; nextPageToken?: string }>;
+      };
+      spaces: {
+        list(params: { tenantId: string }): Promise<{ items: DriveSpace[] }>;
+      };
+    };
+    http: unknown;
+    setTokenManager?(manager: unknown): unknown;
+    uploader: {
+      uploadByProfile(profile: string, request: Record<string, unknown>): Promise<unknown>;
+    };
+  }
+
+  export interface SdkworkAppConfig {
+    baseUrl?: string;
+    platform?: string;
+    timeout?: number;
+    tokenManager?: unknown;
+  }
+
+  export function createDriveAppClient(config: SdkworkAppConfig): SdkworkDriveAppClient;
+}
+
+declare module '@sdkwork/file-sdk-adapter' {
+  import type { FilePlatformService } from '@sdkwork/file-service';
+
+  export function createFilePlatformServiceFromSdkClient(options: {
+    app: unknown;
+    drive?: unknown;
+    slots?: readonly unknown[];
+  }): FilePlatformService;
 }
 
 declare module '@sdkwork/file-platform-pc-react' {
@@ -310,6 +484,116 @@ declare module '@sdkwork/generation-pc-react' {
   ): SdkworkGenerationService;
 }
 
+declare module 'sdkwork-commerce-pc-admin-product' {
+  import type { ReactNode } from 'react';
+
+  export type ProductStatusTone = 'success' | 'warning' | 'neutral' | 'danger';
+  export type ProductPageWindowItem = number | 'ellipsis';
+  export type ProductSubmitMode = 'draft' | 'active';
+
+  export interface ProductPaginationState {
+    page: number;
+    pageSize: number;
+    total: number;
+  }
+
+  export type ProductCollectionMeta = Record<string, unknown>;
+  export type ProductRecord = Record<string, unknown>;
+  export type CategoryRecord = Record<string, unknown>;
+  export type CategoryTreeNode = Record<string, unknown>;
+  export type CategoryColumnModel = Record<string, unknown>;
+  export type SeedSummary = Record<string, unknown>;
+  export type CommerceProductAdminService = Record<string, unknown>;
+  export type ProductDraftState = Record<string, unknown>;
+  export type ProductSpecGroup = Record<string, unknown>;
+  export type ProductSkuDraft = Record<string, unknown>;
+
+  export const CATEGORY_SEED_DATASETS: readonly string[];
+
+  export function AttributeManagementPage(): ReactNode;
+  export function CatalogAdmin(props?: { sectionId?: string }): ReactNode;
+  export function CategoryManagementPage(): ReactNode;
+  export function CommerceProductAdmin(props?: { sectionId?: string }): ReactNode;
+  export function ProductCreatePage(props?: Record<string, unknown>): ReactNode;
+  export function ProductListPage(): ReactNode;
+  export function SkuManagementPage(): ReactNode;
+
+  export function createCommerceProductAdminService(options?: Record<string, unknown>): CommerceProductAdminService;
+  export function createCommerceProductAdminWorkspaceManifest(): unknown;
+
+  export function createCommerceAttribute(body: Record<string, unknown>): Promise<unknown>;
+  export function createCommerceCategory(body: Record<string, unknown>): Promise<unknown>;
+  export function createCommerceCategoryAttribute(body: Record<string, unknown>): Promise<unknown>;
+  export function createCommercePriceList(body: Record<string, unknown>): Promise<unknown>;
+  export function createCommerceProduct(body: Record<string, unknown>): Promise<unknown>;
+  export function createCommerceSku(body: Record<string, unknown>): Promise<unknown>;
+  export function deleteCommerceCategory(categoryId: string): Promise<unknown>;
+  export function deleteCommerceCategoryAttribute(bindingId: string): Promise<unknown>;
+  export function deleteCommerceProduct(productId: string): Promise<unknown>;
+  export function deleteCommerceSku(skuId: string): Promise<unknown>;
+  export function initializeCommerceCategorySeeds(body: Record<string, unknown>): Promise<unknown>;
+  export function listCommerceAttributes(params?: Record<string, unknown>): Promise<unknown>;
+  export function listCommerceCategories(params?: Record<string, unknown>): Promise<unknown>;
+  export function listCommerceCategoryAttributes(params?: Record<string, unknown>): Promise<unknown>;
+  export function listCommercePriceLists(params?: Record<string, unknown>): Promise<unknown>;
+  export function listCommerceProducts(params?: Record<string, unknown>): Promise<unknown>;
+  export function listCommerceSkus(params?: Record<string, unknown>): Promise<unknown>;
+  export function updateCommerceCategory(categoryId: string, body: Record<string, unknown>): Promise<unknown>;
+  export function updateCommerceCategoryAttribute(bindingId: string, body: Record<string, unknown>): Promise<unknown>;
+  export function updateCommerceProduct(productId: string, body: Record<string, unknown>): Promise<unknown>;
+  export function updateCommerceSku(skuId: string, body: Record<string, unknown>): Promise<unknown>;
+
+  export function calculateProductTotalPages(total: number, pageSize: number): number;
+  export function clampProductPage(page: number, totalPages: number): number;
+  export function formatProductDate(value: string): string;
+  export function normalizeProductPagination(value: Partial<ProductPaginationState>): ProductPaginationState;
+  export function productStatusLabel(status: string): string;
+  export function productStatusTone(status: string): ProductStatusTone;
+  export function productTypeLabel(productType: string): string;
+  export function readProductCollectionMeta(value: unknown): ProductCollectionMeta | null;
+  export function readProductCoverResource(record: ProductRecord): unknown;
+  export function readProductRecords(value: unknown): ProductRecord[];
+  export function readProductString(record: ProductRecord, keys: string[]): string;
+  export function renderProductPageWindow(page: number, totalPages: number): ProductPageWindowItem[];
+
+  export function buildProductCreatePayload(draft: ProductDraftState, mode: ProductSubmitMode): Record<string, unknown>;
+  export function buildSkuCreatePayloads(
+    draft: ProductDraftState,
+    productId: string,
+    mode: ProductSubmitMode,
+    attributeIdByName: Map<string, string>,
+  ): Record<string, unknown>[];
+  export function buildSkuMutationPayloads(
+    draft: ProductDraftState,
+    productId: string,
+    mode: ProductSubmitMode,
+    attributeIdByName: Map<string, string>,
+  ): Array<{ backendSkuId?: string; body: Record<string, unknown> }>;
+  export function createDefaultProductDraft(): ProductDraftState;
+  export function filterCategoryPathEntries(entries: unknown[]): unknown[];
+  export function formatCategoryPath(entries: unknown[]): string;
+  export function generateSkuDraftsFromSpecGroups(
+    specGroups: ProductSpecGroup[],
+    options: Record<string, unknown>,
+  ): ProductSkuDraft[];
+  export function normalizeProductCategoryTree(records: unknown[]): CategoryTreeNode[];
+  export function normalizeSelectedCategoryIds(categoryIds: unknown[]): string[];
+  export function normalizeSpecGroups(specGroups: ProductSpecGroup[]): ProductSpecGroup[];
+  export function readSelectedCategoryPaths(draft: ProductDraftState, tree: CategoryTreeNode[]): unknown[];
+  export function validateProductDraft(draft: ProductDraftState): string[];
+
+  export function buildCategoryColumns(activePathIds: string[], tree: CategoryTreeNode[]): CategoryColumnModel[];
+  export function buildCategoryParentColumns(activePathIds: string[], tree: CategoryTreeNode[]): CategoryColumnModel[];
+  export function buildCategoryRows(records: CategoryRecord[]): CategoryRecord[];
+  export function buildCategoryTree(records: CategoryRecord[]): CategoryTreeNode[];
+  export function findCategoryPathIds(categoryId: string, tree: CategoryTreeNode[]): string[];
+  export function generateCategoryNo(records: CategoryRecord[], now?: Date): string;
+  export function loadAllCategoryRecords(): Promise<CategoryRecord[]>;
+  export function readCategoryRecords(result: unknown): CategoryRecord[];
+  export function readCategoryTotal(result: unknown): number | null;
+  export function readSeedSummaries(result: unknown): SeedSummary[];
+}
+
 declare module '@sdkwork/generation-pc-react/generation-service' {
   export type SdkworkGenerationStatus = 'completed' | 'failed' | 'queued' | 'running';
 
@@ -355,6 +639,158 @@ declare module '@sdkwork/generation-pc-react/generation-service' {
   export function createSdkworkGenerationService(
     options?: CreateSdkworkGenerationServiceOptions,
   ): SdkworkGenerationService;
+}
+
+declare module '@sdkwork/generations-pc-workspace/generation-service' {
+  export type SdkworkGenerationStatus = 'completed' | 'failed' | 'queued' | 'running';
+
+  export interface SdkworkGenerationRun {
+    id: string;
+    latencyMs: number;
+    model: string;
+    promptPreview: string;
+    status: SdkworkGenerationStatus;
+    title: string;
+    tokensUsed: number;
+    updatedAt: string;
+  }
+
+  export interface SdkworkGenerationDigest {
+    completedRuns: number;
+    failedRuns: number;
+    runningRuns: number;
+    totalRuns: number;
+    totalTokensUsed: number;
+  }
+
+  export interface SdkworkGenerationWorkspaceData {
+    digest: SdkworkGenerationDigest;
+    isAuthenticated: boolean;
+    runs: SdkworkGenerationRun[];
+  }
+
+  export type SdkworkGenerationCommandModality = 'audio' | 'image' | 'music' | 'sfx' | 'video' | 'voice';
+  export type SdkworkGenerationOperationType =
+    | 'image_edit'
+    | 'image_to_video'
+    | 'lyrics_to_music'
+    | 'speech'
+    | 'sound_effect'
+    | 'text_to_image'
+    | 'text_to_music'
+    | 'text_to_video'
+    | 'transcription'
+    | 'translation'
+    | 'video_extend';
+
+  export type SdkworkGenerationRemoteStatus =
+    | 'canceled'
+    | 'failed'
+    | 'queued'
+    | 'requires_action'
+    | 'running'
+    | 'succeeded';
+
+  export interface SdkworkGenerationCommandInput {
+    idempotencyKey?: string;
+    inputAssetIds?: readonly string[];
+    modality: SdkworkGenerationCommandModality;
+    model?: string;
+    operationType: SdkworkGenerationOperationType;
+    organizationId?: string;
+    parameters?: Record<string, unknown>;
+    prompt: string;
+    tenantId: string;
+  }
+
+  export interface SdkworkGenerationRecord {
+    createdAt: string;
+    favorite?: boolean;
+    id: string;
+    modality: string;
+    operationType: string;
+    organizationId?: string;
+    promptPreview?: string;
+    resultCount?: number;
+    sourceProvider?: string;
+    sourceJobId?: string;
+    status: SdkworkGenerationRemoteStatus;
+    tenantId?: string;
+    updatedAt: string;
+    userId?: string;
+  }
+
+  export interface SdkworkGenerationCommandResult {
+    generation: SdkworkGenerationRun;
+    record: SdkworkGenerationRecord;
+  }
+
+  export interface SdkworkGenerationResult {
+    assetId?: string;
+    createdAt: string;
+    driveNodeId?: string;
+    driveSpaceId?: string;
+    driveUri?: string;
+    generationId: string;
+    id: string;
+    previewText?: string;
+    resourceSnapshot?: unknown;
+    resultType: string;
+  }
+
+  export interface SdkworkGenerationResultPage {
+    items?: readonly SdkworkGenerationResult[];
+    nextCursor?: string;
+  }
+
+  export interface SdkworkGenerationSdkClients {
+    generationsApp?: unknown;
+    tokenManager?: unknown;
+  }
+
+  export interface CreateSdkworkGenerationServiceOptions {
+    getSessionTokens?: () => {
+      authToken?: string;
+    };
+    includeSampleRuns?: boolean;
+    listRuns?: () => Promise<readonly SdkworkGenerationRun[]>;
+    pageSize?: number;
+    runs?: readonly SdkworkGenerationRun[];
+    sdkClients?: SdkworkGenerationSdkClients;
+  }
+
+  export interface SdkworkGenerationService {
+    createGenerationCommand(input: SdkworkGenerationCommandInput): Promise<SdkworkGenerationCommandResult>;
+    getEmptyWorkspace(): SdkworkGenerationWorkspaceData;
+    getWorkspace(): Promise<SdkworkGenerationWorkspaceData>;
+    listGenerationResults(input: { cursor?: string; generationId: string; pageSize?: number }): Promise<SdkworkGenerationResultPage>;
+  }
+
+  export function createSdkworkGenerationService(
+    options?: CreateSdkworkGenerationServiceOptions,
+  ): SdkworkGenerationService;
+}
+
+declare module '@sdkwork/generations-pc-workspace' {
+  export * from '@sdkwork/generations-pc-workspace/generation-service';
+}
+
+declare module 'sdkwork-generations-app-sdk-generated-typescript' {
+  export interface SdkworkAppConfig {
+    baseUrl?: string;
+    platform?: string;
+    timeout?: number;
+    tokenManager?: unknown;
+  }
+
+  export class SdkworkAppClient {
+    generations: unknown;
+    http: unknown;
+    constructor(config: SdkworkAppConfig);
+    setTokenManager(manager: unknown): this;
+  }
+
+  export function createClient(config: SdkworkAppConfig): SdkworkAppClient;
 }
 
 declare module '@sdkwork/generation-pc-react/generation-history' {

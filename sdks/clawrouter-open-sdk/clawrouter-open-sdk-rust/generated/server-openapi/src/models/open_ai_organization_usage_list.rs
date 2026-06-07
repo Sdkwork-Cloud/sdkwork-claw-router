@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::models::{OpenAiOrganizationUsageBucket};
+use crate::models::OpenAiOrganizationUsageBucket;
 
 /// OpenAI-compatible paginated list of organization usage buckets.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]

@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::models::{OpenAiEval};
+use crate::models::OpenAiEval;
 
 /// OpenAI-compatible paginated list of evals.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]

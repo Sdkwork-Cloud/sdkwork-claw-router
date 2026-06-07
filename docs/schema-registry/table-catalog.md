@@ -298,30 +298,30 @@ table-count: 324
 
 | 表名 | 说明 | profile | write_owner | generated |
 | --- | --- | --- | --- | --- |
-| `plus_user_address` | Java Plus 兼容的外部兼容表，登记 用户地址 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `spring-ai-plus-business-entity` | no |
+| `plus_user_address` | Java Plus 兼容的外部兼容表，登记 用户地址 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `legacy-java-plus-entity` | no |
 | `plus_app` | Java Plus 兼容的router owned standard，记录 app。 | `router_owned_standard` | `sdkwork-claw-product` | yes |
-| `plus_category` | Java Plus 兼容的java compatible owned，记录 category。 | `java_compatible_owned` | `spring-ai-plus-business-entity` | yes |
-| `plus_agent_skill_package` | Java Plus 兼容的java compatible owned，记录 Agent 技能包。 | `java_compatible_owned` | `spring-ai-plus-business-entity` | yes |
-| `plus_agent_skill` | Java Plus 兼容的java compatible owned，记录 Agent 技能。 | `java_compatible_owned` | `spring-ai-plus-business-entity` | yes |
+| `plus_category` | Java Plus 兼容的java compatible owned，记录 category。 | `java_compatible_owned` | `legacy-java-plus-entity` | yes |
+| `plus_agent_skill_package` | Java Plus 兼容的java compatible owned，记录 Agent 技能包。 | `java_compatible_owned` | `legacy-java-plus-entity` | yes |
+| `plus_agent_skill` | Java Plus 兼容的java compatible owned，记录 Agent 技能。 | `java_compatible_owned` | `legacy-java-plus-entity` | yes |
 | `plus_user_agent_skill` | Java Plus 兼容的java compatible owned，记录 用户 Agent 技能。 | `java_compatible_owned` | `sdkwork-claw-router` | yes |
-| `plus_feeds` | Java Plus 兼容的java compatible owned，记录 feeds。 | `java_compatible_owned` | `spring-ai-plus-business-entity` | yes |
-| `plus_comments` | Java Plus 兼容的java compatible owned，记录 comments。 | `java_compatible_owned` | `spring-ai-plus-business-entity` | yes |
-| `plus_content_vote` | Java Plus 兼容的java compatible owned，记录 内容投票。 | `java_compatible_owned` | `spring-ai-plus-business-entity` | yes |
-| `plus_favorite` | Java Plus 兼容的java compatible owned，记录 favorite。 | `java_compatible_owned` | `spring-ai-plus-business-entity` | yes |
-| `plus_department` | Java Plus 兼容的外部兼容表，登记 department 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `spring-ai-plus-business-entity` | no |
-| `plus_position` | Java Plus 兼容的外部兼容表，登记 position 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `spring-ai-plus-business-entity` | no |
-| `plus_member_card` | Java Plus 兼容的外部兼容表，登记 会员卡 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `spring-ai-plus-business-entity` | no |
-| `plus_member_level` | Java Plus 兼容的外部兼容表，登记 会员等级 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `spring-ai-plus-business-entity` | no |
-| `plus_card` | Java Plus 兼容的外部兼容表，登记 card 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `spring-ai-plus-business-entity` | no |
-| `plus_card_template` | Java Plus 兼容的外部兼容表，登记 卡模板 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `spring-ai-plus-business-entity` | no |
-| `plus_user_card` | Java Plus 兼容的外部兼容表，登记 用户卡 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `spring-ai-plus-business-entity` | no |
-| `plus_invitation_code` | Java Plus 兼容的外部兼容表，登记 邀请码 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `spring-ai-plus-business-entity` | no |
-| `plus_invitation_relation` | Java Plus 兼容的外部兼容表，登记 邀请关系 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `spring-ai-plus-business-entity` | no |
-| `plus_partner` | Java Plus 兼容的外部兼容表，登记 partner 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `spring-ai-plus-business-entity` | no |
-| `plus_usage_record` | Java Plus 兼容的外部兼容表，登记 usagerecord 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `spring-ai-plus-business-entity` | no |
-| `plus_channel` | Java Plus 兼容的外部兼容表，登记 channel 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `spring-ai-plus-business-entity` | no |
-| `plus_channel_account` | Java Plus 兼容的外部兼容表，登记 channel账户 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `spring-ai-plus-business-entity` | no |
-| `plus_channel_proxy` | Java Plus 兼容的外部兼容表，登记 channel代理 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `spring-ai-plus-business-entity` | no |
+| `plus_feeds` | Java Plus 兼容的java compatible owned，记录 feeds。 | `java_compatible_owned` | `legacy-java-plus-entity` | yes |
+| `plus_comments` | Java Plus 兼容的java compatible owned，记录 comments。 | `java_compatible_owned` | `legacy-java-plus-entity` | yes |
+| `plus_content_vote` | Java Plus 兼容的java compatible owned，记录 内容投票。 | `java_compatible_owned` | `legacy-java-plus-entity` | yes |
+| `plus_favorite` | Java Plus 兼容的java compatible owned，记录 favorite。 | `java_compatible_owned` | `legacy-java-plus-entity` | yes |
+| `plus_department` | Java Plus 兼容的外部兼容表，登记 department 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `legacy-java-plus-entity` | no |
+| `plus_position` | Java Plus 兼容的外部兼容表，登记 position 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `legacy-java-plus-entity` | no |
+| `plus_member_card` | Java Plus 兼容的外部兼容表，登记 会员卡 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `legacy-java-plus-entity` | no |
+| `plus_member_level` | Java Plus 兼容的外部兼容表，登记 会员等级 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `legacy-java-plus-entity` | no |
+| `plus_card` | Java Plus 兼容的外部兼容表，登记 card 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `legacy-java-plus-entity` | no |
+| `plus_card_template` | Java Plus 兼容的外部兼容表，登记 卡模板 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `legacy-java-plus-entity` | no |
+| `plus_user_card` | Java Plus 兼容的外部兼容表，登记 用户卡 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `legacy-java-plus-entity` | no |
+| `plus_invitation_code` | Java Plus 兼容的外部兼容表，登记 邀请码 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `legacy-java-plus-entity` | no |
+| `plus_invitation_relation` | Java Plus 兼容的外部兼容表，登记 邀请关系 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `legacy-java-plus-entity` | no |
+| `plus_partner` | Java Plus 兼容的外部兼容表，登记 partner 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `legacy-java-plus-entity` | no |
+| `plus_usage_record` | Java Plus 兼容的外部兼容表，登记 usagerecord 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `legacy-java-plus-entity` | no |
+| `plus_channel` | Java Plus 兼容的外部兼容表，登记 channel 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `legacy-java-plus-entity` | no |
+| `plus_channel_account` | Java Plus 兼容的外部兼容表，登记 channel账户 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `legacy-java-plus-entity` | no |
+| `plus_channel_proxy` | Java Plus 兼容的外部兼容表，登记 channel代理 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `legacy-java-plus-entity` | no |
 
 ## 消息触达
 

@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::models::{OpenAiProjectApiKey};
+use crate::models::OpenAiProjectApiKey;
 
 /// OpenAI-compatible paginated list of project API keys.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]

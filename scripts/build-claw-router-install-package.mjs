@@ -837,7 +837,7 @@ function installConfigurationCommands(packageItem) {
 
 function nativeBinaryRootForInstallGuide(packageItem) {
   if (packageItem.platform === 'windows') {
-    return 'C:/Program Files/sdkwork/router/bin';
+    return `${WINDOWS_INSTALL_ROOT}/bin`;
   }
   if (packageItem.platform === 'linux' && ['service', 'desktop'].includes(packageItem.deploymentMode)) {
     return '/usr/bin';
@@ -1578,9 +1578,9 @@ function createContainerEntrypoint(packageItem) {
     return [
       '$ErrorActionPreference = "Stop"',
       '$env:SDKWORK_CLAW_DEPLOYMENT_MODE = "server"',
-      `& "C:\\clawrouter\\bin\\${packageItem.installerBinaryName}" ensure`,
-      `& "C:\\clawrouter\\bin\\${packageItem.installerBinaryName}" refresh-catalog --force`,
-      `& "C:\\clawrouter\\bin\\${packageItem.binaryName}" @args`,
+      `& "${WINDOWS_INSTALL_ROOT}/bin/${packageItem.installerBinaryName}" ensure`,
+      `& "${WINDOWS_INSTALL_ROOT}/bin/${packageItem.installerBinaryName}" refresh-catalog --force`,
+      `& "${WINDOWS_INSTALL_ROOT}/bin/${packageItem.binaryName}" @args`,
       '',
     ].join('\n');
   }

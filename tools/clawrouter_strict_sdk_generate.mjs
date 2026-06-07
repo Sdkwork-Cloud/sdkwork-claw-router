@@ -6,7 +6,7 @@ import path from 'node:path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const projectRoot = path.resolve(__dirname, '..');
-const sdkGeneratorRoot = path.resolve(projectRoot, '..', '..', 'sdk', 'sdkwork-sdk-generator', 'tmp-js');
+const sdkGeneratorRoot = path.resolve(projectRoot, '.sdkwork/dependencies/sdkwork-sdk-generator/tmp-js');
 
 const { generateSdk } = await import(pathToFileURL(path.join(sdkGeneratorRoot, 'index.js')).href);
 const { loadOpenApiSpec } = await import(pathToFileURL(path.join(sdkGeneratorRoot, 'framework', 'spec-loader.js')).href);

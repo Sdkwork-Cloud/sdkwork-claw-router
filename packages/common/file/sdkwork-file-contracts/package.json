@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "description": "Canonical SDKWork file platform contracts for upload, file assets, drive, bindings, quota, and audit.",
+  "description": "Canonical SDKWork file platform contracts for file assets, Drive references, bindings, quota, and audit.",
   "exports": {
     ".": {
       "types": "./src/index.ts",
@@ -16,8 +16,8 @@
     "README.md"
   ],
   "scripts": {
-    "typecheck": "node ../../../../sdkwork-appbase/node_modules/typescript/bin/tsc -p tsconfig.json --noEmit",
-    "test": "node ../../../../sdkwork-appbase/node_modules/vitest/vitest.mjs run tests --pool vmThreads"
+    "typecheck": "node ../../../../apps/sdkwork-clawrouter-pc/node_modules/typescript/bin/tsc -p tsconfig.json --noEmit",
+    "test": "node ../../../../apps/sdkwork-clawrouter-pc/node_modules/vitest/vitest.mjs run tests --pool vmThreads"
   },
   "sdkwork": {
     "architecture": "common",

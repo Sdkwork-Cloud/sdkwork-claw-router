@@ -44,9 +44,9 @@
 ### Task 3: Java Verification Provider Standardization
 
 **Files:**
-- Modify: `spring-ai-plus-business-service/src/main/java/com/sdkwork/spring/ai/plus/service/email/impl/EmailSendServiceImpl.java`
-- Modify: `spring-ai-plus-business-service/src/main/java/com/sdkwork/spring/ai/plus/service/sms/impl/SmsSendServiceImpl.java`
-- Modify: `spring-ai-plus-business-service/src/main/java/com/sdkwork/spring/ai/plus/service/message/impl/MessageDispatchServiceImpl.java`
+- Modify: `legacy-java-plus-service/src/main/java/com/sdkwork/spring/ai/plus/service/email/impl/EmailSendServiceImpl.java`
+- Modify: `legacy-java-plus-service/src/main/java/com/sdkwork/spring/ai/plus/service/sms/impl/SmsSendServiceImpl.java`
+- Modify: `legacy-java-plus-service/src/main/java/com/sdkwork/spring/ai/plus/service/message/impl/MessageDispatchServiceImpl.java`
 - Test: existing auth/message tests plus new provider-selection tests
 
 - [ ] Write failing tests proving Java verification sends use active provider/account configuration for EMAIL and SMS.
@@ -57,9 +57,9 @@
 ### Task 4: Java Admin Configuration Surface
 
 **Files:**
-- Modify: `spring-ai-plus-backend-api/src/main/java/com/sdkwork/spring/ai/plus/controller/platform/PlusChannelAccountController.java`
-- Modify: `spring-ai-plus-backend-api/src/main/java/com/sdkwork/spring/ai/plus/form/platform/PlusChannelAccountForm.java`
-- Modify: `spring-ai-plus-business-entity/src/main/java/com/sdkwork/spring/ai/plus/core/type/ChannelResourceType.java` if EMAIL must become first-class
+- Modify: `legacy-java-plus-backend-api/src/main/java/com/sdkwork/spring/ai/plus/controller/platform/PlusChannelAccountController.java`
+- Modify: `legacy-java-plus-backend-api/src/main/java/com/sdkwork/spring/ai/plus/form/platform/PlusChannelAccountForm.java`
+- Modify: `legacy-java-plus-entity/src/main/java/com/sdkwork/spring/ai/plus/core/type/ChannelResourceType.java` if EMAIL must become first-class
 - Test: backend controller contract tests
 
 - [ ] Write failing tests for listing and saving SMS and email sending accounts through admin.

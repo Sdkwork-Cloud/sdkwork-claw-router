@@ -1,7 +1,7 @@
 # Codex Cache Cleanup Report
 
 Date: 2026-05-03 Asia/Shanghai
-Workspace: `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-claw-router`
+Workspace: `<workspace-root>\sdkwork-claw-router`
 
 ## Scope
 
@@ -10,7 +10,7 @@ records.
 
 Writable paths in this run:
 
-- `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-claw-router`
+- `<workspace-root>\sdkwork-claw-router`
 - `D:\tmp`
 - `C:\Users\admin\.codex\memories`
 

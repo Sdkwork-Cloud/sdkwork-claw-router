@@ -57,3 +57,18 @@ test("claw router i18n resources merge at runtime with aligned admin site naviga
   assert.equal(resources.en.translation["admin.group.groupType.dedicated"], "Dedicated");
   assert.equal(resources.zh.translation["admin.group.groupType.dedicated"], "专属");
 });
+
+test("admin organization i18n bundle keeps aligned en and zh keys", async () => {
+  const { mergeI18nBundles } = await import("./packages/sdkwork-clawrouter-pc-i18n/src/resources/merge.ts");
+  const { adminOrganizationMessages } = await import("./packages/sdkwork-clawrouter-pc-i18n/src/resources/admin/organization.ts");
+  const resources = mergeI18nBundles([adminOrganizationMessages]);
+
+  assert.equal(resources.en.translation["admin.organization.assignmentRoles.owner"], "Owner");
+  assert.equal(resources.zh.translation["admin.organization.assignmentRoles.owner"], "所有者");
+  assert.equal(resources.en.translation["admin.organization.confirm.blockedDescription"], "Cannot delete {{label}} while active dependencies exist. {{dependencies}}");
+  assert.equal(resources.zh.translation["admin.organization.confirm.blockedDescription"], "存在活动依赖时无法删除 {{label}}。{{dependencies}}");
+  assert.equal(resources.en.translation["admin.organization.metrics.roleBindings"], "Role bindings");
+  assert.equal(resources.zh.translation["admin.organization.metrics.roleBindings"], "角色绑定");
+  assert.equal(resources.en.translation["admin.organization.organizationKinds.businessUnit"], "Business unit");
+  assert.equal(resources.zh.translation["admin.organization.organizationKinds.businessUnit"], "业务单元");
+});

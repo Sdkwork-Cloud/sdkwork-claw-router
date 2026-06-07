@@ -4,7 +4,7 @@
 
 **Goal:** Build a generation execution kernel that records every generation/run/provider task/resource, invokes Claw Router open APIs for image/video generation, captures provider outputs to durable storage when policy allows, optionally syncs captured resources into PlusDisk/PlusFile assets, and produces explicit billing quotes.
 
-**Architecture:** Keep generation orchestration in `spring-ai-plus-business-service` and persistence contracts in `spring-ai-plus-business-entity`/`repository`. Use `plus_ai_generation_resource` as the single input/output resource ledger, separate provider tasks/events from user-visible artifacts, separate output capture from PlusFile asset sync, and route multimodal provider calls through a Claw Router client boundary. Existing `PlusDisk` remains the storage space; directories/assets remain `PlusFile` rows.
+**Architecture:** Keep generation orchestration in `legacy-java-plus-service` and persistence contracts in `legacy-java-plus-entity`/`repository`. Use `plus_ai_generation_resource` as the single input/output resource ledger, separate provider tasks/events from user-visible artifacts, separate output capture from PlusFile asset sync, and route multimodal provider calls through a Claw Router client boundary. Existing `PlusDisk` remains the storage space; directories/assets remain `PlusFile` rows.
 
 **Tech Stack:** Java 21, Spring Boot, Spring Data JPA, JUnit 5, Mockito, PostgreSQL DDL, existing `MediaResource`, `PlusFileService`, `PlusDiskService`, and `BillingStandardService`.
 
@@ -13,13 +13,13 @@
 ### Task 1: Service Boundary And Policy Tests
 
 **Files:**
-- Create: `spring-ai-plus-business-service/src/test/java/com/sdkwork/spring/ai/plus/service/generation/support/GenerationOutputPersistenceDecisionServiceTest.java`
-- Create: `spring-ai-plus-business-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/model/GenerationStoragePreference.java`
-- Create: `spring-ai-plus-business-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/model/GenerationEntitlement.java`
-- Create: `spring-ai-plus-business-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/model/GenerationOutputPersistenceRequest.java`
-- Create: `spring-ai-plus-business-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/model/GenerationOutputPersistenceDecision.java`
-- Create: `spring-ai-plus-business-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/support/GenerationOutputPersistenceDecisionService.java`
-- Create: `spring-ai-plus-business-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/support/DefaultGenerationOutputPersistenceDecisionService.java`
+- Create: `legacy-java-plus-service/src/test/java/com/sdkwork/spring/ai/plus/service/generation/support/GenerationOutputPersistenceDecisionServiceTest.java`
+- Create: `legacy-java-plus-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/model/GenerationStoragePreference.java`
+- Create: `legacy-java-plus-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/model/GenerationEntitlement.java`
+- Create: `legacy-java-plus-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/model/GenerationOutputPersistenceRequest.java`
+- Create: `legacy-java-plus-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/model/GenerationOutputPersistenceDecision.java`
+- Create: `legacy-java-plus-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/support/GenerationOutputPersistenceDecisionService.java`
+- Create: `legacy-java-plus-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/support/DefaultGenerationOutputPersistenceDecisionService.java`
 
 - [ ] **Step 1: Write failing policy tests**
 
@@ -39,7 +39,7 @@ void testMembershipCanCaptureAndSyncAssetsWhenRequested() {
 
 - [ ] **Step 2: Run test to verify RED**
 
-Run: `mvn -pl spring-ai-plus-business-service -Dtest=GenerationOutputPersistenceDecisionServiceTest test -DskipTests=false`
+Run: `mvn -pl legacy-java-plus-service -Dtest=GenerationOutputPersistenceDecisionServiceTest test -DskipTests=false`
 
 Expected: compile/test failure because classes do not exist.
 
@@ -59,14 +59,14 @@ Run the same Maven command and expect PASS.
 ### Task 2: Resource Capture Service
 
 **Files:**
-- Create: `spring-ai-plus-business-service/src/test/java/com/sdkwork/spring/ai/plus/service/generation/support/GenerationResourceCaptureServiceImplTest.java`
-- Create: `spring-ai-plus-business-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/model/GenerationResourceDescriptor.java`
-- Create: `spring-ai-plus-business-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/model/GenerationResourceCaptureRequest.java`
-- Create: `spring-ai-plus-business-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/model/GenerationResourceCaptureResult.java`
-- Create: `spring-ai-plus-business-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/support/GenerationResourceStorage.java`
-- Create: `spring-ai-plus-business-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/support/GenerationResourceCaptureService.java`
-- Create: `spring-ai-plus-business-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/support/GenerationResourceCaptureServiceImpl.java`
-- Create: `spring-ai-plus-business-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/support/PlusFileGenerationResourceStorage.java`
+- Create: `legacy-java-plus-service/src/test/java/com/sdkwork/spring/ai/plus/service/generation/support/GenerationResourceCaptureServiceImplTest.java`
+- Create: `legacy-java-plus-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/model/GenerationResourceDescriptor.java`
+- Create: `legacy-java-plus-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/model/GenerationResourceCaptureRequest.java`
+- Create: `legacy-java-plus-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/model/GenerationResourceCaptureResult.java`
+- Create: `legacy-java-plus-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/support/GenerationResourceStorage.java`
+- Create: `legacy-java-plus-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/support/GenerationResourceCaptureService.java`
+- Create: `legacy-java-plus-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/support/GenerationResourceCaptureServiceImpl.java`
+- Create: `legacy-java-plus-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/support/PlusFileGenerationResourceStorage.java`
 
 - [ ] **Step 1: Write failing capture tests**
 
@@ -74,7 +74,7 @@ Test URL capture, base64 capture, and `NONE` policy skip. Base64 must decode to 
 
 - [ ] **Step 2: Run test to verify RED**
 
-Run: `mvn -pl spring-ai-plus-business-service -Dtest=GenerationResourceCaptureServiceImplTest test -DskipTests=false`
+Run: `mvn -pl legacy-java-plus-service -Dtest=GenerationResourceCaptureServiceImplTest test -DskipTests=false`
 
 Expected: failure because capture classes do not exist.
 
@@ -89,14 +89,14 @@ Run the same Maven command and expect PASS.
 ### Task 3: Claw Router Generation Client
 
 **Files:**
-- Create: `spring-ai-plus-business-service/src/test/java/com/sdkwork/spring/ai/plus/service/generation/claw/ClawRouterGenerationClientTest.java`
-- Create: `spring-ai-plus-business-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/claw/ClawRouterGenerationOperation.java`
-- Create: `spring-ai-plus-business-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/claw/ClawRouterModelRoute.java`
-- Create: `spring-ai-plus-business-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/claw/ClawRouterGenerationRequest.java`
-- Create: `spring-ai-plus-business-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/claw/ClawRouterGenerationResponse.java`
-- Create: `spring-ai-plus-business-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/claw/ClawRouterGenerationEndpointResolver.java`
-- Create: `spring-ai-plus-business-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/claw/ClawRouterGenerationClient.java`
-- Create: `spring-ai-plus-business-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/claw/HttpClawRouterGenerationClient.java`
+- Create: `legacy-java-plus-service/src/test/java/com/sdkwork/spring/ai/plus/service/generation/claw/ClawRouterGenerationClientTest.java`
+- Create: `legacy-java-plus-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/claw/ClawRouterGenerationOperation.java`
+- Create: `legacy-java-plus-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/claw/ClawRouterModelRoute.java`
+- Create: `legacy-java-plus-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/claw/ClawRouterGenerationRequest.java`
+- Create: `legacy-java-plus-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/claw/ClawRouterGenerationResponse.java`
+- Create: `legacy-java-plus-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/claw/ClawRouterGenerationEndpointResolver.java`
+- Create: `legacy-java-plus-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/claw/ClawRouterGenerationClient.java`
+- Create: `legacy-java-plus-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/claw/HttpClawRouterGenerationClient.java`
 
 - [ ] **Step 1: Write failing client tests**
 
@@ -104,7 +104,7 @@ Test that `VIDEO_TEXT_TO_VIDEO`, `VIDEO_IMAGE_TO_VIDEO`, and `VIDEO_REFERENCE_TO
 
 - [ ] **Step 2: Run test to verify RED**
 
-Run: `mvn -pl spring-ai-plus-business-service -Dtest=ClawRouterGenerationClientTest test -DskipTests=false`
+Run: `mvn -pl legacy-java-plus-service -Dtest=ClawRouterGenerationClientTest test -DskipTests=false`
 
 Expected: failure because client classes do not exist.
 
@@ -119,10 +119,10 @@ Run the same Maven command and expect PASS.
 ### Task 4: Billing Wrapper For Generation
 
 **Files:**
-- Create: `spring-ai-plus-business-service/src/test/java/com/sdkwork/spring/ai/plus/service/generation/support/GenerationBillingServiceTest.java`
-- Create: `spring-ai-plus-business-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/model/GenerationBillingEstimateRequest.java`
-- Create: `spring-ai-plus-business-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/support/GenerationBillingService.java`
-- Create: `spring-ai-plus-business-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/support/GenerationBillingServiceImpl.java`
+- Create: `legacy-java-plus-service/src/test/java/com/sdkwork/spring/ai/plus/service/generation/support/GenerationBillingServiceTest.java`
+- Create: `legacy-java-plus-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/model/GenerationBillingEstimateRequest.java`
+- Create: `legacy-java-plus-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/support/GenerationBillingService.java`
+- Create: `legacy-java-plus-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/support/GenerationBillingServiceImpl.java`
 
 - [ ] **Step 1: Write failing billing tests**
 
@@ -130,7 +130,7 @@ Test image output count maps to `IMAGE_COUNT`, video duration * output count map
 
 - [ ] **Step 2: Run test to verify RED**
 
-Run: `mvn -pl spring-ai-plus-business-service -Dtest=GenerationBillingServiceTest test -DskipTests=false`
+Run: `mvn -pl legacy-java-plus-service -Dtest=GenerationBillingServiceTest test -DskipTests=false`
 
 Expected: failure because billing wrapper does not exist.
 
@@ -146,12 +146,12 @@ Run the same Maven command and expect PASS.
 
 **Files:**
 - Modify: `spring-ai-plus-server-application/src/main/resources/database/postgresql/feature/V104__builder_metadata_marketplace.sql`
-- Create: `spring-ai-plus-business-entity/src/main/java/com/sdkwork/spring/ai/plus/entity/generation/PlusAiGenerationRun.java`
-- Create: `spring-ai-plus-business-entity/src/main/java/com/sdkwork/spring/ai/plus/entity/generation/PlusAiGenerationProviderTask.java`
-- Create: `spring-ai-plus-business-entity/src/main/java/com/sdkwork/spring/ai/plus/entity/generation/PlusAiGenerationResource.java`
-- Create: `spring-ai-plus-business-entity/src/main/java/com/sdkwork/spring/ai/plus/entity/generation/PlusAiGenerationResourceCapture.java`
-- Create: `spring-ai-plus-business-entity/src/main/java/com/sdkwork/spring/ai/plus/entity/generation/PlusAiGenerationAssetSync.java`
-- Create repository interfaces for each new entity under `spring-ai-plus-business-repository/src/main/java/com/sdkwork/spring/ai/plus/repository/generation/`
+- Create: `legacy-java-plus-entity/src/main/java/com/sdkwork/spring/ai/plus/entity/generation/PlusAiGenerationRun.java`
+- Create: `legacy-java-plus-entity/src/main/java/com/sdkwork/spring/ai/plus/entity/generation/PlusAiGenerationProviderTask.java`
+- Create: `legacy-java-plus-entity/src/main/java/com/sdkwork/spring/ai/plus/entity/generation/PlusAiGenerationResource.java`
+- Create: `legacy-java-plus-entity/src/main/java/com/sdkwork/spring/ai/plus/entity/generation/PlusAiGenerationResourceCapture.java`
+- Create: `legacy-java-plus-entity/src/main/java/com/sdkwork/spring/ai/plus/entity/generation/PlusAiGenerationAssetSync.java`
+- Create repository interfaces for each new entity under `legacy-java-plus-repository/src/main/java/com/sdkwork/spring/ai/plus/repository/generation/`
 
 - [ ] **Step 1: Add schema contract tests or compile-oriented entity tests**
 
@@ -177,15 +177,15 @@ Keep fields explicit for query keys: tenant/user/status/type/vendor/model/provid
 
 - [ ] **Step 4: Run entity/repository compile tests**
 
-Run: `mvn -pl spring-ai-plus-business-repository -DskipTests=false test`
+Run: `mvn -pl legacy-java-plus-repository -DskipTests=false test`
 
 ### Task 6: Video/Image Orchestration Integration
 
 **Files:**
-- Create: `spring-ai-plus-business-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/support/GenerationOrchestrationService.java`
-- Create: `spring-ai-plus-business-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/support/GenerationOrchestrationServiceImpl.java`
-- Modify: `spring-ai-plus-business-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/impl/PlusAiVideoGenerationServiceImpl.java`
-- Modify: `spring-ai-plus-business-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/impl/PlusAiImageGenerationServiceImpl.java`
+- Create: `legacy-java-plus-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/support/GenerationOrchestrationService.java`
+- Create: `legacy-java-plus-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/support/GenerationOrchestrationServiceImpl.java`
+- Modify: `legacy-java-plus-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/impl/PlusAiVideoGenerationServiceImpl.java`
+- Modify: `legacy-java-plus-service/src/main/java/com/sdkwork/spring/ai/plus/service/generation/impl/PlusAiImageGenerationServiceImpl.java`
 
 - [ ] **Step 1: Add tests around orchestration**
 

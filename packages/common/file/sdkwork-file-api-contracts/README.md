@@ -12,18 +12,17 @@ method signatures cannot drift from `{fileId}`, `{sessionId}`, `{nodeId}`, and
 other path variables. Adapter-facing read/list operations define standard query
 parameters for `requestId`, pagination, target filters, usage scopes, bucket
 scope filters, reconciliation filters, and usage ledger/snapshot time windows.
-Backend storage configuration commands define
+The app API surface intentionally does not define upload sessions, part
+presigning, or app-local upload completion endpoints; client upload is provided
+by SDKWork Drive Uploader through `sdkwork-drive-app-sdk`. Backend storage
+configuration commands define
 JSON request body schemas with explicit `idempotencyKey` and `requestId` fields
 so generated SDKs carry retry-safe admin command contracts. Storage provider
 type and logical bucket scope enums come from `@sdkwork/file-contracts`, so API
-schemas and TypeScript ports share one canonical vocabulary. App upload,
-file-access URL, and file-binding command operations also bind explicit request
-body schemas, keeping generated SDK methods strongly typed from session creation
-through multipart part presigning, completion, abort, short-lived access URL
-issuance, and binding lifecycle commands.
-Upload command `200` responses are also typed with JSON schemas so generated SDK
-return values remain stable for session creation, part presigning, completion,
-and abort.
+schemas and TypeScript ports share one canonical vocabulary. App file-access URL
+and file-binding command operations also bind explicit request body schemas,
+keeping generated SDK methods strongly typed for short-lived access URL
+issuance and binding lifecycle commands while upload transport remains in Drive.
 
 Foundation read/list operations now also require typed JSON `200` responses.
 App-side file list/detail, binding list, drive space/node list, and current
@@ -51,16 +50,15 @@ before SDK code generation.
 
 Object schemas must also stay bounded. `additionalProperties: true` is rejected
 because it generates weak DTOs and hides contract drift. Map-like fields are
-allowed only when their value schema is explicit, such as the short-lived upload
-header map. Storage garbage-collection selection now uses a structured
+allowed only when their value schema is explicit. Storage garbage-collection
+selection now uses a structured
 `StorageGarbageCollectionCriteria` schema instead of a free-form criteria
 object.
 
 Reusable type fields must bind to canonical vocabularies from
-`@sdkwork/file-contracts`. Upload mode, drive node type, drive space type, and
-storage usage scope fields are emitted as OpenAPI enums and validated for drift,
-so generated SDKs do not reduce these platform concepts back to arbitrary
-strings.
+`@sdkwork/file-contracts`. Drive node type, drive space type, and storage usage
+scope fields are emitted as OpenAPI enums and validated for drift, so generated
+SDKs do not reduce these platform concepts back to arbitrary strings.
 
 ## SDKWork Documentation Contract
 

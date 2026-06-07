@@ -1807,11 +1807,9 @@ name = "sdkwork_commerce_http"
 version = "0.1.0"
 dependencies = [
  "axum",
- "http-body-util",
  "sdkwork_commerce_account",
  "sdkwork_commerce_core",
  "sdkwork_commerce_invoice",
- "sdkwork_commerce_membership_sqlx",
  "sdkwork_commerce_payment",
  "sdkwork_commerce_promotion",
  "sdkwork_commerce_runtime",
@@ -1821,8 +1819,6 @@ dependencies = [
  "serde",
  "serde_json",
  "sqlx",
- "tokio",
- "tower",
 ]
 
 [[package]]
@@ -1851,7 +1847,6 @@ name = "sdkwork_commerce_membership_sqlx"
 version = "0.1.0"
 dependencies = [
  "axum",
- "http-body-util",
  "sdkwork_commerce_bootstrap",
  "sdkwork_commerce_core",
  "sdkwork_commerce_storage_sqlx",
@@ -1860,8 +1855,6 @@ dependencies = [
  "serde",
  "serde_json",
  "sqlx",
- "tokio",
- "tower",
 ]
 
 [[package]]
@@ -1912,7 +1905,6 @@ dependencies = [
  "serde",
  "serde_json",
  "sqlx",
- "tokio",
 ]
 
 [[package]]
@@ -1934,20 +1926,11 @@ dependencies = [
  "sdkwork_iam_core",
  "serde",
  "serde_json",
- "tokio",
- "tower",
 ]
 
 [[package]]
 name = "sdkwork_iam_core"
 version = "0.1.0"
-
-[[package]]
-name = "sdkwork_iam_http"
-version = "0.1.0"
-dependencies = [
- "sdkwork_iam_core",
-]
 
 [[package]]
 name = "sdkwork_iam_storage_sqlx"
@@ -1957,19 +1940,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "sdkwork_iam_tauri"
-version = "0.1.0"
-dependencies = [
- "sdkwork_iam_core",
- "sdkwork_iam_http",
-]
-
-[[package]]
 name = "sdkwork_id"
-version = "0.1.0"
-
-[[package]]
-name = "sdkwork_studio_storage_sqlx"
 version = "0.1.0"
 
 [[package]]

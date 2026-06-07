@@ -3,7 +3,6 @@ import {
   type SdkworkDriveNode,
   type SdkworkDriveSpace,
   type SdkworkFileRef,
-  type SdkworkFileUploadMode,
   type SdkworkFileUploadStatus,
   type SdkworkStorageBucketLogicalScope,
   type SdkworkStorageBucketStorageClass,
@@ -67,50 +66,78 @@ export interface FileUploadTarget {
   type: string;
 }
 
-export interface CreateUploadSessionInput {
+export type FileUploadProfile =
+  | "archive"
+  | "attachment"
+  | "audio"
+  | "avatar"
+  | "dataset"
+  | "document"
+  | "generic"
+  | "image"
+  | "text"
+  | "thumbnail"
+  | "video";
+
+export interface FileUploadBlobLike {
+  readonly name?: string;
+  readonly size: number;
+  readonly type?: string;
+  arrayBuffer(): Promise<ArrayBuffer>;
+  slice(start?: number, end?: number, contentType?: string): Blob;
+}
+
+export interface FileUploadProgress {
+  status: "prepared" | "uploading" | "part_uploaded" | "completing" | "completed";
+  totalBytes: number;
+  uploadedBytes: number;
+  partNo?: number;
+  totalParts?: number;
+  uploadedPartsCount?: number;
+}
+
+export interface FileUploadRetention {
+  cleanupAction?: "hard_delete" | "soft_delete";
+  hardDeleteAfterSeconds?: string;
+  mode: "long_term" | "temporary";
+  ttlSeconds?: string;
+}
+
+export interface UploadFileInput {
+  anonymousId?: string;
+  appId: string;
+  appResourceId: string;
+  appResourceType: string;
   checksum?: FileChecksum;
   contentType: string;
+  file: FileUploadBlobLike;
   filename: string;
   idempotencyKey: string;
+  onProgress?: (progress: FileUploadProgress) => void;
   organizationId?: string;
+  operatorId: string;
   parentNodeId?: string;
   purpose: string;
   requestId: string;
+  retention?: FileUploadRetention;
+  scene?: string;
   sizeBytes: number;
   spaceId?: string;
+  source?: string;
   target: FileUploadTarget;
   tenantId?: string;
+  uploadProfileCode?: FileUploadProfile;
   userId?: string;
 }
 
-export interface PresignedUploadGrant {
-  expiresAt: string;
-  headers: Record<string, string>;
-  method: "POST" | "PUT";
-  url: string;
-}
-
-export interface CreateUploadSessionResult {
-  partSizeBytes?: number;
-  presigned?: PresignedUploadGrant;
+export interface UploadFileResult {
+  driveNodeId: string;
+  driveSpaceId: string;
+  driveUri: string;
+  fileRef: SdkworkFileRef;
   requestId: string;
-  sessionId: string;
   status: SdkworkFileUploadStatus;
-  totalParts?: number;
-  uploadMode: SdkworkFileUploadMode;
-}
-
-export interface PresignUploadPartInput {
-  partNumber: number;
-  requestId: string;
-  sessionId: string;
-}
-
-export interface PresignUploadPartResult {
-  partNumber: number;
-  presigned: PresignedUploadGrant;
-  requestId: string;
-  sessionId: string;
+  uploadId: string;
 }
 
 export interface CompleteUploadInput {
@@ -142,8 +169,7 @@ export interface AbortUploadResult {
 export interface FileUploadPort {
   abortUpload(input: AbortUploadInput): Promise<AbortUploadResult>;
   completeUpload(input: CompleteUploadInput): Promise<CompleteUploadResult>;
-  createUploadSession(input: CreateUploadSessionInput): Promise<CreateUploadSessionResult>;
-  presignUploadPart(input: PresignUploadPartInput): Promise<PresignUploadPartResult>;
+  uploadFile(input: UploadFileInput): Promise<UploadFileResult>;
 }
 
 export interface FileBindingPort {
@@ -417,8 +443,7 @@ export function createUnsupportedFilePlatformPorts(): FilePlatformPorts {
     upload: {
       abortUpload: unsupported("upload.abortUpload"),
       completeUpload: unsupported("upload.completeUpload"),
-      createUploadSession: unsupported("upload.createUploadSession"),
-      presignUploadPart: unsupported("upload.presignUploadPart"),
+      uploadFile: unsupported("upload.uploadFile"),
     },
     usage: {
       getCurrentUsage: unsupported("usage.getCurrentUsage"),
@@ -430,11 +455,9 @@ export function createUnsupportedFilePlatformPorts(): FilePlatformPorts {
 
 export function createInMemoryFileUploadPort(): FileUploadPort {
   let sequence = 0;
-  const sessions = new Map<string, CreateUploadSessionInput>();
 
   return {
     async abortUpload(input) {
-      sessions.delete(input.sessionId);
       return {
         requestId: input.requestId,
         sessionId: input.sessionId,
@@ -443,10 +466,6 @@ export function createInMemoryFileUploadPort(): FileUploadPort {
     },
 
     async completeUpload(input) {
-      const session = sessions.get(input.sessionId);
-      if (!session) {
-        throw new Error(`upload session not found: ${input.sessionId}`);
-      }
       return {
         fileRef: createFileRef({
           fileId: `file_${input.sessionId.slice(4)}`,
@@ -459,38 +478,31 @@ export function createInMemoryFileUploadPort(): FileUploadPort {
       };
     },
 
-    async createUploadSession(input) {
+    async uploadFile(input) {
       sequence += 1;
-      const sessionId = `upl_${sequence.toString().padStart(6, "0")}`;
-      sessions.set(sessionId, input);
+      const driveSpaceId = input.spaceId || "space_memory";
+      const driveNodeId = `node_${sequence.toString().padStart(6, "0")}`;
+      const uploadId = `upload_${sequence.toString().padStart(6, "0")}`;
+      input.onProgress?.({
+        status: "completed",
+        totalBytes: input.sizeBytes,
+        uploadedBytes: input.sizeBytes,
+        totalParts: 1,
+        uploadedPartsCount: 1,
+      });
       return {
-        presigned: {
-          expiresAt: "2026-05-23T08:10:00.000Z",
-          headers: { "Content-Type": input.contentType },
-          method: "PUT",
-          url: `memory://upload/${sessionId}`,
-        },
+        driveNodeId,
+        driveSpaceId,
+        driveUri: `drive://spaces/${driveSpaceId}/nodes/${driveNodeId}`,
+        fileRef: createFileRef({
+          displayName: input.filename,
+          fileId: driveNodeId,
+          purpose: input.purpose,
+          visibility: "private",
+        }),
         requestId: input.requestId,
-        sessionId,
-        status: "presigned",
-        uploadMode: input.sizeBytes > 8 * 1024 * 1024 ? "multipart" : "single_put",
-      };
-    },
-
-    async presignUploadPart(input) {
-      if (!sessions.has(input.sessionId)) {
-        throw new Error(`upload session not found: ${input.sessionId}`);
-      }
-      return {
-        partNumber: input.partNumber,
-        presigned: {
-          expiresAt: "2026-05-23T08:10:00.000Z",
-          headers: {},
-          method: "PUT",
-          url: `memory://upload/${input.sessionId}/parts/${input.partNumber}`,
-        },
-        requestId: input.requestId,
-        sessionId: input.sessionId,
+        status: "active",
+        uploadId,
       };
     },
   };

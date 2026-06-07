@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::models::{OpenAiCertificate};
+use crate::models::OpenAiCertificate;
 
 /// OpenAI-compatible paginated list of certificates.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]

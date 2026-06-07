@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "description": "SDKWork standard presigned upload client for single-part and multipart file uploads.",
+  "description": "SDKWork Drive uploader facade for file platform uploads.",
   "exports": {
     ".": {
       "types": "./src/index.ts",
@@ -16,8 +16,8 @@
     "README.md"
   ],
   "scripts": {
-    "typecheck": "node ../../../../sdkwork-appbase/node_modules/typescript/bin/tsc -p tsconfig.json --noEmit",
-    "test": "node ../../../../sdkwork-appbase/node_modules/vitest/vitest.mjs run tests --pool vmThreads"
+    "typecheck": "node ../../../../apps/sdkwork-clawrouter-pc/node_modules/typescript/bin/tsc -p tsconfig.json --noEmit",
+    "test": "node ../../../../apps/sdkwork-clawrouter-pc/node_modules/vitest/vitest.mjs run tests --pool vmThreads"
   },
   "dependencies": {
     "@sdkwork/file-sdk-ports": "workspace:*"

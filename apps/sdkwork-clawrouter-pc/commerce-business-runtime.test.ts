@@ -53,6 +53,16 @@ function readPortalFile(relativePath: string): string {
   return readFileSync(new URL(relativePath, import.meta.url), "utf8");
 }
 
+function readCommerceProductAdminFile(relativePath: string): string {
+  return readFileSync(
+    new URL(
+      `../../.sdkwork/dependencies/sdkwork-commerce/apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-admin-product/src/${relativePath}`,
+      import.meta.url,
+    ),
+    "utf8",
+  );
+}
+
 async function withCommerceSdkResponse<T>(
   responseBody: unknown,
   fn: (captured: CapturedSdkRequest[]) => Promise<T>,
@@ -375,11 +385,8 @@ test("admin commerce packages are split by product, inventory, order, payment, m
   const packageExpectations = {
     "sdkwork-clawrouter-pc-admin-catalog": [
       "CatalogAdmin",
-      "getClawRouterBackendSdkClient().commerce.catalog.products.list",
-      "getClawRouterBackendSdkClient().commerce.catalog.products.delete",
-      "getClawRouterBackendSdkClient().commerce.catalog.skus.list",
-      "getClawRouterBackendSdkClient().commerce.catalog.skus.delete",
-      "getClawRouterBackendSdkClient().commerce.catalog.categories.list",
+      "sdkwork-commerce-pc-admin-product",
+      "createCommerceProductAdminService",
     ],
     "sdkwork-clawrouter-pc-admin-inventory": [
       "InventoryAdmin",
@@ -447,7 +454,13 @@ test("admin commerce packages are split by product, inventory, order, payment, m
       }
     }
     assert.doesNotMatch(viewSource, /sdkwork-clawrouter-pc-commons\/runtime/);
-    assert.match(serviceSource, /sdkwork-clawrouter-pc-commons\/runtime/);
+    if (packageName === "sdkwork-clawrouter-pc-admin-catalog") {
+      assert.doesNotMatch(serviceSource, /sdkwork-clawrouter-pc-commons\/runtime/);
+      assert.doesNotMatch(serviceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.catalog/);
+      assert.doesNotMatch(serviceSource, /\bfetch\s*\(|axios|XMLHttpRequest/);
+    } else {
+      assert.match(serviceSource, /sdkwork-clawrouter-pc-commons\/runtime/);
+    }
     if (packageName === "sdkwork-clawrouter-pc-admin-wallet") {
       assert.doesNotMatch(viewSource, /rechargePackages/);
       assert.doesNotMatch(serviceSource, /recharges\.packages\.list/);
@@ -499,8 +512,8 @@ test("admin orders center uses server pagination and exposes common row actions"
 
 test("admin catalog product center exposes product edit route and dedicated sku management", () => {
   const appSource = readPortalFile("./src/App.tsx");
-  const catalogIndexSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-catalog/src/index.tsx");
-  const productListSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-catalog/src/ProductListPage.tsx");
+  const catalogIndexSource = readCommerceProductAdminFile("index.tsx");
+  const productListSource = readCommerceProductAdminFile("ProductListPage.tsx");
 
   assert.match(appSource, /path="catalog\/products\/:productId\/edit"/);
   assert.match(catalogIndexSource, /type CatalogAdminTab =[\s\S]*'productEdit'/);
@@ -511,7 +524,7 @@ test("admin catalog product center exposes product edit route and dedicated sku 
 });
 
 test("admin catalog category management uses compact cascade columns and modal editing", () => {
-  const categorySource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-catalog/src/CategoryManagementPage.tsx");
+  const categorySource = readCommerceProductAdminFile("CategoryManagementPage.tsx");
   const handleMoveSource = categorySource.match(/async function handleCategoryMove[\s\S]*?\n  }\n\n  return \(/)?.[0] ?? "";
 
   assert.match(categorySource, /data-admin-category-cascade-manager/);
@@ -535,7 +548,7 @@ test("admin catalog category management uses compact cascade columns and modal e
   assert.match(categorySource, /applyCategoryMoveLocally/);
   assert.match(handleMoveSource, /setState\(/);
   assert.doesNotMatch(handleMoveSource, /loadCategories\(\)/);
-  assert.doesNotMatch(handleMoveSource, /鍒嗙被鎺掑簭宸叉洿鏂般€?);
+  assert.doesNotMatch(handleMoveSource, new RegExp(escapeRegExp("分类排序已更新")));
   assert.match(categorySource, /updateCommerceCategory\(record\.id/);
   assert.match(categorySource, /buildCategoryColumns/);
   assert.match(categorySource, /activePathIds/);
@@ -561,7 +574,7 @@ test("admin catalog category management uses compact cascade columns and modal e
   assert.doesNotMatch(categorySource, /Catalog Taxonomy/);
   assert.doesNotMatch(categorySource, /\u7c7b\u76ee\u521d\u59cb\u5316\u4e0e\u7ef4\u62a4/u);
   assert.doesNotMatch(categorySource, /\u6309\u4e1a\u52a1\u57df\u521d\u59cb\u5316\u6807\u51c6\u5206\u7c7b/u);
-  assert.doesNotMatch(categorySource, /<CategoryInput label="鍒嗙被缂栧彿"/);
+  assert.doesNotMatch(categorySource, new RegExp(escapeRegExp('<CategoryInput label="分类编号"')));
   assert.doesNotMatch(categorySource, /<select[\s\S]*value=\{form\.parentId\}/);
   assert.doesNotMatch(categorySource, /data-admin-category-editor-panel/);
   assert.doesNotMatch(categorySource, /data-admin-category-detail-panel/);
@@ -574,17 +587,18 @@ test("admin catalog category management uses compact cascade columns and modal e
   assert.doesNotMatch(categorySource, /categorySeedDatasetLabel/);
   assert.doesNotMatch(categorySource, /'courses'|'agents'|'agent-skills'|'mcp'|'apps'/);
   assert.doesNotMatch(categorySource, /pageSize:\s*500/);
-  assert.doesNotMatch(categorySource, /閫夋嫨涓€涓垎绫?);
+  assert.doesNotMatch(categorySource, new RegExp(escapeRegExp("选择一个分类")));
 });
 
 test("admin catalog product edit reuses product create flow and updates existing skus", () => {
-  const productCreateSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-catalog/src/ProductCreatePage.tsx");
-  const catalogServiceSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-catalog/src/catalogService.ts");
+  const productCreateSource = readCommerceProductAdminFile("ProductCreatePage.tsx");
+  const catalogServiceSource = readCommerceProductAdminFile("catalogService.ts");
 
-  assert.match(catalogServiceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.catalog\.products\.update/);
-  assert.match(catalogServiceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.catalog\.products\.delete/);
-  assert.match(catalogServiceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.catalog\.skus\.update/);
-  assert.match(catalogServiceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.catalog\.skus\.delete/);
+  assert.match(catalogServiceSource, /catalog\.products\.update\(productId, body\)/);
+  assert.match(catalogServiceSource, /catalog\.products\.delete\(productId\)/);
+  assert.match(catalogServiceSource, /catalog\.skus\.update\(skuId, body\)/);
+  assert.match(catalogServiceSource, /catalog\.skus\.delete\(skuId\)/);
+  assert.doesNotMatch(catalogServiceSource, /getClawRouterBackendSdkClient/);
   assert.doesNotMatch(catalogServiceSource, /\bfetch\s*\(|axios|XMLHttpRequest/);
   assert.match(productCreateSource, /export function ProductCreatePage\(\{[\s\S]*mode = 'create'/);
   assert.match(productCreateSource, /loadProductDraftForEdit/);
@@ -594,7 +608,7 @@ test("admin catalog product edit reuses product create flow and updates existing
 });
 
 test("admin catalog product edit opens the detail step instead of the basic step", () => {
-  const productCreateSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-catalog/src/ProductCreatePage.tsx");
+  const productCreateSource = readCommerceProductAdminFile("ProductCreatePage.tsx");
 
   assert.match(productCreateSource, /useState<ProductCreateStep>\(\(\) => initialProductCreateStep\(mode\)\)/);
   assert.match(productCreateSource, /function initialProductCreateStep\(mode: ProductCreatePageMode\): ProductCreateStep/);
@@ -602,7 +616,7 @@ test("admin catalog product edit opens the detail step instead of the basic step
 });
 
 test("admin catalog sku management supports list create edit view and archive operations", () => {
-  const skuManagementSource = readPortalFile("./packages/sdkwork-clawrouter-pc-admin-catalog/src/SkuManagementPage.tsx");
+  const skuManagementSource = readCommerceProductAdminFile("SkuManagementPage.tsx");
 
   assert.match(skuManagementSource, /data-admin-catalog-sku-management-page/);
   assert.match(skuManagementSource, /listCommerceSkus/);
@@ -615,14 +629,22 @@ test("admin catalog sku management supports list create edit view and archive op
   assert.doesNotMatch(skuManagementSource, /\bfetch\s*\(|axios|XMLHttpRequest/);
 });
 
-test("admin catalog contract and backend sdk expose product and sku delete operations", () => {
-  const contractSource = readFileSync(new URL("../../docs/schema-registry/frontend-field-contracts/operations/backend-commerce-catalog.yaml", import.meta.url), "utf8");
-  const backendCommerceSdk = readPortalFile("../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/generated/server-openapi/src/api/commerce.ts");
+test("admin catalog contract and backend sdk ownership moved to Commerce", () => {
+  const localContractIndex = readPortalFile("../../docs/schema-registry/frontend-field-contracts/index.yaml");
+  const localBackendOpenApi = readPortalFile("../../generated/openapi/clawrouter-backend-openapi.json");
+  const commerceBackendOpenApi = readFileSync(
+    new URL("../../.sdkwork/dependencies/sdkwork-commerce/generated/openapi/commerce-backend-api.openapi.json", import.meta.url),
+    "utf8",
+  );
 
-  assert.match(contractSource, /operation_id: catalog\.products\.delete/);
-  assert.match(contractSource, /operation_id: catalog\.skus\.delete/);
-  assert.match(backendCommerceSdk, /class CommerceCatalogProductsApi[\s\S]*async delete\(productId: string\)/);
-  assert.match(backendCommerceSdk, /class CommerceCatalogSkusApi[\s\S]*async delete\(skuId: string\)/);
+  assert.doesNotMatch(localContractIndex, /operations\/backend-commerce-catalog\.yaml/);
+  assert.doesNotMatch(localContractIndex, /operations\/app-commerce-catalog\.yaml/);
+  assert.doesNotMatch(localBackendOpenApi, /\/backend\/v3\/api\/catalog\/products/);
+  assert.doesNotMatch(localBackendOpenApi, /catalog\.products\.delete/);
+  assert.doesNotMatch(localBackendOpenApi, /catalog\.skus\.delete/);
+  assert.match(commerceBackendOpenApi, /"\/backend\/v3\/api\/catalog\/products\/\{productId\}"/);
+  assert.match(commerceBackendOpenApi, /"operationId": "catalog\.products\.delete"/);
+  assert.match(commerceBackendOpenApi, /"operationId": "catalog\.skus\.delete"/);
 });
 
 test("admin payments center exposes complete payment modules and aligned provider account controls", () => {

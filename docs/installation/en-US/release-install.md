@@ -279,13 +279,14 @@ msiexec /i .\clawrouter-windows-x64-desktop-0.3.0.msi
 Default install root:
 
 ```text
-C:\Program Files\sdkwork\router
+<install-root>
 ```
 
 Initialize and start from an elevated PowerShell when using a server/service profile, or from a normal PowerShell for a desktop profile:
 
 ```powershell
-Set-Location "C:\Program Files\sdkwork\router"
+$installRoot = Join-Path $env:USERPROFILE "sdkwork\router"
+Set-Location $installRoot
 .\bin\clawrouterctl.exe ensure
 .\bin\clawrouterctl.exe refresh-catalog --force
 .\bin\clawrouter.exe
@@ -350,8 +351,9 @@ editor .env.release.local
 Windows:
 
 ```powershell
-Expand-Archive .\clawrouter-windows-x64-archive-0.3.0.zip -DestinationPath C:\clawrouter
-Set-Location C:\clawrouter
+$installRoot = Join-Path $env:USERPROFILE "sdkwork\router"
+Expand-Archive .\clawrouter-windows-x64-archive-0.3.0.zip -DestinationPath $installRoot
+Set-Location $installRoot
 Copy-Item .env.release.example .env.release.local
 notepad .env.release.local
 .\bin\clawrouterctl.exe ensure

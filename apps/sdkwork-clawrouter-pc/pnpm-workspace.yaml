@@ -1,41 +1,57 @@
 packages:
   - 'packages/*'
   - '../../sdks/*/*-typescript/generated/server-openapi'
-  - '../../../sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/*-typescript/generated/server-openapi'
-  - '../../../sdkwork-appbase/sdks/sdkwork-appbase-backend-sdk/*-typescript/generated/server-openapi'
+  - '../../.sdkwork/dependencies/sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/*-typescript/generated/server-openapi'
+  - '../../.sdkwork/dependencies/sdkwork-appbase/sdks/sdkwork-appbase-backend-sdk/*-typescript/generated/server-openapi'
   - '../../packages/common/file/*'
   - '../../packages/pc-react/file/*'
-  - '../../../sdkwork-appbase/packages/pc-react/foundation/sdkwork-appbase-pc-react'
-  - '../../../sdkwork-appbase/packages/pc-react/foundation/sdkwork-i18n-pc-react'
-  - '../../../sdkwork-appbase/packages/pc-react/content/sdkwork-generation-pc-react'
-  - '../../../sdkwork-appbase/packages/pc-react/device/sdkwork-distribution-pc-react'
-  - '../../../sdkwork-appbase/packages/pc-react/host/sdkwork-host-pc-react'
-  - '../../../sdkwork-appbase/packages/pc-react/host/sdkwork-host-tauri-pc-react'
-  - '../../../sdkwork-appbase/packages/pc-react/notification/sdkwork-notification-pc-react'
-  - '../../../sdkwork-appbase/packages/common/foundation/sdkwork-runtime-bootstrap'
-  - '../../../sdkwork-appbase/packages/common/conversation/*'
-  - '../../../sdkwork-appbase/packages/common/iam/*'
-  - '../../../sdkwork-appbase/packages/common/commerce/*'
-  - '../../../sdkwork-appbase/packages/common/integration/*'
-  - '../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-pc-react'
-  - '../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-runtime-pc-react'
-  - '../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-iam-core-pc-react'
-  - '../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-iam-react'
-  - '../../../sdkwork-appbase/packages/pc-react/integration/*'
-  - '../../../sdkwork-core/sdkwork-core-pc-react'
-  - '../../../sdkwork-ui/sdkwork-ui-pc-react'
+  - '../../.sdkwork/dependencies/sdkwork-appbase/packages/pc-react/foundation/sdkwork-appbase-pc-react'
+  - '../../.sdkwork/dependencies/sdkwork-appbase/packages/pc-react/foundation/sdkwork-i18n-pc-react'
+  - '../../.sdkwork/dependencies/sdkwork-image/packages/common/image/sdkwork-image-contracts'
+  - '../../.sdkwork/dependencies/sdkwork-image/packages/pc-react/content/sdkwork-generation-pc-react'
+  - '../../.sdkwork/dependencies/sdkwork-generations/apps/sdkwork-generations-pc/packages/sdkwork-generations-pc-workspace'
+  - '../../.sdkwork/dependencies/sdkwork-generations/sdks/sdkwork-generations-app-sdk/sdkwork-generations-app-sdk-typescript/generated/server-openapi'
+  - '../../.sdkwork/dependencies/sdkwork-appbase/packages/pc-react/device/sdkwork-distribution-pc-react'
+  - '../../.sdkwork/dependencies/sdkwork-appbase/packages/pc-react/host/sdkwork-host-pc-react'
+  - '../../.sdkwork/dependencies/sdkwork-appbase/packages/pc-react/host/sdkwork-host-tauri-pc-react'
+  - '../../.sdkwork/dependencies/sdkwork-appbase/packages/pc-react/notification/sdkwork-notification-pc-react'
+  - '../../.sdkwork/dependencies/sdkwork-appbase/packages/common/foundation/sdkwork-runtime-bootstrap'
+  - '../../.sdkwork/dependencies/sdkwork-appbase/packages/common/iam/*'
+  - '../../.sdkwork/dependencies/sdkwork-commerce/packages/common/commerce/*'
+  - '../../.sdkwork/dependencies/sdkwork-commerce/apps/sdkwork-commerce-pc/packages/sdkwork-commerce-pc-admin-product'
+  - '../../.sdkwork/dependencies/sdkwork-appbase/packages/common/integration/*'
+  - '../../.sdkwork/dependencies/sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-pc-react'
+  - '../../.sdkwork/dependencies/sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-runtime-pc-react'
+  - '../../.sdkwork/dependencies/sdkwork-appbase/packages/pc-react/iam/sdkwork-iam-core-pc-react'
+  - '../../.sdkwork/dependencies/sdkwork-appbase/packages/pc-react/iam/sdkwork-iam-react'
+  - '../../.sdkwork/dependencies/sdkwork-appbase/packages/pc-react/integration/*'
+  - '../../.sdkwork/dependencies/sdkwork-core/sdkwork-core-pc-react'
+  - '../../.sdkwork/dependencies/sdkwork-ui/sdkwork-ui-pc-react'
+  - '../../.sdkwork/dependencies/sdkwork-drive/sdks/sdkwork-drive-app-sdk/sdkwork-drive-app-sdk-typescript'
 
 catalog:
   "@types/react": ^19.2.14
   "@types/react-dom": ^19.2.3
+  "@testing-library/dom": 10.4.1
+  "@testing-library/jest-dom": 6.9.1
+  "@testing-library/react": 16.3.2
+  "@types/node": ^22.14.0
+  autoprefixer: ^10.4.21
+  esbuild: ^0.28.0
   i18next: ^26.0.3
+  jsdom: 29.1.1
   lucide-react: ^0.546.0
   motion: ^12.38.0
+  pnpm: ^10.33.0
   qrcode: ^1.5.4
   react: ^19.0.0
   react-dom: ^19.0.0
   react-i18next: ^17.0.2
   react-router-dom: ^7.14.0
+  tailwindcss: ^4.1.14
+  tsx: ^4.21.0
+  turbo: ^2.9.4
   typescript: ~5.8.2
   vite: ^6.2.0
   vite-plugin-dts: ^4.5.4
+  vitest: 4.1.5

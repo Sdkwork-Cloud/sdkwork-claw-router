@@ -14,7 +14,7 @@ class JavaLegacyContractAuditTest(unittest.TestCase):
         return registry
 
     def write_java(self, root: Path, relative_path: str, content: str) -> Path:
-        source = root / "spring-ai-plus-business-entity" / "src" / "main" / "java" / relative_path
+        source = root / "legacy-java-plus-entity" / "src" / "main" / "java" / relative_path
         source.parent.mkdir(parents=True, exist_ok=True)
         source.write_text(textwrap.dedent(content).strip() + "\n", encoding="utf-8")
         return source

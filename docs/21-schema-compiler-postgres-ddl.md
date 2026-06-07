@@ -45,7 +45,7 @@ python -B -m unittest tests.test_schema_compiler
 以下表不会由本项目生成：
 
 - `generated_by_this_project: false` 的 Java-owned legacy 表。
-- 用户、账户、VIP、优惠券、订单、支付、退款、发票、AppCenter、SkillsHub 等已经由 `spring-ai-plus-business-entity` 承担物理结构所有权的 `plus_*` 表。
+- 用户、账户、VIP、优惠券、订单、支付、退款、发票、AppCenter、SkillsHub 等已经由 `legacy-java-plus-entity` 承担物理结构所有权的 `plus_*` 表。
 
 这些表仍然保留在 Schema Registry 中，用于 API、前端页面、数据依赖、兼容契约和质量门禁，但物理 DDL 应来自 Java 既有实体与迁移体系。
 

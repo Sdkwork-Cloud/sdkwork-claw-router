@@ -1,4 +1,4 @@
-# Appbase Commerce Standard Phase 1 Implementation Plan
+﻿# Appbase Commerce Standard Phase 1 Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
@@ -6,7 +6,7 @@
 
 **Architecture:** This phase is contract and governance only. It updates the reusable commerce contracts, route catalog, capability/integration manifests, and the guardian scripts that enforce no-`billing` rules. It does not implement order-center or payment-center business logic yet; those become later phases once the contract surface is locked.
 
-**Tech Stack:** TypeScript, Rust, Python unittest, YAML, JSON, the existing appbase commerce packages under `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase`, and the existing `specs/API_SPEC.md` governance rules.
+**Tech Stack:** TypeScript, Rust, Python unittest, YAML, JSON, the existing appbase commerce packages under `<workspace-root>/sdkwork-appbase`, and the existing `specs/API_SPEC.md` governance rules.
 
 ---
 
@@ -24,47 +24,47 @@ This phase is intentionally narrow:
 
 Modify these files first because they define the public contract and the enforcement gates:
 
-- Modify `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\common\commerce\sdkwork-commerce-contracts\src\index.ts`
+- Modify `<workspace-root>/sdkwork-appbase/packages/common/commerce/sdkwork-commerce-contracts/src/index.ts`
   - Replace the single `billing` namespace with domain-oriented namespaces and operation groups.
   - Remove every `billing` path, SDK tag, and surface name from the public contract map.
-- Modify `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\common\commerce\sdkwork-commerce-sdk-ports\src\index.ts`
+- Modify `<workspace-root>/sdkwork-appbase/packages/common/commerce/sdkwork-commerce-sdk-ports/src/index.ts`
   - Align service ports with the new commerce domains and remove `billing` naming.
-- Modify `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\common\commerce\sdkwork-commerce-service\src\index.ts`
+- Modify `<workspace-root>/sdkwork-appbase/packages/common/commerce/sdkwork-commerce-service/src/index.ts`
   - Replace legacy app service call groups with the new standard operation tree.
-- Modify `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\native-rust\commerce\sdkwork-commerce-http-rust\src\lib.rs`
+- Modify `<workspace-root>/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-http-rust/src/lib.rs`
   - Rewrite route metadata for app and backend surface paths, tags, and operation ids.
-- Modify `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\native-rust\commerce\sdkwork-commerce-http-rust\tests\commerce_http_standard.rs`
+- Modify `<workspace-root>/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-http-rust/tests/commerce_http_standard.rs`
   - Lock the new route taxonomy and reject `/billing` paths or surface-prefixed operation ids.
-- Modify `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\native-rust\commerce\sdkwork-commerce-http-rust\tests\app_commerce_foundation_router.rs`
+- Modify `<workspace-root>/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-http-rust/tests/app_commerce_foundation_router.rs`
   - Update router assertions to the new standard surface groups.
-- Modify `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\native-rust\commerce\sdkwork-commerce-http-rust\tests\app_recharge_checkout_router.rs`
+- Modify `<workspace-root>/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-http-rust/tests/app_recharge_checkout_router.rs`
   - Update recharge/checkout assertions to the new standard route taxonomy.
-- Modify `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-claw-router\specs\appbase-integration.yaml`
+- Modify `<workspace-root>/sdkwork-claw-router/specs/appbase-integration.yaml`
   - Remove `billing` verification names and align the integration manifest to the new standard contract.
-- Modify `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-claw-router\tests\test_appbase_integration_guardian.py`
+- Modify `<workspace-root>/sdkwork-claw-router/tests/test_appbase_integration_guardian.py`
   - Add failing tests for `billing` namespace, `/billing` route paths, legacy verification command names, and compatibility-mode assumptions.
-- Modify `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-claw-router\tests\test_appbase_capability_guardian.py`
+- Modify `<workspace-root>/sdkwork-claw-router/tests/test_appbase_capability_guardian.py`
   - Add failing tests for `billing`-named SDK namespaces, forbidden appbase shadow paths, and reusable-package import boundaries.
-- Modify `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-claw-router\tools\appbase_integration_guardian.py`
+- Modify `<workspace-root>/sdkwork-claw-router/tools/appbase_integration_guardian.py`
   - Enforce no-`billing`, no compatibility envelope, and no surface-prefixed operationId rules.
-- Modify `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-claw-router\tools\appbase_capability_guardian.py`
+- Modify `<workspace-root>/sdkwork-claw-router/tools/appbase_capability_guardian.py`
   - Enforce no-`billing` namespace/package leakage and no concrete Claw Router SDK imports inside reusable appbase packages.
-- Modify `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-claw-router\docs\superpowers\specs\2026-05-20-appbase-commerce-platform-design.md`
+- Modify `<workspace-root>/sdkwork-claw-router/docs/superpowers/specs/2026-05-20-appbase-commerce-platform-design.md`
   - Keep the superseded note in sync so nobody reuses the old billing-centered draft.
-- Modify `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-claw-router\docs\schema-registry\frontend-route-classification.yaml`
+- Modify `<workspace-root>/sdkwork-claw-router/docs/schema-registry/frontend-route-classification.yaml`
   - Reclassify commerce routes by domain instead of billing-first grouping if the current route taxonomy still contains the old split.
-- Modify `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-claw-router\docs\schema-registry\frontend-field-contracts.yaml`
+- Modify `<workspace-root>/sdkwork-claw-router/docs/schema-registry/frontend-field-contracts.yaml`
   - Remove any contract aliasing that exists only to preserve the old billing shape.
 
 ## Task 1: Replace the Commerce Contract Namespace
 
 **Files:**
-- Modify: `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\common\commerce\sdkwork-commerce-contracts\src\index.ts`
-- Modify: `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\common\commerce\sdkwork-commerce-sdk-ports\src\index.ts`
-- Modify: `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\common\commerce\sdkwork-commerce-service\src\index.ts`
-- Test: `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\common\commerce\sdkwork-commerce-contracts\tests\commerce-contracts.standard.test.ts`
-- Test: `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\common\commerce\sdkwork-commerce-sdk-ports\tests\commerce-sdk-ports.standard.test.ts`
-- Test: `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\common\commerce\sdkwork-commerce-service\tests\commerce-service.standard.test.ts`
+- Modify: `<workspace-root>/sdkwork-appbase/packages/common/commerce/sdkwork-commerce-contracts/src/index.ts`
+- Modify: `<workspace-root>/sdkwork-appbase/packages/common/commerce/sdkwork-commerce-sdk-ports/src/index.ts`
+- Modify: `<workspace-root>/sdkwork-appbase/packages/common/commerce/sdkwork-commerce-service/src/index.ts`
+- Test: `<workspace-root>/sdkwork-appbase/packages/common/commerce/sdkwork-commerce-contracts/tests/commerce-contracts.standard.test.ts`
+- Test: `<workspace-root>/sdkwork-appbase/packages/common/commerce/sdkwork-commerce-sdk-ports/tests/commerce-sdk-ports.standard.test.ts`
+- Test: `<workspace-root>/sdkwork-appbase/packages/common/commerce/sdkwork-commerce-service/tests/commerce-service.standard.test.ts`
 
 - [ ] **Step 1: Write the failing contract tests**
 
@@ -85,9 +85,9 @@ Add service-port assertions that the public app contract exposes only the new do
 Run:
 
 ```powershell
-pnpm.cmd --dir D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\common\commerce\sdkwork-commerce-contracts test
-pnpm.cmd --dir D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\common\commerce\sdkwork-commerce-sdk-ports test
-pnpm.cmd --dir D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\common\commerce\sdkwork-commerce-service test
+pnpm.cmd --dir <workspace-root>/sdkwork-appbase/packages/common/commerce/sdkwork-commerce-contracts test
+pnpm.cmd --dir <workspace-root>/sdkwork-appbase/packages/common/commerce/sdkwork-commerce-sdk-ports test
+pnpm.cmd --dir <workspace-root>/sdkwork-appbase/packages/common/commerce/sdkwork-commerce-service test
 ```
 
 Expected: tests fail because the current contract still exposes the legacy `billing` shape.
@@ -125,10 +125,10 @@ Commit only the contract changes and their tests once they are green.
 ## Task 2: Rewrite the HTTP Route Taxonomy
 
 **Files:**
-- Modify: `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\native-rust\commerce\sdkwork-commerce-http-rust\src\lib.rs`
-- Modify: `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\native-rust\commerce\sdkwork-commerce-http-rust\tests\commerce_http_standard.rs`
-- Modify: `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\native-rust\commerce\sdkwork-commerce-http-rust\tests\app_commerce_foundation_router.rs`
-- Modify: `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\native-rust\commerce\sdkwork-commerce-http-rust\tests\app_recharge_checkout_router.rs`
+- Modify: `<workspace-root>/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-http-rust/src/lib.rs`
+- Modify: `<workspace-root>/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-http-rust/tests/commerce_http_standard.rs`
+- Modify: `<workspace-root>/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-http-rust/tests/app_commerce_foundation_router.rs`
+- Modify: `<workspace-root>/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-http-rust/tests/app_recharge_checkout_router.rs`
 
 - [ ] **Step 1: Write the failing route tests**
 
@@ -180,14 +180,14 @@ Keep the route tests as a permanent guard so future changes cannot reintroduce `
 ## Task 3: Harden the Capability and Integration Guards
 
 **Files:**
-- Modify: `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-claw-router\specs\appbase-integration.yaml`
-- Modify: `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-claw-router\tests\test_appbase_integration_guardian.py`
-- Modify: `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-claw-router\tests\test_appbase_capability_guardian.py`
-- Modify: `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-claw-router\tools\appbase_integration_guardian.py`
-- Modify: `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-claw-router\tools\appbase_capability_guardian.py`
-- Modify: `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-claw-router\docs\schema-registry\frontend-route-classification.yaml`
-- Modify: `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-claw-router\docs\schema-registry\frontend-field-contracts.yaml`
-- Modify: `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\specs\appbase-capabilities.yaml`
+- Modify: `<workspace-root>/sdkwork-claw-router/specs/appbase-integration.yaml`
+- Modify: `<workspace-root>/sdkwork-claw-router/tests/test_appbase_integration_guardian.py`
+- Modify: `<workspace-root>/sdkwork-claw-router/tests/test_appbase_capability_guardian.py`
+- Modify: `<workspace-root>/sdkwork-claw-router/tools/appbase_integration_guardian.py`
+- Modify: `<workspace-root>/sdkwork-claw-router/tools/appbase_capability_guardian.py`
+- Modify: `<workspace-root>/sdkwork-claw-router/docs/schema-registry/frontend-route-classification.yaml`
+- Modify: `<workspace-root>/sdkwork-claw-router/docs/schema-registry/frontend-field-contracts.yaml`
+- Modify: `<workspace-root>/sdkwork-appbase/specs/appbase-capabilities.yaml`
 
 - [ ] **Step 1: Add failing guardian tests**
 
@@ -247,9 +247,9 @@ Do not weaken these guards later to ease migration. This standard is intentional
 ## Task 4: Update Verification Commands and Superseded Documentation
 
 **Files:**
-- Modify: `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-claw-router\docs\superpowers\specs\2026-05-20-appbase-commerce-platform-design.md`
-- Modify: `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-claw-router\docs\superpowers\specs\2026-05-21-appbase-commerce-standard-design.md`
-- Modify: `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-claw-router\specs\appbase-integration.yaml`
+- Modify: `<workspace-root>/sdkwork-claw-router/docs/superpowers/specs/2026-05-20-appbase-commerce-platform-design.md`
+- Modify: `<workspace-root>/sdkwork-claw-router/docs/superpowers/specs/2026-05-21-appbase-commerce-standard-design.md`
+- Modify: `<workspace-root>/sdkwork-claw-router/specs/appbase-integration.yaml`
 - Modify: any renamed verification test modules that still contain `billing` in the filename
 
 - [ ] **Step 1: Rename verification targets away from billing**
@@ -271,7 +271,7 @@ Ensure the 2026-05-21 spec is the only document developers should consult when b
 Run:
 
 ```powershell
-rg -n "/billing|billing namespace|billing-centered|test_commerce_billing_standard|CommerceSdkNamespace = \"billing\"" D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-claw-router D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase -S
+rg -n "/billing|billing namespace|billing-centered|test_commerce_billing_standard|CommerceSdkNamespace = /"billing/"" <workspace-root>/sdkwork-claw-router <workspace-root>/sdkwork-appbase -S
 ```
 
 Expected: only the superseded-note and explicit removal rules mention billing; no active contract, route, or verification target should still depend on it.
@@ -290,9 +290,9 @@ Commit the final doc and manifest changes once the search is clean.
 Run:
 
 ```powershell
-pnpm.cmd --dir D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\common\commerce\sdkwork-commerce-contracts test
-pnpm.cmd --dir D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\common\commerce\sdkwork-commerce-sdk-ports test
-pnpm.cmd --dir D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\common\commerce\sdkwork-commerce-service test
+pnpm.cmd --dir <workspace-root>/sdkwork-appbase/packages/common/commerce/sdkwork-commerce-contracts test
+pnpm.cmd --dir <workspace-root>/sdkwork-appbase/packages/common/commerce/sdkwork-commerce-sdk-ports test
+pnpm.cmd --dir <workspace-root>/sdkwork-appbase/packages/common/commerce/sdkwork-commerce-service test
 cargo test -p sdkwork_commerce_http
 python -B -m unittest tests.test_appbase_capability_guardian tests.test_appbase_integration_guardian
 ```

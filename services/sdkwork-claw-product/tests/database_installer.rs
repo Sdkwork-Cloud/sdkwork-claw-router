@@ -4579,7 +4579,7 @@ async fn assert_app_store_seed_rows(pool: &SqlitePool) {
         r#"
         SELECT COUNT(1)
         FROM plus_app
-        WHERE tenant_id = 20001
+        WHERE uuid LIKE 'sdkwork-app-%'
         "#,
     )
     .fetch_one(pool)

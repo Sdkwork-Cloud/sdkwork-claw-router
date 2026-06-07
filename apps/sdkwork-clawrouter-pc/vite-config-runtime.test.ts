@@ -6,7 +6,11 @@ import test from "node:test";
 import type { UserConfig } from "vite";
 
 import portalViteConfig from "./vite.config.ts";
-import { buildPortalRuntimeEnvScript, resolvePortalRuntimeEnv } from "./vite.config.ts";
+import {
+  buildPortalRuntimeEnvScript,
+  resolvePortalRuntimeEnv,
+  resolvePortalWorkspaceDependencyRoot,
+} from "./vite.config.ts";
 
 async function resolvePortalViteConfig(): Promise<UserConfig> {
   if (typeof portalViteConfig !== "function") {
@@ -55,6 +59,22 @@ test("dependency optimizer compiles workspace TSX with automatic React runtime",
 
   assert.equal(config.optimizeDeps?.esbuildOptions?.jsx, "automatic");
   assert.equal(config.optimizeDeps?.esbuildOptions?.jsxImportSource, "react");
+  assert.ok(
+    config.optimizeDeps?.include?.includes("react/jsx-runtime"),
+    "React production JSX runtime must be pre-bundled as ESM",
+  );
+  assert.ok(
+    config.optimizeDeps?.include?.includes("react/jsx-dev-runtime"),
+    "React dev JSX runtime must be pre-bundled as ESM so workspace TSX can import jsxDEV",
+  );
+  assert.ok(
+    config.optimizeDeps?.needsInterop?.includes("react/jsx-runtime"),
+    "React production JSX runtime is CommonJS and needs Vite named-import interop",
+  );
+  assert.ok(
+    config.optimizeDeps?.needsInterop?.includes("react/jsx-dev-runtime"),
+    "React dev JSX runtime is CommonJS and needs Vite named-import interop for jsxDEV",
+  );
 });
 
 test("dev server enables React Fast Refresh and HMR by default", async () => {
@@ -145,14 +165,23 @@ test("portal dev server may serve workspace SDK sources resolved by aliases", as
   assert.ok(config.server?.fs?.allow?.includes(workspaceRoot));
 });
 
+test("portal dependency roots resolve to the materialized dependency checkout path", () => {
+  const fakeConfigDir = path.resolve(
+    import.meta.dirname,
+    "../../target/test/portal-portability/apps/sdkwork-clawrouter-pc",
+  );
+
+  assert.equal(
+    resolvePortalWorkspaceDependencyRoot(fakeConfigDir, "sdkwork-ui"),
+    path.resolve(fakeConfigDir, "../..", ".sdkwork/dependencies/sdkwork-ui"),
+  );
+});
+
 test("portal resolves sdkwork UI workspace imports to the app workspace source root", async () => {
   const config = await resolvePortalViteConfig();
   const aliases = config.resolve?.alias;
-  const expectedUiEntry = path.resolve(
-    import.meta.dirname,
-    "../../../sdkwork-ui/sdkwork-ui-pc-react/src/index.ts",
-  );
-  const expectedUiRoot = path.resolve(import.meta.dirname, "../../../sdkwork-ui");
+  const expectedUiRoot = resolvePortalWorkspaceDependencyRoot(import.meta.dirname, "sdkwork-ui");
+  const expectedUiEntry = path.resolve(expectedUiRoot, "sdkwork-ui-pc-react/src/index.ts");
 
   assert.ok(Array.isArray(aliases));
   assert.equal(
@@ -174,9 +203,10 @@ test("portal resolves sdkwork UI workspace imports to the app workspace source r
 test("portal resolves runtime bootstrap workspace imports to the appbase foundation source root", async () => {
   const config = await resolvePortalViteConfig();
   const aliases = config.resolve?.alias;
+  const appbaseRoot = resolvePortalWorkspaceDependencyRoot(import.meta.dirname, "sdkwork-appbase");
   const expectedRuntimeBootstrapEntry = path.resolve(
-    import.meta.dirname,
-    "../../../sdkwork-appbase/packages/common/foundation/sdkwork-runtime-bootstrap/src/index.ts",
+    appbaseRoot,
+    "packages/common/foundation/sdkwork-runtime-bootstrap/src/index.ts",
   );
 
   assert.ok(Array.isArray(aliases));
@@ -213,6 +243,34 @@ test("workspace package imports resolve to one React and router runtime instance
     "react-router/dom",
     "react-router-dom",
   ]);
+});
+
+test("workspace React runtime imports stay bare so Vite optimizer can emit ESM interop", async () => {
+  const config = await resolvePortalViteConfig();
+  const plugins: unknown[] = Array.isArray(config.plugins) ? config.plugins.flat() : [];
+  const resolver = plugins.find((plugin) => hasPluginName(plugin, "clawrouter-portal-workspace-dependency-resolver"));
+  const appbaseRoot = resolvePortalWorkspaceDependencyRoot(import.meta.dirname, "sdkwork-appbase");
+  const appbaseNotificationSource = path.resolve(
+    appbaseRoot,
+    "packages/pc-react/notification/sdkwork-notification-pc-react/src/NotificationBell.tsx",
+  );
+
+  assert.ok(resolver && typeof resolver === "object");
+  assert.ok("resolveId" in resolver);
+
+  for (const source of [
+    "react",
+    "react/jsx-runtime",
+    "react/jsx-dev-runtime",
+    "react-dom",
+    "react-dom/client",
+  ]) {
+    assert.equal(
+      await callResolveId(resolver.resolveId, source, appbaseNotificationSource),
+      null,
+      `${source} must not resolve to a raw CommonJS file from node_modules`,
+    );
+  }
 });
 
 test("third-party runtime dependencies are direct dependencies instead of Vite aliases", async () => {
@@ -313,9 +371,10 @@ test("react-i18next HTML parser interop dependencies are served through dependen
   const include = config.optimizeDeps?.include ?? [];
   const plugins: unknown[] = Array.isArray(config.plugins) ? config.plugins.flat() : [];
   const resolver = plugins.find((plugin) => hasPluginName(plugin, "clawrouter-portal-workspace-dependency-resolver"));
+  const appbaseRoot = resolvePortalWorkspaceDependencyRoot(import.meta.dirname, "sdkwork-appbase");
   const externalWorkspaceImporter = path.resolve(
-    import.meta.dirname,
-    "../../../sdkwork-appbase/packages/pc-react/fake/src/index.tsx",
+    appbaseRoot,
+    "packages/pc-react/fake/src/index.tsx",
   );
 
   assert.ok(resolver && typeof resolver === "object");
@@ -332,6 +391,39 @@ test("react-i18next HTML parser interop dependencies are served through dependen
       null,
       `${dependency} must remain a bare import so Vite can rewrite it to .vite/deps`,
     );
+  }
+});
+
+test("React Router cookie interop dependencies are served through dependency optimization", async () => {
+  const config = await resolvePortalViteConfig();
+  const include = config.optimizeDeps?.include ?? [];
+  const needsInterop = config.optimizeDeps?.needsInterop ?? [];
+  const plugins: unknown[] = Array.isArray(config.plugins) ? config.plugins.flat() : [];
+  const resolver = plugins.find((plugin) => hasPluginName(plugin, "clawrouter-portal-workspace-dependency-resolver"));
+  const appbaseRoot = resolvePortalWorkspaceDependencyRoot(import.meta.dirname, "sdkwork-appbase");
+  const externalWorkspaceImporter = path.resolve(
+    appbaseRoot,
+    "packages/pc-react/fake/src/index.tsx",
+  );
+
+  assert.ok(resolver && typeof resolver === "object");
+  assert.ok("resolveId" in resolver);
+  for (const dependency of [
+    "react-router",
+    "react-router/dom",
+    "react-router-dom",
+    "cookie",
+    "set-cookie-parser",
+  ]) {
+    assert.ok(include.includes(dependency), `${dependency} must be pre-bundled by Vite`);
+    assert.equal(
+      await callResolveId(resolver.resolveId, dependency, externalWorkspaceImporter),
+      null,
+      `${dependency} must remain a bare import so Vite can rewrite it to .vite/deps`,
+    );
+  }
+  for (const dependency of ["cookie", "set-cookie-parser"]) {
+    assert.ok(needsInterop.includes(dependency), `${dependency} must use Vite CommonJS named-export interop`);
   }
 });
 
@@ -372,4 +464,24 @@ test("portal runtime env allows the open SDK base URL to differ from the public 
   assert.equal(runtimeEnv.VITE_API_BASE_URL, "https://tenant.example.com/v1");
   assert.equal(runtimeEnv.VITE_CLAWROUTER_OPEN_API_BASE_URL, "https://open.example.com/v1");
   assert.match(script, /"VITE_CLAWROUTER_OPEN_API_BASE_URL":"https:\/\/open\.example\.com\/v1"/u);
+});
+
+test("portal runtime env keeps appbase backend SDK base URL independent from claw-router backend", () => {
+  const runtimeEnv = resolvePortalRuntimeEnv({
+    PORTAL_PUBLIC_BACKEND_API_BASE_URL: "/backend/v3/api",
+    PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL: "https://appbase.example.com/backend/v3/api",
+  });
+  const envExample = readFileSync(new URL("./.env.example", import.meta.url), "utf8");
+  const releaseEnvExample = readFileSync(new URL("../../.env.release.example", import.meta.url), "utf8");
+
+  assert.equal(runtimeEnv.VITE_CLAWROUTER_BACKEND_API_BASE_URL, "/backend/v3/api");
+  assert.equal(
+    runtimeEnv.VITE_SDKWORK_APPBASE_BACKEND_API_BASE_URL,
+    "https://appbase.example.com/backend/v3/api",
+  );
+  assert.match(envExample, /PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL/);
+  assert.match(envExample, /PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL=""/);
+  assert.match(releaseEnvExample, /PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL=""/);
+  assert.doesNotMatch(envExample, /PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL="\/backend\/v3\/api"/);
+  assert.doesNotMatch(releaseEnvExample, /PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL="\/backend\/v3\/api"/);
 });

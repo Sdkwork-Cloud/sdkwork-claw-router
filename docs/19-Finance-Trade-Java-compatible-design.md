@@ -8,11 +8,11 @@
 
 支付、订单、账户、优惠券、VIP、充值、积分、退款、发票等资金和交易能力必须以 Java 端设计为标准。`sdkwork-claw-router` 的数据库设计采用 Java Entity first：
 
-1. 新增任何资金/交易/营销/VIP/账户模型前，先在 `spring-ai-plus-business-entity` 检索是否已有 `Plus*` Entity。
+1. 新增任何资金/交易/营销/VIP/账户模型前，先在 `legacy-java-plus-entity` 检索是否已有 `Plus*` Entity。
 2. 如果 Java 端已有实体，则 schema registry 只登记既有 `plus_*` 表为 L0 legacy compatible。
 3. 物理表结构、字段类型、枚举、唯一约束、索引和生命周期都以 Java Entity 为准。
-4. app 端 API 走 `spring-ai-plus-app-api` 的 `/app/v3/api/*` 标准路径。
-5. backend 管理端 API 走 `spring-ai-plus-backend-api` 的 `/backend/v3/api/*` 标准路径。
+4. app 端 API 走 `legacy-java-plus-app-api` 的 `/app/v3/api/*` 标准路径。
+5. backend 管理端 API 走 `legacy-java-plus-backend-api` 的 `/backend/v3/api/*` 标准路径。
 6. `commerce_*` 只能保存用量结算、账单投影、导出和对账证据，不替代 `plus_order`、`plus_payment`、`plus_refund`、`plus_invoice`、`plus_account`、`plus_vip_*`；卡券营销事实统一进入 `promotion_*`。
 
 ## 2. 禁止同义主表
@@ -106,7 +106,7 @@ Claw Router 可以新增和维护以下标准表：
 
 资金/交易域新增表必须通过以下检查：
 
-1. `rg "@Table\\(name = \"plus_" spring-ai-plus-business-entity/src/main/java` 已检索。
+1. `rg "@Table\\(name = \"plus_" legacy-java-plus-entity/src/main/java` 已检索。
 2. 若 Java 已存在实体，schema registry 只能添加 `profile: legacy_compatible`、`compliance_level: L0`、`generated_by_this_project: false`、`compatibility_rule: keep_physical_structure_identical`。
 3. 若 Java 不存在实体，必须说明为什么不能扩展现有 Java 服务，并明确该表只是投影、审计、导出、对账或网关专属事实。
 4. 新表名不得使用 `commerce_order`、`commerce_payment`、`commerce_refund`、`commerce_invoice`、`commerce_account`、`commerce_vip` 等同义主表名称；卡券营销只能使用 `promotion_*`。

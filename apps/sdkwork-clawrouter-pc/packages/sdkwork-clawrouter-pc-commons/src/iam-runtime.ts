@@ -16,6 +16,8 @@ import {
   getClawRouterGlobalTokenManager,
   getSdkworkAppbaseAppSdkClient,
   getSdkworkAppbaseBackendSdkClient,
+  getSdkworkDriveAppSdkClient,
+  getSdkworkGenerationsAppSdkClient,
   resetClawRouterSdkClients,
 } from './sdk-clients.ts';
 import { readClawRouterRuntimeEnv } from './utils/env.ts';
@@ -30,6 +32,8 @@ export function createClawRouterIamRuntime(): IamRuntime {
       sdkClients: [
         getClawRouterAppSdkClient(),
         getClawRouterBackendSdkClient(),
+        getSdkworkDriveAppSdkClient(),
+        getSdkworkGenerationsAppSdkClient(),
       ],
     },
     config: {

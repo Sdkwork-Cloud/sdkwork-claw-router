@@ -117,7 +117,7 @@ class SchemaQualityGate:
         frontend_operation_audit = FrontendOperationAudit(root=self.root).check()
         messages.extend(frontend_operation_audit.messages)
 
-        if (self.root / "sdkwork-appbase").exists():
+        if (self.root / ".sdkwork" / "dependencies" / "sdkwork-appbase").exists():
             appbase_capability = AppbaseCapabilityGuardian(root=self.root).run()
             messages.extend(appbase_capability.messages)
 

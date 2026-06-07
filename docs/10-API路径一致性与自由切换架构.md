@@ -8,8 +8,8 @@
 - Server 单体后端。
 - Docker Compose 后端。
 - K8S Cell 后端。
-- 中央 `spring-ai-plus-app-api` 服务。
-- 中央 `spring-ai-plus-backend-api` 服务。
+- 中央 `legacy-java-plus-app-api` 服务。
+- 中央 `legacy-java-plus-backend-api` 服务。
 
 这要求 claw-router 的 App API 和 Backend API 路径必须与 Java API 标准完全一致。产品名、部署名、门户名不能插入到公共 API 路径里。
 
@@ -17,8 +17,8 @@
 
 | API 面 | Java 常量 | 固定前缀 | 事实来源 |
 | --- | --- | --- | --- |
-| App API | `com.sdkwork.app.api.ApiPaths.API_PREFIX` | `/app/v3/api` | `spring-ai-plus-app-api` controller + OpenAPI + generated SDK |
-| Backend API | `com.sdkwork.backend.api.ApiPaths.API_PREFIX` | `/backend/v3/api` | `spring-ai-plus-backend-api` controller + OpenAPI + generated SDK |
+| App API | `com.sdkwork.app.api.ApiPaths.API_PREFIX` | `/app/v3/api` | `legacy-java-plus-app-api` controller + OpenAPI + generated SDK |
+| Backend API | `com.sdkwork.backend.api.ApiPaths.API_PREFIX` | `/backend/v3/api` | `legacy-java-plus-backend-api` controller + OpenAPI + generated SDK |
 | Gateway API | OpenAI compatible path registry | `/v1/*` | Gateway compatibility contract |
 
 规则：
@@ -134,13 +134,13 @@ Base URL Resolver
 
 Public/Console：
 
-- 只使用 `spring-ai-plus-app-api` 生成 SDK 或批准的 app SDK wrapper。
+- 只使用 `legacy-java-plus-app-api` 生成 SDK 或批准的 app SDK wrapper。
 - 不手写 `/app/v3/api/...` raw fetch。
 - 不调用 backend API 完成用户侧功能。
 
 Admin：
 
-- 只使用 `spring-ai-plus-backend-api` 生成 SDK 或批准的 backend SDK wrapper。
+- 只使用 `legacy-java-plus-backend-api` 生成 SDK 或批准的 backend SDK wrapper。
 - 不手写 `/backend/v3/api/...` raw fetch。
 - 不调用 app API 完成管理功能。
 
@@ -162,7 +162,7 @@ java_prefix: /app/v3/api
 resource_path: /api-keys
 operation_id: createApiKey
 sdk_method: client.apiKeys.create
-owner_module: spring-ai-plus-app-api
+owner_module: legacy-java-plus-app-api
 runtime_modes: [desktop, server, docker, k8s, cloud]
 ```
 
@@ -172,7 +172,7 @@ java_prefix: /backend/v3/api
 resource_path: /channel/account
 operation_id: listChannelAccounts
 sdk_method: client.channelAccount.list
-owner_module: spring-ai-plus-backend-api
+owner_module: legacy-java-plus-backend-api
 runtime_modes: [server, docker, k8s, cloud]
 ```
 
@@ -190,8 +190,8 @@ runtime_modes: [server, docker, k8s, cloud]
 
 ## 10. 验收标准
 
-- [ ] 任意 App API 只要切换 app base URL，就能在本地 claw-router 和中央 `spring-ai-plus-app-api` 之间切换。
-- [ ] 任意 Backend API 只要切换 backend base URL，就能在本地/私有化 backend 和中央 `spring-ai-plus-backend-api` 之间切换。
+- [ ] 任意 App API 只要切换 app base URL，就能在本地 claw-router 和中央 `legacy-java-plus-app-api` 之间切换。
+- [ ] 任意 Backend API 只要切换 backend base URL，就能在本地/私有化 backend 和中央 `legacy-java-plus-backend-api` 之间切换。
 - [ ] 前端无产品级路径分叉。
 - [ ] Nginx/Ingress 无破坏 API 前缀的 rewrite。
 - [ ] 新增能力必须先进入 Java app-api/backend-api 契约和 SDK。

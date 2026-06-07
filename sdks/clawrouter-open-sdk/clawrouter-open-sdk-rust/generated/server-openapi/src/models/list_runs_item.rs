@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::models::{OpenAiTokenUsage};
+use crate::models::OpenAiTokenUsage;
 
 /// Item module returned inside the listRuns list response.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]

@@ -135,7 +135,8 @@ Linux/macOS 可移植 release 包根目录：
 Windows MSI 安装目录：
 
 ```powershell
-Set-Location "C:\Program Files\ClawRouter"
+$installRoot = Join-Path $env:USERPROFILE "sdkwork\router"
+Set-Location $installRoot
 .\bin\clawrouterctl.exe ensure
 .\bin\clawrouterctl.exe refresh-catalog --force
 .\bin\clawrouter.exe

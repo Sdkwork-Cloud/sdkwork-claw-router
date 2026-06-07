@@ -26,7 +26,7 @@
 - Frontend field audit now covers 54 data interfaces from 31 portal service/data/type files and records the `route` plus `data_sources` in `generated/schema/frontend/frontend-field-audit.json`.
 - `/courses` now includes `content_course_relation`, because the actual `Course` frontend model exposes `relatedCourseIds` on the list data model.
 - Frontend operation audit now covers 76 service operations from 25 portal service files, including 30 mutating operations, and records read/write table mappings in `generated/schema/frontend/frontend-operation-audit.json`.
-- Frontend operation audit now also records `api_surface`, `api_method`, and `api_path` for all 76 operations so the portal can switch between Claw Router Rust services and Java `spring-ai-plus-app-api`/`spring-ai-plus-backend-api` compatible paths without changing UI modules.
+- Frontend operation audit now also records `api_surface`, `api_method`, and `api_path` for all 76 operations so the portal can switch between Claw Router Rust services and Java `legacy-java-plus-app-api`/`legacy-java-plus-backend-api` compatible paths without changing UI modules.
 - AppCenter operations are mapped to the Java `PlusApp` app-store contract (`/app/v3/api/app/store/**`), and SkillsHub operations are mapped to the Java AgentSkills contract (`/app/v3/api/skills/**`) with category reads kept under the Java category-backed surfaces.
 - `/console/recharge` now includes `plus_order`, `plus_order_item`, and `plus_payment` because `submitRecharge` creates a trade/payment workflow, not only a recharge pack selection.
 - `/console/commerce` now includes `commerce_account_ledger_entry` because coupon redemption changes account balance and must leave an appbase-compatible account ledger entry.

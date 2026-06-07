@@ -10,7 +10,7 @@ afterEach(() => {
 });
 
 describe("SDKWork file upload PC React blocks", () => {
-  it("uploads through the file service with only slot and target business inputs", async () => {
+  it("uploads through the Drive-backed file service with only slot and target business inputs", async () => {
     const events: string[] = [];
     const service = createRecordingService(events);
 
@@ -21,12 +21,7 @@ describe("SDKWork file upload PC React blocks", () => {
         service={service}
         slotCode="app.icon"
         target={{ id: "app_1", type: "app" }}
-        uploadTransport={{
-          async uploadFile({ file, session }) {
-            events.push(`transport.upload:${file.name}:${session.sessionId}`);
-          },
-        }}
-        onCompleted={(result) => events.push(`completed:${result.fileRef.fileId}:${result.fileRef.purpose}`)}
+        onCompleted={(result) => events.push(`completed:${result.fileRef.fileId}:${result.fileRef.purpose}:${result.driveUri}`)}
       />,
     );
 
@@ -37,10 +32,8 @@ describe("SDKWork file upload PC React blocks", () => {
 
     await waitFor(() => {
       expect(events).toEqual([
-        "service.createUploadSession:app.icon:icon.png",
-        "transport.upload:icon.png:upl_1",
-        "service.completeUpload:app.icon:upl_1",
-        "completed:file_1:app.icon",
+        "service.uploadFile:app.icon:icon.png:app:app_1",
+        "completed:node_1:app.icon:drive://spaces/space_1/nodes/node_1",
       ]);
     });
 
@@ -57,11 +50,6 @@ describe("SDKWork file upload PC React blocks", () => {
         service={service}
         slotCode="app.icon"
         target={{ id: "app_1", type: "app" }}
-        uploadTransport={{
-          async uploadFile() {
-            throw new Error("network failed");
-          },
-        }}
         onError={(error) => events.push(`error:${error.message}`)}
       />,
     );
@@ -71,8 +59,8 @@ describe("SDKWork file upload PC React blocks", () => {
 
     await waitFor(() => {
       expect(events).toEqual([
-        "service.createUploadSession:app.icon:x.png",
-        "error:network failed",
+        "service.uploadFile:app.icon:x.png:app:app_1",
+        "error:Drive upload failed",
       ]);
     });
 
@@ -80,9 +68,9 @@ describe("SDKWork file upload PC React blocks", () => {
     expect(screen.queryByText(/objectKey|bucket|presigned/i)).toBeNull();
   });
 
-  it("passes the file service into upload transport for multipart part presigning", async () => {
+  it("passes upload progress from the Drive-backed file service", async () => {
     const events: string[] = [];
-    const service = createMultipartRecordingService(events);
+    const service = createRecordingService(events);
 
     render(
       <FileUploadButton
@@ -90,17 +78,7 @@ describe("SDKWork file upload PC React blocks", () => {
         service={service}
         slotCode="course.video"
         target={{ id: "course_1", type: "course" }}
-        uploadTransport={{
-          async uploadFile({ file, service: uploadService, session }) {
-            events.push(`transport.multipart:${file.name}:${session.sessionId}:${session.totalParts}`);
-            const part = await uploadService.presignUploadPart({
-              partNumber: 1,
-              requestId: "req-part-1",
-              sessionId: session.sessionId,
-            });
-            events.push(`transport.part:${part.partNumber}:${part.presigned.url}`);
-          },
-        }}
+        onProgress={(progress) => events.push(`progress:${progress.status}:${progress.uploadedBytes}:${progress.totalBytes}`)}
       />,
     );
 
@@ -109,11 +87,8 @@ describe("SDKWork file upload PC React blocks", () => {
 
     await waitFor(() => {
       expect(events).toEqual([
-        "service.createUploadSession:course.video:video.mp4",
-        "transport.multipart:video.mp4:upl_multi:2",
-        "service.presignUploadPart:upl_multi:1",
-        "transport.part:1:memory://upload/upl_multi/parts/1",
-        "service.completeUpload:course.video:upl_multi",
+        "service.uploadFile:course.video:video.mp4:course:course_1",
+        "progress:completed:6:6",
       ]);
     });
   });
@@ -162,58 +137,32 @@ function createRecordingService(events: string[]): FilePlatformService {
         status: "active",
       };
     },
-    async createUploadSession(input) {
-      events.push(`service.createUploadSession:${input.slotCode}:${input.filename}`);
+    async uploadFile(input) {
+      events.push(`service.uploadFile:${input.slotCode}:${input.filename}:${input.target.type}:${input.target.id}`);
+      if (input.filename === "x.png") {
+        throw new Error("Drive upload failed");
+      }
+      input.onProgress?.({
+        status: "completed",
+        uploadedBytes: input.sizeBytes,
+        totalBytes: input.sizeBytes,
+      });
       return {
-        presigned: {
-          expiresAt: "2026-05-23T08:10:00.000Z",
-          headers: { "Content-Type": input.contentType },
-          method: "PUT",
-          url: "memory://upload/upl_1",
+        driveNodeId: "node_1",
+        driveSpaceId: "space_1",
+        driveUri: "drive://spaces/space_1/nodes/node_1",
+        fileRef: {
+          fileId: "node_1",
+          purpose: input.slotCode,
+          visibility: "private",
         },
-        quotaReservationId: "quota_1",
         requestId: input.requestId,
-        sessionId: "upl_1",
-        slotCode: input.slotCode,
-        status: "presigned",
-        uploadMode: "single_put",
+        status: "active",
+        uploadId: "upload_1",
       };
     },
     getSlot() {
       return undefined;
-    },
-  };
-}
-
-function createMultipartRecordingService(events: string[]): FilePlatformService {
-  return {
-    ...createRecordingService(events),
-    async createUploadSession(input) {
-      events.push(`service.createUploadSession:${input.slotCode}:${input.filename}`);
-      return {
-        partSizeBytes: 3,
-        quotaReservationId: "quota_multi",
-        requestId: input.requestId,
-        sessionId: "upl_multi",
-        slotCode: input.slotCode,
-        status: "presigned",
-        totalParts: 2,
-        uploadMode: "multipart",
-      };
-    },
-    async presignUploadPart(input) {
-      events.push(`service.presignUploadPart:${input.sessionId}:${input.partNumber}`);
-      return {
-        partNumber: input.partNumber,
-        presigned: {
-          expiresAt: "2026-05-23T08:10:00.000Z",
-          headers: {},
-          method: "PUT",
-          url: `memory://upload/${input.sessionId}/parts/${input.partNumber}`,
-        },
-        requestId: input.requestId,
-        sessionId: input.sessionId,
-      };
     },
   };
 }

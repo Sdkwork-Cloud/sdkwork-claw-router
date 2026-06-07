@@ -6,7 +6,6 @@ export const SDKWORK_FILE_STANDARD = {
   },
   domain: "file",
   sdkNamespaces: [
-    "upload",
     "files",
     "drive",
     "fileBindings",
@@ -24,10 +23,6 @@ export const SDKWORK_FILE_TABLES = {
   storageDefaultBucketPolicy: "storage_default_bucket_policy",
   objectBlob: "object_blob",
   objectTag: "object_tag",
-  uploadSession: "upload_session",
-  uploadPresignGrant: "upload_presign_grant",
-  uploadPart: "upload_part",
-  uploadCompletionAttempt: "upload_completion_attempt",
   fileNode: "file_node",
   fileVersion: "file_version",
   fileMetadataCommon: "file_metadata_common",
@@ -51,14 +46,6 @@ export const SDKWORK_FILE_TABLES = {
 
 export const SDKWORK_FILE_API_ROUTES = {
   app: {
-    upload: {
-      abortSession: "/app/v3/api/upload/sessions/{sessionId}/abort",
-      completeSession: "/app/v3/api/upload/sessions/{sessionId}/complete",
-      createSession: "/app/v3/api/upload/sessions",
-      getSession: "/app/v3/api/upload/sessions/{sessionId}",
-      presignPart: "/app/v3/api/upload/sessions/{sessionId}/parts/{partNumber}/presign",
-      presignSession: "/app/v3/api/upload/sessions/{sessionId}/presign",
-    },
     files: {
       collection: "/app/v3/api/files",
       delete: "/app/v3/api/files/{fileId}",
@@ -149,12 +136,6 @@ export interface SdkworkFileOperationContract {
 }
 
 export const SDKWORK_FILE_OPERATION_IDS = {
-  uploadSessionsCreate: operation("app", "create", "upload.sessions.create", SDKWORK_FILE_API_ROUTES.app.upload.createSession, "upload"),
-  uploadSessionsPresign: operation("app", "create", "upload.sessions.presign", SDKWORK_FILE_API_ROUTES.app.upload.presignSession, "upload"),
-  uploadSessionsRetrieve: operation("app", "read", "upload.sessions.retrieve", SDKWORK_FILE_API_ROUTES.app.upload.getSession, "upload"),
-  uploadSessionsComplete: operation("app", "create", "upload.sessions.complete", SDKWORK_FILE_API_ROUTES.app.upload.completeSession, "upload"),
-  uploadSessionsAbort: operation("app", "create", "upload.sessions.abort", SDKWORK_FILE_API_ROUTES.app.upload.abortSession, "upload"),
-  uploadPartsPresign: operation("app", "create", "upload.parts.presign", SDKWORK_FILE_API_ROUTES.app.upload.presignPart, "upload"),
   filesList: operation("app", "read", "files.list", SDKWORK_FILE_API_ROUTES.app.files.collection, "files"),
   filesRetrieve: operation("app", "read", "files.retrieve", SDKWORK_FILE_API_ROUTES.app.files.get, "files"),
   filesUpdate: operation("app", "update", "files.update", SDKWORK_FILE_API_ROUTES.app.files.update, "files"),
@@ -239,7 +220,6 @@ export type SdkworkFileUploadStatus =
   | "expired"
   | "orphaned"
   | "policy_rejected"
-  | "presigned"
   | "processing"
   | "quota_rejected"
   | "scan_failed"
@@ -258,7 +238,6 @@ export const SDKWORK_FILE_UPLOAD_STATUSES: readonly SdkworkFileUploadStatus[] = 
   "expired",
   "orphaned",
   "policy_rejected",
-  "presigned",
   "processing",
   "quota_rejected",
   "scan_failed",

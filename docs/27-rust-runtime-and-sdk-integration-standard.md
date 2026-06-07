@@ -33,9 +33,9 @@ The goal is a standard system that supports local desktop, server, Docker, and K
 
 | Surface | Path Prefix | Generated Client | OpenAPI Source | SDK Home |
 | --- | --- | --- | --- | --- |
-| app | `/app/v3/api` | `SdkworkAppClient` | `spring-ai-plus-app-api/sdkwork-sdk-app/app-openapi-8080.json` | `spring-ai-plus-app-api/sdkwork-sdk-app` |
-| backend | `/backend/v3/api` | `SdkworkBackendClient` | `spring-ai-plus-backend-api/sdkwork-sdk-backend/backend-openapi-8080.json` | `spring-ai-plus-backend-api/sdkwork-sdk-backend` |
-| ai/openai | `/v1` | `SdkworkAiClient` | `spring-ai-plus-ai-api/sdkwork-sdk-ai` | `spring-ai-plus-ai-api/sdkwork-sdk-ai` |
+| app | `/app/v3/api` | `SdkworkAppClient` | `sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi/src` | `sdks/clawrouter-app-sdk` |
+| backend | `/backend/v3/api` | `SdkworkBackendClient` | `sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/generated/server-openapi/src` | `sdks/clawrouter-backend-sdk` |
+| ai/openai | `/v1` | `SdkworkAiClient` | `sdks/clawrouter-open-sdk/clawrouter-open-sdk-typescript/generated/server-openapi/src` | `sdks/clawrouter-open-sdk` |
 
 SDK generation is owned by:
 
@@ -45,46 +45,46 @@ sdk/sdkwork-sdk-generator
 
 The generated package names must follow the existing client naming standard:
 
-- app: `SdkworkAppClient`
-- backend: `SdkworkBackendClient`
-- ai: `SdkworkAiClient`
+- app: `SdkworkAppClient` from `@sdkwork/clawrouter-app-sdk`
+- backend: `SdkworkBackendClient` from `@sdkwork/clawrouter-backend-sdk`
+- ai/open: `SdkworkAiClient` from `@sdkwork/clawrouter-open-sdk`
 
 ## 4. SDK Generation Commands
 
 Run from the repository root.
 
-App SDK:
+App SDK runtime package:
 
 ```powershell
-.\spring-ai-plus-app-api\sdkwork-sdk-app\bin\generate-sdk.ps1 -Languages typescript
+pnpm --dir sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/generated/server-openapi build
 ```
 
-Backend SDK:
+Backend SDK runtime package:
 
 ```powershell
-.\spring-ai-plus-backend-api\sdkwork-sdk-backend\bin\generate-sdk.ps1 -Languages typescript
+pnpm --dir sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/generated/server-openapi build
 ```
 
-Manual app SDK generation:
+Manual app SDK generation, when the owner OpenAPI input changes:
 
 ```powershell
 node sdk\sdkwork-sdk-generator\bin\sdkgen.js generate `
-  -i spring-ai-plus-app-api\sdkwork-sdk-app\app-openapi-8080.json `
-  -o spring-ai-plus-app-api\sdkwork-sdk-app\sdkwork-app-sdk-typescript `
-  -n sdkwork-app-sdk `
+  -i sdks\clawrouter-app-sdk\openapi\clawrouter-app-sdk.openapi.json `
+  -o sdks\clawrouter-app-sdk\clawrouter-app-sdk-typescript\generated\server-openapi `
+  -n clawrouter-app-sdk `
   -t app `
   -l typescript `
   --base-url http://localhost:8080 `
   --api-prefix /app/v3/api
 ```
 
-Manual backend SDK generation:
+Manual backend SDK generation, when the owner OpenAPI input changes:
 
 ```powershell
 node sdk\sdkwork-sdk-generator\bin\sdkgen.js generate `
-  -i spring-ai-plus-backend-api\sdkwork-sdk-backend\backend-openapi-8080.json `
-  -o spring-ai-plus-backend-api\sdkwork-sdk-backend\sdkwork-backend-sdk-typescript `
-  -n sdkwork-backend-sdk `
+  -i sdks\clawrouter-backend-sdk\openapi\clawrouter-backend-sdk.openapi.json `
+  -o sdks\clawrouter-backend-sdk\clawrouter-backend-sdk-typescript\generated\server-openapi `
+  -n clawrouter-backend-sdk `
   -t backend `
   -l typescript `
   --base-url http://localhost:8080 `
@@ -290,3 +290,47 @@ pnpm fmt:rust:check
 ```
 
 If SDK generation is changed, also run the relevant generator check from the owning SDK home. Generated SDK files remain generated artifacts and must not be manually edited.
+
+## 12. Dependency API Surface Mounting
+
+Claw Router consumes dependency SDK families, but dependency SDK generation ownership is separate
+from Rust runtime mounting. The runtime must record every dependency HTTP SDK surface in
+`specs/dependency-api-surfaces.json` before frontend packages are allowed to construct that SDK
+client.
+
+Rules:
+
+- `sdkDependencies` proves owner-only SDK generation boundaries only. It does not prove that the
+  Claw Router Rust process serves the dependency API through `/app/v3/api` or `/backend/v3/api`.
+- Appbase app-api may inherit same-origin app API base URLs only when
+  `dependency-api-surfaces.json` records `sameOriginAllowed: true` and lists concrete Claw Router
+  handler adapters or an executable dependency router export with coverage evidence.
+- Appbase backend-api IAM management is an external service until an appbase-owned executable
+  backend IAM router/controller is mounted and verified. Route metadata such as
+  `sdkwork_iam_http::backend_routes()` is contract evidence, not handler coverage.
+- Frontend/admin services that call appbase backend IAM resources such as users, roles,
+  permissions, organizations, departments, role bindings, API key list, or API key revoke must use
+  `@sdkwork/appbase-backend-sdk` through `getSdkworkAppbaseBackendSdkClient()`.
+- When a dependency backend surface is marked `external-service`, SDK bootstrap must require
+  `VITE_SDKWORK_APPBASE_BACKEND_API_BASE_URL`, expose it through
+  `PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL`, and must not fall back to
+  `VITE_CLAWROUTER_BACKEND_API_BASE_URL`, `BACKEND_API_PREFIX`, or `/backend/v3/api`.
+- Method-level ownership is allowed only when it is explicit. For example, appbase owns
+  `GET /backend/v3/api/iam/api_keys` and
+  `POST /backend/v3/api/iam/api_keys/{apiKeyId}/revoke`, while Claw Router owns
+  `POST /backend/v3/api/iam/api_keys` and
+  `DELETE /backend/v3/api/iam/api_keys/{apiKeyId}` because the Rust product handlers create and
+  delete gateway API key secrets, hashes, audit facts, idempotency records, and product read-model
+  entries through `AdminUserStore`.
+- Component specs that declare `dependencyApiSurface` must mirror the root dependency API surface
+  runtime mode, same-origin flag, required base URL env, public base URL env, and fallback policy.
+  Feature packages must not invent per-package fallbacks.
+
+Required local checks:
+
+```powershell
+python -m unittest tests.test_dependency_api_surface_standard
+pnpm.cmd exec tsx admin-organization-runtime.test.ts
+pnpm.cmd exec tsx admin-user-runtime.test.ts
+pnpm.cmd exec tsx vite-config-runtime.test.ts
+```

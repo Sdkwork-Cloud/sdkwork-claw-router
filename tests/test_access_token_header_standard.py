@@ -12,8 +12,8 @@ class AccessTokenHeaderStandardTest(unittest.TestCase):
         roots = [
             ROOT,
             ROOT.parents[1] / "specs",
-            ROOT.parents[1] / "sdk" / "sdkwork-sdk-generator" / "src",
-            ROOT.parents[1] / "sdk" / "sdkwork-sdk-generator" / "tmp-js",
+            ROOT / ".sdkwork" / "dependencies" / "sdkwork-sdk-generator" / "src",
+            ROOT / ".sdkwork" / "dependencies" / "sdkwork-sdk-generator" / "tmp-js",
         ]
         vendor = "Sdkwork"
         forbidden_patterns = [

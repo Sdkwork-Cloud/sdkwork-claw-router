@@ -62,16 +62,11 @@ describe("SDKWork file SDK generation manifest", () => {
     ]);
     expect(JSON.parse(artifacts["sdkwork-file-app-openapi.json"]).paths).toHaveProperty("/app/v3/api/files");
     expect(JSON.parse(artifacts["sdkwork-file-backend-openapi.json"]).paths["/backend/v3/api/files"].get.operationId).toBe("admin.files.list");
-    expect(JSON.parse(artifacts["sdkwork-file-app-openapi.json"]).paths["/app/v3/api/upload/sessions"].post.responses["200"].content["application/json"].schema).toEqual({
-      $ref: "#/components/schemas/UploadSession",
-    });
-    expect(JSON.parse(artifacts["sdkwork-file-app-openapi.json"]).components.schemas.CompleteUploadResponse.required).toEqual([
-      "fileRef",
-      "requestId",
-      "sessionId",
-      "status",
-    ]);
+    expect(JSON.parse(artifacts["sdkwork-file-app-openapi.json"]).paths).not.toHaveProperty("/app/v3/api/upload/sessions");
+    expect(JSON.parse(artifacts["sdkwork-file-app-openapi.json"]).components.schemas).not.toHaveProperty("UploadSession");
+    expect(JSON.parse(artifacts["sdkwork-file-app-openapi.json"]).components.schemas).not.toHaveProperty("PresignUploadPartResponse");
     expect(artifacts["sdkwork-file-app-openapi.json"]).not.toContain("presigned_url");
+    expect(artifacts["sdkwork-file-app-openapi.json"]).not.toContain("presign");
     expect(artifacts["sdkwork-file-backend-openapi.json"]).toContain("x-sdkwork-admin-rbac");
   });
 

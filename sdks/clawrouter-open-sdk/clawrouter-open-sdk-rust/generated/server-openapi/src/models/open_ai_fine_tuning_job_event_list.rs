@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::models::{OpenAiFineTuningJobEvent};
+use crate::models::OpenAiFineTuningJobEvent;
 
 /// OpenAI-compatible paginated list of fine-tuning job events.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]

@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::models::{OpenAiOrganizationAuditLog};
+use crate::models::OpenAiOrganizationAuditLog;
 
 /// OpenAI-compatible paginated list of organization audit log events.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]

@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::models::{OpenAiProjectRateLimit};
+use crate::models::OpenAiProjectRateLimit;
 
 /// OpenAI-compatible paginated list of project rate limits.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]

@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::models::{OpenAiSkillVersion};
+use crate::models::OpenAiSkillVersion;
 
 /// OpenAI-compatible paginated list of skill versions.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]

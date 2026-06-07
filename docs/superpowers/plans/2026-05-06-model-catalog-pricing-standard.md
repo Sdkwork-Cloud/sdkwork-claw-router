@@ -62,10 +62,10 @@
 **Files:**
 - Delete legacy files under the old Java model entity package.
 - Delete legacy files under the old Java model repository package.
-- Create canonical entity files under `../../spring-ai-plus-business-entity/src/main/java/com/sdkwork/spring/ai/plus/entity/ai/catalog/`
-- Create canonical repository files under `../../spring-ai-plus-business-repository/src/main/java/com/sdkwork/spring/ai/plus/repository/ai/catalog/`
-- Delete legacy compatibility tests under `../../spring-ai-plus-business-entity/src/test/java/com/sdkwork/spring/ai/plus/entity/`
-- Create canonical mapping tests under `../../spring-ai-plus-business-entity/src/test/java/com/sdkwork/spring/ai/plus/entity/ai/catalog/`
+- Create canonical entity files under `../../legacy-java-plus-entity/src/main/java/com/sdkwork/spring/ai/plus/entity/ai/catalog/`
+- Create canonical repository files under `../../legacy-java-plus-repository/src/main/java/com/sdkwork/spring/ai/plus/repository/ai/catalog/`
+- Delete legacy compatibility tests under `../../legacy-java-plus-entity/src/test/java/com/sdkwork/spring/ai/plus/entity/`
+- Create canonical mapping tests under `../../legacy-java-plus-entity/src/test/java/com/sdkwork/spring/ai/plus/entity/ai/catalog/`
 
 - [ ] Write failing Java mapping tests for canonical table names, decimal fields as `BigDecimal`, and no legacy entities.
 - [ ] Implement canonical entities and repositories.
@@ -74,10 +74,10 @@
 ### Task 5: Java Service And Bootstrap Replacement
 
 **Files:**
-- Delete legacy service files under `../../spring-ai-plus-business-service/src/main/java/com/sdkwork/spring/ai/plus/service/model/`
+- Delete legacy service files under `../../legacy-java-plus-service/src/main/java/com/sdkwork/spring/ai/plus/service/model/`
 - Delete legacy DTO files that only support the old model catalog.
-- Create canonical service files under `../../spring-ai-plus-business-service/src/main/java/com/sdkwork/spring/ai/plus/service/ai/catalog/`
-- Update `../../spring-ai-plus-business-service/src/main/java/com/sdkwork/spring/ai/plus/service/ai/proxy/impl/ModelProxyServiceImpl.java`
+- Create canonical service files under `../../legacy-java-plus-service/src/main/java/com/sdkwork/spring/ai/plus/service/ai/catalog/`
+- Update `../../legacy-java-plus-service/src/main/java/com/sdkwork/spring/ai/plus/service/ai/proxy/impl/ModelProxyServiceImpl.java`
 
 - [ ] Write failing service tests for public listing, admin listing, publish/unpublish/deprecate/retire transitions, and effective price resolution.
 - [ ] Implement canonical catalog service and pricing service.
@@ -92,8 +92,8 @@
 - Delete the legacy backend model pricing controller.
 - Delete legacy VO/form files under backend model package.
 - Create canonical backend controller/DTO files.
-- Modify: `../../spring-ai-plus-app-api/src/main/java/com/sdkwork/ai/gateway/api/app/v3/models/ModelAppApiController.java`
-- Modify: `../../spring-ai-plus-app-api/src/main/java/com/sdkwork/ai/gateway/api/app/v3/models/converter/ModelInfoConverter.java`
+- Modify: `../../legacy-java-plus-app-api/src/main/java/com/sdkwork/ai/gateway/api/app/v3/models/ModelAppApiController.java`
+- Modify: `../../legacy-java-plus-app-api/src/main/java/com/sdkwork/ai/gateway/api/app/v3/models/converter/ModelInfoConverter.java`
 
 - [ ] Write failing controller/contract tests proving APIs project canonical rows and reject legacy DTOs.
 - [ ] Implement backend admin APIs using canonical services.

@@ -12,10 +12,13 @@
         "../../sdks/clawrouter-open-sdk/clawrouter-open-sdk-typescript/generated/server-openapi/src/index.ts"
       ],
       "@sdkwork/appbase-app-sdk": [
-        "../../../sdkwork-appbase/sdks/sdkwork-appbase-app-sdk/sdkwork-appbase-app-sdk-typescript/generated/server-openapi/src/index.ts"
+        "./src/typecheck-shims.d.ts"
       ],
       "@sdkwork/appbase-backend-sdk": [
-        "../../../sdkwork-appbase/sdks/sdkwork-appbase-backend-sdk/sdkwork-appbase-backend-sdk-typescript/generated/server-openapi/src/index.ts"
+        "./src/typecheck-shims.d.ts"
+      ],
+      "@sdkwork/drive-app-sdk": [
+        "./src/typecheck-shims.d.ts"
       ],
       "sdkwork-clawrouter-pc-admin-analytics": [
         "./packages/sdkwork-clawrouter-pc-admin-analytics/src/index.tsx"
@@ -25,6 +28,18 @@
       ],
       "sdkwork-clawrouter-pc-admin-catalog": [
         "./packages/sdkwork-clawrouter-pc-admin-catalog/src/index.tsx"
+      ],
+      "sdkwork-commerce-pc-admin-product": [
+        "./src/typecheck-shims.d.ts"
+      ],
+      "@sdkwork/commerce-service": [
+        "../../.sdkwork/dependencies/sdkwork-commerce/packages/common/commerce/sdkwork-commerce-service/src/index.ts"
+      ],
+      "@sdkwork/commerce-sdk-ports": [
+        "../../.sdkwork/dependencies/sdkwork-commerce/packages/common/commerce/sdkwork-commerce-sdk-ports/src/index.ts"
+      ],
+      "@sdkwork/commerce-contracts": [
+        "../../.sdkwork/dependencies/sdkwork-commerce/packages/common/commerce/sdkwork-commerce-contracts/src/index.ts"
       ],
       "sdkwork-clawrouter-pc-admin-courses": [
         "./packages/sdkwork-clawrouter-pc-admin-courses/src/index.tsx"
@@ -116,6 +131,9 @@
       "@sdkwork/file-platform-pc-react": [
         "./src/typecheck-shims.d.ts"
       ],
+      "@sdkwork/file-sdk-adapter": [
+        "./src/typecheck-shims.d.ts"
+      ],
       "@sdkwork/file-sdk-ports": [
         "./src/typecheck-shims.d.ts"
       ],
@@ -147,6 +165,15 @@
         "./src/typecheck-shims.d.ts"
       ],
       "@sdkwork/generation-pc-react/generation-history": [
+        "./src/typecheck-shims.d.ts"
+      ],
+      "@sdkwork/generations-pc-workspace": [
+        "./src/typecheck-shims.d.ts"
+      ],
+      "@sdkwork/generations-pc-workspace/generation-service": [
+        "./src/typecheck-shims.d.ts"
+      ],
+      "sdkwork-generations-app-sdk-generated-typescript": [
         "./src/typecheck-shims.d.ts"
       ],
       "@sdkwork/host-pc-react": [
@@ -221,7 +248,7 @@
     "dist/**",
     "node_modules/**",
     "packages/*/dist/**",
-    "../../../sdkwork-appbase/**",
-    "../../../sdkwork-ui/**"
+    "../../.sdkwork/dependencies/sdkwork-appbase/**",
+    "../../.sdkwork/dependencies/sdkwork-ui/**"
   ]
 }

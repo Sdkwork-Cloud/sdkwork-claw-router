@@ -6,11 +6,11 @@
 
 当前门禁优先覆盖以下高风险规则：
 
-- Java Entity first：用户、账户、VIP、优惠券、订单、支付、退款、发票等 Java 已有领域必须优先复用 `spring-ai-plus-business-entity` 的 `plus_*` 物理表。
-- L0 legacy contract：被 `legacy_java_contracts.finance_and_trade` 声明的表必须保持 `L0`、`legacy`、`spring-ai-plus-business-entity` 写入所有权，并且不得由本项目生成替代表结构。
+- Java Entity first：用户、账户、VIP、优惠券、订单、支付、退款、发票等 Java 已有领域必须优先复用 `legacy-java-plus-entity` 的 `plus_*` 物理表。
+- L0 legacy contract：被 `legacy_java_contracts.finance_and_trade` 声明的表必须保持 `L0`、`legacy`、`legacy-java-plus-entity` 写入所有权，并且不得由本项目生成替代表结构。
 - 禁止同义领域表：不得新增 `commerce_order`、`router_payment`、`sdkwork_account` 等会替代 Java 既有领域的同义表。
 - SkillsHub 对齐 Java AgentSkills：不得继续使用 `studio_skill_listing`、`studio_skill_version`、`studio_skill_media` 承载 SkillsHub，必须使用 `plus_agent_skill`、`plus_agent_skill_package`、`plus_user_agent_skill`、`plus_category`。
-- Java 实体存在性校验：注册表里声明的 Java 实体必须能在真实工程或测试工程的 `spring-ai-plus-business-entity/src/main/java` 下找到。
+- Java 实体存在性校验：注册表里声明的 Java 实体必须能在真实工程或测试工程的 `legacy-java-plus-entity/src/main/java` 下找到。
 - 统一领域名称：`ModelVendor`、`BillingMeter` 等需要持久化的领域名必须有注册表表定义，并具备 Java/Rust/TypeScript/OpenAPI 类型绑定。
 - 多模态计费：`BillingMode`、`BillingMeter` 必须覆盖 LLM、图片、音频、视频、音效、API 按次、API 按结果、API 按个数等计费维度。
 - 定价方案：禁止退化为 `ai_pricing_group`，统一使用 `ai_pricing_plan`、`ai_pricing_plan_binding`、`ai_pricing_rule`、`ai_pricing_tier` 组合，支持官方价、供应商成本价、客户销售价、倍率、表达式和阶梯。
@@ -87,8 +87,8 @@ docs/schema-registry/sdkwork-claw-router.tables.yaml
 
 默认支持两类 Java 实体路径：
 
-- 测试夹具：`<root>/spring-ai-plus-business-entity/src/main/java`
-- 当前仓库：`<spring-ai-plus-business>/spring-ai-plus-business-entity/src/main/java`
+- 测试夹具：`<root>/legacy-java-plus-entity/src/main/java`
+- 当前仓库：`<legacy-java-plus-workspace>/legacy-java-plus-entity/src/main/java`
 
 ## 后续扩展方向
 

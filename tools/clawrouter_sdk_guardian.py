@@ -216,14 +216,18 @@ class ClawRouterSdkGuardian:
         family_sdkgen_relative = sdkgen_path.relative_to(family).as_posix()
         source_relative = source_path.relative_to(self.root).as_posix()
 
-        if family_openapi is not None and family_openapi != source_spec:
+        standardizer = SdkRuntimeStandardizer(root=self.root)
+        expected_authority = standardizer._owner_only_openapi_payload(expected.family_directory, source_spec)
+
+        if family_openapi is not None and family_openapi != expected_authority:
             messages.append(
-                f"{expected.family_directory} {family_openapi_relative} must stay synchronized with {source_relative}"
+                f"{expected.family_directory} {family_openapi_relative} must stay synchronized with "
+                f"owner-only {source_relative}"
             )
 
-        expected_sdkgen = source_spec
+        expected_sdkgen = expected_authority
         if expected.family_directory == "clawrouter-open-sdk":
-            expected_sdkgen = SdkRuntimeStandardizer(root=self.root)._derive_sdkgen_openapi(source_spec)
+            expected_sdkgen = standardizer._derive_sdkgen_openapi(expected_authority)
 
         if family_sdkgen is not None and family_sdkgen != expected_sdkgen:
             source_label = source_relative

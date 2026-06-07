@@ -100,6 +100,17 @@ test("admin file platform is composed from storage and drive module blocks", () 
   assert.match(fileAdminIndexSource, /export \{ StorageAdmin \} from '\.\/storageAdmin';/);
   assert.match(fileAdminIndexSource, /export function DriveAdmin/);
   assert.match(fileAdminIndexSource, /DriveBrowser/);
+  assert.match(fileAdminIndexSource, /createFilePlatformServiceFromSdkClient/);
+  assert.match(fileAdminIndexSource, /getSdkworkDriveAppSdkClient/);
+  assert.match(fileAdminIndexSource, /driveSpacesList/);
+  assert.match(fileAdminIndexSource, /driveNodesList/);
+  assert.match(fileAdminIndexSource, /client\.drive\.spaces\.list/);
+  assert.match(fileAdminIndexSource, /client\.drive\.nodes\.list/);
+  assert.match(fileAdminIndexSource, /VITE_SDKWORK_TENANT_ID/);
+  assert.match(fileAdminIndexSource, /VITE_CLAWROUTER_TENANT_ID/);
+  assert.doesNotMatch(fileAdminIndexSource, /createEmptyDriveService/);
+  assert.doesNotMatch(fileAdminIndexSource, /async listDriveSpaces\(\) \{ return \{ items: \[\] \}; \}/);
+  assert.doesNotMatch(fileAdminIndexSource, /async listDriveNodes\(\) \{ return \{ items: \[\] \}; \}/);
   assert.match(storageAdminSource, /export function StorageAdmin/);
   assert.match(storageAdminSource, /data-admin-file-platform="storage-center"/);
   assert.match(fileAdminIndexSource, /data-admin-file-platform="drive-center"/);

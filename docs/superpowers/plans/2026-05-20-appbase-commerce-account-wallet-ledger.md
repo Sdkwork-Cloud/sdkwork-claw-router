@@ -1,4 +1,4 @@
-# Appbase Commerce Account Wallet Ledger Implementation Plan
+﻿# Appbase Commerce Account Wallet Ledger Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
@@ -23,48 +23,48 @@ This plan implements Phase B foundation slice only:
 
 Create or modify these appbase files:
 
-- Modify `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\native-rust\commerce\sdkwork-commerce-account-rust\src\domain\mod.rs`
+- Modify `<workspace-root>/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-account-rust/src/domain/mod.rs`
   - Add typed wallet/account read models and ledger append outcome.
-- Modify `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\native-rust\commerce\sdkwork-commerce-account-rust\src\queries\mod.rs`
+- Modify `<workspace-root>/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-account-rust/src/queries/mod.rs`
   - Add wallet/account query structs.
-- Modify `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\native-rust\commerce\sdkwork-commerce-account-rust\src\commands\mod.rs`
+- Modify `<workspace-root>/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-account-rust/src/commands/mod.rs`
   - Add generic wallet ledger command structs that do not mention claw-router.
-- Modify `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\native-rust\commerce\sdkwork-commerce-account-rust\src\ports\mod.rs`
+- Modify `<workspace-root>/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-account-rust/src/ports/mod.rs`
   - Split read and write traits for account summary, wallet reads, ledger append, and idempotency.
-- Modify `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\native-rust\commerce\sdkwork-commerce-account-rust\src\service\mod.rs`
+- Modify `<workspace-root>/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-account-rust/src/service/mod.rs`
   - Extend service contract with wallet and idempotent ledger operations.
-- Create `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\native-rust\commerce\sdkwork-commerce-storage-sqlx-rust\src\account.rs`
+- Create `<workspace-root>/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust/src/account.rs`
   - Shared account SQLx row mapping, validation, and decimal helpers.
-- Create `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\native-rust\commerce\sdkwork-commerce-storage-sqlx-rust\src\sqlite_account.rs`
+- Create `<workspace-root>/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust/src/sqlite_account.rs`
   - SQLite implementation for account/wallet/ledger/idempotency.
-- Create `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\native-rust\commerce\sdkwork-commerce-storage-sqlx-rust\src\postgres_account.rs`
+- Create `<workspace-root>/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust/src/postgres_account.rs`
   - Postgres implementation with row locking for mutations.
-- Modify `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\native-rust\commerce\sdkwork-commerce-storage-sqlx-rust\src\lib.rs`
+- Modify `<workspace-root>/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust/src/lib.rs`
   - Export store types and keep the existing SQL catalog functions intact.
-- Modify `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\native-rust\commerce\sdkwork-commerce-storage-sqlx-rust\Cargo.toml`
+- Modify `<workspace-root>/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust/Cargo.toml`
   - Add dependencies only if required: `sqlx`, `serde`, `serde_json`, `sdkwork_commerce_core`, `sdkwork_commerce_account`.
-- Create `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\native-rust\commerce\sdkwork-commerce-runtime-rust\src\account_runtime.rs`
+- Create `<workspace-root>/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-runtime-rust/src/account_runtime.rs`
   - Runtime handler for appbase account/wallet read operations and ledger mutation dispatch.
-- Modify `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\native-rust\commerce\sdkwork-commerce-runtime-rust\src\lib.rs`
+- Modify `<workspace-root>/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-runtime-rust/src/lib.rs`
   - Register wallet/account operation contracts and export the account runtime handler.
-- Create `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\native-rust\commerce\sdkwork-commerce-http-rust\src\account_router.rs`
+- Create `<workspace-root>/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-http-rust/src/account_router.rs`
   - Axum routers for account summary and wallet read operations.
-- Modify `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\native-rust\commerce\sdkwork-commerce-http-rust\src\lib.rs`
+- Modify `<workspace-root>/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-http-rust/src/lib.rs`
   - Export account router and update route metadata for wallet operations.
-- Modify `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\native-rust\commerce\sdkwork-commerce-http-rust\Cargo.toml`
+- Modify `<workspace-root>/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-http-rust/Cargo.toml`
   - Add `axum`, `serde`, `serde_json`, `sqlx`, and storage/account dependencies only if the router lives in this crate.
-- Modify `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\common\commerce\sdkwork-commerce-contracts\src\index.ts`
+- Modify `<workspace-root>/sdkwork-appbase/packages/common/commerce/sdkwork-commerce-contracts/src/index.ts`
   - Align TypeScript operation catalog only if Rust operation ids differ from existing appbase contract names.
-- Modify `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-claw-router\docs\superpowers\specs\2026-05-20-appbase-commerce-platform-design.md`
+- Modify `<workspace-root>/sdkwork-claw-router/docs/superpowers/specs/2026-05-20-appbase-commerce-platform-design.md`
   - Add a short implementation-status note after the slice lands.
 
 ## Task 1: Account/Wallet Domain Contracts
 
 **Files:**
-- Modify: `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\native-rust\commerce\sdkwork-commerce-account-rust\src\domain\mod.rs`
-- Modify: `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\native-rust\commerce\sdkwork-commerce-account-rust\src\queries\mod.rs`
-- Modify: `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\native-rust\commerce\sdkwork-commerce-account-rust\src\commands\mod.rs`
-- Modify: `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\native-rust\commerce\sdkwork-commerce-account-rust\src\ports\mod.rs`
+- Modify: `<workspace-root>/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-account-rust/src/domain/mod.rs`
+- Modify: `<workspace-root>/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-account-rust/src/queries/mod.rs`
+- Modify: `<workspace-root>/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-account-rust/src/commands/mod.rs`
+- Modify: `<workspace-root>/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-account-rust/src/ports/mod.rs`
 - Test: inline unit tests in `domain/mod.rs`, `queries/mod.rs`, and `commands/mod.rs`
 
 - [ ] **Step 1: Add failing domain tests**
@@ -161,10 +161,10 @@ git commit -m "feat(appbase-commerce): add account wallet domain contracts"
 ## Task 2: SQLx Account Storage Traits And SQLite Store
 
 **Files:**
-- Create: `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\native-rust\commerce\sdkwork-commerce-storage-sqlx-rust\src\account.rs`
-- Create: `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\native-rust\commerce\sdkwork-commerce-storage-sqlx-rust\src\sqlite_account.rs`
-- Modify: `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\native-rust\commerce\sdkwork-commerce-storage-sqlx-rust\src\lib.rs`
-- Modify: `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\native-rust\commerce\sdkwork-commerce-storage-sqlx-rust\Cargo.toml`
+- Create: `<workspace-root>/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust/src/account.rs`
+- Create: `<workspace-root>/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust/src/sqlite_account.rs`
+- Modify: `<workspace-root>/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust/src/lib.rs`
+- Modify: `<workspace-root>/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust/Cargo.toml`
 - Test: inline `#[cfg(test)]` module in `sqlite_account.rs`
 
 - [ ] **Step 1: Add failing SQLite tests**
@@ -255,8 +255,8 @@ git commit -m "feat(appbase-commerce): add sqlite account wallet ledger store"
 ## Task 3: Postgres Store With Row Locking
 
 **Files:**
-- Create: `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\native-rust\commerce\sdkwork-commerce-storage-sqlx-rust\src\postgres_account.rs`
-- Modify: `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\native-rust\commerce\sdkwork-commerce-storage-sqlx-rust\src\lib.rs`
+- Create: `<workspace-root>/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust/src/postgres_account.rs`
+- Modify: `<workspace-root>/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-storage-sqlx-rust/src/lib.rs`
 - Test: inline `#[cfg(test)]` tests that compile without requiring a live Postgres server, plus optional ignored integration tests gated by `SDKWORK_TEST_POSTGRES_URL`
 
 - [ ] **Step 1: Add failing compile-level Postgres tests**
@@ -310,8 +310,8 @@ git commit -m "feat(appbase-commerce): add postgres account wallet ledger store"
 ## Task 4: Runtime Operation Contracts
 
 **Files:**
-- Create: `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\native-rust\commerce\sdkwork-commerce-runtime-rust\src\account_runtime.rs`
-- Modify: `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\native-rust\commerce\sdkwork-commerce-runtime-rust\src\lib.rs`
+- Create: `<workspace-root>/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-runtime-rust/src/account_runtime.rs`
+- Modify: `<workspace-root>/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-runtime-rust/src/lib.rs`
 - Test: inline unit tests in runtime crate
 
 - [ ] **Step 1: Add failing runtime contract tests**
@@ -375,9 +375,9 @@ git commit -m "feat(appbase-commerce): register wallet ledger runtime operations
 ## Task 5: Mountable Appbase Axum Router
 
 **Files:**
-- Create: `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\native-rust\commerce\sdkwork-commerce-http-rust\src\account_router.rs`
-- Modify: `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\native-rust\commerce\sdkwork-commerce-http-rust\src\lib.rs`
-- Modify: `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\native-rust\commerce\sdkwork-commerce-http-rust\Cargo.toml`
+- Create: `<workspace-root>/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-http-rust/src/account_router.rs`
+- Modify: `<workspace-root>/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-http-rust/src/lib.rs`
+- Modify: `<workspace-root>/sdkwork-appbase/packages/native-rust/commerce/sdkwork-commerce-http-rust/Cargo.toml`
 - Test: router tests in `account_router.rs`
 
 - [ ] **Step 1: Add failing router tests**
@@ -449,9 +449,9 @@ git commit -m "feat(appbase-commerce): add account wallet app router"
 ## Task 6: Contract Alignment And Guardrails
 
 **Files:**
-- Modify: `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\common\commerce\sdkwork-commerce-contracts\src\index.ts`
-- Modify: `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\common\commerce\sdkwork-commerce-sdk-ports\src\index.ts`
-- Modify: `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\common\commerce\sdkwork-commerce-service\src\index.ts`
+- Modify: `<workspace-root>/sdkwork-appbase/packages/common/commerce/sdkwork-commerce-contracts/src/index.ts`
+- Modify: `<workspace-root>/sdkwork-appbase/packages/common/commerce/sdkwork-commerce-sdk-ports/src/index.ts`
+- Modify: `<workspace-root>/sdkwork-appbase/packages/common/commerce/sdkwork-commerce-service/src/index.ts`
 - Test: existing package tests under appbase common commerce
 
 - [ ] **Step 1: Add failing TypeScript contract tests if operation drift exists**
@@ -459,7 +459,7 @@ git commit -m "feat(appbase-commerce): add account wallet app router"
 Check whether Rust operation ids and TS operation ids match. If drift exists, add tests in:
 
 ```text
-D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\common\commerce\sdkwork-commerce-contracts\tests\commerce-contracts.standard.test.ts
+<workspace-root>/sdkwork-appbase/packages/common/commerce/sdkwork-commerce-contracts/tests/commerce-contracts.standard.test.ts
 ```
 
 Expected operation ids must include:
@@ -474,7 +474,7 @@ Expected operation ids must include:
 
 - [ ] **Step 2: Run contract tests and verify failure if drift exists**
 
-Run from `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase` if package scripts exist:
+Run from `<workspace-root>/sdkwork-appbase` if package scripts exist:
 
 ```powershell
 pnpm --filter @sdkwork/commerce-contracts test
@@ -516,8 +516,8 @@ git commit -m "feat(appbase-commerce): align wallet account contracts"
 ## Task 7: Claw-Router Integration Shim
 
 **Files:**
-- Modify: `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-claw-router\services\sdkwork-claw-app-api\src\lib.rs`
-- Modify only if needed: `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-claw-router\services\sdkwork-claw-product\src\api\app_commerce.rs`
+- Modify: `<workspace-root>/sdkwork-claw-router/services/sdkwork-claw-app-api/src/lib.rs`
+- Modify only if needed: `<workspace-root>/sdkwork-claw-router/services/sdkwork-claw-product/src/api/app_commerce.rs`
 - Test: app-api/router tests or focused cargo checks
 
 - [ ] **Step 1: Add failing integration test**
@@ -568,8 +568,8 @@ git commit -m "feat(claw-router): mount appbase wallet account router"
 ## Task 8: Documentation And Final Verification
 
 **Files:**
-- Modify: `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-claw-router\docs\superpowers\specs\2026-05-20-appbase-commerce-platform-design.md`
-- Optional create: `D:\javasource\spring-ai-plus\spring-ai-plus-business\apps\sdkwork-appbase\packages\native-rust\commerce\README.md` section or appbase common commerce README update
+- Modify: `<workspace-root>/sdkwork-claw-router/docs/superpowers/specs/2026-05-20-appbase-commerce-platform-design.md`
+- Optional create: `<workspace-root>/sdkwork-appbase/packages/native-rust/commerce/README.md` section or appbase common commerce README update
 
 - [ ] **Step 1: Update implementation status**
 

@@ -155,10 +155,7 @@ function assertGeneratedOutputHasNoDependencySurface(contract, localDocument, ap
     if (!languageRoot.isDirectory() || !languageRoot.name.startsWith(`${contract.sdkFamily}-`)) {
       continue;
     }
-    const generatedRoot =
-      languageRoot.name.endsWith('-typescript')
-        ? path.join(familyRoot, languageRoot.name, 'src')
-        : path.join(familyRoot, languageRoot.name, 'generated', 'server-openapi');
+    const generatedRoot = path.join(familyRoot, languageRoot.name, 'generated', 'server-openapi');
     for (const filePath of collectTextFiles(generatedRoot)) {
       const source = readFileSync(filePath, 'utf8');
       for (const { route, pattern } of forbiddenRoutes) {

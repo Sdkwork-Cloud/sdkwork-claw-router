@@ -330,22 +330,6 @@ describe("SDKWork file platform OpenAPI contracts", () => {
   });
 
   it("binds reusable resource type fields to canonical enum vocabularies", () => {
-    expect(SDKWORK_FILE_APP_OPENAPI.components.schemas.UploadSession.properties?.uploadMode).toEqual(
-      enumSchema(SDKWORK_FILE_UPLOAD_MODES),
-    );
-    expect(SDKWORK_FILE_APP_OPENAPI.components.schemas.UploadSessionDetailResponse.properties?.uploadMode).toEqual(
-      enumSchema(SDKWORK_FILE_UPLOAD_MODES),
-    );
-    expect(SDKWORK_FILE_APP_OPENAPI.components.schemas.UploadSession.properties?.status).toEqual(
-      enumSchema(SDKWORK_FILE_UPLOAD_STATUSES),
-    );
-    expect(SDKWORK_FILE_APP_OPENAPI.components.schemas.UploadSessionDetailResponse.properties?.status).toEqual(
-      enumSchema(SDKWORK_FILE_UPLOAD_STATUSES),
-    );
-    expect(SDKWORK_FILE_APP_OPENAPI.components.schemas.CompleteUploadResponse.properties?.status).toEqual(
-      enumSchema(SDKWORK_FILE_UPLOAD_STATUSES),
-    );
-
     for (const document of [SDKWORK_FILE_APP_OPENAPI, SDKWORK_FILE_BACKEND_OPENAPI]) {
       expect(document.components.schemas.DriveNode.properties?.nodeType).toEqual(enumSchema(SDKWORK_DRIVE_NODE_TYPES));
       expect(document.components.schemas.DriveSpace.properties?.type).toEqual(enumSchema(SDKWORK_DRIVE_SPACE_TYPES));
@@ -403,11 +387,11 @@ describe("SDKWork file platform OpenAPI contracts", () => {
         components: {
           schemas: {
             ...bundle.app.components.schemas,
-            UploadSession: {
-              ...bundle.app.components.schemas.UploadSession,
+            DriveNode: {
+              ...bundle.app.components.schemas.DriveNode,
               properties: {
-                ...bundle.app.components.schemas.UploadSession.properties,
-                uploadMode: {
+                ...bundle.app.components.schemas.DriveNode.properties,
+                nodeType: {
                   type: "string",
                 },
               },
@@ -418,32 +402,7 @@ describe("SDKWork file platform OpenAPI contracts", () => {
     };
 
     expect(validateFileApiContractStandard(drifted)).toContain(
-      "schema_enum:app:UploadSession.uploadMode",
-    );
-
-    const statusDrifted = {
-      ...bundle,
-      app: {
-        ...bundle.app,
-        components: {
-          schemas: {
-            ...bundle.app.components.schemas,
-            UploadSession: {
-              ...bundle.app.components.schemas.UploadSession,
-              properties: {
-                ...bundle.app.components.schemas.UploadSession.properties,
-                status: {
-                  type: "string",
-                },
-              },
-            },
-          },
-        },
-      },
-    };
-
-    expect(validateFileApiContractStandard(statusDrifted)).toContain(
-      "schema_enum:app:UploadSession.status",
+      "schema_enum:app:DriveNode.nodeType",
     );
   });
 
@@ -621,71 +580,14 @@ describe("SDKWork file platform OpenAPI contracts", () => {
     expect(validateFileApiContractStandard()).toEqual([]);
   });
 
-  it("defines request bodies for app upload command operations", () => {
-    const commands = [
-      {
-        path: SDKWORK_FILE_API_ROUTES.app.upload.createSession,
-        schemaName: "CreateUploadSessionRequest",
-      },
-      {
-        path: SDKWORK_FILE_API_ROUTES.app.upload.completeSession,
-        schemaName: "CompleteUploadRequest",
-      },
-      {
-        path: SDKWORK_FILE_API_ROUTES.app.upload.abortSession,
-        schemaName: "AbortUploadRequest",
-      },
-      {
-        path: SDKWORK_FILE_API_ROUTES.app.upload.presignPart,
-        schemaName: "PresignUploadPartRequest",
-      },
-    ] as const;
-
-    for (const command of commands) {
-      const operation = SDKWORK_FILE_APP_OPENAPI.paths[command.path].post;
-      expect(operation?.requestBody).toEqual(jsonRequestBody(command.schemaName));
-    }
-
-    expect(validateFileApiContractStandard()).toEqual([]);
-  });
-
-  it("defines typed JSON responses for app upload command operations", () => {
-    const commands = [
-      {
-        path: SDKWORK_FILE_API_ROUTES.app.upload.createSession,
-        schemaName: "UploadSession",
-      },
-      {
-        path: SDKWORK_FILE_API_ROUTES.app.upload.completeSession,
-        schemaName: "CompleteUploadResponse",
-      },
-      {
-        path: SDKWORK_FILE_API_ROUTES.app.upload.abortSession,
-        schemaName: "AbortUploadResponse",
-      },
-      {
-        path: SDKWORK_FILE_API_ROUTES.app.upload.presignPart,
-        schemaName: "PresignUploadPartResponse",
-      },
-    ] as const;
-
-    for (const command of commands) {
-      const operation = SDKWORK_FILE_APP_OPENAPI.paths[command.path].post;
-      expect(operation?.responses["200"]).toEqual(jsonResponse(command.schemaName));
-    }
-
-    expect(SDKWORK_FILE_APP_OPENAPI.components.schemas.CompleteUploadResponse.required).toEqual([
-      "fileRef",
-      "requestId",
-      "sessionId",
-      "status",
-    ]);
-    expect(SDKWORK_FILE_APP_OPENAPI.components.schemas.PresignUploadPartResponse.required).toEqual([
-      "partNumber",
-      "presigned",
-      "requestId",
-      "sessionId",
-    ]);
+  it("does not expose app-local upload session or presign operations", () => {
+    expect(SDKWORK_FILE_API_ROUTES.app).not.toHaveProperty("upload");
+    expect(Object.keys(SDKWORK_FILE_APP_OPENAPI.paths).some((path) => path.includes("/upload/sessions"))).toBe(false);
+    expect(Object.keys(SDKWORK_FILE_APP_OPENAPI.paths).some((path) => path.includes("presign"))).toBe(false);
+    expect(collectOperationIds(SDKWORK_FILE_APP_OPENAPI).some((operationId) => operationId.startsWith("upload."))).toBe(false);
+    expect(SDKWORK_FILE_APP_OPENAPI.components.schemas).not.toHaveProperty("UploadSession");
+    expect(SDKWORK_FILE_APP_OPENAPI.components.schemas).not.toHaveProperty("PresignUploadPartResponse");
+    expect(SDKWORK_FILE_APP_OPENAPI.components.schemas).not.toHaveProperty("PresignUploadSessionResponse");
     expect(validateFileApiContractStandard()).toEqual([]);
   });
 
@@ -774,13 +676,8 @@ describe("SDKWork file platform OpenAPI contracts", () => {
     expect(validateFileApiContractStandard()).toEqual([]);
   });
 
-  it("defines request bodies for remaining app-side file, upload, drive, and binding commands", () => {
+  it("defines request bodies for remaining app-side file, drive, and binding commands", () => {
     const commands = [
-      {
-        method: "post",
-        path: SDKWORK_FILE_API_ROUTES.app.upload.presignSession,
-        schemaName: "PresignUploadSessionRequest",
-      },
       {
         method: "patch",
         path: SDKWORK_FILE_API_ROUTES.app.files.update,
@@ -848,16 +745,6 @@ describe("SDKWork file platform OpenAPI contracts", () => {
 
   it("defines typed JSON responses for all app-side foundation operations", () => {
     const operations = [
-      {
-        method: "post",
-        path: SDKWORK_FILE_API_ROUTES.app.upload.presignSession,
-        schemaName: "PresignUploadSessionResponse",
-      },
-      {
-        method: "get",
-        path: SDKWORK_FILE_API_ROUTES.app.upload.getSession,
-        schemaName: "UploadSessionDetailResponse",
-      },
       {
         method: "patch",
         path: SDKWORK_FILE_API_ROUTES.app.files.update,
@@ -1305,7 +1192,7 @@ describe("SDKWork file platform OpenAPI contracts", () => {
       expect(serialized).not.toContain("publicurl");
     }
 
-    expect(schemas.PresignedUploadGrant.properties.url.description).toContain("short-lived");
+    expect(schemas).not.toHaveProperty("PresignedUploadGrant");
     expect(validateFileApiContractStandard()).toEqual([]);
   });
 });

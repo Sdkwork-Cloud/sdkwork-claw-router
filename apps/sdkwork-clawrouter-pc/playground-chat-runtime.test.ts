@@ -796,7 +796,7 @@ test("user chat messages use a muted modern send bubble without an avatar", () =
       id: "user-modern-bubble",
       conversationId: "conversation-1",
       role: "user",
-      content: "璇风敤 TypeScript 鍐欎竴涓В鏋愬櫒銆?,
+      content: "Please write a TypeScript parser.",
       status: "completed",
       createdAt: "2026-05-26T00:00:00.000Z",
     },
@@ -877,12 +877,12 @@ test("chat markdown renders language-less fenced code as a real code block", () 
 test("chat markdown repairs inline fenced code emitted by compact provider streams", () => {
   const html = renderToStaticMarkup(React.createElement(ChatMarkdownMessage, {
     content: [
-      "涓嬮潰鏄ず渚嬶細```java",
+      "Intro```java",
       "public class Demo {}",
-      "```杈撳嚭绀轰緥锛歚``text",
+      "```middle```text",
       "ok",
-      "```澶嶆潅搴︼細```text",
-      "O(n虏)",
+      "```tail```text",
+      "O(n)",
       "```",
     ].join("\n"),
     tone: "assistant",
@@ -891,9 +891,9 @@ test("chat markdown repairs inline fenced code emitted by compact provider strea
   assert.equal((html.match(/<figure/g) || []).length, 3);
   assert.match(html, /Copy code/);
   assert.match(html, /public[\s\S]*class[\s\S]*Demo/);
-  assert.match(html, /O[\s\S]*n虏/);
-  assert.doesNotMatch(html, /绀轰緥锛歚``java/);
-  assert.doesNotMatch(html, /```杈撳嚭绀轰緥/);
+  assert.match(html, /O[\s\S]*n/);
+  assert.doesNotMatch(html, /Intro```java/);
+  assert.doesNotMatch(html, /middle```text/);
 });
 
 test("chat markdown repairs compact fenced code with code on the opening line", () => {
@@ -944,16 +944,15 @@ test("chat markdown repairs compact unlabeled fenced code with code on the openi
 
 test("chat markdown repairs compact ordered lists before rendering", () => {
   const html = renderToStaticMarkup(React.createElement(ChatMarkdownMessage, {
-    content: "璇风‘璁わ細1.**鎻愰啋浣犱粈涔堜簨锛?*  \n2.**浠€涔堟椂鍊欐彁閱掞紵**姣斿浠婂ぉ涓嬪崍3鐐?,
+    content: "Please confirm:1.**What should I remind you about?**  \n2.**When should I remind you?** For example, today at 3 PM.",
     tone: "assistant",
   }));
 
   assert.match(html, /<ol/);
-  assert.match(html, /<strong>鎻愰啋浣犱粈涔堜簨锛?\/strong>/);
-  assert.match(html, /<strong>浠€涔堟椂鍊欐彁閱掞紵<\/strong>/);
+  assert.match(html, /<strong>What should I remind you about\?<\/strong>/);
+  assert.match(html, /<strong>When should I remind you\?<\/strong>/);
   assert.doesNotMatch(html, /1\.&lt;strong/);
 });
-
 test("chat code block exposes visible copy action and syntax token styling", () => {
   const html = renderToStaticMarkup(React.createElement(ChatCodeBlock, {
     code: "export const value = 42;",
@@ -1473,7 +1472,7 @@ test("agent playground uses standard Agent and Runtime SDK resources with SSE in
   assert.doesNotMatch(source, /ai\.generation\.agent\.runs\.create/);
   assert.doesNotMatch(source, /client\.agents\./);
   assert.doesNotMatch(source, /client\.runtime\./);
-  assert.match(facadeSource, /from '@sdkwork\/generation-pc-react\/generation-service'/);
+  assert.match(facadeSource, /from '@sdkwork\/generations-pc-workspace\/generation-service'/);
   assert.match(facadeSource, /createSdkworkGenerationService/);
   assert.match(facadeSource, /includeSampleRuns:\s*false/);
   assert.doesNotMatch(facadeSource, /await import\('@sdkwork\/generation-pc-react'\)/);
@@ -1500,9 +1499,21 @@ test("agent playground uses standard Agent and Runtime SDK resources with SSE in
 test("playground generation orchestration is reusable across agent and modality panels", () => {
   const serviceSource = readPortalFile("./packages/sdkwork-clawrouter-pc-playground/src/playgroundService.ts");
   const generationServiceSource = readPortalFile("./packages/sdkwork-clawrouter-pc-playground/src/playgroundGenerationService.ts");
+  const generationsServiceSource = readPortalFile("./packages/sdkwork-clawrouter-pc-playground/src/playgroundGenerationsService.ts");
+  const commonsSdkSource = readPortalFile("./packages/sdkwork-clawrouter-pc-commons/src/sdk-clients.ts");
   const pageSource = readPortalFile("./packages/sdkwork-clawrouter-pc-playground/src/pages/Playground.tsx");
 
   assert.match(serviceSource, /runPlaygroundGeneration/);
+  assert.match(serviceSource, /runPlaygroundAssetGeneration/);
+  assert.match(serviceSource, /selectedModality === 'agent'/);
+  assert.match(serviceSource, /createSdkworkGenerationService/);
+  assert.match(serviceSource, /getSdkworkGenerationsAppSdkClient/);
+  assert.match(serviceSource, /onDelta:\s*input\.onDelta/);
+  assert.match(serviceSource, /onArtifact:\s*input\.onArtifact/);
+  assert.match(serviceSource, /@sdkwork\/generations-pc-workspace/);
+  assert.match(commonsSdkSource, /sdkwork-generations-app-sdk-generated-typescript/);
+  assert.match(commonsSdkSource, /getSdkworkGenerationsAppSdkClient/);
+  assert.match(commonsSdkSource, /VITE_SDKWORK_GENERATIONS_APP_API_BASE_URL/);
   assert.match(generationServiceSource, /export async function runPlaygroundGeneration/);
   assert.match(generationServiceSource, /streamRuntimeEvents/);
   assert.match(generationServiceSource, /readRuntimeTextDelta/);
@@ -1513,7 +1524,17 @@ test("playground generation orchestration is reusable across agent and modality 
   assert.doesNotMatch(generationServiceSource, /\bfetch\s*\(/);
   assert.doesNotMatch(generationServiceSource, /new EventSource/);
   assert.doesNotMatch(generationServiceSource, /axios/);
-  assert.match(pageSource, /PlaygroundService\.runAgentGeneration/);
+  assert.match(generationsServiceSource, /createGenerationCommand/);
+  assert.match(generationsServiceSource, /listGenerationResults/);
+  assert.match(generationsServiceSource, /text_to_image/);
+  assert.match(generationsServiceSource, /image_to_video/);
+  assert.match(generationsServiceSource, /text_to_music/);
+  assert.match(generationsServiceSource, /speech/);
+  assert.match(generationsServiceSource, /sound_effect/);
+  assert.doesNotMatch(generationsServiceSource, /streamRuntimeEvents/);
+  assert.doesNotMatch(generationsServiceSource, /\bfetch\s*\(/);
+  assert.doesNotMatch(generationsServiceSource, /axios/);
+  assert.match(pageSource, /PlaygroundService\.runGeneration/);
   assert.doesNotMatch(pageSource, /runPlaygroundGeneration/);
   assert.doesNotMatch(pageSource, /playgroundGenerationService/);
   assert.match(pageSource, /onArtifact:\s*\(artifact\)/);
@@ -1819,7 +1840,7 @@ test("playground generation DTOs alias appbase history and artifact primitives",
 
 test("asset generation panel delegates planning and credit estimation to appbase", () => {
   const panelSource = readPortalFile("./packages/sdkwork-clawrouter-pc-playground/src/components/AssetGenerationPanel.tsx");
-  const appbaseSource = readWorkspaceFile("../sdkwork-appbase/packages/pc-react/content/sdkwork-generation-pc-react/src/generation-asset-config.ts");
+  const appbaseSource = readWorkspaceFile("../sdkwork-generations/apps/sdkwork-generations-pc/packages/sdkwork-generations-pc-workspace/src/generation-asset-config.ts");
 
   assert.match(panelSource, /estimateSdkworkGenerationCredits/);
   assert.match(panelSource, /findFirstSdkworkGenerationModelForModality/);
@@ -1836,7 +1857,7 @@ test("asset generation panel delegates planning and credit estimation to appbase
 
 test("asset generation panel exposes speech synthesis controls through appbase config", () => {
   const panelSource = readPortalFile("./packages/sdkwork-clawrouter-pc-playground/src/components/AssetGenerationPanel.tsx");
-  const appbaseSource = readWorkspaceFile("../sdkwork-appbase/packages/pc-react/content/sdkwork-generation-pc-react/src/generation-asset-config.ts");
+  const appbaseSource = readWorkspaceFile("../sdkwork-generations/apps/sdkwork-generations-pc/packages/sdkwork-generations-pc-workspace/src/generation-asset-config.ts");
 
   assert.match(panelSource, /updateSdkworkGenerationSpeechModeConfig/);
   assert.match(panelSource, /modality === 'audio' && config\.speechMode/);
@@ -1855,7 +1876,7 @@ test("asset generation panel exposes speech synthesis controls through appbase c
 
 test("asset generation panel exposes sound effect controls through appbase config", () => {
   const panelSource = readPortalFile("./packages/sdkwork-clawrouter-pc-playground/src/components/AssetGenerationPanel.tsx");
-  const appbaseSource = readWorkspaceFile("../sdkwork-appbase/packages/pc-react/content/sdkwork-generation-pc-react/src/generation-asset-config.ts");
+  const appbaseSource = readWorkspaceFile("../sdkwork-generations/apps/sdkwork-generations-pc/packages/sdkwork-generations-pc-workspace/src/generation-asset-config.ts");
 
   assert.match(panelSource, /updateSdkworkGenerationSfxModeConfig/);
   assert.match(panelSource, /modality === 'sfx' && config\.sfxMode/);
@@ -1934,7 +1955,7 @@ test("playground history and preview mapping reuse appbase generation history he
   const pageSource = readPortalFile("./packages/sdkwork-clawrouter-pc-playground/src/pages/Playground.tsx");
   const historyMapperSource = readPortalFile("./packages/sdkwork-clawrouter-pc-playground/src/historyMapper.ts");
   const generationServiceSource = readPortalFile("./packages/sdkwork-clawrouter-pc-playground/src/playgroundGenerationService.ts");
-  const appbaseSource = readWorkspaceFile("../sdkwork-appbase/packages/pc-react/content/sdkwork-generation-pc-react/src/generation-history.ts");
+  const appbaseSource = readWorkspaceFile("../sdkwork-generations/apps/sdkwork-generations-pc/packages/sdkwork-generations-pc-workspace/src/generation-history.ts");
 
   assert.match(pageSource, /appendSdkworkGenerationArtifactToHistoryItem/);
   assert.match(pageSource, /createSdkworkGenerationPendingHistoryItem/);
@@ -2023,7 +2044,7 @@ test("agent generation keeps text-only output on agent history instead of preten
   const typeSource = readPortalFile("./packages/sdkwork-clawrouter-pc-playground/src/playgroundTypes.ts");
   const itemSource = readPortalFile("./packages/sdkwork-clawrouter-pc-playground/src/components/ChatHistoryItem.tsx");
   const generationServiceSource = readPortalFile("./packages/sdkwork-clawrouter-pc-playground/src/playgroundGenerationService.ts");
-  const appbaseHistorySource = readWorkspaceFile("../sdkwork-appbase/packages/pc-react/content/sdkwork-generation-pc-react/src/generation-history.ts");
+  const appbaseHistorySource = readWorkspaceFile("../sdkwork-generations/apps/sdkwork-generations-pc/packages/sdkwork-generations-pc-workspace/src/generation-history.ts");
 
   assert.match(typeSource, /export type PlaygroundHistoryItem = SdkworkGenerationHistoryItem/);
   assert.match(appbaseHistorySource, /export type SdkworkGenerationHistoryType =/);

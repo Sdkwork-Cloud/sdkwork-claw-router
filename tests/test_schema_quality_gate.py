@@ -1197,7 +1197,7 @@ class SchemaQualityGateTest(unittest.TestCase):
 
     def test_quality_gate_reports_flyway_schema_contract_drift(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
-            root = Path(tmp) / "spring-ai-plus-business" / "apps" / "sdkwork-claw-router"
+            root = Path(tmp) / "legacy-java-plus-workspace" / "apps" / "sdkwork-claw-router"
             registry = self.write_registry(root, self.valid_registry())
             self.write_generated_artifacts(root, registry)
             self.write_app(root)

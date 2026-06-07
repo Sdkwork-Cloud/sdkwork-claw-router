@@ -30,7 +30,7 @@ clawrouter
 如果安装的是 Windows MSI，默认安装目录为：
 
 ```text
-C:\Program Files\sdkwork\router
+<install-root>
 ```
 
 ## 初始化顺序
@@ -83,7 +83,7 @@ export SDKWORK_CLAW_CONFIG_FILE="/etc/sdkwork/router/clawrouter.toml"
 PowerShell：
 
 ```powershell
-$env:SDKWORK_CLAW_CONFIG_FILE="C:\ProgramData\sdkwork\router\clawrouter.toml"
+$env:SDKWORK_CLAW_CONFIG_FILE = Join-Path $env:ProgramData "sdkwork/router/clawrouter.toml"
 ```
 
 原生安装包默认位置：
@@ -91,7 +91,7 @@ $env:SDKWORK_CLAW_CONFIG_FILE="C:\ProgramData\sdkwork\router\clawrouter.toml"
 | 平台 | 二进制目录 | 说明 |
 | --- | --- | --- |
 | Linux `.deb` | `/usr/bin` 公共命令，`/usr/lib/sdkwork/router/bin` 私有二进制 | `service` 包还会安装 `/lib/systemd/system/clawrouter.service`、`/etc/sdkwork/router`、`/var/lib/sdkwork/router` 和 `/var/log/sdkwork/router`。 |
-| Windows `.msi` | `C:\Program Files\sdkwork\router\bin` | MSI 安装运行文件；如需 Windows Service 托管，按部署系统单独配置。 |
+| Windows `.msi` | `<install-root>/bin` | MSI 安装运行文件；如需 Windows Service 托管，按部署系统单独配置。 |
 | macOS `.pkg` | desktop 为 `/opt/sdkwork/router/bin`，service 为 `/Library/Application Support/sdkwork/router/bin` | `service` 包还会安装 `/Library/LaunchDaemons/com.sdkwork.clawrouter.plist`。 |
 
 每个包都包含带 `installConfiguration` 的 `install-manifest.json`。原生安装包还包含 `nativeInstall`，用于描述最终安装路径、服务元数据、权限和运维命令。
@@ -291,7 +291,7 @@ desktop SQLite 示例：
 ```toml
 [database]
 engine = "sqlite"
-url = "sqlite:///home/sdkwork/.local/share/clawrouter/clawrouter.sqlite"
+file = "~/.sdkwork/router/data/router.sqlite"
 max_connections = 1
 
 [runtime]
@@ -321,7 +321,8 @@ macOS 原生 `.pkg` desktop 安装包使用：
 Windows MSI 默认安装目录中使用：
 
 ```powershell
-Set-Location "C:\Program Files\sdkwork\router"
+$installRoot = Join-Path $env:USERPROFILE "sdkwork\router"
+Set-Location $installRoot
 .\bin\clawrouterctl.exe status
 .\bin\clawrouterctl.exe ensure
 .\bin\clawrouterctl.exe refresh-catalog --force

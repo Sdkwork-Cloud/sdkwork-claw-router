@@ -42,7 +42,8 @@ async function main(argv = process.argv.slice(2)) {
 
 function compileFileSdkGenerationPackage() {
   const compileDir = mkdtempSync(path.join(tmpdir(), 'sdkwork-file-sdk-generation-'));
-  const tscPath = path.join(workspaceRoot, 'sdkwork-appbase', 'node_modules', 'typescript', 'bin', 'tsc');
+  const appNodeModules = path.join(workspaceRoot, 'apps', 'sdkwork-clawrouter-pc', 'node_modules');
+  const tscPath = path.join(appNodeModules, 'typescript', 'bin', 'tsc');
   const entryPath = path.join(
     workspaceRoot,
     'packages',
@@ -52,7 +53,7 @@ function compileFileSdkGenerationPackage() {
     'src',
     'index.ts',
   );
-  const typeRoots = path.join(workspaceRoot, 'sdkwork-appbase', 'node_modules', '@types');
+  const typeRoots = path.join(appNodeModules, '@types');
 
   const result = spawnSync(
     process.execPath,
@@ -80,7 +81,7 @@ function compileFileSdkGenerationPackage() {
       '--allowImportingTsExtensions',
       'false',
       '--ignoreDeprecations',
-      '6.0',
+      '5.0',
     ],
     {
       cwd: workspaceRoot,

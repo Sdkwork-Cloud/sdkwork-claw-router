@@ -28,7 +28,13 @@ else:
     _YAML_IMPORT_ERROR = None
 
 
-APPBASE_CATALOG_PATH = Path("sdkwork-appbase") / "specs" / "appbase-capabilities.yaml"
+APPBASE_CATALOG_PATH = (
+    Path(".sdkwork")
+    / "dependencies"
+    / "sdkwork-appbase"
+    / "specs"
+    / "appbase-capabilities.yaml"
+)
 DEFAULT_INTEGRATION_PATH = Path("specs") / "appbase-integration.yaml"
 PORTAL_PACKAGE_PATH = Path("apps") / "sdkwork-clawrouter-pc" / "package.json"
 FRONTEND_FIELD_CONTRACTS_PATH = DEFAULT_CONTRACT_SNAPSHOT
@@ -130,7 +136,7 @@ COMMERCE_RETIRED_FRONTEND_ARTIFACT_RE = re.compile(
     r"@sdkwork/commerce-(?:contracts|sdk-ports|service)"
     r"|commerce-runtime\.ts"
     r"|commerce-console-service\.ts"
-    r"|sdkwork-claw-router-(?:console-commerce|admin-commerce|admin-vip)"
+    r"|sdkwork-claw-?router-(?:pc-)?(?:console-commerce|admin-commerce|admin-vip)"
 )
 COMMERCE_TABLE_DECLARATION_RE = re.compile(r"(?m)^\s*-\s*table:\s*([A-Za-z0-9_]+)\s*$")
 COMMERCE_RETIRED_PRODUCT_CENTER_TABLES: set[str] = {

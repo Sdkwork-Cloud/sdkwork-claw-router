@@ -6,8 +6,65 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+WORKSPACE_ROOT = ROOT.parent
 PORTAL_ROOT = ROOT / "apps" / "sdkwork-clawrouter-pc"
 PORTAL_PACKAGES = ROOT / "apps" / "sdkwork-clawrouter-pc" / "packages"
+DEPENDENCIES_ROOT = ROOT / ".sdkwork" / "dependencies"
+APPBASE_ROOT = DEPENDENCIES_ROOT / "sdkwork-appbase"
+COMMERCE_ROOT = DEPENDENCIES_ROOT / "sdkwork-commerce"
+GENERATIONS_ROOT = DEPENDENCIES_ROOT / "sdkwork-generations"
+IMAGE_ROOT = DEPENDENCIES_ROOT / "sdkwork-image"
+MUSIC_ROOT = DEPENDENCIES_ROOT / "sdkwork-music"
+VOICE_ROOT = DEPENDENCIES_ROOT / "sdkwork-voice"
+COMMERCE_PC_PACKAGES = COMMERCE_ROOT / "apps" / "sdkwork-commerce-pc" / "packages"
+COMMERCE_PC_COMMERCE = COMMERCE_PC_PACKAGES / "commerce"
+COMMERCE_ADMIN_PRODUCT = COMMERCE_PC_PACKAGES / "sdkwork-commerce-pc-admin-product" / "src"
+APPBASE_PC_CONTENT = APPBASE_ROOT / "packages" / "pc-react" / "content"
+IMAGE_PC_CONTENT = IMAGE_ROOT / "packages" / "pc-react" / "content"
+MUSIC_PC_CONTENT = MUSIC_ROOT / "packages" / "pc-react" / "content"
+VOICE_PC_CONTENT = VOICE_ROOT / "packages" / "pc-react" / "content"
+GENERATIONS_PC_WORKSPACE = (
+    GENERATIONS_ROOT
+    / "apps"
+    / "sdkwork-generations-pc"
+    / "packages"
+    / "sdkwork-generations-pc-workspace"
+)
+CLAW_APP_SDK = ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript"
+CLAW_BACKEND_SDK = ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript"
+CLAW_APP_SDK_TYPES_SRC = CLAW_APP_SDK / "src" / "types"
+CLAW_BACKEND_SDK_TYPES_SRC = CLAW_BACKEND_SDK / "src" / "types"
+CLAW_APP_SDK_GENERATED = CLAW_APP_SDK / "generated" / "server-openapi"
+CLAW_BACKEND_SDK_GENERATED = CLAW_BACKEND_SDK / "generated" / "server-openapi"
+CLAW_APP_SDK_TYPES_DIST = CLAW_APP_SDK_GENERATED / "dist" / "types"
+CLAW_BACKEND_SDK_TYPES_DIST = CLAW_BACKEND_SDK_GENERATED / "dist" / "types"
+CLAW_APP_SDK_API_SRC = CLAW_APP_SDK / "src" / "api"
+CLAW_BACKEND_SDK_API_SRC = CLAW_BACKEND_SDK / "src" / "api"
+
+
+def rel(source: Path) -> str:
+    try:
+        return source.relative_to(ROOT).as_posix()
+    except ValueError:
+        return source.relative_to(WORKSPACE_ROOT).as_posix()
+
+
+def service_rel(source: Path) -> str:
+    return rel(source)
+
+
+def package_rel(source: Path) -> str:
+    if source.name == "package.json":
+        return rel(source)
+    for parent in [source.parent, *source.parents]:
+        package_json = parent / "package.json"
+        if package_json.exists():
+            return rel(package_json)
+    return rel(source)
+
+
+def shim_rel(_: Path) -> str:
+    return rel(PORTAL_ROOT / "src" / "typecheck-shims.d.ts")
 
 
 class FrontendSourceHygieneStandardTest(unittest.TestCase):
@@ -16,7 +73,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         forbidden = re.compile(r"\b(?:mock|fake)[A-Za-z0-9_]*\b", re.IGNORECASE)
 
         for source in self._portal_sources():
-            relative = source.relative_to(ROOT).as_posix()
+            relative = rel(source)
             content = source.read_text(encoding="utf-8", errors="ignore")
             for line_number, line in enumerate(content.splitlines(), start=1):
                 if forbidden.search(line):
@@ -65,7 +122,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         violations: list[str] = []
 
         for source in self._portal_sources():
-            relative = source.relative_to(ROOT).as_posix()
+            relative = rel(source)
             content = source.read_text(encoding="utf-8", errors="ignore")
             for marker in mojibake_markers:
                 if marker in content:
@@ -90,7 +147,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         console_call = re.compile(r"\bconsole\.(?:log|error|warn|debug|trace)\s*\(")
 
         for source in self._portal_sources():
-            relative = source.relative_to(ROOT).as_posix()
+            relative = rel(source)
             if relative in allowed_example_sources:
                 continue
             content = source.read_text(encoding="utf-8", errors="ignore")
@@ -130,7 +187,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         forbidden = re.compile(r"readApiItems\([^;\n]*\)\s+as\s+(?:[A-Z][A-Za-z0-9_]*\[\]|Parameters<)")
 
         for source in self._portal_sources():
-            relative = source.relative_to(ROOT).as_posix()
+            relative = rel(source)
             content = source.read_text(encoding="utf-8", errors="ignore")
             for line_number, line in enumerate(content.splitlines(), start=1):
                 if forbidden.search(line):
@@ -169,7 +226,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         violations: list[str] = []
 
         for source in service_sources:
-            relative = source.relative_to(ROOT).as_posix()
+            relative = rel(source)
             content = source.read_text(encoding="utf-8", errors="ignore")
             for line_number, line in enumerate(content.splitlines(), start=1):
                 if object_to_string_assignment.search(line) or legacy_url_fallback.search(line):
@@ -201,7 +258,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
             for source in source_root.rglob("*"):
                 if source.suffix not in {".ts", ".tsx"}:
                     continue
-                relative = source.relative_to(ROOT).as_posix()
+                relative = rel(source)
                 content = source.read_text(encoding="utf-8", errors="ignore")
                 for pattern in forbidden_patterns:
                     for match in pattern.finditer(content):
@@ -263,7 +320,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         violations: list[str] = []
 
         for source in fixture_sources:
-            relative = source.relative_to(ROOT).as_posix()
+            relative = rel(source)
             content = source.read_text(encoding="utf-8", errors="ignore")
             for line_number, line in enumerate(content.splitlines(), start=1):
                 if forbidden.search(line):
@@ -291,11 +348,11 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
 
         for snippet in required_snippets:
             if snippet not in content:
-                violations.append(f"{source.relative_to(ROOT).as_posix()}: missing {snippet!r}")
+                violations.append(f"{rel(source)}: missing {snippet!r}")
         for match in forbidden.finditer(content):
             line_number = content.count("\n", 0, match.start()) + 1
             line = content.splitlines()[line_number - 1].strip()
-            violations.append(f"{source.relative_to(ROOT).as_posix()}:{line_number}: {line}")
+            violations.append(f"{rel(source)}:{line_number}: {line}")
 
         self.assertEqual(
             [],
@@ -305,7 +362,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
 
     def test_admin_api_database_config_test_schema_uses_media_resource_columns(self) -> None:
         source = ROOT / "services" / "sdkwork-claw-admin-api" / "tests" / "database_config_router.rs"
-        relative = source.relative_to(ROOT).as_posix()
+        relative = rel(source)
         content = source.read_text(encoding="utf-8", errors="ignore")
         required_snippets = [
             "logo_media_resource_id TEXT",
@@ -340,16 +397,14 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
 
     def test_appbase_native_studio_migrations_use_media_resource_columns(self) -> None:
         migration_sources = [
-            ROOT
-            / "sdkwork-appbase"
+            APPBASE_ROOT
             / "packages"
             / "native-rust"
             / "studio"
             / "sdkwork-studio-storage-sqlx-rust"
             / "migrations"
             / "0001_studio_catalog.sql",
-            ROOT
-            / "sdkwork-appbase"
+            APPBASE_ROOT
             / "packages"
             / "native-rust"
             / "studio"
@@ -382,7 +437,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         violations: list[str] = []
 
         for source in migration_sources:
-            relative = source.relative_to(ROOT).as_posix()
+            relative = rel(source)
             content = source.read_text(encoding="utf-8", errors="ignore")
             for snippet in required_by_file[source.name]:
                 if snippet not in content:
@@ -441,7 +496,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         violations: list[str] = []
 
         for source in active_doc_sources:
-            relative = source.relative_to(ROOT).as_posix()
+            relative = rel(source)
             content = source.read_text(encoding="utf-8", errors="ignore")
             for snippet in required_snippets[source.name]:
                 if snippet not in content:
@@ -494,7 +549,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         violations: list[str] = []
 
         for source, patterns in source_expectations.items():
-            relative = source.relative_to(ROOT).as_posix()
+            relative = rel(source)
             content = source.read_text(encoding="utf-8", errors="ignore")
             for pattern in patterns:
                 for match in re.finditer(pattern, content):
@@ -524,7 +579,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         violations: list[str] = []
 
         for source, required_snippets in source_expectations.items():
-            relative = source.relative_to(ROOT).as_posix()
+            relative = rel(source)
             content = source.read_text(encoding="utf-8", errors="ignore")
             for snippet in required_snippets:
                 if snippet not in content:
@@ -565,7 +620,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         violations: list[str] = []
 
         for source, required_snippets in source_expectations.items():
-            relative = source.relative_to(ROOT).as_posix()
+            relative = rel(source)
             content = source.read_text(encoding="utf-8", errors="ignore")
             for snippet in required_snippets:
                 if snippet not in content:
@@ -614,7 +669,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         violations: list[str] = []
 
         for source, required_snippets in source_expectations.items():
-            relative = source.relative_to(ROOT).as_posix()
+            relative = rel(source)
             content = source.read_text(encoding="utf-8", errors="ignore")
             for snippet in required_snippets:
                 if snippet not in content:
@@ -658,7 +713,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "images: normalizeMediaResourceArray(item.images),",
                 "videos: normalizeMediaResourceArray(item.videos),",
             ],
-            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "content" / "sdkwork-generation-pc-react" / "src" / "generation-history.ts": [
+            APPBASE_ROOT / "packages" / "pc-react" / "content" / "sdkwork-generation-pc-react" / "src" / "generation-history.ts": [
                 "export type SdkworkGenerationMediaResource = SdkworkMediaResource;",
                 "asset: SdkworkGenerationMediaResource;",
                 "asset?: SdkworkGenerationMediaResource;",
@@ -704,7 +759,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 r"\bcreateExternalUrlMediaResource\b",
                 r"\bmediaKindForGenerationTargetType\b",
             ],
-            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "content" / "sdkwork-generation-pc-react" / "src" / "generation-history.ts": [
+            APPBASE_ROOT / "packages" / "pc-react" / "content" / "sdkwork-generation-pc-react" / "src" / "generation-history.ts": [
                 r"\bexport\s+type\s+SdkworkGenerationMedia\s*=\s*string",
                 r"\bimages\?:\s*string\[\]",
                 r"\bupdatedAt\?:\s*string;\s*\n\s*url\?:\s*string;",
@@ -716,14 +771,14 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         violations: list[str] = []
 
         for source, required_snippets in source_expectations.items():
-            relative = source.relative_to(ROOT).as_posix()
+            relative = rel(source)
             content = source.read_text(encoding="utf-8", errors="ignore")
             for snippet in required_snippets:
                 if snippet not in content:
                     violations.append(f"{relative}: missing {snippet!r}")
 
         for source, patterns in forbidden_patterns.items():
-            relative = source.relative_to(ROOT).as_posix()
+            relative = rel(source)
             content = source.read_text(encoding="utf-8", errors="ignore")
             for pattern in patterns:
                 for match in re.finditer(pattern, content):
@@ -761,7 +816,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         violations: list[str] = []
 
         for source, patterns in source_expectations.items():
-            relative = source.relative_to(ROOT).as_posix()
+            relative = rel(source)
             content = source.read_text(encoding="utf-8", errors="ignore")
             for pattern in patterns:
                 for match in re.finditer(pattern, content):
@@ -777,7 +832,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
 
     def test_admin_product_list_cover_reader_returns_media_resource_object(self) -> None:
         source = PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-catalog" / "src" / "ProductListPage.tsx"
-        relative = source.relative_to(ROOT).as_posix()
+        relative = rel(source)
         content = source.read_text(encoding="utf-8", errors="ignore")
         violations: list[str] = []
         required_snippets = [
@@ -809,7 +864,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
 
     def test_admin_sku_management_form_preserves_image_media_resource_object(self) -> None:
         source = PORTAL_PACKAGES / "sdkwork-clawrouter-pc-admin-catalog" / "src" / "SkuManagementPage.tsx"
-        relative = source.relative_to(ROOT).as_posix()
+        relative = rel(source)
         content = source.read_text(encoding="utf-8", errors="ignore")
         violations: list[str] = []
         required_snippets = [
@@ -892,7 +947,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         violations: list[str] = []
 
         for source, patterns in source_expectations.items():
-            relative = source.relative_to(ROOT).as_posix()
+            relative = rel(source)
             content = source.read_text(encoding="utf-8", errors="ignore")
             for pattern in patterns:
                 for match in re.finditer(pattern, content):
@@ -910,8 +965,8 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         sdk_types_index = ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "dist" / "types" / "index.d.ts"
         sdk_media_type = ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "dist" / "types" / "media-resource.d.ts"
 
-        self.assertTrue(sdk_types_index.exists(), f"{sdk_types_index.relative_to(ROOT).as_posix()} must exist")
-        self.assertTrue(sdk_media_type.exists(), f"{sdk_media_type.relative_to(ROOT).as_posix()} must exist")
+        self.assertTrue(sdk_types_index.exists(), f"{rel(sdk_types_index)} must exist")
+        self.assertTrue(sdk_media_type.exists(), f"{rel(sdk_media_type)} must exist")
         self.assertIn(
             "export type { MediaResource } from './media-resource';",
             sdk_types_index.read_text(encoding="utf-8", errors="ignore"),
@@ -924,7 +979,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         update_request = sdk_types_root / "admin-skill-category-update-request.d.ts"
 
         for source in (create_request, update_request):
-            relative = source.relative_to(ROOT).as_posix()
+            relative = rel(source)
             content = source.read_text(encoding="utf-8", errors="ignore")
             self.assertIn(
                 "import type { MediaResource } from './media-resource';",
@@ -978,7 +1033,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         ]
 
         for source in sdk_record_sources:
-            relative = source.relative_to(ROOT).as_posix()
+            relative = rel(source)
             content = source.read_text(encoding="utf-8", errors="ignore")
             self.assertIn(
                 "import type { MediaResource } from './media-resource';",
@@ -1011,7 +1066,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 content = source.read_text(encoding="utf-8", errors="ignore")
                 for line_number, line in enumerate(content.splitlines(), start=1):
                     if media_storage_pattern.search(line):
-                        relative = source.relative_to(ROOT).as_posix()
+                        relative = rel(source)
                         violations.append(f"{relative}:{line_number}: {line.strip()}")
 
         self.assertEqual(
@@ -1022,32 +1077,32 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
 
     def test_appbase_business_media_models_preserve_media_resource_objects(self) -> None:
         source_expectations = {
-            ROOT / "sdkwork-appbase" / "packages" / "common" / "iam" / "sdkwork-iam-service" / "src" / "index.ts": [
+            APPBASE_ROOT / "packages" / "common" / "iam" / "sdkwork-iam-service" / "src" / "index.ts": [
                 "avatar?: SdkworkMediaResource;",
                 "avatar: readSdkworkMediaResource(remote.avatar),",
             ],
-            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "iam" / "sdkwork-user-pc-react" / "src" / "user.ts": [
+            APPBASE_ROOT / "packages" / "pc-react" / "iam" / "sdkwork-user-pc-react" / "src" / "user.ts": [
                 "avatar?: SdkworkMediaResource;",
                 "avatar: profile.avatar,",
             ],
-            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "iam" / "sdkwork-user-pc-react" / "src" / "user-service.ts": [
+            APPBASE_ROOT / "packages" / "pc-react" / "iam" / "sdkwork-user-pc-react" / "src" / "user-service.ts": [
                 "avatar?: SdkworkMediaResource;",
                 "avatar: readSdkworkMediaResource(profile.avatar),",
                 "avatar: readSdkworkMediaResource(updated.avatar) || profile.avatar,",
             ],
-            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "commerce" / "sdkwork-order-pc-react" / "src" / "order-service.ts": [
+            APPBASE_ROOT / "packages" / "pc-react" / "commerce" / "sdkwork-order-pc-react" / "src" / "order-service.ts": [
                 "productImage?: SdkworkMediaResource;",
                 "image?: SdkworkMediaResource;",
                 "productImage: readSdkworkMediaResource(order.productImage),",
                 "image: readSdkworkMediaResource(item.productImage),",
             ],
-            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "commerce" / "sdkwork-payment-pc-react" / "src" / "payment.ts": [
+            APPBASE_ROOT / "packages" / "pc-react" / "commerce" / "sdkwork-payment-pc-react" / "src" / "payment.ts": [
                 "icon?: SdkworkMediaResource;",
             ],
-            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "commerce" / "sdkwork-payment-pc-react" / "src" / "payment-service.ts": [
+            APPBASE_ROOT / "packages" / "pc-react" / "commerce" / "sdkwork-payment-pc-react" / "src" / "payment-service.ts": [
                 "icon: readSdkworkMediaResource(method.methodIcon) || readSdkworkMediaResource(method.icon),",
             ],
-            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "commerce" / "sdkwork-membership-pc-react" / "src" / "membership-service.ts": [
+            APPBASE_ROOT / "packages" / "pc-react" / "commerce" / "sdkwork-membership-pc-react" / "src" / "membership-service.ts": [
                 "icon?: SdkworkMediaResource;",
                 "icon: readSdkworkMediaResource(level.icon),",
             ],
@@ -1066,7 +1121,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         violations: list[str] = []
 
         for source, required_snippets in source_expectations.items():
-            relative = source.relative_to(ROOT).as_posix()
+            relative = rel(source)
             content = source.read_text(encoding="utf-8", errors="ignore")
             for snippet in required_snippets:
                 if snippet not in content:
@@ -1083,20 +1138,20 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
 
     def test_appbase_auth_user_avatar_preserves_media_resource_objects(self) -> None:
         source_expectations = {
-            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "iam" / "sdkwork-auth-pc-react" / "src" / "auth-service.ts": [
+            APPBASE_ROOT / "packages" / "pc-react" / "iam" / "sdkwork-auth-pc-react" / "src" / "auth-service.ts": [
                 "avatar?: SdkworkMediaResource;",
                 "avatar: readSdkworkMediaResource(identity.avatar),",
                 "avatar: readFirstAuthMediaResource(primary?.avatar, secondary?.avatar),",
                 "avatar: readSdkworkMediaResource(identity.avatar),",
             ],
-            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "iam" / "sdkwork-auth-pc-react" / "src" / "auth-iam-runtime.ts": [
+            APPBASE_ROOT / "packages" / "pc-react" / "iam" / "sdkwork-auth-pc-react" / "src" / "auth-iam-runtime.ts": [
                 "avatar: readSdkworkMediaResource(user.avatar),",
             ],
-            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "iam" / "sdkwork-auth-pc-react" / "src" / "auth-authority.ts": [
+            APPBASE_ROOT / "packages" / "pc-react" / "iam" / "sdkwork-auth-pc-react" / "src" / "auth-authority.ts": [
                 "avatar?: SdkworkMediaResource;",
                 "avatar: input.avatar,",
             ],
-            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "iam" / "sdkwork-auth-pc-react" / "src" / "auth-runtime-authority.ts": [
+            APPBASE_ROOT / "packages" / "pc-react" / "iam" / "sdkwork-auth-pc-react" / "src" / "auth-runtime-authority.ts": [
                 "avatar?: SdkworkMediaResource;",
                 "avatar: request.avatar,",
             ],
@@ -1110,7 +1165,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         violations: list[str] = []
 
         for source, required_snippets in source_expectations.items():
-            relative = source.relative_to(ROOT).as_posix()
+            relative = rel(source)
             content = source.read_text(encoding="utf-8", errors="ignore")
             for snippet in required_snippets:
                 if snippet not in content:
@@ -1127,15 +1182,15 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
 
     def test_appbase_auth_qr_images_preserve_media_resource_objects(self) -> None:
         source_expectations = {
-            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "iam" / "sdkwork-auth-pc-react" / "src" / "auth-service.ts": [
+            APPBASE_ROOT / "packages" / "pc-react" / "iam" / "sdkwork-auth-pc-react" / "src" / "auth-service.ts": [
                 "qrCode?: SdkworkMediaResource;",
                 "qrCode: readSdkworkMediaResource(session.qrCode),",
             ],
-            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "iam" / "sdkwork-auth-pc-react" / "src" / "auth-iam-runtime.ts": [
+            APPBASE_ROOT / "packages" / "pc-react" / "iam" / "sdkwork-auth-pc-react" / "src" / "auth-iam-runtime.ts": [
                 "qrCode?: unknown;",
                 "qrCode: readSdkworkMediaResource(record.qrCode),",
             ],
-            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "iam" / "sdkwork-auth-pc-react" / "src" / "pages" / "AuthPage.tsx": [
+            APPBASE_ROOT / "packages" / "pc-react" / "iam" / "sdkwork-auth-pc-react" / "src" / "pages" / "AuthPage.tsx": [
                 "const qrImageResourceSrc = getSdkworkMediaDeliveryUrl(nextQrCode.qrCode);",
             ],
         }
@@ -1150,7 +1205,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         violations: list[str] = []
 
         for source, required_snippets in source_expectations.items():
-            relative = source.relative_to(ROOT).as_posix()
+            relative = rel(source)
             content = source.read_text(encoding="utf-8", errors="ignore")
             for snippet in required_snippets:
                 if snippet not in content:
@@ -1167,17 +1222,16 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
 
     def test_appbase_payment_qr_images_preserve_media_resource_objects(self) -> None:
         source_expectations = {
-            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "commerce" / "sdkwork-payment-pc-react" / "src" / "payment.ts": [
+            APPBASE_ROOT / "packages" / "pc-react" / "commerce" / "sdkwork-payment-pc-react" / "src" / "payment.ts": [
                 "qrImage?: SdkworkMediaResource;",
                 "qrContent?: string;",
             ],
-            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "commerce" / "sdkwork-payment-pc-react" / "src" / "payment-service.ts": [
+            APPBASE_ROOT / "packages" / "pc-react" / "commerce" / "sdkwork-payment-pc-react" / "src" / "payment-service.ts": [
                 "deriveQrImage(payment)",
                 "qrContent: deriveQrContent(payment) || fallback.qrContent,",
                 "qrImage: deriveQrImage(payment) || fallback.qrImage,",
             ],
-            ROOT
-            / "sdkwork-appbase"
+            APPBASE_ROOT
             / "packages"
             / "pc-react"
             / "commerce"
@@ -1188,7 +1242,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "const qrImageResourceSrc = getSdkworkMediaDeliveryUrl(detail.qrImage);",
                 "QRCode.toDataURL(detail.qrContent",
             ],
-            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "commerce" / "sdkwork-checkout-pc-react" / "src" / "checkout-service.ts": [
+            APPBASE_ROOT / "packages" / "pc-react" / "commerce" / "sdkwork-checkout-pc-react" / "src" / "checkout-service.ts": [
                 "qrImage?: SdkworkMediaResource;",
                 "qrContent?: string;",
                 "qrContent = payment.qrContent;",
@@ -1204,7 +1258,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         violations: list[str] = []
 
         for source, required_snippets in source_expectations.items():
-            relative = source.relative_to(ROOT).as_posix()
+            relative = rel(source)
             content = source.read_text(encoding="utf-8", errors="ignore")
             for snippet in required_snippets:
                 if snippet not in content:
@@ -1220,8 +1274,8 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         )
 
     def test_appbase_chat_attachments_preserve_media_resource_objects(self) -> None:
-        source = ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "intelligence" / "sdkwork-chat-pc-react" / "src" / "chat.ts"
-        relative = source.relative_to(ROOT).as_posix()
+        source = APPBASE_ROOT / "packages" / "pc-react" / "intelligence" / "sdkwork-chat-pc-react" / "src" / "chat.ts"
+        relative = rel(source)
         content = source.read_text(encoding="utf-8", errors="ignore")
         required_snippets = [
             "type SdkworkMediaResource,",
@@ -1229,7 +1283,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
             "resource: SdkworkMediaResource;",
             "const deliveryUrl = getSdkworkMediaDeliveryUrl(attachment.resource);",
         ]
-        package_source = ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "intelligence" / "sdkwork-chat-pc-react" / "package.json"
+        package_source = APPBASE_ROOT / "packages" / "pc-react" / "intelligence" / "sdkwork-chat-pc-react" / "package.json"
         forbidden_patterns = (
             re.compile(r"\bpreviewUrl\??:\s*string\b"),
             re.compile(r"\burl\??:\s*string\b"),
@@ -1246,9 +1300,9 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 violations.append(f"{relative}:{line_number}: {line.strip()}")
         package_content = package_source.read_text(encoding="utf-8", errors="ignore")
         if '"@sdkwork/appbase-pc-react": "*"' not in package_content:
-            violations.append(f"{package_source.relative_to(ROOT).as_posix()}: missing @sdkwork/appbase-pc-react peer dependency")
+            violations.append(f"{package_rel(source)}: missing @sdkwork/appbase-pc-react peer dependency")
         if '"@sdkwork/appbase-pc-react": {\n      "optional": true\n    }' not in package_content:
-            violations.append(f"{package_source.relative_to(ROOT).as_posix()}: missing @sdkwork/appbase-pc-react optional peer metadata")
+            violations.append(f"{package_rel(source)}: missing @sdkwork/appbase-pc-react optional peer metadata")
 
         self.assertEqual(
             [],
@@ -1258,50 +1312,50 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
 
     def test_appbase_content_workspace_items_preserve_media_resource_objects(self) -> None:
         source_expectations = {
-            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "content" / "sdkwork-image-pc-react" / "src" / "image.ts": [
+            APPBASE_ROOT / "packages" / "pc-react" / "content" / "sdkwork-image-pc-react" / "src" / "image.ts": [
                 'import type { SdkworkMediaResource } from "@sdkwork/appbase-pc-react";',
                 "resource: SdkworkMediaResource;",
                 "resource: createGeneratedImageResource(",
             ],
-            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "content" / "sdkwork-audio-pc-react" / "src" / "audio.ts": [
+            APPBASE_ROOT / "packages" / "pc-react" / "content" / "sdkwork-audio-pc-react" / "src" / "audio.ts": [
                 'import type { SdkworkMediaResource } from "@sdkwork/appbase-pc-react";',
                 "resource: SdkworkMediaResource;",
                 "resource: createGeneratedAudioResource(",
             ],
-            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "content" / "sdkwork-video-pc-react" / "src" / "video.ts": [
+            APPBASE_ROOT / "packages" / "pc-react" / "content" / "sdkwork-video-pc-react" / "src" / "video.ts": [
                 'import type { SdkworkMediaResource } from "@sdkwork/appbase-pc-react";',
                 "resource: SdkworkMediaResource;",
                 "resource: createGeneratedVideoResource(",
             ],
-            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "content" / "sdkwork-media-pc-react" / "src" / "media.ts": [
+            APPBASE_ROOT / "packages" / "pc-react" / "content" / "sdkwork-media-pc-react" / "src" / "media.ts": [
                 'import type { SdkworkMediaResource } from "@sdkwork/appbase-pc-react";',
                 "resource: SdkworkMediaResource;",
                 "resource: createGeneratedMediaResource(",
             ],
-            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "content" / "sdkwork-assets-pc-react" / "src" / "assets.ts": [
+            APPBASE_ROOT / "packages" / "pc-react" / "content" / "sdkwork-assets-pc-react" / "src" / "assets.ts": [
                 'import type { SdkworkMediaKind, SdkworkMediaResource } from "@sdkwork/appbase-pc-react";',
                 "resource: SdkworkMediaResource;",
                 "resource: createObjectStorageAssetResource(",
             ],
         }
         package_sources = [
-            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "content" / "sdkwork-image-pc-react" / "package.json",
-            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "content" / "sdkwork-audio-pc-react" / "package.json",
-            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "content" / "sdkwork-video-pc-react" / "package.json",
-            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "content" / "sdkwork-media-pc-react" / "package.json",
-            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "content" / "sdkwork-assets-pc-react" / "package.json",
+            APPBASE_ROOT / "packages" / "pc-react" / "content" / "sdkwork-image-pc-react" / "package.json",
+            APPBASE_ROOT / "packages" / "pc-react" / "content" / "sdkwork-audio-pc-react" / "package.json",
+            APPBASE_ROOT / "packages" / "pc-react" / "content" / "sdkwork-video-pc-react" / "package.json",
+            APPBASE_ROOT / "packages" / "pc-react" / "content" / "sdkwork-media-pc-react" / "package.json",
+            APPBASE_ROOT / "packages" / "pc-react" / "content" / "sdkwork-assets-pc-react" / "package.json",
         ]
         violations: list[str] = []
 
         for source, required_snippets in source_expectations.items():
-            relative = source.relative_to(ROOT).as_posix()
+            relative = rel(source)
             content = source.read_text(encoding="utf-8", errors="ignore")
             for snippet in required_snippets:
                 if snippet not in content:
                     violations.append(f"{relative}: missing {snippet!r}")
 
         for source in package_sources:
-            relative = source.relative_to(ROOT).as_posix()
+            relative = rel(source)
             content = source.read_text(encoding="utf-8", errors="ignore")
             if '"@sdkwork/appbase-pc-react": "*"' not in content:
                 violations.append(f"{relative}: missing @sdkwork/appbase-pc-react peer dependency")
@@ -1315,10 +1369,10 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         )
 
     def test_appbase_generation_history_uses_canonical_media_resource(self) -> None:
-        source = ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "content" / "sdkwork-generation-pc-react" / "src" / "generation-history.ts"
+        source = APPBASE_ROOT / "packages" / "pc-react" / "content" / "sdkwork-generation-pc-react" / "src" / "generation-history.ts"
         shim_source = PORTAL_ROOT / "src" / "typecheck-shims.d.ts"
-        package_source = ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "content" / "sdkwork-generation-pc-react" / "package.json"
-        relative = source.relative_to(ROOT).as_posix()
+        package_source = APPBASE_ROOT / "packages" / "pc-react" / "content" / "sdkwork-generation-pc-react" / "package.json"
+        relative = rel(source)
         content = source.read_text(encoding="utf-8", errors="ignore")
         shim_content = shim_source.read_text(encoding="utf-8", errors="ignore")
         package_content = package_source.read_text(encoding="utf-8", errors="ignore")
@@ -1341,17 +1395,17 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
             if any(pattern.search(line) for pattern in forbidden_patterns):
                 violations.append(f"{relative}:{line_number}: {line.strip()}")
         if "import type { SdkworkMediaResource } from '@sdkwork/appbase-pc-react';" not in shim_content:
-            violations.append(f"{shim_source.relative_to(ROOT).as_posix()}: missing SdkworkMediaResource shim import")
+            violations.append(f"{shim_rel(source)}: missing SdkworkMediaResource shim import")
         if "export type SdkworkGenerationMediaResource = SdkworkMediaResource;" not in shim_content:
-            violations.append(f"{shim_source.relative_to(ROOT).as_posix()}: missing canonical generation media alias")
+            violations.append(f"{shim_rel(source)}: missing canonical generation media alias")
         for match in re.finditer(r"\bexport\s+interface\s+SdkworkGenerationMediaResource\b", shim_content):
             line_number = shim_content.count("\n", 0, match.start()) + 1
             line = shim_content.splitlines()[line_number - 1].strip()
-            violations.append(f"{shim_source.relative_to(ROOT).as_posix()}:{line_number}: {line}")
+            violations.append(f"{shim_rel(source)}:{line_number}: {line}")
         if '"@sdkwork/appbase-pc-react": "*"' not in package_content:
-            violations.append(f"{package_source.relative_to(ROOT).as_posix()}: missing @sdkwork/appbase-pc-react peer dependency")
+            violations.append(f"{package_rel(source)}: missing @sdkwork/appbase-pc-react peer dependency")
         if '"@sdkwork/appbase-pc-react": {\n      "optional": true\n    }' not in package_content:
-            violations.append(f"{package_source.relative_to(ROOT).as_posix()}: missing @sdkwork/appbase-pc-react optional peer metadata")
+            violations.append(f"{package_rel(source)}: missing @sdkwork/appbase-pc-react optional peer metadata")
 
         self.assertEqual(
             [],
@@ -1408,14 +1462,14 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         violations: list[str] = []
 
         for source, snippets in required_snippets.items():
-            relative = source.relative_to(ROOT).as_posix()
+            relative = rel(source)
             content = source.read_text(encoding="utf-8", errors="ignore")
             for snippet in snippets:
                 if snippet not in content:
                     violations.append(f"{relative}: missing {snippet!r}")
 
         for source, patterns in forbidden_patterns.items():
-            relative = source.relative_to(ROOT).as_posix()
+            relative = rel(source)
             content = source.read_text(encoding="utf-8", errors="ignore")
             for pattern in patterns:
                 for match in re.finditer(pattern, content, re.DOTALL):
@@ -1430,8 +1484,8 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         )
 
     def test_appbase_native_user_center_avatar_preserves_media_resource_objects(self) -> None:
-        source = ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "iam" / "sdkwork-user-center-core-pc-react" / "native" / "tauri-rust" / "src" / "user_center_authority.rs"
-        relative = source.relative_to(ROOT).as_posix()
+        source = APPBASE_ROOT / "packages" / "pc-react" / "iam" / "sdkwork-user-center-core-pc-react" / "native" / "tauri-rust" / "src" / "user_center_authority.rs"
+        relative = rel(source)
         content = source.read_text(encoding="utf-8", errors="ignore")
         required_snippets = [
             "pub struct UserCenterMediaResource",
@@ -1467,7 +1521,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
 
     def test_app_sdk_course_category_exposes_icon_key_not_media_icon_string(self) -> None:
         source = ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "dist" / "types" / "course-category-item.d.ts"
-        relative = source.relative_to(ROOT).as_posix()
+        relative = rel(source)
         content = source.read_text(encoding="utf-8", errors="ignore")
 
         self.assertIn(
@@ -1490,7 +1544,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         violations: list[str] = []
 
         for source in forum_sources:
-            relative = source.relative_to(ROOT).as_posix()
+            relative = rel(source)
             content = source.read_text(encoding="utf-8", errors="ignore")
             if "cover_resources" not in content:
                 violations.append(f"{relative}: missing canonical plus_feeds.cover_resources usage")
@@ -1536,7 +1590,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         violations: list[str] = []
 
         for source, required_snippets in source_expectations.items():
-            relative = source.relative_to(ROOT).as_posix()
+            relative = rel(source)
             content = source.read_text(encoding="utf-8", errors="ignore")
             for snippet in required_snippets:
                 if snippet not in content:
@@ -1570,7 +1624,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         violations: list[str] = []
 
         for source, required_snippets in source_expectations.items():
-            relative = source.relative_to(ROOT).as_posix()
+            relative = rel(source)
             content = source.read_text(encoding="utf-8", errors="ignore")
             for snippet in required_snippets:
                 if snippet not in content:
@@ -1618,7 +1672,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         violations: list[str] = []
 
         for source, required_snippets in source_expectations.items():
-            relative = source.relative_to(ROOT).as_posix()
+            relative = rel(source)
             content = source.read_text(encoding="utf-8", errors="ignore")
             for snippet in required_snippets:
                 if snippet not in content:
@@ -1673,7 +1727,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         violations: list[str] = []
 
         for source, required_snippets in source_expectations.items():
-            relative = source.relative_to(ROOT).as_posix()
+            relative = rel(source)
             content = source.read_text(encoding="utf-8", errors="ignore")
             for snippet in required_snippets:
                 if snippet not in content:
@@ -1729,7 +1783,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         violations: list[str] = []
 
         for source, required_snippets in source_expectations.items():
-            relative = source.relative_to(ROOT).as_posix()
+            relative = rel(source)
             content = source.read_text(encoding="utf-8", errors="ignore")
             for snippet in required_snippets:
                 if snippet not in content:
@@ -1791,7 +1845,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         violations: list[str] = []
 
         for source, required_snippets in source_expectations.items():
-            relative = source.relative_to(ROOT).as_posix()
+            relative = rel(source)
             content = source.read_text(encoding="utf-8", errors="ignore")
             for snippet in required_snippets:
                 if snippet not in content:
@@ -1846,7 +1900,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         violations: list[str] = []
 
         for source, required_snippets in source_expectations.items():
-            relative = source.relative_to(ROOT).as_posix()
+            relative = rel(source)
             content = source.read_text(encoding="utf-8", errors="ignore")
             for snippet in required_snippets:
                 if snippet not in content:
@@ -1894,10 +1948,10 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
 
         for snippet in required_snippets:
             if snippet not in content:
-                violations.append(f"{source.relative_to(ROOT).as_posix()}: missing {snippet!r}")
+                violations.append(f"{rel(source)}: missing {snippet!r}")
         for line_number, line in enumerate(content.splitlines(), start=1):
             if any(pattern in line for pattern in legacy_patterns):
-                violations.append(f"{source.relative_to(ROOT).as_posix()}:{line_number}: {line.strip()}")
+                violations.append(f"{rel(source)}:{line_number}: {line.strip()}")
 
         self.assertEqual(
             [],
@@ -1919,7 +1973,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         violations: list[str] = []
         for forbidden in ("imageSource: string", "imageSource: readMediaResourceUrl"):
             if forbidden in runtime:
-                violations.append(f"{runtime_source.relative_to(ROOT).as_posix()}: contains {forbidden!r}")
+                violations.append(f"{runtime_rel(source)}: contains {forbidden!r}")
 
         for source in [
             ROOT
@@ -1942,11 +1996,11 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
             content = source.read_text(encoding="utf-8", errors="ignore")
             if "src={readMediaResourceUrl(app.image)}" not in content:
                 violations.append(
-                    f"{source.relative_to(ROOT).as_posix()}: image display must extract URL from app.image at the img boundary"
+                    f"{rel(source)}: image display must extract URL from app.image at the img boundary"
                 )
             if "app.imageSource" in content:
                 violations.append(
-                    f"{source.relative_to(ROOT).as_posix()}: must not consume pre-extracted imageSource"
+                    f"{rel(source)}: must not consume pre-extracted imageSource"
                 )
 
         self.assertEqual(
@@ -1964,7 +2018,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         list_reader = re.compile(r"\breadApiItems\s*\(")
 
         for source in self._portal_sources():
-            relative = source.relative_to(ROOT).as_posix()
+            relative = rel(source)
             if "sdkwork-clawrouter-pc-commons" in source.parts:
                 continue
             if relative in allowed_optional_sources:
@@ -1990,7 +2044,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         violations: list[str] = []
 
         for source in paginated_log_services:
-            relative = source.relative_to(ROOT).as_posix()
+            relative = rel(source)
             content = source.read_text(encoding="utf-8", errors="ignore")
             if "readRequiredNonNegativeNumber(data, 'total'" not in content:
                 violations.append(f"{relative}: missing required pagination total reader")
@@ -2634,7 +2688,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         }
 
         for service_path, required_fragments in guarded_services.items():
-            relative = service_path.relative_to(ROOT).as_posix()
+            relative = service_rel(path)
             source = service_path.read_text(encoding="utf-8", errors="ignore")
             for fragment in required_fragments:
                 self.assertIn(fragment, source, f"{relative}: missing {fragment}")
@@ -2691,7 +2745,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         }
 
         for service_path, required_fragments in guarded_services.items():
-            relative = service_path.relative_to(ROOT).as_posix()
+            relative = service_rel(path)
             source = service_path.read_text(encoding="utf-8", errors="ignore")
             self.assertIn("sdkwork-clawrouter-pc-commons/runtime", source, relative)
             self.assertIn("requiredSafePathSegment", source, relative)
@@ -2724,7 +2778,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         self.assertIn("export * from './sdk-request-boundary.ts';", runtime_entrypoint.read_text(encoding="utf-8"))
 
         for service_path in guarded_services:
-            relative = service_path.relative_to(ROOT).as_posix()
+            relative = service_rel(path)
             source = service_path.read_text(encoding="utf-8", errors="ignore")
             self.assertIn("sdkwork-clawrouter-pc-commons/runtime", source, relative)
             for forbidden in (
@@ -2746,7 +2800,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         )
 
         for source in self._portal_sources():
-            relative = source.relative_to(ROOT).as_posix()
+            relative = rel(source)
             content = source.read_text(encoding="utf-8", errors="ignore")
             if not import_block.search(content):
                 continue
@@ -2788,7 +2842,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         portal_violations: list[str] = []
 
         for source in self._portal_sources():
-            relative = source.relative_to(ROOT).as_posix()
+            relative = rel(source)
             content = source.read_text(encoding="utf-8", errors="ignore")
             for token in removed_portal_tokens:
                 if token in content:
@@ -2809,7 +2863,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
             ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "api" / "rate-limits.ts",
             ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "api" / "users.ts",
         ]
-        existing_stale_api_files = [path.relative_to(ROOT).as_posix() for path in stale_api_files if path.exists()]
+        existing_stale_api_files = [rel(path) for path in stale_api_files if path.exists()]
         self.assertEqual(
             [],
             existing_stale_api_files,
@@ -2846,7 +2900,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
             for source in sorted(api_dir.glob("*.ts")):
                 if source.name in {"base.ts", "index.ts", "paths.ts"}:
                     continue
-                relative = source.relative_to(ROOT).as_posix()
+                relative = rel(source)
                 content = source.read_text(encoding="utf-8", errors="ignore")
                 if legacy_header_signature.search(content):
                     sdk_api_violations.append(f"{relative}: public operation method accepts raw headers")
@@ -2869,7 +2923,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
             PORTAL_ROOT / "replace.mjs",
             PORTAL_ROOT / "update_files.cjs",
         ]
-        existing = [path.relative_to(ROOT).as_posix() for path in forbidden_files if path.exists()]
+        existing = [rel(path) for path in forbidden_files if path.exists()]
 
         self.assertEqual(
             [],
@@ -2893,7 +2947,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         violations: list[str] = []
         for path in checked_docs:
             content = path.read_text(encoding="utf-8", errors="ignore")
-            relative = path.relative_to(ROOT).as_posix()
+            relative = rel(path)
             for marker in forbidden_markers:
                 if marker in content:
                     violations.append(f"{relative}: contains {marker}")
@@ -2937,7 +2991,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
         violations: list[str] = []
         for package_path in sorted(PORTAL_PACKAGES.glob("*/package.json")):
             package = json.loads(package_path.read_text(encoding="utf-8"))
-            relative = package_path.relative_to(ROOT).as_posix()
+            relative = package_rel(path)
             for section_name in ("dependencies", "devDependencies", "optionalDependencies"):
                 dependencies = package.get(section_name, {})
                 for dependency_name in sorted(singleton_runtime_dependencies & set(dependencies)):

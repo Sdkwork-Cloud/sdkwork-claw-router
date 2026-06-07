@@ -14,7 +14,7 @@
 
 1. 前端产品统一到 `apps/sdkwork-clawrouter-pc` 一个应用，内部拆分 public、console、admin 模块。
 2. 新版数据库必须遵守 `DATABASE_SPEC.md` 的合同优先、业务前缀、L1/L2/L3 合规标准。
-3. 新版必须对齐 Spring AI Plus 既有业务实体表。用户、VIP、账户、优惠券、积分充值、订单支付等表结构保持与 `spring-ai-plus-business-entity` 完全一致。
+3. 新版必须对齐 Spring AI Plus 既有业务实体表。用户、VIP、账户、优惠券、积分充值、订单支付等表结构保持与 `legacy-java-plus-entity` 完全一致。
 4. 新版 API 管理面和用户面必须使用已存在的 backend/app API 标准，不能重新发明一套控制面协议。
 
 ## 2. 目标用户
@@ -65,7 +65,7 @@
 | `/console/notifications` | 通知中心 | 系统通知、账务提醒、风控提醒 |
 | `/console/providers` | 工具配置 | 用户侧 Provider、代理、凭据引用、本地工具 |
 
-Console 的 API 统一走 Java app-api 标准路径 `/app/v3/api/{resource-path}`，通过 `spring-ai-plus-app-api` 生成 SDK 调用。不同部署环境只切换 SDK base URL，不改变资源路径。
+Console 的 API 统一走 Java app-api 标准路径 `/app/v3/api/{resource-path}`，通过 `legacy-java-plus-app-api` 生成 SDK 调用。不同部署环境只切换 SDK base URL，不改变资源路径。
 
 ### 3.3 Admin 管理后台
 
@@ -85,7 +85,7 @@ Console 的 API 统一走 Java app-api 标准路径 `/app/v3/api/{resource-path}
 | `/admin/ratelimit` | 限流与风控 | 限流规则、熔断、黑白名单、风险策略 |
 | `/admin/monitor` | 运维监控 | 实例、心跳、缓存、队列、任务、告警 |
 
-Admin 的 API 统一走 Java backend-api 标准路径 `/backend/v3/api/{resource-path}`，通过 `spring-ai-plus-backend-api` 生成 SDK 调用。不同部署环境只切换 SDK base URL，不改变资源路径。
+Admin 的 API 统一走 Java backend-api 标准路径 `/backend/v3/api/{resource-path}`，通过 `legacy-java-plus-backend-api` 生成 SDK 调用。不同部署环境只切换 SDK base URL，不改变资源路径。
 
 ### 3.4 Gateway 开发者 API
 
@@ -115,7 +115,7 @@ Gateway 面保持行业兼容：
 
 ### 4.3 账户和商业化
 
-1. 用户、VIP、账户、优惠券、积分充值、订单、支付、退款、发票必须复用 `spring-ai-plus-business-entity` 对应表结构。
+1. 用户、VIP、账户、优惠券、积分充值、订单、支付、退款、发票必须复用 `legacy-java-plus-entity` 对应表结构。
 2. 网关用量先沉淀为 AI usage/meter fact，再按规则结转到账户、积分、VIP 权益或订单支付体系。
 3. 余额变更必须同时写账户流水，不能只改余额。
 4. 支付回调、充值、退款、兑换码必须有幂等键和外部事件唯一约束。
@@ -137,7 +137,7 @@ Gateway 面保持行业兼容：
 3. 不在前端长期维护手写 HTTP wrapper 或 mock 数据作为业务真值。
 4. 不为桌面、Server、Docker、K8S 各写一套业务逻辑。
 5. 不把新表命名为 `claw_*`、`router_*`、`sdkwork_*` 这种产品前缀。
-6. 不改名或破坏 `spring-ai-plus-business-entity` 中用户、VIP、账户、优惠券、交易账户域的既有表结构。
+6. 不改名或破坏 `legacy-java-plus-entity` 中用户、VIP、账户、优惠券、交易账户域的既有表结构。
 7. 不为 App/Backend API 增加 `/claw-router` 这类产品路径前缀；公共业务路径必须与 Java app-api/backend-api 一致。
 8. 不因数据结构、接口契约、SDK 替换或实现问题擅自改变 `apps/sdkwork-clawrouter-pc` 的 UI 视觉设计、布局、交互风格、组件外观或品牌表达；前端视觉以用户当前设计为准。
 

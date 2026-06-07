@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::models::{OpenAiOrganizationCostBucket};
+use crate::models::OpenAiOrganizationCostBucket;
 
 /// OpenAI-compatible paginated list of organization cost buckets.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]

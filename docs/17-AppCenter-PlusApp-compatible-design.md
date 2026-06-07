@@ -6,7 +6,7 @@
 
 ## 1. 结论
 
-AppCenter 必须沿用 Java 侧 `PlusApp` 设计体系，数据库主数据表固定为 `plus_app`。`sdkwork-claw-router` 不再为 AppCenter 新建 `studio_app_*` 三类应用主数据表，避免与 `spring-ai-plus-business-entity`、`spring-ai-plus-app-api`、`spring-ai-plus-backend-api` 产生双主数据和路径不一致问题。
+AppCenter 必须沿用 Java 侧 `PlusApp` 设计体系，数据库主数据表固定为 `plus_app`。`sdkwork-claw-router` 不再为 AppCenter 新建 `studio_app_*` 三类应用主数据表，避免与 `legacy-java-plus-entity`、`legacy-java-plus-app-api`、`legacy-java-plus-backend-api` 产生双主数据和路径不一致问题。
 
 `studio_catalog_action` 可以继续保留，但定位只能是应用/技能市场的行为事实表，用于下载、收藏、评分、评论等事件和聚合重算；它不是 AppCenter 的应用主数据表。
 
@@ -86,7 +86,7 @@ Backend/Admin 走 backend-api 标准，路径沿用 Java：
 Schema Registry 已按以下原则调整：
 
 1. 新增 `plus_app` 作为 `/`、`/apps`、`/apps/:id`、`/console/app`、`/admin/app` 的主数据表。
-2. `plus_app.generated_by_this_project=false`，`write_owner=spring-ai-plus-business-entity`，`compatibility_rule=keep_physical_structure_identical`。
+2. `plus_app.generated_by_this_project=false`，`write_owner=legacy-java-plus-entity`，`compatibility_rule=keep_physical_structure_identical`。
 3. 移除 AppCenter 专属 `studio_app_*` 物理表。应用条目、版本、媒体等概念收敛为 `plus_app` 的视图投影，不再建第二套应用表。
 4. SkillsHub 同样收敛到 Java AgentSkills 体系，主数据使用 `plus_agent_skill`、`plus_agent_skill_package`、`plus_user_agent_skill`，分类使用 `plus_category`。
 5. `studio_catalog_action.target_type` 必须能区分 `APP` 和 `SKILL`，其中 `APP` 的 `target_id` 指向 `plus_app.id`，`SKILL` 的 `target_id` 指向 `plus_agent_skill.id`。
@@ -95,5 +95,5 @@ Schema Registry 已按以下原则调整：
 
 - 不改变 `apps/sdkwork-clawrouter-pc` 的 UI 视觉设计和页面交互，所有差异由 service adapter 或 DTO mapper 解决。
 - AppCenter API 必须与 Java app-api/backend-api 保持路径、响应包裹、字段命名一致，支持从 mock 数据自由切换到 Java SDK。
-- `plus_app` 的物理表结构以 `spring-ai-plus-business-entity` 为准，Rust/Java/TypeScript 只能生成兼容模型，不能在 claw-router 内另起一套 App 表。
+- `plus_app` 的物理表结构以 `legacy-java-plus-entity` 为准，Rust/Java/TypeScript 只能生成兼容模型，不能在 claw-router 内另起一套 App 表。
 - 如果未来需要更复杂的应用市场运营能力，优先扩展 `plus_app.config/resource_list/install_config/release_notes` 的 JSON 契约，或增加独立的行为/投影表；不得再为 AppCenter 新建第二套应用主表。

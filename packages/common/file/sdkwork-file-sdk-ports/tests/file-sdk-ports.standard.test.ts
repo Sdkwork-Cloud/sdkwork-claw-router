@@ -8,10 +8,10 @@ import {
   createInMemoryFileUploadPort,
   createUnsupportedFilePlatformPorts,
   type CompleteUploadInput,
-  type CreateUploadSessionInput,
   type FilePlatformPorts,
   type FileUploadPort,
   type StorageUsagePort,
+  type UploadFileInput,
 } from "../src/index";
 
 describe("SDKWork file SDK ports", () => {
@@ -60,7 +60,7 @@ describe("SDKWork file SDK ports", () => {
   });
 
   it("defines upload port contracts without exposing provider internals to callers", async () => {
-    const sessions: CreateUploadSessionInput[] = [];
+    const uploads: UploadFileInput[] = [];
     const completions: CompleteUploadInput[] = [];
     const uploadPort: FileUploadPort = {
       async abortUpload(input) {
@@ -79,57 +79,66 @@ describe("SDKWork file SDK ports", () => {
           status: "active",
         };
       },
-      async createUploadSession(input) {
-        sessions.push(input);
+      async uploadFile(input) {
+        uploads.push(input);
         return {
-          presigned: {
-            expiresAt: "2026-05-23T08:10:00.000Z",
-            headers: { "Content-Type": input.contentType },
-            method: "PUT",
-            url: "https://upload.example.test/presigned",
-          },
+          driveNodeId: "node_01J",
+          driveSpaceId: "space_01J",
+          driveUri: "drive://spaces/space_01J/nodes/node_01J",
+          fileRef: createFileRef({
+            displayName: input.filename,
+            fileId: "node_01J",
+            purpose: input.purpose,
+            visibility: "private",
+          }),
           requestId: input.requestId,
-          sessionId: "upl_01J",
-          status: "presigned",
-          uploadMode: "single_put",
-        };
-      },
-      async presignUploadPart(input) {
-        return {
-          partNumber: input.partNumber,
-          presigned: {
-            expiresAt: "2026-05-23T08:10:00.000Z",
-            headers: {},
-            method: "PUT",
-            url: "https://upload.example.test/part",
-          },
-          requestId: input.requestId,
-          sessionId: input.sessionId,
+          status: "active",
+          uploadId: "upload_01J",
         };
       },
     };
 
-    const created = await uploadPort.createUploadSession({
+    const uploaded = await uploadPort.uploadFile({
+      appId: "app-center",
+      appResourceId: "app_1",
+      appResourceType: "app",
       checksum: { algorithm: "sha256", value: "abc" },
       contentType: "image/png",
+      file: createTestFile("icon.png", "image/png", 1024),
       filename: "icon.png",
       idempotencyKey: "idem-1",
+      operatorId: "user_1",
       purpose: "app.icon",
       requestId: "req-1",
       sizeBytes: 1024,
       target: { id: "app_1", type: "app" },
+      tenantId: "tenant_1",
+      uploadProfileCode: "image",
     });
 
-    expect(created.uploadMode).toBe("single_put");
-    expect(created).not.toHaveProperty("bucket");
-    expect(created).not.toHaveProperty("objectKey");
+    expect(uploaded).toEqual({
+      driveNodeId: "node_01J",
+      driveSpaceId: "space_01J",
+      driveUri: "drive://spaces/space_01J/nodes/node_01J",
+      fileRef: {
+        displayName: "icon.png",
+        fileId: "node_01J",
+        purpose: "app.icon",
+        visibility: "private",
+      },
+      requestId: "req-1",
+      status: "active",
+      uploadId: "upload_01J",
+    });
+    expect(uploaded).not.toHaveProperty("bucket");
+    expect(uploaded).not.toHaveProperty("objectKey");
 
     const completed = await uploadPort.completeUpload({
       checksum: { algorithm: "sha256", value: "abc" },
       idempotencyKey: "complete-1",
       purpose: "app.icon",
       requestId: "req-2",
-      sessionId: created.sessionId,
+      sessionId: "upl_legacy",
     });
 
     expect(completed.fileRef).toEqual({
@@ -137,23 +146,29 @@ describe("SDKWork file SDK ports", () => {
       purpose: "app.icon",
       visibility: "private",
     });
-    expect(sessions).toHaveLength(1);
+    expect(uploads).toHaveLength(1);
     expect(completions).toHaveLength(1);
   });
 
   it("provides explicit unsupported port defaults for dependency injection safety", async () => {
     const ports = createUnsupportedFilePlatformPorts();
     await expect(
-      ports.upload.createUploadSession({
+      ports.upload.uploadFile({
+        appId: "app-center",
+        appResourceId: "app_1",
+        appResourceType: "app",
         contentType: "image/png",
+        file: createTestFile("icon.png", "image/png", 1),
         filename: "icon.png",
         idempotencyKey: "idem",
+        operatorId: "user_1",
         purpose: "app.icon",
         requestId: "req",
         sizeBytes: 1,
         target: { id: "app_1", type: "app" },
+        tenantId: "tenant_1",
       }),
-    ).rejects.toThrow("file platform port upload.createUploadSession is not configured");
+    ).rejects.toThrow("file platform port upload.uploadFile is not configured");
     await expect(
       ports.adminStorage.updateProvider({
         providerId: "provider_1",
@@ -188,26 +203,25 @@ describe("SDKWork file SDK ports", () => {
 
   it("offers an in-memory upload test port for service tests without raw HTTP", async () => {
     const port = createInMemoryFileUploadPort();
-    const created = await port.createUploadSession({
+    const uploaded = await port.uploadFile({
+      appId: "app-center",
+      appResourceId: "app_1",
+      appResourceType: "app",
       contentType: "image/png",
+      file: createTestFile("icon.png", "image/png", 1),
       filename: "icon.png",
       idempotencyKey: "idem",
+      operatorId: "user_1",
       purpose: "app.icon",
       requestId: "req-create",
       sizeBytes: 1,
       target: { id: "app_1", type: "app" },
+      tenantId: "tenant_1",
     });
 
-    const completed = await port.completeUpload({
-      idempotencyKey: "idem-complete",
-      purpose: "app.icon",
-      requestId: "req-complete",
-      sessionId: created.sessionId,
-    });
-
-    expect(created.sessionId).toMatch(/^upl_/);
-    expect(completed.fileRef.fileId).toMatch(/^file_/);
-    expect(completed.fileRef.purpose).toBe("app.icon");
+    expect(uploaded.driveUri).toMatch(/^drive:\/\/spaces\/space_memory\/nodes\/node_/);
+    expect(uploaded.fileRef.fileId).toMatch(/^node_/);
+    expect(uploaded.fileRef.purpose).toBe("app.icon");
   });
 
   it("uses explicit idempotency keys for quota reservation ports", async () => {
@@ -805,3 +819,7 @@ describe("SDKWork file SDK ports", () => {
     expect(nodes.items[0]).not.toHaveProperty("objectKey");
   });
 });
+
+function createTestFile(name: string, type: string, size: number): Blob & { name: string } {
+  return Object.assign(new Blob([new Uint8Array(size)], { type }), { name });
+}

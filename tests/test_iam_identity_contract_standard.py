@@ -11,7 +11,7 @@ from tools.schema_registry_loader import load_schema_registry
 
 ROOT = Path(__file__).resolve().parents[1]
 BUSINESS_ROOT = ROOT.parent.parent
-APPBASE_ROOT = ROOT.parent / "sdkwork-appbase"
+APPBASE_ROOT = ROOT / ".sdkwork" / "dependencies" / "sdkwork-appbase"
 SCHEMA_REGISTRY = ROOT / "docs" / "schema-registry" / "sdkwork-claw-router.tables.yaml"
 FRONTEND_FIELD_CONTRACTS = ROOT / "docs" / "schema-registry" / "frontend-field-contracts.yaml"
 
@@ -51,9 +51,9 @@ SOURCE_LIST_KEYS = {
 }
 
 JAVA_CANONICAL_SOURCE_ROOTS = [
-    BUSINESS_ROOT / "spring-ai-plus-business-entity" / "src" / "main" / "java",
-    BUSINESS_ROOT / "spring-ai-plus-backend-api" / "src" / "main" / "java",
-    BUSINESS_ROOT / "spring-ai-plus-app-api" / "src" / "main" / "java",
+    BUSINESS_ROOT / "legacy-java-plus-entity" / "src" / "main" / "java",
+    BUSINESS_ROOT / "legacy-java-plus-backend-api" / "src" / "main" / "java",
+    BUSINESS_ROOT / "legacy-java-plus-app-api" / "src" / "main" / "java",
     BUSINESS_ROOT / "spring-ai-plus-server-application" / "src" / "main" / "java",
 ]
 JAVA_BOOTSTRAP_CONTRACT_ROOTS = [
@@ -109,10 +109,10 @@ FORBIDDEN_LEGACY_IDENTITY_JAVA_TYPE_PATTERN = re.compile(
 )
 
 JAVA_IDENTITY_TYPE_SOURCE_ROOTS = [
-    BUSINESS_ROOT / "spring-ai-plus-business-entity" / "src" / "main" / "java",
-    BUSINESS_ROOT / "spring-ai-plus-business-repository" / "src" / "main" / "java",
-    BUSINESS_ROOT / "spring-ai-plus-business-service" / "src" / "main" / "java",
-    BUSINESS_ROOT / "spring-ai-plus-backend-api" / "src" / "main" / "java",
+    BUSINESS_ROOT / "legacy-java-plus-entity" / "src" / "main" / "java",
+    BUSINESS_ROOT / "legacy-java-plus-repository" / "src" / "main" / "java",
+    BUSINESS_ROOT / "legacy-java-plus-service" / "src" / "main" / "java",
+    BUSINESS_ROOT / "legacy-java-plus-backend-api" / "src" / "main" / "java",
     BUSINESS_ROOT / "spring-ai-plus-server-application" / "src" / "main" / "java",
 ]
 

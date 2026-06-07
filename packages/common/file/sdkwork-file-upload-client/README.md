@@ -1,10 +1,13 @@
 # SDKWork File Upload Client
 
-Standard presigned upload client for the SDKWork file platform.
+Standard Drive uploader facade for the SDKWork file platform.
 
-This package performs short-lived presigned HTTP uploads issued by the file
-service. It supports single-part PUT/POST grants and sequential multipart part
-uploads. It does not choose buckets, object keys, providers, or upload URLs.
+This package exposes the file upload client contract as a thin wrapper over an
+injected Drive uploader implementation. Browser, desktop, and React callers
+provide an `uploadFile` function backed by `sdkwork-drive-app-sdk`
+`client.uploader.*`; this package does not create upload sessions, presign
+parts, choose buckets, build object keys, call raw HTTP, or own provider
+transport.
 
 ## SDKWork Documentation Contract
 
@@ -31,7 +34,8 @@ This module follows the canonical standards linked from `specs/component.spec.js
 
 ### Security
 
-Do not add secrets, live tokens, manual auth headers, or app-local credential handling to this module.
+Do not add secrets, live tokens, manual auth headers, raw Drive HTTP calls, or
+app-local credential handling to this module.
 
 ### Extension Points
 
@@ -40,6 +44,7 @@ Extension points are limited to declared public exports, runtime entrypoints, SD
 ### Verification
 
 - `pnpm --filter @sdkwork/file-upload-client typecheck`
+- `pnpm --filter @sdkwork/file-upload-client test`
 
 ### Owner And Status
 

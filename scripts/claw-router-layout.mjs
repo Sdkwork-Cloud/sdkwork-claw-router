@@ -3,30 +3,34 @@
 import { existsSync } from 'node:fs';
 import path from 'node:path';
 
-function findSpringAiPlusBusinessAppsRoot(startPath) {
+const WORKSPACE_ROOT_MARKERS = ['sdkwork-specs', 'sdkwork-claw-router'];
+
+function findWorkspaceRoot(startPath) {
   let current = path.resolve(startPath);
   while (true) {
+    if (WORKSPACE_ROOT_MARKERS.every((marker) => existsSync(path.join(current, marker)))) {
+      return current;
+    }
     const parent = path.dirname(current);
     if (parent === current) {
-      break;
-    }
-    const candidate = path.join(parent, 'spring-ai-plus-business', 'apps');
-    if (existsSync(candidate)) {
-      return candidate;
+      return null;
     }
     current = parent;
   }
-  return null;
 }
 
 export function resolveClawRouterBusinessAppsRoot(startPath = path.resolve(import.meta.dirname, '..')) {
-  return findSpringAiPlusBusinessAppsRoot(startPath) ?? path.resolve(startPath, '..');
+  return findWorkspaceRoot(startPath) ?? path.resolve(startPath, '..');
+}
+
+export function resolveClawRouterAppStandardToolsRoot(startPath = path.resolve(import.meta.dirname, '..')) {
+  return resolveClawRouterBusinessAppsRoot(startPath);
 }
 
 export function resolveClawRouterBusinessRoot(startPath = path.resolve(import.meta.dirname, '..')) {
-  return path.dirname(resolveClawRouterBusinessAppsRoot(startPath));
+  return resolveClawRouterBusinessAppsRoot(startPath);
 }
 
 export function resolveClawRouterBusinessSpecsRoot(startPath = path.resolve(import.meta.dirname, '..')) {
-  return path.join(resolveClawRouterBusinessRoot(startPath), 'specs');
+  return path.join(resolveClawRouterBusinessRoot(startPath), 'sdkwork-specs');
 }

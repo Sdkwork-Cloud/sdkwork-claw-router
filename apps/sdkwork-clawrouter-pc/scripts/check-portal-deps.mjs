@@ -48,8 +48,23 @@ const forbiddenAliasTokens = [
   'void-elements',
 ];
 
+const forbiddenRuntimeDependencies = [
+  ['@sdkwork/', 'app-sdk'].join(''),
+  ['@sdkwork/', 'backend-sdk'].join(''),
+];
+
 function readJson(relativePath) {
   return JSON.parse(readFileSync(path.join(portalRoot, relativePath), 'utf8'));
+}
+
+function assertNoRetiredGenericSdkDependencies() {
+  const packageJson = readJson('package.json');
+  const dependencies = packageJson.dependencies ?? {};
+  const offenders = forbiddenRuntimeDependencies.filter((dependency) => dependencies[dependency]);
+
+  if (offenders.length > 0) {
+    throw new Error(`Portal package.json must not declare retired generic SDK dependencies: ${offenders.join(', ')}`);
+  }
 }
 
 function assertDirectDependencies() {
@@ -105,6 +120,7 @@ async function assertMotionReactExports() {
 }
 
 try {
+  assertNoRetiredGenericSdkDependencies();
   assertDirectDependencies();
   assertRuntimePackagesResolve();
   assertViteConfigDoesNotAliasRuntimeDependencies();
