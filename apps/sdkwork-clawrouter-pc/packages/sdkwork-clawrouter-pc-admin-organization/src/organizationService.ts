@@ -90,6 +90,12 @@ export interface UserRecord {
   displayName: string;
   email: string;
   mobile: string;
+  gender: string;
+  country: string;
+  province: string;
+  city: string;
+  district: string;
+  address: string;
   status: OrganizationStatus;
   createdAt: string;
   updatedAt: string;
@@ -761,6 +767,12 @@ function normalizeUser(value: unknown): UserRecord {
     displayName,
     email: readString(item, 'email'),
     mobile: readFirstString(item, ['mobile', 'phone']),
+    gender: readFirstString(item, ['gender', 'sex']),
+    country: readFirstString(item, ['country', 'countryCode', 'countryName', 'nation']),
+    province: readFirstString(item, ['province', 'state', 'region']),
+    city: readFirstString(item, ['city', 'locality']),
+    district: readFirstString(item, ['district', 'county', 'area']),
+    address: readFirstString(item, ['address', 'streetAddress', 'addressLine']),
     status: readString(item, 'status', 'active'),
     createdAt: readString(item, 'createdAt'),
     updatedAt: readString(item, 'updatedAt'),

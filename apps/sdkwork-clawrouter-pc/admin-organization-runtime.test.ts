@@ -221,23 +221,30 @@ test("admin organization keeps the main workspace simple and moves auxiliary ass
   assert.match(sourceCode, /if \(dialog\.kind === 'positionAssignment'\) \{/);
 });
 
-test("admin organization right-side context lists expose refresh actions", () => {
+test("admin organization table headers use consistent actions without redundant refresh", () => {
   const sourceCode = source("packages/sdkwork-clawrouter-pc-admin-organization/src/index.tsx");
   const membersTabSource = sourceSection(sourceCode, "function MembersTab(", "function PositionsTab(");
   const positionsTabSource = sourceSection(sourceCode, "function PositionsTab(", "function AssignmentDrawer(");
   const authorizationTabSource = sourceSection(sourceCode, "function AuthorizationTab(", "function AuthorizationDrawer(");
 
   for (const componentSource of [membersTabSource, positionsTabSource, authorizationTabSource]) {
-    assert.match(componentSource, /isRefreshing/);
-    assert.match(componentSource, /onRefresh/);
-    assert.match(componentSource, /IconButton label=\{t\('common\.actions\.refresh', 'Refresh'\)\} onClick=\{onRefresh\} disabled=\{isRefreshing\}/);
-    assert.match(componentSource, /RefreshCw className=\{`h-4 w-4 \$\{isRefreshing \? 'animate-spin' : ''\}`\}/);
+    assert.doesNotMatch(componentSource, /isRefreshing/);
+    assert.doesNotMatch(componentSource, /onRefresh/);
+    assert.doesNotMatch(componentSource, /common\.actions\.refresh/);
+    assert.doesNotMatch(componentSource, /RefreshCw/);
+    assert.match(componentSource, /HeaderButton/);
   }
 
-  assert.match(sourceCode, /<MembersTab[\s\S]*isRefreshing=\{loading\}[\s\S]*onRefresh=\{\(\) => \{ void loadDirectory\(\); \}\}/);
-  assert.match(sourceCode, /<PositionsTab[\s\S]*isRefreshing=\{loading\}[\s\S]*onRefresh=\{\(\) => \{ void loadDirectory\(\); \}\}/);
-  assert.match(sourceCode, /<AuthorizationTab[\s\S]*isRefreshing=\{loading\}[\s\S]*onRefresh=\{\(\) => \{ void loadDirectory\(\); \}\}/);
-  assert.match(sourceCode, /function IconButton\(\{ children, disabled, label, onClick \}/);
+  assert.doesNotMatch(sourceCode, /RefreshCw/);
+  assert.doesNotMatch(sourceCode, /<MembersTab[\s\S]*isRefreshing=\{loading\}/);
+  assert.doesNotMatch(sourceCode, /<MembersTab[\s\S]*onRefresh=\{\(\) => \{ void loadDirectory\(\); \}\}/);
+  assert.doesNotMatch(sourceCode, /<PositionsTab[\s\S]*isRefreshing=\{loading\}/);
+  assert.doesNotMatch(sourceCode, /<PositionsTab[\s\S]*onRefresh=\{\(\) => \{ void loadDirectory\(\); \}\}/);
+  assert.doesNotMatch(sourceCode, /<AuthorizationTab[\s\S]*isRefreshing=\{loading\}/);
+  assert.doesNotMatch(sourceCode, /<AuthorizationTab[\s\S]*onRefresh=\{\(\) => \{ void loadDirectory\(\); \}\}/);
+  assert.match(sourceCode, /function HeaderButton\(\{ children, disabled, label, onClick, variant = 'secondary' \}/);
+  assert.match(sourceCode, /className=\{`inline-flex h-10 items-center justify-center gap-2 rounded-lg px-3 text-sm font-semibold/);
+  assert.match(sourceCode, /variant === 'primary'/);
 });
 
 test("admin organization query lives in the left side of right table headers", () => {
@@ -296,6 +303,11 @@ test("admin organization query lives in the left side of right table headers", (
   assert.match(authorizationTabSource, /header=\{\([\s\S]*<TableHeader[\s\S]*query=\{/);
 
   assert.match(sourceCode, /function TableHeader\(\{ action, query \}: \{ action\?: ReactNode; query\?: ReactNode \}\)/);
+  assert.match(sourceCode, /query \? 'justify-between' : 'justify-end'/);
+  assert.match(sourceCode, /<div className="w-full shrink-0 sm:w-\[360px\] lg:w-\[420px\]">\{query\}<\/div>/);
+  assert.match(sourceCode, /<form className="flex w-full items-center gap-2" onSubmit=\{onQuery\}>/);
+  assert.doesNotMatch(sourceCode, /<div className="min-w-\[260px\] flex-1">\{query\}<\/div>/);
+  assert.doesNotMatch(sourceCode, /<form className="flex min-w-0 flex-1 items-center gap-2"/);
   assert.match(messages, /"admin\.organization\.search\.members": "Search members\.\.\."/);
   assert.match(messages, /"admin\.organization\.search\.positions": "Search positions\.\.\."/);
   assert.match(messages, /"admin\.organization\.search\.permissions": "Search permissions\.\.\."/);
@@ -521,7 +533,7 @@ test("admin organization expands the clicked organization branch before departme
   assert.match(sourceCode, /aria-expanded=\{hasChildren \? expanded : undefined\}/);
 });
 
-test("admin organization member dialog selects users from the appbase user directory", () => {
+test("admin organization add member uses a dedicated user chooser instead of raw user id input", () => {
   const sourceCode = source("packages/sdkwork-clawrouter-pc-admin-organization/src/index.tsx");
   const service = source("packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts");
 
@@ -533,16 +545,65 @@ test("admin organization member dialog selects users from the appbase user direc
   assert.match(sourceCode, /users: \[],/);
   assert.match(sourceCode, /usersById: Map<string, UserRecord>;/);
   assert.match(sourceCode, /function formatUserLabel\(userId: string \| null \| undefined, lookups: DirectoryLookups\): string/);
-  assert.match(sourceCode, /function availableDirectoryUserOptions\(/);
+  assert.match(sourceCode, /type ChooseUserModalState = \{ organizationId: string \} \| null;/);
+  assert.match(sourceCode, /const \[chooseUserModal, setChooseUserModal\] = useState<ChooseUserModalState>\(null\);/);
+  assert.match(sourceCode, /function ChooseUserModal\(/);
+  assert.match(sourceCode, /function availableUsersForMembership\(/);
+  assert.match(sourceCode, /function userSearchLabels\(user: UserRecord\): string\[]/);
+  assert.match(sourceCode, /<ChooseUserModal[\s\S]*existingMembers=\{membersForActiveOrganization\}[\s\S]*onChoose=\{handleChooseUser\}[\s\S]*users=\{directory\.users\}/);
+  assert.match(sourceCode, /async function handleChooseUser\(user: UserRecord\): Promise<void>/);
   assert.match(
     sourceCode,
-    /SelectField key=\{`membership-user-\$\{membershipOrganizationId\}`\} label=\{t\('admin\.organization\.fields\.userId', 'User'\)\} name="userId" required defaultValue=\{target\?\.userId\} options=\{availableDirectoryUserOptions\(directory\.users, membersForMembershipOrganization, lookups, membershipOrganizationId, target\?\.userId\)\}/,
+    /await OrganizationService\.createMembership\(\{[\s\S]*organizationId: chooseUserModal\.organizationId,[\s\S]*userId: user\.id,[\s\S]*displayName: user\.displayName,[\s\S]*username: user\.username,[\s\S]*email: user\.email,[\s\S]*mobile: user\.mobile,[\s\S]*memberKind: 'member',[\s\S]*status: 'active',[\s\S]*\}\);/,
   );
+  assert.match(sourceCode, /onAddMember=\{\(\) => setChooseUserModal\(\{ organizationId: activeOrganizationIdForRelations \}\)\}/);
+  assert.match(sourceCode, /setChooseUserModal\(\{ organizationId: node\.organizationId \}\);/);
+  assert.match(
+    sourceCode,
+    /if \(dialog\.kind === 'membership'\) \{[\s\S]*dialog\.mode === 'edit'[\s\S]*SelectField[\s\S]*name="status"[\s\S]*\}/,
+    "membership edit can keep lifecycle fields but member creation should happen through ChooseUserModal",
+  );
+  assert.doesNotMatch(sourceCode, /setDialog\(\{ kind: 'membership', mode: 'create' \}\)/);
+  assert.doesNotMatch(sourceCode, /function availableDirectoryUserOptions\(/);
+  assert.doesNotMatch(sourceCode, /membership-user-/);
   assert.doesNotMatch(
     sourceCode,
     /TextField label=\{t\('admin\.organization\.fields\.userId'/,
     "member creation should select from appbase users instead of typing raw user IDs",
   );
+});
+
+test("admin organization user records keep professional optional profile fields from appbase", () => {
+  const sourceCode = source("packages/sdkwork-clawrouter-pc-admin-organization/src/index.tsx");
+  const service = source("packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts");
+  const messages = source("packages/sdkwork-clawrouter-pc-i18n/src/resources/admin/organization.ts");
+
+  for (const field of ["gender", "country", "province", "city", "district", "address"]) {
+    assert.match(service, new RegExp(`${field}: string;`), `missing UserRecord field ${field}`);
+  }
+
+  assert.match(service, /gender: readFirstString\(item, \['gender', 'sex'\]\)/);
+  assert.match(service, /country: readFirstString\(item, \['country', 'countryCode', 'countryName', 'nation'\]\)/);
+  assert.match(service, /province: readFirstString\(item, \['province', 'state', 'region'\]\)/);
+  assert.match(service, /city: readFirstString\(item, \['city', 'locality'\]\)/);
+  assert.match(service, /district: readFirstString\(item, \['district', 'county', 'area'\]\)/);
+  assert.match(service, /address: readFirstString\(item, \['address', 'streetAddress', 'addressLine'\]\)/);
+
+  assert.match(sourceCode, /function formatUserRegion\(user: UserRecord \| null \| undefined\): string/);
+  assert.match(sourceCode, /function formatUserGender\(user: UserRecord \| null \| undefined, t: TranslationFunction\): string/);
+  assert.match(sourceCode, /function userForMember\(member: OrganizationMemberRecord, lookups: DirectoryLookups\): UserRecord \| null/);
+  assert.match(sourceCode, /memberUserRegion\(member, lookups\)/);
+  assert.match(sourceCode, /memberUserGender\(member, lookups, t\)/);
+  assert.match(sourceCode, /t\('admin\.organization\.columns\.region', 'Region'\)/);
+  assert.match(sourceCode, /t\('admin\.organization\.columns\.gender', 'Gender'\)/);
+  assert.match(sourceCode, /t\('admin\.organization\.columns\.address', 'Address'\)/);
+  assert.match(sourceCode, /t\('admin\.organization\.gender\.male', 'Male'\)/);
+  assert.match(sourceCode, /t\('admin\.organization\.gender\.female', 'Female'\)/);
+  assert.match(messages, /"admin\.organization\.columns\.region": "Region"/);
+  assert.match(messages, /"admin\.organization\.columns\.gender": "Gender"/);
+  assert.match(messages, /"admin\.organization\.columns\.address": "Address"/);
+  assert.match(messages, /"admin\.organization\.chooseUser\.title": "Choose user"/);
+  assert.match(messages, /"admin\.organization\.actions\.selectUser": "Select"/);
 });
 
 test("admin organization UI deactivates members and assignment lifecycle records", () => {
@@ -666,22 +727,16 @@ test("admin organization owner and manager fields are selected from members", ()
 test("admin organization forms recompute organization-scoped options when organization changes", () => {
   const sourceCode = source("packages/sdkwork-clawrouter-pc-admin-organization/src/index.tsx");
 
-  assert.match(sourceCode, /const \[membershipOrganizationId, setMembershipOrganizationId\] = useState\(/);
+  assert.doesNotMatch(sourceCode, /const \[membershipOrganizationId, setMembershipOrganizationId\] = useState\(/);
   assert.match(sourceCode, /const \[departmentOrganizationId, setDepartmentOrganizationId\] = useState\(/);
   assert.match(sourceCode, /const \[positionOrganizationId, setPositionOrganizationId\] = useState\(/);
-  assert.match(sourceCode, /const membersForMembershipOrganization = membersForOrganization\(activeMemberships, membershipOrganizationId\);/);
+  assert.doesNotMatch(sourceCode, /const membersForMembershipOrganization = membersForOrganization\(activeMemberships, membershipOrganizationId\);/);
   assert.match(sourceCode, /const membersForDepartmentOrganization = membersForOrganization\(activeMemberships, departmentOrganizationId\);/);
   assert.match(sourceCode, /const departmentsForDepartmentOrganization = departmentsForOrganization\(activeDepartments, departmentOrganizationId\);/);
   assert.match(sourceCode, /const departmentsForPositionOrganization = departmentsForOrganization\(activeDepartments, positionOrganizationId\);/);
   assert.match(sourceCode, /function departmentsForOrganization\(departments: DepartmentRecord\[], organizationId: string \| null \| undefined\): DepartmentRecord\[]/);
-  assert.match(
-    sourceCode,
-    /SelectField label=\{t\('admin\.organization\.fields\.organization', 'Organization'\)\} name="organizationId" required defaultValue=\{target\?\.organizationId \|\| activeOrganizationIdForRelations\} options=\{organizationOptions\(activeOrganizations, lookups, target\?\.organizationId \|\| activeOrganizationIdForRelations\)\} onChange=\{setMembershipOrganizationId\}/,
-  );
-  assert.match(
-    sourceCode,
-    /availableDirectoryUserOptions\(directory\.users, membersForMembershipOrganization, lookups, membershipOrganizationId, target\?\.userId\)/,
-  );
+  assert.doesNotMatch(sourceCode, /onChange=\{setMembershipOrganizationId\}/);
+  assert.doesNotMatch(sourceCode, /availableDirectoryUserOptions\(directory\.users, membersForMembershipOrganization, lookups, membershipOrganizationId, target\?\.userId\)/);
   assert.match(
     sourceCode,
     /SelectField label=\{t\('admin\.organization\.fields\.organization', 'Organization'\)\} name="organizationId" required defaultValue=\{target\?\.organizationId \|\| activeOrganizationIdForRelations\} options=\{organizationOptions\(activeOrganizations, lookups, target\?\.organizationId \|\| activeOrganizationIdForRelations\)\} onChange=\{setDepartmentOrganizationId\}/,
@@ -707,10 +762,7 @@ test("admin organization forms recompute organization-scoped options when organi
     sourceCode,
     /departmentOptions\(departmentsForPositionOrganization, lookups, target\?\.departmentId\)/,
   );
-  assert.match(
-    sourceCode,
-    /key=\{`membership-user-\$\{membershipOrganizationId\}`\}/,
-  );
+  assert.doesNotMatch(sourceCode, /key=\{`membership-user-\$\{membershipOrganizationId\}`\}/);
   assert.match(
     sourceCode,
     /key=\{`department-manager-\$\{departmentOrganizationId\}`\}/,
@@ -769,14 +821,15 @@ test("admin organization assignment pickers stay inside active organization cont
 test("admin organization member creation excludes users that are already active members", () => {
   const sourceCode = source("packages/sdkwork-clawrouter-pc-admin-organization/src/index.tsx");
 
-  assert.match(sourceCode, /function availableDirectoryUserOptions\(/);
+  assert.match(sourceCode, /function availableUsersForMembership\(/);
   assert.match(sourceCode, /existingMembers: OrganizationMemberRecord\[]/);
   assert.match(sourceCode, /const blockedUserIds = new Set\(/);
   assert.match(sourceCode, /item\.organizationId === organizationId && isActiveRecord\(item\) && item\.userId/);
   assert.match(
     sourceCode,
-    /SelectField key=\{`membership-user-\$\{membershipOrganizationId\}`\} label=\{t\('admin\.organization\.fields\.userId', 'User'\)\} name="userId" required defaultValue=\{target\?\.userId\} options=\{availableDirectoryUserOptions\(directory\.users, membersForMembershipOrganization, lookups, membershipOrganizationId, target\?\.userId\)\}/,
+    /const availableUsers = availableUsersForMembership\(users, existingMembers, organizationId\);/,
   );
+  assert.match(sourceCode, /users\.filter\(\(item\) => !blockedUserIds\.has\(item\.id\)\)/);
   assert.doesNotMatch(
     sourceCode,
     /directoryUserOptions\(directory\.users, lookups, target\?\.userId\)/,

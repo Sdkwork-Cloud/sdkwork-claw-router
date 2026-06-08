@@ -367,6 +367,92 @@ test("admin user i18n resources cover visible management copy", () => {
   assert.equal(resources.zh.translation["admin.user.index.columns.username"], "用户名");
 });
 
+test("admin user table keeps professional optional profile fields from appbase users", async () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-clawrouter-pc-admin-user/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+  const service = readFileSync(
+    new URL("./packages/sdkwork-clawrouter-pc-admin-user/src/userService.ts", import.meta.url),
+    "utf8",
+  );
+
+  for (const field of ["displayName", "mobile", "gender", "country", "province", "city", "district", "address", "updatedAt"]) {
+    assert.match(service, new RegExp(`${field}: string;`), `missing UserListItem field ${field}`);
+  }
+
+  assert.match(service, /displayName: readFirstString\(item, \['displayName', 'name', 'nickname', 'title'\]/);
+  assert.match(service, /mobile: readFirstString\(item, \['mobile', 'phone', 'phoneNumber'\]\)/);
+  assert.match(service, /gender: readFirstString\(item, \['gender', 'sex'\]\)/);
+  assert.match(service, /country: readFirstString\(item, \['country', 'countryCode', 'countryName', 'nation'\]\)/);
+  assert.match(service, /province: readFirstString\(item, \['province', 'state', 'region'\]\)/);
+  assert.match(service, /city: readFirstString\(item, \['city', 'locality'\]\)/);
+  assert.match(service, /district: readFirstString\(item, \['district', 'county', 'area'\]\)/);
+  assert.match(service, /address: readFirstString\(item, \['address', 'streetAddress', 'addressLine'\]\)/);
+
+  assert.match(source, /t\('admin\.user\.index\.columns\.contact', 'Contact'\)/);
+  assert.match(source, /t\('admin\.user\.index\.columns\.region', 'Region'\)/);
+  assert.match(source, /t\('admin\.user\.index\.columns\.gender', 'Gender'\)/);
+  assert.match(source, /displayValue\(userItem\.email\)/);
+  assert.match(source, /displayValue\(userItem\.mobile\)/);
+  assert.match(source, /formatUserRegion\(userItem\)/);
+  assert.match(source, /getUserGenderLabel\(userItem\.gender, t\)/);
+  assert.match(source, /function getUserGenderLabel\(gender: string, t: TranslationFunction\): string/);
+  assert.match(source, /function formatUserRegion\(user: UserListItem\): string/);
+  assert.match(source, /function formatUserPrimaryLabel\(user: UserListItem\): string/);
+  assert.match(source, /function displayValue\(value: string \| null \| undefined\): string/);
+  assert.match(source, /data-admin-user-primary-action/);
+  assert.match(source, /className="inline-flex h-10 shrink-0 items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 text-sm font-medium text-white/);
+
+  assert.equal(resources.en.translation["admin.user.index.columns.region"], "Region");
+  assert.equal(resources.zh.translation["admin.user.index.columns.region"], "地区");
+  assert.equal(resources.en.translation["admin.user.gender.female"], "Female");
+  assert.equal(resources.zh.translation["admin.user.gender.female"], "女");
+
+  await withBackendSdkResponse(
+    {
+      code: "2000",
+      data: {
+        items: [
+          {
+            id: "9007199254740993",
+            email: "admin@example.com",
+            username: "Admin",
+            displayName: "Admin Owner",
+            mobile: "+86 13800000000",
+            sex: "female",
+            countryName: "China",
+            province: "Zhejiang",
+            city: "Hangzhou",
+            district: "Xihu",
+            addressLine: "No. 1 Road",
+            status: "inactive",
+            createdAt: "2026-05-05T08:00:00Z",
+            updatedAt: "2026-05-05T09:00:00Z",
+          },
+        ],
+      },
+    },
+    async () => {
+      const users = await UserService.fetchUsers();
+      assert.equal(users[0].displayName, "Admin Owner");
+      assert.equal(users[0].mobile, "+86 13800000000");
+      assert.equal(users[0].gender, "female");
+      assert.equal(users[0].country, "China");
+      assert.equal(users[0].province, "Zhejiang");
+      assert.equal(users[0].city, "Hangzhou");
+      assert.equal(users[0].district, "Xihu");
+      assert.equal(users[0].address, "No. 1 Road");
+      assert.equal(users[0].status, "inactive");
+      assert.equal(users[0].role, "");
+      assert.equal(users[0].group, "");
+      assert.equal(users[0].balance, "");
+      assert.equal(users[0].lastActive, "");
+      assert.equal(users[0].lastUsed, "");
+    },
+  );
+});
+
 test("admin user table fills the available admin viewport", () => {
   const source = readFileSync(
     new URL("./packages/sdkwork-clawrouter-pc-admin-user/src/index.tsx", import.meta.url),
@@ -608,7 +694,7 @@ test("admin user list fails closed when backend returns malformed user rows", as
   );
 });
 
-test("admin user list fails closed when backend omits user email", async () => {
+test("admin user list preserves real users when optional email and profile fields are absent", async () => {
   await withBackendSdkResponse(
     {
       code: "2000",
@@ -629,15 +715,16 @@ test("admin user list fails closed when backend omits user email", async () => {
       },
     },
     async () => {
-      await assert.rejects(
-        () => UserService.fetchUsers(),
-        /User email is required/,
-      );
+      const users = await UserService.fetchUsers();
+      assert.equal(users[0].id, "9007199254740993");
+      assert.equal(users[0].email, "");
+      assert.equal(users[0].displayName, "");
+      assert.equal(users[0].mobile, "");
     },
   );
 });
 
-test("admin user list fails closed when backend returns unsupported user status", async () => {
+test("admin user list preserves backend user lifecycle statuses instead of failing on real values", async () => {
   await withBackendSdkResponse(
     {
       code: "2000",
@@ -659,10 +746,8 @@ test("admin user list fails closed when backend returns unsupported user status"
       },
     },
     async () => {
-      await assert.rejects(
-        () => UserService.fetchUsers(),
-        /Unsupported user status: deleted/,
-      );
+      const users = await UserService.fetchUsers();
+      assert.equal(users[0].status, "deleted");
     },
   );
 });

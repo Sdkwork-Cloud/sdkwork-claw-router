@@ -9,7 +9,6 @@ import {
   GitBranch,
   MoreHorizontal,
   Plus,
-  RefreshCw,
   Search,
   ShieldCheck,
   Trash2,
@@ -67,6 +66,7 @@ type OrganizationDialog =
 
 type AssignmentDrawerState = 'departmentAssignments' | 'positionAssignments';
 type AuthorizationDrawerState = 'roles' | 'rolePermissions' | 'roleBindings';
+type ChooseUserModalState = { organizationId: string } | null;
 type ConfirmDependency = { count: number; label: string };
 type ConfirmTargetBase = { id: string; label: string; dependencies?: ConfirmDependency[]; blocked?: boolean };
 type ConfirmTarget =
@@ -159,6 +159,7 @@ export function OrganizationAdmin() {
   const [expandedDirectoryNodeIds, setExpandedDirectoryNodeIds] = useState<Set<string>>(() => new Set());
   const [directoryNodeMenu, setDirectoryNodeMenu] = useState<DirectoryNodeMenuState | null>(null);
   const [dialog, setDialog] = useState<OrganizationDialog | null>(null);
+  const [chooseUserModal, setChooseUserModal] = useState<ChooseUserModalState>(null);
   const [assignmentDrawer, setAssignmentDrawer] = useState<AssignmentDrawerState | null>(null);
   const [authorizationDrawer, setAuthorizationDrawer] = useState<AuthorizationDrawerState | null>(null);
   const [confirmTarget, setConfirmTarget] = useState<ConfirmTarget | null>(null);
@@ -480,6 +481,32 @@ export function OrganizationAdmin() {
     }
   };
 
+  async function handleChooseUser(user: UserRecord): Promise<void> {
+    if (!chooseUserModal) {
+      return;
+    }
+    setBusy(true);
+    setActionError(null);
+    try {
+      await OrganizationService.createMembership({
+        organizationId: chooseUserModal.organizationId,
+        userId: user.id,
+        displayName: user.displayName,
+        username: user.username,
+        email: user.email,
+        mobile: user.mobile,
+        memberKind: 'member',
+        status: 'active',
+      });
+      setChooseUserModal(null);
+      await loadDirectory();
+    } catch (error) {
+      setActionError(getErrorMessage(error, t('admin.organization.errors.actionFailed', 'Action failed')));
+    } finally {
+      setBusy(false);
+    }
+  }
+
   const handleConfirm = async () => {
     if (!confirmTarget) {
       return;
@@ -638,7 +665,7 @@ export function OrganizationAdmin() {
                         onSelect: () => {
                           handleDirectoryNodeSelect(node);
                           setActiveTab('members');
-                          setDialog({ kind: 'membership', mode: 'create' });
+                          setChooseUserModal({ organizationId: node.organizationId });
                         },
                       } : null,
                       department && isActiveRecord(department) ? {
@@ -767,17 +794,15 @@ export function OrganizationAdmin() {
             <MembersTab
               canAddAssignment={Boolean(activeOrganizationIdForRelations && activeDepartmentIdForRelations && activeMembersForActiveOrganization.length > 0)}
               canAddMember={Boolean(activeOrganizationIdForRelations)}
-              isRefreshing={loading}
               lookups={lookups}
               members={visibleMemberships}
               onAddAssignment={() => setDialog({ kind: 'departmentAssignment', mode: 'create' })}
-              onAddMember={() => setDialog({ kind: 'membership', mode: 'create' })}
+              onAddMember={() => setChooseUserModal({ organizationId: activeOrganizationIdForRelations })}
               onManageAssignments={() => setAssignmentDrawer('departmentAssignments')}
               onDeactivateMember={(target) => setConfirmTarget({ kind: 'membership', id: target.id, label: formatMemberLabel(target.id, target.userId, lookups) })}
               onEditMember={(target) => setDialog({ kind: 'membership', mode: 'edit', target })}
               onQuery={handleListSearchSubmit}
               onQueryValueChange={setListSearchInput}
-              onRefresh={() => { void loadDirectory(); }}
               queryLabel={t('common.actions.query', 'Query')}
               queryPlaceholder={t('admin.organization.search.members', 'Search members...')}
               queryValue={listSearchInput}
@@ -789,7 +814,6 @@ export function OrganizationAdmin() {
             <PositionsTab
               canAddAssignment={Boolean(activeOrganizationIdForRelations && activePositionsForActiveContext.length > 0 && activeMembersForActiveOrganization.length > 0)}
               canCreate={Boolean(activeOrganizationIdForRelations)}
-              isRefreshing={loading}
               lookups={lookups}
               onAddAssignment={() => setDialog({ kind: 'positionAssignment', mode: 'create' })}
               onCreate={() => setDialog({ kind: 'position', mode: 'create' })}
@@ -798,7 +822,6 @@ export function OrganizationAdmin() {
               onEdit={(target) => setDialog({ kind: 'position', mode: 'edit', target })}
               onQuery={handleListSearchSubmit}
               onQueryValueChange={setListSearchInput}
-              onRefresh={() => { void loadDirectory(); }}
               positions={visiblePositions}
               queryLabel={t('common.actions.query', 'Query')}
               queryPlaceholder={t('admin.organization.search.positions', 'Search positions...')}
@@ -809,7 +832,6 @@ export function OrganizationAdmin() {
 
           {activeTab === 'authorization' ? (
             <AuthorizationTab
-              isRefreshing={loading}
               onCreatePermission={() => setDialog({ kind: 'permission', mode: 'create' })}
               onDeletePermission={(target) => setConfirmTarget(buildPermissionConfirmTarget(target, rolePermissions, t))}
               onEditPermission={(target) => setDialog({ kind: 'permission', mode: 'edit', target })}
@@ -818,7 +840,6 @@ export function OrganizationAdmin() {
               onManageRoles={() => setAuthorizationDrawer('roles')}
               onQuery={handleListSearchSubmit}
               onQueryValueChange={setListSearchInput}
-              onRefresh={() => { void loadDirectory(); }}
               permissions={visiblePermissions}
               queryLabel={t('common.actions.query', 'Query')}
               queryPlaceholder={t('admin.organization.search.permissions', 'Search permissions...')}
@@ -901,6 +922,19 @@ export function OrganizationAdmin() {
           roles={visibleRoles}
           selectedRoleId={activeRoleId}
           t={t}
+        />
+      ) : null}
+
+      {chooseUserModal ? (
+        <ChooseUserModal
+          existingMembers={membersForActiveOrganization}
+          isBusy={busy}
+          lookups={lookups}
+          onCancel={() => setChooseUserModal(null)}
+          onChoose={handleChooseUser}
+          organizationId={chooseUserModal.organizationId}
+          t={t}
+          users={directory.users}
         />
       ) : null}
 
@@ -1191,7 +1225,6 @@ function ContextBadge({ department, organization, t }: { department: DepartmentR
 function MembersTab({
   canAddAssignment,
   canAddMember,
-  isRefreshing,
   lookups,
   members,
   onAddAssignment,
@@ -1201,7 +1234,6 @@ function MembersTab({
   onEditMember,
   onQuery,
   onQueryValueChange,
-  onRefresh,
   queryLabel,
   queryPlaceholder,
   queryValue,
@@ -1209,7 +1241,6 @@ function MembersTab({
 }: {
   canAddAssignment: boolean;
   canAddMember: boolean;
-  isRefreshing: boolean;
   lookups: DirectoryLookups;
   members: OrganizationMemberRecord[];
   onAddAssignment: () => void;
@@ -1219,7 +1250,6 @@ function MembersTab({
   onEditMember: (target: OrganizationMemberRecord) => void;
   onQuery: (event?: FormEvent<HTMLFormElement>) => void;
   onQueryValueChange: (value: string) => void;
-  onRefresh: () => void;
   queryLabel: string;
   queryPlaceholder: string;
   queryValue: string;
@@ -1241,25 +1271,24 @@ function MembersTab({
             )}
             action={(
               <div className="flex flex-wrap items-center gap-2">
-                <IconButton label={t('common.actions.refresh', 'Refresh')} onClick={onRefresh} disabled={isRefreshing}>
-                  <RefreshCw className={`h-4 w-4 ${isRefreshing ? 'animate-spin' : ''}`} />
-                </IconButton>
-                <SmallButton label={t('admin.organization.actions.assign', 'Assign')} onClick={onAddAssignment} disabled={!canAddAssignment} />
-                <SmallButton label={t('admin.organization.actions.assignments', 'Assignments')} onClick={onManageAssignments} />
-                <PrimaryButton label={t('admin.organization.actions.addMember', 'Add member')} onClick={onAddMember} disabled={!canAddMember}>
+                <HeaderButton label={t('admin.organization.actions.assign', 'Assign')} onClick={onAddAssignment} disabled={!canAddAssignment} />
+                <HeaderButton label={t('admin.organization.actions.assignments', 'Assignments')} onClick={onManageAssignments} />
+                <HeaderButton label={t('admin.organization.actions.addMember', 'Add member')} onClick={onAddMember} disabled={!canAddMember} variant="primary">
                   <UserPlus className="h-4 w-4" />
-                </PrimaryButton>
+                </HeaderButton>
               </div>
             )}
           />
         )}
         viewportClassName="min-h-0"
       >
-        <table className="w-full min-w-[860px] text-left text-sm">
+        <table className="w-full min-w-[1120px] text-left text-sm">
           <thead className="sticky top-0 z-10 border-b border-slate-200 bg-slate-50 text-xs font-semibold text-slate-500 dark:border-white/10 dark:bg-[#121212] dark:text-slate-400">
             <tr>
               <th className="px-4 py-3">{t('admin.organization.columns.member', 'Member')}</th>
               <th className="px-4 py-3">{t('admin.organization.columns.contact', 'Contact')}</th>
+              <th className="px-4 py-3">{t('admin.organization.columns.region', 'Region')}</th>
+              <th className="px-4 py-3">{t('admin.organization.columns.gender', 'Gender')}</th>
               <th className="px-4 py-3">{t('admin.organization.columns.kind', 'Kind')}</th>
               <th className="px-4 py-3">{t('admin.organization.columns.status', 'Status')}</th>
               <th className="px-4 py-3">{t('admin.organization.columns.joinedAt', 'Joined')}</th>
@@ -1268,7 +1297,7 @@ function MembersTab({
           </thead>
           <tbody className="divide-y divide-slate-200 dark:divide-white/5">
             {members.length === 0 ? (
-              <BusinessStateTableRow colSpan={6} kind="empty" title={t('admin.organization.empty.members', 'No members')} />
+              <BusinessStateTableRow colSpan={8} kind="empty" title={t('admin.organization.empty.members', 'No members')} />
             ) : members.map((member) => (
               <tr key={member.id} className="hover:bg-slate-50 dark:hover:bg-white/5">
                 <td className="px-4 py-3">
@@ -1279,6 +1308,8 @@ function MembersTab({
                   <div>{memberContactPrimary(member, lookups)}</div>
                   <div className="text-xs text-slate-500">{memberContactSecondary(member, lookups)}</div>
                 </td>
+                <td className="px-4 py-3 text-slate-600 dark:text-slate-300">{memberUserRegion(member, lookups)}</td>
+                <td className="px-4 py-3 text-slate-600 dark:text-slate-300">{memberUserGender(member, lookups, t)}</td>
                 <td className="px-4 py-3">{member.memberKind}</td>
                 <td className="px-4 py-3"><StatusPill status={member.status} /></td>
                 <td className="px-4 py-3 text-slate-500">{member.joinedAt || '-'}</td>
@@ -1300,7 +1331,6 @@ function MembersTab({
 function PositionsTab({
   canAddAssignment,
   canCreate,
-  isRefreshing,
   lookups,
   onAddAssignment,
   onCreate,
@@ -1309,7 +1339,6 @@ function PositionsTab({
   onEdit,
   onQuery,
   onQueryValueChange,
-  onRefresh,
   positions,
   queryLabel,
   queryPlaceholder,
@@ -1318,7 +1347,6 @@ function PositionsTab({
 }: {
   canAddAssignment: boolean;
   canCreate: boolean;
-  isRefreshing: boolean;
   lookups: DirectoryLookups;
   onAddAssignment: () => void;
   onCreate: () => void;
@@ -1327,7 +1355,6 @@ function PositionsTab({
   onEdit: (target: PositionRecord) => void;
   onQuery: (event?: FormEvent<HTMLFormElement>) => void;
   onQueryValueChange: (value: string) => void;
-  onRefresh: () => void;
   positions: PositionRecord[];
   queryLabel: string;
   queryPlaceholder: string;
@@ -1350,14 +1377,11 @@ function PositionsTab({
             )}
             action={(
               <div className="flex flex-wrap items-center gap-2">
-                <IconButton label={t('common.actions.refresh', 'Refresh')} onClick={onRefresh} disabled={isRefreshing}>
-                  <RefreshCw className={`h-4 w-4 ${isRefreshing ? 'animate-spin' : ''}`} />
-                </IconButton>
-                <SmallButton label={t('admin.organization.actions.assign', 'Assign')} onClick={onAddAssignment} disabled={!canAddAssignment} />
-                <SmallButton label={t('admin.organization.actions.assignments', 'Assignments')} onClick={onManageAssignments} />
-                <PrimaryButton label={t('admin.organization.actions.createPosition', 'Create position')} onClick={onCreate} disabled={!canCreate}>
+                <HeaderButton label={t('admin.organization.actions.assign', 'Assign')} onClick={onAddAssignment} disabled={!canAddAssignment} />
+                <HeaderButton label={t('admin.organization.actions.assignments', 'Assignments')} onClick={onManageAssignments} />
+                <HeaderButton label={t('admin.organization.actions.createPosition', 'Create position')} onClick={onCreate} disabled={!canCreate} variant="primary">
                   <Plus className="h-4 w-4" />
-                </PrimaryButton>
+                </HeaderButton>
               </div>
             )}
           />
@@ -1535,7 +1559,6 @@ function AssignmentDrawer({
 }
 
 function AuthorizationTab({
-  isRefreshing,
   onCreatePermission,
   onDeletePermission,
   onEditPermission,
@@ -1544,14 +1567,12 @@ function AuthorizationTab({
   onManageRoles,
   onQuery,
   onQueryValueChange,
-  onRefresh,
   permissions,
   queryLabel,
   queryPlaceholder,
   queryValue,
   t,
 }: {
-  isRefreshing: boolean;
   onCreatePermission: () => void;
   onDeletePermission: (target: PermissionRecord) => void;
   onEditPermission: (target: PermissionRecord) => void;
@@ -1560,7 +1581,6 @@ function AuthorizationTab({
   onManageRoles: () => void;
   onQuery: (event?: FormEvent<HTMLFormElement>) => void;
   onQueryValueChange: (value: string) => void;
-  onRefresh: () => void;
   permissions: PermissionRecord[];
   queryLabel: string;
   queryPlaceholder: string;
@@ -1583,13 +1603,10 @@ function AuthorizationTab({
             )}
             action={(
               <div className="flex flex-wrap items-center justify-end gap-2">
-                <IconButton label={t('common.actions.refresh', 'Refresh')} onClick={onRefresh} disabled={isRefreshing}>
-                  <RefreshCw className={`h-4 w-4 ${isRefreshing ? 'animate-spin' : ''}`} />
-                </IconButton>
-                <SmallButton label={t('admin.organization.actions.createPermission', 'Permission')} onClick={onCreatePermission} />
-                <SmallButton label={t('admin.organization.actions.roles', 'Roles')} onClick={onManageRoles} />
-                <SmallButton label={t('admin.organization.actions.rolePermissions', 'Role permissions')} onClick={onManageRolePermissions} />
-                <SmallButton label={t('admin.organization.actions.roleBindings', 'Role bindings')} onClick={onManageRoleBindings} />
+                <HeaderButton label={t('admin.organization.actions.createPermission', 'Permission')} onClick={onCreatePermission} variant="primary" />
+                <HeaderButton label={t('admin.organization.actions.roles', 'Roles')} onClick={onManageRoles} />
+                <HeaderButton label={t('admin.organization.actions.rolePermissions', 'Role permissions')} onClick={onManageRolePermissions} />
+                <HeaderButton label={t('admin.organization.actions.roleBindings', 'Role bindings')} onClick={onManageRoleBindings} />
               </div>
             )}
           />
@@ -1818,8 +1835,8 @@ function AuthorizationDrawer({
 
 function TableHeader({ action, query }: { action?: ReactNode; query?: ReactNode }) {
   return (
-    <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 px-4 py-3 dark:border-white/10">
-      <div className="min-w-[260px] flex-1">{query}</div>
+    <div className={`flex flex-wrap items-center gap-3 border-b border-slate-200 px-4 py-3 dark:border-white/10 ${query ? 'justify-between' : 'justify-end'}`}>
+      {query ? <div className="w-full shrink-0 sm:w-[360px] lg:w-[420px]">{query}</div> : null}
       {action ? <div className="flex shrink-0 justify-end">{action}</div> : null}
     </div>
   );
@@ -1839,7 +1856,7 @@ function ListQueryControl({
   value: string;
 }) {
   return (
-    <form className="flex min-w-0 flex-1 items-center gap-2" onSubmit={onQuery}>
+    <form className="flex w-full items-center gap-2" onSubmit={onQuery}>
       <div className="relative min-w-0 flex-1">
         <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
         <input
@@ -1858,6 +1875,103 @@ function ListQueryControl({
         {queryLabel}
       </button>
     </form>
+  );
+}
+
+function ChooseUserModal({
+  existingMembers,
+  isBusy,
+  lookups,
+  onCancel,
+  onChoose,
+  organizationId,
+  t,
+  users,
+}: {
+  existingMembers: OrganizationMemberRecord[];
+  isBusy: boolean;
+  lookups: DirectoryLookups;
+  onCancel: () => void;
+  onChoose: (user: UserRecord) => void;
+  organizationId: string;
+  t: TranslationFunction;
+  users: UserRecord[];
+}) {
+  const [query, setQuery] = useState('');
+  const normalizedQuery = query.trim().toLowerCase();
+  const availableUsers = availableUsersForMembership(users, existingMembers, organizationId);
+  const visibleUsers = filterBySearchWithLabels(availableUsers, normalizedQuery, userSearchLabels);
+
+  return (
+    <div className="fixed inset-0 z-40 flex items-center justify-center bg-slate-950/40 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-label={t('admin.organization.chooseUser.title', 'Choose user')}>
+      <div className="flex h-[min(760px,calc(100vh-48px))] w-full max-w-5xl flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-2xl dark:border-white/10 dark:bg-[#171717]">
+        <div className="flex shrink-0 items-center justify-between gap-4 border-b border-slate-200 px-5 py-4 dark:border-white/10">
+          <div className="min-w-0">
+            <div className="text-sm font-semibold text-slate-950 dark:text-white">{t('admin.organization.chooseUser.title', 'Choose user')}</div>
+            <div className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+              {t('admin.organization.chooseUser.description', 'Select an existing appbase user to add as an organization member.')}
+            </div>
+          </div>
+          <button type="button" onClick={onCancel} className="rounded-md p-2 text-slate-500 hover:bg-slate-100 hover:text-slate-700 dark:text-slate-300 dark:hover:bg-white/10" aria-label={t('common.actions.close', 'Close')}>
+            <X className="h-4 w-4" />
+          </button>
+        </div>
+        <div className="flex shrink-0 items-center gap-3 border-b border-slate-200 px-5 py-3 dark:border-white/10">
+          <div className="relative w-full sm:w-[360px]">
+            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+            <input
+              aria-label={t('admin.organization.search.users', 'Search users...')}
+              className="h-10 w-full rounded-lg border border-slate-200 bg-white py-2 pl-9 pr-3 text-sm text-slate-900 shadow-sm outline-none transition-colors placeholder:text-slate-500 focus:border-blue-500 dark:border-white/10 dark:bg-[#1e1e1e] dark:text-white"
+              onChange={(event) => setQuery(event.target.value)}
+              placeholder={t('admin.organization.search.users', 'Search users...')}
+              type="search"
+              value={query}
+            />
+          </div>
+        </div>
+        <div className="min-h-0 flex-1 overflow-auto">
+          <table className="w-full min-w-[920px] text-left text-sm">
+            <thead className="sticky top-0 z-10 border-b border-slate-200 bg-slate-50 text-xs font-semibold text-slate-500 dark:border-white/10 dark:bg-[#121212] dark:text-slate-400">
+              <tr>
+                <th className="px-4 py-3">{t('admin.organization.columns.member', 'Member')}</th>
+                <th className="px-4 py-3">{t('admin.organization.columns.contact', 'Contact')}</th>
+                <th className="px-4 py-3">{t('admin.organization.columns.region', 'Region')}</th>
+                <th className="px-4 py-3">{t('admin.organization.columns.gender', 'Gender')}</th>
+                <th className="px-4 py-3">{t('admin.organization.columns.status', 'Status')}</th>
+                <th className="px-4 py-3 text-right">{t('admin.organization.columns.actions', 'Actions')}</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-200 dark:divide-white/5">
+              {visibleUsers.length === 0 ? (
+                <BusinessStateTableRow colSpan={6} kind="empty" title={t('admin.organization.chooseUser.empty', 'No users available')} />
+              ) : visibleUsers.map((user) => (
+                <tr key={user.id} className="hover:bg-slate-50 dark:hover:bg-white/5">
+                  <td className="px-4 py-3">
+                    <div className="font-medium text-slate-900 dark:text-white">{user.displayName || user.username || user.id}</div>
+                    <div className="text-xs text-slate-500">{formatUserLabel(user.id, lookups)}</div>
+                  </td>
+                  <td className="px-4 py-3 text-slate-600 dark:text-slate-300">
+                    <div>{user.email || '-'}</div>
+                    <div className="text-xs text-slate-500">{user.mobile || '-'}</div>
+                  </td>
+                  <td className="px-4 py-3 text-slate-600 dark:text-slate-300">{formatUserRegion(user)}</td>
+                  <td className="px-4 py-3 text-slate-600 dark:text-slate-300">{formatUserGender(user, t)}</td>
+                  <td className="px-4 py-3"><StatusPill status={user.status} /></td>
+                  <td className="px-4 py-3 text-right">
+                    <HeaderButton label={t('admin.organization.actions.selectUser', 'Select')} onClick={() => onChoose(user)} disabled={isBusy} />
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div className="flex shrink-0 justify-end border-t border-slate-200 px-5 py-4 dark:border-white/10">
+          <button type="button" onClick={onCancel} disabled={isBusy} className="rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 disabled:opacity-60 dark:border-white/10 dark:text-slate-200 dark:hover:bg-white/5">
+            {t('common.actions.cancel', 'Cancel')}
+          </button>
+        </div>
+      </div>
+    </div>
   );
 }
 
