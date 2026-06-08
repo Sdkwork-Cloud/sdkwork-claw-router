@@ -23,13 +23,22 @@ export interface UserListItem {
   id: string;
   email: string;
   username: string;
+  displayName: string;
+  mobile: string;
+  gender: string;
+  country: string;
+  province: string;
+  city: string;
+  district: string;
+  address: string;
   role: string;
   group: string;
   balance: string;
-  status: 'active' | 'banned';
+  status: string;
   lastActive: string;
   lastUsed: string;
   createdAt: string;
+  updatedAt: string;
 }
 
 export interface ApiKeyItem {
@@ -205,15 +214,24 @@ function normalizeUser(value: unknown): UserListItem {
   const item = readRequiredRecord(value, 'User record is required');
   return {
     id: readRequiredPositiveInt64String(item, 'id', 'User id is required'),
-    email: readRequiredString(item, 'email', 'User email is required'),
-    username: readRequiredString(item, 'username', 'Username is required'),
-    role: readRequiredString(item, 'role', 'User role is required'),
-    group: readRequiredString(item, 'group', 'User group is required'),
-    balance: readRequiredString(item, 'balance', 'User balance is required'),
-    status: readUserStatus(item),
-    lastActive: readRequiredString(item, 'lastActive', 'User last active time is required'),
-    lastUsed: readRequiredString(item, 'lastUsed', 'User last used time is required'),
-    createdAt: readRequiredString(item, 'createdAt', 'User created time is required'),
+    email: readString(item, 'email'),
+    username: readFirstString(item, ['username', 'userName', 'account']),
+    displayName: readFirstString(item, ['displayName', 'name', 'nickname', 'title']),
+    mobile: readFirstString(item, ['mobile', 'phone', 'phoneNumber']),
+    gender: readFirstString(item, ['gender', 'sex']),
+    country: readFirstString(item, ['country', 'countryCode', 'countryName', 'nation']),
+    province: readFirstString(item, ['province', 'state', 'region']),
+    city: readFirstString(item, ['city', 'locality']),
+    district: readFirstString(item, ['district', 'county', 'area']),
+    address: readFirstString(item, ['address', 'streetAddress', 'addressLine']),
+    role: readString(item, 'role'),
+    group: readString(item, 'group'),
+    balance: readString(item, 'balance'),
+    status: readString(item, 'status', 'active'),
+    lastActive: readString(item, 'lastActive'),
+    lastUsed: readString(item, 'lastUsed'),
+    createdAt: readString(item, 'createdAt'),
+    updatedAt: readString(item, 'updatedAt'),
   };
 }
 
@@ -253,10 +271,12 @@ function readRequiredRecord(value: unknown, message: string): ApiRecord {
   return value;
 }
 
-function readUserStatus(item: ApiRecord): UserListItem['status'] {
-  const status = readString(item, 'status');
-  if (status === 'active' || status === 'banned') {
-    return status;
+function readFirstString(record: ApiRecord, keys: string[], fallback = ''): string {
+  for (const key of keys) {
+    const value = readString(record, key).trim();
+    if (value) {
+      return value;
+    }
   }
-  throw new Error(status ? `Unsupported user status: ${status}` : 'User status is required');
+  return fallback;
 }

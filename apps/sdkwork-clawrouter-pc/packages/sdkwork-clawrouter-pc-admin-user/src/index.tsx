@@ -51,11 +51,50 @@ function getUserRoleLabel(role: string, t: TranslationFunction): string {
 }
 
 function getUserGroupLabel(group: string, defaultUserGroupOptions: ReadonlyArray<{ value: string; label: string }>): string {
+  if (!group) {
+    return '-';
+  }
   return defaultUserGroupOptions.find((option) => option.value === group)?.label ?? group;
 }
 
 function getUserStatusLabel(status: UserListItem['status'], t: TranslationFunction): string {
-  return status === 'active' ? t('admin.user.status.active', 'Active') : t('admin.user.status.banned', 'Banned');
+  if (status === 'active') {
+    return t('admin.user.status.active', 'Active');
+  }
+  if (status === 'banned') {
+    return t('admin.user.status.banned', 'Banned');
+  }
+  return status || '-';
+}
+
+function getUserGenderLabel(gender: string, t: TranslationFunction): string {
+  const normalized = gender.trim().toLowerCase();
+  if (!normalized) {
+    return '-';
+  }
+  if (normalized === 'male' || normalized === 'm') {
+    return t('admin.user.gender.male', 'Male');
+  }
+  if (normalized === 'female' || normalized === 'f') {
+    return t('admin.user.gender.female', 'Female');
+  }
+  if (normalized === 'unknown' || normalized === 'unspecified') {
+    return t('admin.user.gender.unknown', 'Unknown');
+  }
+  return gender;
+}
+
+function formatUserRegion(user: UserListItem): string {
+  const region = [user.country, user.province, user.city, user.district].filter(Boolean).join(' / ');
+  return region || '-';
+}
+
+function formatUserPrimaryLabel(user: UserListItem): string {
+  return user.displayName || user.email || user.username || user.id;
+}
+
+function displayValue(value: string | null | undefined): string {
+  return value?.trim() || '-';
 }
 
 function getApiKeyStatusLabel(status: string, t: TranslationFunction): string {
