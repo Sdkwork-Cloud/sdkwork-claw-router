@@ -1894,7 +1894,7 @@ function ChooseUserModal({
   isBusy: boolean;
   lookups: DirectoryLookups;
   onCancel: () => void;
-  onChoose: (user: UserRecord) => void;
+  onChoose: (user: UserRecord) => void | Promise<void>;
   organizationId: string;
   t: TranslationFunction;
   users: UserRecord[];
@@ -3543,13 +3543,7 @@ function SmallButton({ disabled, label, onClick }: { disabled?: boolean; label: 
   );
 }
 
-function HeaderButton({
-  children,
-  disabled,
-  label,
-  onClick,
-  variant = 'secondary',
-}: {
+function HeaderButton({ children, disabled, label, onClick, variant = 'secondary' }: {
   children?: ReactNode;
   disabled?: boolean;
   label: string;

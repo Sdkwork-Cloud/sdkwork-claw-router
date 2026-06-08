@@ -484,7 +484,8 @@ test("admin organization tree node menus expose professional dropdown and contex
   }
 
   assert.match(sourceCode, /setDialog\(\{ kind: 'organization', mode: 'create', parentOrganizationId: node\.organizationId \}\)/);
-  assert.match(sourceCode, /setDialog\(\{ kind: 'membership', mode: 'create' \}\)/);
+  assert.match(sourceCode, /setChooseUserModal\(\{ organizationId: node\.organizationId \}\);/);
+  assert.doesNotMatch(sourceCode, /setDialog\(\{ kind: 'membership', mode: 'create' \}\)/);
   assert.match(sourceCode, /setDialog\(\{ kind: 'departmentAssignment', mode: 'create' \}\)/);
   assert.match(sourceCode, /setDialog\(\{ kind: 'position', mode: 'create' \}\)/);
   assert.match(sourceCode, /setActiveTab\('members'\)/);
