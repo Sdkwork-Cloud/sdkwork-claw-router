@@ -125,6 +125,8 @@
     "iam_api_key",
     "iam_audit_event",
     "iam_credential",
+    "iam_department",
+    "iam_department_assignment",
     "iam_device",
     "iam_gateway_access_policy",
     "iam_gateway_api_key",
@@ -132,10 +134,13 @@
     "iam_gateway_risk_rule",
     "iam_mfa_factor",
     "iam_organization",
-    "iam_organization_member",
+    "iam_organization_membership",
     "iam_permission",
     "iam_policy",
+    "iam_position",
+    "iam_position_assignment",
     "iam_role",
+    "iam_role_binding",
     "iam_role_permission",
     "iam_security_event",
     "iam_session",
@@ -2359,10 +2364,15 @@
       "required_api_surface": "backend",
       "route_scope": "admin",
       "tables": [
+        "iam_department",
+        "iam_department_assignment",
         "iam_organization",
-        "iam_organization_member",
+        "iam_organization_membership",
         "iam_permission",
+        "iam_position",
+        "iam_position_assignment",
         "iam_role",
+        "iam_role_binding",
         "iam_role_permission",
         "iam_user",
         "iam_user_role",
@@ -3163,6 +3173,7 @@
         "iam_permission",
         "iam_policy",
         "iam_role",
+        "iam_role_binding",
         "iam_role_permission",
         "iam_tenant",
         "iam_user",
@@ -3475,7 +3486,11 @@
         "commerce_membership",
         "commerce_order",
         "commerce_payment_attempt",
+        "iam_department",
+        "iam_department_assignment",
         "iam_organization",
+        "iam_position",
+        "iam_position_assignment",
         "iam_tenant",
         "iam_user",
         "iam_user_login_event",
@@ -3683,7 +3698,7 @@
       "required_api_surface": "app",
       "route_scope": "console",
       "tables": [
-        "iam_organization_member",
+        "iam_organization_membership",
         "ops_notification_delivery",
         "ops_notification_message",
         "ops_notification_preference",
@@ -4197,17 +4212,17 @@
   },
   "summary": {
     "api_surface_counts": {
-      "app": 207,
-      "backend": 313,
+      "app": 212,
+      "backend": 318,
       "openai_v1": 10,
       "system": 3,
       "worker": 249
     },
     "external_legacy_table_count": 15,
     "frontend_route_count": 189,
-    "generated_table_count": 216,
+    "generated_table_count": 221,
     "legacy_table_count": 24,
-    "table_count": 324
+    "table_count": 329
   },
   "tables": [
     {
@@ -48174,6 +48189,265 @@
           "type": "string(128)"
         },
         {
+          "name": "organization_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "parent_department_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "code",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "name",
+          "source": "explicit",
+          "type": "string(256)"
+        },
+        {
+          "name": "department_kind",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "path",
+          "source": "explicit",
+          "type": "string(1024)"
+        },
+        {
+          "name": "cost_center_code",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "manager_membership_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "status",
+          "source": "explicit",
+          "type": "string(32)"
+        },
+        {
+          "name": "created_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "updated_at",
+          "source": "explicit",
+          "type": "instant"
+        }
+      ],
+      "common_columns": [],
+      "compliance_level": "L3",
+      "domain": "iam",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/console/account",
+        "/admin/organization"
+      ],
+      "generated_by_this_project": true,
+      "indexes": [
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "parent_department_id",
+            "status"
+          ],
+          "name": "idx_iam_department_tenant_org_parent",
+          "unique": false
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "path",
+            "status"
+          ],
+          "name": "idx_iam_department_tenant_org_path",
+          "unique": false
+        }
+      ],
+      "lifecycle": null,
+      "not_null_columns": [],
+      "physical_columns": null,
+      "profile": "tree_entity",
+      "projection_policy": null,
+      "security": null,
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "iam_department",
+      "unique_constraints": [
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "code"
+          ],
+          "name": "uk_iam_department_tenant_org_code",
+          "source": "appbase_iam_foundation"
+        }
+      ],
+      "write_owner": "sdkwork-appbase-iam"
+    },
+    {
+      "api_surfaces": [
+        "app",
+        "backend"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "name": "id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "tenant_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "organization_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "organization_membership_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "department_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "user_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "assignment_kind",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "is_primary",
+          "source": "explicit",
+          "type": "int32"
+        },
+        {
+          "name": "effective_from",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "effective_to",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "status",
+          "source": "explicit",
+          "type": "string(32)"
+        },
+        {
+          "name": "created_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "updated_at",
+          "source": "explicit",
+          "type": "instant"
+        }
+      ],
+      "common_columns": [],
+      "compliance_level": "L3",
+      "domain": "iam",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/console/account",
+        "/admin/organization"
+      ],
+      "generated_by_this_project": true,
+      "indexes": [
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "department_id",
+            "status"
+          ],
+          "name": "idx_iam_department_assignment_department",
+          "unique": false
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "user_id",
+            "status"
+          ],
+          "name": "idx_iam_department_assignment_user",
+          "unique": false
+        }
+      ],
+      "lifecycle": null,
+      "not_null_columns": [],
+      "physical_columns": null,
+      "profile": "relation_entity",
+      "projection_policy": null,
+      "security": null,
+      "source_refs": [],
+      "source_tables": [
+        "iam_organization_membership",
+        "iam_department"
+      ],
+      "system_of_record": true,
+      "table": "iam_department_assignment",
+      "unique_constraints": [
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "organization_membership_id",
+            "department_id",
+            "assignment_kind"
+          ],
+          "name": "uk_iam_department_assignment_member_department",
+          "source": "appbase_iam_foundation"
+        }
+      ],
+      "write_owner": "sdkwork-appbase-iam"
+    },
+    {
+      "api_surfaces": [
+        "app",
+        "backend"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "name": "id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "tenant_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
           "name": "user_id",
           "source": "explicit",
           "type": "string(128)"
@@ -49781,9 +50055,24 @@
           "type": "string(128)"
         },
         {
-          "name": "role_code",
+          "name": "membership_kind",
           "source": "explicit",
           "type": "string(128)"
+        },
+        {
+          "name": "employee_no",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "display_name",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "is_primary",
+          "source": "explicit",
+          "type": "int32"
         },
         {
           "name": "status",
@@ -49804,6 +50093,16 @@
           "name": "remark",
           "source": "explicit",
           "type": "string(500)"
+        },
+        {
+          "name": "created_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "updated_at",
+          "source": "explicit",
+          "type": "instant"
         }
       ],
       "common_columns": [],
@@ -49820,9 +50119,10 @@
           "columns": [
             "tenant_id",
             "user_id",
+            "organization_id",
             "status"
           ],
-          "name": "idx_iam_organization_member_tenant_user",
+          "name": "idx_iam_organization_membership_tenant_user",
           "unique": false
         },
         {
@@ -49831,7 +50131,7 @@
             "organization_id",
             "status"
           ],
-          "name": "idx_iam_organization_member_tenant_org",
+          "name": "idx_iam_organization_membership_tenant_org",
           "unique": false
         }
       ],
@@ -49844,15 +50144,16 @@
       "source_refs": [],
       "source_tables": [],
       "system_of_record": true,
-      "table": "iam_organization_member",
+      "table": "iam_organization_membership",
       "unique_constraints": [
         {
           "columns": [
             "tenant_id",
             "organization_id",
-            "user_id"
+            "user_id",
+            "membership_kind"
           ],
-          "name": "uk_iam_organization_member_tenant_org_user",
+          "name": "uk_iam_organization_membership_tenant_org_user_kind",
           "source": "appbase_iam_foundation"
         }
       ],
@@ -50006,6 +50307,241 @@
     },
     {
       "api_surfaces": [
+        "app",
+        "backend"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "name": "id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "tenant_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "organization_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "department_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "code",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "name",
+          "source": "explicit",
+          "type": "string(256)"
+        },
+        {
+          "name": "position_kind",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "rank_level",
+          "source": "explicit",
+          "type": "int32"
+        },
+        {
+          "name": "status",
+          "source": "explicit",
+          "type": "string(32)"
+        },
+        {
+          "name": "created_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "updated_at",
+          "source": "explicit",
+          "type": "instant"
+        }
+      ],
+      "common_columns": [],
+      "compliance_level": "L3",
+      "domain": "iam",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/console/account",
+        "/admin/organization"
+      ],
+      "generated_by_this_project": true,
+      "indexes": [
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "department_id",
+            "status"
+          ],
+          "name": "idx_iam_position_tenant_org_department",
+          "unique": false
+        }
+      ],
+      "lifecycle": null,
+      "not_null_columns": [],
+      "physical_columns": null,
+      "profile": "tenant_entity",
+      "projection_policy": null,
+      "security": null,
+      "source_refs": [],
+      "source_tables": [
+        "iam_department"
+      ],
+      "system_of_record": true,
+      "table": "iam_position",
+      "unique_constraints": [
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "code"
+          ],
+          "name": "uk_iam_position_tenant_org_code",
+          "source": "appbase_iam_foundation"
+        }
+      ],
+      "write_owner": "sdkwork-appbase-iam"
+    },
+    {
+      "api_surfaces": [
+        "app",
+        "backend"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "name": "id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "tenant_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "organization_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "department_assignment_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "position_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "user_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "is_primary",
+          "source": "explicit",
+          "type": "int32"
+        },
+        {
+          "name": "effective_from",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "effective_to",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "status",
+          "source": "explicit",
+          "type": "string(32)"
+        },
+        {
+          "name": "created_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "updated_at",
+          "source": "explicit",
+          "type": "instant"
+        }
+      ],
+      "common_columns": [],
+      "compliance_level": "L3",
+      "domain": "iam",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/console/account",
+        "/admin/organization"
+      ],
+      "generated_by_this_project": true,
+      "indexes": [
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "position_id",
+            "status"
+          ],
+          "name": "idx_iam_position_assignment_position",
+          "unique": false
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "user_id",
+            "status"
+          ],
+          "name": "idx_iam_position_assignment_user",
+          "unique": false
+        }
+      ],
+      "lifecycle": null,
+      "not_null_columns": [],
+      "physical_columns": null,
+      "profile": "relation_entity",
+      "projection_policy": null,
+      "security": null,
+      "source_refs": [],
+      "source_tables": [
+        "iam_department_assignment",
+        "iam_position"
+      ],
+      "system_of_record": true,
+      "table": "iam_position_assignment",
+      "unique_constraints": [
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "department_assignment_id",
+            "position_id"
+          ],
+          "name": "uk_iam_position_assignment_department_position",
+          "source": "appbase_iam_foundation"
+        }
+      ],
+      "write_owner": "sdkwork-appbase-iam"
+    },
+    {
+      "api_surfaces": [
         "backend"
       ],
       "column_types": {},
@@ -50083,6 +50619,133 @@
             "code"
           ],
           "name": "uk_iam_role_tenant_code",
+          "source": "appbase_iam_foundation"
+        }
+      ],
+      "write_owner": "sdkwork-appbase-iam"
+    },
+    {
+      "api_surfaces": [
+        "app",
+        "backend"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "name": "id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "tenant_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "role_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "principal_kind",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "principal_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "scope_kind",
+          "source": "explicit",
+          "type": "string(64)"
+        },
+        {
+          "name": "scope_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "effect",
+          "source": "explicit",
+          "type": "string(32)"
+        },
+        {
+          "name": "condition_json",
+          "source": "explicit",
+          "type": "string(4000)"
+        },
+        {
+          "name": "status",
+          "source": "explicit",
+          "type": "string(32)"
+        },
+        {
+          "name": "created_at",
+          "source": "explicit",
+          "type": "instant"
+        },
+        {
+          "name": "updated_at",
+          "source": "explicit",
+          "type": "instant"
+        }
+      ],
+      "common_columns": [],
+      "compliance_level": "L3",
+      "domain": "iam",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/admin/user",
+        "/admin/organization"
+      ],
+      "generated_by_this_project": true,
+      "indexes": [
+        {
+          "columns": [
+            "tenant_id",
+            "principal_kind",
+            "principal_id",
+            "status"
+          ],
+          "name": "idx_iam_role_binding_principal",
+          "unique": false
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "scope_kind",
+            "scope_id",
+            "status"
+          ],
+          "name": "idx_iam_role_binding_scope",
+          "unique": false
+        }
+      ],
+      "lifecycle": null,
+      "not_null_columns": [],
+      "physical_columns": null,
+      "profile": "relation_entity",
+      "projection_policy": null,
+      "security": null,
+      "source_refs": [],
+      "source_tables": [
+        "iam_role"
+      ],
+      "system_of_record": true,
+      "table": "iam_role_binding",
+      "unique_constraints": [
+        {
+          "columns": [
+            "tenant_id",
+            "role_id",
+            "principal_kind",
+            "principal_id",
+            "scope_kind",
+            "scope_id"
+          ],
+          "name": "uk_iam_role_binding_principal_scope",
           "source": "appbase_iam_foundation"
         }
       ],

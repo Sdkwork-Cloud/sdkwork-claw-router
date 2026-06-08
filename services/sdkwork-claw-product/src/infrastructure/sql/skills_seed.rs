@@ -24,8 +24,8 @@ const SKILL_TARGET_TYPE: i32 = 35;
 const SQLITE_MAX_BIND_PARAMETERS: usize = 999;
 const SQLITE_COUNT_BATCH_SIZE: usize = 900;
 const SQLITE_SKILL_INSERT_BIND_COUNT: usize = 50;
-const SQLITE_ASSET_INSERT_BIND_COUNT: usize = 25;
-const SQLITE_ARTIFACT_INSERT_BIND_COUNT: usize = 24;
+const SQLITE_ASSET_INSERT_BIND_COUNT: usize = 26;
+const SQLITE_ARTIFACT_INSERT_BIND_COUNT: usize = 25;
 const SQLITE_SKILL_INSERT_BATCH_SIZE: usize =
     SQLITE_MAX_BIND_PARAMETERS / SQLITE_SKILL_INSERT_BIND_COUNT;
 const SQLITE_ASSET_INSERT_BATCH_SIZE: usize =
@@ -863,7 +863,7 @@ async fn import_sqlite_asset_rows(
         let mut query_builder: QueryBuilder<'_, Sqlite> = QueryBuilder::new(
             r#"
             INSERT INTO studio_catalog_asset
-                (uuid, tenant_id, organization_id, data_scope, status, metadata, target_type, target_id, artifact_id, asset_type, asset_media_resource_id, asset_object_blob_id, asset_resource_snapshot, thumbnail_media_resource_id, thumbnail_object_blob_id, thumbnail_resource_snapshot, title, alt_text, mime_type, width, height, duration_seconds, file_size, sort_order, published_at)
+                (uuid, tenant_id, organization_id, data_scope, status, metadata, target_type, target_id, artifact_id, asset_type, asset_media_resource_id, asset_object_blob_id, asset_resource_snapshot, thumbnail_media_resource_id, thumbnail_object_blob_id, thumbnail_resource_snapshot, title, alt_text, mime_type, width, height, duration_seconds, file_size, sort_order, published_at, id)
             "#,
         );
         query_builder.push_values(chunk, |mut row, item| {
@@ -906,7 +906,8 @@ async fn import_sqlite_asset_rows(
                 .push_bind(item.duration_seconds.as_deref().unwrap_or("0"))
                 .push_bind(item.file_size)
                 .push_bind(item.sort_order)
-                .push_bind(&item.published_at);
+                .push_bind(&item.published_at)
+                .push_bind(stable_skill_asset_id(&item.uuid));
         });
         query_builder.build().execute(&mut **tx).await?;
     }
@@ -937,7 +938,7 @@ async fn import_sqlite_artifact_rows(
         let mut query_builder: QueryBuilder<'_, Sqlite> = QueryBuilder::new(
             r#"
             INSERT INTO studio_catalog_artifact
-                (uuid, tenant_id, organization_id, data_scope, status, metadata, target_type, target_id, artifact_type, version, platform_type, os_name, artifact_ref, artifact_media_resource_id, artifact_object_blob_id, artifact_resource_snapshot, artifact_size_bytes, runtime, frameworks, license_name, checksum_hash, release_notes, published_at, deprecated_at)
+                (uuid, tenant_id, organization_id, data_scope, status, metadata, target_type, target_id, artifact_type, version, platform_type, os_name, artifact_ref, artifact_media_resource_id, artifact_object_blob_id, artifact_resource_snapshot, artifact_size_bytes, runtime, frameworks, license_name, checksum_hash, release_notes, published_at, deprecated_at, id)
             "#,
         );
         query_builder.push_values(chunk, |mut row, item| {
@@ -981,7 +982,8 @@ async fn import_sqlite_artifact_rows(
                 .push_bind(&item.checksum_hash)
                 .push_bind(&item.release_notes)
                 .push_bind(&item.published_at)
-                .push_bind(&item.deprecated_at);
+                .push_bind(&item.deprecated_at)
+                .push_bind(stable_skill_artifact_id(&item.uuid));
         });
         query_builder.push(
             r#"
@@ -1392,9 +1394,9 @@ async fn import_postgres_assets(
         sqlx::query(
             r#"
             INSERT INTO studio_catalog_asset
-                (uuid, tenant_id, organization_id, data_scope, status, metadata, target_type, target_id, artifact_id, asset_type, asset_media_resource_id, asset_object_blob_id, asset_resource_snapshot, thumbnail_media_resource_id, thumbnail_object_blob_id, thumbnail_resource_snapshot, title, alt_text, mime_type, width, height, duration_seconds, file_size, sort_order, published_at)
+                (uuid, tenant_id, organization_id, data_scope, status, metadata, target_type, target_id, artifact_id, asset_type, asset_media_resource_id, asset_object_blob_id, asset_resource_snapshot, thumbnail_media_resource_id, thumbnail_object_blob_id, thumbnail_resource_snapshot, title, alt_text, mime_type, width, height, duration_seconds, file_size, sort_order, published_at, id)
             VALUES
-                ($1, $2, $3, $4, $5, $6::jsonb, $7, $8, $9, $10, $11, $12, $13::jsonb, $14, $15, $16::jsonb, $17, $18, $19, $20, $21, CAST($22 AS NUMERIC), $23, $24, $25::timestamptz)
+                ($1, $2, $3, $4, $5, $6::jsonb, $7, $8, $9, $10, $11, $12, $13::jsonb, $14, $15, $16::jsonb, $17, $18, $19, $20, $21, CAST($22 AS NUMERIC), $23, $24, $25::timestamptz, $26)
             "#,
         )
         .bind(&item.uuid)
@@ -1422,6 +1424,7 @@ async fn import_postgres_assets(
         .bind(item.file_size)
         .bind(item.sort_order)
         .bind(&item.published_at)
+        .bind(stable_skill_asset_id(&item.uuid))
         .execute(&mut **tx)
         .await?;
     }
@@ -1449,9 +1452,9 @@ async fn import_postgres_artifacts(
         sqlx::query(
             r#"
             INSERT INTO studio_catalog_artifact
-                (uuid, tenant_id, organization_id, data_scope, status, metadata, target_type, target_id, artifact_type, version, platform_type, os_name, artifact_ref, artifact_media_resource_id, artifact_object_blob_id, artifact_resource_snapshot, artifact_size_bytes, runtime, frameworks, license_name, checksum_hash, release_notes, published_at, deprecated_at)
+                (uuid, tenant_id, organization_id, data_scope, status, metadata, target_type, target_id, artifact_type, version, platform_type, os_name, artifact_ref, artifact_media_resource_id, artifact_object_blob_id, artifact_resource_snapshot, artifact_size_bytes, runtime, frameworks, license_name, checksum_hash, release_notes, published_at, deprecated_at, id)
             VALUES
-                ($1, $2, $3, $4, $5, $6::jsonb, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16::jsonb, $17, $18, $19::jsonb, $20, $21, $22, $23::timestamptz, $24::timestamptz)
+                ($1, $2, $3, $4, $5, $6::jsonb, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16::jsonb, $17, $18, $19::jsonb, $20, $21, $22, $23::timestamptz, $24::timestamptz, $25)
             ON CONFLICT(tenant_id, organization_id, target_type, target_id, artifact_type, version, platform_type, os_name) DO UPDATE SET
                 uuid = excluded.uuid,
                 artifact_ref = excluded.artifact_ref,
@@ -1497,6 +1500,7 @@ async fn import_postgres_artifacts(
         .bind(&item.release_notes)
         .bind(&item.published_at)
         .bind(&item.deprecated_at)
+        .bind(stable_skill_artifact_id(&item.uuid))
         .execute(&mut **tx)
         .await?;
     }
@@ -2073,6 +2077,26 @@ fn skills_seed_payload_hash(payload: &str) -> String {
     let mut hasher = Sha256::new();
     hasher.update(payload.as_bytes());
     hex::encode(hasher.finalize())
+}
+
+fn stable_skill_asset_id(uuid: &str) -> i64 {
+    stable_seed_table_id("sdk-skill-asset-id", uuid)
+}
+
+fn stable_skill_artifact_id(uuid: &str) -> i64 {
+    stable_seed_table_id("sdk-skill-artifact-id", uuid)
+}
+
+fn stable_seed_table_id(prefix: &str, uuid: &str) -> i64 {
+    let mut hasher = Sha256::new();
+    hasher.update(prefix.as_bytes());
+    hasher.update([0]);
+    hasher.update(uuid.as_bytes());
+    let digest = hasher.finalize();
+    let mut bytes = [0_u8; 8];
+    bytes.copy_from_slice(&digest[..8]);
+    let value = u64::from_be_bytes(bytes) & 0x3fff_ffff_ffff_ffff;
+    (value as i64) + 1
 }
 
 fn json_decode_error(error: serde_json::Error) -> sqlx::Error {

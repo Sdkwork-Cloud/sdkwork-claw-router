@@ -1520,6 +1520,20 @@ pub(crate) fn stable_uuid(prefix: &str, parts: &[&str]) -> String {
     format!("{prefix}-{}", &digest[..40])
 }
 
+pub(crate) fn stable_catalog_id(prefix: &str, parts: &[&str]) -> i64 {
+    let mut hasher = Sha256::new();
+    hasher.update(prefix.as_bytes());
+    for part in parts {
+        hasher.update(b":");
+        hasher.update(part.as_bytes());
+    }
+    let digest = hasher.finalize();
+    let mut bytes = [0_u8; 8];
+    bytes.copy_from_slice(&digest[..8]);
+    let value = u64::from_be_bytes(bytes) & 0x3fff_ffff_ffff_ffff;
+    (value as i64) + 1
+}
+
 pub(crate) fn metadata_json(
     catalog: &ModelCatalog,
     source: &str,

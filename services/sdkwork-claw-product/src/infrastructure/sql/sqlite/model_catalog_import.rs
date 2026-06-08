@@ -186,12 +186,13 @@ async fn import_meters(
     catalog: &ModelCatalog,
 ) -> Result<(), sqlx::Error> {
     for meter in &catalog.meters {
+        let row_id = stable_catalog_id("sdk-meter", &[&meter.meter_code]);
         sqlx::query(
             r#"
             INSERT INTO ai_billing_meter
-                (uuid, tenant_id, organization_id, data_scope, status, metadata, meter_code, display_name, description, modality, usage_type, billing_mode, default_unit, default_unit_size, quantity_precision, quantity_source, aggregation_mode, supports_tier, supports_expression, allow_negative_quantity, canonical_price_item_type, sort_order)
+                (uuid, tenant_id, organization_id, data_scope, status, metadata, meter_code, display_name, description, modality, usage_type, billing_mode, default_unit, default_unit_size, quantity_precision, quantity_source, aggregation_mode, supports_tier, supports_expression, allow_negative_quantity, canonical_price_item_type, sort_order, id)
             VALUES
-                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, 1, 1, ?, ?, 1, 1, 0, 0, 0, 1, ?)
+                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, 1, 1, ?, ?, 1, 1, 0, 0, 0, 1, ?, ?)
             ON CONFLICT(tenant_id, organization_id, meter_code) DO UPDATE SET
                 display_name = excluded.display_name,
                 description = excluded.description,
@@ -222,6 +223,7 @@ async fn import_meters(
         .bind(&meter.default_unit_size)
         .bind(meter.quantity_precision.unwrap_or(0))
         .bind(meter.sort_order.unwrap_or(1000000))
+        .bind(row_id)
         .execute(&mut *conn)
         .await?;
     }
@@ -233,12 +235,13 @@ async fn import_vendors(
     catalog: &ModelCatalog,
 ) -> Result<BTreeMap<String, i64>, sqlx::Error> {
     for item in catalog_vendor_records(catalog) {
+        let row_id = stable_catalog_id("sdk-vendor", &[&item.vendor_code]);
         sqlx::query(
             r#"
             INSERT INTO ai_model_vendor
-                (uuid, tenant_id, organization_id, data_scope, status, metadata, vendor_code, display_name, legal_name, description, website_url, docs_url, country_region, vendor_type, model_families, capabilities, supported_protocols, client_api_compatibility, open_source, sort_order)
+                (uuid, tenant_id, organization_id, data_scope, status, metadata, vendor_code, display_name, legal_name, description, website_url, docs_url, country_region, vendor_type, model_families, capabilities, supported_protocols, client_api_compatibility, open_source, sort_order, id)
             VALUES
-                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             ON CONFLICT(tenant_id, organization_id, vendor_code) DO UPDATE SET
                 display_name = excluded.display_name,
                 legal_name = excluded.legal_name,
@@ -283,6 +286,7 @@ async fn import_vendors(
         .bind(serde_json::to_string(&item.client_api_compatibility).unwrap_or_else(|_| "{}".to_owned()))
         .bind(item.open_source)
         .bind(item.sort_order)
+        .bind(row_id)
         .execute(&mut *conn)
         .await?;
     }
@@ -311,12 +315,16 @@ async fn import_families(
     for vendor in &catalog.vendors {
         let vendor_id = vendor_ids.get(&vendor.vendor.vendor_code).copied();
         for family in &vendor.families {
+            let row_id = stable_catalog_id(
+                "sdk-family",
+                &[&vendor.vendor.vendor_code, &family.family_code],
+            );
             sqlx::query(
                 r#"
                 INSERT INTO ai_model_family
-                    (uuid, tenant_id, organization_id, data_scope, status, metadata, vendor_id, vendor_code, family_code, display_name, description, family_type, primary_modality, default_model, sort_order)
+                    (uuid, tenant_id, organization_id, data_scope, status, metadata, vendor_id, vendor_code, family_code, display_name, description, family_type, primary_modality, default_model, sort_order, id)
                 VALUES
-                    (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 ON CONFLICT(tenant_id, organization_id, vendor_code, family_code) DO UPDATE SET
                     vendor_id = excluded.vendor_id,
                     display_name = excluded.display_name,
@@ -353,6 +361,7 @@ async fn import_families(
             .bind(modality_code(&family.primary_modality))
             .bind(&family.default_model)
             .bind(family.sort_order.unwrap_or(1000000))
+            .bind(row_id)
             .execute(&mut *conn)
             .await?;
         }
@@ -390,6 +399,7 @@ async fn import_models(
     family_ids: &BTreeMap<(String, String, String), i64>,
 ) -> Result<BTreeMap<String, i64>, sqlx::Error> {
     for (model_catalog_key, (vendor, model)) in catalog_identity_models(catalog) {
+        let row_id = stable_catalog_id("sdk-model", &[&model.vendor_code, &model.model_id]);
         let vendor_id = vendor_ids.get(&model.vendor_code).copied();
         let family_id = family_ids
             .get(&(
@@ -401,9 +411,9 @@ async fn import_models(
         sqlx::query(
                 r#"
                 INSERT INTO ai_model
-                    (uuid, tenant_id, organization_id, data_scope, status, metadata, catalog_key, model, display_name, vendor_id, vendor_code, vendor_name_snapshot, family_id, family_code, provider_hint, model_family, capability, capabilities, modalities, input_modalities, output_modalities, color_token, docs_url, api_format, context_tokens, max_input_tokens, max_output_tokens, supports_streaming, supports_tools, supports_json_schema, performance_profile, rank_score, release_stage, shelf_state, routing_state, replacement_model, description)
+                    (uuid, tenant_id, organization_id, data_scope, status, metadata, catalog_key, model, display_name, vendor_id, vendor_code, vendor_name_snapshot, family_id, family_code, provider_hint, model_family, capability, capabilities, modalities, input_modalities, output_modalities, color_token, docs_url, api_format, context_tokens, max_input_tokens, max_output_tokens, supports_streaming, supports_tools, supports_json_schema, performance_profile, rank_score, release_stage, shelf_state, routing_state, replacement_model, description, id)
                 VALUES
-                    (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 ON CONFLICT(tenant_id, organization_id, catalog_key) DO UPDATE SET
                     display_name = excluded.display_name,
                     vendor_id = excluded.vendor_id,
@@ -489,6 +499,7 @@ async fn import_models(
         .bind(routing_state_code(&model.routing_state))
         .bind(&model.replacement_model)
         .bind(&model.description)
+        .bind(row_id)
         .execute(&mut *conn)
         .await?;
     }
@@ -520,12 +531,16 @@ async fn import_capabilities(
             model.capabilities.clone()
         };
         for (index, capability) in capabilities.iter().enumerate() {
+            let row_id = stable_catalog_id(
+                "sdk-cap",
+                &[&model.vendor_code, &model.model_id, capability],
+            );
             sqlx::query(
                     r#"
                     INSERT INTO ai_model_capability
-                        (uuid, tenant_id, organization_id, data_scope, status, metadata, model_id, catalog_key, model, vendor_code, capability, capability_code, modality, input_modalities, output_modalities, endpoint_formats, supported, schema_version, sort_order)
+                        (uuid, tenant_id, organization_id, data_scope, status, metadata, model_id, catalog_key, model, vendor_code, capability, capability_code, modality, input_modalities, output_modalities, endpoint_formats, supported, schema_version, sort_order, id)
                     VALUES
-                        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?, ?)
+                        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?, ?, ?)
                     ON CONFLICT(uuid) DO UPDATE SET
                         model_id = excluded.model_id,
                         catalog_key = excluded.catalog_key,
@@ -571,6 +586,7 @@ async fn import_capabilities(
             .bind(serde_json::json!([model.api_format]).to_string())
             .bind(&catalog.manifest.schema_version)
             .bind((index as i32) + 1)
+            .bind(row_id)
             .execute(&mut *conn)
             .await?;
         }
@@ -583,12 +599,13 @@ async fn import_modalities(
     catalog: &ModelCatalog,
 ) -> Result<BTreeMap<String, i64>, sqlx::Error> {
     for item in catalog_modality_projections(catalog) {
+        let row_id = stable_catalog_id("sdk-modality", &[&item.modality_code]);
         sqlx::query(
             r#"
             INSERT INTO ai_modality
-                (uuid, tenant_id, organization_id, data_scope, status, metadata, modality_code, display_name, modality_group, description, input_supported, output_supported, sort_order)
+                (uuid, tenant_id, organization_id, data_scope, status, metadata, modality_code, display_name, modality_group, description, input_supported, output_supported, sort_order, id)
             VALUES
-                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             ON CONFLICT(tenant_id, organization_id, modality_code) DO UPDATE SET
                 display_name = excluded.display_name,
                 modality_group = excluded.modality_group,
@@ -619,6 +636,7 @@ async fn import_modalities(
         .bind(item.input_supported)
         .bind(item.output_supported)
         .bind(item.sort_order)
+        .bind(row_id)
         .execute(&mut *conn)
         .await?;
     }
@@ -649,12 +667,13 @@ async fn import_api_endpoints(
     catalog: &ModelCatalog,
 ) -> Result<BTreeMap<String, i64>, sqlx::Error> {
     for item in catalog_api_endpoint_projections(catalog) {
+        let row_id = stable_catalog_id("sdk-api-endpoint", &[&item.endpoint_code]);
         sqlx::query(
             r#"
             INSERT INTO ai_api_endpoint
-                (uuid, tenant_id, organization_id, data_scope, status, metadata, endpoint_code, protocol_code, display_name, method, path_template, request_schema, response_schema, streaming_supported, sort_order)
+                (uuid, tenant_id, organization_id, data_scope, status, metadata, endpoint_code, protocol_code, display_name, method, path_template, request_schema, response_schema, streaming_supported, sort_order, id)
             VALUES
-                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, '{}', '{}', ?, ?)
+                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, '{}', '{}', ?, ?, ?)
             ON CONFLICT(tenant_id, organization_id, endpoint_code) DO UPDATE SET
                 protocol_code = excluded.protocol_code,
                 display_name = excluded.display_name,
@@ -687,6 +706,7 @@ async fn import_api_endpoints(
         .bind(item.path_template)
         .bind(item.streaming_supported)
         .bind(item.sort_order)
+        .bind(row_id)
         .execute(&mut *conn)
         .await?;
     }
@@ -719,12 +739,14 @@ async fn import_vendor_modalities(
     modality_ids: &BTreeMap<String, i64>,
 ) -> Result<(), sqlx::Error> {
     for item in catalog_vendor_modality_projections(catalog) {
+        let row_id =
+            stable_catalog_id("sdk-vendor-modality", &[&item.vendor_code, &item.modality_code]);
         sqlx::query(
             r#"
             INSERT INTO ai_vendor_modality
-                (uuid, tenant_id, organization_id, data_scope, status, metadata, vendor_id, vendor_code, modality_id, modality_code, supported, sort_order)
+                (uuid, tenant_id, organization_id, data_scope, status, metadata, vendor_id, vendor_code, modality_id, modality_code, supported, sort_order, id)
             VALUES
-                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?)
+                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?, ?)
             ON CONFLICT(tenant_id, organization_id, vendor_code, modality_code) DO UPDATE SET
                 vendor_id = excluded.vendor_id,
                 modality_id = excluded.modality_id,
@@ -751,6 +773,7 @@ async fn import_vendor_modalities(
         .bind(modality_ids.get(&item.modality_code).copied())
         .bind(item.modality_code)
         .bind(item.sort_order)
+        .bind(row_id)
         .execute(&mut *conn)
         .await?;
     }
@@ -764,12 +787,14 @@ async fn import_vendor_api_endpoints(
     endpoint_ids: &BTreeMap<String, i64>,
 ) -> Result<(), sqlx::Error> {
     for item in catalog_vendor_api_endpoint_projections(catalog) {
+        let row_id =
+            stable_catalog_id("sdk-vendor-endpoint", &[&item.vendor_code, &item.endpoint_code]);
         sqlx::query(
             r#"
             INSERT INTO ai_vendor_api_endpoint
-                (uuid, tenant_id, organization_id, data_scope, status, metadata, vendor_id, vendor_code, api_endpoint_id, endpoint_code, supported, sort_order)
+                (uuid, tenant_id, organization_id, data_scope, status, metadata, vendor_id, vendor_code, api_endpoint_id, endpoint_code, supported, sort_order, id)
             VALUES
-                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?)
+                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?, ?)
             ON CONFLICT(tenant_id, organization_id, vendor_code, endpoint_code) DO UPDATE SET
                 vendor_id = excluded.vendor_id,
                 api_endpoint_id = excluded.api_endpoint_id,
@@ -796,6 +821,7 @@ async fn import_vendor_api_endpoints(
         .bind(endpoint_ids.get(&item.endpoint_code).copied())
         .bind(item.endpoint_code)
         .bind(item.sort_order)
+        .bind(row_id)
         .execute(&mut *conn)
         .await?;
     }
@@ -809,12 +835,16 @@ async fn import_modality_api_endpoints(
     endpoint_ids: &BTreeMap<String, i64>,
 ) -> Result<(), sqlx::Error> {
     for item in catalog_modality_api_endpoint_projections(catalog) {
+        let row_id = stable_catalog_id(
+            "sdk-modality-endpoint",
+            &[&item.modality_code, &item.endpoint_code],
+        );
         sqlx::query(
             r#"
             INSERT INTO ai_modality_api_endpoint
-                (uuid, tenant_id, organization_id, data_scope, status, metadata, modality_id, modality_code, api_endpoint_id, endpoint_code, supported, sort_order)
+                (uuid, tenant_id, organization_id, data_scope, status, metadata, modality_id, modality_code, api_endpoint_id, endpoint_code, supported, sort_order, id)
             VALUES
-                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?)
+                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?, ?)
             ON CONFLICT(tenant_id, organization_id, modality_code, endpoint_code) DO UPDATE SET
                 modality_id = excluded.modality_id,
                 api_endpoint_id = excluded.api_endpoint_id,
@@ -841,6 +871,7 @@ async fn import_modality_api_endpoints(
         .bind(endpoint_ids.get(&item.endpoint_code).copied())
         .bind(item.endpoint_code)
         .bind(item.sort_order)
+        .bind(row_id)
         .execute(&mut *conn)
         .await?;
     }
@@ -854,12 +885,16 @@ async fn import_model_modalities(
     modality_ids: &BTreeMap<String, i64>,
 ) -> Result<(), sqlx::Error> {
     for item in catalog_model_modality_projections(catalog) {
+        let row_id = stable_catalog_id(
+            "sdk-model-modality",
+            &[&item.catalog_key, &item.modality_code, &item.direction],
+        );
         sqlx::query(
             r#"
             INSERT INTO ai_model_modality
-                (uuid, tenant_id, organization_id, data_scope, status, metadata, model_id, catalog_key, model, vendor_code, modality_id, modality_code, direction, supported, sort_order)
+                (uuid, tenant_id, organization_id, data_scope, status, metadata, model_id, catalog_key, model, vendor_code, modality_id, modality_code, direction, supported, sort_order, id)
             VALUES
-                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?)
+                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?, ?)
             ON CONFLICT(tenant_id, organization_id, catalog_key, modality_code, direction) DO UPDATE SET
                 model_id = excluded.model_id,
                 model = excluded.model,
@@ -891,6 +926,7 @@ async fn import_model_modalities(
         .bind(item.modality_code)
         .bind(item.direction)
         .bind(item.sort_order)
+        .bind(row_id)
         .execute(&mut *conn)
         .await?;
     }
@@ -904,12 +940,14 @@ async fn import_model_api_endpoints(
     endpoint_ids: &BTreeMap<String, i64>,
 ) -> Result<(), sqlx::Error> {
     for item in catalog_model_api_endpoint_projections(catalog) {
+        let row_id =
+            stable_catalog_id("sdk-model-endpoint", &[&item.catalog_key, &item.endpoint_code]);
         sqlx::query(
             r#"
             INSERT INTO ai_model_api_endpoint
-                (uuid, tenant_id, organization_id, data_scope, status, metadata, model_id, catalog_key, model, vendor_code, api_endpoint_id, endpoint_code, provider_native_model, default_parameters, supports_streaming, supported, sort_order)
+                (uuid, tenant_id, organization_id, data_scope, status, metadata, model_id, catalog_key, model, vendor_code, api_endpoint_id, endpoint_code, provider_native_model, default_parameters, supports_streaming, supported, sort_order, id)
             VALUES
-                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?)
+                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?, ?)
             ON CONFLICT(tenant_id, organization_id, catalog_key, endpoint_code) DO UPDATE SET
                 model_id = excluded.model_id,
                 model = excluded.model,
@@ -946,6 +984,7 @@ async fn import_model_api_endpoints(
         .bind(item.default_parameters)
         .bind(item.supports_streaming)
         .bind(item.sort_order)
+        .bind(row_id)
         .execute(&mut *conn)
         .await?;
     }
@@ -961,6 +1000,7 @@ async fn import_ai_resources(
     endpoint_ids: &BTreeMap<String, i64>,
 ) -> Result<(), sqlx::Error> {
     for item in catalog_ai_resource_projections(catalog) {
+        let row_id = stable_catalog_id("sdk-cap-resource", &[&item.resource_code]);
         let vendor_id = item
             .vendor_code
             .as_ref()
@@ -980,9 +1020,9 @@ async fn import_ai_resources(
         sqlx::query(
             r#"
             INSERT INTO ai_resource
-                (uuid, tenant_id, organization_id, data_scope, status, metadata, resource_code, resource_type, display_name, vendor_id, vendor_code, modality_id, modality_code, api_endpoint_id, api_code, model_id, catalog_key, model, provider_native_model, resource_schema, metadata_schema, description, sort_order)
+                (uuid, tenant_id, organization_id, data_scope, status, metadata, resource_code, resource_type, display_name, vendor_id, vendor_code, modality_id, modality_code, api_endpoint_id, api_code, model_id, catalog_key, model, provider_native_model, resource_schema, metadata_schema, description, sort_order, id)
             VALUES
-                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             ON CONFLICT(tenant_id, organization_id, resource_code) DO UPDATE SET
                 resource_type = excluded.resource_type,
                 display_name = excluded.display_name,
@@ -1037,6 +1077,7 @@ async fn import_ai_resources(
         .bind(item.metadata_schema)
         .bind(item.description)
         .bind(item.sort_order)
+        .bind(row_id)
         .execute(&mut *conn)
         .await?;
     }
@@ -1060,6 +1101,15 @@ async fn import_pricing(
             }
             let pricing_catalog_key = pricing_catalog_key(&pricing.vendor_code, &pricing.model_id);
             for (index, price) in pricing.prices.iter().enumerate() {
+                let row_id = stable_catalog_id(
+                    "sdk-price",
+                    &[
+                        &pricing.vendor_code,
+                        &pricing.region_code,
+                        &pricing.model_id,
+                        &price.price_id,
+                    ],
+                );
                 let model_id = model_ids.get(&model_catalog_key).copied();
                 let meter_id: Option<i64> = sqlx::query_scalar(
                     "SELECT id FROM ai_billing_meter WHERE tenant_id = 0 AND organization_id = 0 AND meter_code = ?",
@@ -1070,9 +1120,9 @@ async fn import_pricing(
                 sqlx::query(
                     r#"
                     INSERT INTO ai_model_pricing
-                        (uuid, tenant_id, organization_id, data_scope, status, metadata, model_id, catalog_key, model, vendor_code, region_code, provider_code, price_side, pricing_scope, billing_type, billing_mode, billing_meter_id, billing_meter_code, price_item_type, unit, unit_size, metering_mode, quantity_source, minimum_quantity, quantity_step, included_quantity, unit_price, currency, rounding_mode, min_charge_amount, pricing_formula_mode, price_origin, priority, price_version, source_url, observed_at, effective_from)
+                        (uuid, tenant_id, organization_id, data_scope, status, metadata, model_id, catalog_key, model, vendor_code, region_code, provider_code, price_side, pricing_scope, billing_type, billing_mode, billing_meter_id, billing_meter_code, price_item_type, unit, unit_size, metering_mode, quantity_source, minimum_quantity, quantity_step, included_quantity, unit_price, currency, rounding_mode, min_charge_amount, pricing_formula_mode, price_origin, priority, price_version, source_url, observed_at, effective_from, id)
                     VALUES
-                        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, 1, ?, ?, 1, 1, ?, 1, 1, ?, ?, 0, ?, ?, 1, 0, 1, 1, ?, ?, ?, ?, ?)
+                        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, 1, ?, ?, 1, 1, ?, 1, 1, ?, ?, 0, ?, ?, 1, 0, 1, 1, ?, ?, ?, ?, ?, ?)
                     ON CONFLICT(uuid) DO UPDATE SET
                         model_id = excluded.model_id,
                         catalog_key = excluded.catalog_key,
@@ -1147,6 +1197,7 @@ async fn import_pricing(
                 .bind(&price.source.source_url)
                 .bind(&price.source.observed_at)
                 .bind(&price.effective_from)
+                .bind(row_id)
                 .execute(&mut *conn)
                 .await?;
             }
@@ -1171,12 +1222,22 @@ async fn import_rankings(
                 let Some((_, model)) = model_map.get(&model_lookup_key) else {
                     continue;
                 };
+                let row_id = stable_catalog_id(
+                    "sdk-rank",
+                    &[
+                        &snapshot.snapshot_date,
+                        &snapshot.rank_scope,
+                        &vendor.vendor.vendor_code,
+                        &vendor.vendor.region_code,
+                        &item.model_id,
+                    ],
+                );
                 sqlx::query(
                     r#"
                     INSERT INTO ai_model_rank_snapshot
-                        (uuid, tenant_id, organization_id, source_type, source_version, status, metadata, snapshot_date, snapshot_period, rank_scope, model_id, catalog_key, model, vendor_code, region_code, vendor_name_snapshot, provider_code, modality, rank_no, previous_rank_no, color_token, pricing_text, strengths, latency_p50_ms, latency_p95_ms, win_rate, trend_score, rank_payload)
+                        (uuid, tenant_id, organization_id, source_type, source_version, status, metadata, snapshot_date, snapshot_period, rank_scope, model_id, catalog_key, model, vendor_code, region_code, vendor_name_snapshot, provider_code, modality, rank_no, previous_rank_no, color_token, pricing_text, strengths, latency_p50_ms, latency_p95_ms, win_rate, trend_score, rank_payload, id)
                     VALUES
-                        (?, ?, ?, ?, 1, ?, ?, ?, 1, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                        (?, ?, ?, ?, 1, ?, ?, ?, 1, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                     ON CONFLICT(tenant_id, organization_id, snapshot_date, snapshot_period, rank_scope, vendor_code, region_code, catalog_key) DO UPDATE SET
                         model_id = excluded.model_id,
                         catalog_key = excluded.catalog_key,
@@ -1241,6 +1302,7 @@ async fn import_rankings(
                 .bind(model.win_rate.as_deref().unwrap_or("0"))
                 .bind(model.trend_score.as_deref().unwrap_or("0"))
                 .bind(serde_json::json!({ "modelId": item.model_id, "rankNo": item.rank_no }).to_string())
+                .bind(row_id)
                 .execute(&mut *conn)
                 .await?;
             }

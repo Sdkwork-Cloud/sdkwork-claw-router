@@ -143,9 +143,10 @@
         }
       ],
       "runtimeIntegration": {
-        "mode": "external-service",
-        "sameOriginAllowed": false,
-        "requiredBaseUrlEnv": "VITE_SDKWORK_APPBASE_BACKEND_API_BASE_URL",
+        "mode": "same-origin-mounted",
+        "sameOriginAllowed": true,
+        "baseUrlEnv": "VITE_SDKWORK_APPBASE_BACKEND_API_BASE_URL",
+        "fallbackBaseUrlEnv": "VITE_CLAWROUTER_BACKEND_API_BASE_URL",
         "publicBaseUrlEnv": "PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL",
         "commonBaseUrlEnv": "PORTAL_PUBLIC_SDK_BASE_URL",
         "rustRouteContractCrate": {
@@ -156,13 +157,28 @@
           ],
           "executableRouterExport": null
         },
-        "handlerAdapterExports": [],
+        "handlerAdapterExports": [
+          {
+            "package": "sdkwork_claw_product::api",
+            "exports": [
+              "admin_appbase_backend_iam_directory_router_with_read_store",
+              "AdminAppbaseBackendIamSqlReadStore",
+              "admin_user_router_with_store"
+            ]
+          }
+        ],
         "mountCoverage": {
-          "status": "not-mounted",
+          "status": "verified",
           "evidence": [
-            "sdkwork_iam_http exports backend_routes() route metadata including /backend/v3/api/iam/organizations/tree and /backend/v3/api/iam/roles.",
-            "sdkwork_iam_http exposes build_sdkwork_appbase_backend_api_router(), but the current backend router builder returns an empty Router::new() and does not provide backend IAM handler coverage.",
-            "Claw Router backend/admin Rust runtime has no verified appbase backend IAM router merge for roles, permissions, organization tree, users, tenants, policies, api keys, security events, or audit events."
+            "sdkwork_iam_http backend_routes() is used only as dependency route metadata for appbase backend IAM path coverage; its local/demo backend router is not mounted as Claw Router runtime coverage.",
+            "services/sdkwork-claw-product/src/api/admin_appbase_backend_iam.rs serves backend IAM directory, organization, membership, department, assignment, position, role, permission, role-permission, and role-binding routes through AppIamDirectoryReadStore plus SQLite/Postgres SQL command/read stores with no demo success or 501 command fallback.",
+            "services/sdkwork-claw-product/src/api/admin_user.rs serves GET/POST/PATCH /backend/v3/api/iam/users and GET/POST/DELETE /backend/v3/api/iam/api_keys through the real AdminUserStore and Claw Router API key secret pipeline.",
+            "services/sdkwork-claw-admin-api/src/lib.rs mounts the SQL-backed appbase backend IAM adapter only when database-backed stores and the admin subject boundary are configured; the default no-database router does not mount demo IAM routes.",
+            "cargo test -p sdkwork-claw-product --test admin_appbase_backend_iam_api admin_appbase_backend_iam_directory_reads_sql_tables_without_demo_data verifies organization, role, and permission reads from SQL tables with no org_demo data.",
+            "cargo test -p sdkwork-claw-product --test admin_user_api admin_user_route_serves_appbase_backend_iam_users_from_store verifies users and API keys are served from AdminUserStore and not local-admin/sk-local demo data.",
+            "cargo test -p sdkwork-claw-admin-api --test contract_routes appbase_backend_iam_routes_are_not_demo_mounted_without_database_runtime verifies the default admin router does not expose demo appbase backend IAM data.",
+            "cargo test -p sdkwork-claw-admin-api --test database_config_router database_config_router_serves_backend_sdk_contract_aliases verifies database-configured admin runtime returns store-backed users and API keys through appbase backend IAM aliases.",
+            "cargo test -p sdkwork-claw-admin-api --test database_config_router database_config_router_serves_appbase_backend_iam_from_real_sql_runtime verifies database-configured admin runtime returns SQL-backed appbase backend IAM organizations, roles, permissions, and role permissions with no org_demo data."
           ]
         }
       }

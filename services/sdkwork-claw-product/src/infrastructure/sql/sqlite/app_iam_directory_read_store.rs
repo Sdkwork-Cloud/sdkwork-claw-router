@@ -27,7 +27,7 @@ WHERE CAST(o.tenant_id AS TEXT) = ?1
   AND (?2 = 'all' OR LOWER(CAST(o.status AS TEXT)) = LOWER(?2) OR (?2 = 'active' AND CAST(o.status AS TEXT) = '1'))
   AND EXISTS (
       SELECT 1
-      FROM iam_organization_member om
+      FROM iam_organization_membership om
       WHERE CAST(om.tenant_id AS TEXT) = CAST(o.tenant_id AS TEXT)
         AND CAST(om.organization_id AS TEXT) = CAST(o.id AS TEXT)
         AND CAST(om.user_id AS TEXT) = ?3
@@ -43,12 +43,12 @@ SELECT
     CAST(om.tenant_id AS TEXT) AS tenant_id,
     CAST(om.organization_id AS TEXT) AS organization_id,
     CAST(om.user_id AS TEXT) AS user_id,
-    COALESCE(om.role_code, '') AS role_code,
+    COALESCE(om.membership_kind, '') AS role_code,
     COALESCE(CAST(om.status AS TEXT), '') AS status,
     COALESCE(CAST(om.joined_at AS TEXT), '') AS joined_at,
     '' AS left_at,
     '' AS remark
-FROM iam_organization_member om
+FROM iam_organization_membership om
 WHERE CAST(om.tenant_id AS TEXT) = ?1
   AND CAST(om.user_id AS TEXT) = ?2
   AND (?3 = '' OR CAST(om.organization_id AS TEXT) = ?3)
@@ -75,7 +75,7 @@ WHERE CAST(d.tenant_id AS TEXT) = ?1
   AND (?3 = 'all' OR LOWER(CAST(d.status AS TEXT)) = LOWER(?3) OR (?3 = 'active' AND CAST(d.status AS TEXT) = '1'))
   AND EXISTS (
       SELECT 1
-      FROM iam_organization_member om
+      FROM iam_organization_membership om
       WHERE CAST(om.tenant_id AS TEXT) = CAST(d.tenant_id AS TEXT)
         AND CAST(om.organization_id AS TEXT) = CAST(d.organization_id AS TEXT)
         AND CAST(om.user_id AS TEXT) = ?4
@@ -130,7 +130,7 @@ WHERE CAST(p.tenant_id AS TEXT) = ?1
   AND (?4 = 'all' OR LOWER(CAST(p.status AS TEXT)) = LOWER(?4) OR (?4 = 'active' AND CAST(p.status AS TEXT) = '1'))
   AND EXISTS (
       SELECT 1
-      FROM iam_organization_member om
+      FROM iam_organization_membership om
       WHERE CAST(om.tenant_id AS TEXT) = CAST(p.tenant_id AS TEXT)
         AND CAST(om.organization_id AS TEXT) = CAST(p.organization_id AS TEXT)
         AND CAST(om.user_id AS TEXT) = ?5

@@ -46,9 +46,9 @@ use sdkwork_claw_product::infrastructure::sql::postgres::{
     PostgresAdminPromptStore, PostgresAdminProviderSecretStore, PostgresAdminRecordStore,
     PostgresAdminServiceNodeStore, PostgresAdminServiceProviderStore, PostgresAdminSiteStore,
     PostgresAdminSkillStore, PostgresAdminStorageStore, PostgresAdminTransactionCenterStore,
-    PostgresAdminUserStore, PostgresAppAgentRegistryStore, PostgresCatalogLoadError,
-    PostgresModelRankingRefreshStore, PostgresModelRankingsReadStore, PostgresPricingCatalogLoader,
-    PostgresRuntimeRegionSettingsStore, PostgresSiteSettingsStore,
+    PostgresAdminUserStore, PostgresAppAgentRegistryStore, PostgresAppIamDirectoryReadStore,
+    PostgresCatalogLoadError, PostgresModelRankingRefreshStore, PostgresModelRankingsReadStore,
+    PostgresPricingCatalogLoader, PostgresRuntimeRegionSettingsStore, PostgresSiteSettingsStore,
 };
 use sdkwork_claw_product::infrastructure::sql::sqlite::{
     SqlCatalogLoadError, SqliteAdminAiResourceStore, SqliteAdminAnalyticsReadStore,
@@ -62,8 +62,8 @@ use sdkwork_claw_product::infrastructure::sql::sqlite::{
     SqliteAdminRecordStore, SqliteAdminServiceNodeStore, SqliteAdminServiceProviderStore,
     SqliteAdminSiteStore, SqliteAdminSkillStore, SqliteAdminStorageStore,
     SqliteAdminTransactionCenterStore, SqliteAdminUserStore, SqliteAppAgentRegistryStore,
-    SqliteModelRankingRefreshStore, SqliteModelRankingsReadStore, SqlitePricingCatalogLoader,
-    SqliteRuntimeRegionSettingsStore, SqliteSiteSettingsStore,
+    SqliteAppIamDirectoryReadStore, SqliteModelRankingRefreshStore, SqliteModelRankingsReadStore,
+    SqlitePricingCatalogLoader, SqliteRuntimeRegionSettingsStore, SqliteSiteSettingsStore,
 };
 use sdkwork_claw_product::infrastructure::OsApiKeySecretGenerator;
 use sdkwork_claw_product::ports::{
@@ -75,8 +75,9 @@ use sdkwork_claw_product::ports::{
     AdminMonitorReadStore, AdminOpenPlatformStore, AdminPromptStore, AdminProviderSecretStore,
     AdminRecordStore, AdminServiceNodeStore, AdminServiceProviderStore, AdminSiteStore,
     AdminSkillStore, AdminStorageStore, AdminTransactionCenterStore, AdminUserStore,
-    ModelRankingRefreshStore, ModelRankingsReadModelStore, PricingCatalog, ProviderHealthProbe,
-    RuntimeRegionSettingsStore, SiteSettingsStore, UnconfiguredProviderHealthProbe,
+    AppIamDirectoryReadStore, ModelRankingRefreshStore, ModelRankingsReadModelStore,
+    PricingCatalog, ProviderHealthProbe, RuntimeRegionSettingsStore, SiteSettingsStore,
+    UnconfiguredProviderHealthProbe,
 };
 use sdkwork_commerce_membership_sqlx::{
     AdminMembershipStore, PostgresCommerceMembershipStore, SqliteCommerceMembershipStore,
@@ -129,6 +130,7 @@ type AdminMonitorRuntimeReadStore = Arc<dyn AdminMonitorReadStore + Send + Sync>
 type AdminRecordRuntimeStore = Arc<dyn AdminRecordStore + Send + Sync>;
 type AdminSkillRuntimeStore = Arc<dyn AdminSkillStore + Send + Sync>;
 type AdminUserRuntimeStore = Arc<dyn AdminUserStore + Send + Sync>;
+type AppbaseBackendIamDirectoryRuntimeStore = Arc<dyn AppIamDirectoryReadStore + Send + Sync>;
 type AdminMembershipRuntimeStore = Arc<dyn AdminMembershipStore + Send + Sync>;
 type ModelRankingsRuntimeStore = Arc<dyn ModelRankingsReadModelStore + Send + Sync>;
 type ModelRankingRefreshRuntimeStore = Arc<dyn ModelRankingRefreshStore + Send + Sync>;
@@ -194,6 +196,9 @@ struct AdminRouterRuntime<'a> {
     record_store: Option<AdminRecordRuntimeStore>,
     skill_store: Option<AdminSkillRuntimeStore>,
     user_store: Option<AdminUserRuntimeStore>,
+    appbase_backend_iam_directory_store: Option<AppbaseBackendIamDirectoryRuntimeStore>,
+    appbase_backend_iam_sql_read_store:
+        Option<sdkwork_claw_product::api::AdminAppbaseBackendIamSqlReadStore>,
     membership_store: Option<AdminMembershipRuntimeStore>,
     model_rankings_store: Option<ModelRankingsRuntimeStore>,
     model_ranking_refresh_store: Option<ModelRankingRefreshRuntimeStore>,
@@ -268,6 +273,8 @@ where
         record_store,
         skill_store,
         user_store,
+        appbase_backend_iam_directory_store,
+        appbase_backend_iam_sql_read_store,
         membership_store,
         model_rankings_store,
         model_ranking_refresh_store,
@@ -311,6 +318,22 @@ where
         }),
         _ => None,
     };
+    if let (Some(directory_store), Some(sql_read_store), Some(admin_subject_boundary_config)) = (
+        appbase_backend_iam_directory_store,
+        appbase_backend_iam_sql_read_store,
+        admin_subject_boundary_config.clone(),
+    ) {
+        router = router.merge(
+            sdkwork_claw_product::api::admin_appbase_backend_iam_directory_router_with_read_store(
+                directory_store,
+                sql_read_store,
+            )
+            .layer(from_fn_with_state(
+                admin_subject_boundary_config,
+                admin_request_subject_boundary,
+            )),
+        );
+    }
 
     if let Some(installer) = database_installer {
         let system_router =
@@ -984,6 +1007,10 @@ pub fn router_with_sqlite_shared_runtime(
         Arc::new(SqliteModelRankingRefreshStore::new(pool.clone()));
     let admin_access_checker = AdminAccessChecker::Sqlite(pool.clone());
     let user_store: AdminUserRuntimeStore = Arc::new(SqliteAdminUserStore::new(pool.clone()));
+    let appbase_backend_iam_directory_store: AppbaseBackendIamDirectoryRuntimeStore =
+        Arc::new(SqliteAppIamDirectoryReadStore::new(pool.clone()));
+    let appbase_backend_iam_sql_read_store =
+        sdkwork_claw_product::api::AdminAppbaseBackendIamSqlReadStore::sqlite(pool.clone());
 
     Ok(router_with_product_catalog_and_runtime(
         catalog,
@@ -1024,6 +1051,8 @@ pub fn router_with_sqlite_shared_runtime(
             record_store: Some(record_store),
             skill_store: Some(skill_store),
             user_store: Some(user_store),
+            appbase_backend_iam_directory_store: Some(appbase_backend_iam_directory_store),
+            appbase_backend_iam_sql_read_store: Some(appbase_backend_iam_sql_read_store),
             membership_store: Some(membership_store),
             model_rankings_store: Some(model_rankings_store),
             model_ranking_refresh_store: Some(model_ranking_refresh_store),
@@ -1131,6 +1160,10 @@ pub fn router_with_postgres_shared_runtime(
         Arc::new(PostgresModelRankingRefreshStore::new(pool.clone()));
     let admin_access_checker = AdminAccessChecker::Postgres(pool.clone());
     let user_store: AdminUserRuntimeStore = Arc::new(PostgresAdminUserStore::new(pool.clone()));
+    let appbase_backend_iam_directory_store: AppbaseBackendIamDirectoryRuntimeStore =
+        Arc::new(PostgresAppIamDirectoryReadStore::new(pool.clone()));
+    let appbase_backend_iam_sql_read_store =
+        sdkwork_claw_product::api::AdminAppbaseBackendIamSqlReadStore::postgres(pool.clone());
 
     Ok(router_with_product_catalog_and_runtime(
         catalog,
@@ -1171,6 +1204,8 @@ pub fn router_with_postgres_shared_runtime(
             record_store: Some(record_store),
             skill_store: Some(skill_store),
             user_store: Some(user_store),
+            appbase_backend_iam_directory_store: Some(appbase_backend_iam_directory_store),
+            appbase_backend_iam_sql_read_store: Some(appbase_backend_iam_sql_read_store),
             membership_store: Some(membership_store),
             model_rankings_store: Some(model_rankings_store),
             model_ranking_refresh_store: Some(model_ranking_refresh_store),
@@ -1426,7 +1461,12 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
             let model_ranking_refresh_store: ModelRankingRefreshRuntimeStore =
                 Arc::new(SqliteModelRankingRefreshStore::new(pool.clone()));
             let admin_access_checker = AdminAccessChecker::Sqlite(pool.clone());
-            let user_store: AdminUserRuntimeStore = Arc::new(SqliteAdminUserStore::new(pool));
+            let user_store: AdminUserRuntimeStore =
+                Arc::new(SqliteAdminUserStore::new(pool.clone()));
+            let appbase_backend_iam_directory_store: AppbaseBackendIamDirectoryRuntimeStore =
+                Arc::new(SqliteAppIamDirectoryReadStore::new(pool.clone()));
+            let appbase_backend_iam_sql_read_store =
+                sdkwork_claw_product::api::AdminAppbaseBackendIamSqlReadStore::sqlite(pool);
             Ok(router_with_product_catalog_and_runtime(
                 Arc::new(snapshot),
                 AdminRouterRuntime {
@@ -1466,6 +1506,8 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
                     record_store: Some(record_store),
                     skill_store: Some(skill_store),
                     user_store: Some(user_store),
+                    appbase_backend_iam_directory_store: Some(appbase_backend_iam_directory_store),
+                    appbase_backend_iam_sql_read_store: Some(appbase_backend_iam_sql_read_store),
                     membership_store: Some(membership_store),
                     model_rankings_store: Some(model_rankings_store),
                     model_ranking_refresh_store: Some(model_ranking_refresh_store),
@@ -1582,7 +1624,12 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
             let model_ranking_refresh_store: ModelRankingRefreshRuntimeStore =
                 Arc::new(PostgresModelRankingRefreshStore::new(pool.clone()));
             let admin_access_checker = AdminAccessChecker::Postgres(pool.clone());
-            let user_store: AdminUserRuntimeStore = Arc::new(PostgresAdminUserStore::new(pool));
+            let user_store: AdminUserRuntimeStore =
+                Arc::new(PostgresAdminUserStore::new(pool.clone()));
+            let appbase_backend_iam_directory_store: AppbaseBackendIamDirectoryRuntimeStore =
+                Arc::new(PostgresAppIamDirectoryReadStore::new(pool.clone()));
+            let appbase_backend_iam_sql_read_store =
+                sdkwork_claw_product::api::AdminAppbaseBackendIamSqlReadStore::postgres(pool);
             Ok(router_with_product_catalog_and_runtime(
                 Arc::new(snapshot),
                 AdminRouterRuntime {
@@ -1622,6 +1669,8 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
                     record_store: Some(record_store),
                     skill_store: Some(skill_store),
                     user_store: Some(user_store),
+                    appbase_backend_iam_directory_store: Some(appbase_backend_iam_directory_store),
+                    appbase_backend_iam_sql_read_store: Some(appbase_backend_iam_sql_read_store),
                     membership_store: Some(membership_store),
                     model_rankings_store: Some(model_rankings_store),
                     model_ranking_refresh_store: Some(model_ranking_refresh_store),
@@ -1873,12 +1922,12 @@ async fn has_sqlite_admin_access(
     let count: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
-        FROM iam_organization_member
+        FROM iam_organization_membership
         WHERE tenant_id = ?
           AND organization_id = ?
           AND user_id = ?
           AND status = 'active'
-          AND LOWER(COALESCE(role_code, '')) = 'admin'
+          AND LOWER(COALESCE(membership_kind, '')) = 'admin'
         "#,
     )
     .bind(subject.tenant_id.to_string())
@@ -1896,12 +1945,12 @@ async fn has_postgres_admin_access(
     let count: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
-        FROM iam_organization_member
+        FROM iam_organization_membership
         WHERE CAST(tenant_id AS TEXT) = $1
           AND CAST(organization_id AS TEXT) = $2
           AND CAST(user_id AS TEXT) = $3
           AND status = 'active'
-          AND LOWER(COALESCE(role_code, '')) = 'admin'
+          AND LOWER(COALESCE(membership_kind, '')) = 'admin'
         "#,
     )
     .bind(subject.tenant_id.to_string())

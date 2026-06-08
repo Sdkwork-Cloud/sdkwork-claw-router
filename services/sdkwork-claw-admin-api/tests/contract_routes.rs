@@ -64,3 +64,22 @@ async fn unknown_backend_route_still_returns_not_found() {
 
     assert_eq!(StatusCode::NOT_FOUND, response.status());
 }
+
+#[tokio::test]
+async fn appbase_backend_iam_routes_are_not_demo_mounted_without_database_runtime() {
+    for path in [
+        "/backend/v3/api/iam/organizations/tree",
+        "/backend/v3/api/iam/departments/tree",
+        "/backend/v3/api/iam/roles",
+        "/backend/v3/api/iam/permissions",
+    ] {
+        let (status, payload) = call(Method::GET, path).await;
+
+        assert_ne!(StatusCode::OK, status, "{path}: {payload}");
+        assert_ne!("2000", payload["code"], "{path}");
+        assert!(
+            !payload.to_string().contains("org_demo"),
+            "{path} must not expose appbase demo IAM data: {payload}"
+        );
+    }
+}

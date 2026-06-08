@@ -217,7 +217,7 @@ async fn resolve_app_session_organization(
                 r#"
                 SELECT CAST(o.id AS TEXT) AS organization_id
                 FROM iam_organization o
-                JOIN iam_organization_member om
+                JOIN iam_organization_membership om
                   ON om.tenant_id = o.tenant_id
                  AND om.organization_id = o.id
                  AND om.user_id = $1
@@ -239,7 +239,7 @@ async fn resolve_app_session_organization(
                 r#"
                 SELECT CAST(o.id AS TEXT) AS organization_id
                 FROM iam_organization o
-                JOIN iam_organization_member om
+                JOIN iam_organization_membership om
                   ON om.tenant_id = o.tenant_id
                  AND om.organization_id = o.id
                  AND om.user_id = $1
@@ -429,7 +429,7 @@ FROM iam_session s
 JOIN iam_user u
   ON CAST(u.tenant_id AS TEXT) = s.tenant_id
  AND CAST(u.id AS TEXT) = s.user_id
-JOIN iam_organization_member om
+JOIN iam_organization_membership om
   ON CAST(om.tenant_id AS TEXT) = s.tenant_id
  AND CAST(om.organization_id AS TEXT) = s.organization_id
  AND CAST(om.user_id AS TEXT) = s.user_id

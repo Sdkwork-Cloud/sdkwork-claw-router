@@ -432,7 +432,7 @@ frontend_operations:
   description: Lists active tenant organizations visible to the current app IAM subject.
   read_sources:
   - iam_organization
-  - iam_organization_member
+  - iam_organization_membership
   query_parameters: &iamDirectoryQueryParameters
   - name: organization_id
     schema:
@@ -534,7 +534,7 @@ frontend_operations:
   description: Returns the visible organization tree for the current app IAM subject.
   read_sources:
   - iam_organization
-  - iam_organization_member
+  - iam_organization_membership
   query_parameters: *iamDirectoryQueryParameters
   response_schema:
     name: IamOrganizationTreeResponse
@@ -609,7 +609,7 @@ frontend_operations:
   summary: List current IAM organization memberships
   description: Lists organization memberships for the current app IAM subject.
   read_sources:
-  - iam_organization_member
+  - iam_organization_membership
   query_parameters: *iamDirectoryQueryParameters
   response_schema:
     name: IamOrganizationMembershipListResponse
@@ -680,7 +680,7 @@ frontend_operations:
   description: Lists active departments visible to the current app IAM subject.
   read_sources:
   - iam_organization
-  - iam_organization_member
+  - iam_organization_membership
   query_parameters: *iamDirectoryQueryParameters
   response_schema:
     name: IamDepartmentListResponse
@@ -754,7 +754,7 @@ frontend_operations:
   description: Returns the visible department tree for the current app IAM subject.
   read_sources:
   - iam_organization
-  - iam_organization_member
+  - iam_organization_membership
   query_parameters: *iamDirectoryQueryParameters
   response_schema:
     name: IamDepartmentTreeResponse
@@ -835,7 +835,7 @@ frontend_operations:
   description: Lists department assignments visible to the current app IAM subject.
   read_sources:
   - iam_organization
-  - iam_organization_member
+  - iam_organization_membership
   query_parameters: *iamDirectoryQueryParameters
   response_schema:
     name: IamDepartmentAssignmentListResponse
@@ -921,7 +921,7 @@ frontend_operations:
   description: Lists positions visible to the current app IAM subject.
   read_sources:
   - iam_organization
-  - iam_organization_member
+  - iam_organization_membership
   query_parameters: *iamDirectoryQueryParameters
   response_schema:
     name: IamPositionListResponse
@@ -999,7 +999,7 @@ frontend_operations:
   description: Lists position assignments visible to the current app IAM subject.
   read_sources:
   - iam_organization
-  - iam_organization_member
+  - iam_organization_membership
   query_parameters: *iamDirectoryQueryParameters
   response_schema:
     name: IamPositionAssignmentListResponse
@@ -1081,7 +1081,7 @@ frontend_operations:
   description: Lists role bindings visible to the current app IAM subject.
   read_sources:
   - iam_organization
-  - iam_organization_member
+  - iam_organization_membership
   query_parameters: *iamDirectoryQueryParameters
   response_schema:
     name: IamRoleBindingListResponse

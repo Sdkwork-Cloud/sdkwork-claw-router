@@ -2042,14 +2042,22 @@ async fn create_minimal_auth_schema(pool: &SqlitePool) {
     .unwrap();
     sqlx::query(
         r#"
-        CREATE TABLE iam_organization_member (
+        CREATE TABLE iam_organization_membership (
             id TEXT PRIMARY KEY,
             tenant_id TEXT NOT NULL,
             organization_id TEXT NOT NULL,
             user_id TEXT NOT NULL,
-            role_code TEXT,
+            membership_kind TEXT NOT NULL,
+            employee_no TEXT,
+            display_name TEXT,
+            is_primary INTEGER NOT NULL DEFAULT 0,
             status TEXT NOT NULL,
-            joined_at TEXT NOT NULL
+            joined_at TEXT NOT NULL,
+            left_at TEXT,
+            remark TEXT,
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL,
+            UNIQUE (tenant_id, organization_id, user_id, membership_kind)
         )
         "#,
     )
@@ -2391,14 +2399,15 @@ async fn seed_user(
 
     sqlx::query(
         r#"
-        INSERT INTO iam_organization_member
-            (id, tenant_id, organization_id, user_id, role_code, status, joined_at)
+        INSERT INTO iam_organization_membership
+            (id, tenant_id, organization_id, user_id, membership_kind, display_name, is_primary, status, joined_at, created_at, updated_at)
         VALUES
-            (?, '10', '20', ?, 'owner', 'active', '2026-05-01T00:00:00Z')
+            (?, '10', '20', ?, 'owner', ?, 1, 'active', '2026-05-01T00:00:00Z', '2026-05-01T00:00:00Z', '2026-05-01T00:00:00Z')
         "#,
     )
     .bind(format!("member-{user_id}"))
     .bind(user_id.to_string())
+    .bind(format!("User {user_id}"))
     .execute(pool)
     .await
     .unwrap();
@@ -2435,14 +2444,15 @@ async fn seed_second_organization_membership(pool: &SqlitePool, user_id: i64) {
 
     sqlx::query(
         r#"
-        INSERT INTO iam_organization_member
-            (id, tenant_id, organization_id, user_id, role_code, status, joined_at)
+        INSERT INTO iam_organization_membership
+            (id, tenant_id, organization_id, user_id, membership_kind, display_name, is_primary, status, joined_at, created_at, updated_at)
         VALUES
-            (?, '10', '21', ?, 'member', 'active', '2026-04-30T00:00:00Z')
+            (?, '10', '21', ?, 'member', ?, 0, 'active', '2026-04-30T00:00:00Z', '2026-04-30T00:00:00Z', '2026-04-30T00:00:00Z')
         "#,
     )
     .bind(format!("workspace-member-{user_id}"))
     .bind(user_id.to_string())
+    .bind(format!("Workspace User {user_id}"))
     .execute(pool)
     .await
     .unwrap();

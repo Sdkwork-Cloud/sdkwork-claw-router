@@ -139,7 +139,7 @@ async fn find_user_by_account(
          AND c.user_id = u.id
          AND c.credential_type = 'password'
          AND c.status = 'active'
-        JOIN iam_organization_member om
+        JOIN iam_organization_membership om
           ON om.tenant_id = u.tenant_id
          AND om.user_id = u.id
          AND om.status = 'active'
@@ -297,20 +297,21 @@ async fn create_registration(
 
     sqlx::query(
         r#"
-        INSERT INTO iam_organization_member
-            (id, tenant_id, organization_id, user_id, role_code, status, joined_at)
+        INSERT INTO iam_organization_membership
+            (id, tenant_id, organization_id, user_id, membership_kind, display_name, is_primary, status, joined_at, created_at, updated_at)
         VALUES
-            ($1, $2, $3, $4, 'owner', 'active', to_timestamp($5::double precision))
+            ($1, $2, $3, $4, 'owner', $5, 1, 'active', to_timestamp($6::double precision), to_timestamp($6::double precision), to_timestamp($6::double precision))
         "#,
     )
     .bind(&member_id)
     .bind(&tenant_id)
     .bind(&organization_id)
     .bind(&user_id)
+    .bind(&command.display_name)
     .bind(command.now.to_string())
     .execute(&mut *tx)
     .await
-    .map_err(|error| store_error("failed to insert IAM organization member", error))?;
+    .map_err(|error| store_error("failed to insert IAM organization membership", error))?;
 
     sqlx::query(
         r#"

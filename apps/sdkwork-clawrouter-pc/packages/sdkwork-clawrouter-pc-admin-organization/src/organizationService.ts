@@ -186,7 +186,7 @@ export interface DirectoryLoadParams {
 }
 
 export type OrganizationCommand = {
-  code: string;
+  code?: string;
   name: string;
   organizationKind?: string;
   parentOrganizationId?: string;
@@ -343,7 +343,7 @@ export class OrganizationService {
 
   static async createOrganization(input: OrganizationCommand): Promise<OrganizationRecord> {
     const result = await getSdkworkAppbaseBackendSdkClient().iam.organizations.create(
-      toCommand(input, ['code', 'name']),
+      toCommand(input, ['name']),
     );
     ensureSdkworkApiSuccess(result, 'admin.organization.errors.createOrganization');
     return normalizeOrganization(readRequiredApiItem(result, 'admin.organization.errors.organizationMissing'));

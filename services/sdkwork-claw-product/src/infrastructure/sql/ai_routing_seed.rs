@@ -364,9 +364,9 @@ async fn import_sqlite_api_endpoints(
         sqlx::query(
             r#"
             INSERT INTO ai_api_endpoint
-                (uuid, tenant_id, organization_id, data_scope, status, metadata, endpoint_code, protocol_code, display_name, method, path_template, request_schema, response_schema, streaming_supported, sort_order)
+                (uuid, tenant_id, organization_id, data_scope, status, metadata, endpoint_code, protocol_code, display_name, method, path_template, request_schema, response_schema, streaming_supported, sort_order, id)
             VALUES
-                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, '{}', '{}', ?, ?)
+                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, '{}', '{}', ?, ?, ?)
             ON CONFLICT(tenant_id, organization_id, endpoint_code) DO UPDATE SET
                 protocol_code = excluded.protocol_code,
                 display_name = excluded.display_name,
@@ -395,6 +395,7 @@ async fn import_sqlite_api_endpoints(
         .bind(path_template)
         .bind(item.streaming_supported())
         .bind(item.sort_order())
+        .bind(stable_seed_id("sdk-ai-api-endpoint-id", &[item.api_code()]))
         .execute(&mut **tx)
         .await?;
     }
@@ -411,9 +412,9 @@ async fn import_postgres_api_endpoints(
         sqlx::query(
             r#"
             INSERT INTO ai_api_endpoint
-                (uuid, tenant_id, organization_id, data_scope, status, metadata, endpoint_code, protocol_code, display_name, method, path_template, request_schema, response_schema, streaming_supported, sort_order)
+                (uuid, tenant_id, organization_id, data_scope, status, metadata, endpoint_code, protocol_code, display_name, method, path_template, request_schema, response_schema, streaming_supported, sort_order, id)
             VALUES
-                ($1, $2, $3, $4, $5, $6::jsonb, $7, $8, $9, $10, $11, '{}'::jsonb, '{}'::jsonb, $12, $13)
+                ($1, $2, $3, $4, $5, $6::jsonb, $7, $8, $9, $10, $11, '{}'::jsonb, '{}'::jsonb, $12, $13, $14)
             ON CONFLICT(tenant_id, organization_id, endpoint_code) DO UPDATE SET
                 protocol_code = excluded.protocol_code,
                 display_name = excluded.display_name,
@@ -442,6 +443,7 @@ async fn import_postgres_api_endpoints(
         .bind(path_template)
         .bind(item.streaming_supported())
         .bind(item.sort_order())
+        .bind(stable_seed_id("sdk-ai-api-endpoint-id", &[item.api_code()]))
         .execute(&mut **tx)
         .await?;
     }
@@ -478,6 +480,7 @@ async fn import_sqlite_resources(
             .bind(metadata_schema(item))
             .bind(resource_description(item))
             .bind(item.sort_order)
+            .bind(stable_seed_id("sdk-ai-resource-id", &[&item.resource_code]))
             .execute(&mut **tx)
             .await?;
     }
@@ -514,6 +517,7 @@ async fn import_postgres_resources(
             .bind(metadata_schema(item))
             .bind(resource_description(item))
             .bind(item.sort_order)
+            .bind(stable_seed_id("sdk-ai-resource-id", &[&item.resource_code]))
             .execute(&mut **tx)
             .await?;
     }
@@ -528,9 +532,9 @@ async fn import_sqlite_resource_groups(
         sqlx::query(
             r#"
             INSERT INTO ai_resource_group
-                (uuid, tenant_id, organization_id, data_scope, status, metadata, group_code, group_name, group_type, selection_mode, description, sort_order)
+                (uuid, tenant_id, organization_id, data_scope, status, metadata, group_code, group_name, group_type, selection_mode, description, sort_order, id)
             VALUES
-                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             ON CONFLICT(tenant_id, organization_id, group_code) DO UPDATE SET
                 group_name = excluded.group_name,
                 group_type = excluded.group_type,
@@ -563,6 +567,7 @@ async fn import_sqlite_resource_groups(
         .bind(&item.selection_mode)
         .bind(&item.description)
         .bind(item.sort_order)
+        .bind(stable_seed_id("sdk-ai-resource-group-id", &[&item.group_code]))
         .execute(&mut **tx)
         .await?;
     }
@@ -577,9 +582,9 @@ async fn import_postgres_resource_groups(
         sqlx::query(
             r#"
             INSERT INTO ai_resource_group
-                (uuid, tenant_id, organization_id, data_scope, status, metadata, group_code, group_name, group_type, selection_mode, description, sort_order)
+                (uuid, tenant_id, organization_id, data_scope, status, metadata, group_code, group_name, group_type, selection_mode, description, sort_order, id)
             VALUES
-                ($1, $2, $3, $4, $5, $6::jsonb, $7, $8, $9, $10, $11, $12)
+                ($1, $2, $3, $4, $5, $6::jsonb, $7, $8, $9, $10, $11, $12, $13)
             ON CONFLICT(tenant_id, organization_id, group_code) DO UPDATE SET
                 group_name = excluded.group_name,
                 group_type = excluded.group_type,
@@ -612,6 +617,7 @@ async fn import_postgres_resource_groups(
         .bind(&item.selection_mode)
         .bind(&item.description)
         .bind(item.sort_order)
+        .bind(stable_seed_id("sdk-ai-resource-group-id", &[&item.group_code]))
         .execute(&mut **tx)
         .await?;
     }
@@ -779,6 +785,7 @@ async fn import_sqlite_resource_group_items(
                 .bind(child_group_code)
                 .bind("included")
                 .bind((index as i32) + 1)
+                .bind(stable_group_item_id(group, item))
                 .execute(&mut **tx)
                 .await?;
         }
@@ -821,6 +828,7 @@ async fn import_postgres_resource_group_items(
                 .bind(child_group_code)
                 .bind("included")
                 .bind((index as i32) + 1)
+                .bind(stable_group_item_id(group, item))
                 .execute(&mut **tx)
                 .await?;
         }
@@ -897,9 +905,9 @@ async fn import_sqlite_default_admin_channels(
                 (uuid, tenant_id, organization_id, data_scope, status, metadata,
                  provider_code, channel_code, channel_name, channel_type, protocol_code,
                  auth_type, base_url, credential_rotation_strategy, environment, priority, weight, health_status,
-                 consecutive_error_count)
+                 consecutive_error_count, id)
             VALUES
-                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?, 'default', 1, ?, ?, ?, 0)
+                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?, 'default', 1, ?, ?, ?, 0, ?)
             ON CONFLICT(tenant_id, organization_id, channel_code) DO UPDATE SET
                 provider_code = excluded.provider_code,
                 channel_type = excluded.channel_type,
@@ -932,6 +940,7 @@ async fn import_sqlite_default_admin_channels(
         .bind(channel.priority)
         .bind(channel.weight)
         .bind(HEALTHY_STATUS)
+        .bind(stable_default_admin_channel_id(channel))
         .execute(&mut **tx)
         .await?;
     }
@@ -949,9 +958,9 @@ async fn import_postgres_default_admin_channels(
                 (uuid, tenant_id, organization_id, data_scope, status, metadata,
                  provider_code, channel_code, channel_name, channel_type, protocol_code,
                  auth_type, base_url, credential_rotation_strategy, environment, priority, weight, health_status,
-                 consecutive_error_count)
+                 consecutive_error_count, id)
             VALUES
-                ($1, $2::bigint, $3::bigint, $4, $5, $6::jsonb, $7, $8, $9, $10, $11, 1, $12, 'default', 1, $13, $14, $15, 0)
+                ($1, $2::bigint, $3::bigint, $4, $5, $6::jsonb, $7, $8, $9, $10, $11, 1, $12, 'default', 1, $13, $14, $15, 0, $16)
             ON CONFLICT(tenant_id, organization_id, channel_code) DO UPDATE SET
                 provider_code = excluded.provider_code,
                 channel_type = excluded.channel_type,
@@ -984,6 +993,7 @@ async fn import_postgres_default_admin_channels(
         .bind(channel.priority)
         .bind(channel.weight)
         .bind(HEALTHY_STATUS)
+        .bind(stable_default_admin_channel_id(channel))
         .execute(&mut **tx)
         .await?;
     }
@@ -1001,11 +1011,11 @@ async fn import_sqlite_default_admin_channel_credentials(
                 (uuid, tenant_id, organization_id, data_scope, status, metadata,
                  channel_id, provider_code, channel_code, credential_name, base_url,
                  auth_config, credential_ref, credential_hash, masked_label, priority, weight,
-                 health_status, consecutive_error_count)
+                 health_status, consecutive_error_count, id)
             SELECT
                 ?, c.tenant_id, c.organization_id, ?, ?, ?,
                 c.id, c.provider_code, c.channel_code, ?, ?,
-                '{}', ?, ?, ?, ?, ?, ?, 0
+                '{}', ?, ?, ?, ?, ?, ?, 0, ?
             FROM ai_channel c
             WHERE c.tenant_id = ?
               AND c.organization_id = ?
@@ -1047,6 +1057,7 @@ async fn import_sqlite_default_admin_channel_credentials(
         .bind(channel.priority)
         .bind(channel.weight)
         .bind(HEALTHY_STATUS)
+        .bind(stable_default_admin_channel_credential_id(channel))
         .bind(DEFAULT_IAM_TENANT_ID)
         .bind(DEFAULT_IAM_ORGANIZATION_ID)
         .bind(channel.channel_code)
@@ -1070,15 +1081,15 @@ async fn import_postgres_default_admin_channel_credentials(
                 (uuid, tenant_id, organization_id, data_scope, status, metadata,
                  channel_id, provider_code, channel_code, credential_name, base_url,
                  auth_config, credential_ref, credential_hash, masked_label, priority, weight,
-                 health_status, consecutive_error_count)
+                 health_status, consecutive_error_count, id)
             SELECT
                 $1, c.tenant_id, c.organization_id, $2, $3, $4::jsonb,
                 c.id, c.provider_code, c.channel_code, $5, $6,
-                '{}'::jsonb, $7, $8, $9, $10, $11, $12, 0
+                '{}'::jsonb, $7, $8, $9, $10, $11, $12, 0, $13
             FROM ai_channel c
-            WHERE c.tenant_id = $13::bigint
-              AND c.organization_id = $14::bigint
-              AND c.channel_code = $15
+            WHERE c.tenant_id = $14::bigint
+              AND c.organization_id = $15::bigint
+              AND c.channel_code = $16
               AND c.deleted_at IS NULL
             ON CONFLICT(uuid) DO UPDATE SET
                 channel_id = excluded.channel_id,
@@ -1116,6 +1127,7 @@ async fn import_postgres_default_admin_channel_credentials(
         .bind(channel.priority)
         .bind(channel.weight)
         .bind(HEALTHY_STATUS)
+        .bind(stable_default_admin_channel_credential_id(channel))
         .bind(DEFAULT_IAM_TENANT_ID)
         .bind(DEFAULT_IAM_ORGANIZATION_ID)
         .bind(channel.channel_code)
@@ -1314,9 +1326,9 @@ fn default_admin_channels() -> &'static [DefaultAdminChannelSeed] {
 fn resource_upsert_sqlite() -> &'static str {
     r#"
     INSERT INTO ai_resource
-        (uuid, tenant_id, organization_id, data_scope, status, metadata, resource_code, resource_type, display_name, vendor_code, modality_code, api_code, catalog_key, model, provider_native_model, resource_schema, metadata_schema, description, sort_order)
+        (uuid, tenant_id, organization_id, data_scope, status, metadata, resource_code, resource_type, display_name, vendor_code, modality_code, api_code, catalog_key, model, provider_native_model, resource_schema, metadata_schema, description, sort_order, id)
     VALUES
-        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     ON CONFLICT(tenant_id, organization_id, resource_code) DO UPDATE SET
         resource_type = excluded.resource_type,
         display_name = excluded.display_name,
@@ -1340,9 +1352,9 @@ fn resource_upsert_sqlite() -> &'static str {
 fn resource_upsert_postgres() -> &'static str {
     r#"
     INSERT INTO ai_resource
-        (uuid, tenant_id, organization_id, data_scope, status, metadata, resource_code, resource_type, display_name, vendor_code, modality_code, api_code, catalog_key, model, provider_native_model, resource_schema, metadata_schema, description, sort_order)
+        (uuid, tenant_id, organization_id, data_scope, status, metadata, resource_code, resource_type, display_name, vendor_code, modality_code, api_code, catalog_key, model, provider_native_model, resource_schema, metadata_schema, description, sort_order, id)
     VALUES
-        ($1, $2, $3, $4, $5, $6::jsonb, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16::jsonb, $17::jsonb, $18, $19)
+        ($1, $2, $3, $4, $5, $6::jsonb, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16::jsonb, $17::jsonb, $18, $19, $20)
     ON CONFLICT(tenant_id, organization_id, resource_code) DO UPDATE SET
         resource_type = excluded.resource_type,
         display_name = excluded.display_name,
@@ -1366,9 +1378,9 @@ fn resource_upsert_postgres() -> &'static str {
 fn group_item_upsert_sqlite() -> &'static str {
     r#"
     INSERT INTO ai_resource_group_item
-        (uuid, tenant_id, organization_id, data_scope, status, metadata, resource_group_id, resource_group_code, item_type, resource_code, child_resource_group_code, item_role, sort_order)
+        (uuid, tenant_id, organization_id, data_scope, status, metadata, resource_group_id, resource_group_code, item_type, resource_code, child_resource_group_code, item_role, sort_order, id)
     VALUES
-        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     ON CONFLICT(tenant_id, organization_id, resource_group_id, item_type, resource_code, child_resource_group_code) DO UPDATE SET
         resource_group_code = excluded.resource_group_code,
         item_role = excluded.item_role,
@@ -1383,9 +1395,9 @@ fn group_item_upsert_sqlite() -> &'static str {
 fn group_item_upsert_postgres() -> &'static str {
     r#"
     INSERT INTO ai_resource_group_item
-        (uuid, tenant_id, organization_id, data_scope, status, metadata, resource_group_id, resource_group_code, item_type, resource_code, child_resource_group_code, item_role, sort_order)
+        (uuid, tenant_id, organization_id, data_scope, status, metadata, resource_group_id, resource_group_code, item_type, resource_code, child_resource_group_code, item_role, sort_order, id)
     VALUES
-        ($1, $2, $3, $4, $5, $6::jsonb, $7, $8, $9, $10, $11, $12, $13)
+        ($1, $2, $3, $4, $5, $6::jsonb, $7, $8, $9, $10, $11, $12, $13, $14)
     ON CONFLICT(tenant_id, organization_id, resource_group_id, item_type, resource_code, child_resource_group_code) DO UPDATE SET
         resource_group_code = excluded.resource_group_code,
         item_role = excluded.item_role,
@@ -1818,6 +1830,41 @@ fn stable_group_item_uuid(group: &ResourceGroupSeed, item: &ResourceGroupItemSee
     )
 }
 
+fn stable_group_item_id(group: &ResourceGroupSeed, item: &ResourceGroupItemSeed) -> i64 {
+    stable_seed_id(
+        "sdk-ai-resource-group-item-id",
+        &[
+            &group.group_code,
+            &item.item_type,
+            item.resource_code.as_deref().unwrap_or_default(),
+            item.group_code.as_deref().unwrap_or_default(),
+        ],
+    )
+}
+
+fn stable_default_admin_channel_id(channel: &DefaultAdminChannelSeed) -> i64 {
+    stable_seed_id(
+        "sdk-ai-channel-id",
+        &[
+            &DEFAULT_IAM_TENANT_ID.to_string(),
+            &DEFAULT_IAM_ORGANIZATION_ID.to_string(),
+            channel.channel_code,
+        ],
+    )
+}
+
+fn stable_default_admin_channel_credential_id(channel: &DefaultAdminChannelSeed) -> i64 {
+    stable_seed_id(
+        "sdk-ai-channel-credential-id",
+        &[
+            &DEFAULT_IAM_TENANT_ID.to_string(),
+            &DEFAULT_IAM_ORGANIZATION_ID.to_string(),
+            channel.channel_code,
+            channel.provider_code,
+        ],
+    )
+}
+
 fn stable_seed_uuid(prefix: &str, parts: &[&str]) -> String {
     let mut hasher = Sha256::new();
     hasher.update(prefix.as_bytes());
@@ -1829,6 +1876,20 @@ fn stable_seed_uuid(prefix: &str, parts: &[&str]) -> String {
     let digest_hex = hex::encode(digest);
     let digest_chars = MAX_SEED_UUID_LENGTH - prefix.len() - 1;
     format!("{prefix}-{}", &digest_hex[..digest_chars])
+}
+
+fn stable_seed_id(prefix: &str, parts: &[&str]) -> i64 {
+    let mut hasher = Sha256::new();
+    hasher.update(prefix.as_bytes());
+    for part in parts {
+        hasher.update([0]);
+        hasher.update(part.as_bytes());
+    }
+    let digest = hasher.finalize();
+    let mut bytes = [0_u8; 8];
+    bytes.copy_from_slice(&digest[..8]);
+    let value = u64::from_be_bytes(bytes) & 0x3fff_ffff_ffff_ffff;
+    (value as i64) + 1
 }
 
 fn stable_hash(parts: &[&str]) -> String {

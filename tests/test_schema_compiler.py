@@ -14,6 +14,22 @@ class SchemaCompilerTest(unittest.TestCase):
         registry.write_text(textwrap.dedent(content).strip() + "\n", encoding="utf-8")
         return registry
 
+    def test_real_registry_compiles_appbase_iam_backend_tables(self) -> None:
+        root = Path(__file__).resolve().parents[1]
+
+        sql = SchemaCompiler(root=root).compile_postgres()
+
+        self.assertIn("CREATE TABLE IF NOT EXISTS iam_organization_membership (", sql)
+        self.assertNotIn("CREATE TABLE IF NOT EXISTS iam_organization_member (", sql)
+        for table in [
+            "iam_department",
+            "iam_department_assignment",
+            "iam_position",
+            "iam_position_assignment",
+            "iam_role_binding",
+        ]:
+            self.assertIn(f"CREATE TABLE IF NOT EXISTS {table} (", sql)
+
     def test_compiles_common_columns_and_standard_types_to_postgres(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

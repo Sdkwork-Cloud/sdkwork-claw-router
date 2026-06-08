@@ -52,6 +52,7 @@ use crate::infrastructure::sql::model_catalog_import::{
     load_catalog_root_with_pin, model_catalog_key, pricing_catalog_key,
     DEFAULT_CATALOG_REFRESH_SOURCE,
 };
+use crate::infrastructure::sql::runtime_id::next_claw_runtime_id;
 use crate::infrastructure::sql::skills_seed::{
     bundled_skills_seed_payload, import_postgres_skills_seed, import_sqlite_skills_seed,
     postgres_skills_seed_complete, postgres_skills_seed_current,
@@ -60,7 +61,6 @@ use crate::infrastructure::sql::skills_seed::{
 use crate::infrastructure::sql::sql_admin_product_center::{
     media_resource_object_blob_id, media_resource_stable_id, provider_asset_media_resource,
 };
-use crate::infrastructure::sql::runtime_id::next_claw_runtime_id;
 use crate::ports::{AdminModelStore, AdminModelSubject, SyncAdminModelCatalogCommand};
 
 const GENERATED_POSTGRES_SCHEMA: &str =
@@ -99,6 +99,731 @@ static GENERATED_SCHEMA_POSTGRES_TABLE_COLUMNS: OnceLock<
 static GENERATED_SCHEMA_SQLITE_TABLE_COLUMNS: OnceLock<Vec<(String, Vec<SqliteColumnDefinition>)>> =
     OnceLock::new();
 static GENERATED_SCHEMA_SQLITE_INDEX_STATEMENTS: OnceLock<Vec<String>> = OnceLock::new();
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+struct DefaultIamPermissionSeed {
+    code: &'static str,
+    name: &'static str,
+    resource: &'static str,
+    action: &'static str,
+}
+
+const DEFAULT_IAM_PERMISSION_SEEDS: &[DefaultIamPermissionSeed] = &[
+    DefaultIamPermissionSeed {
+        code: "iam.users.read",
+        name: "Read IAM users",
+        resource: "iam.users",
+        action: "read",
+    },
+    DefaultIamPermissionSeed {
+        code: "iam.users.create",
+        name: "Create IAM users",
+        resource: "iam.users",
+        action: "create",
+    },
+    DefaultIamPermissionSeed {
+        code: "iam.users.update",
+        name: "Update IAM users",
+        resource: "iam.users",
+        action: "update",
+    },
+    DefaultIamPermissionSeed {
+        code: "iam.users.delete",
+        name: "Delete IAM users",
+        resource: "iam.users",
+        action: "delete",
+    },
+    DefaultIamPermissionSeed {
+        code: "iam.organizations.read",
+        name: "Read organizations",
+        resource: "iam.organizations",
+        action: "read",
+    },
+    DefaultIamPermissionSeed {
+        code: "iam.organizations.create",
+        name: "Create organizations",
+        resource: "iam.organizations",
+        action: "create",
+    },
+    DefaultIamPermissionSeed {
+        code: "iam.organizations.update",
+        name: "Update organizations",
+        resource: "iam.organizations",
+        action: "update",
+    },
+    DefaultIamPermissionSeed {
+        code: "iam.organizations.delete",
+        name: "Delete organizations",
+        resource: "iam.organizations",
+        action: "delete",
+    },
+    DefaultIamPermissionSeed {
+        code: "iam.departments.read",
+        name: "Read departments",
+        resource: "iam.departments",
+        action: "read",
+    },
+    DefaultIamPermissionSeed {
+        code: "iam.departments.create",
+        name: "Create departments",
+        resource: "iam.departments",
+        action: "create",
+    },
+    DefaultIamPermissionSeed {
+        code: "iam.departments.update",
+        name: "Update departments",
+        resource: "iam.departments",
+        action: "update",
+    },
+    DefaultIamPermissionSeed {
+        code: "iam.departments.delete",
+        name: "Delete departments",
+        resource: "iam.departments",
+        action: "delete",
+    },
+    DefaultIamPermissionSeed {
+        code: "iam.departments.manage",
+        name: "Manage departments",
+        resource: "iam.departments",
+        action: "manage",
+    },
+    DefaultIamPermissionSeed {
+        code: "iam.memberships.read",
+        name: "Read organization memberships",
+        resource: "iam.memberships",
+        action: "read",
+    },
+    DefaultIamPermissionSeed {
+        code: "iam.memberships.create",
+        name: "Create organization memberships",
+        resource: "iam.memberships",
+        action: "create",
+    },
+    DefaultIamPermissionSeed {
+        code: "iam.memberships.update",
+        name: "Update organization memberships",
+        resource: "iam.memberships",
+        action: "update",
+    },
+    DefaultIamPermissionSeed {
+        code: "iam.memberships.deactivate",
+        name: "Deactivate organization memberships",
+        resource: "iam.memberships",
+        action: "deactivate",
+    },
+    DefaultIamPermissionSeed {
+        code: "iam.positions.read",
+        name: "Read positions",
+        resource: "iam.positions",
+        action: "read",
+    },
+    DefaultIamPermissionSeed {
+        code: "iam.positions.create",
+        name: "Create positions",
+        resource: "iam.positions",
+        action: "create",
+    },
+    DefaultIamPermissionSeed {
+        code: "iam.positions.update",
+        name: "Update positions",
+        resource: "iam.positions",
+        action: "update",
+    },
+    DefaultIamPermissionSeed {
+        code: "iam.positions.delete",
+        name: "Delete positions",
+        resource: "iam.positions",
+        action: "delete",
+    },
+    DefaultIamPermissionSeed {
+        code: "iam.assignments.read",
+        name: "Read department and position assignments",
+        resource: "iam.assignments",
+        action: "read",
+    },
+    DefaultIamPermissionSeed {
+        code: "iam.assignments.create",
+        name: "Create department and position assignments",
+        resource: "iam.assignments",
+        action: "create",
+    },
+    DefaultIamPermissionSeed {
+        code: "iam.assignments.update",
+        name: "Update department and position assignments",
+        resource: "iam.assignments",
+        action: "update",
+    },
+    DefaultIamPermissionSeed {
+        code: "iam.assignments.deactivate",
+        name: "Deactivate department and position assignments",
+        resource: "iam.assignments",
+        action: "deactivate",
+    },
+    DefaultIamPermissionSeed {
+        code: "iam.roles.read",
+        name: "Read IAM roles",
+        resource: "iam.roles",
+        action: "read",
+    },
+    DefaultIamPermissionSeed {
+        code: "iam.roles.create",
+        name: "Create IAM roles",
+        resource: "iam.roles",
+        action: "create",
+    },
+    DefaultIamPermissionSeed {
+        code: "iam.roles.update",
+        name: "Update IAM roles",
+        resource: "iam.roles",
+        action: "update",
+    },
+    DefaultIamPermissionSeed {
+        code: "iam.roles.delete",
+        name: "Delete IAM roles",
+        resource: "iam.roles",
+        action: "delete",
+    },
+    DefaultIamPermissionSeed {
+        code: "iam.roles.manage",
+        name: "Manage IAM roles",
+        resource: "iam.roles",
+        action: "manage",
+    },
+    DefaultIamPermissionSeed {
+        code: "iam.permissions.read",
+        name: "Read IAM permissions",
+        resource: "iam.permissions",
+        action: "read",
+    },
+    DefaultIamPermissionSeed {
+        code: "iam.permissions.create",
+        name: "Create IAM permissions",
+        resource: "iam.permissions",
+        action: "create",
+    },
+    DefaultIamPermissionSeed {
+        code: "iam.permissions.update",
+        name: "Update IAM permissions",
+        resource: "iam.permissions",
+        action: "update",
+    },
+    DefaultIamPermissionSeed {
+        code: "iam.permissions.delete",
+        name: "Delete IAM permissions",
+        resource: "iam.permissions",
+        action: "delete",
+    },
+    DefaultIamPermissionSeed {
+        code: "iam.permissions.manage",
+        name: "Manage IAM permissions",
+        resource: "iam.permissions",
+        action: "manage",
+    },
+    DefaultIamPermissionSeed {
+        code: "iam.role_permissions.read",
+        name: "Read role permissions",
+        resource: "iam.role_permissions",
+        action: "read",
+    },
+    DefaultIamPermissionSeed {
+        code: "iam.role_permissions.create",
+        name: "Grant role permissions",
+        resource: "iam.role_permissions",
+        action: "create",
+    },
+    DefaultIamPermissionSeed {
+        code: "iam.role_permissions.delete",
+        name: "Revoke role permissions",
+        resource: "iam.role_permissions",
+        action: "delete",
+    },
+    DefaultIamPermissionSeed {
+        code: "iam.role_permissions.manage",
+        name: "Manage role permissions",
+        resource: "iam.role_permissions",
+        action: "manage",
+    },
+    DefaultIamPermissionSeed {
+        code: "iam.role_bindings.read",
+        name: "Read role bindings",
+        resource: "iam.role_bindings",
+        action: "read",
+    },
+    DefaultIamPermissionSeed {
+        code: "iam.role_bindings.create",
+        name: "Create role bindings",
+        resource: "iam.role_bindings",
+        action: "create",
+    },
+    DefaultIamPermissionSeed {
+        code: "iam.role_bindings.delete",
+        name: "Delete role bindings",
+        resource: "iam.role_bindings",
+        action: "delete",
+    },
+    DefaultIamPermissionSeed {
+        code: "iam.role_bindings.manage",
+        name: "Manage role bindings",
+        resource: "iam.role_bindings",
+        action: "manage",
+    },
+    DefaultIamPermissionSeed {
+        code: "ai.models.read",
+        name: "Read AI models",
+        resource: "ai.models",
+        action: "read",
+    },
+    DefaultIamPermissionSeed {
+        code: "ai.models.manage",
+        name: "Manage AI models",
+        resource: "ai.models",
+        action: "manage",
+    },
+    DefaultIamPermissionSeed {
+        code: "ai.resources.read",
+        name: "Read AI resources",
+        resource: "ai.resources",
+        action: "read",
+    },
+    DefaultIamPermissionSeed {
+        code: "ai.resources.manage",
+        name: "Manage AI resources",
+        resource: "ai.resources",
+        action: "manage",
+    },
+    DefaultIamPermissionSeed {
+        code: "ai.routing.read",
+        name: "Read AI routing",
+        resource: "ai.routing",
+        action: "read",
+    },
+    DefaultIamPermissionSeed {
+        code: "ai.routing.manage",
+        name: "Manage AI routing",
+        resource: "ai.routing",
+        action: "manage",
+    },
+    DefaultIamPermissionSeed {
+        code: "ai.channels.read",
+        name: "Read AI channels",
+        resource: "ai.channels",
+        action: "read",
+    },
+    DefaultIamPermissionSeed {
+        code: "ai.channels.manage",
+        name: "Manage AI channels",
+        resource: "ai.channels",
+        action: "manage",
+    },
+    DefaultIamPermissionSeed {
+        code: "ai.groups.read",
+        name: "Read AI account pools",
+        resource: "ai.groups",
+        action: "read",
+    },
+    DefaultIamPermissionSeed {
+        code: "ai.groups.manage",
+        name: "Manage AI account pools",
+        resource: "ai.groups",
+        action: "manage",
+    },
+    DefaultIamPermissionSeed {
+        code: "ai.agents.read",
+        name: "Read AI agents",
+        resource: "ai.agents",
+        action: "read",
+    },
+    DefaultIamPermissionSeed {
+        code: "ai.agents.manage",
+        name: "Manage AI agents",
+        resource: "ai.agents",
+        action: "manage",
+    },
+    DefaultIamPermissionSeed {
+        code: "ai.skills.read",
+        name: "Read AI skills",
+        resource: "ai.skills",
+        action: "read",
+    },
+    DefaultIamPermissionSeed {
+        code: "ai.skills.manage",
+        name: "Manage AI skills",
+        resource: "ai.skills",
+        action: "manage",
+    },
+    DefaultIamPermissionSeed {
+        code: "ai.prompts.read",
+        name: "Read AI prompts",
+        resource: "ai.prompts",
+        action: "read",
+    },
+    DefaultIamPermissionSeed {
+        code: "ai.prompts.manage",
+        name: "Manage AI prompts",
+        resource: "ai.prompts",
+        action: "manage",
+    },
+    DefaultIamPermissionSeed {
+        code: "ai.mcp.read",
+        name: "Read MCP servers",
+        resource: "ai.mcp",
+        action: "read",
+    },
+    DefaultIamPermissionSeed {
+        code: "ai.mcp.manage",
+        name: "Manage MCP servers",
+        resource: "ai.mcp",
+        action: "manage",
+    },
+    DefaultIamPermissionSeed {
+        code: "ai.records.read",
+        name: "Read AI records",
+        resource: "ai.records",
+        action: "read",
+    },
+    DefaultIamPermissionSeed {
+        code: "ai.records.manage",
+        name: "Manage AI records",
+        resource: "ai.records",
+        action: "manage",
+    },
+    DefaultIamPermissionSeed {
+        code: "ai.analytics.read",
+        name: "Read AI analytics",
+        resource: "ai.analytics",
+        action: "read",
+    },
+    DefaultIamPermissionSeed {
+        code: "apps.app_center.read",
+        name: "Read App Center",
+        resource: "apps.app_center",
+        action: "read",
+    },
+    DefaultIamPermissionSeed {
+        code: "apps.app_center.manage",
+        name: "Manage App Center",
+        resource: "apps.app_center",
+        action: "manage",
+    },
+    DefaultIamPermissionSeed {
+        code: "apps.open_platform.read",
+        name: "Read open platform",
+        resource: "apps.open_platform",
+        action: "read",
+    },
+    DefaultIamPermissionSeed {
+        code: "apps.open_platform.manage",
+        name: "Manage open platform",
+        resource: "apps.open_platform",
+        action: "manage",
+    },
+    DefaultIamPermissionSeed {
+        code: "courses.catalog.read",
+        name: "Read course catalog",
+        resource: "courses.catalog",
+        action: "read",
+    },
+    DefaultIamPermissionSeed {
+        code: "courses.catalog.manage",
+        name: "Manage course catalog",
+        resource: "courses.catalog",
+        action: "manage",
+    },
+    DefaultIamPermissionSeed {
+        code: "courses.content.read",
+        name: "Read course content",
+        resource: "courses.content",
+        action: "read",
+    },
+    DefaultIamPermissionSeed {
+        code: "courses.content.manage",
+        name: "Manage course content",
+        resource: "courses.content",
+        action: "manage",
+    },
+    DefaultIamPermissionSeed {
+        code: "commerce.catalog.read",
+        name: "Read product catalog",
+        resource: "commerce.catalog",
+        action: "read",
+    },
+    DefaultIamPermissionSeed {
+        code: "commerce.catalog.manage",
+        name: "Manage product catalog",
+        resource: "commerce.catalog",
+        action: "manage",
+    },
+    DefaultIamPermissionSeed {
+        code: "commerce.inventory.read",
+        name: "Read inventory",
+        resource: "commerce.inventory",
+        action: "read",
+    },
+    DefaultIamPermissionSeed {
+        code: "commerce.inventory.manage",
+        name: "Manage inventory",
+        resource: "commerce.inventory",
+        action: "manage",
+    },
+    DefaultIamPermissionSeed {
+        code: "commerce.orders.read",
+        name: "Read orders",
+        resource: "commerce.orders",
+        action: "read",
+    },
+    DefaultIamPermissionSeed {
+        code: "commerce.orders.manage",
+        name: "Manage orders",
+        resource: "commerce.orders",
+        action: "manage",
+    },
+    DefaultIamPermissionSeed {
+        code: "commerce.payments.read",
+        name: "Read payments",
+        resource: "commerce.payments",
+        action: "read",
+    },
+    DefaultIamPermissionSeed {
+        code: "commerce.payments.manage",
+        name: "Manage payments",
+        resource: "commerce.payments",
+        action: "manage",
+    },
+    DefaultIamPermissionSeed {
+        code: "commerce.memberships.read",
+        name: "Read membership products",
+        resource: "commerce.memberships",
+        action: "read",
+    },
+    DefaultIamPermissionSeed {
+        code: "commerce.memberships.manage",
+        name: "Manage membership products",
+        resource: "commerce.memberships",
+        action: "manage",
+    },
+    DefaultIamPermissionSeed {
+        code: "commerce.marketing.read",
+        name: "Read marketing campaigns",
+        resource: "commerce.marketing",
+        action: "read",
+    },
+    DefaultIamPermissionSeed {
+        code: "commerce.marketing.manage",
+        name: "Manage marketing campaigns",
+        resource: "commerce.marketing",
+        action: "manage",
+    },
+    DefaultIamPermissionSeed {
+        code: "finance.revenue.read",
+        name: "Read finance revenue",
+        resource: "finance.revenue",
+        action: "read",
+    },
+    DefaultIamPermissionSeed {
+        code: "wallet.accounts.read",
+        name: "Read wallet accounts",
+        resource: "wallet.accounts",
+        action: "read",
+    },
+    DefaultIamPermissionSeed {
+        code: "wallet.accounts.manage",
+        name: "Manage wallet accounts",
+        resource: "wallet.accounts",
+        action: "manage",
+    },
+    DefaultIamPermissionSeed {
+        code: "storage.providers.read",
+        name: "Read storage providers",
+        resource: "storage.providers",
+        action: "read",
+    },
+    DefaultIamPermissionSeed {
+        code: "storage.providers.manage",
+        name: "Manage storage providers",
+        resource: "storage.providers",
+        action: "manage",
+    },
+    DefaultIamPermissionSeed {
+        code: "drive.spaces.read",
+        name: "Read drive spaces",
+        resource: "drive.spaces",
+        action: "read",
+    },
+    DefaultIamPermissionSeed {
+        code: "drive.spaces.manage",
+        name: "Manage drive spaces",
+        resource: "drive.spaces",
+        action: "manage",
+    },
+    DefaultIamPermissionSeed {
+        code: "drive.nodes.read",
+        name: "Read drive nodes",
+        resource: "drive.nodes",
+        action: "read",
+    },
+    DefaultIamPermissionSeed {
+        code: "drive.nodes.manage",
+        name: "Manage drive nodes",
+        resource: "drive.nodes",
+        action: "manage",
+    },
+    DefaultIamPermissionSeed {
+        code: "drive.permissions.read",
+        name: "Read drive permissions",
+        resource: "drive.permissions",
+        action: "read",
+    },
+    DefaultIamPermissionSeed {
+        code: "drive.permissions.manage",
+        name: "Manage drive permissions",
+        resource: "drive.permissions",
+        action: "manage",
+    },
+    DefaultIamPermissionSeed {
+        code: "messaging.providers.read",
+        name: "Read messaging providers",
+        resource: "messaging.providers",
+        action: "read",
+    },
+    DefaultIamPermissionSeed {
+        code: "messaging.providers.manage",
+        name: "Manage messaging providers",
+        resource: "messaging.providers",
+        action: "manage",
+    },
+    DefaultIamPermissionSeed {
+        code: "messaging.templates.read",
+        name: "Read messaging templates",
+        resource: "messaging.templates",
+        action: "read",
+    },
+    DefaultIamPermissionSeed {
+        code: "messaging.templates.manage",
+        name: "Manage messaging templates",
+        resource: "messaging.templates",
+        action: "manage",
+    },
+    DefaultIamPermissionSeed {
+        code: "messaging.requests.read",
+        name: "Read messaging requests",
+        resource: "messaging.requests",
+        action: "read",
+    },
+    DefaultIamPermissionSeed {
+        code: "messaging.requests.manage",
+        name: "Manage messaging requests",
+        resource: "messaging.requests",
+        action: "manage",
+    },
+    DefaultIamPermissionSeed {
+        code: "integrations.service_providers.read",
+        name: "Read service providers",
+        resource: "integrations.service_providers",
+        action: "read",
+    },
+    DefaultIamPermissionSeed {
+        code: "integrations.service_providers.manage",
+        name: "Manage service providers",
+        resource: "integrations.service_providers",
+        action: "manage",
+    },
+    DefaultIamPermissionSeed {
+        code: "ops.monitor.read",
+        name: "Read operations monitor",
+        resource: "ops.monitor",
+        action: "read",
+    },
+    DefaultIamPermissionSeed {
+        code: "ops.rate_limits.read",
+        name: "Read rate limits",
+        resource: "ops.rate_limits",
+        action: "read",
+    },
+    DefaultIamPermissionSeed {
+        code: "ops.rate_limits.manage",
+        name: "Manage rate limits",
+        resource: "ops.rate_limits",
+        action: "manage",
+    },
+    DefaultIamPermissionSeed {
+        code: "ops.cache.read",
+        name: "Read cache",
+        resource: "ops.cache",
+        action: "read",
+    },
+    DefaultIamPermissionSeed {
+        code: "ops.cache.manage",
+        name: "Manage cache",
+        resource: "ops.cache",
+        action: "manage",
+    },
+    DefaultIamPermissionSeed {
+        code: "ops.service_nodes.read",
+        name: "Read service nodes",
+        resource: "ops.service_nodes",
+        action: "read",
+    },
+    DefaultIamPermissionSeed {
+        code: "ops.service_nodes.manage",
+        name: "Manage service nodes",
+        resource: "ops.service_nodes",
+        action: "manage",
+    },
+    DefaultIamPermissionSeed {
+        code: "ops.runtime_regions.read",
+        name: "Read runtime regions",
+        resource: "ops.runtime_regions",
+        action: "read",
+    },
+    DefaultIamPermissionSeed {
+        code: "ops.runtime_regions.manage",
+        name: "Manage runtime regions",
+        resource: "ops.runtime_regions",
+        action: "manage",
+    },
+    DefaultIamPermissionSeed {
+        code: "system.site.read",
+        name: "Read site settings",
+        resource: "system.site",
+        action: "read",
+    },
+    DefaultIamPermissionSeed {
+        code: "system.site.manage",
+        name: "Manage site settings",
+        resource: "system.site",
+        action: "manage",
+    },
+    DefaultIamPermissionSeed {
+        code: "system.settings.read",
+        name: "Read system settings",
+        resource: "system.settings",
+        action: "read",
+    },
+    DefaultIamPermissionSeed {
+        code: "system.settings.manage",
+        name: "Manage system settings",
+        resource: "system.settings",
+        action: "manage",
+    },
+    DefaultIamPermissionSeed {
+        code: "system.announcements.read",
+        name: "Read announcements",
+        resource: "system.announcements",
+        action: "read",
+    },
+    DefaultIamPermissionSeed {
+        code: "system.announcements.manage",
+        name: "Manage announcements",
+        resource: "system.announcements",
+        action: "manage",
+    },
+    DefaultIamPermissionSeed {
+        code: "system.audit.read",
+        name: "Read audit records",
+        resource: "system.audit",
+        action: "read",
+    },
+];
 
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct DatabaseInstallOptions {
@@ -2792,6 +3517,7 @@ async fn import_sqlite_default_iam_subject_seed(
     pool: &SqlitePool,
 ) -> Result<(), DatabaseInstallError> {
     sqlite_upsert_default_iam_subject(pool).await?;
+    sqlite_upsert_default_iam_permissions(pool).await?;
     Ok(())
 }
 
@@ -2799,6 +3525,7 @@ async fn import_postgres_default_iam_subject_seed(
     pool: &PgPool,
 ) -> Result<(), DatabaseInstallError> {
     postgres_upsert_default_iam_subject(pool).await?;
+    postgres_upsert_default_iam_permissions(pool).await?;
     Ok(())
 }
 
@@ -3796,7 +4523,10 @@ async fn sqlite_default_iam_subject_seed_complete(pool: &SqlitePool) -> Result<b
     .bind(DEFAULT_IAM_ORGANIZATION_CODE)
     .fetch_one(pool)
     .await?;
-    Ok(count == 1)
+    if count != 1 {
+        return Ok(false);
+    }
+    sqlite_default_iam_permission_seed_complete(pool).await
 }
 
 async fn postgres_default_iam_subject_seed_complete(pool: &PgPool) -> Result<bool, sqlx::Error> {
@@ -3819,7 +4549,58 @@ async fn postgres_default_iam_subject_seed_complete(pool: &PgPool) -> Result<boo
     .bind(DEFAULT_IAM_ORGANIZATION_CODE)
     .fetch_one(pool)
     .await?;
-    Ok(count == 1)
+    if count != 1 {
+        return Ok(false);
+    }
+    postgres_default_iam_permission_seed_complete(pool).await
+}
+
+async fn sqlite_default_iam_permission_seed_complete(
+    pool: &SqlitePool,
+) -> Result<bool, sqlx::Error> {
+    for permission in DEFAULT_IAM_PERMISSION_SEEDS {
+        let count: i64 = sqlx::query_scalar(
+            r#"
+            SELECT COUNT(1)
+            FROM iam_permission
+            WHERE code = ?
+              AND resource = ?
+              AND action = ?
+            "#,
+        )
+        .bind(permission.code)
+        .bind(permission.resource)
+        .bind(permission.action)
+        .fetch_one(pool)
+        .await?;
+        if count != 1 {
+            return Ok(false);
+        }
+    }
+    Ok(true)
+}
+
+async fn postgres_default_iam_permission_seed_complete(pool: &PgPool) -> Result<bool, sqlx::Error> {
+    for permission in DEFAULT_IAM_PERMISSION_SEEDS {
+        let count: i64 = sqlx::query_scalar(
+            r#"
+            SELECT COUNT(1)
+            FROM iam_permission
+            WHERE code = $1
+              AND resource = $2
+              AND action = $3
+            "#,
+        )
+        .bind(permission.code)
+        .bind(permission.resource)
+        .bind(permission.action)
+        .fetch_one(pool)
+        .await?;
+        if count != 1 {
+            return Ok(false);
+        }
+    }
+    Ok(true)
 }
 
 async fn sqlite_commerce_experience_seed_complete(
@@ -3860,7 +4641,7 @@ async fn sqlite_bootstrap_admin_seed_complete(
         r#"
         SELECT COUNT(1)
         FROM iam_user u
-        JOIN iam_organization_member m
+        JOIN iam_organization_membership m
           ON m.tenant_id = u.tenant_id
          AND m.user_id = u.id
          AND m.status = 'active'
@@ -3873,7 +4654,7 @@ async fn sqlite_bootstrap_admin_seed_complete(
           AND u.username = ?
           AND u.status = 'active'
           AND m.organization_id = ?
-          AND LOWER(COALESCE(m.role_code, '')) = 'admin'
+          AND LOWER(COALESCE(m.membership_kind, '')) = 'admin'
         "#,
     )
     .bind(DEFAULT_IAM_TENANT_ID)
@@ -3892,7 +4673,7 @@ async fn postgres_bootstrap_admin_seed_complete(
         r#"
         SELECT COUNT(1)
         FROM iam_user u
-        JOIN iam_organization_member m
+        JOIN iam_organization_membership m
           ON m.tenant_id = u.tenant_id
          AND m.user_id = u.id
          AND m.status = 'active'
@@ -3905,7 +4686,7 @@ async fn postgres_bootstrap_admin_seed_complete(
           AND u.username = $2
           AND u.status = 'active'
           AND m.organization_id = $3
-          AND LOWER(COALESCE(m.role_code, '')) = 'admin'
+          AND LOWER(COALESCE(m.membership_kind, '')) = 'admin'
         "#,
     )
     .bind(DEFAULT_IAM_TENANT_ID)
@@ -4009,10 +4790,11 @@ async fn sqlite_bootstrap_admin_member_id_in_transaction(
     sqlx::query_scalar(
         r#"
         SELECT id
-        FROM iam_organization_member
+        FROM iam_organization_membership
         WHERE tenant_id = ?
           AND organization_id = ?
           AND user_id = ?
+          AND membership_kind = 'admin'
         LIMIT 1
         "#,
     )
@@ -4030,10 +4812,11 @@ async fn postgres_bootstrap_admin_member_id_in_transaction(
     sqlx::query_scalar(
         r#"
         SELECT id
-        FROM iam_organization_member
+        FROM iam_organization_membership
         WHERE tenant_id = $1
           AND organization_id = $2
           AND user_id = $3
+          AND membership_kind = 'admin'
         LIMIT 1
         "#,
     )
@@ -4128,22 +4911,28 @@ async fn upsert_sqlite_bootstrap_admin(
         .unwrap_or_else(|| format!("member-{user_id}-admin"));
     sqlx::query(
         r#"
-        INSERT INTO iam_organization_member
-            (id, tenant_id, organization_id, user_id, role_code, status, joined_at)
+        INSERT INTO iam_organization_membership
+            (id, tenant_id, organization_id, user_id, membership_kind, display_name, is_primary, status, joined_at, created_at, updated_at)
         VALUES
-            (?, ?, ?, ?, 'admin', 'active', ?)
+            (?, ?, ?, ?, 'admin', ?, 1, 'active', ?, ?, ?)
         ON CONFLICT(id) DO UPDATE SET
             tenant_id = excluded.tenant_id,
             organization_id = excluded.organization_id,
             user_id = excluded.user_id,
-            role_code = excluded.role_code,
-            status = excluded.status
+            membership_kind = excluded.membership_kind,
+            display_name = excluded.display_name,
+            is_primary = excluded.is_primary,
+            status = excluded.status,
+            updated_at = excluded.updated_at
         "#,
     )
     .bind(member_id)
     .bind(DEFAULT_IAM_TENANT_ID)
     .bind(DEFAULT_IAM_ORGANIZATION_ID)
     .bind(user_id)
+    .bind(&options.display_name)
+    .bind(now)
+    .bind(now)
     .bind(now)
     .execute(&mut **tx)
     .await?;
@@ -4248,22 +5037,26 @@ async fn upsert_postgres_bootstrap_admin(
         .unwrap_or_else(|| format!("member-{user_id}-admin"));
     sqlx::query(
         r#"
-        INSERT INTO iam_organization_member
-            (id, tenant_id, organization_id, user_id, role_code, status, joined_at)
+        INSERT INTO iam_organization_membership
+            (id, tenant_id, organization_id, user_id, membership_kind, display_name, is_primary, status, joined_at, created_at, updated_at)
         VALUES
-            ($1, $2, $3, $4, 'admin', 'active', $5::timestamptz)
+            ($1, $2, $3, $4, 'admin', $5, 1, 'active', $6::timestamptz, $6::timestamptz, $6::timestamptz)
         ON CONFLICT(id) DO UPDATE SET
             tenant_id = excluded.tenant_id,
             organization_id = excluded.organization_id,
             user_id = excluded.user_id,
-            role_code = excluded.role_code,
-            status = excluded.status
+            membership_kind = excluded.membership_kind,
+            display_name = excluded.display_name,
+            is_primary = excluded.is_primary,
+            status = excluded.status,
+            updated_at = excluded.updated_at
         "#,
     )
     .bind(member_id)
     .bind(DEFAULT_IAM_TENANT_ID)
     .bind(DEFAULT_IAM_ORGANIZATION_ID)
     .bind(user_id)
+    .bind(&options.display_name)
     .bind(now)
     .execute(&mut **tx)
     .await?;
@@ -5791,6 +6584,34 @@ async fn sqlite_upsert_default_iam_subject(pool: &SqlitePool) -> Result<(), sqlx
     Ok(())
 }
 
+async fn sqlite_upsert_default_iam_permissions(pool: &SqlitePool) -> Result<(), sqlx::Error> {
+    let now = current_utc_timestamp_string();
+    for permission in DEFAULT_IAM_PERMISSION_SEEDS {
+        let permission_id = default_iam_permission_id(permission.code);
+        sqlx::query(
+            r#"
+            INSERT INTO iam_permission
+                (id, code, name, resource, action, created_at)
+            VALUES
+                (?, ?, ?, ?, ?, ?)
+            ON CONFLICT(code) DO UPDATE SET
+                name = excluded.name,
+                resource = excluded.resource,
+                action = excluded.action
+            "#,
+        )
+        .bind(permission_id)
+        .bind(permission.code)
+        .bind(permission.name)
+        .bind(permission.resource)
+        .bind(permission.action)
+        .bind(&now)
+        .execute(pool)
+        .await?;
+    }
+    Ok(())
+}
+
 async fn postgres_upsert_default_iam_subject(pool: &PgPool) -> Result<(), sqlx::Error> {
     sqlx::query(
         r#"
@@ -5835,6 +6656,43 @@ async fn postgres_upsert_default_iam_subject(pool: &PgPool) -> Result<(), sqlx::
     .execute(pool)
     .await?;
     Ok(())
+}
+
+async fn postgres_upsert_default_iam_permissions(pool: &PgPool) -> Result<(), sqlx::Error> {
+    for permission in DEFAULT_IAM_PERMISSION_SEEDS {
+        let permission_id = default_iam_permission_id(permission.code);
+        sqlx::query(
+            r#"
+            INSERT INTO iam_permission
+                (id, code, name, resource, action, created_at)
+            VALUES
+                ($1, $2, $3, $4, $5, CURRENT_TIMESTAMP)
+            ON CONFLICT(code) DO UPDATE SET
+                name = excluded.name,
+                resource = excluded.resource,
+                action = excluded.action
+            "#,
+        )
+        .bind(permission_id)
+        .bind(permission.code)
+        .bind(permission.name)
+        .bind(permission.resource)
+        .bind(permission.action)
+        .execute(pool)
+        .await?;
+    }
+    Ok(())
+}
+
+fn default_iam_permission_id(code: &str) -> String {
+    let normalized = code
+        .chars()
+        .map(|ch| match ch {
+            'a'..='z' | '0'..='9' => ch,
+            _ => '-',
+        })
+        .collect::<String>();
+    format!("iam-permission-{normalized}")
 }
 
 async fn upsert_sqlite_installing_state(

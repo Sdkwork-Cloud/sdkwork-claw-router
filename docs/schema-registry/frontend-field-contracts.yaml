@@ -7217,7 +7217,7 @@ frontend_models:
       - updatedAt
     data_sources:
       - iam_organization
-      - iam_organization_member
+      - iam_organization_membership
   - route: /admin/organization
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
     interface: DepartmentTreeNode
@@ -7248,7 +7248,7 @@ frontend_models:
       - updatedAt
     data_sources:
       - iam_organization
-      - iam_organization_member
+      - iam_organization_membership
   - route: /admin/organization
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
     interface: OrganizationMemberRecord
@@ -7267,7 +7267,7 @@ frontend_models:
     data_sources:
       - iam_user
       - iam_organization
-      - iam_organization_member
+      - iam_organization_membership
   - route: /admin/organization
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
     interface: UserRecord
@@ -7296,7 +7296,7 @@ frontend_models:
       - createdAt
     data_sources:
       - iam_user
-      - iam_organization_member
+      - iam_organization_membership
   - route: /admin/organization
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
     interface: PositionRecord
@@ -7313,7 +7313,7 @@ frontend_models:
       - updatedAt
     data_sources:
       - iam_organization
-      - iam_organization_member
+      - iam_organization_membership
   - route: /admin/organization
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
     interface: PositionAssignmentRecord
@@ -7328,7 +7328,7 @@ frontend_models:
       - createdAt
     data_sources:
       - iam_user
-      - iam_organization_member
+      - iam_organization_membership
   - route: /admin/organization
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
     interface: RoleRecord
@@ -7360,7 +7360,7 @@ frontend_models:
       - iam_role
       - iam_user_role
       - iam_organization
-      - iam_organization_member
+      - iam_organization_membership
   - route: /admin/organization
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
     interface: PermissionRecord
@@ -7504,7 +7504,7 @@ frontend_models:
     data_sources:
       - iam_user
       - iam_organization
-      - iam_organization_member
+      - iam_organization_membership
       - iam_role
       - iam_permission
       - iam_role_permission
@@ -7544,7 +7544,7 @@ frontend_models:
       - sortWeight
     data_sources:
       - iam_organization
-      - iam_organization_member
+      - iam_organization_membership
   - route: /admin/organization
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
     interface: MembershipCommand
@@ -7560,7 +7560,7 @@ frontend_models:
     data_sources:
       - iam_user
       - iam_organization
-      - iam_organization_member
+      - iam_organization_membership
   - route: /admin/organization
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
     interface: DepartmentAssignmentCommand
@@ -7573,7 +7573,7 @@ frontend_models:
       - isPrimary
     data_sources:
       - iam_user
-      - iam_organization_member
+      - iam_organization_membership
   - route: /admin/organization
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
     interface: PositionCommand
@@ -7587,7 +7587,7 @@ frontend_models:
       - status
     data_sources:
       - iam_organization
-      - iam_organization_member
+      - iam_organization_membership
   - route: /admin/organization
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
     interface: PositionAssignmentCommand
@@ -7600,7 +7600,7 @@ frontend_models:
       - endedAt
     data_sources:
       - iam_user
-      - iam_organization_member
+      - iam_organization_membership
   - route: /admin/organization
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
     interface: RoleCommand
@@ -7627,7 +7627,7 @@ frontend_models:
       - iam_role
       - iam_user_role
       - iam_organization
-      - iam_organization_member
+      - iam_organization_membership
   - route: /admin/organization
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
     interface: PermissionCommand
@@ -19995,7 +19995,7 @@ frontend_operations:
     description: Lists active tenant organizations visible to the current app IAM subject.
     read_sources:
       - iam_organization
-      - iam_organization_member
+      - iam_organization_membership
     query_parameters:
       - name: organization_id
         schema: { type: string, maxLength: 128 }
@@ -20050,7 +20050,7 @@ frontend_operations:
     description: Returns the visible organization tree for the current app IAM subject.
     read_sources:
       - iam_organization
-      - iam_organization_member
+      - iam_organization_membership
     query_parameters:
       - name: organization_id
         schema: { type: string, maxLength: 128 }
@@ -20110,7 +20110,7 @@ frontend_operations:
     summary: List current IAM organization memberships
     description: Lists organization memberships for the current app IAM subject.
     read_sources:
-      - iam_organization_member
+      - iam_organization_membership
     query_parameters:
       - name: organization_id
         schema: { type: string, maxLength: 128 }
@@ -20165,7 +20165,7 @@ frontend_operations:
     description: Lists active departments visible to the current app IAM subject.
     read_sources:
       - iam_organization
-      - iam_organization_member
+      - iam_organization_membership
     query_parameters:
       - name: organization_id
         schema: { type: string, maxLength: 128 }
@@ -20221,7 +20221,7 @@ frontend_operations:
     description: Returns the visible department tree for the current app IAM subject.
     read_sources:
       - iam_organization
-      - iam_organization_member
+      - iam_organization_membership
     query_parameters:
       - name: organization_id
         schema: { type: string, maxLength: 128 }
@@ -20283,7 +20283,7 @@ frontend_operations:
     description: Lists department assignments visible to the current app IAM subject.
     read_sources:
       - iam_organization
-      - iam_organization_member
+      - iam_organization_membership
     query_parameters:
       - name: organization_id
         schema: { type: string, maxLength: 128 }
@@ -20342,7 +20342,7 @@ frontend_operations:
     description: Lists positions visible to the current app IAM subject.
     read_sources:
       - iam_organization
-      - iam_organization_member
+      - iam_organization_membership
     query_parameters:
       - name: organization_id
         schema: { type: string, maxLength: 128 }
@@ -20399,7 +20399,7 @@ frontend_operations:
     description: Lists position assignments visible to the current app IAM subject.
     read_sources:
       - iam_organization
-      - iam_organization_member
+      - iam_organization_membership
     query_parameters:
       - name: organization_id
         schema: { type: string, maxLength: 128 }
@@ -20457,7 +20457,7 @@ frontend_operations:
     description: Lists role bindings visible to the current app IAM subject.
     read_sources:
       - iam_organization
-      - iam_organization_member
+      - iam_organization_membership
     query_parameters:
       - name: organization_id
         schema: { type: string, maxLength: 128 }
@@ -21323,7 +21323,7 @@ frontend_operations:
       - ops_notification_message
       - ops_notification_recipient
       - ops_notification_delivery
-      - iam_organization_member
+      - iam_organization_membership
     query_parameters:
       - name: app_id
         schema: { type: string, maxLength: 128, pattern: '^[A-Za-z0-9._-]+$' }
@@ -21376,7 +21376,7 @@ frontend_operations:
       - ops_notification_message
       - ops_notification_recipient
       - ops_notification_delivery
-      - iam_organization_member
+      - iam_organization_membership
     query_parameters:
       - name: app_id
         schema: { type: string, maxLength: 128, pattern: '^[A-Za-z0-9._-]+$' }
@@ -21397,7 +21397,7 @@ frontend_operations:
     read_sources:
       - ops_notification_message
       - ops_notification_recipient
-      - iam_organization_member
+      - iam_organization_membership
     write_tables:
       - ops_notification_delivery
     request_body_required: false
@@ -21423,7 +21423,7 @@ frontend_operations:
     read_sources:
       - ops_notification_message
       - ops_notification_recipient
-      - iam_organization_member
+      - iam_organization_membership
     write_tables:
       - ops_notification_delivery
     request_body_required: false
@@ -34050,7 +34050,7 @@ frontend_operations:
     read_sources:
       - iam_user
       - iam_organization
-      - iam_organization_member
+      - iam_organization_membership
       - iam_role
       - iam_permission
       - iam_role_permission
@@ -34157,7 +34157,7 @@ frontend_operations:
     openapi_exposed: false
     read_sources:
       - iam_organization
-      - iam_organization_member
+      - iam_organization_membership
   - route: /admin/organization
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
     operation: createMembership
@@ -34172,7 +34172,7 @@ frontend_operations:
       - iam_user
       - iam_organization
     write_tables:
-      - iam_organization_member
+      - iam_organization_membership
       - ops_audit_log
   - route: /admin/organization
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
@@ -34185,9 +34185,9 @@ frontend_operations:
     sdk_domain: iam
     openapi_exposed: false
     read_sources:
-      - iam_organization_member
+      - iam_organization_membership
     write_tables:
-      - iam_organization_member
+      - iam_organization_membership
       - ops_audit_log
   - route: /admin/organization
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
@@ -34200,9 +34200,9 @@ frontend_operations:
     sdk_domain: iam
     openapi_exposed: false
     read_sources:
-      - iam_organization_member
+      - iam_organization_membership
     write_tables:
-      - iam_organization_member
+      - iam_organization_membership
       - ops_audit_log
   - route: /admin/organization
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
@@ -34216,9 +34216,9 @@ frontend_operations:
     openapi_exposed: false
     read_sources:
       - iam_organization
-      - iam_organization_member
+      - iam_organization_membership
     write_tables:
-      - iam_organization_member
+      - iam_organization_membership
       - ops_audit_log
   - route: /admin/organization
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
@@ -34231,9 +34231,9 @@ frontend_operations:
     sdk_domain: iam
     openapi_exposed: false
     read_sources:
-      - iam_organization_member
+      - iam_organization_membership
     write_tables:
-      - iam_organization_member
+      - iam_organization_membership
       - ops_audit_log
   - route: /admin/organization
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
@@ -34246,9 +34246,9 @@ frontend_operations:
     sdk_domain: iam
     openapi_exposed: false
     read_sources:
-      - iam_organization_member
+      - iam_organization_membership
     write_tables:
-      - iam_organization_member
+      - iam_organization_membership
       - ops_audit_log
   - route: /admin/organization
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
@@ -34307,9 +34307,9 @@ frontend_operations:
     openapi_exposed: false
     read_sources:
       - iam_organization
-      - iam_organization_member
+      - iam_organization_membership
     write_tables:
-      - iam_organization_member
+      - iam_organization_membership
       - ops_audit_log
   - route: /admin/organization
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
@@ -34322,9 +34322,9 @@ frontend_operations:
     sdk_domain: iam
     openapi_exposed: false
     read_sources:
-      - iam_organization_member
+      - iam_organization_membership
     write_tables:
-      - iam_organization_member
+      - iam_organization_membership
       - ops_audit_log
   - route: /admin/organization
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
@@ -34337,9 +34337,9 @@ frontend_operations:
     sdk_domain: iam
     openapi_exposed: false
     read_sources:
-      - iam_organization_member
+      - iam_organization_membership
     write_tables:
-      - iam_organization_member
+      - iam_organization_membership
       - ops_audit_log
   - route: /admin/organization
     source: apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts
@@ -34398,7 +34398,7 @@ frontend_operations:
     openapi_exposed: false
     read_sources:
       - iam_role
-      - iam_organization_member
+      - iam_organization_membership
     write_tables:
       - iam_user_role
       - ops_audit_log
@@ -44966,7 +44966,7 @@ routes:
       - ops_notification_message
       - ops_notification_recipient
       - ops_notification_delivery
-      - iam_organization_member
+      - iam_organization_membership
     required_columns:
       ops_notification_message:
         - title
@@ -45051,7 +45051,7 @@ routes:
     required_tables:
       - iam_user
       - iam_organization
-      - iam_organization_member
+      - iam_organization_membership
       - iam_role
       - iam_permission
       - iam_role_permission

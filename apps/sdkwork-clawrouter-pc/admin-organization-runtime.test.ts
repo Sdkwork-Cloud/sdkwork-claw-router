@@ -23,6 +23,14 @@ function restoreWindow(): void {
   delete (globalThis as { window?: Window }).window;
 }
 
+function sourceSection(sourceCode: string, startMarker: string, endMarker: string): string {
+  const start = sourceCode.indexOf(startMarker);
+  assert.notEqual(start, -1, `missing source section start: ${startMarker}`);
+  const end = sourceCode.indexOf(endMarker, start + startMarker.length);
+  assert.notEqual(end, -1, `missing source section end: ${endMarker}`);
+  return sourceCode.slice(start, end);
+}
+
 test("admin organization is registered under home user management", () => {
   const homeModule = ADMIN_MODULES.find((module) => module.id === "home");
   assert.ok(homeModule, "home admin module must exist");
@@ -100,6 +108,10 @@ test("admin organization page translations are registered", () => {
 
   assert.match(resourceIndex, /adminOrganizationMessages/);
   assert.match(organizationMessages, /"admin\.organization\.title": "Organization"/);
+  assert.match(organizationMessages, /"admin\.organization\.actions\.assignments": "Assignments"/);
+  assert.match(organizationMessages, /"admin\.organization\.assignmentDrawer\.description": "Review existing assignments/);
+  assert.match(organizationMessages, /"admin\.organization\.panels\.directory": "Organization structure"/);
+  assert.match(organizationMessages, /"admin\.organization\.empty\.directory": "No organization structure"/);
   assert.match(organizationMessages, /"admin\.organization\.title": "组织机构"/);
   assert.match(organizationMessages, /"admin\.organization\.actions\.revoke": "撤销"/);
 });
@@ -167,14 +179,346 @@ test("admin organization UI exposes department, position and authorization admin
   const sourceCode = source("packages/sdkwork-clawrouter-pc-admin-organization/src/index.tsx");
 
   assert.match(sourceCode, /function TreeNodeButton\([\s\S]*onDelete[\s\S]*onEdit/);
-  assert.match(sourceCode, /const organization = directory\.organizations\.find\(\(item\) => item\.id === node\.id\)/);
-  assert.match(sourceCode, /const department = directory\.departments\.find\(\(item\) => item\.id === node\.id\)/);
+  assert.match(sourceCode, /const organization = node\.nodeKind === 'organization'[\s\S]*directory\.organizations\.find\(\(item\) => item\.id === node\.organizationId\)/);
+  assert.match(sourceCode, /const department = node\.nodeKind === 'department'[\s\S]*directory\.departments\.find\(\(item\) => item\.id === node\.departmentId\)/);
   assert.match(sourceCode, /\{ kind: 'positionAssignment'; mode: 'edit'; target: PositionAssignmentRecord \}/);
   assert.match(sourceCode, /OrganizationService\.updatePositionAssignment/);
-  assert.match(sourceCode, /onEditAssignment=\{\(target\) => setDialog\(\{ kind: 'positionAssignment', mode: 'edit', target \}\)\}/);
+  assert.match(sourceCode, /onAddAssignment=\{\(\) => setDialog\(\{ kind: 'positionAssignment', mode: 'create' \}\)\}/);
   assert.match(sourceCode, /OrganizationService\.grantRolePermission/);
   assert.match(sourceCode, /OrganizationService\.revokeRolePermission/);
   assert.match(sourceCode, /admin\.organization\.actions\.revoke/);
+});
+
+test("admin organization keeps the main workspace simple and moves auxiliary assignment operations into dialogs", () => {
+  const sourceCode = source("packages/sdkwork-clawrouter-pc-admin-organization/src/index.tsx");
+
+  assert.doesNotMatch(sourceCode, /<SummaryStrip\b/);
+  assert.doesNotMatch(sourceCode, /function SummaryStrip\(/);
+  assert.doesNotMatch(sourceCode, /const totalAssignments = /);
+  assert.doesNotMatch(sourceCode, /assignments=\{visibleDepartmentAssignments\}/);
+  assert.doesNotMatch(sourceCode, /assignments=\{visiblePositionAssignments\}/);
+  assert.doesNotMatch(sourceCode, /2xl:grid-cols-\[minmax\(0,1fr\)_420px\]/);
+  assert.doesNotMatch(
+    sourceCode,
+    /function MembersTab\([\s\S]*assignments: DepartmentAssignmentRecord\[];/,
+    "department assignments should not be a persistent right-side prop in the members workspace",
+  );
+  assert.doesNotMatch(
+    sourceCode,
+    /function PositionsTab\([\s\S]*assignments: PositionAssignmentRecord\[];/,
+    "position assignments should not be a persistent right-side prop in the positions workspace",
+  );
+  assert.match(sourceCode, /onAddAssignment=\{\(\) => setDialog\(\{ kind: 'departmentAssignment', mode: 'create' \}\)\}/);
+  assert.match(sourceCode, /onAddAssignment=\{\(\) => setDialog\(\{ kind: 'positionAssignment', mode: 'create' \}\)\}/);
+  assert.match(sourceCode, /type AssignmentDrawerState = 'departmentAssignments' \| 'positionAssignments';/);
+  assert.match(sourceCode, /const \[assignmentDrawer, setAssignmentDrawer\] = useState<AssignmentDrawerState \| null>\(null\);/);
+  assert.match(sourceCode, /onManageAssignments=\{\(\) => setAssignmentDrawer\('departmentAssignments'\)\}/);
+  assert.match(sourceCode, /onManageAssignments=\{\(\) => setAssignmentDrawer\('positionAssignments'\)\}/);
+  assert.match(sourceCode, /<AssignmentDrawer[\s\S]*departmentAssignments=\{visibleDepartmentAssignments\}[\s\S]*positionAssignments=\{visiblePositionAssignments\}/);
+  assert.match(sourceCode, /onEditDepartmentAssignment=\{\(target\) => \{[\s\S]*setAssignmentDrawer\(null\);[\s\S]*setDialog\(\{ kind: 'departmentAssignment', mode: 'edit', target \}\);[\s\S]*\}\}/);
+  assert.match(sourceCode, /onEditPositionAssignment=\{\(target\) => \{[\s\S]*setAssignmentDrawer\(null\);[\s\S]*setDialog\(\{ kind: 'positionAssignment', mode: 'edit', target \}\);[\s\S]*\}\}/);
+  assert.match(sourceCode, /if \(dialog\.kind === 'departmentAssignment'\) \{/);
+  assert.match(sourceCode, /if \(dialog\.kind === 'positionAssignment'\) \{/);
+});
+
+test("admin organization right-side context lists expose refresh actions", () => {
+  const sourceCode = source("packages/sdkwork-clawrouter-pc-admin-organization/src/index.tsx");
+  const membersTabSource = sourceSection(sourceCode, "function MembersTab(", "function PositionsTab(");
+  const positionsTabSource = sourceSection(sourceCode, "function PositionsTab(", "function AssignmentDrawer(");
+  const authorizationTabSource = sourceSection(sourceCode, "function AuthorizationTab(", "function AuthorizationDrawer(");
+
+  for (const componentSource of [membersTabSource, positionsTabSource, authorizationTabSource]) {
+    assert.match(componentSource, /isRefreshing/);
+    assert.match(componentSource, /onRefresh/);
+    assert.match(componentSource, /IconButton label=\{t\('common\.actions\.refresh', 'Refresh'\)\} onClick=\{onRefresh\} disabled=\{isRefreshing\}/);
+    assert.match(componentSource, /RefreshCw className=\{`h-4 w-4 \$\{isRefreshing \? 'animate-spin' : ''\}`\}/);
+  }
+
+  assert.match(sourceCode, /<MembersTab[\s\S]*isRefreshing=\{loading\}[\s\S]*onRefresh=\{\(\) => \{ void loadDirectory\(\); \}\}/);
+  assert.match(sourceCode, /<PositionsTab[\s\S]*isRefreshing=\{loading\}[\s\S]*onRefresh=\{\(\) => \{ void loadDirectory\(\); \}\}/);
+  assert.match(sourceCode, /<AuthorizationTab[\s\S]*isRefreshing=\{loading\}[\s\S]*onRefresh=\{\(\) => \{ void loadDirectory\(\); \}\}/);
+  assert.match(sourceCode, /function IconButton\(\{ children, disabled, label, onClick \}/);
+});
+
+test("admin organization query lives in the left side of right table headers", () => {
+  const sourceCode = source("packages/sdkwork-clawrouter-pc-admin-organization/src/index.tsx");
+  const messages = source("packages/sdkwork-clawrouter-pc-i18n/src/resources/admin/organization.ts");
+  const pageHeaderSource = sourceSection(sourceCode, "return (", "{actionError ? (");
+  const directoryPanelSource = sourceSection(sourceCode, "<Panel", "</Panel>");
+  const membersTabSource = sourceSection(sourceCode, "function MembersTab(", "function PositionsTab(");
+  const positionsTabSource = sourceSection(sourceCode, "function PositionsTab(", "function AssignmentDrawer(");
+  const authorizationTabSource = sourceSection(sourceCode, "function AuthorizationTab(", "function AuthorizationDrawer(");
+
+  assert.doesNotMatch(pageHeaderSource, /<h1\b/);
+  assert.doesNotMatch(pageHeaderSource, /admin\.organization\.eyebrow/);
+  assert.doesNotMatch(pageHeaderSource, /admin\.organization\.title/);
+  assert.doesNotMatch(pageHeaderSource, /<ListSearchControl/);
+  assert.doesNotMatch(sourceCode, /onChange=\{\(event\) => setSearch\(event\.target\.value\)\}/);
+
+  assert.doesNotMatch(sourceCode, /const \[directorySearchInput, setDirectorySearchInput\] = useState\(''\);/);
+  assert.doesNotMatch(sourceCode, /const \[directorySearch, setDirectorySearch\] = useState\(''\);/);
+  assert.doesNotMatch(sourceCode, /const normalizedDirectorySearch = directorySearch\.trim\(\)\.toLowerCase\(\);/);
+  assert.doesNotMatch(sourceCode, /const visibleDirectoryTree = useMemo\(/);
+  assert.doesNotMatch(sourceCode, /function handleDirectorySearchSubmit/);
+  assert.doesNotMatch(sourceCode, /function filterOrganizationDepartmentTree/);
+  assert.doesNotMatch(sourceCode, /function DirectorySearchControl/);
+
+  assert.doesNotMatch(directoryPanelSource, /<ListQueryControl/);
+  assert.doesNotMatch(directoryPanelSource, /admin\.organization\.search\.directory/);
+  assert.match(directoryPanelSource, /nodes=\{combinedDirectoryTree\}/);
+  assert.match(directoryPanelSource, /expanded=\{expandedDirectoryNodeIds\.has\(node\.id\)\}/);
+  assert.match(directoryPanelSource, /isNodeExpanded=\{\(node\) => expandedDirectoryNodeIds\.has\(node\.id\)\}/);
+
+  assert.match(sourceCode, /const \[listSearchInput, setListSearchInput\] = useState\(''\);/);
+  assert.match(sourceCode, /const \[listSearch, setListSearch\] = useState\(''\);/);
+  assert.match(sourceCode, /const normalizedListSearch = listSearch\.trim\(\)\.toLowerCase\(\);/);
+  assert.match(sourceCode, /function handleListSearchSubmit\(event\?: FormEvent<HTMLFormElement>\): void \{/);
+  assert.match(sourceCode, /setListSearch\(listSearchInput\);/);
+
+  assert.match(sourceCode, /<MembersTab[\s\S]*queryLabel=\{t\('common\.actions\.query', 'Query'\)\}[\s\S]*queryPlaceholder=\{t\('admin\.organization\.search\.members', 'Search members\.\.\.'\)\}[\s\S]*queryValue=\{listSearchInput\}/);
+  assert.match(sourceCode, /<PositionsTab[\s\S]*queryLabel=\{t\('common\.actions\.query', 'Query'\)\}[\s\S]*queryPlaceholder=\{t\('admin\.organization\.search\.positions', 'Search positions\.\.\.'\)\}[\s\S]*queryValue=\{listSearchInput\}/);
+  assert.match(sourceCode, /<AuthorizationTab[\s\S]*queryLabel=\{t\('common\.actions\.query', 'Query'\)\}[\s\S]*queryPlaceholder=\{t\('admin\.organization\.search\.permissions', 'Search permissions\.\.\.'\)\}[\s\S]*queryValue=\{listSearchInput\}/);
+
+  for (const componentSource of [membersTabSource, positionsTabSource, authorizationTabSource]) {
+    assert.match(componentSource, /queryLabel: string;/);
+    assert.match(componentSource, /queryPlaceholder: string;/);
+    assert.match(componentSource, /queryValue: string;/);
+    assert.match(componentSource, /onQuery: \(event\?: FormEvent<HTMLFormElement>\) => void;/);
+    assert.match(componentSource, /onQueryValueChange: \(value: string\) => void;/);
+    assert.match(componentSource, /<TableHeader[\s\S]*query=\{\([\s\S]*<ListQueryControl[\s\S]*onQuery=\{onQuery\}[\s\S]*placeholder=\{queryPlaceholder\}[\s\S]*queryLabel=\{queryLabel\}[\s\S]*value=\{queryValue\}/);
+  }
+
+  assert.doesNotMatch(membersTabSource, /title=\{t\('admin\.organization\.members\.title'/);
+  assert.doesNotMatch(positionsTabSource, /title=\{t\('admin\.organization\.positions\.title'/);
+  assert.doesNotMatch(authorizationTabSource, /title=\{t\('admin\.organization\.permissions\.title'/);
+  assert.match(membersTabSource, /header=\{\([\s\S]*<TableHeader[\s\S]*query=\{/);
+  assert.match(positionsTabSource, /header=\{\([\s\S]*<TableHeader[\s\S]*query=\{/);
+  assert.match(authorizationTabSource, /header=\{\([\s\S]*<TableHeader[\s\S]*query=\{/);
+
+  assert.match(sourceCode, /function TableHeader\(\{ action, query \}: \{ action\?: ReactNode; query\?: ReactNode \}\)/);
+  assert.match(messages, /"admin\.organization\.search\.members": "Search members\.\.\."/);
+  assert.match(messages, /"admin\.organization\.search\.positions": "Search positions\.\.\."/);
+  assert.match(messages, /"admin\.organization\.search\.permissions": "Search permissions\.\.\."/);
+});
+
+test("admin organization authorization is a permission list with auxiliary role workflows in drawers or dialogs", () => {
+  const sourceCode = source("packages/sdkwork-clawrouter-pc-admin-organization/src/index.tsx");
+  const authorizationTabSource = sourceSection(
+    sourceCode,
+    "function AuthorizationTab(",
+    "function AuthorizationDrawer(",
+  );
+
+  assert.match(sourceCode, /type AuthorizationDrawerState = 'roles' \| 'rolePermissions' \| 'roleBindings';/);
+  assert.match(sourceCode, /const \[authorizationDrawer, setAuthorizationDrawer\] = useState<AuthorizationDrawerState \| null>\(null\);/);
+  assert.match(sourceCode, /onManageRoles=\{\(\) => setAuthorizationDrawer\('roles'\)\}/);
+  assert.match(sourceCode, /onManageRolePermissions=\{\(\) => setAuthorizationDrawer\('rolePermissions'\)\}/);
+  assert.match(sourceCode, /onManageRoleBindings=\{\(\) => setAuthorizationDrawer\('roleBindings'\)\}/);
+  assert.match(sourceCode, /<AuthorizationDrawer[\s\S]*activeKind=\{authorizationDrawer\}[\s\S]*rolePermissions=\{rolePermissions\}[\s\S]*bindings=\{visibleRoleBindings\}/);
+  assert.match(sourceCode, /onClose=\{\(\) => setAuthorizationDrawer\(null\)\}/);
+  assert.match(sourceCode, /setAuthorizationDrawer\(null\);[\s\S]*setDialog\(\{ kind: 'role', mode: 'create' \}\);/);
+  assert.match(sourceCode, /setAuthorizationDrawer\(null\);[\s\S]*setDialog\(\{ kind: 'roleBinding', mode: 'create' \}\);/);
+  assert.match(sourceCode, /setAuthorizationDrawer\(null\);[\s\S]*setDialog\(\{ kind: 'rolePermission', mode: 'create' \}\);/);
+
+  assert.doesNotMatch(authorizationTabSource, /2xl:grid-cols-\[minmax\(0,1fr\)_minmax\(0,1fr\)\]/);
+  assert.doesNotMatch(authorizationTabSource, /admin\.organization\.roles\.title/);
+  assert.doesNotMatch(authorizationTabSource, /admin\.organization\.roleBindings\.title/);
+  assert.doesNotMatch(authorizationTabSource, /admin\.organization\.rolePermissions\.title/);
+  assert.doesNotMatch(authorizationTabSource, /title=\{t\('admin\.organization\.permissions\.title', 'Permissions'\)\}/);
+  assert.match(authorizationTabSource, /t\('admin\.organization\.columns\.code', 'Code'\)/);
+  assert.match(authorizationTabSource, /t\('admin\.organization\.columns\.resource', 'Resource'\)/);
+  assert.match(authorizationTabSource, /t\('admin\.organization\.columns\.action', 'Action'\)/);
+});
+
+test("admin organization uses one combined organization and department tree", () => {
+  const sourceCode = source("packages/sdkwork-clawrouter-pc-admin-organization/src/index.tsx");
+
+  assert.match(sourceCode, /xl:grid-cols-\[340px_minmax\(0,1fr\)\]/);
+  assert.doesNotMatch(sourceCode, /xl:grid-cols-\[280px_300px_minmax\(0,1fr\)\]/);
+  assert.match(sourceCode, /type OrganizationDirectoryTreeNode =/);
+  assert.match(sourceCode, /nodeKind: 'organization'/);
+  assert.match(sourceCode, /nodeKind: 'department'/);
+  assert.match(sourceCode, /const combinedDirectoryTree = useMemo\(/);
+  assert.match(sourceCode, /nodes=\{combinedDirectoryTree\}/);
+  assert.match(sourceCode, /title=\{t\('admin\.organization\.panels\.directory', 'Organization structure'\)\}/);
+  assert.match(sourceCode, /<section aria-label=\{title\}/);
+  assert.doesNotMatch(sourceCode, /title=\{t\('admin\.organization\.panels\.organizations', 'Organizations'\)\}/);
+  assert.doesNotMatch(sourceCode, /title=\{t\('admin\.organization\.panels\.departments', 'Departments'\)\}/);
+  assert.match(sourceCode, /function handleDirectoryNodeSelect\(node: OrganizationDirectoryTreeNode\): void \{/);
+  assert.match(sourceCode, /onClick=\{\(\) => handleDirectoryNodeSelect\(node\)\}/);
+  assert.match(sourceCode, /function buildOrganizationDepartmentTree\(/);
+  assert.doesNotMatch(sourceCode, /meta: node\.code/);
+  assert.doesNotMatch(sourceCode, /meta: node\.organizationId/);
+  assert.doesNotMatch(sourceCode, /status=\{node\.status\}/);
+  assert.doesNotMatch(sourceCode, /<StatusPill status=\{status\} \/>/);
+  assert.doesNotMatch(sourceCode, /status: node\.status/);
+  assert.doesNotMatch(sourceCode, /\[node\.name, node\.code, node\.meta, node\.status, node\.nodeKind\]/);
+  assert.doesNotMatch(sourceCode, /function filterOrganizationDepartmentTree\(nodes: OrganizationDirectoryTreeNode\[], search: string\): OrganizationDirectoryTreeNode\[]/);
+});
+
+test("admin organization and department create dialogs auto-generate optional codes", () => {
+  const sourceCode = source("packages/sdkwork-clawrouter-pc-admin-organization/src/index.tsx");
+  const serviceSource = source("packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts");
+  const organizationFieldsSource = sourceSection(
+    sourceCode,
+    "if (dialog.kind === 'organization') {",
+    "if (dialog.kind === 'department') {",
+  );
+  const departmentFieldsSource = sourceSection(
+    sourceCode,
+    "if (dialog.kind === 'department') {",
+    "if (dialog.kind === 'membership') {",
+  );
+
+  assert.match(serviceSource, /export type OrganizationCommand = \{[\s\S]*code\?: string;/);
+  assert.match(serviceSource, /organizations\.create\(\s*toCommand\(input, \['name'\]\),/);
+  assert.match(sourceCode, /function generatedEntityCode\(name: string, fallbackCode: string\): string/);
+  assert.match(sourceCode, /const renderedOrganizationCode = organizationCodeTouched[\s\S]*generatedEntityCode\(organizationNameForCode, 'organization'\);/);
+  assert.match(sourceCode, /const renderedDepartmentCode = departmentCodeTouched[\s\S]*generatedEntityCode\(departmentNameForCode, 'department'\);/);
+  assert.doesNotMatch(organizationFieldsSource, /name="code" required/);
+  assert.doesNotMatch(departmentFieldsSource, /name="code" required/);
+  assert.match(sourceCode, /code: optionalFormText\(form, 'code'\),[\s\S]*name: requiredFormText\(form, 'name'\),/);
+});
+
+test("admin organization tree exposes contextual department CRUD actions", () => {
+  const sourceCode = source("packages/sdkwork-clawrouter-pc-admin-organization/src/index.tsx");
+  const organizationMessages = source("packages/sdkwork-clawrouter-pc-i18n/src/resources/admin/organization.ts");
+
+  assert.match(sourceCode, /onCreateChild\?: \(\) => void;/);
+  assert.match(
+    sourceCode,
+    /RowIconButton label=\{t\('admin\.organization\.actions\.addChildDepartment', 'Add child department'\)\} onClick=\{onCreateChild\}>[\s\S]*<Plus className="h-3\.5 w-3\.5" \/>/,
+    "each organization or department tree row should expose a contextual add-child department action",
+  );
+  assert.match(
+    sourceCode,
+    /<SmallButton label=\{t\('admin\.organization\.actions\.createOrganization', 'Create organization'\)\} onClick=\{\(\) => setDialog\(\{ kind: 'organization', mode: 'create' \}\)\} \/>/,
+    "directory panel should use explicit create organization copy instead of generic New",
+  );
+  assert.match(
+    sourceCode,
+    /<SmallButton label=\{t\('admin\.organization\.actions\.createDepartment', 'Create department'\)\} onClick=\{\(\) => setDialog\(\{ kind: 'department', mode: 'create' \}\)\} disabled=\{!activeOrganizationIdForRelations\} \/>/,
+    "directory panel should use explicit create department copy and require active organization context",
+  );
+  assert.match(
+    sourceCode,
+    /onCreateChild=\{organization && isActiveRecord\(organization\)[\s\S]*setActiveOrganizationId\(node\.organizationId\);[\s\S]*setActiveDepartmentId\(''\);[\s\S]*setExpandedDirectoryNodeIds\(\(current\) => expandDirectoryNode\(current, node\.id\)\);[\s\S]*setDialog\(\{ kind: 'department', mode: 'create' \}\);[\s\S]*: department && isActiveRecord\(department\)/,
+    "creating a department from an organization row should select that organization and clear the parent department",
+  );
+  assert.match(
+    sourceCode,
+    /: department && isActiveRecord\(department\) \? \(\) => \{[\s\S]*setActiveOrganizationId\(node\.organizationId\);[\s\S]*setActiveDepartmentId\(node\.departmentId\);[\s\S]*setExpandedDirectoryNodeIds\(\(current\) => expandDirectoryPath\(current, combinedDirectoryTree, node\.id\)\);[\s\S]*setDialog\(\{ kind: 'department', mode: 'create' \}\);[\s\S]*\} : undefined\}/,
+    "creating a department from a department row should use that department as the parent",
+  );
+  assert.match(
+    sourceCode,
+    /const defaultParentDepartmentId = dialog\.mode === 'create' \? activeDepartmentIdForRelations : target\?\.parentDepartmentId \?\? '';/,
+    "department creation should inherit selected department as parent, while edit keeps the stored parent",
+  );
+  assert.match(
+    sourceCode,
+    /SelectField key=\{`department-parent-\$\{departmentOrganizationId\}`\} label=\{t\('admin\.organization\.fields\.parentDepartment', 'Parent department'\)\} name="parentDepartmentId" defaultValue=\{defaultParentDepartmentId\}/,
+    "department creation should default the parent selector from the active department context",
+  );
+  assert.match(organizationMessages, /"admin\.organization\.actions\.createDepartment": "Create department"/);
+  assert.match(organizationMessages, /"admin\.organization\.actions\.addChildDepartment": "Add child department"/);
+  assert.match(organizationMessages, /"admin\.organization\.actions\.createDepartment": "新建部门"/);
+  assert.match(organizationMessages, /"admin\.organization\.actions\.addChildDepartment": "新建子部门"/);
+}
+);
+
+test("admin organization tree node menus expose professional dropdown and context actions", () => {
+  const sourceCode = source("packages/sdkwork-clawrouter-pc-admin-organization/src/index.tsx");
+  const organizationMessages = source("packages/sdkwork-clawrouter-pc-i18n/src/resources/admin/organization.ts");
+
+  assert.match(sourceCode, /type DirectoryNodeMenuState = \{/);
+  assert.match(
+    sourceCode,
+    /const \[directoryNodeMenu, setDirectoryNodeMenu\] = useState<DirectoryNodeMenuState \| null>\(null\);/,
+  );
+  assert.match(sourceCode, /function openDirectoryNodeMenu\(nodeId: string, mode: DirectoryNodeMenuState\['mode'\], x: number, y: number\): void \{/);
+  assert.match(sourceCode, /onContextMenu=\{\(event\) => \{[\s\S]*event\.preventDefault\(\);[\s\S]*openDirectoryNodeMenu\(node\.id, 'context', event\.clientX, event\.clientY\);[\s\S]*\}\}/);
+  assert.match(sourceCode, /onOpenMenu=\{\(event\) => \{[\s\S]*const rect = event\.currentTarget\.getBoundingClientRect\(\);[\s\S]*openDirectoryNodeMenu\(node\.id, 'dropdown', rect\.right - DIRECTORY_NODE_MENU_WIDTH, rect\.bottom \+ 6\);[\s\S]*\}\}/);
+  assert.match(sourceCode, /RowIconButton label=\{t\('admin\.organization\.actions\.more', 'More actions'\)\} onClick=\{onOpenMenu\}>[\s\S]*<MoreHorizontal className="h-3\.5 w-3\.5" \/>/);
+  assert.match(sourceCode, /function DirectoryNodeMenu\(/);
+  assert.match(sourceCode, /style=\{\{ left: menuState\.x, top: menuState\.y, width: DIRECTORY_NODE_MENU_WIDTH \}\}/);
+  const directoryNodeMenuSource = sourceSection(
+    sourceCode,
+    "function DirectoryNodeMenu(",
+    "function ContextBadge(",
+  );
+  assert.doesNotMatch(directoryNodeMenuSource, /overflow-auto/);
+  assert.doesNotMatch(directoryNodeMenuSource, /max-h-/);
+  assert.doesNotMatch(directoryNodeMenuSource, /grid-cols-/);
+  assert.doesNotMatch(directoryNodeMenuSource, /height:/);
+  assert.match(directoryNodeMenuSource, /space-y-1/);
+  assert.match(directoryNodeMenuSource, /w-full/);
+  assert.match(directoryNodeMenuSource, /justify-start/);
+
+  for (const key of [
+    "admin.organization.actions.selectNode",
+    "admin.organization.actions.createChildOrganization",
+    "admin.organization.actions.createDepartment",
+    "admin.organization.actions.addChildDepartment",
+    "admin.organization.actions.addMember",
+    "admin.organization.actions.assignMember",
+    "admin.organization.actions.createPosition",
+    "admin.organization.actions.viewMembers",
+    "admin.organization.actions.viewPositions",
+    "admin.organization.actions.viewPermissions",
+  ]) {
+    assert.match(sourceCode, new RegExp(escapeRegExp(key)), `missing menu action key: ${key}`);
+    assert.match(organizationMessages, new RegExp(escapeRegExp(`"${key}"`)), `missing i18n key: ${key}`);
+  }
+
+  assert.match(sourceCode, /setDialog\(\{ kind: 'organization', mode: 'create', parentOrganizationId: node\.organizationId \}\)/);
+  assert.match(sourceCode, /setDialog\(\{ kind: 'membership', mode: 'create' \}\)/);
+  assert.match(sourceCode, /setDialog\(\{ kind: 'departmentAssignment', mode: 'create' \}\)/);
+  assert.match(sourceCode, /setDialog\(\{ kind: 'position', mode: 'create' \}\)/);
+  assert.match(sourceCode, /setActiveTab\('members'\)/);
+  assert.match(sourceCode, /setActiveTab\('positions'\)/);
+  assert.match(sourceCode, /setActiveTab\('authorization'\)/);
+  assert.match(sourceCode, /setConfirmTarget\(buildOrganizationConfirmTarget\(organization, directory, t\)\)/);
+  assert.match(sourceCode, /setConfirmTarget\(buildDepartmentConfirmTarget\(department, directory, t\)\)/);
+  assert.match(
+    sourceCode,
+    /const defaultParentOrganizationId = dialog\.mode === 'create' \? dialog\.parentOrganizationId \?\? '' : target\?\.parentOrganizationId \?\? '';/,
+    "child organization creation from a node should default the parent organization without changing top-level create",
+  );
+});
+
+test("admin organization expands the clicked organization branch before department operations", () => {
+  const sourceCode = source("packages/sdkwork-clawrouter-pc-admin-organization/src/index.tsx");
+
+  assert.match(
+    sourceCode,
+    /const \[expandedDirectoryNodeIds, setExpandedDirectoryNodeIds\] = useState<Set<string>>\(\(\) => new Set\(\)\);/,
+    "organization directory tree should keep explicit expanded branch state",
+  );
+  assert.match(
+    sourceCode,
+    /function handleDirectoryNodeSelect\(node: OrganizationDirectoryTreeNode\): void \{[\s\S]*if \(node\.nodeKind === 'organization'\) \{[\s\S]*setActiveOrganizationId\(node\.organizationId\);[\s\S]*setActiveDepartmentId\(''\);[\s\S]*setExpandedDirectoryNodeIds\(\(current\) => expandDirectoryNode\(current, node\.id\)\);[\s\S]*return;[\s\S]*\}[\s\S]*setActiveOrganizationId\(node\.organizationId\);[\s\S]*setActiveDepartmentId\(node\.departmentId\);[\s\S]*setExpandedDirectoryNodeIds\(\(current\) => expandDirectoryPath\(current, combinedDirectoryTree, node\.id\)\);[\s\S]*\}/,
+    "clicking an organization should select and expand that branch; clicking a department should preserve its organization context",
+  );
+  assert.match(
+    sourceCode,
+    /isNodeExpanded=\{\(node\) => expandedDirectoryNodeIds\.has\(node\.id\)\}/,
+    "tree rendering should use explicit branch state",
+  );
+  assert.match(
+    sourceCode,
+    /function renderTree<TNode>\(nodes: TNode\[], renderNode: \(node: TNode, depth: number, hasChildren: boolean, expanded: boolean\) => ReactNode, isNodeExpanded: \(node: TNode\) => boolean, depth = 0\): ReactNode\[] \{[\s\S]*const expanded = children\.length > 0 && isNodeExpanded\(node\);[\s\S]*\.\.\.\(expanded \? renderTree\(children as TNode\[], renderNode, isNodeExpanded, depth \+ 1\) : \[\]\),[\s\S]*\}/,
+    "collapsed organization branches must not render nested departments until expanded",
+  );
+  assert.match(
+    sourceCode,
+    /function expandDirectoryPath\(current: Set<string>, nodes: OrganizationDirectoryTreeNode\[], targetNodeId: string\): Set<string>/,
+    "department selection should expand ancestor organization and department nodes",
+  );
+  assert.match(sourceCode, /hasChildren=\{node\.children\.length > 0\}/);
+  assert.match(sourceCode, /expanded=\{expandedDirectoryNodeIds\.has\(node\.id\)\}/);
+  assert.match(sourceCode, /onToggle=\{\(\) => setExpandedDirectoryNodeIds\(\(current\) => toggleDirectoryNode\(current, node\.id\)\)\}/);
+  assert.match(sourceCode, /aria-expanded=\{hasChildren \? expanded : undefined\}/);
 });
 
 test("admin organization member dialog selects users from the appbase user directory", () => {
@@ -209,8 +553,9 @@ test("admin organization UI deactivates members and assignment lifecycle records
   assert.match(sourceCode, /\| \(\{ kind: 'departmentAssignment' \} & ConfirmTargetBase\)/);
   assert.match(sourceCode, /\| \(\{ kind: 'positionAssignment' \} & ConfirmTargetBase\)/);
   assert.match(sourceCode, /onDeactivateMember=\{\(target\) => setConfirmTarget\(\{ kind: 'membership', id: target\.id, label: formatMemberLabel\(target\.id, target\.userId, lookups\) \}\)\}/);
-  assert.match(sourceCode, /onDeactivateAssignment=\{\(target\) => setConfirmTarget\(\{ kind: 'departmentAssignment', id: target\.id, label: formatMemberLabel\(target\.membershipId, target\.userId, lookups\) \}\)\}/);
-  assert.match(sourceCode, /onDeactivateAssignment=\{\(target\) => setConfirmTarget\(\{ kind: 'positionAssignment', id: target\.id, label: formatPositionLabel\(target\.positionId, lookups\) \}\)\}/);
+  assert.doesNotMatch(sourceCode, /onDeactivateAssignment=\{/, "assignment lifecycle actions should not be mounted in persistent side cards");
+  assert.match(sourceCode, /onDeactivateDepartmentAssignment=\{\(target\) => setConfirmTarget\(\{ kind: 'departmentAssignment', id: target\.id, label: formatMemberLabel\(target\.membershipId, target\.userId, lookups\) \}\)\}/);
+  assert.match(sourceCode, /onDeactivatePositionAssignment=\{\(target\) => setConfirmTarget\(\{ kind: 'positionAssignment', id: target\.id, label: formatPositionLabel\(target\.positionId, lookups\) \}\)\}/);
   assert.match(sourceCode, /OrganizationService\.deactivateMembership\(target\.id\)/);
   assert.match(sourceCode, /OrganizationService\.deactivateDepartmentAssignment\(target\.id\)/);
   assert.match(sourceCode, /OrganizationService\.deactivatePositionAssignment\(target\.id\)/);
@@ -256,9 +601,6 @@ test("admin organization UI resolves relationship names and scopes context choic
   assert.match(sourceCode, /const userIdsForDepartment = useMemo\(/);
   assert.match(sourceCode, /const positionsForActiveContext = useMemo\(/);
   assert.match(sourceCode, /activePositionsForActiveContext=\{activePositionsForActiveContext\}/);
-  assert.match(sourceCode, /formatMemberLabel\(assignment\.membershipId, assignment\.userId, lookups\)/);
-  assert.match(sourceCode, /formatDepartmentLabel\(assignment\.departmentId, lookups\)/);
-  assert.match(sourceCode, /formatPositionLabel\(assignment\.positionId, lookups\)/);
   assert.match(sourceCode, /formatRoleLabel\(binding\.roleId, lookups\)/);
   assert.doesNotMatch(sourceCode, />\{assignment\.userId \|\| assignment\.membershipId\}</);
   assert.doesNotMatch(sourceCode, />\{assignment\.departmentId\}</);
@@ -267,19 +609,25 @@ test("admin organization UI resolves relationship names and scopes context choic
   assert.doesNotMatch(sourceCode, />\{binding\.roleId\}</);
 });
 
-test("admin organization UI searches relationship labels instead of only raw ids", () => {
+test("admin organization UI renders visible relationship labels instead of only raw ids", () => {
   const sourceCode = source("packages/sdkwork-clawrouter-pc-admin-organization/src/index.tsx");
 
+  assert.match(sourceCode, /const visibleMemberships = filterBySearchWithLabels\(/);
+  assert.match(sourceCode, /membersForActiveOrganization\.filter\(\(item\) =>/);
   assert.match(sourceCode, /const visibleDepartmentAssignments = filterBySearchWithLabels\(/);
+  assert.match(sourceCode, /activeDepartmentAssignmentsForContext,/);
   assert.match(sourceCode, /const visiblePositionAssignments = filterBySearchWithLabels\(/);
+  assert.match(sourceCode, /directory\.positionAssignments\.filter\(isActiveRecord\)/);
   assert.match(sourceCode, /const visibleRoleBindings = filterBySearchWithLabels\(/);
-  assert.match(sourceCode, /assignments=\{visibleDepartmentAssignments\}/);
-  assert.match(sourceCode, /assignments=\{visiblePositionAssignments\}/);
+  assert.match(sourceCode, /directory\.roleBindings\.filter\(\(item\) => roleBindingBelongsToContext/);
+  assert.doesNotMatch(sourceCode, /assignments=\{visibleDepartmentAssignments\}/);
+  assert.doesNotMatch(sourceCode, /assignments=\{visiblePositionAssignments\}/);
   assert.match(sourceCode, /function filterBySearchWithLabels<T>\(/);
-  assert.match(sourceCode, /formatMemberLabel\(item\.membershipId, item\.userId, lookups\)/);
-  assert.match(sourceCode, /formatPositionLabel\(item\.positionId, lookups\)/);
-  assert.match(sourceCode, /formatPrincipalLabel\(item\.principalKind, item\.principalId, lookups\)/);
-  assert.match(sourceCode, /formatRoleBindingScopeLabel\(item, lookups\)/);
+  assert.match(sourceCode, /memberDisplayName\(member, lookups\)/);
+  assert.match(sourceCode, /formatMemberLabel\(assignment\.membershipId, assignment\.userId, lookups\)/);
+  assert.match(sourceCode, /formatPositionLabel\(assignment\.positionId, lookups\)/);
+  assert.match(sourceCode, /formatPrincipalLabel\(binding\.principalKind, binding\.principalId, lookups\)/);
+  assert.match(sourceCode, /formatRoleBindingScopeLabel\(binding, lookups\)/);
   assert.doesNotMatch(sourceCode, /bindings=\{visibleRoleBindings\}[\s\S]*label: target\.principalId/);
 });
 
@@ -595,11 +943,16 @@ test("admin organization UI keeps context coherent and guides role binding princ
   );
 });
 
-test("admin organization UI filters organization tree and grants the selected role by default", () => {
+test("admin organization keeps tree navigation independent and grants the selected role by default", () => {
   const sourceCode = source("packages/sdkwork-clawrouter-pc-admin-organization/src/index.tsx");
 
-  assert.match(sourceCode, /nodes=\{filterOrganizationTree\(directory\.organizationTree, normalizedSearch\)\}/);
-  assert.match(sourceCode, /function filterOrganizationTree\(nodes: OrganizationTreeNode\[], search: string\): OrganizationTreeNode\[]/);
+  assert.match(sourceCode, /nodes=\{combinedDirectoryTree\}/);
+  assert.doesNotMatch(sourceCode, /visibleDirectoryTree/);
+  assert.doesNotMatch(sourceCode, /normalizedDirectorySearch/);
+  assert.doesNotMatch(sourceCode, /function filterOrganizationDepartmentTree\(nodes: OrganizationDirectoryTreeNode\[], search: string\): OrganizationDirectoryTreeNode\[]/);
+  assert.doesNotMatch(sourceCode, /function expandVisibleDirectoryNodes\(current: Set<string>, nodes: OrganizationDirectoryTreeNode\[]\): Set<string> \{/);
+  assert.match(sourceCode, /isNodeExpanded=\{\(node\) => expandedDirectoryNodeIds\.has\(node\.id\)\}/);
+  assert.match(sourceCode, /expanded=\{expandedDirectoryNodeIds\.has\(node\.id\)\}/);
   assert.match(sourceCode, /activeRoleId=\{activeRoleId\}/);
   assert.match(sourceCode, /activeRoleId: string;/);
   assert.match(sourceCode, /defaultValue=\{activeRoleId\}/);
@@ -745,21 +1098,27 @@ test("admin organization role binding list stays in the selected organization bo
 
 test("admin organization permission grants require an active selected role", () => {
   const sourceCode = source("packages/sdkwork-clawrouter-pc-admin-organization/src/index.tsx");
+  const authorizationTabSource = sourceSection(
+    sourceCode,
+    "function AuthorizationTab(",
+    "function AuthorizationDrawer(",
+  );
 
   assert.match(
     sourceCode,
-    /onGrantPermission=\{\(\) => activeRoleId \? setDialog\(\{ kind: 'rolePermission', mode: 'create' \}\) : undefined\}/,
+    /onGrantPermission=\{\(\) => \{[\s\S]*if \(!activeRoleId\) \{[\s\S]*return;[\s\S]*\}[\s\S]*setAuthorizationDrawer\(null\);[\s\S]*setDialog\(\{ kind: 'rolePermission', mode: 'create' \}\);[\s\S]*\}\}/,
     "grant permission should not open the dialog without a selected role",
   );
   assert.match(
     sourceCode,
     /<SmallButton label=\{t\('admin\.organization\.actions\.grant', 'Grant'\)\} onClick=\{onGrantPermission\} disabled=\{!selectedRoleId\} \/>/,
-    "role permission panel grant action should require a selected role",
+    "role permission drawer grant action should require a selected role",
   );
   assert.match(
     sourceCode,
-    /<SmallButton label=\{t\('admin\.organization\.actions\.grant', 'Grant'\)\} onClick=\{onGrantPermission\} disabled=\{!selectedRoleId\} \/>[\s\S]*title=\{t\('admin\.organization\.permissions\.title', 'Permissions'\)\}/,
+    /activeKind === 'rolePermissions'[\s\S]*<SmallButton label=\{t\('admin\.organization\.actions\.grant', 'Grant'\)\} onClick=\{onGrantPermission\} disabled=\{!selectedRoleId\} \/>/,
   );
+  assert.doesNotMatch(authorizationTabSource, /admin\.organization\.actions\.grant/);
   assert.doesNotMatch(
     sourceCode,
     /<SmallButton label=\{t\('admin\.organization\.actions\.grant', 'Grant'\)\} onClick=\{onGrantPermission\} \/>/,
@@ -777,7 +1136,7 @@ test("admin organization relation actions require active operational context", (
   );
   assert.match(
     sourceCode,
-    /action=\{<SmallButton label=\{t\('admin\.organization\.actions\.addDepartment', 'Add'\)\} onClick=\{\(\) => setDialog\(\{ kind: 'department', mode: 'create' \}\)\} disabled=\{!activeOrganizationIdForRelations\} \/>/,
+    /<SmallButton label=\{t\('admin\.organization\.actions\.createDepartment', 'Create department'\)\} onClick=\{\(\) => setDialog\(\{ kind: 'department', mode: 'create' \}\)\} disabled=\{!activeOrganizationIdForRelations\} \/>/,
     "department creation should be disabled without an active organization",
   );
   assert.match(sourceCode, /canAddMember=\{Boolean\(activeOrganizationIdForRelations\)\}/);
@@ -873,10 +1232,7 @@ test("admin organization destructive actions show dependency counts and block un
   assert.match(sourceCode, /function activePositionDependencies\(positionId: string, directory: OrganizationDirectoryData, t: TranslationFunction\): ConfirmDependency\[]/);
   assert.match(sourceCode, /function activeRoleDependencies\(roleId: string, directory: OrganizationDirectoryData, rolePermissions: PermissionRecord\[], t: TranslationFunction\): ConfirmDependency\[]/);
   assert.match(sourceCode, /function activePermissionDependencies\(permissionId: string, rolePermissions: PermissionRecord\[], t: TranslationFunction\): ConfirmDependency\[]/);
-  assert.match(sourceCode, /onDelete=\{\(\) => setConfirmTarget\(buildOrganizationConfirmTarget\(item, directory, t\)\)\}/);
-  assert.match(sourceCode, /onDelete=\{organization \? \(\) => setConfirmTarget\(buildOrganizationConfirmTarget\(organization, directory, t\)\) : undefined\}/);
-  assert.match(sourceCode, /onDelete=\{\(\) => setConfirmTarget\(buildDepartmentConfirmTarget\(item, directory, t\)\)\}/);
-  assert.match(sourceCode, /onDelete=\{department \? \(\) => setConfirmTarget\(buildDepartmentConfirmTarget\(department, directory, t\)\) : undefined\}/);
+  assert.match(sourceCode, /onDelete=\{organization\s+\?\s+\(\) => setConfirmTarget\(buildOrganizationConfirmTarget\(organization, directory, t\)\)\s+:\s+department \? \(\) => setConfirmTarget\(buildDepartmentConfirmTarget\(department, directory, t\)\) : undefined\}/);
   assert.match(sourceCode, /onDelete=\{\(target\) => setConfirmTarget\(buildPositionConfirmTarget\(target, directory, t\)\)\}/);
   assert.match(sourceCode, /onDeleteRole=\{\(target\) => setConfirmTarget\(buildRoleConfirmTarget\(target, directory, rolePermissions, t\)\)\}/);
   assert.match(sourceCode, /onDeletePermission=\{\(target\) => setConfirmTarget\(buildPermissionConfirmTarget\(target, rolePermissions, t\)\)\}/);
@@ -938,7 +1294,7 @@ test("admin organization parent selectors prevent self or descendant loops", () 
   );
 });
 
-test("admin organization member table and search are enriched from appbase users", () => {
+test("admin organization member table is enriched from appbase users", () => {
   const sourceCode = source("packages/sdkwork-clawrouter-pc-admin-organization/src/index.tsx");
 
   assert.match(sourceCode, /const visibleMemberships = filterBySearchWithLabels\(/);
@@ -948,8 +1304,7 @@ test("admin organization member table and search are enriched from appbase users
   assert.match(sourceCode, /formatMemberLabel\(member\.id, member\.userId, lookups\)/);
   assert.match(sourceCode, /memberContactPrimary\(member, lookups\)/);
   assert.match(sourceCode, /memberContactSecondary\(member, lookups\)/);
-  assert.match(sourceCode, /memberDisplayName\(item, lookups\)/);
-  assert.match(sourceCode, /formatUserLabel\(item\.userId, lookups\)/);
+  assert.match(sourceCode, /memberDisplayName\(member, lookups\)/);
   assert.doesNotMatch(
     sourceCode,
     /\{member\.displayName\}<\/div>/,
@@ -1010,7 +1365,7 @@ test("admin organization service calls appbase backend directory reads and write
 
   try {
     await OrganizationService.loadDirectory();
-    await OrganizationService.createOrganization({ code: "hq", name: "Headquarters" });
+    await OrganizationService.createOrganization({ name: "Headquarters" });
     await OrganizationService.updateDepartment("dept-1", { name: "Research" });
     await OrganizationService.deletePosition("pos-1");
     await OrganizationService.bindRole({ principalKind: "member", principalId: "mem-1", roleId: "role-1" });
@@ -1042,7 +1397,7 @@ test("admin organization service calls appbase backend directory reads and write
 
     assert.equal(captured[12].url, "https://appbase.example.com/backend/v3/api/iam/organizations");
     assert.equal(captured[12].method, "POST");
-    assert.deepEqual(JSON.parse(captured[12].body), { code: "hq", name: "Headquarters" });
+    assert.deepEqual(JSON.parse(captured[12].body), { name: "Headquarters" });
     assert.equal(captured[13].url, "https://appbase.example.com/backend/v3/api/iam/departments/dept-1");
     assert.equal(captured[13].method, "PATCH");
     assert.deepEqual(JSON.parse(captured[13].body), { name: "Research" });
@@ -1063,7 +1418,7 @@ test("admin organization service calls appbase backend directory reads and write
   }
 });
 
-test("appbase backend SDK fails fast when its dependency backend base URL is not configured", async () => {
+test("appbase backend SDK inherits the verified same-origin backend base URL", async () => {
   const { clearStoredAppSessionToken } = await import("./packages/sdkwork-clawrouter-pc-commons/src/app-session-token.ts");
   const {
     createSdkworkAppbaseBackendSdkClient,
@@ -1083,10 +1438,7 @@ test("appbase backend SDK fails fast when its dependency backend base URL is not
   resetClawRouterSdkClients();
 
   try {
-    assert.throws(
-      () => createSdkworkAppbaseBackendSdkClient(),
-      /VITE_SDKWORK_APPBASE_BACKEND_API_BASE_URL is required/,
-    );
+    assert.doesNotThrow(() => createSdkworkAppbaseBackendSdkClient());
   } finally {
     clearStoredAppSessionToken();
     resetClawRouterSdkClients();

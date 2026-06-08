@@ -1,4 +1,4 @@
-use sdkwork_claw_product::application::{PasswordHasher, Pbkdf2Sha256PasswordHasher};
+﻿use sdkwork_claw_product::application::{PasswordHasher, Pbkdf2Sha256PasswordHasher};
 use sdkwork_claw_product::domain::DecimalValue;
 use sdkwork_claw_product::infrastructure::sql::installer::{
     CatalogRefreshOptions, DatabaseInstallOptions, DatabaseInstaller, InstallationStatus,
@@ -205,15 +205,111 @@ async fn sqlite_installer_installs_schema_and_sdkwork_models_catalog_once() {
     .await;
     assert_sqlite_columns_exist(
         &pool,
-        "iam_organization_member",
+        "iam_organization_membership",
         &[
             "organization_id",
             "user_id",
-            "role_code",
+            "membership_kind",
+            "employee_no",
+            "display_name",
+            "is_primary",
             "status",
             "joined_at",
             "left_at",
             "remark",
+            "created_at",
+            "updated_at",
+        ],
+    )
+    .await;
+    assert_sqlite_columns_exist(
+        &pool,
+        "iam_department",
+        &[
+            "tenant_id",
+            "organization_id",
+            "parent_department_id",
+            "code",
+            "name",
+            "department_kind",
+            "path",
+            "cost_center_code",
+            "manager_membership_id",
+            "status",
+            "created_at",
+            "updated_at",
+        ],
+    )
+    .await;
+    assert_sqlite_columns_exist(
+        &pool,
+        "iam_department_assignment",
+        &[
+            "tenant_id",
+            "organization_id",
+            "organization_membership_id",
+            "department_id",
+            "user_id",
+            "assignment_kind",
+            "is_primary",
+            "effective_from",
+            "effective_to",
+            "status",
+            "created_at",
+            "updated_at",
+        ],
+    )
+    .await;
+    assert_sqlite_columns_exist(
+        &pool,
+        "iam_position",
+        &[
+            "tenant_id",
+            "organization_id",
+            "department_id",
+            "code",
+            "name",
+            "position_kind",
+            "rank_level",
+            "status",
+            "created_at",
+            "updated_at",
+        ],
+    )
+    .await;
+    assert_sqlite_columns_exist(
+        &pool,
+        "iam_position_assignment",
+        &[
+            "tenant_id",
+            "organization_id",
+            "department_assignment_id",
+            "position_id",
+            "user_id",
+            "is_primary",
+            "effective_from",
+            "effective_to",
+            "status",
+            "created_at",
+            "updated_at",
+        ],
+    )
+    .await;
+    assert_sqlite_columns_exist(
+        &pool,
+        "iam_role_binding",
+        &[
+            "tenant_id",
+            "role_id",
+            "principal_kind",
+            "principal_id",
+            "scope_kind",
+            "scope_id",
+            "effect",
+            "condition_json",
+            "status",
+            "created_at",
+            "updated_at",
         ],
     )
     .await;
@@ -432,6 +528,97 @@ async fn sqlite_installer_installs_schema_and_sdkwork_models_catalog_once() {
 }
 
 #[tokio::test]
+async fn sqlite_installer_seeds_default_iam_permission_catalog() {
+    let pool = repair_sqlite_pool().await;
+    let installer = installer(pool.clone());
+
+    sqlx::query("DELETE FROM iam_role_permission")
+        .execute(&pool)
+        .await
+        .unwrap();
+    sqlx::query("DELETE FROM iam_permission")
+        .execute(&pool)
+        .await
+        .unwrap();
+
+    assert_eq!(
+        InstallationStatus::UpgradeRequired,
+        installer.status().await.unwrap(),
+        "installer status must detect missing default IAM permission catalog"
+    );
+
+    let repaired = installer.ensure_installed().await.unwrap();
+    assert_eq!(InstallationStatus::Installed, repaired.status);
+    assert!(repaired.changed);
+
+    let rows = sqlx::query(
+        r#"
+        SELECT code, resource, action
+        FROM iam_permission
+        ORDER BY code
+        "#,
+    )
+    .fetch_all(&pool)
+    .await
+    .unwrap();
+    let permissions = rows
+        .into_iter()
+        .map(|row| {
+            (
+                row.get::<String, _>("code"),
+                (
+                    row.get::<String, _>("resource"),
+                    row.get::<String, _>("action"),
+                ),
+            )
+        })
+        .collect::<BTreeMap<_, _>>();
+
+    let expected_permissions = [
+        ("iam.users.read", "iam.users", "read"),
+        ("iam.users.create", "iam.users", "create"),
+        ("iam.users.update", "iam.users", "update"),
+        ("iam.users.delete", "iam.users", "delete"),
+        ("iam.organizations.read", "iam.organizations", "read"),
+        ("iam.departments.manage", "iam.departments", "manage"),
+        ("iam.roles.manage", "iam.roles", "manage"),
+        ("iam.permissions.manage", "iam.permissions", "manage"),
+        ("iam.role_bindings.manage", "iam.role_bindings", "manage"),
+        ("ai.models.read", "ai.models", "read"),
+        ("ai.models.manage", "ai.models", "manage"),
+        ("ai.resources.manage", "ai.resources", "manage"),
+        ("ai.routing.manage", "ai.routing", "manage"),
+        ("apps.app_center.manage", "apps.app_center", "manage"),
+        ("commerce.orders.read", "commerce.orders", "read"),
+        ("commerce.payments.manage", "commerce.payments", "manage"),
+        ("drive.spaces.manage", "drive.spaces", "manage"),
+        (
+            "messaging.providers.manage",
+            "messaging.providers",
+            "manage",
+        ),
+        (
+            "integrations.service_providers.manage",
+            "integrations.service_providers",
+            "manage",
+        ),
+        ("ops.monitor.read", "ops.monitor", "read"),
+        ("system.audit.read", "system.audit", "read"),
+    ];
+    for (code, resource, action) in expected_permissions {
+        assert_eq!(
+            Some(&(resource.to_owned(), action.to_owned())),
+            permissions.get(code),
+            "installer must seed IAM permission {code}"
+        );
+    }
+    assert!(
+        permissions.len() >= 50,
+        "default IAM permission catalog must cover the admin management surface"
+    );
+}
+
+#[tokio::test]
 async fn sqlite_installer_bootstraps_initial_admin_login_once() {
     let pool = sqlite_pool().await;
     let installer =
@@ -458,10 +645,10 @@ async fn sqlite_installer_bootstraps_initial_admin_login_once() {
             u.email,
             u.status,
             m.organization_id,
-            m.role_code,
+            m.membership_kind,
             c.credential_hash
         FROM iam_user u
-        JOIN iam_organization_member m
+        JOIN iam_organization_membership m
           ON m.tenant_id = u.tenant_id
          AND m.user_id = u.id
          AND m.status = 'active'
@@ -485,7 +672,7 @@ async fn sqlite_installer_bootstraps_initial_admin_login_once() {
     assert_eq!("admin@sdkwork.com", admin.get::<String, _>("email"));
     assert_eq!("active", admin.get::<String, _>("status"));
     assert_eq!("20", admin.get::<String, _>("organization_id"));
-    assert_eq!("admin", admin.get::<String, _>("role_code"));
+    assert_eq!("admin", admin.get::<String, _>("membership_kind"));
     assert!(
         Pbkdf2Sha256PasswordHasher
             .verify_password(
@@ -586,13 +773,13 @@ async fn sqlite_admin_user_store_creates_and_updates_iam_users_without_plus_user
         r#"
         SELECT COUNT(1)
         FROM iam_user u
-        JOIN iam_organization_member m
+        JOIN iam_organization_membership m
           ON m.tenant_id = u.tenant_id
          AND m.user_id = u.id
         WHERE u.id = ?
           AND u.tenant_id = '10'
           AND m.organization_id = '20'
-          AND m.role_code = 'standard'
+          AND m.membership_kind = 'standard'
         "#,
     )
     .bind(created.id.to_string())
@@ -623,8 +810,8 @@ async fn sqlite_admin_user_store_creates_and_updates_iam_users_without_plus_user
 
     let membership_role: String = sqlx::query_scalar(
         r#"
-        SELECT role_code
-        FROM iam_organization_member
+        SELECT membership_kind
+        FROM iam_organization_membership
         WHERE tenant_id = '10'
           AND organization_id = '20'
           AND user_id = ?
@@ -751,7 +938,7 @@ async fn sqlite_installer_repairs_incomplete_bootstrap_admin_login() {
     .unwrap();
     sqlx::query(
         r#"
-        DELETE FROM iam_organization_member
+        DELETE FROM iam_organization_membership
         WHERE tenant_id = '10'
           AND user_id = '1'
           AND organization_id = '20'
@@ -797,10 +984,10 @@ async fn sqlite_installer_repairs_incomplete_bootstrap_admin_login() {
     let repaired_admin = sqlx::query(
         r#"
         SELECT
-            m.role_code,
+            m.membership_kind,
             c.credential_hash
         FROM iam_user u
-        JOIN iam_organization_member m
+        JOIN iam_organization_membership m
           ON m.tenant_id = u.tenant_id
          AND m.user_id = u.id
          AND m.status = 'active'
@@ -818,7 +1005,7 @@ async fn sqlite_installer_repairs_incomplete_bootstrap_admin_login() {
     .fetch_one(&pool)
     .await
     .unwrap();
-    assert_eq!("admin", repaired_admin.get::<String, _>("role_code"));
+    assert_eq!("admin", repaired_admin.get::<String, _>("membership_kind"));
     assert_pbkdf2_sha256_hash_format(
         &repaired_admin.get::<String, _>("credential_hash"),
         "repaired admin password",
@@ -852,9 +1039,9 @@ async fn sqlite_installer_repairs_bootstrap_admin_membership_without_resetting_p
     .unwrap();
     sqlx::query(
         r#"
-        UPDATE iam_organization_member
+        UPDATE iam_organization_membership
         SET id = 'member-1',
-            role_code = 'owner'
+            membership_kind = 'owner'
         WHERE tenant_id = '10'
           AND user_id = '1'
           AND organization_id = '20'
@@ -895,11 +1082,11 @@ async fn sqlite_installer_repairs_bootstrap_admin_membership_without_resetting_p
     let member_count: i64 = sqlx::query_scalar(
         r#"
         SELECT COUNT(1)
-        FROM iam_organization_member
+        FROM iam_organization_membership
         WHERE tenant_id = '10'
           AND user_id = '1'
           AND organization_id = '20'
-          AND role_code = 'admin'
+          AND membership_kind = 'admin'
           AND status = 'active'
         "#,
     )
@@ -1062,9 +1249,9 @@ async fn sqlite_installer_bootstraps_admin_without_touching_existing_plus_user_t
 
     let iam_admin = sqlx::query(
         r#"
-        SELECT u.username, u.display_name, u.email, u.status, m.role_code
+        SELECT u.username, u.display_name, u.email, u.status, m.membership_kind
         FROM iam_user u
-        JOIN iam_organization_member m
+        JOIN iam_organization_membership m
           ON m.tenant_id = u.tenant_id
          AND m.user_id = u.id
         WHERE u.id = '1'
@@ -1079,7 +1266,7 @@ async fn sqlite_installer_bootstraps_admin_without_touching_existing_plus_user_t
     assert_eq!("Administrator", iam_admin.get::<String, _>("display_name"));
     assert_eq!("admin@sdkwork.com", iam_admin.get::<String, _>("email"));
     assert_eq!("active", iam_admin.get::<String, _>("status"));
-    assert_eq!("admin", iam_admin.get::<String, _>("role_code"));
+    assert_eq!("admin", iam_admin.get::<String, _>("membership_kind"));
 
     let legacy_rows: i64 = sqlx::query_scalar("SELECT COUNT(1) FROM plus_user")
         .fetch_one(&pool)
@@ -3466,10 +3653,10 @@ async fn sqlite_installer_refresh_catalog_bootstraps_admin_on_empty_full_install
         r#"
         SELECT
             u.id,
-            m.role_code,
+            m.membership_kind,
             c.credential_hash
         FROM iam_user u
-        JOIN iam_organization_member m
+        JOIN iam_organization_membership m
           ON m.tenant_id = u.tenant_id
          AND m.user_id = u.id
          AND m.status = 'active'
@@ -3487,7 +3674,7 @@ async fn sqlite_installer_refresh_catalog_bootstraps_admin_on_empty_full_install
     .await
     .unwrap();
     assert_eq!("1", admin.get::<String, _>("id"));
-    assert_eq!("admin", admin.get::<String, _>("role_code"));
+    assert_eq!("admin", admin.get::<String, _>("membership_kind"));
     assert!(
         Pbkdf2Sha256PasswordHasher
             .verify_password(

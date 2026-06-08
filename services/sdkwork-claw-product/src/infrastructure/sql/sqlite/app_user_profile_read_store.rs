@@ -61,7 +61,7 @@ SELECT
     COALESCE(sec.mfa_enabled, 0) AS mfa_enabled,
     COALESCE(ib.identity_binding_count, 0) AS identity_binding_count
 FROM iam_user u
-JOIN iam_organization_member om
+JOIN iam_organization_membership om
   ON om.tenant_id = u.tenant_id
  AND om.user_id = u.id
  AND om.organization_id = ?2

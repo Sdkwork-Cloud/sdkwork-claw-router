@@ -708,16 +708,10 @@ function buildAppbaseBackendConfig(options: SdkworkAppbaseBackendSdkClientOption
 }
 
 export function resolveRequiredAppbaseBackendBaseUrl(options: SdkworkAppbaseBackendSdkClientOptions): string {
-  const baseUrl = options.backendBaseUrl ?? readClawRouterRuntimeEnv('VITE_SDKWORK_APPBASE_BACKEND_API_BASE_URL');
-  if (!baseUrl) {
-    throw new Error(
-      'VITE_SDKWORK_APPBASE_BACKEND_API_BASE_URL is required for @sdkwork/appbase-backend-sdk. '
-      + 'Set PORTAL_PUBLIC_SDK_BASE_URL to a gateway that serves /backend/v3/api/iam/*, '
-      + 'set PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL to an appbase backend that serves /backend/v3/api/iam/*, '
-      + 'or mount the appbase backend IAM routes in the claw-router backend runtime.',
-    );
-  }
-  return baseUrl;
+  return options.backendBaseUrl
+    ?? readClawRouterRuntimeEnv('VITE_SDKWORK_APPBASE_BACKEND_API_BASE_URL')
+    ?? readClawRouterRuntimeEnv('VITE_CLAWROUTER_BACKEND_API_BASE_URL')
+    ?? BACKEND_API_PREFIX;
 }
 
 function buildGenerationsAppConfig(options: SdkworkGenerationsAppSdkClientOptions): SdkworkGenerationsAppConfig {

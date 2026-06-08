@@ -855,6 +855,13 @@ function resolvePortalRuntimeEnv(env: NodeJS.ProcessEnv = process.env): Record<s
       runtimeEnv[targetName] = value;
     }
   }
+  if (
+    runtimeEnv.VITE_SDKWORK_APPBASE_BACKEND_API_BASE_URL === undefined
+    && runtimeEnv.VITE_CLAWROUTER_BACKEND_API_BASE_URL !== undefined
+  ) {
+    runtimeEnv.VITE_SDKWORK_APPBASE_BACKEND_API_BASE_URL =
+      runtimeEnv.VITE_CLAWROUTER_BACKEND_API_BASE_URL;
+  }
 
   for (const [sourceName, targetName] of PORTAL_RUNTIME_BOOLEAN_ENV) {
     const value = resolveBooleanEnv(env[sourceName], sourceName);

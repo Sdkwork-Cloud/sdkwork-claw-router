@@ -11,8 +11,7 @@ const CLAW_RUNTIME_NODE_ID_ENV: &str = "SDKWORK_CLAW_SNOWFLAKE_NODE_ID";
 
 static ADMIN_APP_ID_GENERATOR: OnceLock<SnowflakeIdGenerator> = OnceLock::new();
 static ADMIN_SKILL_ID_GENERATOR: OnceLock<SnowflakeIdGenerator> = OnceLock::new();
-static CLAW_RUNTIME_ID_GENERATOR: OnceLock<Result<SnowflakeIdGenerator, String>> =
-    OnceLock::new();
+static CLAW_RUNTIME_ID_GENERATOR: OnceLock<Result<SnowflakeIdGenerator, String>> = OnceLock::new();
 
 pub(crate) fn next_admin_app_id(context: &str) -> DomainResult<i64> {
     next_runtime_id(admin_app_id_generator(), context)

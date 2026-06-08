@@ -74,7 +74,7 @@ SELECT
     COALESCE(ib.identity_binding_count, 0) AS identity_binding_count
 FROM iam_user u
 JOIN subject ON true
-JOIN iam_organization_member om
+JOIN iam_organization_membership om
   ON CAST(om.tenant_id AS TEXT) = u.tenant_id
  AND CAST(om.user_id AS TEXT) = u.id
  AND CAST(om.organization_id AS TEXT) = subject.organization_id_text

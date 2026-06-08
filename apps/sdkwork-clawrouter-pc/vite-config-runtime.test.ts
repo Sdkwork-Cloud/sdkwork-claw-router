@@ -471,6 +471,7 @@ test("portal runtime env exposes an open SDK base URL that defaults to the publi
       VITE_CLAWROUTER_OPEN_API_BASE_URL: "https://tenant.example.com/v1",
       VITE_CLAWROUTER_APP_API_BASE_URL: "/app/v3/api",
       VITE_CLAWROUTER_BACKEND_API_BASE_URL: "/backend/v3/api",
+      VITE_SDKWORK_APPBASE_BACKEND_API_BASE_URL: "/backend/v3/api",
     },
   );
 });
@@ -573,6 +574,39 @@ test("production start env lets one public SDK base URL drive portal surfaces un
     "https://admin.example.com/backend/v3/api",
   );
   assert.equal(runtimeEnvWithOverride.PORTAL_PUBLIC_APP_API_BASE_URL, undefined);
+});
+
+test("portal public runtime helper derives appbase backend from a configured SDK gateway", async () => {
+  const { resolvePortalPublicRuntimeEnv } = await import("../../scripts/portal-public-runtime-env.mjs");
+  const runtimeEnv = resolvePortalPublicRuntimeEnv({
+    PORTAL_PUBLIC_SDK_BASE_URL: "https://tenant.example.com/router",
+    PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL: "",
+  });
+
+  assert.equal(runtimeEnv.PORTAL_PUBLIC_SDK_BASE_URL, "https://tenant.example.com/router");
+  assert.equal(runtimeEnv.PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL, "https://tenant.example.com/router/backend/v3/api");
+  assert.equal(runtimeEnv.PORTAL_PUBLIC_BACKEND_API_BASE_URL, undefined);
+});
+
+test("portal public runtime helper derives appbase backend from verified product backend mount", async () => {
+  const { resolvePortalPublicRuntimeEnv } = await import("../../scripts/portal-public-runtime-env.mjs");
+  const runtimeEnv = resolvePortalPublicRuntimeEnv({
+    PORTAL_PUBLIC_BACKEND_API_BASE_URL: "/backend/v3/api",
+  });
+
+  assert.equal(runtimeEnv.PORTAL_PUBLIC_BACKEND_API_BASE_URL, "/backend/v3/api");
+  assert.equal(runtimeEnv.PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL, "/backend/v3/api");
+});
+
+test("portal public runtime helper defaults appbase backend to verified same-origin backend mount", async () => {
+  const { resolvePortalPublicRuntimeEnv } = await import("../../scripts/portal-public-runtime-env.mjs");
+  const runtimeEnv = resolvePortalPublicRuntimeEnv({
+    PORTAL_PUBLIC_BACKEND_API_BASE_URL: "/backend/v3/api",
+    PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL: "",
+  });
+
+  assert.equal(runtimeEnv.PORTAL_PUBLIC_BACKEND_API_BASE_URL, "/backend/v3/api");
+  assert.equal(runtimeEnv.PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL, "/backend/v3/api");
 });
 
 test("portal runtime env keeps appbase backend SDK base URL independent from claw-router backend", () => {

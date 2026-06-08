@@ -1697,17 +1697,22 @@ async fn create_schema(pool: &SqlitePool) -> anyhow::Result<()> {
             updated_at TEXT NOT NULL,
             UNIQUE (tenant_id, username)
         )"#,
-        r#"CREATE TABLE iam_organization_member (
+        r#"CREATE TABLE iam_organization_membership (
             id TEXT PRIMARY KEY,
             tenant_id TEXT NOT NULL,
             organization_id TEXT NOT NULL,
             user_id TEXT NOT NULL,
-            role_code TEXT,
+            membership_kind TEXT NOT NULL,
+            employee_no TEXT,
+            display_name TEXT,
+            is_primary INTEGER NOT NULL DEFAULT 0,
             status TEXT NOT NULL,
             joined_at TEXT NOT NULL,
             left_at TEXT,
             remark TEXT,
-            UNIQUE (tenant_id, organization_id, user_id)
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL,
+            UNIQUE (tenant_id, organization_id, user_id, membership_kind)
         )"#,
         r#"CREATE TABLE commerce_usage_settlement (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -2492,7 +2497,7 @@ async fn seed_catalog(pool: &SqlitePool) -> anyhow::Result<()> {
         "INSERT INTO iam_gateway_api_key (id, tenant_id, organization_id, user_id, channel_group_id, key_prefix, key_hash, idempotency_key, status) VALUES (100, 10, 20, 30, 10, 'sk-live', 'hash:placeholder', 'seed-api-key-100', 1)",
         "INSERT INTO iam_gateway_api_key_channel_group (id, uuid, tenant_id, organization_id, user_id, api_key_id, channel_group_id, channel_group_code, binding_role, routing_strategy, priority, weight, status) VALUES (1000, 'gateway-api-key-channel-group-standard', 10, 20, 30, 100, 10, 'standard-group', 'route', 'auto', 100, 100, 1)",
         r#"INSERT INTO iam_user (id, tenant_id, username, display_name, email, phone, avatar_media_resource_id, avatar_object_blob_id, avatar_resource_snapshot, status, created_at, updated_at) VALUES ('1', '10', 'bootstrap-admin', 'Bootstrap Admin', 'bootstrap-admin@example.com', '', 'media-bootstrap-admin-avatar', 'iam-user-avatar:bootstrap-admin', '{"kind":"image","source":"provider_asset","uri":"iam-user-avatar:bootstrap-admin"}', 'active', '2026-04-01 08:00:00', '2026-04-29 08:30:00')"#,
-        "INSERT INTO iam_organization_member (id, tenant_id, organization_id, user_id, role_code, status, joined_at, left_at, remark) VALUES ('member-1-admin', '10', '20', '1', 'admin', 'active', '2026-04-01 08:00:00', NULL, 'seed bootstrap admin membership')",
+        "INSERT INTO iam_organization_membership (id, tenant_id, organization_id, user_id, membership_kind, display_name, is_primary, status, joined_at, left_at, remark, created_at, updated_at) VALUES ('member-1-admin', '10', '20', '1', 'admin', 'Bootstrap Admin', 1, 'active', '2026-04-01 08:00:00', NULL, 'seed bootstrap admin membership', '2026-04-01 08:00:00', '2026-04-29 08:30:00')",
         "INSERT INTO ai_model_pricing (id, uuid, tenant_id, organization_id, model_id, catalog_key, model, vendor_code, region_code, price_side, billing_meter_code, unit_price, currency, status, priority) VALUES (1, 'price-openai-global-gpt-4o-mini-input-reference', 10, 20, 1, 'openai/gpt-4o-mini', 'gpt-4o-mini', 'openai', 'global', 1, 'llm_input_token', '0.150000', 'USD', 1, 1)",
         "INSERT INTO ai_model_pricing (id, uuid, tenant_id, organization_id, model_id, catalog_key, model, vendor_code, region_code, price_side, billing_meter_code, unit_price, currency, provider_code, channel_id, status, priority) VALUES (2, 'price-openai-global-gpt-4o-mini-input-upstream', 10, 20, 1, 'openai/gpt-4o-mini', 'gpt-4o-mini', 'openai', 'global', 2, 'llm_input_token', '0.110000', 'USD', 'openrouter', 3001, 1, 1)",
         "INSERT INTO ai_model_pricing (id, uuid, tenant_id, organization_id, model_id, catalog_key, model, vendor_code, region_code, price_side, billing_meter_code, unit_price, currency, status, priority) VALUES (3, 'price-openai-global-gpt-4o-mini-output-reference', 10, 20, 1, 'openai/gpt-4o-mini', 'gpt-4o-mini', 'openai', 'global', 1, 'llm_output_token', '0.600000', 'USD', 1, 1)",

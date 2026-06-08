@@ -5187,14 +5187,22 @@ async fn create_schema(pool: &SqlitePool) {
             created_at TEXT NOT NULL,
             updated_at TEXT NOT NULL
         )"#,
-        r#"CREATE TABLE iam_organization_member (
+        r#"CREATE TABLE iam_organization_membership (
             id TEXT PRIMARY KEY,
             tenant_id TEXT NOT NULL,
             organization_id TEXT NOT NULL,
             user_id TEXT NOT NULL,
-            role_code TEXT,
+            membership_kind TEXT NOT NULL,
+            employee_no TEXT,
+            display_name TEXT,
+            is_primary INTEGER NOT NULL DEFAULT 0,
             status TEXT NOT NULL,
-            joined_at TEXT NOT NULL
+            joined_at TEXT NOT NULL,
+            left_at TEXT,
+            remark TEXT,
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL,
+            UNIQUE (tenant_id, organization_id, user_id, membership_kind)
         )"#,
         r#"CREATE TABLE iam_credential (
             id TEXT PRIMARY KEY,
@@ -6668,12 +6676,12 @@ async fn seed_app_user_data(pool: &SqlitePool) {
         r#"INSERT INTO iam_user
             (id, tenant_id, username, display_name, email, phone, avatar_media_resource_id, avatar_object_blob_id, avatar_resource_snapshot, status, created_at, updated_at)
             VALUES ('31', '10', 'other', 'Other User', 'other@example.com', '+15550000031', 'media-other-avatar', 'iam-user-avatar:other', '{"kind":"image","source":"provider_asset","uri":"iam-user-avatar:other"}', 'active', '2026-04-02 08:00:00', '2026-04-29 08:00:00')"#,
-        r#"INSERT INTO iam_organization_member
-            (id, tenant_id, organization_id, user_id, role_code, status, joined_at)
-            VALUES ('member-30', '10', '20', '30', 'owner', 'active', '2026-04-01 08:00:00')"#,
-        r#"INSERT INTO iam_organization_member
-            (id, tenant_id, organization_id, user_id, role_code, status, joined_at)
-            VALUES ('member-31', '10', '20', '31', 'member', 'active', '2026-04-02 08:00:00')"#,
+        r#"INSERT INTO iam_organization_membership
+            (id, tenant_id, organization_id, user_id, membership_kind, display_name, is_primary, status, joined_at, created_at, updated_at)
+            VALUES ('member-30', '10', '20', '30', 'owner', 'Owner User', 1, 'active', '2026-04-01 08:00:00', '2026-04-01 08:00:00', '2026-04-29 08:00:00')"#,
+        r#"INSERT INTO iam_organization_membership
+            (id, tenant_id, organization_id, user_id, membership_kind, display_name, is_primary, status, joined_at, created_at, updated_at)
+            VALUES ('member-31', '10', '20', '31', 'member', 'Other User', 0, 'active', '2026-04-02 08:00:00', '2026-04-02 08:00:00', '2026-04-29 08:00:00')"#,
         "INSERT INTO iam_user_preference (id, tenant_id, organization_id, user_id, language) VALUES (1001, 10, 20, 30, 'zh-CN')",
         r#"INSERT INTO iam_user_security_setting
             (id, tenant_id, organization_id, user_id, last_login_at, password_last_changed_at, mfa_enabled, security_level)
@@ -6718,9 +6726,9 @@ async fn seed_second_app_organization_membership(pool: &SqlitePool) {
         r#"INSERT INTO iam_organization
             (id, tenant_id, parent_id, code, name, path, status, created_at, updated_at)
             VALUES ('21', '10', NULL, 'workspace', 'Workspace Organization', '/21', 'active', '2026-04-02 00:00:00', '2026-04-29 08:00:00')"#,
-        r#"INSERT INTO iam_organization_member
-            (id, tenant_id, organization_id, user_id, role_code, status, joined_at)
-            VALUES ('member-30-workspace', '10', '21', '30', 'member', 'active', '2026-03-31 08:00:00')"#,
+        r#"INSERT INTO iam_organization_membership
+            (id, tenant_id, organization_id, user_id, membership_kind, display_name, is_primary, status, joined_at, created_at, updated_at)
+            VALUES ('member-30-workspace', '10', '21', '30', 'member', 'Owner User', 0, 'active', '2026-03-31 08:00:00', '2026-03-31 08:00:00', '2026-04-29 08:00:00')"#,
     ] {
         sqlx::query(statement).execute(pool).await.unwrap();
     }

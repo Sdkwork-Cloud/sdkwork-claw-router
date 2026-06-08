@@ -6,6 +6,8 @@ export const PORTAL_PUBLIC_RUNTIME_DEFAULTS = Object.freeze({
   toolApiEnabled: 'false',
 });
 
+const BACKEND_API_PREFIX = '/backend/v3/api';
+
 export const PORTAL_PUBLIC_RUNTIME_ENV_NAMES = Object.freeze([
   'PORTAL_PUBLIC_SDK_BASE_URL',
   'PORTAL_PUBLIC_API_BASE_URL',
@@ -25,10 +27,14 @@ export function resolvePortalPublicRuntimeEnv(
   const openApiBaseUrl = readConfiguredEnv(env, 'PORTAL_PUBLIC_OPEN_API_BASE_URL');
   const appApiBaseUrl = readConfiguredEnv(env, 'PORTAL_PUBLIC_APP_API_BASE_URL');
   const backendApiBaseUrl = readConfiguredEnv(env, 'PORTAL_PUBLIC_BACKEND_API_BASE_URL');
+  const effectiveBackendApiBaseUrl = backendApiBaseUrl
+    ?? (!sdkBaseUrl && defaults.backendApiBaseUrl ? defaults.backendApiBaseUrl : undefined);
   const appbaseBackendApiBaseUrl = readConfiguredEnv(
     env,
     'PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL',
-  );
+  )
+    ?? appendPortalPublicSdkBaseUrl(sdkBaseUrl, BACKEND_API_PREFIX)
+    ?? effectiveBackendApiBaseUrl;
 
   return {
     ...(sdkBaseUrl ? { PORTAL_PUBLIC_SDK_BASE_URL: sdkBaseUrl } : {}),
@@ -51,8 +57,8 @@ export function resolvePortalPublicRuntimeEnv(
         : {}),
     ...(backendApiBaseUrl
       ? { PORTAL_PUBLIC_BACKEND_API_BASE_URL: backendApiBaseUrl }
-      : !sdkBaseUrl && defaults.backendApiBaseUrl
-        ? { PORTAL_PUBLIC_BACKEND_API_BASE_URL: defaults.backendApiBaseUrl }
+      : effectiveBackendApiBaseUrl
+        ? { PORTAL_PUBLIC_BACKEND_API_BASE_URL: effectiveBackendApiBaseUrl }
         : {}),
     ...(appbaseBackendApiBaseUrl
       ? { PORTAL_PUBLIC_APPBASE_BACKEND_API_BASE_URL: appbaseBackendApiBaseUrl }
@@ -87,4 +93,13 @@ export function portalPublicRuntimeEnvLineValue(runtimeEnv, name) {
 function readConfiguredEnv(env, name) {
   const value = String(env[name] ?? '').trim();
   return value ? value : undefined;
+}
+
+function appendPortalPublicSdkBaseUrl(sdkBaseUrl, apiPrefix) {
+  if (!sdkBaseUrl) {
+    return undefined;
+  }
+  const normalizedPrefix = apiPrefix.startsWith('/') ? apiPrefix : `/${apiPrefix}`;
+  const base = sdkBaseUrl.replace(/\/+$/u, '');
+  return base ? `${base}${normalizedPrefix}` : normalizedPrefix;
 }

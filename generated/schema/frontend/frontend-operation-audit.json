@@ -4999,7 +4999,7 @@
       "operation_scope": null,
       "read_sources": [
         "iam_role",
-        "iam_organization_member"
+        "iam_organization_membership"
       ],
       "route": "/admin/organization",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts",
@@ -5036,12 +5036,12 @@
       "operation_scope": null,
       "read_sources": [
         "iam_organization",
-        "iam_organization_member"
+        "iam_organization_membership"
       ],
       "route": "/admin/organization",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts",
       "write_tables": [
-        "iam_organization_member",
+        "iam_organization_membership",
         "ops_audit_log"
       ]
     },
@@ -5060,7 +5060,7 @@
       "route": "/admin/organization",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts",
       "write_tables": [
-        "iam_organization_member",
+        "iam_organization_membership",
         "ops_audit_log"
       ]
     },
@@ -5128,12 +5128,12 @@
       "operation_scope": null,
       "read_sources": [
         "iam_organization",
-        "iam_organization_member"
+        "iam_organization_membership"
       ],
       "route": "/admin/organization",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts",
       "write_tables": [
-        "iam_organization_member",
+        "iam_organization_membership",
         "ops_audit_log"
       ]
     },
@@ -5164,12 +5164,12 @@
       "operation": "deactivateDepartmentAssignment",
       "operation_scope": null,
       "read_sources": [
-        "iam_organization_member"
+        "iam_organization_membership"
       ],
       "route": "/admin/organization",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts",
       "write_tables": [
-        "iam_organization_member",
+        "iam_organization_membership",
         "ops_audit_log"
       ]
     },
@@ -5182,12 +5182,12 @@
       "operation": "deactivateMembership",
       "operation_scope": null,
       "read_sources": [
-        "iam_organization_member"
+        "iam_organization_membership"
       ],
       "route": "/admin/organization",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts",
       "write_tables": [
-        "iam_organization_member",
+        "iam_organization_membership",
         "ops_audit_log"
       ]
     },
@@ -5200,12 +5200,12 @@
       "operation": "deactivatePositionAssignment",
       "operation_scope": null,
       "read_sources": [
-        "iam_organization_member"
+        "iam_organization_membership"
       ],
       "route": "/admin/organization",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts",
       "write_tables": [
-        "iam_organization_member",
+        "iam_organization_membership",
         "ops_audit_log"
       ]
     },
@@ -5346,7 +5346,7 @@
       "operation_scope": null,
       "read_sources": [
         "iam_organization",
-        "iam_organization_member"
+        "iam_organization_membership"
       ],
       "route": "/admin/organization",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts",
@@ -5380,7 +5380,7 @@
       "read_sources": [
         "iam_user",
         "iam_organization",
-        "iam_organization_member",
+        "iam_organization_membership",
         "iam_role",
         "iam_permission",
         "iam_role_permission",
@@ -5435,12 +5435,12 @@
       "operation": "updateDepartmentAssignment",
       "operation_scope": null,
       "read_sources": [
-        "iam_organization_member"
+        "iam_organization_membership"
       ],
       "route": "/admin/organization",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts",
       "write_tables": [
-        "iam_organization_member",
+        "iam_organization_membership",
         "ops_audit_log"
       ]
     },
@@ -5453,12 +5453,12 @@
       "operation": "updateMembership",
       "operation_scope": null,
       "read_sources": [
-        "iam_organization_member"
+        "iam_organization_membership"
       ],
       "route": "/admin/organization",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts",
       "write_tables": [
-        "iam_organization_member",
+        "iam_organization_membership",
         "ops_audit_log"
       ]
     },
@@ -5525,12 +5525,12 @@
       "operation": "updatePositionAssignment",
       "operation_scope": null,
       "read_sources": [
-        "iam_organization_member"
+        "iam_organization_membership"
       ],
       "route": "/admin/organization",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-admin-organization/src/organizationService.ts",
       "write_tables": [
-        "iam_organization_member",
+        "iam_organization_membership",
         "ops_audit_log"
       ]
     },
@@ -7839,7 +7839,7 @@
       "operation_scope": "app_shell",
       "read_sources": [
         "iam_organization",
-        "iam_organization_member"
+        "iam_organization_membership"
       ],
       "route": "/console/user",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/iamDirectoryApiOperations.ts",
@@ -7855,7 +7855,7 @@
       "operation_scope": "app_shell",
       "read_sources": [
         "iam_organization",
-        "iam_organization_member"
+        "iam_organization_membership"
       ],
       "route": "/console/user",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/iamDirectoryApiOperations.ts",
@@ -7871,7 +7871,7 @@
       "operation_scope": "app_shell",
       "read_sources": [
         "iam_organization",
-        "iam_organization_member"
+        "iam_organization_membership"
       ],
       "route": "/console/user",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/iamDirectoryApiOperations.ts",
@@ -7886,7 +7886,7 @@
       "operation": "fetchIamOrganizationMemberships",
       "operation_scope": "app_shell",
       "read_sources": [
-        "iam_organization_member"
+        "iam_organization_membership"
       ],
       "route": "/console/user",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/iamDirectoryApiOperations.ts",
@@ -7902,7 +7902,7 @@
       "operation_scope": "app_shell",
       "read_sources": [
         "iam_organization",
-        "iam_organization_member"
+        "iam_organization_membership"
       ],
       "route": "/console/user",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/iamDirectoryApiOperations.ts",
@@ -7918,7 +7918,7 @@
       "operation_scope": "app_shell",
       "read_sources": [
         "iam_organization",
-        "iam_organization_member"
+        "iam_organization_membership"
       ],
       "route": "/console/user",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/iamDirectoryApiOperations.ts",
@@ -7934,7 +7934,7 @@
       "operation_scope": "app_shell",
       "read_sources": [
         "iam_organization",
-        "iam_organization_member"
+        "iam_organization_membership"
       ],
       "route": "/console/user",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/iamDirectoryApiOperations.ts",
@@ -7950,7 +7950,7 @@
       "operation_scope": "app_shell",
       "read_sources": [
         "iam_organization",
-        "iam_organization_member"
+        "iam_organization_membership"
       ],
       "route": "/console/user",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/iamDirectoryApiOperations.ts",
@@ -7966,7 +7966,7 @@
       "operation_scope": "app_shell",
       "read_sources": [
         "iam_organization",
-        "iam_organization_member"
+        "iam_organization_membership"
       ],
       "route": "/console/user",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/iamDirectoryApiOperations.ts",
@@ -7983,7 +7983,7 @@
       "read_sources": [
         "ops_notification_message",
         "ops_notification_recipient",
-        "iam_organization_member"
+        "iam_organization_membership"
       ],
       "route": "/console/notifications",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts",
@@ -8003,7 +8003,7 @@
         "ops_notification_message",
         "ops_notification_recipient",
         "ops_notification_delivery",
-        "iam_organization_member"
+        "iam_organization_membership"
       ],
       "route": "/console/notifications",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts",
@@ -8021,7 +8021,7 @@
         "ops_notification_message",
         "ops_notification_recipient",
         "ops_notification_delivery",
-        "iam_organization_member"
+        "iam_organization_membership"
       ],
       "route": "/console/notifications",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts",
@@ -8038,7 +8038,7 @@
       "read_sources": [
         "ops_notification_message",
         "ops_notification_recipient",
-        "iam_organization_member"
+        "iam_organization_membership"
       ],
       "route": "/console/notifications",
       "source": "apps/sdkwork-clawrouter-pc/packages/sdkwork-clawrouter-pc-commons/src/notificationService.ts",

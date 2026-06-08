@@ -762,9 +762,9 @@ async fn repair_sqlite_assets(
         sqlx::query(
             r#"
             INSERT INTO studio_catalog_asset
-                (uuid, tenant_id, organization_id, data_scope, status, metadata, target_type, target_id, artifact_id, asset_type, asset_media_resource_id, asset_object_blob_id, asset_resource_snapshot, thumbnail_media_resource_id, thumbnail_object_blob_id, thumbnail_resource_snapshot, title, alt_text, mime_type, width, height, duration_seconds, file_size, sort_order, published_at)
+                (uuid, tenant_id, organization_id, data_scope, status, metadata, target_type, target_id, artifact_id, asset_type, asset_media_resource_id, asset_object_blob_id, asset_resource_snapshot, thumbnail_media_resource_id, thumbnail_object_blob_id, thumbnail_resource_snapshot, title, alt_text, mime_type, width, height, duration_seconds, file_size, sort_order, published_at, id)
             VALUES
-                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             "#,
         )
         .bind(&item.uuid)
@@ -792,6 +792,7 @@ async fn repair_sqlite_assets(
         .bind(item.file_size)
         .bind(item.sort_order)
         .bind(&item.published_at)
+        .bind(stable_app_asset_id(&item.uuid))
         .execute(&mut **tx)
         .await?;
     }
@@ -821,9 +822,9 @@ async fn repair_sqlite_artifacts(
         sqlx::query(
             r#"
             INSERT INTO studio_catalog_artifact
-                (uuid, tenant_id, organization_id, data_scope, status, metadata, target_type, target_id, artifact_type, version, platform_type, os_name, artifact_ref, artifact_media_resource_id, artifact_object_blob_id, artifact_resource_snapshot, artifact_size_bytes, runtime, frameworks, license_name, checksum_hash, release_notes, published_at, deprecated_at)
+                (uuid, tenant_id, organization_id, data_scope, status, metadata, target_type, target_id, artifact_type, version, platform_type, os_name, artifact_ref, artifact_media_resource_id, artifact_object_blob_id, artifact_resource_snapshot, artifact_size_bytes, runtime, frameworks, license_name, checksum_hash, release_notes, published_at, deprecated_at, id)
             VALUES
-                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             ON CONFLICT(tenant_id, organization_id, target_type, target_id, artifact_type, version, platform_type, os_name) DO UPDATE SET
                 uuid = excluded.uuid,
                 artifact_ref = excluded.artifact_ref,
@@ -874,6 +875,7 @@ async fn repair_sqlite_artifacts(
         .bind(&item.release_notes)
         .bind(&item.published_at)
         .bind(&item.deprecated_at)
+        .bind(stable_app_artifact_id(&item.uuid))
         .execute(&mut **tx)
         .await?;
     }
@@ -1207,9 +1209,9 @@ async fn import_postgres_assets(
         sqlx::query(
             r#"
             INSERT INTO studio_catalog_asset
-                (uuid, tenant_id, organization_id, data_scope, status, metadata, target_type, target_id, artifact_id, asset_type, asset_media_resource_id, asset_object_blob_id, asset_resource_snapshot, thumbnail_media_resource_id, thumbnail_object_blob_id, thumbnail_resource_snapshot, title, alt_text, mime_type, width, height, duration_seconds, file_size, sort_order, published_at)
+                (uuid, tenant_id, organization_id, data_scope, status, metadata, target_type, target_id, artifact_id, asset_type, asset_media_resource_id, asset_object_blob_id, asset_resource_snapshot, thumbnail_media_resource_id, thumbnail_object_blob_id, thumbnail_resource_snapshot, title, alt_text, mime_type, width, height, duration_seconds, file_size, sort_order, published_at, id)
             VALUES
-                ($1, $2, $3, $4, $5, $6::jsonb, $7, $8, $9, $10, $11, $12, $13::jsonb, $14, $15, $16::jsonb, $17, $18, $19, $20, $21, CAST($22 AS NUMERIC), $23, $24, $25::timestamptz)
+                ($1, $2, $3, $4, $5, $6::jsonb, $7, $8, $9, $10, $11, $12, $13::jsonb, $14, $15, $16::jsonb, $17, $18, $19, $20, $21, CAST($22 AS NUMERIC), $23, $24, $25::timestamptz, $26)
             "#,
         )
         .bind(&item.uuid)
@@ -1237,6 +1239,7 @@ async fn import_postgres_assets(
         .bind(item.file_size)
         .bind(item.sort_order)
         .bind(&item.published_at)
+        .bind(stable_app_asset_id(&item.uuid))
         .execute(&mut **tx)
         .await?;
     }
@@ -1259,9 +1262,9 @@ async fn import_postgres_artifacts(
         sqlx::query(
             r#"
             INSERT INTO studio_catalog_artifact
-                (uuid, tenant_id, organization_id, data_scope, status, metadata, target_type, target_id, artifact_type, version, platform_type, os_name, artifact_ref, artifact_media_resource_id, artifact_object_blob_id, artifact_resource_snapshot, artifact_size_bytes, runtime, frameworks, license_name, checksum_hash, release_notes, published_at, deprecated_at)
+                (uuid, tenant_id, organization_id, data_scope, status, metadata, target_type, target_id, artifact_type, version, platform_type, os_name, artifact_ref, artifact_media_resource_id, artifact_object_blob_id, artifact_resource_snapshot, artifact_size_bytes, runtime, frameworks, license_name, checksum_hash, release_notes, published_at, deprecated_at, id)
             VALUES
-                ($1, $2, $3, $4, $5, $6::jsonb, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16::jsonb, $17, $18, $19::jsonb, $20, $21, $22, $23::timestamptz, $24::timestamptz)
+                ($1, $2, $3, $4, $5, $6::jsonb, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16::jsonb, $17, $18, $19::jsonb, $20, $21, $22, $23::timestamptz, $24::timestamptz, $25)
             ON CONFLICT(tenant_id, organization_id, target_type, target_id, artifact_type, version, platform_type, os_name) DO UPDATE SET
                 uuid = excluded.uuid,
                 artifact_ref = excluded.artifact_ref,
@@ -1312,6 +1315,7 @@ async fn import_postgres_artifacts(
         .bind(&item.release_notes)
         .bind(&item.published_at)
         .bind(&item.deprecated_at)
+        .bind(stable_app_artifact_id(&item.uuid))
         .execute(&mut **tx)
         .await?;
     }
@@ -3167,6 +3171,26 @@ fn category_seed_uuids(catalog: &AppSeedCatalog) -> BTreeSet<String> {
 
 fn stable_app_id(index: usize) -> i64 {
     20_001_000 + index as i64 + 1
+}
+
+fn stable_app_asset_id(uuid: &str) -> i64 {
+    stable_seed_table_id("sdkapp-asset-id", uuid)
+}
+
+fn stable_app_artifact_id(uuid: &str) -> i64 {
+    stable_seed_table_id("sdkapp-artifact-id", uuid)
+}
+
+fn stable_seed_table_id(prefix: &str, uuid: &str) -> i64 {
+    let mut hasher = Sha256::new();
+    hasher.update(prefix.as_bytes());
+    hasher.update([0]);
+    hasher.update(uuid.as_bytes());
+    let digest = hasher.finalize();
+    let mut bytes = [0_u8; 8];
+    bytes.copy_from_slice(&digest[..8]);
+    let value = u64::from_be_bytes(bytes) & 0x3fff_ffff_ffff_ffff;
+    (value as i64) + 1
 }
 
 fn install_projection_organization_id(entry: &AppSeedEntry) -> i64 {

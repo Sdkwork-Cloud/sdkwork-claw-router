@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { CheckCircle2, Edit, Key, MoreHorizontal, Plus, Search, Shield, Users, X } from 'lucide-react';
+import { CheckCircle2, Edit, Key, MoreHorizontal, Plus, RefreshCw, Search, Shield, Users, X } from 'lucide-react';
 import { AdminTableShell, BusinessStateTableRow, CopyButton } from 'sdkwork-clawrouter-pc-commons';
 import { ApiKeyItem, UserListItem, UserService } from './userService';
 import {
@@ -37,13 +37,48 @@ function createDefaultUserGroupOptions(t: TranslationFunction) {
 }
 
 function getStatusToggleLabel(u: UserListItem, t: TranslationFunction): string {
-  return u.status === 'active' ? t("admin.user.index.text.1dcdrxo", "禁用") : t("common.actions.enable", "启用");
+  return u.status === 'active' ? t('admin.user.index.actions.disable', 'Disable') : t('common.actions.enable', 'Enable');
+}
+
+function getUserRoleLabel(role: string, t: TranslationFunction): string {
+  if (role === 'admin') {
+    return t('admin.user.roles.admin', 'Admin');
+  }
+  if (role === 'user') {
+    return t('admin.user.roles.user', 'User');
+  }
+  return role || '-';
+}
+
+function getUserGroupLabel(group: string, defaultUserGroupOptions: ReadonlyArray<{ value: string; label: string }>): string {
+  return defaultUserGroupOptions.find((option) => option.value === group)?.label ?? group;
+}
+
+function getUserStatusLabel(status: UserListItem['status'], t: TranslationFunction): string {
+  return status === 'active' ? t('admin.user.status.active', 'Active') : t('admin.user.status.banned', 'Banned');
+}
+
+function getApiKeyStatusLabel(status: string, t: TranslationFunction): string {
+  if (status === 'active') {
+    return t('admin.user.apiKeyStatus.active', 'Active');
+  }
+  if (status === 'disabled') {
+    return t('admin.user.apiKeyStatus.disabled', 'Disabled');
+  }
+  if (status === 'inactive') {
+    return t('admin.user.apiKeyStatus.inactive', 'Inactive');
+  }
+  if (status === 'revoked') {
+    return t('admin.user.apiKeyStatus.revoked', 'Revoked');
+  }
+  return status || '-';
 }
 
 export function UserAdmin() {
   const { t } = useTranslation();
   const defaultUserGroupOptions = createDefaultUserGroupOptions(t);
-  const [search, setSearch] = useState('');
+  const [searchDraft, setSearchDraft] = useState('');
+  const [appliedSearch, setAppliedSearch] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editTarget, setEditTarget] = useState<UserListItem | null>(null);
   const [apiKeysTarget, setApiKeysTarget] = useState<UserListItem | null>(null);
@@ -162,7 +197,7 @@ export function UserAdmin() {
     setActiveDropdown(null);
   };
 
-  const normalizedSearch = search.trim().toLowerCase();
+  const normalizedSearch = appliedSearch.trim().toLowerCase();
   const visibleUsers = normalizedSearch
     ? users.filter((userItem) =>
       [userItem.email, userItem.username, userItem.role, userItem.group, userItem.status, String(userItem.id)]
@@ -173,16 +208,41 @@ export function UserAdmin() {
   return (
     <div className="flex h-full min-h-0 w-full flex-col gap-4 overflow-hidden">
       <div className="flex shrink-0 flex-col gap-3 sm:flex-row sm:items-center sm:justify-between" data-admin-user-toolbar>
+        <div className="flex w-full flex-col gap-2 sm:w-auto sm:flex-row sm:items-center">
           <div className="relative w-full sm:w-72" data-admin-user-search>
             <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
             <input
               className="w-full rounded-lg border border-slate-200 bg-white py-2 pl-9 pr-4 text-sm text-slate-900 shadow-sm transition-colors placeholder:text-slate-500 focus:border-blue-500 focus:outline-none dark:border-white/10 dark:bg-[#1e1e1e] dark:text-white"
-              onChange={(event) => setSearch(event.target.value)}
+              onChange={(event) => setSearchDraft(event.target.value)}
+              onKeyDown={(event) => {
+                if (event.key === 'Enter') {
+                  setAppliedSearch(searchDraft);
+                }
+              }}
               placeholder={t('admin.user.index.searchPlaceholder', 'Search email, name, role, or group...')}
               type="text"
-              value={search}
+              value={searchDraft}
             />
           </div>
+          <button
+            className="inline-flex h-10 items-center justify-center gap-2 rounded-lg border border-slate-200 bg-white px-3 text-sm font-medium text-slate-700 shadow-sm transition-colors hover:border-blue-300 hover:text-blue-700 dark:border-white/10 dark:bg-[#1e1e1e] dark:text-slate-200 dark:hover:border-blue-500/40 dark:hover:text-blue-300"
+            data-admin-user-query-action
+            onClick={() => setAppliedSearch(searchDraft)}
+            type="button"
+          >
+            <Search className="h-4 w-4" />
+            <span>{t('admin.user.index.actions.query', 'Query')}</span>
+          </button>
+          <button
+            className="inline-flex h-10 items-center justify-center gap-2 rounded-lg border border-slate-200 bg-white px-3 text-sm font-medium text-slate-700 shadow-sm transition-colors hover:border-blue-300 hover:text-blue-700 dark:border-white/10 dark:bg-[#1e1e1e] dark:text-slate-200 dark:hover:border-blue-500/40 dark:hover:text-blue-300"
+            data-admin-user-refresh-action
+            onClick={() => { void loadUsers(); }}
+            type="button"
+          >
+            <RefreshCw className={`h-4 w-4 ${loading ? 'animate-spin' : ''}`} />
+            <span>{t('admin.user.index.actions.refresh', 'Refresh')}</span>
+          </button>
+        </div>
           <button
             className="flex shrink-0 items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700"
             data-admin-user-primary-action
@@ -205,7 +265,7 @@ export function UserAdmin() {
           <thead className="sticky top-0 z-10 select-none border-b border-slate-200 bg-slate-50 text-xs font-semibold text-slate-500 dark:border-white/10 dark:bg-[#121212] dark:text-slate-400">
             <tr>
               <th className="px-6 py-4">{t('admin.user.index.columns.user', 'User')}</th>
-              <th className="px-6 py-4">{t('common.labels.id', 'ID')}</th>
+              <th className="px-6 py-4">{t('admin.user.index.columns.id', 'ID')}</th>
               <th className="px-6 py-4">{t('admin.user.index.columns.username', 'Username')}</th>
               <th className="px-6 py-4">{t('admin.user.index.columns.role', 'Role')}</th>
               <th className="px-6 py-4">{t('admin.user.index.columns.group', 'Group')}</th>
@@ -249,18 +309,18 @@ export function UserAdmin() {
                 <td className="px-6 py-4 text-slate-700 dark:text-slate-300">{userItem.username}</td>
                 <td className="px-6 py-4">
                   <span className={`inline-flex items-center rounded-md px-2 py-0.5 text-xs font-medium ${userItem.role === 'admin' ? 'bg-purple-100 text-purple-700 dark:bg-purple-500/10 dark:text-purple-400' : 'bg-slate-100 text-slate-700 dark:bg-white/10 dark:text-slate-300'}`}>
-                    {userItem.role}
+                    {getUserRoleLabel(userItem.role, t)}
                   </span>
                 </td>
                 <td className="px-6 py-4">
                   <span className="inline-flex items-center rounded-md bg-blue-50 px-2 py-0.5 text-xs font-medium text-blue-600 dark:bg-blue-500/10 dark:text-blue-400">
-                    {userItem.group}
+                    {getUserGroupLabel(userItem.group, defaultUserGroupOptions)}
                   </span>
                 </td>
                 <td className="px-6 py-4">
                   <span className="inline-flex items-center gap-2 whitespace-nowrap text-sm text-slate-700 dark:text-slate-300">
                     <span className={`h-2 w-2 rounded-full ${userItem.status === 'active' ? 'bg-emerald-500' : 'bg-red-500'}`} />
-                    {userItem.status}
+                    {getUserStatusLabel(userItem.status, t)}
                   </span>
                 </td>
                 <td className="whitespace-nowrap px-6 py-4 font-mono text-xs text-slate-500 dark:text-slate-400">{userItem.lastActive}</td>
@@ -534,7 +594,7 @@ function ApiKeysModal({ apiKeys, apiKeysLoadError, onClose, onCreate, onDelete, 
                     <td className="px-4 py-3 font-mono text-xs text-slate-500">{key.key}</td>
                     <td className="px-4 py-3">{key.used}</td>
                     <td className="px-4 py-3">
-                      <span className="rounded bg-emerald-50 px-2 py-0.5 text-xs text-emerald-600 dark:bg-emerald-500/10">{key.status}</span>
+                      <span className="rounded bg-emerald-50 px-2 py-0.5 text-xs text-emerald-600 dark:bg-emerald-500/10">{getApiKeyStatusLabel(key.status, t)}</span>
                     </td>
                     <td className="px-4 py-3 text-right">
                       <button className="text-xs font-medium text-slate-400 transition-colors hover:text-red-500" onClick={() => onDelete(key.id)} type="button">

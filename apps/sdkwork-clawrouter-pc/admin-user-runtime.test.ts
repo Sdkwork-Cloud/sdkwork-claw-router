@@ -12,6 +12,7 @@ import {
   createUserProfileUpdateInputFromForm,
   createUserStatusUpdateInput,
 } from "./packages/sdkwork-clawrouter-pc-admin-user/src/userForm.ts";
+import { resources } from "./packages/sdkwork-clawrouter-pc-i18n/src/resources/index.ts";
 
 const originalFetch = globalThis.fetch;
 const originalWindowDescriptor = Object.getOwnPropertyDescriptor(globalThis, "window");
@@ -228,8 +229,8 @@ test("admin user table exposes backend-backed status toggle actions", () => {
   assert.match(source, /handleStatusToggle/);
   assert.match(source, /createUserStatusUpdateInput\(nextStatus\)/);
   assert.match(source, /getStatusToggleLabel/);
-  assert.match(source, /u\.status === 'active' \? t\("admin\.user\.index\.text\.1dcdrxo"/);
-  assert.match(source, /: t\("common\.actions\.enable"/);
+  assert.match(source, /u\.status === 'active' \? t\('admin\.user\.index\.actions\.disable'/);
+  assert.match(source, /: t\(['"]common\.actions\.enable['"]/);
 });
 
 test("admin user group selector preserves backend custom groups", () => {
@@ -244,6 +245,26 @@ test("admin user group selector preserves backend custom groups", () => {
     source,
     /t\('admin\.user\.groups\.current', '\{\{group\}\} \(current\)', \{ group: groupsTarget\.group \}\)/,
   );
+});
+
+test("admin user search is applied by clicking query and can refresh current data", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-clawrouter-pc-admin-user/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(source, /const \[searchDraft, setSearchDraft\] = useState\(''\);/);
+  assert.match(source, /const \[appliedSearch, setAppliedSearch\] = useState\(''\);/);
+  assert.match(source, /const normalizedSearch = appliedSearch\.trim\(\)\.toLowerCase\(\);/);
+  assert.match(source, /onChange=\{\(event\) => setSearchDraft\(event\.target\.value\)\}/);
+  assert.match(source, /value=\{searchDraft\}/);
+  assert.match(source, /data-admin-user-query-action/);
+  assert.match(source, /onClick=\{\(\) => setAppliedSearch\(searchDraft\)\}/);
+  assert.match(source, /t\('admin\.user\.index\.actions\.query', 'Query'\)/);
+  assert.match(source, /data-admin-user-refresh-action/);
+  assert.match(source, /onClick=\{\(\) => \{ void loadUsers\(\); \}\}/);
+  assert.match(source, /t\('admin\.user\.index\.actions\.refresh', 'Refresh'\)/);
+  assert.doesNotMatch(source, /const normalizedSearch = search\.trim\(\)\.toLowerCase\(\);/);
 });
 
 test("admin user static copy is translated through i18n keys", () => {
@@ -267,6 +288,20 @@ test("admin user static copy is translated through i18n keys", () => {
   }
 
   for (const token of [
+    "t('admin.user.index.searchPlaceholder', 'Search email, name, role, or group...')",
+    "t('admin.user.index.actions.query', 'Query')",
+    "t('admin.user.index.actions.refresh', 'Refresh')",
+    "t('admin.user.index.createUser', 'Create user')",
+    "t('admin.user.index.columns.user', 'User')",
+    "t('admin.user.index.columns.id', 'ID')",
+    "t('admin.user.index.columns.username', 'Username')",
+    "t('admin.user.index.columns.role', 'Role')",
+    "t('admin.user.index.columns.group', 'Group')",
+    "t('admin.user.index.columns.status', 'Status')",
+    "t('admin.user.index.columns.lastActive', 'Last active')",
+    "t('admin.user.index.columns.lastUsed', 'Last used')",
+    "t('admin.user.index.columns.createdAt', 'Created')",
+    "t('admin.user.index.columns.actions', 'Actions')",
     "t('admin.user.groups.default', 'default (Default group)')",
     "t('admin.user.groups.vip', 'VIP (Advanced users)')",
     "t('admin.user.groups.svip', 'SVIP (Premium users)')",
@@ -283,10 +318,53 @@ test("admin user static copy is translated through i18n keys", () => {
     assert.match(source, new RegExp(escapeRegExp(token)));
   }
 
+  assert.doesNotMatch(source, /admin\.user\.index\.text\.[0-9][a-z0-9]*/);
+  assert.match(source, /function getUserRoleLabel\(role: string, t: TranslationFunction\): string/);
+  assert.match(source, /function getUserGroupLabel\(/);
+  assert.match(source, /function getUserStatusLabel\(status: UserListItem\['status'\], t: TranslationFunction\): string/);
+  assert.match(source, /function getApiKeyStatusLabel\(status: string, t: TranslationFunction\): string/);
+  assert.match(source, /\{getUserRoleLabel\(userItem\.role, t\)\}/);
+  assert.match(source, /\{getUserGroupLabel\(userItem\.group, defaultUserGroupOptions\)\}/);
+  assert.match(source, /\{getUserStatusLabel\(userItem\.status, t\)\}/);
+  assert.match(source, /\{getApiKeyStatusLabel\(key\.status, t\)\}/);
+
   assert.match(
     source,
     /t\(\s*'admin\.user\.index\.text\.recordsEmptyDescription',\s*'Records are available from the billing history and recharge records modules; this user dialog does not synthesize transaction rows\.'\s*,?\s*\)/s,
   );
+});
+
+test("admin user i18n resources cover visible management copy", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-clawrouter-pc-admin-user/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+  const service = readFileSync(
+    new URL("./packages/sdkwork-clawrouter-pc-admin-user/src/userService.ts", import.meta.url),
+    "utf8",
+  );
+  const keys = new Set([
+    ...Array.from(source.matchAll(/['"](admin\.user\.[^'"]+)['"]/g), (match) => match[1]),
+    ...Array.from(service.matchAll(/['"](admin\.user\.[^'"]+)['"]/g), (match) => match[1]),
+  ]);
+
+  for (const key of keys) {
+    assert.equal(typeof resources.en.translation[key], "string", `missing English user i18n key: ${key}`);
+    assert.equal(typeof resources.zh.translation[key], "string", `missing Chinese user i18n key: ${key}`);
+    assert.notEqual(resources.en.translation[key], "", `empty English user i18n key: ${key}`);
+    assert.notEqual(resources.zh.translation[key], "", `empty Chinese user i18n key: ${key}`);
+  }
+
+  assert.equal(resources.en.translation["admin.user.index.searchPlaceholder"], "Search email, name, role, or group...");
+  assert.equal(resources.zh.translation["admin.user.index.searchPlaceholder"], "搜索邮箱、用户名、角色或分组...");
+  assert.equal(resources.en.translation["admin.user.index.actions.query"], "Query");
+  assert.equal(resources.zh.translation["admin.user.index.actions.query"], "查询");
+  assert.equal(resources.en.translation["admin.user.index.actions.refresh"], "Refresh");
+  assert.equal(resources.zh.translation["admin.user.index.actions.refresh"], "刷新");
+  assert.equal(resources.en.translation["admin.user.index.createUser"], "Create user");
+  assert.equal(resources.zh.translation["admin.user.index.createUser"], "创建用户");
+  assert.equal(resources.en.translation["admin.user.index.columns.username"], "Username");
+  assert.equal(resources.zh.translation["admin.user.index.columns.username"], "用户名");
 });
 
 test("admin user table fills the available admin viewport", () => {

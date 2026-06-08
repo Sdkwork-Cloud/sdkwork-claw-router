@@ -52,6 +52,77 @@ async fn admin_user_route_lists_users_and_api_keys_by_user() {
 }
 
 #[tokio::test]
+async fn admin_user_route_serves_appbase_backend_iam_users_from_store() {
+    let store = Arc::new(TestAdminUserStore::default());
+    let router = sdkwork_claw_product::api::admin_user_router_with_store(
+        store.clone(),
+        Arc::new(TestHasher),
+        Arc::new(TestSecretGenerator),
+    );
+
+    let users_response = router
+        .clone()
+        .oneshot(signed_request("GET", "/backend/v3/api/iam/users", ""))
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::OK, users_response.status());
+    let users_payload = json_payload(users_response).await;
+    assert_eq!("2000", users_payload["code"]);
+    assert_eq!(30, users_payload["data"]["items"][0]["id"]);
+    assert_eq!(
+        "owner@example.com",
+        users_payload["data"]["items"][0]["email"]
+    );
+    assert_ne!(
+        "local-admin@sdkwork-iam.local",
+        users_payload["data"]["items"][0]["email"]
+    );
+
+    let api_keys_response = router
+        .clone()
+        .oneshot(signed_request("GET", "/backend/v3/api/iam/api_keys", ""))
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::OK, api_keys_response.status());
+    let api_keys_payload = json_payload(api_keys_response).await;
+    assert_eq!("Production", api_keys_payload["data"]["30"][0]["name"]);
+
+    let create_user_response = router
+        .clone()
+        .oneshot(signed_request(
+            "POST",
+            "/backend/v3/api/iam/users",
+            r#"{"email":"new@example.com","username":"new-user","balance":"$10.00"}"#,
+        ))
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::OK, create_user_response.status());
+    let create_user_payload = json_payload(create_user_response).await;
+    assert_eq!(
+        "new@example.com",
+        create_user_payload["data"]["item"]["email"]
+    );
+
+    let update_user_response = router
+        .oneshot(signed_request(
+            "PATCH",
+            "/backend/v3/api/iam/users/30",
+            r#"{"username":"renamed","group":"vip"}"#,
+        ))
+        .await
+        .unwrap();
+    assert_eq!(StatusCode::OK, update_user_response.status());
+    let update_user_payload = json_payload(update_user_response).await;
+    assert_eq!("renamed", update_user_payload["data"]["item"]["username"]);
+    assert_eq!("vip", update_user_payload["data"]["item"]["group"]);
+
+    assert_eq!(
+        vec!["create_user", "update_user"],
+        *store.commands.lock().unwrap()
+    );
+}
+
+#[tokio::test]
 async fn admin_user_route_creates_updates_adjusts_and_deletes() {
     let store = Arc::new(TestAdminUserStore::default());
     let router = sdkwork_claw_product::api::admin_user_router_with_store(

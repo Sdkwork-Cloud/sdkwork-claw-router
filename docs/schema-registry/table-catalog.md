@@ -2,9 +2,9 @@
 
 生成来源：`docs/schema-registry/sdkwork-claw-router.tables.yaml`
 source: docs/schema-registry/sdkwork-claw-router.tables.yaml
-表总数：324
-table-count: 324
-本项目生成表：216
+表总数：329
+table-count: 329
+本项目生成表：221
 
 本文列出当前应用 schema registry 中登记的全部数据库表，并给出中文业务说明。`generated = no` 表示物理结构由外部系统或 Java 兼容实体拥有，当前应用只登记和读取契约。
 
@@ -15,7 +15,7 @@ table-count: 324
 | `ai` | 84 | AI 中转与模型服务 |
 | `commerce` | 85 | 交易、计费与结算 |
 | `content` | 30 | 内容、文档与对象存储 |
-| `iam` | 27 | 身份、访问与安全 |
+| `iam` | 32 | 身份、访问与安全 |
 | `integration` | 19 | 外部集成与服务商 |
 | `legacy` | 24 | Java Plus 兼容 |
 | `messaging` | 15 | 消息触达 |
@@ -244,7 +244,11 @@ table-count: 324
 | --- | --- | --- | --- | --- |
 | `iam_tenant` | 身份、访问与安全的租户根数据，记录 租户。 | `tenant_root` | `sdkwork-appbase-iam` | yes |
 | `iam_organization` | 身份、访问与安全的租户级主数据，记录 组织。 | `tenant_entity` | `sdkwork-appbase-iam` | yes |
-| `iam_organization_member` | 身份、访问与安全的租户级主数据，记录 组织成员。 | `tenant_entity` | `sdkwork-appbase-iam` | yes |
+| `iam_organization_membership` | 身份、访问与安全的租户级主数据，记录 组织membership。 | `tenant_entity` | `sdkwork-appbase-iam` | yes |
+| `iam_department` | 身份、访问与安全的tree entity，记录 department。 | `tree_entity` | `sdkwork-appbase-iam` | yes |
+| `iam_department_assignment` | 身份、访问与安全的关系绑定，记录 departmentassignment。 | `relation_entity` | `sdkwork-appbase-iam` | yes |
+| `iam_position` | 身份、访问与安全的租户级主数据，记录 position。 | `tenant_entity` | `sdkwork-appbase-iam` | yes |
+| `iam_position_assignment` | 身份、访问与安全的关系绑定，记录 positionassignment。 | `relation_entity` | `sdkwork-appbase-iam` | yes |
 | `iam_user` | 身份、访问与安全的租户级主数据，记录 user。 | `tenant_entity` | `sdkwork-appbase-iam` | yes |
 | `iam_user_identity` | 身份、访问与安全的租户级主数据，记录 用户身份。 | `tenant_entity` | `sdkwork-appbase-iam` | yes |
 | `iam_credential` | 身份、访问与安全的租户级主数据，记录 凭证。 | `tenant_entity` | `sdkwork-appbase-iam` | yes |
@@ -255,12 +259,13 @@ table-count: 324
 | `iam_permission` | 身份、访问与安全的全局主数据，记录 权限。 | `global_entity` | `sdkwork-appbase-iam` | yes |
 | `iam_policy` | 身份、访问与安全的租户级主数据，记录 策略。 | `tenant_entity` | `sdkwork-appbase-iam` | yes |
 | `iam_role_permission` | 身份、访问与安全的租户级主数据，记录 角色权限。 | `tenant_entity` | `sdkwork-appbase-iam` | yes |
+| `iam_role_binding` | 身份、访问与安全的关系绑定，记录 角色binding。 | `relation_entity` | `sdkwork-appbase-iam` | yes |
 | `iam_user_role` | 身份、访问与安全的租户级主数据，记录 用户角色。 | `tenant_entity` | `sdkwork-appbase-iam` | yes |
 | `iam_api_key` | 身份、访问与安全的租户级主数据，记录 API Key。 | `tenant_entity` | `sdkwork-appbase-iam` | yes |
 | `iam_security_event` | 身份、访问与安全的事件日志，记录 安全事件。 | `event_log` | `sdkwork-appbase-iam` | yes |
 | `iam_audit_event` | 身份、访问与安全的审计日志，记录 审计事件。 | `audit_log` | `sdkwork-appbase-iam` | yes |
 | `iam_gateway_api_key` | 中转站对外 API Key 索引，保存密钥哈希、默认分组、策略和限额引用。 | `credential_index` | `api-key-service` | yes |
-| `iam_gateway_api_key_channel_group` | 网关 API Key 到业务渠道分组的多绑定关系，用于表达该 Key 可路由到哪些 `ai_channel_group`，不得用于表达上游供应商账号池。 | `relation_entity` | `api-key-service` | yes |
+| `iam_gateway_api_key_channel_group` | 身份、访问与安全的关系绑定，记录 gatewayapikeychannelgroup。 | `relation_entity` | `api-key-service` | yes |
 | `iam_gateway_access_policy` | 保存网关 API Key 的访问能力、IP 白名单等访问控制策略。 | `tenant_entity` | `access-policy-service` | yes |
 | `iam_gateway_risk_rule` | 身份、访问与安全的租户级主数据，记录 gatewayriskrule。 | `tenant_entity` | `risk-service` | yes |
 | `iam_user_preference` | 身份、访问与安全的用户级数据，记录 用户偏好。 | `user_entity` | `user-preference-service` | yes |
@@ -298,30 +303,30 @@ table-count: 324
 
 | 表名 | 说明 | profile | write_owner | generated |
 | --- | --- | --- | --- | --- |
-| `plus_user_address` | Java Plus 兼容的外部兼容表，登记 用户地址 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `legacy-java-plus-entity` | no |
+| `plus_user_address` | Java Plus 兼容的外部兼容表，登记 用户地址 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `` | no |
 | `plus_app` | Java Plus 兼容的router owned standard，记录 app。 | `router_owned_standard` | `sdkwork-claw-product` | yes |
-| `plus_category` | Java Plus 兼容的java compatible owned，记录 category。 | `java_compatible_owned` | `legacy-java-plus-entity` | yes |
-| `plus_agent_skill_package` | Java Plus 兼容的java compatible owned，记录 Agent 技能包。 | `java_compatible_owned` | `legacy-java-plus-entity` | yes |
-| `plus_agent_skill` | Java Plus 兼容的java compatible owned，记录 Agent 技能。 | `java_compatible_owned` | `legacy-java-plus-entity` | yes |
+| `plus_category` | Java Plus 兼容的java compatible owned，记录 category。 | `java_compatible_owned` | `` | yes |
+| `plus_agent_skill_package` | Java Plus 兼容的java compatible owned，记录 Agent 技能包。 | `java_compatible_owned` | `` | yes |
+| `plus_agent_skill` | Java Plus 兼容的java compatible owned，记录 Agent 技能。 | `java_compatible_owned` | `` | yes |
 | `plus_user_agent_skill` | Java Plus 兼容的java compatible owned，记录 用户 Agent 技能。 | `java_compatible_owned` | `sdkwork-claw-router` | yes |
-| `plus_feeds` | Java Plus 兼容的java compatible owned，记录 feeds。 | `java_compatible_owned` | `legacy-java-plus-entity` | yes |
-| `plus_comments` | Java Plus 兼容的java compatible owned，记录 comments。 | `java_compatible_owned` | `legacy-java-plus-entity` | yes |
-| `plus_content_vote` | Java Plus 兼容的java compatible owned，记录 内容投票。 | `java_compatible_owned` | `legacy-java-plus-entity` | yes |
-| `plus_favorite` | Java Plus 兼容的java compatible owned，记录 favorite。 | `java_compatible_owned` | `legacy-java-plus-entity` | yes |
-| `plus_department` | Java Plus 兼容的外部兼容表，登记 department 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `legacy-java-plus-entity` | no |
-| `plus_position` | Java Plus 兼容的外部兼容表，登记 position 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `legacy-java-plus-entity` | no |
-| `plus_member_card` | Java Plus 兼容的外部兼容表，登记 会员卡 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `legacy-java-plus-entity` | no |
-| `plus_member_level` | Java Plus 兼容的外部兼容表，登记 会员等级 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `legacy-java-plus-entity` | no |
-| `plus_card` | Java Plus 兼容的外部兼容表，登记 card 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `legacy-java-plus-entity` | no |
-| `plus_card_template` | Java Plus 兼容的外部兼容表，登记 卡模板 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `legacy-java-plus-entity` | no |
-| `plus_user_card` | Java Plus 兼容的外部兼容表，登记 用户卡 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `legacy-java-plus-entity` | no |
-| `plus_invitation_code` | Java Plus 兼容的外部兼容表，登记 邀请码 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `legacy-java-plus-entity` | no |
-| `plus_invitation_relation` | Java Plus 兼容的外部兼容表，登记 邀请关系 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `legacy-java-plus-entity` | no |
-| `plus_partner` | Java Plus 兼容的外部兼容表，登记 partner 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `legacy-java-plus-entity` | no |
-| `plus_usage_record` | Java Plus 兼容的外部兼容表，登记 usagerecord 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `legacy-java-plus-entity` | no |
-| `plus_channel` | Java Plus 兼容的外部兼容表，登记 channel 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `legacy-java-plus-entity` | no |
-| `plus_channel_account` | Java Plus 兼容的外部兼容表，登记 channel账户 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `legacy-java-plus-entity` | no |
-| `plus_channel_proxy` | Java Plus 兼容的外部兼容表，登记 channel代理 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `legacy-java-plus-entity` | no |
+| `plus_feeds` | Java Plus 兼容的java compatible owned，记录 feeds。 | `java_compatible_owned` | `` | yes |
+| `plus_comments` | Java Plus 兼容的java compatible owned，记录 comments。 | `java_compatible_owned` | `` | yes |
+| `plus_content_vote` | Java Plus 兼容的java compatible owned，记录 内容投票。 | `java_compatible_owned` | `` | yes |
+| `plus_favorite` | Java Plus 兼容的java compatible owned，记录 favorite。 | `java_compatible_owned` | `` | yes |
+| `plus_department` | Java Plus 兼容的外部兼容表，登记 department 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `` | no |
+| `plus_position` | Java Plus 兼容的外部兼容表，登记 position 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `` | no |
+| `plus_member_card` | Java Plus 兼容的外部兼容表，登记 会员卡 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `` | no |
+| `plus_member_level` | Java Plus 兼容的外部兼容表，登记 会员等级 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `` | no |
+| `plus_card` | Java Plus 兼容的外部兼容表，登记 card 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `` | no |
+| `plus_card_template` | Java Plus 兼容的外部兼容表，登记 卡模板 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `` | no |
+| `plus_user_card` | Java Plus 兼容的外部兼容表，登记 用户卡 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `` | no |
+| `plus_invitation_code` | Java Plus 兼容的外部兼容表，登记 邀请码 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `` | no |
+| `plus_invitation_relation` | Java Plus 兼容的外部兼容表，登记 邀请关系 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `` | no |
+| `plus_partner` | Java Plus 兼容的外部兼容表，登记 partner 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `` | no |
+| `plus_usage_record` | Java Plus 兼容的外部兼容表，登记 usagerecord 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `` | no |
+| `plus_channel` | Java Plus 兼容的外部兼容表，登记 channel 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `` | no |
+| `plus_channel_account` | Java Plus 兼容的外部兼容表，登记 channel账户 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `` | no |
+| `plus_channel_proxy` | Java Plus 兼容的外部兼容表，登记 channel代理 的现有物理结构供当前应用读取或映射。 | `legacy_compatible` | `` | no |
 
 ## 消息触达
 

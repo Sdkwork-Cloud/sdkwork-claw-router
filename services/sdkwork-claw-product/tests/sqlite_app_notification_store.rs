@@ -518,16 +518,21 @@ async fn sqlite_app_notification_store_deduplicates_delivery_rows_before_repairi
 async fn create_schema(pool: &sqlx::SqlitePool) {
     for statement in [
         r#"
-        CREATE TABLE iam_organization_member (
+        CREATE TABLE iam_organization_membership (
             id TEXT PRIMARY KEY,
             tenant_id TEXT NOT NULL,
             organization_id TEXT NOT NULL,
             user_id TEXT NOT NULL,
-            role_code TEXT,
+            membership_kind TEXT NOT NULL,
+            employee_no TEXT,
+            display_name TEXT,
+            is_primary INTEGER NOT NULL DEFAULT 0,
             status TEXT NOT NULL,
             joined_at TEXT NOT NULL,
             left_at TEXT,
-            remark TEXT
+            remark TEXT,
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL
         )
         "#,
         r#"
@@ -662,10 +667,10 @@ async fn assert_sqlite_index_exists(pool: &sqlx::SqlitePool, name: &str) {
 async fn seed_notifications(pool: &sqlx::SqlitePool) {
     sqlx::query(
         r#"
-        INSERT INTO iam_organization_member
-            (id, tenant_id, organization_id, user_id, role_code, status, joined_at)
+        INSERT INTO iam_organization_membership
+            (id, tenant_id, organization_id, user_id, membership_kind, display_name, is_primary, status, joined_at, created_at, updated_at)
         VALUES
-            ('member-30', '10', '20', '30', 'admin', 'active', '2026-05-17 00:00:00')
+            ('member-30', '10', '20', '30', 'admin', 'Admin User', 1, 'active', '2026-05-17 00:00:00', '2026-05-17 00:00:00', '2026-05-17 00:00:00')
         "#,
     )
     .execute(pool)

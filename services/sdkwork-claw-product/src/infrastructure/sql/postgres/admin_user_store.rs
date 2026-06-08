@@ -2,6 +2,7 @@ use sdkwork_commerce_core::{CommerceAccountAssetType, CommerceLedgerDirection};
 use sqlx::{PgPool, Postgres, Row, Transaction};
 
 use crate::domain::{DecimalValue, DomainError, DomainResult};
+use crate::infrastructure::sql::runtime_id::next_claw_runtime_id;
 use crate::infrastructure::sql::sql_admin_product_center::{
     media_resource_object_blob_id, media_resource_stable_id, provider_asset_media_resource,
 };
@@ -342,8 +343,8 @@ async fn list_users(pool: &PgPool, query: ListAdminUsersQuery) -> DomainResult<V
             u.id::bigint AS id,
             COALESCE(u.email, '') AS email,
             COALESCE(NULLIF(u.username, ''), u.email, 'user-' || u.id::text) AS username,
-            COALESCE(NULLIF(m.role_code, ''), 'user') AS role_code,
-            COALESCE(NULLIF(m.role_code, ''), 'standard') AS group_code,
+            COALESCE(NULLIF(m.membership_kind, ''), 'user') AS role_code,
+            COALESCE(NULLIF(m.membership_kind, ''), 'standard') AS group_code,
             COALESCE(a.available_amount, '0')::text AS balance,
             CASE LOWER(COALESCE(u.status, ''))
                 WHEN 'active' THEN 1
@@ -353,7 +354,7 @@ async fn list_users(pool: &PgPool, query: ListAdminUsersQuery) -> DomainResult<V
             COALESCE(k.last_used_at::text, '') AS last_used,
             COALESCE(u.created_at::text, '') AS created_at
         FROM iam_user u
-        JOIN iam_organization_member m
+        JOIN iam_organization_membership m
           ON m.tenant_id = u.tenant_id
          AND m.user_id = u.id
          AND m.organization_id = $1
@@ -501,20 +502,21 @@ async fn insert_user(
 
     sqlx::query(
         r#"
-        INSERT INTO iam_organization_member
-            (id, tenant_id, organization_id, user_id, role_code, status, joined_at)
+        INSERT INTO iam_organization_membership
+            (id, tenant_id, organization_id, user_id, membership_kind, display_name, is_primary, status, joined_at, created_at, updated_at)
         VALUES
-            ($1, $2, $3, $4, 'standard', 'active', $5::timestamp AT TIME ZONE 'UTC')
+            ($1, $2, $3, $4, 'standard', $5, 0, 'active', $6::timestamp AT TIME ZONE 'UTC', $6::timestamp AT TIME ZONE 'UTC', $6::timestamp AT TIME ZONE 'UTC')
         "#,
     )
     .bind(format!("member-{user_id_text}-admin-user"))
     .bind(&tenant_id)
     .bind(&organization_id)
     .bind(&user_id_text)
+    .bind(&command.username)
     .bind(&command.requested_at)
     .execute(&mut **tx)
     .await
-    .map_err(|error| store_error("failed to create IAM organization member", error))?;
+    .map_err(|error| store_error("failed to create IAM organization membership", error))?;
 
     sqlx::query(
         r#"
@@ -593,7 +595,7 @@ async fn update_user_row(
           AND LOWER(COALESCE(status, '')) IN ('active', 'banned', 'disabled', 'inactive')
           AND EXISTS (
               SELECT 1
-              FROM iam_organization_member m
+              FROM iam_organization_membership m
               WHERE m.tenant_id = iam_user.tenant_id
                 AND m.organization_id = $6
                 AND m.user_id = iam_user.id
@@ -618,18 +620,41 @@ async fn upsert_user_membership_role(
     command: &UpdateAdminUserCommand,
     role_code: &str,
 ) -> DomainResult<()> {
-    sqlx::query(
+    let result = sqlx::query(
         r#"
-        INSERT INTO iam_organization_member
-            (id, tenant_id, organization_id, user_id, role_code, status, joined_at)
-        VALUES
-            ($1, $2, $3, $4, $5, 'active', $6::timestamp AT TIME ZONE 'UTC')
-        ON CONFLICT(tenant_id, organization_id, user_id) DO UPDATE SET
-            role_code = excluded.role_code,
-            status = 'active'
+        UPDATE iam_organization_membership
+        SET membership_kind = $1,
+            updated_at = $2::timestamp AT TIME ZONE 'UTC'
+        WHERE tenant_id = $3
+          AND organization_id = $4
+          AND user_id = $5
+          AND status = 'active'
         "#,
     )
-    .bind(format!("member-{}-admin-user", command.user_id))
+    .bind(role_code)
+    .bind(&command.requested_at)
+    .bind(command.subject.tenant_id.to_string())
+    .bind(command.subject.organization_id.to_string())
+    .bind(command.user_id.to_string())
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to update IAM user membership role", error))?;
+    if result.rows_affected() > 0 {
+        return Ok(());
+    }
+
+    sqlx::query(
+        r#"
+        INSERT INTO iam_organization_membership
+            (id, tenant_id, organization_id, user_id, membership_kind, display_name, is_primary, status, joined_at, created_at, updated_at)
+        VALUES
+            ($1, $2, $3, $4, $5, NULL, 0, 'active', $6::timestamp AT TIME ZONE 'UTC', $6::timestamp AT TIME ZONE 'UTC', $6::timestamp AT TIME ZONE 'UTC')
+        ON CONFLICT(tenant_id, organization_id, user_id, membership_kind) DO UPDATE SET
+            status = 'active',
+            updated_at = excluded.updated_at
+        "#,
+    )
+    .bind(format!("member-{}-{role_code}-admin-user", command.user_id))
     .bind(command.subject.tenant_id.to_string())
     .bind(command.subject.organization_id.to_string())
     .bind(command.user_id.to_string())
@@ -857,12 +882,13 @@ async fn ensure_default_channel_group(
 
     let group_uuid = format!("default-channel-group-{tenant_id}-{organization_id}");
     let pricing_plan_id = find_default_pricing_plan_id(tx, tenant_id, organization_id).await?;
+    let id = next_claw_runtime_id("ai_channel_group")?;
     let row = sqlx::query_scalar(
         r#"
         INSERT INTO ai_channel_group
-            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, group_name, group_code, description, group_type, environment, pricing_plan_id, pricing_plan_code, rate_multiplier, official_price_multiplier, billing_type, capacity_limit, allowed_origin, metadata)
+            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, group_name, group_code, description, group_type, environment, pricing_plan_id, pricing_plan_code, rate_multiplier, official_price_multiplier, billing_type, capacity_limit, allowed_origin, metadata, id)
         VALUES
-            ($1, $2, $3, 1, 1, $4::timestamptz, $4::timestamptz, 0, $5, $6, '', 'default', 1, $7, $8, '1.000000'::numeric, '1.000000'::numeric, 1, 0, '{}'::jsonb, '{}'::jsonb)
+            ($1, $2, $3, 1, 1, $4::timestamptz, $4::timestamptz, 0, $5, $6, '', 'default', 1, $7, $8, '1.000000'::numeric, '1.000000'::numeric, 1, 0, '{}'::jsonb, '{}'::jsonb, $9)
         ON CONFLICT (tenant_id, organization_id, group_code)
         DO UPDATE SET
             status = 1,
@@ -884,6 +910,7 @@ async fn ensure_default_channel_group(
     .bind(DEFAULT_CHANNEL_GROUP_CODE)
     .bind(pricing_plan_id)
     .bind(DEFAULT_PRICING_PLAN_CODE)
+    .bind(id)
     .fetch_one(&mut **tx)
     .await
     .map_err(|error| store_error("failed to ensure default channel group", error))?;
@@ -995,7 +1022,7 @@ async fn user_exists(
         r#"
         SELECT u.id
         FROM iam_user u
-        JOIN iam_organization_member m
+        JOIN iam_organization_membership m
           ON m.tenant_id = u.tenant_id
          AND m.user_id = u.id
          AND m.organization_id = $1
@@ -1027,8 +1054,8 @@ async fn load_user_by_id(
             u.id::bigint AS id,
             COALESCE(u.email, '') AS email,
             COALESCE(NULLIF(u.username, ''), u.email, 'user-' || u.id::text) AS username,
-            COALESCE(NULLIF(m.role_code, ''), 'user') AS role_code,
-            COALESCE(NULLIF(m.role_code, ''), 'standard') AS group_code,
+            COALESCE(NULLIF(m.membership_kind, ''), 'user') AS role_code,
+            COALESCE(NULLIF(m.membership_kind, ''), 'standard') AS group_code,
             COALESCE(a.available_amount, '0')::text AS balance,
             CASE LOWER(COALESCE(u.status, ''))
                 WHEN 'active' THEN 1
@@ -1038,7 +1065,7 @@ async fn load_user_by_id(
             COALESCE(k.last_used_at::text, '') AS last_used,
             COALESCE(u.created_at::text, '') AS created_at
         FROM iam_user u
-        JOIN iam_organization_member m
+        JOIN iam_organization_membership m
           ON m.tenant_id = u.tenant_id
          AND m.user_id = u.id
          AND m.organization_id = $1
@@ -1136,12 +1163,13 @@ async fn insert_audit_log(
     target_id: i64,
     change_summary: serde_json::Value,
 ) -> DomainResult<()> {
+    let id = next_claw_runtime_id("ops_audit_log")?;
     sqlx::query(
         r#"
         INSERT INTO ops_audit_log
-            (uuid, tenant_id, organization_id, action, target_type, target_id, request_id, operator_id, operator_type, change_summary)
+            (uuid, tenant_id, organization_id, action, target_type, target_id, request_id, operator_id, operator_type, change_summary, id)
         VALUES
-            ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10::jsonb)
+            ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10::jsonb, $11)
         "#,
     )
     .bind(uuid)
@@ -1154,6 +1182,7 @@ async fn insert_audit_log(
     .bind(operator_id)
     .bind(operator_type)
     .bind(change_summary.to_string())
+    .bind(id)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to write admin user audit log", error))?;

@@ -127,7 +127,7 @@ class ConsoleUserBackendRuntimeStandardTest(unittest.TestCase):
             self.assertIn(store_name, store)
             for table in [
                 "iam_user",
-                "iam_organization_member",
+                "iam_organization_membership",
                 "iam_session",
                 "iam_user_login_event",
                 "iam_user_identity",

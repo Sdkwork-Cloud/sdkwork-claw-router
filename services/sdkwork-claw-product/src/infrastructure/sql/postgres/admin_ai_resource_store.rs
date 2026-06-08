@@ -1912,7 +1912,7 @@ fn members_from_rows(
                 member_resource_code: row.try_get("member_resource_code").map_err(row_error)?,
                 member_role: row.try_get("member_role").map_err(row_error)?,
                 required: row.try_get("required").map_err(row_error)?,
-                sort_order: row.try_get("sort_order").ok().flatten(),
+                sort_order: optional_int4_as_i64_cell(&row, "sort_order")?,
             });
     }
     Ok(members)
@@ -1923,7 +1923,7 @@ fn item_from_row(
     members: &HashMap<String, Vec<AdminAiResourceMemberItem>>,
 ) -> DomainResult<AdminAiResourceItem> {
     let resource_code: String = row.try_get("resource_code").map_err(row_error)?;
-    let status: i64 = row.try_get("status").map_err(row_error)?;
+    let status: i32 = row.try_get("status").map_err(row_error)?;
     Ok(AdminAiResourceItem {
         id: row.try_get("id").map_err(row_error)?,
         resource_code: resource_code.clone(),
@@ -1939,13 +1939,13 @@ fn item_from_row(
         capabilities: string_array_cell(&row, "capabilities_json")?,
         composition_mode: row.try_get("composition_mode").map_err(row_error)?,
         status: status_label(status),
-        sort_order: row.try_get("sort_order").ok().flatten(),
+        sort_order: optional_int4_as_i64_cell(&row, "sort_order")?,
         members: members.get(&resource_code).cloned().unwrap_or_default(),
     })
 }
 
 fn group_item_from_row(row: sqlx::postgres::PgRow) -> DomainResult<AdminAiResourceGroupItem> {
-    let status: i64 = row.try_get("status").map_err(row_error)?;
+    let status: i32 = row.try_get("status").map_err(row_error)?;
     Ok(AdminAiResourceGroupItem {
         id: row.try_get("id").map_err(row_error)?,
         group_code: row.try_get("group_code").map_err(row_error)?,
@@ -1956,7 +1956,7 @@ fn group_item_from_row(row: sqlx::postgres::PgRow) -> DomainResult<AdminAiResour
         vendor_codes: string_array_cell_or_empty(&row, "vendor_codes_json")?,
         capability: optional_string_cell(&row, "capability"),
         capabilities: string_array_cell_or_empty(&row, "capabilities_json")?,
-        sort_order: row.try_get("sort_order").ok().flatten(),
+        sort_order: optional_int4_as_i64_cell(&row, "sort_order")?,
         status: status_label(status),
         resource_count: row.try_get("resource_count").map_err(row_error)?,
         dynamic: row.try_get("dynamic").map_err(row_error)?,
@@ -2080,7 +2080,7 @@ async fn hydrate_group_summaries(
 fn group_resource_from_row(
     row: sqlx::postgres::PgRow,
 ) -> DomainResult<AdminAiResourceGroupResourceItem> {
-    let status: i64 = row.try_get("status").map_err(row_error)?;
+    let status: i32 = row.try_get("status").map_err(row_error)?;
     Ok(AdminAiResourceGroupResourceItem {
         id: row.try_get("id").map_err(row_error)?,
         resource_code: row.try_get("resource_code").map_err(row_error)?,
@@ -2093,7 +2093,7 @@ fn group_resource_from_row(
         model: optional_string_cell(&row, "model"),
         provider_native_model: optional_string_cell(&row, "provider_native_model"),
         status: status_label(status),
-        sort_order: row.try_get("sort_order").ok().flatten(),
+        sort_order: optional_int4_as_i64_cell(&row, "sort_order")?,
         member_role: row.try_get("member_role").map_err(row_error)?,
     })
 }
@@ -2104,6 +2104,12 @@ fn optional_string_cell(row: &sqlx::postgres::PgRow, name: &str) -> Option<Strin
         .flatten()
         .map(|value| value.trim().to_owned())
         .filter(|value| !value.is_empty())
+}
+
+fn optional_int4_as_i64_cell(row: &sqlx::postgres::PgRow, name: &str) -> DomainResult<Option<i64>> {
+    row.try_get::<Option<i32>, _>(name)
+        .map(|value| value.map(i64::from))
+        .map_err(row_error)
 }
 
 fn string_array_cell(row: &sqlx::postgres::PgRow, name: &str) -> DomainResult<Vec<String>> {
@@ -2152,7 +2158,7 @@ fn push_unique_lowercase(values: &mut Vec<String>, value: String) {
     values.push(normalized);
 }
 
-fn status_label(status: i64) -> String {
+fn status_label(status: i32) -> String {
     match status {
         1 => "active",
         0 => "disabled",

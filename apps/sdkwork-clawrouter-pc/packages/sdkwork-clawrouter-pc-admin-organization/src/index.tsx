@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState, type FormEvent, type ReactNode } from 'react';
+import { useEffect, useMemo, useState, type ChangeEvent, type FormEvent, type MouseEvent, type ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
   BadgeCheck,
@@ -7,8 +7,7 @@ import {
   ChevronRight,
   Edit,
   GitBranch,
-  KeyRound,
-  Layers3,
+  MoreHorizontal,
   Plus,
   RefreshCw,
   Search,
@@ -47,7 +46,7 @@ import {
 
 type OrganizationAdminTab = 'members' | 'positions' | 'authorization';
 type OrganizationDialog =
-  | { kind: 'organization'; mode: 'create'; target?: undefined }
+  | { kind: 'organization'; mode: 'create'; parentOrganizationId?: string; target?: undefined }
   | { kind: 'organization'; mode: 'edit'; target: OrganizationRecord }
   | { kind: 'department'; mode: 'create'; target?: undefined }
   | { kind: 'department'; mode: 'edit'; target: DepartmentRecord }
@@ -66,6 +65,8 @@ type OrganizationDialog =
   | { kind: 'permission'; mode: 'edit'; target: PermissionRecord }
   | { kind: 'rolePermission'; mode: 'create'; target?: undefined };
 
+type AssignmentDrawerState = 'departmentAssignments' | 'positionAssignments';
+type AuthorizationDrawerState = 'roles' | 'rolePermissions' | 'roleBindings';
 type ConfirmDependency = { count: number; label: string };
 type ConfirmTargetBase = { id: string; label: string; dependencies?: ConfirmDependency[]; blocked?: boolean };
 type ConfirmTarget =
@@ -82,6 +83,38 @@ type ConfirmTarget =
 
 type TranslationFunction = ReturnType<typeof useTranslation>['t'];
 type SelectOption = { value: string; label: string };
+type DirectoryNodeMenuState = {
+  nodeId: string;
+  mode: 'dropdown' | 'context';
+  x: number;
+  y: number;
+};
+type DirectoryNodeMenuAction = {
+  danger?: boolean;
+  disabled?: boolean;
+  icon: ReactNode;
+  id: string;
+  label: string;
+  onSelect: () => void;
+};
+type DirectoryNodeMenuGroup = {
+  id: string;
+  label: string;
+  actions: DirectoryNodeMenuAction[];
+};
+type OrganizationDirectoryTreeNode = {
+  nodeKind: 'organization' | 'department';
+  id: string;
+  organizationId: string;
+  departmentId: string;
+  code: string;
+  name: string;
+  meta: string;
+  children: OrganizationDirectoryTreeNode[];
+};
+
+const DIRECTORY_NODE_MENU_WIDTH = 300;
+const DIRECTORY_NODE_MENU_POSITION_ESTIMATED_HEIGHT = 440;
 
 interface DirectoryLookups {
   usersById: Map<string, UserRecord>;
@@ -112,17 +145,22 @@ const EMPTY_DIRECTORY: OrganizationDirectoryData = {
 const TAB_ITEMS: Array<{ id: OrganizationAdminTab; icon: typeof Users; labelKey: string; fallback: string }> = [
   { id: 'members', icon: Users, labelKey: 'admin.organization.tabs.members', fallback: 'Members' },
   { id: 'positions', icon: BriefcaseBusiness, labelKey: 'admin.organization.tabs.positions', fallback: 'Positions' },
-  { id: 'authorization', icon: ShieldCheck, labelKey: 'admin.organization.tabs.authorization', fallback: 'Authorization' },
+  { id: 'authorization', icon: ShieldCheck, labelKey: 'admin.organization.tabs.authorization', fallback: 'Permissions' },
 ];
 
 export function OrganizationAdmin() {
   const { t } = useTranslation();
   const [directory, setDirectory] = useState<OrganizationDirectoryData>(EMPTY_DIRECTORY);
-  const [search, setSearch] = useState('');
+  const [listSearchInput, setListSearchInput] = useState('');
+  const [listSearch, setListSearch] = useState('');
   const [activeTab, setActiveTab] = useState<OrganizationAdminTab>('members');
   const [activeOrganizationId, setActiveOrganizationId] = useState<string>('');
   const [activeDepartmentId, setActiveDepartmentId] = useState<string>('');
+  const [expandedDirectoryNodeIds, setExpandedDirectoryNodeIds] = useState<Set<string>>(() => new Set());
+  const [directoryNodeMenu, setDirectoryNodeMenu] = useState<DirectoryNodeMenuState | null>(null);
   const [dialog, setDialog] = useState<OrganizationDialog | null>(null);
+  const [assignmentDrawer, setAssignmentDrawer] = useState<AssignmentDrawerState | null>(null);
+  const [authorizationDrawer, setAuthorizationDrawer] = useState<AuthorizationDrawerState | null>(null);
   const [confirmTarget, setConfirmTarget] = useState<ConfirmTarget | null>(null);
   const [activeRoleId, setActiveRoleId] = useState<string>('');
   const [rolePermissions, setRolePermissions] = useState<PermissionRecord[]>([]);
@@ -139,9 +177,14 @@ export function OrganizationAdmin() {
       const nextDirectory = await OrganizationService.loadDirectory();
       const nextActiveOrganization = nextDirectory.organizations.find(isActiveRecord) ?? nextDirectory.organizations[0] ?? null;
       const nextActiveRole = nextDirectory.roles.find(isActiveRecord) ?? nextDirectory.roles[0] ?? null;
+      const nextActiveOrganizationId = activeOrganizationId && nextDirectory.organizations.some((item) => item.id === activeOrganizationId)
+        ? activeOrganizationId
+        : nextActiveOrganization?.id || '';
+      const nextCombinedDirectoryTree = buildOrganizationDepartmentTree(nextDirectory.organizationTree, nextDirectory.departmentTree, nextDirectory.organizations, nextDirectory.departments);
       setDirectory(nextDirectory);
-      setActiveOrganizationId((current) => (current && nextDirectory.organizations.some((item) => item.id === current) ? current : nextActiveOrganization?.id || ''));
+      setActiveOrganizationId(nextActiveOrganizationId);
       setActiveDepartmentId((current) => current || nextDirectory.departments[0]?.id || '');
+      setExpandedDirectoryNodeIds((current) => (nextActiveOrganizationId ? expandDirectoryPath(current, nextCombinedDirectoryTree, `organization:${nextActiveOrganizationId}`) : current));
       setActiveRoleId((current) => (current && nextDirectory.roles.some((item) => item.id === current && isActiveRecord(item)) ? current : nextActiveRole?.id || ''));
     } catch (error) {
       setLoadError(getErrorMessage(error, t('admin.organization.errors.loadDirectory', 'Organization directory could not be loaded')));
@@ -185,7 +228,29 @@ export function OrganizationAdmin() {
     };
   }, [activeRoleId, t]);
 
-  const normalizedSearch = search.trim().toLowerCase();
+  useEffect(() => {
+    if (!directoryNodeMenu) {
+      return undefined;
+    }
+
+    const closeMenu = () => setDirectoryNodeMenu(null);
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        closeMenu();
+      }
+    };
+
+    document.addEventListener('click', closeMenu);
+    document.addEventListener('keydown', closeOnEscape);
+    window.addEventListener('resize', closeMenu);
+    return () => {
+      document.removeEventListener('click', closeMenu);
+      document.removeEventListener('keydown', closeOnEscape);
+      window.removeEventListener('resize', closeMenu);
+    };
+  }, [directoryNodeMenu]);
+
+  const normalizedListSearch = listSearch.trim().toLowerCase();
   const lookups = useMemo(() => buildDirectoryLookups(directory), [directory]);
   const activeOrganizations = useMemo(
     () => directory.organizations.filter(isActiveRecord),
@@ -278,64 +343,123 @@ export function OrganizationAdmin() {
     () => new Set(activeDepartmentAssignmentsForContext.map((item) => item.userId).filter(Boolean)),
     [activeDepartmentAssignmentsForContext],
   );
-  const visibleOrganizations = filterBySearch(directory.organizations, normalizedSearch, ['name', 'code', 'organizationKind', 'status']);
-  const visibleDepartments = filterBySearch(
-    departmentsForActiveOrganization,
-    normalizedSearch,
-    ['name', 'code', 'status'],
-  );
   const visibleMemberships = filterBySearchWithLabels(
     membersForActiveOrganization.filter((item) => {
       const inDepartment = !activeDepartmentId || membershipIdsForDepartment.has(item.id) || userIdsForDepartment.has(item.userId);
       return inDepartment;
     }),
-    normalizedSearch,
-    ['displayName', 'username', 'email', 'mobile', 'memberKind', 'status', 'userId'],
+    normalizedListSearch,
     (item) => [
+      item.id,
+      item.userId,
+      item.displayName,
+      item.email,
+      item.mobile,
+      item.memberKind,
+      item.status,
       memberDisplayName(item, lookups),
       memberContactPrimary(item, lookups),
       memberContactSecondary(item, lookups),
       formatMemberLabel(item.id, item.userId, lookups),
-      formatUserLabel(item.userId, lookups),
     ],
   );
   const visibleDepartmentAssignments = filterBySearchWithLabels(
     activeDepartmentAssignmentsForContext,
-    normalizedSearch,
-    ['departmentId', 'membershipId', 'userId', 'role', 'status'],
+    normalizedListSearch,
     (item) => [
+      item.id,
+      item.membershipId,
+      item.userId,
+      item.departmentId,
+      item.role,
+      item.status,
       formatMemberLabel(item.membershipId, item.userId, lookups),
       formatDepartmentLabel(item.departmentId, lookups),
     ],
   );
-  const visiblePositions = filterBySearch(
+  const visiblePositions = filterBySearchWithLabels(
     positionsForActiveContext,
-    normalizedSearch,
-    ['name', 'code', 'description', 'status'],
+    normalizedListSearch,
+    (item) => [
+      item.id,
+      item.code,
+      item.name,
+      item.departmentId,
+      item.status,
+      item.description,
+      formatDepartmentLabel(item.departmentId, lookups),
+    ],
   );
   const visiblePositionAssignments = filterBySearchWithLabels(
     directory.positionAssignments.filter(isActiveRecord).filter((item) => positionsForActiveContext.some((position) => position.id === item.positionId)),
-    normalizedSearch,
-    ['positionId', 'membershipId', 'userId', 'status'],
+    normalizedListSearch,
     (item) => [
+      item.id,
+      item.positionId,
+      item.membershipId,
+      item.userId,
+      item.status,
+      item.startedAt,
+      item.endedAt,
       formatPositionLabel(item.positionId, lookups),
       formatMemberLabel(item.membershipId, item.userId, lookups),
     ],
   );
   const visibleRoleBindings = filterBySearchWithLabels(
     directory.roleBindings.filter((item) => roleBindingBelongsToContext(item, effectiveOrganizationId, activeDepartmentId, departmentIdsForOrganization, activeMembershipIdsForOrganization, activeUserIdsForOrganization)),
-    normalizedSearch,
-    ['principalKind', 'principalId', 'roleId', 'scopeKind', 'status'],
+    normalizedListSearch,
     (item) => [
+      item.id,
+      item.roleId,
+      item.principalKind,
+      item.principalId,
+      item.scopeKind,
+      item.scopeId,
+      item.organizationId,
+      item.departmentId,
+      item.status,
       formatPrincipalLabel(item.principalKind, item.principalId, lookups),
       formatRoleLabel(item.roleId, lookups),
       formatRoleBindingScopeLabel(item, lookups),
     ],
   );
-  const visibleRoles = filterBySearch(directory.roles, normalizedSearch, ['name', 'code', 'description', 'status']);
-  const visiblePermissions = filterBySearch(directory.permissions, normalizedSearch, ['name', 'code', 'resource', 'action', 'description']);
+  const visibleRoles = filterBySearchWithLabels(
+    directory.roles,
+    normalizedListSearch,
+    (item) => [item.id, item.code, item.name, item.description, item.status],
+  );
+  const visiblePermissions = filterBySearchWithLabels(
+    directory.permissions,
+    normalizedListSearch,
+    (item) => [item.id, item.code, item.name, item.resource, item.action, item.description, item.status],
+  );
   const activeRole = visibleRoles.find((item) => item.id === activeRoleId) ?? directory.roles.find((item) => item.id === activeRoleId) ?? null;
-  const totalAssignments = directory.departmentAssignments.length + directory.positionAssignments.length + directory.roleBindings.length;
+  const combinedDirectoryTree = useMemo(
+    () => buildOrganizationDepartmentTree(directory.organizationTree, directory.departmentTree, directory.organizations, directory.departments),
+    [directory.organizationTree, directory.departmentTree, directory.organizations, directory.departments],
+  );
+
+  function handleListSearchSubmit(event?: FormEvent<HTMLFormElement>): void {
+    event?.preventDefault();
+    setListSearch(listSearchInput);
+  }
+
+  function handleDirectoryNodeSelect(node: OrganizationDirectoryTreeNode): void {
+    if (node.nodeKind === 'organization') {
+      setActiveOrganizationId(node.organizationId);
+      setActiveDepartmentId('');
+      setExpandedDirectoryNodeIds((current) => expandDirectoryNode(current, node.id));
+      return;
+    }
+    setActiveOrganizationId(node.organizationId);
+    setActiveDepartmentId(node.departmentId);
+    setExpandedDirectoryNodeIds((current) => expandDirectoryPath(current, combinedDirectoryTree, node.id));
+  }
+
+  function openDirectoryNodeMenu(nodeId: string, mode: DirectoryNodeMenuState['mode'], x: number, y: number): void {
+    const position = constrainDirectoryNodeMenuPosition(x, y);
+    setDirectoryNodeMenu({ nodeId, mode, x: position.x, y: position.y });
+  }
 
   const handleDialogSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -400,36 +524,6 @@ export function OrganizationAdmin() {
 
   return (
     <div className="flex h-full min-h-0 w-full flex-col gap-4 overflow-hidden">
-      <div className="flex shrink-0 flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
-        <div className="min-w-0">
-          <div className="flex items-center gap-2 text-xs font-medium uppercase text-slate-500 dark:text-slate-400">
-            <Building2 className="h-4 w-4 text-blue-500" />
-            <span>{t('admin.organization.eyebrow', 'Identity and organization')}</span>
-          </div>
-          <h1 className="mt-1 text-xl font-bold text-slate-950 dark:text-white">
-            {t('admin.organization.title', 'Organization')}
-          </h1>
-        </div>
-        <div className="flex flex-wrap items-center gap-2">
-          <div className="relative w-full sm:w-80">
-            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
-            <input
-              className="w-full rounded-lg border border-slate-200 bg-white py-2 pl-9 pr-4 text-sm text-slate-900 shadow-sm outline-none transition-colors placeholder:text-slate-500 focus:border-blue-500 dark:border-white/10 dark:bg-[#1e1e1e] dark:text-white"
-              onChange={(event) => setSearch(event.target.value)}
-              placeholder={t('admin.organization.search', 'Search organization, department, member, role...')}
-              type="text"
-              value={search}
-            />
-          </div>
-          <IconButton label={t('common.actions.refresh', 'Refresh')} onClick={() => { void loadDirectory(); }}>
-            <RefreshCw className={`h-4 w-4 ${loading ? 'animate-spin' : ''}`} />
-          </IconButton>
-          <PrimaryButton label={t('admin.organization.actions.createOrganization', 'Create organization')} onClick={() => setDialog({ kind: 'organization', mode: 'create' })}>
-            <Plus className="h-4 w-4" />
-          </PrimaryButton>
-        </div>
-      </div>
-
       {actionError ? (
         <div className="flex shrink-0 items-center justify-between rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700 dark:border-red-500/30 dark:bg-red-500/10 dark:text-red-200">
           <span>{actionError}</span>
@@ -439,84 +533,208 @@ export function OrganizationAdmin() {
         </div>
       ) : null}
 
-      <div className="grid min-h-0 flex-1 gap-4 xl:grid-cols-[280px_300px_minmax(0,1fr)]">
-        <Panel
-          title={t('admin.organization.panels.organizations', 'Organizations')}
-          icon={<Building2 className="h-4 w-4" />}
-          action={<SmallButton label={t('admin.organization.actions.new', 'New')} onClick={() => setDialog({ kind: 'organization', mode: 'create' })} />}
-        >
+      <div className="grid min-h-0 flex-1 gap-4 xl:grid-cols-[340px_minmax(0,1fr)]">
+        <Panel title={t('admin.organization.panels.directory', 'Organization structure')}>
+          <div className="mb-2 flex flex-wrap items-center gap-2">
+            <SmallButton label={t('admin.organization.actions.createOrganization', 'Create organization')} onClick={() => setDialog({ kind: 'organization', mode: 'create' })} />
+            <SmallButton label={t('admin.organization.actions.createDepartment', 'Create department')} onClick={() => setDialog({ kind: 'department', mode: 'create' })} disabled={!activeOrganizationIdForRelations} />
+          </div>
           <TreeList
-            emptyLabel={t('admin.organization.empty.organizations', 'No organizations')}
-            nodes={filterOrganizationTree(directory.organizationTree, normalizedSearch)}
-            renderFallback={() => visibleOrganizations.map((item) => (
-              <OrganizationListItem
-                active={item.id === effectiveOrganizationId}
-                item={item}
-                key={item.id}
-                onDelete={() => setConfirmTarget(buildOrganizationConfirmTarget(item, directory, t))}
-                onEdit={() => setDialog({ kind: 'organization', mode: 'edit', target: item })}
-                onSelect={() => {
-                  setActiveOrganizationId(item.id);
-                  setActiveDepartmentId('');
-                }}
-              />
-            ))}
+            emptyLabel={t('admin.organization.empty.directory', 'No organization structure')}
+            isNodeExpanded={(node) => expandedDirectoryNodeIds.has(node.id)}
+            nodes={combinedDirectoryTree}
+            renderFallback={() => []}
             renderNode={(node, depth) => (
               (() => {
-                const organization = directory.organizations.find((item) => item.id === node.id);
+                const organization = node.nodeKind === 'organization'
+                  ? directory.organizations.find((item) => item.id === node.organizationId)
+                  : null;
+                const department = node.nodeKind === 'department'
+                  ? directory.departments.find((item) => item.id === node.departmentId)
+                  : null;
+                const owningOrganization = directory.organizations.find((item) => item.id === node.organizationId) ?? organization;
+                const nodeMenuState = directoryNodeMenu?.nodeId === node.id ? directoryNodeMenu : null;
+                const nodeMenuGroups: DirectoryNodeMenuGroup[] = [
+                  {
+                    id: 'navigate',
+                    label: t('admin.organization.menu.navigate', 'Navigate'),
+                    actions: [
+                      {
+                        id: 'select',
+                        label: t('admin.organization.actions.selectNode', 'Select'),
+                        icon: <BadgeCheck className="h-4 w-4" />,
+                        onSelect: () => handleDirectoryNodeSelect(node),
+                      },
+                      {
+                        id: 'view-members',
+                        label: t('admin.organization.actions.viewMembers', 'View members'),
+                        icon: <Users className="h-4 w-4" />,
+                        onSelect: () => {
+                          handleDirectoryNodeSelect(node);
+                          setActiveTab('members');
+                        },
+                      },
+                      {
+                        id: 'view-positions',
+                        label: t('admin.organization.actions.viewPositions', 'View positions'),
+                        icon: <BriefcaseBusiness className="h-4 w-4" />,
+                        onSelect: () => {
+                          handleDirectoryNodeSelect(node);
+                          setActiveTab('positions');
+                        },
+                      },
+                      {
+                        id: 'view-permissions',
+                        label: t('admin.organization.actions.viewPermissions', 'View permissions'),
+                        icon: <ShieldCheck className="h-4 w-4" />,
+                        onSelect: () => {
+                          handleDirectoryNodeSelect(node);
+                          setActiveTab('authorization');
+                        },
+                      },
+                    ],
+                  },
+                  {
+                    id: 'create',
+                    label: t('admin.organization.menu.create', 'Create'),
+                    actions: compactNodeMenuActions([
+                      owningOrganization && isActiveRecord(owningOrganization) ? {
+                        id: 'create-child-organization',
+                        label: t('admin.organization.actions.createChildOrganization', 'Create child organization'),
+                        icon: <Building2 className="h-4 w-4" />,
+                        onSelect: () => {
+                          setActiveOrganizationId(node.organizationId);
+                          setActiveDepartmentId('');
+                          setExpandedDirectoryNodeIds((current) => expandDirectoryPath(current, combinedDirectoryTree, node.id));
+                          setDialog({ kind: 'organization', mode: 'create', parentOrganizationId: node.organizationId });
+                        },
+                      } : null,
+                      organization && isActiveRecord(organization) ? {
+                        id: 'create-department',
+                        label: t('admin.organization.actions.createDepartment', 'Create department'),
+                        icon: <GitBranch className="h-4 w-4" />,
+                        onSelect: () => {
+                          setActiveOrganizationId(node.organizationId);
+                          setActiveDepartmentId('');
+                          setExpandedDirectoryNodeIds((current) => expandDirectoryNode(current, node.id));
+                          setDialog({ kind: 'department', mode: 'create' });
+                        },
+                      } : null,
+                      department && isActiveRecord(department) ? {
+                        id: 'create-child-department',
+                        label: t('admin.organization.actions.addChildDepartment', 'Add child department'),
+                        icon: <GitBranch className="h-4 w-4" />,
+                        onSelect: () => {
+                          setActiveOrganizationId(node.organizationId);
+                          setActiveDepartmentId(node.departmentId);
+                          setExpandedDirectoryNodeIds((current) => expandDirectoryPath(current, combinedDirectoryTree, node.id));
+                          setDialog({ kind: 'department', mode: 'create' });
+                        },
+                      } : null,
+                      (organization && isActiveRecord(organization)) || (department && isActiveRecord(department)) ? {
+                        id: 'add-member',
+                        label: t('admin.organization.actions.addMember', 'Add member'),
+                        icon: <UserPlus className="h-4 w-4" />,
+                        onSelect: () => {
+                          handleDirectoryNodeSelect(node);
+                          setActiveTab('members');
+                          setDialog({ kind: 'membership', mode: 'create' });
+                        },
+                      } : null,
+                      department && isActiveRecord(department) ? {
+                        id: 'assign-member',
+                        label: t('admin.organization.actions.assignMember', 'Assign member'),
+                        icon: <Users className="h-4 w-4" />,
+                        onSelect: () => {
+                          handleDirectoryNodeSelect(node);
+                          setActiveTab('members');
+                          setDialog({ kind: 'departmentAssignment', mode: 'create' });
+                        },
+                      } : null,
+                      (organization && isActiveRecord(organization)) || (department && isActiveRecord(department)) ? {
+                        id: 'create-position',
+                        label: t('admin.organization.actions.createPosition', 'Create position'),
+                        icon: <BriefcaseBusiness className="h-4 w-4" />,
+                        onSelect: () => {
+                          handleDirectoryNodeSelect(node);
+                          setActiveTab('positions');
+                          setDialog({ kind: 'position', mode: 'create' });
+                        },
+                      } : null,
+                    ]),
+                  },
+                  {
+                    id: 'maintain',
+                    label: t('admin.organization.menu.maintain', 'Maintain'),
+                    actions: compactNodeMenuActions([
+                      organization ? {
+                        id: 'edit-organization',
+                        label: t('common.actions.edit', 'Edit'),
+                        icon: <Edit className="h-4 w-4" />,
+                        onSelect: () => setDialog({ kind: 'organization', mode: 'edit', target: organization }),
+                      } : department ? {
+                        id: 'edit-department',
+                        label: t('common.actions.edit', 'Edit'),
+                        icon: <Edit className="h-4 w-4" />,
+                        onSelect: () => setDialog({ kind: 'department', mode: 'edit', target: department }),
+                      } : null,
+                      organization ? {
+                        id: 'delete-organization',
+                        label: t('common.actions.delete', 'Delete'),
+                        icon: <Trash2 className="h-4 w-4" />,
+                        danger: true,
+                        onSelect: () => setConfirmTarget(buildOrganizationConfirmTarget(organization, directory, t)),
+                      } : department ? {
+                        id: 'delete-department',
+                        label: t('common.actions.delete', 'Delete'),
+                        icon: <Trash2 className="h-4 w-4" />,
+                        danger: true,
+                        onSelect: () => setConfirmTarget(buildDepartmentConfirmTarget(department, directory, t)),
+                      } : null,
+                    ]),
+                  },
+                ].filter((group) => group.actions.length > 0);
                 return (
                   <TreeNodeButton
-                    active={node.id === effectiveOrganizationId}
+                    active={node.nodeKind === 'organization' ? node.organizationId === effectiveOrganizationId && !activeDepartmentId : node.departmentId === activeDepartmentId}
                     depth={depth}
+                    expanded={expandedDirectoryNodeIds.has(node.id)}
+                    hasChildren={node.children.length > 0}
                     key={node.id}
                     label={node.name}
-                    meta={node.code || node.kind}
-                    status={node.status}
-                    onClick={() => {
-                      setActiveOrganizationId(node.id);
-                      setActiveDepartmentId('');
+                    menu={nodeMenuState ? <DirectoryNodeMenu groups={nodeMenuGroups} menuState={nodeMenuState} onClose={() => setDirectoryNodeMenu(null)} /> : null}
+                    menuOpen={Boolean(nodeMenuState)}
+                    meta={node.meta}
+                    onClick={() => handleDirectoryNodeSelect(node)}
+                    onCreateChild={organization && isActiveRecord(organization)
+                      ? () => {
+                        setActiveOrganizationId(node.organizationId);
+                        setActiveDepartmentId('');
+                        setExpandedDirectoryNodeIds((current) => expandDirectoryNode(current, node.id));
+                        setDialog({ kind: 'department', mode: 'create' });
+                      }
+                      : department && isActiveRecord(department) ? () => {
+                        setActiveOrganizationId(node.organizationId);
+                        setActiveDepartmentId(node.departmentId);
+                        setExpandedDirectoryNodeIds((current) => expandDirectoryPath(current, combinedDirectoryTree, node.id));
+                        setDialog({ kind: 'department', mode: 'create' });
+                      } : undefined}
+                    onDelete={organization
+                      ? () => setConfirmTarget(buildOrganizationConfirmTarget(organization, directory, t))
+                      : department ? () => setConfirmTarget(buildDepartmentConfirmTarget(department, directory, t)) : undefined}
+                    onEdit={organization
+                      ? () => setDialog({ kind: 'organization', mode: 'edit', target: organization })
+                      : department ? () => setDialog({ kind: 'department', mode: 'edit', target: department }) : undefined}
+                    onContextMenu={(event) => {
+                      event.preventDefault();
+                      openDirectoryNodeMenu(node.id, 'context', event.clientX, event.clientY);
                     }}
-                    onDelete={organization ? () => setConfirmTarget(buildOrganizationConfirmTarget(organization, directory, t)) : undefined}
-                    onEdit={organization ? () => setDialog({ kind: 'organization', mode: 'edit', target: organization }) : undefined}
-                  />
-                );
-              })()
-            )}
-          />
-        </Panel>
-
-        <Panel
-          title={t('admin.organization.panels.departments', 'Departments')}
-          icon={<GitBranch className="h-4 w-4" />}
-          action={<SmallButton label={t('admin.organization.actions.addDepartment', 'Add')} onClick={() => setDialog({ kind: 'department', mode: 'create' })} disabled={!activeOrganizationIdForRelations} />}
-        >
-          <TreeList
-            emptyLabel={t('admin.organization.empty.departments', 'No departments')}
-            nodes={filterDepartmentTree(directory.departmentTree, departmentIdsForOrganization, normalizedSearch)}
-            renderFallback={() => visibleDepartments.map((item) => (
-              <DepartmentListItem
-                active={item.id === activeDepartmentId}
-                item={item}
-                key={item.id}
-                onDelete={() => setConfirmTarget(buildDepartmentConfirmTarget(item, directory, t))}
-                onEdit={() => setDialog({ kind: 'department', mode: 'edit', target: item })}
-                onSelect={() => setActiveDepartmentId(item.id)}
-              />
-            ))}
-            renderNode={(node, depth) => (
-              (() => {
-                const department = directory.departments.find((item) => item.id === node.id);
-                return (
-                  <TreeNodeButton
-                    active={node.id === activeDepartmentId}
-                    depth={depth}
-                    key={node.id}
-                    label={node.name}
-                    meta={node.code || node.organizationId}
-                    status={node.status}
-                    onClick={() => setActiveDepartmentId(node.id)}
-                    onDelete={department ? () => setConfirmTarget(buildDepartmentConfirmTarget(department, directory, t)) : undefined}
-                    onEdit={department ? () => setDialog({ kind: 'department', mode: 'edit', target: department }) : undefined}
+                    onOpenMenu={(event) => {
+                      event.stopPropagation();
+                      const rect = event.currentTarget.getBoundingClientRect();
+                      openDirectoryNodeMenu(node.id, 'dropdown', rect.right - DIRECTORY_NODE_MENU_WIDTH, rect.bottom + 6);
+                    }}
+                    onToggle={() => setExpandedDirectoryNodeIds((current) => toggleDirectoryNode(current, node.id))}
                   />
                 );
               })()
@@ -525,17 +743,6 @@ export function OrganizationAdmin() {
         </Panel>
 
         <div className="flex min-h-0 min-w-0 flex-col gap-4">
-          <SummaryStrip
-            assignments={totalAssignments}
-            departments={directory.departments.length}
-            members={directory.memberships.length}
-            organizations={directory.organizations.length}
-            permissions={directory.permissions.length}
-            positions={directory.positions.length}
-            roles={directory.roles.length}
-            t={t}
-          />
-
           <div className="flex shrink-0 flex-wrap items-center justify-between gap-3 rounded-lg border border-slate-200 bg-white px-3 py-2 shadow-sm dark:border-white/10 dark:bg-[#171717]">
             <div className="flex flex-wrap gap-1">
               {TAB_ITEMS.map((tab) => {
@@ -558,67 +765,148 @@ export function OrganizationAdmin() {
 
           {activeTab === 'members' ? (
             <MembersTab
-              assignments={visibleDepartmentAssignments}
               canAddAssignment={Boolean(activeOrganizationIdForRelations && activeDepartmentIdForRelations && activeMembersForActiveOrganization.length > 0)}
               canAddMember={Boolean(activeOrganizationIdForRelations)}
+              isRefreshing={loading}
               lookups={lookups}
               members={visibleMemberships}
               onAddAssignment={() => setDialog({ kind: 'departmentAssignment', mode: 'create' })}
               onAddMember={() => setDialog({ kind: 'membership', mode: 'create' })}
-              onDeactivateAssignment={(target) => setConfirmTarget({ kind: 'departmentAssignment', id: target.id, label: formatMemberLabel(target.membershipId, target.userId, lookups) })}
+              onManageAssignments={() => setAssignmentDrawer('departmentAssignments')}
               onDeactivateMember={(target) => setConfirmTarget({ kind: 'membership', id: target.id, label: formatMemberLabel(target.id, target.userId, lookups) })}
-              onEditAssignment={(target) => setDialog({ kind: 'departmentAssignment', mode: 'edit', target })}
               onEditMember={(target) => setDialog({ kind: 'membership', mode: 'edit', target })}
+              onQuery={handleListSearchSubmit}
+              onQueryValueChange={setListSearchInput}
+              onRefresh={() => { void loadDirectory(); }}
+              queryLabel={t('common.actions.query', 'Query')}
+              queryPlaceholder={t('admin.organization.search.members', 'Search members...')}
+              queryValue={listSearchInput}
               t={t}
             />
           ) : null}
 
           {activeTab === 'positions' ? (
             <PositionsTab
-              assignments={visiblePositionAssignments}
               canAddAssignment={Boolean(activeOrganizationIdForRelations && activePositionsForActiveContext.length > 0 && activeMembersForActiveOrganization.length > 0)}
               canCreate={Boolean(activeOrganizationIdForRelations)}
+              isRefreshing={loading}
               lookups={lookups}
               onAddAssignment={() => setDialog({ kind: 'positionAssignment', mode: 'create' })}
               onCreate={() => setDialog({ kind: 'position', mode: 'create' })}
-              onDeactivateAssignment={(target) => setConfirmTarget({ kind: 'positionAssignment', id: target.id, label: formatPositionLabel(target.positionId, lookups) })}
+              onManageAssignments={() => setAssignmentDrawer('positionAssignments')}
               onDelete={(target) => setConfirmTarget(buildPositionConfirmTarget(target, directory, t))}
               onEdit={(target) => setDialog({ kind: 'position', mode: 'edit', target })}
-              onEditAssignment={(target) => setDialog({ kind: 'positionAssignment', mode: 'edit', target })}
+              onQuery={handleListSearchSubmit}
+              onQueryValueChange={setListSearchInput}
+              onRefresh={() => { void loadDirectory(); }}
               positions={visiblePositions}
+              queryLabel={t('common.actions.query', 'Query')}
+              queryPlaceholder={t('admin.organization.search.positions', 'Search positions...')}
+              queryValue={listSearchInput}
               t={t}
             />
           ) : null}
 
           {activeTab === 'authorization' ? (
             <AuthorizationTab
-              bindings={visibleRoleBindings}
-              canBindRole={Boolean(activeRoleId && activeOrganizationIdForRelations)}
-              lookups={lookups}
-              onBindRole={() => (activeRoleId && activeOrganizationIdForRelations ? setDialog({ kind: 'roleBinding', mode: 'create' }) : undefined)}
+              isRefreshing={loading}
               onCreatePermission={() => setDialog({ kind: 'permission', mode: 'create' })}
-              onCreateRole={() => setDialog({ kind: 'role', mode: 'create' })}
-              onDeleteBinding={(target) => setConfirmTarget({ kind: 'roleBinding', id: target.id, label: `${formatPrincipalLabel(target.principalKind, target.principalId, lookups)} / ${formatRoleLabel(target.roleId, lookups)}` })}
               onDeletePermission={(target) => setConfirmTarget(buildPermissionConfirmTarget(target, rolePermissions, t))}
-              onDeleteRole={(target) => setConfirmTarget(buildRoleConfirmTarget(target, directory, rolePermissions, t))}
-              onDeleteRolePermission={(permission) => activeRoleId ? setConfirmTarget({ kind: 'rolePermission', id: permission.id, roleId: activeRoleId, label: `${activeRole?.name ?? activeRoleId} / ${permission.name}` }) : undefined}
               onEditPermission={(target) => setDialog({ kind: 'permission', mode: 'edit', target })}
-              onEditRole={(target) => setDialog({ kind: 'role', mode: 'edit', target })}
-              onGrantPermission={() => activeRoleId ? setDialog({ kind: 'rolePermission', mode: 'create' }) : undefined}
+              onManageRoleBindings={() => setAuthorizationDrawer('roleBindings')}
+              onManageRolePermissions={() => setAuthorizationDrawer('rolePermissions')}
+              onManageRoles={() => setAuthorizationDrawer('roles')}
+              onQuery={handleListSearchSubmit}
+              onQueryValueChange={setListSearchInput}
+              onRefresh={() => { void loadDirectory(); }}
               permissions={visiblePermissions}
-              rolePermissions={rolePermissions}
-              rolePermissionsLoading={rolePermissionsLoading}
-              roles={visibleRoles}
-              selectedRoleId={activeRoleId}
-              onSelectRole={setActiveRoleId}
+              queryLabel={t('common.actions.query', 'Query')}
+              queryPlaceholder={t('admin.organization.search.permissions', 'Search permissions...')}
+              queryValue={listSearchInput}
               t={t}
             />
           ) : null}
         </div>
       </div>
 
+      {assignmentDrawer ? (
+        <AssignmentDrawer
+          activeKind={assignmentDrawer}
+          canAddDepartmentAssignment={Boolean(activeOrganizationIdForRelations && activeDepartmentIdForRelations && activeMembersForActiveOrganization.length > 0)}
+          canAddPositionAssignment={Boolean(activeOrganizationIdForRelations && activePositionsForActiveContext.length > 0 && activeMembersForActiveOrganization.length > 0)}
+          departmentAssignments={visibleDepartmentAssignments}
+          lookups={lookups}
+          onAddDepartmentAssignment={() => {
+            setAssignmentDrawer(null);
+            setDialog({ kind: 'departmentAssignment', mode: 'create' });
+          }}
+          onAddPositionAssignment={() => {
+            setAssignmentDrawer(null);
+            setDialog({ kind: 'positionAssignment', mode: 'create' });
+          }}
+          onClose={() => setAssignmentDrawer(null)}
+          onDeactivateDepartmentAssignment={(target) => setConfirmTarget({ kind: 'departmentAssignment', id: target.id, label: formatMemberLabel(target.membershipId, target.userId, lookups) })}
+          onDeactivatePositionAssignment={(target) => setConfirmTarget({ kind: 'positionAssignment', id: target.id, label: formatPositionLabel(target.positionId, lookups) })}
+          onEditDepartmentAssignment={(target) => {
+            setAssignmentDrawer(null);
+            setDialog({ kind: 'departmentAssignment', mode: 'edit', target });
+          }}
+          onEditPositionAssignment={(target) => {
+            setAssignmentDrawer(null);
+            setDialog({ kind: 'positionAssignment', mode: 'edit', target });
+          }}
+          positionAssignments={visiblePositionAssignments}
+          t={t}
+        />
+      ) : null}
+
+      {authorizationDrawer ? (
+        <AuthorizationDrawer
+          activeKind={authorizationDrawer}
+          rolePermissions={rolePermissions}
+          rolePermissionsLoading={rolePermissionsLoading}
+          bindings={visibleRoleBindings}
+          canBindRole={Boolean(activeRoleId && activeOrganizationIdForRelations)}
+          lookups={lookups}
+          onBindRole={() => {
+            if (!activeRoleId || !activeOrganizationIdForRelations) {
+              return;
+            }
+            setAuthorizationDrawer(null);
+            setDialog({ kind: 'roleBinding', mode: 'create' });
+          }}
+          onClose={() => setAuthorizationDrawer(null)}
+          onCreateRole={() => {
+            setAuthorizationDrawer(null);
+            setDialog({ kind: 'role', mode: 'create' });
+          }}
+          onDeleteBinding={(target) => setConfirmTarget({ kind: 'roleBinding', id: target.id, label: `${formatPrincipalLabel(target.principalKind, target.principalId, lookups)} / ${formatRoleLabel(target.roleId, lookups)}` })}
+          onDeleteRole={(target) => setConfirmTarget(buildRoleConfirmTarget(target, directory, rolePermissions, t))}
+          onDeleteRolePermission={(permission) => activeRoleId ? setConfirmTarget({ kind: 'rolePermission', id: permission.id, roleId: activeRoleId, label: `${activeRole?.name ?? activeRoleId} / ${permission.name}` }) : undefined}
+          onEditRole={(target) => {
+            setAuthorizationDrawer(null);
+            setDialog({ kind: 'role', mode: 'edit', target });
+          }}
+          onGrantPermission={() => {
+            if (!activeRoleId) {
+              return;
+            }
+            setAuthorizationDrawer(null);
+            setDialog({ kind: 'rolePermission', mode: 'create' });
+          }}
+          onViewRolePermissions={(roleId) => {
+            setActiveRoleId(roleId);
+            setAuthorizationDrawer('rolePermissions');
+          }}
+          roles={visibleRoles}
+          selectedRoleId={activeRoleId}
+          t={t}
+        />
+      ) : null}
+
       {dialog ? (
         <EntityDialog
+          key={dialogKey(dialog)}
           activePermissionsForAssignment={activePermissionsForAssignment}
           activePositionsForActiveContext={activePositionsForActiveContext}
           activeOrganizations={activeOrganizations}
@@ -663,14 +951,10 @@ export function OrganizationAdmin() {
   );
 }
 
-function Panel({ action, children, icon, title }: { action?: ReactNode; children: ReactNode; icon: ReactNode; title: string }) {
+function Panel({ action, children, title }: { action?: ReactNode; children: ReactNode; title: string }) {
   return (
-    <section className="flex min-h-0 min-w-0 flex-col overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm dark:border-white/10 dark:bg-[#171717]">
-      <div className="flex shrink-0 items-center justify-between border-b border-slate-200 px-3 py-3 dark:border-white/10">
-        <div className="flex items-center gap-2 text-sm font-semibold text-slate-900 dark:text-white">
-          <span className="text-blue-500">{icon}</span>
-          <span>{title}</span>
-        </div>
+    <section aria-label={title} className="flex min-h-0 min-w-0 flex-col overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm dark:border-white/10 dark:bg-[#171717]">
+      <div className="flex shrink-0 items-center border-b border-slate-200 px-3 py-3 dark:border-white/10">
         {action}
       </div>
       <div className="min-h-0 flex-1 overflow-auto p-2">{children}</div>
@@ -680,17 +964,19 @@ function Panel({ action, children, icon, title }: { action?: ReactNode; children
 
 function TreeList<TNode>({
   emptyLabel,
+  isNodeExpanded,
   nodes,
   renderFallback,
   renderNode,
 }: {
   emptyLabel: string;
+  isNodeExpanded: (node: TNode) => boolean;
   nodes: TNode[];
   renderFallback: () => ReactNode[];
-  renderNode: (node: TNode, depth: number) => ReactNode;
+  renderNode: (node: TNode, depth: number, hasChildren: boolean, expanded: boolean) => ReactNode;
 }) {
   if (nodes.length > 0) {
-    return <div className="flex flex-col gap-1">{renderTree(nodes, renderNode)}</div>;
+    return <div className="flex flex-col gap-1">{renderTree(nodes, renderNode, isNodeExpanded)}</div>;
   }
   const fallback = renderFallback();
   if (fallback.length > 0) {
@@ -703,12 +989,13 @@ function TreeList<TNode>({
   );
 }
 
-function renderTree<TNode>(nodes: TNode[], renderNode: (node: TNode, depth: number) => ReactNode, depth = 0): ReactNode[] {
+function renderTree<TNode>(nodes: TNode[], renderNode: (node: TNode, depth: number, hasChildren: boolean, expanded: boolean) => ReactNode, isNodeExpanded: (node: TNode) => boolean, depth = 0): ReactNode[] {
   return nodes.flatMap((node) => {
     const children = readTreeChildren(node);
+    const expanded = children.length > 0 && isNodeExpanded(node);
     return [
-      renderNode(node, depth),
-      ...renderTree(children as TNode[], renderNode, depth + 1),
+      renderNode(node, depth, children.length > 0, expanded),
+      ...(expanded ? renderTree(children as TNode[], renderNode, isNodeExpanded, depth + 1) : []),
     ];
   });
 }
@@ -721,140 +1008,170 @@ function readTreeChildren(node: unknown): unknown[] {
   return Array.isArray(children) ? children : [];
 }
 
+function compactNodeMenuActions(actions: Array<DirectoryNodeMenuAction | null | undefined>): DirectoryNodeMenuAction[] {
+  return actions.filter((action): action is DirectoryNodeMenuAction => Boolean(action));
+}
+
+function constrainDirectoryNodeMenuPosition(x: number, y: number): { x: number; y: number } {
+  if (typeof window === 'undefined') {
+    return { x, y };
+  }
+  const maxX = Math.max(8, window.innerWidth - DIRECTORY_NODE_MENU_WIDTH - 8);
+  const maxY = Math.max(8, window.innerHeight - DIRECTORY_NODE_MENU_POSITION_ESTIMATED_HEIGHT - 8);
+  return {
+    x: Math.min(Math.max(8, x), maxX),
+    y: Math.min(Math.max(8, y), maxY),
+  };
+}
+
+function expandDirectoryNode(current: Set<string>, nodeId: string): Set<string> {
+  const next = new Set(current);
+  next.add(nodeId);
+  return next;
+}
+
+function toggleDirectoryNode(current: Set<string>, nodeId: string): Set<string> {
+  const next = new Set(current);
+  if (next.has(nodeId)) {
+    next.delete(nodeId);
+    return next;
+  }
+  next.add(nodeId);
+  return next;
+}
+
+function expandDirectoryPath(current: Set<string>, nodes: OrganizationDirectoryTreeNode[], targetNodeId: string): Set<string> {
+  const path = findDirectoryPath(nodes, targetNodeId);
+  if (path.length === 0) {
+    return current;
+  }
+  const next = new Set(current);
+  path.forEach((nodeId) => next.add(nodeId));
+  return next;
+}
+
+function findDirectoryPath(nodes: OrganizationDirectoryTreeNode[], targetNodeId: string, ancestors: string[] = []): string[] {
+  for (const node of nodes) {
+    const nextAncestors = ancestors.concat(node.id);
+    if (node.id === targetNodeId) {
+      return nextAncestors;
+    }
+    const childPath = findDirectoryPath(node.children, targetNodeId, nextAncestors);
+    if (childPath.length > 0) {
+      return childPath;
+    }
+  }
+  return [];
+}
+
 function TreeNodeButton({
   active,
   depth,
+  expanded,
+  hasChildren,
   label,
+  menu,
+  menuOpen,
   meta,
   onClick,
+  onContextMenu,
+  onCreateChild,
   onDelete,
   onEdit,
-  status,
+  onOpenMenu,
+  onToggle,
 }: {
   active: boolean;
   depth: number;
+  expanded: boolean;
+  hasChildren: boolean;
   label: string;
+  menu?: ReactNode;
+  menuOpen?: boolean;
   meta: string;
   onClick: () => void;
+  onContextMenu?: (event: MouseEvent<HTMLDivElement>) => void;
+  onCreateChild?: () => void;
   onDelete?: () => void;
   onEdit?: () => void;
-  status: string;
+  onOpenMenu?: (event: MouseEvent<HTMLButtonElement>) => void;
+  onToggle?: () => void;
 }) {
   const { t } = useTranslation();
+  const toggleLabel = expanded ? t('common.actions.collapse', 'Collapse') : t('common.actions.expand', 'Expand');
 
   return (
     <div
-      className={`group flex w-full items-center gap-2 rounded-md px-2 py-2 text-left transition-colors ${active ? 'bg-blue-50 text-blue-700 dark:bg-blue-500/15 dark:text-blue-200' : 'text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-white/5'}`}
+      className={`group flex w-full items-center gap-2 rounded-md px-2 py-2 text-left transition-colors ${active ? 'bg-blue-50 text-blue-700 dark:bg-blue-500/15 dark:text-blue-200' : 'text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-white/5'} ${menuOpen ? 'ring-1 ring-blue-200 dark:ring-blue-500/30' : ''}`}
+      onContextMenu={onContextMenu}
       style={{ paddingLeft: `${8 + depth * 16}px` }}
     >
+      <button
+        type="button"
+        onClick={hasChildren ? onToggle : undefined}
+        title={hasChildren ? `${toggleLabel}: ${label}` : undefined}
+        aria-label={hasChildren ? `${toggleLabel}: ${label}` : undefined}
+        aria-expanded={hasChildren ? expanded : undefined}
+        className={`flex h-5 w-5 shrink-0 items-center justify-center rounded text-slate-400 transition-colors ${hasChildren ? 'hover:bg-slate-100 hover:text-slate-700 dark:hover:bg-white/10 dark:hover:text-slate-200' : 'pointer-events-none opacity-0'}`}
+        tabIndex={hasChildren ? 0 : -1}
+      >
+        <ChevronRight className={`h-3.5 w-3.5 transition-transform ${expanded ? 'rotate-90' : ''}`} />
+      </button>
       <button type="button" onClick={onClick} className="flex min-w-0 flex-1 items-center gap-2 text-left">
-        <ChevronRight className="h-3.5 w-3.5 shrink-0 text-slate-400" />
         <span className="min-w-0 flex-1 truncate text-sm font-medium">{label}</span>
         {meta ? <span className="max-w-20 truncate rounded bg-slate-100 px-1.5 py-0.5 text-[11px] text-slate-500 dark:bg-white/10 dark:text-slate-400">{meta}</span> : null}
-        <StatusPill status={status} />
       </button>
-      {onEdit ? <RowIconButton label={t('common.actions.edit', 'Edit')} onClick={onEdit}><Edit className="h-3.5 w-3.5" /></RowIconButton> : null}
-      {onDelete ? <RowIconButton label={t('common.actions.delete', 'Delete')} onClick={onDelete} danger><Trash2 className="h-3.5 w-3.5" /></RowIconButton> : null}
+      {onCreateChild ? <RowIconButton label={t('admin.organization.actions.addChildDepartment', 'Add child department')} onClick={onCreateChild}><Plus className="h-3.5 w-3.5" /></RowIconButton> : null}
+      {onOpenMenu ? <RowIconButton label={t('admin.organization.actions.more', 'More actions')} onClick={onOpenMenu}><MoreHorizontal className="h-3.5 w-3.5" /></RowIconButton> : null}
+      {!onOpenMenu && onEdit ? <RowIconButton label={t('common.actions.edit', 'Edit')} onClick={onEdit}><Edit className="h-3.5 w-3.5" /></RowIconButton> : null}
+      {!onOpenMenu && onDelete ? <RowIconButton label={t('common.actions.delete', 'Delete')} onClick={onDelete} danger><Trash2 className="h-3.5 w-3.5" /></RowIconButton> : null}
+      {menu}
     </div>
   );
 }
 
-function OrganizationListItem({
-  active,
-  item,
-  onDelete,
-  onEdit,
-  onSelect,
+function DirectoryNodeMenu({
+  groups,
+  menuState,
+  onClose,
 }: {
-  active: boolean;
-  item: OrganizationRecord;
-  onDelete: () => void;
-  onEdit: () => void;
-  onSelect: () => void;
+  groups: DirectoryNodeMenuGroup[];
+  menuState: DirectoryNodeMenuState;
+  onClose: () => void;
 }) {
-  const { t } = useTranslation();
-
   return (
-    <div className={`group flex items-center gap-2 rounded-md px-2 py-2 ${active ? 'bg-blue-50 dark:bg-blue-500/15' : 'hover:bg-slate-50 dark:hover:bg-white/5'}`}>
-      <button type="button" onClick={onSelect} className="min-w-0 flex-1 text-left">
-        <div className="truncate text-sm font-medium text-slate-900 dark:text-white">{item.name}</div>
-        <div className="truncate text-xs text-slate-500 dark:text-slate-400">{item.code || item.organizationKind}</div>
-      </button>
-      <RowIconButton label={t('common.actions.edit', 'Edit')} onClick={onEdit}><Edit className="h-3.5 w-3.5" /></RowIconButton>
-      <RowIconButton label={t('common.actions.delete', 'Delete')} onClick={onDelete} danger><Trash2 className="h-3.5 w-3.5" /></RowIconButton>
-    </div>
-  );
-}
-
-function DepartmentListItem({
-  active,
-  item,
-  onDelete,
-  onEdit,
-  onSelect,
-}: {
-  active: boolean;
-  item: DepartmentRecord;
-  onDelete: () => void;
-  onEdit: () => void;
-  onSelect: () => void;
-}) {
-  const { t } = useTranslation();
-
-  return (
-    <div className={`group flex items-center gap-2 rounded-md px-2 py-2 ${active ? 'bg-blue-50 dark:bg-blue-500/15' : 'hover:bg-slate-50 dark:hover:bg-white/5'}`}>
-      <button type="button" onClick={onSelect} className="min-w-0 flex-1 text-left">
-        <div className="truncate text-sm font-medium text-slate-900 dark:text-white">{item.name}</div>
-        <div className="truncate text-xs text-slate-500 dark:text-slate-400">{item.code || item.id}</div>
-      </button>
-      <RowIconButton label={t('common.actions.edit', 'Edit')} onClick={onEdit}><Edit className="h-3.5 w-3.5" /></RowIconButton>
-      <RowIconButton label={t('common.actions.delete', 'Delete')} onClick={onDelete} danger><Trash2 className="h-3.5 w-3.5" /></RowIconButton>
-    </div>
-  );
-}
-
-function SummaryStrip({
-  assignments,
-  departments,
-  members,
-  organizations,
-  permissions,
-  positions,
-  roles,
-  t,
-}: {
-  assignments: number;
-  departments: number;
-  members: number;
-  organizations: number;
-  permissions: number;
-  positions: number;
-  roles: number;
-  t: TranslationFunction;
-}) {
-  const items = [
-    { label: t('admin.organization.metrics.organizations', 'Organizations'), value: organizations, icon: Building2 },
-    { label: t('admin.organization.metrics.departments', 'Departments'), value: departments, icon: GitBranch },
-    { label: t('admin.organization.metrics.members', 'Members'), value: members, icon: Users },
-    { label: t('admin.organization.metrics.positions', 'Positions'), value: positions, icon: BriefcaseBusiness },
-    { label: t('admin.organization.metrics.roles', 'Roles'), value: roles, icon: ShieldCheck },
-    { label: t('admin.organization.metrics.permissions', 'Permissions'), value: permissions, icon: KeyRound },
-    { label: t('admin.organization.metrics.assignments', 'Assignments'), value: assignments, icon: Layers3 },
-  ];
-  return (
-    <div className="grid shrink-0 grid-cols-2 gap-3 md:grid-cols-4 2xl:grid-cols-7">
-      {items.map((item) => {
-        const Icon = item.icon;
-        return (
-          <div key={item.label} className="rounded-lg border border-slate-200 bg-white p-3 shadow-sm dark:border-white/10 dark:bg-[#171717]">
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-medium text-slate-500 dark:text-slate-400">{item.label}</span>
-              <Icon className="h-4 w-4 text-blue-500" />
-            </div>
-            <div className="mt-2 text-xl font-bold tabular-nums text-slate-950 dark:text-white">{item.value.toLocaleString()}</div>
+    <div
+      role="menu"
+      className="fixed z-50 rounded-lg border border-slate-200 bg-white p-1.5 text-sm shadow-xl shadow-slate-950/10 dark:border-white/10 dark:bg-[#1e1e1e] dark:shadow-black/30"
+      style={{ left: menuState.x, top: menuState.y, width: DIRECTORY_NODE_MENU_WIDTH }}
+      onClick={(event) => event.stopPropagation()}
+    >
+      {groups.map((group, groupIndex) => (
+        <div key={group.id} className={groupIndex > 0 ? 'border-t border-slate-100 pt-1.5 dark:border-white/10' : ''}>
+          <div className="px-2.5 py-1 text-[10px] font-semibold uppercase text-slate-400 dark:text-slate-500">{group.label}</div>
+          <div className="space-y-1">
+            {group.actions.map((action) => (
+              <button
+                type="button"
+                role="menuitem"
+                key={action.id}
+                disabled={action.disabled}
+                onClick={() => {
+                  if (action.disabled) {
+                    return;
+                  }
+                  action.onSelect();
+                  onClose();
+                }}
+                className={`flex w-full min-w-0 items-center justify-start gap-2 rounded-md px-3 py-2 text-left text-xs font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-50 ${action.danger ? 'text-red-600 hover:bg-red-50 dark:text-red-300 dark:hover:bg-red-500/10' : 'text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-white/5'}`}
+              >
+                <span className="shrink-0 opacity-80">{action.icon}</span>
+                <span className="min-w-0 flex-1 truncate">{action.label}</span>
+              </button>
+            ))}
           </div>
-        );
-      })}
+        </div>
+      ))}
     </div>
   );
 }
@@ -872,36 +1189,70 @@ function ContextBadge({ department, organization, t }: { department: DepartmentR
 }
 
 function MembersTab({
-  assignments,
   canAddAssignment,
   canAddMember,
+  isRefreshing,
   lookups,
   members,
   onAddAssignment,
   onAddMember,
-  onDeactivateAssignment,
+  onManageAssignments,
   onDeactivateMember,
-  onEditAssignment,
   onEditMember,
+  onQuery,
+  onQueryValueChange,
+  onRefresh,
+  queryLabel,
+  queryPlaceholder,
+  queryValue,
   t,
 }: {
-  assignments: DepartmentAssignmentRecord[];
   canAddAssignment: boolean;
   canAddMember: boolean;
+  isRefreshing: boolean;
   lookups: DirectoryLookups;
   members: OrganizationMemberRecord[];
   onAddAssignment: () => void;
   onAddMember: () => void;
-  onDeactivateAssignment: (target: DepartmentAssignmentRecord) => void;
+  onManageAssignments: () => void;
   onDeactivateMember: (target: OrganizationMemberRecord) => void;
-  onEditAssignment: (target: DepartmentAssignmentRecord) => void;
   onEditMember: (target: OrganizationMemberRecord) => void;
+  onQuery: (event?: FormEvent<HTMLFormElement>) => void;
+  onQueryValueChange: (value: string) => void;
+  onRefresh: () => void;
+  queryLabel: string;
+  queryPlaceholder: string;
+  queryValue: string;
   t: TranslationFunction;
 }) {
   return (
-    <div className="grid min-h-0 flex-1 gap-4 2xl:grid-cols-[minmax(0,1fr)_420px]">
+    <div className="flex min-h-0 flex-1">
       <AdminTableShell
-        header={<TableHeader icon={<Users className="h-4 w-4" />} title={t('admin.organization.members.title', 'Organization members')} action={<PrimaryButton label={t('admin.organization.actions.addMember', 'Add member')} onClick={onAddMember} disabled={!canAddMember}><UserPlus className="h-4 w-4" /></PrimaryButton>} />}
+        header={(
+          <TableHeader
+            query={(
+              <ListQueryControl
+                onChange={onQueryValueChange}
+                onQuery={onQuery}
+                placeholder={queryPlaceholder}
+                queryLabel={queryLabel}
+                value={queryValue}
+              />
+            )}
+            action={(
+              <div className="flex flex-wrap items-center gap-2">
+                <IconButton label={t('common.actions.refresh', 'Refresh')} onClick={onRefresh} disabled={isRefreshing}>
+                  <RefreshCw className={`h-4 w-4 ${isRefreshing ? 'animate-spin' : ''}`} />
+                </IconButton>
+                <SmallButton label={t('admin.organization.actions.assign', 'Assign')} onClick={onAddAssignment} disabled={!canAddAssignment} />
+                <SmallButton label={t('admin.organization.actions.assignments', 'Assignments')} onClick={onManageAssignments} />
+                <PrimaryButton label={t('admin.organization.actions.addMember', 'Add member')} onClick={onAddMember} disabled={!canAddMember}>
+                  <UserPlus className="h-4 w-4" />
+                </PrimaryButton>
+              </div>
+            )}
+          />
+        )}
         viewportClassName="min-h-0"
       >
         <table className="w-full min-w-[860px] text-left text-sm">
@@ -942,74 +1293,75 @@ function MembersTab({
           </tbody>
         </table>
       </AdminTableShell>
-
-      <AdminTableShell
-        header={<TableHeader icon={<GitBranch className="h-4 w-4" />} title={t('admin.organization.departmentAssignments.title', 'Department assignments')} action={<SmallButton label={t('admin.organization.actions.assign', 'Assign')} onClick={onAddAssignment} disabled={!canAddAssignment} />} />}
-      >
-        <table className="w-full min-w-[420px] text-left text-sm">
-          <thead className="sticky top-0 z-10 border-b border-slate-200 bg-slate-50 text-xs font-semibold text-slate-500 dark:border-white/10 dark:bg-[#121212] dark:text-slate-400">
-            <tr>
-              <th className="px-4 py-3">{t('admin.organization.columns.member', 'Member')}</th>
-              <th className="px-4 py-3">{t('admin.organization.columns.role', 'Role')}</th>
-              <th className="px-4 py-3 text-right">{t('admin.organization.columns.actions', 'Actions')}</th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-slate-200 dark:divide-white/5">
-            {assignments.length === 0 ? (
-              <BusinessStateTableRow colSpan={3} kind="empty" title={t('admin.organization.empty.assignments', 'No assignments')} />
-            ) : assignments.map((assignment) => (
-              <tr key={assignment.id} className="hover:bg-slate-50 dark:hover:bg-white/5">
-                <td className="px-4 py-3">
-                  <div className="font-medium text-slate-900 dark:text-white">{formatMemberLabel(assignment.membershipId, assignment.userId, lookups)}</div>
-                  <div className="text-xs text-slate-500">{formatDepartmentLabel(assignment.departmentId, lookups)}</div>
-                </td>
-                <td className="px-4 py-3">{assignment.role}</td>
-                <td className="px-4 py-3 text-right">
-                  <div className="flex justify-end gap-2">
-                    <TextButton label={t('common.actions.edit', 'Edit')} onClick={() => onEditAssignment(assignment)} />
-                    <TextButton label={t('admin.organization.actions.deactivate', 'Deactivate')} onClick={() => onDeactivateAssignment(assignment)} danger />
-                  </div>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </AdminTableShell>
     </div>
   );
 }
 
 function PositionsTab({
-  assignments,
   canAddAssignment,
   canCreate,
+  isRefreshing,
   lookups,
   onAddAssignment,
   onCreate,
-  onDeactivateAssignment,
+  onManageAssignments,
   onDelete,
   onEdit,
-  onEditAssignment,
+  onQuery,
+  onQueryValueChange,
+  onRefresh,
   positions,
+  queryLabel,
+  queryPlaceholder,
+  queryValue,
   t,
 }: {
-  assignments: PositionAssignmentRecord[];
   canAddAssignment: boolean;
   canCreate: boolean;
+  isRefreshing: boolean;
   lookups: DirectoryLookups;
   onAddAssignment: () => void;
   onCreate: () => void;
-  onDeactivateAssignment: (target: PositionAssignmentRecord) => void;
+  onManageAssignments: () => void;
   onDelete: (target: PositionRecord) => void;
   onEdit: (target: PositionRecord) => void;
-  onEditAssignment: (target: PositionAssignmentRecord) => void;
+  onQuery: (event?: FormEvent<HTMLFormElement>) => void;
+  onQueryValueChange: (value: string) => void;
+  onRefresh: () => void;
   positions: PositionRecord[];
+  queryLabel: string;
+  queryPlaceholder: string;
+  queryValue: string;
   t: TranslationFunction;
 }) {
   return (
-    <div className="grid min-h-0 flex-1 gap-4 2xl:grid-cols-[minmax(0,1fr)_420px]">
+    <div className="flex min-h-0 flex-1">
       <AdminTableShell
-        header={<TableHeader icon={<BriefcaseBusiness className="h-4 w-4" />} title={t('admin.organization.positions.title', 'Positions')} action={<PrimaryButton label={t('admin.organization.actions.createPosition', 'Create position')} onClick={onCreate} disabled={!canCreate}><Plus className="h-4 w-4" /></PrimaryButton>} />}
+        header={(
+          <TableHeader
+            query={(
+              <ListQueryControl
+                onChange={onQueryValueChange}
+                onQuery={onQuery}
+                placeholder={queryPlaceholder}
+                queryLabel={queryLabel}
+                value={queryValue}
+              />
+            )}
+            action={(
+              <div className="flex flex-wrap items-center gap-2">
+                <IconButton label={t('common.actions.refresh', 'Refresh')} onClick={onRefresh} disabled={isRefreshing}>
+                  <RefreshCw className={`h-4 w-4 ${isRefreshing ? 'animate-spin' : ''}`} />
+                </IconButton>
+                <SmallButton label={t('admin.organization.actions.assign', 'Assign')} onClick={onAddAssignment} disabled={!canAddAssignment} />
+                <SmallButton label={t('admin.organization.actions.assignments', 'Assignments')} onClick={onManageAssignments} />
+                <PrimaryButton label={t('admin.organization.actions.createPosition', 'Create position')} onClick={onCreate} disabled={!canCreate}>
+                  <Plus className="h-4 w-4" />
+                </PrimaryButton>
+              </div>
+            )}
+          />
+        )}
       >
         <table className="w-full min-w-[760px] text-left text-sm">
           <thead className="sticky top-0 z-10 border-b border-slate-200 bg-slate-50 text-xs font-semibold text-slate-500 dark:border-white/10 dark:bg-[#121212] dark:text-slate-400">
@@ -1044,206 +1396,210 @@ function PositionsTab({
           </tbody>
         </table>
       </AdminTableShell>
+    </div>
+  );
+}
 
-      <AdminTableShell
-        header={<TableHeader icon={<Layers3 className="h-4 w-4" />} title={t('admin.organization.positionAssignments.title', 'Position assignments')} action={<SmallButton label={t('admin.organization.actions.assign', 'Assign')} onClick={onAddAssignment} disabled={!canAddAssignment} />} />}
-      >
-        <table className="w-full min-w-[420px] text-left text-sm">
-          <thead className="sticky top-0 z-10 border-b border-slate-200 bg-slate-50 text-xs font-semibold text-slate-500 dark:border-white/10 dark:bg-[#121212] dark:text-slate-400">
-            <tr>
-              <th className="px-4 py-3">{t('admin.organization.columns.position', 'Position')}</th>
-              <th className="px-4 py-3">{t('admin.organization.columns.member', 'Member')}</th>
-              <th className="px-4 py-3">{t('admin.organization.columns.status', 'Status')}</th>
-              <th className="px-4 py-3 text-right">{t('admin.organization.columns.actions', 'Actions')}</th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-slate-200 dark:divide-white/5">
-            {assignments.length === 0 ? (
-              <BusinessStateTableRow colSpan={4} kind="empty" title={t('admin.organization.empty.assignments', 'No assignments')} />
-            ) : assignments.map((assignment) => (
-              <tr key={assignment.id} className="hover:bg-slate-50 dark:hover:bg-white/5">
-                <td className="px-4 py-3">{formatPositionLabel(assignment.positionId, lookups)}</td>
-                <td className="px-4 py-3">{formatMemberLabel(assignment.membershipId, assignment.userId, lookups)}</td>
-                <td className="px-4 py-3"><StatusPill status={assignment.status} /></td>
-                <td className="px-4 py-3 text-right">
-                  <div className="flex justify-end gap-2">
-                    <TextButton label={t('common.actions.edit', 'Edit')} onClick={() => onEditAssignment(assignment)} />
-                    <TextButton label={t('admin.organization.actions.deactivate', 'Deactivate')} onClick={() => onDeactivateAssignment(assignment)} danger />
-                  </div>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </AdminTableShell>
+function AssignmentDrawer({
+  activeKind,
+  canAddDepartmentAssignment,
+  canAddPositionAssignment,
+  departmentAssignments,
+  lookups,
+  onAddDepartmentAssignment,
+  onAddPositionAssignment,
+  onClose,
+  onDeactivateDepartmentAssignment,
+  onDeactivatePositionAssignment,
+  onEditDepartmentAssignment,
+  onEditPositionAssignment,
+  positionAssignments,
+  t,
+}: {
+  activeKind: AssignmentDrawerState;
+  canAddDepartmentAssignment: boolean;
+  canAddPositionAssignment: boolean;
+  departmentAssignments: DepartmentAssignmentRecord[];
+  lookups: DirectoryLookups;
+  onAddDepartmentAssignment: () => void;
+  onAddPositionAssignment: () => void;
+  onClose: () => void;
+  onDeactivateDepartmentAssignment: (target: DepartmentAssignmentRecord) => void;
+  onDeactivatePositionAssignment: (target: PositionAssignmentRecord) => void;
+  onEditDepartmentAssignment: (target: DepartmentAssignmentRecord) => void;
+  onEditPositionAssignment: (target: PositionAssignmentRecord) => void;
+  positionAssignments: PositionAssignmentRecord[];
+  t: TranslationFunction;
+}) {
+  const isDepartmentDrawer = activeKind === 'departmentAssignments';
+  const title = isDepartmentDrawer
+    ? t('admin.organization.departmentAssignments.title', 'Department assignments')
+    : t('admin.organization.positionAssignments.title', 'Position assignments');
+  const action = isDepartmentDrawer
+    ? <SmallButton label={t('admin.organization.actions.assign', 'Assign')} onClick={onAddDepartmentAssignment} disabled={!canAddDepartmentAssignment} />
+    : <SmallButton label={t('admin.organization.actions.assign', 'Assign')} onClick={onAddPositionAssignment} disabled={!canAddPositionAssignment} />;
+
+  return (
+    <div className="fixed inset-0 z-40 flex justify-end bg-slate-950/40 backdrop-blur-sm" role="dialog" aria-modal="true" aria-label={title}>
+      <div className="flex h-full w-full max-w-3xl flex-col bg-white shadow-2xl dark:bg-[#171717]">
+        <div className="flex shrink-0 items-center justify-between gap-3 border-b border-slate-200 px-5 py-4 dark:border-white/10">
+          <div className="min-w-0">
+            <div className="text-sm font-semibold text-slate-950 dark:text-white">{title}</div>
+            <div className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+              {t('admin.organization.assignmentDrawer.description', 'Review existing assignments and move edit or deactivate actions out of the main list.')}
+            </div>
+          </div>
+          <button type="button" onClick={onClose} className="rounded-md p-2 text-slate-500 hover:bg-slate-100 hover:text-slate-700 dark:text-slate-300 dark:hover:bg-white/10" aria-label={t('common.actions.close', 'Close')}>
+            <X className="h-4 w-4" />
+          </button>
+        </div>
+        <div className="min-h-0 flex-1 p-4">
+          {isDepartmentDrawer ? (
+            <AdminTableShell
+              header={<TableHeader action={action} />}
+              viewportClassName="min-h-0"
+            >
+              <table className="w-full min-w-[720px] text-left text-sm">
+                <thead className="sticky top-0 z-10 border-b border-slate-200 bg-slate-50 text-xs font-semibold text-slate-500 dark:border-white/10 dark:bg-[#121212] dark:text-slate-400">
+                  <tr>
+                    <th className="px-4 py-3">{t('admin.organization.columns.member', 'Member')}</th>
+                    <th className="px-4 py-3">{t('admin.organization.columns.department', 'Department')}</th>
+                    <th className="px-4 py-3">{t('admin.organization.columns.role', 'Role')}</th>
+                    <th className="px-4 py-3">{t('admin.organization.columns.status', 'Status')}</th>
+                    <th className="px-4 py-3 text-right">{t('admin.organization.columns.actions', 'Actions')}</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-200 dark:divide-white/5">
+                  {departmentAssignments.length === 0 ? (
+                    <BusinessStateTableRow colSpan={5} kind="empty" title={t('admin.organization.empty.assignments', 'No assignments')} />
+                  ) : departmentAssignments.map((assignment) => (
+                    <tr key={assignment.id} className="hover:bg-slate-50 dark:hover:bg-white/5">
+                      <td className="px-4 py-3">
+                        <div className="font-medium text-slate-900 dark:text-white">{formatMemberLabel(assignment.membershipId, assignment.userId, lookups)}</div>
+                        <div className="text-xs text-slate-500">{assignment.membershipId || assignment.userId || '-'}</div>
+                      </td>
+                      <td className="px-4 py-3 text-slate-600 dark:text-slate-300">{formatDepartmentLabel(assignment.departmentId, lookups)}</td>
+                      <td className="px-4 py-3">{assignment.role}</td>
+                      <td className="px-4 py-3"><StatusPill status={assignment.status} /></td>
+                      <td className="px-4 py-3 text-right">
+                        <div className="flex justify-end gap-2">
+                          <TextButton label={t('common.actions.edit', 'Edit')} onClick={() => onEditDepartmentAssignment(assignment)} />
+                          <TextButton label={t('admin.organization.actions.deactivate', 'Deactivate')} onClick={() => onDeactivateDepartmentAssignment(assignment)} danger />
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </AdminTableShell>
+          ) : (
+            <AdminTableShell
+              header={<TableHeader action={action} />}
+              viewportClassName="min-h-0"
+            >
+              <table className="w-full min-w-[720px] text-left text-sm">
+                <thead className="sticky top-0 z-10 border-b border-slate-200 bg-slate-50 text-xs font-semibold text-slate-500 dark:border-white/10 dark:bg-[#121212] dark:text-slate-400">
+                  <tr>
+                    <th className="px-4 py-3">{t('admin.organization.columns.position', 'Position')}</th>
+                    <th className="px-4 py-3">{t('admin.organization.columns.member', 'Member')}</th>
+                    <th className="px-4 py-3">{t('admin.organization.columns.status', 'Status')}</th>
+                    <th className="px-4 py-3">{t('admin.organization.columns.startedAt', 'Started')}</th>
+                    <th className="px-4 py-3 text-right">{t('admin.organization.columns.actions', 'Actions')}</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-200 dark:divide-white/5">
+                  {positionAssignments.length === 0 ? (
+                    <BusinessStateTableRow colSpan={5} kind="empty" title={t('admin.organization.empty.assignments', 'No assignments')} />
+                  ) : positionAssignments.map((assignment) => (
+                    <tr key={assignment.id} className="hover:bg-slate-50 dark:hover:bg-white/5">
+                      <td className="px-4 py-3">{formatPositionLabel(assignment.positionId, lookups)}</td>
+                      <td className="px-4 py-3">{formatMemberLabel(assignment.membershipId, assignment.userId, lookups)}</td>
+                      <td className="px-4 py-3"><StatusPill status={assignment.status} /></td>
+                      <td className="px-4 py-3 text-slate-500">{assignment.startedAt || '-'}</td>
+                      <td className="px-4 py-3 text-right">
+                        <div className="flex justify-end gap-2">
+                          <TextButton label={t('common.actions.edit', 'Edit')} onClick={() => onEditPositionAssignment(assignment)} />
+                          <TextButton label={t('admin.organization.actions.deactivate', 'Deactivate')} onClick={() => onDeactivatePositionAssignment(assignment)} danger />
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </AdminTableShell>
+          )}
+        </div>
+      </div>
     </div>
   );
 }
 
 function AuthorizationTab({
-  bindings,
-  canBindRole,
-  lookups,
-  onBindRole,
+  isRefreshing,
   onCreatePermission,
-  onCreateRole,
-  onDeleteBinding,
   onDeletePermission,
-  onDeleteRole,
-  onDeleteRolePermission,
   onEditPermission,
-  onEditRole,
-  onGrantPermission,
+  onManageRoleBindings,
+  onManageRolePermissions,
+  onManageRoles,
+  onQuery,
+  onQueryValueChange,
+  onRefresh,
   permissions,
-  rolePermissions,
-  rolePermissionsLoading,
-  roles,
-  selectedRoleId,
-  onSelectRole,
+  queryLabel,
+  queryPlaceholder,
+  queryValue,
   t,
 }: {
-  bindings: RoleBindingRecord[];
-  canBindRole: boolean;
-  lookups: DirectoryLookups;
-  onBindRole: () => void;
+  isRefreshing: boolean;
   onCreatePermission: () => void;
-  onCreateRole: () => void;
-  onDeleteBinding: (target: RoleBindingRecord) => void;
   onDeletePermission: (target: PermissionRecord) => void;
-  onDeleteRole: (target: RoleRecord) => void;
-  onDeleteRolePermission: (target: PermissionRecord) => void;
   onEditPermission: (target: PermissionRecord) => void;
-  onEditRole: (target: RoleRecord) => void;
-  onGrantPermission: () => void;
+  onManageRoleBindings: () => void;
+  onManageRolePermissions: () => void;
+  onManageRoles: () => void;
+  onQuery: (event?: FormEvent<HTMLFormElement>) => void;
+  onQueryValueChange: (value: string) => void;
+  onRefresh: () => void;
   permissions: PermissionRecord[];
-  rolePermissions: PermissionRecord[];
-  rolePermissionsLoading: boolean;
-  roles: RoleRecord[];
-  selectedRoleId: string;
-  onSelectRole: (roleId: string) => void;
+  queryLabel: string;
+  queryPlaceholder: string;
+  queryValue: string;
   t: TranslationFunction;
 }) {
-  const selectedRole = roles.find((role) => role.id === selectedRoleId) ?? null;
-
   return (
-    <div className="grid min-h-0 flex-1 gap-4 2xl:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+    <div className="flex min-h-0 flex-1">
       <AdminTableShell
-        header={<TableHeader icon={<ShieldCheck className="h-4 w-4" />} title={t('admin.organization.roles.title', 'Roles and bindings')} action={<div className="flex gap-2"><SmallButton label={t('admin.organization.actions.createRole', 'Role')} onClick={onCreateRole} /><SmallButton label={t('admin.organization.actions.bindRole', 'Bind')} onClick={onBindRole} disabled={!canBindRole} /></div>} />}
-      >
-        <table className="w-full min-w-[780px] text-left text-sm">
-          <thead className="sticky top-0 z-10 border-b border-slate-200 bg-slate-50 text-xs font-semibold text-slate-500 dark:border-white/10 dark:bg-[#121212] dark:text-slate-400">
-            <tr>
-              <th className="px-4 py-3">{t('admin.organization.columns.role', 'Role')}</th>
-              <th className="px-4 py-3">{t('admin.organization.columns.status', 'Status')}</th>
-              <th className="px-4 py-3">{t('admin.organization.columns.description', 'Description')}</th>
-              <th className="px-4 py-3 text-right">{t('admin.organization.columns.actions', 'Actions')}</th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-slate-200 dark:divide-white/5">
-            {roles.length === 0 ? (
-              <BusinessStateTableRow colSpan={4} kind="empty" title={t('admin.organization.empty.roles', 'No roles')} />
-            ) : roles.map((role) => (
-              <tr key={role.id} className={role.id === selectedRoleId ? 'bg-blue-50/70 dark:bg-blue-500/10' : 'hover:bg-slate-50 dark:hover:bg-white/5'}>
-                <td className="px-4 py-3">
-                  <div className="font-medium text-slate-900 dark:text-white">{role.name}</div>
-                  <div className="text-xs text-slate-500">{role.code || role.id}</div>
-                </td>
-                <td className="px-4 py-3"><StatusPill status={role.status} /></td>
-                <td className="px-4 py-3 text-slate-600 dark:text-slate-300">{role.description || '-'}</td>
-                <td className="px-4 py-3 text-right">
-                  <div className="flex justify-end gap-2">
-                    <TextButton label={t('admin.organization.actions.viewPermissions', 'Permissions')} onClick={() => onSelectRole(role.id)} />
-                    <TextButton label={t('common.actions.edit', 'Edit')} onClick={() => onEditRole(role)} />
-                    <TextButton label={t('common.actions.delete', 'Delete')} onClick={() => onDeleteRole(role)} danger />
-                  </div>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-        <div className="border-t border-slate-200 dark:border-white/10">
-          <div className="flex items-center justify-between px-4 py-3">
-            <div>
-              <div className="text-xs font-semibold uppercase text-slate-500 dark:text-slate-400">
-                {t('admin.organization.rolePermissions.title', 'Role permissions')}
+        header={(
+          <TableHeader
+            query={(
+              <ListQueryControl
+                onChange={onQueryValueChange}
+                onQuery={onQuery}
+                placeholder={queryPlaceholder}
+                queryLabel={queryLabel}
+                value={queryValue}
+              />
+            )}
+            action={(
+              <div className="flex flex-wrap items-center justify-end gap-2">
+                <IconButton label={t('common.actions.refresh', 'Refresh')} onClick={onRefresh} disabled={isRefreshing}>
+                  <RefreshCw className={`h-4 w-4 ${isRefreshing ? 'animate-spin' : ''}`} />
+                </IconButton>
+                <SmallButton label={t('admin.organization.actions.createPermission', 'Permission')} onClick={onCreatePermission} />
+                <SmallButton label={t('admin.organization.actions.roles', 'Roles')} onClick={onManageRoles} />
+                <SmallButton label={t('admin.organization.actions.rolePermissions', 'Role permissions')} onClick={onManageRolePermissions} />
+                <SmallButton label={t('admin.organization.actions.roleBindings', 'Role bindings')} onClick={onManageRoleBindings} />
               </div>
-              <div className="mt-1 text-xs text-slate-500 dark:text-slate-400">
-                {selectedRole ? selectedRole.name : t('admin.organization.rolePermissions.noRole', 'Select a role to inspect permissions')}
-              </div>
-            </div>
-            <SmallButton label={t('admin.organization.actions.grant', 'Grant')} onClick={onGrantPermission} disabled={!selectedRoleId} />
-          </div>
-          <table className="w-full min-w-[780px] text-left text-sm">
-            <thead className="border-y border-slate-200 bg-slate-50 text-xs font-semibold text-slate-500 dark:border-white/10 dark:bg-[#121212] dark:text-slate-400">
-              <tr>
-                <th className="px-4 py-3">{t('admin.organization.columns.permission', 'Permission')}</th>
-                <th className="px-4 py-3">{t('admin.organization.columns.resource', 'Resource')}</th>
-                <th className="px-4 py-3">{t('admin.organization.columns.action', 'Action')}</th>
-                <th className="px-4 py-3 text-right">{t('admin.organization.columns.actions', 'Actions')}</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-slate-200 dark:divide-white/5">
-              {rolePermissionsLoading ? (
-                <BusinessStateTableRow colSpan={4} kind="loading" title={t('admin.organization.loadingRolePermissions', 'Loading role permissions...')} />
-              ) : !selectedRoleId ? (
-                <BusinessStateTableRow colSpan={4} kind="empty" title={t('admin.organization.empty.selectRole', 'Select a role')} />
-              ) : rolePermissions.length === 0 ? (
-                <BusinessStateTableRow colSpan={4} kind="empty" title={t('admin.organization.empty.rolePermissions', 'No role permissions')} />
-              ) : rolePermissions.map((permission) => (
-                <tr key={`${selectedRoleId}-${permission.id}`} className="hover:bg-slate-50 dark:hover:bg-white/5">
-                  <td className="px-4 py-3">
-                    <div className="font-medium text-slate-900 dark:text-white">{permission.name}</div>
-                    <div className="text-xs text-slate-500">{permission.code || permission.id}</div>
-                  </td>
-                  <td className="px-4 py-3 text-slate-600 dark:text-slate-300">{permission.resource || '-'}</td>
-                  <td className="px-4 py-3 text-slate-600 dark:text-slate-300">{permission.action || '-'}</td>
-                  <td className="px-4 py-3 text-right">
-                    <TextButton label={t('admin.organization.actions.revoke', 'Revoke')} onClick={() => onDeleteRolePermission(permission)} danger />
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        <div className="border-t border-slate-200 dark:border-white/10">
-          <div className="px-4 py-3 text-xs font-semibold uppercase text-slate-500 dark:text-slate-400">{t('admin.organization.roleBindings.title', 'Role bindings')}</div>
-          <table className="w-full min-w-[780px] text-left text-sm">
-              <thead className="border-y border-slate-200 bg-slate-50 text-xs font-semibold text-slate-500 dark:border-white/10 dark:bg-[#121212] dark:text-slate-400">
-                <tr>
-                  <th className="px-4 py-3">{t('admin.organization.columns.principal', 'Principal')}</th>
-                  <th className="px-4 py-3">{t('admin.organization.columns.role', 'Role')}</th>
-                  <th className="px-4 py-3">{t('admin.organization.columns.scope', 'Scope')}</th>
-                  <th className="px-4 py-3">{t('admin.organization.columns.status', 'Status')}</th>
-                  <th className="px-4 py-3 text-right">{t('admin.organization.columns.actions', 'Actions')}</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-200 dark:divide-white/5">
-                {bindings.length === 0 ? (
-                  <BusinessStateTableRow colSpan={5} kind="empty" title={t('admin.organization.empty.roleBindings', 'No role bindings')} />
-                ) : bindings.map((binding) => (
-                <tr key={binding.id} className="hover:bg-slate-50 dark:hover:bg-white/5">
-                  <td className="px-4 py-3">
-                    <div className="font-medium text-slate-900 dark:text-white">{formatPrincipalLabel(binding.principalKind, binding.principalId, lookups)}</div>
-                      <div className="text-xs text-slate-500">{binding.principalKind}:{binding.principalId}</div>
-                    </td>
-                    <td className="px-4 py-3 text-slate-600 dark:text-slate-300">{formatRoleLabel(binding.roleId, lookups)}</td>
-                    <td className="px-4 py-3 text-slate-500">{formatRoleBindingScopeLabel(binding, lookups)}</td>
-                    <td className="px-4 py-3"><StatusPill status={binding.status} /></td>
-                    <td className="px-4 py-3 text-right"><TextButton label={t('common.actions.delete', 'Delete')} onClick={() => onDeleteBinding(binding)} danger /></td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </AdminTableShell>
-
-      <AdminTableShell
-        header={<TableHeader icon={<KeyRound className="h-4 w-4" />} title={t('admin.organization.permissions.title', 'Permissions')} action={<div className="flex gap-2"><SmallButton label={t('admin.organization.actions.createPermission', 'Permission')} onClick={onCreatePermission} /><SmallButton label={t('admin.organization.actions.grant', 'Grant')} onClick={onGrantPermission} disabled={!selectedRoleId} /></div>} />}
+            )}
+          />
+        )}
       >
-        <table className="w-full min-w-[720px] text-left text-sm">
+        <table className="w-full min-w-[860px] text-left text-sm">
           <thead className="sticky top-0 z-10 border-b border-slate-200 bg-slate-50 text-xs font-semibold text-slate-500 dark:border-white/10 dark:bg-[#121212] dark:text-slate-400">
             <tr>
               <th className="px-4 py-3">{t('admin.organization.columns.permission', 'Permission')}</th>
+              <th className="px-4 py-3">{t('admin.organization.columns.code', 'Code')}</th>
               <th className="px-4 py-3">{t('admin.organization.columns.resource', 'Resource')}</th>
               <th className="px-4 py-3">{t('admin.organization.columns.action', 'Action')}</th>
               <th className="px-4 py-3 text-right">{t('admin.organization.columns.actions', 'Actions')}</th>
@@ -1251,13 +1607,14 @@ function AuthorizationTab({
           </thead>
           <tbody className="divide-y divide-slate-200 dark:divide-white/5">
             {permissions.length === 0 ? (
-              <BusinessStateTableRow colSpan={4} kind="empty" title={t('admin.organization.empty.permissions', 'No permissions')} />
+              <BusinessStateTableRow colSpan={5} kind="empty" title={t('admin.organization.empty.permissions', 'No permissions')} />
             ) : permissions.map((permission) => (
               <tr key={permission.id} className="hover:bg-slate-50 dark:hover:bg-white/5">
                 <td className="px-4 py-3">
                   <div className="font-medium text-slate-900 dark:text-white">{permission.name}</div>
-                  <div className="text-xs text-slate-500">{permission.code || permission.id}</div>
+                  <div className="text-xs text-slate-500">{permission.description || '-'}</div>
                 </td>
+                <td className="px-4 py-3 font-mono text-xs text-slate-600 dark:text-slate-300">{permission.code || permission.id}</td>
                 <td className="px-4 py-3 text-slate-600 dark:text-slate-300">{permission.resource || '-'}</td>
                 <td className="px-4 py-3 text-slate-600 dark:text-slate-300">{permission.action || '-'}</td>
                 <td className="px-4 py-3 text-right">
@@ -1275,15 +1632,232 @@ function AuthorizationTab({
   );
 }
 
-function TableHeader({ action, icon, title }: { action?: ReactNode; icon: ReactNode; title: string }) {
+function AuthorizationDrawer({
+  activeKind,
+  bindings,
+  canBindRole,
+  lookups,
+  onBindRole,
+  onClose,
+  onCreateRole,
+  onDeleteBinding,
+  onDeleteRole,
+  onDeleteRolePermission,
+  onEditRole,
+  onGrantPermission,
+  onViewRolePermissions,
+  rolePermissions,
+  rolePermissionsLoading,
+  roles,
+  selectedRoleId,
+  t,
+}: {
+  activeKind: AuthorizationDrawerState;
+  bindings: RoleBindingRecord[];
+  canBindRole: boolean;
+  lookups: DirectoryLookups;
+  onBindRole: () => void;
+  onClose: () => void;
+  onCreateRole: () => void;
+  onDeleteBinding: (target: RoleBindingRecord) => void;
+  onDeleteRole: (target: RoleRecord) => void;
+  onDeleteRolePermission: (target: PermissionRecord) => void;
+  onEditRole: (target: RoleRecord) => void;
+  onGrantPermission: () => void;
+  onViewRolePermissions: (roleId: string) => void;
+  rolePermissions: PermissionRecord[];
+  rolePermissionsLoading: boolean;
+  roles: RoleRecord[];
+  selectedRoleId: string;
+  t: TranslationFunction;
+}) {
+  const selectedRole = roles.find((role) => role.id === selectedRoleId) ?? null;
+  const title = activeKind === 'roles'
+    ? t('admin.organization.roles.title', 'Roles')
+    : activeKind === 'rolePermissions'
+      ? t('admin.organization.rolePermissions.title', 'Role permissions')
+      : t('admin.organization.roleBindings.title', 'Role bindings');
+  const action = activeKind === 'roles'
+    ? <SmallButton label={t('admin.organization.actions.createRole', 'Role')} onClick={onCreateRole} />
+    : activeKind === 'rolePermissions'
+      ? <SmallButton label={t('admin.organization.actions.grant', 'Grant')} onClick={onGrantPermission} disabled={!selectedRoleId} />
+      : <SmallButton label={t('admin.organization.actions.bindRole', 'Bind')} onClick={onBindRole} disabled={!canBindRole} />;
+
   return (
-    <div className="flex items-center justify-between border-b border-slate-200 px-4 py-3 dark:border-white/10">
-      <div className="flex items-center gap-2 text-sm font-semibold text-slate-900 dark:text-white">
-        <span className="text-blue-500">{icon}</span>
-        {title}
+    <div className="fixed inset-0 z-40 flex justify-end bg-slate-950/40 backdrop-blur-sm" role="dialog" aria-modal="true" aria-label={title}>
+      <div className="flex h-full w-full max-w-5xl flex-col overflow-hidden border-l border-slate-200 bg-white shadow-2xl dark:border-white/10 dark:bg-[#171717]">
+        <div className="flex items-start justify-between gap-4 border-b border-slate-200 px-5 py-4 dark:border-white/10">
+          <div>
+            <div className="flex items-center gap-2 text-sm font-semibold text-slate-900 dark:text-white">
+              <ShieldCheck className="h-4 w-4 text-blue-500" />
+              {title}
+            </div>
+            <div className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+              {t('admin.organization.authorizationDrawer.description', 'Use drawers to inspect roles, role permissions and bindings without crowding the permission list.')}
+            </div>
+          </div>
+          <div className="flex shrink-0 items-center gap-2">
+            {action}
+            <button
+              type="button"
+              className="rounded-md p-2 text-slate-500 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-white/10 dark:hover:text-white"
+              onClick={onClose}
+              aria-label={t('common.actions.close', 'Close')}
+            >
+              <X className="h-4 w-4" />
+            </button>
+          </div>
+        </div>
+        <div className="min-h-0 flex-1 overflow-auto">
+          {activeKind === 'roles' ? (
+            <table className="w-full min-w-[760px] text-left text-sm">
+              <thead className="sticky top-0 z-10 border-b border-slate-200 bg-slate-50 text-xs font-semibold text-slate-500 dark:border-white/10 dark:bg-[#121212] dark:text-slate-400">
+                <tr>
+                  <th className="px-4 py-3">{t('admin.organization.columns.role', 'Role')}</th>
+                  <th className="px-4 py-3">{t('admin.organization.columns.status', 'Status')}</th>
+                  <th className="px-4 py-3">{t('admin.organization.columns.description', 'Description')}</th>
+                  <th className="px-4 py-3 text-right">{t('admin.organization.columns.actions', 'Actions')}</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-200 dark:divide-white/5">
+                {roles.length === 0 ? (
+                  <BusinessStateTableRow colSpan={4} kind="empty" title={t('admin.organization.empty.roles', 'No roles')} />
+                ) : roles.map((role) => (
+                  <tr key={role.id} className={role.id === selectedRoleId ? 'bg-blue-50/70 dark:bg-blue-500/10' : 'hover:bg-slate-50 dark:hover:bg-white/5'}>
+                    <td className="px-4 py-3">
+                      <div className="font-medium text-slate-900 dark:text-white">{role.name}</div>
+                      <div className="text-xs text-slate-500">{role.code || role.id}</div>
+                    </td>
+                    <td className="px-4 py-3"><StatusPill status={role.status} /></td>
+                    <td className="px-4 py-3 text-slate-600 dark:text-slate-300">{role.description || '-'}</td>
+                    <td className="px-4 py-3 text-right">
+                      <div className="flex justify-end gap-2">
+                        <TextButton label={t('admin.organization.actions.viewPermissions', 'Permissions')} onClick={() => onViewRolePermissions(role.id)} />
+                        <TextButton label={t('common.actions.edit', 'Edit')} onClick={() => onEditRole(role)} />
+                        <TextButton label={t('common.actions.delete', 'Delete')} onClick={() => onDeleteRole(role)} danger />
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          ) : null}
+
+          {activeKind === 'rolePermissions' ? (
+            <div>
+              <div className="border-b border-slate-200 px-4 py-3 text-xs text-slate-500 dark:border-white/10 dark:text-slate-400">
+                {selectedRole ? selectedRole.name : t('admin.organization.rolePermissions.noRole', 'Select a role to inspect permissions')}
+              </div>
+              <table className="w-full min-w-[760px] text-left text-sm">
+                <thead className="sticky top-0 z-10 border-b border-slate-200 bg-slate-50 text-xs font-semibold text-slate-500 dark:border-white/10 dark:bg-[#121212] dark:text-slate-400">
+                  <tr>
+                    <th className="px-4 py-3">{t('admin.organization.columns.permission', 'Permission')}</th>
+                    <th className="px-4 py-3">{t('admin.organization.columns.code', 'Code')}</th>
+                    <th className="px-4 py-3">{t('admin.organization.columns.resource', 'Resource')}</th>
+                    <th className="px-4 py-3">{t('admin.organization.columns.action', 'Action')}</th>
+                    <th className="px-4 py-3 text-right">{t('admin.organization.columns.actions', 'Actions')}</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-200 dark:divide-white/5">
+                  {rolePermissionsLoading ? (
+                    <BusinessStateTableRow colSpan={5} kind="loading" title={t('admin.organization.loadingRolePermissions', 'Loading role permissions...')} />
+                  ) : !selectedRoleId ? (
+                    <BusinessStateTableRow colSpan={5} kind="empty" title={t('admin.organization.empty.selectRole', 'Select a role')} />
+                  ) : rolePermissions.length === 0 ? (
+                    <BusinessStateTableRow colSpan={5} kind="empty" title={t('admin.organization.empty.rolePermissions', 'No role permissions')} />
+                  ) : rolePermissions.map((permission) => (
+                    <tr key={`${selectedRoleId}-${permission.id}`} className="hover:bg-slate-50 dark:hover:bg-white/5">
+                      <td className="px-4 py-3 font-medium text-slate-900 dark:text-white">{permission.name}</td>
+                      <td className="px-4 py-3 font-mono text-xs text-slate-600 dark:text-slate-300">{permission.code || permission.id}</td>
+                      <td className="px-4 py-3 text-slate-600 dark:text-slate-300">{permission.resource || '-'}</td>
+                      <td className="px-4 py-3 text-slate-600 dark:text-slate-300">{permission.action || '-'}</td>
+                      <td className="px-4 py-3 text-right">
+                        <TextButton label={t('admin.organization.actions.revoke', 'Revoke')} onClick={() => onDeleteRolePermission(permission)} danger />
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          ) : null}
+
+          {activeKind === 'roleBindings' ? (
+            <table className="w-full min-w-[860px] text-left text-sm">
+              <thead className="sticky top-0 z-10 border-b border-slate-200 bg-slate-50 text-xs font-semibold text-slate-500 dark:border-white/10 dark:bg-[#121212] dark:text-slate-400">
+                <tr>
+                  <th className="px-4 py-3">{t('admin.organization.columns.principal', 'Principal')}</th>
+                  <th className="px-4 py-3">{t('admin.organization.columns.role', 'Role')}</th>
+                  <th className="px-4 py-3">{t('admin.organization.columns.scope', 'Scope')}</th>
+                  <th className="px-4 py-3">{t('admin.organization.columns.status', 'Status')}</th>
+                  <th className="px-4 py-3 text-right">{t('admin.organization.columns.actions', 'Actions')}</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-200 dark:divide-white/5">
+                {bindings.length === 0 ? (
+                  <BusinessStateTableRow colSpan={5} kind="empty" title={t('admin.organization.empty.roleBindings', 'No role bindings')} />
+                ) : bindings.map((binding) => (
+                  <tr key={binding.id} className="hover:bg-slate-50 dark:hover:bg-white/5">
+                    <td className="px-4 py-3">
+                      <div className="font-medium text-slate-900 dark:text-white">{formatPrincipalLabel(binding.principalKind, binding.principalId, lookups)}</div>
+                      <div className="text-xs text-slate-500">{binding.principalKind}:{binding.principalId}</div>
+                    </td>
+                    <td className="px-4 py-3 text-slate-600 dark:text-slate-300">{formatRoleLabel(binding.roleId, lookups)}</td>
+                    <td className="px-4 py-3 text-slate-500">{formatRoleBindingScopeLabel(binding, lookups)}</td>
+                    <td className="px-4 py-3"><StatusPill status={binding.status} /></td>
+                    <td className="px-4 py-3 text-right"><TextButton label={t('common.actions.delete', 'Delete')} onClick={() => onDeleteBinding(binding)} danger /></td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          ) : null}
+        </div>
       </div>
-      {action}
     </div>
+  );
+}
+
+function TableHeader({ action, query }: { action?: ReactNode; query?: ReactNode }) {
+  return (
+    <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 px-4 py-3 dark:border-white/10">
+      <div className="min-w-[260px] flex-1">{query}</div>
+      {action ? <div className="flex shrink-0 justify-end">{action}</div> : null}
+    </div>
+  );
+}
+
+function ListQueryControl({
+  onChange,
+  onQuery,
+  placeholder,
+  queryLabel,
+  value,
+}: {
+  onChange: (value: string) => void;
+  onQuery: (event?: FormEvent<HTMLFormElement>) => void;
+  placeholder: string;
+  queryLabel: string;
+  value: string;
+}) {
+  return (
+    <form className="flex min-w-0 flex-1 items-center gap-2" onSubmit={onQuery}>
+      <div className="relative min-w-0 flex-1">
+        <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+        <input
+          aria-label={placeholder}
+          className="h-9 w-full rounded-lg border border-slate-200 bg-white py-2 pl-9 pr-3 text-sm text-slate-900 shadow-sm outline-none transition-colors placeholder:text-slate-500 focus:border-blue-500 dark:border-white/10 dark:bg-[#1e1e1e] dark:text-white"
+          onChange={(event) => onChange(event.target.value)}
+          placeholder={placeholder}
+          type="search"
+          value={value}
+        />
+      </div>
+      <button
+        type="submit"
+        className="inline-flex h-9 shrink-0 items-center justify-center rounded-lg bg-blue-600 px-3 text-xs font-semibold text-white shadow-sm hover:bg-blue-700"
+      >
+        {queryLabel}
+      </button>
+    </form>
   );
 }
 
@@ -1453,17 +2027,27 @@ function DialogFields({
     : activePositionsForActiveContext[0]?.id ?? '';
   const [positionAssignmentPositionId, setPositionAssignmentPositionId] = useState(initialPositionAssignmentPositionId);
   const membersForSelectedPosition = membersForPositionAssignment(activeMemberships, directory.departmentAssignments, directory.positions, positionAssignmentPositionId, activeOrganizationIdForRelations);
+  const [organizationNameForCode, setOrganizationNameForCode] = useState(dialog.kind === 'organization' ? dialog.target?.name ?? '' : '');
+  const [organizationCodeTouched, setOrganizationCodeTouched] = useState(dialog.kind === 'organization' && Boolean(dialog.target?.code));
+  const [organizationCodeValue, setOrganizationCodeValue] = useState(dialog.kind === 'organization' ? dialog.target?.code ?? '' : '');
+  const [departmentNameForCode, setDepartmentNameForCode] = useState(dialog.kind === 'department' ? dialog.target?.name ?? '' : '');
+  const [departmentCodeTouched, setDepartmentCodeTouched] = useState(dialog.kind === 'department' && Boolean(dialog.target?.code));
+  const [departmentCodeValue, setDepartmentCodeValue] = useState(dialog.kind === 'department' ? dialog.target?.code ?? '' : '');
 
   if (dialog.kind === 'organization') {
     const target = dialog.target;
     const ownerMembers = membersForOrganization(activeMemberships, target?.id || activeOrganizationId);
+    const defaultParentOrganizationId = dialog.mode === 'create' ? dialog.parentOrganizationId ?? '' : target?.parentOrganizationId ?? '';
+    const renderedOrganizationCode = organizationCodeTouched
+      ? organizationCodeValue
+      : generatedEntityCode(organizationNameForCode, 'organization');
     return (
       <FieldGrid>
-        <TextField label={t('admin.organization.fields.name', 'Name')} name="name" required defaultValue={target?.name} />
-        <TextField label={t('admin.organization.fields.code', 'Code')} name="code" required defaultValue={target?.code} />
+        <TextField label={t('admin.organization.fields.name', 'Name')} name="name" required defaultValue={target?.name} onChange={setOrganizationNameForCode} />
+        <TextField label={t('admin.organization.fields.code', 'Code')} name="code" value={renderedOrganizationCode} onChange={(value) => { setOrganizationCodeTouched(true); setOrganizationCodeValue(value); }} />
         <SelectField label={t('admin.organization.fields.kind', 'Kind')} name="organizationKind" defaultValue={target?.organizationKind || 'company'} options={organizationKindOptions(t, target?.organizationKind)} />
         <SelectField label={t('admin.organization.fields.status', 'Status')} name="status" defaultValue={target?.status || 'active'} options={statusOptions(t)} />
-        <SelectField label={t('admin.organization.fields.parentOrganization', 'Parent organization')} name="parentOrganizationId" defaultValue={target?.parentOrganizationId ?? ''} options={organizationParentOptions(directory.organizations, target?.id, lookups, t)} />
+        <SelectField label={t('admin.organization.fields.parentOrganization', 'Parent organization')} name="parentOrganizationId" defaultValue={defaultParentOrganizationId} options={organizationParentOptions(directory.organizations, target?.id, lookups, t)} />
         <SelectField label={t('admin.organization.fields.ownerUserId', 'Owner')} name="ownerUserId" defaultValue={target?.ownerUserId ?? ''} options={emptyOption(t).concat(userOptions(ownerMembers, lookups, target?.ownerUserId))} />
       </FieldGrid>
     );
@@ -1471,12 +2055,16 @@ function DialogFields({
 
   if (dialog.kind === 'department') {
     const target = dialog.target;
+    const defaultParentDepartmentId = dialog.mode === 'create' ? activeDepartmentIdForRelations : target?.parentDepartmentId ?? '';
+    const renderedDepartmentCode = departmentCodeTouched
+      ? departmentCodeValue
+      : generatedEntityCode(departmentNameForCode, 'department');
     return (
       <FieldGrid>
         <SelectField label={t('admin.organization.fields.organization', 'Organization')} name="organizationId" required defaultValue={target?.organizationId || activeOrganizationIdForRelations} options={organizationOptions(activeOrganizations, lookups, target?.organizationId || activeOrganizationIdForRelations)} onChange={setDepartmentOrganizationId} />
-        <TextField label={t('admin.organization.fields.name', 'Name')} name="name" required defaultValue={target?.name} />
-        <TextField label={t('admin.organization.fields.code', 'Code')} name="code" defaultValue={target?.code} />
-        <SelectField key={`department-parent-${departmentOrganizationId}`} label={t('admin.organization.fields.parentDepartment', 'Parent department')} name="parentDepartmentId" defaultValue={target?.parentDepartmentId ?? ''} options={departmentParentOptions(departmentsForDepartmentOrganization, target?.id, lookups, t)} />
+        <TextField label={t('admin.organization.fields.name', 'Name')} name="name" required defaultValue={target?.name} onChange={setDepartmentNameForCode} />
+        <TextField label={t('admin.organization.fields.code', 'Code')} name="code" value={renderedDepartmentCode} onChange={(value) => { setDepartmentCodeTouched(true); setDepartmentCodeValue(value); }} />
+        <SelectField key={`department-parent-${departmentOrganizationId}`} label={t('admin.organization.fields.parentDepartment', 'Parent department')} name="parentDepartmentId" defaultValue={defaultParentDepartmentId} options={departmentParentOptions(departmentsForDepartmentOrganization, target?.id, lookups, t)} />
         <SelectField key={`department-manager-${departmentOrganizationId}`} label={t('admin.organization.fields.managerUserId', 'Manager')} name="managerUserId" defaultValue={target?.managerUserId ?? ''} options={emptyOption(t).concat(userOptions(membersForDepartmentOrganization, lookups, target?.managerUserId))} />
         <SelectField label={t('admin.organization.fields.status', 'Status')} name="status" defaultValue={target?.status || 'active'} options={statusOptions(t)} />
       </FieldGrid>
@@ -1985,6 +2573,17 @@ function isActiveRecord(record: { status?: string }): boolean {
   return !status || status === 'active' || status === 'enabled';
 }
 
+function filterBySearchWithLabels<T>(
+  items: T[],
+  search: string,
+  labels: (item: T) => Array<number | string | null | undefined>,
+): T[] {
+  if (!search) {
+    return items;
+  }
+  return items.filter((item) => labels(item).some((value) => String(value ?? '').toLowerCase().includes(search)));
+}
+
 function roleBindingBelongsToContext(
   binding: RoleBindingRecord,
   organizationId: string,
@@ -2382,13 +2981,25 @@ function roleBindingTouchesDepartments(binding: RoleBindingRecord, departmentIds
 
 function readOrganizationCommand(form: FormData): OrganizationCommand {
   return {
-    code: requiredFormText(form, 'code'),
+    code: optionalFormText(form, 'code'),
     name: requiredFormText(form, 'name'),
     organizationKind: optionalFormText(form, 'organizationKind'),
     parentOrganizationId: optionalFormText(form, 'parentOrganizationId'),
     ownerUserId: optionalFormText(form, 'ownerUserId'),
     status: optionalFormText(form, 'status'),
   };
+}
+
+function generatedEntityCode(name: string, fallbackCode: string): string {
+  let code = name
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+  while (code.includes('--')) {
+    code = code.replace(/--/g, '-');
+  }
+  return code || fallbackCode;
 }
 
 function readDepartmentCommand(form: FormData, fallbackOrganizationId: string): DepartmentCommand {
@@ -2510,52 +3121,92 @@ function optionalFormNumber(form: FormData, key: string): number | undefined {
   return Number.isFinite(parsed) ? parsed : undefined;
 }
 
-function filterBySearch<T>(items: T[], search: string, keys: string[]): T[] {
-  if (!search) {
-    return items;
-  }
-  return items.filter((item) => keys.some((key) => String((item as Record<string, unknown>)[key] ?? '').toLowerCase().includes(search)));
-}
-
-function filterBySearchWithLabels<T>(items: T[], search: string, keys: string[], labelReader: (item: T) => Array<string | null | undefined>): T[] {
-  if (!search) {
-    return items;
-  }
-  return items.filter((item) => {
-    const fieldMatched = keys.some((key) => String((item as Record<string, unknown>)[key] ?? '').toLowerCase().includes(search));
-    if (fieldMatched) {
-      return true;
-    }
-    return labelReader(item).some((label) => (label ?? '').toLowerCase().includes(search));
+function buildOrganizationDepartmentTree(
+  organizationTree: OrganizationTreeNode[],
+  departmentTree: DepartmentTreeNode[],
+  organizations: OrganizationRecord[],
+  departments: DepartmentRecord[],
+): OrganizationDirectoryTreeNode[] {
+  const sourceOrganizationTree = organizationTree.length > 0 ? organizationTree : buildOrganizationTreeFromRecords(organizations);
+  const sourceDepartmentTree = departmentTree.length > 0 ? departmentTree : buildDepartmentTreeFromRecords(departments);
+  const departmentsByOrganization = new Map<string, DepartmentTreeNode[]>();
+  sourceDepartmentTree.forEach((node) => {
+    const current = departmentsByOrganization.get(node.organizationId) ?? [];
+    current.push(node);
+    departmentsByOrganization.set(node.organizationId, current);
   });
+  return sourceOrganizationTree.map((node) => organizationDirectoryNode(node, departmentsByOrganization));
 }
 
-function filterOrganizationTree(nodes: OrganizationTreeNode[], search: string): OrganizationTreeNode[] {
-  if (!search) {
-    return nodes;
-  }
-  return nodes
-    .map((node) => ({
-      ...node,
-      children: filterOrganizationTree(node.children, search),
-    }))
-    .filter((node) => {
-      const matched = [node.name, node.code, node.kind, node.status].some((value) => value.toLowerCase().includes(search));
-      return matched || node.children.length > 0;
-    });
+function organizationDirectoryNode(node: OrganizationTreeNode, departmentsByOrganization: Map<string, DepartmentTreeNode[]>): OrganizationDirectoryTreeNode {
+  const childOrganizations = node.children.map((child) => organizationDirectoryNode(child, departmentsByOrganization));
+  const childDepartments = (departmentsByOrganization.get(node.id) ?? []).map(departmentDirectoryNode);
+  return {
+    nodeKind: 'organization',
+    id: `organization:${node.id}`,
+    organizationId: node.id,
+    departmentId: '',
+    code: node.code,
+    name: node.name,
+    meta: '',
+    children: childOrganizations.concat(childDepartments),
+  };
 }
 
-function filterDepartmentTree(nodes: DepartmentTreeNode[], allowedIds: Set<string>, search: string): DepartmentTreeNode[] {
-  return nodes
-    .map((node) => ({
-      ...node,
-      children: filterDepartmentTree(node.children, allowedIds, search),
-    }))
-    .filter((node) => {
-      const allowed = allowedIds.size === 0 || allowedIds.has(node.id);
-      const matched = !search || [node.name, node.code, node.status].some((value) => value.toLowerCase().includes(search));
-      return allowed && (matched || node.children.length > 0);
-    });
+function departmentDirectoryNode(node: DepartmentTreeNode): OrganizationDirectoryTreeNode {
+  return {
+    nodeKind: 'department',
+    id: `department:${node.id}`,
+    organizationId: node.organizationId,
+    departmentId: node.id,
+    code: node.code,
+    name: node.name,
+    meta: '',
+    children: node.children.map(departmentDirectoryNode),
+  };
+}
+
+function buildOrganizationTreeFromRecords(organizations: OrganizationRecord[]): OrganizationTreeNode[] {
+  const organizationIds = new Set(organizations.map((item) => item.id));
+  const childrenByParent = new Map<string, OrganizationRecord[]>();
+  organizations.forEach((item) => {
+    const parentId = item.parentOrganizationId && organizationIds.has(item.parentOrganizationId) ? item.parentOrganizationId : '';
+    const current = childrenByParent.get(parentId) ?? [];
+    current.push(item);
+    childrenByParent.set(parentId, current);
+  });
+  const convert = (item: OrganizationRecord): OrganizationTreeNode => ({
+    id: item.id,
+    code: item.code,
+    name: item.name,
+    parentId: item.parentOrganizationId,
+    status: item.status,
+    kind: item.organizationKind,
+    children: (childrenByParent.get(item.id) ?? []).map(convert),
+  });
+  return (childrenByParent.get('') ?? []).map(convert);
+}
+
+function buildDepartmentTreeFromRecords(departments: DepartmentRecord[]): DepartmentTreeNode[] {
+  const departmentsById = new Map(departments.map((item) => [item.id, item]));
+  const childrenByParent = new Map<string, DepartmentRecord[]>();
+  departments.forEach((item) => {
+    const parentDepartment = item.parentDepartmentId ? departmentsById.get(item.parentDepartmentId) : undefined;
+    const parentId = parentDepartment && parentDepartment.organizationId === item.organizationId ? parentDepartment.id : '';
+    const current = childrenByParent.get(parentId) ?? [];
+    current.push(item);
+    childrenByParent.set(parentId, current);
+  });
+  const convert = (item: DepartmentRecord): DepartmentTreeNode => ({
+    id: item.id,
+    code: item.code,
+    name: item.name,
+    organizationId: item.organizationId,
+    parentId: item.parentDepartmentId,
+    status: item.status,
+    children: (childrenByParent.get(item.id) ?? []).map(convert),
+  });
+  return (childrenByParent.get('') ?? []).map(convert);
 }
 
 function dialogTitle(dialog: OrganizationDialog, t: TranslationFunction): string {
@@ -2573,6 +3224,10 @@ function dialogTitle(dialog: OrganizationDialog, t: TranslationFunction): string
     rolePermission: t('admin.organization.entities.rolePermission', 'Role permission'),
   }[dialog.kind];
   return `${action} ${entity}`;
+}
+
+function dialogKey(dialog: OrganizationDialog): string {
+  return `${dialog.kind}-${dialog.mode}-${'target' in dialog ? dialog.target?.id ?? '' : ''}`;
 }
 
 function statusOptions(t: TranslationFunction) {
@@ -2638,26 +3293,34 @@ function TextField({
   defaultValue,
   label,
   name,
+  onChange,
   required,
   type = 'text',
+  value,
   wide,
 }: {
   defaultValue?: string;
   label: string;
   name: string;
+  onChange?: (value: string) => void;
   required?: boolean;
   type?: string;
+  value?: string;
   wide?: boolean;
 }) {
+  const valueProps = value === undefined
+    ? { defaultValue: defaultValue ?? '' }
+    : { value, onChange: (event: ChangeEvent<HTMLInputElement>) => onChange?.(event.target.value) };
   return (
     <label className={`flex min-w-0 flex-col gap-1 text-sm ${wide ? 'md:col-span-2' : ''}`}>
       <span className="font-medium text-slate-700 dark:text-slate-200">{label}</span>
       <input
         className="rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-950 outline-none focus:border-blue-500 dark:border-white/10 dark:bg-[#121212] dark:text-white"
-        defaultValue={defaultValue ?? ''}
         name={name}
+        onChange={value === undefined ? (event) => onChange?.(event.target.value) : undefined}
         required={required}
         type={type}
+        {...valueProps}
       />
     </label>
   );
@@ -2712,9 +3375,9 @@ function StatusPill({ status }: { status: string }) {
   );
 }
 
-function IconButton({ children, label, onClick }: { children: ReactNode; label: string; onClick: () => void }) {
+function IconButton({ children, disabled, label, onClick }: { children: ReactNode; disabled?: boolean; label: string; onClick: () => void }) {
   return (
-    <button type="button" onClick={onClick} title={label} aria-label={label} className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-600 shadow-sm hover:bg-slate-50 dark:border-white/10 dark:bg-[#1e1e1e] dark:text-slate-200 dark:hover:bg-white/5">
+    <button type="button" onClick={onClick} disabled={disabled} title={label} aria-label={label} className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-600 shadow-sm hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-60 dark:border-white/10 dark:bg-[#1e1e1e] dark:text-slate-200 dark:hover:bg-white/5">
       {children}
     </button>
   );
@@ -2737,9 +3400,15 @@ function SmallButton({ disabled, label, onClick }: { disabled?: boolean; label: 
   );
 }
 
-function RowIconButton({ children, danger, label, onClick }: { children: ReactNode; danger?: boolean; label: string; onClick: () => void }) {
+function RowIconButton({ children, danger, label, onClick }: { children: ReactNode; danger?: boolean; label: string; onClick: (event: MouseEvent<HTMLButtonElement>) => void }) {
   return (
-    <button type="button" onClick={onClick} title={label} aria-label={label} className={`rounded p-1 opacity-70 hover:opacity-100 ${danger ? 'text-red-500 hover:bg-red-50 dark:hover:bg-red-500/10' : 'text-slate-500 hover:bg-slate-100 dark:hover:bg-white/5'}`}>
+    <button
+      type="button"
+      onClick={onClick}
+      title={label}
+      aria-label={label}
+      className={`rounded p-1 opacity-70 hover:opacity-100 ${danger ? 'text-red-500 hover:bg-red-50 dark:hover:bg-red-500/10' : 'text-slate-500 hover:bg-slate-100 dark:hover:bg-white/5'}`}
+    >
       {children}
     </button>
   );

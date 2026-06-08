@@ -11,6 +11,7 @@ use crate::infrastructure::sql::model_catalog_import::{
     pricing_catalog_key as build_model_pricing_catalog_key, stable_uuid, CatalogScopeCounts,
 };
 use crate::infrastructure::sql::model_modality;
+use crate::infrastructure::sql::runtime_id::next_claw_runtime_id;
 use crate::ports::{
     AdminAiModelItem, AdminAiModelRegionPriceCommand, AdminModelCatalogSyncItem,
     AdminModelCommandFuture, AdminModelMappingRuleBindingDraft, AdminModelMappingRuleBindingItem,
@@ -1794,12 +1795,13 @@ async fn insert_pricing_import_snapshot(
         "refreshKind": "admin_fast_catalog_refresh",
     })
     .to_string();
+    let id = next_claw_runtime_id("ai_pricing_import_snapshot")?;
     sqlx::query(
         r#"
         INSERT INTO ai_pricing_import_snapshot
-            (uuid, tenant_id, organization_id, user_id, request_id, status, metadata, import_source, source_name, source_hash, data_format, row_count, accepted_count, rejected_count, currency, observed_at)
+            (uuid, tenant_id, organization_id, user_id, request_id, status, metadata, import_source, source_name, source_hash, data_format, row_count, accepted_count, rejected_count, currency, observed_at, id)
         VALUES
-            (?, ?, ?, ?, ?, 1, ?, 1, ?, ?, 'database', ?, ?, 0, 'USD', ?)
+            (?, ?, ?, ?, ?, 1, ?, 1, ?, ?, 'database', ?, ?, 0, 'USD', ?, ?)
         "#,
     )
     .bind(&command.snapshot_uuid)
@@ -1813,10 +1815,11 @@ async fn insert_pricing_import_snapshot(
     .bind(row_count)
     .bind(row_count)
     .bind(&command.requested_at)
+    .bind(id)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to write pricing import snapshot", error))?;
-    last_insert_rowid(tx).await
+    Ok(id)
 }
 
 fn filter_sync_catalog_items(
@@ -1992,12 +1995,13 @@ async fn upsert_model_catalog_sync_run(
     .await
     .map_err(|error| store_error("failed to reload model catalog source", error))?;
 
+    let id = next_claw_runtime_id("ai_model_catalog_sync_run")?;
     sqlx::query(
         r#"
         INSERT INTO ai_model_catalog_sync_run
-            (uuid, tenant_id, organization_id, source_type, source_id, source_version, status, metadata, source_code, vendor_code, provider_code, run_status, started_at, finished_at, observed_at, catalog_version, source_hash, observed_vendor_count, observed_model_count, observed_meter_count, observed_price_count, accepted_count, rejected_count, change_summary)
+            (uuid, tenant_id, organization_id, source_type, source_id, source_version, status, metadata, source_code, vendor_code, provider_code, run_status, started_at, finished_at, observed_at, catalog_version, source_hash, observed_vendor_count, observed_model_count, observed_meter_count, observed_price_count, accepted_count, rejected_count, change_summary, id)
         VALUES
-            (?, ?, ?, 'manual_refresh', ?, 1, 1, ?, ?, 'mixed', NULL, 1, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, ?)
+            (?, ?, ?, 'manual_refresh', ?, 1, 1, ?, ?, 'mixed', NULL, 1, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, ?, ?)
         "#,
     )
     .bind(&sync_run_uuid)
@@ -2017,11 +2021,12 @@ async fn upsert_model_catalog_sync_run(
     .bind(counts.price_count as i64)
     .bind(counts.accepted_count())
     .bind(change_summary)
+    .bind(id)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to insert model catalog sync run", error))?;
 
-    last_insert_rowid(tx).await
+    Ok(id)
 }
 
 async fn load_vendor_by_id(

@@ -2,12 +2,14 @@ use std::env;
 use std::time::{SystemTime, UNIX_EPOCH};
 
 use sdkwork_claw_product::infrastructure::sql::postgres::{
-    PostgresAppGenerationHistoryReadStore, PostgresGatewayUsageRecorder,
-    PostgresPaymentCallbackStore,
+    PostgresAdminAiResourceStore, PostgresAppGenerationHistoryReadStore,
+    PostgresGatewayUsageRecorder, PostgresPaymentCallbackStore,
 };
 use sdkwork_claw_product::ports::{
-    AppGenerationHistoryReadStore, AppGenerationHistorySubject, GatewayUsageRecordCommand,
-    GatewayUsageRecorder, PaymentCallbackCommand, PaymentCallbackStatus, PaymentCallbackStore,
+    AdminAiResourceStore, AdminAiResourceSubject, AppGenerationHistoryReadStore,
+    AppGenerationHistorySubject, GatewayUsageRecordCommand, GatewayUsageRecorder,
+    ListAdminAiResourceGroupResourcesQuery, ListAdminAiResourceGroupsQuery,
+    ListAdminAiResourcesQuery, PaymentCallbackCommand, PaymentCallbackStatus, PaymentCallbackStore,
 };
 use serde_json::Value;
 use sqlx::postgres::PgPoolOptions;
@@ -180,6 +182,52 @@ async fn postgres_gateway_usage_recorder_preserves_non_pending_usage_fact_on_dup
         "Postgres gateway usage recorder must freeze trace rows once usage settlement starts"
     );
     assert_eq!(200_i32, trace.get::<i32, _>("http_status"));
+
+    ctx.cleanup().await;
+}
+
+#[tokio::test]
+async fn postgres_admin_ai_resource_read_models_decode_int4_status_columns() {
+    let Some(ctx) = PostgresTestContext::new("admin_ai_resource_status").await else {
+        return;
+    };
+    create_admin_ai_resource_tables(&ctx.pool).await;
+    seed_admin_ai_resource_group(&ctx.pool).await;
+
+    let store = PostgresAdminAiResourceStore::new(ctx.pool.clone());
+    let subject = AdminAiResourceSubject {
+        tenant_id: 10,
+        organization_id: 20,
+        operator_id: 30,
+        operator_type: 1,
+    };
+
+    let resources = store
+        .list_ai_resources(ListAdminAiResourcesQuery { subject })
+        .await
+        .unwrap();
+    assert_eq!(1, resources.len());
+    assert_eq!("active", resources[0].status);
+    assert_eq!(Some(4), resources[0].sort_order);
+
+    let groups = store
+        .list_ai_resource_groups(ListAdminAiResourceGroupsQuery { subject })
+        .await
+        .unwrap();
+    assert_eq!(1, groups.len());
+    assert_eq!("active", groups[0].status);
+    assert_eq!(Some(1), groups[0].sort_order);
+
+    let group_resources = store
+        .list_ai_resource_group_resources(ListAdminAiResourceGroupResourcesQuery {
+            subject,
+            group_id_or_code: "bundle.openrouter.openai.standard".to_owned(),
+        })
+        .await
+        .unwrap();
+    assert_eq!(1, group_resources.len());
+    assert_eq!("active", group_resources[0].status);
+    assert_eq!(Some(1), group_resources[0].sort_order);
 
     ctx.cleanup().await;
 }
@@ -663,6 +711,89 @@ async fn create_schema(pool: &PgPool) {
             user_agent_hash VARCHAR(128),
             provider_error TEXT
         )"#,
+    ] {
+        sqlx::query(statement).execute(pool).await.unwrap();
+    }
+}
+
+async fn create_admin_ai_resource_tables(pool: &PgPool) {
+    for statement in [
+        r#"CREATE TABLE ai_resource (
+            id BIGINT PRIMARY KEY,
+            uuid VARCHAR(128) NOT NULL,
+            tenant_id BIGINT NOT NULL,
+            organization_id BIGINT NOT NULL,
+            resource_code VARCHAR(128) NOT NULL,
+            resource_type VARCHAR(64) NOT NULL,
+            display_name VARCHAR(256) NOT NULL,
+            vendor_code VARCHAR(64),
+            modality_code VARCHAR(64),
+            api_code VARCHAR(128),
+            catalog_key VARCHAR(256),
+            model VARCHAR(256),
+            provider_native_model VARCHAR(256),
+            resource_schema JSONB NOT NULL DEFAULT '{}'::jsonb,
+            status INTEGER NOT NULL DEFAULT 1,
+            sort_order INTEGER,
+            deleted_at TIMESTAMPTZ
+        )"#,
+        r#"CREATE TABLE ai_resource_group (
+            id BIGINT PRIMARY KEY,
+            uuid VARCHAR(128) NOT NULL,
+            tenant_id BIGINT NOT NULL,
+            organization_id BIGINT NOT NULL,
+            group_code VARCHAR(128) NOT NULL,
+            group_name VARCHAR(256) NOT NULL,
+            group_type VARCHAR(64) NOT NULL,
+            selection_mode VARCHAR(64) NOT NULL,
+            description TEXT,
+            status INTEGER NOT NULL DEFAULT 1,
+            sort_order INTEGER,
+            deleted_at TIMESTAMPTZ
+        )"#,
+        r#"CREATE TABLE ai_resource_group_item (
+            id BIGINT PRIMARY KEY,
+            uuid VARCHAR(128) NOT NULL,
+            tenant_id BIGINT NOT NULL,
+            organization_id BIGINT NOT NULL,
+            resource_group_id BIGINT NOT NULL,
+            resource_group_code VARCHAR(128) NOT NULL,
+            item_type VARCHAR(64) NOT NULL,
+            resource_id BIGINT,
+            resource_code VARCHAR(128),
+            child_resource_group_id BIGINT,
+            child_resource_group_code VARCHAR(128),
+            item_role VARCHAR(64),
+            metadata JSONB,
+            status INTEGER NOT NULL DEFAULT 1,
+            sort_order INTEGER,
+            deleted_at TIMESTAMPTZ
+        )"#,
+    ] {
+        sqlx::query(statement).execute(pool).await.unwrap();
+    }
+}
+
+async fn seed_admin_ai_resource_group(pool: &PgPool) {
+    for statement in [
+        r#"
+        INSERT INTO ai_resource
+            (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, vendor_code, modality_code, api_code, resource_schema, status, sort_order)
+        VALUES
+            (9104, 'resource-model-openai-gpt-4o-mini-admin-ai-resource-status', 10, 20, 'model.openai.gpt-4o-mini.chat', 'model_api', 'GPT-4o mini Chat', 'openai', 'chat', 'openai.chat_completions', '{"capability":"chat"}'::jsonb, 1, 4)
+        "#,
+        r#"
+        INSERT INTO ai_resource_group
+            (id, uuid, tenant_id, organization_id, group_code, group_name, group_type, selection_mode, status, sort_order)
+        VALUES
+            (9201, 'resource-group-openrouter-openai-admin-ai-resource-status', 10, 20, 'bundle.openrouter.openai.standard', 'OpenRouter OpenAI Standard', 'api_group', 'manual', 1, 1)
+        "#,
+        r#"
+        INSERT INTO ai_resource_group_item
+            (id, uuid, tenant_id, organization_id, resource_group_id, resource_group_code, item_type, resource_id, resource_code, item_role, status, sort_order)
+        VALUES
+            (9202, 'resource-group-item-openrouter-gpt-4o-mini-admin-ai-resource-status', 10, 20, 9201, 'bundle.openrouter.openai.standard', 'resource', 9104, 'model.openai.gpt-4o-mini.chat', 'included', 1, 1)
+        "#,
     ] {
         sqlx::query(statement).execute(pool).await.unwrap();
     }

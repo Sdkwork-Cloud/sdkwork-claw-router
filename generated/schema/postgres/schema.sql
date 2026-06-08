@@ -61,21 +61,102 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_iam_organization_tenant_code ON iam_organiz
 CREATE INDEX IF NOT EXISTS idx_iam_organization_tenant_parent ON iam_organization (tenant_id, parent_id, status);
 CREATE INDEX IF NOT EXISTS idx_iam_organization_tenant_path ON iam_organization (tenant_id, path, status);
 
-CREATE TABLE IF NOT EXISTS iam_organization_member (
+CREATE TABLE IF NOT EXISTS iam_organization_membership (
     id VARCHAR(128) NOT NULL PRIMARY KEY,
     tenant_id VARCHAR(128) NOT NULL,
     organization_id VARCHAR(128) NOT NULL,
     user_id VARCHAR(128) NOT NULL,
-    role_code VARCHAR(128),
+    membership_kind VARCHAR(128) NOT NULL,
+    employee_no VARCHAR(128),
+    display_name VARCHAR(128),
+    is_primary INTEGER NOT NULL DEFAULT 0,
     status VARCHAR(32) NOT NULL,
     joined_at TIMESTAMPTZ NOT NULL,
     left_at TIMESTAMPTZ,
-    remark VARCHAR(500)
+    remark VARCHAR(500),
+    created_at TIMESTAMPTZ NOT NULL,
+    updated_at TIMESTAMPTZ NOT NULL
 );
 
-CREATE UNIQUE INDEX IF NOT EXISTS uk_iam_organization_member_tenant_org_user ON iam_organization_member (tenant_id, organization_id, user_id);
-CREATE INDEX IF NOT EXISTS idx_iam_organization_member_tenant_user ON iam_organization_member (tenant_id, user_id, status);
-CREATE INDEX IF NOT EXISTS idx_iam_organization_member_tenant_org ON iam_organization_member (tenant_id, organization_id, status);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_iam_organization_membership_tenant_org_user_kind ON iam_organization_membership (tenant_id, organization_id, user_id, membership_kind);
+CREATE INDEX IF NOT EXISTS idx_iam_organization_membership_tenant_user ON iam_organization_membership (tenant_id, user_id, organization_id, status);
+CREATE INDEX IF NOT EXISTS idx_iam_organization_membership_tenant_org ON iam_organization_membership (tenant_id, organization_id, status);
+
+CREATE TABLE IF NOT EXISTS iam_department (
+    id VARCHAR(128) NOT NULL PRIMARY KEY,
+    tenant_id VARCHAR(128) NOT NULL,
+    organization_id VARCHAR(128) NOT NULL,
+    parent_department_id VARCHAR(128),
+    code VARCHAR(128) NOT NULL,
+    name VARCHAR(256) NOT NULL,
+    department_kind VARCHAR(64) NOT NULL,
+    path VARCHAR(1024) NOT NULL,
+    cost_center_code VARCHAR(128),
+    manager_membership_id VARCHAR(128),
+    status VARCHAR(32) NOT NULL,
+    created_at TIMESTAMPTZ NOT NULL,
+    updated_at TIMESTAMPTZ NOT NULL
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_iam_department_tenant_org_code ON iam_department (tenant_id, organization_id, code);
+CREATE INDEX IF NOT EXISTS idx_iam_department_tenant_org_parent ON iam_department (tenant_id, organization_id, parent_department_id, status);
+CREATE INDEX IF NOT EXISTS idx_iam_department_tenant_org_path ON iam_department (tenant_id, organization_id, path, status);
+
+CREATE TABLE IF NOT EXISTS iam_department_assignment (
+    id VARCHAR(128) NOT NULL PRIMARY KEY,
+    tenant_id VARCHAR(128) NOT NULL,
+    organization_id VARCHAR(128) NOT NULL,
+    organization_membership_id VARCHAR(128) NOT NULL,
+    department_id VARCHAR(128) NOT NULL,
+    user_id VARCHAR(128) NOT NULL,
+    assignment_kind VARCHAR(64) NOT NULL,
+    is_primary INTEGER NOT NULL DEFAULT 0,
+    effective_from TIMESTAMPTZ NOT NULL,
+    effective_to TIMESTAMPTZ,
+    status VARCHAR(32) NOT NULL,
+    created_at TIMESTAMPTZ NOT NULL,
+    updated_at TIMESTAMPTZ NOT NULL
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_iam_department_assignment_member_department ON iam_department_assignment (tenant_id, organization_id, organization_membership_id, department_id, assignment_kind);
+CREATE INDEX IF NOT EXISTS idx_iam_department_assignment_department ON iam_department_assignment (tenant_id, organization_id, department_id, status);
+CREATE INDEX IF NOT EXISTS idx_iam_department_assignment_user ON iam_department_assignment (tenant_id, organization_id, user_id, status);
+
+CREATE TABLE IF NOT EXISTS iam_position (
+    id VARCHAR(128) NOT NULL PRIMARY KEY,
+    tenant_id VARCHAR(128) NOT NULL,
+    organization_id VARCHAR(128) NOT NULL,
+    department_id VARCHAR(128),
+    code VARCHAR(128) NOT NULL,
+    name VARCHAR(256) NOT NULL,
+    position_kind VARCHAR(64) NOT NULL,
+    rank_level INTEGER,
+    status VARCHAR(32) NOT NULL,
+    created_at TIMESTAMPTZ NOT NULL,
+    updated_at TIMESTAMPTZ NOT NULL
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_iam_position_tenant_org_code ON iam_position (tenant_id, organization_id, code);
+CREATE INDEX IF NOT EXISTS idx_iam_position_tenant_org_department ON iam_position (tenant_id, organization_id, department_id, status);
+
+CREATE TABLE IF NOT EXISTS iam_position_assignment (
+    id VARCHAR(128) NOT NULL PRIMARY KEY,
+    tenant_id VARCHAR(128) NOT NULL,
+    organization_id VARCHAR(128) NOT NULL,
+    department_assignment_id VARCHAR(128) NOT NULL,
+    position_id VARCHAR(128) NOT NULL,
+    user_id VARCHAR(128) NOT NULL,
+    is_primary INTEGER NOT NULL DEFAULT 0,
+    effective_from TIMESTAMPTZ NOT NULL,
+    effective_to TIMESTAMPTZ,
+    status VARCHAR(32) NOT NULL,
+    created_at TIMESTAMPTZ NOT NULL,
+    updated_at TIMESTAMPTZ NOT NULL
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_iam_position_assignment_department_position ON iam_position_assignment (tenant_id, organization_id, department_assignment_id, position_id);
+CREATE INDEX IF NOT EXISTS idx_iam_position_assignment_position ON iam_position_assignment (tenant_id, organization_id, position_id, status);
+CREATE INDEX IF NOT EXISTS idx_iam_position_assignment_user ON iam_position_assignment (tenant_id, organization_id, user_id, status);
 
 CREATE TABLE IF NOT EXISTS iam_user (
     id VARCHAR(128) NOT NULL PRIMARY KEY,
@@ -220,6 +301,25 @@ CREATE TABLE IF NOT EXISTS iam_role_permission (
 
 CREATE UNIQUE INDEX IF NOT EXISTS uk_iam_role_permission_tenant_role_permission ON iam_role_permission (tenant_id, role_id, permission_id);
 CREATE INDEX IF NOT EXISTS idx_iam_role_permission_tenant_permission ON iam_role_permission (tenant_id, permission_id, role_id);
+
+CREATE TABLE IF NOT EXISTS iam_role_binding (
+    id VARCHAR(128) NOT NULL PRIMARY KEY,
+    tenant_id VARCHAR(128) NOT NULL,
+    role_id VARCHAR(128) NOT NULL,
+    principal_kind VARCHAR(64) NOT NULL,
+    principal_id VARCHAR(128) NOT NULL,
+    scope_kind VARCHAR(64) NOT NULL,
+    scope_id VARCHAR(128) NOT NULL,
+    effect VARCHAR(32) NOT NULL,
+    condition_json VARCHAR(4000),
+    status VARCHAR(32) NOT NULL,
+    created_at TIMESTAMPTZ NOT NULL,
+    updated_at TIMESTAMPTZ NOT NULL
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_iam_role_binding_principal_scope ON iam_role_binding (tenant_id, role_id, principal_kind, principal_id, scope_kind, scope_id);
+CREATE INDEX IF NOT EXISTS idx_iam_role_binding_principal ON iam_role_binding (tenant_id, principal_kind, principal_id, status);
+CREATE INDEX IF NOT EXISTS idx_iam_role_binding_scope ON iam_role_binding (tenant_id, scope_kind, scope_id, status);
 
 CREATE TABLE IF NOT EXISTS iam_user_role (
     id VARCHAR(128) NOT NULL PRIMARY KEY,

@@ -90,12 +90,12 @@ FROM (
                     r.recipient_type = $11
                     AND EXISTS (
                         SELECT 1
-                        FROM iam_organization_member member
+                        FROM iam_organization_membership member
                         WHERE member.tenant_id = CAST($1 AS TEXT)
                           AND member.organization_id = CAST($2 AS TEXT)
                           AND member.user_id = CAST($3 AS TEXT)
                           AND member.status = 'active'
-                          AND member.role_code = r.recipient_role_code
+                          AND member.membership_kind = r.recipient_role_code
                     )
                 )
             )
@@ -149,12 +149,12 @@ FROM (
                     r.recipient_type = $10
                     AND EXISTS (
                         SELECT 1
-                        FROM iam_organization_member member
+                        FROM iam_organization_membership member
                         WHERE member.tenant_id = CAST($1 AS TEXT)
                           AND member.organization_id = CAST($2 AS TEXT)
                           AND member.user_id = CAST($3 AS TEXT)
                           AND member.status = 'active'
-                          AND member.role_code = r.recipient_role_code
+                          AND member.membership_kind = r.recipient_role_code
                     )
                 )
             )

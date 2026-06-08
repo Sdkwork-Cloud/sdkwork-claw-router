@@ -4,6 +4,7 @@ mod admin_analytics;
 mod admin_announcement;
 mod admin_api_key_rate_limit;
 mod admin_app;
+mod admin_appbase_backend_iam;
 mod admin_auth_settings;
 mod admin_cache;
 mod admin_catalog;
@@ -86,6 +87,9 @@ pub use admin_announcement::admin_announcement_router_with_store;
 pub use admin_api_key_rate_limit::admin_api_key_rate_limit_router_with_store;
 pub use admin_app::admin_app_router_with_store;
 pub use admin_app::admin_app_router_with_store_and_json_body_limit;
+pub use admin_appbase_backend_iam::{
+    admin_appbase_backend_iam_directory_router_with_read_store, AdminAppbaseBackendIamSqlReadStore,
+};
 pub use admin_auth_settings::admin_auth_settings_router_with_store;
 pub use admin_cache::admin_cache_router_with_manager;
 pub use admin_catalog::admin_catalog_router_with_store;

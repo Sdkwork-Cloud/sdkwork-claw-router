@@ -90,7 +90,7 @@ tables:
     - tenant_id
     - path
     - status
-- table: iam_organization_member
+- table: iam_organization_membership
   domain: iam
   profile: tenant_entity
   compliance_level: L3
@@ -109,35 +109,292 @@ tables:
     tenant_id: string(128)
     organization_id: string(128)
     user_id: string(128)
-    role_code: string(128)
+    membership_kind: string(128)
+    employee_no: string(128)
+    display_name: string(128)
+    is_primary:
+      type: int32
+      constraints: NOT NULL DEFAULT 0
     status: string(32)
     joined_at: instant
     left_at: instant
     remark: string(500)
+    created_at: instant
+    updated_at: instant
   required_columns:
   - id
   - tenant_id
   - organization_id
   - user_id
+  - membership_kind
+  - is_primary
   - status
   - joined_at
+  - created_at
+  - updated_at
   unique_constraints:
-  - name: uk_iam_organization_member_tenant_org_user
+  - name: uk_iam_organization_membership_tenant_org_user_kind
     columns:
     - tenant_id
     - organization_id
     - user_id
+    - membership_kind
     source: appbase_iam_foundation
   indexes:
-  - name: idx_iam_organization_member_tenant_user
+  - name: idx_iam_organization_membership_tenant_user
     columns:
     - tenant_id
     - user_id
+    - organization_id
     - status
-  - name: idx_iam_organization_member_tenant_org
+  - name: idx_iam_organization_membership_tenant_org
     columns:
     - tenant_id
     - organization_id
+    - status
+- table: iam_department
+  domain: iam
+  profile: tree_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-iam
+  generated_by_this_project: true
+  frontend_routes:
+  - /console/account
+  - /admin/organization
+  api_surfaces:
+  - app
+  - backend
+  primary_key: id
+  columns:
+    id: string(128)
+    tenant_id: string(128)
+    organization_id: string(128)
+    parent_department_id: string(128)
+    code: string(128)
+    name: string(256)
+    department_kind: string(64)
+    path: string(1024)
+    cost_center_code: string(128)
+    manager_membership_id: string(128)
+    status: string(32)
+    created_at: instant
+    updated_at: instant
+  required_columns:
+  - id
+  - tenant_id
+  - organization_id
+  - code
+  - name
+  - department_kind
+  - path
+  - status
+  - created_at
+  - updated_at
+  unique_constraints:
+  - name: uk_iam_department_tenant_org_code
+    columns:
+    - tenant_id
+    - organization_id
+    - code
+    source: appbase_iam_foundation
+  indexes:
+  - name: idx_iam_department_tenant_org_parent
+    columns:
+    - tenant_id
+    - organization_id
+    - parent_department_id
+    - status
+  - name: idx_iam_department_tenant_org_path
+    columns:
+    - tenant_id
+    - organization_id
+    - path
+    - status
+- table: iam_department_assignment
+  domain: iam
+  profile: relation_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-iam
+  generated_by_this_project: true
+  source_tables:
+  - iam_organization_membership
+  - iam_department
+  frontend_routes:
+  - /console/account
+  - /admin/organization
+  api_surfaces:
+  - app
+  - backend
+  primary_key: id
+  columns:
+    id: string(128)
+    tenant_id: string(128)
+    organization_id: string(128)
+    organization_membership_id: string(128)
+    department_id: string(128)
+    user_id: string(128)
+    assignment_kind: string(64)
+    is_primary:
+      type: int32
+      constraints: NOT NULL DEFAULT 0
+    effective_from: instant
+    effective_to: instant
+    status: string(32)
+    created_at: instant
+    updated_at: instant
+  required_columns:
+  - id
+  - tenant_id
+  - organization_id
+  - organization_membership_id
+  - department_id
+  - user_id
+  - assignment_kind
+  - is_primary
+  - effective_from
+  - status
+  - created_at
+  - updated_at
+  unique_constraints:
+  - name: uk_iam_department_assignment_member_department
+    columns:
+    - tenant_id
+    - organization_id
+    - organization_membership_id
+    - department_id
+    - assignment_kind
+    source: appbase_iam_foundation
+  indexes:
+  - name: idx_iam_department_assignment_department
+    columns:
+    - tenant_id
+    - organization_id
+    - department_id
+    - status
+  - name: idx_iam_department_assignment_user
+    columns:
+    - tenant_id
+    - organization_id
+    - user_id
+    - status
+- table: iam_position
+  domain: iam
+  profile: tenant_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-iam
+  generated_by_this_project: true
+  source_tables:
+  - iam_department
+  frontend_routes:
+  - /console/account
+  - /admin/organization
+  api_surfaces:
+  - app
+  - backend
+  primary_key: id
+  columns:
+    id: string(128)
+    tenant_id: string(128)
+    organization_id: string(128)
+    department_id: string(128)
+    code: string(128)
+    name: string(256)
+    position_kind: string(64)
+    rank_level: int32
+    status: string(32)
+    created_at: instant
+    updated_at: instant
+  required_columns:
+  - id
+  - tenant_id
+  - organization_id
+  - code
+  - name
+  - position_kind
+  - status
+  - created_at
+  - updated_at
+  unique_constraints:
+  - name: uk_iam_position_tenant_org_code
+    columns:
+    - tenant_id
+    - organization_id
+    - code
+    source: appbase_iam_foundation
+  indexes:
+  - name: idx_iam_position_tenant_org_department
+    columns:
+    - tenant_id
+    - organization_id
+    - department_id
+    - status
+- table: iam_position_assignment
+  domain: iam
+  profile: relation_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-iam
+  generated_by_this_project: true
+  source_tables:
+  - iam_department_assignment
+  - iam_position
+  frontend_routes:
+  - /console/account
+  - /admin/organization
+  api_surfaces:
+  - app
+  - backend
+  primary_key: id
+  columns:
+    id: string(128)
+    tenant_id: string(128)
+    organization_id: string(128)
+    department_assignment_id: string(128)
+    position_id: string(128)
+    user_id: string(128)
+    is_primary:
+      type: int32
+      constraints: NOT NULL DEFAULT 0
+    effective_from: instant
+    effective_to: instant
+    status: string(32)
+    created_at: instant
+    updated_at: instant
+  required_columns:
+  - id
+  - tenant_id
+  - organization_id
+  - department_assignment_id
+  - position_id
+  - user_id
+  - is_primary
+  - effective_from
+  - status
+  - created_at
+  - updated_at
+  unique_constraints:
+  - name: uk_iam_position_assignment_department_position
+    columns:
+    - tenant_id
+    - organization_id
+    - department_assignment_id
+    - position_id
+    source: appbase_iam_foundation
+  indexes:
+  - name: idx_iam_position_assignment_position
+    columns:
+    - tenant_id
+    - organization_id
+    - position_id
+    - status
+  - name: idx_iam_position_assignment_user
+    columns:
+    - tenant_id
+    - organization_id
+    - user_id
     - status
 - table: iam_user
   domain: iam
@@ -582,6 +839,70 @@ tables:
     - tenant_id
     - permission_id
     - role_id
+- table: iam_role_binding
+  domain: iam
+  profile: relation_entity
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-iam
+  generated_by_this_project: true
+  source_tables:
+  - iam_role
+  frontend_routes:
+  - /admin/user
+  - /admin/organization
+  api_surfaces:
+  - app
+  - backend
+  primary_key: id
+  columns:
+    id: string(128)
+    tenant_id: string(128)
+    role_id: string(128)
+    principal_kind: string(64)
+    principal_id: string(128)
+    scope_kind: string(64)
+    scope_id: string(128)
+    effect: string(32)
+    condition_json: string(4000)
+    status: string(32)
+    created_at: instant
+    updated_at: instant
+  required_columns:
+  - id
+  - tenant_id
+  - role_id
+  - principal_kind
+  - principal_id
+  - scope_kind
+  - scope_id
+  - effect
+  - status
+  - created_at
+  - updated_at
+  unique_constraints:
+  - name: uk_iam_role_binding_principal_scope
+    columns:
+    - tenant_id
+    - role_id
+    - principal_kind
+    - principal_id
+    - scope_kind
+    - scope_id
+    source: appbase_iam_foundation
+  indexes:
+  - name: idx_iam_role_binding_principal
+    columns:
+    - tenant_id
+    - principal_kind
+    - principal_id
+    - status
+  - name: idx_iam_role_binding_scope
+    columns:
+    - tenant_id
+    - scope_kind
+    - scope_id
+    - status
 - table: iam_user_role
   domain: iam
   profile: tenant_entity

@@ -31,7 +31,7 @@ frontend_models:
   - updatedAt
   data_sources:
   - iam_organization
-  - iam_organization_member
+  - iam_organization_membership
 - route: /admin/organization
   source: *adminOrganizationService
   interface: DepartmentTreeNode
@@ -62,7 +62,7 @@ frontend_models:
   - updatedAt
   data_sources:
   - iam_organization
-  - iam_organization_member
+  - iam_organization_membership
 - route: /admin/organization
   source: *adminOrganizationService
   interface: OrganizationMemberRecord
@@ -81,7 +81,7 @@ frontend_models:
   data_sources:
   - iam_user
   - iam_organization
-  - iam_organization_member
+  - iam_organization_membership
 - route: /admin/organization
   source: *adminOrganizationService
   interface: UserRecord
@@ -110,7 +110,7 @@ frontend_models:
   - createdAt
   data_sources:
   - iam_user
-  - iam_organization_member
+  - iam_organization_membership
 - route: /admin/organization
   source: *adminOrganizationService
   interface: PositionRecord
@@ -127,7 +127,7 @@ frontend_models:
   - updatedAt
   data_sources:
   - iam_organization
-  - iam_organization_member
+  - iam_organization_membership
 - route: /admin/organization
   source: *adminOrganizationService
   interface: PositionAssignmentRecord
@@ -142,7 +142,7 @@ frontend_models:
   - createdAt
   data_sources:
   - iam_user
-  - iam_organization_member
+  - iam_organization_membership
 - route: /admin/organization
   source: *adminOrganizationService
   interface: RoleRecord
@@ -174,7 +174,7 @@ frontend_models:
   - iam_role
   - iam_user_role
   - iam_organization
-  - iam_organization_member
+  - iam_organization_membership
 - route: /admin/organization
   source: *adminOrganizationService
   interface: PermissionRecord
@@ -318,7 +318,7 @@ frontend_models:
   data_sources:
   - iam_user
   - iam_organization
-  - iam_organization_member
+  - iam_organization_membership
   - iam_role
   - iam_permission
   - iam_role_permission
@@ -358,7 +358,7 @@ frontend_models:
   - sortWeight
   data_sources:
   - iam_organization
-  - iam_organization_member
+  - iam_organization_membership
 - route: /admin/organization
   source: *adminOrganizationService
   interface: MembershipCommand
@@ -374,7 +374,7 @@ frontend_models:
   data_sources:
   - iam_user
   - iam_organization
-  - iam_organization_member
+  - iam_organization_membership
 - route: /admin/organization
   source: *adminOrganizationService
   interface: DepartmentAssignmentCommand
@@ -387,7 +387,7 @@ frontend_models:
   - isPrimary
   data_sources:
   - iam_user
-  - iam_organization_member
+  - iam_organization_membership
 - route: /admin/organization
   source: *adminOrganizationService
   interface: PositionCommand
@@ -401,7 +401,7 @@ frontend_models:
   - status
   data_sources:
   - iam_organization
-  - iam_organization_member
+  - iam_organization_membership
 - route: /admin/organization
   source: *adminOrganizationService
   interface: PositionAssignmentCommand
@@ -414,7 +414,7 @@ frontend_models:
   - endedAt
   data_sources:
   - iam_user
-  - iam_organization_member
+  - iam_organization_membership
 - route: /admin/organization
   source: *adminOrganizationService
   interface: RoleCommand
@@ -441,7 +441,7 @@ frontend_models:
   - iam_role
   - iam_user_role
   - iam_organization
-  - iam_organization_member
+  - iam_organization_membership
 - route: /admin/organization
   source: *adminOrganizationService
   interface: PermissionCommand

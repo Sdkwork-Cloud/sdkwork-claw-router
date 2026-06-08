@@ -663,12 +663,16 @@ async fn database_config_router_serves_signed_subject_announcement_crud() {
     let create_payload: serde_json::Value = serde_json::from_str(&create_body_text).unwrap();
     assert_eq!("2000", create_payload["code"]);
     assert_eq!("draft", create_payload["data"]["item"]["status"]);
+    let announcement_id = create_payload["data"]["item"]["id"]
+        .as_str()
+        .unwrap()
+        .to_owned();
 
     let update_response = router
         .clone()
         .oneshot(signed_request(
             "PATCH",
-            "/backend/v3/api/content/announcements/1",
+            &format!("/backend/v3/api/content/announcements/{announcement_id}"),
             Body::from(r#"{"status":"published","target":"vip"}"#),
         ))
         .await
@@ -705,7 +709,7 @@ async fn database_config_router_serves_signed_subject_announcement_crud() {
         .clone()
         .oneshot(signed_request(
             "DELETE",
-            "/backend/v3/api/content/announcements/1",
+            &format!("/backend/v3/api/content/announcements/{announcement_id}"),
             Body::empty(),
         ))
         .await
@@ -1951,7 +1955,130 @@ async fn database_config_router_serves_backend_sdk_contract_aliases() {
                 "{path} must expose recentUsage"
             );
         }
+        if path == "/backend/v3/api/iam/users" {
+            assert_eq!("owner@example.com", payload["data"]["items"][0]["email"]);
+            assert!(
+                !body_text.contains("local-admin@sdkwork-iam.local"),
+                "{path} must not expose appbase demo users"
+            );
+        }
+        if path == "/backend/v3/api/iam/api_keys" {
+            assert_eq!("Production", payload["data"]["30"][0]["name"]);
+            assert!(
+                !body_text.contains("sk-local-admin"),
+                "{path} must not expose appbase demo api keys"
+            );
+        }
     }
+}
+
+#[tokio::test]
+async fn database_config_router_serves_appbase_backend_iam_from_real_sql_runtime() {
+    let database_url = unique_sqlite_url();
+    let pool = create_sqlite_pool(&database_url).await;
+    create_schema(&pool).await;
+    seed_catalog(&pool).await;
+    seed_admin_users(&pool).await;
+    pool.close().await;
+
+    let router = configured_router_from_database_config(
+        DatabaseConfig::from_url_with_max_connections(database_url.as_str(), 1).unwrap(),
+        Some(api_key_security_config()),
+        Some(trusted_subject_config()),
+        Some(app_session_config()),
+    )
+    .await
+    .unwrap();
+
+    let organizations_payload = request_json(
+        router.clone(),
+        signed_request("GET", "/backend/v3/api/iam/organizations", Body::empty()),
+    )
+    .await;
+    assert_eq!("2000", organizations_payload["code"]);
+    assert_eq!("20", organizations_payload["data"]["items"][0]["id"]);
+    assert_eq!(
+        "SDKWork Operations",
+        organizations_payload["data"]["items"][0]["name"]
+    );
+    assert!(
+        !organizations_payload.to_string().contains("org_demo"),
+        "backend IAM organization route must not expose appbase demo data"
+    );
+
+    let create_organization_payload = request_json(
+        router.clone(),
+        app_session_request(
+            "POST",
+            "/backend/v3/api/iam/organizations",
+            Body::from(r#"{"name":"Customer Success","status":"active"}"#),
+        ),
+    )
+    .await;
+    assert_eq!("2000", create_organization_payload["code"]);
+    assert_eq!(
+        "customer-success",
+        create_organization_payload["data"]["item"]["code"],
+        "database configured admin runtime must serve real POST /backend/v3/api/iam/organizations instead of the contract 501 fallback"
+    );
+    let create_department_payload = request_json(
+        router.clone(),
+        app_session_request(
+            "POST",
+            "/backend/v3/api/iam/departments",
+            Body::from(r#"{"organizationId":"20","name":"Support Desk","status":"active"}"#),
+        ),
+    )
+    .await;
+    assert_eq!("2000", create_department_payload["code"]);
+    assert_eq!(
+        "support-desk", create_department_payload["data"]["item"]["code"],
+        "department code should be generated from the submitted name when omitted"
+    );
+
+    let organization_tree_payload = request_json(
+        router.clone(),
+        signed_request(
+            "GET",
+            "/backend/v3/api/iam/organizations/tree",
+            Body::empty(),
+        ),
+    )
+    .await;
+    assert_eq!("20", organization_tree_payload["data"]["items"][0]["id"]);
+
+    let roles_payload = request_json(
+        router.clone(),
+        signed_request("GET", "/backend/v3/api/iam/roles", Body::empty()),
+    )
+    .await;
+    assert_eq!("role-admin", roles_payload["data"]["items"][0]["id"]);
+    assert_eq!("admin", roles_payload["data"]["items"][0]["code"]);
+
+    let permissions_payload = request_json(
+        router.clone(),
+        signed_request("GET", "/backend/v3/api/iam/permissions", Body::empty()),
+    )
+    .await;
+    assert_eq!(
+        "permission-iam-read",
+        permissions_payload["data"]["items"][0]["id"]
+    );
+    assert_eq!("iam.read", permissions_payload["data"]["items"][0]["code"]);
+
+    let role_permissions_payload = request_json(
+        router,
+        signed_request(
+            "GET",
+            "/backend/v3/api/iam/roles/role-admin/permissions",
+            Body::empty(),
+        ),
+    )
+    .await;
+    assert_eq!(
+        "permission-iam-read",
+        role_permissions_payload["data"]["items"][0]["id"]
+    );
 }
 
 #[tokio::test]
@@ -4201,17 +4328,49 @@ async fn create_schema(pool: &SqlitePool) {
             updated_at TEXT NOT NULL,
             UNIQUE (tenant_id, username)
         )"#,
-        r#"CREATE TABLE iam_organization_member (
+        r#"CREATE TABLE iam_organization (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            parent_id TEXT,
+            code TEXT,
+            name TEXT,
+            path TEXT,
+            status TEXT,
+            created_at TEXT,
+            updated_at TEXT
+        )"#,
+        r#"CREATE TABLE iam_organization_membership (
             id TEXT PRIMARY KEY,
             tenant_id TEXT NOT NULL,
             organization_id TEXT NOT NULL,
             user_id TEXT NOT NULL,
-            role_code TEXT,
+            membership_kind TEXT NOT NULL,
+            employee_no TEXT,
+            display_name TEXT,
+            is_primary INTEGER NOT NULL DEFAULT 0,
             status TEXT NOT NULL,
             joined_at TEXT NOT NULL,
             left_at TEXT,
             remark TEXT,
-            UNIQUE (tenant_id, organization_id, user_id)
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL,
+            UNIQUE (tenant_id, organization_id, user_id, membership_kind)
+        )"#,
+        r#"CREATE TABLE iam_department (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT NOT NULL,
+            parent_department_id TEXT,
+            code TEXT NOT NULL,
+            name TEXT NOT NULL,
+            department_kind TEXT NOT NULL,
+            path TEXT NOT NULL,
+            cost_center_code TEXT,
+            manager_membership_id TEXT,
+            status TEXT NOT NULL,
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL,
+            UNIQUE (tenant_id, organization_id, code)
         )"#,
         r#"CREATE TABLE commerce_account (
             id TEXT PRIMARY KEY,
@@ -4642,6 +4801,21 @@ async fn create_schema(pool: &SqlitePool) {
             organization_id TEXT,
             created_at TEXT NOT NULL,
             UNIQUE (tenant_id, user_id, role_id, organization_id)
+        )"#,
+        r#"CREATE TABLE iam_permission (
+            id TEXT PRIMARY KEY,
+            code TEXT NOT NULL,
+            name TEXT NOT NULL,
+            resource TEXT NOT NULL,
+            action TEXT NOT NULL,
+            created_at TEXT NOT NULL
+        )"#,
+        r#"CREATE TABLE iam_role_permission (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            role_id TEXT NOT NULL,
+            permission_id TEXT NOT NULL,
+            created_at TEXT NOT NULL
         )"#,
         r#"CREATE TABLE plus_app (
             id INTEGER PRIMARY KEY,
@@ -5657,7 +5831,8 @@ async fn seed_catalog(pool: &SqlitePool) {
         "INSERT INTO iam_gateway_api_key (id, tenant_id, organization_id, user_id, channel_group_id, key_prefix, key_hash, idempotency_key, status) VALUES (100, 10, 20, 30, 10, 'sk-test', 'hash:sk-test', 'seed-api-key-100', 1)",
         "INSERT INTO iam_gateway_api_key_channel_group (id, uuid, tenant_id, organization_id, user_id, api_key_id, channel_group_id, channel_group_code, binding_role, routing_strategy, priority, weight, status) VALUES (1000, 'gateway-api-key-channel-group-standard-admin-api-test', 10, 20, 30, 100, 10, 'standard-group', 'route', 'auto', 100, 100, 1)",
         r#"INSERT INTO iam_user (id, tenant_id, username, display_name, email, phone, avatar_media_resource_id, avatar_object_blob_id, avatar_resource_snapshot, status, created_at, updated_at) VALUES ('1', '10', 'bootstrap-admin', 'Bootstrap Admin', 'bootstrap-admin@example.com', '', 'media-bootstrap-admin-avatar', 'iam-user-avatar:bootstrap-admin', '{"kind":"image","source":"provider_asset","uri":"iam-user-avatar:bootstrap-admin"}', 'active', '2026-04-01 08:00:00', '2026-04-29 08:30:00')"#,
-        "INSERT INTO iam_organization_member (id, tenant_id, organization_id, user_id, role_code, status, joined_at, left_at, remark) VALUES ('member-1-admin', '10', '20', '1', 'admin', 'active', '2026-04-01 08:00:00', NULL, 'seed bootstrap admin membership')",
+        "INSERT INTO iam_organization (id, tenant_id, parent_id, code, name, path, status, created_at, updated_at) VALUES ('20', '10', NULL, 'sdkwork-ops', 'SDKWork Operations', '/20', 'active', '2026-04-01 08:00:00', '2026-04-29 08:30:00')",
+        "INSERT INTO iam_organization_membership (id, tenant_id, organization_id, user_id, membership_kind, display_name, is_primary, status, joined_at, left_at, remark, created_at, updated_at) VALUES ('member-1-admin', '10', '20', '1', 'admin', 'Bootstrap Admin', 1, 'active', '2026-04-01 08:00:00', NULL, 'seed bootstrap admin membership', '2026-04-01 08:00:00', '2026-04-29 08:30:00')",
         "INSERT INTO ai_model_pricing (id, catalog_key, model, vendor_code, region_code, price_side, billing_meter_code, unit_price, currency, status, priority) VALUES (1, 'openai/gpt-4o-mini', 'gpt-4o-mini', 'openai', 'global', 1, 'llm_input_token', '0.150000', 'USD', 1, 1)",
         "INSERT INTO ai_model_pricing (id, catalog_key, model, vendor_code, region_code, price_side, billing_meter_code, unit_price, currency, provider_code, channel_id, status, priority) VALUES (2, 'openai/gpt-4o-mini', 'gpt-4o-mini', 'openai', 'global', 2, 'llm_input_token', '0.110000', 'USD', 'openrouter', 3001, 1, 1)",
     ] {
@@ -5670,15 +5845,21 @@ async fn seed_admin_users(pool: &SqlitePool) {
         r#"INSERT INTO iam_user
             (id, tenant_id, username, display_name, email, phone, avatar_media_resource_id, avatar_object_blob_id, avatar_resource_snapshot, status, created_at, updated_at)
             VALUES ('30', '10', 'owner', 'Owner', 'owner@example.com', '', 'media-owner-avatar', 'iam-user-avatar:owner', '{"kind":"image","source":"provider_asset","uri":"iam-user-avatar:owner"}', 'active', '2026-04-01 08:00:00', '2026-04-29 08:30:00')"#,
-        r#"INSERT INTO iam_organization_member
-            (id, tenant_id, organization_id, user_id, role_code, status, joined_at, left_at, remark)
-            VALUES ('member-30-admin', '10', '20', '30', 'admin', 'active', '2026-04-01 08:00:00', NULL, 'seed admin membership')"#,
+        r#"INSERT INTO iam_organization_membership
+            (id, tenant_id, organization_id, user_id, membership_kind, display_name, is_primary, status, joined_at, left_at, remark, created_at, updated_at)
+            VALUES ('member-30-admin', '10', '20', '30', 'admin', 'Owner', 1, 'active', '2026-04-01 08:00:00', NULL, 'seed admin membership', '2026-04-01 08:00:00', '2026-04-29 08:30:00')"#,
         r#"INSERT INTO commerce_account
             (id, tenant_id, organization_id, owner_user_id, asset_type, currency_code, available_amount, frozen_amount, version, status, created_at, updated_at)
             VALUES ('account-400', '10', '20', '30', 'cash', 'USD', '25.5000', '0', 0, 'active', '2026-04-01 08:00:00', '2026-04-29 08:30:00')"#,
         r#"INSERT INTO iam_role
             (id, tenant_id, code, name, status, created_at, updated_at)
             VALUES ('role-admin', '10', 'admin', 'Admin', 'active', '2026-04-01 08:00:00', '2026-04-01 08:00:00')"#,
+        r#"INSERT INTO iam_permission
+            (id, code, name, resource, action, created_at)
+            VALUES ('permission-iam-read', 'iam.read', 'Read IAM', 'iam', 'read', '2026-04-01 08:00:00')"#,
+        r#"INSERT INTO iam_role_permission
+            (id, tenant_id, role_id, permission_id, created_at)
+            VALUES ('role-admin-permission-iam-read', '10', 'role-admin', 'permission-iam-read', '2026-04-01 08:00:00')"#,
         r#"INSERT INTO iam_user_role
             (id, tenant_id, user_id, role_id, organization_id, created_at)
             VALUES ('user-role-30-admin', '10', '30', 'role-admin', '20', '2026-04-01 08:00:00')"#,

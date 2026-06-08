@@ -255,7 +255,7 @@ impl Default for PortalRuntimeEnv {
             open_api_base_url: "/v1".to_owned(),
             app_api_base_url: "/app/v3/api".to_owned(),
             backend_api_base_url: "/backend/v3/api".to_owned(),
-            appbase_backend_api_base_url: None,
+            appbase_backend_api_base_url: Some("/backend/v3/api".to_owned()),
             tool_api_enabled: false,
         }
     }
@@ -417,8 +417,18 @@ impl EdgeServerConfig {
         mut self,
         value: impl AsRef<str>,
     ) -> Result<Self, String> {
-        self.portal_runtime_env.backend_api_base_url =
+        let previous_backend_api_base_url = self.portal_runtime_env.backend_api_base_url.clone();
+        let normalized =
             normalize_portal_public_url(value.as_ref(), "PORTAL_PUBLIC_BACKEND_API_BASE_URL")?;
+        self.portal_runtime_env.backend_api_base_url = normalized.clone();
+        if self
+            .portal_runtime_env
+            .appbase_backend_api_base_url
+            .as_deref()
+            .map_or(true, |value| value == previous_backend_api_base_url)
+        {
+            self.portal_runtime_env.appbase_backend_api_base_url = Some(normalized);
+        }
         self.refresh_portal_content_security_policy()?;
         Ok(self)
     }

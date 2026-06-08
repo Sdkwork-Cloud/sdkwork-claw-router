@@ -132,7 +132,7 @@ frontend_operations:
   read_sources: &adminOrganizationReadSources
   - iam_user
   - iam_organization
-  - iam_organization_member
+  - iam_organization_membership
   - iam_role
   - iam_permission
   - iam_role_permission
@@ -229,7 +229,7 @@ frontend_operations:
   openapi_exposed: false
   read_sources:
   - iam_organization
-  - iam_organization_member
+  - iam_organization_membership
 - route: /admin/organization
   source: *adminOrganizationService
   operation: createMembership
@@ -244,7 +244,7 @@ frontend_operations:
   - iam_user
   - iam_organization
   write_tables: &adminOrganizationMemberWriteTables
-  - iam_organization_member
+  - iam_organization_membership
   - ops_audit_log
 - route: /admin/organization
   source: *adminOrganizationService
@@ -257,7 +257,7 @@ frontend_operations:
   sdk_domain: iam
   openapi_exposed: false
   read_sources:
-  - iam_organization_member
+  - iam_organization_membership
   write_tables: *adminOrganizationMemberWriteTables
 - route: /admin/organization
   source: *adminOrganizationService
@@ -270,7 +270,7 @@ frontend_operations:
   sdk_domain: iam
   openapi_exposed: false
   read_sources:
-  - iam_organization_member
+  - iam_organization_membership
   write_tables: *adminOrganizationMemberWriteTables
 - route: /admin/organization
   source: *adminOrganizationService
@@ -284,7 +284,7 @@ frontend_operations:
   openapi_exposed: false
   read_sources:
   - iam_organization
-  - iam_organization_member
+  - iam_organization_membership
   write_tables: *adminOrganizationMemberWriteTables
 - route: /admin/organization
   source: *adminOrganizationService
@@ -297,7 +297,7 @@ frontend_operations:
   sdk_domain: iam
   openapi_exposed: false
   read_sources:
-  - iam_organization_member
+  - iam_organization_membership
   write_tables: *adminOrganizationMemberWriteTables
 - route: /admin/organization
   source: *adminOrganizationService
@@ -310,7 +310,7 @@ frontend_operations:
   sdk_domain: iam
   openapi_exposed: false
   read_sources:
-  - iam_organization_member
+  - iam_organization_membership
   write_tables: *adminOrganizationMemberWriteTables
 - route: /admin/organization
   source: *adminOrganizationService
@@ -363,7 +363,7 @@ frontend_operations:
   openapi_exposed: false
   read_sources:
   - iam_organization
-  - iam_organization_member
+  - iam_organization_membership
   write_tables: *adminOrganizationMemberWriteTables
 - route: /admin/organization
   source: *adminOrganizationService
@@ -376,7 +376,7 @@ frontend_operations:
   sdk_domain: iam
   openapi_exposed: false
   read_sources:
-  - iam_organization_member
+  - iam_organization_membership
   write_tables: *adminOrganizationMemberWriteTables
 - route: /admin/organization
   source: *adminOrganizationService
@@ -389,7 +389,7 @@ frontend_operations:
   sdk_domain: iam
   openapi_exposed: false
   read_sources:
-  - iam_organization_member
+  - iam_organization_membership
   write_tables: *adminOrganizationMemberWriteTables
 - route: /admin/organization
   source: *adminOrganizationService
@@ -444,7 +444,7 @@ frontend_operations:
   openapi_exposed: false
   read_sources:
   - iam_role
-  - iam_organization_member
+  - iam_organization_membership
   write_tables: &adminRoleBindingWriteTables
   - iam_user_role
   - ops_audit_log
