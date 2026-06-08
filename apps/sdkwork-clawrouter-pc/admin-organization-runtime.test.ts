@@ -547,8 +547,20 @@ test("admin organization add member uses a dedicated user chooser instead of raw
   assert.match(sourceCode, /usersById: Map<string, UserRecord>;/);
   assert.match(sourceCode, /function formatUserLabel\(userId: string \| null \| undefined, lookups: DirectoryLookups\): string/);
   assert.match(sourceCode, /type ChooseUserModalState = \{ organizationId: string \} \| null;/);
+  assert.match(sourceCode, /type ChooseUserSelectionMode = 'single' \| 'multiple';/);
   assert.match(sourceCode, /const \[chooseUserModal, setChooseUserModal\] = useState<ChooseUserModalState>\(null\);/);
   assert.match(sourceCode, /function ChooseUserModal\(/);
+  assert.match(sourceCode, /selectionMode = 'single'/);
+  assert.match(sourceCode, /onChoose: \(user: UserRecord\) => void \| Promise<void>;/);
+  assert.match(sourceCode, /onChooseMany\?: \(users: UserRecord\[]\) => void \| Promise<void>;/);
+  assert.match(sourceCode, /const \[selectedUserIds, setSelectedUserIds\] = useState<Set<string>>\(\(\) => new Set\(\)\);/);
+  assert.match(sourceCode, /const isMultipleSelection = selectionMode === 'multiple';/);
+  assert.match(sourceCode, /function toggleSelectedUser\(userId: string\): void/);
+  assert.match(sourceCode, /async function handleChooseSelectedUsers\(\): Promise<void>/);
+  assert.match(sourceCode, /if \(onChooseMany\) \{[\s\S]*await onChooseMany\(selectedUsers\);[\s\S]*return;[\s\S]*\}[\s\S]*await Promise\.all\(selectedUsers\.map\(onChoose\)\);/);
+  assert.match(sourceCode, /type="checkbox"[\s\S]*checked=\{selectedUserIds\.has\(user\.id\)\}/);
+  assert.match(sourceCode, /HeaderButton label=\{t\('admin\.organization\.chooseUser\.confirmSelection', 'Add selected'\)\} onClick=\{handleChooseSelectedUsers\} disabled=\{isBusy \|\| selectedUserIds\.size === 0\} variant="primary"/);
+  assert.match(sourceCode, /colSpan=\{isMultipleSelection \? 8 : 7\}/);
   assert.match(sourceCode, /function availableUsersForMembership\(/);
   assert.match(sourceCode, /function userSearchLabels\(user: UserRecord\): string\[]/);
   assert.match(sourceCode, /<ChooseUserModal[\s\S]*existingMembers=\{membersForActiveOrganization\}[\s\S]*onChoose=\{handleChooseUser\}[\s\S]*users=\{directory\.users\}/);
@@ -561,10 +573,15 @@ test("admin organization add member uses a dedicated user chooser instead of raw
   assert.match(sourceCode, /setChooseUserModal\(\{ organizationId: node\.organizationId \}\);/);
   assert.match(
     sourceCode,
-    /if \(dialog\.kind === 'membership'\) \{[\s\S]*dialog\.mode === 'edit'[\s\S]*SelectField[\s\S]*name="status"[\s\S]*\}/,
+    /if \(dialog\.kind === 'membership'\) \{[\s\S]*if \(dialog\.mode !== 'edit' \|\| !target\) \{[\s\S]*return null;[\s\S]*\}[\s\S]*SelectField[\s\S]*name="status"[\s\S]*\}/,
     "membership edit can keep lifecycle fields but member creation should happen through ChooseUserModal",
   );
+  assert.match(sourceCode, /function readMembershipUpdateCommand\(form: FormData, fallbackOrganizationId: string\): Partial<MembershipCommand>/);
+  assert.match(sourceCode, /const input = readMembershipUpdateCommand\(form, activeOrganizationId\);/);
   assert.doesNotMatch(sourceCode, /setDialog\(\{ kind: 'membership', mode: 'create' \}\)/);
+  assert.doesNotMatch(sourceCode, /OrganizationService\.createMembership\(input\)/);
+  assert.doesNotMatch(sourceCode, /function readMembershipCommand\(form: FormData, fallbackOrganizationId: string\): MembershipCommand/);
+  assert.doesNotMatch(sourceCode, /userId: requiredFormText\(form, 'userId'\)/);
   assert.doesNotMatch(sourceCode, /function availableDirectoryUserOptions\(/);
   assert.doesNotMatch(sourceCode, /membership-user-/);
   assert.doesNotMatch(
@@ -594,6 +611,7 @@ test("admin organization user records keep professional optional profile fields 
   assert.match(sourceCode, /function formatUserGender\(user: UserRecord \| null \| undefined, t: TranslationFunction\): string/);
   assert.match(sourceCode, /function userForMember\(member: OrganizationMemberRecord, lookups: DirectoryLookups\): UserRecord \| null/);
   assert.match(sourceCode, /memberUserRegion\(member, lookups\)/);
+  assert.match(sourceCode, /memberUserAddress\(member, lookups\)/);
   assert.match(sourceCode, /memberUserGender\(member, lookups, t\)/);
   assert.match(sourceCode, /t\('admin\.organization\.columns\.region', 'Region'\)/);
   assert.match(sourceCode, /t\('admin\.organization\.columns\.gender', 'Gender'\)/);
@@ -1200,15 +1218,15 @@ test("admin organization relation actions require active operational context", (
   assert.match(sourceCode, /canBindRole=\{Boolean\(activeRoleId && activeOrganizationIdForRelations\)\}/);
   assert.match(
     sourceCode,
-    /<PrimaryButton label=\{t\('admin\.organization\.actions\.addMember', 'Add member'\)\} onClick=\{onAddMember\} disabled=\{!canAddMember\}>/,
+    /<HeaderButton label=\{t\('admin\.organization\.actions\.addMember', 'Add member'\)\} onClick=\{onAddMember\} disabled=\{!canAddMember\} variant="primary">/,
   );
   assert.match(
     sourceCode,
-    /<SmallButton label=\{t\('admin\.organization\.actions\.assign', 'Assign'\)\} onClick=\{onAddAssignment\} disabled=\{!canAddAssignment\} \/>/,
+    /<HeaderButton label=\{t\('admin\.organization\.actions\.assign', 'Assign'\)\} onClick=\{onAddAssignment\} disabled=\{!canAddAssignment\} \/>/,
   );
   assert.match(
     sourceCode,
-    /<PrimaryButton label=\{t\('admin\.organization\.actions\.createPosition', 'Create position'\)\} onClick=\{onCreate\} disabled=\{!canCreate\}>/,
+    /<HeaderButton label=\{t\('admin\.organization\.actions\.createPosition', 'Create position'\)\} onClick=\{onCreate\} disabled=\{!canCreate\} variant="primary">/,
   );
   assert.match(
     sourceCode,
@@ -1233,10 +1251,7 @@ test("admin organization relationship forms use active organization options and 
   );
   assert.match(sourceCode, /activeOrganizationIdForRelations=\{activeOrganizationIdForRelations\}/);
   assert.match(sourceCode, /activeOrganizationIdForRelations: string;/);
-  assert.match(
-    sourceCode,
-    /dialog\.kind === 'membership' \? dialog\.target\?\.organizationId \|\| activeOrganizationIdForRelations : activeOrganizationIdForRelations/,
-  );
+  assert.doesNotMatch(sourceCode, /dialog\.kind === 'membership' \? dialog\.target\?\.organizationId \|\| activeOrganizationIdForRelations : activeOrganizationIdForRelations/);
   assert.match(
     sourceCode,
     /dialog\.kind === 'department' \? dialog\.target\?\.organizationId \|\| activeOrganizationIdForRelations : activeOrganizationIdForRelations/,
@@ -1312,7 +1327,7 @@ test("admin organization form fields use controlled enterprise options", () => {
   );
   assert.match(
     sourceCode,
-    /SelectField label=\{t\('admin\.organization\.fields\.memberKind', 'Member kind'\)\} name="memberKind" defaultValue=\{target\?\.memberKind \|\| 'member'\} options=\{memberKindOptions\(t, target\?\.memberKind\)\}/,
+    /SelectField label=\{t\('admin\.organization\.fields\.memberKind', 'Member kind'\)\} name="memberKind" defaultValue=\{target\.memberKind \|\| 'member'\} options=\{memberKindOptions\(t, target\.memberKind\)\}/,
   );
   assert.match(
     sourceCode,

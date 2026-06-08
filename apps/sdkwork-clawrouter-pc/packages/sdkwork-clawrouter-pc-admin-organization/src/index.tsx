@@ -49,7 +49,6 @@ type OrganizationDialog =
   | { kind: 'organization'; mode: 'edit'; target: OrganizationRecord }
   | { kind: 'department'; mode: 'create'; target?: undefined }
   | { kind: 'department'; mode: 'edit'; target: DepartmentRecord }
-  | { kind: 'membership'; mode: 'create'; target?: undefined }
   | { kind: 'membership'; mode: 'edit'; target: OrganizationMemberRecord }
   | { kind: 'departmentAssignment'; mode: 'create'; target?: undefined }
   | { kind: 'departmentAssignment'; mode: 'edit'; target: DepartmentAssignmentRecord }
@@ -67,6 +66,7 @@ type OrganizationDialog =
 type AssignmentDrawerState = 'departmentAssignments' | 'positionAssignments';
 type AuthorizationDrawerState = 'roles' | 'rolePermissions' | 'roleBindings';
 type ChooseUserModalState = { organizationId: string } | null;
+type ChooseUserSelectionMode = 'single' | 'multiple';
 type ConfirmDependency = { count: number; label: string };
 type ConfirmTargetBase = { id: string; label: string; dependencies?: ConfirmDependency[]; blocked?: boolean };
 type ConfirmTarget =
@@ -1284,12 +1284,13 @@ function MembersTab({
         )}
         viewportClassName="min-h-0"
       >
-        <table className="w-full min-w-[1120px] text-left text-sm">
+        <table className="w-full min-w-[1240px] text-left text-sm">
           <thead className="sticky top-0 z-10 border-b border-slate-200 bg-slate-50 text-xs font-semibold text-slate-500 dark:border-white/10 dark:bg-[#121212] dark:text-slate-400">
             <tr>
               <th className="px-4 py-3">{t('admin.organization.columns.member', 'Member')}</th>
               <th className="px-4 py-3">{t('admin.organization.columns.contact', 'Contact')}</th>
               <th className="px-4 py-3">{t('admin.organization.columns.region', 'Region')}</th>
+              <th className="px-4 py-3">{t('admin.organization.columns.address', 'Address')}</th>
               <th className="px-4 py-3">{t('admin.organization.columns.gender', 'Gender')}</th>
               <th className="px-4 py-3">{t('admin.organization.columns.kind', 'Kind')}</th>
               <th className="px-4 py-3">{t('admin.organization.columns.status', 'Status')}</th>
@@ -1299,7 +1300,7 @@ function MembersTab({
           </thead>
           <tbody className="divide-y divide-slate-200 dark:divide-white/5">
             {members.length === 0 ? (
-              <BusinessStateTableRow colSpan={8} kind="empty" title={t('admin.organization.empty.members', 'No members')} />
+              <BusinessStateTableRow colSpan={9} kind="empty" title={t('admin.organization.empty.members', 'No members')} />
             ) : members.map((member) => (
               <tr key={member.id} className="hover:bg-slate-50 dark:hover:bg-white/5">
                 <td className="px-4 py-3">
@@ -1311,6 +1312,7 @@ function MembersTab({
                   <div className="text-xs text-slate-500">{memberContactSecondary(member, lookups)}</div>
                 </td>
                 <td className="px-4 py-3 text-slate-600 dark:text-slate-300">{memberUserRegion(member, lookups)}</td>
+                <td className="px-4 py-3 text-slate-600 dark:text-slate-300">{memberUserAddress(member, lookups)}</td>
                 <td className="px-4 py-3 text-slate-600 dark:text-slate-300">{memberUserGender(member, lookups, t)}</td>
                 <td className="px-4 py-3">{member.memberKind}</td>
                 <td className="px-4 py-3"><StatusPill status={member.status} /></td>
@@ -1886,7 +1888,9 @@ function ChooseUserModal({
   lookups,
   onCancel,
   onChoose,
+  onChooseMany,
   organizationId,
+  selectionMode = 'single',
   t,
   users,
 }: {
@@ -1895,14 +1899,39 @@ function ChooseUserModal({
   lookups: DirectoryLookups;
   onCancel: () => void;
   onChoose: (user: UserRecord) => void | Promise<void>;
+  onChooseMany?: (users: UserRecord[]) => void | Promise<void>;
   organizationId: string;
+  selectionMode?: ChooseUserSelectionMode;
   t: TranslationFunction;
   users: UserRecord[];
 }) {
   const [query, setQuery] = useState('');
+  const [selectedUserIds, setSelectedUserIds] = useState<Set<string>>(() => new Set());
   const normalizedQuery = query.trim().toLowerCase();
   const availableUsers = availableUsersForMembership(users, existingMembers, organizationId);
   const visibleUsers = filterBySearchWithLabels(availableUsers, normalizedQuery, userSearchLabels);
+  const isMultipleSelection = selectionMode === 'multiple';
+
+  function toggleSelectedUser(userId: string): void {
+    setSelectedUserIds((current) => {
+      const nextSelectedUserIds = new Set(current);
+      if (nextSelectedUserIds.has(userId)) {
+        nextSelectedUserIds.delete(userId);
+      } else {
+        nextSelectedUserIds.add(userId);
+      }
+      return nextSelectedUserIds;
+    });
+  }
+
+  async function handleChooseSelectedUsers(): Promise<void> {
+    const selectedUsers = availableUsers.filter((user) => selectedUserIds.has(user.id));
+    if (onChooseMany) {
+      await onChooseMany(selectedUsers);
+      return;
+    }
+    await Promise.all(selectedUsers.map(onChoose));
+  }
 
   return (
     <div className="fixed inset-0 z-40 flex items-center justify-center bg-slate-950/40 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-label={t('admin.organization.chooseUser.title', 'Choose user')}>
@@ -1932,12 +1961,14 @@ function ChooseUserModal({
           </div>
         </div>
         <div className="min-h-0 flex-1 overflow-auto">
-          <table className="w-full min-w-[920px] text-left text-sm">
+          <table className="w-full min-w-[1080px] text-left text-sm">
             <thead className="sticky top-0 z-10 border-b border-slate-200 bg-slate-50 text-xs font-semibold text-slate-500 dark:border-white/10 dark:bg-[#121212] dark:text-slate-400">
               <tr>
+                {isMultipleSelection ? <th className="w-10 px-4 py-3">{t('admin.organization.chooseUser.selection', 'Selection')}</th> : null}
                 <th className="px-4 py-3">{t('admin.organization.columns.member', 'Member')}</th>
                 <th className="px-4 py-3">{t('admin.organization.columns.contact', 'Contact')}</th>
                 <th className="px-4 py-3">{t('admin.organization.columns.region', 'Region')}</th>
+                <th className="px-4 py-3">{t('admin.organization.columns.address', 'Address')}</th>
                 <th className="px-4 py-3">{t('admin.organization.columns.gender', 'Gender')}</th>
                 <th className="px-4 py-3">{t('admin.organization.columns.status', 'Status')}</th>
                 <th className="px-4 py-3 text-right">{t('admin.organization.columns.actions', 'Actions')}</th>
@@ -1945,9 +1976,20 @@ function ChooseUserModal({
             </thead>
             <tbody className="divide-y divide-slate-200 dark:divide-white/5">
               {visibleUsers.length === 0 ? (
-                <BusinessStateTableRow colSpan={6} kind="empty" title={t('admin.organization.chooseUser.empty', 'No users available')} />
+                <BusinessStateTableRow colSpan={isMultipleSelection ? 8 : 7} kind="empty" title={t('admin.organization.chooseUser.empty', 'No users available')} />
               ) : visibleUsers.map((user) => (
                 <tr key={user.id} className="hover:bg-slate-50 dark:hover:bg-white/5">
+                  {isMultipleSelection ? (
+                    <td className="px-4 py-3">
+                      <input
+                        type="checkbox"
+                        aria-label={formatUserLabel(user.id, lookups)}
+                        checked={selectedUserIds.has(user.id)}
+                        className="h-4 w-4 rounded border-slate-300 text-blue-600"
+                        onChange={() => toggleSelectedUser(user.id)}
+                      />
+                    </td>
+                  ) : null}
                   <td className="px-4 py-3">
                     <div className="font-medium text-slate-900 dark:text-white">{user.displayName || user.username || user.id}</div>
                     <div className="text-xs text-slate-500">{formatUserLabel(user.id, lookups)}</div>
@@ -1957,17 +1999,21 @@ function ChooseUserModal({
                     <div className="text-xs text-slate-500">{user.mobile || '-'}</div>
                   </td>
                   <td className="px-4 py-3 text-slate-600 dark:text-slate-300">{formatUserRegion(user)}</td>
+                  <td className="px-4 py-3 text-slate-600 dark:text-slate-300">{user.address || '-'}</td>
                   <td className="px-4 py-3 text-slate-600 dark:text-slate-300">{formatUserGender(user, t)}</td>
                   <td className="px-4 py-3"><StatusPill status={user.status} /></td>
                   <td className="px-4 py-3 text-right">
-                    <HeaderButton label={t('admin.organization.actions.selectUser', 'Select')} onClick={() => onChoose(user)} disabled={isBusy} />
+                    {isMultipleSelection ? null : <HeaderButton label={t('admin.organization.actions.selectUser', 'Select')} onClick={() => onChoose(user)} disabled={isBusy} />}
                   </td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
-        <div className="flex shrink-0 justify-end border-t border-slate-200 px-5 py-4 dark:border-white/10">
+        <div className="flex shrink-0 justify-end gap-2 border-t border-slate-200 px-5 py-4 dark:border-white/10">
+          {isMultipleSelection ? (
+            <HeaderButton label={t('admin.organization.chooseUser.confirmSelection', 'Add selected')} onClick={handleChooseSelectedUsers} disabled={isBusy || selectedUserIds.size === 0} variant="primary" />
+          ) : null}
           <button type="button" onClick={onCancel} disabled={isBusy} className="rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 disabled:opacity-60 dark:border-white/10 dark:text-slate-200 dark:hover:bg-white/5">
             {t('common.actions.cancel', 'Cancel')}
           </button>
@@ -2350,6 +2396,10 @@ function memberUserRegion(member: OrganizationMemberRecord, lookups: DirectoryLo
 
 function memberUserGender(member: OrganizationMemberRecord, lookups: DirectoryLookups, t: TranslationFunction): string {
   return formatUserGender(userForMember(member, lookups), t);
+}
+
+function memberUserAddress(member: OrganizationMemberRecord, lookups: DirectoryLookups): string {
+  return userForMember(member, lookups)?.address || '-';
 }
 
 function formatUserRegion(user: UserRecord | null | undefined): string {
@@ -2829,11 +2879,9 @@ async function submitDialog(dialog: OrganizationDialog, form: FormData, activeOr
     return;
   }
   if (dialog.kind === 'membership') {
-    const input = readMembershipCommand(form, activeOrganizationId);
+    const input = readMembershipUpdateCommand(form, activeOrganizationId);
     if (dialog.mode === 'edit') {
       await OrganizationService.updateMembership(dialog.target.id, input);
-    } else {
-      await OrganizationService.createMembership(input);
     }
     return;
   }
@@ -3173,10 +3221,9 @@ function readDepartmentCommand(form: FormData, fallbackOrganizationId: string): 
   };
 }
 
-function readMembershipCommand(form: FormData, fallbackOrganizationId: string): MembershipCommand {
+function readMembershipUpdateCommand(form: FormData, fallbackOrganizationId: string): Partial<MembershipCommand> {
   return {
     organizationId: optionalFormText(form, 'organizationId') || fallbackOrganizationId,
-    userId: requiredFormText(form, 'userId'),
     displayName: optionalFormText(form, 'displayName'),
     email: optionalFormText(form, 'email'),
     mobile: optionalFormText(form, 'mobile'),
