@@ -361,6 +361,8 @@ export function OrganizationAdmin() {
       memberDisplayName(item, lookups),
       memberContactPrimary(item, lookups),
       memberContactSecondary(item, lookups),
+      memberUserRegion(item, lookups),
+      memberUserGender(item, lookups, t),
       formatMemberLabel(item.id, item.userId, lookups),
     ],
   );
@@ -2110,9 +2112,6 @@ function DialogFields({
   const [roleBindingPrincipalKind, setRoleBindingPrincipalKind] = useState('member');
   const [roleBindingScopeKind, setRoleBindingScopeKind] = useState(activeDepartmentIdForRelations ? 'department' : 'organization');
   const [roleBindingDepartmentId, setRoleBindingDepartmentId] = useState(activeDepartmentIdForRelations);
-  const [membershipOrganizationId, setMembershipOrganizationId] = useState(
-    dialog.kind === 'membership' ? dialog.target?.organizationId || activeOrganizationIdForRelations : activeOrganizationIdForRelations,
-  );
   const [departmentOrganizationId, setDepartmentOrganizationId] = useState(
     dialog.kind === 'department' ? dialog.target?.organizationId || activeOrganizationIdForRelations : activeOrganizationIdForRelations,
   );
@@ -2128,7 +2127,6 @@ function DialogFields({
     lookups,
   );
   const roleBindingPrincipalOptions = availableRoleBindingPrincipalOptions(roleBindingRawPrincipalOptions, directory.roleBindings, roleBindingRoleId, roleBindingPrincipalKind, roleBindingScopeKind, roleBindingScopeId);
-  const membersForMembershipOrganization = membersForOrganization(activeMemberships, membershipOrganizationId);
   const membersForDepartmentOrganization = membersForOrganization(activeMemberships, departmentOrganizationId);
   const departmentsForDepartmentOrganization = departmentsForOrganization(activeDepartments, departmentOrganizationId);
   const departmentsForPositionOrganization = departmentsForOrganization(activeDepartments, positionOrganizationId);
@@ -2187,15 +2185,17 @@ function DialogFields({
 
   if (dialog.kind === 'membership') {
     const target = dialog.target;
+    if (dialog.mode !== 'edit' || !target) {
+      return null;
+    }
     return (
       <FieldGrid>
-        <SelectField label={t('admin.organization.fields.organization', 'Organization')} name="organizationId" required defaultValue={target?.organizationId || activeOrganizationIdForRelations} options={organizationOptions(activeOrganizations, lookups, target?.organizationId || activeOrganizationIdForRelations)} onChange={setMembershipOrganizationId} />
-        <SelectField key={`membership-user-${membershipOrganizationId}`} label={t('admin.organization.fields.userId', 'User')} name="userId" required defaultValue={target?.userId} options={availableDirectoryUserOptions(directory.users, membersForMembershipOrganization, lookups, membershipOrganizationId, target?.userId)} />
-        <TextField label={t('admin.organization.fields.displayName', 'Display name')} name="displayName" defaultValue={target?.displayName} />
-        <TextField label={t('admin.organization.fields.email', 'Email')} name="email" defaultValue={target?.email} />
-        <TextField label={t('admin.organization.fields.mobile', 'Mobile')} name="mobile" defaultValue={target?.mobile} />
-        <SelectField label={t('admin.organization.fields.memberKind', 'Member kind')} name="memberKind" defaultValue={target?.memberKind || 'member'} options={memberKindOptions(t, target?.memberKind)} />
-        <SelectField label={t('admin.organization.fields.status', 'Status')} name="status" defaultValue={target?.status || 'active'} options={statusOptions(t)} />
+        <SelectField label={t('admin.organization.fields.organization', 'Organization')} name="organizationId" required defaultValue={target.organizationId || activeOrganizationIdForRelations} options={organizationOptions(activeOrganizations, lookups, target.organizationId || activeOrganizationIdForRelations)} />
+        <TextField label={t('admin.organization.fields.displayName', 'Display name')} name="displayName" defaultValue={target.displayName} />
+        <TextField label={t('admin.organization.fields.email', 'Email')} name="email" defaultValue={target.email} />
+        <TextField label={t('admin.organization.fields.mobile', 'Mobile')} name="mobile" defaultValue={target.mobile} />
+        <SelectField label={t('admin.organization.fields.memberKind', 'Member kind')} name="memberKind" defaultValue={target.memberKind || 'member'} options={memberKindOptions(t, target.memberKind)} />
+        <SelectField label={t('admin.organization.fields.status', 'Status')} name="status" defaultValue={target.status || 'active'} options={statusOptions(t)} />
       </FieldGrid>
     );
   }
@@ -2340,6 +2340,60 @@ function memberContactSecondary(member: OrganizationMemberRecord, lookups: Direc
   return member.mobile || user?.mobile || member.username || user?.username || member.userId || '-';
 }
 
+function userForMember(member: OrganizationMemberRecord, lookups: DirectoryLookups): UserRecord | null {
+  return lookups.usersById.get(member.userId) ?? null;
+}
+
+function memberUserRegion(member: OrganizationMemberRecord, lookups: DirectoryLookups): string {
+  return formatUserRegion(userForMember(member, lookups));
+}
+
+function memberUserGender(member: OrganizationMemberRecord, lookups: DirectoryLookups, t: TranslationFunction): string {
+  return formatUserGender(userForMember(member, lookups), t);
+}
+
+function formatUserRegion(user: UserRecord | null | undefined): string {
+  if (!user) {
+    return '-';
+  }
+  const region = [user.country, user.province, user.city, user.district].filter(Boolean).join(' / ');
+  return region || '-';
+}
+
+function formatUserGender(user: UserRecord | null | undefined, t: TranslationFunction): string {
+  const gender = user?.gender.trim().toLowerCase();
+  if (!gender) {
+    return '-';
+  }
+  if (gender === 'male' || gender === 'm') {
+    return t('admin.organization.gender.male', 'Male');
+  }
+  if (gender === 'female' || gender === 'f') {
+    return t('admin.organization.gender.female', 'Female');
+  }
+  if (gender === 'unknown' || gender === 'unspecified') {
+    return t('admin.organization.gender.unknown', 'Unknown');
+  }
+  return user?.gender || '-';
+}
+
+function userSearchLabels(user: UserRecord): string[] {
+  return [
+    user.id,
+    user.username,
+    user.displayName,
+    user.email,
+    user.mobile,
+    user.gender,
+    user.country,
+    user.province,
+    user.city,
+    user.district,
+    user.address,
+    user.status,
+  ];
+}
+
 function formatUserLabel(userId: string | null | undefined, lookups: DirectoryLookups): string {
   if (!userId) {
     return '';
@@ -2477,25 +2531,17 @@ function userOptions(members: OrganizationMemberRecord[], lookups: DirectoryLook
   );
 }
 
-function availableDirectoryUserOptions(
+function availableUsersForMembership(
   users: UserRecord[],
   existingMembers: OrganizationMemberRecord[],
-  lookups: DirectoryLookups,
   organizationId: string | null | undefined,
-  keepUserId?: string | null,
-): SelectOption[] {
+): UserRecord[] {
   const blockedUserIds = new Set(
     existingMembers
       .filter((item) => item.organizationId === organizationId && isActiveRecord(item) && item.userId)
       .map((item) => item.userId),
   );
-  return withKeptOption(
-    users
-      .filter((item) => item.id === keepUserId || !blockedUserIds.has(item.id))
-      .map((item) => ({ value: item.id, label: formatUserLabel(item.id, lookups) })),
-    keepUserId,
-    (id) => formatUserLabel(id, lookups),
-  );
+  return users.filter((item) => !blockedUserIds.has(item.id));
 }
 
 function availableDepartmentAssignmentMemberOptions(
@@ -3489,27 +3535,34 @@ function StatusPill({ status }: { status: string }) {
   );
 }
 
-function IconButton({ children, disabled, label, onClick }: { children: ReactNode; disabled?: boolean; label: string; onClick: () => void }) {
-  return (
-    <button type="button" onClick={onClick} disabled={disabled} title={label} aria-label={label} className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-600 shadow-sm hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-60 dark:border-white/10 dark:bg-[#1e1e1e] dark:text-slate-200 dark:hover:bg-white/5">
-      {children}
-    </button>
-  );
-}
-
-function PrimaryButton({ children, disabled, label, onClick }: { children: ReactNode; disabled?: boolean; label: string; onClick: () => void }) {
-  return (
-    <button type="button" onClick={onClick} disabled={disabled} className="inline-flex h-10 items-center gap-2 rounded-lg bg-blue-600 px-3 text-sm font-semibold text-white shadow-sm hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60">
-      {children}
-      <span>{label}</span>
-    </button>
-  );
-}
-
 function SmallButton({ disabled, label, onClick }: { disabled?: boolean; label: string; onClick: () => void }) {
   return (
     <button type="button" onClick={onClick} disabled={disabled} className="rounded-md border border-slate-200 bg-white px-2.5 py-1.5 text-xs font-semibold text-slate-700 hover:border-blue-300 hover:text-blue-700 disabled:cursor-not-allowed disabled:opacity-50 dark:border-white/10 dark:bg-white/5 dark:text-slate-200 dark:hover:border-blue-500/40 dark:hover:text-blue-300">
       {label}
+    </button>
+  );
+}
+
+function HeaderButton({
+  children,
+  disabled,
+  label,
+  onClick,
+  variant = 'secondary',
+}: {
+  children?: ReactNode;
+  disabled?: boolean;
+  label: string;
+  onClick: () => void;
+  variant?: 'primary' | 'secondary';
+}) {
+  const tone = variant === 'primary'
+    ? 'border-blue-600 bg-blue-600 text-white shadow-sm hover:border-blue-700 hover:bg-blue-700'
+    : 'border-slate-200 bg-white text-slate-700 shadow-sm hover:border-blue-300 hover:text-blue-700 dark:border-white/10 dark:bg-[#1e1e1e] dark:text-slate-200 dark:hover:border-blue-500/40 dark:hover:text-blue-300';
+  return (
+    <button type="button" onClick={onClick} disabled={disabled} className={`inline-flex h-10 items-center justify-center gap-2 rounded-lg px-3 text-sm font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-60 ${tone}`}>
+      {children}
+      <span>{label}</span>
     </button>
   );
 }
