@@ -239,7 +239,22 @@ export function UserAdmin() {
   const normalizedSearch = appliedSearch.trim().toLowerCase();
   const visibleUsers = normalizedSearch
     ? users.filter((userItem) =>
-      [userItem.email, userItem.username, userItem.role, userItem.group, userItem.status, String(userItem.id)]
+      [
+        userItem.id,
+        userItem.email,
+        userItem.username,
+        userItem.displayName,
+        userItem.mobile,
+        userItem.gender,
+        userItem.country,
+        userItem.province,
+        userItem.city,
+        userItem.district,
+        userItem.address,
+        userItem.role,
+        userItem.group,
+        userItem.status,
+      ]
         .some((value) => value.toLowerCase().includes(normalizedSearch)),
     )
     : users;
@@ -258,7 +273,7 @@ export function UserAdmin() {
                   setAppliedSearch(searchDraft);
                 }
               }}
-              placeholder={t('admin.user.index.searchPlaceholder', 'Search email, name, role, or group...')}
+              placeholder={t('admin.user.index.searchPlaceholder', 'Search users...')}
               type="text"
               value={searchDraft}
             />
@@ -283,7 +298,7 @@ export function UserAdmin() {
           </button>
         </div>
           <button
-            className="flex shrink-0 items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700"
+            className="inline-flex h-10 shrink-0 items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 text-sm font-medium text-white transition-colors hover:bg-blue-700"
             data-admin-user-primary-action
             onClick={() => setIsModalOpen(true)}
             type="button"
@@ -300,12 +315,15 @@ export function UserAdmin() {
         viewportClassName="min-h-0 flex-1"
         viewportProps={{ 'data-admin-user-table-viewport': true }}
       >
-        <table className="w-full min-w-[1080px] text-left text-sm text-slate-600 dark:text-slate-400">
+        <table className="w-full min-w-[1320px] text-left text-sm text-slate-600 dark:text-slate-400">
           <thead className="sticky top-0 z-10 select-none border-b border-slate-200 bg-slate-50 text-xs font-semibold text-slate-500 dark:border-white/10 dark:bg-[#121212] dark:text-slate-400">
             <tr>
               <th className="px-6 py-4">{t('admin.user.index.columns.user', 'User')}</th>
               <th className="px-6 py-4">{t('admin.user.index.columns.id', 'ID')}</th>
               <th className="px-6 py-4">{t('admin.user.index.columns.username', 'Username')}</th>
+              <th className="px-6 py-4">{t('admin.user.index.columns.contact', 'Contact')}</th>
+              <th className="px-6 py-4">{t('admin.user.index.columns.region', 'Region')}</th>
+              <th className="px-6 py-4">{t('admin.user.index.columns.gender', 'Gender')}</th>
               <th className="px-6 py-4">{t('admin.user.index.columns.role', 'Role')}</th>
               <th className="px-6 py-4">{t('admin.user.index.columns.group', 'Group')}</th>
               <th className="px-6 py-4">{t('admin.user.index.columns.status', 'Status')}</th>
@@ -317,10 +335,10 @@ export function UserAdmin() {
           </thead>
           <tbody className="divide-y divide-slate-200 dark:divide-white/5">
             {loading ? (
-              <BusinessStateTableRow colSpan={10} kind="loading" title={t('admin.user.index.text.loadingUsers', 'Loading users...')} />
+              <BusinessStateTableRow colSpan={13} kind="loading" title={t('admin.user.index.text.loadingUsers', 'Loading users...')} />
             ) : loadError ? (
               <BusinessStateTableRow
-                colSpan={10}
+                colSpan={13}
                 description={loadError}
                 kind="error"
                 onRetry={() => { void loadUsers(); }}
@@ -329,7 +347,7 @@ export function UserAdmin() {
               />
             ) : visibleUsers.length === 0 ? (
               <BusinessStateTableRow
-                colSpan={10}
+                colSpan={13}
                 description={t('admin.user.index.text.usersEmptyDescription', 'Create a user before assigning groups, balances, or API keys.')}
                 kind="empty"
                 title={t('admin.user.index.text.usersEmpty', 'No users found')}
@@ -339,13 +357,19 @@ export function UserAdmin() {
                 <td className="px-6 py-4">
                   <div className="flex w-48 items-center gap-3">
                     <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-blue-100 text-sm font-bold text-blue-600 dark:bg-blue-500/10 dark:text-blue-400">
-                      {userItem.email.charAt(0).toUpperCase()}
+                      {formatUserPrimaryLabel(userItem).charAt(0).toUpperCase()}
                     </div>
-                    <span className="truncate font-semibold text-slate-900 dark:text-white">{userItem.email}</span>
+                    <span className="truncate font-semibold text-slate-900 dark:text-white">{formatUserPrimaryLabel(userItem)}</span>
                   </div>
                 </td>
                 <td className="px-6 py-4 font-mono text-xs">{userItem.id}</td>
-                <td className="px-6 py-4 text-slate-700 dark:text-slate-300">{userItem.username}</td>
+                <td className="px-6 py-4 text-slate-700 dark:text-slate-300">{displayValue(userItem.username)}</td>
+                <td className="px-6 py-4 text-slate-700 dark:text-slate-300">
+                  <div>{displayValue(userItem.email)}</div>
+                  <div className="text-xs text-slate-500">{displayValue(userItem.mobile)}</div>
+                </td>
+                <td className="px-6 py-4 text-slate-700 dark:text-slate-300">{formatUserRegion(userItem)}</td>
+                <td className="px-6 py-4 text-slate-700 dark:text-slate-300">{getUserGenderLabel(userItem.gender, t)}</td>
                 <td className="px-6 py-4">
                   <span className={`inline-flex items-center rounded-md px-2 py-0.5 text-xs font-medium ${userItem.role === 'admin' ? 'bg-purple-100 text-purple-700 dark:bg-purple-500/10 dark:text-purple-400' : 'bg-slate-100 text-slate-700 dark:bg-white/10 dark:text-slate-300'}`}>
                     {getUserRoleLabel(userItem.role, t)}
@@ -362,9 +386,9 @@ export function UserAdmin() {
                     {getUserStatusLabel(userItem.status, t)}
                   </span>
                 </td>
-                <td className="whitespace-nowrap px-6 py-4 font-mono text-xs text-slate-500 dark:text-slate-400">{userItem.lastActive}</td>
-                <td className="whitespace-nowrap px-6 py-4 font-mono text-xs text-slate-500 dark:text-slate-400">{userItem.lastUsed}</td>
-                <td className="whitespace-nowrap px-6 py-4 font-mono text-xs text-slate-500 dark:text-slate-400">{userItem.createdAt}</td>
+                <td className="whitespace-nowrap px-6 py-4 font-mono text-xs text-slate-500 dark:text-slate-400">{displayValue(userItem.lastActive)}</td>
+                <td className="whitespace-nowrap px-6 py-4 font-mono text-xs text-slate-500 dark:text-slate-400">{displayValue(userItem.lastUsed)}</td>
+                <td className="whitespace-nowrap px-6 py-4 font-mono text-xs text-slate-500 dark:text-slate-400">{displayValue(userItem.createdAt)}</td>
                 <td className="px-6 py-4 text-right">
                   <div className="relative flex items-center justify-end gap-2 text-slate-400">
                     <button
