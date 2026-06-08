@@ -288,13 +288,16 @@ test("admin user static copy is translated through i18n keys", () => {
   }
 
   for (const token of [
-    "t('admin.user.index.searchPlaceholder', 'Search email, name, role, or group...')",
+    "t('admin.user.index.searchPlaceholder', 'Search users...')",
     "t('admin.user.index.actions.query', 'Query')",
     "t('admin.user.index.actions.refresh', 'Refresh')",
     "t('admin.user.index.createUser', 'Create user')",
     "t('admin.user.index.columns.user', 'User')",
     "t('admin.user.index.columns.id', 'ID')",
     "t('admin.user.index.columns.username', 'Username')",
+    "t('admin.user.index.columns.contact', 'Contact')",
+    "t('admin.user.index.columns.region', 'Region')",
+    "t('admin.user.index.columns.gender', 'Gender')",
     "t('admin.user.index.columns.role', 'Role')",
     "t('admin.user.index.columns.group', 'Group')",
     "t('admin.user.index.columns.status', 'Status')",
@@ -322,10 +325,16 @@ test("admin user static copy is translated through i18n keys", () => {
   assert.match(source, /function getUserRoleLabel\(role: string, t: TranslationFunction\): string/);
   assert.match(source, /function getUserGroupLabel\(/);
   assert.match(source, /function getUserStatusLabel\(status: UserListItem\['status'\], t: TranslationFunction\): string/);
+  assert.match(source, /function getUserGenderLabel\(gender: string, t: TranslationFunction\): string/);
+  assert.match(source, /function formatUserRegion\(user: UserListItem\): string/);
+  assert.match(source, /function formatUserPrimaryLabel\(user: UserListItem\): string/);
+  assert.match(source, /function displayValue\(value: string \| null \| undefined\): string/);
   assert.match(source, /function getApiKeyStatusLabel\(status: string, t: TranslationFunction\): string/);
   assert.match(source, /\{getUserRoleLabel\(userItem\.role, t\)\}/);
   assert.match(source, /\{getUserGroupLabel\(userItem\.group, defaultUserGroupOptions\)\}/);
   assert.match(source, /\{getUserStatusLabel\(userItem\.status, t\)\}/);
+  assert.match(source, /\{getUserGenderLabel\(userItem\.gender, t\)\}/);
+  assert.match(source, /\{formatUserRegion\(userItem\)\}/);
   assert.match(source, /\{getApiKeyStatusLabel\(key\.status, t\)\}/);
 
   assert.match(
@@ -355,8 +364,8 @@ test("admin user i18n resources cover visible management copy", () => {
     assert.notEqual(resources.zh.translation[key], "", `empty Chinese user i18n key: ${key}`);
   }
 
-  assert.equal(resources.en.translation["admin.user.index.searchPlaceholder"], "Search email, name, role, or group...");
-  assert.equal(resources.zh.translation["admin.user.index.searchPlaceholder"], "搜索邮箱、用户名、角色或分组...");
+  assert.equal(resources.en.translation["admin.user.index.searchPlaceholder"], "Search users...");
+  assert.equal(resources.zh.translation["admin.user.index.searchPlaceholder"], "搜索用户...");
   assert.equal(resources.en.translation["admin.user.index.actions.query"], "Query");
   assert.equal(resources.zh.translation["admin.user.index.actions.query"], "查询");
   assert.equal(resources.en.translation["admin.user.index.actions.refresh"], "Refresh");
@@ -365,6 +374,10 @@ test("admin user i18n resources cover visible management copy", () => {
   assert.equal(resources.zh.translation["admin.user.index.createUser"], "创建用户");
   assert.equal(resources.en.translation["admin.user.index.columns.username"], "Username");
   assert.equal(resources.zh.translation["admin.user.index.columns.username"], "用户名");
+  assert.equal(resources.en.translation["admin.user.index.columns.region"], "Region");
+  assert.equal(resources.zh.translation["admin.user.index.columns.region"], "地区");
+  assert.equal(resources.en.translation["admin.user.gender.female"], "Female");
+  assert.equal(resources.zh.translation["admin.user.gender.female"], "女");
 });
 
 test("admin user table keeps professional optional profile fields from appbase users", async () => {
